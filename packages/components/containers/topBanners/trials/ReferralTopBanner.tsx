@@ -28,6 +28,7 @@ import {
     isTrialExpired,
     willTrialExpireInLessThan1Week,
 } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -327,9 +328,7 @@ const TrialInfoActionButton = () => {
     );
 };
 
-const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
-    const [subscription, loadingSubscription] = useSubscription();
-
+const ReferralTopBanner = ({ app, subscription }: { app: APP_NAMES; subscription: Subscription }) => {
     const { feature: showReferralTrialEndedBanner, update: setShowReferralTrialEndedBanner } = useFeature(
         FeatureCode.ShowReferralTrialEndedBanner
     );
@@ -337,10 +336,6 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
         FeatureCode.ShowReferralTrialWillEndBanner
     );
     const [dismissing, setDismissing] = useState(false);
-
-    if (loadingSubscription || !subscription) {
-        return null;
-    }
 
     const nonAutoRenewalAction = <ContinueSubscriptionActionButton app={app} key="trial-action-button" />;
     const autoRenewalAction = <TrialInfoActionButton key="opt-out-trial-action-button" />;

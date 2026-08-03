@@ -6,12 +6,9 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import {
-    getPlanTitle,
-    isAutoRenewTrial,
-    isReferralTrial,
-    isTrialRenewing,
-} from '@proton/payments/core/subscription/helpers';
+import { getPlanTitle, isAutoRenewTrial, isTrialRenewing } from '@proton/payments/core/subscription/helpers';
+import { getTrialSubscription } from '@proton/payments/core/trials';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
@@ -24,7 +21,12 @@ const TrialInfoDashboardV2 = () => {
     const textDate = format(fromUnixTime(PeriodEnd), 'PPP', { locale: dateLocale });
     const planTitle = getPlanTitle(subscription) || c('Referral').t`your subscription`;
 
-    if (!isReferralTrial(subscription)) {
+    if (!isPaidSubscription(subscription)) {
+        return null;
+    }
+
+    const referralTrialSubscription = getTrialSubscription([subscription], { isReferralTrial: true });
+    if (!referralTrialSubscription) {
         return null;
     }
 
@@ -35,7 +37,7 @@ const TrialInfoDashboardV2 = () => {
                 <span className="color-norm">
                     {getBoldFormattedText(c('Referral').t`Enjoy **${planTitle}** for free until **${textDate}**.`)}
                 </span>{' '}
-                {!isAutoRenewTrial(subscription) ? (
+                {!isAutoRenewTrial(referralTrialSubscription) ? (
                     <span className="color-norm">
                         {getBoldFormattedText(
                             c('Referral')
@@ -43,7 +45,7 @@ const TrialInfoDashboardV2 = () => {
                         )}
                     </span>
                 ) : null}
-                {isAutoRenewTrial(subscription) && isTrialRenewing(subscription) ? (
+                {isAutoRenewTrial(referralTrialSubscription) && isTrialRenewing(referralTrialSubscription) ? (
                     <span className="color-norm">
                         {getBoldFormattedText(
                             c('Referral')

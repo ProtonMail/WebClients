@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import { fromUnixTime, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -12,9 +11,9 @@ import Time from '@proton/components/components/time/Time';
 import TimeRemaining from '@proton/components/components/timeRemaining/TimeRemaining';
 import useConfig from '@proton/components/hooks/useConfig';
 import { Renew } from '@proton/payments/core/subscription/constants';
-import { isReferralTrial, isTrial } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -25,11 +24,10 @@ import { OPEN_TRIAL_CANCELED_MODAL } from './constants';
 import LegacyReferralTopBanner from './trials/LegacyReferralTopBanner';
 import ReferralTopBanner from './trials/ReferralTopBanner';
 
-const B2BTrialTopBanner = () => {
+const B2BTrialTopBanner = ({ subscription }: { subscription: Subscription }) => {
     const [closed, setClosed] = useState<boolean>(false);
     const [modalProps, setModal, renderModal] = useModalState();
     const location = useLocation();
-    const [subscription] = useSubscription();
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
@@ -89,24 +87,32 @@ const TrialCanceledModalWrapper = ({ children }: { children?: ReactNode }): Reac
     );
 };
 
-const TrialTopBanner = ({ app }: { app: APP_NAMES }) => {
-    const [subscription] = useSubscription();
-    const [organization] = useOrganization();
+const TrialTopBannerPerSubscription = ({ app, subscription }: { app: APP_NAMES; subscription: Subscription }) => {
     const { APP_NAME } = useConfig();
     const isVpn = APP_NAME === APPS.PROTONVPN_SETTINGS;
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
+
+    const trialInfo = getTrialInfoForSingleSubscription(subscription);
 
     let topBanner = undefined;
-
-    if (isB2BTrial) {
-        topBanner = <B2BTrialTopBanner />;
-    } else if (isReferralTrial(subscription)) {
-        topBanner = <ReferralTopBanner app={app} />;
-    } else if (isTrial(subscription) && !isVpn && app) {
-        topBanner = <LegacyReferralTopBanner fromApp={app} />;
+    if (trialInfo.isB2BTrial) {
+        topBanner = <B2BTrialTopBanner subscription={subscription} />;
+    } else if (trialInfo.isReferralTrial) {
+        topBanner = <ReferralTopBanner app={app} subscription={subscription} />;
+    } else if (trialInfo.isTrial && !isVpn && app) {
+        topBanner = <LegacyReferralTopBanner fromApp={app} subscription={subscription} />;
     }
 
     return <TrialCanceledModalWrapper>{topBanner}</TrialCanceledModalWrapper>;
+};
+
+const TrialTopBanner = ({ app }: { app: APP_NAMES }) => {
+    const [subscription] = useSubscription();
+
+    if (!isPaidSubscription(subscription)) {
+        return null;
+    }
+
+    return <TrialTopBannerPerSubscription app={app} subscription={subscription} />;
 };
 
 export default TrialTopBanner;

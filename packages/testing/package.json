@@ -12,6 +12,7 @@
         "./data/payments/data-plans": "./data/payments/data-plans.ts",
         "./data/payments/data-user": "./data/payments/data-user.ts",
         "./lib/api": "./lib/api.ts",
+        "./lib/buildPreloadedState": "./lib/buildPreloadedState.ts",
         "./lib/builders": "./lib/builders.ts",
         "./lib/cache": "./lib/cache.ts",
         "./lib/context/hocs": "./lib/context/hocs.ts",

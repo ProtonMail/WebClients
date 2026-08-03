@@ -31,8 +31,8 @@ import {
     hasVPNPassProfessional,
     isTrial,
 } from '@proton/payments/core/subscription/helpers';
+import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -91,7 +91,7 @@ interface Props {
 const SubscriptionPanel = ({ app, subscription, organization, entitlements, user, addresses, upsells }: Props) => {
     const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
     const isPassB2bPlan = getIsPassB2BPlan(planName);
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const trialInfo = getTrialInfoForSingleSubscription(subscription);
     const [learnMoreModalProps, setLearnMoreModal, renderLearnMoreModal] = useModalState();
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
@@ -111,8 +111,8 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         return null;
     }
 
-    // Hide this panel for legacy trial case, but not for B2B trials
-    if (subscription && isTrial(subscription) && !isB2BTrial) {
+    // Hide this panel for the regular trial case, but not for B2B trials
+    if (trialInfo.isTrial && !trialInfo.isB2BTrial) {
         return null;
     }
 
@@ -500,7 +500,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
 
     const b2bTrialLearnMore = (() => {
         const trialCancelled = isPaidSubscription(subscription) && subscription.Renew === Renew.Disabled;
-        if (!isB2BTrial || trialCancelled) {
+        if (!trialInfo.isB2BTrial || trialCancelled) {
             return null;
         }
 
@@ -519,7 +519,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         );
     })();
 
-    const trialInfo = (() => {
+    const trialEndsElement = (() => {
         if (!isTrial(subscription)) {
             return null;
         }
@@ -537,7 +537,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         <>
             {renderLearnMoreModal && <LearnMoreModal {...learnMoreModalProps} />}
             <Panel data-testid="current-plan" titleDataTestId="plan-name" titleElement={planTitleElement}>
-                {trialInfo}
+                {trialEndsElement}
                 {b2bTrialLearnMore}
                 {(() => {
                     if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {

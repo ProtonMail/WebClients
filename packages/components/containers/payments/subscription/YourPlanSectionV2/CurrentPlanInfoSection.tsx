@@ -21,7 +21,6 @@ import {
     hasFree,
     hasVPNPassBundle,
     isAutoRenewTrial,
-    isExFamilyTrial,
     isManagedExternally,
     isTrial,
     isTrialRenewing,
@@ -29,6 +28,7 @@ import {
     willTrialExpireInLessThan1Week,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -230,7 +230,7 @@ export const CurrentPlanInfoSection = ({
                 isPaidSubscription(subscription) &&
                 willTrialExpireInLessThan1Week(subscription) &&
                 subscriptionExpiresSoon) ||
-            (isExFamilyTrial(subscription) && !hasTrialPaymentMethods)
+            (getTrialInfoForSingleSubscription(subscription).isFamilyTrial && !hasTrialPaymentMethods)
         ) {
             return (
                 <Button onClick={() => handleEditPayment(SUBSCRIPTION_STEPS.CHECKOUT)} data-testid="subscribe">

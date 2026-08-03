@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useGetSubscription, useSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
@@ -14,8 +13,8 @@ import {
     hasCancellablePlan,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -69,8 +68,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     const getSubscription = useGetSubscription();
     const getUser = useGetUser();
     const [subscription, loadingSubscription] = useSubscription();
-    const [organization, loadingOrganization] = useOrganization();
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const { isB2BTrial } = getTrialInfoForSingleSubscription(subscription);
     const [plansResult, loadingPlans] = usePlans();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const plans = plansResult?.plans ?? [];
@@ -282,7 +280,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     };
 
     return {
-        loadingCancelSubscription: loadingOrganization || loadingSubscription || loadingPlans,
+        loadingCancelSubscription: loadingSubscription || loadingPlans,
         cancelSubscriptionModals: modals,
         cancelSubscription,
     };

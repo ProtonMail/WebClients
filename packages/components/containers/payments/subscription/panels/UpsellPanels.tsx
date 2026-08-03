@@ -4,7 +4,8 @@ import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import Time from '@proton/components/components/time/Time';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
-import { hasBundle, isReferralTrial } from '@proton/payments/core/subscription/helpers';
+import { hasBundle } from '@proton/payments/core/subscription/helpers';
+import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -27,6 +28,8 @@ const UpsellPanels = ({ upsells, subscription }: Props) => {
     // Currently supporting trials for Mail Plus and Unlimited.
     // Add more branching logic here if you need to add another trial plan.
     const trialPlanName: string = hasBundle(subscription) ? PLAN_NAMES[PLANS.BUNDLE] : MAIL_APP_NAME;
+
+    const trialInfo = getTrialInfoForSingleSubscription(subscription);
 
     return (
         <>
@@ -62,7 +65,7 @@ const UpsellPanels = ({ upsells, subscription }: Props) => {
                         plan={isUpsellWithPlan(upsell) ? upsell.plan : undefined}
                     >
                         {/* Warning when user is in Trial period for a plan but only for legacy referral */}
-                        {isUpsellWithPlan(upsell) && upsell.isTrialEnding && !isReferralTrial(subscription) ? (
+                        {isUpsellWithPlan(upsell) && upsell.isTrialEnding && !trialInfo.isReferralTrial ? (
                             <>
                                 <h4>{c('new_plans: Info').jt`Your trial ends ${formattedPeriodEndDate}`}</h4>
                                 <div className="color-weak">

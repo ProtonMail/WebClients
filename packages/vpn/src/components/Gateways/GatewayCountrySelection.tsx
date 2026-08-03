@@ -3,8 +3,6 @@ import { useRef } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
@@ -12,7 +10,7 @@ import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/C
 import { useNow } from '@proton/components/hooks/useNow';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import type { CountryOptions } from '@proton/payments/core/countries';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
+import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { getLocationDisplayName, getLocationFromId, getLocationId } from '../../functions/gatewayHelpers';
@@ -46,10 +44,7 @@ export const GatewayCountrySelection = ({
     onUpdateCheckedLocations,
     changeModel,
 }: Props) => {
-    const [subscription] = useSubscription();
-    const [organization] = useOrganization();
-    const isTrial = useIsB2BTrial(subscription, organization);
-
+    const { hasAtLeastOneB2BTrial } = useTrialInfo();
     const recentlyUsedServersRef = useRef<GatewayLocation[]>([]);
     const remainingCount = ownedCount - usedCount;
     const availableCount = Math.max(0, remainingCount - addedCount - (deletedDedicatedIPs?.length || 0));
@@ -203,7 +198,7 @@ export const GatewayCountrySelection = ({
                         availableCount
                     )}
                 </p>
-                {!isTrial && (
+                {!hasAtLeastOneB2BTrial && (
                     <div className="flex flex-nowrap mb-4 rounded p-2 bg-weak">
                         <IcInfoCircle className="shrink-0" />
                         <div className="ml-2">
@@ -240,7 +235,7 @@ export const GatewayCountrySelection = ({
                     );
                 })}
             </div>
-            {isTrial && (
+            {hasAtLeastOneB2BTrial && (
                 <div className="flex flex-nowrap mb-4 rounded p-2 bg-weak">
                     <IcInfoCircle className="shrink-0" />
                     <div className="ml-2">{c('Info').t`Your free trial includes 1 dedicated server.`}</div>

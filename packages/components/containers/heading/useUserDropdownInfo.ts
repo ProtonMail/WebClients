@@ -6,8 +6,8 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
-import { getSubscriptionPlanTitles, isTrial } from '@proton/payments/core/subscription/helpers';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
+import { getSubscriptionPlanTitles } from '@proton/payments/core/subscription/helpers';
+import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import { type APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -21,7 +21,7 @@ export const useUserDropdownInfo = ({ app }: { app: APP_NAMES }) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const { hasAtLeastOneTrial, hasAtLeastOneB2BTrial } = useTrialInfo();
     const location = useLocation();
     const referral = useReferral(location);
     const accountSessions = useAccountSessions();
@@ -36,9 +36,9 @@ export const useUserDropdownInfo = ({ app }: { app: APP_NAMES }) => {
     });
 
     const upgradeUrl = addUpsellPath(upgradePathname, upsellRef);
-    const displayUpgradeButton =
-        (user.isFree || (isTrial(subscription) && !hasTrialPaymentMethods)) &&
-        !isB2BTrial &&
+    const displayUpgradeButton: boolean =
+        (user.isFree || (!!hasAtLeastOneTrial && !hasTrialPaymentMethods)) &&
+        !hasAtLeastOneB2BTrial &&
         !location.pathname.endsWith(upgradePathname) &&
         !user.hasPassLifetime;
 
