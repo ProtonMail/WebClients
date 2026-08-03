@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { getIsScimGroup, getIsScimGroupPendingKeys } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { PanelHeader } from '@proton/atoms/Panel/PanelHeader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -23,7 +24,6 @@ import { KEY_FLAG, SECOND } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { GROUP_MEMBER_STATE, type Group } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import AddUsersToGroupModal from './AddUsersToGroupModal';
 import DeleteGroupPrompt from './DeleteGroupPrompt';
@@ -52,7 +52,7 @@ const ViewGroup = () => {
     const addUsersToGroupModal = useModalStateObject();
     const deleteGroupPrompt = useModalStateObject();
     const [addingMembers, withAddingMembers] = useLoading();
-    const hasAdminRoles = useFlag('AdminRoleMVP');
+    const [adminRolesUIState] = useAdminRolesUI();
     const { feature: adminRolesModalFeature, loading: adminRolesModalLoading } = useFeature(
         FeatureCode.AdminRolesGroupOnboardingModal
     );
@@ -61,7 +61,10 @@ const ViewGroup = () => {
         show: showSpotlight,
         onDisplayed: onSpotlightDisplayed,
         onClose: onSpotlightClose,
-    } = useSpotlightOnFeature(FeatureCode.AdminRolesGroupEditSpotlight, hasAdminRoles && isAdminRolesModalDismissed);
+    } = useSpotlightOnFeature(
+        FeatureCode.AdminRolesGroupEditSpotlight,
+        adminRolesUIState === AdminRolesUIState.Enabled && isAdminRolesModalDismissed
+    );
     const shouldShowSpotlight = useSpotlightShow(showSpotlight, 3 * SECOND);
     const breakpoints = useActiveBreakpoint();
     const isMobile = breakpoints.viewportWidth['<=small'];

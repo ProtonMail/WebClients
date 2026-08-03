@@ -72,14 +72,14 @@ describe('domains', () => {
     it('should fetch domains for a non-admin user with the sso_config.read or domain.read permission', async () => {
         const { store } = setup({
             user: { ...defaultUser, Role: USER_ROLES.MEMBER_ROLE },
-            userPermissions: { Roles: [], Permissions: ['account.sso_config.read'] },
+            userPermissions: { Roles: [], Permissions: ['account.sso_config.read'], ShowAdminRolesUI: false },
         });
         await store.dispatch(domainsThunk());
         expect(selectDomains(store.getState())).toMatchObject(getState([{ ID: '1' }], 1));
 
         const { store: store2 } = setup({
             user: { ...defaultUser, Role: USER_ROLES.MEMBER_ROLE },
-            userPermissions: { Roles: [], Permissions: ['account.domain.read'] },
+            userPermissions: { Roles: [], Permissions: ['account.domain.read'], ShowAdminRolesUI: false },
         });
         await store2.dispatch(domainsThunk());
         expect(selectDomains(store2.getState())).toMatchObject(getState([{ ID: '1' }], 1));
@@ -88,7 +88,7 @@ describe('domains', () => {
     it('should not fetch domains for a non-admin user without the sso_config.read permission', async () => {
         const { store } = setup({
             user: { ...defaultUser, Role: USER_ROLES.MEMBER_ROLE },
-            userPermissions: { Roles: [], Permissions: [] },
+            userPermissions: { Roles: [], Permissions: [], ShowAdminRolesUI: false },
         });
         await store.dispatch(domainsThunk());
         expect(selectDomains(store.getState())).toMatchObject(getState([], 0));
