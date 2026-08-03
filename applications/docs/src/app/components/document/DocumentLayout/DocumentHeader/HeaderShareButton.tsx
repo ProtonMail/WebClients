@@ -8,6 +8,7 @@ import { IcUserPlus } from '@proton/icons/icons/IcUserPlus'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
 import { getPrivateURL, getPublicURL, getToken } from '../../useChangeAddressWhenPubliclyShared'
+import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
 type ShowSharingModal = ReturnType<typeof useSharingModal>['showSharingModal']
 
@@ -52,6 +53,12 @@ export function HeaderShareButton({
                     history.replaceState(null, '', newAddress)
                   } catch (error: any) {
                     logger.warn('Failed to change URL in address bar after changing public sharing', error)
+                    traceError(error, {
+                      tags: {
+                        initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+                        feature: 'DocsSharingModalDriveSDK',
+                      },
+                    })
                   }
                 }
               },
