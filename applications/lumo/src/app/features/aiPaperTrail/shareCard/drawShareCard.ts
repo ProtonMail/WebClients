@@ -11,6 +11,10 @@ export const CARD_HEIGHT = 1064;
 
 export type ShareCardTheme = 'dark' | 'light';
 
+export interface ShareCardRenderOptions {
+    hideFooter?: boolean;
+}
+
 export const SHARE_CARD_URL = 'proton.me/lumo/aitrail';
 
 const FONT_STACK = `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`;
@@ -130,14 +134,7 @@ const exposureBarColor = (score: number, theme: ShareCardTheme): string => {
     return '#b9a7ff';
 };
 
-const roundRect = (
-    ctx: CanvasRenderingContext2D,
-    x: number,
-    y: number,
-    w: number,
-    h: number,
-    r: number
-): void => {
+const roundRect = (ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number): void => {
     const radius = Math.min(r, w / 2, h / 2);
     ctx.beginPath();
     ctx.moveTo(x + radius, y);
@@ -188,10 +185,16 @@ const knowledgeCardHeight = (areaCount: number): number =>
     knowledgeRowCount(areaCount) * LAYOUT.knowledgeRowGap +
     LAYOUT.knowledgePadBottom;
 
-export const computeShareCardHeight = (areaCount: number): number => {
+export const computeShareCardHeight = (areaCount: number, options?: ShareCardRenderOptions): number => {
     const heroY = LAYOUT.padding + LAYOUT.logoSize + LAYOUT.logoToTitle + LAYOUT.titleSize + LAYOUT.titleToHero;
     const sectionY = heroY + LAYOUT.heroHeight + LAYOUT.sectionGap;
-    const footerY = sectionY + knowledgeCardHeight(areaCount) + LAYOUT.footerGap;
+    const contentBottom = sectionY + knowledgeCardHeight(areaCount);
+
+    if (options?.hideFooter) {
+        return contentBottom + LAYOUT.padding;
+    }
+
+    const footerY = contentBottom + LAYOUT.footerGap;
 
     return footerY + LAYOUT.footerHeight + LAYOUT.padding;
 };
@@ -230,7 +233,8 @@ const drawShareCard = (
     data: PaperTrailCardData,
     theme: ShareCardTheme,
     assets: ShareCardAssets,
-    cardHeight: number
+    cardHeight: number,
+    options?: ShareCardRenderOptions
 ): void => {
     const cx = CARD_WIDTH / 2;
     const palette = PALETTES[theme];
@@ -286,11 +290,7 @@ const drawShareCard = (
     const ringCx = heroInnerX + leftW / 2;
     const ringCy = contentY + contentH / 2;
     const ringStroke = LAYOUT.ringStroke;
-    const ringRadius = Math.min(
-        LAYOUT.ringRadius,
-        contentH / 2 - ringStroke - 4,
-        leftW / 2 - 6
-    );
+    const ringRadius = Math.min(LAYOUT.ringRadius, contentH / 2 - ringStroke - 4, leftW / 2 - 6);
     const startAngle = -Math.PI / 2;
     const fraction = Math.max(0, Math.min(1, data.exposureScore / 100));
 
@@ -403,40 +403,43 @@ const drawShareCard = (
         }
     });
 
-    const footerY = sectionY + knowledgeCardH + LAYOUT.footerGap;
-    const footerW = contentW;
-    roundRect(ctx, heroX, footerY, footerW, LAYOUT.footerHeight, 14);
-    ctx.fillStyle = palette.footerBg;
-    ctx.fill();
-    ctx.strokeStyle = palette.footerBorder;
-    ctx.lineWidth = 1;
-    ctx.stroke();
+    if (!options?.hideFooter) {
+        const footerY = sectionY + knowledgeCardH + LAYOUT.footerGap;
+        const footerW = contentW;
+        roundRect(ctx, heroX, footerY, footerW, LAYOUT.footerHeight, 14);
+        ctx.fillStyle = palette.footerBg;
+        ctx.fill();
+        ctx.strokeStyle = palette.footerBorder;
+        ctx.lineWidth = 1;
+        ctx.stroke();
 
-    ctx.font = `600 26px ${FONT_STACK}`;
-    const footerPrefix = "What's your AI Paper Trail? ";
-    ctx.fillStyle = palette.subtle;
-    const prefixWidth = ctx.measureText(footerPrefix).width;
-    const urlWidth = ctx.measureText(SHARE_CARD_URL).width;
-    const footerStartX = cx - (prefixWidth + urlWidth) / 2;
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(footerPrefix, footerStartX, footerY + LAYOUT.footerHeight / 2);
-    ctx.fillStyle = palette.accent;
-    ctx.fillText(SHARE_CARD_URL, footerStartX + prefixWidth, footerY + LAYOUT.footerHeight / 2);
-    ctx.textBaseline = 'alphabetic';
+        ctx.font = `600 26px ${FONT_STACK}`;
+        const footerPrefix = "What's your AI Paper Trail? ";
+        ctx.fillStyle = palette.subtle;
+        const prefixWidth = ctx.measureText(footerPrefix).width;
+        const urlWidth = ctx.measureText(SHARE_CARD_URL).width;
+        const footerStartX = cx - (prefixWidth + urlWidth) / 2;
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(footerPrefix, footerStartX, footerY + LAYOUT.footerHeight / 2);
+        ctx.fillStyle = palette.accent;
+        ctx.fillText(SHARE_CARD_URL, footerStartX + prefixWidth, footerY + LAYOUT.footerHeight / 2);
+        ctx.textBaseline = 'alphabetic';
+    }
 };
 
 export const renderShareCard = async (
     canvas: HTMLCanvasElement,
     data: PaperTrailCardData,
-    theme: ShareCardTheme
+    theme: ShareCardTheme,
+    options?: ShareCardRenderOptions
 ): Promise<void> => {
     const ctx = canvas.getContext('2d');
     if (!ctx) {
         return;
     }
 
-    const cardHeight = computeShareCardHeight(data.areas.length);
+    const cardHeight = computeShareCardHeight(data.areas.length, options);
     canvas.width = CARD_WIDTH;
     canvas.height = cardHeight;
 
@@ -447,5 +450,5 @@ export const renderShareCard = async (
         loadLucideIconImage('BadgeDollarSign', 32, iconColor).catch(() => undefined),
     ]);
 
-    drawShareCard(ctx, data, theme, { logo, privacyIcon, valueIcon }, cardHeight);
+    drawShareCard(ctx, data, theme, { logo, privacyIcon, valueIcon }, cardHeight, options);
 };
