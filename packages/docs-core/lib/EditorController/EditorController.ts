@@ -194,7 +194,7 @@ export class EditorController implements EditorControllerInterface {
         if (isCompressedDocumentUpdate(content)) {
           content = decompressDocumentUpdate(content)
         }
-        void this.editorInvoker?.receiveMessage({
+        await this.editorInvoker?.receiveMessage({
           type: { wrapper: 'du' },
           content,
           origin: DocUpdateOrigin.BaseCommit,
