@@ -13,8 +13,8 @@ import type {
     SystemFolder,
     SystemFolderPayload,
     UseMoveSystemFoldersProps,
-} from './useMoveSystemFolders';
-import { SYSTEM_FOLDER_SECTION } from './useMoveSystemFolders';
+} from './useMoveSystemFoldersTypes';
+import { SYSTEM_FOLDER_SECTION } from './useMoveSystemFoldersTypes';
 
 interface MoveSystemFolders {
     (

@@ -4,25 +4,19 @@ import { MESSAGE_IFRAME_ROOT_ID } from '@proton/mail-renderer/constants';
 import { toText } from '@proton/mail/helpers/parserHtml';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { unescape } from '@proton/sanitize/escape';
-import { checkContrast, parseStringToDOM } from '@proton/shared/lib/helpers/dom';
+import { checkContrast } from '@proton/shared/lib/helpers/dom';
 import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { isPlainText, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 
 import { parseModelResult } from '../assistant/result';
-import { findSender } from '../message/messageRecipients';
-import { textToHtml } from '../textToHtml';
 import { generateBlockquote } from './draftContent/html';
 import { locateBlockquote } from './messageBlockquote';
+import { exportPlainText, getPlainTextContent, setPlainTextContent } from './messageContentPlainText';
+import { getDocumentContent, setDocumentContent } from './messageContentQuery';
 
-export const getPlainTextContent = (message: PartialMessageState) => {
-    return message.messageDocument?.plainText || '';
-};
-
-export const getDocumentContent = (document: Element | undefined) => {
-    const root = document?.querySelector('body') || document;
-    return root?.innerHTML || '';
-};
+export { exportPlainText, getPlainTextContent } from './messageContentPlainText';
+export { getDocumentContent, querySelectorAll, setDocumentContent } from './messageContentQuery';
+export { plainTextToHTML } from './messageContentConversion';
 
 /**
  * Get current processed message document html content
@@ -33,24 +27,6 @@ export const getContent = (message: PartialMessageState) => {
     }
 
     return getDocumentContent(message.messageDocument?.document);
-};
-
-export const setPlainTextContent = (message: MessageState, content: string) => {
-    if (message.messageDocument) {
-        message.messageDocument.plainText = content;
-    } else {
-        message.messageDocument = { plainText: content };
-    }
-};
-
-export const setDocumentContent = (document: Element | undefined, content: string) => {
-    if (document) {
-        document.innerHTML = content;
-    } else {
-        document = parseStringToDOM(content).body;
-    }
-
-    return document;
 };
 
 /**
@@ -69,14 +45,6 @@ export const setContent = (message: MessageState, content: string) => {
     }
 };
 
-export const exportPlainText = (content: string) => {
-    /*
-     * The replace removes any characters that are produced by the copying process (like zero width characters)
-     * See: http://www.berklix.org/help/majordomo/#quoted we want to avoid sending unnecessary quoted printable encodings
-     */
-    return toText(content).replace(/\u200B/g, '');
-};
-
 /**
  * Generates/Gets the plaintext body from the message. If the message is not composed in plaintext, it will downconvert
  * the html body to plaintext if downconvert is set. If downconvert is disabled it will return false.
@@ -92,24 +60,6 @@ export const getPlainText = (message: MessageState, downconvert: boolean) => {
 
     return exportPlainText(getContent(message));
 };
-
-/**
- * Convert the body of a message in plain text to an HTML version
- */
-export const plainTextToHTML = (
-    message: Partial<Message> | undefined,
-    plainTextContent: string | undefined,
-    mailSettings: MailSettings | undefined,
-    userSettings: UserSettings | undefined,
-    addresses: Address[]
-) => {
-    const sender = findSender(addresses, message);
-    return textToHtml(plainTextContent, sender?.Signature || '', mailSettings, userSettings);
-};
-
-export const querySelectorAll = (message: Partial<MessageState> | undefined, selector: string) => [
-    ...((message?.messageDocument?.document?.querySelectorAll(selector) || []) as HTMLElement[]),
-];
 
 export const canSupportDarkStyle = (iframe: HTMLIFrameElement | null) => {
     const container = iframe?.contentDocument?.getElementById(MESSAGE_IFRAME_ROOT_ID);
@@ -217,7 +167,7 @@ export const insertTextBeforeContent = (
     let newBody;
     // In both cases, add a separator only if there is already some content in the composer
     // However we still need to add message body after because message might contain signature or blockquotes
-    if (isPlainText(message.data)) {
+    if (testIsPlainText(message.data)) {
         const separator = '--------------------';
         const messageBody = message.messageDocument?.plainText;
 

@@ -15,7 +15,7 @@ import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { hasBit } from '@proton/shared/lib/helpers/bitset.ts';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter.ts';
 
-import { useMailGlobalModals } from '../containers/globalModals/GlobalModalProvider';
+import { useMailGlobalModals } from '../containers/globalModals/globalModalContext';
 import { ModalType } from '../containers/globalModals/inteface';
 
 const useShowBYOESpotlightModal = () => {

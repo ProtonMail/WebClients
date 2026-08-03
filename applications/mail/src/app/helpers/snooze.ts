@@ -8,7 +8,7 @@ import type { SNOOZE_DURATION } from 'proton-mail/components/list/snooze/constan
 
 import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
-import { getDate, isElementConversation, isElementMessage } from './elements';
+import { getDate, isElementConversation, isElementMessage } from './elementTypeGuards';
 
 export const getSnoozeUnixTime = (duration: SNOOZE_DURATION, snoozeTime?: Date) => {
     const today = new Date();

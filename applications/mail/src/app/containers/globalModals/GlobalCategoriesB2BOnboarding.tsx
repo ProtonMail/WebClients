@@ -18,7 +18,7 @@ import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 
 import onboardingImage from '../../components/categoryView/categoriesOnboarding/onboardingCategories.svg';
-import { useMailGlobalModals } from './GlobalModalProvider';
+import { useMailGlobalModals } from './globalModalContext';
 import { type CategoriesViewB2BOnboardingModalPayload, ModalType } from './inteface';
 
 import './GlobalCategoriesOnboarding.scss';
