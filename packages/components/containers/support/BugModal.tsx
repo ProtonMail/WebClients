@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -259,10 +259,12 @@ const BugModal = ({
 
     const link = <Href key="linkClearCache" href={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
 
-    // Pre-cache logs for better performance when downloading
+    // Start reading logs as soon as the modal opens so submitting does not wait on
+    // decryption. `handleSubmit` awaits this same promise rather than re-reading.
+    const logsPromise = useRef<Promise<string>>();
     useEffect(() => {
         if (collectLogs) {
-            void loggerManager.preCacheAllLogs();
+            logsPromise.current = loggerManager.getAllLogs();
         }
     }, [collectLogs]);
 
@@ -296,7 +298,7 @@ const BugModal = ({
 
             // Get logs from all logger instances if user opted in
             if (collectLogs && includeLogs) {
-                const logs = await loggerManager.getAllCachedLogs();
+                const logs = await (logsPromise.current ?? loggerManager.getAllLogs());
                 if (logs && logs.trim()) {
                     const filename = `logs-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
                     attachments[filename] = new Blob([logs], { type: 'text/plain' });

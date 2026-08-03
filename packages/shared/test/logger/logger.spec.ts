@@ -1,735 +1,488 @@
 import { type AesGcmCryptoKey, generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import log from 'loglevel';
-import type { Mock, MockInstance } from 'vitest';
 
-import { LOGGER_DB_PREFIX } from '../../lib/logger/constants';
-import { Logger, logger, loggerManager } from '../../lib/logger/logger';
-import { IndexedDBStorage } from '../../lib/logger/storage/IndexedDBStorage';
-import { LocalStorage } from '../../lib/logger/storage/LocalStorage';
+import { Logger } from '../../lib/logger/logger';
+import { loggerManager } from '../../lib/logger/manager';
+import { IndexedDBStorage } from '../../lib/logger/storage';
+import type { LoggerOptions } from '../../lib/logger/types';
 
-// Increase timeout for async operations
 vi.setConfig({ testTimeout: 15000 });
 
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+let counter = 0;
+const uniqueId = () => `${Date.now()}-${counter++}`;
+
+/**
+ * Opens a second connection to a logger's database for assertions, always closing it.
+ * A lingering connection would block `deleteDatabase()` during teardown.
+ */
+const inspect = async <T>(name: string, id: string, fn: (storage: IndexedDBStorage) => Promise<T>): Promise<T> => {
+    const storage = new IndexedDBStorage(name, id);
+    try {
+        return await fn(storage);
+    } finally {
+        await storage.close();
+    }
+};
+
 describe('Logger', () => {
-    const testLoggers: Logger[] = [];
-    let mockEncryptionKey: AesGcmCryptoKey;
+    let key: AesGcmCryptoKey;
 
-    // Mock document methods for download functionality
-    let mockCreateElement: MockInstance;
-    let mockClick: Mock;
-
-    // Mock URL methods
-    let mockCreateObjectURL: Mock;
-    let mockRevokeObjectURL: Mock;
+    /** Loggers and databases to tear down, so tests never share state. */
+    const loggers: Logger[] = [];
+    const databases: { name: string; id: string }[] = [];
 
     beforeAll(async () => {
-        mockEncryptionKey = await generateAndImportKey();
+        key = await generateAndImportKey();
     });
 
-    beforeEach(async () => {
-        // Setup mocks
-        mockClick = vi.fn();
-        const mockElement = {
-            href: '',
-            download: '',
-            style: {},
-            click: mockClick,
-        } as unknown as HTMLElement;
-
-        mockCreateElement = vi.spyOn(document, 'createElement').mockReturnValue(mockElement as any);
-        vi.spyOn(document.body, 'appendChild').mockReturnValue(mockElement as HTMLElement);
-        vi.spyOn(document.body, 'removeChild').mockReturnValue(mockElement as HTMLElement);
-
-        mockCreateObjectURL = vi.fn().mockReturnValue('blob:test');
-        mockRevokeObjectURL = vi.fn();
-        URL.createObjectURL = mockCreateObjectURL;
-        URL.revokeObjectURL = mockRevokeObjectURL;
-
-        // Clear all existing loggers
-        await loggerManager.destroyAll();
-
-        // Reset loglevel globally
-        log.setLevel('debug');
+    const options = (overrides: Partial<LoggerOptions> & { loggerID: string }): LoggerOptions => ({
+        encryptionKey: key,
+        appName: 'test-app',
+        ...overrides,
     });
+
+    /** Creates an initialized logger and registers it for cleanup. */
+    const createLogger = async ({
+        name = 'test',
+        id = uniqueId(),
+        now,
+        ...rest
+    }: Partial<LoggerOptions> & { name?: string; id?: string; now?: () => number } = {}) => {
+        const logger = new Logger(name, now);
+        loggers.push(logger);
+        databases.push({ name, id });
+        await logger.initialize(options({ ...rest, loggerID: id }));
+        return logger;
+    };
 
     afterEach(async () => {
-        // Clean up any test loggers to prevent hanging intervals
+        await Promise.all(loggers.splice(0).map((logger) => logger.destroy().catch(() => {})));
         await Promise.all(
-            testLoggers.map((logger) => {
-                if (logger && typeof logger.destroy === 'function') {
-                    return logger.destroy();
-                }
-                return Promise.resolve();
-            })
+            databases.splice(0).map(({ name, id }) => new IndexedDBStorage(name, id).deleteDatabase().catch(() => {}))
         );
-        testLoggers.length = 0;
-
-        // Ensure all loggers are destroyed
-        await loggerManager.destroyAll();
-
-        // Clear any remaining intervals/timeouts
-        if (typeof global !== 'undefined' && global.gc) {
-            global.gc();
-        }
-    });
-
-    afterAll(async () => {
-        // Clean up all logger instances to prevent hanging
         await loggerManager.destroyAll();
     });
 
-    describe('Logger Class', () => {
-        it('should create a new Logger instance', () => {
-            const testLogger = new Logger('test');
-            testLoggers.push(testLogger);
+    describe('persistence', () => {
+        it('round-trips a line through IndexedDB', async () => {
+            const logger = await createLogger();
 
-            expect(testLogger).toEqual(expect.any(Logger));
-            expect(testLogger.getName()).toBe('test');
-            expect(testLogger.isInitialized()).toBe(false);
+            logger.info('hello world');
+
+            const logs = await logger.getLogs();
+            expect(logs).toContain('hello world');
+            expect(logs).toContain('INFO');
+            expect(logs).toContain('[test]');
         });
 
-        it('should initialize logger with encryption key', async () => {
-            const testLogger = new Logger('test');
-            testLoggers.push(testLogger);
+        it('writes lines in the order they were emitted', async () => {
+            const logger = await createLogger();
 
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                loggerName: 'test-logger',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
+            logger.info('first');
+            logger.info('second');
+            logger.info('third');
 
-            expect(testLogger.isInitialized()).toBe(true);
-            expect(testLogger.getEncryptionContextString()).toBe('test-app#test-logger');
+            const lines = (await logger.getLogs()).split('\n');
+            expect(lines.map((line) => line.split(': ')[1])).toEqual(['first', 'second', 'third']);
         });
 
-        it('should not reinitialize already initialized logger', async () => {
-            const testLogger = new Logger('test');
-            testLoggers.push(testLogger);
-            const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+        it('prefixes each line with an ISO timestamp and the level', async () => {
+            const at = Date.UTC(2026, 0, 2, 3, 4, 5);
+            const logger = await createLogger({ now: () => at });
 
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
+            logger.warn('careful');
+
+            expect(await logger.getLogs()).toMatch(/^2026-01-02T03:04:05\.000Z WARN \[test\]: careful$/);
+        });
+
+        it('buffers lines emitted before initialize and keeps their timestamps', async () => {
+            const at = Date.UTC(2026, 0, 1);
+            const id = uniqueId();
+            const logger = new Logger('test', () => at);
+            loggers.push(logger);
+            databases.push({ name: 'test', id });
+
+            logger.info('before init');
+            expect(await logger.getLogs()).toBe('');
+
+            await logger.initialize(options({ loggerID: id }));
+
+            const logs = await logger.getLogs();
+            expect(logs).toContain('before init');
+            expect(logs).toContain('2026-01-01T00:00:00.000Z');
+        });
+
+        it('persists arguments alongside the message', async () => {
+            const logger = await createLogger();
+
+            logger.info('with args', 'plain', { nested: { value: 1 } }, 42);
+
+            const logs = await logger.getLogs();
+            expect(logs).toContain('plain');
+            expect(logs).toContain('{"nested":{"value":1}}');
+            expect(logs).toContain('42');
+        });
+
+        it('serializes Error arguments with their stack', async () => {
+            const logger = await createLogger();
+
+            logger.info('boom', new Error('kaboom'));
+
+            const logs = await logger.getLogs();
+            expect(logs).toContain('Error: kaboom');
+        });
+
+        it('does not lose a line containing a circular argument', async () => {
+            const logger = await createLogger();
+            const circular: Record<string, unknown> = { name: 'loop' };
+            circular.self = circular;
+
+            logger.info('circular', circular);
+
+            expect(await logger.getLogs()).toContain('circular');
+        });
+
+        it('encrypts entries at rest', async () => {
+            const id = uniqueId();
+            const logger = await createLogger({ id });
+
+            logger.info('super secret value');
+            await logger.flush();
+
+            const stored = await inspect('test', id, (storage) => storage.retrieve());
+            expect(stored).toHaveLength(1);
+            expect(stored[0].data).not.toContain('super secret');
+        });
+    });
+
+    describe('console output', () => {
+        it('only echoes errors by default', async () => {
+            const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+            const info = vi.spyOn(console, 'info').mockImplementation(() => {});
+            const logger = await createLogger();
+
+            logger.info('quiet');
+            logger.error('loud');
+
+            expect(info).not.toHaveBeenCalled();
+            expect(error).toHaveBeenCalledWith('[test]', 'loud');
+        });
+
+        it('respects consoleLevels', async () => {
+            const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+            const logger = await createLogger({ consoleLevels: ['warn'] });
+
+            logger.warn('shown');
+
+            expect(warn).toHaveBeenCalledWith('[test]', 'shown');
+        });
+
+        it('echoes lines emitted before initialize', async () => {
+            const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+            const logger = new Logger('early');
+            loggers.push(logger);
+
+            logger.error('pre-init failure');
+
+            expect(error).toHaveBeenCalledWith('[early]', 'pre-init failure');
+        });
+    });
+
+    describe('reading', () => {
+        it('returns an empty string before initialize', async () => {
+            const logger = new Logger('uninitialized');
+            loggers.push(logger);
+
+            expect(await logger.getLogs()).toBe('');
+        });
+
+        it('de-duplicates concurrent reads', async () => {
+            const id = uniqueId();
+            const logger = await createLogger({ id });
+            logger.info('once');
+            await logger.flush();
+
+            const retrieve = vi.spyOn(IndexedDBStorage.prototype, 'retrieve');
+            const [a, b] = await Promise.all([logger.getLogs(), logger.getLogs()]);
+
+            expect(a).toBe(b);
+            expect(retrieve).toHaveBeenCalledTimes(1);
+        });
+
+        it('sees every line emitted before the read', async () => {
+            const logger = await createLogger();
+
+            logger.info('a');
+            logger.info('b');
+
+            // No flush: getLogs awaits the write chain itself.
+            expect((await logger.getLogs()).split('\n')).toHaveLength(2);
+        });
+
+        it('clears entries that cannot be decrypted', async () => {
+            const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+            const id = uniqueId();
+            const first = await createLogger({ id });
+            first.info('written with the old key');
+            await first.flush();
+            await first.destroy();
+
+            // A new session key cannot read the previous session's entries.
+            const second = new Logger('test');
+            loggers.push(second);
+            await second.initialize(options({ loggerID: id, encryptionKey: await generateAndImportKey() }));
+
+            expect(await second.getLogs()).toBe('');
+            expect(warn).toHaveBeenCalled();
+            expect(await inspect('test', id, (storage) => storage.count())).toBe(0);
+        });
+    });
+
+    describe('retention', () => {
+        it('drops entries older than retentionDays on cleanup', async () => {
+            const start = Date.UTC(2026, 0, 10);
+            const id = uniqueId();
+
+            const first = await createLogger({ id, now: () => start });
+            first.info('old line');
+            await first.flush();
+            await first.destroy();
+
+            // Same database, eight days later: the entry is past the 7-day default.
+            const second = new Logger('test', () => start + 8 * DAY_MS);
+            loggers.push(second);
+            await second.initialize(options({ loggerID: id }));
+
+            expect(await second.getLogs()).toBe('');
+        });
+
+        it('keeps entries inside the retention window', async () => {
+            const start = Date.UTC(2026, 0, 10);
+            const id = uniqueId();
+
+            const first = await createLogger({ id, now: () => start });
+            first.info('recent line');
+            await first.flush();
+            await first.destroy();
+
+            const second = new Logger('test', () => start + 2 * DAY_MS);
+            loggers.push(second);
+            await second.initialize(options({ loggerID: id }));
+
+            expect(await second.getLogs()).toContain('recent line');
+        });
+
+        it('trims to maxEntries on cleanup, keeping the newest', async () => {
+            const start = Date.UTC(2026, 0, 10);
+            const id = uniqueId();
+            let clock = start;
+
+            const first = await createLogger({ id, now: () => clock });
+            ['one', 'two', 'three', 'four'].forEach((message) => {
+                clock += 1000;
+                first.info(message);
             });
+            await first.flush();
+            await first.destroy();
 
-            // Try to initialize again
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app-2',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
+            const second = new Logger('test', () => clock);
+            loggers.push(second);
+            await second.initialize(options({ loggerID: id, maxEntries: 2 }));
 
-            expect(consoleSpy).toHaveBeenCalledWith(
-                "Logger 'test' already initialized, ignoring subsequent initialization"
+            const logs = await second.getLogs();
+            expect(logs).not.toContain('one');
+            expect(logs).not.toContain('two');
+            expect(logs).toContain('three');
+            expect(logs).toContain('four');
+        });
+    });
+
+    describe('lifecycle', () => {
+        it('reports initialization state', async () => {
+            const logger = new Logger('lifecycle');
+            loggers.push(logger);
+            expect(logger.isInitialized()).toBe(false);
+
+            const id = uniqueId();
+            databases.push({ name: 'lifecycle', id });
+            await logger.initialize(options({ loggerID: id }));
+
+            expect(logger.isInitialized()).toBe(true);
+        });
+
+        it('ignores a second initialize', async () => {
+            const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+            const logger = await createLogger();
+
+            await logger.initialize(options({ loggerID: uniqueId() }));
+
+            expect(warn).toHaveBeenCalledWith(expect.stringContaining('already initialized'));
+        });
+
+        it('clears logs on request', async () => {
+            const logger = await createLogger();
+            logger.info('temporary');
+            expect(await logger.getLogs()).toContain('temporary');
+
+            await logger.clearLogs();
+
+            expect(await logger.getLogs()).toBe('');
+        });
+
+        it('stops logging after destroy', async () => {
+            const logger = await createLogger();
+            logger.info('before');
+
+            await logger.destroy();
+
+            expect(logger.isInitialized()).toBe(false);
+            expect(await logger.getLogs()).toBe('');
+            // Still callable, just inert.
+            expect(() => logger.info('after')).not.toThrow();
+        });
+
+        it('downloads logs as a file', async () => {
+            const anchor = { href: '', download: '', style: {}, click: vi.fn() } as unknown as HTMLAnchorElement;
+            vi.spyOn(document, 'createElement').mockReturnValue(anchor as any);
+            vi.spyOn(document.body, 'appendChild').mockReturnValue(anchor);
+            vi.spyOn(document.body, 'removeChild').mockReturnValue(anchor);
+            const createObjectURL = vi.spyOn(URL, 'createObjectURL').mockReturnValue('blob:test');
+            const revokeObjectURL = vi.spyOn(URL, 'revokeObjectURL').mockImplementation(() => {});
+
+            const logger = await createLogger();
+            logger.info('downloadable');
+            await logger.downloadLogs();
+
+            expect(createObjectURL).toHaveBeenCalled();
+            expect(anchor.download).toMatch(/^test-logs-.*\.log$/);
+            expect(anchor.click).toHaveBeenCalled();
+            expect(revokeObjectURL).toHaveBeenCalledWith('blob:test');
+        });
+
+        it('uses an explicit download filename when given', async () => {
+            const anchor = { href: '', download: '', style: {}, click: vi.fn() } as unknown as HTMLAnchorElement;
+            vi.spyOn(document, 'createElement').mockReturnValue(anchor as any);
+            vi.spyOn(document.body, 'appendChild').mockReturnValue(anchor);
+            vi.spyOn(document.body, 'removeChild').mockReturnValue(anchor);
+            vi.spyOn(URL, 'createObjectURL').mockReturnValue('blob:test');
+            vi.spyOn(URL, 'revokeObjectURL').mockImplementation(() => {});
+
+            const logger = await createLogger();
+            await logger.downloadLogs('custom.log');
+
+            expect(anchor.download).toBe('custom.log');
+        });
+    });
+
+    describe('global error capture', () => {
+        it('records uncaught errors', async () => {
+            vi.spyOn(console, 'error').mockImplementation(() => {});
+            const logger = await createLogger();
+
+            window.dispatchEvent(new ErrorEvent('error', { message: 'window blew up' }));
+
+            expect(await logger.getLogs()).toContain('window blew up');
+        });
+
+        it('records unhandled rejections', async () => {
+            vi.spyOn(console, 'error').mockImplementation(() => {});
+            const logger = await createLogger();
+            const promise = Promise.resolve();
+
+            window.dispatchEvent(
+                new PromiseRejectionEvent('unhandledrejection', { promise, reason: new Error('rejected') })
             );
-            expect(testLogger.getEncryptionContextString()).toBe('test-app#test');
+
+            expect(await logger.getLogs()).toContain('rejected');
         });
 
-        it('should create separate loglevel instances', async () => {
-            const logger1 = new Logger('logger1');
-            const logger2 = new Logger('logger2');
-            testLoggers.push(logger1, logger2);
+        it('stops recording after destroy', async () => {
+            vi.spyOn(console, 'error').mockImplementation(() => {});
+            const logger = await createLogger();
+            await logger.destroy();
 
-            await logger1.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'app1',
-                loggerID: '',
-            });
-
-            await logger2.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'app2',
-                loggerID: '',
-            });
-
-            const loglevelInstance1 = logger1.getLoglevelInstance();
-            const loglevelInstance2 = logger2.getLoglevelInstance();
-
-            expect(loglevelInstance1).not.toBe(loglevelInstance2);
-            expect(loglevelInstance1).toBeDefined();
-            expect(loglevelInstance2).toBeDefined();
-        });
-
-        it('should queue logs before initialization', async () => {
-            const testLogger = new Logger('test');
-            testLoggers.push(testLogger);
-
-            // Log before initialization
-            testLogger.info('Pre-init message');
-
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            // `processPendingLogs` is fire-and-forget and writes through the persistence plugin.
-            // Poll a few times to give the async writes a chance to flush.
-            let logs = '';
-            for (let attempt = 0; attempt < 20; attempt++) {
-                await new Promise((resolve) => setTimeout(resolve, 50));
-                logs = await testLogger.getLogs();
-                if (logs.includes('Pre-init message')) {
-                    break;
-                }
-            }
-            expect(logs).toContain('Pre-init message');
-        });
-
-        it('should handle args processing for Error objects', async () => {
-            const testLogger = new Logger('test');
-            testLoggers.push(testLogger);
-
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            const error = new Error('Test error');
-            error.stack = 'Test stack trace';
-
-            testLogger.error('Error occurred', error);
-
-            await new Promise((resolve) => setTimeout(resolve, 10));
-
-            const logs = await testLogger.getLogs();
-            expect(logs).toContain('Error occurred');
-            expect(logs).toContain('Error: Test error');
-            expect(logs).toContain('Test stack trace');
-        });
-
-        it('should limit pending logs to prevent memory issues', async () => {
-            const testLogger = new Logger('test');
-            testLoggers.push(testLogger);
-
-            // Add more than 1000 pending logs
-            for (let i = 0; i < 550; i++) {
-                testLogger.info(`Message ${i}`);
-            }
-
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            await new Promise((resolve) => setTimeout(resolve, 20));
-
-            const logs = await testLogger.getLogs();
-            const messageCount = (logs.match(/Message \d+/g) || []).length;
-
-            // Should only have kept the last 500 messages (but due to processing timing, might be slightly more)
-            expect(messageCount).toBeLessThanOrEqual(550);
-            expect(logs).toContain('Message 549');
-        });
-
-        it('should download logs with custom filename', async () => {
-            const testLogger = new Logger('test');
-            testLoggers.push(testLogger);
-
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            testLogger.info('Download test message');
-            await new Promise((resolve) => setTimeout(resolve, 10));
-
-            await testLogger.downloadLogs('custom-filename.txt');
-
-            expect(mockCreateElement).toHaveBeenCalledWith('a');
-            expect(mockCreateObjectURL).toHaveBeenCalled();
-            expect(mockClick).toHaveBeenCalled();
-            expect(mockRevokeObjectURL).toHaveBeenCalledWith('blob:test');
-        });
-
-        it('should handle all logging methods', async () => {
-            const testLogger = new Logger('test');
-            testLoggers.push(testLogger);
-
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            // Test all logging methods
-            testLogger.debug('Debug message');
-            testLogger.info('Info message');
-            testLogger.warn('Warning message');
-            testLogger.error('Error message');
-            testLogger.trace('Trace message');
-            testLogger.log('Log message');
-
-            await new Promise((resolve) => setTimeout(resolve, 10));
-
-            const logs = await testLogger.getLogs();
-            expect(logs).toContain('Debug message');
-            expect(logs).toContain('Info message');
-            expect(logs).toContain('Warning message');
-            expect(logs).toContain('Error message');
-            expect(logs).toContain('Trace message');
-            expect(logs).toContain('Log message');
+            expect(() => window.dispatchEvent(new ErrorEvent('error', { message: 'after destroy' }))).not.toThrow();
         });
     });
+});
 
-    describe('LoggerManager', () => {
-        it('should return singleton instance', () => {
-            const manager1 = loggerManager;
-            const manager2 = loggerManager;
-            expect(manager1).toBe(manager2);
-        });
+describe('LoggerManager', () => {
+    let key: AesGcmCryptoKey;
+    const databases: { name: string; id: string }[] = [];
 
-        it('should create and manage multiple logger instances', async () => {
-            const logger1 = await loggerManager.createLogger('api', {
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            const logger2 = await loggerManager.createLogger('ui', {
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            testLoggers.push(logger1, logger2);
-
-            expect(logger1.getName()).toBe('api');
-            expect(logger2.getName()).toBe('ui');
-            expect(logger1).not.toBe(logger2);
-            expect(loggerManager.getAllLoggers().length).toBe(2);
-        });
-
-        it('should return same logger instance for same name', () => {
-            const logger1 = loggerManager.getLogger('duplicate');
-            const logger2 = loggerManager.getLogger('duplicate');
-
-            testLoggers.push(logger1);
-
-            expect(logger1).toBe(logger2);
-        });
-
-        it('should combine logs from all logger instances', async () => {
-            const apiLogger = await loggerManager.createLogger('api', {
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            const uiLogger = await loggerManager.createLogger('ui', {
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            testLoggers.push(apiLogger, uiLogger);
-
-            apiLogger.info('API message');
-            uiLogger.info('UI message');
-
-            await new Promise((resolve) => setTimeout(resolve, 10));
-
-            const allLogs = await loggerManager.getAllLogs();
-
-            expect(allLogs).toContain('API message');
-            expect(allLogs).toContain('UI message');
-        });
-
-        it('should clear logs from all instances', async () => {
-            // Clean up first to avoid conflicts
-            await loggerManager.destroyAll();
-
-            const logger1 = await loggerManager.createLogger('clear-test-1', {
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            testLoggers.push(logger1);
-
-            logger1.info('Test message');
-            await new Promise((resolve) => setTimeout(resolve, 10));
-
-            await loggerManager.clearAllLogs();
-
-            const logs1 = await logger1.getLogs();
-            expect(logs1).toBe('');
-
-            // Clean up immediately
-            await logger1.destroy();
-        });
-
-        it('should download combined logs from all instances', async () => {
-            // Clean up any existing loggers first to avoid conflicts
-            await loggerManager.destroyAll();
-
-            const logger1 = await loggerManager.createLogger('download-test-logger', {
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            testLoggers.push(logger1);
-
-            logger1.info('Combined download test');
-            await new Promise((resolve) => setTimeout(resolve, 20));
-
-            await loggerManager.downloadAllLogs('combined-logs.txt');
-
-            expect(mockCreateElement).toHaveBeenCalledWith('a');
-            expect(mockCreateObjectURL).toHaveBeenCalled();
-            expect(mockClick).toHaveBeenCalled();
-
-            // Clean up immediately after test
-            await logger1.destroy();
-        });
-
-        it('should remove specific logger instance', async () => {
-            const testLogger = await loggerManager.createLogger('removeme', {
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            expect(loggerManager.getAllLoggers()).toContain(testLogger);
-
-            await loggerManager.removeLogger('removeme');
-
-            expect(loggerManager.getAllLoggers()).not.toContain(testLogger);
-        });
-
-        it('should destroy all logger instances', async () => {
-            await loggerManager.createLogger('temp1', {
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            await loggerManager.createLogger('temp2', {
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            expect(loggerManager.getAllLoggers().length).toBe(2);
-
-            await loggerManager.destroyAll();
-
-            expect(loggerManager.getAllLoggers().length).toBe(0);
-        });
+    beforeAll(async () => {
+        key = await generateAndImportKey();
     });
 
-    describe('Default Logger Export', () => {
-        it('should export default logger instance', () => {
-            expect(logger).toEqual(expect.any(Logger));
-            expect(logger.getName()).toBe('default');
+    const create = async (name: string) => {
+        const id = uniqueId();
+        databases.push({ name, id });
+        return loggerManager.createLogger(name, {
+            encryptionKey: key,
+            appName: 'test-app',
+            loggerID: id,
         });
+    };
 
-        it('should be same as loggerManager.getLogger("default")', () => {
-            const defaultFromManager = loggerManager.getLogger('default');
-            expect(logger.getName()).toBe(defaultFromManager.getName());
-        });
+    afterEach(async () => {
+        // Destroy first so no connection is left blocking deletion.
+        await loggerManager.destroyAll();
+        await Promise.all(
+            databases.splice(0).map(({ name, id }) => new IndexedDBStorage(name, id).deleteDatabase().catch(() => {}))
+        );
     });
 
-    describe('Integration Tests', () => {
-        it('should handle complete logging workflow', async () => {
-            const testLogger = new Logger('integration-test');
-            testLoggers.push(testLogger);
-
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'integration-app',
-                loggerName: 'integration-logger',
-                maxEntries: 100,
-                retentionDays: 30,
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            // Test that the logger is initialized and can handle logging
-            expect(testLogger.isInitialized()).toBe(true);
-
-            // Test that all logging methods are callable without errors
-            expect(() => {
-                testLogger.debug('Debug message');
-                testLogger.info('Info message');
-                testLogger.warn('Warning message');
-                testLogger.error('Error message');
-                testLogger.trace('Trace message');
-            }).not.toThrow();
-
-            // Test cleanup and basic operations
-            await testLogger.clearLogs();
-            await testLogger.triggerCleanup();
-
-            expect(testLogger.isInitialized()).toBe(true);
-        });
-
-        // Skipped in browser environment due to read-only indexedDB
-        it.skip('should handle storage fallback scenarios', async () => {
-            const testLogger = new Logger('fallback-test');
-            testLoggers.push(testLogger);
-
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'fallback-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            testLogger.info('Fallback test message');
-            await new Promise((resolve) => setTimeout(resolve, 10));
-
-            const logs = await testLogger.getLogs();
-            expect(logs).toContain('Fallback test message');
-        });
-
-        it('should enforce maximum entries limit', async () => {
-            const testLogger = new Logger('max-entries-test');
-            testLoggers.push(testLogger);
-
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'test-app',
-                maxEntries: 3,
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            // Add more logs than the limit with small delays to ensure different timestamps
-            for (let i = 1; i <= 5; i++) {
-                testLogger.info(`Message ${i}`);
-                await new Promise((resolve) => setTimeout(resolve, 10));
-            }
-
-            await new Promise((resolve) => setTimeout(resolve, 20));
-
-            const logs = await testLogger.getLogs();
-            const lines = logs.split('\n').filter((line) => line.trim());
-
-            // Should only have the last 3 messages due to FIFO ejection
-            expect(lines.length).toBeLessThanOrEqual(3);
-
-            if (lines.length > 0) {
-                const hasRecentMessage =
-                    logs.includes('Message 3') || logs.includes('Message 4') || logs.includes('Message 5');
-                expect(hasRecentMessage).toBe(true);
-            }
-        });
+    it('returns the same instance for a name', () => {
+        expect(loggerManager.getLogger('reused')).toBe(loggerManager.getLogger('reused'));
     });
 
-    describe('Error Handling', () => {
-        it('should handle storage errors silently', async () => {
-            // This test would require mocking storage methods to throw errors
-            // The logger should handle these gracefully without breaking console output
-
-            const testLogger = new Logger('storage-error-test');
-            testLoggers.push(testLogger);
-
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'storage-error-app',
-                forceMemoryStorage: true,
-                loggerID: '',
-            });
-
-            expect(() => {
-                testLogger.info('This should work even with storage errors');
-            }).not.toThrow();
-        });
-
-        it('should throw error when setting up persistence plugin without loglevel instance', () => {
-            const testLogger = new Logger('error-test');
-            testLoggers.push(testLogger);
-
-            expect(() => {
-                (testLogger as any).setupPersistencePlugin();
-            }).toThrow(new Error('Cannot setup persistence plugin: loglevel instance not created'));
-        });
-
-        it('should throw error when assigning logging methods without loglevel instance', () => {
-            const testLogger = new Logger('error-test');
-            testLoggers.push(testLogger);
-
-            expect(() => {
-                (testLogger as any).assignLoggingMethods();
-            }).toThrow(new Error('Cannot assign logging methods: loglevel instance not created'));
-        });
-
-        // Skipped - requires proper IndexedDB environment setup
-        // The actual functionality works but requires proper IndexedDB setup
-        it.skip('should discover and clean up multiple logger databases', async () => {});
+    it('creates and initializes a logger in one step', async () => {
+        const logger = await create('created');
+        expect(logger.isInitialized()).toBe(true);
     });
 
-    // These exercise the real storage-selection path (no forceMemoryStorage). The shared
-    // package runs in Chromium via Playwright, so `indexedDB` and `localStorage` are genuine.
-    describe('Storage backend selection', () => {
-        const deleteDatabase = (name: string) =>
-            new Promise<void>((resolve, reject) => {
-                const request = indexedDB.deleteDatabase(name);
-                request.onsuccess = () => resolve();
-                request.onerror = () => reject();
-                request.onblocked = () => reject();
-            });
+    it('combines logs from every initialized logger', async () => {
+        const first = await create('alpha');
+        const second = await create('beta');
 
-        // Track anything the tests persist so we don't leak state between runs.
-        const createdDbNames = new Set<string>();
+        first.info('from alpha');
+        second.info('from beta');
 
-        afterEach(async () => {
-            // Close the loggers' storage connections first, otherwise deleteDatabase() blocks
-            // on the still-open connection (the outer afterEach destroys them only afterwards).
-            await Promise.all(testLoggers.map((testLogger) => testLogger.destroy().catch(() => {})));
+        const logs = await loggerManager.getAllLogs();
+        expect(logs).toContain('from alpha');
+        expect(logs).toContain('from beta');
+    });
 
-            await Promise.all(Array.from(createdDbNames).map((name) => deleteDatabase(name).catch(() => {})));
-            createdDbNames.clear();
+    it('skips uninitialized loggers', async () => {
+        const logger = await create('initialized');
+        logger.info('present');
+        loggerManager.getLogger('never-initialized');
 
-            Object.keys(localStorage)
-                .filter((key) => key.startsWith(LOGGER_DB_PREFIX))
-                .forEach((key) => localStorage.removeItem(key));
-        });
+        expect(await loggerManager.getAllLogs()).toContain('present');
+    });
 
-        // Poll getLogs a few times since persistence goes through the async plugin.
-        const waitForLog = async (testLogger: Logger, needle: string) => {
-            let logs = '';
-            for (let attempt = 0; attempt < 20; attempt++) {
-                await new Promise((resolve) => setTimeout(resolve, 50));
-                logs = await testLogger.getLogs();
-                if (logs.includes(needle)) {
-                    break;
-                }
-            }
-            return logs;
-        };
+    it('clears every logger', async () => {
+        const first = await create('alpha');
+        const second = await create('beta');
+        first.info('a');
+        second.info('b');
 
-        it('uses IndexedDB when storage is accessible and round-trips logs', async () => {
-            const loggerName = `idb-path-${Date.now()}`;
-            createdDbNames.add(`${LOGGER_DB_PREFIX}${loggerName}`);
+        await loggerManager.clearAllLogs();
 
-            const testLogger = new Logger(loggerName);
-            testLoggers.push(testLogger);
+        expect(await loggerManager.getAllLogs()).toBe('');
+    });
 
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'idb-test-app',
-                loggerID: '',
-            });
+    it('removes a logger', async () => {
+        const logger = await create('removable');
 
-            // Storage is selected asynchronously (initialize() does not await it).
-            await (testLogger as any).storageInitialized;
+        await loggerManager.removeLogger('removable');
 
-            // Selected the IndexedDB backend, not a fallback.
-            expect((testLogger as any).storage).toBeInstanceOf(IndexedDBStorage);
+        expect(logger.isInitialized()).toBe(false);
+        expect(loggerManager.getLogger('removable')).not.toBe(logger);
+    });
 
-            testLogger.info('IndexedDB round-trip message');
-            const logs = await waitForLog(testLogger, 'IndexedDB round-trip message');
-            expect(logs).toContain('IndexedDB round-trip message');
-
-            // And the log really landed in an IndexedDB database with the expected name.
-            const dbNames = (await indexedDB.databases()).map((db) => db.name);
-            expect(dbNames).toContain(`${LOGGER_DB_PREFIX}${loggerName}`);
-        });
-
-        it('instantiates IndexedDBStorage exactly once per createLogger', async () => {
-            const loggerName = `single-idb-${Date.now()}`;
-            createdDbNames.add(`${LOGGER_DB_PREFIX}${loggerName}`);
-
-            // The constructor calls getDatabaseName() exactly once (and nothing else does),
-            // so its call count tracks how many IndexedDBStorage instances were created.
-            const ctorProbe = vi.spyOn(IndexedDBStorage.prototype as any, 'getDatabaseName');
-
-            const testLogger = await loggerManager.createLogger(loggerName, {
-                encryptionKey: mockEncryptionKey,
-                appName: 'idb-test-app',
-                loggerID: '',
-            });
-            testLoggers.push(testLogger);
-
-            // Let storage init settle, plus the startCleanup() pass scheduled on it, in case
-            // cleanup would spin up a second storage instance.
-            await (testLogger as any).storageInitialized;
-            await new Promise((resolve) => setTimeout(resolve, 200));
-
-            expect((testLogger as any).storage).toBeInstanceOf(IndexedDBStorage);
-            expect(ctorProbe).toHaveBeenCalledTimes(1);
-        });
-
-        it('creates only the requested database (no throwaway __test__ probe db)', async () => {
-            const loggerName = `only-own-db-${Date.now()}`;
-            const dbName = `${LOGGER_DB_PREFIX}${loggerName}`;
-            createdDbNames.add(dbName);
-
-            const namesBefore = new Set((await indexedDB.databases()).map((db) => db.name));
-
-            const testLogger = await loggerManager.createLogger(loggerName, {
-                encryptionKey: mockEncryptionKey,
-                appName: 'idb-test-app',
-                loggerID: '',
-            });
-            testLoggers.push(testLogger);
-
-            // Let storage init + the scheduled startCleanup() pass settle, so any stray
-            // throwaway database (e.g. the old `__test__`/`_test` probe) would have appeared.
-            await (testLogger as any).storageInitialized;
-            await new Promise((resolve) => setTimeout(resolve, 200));
-
-            // The only database that came into existence is the requested one - no probe dbs.
-            const newNames = (await indexedDB.databases())
-                .map((db) => db.name)
-                .filter((name) => name && !namesBefore.has(name));
-            expect(newNames).toEqual([dbName]);
-        });
-
-        it('falls back to LocalStorage when IndexedDB is not accessible', async () => {
-            // Make detectStorageCapabilities report the backend as inaccessible: it probes
-            // with indexedDB.databases(), so a rejection there flips isAccessible to false.
-            vi.spyOn(indexedDB, 'databases').mockRejectedValue(new Error('IndexedDB blocked'));
-
-            const loggerName = `fallback-path-${Date.now()}`;
-
-            const testLogger = new Logger(loggerName);
-            testLoggers.push(testLogger);
-
-            await testLogger.initialize({
-                encryptionKey: mockEncryptionKey,
-                appName: 'fallback-test-app',
-                loggerID: '',
-            });
-
-            // Storage is selected asynchronously (initialize() does not await it).
-            await (testLogger as any).storageInitialized;
-
-            // Fell back to LocalStorage rather than IndexedDB or memory.
-            expect((testLogger as any).storage).toBeInstanceOf(LocalStorage);
-
-            testLogger.info('LocalStorage fallback message');
-            const logs = await waitForLog(testLogger, 'LocalStorage fallback message');
-            expect(logs).toContain('LocalStorage fallback message');
-
-            // And the log was actually written to localStorage under the logger prefix.
-            const hasLoggerKey = Object.keys(localStorage).some((key) => key.startsWith(LOGGER_DB_PREFIX));
-            expect(hasLoggerKey).toBe(true);
-        });
+    it('ignores removing an unknown logger', async () => {
+        await expect(loggerManager.removeLogger('missing')).resolves.toBeUndefined();
     });
 });
