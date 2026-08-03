@@ -73,7 +73,7 @@ const LumoAgentPanel = ({
                     />
                 );
             case 'chip':
-                return <Chip key={item.id} label={item.label} payload={item.payload} />;
+                return <Chip key={item.id} label={item.label} payload={item.payload} className="lumo-agent-tool-row" />;
             case 'servertool': {
                 const meta = serverToolMeta?.[item.tool];
                 return (
@@ -82,6 +82,7 @@ const LumoAgentPanel = ({
                         label={meta?.label ?? item.tool}
                         icon={meta?.icon ?? IcGlobe}
                         sources={item.sources}
+                        className="lumo-agent-tool-row"
                     />
                 );
             }
