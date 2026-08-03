@@ -375,35 +375,16 @@ describe('Logger', () => {
         });
     });
 
-    describe('global error capture', () => {
-        it('records uncaught errors', async () => {
-            vi.spyOn(console, 'error').mockImplementation(() => {});
-            const logger = await createLogger();
+    it('does not attach any global error handling', async () => {
+        const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+        const logger = await createLogger();
 
-            window.dispatchEvent(new ErrorEvent('error', { message: 'window blew up' }));
+        window.dispatchEvent(new ErrorEvent('error', { message: 'window blew up' }));
 
-            expect(await logger.getLogs()).toContain('window blew up');
-        });
-
-        it('records unhandled rejections', async () => {
-            vi.spyOn(console, 'error').mockImplementation(() => {});
-            const logger = await createLogger();
-            const promise = Promise.resolve();
-
-            window.dispatchEvent(
-                new PromiseRejectionEvent('unhandledrejection', { promise, reason: new Error('rejected') })
-            );
-
-            expect(await logger.getLogs()).toContain('rejected');
-        });
-
-        it('stops recording after destroy', async () => {
-            vi.spyOn(console, 'error').mockImplementation(() => {});
-            const logger = await createLogger();
-            await logger.destroy();
-
-            expect(() => window.dispatchEvent(new ErrorEvent('error', { message: 'after destroy' }))).not.toThrow();
-        });
+        expect(await logger.getLogs()).toBe('');
+        // The browser reports the dispatched event to the console itself, so only the
+        // logger's own prefixed output would indicate it had listened in.
+        expect(error.mock.calls.filter(([first]) => first === '[test]')).toHaveLength(0);
     });
 });
 
