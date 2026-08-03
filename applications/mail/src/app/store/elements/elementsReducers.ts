@@ -209,6 +209,14 @@ export const manualFulfilled = (state: Draft<ElementsState>) => {
     state.pendingRequest = false;
 };
 
+export const esSearchStarted = (state: Draft<ElementsState>) => {
+    state.pendingESSearches += 1;
+};
+
+export const esSearchSettled = (state: Draft<ElementsState>) => {
+    state.pendingESSearches = Math.max(0, state.pendingESSearches - 1);
+};
+
 export const removeExpired = (state: Draft<ElementsState>, action: PayloadAction<Element>) => {
     delete state.elements[action.payload.ID || ''];
 };

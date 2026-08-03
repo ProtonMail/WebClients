@@ -52,6 +52,9 @@ export const selectCategoryIDs = createSelector([selectParams], (params): Catego
     return EMPTY_ARRAY;
 });
 
+/** Unlike {@link loading}, stays true across ES's intermediate result batches. */
+export const esSearching = (state: MailState) => state.elements.pendingESSearches > 0;
+
 const beforeFirstLoad = (state: MailState) => state.elements.beforeFirstLoad;
 export const elementsMap = (state: MailState) => state.elements.elements;
 export const selectPage = (state: MailState) => state.elements.page;
