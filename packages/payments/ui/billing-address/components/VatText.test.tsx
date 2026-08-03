@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 
 import { CYCLE, PLANS } from '../../../core/constants';
-import { SubscriptionMode, TaxInclusive } from '../../../core/subscription/constants';
+import { SubscriptionMode, TaxMode } from '../../../core/subscription/constants';
 import type { SubscriptionEstimation } from '../../../core/subscription/interface';
 import { InclusiveVatText } from './VatText';
 
@@ -13,7 +13,7 @@ describe('InclusiveVatText', () => {
         AmountDue: 1200,
         Currency: 'USD',
         Cycle: CYCLE.YEARLY,
-        TaxInclusive: TaxInclusive.INCLUSIVE,
+        TaxMode: TaxMode.INCLUSIVE,
         Coupon: null,
         SubscriptionMode: SubscriptionMode.Regular,
         BaseRenewAmount: null,
@@ -35,9 +35,9 @@ describe('InclusiveVatText', () => {
     });
 
     describe('when tax is not inclusive', () => {
-        it('returns null when TaxInclusive is not INCLUSIVE', () => {
+        it('returns null when TaxMode is not INCLUSIVE', () => {
             const checkResult = createMockCheckResult({
-                TaxInclusive: TaxInclusive.EXCLUSIVE,
+                TaxMode: TaxMode.EXCLUSIVE,
             });
 
             const { container } = render(<InclusiveVatText checkResult={checkResult} />);
@@ -45,9 +45,9 @@ describe('InclusiveVatText', () => {
             expect(container.firstChild).toBeNull();
         });
 
-        it('returns null when TaxInclusive is undefined', () => {
+        it('returns null when TaxMode is undefined', () => {
             const checkResult = createMockCheckResult({
-                TaxInclusive: undefined,
+                TaxMode: undefined,
             });
 
             const { container } = render(<InclusiveVatText checkResult={checkResult} />);

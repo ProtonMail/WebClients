@@ -15,8 +15,8 @@ import { CYCLE, PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '../../core/consta
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '../../core/interface';
 import { getPlanNameFromIDs, isLifetimePlanSelected } from '../../core/plan/helpers';
 import type { PlansMap } from '../../core/plan/interface';
-import { SubscriptionMode, TaxInclusive } from '../../core/subscription/constants';
-import { getPlanName, getPlanTitle } from '../../core/subscription/helpers';
+import { SubscriptionMode, TaxMode } from '../../core/subscription/constants';
+import { getPlanName, getPlanTitle, getTaxMode } from '../../core/subscription/helpers';
 import type { Coupon, Subscription, SubscriptionEstimation } from '../../core/subscription/interface';
 import { isFreeSubscription } from '../../core/type-guards';
 
@@ -85,7 +85,7 @@ export function calculateRenewalTimeDuringCheckout(
 function formatPriceWithTaxes(currency: Currency, amount: number, checkout: PaymentsCheckoutUI) {
     const formattedPrice = getSimplePriceString(currency, amount);
 
-    if (checkout.checkResult.TaxInclusive === TaxInclusive.EXCLUSIVE) {
+    if (getTaxMode(checkout.checkResult) === TaxMode.EXCLUSIVE) {
         // translator: This will be displayed as part of other text. Example: "CHF 2256.56 (excl. tax)"
         return c('Payments').t`${formattedPrice} (excl. tax)`;
     }
