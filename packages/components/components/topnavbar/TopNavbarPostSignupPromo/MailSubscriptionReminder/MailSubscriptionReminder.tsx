@@ -1,14 +1,12 @@
 import { useRef } from 'react';
 
-import { useOrganization } from '@proton/account/organization/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { FeatureCode, useFeature } from '@proton/features';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
+import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import {
     APPS,
     type APP_NAMES,
@@ -39,9 +37,7 @@ const upsellRef = getUpsellRef({
 });
 
 export const MailSubscriptionReminder = ({ app }: Props) => {
-    const [subscription] = useSubscription();
-    const [organization] = useOrganization();
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const { hasAtLeastOneB2BTrial } = useTrialInfo();
     const buttonRef = useRef(null);
 
     const goToSettings = useSettingsLink();
@@ -54,7 +50,7 @@ export const MailSubscriptionReminder = ({ app }: Props) => {
 
     const onUpgradeClick = () => {
         if (onUpgrade) {
-            onUpgrade();
+            void onUpgrade();
         } else {
             goToSettings(upgradePath, APPS.PROTONMAIL);
         }
@@ -64,7 +60,7 @@ export const MailSubscriptionReminder = ({ app }: Props) => {
         void update(Math.floor(Date.now() / 1000));
     };
 
-    if (isB2BTrial) {
+    if (hasAtLeastOneB2BTrial) {
         return null;
     }
 

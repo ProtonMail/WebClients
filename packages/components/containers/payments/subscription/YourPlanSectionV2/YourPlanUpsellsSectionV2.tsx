@@ -35,9 +35,9 @@ import {
     hasVPN2024,
     hasVPNPassBundle,
     hasVisionary,
-    isExFamilyTrial,
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription } from '@proton/payments/core/subscription/interface';
+import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { PaymentsContextProvider, isPaymentsPreloaded, usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
@@ -131,7 +131,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
     const hasLumoPlus = hasLumo(subscription);
 
     // For users on Ex-Family Unlimited trial, show Unlimited 1m + 12m upsell
-    const exFamilyTrial = isExFamilyTrial(subscription);
+    const exFamilyTrial = getTrialInfoForSingleSubscription(subscription).isFamilyTrial;
 
     // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
     const isFreeUser = hasMailFree || hasDriveFree || hasPassFree || hasVPNFree || hasLumoPlus || hasMeetFree;

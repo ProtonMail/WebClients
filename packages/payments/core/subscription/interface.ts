@@ -1,7 +1,7 @@
 import type { CheckSubscriptionData } from '../api/api';
 import type { ADDON_NAMES, PLANS } from '../constants';
 import type { InvalidCouponError, WrongBillingAddressError } from '../errors';
-import type { Currency, Cycle } from '../interface';
+import type { Currency, Cycle, FreeSubscription } from '../interface';
 import type { BasePlansMap, Plan, SubscriptionPlan } from '../plan/interface';
 import type { Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive, TaxMode, TrialType } from './constants';
 
@@ -72,6 +72,8 @@ export interface Subscription {
      */
     IsPrepaid: boolean;
 }
+
+export type MaybeFreeSubscription = Subscription | FreeSubscription | undefined;
 
 export type Coupon = {
     Code: string;

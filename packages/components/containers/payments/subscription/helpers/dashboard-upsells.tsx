@@ -992,6 +992,6 @@ export const useUpsellsToDisplay = (
 
     return {
         upsells,
-        loading: loading,
+        loading,
     };
 };
