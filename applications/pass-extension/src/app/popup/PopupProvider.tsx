@@ -19,7 +19,7 @@ import { syncRequest } from '@proton/pass/store/actions/requests';
 import { selectRequestInFlight } from '@proton/pass/store/selectors/../request/selectors';
 import { selectLatestDraft } from '@proton/pass/store/selectors/items';
 import type { State } from '@proton/pass/store/types';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS, TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { PopupInitialState } from '@proton/pass/types/worker/state';
 import { AppStatus } from '@proton/pass/types/worker/state';
@@ -69,7 +69,12 @@ export const PopupProvider: FC<PropsWithChildren<Props>> = ({ children, ready })
         if (selectedItem) selectItem(selectedItem.shareId, selectedItem.itemId, { filters });
         else setFilters(filters);
 
-        onTelemetry(TelemetryEventName.ExtensionUsed, {}, { modelVersion: MODEL_VERSION });
+        onTelemetry(
+            TelemetryEventName.ExtensionUsed,
+            {},
+            // no page DOM available here: this fires from the popup, not a content script
+            { modelVersion: MODEL_VERSION, ...NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS }
+        );
     }, []);
 
     useEffect(() => {
