@@ -9,10 +9,9 @@ const useOLESFeatureStatus = () => {
     const [user, userLoading] = useUser();
     const [organization, organizationLoading] = useOrganization();
     const [subscription, subscriptionLoading] = useSubscription();
-    const backendFlag: boolean = useFlag('OlesM1');
     const clientFlag: boolean = useFlag('OrganizationLevelEasySwitch');
 
-    const featureSupported = Boolean(backendFlag) && isOrganizationOLESEligible({ organization });
+    const featureSupported = isOrganizationOLESEligible({ organization });
     const creatingEnabled = featureSupported && Boolean(clientFlag);
     const allowedForUser = isUserOLESEligible({ user, organization, subscription });
     const loading = userLoading || organizationLoading || subscriptionLoading;
