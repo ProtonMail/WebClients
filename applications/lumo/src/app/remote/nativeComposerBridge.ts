@@ -50,6 +50,8 @@ export enum LumoMode {
 export type AspectRatioKey<T extends string = ImageAspectRatio> = T extends `${infer A}:${infer B}` ? `${A}_${B}` : T;
 
 export interface AspectRatioInfo {
+    /** Underscore form (e.g. `'16_9'`) — what native passes back to `changeAspectRatio`. */
+    key: AspectRatioKey;
     width: number;
     height: number;
     ratio: ImageAspectRatio;
@@ -61,24 +63,36 @@ const toAspectRatioKey = (ratio: ImageAspectRatio): AspectRatioKey => ratio.repl
  * The available aspect ratios, computed from `IMAGE_ASPECT_RATIOS` (the single
  * source of truth in types-api). Each `'w:h'` string is self-describing, so the
  * width/height and the underscore key are all derived — nothing is hardcoded.
+ *
+ * An **array**, not a keyed object, because this crosses the native bridge and the
+ * order is part of the contract: the picker renders these top to bottom. A JS object
+ * cannot express that. `WKScriptMessage` hands iOS an unordered `NSDictionary`, so
+ * WebKit discards key order before the app runs a single line — measurably, and with
+ * no interception point. An array is the only shape whose order survives the trip.
+ *
+ * The key moves into each entry, so it stays part of the model rather than being
+ * something native has to reconstruct.
  */
-export const AspectRatio = Object.fromEntries(
-    IMAGE_ASPECT_RATIOS.map((ratio) => {
-        const [width, height] = ratio.split(':').map(Number);
-        return [toAspectRatioKey(ratio), { width, height, ratio } satisfies AspectRatioInfo];
-    })
-) as Record<AspectRatioKey, AspectRatioInfo>;
+export const AVAILABLE_ASPECT_RATIOS: AspectRatioInfo[] = IMAGE_ASPECT_RATIOS.map((ratio) => {
+    const [width, height] = ratio.split(':').map(Number);
+    return { key: toAspectRatioKey(ratio), width, height, ratio } satisfies AspectRatioInfo;
+});
 
 export const DEFAULT_ASPECT_RATIO_KEY: AspectRatioKey = toAspectRatioKey(IMAGE_ASPECT_RATIOS[0]);
 
-/** Reverse lookup (colon → underscore key), built once from `AspectRatio`. */
+/** Reverse lookup (colon → underscore key), built once from `AVAILABLE_ASPECT_RATIOS`. */
 const imageRatioToKeyMap = new Map<ImageAspectRatio, AspectRatioKey>(
-    (Object.entries(AspectRatio) as [AspectRatioKey, AspectRatioInfo][]).map(([key, info]) => [info.ratio, key])
+    AVAILABLE_ASPECT_RATIOS.map((info) => [info.ratio, info.key])
+);
+
+/** Forward lookup (underscore key → entry), built once from `AVAILABLE_ASPECT_RATIOS`. */
+const keyToAspectRatioMap = new Map<AspectRatioKey, AspectRatioInfo>(
+    AVAILABLE_ASPECT_RATIOS.map((info) => [info.key, info])
 );
 
 /** Native → web: maps an underscore key back to the web's `ImageAspectRatio`. */
 export const aspectRatioKeyToImageRatio = (key: AspectRatioKey): ImageAspectRatio =>
-    AspectRatio[key]?.ratio ?? AspectRatio[DEFAULT_ASPECT_RATIO_KEY].ratio;
+    keyToAspectRatioMap.get(key)?.ratio ?? keyToAspectRatioMap.get(DEFAULT_ASPECT_RATIO_KEY)!.ratio;
 
 /** Web → state: maps an `ImageAspectRatio` to its underscore key. */
 export const imageRatioToAspectRatioKey = (ratio: ImageAspectRatio): AspectRatioKey =>
@@ -179,8 +193,13 @@ export interface State {
     isGhostModeEnabled: boolean;
     isWebSearchEnabled: boolean;
     isCreateImageEnabled: boolean;
-    /** All selectable aspect ratios (with width/height so native can render proportioned icons). */
-    availableAspectRatios: Record<AspectRatioKey, AspectRatioInfo>;
+    /**
+     * All selectable aspect ratios (with width/height so native can render proportioned
+     * icons), **in the order the picker must show them**. Ordered — see
+     * `AVAILABLE_ASPECT_RATIOS`; native has no way to recover an order this array doesn't
+     * carry. Each entry carries its own `key`.
+     */
+    availableAspectRatios: AspectRatioInfo[];
     /** Currently-selected aspect ratio, underscore form (e.g. `'16_9'`). */
     selectedAspectRatio: AspectRatioKey;
     isVisible: boolean;
@@ -325,7 +344,7 @@ class NativeComposerApi {
         isMaxModelAvailable: true,
         responseMode: DEFAULT_RESPONSE_MODE,
         isCreateImageEnabled: false,
-        availableAspectRatios: AspectRatio,
+        availableAspectRatios: AVAILABLE_ASPECT_RATIOS,
         selectedAspectRatio: DEFAULT_ASPECT_RATIO_KEY,
         attachedFiles: [],
         isWebSearchEnabled: false,
