@@ -29,13 +29,11 @@ import { convertToFile } from '../attachment/attachmentConverter';
 import { getExpiresIn } from '../expiration';
 import { getEmbeddedImages, getRemoteImages, updateImages } from './messageImages';
 
+export { CLASSNAME_BLOCKQUOTE } from './messageDraftConstants';
+export { formatRecipientsString } from './messageDraftFormat';
+
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
-export const CLASSNAME_BLOCKQUOTE = 'protonmail_quote';
-
-/**
- * Copy embedded images from the reference message
- */
 export const keepImages = (message: PartialMessageState) => {
     // Embedded images in a loading state can end up blocking the composer.
     // Mitigating this issue by marking loading images as `not-loaded` so the draft code can call `decryptEmbeddedImages`
@@ -154,22 +152,6 @@ export const handleActions = (
         default:
             return newCopy(referenceMessage, useEncrypted);
     }
-};
-
-/**
- * Format a recipient to the string that is displayed at the beginning of blockquotes
- * For HTML content, useHtmlEntities should be true
- */
-
-export const formatRecipientsString = (recipient: Recipient[] = [], format: 'html' | 'plaintext') => {
-    return recipient
-        .map((recipient) => {
-            const name = recipient?.Name || recipient?.Address;
-            const address = recipient?.Address;
-            const [open, close] = format === 'html' ? ['&lt;', '&gt;'] : ['<', '>'];
-            return `${name} ${open}${address}${close}`;
-        })
-        .join(', ');
 };
 
 interface CreateNewDraftParams {

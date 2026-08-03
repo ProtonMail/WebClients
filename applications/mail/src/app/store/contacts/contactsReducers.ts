@@ -5,7 +5,7 @@ import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
-import { mailContactsInitialState } from './contactsSlice';
+import { mailContactsInitialState } from './contactsInitialState';
 import type { ContactsMap, ContactsMapWithDuplicates, ContactsState, GroupsWithContactsMap } from './contactsTypes';
 
 const toMapWithDuplicates = (contacts: ContactEmail[]) => {

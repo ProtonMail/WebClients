@@ -35,7 +35,7 @@ jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus', () => ({
     default: jest.fn(),
 }));
 
-jest.mock('proton-mail/containers/globalModals/GlobalModalProvider', () => ({
+jest.mock('proton-mail/containers/globalModals/globalModalContext', () => ({
     useMailGlobalModals: jest.fn(() => ({ notify: jest.fn() })),
 }));
 
@@ -79,7 +79,7 @@ describe('useShowBYOESpotlightModal', () => {
         require('@proton/activation/src/logic/sync/sync.selectors').selectSyncListLoadingState;
     const mockUseBYOEFeatureStatus = require('@proton/activation/src/hooks/useBYOEFeatureStatus').default as jest.Mock;
     const mockUseFeature = require('@proton/features/useFeature').default as jest.Mock;
-    const mockNotify = require('proton-mail/containers/globalModals/GlobalModalProvider').useMailGlobalModals;
+    const mockNotify = require('proton-mail/containers/globalModals/globalModalContext').useMailGlobalModals;
     const openModalSpy = jest.fn();
 
     beforeEach(() => {

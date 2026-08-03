@@ -7,11 +7,9 @@ import {
     markAllMessagesAsRead,
     markAllMessagesAsUnread,
     moveAllBatch,
-    queryMessageMetadata,
 } from '@proton/shared/lib/api/messages';
 import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS, SECOND } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
-import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
 import { isElementMessage } from 'proton-mail/helpers/elements';
@@ -20,6 +18,7 @@ import type { Element } from '../../models/element';
 import type { ConversationParams, ConversationResult } from '../conversations/conversationsTypes';
 import type { MailState, MailThunkExtra } from '../store';
 import { selectCurrentContextIdentifier } from './elementsSelectors';
+import { refreshTaskRunningTimeout } from './elementsTaskRunning';
 import type {
     ESResults,
     ElementsStateParams,
@@ -31,12 +30,7 @@ import type {
     QueryResults,
     TaskRunningInfo,
 } from './elementsTypes';
-import {
-    PAGE_FETCH_COUNT,
-    queryElement,
-    queryElementsInBatch,
-    refreshTaskRunningTimeout,
-} from './helpers/elementQuery';
+import { PAGE_FETCH_COUNT, queryElement, queryElementsInBatch } from './helpers/elementQuery';
 
 const REFRESHES = [5, 10, 20];
 // Backend search re-indexing after an action (e.g. delete) is typically much faster than
@@ -225,32 +219,7 @@ export const backendActionStarted = createAction<void>('elements/action/started'
 
 export const backendActionFinished = createAction<void>('elements/action/finished');
 
-export const pollTaskRunning = createAsyncThunk<TaskRunningInfo, undefined, MailThunkExtra>(
-    'elements/pollTaskRunning',
-    async (_, { dispatch, getState, extra }) => {
-        const currentLabels = (getState() as MailState).elements.taskRunning.labelIDs;
-        const finishedLabels = [];
-
-        for (const label of currentLabels) {
-            const result = await extra.api<QueryResults>(queryMessageMetadata({ LabelID: label }));
-            const isLabelStillRunning =
-                result?.TasksRunning && !Array.isArray(result.TasksRunning) && result.TasksRunning[label];
-
-            if (!isLabelStillRunning) {
-                finishedLabels.push(label);
-            }
-        }
-
-        const labelIDs = diff(currentLabels, finishedLabels);
-
-        const timeoutID = refreshTaskRunningTimeout(labelIDs, {
-            getState,
-            dispatch,
-        });
-
-        return { labelIDs, timeoutID };
-    }
-);
+export { pollTaskRunning } from './elementsTaskRunning';
 
 export const moveAll = createAsyncThunk<
     { LabelID?: string; timeoutID?: NodeJS.Timeout },
