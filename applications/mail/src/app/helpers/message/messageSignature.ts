@@ -12,8 +12,8 @@ import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { dedentTpl } from '../dedent';
-import { exportPlainText, getPlainTextContent } from './messageContent';
-import { CLASSNAME_BLOCKQUOTE } from './messageDraft';
+import { exportPlainText, getPlainTextContent } from './messageContentPlainText';
+import { CLASSNAME_BLOCKQUOTE } from './messageDraftConstants';
 
 export const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
 export const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';

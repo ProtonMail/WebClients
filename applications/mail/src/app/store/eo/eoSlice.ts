@@ -12,6 +12,7 @@ import {
     loadEOMessage,
     loadEOToken,
 } from './eoActions';
+import { eoInitialState } from './eoInitialState';
 import {
     EOAddReply as EOAddReplyReducer,
     EODocumentInitializeFulfilled as EODocumentInitializeFulfilledReducer,
@@ -24,19 +25,12 @@ import {
     loadEOMessageFulfilled,
     loadEOTokenFulfilled,
 } from './eoReducers';
-import type { EOState } from './eoType';
 
-export const initialState = {
-    encryptedToken: '',
-    decryptedToken: '',
-    isStoreInitialized: false,
-    isEncryptedTokenInitialized: false,
-    password: '',
-} as EOState;
+export { eoInitialState as initialState } from './eoInitialState';
 
 export const eoSlice = createSlice({
     name: 'eo',
-    initialState,
+    initialState: eoInitialState,
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(globalReset, globalResetReducer);

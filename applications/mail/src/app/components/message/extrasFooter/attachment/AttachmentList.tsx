@@ -22,17 +22,9 @@ import { useDownload, useDownloadAll } from '../../../../hooks/attachments/useDo
 import AttachmentItem from './AttachmentItem';
 import type { AttachmentPreviewControls } from './AttachmentPreview';
 import AttachmentPreview from './AttachmentPreview';
+import { AttachmentAction } from './attachmentListTypes';
 
-export enum AttachmentAction {
-    Download,
-    Preview,
-    Remove,
-    None,
-}
-
-export type AttachmentHandler =
-    | ((attachment: Attachment) => Promise<void>)
-    | ((pendingUpload: PendingUpload) => Promise<void>);
+export { AttachmentAction, type AttachmentHandler } from './attachmentListTypes';
 
 interface Props {
     attachments: Attachment[];

@@ -1,4 +1,3 @@
-import { getSortParams } from './helpers';
 import {
     type NewsletterSubscriptionsInterface,
     type NewsletterSubscriptionsTabState,
@@ -6,7 +5,8 @@ import {
     type SubscriptionCounts,
     SubscriptionTabs,
 } from './interface';
-import type { NewsletterSubscriptionsStateType } from './newsletterSubscriptionsSlice';
+import type { NewsletterSubscriptionsStateType } from './newsletterSubscriptionsModelTypes';
+import { getSortParams } from './newsletterSubscriptionsSortParams';
 
 export const DEFAULT_SUBSCRIPTION_COUNTS: SubscriptionCounts = {
     active: 0,

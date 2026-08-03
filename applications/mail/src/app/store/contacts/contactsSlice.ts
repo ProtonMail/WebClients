@@ -2,17 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { globalReset } from '../actions';
 import { refresh } from './contactsActions';
+import { mailContactsInitialState } from './contactsInitialState';
 import { refresh as refreshReducer, reset } from './contactsReducers';
-import type { ContactsState } from './contactsTypes';
 
-export const mailContactsInitialState: ContactsState = {
-    contactsMap: {},
-    contactsMapWithDuplicates: {},
-    contactGroupsMap: {},
-    groupsWithContactsMap: {},
-    recipientsLabelCache: {},
-    groupsLabelCache: {},
-};
+export { mailContactsInitialState } from './contactsInitialState';
 
 const name = 'mailContacts';
 const contactsSlice = createSlice({

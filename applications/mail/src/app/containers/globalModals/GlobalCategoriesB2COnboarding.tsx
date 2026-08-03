@@ -19,7 +19,7 @@ import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import onboardingImage from '../../components/categoryView/categoriesOnboarding/onboardingCategories.svg';
-import { useMailGlobalModals } from './GlobalModalProvider';
+import { useMailGlobalModals } from './globalModalContext';
 import { type CategoriesViewB2COnboardingModalPayload, ModalType } from './inteface';
 
 import './GlobalCategoriesOnboarding.scss';

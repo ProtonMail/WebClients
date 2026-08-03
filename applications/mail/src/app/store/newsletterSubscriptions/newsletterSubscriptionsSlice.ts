@@ -3,7 +3,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import { serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
-import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getNewsletterSubscription } from '@proton/shared/lib/api/newsletterSubscription';
 import type { GetNewsletterSubscriptionsApiResponse } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
@@ -18,6 +17,7 @@ import {
     unsubscribeSubscription,
     updateSubscription,
 } from './newsletterSubscriptionsActions';
+import { type NewsletterSubscriptionsState, newsletterSubscriptionName } from './newsletterSubscriptionsModelTypes';
 import {
     deleteNewsletterSubscriptionPending,
     deleteNewsletterSubscriptionRejected,
@@ -42,13 +42,11 @@ import {
     updateSubscriptionRejected,
 } from './newsletterSubscriptionsReducers';
 
-export const newsletterSubscriptionName = 'newsletterSubscriptions' as const;
-
-export type NewsletterSubscriptionsStateType = ModelState<NewsletterSubscriptionsInterface>;
-
-export interface NewsletterSubscriptionsState {
-    [newsletterSubscriptionName]: NewsletterSubscriptionsStateType;
-}
+export {
+    newsletterSubscriptionName,
+    type NewsletterSubscriptionsState,
+    type NewsletterSubscriptionsStateType,
+} from './newsletterSubscriptionsModelTypes';
 export const selectNewsletterSubscriptions = (state: NewsletterSubscriptionsState) => state[newsletterSubscriptionName];
 
 const modelThunk = createAsyncModelThunk<
