@@ -314,7 +314,7 @@ export type {
     State,
 };
 export {
-    AspectRatio,
+    AVAILABLE_ASPECT_RATIOS,
     LumoFileType,
     aspectRatioKeyToImageRatio,
     getLumoFileType,
