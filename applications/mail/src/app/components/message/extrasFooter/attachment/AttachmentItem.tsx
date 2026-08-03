@@ -20,8 +20,8 @@ import clsx from '@proton/utils/clsx';
 import { isAttachmentUpload } from 'proton-mail/hooks/composer/useAttachments/helpers';
 import type { PendingUpload } from 'proton-mail/hooks/composer/useAttachments/interface';
 
-import type { AttachmentHandler } from './AttachmentList';
-import { AttachmentAction } from './AttachmentList';
+import type { AttachmentHandler } from './attachmentListTypes';
+import { AttachmentAction } from './attachmentListTypes';
 
 const getActionTitle = (action: AttachmentAction, attachmentName: string) => {
     switch (action) {

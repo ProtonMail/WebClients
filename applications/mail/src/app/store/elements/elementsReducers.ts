@@ -34,7 +34,7 @@ import {
     removeLabelToConversationMessage,
 } from '../mailbox/locationHelpers';
 import type { filterSubscriptionList } from '../newsletterSubscriptions/newsletterSubscriptionsActions';
-import { newElementsState } from './elementsSlice';
+import { newElementsState } from './elementsInitialState';
 import type {
     ESResults,
     ElementsState,

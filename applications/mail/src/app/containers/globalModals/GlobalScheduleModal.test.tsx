@@ -2,8 +2,8 @@ import type { ReactNode } from 'react';
 
 import { render, screen } from '@testing-library/react';
 
-import { GlobalModalContext } from './GlobalModalProvider';
 import { GlobalScheduleModal } from './GlobalScheduleModal';
+import { GlobalModalContext } from './globalModalContext';
 import { ModalType } from './inteface';
 
 const notifyMock = jest.fn();

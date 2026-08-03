@@ -1,8 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-
 import { globalReset } from '../actions';
 import {
     labelConversations,
@@ -35,7 +33,6 @@ import {
     optimisticMarkAs,
     optimisticRestoreDelete,
     optimisticRestoreEmptyLabel,
-    pollTaskRunning,
     removeExpired,
     reset,
     resetRetry,
@@ -44,6 +41,7 @@ import {
     showSerializedElements as showSerializedElementsAction,
     updatePage,
 } from './elementsActions';
+import { newElementsState } from './elementsInitialState';
 import {
     addESResults as addESResultsReducer,
     backendActionFinished as backendActionFinishedReducer,
@@ -88,45 +86,11 @@ import {
     unlabelMessagesPending,
     updatePage as updatePageReducer,
 } from './elementsReducers';
-import type { ElementsState, ElementsStateParams, NewStateParams, TaskRunningInfo } from './elementsTypes';
+import { pollTaskRunning } from './elementsTaskRunning';
+import type { ElementsStateParams, TaskRunningInfo } from './elementsTypes';
 
-export const newElementsState = ({
-    page = 0,
-    params = {},
-    retry = { payload: null, count: 0, error: undefined },
-    beforeFirstLoad = true,
-    taskRunning = { labelIDs: [], timeoutID: undefined },
-}: NewStateParams & { taskRunning?: TaskRunningInfo } = {}): ElementsState => {
-    // TODO, we could add a default value for elementID and messageID in the future
-    // Once the old MailboxContainer is removed. Adding default value breaks some e2e and unit tests right now
-    const defaultParams: ElementsStateParams = {
-        labelID: MAILBOX_LABEL_IDS.INBOX,
-        conversationMode: true,
-        categoryIDs: [],
-        filter: {},
-        sort: { sort: 'Time', desc: true },
-        search: {},
-        esEnabled: false,
-        isSearching: false,
-    };
-
-    return {
-        beforeFirstLoad,
-        invalidated: false,
-        pendingRequest: false,
-        pendingActions: 0,
-        params: { ...defaultParams, ...params },
-        page,
-        total: {},
-        elements: {},
-        pages: {},
-        bypassFilter: [],
-        retry,
-        taskRunning,
-        awaitingStaleRetry: {},
-        deletedSinceLastLoad: 0,
-    };
-};
+export { newElementsState } from './elementsInitialState';
+export { pollTaskRunning } from './elementsTaskRunning';
 
 const name = 'elements';
 const elementsSlice = createSlice({
