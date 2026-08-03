@@ -15,6 +15,8 @@ import { parseSearchParams } from '../../helpers/encryptedSearch';
 import type { Element } from '../../models/element';
 import {
     addESResults,
+    esSearchSettled,
+    esSearchStarted,
     load as loadAction,
     manualFulfilled,
     manualPending,
@@ -89,13 +91,23 @@ export const useApplyEncryptedSearch = ({
         );
     };
 
+    /** Records ES progress in the store (see `pendingESSearches`); `finally` so an abort clears it too. */
+    const runEncryptedSearch = async (minimumItems?: number) => {
+        dispatch(esSearchStarted());
+        try {
+            return await encryptedSearch(setEncryptedSearchResults, minimumItems);
+        } finally {
+            dispatch(esSearchSettled());
+        }
+    };
+
     const executeSearch = async () => {
         dispatch(manualPending());
         dispatch(setParams({ ...params }));
         try {
             let success = false;
             if (isES) {
-                success = await encryptedSearch(setEncryptedSearchResults);
+                success = await runEncryptedSearch();
             }
             if (!success) {
                 // We limit the number of results to max 10000 items to avoid API issues
@@ -156,7 +168,7 @@ export const useApplyEncryptedSearch = ({
             // to contain some messages, either because it's an already full intermediate page or
             // because it's the partial last page available
             dispatch(updatePage(parseSearchParams(history.location, categoryIDs).page));
-            void encryptedSearch(setEncryptedSearchResults, messagesToLoadMoreES);
+            void runEncryptedSearch(messagesToLoadMoreES);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C75F36
     }, [shouldLoadElements, messagesToLoadMoreES, search]);
