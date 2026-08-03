@@ -10,7 +10,7 @@ import type {
     TelemetryFieldType,
     TelemetryPlatform,
 } from '@proton/pass/types/data/telemetry';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS, TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -44,6 +44,7 @@ const getExtensionCopiedFromLoginBaseDimensions = (
     loginAutofillEnabled: '0',
     modelVersion: MODEL_VERSION,
     uniqueMatch: '0',
+    ...NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS,
 });
 
 export const useLoginClipboardTelemetry = EXTENSION_BUILD
