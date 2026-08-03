@@ -80,6 +80,7 @@ const OpenVPNConfigurationSection = ({
     const [lookupLoading, setLookupLoading] = useState(false);
     const [lookupError, setLookupError] = useState<string | null>(null);
     const [retryAfterTime, setRetryAfterTime] = useState<number | null>(null);
+
     const excludeCategoryMap = excludedCategories.reduce<{ [key in CATEGORY]?: boolean }>((map, excludedCategory) => {
         map[excludedCategory] = true;
         return map;
