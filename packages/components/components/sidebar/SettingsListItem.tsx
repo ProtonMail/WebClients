@@ -20,13 +20,7 @@ function OptionalItemLink({ to, children }: { to?: string; children: ReactNode }
     return <SidebarListItemLink to={to}>{children}</SidebarListItemLink>;
 }
 
-function SettingsListItemRight({
-    notification,
-    upgradeRequired,
-}: {
-    notification?: ThemeColor;
-    upgradeRequired?: boolean;
-}) {
+function getRightComponent(notification: ThemeColor | undefined, upgradeRequired: boolean | undefined) {
     if (upgradeRequired) {
         return (
             <PromotionButton as="span" icon iconName="upgrade" shape="ghost" title={c('Info').t`Upgrade required`}>
@@ -57,7 +51,7 @@ const SettingsListItem = forwardRef<HTMLLIElement, Props>(
                 <OptionalItemLink to={to}>
                     <SidebarListItemContent
                         left={icon ? <SidebarListItemContentIcon name={icon} /> : null}
-                        right={<SettingsListItemRight notification={notification} upgradeRequired={upgradeRequired} />}
+                        right={getRightComponent(notification, upgradeRequired)}
                     >
                         {children}
                     </SidebarListItemContent>
