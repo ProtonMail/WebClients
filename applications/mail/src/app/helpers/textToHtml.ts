@@ -1,35 +1,18 @@
-import markdownit from 'markdown-it';
-
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { toText } from '@proton/mail/helpers/parserHtml';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { templateBuilder } from './message/messageSignature';
+import { SIGNATURE_PLACEHOLDER, escapeBackslash, extractContentFromPtag, getMarkdownParser } from './textToHtmlUtils';
 
-export const SIGNATURE_PLACEHOLDER = '--protonSignature--';
+export {
+    DEFAULT_TAGS_TO_DISABLE,
+    SIGNATURE_PLACEHOLDER,
+    escapeBackslash,
+    extractContentFromPtag,
+    getMarkdownParser,
+} from './textToHtmlUtils';
 
-const OPTIONS = {
-    breaks: true,
-    linkify: true,
-};
-
-export const DEFAULT_TAGS_TO_DISABLE = ['lheading', 'heading', 'list', 'code', 'fence', 'hr'];
-
-export const getMarkdownParser = (tagsToDisable = DEFAULT_TAGS_TO_DISABLE) => {
-    return markdownit('default', OPTIONS).disable([...tagsToDisable]);
-};
-
-/**
- * This function generates a random string that is not included in the input text.
- * This is used to be able to insert and remove placeholders in new lines, so markdown will treat those newlines
- * as not empty. Therefore we need the placeholders to be unique, to not remove parts of the text when we
- * remove the placeholders.
- *
- * To ensure the placeholder is unique we try a random string, which should be with > 99% chance unique,
- * but if it's not unique, we'll retry to make the function always behave correctly.
- * @param text
- * @returns {string}
- */
 const generatePlaceHolder = (text: string) => {
     let placeholder = '';
     do {
@@ -38,82 +21,29 @@ const generatePlaceHolder = (text: string) => {
     return placeholder;
 };
 
-/**
- * Fills a given text with newlines with placeholders that can be removed later.
- * For instance the following input:
- * "
- *
- *
- * "
- * is turned into
- * "
- * placeholder
- * "
- * The input is not turned into
- * "placeholder
- * placeholder
- * placeholder"
- * as we expect the first new line to come from an non empty new line, and the last new line is followed by a non
- * empty new line. This is how addNewLinePlaceholders uses this function.
- */
 const newLineIntoPlaceholder = (match: string, placeholder: string) =>
     match.replace(/(\r\n|\n)/g, (match) => match + placeholder).replace(new RegExp(`${placeholder}$`, 'g'), '');
 
-/**
- * Turns any empty lines into lines filled with the specified placeholder
- * to trick the markdown converter into keeping
- * those empty lines.
- */
 const addNewLinePlaceholders = (text: string, placeholder: string) => {
     const startingNewline = text.startsWith('\n') ? text : `\n${text}`;
     const textWPlaceholder = startingNewline.replace(/((\r\n|\n)\s*(\r\n|\n))+/g, (match) =>
         newLineIntoPlaceholder(match, placeholder)
     );
-    // don't remove empty new lines before '>'
     const noEmptyLines = textWPlaceholder.replace(/^\n/g, '');
 
-    // add an empty line (otherwise markdownit doesnt end the blockquote) if it comes after a `>`
     return noEmptyLines.replace(/(>[^\r\n]*(?:\r\n|\n))(\s*[^>])/g, (match, line1, line2) => `${line1}\n${line2}`);
 };
 
 const removeNewLinePlaceholder = (html: string, placeholder: string) => html.replace(new RegExp(placeholder, 'g'), '');
 
-/**
- * Escapes backslashes from the input text with another backslash.
- */
-export const escapeBackslash = (text = '') => text.replace(/\\/g, '\\\\');
-
 const prepareConversionToHTML = (content: string) => {
-    // We want empty new lines to behave as if they were not empty (this is non-standard markdown behaviour)
-    // It's more logical though for users that don't know about markdown.
     const placeholder = generatePlaceHolder(content);
-    // We don't want to treat backslash as a markdown escape since it removes backslashes. So escape all backslashes with a backslash.
     const withPlaceholder = addNewLinePlaceholders(escapeBackslash(content), placeholder);
     const markdownParser = getMarkdownParser();
     const rendered = markdownParser.render(withPlaceholder);
     return removeNewLinePlaceholder(rendered, placeholder);
 };
 
-export const extractContentFromPtag = (content: string) => {
-    // Check if wrapped in a single <p> tag
-    if (!content.startsWith('<p>') || !content.endsWith('</p>')) {
-        return undefined;
-    }
-
-    const inner = content.slice(3, -4); // Remove '<p>' and '</p>'
-
-    // Check if there's another <p> tag inside (which would mean multiple paragraphs)
-    if (inner.includes('<p>')) {
-        return undefined;
-    }
-
-    return inner;
-};
-
-/**
- * Replace the signature by a temp hash, we replace it only
- * if the content is the same.
- */
 const replaceSignature = (
     input: string,
     signature: string,
@@ -129,10 +59,6 @@ const replaceSignature = (
     return input.replace(signatureText, SIGNATURE_PLACEHOLDER);
 };
 
-/**
- * Replace the hash by the signature inside the message formated as HTML
- * We prevent too many lines to be added as we already have a correct message
- */
 const attachSignature = (
     input: string,
     signature: string,
@@ -162,10 +88,5 @@ export const textToHtml = (
     const html = prepareConversionToHTML(text);
     const withSignature = attachSignature(html, signature, text, mailSettings, userSettings).trim();
 
-    /**
-     * The capturing group includes negative lookup "(?!<p>)" in order to avoid nested problems.
-     * Ex, this capture will be ignored : "<p>Hello</p><p>Hello again</p>""
-     * Because it would have ended up with this result : "Hello</p><p>Hello again"
-     */
     return extractContentFromPtag(withSignature) || withSignature;
 };

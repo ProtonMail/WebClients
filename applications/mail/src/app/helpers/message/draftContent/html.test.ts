@@ -11,10 +11,13 @@ import {
 } from 'proton-mail/helpers/message/draftContent/html';
 
 // Mock dependencies to avoid DOM and other issues in tests
-jest.mock('proton-mail/helpers/message/messageContent', () => ({
+jest.mock('proton-mail/helpers/message/messageContentConversion', () => ({
     plainTextToHTML: jest.fn((_message, body) => {
         return `<p>${body}</p>`;
     }),
+}));
+
+jest.mock('proton-mail/helpers/message/messageContentQuery', () => ({
     getDocumentContent: jest.fn((doc: any) => {
         return doc?.innerHTML || '<p>HTML content</p>';
     }),
@@ -28,6 +31,7 @@ jest.mock('proton-mail/helpers/message/messageSignature', () => ({
         }
         return content;
     }),
+    templateBuilder: jest.fn(() => ''),
 }));
 
 const ID = 'ID';

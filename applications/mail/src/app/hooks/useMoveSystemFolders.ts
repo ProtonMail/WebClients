@@ -1,53 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 
 import useApi from '@proton/components/hooks/useApi';
-import type { IconName } from '@proton/icons/types';
 import { useSystemFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { orderSystemFolders, updateSystemFolders } from '@proton/shared/lib/api/labels';
 import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { getSidebarNavItems, moveSystemFolders } from './useMoveSystemFolders.helpers';
+import type { SystemFolder, SystemFolderPayload, UseMoveSystemFoldersProps } from './useMoveSystemFoldersTypes';
+import { SYSTEM_FOLDER_SECTION } from './useMoveSystemFoldersTypes';
 
-export interface UseMoveSystemFoldersProps {
-    showScheduled: boolean;
-    showSnoozed: boolean;
-    showSoftDeletedFolder: boolean;
-}
-
-export enum SYSTEM_FOLDER_SECTION {
-    MAIN = 1,
-    MORE = 0,
-}
-
-export interface SystemFolderPayload {
-    ID: MAILBOX_LABEL_IDS;
-    Order: number;
-    Display: SYSTEM_FOLDER_SECTION;
-    /** Mandatory for "update" api call */
-    Color: string;
-    /** Mandatory for "update" api call */
-    Name: string;
-}
-
-export interface BaseSystemFolder {
-    labelID: MAILBOX_LABEL_IDS;
-    ID: string;
-    icon: IconName;
-    text: string;
-    shortcutText?: string;
-    visible: boolean;
-    order: number;
-    display: SYSTEM_FOLDER_SECTION;
-}
-
-export interface SystemFolder extends BaseSystemFolder {
-    /** Mandatory fields for api calls */
-    payloadExtras: {
-        Name: SystemFolderPayload['Color'];
-        Color: SystemFolderPayload['Name'];
-    };
-}
+export type {
+    BaseSystemFolder,
+    SystemFolder,
+    SystemFolderPayload,
+    UseMoveSystemFoldersProps,
+} from './useMoveSystemFoldersTypes';
+export { SYSTEM_FOLDER_SECTION } from './useMoveSystemFoldersTypes';
 
 type UseSidebarElementsResponse = [
     sidebarElements: SystemFolder[],

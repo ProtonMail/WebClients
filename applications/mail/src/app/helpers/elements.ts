@@ -27,15 +27,18 @@ import type { LabelIDsChanges } from '../models/event';
 import {
     getLabelIDs as conversationGetLabelIDs,
     getSenders as conversationGetSenders,
-    getTime as conversationGetTime,
     hasAttachments as conversationHasAttachments,
     isUnread as conversationIsUnread,
     getNumAttachments as conversationNumAttachments,
     getLabelsSetForConversation,
 } from './conversation';
+import { getDate, isElementConversation, isElementMessage } from './elementTypeGuards';
 import { isConversationMode } from './mailSettings';
 import { getLabelsSetForMessage } from './message';
 import { getSnoozeDate } from './snooze';
+
+export { getDate, isElementConversation, isElementMessage } from './elementTypeGuards';
+export { hasAttachmentsFilter, isEmpty, isSearch } from './elementSearch';
 
 export interface TypeParams {
     labelID?: string;
@@ -60,26 +63,6 @@ interface ContextIdentifier {
 
 export const getCurrentType = ({ labelID, mailSettings, location }: TypeParams) =>
     isConversationMode(labelID, mailSettings, location) ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
-
-export const isElementMessage = (element: Element | undefined): element is Message =>
-    typeof (element as Message)?.ConversationID === 'string';
-export const isElementConversation = (element: Element | undefined): element is Conversation =>
-    !isElementMessage(element);
-
-/**
- * Get the date of an element.
- * @param element
- * @param labelID is only used for a conversation. Yet mandatory not to forget to consider its use.
- */
-export const getDate = (element: Element | undefined, labelID: string | undefined) => {
-    if (!element) {
-        return new Date();
-    }
-
-    const time = isElementMessage(element) ? element.Time : conversationGetTime(element, labelID);
-
-    return new Date((time || 0) * 1000);
-};
 
 /**
  * Get readable time to display from message / conversation
@@ -186,19 +169,6 @@ export const parseLabelIDsInEvent = <T extends Element>(element: T, changes: T &
     // The conversation.Labels object is fully updated each time so we can safely ignore them
     return { ...element, ...omitted };
 };
-
-export const isSearch = (searchParams: SearchParameters) =>
-    !!searchParams.address ||
-    !!searchParams.begin ||
-    !!searchParams.end ||
-    !!searchParams.from ||
-    !!searchParams.keyword ||
-    !!searchParams.to ||
-    !!searchParams.wildcard;
-
-export const isEmpty = (filter: Filter) => !Object.keys(filter).length;
-
-export const hasAttachmentsFilter = (filter?: Filter) => filter?.Attachments === 1;
 
 /**
  * Get the IDs of the folder where the element is currently located

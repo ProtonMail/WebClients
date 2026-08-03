@@ -11,10 +11,8 @@ import generateUID from '@proton/utils/generateUID';
 import unique from '@proton/utils/unique';
 
 import { ENCRYPTED_STATUS } from '../../constants';
-import { querySelectorAll } from './messageContent';
-import { getEmbeddedImages, updateImages } from './messageImages';
-
-const urlCreator = () => window.URL || window.webkitURL;
+import { querySelectorAll } from './messageContentQuery';
+import { getEmbeddedImages, updateImages } from './messageImagesUtils';
 
 const embeddableTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
 /**
@@ -73,24 +71,9 @@ export const generateCid = (input: string, email: string) => {
     return `${hashValue}@${domain}`;
 };
 
-export const setEmbeddedAttr = (cid: string, cloc: string, element: Element) => {
-    if (cid) {
-        element.setAttribute('data-embedded-img', `cid:${cid}`);
-    } else if (cloc) {
-        element.setAttribute('data-embedded-img', `cloc:${cloc}`);
-    }
-};
+export { setEmbeddedAttr } from './messageEmbeddedAttributes';
 
-/**
- * Create a Blob and its URL for an attachment
- */
-export const createBlob = (attachment: Attachment, data: Uint8Array<ArrayBuffer> | string) => {
-    const mimeType = couldPotentiallyBeRenderedAsSVG(attachment.MIMEType || '')
-        ? 'application/octet-stream'
-        : attachment.MIMEType;
-    const blob = new Blob([data], { type: mimeType });
-    return urlCreator().createObjectURL(blob);
-};
+export { createBlob } from './messageEmbeddedBlob';
 
 /**
  * Prepare MessageEmbeddedImage structure based on an upload result
