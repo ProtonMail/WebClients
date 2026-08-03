@@ -86,6 +86,26 @@ export const getAssignRolesInvitationText = () => {
     return c('user_modal').t`You'll be able to assign roles once the user has accepted the invitation.`;
 };
 
+export const getUpgradeForAdminRolesText = () => {
+    return c('user_modal').t`Upgrade to a supported plan to use admin roles.`;
+};
+
+export const getRolesTabBanner = ({
+    showUpgrade,
+    pendingInvitation,
+}: {
+    showUpgrade: boolean;
+    pendingInvitation: boolean;
+}): string | undefined => {
+    if (showUpgrade) {
+        return getUpgradeForAdminRolesText();
+    }
+    if (pendingInvitation) {
+        return getAssignRolesInvitationText();
+    }
+    return undefined;
+};
+
 export const getPrivatizeError = () => {
     return c('passwordless').t`You must privatize all users before generating a new organization key`;
 };

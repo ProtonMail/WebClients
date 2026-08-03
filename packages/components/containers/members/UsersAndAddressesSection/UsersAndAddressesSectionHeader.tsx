@@ -2,6 +2,7 @@ import type { CSSProperties, JSX } from 'react';
 
 import { c } from 'ttag';
 
+import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import Info from '@proton/components/components/link/Info';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -11,7 +12,6 @@ import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeatur
 import { FeatureCode, useFeature } from '@proton/features';
 import { SECOND } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 type HeaderCellItem = {
@@ -27,7 +27,7 @@ interface Props {
 }
 
 const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn }: Props) => {
-    const hasAdminRoles = useFlag('AdminRoleMVP');
+    const [adminRolesUIState] = useAdminRolesUI();
     const { feature: adminRolesModalFeature, loading: adminRolesModalLoading } = useFeature(
         FeatureCode.AdminRolesOnboardingModal
     );
@@ -36,7 +36,10 @@ const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn }: Props)
         show: showSpotlight,
         onDisplayed: onSpotlightDisplayed,
         onClose: onSpotlightClose,
-    } = useSpotlightOnFeature(FeatureCode.AdminRolesTableSpotlight, hasAdminRoles && isAdminRolesModalDismissed);
+    } = useSpotlightOnFeature(
+        FeatureCode.AdminRolesTableSpotlight,
+        adminRolesUIState === AdminRolesUIState.Enabled && isAdminRolesModalDismissed
+    );
     const shouldShowSpotlight = useSpotlightShow(showSpotlight, 3 * SECOND);
 
     const addressesTitle = useEmail

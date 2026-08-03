@@ -9,14 +9,15 @@ import {
     UnavailableAddressesError,
     assignMemberRoles,
     createMember,
-    getAssignRolesInvitationText,
     getPrivateAdminError,
     getPrivateText,
+    getRolesTabBanner,
 } from '@proton/account';
 import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -144,7 +145,7 @@ const SubUserCreateModal = ({
     const hasVPN = Boolean(organization?.MaxVPN);
 
     const isMagicLinkEnabled = useFlag('MagicLink');
-    const showRolesTab = useFlag('AdminRoleMVP');
+    const [adminRolesUIState, loadingAdminRolesUI] = useAdminRolesUI();
     const { feature: adminRolesModalFeature, loading: adminRolesModalLoading } = useFeature(
         FeatureCode.AdminRolesOnboardingModal
     );
@@ -155,7 +156,7 @@ const SubUserCreateModal = ({
         onClose: onRolesTabSpotlightClose,
     } = useSpotlightOnFeature(
         FeatureCode.AdminRolesPermissionsTabSpotlight,
-        showRolesTab && isAdminRolesModalDismissed
+        adminRolesUIState === AdminRolesUIState.Enabled && isAdminRolesModalDismissed
     );
     const csvMode = isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password;
 
@@ -266,7 +267,7 @@ const SubUserCreateModal = ({
             return;
         }
 
-        if (showRolesTab && model.mode === CreateMemberMode.Password) {
+        if (adminRolesUIState === AdminRolesUIState.Enabled && model.mode === CreateMemberMode.Password) {
             try {
                 await dispatch(
                     assignMemberRoles({
@@ -482,7 +483,7 @@ const SubUserCreateModal = ({
                     />
                 )}
 
-                {model.mode === CreateMemberMode.Password && (
+                {model.mode === CreateMemberMode.Password && adminRolesUIState !== AdminRolesUIState.Enabled && (
                     <>
                         <MemberToggleContainer
                             toggle={
@@ -608,7 +609,7 @@ const SubUserCreateModal = ({
                         title: c('user_modal').t`General`,
                         content: generalTabContent,
                     },
-                    ...(showRolesTab
+                    ...(adminRolesUIState !== AdminRolesUIState.Hidden
                         ? [
                               {
                                   title: c('user_modal').t`Roles and permissions`,
@@ -631,12 +632,16 @@ const SubUserCreateModal = ({
                                       <RolesAndPermissionsTab
                                           selectedRoles={selectedRoles}
                                           onChange={setSelectedRoles}
-                                          disabled={model.mode !== CreateMemberMode.Password}
-                                          banner={
-                                              model.mode !== CreateMemberMode.Password
-                                                  ? getAssignRolesInvitationText()
-                                                  : undefined
+                                          disabled={
+                                              model.mode !== CreateMemberMode.Password ||
+                                              adminRolesUIState !== AdminRolesUIState.Enabled
                                           }
+                                          banner={getRolesTabBanner({
+                                              showUpgrade:
+                                                  adminRolesUIState === AdminRolesUIState.Disabled &&
+                                                  !loadingAdminRolesUI,
+                                              pendingInvitation: model.mode !== CreateMemberMode.Password,
+                                          })}
                                       />
                                   ),
                               },

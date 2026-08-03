@@ -5,9 +5,9 @@ import { type Action, type ThunkDispatch, createSelector } from '@reduxjs/toolki
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { EnhancedGroup, RoleAssignment } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
+import { AdminRolesUIState, useAdminRolesUI } from '../userPermissions/hooks';
 import { type GroupsState, getGroupRoles, selectGroups } from './index';
 
 type Result = {
@@ -26,10 +26,10 @@ const selector = createSelector([(state: GroupsState) => selectGroups(state)], (
 export const useGroupRoles = ({ groups }: { groups: EnhancedGroup[] | undefined }) => {
     const dispatch = baseUseDispatch<ThunkDispatch<GroupsState, ProtonThunkArguments, Action>>();
     const value = baseUseSelector<GroupsState, Result>(selector);
-    const enabled = useFlag('AdminRoleMVP');
+    const [adminRolesUIState] = useAdminRolesUI();
 
     useEffect(() => {
-        if (!enabled || !groups) {
+        if (adminRolesUIState === AdminRolesUIState.Hidden || !groups) {
             return;
         }
         groups.forEach((group) => {
@@ -37,7 +37,7 @@ export const useGroupRoles = ({ groups }: { groups: EnhancedGroup[] | undefined 
                 dispatch(getGroupRoles({ group })).catch(noop);
             }
         });
-    }, [groups, enabled]);
+    }, [groups, adminRolesUIState]);
 
     return { value };
 };
