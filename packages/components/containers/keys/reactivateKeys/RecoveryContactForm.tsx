@@ -14,12 +14,12 @@ import {
     getCanOutgoingDelegatedAccessRecoverStep2,
 } from '@proton/account/delegatedAccess/shared/outgoing/helper';
 import type { EnrichedOutgoingDelegatedAccess } from '@proton/account/delegatedAccess/shared/outgoing/interface';
-import { useDelegatedAccessDispatch } from '@proton/account/delegatedAccess/useDelegatedAccessDispatch';
 import Radio from '@proton/components/components/input/Radio';
 import type { ReactivateKeysContentProps } from '@proton/components/containers/keys/reactivateKeys/interface';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSettingsLink } from '@proton/components/index';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import clsx from '@proton/utils/clsx';
 
 const ContactSelector = ({
@@ -88,7 +88,7 @@ export const RecoveryContactFormStep1 = ({
     const handleError = useErrorHandler();
     const [selectedContactId, setSelectedContactId] = useState<string | null>(null);
     const { createNotification } = useNotifications();
-    const dispatch = useDelegatedAccessDispatch();
+    const dispatch = useDispatch();
     const goToSettings = useSettingsLink();
 
     const handleSubmit = async (recoveryContact: (typeof recoveryContacts)[0]) => {
