@@ -1,4 +1,9 @@
 .lumo-agent-panel {
+	// The assistant's column: replies and the tool rows above them share this width and this text inset,
+	// so a row's label starts on the reply's text and its chevron lands on the reply's trailing edge.
+	--lumo-agent-column: 90%;
+	--lumo-agent-inset: 0.875rem;
+
 	display: flex;
 	flex-direction: column;
 	block-size: 100%;
@@ -16,7 +21,7 @@
 
 .lumo-agent-bubble {
 	padding-block: 0.625rem;
-	padding-inline: 0.875rem;
+	padding-inline: var(--lumo-agent-inset);
 	border-radius: var(--border-radius-lg, 0.75rem);
 	max-inline-size: 85%;
 	white-space: pre-wrap;
@@ -35,10 +40,10 @@
 // lavender user bubble opposite it. Trim the markdown renderer's outer block margins.
 .lumo-agent-reply {
 	align-self: flex-start;
-	max-inline-size: 90%;
+	max-inline-size: var(--lumo-agent-column);
 	min-inline-size: 0;
 	padding-block: 0.625rem;
-	padding-inline: 0.875rem;
+	padding-inline: var(--lumo-agent-inset);
 	border-radius: var(--border-radius-lg, 0.75rem);
 	border-end-start-radius: var(--border-radius-sm);
 	background: var(--background-weak, rgb(0 0 0 / 0.04));
@@ -52,6 +57,13 @@
 	> :last-child {
 		margin-block-end: 0;
 	}
+}
+
+.lumo-agent-tool-row {
+	align-self: flex-start;
+	inline-size: var(--lumo-agent-column);
+	min-inline-size: 0;
+	padding-inline: var(--lumo-agent-inset);
 }
 
 // Idle Lumo cat mark beneath the latest turn (left-aligned, in the reply column).
