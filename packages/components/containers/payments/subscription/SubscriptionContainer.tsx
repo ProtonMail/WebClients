@@ -785,7 +785,6 @@ const SubscriptionContainerInner = ({
             newCycle,
             downgradeIsTrial,
             subscription,
-            organization,
         });
     };
 

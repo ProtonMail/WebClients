@@ -5,7 +5,8 @@ import type { MockedFunction } from 'vitest';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useNow } from '@proton/components/hooks/useNow';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
+import { PLANS } from '@proton/payments/core/constants';
+import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { getInitialModel } from '../../functions/gatewayHelpers';
 import type { DeletedDedicatedIp, GatewayLocation } from '../../types/Gateway';
@@ -14,7 +15,6 @@ import { GatewayCountrySelection } from './GatewayCountrySelection';
 vi.mock('@proton/account/organization/hooks');
 vi.mock('@proton/account/subscription/hooks');
 vi.mock('@proton/components/hooks/useNow');
-vi.mock('@proton/payments/ui/hooks/useIsB2BTrial');
 vi.mock('ttag', () => ({
     c: () => ({
         t: (str: string) => str,
@@ -26,7 +26,6 @@ vi.mock('ttag', () => ({
 const mockUseOrganization = useOrganization as MockedFunction<typeof useOrganization>;
 const mockUseSubscription = useSubscription as MockedFunction<typeof useSubscription>;
 const mockUseNow = useNow as MockedFunction<typeof useNow>;
-const mockUseIsB2BTrial = useIsB2BTrial as MockedFunction<typeof useIsB2BTrial>;
 
 describe('GatewayCountrySelection', () => {
     const mockLocations: GatewayLocation[] = [
@@ -86,7 +85,6 @@ describe('GatewayCountrySelection', () => {
         mockUseOrganization.mockReturnValue([{} as any, false]);
         mockUseSubscription.mockReturnValue([{} as any, false]);
         mockUseNow.mockReturnValue(new Date('2024-01-01T00:00:00Z'));
-        mockUseIsB2BTrial.mockReturnValue(false);
     });
 
     describe('Multiple Servers Mode', () => {
@@ -145,21 +143,21 @@ describe('GatewayCountrySelection', () => {
         });
 
         it('should show recommendation info when not in trial', () => {
-            mockUseIsB2BTrial.mockReturnValue(false);
+            mockUseSubscription.mockReturnValue([buildSubscription(PLANS.VPN_BUSINESS, { IsTrial: false }), false]);
             render(<GatewayCountrySelection {...defaultProps} />);
 
             expect(screen.getByText(/We recommend adding servers in different locations/i)).toBeInTheDocument();
         });
 
         it('should show trial info when in trial mode', () => {
-            mockUseIsB2BTrial.mockReturnValue(true);
+            mockUseSubscription.mockReturnValue([buildSubscription(PLANS.VPN_BUSINESS, { IsTrial: true }), false]);
             render(<GatewayCountrySelection {...defaultProps} />);
 
             expect(screen.getByText(/Your free trial includes 1 dedicated server/i)).toBeInTheDocument();
         });
 
         it('should not show recommendation info when in trial', () => {
-            mockUseIsB2BTrial.mockReturnValue(true);
+            mockUseSubscription.mockReturnValue([buildSubscription(PLANS.VPN_BUSINESS, { IsTrial: true }), false]);
             render(<GatewayCountrySelection {...defaultProps} />);
 
             expect(screen.queryByText(/We recommend adding servers in different locations/i)).not.toBeInTheDocument();

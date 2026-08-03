@@ -2,7 +2,6 @@ import { type ReactNode, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
@@ -12,7 +11,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Time from '@proton/components/components/time/Time';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
+import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
 import helpSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-help.svg';
 import hourglassSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-hourglass.svg';
@@ -22,12 +21,12 @@ interface Props {
     onNext: () => void;
 }
 
-const getTrialInfo = (subscriptionEnd?: number, planTitle?: string) => {
-    if (!subscriptionEnd || !planTitle) {
+const getTrialElements = (trialEndsOn?: number, planTitle?: string) => {
+    if (!trialEndsOn || !planTitle) {
         return [];
     }
 
-    const cancelDate = <Time key="cancel-date">{subscriptionEnd}</Time>;
+    const cancelDate = <Time key="cancel-date">{trialEndsOn}</Time>;
 
     const cancelAnytimeTitle = <b>{c('Onboarding Trial').jt`Cancel anytime before ${cancelDate}.`}</b>;
     const cancelAnytimeDescription = c('Onboarding Trial')
@@ -98,16 +97,15 @@ const TrialFeature = ({ description, imgSrc }: { description: ReactNode; imgSrc:
 
 const OnboardingTrialStep = ({ onNext }: Props) => {
     const [subscription] = useSubscription();
-    const [organization] = useOrganization();
 
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const { hasAtLeastOneB2BTrial } = useTrialInfo();
 
     const trialEndsOn = subscription?.PeriodEnd;
     const planTitle = getPlanTitle(subscription);
 
-    const trialInfo = useMemo(() => getTrialInfo(trialEndsOn, planTitle), [trialEndsOn, planTitle]);
+    const trialElements = useMemo(() => getTrialElements(trialEndsOn, planTitle), [trialEndsOn, planTitle]);
 
-    if (!isB2BTrial) {
+    if (!hasAtLeastOneB2BTrial) {
         return null;
     }
 
@@ -127,7 +125,7 @@ const OnboardingTrialStep = ({ onNext }: Props) => {
             />
             <ModalTwoContent className="mb-4">
                 <div className="flex flex-column gap-y-4 mt-12">
-                    {trialInfo.map(({ id, description, img }) => (
+                    {trialElements.map(({ id, description, img }) => (
                         <TrialFeature key={id} imgSrc={img} description={description} />
                     ))}
                 </div>

@@ -1,6 +1,6 @@
 import { addWeeks, subDays } from 'date-fns';
 
-import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Plan, SubscriptionPlan } from '@proton/payments/core/plan/interface';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import {
@@ -9,7 +9,6 @@ import {
     getNormalCycleFromCustomCycle,
     getPlanIDs,
     hasCancellablePlan,
-    hasLifetimeCoupon,
     hasSomeAddonOrPlan,
     hasTrialExpiredLessThan4Weeks,
     isManagedExternally,
@@ -45,26 +44,6 @@ describe('getPlanIDs', () => {
             [PLANS.BUNDLE_PRO]: 2,
             [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 3,
         });
-    });
-});
-
-describe('hasLifetime', () => {
-    it('should have LIFETIME', () => {
-        subscription = {
-            ...subscription,
-            CouponCode: COUPON_CODES.LIFETIME,
-        };
-
-        expect(hasLifetimeCoupon(subscription)).toBe(true);
-    });
-
-    it('should not have LIFETIME', () => {
-        subscription = {
-            ...subscription,
-            CouponCode: 'PANDA',
-        };
-
-        expect(hasLifetimeCoupon(subscription)).toBe(false);
     });
 });
 

@@ -2,7 +2,6 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -15,8 +14,7 @@ import { useRedirectToAccountApp } from '@proton/components/containers/desktop/u
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
-import { isReferralTrial, isTrial } from '@proton/payments/core/subscription/helpers';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
+import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -34,8 +32,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [subscription] = useSubscription();
-    const [organization] = useOrganization();
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const { hasAtLeastOneTrial, hasReferralTrial, hasAtLeastOneB2BTrial } = useTrialInfo();
     const location = useLocation();
     const { APP_NAME } = useConfig();
     const goToSettings = useSettingsLink();
@@ -55,9 +52,9 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
 
     // We want to have metrics from where the user has clicked on the upgrade button
     const displayUpgradeButton =
-        ((user.isFree && !user.hasPassLifetime) || isTrial(subscription)) &&
-        !isReferralTrial(subscription) &&
-        !isB2BTrial &&
+        ((user.isFree && !user.hasPassLifetime) || hasAtLeastOneTrial) &&
+        !hasReferralTrial &&
+        !hasAtLeastOneB2BTrial &&
         !location.pathname.endsWith(upgradePathname);
     const upgradeText = c('specialoffer: Link').t`Upgrade`;
     const upgradeIcon = upgradeText.length > 20 && viewportWidth['>=large'] ? undefined : 'upgrade';
@@ -81,7 +78,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
                                 redirectToAccountApp();
                             }
                         } else if (upsellConfig.onUpgrade) {
-                            upsellConfig.onUpgrade();
+                            void upsellConfig.onUpgrade();
                         } else {
                             goToSettings(upsellConfig.upgradePath);
                         }

@@ -1,7 +1,6 @@
 import { Suspense, lazy } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import {
@@ -13,7 +12,7 @@ import {
 } from '@proton/components';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
+import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
@@ -29,12 +28,11 @@ const useB2BOnboardingModal: () => StartupModal = () => {
     const [modal, setModal, renderModal] = useModalState();
     const [user] = useUser();
     const [organization] = useOrganization();
-    const [subscription] = useSubscription();
 
     const { welcomeFlags } = useWelcomeFlags();
     const isB2BAdmin = isAdmin(user) && getIsB2BAudienceFromPlan(organization?.PlanName);
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
-    const onboardingOpen = (!welcomeFlags.isDone || welcomeFlags.isReplay) && isB2BAdmin && isB2BTrial;
+    const { hasAtLeastOneB2BTrial } = useTrialInfo();
+    const onboardingOpen = (!welcomeFlags.isDone || welcomeFlags.isReplay) && isB2BAdmin && !!hasAtLeastOneB2BTrial;
 
     return {
         showModal: onboardingOpen,

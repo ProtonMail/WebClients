@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -10,8 +9,7 @@ import SettingsSection from '@proton/components/containers/account/SettingsSecti
 import useCancellationFlow from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationFlow';
 import credits from '@proton/components/containers/referral/components/TrialInfo/credits.svg';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
-import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
+import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -32,11 +30,9 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     });
     const { startFlow: startFeedbackFirstFlow, modals: feedbackFirstModals } = useFeedbackFirstCancellationFlow();
     const [subscription] = useSubscription();
-    const [organization] = useOrganization();
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const { isB2BTrial, isReferralTrial } = getTrialInfoForSingleSubscription(subscription);
     const [referralInfo] = useReferralInfo();
     const { referrerRewardAmount } = referralInfo.uiData;
-    const isActiveReferralTrial = isReferralTrial(subscription);
 
     const { startCancellation } = useFeedbackFirstTelemetry();
 
@@ -63,7 +59,7 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     if (isB2BTrial) {
         cancellationText = c('b2b_trials_2025_Info')
             .t`When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${BRAND_NAME} Free plan.`;
-    } else if (isActiveReferralTrial) {
+    } else if (isReferralTrial) {
         cancellationText = c('Info')
             .t`When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${BRAND_NAME} Free plan.`;
     }
@@ -80,7 +76,7 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
                             .t`You will keep lifetime access to ${PASS_APP_NAME} + SimpleLogin premium features if you cancel your subscription.`}
                     </SettingsParagraph>
                 )}
-                {isActiveReferralTrial && (
+                {isReferralTrial && (
                     <div className="flex gap-3 mb-6">
                         <img src={credits} alt="" />
                         <p>
