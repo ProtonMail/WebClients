@@ -2,8 +2,8 @@ import type { Session } from 'electron';
 
 import type { MaybeNull } from '@proton/pass/types';
 
-import logger from '../../utils/logger';
-import { setupIpcHandler } from '../ipc';
+import { setupIpcHandler } from 'proton-pass-desktop/lib/ipc';
+import logger from 'proton-pass-desktop/utils/logger';
 
 declare module 'proton-pass-desktop/lib/ipc' {
     interface IPCChannels {

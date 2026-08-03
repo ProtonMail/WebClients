@@ -5,9 +5,10 @@ import type { MaybeNull } from '@proton/pass/types';
 import type { UpdateStore } from '@proton/pass/types/desktop';
 import { UpdateStatus } from '@proton/pass/types/desktop';
 
-import logger from '../../utils/logger';
-import { isMac, isWindows } from '../../utils/platform';
-import { setupIpcHandler } from '../ipc';
+import { setupIpcHandler } from 'proton-pass-desktop/lib/ipc';
+import logger from 'proton-pass-desktop/utils/logger';
+import { isMac, isWindows } from 'proton-pass-desktop/utils/platform';
+
 import { setTagCookie } from './helpers';
 import { getUpdateStore, onUpdateStore, setUpdateStore } from './store';
 import { checkForUpdates } from './updater';

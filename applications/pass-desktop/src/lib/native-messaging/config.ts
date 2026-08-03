@@ -2,7 +2,6 @@ import { stat, unlink } from 'node:fs/promises';
 import { platform } from 'node:os';
 import { join } from 'node:path';
 
-
 export const getHostLocation = (app: Electron.App) => {
     return join(
         app.getAppPath(),

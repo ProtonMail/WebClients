@@ -3,9 +3,9 @@ import { c } from 'ttag';
 
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import config from '../app/config';
-import { uninstallProton } from '../uninstallers/macos/uninstall';
-import { isMAS, isMac, isProdEnv } from '../utils/platform';
+import config from 'proton-pass-desktop/app/config';
+import { uninstallProton } from 'proton-pass-desktop/uninstallers/macos/uninstall';
+import { isMAS, isMac, isProdEnv } from 'proton-pass-desktop/utils/platform';
 
 type MenuKey = 'app' | 'file' | 'edit' | 'view' | 'window';
 type MenuProps = MenuItemConstructorOptions & { key: MenuKey };

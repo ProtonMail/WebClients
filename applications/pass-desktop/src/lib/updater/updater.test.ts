@@ -4,11 +4,12 @@ import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/f
 import { UpdateStatus } from '@proton/pass/types/desktop';
 import noop from '@proton/utils/noop';
 
-import { msix_updater } from '../../../native';
-import config from '../../app/config';
-import { userAgent } from '../../lib/user-agent';
-import { store } from '../../store';
-import { isLinux, isMac, isProdEnv, isWindows } from '../../utils/platform';
+import { msix_updater } from 'proton-pass-desktop-native';
+import config from 'proton-pass-desktop/app/config';
+import { userAgent } from 'proton-pass-desktop/lib/user-agent';
+import { store } from 'proton-pass-desktop/store';
+import { isLinux, isMac, isProdEnv, isWindows } from 'proton-pass-desktop/utils/platform';
+
 import { UPDATE_SOURCE_URL, getUpdateStore, setUpdateStore } from './store';
 import type { RemoteManifestResponse } from './updater';
 import { checkForUpdates } from './updater';
@@ -18,16 +19,16 @@ jest.mock('electron', () => ({
     autoUpdater: { setFeedURL: jest.fn(), on: jest.fn(), checkForUpdates: jest.fn() },
 }));
 
-jest.mock('../../utils/logger', () => ({ log: noop, debug: noop, info: noop, warn: noop, error: noop }));
+jest.mock('proton-pass-desktop/utils/logger', () => ({ log: noop, debug: noop, info: noop, warn: noop, error: noop }));
 
-jest.mock('../../utils/platform', () => ({
+jest.mock('proton-pass-desktop/utils/platform', () => ({
     isMac: jest.fn(() => false),
     isWindows: jest.fn(() => false),
     isLinux: jest.fn(() => false),
     isProdEnv: jest.fn(() => true),
 }));
 
-jest.mock('../../../native', () => ({
+jest.mock('proton-pass-desktop-native', () => ({
     msix_updater: { installUpdate: jest.fn() },
 }));
 
