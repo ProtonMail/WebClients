@@ -1,20 +1,14 @@
-import { useState } from 'react';
-
 import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { Tabs } from '@proton/components/components/tabs/Tabs';
-import { useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectParticipantListTab, setParticipantListTab } from '@proton/meet/store/slices/uiStateSlice';
 import { selectWaitingParticipantsCount } from '@proton/meet/store/slices/waitingRoomSlice';
 
 import { AllParticipantsTab } from './AllParticipantsTab/AllParticipantsTab';
 import { TabHeader } from './TabHeader';
 import { WaitingRoomTab } from './WaitingRoomTab/WaitingRoomTab';
-
-enum ParticipantListTabs {
-    WaitingRoom,
-    AllParticipants,
-}
 
 export const ParticipantListHost = ({
     isSearchOn,
@@ -29,7 +23,8 @@ export const ParticipantListHost = ({
     searchExpression: string;
     setIsScrolled: (isScrolled: boolean) => void;
 }) => {
-    const [participantListTab, setParticipantListTab] = useState(ParticipantListTabs.AllParticipants);
+    const dispatch = useMeetDispatch();
+    const participantListTab = useMeetSelector(selectParticipantListTab);
 
     const hasSearchQuery = isSearchOn && searchExpression !== '';
 
@@ -40,7 +35,7 @@ export const ParticipantListHost = ({
             className="h-full flex flex-column flex-nowrap"
             contentClassName="flex-1 min-h-0"
             value={participantListTab}
-            onChange={(value) => setParticipantListTab(value)}
+            onChange={(value) => dispatch(setParticipantListTab(value))}
             tabs={[
                 {
                     title: 'waiting-room',
