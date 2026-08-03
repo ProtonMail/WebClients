@@ -1326,6 +1326,12 @@
       ],
       "Send": [
         "Enviar"
+      ],
+      "Clear conversation": [
+        "Borrar la conversación"
+      ],
+      "Stop": [
+        "Detener"
       ]
     },
     "Action: Docs": {
@@ -7505,6 +7511,9 @@
       ],
       "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
         "Para activar la búsqueda, necesitamos indexar sus archivos localmente. Puede seguir usando ${ DRIVE_APP_NAME } con normalidad y le avisaremos cuando la indexación haya finalizado. Si sale de esta página, la indexación se pausará y se reanudará cuando regrese."
+      ],
+      "Thinking about this": [
+        "Pensando sobre esto"
       ]
     },
     "info": {
@@ -8406,6 +8415,12 @@
       ],
       "Allow editors to change permissions and share.": [
         "Permita que los editores cambien permisos y compartan."
+      ],
+      "Client": [
+        "Cliente"
+      ],
+      "Client version": [
+        "Versión del cliente"
       ]
     },
     "Label for contact group color": {
@@ -11358,6 +11373,9 @@
       ],
       "Optional feedback": [
         "Comentarios opcionales"
+      ],
+      "Ask anything…": [
+        "Pregunte cualquier cosa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -12167,6 +12185,12 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ahora puede buscar fácilmente archivos de Drive mientras mantiene los datos seguros."
+      ],
+      "Editor permissions": [
+        "Permisos de editor"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Ahora los editores pueden gestionar la opción de compartir e invitar a otros. Puede desactivarla en cualquier momento en los ajustes de Compartir."
       ]
     },
     "sso": {
@@ -14509,6 +14533,9 @@
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (para ${ quantity } usuario)",
         "${ MEET_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "${ price } per seat": [
+        "${ price } por licencia"
       ]
     },
     "meet_2025: Info": {
