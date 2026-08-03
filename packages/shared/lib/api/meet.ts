@@ -1,4 +1,4 @@
-import type { MeetingPayload, ParticipantPermissions } from '../interfaces/Meet';
+import type { MeetingPayload, ParticipantPermissions, WaitingRoomState } from '../interfaces/Meet';
 
 export const queryParticipants = (meetingLinkName: string) => {
     return {
@@ -160,12 +160,8 @@ export const sendFeedback = (meetingLinkName: string, data: { Score: number; Fee
 });
 
 // Waiting Room APIs
-export const enableWaitingRoom = (meetingLinkName: string) => ({
-    method: 'post',
+export const toggleWaitingRoom = (meetingLinkName: string, data: { WaitingRoom: WaitingRoomState }) => ({
+    method: 'put',
     url: `meet/v1/meetings/links/${meetingLinkName}/waiting-room`,
-});
-
-export const disableWaitingRoom = (meetingLinkName: string) => ({
-    method: 'delete',
-    url: `meet/v1/meetings/links/${meetingLinkName}/waiting-room`,
+    data,
 });
