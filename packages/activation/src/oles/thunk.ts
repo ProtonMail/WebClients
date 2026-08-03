@@ -62,7 +62,7 @@ import {
     type ApiJoiningLinkData,
 } from '../api/api.interface';
 import type { OAuthToken } from '../logic/oauthToken';
-import { areEquivalentEmails, shouldCreateUserPredicate } from './helpers';
+import { areEquivalentEmails, isRelevantAddress, shouldCreateUserPredicate } from './helpers';
 import type { JoiningLink, MigrationConfiguration } from './types';
 
 type RequiredState = KtState &
@@ -263,7 +263,7 @@ export const createMigrationBatch = createAsyncThunk<
             membersAddresses[member.ID] = addresses;
         }
 
-        const getKnownAddresses = () => Object.values(membersAddresses).flat();
+        const getKnownAddresses = () => Object.values(membersAddresses).flat().filter(isRelevantAddress);
         const isSelf = (email: string) => areEquivalentEmails(email, oauthToken.Account);
 
         const users = providerUsers.filter((u) => selectedUsers.includes(u.ID));
@@ -304,7 +304,7 @@ export const createMigrationBatch = createAsyncThunk<
             try {
                 const selfMember = members.find((m) => !!m.Self)!;
 
-                let selfAddress = membersAddresses[selfMember.ID].find((a) => isSelf(a.Email));
+                let selfAddress = membersAddresses[selfMember.ID].find((a) => isRelevantAddress(a) && isSelf(a.Email));
                 if (!selfAddress) {
                     const [Local, Domain] = getEmailParts(oauthToken.Account);
                     const { Address: address } = await api<{ Address: Address }>(
