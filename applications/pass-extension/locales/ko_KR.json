@@ -798,6 +798,21 @@
       ],
       "Regex unsafe": [
         "정규식 안전하지 않음"
+      ],
+      "Clear item type filter": [
+        "항목 유형 필터 초기화"
+      ],
+      "Clear sort filter": [
+        "분류 필터 초기화"
+      ],
+      "Reset filters": [
+        "필터 재설정"
+      ],
+      "Select items": [
+        "항목 선택"
+      ],
+      "Switch vault": [
+        "금고 전환"
       ]
     },
     "Activity": {
@@ -2196,7 +2211,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
