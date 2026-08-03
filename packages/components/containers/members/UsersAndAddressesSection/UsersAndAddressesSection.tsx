@@ -1,6 +1,7 @@
 import type { MutableRefObject } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
+import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
@@ -24,13 +25,13 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const organizationUnprivatizationModals = useOrganizationUnprivatizationModals();
     const [organization] = useOrganization();
     const hasRemoteMembers = useFlag('MembersRemote');
-    const hasAdminRoles = useFlag('AdminRoleMVP');
+    const [adminRolesUIState] = useAdminRolesUI();
     const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
     const {
         feature: adminRolesModalFeature,
         update: updateAdminRolesModal,
         loading: adminRolesModalLoading,
-    } = useFeature(FeatureCode.AdminRolesOnboardingModal, hasAdminRoles);
+    } = useFeature(FeatureCode.AdminRolesOnboardingModal, adminRolesUIState === AdminRolesUIState.Enabled);
 
     const canShowAdminRolesModal = !adminRolesModalLoading && !!adminRolesModalFeature?.Value;
 

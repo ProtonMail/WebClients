@@ -40,7 +40,7 @@ const modelThunk = createAsyncModelThunk<Model, UserPermissionsState, ProtonThun
         const isLegacyAdmin = user.isAdmin && user.isSelf;
         if (!flag) {
             const permissions = getOrgPermissions([], isLegacyAdmin);
-            return { Roles: [], Permissions: [], permissions, role: user.Role };
+            return { Roles: [], Permissions: [], ShowAdminRolesUI: false, permissions, role: user.Role };
         }
         const Permission = await extraArgument.api<UserPermission>(getUserPermissions());
         const isOwner = Permission.Roles.some(isOwnerRole);

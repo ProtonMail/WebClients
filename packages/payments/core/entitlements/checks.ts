@@ -13,4 +13,5 @@ export const entitlementChecks = {
     orgHasPassActivityMonitor: (r) => !!r.quantityOrg(EntitlementName.ActivityMonitorPass),
     orgHasSubsidiaries: (r) => !!r.quantityOrg(EntitlementName.MaxSubsidiaries),
     orgHasMembersSubsidiaries: (r) => !!r.quantityOrg(EntitlementName.MaxMembersSubsidiaries),
+    orgHasAdminRoles: (r) => !!r.quantityOrg(EntitlementName.AdminRoles),
 } satisfies Record<string, EntitlementCheck>;

@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react';
 import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
+import { getUpgradeForAdminRolesText } from '@proton/account';
 import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
@@ -24,7 +26,6 @@ import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { stripWhitespace } from '@proton/shared/lib/helpers/string';
 import { GroupPermissions } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import DiscardGroupChangesPrompt from './DiscardGroupChangesPrompt';
 import E2EEDisabledWarning from './E2EEDisabledWarning';
@@ -56,7 +57,7 @@ const EditGroupModal = () => {
     const [loading, withLoading] = useLoading();
     const [organization] = useOrganization();
 
-    const showRolesTab = useFlag('AdminRoleMVP');
+    const [adminRolesUIState, loadingAdminRolesUI] = useAdminRolesUI();
 
     const isScimGroup = getIsScimGroup(groupData);
 
@@ -233,7 +234,7 @@ const EditGroupModal = () => {
                             title: c('group_modal').t`General`,
                             content: formContent,
                         },
-                        ...(showRolesTab
+                        ...(adminRolesUIState !== AdminRolesUIState.Hidden
                             ? [
                                   {
                                       title: c('group_modal').t`Roles and permissions`,
@@ -242,6 +243,13 @@ const EditGroupModal = () => {
                                               selectedRoles={new Set(formValues.adminRoles)}
                                               onChange={(roles) => setFieldValue('adminRoles', Array.from(roles))}
                                               isGroupContext
+                                              disabled={adminRolesUIState !== AdminRolesUIState.Enabled}
+                                              banner={
+                                                  adminRolesUIState === AdminRolesUIState.Disabled &&
+                                                  !loadingAdminRolesUI
+                                                      ? getUpgradeForAdminRolesText()
+                                                      : undefined
+                                              }
                                           />
                                       ),
                                   },
