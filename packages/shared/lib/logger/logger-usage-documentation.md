@@ -93,16 +93,12 @@ logger.isInitialized();
 // Resolves once every line emitted so far has been written. Mainly useful in tests.
 await logger.flush();
 
-// Route uncaught errors and unhandled rejections into this logger. Called by
-// initialize(); call it earlier to cover bootstrap, since pre-init lines are buffered.
-logger.captureGlobalErrors();
-
 await logger.destroy(); // stops cleanup, closes storage
 await loggerManager.removeLogger('mail'); // destroy and forget
 await loggerManager.destroyAll();
 ```
 
-Note that `captureGlobalErrors()` is **not** called on construction — importing this module has no effect on the host page's error handling until a logger is initialized.
+The logger records only what you pass it. It attaches no `window` listeners, so uncaught errors and unhandled rejections are not captured — log them explicitly from your own handler if you want them.
 
 ## 5. Retention
 
