@@ -1,8 +1,8 @@
-import { AuthenticatorEncryptionTag } from 'proton-authenticator/lib/crypto';
-import { StorageKey } from 'proton-authenticator/lib/db/db';
-
 import { decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
+import { AuthenticatorEncryptionTag } from 'proton-authenticator/lib/crypto';
+import { getStorageKey } from 'proton-authenticator/lib/storage-key/instance';
+
 import type { Maybe } from '@proton/pass/types';
 
 const BACKUP_PWD_KEY = 'backup_pw';
@@ -13,7 +13,7 @@ export const getBackupPassword = () => localStorage.getItem(BACKUP_PWD_KEY);
 export const clearBackupPassword = () => localStorage.removeItem(BACKUP_PWD_KEY);
 
 export const encryptBackupPassword = async (password: string): Promise<string> => {
-    const key = StorageKey.read();
+    const key = getStorageKey().read();
     const bytes = utf8StringToUint8Array(password);
     const encrypted = await encryptData(key, bytes, ENCRYPTION_TAG);
 
@@ -21,7 +21,7 @@ export const encryptBackupPassword = async (password: string): Promise<string> =
 };
 
 export const decryptBackupPassword = async (encryptedPassword: string): Promise<string> => {
-    const key = StorageKey.read();
+    const key = getStorageKey().read();
     const bytes = Uint8Array.fromBase64(encryptedPassword);
     const decrypted = await decryptData(key, bytes, ENCRYPTION_TAG);
 

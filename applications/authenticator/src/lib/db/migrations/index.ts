@@ -1,5 +1,5 @@
-import type { AuthenticatorDB } from 'proton-authenticator/lib/db/db';
 import { qaDowngradeDB } from 'proton-authenticator/lib/db/migrations/qa';
+import type { AuthenticatorDB } from 'proton-authenticator/lib/db/types';
 
 import v1 from './v1';
 import v2 from './v2';
