@@ -9,15 +9,16 @@ import {
     assignMemberRoles,
     classifyRoleChange,
     editMember,
-    getAssignRolesInvitationText,
     getMemberAddresses,
     getMemberEditPayload,
     getPrivateAdminError,
     getPrivateText,
+    getRolesTabBanner,
 } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -48,7 +49,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
-import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import Addresses from '../addresses/Addresses';
@@ -175,7 +175,7 @@ const SubUserEditModal = ({
     const [selectedRoles, setSelectedRoles] = useState<Set<string>>(
         () => new Set(member.UserOrganizationRoles?.map(({ Role }) => Role.OrganizationRoleID) ?? [])
     );
-    const showRolesTab = useFlag('AdminRoleMVP');
+    const [adminRolesUIState, loadingAdminRolesUI] = useAdminRolesUI();
     const { feature: adminRolesModalFeature, loading: adminRolesModalLoading } = useFeature(
         FeatureCode.AdminRolesOnboardingModal
     );
@@ -186,7 +186,7 @@ const SubUserEditModal = ({
         onClose: onRolesTabSpotlightClose,
     } = useSpotlightOnFeature(
         FeatureCode.AdminRolesPermissionsTabSpotlight,
-        showRolesTab && isAdminRolesModalDismissed
+        adminRolesUIState === AdminRolesUIState.Enabled && isAdminRolesModalDismissed
     );
 
     const hasVPN = Boolean(organization?.MaxVPN);
@@ -367,7 +367,7 @@ const SubUserEditModal = ({
                     </>
                 )}
 
-                {(canPromoteAdmin || canRevokeAdmin) && (
+                {(canPromoteAdmin || canRevokeAdmin) && adminRolesUIState !== AdminRolesUIState.Enabled && (
                     <MemberToggleContainer
                         toggle={
                             <Toggle
@@ -621,7 +621,7 @@ const SubUserEditModal = ({
                     const handleSubmit = async () => {
                         const memberDiff = getMemberDiff({ model, initialModel, hasVPN });
                         await handleUpdateMember(memberDiff);
-                        if (showRolesTab) {
+                        if (adminRolesUIState === AdminRolesUIState.Enabled) {
                             await dispatch(
                                 assignMemberRoles({
                                     member,
@@ -649,7 +649,7 @@ const SubUserEditModal = ({
                             title: c('user_modal').t`General`,
                             content: generalTabContent,
                         },
-                        ...(showRolesTab
+                        ...(adminRolesUIState !== AdminRolesUIState.Hidden
                             ? [
                                   {
                                       title: c('user_modal').t`Roles and permissions`,
@@ -674,10 +674,16 @@ const SubUserEditModal = ({
                                               onChange={setSelectedRoles}
                                               userRoles={member.UserOrganizationRoles}
                                               isEditingSelf={isSelf}
-                                              disabled={isPendingMagicLinkInvite}
-                                              banner={
-                                                  isPendingMagicLinkInvite ? getAssignRolesInvitationText() : undefined
+                                              disabled={
+                                                  isPendingMagicLinkInvite ||
+                                                  adminRolesUIState !== AdminRolesUIState.Enabled
                                               }
+                                              banner={getRolesTabBanner({
+                                                  showUpgrade:
+                                                      adminRolesUIState === AdminRolesUIState.Disabled &&
+                                                      !loadingAdminRolesUI,
+                                                  pendingInvitation: isPendingMagicLinkInvite,
+                                              })}
                                           />
                                       ),
                                   },

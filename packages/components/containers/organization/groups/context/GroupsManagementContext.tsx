@@ -20,6 +20,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { isOrgKeyRequired, isOwnerRole } from '@proton/account/organizationRoles/helpers';
 import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import useGroupKeys from '@proton/components/containers/organization/groups/useGroupKeys';
 import useApi from '@proton/components/hooks/useApi';
@@ -67,7 +68,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const api = useApi();
     const dispatch = useDispatch();
     const [organizationRoles] = useOrganizationRoles();
-    const isAdminRolesEnabled = useFlag('AdminRoleMVP');
+    const [adminRolesUIState] = useAdminRolesUI();
     const { createNotification } = useNotifications();
     const [selectedGroupId, setSelectedGroupId] = useState<string | undefined>(undefined);
     const selectedGroup = groups?.find((group) => group.ID === selectedGroupId);
@@ -254,7 +255,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     };
 
     const syncGroupAdminRoles = async (group: Pick<Group, 'ID'>) => {
-        if (!isAdminRolesEnabled) {
+        if (adminRolesUIState !== AdminRolesUIState.Enabled) {
             return;
         }
 
