@@ -2,6 +2,7 @@ import debounce from 'lodash/debounce';
 import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { AutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.abstract';
+import { getAutofillPageTelemetryDimensions } from 'proton-pass-extension/app/content/utils/autofill-telemetry';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import {
     commit,
@@ -25,7 +26,12 @@ export const createAutosaveService = (): AutosaveService => {
 
         ctx.service.inline.notification.open({
             action: NotificationAction.AUTOSAVE,
-            data: { ...autosave.data, ...data, submittedAt },
+            data: {
+                ...autosave.data,
+                ...data,
+                submittedAt,
+                telemetry: getAutofillPageTelemetryDimensions(document.documentElement),
+            },
         });
 
         return true;

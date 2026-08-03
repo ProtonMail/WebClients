@@ -79,7 +79,7 @@ export const AutosaveForm: FC<Props> = ({ data, busy, form }) => {
                         onTelemetry(
                             TelemetryEventName.AutosaveDismissed,
                             {},
-                            { dismissReason: 'not_now', modelVersion: MODEL_VERSION }
+                            { dismissReason: 'not_now', modelVersion: MODEL_VERSION, ...data.telemetry }
                         );
                         controller.close({ discard: shouldDiscard });
                     }}
