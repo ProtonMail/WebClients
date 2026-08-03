@@ -19,6 +19,8 @@ import {
     addESResults,
     backendActionFinished,
     backendActionStarted,
+    esSearchSettled,
+    esSearchStarted,
     eventUpdates,
     invalidate,
     load,
@@ -47,6 +49,8 @@ import {
     backendActionFinished as backendActionFinishedReducer,
     backendActionStarted as backendActionStartedReducer,
     deleteDraft as deleteDraftReducer,
+    esSearchSettled as esSearchSettledReducer,
+    esSearchStarted as esSearchStartedReducer,
     eventUpdatesFulfilled,
     eventUpdatesPending,
     expireElementsFulfilled,
@@ -121,6 +125,8 @@ const elementsSlice = createSlice({
         builder.addCase(manualPending, manualPendingReducer);
         builder.addCase(manualFulfilled, manualFulfilledReducer);
         builder.addCase(addESResults, addESResultsReducer);
+        builder.addCase(esSearchStarted, esSearchStartedReducer);
+        builder.addCase(esSearchSettled, esSearchSettledReducer);
 
         builder.addCase(optimisticApplyLabels, optimisticUpdates);
         builder.addCase(optimisticDelete, optimisticDeleteReducer);
