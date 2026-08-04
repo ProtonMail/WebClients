@@ -1,4 +1,4 @@
-import { type ConversationContext, formatPersonalization } from '../components/Conversation/helper';
+import type { ConversationContext } from '../components/Conversation/conversationContext';
 import { decryptString } from '../crypto';
 import type { AesGcmCryptoKey } from '../crypto/types';
 import {
@@ -44,12 +44,12 @@ import {
 import type { GenerationResponseMessage, WireImage } from '../types-api';
 import { separateAttachmentsByType } from './attachments';
 import { collapseCompactedChain } from './compaction';
+import type { ContextFilter } from './contextFilter';
+import { formatPersonalization } from './formatPersonalization';
 import { VISUALIZATION_INSTRUCTIONS } from './visualizationPrompt';
 
-export type ContextFilter = {
-    messageId: string;
-    excludedFiles: string[]; // filenames to skip
-};
+export type { ContextFilter } from './contextFilter';
+export { formatPersonalization } from './formatPersonalization';
 
 export const EMPTY_ASSISTANT_TURN: Turn = {
     role: Role.Assistant,
