@@ -2,6 +2,7 @@ import { useUser } from '@proton/account/user/hooks';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 
+import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
 import FeedbackDowngradeContent, { isKeepSubscription } from '../content/FeedbackDowngradeContent';
 import type { FeedbackDowngradeFormData, FeedbackDowngradeResult } from '../content/interface';
 import type { CancellationStep, CancellationStepConfig } from './types';
@@ -20,11 +21,22 @@ export type FeedbackStepResult = FeedbackStepKept | FeedbackStepCollected;
 export const useFeedbackStep = ({ canShow }: CancellationStepConfig): CancellationStep<FeedbackStepResult> => {
     const [user] = useUser();
     const [feedbackModal, showFeedbackModal] = useModalTwoPromise<undefined, FeedbackDowngradeResult>();
+    const { sendFeedbackModalCancelReport, sendFeedbackModalSubmitReport } = useCancellationTelemetry();
 
     const modal = feedbackModal(({ onResolve, onReject, onClose, ...modalProps }) => {
+        const handleResolve = (result: FeedbackDowngradeResult) => {
+            if (isKeepSubscription(result)) {
+                sendFeedbackModalCancelReport();
+            } else {
+                sendFeedbackModalSubmitReport();
+            }
+
+            onResolve(result);
+        };
+
         return (
             <Modal data-testid="help-improve" size="xlarge" onClose={onClose} {...modalProps}>
-                <FeedbackDowngradeContent user={user} onResolve={onResolve} onClose={onClose} />
+                <FeedbackDowngradeContent user={user} onResolve={handleResolve} onClose={onClose} />
             </Modal>
         );
     });
