@@ -1335,6 +1335,9 @@
       "Remove gift code": [
         "Remover código de vale-presente"
       ],
+      "Remove manager": [
+        "Remover gestor"
+      ],
       "Remove this label": [
         "Remover este marcador"
       ],
@@ -1775,6 +1778,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Faça o upgrade para ativar o ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Professional": [
+        "Faça upgrade para Profissional"
       ],
       "Upgrade to view all": [
         "Atualize para ver todos"
@@ -7093,6 +7099,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Você pode remover o cesso deles a qualquer momento para recuperar o controle exclusivo de sua conta."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Você ainda não foi designado como contato de recuperação para ninguém."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Você ainda não foi designado como contato de emergência para ninguém."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Você atingiu o máximo de ${ limit } contato de emergência",
         "Você atingiu o máximo de ${ limit } contatos de emergência."
@@ -8746,6 +8758,9 @@
       "Insert your security key into your device.": [
         "Insira sua chave de segurança no seu dispositivo."
       ],
+      "Require PIN for security key": [
+        "Requer PIN para chave de segurança"
+      ],
       "Security key": [
         "Chave de segurança"
       ],
@@ -9384,6 +9399,9 @@
       ],
       "Contact us": [
         "Contate-nos"
+      ],
+      "Downloads": [
+        "Downloads"
       ],
       "Enjoying ${ planName }?": [
         "Aproveitando o ${ planName }?"
@@ -10533,6 +10551,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "Disponível no macOS, Windows e Linux."
+      ],
+      "Available on VPN Professional": [
+        "Disponível no VPN Professional"
       ],
       "Awaiting transaction": [
         "Esperando transação"
@@ -11707,6 +11728,9 @@
       "Learn more about Gateways": [
         "Saiba mais sobre Gateways"
       ],
+      "Learn more about groups": [
+        "Saiba mais sobre os grupos"
+      ],
       "learn more about Sieve programming language": [
         "saber mais sobre a linguagem de programação Sieve"
       ],
@@ -12410,9 +12434,6 @@
       "Set password": [
         "Defina uma senha"
       ],
-      "Set the name, status, and assigned seats": [
-        "Defina o nome, status e atribuía licenças"
-      ],
       "Set up your organization": [
         "Configure a sua organização"
       ],
@@ -13043,6 +13064,9 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Faça upgrade ou limpe espaço em qualquer momento para importar o resto"
+      ],
+      "Upgrade required": [
+        "Upgrade necessário"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Faça o upgrade do seu plano para adicionar um endereço curto @pm.me para a sua conta para compartilhá-la facilmente. Ele significa \"${ MAIL_APP_NAME } me\" ou \"Private Message me\"."
@@ -14468,6 +14492,9 @@
       "Add extra services": [
         "Adicionar serviços extras"
       ],
+      "Add managers": [
+        "Adicionar gestor"
+      ],
       "Additional comments": [
         "Comentários adicionais"
       ],
@@ -14563,6 +14590,9 @@
       ],
       "ANY": [
         "QUALQUER"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tudo o que requer sua atenção, além dos e-mails das categorias desativadas"
       ],
       "App password": [
         "Senha do aplicativo"
@@ -15531,9 +15561,6 @@
       "Pending": [
         "Pendente"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "E-mails pessoais e profissionais, além de atualizações e notificações importantes"
-      ],
       "Phone number": [
         "Número do telefone"
       ],
@@ -15576,8 +15603,8 @@
       "Primary": [
         "Primário"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Principal - E-mails pessoais e profissionais, além de atualizações importantes"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principal — Tudo o que requer sua atenção, além dos e-mails das categorias desativadas"
       ],
       "Priority support": [
         "Suporte prioritário"
@@ -15918,6 +15945,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Atualizações — Confirmações automáticas, alertas e atualizações de conta"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
       ],
       "Upload 1 or more encryption keys": [
         "Envie 1 ou mais chaves de criptografia"
@@ -20315,6 +20345,9 @@
       ],
       "Enter company name": [
         "Insira o nome da empresa"
+      ],
+      "Enter name or email address": [
+        "Inserir nome ou endereço de email"
       ],
       "example@domain.com": [
         "exemplo@dominio.com"
@@ -26004,6 +26037,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gerencie arquivos em dispositivos Windows, Mac, Android e iOS."
       ],
+      "Managers": [
+        "Gestores"
+      ],
       "Messages": [
         "Mensagens"
       ],
@@ -26291,6 +26327,9 @@
       ],
       "Remove via MDM": [
         "Remover via MDM"
+      ],
+      "Remove via PowerShell": [
+        "Remover via PowerShell"
       ],
       "Rename the gateway": [
         "Renomear o gateway"
@@ -26646,6 +26685,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Faça upgrade para ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "Faça upgrade para ativar Sempre ligada"
       ],
       "Upgrade to keep your premium benefits.": [
         "Faça upgrade para manter seus benefícios premium."
@@ -27275,6 +27317,9 @@
       ],
       "Group membership paused": [
         "Associação ao grupo pausada"
+      ],
+      "Pending user activation": [
+        "Ativação pendente de usuário"
       ],
       "Resuming role assignment": [
         "Retomando a atribuição de função"

@@ -1335,6 +1335,9 @@
       "Remove gift code": [
         "Hediye kodunu kaldır"
       ],
+      "Remove manager": [
+        "Yöneticiyi kaldır"
+      ],
       "Remove this label": [
         "Bu etiketi kaldır"
       ],
@@ -1775,6 +1778,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME } özelliğini açmak için tarifenizi yükseltin"
+      ],
+      "Upgrade to Professional": [
+        "Professional tarifesine yükselt"
       ],
       "Upgrade to view all": [
         "Tümünü görüntülemek için tarifenizi yükseltin"
@@ -7093,6 +7099,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Hesabınıza yalnızca sizin tarafınızdan erişilebilmesi için erişme izinlerini istediğiniz zaman kaldırabilirsiniz."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Henüz hiç kimse sizi kurtarma kişisi olarak atamamış."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Henüz kimse sizi acil durum kişisi olarak atamamış."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Olabilecek en fazla ${ limit } acil durum kişisi sayısına ulaştınız.",
         "Olabilecek en fazla ${ limit } acil durum kişisi sayısına ulaştınız."
@@ -8737,11 +8749,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "${ name } güvenlik anahtarını silmek istediğinize emin misiniz?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Anahtar desteklediğinde, güvenlik anahtarınızı ${ BRAND_NAME } ile her kullandığınızda PIN kodunuzu yazmanız gerekir. Bu durum yalnızca PIN kodu ayarlanmış anahtarlar için geçerlidir."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } hesabınız ile ilişkilendirilmiş güvenlik anahtarını takın."
       ],
       "Insert your security key into your device.": [
         "Güvenlik anahtarınızı aygıtınıza takın."
+      ],
+      "PIN requirement for security keys disabled": [
+        "Güvenlik anahtarları için PIN kodu kapatıldı"
+      ],
+      "PIN requirement for security keys enabled": [
+        "Güvenlik anahtarları için PIN kodu açıldı"
+      ],
+      "Require PIN for security key": [
+        "Güvenlik anahtarı için PIN kodu gereksin"
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -9383,7 +9407,7 @@
         "Bize ulaşın"
       ],
       "Downloads": [
-        "İndirilenler"
+        "İndirmeler"
       ],
       "Enjoying ${ planName }?": [
         "${ planName } hoşunuza gitti mi?"
@@ -10248,6 +10272,9 @@
       "add a recovery method": [
         "bir kurtarma yöntemi ekleyin"
       ],
+      "Add additional users from your organization to manage this company.": [
+        "Bu birimi yönetmek için kuruluşunuzdan ek kullanıcılar ekleyin."
+      ],
       "Add an email address in case we need to contact you": [
         "Sizinle iletişim kurmamız gerekirse kullanabileceğimiz bir e-posta adresi ekleyin"
       ],
@@ -10534,6 +10561,9 @@
       "Available on macOS, Windows, and Linux.": [
         "macOS, Windows ve Linux üzerinde kullanılabilir."
       ],
+      "Available on VPN Professional": [
+        "VPN Professional tarifesinde kullanılabilir"
+      ],
       "Awaiting transaction": [
         "Ödemenin tamamlanması bekleniyor"
       ],
@@ -10683,6 +10713,9 @@
       ],
       "Coming soon": [
         "Çok yakında"
+      ],
+      "Companies you've been given access to manage.": [
+        "Yönetme yetkiniz olan birimler."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "TV üzerinde ${ VPN_APP_NAME } kullanmak için bu aygıtta oturum açma işlemini tamamlayın."
@@ -11049,6 +11082,9 @@
       ],
       "Enable email notifications": [
         "E-posta bildirimlerini aç"
+      ],
+      "Enable groups to streamline access control": [
+        "Erişim denetimini kolaylaştırmak için grupları kullanıma alın"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Kuruluşunuzu güvende tutmak için tek oturum açmayı etkinleştirin"
@@ -11706,6 +11742,9 @@
       ],
       "Learn more about Gateways": [
         "Ağ geçitleri ile ilgili ayrıntılı bilgi alın"
+      ],
+      "Learn more about groups": [
+        "Gruplar ile ilgili ayrıntılı bilgi alın"
       ],
       "learn more about Sieve programming language": [
         "Sieve programlama dili ile ilgili ayrıntılı bilgi alabilirsiniz"
@@ -12413,9 +12452,6 @@
       "Set password": [
         "Parola ayarla"
       ],
-      "Set the name, status, and assigned seats": [
-        "Adı, durumu ve atanmış koltukları ayarlayın"
-      ],
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
@@ -12485,6 +12521,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
+      ],
+      "Smart Routed through a different country.": [
+        "Başka bir ülke üzerinden akıllı yönlendirme yapıldı."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Akıllı yönlendirme ile: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "SMTP gönderimi özelliği ile üçüncü taraf hizmetler ya da aygıtlar ${ MAIL_APP_NAME } üzerinden özel etki alanı adreslerinizle e-posta gönderebilir."
@@ -12817,7 +12859,7 @@
         "Bu işlem ${ rententionLabel } öncesindeki dosya sürümlerinizi silecek."
       ],
       "This will delete all previous versions of your files.": [
-        "Bu işlem dosyalarınızın tüm önceki sürümlerini silecek."
+        "Bu işlem dosyalarınızın tüm önceki sürümlerini siler."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Bu işlem, **${ email }** hesabına erişme izni vermeyecek. İlerlemek istediğinize emin misiniz?"
@@ -13047,11 +13089,23 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
       ],
+      "Upgrade now to monitor your team's account safety.": [
+        "Ekibinizin hesap güvenliğini izlemek için tarifenizi yükseltin."
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Kuruluşunuzdaki ${ PASS_APP_NAME } etkinliğini görüntülemek için şimdi yükseltin."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Geri kalanları aktarmak için istediğiniz zaman tarifenizi yükseltin ya da yer açın"
       ],
+      "Upgrade required": [
+        "Yükseltme gerekli"
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Hesabınızı paylaşması daha kolay ve daha kısa @pm.me adresi ile kullanmak için tarifenizi yükseltin. İngilizce olarak \"${ MAIL_APP_NAME } ben\" ya da \"Bana özel ileti\" anlamına gelir."
+      ],
+      "Upgrade to define policies for your organization.": [
+        "Kuruluşunuzun ilkelerini tanımlamak için tarifenizi yükseltin."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
@@ -13353,6 +13407,9 @@
       "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
         "Yönetilen kuruluşlar ile denetlediğiniz kuruluşlar için erişim ekleyebilir, düzenleyebilir ve kaldırabilirsiniz."
       ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "VPN Professional ile yöneticiler, özel ağ geçitleri, erişim ilkeleri ve izlemenin yanında tüm kuruluş üyeleri için her zaman açık VPN özelliklerini uygulayabilir."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Geçerli tarifeniz ile @pm.me adresiniz iletileri yalnızca alabilir. @pm.me kullanarak ileti göndermek ve başka adresler oluşturmak için tarifenizi yükseltin."
       ],
@@ -13509,6 +13566,9 @@
       ],
       "You don't have any referrals.": [
         "Herhangi bir öneriniz yok."
+      ],
+      "You don't manage any companies yet.": [
+        "Henüz bir birim yönetmiyorsunuz."
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "Dosyayı açmanız veya okumanız gerekmez. Yalnızca indirin ve güvenli bir yere kaydedin."
@@ -14477,6 +14537,9 @@
       "Add extra services": [
         "Başka hizmetler ekle"
       ],
+      "Add managers": [
+        "Yöneticiler ekle"
+      ],
       "Additional comments": [
         "Ek açıklamalar"
       ],
@@ -14572,6 +14635,9 @@
       ],
       "ANY": [
         "BİRİ"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Dikkatinizi gerektiren her şey ve kapatılmış kategorilerden gelen e-postalar"
       ],
       "App password": [
         "Uygulama parolası"
@@ -15540,9 +15606,6 @@
       "Pending": [
         "Bekliyor"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Kişisel ve iş e-postalarının yanı sıra önemli güncellemeler ve bildirimler"
-      ],
       "Phone number": [
         "Telefon numarası"
       ],
@@ -15585,8 +15648,8 @@
       "Primary": [
         "Birincil saat dilimi"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Birincil - Kişisel ve iş e-postaları ile önemli güncellemeler"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Birincil - Dikkatinizi gerektiren her şey ve kapatılmış kategorilerden gelen e-postalar"
       ],
       "Priority support": [
         "Öncelikli destek"
@@ -15927,6 +15990,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Güncellemeler - Otomatik onaylar, uyarılar ve hesap güncellemeleri"
+      ],
+      "Upgrade": [
+        "Yükselt"
       ],
       "Upload 1 or more encryption keys": [
         "1 ya da birkaç şifreleme anahtarı yükleyin"
@@ -20315,6 +20381,9 @@
       ],
       "Enter company name": [
         "Kuruluş adını yazın"
+      ],
+      "Enter name or email address": [
+        "Adı ya da e-posta adresini yazın"
       ],
       "example@domain.com": [
         "ornek@etkialani.com"
@@ -25998,6 +26067,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Dosyaları Windows, Mac, Android ve iOS aygıtları arasında yönetin."
       ],
+      "Managers": [
+        "Yöneticiler"
+      ],
       "Messages": [
         "İletiler"
       ],
@@ -26285,6 +26357,9 @@
       ],
       "Remove via MDM": [
         "MDM ile kaldır"
+      ],
+      "Remove via PowerShell": [
+        "PowerShell ile kaldır"
       ],
       "Rename the gateway": [
         "Ağ geçidini yeniden adlandır"
@@ -26640,6 +26715,9 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } tarifesine yükseltin"
+      ],
+      "Upgrade to enable Always-on": [
+        "Hep açık VPN özelliğini açmak için tarifenizi yükseltin"
       ],
       "Upgrade to keep your premium benefits.": [
         "Ücretli avantajlarınızı korumak için tarifenizi yükseltin."
@@ -27708,6 +27786,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Bu işlem yeni bir ${ MAIL_APP_NAME } adresi oluşturur."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Yönetici rollerini kullanabilmek için bu rolleri destekleyen bir tarifeye yükseltin."
       ],
       "User created": [
         "Kullanıcı oluşturuldu"

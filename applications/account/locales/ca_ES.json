@@ -361,7 +361,7 @@
         "Connectat"
       ],
       "Contact sales": [
-        "Contacteu amb l’equip de vendes"
+        "Contacteu amb vendes"
       ],
       "Contact support": [
         "Contactar amb el suport"
@@ -1335,6 +1335,9 @@
       "Remove gift code": [
         "Esborra el codi de regal"
       ],
+      "Remove manager": [
+        "Eliminar el gestor"
+      ],
       "Remove this label": [
         "Esborra aquesta etiqueta"
       ],
@@ -1775,6 +1778,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Millora per activar ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Professional": [
+        "Millorar al pla Professional"
       ],
       "Upgrade to view all": [
         "Milloreu el pla per a veure-ho tot"
@@ -7093,6 +7099,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Els hi podeu suprimir l'accés en qualsevol moment per recuperar el control exclusiu del vostre compte."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Encara ningú no us ha designat com a contacte de recuperació."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Encara no heu estat designat com a contacte d'emergència per a ningú."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Heu arribat al màxim d'${ limit } contacte d'emergència.",
         "Heu arribat al màxim de ${ limit } contactes d'emergència."
@@ -8737,11 +8749,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Segur que voleu eliminar la clau de seguretat ${ name }?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Introduïu el vostre PIN cada vegada que utilitzeu la clau de seguretat amb ${ BRAND_NAME }, quan la clau ho admeti. Això només s'aplica a les claus que tinguin un PIN configurat."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
       ],
       "Insert your security key into your device.": [
         "Introduïu la clau de seguretat al vostre dispositiu."
+      ],
+      "PIN requirement for security keys disabled": [
+        "S'ha desactivat el requisit de PIN per a les claus de seguretat"
+      ],
+      "PIN requirement for security keys enabled": [
+        "S'ha activat el requisit de PIN per a les claus de seguretat"
+      ],
+      "Require PIN for security key": [
+        "Requereix PIN per a la clau de seguretat"
       ],
       "Security key": [
         "Clau de seguretat"
@@ -10248,6 +10272,9 @@
       "add a recovery method": [
         "afegir un mètode de recuperació"
       ],
+      "Add additional users from your organization to manage this company.": [
+        "Afegiu usuaris addicionals de la vostra organització per gestionar aquesta empresa."
+      ],
       "Add an email address in case we need to contact you": [
         "Afegiu una adreça de correu electrònic en cas d'haver de contactar amb vosaltres"
       ],
@@ -10534,6 +10561,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Disponible a macOS, Windows i Linux."
       ],
+      "Available on VPN Professional": [
+        "Disponible a VPN Professional"
+      ],
       "Awaiting transaction": [
         "S'està esperant la transacció"
       ],
@@ -10680,6 +10710,9 @@
       ],
       "Coming soon": [
         "Pròximament"
+      ],
+      "Companies you've been given access to manage.": [
+        "Empreses a les quals us han donat accés per gestionar."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Completeu l'inici de sessió en aquest dispositiu per començar a utilitzar ${ VPN_APP_NAME } al vostre televisor."
@@ -11047,6 +11080,9 @@
       "Enable email notifications": [
         "Activa les notificacions per correu electrònic"
       ],
+      "Enable groups to streamline access control": [
+        "Activeu els grups per simplificar el control d'accés"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Habiliteu l'inici de sessió únic per a mantenir segura la vostra organització"
       ],
@@ -11237,7 +11273,7 @@
         "per ${ price }"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "Per obtenir un historial de versions de 10 anys, contacteu amb el nostre equip de vendes."
+        "Per un historial de versions de 10 anys, poseu-vos en contacte amb el nostre equip de vendes."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Per accedir en qualsevol moment al correu electrònic i a una experiència mòbil optimitzada, descarregueu la nostra aplicació ${ androidAppLink } o ${ iosAppLink }."
@@ -11704,8 +11740,11 @@
       "Learn more about Gateways": [
         "Més informació sobre les passarel·les"
       ],
+      "Learn more about groups": [
+        "Per saber-ne més sobre els grups."
+      ],
       "learn more about Sieve programming language": [
-        "obtingueu més informació sobre el llenguatge de programació Sieve"
+        "obtenir més informació sobre el llenguatge de programació Sieve"
       ],
       "Learn more about single sign-on": [
         "Obteniu més informació sobre l'inici de sessió únic"
@@ -12410,9 +12449,6 @@
       "Set password": [
         "Estableix la contrasenya"
       ],
-      "Set the name, status, and assigned seats": [
-        "Definiu el nom, l'estat i les llicències assignades"
-      ],
       "Set up your organization": [
         "Configuració de la vostra organització"
       ],
@@ -12482,6 +12518,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
+      ],
+      "Smart Routed through a different country.": [
+        "Encaminament intel·ligentment a través d'un país diferent."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Encaminat intel·ligentment a través de: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "L'enviament SMTP permet que serveis o dispositius de tercers enviïn correus a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzat."
@@ -12811,7 +12853,7 @@
         "Això permetrà que el televisor accedeixi al vostre compte de ${ BRAND_NAME }"
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Això eliminarà totes les versions anteriors dels vostres fitxers més antigues de ${ rententionLabel }."
+        "Això eliminarà totes les versions anteriors dels vostres fitxers anteriors a ${ rententionLabel }."
       ],
       "This will delete all previous versions of your files.": [
         "Això eliminarà totes les versions anteriors dels vostres fitxers."
@@ -13044,11 +13086,23 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
+      "Upgrade now to monitor your team's account safety.": [
+        "Milloreu de pla ara per supervisar la seguretat del compte del vostre equip."
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Milloreu el pla ara per veure l'activitat de ${ PASS_APP_NAME } a tota la vostra organització."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Milloreu de pla o allibereu espai en qualsevol moment per portar la resta"
       ],
+      "Upgrade required": [
+        "Actualització necessària"
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Milloreu de pla per afegir al vostre compte una adreça @pm.me més curta que sigui més fàcil de compartir. Vol dir \"${ MAIL_APP_NAME } me\" o \"Private Message me\"."
+      ],
+      "Upgrade to define policies for your organization.": [
+        "Milloreu de pla per definir directives per a la vostra organització."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
@@ -13350,6 +13404,9 @@
       "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
         "Amb les empreses gestionades, podreu afegir, editar i esborrar l'accés de les organitzacions que superviseu."
       ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Amb la VPN Professional, els administradors poden imposar la VPN sempre activa a tots els membres de l'organització, així com passarel·les privades, polítiques d'accés i monitoratge."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Amb el vostre pla actual, només podeu rebre missatges amb la vostra adreça @pm.me. Milloreu per enviar missatges i crear adreces addicionals amb @pm.me."
       ],
@@ -13506,6 +13563,9 @@
       ],
       "You don't have any referrals.": [
         "No teniu cap referència."
+      ],
+      "You don't manage any companies yet.": [
+        "Encara no gestioneu cap empresa."
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "No cal que obriu ni llegiu el fitxer; només descarregueu-lo i deseu-lo en un lloc segur."
@@ -14474,6 +14534,9 @@
       "Add extra services": [
         "Afegiu-hi serveis addicionals"
       ],
+      "Add managers": [
+        "Afegir gestors"
+      ],
       "Additional comments": [
         "Comentaris addicionals"
       ],
@@ -14569,6 +14632,9 @@
       ],
       "ANY": [
         "QUALSEVOL"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tot allò que necessiti la vostra atenció, a més dels correus electrònics de les categories desactivades"
       ],
       "App password": [
         "Contrasenya de l'aplicació"
@@ -14962,7 +15028,7 @@
         "No tornis a preguntar"
       ],
       "Don't keep versions": [
-        "No guardeu versions"
+        "No conserveu versions"
       ],
       "Don't show this again": [
         "No ho tornis a mostrar"
@@ -15537,9 +15603,6 @@
       "Pending": [
         "Pendent"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Correus electrònics personals i de la feina, a més d'actualitzacions i notificacions importants"
-      ],
       "Phone number": [
         "Número de telèfon"
       ],
@@ -15582,8 +15645,8 @@
       "Primary": [
         "Principal"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Principal: correus electrònics personals i de feina, a més d'actualitzacions importants"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primari: tot allò que necessiti la vostra atenció, a més dels correus electrònics de les categories desactivades"
       ],
       "Priority support": [
         "Suport prioritari"
@@ -15924,6 +15987,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Actualitzacions: confirmacions automatitzades, alertes i actualitzacions del compte"
+      ],
+      "Upgrade": [
+        "Milloreu de pla"
       ],
       "Upload 1 or more encryption keys": [
         "Pengeu 1 o més claus de xifratge"
@@ -17631,8 +17697,8 @@
         "Programació de cites"
       ],
       "Appointment scheduling with ${ n } booking page": [
-        "Programació de cites amb ${ n } pàgina de reserva",
-        "Programació de cites amb ${ n } pàgines de reserva"
+        "Programació de cites amb ${ n } pàgina de reserves",
+        "Programació de cites amb ${ n } pàgines de reserves"
       ],
       "Apps for": [
         "Aplicacions per a"
@@ -17980,8 +18046,8 @@
         "Compartició de la caixa forta (fins a ${ n } persones)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "Ús compartit de la caixa forta amb fins a ${ n } persona",
-        "Ús compartit de la caixa forta amb fins a ${ n } persones"
+        "Compartició de la caixa forta amb fins a ${ n } persona",
+        "Compartició de la caixa forta amb fins a ${ n } persones"
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
@@ -20313,6 +20379,9 @@
       "Enter company name": [
         "Introduïu el nom de l'empresa"
       ],
+      "Enter name or email address": [
+        "Introduïu un nom o una adreça electrònica"
+      ],
       "example@domain.com": [
         "exemple@domini.com"
       ],
@@ -21091,7 +21160,7 @@
         "Comenceu a guanyar crèdits"
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
-        "Podeu obtenir fins a **${ maxRewardAmount }** en crèdits."
+        "Obtingueu fins a **${ maxRewardAmount }** en crèdit."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Us queda **${ daysRemaining } dia** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**.",
@@ -25998,6 +26067,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gestioneu fitxers entre dispositius Windows, Mac, Android i iOS."
       ],
+      "Managers": [
+        "Gestors"
+      ],
       "Messages": [
         "Missatges"
       ],
@@ -26285,6 +26357,9 @@
       ],
       "Remove via MDM": [
         "Esborrar-ho mitjançant MDM"
+      ],
+      "Remove via PowerShell": [
+        "Esborrar-ho mitjançant PowerShell"
       ],
       "Rename the gateway": [
         "Canvia el nom de la passarel·la"
@@ -26640,6 +26715,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Milloreu el pla a ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "Milloreu el pla per habilitar la VPN sempre activa"
       ],
       "Upgrade to keep your premium benefits.": [
         "Milloreu de pla per mantenir els vostres avantatges prèmium."
@@ -27708,6 +27786,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Això crearà una nova adreça de ${ MAIL_APP_NAME }."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Milloreu a un pla compatible per utilitzar rols d'administrador/a."
       ],
       "User created": [
         "S'ha creat l'usuari"

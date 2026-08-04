@@ -1335,6 +1335,9 @@
       "Remove gift code": [
         "Retirer le code-cadeau"
       ],
+      "Remove manager": [
+        "Supprimer le gestionnaire."
+      ],
       "Remove this label": [
         "Retirer ce label"
       ],
@@ -1775,6 +1778,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Upgrade to Professional": [
+        "Passer à la version Professional"
       ],
       "Upgrade to view all": [
         "Améliorer l'abonnement pour tout voir"
@@ -7093,6 +7099,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Vous pouvez retirer leur accès à tout moment pour récupérer le contrôle exclusif de votre compte."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Vous n'avez pas encore été désigné comme contact de récupération pour qui que ce soit."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Vous n'avez pas encore été désigné comme contact d'urgence pour qui que ce soit."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Vous avez atteint le maximum de ${ limit } contact d'urgence.",
         "Vous avez atteint le maximum de ${ limit } contacts d'urgence."
@@ -8740,11 +8752,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Voulez-vous vraiment supprimer la clé de sécurité ${ name } ?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Entrez votre code PIN à chaque fois que vous utilisez votre clé de sécurité avec ${ BRAND_NAME }, si la clé le permet. Ceci s'applique uniquement aux clés pour lesquelles un code PIN a été paramétré."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
       ],
       "Insert your security key into your device.": [
         "Insérez votre clé de sécurité dans votre appareil."
+      ],
+      "PIN requirement for security keys disabled": [
+        "Le demande de code PIN est désactivée pour les clés de sécurité"
+      ],
+      "PIN requirement for security keys enabled": [
+        "Demande du code PIN activée pour les clés de sécurité"
+      ],
+      "Require PIN for security key": [
+        "Demander le code PIN pour la clé de sécurité"
       ],
       "Security key": [
         "Clé de sécurité"
@@ -10537,6 +10561,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Disponible sur macOS, Windows et Linux."
       ],
+      "Available on VPN Professional": [
+        "Disponible dans VPN Professional"
+      ],
       "Awaiting transaction": [
         "Transaction en attente"
       ],
@@ -10686,6 +10713,9 @@
       ],
       "Coming soon": [
         "Bientôt disponible"
+      ],
+      "Companies you've been given access to manage.": [
+        "Entreprises pour lesquelles on vous a donné les droits de gestion."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Terminez la connexion sur cet appareil pour commencer à utiliser ${ VPN_APP_NAME } sur votre TV."
@@ -11710,6 +11740,9 @@
       "Learn more about Gateways": [
         "En savoir plus sur les passerelles"
       ],
+      "Learn more about groups": [
+        "En savoir plus sur les groupes"
+      ],
       "learn more about Sieve programming language": [
         "en savoir plus sur le langage de programmation Sieve"
       ],
@@ -12416,9 +12449,6 @@
       "Set password": [
         "Définir le mot de passe"
       ],
-      "Set the name, status, and assigned seats": [
-        "Définir le nom, le statut et les accès attribués"
-      ],
       "Set up your organization": [
         "Configurez votre organisation"
       ],
@@ -13050,11 +13080,23 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
       ],
+      "Upgrade now to monitor your team's account safety.": [
+        "Passez à une version supérieure dès maintenant pour contrôler la sécurité des comptes de votre équipe."
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Passez à une version supérieure dès maintenant pour visualiser l'activité sur ${ PASS_APP_NAME } au sein de votre organisation."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Changer d'abonnement ou libérer de l'espace à tout moment pour transférer le reste"
       ],
+      "Upgrade required": [
+        "Un abonnement supérieur est nécessaire."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Changez d'abonnement pour ajouter une adresse plus courte @pm.me à votre compte, plus facile à partager et qui signifie « ${ MAIL_APP_NAME } me » ou « Private Message me » (envoyez-moi un message privé)."
+      ],
+      "Upgrade to define policies for your organization.": [
+        "Passez à une version supérieure pour définir des politiques pour votre organisation."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Passez à la version supérieure pour conserver vos avantages de ${ planTitle }."
@@ -13356,6 +13398,9 @@
       "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
         "Avec les entreprises gérées, vous pouvez ajouter, modifier et supprimer les droits d'accès des organisations dont vous avez la charge."
       ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "VPN Professional permet aux administrateurs de mettre en place une connexion VPN forcée pour tous les membres de l'organisation, ainsi que des proxys privés, des politiques d'accès et du monitoring."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Avec votre abonnement actuel, vous pouvez uniquement recevoir des messages avec votre adresse @pm.me. Changez d'abonnement pour envoyer des messages et créer des adresses supplémentaires avec le domaine @pm.me."
       ],
@@ -13512,6 +13557,9 @@
       ],
       "You don't have any referrals.": [
         "Vous n'avez aucun parrainage."
+      ],
+      "You don't manage any companies yet.": [
+        "Vous ne gérez pas encore d'organisation."
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "Vous n'avez pas besoin d'ouvrir ou de lire le fichier. Téléchargez-le et stockez-le à un endroit sécurisé."
@@ -14480,6 +14528,9 @@
       "Add extra services": [
         "Ajouter des services supplémentaires"
       ],
+      "Add managers": [
+        "Ajouter des gestionnaires"
+      ],
       "Additional comments": [
         "Commentaires supplémentaires"
       ],
@@ -14575,6 +14626,9 @@
       ],
       "ANY": [
         "N'IMPORTE"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tout ce qui nécessite votre attention ainsi que les emails des catégories désactivées"
       ],
       "App password": [
         "Mot de passe de l'application"
@@ -15543,9 +15597,6 @@
       "Pending": [
         "En attente"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "E-mails personnels et professionnels, ainsi que mises à jour et notifications importantes"
-      ],
       "Phone number": [
         "Numéro de téléphone"
       ],
@@ -15587,9 +15638,6 @@
       ],
       "Primary": [
         "Principale"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Principal – E-mails personnels et professionnels, ainsi que mises à jour importantes"
       ],
       "Priority support": [
         "Support prioritaire"
@@ -15930,6 +15978,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Mises à jour – Confirmations, alertes et mises à jour de compte automatisées"
+      ],
+      "Upgrade": [
+        "Améliorer votre abonnement"
       ],
       "Upload 1 or more encryption keys": [
         "Chargez une ou plusieurs clés de chiffrement."
@@ -20318,6 +20369,9 @@
       ],
       "Enter company name": [
         "Saisir un nom d'entreprise"
+      ],
+      "Enter name or email address": [
+        "Saisissez un nom ou une adresse e-mail."
       ],
       "example@domain.com": [
         "exemple@domaine.fr"
@@ -26004,6 +26058,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gérer vos fichiers sur l'ensemble de vos appareils sur Windows, Mac, Android et iOS."
       ],
+      "Managers": [
+        "Gestionnaires"
+      ],
       "Messages": [
         "Messages"
       ],
@@ -26291,6 +26348,9 @@
       ],
       "Remove via MDM": [
         "Retirer via MDM"
+      ],
+      "Remove via PowerShell": [
+        "Supprimer via PowerShell"
       ],
       "Rename the gateway": [
         "Modifier le nom de la passerelle"
