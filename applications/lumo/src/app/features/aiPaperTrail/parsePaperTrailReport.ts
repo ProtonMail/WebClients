@@ -1,3 +1,4 @@
+import type { PaperTrailAnalysisResult } from './analysisTypes';
 import type {
     PaperTrailComplianceRisk,
     PaperTrailExposure,
@@ -15,8 +16,9 @@ const toNumber = (value: unknown): number => {
     return Number.isFinite(n) ? Math.round(n) : 0;
 };
 
-const toStringArray = (value: unknown): string[] =>
-    Array.isArray(value) ? value.map(toStr).filter(Boolean) : [];
+const toStringArray = (value: unknown): string[] => (Array.isArray(value) ? value.map(toStr).filter(Boolean) : []);
+
+const isInsufficientData = (value: unknown): boolean => value === true;
 
 /**
  * Extract a JSON object from a (possibly noisy) model response. Handles raw JSON,
@@ -114,22 +116,7 @@ const parseSections = (value: unknown): PaperTrailSection[] => {
         .filter((section) => section.title && section.findings.length > 0);
 };
 
-/**
- * Parse and validate a completed assistant message into a PaperTrailReport.
- * Returns undefined while streaming or when the content isn't a valid report.
- */
-export const parsePaperTrailReport = (content: string | undefined): PaperTrailReport | undefined => {
-    if (!content) {
-        return undefined;
-    }
-
-    let raw: Record<string, unknown>;
-    try {
-        raw = extractJsonObject(content) as Record<string, unknown>;
-    } catch {
-        return undefined;
-    }
-
+const parseReportFields = (raw: Record<string, unknown>): PaperTrailReport | undefined => {
     const label = toStr(raw.label);
     const sections = parseSections(raw.sections);
     if (!label || sections.length === 0) {
@@ -150,4 +137,44 @@ export const parsePaperTrailReport = (content: string | undefined): PaperTrailRe
         dataExposure: parseExposure(raw.dataExposure),
         complianceRisks: parseComplianceRisks(raw.complianceRisks),
     };
+};
+
+/**
+ * Parse a completed assistant message into a report, an insufficient-data outcome,
+ * or an unparseable result when the content is not valid JSON.
+ */
+export const parsePaperTrailAnalysis = (content: string | undefined): PaperTrailAnalysisResult | undefined => {
+    if (!content?.trim()) {
+        return undefined;
+    }
+
+    let raw: Record<string, unknown>;
+    try {
+        raw = extractJsonObject(content) as Record<string, unknown>;
+    } catch {
+        return { kind: 'unparseable' };
+    }
+
+    const report = parseReportFields(raw);
+    if (report) {
+        return { kind: 'report', report };
+    }
+
+    if (isInsufficientData(raw.insufficientData)) {
+        return { kind: 'insufficient_data' };
+    }
+
+    return { kind: 'unparseable' };
+};
+
+/**
+ * Parse and validate a completed assistant message into a PaperTrailReport.
+ * Returns undefined while streaming or when the content isn't a valid report.
+ */
+export const parsePaperTrailReport = (content: string | undefined): PaperTrailReport | undefined => {
+    const analysis = parsePaperTrailAnalysis(content);
+    if (analysis?.kind === 'report') {
+        return analysis.report;
+    }
+    return undefined;
 };
