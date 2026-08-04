@@ -311,9 +311,6 @@
       "Continue to ${ planOrAppName }": [
         "Continuare cu ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Continuare cu categorii"
-      ],
       "Continue with Free": [
         "Continuare cu Free"
       ],
@@ -1527,9 +1524,7 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie",
-        "Aprobare chei",
-        "Aprobare chei"
+        "Aprobare cheie"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -1702,6 +1697,9 @@
       "Yes, I'll attend": [
         "Da, voi participa"
       ],
+      "Yes, organize it": [
+        "Da, vreau organizare"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
@@ -1737,9 +1735,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Personalizați categoriile"
-      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -1748,6 +1743,9 @@
       ],
       "Not now": [
         "Nu acum"
+      ],
+      "Set up categories": [
+        "Setare categorii"
       ],
       "Skip": [
         "Omitere"
@@ -4403,7 +4401,7 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Citiți, răspundeți și rămâneți deasupra lui Gmail direct din ${ MAIL_APP_NAME }"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Faceți clic dreapta pe un e-mail și selectați „Mutare în” sau glisați și plasați-l într-o altă categorie. Mesajele similare vor fi mutate automat acolo în viitor."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
@@ -4583,6 +4581,16 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "S-au detectat următoarele câmpuri în fișierul CSV încărcat. Bifați-le pe cele pe care doriți să le importați."
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "Mesaje noi: ${ messageCount }",
+        "Mesaje noi: ${ messageCount }",
+        "Mesaje noi: ${ messageCount }"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "De la: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -6564,6 +6572,9 @@
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
       ],
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "Criptare și adăugare contacte: ${ totalImported }/${ totalToImport }"
+      ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Criptare și adăugare evenimente în calendar: ${ totalImported }/${ totalToImport }"
       ],
@@ -6900,6 +6911,11 @@
         "Contacte: ${ contactsLength }",
         "Contacte: ${ contactsLength }",
         "Contacte: ${ contactsLength }"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-mailuri → ${ dest }",
+        "${ count } de e-mailuri → ${ dest }"
       ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } din ${ totalProgress }",
@@ -8014,7 +8030,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8193,6 +8211,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Majoritatea rețelelor Wi-Fi publice sunt sigure, dar unele nu au securitate, expunându-vă la amenințări cibernetice. Un VPN vă criptează traficul, păstrându-vă protecția."
       ],
+      "Move emails": [
+        "Mutare mesaje"
+      ],
+      "Move here": [
+        "Mutare aici"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
       ],
@@ -8285,6 +8309,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Deschideți ghidul pentru acțiuni recomandate și legături web utile."
+      ],
+      "Opened ${ location }": [
+        "S-a deschis ${ location }"
       ],
       "Optional": [
         "Opțional"
@@ -9289,7 +9316,7 @@
       "You have ${ totalLabel } in your inbox.": [
         "În „Primite” aveți: ${ totalLabel }"
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
         "Conversații existente în categoria ${ categoryLabel }: **${ count }**",
         "Conversații existente în categoria ${ categoryLabel }: **${ count }**",
         "Conversații existente în categoria ${ categoryLabel }: **${ count }**"
@@ -9304,7 +9331,7 @@
         "Conversații marcate cu această etichetă: **${ count }**",
         "Conversații marcate cu această etichetă: **${ count }**"
       ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
+      "You have **${ count } message** in your ${ categoryLabel } category": [
         "Mesaje existente în categoria ${ categoryLabel }: **${ count }**",
         "Mesaje existente în categoria ${ categoryLabel }: **${ count }**",
         "Mesaje existente în categoria ${ categoryLabel }: **${ count }**"
@@ -9346,12 +9373,12 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Trebuie să dezactivați sau să eliminați utilizatorii ${ MAIL_APP_NAME } adiționali, adresele și domeniile personale înainte de a putea retrograda."
       ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
         "Conversații selectate din categoria ${ categoryLabel }: **${ checked }**",
         "Conversații selectate din categoria ${ categoryLabel }: **${ checked }**",
         "Conversații selectate din categoria ${ categoryLabel }: **${ checked }**"
       ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**",
         "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**",
         "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**"
@@ -9935,6 +9962,9 @@
       "ANY": [
         "ORICARE"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Orice vă solicită atenția, plus mesaje din categoriile dezactivate"
+      ],
       "App password": [
         "Parola aplicației"
       ],
@@ -9943,6 +9973,9 @@
       ],
       "Apply to future messages": [
         "Aplicare la mesajele viitoare"
+      ],
+      "Archive": [
+        "Arhivă"
       ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
@@ -10466,9 +10499,6 @@
       "Payment method": [
         "Metoda de plată"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Mesaje personale și de afaceri, plus actualizări importante și notificări"
-      ],
       "PGP scheme": [
         "Schema PGP"
       ],
@@ -10490,8 +10520,8 @@
       "Primary": [
         "Primar"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Principal - Adrese de e-mail personale și de serviciu, plus actualizări importante"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primare - Orice vă solicită atenția, plus mesaje din categoriile dezactivate"
       ],
       "Promotions": [
         "Promoții"
@@ -15564,8 +15594,10 @@
         "Mesaje de mutat: ${ selectionCount }",
         "Mesaje de mutat: ${ selectionCount }"
       ],
-      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
-        "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise aici în viitor."
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "S-a mutat în ${ label }. Mesajele asemănătoare vor fi trimise acolo în viitor.",
+        "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise acolo în viitor.",
+        "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise acolo în viitor."
       ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
@@ -16375,8 +16407,8 @@
       "Make a secure connection your default": [
         "Faceți o conexiune sigură ca implicită"
       ],
-      "Make Categories your own": [
-        "Personalizați-vă categoriile"
+      "Make your inbox your own": [
+        "Personalizați-vă contul"
       ],
       "Mark all messages as read": [
         "Marcare toate mesajele ca fiind citite"
@@ -16449,6 +16481,9 @@
       ],
       "Move all messages to trash": [
         "Mutare toate mesajele în „Gunoi”"
+      ],
+      "Move emails": [
+        "Mutare mesaje"
       ],
       "Move to": [
         "Mutare în"
@@ -16567,9 +16602,6 @@
       "Payment verification": [
         "Verificare plată"
       ],
-      "Personalize your Categories": [
-        "Personalizați-vă categoriile"
-      ],
       "Phone numbers": [
         "Numere de telefon"
       ],
@@ -16626,6 +16658,9 @@
       ],
       "Referral": [
         "Recomandare"
+      ],
+      "Refine your Categories": [
+        "Rafinare categorii"
       ],
       "Remove forwarding address": [
         "Eliminare adresă de transferare"

@@ -234,6 +234,9 @@
       "Clear browser data": [
         "Vymazať údaje prehliadača"
       ],
+      "Clear conversation": [
+        "Vyčistiť konverzáciu"
+      ],
       "Clear data": [
         "Zmazať dáta"
       ],
@@ -308,9 +311,6 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Pokračovať do ${ planOrAppName }"
-      ],
-      "Continue with categories": [
-        "Pokračovať s kategóriami"
       ],
       "Continue with Free": [
         "Pokračovať s Free"
@@ -1050,6 +1050,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
       ],
+      "Open debug menu": [
+        "Otvoriť ladiace menu"
+      ],
       "Open navigation": [
         "Otvoriť menu"
       ],
@@ -1452,6 +1455,9 @@
       "Stay": [
         "Zostať"
       ],
+      "Stop": [
+        "Zastaviť"
+      ],
       "Stop downloading assistant": [
         "Zastaviť sťahovanie asistenta"
       ],
@@ -1494,6 +1500,9 @@
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Aby sme mohli bezpečne prehľadávať vaše emaily, musíme si stiahnuť kópiu vašich správ do vášho prehliadača. Počiatočné sťahovanie môže chvíľu trvať."
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Prepnúť ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Toggle Calendar app": [
         "Prepnúť na Kalendár"
       ],
@@ -1522,10 +1531,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1698,6 +1704,9 @@
       "Yes, I'll attend": [
         "Áno, budem sa zúčastňovať"
       ],
+      "Yes, organize it": [
+        "Áno, organizovať"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktu",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
@@ -1734,9 +1743,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Prispôsobenie kategórií"
-      ],
       "Got it": [
         "Rozumiem"
       ],
@@ -1745,6 +1751,9 @@
       ],
       "Not now": [
         "Teraz nie"
+      ],
+      "Set up categories": [
+        "Nastavte kategórie"
       ],
       "Skip": [
         "Preskočiť"
@@ -4426,7 +4435,7 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čítajte, odpovedajte a majte prehľad o Gmaile z aplikácie ${ MAIL_APP_NAME }"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Kliknite pravým tlačidlom myši na email a vyberte možnosť „Presunúť do“ alebo ho pretiahnite do inej kategórie. Podobné emaily sa tam v budúcnosti zaradia automaticky."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
@@ -4612,6 +4621,17 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Vo vami nahranom súbore CSV sme zistili nasledujúce pole. Zaškrtnite tie, ktoré chcete importovať."
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nová správa",
+        "${ messageCount } nové správy",
+        "${ messageCount } nových správ",
+        "${ messageCount } nových správ"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Od: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -6973,6 +6993,12 @@
         "${ contactsLength } kontaktov",
         "${ contactsLength } kontaktov"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } email → ${ dest }",
+        "${ count } emaily → ${ dest }",
+        "${ count } emailov → ${ dest }",
+        "${ count } emailov → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } z ${ totalProgress }",
         "${ currentProgress } z ${ totalProgress }",
@@ -8144,7 +8170,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8323,6 +8352,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Väčšina verejných WiFi sietí je bezpečná, ale niektoré nie sú dostatočne zabezpečené, čo vás vystavuje kybernetickým hrozbám. VPN šifruje vašu prevádzku, čím vás chráni."
       ],
+      "Move emails": [
+        "Presunúť emaily"
+      ],
+      "Move here": [
+        "Presunúť sem"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pomenujte svoj nový priečinok a vyberte nadradený priečinok, do ktorého ho chcete vložiť. Pokiaľ nadradený priečinok nevyberiete, bude nový priečinok vytvorený v hlavnom priečinku."
       ],
@@ -8415,6 +8450,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Otvorte príručku s odporúčanými akciami a užitočnými odkazmi."
+      ],
+      "Opened ${ location }": [
+        "Otvorené ${ location }"
       ],
       "Optional": [
         "Voliteľné"
@@ -8907,6 +8945,9 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Ak nepoznajú vašu emailovú adresu, nemôžu vám posielať spam. Chráňte svoju emailovú schránku pomocou aliasov na skrytie emailu (hide-my-email)."
+      ],
+      "Thinking about this": [
+        "Premýšľam o tom"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Táto adresa nie je povolená. Ak chcete odosielať správy na túto adresu, musí ju majiteľ najskôr povoliť."
@@ -9424,11 +9465,11 @@
       "You have ${ totalLabel } in your inbox.": [
         "Vo vašej schránke máte ${ totalLabel }."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "Máte **${ count } konverzáciu** v kategórii ${ categoryLabel }",
-        "Máte **${ count } konverzácie** v kategórii ${ categoryLabel }",
-        "Máte **${ count } konverzácií** v kategórii ${ categoryLabel }",
-        "Máte **${ count } konverzácií** v kategórii ${ categoryLabel }"
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Máte **${ count } konverzáciu** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } konverzácie** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } konverzácií** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } konverzácií** vo vašej kategórii ${ categoryLabel }"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "V tomto priečinku máte uloženú **${ count } konverzáciu**",
@@ -9442,11 +9483,11 @@
         "Máte **${ count } konverzácií** označených týmto štítkom",
         "Máte **${ count } konverzácií** označených týmto štítkom"
       ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "Máte **${ count } správu** v kategórii ${ categoryLabel }",
-        "Máte **${ count } správy** v kategórii ${ categoryLabel }",
-        "Máte **${ count } správ** v kategórii ${ categoryLabel }",
-        "Máte **${ count } správ** v kategórii ${ categoryLabel }"
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Máte **${ count } správu** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } správy** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } správ** vo vašej kategórii ${ categoryLabel }",
+        "Máte **${ count } správ** vo vašej kategórii ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "V tomto priečinku máte uloženú **${ count } správu**",
@@ -9487,17 +9528,17 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Pred znížením predplatného musíte zakázať alebo odstrániť všetkých ďalších ${ MAIL_APP_NAME } používateľov, adresy a vlastné domény."
       ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Vybrali ste **${ checked } konverzáciu** v kategórii ${ categoryLabel }",
-        "Vybrali ste **${ checked } konverzácie** v kategórii ${ categoryLabel }",
-        "Vybrali ste **${ checked } konverzácií** v kategórii ${ categoryLabel }",
-        "Vybrali ste **${ checked } konverzácií** v kategórii ${ categoryLabel }"
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Vybrali ste **${ checked } konverzáciu** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } konverzácie** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } konverzácií** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } konverzácií** vo vašej kategórii ${ categoryLabel }"
       ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Vybrali ste **${ checked } správu** v kategórii ${ categoryLabel }",
-        "Vybrali ste **${ checked } správy** v kategórii ${ categoryLabel }",
-        "Vybrali ste **${ checked } správ** v kategórii ${ categoryLabel }",
-        "Vybrali ste **${ checked } správ** v kategórii ${ categoryLabel }"
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Vybrali ste **${ checked } správu** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } správy** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } správ** vo vašej kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } správ** vo vašej kategórii ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Z tohto priečinka ste vybrali **${ count } konverzáciu**",
@@ -10098,6 +10139,9 @@
       "ANY": [
         "AKÝKOĽVEK"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Všetko, čo si vyžaduje vašu pozornosť, plus emaily z deaktivovaných kategórií"
+      ],
       "App password": [
         "Heslo aplikácie"
       ],
@@ -10106,6 +10150,9 @@
       ],
       "Apply to future messages": [
         "Použiť na budúce správy"
+      ],
+      "Archive": [
+        "Archív"
       ],
       "Attach screenshot(s)": [
         "Priložiť snímok(ky) obrazovky"
@@ -10629,9 +10676,6 @@
       "Payment method": [
         "Spôsob platby"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Osobné a pracovné emaily, ako aj dôležité aktualizácie a oznámenia"
-      ],
       "PGP scheme": [
         "PGP schéma"
       ],
@@ -10653,8 +10697,8 @@
       "Primary": [
         "Primárne"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Hlavná – Osobné a pracovné emaily, ako aj dôležité aktualizácie"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primárna - Všetko, čo si vyžaduje vašu pozornosť, plus emaily z deaktivovaných kategórií"
       ],
       "Promotions": [
         "Propagačné akcie"
@@ -11401,6 +11445,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licencií"
+      ],
+      "${ price } per seat": [
+        "${ price } za licenciu"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats }${ MEET_APP_NAME } licencia",
@@ -13634,6 +13681,9 @@
       "Anytown": [
         "Niekdetam"
       ],
+      "Ask anything…": [
+        "Opýtajte sa na čokoľvek..."
+      ],
       "Company name": [
         "Názov spoločnosti"
       ],
@@ -15844,6 +15894,12 @@
         "Presunúť ${ selectionCount } správ",
         "Presunúť ${ selectionCount } správ"
       ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Presunuté do ${ label }. Podobná správa tam bude v zaradená aj v budúcnosti.",
+        "Presunuté do ${ label }. Podobné správy tam budú v zaradené aj v budúcnosti.",
+        "Presunuté do ${ label }. Podobné správy tam budú v zaradené aj v budúcnosti.",
+        "Presunuté do ${ label }. Podobné správy tam budú v zaradené aj v budúcnosti."
+      ],
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"
       ],
@@ -16673,8 +16729,8 @@
       "Make a secure connection your default": [
         "Nastavte zabezpečené pripojenie ako východzie"
       ],
-      "Make Categories your own": [
-        "Vytvorte si vlastné kategórie"
+      "Make your inbox your own": [
+        "Prispôsobte si svoju doručenú poštu podľa seba"
       ],
       "Mark all messages as read": [
         "Označiť všetky správy ako prečítané"
@@ -16747,6 +16803,9 @@
       ],
       "Move all messages to trash": [
         "Presunúť všetky správy do koša"
+      ],
+      "Move emails": [
+        "Presunúť emaily"
       ],
       "Move to": [
         "Presunúť do"
@@ -16865,9 +16924,6 @@
       "Payment verification": [
         "Overenie platby"
       ],
-      "Personalize your Categories": [
-        "Prispôsobte si svoje kategórie"
-      ],
       "Phone numbers": [
         "Telefónne čísla"
       ],
@@ -16924,6 +16980,9 @@
       ],
       "Referral": [
         "Odporúčanie"
+      ],
+      "Refine your Categories": [
+        "Upresnite svoje kategórie"
       ],
       "Remove forwarding address": [
         "Odstrániť adresu preposielania"

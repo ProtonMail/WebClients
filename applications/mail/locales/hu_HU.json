@@ -301,9 +301,6 @@
       "Continue to ${ planOrAppName }": [
         "Folytatás itt: ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Folytatás kategóriákkal"
-      ],
       "Continue with Free": [
         "Folytatás az ingyenes verzióval"
       ],
@@ -1472,8 +1469,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Kulcs megjelölése megbízhatóként",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -7216,6 +7212,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -8417,10 +8414,6 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Értesítést fog kapni, ha jelszava vagy más adata kiszivárgott harmadik fél szolgáltatása miatt."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "**${ count } beszélgetése** van a ${ categoryLabel } kategóriában",
-        "**${ count } beszélgetése** van a ${ categoryLabel } kategóriában"
-      ],
       "You have **${ count } conversation** stored in this folder": [
         "Ebben a mappában **${ count } beszélgetés** van tárolva",
         "Ebben a mappában **${ count } beszélgetés** van tárolva"
@@ -8428,10 +8421,6 @@
       "You have **${ count } conversation** tagged with this label": [
         "Ezzel a címkével **${ count } beszélgetés** van megjelölve",
         "Ezzel a címkével **${ count } beszélgetés** van megjelölve"
-      ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "**${ count } üzenete** van a ${ categoryLabel } kategóriában",
-        "**${ count } üzenete** van a ${ categoryLabel } kategóriában"
       ],
       "You have **${ count } message** stored in this folder": [
         "Ebben a mappában **${ count } üzenet** van tárolva",
@@ -8461,14 +8450,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "A lemondás előtt le kell tiltani vagy el kell távolítani a ${ MAIL_APP_NAME } további felhasználóit, címeit és a saját domain neveket."
-      ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "**${ checked } beszélgetést** választott ki, a ${ categoryLabel } kategóriában",
-        "**${ checked } beszélgetést** választott ki, a ${ categoryLabel } kategóriában"
-      ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "**${ checked } üzenetet** választott ki, a ${ categoryLabel } kategóriában",
-        "**${ checked } üzenetet** választott ki, a ${ categoryLabel } kategóriában"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Ebből a mappából **${ count } beszélgetés** van kiválasztva",
