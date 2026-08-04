@@ -58,6 +58,7 @@
         "./store/mailEventLoop/interface": "./store/mailEventLoop/interface.ts",
         "./store/mailEventLoop/listener": "./store/mailEventLoop/listener.ts",
         "./store/mailSettings": "./store/mailSettings/index.ts",
+        "./store/mailSettings/mailSettings.testing": "./store/mailSettings/mailSettings.testing.ts",
         "./store/mailSettings/hooks": "./store/mailSettings/hooks.ts",
         "./store/messages/encryptionPreferences": "./store/messages/encryptionPreferences.ts",
         "./store/messages/messagesTypes": "./store/messages/messagesTypes.ts",
