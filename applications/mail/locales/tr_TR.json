@@ -310,9 +310,6 @@
       "Continue to ${ planOrAppName }": [
         "${ planOrAppName } ile ilerle"
       ],
-      "Continue with categories": [
-        "Kategoriler ile ilerleyin"
-      ],
       "Continue with Free": [
         "Free kullanmayı sürdür"
       ],
@@ -1045,6 +1042,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını aç"
       ],
+      "Open debug menu": [
+        "Hata ayıklama menüsünü aç"
+      ],
       "Open navigation": [
         "Gezinmeyi aç"
       ],
@@ -1523,8 +1523,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1697,6 +1696,9 @@
       "Yes, I'll attend": [
         "Evet, katılacağım"
       ],
+      "Yes, organize it": [
+        "Evet, düzenle"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
@@ -1731,9 +1733,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Kategorileri özelleştir"
-      ],
       "Got it": [
         "Anladım"
       ],
@@ -1742,6 +1741,9 @@
       ],
       "Not now": [
         "Şimdi değil"
+      ],
+      "Set up categories": [
+        "Kategorileri ayarla"
       ],
       "Skip": [
         "Atla"
@@ -4371,7 +4373,7 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } üzerinden Gmail e-postalarını okuyun, yanıtlayın ve güncel kalın"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Bir e-postaya sağ tıklayın ve “Şuraya taşı” seçeneğini seçin ya da e-postayı sürükleyip başka bir kategoriye bırakın. Bundan sonra benzer e-postalar otomatik olarak oraya taşınır."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
@@ -7894,7 +7896,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8075,6 +8078,9 @@
       ],
       "Move emails": [
         "E-postaları taşı"
+      ],
+      "Move here": [
+        "Buraya taşı"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
@@ -8343,6 +8349,10 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME } ile ilgili her konuda yardım almak için bizimle görüşün."
+      ],
+      "Read ${ count } email on screen": [
+        "Ekrandaki ${ count } e-postayı oku",
+        "Ekrandaki ${ count } e-postayı oku"
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -9167,9 +9177,9 @@
       "You have ${ totalLabel } in your inbox.": [
         "Gelen kutunuzda ${ totalLabel } ileti var."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "${ categoryLabel } kategorisinde **${ count } yazışma** var",
-        "${ categoryLabel } kategorisinde **${ count } yazışma** var"
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ count } yazışmanız** var",
+        "${ categoryLabel } kategorisinde **${ count } yazışmanız** var"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Bu klasörde **${ count } yazışma** var",
@@ -9179,9 +9189,9 @@
         "Bu etiketi taşıyan **${ count } yazışmanız** var",
         "Bu etiketi taşıyan **${ count } yazışmanız** var"
       ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "${ categoryLabel } kategorisinde **${ count } ileti** var",
-        "${ categoryLabel } kategorisinde **${ count } ileti** var"
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ count } iletiniz** var",
+        "${ categoryLabel } kategorisinde **${ count } iletiniz** var"
       ],
       "You have **${ count } message** stored in this folder": [
         "Bu klasörde **${ count } ileti** var",
@@ -9218,11 +9228,11 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Tarifenizi düşürmeden önce, ek ${ MAIL_APP_NAME } kullanıcılarını, adreslerini ve özel etki alanlarını kullanımdan kaldırmalı ya da silmelisiniz."
       ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
         "${ categoryLabel } kategorisinde **${ checked } yazışma** seçtiniz",
         "${ categoryLabel } kategorisinde **${ checked } yazışma** seçtiniz"
       ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "${ categoryLabel } kategorisinde **${ checked } ileti** seçtiniz",
         "${ categoryLabel } kategorisinde **${ checked } ileti** seçtiniz"
       ],
@@ -9785,6 +9795,9 @@
       "ANY": [
         "BİRİ"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Dikkatinizi gerektiren her şey ve kapatılmış kategorilerden gelen e-postalar"
+      ],
       "App password": [
         "Uygulama parolası"
       ],
@@ -10319,9 +10332,6 @@
       "Payment method": [
         "Ödeme yöntemi"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Kişisel ve iş e-postalarının yanı sıra önemli güncellemeler ve bildirimler"
-      ],
       "PGP scheme": [
         "PGP şeması"
       ],
@@ -10343,8 +10353,8 @@
       "Primary": [
         "Birincil saat dilimi"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Birincil - Kişisel ve iş e-postaları ile önemli güncellemeler"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Birincil - Dikkatinizi gerektiren her şey ve kapatılmış kategorilerden gelen e-postalar"
       ],
       "Promotions": [
         "Kazançlar"
@@ -15294,7 +15304,8 @@
         "${ selectionCount } iletiyi taşı",
         "${ selectionCount } iletiyi taşı"
       ],
-      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "${ label } içine taşındı. Benzer ileti bundan sonra bu kategoriye taşınacak.",
         "${ label } içine taşındı. Benzer iletiler bundan sonra bu kategoriye taşınacak."
       ],
       "Password copied to clipboard": [
@@ -16084,8 +16095,8 @@
       "Make a secure connection your default": [
         "Bağlantınızın her zaman güvenli olmasını sağlayın"
       ],
-      "Make Categories your own": [
-        "Kategorileri kendinize göre uyarlayın"
+      "Make your inbox your own": [
+        "Gelen kutunuzu kendinize göre düzenleyin"
       ],
       "Mark all messages as read": [
         "Tüm iletileri okunmuş olarak işaretle"
@@ -16279,9 +16290,6 @@
       "Payment verification": [
         "Ödeme doğrulama"
       ],
-      "Personalize your Categories": [
-        "Kategorilerinizi kişiselleştirin"
-      ],
       "Phone numbers": [
         "Telefon numaraları"
       ],
@@ -16338,6 +16346,9 @@
       ],
       "Referral": [
         "Yönlendirme"
+      ],
+      "Refine your Categories": [
+        "Kategorilerinizi düzenleyin"
       ],
       "Remove forwarding address": [
         "İletme adresini kaldır"
@@ -16824,6 +16835,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Yönetici rollerini kullanabilmek için bu rolleri destekleyen bir tarifeye yükseltin."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
       ]

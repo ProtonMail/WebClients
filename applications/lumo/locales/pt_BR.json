@@ -1116,6 +1116,9 @@
       "Send message": [
         "Enviar mensagem"
       ],
+      "Share your thoughts": [
+        "Compartilhe suas ideias"
+      ],
       "Show safety information": [
         "Mostrar informações de segurança"
       ],
@@ -1474,6 +1477,9 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Desativar a memória excluirá permanentemente todas as ${ memories.length } memórias salvas. Você poderá ativar a memória mais tarde, mas as memórias excluídas não poderão ser recuperadas."
+      ],
+      "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
+        "Sua experiência molda o ${ LUMO_SHORT_APP_NAME }. Conte-nos o que você acha."
       ]
     },
     "collider_2025: DisableMemory": {
@@ -1974,6 +1980,9 @@
       "Free accounts keep chat history for 7 days. Talk to your admin to keep this chat.": [
         "Contas gratuitas mantêm o histórico de conversas por 7 dias. Fale com o seu administrador para manter esta conversa."
       ],
+      "Free accounts keep chat history for 7 days. This chat is past that window and will be permanently deleted unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "As contas gratuitas mantêm o histórico de bate-papo por 7 dias. Este bate-papo já ultrapassou esse prazo e será excluído permanentemente, a menos que você faça o upgrade para o ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
       "Free space": [
         "Espaço livre"
       ],
@@ -2061,9 +2070,6 @@
       "Partial content": [
         "Conteúdo parcial"
       ],
-      "Pass model: \"auto\" to let ${ LUMO_SHORT_APP_NAME } route to the best available model for your task. Specify a model ID directly for predictable latency or capability targeting.": [
-        "Passe o modelo: \"auto\" para permitir que o ${ LUMO_SHORT_APP_NAME } direcione para o melhor modelo disponível para sua tarefa. Especifique um ID de modelo diretamente para obter latência previsível ou direcionamento por capacidade."
-      ],
       "Please share what you expected": [
         "Compartilhe o que você esperava"
       ],
@@ -2148,6 +2154,9 @@
       "Space usage: ": [
         "Espaço utilizado: "
       ],
+      "Specify a model ID directly for predictable latency or capability targeting.": [
+        "Especifique um ID de modelo diretamente para latência previsível ou direcionamento por capacidade."
+      ],
       "Table view": [
         "Visualização em tabela"
       ],
@@ -2174,6 +2183,9 @@
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Estes arquivos pertenciam a mensagens resumidas e não são mais enviados para o modelo."
+      ],
+      "This chat is past the free retention window and will be permanently deleted. Talk to your admin to keep it.": [
+        "Este chat ultrapassou o período de retenção gratuita e será excluído permanentemente. Fale com seu administrador para mantê-lo."
       ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
         "Este chat será removido em 2 dias. Faça o upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para mantê-lo."
@@ -2237,6 +2249,9 @@
       ],
       "You are about to visit an external website:": [
         "Você está prestes a visitar um site externo:"
+      ],
+      "You have many saved memories. Use Optimize in the menu to merge duplicates and keep the list focused.": [
+        "Você tem muitas memórias salvas. Use a opção Otimizar no menu para mesclar duplicatas e manter a lista organizada."
       ],
       "You've reached your image limit for this period.": [
         "Você atingiu o limite de imagens para este período."
@@ -2676,6 +2691,9 @@
       "Memories optimized successfully.": [
         "Memórias otimizadas com sucesso."
       ],
+      "Optimized memories: reduced from ${ beforeCount } to ${ optimized.length }.": [
+        "Memórias otimizadas: reduzidas de ${ beforeCount } para ${ optimized.length }."
+      ],
       "Thanks for the feedback!": [
         "Obrigado pelo feedback!"
       ]
@@ -2774,6 +2792,9 @@
       ],
       "Generated code": [
         "Código gerado"
+      ],
+      "Got a minute?": [
+        "Tem um minuto?"
       ],
       "Guest": [
         "Convidado"
@@ -3024,6 +3045,9 @@
       ],
       "Elevate your business AI experience": [
         "Eleve o nível da experiência de IA na sua empresa"
+      ],
+      "From only": [
+        "A partir de apenas"
       ],
       "Get": [
         "Obter"
@@ -3464,6 +3488,9 @@
       "Expand": [
         "Expandir"
       ],
+      "Filter & Sort": [
+        "Filtrar e Classificar"
+      ],
       "Images": [
         "Imagens"
       ],
@@ -3610,6 +3637,12 @@
         " Bate-papo no projeto",
         " Bate-papos no projeto"
       ],
+      "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
+        "\"${ file.name }\" ainda está sendo indexado. O conteúdo será carregado quando você enviar."
+      ],
+      "${ LUMO_SHORT_APP_NAME } is a private AI. Your conversations are encrypted and never used to train AI models.": [
+        "O ${ LUMO_SHORT_APP_NAME } é uma IA privada. Suas conversas são criptografadas e nunca são usadas para treinar modelos de IA."
+      ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "O ${ LUMO_SHORT_APP_NAME } precisa de armazenamento de banco de dados local (IndexedDB) para manter suas conversas neste dispositivo, mas ele não está disponível aqui."
       ],
@@ -3646,6 +3679,9 @@
       "All messages and chat history": [
         "Todo o histórico de mensagens e chats"
       ],
+      "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what coverage you’re offered and what you pay.": [
+        "Uma menção casual a estresse, um diagnóstico ou um medicamento pode alimentar modelos de risco que, silenciosamente, influenciam a cobertura oferecida a você e o valor que você paga."
+      ],
       "Any images generated in these conversations will also be deleted.": [
         "Todas as imagens geradas nessas conversas também serão excluídas."
       ],
@@ -3661,6 +3697,9 @@
       "Auto-retrieved": [
         "Recuperado automaticamente"
       ],
+      "Automated systems increasingly weigh data profiles in decisions about loans, jobs, and housing with little transparency or recourse.": [
+        "Sistemas automatizados levam cada vez mais em conta perfis de dados em decisões sobre empréstimos, empregos e moradia, com pouca transparência ou possibilidade de recurso."
+      ],
       "Avoid including names, addresses, financial details, or other identifying information when they are not essential.": [
         "Evite incluir nomes, endereços, dados financeiros ou outras informações de identificação quando não forem essenciais."
       ],
@@ -3673,6 +3712,9 @@
       "Built-in ${ BRAND_NAME } agent": [
         "Agente integrado da ${ BRAND_NAME }"
       ],
+      "Choose or drop your ChatGPT or Claude export (.zip or conversations.json). We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
+        "Selecione ou solte seu arquivo de exportação do ChatGPT ou Claude (.zip ou conversations.json). Analisamos seus ${ PAPER_TRAIL_LIMITS.maxPrompts } prompts mais recentes."
+      ],
       "Click Settings → Data controls": [
         "Clique em Configurações → Controles de dados"
       ],
@@ -3682,8 +3724,14 @@
       "Conversation encrypted": [
         "Conversa criptografada"
       ],
+      "Conversational AI doesn’t just answer — it asks follow-up questions. Each time you add detail (“actually, I’m 34 and based in Berlin”), you hand over another verified fact.": [
+        "A IA conversacional não apenas responde — ela faz perguntas de acompanhamento. A cada detalhe que você acrescenta (“na verdade, tenho 34 anos e moro em Brasília”), você fornece mais um fato verificado."
+      ],
       "Cookies or website data are blocked in your browser settings": [
         "Os cookies ou dados do site estão bloqueados nas configurações do seu navegador"
+      ],
+      "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
+        "Crie imagens, aplique estilos e esboce ideias. Inicie sessão ou crie uma conta gratuita para salvar suas criações."
       ],
       "Create purpose-built assistants with their own instructions. Set them up once, and they’ll follow your preferences every time.": [
         "Crie assistentes feitos sob medida com as suas próprias instruções. Configure-os uma vez e eles seguirão as suas preferências sempre."
@@ -3718,6 +3766,12 @@
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Arquivos enviados para este projeto serão salvos na pasta do Drive vinculada."
       ],
+      "Follow the prompts and confirm the export": [
+        "Siga as instruções na tela e confirme a exportação"
+      ],
+      "Follow the prompts to confirm the export": [
+        "Siga as instruções na tela para confirmar a exportação"
+      ],
       "From ${ DRIVE_APP_NAME }": [
         "A partir de ${ DRIVE_APP_NAME }"
       ],
@@ -3726,6 +3780,12 @@
       ],
       "Image": [
         "Imagem"
+      ],
+      "Inferences drawn only from your prompts — grouped by life area.": [
+        "Inferências extraídas apenas dos seus prompts — agrupadas por área da vida."
+      ],
+      "Inferred details are packaged and traded. A single profile can pass through dozens of companies you’ve never heard of.": [
+        "Detalhes inferidos são empacotados e comercializados. Um único perfil pode passar por dezenas de empresas das quais você nunca ouviu falar."
       ],
       "Inferred political leanings power micro-targeted messaging designed to change how you feel — and how you vote — often without you noticing.": [
         "Tendências políticas inferidas alimentam mensagens de microdirecionamento criadas para mudar como você se sente — e como vota —, muitas vezes sem que você perceba."
@@ -3742,6 +3802,9 @@
       "Lockdown Mode is enabled on your device": [
         "Modo de isolamento está ativado no seu dispositivo"
       ],
+      "Look for Export data": [
+        "Procure por Exportar dados"
+      ],
       "No favorites yet. Star a chat to find it here quickly.": [
         "Ainda não há favoritos. Marque um bate-papo com uma estrela para encontrá-lo rapidamente aqui."
       ],
@@ -3753,6 +3816,9 @@
       ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "No iPhone ou iPad, abra Ajustes → Apps → Safari e certifique-se de que a opção \"Bloquear Todos os Cookies\" esteja desativada e, em seguida, recarregue a página."
+      ],
+      "OpenAI will email you a download link. It can take up to 24 hours.": [
+        "A OpenAI enviará um link de download por e-mail. Isso pode levar até 24 horas."
       ],
       "PASTED": [
         "COLADO"
@@ -3772,11 +3838,23 @@
       "red flags": [
         "sinais de alerta"
       ],
+      "See the profile that an AI company can build from your conversations alone.": [
+        "Veja o perfil que uma empresa de IA pode criar apenas com base nas suas conversas."
+      ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Veja o que a IA da Big Tech sabe sobre você. Feito com o ${ LUMO_SHORT_APP_NAME }."
       ],
+      "Sign in to your Claude account at claude.ai": [
+        "Faça login na sua conta Claude em claude.ai"
+      ],
       "Something went wrong analysing this export. Please try again.": [
         "Ocorreu um erro ao analisar esta exportação. Tente novamente."
+      ],
+      "Start a new chat to see it here.": [
+        "Inicie uma nova conversa para vê-la aqui."
+      ],
+      "These are the most sensitive categories Big Tech AI could infer about you from your chats — even when you never typed them out explicitly.": [
+        "Estas são as categorias mais sensíveis que a IA das Big Techs pode inferir sobre você a partir de suas conversas — mesmo quando você nunca as digitou explicitamente."
       ],
       "This message is empty. Sorry about that.": [
         "Lamentamos, mas esta mensagem está vazia."
@@ -3793,8 +3871,17 @@
       "Tips on how to write useful instructions": [
         "Dicas de como escrever instruções úteis"
       ],
+      "Try a different search term.": [
+        "Experimente um termo de pesquisa diferente."
+      ],
+      "Turn off chat history and model training where possible.": [
+        "Desative o histórico de chat e o treinamento do modelo sempre que possível."
+      ],
       "Type @filename to ask questions about a specific file": [
         "Digite @nomedoarquivo para fazer perguntas sobre um arquivo específico"
+      ],
+      "Under your data, click Export data": [
+        "Em seus dados, clique em Exportar dados"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para criar ${ LUMO_SHORT_APP_NAME }s personalizados ilimitados, desbloquear modelos de IA avançados e muito mais."
@@ -3819,6 +3906,74 @@
       ],
       "Your information is zero-access encrypted": [
         "Sua informação é criptografada com acesso zero"
+      ],
+      "Your report is stored unencrypted in this browser only. It never leaves your device and is not sent to ${ LUMO_SHORT_APP_NAME }'s servers.": [
+        "Seu relatório é armazenado sem criptografia apenas neste navegador. Ele nunca sai do seu dispositivo e não é enviado para os servidores do ${ LUMO_SHORT_APP_NAME }."
+      ]
+    },
+    "collider_2025:Inspiration suggestion prompt": {
+      "3D animated character in a high-quality family film style, expressive face, large emotional eyes, soft subsurface skin, stylized proportions, vibrant colors, detailed hair and clothing, cinematic lighting, shallow depth of field, friendly and charming personality, ultra polished render, studio-quality animation still.": [
+        "Personagem animado em 3D no estilo de um filme familiar de alta qualidade, rosto expressivo, olhos grandes e cheios de emoção, pele com textura suave, proporções estilizadas, cores vibrantes, cabelo e roupas detalhados, iluminação cinematográfica, profundidade de campo reduzida, personalidade simpática e encantadora, renderização extremamente refinada, imagem de animação com qualidade de estúdio."
+      ],
+      "A dreamy close-up of flowers swept into soft radial trails by rotating camera motion, where the center blooms in crisp detail while petals dissolve outward into creamy bokeh under gentle natural light.": [
+        "Um primeiro plano encantador de flores, transformadas em suaves traços radiais pelo movimento giratório da câmera, em que o centro das flores se destaca com detalhes nítidos, enquanto as pétalas se dissolvem para fora, formando um bokeh cremoso sob uma luz natural suave."
+      ],
+      "A warm and cozy Japandi-style living room, minimalist aesthetic, cream sectional sofa, neutral and mustard throw pillows, woven pouf, large textured area rug with fringe, minimalist botanical wall art, large indoor palm plant, soft ambient golden lighting, candles, serene and peaceful atmosphere, photorealistic, interior design photography.": [
+        "Uma sala de estar estilo Japandi acolhedora e aconchegante, estética minimalista, sofá de canto em tom creme, almofadas em tons neutros e mostarda, pufe de trama natural, grande tapete texturizado com franjas, arte de parede botânica minimalista, palmeira de interior de grande porte, iluminação ambiente suave em tons dourados, velas, atmosfera serena e tranquila, imagem fotorrealista, fotografia de design de interiores."
+      ],
+      "Abstract composition of translucent glass shapes floating in space, soft refraction and reflection, smooth curved forms, frosted and clear glass mix, pastel lighting with subtle purple and blue tones, minimalist design, premium modern aesthetic, soft shadows, ultra clean background, high resolution, 3D render style.": [
+        "Composição abstrata de formas de vidro translúcido flutuando no espaço, refração e reflexão suaves, formas curvas e fluidas, mistura de vidro fosco e transparente, iluminação em tons pastel com nuances sutis de roxo e azul, design minimalista, estética moderna e sofisticada, sombras suaves, fundo extremamente limpo, alta resolução, estilo de renderização 3D."
+      ],
+      "Abstract frozen ice background in soft pastel lavender and light purple tones, translucent crystalline ice textures, subtle frost patterns, glowing icy surface, smooth gradients, sparkling frozen details, ethereal winter atmosphere, clean and minimal design, soft lighting, elegant luxury aesthetic, high resolution, dreamy frozen landscape, delicate reflections, ultra-detailed, background only, no objects, no text.": [
+        "Fundo abstrato de gelo congelado em tons suaves de lavanda e roxo claro, texturas cristalinas e translúcidas de gelo, padrões sutis de geada, superfície gelada brilhante, gradientes suaves, detalhes congelados cintilantes, atmosfera etérea de inverno, design clean e minimalista, iluminação suave, estética elegante e luxuosa, alta resolução, paisagem congelada onírica, reflexos delicados, ultra-detalhado, apenas fundo, sem objetos, sem texto."
+      ],
+      "Abstract futuristic background with flowing horizontal ribbon waves, layered luminous bands, soft neon green and cyan gradients, smooth organic curves, subtle motion blur, glossy depth, dark high-contrast backdrop, dynamic light streaks, modern tech aesthetic, clean geometric rhythm, cinematic glow, ultra-detailed digital art, premium UI background, 3D render.": [
+        "Fundo futurista abstrato com ondas horizontais fluidas em forma de fita, faixas luminosas em camadas, suaves gradientes em verde neon e ciano, curvas orgânicas suaves, desfoque de movimento sutil, profundidade brilhante, fundo escuro de alto contraste, raios de luz dinâmicos, estética tecnológica moderna, ritmo geométrico clean, brilho cinematográfico, arte digital ultradetalhada, fundo de interface do usuário premium, renderização 3D."
+      ],
+      "Abstract glass background design, translucent glass morphism style, smooth flowing shapes and layered glass panels, soft refraction and light dispersion, purple and deep violet dominant color palette, blended with rich blue tones and subtle accents of warm yellow light, cinematic lighting, ultra soft gradients, glossy and frosted glass textures, depth and blur effects, minimal but premium aesthetic, high resolution, 3D rendered, modern tech UI background, elegant and futuristic atmosphere": [
+        "Design de fundo abstrato em vidro, estilo \"glassmorphism\" translúcido, formas fluidas e painéis de vidro em camadas, refração suave e dispersão de luz, paleta de cores predominante em roxo e violeta intenso, combinada com tons de azul profundo e toques sutis de luz amarela quente, iluminação cinematográfica, gradientes ultra-suaves, texturas de vidro brilhante e fosco, efeitos de profundidade e desfoque, estética minimalista e sofisticada, alta resolução, renderização 3D, fundo para interface de tecnologia moderna, atmosfera elegante e futurista."
+      ],
+      "Abstract minimalist background, soft light purple and pastel yellow color palette, smooth gradient transitions, flowing organic shapes, subtle glow, airy and modern aesthetic, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
+        "Fundo minimalista abstrato, paleta de cores em tons suaves de roxo claro e amarelo pastel, transições suaves em gradiente, formas orgânicas fluidas, brilho sutil, estética arejada e moderna, composição clean, efeitos de luz suaves, design sofisticado, profundidade suave, atmosfera elegante e onírica, resolução ultra-alta."
+      ],
+      "Aerial photograph of rolling agricultural hills forming smooth, wave-like patterns across a vast landscape. The fields are divided into soft gradients of green and golden yellow, suggesting different crops or stages of growth. Long, curved tractor tracks trace elegant lines through the terrain, emphasizing the rhythm and geometry of the land. Warm sunlight casts gentle shadows across the contours, enhancing depth and texture. Minimalist composition, highly detailed natural patterns, serene and atmospheric, captured in a cinematic landscape photography style with soft contrast and rich natural color tones.": [
+        "Fotografia aérea de colinas agrícolas onduladas que formam padrões suaves, semelhantes a ondas, em uma vasta paisagem. Os campos estão divididos em suaves gradientes de verde e amarelo-dourado, sugerindo diferentes culturas ou estágios de crescimento. Rastros longos e curvos de tratores traçam linhas elegantes pelo terreno, enfatizando o ritmo e a geometria da terra. A luz quente do sol projeta sombras suaves sobre os contornos, realçando a profundidade e a textura. Composição minimalista, padrões naturais altamente detalhados, serenos e atmosféricos, capturados em um estilo cinematográfico de fotografia de paisagem, com contraste suave e ricos tons de cores naturais."
+      ],
+      "Back view silhouette of a woman with hair tied up typing on a laptop. Dark purple screen, clean light purple background, high-contrast studio lighting, minimalist tech mockup style.": [
+        "Silhueta de uma mulher vista de costas, com o cabelo preso, digitando em um laptop. Tela roxa escura, fundo roxo claro, iluminação de estúdio de alto contraste, estilo minimalista de maquete tecnológica."
+      ],
+      "Close-up texture of polished cross-section tree trunk, intricate swirling growth rings, detailed cracks and wood grain, warm brown and amber tones, natural organic pattern, high resolution.": [
+        "Textura em primeiro plano de um corte transversal polido de tronco de árvore, anéis de crescimento intrincados e espiralados, rachaduras e veios da madeira detalhados, tons quentes de marrom e âmbar, padrão orgânico natural, alta resolução."
+      ],
+      "Ethereal portrait of a person wearing a sleek dark VR headset, body dissolving into a glowing cyan-teal haze. Centered composition, uniform saturated teal-blue gradient background, backlit silhouette with luminous rim lighting on the headset and fingertips. One hand loosely clenched, the other reaching forward palm-out. Futuristic sci-fi atmosphere, minimalist and dreamlike, digital art style, shallow depth of field.": [
+        "Retrato etéreo de uma pessoa usando um headset de RV escuro e elegante, com o corpo se dissolvendo em uma névoa brilhante em tons de ciano e azul-petróleo. Composição centralizada, fundo com gradiente uniforme e saturado em azul-petróleo, silhueta em contraluz com contorno luminoso no headset e nas pontas dos dedos. Uma mão levemente fechada, a outra estendida para a frente com a palma voltada para fora. Atmosfera futurista de ficção científica, minimalista e onírica, estilo de arte digital, baixa profundidade de campo."
+      ],
+      "Futuristic abstract background, neon green and blue gradient, smooth organic shapes, subtle glow, ethereal atmosphere, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
+        "Fundo abstrato futurista, degradê de verde-neon e azul, formas orgânicas suaves, brilho sutil, atmosfera etérea, composição limpa, efeitos de luz suaves, design sofisticado, profundidade suave, atmosfera elegante e onírica, resolução ultra-alta."
+      ],
+      "Heavily blurred, out of focus surreal profile portrait. Vibrant neon gradient with bright orange, hot pink, and deep electric blue. High contrast, heavy film grain, minimalist abstract aesthetic.": [
+        "Retrato de perfil surreal, fortemente desfocado e sem nitidez. Gradiente vibrante em tons de neon com laranja brilhante, rosa choque e azul elétrico intenso. Alto contraste, granulação marcante de filme e estética abstrata minimalista."
+      ],
+      "Hyper-realistic voluminous fluffy white clouds, dense and soft textures, minimalist pale blue gradient sky, soft cinematic lighting, clean aesthetic, ethereal and peaceful mood, studio 3D render style, 8k resolution": [
+        "Nuvens brancas volumosas e fofas hiper-realistas, texturas densas e suaves, céu minimalista com gradiente em azul claro, iluminação suave e cinematográfica, estética clean, clima etéreo e tranquilo, estilo de renderização 3D de estúdio, resolução 8K"
+      ],
+      "Minimalist Asian ink wash painting style. A winding white path trails along a mountain ridge covered in deep blue and indigo trees, fading into a heavy white fog. A vibrant, textured solid red sun hangs in the upper right. Surreal, serene, and high-contrast composition.": [
+        "Estilo minimalista de pintura asiática a tinta. Um caminho branco sinuoso serpenteia ao longo do cume de uma montanha coberto por árvores em tons de azul profundo e índigo, desaparecendo em uma densa névoa branca. Um sol vermelho vibrante, com textura e de cor sólida, paira no canto superior direito. Composição surreal, serena e de alto contraste."
+      ],
+      "Minimalist op-art graphic of the number \"5\" formed by a distorted halftone grid blurred. Black dots varying in size create a 3D bulging illusion on a vibrant solid yellow background. Clean vector aesthetic, high contrast, mathematical pattern distortion.": [
+        "Imagem gráfica minimalista no estilo ótico do número \"5 , formada por uma grade de meio-tom distorcida e desfocada. Pontos pretos de tamanhos variados criam uma ilusão de relevo 3D sobre um fundo amarelo sólido e vibrante. Estética vetorial limpo, alto contraste e distorção de padrão matemático."
+      ],
+      "Modern two-story minimalist white villa with rounded edges, large sliding glass doors, and a swimming pool. Minimalist patio furniture, mediterranean vibe, architectural photography style, bright sunny day.": [
+        "Villa moderna de dois andares, em estilo minimalista, com tons de branco, cantos arredondados, grandes portas de vidro deslizantes e uma piscina. Móveis de jardim minimalistas, clima mediterrâneo, estilo de fotografia arquitetônica, dia ensolarado e claro."
+      ],
+      "Photorealistic white T-shirt mockup hanging on a wall inside a modern boutique clothing store, blank white premium cotton T-shirt displayed neatly on a wooden hanger, mounted against a soft pastel-colored wall (light beige, blush pink, or sage green), stylish retail interior in the background with clothing racks and shelves softly blurred, natural daylight mixed with warm ambient store lighting, realistic fabric texture and folds, clean minimal aesthetic, high-end fashion merchandising, shallow depth of field, centered composition, commercial apparel mockup, blank T-shirt ready for custom design placement, ultra-realistic, high resolution, 8k.": [
+        "Maquete fotorrealista de uma camiseta branca pendurada na parede de uma boutique de roupas moderna; camiseta branca em branco, de algodão premium, disposta de forma organizada em um cabide de madeira, contra uma parede em tons suaves de pastel (bege claro, rosa pálido ou verde-salva), interior elegante de loja no fundo, com cabides e prateleiras suavemente desfocados, luz natural misturada com iluminação ambiente aconchegante da loja, textura e dobras realistas do tecido, estética minimalista e clean, merchandising de moda de alta qualidade, profundidade de campo rasa, composição centralizada, maquete comercial de vestuário, camiseta em branco pronta para a aplicação de um design personalizado, ultrarrealista, alta resolução, 8K. rosto, olhos grandes e expressivos, pele com textura suave, proporções estilizadas, cores vibrantes, cabelos e roupas detalhados, iluminação cinematográfica, profundidade de campo rasa, personalidade amigável e charmosa, renderização ultra-polida, imagem estática de animação com qualidade de estúdio."
+      ],
+      "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
+        "A palavra \"FLORIDO\" formada inteiramente por grama verde exuberante e vegetação natural, cada letra criada a partir de folhas de grama densas e frescas, textura orgânica realista, tons de verde vibrantes, detalhes botânicos intricados, tipografia fotorrealista inspirada na natureza, luz solar suave e natural, sombras sutis, design ecológico altamente detalhado, isolada em um fundo limpo, letras 3D de alta qualidade, ultrarrealista, 8K, foco nítido, qualidade profissional para publicidade."
+      ],
+      "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
+        "Imagem aérea minimalista, filmada de cima para baixo, de uma longa prancha de surfe laranja flutuando em águas azuis cristalinas. A água apresenta contornos ondulados e curvos, além de padrões de luz brilhantes e cintilantes. Uma sombra suave é projetada diretamente abaixo da prancha, criando uma estética clean, serena e moderna."
       ]
     },
     "collider_2025:Label": {
@@ -3930,6 +4085,9 @@
       "Project Instructions (optional)": [
         "Instruções do projeto (opcional)"
       ],
+      "Save analysis on this device to view it later": [
+        "Salve a análise neste dispositivo para visualizá-la mais tarde"
+      ],
       "Scams": [
         "Golpes"
       ],
@@ -3969,6 +4127,9 @@
       ],
       "Favorited": [
         "Favoritado"
+      ],
+      "From projects": [
+        "De projetos"
       ],
       "Last updated": [
         "Última atualização"
@@ -4398,6 +4559,12 @@
       ]
     },
     "collider_2025:Time": {
+      "${ ageHours }h ago": [
+        "${ ageHours }hs atrás"
+      ],
+      "${ ageMinutes }m ago": [
+        "${ ageMinutes }min atrás"
+      ],
       "Just now": [
         "Agora mesmo"
       ]
@@ -4411,6 +4578,9 @@
       ],
       "Better web search": [
         "Melhor pesquisa na web"
+      ],
+      "Building your AI Paper Trail": [
+        "Construindo seu rastro documental de IA"
       ],
       "Built by the team that knows privacy": [
         "Desenvolvido pela equipe que entende de privacidade"
@@ -4478,6 +4648,9 @@
       "Filters": [
         "Filtros"
       ],
+      "Generate your AI Paper Trail": [
+        "Gere seu rastro documental de IA"
+      ],
       "Get started by creating a new project": [
         "Comece criando um projeto"
       ],
@@ -4544,6 +4717,12 @@
       "No chat history yet. Let's start chatting!": [
         "Nenhum histórico de bate-papo ainda. Vamos começar a conversar!"
       ],
+      "No favorites yet": [
+        "Nenhum favorito"
+      ],
+      "No project chats yet": [
+        "Ainda não há chats de projeto"
+      ],
       "Nothing here yet": [
         "Nada aqui ainda"
       ],
@@ -4564,6 +4743,9 @@
       ],
       "Remove all files?": [
         "Remover todos os arquivos?"
+      ],
+      "Report at a glance": [
+        "Visão geral do relatório"
       ],
       "Review privacy settings": [
         "Revise as configurações de privacidade"
@@ -4604,6 +4786,9 @@
       "Two models, two modes": [
         "Dois modelos, dois modos"
       ],
+      "Upload it securely": [
+        "Faça o upload com segurança"
+      ],
       "Use AI on your terms": [
         "Use a IA do jeito que você quiser"
       ],
@@ -4619,8 +4804,17 @@
       "What we identified": [
         "O que identificamos"
       ],
+      "You can’t un-share it": [
+        "Você não pode desfazer o compartilhamento"
+      ],
       "You might be shown a higher price": [
         "Um preço mais alto pode ser mostrado para você"
+      ],
+      "You saw the profile? Now protect the person behind it.": [
+        "Você viu o perfil? Agora proteja a pessoa por trás dele."
+      ],
+      "Your conversations should belong to you. With ${ LUMO_SHORT_APP_NAME }, they do.": [
+        "Suas conversas devem pertencer a você. Com o ${ LUMO_SHORT_APP_NAME }, elas pertencem."
       ],
       "Your image gallery is empty": [
         "Sua galeria de imagem está vazia"
@@ -7318,6 +7512,12 @@
       ],
       "Trigger assets limit": [
         "Limite de ativos de ativação"
+      ],
+      "Trigger compaction": [
+        "Acionar a compactação"
+      ],
+      "Trigger compaction (force summarization)": [
+        "Acionar a compactação (forçar a sumarização)"
       ],
       "Trigger conversations limit": [
         "Limite de conversas de ativação"

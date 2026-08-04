@@ -218,6 +218,9 @@
       "Compare plans": [
         "Porovnať plány"
       ],
+      "Configure new device profile": [
+        "Nastaviť nový profil zariadenia"
+      ],
       "Configure SAML": [
         "Konfigurovať SAML"
       ],
@@ -328,6 +331,9 @@
       ],
       "Delete account": [
         "Vymazať účet"
+      ],
+      "Delete device profile": [
+        "Vymazať profil zariadenia"
       ],
       "Delete Gateway": [
         "Odstrániť bránu"
@@ -521,6 +527,9 @@
       "Forgot password?": [
         "Zabudli ste heslo?"
       ],
+      "Generate device profile": [
+        "Generovať profil zariadenia"
+      ],
       "Generate new phrase": [
         "Generovať novú frázu"
       ],
@@ -650,6 +659,9 @@
       "Invite user": [
         "Pozvať používateľa"
       ],
+      "JumpCloud": [
+        "JumpCloud"
+      ],
       "Keep": [
         "Zachovať"
       ],
@@ -721,6 +733,9 @@
       ],
       "Mark as resolved": [
         "Označiť ako vyriešené"
+      ],
+      "Microsoft Intune": [
+        "Microsoft Intune"
       ],
       "More benefits": [
         "Viac výhod"
@@ -1196,6 +1211,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgradovať pre využívanie programu ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Navýšiť úroveň na Professional"
+      ],
       "Upgrade to view all": [
         "Upgradovať na zobrazenie všetkého"
       ],
@@ -1267,6 +1285,9 @@
       ],
       "Verify password": [
         "Potvrďte heslo"
+      ],
+      "Verify recovery phrase": [
+        "Overiť frázu pre obnovenie"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Overiť doménu ${ unverifiedSSODomain.DomainName }"
@@ -4783,6 +4804,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Môžete kedykoľvek odstrániť ich prístup, aby ste znovu získali výhradnú kontrolu nad svojím účtom."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Zatiaľ ste neboli určený ako kontaktná osoba pre prípad obnovy účtu pre nikoho."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Ešte vás nikto neoznačil ako núdzový kontakt."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Dosiahli ste maximálny počet ${ limit } núdzového kontaktu.",
         "Dosiahli ste maximálny počet ${ limit } núdzových kontaktov.",
@@ -4876,6 +4903,9 @@
       ],
       "Company name or personal name is required": [
         "Názov spoločnosti alebo meno je povinné"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Nepodarilo sa vygenerovať profil zariadenia. Skúste to znova, prosím."
       ],
       "Couldn't load invoices. Please try again later.": [
         "Nie je možné načítať faktúry. Skúste to neskôr, prosím."
@@ -5320,6 +5350,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Tento názov štítku nie je k dispozícii. Zvoľte prosím iný názov."
+      ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Táto fráza vám neumožňuje obnoviť váš účet. Môžete si vygenerovať novú, aby ste mali istotu, že si účet budete môcť v budúcnosti obnoviť."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Na vytvorenie nesúkromných ​​používateľských účtov a získanie prístupu k ich účtom, budete musieť obnoviť svoje oprávnenia správcu."
@@ -6146,11 +6179,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Naozaj chcete zrušiť bezpečnostný kľúč ${ name }?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Pri každom použití bezpečnostného kľúča so zariadením ${ BRAND_NAME } zadajte svoj PIN, ak to kľúč podporuje. Toto platí len pre kľúče, pre ktoré je nastavený PIN."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
       ],
       "Insert your security key into your device.": [
         "Vložte bezpečnostný kľúč do vášho zariadenia."
+      ],
+      "PIN requirement for security keys disabled": [
+        "Požiadavka na zadanie PIN kódu pre bezpečnostné kľúče deaktivovaná"
+      ],
+      "PIN requirement for security keys enabled": [
+        "Požiadavka na zadanie PIN kódu pre bezpečnostné kľúče povolená"
+      ],
+      "Require PIN for security key": [
+        "Vyžadovať PIN pre bezpečnostný kľúč"
       ],
       "Security key": [
         "Bezpečnostný kľúč"
@@ -7286,6 +7331,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Pridajte ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } len za ${ bundlePlanPriceInline }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Pridať ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -7369,6 +7417,9 @@
         "Všetky (${ totalFoldersCount } štítky)",
         "Všetky (${ totalFoldersCount } štítkov)",
         "Všetky (${ totalFoldersCount } štítkov)"
+      ],
+      "All devices with this device profile deployed": [
+        "Všetky zariadenia, na ktorých bol nasadený tento profil zariadenia"
       ],
       "All inactive members deleted": [
         "Všetci neaktívni používatelia boli vymazaní"
@@ -7490,6 +7541,9 @@
       "Authenticator app 2FA enabled": [
         "Autentifikačná 2FA aplikácia povolená"
       ],
+      "Available on VPN Professional": [
+        "K dispozícii vo verzii VPN Professional"
+      ],
       "Awaiting transaction": [
         "Čakanie na transakciu"
       ],
@@ -7565,11 +7619,17 @@
       "Change your password": [
         "Zmeňte si heslo"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Skontrolujte, či je možné pomocou vašej obnovovacej frázy úplne obnoviť váš účet."
+      ],
       "Choose a plan that works best for you.": [
         "Vyberte si plán, ktorý vám najviac vyhovuje."
       ],
       "Choose an Entity ID to continue.": [
         "Pre pokračovanie vyberte ID subjektu."
+      ],
+      "Choose one:": [
+        "Vyberte si:"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
@@ -7591,6 +7651,9 @@
       ],
       "Compromised": [
         "Kompromitovaný"
+      ],
+      "Configure Always-on VPN": [
+        "Nastaviť vždy zapnutú VPN"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Nakonfigurujte overovanie SAML pre svoju organizáciu prostredníctvom poskytovateľa identít (IdP). Týmto sa umožní SAML pre celú organizáciu."
@@ -7733,6 +7796,15 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "V závislosti od vašich nastavení môžu získať prístup okamžite alebo po uplynutí určenej **čakacej lehoty**."
       ],
+      "Deploy ${ regoArtifact } directly via your MDM file deployment": [
+        "Nasaďte ${ regoArtifact } priamo prostredníctvom nasadenia súboru MDM"
+      ],
+      "Deploy across all your managed devices": [
+        "Nasadiť na všetkých vašich spravovaných zariadeniach"
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Nainštalujte ho prostredníctvom svojho MDM (Jamf, Intune…) alebo ručne na každom zariadení."
+      ],
       "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
         "Zariadenia, na ktorých je nasadený profil vždy zapnutej VPN, nemajú prístup na internet, pokiaľ nie je aktívne pripojenie cez ${ VPN_APP_NAME }."
       ],
@@ -7811,6 +7883,15 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Prechod na nižšiu verziu ukončí všetky pripojenia k plateným serverom ${ VPN_APP_NAME }."
       ],
+      "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
+        "Stiahnite si súbor ${ mobileConfigArtifact } a otvorte ho na každom Macu, aby ste nainštalovali profil, a potom ho schváľte v systémových nastaveniach."
+      ],
+      "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
+        "Stiahnite si ${ powershellArtifact } a spustite ho na každom zariadení ako systémový používateľ, aby sa profil zariadenia nainštaloval automaticky."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Stiahnite si ${ removeScriptLink } a spustite ho na každom zariadení ako systémový používateľ, aby sa profil automaticky vymazal."
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Stiahnuť ${ VPN_APP_NAME }"
       ],
@@ -7865,6 +7946,9 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Emaily presunuté do koša a spamu pred viac ako 30 dňami budú automaticky vymazané."
       ],
+      "Employees can't go online without a VPN connection": [
+        "Zamestnanci sa nemôžu pripojiť na internet bez VPN pripojenia"
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Ak si chcete zachovať prístup k serverom a funkciám služby Plus, povoľte automatické obnovovanie."
       ],
@@ -7873,6 +7957,9 @@
       ],
       "Enable email notifications": [
         "Povoliť emailové notifikácie"
+      ],
+      "Enable groups to streamline access control": [
+        "Povoľte skupiny na zefektívnenie riadenia prístupu"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Povoľte jednotné prihlásenie, aby bola vaša organizácia v bezpečí"
@@ -7904,11 +7991,17 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa koncového bodu získaná od poskytovateľa identity (napr. https://idp.example.com/sso/saml)."
       ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "Uplatňovanie sa spustí automaticky akonáhle zariadenie rozpozná profil."
+      ],
       "Enhance your network security": [
         "Zlepšite bezpečnosť vašej siete"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zabezpečte úplne súkromnú a šifrovanú komunikáciu. Vyžiadajte si teraz bezplatnú emailovú ${ BRAND_NAME } adresu."
+      ],
+      "Ensure your organization is always protected": [
+        "Zabezpečte, aby bola vaša organizácia vždy chránená"
       ],
       "Enter code": [
         "Zadajte kód"
@@ -8032,6 +8125,9 @@
       ],
       "Gateways": [
         "Brány"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Vytvorte profil zariadenia a stiahnite si konfiguračný súbor."
       ],
       "Generating a new recovery phrase will deactivate your current recovery phrase.": [
         "Vytvorenie novej obnovovacej frázy deaktivuje vašu súčasnú obnovovaciu frázu."
@@ -8327,6 +8423,9 @@
       "Keep your info more secure and private with these guides and tips.": [
         "Udržujte svoje informácie v bezpečí a súkromí pomocou týchto návodov a tipov."
       ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Uchovávajte svoje heslá v bezpečí a prihlasujte sa okamžite vďaka funkcii automatického vypĺňania na všetkých zariadeniach."
+      ],
       "Keys created": [
         "Kľúče vytvorené"
       ],
@@ -8347,6 +8446,9 @@
       ],
       "Learn more about Gateways": [
         "Zistiť viac o bránach"
+      ],
+      "Learn more about groups": [
+        "Zistite viac o skupinách"
       ],
       "Learn more about single sign-on": [
         "Viac informácií o jednotnom prihlasovaní"
@@ -8386,6 +8488,9 @@
       ],
       "Low Priority": [
         "Nízka priorita"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Veľké emailové služby môžu odmietnuť alebo filtrovať vaše e-maily ako spam, ak chýba alebo nie je správne nastavený SPF/DKIM/DMARC."
@@ -8522,6 +8627,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Akonáhle bude udelený prístup k vášmu účtu, budú môcť otvoriť vaše nastavenia **Obnovenia** a **zmeniť vaše heslo k aplikácii ${ ACCOUNT_APP_NAME }** za vás."
       ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Po úspešnom nasadení môže trvať až niekoľko hodín, kým zariadenia túto politiku rozpoznajú a začnú ju uplatňovať."
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Tu je možné zmeniť iba veľké písmená a interpunkčné znamienka (bodky, pomlčky a podčiarknutia). Ak chcete použiť inú adresu, pridajte novú."
       ],
@@ -8551,6 +8659,9 @@
       ],
       "or discover other features:": [
         "alebo objavte ďalšie funkcie:"
+      ],
+      "Or run ${ powershellArtifact } via your MDM script execution": [
+        "Alebo spustite ${ powershellArtifact } prostredníctvom MDM skriptu"
       ],
       "Or select a particular server:": [
         "Alebo vyberte konkrétny server:"
@@ -8734,6 +8845,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Verejné zdieľanie dokumentov zatiaľ nie je podporované."
+      ],
+      "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
+        "Pošlite ${ mobileConfigArtifact } na každý spravovaný Mac pomocou vášho MDM."
       ],
       "Recently used servers:": [
         "Nedávno použité servery:"
@@ -8993,6 +9107,9 @@
       "support team": [
         "tím podpory"
       ],
+      "Supported platforms": [
+        "Podporované platformy"
+      ],
       "Swiss based": [
         "So sídlom vo Švajčiarsku"
       ],
@@ -9236,6 +9353,12 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Ak chcete dešifrovať a prezerať uzamknuté údaje po obnovení hesla, vyberte spôsob obnovenia."
       ],
+      "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
+        "Na aktiváciu funkcie vždy zapnutej VPN je potrebné nainštalovať konfiguračný profil na každý Mac — klient ${ VPN_APP_NAME } automaticky vynúti použitie profilu zariadenia, akonáhle je nainštalovaný."
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "Na povolenie vždy zapnutej VPN musí byť profil zariadenia umiestnený na každom zariadení v priečinku ${ policiesPath } – klient ${ VPN_APP_NAME } ho tam rozpozná a profil automaticky uplatní."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom emailu na obnovenie**."
       ],
@@ -9265,6 +9388,9 @@
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
         "Na obnovenie prístupu k vášmu účtu a údajom zadajte 12-slovnú obnovovaciu frázu priradenú k vášmu účtu."
+      ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Ak chcete odstrániť funkciu Vždy zapnutej VPN, odstráňte súbor ${ profileFile } z adresára ${ policiesPath } na každom zariadení. Klient ${ VPN_APP_NAME } prestane vynucovať profil hneď, ako zistí, že súbor už neexistuje."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Ak chcete zabezpečiť svoje internetové pripojenie, stiahnite a nainštalujte si aplikáciu ${ VPN_APP_NAME } pre svoje zariadenie a pripojte sa k serveru."
@@ -9341,8 +9467,14 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
       ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Prejdite na novšiu verziu hneď teraz a získajte prehľad o aktivitách v aplikácii ${ PASS_APP_NAME } v rámci vašej organizácie."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Kedykoľvek môžete zvýšiť úroveň alebo uvoľniť miesto, aby ste mohli preniesť zvyšok"
+      ],
+      "Upgrade required": [
+        "Vyžaduje sa navýšenie úrovne"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Zvýšte si úroveň, aby ste si zachovali svoje ${ planTitle } výhody."
@@ -9397,6 +9529,12 @@
       ],
       "Users": [
         "Používatelia"
+      ],
+      "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
+        "Používate iný MDM? Fungovať bude akýkoľvek MDM, ktorý podporuje nasadenie konfiguračného profilu. Informácie o tom, ako profil nahrať a priradiť k vašej skupine zariadení, nájdete v dokumentácii k vášmu MDM."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Používate iný nástroj MDM? Fungovať bude akýkoľvek MDM, ktorý podporuje nasadzovanie súborov alebo spúšťanie PowerShell skriptov. Ďalšie informácie nájdete v dokumentácii k vášmu MDM."
       ],
       "Vault created": [
         "Trezor bol vytvorený"
@@ -9571,6 +9709,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Pomocou skupín môžete rýchlo a jednoducho posielať emaily všetkým ľuďom v určitej skupine."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Pomocou VPN Professional môžu správcovia nastaviť pre všetkých členov organizácie režim vždy zapnutej VPN, spolu so súkromnými bránami, pravidlami prístupu a monitorovaním."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivácie nebudete môcť vytvárať nových používateľov, pridávať adresy existujúcim používateľom, alebo pristupovať k verejným používateľským účtom."
@@ -10222,6 +10363,9 @@
       "App password": [
         "Heslo aplikácie"
       ],
+      "Applies:": [
+        "Platí pre:"
+      ],
       "Apply policy to": [
         "Uplatniť pravidlá na"
       ],
@@ -10639,6 +10783,9 @@
       "Level for NetShield blocker filtering": [
         "Úroveň pre filtrovanie blokovania NetShield"
       ],
+      "Login restrictions": [
+        "Obmedzenia prihlásenia"
+      ],
       "Logo": [
         "Logo"
       ],
@@ -10992,6 +11139,9 @@
       ],
       "Unlimited": [
         "Bez obmedzenia"
+      ],
+      "Upgrade": [
+        "Zvýšiť úroveň"
       ],
       "Upload 1 or more encryption keys": [
         "Nahrať 1 alebo viac šifrovacích kľúčov"
@@ -11615,6 +11765,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licencií"
+      ],
+      "${ price } per seat": [
+        "${ price } za licenciu"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats }${ MEET_APP_NAME } licencia",
@@ -16345,6 +16498,15 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Rušenie vášho predplatného, počkajte prosím"
+      ],
+      "Disabled": [
+        "Deaktivované"
+      ],
+      "Enabled": [
+        "Povolené"
+      ],
+      "No restrictions": [
+        "Bez obmedzení"
       ]
     },
     "Status": {
@@ -17098,6 +17260,9 @@
       "Compare the key differences that matter for your business.": [
         "Porovnajte kľúčové rozdiely, ktoré sú pre vaše podnikanie dôležité."
       ],
+      "Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.": [
+        "Vynúťte používanie VPN v celej organizácii tak, že zablokujete prístup na internet, pokiaľ nie je aktívne pripojenie cez VPN."
+      ],
       "Save 50% for 6 months, and keep full access": [
         "Ušetrite 50 % na 6 mesiacov a zachovajte si plný prístup"
       ],
@@ -17701,6 +17866,12 @@
       "Also in your plan": [
         "Tiež vo vašom pláne"
       ],
+      "Always-on VPN": [
+        "Vždy zapnutá VPN"
+      ],
+      "Always-on VPN device profile": [
+        "Profil zariadenia s vždy zapnutou VPN"
+      ],
       "Amount": [
         "Čiastka"
       ],
@@ -17800,8 +17971,14 @@
       "Change second password": [
         "Zmeniť druhé heslo"
       ],
+      "Choose a deployment method": [
+        "Vyberte spôsob nasadenia"
+      ],
       "Choose a provider": [
         "Vyberte poskytovateľa"
+      ],
+      "Choose a removal method": [
+        "Vyberte spôsob odstránenia"
       ],
       "Choose user affiliations": [
         "Vyberte príslušnosť používateľa"
@@ -17817,6 +17994,9 @@
       ],
       "Compare plans": [
         "Porovnať plány"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Nastaviť profil zariadenia s vždy zapnutou VPN"
       ],
       "Confirm": [
         "Potvrdiť"
@@ -17904,6 +18084,9 @@
       ],
       "Created": [
         "Vytvorené"
+      ],
+      "Created!": [
+        "Vytvorené!"
       ],
       "Creating user accounts": [
         "Vytváranie používateľských účtov"
@@ -17997,6 +18180,15 @@
       ],
       "Deny access to user?": [
         "Zamietnuť prístup užívateľovi?"
+      ],
+      "Deploy device profile to your devices": [
+        "Nainštalujte profil zariadenia do vašich zariadení"
+      ],
+      "Deploy via MDM": [
+        "Nasadiť cez MDM"
+      ],
+      "Deploy via PowerShell": [
+        "Nasadiť cez PowerShell"
       ],
       "Description": [
         "Popis"
@@ -18274,6 +18466,9 @@
       "Information exposed in breach": [
         "Informácie odhalené pri úniku"
       ],
+      "Install it manually": [
+        "Inštalovať ručne"
+      ],
       "Integrations": [
         "Integrácie"
       ],
@@ -18481,6 +18676,9 @@
       "Remove all members?": [
         "Odstrániť všetkých členov?"
       ],
+      "Remove Always-on VPN device profile": [
+        "Odstrániť profil zariadenia so vždy zapnutou VPN"
+      ],
       "Remove device?": [
         "Odstrániť zariadenie?"
       ],
@@ -18504,6 +18702,12 @@
       ],
       "Remove user?": [
         "Odstrániť používateľa?"
+      ],
+      "Remove via MDM": [
+        "Odstrániť cez MDM"
+      ],
+      "Remove via PowerShell": [
+        "Odstrániť cez PowerShell"
       ],
       "Rename the gateway": [
         "Premenovať bránu"
@@ -18775,6 +18979,9 @@
       "Upgrade to ${ planName }": [
         "Navýšiť na ${ planName }"
       ],
+      "Upgrade to enable Always-on": [
+        "Zvýšte úroveň pre povolenie vždy zapnutej VPN"
+      ],
       "Upgrade to keep your premium benefits.": [
         "Zvýšte si úroveň, aby ste si zachovali svoje prémiové výhody."
       ],
@@ -18829,6 +19036,9 @@
       "Verify your password": [
         "Overte svoje heslo"
       ],
+      "Verify your phrase": [
+        "Overte svoju frázu"
+      ],
       "Verifying your card...": [
         "Overujeme vašu kartu..."
       ],
@@ -18864,6 +19074,9 @@
       ],
       "What is the dark web?": [
         "Čo je dark web?"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Wipe all logs?": [
         "Vymazať všetky záznamy?"
@@ -19187,6 +19400,9 @@
       "Group membership paused": [
         "Členstvo v skupine pozastavené"
       ],
+      "Pending user activation": [
+        "Čaká na aktiváciu používateľa"
+      ],
       "Resuming role assignment": [
         "Obnovenie priradenia pozícií"
       ],
@@ -19326,6 +19542,9 @@
         "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľov",
         "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľov"
       ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "Nepodarilo sa povoliť prístup správcu: ${ unprivatizationResult.error }"
+      ],
       "Enable manually": [
         "Povoliť ručne"
       ],
@@ -19382,6 +19601,9 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Ak chcete pokračovať, musíte používateľov požiadať o povolenie na prístup k ich dátam alebo resetovať ich heslo."
+      ],
+      "Waiting for admin approval": [
+        "Čaká na schválenie správcom"
       ],
       "You can safely remove this user from your organization.": [
         "Tohto používateľa môžete bezpečne odstrániť z organizácie.",
@@ -19558,8 +19780,14 @@
       "Invitation sent, awaiting reply from the invited member": [
         "Pozvánka odoslaná, čaká sa na odpoveď od pozvaného člena"
       ],
+      "Invited": [
+        "Pozvaní účastníci"
+      ],
       "Pending": [
         "Čakajúce"
+      ],
+      "Requested": [
+        "Požadované"
       ],
       "SSO user provided by your identity provider": [
         "SSO používateľ poskytnutý poskytovateľom identity"

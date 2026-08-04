@@ -112,15 +112,6 @@
       "Cancel": [
         "Peruuta"
       ],
-      "Cancel all downloads": [
-        "Peru kaikki lataukset"
-      ],
-      "Cancel all uploads": [
-        "Peru kaikki tallennukset"
-      ],
-      "Cancel download": [
-        "Peru lataus"
-      ],
       "Cancel subscription": [
         "Peru tilaus"
       ],
@@ -207,9 +198,6 @@
       ],
       "Continue": [
         "Jatka"
-      ],
-      "Continue downloading": [
-        "Jatka latausta"
       ],
       "Continue import": [
         "Jatka tuontia"
@@ -335,9 +323,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Lataa kopio (xlsx-muodossa)"
-      ],
-      "Download anyway": [
-        "Lataa silti"
       ],
       "Download debug information": [
         "Lataa vianselvitystiedot"
@@ -678,9 +663,6 @@
       "Rename document": [
         "Nimeä dokumentti uudelleen"
       ],
-      "Replace file": [
-        "Korvaa tiedosto"
-      ],
       "Report a problem": [
         "Ilmoita ongelmasta"
       ],
@@ -899,9 +881,6 @@
       ],
       "Upload and share files": [
         "Lähetä ja jaa tiedostoja"
-      ],
-      "Upload anyway": [
-        "Tallenna silti"
       ],
       "Upload picture": [
         "Lataa kuva"
@@ -3252,20 +3231,8 @@
       "Failed to update public share node": [
         "Julkisen jakosolmun päivittäminen epäonnistui."
       ],
-      "File \"${ name }\" is already downloading": [
-        "Tiedostoa \"${ name }\" ladataan jo."
-      ],
-      "File cannot be merged with folder": [
-        "Tiedostoa ei voida yhdistää kansioon"
-      ],
-      "File selection is already downloading": [
-        "Valittuja tiedostoja ladataan jo."
-      ],
       "First name is too long": [
         "Etunimi on liian pitkä"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Kansiota \"${ name }\" ladataan jo."
       ],
       "Folder name cannot be empty.": [
         "Kansion nimi ei voi olla tyhjä."
@@ -3517,9 +3484,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Alkuperäistä tiedostoa ei ole vielä tallennettu. Yritä myöhemmin uudelleen"
-      ],
-      "The original folder not found": [
-        "Alkuperäistä kansiota ei löytynyt"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ulkoisella tililläsi on liian monta kansiota. Muokkaa tuontia tai poista joitakin kansioita."
@@ -4523,9 +4487,6 @@
         "${ contactsLength } yhteystieto",
         "${ contactsLength } yhteystietoa"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } -tiedostoja ei voida ladata suoraan, eikä niitä sisällytetä tähän lataukseen. Voit ladata muut tiedostot napsauttamalla 'Jatka lataamista'."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } mahdollistaa tosiaikaisen yhteiskäytön päästä päähän -salauksella täydellistä yksityisyyttä varten. Aloita muokkaus luomalla kopio tai pyydä muokkausoikeutta tiedoston omistajalta."
       ],
@@ -4581,9 +4542,6 @@
         "${ updated } yhteystieto päivitettiin.",
         "${ updated } yhteystietoa päivitettiin."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } löytyy jo tästä sijainnista."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } naamioi IP-osoitteesi, jotta verkkosivustot eivät voi tunnistaa sinua."
       ],
@@ -4612,12 +4570,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteys (mahdollistaa VPN-yhteyden useammalla laitteella)",
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteyttä (mahdollistaa VPN-yhteyden useammalla laitteella)"
-      ],
-      "A number will be added to the filename": [
-        "Lisää tiedoston nimeen numeron"
-      ],
-      "A number will be added to the folder name": [
-        "Kansion nimeen lisätään numero"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Yksittäisellä puhelinnumerolla voidaan vahvistaa ainoastaan yksi ${ BRAND_NAME }-tili"
@@ -4666,9 +4618,6 @@
       ],
       "Already in this folder": [
         "Jo tässä kansiossa"
-      ],
-      "an anonymous user": [
-        "anonyymi käyttäjä"
       ],
       "and": [
         "ja"
@@ -4741,9 +4690,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tarkistetaan yhteystietoa ${ progress }/${ max }..."
-      ],
-      "Checking signatures": [
-        "Tarkastetaan allekirjoituksia"
       ],
       "Choose a plan that works best for you.": [
         "Valitse tilaus, joka sopii sinulle parhaiten."
@@ -4840,12 +4786,6 @@
       "Details": [
         "Lisätiedot"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Tiedoston sähköinen allekirjoitus vahvistettiin ja sen tallensi turvallisesti ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Sähköinen allekirjoitus vahvistettiin ja kansion tallensi turvallisesti ${ emailAddress }."
-      ],
       "Display word count": [
         "Näytä sanamäärä"
       ],
@@ -4872,12 +4812,6 @@
       ],
       "Download current logs": [
         "Lataa nykyiset lokitiedot"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Tiedoston ${ downloadFileName } lataus perutaan"
-      ],
-      "Download was canceled": [
-        "Lataus peruttiin"
       ],
       "Drop file here to upload": [
         "Pudota ladattava tiedosto tähän"
@@ -4969,15 +4903,6 @@
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" poistettiin latauksen aikana"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Tiedostolta ${ fileName } puuttuu allekirjoitus, eikä käyttäjän ${ emailAddress } voitu vahvistaa tallentaneen sitä."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Tiedostolta ${ fileName } puuttuu allekirjoitus, eikä sen tallentanutta käyttäjää voitu vahvistaa."
-      ],
-      "File will not be updated": [
-        "Tiedostoa ei tallenneta"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Vain tiedostot (ei valokuvia, ${ DOCS_APP_NAME }- tai ${ SHEETS_APP_NAME }-tiedostoja) – yhteensä enintään 100 Gt, 100 000 tiedostoa ja 50 Gt tiedostoa kohden"
       ],
@@ -4986,18 +4911,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Kansio \"${ link.name }\" poistettiin kesken latauksen"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Kansiolta ${ fileName } puuttuu allekirjoitus, eikä käyttäjän ${ emailAddress } voitu vahvistaa tallentaneen sitä."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Kansiolta ${ fileName } puuttuu allekirjoitus, eikä sen tallentanutta käyttäjää voitu vahvistaa."
-      ],
-      "Folder will not be uploaded": [
-        "Kansiota ei tallenneta"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Parasta lopputulosta varten, vältä suoratoistoa ja keskusmuistia kuormittavia toimintoja tai jaa tallennuksesi pienempiin eriin."
       ],
       "Forgot password?": [
         "Unohtunut salasana?"
@@ -5104,9 +5017,6 @@
       ],
       "Invite link copied": [
         "Kutsulinkki kopioitiin"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Näyttää siltä, että yritit hiljattain tallentaa kohteen ${ uploadName }. Jos siirto epäonnistui, ${ replaceFile }. Jos siirto on edelleen käynnissä, sen korvaaminen peruu käynnissä olevan siirron."
       ],
       "It's better to have:": [
         "On parempi olla:"
@@ -5371,9 +5281,6 @@
       "Recents": [
         "Viimeisimmät"
       ],
-      "recommended browser": [
-        "suositeltujen selainten"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
       ],
@@ -5440,12 +5347,6 @@
       "Show table of contents": [
         "Näytä sisällysluettelo"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Allekirjoitusta ei voida verkkovirheen vuoksi vahvistaa. Yritä myöhemmin uudelleen."
-      ],
-      "Signature check will be ignored": [
-        "Allekirjoitustarkistus ohitetaan"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Koska olet uskollinen käyttäjä, tililläsi on lisäominaisuuksia."
       ],
@@ -5492,26 +5393,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Tilillä saattaa olla uusi avain tai seuraavia on saatettu muuttaa tietämättäsi: ${ items }. Avaa se vain, jos luotat siihen."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Dokumentin muutosten alkuperää ei voitu vahvistaa. Haluatko merkitä dokumentin vahvistetuksi? Voit ohittaa tämän ja tehdä päätöksen myöhemmin."
       ],
       "The Beginning": [
         "Aloitus"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Sähköinen allekirjoitus on vahvistettu osittain. Tämä tiedosto on lähetetty julkisella jakolinkillä sellaisen käyttäjän toimesta, jolla ei ole ${ BRAND_NAME } -tiliä, joten hänen henkilöllisyyttään ei voida vahvistaa."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Sähköinen allekirjoitus on vahvistettu osittain. Tämä kansio on lähetetty julkisella jakolinkillä sellaisen käyttäjän toimesta, jolla ei ole ${ BRAND_NAME } -tiliä, joten hänen henkilöllisyyttään ei voida vahvistaa."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Paljastuneet tiedot vuosivat ulkopuolisesta palvelusta. ${ BRAND_NAME }-tilisi tiedot ovat suojassa ja salattuina. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Seuraavia on saatettu muuttaa tietämättäsi: ${ items }. Avaa vain, jos luotat siihen."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Jotta osoitteeseen voidaan lähettää salattuja viestejä, on omistajan palautettava päähän -salaus käyttöön."
@@ -5582,23 +5471,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Tämä poistaa lähettämäsi valitut kohteet pysyvästi."
       ],
-      "This will replace the existing file with the folder": [
-        "Tämä korvaa olemassa olevan tiedoston kansiolla"
-      ],
-      "This will replace the existing folder with the file": [
-        "Tämä korvaa olemassa olevan kansion tiedostolla"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Tämä kirjaa sinut ulos kaikilta tileiltä, jolle olet tällä hetkellä kirjautunut."
-      ],
-      "This will upload a new version of the file": [
-        "Tallentaa tiedostosta uuden version"
-      ],
-      "This will upload a new version of the folder": [
-        "Tämä tallentaa kansiosta uuden version"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Ladataksesi ${ DOCS_APP_NAME }-tiedostoja, avaa ne ${ DOCS_APP_NAME }issa ja vie ne."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
@@ -5624,14 +5498,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Tiedoston \"${ name }\" siirto peruttiin"
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Kansion \"${ name }\" siirto peruttiin"
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Tiedoston \"${ file.name }\" siirto ohitettiin"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Kansion \"${ folderName }\" siirto ohitettiin"
       ],
       "Trash": [
         "Roskakori"
@@ -5644,9 +5512,6 @@
       ],
       "Undo successful": [
         "Kumoaminen onnistui"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Valitettavasti näyttää siltä, että tiedoston tai joidenkin sen tietojen salausta ei voida purkaa."
       ],
       "Update recent documents": [
         "Päivitä viimeaikaiset dokumentit"
@@ -5662,9 +5527,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Päivitä säilyttääksesi ${ planTitle } tilauksesi edut."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Satojen tiedostojen samanaikainen tallennus voi vaikuttaa suorituskykyyn."
       ],
       "Uppercase and lowercase letters": [
         "Isot ja pienet kirjaimet"
@@ -5689,12 +5551,6 @@
       ],
       "Warning": [
         "Varoitus"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Tiedoston ${ fileName } tallentajaksi ei voitu vahvistaa käyttäjää ${ emailAddress }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Tiedoston ${ fileName } tallentajaa ei voitu vahvistaa."
       ],
       "We'll email you once import is complete.": [
         "Ilmoitamme tuonnin valmistumisesta sähköpostitse."
@@ -5858,9 +5714,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Muutoksiesi synkronointi epäonnistui. Drive yrittää automaattisesti tallentaa muutokset. Älä sulje verkkosivua."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Nykyinen selaimesi ei tue suurten tiedostojen latausta, koska palvelutyöstäjät eivät ole käytettävissä. Suurten tiedostojen lataukset saattavat jäädä jumiin tai aiheuttaa selaimen jumiutumisen. Käytä ${ recommendedBrowser } uusimpia versiota ja yritä uudelleen."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Nykyinen dokumenttisi korvataan tällä versiolla. Kommentit ja ehdotukset poistetaan dokumentista, mutta ne pysyvät saatavilla kommenttihistoriassa."
       ],
@@ -5963,32 +5816,6 @@
         "Vain tarkastelu"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "tiedoston attribuutit"
-      ],
-      "file data": [
-        "tiedoston tiedot"
-      ],
-      "file data key": [
-        "tiedoston tietoavain"
-      ],
-      "file data order": [
-        "tiedoston tietojärjestys"
-      ],
-      "hash key": [
-        "hajautusarvon avain"
-      ],
-      "keys": [
-        "avaimet"
-      ],
-      "name": [
-        "nimi"
-      ],
-      "thumbnail": [
-        "pienoiskuva"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Aktiivinen allekirjoittaja"
@@ -6079,15 +5906,6 @@
       "App password": [
         "Sovellussalasana"
       ],
-      "Apply to all duplicated files": [
-        "Toteuta kaikille tiedostojen kaksoiskappaleille"
-      ],
-      "Apply to all duplicated folders": [
-        "Toteuta kaikille kansioiden kaksoiskappaleille"
-      ],
-      "Apply to all unverified items": [
-        "Käytä kaikille vahvistamattomille kohteille"
-      ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
@@ -6114,9 +5932,6 @@
       ],
       "can view": [
         "voi tarkastella"
-      ],
-      "Cancel download": [
-        "Peru lataus"
       ],
       "Category": [
         "Aihe"
@@ -6181,14 +5996,8 @@
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
       ],
-      "Download anyway": [
-        "Lataa silti"
-      ],
       "Drive": [
         "Drive"
-      ],
-      "Duplicate found": [
-        "Löydettiin kaksoiskappale"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "esim. Amazon, eBay, Etsy"
@@ -6291,15 +6100,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Sisäänrakennettu kaksivaiheinen todentaja"
-      ],
-      "Keep both": [
-        "Säilytä molemmat"
-      ],
-      "Keep both files": [
-        "Säilytä molemmat tiedostot"
-      ],
-      "Keep both folders": [
-        "Säilytä molemmat kansiot"
       ],
       "Label messages as": [
         "Merkitse viestit tunnisteella"
@@ -6424,12 +6224,6 @@
       "Regular expression": [
         "Säännöllinen lauseke"
       ],
-      "Replace existing file": [
-        "Korvaa olemassa oleva tiedosto"
-      ],
-      "Replace existing folder": [
-        "Korvaa olemassa oleva kansio"
-      ],
       "Require password": [
         "Vaadi salasanaa"
       ],
@@ -6453,12 +6247,6 @@
       ],
       "Skip feedback": [
         "Ohita palaute"
-      ],
-      "Skip file": [
-        "Ohita tiedosto"
-      ],
-      "Skip folder": [
-        "Ohita kansio"
       ],
       "Starts with": [
         "Alkaa"
@@ -8181,14 +7969,17 @@
       "Failed to accept share invitation": [
         "Jakokutsun hyväksyntä epäonnistui"
       ],
-      "Failed to download files: ${ err }": [
-        "Tiedostojen lataus epäonnistui: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Kutsun tietojen lataaminen epäonnistui"
       ],
+      "Failed to load invitations": [
+        "Kutsujen lataaminen epäonnistui"
+      ],
       "Failed to load sharing details": [
         "Jakotietojen lataaminen epäonnistui"
+      ],
+      "Failed to reject invitation": [
+        "Kutsun hylkääminen epäonnistui"
       ],
       "Failed to reject share invitation": [
         "Jakokutsusta kieltäytyminen epäonnistui"
@@ -8196,18 +7987,12 @@
       "Failed to rename document": [
         "Asiakirjan uudelleennimeäminen epäonnistui"
       ],
-      "Failed to upload files: ${ err }": [
-        "Tiedostojen tallennus epäonnistui: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Tiedostoa tai kansiota \"${ filename }\" ja ${ count } muuta tallennetaan jo",
         "Tiedostoa tai kansiota \"${ filename }\" ja ${ count } muuta tallennetaan jo"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Tiedostoa tai kansiota \"${ filename }\" tallennetaan jo"
-      ],
-      "File or folder is missing a name": [
-        "Tiedostolta tai kansiolta puuttuu nimi"
       ],
       "Invitation's email was sent again": [
         "Kutsusähköposti lähetettiin uudelleen"
@@ -8226,9 +8011,6 @@
       "Move ${ n } item": [
         "Siirrä ${ n } kohde",
         "Siirrä ${ n } kohdetta"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Tila ei riitä ${ formattedTotal } tiedoston tallennukseen"
       ],
       "Public link access updated": [
         "Julkisen linkin käyttöoikeus päivitetty"
@@ -10175,9 +9957,6 @@
       "Birthday": [
         "Syntymäpäivä"
       ],
-      "Browser might run out of memory": [
-        "Selaimen käytettävissä oleva keskusmuisti ei välttämättä riitä"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Peru ${ MAIL_SHORT_APP_NAME }-tilaus"
       ],
@@ -10336,26 +10115,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Alennetaanko tilaukseen ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Lataa ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Lataa ${ DRIVE_APP_NAME }-sovellukset"
       ],
       "Download the app": [
         "Lataa sovellus"
-      ],
-      "Download unverified file?": [
-        "Ladataanko vahvistamaton tiedosto?"
-      ],
-      "Download unverified folder?": [
-        "Ladataanko vahvistamaton kansio?"
-      ],
-      "Duplicate file found": [
-        "Havaittiin tiedoston kaksoiskappale"
-      ],
-      "Duplicate folder found": [
-        "Löydettiin kansion kaksoiskappale"
       ],
       "Edit contact": [
         "Muokkaa yhteystietoa"
@@ -10538,9 +10302,6 @@
       "Other names": [
         "Muut nimet"
       ],
-      "Performance might be affected": [
-        "Voi vaikuttaa suorituskykyyn"
-      ],
       "Phone numbers": [
         "Puhelinnumerot"
       ],
@@ -10709,9 +10470,6 @@
       "Upload and share files": [
         "Lähetä ja jaa tiedostoja"
       ],
-      "Uploading a large file or folder": [
-        "Suuren tiedoston tai kansion tallennus"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Käytä ${ VPN_SHORT_APP_NAME }:ää tietosuojaa varten"
       ],
@@ -10756,9 +10514,6 @@
       ],
       "Your document cannot be loaded": [
         "Dokumenttiasi ei vo ladata"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Latauksesi sisältää ${ DOCS_APP_NAME } -tiedoston"
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"
@@ -10906,6 +10661,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Päivitä tuettuun tilaukseen käyttääksesi järjestelmänvalvojan rooleja."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Voit määrittää roolit, kun käyttäjä on hyväksynyt kutsun."
       ]

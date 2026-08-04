@@ -1074,7 +1074,7 @@
         "Mantenir"
       ],
       "Stop": [
-        "Aturar-ho"
+        "Atura"
       ],
       "Stop sharing": [
         "Deixa de compartir"
@@ -8889,8 +8889,8 @@
         "Programació de cites"
       ],
       "Appointment scheduling with ${ n } booking page": [
-        "Programació de cites amb ${ n } pàgina de reserva",
-        "Programació de cites amb ${ n } pàgines de reserva"
+        "Programació de cites amb ${ n } pàgina de reserves",
+        "Programació de cites amb ${ n } pàgines de reserves"
       ],
       "Auto-delete Spam and Trash": [
         "Neteja automàticament el correu brossa i la paperera"
@@ -9207,8 +9207,8 @@
         "Compartició de la caixa forta (fins a ${ n } persones)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "Ús compartit de la caixa forta amb fins a ${ n } persona",
-        "Ús compartit de la caixa forta amb fins a ${ n } persones"
+        "Compartició de la caixa forta amb fins a ${ n } persona",
+        "Compartició de la caixa forta amb fins a ${ n } persones"
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
@@ -10719,7 +10719,7 @@
         "Aquest contacte actualment signa els missatges amb aquesta clau"
       ],
       "This key is used for message verification": [
-        "Aquesta clau s'utilitza per la verificació de missatges"
+        "Aquesta clau s'utilitza per a la verificació de missatges"
       ],
       "This key is used to encrypt messages to this contact": [
         "Aquesta clau s'utilitza per xifrar missatges per a aquest contacte"
@@ -11119,7 +11119,7 @@
         "Comenceu a guanyar crèdits"
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
-        "Podeu obtenir fins a **${ maxRewardAmount }** en crèdits."
+        "Obtingueu fins a **${ maxRewardAmount }** en crèdit."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Us queda **${ daysRemaining } dia** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**.",
@@ -13711,6 +13711,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Milloreu a un pla compatible per utilitzar rols d'administrador/a."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
       ]

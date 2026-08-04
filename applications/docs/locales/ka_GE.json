@@ -112,15 +112,6 @@
       "Cancel": [
         "გაუქმება"
       ],
-      "Cancel all downloads": [
-        "ყველა გადმოწერის გაუქმება"
-      ],
-      "Cancel all uploads": [
-        "ყველა ატვირთვის გაუქმება"
-      ],
-      "Cancel download": [
-        "გადმოწერის გაუქმება"
-      ],
       "Cancel subscription": [
         "გამოწერის გაუქმება"
       ],
@@ -204,9 +195,6 @@
       ],
       "Continue": [
         "გაგრძელება"
-      ],
-      "Continue downloading": [
-        "გადმოწერის გაგრძელება"
       ],
       "Continue import": [
         "შემოტანის გაგრძელება"
@@ -332,9 +320,6 @@
       ],
       "Download a copy (as xlsx)": [
         "ასლის გადმოწერა (xlsx ფორმატში)"
-      ],
-      "Download anyway": [
-        "მაინც გადმოწერა"
       ],
       "Download debug information": [
         "გამართვის ინფორმაციის ჩამოტვირთვა"
@@ -675,9 +660,6 @@
       "Rename document": [
         "კომენტარის სახელის გადარქმევა"
       ],
-      "Replace file": [
-        "ფაილის ჩანაცვლება"
-      ],
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
       ],
@@ -893,9 +875,6 @@
       ],
       "Upload and share files": [
         "ფაილების ატვირთვა და გაზიარება"
-      ],
-      "Upload anyway": [
-        "მაინც ატვირთვა"
       ],
       "Upload picture": [
         "სურათის ატვრთვა"
@@ -3249,20 +3228,8 @@
       "Failed to update public share node": [
         "საჯარო ზიარის კვანძის განახლება ჩავარდა"
       ],
-      "File \"${ name }\" is already downloading": [
-        "ფაილის ${ name } გადმოწერა უკვე მიმდინარეობს"
-      ],
-      "File cannot be merged with folder": [
-        "ფაილი არ შეიძლება საქაღალდეს შეერწყას"
-      ],
-      "File selection is already downloading": [
-        "მონიშნული ფაილის გადმოწერა უკვე მიმდინარეობს"
-      ],
       "First name is too long": [
         "სახელი ძალიან გრძელია"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "საქაღალდის ${ name } გადმოწერა უკვე მიმდინარეობს"
       ],
       "Folder name cannot be empty.": [
         "საქაღალდის სახელი ცარიელი არ შეიძლება იყოს."
@@ -3511,9 +3478,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "საწყისი ფაილი ჯერ ატვირთული არაა. მოგვიანებით სცადეთ"
-      ],
-      "The original folder not found": [
-        "საწყისი საქაღალდე ნაპოვნი არაა"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "თქვენს გარე ანგარიშზე, მეტისმეტად, ბევრი საქაღალდეა. გთხოვთ, ხელით მიუთითოთ შემოსატანი საქაღალდეები."
@@ -4517,9 +4481,6 @@
         "${ contactsLength } კონტაქტი",
         "${ contactsLength } კონტაქტი"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } ფაილების ჩამოტვირთვა პირდაპირ შეუძლებელია და ისინი არ იქნება გათვალისწინებული ამ ჩამოტვირთვაში. სხვა ფაილების ჩამოტვირთვა შეგიძლიათ ღილაკზე „გაგრძელება ჩამოტვირთვის“ დაწკაპუნებით."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } საშუალებას გაძლევთ, რეალურ დროში იმუშაოთ სხვასთან ერთად გამჭოლი დაშიფვრით, სრული კონფიდენციალობისთვის. შექმენით ასლი, რომ დაიწყოთ ჩასწორება, ან სთხოვთ მფლობელს, ჩასწორების უფლება მოგცეთ."
       ],
@@ -4575,9 +4536,6 @@
         "${ updated } კონტაქტი წარმატებით განახლდა.",
         "${ updated } კონტაქტი წარმატებით განახლდა."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } უკვე არსებობს."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } ნიღბავს თქვენს IP მისამართს და ვებგვერდები თქვენს იდენტიფიკაციას ვერ მოახდენენ."
       ],
@@ -4606,12 +4564,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )",
         "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )"
-      ],
-      "A number will be added to the filename": [
-        "ფაილის სახელს რიცხვი მიემატება"
-      ],
-      "A number will be added to the folder name": [
-        "საქაღალდის სახელს რიცხვი მიემატება"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "ტელეფონის ნომერი, მხოლოდ, ერთი ${ BRAND_NAME }-ის ანგარიშის გადასამოწმებლად შეგიძლიათ, გამოიყენოთ"
@@ -4660,9 +4612,6 @@
       ],
       "Already in this folder": [
         "უკვე ამ საქაღალდეშია"
-      ],
-      "an anonymous user": [
-        "ანონიმური მომხმარებელი"
       ],
       "and": [
         "და"
@@ -4735,9 +4684,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "მოწმდება ${ progress }-ე კონტაქტი ${ max }-დან..."
-      ],
-      "Checking signatures": [
-        "ხელმოწერების შემოწმება"
       ],
       "Choose a plan that works best for you.": [
         "აირჩიეთ სატარიფო გეგმა, რომელიც საუკეთესოდ შეგესაბამებათ."
@@ -4834,12 +4780,6 @@
       "Details": [
         "დეტალები"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "ციფრული ხელმოწერა შემოწმებულია. ეს ფაილი დაცულად ატვირთა ${ emailAddress }-მა."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "ციფრული ხელმოწერა შემოწმებულია. ეს საქაღალდე დაცულად ატვირთა ${ emailAddress }-მა."
-      ],
       "Display word count": [
         "სიტყვების რაოდენობის ჩვენება"
       ],
@@ -4866,12 +4806,6 @@
       ],
       "Download current logs": [
         "მიმდინარე ჟურნალის გადმოწერა"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "${ downloadFileName }-ის გადმოწერა გაუქმდება"
-      ],
-      "Download was canceled": [
-        "გადმოწერა გაწყდა"
       ],
       "Drop file here to upload": [
         "ასატვირთად გადმოათრიეთ ფაილები აქ"
@@ -4963,15 +4897,6 @@
       "File \"${ name }\" was deleted during download": [
         "ფაილი \"${ name }\" წაიშალა გადმოწერის დროს"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "ფაილს ხელმოწერა აკლია. ჩვენ ვერ შევამოწმეთ, ატვირთა ${ fileName } ${ emailAddress }-მა, თუ არა."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "ფაილს ხელმოწერა აკლია. ჩვენ ვერ შევამოწმეთ, ვინ ატვირთა ${ fileName }."
-      ],
-      "File will not be updated": [
-        "ფაილი არ განახლდება"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "მხოლოდ ფაილები (ფოტოების, ${ DOCS_APP_NAME }-ის ან ${ SHEETS_APP_NAME }-ის გარეშე) — ჯამში 100 გბ-მდე, 100 000 ფაილი, და 50 გბ თითოეულ ფაილზე"
       ],
@@ -4980,18 +4905,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "საქაღალდე \"${ link.name }\" წაიშალა გადმოწერის დროს"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "საქაღალდეს ხელმოწერა აკლია. ჩვენ ვერ შევამოწმეთ, ატვირთა ${ fileName } ${ emailAddress }-მა, თუ არა."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "საქაღალდეს ხელმოწერა აკლია. ჩვენ ვერ შევამოწმეთ, ვინ ატვირთა ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "საქაღალდე არ აიტვირთება"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "საუკეთესო შედეგისთვის, მოერიდეთ სტრიმინგს და მეხსიერების ინტენსიურ აქტივობებს, ან დაყავით თქვენი ატვირთვა მცირე ნაკრებებად."
       ],
       "Forgot password?": [
         "პაროლი დამავიწყდა?"
@@ -5095,9 +5008,6 @@
       ],
       "Invite link copied": [
         "მოსაწვევის ბმული დაკოპირდა"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "როგორ ჩანს, ახლახან ${ uploadName }-ის ატვირთვა სცადეთ. თუ ატვირთვა წარუმატებლად დასრულდა, გთხოვთ ${ replaceFile }. თუ ატვირთვა ჯერ კიდევ მიმდინარეობს, მისი ჩანაცვლება პროცესს გააუქმებს."
       ],
       "It's better to have:": [
         "უკეთესია, გქონდეთ:"
@@ -5362,9 +5272,6 @@
       "Recents": [
         "ახლახან გამოყენებულები"
       ],
-      "recommended browser": [
-        "რეკომენდებული ბრაუზერი"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "აღდგენის ინფორმაცია დარჩება ამ მოწყობილობაზე, თუ მას ხელით არ წაშლით."
       ],
@@ -5431,12 +5338,6 @@
       "Show table of contents": [
         "სარჩევის ჩვენება"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "ხელმოწერა ვერ დადასტურდება ქსელის შეცდომის გამო, გთხოვთ, სცადეთ მოგვიანებით."
-      ],
-      "Signature check will be ignored": [
-        "ხელმოწერის შემოწმების გამოტოვება"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
       ],
@@ -5483,26 +5384,14 @@
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "ამ ანგარიშს შეიძლება, ახალი გასაღები ჰქონდეს, ან შეიცვალა: ${ items } არ გახსნათ, თუ არ ენდობით."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "დოკუმენტის ჩასწორებების ავტორის გადამოწმება შეუძლებელია. გნებავთ, მონიშნოთ ეს დოკუმენტი, როგორც გადამოწმებული? შეგიძლიათ, აირჩიოთ გამოტოვოთ ეს და მოგვიანებით გადაწყვიტოთ."
       ],
       "The Beginning": [
         "დასაწყისი"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "ციფრული ხელმოწერა ნაწილობრივ დამოწმებულია. ეს ფაილი აიტვირთა საჯაროდ ხელმისაწვდომი გაზიარების ბმულით მომხმარებლის მიერ, რომელსაც არ აქვს ${ BRAND_NAME } ანგარიში, ამიტომ მისი იდენტობის დადასტურება ვერ ხერხდება."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "ციფრული ხელმოწერა ნაწილობრივ დამოწმებულია. ეს საქაღალდე აიტვირთა საჯაროდ ხელმისაწვდომი გაზიარების ბმულით მომხმარებლის მიერ, რომელსაც არ აქვს ${ BRAND_NAME } ანგარიში, ამიტომ მისი იდენტობის დადასტურება ვერ ხერხდება."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "გაჟონილი ინფორმაცია მესამე პირების მიერ იქნა გავრცელებული. თქვენი ${ BRAND_NAME }-ის ანგარიშის ინფორმაცია დაცულად და დაშიფრულად რჩება. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "ეს ელემენტები შეიძლება შეიცვალა: ${ items }. გახსენით, მხოლოდ, მაშინ, თუ ენდობით."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "ამ მისამართის მფლობელმა გამჭოლი დაშიფვრა გამორთო. იმისათვის, რომ შეგეძლოთ, ამ მისამართზე დაშიფრული შეტყობინებები გააგზავნოთ, მფლობელმა გამჭოლი დაშიფვრა თავიდან უნდა ჩართოს."
@@ -5570,23 +5459,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "ეს სამუდამოდ წაშლის თქვენს მიერ ატვირთულ ელემენტებს."
       ],
-      "This will replace the existing file with the folder": [
-        "ეს არსებულ ფაილს საქაღალდით ჩაანაცვლებს"
-      ],
-      "This will replace the existing folder with the file": [
-        "ეს არსებულ საქაღალდეს ფაილით ჩაანაცვლებს"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "ეს გამოგიყვანთ ყველა ანგარიშიდან, სადაც შესული ბრძანდებით."
-      ],
-      "This will upload a new version of the file": [
-        "ეს ფაილის ახალ ვერსიას ატვირთავს"
-      ],
-      "This will upload a new version of the folder": [
-        "ეს საქაღალდის ახალ ვერსიას ატვირთავს"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "${ DOCS_APP_NAME }-ის ფაილების გადმოსაწერად გახსენით ისინი ${ DOCS_APP_NAME }-ში და მოახდინეთ მათი გატანა."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "სპამისაგან თავდასაცავად გთხოვთ, დაამტკიცოთ, რომ ადამიანი ხართ."
@@ -5612,14 +5486,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\"-ის გადაცემა გაუქმებულია"
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "\"${ name }\"-ის გადაცემა გაუქმებულია"
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "\"${ file.name }\"-ის გადაცემა გამოტოვებულია"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "\"${ folderName }\"-ის გადაცემა გამოტოვებულია"
       ],
       "Trash": [
         "ნაგვის ყუთი"
@@ -5632,9 +5500,6 @@
       ],
       "Undo successful": [
         "გაუქმება წარმატებულია"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "სამწუხაროდ, როგორც ჩანს, ფაილის ან მისი მონაცემების ნაწილის გაშიფვრა შეუძლებელია."
       ],
       "Update recent documents": [
         "უახლესი დოკუმენტების განახლება"
@@ -5650,9 +5515,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "ასწიეთ სატარიფო გეგმა ${ planTitle }-ის ფუნქციების შესანარჩუნებლად."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "ასობით ფაილის ერთდროულ ატვირთვამ შეიძლება, წარმადობაზე გავლენა იქონიოს."
       ],
       "Uppercase and lowercase letters": [
         "დიდი და პატარა ასოები"
@@ -5677,12 +5539,6 @@
       ],
       "Warning": [
         "გაფრთხილება"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "ჩვენ ვერ შევამოწმეთ, ატვირთა ${ fileName } ${ emailAddress }-მა, თუ არა."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "ჩვენ ვერ ვამოწმებთ, ვინ ატვირთა ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "როცა შემოტანა დასრულდება, ელფოსტაზე მოგწერთ."
@@ -5843,9 +5699,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "თქვენი ცვლილებების სინქრონიზაცია ჩავარდა. Drive ცვლილებების შენახვას ავტომატურად ეცდება. ნუ დახურავთ ვებგვერდს."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "თქვენს მიმდინარე ბრაუზერს გაშვებული ასლებს მხარდაჭერის არქონის გამო დიდი ფაილების გადმოწერის საშუალება არ გააჩნია. დააყენეთ ${ recommendedBrowser }-ის ბოლო ვერსია და თავიდან სცადეთ."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "თქვენი მიმდინარე დოკუმენტი ამ ვერსიით ჩანაცვლდება. კომენტარები და მინიშნებები წაიშლება დოკუმენტიდან, მაგრამ დარჩება ხელმისაწვდომად კომენტარების ისტორიაში."
       ],
@@ -5948,32 +5801,6 @@
         "მხოლოდ დათვალიერებისათვის"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "ფაილის ატრიბუტები"
-      ],
-      "file data": [
-        "ფაილის მონაცემები"
-      ],
-      "file data key": [
-        "ფაილის მონაცემების გასაღები"
-      ],
-      "file data order": [
-        "ფაილის მონაცემების მიმდევრობა"
-      ],
-      "hash key": [
-        "ჰეშის გასაღები"
-      ],
-      "keys": [
-        "გასაღებები"
-      ],
-      "name": [
-        "სახელი"
-      ],
-      "thumbnail": [
-        "მინიატურა"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "აქტიური ხელმომწერი"
@@ -6061,15 +5888,6 @@
       "App password": [
         "აპის პაროლი"
       ],
-      "Apply to all duplicated files": [
-        "ყველა დუბლირებულ ფაილზე გადატარება"
-      ],
-      "Apply to all duplicated folders": [
-        "ყველა დუბლირებულ საქაღალდეზე გადატარება"
-      ],
-      "Apply to all unverified items": [
-        "ყველა შეუმოწმებელ ელემენტზე გადატარება"
-      ],
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
       ],
@@ -6096,9 +5914,6 @@
       ],
       "can view": [
         "შეუძლია, ნახოს"
-      ],
-      "Cancel download": [
-        "გადმოწერის გაუქმება"
       ],
       "Category": [
         "კატეგორია"
@@ -6157,14 +5972,8 @@
       "Don't show this again": [
         "აღარ მაჩვენო"
       ],
-      "Download anyway": [
-        "მაინც გადმოწერა"
-      ],
       "Drive": [
         "დისკი"
-      ],
-      "Duplicate found": [
-        "ნაპოვნია დუბლიკატი"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "მაგ Amazon, eBay, Etsy"
@@ -6267,15 +6076,6 @@
       ],
       "Integrated 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
-      ],
-      "Keep both": [
-        "ორივეს შენარჩუნება"
-      ],
-      "Keep both files": [
-        "ორივე ფაილის შენარჩუნება"
-      ],
-      "Keep both folders": [
-        "ორივე საქაღადის შენარჩუნება"
       ],
       "Label messages as": [
         "შეტყობინებების მონიშვნა, როგორც"
@@ -6400,12 +6200,6 @@
       "Regular expression": [
         "რეგულარული გამოსახულება"
       ],
-      "Replace existing file": [
-        "არსებული ფაილის ჩანაცვლება"
-      ],
-      "Replace existing folder": [
-        "არსებული საქაღალდის ჩანაცვლება"
-      ],
       "Require password": [
         "პაროლის მოთხოვნა"
       ],
@@ -6429,12 +6223,6 @@
       ],
       "Skip feedback": [
         "უკუკავშირის გამოტოვება"
-      ],
-      "Skip file": [
-        "ფაილის გამოტოვება"
-      ],
-      "Skip folder": [
-        "საქაღალდის გამოტოვება"
       ],
       "Starts with": [
         "იწყება"
@@ -8154,9 +7942,6 @@
       "Failed to accept share invitation": [
         "ზიარის მოსაწვევზე დათანხმება ჩავარდა"
       ],
-      "Failed to download files: ${ err }": [
-        "ფაილების გადმოწერის შეცდომა: ${ err }"
-      ],
       "Failed to load invitation details": [
         "მოწვევის დეტალების ჩატვირთვა ჩავარდა"
       ],
@@ -8169,18 +7954,12 @@
       "Failed to rename document": [
         "დოკუმენტისთვის სახელის გადარქმევა ვერ მოხერხდა"
       ],
-      "Failed to upload files: ${ err }": [
-        "ფაილების ატვირთვის შეცდომა: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "ფაილის ან საქაღალდის \"${ filename }\" და ${ count } სხვის ატვირთვა უკვე მიმდინარეობს",
         "ფაილის ან საქაღალდის \"${ filename }\" და ${ count } სხვის ატვირთვა უკვე მიმდინარეობს"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "ფაილის ან საქაღალდის \"${ filename }\" ატვირთვა უკვე მიმდინარეობს"
-      ],
-      "File or folder is missing a name": [
-        "ფაილს ან საქაღალდეს არ აქვს სახელი"
       ],
       "Invitation's email was sent again": [
         "მოსაწვევის ელფოსტა კიდევ გაიგზავნა"
@@ -8199,9 +7978,6 @@
       "Move ${ n } item": [
         "${ n } ელემენტის გადატანა",
         "${ n } ელემენტის გადატანა"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "არასაკმარისი ადგილი ${ formattedTotal }-ის ასატვირთად"
       ],
       "Public link access updated": [
         "საჯარო ბმულის წვდომა განახლდა"
@@ -10139,9 +9915,6 @@
       "Birthday": [
         "დაბადების დღე"
       ],
-      "Browser might run out of memory": [
-        "თქვენს ბრაუზერს მეხსიერება არ ჰყოფნის"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } გამოწერის გაუქმება"
       ],
@@ -10300,26 +10073,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა?"
       ],
-      "Download ${ date }": [
-        "${ date }-ის გადმოწერა"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-ის აპების გადმოწერა"
       ],
       "Download the app": [
         "აპის გადმოწერა"
-      ],
-      "Download unverified file?": [
-        "გადმოვწერო შეუმოწმებელი ფაილი?"
-      ],
-      "Download unverified folder?": [
-        "გადმოვწერო შეუმოწმებელი საქაღალდე?"
-      ],
-      "Duplicate file found": [
-        "ნაპოვნია ფაილის ასლი"
-      ],
-      "Duplicate folder found": [
-        "ნაპოვნია საქაღალდის ასლი"
       ],
       "Edit contact": [
         "კონტაქტის ჩასწორება"
@@ -10502,9 +10260,6 @@
       "Other names": [
         "სხვა სახელები"
       ],
-      "Performance might be affected": [
-        "გავლენა ექნება წარმადობაზე"
-      ],
       "Phone numbers": [
         "ტელეფონის ნომრები"
       ],
@@ -10670,9 +10425,6 @@
       "Upload and share files": [
         "ფაილების ატვირთვა და გაზიარება"
       ],
-      "Uploading a large file or folder": [
-        "დიდი ფაილის ან საქაღალდის ატვირთვა"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "გამოიყენეთ ${ VPN_SHORT_APP_NAME } მონაცემთა კონფიდენციალობისთვის"
       ],
@@ -10717,9 +10469,6 @@
       ],
       "Your document cannot be loaded": [
         "თქვენი დოკუმენტის ჩატვირთვა შეუძლებელია"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "თქვენი გადმოწერა ${ DOCS_APP_NAME } ფაილს შეიცავს"
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"

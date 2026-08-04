@@ -1065,6 +1065,9 @@
       "Stay": [
         "停留"
       ],
+      "Stop": [
+        "停止"
+      ],
       "Stop sharing": [
         "停止分享"
       ],
@@ -1392,6 +1395,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "您可在試用期內盡情享有多 ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } 席位。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } 撰寫幫手的席位。"
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
@@ -5063,6 +5069,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } 是端對端加密視訊會議的解決方案。添加至您的方案以主持安全會議。"
       ],
@@ -8110,6 +8119,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME }Scribe撰寫幫手"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加${ BRAND_NAME }訂閱撰寫扳手"
       ],
@@ -8129,6 +8141,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 個席次"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } 席位"
@@ -8504,6 +8519,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 且 ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
       ],
       "${ n } calendar": [
         "${ n } 個行事曆"
@@ -10444,6 +10462,9 @@
       ],
       "Anytown": [
         "城鎮"
+      ],
+      "Ask anything…": [
+        "詢問任何事…"
       ],
       "Choose password": [
         "設定密碼"

@@ -1830,6 +1830,12 @@
       "Event deleted": [
         "Η εκδήλωση διαγράφηκε"
       ],
+      "Failed to admit the participant. Please try again.": [
+        "Αποτυχία αποδοχής του συμμετέχοντα. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Failed to admit the participants. Please try again.": [
+        "Αποτυχία αποδοχής των συμμετεχόντων. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "Failed to assign host": [
         "Αποτυχία ανάθεσης νέου οικοδεσπότη"
       ],
@@ -1850,6 +1856,9 @@
       ],
       "Failed to delete room": [
         "Αποτυχία διαγραφής αίθουσας"
+      ],
+      "Failed to deny the participant. Please try again.": [
+        "Αποτυχία απόρριψης των συμμετεχόντων. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "Failed to download recording": [
         "Αποτυχία λήψης ηχογράφησης"
@@ -1889,6 +1898,9 @@
       ],
       "Failed to unlock meeting": [
         "Αποτυχία ξεκλειδώματος σύσκεψης"
+      ],
+      "Failed to update waiting room setting. Please try again.": [
+        "Η ενημέρωση της ρύθμισης της αίθουσας αναμονής απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "Incorrect username": [
         "Εσφαλμένο όνομα χρήστη"
@@ -2183,6 +2195,10 @@
         "${ totalParticipantCount } συμμετέχων",
         "${ totalParticipantCount } συμμετέχοντες"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "${ waitingRoomParticipantsCount } άτομο περιμένει",
+        "${ waitingRoomParticipantsCount } άτομα περιμένουν"
+      ],
       "(You)": [
         "(Εσείς)"
       ],
@@ -2348,6 +2364,9 @@
       "Everyone has been disconnected from the call.": [
         "Όλοι έχουν αποσυνδεθεί από την κλήση."
       ],
+      "Expires in ${ formattedCountdown }": [
+        "Λήγει σε ${ formattedCountdown }"
+      ],
       "Failed to apply background blur": [
         "Αποτυχία εφαρμογής θολώματος φόντου"
       ],
@@ -2402,8 +2421,14 @@
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
+      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
+        "Το αίτημα συμμετοχής έληξε. Ο οικοδεσπότης δε σας αποδέχτηκε εγκαίρως. Στείλτε ένα νέο αίτημα συμμετοχής."
+      ],
       "Joined ${ roomNameLabel }": [
         "Μπήκε στο ${ roomNameLabel }"
+      ],
+      "Joined at ${ receivedTime }": [
+        "Συμμετείχε στις ${ receivedTime }"
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -2792,6 +2817,12 @@
       "View ": [
         "Προβολή "
       ],
+      "Waiting for the host to admit you. The host has been notified that you're waiting.": [
+        "Αναμονή αποδοχής οικοδεσπότη. Ο οικοδεσπότης έχει ειδοποιηθεί ότι περιμένετε."
+      ],
+      "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
+        "Αναμονή για την έναρξη της σύσκεψης από τον οικοδεσπότη. Θα συμμετάσχετε όταν ο οικοδεσπότης ξεκινήσει τη σύσκεψη και σας δεχτεί."
+      ],
       "Warning": [
         "Προειδοποίηση"
       ],
@@ -2836,6 +2867,9 @@
       ],
       "You were removed from the meeting": [
         "Αφαιρεθήκατε από τη σύσκεψη"
+      ],
+      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
+        "Δε γίνατε δεκτοί σε αυτήν τη σύσκεψη. Μπορείτε να δοκιμάσετε να συμμετάσχετε ξανά εάν πιστεύετε ότι πρόκειται για λάθος."
       ],
       "You will leave the meeting. Others will continue.": [
         "Θα φύγετε από τη συνάντηση. Οι άλλοι θα συνεχίσουν."
@@ -3565,6 +3599,9 @@
       "Join meeting": [
         "Συμμετοχή στη σύσκεψη"
       ],
+      "Join request expired": [
+        "Το αίτημα συμμετοχής έληξε"
+      ],
       "Joined at epoch ${ log.epoch }": [
         "Εντάχθηκε στην epoch ${ log.epoch }"
       ],
@@ -3677,6 +3714,9 @@
       "Thank you!": [
         "Σας ευχαριστούμε!"
       ],
+      "The host didn't admit you": [
+        "Ο οικοδεσπότης δε σας αποδέχτηκε"
+      ],
       "Time": [
         "Ώρα"
       ],
@@ -3688,6 +3728,9 @@
       ],
       "Video": [
         "Βίντεο"
+      ],
+      "Waiting for the host": [
+        "Περιμένουμε τον οικοδεσπότη"
       ],
       "Waiting room": [
         "Αίθουσα αναμονής"

@@ -306,9 +306,6 @@
       "Continue to ${ planOrAppName }": [
         "繼續使用 ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "繼續使用類別"
-      ],
       "Continue with Free": [
         "繼續使用免費方案"
       ],
@@ -824,6 +821,9 @@
       ],
       "Loading${ ellipsis }": [
         "正在載入${ ellipsis }"
+      ],
+      "Lookup document": [
+        "搜尋字典"
       ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "將 ${ MAIL_APP_NAME } 定為預設電子郵件應用程式"
@@ -1437,6 +1437,9 @@
       "Stay": [
         "停留"
       ],
+      "Stop": [
+        "停止"
+      ],
       "Stop downloading assistant": [
         "正在下載助理"
       ],
@@ -1713,9 +1716,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "自訂類別"
-      ],
       "Got it": [
         "瞭解"
       ],
@@ -1978,6 +1978,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "您可在試用期內盡情享有多 ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } 席位。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } 撰寫幫手的席位。"
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
@@ -4312,9 +4315,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "直接在 ${ MAIL_APP_NAME } 中閱讀、回覆並隨時掌握 Gmail 動態"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "右鍵按一下電子郵件並選取「移至」，或是將其拖放至其他類別。未來類似的電子郵件將會自動分類到該處。"
-      ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "直接在 ${ MAIL_APP_NAME } 中傳送和接收 Gmail 訊息。請在 ${ addressesSettingsLink } 中連線您的位址。"
       ],
@@ -4480,6 +4480,14 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "我們在您上載的 CSV 檔案中偵測到以下欄位。請勾選您想匯入的内容。"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } 封新郵件"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "來自：${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -6718,6 +6726,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } 位聯絡人"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } 則電子郵件 → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ totalProgress } 總數其中的 ${ currentProgress }"
       ],
@@ -6771,6 +6782,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME } 面板"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } 亦可防護您的企業商號。"
@@ -6834,6 +6848,9 @@
       ],
       "${ receivedMessagesCount } email last month": [
         "上個月收到 ${ receivedMessagesCount } 封電子郵件"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } 分鐘剩餘…"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
@@ -7694,7 +7711,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入影像"
       ],
       "Insert link": [
         "插入連結"
@@ -7872,6 +7889,9 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多數公共 WiFi 網路是安全的，但有些缺乏安全性，讓您暴露於網路威脅之下。VPN 會加密您的流量，保護您的安全。"
+      ],
+      "Move emails": [
+        "將電郵移動到"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾創建。"
@@ -8947,8 +8967,8 @@
       "You have ${ totalLabel } in your inbox.": [
         "您的收件匣中有 ${ totalLabel }。"
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "您在 ${ categoryLabel } 類別中有 **${ count } 則對話**"
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "您有 **${ count } 則對話 ** 於您的 ${ categoryLabel } 類別"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "您有 **${ count } 則往來對話** 儲存於此資料夾"
@@ -8956,8 +8976,8 @@
       "You have **${ count } conversation** tagged with this label": [
         "您有 **${ count } 則往來對話** 已標上此標籤"
       ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "您在 ${ categoryLabel } 類別中有 **${ count } 則訊息**"
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "您有 **${ count } 訊息** 於 ${ categoryLabel } 類別"
       ],
       "You have **${ count } message** stored in this folder": [
         "您有 **${ count } 則訊息** 儲存於此資料夾"
@@ -8992,11 +9012,11 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "您必須先停用或移除任何額外的 ${ MAIL_APP_NAME } 使用者、電郵位址及自訂網域，方可降級。"
       ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "您已選取在 ${ categoryLabel } 類別中的 **${ checked } 則對話**"
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "您已選取 **${ checked } 對話** 於 ${ categoryLabel } 類別"
       ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "您已選取在 ${ categoryLabel } 類別中的 **${ checked } 則訊息**"
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "您已選取 **${ checked } 訊息** 於 ${ categoryLabel } 類別"
       ],
       "You selected **${ count } conversation** from this folder": [
         "您從此資料夾選取了 **${ count } 則往來對話**"
@@ -9546,6 +9566,9 @@
       "Apply to future messages": [
         "套用至今後的訊息"
       ],
+      "Archive": [
+        "封存"
+      ],
       "Attach screenshot(s)": [
         "附加螢幕截圖"
       ],
@@ -10056,9 +10079,6 @@
       "Payment method": [
         "付款方式"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "個人和工作電子郵件，和重要更新及通知"
-      ],
       "PGP scheme": [
         "PGP 方案"
       ],
@@ -10079,9 +10099,6 @@
       ],
       "Primary": [
         "主要"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "主要 - 個人和工作電子郵件，以及重要更新"
       ],
       "Promotions": [
         "優惠活動"
@@ -10274,6 +10291,9 @@
       ],
       "Username": [
         "使用者名稱"
+      ],
+      "v1": [
+        "v1"
       ],
       "Verification code": [
         "驗證碼"
@@ -10765,6 +10785,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME }Scribe撰寫幫手"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加${ BRAND_NAME }訂閱撰寫扳手"
       ],
@@ -10798,6 +10821,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 個席次"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } 席位"
@@ -11147,6 +11173,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 且 ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
       ],
       "${ n } calendar": [
         "${ n } 個行事曆"
@@ -12889,6 +12918,9 @@
       ],
       "Anytown": [
         "城鎮"
+      ],
+      "Ask anything…": [
+        "詢問任何事…"
       ],
       "Company name": [
         "公司名稱"
@@ -15653,9 +15685,6 @@
       "Make a secure connection your default": [
         "將安全連線設為您的預設設定"
       ],
-      "Make Categories your own": [
-        "打造專屬的類別"
-      ],
       "Mark all messages as read": [
         "標記所有訊息為已讀"
       ],
@@ -15727,6 +15756,9 @@
       ],
       "Move all messages to trash": [
         "把所有郵件移至垃圾桶"
+      ],
+      "Move emails": [
+        "將電子郵件移動到"
       ],
       "Move to": [
         "移至"
@@ -15844,9 +15876,6 @@
       ],
       "Payment verification": [
         "付款驗證"
-      ],
-      "Personalize your Categories": [
-        "個人化您的類別"
       ],
       "Phone numbers": [
         "手機號碼"

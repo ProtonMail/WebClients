@@ -460,6 +460,10 @@
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } seter"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } bruker)",
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } brukere)"
+      ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
       ],
@@ -561,6 +565,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktiviteten til nye nivåer. La ${ LUMO_SHORT_APP_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -575,6 +582,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seter i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } skriveassistentseter i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-seter i prøveperioden."
@@ -2744,6 +2754,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe-skriveassistenten."
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer Scribe-skriveassistenten."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } er en ende-til-ende-kryptert løsning for videokonferanser. Legg den til abonnementet ditt for å verte sikre møter."
       ],
@@ -3355,6 +3371,12 @@
       "City": [
         "Poststed"
       ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversjon"
+      ],
       "Code is 6 digits without spaces": [
         "Koden består av 6 sifre uten mellomrom"
       ],
@@ -3648,8 +3670,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Legg til ${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Legg til ${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "Add-on with free trial": [
         "Tillegg med gratis prøveperiode"
@@ -3668,6 +3696,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } seter"
+      ],
+      "${ price } per seat": [
+        "${ price } per sete"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } sete",
@@ -3797,6 +3828,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -5931,6 +5965,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Oppgrader til en støttet plan for å bruke administratorroller."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
       ]

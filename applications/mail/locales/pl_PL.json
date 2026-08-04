@@ -309,9 +309,6 @@
       "Continue to ${ planOrAppName }": [
         "Kontynuuj do ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Kontynuuj z kategoriami"
-      ],
       "Continue with Free": [
         "Kontynuuj z wersją bezpłatną"
       ],
@@ -1519,10 +1516,7 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufany klucz",
-        "Zaufane klucze",
-        "Zaufanych kluczy",
-        "Zaufane klucze"
+        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1731,9 +1725,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Dostosuj kategorie"
-      ],
       "Got it": [
         "Rozumiem"
       ],
@@ -4401,9 +4392,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Czytaj, odpowiadaj i bądź na bieżąco z Gmailem bezpośrednio w ${ MAIL_APP_NAME }"
-      ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Kliknij wiadomość prawym przyciskiem myszy i wybierz „Przenieś do” lub przeciągnij i upuść ją do innej kategorii. Podobne wiadomości będą w przyszłości automatycznie tam sortowane."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Wysyłaj i odbieraj wiadomości Gmail bezpośrednio w aplikacji ${ MAIL_APP_NAME }. Połącz adres w ${ addressesSettingsLink }."
@@ -8093,7 +8081,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -9370,12 +9361,6 @@
       "You have ${ totalLabel } in your inbox.": [
         "Masz ${ totalLabel } w swojej skrzynce odbiorczej."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "Masz **${ count } wątek** w kategorii ${ categoryLabel }",
-        "Masz **${ count } wątki** w kategorii ${ categoryLabel }",
-        "Masz **${ count } wątków** w kategorii ${ categoryLabel }",
-        "Masz **${ count } wątków** w kategorii ${ categoryLabel }"
-      ],
       "You have **${ count } conversation** stored in this folder": [
         "Masz **${ count } wątek** w tym folderze",
         "Masz **${ count } wątki** w tym folderze",
@@ -9387,12 +9372,6 @@
         "Masz **${ count } wątki** oznaczone tą etykietą",
         "Masz **${ count } wątków** oznaczonych tą etykietą",
         "Masz **${ count } wątków** oznaczonych tą etykietą"
-      ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "Masz **${ count } wiadomość** w kategorii ${ categoryLabel }",
-        "Masz **${ count } wiadomości** w kategorii ${ categoryLabel }",
-        "Masz **${ count } wiadomości** w kategorii ${ categoryLabel }",
-        "Masz **${ count } wiadomości** w kategorii ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Masz **${ count } wiadomość** w tym folderze",
@@ -9432,18 +9411,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Przed obniżeniem planu musisz wyłączyć lub usunąć dodatkowych użytkowników ${ MAIL_APP_NAME }, adresy i niestandardowe domeny."
-      ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Zaznaczono **${ checked } wątek** w kategorii ${ categoryLabel }",
-        "Zaznaczono **${ checked } wątki** w kategorii ${ categoryLabel }",
-        "Zaznaczono **${ checked } wątków** w kategorii ${ categoryLabel }",
-        "Zaznaczono **${ checked } wątków** w kategorii ${ categoryLabel }"
-      ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Zaznaczono **${ checked } wiadomość** w kategorii ${ categoryLabel }",
-        "Zaznaczono **${ checked } wiadomości** w kategorii ${ categoryLabel }",
-        "Zaznaczono **${ checked } wiadomości** w kategorii ${ categoryLabel }",
-        "Zaznaczono **${ checked } wiadomości** w kategorii ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Zaznaczono **${ count } wątek** z tego folderu",
@@ -10563,9 +10530,6 @@
       "Payment method": [
         "Metoda płatności"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Osobiste i służbowe wiadomości, plus ważne zaktualizuj i powiadomienia"
-      ],
       "PGP scheme": [
         "Schemat PGP"
       ],
@@ -10586,9 +10550,6 @@
       ],
       "Primary": [
         "Główna"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Główne – wiadomości osobiste i służbowe oraz ważne aktualizacje"
       ],
       "Promotions": [
         "Promocje"
@@ -16592,9 +16553,6 @@
       "Make a secure connection your default": [
         "Ustaw bezpieczne połączenie jako domyślne"
       ],
-      "Make Categories your own": [
-        "Dopasuj kategorie do siebie"
-      ],
       "Mark all messages as read": [
         "Oznacz wszystkie wiadomości jako przeczytane"
       ],
@@ -16783,9 +16741,6 @@
       ],
       "Payment verification": [
         "Weryfikacja płatności"
-      ],
-      "Personalize your Categories": [
-        "Spersonalizuj swoje kategorie"
       ],
       "Phone numbers": [
         "Numery telefonów"

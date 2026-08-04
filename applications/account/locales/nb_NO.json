@@ -360,6 +360,9 @@
       "Connected": [
         "Tilkoblet"
       ],
+      "Contact sales": [
+        "Ta kontakt med salg"
+      ],
       "Contact support": [
         "Kontakt brukerstøtte"
       ],
@@ -500,6 +503,9 @@
       ],
       "Delete account": [
         "Slett konto"
+      ],
+      "Delete and confirm": [
+        "Slett og bekreft"
       ],
       "Delete device profile": [
         "Slett enhetsprofil"
@@ -1329,6 +1335,9 @@
       "Remove gift code": [
         "Fjern gavekode"
       ],
+      "Remove manager": [
+        "Fjern administrator"
+      ],
       "Remove this label": [
         "Fjern denne etiketten"
       ],
@@ -1770,6 +1779,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Oppgrader for å aktivere ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Oppgrader til Professional"
+      ],
       "Upgrade to view all": [
         "Oppgrader for å vise alle"
       ],
@@ -1847,6 +1859,9 @@
       ],
       "Verify password": [
         "Bekreft passord"
+      ],
+      "Verify recovery phrase": [
+        "Bekreft gjenopprettingsfrasen"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifiser domenet ${ unverifiedSSODomain.DomainName }"
@@ -1968,6 +1983,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } seter"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } bruker)",
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } brukere)"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
@@ -2284,6 +2303,9 @@
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
       ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktiviteten til nye nivåer. La ${ LUMO_SHORT_APP_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
+      ],
       "Trial expires on ${ formattedDate }": [
         "Prøveperiode utløper ${ formattedDate }"
       ],
@@ -2365,6 +2387,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seter i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } skriveassistentseter i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-seter i prøveperioden."
@@ -2564,12 +2589,19 @@
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer.",
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
@@ -7067,6 +7099,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Du kan når som helst fjerne tilgangen deres for å få tilbake eksklusiv kontroll over kontoen din."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Du har ikke blitt angitt som gjenopprettingskontakt for noen ennå."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Du har ikke blitt utpekt som nødkontakt for noen ennå."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Du har nådd maksimalt ${ limit } nødkontakt.",
         "Du har nådd maksimalt ${ limit } nødkontakter."
@@ -7557,6 +7595,9 @@
       "Please set a recovery/notification email first": [
         "Angi en gjenopprettings-/varslings-e-post først"
       ],
+      "Please set up your organization before adding a company.": [
+        "Opprett organisasjonen din før du legger til en bedrift."
+      ],
       "Please try again in a few moments.": [
         "Prøv igjen om noen øyeblikk."
       ],
@@ -7736,6 +7777,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne meldingen kan inneholde noen koblinger til nettadresser som ikke kan åpnes riktig av din nåværende nettleser."
+      ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Denne frasen kan ikke gjenopprette kontoen din. Du kan generere en ny for å sikre at kontoen din kan gjenopprettes i fremtiden."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "For å opprette ikke-private brukerkontoer og få tilgang til kontoene deres, må du gjenopprette administratorrettighetene dine."
@@ -8705,11 +8749,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Er du sikker du ønsker å slette sikkerhetsnøkkel ${ name }?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Skriv inn PIN-koden din hver gang du bruker sikkerhetsnøkkelen med ${ BRAND_NAME }, når nøkkelen støtter det. Dette gjelder bare for nøkler som har en konfigurert PIN-kode."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Sett inn en sikkerhetsnøkkel som er koblet til ${ BRAND_NAME }-kontoen."
       ],
       "Insert your security key into your device.": [
         "Sett inn sikkerhetsnøkkelen i enheten."
+      ],
+      "PIN requirement for security keys disabled": [
+        "PIN-krav for sikkerhetsnøkler deaktivert"
+      ],
+      "PIN requirement for security keys enabled": [
+        "PIN-krav for sikkerhetsnøkler aktivert"
+      ],
+      "Require PIN for security key": [
+        "Krev PIN-kode for sikkerhetsnøkkel"
       ],
       "Security key": [
         "Sikkerhetsnøkkel"
@@ -9350,6 +9406,9 @@
       "Contact us": [
         "Kontakt oss"
       ],
+      "Downloads": [
+        "Nedlastinger"
+      ],
       "Enjoying ${ planName }?": [
         "Liker du ${ planName }?"
       ],
@@ -9842,6 +9901,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% rabatt"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } vil ikke lenger beholde tidligere versjoner av filene dine."
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ugyldig"
       ],
@@ -9876,6 +9938,12 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe-skriveassistenten."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer Scribe-skriveassistenten."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
@@ -10204,6 +10272,9 @@
       "add a recovery method": [
         "legger til en gjenoppretingsmetode"
       ],
+      "Add additional users from your organization to manage this company.": [
+        "Legg til flere brukere fra organisasjonen for å administrere denne bedriften."
+      ],
       "Add an email address in case we need to contact you": [
         "Legg til en e-postadresse i tilfelle vi trenger å kontakte deg"
       ],
@@ -10490,6 +10561,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Tilgjengelig på macOS, Windows og Linux."
       ],
+      "Available on VPN Professional": [
+        "Tilgjengelig med VPN Professional"
+      ],
       "Awaiting transaction": [
         "Avventer transaksjon"
       ],
@@ -10595,6 +10669,9 @@
       "Change your password": [
         "Endre passordet ditt"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Sjekk om gjenopprettingsfrasen din kan brukes til å gjenopprette kontoen fullstendig."
+      ],
       "Check your network and try again.": [
         "Sjekk nettverket ditt og prøv igjen."
       ],
@@ -10636,6 +10713,9 @@
       ],
       "Coming soon": [
         "Kommer snart"
+      ],
+      "Companies you've been given access to manage.": [
+        "Bedrifter du har fått tilgang til å administrere."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Fullfør innloggingen på denne enheten for å begynne å bruke ${ VPN_APP_NAME } på TV-en din."
@@ -11003,6 +11083,9 @@
       "Enable email notifications": [
         "Aktiver e-postvarsler"
       ],
+      "Enable groups to streamline access control": [
+        "Aktiver grupper for å effektivisere tilgangskontrollen"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Aktiver enkel pålogging for å holde organisasjonen din trygg"
       ],
@@ -11191,6 +11274,9 @@
       ],
       "for ${ price }": [
         "for ${ price }"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Kontakt vårt salgsapparat for en 10-årig versjonshistorikk."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For tilgang til e-post når som helst og optimalisert mobilopplevelse, last ned vår ${ androidAppLink } eller ${ iosAppLink }."
@@ -11657,6 +11743,9 @@
       "Learn more about Gateways": [
         "Lær mer om gateway-tjenere"
       ],
+      "Learn more about groups": [
+        "Lær mer om grupper"
+      ],
       "learn more about Sieve programming language": [
         "lær mer om Sieve-programmeringsspråk"
       ],
@@ -11837,8 +11926,14 @@
       "No addresses exist": [
         "Ingen adresser eksisterer"
       ],
+      "No billing breakdowns yet. Your breakdowns by billing period will appear here. Once available, you can download them as a CSV.": [
+        "Ingen faktureringsspesifikasjoner ennå. Dine faktureringsspesifikasjoner etter faktureringsperiode vil vises her. Når de er tilgjengelige, kan du laste dem ned som CSV-fil."
+      ],
       "No card required": [
         "Ingen kort kreves"
+      ],
+      "No companies yet. Start by creating a new company.": [
+        "Ingen bedrifter ennå. Opprett en ny bedrift for å komme i gang."
       ],
       "No connected addresses.": [
         "Ingen tilkoblede adresser."
@@ -12222,6 +12317,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "Gjenopprettingsfrase er ikke tilknyttet noen utdaterte nøkler."
       ],
+      "Recovery phrase verified": [
+        "Gjenopprettingsfrase bekreftet"
+      ],
       "Reddit": [
         "Reddit"
       ],
@@ -12353,9 +12451,6 @@
       ],
       "Set password": [
         "Angi passord"
-      ],
-      "Set the name, status, and assigned seats": [
-        "Angi navn, status og tildelte seter"
       ],
       "Set up your organization": [
         "Konfigurer organisasjonen din"
@@ -12754,6 +12849,12 @@
       "This will allow the TV to access your ${ BRAND_NAME } account.": [
         "Dette vil gi TV-en tilgang til ${ BRAND_NAME }-kontoen din."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Dette vil slette alle tidligere versjoner av filene dine som er eldre enn ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Dette vil slette alle tidligere versjoner av filene dine."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Dette vil nekte tilgang til **${ email }**. Er du sikker på at du vil fortsette?"
       ],
@@ -12982,14 +13083,29 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Oppgrader nå for å få premiumfunksjoner, produkter og lagringsplass til spesialpris."
       ],
+      "Upgrade now to monitor your team's account safety.": [
+        "Oppgrader nå for å overvåke teamets kontosikkerhet."
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Oppgrader nå for å se aktiviteten til ${ PASS_APP_NAME } i hele organisasjonen din."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Oppgrader eller frigjør plass når som helst for å ta med resten"
+      ],
+      "Upgrade required": [
+        "Oppgradering kreves"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Oppgrader for å legge til en kortere @pm.me-adresse til din konto som er enklere å dele. Den står for \"${ MAIL_APP_NAME } meg\" eller \"send meg privat melding\"."
       ],
+      "Upgrade to define policies for your organization.": [
+        "Oppgrader for å definere retningslinjer for organisasjonen din."
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Oppgrader for å beholde ${ planTitle } fordelene dine."
+      ],
+      "Upgrade to unlock": [
+        "Oppgrader for å låse opp"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Oppgrader for å låse opp ${ monitorLink }."
@@ -13101,6 +13217,9 @@
       ],
       "Version ${ version }": [
         "Versjon ${ version }"
+      ],
+      "Version history": [
+        "Versjonshistorikk"
       ],
       "Version number successfully copied to clipboard": [
         "Versjonsnummeret ble kopiert til utklippstavlen"
@@ -13282,6 +13401,9 @@
       "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
         "Med administrerte selskaper kan du legge til, redigere og fjerne tilgang for organisasjoner du fører tilsyn med."
       ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Med VPN Professional kan administratorer håndheve alltid-på VPN for alle organisasjonsmedlemmer, i tillegg til private gatewayer, tilgangsretningslinjer og overvåking."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Med den gjeldende planen kan du bare motta meldinger med din @pm.me-adresse. Oppgrader for å sende meldinger og opprette tilleggsadresser ved å bruke @pm.me."
       ],
@@ -13438,6 +13560,9 @@
       ],
       "You don't have any referrals.": [
         "Du har ingen vervinger."
+      ],
+      "You don't manage any companies yet.": [
+        "Du administrerer ikke noen bedrifter ennå."
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "Du trenger ikke å åpne eller lese filen – bare last den ned og oppbevar den et trygt sted."
@@ -14406,6 +14531,9 @@
       "Add extra services": [
         "Legg til tilleggstjenester"
       ],
+      "Add managers": [
+        "Legg til administratorer"
+      ],
       "Additional comments": [
         "Ytterligere kommentarer"
       ],
@@ -14502,6 +14630,9 @@
       "ANY": [
         "NOEN"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Alt som trenger din oppmerksomhet, pluss e-poster fra deaktiverte kategorier"
+      ],
       "App password": [
         "App-passord"
       ],
@@ -14592,6 +14723,9 @@
       "Beta": [
         "Beta"
       ],
+      "Billable licenses": [
+        "Fakturerbare lisenser"
+      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Faktureres til ${ priceYearly } hver 12. måned."
       ],
@@ -14603,6 +14737,9 @@
       ],
       "Billing cycle": [
         "Faktureringssyklus"
+      ],
+      "Billing period": [
+        "Faktureringsperiode"
       ],
       "Block": [
         "Blokkér"
@@ -14681,6 +14818,12 @@
       ],
       "City": [
         "Poststed"
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversjon"
       ],
       "Code is 6 digits without spaces": [
         "Koden består av 6 sifre uten mellomrom"
@@ -14768,6 +14911,9 @@
       ],
       "Copy IP address to clipboard": [
         "Kopier IP-adresse til utklippstavlen"
+      ],
+      "Cost per license": [
+        "Kostnad per lisens"
       ],
       "Could you please let us know which provider?": [
         "Kan du fortelle oss hvilken leverandør?"
@@ -14877,6 +15023,9 @@
       ],
       "Don't ask again": [
         "Ikke spør igjen"
+      ],
+      "Don't keep versions": [
+        "Ikke behold versjoner"
       ],
       "Don't show this again": [
         "Ikke vis dette igjen"
@@ -15229,6 +15378,9 @@
       "Manage categories": [
         "Administrer kategorier"
       ],
+      "Managed Companies": [
+        "Administrerte bedrifter"
+      ],
       "Mark as": [
         "Merk som"
       ],
@@ -15448,9 +15600,6 @@
       "Pending": [
         "Ventende"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Personlige og jobbrelaterte e-poster, pluss viktige oppdateringer og varsler"
-      ],
       "Phone number": [
         "Telefonnummer"
       ],
@@ -15493,8 +15642,8 @@
       "Primary": [
         "Primær"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Primær – Personlige og jobbrelaterte e-poster, pluss viktige oppdateringer"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primær - Alt som trenger oppmerksomhet, pluss e-poster fra deaktiverte kategorier"
       ],
       "Priority support": [
         "Prioritert kundestøtte"
@@ -15835,6 +15984,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Oppdateringer – Automatiserte bekreftelser, varsler og kontooppdateringer"
+      ],
+      "Upgrade": [
+        "Oppgrader"
       ],
       "Upload 1 or more encryption keys": [
         "Last opp 1 eller flere krypteringsnøkler"
@@ -16621,8 +16773,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Legg til ${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Legg til ${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "Add-on with free trial": [
         "Tillegg med gratis prøveperiode"
@@ -16711,6 +16869,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } seter"
+      ],
+      "${ price } per seat": [
+        "${ price } per sete"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } sete",
@@ -17374,6 +17535,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -20212,6 +20376,9 @@
       "Enter company name": [
         "Skriv inn bedriftsnavn"
       ],
+      "Enter name or email address": [
+        "Skriv inn navn eller e-postadresse"
+      ],
       "example@domain.com": [
         "eksempel@domain.no"
       ],
@@ -22173,6 +22340,14 @@
         "Forespørsel om tilbakestilling av passord"
       ]
     },
+    "Setting": {
+      "Get updates about comments via email": [
+        "Få oppdateringer om kommentarer via e-post"
+      ],
+      "Include document name in email notifications": [
+        "Inkluder dokumentnavn i e-postvarsler"
+      ]
+    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Hold innboksen din organisert med mapper og etiketter. ${ learnMoreLink }"
@@ -23626,6 +23801,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikert server",
         "${ ipAddresses } dedikerte servere"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "${ LUMO_SHORT_APP_NAME } skriveassistent for ${ maxAi } bruker",
+        "${ LUMO_SHORT_APP_NAME } skriveassistent for ${ maxAi } brukere"
       ],
       "${ n } calendar per user": [
         "${ n } kalender per bruker",
@@ -25246,6 +25425,9 @@
       "Currency": [
         "Valuta"
       ],
+      "Current cost": [
+        "Gjeldende kostnad"
+      ],
       "Custom": [
         "Tilpasset"
       ],
@@ -25354,6 +25536,9 @@
       ],
       "Delete user?": [
         "Slett bruker?"
+      ],
+      "Delete version history?": [
+        "Slette versjonshistorikken?"
       ],
       "Deny access to user?": [
         "Nekte tilgang til bruker?"
@@ -25876,6 +26061,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Administrer filer på tvers av enheter på Windows, Mac, Android og iOS."
       ],
+      "Managers": [
+        "Administratorer"
+      ],
       "Messages": [
         "Meldinger"
       ],
@@ -26163,6 +26351,9 @@
       ],
       "Remove via MDM": [
         "Fjern via MDM"
+      ],
+      "Remove via PowerShell": [
+        "Fjern via PowerShell"
       ],
       "Rename the gateway": [
         "Gi gatewayen nytt navn"
@@ -26519,6 +26710,9 @@
       "Upgrade to ${ planName }": [
         "Oppgrader til ${ planName }"
       ],
+      "Upgrade to enable Always-on": [
+        "Oppgader for å aktivere Alltid-på"
+      ],
       "Upgrade to keep your premium benefits.": [
         "Oppgrader for å beholde premiumfordelene dine."
       ],
@@ -26584,6 +26778,9 @@
       ],
       "Verify your password": [
         "Bekreft passordet ditt"
+      ],
+      "Verify your phrase": [
+        "Bekreft frasen"
       ],
       "Verifying your card...": [
         "Verifiserer kortet ditt..."
@@ -27142,6 +27339,9 @@
       "Group membership paused": [
         "Gruppemedlemskap satt på pause"
       ],
+      "Pending user activation": [
+        "Venter på brukeraktivering"
+      ],
       "Resuming role assignment": [
         "Gjenopptar rolletildeling"
       ],
@@ -27327,6 +27527,9 @@
         "Kunne ikke aktivere administratortilgang for ${ n } bruker",
         "Kunne ikke aktivere administratortilgang for ${ n } brukere"
       ],
+      "Could not enable administrator access: ${ unprivatizationResult.error }": [
+        "Kunne ikke aktivere administratortilgang: ${ unprivatizationResult.error }"
+      ],
       "Enable admin access?": [
         "Aktivere administratortilgang?"
       ],
@@ -27396,6 +27599,9 @@
       ],
       "View request": [
         "Vis forespørsel"
+      ],
+      "Waiting for admin approval": [
+        "Venter på godkjenning fra administratoren"
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Du kan ${ reject } denne forespørselen hvis du ikke ønsker å fortsette."
@@ -27575,6 +27781,9 @@
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Dette oppretter en ny ${ MAIL_APP_NAME }-adresse."
       ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Oppgrader til en støttet plan for å bruke administratorroller."
+      ],
       "User created": [
         "Bruker opprettet"
       ],
@@ -27597,6 +27806,15 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invitasjon sendt, venter på svar fra det inviterte medlemmet"
+      ],
+      "Invited": [
+        "Invitert"
+      ],
+      "Pending": [
+        "Venter"
+      ],
+      "Requested": [
+        "Forespurt"
       ],
       "SSO user provided by your identity provider": [
         "SSO-bruker levert av identitetsleverandøren din"

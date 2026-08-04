@@ -189,6 +189,9 @@
       "Clear browser data": [
         "Tøm nettleserdata"
       ],
+      "Clear conversation": [
+        "Rensk samtalen"
+      ],
       "Clear data": [
         "Tøm data"
       ],
@@ -1070,6 +1073,9 @@
       "Stay": [
         "Bli"
       ],
+      "Stop": [
+        "Stopp"
+      ],
       "Stop sharing": [
         "Avslutt deling"
       ],
@@ -1298,6 +1304,10 @@
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } seter"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } bruker)",
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } brukere)"
+      ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
       ],
@@ -1369,6 +1379,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktiviteten til nye nivåer. La ${ LUMO_SHORT_APP_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
       ]
     },
     "Attached ics file error": {
@@ -1409,6 +1422,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seter i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } skriveassistentseter i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-seter i prøveperioden."
@@ -1525,12 +1541,19 @@
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer.",
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
@@ -5128,6 +5151,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe-skriveassistenten."
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer Scribe-skriveassistenten."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } er en ende-til-ende-kryptert løsning for videokonferanser. Legg den til abonnementet ditt for å verte sikre møter."
       ],
@@ -6559,6 +6588,9 @@
       "There is nothing to see here": [
         "Det er ingenting å se her"
       ],
+      "Thinking about this": [
+        "Tenker på dette"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Denne handlingen sletter koblingen og tilbakekaller tilgang for alle brukere."
       ],
@@ -6647,6 +6679,9 @@
       ],
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "For å laste ned disse filene, åpne dem i ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME } og eksporter dem."
+      ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "For å aktivere søk, må vi indeksere filene dine lokalt. Du kan fortsatt bruke ${ DRIVE_APP_NAME } normalt – vi gir deg beskjed når indekseringen er ferdig. Hvis du forlater denne siden, vil indekseringen settes på pause og fortsette når du kommer tilbake."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "For å muliggjøre virkelig privat søk, må ${ DRIVE_APP_NAME } indeksere filene dine lokalt."
@@ -7270,6 +7305,9 @@
       "Allow editors to change permissions and share": [
         "Tillat redaktører å endre tillatelser og dele"
       ],
+      "Allow editors to change permissions and share.": [
+        "Tillat redaktører å endre tillatelser og dele."
+      ],
       "Anderson": [
         "Andersen"
       ],
@@ -7356,6 +7394,12 @@
       ],
       "City": [
         "Poststed"
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversjon"
       ],
       "Code is 6 digits without spaces": [
         "Koden består av 6 sifre uten mellomrom"
@@ -8230,8 +8274,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Legg til ${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Legg til ${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "Add-on with free trial": [
         "Tillegg med gratis prøveperiode"
@@ -8250,6 +8300,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } seter"
+      ],
+      "${ price } per seat": [
+        "${ price } per sete"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } sete",
@@ -8689,6 +8742,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -9614,6 +9670,9 @@
       ],
       "\"${ ellipsedName }\" successfully moved": [
         "\"${ ellipsedName }\" flyttet"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" delt"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" slettet permanent"
@@ -10687,6 +10746,9 @@
       "Anytown": [
         "By"
       ],
+      "Ask anything…": [
+        "Spør om hva som helst…"
+      ],
       "Choose password": [
         "Velg passord"
       ],
@@ -11622,6 +11684,12 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "En kobling til dette elementet er lagret i din Drive. Du får tilgang til koblingen senere fra seksjonen \"Delt med meg\"."
+      ],
+      "Editor permissions": [
+        "Redaktørtillatelser"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Redaktører kan nå administrere deling og invitere andre. Du kan slå det av når som helst i delingsinnstillingene."
       ],
       "Encrypted search is here": [
         "Kryptert søk er her"
@@ -13214,6 +13282,9 @@
       "SHA1": [
         "SHA1"
       ],
+      "Share \"${ fileName }\"": [
+        "Del \"${ fileName }\""
+      ],
       "Share your calendar with your team": [
         "Del kalenderen din med teamet ditt"
       ],
@@ -13637,6 +13708,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Oppgrader til en støttet plan for å bruke administratorroller."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
       ]
