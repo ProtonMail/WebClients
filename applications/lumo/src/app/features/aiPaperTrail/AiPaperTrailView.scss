@@ -99,8 +99,127 @@
 	}
 
 	&__landing-card {
-		// max-inline-size: min(100%, 20rem);
+		max-inline-size: min(100%, 20rem);
 		box-shadow: 0 24px 60px rgb(28 19 64 / 0.14);
+	}
+
+	&__low-profile-icon {
+		inline-size: 3.5rem;
+		block-size: 3.5rem;
+	}
+
+	&__landing-recent {
+		grid-column: 1 / -1;
+		margin-block-start: 0.5rem;
+	}
+
+	&__recent {
+		margin-block-start: 0;
+		text-align: start;
+	}
+
+	&__recent-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-block-end: 0.75rem;
+		padding-inline: 0.25rem;
+	}
+
+	&__recent-title {
+		font-size: 0.95rem;
+		font-weight: 600;
+		margin: 0;
+		color: var(--apt-text);
+	}
+
+	&__recent-label {
+		font-size: 0.85rem;
+		color: var(--apt-muted);
+	}
+
+	&__recent-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border: 1px solid var(--apt-border);
+		border-radius: 0.75rem;
+		background: var(--apt-card);
+		overflow: hidden;
+	}
+
+	&__recent-item {
+		display: flex;
+		align-items: stretch;
+		border-block-end: 1px solid var(--apt-border);
+
+		&:last-child {
+			border-block-end: none;
+		}
+	}
+
+	&__recent-button {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		flex: 1;
+		min-inline-size: 0;
+		padding-block: 0.85rem;
+		padding-inline: 1rem 0.75rem;
+		border: 0;
+		background: transparent;
+		color: inherit;
+		text-align: start;
+		cursor: pointer;
+		transition: background-color 0.15s ease;
+
+		&:hover:not(:disabled),
+		&:focus-visible:not(:disabled) {
+			background: rgb(109 74 255 / 0.04);
+		}
+	}
+
+	&__recent-delete {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		inline-size: 2.75rem;
+		padding: 0;
+		border: 0;
+		border-inline-start: 1px solid var(--apt-border);
+		background: transparent;
+		color: var(--apt-muted);
+		cursor: pointer;
+		transition:
+			background-color 0.15s ease,
+			color 0.15s ease;
+
+		&:hover,
+		&:focus-visible {
+			background: rgb(220 53 69 / 0.06);
+			color: var(--signal-danger);
+		}
+	}
+
+	&__recent-logo {
+		inline-size: 1.25rem;
+		block-size: 1.25rem;
+		object-fit: contain;
+	}
+
+	&__recent-name {
+		flex: 1;
+		font-size: 0.9rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	&__recent-date {
+		font-size: 0.85rem;
+		color: var(--apt-muted);
+		flex-shrink: 0;
 	}
 
 	&__wizard-page {
@@ -321,11 +440,58 @@
 	}
 
 	&__loading-footer {
-		margin-block-start: 3rem;
+		margin-block-start: 1.5rem;
 		max-inline-size: 28rem;
 		font-size: 0.82rem;
 		line-height: 1.5;
 		color: var(--apt-muted);
+	}
+
+	&__progress {
+		inline-size: 100%;
+		max-inline-size: 40rem;
+		margin-block-start: 2rem;
+	}
+
+	&__progress-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-block-end: 0.65rem;
+	}
+
+	&__progress-label {
+		font-size: 0.75rem;
+		font-weight: bold;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--apt-text);
+	}
+
+	&__progress-value {
+		font-size: 0.75rem;
+		font-weight: bold;
+		letter-spacing: 0.04em;
+		color: var(--apt-text);
+	}
+
+	&__progress-track {
+		inline-size: 100%;
+		block-size: 0.5rem;
+		border-radius: 999px;
+		background: rgb(109 74 255 / 0.12);
+		overflow: hidden;
+	}
+
+	&__progress-fill {
+		block-size: 100%;
+		border-radius: 999px;
+		background: var(--apt-accent);
+		transition: inline-size 0.7s ease;
+
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
+		}
 	}
 
 	&__lesson {
@@ -461,16 +627,8 @@
 		letter-spacing: -0.02em;
 		margin-block: 0 1.25rem;
 		color: var(--apt-text);
+		text-wrap: pretty;
 	}
-
-	// &__subtitle {
-	//     font-size: 1.05rem;
-	//     line-height: 1.6;
-	//     color: var(--apt-muted);
-	//     margin-block: 0;
-	//     max-inline-size: 36rem;
-	//     margin-inline: auto;
-	// }
 
 	&__muted {
 		color: var(--apt-muted);
