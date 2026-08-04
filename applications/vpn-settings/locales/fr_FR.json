@@ -1211,6 +1211,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }."
       ],
+      "Upgrade to Professional": [
+        "Passer à la version Professional"
+      ],
       "Upgrade to view all": [
         "Améliorer l'abonnement pour tout voir"
       ],
@@ -4729,6 +4732,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Vous pouvez retirer leur accès à tout moment pour récupérer le contrôle exclusif de votre compte."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Vous n'avez pas encore été désigné comme contact de récupération pour qui que ce soit."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Vous n'avez pas encore été désigné comme contact d'urgence pour qui que ce soit."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Vous avez atteint le maximum de ${ limit } contact d'urgence.",
         "Vous avez atteint le maximum de ${ limit } contacts d'urgence."
@@ -6067,11 +6076,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Voulez-vous vraiment supprimer la clé de sécurité ${ name } ?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Entrez votre code PIN à chaque fois que vous utilisez votre clé de sécurité avec ${ BRAND_NAME }, si la clé le permet. Ceci s'applique uniquement aux clés pour lesquelles un code PIN a été paramétré."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
       ],
       "Insert your security key into your device.": [
         "Insérez votre clé de sécurité dans votre appareil."
+      ],
+      "PIN requirement for security keys disabled": [
+        "Le demande de code PIN est désactivée pour les clés de sécurité"
+      ],
+      "PIN requirement for security keys enabled": [
+        "Demande du code PIN activée pour les clés de sécurité"
+      ],
+      "Require PIN for security key": [
+        "Demander le code PIN pour la clé de sécurité"
       ],
       "Security key": [
         "Clé de sécurité"
@@ -7311,6 +7332,9 @@
       "Authenticator app 2FA enabled": [
         "Application d'authentification A2F activée"
       ],
+      "Available on VPN Professional": [
+        "Disponible dans VPN Professional"
+      ],
       "Awaiting transaction": [
         "Transaction en attente"
       ],
@@ -8194,6 +8218,9 @@
       ],
       "Learn more about Gateways": [
         "En savoir plus sur les passerelles"
+      ],
+      "Learn more about groups": [
+        "En savoir plus sur les groupes"
       ],
       "Learn more about single sign-on": [
         "En savoir plus sur l'authentification unique"
@@ -9192,8 +9219,14 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
       ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Passez à une version supérieure dès maintenant pour visualiser l'activité sur ${ PASS_APP_NAME } au sein de votre organisation."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Changer d'abonnement ou libérer de l'espace à tout moment pour transférer le reste"
+      ],
+      "Upgrade required": [
+        "Un abonnement supérieur est nécessaire."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Passez à la version supérieure pour conserver vos avantages de ${ planTitle }."
@@ -9428,6 +9461,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Grâce aux groupes, vous pouvez envoyer rapidement et facilement des messages à toutes les personnes d'un groupe spécifique."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "VPN Professional permet aux administrateurs de mettre en place une connexion VPN forcée pour tous les membres de l'organisation, ainsi que des proxys privés, des politiques d'accès et du monitoring."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sans activation, vous ne pourrez pas créer de nouveaux utilisateurs, ajouter des adresses aux utilisateurs existants ou accéder aux comptes d'utilisateurs non privés."
@@ -10815,6 +10851,9 @@
       ],
       "Unlimited": [
         "Unlimited"
+      ],
+      "Upgrade": [
+        "Améliorer votre abonnement"
       ],
       "Upload 1 or more encryption keys": [
         "Chargez une ou plusieurs clés de chiffrement."
@@ -18117,6 +18156,9 @@
       ],
       "Remove via MDM": [
         "Retirer via MDM"
+      ],
+      "Remove via PowerShell": [
+        "Supprimer via PowerShell"
       ],
       "Rename the gateway": [
         "Modifier le nom de la passerelle"

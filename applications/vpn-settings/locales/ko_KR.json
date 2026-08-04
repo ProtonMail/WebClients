@@ -1211,6 +1211,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME }을 활성화하려면 업그레이드"
       ],
+      "Upgrade to Professional": [
+        "Professional로 업그레이드"
+      ],
       "Upgrade to view all": [
         "업그레이드하여 모두 보기"
       ],
@@ -4693,6 +4696,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "언제든지 접근 권한을 삭제하여 사용자의 계정에 대한 독점적인 통제권을 되찾을 수 있습니다."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "아직 나를 복구 연락처로 지정한 사용자가 없습니다."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "아직 나를 비상 연락처로 지정한 사용자가 없습니다."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "최대 ${ limit }개의 비상 연락처 개수에 도달했습니다."
       ],
@@ -6017,6 +6026,12 @@
       "Insert your security key into your device.": [
         "보안 키를 기기에 삽입하세요."
       ],
+      "PIN requirement for security keys disabled": [
+        "보안 키 비활성화를 위한 PIN 요구 조건"
+      ],
+      "PIN requirement for security keys enabled": [
+        "보안 키 활성화를 위한 PIN 요구 조건"
+      ],
       "Security key": [
         "보안 키"
       ],
@@ -7202,6 +7217,9 @@
       "Authenticator app 2FA enabled": [
         "인증 앱 2단계 인증이 활성화되었습니다."
       ],
+      "Available on VPN Professional": [
+        "VPN Professional에서 사용 가능"
+      ],
       "Awaiting transaction": [
         "거래 대기 중"
       ],
@@ -8077,6 +8095,9 @@
       ],
       "Learn more about Gateways": [
         "게이트웨이에 대해 더 알아보기"
+      ],
+      "Learn more about groups": [
+        "그룹에 대해 자세히 알아보기"
       ],
       "Learn more about single sign-on": [
         "통합 인증 (싱글 사인 온)에 대해 더 알아보기"
@@ -9062,8 +9083,14 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
       ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "지금 업그레이드하여 조직 전체에 걸친 ${ PASS_APP_NAME } 활동을 확인하세요."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "언제든지 업그레이드하거나 공간을 비워 남은 메일을 모두 가져오세요"
+      ],
+      "Upgrade required": [
+        "업그레이드 필요"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
@@ -10666,6 +10693,9 @@
       "Unlimited": [
         "제한 없음"
       ],
+      "Upgrade": [
+        "업그레이드"
+      ],
       "Upload 1 or more encryption keys": [
         "하나 및 하나 이상의 암호화 키를 업로드 하십시오"
       ],
@@ -11267,6 +11297,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME }개 시트"
+      ],
+      "${ price } per seat": [
+        "사용자당 ${ price }"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ MEET_APP_NAME } 시트 ${ seats }개"
@@ -17830,6 +17863,9 @@
       "Remove via MDM": [
         "MDM으로 삭제"
       ],
+      "Remove via PowerShell": [
+        "PowerShell로 제거"
+      ],
       "Rename the gateway": [
         "게이트웨이 이름 변경"
       ],
@@ -18514,6 +18550,9 @@
       ],
       "Group membership paused": [
         "그룹 구성 권한 중단됨"
+      ],
+      "Pending user activation": [
+        "사용자 활성화 대기 중"
       ],
       "Resuming role assignment": [
         "규칙 할당 다시 시작"

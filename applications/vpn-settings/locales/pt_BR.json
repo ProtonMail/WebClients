@@ -1211,6 +1211,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Faça o upgrade para ativar o ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Faça upgrade para Profissional"
+      ],
       "Upgrade to view all": [
         "Atualize para ver todos"
       ],
@@ -4729,6 +4732,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Você pode remover o cesso deles a qualquer momento para recuperar o controle exclusivo de sua conta."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Você ainda não foi designado como contato de recuperação para ninguém."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Você ainda não foi designado como contato de emergência para ninguém."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Você atingiu o máximo de ${ limit } contato de emergência",
         "Você atingiu o máximo de ${ limit } contatos de emergência."
@@ -6073,6 +6082,9 @@
       "Insert your security key into your device.": [
         "Insira sua chave de segurança no seu dispositivo."
       ],
+      "Require PIN for security key": [
+        "Requer PIN para chave de segurança"
+      ],
       "Security key": [
         "Chave de segurança"
       ],
@@ -7311,6 +7323,9 @@
       "Authenticator app 2FA enabled": [
         "Autenticação de dois fatores via app ativada"
       ],
+      "Available on VPN Professional": [
+        "Disponível no VPN Professional"
+      ],
       "Awaiting transaction": [
         "Esperando transação"
       ],
@@ -8194,6 +8209,9 @@
       ],
       "Learn more about Gateways": [
         "Saiba mais sobre Gateways"
+      ],
+      "Learn more about groups": [
+        "Saiba mais sobre os grupos"
       ],
       "Learn more about single sign-on": [
         "Saiba mais sobre autenticação única"
@@ -9191,6 +9209,9 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Faça upgrade ou limpe espaço em qualquer momento para importar o resto"
+      ],
+      "Upgrade required": [
+        "Upgrade necessário"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Faça upgrade para manter seus benefícios ${ planTitle }."
@@ -10809,6 +10830,9 @@
       ],
       "Unlimited": [
         "Unlimited"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
       ],
       "Upload 1 or more encryption keys": [
         "Envie 1 ou mais chaves de criptografia"
@@ -18115,6 +18139,9 @@
       "Remove via MDM": [
         "Remover via MDM"
       ],
+      "Remove via PowerShell": [
+        "Remover via PowerShell"
+      ],
       "Rename the gateway": [
         "Renomear o gateway"
       ],
@@ -18382,6 +18409,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Faça upgrade para ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "Faça upgrade para ativar Sempre ligada"
       ],
       "Upgrade to keep your premium benefits.": [
         "Faça upgrade para manter seus benefícios premium."
@@ -18803,6 +18833,9 @@
       ],
       "Group membership paused": [
         "Associação ao grupo pausada"
+      ],
+      "Pending user activation": [
+        "Ativação pendente de usuário"
       ],
       "Resuming role assignment": [
         "Retomando a atribuição de função"
