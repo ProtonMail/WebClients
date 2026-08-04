@@ -100,6 +100,27 @@ describe('draft content html', () => {
 
             expect(messageBlockquotesInfos).toEqual(expectedString);
         });
+
+        it('should HTML-escape forward metadata that contains markup', () => {
+            const maliciousSubject = "<iframe id=x srcdoc='<!--";
+            const referenceMessage = {
+                localID: ID,
+                data: {
+                    ID,
+                    Subject: maliciousSubject,
+                    Sender: { Name: 'Evil<script>', Address: 'a@proton.me' },
+                    ToList: [{ Name: 'To<img>', Address: 'to@proton.me' }],
+                },
+            } as MessageState;
+
+            const messageBlockquotesInfos = generatePreviousMessageInfos(referenceMessage, MESSAGE_ACTIONS.FORWARD);
+
+            expect(messageBlockquotesInfos).toContain('Subject: &lt;iframe id=x srcdoc=&#39;&lt;!--<br>');
+            expect(messageBlockquotesInfos).toContain('From: Evil&lt;script&gt; &lt;a@proton.me&gt;<br>');
+            expect(messageBlockquotesInfos).toContain('To: To&lt;img&gt; &lt;to@proton.me&gt;<br>');
+            expect(messageBlockquotesInfos).not.toContain('<iframe');
+            expect(messageBlockquotesInfos).not.toContain('<script');
+        });
     });
 
     describe('generateBlockquote', () => {
