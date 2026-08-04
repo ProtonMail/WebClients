@@ -1103,6 +1103,10 @@
       "${ LUMO_APP_NAME } seats": [
         "Licenze ${ LUMO_APP_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utente)",
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utenti)"
+      ],
       "${ price } per dedicated server": [
         "${ price } per server dedicato"
       ],
@@ -1378,6 +1382,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteggi e pianifica le tue email con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }, alias hide-my-email illimitati e altro ancora.",
+        "Proteggi e pianifica le tue email con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }, alias hide-my-email illimitati e altro ancora."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora.",
