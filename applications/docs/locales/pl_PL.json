@@ -114,15 +114,6 @@
       "Cancel": [
         "Anuluj"
       ],
-      "Cancel all downloads": [
-        "Anuluj pobieranie"
-      ],
-      "Cancel all uploads": [
-        "Anuluj przesyłanie"
-      ],
-      "Cancel download": [
-        "Anuluj pobieranie"
-      ],
       "Cancel subscription": [
         "Anuluj subskrypcję"
       ],
@@ -206,9 +197,6 @@
       ],
       "Continue": [
         "Kontynuuj"
-      ],
-      "Continue downloading": [
-        "Kontynuuj pobieranie"
       ],
       "Continue import": [
         "Kontynuuj importowanie"
@@ -338,9 +326,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Pobierz kopię (jako xlsx)"
-      ],
-      "Download anyway": [
-        "Pobierz mimo to"
       ],
       "Download debug information": [
         "Pobierz informacje diagnostyczne"
@@ -681,9 +666,6 @@
       "Rename document": [
         "Zmień nazwę dokumentu"
       ],
-      "Replace file": [
-        "Zastąp plik"
-      ],
       "Report a problem": [
         "Zgłoś problem"
       ],
@@ -899,9 +881,6 @@
       ],
       "Upload and share files": [
         "Prześlij i udostępnij pliki"
-      ],
-      "Upload anyway": [
-        "Prześlij mimo to"
       ],
       "Upload picture": [
         "Prześlij zdjęcie"
@@ -3295,20 +3274,8 @@
       "Failed to update public share node": [
         "Nie udało się zaktualizować publicznego węzła udostępniania"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Pobieranie pliku \"${ name }\""
-      ],
-      "File cannot be merged with folder": [
-        "Plik nie może zostać scalony z folderem"
-      ],
-      "File selection is already downloading": [
-        "Pobieranie zaznaczonych plików"
-      ],
       "First name is too long": [
         "Imię jest zbyt długie"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Pobieranie folderu \"${ name }\""
       ],
       "Folder name cannot be empty.": [
         "Nazwa folderu nie może być pusta."
@@ -3567,9 +3534,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Oryginalny plik nie został przesłany. Spróbuj ponownie później"
-      ],
-      "The original folder not found": [
-        "Oryginalny folder nie został znaleziony"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Posiadasz zbyt wiele folderów na swoim koncie zewnętrznym. Dostosuj proces importowania, aby usunąć niektóre foldery."
@@ -4621,9 +4585,6 @@
         "${ contactsLength } kontaktów",
         "${ contactsLength } kontaktów"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Pliki ${ DOCS_APP_NAME } nie mogą zostać bezpośrednio pobrane i nie zostaną uwzględnione w tym pobieraniu. Pozostałe pliki możesz pobrać, klikając przycisk 'Kontynuuj pobieranie'."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } umożliwia współpracę w czasie rzeczywistym z szyfrowaniem end-to-end zapewniającym prywatność. Utwórz kopię, aby rozpocząć edycję lub poproś właściciela o dostęp do edycji."
       ],
@@ -4699,9 +4660,6 @@
         "Zaktualizowano ${ updated } kontaktów.",
         "Zaktualizowano ${ updated } kontaktów."
       ],
-      "${ uploadName } already exists in this location.": [
-        "Plik ${ uploadName } już istnieje w tej lokalizacji."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskuje Twój adres IP, dzięki czemu strony internetowe nie mogą Cię zidentyfikować."
       ],
@@ -4734,12 +4692,6 @@
         "+${ organization.BonusVPN } połączenia ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)",
         "+${ organization.BonusVPN } połączeń ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)",
         "+${ organization.BonusVPN } połączeń ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)"
-      ],
-      "A number will be added to the filename": [
-        "Do nazwy pliku zostanie dodany numer"
-      ],
-      "A number will be added to the folder name": [
-        "Do nazwy folderu zostanie dodany numer"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Numer telefonu może zostać użyty do weryfikacji tylko jednego konta ${ BRAND_NAME }"
@@ -4797,9 +4749,6 @@
       ],
       "Already in this folder": [
         "Już w tym folderze"
-      ],
-      "an anonymous user": [
-        "anonimowy użytkownik"
       ],
       "and": [
         "i"
@@ -4872,9 +4821,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sprawdzanie kontaktów... (${ progress } z ${ max })"
-      ],
-      "Checking signatures": [
-        "Sprawdzanie podpisów"
       ],
       "Choose a plan that works best for you.": [
         "Wybierz plan, który najlepiej Ci odpowiada."
@@ -4975,12 +4921,6 @@
       "Details": [
         "Szczegóły"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Podpis cyfrowy został zweryfikowany. Plik został bezpiecznie przesłany przez ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Podpis cyfrowy został zweryfikowany. Folder został bezpiecznie przesłany przez adres ${ emailAddress }."
-      ],
       "Display word count": [
         "Wyświetl liczbę słów"
       ],
@@ -5007,12 +4947,6 @@
       ],
       "Download current logs": [
         "Pobierz logi"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Pobieranie pliku ${ downloadFileName } zostało przerwane"
-      ],
-      "Download was canceled": [
-        "Pobieranie zostało anulowane"
       ],
       "Drop file here to upload": [
         "Upuść, aby przesłać"
@@ -5107,15 +5041,6 @@
       "File \"${ name }\" was deleted during download": [
         "Plik \"${ name }\" został usunięty podczas pobierania"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Brak podpisu pliku. Nie możemy zweryfikować, czy adres ${ emailAddress } przesłał plik ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Brak podpisu pliku. Nie możemy zweryfikować, kto przesłał plik ${ fileName }."
-      ],
-      "File will not be updated": [
-        "Plik nie zostanie zaktualizowany"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Tylko pliki (bez zdjęć, ${ DOCS_APP_NAME } lub ${ SHEETS_APP_NAME }) – łącznie do 100 GB, 100 000 plików i 50 GB na plik"
       ],
@@ -5124,18 +5049,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Folder \"${ link.name }\" został usunięty podczas pobierania"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Brak podpisu folderu. Nie możemy zweryfikować, czy adres ${ emailAddress } przesłał plik ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Brak podpisu folderu. Nie możemy zweryfikować, kto przesłał plik ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "Folder nie zostanie przesłany"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Ogranicz aktywność wymagającą dużej ilości pamięci (jak streaming) lub prześlij dane partiami."
       ],
       "Forgot password?": [
         "Nie pamiętasz hasła?"
@@ -5247,9 +5160,6 @@
       ],
       "Invite link copied": [
         "Link został skopiowany"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Próbujesz przesłać plik ${ uploadName }. ${ replaceFile }, jeśli przesyłanie nie powiodło się. Jeśli przesyłanie jest w toku, zastąpienie pliku spowoduje anulowanie przesyłania."
       ],
       "It's better to have:": [
         "Lepiej mieć:"
@@ -5521,9 +5431,6 @@
       "Recents": [
         "Ostatnie"
       ],
-      "recommended browser": [
-        "zalecanej przeglądarki"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informacje o odzyskiwaniu pozostaną na urządzeniu, chyba że usuniesz te dane."
       ],
@@ -5590,12 +5497,6 @@
       "Show table of contents": [
         "Pokaż spis treści"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Podpis nie może zostać zweryfikowany z powodu błędu sieci. Spróbuj ponownie później."
-      ],
-      "Signature check will be ignored": [
-        "Sprawdzanie podpisu zostanie pominięte"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
@@ -5647,26 +5548,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Konto może mieć nowy klucz lub poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Nie można zweryfikować autora zmian dokumentu. Czy chcesz oznaczyć dokument jako zweryfikowany? Możesz wybrać opcję Ignoruj, aby zdecydować później."
       ],
       "The Beginning": [
         "Początek"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Podpis cyfrowy został częściowo zweryfikowany. Plik został przesłany z linku publicznego przez użytkownika bez konta ${ BRAND_NAME }, który nie określa tożsamości właściciela."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Podpis cyfrowy został częściowo zweryfikowany. Folder został przesłany z linku publicznego przez użytkownika bez konta ${ BRAND_NAME }, który nie określa tożsamości właściciela."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Twoje informacje zostały ujawnione przez usługi stron trzecich. Informacje konta ${ BRAND_NAME } pozostają bezpieczne i zaszyfrowane. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Właściciel adresu wyłączył szyfrowanie end-to-end. Aby móc wysyłać wiadomości zaszyfrowane na ten adres, właściciel musi ponownie włączyć szyfrowanie end-to-end."
@@ -5734,23 +5623,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Spowoduje to trwałe usunięcie zaznaczonych elementów."
       ],
-      "This will replace the existing file with the folder": [
-        "Spowoduje to zastąpienie obecnego pliku folderem"
-      ],
-      "This will replace the existing folder with the file": [
-        "Spowoduje to zastąpienie obecnego folderu plikiem"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ta czynność spowoduje wylogowanie ze wszystkich kont."
-      ],
-      "This will upload a new version of the file": [
-        "Spowoduje to przesłanie nowej wersji pliku"
-      ],
-      "This will upload a new version of the folder": [
-        "Spowoduje to przesłanie nowej wersji folderu"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Aby pobrać pliki ${ DOCS_APP_NAME }, otwórz je w ${ DOCS_APP_NAME } i wyeksportuj."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
@@ -5776,14 +5650,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Transfer pliku \"${ name }\" został anulowany"
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Transfer folderu \"${ name }\" został anulowany"
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Transfer pliku \"${ file.name }\" został pominięty"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Transfer folderu \"${ folderName }\" został pominięty"
       ],
       "Trash": [
         "Kosz"
@@ -5796,9 +5664,6 @@
       ],
       "Undo successful": [
         "Cofnięto"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Nie można odszyfrować pliku lub niektórych danych."
       ],
       "Update recent documents": [
         "Zaktualizuj ostatnie dokumenty"
@@ -5814,9 +5679,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Ulepsz, aby zachować korzyści z planu ${ planTitle }."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Przesyłanie dużej liczby plików na raz może wpłynąć na wydajność."
       ],
       "Uppercase and lowercase letters": [
         "Wielkie i małe litery"
@@ -5841,12 +5703,6 @@
       ],
       "Warning": [
         "Ostrzeżenie"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Nie możemy zweryfikować, czy adres ${ emailAddress } przesłał plik ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Nie możemy zweryfikować, kto przesłał plik ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Otrzymasz wiadomość po dokończeniu procesu importowania."
@@ -6013,9 +5869,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Synchronizacja zmian nie powiodła się. Dysk spróbuje automatycznie zapisać zmiany. Nie zamykaj strony internetowej."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Twoja obecna przeglądarka nie obsługuje pobierania dużych plików z powodu niedostępności mechanizmu Service Workers. Pobieranie dużych plików może spowodować zawieszenie przeglądarki lub brak reakcji na jej działanie. Użyj najnowszych wersji ${ recommendedBrowser } i spróbuj ponownie."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Obecny dokument zostanie zastąpiony wybraną wersją. Komentarze i sugestie zostaną usunięte z dokumentu, ale nadal będą dostępne w historii komentarzy."
       ],
@@ -6124,32 +5977,6 @@
         "Tylko do odczytu"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "atrybuty pliku"
-      ],
-      "file data": [
-        "dane pliku"
-      ],
-      "file data key": [
-        "dane pliku klucza"
-      ],
-      "file data order": [
-        "kolejność danych pliku"
-      ],
-      "hash key": [
-        "kryptograficzny skrót klucza"
-      ],
-      "keys": [
-        "klucze"
-      ],
-      "name": [
-        "nazwa"
-      ],
-      "thumbnail": [
-        "podgląd"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Aktywny podpisujący"
@@ -6237,15 +6064,6 @@
       "App password": [
         "Hasło aplikacji"
       ],
-      "Apply to all duplicated files": [
-        "Zastosuj do wszystkich zduplikowanych plików"
-      ],
-      "Apply to all duplicated folders": [
-        "Zastosuj do wszystkich zduplikowanych folderów"
-      ],
-      "Apply to all unverified items": [
-        "Zastosuj do wszystkich niezweryfikowanych elementów"
-      ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
       ],
@@ -6272,9 +6090,6 @@
       ],
       "can view": [
         "może przeglądać"
-      ],
-      "Cancel download": [
-        "Anuluj pobieranie"
       ],
       "Category": [
         "Kategoria"
@@ -6333,14 +6148,8 @@
       "Don't show this again": [
         "Nie pokazuj ponownie"
       ],
-      "Download anyway": [
-        "Pobierz mimo to"
-      ],
       "Drive": [
         "Dysk"
-      ],
-      "Duplicate found": [
-        "Duplikat został znaleziony"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "np. Amazon, eBay, Etsy"
@@ -6443,15 +6252,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Zintegrowana aplikacja uwierzytelniająca 2FA"
-      ],
-      "Keep both": [
-        "Zachowaj oba"
-      ],
-      "Keep both files": [
-        "Zachowaj oba pliki"
-      ],
-      "Keep both folders": [
-        "Zachowaj oba foldery"
       ],
       "Label messages as": [
         "Oznacz wiadomości etykietą"
@@ -6576,12 +6376,6 @@
       "Regular expression": [
         "Wyrażenie regularne"
       ],
-      "Replace existing file": [
-        "Zastąp obecny plik"
-      ],
-      "Replace existing folder": [
-        "Zastąp obecny folder"
-      ],
       "Require password": [
         "Wymagaj hasła"
       ],
@@ -6605,12 +6399,6 @@
       ],
       "Skip feedback": [
         "Pomiń opinię"
-      ],
-      "Skip file": [
-        "Pomiń plik"
-      ],
-      "Skip folder": [
-        "Pomiń folder"
       ],
       "Starts with": [
         "Zaczyna się od"
@@ -8491,9 +8279,6 @@
       "Failed to accept share invitation": [
         "Nie udało się zaakceptować zaproszenia"
       ],
-      "Failed to download files: ${ err }": [
-        "Nie udało się pobrać plików: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Nie udało się załadować szczegółów zaproszenia"
       ],
@@ -8506,9 +8291,6 @@
       "Failed to rename document": [
         "Nie udało się zmienić nazwy dokumentu"
       ],
-      "Failed to upload files: ${ err }": [
-        "Nie udało się przesłać plików: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Plik lub folder \"${ filename }\" i ${ count } inny jest już przesyłany",
         "Plik lub folder \"${ filename }\" i ${ count } inne są już przesyłane",
@@ -8517,9 +8299,6 @@
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Plik lub folder \"${ filename }\" jest już przesyłany"
-      ],
-      "File or folder is missing a name": [
-        "Plik lub folder nie posiada nazwy"
       ],
       "Invitation's email was sent again": [
         "Zaproszenie zostało ponownie wysłane"
@@ -8544,9 +8323,6 @@
         "Przenieś ${ n } elementy",
         "Przenieś ${ n } elementów",
         "Przenieś ${ n } elementów"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Brak przestrzeni dyskowej do przesłania ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Link został zaktualizowany"
@@ -10592,9 +10368,6 @@
       "Birthday": [
         "Urodziny"
       ],
-      "Browser might run out of memory": [
-        "Brak pamięci przeglądarki"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anuluj subskrypcję ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -10757,26 +10530,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Obniżyć plan do wersji ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Pobierz ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Pobierz aplikacje ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Pobierz aplikację"
-      ],
-      "Download unverified file?": [
-        "Pobrać niezweryfikowany plik?"
-      ],
-      "Download unverified folder?": [
-        "Pobrać niezweryfikowany folder?"
-      ],
-      "Duplicate file found": [
-        "Zduplikowany plik został znaleziony"
-      ],
-      "Duplicate folder found": [
-        "Zduplikowany folder został znaleziony"
       ],
       "Edit contact": [
         "Edytuj kontakt"
@@ -10961,9 +10719,6 @@
       "Other names": [
         "Inne nazwy"
       ],
-      "Performance might be affected": [
-        "Może to wpłynąć na wydajność"
-      ],
       "Phone numbers": [
         "Numery telefonów"
       ],
@@ -11132,9 +10887,6 @@
       "Upload and share files": [
         "Prześlij i udostępnij pliki"
       ],
-      "Uploading a large file or folder": [
-        "Przesyłanie większego pliku lub folderu"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Użyj ${ VPN_SHORT_APP_NAME } dla prywatności danych"
       ],
@@ -11179,9 +10931,6 @@
       ],
       "Your document cannot be loaded": [
         "Dokument nie może zostać załadowany"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Zawiera plik ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"

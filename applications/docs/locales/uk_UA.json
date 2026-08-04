@@ -114,15 +114,6 @@
       "Cancel": [
         "Скасувати"
       ],
-      "Cancel all downloads": [
-        "Скасувати всі завантаження"
-      ],
-      "Cancel all uploads": [
-        "Скасувати всі вивантаження"
-      ],
-      "Cancel download": [
-        "Скасувати завантаження"
-      ],
       "Cancel subscription": [
         "Скасувати передплату"
       ],
@@ -206,9 +197,6 @@
       ],
       "Continue": [
         "Продовжити"
-      ],
-      "Continue downloading": [
-        "Продовжити завантаження"
       ],
       "Continue import": [
         "Продовжити імпорт"
@@ -338,9 +326,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Завантажити копію (як xlsx)"
-      ],
-      "Download anyway": [
-        "Усе одно завантажити"
       ],
       "Download debug information": [
         "Завантажити інформацію для налагодження"
@@ -681,9 +666,6 @@
       "Rename document": [
         "Перейменувати документ"
       ],
-      "Replace file": [
-        "Замінити файл"
-      ],
       "Report a problem": [
         "Повідомити про проблему"
       ],
@@ -899,9 +881,6 @@
       ],
       "Upload and share files": [
         "Вивантажуйте та діліться файлами"
-      ],
-      "Upload anyway": [
-        "Все одно вивантажити"
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -3292,20 +3271,8 @@
       "Failed to update public share node": [
         "Не вдалося оновити вузол публічного спільного доступу"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Файл \"${ name }\" вже завантажується"
-      ],
-      "File cannot be merged with folder": [
-        "Не можна об'єднувати файл з текою"
-      ],
-      "File selection is already downloading": [
-        "Вибрані файли вже завантажуються"
-      ],
       "First name is too long": [
         "Ім'я занадто довге"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Тека \"${ name }\" вже завантажується"
       ],
       "Folder name cannot be empty.": [
         "Тека не може бути без назви."
@@ -3564,9 +3531,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Оригінальний файл ще не вивантажено. Спробуйте знову пізніше"
-      ],
-      "The original folder not found": [
-        "Оригінальну теку не знайдено"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашому зовнішньому обліковому записі надто багато тек. Будь ласка, налаштуйте імпорт для видалення деяких тек."
@@ -4618,9 +4582,6 @@
         "${ contactsLength } контактів",
         "${ contactsLength } контактів"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Файли ${ DOCS_APP_NAME } не можна завантажити безпосередньо, і вони не будуть включені в це завантаження. Ви можете завантажити інші файли, натиснувши «Продовжити завантаження»."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } дозволяє співпрацювати в режимі реального часу з використанням наскрізного шифрування для повної приватності. Щоб розпочати редагування, створіть копію, або запросіть доступ у власника."
       ],
@@ -4696,9 +4657,6 @@
         "${ updated } контактів успішно оновлено.",
         "${ updated } контактів успішно оновлено."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } вже існує в цьому розташуванні."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } маскує вашу IP-адресу, тому вебсайти не можуть ідентифікувати вас."
       ],
@@ -4731,12 +4689,6 @@
         "+${ organization.BonusVPN } з'єднання для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
         "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
         "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)"
-      ],
-      "A number will be added to the filename": [
-        "Число буде додано до назви файлу"
-      ],
-      "A number will be added to the folder name": [
-        "Число буде додано до назви теки"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Один номер телефону можна використати для підтвердження лише одного облікового запису ${ BRAND_NAME }"
@@ -4791,9 +4743,6 @@
       ],
       "Already in this folder": [
         "Уже в цій папці"
-      ],
-      "an anonymous user": [
-        "анонімний користувач"
       ],
       "and": [
         "та"
@@ -4866,9 +4815,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Перевірка контактів ${ progress } з ${ max }..."
-      ],
-      "Checking signatures": [
-        "Перевірка підписів"
       ],
       "Choose a plan that works best for you.": [
         "Виберіть тарифний план, який підходить вам найкраще."
@@ -4969,12 +4915,6 @@
       "Details": [
         "Деталі"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Цифровий підпис перевірено. Цей файл безпечно вивантажено користувачем ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Цифровий підпис перевірено. Цю теку безпечно вивантажено користувачем ${ emailAddress }."
-      ],
       "Display word count": [
         "Показувати кількість слів"
       ],
@@ -5001,12 +4941,6 @@
       ],
       "Download current logs": [
         "Завантажити поточні журнали"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Завантаження ${ downloadFileName } буде скасовано"
-      ],
-      "Download was canceled": [
-        "Завантаження скасовано"
       ],
       "Drop file here to upload": [
         "Перетягніть файл сюди, щоб вивантажити"
@@ -5098,15 +5032,6 @@
       "File \"${ name }\" was deleted during download": [
         "Файл \"${ name }\" було видалено під час завантаження"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "У файлі відсутній підпис. Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "У файлі відсутній підпис. Ми не можемо перевірити хто вивантажив ${ fileName }."
-      ],
-      "File will not be updated": [
-        "Файл не буде оновлено"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Лише файли (без фотографій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }) — загалом до 100 ГБ, 100 000 файлів та 50 ГБ на файл"
       ],
@@ -5115,18 +5040,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Теку \"${ link.name }\" було видалено під час завантаження"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "У теці відсутній підпис. Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "У теці відсутній підпис. Ми не можемо перевірити хто вивантажив ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "Теку не буде вивантажено"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Щоб досягти найкращих результатів, уникайте потокової трансляції та інших дій, які потребують багато пам'яті, або розбивайте вивантаження на менші частини."
       ],
       "Forgot password?": [
         "Забули пароль?"
@@ -5232,9 +5145,6 @@
       ],
       "Invite link copied": [
         "Посилання на запрошення скопійовано"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Схоже, що ви нещодавно намагалися завантажити ${ uploadName }. Якщо не вдалося завантажити, ${ replaceFile }. Якщо завантаження досі триває, заміна файлу скасує поточне завантаження."
       ],
       "It's better to have:": [
         "Бажано мати:"
@@ -5503,9 +5413,6 @@
       "Recents": [
         "Нещодавні"
       ],
-      "recommended browser": [
-        "рекомендований браузер"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інформація про відновлення залишиться на цьому пристрої, якщо ви не вирішите її видалити."
       ],
@@ -5572,12 +5479,6 @@
       "Show table of contents": [
         "Показати зміст"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Неможливо підтвердити підпис через помилку мережі. Будь ласка, спробуйте знову пізніше."
-      ],
-      "Signature check will be ignored": [
-        "Перевіркою підпису буде знехтувано"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
       ],
@@ -5626,26 +5527,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Можливо, в обліковому записі є новий ключ або ці елементи підроблено: ${ items }. Відкривайте, лише якщо ви довіряєте їм."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Не вдалося перевірити авторство змін у документі. Ви хочете позначити цей документ як перевірений? Ви можете вибрати «Ігнорувати», щоби прийняти рішення пізніше."
       ],
       "The Beginning": [
         "Початок"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Цифровий підпис було частково перевірено. Цей файл було вивантажено через загальнодоступне посилання для спільного доступу користувачем без облікового запису ${ BRAND_NAME }, тому його особисті дані неможливо перевірити."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Цифровий підпис було частково перевірено. Цю папку було вивантажено через загальнодоступне посилання для спільного доступу користувачем без облікового запису ${ BRAND_NAME }, тому його особисті дані неможливо перевірити."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "На сторонньому сервісі стався витік даних. Інформація вашого облікового запису ${ BRAND_NAME } у безпеці та зашифрована. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Можливо ці елементи було підроблено: ${ items }. Відкрийте лише якщо довіряєте їм."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Власник цієї адреси вимкнув наскрізне шифрування. Щоб мати можливість надсилати зашифровані листи на цю адресу, він повинен повторно ввімкнути шифрування."
@@ -5713,23 +5602,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Це назавжди видалить вибрані елементи, які ви вивантажили."
       ],
-      "This will replace the existing file with the folder": [
-        "Це призведе до заміни наявного файлу текою"
-      ],
-      "This will replace the existing folder with the file": [
-        "Це призведе до заміни наявної теки файлом"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ви вийдете з усіх облікових записів, до яких наразі увійшли."
-      ],
-      "This will upload a new version of the file": [
-        "Це призведе до вивантаження нової версії файлу"
-      ],
-      "This will upload a new version of the folder": [
-        "Це вивантажить нову версію теки"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Щоб завантажити файли ${ DOCS_APP_NAME }, відкрийте їх у ${ DOCS_APP_NAME } та виконайте експорт."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
@@ -5755,14 +5629,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Передавання скасовано для файлу \"${ name }\""
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Передавання скасовано для теки \"${ name }\""
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Пропущено передавання для файлу \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Пропущено передавання для теки \"${ folderName }\""
       ],
       "Trash": [
         "Смітник"
@@ -5775,9 +5643,6 @@
       ],
       "Undo successful": [
         "Скасування виконано"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "На жаль, схоже що неможливо розшифрувати файл або його вміст."
       ],
       "Update recent documents": [
         "Оновити нещодавні документи"
@@ -5793,9 +5658,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Покращте тарифний план, щоб зберегти переваги ${ planTitle }."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Завантаження сотень файлів одразу може вплинути на швидкодію."
       ],
       "Uppercase and lowercase letters": [
         "Великі та малі літери"
@@ -5820,12 +5682,6 @@
       ],
       "Warning": [
         "Попередження"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Нам не вдалося перевірити хто вивантажив ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Ми надішлемо вам електронного листа після завершення імпорту."
@@ -5992,9 +5848,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Ваші зміни не вдалося синхронізувати. Drive автоматично спробує зберегти зміни. Не закривайте вебсторінку."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Ваш поточний браузер не підтримує завантаження великих файлів через недоступність служби обробників (service workers). Завантаження великих файлів може \"заморозити\" браузер. Будь ласка, скористайтеся найновішими версіями ${ recommendedBrowser } та повторіть спробу."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Ваш поточний документ буде замінено на цю версію. Коментарі та пропозиції будуть вилучені з документа, але залишатимуться доступними в історії коментарів."
       ],
@@ -6103,32 +5956,6 @@
         "Тільки перегляд"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "атрибути фалу"
-      ],
-      "file data": [
-        "дані файлу"
-      ],
-      "file data key": [
-        "ключ даних файлу"
-      ],
-      "file data order": [
-        "порядок файлів даних"
-      ],
-      "hash key": [
-        "хеш-ключ"
-      ],
-      "keys": [
-        "ключі"
-      ],
-      "name": [
-        "назва"
-      ],
-      "thumbnail": [
-        "мініатюра"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Активний підписувач"
@@ -6216,15 +6043,6 @@
       "App password": [
         "Пароль програми"
       ],
-      "Apply to all duplicated files": [
-        "Застосувати до всіх дублікатів файлів"
-      ],
-      "Apply to all duplicated folders": [
-        "Застосувати до всіх дублікатів тек"
-      ],
-      "Apply to all unverified items": [
-        "Застосувати до всіх неперевірених елементів"
-      ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
@@ -6251,9 +6069,6 @@
       ],
       "can view": [
         "може переглядати"
-      ],
-      "Cancel download": [
-        "Скасувати завантаження"
       ],
       "Category": [
         "Категорія"
@@ -6312,14 +6127,8 @@
       "Don't show this again": [
         "Більше не показувати"
       ],
-      "Download anyway": [
-        "Все одно завантажити"
-      ],
       "Drive": [
         "Диск"
-      ],
-      "Duplicate found": [
-        "Знайдено дублікат"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "наприклад, Amazon, eBay, Etsy"
@@ -6422,15 +6231,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Інтегрований автентифікатор 2FA"
-      ],
-      "Keep both": [
-        "Зберегти обидва"
-      ],
-      "Keep both files": [
-        "Зберегти обидва файли"
-      ],
-      "Keep both folders": [
-        "Зберегти обидві теки"
       ],
       "Label messages as": [
         "Позначити повідомлення"
@@ -6555,12 +6355,6 @@
       "Regular expression": [
         "Регулярний вираз"
       ],
-      "Replace existing file": [
-        "Замінити наявний файл"
-      ],
-      "Replace existing folder": [
-        "Замінити наявну теку"
-      ],
       "Require password": [
         "Вимагати пароль"
       ],
@@ -6584,12 +6378,6 @@
       ],
       "Skip feedback": [
         "Пропустити відгук"
-      ],
-      "Skip file": [
-        "Пропустити файл"
-      ],
-      "Skip folder": [
-        "Пропустити теку"
       ],
       "Starts with": [
         "Починається з"
@@ -8413,9 +8201,6 @@
       "Failed to accept share invitation": [
         "Не вдалося прийняти запрошення на спільний доступ"
       ],
-      "Failed to download files: ${ err }": [
-        "Не вдалося завантажити файли: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Не вдалося завантажити деталі запрошення"
       ],
@@ -8428,9 +8213,6 @@
       "Failed to rename document": [
         "Не вдалося перейменувати документ"
       ],
-      "Failed to upload files: ${ err }": [
-        "Не вдалося вивантажити файли: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
         "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
@@ -8439,9 +8221,6 @@
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Файл чи тека \"${ filename }\" вже вивантажується"
-      ],
-      "File or folder is missing a name": [
-        "Файл чи тека не мають назви"
       ],
       "Invitation's email was sent again": [
         "Лист із запрошенням надіслано знову"
@@ -8466,9 +8245,6 @@
         "Перемістити ${ n } елементи",
         "Перемістити ${ n } елементів",
         "Перемістити ${ n } елементів"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Недостатньо місця для вивантаження ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Доступ до публічного посилання оновлено"
@@ -10514,9 +10290,6 @@
       "Birthday": [
         "День народження"
       ],
-      "Browser might run out of memory": [
-        "Браузер може вичерпати пам'ять"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасувати передплату ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -10679,26 +10452,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Понизити до ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Завантажити ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Завантажте програми ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Завантажити програму"
-      ],
-      "Download unverified file?": [
-        "Завантажити неперевірені файли?"
-      ],
-      "Download unverified folder?": [
-        "Завантажити неперевірену теку?"
-      ],
-      "Duplicate file found": [
-        "Знайдено дублікат файлу"
-      ],
-      "Duplicate folder found": [
-        "Знайдено дублікат теки"
       ],
       "Edit contact": [
         "Змінити контакт"
@@ -10883,9 +10641,6 @@
       "Other names": [
         "Інші імена"
       ],
-      "Performance might be affected": [
-        "Може знизитися швидкодія"
-      ],
       "Phone numbers": [
         "Номери телефонів"
       ],
@@ -11051,9 +10806,6 @@
       "Upload and share files": [
         "Вивантажуйте та діліться файлами"
       ],
-      "Uploading a large file or folder": [
-        "Вивантаження великого файлу або теки"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
       ],
@@ -11098,9 +10850,6 @@
       ],
       "Your document cannot be loaded": [
         "Ваш документ не може бути завантаженим"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Ваше завантаження містить файл ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Ваша викрита інформація"

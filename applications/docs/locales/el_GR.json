@@ -112,15 +112,6 @@
       "Cancel": [
         "Ακύρωση"
       ],
-      "Cancel all downloads": [
-        "Ακύρωση όλων των λήψεων"
-      ],
-      "Cancel all uploads": [
-        "Ακύρωση όλων των μεταφορτώσεων"
-      ],
-      "Cancel download": [
-        "Ακύρωση λήψης"
-      ],
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
       ],
@@ -207,9 +198,6 @@
       ],
       "Continue": [
         "Συνέχεια"
-      ],
-      "Continue downloading": [
-        "Συνέχεια λήψης"
       ],
       "Continue import": [
         "Συνεχίστε την εισαγωγή"
@@ -335,9 +323,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Λήψη αντιγράφου (ως xlsx)"
-      ],
-      "Download anyway": [
-        "Λήψη οπωσδήποτε"
       ],
       "Download debug information": [
         "Λήψη πληροφοριών εντοπισμού σφαλμάτων"
@@ -678,9 +663,6 @@
       "Rename document": [
         "Μετονομασία εγγράφου"
       ],
-      "Replace file": [
-        "Αντικατάσταση αρχείου"
-      ],
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
@@ -899,9 +881,6 @@
       ],
       "Upload and share files": [
         "Μεταφορτώστε και μοιραστείτε αρχεία"
-      ],
-      "Upload anyway": [
-        "Ανέβασμα οπωσδήποτε"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -3275,20 +3254,8 @@
       "Failed to update public share node": [
         "Αποτυχία ενημέρωσης δημόσιου κόμβου κοινοποίησης"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Το αρχείο \"${ name }\" κατεβαίνει ήδη"
-      ],
-      "File cannot be merged with folder": [
-        "Ένα αρχείο δεν γίνεται να συγχωνευθεί με φάκελο"
-      ],
-      "File selection is already downloading": [
-        "Τα επιλεγμένα αρχεία κατεβαίνουν ήδη"
-      ],
       "First name is too long": [
         "Το όνομα είναι πολύ μεγάλο"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Ο φάκελος \"${ name }\" κατεβαίνει ήδη"
       ],
       "Folder name cannot be empty.": [
         "Το όνομα φακέλου δεν γίνεται να είναι κενό."
@@ -3540,9 +3507,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Το πρωτότυπο αρχείο δεν έχει ανέβει ακόμα, παρακαλούμε δοκιμάστε ξανά αργότερα"
-      ],
-      "The original folder not found": [
-        "Ο αρχικός φάκελος δεν βρέθηκε"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Υπερβολικός αριθμός φακέλων στον εξωτερικό λογαριασμό σας. Παρακαλούμε προσαρμόστε την εισαγωγή, προς διαγραφή μερικών φακέλων."
@@ -4546,9 +4510,6 @@
         "${ contactsLength } επαφή",
         "${ contactsLength } επαφές"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Δεν είναι δυνατή η απευθείας λήψη αρχείων ${ DOCS_APP_NAME } και δε θα συμπεριληφθούν σε αυτό το στοιχείο λήψης. Μπορείτε να κατεβάσετε τα άλλα αρχεία κάνοντας κλικ στο 'Συνέχεια λήψης'."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "Το ${ DOCS_APP_NAME } σας επιτρέπει να συνεργάζεστε σε πραγματικό χρόνο με κρυπτογράφηση από άκρο σε άκρο για πλήρη προστασία της ιδιωτικής ζωής. Δημιουργήστε ένα αντίγραφο για να ξεκινήσετε την επεξεργασία ή ζητήστε από τον κάτοχο πρόσβαση επεξεργασίας."
       ],
@@ -4607,9 +4568,6 @@
         "${ updated } επαφή ενημερώθηκε επιτυχώς.",
         "${ updated } επαφές ενημερώθηκαν επιτυχώς."
       ],
-      "${ uploadName } already exists in this location.": [
-        "Το ${ uploadName } υπάρχει ήδη σε αυτήν την τοποθεσία."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "Το ${ VPN_APP_NAME } καλύπτει τη διεύθυνση IP σας, επομένως οι ιστότοποι δεν μπορούν να σας αναγνωρίσουν."
       ],
@@ -4638,12 +4596,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } σύνδεση για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)",
         "+${ organization.BonusVPN } συνδέσεις για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)"
-      ],
-      "A number will be added to the filename": [
-        "Στο όνομα του αρχείου θα προστεθεί ένας αριθμός"
-      ],
-      "A number will be added to the folder name": [
-        "Στο όνομα του φακέλου θα προστεθεί ένας αριθμός"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
@@ -4695,9 +4647,6 @@
       ],
       "Already in this folder": [
         "Ήδη σε αυτόν το φάκελο"
-      ],
-      "an anonymous user": [
-        "ένας ανώνυμος χρήστης"
       ],
       "and": [
         "και"
@@ -4770,9 +4719,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Έλεγχος επαφής ${ progress } από ${ max }..."
-      ],
-      "Checking signatures": [
-        "Έλεγχος υπογραφών"
       ],
       "Choose a plan that works best for you.": [
         "Επιλέξτε το πλάνο που σας ταιριάζει καλύτερα."
@@ -4869,12 +4815,6 @@
       "Details": [
         "Λεπτομέρειες"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο μεταφορτώθηκε διασφαλισμένα από ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Η ψηφιακή υπογραφή επαληθεύτηκε. Ο φάκελος μεταφορτώθηκε διασφαλισμένα από ${ emailAddress }."
-      ],
       "Display word count": [
         "Εμφάνιση καταμέτρησης λέξεων"
       ],
@@ -4901,12 +4841,6 @@
       ],
       "Download current logs": [
         "Λήψη τρεχόντων αρχείων καταγραφής"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Η λήψη του ${ downloadFileName } θα ματαιωθεί"
-      ],
-      "Download was canceled": [
-        "Η λήψη ακυρώθηκε"
       ],
       "Drop file here to upload": [
         "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
@@ -5001,15 +4935,6 @@
       "File \"${ name }\" was deleted during download": [
         "Το αρχείο \"${ name }\" διαγράφηκε κατά τη λήψη"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } μεταφορτώθηκε από ${ emailAddress }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ποιος μεταφόρτωσε το ${ fileName }."
-      ],
-      "File will not be updated": [
-        "Το αρχείο δεν θα ενημερωθεί"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Μόνο αρχεία (όχι φωτογραφίες, ${ DOCS_APP_NAME } ή ${ SHEETS_APP_NAME }) - έως 100 GB συνολικά, 100.000 αρχεία και 50 GB ανά αρχείο"
       ],
@@ -5018,18 +4943,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Ο φάκελος \"${ link.name }\" διαγράφηκε κατά τη λήψη"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Ο φάκελος στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι ο ${ fileName } μεταφορτώθηκε από ${ emailAddress }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Ο φάκελος στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ποιος μεταφόρτωσε το ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "Ο φάκελος δεν θα μεταφορτωθεί"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Για καλύτερα αποτελέσματα, αποφύγετε ροή ή απαιτητικές σε μνήμη δραστηριότητες ή χωρίστε τη μεταφόρτωση σε μικρότερες παρτίδες."
       ],
       "Forgot password?": [
         "Ξεχάσατε τον κωδικό πρόσβασης;"
@@ -5142,9 +5055,6 @@
       ],
       "Invite link copied": [
         "Ο σύνδεσμος πρόσκλησης αντιγράφηκε"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Φαίνεται ότι πρόσφατα προσπαθήσατε να ανεβάσετε το ${ uploadName }. Εάν η μεταφόρτωση απέτυχε, παρακαλούμε ${ replaceFile }. Αν η μεταφόρτωση βρίσκεται ακόμη σε εξέλιξη, η αντικατάστασή της θα ακυρώσει τη μεταφόρτωση που βρίσκεται σε εξέλιξη."
       ],
       "It's better to have:": [
         "Είναι καλύτερα να έχετε:"
@@ -5412,9 +5322,6 @@
       "Recents": [
         "Πρόσφατα"
       ],
-      "recommended browser": [
-        "συνιστώμενο πρόγραμμα περιήγησης"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
       ],
@@ -5481,12 +5388,6 @@
       "Show table of contents": [
         "Εμφάνιση πίνακα περιεχομένων"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Η υπογραφή δεν μπορεί να επικυρωθεί λόγω σφάλματος δικτύου, δοκιμάστε ξανά αργότερα."
-      ],
-      "Signature check will be ignored": [
-        "Ο έλεγχος υπογραφής θα αγνοηθεί"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
@@ -5536,26 +5437,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Ο λογαριασμός μπορεί να έχει ένα νέο κλειδί ή μπορεί τα εξής να έχουν αλλοιωθεί: ${ items }. Ανοίξτε τα μόνο αν το εμπιστεύεστε."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Δεν ήταν δυνατή η επαλήθευση της πατρότητας των επεξεργασιών στο έγγραφο. Θέλετε να επισημάνετε αυτό το έγγραφο ως επαληθευμένο; Μπορείτε να επιλέξετε Παράβλεψη για να αποφασίσετε αργότερα."
       ],
       "The Beginning": [
         "Η Αρχή"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Η ψηφιακή υπογραφή έχει επαληθευτεί εν μέρει. Αυτό το αρχείο μεταφορτώθηκε χρησιμοποιώντας έναν δημόσια προσβάσιμο σύνδεσμο κοινής χρήσης από έναν χρήστη χωρίς λογαριασμό ${ BRAND_NAME }, επομένως δεν είναι δυνατή η επαλήθευση της ταυτότητάς του."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Η ψηφιακή υπογραφή έχει επαληθευτεί εν μέρει. Αυτός ο φάκελος μεταφορτώθηκε χρησιμοποιώντας έναν δημόσια προσβάσιμο σύνδεσμο κοινής χρήσης από έναν χρήστη χωρίς λογαριασμό ${ BRAND_NAME }, επομένως δεν είναι δυνατή η επαλήθευση της ταυτότητάς του."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Οι εκτεθειμένες πληροφορίες διέρρευσαν από μια υπηρεσία τρίτου μέρους. Οι πληροφορίες του λογαριασμού σας ${ BRAND_NAME } παραμένουν ασφαλείς και κρυπτογραφημένες. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Τα ακόλουθα μπορεί να έχουν αλλοιωθεί: ${ items }. Ανοίξτε τα μόνο αν το εμπιστεύεστε."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ο κάτοχος αυτής της διεύθυνσης έχει απενεργοποιήσει την διατερματική κρυπτογράφηση. Για να είναι δυνατή η αποστολή κρυπτογραφημένων μηνυμάτων ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει να ενεργοποιήσει ξανά την διατερματική κρυπτογράφηση."
@@ -5626,23 +5515,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Αυτό θα διαγράψει οριστικά τα επιλεγμένα στοιχεία που ανεβάσατε."
       ],
-      "This will replace the existing file with the folder": [
-        "Αυτό θα αντικαταστήσει το υπάρχον αρχείο με το φάκελο"
-      ],
-      "This will replace the existing folder with the file": [
-        "Αυτό θα αντικαταστήσει τον υπάρχοντα φάκελο με το αρχείο"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Αυτό θα σας αποσυνδέσει από όλους τους λογαριασμούς που είναι συνδεδεμένοι αυτήν τη στιγμή."
-      ],
-      "This will upload a new version of the file": [
-        "Αυτό θα ανεβάσει μια νέα έκδοση του αρχείου"
-      ],
-      "This will upload a new version of the folder": [
-        "Αυτό θα ανεβάσει μια νέα έκδοση του φακέλου"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Για να κατεβάσετε τα αρχεία ${ DOCS_APP_NAME }, ανοίξτε τα στο ${ DOCS_APP_NAME } και εξαγάγετε τα."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
@@ -5668,14 +5542,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Ακυρώθηκε η μεταφορά του αρχείου \"${ name }\""
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Η μεταφορά του φακέλου \"${ name }\" ακυρώθηκε"
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Η μεταφορά του αρχείου \"${ file.name }\" παραλείφθηκε"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Η μεταφορά του φακέλου \"${ folderName }\" παραλείφθηκε"
       ],
       "Trash": [
         "Διαγραμμένα"
@@ -5688,9 +5556,6 @@
       ],
       "Undo successful": [
         "Επιτυχής αναίρεση"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Δυστυχώς, φαίνεται ότι το αρχείο ή ορισμένα από τα δεδομένα του δεν μπορούν να αποκρυπτογραφηθούν."
       ],
       "Update recent documents": [
         "Ενημέρωση πρόσφατων εγγράφων"
@@ -5706,9 +5571,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Αναβαθμίστε για να διατηρήσετε τα ${ planTitle } προνόμιά σας."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Το ανέβασμα εκατοντάδων αρχείων με τη μία ενδέχεται να μειώσει τις επιδόσεις."
       ],
       "Uppercase and lowercase letters": [
         "Κεφαλαία και πεζά γράμματα"
@@ -5733,12 +5595,6 @@
       ],
       "Warning": [
         "Προειδοποίηση"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } μεταφορτώθηκε από ${ emailAddress }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Δεν μπορέσαμε να επαληθεύσουμε ποιος μεταφόρτωσε το ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Θα σας στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί η εισαγωγή."
@@ -5902,9 +5758,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Οι αλλαγές σας απέτυχαν να συγχρονιστούν. Το Drive θα προσπαθήσει αυτόματα να αποθηκεύσει τις αλλαγές. Παρακαλούμε μην κλείσετε την ιστοσελίδα."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Το τρέχον πρόγραμμα περιήγησής σας δεν υποστηρίζει τη λήψη μεγάλων αρχείων λόγω της μη διαθεσιμότητας service workers. Η λήψη μεγάλων αρχείων ενδέχεται να παγώσει ή να κάνει το πρόγραμμα περιήγησης να μην αποκρίνεται. Χρησιμοποιήστε τις πιο πρόσφατες εκδόσεις του ${ recommendedBrowser } και προσπαθήστε ξανά."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Το τρέχον έγγραφο θα αντικατασταθεί από αυτήν την έκδοση. Τυχόν σχόλια και προτάσεις θα αφαιρεθούν από το έγγραφο, αλλά θα παραμείνουν προσβάσιμα στο ιστορικό σχολίων."
       ],
@@ -6007,32 +5860,6 @@
         "Μόνο για ανάγνωση"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "ιδιότητες αρχείου"
-      ],
-      "file data": [
-        "δεδομένα αρχείου"
-      ],
-      "file data key": [
-        "κλειδί δεδομένων αρχείου"
-      ],
-      "file data order": [
-        "σειρά δεδομένων αρχείου"
-      ],
-      "hash key": [
-        "κλειδί hash"
-      ],
-      "keys": [
-        "κλειδιά"
-      ],
-      "name": [
-        "όνομα"
-      ],
-      "thumbnail": [
-        "μικρογραφία"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Ενεργός Υπογράφων"
@@ -6123,15 +5950,6 @@
       "App password": [
         "Κωδικός πρόσβασης εφαρμογής"
       ],
-      "Apply to all duplicated files": [
-        "Εφαρμογή σε όλα τα διπλότυπα αρχεία"
-      ],
-      "Apply to all duplicated folders": [
-        "Εφαρμογή σε όλους τους διπλότυπους φακέλους"
-      ],
-      "Apply to all unverified items": [
-        "Εφαρμογή σε όλα τα μη επαληθευμένα στοιχεία"
-      ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
@@ -6158,9 +5976,6 @@
       ],
       "can view": [
         "μπορεί να δει"
-      ],
-      "Cancel download": [
-        "Ακύρωση λήψης"
       ],
       "Category": [
         "Κατηγορία"
@@ -6225,14 +6040,8 @@
       "Don't show this again": [
         "Να μην εμφανιστεί ξανά"
       ],
-      "Download anyway": [
-        "Λήψη οπωσδήποτε"
-      ],
       "Drive": [
         "Drive"
-      ],
-      "Duplicate found": [
-        "Βρέθηκε διπλότυπο"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "π.χ., Amazon, eBay, Etsy"
@@ -6335,15 +6144,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής 2FA"
-      ],
-      "Keep both": [
-        "Κρατήστε και τα δύο"
-      ],
-      "Keep both files": [
-        "Κρατήστε και τα δύο αρχεία"
-      ],
-      "Keep both folders": [
-        "Κρατήστε και τους δύο φακέλους"
       ],
       "Label messages as": [
         "Επισήμανση μηνυμάτων ως"
@@ -6468,12 +6268,6 @@
       "Regular expression": [
         "Κανονική έκφραση"
       ],
-      "Replace existing file": [
-        "Αντικατάσταση υπάρχοντος αρχείου"
-      ],
-      "Replace existing folder": [
-        "Αντικατάσταση υπάρχοντος φακέλου"
-      ],
       "Require password": [
         "Απαίτηση κωδικού πρόσβασης"
       ],
@@ -6497,12 +6291,6 @@
       ],
       "Skip feedback": [
         "Παράλειψη σχολίων"
-      ],
-      "Skip file": [
-        "Παράλειψη αρχείου"
-      ],
-      "Skip folder": [
-        "Παράλειψη φακέλου"
       ],
       "Starts with": [
         "Ξεκινάει με"
@@ -8237,14 +8025,17 @@
       "Failed to delete document": [
         "Αποτυχία διαγραφής εγγράφου"
       ],
-      "Failed to download files: ${ err }": [
-        "Αποτυχία λήψης αρχείων: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Αποτυχία φόρτωσης λεπτομερειών πρόσκλησης"
       ],
+      "Failed to load invitations": [
+        "Αποτυχία φόρτωσης προσκλήσεων"
+      ],
       "Failed to load sharing details": [
         "Αποτυχία φόρτωσης λεπτομερειών κοινής χρήσης"
+      ],
+      "Failed to reject invitation": [
+        "Αποτυχία απόρριψης πρόσκλησης"
       ],
       "Failed to reject share invitation": [
         "Αποτυχία απόρριψης πρόσκλησης κοινής χρήσης"
@@ -8258,18 +8049,12 @@
       "Failed to trash document": [
         "Αποτυχία διαγραφής εγγράφου"
       ],
-      "Failed to upload files: ${ err }": [
-        "Αποτυχία μεταφόρτωσης αρχείων: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Το αρχείο ή ο φάκελος \"${ filename }\" και ${ count } άλλο ήδη μεταφορτώνονται",
         "Το αρχείο ή ο φάκελος \"${ filename }\" και ${ count } άλλα ήδη μεταφορτώνονται"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Το αρχείο ή ο φάκελος \"${ filename }\" ήδη μεταφορτώνεται"
-      ],
-      "File or folder is missing a name": [
-        "Το αρχείο ή ο φάκελος στερείται ονόματος"
       ],
       "Invitation's email was sent again": [
         "Το μήνυμα ηλεκτρονικού ταχυδρομείου πρόσκλησης στάλθηκε ξανά"
@@ -8288,9 +8073,6 @@
       "Move ${ n } item": [
         "Μετακίνηση ${ n } στοιχείου",
         "Μετακίνηση ${ n } στοιχείων"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Δεν υπάρχει αρκετός χώρος για αποστολή ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Ενημερώθηκε η πρόσβαση σε δημόσιο σύνδεσμο"
@@ -10237,9 +10019,6 @@
       "Birthday": [
         "Γενέθλια"
       ],
-      "Browser might run out of memory": [
-        "Ο περιηγητής ενδέχεται να ξεμείνει από μνήμη"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Ακύρωση συνδρομής ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -10398,26 +10177,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Υποβάθμιση σε ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Κάντε λήψη ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Λήψη εφαρμογών ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Λήψη της εφαρμογής"
-      ],
-      "Download unverified file?": [
-        "Λήψη μη επαληθευμένου αρχείου;"
-      ],
-      "Download unverified folder?": [
-        "Λήψη μη επαληθευμένου φακέλου;"
-      ],
-      "Duplicate file found": [
-        "Βρέθηκε ομώνυμο αρχείο"
-      ],
-      "Duplicate folder found": [
-        "Βρέθηκε ομώνυμος φάκελος"
       ],
       "Edit contact": [
         "Επεξεργασία επαφής"
@@ -10600,9 +10364,6 @@
       "Other names": [
         "Άλλα ονόματα"
       ],
-      "Performance might be affected": [
-        "Ίσως επηρεαστεί η απόδοση"
-      ],
       "Phone numbers": [
         "Αριθμοί Τηλεφώνου"
       ],
@@ -10774,9 +10535,6 @@
       "Upload and share files": [
         "Μεταφορτώστε και μοιραστείτε αρχεία"
       ],
-      "Uploading a large file or folder": [
-        "Αποστολή μεγάλου αρχείου ή φακέλου"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Χρησιμοποιήστε το ${ VPN_SHORT_APP_NAME } για την προστασία των προσωπικών δεδομένων σας"
       ],
@@ -10821,9 +10579,6 @@
       ],
       "Your document cannot be loaded": [
         "Δεν είναι δυνατή η φόρτωση του εγγράφου σας"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Η λήψη σας περιλαμβάνει ένα αρχείο ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
@@ -10971,6 +10726,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Αναβαθμίστε σε ένα υποστηριζόμενο πρόγραμμα για να χρησιμοποιήσετε ρόλους διαχειριστή."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Θα μπορείτε να αναθέσετε ρόλους μόλις ο χρήστης αποδεχτεί την πρόσκληση."
       ]

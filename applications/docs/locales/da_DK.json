@@ -112,15 +112,6 @@
       "Cancel": [
         "Annullér"
       ],
-      "Cancel all downloads": [
-        "Afbryd alle downloads"
-      ],
-      "Cancel all uploads": [
-        "Annullér alle uploads"
-      ],
-      "Cancel download": [
-        "Annullér download"
-      ],
       "Cancel subscription": [
         "Opsig abonnement"
       ],
@@ -207,9 +198,6 @@
       ],
       "Continue": [
         "Fortsæt"
-      ],
-      "Continue downloading": [
-        "Fortsæt med at downloade"
       ],
       "Continue import": [
         "Fortsæt import"
@@ -335,9 +323,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Download en kopi (som xlsx)"
-      ],
-      "Download anyway": [
-        "Download alligevel"
       ],
       "Download debug information": [
         "Download fejlfindingsoplysninger"
@@ -681,9 +666,6 @@
       "Rename document": [
         "Omdøb dokument"
       ],
-      "Replace file": [
-        "Erstat fil"
-      ],
       "Report a problem": [
         "Anmeld et problem"
       ],
@@ -902,9 +884,6 @@
       ],
       "Upload and share files": [
         "Upload og del filer"
-      ],
-      "Upload anyway": [
-        "Upload alligevel"
       ],
       "Upload picture": [
         "Upload billede"
@@ -3278,20 +3257,8 @@
       "Failed to update public share node": [
         "Det lykkedes ikke at opdatere offentlig delingsknude"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Filen \"${ name }\" er allerede ved at blive hentet"
-      ],
-      "File cannot be merged with folder": [
-        "Fil kan ikke flettes med mappe"
-      ],
-      "File selection is already downloading": [
-        "Valgte filer er allerede ved at blive hentet"
-      ],
       "First name is too long": [
         "Fornavn er for langt"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Mappen \"${ name }\" er allerede ved at blive hentet"
       ],
       "Folder name cannot be empty.": [
         "Mappenavn må ikke være tomt."
@@ -3543,9 +3510,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Den oprindelige fil er ikke uploadet endnu, prøv igen senere"
-      ],
-      "The original folder not found": [
-        "Den oprindelige mappe ikke fundet"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Der er for mange mapper i din eksterne konto. Rediger venligst importen for at slette nogle mapper."
@@ -4549,9 +4513,6 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } filer kan ikke downloades direkte og vil ikke blive inkluderet i dette download. Du kan downloade de andre filer ved at klikke på 'Fortsæt med at downloade'."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } giver dig mulighed for at samarbejde i realtid med end-to-end-kryptering, der giver komplet privatliv. Opret en kopi for at begynde at redigere, eller bed ejeren om redigeringsadgang."
       ],
@@ -4610,9 +4571,6 @@
         "${ updated } kontakt blev opdateret.",
         "${ updated } kontakter blev opdateret."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } findes allerede på denne placering."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskerer din IP-adresse, så websteder ikke kan identificere dig."
       ],
@@ -4641,12 +4599,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN }-forbindelse til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)",
         "+${ organization.BonusVPN }-forbindelser til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)"
-      ],
-      "A number will be added to the filename": [
-        "Et nummer vil blive tilføjet filnavnet"
-      ],
-      "A number will be added to the folder name": [
-        "Et nummer vil blive tilføjet mappenavnet"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan kun bruges til at bekræfte én ${ BRAND_NAME }-konto"
@@ -4698,9 +4650,6 @@
       ],
       "Already in this folder": [
         "Allerede i denne mappe"
-      ],
-      "an anonymous user": [
-        "en anonym bruger"
       ],
       "and": [
         "og"
@@ -4773,9 +4722,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
-      ],
-      "Checking signatures": [
-        "Kontrollerer signaturer"
       ],
       "Choose a plan that works best for you.": [
         "Vælg et abonnement, der passer bedst til dig."
@@ -4872,12 +4818,6 @@
       "Details": [
         "Detaljer"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digital signatur verificeret. Denne fil blev uploaded sikkert af ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digital signatur verificeret. Denne mappe blev uploaded sikkert af ${ emailAddress }."
-      ],
       "Display word count": [
         "Vis antal ord"
       ],
@@ -4904,12 +4844,6 @@
       ],
       "Download current logs": [
         "Download aktuelle logs"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Hent af ${ downloadFileName } afbrydes"
-      ],
-      "Download was canceled": [
-        "Download blev annulleret"
       ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
@@ -5004,15 +4938,6 @@
       "File \"${ name }\" was deleted during download": [
         "Filen \"${ name }\" blev slettet under download"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Fil mangler signatur. Vi kunne ikke verificere at ${ emailAddress } uploadede ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Filen mangler sin signatur. Vi kunne ikke verificere, hvem der uploadede ${ fileName }."
-      ],
-      "File will not be updated": [
-        "Filen vil ikke blive opdateret"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Kun filer (ingen fotos, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
       ],
@@ -5021,18 +4946,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Mappen \"${ link.name }\" blev slettet under download"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Mappen mangler sin signatur. Vi kunne ikke verficere at ${ emailAddress } uploadede ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Mappen mangler sin signatur. Vi kunne ikke verificere, hvem der uploadede ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "Mappe vil ikke blive uploadet"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "For de bedste resultater bør du undgå streaming og hukommelsesintensive aktiviteter eller dele dit upload op i mindre bidder."
       ],
       "Forgot password?": [
         "Glemt din adgangskode?"
@@ -5145,9 +5058,6 @@
       ],
       "Invite link copied": [
         "Invitationslink kopieret"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Det ser ud til, at du for nylig har forsøgt at uploade ${ uploadName }. Hvis upload mislykkedes, bedes du ${ replaceFile }. Hvis upload stadig er i gang, vil det annullere det igangværende upload."
       ],
       "It's better to have:": [
         "Det er bedre at have:"
@@ -5415,9 +5325,6 @@
       "Recents": [
         "Seneste"
       ],
-      "recommended browser": [
-        "anbefalet browser"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
       ],
@@ -5484,12 +5391,6 @@
       "Show table of contents": [
         "Vis indholdsfortegnelsen"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Signaturen kan ikke valideres grundet en netværksfejl, prøv venligst igen senere."
-      ],
-      "Signature check will be ignored": [
-        "Tjek af signatur ignoreres"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
@@ -5539,26 +5440,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Kontoen kan have fået en ny nøgle, eller følgende kan være blevet manipuleret: ${ items }. Åbn kun, hvis du har tillid til den."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Forfatterskabet til ændringer i dokumentet kunne ikke bekræftes. Vil du markere dette dokument som bekræftet? Vælg Ignorer for at afgøre det senere."
       ],
       "The Beginning": [
         "Begyndelsen"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Den digitale signatur er delvist verificeret. Denne fil blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så brugerens identitet kan ikke verificeres."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Den digitale signatur er delvist verificeret. Denne mappe blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så brugerens identitet kan ikke verificeres."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Der kan være blevet manipuleret med følgende: ${ items }. Åbn kun, hvis du har tillid til den."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ejeren af denne adresse har deaktiveret end-to-end-kryptering. For at kunne sende krypterede e-mails til denne adresse, skal ejeren genaktivere end-to-end-kryptering."
@@ -5629,23 +5518,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Dette vil permanent slette de valgte elementer, du har uploadet."
       ],
-      "This will replace the existing file with the folder": [
-        "Dette vil erstatte den eksisterende fil med mappen"
-      ],
-      "This will replace the existing folder with the file": [
-        "Dette vil erstatte den eksisterende mappe med filen"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
-      ],
-      "This will upload a new version of the file": [
-        "Dette vil uploade en ny version af filen"
-      ],
-      "This will upload a new version of the folder": [
-        "Dette vil uploade en ny version af mappen"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "For at downloade ${ DOCS_APP_NAME }-filerne skal du åbne dem i ${ DOCS_APP_NAME } og eksportere dem."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
@@ -5671,14 +5545,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Overførsel annulleret for fil \"${ name }\""
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Overførsel annulleret for mappe \"${ name }\""
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Overførsel sprunget over for fil \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Overførsel sprunget over for mappe \"${ folderName }\""
       ],
       "Trash": [
         "Papirkurv"
@@ -5691,9 +5559,6 @@
       ],
       "Undo successful": [
         "Fortryd lykkedes"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Desværre ser det ud til, at filen eller nogle af dens data ikke kan dekrypteres."
       ],
       "Update recent documents": [
         "Opdater seneste dokumenter"
@@ -5709,9 +5574,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Opgradér for at beholde dine ${ planTitle }-fordele."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Upload af hundredvis af filer på én gang kan have en effekt på ydeevnen."
       ],
       "Uppercase and lowercase letters": [
         "Store og små bogstaver"
@@ -5736,12 +5598,6 @@
       ],
       "Warning": [
         "Advarsel"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Vi kunne ikke verficere at ${ emailAddress } uploadede ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Vi kunne ikke bekræfte, hvem der uploadede ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Vi sender dig en e-mail, når importen er færdig."
@@ -5905,9 +5761,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Dine ændringer kunne ikke synkroniseres. Drive vil forsøge at gemme ændringerne automatisk. Luk ikke websiden."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Din nuværende browser understøtter ikke hentning af store filer på grund af manglende adgang til såkaldte service workers. Ved hentning af store filer kan browseren fryse eller holde op med at svare. Brug de nyeste versioner af en ${ recommendedBrowser } og prøv igen."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Dit nuværende dokument vil blive erstattet med denne version. Kommentarer og forslag vil blive fjernet fra dokumentet, men vil fortsat være tilgængelige i kommentarhistorikken."
       ],
@@ -6010,32 +5863,6 @@
         "Kun visning"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "filegenskaber"
-      ],
-      "file data": [
-        "fildata"
-      ],
-      "file data key": [
-        "fildatanøgle"
-      ],
-      "file data order": [
-        "rækkefølge af filoplysninger"
-      ],
-      "hash key": [
-        "hash-nøgle"
-      ],
-      "keys": [
-        "nøgler"
-      ],
-      "name": [
-        "navn"
-      ],
-      "thumbnail": [
-        "miniature"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Aktiv signerende part"
@@ -6126,15 +5953,6 @@
       "App password": [
         "App-adgangskode"
       ],
-      "Apply to all duplicated files": [
-        "Anvend på alle fildubletter"
-      ],
-      "Apply to all duplicated folders": [
-        "Anvend på alle dubletmapper"
-      ],
-      "Apply to all unverified items": [
-        "Anvend på alle uverificerede elementer"
-      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -6161,9 +5979,6 @@
       ],
       "can view": [
         "kan se"
-      ],
-      "Cancel download": [
-        "Afbryd download"
       ],
       "Category": [
         "Kategori"
@@ -6228,14 +6043,8 @@
       "Don't show this again": [
         "Vis ikke dette igen"
       ],
-      "Download anyway": [
-        "Download alligevel"
-      ],
       "Drive": [
         "Drev"
-      ],
-      "Duplicate found": [
-        "Dublet fundet"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "fx på Amazon, eBay osv."
@@ -6338,15 +6147,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Integreret 2FA-godkendelsesværktøj"
-      ],
-      "Keep both": [
-        "Behold begge"
-      ],
-      "Keep both files": [
-        "Behold begge filer"
-      ],
-      "Keep both folders": [
-        "Behold begge mapper"
       ],
       "Label messages as": [
         "Giv beskeder etiketten"
@@ -6471,12 +6271,6 @@
       "Regular expression": [
         "Regulært udtryk"
       ],
-      "Replace existing file": [
-        "Erstat eksisterende fil"
-      ],
-      "Replace existing folder": [
-        "Erstat eksisterende mappe"
-      ],
       "Require password": [
         "Kræv adgangskode"
       ],
@@ -6500,12 +6294,6 @@
       ],
       "Skip feedback": [
         "Spring feedback over"
-      ],
-      "Skip file": [
-        "Spring fil over"
-      ],
-      "Skip folder": [
-        "Spring mappe over"
       ],
       "Starts with": [
         "Begynder med"
@@ -8240,14 +8028,17 @@
       "Failed to delete document": [
         "Kunne ikke slette dokumentet"
       ],
-      "Failed to download files: ${ err }": [
-        "Kunne ikke downloade filer: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Kunne ikke indlæse invitationsdetaljer"
       ],
+      "Failed to load invitations": [
+        "Kunne ikke indlæse invitationer"
+      ],
       "Failed to load sharing details": [
         "Kunne ikke indlæse detaljer om deling"
+      ],
+      "Failed to reject invitation": [
+        "Kunne ikke afvise invitationen"
       ],
       "Failed to reject share invitation": [
         "Kunne ikke afvise invitation til at dele"
@@ -8261,18 +8052,12 @@
       "Failed to trash document": [
         "Dokumentet kunne ikke flyttes til papirkurven"
       ],
-      "Failed to upload files: ${ err }": [
-        "Kunne ikke uploade filer: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Fil eller mappe \"${ filename }\" og ${ count } anden uploader allerede",
         "Fil eller mappe \"${ filename }\" og ${ count } andre uploader allerede"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Fil eller mappe \"${ filename }\" uploader allerede"
-      ],
-      "File or folder is missing a name": [
-        "Der mangler et navn på en fil eller mappe"
       ],
       "Invitation's email was sent again": [
         "E-mailen med invitationen blev sendt igen"
@@ -8291,9 +8076,6 @@
       "Move ${ n } item": [
         "Flyt ${ n } element",
         "Flyt ${ n } elementer"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Ikke nok plads til at uploade ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Adgang til offentligt link opdateret"
@@ -10240,9 +10022,6 @@
       "Birthday": [
         "Fødselsdag"
       ],
-      "Browser might run out of memory": [
-        "Browseren løber måske tør for hukommelse"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Opsig abonnement på ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -10401,26 +10180,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Nedgrader til ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Download ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME }-apps"
       ],
       "Download the app": [
         "Download appen"
-      ],
-      "Download unverified file?": [
-        "Download ubekræftet fil?"
-      ],
-      "Download unverified folder?": [
-        "Download ubekræftet mappe?"
-      ],
-      "Duplicate file found": [
-        "Dublet af fil fundet"
-      ],
-      "Duplicate folder found": [
-        "Dublet af mappe fundet"
       ],
       "Edit contact": [
         "Rediger kontakt"
@@ -10603,9 +10367,6 @@
       "Other names": [
         "Andre navne"
       ],
-      "Performance might be affected": [
-        "Ydeevnen kan blive påvirket"
-      ],
       "Phone numbers": [
         "Telefonnumre"
       ],
@@ -10777,9 +10538,6 @@
       "Upload and share files": [
         "Upload og del filer"
       ],
-      "Uploading a large file or folder": [
-        "Uploader en stor fil eller mappe"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
       ],
@@ -10824,9 +10582,6 @@
       ],
       "Your document cannot be loaded": [
         "Dit dokument kan ikke indlæses"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Dit download inkluderer en ${ DOCS_APP_NAME }-fil"
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
@@ -10974,6 +10729,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Opgradér til en understøttet plan for at bruge administratorroller."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brugeren har accepteret invitationen."
       ]

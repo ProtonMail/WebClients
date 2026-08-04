@@ -112,15 +112,6 @@
       "Cancel": [
         "Avbryt"
       ],
-      "Cancel all downloads": [
-        "Avbryt alla nedladdningar"
-      ],
-      "Cancel all uploads": [
-        "Avbryt all uppladdning"
-      ],
-      "Cancel download": [
-        "Avbryt nedladdning"
-      ],
       "Cancel subscription": [
         "Avsluta prenumeration"
       ],
@@ -207,9 +198,6 @@
       ],
       "Continue": [
         "Fortsätt"
-      ],
-      "Continue downloading": [
-        "Fortsätt nedladdning"
       ],
       "Continue import": [
         "Fortsätt import"
@@ -335,9 +323,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Ladda ner en kopia (som xlsx)"
-      ],
-      "Download anyway": [
-        "Ladda ner ändå"
       ],
       "Download debug information": [
         "Ladda ner felsökningsinformation"
@@ -678,9 +663,6 @@
       "Rename document": [
         "Byt namn på dokument"
       ],
-      "Replace file": [
-        "Ersätt fil"
-      ],
       "Report a problem": [
         "Rapportera ett problem"
       ],
@@ -899,9 +881,6 @@
       ],
       "Upload and share files": [
         "Ladda upp och dela filer"
-      ],
-      "Upload anyway": [
-        "Ladda upp ändå"
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -3265,20 +3244,8 @@
       "Failed to update public share node": [
         "Misslyckades att uppdatera offentlig delningsnod"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Filen “${ name }“ laddas redan ner"
-      ],
-      "File cannot be merged with folder": [
-        "Fil kan inte slås samman med mapp"
-      ],
-      "File selection is already downloading": [
-        "Filval laddas redan ner"
-      ],
       "First name is too long": [
         "Förnamn är för långt"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Mappen “${ name }“ laddas redan ner"
       ],
       "Folder name cannot be empty.": [
         "Mappnamn kan inte vara tomt."
@@ -3530,9 +3497,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Originalfilen har inte laddats upp ännu, försök igen senare"
-      ],
-      "The original folder not found": [
-        "Originalmappen hittades inte"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det finns för många mappar i ditt externa konto. Anpassa importen för att ta bort vissa mappar."
@@ -4536,9 +4500,6 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } kan inte laddas ner direkt och kommer inte att inkluderas i denna nerladdning. Du kan ladda ner de andra filerna genom att klicka på 'Fortsätt nerladdning'."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } låter dig samarbeta i realtid med end-to-end-kryptering för fullständig integritet. Skapa en kopia för att börja redigera, eller be ägaren om redigeringsåtkomst."
       ],
@@ -4597,9 +4558,6 @@
         "${ updated } kontakt uppdaterades.",
         "${ updated } kontakter uppdaterades."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } finns redan på denna plats."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskerar din IP-adress så webbplatser inte kan identifiera dig."
       ],
@@ -4628,12 +4586,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } anslutning för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)",
         "+${ organization.BonusVPN } anslutningar för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)"
-      ],
-      "A number will be added to the filename": [
-        "Ett nummer kommer att läggas till filnamnet"
-      ],
-      "A number will be added to the folder name": [
-        "Ett nummer kommer läggas till mappnamnet"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ett telefonnummer kan endast användas för att verifiera ett ${ BRAND_NAME }-konto"
@@ -4685,9 +4637,6 @@
       ],
       "Already in this folder": [
         "Redan i denna mapp"
-      ],
-      "an anonymous user": [
-        "en anonym användare"
       ],
       "and": [
         "och"
@@ -4760,9 +4709,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontrollerar kontakt ${ progress } av ${ max }..."
-      ],
-      "Checking signatures": [
-        "Kontrollerar signaturer"
       ],
       "Choose a plan that works best for you.": [
         "Välj ett paket som passar dig bäst."
@@ -4859,12 +4805,6 @@
       "Details": [
         "Detaljer"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digital signatur verifierad. Denna fil laddades upp säkert av ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digital signatur verifierad. Denna mapp laddades upp säkert av ${ emailAddress }."
-      ],
       "Display word count": [
         "Visa antalet ord"
       ],
@@ -4891,12 +4831,6 @@
       ],
       "Download current logs": [
         "Ladda ner nuvarande loggar"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Nedladdning av ${ downloadFileName } kommer att avbrytas"
-      ],
-      "Download was canceled": [
-        "Nedladdning avbröts"
       ],
       "Drop file here to upload": [
         "Släpp fil här för att ladda upp"
@@ -4991,15 +4925,6 @@
       "File \"${ name }\" was deleted during download": [
         "Fil “${ name }“ togs bort under nedladdningen"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Fil saknar signatur. Vi kunde inte verifiera att ${ emailAddress } laddade upp ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Fil saknar signatur. Vi kunde inte verifiera vem som laddade upp ${ fileName }."
-      ],
-      "File will not be updated": [
-        "Fil kommer inte att uppdateras"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Endast filer (inga foton, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – totalt upp till 100 GB, 100 000 filer och 50 GB per fil"
       ],
@@ -5008,18 +4933,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Mapp “${ link.name }“ togs bort under nedladdningen"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Mapp saknar signatur. Vi kunde inte verifiera att ${ emailAddress } laddade upp ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Mapp saknar signatur. Vi kunde inte verifiera vem som laddade upp ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "Mappen kommer inte laddas upp"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "För bästa resultat bör du undvika streaming och minneskrävande aktiviteter eller dela upp din uppladdning i mindre partier."
       ],
       "Forgot password?": [
         "Gömt lösenord?"
@@ -5129,9 +5042,6 @@
       ],
       "Invite link copied": [
         "Inbjudningslänk kopierad"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Det verkar som att du nyligen försökte ladda upp ${ uploadName }. Om uppladdningen misslyckades, ${ replaceFile }. Om uppladdningen fortfarande pågår kommer den pågående uppladdningen att avbrytas om den ersätts."
       ],
       "It's better to have:": [
         "Det är bättre att ha:"
@@ -5396,9 +5306,6 @@
       "Recents": [
         "Senaste"
       ],
-      "recommended browser": [
-        "rekommenderad webbläsare"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
       ],
@@ -5465,12 +5372,6 @@
       "Show table of contents": [
         "Visa innehållsförteckning"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Signatur kan inte valideras på grund av nätverksfel, försök igen senare."
-      ],
-      "Signature check will be ignored": [
-        "Signaturkontroll kommer att ignoreras"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
       ],
@@ -5491,6 +5392,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Håll dig ansluten utan ansträngning genom att aktivera följande VPN-inställningar:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Stanna kvar på ditt paket och få 50 % rabatt för din nästa månad"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Prenumeration förnyas automatiskt varje ${ cycle } månad.",
@@ -5517,26 +5421,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Kontot kanske har en ny nyckel eller så har något av följande mixtrats med: ${ items }. Öppna endast om du litar på den."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Författarskapet av redigeringar i dokumentet kan inte verifieras. Vill du markera detta dokument som verifierat? Du kan välja att ignorera för att bestämma dig senare."
       ],
       "The Beginning": [
         "Början"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Den digitala signaturen har delvis verifierats. Denna fil laddades upp med en offentlig åtkomlig delningslänk av en användare utan ett ${ BRAND_NAME }-konto, så deras identitet kan inte verifieras."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Den digitala signaturen har delvis verifierats. Denna mapp laddades upp med en offentlig åtkomlig delningslänk av en användare utan ett ${ BRAND_NAME }-konto, så deras identitet kan inte verifieras."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Följande kan ha manipulerats: ${ items }. Öppna bara om du litar på det."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ägaren till denna adress har inaktiverat end-to-end-kryptering. För att kunna skicka krypterad e-post till denna adress måste ägaren återaktivera end-to-end-kryptering."
@@ -5546,6 +5438,9 @@
       ],
       "There are no documents in the trash.": [
         "Det finns inga dokument i papperskorgen."
+      ],
+      "Thinking about this": [
+        "Tänker på detta"
       ],
       "This action will delete the link and revoke access for all users.": [
         "Denna åtgärd kommer ta bort länken och återkalla åtkomst för alla användare."
@@ -5604,23 +5499,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Detta kommer ta bort de valda objekten du laddade upp permanent."
       ],
-      "This will replace the existing file with the folder": [
-        "Detta kommer ersätta den befintliga filen med mappen"
-      ],
-      "This will replace the existing folder with the file": [
-        "Detta kommer ersätta den befintliga mappen med filen"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
-      ],
-      "This will upload a new version of the file": [
-        "Detta kommer ladda upp en ny version av filen"
-      ],
-      "This will upload a new version of the folder": [
-        "Detta kommer ladda upp en ny version av mappen"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "För att ladda ner ${ DOCS_APP_NAME }-filerna, öppna dem i ${ DOCS_APP_NAME } och exportera dem."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
@@ -5646,14 +5526,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Överföringen avbröts för filen \"${ name }\""
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Överföringen avbröts för mapp ”${ name }”"
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Överföringen hoppades över för filen \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Överföring hoppades över för mapp ”${ folderName }”"
       ],
       "Trash": [
         "Papperskorg"
@@ -5666,9 +5540,6 @@
       ],
       "Undo successful": [
         "Ångra lyckades"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Tyvärr verkar det som om filen eller en del av dess data inte kan dekrypteras."
       ],
       "Update recent documents": [
         "Uppdatera senaste dokument"
@@ -5684,9 +5555,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Uppgradera för att behålla dina ${ planTitle }-förmåner."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Att ladda upp hundratals filer på samma gång kan påverka prestandan."
       ],
       "Uppercase and lowercase letters": [
         "Stora och små bokstäver"
@@ -5711,12 +5579,6 @@
       ],
       "Warning": [
         "Varning"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Fil saknar signatur. Vi kunde inte verifiera att ${ emailAddress } laddade upp ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Vi kunde inte verifiera vem som laddat upp ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Vi skickar e-post till dig när importen är klar."
@@ -5880,9 +5742,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Dina ändringar misslyckades att synkroniseras. Drive kommer försöka spara ändringarna automatiskt. Stäng inte webbsidan."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Din nuvarande webbläsare stöder inte nedladdning av stora filer på grund av otillgänglighet för servicearbete. Nedladdning av stora filer kan frysa eller göra att webbläsaren inte svarar. Använd de senaste versionerna av en ${ recommendedBrowser } och försök igen."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Ditt nuvarande dokument kommer att ersättas med denna version. Kommentarer och förslag kommer att tas bort från dokumentet men förblir åtkomliga i kommentarshistoriken."
       ],
@@ -5985,32 +5844,6 @@
         "Endast visa"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "filattribut"
-      ],
-      "file data": [
-        "fildata"
-      ],
-      "file data key": [
-        "fildatanyckel"
-      ],
-      "file data order": [
-        "fildataordning"
-      ],
-      "hash key": [
-        "hash-nyckel"
-      ],
-      "keys": [
-        "nycklar"
-      ],
-      "name": [
-        "namn"
-      ],
-      "thumbnail": [
-        "miniatyr"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Aktiv undertecknare"
@@ -6080,6 +5913,9 @@
       "Allow editors to change permissions and share": [
         "Tillåt redaktörer att ändra behörigheter och dela"
       ],
+      "Allow editors to change permissions and share.": [
+        "Tillåt redaktörer att ändra behörigheter och dela."
+      ],
       "Anonymous": [
         "Anonymt"
       ],
@@ -6097,15 +5933,6 @@
       ],
       "App password": [
         "Applösenord"
-      ],
-      "Apply to all duplicated files": [
-        "Tillämpa till alla duplicerade filer"
-      ],
-      "Apply to all duplicated folders": [
-        "Tillämpa till alla duplicerade mappar"
-      ],
-      "Apply to all unverified items": [
-        "Tillämpa på alla overifierade objekt"
       ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
@@ -6133,9 +5960,6 @@
       ],
       "can view": [
         "kan visa"
-      ],
-      "Cancel download": [
-        "Avbryt nedladdning"
       ],
       "Category": [
         "Kategori"
@@ -6200,14 +6024,8 @@
       "Don't show this again": [
         "Visa inte detta igen"
       ],
-      "Download anyway": [
-        "Ladda ner ändå"
-      ],
       "Drive": [
         "Drive"
-      ],
-      "Duplicate found": [
-        "Duplikat hittades"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "t.ex. Amazon, eBay, Etsy"
@@ -6310,15 +6128,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Integrerad 2FA-autentisering"
-      ],
-      "Keep both": [
-        "Behåll båda"
-      ],
-      "Keep both files": [
-        "Behåll båda filerna"
-      ],
-      "Keep both folders": [
-        "Behåll båda mapparna"
       ],
       "Label messages as": [
         "Märk meddelanden som"
@@ -6443,12 +6252,6 @@
       "Regular expression": [
         "Vanligt uttryck"
       ],
-      "Replace existing file": [
-        "Ersätt befintlig fil"
-      ],
-      "Replace existing folder": [
-        "Ersätt befintlig mapp"
-      ],
       "Require password": [
         "Kräv lösenord"
       ],
@@ -6472,12 +6275,6 @@
       ],
       "Skip feedback": [
         "Hoppa över feedback"
-      ],
-      "Skip file": [
-        "Hoppa över fil"
-      ],
-      "Skip folder": [
-        "Hoppa över mapp"
       ],
       "Starts with": [
         "Börjar med"
@@ -8266,14 +8063,17 @@
       "Failed to delete document": [
         "Misslyckades att ta bort dokument"
       ],
-      "Failed to download files: ${ err }": [
-        "Misslyckades att ladda ner filer: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Misslyckades att ladda inbjudningsdetaljer"
       ],
+      "Failed to load invitations": [
+        "Misslyckades att ladda inbjudningar"
+      ],
       "Failed to load sharing details": [
         "Misslyckades att ladda delningsdetaljer"
+      ],
+      "Failed to reject invitation": [
+        "Misslyckades att avvisa inbjudan"
       ],
       "Failed to reject share invitation": [
         "Misslyckades att avvisa delningsinbjudan"
@@ -8287,18 +8087,12 @@
       "Failed to trash document": [
         "Misslyckades att slänga dokument"
       ],
-      "Failed to upload files: ${ err }": [
-        "Misslyckades att ladda upp filer: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Filen eller mappen \"${ filename }\" och ${ count } andra laddas redan upp",
         "Filen eller mappen \"${ filename }\" och ${ count } andra laddas redan upp"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Fil eller mapp ”${ filename }” laddas redan upp"
-      ],
-      "File or folder is missing a name": [
-        "Fil eller mapp saknar ett namn"
       ],
       "Invitation's email was sent again": [
         "E-postinbjudan skickades igen"
@@ -8317,9 +8111,6 @@
       "Move ${ n } item": [
         "Flytta ${ n } objekt",
         "Flytta ${ n } objekt"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Inte tillräckligt med utrymme för att ladda upp ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Offentlig länkåtkomst uppdaterad"
@@ -10266,9 +10057,6 @@
       "Birthday": [
         "Födelsedag"
       ],
-      "Browser might run out of memory": [
-        "Webbläsaren kan få slut på minne"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Avsluta ${ MAIL_SHORT_APP_NAME }-prenumeration"
       ],
@@ -10427,26 +10215,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Nedgradera till ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Ladda ner ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Ladda ner ${ DRIVE_APP_NAME } appar"
       ],
       "Download the app": [
         "Ladda ner appen"
-      ],
-      "Download unverified file?": [
-        "Ladda ner overifierad fil?"
-      ],
-      "Download unverified folder?": [
-        "Ladda ner overifierad mapp?"
-      ],
-      "Duplicate file found": [
-        "Dubblettfil hittades"
-      ],
-      "Duplicate folder found": [
-        "Dubblettmapp hittades"
       ],
       "Edit contact": [
         "Redigera kontakt"
@@ -10629,9 +10402,6 @@
       "Other names": [
         "Andra namn"
       ],
-      "Performance might be affected": [
-        "Prestanda kan påverkas"
-      ],
       "Phone numbers": [
         "Telefonnummer"
       ],
@@ -10803,9 +10573,6 @@
       "Upload and share files": [
         "Ladda upp och dela filer"
       ],
-      "Uploading a large file or folder": [
-        "Laddar upp en stor fil eller mapp"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
       ],
@@ -10850,9 +10617,6 @@
       ],
       "Your document cannot be loaded": [
         "Ditt dokument kan inte laddas"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Din nedladdning inkluderar en ${ DOCS_APP_NAME }-fil"
       ],
       "Your exposed information": [
         "Din exponerade information"
