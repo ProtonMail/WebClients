@@ -1,3 +1,4 @@
+import { registerSshAgentListeners } from 'proton-pass-web/app/Store/ssh-agent.middleware';
 import { store } from 'proton-pass-web/app/Store/store';
 
 import { type SshAgentService, createSshAgentService } from '@proton/pass/lib/ssh-agent/service';
@@ -10,3 +11,5 @@ export const sshAgent: MaybeNull<SshAgentService> = DESKTOP_BUILD
           datasource: () => selectVisibleNonTrashedSshKeyItems(store.getState()),
       })
     : null;
+
+if (sshAgent) registerSshAgentListeners(sshAgent);

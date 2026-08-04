@@ -1,11 +1,11 @@
 import { deletePassDB, getPassDBUserID, getPassDBs } from 'proton-pass-web/lib/database';
-import { getSessionKey } from 'proton-pass-web/lib/sessions';
 
 import { getBiometricsStorageKey } from '@proton/pass/lib/auth/lock/biometrics/utils';
 import type { EncryptedAuthSession } from '@proton/pass/lib/auth/session';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
+import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import noop from '@proton/utils/noop';
 
 export const B2B_STORAGE_KEY = 'b2bEvents';
@@ -15,6 +15,9 @@ export const SPOTLIGHT_STORAGE_KEY = 'onboarding';
 
 export const getStorageKey = (prefix: string) => (localID?: number) =>
     localID !== undefined ? `${prefix}::${localID}` : prefix;
+
+export const getSessionKey = (localId?: number) => `${STORAGE_PREFIX}${localId ?? 0}`;
+export const getLocalIDFromSessionKey = (key: string) => parseInt(key.replace(STORAGE_PREFIX, ''), 10);
 
 export const getB2BEventsStorageKey = getStorageKey(B2B_STORAGE_KEY);
 export const getSettingsStorageKey = getStorageKey(SETTINGS_STORAGE_KEY);

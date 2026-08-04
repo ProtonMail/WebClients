@@ -9,7 +9,7 @@ import { deletePassDB } from 'proton-pass-web/lib/database';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { spotlight } from 'proton-pass-web/lib/spotlight';
 import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
-import { clearUserLocalData, localGarbageCollect } from 'proton-pass-web/lib/storage';
+import { clearUserLocalData, getSessionKey, localGarbageCollect } from 'proton-pass-web/lib/storage';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getThemeForLocalID } from 'proton-pass-web/lib/theme';
 import { c } from 'ttag';
@@ -84,7 +84,6 @@ import {
     getPersistedLocalIDsForUserID,
     getPersistedSession,
     getPersistedSessions,
-    getSessionKey,
     setPendingRevocation,
 } from './sessions';
 
