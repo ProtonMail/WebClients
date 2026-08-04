@@ -4,9 +4,9 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
 import type { ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { deletePassDB } from 'proton-pass-web/lib/database';
-import { getPersistedSession, getSessionKey, getSwitchableSessions } from 'proton-pass-web/lib/sessions';
+import { getPersistedSession, getSwitchableSessions } from 'proton-pass-web/lib/sessions';
 import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
-import { clearUserLocalData } from 'proton-pass-web/lib/storage';
+import { clearUserLocalData, getSessionKey } from 'proton-pass-web/lib/storage';
 
 import useInstance from '@proton/hooks/useInstance';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
