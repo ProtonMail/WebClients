@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import LumoAgentDrawerContext from '@proton/components/components/drawer/views/lumoAgent/lumoAgentDrawerContext';
 import useLumoAgent from '@proton/components/components/lumoAgent/useLumoAgent';
+import { useFilters } from '@proton/mail/store/filters/hooks';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
@@ -30,12 +31,14 @@ const LumoMailProvider = ({ children }: Props) => {
     const { applyLocation } = useApplyLocation();
     const [folders = []] = useFolders();
     const [labels = []] = useLabels();
+    const [filters = []] = useFilters();
     const [mailSettings] = useMailSettings();
 
     // Latest values, refreshed every render, so the once-built handlers always read the current
     // snapshot (mirrors the POC's ref pattern; keeps the config referentially stable).
-    const latest = useRef({ store, history, applyLocation, folders, labels, mailSettings });
-    latest.current = { store, history, applyLocation, folders, labels, mailSettings };
+    const current = { store, history, applyLocation, folders, labels, filters, mailSettings };
+    const latest = useRef(current);
+    latest.current = current;
 
     // Built once: deps read through getters/methods off `latest`, so config identity never changes and
     // useLumoAgent keeps the same executor/session across renders.
@@ -49,6 +52,7 @@ const LumoMailProvider = ({ children }: Props) => {
             },
             getFolders: () => latest.current.folders,
             getLabels: () => latest.current.labels,
+            getFilters: () => latest.current.filters,
             getMailSettings: () => latest.current.mailSettings,
             applyLocation: (params) => latest.current.applyLocation(params),
         };
