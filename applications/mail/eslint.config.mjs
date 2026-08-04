@@ -49,4 +49,24 @@ export default defineConfig([
             '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
         },
     },
+    {
+        // Test state factories must stay import-light: pulling the root reducer into them
+        // would load every slice of the application in every test that builds a state.
+        files: ['src/app/store/**/*.testing.ts'],
+        rules: {
+            '@typescript-eslint/no-restricted-imports': [
+                'error',
+                {
+                    patterns: [
+                        {
+                            group: ['**/rootReducer', '**/store/store', '**/hooks'],
+                            allowTypeImports: true,
+                            message:
+                                'Test state factories may only import types from the store. Build the slice from its own factory or initial state instead.',
+                        },
+                    ],
+                },
+            ],
+        },
+    },
 ]);
