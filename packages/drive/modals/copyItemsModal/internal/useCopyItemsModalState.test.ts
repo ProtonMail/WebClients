@@ -1,9 +1,8 @@
+import { MemberRole, NodeType } from '@protontech/drive-sdk';
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { MemberRole, NodeType } from '@proton/drive';
-import { handleSdkError } from '@proton/drive/legacy/errorHandling';
-import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
-
+import { handleSdkError } from '../../../legacy/errorHandling';
+import { useCreateFolderModal } from '../../createFolderModal';
 import { useCopyItems } from './useCopyItems';
 import { useCopyItemsModalState } from './useCopyItemsModalState';
 
