@@ -3,6 +3,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
+import hasKeylessSsoEntitlement from '@proton/account/scimSetup/hasKeylessSsoEntitlement';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -17,11 +19,14 @@ import scimGroupsHeroImg from '@proton/styles/assets/img/onboarding/scim-groups-
 import scimGroupsApprovalImg from '@proton/styles/assets/img/onboarding/scim-groups-onboarding-tile-approval.svg';
 import scimGroupsInviteImg from '@proton/styles/assets/img/onboarding/scim-groups-onboarding-tile-invite.svg';
 import scimGroupsSyncedImg from '@proton/styles/assets/img/onboarding/scim-groups-onboarding-tile-synced.svg';
+import clsx from '@proton/utils/clsx';
 import range from '@proton/utils/range';
 
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 
-const TOTAL_STEPS = 2;
+// Organizations with the keyless SSO entitlement don't have to approve group changes,
+// so the "what to expect" step doesn't apply to them.
+const getTotalSteps = (isKeyless: boolean) => (isKeyless ? 1 : 2);
 
 const ExpectationRow = ({ illustration, text }: { illustration: string; text: ReactNode }) => (
     <div className="flex flex-row items-center flex-nowrap gap-4">
@@ -37,9 +42,13 @@ const ExpectationRow = ({ illustration, text }: { illustration: string; text: Re
 
 const ScimGroupsOnboardingModal = ({ onClose, ...rest }: ModalProps) => {
     const { update } = useFeature<boolean>(FeatureCode.ScimGroupsOnboardingModal);
+    const [organization] = useOrganization();
+
+    const isKeyless = hasKeylessSsoEntitlement(organization?.PlanName);
 
     const [step, setStep] = useState(0);
-    const isLastStep = step === TOTAL_STEPS - 1;
+    const totalSteps = getTotalSteps(isKeyless);
+    const isLastStep = step === totalSteps - 1;
 
     const handleClose = () => {
         void update(true);
@@ -58,9 +67,9 @@ const ScimGroupsOnboardingModal = ({ onClose, ...rest }: ModalProps) => {
         <ModalTwo className="p-4" {...rest} onClose={handleClose}>
             <ModalTwoHeader
                 title={
-                    isLastStep
-                        ? c('scim').t`What to expect now that group sync is enabled`
-                        : c('scim').t`New: Manage groups via your identity provider`
+                    step === 0
+                        ? c('scim').t`New: Manage groups via your identity provider`
+                        : c('scim').t`What to expect now that group sync is enabled`
                 }
                 className="mx-auto mb-8"
                 titleClassName="text-center text-4xl"
@@ -84,6 +93,14 @@ const ScimGroupsOnboardingModal = ({ onClose, ...rest }: ModalProps) => {
                                         .t`You can now sync groups from your identity provider alongside users. Changes push **automatically** when you update your groups.`
                                 )}
                             </p>
+                            {isKeyless && (
+                                <p className="m-0">
+                                    {getBoldFormattedText(
+                                        c('scim')
+                                            .t`**Existing groups** synced to ${BRAND_NAME} before may now appear when you first access the console`
+                                    )}
+                                </p>
+                            )}
                         </>
                     )}
                     {step === 1 && (
@@ -113,23 +130,25 @@ const ScimGroupsOnboardingModal = ({ onClose, ...rest }: ModalProps) => {
                     )}
                 </div>
             </ModalTwoContent>
-            <ModalTwoFooter className="flex-column flex-nowrap mb-3">
+            <ModalTwoFooter className={clsx('flex-column flex-nowrap', totalSteps > 1 ? 'mb-2' : 'mb-6')}>
                 <Button size="large" color="norm" fullWidth onClick={handleNext}>
                     {isLastStep ? c('Action').t`Got it` : c('Action').t`Next`}
                 </Button>
-                <div className="text-center mb-0">
-                    <StepDots value={step} ulClassName="mb-0 mt-2">
-                        {range(0, TOTAL_STEPS).map((index) => (
-                            <StepDot
-                                active={index === step}
-                                key={index}
-                                index={index}
-                                aria-controls={`scim-groups-onboarding-${index}`}
-                                onClick={() => setStep(index)}
-                            />
-                        ))}
-                    </StepDots>
-                </div>
+                {totalSteps > 1 && (
+                    <div className="text-center mb-0">
+                        <StepDots value={step} ulClassName="mb-0 mt-2">
+                            {range(0, totalSteps).map((index) => (
+                                <StepDot
+                                    active={index === step}
+                                    key={index}
+                                    index={index}
+                                    aria-controls={`scim-groups-onboarding-${index}`}
+                                    onClick={() => setStep(index)}
+                                />
+                            ))}
+                        </StepDots>
+                    </div>
+                )}
             </ModalTwoFooter>
         </ModalTwo>
     );
