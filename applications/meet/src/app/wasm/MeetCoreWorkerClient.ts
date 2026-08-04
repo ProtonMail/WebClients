@@ -295,7 +295,7 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
         return this.request('admitWaitingRoomJoinRequest', [meetLinkName, requestId, sessionKeyBase64]);
     }
 
-    public admitAllWaitingRoomJoinRequests(meetLinkName: string, sessionKeyBase64: string): Promise<void> {
+    public admitAllWaitingRoomJoinRequests(meetLinkName: string, sessionKeyBase64: string): Promise<string[]> {
         return this.request('admitAllWaitingRoomJoinRequests', [meetLinkName, sessionKeyBase64]);
     }
 

@@ -130,7 +130,7 @@ export interface MeetCoreClient {
     setJoinRequestHandler(): Promise<void>;
     clearJoinRequestHandler(): Promise<void>;
     admitWaitingRoomJoinRequest(meetLinkName: string, requestId: string, sessionKeyBase64: string): Promise<void>;
-    admitAllWaitingRoomJoinRequests(meetLinkName: string, sessionKeyBase64: string): Promise<void>;
+    admitAllWaitingRoomJoinRequests(meetLinkName: string, sessionKeyBase64: string): Promise<string[]>;
     rejectWaitingRoomJoinRequest(meetLinkName: string, requestId: string, participantUid: string): Promise<void>;
     updateWaitingRoomSetting(meetLinkName: string, enable: boolean, sessionKeyBase64: string): Promise<void>;
 }

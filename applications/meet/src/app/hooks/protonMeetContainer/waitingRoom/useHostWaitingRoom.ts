@@ -13,7 +13,6 @@ import {
     removeWaitingParticipant,
     removeWaitingParticipants,
     resetWaitingRoom,
-    selectWaitingParticipants,
 } from '@proton/meet/store/slices/waitingRoomSlice';
 import { SECOND } from '@proton/shared/lib/constants';
 import { WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
@@ -40,7 +39,6 @@ export const useHostWaitingRoom = ({
 }) => {
     const dispatch = useMeetDispatch();
     const waitingRoomSetting = useMeetSelector(selectWaitingRoomSetting);
-    const waitingParticipants = useMeetSelector(selectWaitingParticipants);
     const notifyError = useNotifyError();
     const { reportMeetError } = useMeetErrorReporting();
     const { saveMeetingWaitingRoom } = useMeetingUpdates();
@@ -134,9 +132,10 @@ export const useHostWaitingRoom = ({
                 throw new Error('Missing meet core client or session key');
             }
 
-            const admittedRequestIds = waitingParticipants.map(({ requestId }) => requestId);
-
-            await meetCoreClient.admitAllWaitingRoomJoinRequests(meetingLinkName, sessionKeyBase64);
+            const admittedRequestIds = await meetCoreClient.admitAllWaitingRoomJoinRequests(
+                meetingLinkName,
+                sessionKeyBase64
+            );
 
             dispatch(removeWaitingParticipants(admittedRequestIds));
         } catch (error) {
