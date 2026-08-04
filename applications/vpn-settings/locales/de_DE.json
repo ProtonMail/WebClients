@@ -1211,6 +1211,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgrade um ${ PROTON_SENTINEL_NAME } zu aktivieren"
       ],
+      "Upgrade to Professional": [
+        "Auf Professional upgraden"
+      ],
       "Upgrade to view all": [
         "Upgraden, um alle anzusehen"
       ],
@@ -4729,6 +4732,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Du kannst deren Zugang jederzeit entfernen, um die alleinige Kontrolle über dein Konto zurückzugewinnen."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Du wurdest noch für niemanden als Wiederherstellungskontakt bestimmt."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Du wurdest noch für niemanden als Notfallkontakt bestimmt."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Du hast die maximale Anzahl von ${ limit } Notfallkontakt erreicht.",
         "Du hast das Maximum von ${ limit } Notfallkontakten erreicht."
@@ -6064,11 +6073,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Bist du dir sicher, dass du den Sicherheitsschlüssel ${ name } löschen möchtest?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Gib bei jeder Verwendung deines Sicherheitsschlüssels mit ${ BRAND_NAME } deine PIN ein, sofern der Schlüssel diese Funktion unterstützt. Dies gilt nur für Schlüssel, für die eine PIN eingerichtet wurde."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Füge einen Sicherheitsschlüssel ein, der mit Ihrem ${ BRAND_NAME }-Konto verknüpft ist."
       ],
       "Insert your security key into your device.": [
         "Deinen Sicherheitsschlüssel in dein Gerät stecken."
+      ],
+      "PIN requirement for security keys disabled": [
+        "PIN-Anforderung für Sicherheitsschlüssel deaktiviert"
+      ],
+      "PIN requirement for security keys enabled": [
+        "PIN-Anforderung für Sicherheitsschlüssel aktiviert"
+      ],
+      "Require PIN for security key": [
+        "PIN für Sicherheitsschlüssel verlangen"
       ],
       "Security key": [
         "Sicherheitsschlüssel"
@@ -7308,6 +7329,9 @@
       "Authenticator app 2FA enabled": [
         "2FA-Authentifizierungs-App aktiviert"
       ],
+      "Available on VPN Professional": [
+        "Mit VPN Professional verfügbar"
+      ],
       "Awaiting transaction": [
         "Warte auf Transaktion"
       ],
@@ -7710,6 +7734,9 @@
       "Enable email notifications": [
         "E-Mail-Benachrichtigungen aktivieren"
       ],
+      "Enable groups to streamline access control": [
+        "Gruppen aktivieren, um die Zugriffskontrolle zu optimieren"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Aktiviere Single Sign-on, um die Sicherheit deines Unternehmens zu gewährleisten."
       ],
@@ -7739,6 +7766,9 @@
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpunkt-URL, die du von deinem Identitätsanbieter erhalten hast (z.B. https://idp.beispiel.com/sso/saml)."
+      ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "Durchsetzen beginnt automatisch, sobald das Gerät das Profil erkennt."
       ],
       "Enhance your network security": [
         "Erhöhe die Sicherheit deines Netzwerks"
@@ -8188,6 +8218,9 @@
       ],
       "Learn more about Gateways": [
         "Mehr über Gateways erfahren"
+      ],
+      "Learn more about groups": [
+        "Mehr über Gruppen erfahren"
       ],
       "Learn more about single sign-on": [
         "Erfahre mehr über Single Sign-on"
@@ -8767,6 +8800,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
+      "Smart Routed through a different country.": [
+        "Verbindung über Smart Routing durch ein anderes Land umgeleitet."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Smart Routing über: ${ joinedCountries }."
+      ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Manche ${ BRAND_NAME }-Apps unterstützen möglicherweise noch keine Sicherheitsschlüssel. Wenn du die Zwei-Faktor-Authentifizierung per Authenticator-App deaktivierst, kannst du dich möglicherweise nicht bei diesen Apps anmelden."
       ],
@@ -9108,6 +9147,9 @@
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
         "Um wieder Zugriff auf dein Konto und deine Daten zu erhalten, gib bitte die 12-Wort-Wiederherstellungsphrase ein, die deinem Konto zugeordnet ist."
       ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Um Always-on-VPN zu entfernen, lösche auf jedem Gerät ${ profileFile } aus ${ policiesPath }. Der ${ VPN_APP_NAME }-Client hört auf, das Profil durchzusetzen, sobald er feststellt, dass die Datei nicht mehr vorhanden ist."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Um deine Internetverbindung zu schützen, lade die ${ VPN_APP_NAME }-App für dein Gerät herunter, installiere diese und verbinde dich mit einem Server."
       ],
@@ -9183,8 +9225,14 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Upgraden, um ${ PASS_APP_NAME }-Aktivität in deiner Organisation anzusehen."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Jederzeit upgraden oder Speicherplatz freigeben, um den Rest zu übertragen"
+      ],
+      "Upgrade required": [
+        "Upgrade erforderlich"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Upgrade, um deine ${ planTitle }-Vorteile zu behalten."
@@ -9419,6 +9467,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Mit Gruppen kannst Du schnell und einfach E-Mails an alle Mitglieder einer bestimmten Gruppe senden."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Mit VPN Professional können Administratoren für alle Mitglieder der Organisation ein stets aktives VPN sowie private Gateways, Zugriffsrichtlinien und Überwachungsfunktionen durchsetzen."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ohne Aktivierung ist es dir nicht möglich, neue Benutzer anzulegen, E-Mail-Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
@@ -10806,6 +10857,9 @@
       ],
       "Unlimited": [
         "Unbegrenzt"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ],
       "Upload 1 or more encryption keys": [
         "Lade einen oder mehrere Verschlüsselungsschlüssel hoch"
@@ -18106,6 +18160,9 @@
       "Remove via MDM": [
         "Über MDM entfernen"
       ],
+      "Remove via PowerShell": [
+        "Über PowerShell entfernen"
+      ],
       "Rename the gateway": [
         "Benenne das Gateway um"
       ],
@@ -18373,6 +18430,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Auf ${ planName } upgraden"
+      ],
+      "Upgrade to enable Always-on": [
+        "Um Always-on zu aktivieren, upgraden"
       ],
       "Upgrade to keep your premium benefits.": [
         "Upgrade, um deine Premium-Vorteile zu behalten."
@@ -19142,6 +19202,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Dadurch wird eine neue ${ MAIL_APP_NAME }-Adresse erstellt."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Zu einem unterstützten Abonnement upgraden, um Administratorrollen nutzen zu können."
       ],
       "User created": [
         "Benutzer erstellt"

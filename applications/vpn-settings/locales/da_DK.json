@@ -1211,6 +1211,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Opgrader for at aktivere ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Opgrader til Professional"
+      ],
       "Upgrade to view all": [
         "Opgrader for at se alle"
       ],
@@ -4729,6 +4732,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Du kan fjerne deres adgang når som helst for at genvinde fuld kontrol over din konto."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Du er endnu ikke blevet udpeget som en gendannelseskontakt for nogen."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Du er endnu ikke blevet udpeget som nødkontakt for nogen."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "De har nået det maksimale antal på ${ limit } nødkontakt.",
         "Du har nået det maksimale antal på ${ limit } nødkontakter."
@@ -6067,11 +6076,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Er du sikker på du vil slette sikkerhedsnøgle ${ name }?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Når nøglen understøtter det skal du indtaste din PIN-kode hver gang du bruger din sikkerhedsnøgle med ${ BRAND_NAME }. Dette gælder kun for nøgler, der har en PIN-kode sat op."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
       ],
       "Insert your security key into your device.": [
         "Indsæt din sikkerhedsnøgle i din enhed."
+      ],
+      "PIN requirement for security keys disabled": [
+        "Krav om PIN-kode til sikkerhedsnøgle deaktiveret"
+      ],
+      "PIN requirement for security keys enabled": [
+        "Krav om PIN-kode for sikkerhedsnøgler aktiveret"
+      ],
+      "Require PIN for security key": [
+        "Påkræv PIN-kode til sikkerhedsnøgle"
       ],
       "Security key": [
         "Sikkerhedsnøgle"
@@ -7311,6 +7332,9 @@
       "Authenticator app 2FA enabled": [
         "Autentifikator-app 2FA aktiveret"
       ],
+      "Available on VPN Professional": [
+        "Tilgængeligt til VPN Professional"
+      ],
       "Awaiting transaction": [
         "Afventer transaktion"
       ],
@@ -7712,6 +7736,9 @@
       ],
       "Enable email notifications": [
         "Aktivér e-mailnotifikationer"
+      ],
+      "Enable groups to streamline access control": [
+        "Aktivér grupper for at strømline adgangskontrol"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivér single sign-on for at holde din organisation sikker"
@@ -8194,6 +8221,9 @@
       ],
       "Learn more about Gateways": [
         "Lær mere om gateways"
+      ],
+      "Learn more about groups": [
+        "Få mere at vide om grupper"
       ],
       "Learn more about single sign-on": [
         "Lær mere om enkeltlogon"
@@ -8773,6 +8803,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
+      "Smart Routed through a different country.": [
+        "Smart Routet gennem et andet land"
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Smart Routet gennem ${ joinedCountries }"
+      ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Nogle ${ BRAND_NAME }-apps understøtter muligvis ikke sikkerhedsnøgler endnu. Det er ikke sikkert, du kan logge ind på disse apps, his du deaktiverer 2FA fra godkender-appen ."
       ],
@@ -9192,8 +9228,14 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Opgrader nu for at se ${ PASS_APP_NAME }-aktivitet på tværs af din organisation."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Opgrader eller frigør lagerplads når som helst for at overføre resten"
+      ],
+      "Upgrade required": [
+        "Opgradering kræves"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Opgradér for at beholde dine ${ planTitle }-fordele."
@@ -9428,6 +9470,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Med grupper kan du hurtigt og nemt sende mails til alle personer i en bestemt gruppe."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Med VPN Professional kan administratorer håndhæve always-on VPN for alle organisationsmedlemmer, sammen med private gateways, adgangspolitikker og overvågning."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uden aktivering kan du ikke oprette nye brugere, føje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
@@ -10815,6 +10860,9 @@
       ],
       "Unlimited": [
         "Ubegrænset"
+      ],
+      "Upgrade": [
+        "Opgrader"
       ],
       "Upload 1 or more encryption keys": [
         "Upload 1 eller flere krypteringsnøgler"
@@ -18115,6 +18163,9 @@
       "Remove via MDM": [
         "Fjern via MDM"
       ],
+      "Remove via PowerShell": [
+        "Fjern via PowerShell"
+      ],
       "Rename the gateway": [
         "Omdøb gatewayen"
       ],
@@ -18382,6 +18433,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Opgradér til ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "Opgrader for at aktivere always-on"
       ],
       "Upgrade to keep your premium benefits.": [
         "Opgradér for at beholde dine premium-fordele."
@@ -19151,6 +19205,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Dette vil oprette en ny ${ MAIL_APP_NAME }-adresse."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Opgradér til en understøttet plan for at bruge administratorroller."
       ],
       "User created": [
         "Bruger oprettet"

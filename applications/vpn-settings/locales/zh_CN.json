@@ -1211,6 +1211,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "升级账户即可启用 ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "升级 Professional"
+      ],
       "Upgrade to view all": [
         "升级账户查看全部"
       ],
@@ -4693,6 +4696,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "您可以随时移除他们的访问权限，以重新获得对账户的专属控制权。"
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "您尚未被指定为任何人的恢复联系人！"
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "您尚未被指定为任何人的紧急联系人"
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "您已达到 ${ limit } 个紧急联系人的上限"
       ],
@@ -6011,11 +6020,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "确定要删除安全密钥 ${ name } 吗？"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "每次将安全密钥与 ${ BRAND_NAME } 配合使用时，若密钥支持，请输入您的 PIN 码。此设置仅适用于已设置 PIN 码的密钥。"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "插入与您的 ${ BRAND_NAME } 账户关联的安全密钥。"
       ],
       "Insert your security key into your device.": [
         "请将您的安全密钥插入设备！"
+      ],
+      "PIN requirement for security keys disabled": [
+        "已禁用安全密钥的 PIN 码要求"
+      ],
+      "PIN requirement for security keys enabled": [
+        "已启用安全密钥的 PIN 码要求"
+      ],
+      "Require PIN for security key": [
+        "安全密钥需要 PIN 码"
       ],
       "Security key": [
         "安全密钥"
@@ -7202,6 +7223,9 @@
       "Authenticator app 2FA enabled": [
         "验证器 2FA 已启用"
       ],
+      "Available on VPN Professional": [
+        "在 VPN Professional 中可用"
+      ],
       "Awaiting transaction": [
         "等待交易"
       ],
@@ -7597,6 +7621,9 @@
       ],
       "Enable email notifications": [
         "启用电子邮件通知"
+      ],
+      "Enable groups to streamline access control": [
+        "启用群组以简化访问控制"
       ],
       "Enable single sign-on to keep your organization safe": [
         "启用单点登录，确保组织安全"
@@ -8077,6 +8104,9 @@
       ],
       "Learn more about Gateways": [
         "了解网关"
+      ],
+      "Learn more about groups": [
+        "了解群组详情"
       ],
       "Learn more about single sign-on": [
         "进一步了解单点登录"
@@ -9065,8 +9095,14 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
       ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "立即升级以查看您组织中 ${ PASS_APP_NAME } 的活动情况"
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "随时升级或清理空间以迁移剩余内容"
+      ],
+      "Upgrade required": [
+        "需要升级"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "升级以保留您的 ${ planTitle } 权益！"
@@ -9301,6 +9337,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "通过群组，您可快速且便捷地向指定群组中的所有人发送电子邮件。"
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "使用 VPN Professional，管理员可以为所有组织成员强制启用始终开启 VPN，同时还可使用私有网关、访问策略和监测功能。"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "若不激活，您将无法添加用户、地址或登录非私密的成员账户。"
@@ -10668,6 +10707,9 @@
       ],
       "Unlimited": [
         "无限制"
+      ],
+      "Upgrade": [
+        "升级"
       ],
       "Upload 1 or more encryption keys": [
         "上传一个或多个加密密钥"
@@ -17836,6 +17878,9 @@
       "Remove via MDM": [
         "通过 MDM 移除"
       ],
+      "Remove via PowerShell": [
+        "通过 PowerShell 移除"
+      ],
       "Rename the gateway": [
         "重命名网关"
       ],
@@ -18102,6 +18147,9 @@
       ],
       "Upgrade to ${ planName }": [
         "升级至 ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "升级以启用始终在线功能"
       ],
       "Upgrade to keep your premium benefits.": [
         "升级以保留您的高级权益！"
@@ -18521,6 +18569,9 @@
       "Group membership paused": [
         "群组成员资格暂停"
       ],
+      "Pending user activation": [
+        "等待用户激活"
+      ],
       "Resuming role assignment": [
         "正在恢复角色分配"
       ],
@@ -18865,6 +18916,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "这将创建一个新的 ${ MAIL_APP_NAME } 地址。"
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "升级至受支持的套餐以使用管理员角色。"
       ],
       "User created": [
         "用户已创建"
