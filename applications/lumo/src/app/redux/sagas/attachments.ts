@@ -2,6 +2,7 @@ import isEqual from 'lodash/isEqual';
 import type { SagaIterator } from 'redux-saga';
 import { call, delay, fork, getContext, put, select, take } from 'redux-saga/effects';
 
+import { MAX_ASSETS_PER_SPACE } from '../../constants/limits';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import type { DbApi } from '../../indexedDb/db';
 import type { LumoApi, RemoteStatus } from '../../remote/api';
@@ -52,10 +53,9 @@ import {
     unindexAttachmentRequest,
 } from '../slices/core/attachments';
 import { addIdMapEntry } from '../slices/core/idmap';
+import { addResourceLimitError } from '../slices/meta/errors';
 import type { LumoState } from '../store';
 import { waitForMapping } from './idmap';
-import { MAX_ASSETS_PER_SPACE } from '../../constants/limits';
-import { addResourceLimitError } from '../slices/meta/errors';
 import {
     ClientError,
     RETRY_PUSH_EVERY_MS,
@@ -63,7 +63,7 @@ import {
     isClientError,
     isConflictClientError,
     isLimitReachedError,
-} from './index';
+} from './sagaErrors';
 import { waitForSpace } from './spaces';
 
 /*** helpers ***/
@@ -398,8 +398,7 @@ export function* pushAttachment({ payload }: { payload: PushAttachmentRequest })
         yield call(saveDirtyAttachment, serializedAttachment);
 
         // Tag AI-generated images so the server can index them under /assets/generated
-        const isGeneratedImage =
-            attachment.role === 'assistant' && attachment.mimeType?.startsWith('image/');
+        const isGeneratedImage = attachment.role === 'assistant' && attachment.mimeType?.startsWith('image/');
         const assetType = isGeneratedImage ? AssetType.GeneratedImage : undefined;
 
         // Always use POST for attachments (which are assets), never PUT
