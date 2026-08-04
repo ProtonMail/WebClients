@@ -2183,6 +2183,10 @@
         "${ totalParticipantCount } participant",
         "${ totalParticipantCount } participants"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "${ waitingRoomParticipantsCount } personnes est en train attendre",
+        "${ waitingRoomParticipantsCount } personnes sont en train attendre"
+      ],
       "(You)": [
         "(Vous)"
       ],
@@ -3124,6 +3128,9 @@
       ],
       "Use simple selfie segmentation": [
         "Utiliser une segmentation simple des selfies"
+      ],
+      "Use waiting room with a paid plan": [
+        "Utiliser la salle d'attente avec un abonnement payant"
       ],
       "Verification code": [
         "Code de vérification"
