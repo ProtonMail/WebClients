@@ -3,6 +3,9 @@ import type { ToolDefinition, ToolHandlers } from '@proton/llm/lib/lumoAgent/con
 
 import { MAIL_RULES } from './rules';
 import { moveEmailsModule } from './skills/organise/moveEmails';
+import { listFiltersModule } from './skills/reads/listFilters';
+import { listFoldersModule } from './skills/reads/listFolders';
+import { listLabelsModule } from './skills/reads/listLabels';
 import { openFolderModule } from './skills/reads/openFolder';
 import { viewEmailsModule } from './skills/reads/viewEmails';
 import type { MailToolDeps, MailToolModule } from './toolModule';
@@ -17,6 +20,9 @@ const MODULES: MailToolModule[] = [
     // Reads
     viewEmailsModule,
     openFolderModule,
+    listFoldersModule,
+    listLabelsModule,
+    listFiltersModule,
     // Mutations
     moveEmailsModule,
 ];
