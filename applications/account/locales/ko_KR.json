@@ -8716,6 +8716,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "2단계 인증 키가 사용할 준비가 되었습니다."
+      ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "보안 키가 지원하는 경우 ${ BRAND_NAME }에 보안 키를 사용할 때마다 매번 PIN을 입력합니다. 키에 PIN 설정이 완료된 경우에만 적용됩니다."
+      ],
+      "Require PIN for security key": [
+        "보안 키에 PIN 필요"
       ]
     },
     "fido2: Label": {
@@ -13673,6 +13679,12 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "Smart Routed through a different country.": [
+        "다른 국가를 통해 자동 경유됨."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "다음 국가를 자동 경유함: ${ joinedCountries }."
       ]
     },
     "info": {
@@ -27434,6 +27446,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "사용자가 초대를 수락하면 역할을 할당할 수 있습니다."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "관리자 규칙을 사용하려면 지원하는 플랜으로 업그레이드하세요."
       ]
     },
     "Users table: badge": {
