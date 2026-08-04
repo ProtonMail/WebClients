@@ -23,7 +23,12 @@ export const InstructionsStage = ({ onBack, onContinue }: Props) => {
             primaryLabel={c('collider_2025:Action').t`Continue`}
             onPrimary={onContinue}
         >
-            <div className="ai-paper-trail__platform-tabs" role="tablist">
+            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
+            <div
+                className="ai-paper-trail__platform-tabs"
+                role="group"
+                aria-label={c('collider_2025:Label').t`AI platform`}
+            >
                 {EXPORT_PLATFORMS.map((entry) => {
                     const isSelected = entry.id === platform;
 
@@ -31,9 +36,8 @@ export const InstructionsStage = ({ onBack, onContinue }: Props) => {
                         <button
                             key={entry.id}
                             type="button"
-                            role="tab"
-                            aria-label={entry.name}
-                            aria-selected={isSelected}
+                            aria-pressed={isSelected}
+                            aria-labelledby={`${entry.id}-platform-tab-name ${entry.id}-platform-tab-provider`}
                             className={clsx('ai-paper-trail__platform-tab', isSelected && 'is-active')}
                             onClick={() => {
                                 setPlatform(entry.id);
@@ -41,8 +45,18 @@ export const InstructionsStage = ({ onBack, onContinue }: Props) => {
                         >
                             <img src={entry.logo} alt="" className="ai-paper-trail__platform-tab-logo shrink-0" />
                             <span className="ai-paper-trail__platform-tab-copy">
-                                <span className="ai-paper-trail__platform-tab-name">{entry.name}</span>
-                                <span className="ai-paper-trail__platform-tab-provider">{entry.provider}</span>
+                                <span
+                                    id={`${entry.id}-platform-tab-name`}
+                                    className="ai-paper-trail__platform-tab-name"
+                                >
+                                    {entry.name}
+                                </span>
+                                <span
+                                    id={`${entry.id}-platform-tab-provider`}
+                                    className="ai-paper-trail__platform-tab-provider"
+                                >
+                                    {entry.provider}
+                                </span>
                             </span>
                         </button>
                     );

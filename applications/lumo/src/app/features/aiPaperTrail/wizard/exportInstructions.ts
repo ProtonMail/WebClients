@@ -11,7 +11,6 @@ export interface PlatformExportGuide {
     provider: string;
     logo: string;
     steps: string[];
-    note: string;
 }
 
 export const EXPORT_PLATFORMS: PlatformExportGuide[] = [
@@ -27,8 +26,6 @@ export const EXPORT_PLATFORMS: PlatformExportGuide[] = [
             c('collider_2025:Info').t`Look for Export data, then click Export`,
             c('collider_2025:Info').t`In the pop-up window, click Confirm export`,
         ],
-        note: c('collider_2025:Info')
-            .t`OpenAI will email you a download link. It can take some time depending on export size, and the link expires in 24 hours. Data exports are only available for consumer ChatGPT accounts, not Business or Enterprise accounts.`,
     },
     {
         id: 'claude',
@@ -42,7 +39,5 @@ export const EXPORT_PLATFORMS: PlatformExportGuide[] = [
             c('collider_2025:Info').t`Under your data, click Export data`,
             c('collider_2025:Info').t`Follow the prompts to confirm the export`,
         ],
-        note: c('collider_2025:Info')
-            .t`Anthropic will email you a download link when your export is ready. The link expires after a limited time, so download it promptly.`,
     },
 ];

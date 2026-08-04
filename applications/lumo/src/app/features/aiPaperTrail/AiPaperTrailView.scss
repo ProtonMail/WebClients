@@ -86,12 +86,6 @@
 		text-align: start;
 	}
 
-	// &__landing-subtitle {
-	//     margin-block-end: 1.5rem;
-	//     margin-inline: 0;
-	//     text-align: start;
-	// }
-
 	&__landing-preview {
 		display: flex;
 		justify-content: center;
@@ -737,15 +731,6 @@
 		font-weight: bold;
 		flex-shrink: 0;
 	}
-
-	// &__export-note {
-	//     font-size: 0.82rem;
-	//     line-height: 1.45;
-	//     color: var(--apt-muted);
-	//     margin: 0;
-	//     padding-block-start: 0.25rem;
-	//     text-align: start;
-	// }
 
 	@media (width <= 40em) {
 		&__title,
