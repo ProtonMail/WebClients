@@ -113,15 +113,6 @@
       "Cancel": [
         "Anulare"
       ],
-      "Cancel all downloads": [
-        "Anulare toate descărcările"
-      ],
-      "Cancel all uploads": [
-        "Anulare toate încărcările"
-      ],
-      "Cancel download": [
-        "Anulare descărcare"
-      ],
       "Cancel subscription": [
         "Anulare abonament"
       ],
@@ -208,9 +199,6 @@
       ],
       "Continue": [
         "Continuare"
-      ],
-      "Continue downloading": [
-        "Continuare descărcare"
       ],
       "Continue import": [
         "Continuare importare"
@@ -338,9 +326,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Descărcare copie (ca xlsx)"
-      ],
-      "Download anyway": [
-        "Descărcare așa"
       ],
       "Download debug information": [
         "Descărcare informații de depanare"
@@ -681,9 +666,6 @@
       "Rename document": [
         "Redenumire document"
       ],
-      "Replace file": [
-        "înlocuiți fişierul"
-      ],
       "Report a problem": [
         "Raportare problemă"
       ],
@@ -902,9 +884,6 @@
       ],
       "Upload and share files": [
         "Încărcați și partajați fișiere"
-      ],
-      "Upload anyway": [
-        "Încărcare așa"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -3300,20 +3279,8 @@
       "Failed to update public share node": [
         "Nu s-a putut actualiza nodul de partajare publică."
       ],
-      "File \"${ name }\" is already downloading": [
-        "Fișierul „${ name }” se descarcă deja"
-      ],
-      "File cannot be merged with folder": [
-        "Fișierul nu poate fi îmbinat cu folderul."
-      ],
-      "File selection is already downloading": [
-        "Fișierele selectate sunt deja în curs de descărcare"
-      ],
       "First name is too long": [
         "Prenumele este prea lung."
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Folderul „${ name }” se descarcă deja"
       ],
       "Folder name cannot be empty.": [
         "Numele folderului nu poate fi gol."
@@ -3570,9 +3537,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Fișierul original nu este încă încărcat. Reîncercați mai târziu."
-      ],
-      "The original folder not found": [
-        "Folderul original nu a fost găsit."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Aveți prea multe foldere în contul extern. Modificați opțiunile de importare pentru a șterge unele foldere."
@@ -4293,6 +4257,9 @@
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
       ],
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "Criptare și adăugare contacte: ${ totalImported }/${ totalToImport }"
+      ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Criptare și adăugare evenimente în calendar: ${ totalImported }/${ totalToImport }"
       ],
@@ -4597,9 +4564,6 @@
         "Contacte: ${ contactsLength }",
         "Contacte: ${ contactsLength }"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Fișierele ${ DOCS_APP_NAME } nu pot fi descărcate direct și nu vor fi incluse în această descărcare. Puteți descărca celelalte fișiere făcând clic pe „Continuare descărcare”."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } vă permite să colaborați în timp real cu criptare bilaterală pentru confidențialitate completă. Creați o copie pentru a începe editarea sau cereți proprietarului accesul la editare."
       ],
@@ -4668,9 +4632,6 @@
         "Contacte actualizate: ${ updated }",
         "Contacte actualizate: ${ updated }"
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } există deja în acest loc."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } vă maschează adresa IP, așa că site-urile web nu vă pot identifica."
       ],
@@ -4701,12 +4662,6 @@
         "+o conexiune pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
         "+${ organization.BonusVPN } conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
         "+${ organization.BonusVPN } de conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)"
-      ],
-      "A number will be added to the filename": [
-        "Va fi adăugată o cifră la numele fișierelor."
-      ],
-      "A number will be added to the folder name": [
-        "Va fi adăugată o cifră la numele folderului."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
@@ -4761,9 +4716,6 @@
       ],
       "Already in this folder": [
         "Deja în acest folder"
-      ],
-      "an anonymous user": [
-        "un utilizator anonim"
       ],
       "and": [
         "și"
@@ -4836,9 +4788,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Se verifică contactul ${ progress } din ${ max }..."
-      ],
-      "Checking signatures": [
-        "Se verifică semnăturile"
       ],
       "Choose a plan that works best for you.": [
         "Alegeți un plan care vi se potrivește cel mai bine."
@@ -4937,12 +4886,6 @@
       "Details": [
         "Detalii"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Semnătură digitală verificată. Acest folder a fost încărcat în siguranță de către ${ emailAddress }."
-      ],
       "Display word count": [
         "Afișare număr cuvinte"
       ],
@@ -4969,12 +4912,6 @@
       ],
       "Download current logs": [
         "Descărcare jurnale actuale"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Descărcarea fișierului ${ downloadFileName } va fi întreruptă."
-      ],
-      "Download was canceled": [
-        "Descărcarea a fost anulată."
       ],
       "Drop file here to upload": [
         "Plasați fișiere aici pentru încărcare"
@@ -5069,15 +5006,6 @@
       "File \"${ name }\" was deleted during download": [
         "Fișierul „${ name }” a fost șters în timpul descărcării."
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Lipsește semnătura fișierului. Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Lipsește semnătura fișierului. Nu am putut verifica cine a încărcat ${ fileName }."
-      ],
-      "File will not be updated": [
-        "Fișierul nu va fi actualizat."
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Doar fișiere (fără fotografii, ${ DOCS_APP_NAME } sau ${ SHEETS_APP_NAME }) - până la 100 GiB total, 100.000 de fișiere și 50 GiB per fișier."
       ],
@@ -5086,18 +5014,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Folderul „${ link.name }” a fost șters în timpul descărcării."
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Lipsește semnătura folderului. Nu am putut verifica dacă ${ emailAddress } a încărcat „${ fileName }”."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Lipsește semnătura folderului. Nu s-a putut verifica autorul care a încărcat „${ fileName }”."
-      ],
-      "Folder will not be uploaded": [
-        "Folderul nu va fi încărcat."
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Pentru cele mai bune rezultate, evitați activitățile de redare în flux și cele care necesită multă memorie sau împărțiți încărcarea în mai puține fișiere."
       ],
       "Forgot password?": [
         "Ați uitat parola?"
@@ -5211,9 +5127,6 @@
       ],
       "Invite link copied": [
         "Legătura de invitare a fost copiată."
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Se pare că ați încercat recent să încărcați ${ uploadName }. Dacă încărcarea a eșuat, ${ replaceFile }. Dacă încă este în desfășurare, înlocuirea va anula încărcarea în desfășurare."
       ],
       "It's better to have:": [
         "Este bine să aveți:"
@@ -5483,9 +5396,6 @@
       "Recents": [
         "Recente"
       ],
-      "recommended browser": [
-        "navigator recomandat"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
       ],
@@ -5552,12 +5462,6 @@
       "Show table of contents": [
         "Afișare cuprins"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Semnătura nu poate fi validată din cauza unei erori de rețea. Reîncercați mai târziu."
-      ],
-      "Signature check will be ignored": [
-        "Verificarea semnăturii va fi ignorată"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
@@ -5608,26 +5512,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Reveniți mai târziu."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Contul poate avea o cheie nouă sau este posibil ca următoarele să fi fost modificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Autoritatea editărilor din document nu a putut fi verificată. Doriți să marcați acest document ca verificat? Puteți alege să ignorați pentru a decide mai târziu."
       ],
       "The Beginning": [
         "Începutul"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Semnătura digitală a fost parțial verificată. Acest fișier a fost încărcat folosind o legătură web de partajare accesibilă public de către un utilizator fără un cont ${ BRAND_NAME }, astfel că identitatea acestuia nu poate fi verificată."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Semnătura digitală a fost parțial verificată. Acest folder a fost încărcat folosind o legătură web de partajare accesibilă public de către un utilizator fără un cont ${ BRAND_NAME }, astfel că identitatea acestuia nu poate fi verificată."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informațiile expuse au fost divulgate de la un serviciu terță parte. Informațiile contului ${ BRAND_NAME } rămân securizate și criptate. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Este posibil ca următoarele articole să fi fost falsificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Proprietarul acestei adrese a dezactivat criptarea bilaterală. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea bilaterală."
@@ -5698,23 +5590,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Aceasta va șterge permanent articolele încărcate."
       ],
-      "This will replace the existing file with the folder": [
-        "Aceasta va înlocui fișierul existent cu folderul."
-      ],
-      "This will replace the existing folder with the file": [
-        "Aceasta va înlocui folderul existent cu fișierul."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Aceasta vă va deconectat din toate conturile conectate acum."
-      ],
-      "This will upload a new version of the file": [
-        "Aceasta va încărca o nouă versiune a fișierului."
-      ],
-      "This will upload a new version of the folder": [
-        "Aceasta va încărca o nouă versiune a folderului."
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Pentru a descărca fișierele ${ DOCS_APP_NAME }, deschideți-le în ${ DOCS_APP_NAME } și exportați-le."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
@@ -5740,14 +5617,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Transfer anulat pentru fișierul „${ name }”."
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Transfer anulat pentru folderul „${ name }”."
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Transfer ignorat pentru fișierul „${ file.name }”."
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Transfer ignorat pentru folderul „${ folderName }”."
       ],
       "Trash": [
         "Gunoi"
@@ -5760,9 +5631,6 @@
       ],
       "Undo successful": [
         "Anulare reușită"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Din păcate, se pare că fișierul sau unele dintre datele sale nu pot fi decriptate."
       ],
       "Update recent documents": [
         "Actualizare documente recente"
@@ -5778,9 +5646,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Îmbunătățiți contul pentru a vă menține beneficiile din ${ planTitle }."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Încărcarea simultană a sute de fișiere poate avea un impact asupra performanței."
       ],
       "Uppercase and lowercase letters": [
         "Litere mari și mici"
@@ -5805,12 +5670,6 @@
       ],
       "Warning": [
         "Avertizare"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Nu am putut verifica cine a încărcat ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Vă vom anunța pe e-mail după finalizarea importării."
@@ -5977,9 +5836,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Modificările nu s-au sincronizat. Drive va încerca automat să salveze modificările. Nu închideți pagina web."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Navigatorul web actual nu acceptă descărcarea de fișiere de mari dimensiuni din cauza indisponibilității unui prestator de servicii. Descărcarea de fișiere mari poate îngheța sau poate face ca navigatorul să nu răspundă. Utilizați cele mai recente versiuni ale unui ${ recommendedBrowser } și reîncercați."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Documentul actual va fi înlocuit cu această versiune. Comentariile și sugestiile vor fi eliminate din document, dar vor rămâne accesibile în istoricul comentariilor."
       ],
@@ -6085,32 +5941,6 @@
         "Numai vizualizare"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "atribute fișier"
-      ],
-      "file data": [
-        "date fișier"
-      ],
-      "file data key": [
-        "fișier date cheie"
-      ],
-      "file data order": [
-        "ordine fișiere date"
-      ],
-      "hash key": [
-        "cheie hash"
-      ],
-      "keys": [
-        "chei"
-      ],
-      "name": [
-        "nume"
-      ],
-      "thumbnail": [
-        "miniatură"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Semnatar activ"
@@ -6201,15 +6031,6 @@
       "App password": [
         "Parola aplicației"
       ],
-      "Apply to all duplicated files": [
-        "Aplicare la toate fișierele duplicate"
-      ],
-      "Apply to all duplicated folders": [
-        "Aplicare la toate folderele duplicate"
-      ],
-      "Apply to all unverified items": [
-        "Se aplică tuturor articolelor neverificate"
-      ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
@@ -6236,9 +6057,6 @@
       ],
       "can view": [
         "poate vedea"
-      ],
-      "Cancel download": [
-        "Anulare descărcare"
       ],
       "Category": [
         "Categoria"
@@ -6303,14 +6121,8 @@
       "Don't show this again": [
         "Nu mai arăta asta"
       ],
-      "Download anyway": [
-        "Descărcare așa"
-      ],
       "Drive": [
         "Drive"
-      ],
-      "Duplicate found": [
-        "S-a găsit o dublură."
       ],
       "e.g., Amazon, eBay, Etsy": [
         "ex. Amazon, eBay, Etsy"
@@ -6413,15 +6225,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Autentificator A2F integrat"
-      ],
-      "Keep both": [
-        "Păstrare ambele"
-      ],
-      "Keep both files": [
-        "Păstrare ambele fișiere"
-      ],
-      "Keep both folders": [
-        "Păstrare ambele foldere"
       ],
       "Label messages as": [
         "Etichetare mesaje cu"
@@ -6546,12 +6349,6 @@
       "Regular expression": [
         "Expresie regulată"
       ],
-      "Replace existing file": [
-        "Înlocuire fișier existent"
-      ],
-      "Replace existing folder": [
-        "Înlocuire folder existent"
-      ],
       "Require password": [
         "Necesită parolă"
       ],
@@ -6575,12 +6372,6 @@
       ],
       "Skip feedback": [
         "Omitere feedback"
-      ],
-      "Skip file": [
-        "Omitere fișier"
-      ],
-      "Skip folder": [
-        "Omitere folder"
       ],
       "Starts with": [
         "Începe cu"
@@ -8367,14 +8158,17 @@
       "Failed to delete document": [
         "Ștergerea documentului a eșuat."
       ],
-      "Failed to download files: ${ err }": [
-        "Nu s-a reușit descărcarea fișierelor: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Încărcarea detaliilor invitației a eșuat."
       ],
+      "Failed to load invitations": [
+        "Încărcarea invitațiilor a eșuat."
+      ],
       "Failed to load sharing details": [
         "Încărcarea detaliilor de partajare a eșuat."
+      ],
+      "Failed to reject invitation": [
+        "Refuzarea invitației a eșuat."
       ],
       "Failed to reject share invitation": [
         "Eșuare refuzare invitație la partajare."
@@ -8388,9 +8182,6 @@
       "Failed to trash document": [
         "Documentul nu a putut fi mutat în gunoi."
       ],
-      "Failed to upload files: ${ err }": [
-        "Nu s-a reușit încărcarea fișierelor: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Fișierul sau folderul „${ filename }” și încă unul se încarcă deja.",
         "Fișierul sau folderul „${ filename }” și încă alte ${ count } se încarcă deja.",
@@ -8398,9 +8189,6 @@
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Fișierul sau folderul „${ filename }” se încarcă deja."
-      ],
-      "File or folder is missing a name": [
-        "Fișier sau folder fără nume."
       ],
       "Invitation's email was sent again": [
         "Mesajul de invitare a fost retrimis."
@@ -8422,9 +8210,6 @@
         "Mutare ${ n } element.",
         "Mutare ${ n } articole.",
         "Mutare ${ n } de articole."
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Nu este suficient spațiu pentru a încărca ${ formattedTotal }."
       ],
       "Public link access updated": [
         "Accesul la legătura web publică s-a actualizat."
@@ -10425,9 +10210,6 @@
       "Birthday": [
         "Data nașterii"
       ],
-      "Browser might run out of memory": [
-        "Navigatorul ar putea rămâne fără memorie"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anulare abonare ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -10588,26 +10370,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Retrogradare la ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Descărcare ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Descărcați aplicația"
-      ],
-      "Download unverified file?": [
-        "Descărcați un fișier neverificat?"
-      ],
-      "Download unverified folder?": [
-        "Descărcați un folder neverificat?"
-      ],
-      "Duplicate file found": [
-        "S-au găsit fișiere duplicate"
-      ],
-      "Duplicate folder found": [
-        "S-au găsit foldere duplicate"
       ],
       "Edit contact": [
         "Editare contact"
@@ -10791,9 +10558,6 @@
       "Other names": [
         "Alte nume"
       ],
-      "Performance might be affected": [
-        "Performanța ar putea fi afectată"
-      ],
       "Phone numbers": [
         "Numere de telefon"
       ],
@@ -10965,9 +10729,6 @@
       "Upload and share files": [
         "Încărcați și partajați fișiere"
       ],
-      "Uploading a large file or folder": [
-        "Se încarcă un fișier sau folder mare"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"
       ],
@@ -11012,9 +10773,6 @@
       ],
       "Your document cannot be loaded": [
         "Documentul nu poate fi încărcat"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Descărcarea include un fișier ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Informații expuse"

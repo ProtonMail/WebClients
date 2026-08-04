@@ -112,15 +112,6 @@
       "Cancel": [
         "Avbryt"
       ],
-      "Cancel all downloads": [
-        "Avbryt alle nedlastinger"
-      ],
-      "Cancel all uploads": [
-        "Avbryt alle opplastinger"
-      ],
-      "Cancel download": [
-        "Avbryt nedlasting"
-      ],
       "Cancel subscription": [
         "Avbryt abonnement"
       ],
@@ -153,6 +144,9 @@
       ],
       "Claim your free ${ BRAND_NAME } address": [
         "Gjør krav på din gratis ${ BRAND_NAME }-adresse"
+      ],
+      "Clear conversation": [
+        "Rensk samtalen"
       ],
       "Clear data": [
         "Tøm data"
@@ -204,9 +198,6 @@
       ],
       "Continue": [
         "Fortsett"
-      ],
-      "Continue downloading": [
-        "Fortsett nedlasting"
       ],
       "Continue import": [
         "Fortsett importen"
@@ -332,9 +323,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Last ned en kopi (som xlsx)"
-      ],
-      "Download anyway": [
-        "Last ned uansett"
       ],
       "Download debug information": [
         "Last ned feilsøkingsinformasjon"
@@ -675,9 +663,6 @@
       "Rename document": [
         "Gi nytt navn til dokument"
       ],
-      "Replace file": [
-        "Erstatt fil"
-      ],
       "Report a problem": [
         "Rapporter et problem"
       ],
@@ -825,6 +810,9 @@
       "Stay": [
         "Bli"
       ],
+      "Stop": [
+        "Stopp"
+      ],
       "Stop sharing": [
         "Avslutt deling"
       ],
@@ -893,9 +881,6 @@
       ],
       "Upload and share files": [
         "Last opp og del filer"
-      ],
-      "Upload anyway": [
-        "Last opp uansett"
       ],
       "Upload picture": [
         "Last opp bilde"
@@ -1003,6 +988,10 @@
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } seter"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } bruker)",
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } brukere)"
+      ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
       ],
@@ -1074,6 +1063,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktiviteten til nye nivåer. La ${ LUMO_SHORT_APP_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
       ]
     },
     "Attached ics file error": {
@@ -1114,6 +1106,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seter i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } skriveassistentseter i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-seter i prøveperioden."
@@ -1222,12 +1217,19 @@
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer.",
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
@@ -3252,20 +3254,8 @@
       "Failed to update public share node": [
         "Kunne ikke oppdatere offentlig delingsnode"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Fil \"${ name }\" lastes allerede ned"
-      ],
-      "File cannot be merged with folder": [
-        "Fil kan ikke slås sammen med mappe"
-      ],
-      "File selection is already downloading": [
-        "Filvalg lastes allerede ned"
-      ],
       "First name is too long": [
         "Fornavnet er for langt"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Mappe \"${ name }\" lastes allerede ned"
       ],
       "Folder name cannot be empty.": [
         "Mappenavn kan ikke være tomt."
@@ -3517,9 +3507,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Den opprinnelige filen er ikke lastet opp enda, forsøk igjen senere."
-      ],
-      "The original folder not found": [
-        "Den opprinnelige mappen ble ikke funnet"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det er for mange mapper i din eksterne konto. Tilpass importen for å slette noen mapper."
@@ -4523,9 +4510,6 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME }-filer kan ikke lastes ned direkte og vil ikke bli inkludert i denne nedlastingen. Du kan laste ned de andre filene ved å klikke på 'Fortsett å laste ned'."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } lar deg samarbeide i sanntid med ende-til-ende-kryptering for fullstendig personvern. Opprett en kopi for å begynne å redigere, eller be eieren om redigeringstilgang."
       ],
@@ -4535,6 +4519,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe funnet",
         "${ groupCounts } grupper funnet"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Livsvarig avtale for ${ PASS_SHORT_APP_NAME } har ikke noen fornyelsespris. Det er en engangsbetaling for livsvarig tilgang til ${ PASS_SHORT_APP_NAME }."
@@ -4581,9 +4568,6 @@
         "${ updated } kontakt oppdatert",
         "${ updated } kontakter oppdatert"
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } finnes allerede på denne plasseringen."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskerer IP-adressen din, slik at nettsteder ikke kan identifisere deg."
       ],
@@ -4612,12 +4596,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } tilkobling for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)",
         "+${ organization.BonusVPN } tilkoblinger for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)"
-      ],
-      "A number will be added to the filename": [
-        "Et nummer vil bli lagt til filnavnet"
-      ],
-      "A number will be added to the folder name": [
-        "Et nummer vil bli lagt til mappenavnet"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan bare brukes til å bekrefte en ${ BRAND_NAME }-konto"
@@ -4669,9 +4647,6 @@
       ],
       "Already in this folder": [
         "Allerede i denne mappen"
-      ],
-      "an anonymous user": [
-        "en anonym bruker"
       ],
       "and": [
         "og"
@@ -4744,9 +4719,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sjekker kontakt ${ progress } av ${ max }..."
-      ],
-      "Checking signatures": [
-        "Sjekker signaturer"
       ],
       "Choose a plan that works best for you.": [
         "Velg en plan som fungerer best for deg."
@@ -4843,12 +4815,6 @@
       "Details": [
         "Detaljer"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digital signatur bekreftet. Denne filen ble sikkert lastet opp av ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digital signatur bekreftet. Denne mappen ble sikkert lastet opp av ${ emailAddress }."
-      ],
       "Display word count": [
         "Vis antall ord"
       ],
@@ -4875,12 +4841,6 @@
       ],
       "Download current logs": [
         "Last ned gjeldende logger"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Nedlasting av ${ downloadFileName } vil bli avbrutt"
-      ],
-      "Download was canceled": [
-        "Nedlastingen ble kansellert"
       ],
       "Drop file here to upload": [
         "Slipp fil her for å laste opp"
@@ -4975,15 +4935,6 @@
       "File \"${ name }\" was deleted during download": [
         "Fil \"${ name }\" ble slettet under nedlasting"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Fil mangler signatur. Vi kan ikke bekrefte at ${ emailAddress } lastet opp ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Fil mangler signatur. Vi kan ikke bekrefte hvem som lastet opp ${ fileName }."
-      ],
-      "File will not be updated": [
-        "Filen blir ikke oppdatert"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Bare filer (ingen bilder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – opptil 100 GB totalt, 100 000 filer og 50 GB per fil"
       ],
@@ -4992,18 +4943,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Mappe \"${ link.name }\" ble slettet under nedlasting"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Mappe mangler signatur. Vi kan ikke bekrefte at ${ emailAddress } lastet opp ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Mappe mangler signatur. Vi kan ikke bekrefte hvem som lastet opp ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "Mappen blir ikke lastet opp"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Du får best resultat hvis du unngår strømming og minneintensive oppgaver, eller deler opp opplastingen i mindre grupper."
       ],
       "Forgot password?": [
         "Glemt passord?"
@@ -5116,9 +5055,6 @@
       ],
       "Invite link copied": [
         "Invitasjonskobling kopiert"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Det virker som du nylig prøvde å laste opp ${ uploadName }. Hvis opplastingen mislyktes, ${ replaceFile }. Hvis opplastingen fremdeles pågår, avbrytes den pågående opplastingen hvis du erstatter den."
       ],
       "It's better to have:": [
         "Det er bedre å ha:"
@@ -5386,9 +5322,6 @@
       "Recents": [
         "Nylige"
       ],
-      "recommended browser": [
-        "anbefalt nettleser"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gjennopprettelsesopplysninger vil forbli på denne enheten, med mindre du velger å slette dem."
       ],
@@ -5455,12 +5388,6 @@
       "Show table of contents": [
         "Vis innholdsfortegnelse"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Signaturen kan ikke valideres på grunn av nettverksfeil, prøv igjen senere."
-      ],
-      "Signature check will be ignored": [
-        "Signaturkontrollen ignoreres"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
@@ -5510,26 +5437,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Midlertidig utilgjengelig. Kom tilbake senere."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Kontoen kan ha en ny nøkkel, eller følgende kan ha blitt tuklet med: ${ items }. Bare åpne hvis du klarérer de."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Forfatteren av redigeringene i dokumentet kunne ikke bekreftes. Vil du merke dette dokumentet som bekreftet? Du kan velge å ignorere for å bestemme deg senere."
       ],
       "The Beginning": [
         "Begynnelsen"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Den digitale signaturen er delvis verifisert. Denne filen ble lastet opp ved hjelp av en offentlig tilgjengelig delingskobling av en bruker uten en ${ BRAND_NAME }-konto, så identiteten deres kan ikke bekreftes."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Den digitale signaturen er delvis verifisert. Denne mappen ble lastet opp ved hjelp av en offentlig tilgjengelig delingskobling av en bruker uten en ${ BRAND_NAME }-konto, så identiteten deres kan ikke bekreftes."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den eksponerte informasjonen ble lekket fra en tredjepartstjeneste. ${ BRAND_NAME }-kontoinformasjonen din forblir sikker og kryptert. ${ learnMoreLink }."
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Følgende kan ha blitt tuklet med: ${ items }. Bare åpne hvis du klarérer de."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
@@ -5539,6 +5454,9 @@
       ],
       "There are no documents in the trash.": [
         "Det er ingen dokumenter i papirkurven."
+      ],
+      "Thinking about this": [
+        "Tenker på dette"
       ],
       "This action will delete the link and revoke access for all users.": [
         "Denne handlingen sletter koblingen og tilbakekaller tilgang for alle brukere."
@@ -5597,23 +5515,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Dette vil slette de valgte elementene du lastet opp permanent."
       ],
-      "This will replace the existing file with the folder": [
-        "Dette vil erstatte den eksisterende filen med mappen"
-      ],
-      "This will replace the existing folder with the file": [
-        "Dette vil erstatte den eksisterende mappen med filen"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge deg ut av alle kontoer som for øyeblikket er logget på."
-      ],
-      "This will upload a new version of the file": [
-        "Dette vil laste opp en ny versjon av filen"
-      ],
-      "This will upload a new version of the folder": [
-        "Dette vil laste opp en ny versjon av mappen"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "For å laste ned ${ DOCS_APP_NAME }-filene, åpne de i ${ DOCS_APP_NAME } og eksporter dem."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
@@ -5639,14 +5542,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Overføring avbrutt for fil \"${ name }\""
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Overføring avbrutt for mappe \"${ name }\""
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Overføring hoppet over for fil \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Overføring hoppet over for mappe \"${ folderName }\""
       ],
       "Trash": [
         "Papirkurv"
@@ -5659,9 +5556,6 @@
       ],
       "Undo successful": [
         "Angre vellykket"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Dessverre ser det ut til at filen eller noen av dens data ikke kan dekrypteres."
       ],
       "Update recent documents": [
         "Oppdater nylige dokumenter"
@@ -5677,9 +5571,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Oppgrader for å beholde ${ planTitle } fordelene dine."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Opplasting av hundrevis av filer samtidig kan ha innvirkning på ytelsen."
       ],
       "Uppercase and lowercase letters": [
         "Store og små bokstaver"
@@ -5704,12 +5595,6 @@
       ],
       "Warning": [
         "Advarsel"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Vi kan ikke bekrefte at ${ emailAddress } lastet opp ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Vi kan ikke bekrefte hvem som lastet opp ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Vi sender deg en e-post når importen er fullført."
@@ -5873,9 +5758,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Endringene kunne ikke synkroniseres. Drive vil automatisk prøve å lagre endringene. Ikke lukk nettsiden."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Din nåværende nettleser støtter ikke nedlasting av store filer på grunn av utilgjengelighet av \"service workers\". Nedlasting av store filer kan fryse eller føre til at nettleseren ikke svarer. Bruk de nyeste versjonene av en ${ recommendedBrowser } og prøv på nytt."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Ditt nåværende dokument vil bli erstattet med denne versjonen. Kommentarer og forslag vil bli fjernet fra dokumentet, men vil fortsatt være tilgjengelige i kommentarloggen."
       ],
@@ -5978,32 +5860,6 @@
         "Vis bare"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "filattributter"
-      ],
-      "file data": [
-        "fildata"
-      ],
-      "file data key": [
-        "fildatanøkkel"
-      ],
-      "file data order": [
-        "fildatarekkefølge"
-      ],
-      "hash key": [
-        "hashnøkkel"
-      ],
-      "keys": [
-        "nøkler"
-      ],
-      "name": [
-        "navn"
-      ],
-      "thumbnail": [
-        "miniatyr"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Aktiv underskriver"
@@ -6073,6 +5929,9 @@
       "Allow editors to change permissions and share": [
         "Tillat redaktører å endre tillatelser og dele"
       ],
+      "Allow editors to change permissions and share.": [
+        "Tillat redaktører å endre tillatelser og dele."
+      ],
       "Anonymous": [
         "Anonym"
       ],
@@ -6090,15 +5949,6 @@
       ],
       "App password": [
         "App-passord"
-      ],
-      "Apply to all duplicated files": [
-        "Bruk på alle dupliserte filer"
-      ],
-      "Apply to all duplicated folders": [
-        "Bruk på alle dupliserte mapper"
-      ],
-      "Apply to all unverified items": [
-        "Bruk på alle ubekreftede elementer"
       ],
       "Attach screenshot(s)": [
         "Legg ved skjermbilde(r)"
@@ -6127,14 +5977,17 @@
       "can view": [
         "kan se"
       ],
-      "Cancel download": [
-        "Avbryt nedlasting"
-      ],
       "Category": [
         "Kategori"
       ],
       "City": [
         "Poststed"
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversjon"
       ],
       "Code is 6 digits without spaces": [
         "Koden består av 6 sifre uten mellomrom"
@@ -6187,14 +6040,8 @@
       "Don't show this again": [
         "Ikke vis dette igjen"
       ],
-      "Download anyway": [
-        "Last ned uansett"
-      ],
       "Drive": [
         "Drive"
-      ],
-      "Duplicate found": [
-        "Duplikat funnet"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "f.eks. Amazon, eBay, Etsy"
@@ -6297,15 +6144,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Integrert 2FA-autentisering"
-      ],
-      "Keep both": [
-        "Behold begge"
-      ],
-      "Keep both files": [
-        "Behold begge filene"
-      ],
-      "Keep both folders": [
-        "Behold begge mappene"
       ],
       "Label messages as": [
         "Merk meldinger som"
@@ -6430,12 +6268,6 @@
       "Regular expression": [
         "Regulært uttrykk"
       ],
-      "Replace existing file": [
-        "Erstatt eksisterende fil"
-      ],
-      "Replace existing folder": [
-        "Erstatt eksisterende mappe"
-      ],
       "Require password": [
         "Krev passord"
       ],
@@ -6459,12 +6291,6 @@
       ],
       "Skip feedback": [
         "Hopp over tilbakemelding"
-      ],
-      "Skip file": [
-        "Hopp over fil"
-      ],
-      "Skip folder": [
-        "Hopp over mappe"
       ],
       "Starts with": [
         "Begynner med"
@@ -6764,6 +6590,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "Add-on with free trial": [
         "Tillegg med gratis prøveperiode"
       ]
@@ -6778,6 +6607,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } seter"
+      ],
+      "${ price } per seat": [
+        "${ price } per sete"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } sete",
@@ -7213,6 +7045,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -8098,6 +7933,9 @@
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" flyttet"
       ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" delt"
+      ],
       "\"${ name }\" deleted": [
         "\"${ name }\" slettet"
       ],
@@ -8244,14 +8082,17 @@
       "Failed to delete document": [
         "Kunne ikke slette dokumentet"
       ],
-      "Failed to download files: ${ err }": [
-        "Kunne ikke laste ned filer: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Kunne ikke laste inn invitasjonsdetaljer"
       ],
+      "Failed to load invitations": [
+        "Kunne ikke laste inn invitasjoner"
+      ],
       "Failed to load sharing details": [
         "Kunne ikke laste inn delingsdetaljene"
+      ],
+      "Failed to reject invitation": [
+        "Kunne ikke avvise invitasjonen"
       ],
       "Failed to reject share invitation": [
         "Kunne ikke avvise delingsinvitasjon"
@@ -8265,18 +8106,12 @@
       "Failed to trash document": [
         "Kunne ikke legge dokumentet i papirkurven"
       ],
-      "Failed to upload files: ${ err }": [
-        "Kunne ikke laste opp filer: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Fil eller mappe \"${ filename }\" og ${ count } annen lastes allerede opp",
         "Fil eller mappe \"${ filename }\" og ${ count } andre lastes allerede opp"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Fil eller mappe \"${ filename }\" lastes allerede opp"
-      ],
-      "File or folder is missing a name": [
-        "Fil eller mappe mangler et navn"
       ],
       "Invitation's email was sent again": [
         "E-posten til invitasjonen ble sendt på nytt"
@@ -8295,9 +8130,6 @@
       "Move ${ n } item": [
         "Flytt ${ n } element",
         "Flytt ${ n } elementer"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Ikke nok ledig plass til å laste opp ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Offentlig koblingstilgang oppdatert"
@@ -8765,6 +8597,9 @@
       ],
       "Anything you'd like us to know": [
         "Er det noe mer du vil at vi skal vite om?"
+      ],
+      "Ask anything…": [
+        "Spør om hva som helst…"
       ],
       "Choose password": [
         "Velg passord"
@@ -9734,6 +9569,12 @@
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "En kobling til dette elementet er lagret i din Drive. Du får tilgang til koblingen senere fra seksjonen \"Delt med meg\"."
       ],
+      "Editor permissions": [
+        "Redaktørtillatelser"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Redaktører kan nå administrere deling og invitere andre. Du kan slå det av når som helst i delingsinnstillingene."
+      ],
       "To edit this document, create a copy that you can modify.": [
         "For å redigere dette dokumentet, lag en kopi som du kan endre."
       ]
@@ -10235,9 +10076,6 @@
       "Birthday": [
         "Bursdag"
       ],
-      "Browser might run out of memory": [
-        "Nettleseren kan gå tom for minne"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Avbryt ${ MAIL_SHORT_APP_NAME }-abonnement"
       ],
@@ -10396,26 +10234,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Nedgradere til ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Nedlasting ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Last ned ${ DRIVE_APP_NAME }-appen"
       ],
       "Download the app": [
         "Last ned appen"
-      ],
-      "Download unverified file?": [
-        "Laste ned ubekreftet fil?"
-      ],
-      "Download unverified folder?": [
-        "Laste ned ubekreftet mappe?"
-      ],
-      "Duplicate file found": [
-        "Duplikatfil funnet"
-      ],
-      "Duplicate folder found": [
-        "Duplikatmappe funnet"
       ],
       "Edit contact": [
         "Rediger kontakt"
@@ -10598,9 +10421,6 @@
       "Other names": [
         "Andre navn"
       ],
-      "Performance might be affected": [
-        "Det kan gå utover ytelsen"
-      ],
       "Phone numbers": [
         "Telefonnumre"
       ],
@@ -10688,6 +10508,9 @@
       "Settings for ${ sharedFileName }": [
         "Innstillinger for ${ sharedFileName }"
       ],
+      "Share \"${ fileName }\"": [
+        "Del \"${ fileName }\""
+      ],
       "Share ${ name }": [
         "Delt ressurs ${ name }"
       ],
@@ -10769,9 +10592,6 @@
       "Upload and share files": [
         "Last opp og del filer"
       ],
-      "Uploading a large file or folder": [
-        "Laster opp en stor fil eller mappe"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Bruk ${ VPN_SHORT_APP_NAME } for personvern"
       ],
@@ -10816,9 +10636,6 @@
       ],
       "Your document cannot be loaded": [
         "Dokumentet kan ikke lastes inn"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Nedlastingen inneholder en ${ DOCS_APP_NAME }-fil"
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
@@ -10966,6 +10783,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Oppgrader til en støttet plan for å bruke administratorroller."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
       ]
