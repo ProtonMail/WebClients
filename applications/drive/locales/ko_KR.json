@@ -14181,6 +14181,9 @@
       ],
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (${ quantity }명 이용 가능)"
+      ],
+      "${ price } per seat": [
+        "사용자당 ${ price }"
       ]
     },
     "meet_2025: Info": {
@@ -14415,6 +14418,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "사용자가 초대를 수락하면 역할을 할당할 수 있습니다."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "관리자 규칙을 사용하려면 지원하는 플랜으로 업그레이드하세요."
       ]
     },
     "Role": {
