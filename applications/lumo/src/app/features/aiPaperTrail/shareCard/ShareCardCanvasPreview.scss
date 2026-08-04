@@ -1,12 +1,12 @@
 .share-card-canvas-preview {
-    inline-size: auto;
-    block-size: auto;
-    max-block-size: 60vh;
-    max-inline-size: min(100%, 22rem);
-    border-radius: 1rem;
-    box-shadow: var(--shadow-lifted);
+	inline-size: auto;
+	block-size: auto;
+	max-block-size: 60vh;
+	max-inline-size: min(100%, 32rem);
+	border-radius: 1rem;
+	box-shadow: var(--shadow-lifted);
 
-    &--modal {
-        max-inline-size: 100%;
-    }
+	&--modal {
+		max-inline-size: 100%;
+	}
 }
