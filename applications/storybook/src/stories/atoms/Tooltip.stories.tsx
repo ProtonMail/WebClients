@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip, TooltipTypeEnum } from '@proton/atoms/Tooltip/Tooltip';
 import type { PopperPlacement } from '@proton/components/components/popper/interface';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 
 const placements: PopperPlacement[] = ['bottom', 'left', 'right', 'top'];
 
@@ -71,6 +72,34 @@ export const AllPlacements: Story = {
             {placements.map((placement) => (
                 <Tooltip {...args} key={placement} originalPlacement={placement} />
             ))}
+        </div>
+    ),
+};
+
+export const NoFocusableElementAsChildren: Story = {
+    parameters: {
+        docs: {
+            description: {
+                story: "Whenever the children is a non-focusable element, the Tooltip won't be rendered. The solution is to wrap the content with a focusable element.",
+            },
+        },
+    },
+    render: (_) => (
+        <div className="flex flex-row gap-20 items-center">
+            <div className="flex flex-column items-center">
+                <span>Icon without a wrapping div</span>
+                <Tooltip title="Globe 1" openDelay={0}>
+                    <IcGlobe />
+                </Tooltip>
+            </div>
+            <div className="flex flex-column items-center">
+                <span>Icon with a wrapping div</span>
+                <Tooltip title="Globe 2" openDelay={0}>
+                    <div className="flex items-center">
+                        <IcGlobe />
+                    </div>
+                </Tooltip>
+            </div>
         </div>
     ),
 };
