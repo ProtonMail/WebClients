@@ -1,7 +1,7 @@
-import { useModalTwoStatic } from '@proton/components/index';
-import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { useModalTwoStatic } from '@proton/components';
 
-import { withHoc } from '../modalUtils/withHoc';
+import { withHoc } from '../../../internal/withHoc';
+import { handleSdkError } from '../../../legacy/errorHandling/handleSdkError';
 import { CopyItemsModalView, type CopyItemsModalViewProps } from './CopyItemsModalView';
 import type { CopyModalItem } from './useCopyItemsModalState';
 import { type UseCopyItemsModalStateProps, useCopyItemsModalState } from './useCopyItemsModalState';

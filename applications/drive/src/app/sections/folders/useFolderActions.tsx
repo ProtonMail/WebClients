@@ -1,12 +1,12 @@
 import { useUser } from '@proton/account/user/hooks';
 import { generateNodeUid, getDrive, useDrive } from '@proton/drive';
+import { useCopyItemsModal } from '@proton/drive/modals/copyItemsModal';
 import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
 import { useMoveItemsModal } from '@proton/drive/modals/moveItemsModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
 
 import { useUploadInput } from '../../legacy/hooks/drive/useUploadInput';
-import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';

@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
-import { showAggregatedErrorNotification } from '@proton/drive/legacy/errorHandling';
-import { getEllipsedName } from '@proton/drive/modules/intl';
-import { useListNotifications } from '@proton/drive/modules/notifications';
+import { showAggregatedErrorNotification } from '../../../legacy/errorHandling';
+import { getEllipsedName } from '../../../modules/intl';
+import { useListNotifications } from '../../../modules/notifications';
 
 /**
  * Handles aggregation of success/error notifications for batch copy operations.
