@@ -1,9 +1,9 @@
 import * as db from 'proton-pass-web/lib/database';
-import { getSessionKey } from 'proton-pass-web/lib/sessions';
 import {
     B2B_STORAGE_KEY,
     TELEMETRY_STORAGE_KEY,
     getB2BEventsStorageKey,
+    getSessionKey,
     getSettingsStorageKey,
     getTelemetryStorageKey,
     localGarbageCollect,
