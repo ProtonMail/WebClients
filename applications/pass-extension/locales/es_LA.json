@@ -121,6 +121,9 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Cancel bulk selection": [
+        "Cancelar selección en lote"
+      ],
       "Cancel email change": [
         "Cancelar el cambio de correo electrónico"
       ],
@@ -142,8 +145,14 @@
       "Clear": [
         "Borrar"
       ],
+      "Clear item type filter": [
+        "Borrar filtro de tipo de elemento"
+      ],
       "Clear search": [
         "Limpiar búsqueda"
+      ],
+      "Clear sort filter": [
+        "Borrar orden de filtro"
       ],
       "Close": [
         "Cerrar"
@@ -586,6 +595,9 @@
       "Reset": [
         "Restablecer"
       ],
+      "Reset filters": [
+        "Restablecer filtros"
+      ],
       "Reset history": [
         "Restablecer el historial"
       ],
@@ -630,6 +642,9 @@
       ],
       "See members": [
         "Ver miembros"
+      ],
+      "Select items": [
+        "Seleccionar elementos"
       ],
       "Send email": [
         "Enviar un correo electrónico"
@@ -687,6 +702,9 @@
       ],
       "Submitting report...": [
         "Enviando informe..."
+      ],
+      "Switch vault": [
+        "Cambiar bóveda"
       ],
       "Sync alias": [
         "Sincronizar el alias",
@@ -1413,6 +1431,9 @@
       ],
       "Unsupported Bitwarden file format": [
         "Formato de archivo de Bitwarden no soportado"
+      ],
+      "Unsupported file type": [
+        "Tipo de archivo no soportado"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Error al actualizar la bóveda \"${ payload.content.name }\""
