@@ -91,6 +91,7 @@ import {
     MemberCreationValidationError,
     type MembersState,
     getMemberAddresses,
+    invalidateMemberRoles,
     membersThunk,
     updateMemberRoles,
     upsertMember,
@@ -313,6 +314,7 @@ export const setRole = ({
                 return;
             }
             await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
+            dispatch(invalidateMemberRoles({ member }));
             return;
         }
 
@@ -320,6 +322,7 @@ export const setRole = ({
 
         if (!getIsPasswordless(organizationKey?.Key)) {
             await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
+            dispatch(invalidateMemberRoles({ member }));
             return;
         }
 
@@ -337,6 +340,7 @@ export const setRole = ({
         }
 
         await dispatch(setAdminRoles({ memberKeyPayloads: [payload], api }));
+        dispatch(invalidateMemberRoles({ member }));
     };
 };
 
