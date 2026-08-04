@@ -1,6 +1,7 @@
 import type { History } from 'history';
 
 import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
+import type { Filter } from '@proton/components/containers/filters/interfaces';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { Folder, Label, MailSettings } from '@proton/shared/lib/interfaces';
 
@@ -35,6 +36,7 @@ export interface MailToolDeps {
     history: History;
     getFolders: () => Folder[];
     getLabels: () => Label[];
+    getFilters: () => Filter[];
     getMailSettings: () => MailSettings;
     applyLocation: ApplyLocation;
 }
