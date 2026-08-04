@@ -4691,6 +4691,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Voit poistaa heidän käyttöoikeutensa milloin tahansa palauttaaksesi tilisi yksinhallinnan."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Sinua ei ole vielä nimetty kenenkään palautusyhteyshenkilöksi."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Sinua ei ole vielä nimetty kenenkään hätäyhteyshenkilöksi."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Olet saavuttanut ${ limit } hätäyhteyshenkilön enimmäismäärän.",
         "Olet saavuttanut ${ limit } hätäyhteyshenkilön enimmäismäärän."
@@ -18914,6 +18920,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Tämä luo uuden ${ MAIL_APP_NAME } -osoitteen."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Päivitä tuettuun tilaukseen käyttääksesi järjestelmänvalvojan rooleja."
       ],
       "User created": [
         "Käyttäjä luotiin"

@@ -1283,6 +1283,9 @@
       "Verify password": [
         "Verifica password"
       ],
+      "Verify recovery phrase": [
+        "Verifica la frase di recupero"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifica il dominio ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1382,6 +1385,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licenze ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utente)",
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utenti)"
       ],
       "${ price } per dedicated server": [
         "${ price } per server dedicato"
@@ -1859,6 +1866,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteggi e pianifica le tue email con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }, alias hide-my-email illimitati e altro ancora.",
+        "Proteggi e pianifica le tue email con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }, alias hide-my-email illimitati e altro ancora."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora.",
@@ -5234,6 +5245,9 @@
       "This label name is not available. Please choose a different name.": [
         "Questo nome dell'etichetta non è disponibile. Scegli un nome diverso."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Questa frase non consente il recupero dell'account. Puoi generarne una nuova per assicurarti che il tuo account possa essere recuperato in futuro."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Per creare degli account utente non privati e accedere ai loro account, dovrai ripristinare i tuoi privilegi di amministratore."
       ],
@@ -7354,6 +7368,9 @@
       "Change your password": [
         "Cambia la password"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Verifica se la tua frase di recupero può essere utilizzata per recuperare completamente il tuo account."
+      ],
       "Choose a plan that works best for you.": [
         "Scegli un piano che funziona meglio per te."
       ],
@@ -8586,6 +8603,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "La frase di recupero non è associata ad alcuna chiave obsoleta."
+      ],
+      "Recovery phrase verified": [
+        "Frase di recupero verificata"
       ],
       "Reddit": [
         "Reddit"
@@ -16116,6 +16136,10 @@
         "${ ipAddresses } server dedicato",
         "${ ipAddresses } server dedicati"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } per ${ maxAi } utente",
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } per ${ maxAi } utenti"
+      ],
       "${ n } calendar per user": [
         "${ n } calendario per utente",
         "${ n } calendari per utente"
@@ -18385,6 +18409,9 @@
       ],
       "Verify your password": [
         "Verifica la tua password"
+      ],
+      "Verify your phrase": [
+        "Verifica la tua frase"
       ],
       "Verifying your card...": [
         "Verifica della carta..."

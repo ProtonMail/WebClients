@@ -1211,6 +1211,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Millora per activar ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Millorar al pla Professional"
+      ],
       "Upgrade to view all": [
         "Milloreu el pla per a veure-ho tot"
       ],
@@ -3868,8 +3871,8 @@
         "Podreu tornar a connectar aquesta adreça en qualsevol moment."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
-        "Esteu redirigint ${ numAddressesOrSync } adreça de Gmail a ${ MAIL_APP_NAME }.",
-        "Esteu redirigint ${ numAddressesOrSync } adreces de Gmail a ${ MAIL_APP_NAME }."
+        "Esteu reenviant ${ numAddressesOrSync } adreça de Gmail a ${ MAIL_APP_NAME }.",
+        "Esteu reenviant ${ numAddressesOrSync } adreces de Gmail a ${ MAIL_APP_NAME }."
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
         "Heu connectat ${ MAX_SYNC_PAID_USER } adreça de Gmail. Per afegir-ne una altra, primer desactiveu un dels vostres comptes connectats.",
@@ -4728,6 +4731,12 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Els hi podeu suprimir l'accés en qualsevol moment per recuperar el control exclusiu del vostre compte."
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Encara ningú no us ha designat com a contacte de recuperació."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Encara no heu estat designat com a contacte d'emergència per a ningú."
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Heu arribat al màxim d'${ limit } contacte d'emergència.",
@@ -6064,11 +6073,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Segur que voleu eliminar la clau de seguretat ${ name }?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Introduïu el vostre PIN cada vegada que utilitzeu la clau de seguretat amb ${ BRAND_NAME }, quan la clau ho admeti. Això només s'aplica a les claus que tinguin un PIN configurat."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
       ],
       "Insert your security key into your device.": [
         "Introduïu la clau de seguretat al vostre dispositiu."
+      ],
+      "PIN requirement for security keys disabled": [
+        "S'ha desactivat el requisit de PIN per a les claus de seguretat"
+      ],
+      "PIN requirement for security keys enabled": [
+        "S'ha activat el requisit de PIN per a les claus de seguretat"
+      ],
+      "Require PIN for security key": [
+        "Requereix PIN per a la clau de seguretat"
       ],
       "Security key": [
         "Clau de seguretat"
@@ -7308,6 +7329,9 @@
       "Authenticator app 2FA enabled": [
         "S'ha habilitat l'aplicació d'autenticació 2FA"
       ],
+      "Available on VPN Professional": [
+        "Disponible a VPN Professional"
+      ],
       "Awaiting transaction": [
         "S'està esperant la transacció"
       ],
@@ -7706,6 +7730,9 @@
       ],
       "Enable email notifications": [
         "Activa les notificacions per correu electrònic"
+      ],
+      "Enable groups to streamline access control": [
+        "Activeu els grups per simplificar el control d'accés"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Habiliteu l'inici de sessió únic per a mantenir segura la vostra organització"
@@ -8188,6 +8215,9 @@
       ],
       "Learn more about Gateways": [
         "Més informació sobre les passarel·les"
+      ],
+      "Learn more about groups": [
+        "Per saber-ne més sobre els grups."
       ],
       "Learn more about single sign-on": [
         "Obteniu més informació sobre l'inici de sessió únic"
@@ -8767,6 +8797,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
+      "Smart Routed through a different country.": [
+        "Encaminament intel·ligentment a través d'un país diferent."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Encaminat intel·ligentment a través de: ${ joinedCountries }."
+      ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "És possible que algunes aplicacions de ${ BRAND_NAME } encara no admetin claus de seguretat. Si hi desactiveu l'autenticació de dos factors (2FA), potser no podreu iniciar la sessió en aquestes aplicacions."
       ],
@@ -9186,8 +9222,14 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Milloreu el pla ara per veure l'activitat de ${ PASS_APP_NAME } a tota la vostra organització."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Milloreu de pla o allibereu espai en qualsevol moment per portar la resta"
+      ],
+      "Upgrade required": [
+        "Actualització necessària"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
@@ -9422,6 +9464,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Amb els grups, podeu enviar correus electrònics de manera ràpida i senzilla a totes les persones d'un grup determinat."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Amb la VPN Professional, els administradors poden imposar la VPN sempre activa a tots els membres de l'organització, així com passarel·les privades, polítiques d'accés i monitoratge."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
@@ -10810,6 +10855,9 @@
       "Unlimited": [
         "Il·limitat"
       ],
+      "Upgrade": [
+        "Milloreu de pla"
+      ],
       "Upload 1 or more encryption keys": [
         "Pengeu 1 o més claus de xifratge"
       ],
@@ -11958,8 +12006,8 @@
         "Programació de cites"
       ],
       "Appointment scheduling with ${ n } booking page": [
-        "Programació de cites amb ${ n } pàgina de reserva",
-        "Programació de cites amb ${ n } pàgines de reserva"
+        "Programació de cites amb ${ n } pàgina de reserves",
+        "Programació de cites amb ${ n } pàgines de reserves"
       ],
       "Apps for": [
         "Aplicacions per a"
@@ -12301,8 +12349,8 @@
         "Compartició de la caixa forta (fins a ${ n } persones)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "Ús compartit de la caixa forta amb fins a ${ n } persona",
-        "Ús compartit de la caixa forta amb fins a ${ n } persones"
+        "Compartició de la caixa forta amb fins a ${ n } persona",
+        "Compartició de la caixa forta amb fins a ${ n } persones"
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
@@ -14530,7 +14578,7 @@
         "Comenceu a guanyar crèdits"
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
-        "Podeu obtenir fins a **${ maxRewardAmount }** en crèdits."
+        "Obtingueu fins a **${ maxRewardAmount }** en crèdit."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Us queda **${ daysRemaining } dia** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**.",
@@ -18112,6 +18160,9 @@
       "Remove via MDM": [
         "Esborrar-ho mitjançant MDM"
       ],
+      "Remove via PowerShell": [
+        "Esborrar-ho mitjançant PowerShell"
+      ],
       "Rename the gateway": [
         "Canvia el nom de la passarel·la"
       ],
@@ -18379,6 +18430,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Milloreu el pla a ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "Milloreu el pla per habilitar la VPN sempre activa"
       ],
       "Upgrade to keep your premium benefits.": [
         "Milloreu de pla per mantenir els vostres avantatges prèmium."
@@ -19148,6 +19202,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Això crearà una nova adreça de ${ MAIL_APP_NAME }."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Milloreu a un pla compatible per utilitzar rols d'administrador/a."
       ],
       "User created": [
         "S'ha creat l'usuari"
