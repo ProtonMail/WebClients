@@ -12,6 +12,7 @@ import { EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID, EDITOR_DROPZONE } from '../const
 import type { ModalLinkProps } from '../hooks/interface';
 import type { EditorActions, SetEditorToolbarConfig } from '../interface';
 import BlockquoteToggle from './BlockquoteToggle';
+import { getComposerIframeSandbox } from './helpers/getComposerIframeSandbox';
 import useBubbleIframeEvents from './hooks/useBubbleIframeEvents';
 import useComposerDrag from './hooks/useComposerDrag';
 import useInitRooster from './hooks/useInitRooster';
@@ -97,6 +98,7 @@ const RoosterEditor = ({
                 <iframe
                     ref={iframeRef}
                     title={title}
+                    sandbox={getComposerIframeSandbox()}
                     className="w-full h-full flex-1 border-none"
                     data-testid="rooster-iframe"
                 />
