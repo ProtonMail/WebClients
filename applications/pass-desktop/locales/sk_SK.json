@@ -127,6 +127,9 @@
       "Cancel": [
         "Zrušiť"
       ],
+      "Cancel bulk selection": [
+        "Zrušiť hromadný výber"
+      ],
       "Cancel email change": [
         "Zrušiť zmenu emailu"
       ],
@@ -148,8 +151,14 @@
       "Clear": [
         "Vyčistiť"
       ],
+      "Clear item type filter": [
+        "Vyčistiť filter typu položky"
+      ],
       "Clear search": [
         "Vyčistiť vyhľadávanie"
+      ],
+      "Clear sort filter": [
+        "Vyčistiť triediaci filter"
       ],
       "Close": [
         "Zatvoriť"
@@ -610,6 +619,9 @@
       "Reset": [
         "Resetovať"
       ],
+      "Reset filters": [
+        "Resetovať filtre"
+      ],
       "Reset history": [
         "Resetovať históriu"
       ],
@@ -648,6 +660,9 @@
       ],
       "See members": [
         "Zobraziť členov"
+      ],
+      "Select items": [
+        "Vyberte položky"
       ],
       "Send email": [
         "Odoslať email"
@@ -708,6 +723,9 @@
       ],
       "Submitting report...": [
         "Odosielanie hlásenia..."
+      ],
+      "Switch vault": [
+        "Prepnúť trezor"
       ],
       "Sync alias": [
         "Synchronizovať alias",
@@ -2247,7 +2265,10 @@
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"

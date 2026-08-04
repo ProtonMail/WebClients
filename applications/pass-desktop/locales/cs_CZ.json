@@ -1680,7 +1680,7 @@
         "Zjištěno ${ row.breachCount } úniků informací"
       ],
       "${ selectedShareIds.size } selected": [
-        "Vybráno: ${ selectedShareIds.size }"
+        "${ selectedShareIds.size } vybráno"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } člen)",
@@ -2019,7 +2019,7 @@
         "Vyprší za ${ remainingTime }"
       ],
       "Expires on ${ formattedDate }": [
-        "Platnost vyprší dne ${ formattedDate }"
+        "Vyprší ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Exportování vašich dat..."
@@ -2235,7 +2235,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -3421,7 +3424,7 @@
         "Vypršelo"
       ],
       "Expired tokens (${ expired.length })": [
-        "Expirované tokeny (${ expired.length })"
+        "Neplatné tokeny (${ expired.length })"
       ],
       "Expires in": [
         "Vyprší za"
