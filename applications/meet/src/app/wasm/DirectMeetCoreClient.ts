@@ -236,7 +236,7 @@ export class DirectMeetCoreClient implements MeetCoreClient {
         return this.app.admitWaitingRoomJoinRequest(meetLinkName, requestId, sessionKeyBase64);
     }
 
-    public admitAllWaitingRoomJoinRequests(meetLinkName: string, sessionKeyBase64: string): Promise<void> {
+    public admitAllWaitingRoomJoinRequests(meetLinkName: string, sessionKeyBase64: string): Promise<string[]> {
         return this.app.admitAllWaitingRoomJoinRequests(meetLinkName, sessionKeyBase64);
     }
 
