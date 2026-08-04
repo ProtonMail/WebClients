@@ -22,12 +22,13 @@ interface Props {
 
 const CompanyModalContent = ({ onClose }: { onClose: () => void }) => {
     const [tabIndex, setTabIndex] = useState(0);
-    const { isEditing, name, isSubmitting, handleSubmit } = useCompanyModalContext();
+    const { isEditing, canManageManagers, name, isSubmitting, handleSubmit } = useCompanyModalContext();
 
     const title = isEditing ? c('Title').t`Edit company` : c('Title').t`Add company`;
 
-    // only show managers tab if in edit mode because we can't add managers if the company is not yet created
-    const tabs = isEditing
+    // Only admins can assign delegated managers, so only they get the Managers tab; everyone
+    // else can still edit the company's general details.
+    const tabs = canManageManagers
         ? [
               { title: c('Title').t`General`, content: <GeneralSettings /> },
               { title: c('Title').t`Managers`, content: <ManagerSettings /> },

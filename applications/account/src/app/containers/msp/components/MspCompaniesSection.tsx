@@ -2,8 +2,13 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { addCompanyThunk, setCompanyStatusThunk, updateCompanyThunk } from '@proton/account/mspSubsidiaries/actions';
+import { useMspSubsidiaries } from '@proton/account/mspSubsidiaries/hooks';
+import { manageCompanyThunk } from '@proton/account/mspSubsidiaries/manageCompanyAction';
+import { useMspDispatch } from '@proton/account/mspSubsidiaries/useMspDispatch';
 import { isOwnerRole } from '@proton/account/organizationRoles/helpers';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserOrganizations } from '@proton/account/userOrganizations/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
@@ -32,12 +37,14 @@ import SettingsSectionExtraWide from '@proton/components/containers/account/Sett
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { MEMBER_STATE } from '@proton/shared/lib/interfaces/Member';
+import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
+import type { UserOrganization } from '@proton/shared/lib/interfaces/Organization';
 import emptyCompaniesImg from '@proton/styles/assets/img/illustrations/empty-companies.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import useMspCompanies from '../hooks/useMspCompanies';
 import type { CompanyFormData, MspCompany } from '../types';
 import CompanyModal from './CompanyModal';
 import DisableCompanyModal from './DisableCompanyModal';
@@ -56,14 +63,40 @@ const ManageButton = ({ className, ...props }: { className?: string } & ButtonPr
     </Button>
 );
 
+const toCompany = (sub: MspSubsidiary): MspCompany => ({
+    id: sub.ID,
+    name: sub.Name,
+    assignedSeats: sub.MaxMembers,
+    usedSeats: sub.ActiveMembers,
+    status: sub.Status,
+});
+
+const toManagedCompany = (org: UserOrganization): MspCompany => ({
+    id: org.OrganizationID,
+    name: org.OrganizationName,
+    assignedSeats: org.MaxMembers,
+    usedSeats: org.UsedMembers,
+    status: org.State,
+});
+
 const MspCompaniesSection = ({ path }: { path: string }) => {
-    const [user] = useUser();
-    const isAdminRoleMVPEnabled = useFlag('AdminRoleMVP');
-    const [userPermissions] = useUserPermissions();
-    const isAdmin = isAdminRoleMVPEnabled ? (userPermissions?.Roles?.some(isOwnerRole) ?? false) : user.isAdmin;
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
-    const { companies, loading, addCompany, updateCompany, setCompanyStatus, manageCompany } = useMspCompanies();
+    const dispatch = useMspDispatch();
+    const [user] = useUser();
+
+    const [subsidiaries = [], subsidiariesLoading] = useMspSubsidiaries();
+    const [userOrganizations = [], userOrganizationsLoading] = useUserOrganizations();
+
+    const isAdminRoleMVPEnabled = useFlag('AdminRoleMVP');
+    const [userPermissions, userPermissionsLoading] = useUserPermissions();
+    const isAdmin = isAdminRoleMVPEnabled ? (userPermissions?.Roles?.some(isOwnerRole) ?? false) : user.isAdmin;
+    const companies = isAdmin
+        ? subsidiaries.map(toCompany)
+        : userOrganizations
+              .filter((org) => !org.IsPrimary && org.MemberState === MEMBER_STATE.STATUS_ENABLED)
+              .map(toManagedCompany);
+    const loading = userPermissionsLoading || (isAdmin ? subsidiariesLoading : userOrganizationsLoading);
     const { viewportWidth } = useActiveBreakpoint();
 
     const [search, setSearch] = useState('');
@@ -94,10 +127,10 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
     const handleSave = async (data: CompanyFormData) => {
         try {
             if (modal?.mode === 'edit') {
-                await updateCompany(modal.company.id, data);
+                await dispatch(updateCompanyThunk({ id: modal.company.id, data }));
                 createNotification({ text: c('Success').t`${data.name} updated`, type: 'success' });
             } else {
-                await addCompany(data);
+                await dispatch(addCompanyThunk({ data }));
                 createNotification({ text: c('Success').t`${data.name} added`, type: 'success' });
             }
             setModal(null);
@@ -111,7 +144,7 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
             return;
         }
         try {
-            await setCompanyStatus(confirmDisable.id, 'disabled');
+            await dispatch(setCompanyStatusThunk({ id: confirmDisable.id, status: ORGANIZATION_STATE.DISABLED }));
             createNotification({ text: c('Success').t`${confirmDisable.name} disabled`, type: 'success' });
             setConfirmDisable(null);
         } catch (e) {
@@ -121,7 +154,7 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
 
     const handleEnable = async (company: MspCompany) => {
         try {
-            await setCompanyStatus(company.id, 'active');
+            await dispatch(setCompanyStatusThunk({ id: company.id, status: ORGANIZATION_STATE.ACTIVE }));
             createNotification({ text: c('Success').t`${company.name} enabled`, type: 'success' });
         } catch (e) {
             handleError(e);
@@ -130,7 +163,7 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
 
     const handleManageCompany = async (company: MspCompany) => {
         try {
-            const result = await manageCompany(company.id);
+            const result = await dispatch(manageCompanyThunk({ id: company.id }));
             openManageAccountModal({ linkUrl: getAppHref(path, APPS.PROTONACCOUNT, result.localID) });
         } catch (e) {
             handleError(e);
@@ -200,7 +233,8 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                         </TableHeader>
                         <TableBody>
                             {pageCompanies.map((company) => {
-                                const isDisabled = company.status === 'disabled';
+                                const isDisabled = company.status === ORGANIZATION_STATE.DISABLED;
+                                const isActive = company.status === ORGANIZATION_STATE.ACTIVE;
                                 const menuActions = [
                                     {
                                         key: 'edit',
@@ -209,6 +243,7 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                                     },
                                     {
                                         key: 'toggle-status',
+                                        disabled: !isAdmin,
                                         text: isDisabled
                                             ? c('Action').t`Enable company`
                                             : c('Action').t`Disable company`,
@@ -220,18 +255,12 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                                 return (
                                     <TableRow key={company.id}>
                                         <TableCell label={c('Column header').t`Company`}>
-                                            {isAdmin ? (
-                                                <InlineLinkButton
-                                                    className="block w-full overflow-hidden text-ellipsis text-nowrap color-norm text-underline text-left"
-                                                    onClick={() => setModal({ mode: 'edit', company })}
-                                                >
-                                                    {company.name}
-                                                </InlineLinkButton>
-                                            ) : (
-                                                <span className="block w-full overflow-hidden text-ellipsis text-nowrap">
-                                                    {company.name}
-                                                </span>
-                                            )}
+                                            <InlineLinkButton
+                                                className="block w-full overflow-hidden text-ellipsis text-nowrap color-norm text-underline text-left"
+                                                onClick={() => setModal({ mode: 'edit', company })}
+                                            >
+                                                {company.name}
+                                            </InlineLinkButton>
                                         </TableCell>
                                         <TableCell label={c('Column header').t`Used / assigned seats`}>
                                             <span className={clsx(isDisabled && 'color-weak')}>
@@ -254,6 +283,7 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                                             <ManageButton
                                                 className="inline-flex gap-1 justify-center md:hidden"
                                                 fullWidth
+                                                disabled={!isActive}
                                                 onClick={() => handleManageCompany(company)}
                                             />
                                         </TableCell>
@@ -262,13 +292,13 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                                                 <ManageButton
                                                     size="small"
                                                     className="md:inline-flex gap-1 hidden"
+                                                    disabled={!isActive}
                                                     onClick={() => handleManageCompany(company)}
                                                 />
                                                 <DropdownActions
                                                     size="small"
                                                     shape="ghost"
                                                     iconName="three-dots-vertical"
-                                                    disabled={!isAdmin}
                                                     list={menuActions}
                                                 />
                                             </div>

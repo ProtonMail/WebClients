@@ -1,15 +1,9 @@
-export const MSP_SUBSIDIARY_STATUS = {
-    ON_HOLD: 0,
-    ACTIVE: 1,
-    DISABLED: 2,
-} as const;
-
-export type MspSubsidiaryStatusValue = (typeof MSP_SUBSIDIARY_STATUS)[keyof typeof MSP_SUBSIDIARY_STATUS];
+import type { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 
 export interface MspSubsidiary {
     ID: string;
     Name: string;
-    Status: MspSubsidiaryStatusValue;
+    Status: ORGANIZATION_STATE; // Only ACTIVE and DISABLED are used for MSP subsidiaries for now
     MaxMembers: number;
     ActiveMembers: number;
     ParentOrgToken: string | undefined;
