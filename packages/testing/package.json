@@ -6,6 +6,9 @@
     "exports": {
         "./builders/address": "./builders/address.ts",
         "./builders/entitlements": "./builders/entitlements.ts",
+        "./builders/filter": "./builders/filter.ts",
+        "./builders/folder": "./builders/folder.ts",
+        "./builders/label": "./builders/label.ts",
         "./builders/subscription": "./builders/subscription.ts",
         "./builders/user": "./builders/user.ts",
         "./data/keys": "./data/keys.ts",
