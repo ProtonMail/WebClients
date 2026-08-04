@@ -26,7 +26,6 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import shuffle from '@proton/utils/shuffle';
 
-import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
 import { useFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstEligibility';
 import type { FeedbackDowngradeFormData, FeedbackDowngradeResult, KeepSubscription } from './interface';
 
@@ -91,8 +90,6 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
     const isEligibleForFeedbackFirst = hasB2CAccess || hasB2BAccess;
 
     const { isPaid } = user;
-
-    const { sendFeedbackModalCancelReport, sendFeedbackModalSubmitReport } = useCancellationTelemetry();
 
     const isVpnApp =
         APP_NAME === APPS.PROTONVPN_SETTINGS || getAppFromPathnameSafe(location.pathname) === APPS.PROTONVPN_SETTINGS;
@@ -329,14 +326,12 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
             ReasonDetails: shouldSendReasonDetails ? model.ReasonDetails : '',
         };
 
-        sendFeedbackModalSubmitReport();
         onResolve(data);
         onClose?.();
     };
 
     const handleKeepSubscription = () => {
         onResolve({ status: 'kept' });
-        sendFeedbackModalCancelReport();
         onClose?.();
     };
 
