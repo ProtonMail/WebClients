@@ -20,6 +20,7 @@ type SliceState = MailSettingState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
 export const selectMailSettings = (state: MailSettingState) => state[name];
+export const selectMailSettingsLoading = (state: MailSettingState) => selectMailSettings(state).value === undefined;
 
 const modelThunk = createAsyncModelThunk<Model, MailSettingState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
