@@ -310,9 +310,6 @@
       "Continue to ${ planOrAppName }": [
         "Continua con ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Continua senza categorie"
-      ],
       "Continue with Free": [
         "Continua con la versione gratuita"
       ],
@@ -1520,8 +1517,7 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
+        "Affida chiave"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -1728,9 +1724,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Personalizza le categorie"
-      ],
       "Got it": [
         "Capito"
       ],
@@ -1802,6 +1795,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licenze ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utente)",
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utenti)"
       ],
       "${ price } per dedicated server": [
         "${ price } per server dedicato"
@@ -2114,6 +2111,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteggi e pianifica le tue email con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }, alias hide-my-email illimitati e altro ancora.",
+        "Proteggi e pianifica le tue email con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }, alias hide-my-email illimitati e altro ancora."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora.",
@@ -4351,9 +4352,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Leggi, rispondi e gestisci Gmail da ${ MAIL_APP_NAME }"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Fai clic con il pulsante destro del mouse su un'email e seleziona \"Sposta in\" oppure trascinala e rilasciala in un'altra categoria. In futuro le email simili verranno ordinate automaticamente lì."
-      ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Invia e ricevi messaggi Gmail direttamente in ${ MAIL_APP_NAME }. Connetti il tuo indirizzo in ${ addressesSettingsLink }."
       ],
@@ -4525,6 +4523,12 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Abbiamo rilevato i seguenti campi nel file CSV che hai caricato. Seleziona quelli che vuoi importare."
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nuovo messaggio",
+        "${ messageCount } nuovi messaggi"
       ]
     },
     "Desktop notification title": {
@@ -6803,6 +6807,10 @@
         "${ contactsLength } contatto",
         "${ contactsLength } contatti"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } email → ${ dest }",
+        "${ count } email → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } su ${ totalProgress }",
         "${ currentProgress } su ${ totalProgress }"
@@ -6860,6 +6868,10 @@
       "${ groupCounts } group found": [
         "${ groupCounts } gruppo trovato",
         "${ groupCounts } gruppi trovati"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problema durante l'importazione:",
+        "${ issues.length } problemi durante l'importazione:"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } include l'assistente di scrittura ${ BRAND_NAME } Scribe."
@@ -7699,6 +7711,10 @@
       "Forgot password?": [
         "Hai dimenticato la password?"
       ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Trovato un indice di ricerca crittografato attuale con ${ oldIndexSize } messaggio.",
+        "Trovato un indice di ricerca crittografato attuale con ${ oldIndexSize } messaggi."
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Gratis da provare per ${ ASSISTANT_TRIAL_TIME_DAYS } giorno",
         "Gratis da provare per ${ ASSISTANT_TRIAL_TIME_DAYS } giorni"
@@ -7838,7 +7854,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -9102,10 +9119,6 @@
       "You have ${ totalLabel } in your inbox.": [
         "Hai ${ totalLabel } nella tua posta in arrivo."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "Hai **${ count } conversazione** nella categoria ${ categoryLabel }",
-        "Hai **${ count } conversazioni** nella categoria ${ categoryLabel }"
-      ],
       "You have **${ count } conversation** stored in this folder": [
         "Hai **${ count } conversazione** memorizzata in questa cartella",
         "Hai **${ count } conversazioni** memorizzate in questa cartella"
@@ -9113,10 +9126,6 @@
       "You have **${ count } conversation** tagged with this label": [
         "Hai **${ count } conversazione** taggata con questa etichetta",
         "Hai **${ count } conversazioni** taggate con questa etichetta"
-      ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "Hai **${ count } messaggio** nella categoria ${ categoryLabel }",
-        "Hai **${ count } messaggi** nella categoria ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Hai **${ count } messaggio ** archiviato in questa cartella",
@@ -9152,14 +9161,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Devi disabilitare o rimuovere qualsiasi utente aggiuntivo di ${ MAIL_APP_NAME }, indirizzi e domini personalizzati prima di poter effettuare il downgrade."
-      ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Hai selezionato **${ checked } conversazione** nella categoria ${ categoryLabel }",
-        "Hai selezionato **${ checked } conversazioni** nella categoria ${ categoryLabel }"
-      ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Hai selezionato **${ checked } messaggio** nella categoria ${ categoryLabel }",
-        "Hai selezionato **${ checked } messaggi** nella categoria ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Hai selezionato **${ count } conversazione** da questa cartella",
@@ -10245,9 +10246,6 @@
       "Payment method": [
         "Metodo di pagamento"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Email personali e di lavoro, e in più importanti aggiornamenti e notifiche"
-      ],
       "PGP scheme": [
         "Schema PGP"
       ],
@@ -10268,9 +10266,6 @@
       ],
       "Primary": [
         "Primario"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Principale - Email personali e di lavoro, oltre ad aggiornamenti importanti"
       ],
       "Promotions": [
         "Promozioni"
@@ -15205,9 +15200,6 @@
         "Sposta ${ selectionCount } messaggio",
         "Sposta ${ selectionCount } messaggi"
       ],
-      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
-        "Spostato in ${ label }. I messaggi simili verranno categorizzati qui in futuro."
-      ],
       "Password copied to clipboard": [
         "Password copiata negli appunti"
       ],
@@ -15995,9 +15987,6 @@
       "Make a secure connection your default": [
         "Rendi la connessione sicura la tua connessione predefinita"
       ],
-      "Make Categories your own": [
-        "Personalizza le categorie a modo tuo"
-      ],
       "Mark all messages as read": [
         "Segna tutti i messaggi come letti"
       ],
@@ -16186,9 +16175,6 @@
       ],
       "Payment verification": [
         "Verifica pagamento"
-      ],
-      "Personalize your Categories": [
-        "Personalizza le tue Categorie"
       ],
       "Phone numbers": [
         "Numeri di telefono"

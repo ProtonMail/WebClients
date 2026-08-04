@@ -3,7 +3,7 @@ import debounce from 'lodash/debounce';
 
 import type { MaybeNull } from '@proton/pass/types';
 
-declare module 'proton-pass-desktop/lib/ipc' {
+declare module './ipc' {
     interface IPCChannels {
         'system:wake': IPCChannel<[void], void>;
     }

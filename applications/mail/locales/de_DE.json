@@ -310,9 +310,6 @@
       "Continue to ${ planOrAppName }": [
         "Weiter zu ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Mit Kategorien fortfahren"
-      ],
       "Continue with Free": [
         "Weiter mit Free"
       ],
@@ -1045,6 +1042,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
       ],
+      "Open debug menu": [
+        "Fehlerbehebung-Menü öffnen"
+      ],
       "Open navigation": [
         "Navigation öffnen"
       ],
@@ -1523,8 +1523,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1697,6 +1696,9 @@
       "Yes, I'll attend": [
         "Ja, ich nehme teil"
       ],
+      "Yes, organize it": [
+        "Ja, ordne es"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
@@ -1731,9 +1733,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Kategorien anpassen"
-      ],
       "Got it": [
         "Verstanden"
       ],
@@ -1742,6 +1741,9 @@
       ],
       "Not now": [
         "Jetzt nicht"
+      ],
+      "Set up categories": [
+        "Kategorien einrichten"
       ],
       "Skip": [
         "Überspringen"
@@ -4371,8 +4373,8 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lies, antworte und behalte den Überblick über Gmail innerhalb von ${ MAIL_APP_NAME }"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Klicke mit der rechten Maustaste auf eine E-Mail und wähle „Verschieben nach“ oder ziehe sie per Drag-and-drop in eine andere Kategorie. Ähnliche E-Mails werden künftig automatisch dort eingeordnet."
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klicke mit der rechten Maustaste auf eine E-Mail und wähle „Verschieben nach“ aus, oder ziehe sie per Drag-and-drop in eine andere Kategorie. Ähnliche E-Mails werden künftig automatisch dorthin sortiert."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Gmail-Nachrichten direkt in ${ MAIL_APP_NAME } senden und empfangen. Deine E-Mail-Adresse unter ${ addressesSettingsLink } verbinden."
@@ -7894,7 +7896,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8075,6 +8078,9 @@
       ],
       "Move emails": [
         "E-Mails verschieben"
+      ],
+      "Move here": [
+        "Hierhin verschieben"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
@@ -8343,6 +8349,10 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Wende dich an uns, wenn du Hilfe zu ${ BRAND_NAME } benötigst."
+      ],
+      "Read ${ count } email on screen": [
+        "${ count } E-Mail am Bildschirm lesen",
+        "${ count } E-Mails am Bildschirm lesen"
       ],
       "Recipient: ": [
         "Empfänger: "
@@ -9167,9 +9177,9 @@
       "You have ${ totalLabel } in your inbox.": [
         "Du hast ${ totalLabel } in deinem Posteingang."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "Du hast **${ count } Unterhaltung** in der Kategorie ${ categoryLabel }",
-        "Du hast **${ count } Unterhaltungen** in der Kategorie ${ categoryLabel }"
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Du hast **${ count } Unterhaltung** in deiner Kategorie ${ categoryLabel }",
+        "Du hast **${ count } Unterhaltungen** in deiner Kategorie ${ categoryLabel }"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Du hast **${ count } Unterhaltung** in diesem Ordner gespeichert",
@@ -9179,9 +9189,9 @@
         "Es wurde **${ count } Unterhaltung** zu dieser Kategorie hinzugefügt",
         "Es wurde **${ count } Unterhaltungen** zu dieser Kategorie hinzugefügt"
       ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "Du hast **${ count } Nachricht** in der Kategorie ${ categoryLabel }",
-        "Du hast **${ count } Nachrichten** in der Kategorie ${ categoryLabel }"
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Du hast **${ count } Nachricht** in deiner Kategorie ${ categoryLabel }",
+        "Du hast **${ count } Nachrichten** in deiner Kategorie ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Du hast **${ count } Nachricht** in diesem Ordner gespeichert",
@@ -9218,13 +9228,13 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du musst alle zusätzlichen Benutzer, Adressen und benutzerdefinierten Domänen von ${ MAIL_APP_NAME } deaktivieren oder entfernen, bevor du dein Abonnement downgraden kannst."
       ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Du hast **${ checked } Unterhaltung** in der Kategorie ${ categoryLabel } ausgewählt",
-        "Du hast **${ checked } Unterhaltungen** in der Kategorie ${ categoryLabel } ausgewählt"
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Du hast **${ checked } Unterhaltung** in deiner Kategorie ${ categoryLabel } ausgewählt",
+        "Du hast **${ checked } Unterhaltungen** in deiner Kategorie ${ categoryLabel } ausgewählt"
       ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Du hast **${ checked } Nachricht** in der Kategorie ${ categoryLabel } ausgewählt",
-        "Du hast **${ checked } Nachrichten** in der Kategorie ${ categoryLabel } ausgewählt"
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Du hast **${ checked } Nachricht** in deiner Kategorie ${ categoryLabel } ausgewählt",
+        "Du hast **${ checked } Nachrichten** in deiner Kategorie ${ categoryLabel } ausgewählt"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Es wurde **${ count } Unterhaltung** in diesem Ordner ausgewählt",
@@ -9785,6 +9795,9 @@
       "ANY": [
         "JEDE"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Alles, was deine Aufmerksamkeit erfordert, sowie E-Mails aus deaktivierten Kategorien"
+      ],
       "App password": [
         "App-Passwort"
       ],
@@ -10319,9 +10332,6 @@
       "Payment method": [
         "Zahlungsmethode"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Private und berufliche E-Mails sowie wichtige Updates und Benachrichtigungen"
-      ],
       "PGP scheme": [
         "PGP-Schema"
       ],
@@ -10343,8 +10353,8 @@
       "Primary": [
         "Primäre"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Haupt – Persönliche und geschäftliche E-Mails sowie wichtige Aktualisierungen"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "„Wichtig“ – Alles, was deine Aufmerksamkeit erfordert, sowie E-Mails aus deaktivierten Kategorien"
       ],
       "Promotions": [
         "Werbung"
@@ -15294,7 +15304,8 @@
         "${ selectionCount } Nachricht verschieben",
         "${ selectionCount } Nachrichten verschieben"
       ],
-      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Zu ${ label } verschoben. Eine ähnliche Nachricht wird künftig hierunter kategorisiert.",
         "Zu ${ label } verschoben. Ähnliche Nachrichten werden künftig hierunter kategorisiert."
       ],
       "Password copied to clipboard": [
@@ -16084,8 +16095,8 @@
       "Make a secure connection your default": [
         "Mach eine sichere Verbindung zum Standard"
       ],
-      "Make Categories your own": [
-        "Gestalte Kategorien nach deinen Wünschen"
+      "Make your inbox your own": [
+        "Deinen Posteingang nach deinen Wünschen gestalten"
       ],
       "Mark all messages as read": [
         "Alle Nachrichten als gelesen markieren"
@@ -16279,9 +16290,6 @@
       "Payment verification": [
         "Zahlungsbestätigung"
       ],
-      "Personalize your Categories": [
-        "Kategorien individuell anpassen"
-      ],
       "Phone numbers": [
         "Telefonnummern"
       ],
@@ -16338,6 +16346,9 @@
       ],
       "Referral": [
         "Empfehlung"
+      ],
+      "Refine your Categories": [
+        "Verfeinere deine Kategorien"
       ],
       "Remove forwarding address": [
         "Weiterleitungsadresse entfernen"
@@ -16824,6 +16835,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Zu einem unterstützten Abonnement upgraden, um Administratorrollen nutzen zu können."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."
       ]

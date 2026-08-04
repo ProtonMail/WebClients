@@ -4,7 +4,7 @@ import type { MaybeNull } from '@proton/pass/types';
 
 import { setupIpcHandler } from './ipc';
 
-declare module 'proton-pass-desktop/lib/ipc' {
+declare module './ipc' {
     interface IPCChannels {
         'window:show': IPCChannel<[void], void>;
         'window:hide': IPCChannel<[void], void>;

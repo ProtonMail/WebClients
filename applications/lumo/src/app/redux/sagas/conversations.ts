@@ -1,12 +1,14 @@
 import isEqual from 'lodash/isEqual';
-import type {SagaIterator} from 'redux-saga';
-import {call, delay, fork, getContext, put, select, take} from 'redux-saga/effects';
+import type { SagaIterator } from 'redux-saga';
+import { call, delay, fork, getContext, put, select } from 'redux-saga/effects';
 
-import type {AesGcmCryptoKey} from '../../crypto/types';
-import type {DbApi} from '../../indexedDb/db';
-import type {LumoApi, RemoteStatus} from '../../remote/api';
-import {convertConversationToApi, convertNewConversationToApi} from '../../remote/conversion';
-import type {Priority} from '../../remote/scheduler';
+import { MAX_CONVERSATIONS_PER_SPACE } from '../../constants/limits';
+import type { AesGcmCryptoKey } from '../../crypto/types';
+import type { DbApi } from '../../indexedDb/db';
+import { getConversationsEligibleForDeletion } from '../../layouts/sidepanel/helpers';
+import type { LumoApi, RemoteStatus } from '../../remote/api';
+import { convertConversationToApi, convertNewConversationToApi } from '../../remote/conversion';
+import type { Priority } from '../../remote/scheduler';
 import type {
     GetConversationRemote,
     IdMapEntry,
@@ -15,49 +17,55 @@ import type {
     RemoteId,
     ResourceType,
 } from '../../remote/types';
-import {deserializeConversation, serializeConversation} from '../../serialization';
+import { deserializeConversation, serializeConversation } from '../../serialization';
 import {
-    cleanConversation,
-    cleanSerializedConversation,
     type Conversation,
     type ConversationId,
     type DeletedConversation,
-    getSpaceDek,
     type SerializedConversation,
     type Space,
     type SpaceId,
+    cleanConversation,
+    cleanSerializedConversation,
+    getSpaceDek,
 } from '../../types';
-import {selectConversationById, selectConversationsBySpaceId, selectRemoteIdFromLocal, selectSpaceByConversationId, selectSpaceById} from '../selectors';
 import {
+    selectConversationById,
+    selectConversationsBySpaceId,
+    selectRemoteIdFromLocal,
+    selectSpaceByConversationId,
+    selectSpaceById,
+} from '../selectors';
+import {
+    type ExpireConversationsRequest,
+    type PullConversationRequest,
+    type PushConversationFailure,
+    type PushConversationRequest,
+    type PushConversationSuccess,
     addConversation,
     deleteConversation,
-    type ExpireConversationsRequest,
     locallyDeleteConversationFromLocalRequest,
     locallyDeleteConversationFromRemoteRequest,
     locallyRefreshConversationFromRemoteRequest,
     pullConversationFailure,
-    type PullConversationRequest,
     pullConversationSuccess,
-    type PushConversationFailure,
     pushConversationFailure,
     pushConversationNeedsRetry,
     pushConversationNoop,
-    type PushConversationRequest,
     pushConversationRequest,
-    type PushConversationSuccess,
     pushConversationSuccess,
 } from '../slices/core/conversations';
-import {addIdMapEntry} from '../slices/core/idmap';
-import {locallyRefreshMessageFromRemoteRequest} from '../slices/core/messages';
-import {locallyDeleteSpaceFromLocalRequest} from '../slices/core/spaces';
-import type {LumoState} from '../store';
-import {waitForMapping} from './idmap';
-import {MAX_CONVERSATIONS_PER_SPACE} from '../../constants/limits';
-import {getConversationsEligibleForDeletion} from '../../layouts/sidepanel/helpers';
-import {addResourceLimitError} from '../slices/meta/errors';
-import {callWithRetry, ClientError, isClientError, isLimitReachedError, RETRY_PUSH_EVERY_MS} from './index';
-import {considerRequestingFullMessage} from './messages';
-import {waitForSpace} from './spaces';
+import { addIdMapEntry } from '../slices/core/idmap';
+import { locallyRefreshMessageFromRemoteRequest } from '../slices/core/messages';
+import { locallyDeleteSpaceFromLocalRequest } from '../slices/core/spaces';
+import { addResourceLimitError } from '../slices/meta/errors';
+import type { LumoState } from '../store';
+import { considerRequestingFullMessage } from './conversationMessageCoordination';
+import { waitForMapping } from './idmap';
+import { ClientError, RETRY_PUSH_EVERY_MS, callWithRetry, isClientError, isLimitReachedError } from './sagaErrors';
+import { waitForSpace } from './spaces';
+
+export { waitForConversation } from './conversationMessageCoordination';
 
 /*** helpers ***/
 
@@ -95,22 +103,6 @@ function* clearDirtyIfUnchanged(serializedConversation: SerializedConversation):
         console.log('clearDirtyIfUnchanged: found changed data: ', { a, b });
         return false;
     }
-}
-
-export function* waitForConversation(localId: LocalId): SagaIterator<Conversation> {
-    const type = 'conversation';
-    console.log(`Saga triggered: waitForConversation: ${type} ${localId}`);
-    const mapped: Conversation | undefined = yield select(selectConversationById(localId));
-    if (mapped) {
-        console.log(`waitForConversation: requested ${type} ${localId} -> found immediately, returning value`);
-        return mapped;
-    }
-    console.log(`waitForConversation: requested ${type} ${localId} -> not ready, waiting`);
-    const { payload: resource }: ReturnType<typeof addConversation> = yield take(
-        (a: any) => a.type === addConversation.type && a.payload.id === localId
-    );
-    console.log(`waitForConversation: requested ${type} ${localId} -> now available, returning value ${resource}`);
-    return resource;
 }
 
 export function* serializeConversationSaga(
@@ -164,7 +156,10 @@ export function* deserializeConversationSaga(
         serializedConversation,
         spaceDek_
     );
-    console.log(`deserializeConversationSaga ${localId}: got deserialized conversation result`, deserializedConversation);
+    console.log(
+        `deserializeConversationSaga ${localId}: got deserialized conversation result`,
+        deserializedConversation
+    );
     if (!deserializedConversation) {
         throw new Error(`deserializeConversationSaga ${localId}: cannot deserialize conversation ${localId}`);
     }

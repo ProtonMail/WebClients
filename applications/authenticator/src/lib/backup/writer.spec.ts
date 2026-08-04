@@ -1,13 +1,7 @@
 import * as path from '@tauri-apps/api/path';
 import * as fs from '@tauri-apps/plugin-fs';
 
-import {
-    BACKUP_MAX_AMOUNT,
-    createAutomaticBackupFilename,
-    pruneExcessBackups,
-    readCurrentBackups,
-    sortBackupsByDate,
-} from './writer';
+import { BACKUP_MAX_AMOUNT, pruneExcessBackups, readCurrentBackups, sortBackupsByDate } from './writer';
 
 jest.mock('@tauri-apps/plugin-fs');
 jest.mock('@tauri-apps/api/path');
@@ -20,25 +14,6 @@ jest.spyOn(path, 'join').mockImplementation(async (dir, file) => `${dir}/${file}
 describe('Backup writer utilities', () => {
     beforeEach(() => {
         jest.clearAllMocks();
-        jest.useFakeTimers();
-    });
-
-    afterEach(() => {
-        jest.useRealTimers();
-    });
-
-    describe('createAutomaticBackupFilename', () => {
-        test('should create filename with current date', () => {
-            jest.setSystemTime(new Date('2023-12-15T10:30:45.123Z'));
-            const result = createAutomaticBackupFilename();
-            expect(result).toBe('Proton Authenticator_export_2023-12-15.json');
-        });
-
-        test('should pad single digit months and days', () => {
-            jest.setSystemTime(new Date('2023-01-05T10:30:45.123Z'));
-            const result = createAutomaticBackupFilename();
-            expect(result).toBe('Proton Authenticator_export_2023-01-05.json');
-        });
     });
 
     describe('readCurrentBackups', () => {

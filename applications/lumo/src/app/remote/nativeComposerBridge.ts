@@ -21,7 +21,7 @@ import {
     type ModelTier,
     type ResponseMode,
     getSelectedModelTier,
-} from '../providers/ModelTierProvider';
+} from '../providers/modelTierConstants';
 import { IMAGE_ASPECT_RATIOS, type ImageAspectRatio, LUMO_API_ERRORS } from '../types';
 
 /**

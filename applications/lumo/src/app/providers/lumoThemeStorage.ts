@@ -1,6 +1,6 @@
 import { ThemeModeSetting, ThemeTypes } from '@proton/shared/lib/themes/constants';
 
-import { matchDarkTheme } from './lumoThemeUtils';
+import { matchDarkTheme } from './lumoThemeMedia';
 
 export interface LumoLocalSettings {
     theme: ThemeTypes;
@@ -39,7 +39,10 @@ export const getLumoSettings = (): LumoLocalSettings | null => {
                 if (typeof parsed.animatedBackgroundEnabled === 'boolean') {
                     settings.animatedBackgroundEnabled = parsed.animatedBackgroundEnabled;
                 }
-                if (parsed.animatedBackgroundBlobMode === 'ambient' || parsed.animatedBackgroundBlobMode === 'lavaLamp') {
+                if (
+                    parsed.animatedBackgroundBlobMode === 'ambient' ||
+                    parsed.animatedBackgroundBlobMode === 'lavaLamp'
+                ) {
                     settings.animatedBackgroundBlobMode = parsed.animatedBackgroundBlobMode;
                 }
                 return settings;

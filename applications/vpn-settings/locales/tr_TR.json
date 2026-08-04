@@ -1211,6 +1211,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME } özelliğini açmak için tarifenizi yükseltin"
       ],
+      "Upgrade to Professional": [
+        "Professional tarifesine yükselt"
+      ],
       "Upgrade to view all": [
         "Tümünü görüntülemek için tarifenizi yükseltin"
       ],
@@ -4729,6 +4732,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Hesabınıza yalnızca sizin tarafınızdan erişilebilmesi için erişme izinlerini istediğiniz zaman kaldırabilirsiniz."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Henüz hiç kimse sizi kurtarma kişisi olarak atamamış."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Henüz kimse sizi acil durum kişisi olarak atamamış."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Olabilecek en fazla ${ limit } acil durum kişisi sayısına ulaştınız.",
         "Olabilecek en fazla ${ limit } acil durum kişisi sayısına ulaştınız."
@@ -6064,11 +6073,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "${ name } güvenlik anahtarını silmek istediğinize emin misiniz?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Anahtar desteklediğinde, güvenlik anahtarınızı ${ BRAND_NAME } ile her kullandığınızda PIN kodunuzu yazmanız gerekir. Bu durum yalnızca PIN kodu ayarlanmış anahtarlar için geçerlidir."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } hesabınız ile ilişkilendirilmiş güvenlik anahtarını takın."
       ],
       "Insert your security key into your device.": [
         "Güvenlik anahtarınızı aygıtınıza takın."
+      ],
+      "PIN requirement for security keys disabled": [
+        "Güvenlik anahtarları için PIN kodu kapatıldı"
+      ],
+      "PIN requirement for security keys enabled": [
+        "Güvenlik anahtarları için PIN kodu açıldı"
+      ],
+      "Require PIN for security key": [
+        "Güvenlik anahtarı için PIN kodu gereksin"
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -7308,6 +7329,9 @@
       "Authenticator app 2FA enabled": [
         "Kimlik doğrulama uygulaması ile iki adımlı doğrulama açıldı"
       ],
+      "Available on VPN Professional": [
+        "VPN Professional tarifesinde kullanılabilir"
+      ],
       "Awaiting transaction": [
         "Ödemenin tamamlanması bekleniyor"
       ],
@@ -7709,6 +7733,9 @@
       ],
       "Enable email notifications": [
         "E-posta bildirimlerini aç"
+      ],
+      "Enable groups to streamline access control": [
+        "Erişim denetimini kolaylaştırmak için grupları kullanıma alın"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Kuruluşunuzu güvende tutmak için tek oturum açmayı etkinleştirin"
@@ -8191,6 +8218,9 @@
       ],
       "Learn more about Gateways": [
         "Ağ geçitleri ile ilgili ayrıntılı bilgi alın"
+      ],
+      "Learn more about groups": [
+        "Gruplar ile ilgili ayrıntılı bilgi alın"
       ],
       "Learn more about single sign-on": [
         "Tek oturum açma ile ilgili ayrıntılı bilgi alın"
@@ -8770,6 +8800,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
+      "Smart Routed through a different country.": [
+        "Başka bir ülke üzerinden akıllı yönlendirme yapıldı."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Akıllı yönlendirme ile: ${ joinedCountries }."
+      ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Bazı ${ BRAND_NAME } uygulamaları henüz güvenlik anahtarlarını desteklemiyor olabilir. Kimlik doğrulama uygulamasında iki adımlı doğrulamayı kapatırsanız bu uygulamalarda oturum açamayabilirsiniz."
       ],
@@ -9189,8 +9225,14 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
       ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Kuruluşunuzdaki ${ PASS_APP_NAME } etkinliğini görüntülemek için şimdi yükseltin."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Geri kalanları aktarmak için istediğiniz zaman tarifenizi yükseltin ya da yer açın"
+      ],
+      "Upgrade required": [
+        "Yükseltme gerekli"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
@@ -9425,6 +9467,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Grupları kullanarak, belirli bir gruptaki kullanıcılara kolayca e-postalar gönderebilirsiniz."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "VPN Professional ile yöneticiler, özel ağ geçitleri, erişim ilkeleri ve izlemenin yanında tüm kuruluş üyeleri için her zaman açık VPN özelliklerini uygulayabilir."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Kullanıma almadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
@@ -10812,6 +10857,9 @@
       ],
       "Unlimited": [
         "Sınırsız"
+      ],
+      "Upgrade": [
+        "Yükselt"
       ],
       "Upload 1 or more encryption keys": [
         "1 ya da birkaç şifreleme anahtarı yükleyin"
@@ -18112,6 +18160,9 @@
       "Remove via MDM": [
         "MDM ile kaldır"
       ],
+      "Remove via PowerShell": [
+        "PowerShell ile kaldır"
+      ],
       "Rename the gateway": [
         "Ağ geçidini yeniden adlandır"
       ],
@@ -18379,6 +18430,9 @@
       ],
       "Upgrade to ${ planName }": [
         "${ planName } tarifesine yükseltin"
+      ],
+      "Upgrade to enable Always-on": [
+        "Hep açık VPN özelliğini açmak için tarifenizi yükseltin"
       ],
       "Upgrade to keep your premium benefits.": [
         "Ücretli avantajlarınızı korumak için tarifenizi yükseltin."
@@ -19148,6 +19202,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Bu işlem yeni bir ${ MAIL_APP_NAME } adresi oluşturur."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Yönetici rollerini kullanabilmek için bu rolleri destekleyen bir tarifeye yükseltin."
       ],
       "User created": [
         "Kullanıcı oluşturuldu"

@@ -1,4 +1,4 @@
-import { clearUserLocalData } from 'proton-pass-web/lib/storage';
+import { clearUserLocalData, getLocalIDFromSessionKey, getSessionKey } from 'proton-pass-web/lib/storage';
 
 import type { EncryptedAuthSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -9,9 +9,6 @@ import { first } from '@proton/pass/utils/array/first';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
-
-export const getSessionKey = (localId?: number) => `${STORAGE_PREFIX}${localId ?? 0}`;
-export const getLocalIDFromSessionKey = (key: string) => parseInt(key.replace(STORAGE_PREFIX, ''), 10);
 
 export const getPersistedSession = (localID: Maybe<number>) => {
     const encryptedSession = localStorage.getItem(getSessionKey(localID));

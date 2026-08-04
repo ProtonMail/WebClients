@@ -25,6 +25,7 @@ export const newElementsState = ({
         invalidated: false,
         pendingRequest: false,
         pendingActions: 0,
+        pendingESSearches: 0,
         params: { ...defaultParams, ...params },
         page,
         total: {},

@@ -310,9 +310,6 @@
       "Continue to ${ planOrAppName }": [
         "Fortsätt till ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Fortsätt med kategorier"
-      ],
       "Continue with Free": [
         "Fortsätt med Free"
       ],
@@ -1042,6 +1039,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
       ],
+      "Open debug menu": [
+        "Öppna felsökningsmeny"
+      ],
       "Open navigation": [
         "Öppna navigering"
       ],
@@ -1489,6 +1489,9 @@
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "För att söka i din e-post på ett säkert sätt måste vi ladda ner en kopia av dina meddelanden till din webbläsare. Den initiala nedladdningen kan ta en stund."
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Slå på/av ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Toggle Calendar app": [
         "Växla Calendar-app"
       ],
@@ -1517,8 +1520,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1691,6 +1693,9 @@
       "Yes, I'll attend": [
         "Ja, jag ska delta"
       ],
+      "Yes, organize it": [
+        "Ja, organisera det"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
@@ -1725,9 +1730,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Anpassa kategorier"
-      ],
       "Got it": [
         "Jag förstår"
       ],
@@ -1736,6 +1738,9 @@
       ],
       "Not now": [
         "Inte nu"
+      ],
+      "Set up categories": [
+        "Ställ in kategorier"
       ],
       "Skip": [
         "Hoppa över"
@@ -4355,8 +4360,8 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Läs, svara och håll koll på Gmail inifrån ${ MAIL_APP_NAME }"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Högerklicka på ett e-postmeddelande och välj ”Flytta till”, eller dra och släpp det i en annan kategori. Liknande e-postmeddelanden kommer att sorteras dit automatiskt i framtiden."
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Högerklicka på ett e-postmeddelande och välj “Flytta till“ eller dra och släpp det till en annan kategori. Liknande e-postmeddelanden kommer att sorteras där automatiskt i framtiden."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Skicka och ta emot Gmail-meddelanden direkt i ${ MAIL_APP_NAME }. Anslut din adress i ${ addressesSettingsLink }."
@@ -4529,6 +4534,15 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Vi har upptäckt följande fält i CSV-filen du laddade upp. Markera de du vill importera."
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nytt meddelande",
+        "${ messageCount } nya meddelanden"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Från: ${ sender } – ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -7858,7 +7872,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8037,6 +8052,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De flesta offentliga WiFi-nätverk är säkra, men vissa saknar säkerhet, vilket gör att du utsätts för cyberhot. Ett VPN krypterar din trafik och håller dig skyddad."
       ],
+      "Move emails": [
+        "Flytta e-post"
+      ],
+      "Move here": [
+        "Flytta hit"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Namnge din nya mapp och välj den överordnade mapp du vill lägga den i. Om du inte väljer en överordnad mapp kommer denna nya mapp att skapas som en överordnad mapp."
       ],
@@ -8129,6 +8150,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Öppna guiden för rekommenderade åtgärder och användbara länkar."
+      ],
+      "Opened ${ location }": [
+        "Öppnade ${ location }"
       ],
       "Optional": [
         "Valfritt"
@@ -8483,6 +8507,9 @@
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Håll dig ansluten utan ansträngning genom att aktivera följande VPN-inställningar:"
       ],
+      "Stay on your plan and get 50% off your next month": [
+        "Stanna kvar på ditt paket och få 50 % rabatt för din nästa månad"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Lagringsmöjligheter stöds inte av den där webbläsaren och vi behöver stöd för det för att aktivera sökning av meddelandeinnehåll."
       ],
@@ -8607,6 +8634,9 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "De kan inte skicka skräppost till dig om de inte känner till din e-postadress. Skydda din inkorg med hide-my-email."
+      ],
+      "Thinking about this": [
+        "Tänker på detta"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denna adress är inaktiverad. För att kunna skicka till denna adress måste ägaren först aktivera adressen."
@@ -9113,9 +9143,9 @@
       "You have ${ totalLabel } in your inbox.": [
         "Du har ${ totalLabel } i din inkorg."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "Du har **${ count } konversation** i kategori ${ categoryLabel }",
-        "Du har **${ count } konversationer** i kategori ${ categoryLabel }"
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Du har **${ count } konversation** i din kategori ${ categoryLabel }",
+        "Du har **${ count } konversationer** i din kategori ${ categoryLabel }"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Du har **${ count } konversation** lagrad i denna mapp",
@@ -9125,9 +9155,9 @@
         "Du har **${ count } konversation** märkt med denna etikett",
         "Du har **${ count } konversationer** märkta med denna etikett"
       ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "Du har **${ count } meddelande** i kategori ${ categoryLabel }",
-        "Du har **${ count } meddelanden** i kategori ${ categoryLabel }"
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Du har **${ count } meddelande** i din kategori ${ categoryLabel }",
+        "Du har **${ count } meddelanden** i din kategori ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Du har **${ count } meddelande** lagrat i denna mapp",
@@ -9164,13 +9194,13 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du måste inaktivera eller ta bort eventuella ytterligare ${ MAIL_APP_NAME }-användare, adresser och anpassade domäner innan du kan nedgradera."
       ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Du valde **${ checked } konversation** i kategori ${ categoryLabel }",
-        "Du valde **${ checked } konversationer** i kategori ${ categoryLabel }"
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Du valde **${ checked } konversation** i din kategori ${ categoryLabel }",
+        "Du valde **${ checked } konversationer** i din kategori ${ categoryLabel }"
       ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Du valde **${ checked } meddelande** i kategori ${ categoryLabel }",
-        "Du valde **${ checked } meddelanden** i kategori ${ categoryLabel }"
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Du valde **${ checked } meddelande** i din kategori ${ categoryLabel }",
+        "Du valde **${ checked } meddelanden** i din kategori ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Du valde **${ count } konversation** från denna mapp",
@@ -9731,6 +9761,9 @@
       "ANY": [
         "NÅGON"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Allt som behöver din uppmärksamhet, plus e-post från inaktiverade kategorier"
+      ],
       "App password": [
         "Applösenord"
       ],
@@ -9739,6 +9772,9 @@
       ],
       "Apply to future messages": [
         "Tillämpa till framtida meddelanden"
+      ],
+      "Archive": [
+        "Arkiv"
       ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
@@ -10259,9 +10295,6 @@
       "Payment method": [
         "Betalningsmetod"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Personlig och arbetsrelaterad e-post, plus viktiga uppdateringar och aviseringar"
-      ],
       "PGP scheme": [
         "PGP-schema"
       ],
@@ -10283,8 +10316,8 @@
       "Primary": [
         "Primär"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Primär - Personliga e-postmeddelanden och jobb-e-post, samt viktiga uppdateringar"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primär – Allt som behöver din uppmärksamhet, plus e-post från inaktiverade kategorier"
       ],
       "Promotions": [
         "Kampanjer"
@@ -16024,8 +16057,8 @@
       "Make a secure connection your default": [
         "Gör en säker anslutning din standard"
       ],
-      "Make Categories your own": [
-        "Gör kategorier till dina egna"
+      "Make your inbox your own": [
+        "Gör din inkorg till din egen"
       ],
       "Mark all messages as read": [
         "Markera alla meddelanden som lästa"
@@ -16219,9 +16252,6 @@
       "Payment verification": [
         "Betalningsverifiering"
       ],
-      "Personalize your Categories": [
-        "Personifiera dina kategorier"
-      ],
       "Phone numbers": [
         "Telefonnummer"
       ],
@@ -16278,6 +16308,9 @@
       ],
       "Referral": [
         "Hänvisning"
+      ],
+      "Refine your Categories": [
+        "Förfina dina kategorier"
       ],
       "Remove forwarding address": [
         "Ta bort vidarebefordringsadress"

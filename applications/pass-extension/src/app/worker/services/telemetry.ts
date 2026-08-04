@@ -20,7 +20,7 @@ import {
     selectOrgDomains,
 } from '@proton/pass/store/selectors/settings';
 import { selectFeatureFlags, selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors/user';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS, TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { ExtensionStorage } from '@proton/pass/types/worker/storage';
 import { first } from '@proton/pass/utils/array/first';
 
@@ -69,7 +69,10 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
                     const orgDomains = selectOrgDomains(state);
                     const itemUrlsMatchTab = itemUrls.some((itemUrl) => parseUrl(itemUrl).domain === tabUrl.domain);
                     const autofillPaused = hasPauseCriteria({ disallowedDomains, orgDomains, url: tabUrl }).Autofill;
-                    const loginFormDetected = validTab ? await ctx.service.autofill.queryTabLoginForms(tabId) : false;
+                    // no valid tab to query the content script for the page's language
+                    const { loginFormDetected, telemetry: pageTelemetry } = validTab
+                        ? await ctx.service.autofill.queryTabLoginForms(tabId)
+                        : { loginFormDetected: false, telemetry: NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS };
 
                     event.Dimensions = {
                         autofillLoginFormDetected: telemetryBool(loginFormDetected),
@@ -80,6 +83,7 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
                         loginAutofillEnabled: telemetryBool(loginAutofillSettingsEnabled),
                         modelVersion: MODEL_VERSION,
                         uniqueMatch: telemetryBool(matchedLoginCount === 1),
+                        ...pageTelemetry,
                     };
 
                     break;

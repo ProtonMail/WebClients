@@ -1,10 +1,10 @@
 import { default as Dexie } from 'dexie';
-import type { AuthenticatorDB } from 'proton-authenticator/lib/db/db';
 import v1 from 'proton-authenticator/lib/db/migrations/v1';
 import v2 from 'proton-authenticator/lib/db/migrations/v2';
 import type { LegacyAuthenticatorDB } from 'proton-authenticator/lib/db/migrations/v3';
 import v3 from 'proton-authenticator/lib/db/migrations/v3';
 import { downgradeToLegacyKeys } from 'proton-authenticator/lib/db/migrations/v4';
+import type { AuthenticatorDB } from 'proton-authenticator/lib/db/types';
 import { closeDB, openDB } from 'proton-authenticator/lib/db/utils';
 import logger from 'proton-authenticator/lib/logger';
 

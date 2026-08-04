@@ -7,6 +7,7 @@ import { useEffect, useRef } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { useSharingModalDriveSdkEnabled } from '~/utils/flags'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
 export function useChangeAddressWhenPubliclyShared(
   nodeMeta: NodeMeta | PublicNodeMeta,
@@ -60,7 +61,15 @@ export function useChangeAddressWhenPubliclyShared(
             changedAddress.current = true
           }
         })
-        .catch((error) => logger.warn('Failed to change URL in address bar after changing public sharing', error))
+        .catch((error) => {
+          logger.warn('Failed to change URL in address bar after changing public sharing', error)
+          traceError(error, {
+            tags: {
+              initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+              feature: 'DocsSharingModalDriveSDK',
+            },
+          })
+        })
     },
     [logger, documentState, sharingModalDriveSdkEnabled, nodeMetaNotPrivate, drive, getLocalID],
   )

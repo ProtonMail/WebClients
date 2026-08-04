@@ -1335,6 +1335,9 @@
       "Remove gift code": [
         "Αφαιρέστε τον κωδικό δώρου"
       ],
+      "Remove manager": [
+        "Αφαίρεση διαχειριστή"
+      ],
       "Remove this label": [
         "Αφαίρεση αυτής της ετικέτας"
       ],
@@ -1775,6 +1778,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Αναβαθμίστε για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Professional": [
+        "Αναβάθμιση σε Professional"
       ],
       "Upgrade to view all": [
         "Αναβαθμίστε για προβολή όλων"
@@ -7093,6 +7099,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Μπορείτε να αφαιρέσετε την πρόσβασή τους ανά πάσα στιγμή για να ανακτήσετε τον αποκλειστικό έλεγχο του λογαριασμού σας."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Δεν έχετε οριστεί ακόμη ως επαφή ανάκτησης για κανέναν."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Δεν έχετε ορίσει ως επαφή έκτακτης ανάγκης για κανέναν ακόμα."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Έχετε φτάσει το μέγιστο όριο ${ limit } επαφής έκτακτης ανάγκης.",
         "Έχετε φτάσει το μέγιστο όριο ${ limit } επαφών έκτακτης ανάγκης."
@@ -8737,11 +8749,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε το κλειδί ασφαλείας ${ name };"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Εισαγάγετε τον κωδικό PIN σας κάθε φορά που χρησιμοποιείτε το κλειδί ασφαλείας σας με το ${ BRAND_NAME }, όταν το κλειδί το υποστηρίζει. Αυτό ισχύει μόνο για κλειδιά που έχουν ορίσει κωδικό PIN."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
       ],
       "Insert your security key into your device.": [
         "Τοποθετήστε το κλειδί ασφαλείας στη συσκευή σας."
+      ],
+      "PIN requirement for security keys disabled": [
+        "Απενεργοποιήθηκε η απαίτηση PIN για τα κλειδιά ασφαλείας"
+      ],
+      "PIN requirement for security keys enabled": [
+        "Ενεργοποιήθηκε η απαίτηση PIN για τα κλειδιά ασφαλείας"
+      ],
+      "Require PIN for security key": [
+        "Απαιτείται PIN για το κλειδί ασφαλείας"
       ],
       "Security key": [
         "Κλειδί ασφαλείας"
@@ -10248,6 +10272,9 @@
       "add a recovery method": [
         "προσθήκη μεθόδου ανάκτησης"
       ],
+      "Add additional users from your organization to manage this company.": [
+        "Προσθέστε επιπλέον χρήστες από τον οργανισμό σας για να διαχειριστείτε αυτήν την εταιρεία."
+      ],
       "Add an email address in case we need to contact you": [
         "Προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου σε περίπτωση που χρειαστεί να επικοινωνήσουμε μαζί σας"
       ],
@@ -10534,6 +10561,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Διαθέσιμο σε macOS, Windows και Linux."
       ],
+      "Available on VPN Professional": [
+        "Διαθέσιμο στο VPN Professional"
+      ],
       "Awaiting transaction": [
         "Εν αναμονή συναλλαγής"
       ],
@@ -10683,6 +10713,9 @@
       ],
       "Coming soon": [
         "Έρχεται σύντομα"
+      ],
+      "Companies you've been given access to manage.": [
+        "Εταιρείες που σας έχει δοθεί πρόσβαση για να διαχειριστείτε."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Ολοκληρώστε την είσοδο σε αυτή τη συσκευή για να ξεκινήσετε να χρησιμοποιείτε το ${ VPN_APP_NAME } στην τηλεόρασή σας."
@@ -11049,6 +11082,9 @@
       ],
       "Enable email notifications": [
         "Ενεργοποίηση ειδοποιήσεων email"
+      ],
+      "Enable groups to streamline access control": [
+        "Ενεργοποίηση ομάδων για βελτιστοποίηση του ελέγχου πρόσβασης"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Ενεργοποιήστε την καθολική σύνδεση για να διατηρήσετε τον οργανισμό σας ασφαλή"
@@ -11706,6 +11742,9 @@
       ],
       "Learn more about Gateways": [
         "Μάθετε περισσότερα σχετικά με τις Πύλες"
+      ],
+      "Learn more about groups": [
+        "Μάθετε περισσότερα για τις ομάδες"
       ],
       "learn more about Sieve programming language": [
         "μάθετε περισσότερα για τη γλώσσα προγραμματισμού Sieve"
@@ -12413,9 +12452,6 @@
       "Set password": [
         "Ορισμός κωδικού"
       ],
-      "Set the name, status, and assigned seats": [
-        "Ορίστε το όνομα, την κατάσταση και τις θέσεις που έχουν εκχωρηθεί"
-      ],
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
       ],
@@ -13047,11 +13083,23 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
       ],
+      "Upgrade now to monitor your team's account safety.": [
+        "Αναβαθμίστε τώρα για να παρακολουθείτε την ασφάλεια του λογαριασμού της ομάδας σας."
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Κάντε αναβάθμιση τώρα για να δείτε τη δραστηριότητα του ${ PASS_APP_NAME } σε ολόκληρο τον οργανισμό σας."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Αναβαθμίστε ή εκκενώστε χώρο οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
       ],
+      "Upgrade required": [
+        "Απαιτείται αναβάθμιση"
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Κάντε αναβάθμιση για να προσθέσετε μια συντομότερη διεύθυνση @pm.me στον λογαριασμό σας, η οποία θα είναι πιο εύκολη στην κοινή χρήση. Σημαίνει \"${ MAIL_APP_NAME } me\" ή \"Private Message me\". (Στείλε μου Προσωπικό Μήνυμα)"
+      ],
+      "Upgrade to define policies for your organization.": [
+        "Αναβαθμίστε για να ορίσετε πολιτικές για τον οργανισμό σας."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Αναβαθμίστε για να διατηρήσετε τα ${ planTitle } προνόμιά σας."
@@ -13353,6 +13401,9 @@
       "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
         "Με τις διαχειριζόμενες εταιρείες, μπορείτε να προσθέσετε, να επεξεργαστείτε και να καταργήσετε την πρόσβαση για οργανισμούς που επιβλέπετε."
       ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Με το VPN Professional, οι διαχειριστές μπορούν να επιβάλουν το VPN να είναι πάντα ενεργό για όλα τα μέλη του οργανισμού, παράλληλα με ιδιωτικές πύλες, πολιτικές πρόσβασης και παρακολούθηση."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Με το τρέχον πλάνο σας, μπορείτε να λαμβάνετε μηνύματα μόνο με τη διεύθυνση @pm.me σας. Κάντε αναβάθμιση για να στείλετε μηνύματα και να δημιουργήσετε πρόσθετες διευθύνσεις χρησιμοποιώντας @pm.me."
       ],
@@ -13509,6 +13560,9 @@
       ],
       "You don't have any referrals.": [
         "Δεν έχετε καμία παραπομπή."
+      ],
+      "You don't manage any companies yet.": [
+        "Δεν διαχειρίζεστε ακόμη καμία εταιρεία."
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "Δεν χρειάζεται να ανοίξετε ή να διαβάσετε το αρχείο—απλώς κατεβάστε το και αποθηκεύστε το σε ένα ασφαλές μέρος."
@@ -14477,6 +14531,9 @@
       "Add extra services": [
         "Προσθέστε επιπλέον υπηρεσίες"
       ],
+      "Add managers": [
+        "Προσθήκη διαχειριστών"
+      ],
       "Additional comments": [
         "Επιπλέον σχόλια"
       ],
@@ -14572,6 +14629,9 @@
       ],
       "ANY": [
         "ΟΠΟΙΑΔΗΠΟΤΕ"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Οτιδήποτε χρειάζεται την προσοχή σας, καθώς και ηλεκτρονικά μηνύματα από απενεργοποιημένες κατηγορίες"
       ],
       "App password": [
         "Κωδικός πρόσβασης εφαρμογής"
@@ -15540,9 +15600,6 @@
       "Pending": [
         "Σε εκκρεμότητα"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Προσωπικά και επαγγελματικά μηνύματα ηλεκτρονικού ταχυδρομείου, καθώς και σημαντικές ενημερώσεις και ειδοποιήσεις"
-      ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
@@ -15585,8 +15642,8 @@
       "Primary": [
         "Κύριο"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Κύρια - Προσωπικά και επαγγελματικά μηνύματα, καθώς και σημαντικές ενημερώσεις"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Κύρια - Οτιδήποτε χρειάζεται την προσοχή σας, καθώς και ηλεκτρονικά μηνύματα από απενεργοποιημένες κατηγορίες"
       ],
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
@@ -15927,6 +15984,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Ενημερώσεις - Αυτόματες επιβεβαιώσεις, ειδοποιήσεις και ενημερώσεις λογαριασμού"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
       ],
       "Upload 1 or more encryption keys": [
         "Ανεβάστε 1 ή περισσότερα κλειδιά κρυπτογράφησης"
@@ -20315,6 +20375,9 @@
       ],
       "Enter company name": [
         "Εισάγετε όνομα εταιρείας"
+      ],
+      "Enter name or email address": [
+        "Εισαγάγετε όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "example@domain.com": [
         "example@domain.com"
@@ -25998,6 +26061,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Διαχειριστείτε αρχεία σε όλες τις συσκευές, σε Windows, Mac, Android και iOS."
       ],
+      "Managers": [
+        "Διαχειριστές"
+      ],
       "Messages": [
         "Μηνύματα"
       ],
@@ -26285,6 +26351,9 @@
       ],
       "Remove via MDM": [
         "Κατάργηση μέσω MDM"
+      ],
+      "Remove via PowerShell": [
+        "Αφαίρεση μέσω PowerShell"
       ],
       "Rename the gateway": [
         "Μετονομασία της πύλης"
@@ -26640,6 +26709,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Αναβάθμιση σε ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "Αναβαθμίστε για να ενεργοποιήσετε την επιλογή \"Πάντα ενεργοποιημένη\""
       ],
       "Upgrade to keep your premium benefits.": [
         "Αναβαθμίστε για να διατηρήσετε τα premium προνόμιά σας."
@@ -27708,6 +27780,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Αυτό θα δημιουργήσει μια νέα διεύθυνση ${ MAIL_APP_NAME }."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Αναβαθμίστε σε ένα υποστηριζόμενο πρόγραμμα για να χρησιμοποιήσετε ρόλους διαχειριστή."
       ],
       "User created": [
         "Ο χρήστης δημιουργήθηκε"

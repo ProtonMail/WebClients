@@ -308,9 +308,6 @@
       "Continue to ${ planOrAppName }": [
         "Nastavi na ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Nastavi s kategorijama"
-      ],
       "Continue with Free": [
         "Nastavi s besplatnom verzijom"
       ],
@@ -1515,9 +1512,7 @@
         "Vjeruj"
       ],
       "Trust key": [
-        "Vjeruj ključu",
-        "Vjeruj ključevima",
-        "Vjeruj ključevima"
+        "Ključ povjerenja"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -1725,9 +1720,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Prilagodi kategorije"
-      ],
       "Got it": [
         "Razumijem"
       ],
@@ -4368,9 +4360,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čitajte, odgovarajte i budite u tijeku s Gmailom unutar aplikacije ${ MAIL_APP_NAME }"
-      ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Desnom tipkom miša kliknite e-poštu i odaberite „Premjesti u” ili je povucite i ispustite u drugu kategoriju. Slična e-pošta bit će tamo automatski razvrstana u budućnosti."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Šaljite i primajte Gmail poruke izravno u aplikaciji ${ MAIL_APP_NAME }. Povežite svoju adresu na ${ addressesSettingsLink }."
@@ -7946,7 +7935,9 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku"
+        "Umetni sliku",
+        "Umetni slike",
+        "Umetni slike"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -9209,11 +9200,6 @@
       "You have ${ totalLabel } in your inbox.": [
         "Imate ${ totalLabel } u svojoj pristigloj pošti."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "Imate **${ count } razgovor** u kategoriji ${ categoryLabel }",
-        "Imate **${ count } razgovora** u kategoriji ${ categoryLabel }",
-        "Imate **${ count } razgovora** u kategoriji ${ categoryLabel }"
-      ],
       "You have **${ count } conversation** stored in this folder": [
         "Imate **${ count } razgovor** spremljen u ovoj mapi",
         "Imate **${ count } razgovora** spremljenih u ovoj mapi",
@@ -9223,11 +9209,6 @@
         "Imate **${ count } razgovor** označen ovom oznakom",
         "Imate **${ count } razgovora** označena ovom oznakom",
         "Imate **${ count } razgovora** označenih ovom oznakom"
-      ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "Imate **${ count } poruku** u kategoriji ${ categoryLabel }",
-        "Imate **${ count } poruke** u kategoriji ${ categoryLabel }",
-        "Imate **${ count } poruka** u kategoriji ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Imate **${ count } poruku** spremljenu u ovoj mapi",
@@ -9265,16 +9246,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Morate onemogućiti ili ukloniti sve dodatne korisnike ${ MAIL_APP_NAME }-a, adrese i prilagođene domene prije nego što možete sniziti status."
-      ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Odabrali ste **${ checked } razgovor** u kategoriji ${ categoryLabel }",
-        "Odabrali ste **${ checked } razgovora** u kategoriji ${ categoryLabel }",
-        "Odabrali ste **${ checked } razgovora** u kategoriji ${ categoryLabel }"
-      ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Odabrali ste **${ checked } poruku** u kategoriji ${ categoryLabel }",
-        "Odabrali ste **${ checked } poruke** u kategoriji ${ categoryLabel }",
-        "Odabrali ste **${ checked } poruka** u kategoriji ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Odabrali ste **${ count } razgovor** iz ove mape",
@@ -10374,9 +10345,6 @@
       "Payment method": [
         "Način plaćanja"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Osobna i poslovna e-pošta, plus važna ažuriranja i obavijesti"
-      ],
       "PGP scheme": [
         "PGP sustav"
       ],
@@ -10397,9 +10365,6 @@
       ],
       "Primary": [
         "Glavno"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Primarno - Osobna i poslovna e-pošta, plus važna ažuriranja"
       ],
       "Promotions": [
         "Promocije"
@@ -16259,9 +16224,6 @@
       "Make a secure connection your default": [
         "Učinite sigurnu vezu vašom zadanom opcijom"
       ],
-      "Make Categories your own": [
-        "Učinite kategorije svojima"
-      ],
       "Mark all messages as read": [
         "Označi sve poruke kao pročitane"
       ],
@@ -16450,9 +16412,6 @@
       ],
       "Payment verification": [
         "Potvrda plaćanja"
-      ],
-      "Personalize your Categories": [
-        "Personalizirajte svoje kategorije"
       ],
       "Phone numbers": [
         "Telefonski brojevi"

@@ -203,6 +203,10 @@ export const manualFulfilled = createAction<void>('elements/manualFulfilled');
 
 export const addESResults = createAction<ESResults>('elements/addESResults');
 
+export const esSearchStarted = createAction<void>('elements/esSearchStarted');
+
+export const esSearchSettled = createAction<void>('elements/esSearchSettled');
+
 export const optimisticApplyLabels = createAction<OptimisticUpdates>('elements/optimistic/applyLabels');
 
 export const optimisticDelete = createAction<OptimisticDelete>('elements/optimistic/delete');

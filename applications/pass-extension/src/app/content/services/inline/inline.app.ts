@@ -1,5 +1,6 @@
 import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import { getAutofillPageTelemetryDimensions } from 'proton-pass-extension/app/content/utils/autofill-telemetry';
 import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
 import {
     contentScriptMessage,
@@ -328,7 +329,11 @@ export const createInlineApp = <T extends InlineRequest>({
 
     registerMessageHandler(InlinePortMessageType.IFRAME_CLOSE, (message) => {
         close(message.payload);
-        sendContentScriptTelemetry(TelemetryEventName.ExtensionUsed, {}, { modelVersion: MODEL_VERSION });
+        sendContentScriptTelemetry(
+            TelemetryEventName.ExtensionUsed,
+            {},
+            { modelVersion: MODEL_VERSION, ...getAutofillPageTelemetryDimensions(document.documentElement) }
+        );
     });
 
     registerMessageHandler(InlinePortMessageType.IFRAME_DIMENSIONS, (message) => {

@@ -27,6 +27,12 @@ const getOtherServiceProvider = (feedback: FeedbackDowngradeFormData) => {
     return serviceProviderMap[feedback.ReasonDetails] || 'other';
 };
 
+const SKIPPED_CANCELLATION_REASON = 'SKIPPED';
+
+const getCancellationReason = (feedback: FeedbackDowngradeFormData) => {
+    return feedback.Reason || SKIPPED_CANCELLATION_REASON;
+};
+
 export const useFeedbackFirstTelemetry = () => {
     const api = useApi();
     const [user] = useUser();
@@ -55,7 +61,7 @@ export const useFeedbackFirstTelemetry = () => {
     };
 
     const sendFeedbackReport = (feedback: FeedbackDowngradeFormData) => {
-        const cancellationReason = feedback.Reason;
+        const cancellationReason = getCancellationReason(feedback);
 
         const dimensions: Record<string, string> = { cancellationReason };
         if (cancellationReason === SUBSCRIPTION_CANCELLATION_REASONS.SWITCHING_TO_DIFFERENT_SERVICE) {
@@ -70,7 +76,7 @@ export const useFeedbackFirstTelemetry = () => {
             return;
         }
 
-        const cancellationReason = feedback.Reason;
+        const cancellationReason = getCancellationReason(feedback);
         sendReport(TelemetryAccountCancellationFlowFeedbackEvents.secondStep, { cancellationReason });
     };
 

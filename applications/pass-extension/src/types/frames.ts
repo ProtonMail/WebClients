@@ -2,6 +2,7 @@ import type { FieldType, FormType } from '@protontech/autofill/types';
 import type { AbstractField } from 'proton-pass-extension/types/field';
 import type { Coords } from 'proton-pass-extension/types/inline';
 
+import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
 import type { MaybeNull, Result } from '@proton/pass/types/utils/index';
 import type { FrameId } from '@proton/pass/types/worker/runtime';
 
@@ -59,5 +60,5 @@ export type FrameRelay<T, Relayed = {}> = T & ({ type: 'initial' } | ({ type: 'r
 
 export type FrameFormMatch = { formId: string; formType: FormType; fields: FrameFieldMatch[] };
 export type FrameFieldMatch<T extends FieldType = FieldType> = { fieldId: string } & AbstractField<T>;
-export type FrameFormsResult = { formTypes: FormType[] };
+export type FrameFormsResult = { formTypes: FormType[]; telemetry: AutofillPageTelemetryDimensions };
 export type FrameForms = { frameId: FrameId } & FrameFormsResult;

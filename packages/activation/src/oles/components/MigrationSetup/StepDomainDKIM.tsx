@@ -11,7 +11,7 @@ import DNSGroupRecords, { type DNSGroup } from './DNSGroupRecords';
 import DomainHelp from './DomainHelp';
 import type { StepComponentProps } from './MigrationSetup';
 
-const StepDomainDKIM: FC<StepComponentProps> = ({ model: { domain, domainRegistrarId }, onNext }) => {
+const StepDomainDKIM: FC<StepComponentProps> = ({ model: { domain, domainRegistrarId, subdomain }, onNext }) => {
     const dispatch = useDispatch();
     const handleCheck = async () => {
         await dispatch(syncDomain(domain!));
@@ -72,7 +72,7 @@ const StepDomainDKIM: FC<StepComponentProps> = ({ model: { domain, domainRegistr
                 <p className="color-weak mt-0">{c('BOSS')
                     .t`Copy the below code and paste it in the DNS section of your domain host.`}</p>
 
-                <DNSGroupRecords group={group} onRefresh={handleCheck} />
+                <DNSGroupRecords group={group} subdomain={subdomain} onRefresh={handleCheck} />
             </div>
 
             <DomainHelp registrarId={domainRegistrarId} />

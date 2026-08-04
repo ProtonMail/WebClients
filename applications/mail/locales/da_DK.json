@@ -310,9 +310,6 @@
       "Continue to ${ planOrAppName }": [
         "Fortsæt til ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Fortsæt med kategorier"
-      ],
       "Continue with Free": [
         "Fortsæt med Free"
       ],
@@ -1045,6 +1042,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
       ],
+      "Open debug menu": [
+        "Åbn fejlfindingsmenu"
+      ],
       "Open navigation": [
         "Åbn navigation"
       ],
@@ -1523,8 +1523,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1697,6 +1696,9 @@
       "Yes, I'll attend": [
         "Ja, jeg deltager"
       ],
+      "Yes, organize it": [
+        "Ja, organiser det"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
@@ -1731,9 +1733,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Tilpas kategorier"
-      ],
       "Got it": [
         "Forstået"
       ],
@@ -1742,6 +1741,9 @@
       ],
       "Not now": [
         "Ikke nu"
+      ],
+      "Set up categories": [
+        "Konfigurer kategorier"
       ],
       "Skip": [
         "Spring over"
@@ -4371,8 +4373,8 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Læs, svar og hold styr på Gmail direkte fra ${ MAIL_APP_NAME }"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Højreklik på en e-mail, og vælg \"Flyt til\", eller træk og slip den i en anden kategori. Lignende e-mails vil automatisk blive sorteret der i fremtiden."
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Højreklik på en e-mail og vælg “Flyt til” eller træk og slip den til en anden kategori. Fremover sorteres lignende e-mails automatisk dertil."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Send og modtag Gmail-beskeder direkte i ${ MAIL_APP_NAME }. Forbind din adresse i ${ addressesSettingsLink }."
@@ -7894,7 +7896,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8075,6 +8078,9 @@
       ],
       "Move emails": [
         "Flyt e-mails"
+      ],
+      "Move here": [
+        "Flyt hertil"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
@@ -8343,6 +8349,10 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakt os for at få hjælp til hvad som helst ${ BRAND_NAME }."
+      ],
+      "Read ${ count } email on screen": [
+        "Læs ${ count } e-mail på skærmen",
+        "Læs ${ count } e-mails på skærmen"
       ],
       "Recipient: ": [
         "Modtager: "
@@ -9167,9 +9177,9 @@
       "You have ${ totalLabel } in your inbox.": [
         "Du har ${ totalLabel } i din indbakke."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "Du har **${ count } samtale** i ${ categoryLabel } kategori",
-        "Du har **${ count } samtaler** i ${ categoryLabel } kategori"
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Du har **${ count } samtale** i din ${ categoryLabel } kategori",
+        "Du har **${ count } samtaler** i din ${ categoryLabel } kategori"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Du har **${ count } samtale** gemt i denne mappe",
@@ -9179,9 +9189,9 @@
         "Du har **${ count } samtale** mærket med denne etikette",
         "Du har **${ count } samtaler** mærket med denne etikette"
       ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "Du har **${ count } besked** i ${ categoryLabel } kategori",
-        "Du har **${ count } beskeder** i ${ categoryLabel } kategori"
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Du har **${ count } besked** i din ${ categoryLabel } kategori",
+        "Du har **${ count } beskeder** i din ${ categoryLabel } kategori"
       ],
       "You have **${ count } message** stored in this folder": [
         "Du har **${ count } besked** gemt i denne mappe",
@@ -9218,13 +9228,13 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du skal deaktivere eller fjerne eventuelle yderligere ${ MAIL_APP_NAME }-brugere, adresser og brugerdomæner, før du kan nedgradere."
       ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Du valgte **${ checked } samtale** i ${ categoryLabel } kategori",
-        "Du valgte **${ checked } samtaler** i ${ categoryLabel } kategori"
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Du valgte **${ checked } samtale** i din ${ categoryLabel } kategori",
+        "Du valgte **${ checked } samtaler** i din ${ categoryLabel } kategori"
       ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Du valgte **${ checked } besked** i ${ categoryLabel } kategori",
-        "Du valgte **${ checked } beskeder** i ${ categoryLabel } kategori"
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Du valgte **${ checked } besked** i din ${ categoryLabel } kategori",
+        "Du valgte **${ checked } beskeder** i din ${ categoryLabel } kategori"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Du valgte **${ count } samtale** fra denne mappe",
@@ -9785,6 +9795,9 @@
       "ANY": [
         "ENHVER"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Alt, der kræver din opmærksomhed, samt e-mails fra deaktiverede kategorier"
+      ],
       "App password": [
         "App-adgangskode"
       ],
@@ -10319,9 +10332,6 @@
       "Payment method": [
         "Betalingsmetode"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Personlige- og arbejds-e-mails, plus vigtige opdateringer og notifikationer"
-      ],
       "PGP scheme": [
         "PGP-metode"
       ],
@@ -10343,8 +10353,8 @@
       "Primary": [
         "Primær"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Primær - Personlige og arbejdsmæssige e-mails samt vigtige opdateringer"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primære - alt, der kræver din opmærksomhed, samt e-mails fra deaktiverede kategorier"
       ],
       "Promotions": [
         "Kampagner"
@@ -15294,7 +15304,8 @@
         "Flyt ${ selectionCount } besked",
         "Flyt ${ selectionCount } beskeder"
       ],
-      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Flyttet til ${ label }. En lignende besked vil blive kategoriseret her i fremtiden",
         "Flyttet til ${ label }. Lignende beskeder vil blive kategoriseret her fremover."
       ],
       "Password copied to clipboard": [
@@ -16084,8 +16095,8 @@
       "Make a secure connection your default": [
         "Gør en sikker forbindelse til din standard"
       ],
-      "Make Categories your own": [
-        "Gør kategorier til dine egne"
+      "Make your inbox your own": [
+        "Gør indbakken til din egen"
       ],
       "Mark all messages as read": [
         "Marker alle meddelelser som læste"
@@ -16279,9 +16290,6 @@
       "Payment verification": [
         "Betalingsbekræftelse"
       ],
-      "Personalize your Categories": [
-        "Gør dine kategorier personlige"
-      ],
       "Phone numbers": [
         "Telefonnumre"
       ],
@@ -16338,6 +16346,9 @@
       ],
       "Referral": [
         "Henvisning"
+      ],
+      "Refine your Categories": [
+        "Forfin dine kategorier"
       ],
       "Remove forwarding address": [
         "Fjern videresendelsesadresse"
@@ -16824,6 +16835,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Opgradér til en understøttet plan for at bruge administratorroller."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brugeren har accepteret invitationen."
       ]

@@ -1,3 +1,4 @@
+import { clearAppPassword, getAppPassword, setAppPassword } from 'proton-authenticator/lib/auth/appPassword';
 import { db } from 'proton-authenticator/lib/db/db';
 import type { RemoteKey } from 'proton-authenticator/lib/db/entities/remote-keys';
 import logger from 'proton-authenticator/lib/logger';
@@ -22,11 +23,6 @@ type AuthServiceState = {
      * the initial user model request. */
     userKeys: DecryptedKey[];
 
-    /** In-memory offlineKD derived from the user's
-     * app password. Only available if app-lock is
-     * set to `password` and app is unlocked. */
-    encryptedAppPassword?: Uint8Array<ArrayBuffer>;
-
     /** FIXME: proton-sync `enabled` is derived from
      * this `api` object being present accross the redux
      * thunks. We should rather derive from settings. */
@@ -40,9 +36,6 @@ const createAuthService = () => {
      * us from doing unauthenticated API calls */
     const setApi = (authenticatedAPI?: Api) => (state.api = authenticatedAPI);
     const getApi = () => state.api;
-
-    const setAppPassword = (key: Maybe<Uint8Array<ArrayBuffer>>) => (state.encryptedAppPassword = key);
-    const getAppPassword = () => state.encryptedAppPassword;
 
     /** Retrieves current user keys if any. These should never
      * be persisted and just live in memory when a session has
@@ -105,7 +98,7 @@ const createAuthService = () => {
         for (const { localID, UID } of sessions) await removePersistedSessionByLocalIDAndUID(localID, UID).catch(noop);
 
         delete state.api;
-        delete state.encryptedAppPassword;
+        clearAppPassword();
         state.userKeys.length = 0;
     };
 

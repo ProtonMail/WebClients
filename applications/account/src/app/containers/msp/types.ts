@@ -1,4 +1,4 @@
-export type CompanyStatus = 'active' | 'disabled' | 'on-hold';
+import type { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 
 export interface SeatDay {
     date: string; // ISO "YYYY-MM-DD"
@@ -18,11 +18,11 @@ export interface MspCompany {
     name: string;
     assignedSeats: number;
     usedSeats: number;
-    status: CompanyStatus;
+    status: ORGANIZATION_STATE;
 }
 
 export interface CompanyFormData {
     name: string;
     assignedSeats: number;
-    status: CompanyStatus;
+    status: ORGANIZATION_STATE;
 }

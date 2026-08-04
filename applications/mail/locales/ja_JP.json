@@ -306,9 +306,6 @@
       "Continue to ${ planOrAppName }": [
         "${ planOrAppName } に進む"
       ],
-      "Continue with categories": [
-        "カテゴリを続ける"
-      ],
       "Continue with Free": [
         "無料で続行"
       ],
@@ -1713,9 +1710,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "カテゴリをカスタマイズ"
-      ],
       "Got it": [
         "はい"
       ],
@@ -4311,9 +4305,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }内からGmailの閲覧、返信、最新情報の確認が行えます"
-      ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "メールを右クリックして「移動する」を選ぶか、他のカテゴリにドラックアンドドロップしてください。今後似たようなメールが自動的にそこにソートされます。"
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "${ MAIL_APP_NAME }で直接Gmailメッセージを送受信できます。${ addressesSettingsLink }でお客様のアドレスを接続してください。"
@@ -7697,7 +7688,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8950,17 +8941,11 @@
       "You have ${ totalLabel } in your inbox.": [
         "受信箱に ${ totalLabel } があります。"
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "${ categoryLabel }カテゴリ内に**${ count }件の会話**があります"
-      ],
       "You have **${ count } conversation** stored in this folder": [
         "このフォルダー内に **${ count } 件の会話**があります"
       ],
       "You have **${ count } conversation** tagged with this label": [
         "このラベルがついた **${ count } 件の会話**があります"
-      ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "${ categoryLabel }カテゴリ内に**${ count }件のメッセージ**があります"
       ],
       "You have **${ count } message** stored in this folder": [
         "このフォルダー内に **${ count } 件のメッセージ**があります"
@@ -8994,12 +8979,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "ダウングレードする前に、追加の ${ MAIL_APP_NAME } のユーザー、アドレス、独自ドメインを削除する必要があります。"
-      ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "${ categoryLabel } カテゴリ内の **${ checked } 件の会話**を選択しました"
-      ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "${ categoryLabel } カテゴリ内の **${ checked } 件のメッセージ**を選択しました"
       ],
       "You selected **${ count } conversation** from this folder": [
         "このフォルダー内の **${ count } 件の会話**を選択中"
@@ -10059,9 +10038,6 @@
       "Payment method": [
         "支払い方法"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "個人のメールも、仕事のメールも、さらに重要な更新や通知も"
-      ],
       "PGP scheme": [
         "PGP 形式"
       ],
@@ -10082,9 +10058,6 @@
       ],
       "Primary": [
         "プライマリー"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "プライマリー - 個人と仕事のメール、それと重要なお知らせ"
       ],
       "Promotions": [
         "プロモーション"
@@ -14890,9 +14863,6 @@
       "Move ${ selectionCount } message": [
         "${ selectionCount } 件のメッセージを移動"
       ],
-      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
-        "${ label } へ移動しました。今後は類似のメッセージが同じカテゴリーに振り分けられます。"
-      ],
       "Password copied to clipboard": [
         "クリップボードにコピーされたパスワード"
       ],
@@ -15659,9 +15629,6 @@
       "Make a secure connection your default": [
         "安全な接続を標準設定にする"
       ],
-      "Make Categories your own": [
-        "カテゴリをあなただけのものに"
-      ],
       "Mark all messages as read": [
         "すべてのメッセージを既読にする"
       ],
@@ -15850,9 +15817,6 @@
       ],
       "Payment verification": [
         "支払いの検証"
-      ],
-      "Personalize your Categories": [
-        "カテゴリをパーソナライズ"
       ],
       "Phone numbers": [
         "電話番号"

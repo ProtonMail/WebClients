@@ -22,7 +22,7 @@ import type { AddressesState } from '../addresses';
 import { addressesThunk } from '../addresses';
 import { bootstrapEvent } from '../bootstrap/action';
 import { serverEvent } from '../eventLoop';
-import { getGroupSourcedRoleIds, getUserSourcedRoleIds } from '../organizationRoles/helpers';
+import { getGroupSourcedRoleIds, getUserSourcedRoleIds, isOrgKeyRequired } from '../organizationRoles/helpers';
 import { type UserState, userThunk } from '../user';
 import { type UserPermissionsState, userPermissionsThunk } from '../userPermissions';
 import { getMember } from './getMember';
@@ -508,6 +508,16 @@ export const updateMemberRoles = ({
             updateMemberOrganizationRoles(member.ID, { add, remove })
         );
         dispatch(slice.actions.memberRoleFetchFulfilled({ member, organizationRoles: RoleAssignments }));
+
+        const currentRolesRequireOrgKey = currentRoles.some(({ Role }) => isOrgKeyRequired(Role));
+        const desiredRolesRequireOrgKey = RoleAssignments.some(({ Role }) => isOrgKeyRequired(Role));
+        if (currentRolesRequireOrgKey && !desiredRolesRequireOrgKey) {
+            // The API demotes the member when its last org key role is removed. Refresh Role now
+            // instead of waiting for the event loop, otherwise a promotion following shortly after
+            // reads a stale admin Role above and skips setRole.
+            dispatch(slice.actions.upsertMember({ member: await getMember(api, member.ID) }));
+        }
+
         return RoleAssignments;
     };
 };

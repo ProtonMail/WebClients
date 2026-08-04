@@ -7,7 +7,7 @@
     "scripts": {
         "artifacts": "napi artifacts",
         "build": "node build.js",
-        "build:debug": "cargo build --package host && napi build --manifest-path ./napi/Cargo.toml --output-dir . --platform --no-js",
+        "build:debug": "cargo build --package host && napi build --manifest-path ./napi/Cargo.toml --output-dir . --platform --no-js && npx prettier --write index.d.ts",
         "build:host": "cargo build --package host --release",
         "build:napi": "napi build --manifest-path ./napi/Cargo.toml --output-dir . --release --platform --no-js",
         "prepublishOnly": "napi prepublish -t npm",

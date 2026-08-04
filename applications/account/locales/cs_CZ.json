@@ -121,7 +121,7 @@
         "Přidat kalendář z URL"
       ],
       "Add company": [
-        "Přidat firmu"
+        "Přidat společnost"
       ],
       "Add condition": [
         "Přidat podmínku"
@@ -577,7 +577,7 @@
         "Deaktivovat kategorii"
       ],
       "Disable company": [
-        "Deaktivovat firmu"
+        "Deaktivovat společnost"
       ],
       "Disable recovery phrase": [
         "Deaktivace obnovovací fráze"
@@ -841,7 +841,7 @@
         "Získat nabídku"
       ],
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
-        "Získat nápovědu od ${ LUMO_SHORT_APP_NAME }"
+        "Získejte pomoc od ${ LUMO_SHORT_APP_NAME }"
       ],
       "Get in touch": [
         "Kontaktujte nás"
@@ -2963,7 +2963,7 @@
         "Účet odpojen"
       ],
       "Accounts migrated": [
-        "Migrované účty"
+        "Účty byly migrovány"
       ],
       "Activated": [
         "Aktivováno"
@@ -3218,7 +3218,7 @@
         "Organizace nemá dostatečně velké úložiště"
       ],
       "Pending": [
-        "Čekající"
+        "Čeká na vyřízení"
       ],
       "Please don’t close or refresh this window.": [
         "Nezavírejte prosím ani neobnovujte toto okno."
@@ -3284,7 +3284,7 @@
         "Přeskočeno ${ count } událostí z důvodu nekompatibility"
       ],
       "Some accounts are not claimed": [
-        "Některé účty nejsou vyžádány"
+        "Některé účty nejsou aktivovány"
       ],
       "Some members weren't migrated": [
         "Někteří členové nebyli migrováni"
@@ -3335,7 +3335,7 @@
         "Uživatelé, kteří přistoupili ke svému účtu ${ BRAND_NAME }"
       ],
       "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Uživatelé, kteří neprovedou nárok na svůj účet před dokončením migrace, budou muset požádat správce své organizace v ${ BRAND_NAME } o resetování hesla."
+        "Uživatelé, kteří si své účty neaktivují před dokončením migrace, budou muset požádat administrátora své organizace ${ BRAND_NAME } o resetování hesla."
       ],
       "Verified": [
         "Ověřeno"
@@ -3359,7 +3359,7 @@
         "Přecházíme na zabezpečenou e-mailovou službu ${ BRAND_NAME }.\nA váš účet ${ BRAND_NAME } je připraven k vyžádání.\nKlikněte na ${ inviteLink }.\nZadejte svou e-mailovou adresu, na váš Gmail pošleme kód.\nPoužijte jej k nastavení hesla – a váš účet ${ BRAND_NAME } je váš.\nPo nějakou dobu budou obě služby fungovat vedle sebe. ${ BRAND_NAME } i Gmail.\nPoté, až přejdou všichni, Gmail vyřadíme. Předtím vás na to upozorníme."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Všimli jsme si, že někteří uživatelé si dosud nevyžádali své účty ${ BRAND_NAME }."
+        "Všimli jsme si, že někteří uživatelé se ještě nepřihlásili o své účty ${ BRAND_NAME }."
       ],
       "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
         "Nyní vytváříme vaše účty a importujeme vaše data, aby měl váš tým k dispozici vše, co potřebuje, jakmile začne používat svůj zabezpečený účet ${ BRAND_NAME }."
@@ -3374,7 +3374,7 @@
         "Vy"
       ],
       "You will not be able to copy these users' data later.": [
-        "Data těchto uživatelů nebudete moci zkopírovat později."
+        "Později již nebudete moci data těchto uživatelů zkopírovat."
       ],
       "You're all set!": [
         "Vše je připraveno!"
@@ -4123,10 +4123,10 @@
         "Fakturační období"
       ],
       "Company": [
-        "Firma"
+        "Společnost"
       ],
       "Managed companies": [
-        "Spravované firmy"
+        "Spravované společnosti"
       ],
       "Status": [
         "Stav"
@@ -6916,7 +6916,7 @@
         "Zadejte své dodatečné heslo"
       ],
       "Explore plans": [
-        "Prozkoumat plány"
+        "Prozkoumat tarify"
       ],
       "For ${ email }": [
         "Pro ${ email }"
@@ -9934,7 +9934,7 @@
         "${ boldName } bude nastaven jako výchozí kalendář."
       ],
       "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
-        "Firemní plány ${ BRAND_NAME } poskytují vašemu týmu všechny nástroje pro spolupráci, které potřebuje k tomu, aby byl produktivní a organizovaný ve své práci, a zároveň chrání vaši firmu."
+        "Firemní tarify ${ BRAND_NAME } poskytují vašemu týmu všechny nástroje pro spolupráci, které potřebuje k tomu, aby byl produktivní a organizovaný ve své práci, a zároveň chrání vaši společnost."
       ],
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
@@ -10738,7 +10738,7 @@
         "Beta"
       ],
       "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
-        "Účtováno ${ monthlyDiscountedPriceElement } po dobu prvních 6 měsíců, poté se obnovuje za ${ monthlyRenewalPriceElement }."
+        "Cena za prvních 6 měsíců činí ${ monthlyDiscountedPriceElement }, při prodloužení pak ${ monthlyRenewalPriceElement }."
       ],
       "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
         "Účtováno ${ yearlyDiscountedPriceElement } po dobu prvních 12 měsíců, poté se obnovuje za ${ yearlyRenewalPriceElement }."
@@ -12516,9 +12516,6 @@
       "Set password": [
         "Nastavte heslo"
       ],
-      "Set the name, status, and assigned seats": [
-        "Nastavte název, stav a přiřazené licence"
-      ],
       "Set up your organization": [
         "Nastavte svou organizaci"
       ],
@@ -12754,7 +12751,7 @@
         "Kalendář bude odebrán z vašeho účtu."
       ],
       "The company and all its members will lose access immediately.": [
-        "Firma a všichni její členové okamžitě ztratí přístup."
+        "Společnost a všichni její členové okamžitě ztratí přístup."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Dark web je skrytá část internetu, kde lze koupit a prodat ukradené osobní údaje, například identitu."
@@ -13432,7 +13429,7 @@
         "Pomocí skupin můžete snadno a rychle odesílat e-maily všem lidem v určité skupině."
       ],
       "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "U spravovaných firem můžete přidávat, upravovat a odebírat přístup organizacím, na které dohlížíte."
+        "U spravovaných společností můžete přidávat, upravovat a odebírat přístup organizacím, na které dohlížíte."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "V rámci stávajícího tarifu můžete přijímat pouze zprávy s adresou @pm.me. Navyšte tarif pro odesílání zpráv a vytváření dalších adres s @pm.me."
@@ -14765,7 +14762,7 @@
         "Automatické doporučení"
       ],
       "Average": [
-        "Průměr"
+        "Průměrně"
       ],
       "Awarded": [
         "Uděleno"
@@ -15628,9 +15625,6 @@
       "Pending": [
         "Čekající"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Osobní a pracovní e-maily, důležité novinky a upozornění"
-      ],
       "Phone number": [
         "Telefonní číslo"
       ],
@@ -15672,9 +15666,6 @@
       ],
       "Primary": [
         "Primární"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Primární – osobní a pracovní e-maily a důležité aktualizace"
       ],
       "Priority support": [
         "Prioritní podpora"
@@ -21101,7 +21092,7 @@
         "Jste částečně chráněni, ale stále ne úplně v bezpečí. Zapomenuté heslo by stále mohlo znamenat ztrátu e-mailů, souborů a hesel."
       ],
       "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
-        "Stále jste ve vysokém riziku. Pokud zapomenete své heslo, můžete trvale přijít o e-maily, soubory a hesla."
+        "Stále vám hrozí vysoké riziko. Pokud zapomenete své heslo, můžete trvale přijít o své e-maily, soubory a hesla."
       ],
       "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
         "Jste dobře chráněni, ale stále existují mezery. Více možností obnovení vám poskytne silnější záchrannou síť, pokud byste někdy ztratili heslo."
@@ -21125,7 +21116,7 @@
         "Nastavení obnovení účtu není kompletní. Zapomenuté heslo by stále mohlo znamenat ztrátu přístupu k vašim e-mailům, souborům a heslům."
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
-        "Nastavení obnovy vašeho účtu je solidní, zbývá jen vyřešit několik drobných mezer. Každá přidaná možnost posiluje vaši záchrannou síť."
+        "Vaše nastavení obnovení účtu je spolehlivé, zbývá však vyřešit několik posledních nedostatků. Každá přidaná možnost vaši záchrannou síť ještě více posílí."
       ]
     },
     "Recovery score item": {
@@ -21175,7 +21166,7 @@
         "Heslo ověřeno"
       ],
       "Phone recovery enabled": [
-        "Obnovení pomocí telefonu zapnuto"
+        "Obnovení pomocí telefonu aktivováno"
       ],
       "Recovery contacts added": [
         "Kontakty pro obnovení přidány"
@@ -21780,7 +21771,7 @@
         "Později"
       ],
       "Protect your legacy with Emergency Access": [
-        "Chraňte své dědictví pomocí nouzového přístupu"
+        "Chraňte své digitální dědictví pomocí nouzového přístupu"
       ],
       "Save recovery phrase": [
         "Uložit obnovovací frázi"
@@ -24643,7 +24634,7 @@
         "Firma ${ confirmDisable.name } byla deaktivována"
       ],
       "${ data.name } added": [
-        "Firma ${ data.name } byla přidána"
+        "Společnost ${ data.name } byla přidána"
       ],
       "${ data.name } updated": [
         "Firma ${ data.name } byla aktualizována"
@@ -25926,7 +25917,7 @@
         "Úprava fakturační adresy"
       ],
       "Edit company": [
-        "Upravit firmu"
+        "Upravit společnost"
       ],
       "Edit countries": [
         "Upravit země"
@@ -27593,7 +27584,7 @@
         "Členství ve skupině pozastaveno"
       ],
       "Resuming role assignment": [
-        "Pokračování v přiřazování rolí"
+        "Obnovení přiřazování rolí"
       ],
       "Role assignment paused": [
         "Přiřazování rolí bylo pozastaveno"
@@ -27608,7 +27599,7 @@
         "Uživatel je vlastníkem skupiny"
       ],
       "via ${ groupNames }": [
-        "prostřednictvím ${ groupNames }"
+        "přes ${ groupNames }"
       ],
       "Waiting for admin approval": [
         "Čeká na schválení správcem"

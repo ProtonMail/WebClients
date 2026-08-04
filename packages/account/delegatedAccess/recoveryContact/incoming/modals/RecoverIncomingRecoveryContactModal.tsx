@@ -9,18 +9,18 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
 import { recoverThunk } from '../../../incomingActions';
 import { ContactView } from '../../../shared/ContactView';
 import type { EnrichedIncomingDelegatedAccess } from '../../../shared/incoming/interface';
-import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 
 interface RequestAccessEmergencyContactModalProps extends Omit<ModalProps, 'children' | 'buttons'> {
     value: EnrichedIncomingDelegatedAccess;
 }
 
 export const RecoverIncomingRecoveryContactModal = ({ value, ...rest }: RequestAccessEmergencyContactModalProps) => {
-    const dispatch = useDelegatedAccessDispatch();
+    const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();

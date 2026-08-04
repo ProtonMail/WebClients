@@ -637,6 +637,14 @@ describe('messageDraft', () => {
             it('should generate empty html blockquote recipient string if no recipient', () => {
                 expect(formatRecipientsString([], 'html')).toEqual('');
             });
+
+            it('should HTML-escape recipient names and addresses', () => {
+                const recipientList = [{ Name: 'A & B<script>', Address: 'x"@proton.me' }] as Recipient[];
+
+                expect(formatRecipientsString(recipientList, 'html')).toEqual(
+                    'A &amp; B&lt;script&gt; &lt;x&quot;@proton.me&gt;'
+                );
+            });
         });
 
         describe('plaintext draft', () => {

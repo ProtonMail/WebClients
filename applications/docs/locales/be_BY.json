@@ -114,15 +114,6 @@
       "Cancel": [
         "Скасаваць"
       ],
-      "Cancel all downloads": [
-        "Скасаваць усе спампоўванні"
-      ],
-      "Cancel all uploads": [
-        "Скасаваць усе запампоўванні"
-      ],
-      "Cancel download": [
-        "Скасаваць спампоўванне"
-      ],
       "Cancel subscription": [
         "Скасаваць падпіску"
       ],
@@ -206,9 +197,6 @@
       ],
       "Continue": [
         "Працягнуць"
-      ],
-      "Continue downloading": [
-        "Працягнуць спампоўванне"
       ],
       "Continue import": [
         "Працягнуць імпартаванне"
@@ -338,9 +326,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Спампаваць копію (у фармаце *.xlsx)"
-      ],
-      "Download anyway": [
-        "Усё роўна спампаваць"
       ],
       "Download debug information": [
         "Спампаваць адладачную інфармацыю"
@@ -684,9 +669,6 @@
       "Rename document": [
         "Перайменаваць дакумент"
       ],
-      "Replace file": [
-        "Замяніць файл"
-      ],
       "Report a problem": [
         "Паведаміць аб праблеме"
       ],
@@ -902,9 +884,6 @@
       ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
-      ],
-      "Upload anyway": [
-        "Запампаваць усё роўна"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -3322,20 +3301,8 @@
       "Failed to update public share node": [
         "Не ўдалося абнавіць публічны вузел абагульвання"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Файл \"${ name }\" ужо спампоўваецца"
-      ],
-      "File cannot be merged with folder": [
-        "Немагчыма аб'яднаць файл з папкай"
-      ],
-      "File selection is already downloading": [
-        "Выбраны файл ужо спампоўваецца"
-      ],
       "First name is too long": [
         "Занадта доўгае імя"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Папка \"${ name }\" ужо спампоўваецца"
       ],
       "Folder name cannot be empty.": [
         "Назва папкі не можа быць пустой."
@@ -3597,9 +3564,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Арыгінальны файл пакуль не запампаваны. Паспрабуйце яшчэ раз пазней"
-      ],
-      "The original folder not found": [
-        "Арыгінальная папка не знойдзена"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
@@ -4651,9 +4615,6 @@
         "${ contactsLength } кантактаў",
         "${ contactsLength } кантактаў"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Файлы ${ DOCS_APP_NAME } не могуць быць спампаваны наўпрост і яны не будуць уключаны ў гэта спампоўванне. Вы можаце спампаваць іншыя файлы націснуўшы \"Працягнуць спампоўванне\"."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } дазваляе вам супрацоўнічаць у рэжыме рэальнага часу з дапамогай скразнога шыфравання для поўнай прыватнасці. Стварыце копію, каб пачаць рэдагаванне, або папрасіце ўладальніка забяспечыць вас правам рэдагавання дакумента."
       ],
@@ -4732,9 +4693,6 @@
         "${ updated } кантактаў паспяхова абноўлены.",
         "${ updated } кантактаў паспяхова абноўлены."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } ужо існуе ў гэтым размяшчэнні."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } маскіруе ваш IP-адрас і вэб-сайты не могуць вызначыць вас."
       ],
@@ -4767,12 +4725,6 @@
         "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
         "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
         "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
-      ],
-      "A number will be added to the filename": [
-        "Да назвы файла будзе дададзены нумар"
-      ],
-      "A number will be added to the folder name": [
-        "Да назвы папкі будзе дададзены нумар"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
@@ -4830,9 +4782,6 @@
       ],
       "Already in this folder": [
         "Ужо ў гэтай папцы"
-      ],
-      "an anonymous user": [
-        "ананімны карыстальнік"
       ],
       "and": [
         "і"
@@ -4905,9 +4854,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Праверка кантакту ${ progress } з ${ max }..."
-      ],
-      "Checking signatures": [
-        "Праверка подпісаў"
       ],
       "Choose a plan that works best for you.": [
         "Выберыце тарыфны план, які найлепш вам пасуе."
@@ -5008,12 +4954,6 @@
       "Details": [
         "Падрабязнасці"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Лічбавы подпіс правераны. Гэты файл бяспечна запампаваны ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Лічбавы подпіс правераны. Гэта папка бяспечна запампавана ${ emailAddress }."
-      ],
       "Display word count": [
         "Паказваць колькасць слоў"
       ],
@@ -5040,12 +4980,6 @@
       ],
       "Download current logs": [
         "Спампоўванне бягучых журналаў"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Спампоўванне файла ${ downloadFileName } было перарвана"
-      ],
-      "Download was canceled": [
-        "Спампоўванне скасавана"
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -5140,15 +5074,6 @@
       "File \"${ name }\" was deleted during download": [
         "Файл \"${ name }\" быў выдалены падчас спампоўвання"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Файл не мае подпісу. Мы не можам спраўдзіць, што ${ emailAddress } запампаваў ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Файл не мае подпісу. Немагчыма спраўдзіць хто запампаваў ${ fileName }."
-      ],
-      "File will not be updated": [
-        "Файл не будзе абноўлены"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
       ],
@@ -5157,18 +5082,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Папка \"${ link.name }\" была выдалена падчас спампоўвання"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Папка не мае подпісу. Мы не можам спраўдзіць, што ${ emailAddress } запампаваў ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Папка не мае подпісу. Немагчыма спраўдзіць хто запампаваў ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "Папка не будзе запампавана"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Абмяжуйце аперацыі, якія звязаны з праглядам трансляцый і інтэнсіўным спажываннем памяці, або запампоўвайце свае даныя пакетамі меншага аб'ёму."
       ],
       "Forgot password?": [
         "Забылі пароль?"
@@ -5283,9 +5196,6 @@
       ],
       "Invite link copied": [
         "Запрашальная спасылка скапіявана"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Здаецца, што вы нядаўна спрабавалі запампаваць ${ uploadName }. Калі гэта спроба была няўдалай, ${ replaceFile }. Калі ўсё яшчэ выконваецца запампоўванне, замена файла скасуе бягучае запампоўванне."
       ],
       "It's better to have:": [
         "Лепш за ўсё, каб у вас было:"
@@ -5557,9 +5467,6 @@
       "Recents": [
         "Нядаўнія"
       ],
-      "recommended browser": [
-        "рэкамендаваны браўзер"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інфармацыя аб аднаўленні застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
       ],
@@ -5626,12 +5533,6 @@
       "Show table of contents": [
         "Адлюстраваць змест"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Немагчыма выканаць праверку подпісу з прычыны памылкі сеткі. Паспрабуйце яшчэ раз пазней."
-      ],
-      "Signature check will be ignored": [
-        "Праверка подпісу была праігнаравана"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
@@ -5683,26 +5584,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступна. Паспрабуйце яшчэ раз пазней."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Магчыма, што ўліковы запіс мае новы ключ або наступныя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Не ўдалося спраўдзіць аўтарства рэдагаванняў у дакуменце. Вы сапраўды хочаце пазначыць гэты дакумент як спраўджаны? Вы можаце выбраць \"Ігнараваць\", каб прыняць рашэнне пазней."
       ],
       "The Beginning": [
         "Пачатак"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Лічбавы подпіс часткова спраўджаны. Гэты файл запампаваны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Лічбавы подпіс быў часткова спраўджаны. Гэта папка запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Магчыма, што гэтыя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць яго, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
@@ -5770,23 +5659,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Гэта незваротна выдаліць выбраныя элементы, якія вы запампавалі."
       ],
-      "This will replace the existing file with the folder": [
-        "Гэта заменіць існуючы файл папкай"
-      ],
-      "This will replace the existing folder with the file": [
-        "Гэта заменіць існуючую папку файлам"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
-      ],
-      "This will upload a new version of the file": [
-        "Гэта дзеянне прывядзе да запампоўвання новай версіі файла"
-      ],
-      "This will upload a new version of the folder": [
-        "Гэта запампуе новую версію папкі"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Для спампоўвання файлаў ${ DOCS_APP_NAME }, адкрыйце іх у ${ DOCS_APP_NAME } і экспартуйце."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
@@ -5812,14 +5686,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Перадача скасавана для файла \"${ name }\""
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Перадача скасавана для папкі \"${ name }\""
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Перадача прапушчана для файла ${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Перадача прапушчана для папкі \"${ folderName }\""
       ],
       "Trash": [
         "Сметніца"
@@ -5832,9 +5700,6 @@
       ],
       "Undo successful": [
         "Адрабленні выкананы"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Збой расшыфроўкі файла або некаторых яго даных."
       ],
       "Update recent documents": [
         "Абнаўленне нядаўніх дакументаў"
@@ -5850,9 +5715,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Палепшыць тарыфны план, каб захаваць перавагі ${ planTitle }."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Запампоўванне сотняў файлаў адначасова можа паўплываць на прадукцыйнасць."
       ],
       "Uppercase and lowercase letters": [
         "Маленькія і вялікія літары"
@@ -5877,12 +5739,6 @@
       ],
       "Warning": [
         "Папярэджанне"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Мы не можам спраўдзіць, што ${ emailAddress } запампаваў ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Мы не можам спраўдзіць хто запампаваў ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана."
@@ -6052,9 +5908,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Не ўдалося сінхранізаваць вашы змяненні. Drive паспрабуе аўтаматычна захаваць змяненні. Не закрывайце вэб-старонку."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Ваш бягучы браўзер не падтрымлівае спампоўванне вялікіх файлаў з прычыны недаступнасці службы Service Workers. Гэта можа прывесці да завісання браўзера. Скарыстайцеся апошняй версіяй ${ recommendedBrowser } і паспрабуйце яшчэ раз."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Ваш бягучы дакумент будзе заменены гэтай версіяй. Каментарыі і прапановы будуць выдалены з дакумента, але застануцца даступнымі ў гісторыі каментарыяў."
       ],
@@ -6163,32 +6016,6 @@
         "Толькі прагляд"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "атрыбуты файла"
-      ],
-      "file data": [
-        "даныя файла"
-      ],
-      "file data key": [
-        "ключ даных файла"
-      ],
-      "file data order": [
-        "парадак даных файла"
-      ],
-      "hash key": [
-        "хэш-ключ"
-      ],
-      "keys": [
-        "ключы"
-      ],
-      "name": [
-        "назва"
-      ],
-      "thumbnail": [
-        "мініяцюра"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Актыўны падпісант"
@@ -6276,15 +6103,6 @@
       "App password": [
         "Пароль праграмы"
       ],
-      "Apply to all duplicated files": [
-        "Прымяніць да ўсіх дублікатаў файлаў"
-      ],
-      "Apply to all duplicated folders": [
-        "Прымяніць да ўсіх дублікатаў папак"
-      ],
-      "Apply to all unverified items": [
-        "Прымяніць да ўсіх няспраўджаных элементаў"
-      ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
       ],
@@ -6311,9 +6129,6 @@
       ],
       "can view": [
         "можа праглядаць"
-      ],
-      "Cancel download": [
-        "Скасаваць спампоўванне"
       ],
       "Category": [
         "Катэгорыя"
@@ -6378,14 +6193,8 @@
       "Don't show this again": [
         "Больш не паказваць"
       ],
-      "Download anyway": [
-        "Усё роўна спампаваць"
-      ],
       "Drive": [
         "Дыск"
-      ],
-      "Duplicate found": [
-        "Знойдзены дублікат"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "напрыклад, Amazon, eBay, Etsy"
@@ -6488,15 +6297,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
-      ],
-      "Keep both": [
-        "Пакінуць абодва"
-      ],
-      "Keep both files": [
-        "Пакінуць абодва файлы"
-      ],
-      "Keep both folders": [
-        "Пакінуць абедзве папкі"
       ],
       "Label messages as": [
         "Пазначыць паведамленні як"
@@ -6621,12 +6421,6 @@
       "Regular expression": [
         "Рэгулярны выраз"
       ],
-      "Replace existing file": [
-        "Замяніць бягучы файл"
-      ],
-      "Replace existing folder": [
-        "Замяніць існуючую папку"
-      ],
       "Require password": [
         "Патрабаваць пароль"
       ],
@@ -6650,12 +6444,6 @@
       ],
       "Skip feedback": [
         "Прапусціць водгук"
-      ],
-      "Skip file": [
-        "Прапусціць файл"
-      ],
-      "Skip folder": [
-        "Прапусціць папку"
       ],
       "Starts with": [
         "Пачынаецца з"
@@ -8542,9 +8330,6 @@
       "Failed to delete document": [
         "Не ўдалося выдаліць дакумент"
       ],
-      "Failed to download files: ${ err }": [
-        "Не ўдалося спампаваць файлы: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Не ўдалося загрузіць падрабязнасці запрашэння"
       ],
@@ -8563,9 +8348,6 @@
       "Failed to trash document": [
         "Не ўдалося перамясціць дакумент у сметніцу"
       ],
-      "Failed to upload files: ${ err }": [
-        "Не ўдалося запампаваць файлы: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампоўваюцца",
         "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампоўваюцца",
@@ -8574,9 +8356,6 @@
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Файл або папка \"${ filename }\" ужо запампаваны"
-      ],
-      "File or folder is missing a name": [
-        "Адсутнічае назва папкі або файла"
       ],
       "Invitation's email was sent again": [
         "Запрашальны ліст быў адпраўлены паўторна"
@@ -8601,9 +8380,6 @@
         "Перамясціць ${ n } элементы",
         "Перамясціць ${ n } элементаў",
         "Перамясціць ${ n } элементаў"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Недастаткова месца для запампоўвання ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Доступ да публічнай спасылкі абноўлены"
@@ -10649,9 +10425,6 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
-      "Browser might run out of memory": [
-        "Браўзеру магчыма не хапае памяці"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасаваць падпіску ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -10814,26 +10587,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Панізіць да ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Спампаваць ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Спампаваць праграму"
-      ],
-      "Download unverified file?": [
-        "Спампаваць неправераны файл?"
-      ],
-      "Download unverified folder?": [
-        "Спампаваць неправераную папку?"
-      ],
-      "Duplicate file found": [
-        "Знойдзены дублікат файла"
-      ],
-      "Duplicate folder found": [
-        "Знойдзены дублікат папкі"
       ],
       "Edit contact": [
         "Рэдагаваць кантакт"
@@ -11018,9 +10776,6 @@
       "Other names": [
         "Іншыя імёны"
       ],
-      "Performance might be affected": [
-        "Можа паўплываць на прадукцыйнасць"
-      ],
       "Phone numbers": [
         "Нумары тэлефонаў"
       ],
@@ -11192,9 +10947,6 @@
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
       ],
-      "Uploading a large file or folder": [
-        "Запампоўванне вялікага файла або папкі"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Скарыстацца ${ VPN_SHORT_APP_NAME } для захавання прыватнасці даных"
       ],
@@ -11239,9 +10991,6 @@
       ],
       "Your document cannot be loaded": [
         "Немагчыма загрузіць ваш дакумент"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Ваша спампоўванне ўключае файл ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"

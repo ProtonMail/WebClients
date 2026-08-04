@@ -6,11 +6,12 @@ import { UpdateErrorType, UpdateStatus } from '@proton/pass/types/desktop';
 import { semver } from '@proton/pass/utils/string/semver';
 import noop from '@proton/utils/noop';
 
-import { msix_updater } from '../../../native';
-import config from '../../app/config';
-import { userAgent } from '../../lib/user-agent';
-import logger from '../../utils/logger';
-import { isMac, isWindows } from '../../utils/platform';
+import { msix_updater } from 'proton-pass-desktop-native';
+import config from 'proton-pass-desktop/app/config';
+import { userAgent } from 'proton-pass-desktop/lib/user-agent';
+import logger from 'proton-pass-desktop/utils/logger';
+import { isMac, isWindows } from 'proton-pass-desktop/utils/platform';
+
 import { categorizeUpdaterError } from './error.macos';
 import { calculateUpdateDistribution } from './helpers';
 import { mockDownload } from './mock';

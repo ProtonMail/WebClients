@@ -2,12 +2,12 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import AccessIncomingEmergencyContactModal from '../../../emergencyContact/incoming/modals/AccessIncomingEmergencyContactModal';
 import { accessDelegatedAccessThunk } from '../../../incomingActions';
-import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 import { useIncomingController } from '../../IncomingDelegatedAccessProvider';
 import type { EnrichedIncomingDelegatedAccess } from '../interface';
 
@@ -17,7 +17,7 @@ export const AccessAction = ({ app }: { app: APP_NAMES }) => {
     const loadingRef = useRef(false);
 
     const handleError = useErrorHandler();
-    const dispatch = useDelegatedAccessDispatch();
+    const dispatch = useDispatch();
 
     const [tmpIncomingDelegatedAccess, setTmpIncomingDelegatedAccess] =
         useState<EnrichedIncomingDelegatedAccess | null>(null);

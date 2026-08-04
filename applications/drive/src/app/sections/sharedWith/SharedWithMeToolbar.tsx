@@ -2,11 +2,11 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar, useConfirmActionModal } from '@proton/components';
+import { useCopyItemsModal } from '@proton/drive/modals/copyItemsModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { LayoutButton } from '../../legacy/components/sections/ToolbarButtons';
-import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useReportAbuseModal } from '../../modals/ReportAbuseModal';

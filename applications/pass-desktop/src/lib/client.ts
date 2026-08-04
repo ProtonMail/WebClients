@@ -4,7 +4,7 @@ import { AppStatus } from '@proton/pass/types';
 
 import { setupIpcHandler } from './ipc';
 
-declare module 'proton-pass-desktop/lib/ipc' {
+declare module './ipc' {
     interface IPCChannels {
         'client:setAppState': IPCChannel<[AppState], void>;
     }
