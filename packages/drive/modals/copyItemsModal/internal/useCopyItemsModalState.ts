@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import { MemberRole, NodeType } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components';
-import { MemberRole, NodeType } from '@proton/drive';
-import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
-import { handleSdkError } from '@proton/drive/legacy/errorHandling';
-import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
-import { directoryTreeFactory, getNodeUidFromTreeItemId } from '@proton/drive/modules/directoryTree';
 
+import type { DirectoryTreeItem } from '../../../components/DirectoryTree/DirectoryTree';
+import { handleSdkError } from '../../../legacy/errorHandling';
+import { directoryTreeFactory, getNodeUidFromTreeItemId } from '../../../modules/directoryTree';
+import { useCreateFolderModal } from '../../createFolderModal';
 import { useCopyItems } from './useCopyItems';
 
 /**
