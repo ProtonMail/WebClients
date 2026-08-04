@@ -111,15 +111,6 @@
       "Cancel": [
         "取消"
       ],
-      "Cancel all downloads": [
-        "取消所有下载活动"
-      ],
-      "Cancel all uploads": [
-        "取消所有上传"
-      ],
-      "Cancel download": [
-        "取消下载"
-      ],
       "Cancel subscription": [
         "取消订阅"
       ],
@@ -206,9 +197,6 @@
       ],
       "Continue": [
         "继续"
-      ],
-      "Continue downloading": [
-        "继续下载"
       ],
       "Continue import": [
         "继续导入"
@@ -332,9 +320,6 @@
       ],
       "Download a copy (as xlsx)": [
         "下载副本 (格式为 xlsx)"
-      ],
-      "Download anyway": [
-        "仍要下载"
       ],
       "Download debug information": [
         "下载调试信息"
@@ -675,9 +660,6 @@
       "Rename document": [
         "重命名文档"
       ],
-      "Replace file": [
-        "替换文件"
-      ],
       "Report a problem": [
         "反馈问题"
       ],
@@ -896,9 +878,6 @@
       ],
       "Upload and share files": [
         "上传并分享文件"
-      ],
-      "Upload anyway": [
-        "仍然上传"
       ],
       "Upload picture": [
         "上传图片"
@@ -3250,20 +3229,8 @@
       "Failed to update public share node": [
         "更新公开共享节点失败"
       ],
-      "File \"${ name }\" is already downloading": [
-        "文件“${ name }”已在下载中"
-      ],
-      "File cannot be merged with folder": [
-        "文件无法与文件夹合并"
-      ],
-      "File selection is already downloading": [
-        "所选文件已在下载中"
-      ],
       "First name is too long": [
         "名字太长。"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "文件夹“${ name }”已在下载中"
       ],
       "Folder name cannot be empty.": [
         "文件夹名称不能为空。"
@@ -3510,9 +3477,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "原始文件尚未上传，请稍后再试。"
-      ],
-      "The original folder not found": [
-        "未找到原始文件夹"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待导入账户的文件夹过多，请自定义导入内容并删除部分文件夹。"
@@ -4492,9 +4456,6 @@
       "${ contactsLength } contact": [
         "${ contactsLength } 位联系人"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } 文件无法直接下载，也不会包含在此次下载中。您可以点击 “继续下载” 以下载其他文件。"
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } 可让您实时协作，并采用端到端加密，确保完全隐私。创建副本以开始编辑，或向所有者请求编辑权限。"
       ],
@@ -4543,9 +4504,6 @@
       "${ updated } contact updated successfully.": [
         "已成功更新 ${ updated } 位联系人。"
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } 已存在于该路径。"
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } 正在隐藏您的 IP 地址，网站因此无法识别您的身份。"
       ],
@@ -4572,12 +4530,6 @@
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } 连接数（允许您将更多设备连接至VPN）"
-      ],
-      "A number will be added to the filename": [
-        "将在文件名中添加一个编号"
-      ],
-      "A number will be added to the folder name": [
-        "将在文件夹名称中添加一个编号"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
@@ -4626,9 +4578,6 @@
       ],
       "Already in this folder": [
         "已在此文件夹中"
-      ],
-      "an anonymous user": [
-        "匿名用户"
       ],
       "and": [
         "并"
@@ -4701,9 +4650,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "正在检查联系人 ${ progress } / ${ max }..."
-      ],
-      "Checking signatures": [
-        "正在检查签名"
       ],
       "Choose a plan that works best for you.": [
         "选择最适合您的套餐！"
@@ -4798,12 +4744,6 @@
       "Details": [
         "详细信息"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "数字签名已验证，此文件是由 ${ emailAddress } 用户安全上传。"
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "数字签名已验证，此文件夹是由 ${ emailAddress } 用户安全上传。"
-      ],
       "Display word count": [
         "显示字数"
       ],
@@ -4830,12 +4770,6 @@
       ],
       "Download current logs": [
         "下载当前日志"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "${ downloadFileName } 的下载进程将被中止"
-      ],
-      "Download was canceled": [
-        "已取消下载"
       ],
       "Drop file here to upload": [
         "拖至此处上传文件"
@@ -4930,15 +4864,6 @@
       "File \"${ name }\" was deleted during download": [
         "文件“${ name }”在下载过程中被删除"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "文件缺少签名，我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "文件缺少签名，我们无法验证 ${ fileName } 由谁上传。"
-      ],
-      "File will not be updated": [
-        "文件不会被更新"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "仅限文件 (不含照片、${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME }) - 总计上限 100 GB，文件数量上限 100,000 个，单文件大小上限 50 GB"
       ],
@@ -4947,18 +4872,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "文件夹“${ link.name }”在下载过程中被删除"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "文件夹缺少签名，我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "文件夹缺少签名，我们无法验证 ${ fileName } 由谁上传。"
-      ],
-      "Folder will not be uploaded": [
-        "文件夹将不会上传"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "为了获得最佳效果，请避免流式传输和内存密集型活动，或将上传分成较小的批次。"
       ],
       "Forgot password?": [
         "忘记密码？"
@@ -5070,9 +4983,6 @@
       ],
       "Invite link copied": [
         "邀请链接已复制"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "您最近似乎曾尝试上传 ${ uploadName }，如果上传失败，请${ replaceFile }。如果上传仍在进行中，替换文件将导致上传中止。"
       ],
       "It's better to have:": [
         "最好是有："
@@ -5338,9 +5248,6 @@
       "Recents": [
         "最近"
       ],
-      "recommended browser": [
-        "推荐浏览器"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
       ],
@@ -5407,12 +5314,6 @@
       "Show table of contents": [
         "显示目录"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "由于网络错误，无法验证签名，请稍后重试。"
-      ],
-      "Signature check will be ignored": [
-        "将忽略签名校验"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
@@ -5461,26 +5362,14 @@
       "Temporarily unavailable. Please check back later.": [
         "暂时不可用。请稍后再试。"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "该账户可能有一个新密钥，或是以下内容可能已被篡改：${ items }。请务必在信任的情况下打开。"
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "无法验证文档中编辑者的身份。您是否希望将此文档标记为已验证？您可以选择忽略，稍后再决定。"
       ],
       "The Beginning": [
         "开始"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "数字签名已部分验证。该文件是由一个没有 ${ BRAND_NAME } 账户的用户使用可公开访问的共享链接上传的，因此无法验证其身份。"
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "数字签名已部分验证。该文件夹是由一个没有 ${ BRAND_NAME } 账户的用户使用可公开访问的共享链接上传的，因此无法验证其身份。"
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "所暴露的信息是从第三方服务泄露的。您的 ${ BRAND_NAME } 账户信息仍然安全且被加密。${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "以下内容可能已被篡改：${ items }，请确认后打开。"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "此收件人已停用端到端加密。要能够向此收件人发送加密电子邮件，该收件人必须重新启用端到端加密。"
@@ -5492,7 +5381,7 @@
         "回收站中没有文档。"
       ],
       "Thinking about this": [
-        "正在思考这个"
+        "正在深度思考"
       ],
       "This action will delete the link and revoke access for all users.": [
         "此操作将删除此链接并撤销所有用户的访问权限。"
@@ -5551,23 +5440,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "这将永久删除您上传的选定项目。"
       ],
-      "This will replace the existing file with the folder": [
-        "这将用该文件夹替换现有文件"
-      ],
-      "This will replace the existing folder with the file": [
-        "这将用该文件替换现有文件夹"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "此操作将退出当前登录的所有账户。"
-      ],
-      "This will upload a new version of the file": [
-        "这将上传文件的新版本"
-      ],
-      "This will upload a new version of the folder": [
-        "这将上传文件夹的新版本"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "要下载 ${ DOCS_APP_NAME } 文件，请在 ${ DOCS_APP_NAME } 中打开并导出它们。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
@@ -5593,14 +5467,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "已取消文件“${ name }”的传输"
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "已取消文件夹“${ name }”的传输"
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "已跳过文件“${ file.name }”的传输"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "已跳过文件夹“${ folderName }”的传输"
       ],
       "Trash": [
         "回收站"
@@ -5613,9 +5481,6 @@
       ],
       "Undo successful": [
         "撤销成功"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "很不幸，此文件或其部分数据无法解密。"
       ],
       "Update recent documents": [
         "更新最近文档"
@@ -5631,9 +5496,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "升级以保留您的 ${ planTitle } 权益！"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "一次上传数百个文件可能会影响性能。"
       ],
       "Uppercase and lowercase letters": [
         "大写字母和小写字母"
@@ -5658,12 +5520,6 @@
       ],
       "Warning": [
         "注意"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "无法验证 ${ fileName } 的上传者。"
       ],
       "We'll email you once import is complete.": [
         "导入完成后，我们会向您发送一封电子邮件。"
@@ -5824,9 +5680,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "您的更改未能同步。云盘将自动尝试保存更改。请不要关闭网页。"
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "由于服务人员不在，当前的浏览器不支持下载大型文件。 下载大文件可能会冻结浏览器或使其无响应。 请使用 ${ recommendedBrowser } 的最新版本，然后再试一次。"
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "您的当前文档将被此版本替换。评论和建议将从文档中移除，但仍可在评论历史中访问。"
       ],
@@ -5926,32 +5779,6 @@
         "仅查看"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "文件属性"
-      ],
-      "file data": [
-        "文件数据"
-      ],
-      "file data key": [
-        "文件数据密钥"
-      ],
-      "file data order": [
-        "文件数据顺序"
-      ],
-      "hash key": [
-        "散列密钥"
-      ],
-      "keys": [
-        "密钥"
-      ],
-      "name": [
-        "名称"
-      ],
-      "thumbnail": [
-        "缩略图"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "活跃签名人"
@@ -6042,15 +5869,6 @@
       "App password": [
         "应用密码"
       ],
-      "Apply to all duplicated files": [
-        "应用于所有重复的文件"
-      ],
-      "Apply to all duplicated folders": [
-        "应用于所有重复的文件夹"
-      ],
-      "Apply to all unverified items": [
-        "适用于所有未验证的项目"
-      ],
       "Attach screenshot(s)": [
         "截图"
       ],
@@ -6077,9 +5895,6 @@
       ],
       "can view": [
         "可以查看"
-      ],
-      "Cancel download": [
-        "取消下载"
       ],
       "Category": [
         "类别"
@@ -6144,14 +5959,8 @@
       "Don't show this again": [
         "不再显示"
       ],
-      "Download anyway": [
-        "仍要下载"
-      ],
       "Drive": [
         "云盘"
-      ],
-      "Duplicate found": [
-        "发现重复"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "例如：Amazon, eBay, Etsy"
@@ -6254,15 +6063,6 @@
       ],
       "Integrated 2FA authenticator": [
         "内置 2FA 验证器"
-      ],
-      "Keep both": [
-        "都保留"
-      ],
-      "Keep both files": [
-        "保留两个文件"
-      ],
-      "Keep both folders": [
-        "保留两个文件夹"
       ],
       "Label messages as": [
         "给导入的邮件加标签"
@@ -6387,12 +6187,6 @@
       "Regular expression": [
         "正则表达式"
       ],
-      "Replace existing file": [
-        "替换现有文件"
-      ],
-      "Replace existing folder": [
-        "替换现有文件夹"
-      ],
       "Require password": [
         "需要密码"
       ],
@@ -6416,12 +6210,6 @@
       ],
       "Skip feedback": [
         "跳过反馈"
-      ],
-      "Skip file": [
-        "跳过文件"
-      ],
-      "Skip folder": [
-        "跳过文件夹"
       ],
       "Starts with": [
         "开头为"
@@ -8104,14 +7892,17 @@
       "Failed to delete document": [
         "删除文档失败"
       ],
-      "Failed to download files: ${ err }": [
-        "下载文件失败：${ err }"
-      ],
       "Failed to load invitation details": [
         "载入邀请信息失败"
       ],
+      "Failed to load invitations": [
+        "加载邀请失败"
+      ],
       "Failed to load sharing details": [
         "加载共享详情失败"
+      ],
+      "Failed to reject invitation": [
+        "拒绝邀请失败"
       ],
       "Failed to reject share invitation": [
         "拒绝分享邀请失败"
@@ -8125,17 +7916,11 @@
       "Failed to trash document": [
         "将文档移入回收站失败"
       ],
-      "Failed to upload files: ${ err }": [
-        "上传文件失败：${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "文件或文件夹“${ filename }”以及其他 ${ count } 项正在上传中"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "文件或文件夹“${ filename }”正在上传中"
-      ],
-      "File or folder is missing a name": [
-        "文件或文件夹缺少名称"
       ],
       "Invitation's email was sent again": [
         "邀请邮件已再次发送"
@@ -8151,9 +7936,6 @@
       ],
       "Move ${ n } item": [
         "移动 ${ n } 个项目"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "没有足够的空间来上传这 ${ formattedTotal }"
       ],
       "Public link access updated": [
         "公共链接访问已更新"
@@ -10046,9 +9828,6 @@
       "Birthday": [
         "生日"
       ],
-      "Browser might run out of memory": [
-        "浏览器可能内存不足"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "取消 ${ MAIL_SHORT_APP_NAME } 订阅"
       ],
@@ -10205,26 +9984,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "降级至 ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "下载 ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "下载 ${ DRIVE_APP_NAME } 应用"
       ],
       "Download the app": [
         "下载应用"
-      ],
-      "Download unverified file?": [
-        "下载未经验证的文件？"
-      ],
-      "Download unverified folder?": [
-        "下载未经验证的文件夹？"
-      ],
-      "Duplicate file found": [
-        "发现重复文件"
-      ],
-      "Duplicate folder found": [
-        "发现重复文件夹"
       ],
       "Edit contact": [
         "编辑联系人"
@@ -10406,9 +10170,6 @@
       "Other names": [
         "其他名称"
       ],
-      "Performance might be affected": [
-        "性能可能会受到影响"
-      ],
       "Phone numbers": [
         "电话号码"
       ],
@@ -10580,9 +10341,6 @@
       "Upload and share files": [
         "上传并分享文件"
       ],
-      "Uploading a large file or folder": [
-        "上传大文件或文件夹"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 保护隐私"
       ],
@@ -10627,9 +10385,6 @@
       ],
       "Your document cannot be loaded": [
         "无法加载您的文档"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "您下载的文件中包含 ${ DOCS_APP_NAME } 文件"
       ],
       "Your exposed information": [
         "您的泄露信息"
@@ -10777,6 +10532,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "升级至受支持的套餐以使用管理员角色。"
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "用户接受邀请后，您即可为其分配角色。"
       ]

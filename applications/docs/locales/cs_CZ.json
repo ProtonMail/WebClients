@@ -114,15 +114,6 @@
       "Cancel": [
         "Zrušit"
       ],
-      "Cancel all downloads": [
-        "Zrušit všechna stahování"
-      ],
-      "Cancel all uploads": [
-        "Zrušit všechna nahrávání"
-      ],
-      "Cancel download": [
-        "Zrušit stahování"
-      ],
       "Cancel subscription": [
         "Zrušit předplatné"
       ],
@@ -206,9 +197,6 @@
       ],
       "Continue": [
         "Pokračovat"
-      ],
-      "Continue downloading": [
-        "Pokračovat ve stahování"
       ],
       "Continue import": [
         "Pokračovat v importu"
@@ -338,9 +326,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Stáhnout kopii (jako xlsx)"
-      ],
-      "Download anyway": [
-        "Přesto stáhnout"
       ],
       "Download debug information": [
         "Stáhnout informace o ladění"
@@ -681,9 +666,6 @@
       "Rename document": [
         "Přejmenovat dokument"
       ],
-      "Replace file": [
-        "Nahradit soubor"
-      ],
       "Report a problem": [
         "Nahlásit problém"
       ],
@@ -899,9 +881,6 @@
       ],
       "Upload and share files": [
         "Nahrát a sdílet soubory"
-      ],
-      "Upload anyway": [
-        "Přesto nahrát"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -1392,7 +1371,7 @@
         "Organizace nemá dostatečně velké úložiště"
       ],
       "Pending": [
-        "Čekající"
+        "Čeká na vyřízení"
       ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Vyberte přesně to, co chcete migrovat. Bude to použito pro všechny uživatele organizace."
@@ -3292,20 +3271,8 @@
       "Failed to update public share node": [
         "Nepodařilo se aktualizovat veřejný uzel sdílení"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Soubor \"${ name }\" se již stahuje"
-      ],
-      "File cannot be merged with folder": [
-        "Soubor nelze sloučit se složkou"
-      ],
-      "File selection is already downloading": [
-        "Vybrané soubory se již stahují"
-      ],
       "First name is too long": [
         "Křestní jméno je příliš dlouhé"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Složka \"${ name }\" se již stahuje"
       ],
       "Folder name cannot be empty.": [
         "Název složky nesmí být prázdný."
@@ -3564,9 +3531,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Původní soubor ještě nebyl nahrán, zkuste to prosím později"
-      ],
-      "The original folder not found": [
-        "Původní složka nebyla nalezena"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašem externím účtu je příliš mnoho složek. Upravte prosím import pro odstranění některých složek."
@@ -4618,9 +4582,6 @@
         "${ contactsLength } kontaktů",
         "${ contactsLength } kontaktů"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Soubory ${ DOCS_APP_NAME } nelze stáhnout přímo a nebudou součástí tohoto stahování. Ostatní soubory můžete stáhnout kliknutím na 'Pokračovat ve stahování'."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } umožňuje spolupráci v reálném čase s koncovým šifrováním pro zajištění naprostého soukromí. Vytvořte kopii a začněte upravovat nebo požádejte vlastníka o přístup k úpravám."
       ],
@@ -4696,9 +4657,6 @@
         "${ updated } kontaktů úspěšně aktualizováno.",
         "${ updated } kontaktů úspěšně aktualizováno."
       ],
-      "${ uploadName } already exists in this location.": [
-        "Soubor ${ uploadName } již v tomto umístění existuje."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskuje vaši IP adresu, takže vás webové stránky nemohou identifikovat."
       ],
@@ -4731,12 +4689,6 @@
         "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
         "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
         "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)"
-      ],
-      "A number will be added to the filename": [
-        "K názvu souboru bude přidáno číslo"
-      ],
-      "A number will be added to the folder name": [
-        "K názvu složky bude přidáno číslo"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefonní číslo lze použít k ověření pouze jednoho ${ BRAND_NAME } účtu"
@@ -4791,9 +4743,6 @@
       ],
       "Already in this folder": [
         "Již v této složce"
-      ],
-      "an anonymous user": [
-        "anonymní uživatel"
       ],
       "and": [
         "a"
@@ -4866,9 +4815,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontroluji kontakt ${ progress } z ${ max }..."
-      ],
-      "Checking signatures": [
-        "Ověřování podpisů"
       ],
       "Choose a plan that works best for you.": [
         "Vyberte tarif, který vám nejlépe vyhovuje."
@@ -4969,12 +4915,6 @@
       "Details": [
         "Podrobnosti"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digitální podpis ověřen. Tento soubor byl bezpečně nahrán uživatelem ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digitální podpis ověřen. Tato složka byla bezpečně nahrána uživatelem ${ emailAddress }."
-      ],
       "Display word count": [
         "Zobrazit počet slov"
       ],
@@ -5001,12 +4941,6 @@
       ],
       "Download current logs": [
         "Stáhnout aktuální logy"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Stahování ${ downloadFileName } bude zrušeno"
-      ],
-      "Download was canceled": [
-        "Stahování bylo zrušeno"
       ],
       "Drop file here to upload": [
         "Sem přetáhněte soubor pro nahrání"
@@ -5098,15 +5032,6 @@
       "File \"${ name }\" was deleted during download": [
         "Soubor \"${ name }\" byl smazán během stahování"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Souboru chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál(a) ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Souboru chybí podpis. Nemohli jsme ověřit, kdo nahrál ${ fileName }."
-      ],
-      "File will not be updated": [
-        "Soubor nebude aktualizován"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Pouze soubory (žádné fotky, ${ DOCS_APP_NAME } nebo ${ SHEETS_APP_NAME }) – celkem do 100 GB, 100 000 souborů a 50 GB na soubor"
       ],
@@ -5115,18 +5040,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Složka \"${ link.name }\" byla smazána během stahování"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Složce chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál(a) ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Složce chybí podpis. Nemohli jsme ověřit, kdo nahrál ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "Složka nebude nahrána"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Chcete-li dosáhnout nejlepších výsledků, vyhněte se streamování a činnostem náročným na paměť nebo rozdělte nahrávání na menší části."
       ],
       "Forgot password?": [
         "Zapomněli jste heslo?"
@@ -5232,9 +5145,6 @@
       ],
       "Invite link copied": [
         "Odkaz na pozvánku zkopírován"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Vypadá to, že jste se nedávno pokusili nahrát ${ uploadName }. Pokud se nahrávání nezdařilo, nahrajte prosím ${ replaceFile }. Pokud nahrávání stále probíhá, nahrazení zruší probíhající nahrávání."
       ],
       "It's better to have:": [
         "Je lepší mít:"
@@ -5503,9 +5413,6 @@
       "Recents": [
         "Nedávné"
       ],
-      "recommended browser": [
-        "doporučený prohlížeč"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
       ],
@@ -5572,12 +5479,6 @@
       "Show table of contents": [
         "Zobrazit obsah"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Podpis nelze ověřit z důvodu chyby sítě, zkuste to prosím později."
-      ],
-      "Signature check will be ignored": [
-        "Výsledek kontroly podpisu bude ignorován"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
       ],
@@ -5626,26 +5527,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Autorství úprav v dokumentu nebylo možné ověřit. Chcete tento dokument označit jako ověřený? Můžete zvolit možnost Ignorovat a rozhodnout se později."
       ],
       "The Beginning": [
         "Začátek"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digitální podpis byl částečně ověřen. Tento soubor byl nahrán pomocí veřejně přístupného odkazu ke sdílení uživatelem bez účtu ${ BRAND_NAME }, takže jeho totožnost nelze ověřit."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digitální podpis byl částečně ověřen. Tato složka byla nahrána pomocí veřejně přístupného odkazu ke sdílení uživatelem bez účtu ${ BRAND_NAME }, takže jeho totožnost nelze ověřit."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Odhalené informace unikly ze služby třetí strany. Informace vašeho účtu ${ BRAND_NAME } zůstaly v bezpečí a šifrované. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "S následujícími položkami mohl někdo bez dovolení manipulovat: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
@@ -5713,23 +5602,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Tímto trvale smažete vybrané položky, které jste nahráli."
       ],
-      "This will replace the existing file with the folder": [
-        "Tímto se nahradí existující soubor složkou"
-      ],
-      "This will replace the existing folder with the file": [
-        "Tímto se nahradí existující složka souborem"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Toto vás odhlásí od všech aktuálně přihlášených účtů."
-      ],
-      "This will upload a new version of the file": [
-        "Tímto se nahraje nová verze souboru"
-      ],
-      "This will upload a new version of the folder": [
-        "Tímto se nahraje nová verze složky"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Chcete-li stáhnout soubory ${ DOCS_APP_NAME }, otevřete je v aplikaci ${ DOCS_APP_NAME } a exportujte je."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
@@ -5755,14 +5629,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Přenos zrušen pro soubor \"${ name }\""
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Přenos zrušen pro složku \"${ name }\""
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Přenos vynechán pro soubor \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Přenos vynechán pro složku \"${ folderName }\""
       ],
       "Trash": [
         "Koš"
@@ -5775,9 +5643,6 @@
       ],
       "Undo successful": [
         "Vrácení bylo úspěšné"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Zdá se, že soubor nebo některá jeho data nelze dešifrovat."
       ],
       "Update recent documents": [
         "Aktualizovat nedávné dokumenty"
@@ -5793,9 +5658,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Navyšte tarif a zachovejte si své výhody ${ planTitle }."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Nahrávání stovek souborů najednou, může zapříčinit snížení výkonu."
       ],
       "Uppercase and lowercase letters": [
         "Velká a malá písmena"
@@ -5820,12 +5682,6 @@
       ],
       "Warning": [
         "Varování"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Nemohli jsme ověřit, že ${ emailAddress } nahrál(a) ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Nemohli jsme ověřit, kdo nahrál ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Po dokončení importu vám pošleme e-mail."
@@ -5992,9 +5848,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Vaše změny se nepodařilo synchronizovat. Disk se automaticky pokusí o uložení změn. Nezavírejte webovou stránku."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Váš aktuální prohlížeč nepodporuje stahování velkých souborů z důvodu nedostupnosti Service Workers. Stahování velkých souborů může způsobit, že prohlížeč přestane reagovat. Použijte prosím nejnovější verzi ${ recommendedBrowser } a zkuste to znovu."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Váš aktuální dokument bude nahrazen touto verzí. Komentáře a návrhy budou z dokumentu odebrány, ale zůstanou přístupné v historii komentářů."
       ],
@@ -6103,32 +5956,6 @@
         "Pouze zobrazení"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "vlastnosti souboru"
-      ],
-      "file data": [
-        "data souboru"
-      ],
-      "file data key": [
-        "klíč k datům souboru"
-      ],
-      "file data order": [
-        "pořadí dat v souboru"
-      ],
-      "hash key": [
-        "hash klíč"
-      ],
-      "keys": [
-        "klíče"
-      ],
-      "name": [
-        "název"
-      ],
-      "thumbnail": [
-        "miniatura"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Aktivní podepisovatel"
@@ -6216,15 +6043,6 @@
       "App password": [
         "Heslo aplikace"
       ],
-      "Apply to all duplicated files": [
-        "Použít na všechny duplicitní soubory"
-      ],
-      "Apply to all duplicated folders": [
-        "Použít na všechny duplicitní složky"
-      ],
-      "Apply to all unverified items": [
-        "Použít na všechny neověřené položky"
-      ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
@@ -6251,9 +6069,6 @@
       ],
       "can view": [
         "může prohlížet"
-      ],
-      "Cancel download": [
-        "Zrušit stahování"
       ],
       "Category": [
         "Kategorie"
@@ -6312,14 +6127,8 @@
       "Don't show this again": [
         "Příště nezobrazovat"
       ],
-      "Download anyway": [
-        "Přesto stáhnout"
-      ],
       "Drive": [
         "Drive"
-      ],
-      "Duplicate found": [
-        "Nalezeny duplicity"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "například Amazon, eBay, Etsy"
@@ -6422,15 +6231,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Integrované ověřování 2FA"
-      ],
-      "Keep both": [
-        "Ponechat obě"
-      ],
-      "Keep both files": [
-        "Ponechat oba soubory"
-      ],
-      "Keep both folders": [
-        "Ponechat obě složky"
       ],
       "Label messages as": [
         "Označit zprávy jako"
@@ -6555,12 +6355,6 @@
       "Regular expression": [
         "Regulární výraz"
       ],
-      "Replace existing file": [
-        "Nahradit existující soubor"
-      ],
-      "Replace existing folder": [
-        "Nahradit existující složku"
-      ],
       "Require password": [
         "Požadovat heslo"
       ],
@@ -6584,12 +6378,6 @@
       ],
       "Skip feedback": [
         "Přeskočit zpětnou vazbu"
-      ],
-      "Skip file": [
-        "Přeskočit soubor"
-      ],
-      "Skip folder": [
-        "Přeskočit složku"
       ],
       "Starts with": [
         "Začíná na"
@@ -8413,9 +8201,6 @@
       "Failed to accept share invitation": [
         "Přijetí pozvánky ke sdílení selhalo"
       ],
-      "Failed to download files: ${ err }": [
-        "Nepodařilo se stáhnout soubory: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Nepodařilo se načíst detaily pozvánky"
       ],
@@ -8428,9 +8213,6 @@
       "Failed to rename document": [
         "Přejmenování dokumentu selhalo"
       ],
-      "Failed to upload files: ${ err }": [
-        "Nepodařilo se nahrát soubory: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Soubor nebo složka \"${ filename }\" a ${ count } další se již nahrávají",
         "Soubor nebo složka \"${ filename }\" a ${ count } další se již nahrávají",
@@ -8439,9 +8221,6 @@
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Soubor nebo složka \"${ filename }\" se již nahrává"
-      ],
-      "File or folder is missing a name": [
-        "Souboru nebo složce chybí název"
       ],
       "Invitation's email was sent again": [
         "E-mail s pozvánkou byl znovu odeslán"
@@ -8466,9 +8245,6 @@
         "Přesunout ${ n } položky",
         "Přesunout ${ n } položek",
         "Přesunout ${ n } položek"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Není dostatek místa pro nahrání ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Veřejný přístup k odkazům aktualizován"
@@ -10514,9 +10290,6 @@
       "Birthday": [
         "Narozeniny"
       ],
-      "Browser might run out of memory": [
-        "Prohlížeči možná dochází paměť"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Zrušit předplatné ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -10679,26 +10452,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Snížit na ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Stáhnout ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stáhnout aplikace ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Stáhněte si aplikaci"
-      ],
-      "Download unverified file?": [
-        "Stáhnout neověřený soubor?"
-      ],
-      "Download unverified folder?": [
-        "Stáhnout neověřenou složku?"
-      ],
-      "Duplicate file found": [
-        "Byl nalezen duplicitní soubor"
-      ],
-      "Duplicate folder found": [
-        "Byl nalezena duplicitní složka"
       ],
       "Edit contact": [
         "Upravit kontakt"
@@ -10883,9 +10641,6 @@
       "Other names": [
         "Ostatní jména"
       ],
-      "Performance might be affected": [
-        "Může být ovlivněn výkon"
-      ],
       "Phone numbers": [
         "Telefonní čísla"
       ],
@@ -11051,9 +10806,6 @@
       "Upload and share files": [
         "Nahrát a sdílet soubory"
       ],
-      "Uploading a large file or folder": [
-        "Nahrávání velkého souboru nebo složky"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Použít ${ VPN_SHORT_APP_NAME } pro ochranu soukromí"
       ],
@@ -11098,9 +10850,6 @@
       ],
       "Your document cannot be loaded": [
         "Dokument nelze načíst"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Vaše stahování obsahuje soubor ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Vaše uniklé informace"

@@ -112,15 +112,6 @@
       "Cancel": [
         "Cancelar"
       ],
-      "Cancel all downloads": [
-        "Cancelar todas las descargas"
-      ],
-      "Cancel all uploads": [
-        "Cancelar todas las cargas"
-      ],
-      "Cancel download": [
-        "Cancelar descarga"
-      ],
       "Cancel subscription": [
         "Cancelar tu suscripción"
       ],
@@ -204,9 +195,6 @@
       ],
       "Continue": [
         "Continuar"
-      ],
-      "Continue downloading": [
-        "Continuar la descarga"
       ],
       "Continue import": [
         "Continuar la importación"
@@ -332,9 +320,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Descargar una copia (como xlsx)"
-      ],
-      "Download anyway": [
-        "Descargar de todos modos"
       ],
       "Download debug information": [
         "Descargar información de depuración"
@@ -678,9 +663,6 @@
       "Rename document": [
         "Cambiar el nombre del documento"
       ],
-      "Replace file": [
-        "Reemplazar archivo"
-      ],
       "Report a problem": [
         "Notificar un problema"
       ],
@@ -896,9 +878,6 @@
       ],
       "Upload and share files": [
         "Cargar y compartir archivos"
-      ],
-      "Upload anyway": [
-        "Cargar de todos modos"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -3252,20 +3231,8 @@
       "Failed to update public share node": [
         "Error al actualizar el nodo compartido"
       ],
-      "File \"${ name }\" is already downloading": [
-        "El archivo \"${ name }\" ya se está descargando."
-      ],
-      "File cannot be merged with folder": [
-        "No se puede combinar un archivo con una carpeta."
-      ],
-      "File selection is already downloading": [
-        "La selección de archivos ya se está descargando."
-      ],
       "First name is too long": [
         "El nombre es demasiado largo."
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "La carpeta \"${ name }\" ya se está descargando."
       ],
       "Folder name cannot be empty.": [
         "El nombre de la carpeta no puede estar vacío."
@@ -3514,9 +3481,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "El archivo original aún no se ha cargado. Inténtalo de nuevo más tarde."
-      ],
-      "The original folder not found": [
-        "No se ha encontrado la carpeta original."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hay demasiadas carpetas en tu cuenta externa. Personaliza la importación para eliminar algunas carpetas."
@@ -4520,9 +4484,6 @@
         "${ contactsLength } contacto",
         "${ contactsLength } contactos"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Los archivos de ${ DOCS_APP_NAME } no se pueden descargar directamente y no se incluirán en esta descarga. Puedes descargar los demás archivos haciendo clic en Continuar la descarga."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } te permite colaborar en tiempo real con cifrado de extremo a extremo para una completa privacidad. Crea una copia para empezar a editar o pide al propietario que te dé acceso para editar."
       ],
@@ -4578,9 +4539,6 @@
         "${ updated } contacto actualizado.",
         "${ updated } contactos actualizados."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } ya existe en esta ubicación."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } está enmascarando tu dirección IP, por lo que los sitios web no pueden identificarte."
       ],
@@ -4609,12 +4567,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (te permite conectar más dispositivos a la VPN)",
         "+${ organization.BonusVPN } conexiones para ${ VPN_APP_NAME } (te permite conectar más dispositivos a la VPN)"
-      ],
-      "A number will be added to the filename": [
-        "Se añadirá un número al nombre del archivo."
-      ],
-      "A number will be added to the folder name": [
-        "Se añadirá un número al nombre de la carpeta."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede utilizarse para verificar una cuenta de ${ BRAND_NAME }."
@@ -4666,9 +4618,6 @@
       ],
       "Already in this folder": [
         "Ya está en esta carpeta"
-      ],
-      "an anonymous user": [
-        "un usuario anónimo"
       ],
       "and": [
         "y"
@@ -4741,9 +4690,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Verificando contacto: ${ progress } de ${ max }..."
-      ],
-      "Checking signatures": [
-        "Verificando firmas"
       ],
       "Choose a plan that works best for you.": [
         "Elige el plan que mejor se adapte a ti."
@@ -4840,12 +4786,6 @@
       "Details": [
         "Detalles"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Firma digital verificada. Se ha cargado este archivo de forma segura por ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Firma digital verificada. Se ha cargado esta carpeta de forma segura por ${ emailAddress }."
-      ],
       "Display word count": [
         "Mostrar el conteo de palabras"
       ],
@@ -4872,12 +4812,6 @@
       ],
       "Download current logs": [
         "Descargar los registros actuales"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Se anulará la descarga de ${ downloadFileName }."
-      ],
-      "Download was canceled": [
-        "Se ha cancelado la descarga."
       ],
       "Drop file here to upload": [
         "Suelta tus archivos aquí para cargarlos"
@@ -4972,15 +4906,6 @@
       "File \"${ name }\" was deleted during download": [
         "El archivo \"${ name }\" se ha eliminado durante la descarga."
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "No se ha encontrado la firma del archivo. No se ha podido verificar que ${ emailAddress } haya cargado ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "No se ha encontrado la firma del archivo. No se ha podido verificar quién ha cargado ${ fileName }."
-      ],
-      "File will not be updated": [
-        "El archivo no se actualizará."
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos y 50 GB por archivo"
       ],
@@ -4989,18 +4914,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "La carpeta \"${ link.name }\" se ha eliminado durante la descarga."
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "No se ha encontrado la firma de la carpeta. No se ha podido verificar que ${ emailAddress } haya cargado ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "No se ha encontrado la firma de la carpeta. No se ha podido verificar quién ha cargado ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "La carpeta no se cargará."
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Para obtener el mejor resultado, evita las actividades de streaming o demandantes de memoria, o divide tus cargas de archivos en lotes más pequeños."
       ],
       "Forgot password?": [
         "¿Has olvidado la contraseña?"
@@ -5110,9 +5023,6 @@
       ],
       "Invite link copied": [
         "Se ha copiado el enlace de la invitación."
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Parece ser que recientemente has intentado cargar ${ uploadName }. Si no se ha podido cargar, ${ replaceFile }. Si la carga está en proceso, reemplazarla cancela la carga en curso."
       ],
       "It's better to have:": [
         "Es mejor tener:"
@@ -5380,9 +5290,6 @@
       "Recents": [
         "Recientes"
       ],
-      "recommended browser": [
-        "navegador recomendado"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
       ],
@@ -5449,12 +5356,6 @@
       "Show table of contents": [
         "Mostrar tabla de contenidos"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Error al validar la firma debido a errores de red. Inténtalo de nuevo más tarde."
-      ],
-      "Signature check will be ignored": [
-        "Se ignorará la verificación de la firma."
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como eres un usuario leal, tu cuenta tiene activadas funciones adicionales."
       ],
@@ -5504,26 +5405,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "La cuenta puede tener una nueva clave o es posible que se haya manipulado los siguientes elementos: ${ items }. Ábrelos solo si son de confianza."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "La autoría de las ediciones en este documento no se ha podido verificar. ¿Deseas marcar este documento como verificado? Puedes ignorar ahora y decidir después."
       ],
       "The Beginning": [
         "Inicio"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "La firma digital ha sido verificada parcialmente. Este archivo fue cargado mediante un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que no se puede verificar su identidad."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "La firma digital ha sido verificada parcialmente. Esta carpeta fue cargada mediante un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que no se puede verificar su identidad."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La información expuesta fue filtrada desde un servicio de terceros. La información de tu cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Es posible que se haya manipulado los siguientes elementos: ${ items }. Ábrelos solo si son de confianza."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario deberá volver a activar el cifrado de extremo a extremo."
@@ -5591,23 +5480,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Esto eliminará permanentemente los elementos seleccionados cargados."
       ],
-      "This will replace the existing file with the folder": [
-        "Esto reemplazará el archivo existente con la carpeta"
-      ],
-      "This will replace the existing folder with the file": [
-        "Esto reemplazará la carpeta existente con el archivo"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
-      ],
-      "This will upload a new version of the file": [
-        "Esto cargará una nueva versión del archivo."
-      ],
-      "This will upload a new version of the folder": [
-        "Esto cargará una nueva versión de la carpeta."
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Para descargar los archivos de ${ DOCS_APP_NAME }, ábrelos en ${ DOCS_APP_NAME } y expórtalos."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
@@ -5633,14 +5507,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Se ha cancelado la transferencia del archivo \"${ name }\"."
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Se ha cancelado la transferencia de la carpeta «${ name }»."
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Se ha omitido la transferencia del archivo \"${ file.name }\"."
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Se ha omitido la transferencia de la carpeta \"${ folderName }\"."
       ],
       "Trash": [
         "Papelera"
@@ -5653,9 +5521,6 @@
       ],
       "Undo successful": [
         "Se ha deshecho la acción."
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Lamentablemente, parece que el archivo o algunos de sus datos no pueden descifrarse."
       ],
       "Update recent documents": [
         "Actualizar los documentos recientes"
@@ -5671,9 +5536,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Mejora para mantener tus beneficios de ${ planTitle }."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Cargar cientos de archivos a la vez puede reducir el rendimiento."
       ],
       "Uppercase and lowercase letters": [
         "Letras mayúsculas y minúsculas"
@@ -5698,12 +5560,6 @@
       ],
       "Warning": [
         "Advertencia"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "No se ha podido verificar que ${ emailAddress } haya cargado ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "No se ha podido verificar quién ha cargado ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Te enviaremos un correo electrónico cuando la importación se complete."
@@ -5864,9 +5720,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Error al sincronizar los cambios. Drive intentará guardar los cambios automáticamente. No cierra la página web."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Tu navegador actual no admite la descarga de archivos grandes por no disponer de trabajos de servicio. La descarga de archivos grandes puede inmovilizar o dejar sin respuesta al navegador. Usa la última versión de ${ recommendedBrowser } e inténtalo de nuevo."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "El documento actual será reemplazado por esta versión. Los comentarios y sugerencias se eliminarán del documento, pero permanecerán accesibles en el historial de comentarios."
       ],
@@ -5969,32 +5822,6 @@
         "Solo lectura"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "atributos del archivo"
-      ],
-      "file data": [
-        "datos del archivo"
-      ],
-      "file data key": [
-        "clave de datos de archivo"
-      ],
-      "file data order": [
-        "el orden de los datos de archivo"
-      ],
-      "hash key": [
-        "clave hash"
-      ],
-      "keys": [
-        "claves"
-      ],
-      "name": [
-        "nombre"
-      ],
-      "thumbnail": [
-        "miniatura"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Firmante activo"
@@ -6082,15 +5909,6 @@
       "App password": [
         "Contraseña de la aplicación"
       ],
-      "Apply to all duplicated files": [
-        "Aplicar a todos los archivos duplicados"
-      ],
-      "Apply to all duplicated folders": [
-        "Aplicar a todas las carpetas duplicadas"
-      ],
-      "Apply to all unverified items": [
-        "Aplicar a todos los elementos no verificados"
-      ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
       ],
@@ -6117,9 +5935,6 @@
       ],
       "can view": [
         "puede ver"
-      ],
-      "Cancel download": [
-        "Cancelar descarga"
       ],
       "Category": [
         "Categoría"
@@ -6178,14 +5993,8 @@
       "Don't show this again": [
         "No mostrar esto de nuevo"
       ],
-      "Download anyway": [
-        "Descargar de todos modos"
-      ],
       "Drive": [
         "Drive"
-      ],
-      "Duplicate found": [
-        "Duplicado encontrado"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "por ejemplo; Amazon, eBay, Etsy"
@@ -6288,15 +6097,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de 2FA integrado"
-      ],
-      "Keep both": [
-        "Mantener ambos"
-      ],
-      "Keep both files": [
-        "Mantener ambos archivos"
-      ],
-      "Keep both folders": [
-        "Mantener ambas carpetas"
       ],
       "Label messages as": [
         "Etiquetar mensajes como"
@@ -6421,12 +6221,6 @@
       "Regular expression": [
         "Expresión regular"
       ],
-      "Replace existing file": [
-        "Reemplazar el archivo existente"
-      ],
-      "Replace existing folder": [
-        "Reemplazar la carpeta existente"
-      ],
       "Require password": [
         "Solicitar contraseña"
       ],
@@ -6450,12 +6244,6 @@
       ],
       "Skip feedback": [
         "Omitir comentarios"
-      ],
-      "Skip file": [
-        "Omitir archivo"
-      ],
-      "Skip folder": [
-        "Omitir carpeta"
       ],
       "Starts with": [
         "Comienza con"
@@ -8232,9 +8020,6 @@
       "Failed to accept share invitation": [
         "Se ha producido un error al aceptar la invitación compartida"
       ],
-      "Failed to download files: ${ err }": [
-        "Error al descargar los archivos: ${ err }"
-      ],
       "Failed to load invitation details": [
         "No se ha podido cargar los detalles de la invitación."
       ],
@@ -8247,18 +8032,12 @@
       "Failed to rename document": [
         "No se ha podido cambiar el nombre del documento"
       ],
-      "Failed to upload files: ${ err }": [
-        "Error al cargar los archivos: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "El archivo o carpeta \"${ filename }\" y ${ count } más ya se están cargando",
         "El archivo o carpeta \"${ filename }\" y ${ count } más ya se están cargando."
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "El archivo o la carpeta \"${ filename }\" ya se está cargando."
-      ],
-      "File or folder is missing a name": [
-        "Falta el nombre del archivo o carpeta"
       ],
       "Invitation's email was sent again": [
         "Se ha enviado de nuevo el correo de invitación."
@@ -8277,9 +8056,6 @@
       "Move ${ n } item": [
         "Mover ${ n } elemento",
         "Mover ${ n } elementos"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "No hay espacio suficiente para cargar ${ formattedTotal }."
       ],
       "Public link access updated": [
         "Se ha actualizado el acceso al enlace público."
@@ -10217,9 +9993,6 @@
       "Birthday": [
         "Cumpleaño"
       ],
-      "Browser might run out of memory": [
-        "El navegador podría quedarse sin memoria."
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar la subscripción a ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -10378,26 +10151,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "¿Pasar a ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Descargar ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarga las aplicaciones de ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Descargar la aplicación"
-      ],
-      "Download unverified file?": [
-        "¿Descargar archivo no verificado?"
-      ],
-      "Download unverified folder?": [
-        "¿Descargar carpeta no verificada?"
-      ],
-      "Duplicate file found": [
-        "Archivo duplicado encontrado"
-      ],
-      "Duplicate folder found": [
-        "Carpeta duplicada encontrada"
       ],
       "Edit contact": [
         "Editar contacto"
@@ -10580,9 +10338,6 @@
       "Other names": [
         "Otros nombres"
       ],
-      "Performance might be affected": [
-        "Esto puede afectar el rendimiento."
-      ],
       "Phone numbers": [
         "Números de teléfono"
       ],
@@ -10751,9 +10506,6 @@
       "Upload and share files": [
         "Cargar y compartir archivos"
       ],
-      "Uploading a large file or folder": [
-        "Cargando un archivo o una carpeta grande"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usa ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
       ],
@@ -10798,9 +10550,6 @@
       ],
       "Your document cannot be loaded": [
         "Tu documento no se puede cargar."
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "La descarga incluye un archivo de ${ DOCS_APP_NAME }."
       ],
       "Your exposed information": [
         "Tus datos expuestos"

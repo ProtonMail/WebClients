@@ -111,15 +111,6 @@
       "Cancel": [
         "취소"
       ],
-      "Cancel all downloads": [
-        "모든 다운로드 취소"
-      ],
-      "Cancel all uploads": [
-        "모든 업로드 취소"
-      ],
-      "Cancel download": [
-        "다운로드 취소"
-      ],
       "Cancel subscription": [
         "구독 취소"
       ],
@@ -152,6 +143,9 @@
       ],
       "Claim your free ${ BRAND_NAME } address": [
         "무료 ${ BRAND_NAME } 주소를 받으세요"
+      ],
+      "Clear conversation": [
+        "대화 삭제"
       ],
       "Clear data": [
         "데이터 지우기"
@@ -203,9 +197,6 @@
       ],
       "Continue": [
         "계속"
-      ],
-      "Continue downloading": [
-        "계속 다운로드"
       ],
       "Continue import": [
         "사용자 지정 설정값으로 계속하기"
@@ -329,9 +320,6 @@
       ],
       "Download a copy (as xlsx)": [
         "복사본 다운로드(xlsx)"
-      ],
-      "Download anyway": [
-        "무시하고 다운로드"
       ],
       "Download debug information": [
         "디버그 정보 다운로드"
@@ -672,9 +660,6 @@
       "Rename document": [
         "문서 이름 바꾸기"
       ],
-      "Replace file": [
-        "파일 대체"
-      ],
       "Report a problem": [
         "문제 신고"
       ],
@@ -893,9 +878,6 @@
       ],
       "Upload and share files": [
         "파일 업로드 및 공유하기"
-      ],
-      "Upload anyway": [
-        "무시하고 업로드"
       ],
       "Upload picture": [
         "사진 업로드"
@@ -3247,20 +3229,8 @@
       "Failed to update public share node": [
         "공개 공유 노드 업데이트 실패"
       ],
-      "File \"${ name }\" is already downloading": [
-        "\"${ name }\" 파일은 이미 다운로드 중입니다"
-      ],
-      "File cannot be merged with folder": [
-        "파일을 폴더와 병합할 수 없음"
-      ],
-      "File selection is already downloading": [
-        "선택한 파일이 이미 다운로드 중입니다"
-      ],
       "First name is too long": [
         "이름이 너무 깁니다."
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "\"${ name }\" 폴더는 이미 다운로드 중입니다"
       ],
       "Folder name cannot be empty.": [
         "폴더 이름은 비워둘 수 없습니다."
@@ -3507,9 +3477,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "원본 파일이 아직 업로드되지 않았습니다, 나중에 다시 시도해 주세요"
-      ],
-      "The original folder not found": [
-        "원본 폴더를 찾을 수 없음"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "외부 계정에 너무 많은 폴더가 있습니다. 일부 폴더를 삭제하려면 사용자 지정 가져오기를 설정하세요."
@@ -4489,9 +4456,6 @@
       "${ contactsLength } contact": [
         "연락처 ${ contactsLength }개"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } 파일을 바로 다운로드할 수 없으며 이 다운로드에 포함되지 않습니다. '계속 다운로드'를 클릭하여 다른 파일들도 다운로드할 수 있습니다."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME }가 완전한 프라이버시 보호를 위해 종단간 암호화를 통하여 실시간 협동할 수 있도록 도와드립니다. 편집을 시작하려면 복사본을 생성하거나 문서 소유자에게 편집 접근 권한을 요청하세요."
       ],
@@ -4540,9 +4504,6 @@
       "${ updated } contact updated successfully.": [
         "${ updated } 연락처가 성공적으로 업데이트 되었습니다."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } 이(가) 이미 이 위치에 존재합니다."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME }가 IP를 가려 웹 사이트에서 사용자를 식별할 수 없게 됩니다."
       ],
@@ -4569,12 +4530,6 @@
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "${ VPN_APP_NAME } 을 위한 +${ organization.BonusVPN } 연결 (더 많은 기기를 VPN에 연결할 수 있습니다)"
-      ],
-      "A number will be added to the filename": [
-        "숫자가 파일 이름에 추가됩니다"
-      ],
-      "A number will be added to the folder name": [
-        "숫자가 폴더 이름에 추가됩니다"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "전화번호는 오직 하나의 ${ BRAND_NAME } 계정의 인증에만 사용할 수 있습니다"
@@ -4623,9 +4578,6 @@
       ],
       "Already in this folder": [
         "폴더에 이미 존재함"
-      ],
-      "an anonymous user": [
-        "익명의 사용자"
       ],
       "and": [
         "그리고"
@@ -4698,9 +4650,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "연락처 확인 중 ${ max } 중 ${ progress }..."
-      ],
-      "Checking signatures": [
-        "서명 확인 중"
       ],
       "Choose a plan that works best for you.": [
         "당신에게 가장 적합한 플랜을 선택하세요."
@@ -4795,12 +4744,6 @@
       "Details": [
         "세부 사항"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "디지털 서명이 인증되었습니다. 이 파일은 ${ emailAddress }에 의해 안전하게 업로드되었습니다."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "디지털 서명이 인증되었습니다. 이 폴더는 ${ emailAddress }에 의해 안전하게 업로드되었습니다."
-      ],
       "Display word count": [
         "단어수 표시"
       ],
@@ -4827,12 +4770,6 @@
       ],
       "Download current logs": [
         "현재 로그 다운로드"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "${ downloadFileName }의 다운로드가 중단됩니다"
-      ],
-      "Download was canceled": [
-        "다운로드가 취소되었습니다."
       ],
       "Drop file here to upload": [
         "업로드할 파일을 여기에 놓습니다"
@@ -4927,15 +4864,6 @@
       "File \"${ name }\" was deleted during download": [
         "파일 \"${ name }\"는 다은로드 도중 삭제되었습니다"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "파일에 서명이 없습니다. ${ emailAddress }가 ${ fileName } 를 업로드했는지 인증할 수 없습니다."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "파일에 서명이 없습니다. 누가 ${ fileName }을(를) 업로드했는지 인증할 수 없습니다."
-      ],
-      "File will not be updated": [
-        "파일이 업로드되지 않습니다"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "파일 전용 (사진 불가, ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME }) - 최대 총 100 GB, 100,000개 파일 및 파일 당 50 GB)"
       ],
@@ -4944,18 +4872,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "폴더 \"${ link.name }\"가 다운로드 도중에 삭제되었습니다"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "폴더에 서명이 없습니다. ${ emailAddress }가 ${ fileName } 를 업로드했는지 인증할 수 없습니다."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "폴더에 서명이 없습니다. 누가 ${ fileName }을(를) 업로드했는지 인증할 수 없습니다."
-      ],
-      "Folder will not be uploaded": [
-        "폴더가 업로드되지 않습니다"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "최상의 결과를 얻으려면 스트리밍 및 메모리를 많이 사용하는 활동을 피하거나 파일을 나누어 업로드하세요."
       ],
       "Forgot password?": [
         "비밀번호를 잊으셨나요?"
@@ -5067,9 +4983,6 @@
       ],
       "Invite link copied": [
         "초대 링크를 복사했습니다"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "최근에 ${ uploadName } 을(를) 업로드하려고 시도한 것 같습니다. 업로드가 실패하면, ${ replaceFile } 주세요. 업로드가 아직 진행 중이라면, 교체하면 진행 중인 업로드가 취소됩니다."
       ],
       "It's better to have:": [
         "포함되면 더 좋습니다:"
@@ -5335,9 +5248,6 @@
       "Recents": [
         "최근"
       ],
-      "recommended browser": [
-        "권장하는 브라우저"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "복구 정보는 삭제하도록 설정하지 않는 한 이 기기에 유지됩니다."
       ],
@@ -5404,12 +5314,6 @@
       "Show table of contents": [
         "목차 보기"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "네트워크 오류로 인해 서명을 확인할 수 없습니다. 나중에 다시 시도하세요."
-      ],
-      "Signature check will be ignored": [
-        "서명 확인이 무시됩니다"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
       ],
@@ -5458,26 +5362,14 @@
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "이 계정이 새 키를 가지고 있거나, 다음이 변조되었을 수 있습니다: ${ items }. 신뢰할 수 있는 경우에만 여십시오."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "문서의 편집자를 확인할 수 없습니다. 이 문서를 확인된 것으로 표시하시겠습니까? 나중에 결정하기 위해 무시하도록 선택할 수 있습니다."
       ],
       "The Beginning": [
         "시작"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "디지털 서명이 부분적으로 인증되었습니다. 이 파일은 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 업로드했기 때문에 신원을 확인할 수 없습니다."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "디지털 서명이 부분적으로 인증되었습니다. 이 폴더는 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 업로드했기 때문에 신원을 확인할 수 없습니다."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "노출된 정보가 서드 파티 서비스에서 유출되었습니다. 사용자의 ${ BRAND_NAME } 계정 정보는 안전하고 암호화 상태로 유지됩니다. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "다음은 변조되었을 수 있습니다: ${ items }. 신뢰할 수 있는 경우에만 여십시오."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
@@ -5545,23 +5437,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "이 작업은 선택된 항목을 영구적으로 삭제합니다."
       ],
-      "This will replace the existing file with the folder": [
-        "이는 기존 파일을 폴더로 대체하게 됩니다"
-      ],
-      "This will replace the existing folder with the file": [
-        "이는 기존 폴더를 파일로 대체하게 됩니다"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "현재 로그인된 모든 계정에서 로그아웃하게 됩니다."
-      ],
-      "This will upload a new version of the file": [
-        "새로운 버전의 파일로 업로드 됩니다"
-      ],
-      "This will upload a new version of the folder": [
-        "새로운 버전의 폴더로 업로드됩니다"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "${ DOCS_APP_NAME } 파일을 다운로드하려면, ${ DOCS_APP_NAME }내에서 항목을 열어 내보내기 하세요."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
@@ -5587,14 +5464,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "파일 \"${ name }\" 의 이동 취소됨"
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "폴더 \"${ name }\" 의 이동 취소됨"
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "파일 \"${ file.name }\" 의 이동 생략됨"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "폴더 \"${ folderName }\" 의 이동 생략됨"
       ],
       "Trash": [
         "휴지통"
@@ -5607,9 +5478,6 @@
       ],
       "Undo successful": [
         "실행 취소 성공"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "안타깝지만 파일이나 일부 데이터를 복호화할 수 없는 것으로 보입니다."
       ],
       "Update recent documents": [
         "최근 문서 업데이트"
@@ -5625,9 +5493,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "한 번에 수백 개의 파일을 업로드하면 성능에 영향을 미칠 수 있습니다."
       ],
       "Uppercase and lowercase letters": [
         "대소문자"
@@ -5652,12 +5517,6 @@
       ],
       "Warning": [
         "경고"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "${ emailAddress }가 ${ fileName }을(를) 업로드했는지 인증할 수 없습니다."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "누가 ${ fileName }을(를) 업로드했는지 인증할 수 없습니다."
       ],
       "We'll email you once import is complete.": [
         "불러오기가 완료되면 이메일로 보내드리겠습니다."
@@ -5818,9 +5677,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "변경 사항 동기화에 실패했습니다. Drive가 자동으로 변경 사항을 저장할 수 있도록 시도할 예정입니다. 웹 페이지를 닫지 마십시오."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "이 브라우저는 서비스 워커를 사용할 수 없어 큰 파일의 다운로드를 지원할 수 없습니다. 큰 파일을 다운로드하게 되면 브라우저의 프리징이 일어나거나 응답 없음 상태가 될 수 있습니다. ${ recommendedBrowser }의 최신 버전을 사용하여 다시 시도해 주세요."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "현재 문서가 이 버전으로 대체됩니다. 댓글과 제안이 문서에서 제거되지만 댓글 기록에서 계속 접근이 가능합니다."
       ],
@@ -5920,32 +5776,6 @@
         "보기 전용"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "파일 속성"
-      ],
-      "file data": [
-        "파일 데이터"
-      ],
-      "file data key": [
-        "파일 데이터 키"
-      ],
-      "file data order": [
-        "파일 데이터 가져오기"
-      ],
-      "hash key": [
-        "해시 키"
-      ],
-      "keys": [
-        "키"
-      ],
-      "name": [
-        "이름"
-      ],
-      "thumbnail": [
-        "섬네일"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "활성 서명자"
@@ -6036,15 +5866,6 @@
       "App password": [
         "앱 비밀번호"
       ],
-      "Apply to all duplicated files": [
-        "모든 복제된 파일에 적용"
-      ],
-      "Apply to all duplicated folders": [
-        "모든 복제된 폴더에 적용"
-      ],
-      "Apply to all unverified items": [
-        "인증되지 않은 모든 항목에 적용"
-      ],
       "Attach screenshot(s)": [
         "스크린샷 첨부"
       ],
@@ -6071,9 +5892,6 @@
       ],
       "can view": [
         "보기 가능"
-      ],
-      "Cancel download": [
-        "다운로드 취소"
       ],
       "Category": [
         "카테고리"
@@ -6138,14 +5956,8 @@
       "Don't show this again": [
         "다시 보지 않기"
       ],
-      "Download anyway": [
-        "무시하고 다운로드"
-      ],
       "Drive": [
         "드라이브"
-      ],
-      "Duplicate found": [
-        "중복 발견"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "예: Amazon, eBay, Etsy"
@@ -6248,15 +6060,6 @@
       ],
       "Integrated 2FA authenticator": [
         "2단계 인증기 내장"
-      ],
-      "Keep both": [
-        "둘 다 유지"
-      ],
-      "Keep both files": [
-        "두 파일 유지"
-      ],
-      "Keep both folders": [
-        "두 폴더 유지"
       ],
       "Label messages as": [
         "메시지에 다음으로 라벨 지정"
@@ -6381,12 +6184,6 @@
       "Regular expression": [
         "정규식"
       ],
-      "Replace existing file": [
-        "기존 파일 대체"
-      ],
-      "Replace existing folder": [
-        "기존 폴더 대체"
-      ],
       "Require password": [
         "비밀번호 요구"
       ],
@@ -6410,12 +6207,6 @@
       ],
       "Skip feedback": [
         "피드백 건너뛰기"
-      ],
-      "Skip file": [
-        "파일 건너뛰기"
-      ],
-      "Skip folder": [
-        "폴더 건너뛰기"
       ],
       "Starts with": [
         "다음으로 시작"
@@ -6726,6 +6517,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME }개 시트"
+      ],
+      "${ price } per seat": [
+        "사용자당 ${ price }"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ MEET_APP_NAME } 시트 ${ seats }개"
@@ -8095,9 +7889,6 @@
       "Failed to delete document": [
         "문서 삭제에 실패하였습니다."
       ],
-      "Failed to download files: ${ err }": [
-        "파일 다운로드 실패: ${ err }"
-      ],
       "Failed to load invitation details": [
         "초대 상세 정보를 불러오지 못했습니다"
       ],
@@ -8116,17 +7907,11 @@
       "Failed to trash document": [
         "문서 휴지통 이동에 실패했습니다"
       ],
-      "Failed to upload files: ${ err }": [
-        "파일 업로드 실패: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "\"${ filename }\" 및 ${ count }개의 파일 및 폴더가 이미 업로드 중입니다"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "파일 또는 폴더 \"${ filename }\"이(가) 이미 업로드 중입니다"
-      ],
-      "File or folder is missing a name": [
-        "파일 또는 폴더에 이름이 없습니다"
       ],
       "Invitation's email was sent again": [
         "초대 이메일을 다시 전송했습니다."
@@ -8142,9 +7927,6 @@
       ],
       "Move ${ n } item": [
         "항목 ${ n }개 이동"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "${ formattedTotal }을(를) 업로드할 공간이 없습니다"
       ],
       "Public link access updated": [
         "공개 링크 접근이 업데이트되었습니다."
@@ -8604,6 +8386,9 @@
       ],
       "Anything you'd like us to know": [
         "알려주셨으면 하는 사항이 있으신가요?"
+      ],
+      "Ask anything…": [
+        "무엇이든 물어보세요..."
       ],
       "Choose password": [
         "비밀번호 선택"
@@ -10034,9 +9819,6 @@
       "Birthday": [
         "생일"
       ],
-      "Browser might run out of memory": [
-        "브라우저의 메모리가 부족할 수 있음"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } 구독 취소"
       ],
@@ -10193,26 +9975,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "${ downgradedPlanName }(으)로 다운그래이드?"
       ],
-      "Download ${ date }": [
-        "${ date } 다운로드"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } 앱 다운로드"
       ],
       "Download the app": [
         "앱 다운로드"
-      ],
-      "Download unverified file?": [
-        "인증되지 않은 파일을 다운로드할까요?"
-      ],
-      "Download unverified folder?": [
-        "인증되지 않은 폴더를 다운로드할까요?"
-      ],
-      "Duplicate file found": [
-        "중복 파일 발견됨"
-      ],
-      "Duplicate folder found": [
-        "중복 폴더 발견됨"
       ],
       "Edit contact": [
         "연락처 편집"
@@ -10394,9 +10161,6 @@
       "Other names": [
         "다른 이름"
       ],
-      "Performance might be affected": [
-        "성능에 영향을 줄 수 있음"
-      ],
       "Phone numbers": [
         "전화번호"
       ],
@@ -10568,9 +10332,6 @@
       "Upload and share files": [
         "파일 업로드 및 공유하기"
       ],
-      "Uploading a large file or folder": [
-        "큰 파일 또는 폴더 업로드 중"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "데이터 개인정보 보호를 위해 ${ VPN_SHORT_APP_NAME } 사용하기"
       ],
@@ -10615,9 +10376,6 @@
       ],
       "Your document cannot be loaded": [
         "문서를 불러오는데 실패했습니다."
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "다운로드에 ${ DOCS_APP_NAME } 파일이 포함되어 있습니다."
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
