@@ -1,5 +1,6 @@
 import { ThemeModeSetting, ThemeTypes } from '@proton/shared/lib/themes/constants';
 
+import { matchDarkTheme } from './lumoThemeMedia';
 import type { LumoLocalSettings } from './lumoThemeStorage';
 import { getDefaultSettings } from './lumoThemeStorage';
 
@@ -7,6 +8,8 @@ import { getDefaultSettings } from './lumoThemeStorage';
 import lumoDarkTheme from '@proton/colors/themes/dist/lumo-dark.theme.css';
 // @ts-ignore
 import lumoLightTheme from '@proton/colors/themes/dist/lumo-light.theme.css';
+
+export { matchDarkTheme } from './lumoThemeMedia';
 
 export type ThemeConfig = { styles: string };
 
@@ -19,8 +22,6 @@ export const getThemeConfig = (theme: ThemeTypes): ThemeConfig => {
             return { styles: lumoLightTheme.toString() };
     }
 };
-
-export const matchDarkTheme = () => window.matchMedia('(prefers-color-scheme: dark)');
 
 export const getLumoDefaultTheme = (): ThemeTypes => {
     return matchDarkTheme().matches ? ThemeTypes.LumoDark : ThemeTypes.LumoLight;

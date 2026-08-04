@@ -1,7 +1,7 @@
 import { useSyncExternalStore } from 'react';
 
-import type { ModelTier } from '../providers/ModelTierProvider';
-import { getSelectedModelTier } from '../providers/ModelTierProvider';
+import type { ModelTier } from '../providers/modelTierConstants';
+import { getSelectedModelTier } from '../providers/modelTierConstants';
 import type { GenerationResponseMessage, LumoRemainingLimits } from '../types-api';
 
 type Listener = () => void;
@@ -167,12 +167,7 @@ export function shouldShowWeeklyLimitUpsell(
     hasTierErrors: boolean,
     hasLumoPlus: boolean
 ): boolean {
-    return (
-        !hasLumoPlus &&
-        hasTierErrors &&
-        remainingLimits !== null &&
-        areAllModelLimitsExhausted(remainingLimits)
-    );
+    return !hasLumoPlus && hasTierErrors && remainingLimits !== null && areAllModelLimitsExhausted(remainingLimits);
 }
 
 /** @deprecated Use isModelTierLimitExhausted for the selected model tier. */

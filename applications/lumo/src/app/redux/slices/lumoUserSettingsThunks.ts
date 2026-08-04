@@ -6,8 +6,8 @@ import { mergeAppendedGeneratedMemories, normalizeMemories } from '../../util/me
 import { safeLogger } from '../../util/safeLogger';
 import type { LumoDispatch, LumoState } from '../store';
 import type { LumoThunkArguments } from '../thunk';
-import { updateLumoUserSettingsWithAutoSave } from './lumoUserSettings';
-import type { LumoUserSettings, Memory } from './lumoUserSettings';
+import { updateLumoUserSettingsWithAutoSave } from './lumoUserSettingsActions';
+import type { LumoUserSettings, Memory } from './lumoUserSettingsTypes';
 
 /**
  * Atomically merges `generated` into the latest persisted memories, resetting the
@@ -59,10 +59,12 @@ export const saveLumoUserSettingsToRemote = createAsyncThunk<void, LumoUserSetti
                 } else {
                     await lumoApi.postUserSettings(userSettingsToApi);
                 }
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
             } catch (getError) {
                 // If we can't determine if settings exist, try POST first
                 try {
                     await lumoApi.postUserSettings(userSettingsToApi);
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 } catch (postError) {
                     // If POST fails, try PUT
                     await lumoApi.putUserSettings(userSettingsToApi);
@@ -95,7 +97,6 @@ export const loadLumoUserSettingsFromRemote = createAsyncThunk<
         const serializedUserSettings = await lumoApi.getUserSettings();
         console.log('LumoUserSettingsThunks: Raw encrypted payload received from API:', serializedUserSettings);
         if (serializedUserSettings) {
-
             // Convert base64 master key to CryptoKey
             const masterKeyCrypto = await base64ToMasterKey(masterKey);
 

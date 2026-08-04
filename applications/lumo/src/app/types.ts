@@ -1,4 +1,5 @@
 import { deriveDataEncryptionKey } from './crypto';
+import type { Base64, EncryptedData } from './crypto/encryptedData';
 import type { AesGcmCryptoKey } from './crypto/types';
 import type { AttachmentMap } from './redux/slices/core/attachments';
 import type { ConversationMap } from './redux/slices/core/conversations';
@@ -32,10 +33,11 @@ export const isEncryptedTurn = isEncryptedWireTurn;
 export const isUnencryptedTurn = isUnencryptedWireTurn;
 export { Role };
 
+export type { AdString, Base64, EncryptedData, OldEncryptedData } from './crypto/encryptedData';
+export { isOldEncryptedData } from './crypto/encryptedData';
+
 // *** Various string aliases ***
-export type Base64 = string;
 export type Armor = string;
-export type AdString = string;
 
 // *** Ids ***
 export type Uuid = string;
@@ -58,16 +60,6 @@ export type Status = 'succeeded' | 'failed';
 
 export function isStatus(value: any): value is Status {
     return value === 'succeeded' || value === 'failed';
-}
-
-// EncryptedData  represents a blob that contains encrypted data which we are in position to decrypt.
-// Compatibility note: It is now represented by a single string `iv || data`,
-// but in the past, it was { iv, data }, so our codepath needs to handle this too.
-export type OldEncryptedData = { iv: Base64; data: Base64 };
-export type EncryptedData = Base64 | OldEncryptedData;
-
-export function isOldEncryptedData(obj: any): obj is OldEncryptedData {
-    return typeof obj === 'object' && obj !== null && typeof obj.iv === 'string' && typeof obj.data === 'string';
 }
 
 export type Encrypted = {
