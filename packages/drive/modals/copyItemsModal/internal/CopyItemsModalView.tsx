@@ -12,9 +12,10 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '@proton/components';
-import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
-import { DirectoryTreeRoot } from '@proton/drive/components/DirectoryTree/DirectoryTree';
-import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
+
+import type { DirectoryTreeItem } from '../../../components/DirectoryTree/DirectoryTree';
+import { DirectoryTreeRoot } from '../../../components/DirectoryTree/DirectoryTree';
+import ModalContentLoader from '../../modalUtils/ModalContentLoader';
 
 export type CopyItemsModalViewProps = ModalStateProps & {
     isLoading: boolean;
