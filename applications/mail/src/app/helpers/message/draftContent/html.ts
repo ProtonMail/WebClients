@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
+import { escape } from '@proton/sanitize/escape';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -23,13 +24,13 @@ export const generatePreviousMessageInfos = (referenceMessage: PartialMessageSta
      * See "locatePlaintextInternalBlockquotes" function
      */
     const senderString = formatRecipientsString([referenceMessage.data?.Sender] as Recipient[], 'html');
-    const date = formatFullDate(getDate(referenceMessage?.data as Message, ''));
+    const date = escape(formatFullDate(getDate(referenceMessage?.data as Message, '')));
 
     if (action === MESSAGE_ACTIONS.FORWARD) {
         const ccString = formatRecipientsString(referenceMessage.data?.CCList as Recipient[], 'html');
         const toString = formatRecipientsString(referenceMessage.data?.ToList as Recipient[], 'html');
         const ccRecipients = (referenceMessage.data?.CCList?.length || 0) > 0 ? `CC: ${ccString}<br>` : '';
-        const subject = referenceMessage.data?.Subject;
+        const subject = escape(referenceMessage.data?.Subject ?? '');
 
         /*
          * translator: String inserted in draft blockquotes when forwarding a message
