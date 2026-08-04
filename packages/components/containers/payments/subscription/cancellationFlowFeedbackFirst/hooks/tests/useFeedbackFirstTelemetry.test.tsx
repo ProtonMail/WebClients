@@ -72,6 +72,45 @@ describe('useFeedbackFirstTelemetry', () => {
         expect(mockSilentApi).toHaveBeenCalledWith({ url: 'data/v1/stats', data: expect.anything() });
     });
 
+    it('should report a skipped cancellation reason when no reason was given', () => {
+        const { result } = renderHook(() => useFeedbackFirstTelemetry());
+
+        const feedback = { Reason: '', Feedback: '', ReasonDetails: '' } as any;
+
+        result.current.sendFeedbackReport(feedback);
+        result.current.sendSecondStepReport(feedback);
+
+        expect(mockSendTelemetryData).toHaveBeenNthCalledWith(
+            1,
+            expect.objectContaining({
+                Event: TelemetryAccountCancellationFlowFeedbackEvents.feedbackStep,
+                Dimensions: expect.objectContaining({ cancellationReason: 'SKIPPED' }),
+            })
+        );
+        expect(mockSendTelemetryData).toHaveBeenNthCalledWith(
+            2,
+            expect.objectContaining({
+                Event: TelemetryAccountCancellationFlowFeedbackEvents.secondStep,
+                Dimensions: expect.objectContaining({ cancellationReason: 'SKIPPED' }),
+            })
+        );
+    });
+
+    it('should report the selected cancellation reason when one was given', () => {
+        const { result } = renderHook(() => useFeedbackFirstTelemetry());
+
+        const feedback = { Reason: 'TOO_EXPENSIVE', Feedback: '', ReasonDetails: '' } as any;
+
+        result.current.sendFeedbackReport(feedback);
+
+        expect(mockSendTelemetryData).toHaveBeenCalledWith(
+            expect.objectContaining({
+                Event: TelemetryAccountCancellationFlowFeedbackEvents.feedbackStep,
+                Dimensions: expect.objectContaining({ cancellationReason: 'TOO_EXPENSIVE' }),
+            })
+        );
+    });
+
     it('should send each event as a separate individual request rather than batching them', () => {
         const { result } = renderHook(() => useFeedbackFirstTelemetry());
 
