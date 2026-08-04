@@ -1827,6 +1827,9 @@
       "Event deleted": [
         "Händelsen borttagen"
       ],
+      "Failed to admit the participants. Please try again.": [
+        "Misslyckades med att släppa in deltagarna. Försök igen."
+      ],
       "Failed to assign host": [
         "Misslyckades att tilldela värd"
       ],
@@ -1847,6 +1850,9 @@
       ],
       "Failed to delete room": [
         "Misslyckades att ta bort rum"
+      ],
+      "Failed to deny the participant. Please try again.": [
+        "Misslyckades med att neka deltagaren. Försök igen."
       ],
       "Failed to download recording": [
         "Misslyckades att ladda ner inspelning"
@@ -1886,6 +1892,9 @@
       ],
       "Failed to unlock meeting": [
         "Misslyckades att låsa upp möte"
+      ],
+      "Failed to update waiting room setting. Please try again.": [
+        "Misslyckades med att uppdatera inställningar för väntrummet. Försök igen."
       ],
       "Incorrect username": [
         "Felaktigt användarnamn"
@@ -2303,6 +2312,9 @@
       "Edit email address": [
         "Redigera e-postadress"
       ],
+      "Enable the camera to preview the custom background.": [
+        "Aktivera kameran för att förhandsgranska den anpassade bakgrunden."
+      ],
       "End Meeting for everyone?": [
         "Avsluta möte för alla?"
       ],
@@ -2338,6 +2350,9 @@
       ],
       "Everyone has been disconnected from the call.": [
         "Alla har kopplats bort från samtalet."
+      ],
+      "Expires in ${ formattedCountdown }": [
+        "Löper ut om ${ formattedCountdown }"
       ],
       "Failed to apply background blur": [
         "Misslyckades att tillämpa bakgrundsoskärpa"
@@ -2396,6 +2411,9 @@
       "Joined ${ roomNameLabel }": [
         "Gick med ${ roomNameLabel }"
       ],
+      "Joined at ${ receivedTime }": [
+        "Gick med kl. ${ receivedTime }"
+      ],
       "Learn more": [
         "Lär dig mer"
       ],
@@ -2422,6 +2440,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Läser in kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
+      ],
+      "Loading meeting details...": [
+        "Laddar mötesdetaljer …"
       ],
       "Loading meetings...": [
         "Laddar möten …"
@@ -2768,6 +2789,9 @@
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
         "Uppgradera för att ta bort 1-timmarsgränsen och hoppa över nedräkningen. Njut av möten på upp till 24 timmar."
       ],
+      "Upload an image to preview it as the background.": [
+        "Ladda upp en bild för att förhandsgranska den som bakgrunden."
+      ],
       "Video effects": [
         "Videoeffekter"
       ],
@@ -2818,6 +2842,9 @@
       ],
       "You were removed from the meeting": [
         "Du togs bort från mötet"
+      ],
+      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
+        "Du blev inte insläppt i detta möte. Du kan försöka gå med igen om du tror att det var ett misstag."
       ],
       "You will leave the meeting. Others will continue.": [
         "Du kommer lämna mötet. Andra kommer fortsätta."
@@ -3667,6 +3694,9 @@
       ],
       "Video": [
         "Video"
+      ],
+      "Waiting for the host": [
+        "Väntar på värden"
       ],
       "Waiting room": [
         "Väntrum"

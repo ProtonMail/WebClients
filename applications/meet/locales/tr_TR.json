@@ -1830,6 +1830,12 @@
       "Event deleted": [
         "Etkinlik silindi"
       ],
+      "Failed to admit the participant. Please try again.": [
+        "Katılımcı kabul edilemedi. Lütfen yeniden deneyin."
+      ],
+      "Failed to admit the participants. Please try again.": [
+        "Katılımcılar kabul edilemedi. Lütfen yeniden deneyin."
+      ],
       "Failed to assign host": [
         "Görüşme sahibi atanamadı"
       ],
@@ -1850,6 +1856,9 @@
       ],
       "Failed to delete room": [
         "Oda silinemedi"
+      ],
+      "Failed to deny the participant. Please try again.": [
+        "Katılımcı kabul edilemedi. Lütfen yeniden deneyin."
       ],
       "Failed to download recording": [
         "Kayıt indirilemedi"
@@ -1889,6 +1898,9 @@
       ],
       "Failed to unlock meeting": [
         "Görüşmenin kilidi açılamadı"
+      ],
+      "Failed to update waiting room setting. Please try again.": [
+        "Bekleme odası ayarı güncellenemedi. Lütfen yeniden deneyin."
       ],
       "Incorrect username": [
         "Kullanıcı adı yanlış"
@@ -2183,6 +2195,10 @@
         "${ totalParticipantCount } katılımcı",
         "${ totalParticipantCount } katılımcı"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "${ waitingRoomParticipantsCount } kişi bekliyor",
+        "${ waitingRoomParticipantsCount } kişi bekliyor"
+      ],
       "(You)": [
         "(Siz)"
       ],
@@ -2348,6 +2364,9 @@
       "Everyone has been disconnected from the call.": [
         "Çağrı herkes için sonlandırıldı."
       ],
+      "Expires in ${ formattedCountdown }": [
+        "${ formattedCountdown } içinde geçerlilik süresi dolacak"
+      ],
       "Failed to apply background blur": [
         "Arka plan bulanıklığı uygulanamadı"
       ],
@@ -2402,8 +2421,14 @@
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
       ],
+      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
+        "Katılma isteğinin geçerlilik süresi dolmuş. Görüşme sahibi sizi zamanında kabul etmedi. Yeni bir katılma isteği gönderin."
+      ],
       "Joined ${ roomNameLabel }": [
         "${ roomNameLabel } odasına katılındı"
+      ],
+      "Joined at ${ receivedTime }": [
+        "${ receivedTime } zamanında katılındı"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -2792,6 +2817,12 @@
       "View ": [
         "Görüntüle "
       ],
+      "Waiting for the host to admit you. The host has been notified that you're waiting.": [
+        "Görüşme sahibinin sizi kabul etmesi bekleniyor. Görüşme sahibine beklediğiniz bildirildi."
+      ],
+      "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
+        "Görüşme sahibinin görüşmeyi başlatması bekleniyor. Görüşme sahibi görüşmeyi başlattıktan sonra sizi kabul ettiğinde katılacaksınız."
+      ],
       "Warning": [
         "Uyarı"
       ],
@@ -2836,6 +2867,9 @@
       ],
       "You were removed from the meeting": [
         "Görüşmeden çıkarıldınız"
+      ],
+      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
+        "Bu görüşmeye katılmanız kabul edilmedi. Bir yanlışlık olduğunu düşünüyorsanız yeniden katılmayı deneyebilirsiniz."
       ],
       "You will leave the meeting. Others will continue.": [
         "Siz görüşmeden ayrılacaksınız. Diğerleri kalacak."
@@ -3124,6 +3158,9 @@
       ],
       "Use simple selfie segmentation": [
         "Basit özçekim parçalaması kullanılsın"
+      ],
+      "Use waiting room with a paid plan": [
+        "Bekleme odası özelliğini ücretli bir tarife ile kullanabilirsiniz"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -3565,6 +3602,9 @@
       "Join meeting": [
         "Görüşmeye katıl"
       ],
+      "Join request expired": [
+        "Katılma isteğinin geçerlilik süresi dolmuş"
+      ],
       "Joined at epoch ${ log.epoch }": [
         "Epoch ${ log.epoch } zamanında katıldı"
       ],
@@ -3677,6 +3717,9 @@
       "Thank you!": [
         "Teşekkürler!"
       ],
+      "The host didn't admit you": [
+        "Görüşme sahibi sizi kabul etmedi"
+      ],
       "Time": [
         "Zaman"
       ],
@@ -3688,6 +3731,9 @@
       ],
       "Video": [
         "Görüntü"
+      ],
+      "Waiting for the host": [
+        "Görüşme sahibi bekleniyor"
       ],
       "Waiting room": [
         "Bekleme odası"

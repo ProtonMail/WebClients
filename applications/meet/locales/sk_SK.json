@@ -1836,6 +1836,12 @@
       "Event deleted": [
         "Udalosť vymazaná"
       ],
+      "Failed to admit the participant. Please try again.": [
+        "Nepodarilo sa prijať účastníka. Skúste to znova, prosím."
+      ],
+      "Failed to admit the participants. Please try again.": [
+        "Nepodarilo sa prijať účastníkov. Skúste to znova, prosím."
+      ],
       "Failed to assign host": [
         "Priradenie hostiteľa zlyhalo"
       ],
@@ -1856,6 +1862,9 @@
       ],
       "Failed to delete room": [
         "Vymazanie miestnosti zlyhalo"
+      ],
+      "Failed to deny the participant. Please try again.": [
+        "Nepodarilo sa odmietnuť účastníkov. Skúste to znova, prosím."
       ],
       "Failed to download recording": [
         "Nepodarilo sa stiahnuť nahrávku"
@@ -1895,6 +1904,9 @@
       ],
       "Failed to unlock meeting": [
         "Stretnutie sa nepodarilo odomknúť"
+      ],
+      "Failed to update waiting room setting. Please try again.": [
+        "Aktualizácia nastavení čakárne zlyhala. Skúste to znova, prosím."
       ],
       "Incorrect username": [
         "Nesprávne používateľské meno"
@@ -2370,6 +2382,9 @@
       "Everyone has been disconnected from the call.": [
         "Všetci účastníci boli od hovoru odpojení."
       ],
+      "Expires in ${ formattedCountdown }": [
+        "Vyprší o ${ formattedCountdown }"
+      ],
       "Failed to apply background blur": [
         "Nepodarilo sa použiť rozostrenie pozadia"
       ],
@@ -2424,8 +2439,14 @@
       "Internet connection lost": [
         "Strata internetového pripojenia"
       ],
+      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
+        "Platnosť žiadosti o vstup uplynula. Hostiteľ vás neprijal včas. Pošlite novú žiadosť o vstup."
+      ],
       "Joined ${ roomNameLabel }": [
         "Pripojený k ${ roomNameLabel }"
+      ],
+      "Joined at ${ receivedTime }": [
+        "Vstúpil o ${ receivedTime }"
       ],
       "Learn more": [
         "Zistiť viac"
@@ -2453,6 +2474,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Načítanie kalendára, počkajte, prosím. V novej karte budete presmerovaní na našu plánovaciu platformu Calendly."
+      ],
+      "Loading meeting details...": [
+        "Načítavanie podrobnosti o schôdzi..."
       ],
       "Loading meetings...": [
         "Načítavanie schôdzí..."
@@ -2811,6 +2835,12 @@
       "View ": [
         "Zobraziť "
       ],
+      "Waiting for the host to admit you. The host has been notified that you're waiting.": [
+        "Čakáte, kým vás hostiteľ prijme. Hostiteľ bol informovaný, že čakáte."
+      ],
+      "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
+        "Čaká sa na spustenie schôdze hostiteľom. Pripojíte sa, keď hostiteľ spustí stretnutie a prijme vás."
+      ],
       "Warning": [
         "Varovanie"
       ],
@@ -2855,6 +2885,9 @@
       ],
       "You were removed from the meeting": [
         "Boli ste vylúčení zo schôdze."
+      ],
+      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
+        "Táto schôdza vám nebola sprístupnená. Ak si myslíte, že išlo o omyl, môžete sa pokúsiť pripojiť sa znova."
       ],
       "You will leave the meeting. Others will continue.": [
         "Odídete zo schôdze. Ostatní budú pokračovať."
@@ -3588,6 +3621,9 @@
       "Join meeting": [
         "Pripojiť sa k stretnutiu"
       ],
+      "Join request expired": [
+        "Platnosť žiadosti o pripojenie vypršala"
+      ],
       "Joined at epoch ${ log.epoch }": [
         "Pripojený v epoche ${ log.epoch }"
       ],
@@ -3702,6 +3738,9 @@
       "Thank you!": [
         "Ďakujeme vám!"
       ],
+      "The host didn't admit you": [
+        "Hostiteľ vás neschválil"
+      ],
       "Time": [
         "Čas"
       ],
@@ -3713,6 +3752,9 @@
       ],
       "Video": [
         "Video"
+      ],
+      "Waiting for the host": [
+        "Čakanie na hostiteľa"
       ],
       "Waiting room": [
         "Čakáreň"
