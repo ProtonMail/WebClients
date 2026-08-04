@@ -8,7 +8,6 @@ import { getMemberAddresses } from '@proton/account/members';
 import { type MspSubsidiariesState, mspSubsidiariesThunk } from '@proton/account/mspSubsidiaries/index';
 import { type OrganizationKeyState, organizationKeyThunk } from '@proton/account/organizationKey';
 import { type MemberKeyPayload, getMemberKeyPayload } from '@proton/account/organizationKey/actions';
-import { userThunk } from '@proton/account/user';
 import { userKeysThunk } from '@proton/account/userKeys';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { pullForkSession, pushForkSession } from '@proton/shared/lib/api/auth';
@@ -20,10 +19,7 @@ import { SessionSource } from '@proton/shared/lib/authentication/SessionInterfac
 import { persistForkedSession } from '@proton/shared/lib/authentication/fork';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { PullForkResponse, PushForkResponse } from '@proton/shared/lib/authentication/interface';
-import {
-    type ResumedSessionResult,
-    maybeResumeSessionByUser,
-} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api, Member } from '@proton/shared/lib/interfaces';
@@ -137,20 +133,9 @@ export const manageCompanyThunk = ({
 }): ThunkAction<Promise<ResumedSessionResult>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const silentApi = getSilentApi(extra.api);
-        const user = await dispatch(userThunk());
 
         if (!id) {
             throw new Error('Missing ID');
-        }
-
-        const validatedSession = await maybeResumeSessionByUser({
-            api: silentApi,
-            User: user,
-            // Only resume an existing Msp session for this user, if any
-            options: { source: [SessionSource.Msp] },
-        });
-        if (validatedSession) {
-            return validatedSession;
         }
 
         let selector: string | null = null;

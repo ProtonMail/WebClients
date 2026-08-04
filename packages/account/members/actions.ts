@@ -601,7 +601,6 @@ export const createMember = ({
         if (model.vpn) {
             await resetSelfVpnConnectionsHelper({ api, members, organization }).catch(noop);
         }
-
         const error = validateAddUser({
             privateUser: model.private === MEMBER_PRIVATE.UNREADABLE,
             organization,

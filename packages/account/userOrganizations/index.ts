@@ -1,3 +1,4 @@
+import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -40,7 +41,17 @@ const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,
-    reducers: {},
+    reducers: {
+        patch: (state, action: PayloadAction<{ id: string; changes: Partial<UserOrganization> }>) => {
+            if (!state.value) {
+                return;
+            }
+            const item = state.value.find((org) => org.OrganizationID === action.payload.id);
+            if (item) {
+                Object.assign(item, action.payload.changes);
+            }
+        },
+    },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
     },
@@ -48,3 +59,4 @@ const slice = createSlice({
 
 export const userOrganizationsReducer = { [name]: slice.reducer };
 export const userOrganizationsThunk = modelThunk.thunk;
+export const userOrganizationsActions = slice.actions;

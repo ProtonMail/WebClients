@@ -1,6 +1,6 @@
+import { serverTime, wasServerTimeEverUpdated } from '@protontech/crypto';
 import { c } from 'ttag';
 
-import { serverTime, wasServerTimeEverUpdated } from '@protontech/crypto';
 import { createKeyMigrationKTVerifier, createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import { auth2FA, getInfo } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -151,18 +151,16 @@ export const handleReAuthKeyPassword = async ({
     clearKeyPassword,
     salts,
     api,
-    source = SessionSource.Proton,
 }: {
     authSession: AuthSession;
     User: tsUser;
     clearKeyPassword: string;
     salts: tsKeySalt[];
     api: Api;
-    source?: SessionSource;
 }): Promise<AuthSession> => {
     const unlockResult = await handleUnlockKey(User, salts, clearKeyPassword).catch(() => undefined);
     if (!unlockResult) {
-        if (source === SessionSource.Saml) {
+        if (authSession.data.persistedSession.source === SessionSource.Saml) {
             throw getBackupPasswordError();
         }
         throw getUnlockError();
@@ -174,10 +172,10 @@ export const handleReAuthKeyPassword = async ({
         UID: authSession.data.UID,
         persistent: authSession.data.persistedSession.persistent,
         trusted: authSession.data.persistedSession.trusted,
+        source: authSession.data.persistedSession.source,
         keyPassword,
         clearKeyPassword,
         api,
-        source,
     });
     return {
         data: sessionResult,
