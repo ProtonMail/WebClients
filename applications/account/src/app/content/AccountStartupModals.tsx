@@ -8,6 +8,7 @@ import {
     StartupModals,
     useLightLabellingFeatureModal,
     useModalState,
+    useScimGroupsOnboardingModal,
     useTrialEndedModal,
 } from '@proton/components';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
@@ -56,7 +57,8 @@ const useStartupModals = () => {
     const trialEndedModal = useTrialEndedModal();
     const b2bOnboardingModal = useB2BOnboardingModal();
     const lightLabellingFeatureModal = useLightLabellingFeatureModal();
-    return [trialEndedModal, b2bOnboardingModal, lightLabellingFeatureModal];
+    const scimGroupsOnboardingModal = useScimGroupsOnboardingModal();
+    return [trialEndedModal, b2bOnboardingModal, lightLabellingFeatureModal, scimGroupsOnboardingModal];
 };
 
 const AccountStartupModals = () => {
