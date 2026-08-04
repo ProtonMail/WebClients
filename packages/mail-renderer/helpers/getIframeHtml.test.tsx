@@ -1,10 +1,10 @@
+import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
+
 import {
     MESSAGE_IFRAME_PRINT_CLASS,
     MESSAGE_IFRAME_PRINT_FOOTER_ID,
     MESSAGE_IFRAME_PRINT_HEADER_ID,
-} from '@proton/mail-renderer/constants';
-import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
-
+} from '../constants';
 import getIframeHtml from './getIframeHtml';
 
 const parseHtmlElement = (content: string): Element => {
