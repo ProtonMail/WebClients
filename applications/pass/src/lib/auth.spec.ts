@@ -281,7 +281,7 @@ describe('AuthService', () => {
         test.each(cases)('should return null if session is $desc', ({ value }) => {
             const getItem = jest.spyOn(Storage.prototype, 'getItem').mockReturnValue(value);
             const result = authService.config.getPersistedSession(0);
-            expect(getItem).toHaveBeenCalledWith(sessions.getSessionKey(0));
+            expect(getItem).toHaveBeenCalledWith(storage.getSessionKey(0));
             expect(result).toBe(null);
         });
 
@@ -289,7 +289,7 @@ describe('AuthService', () => {
             const session = { UID: '42', UserID: '42', blob: 'encrypted-blob', cookies: true };
             const getItem = jest.spyOn(Storage.prototype, 'getItem').mockImplementation(() => JSON.stringify(session));
             const result = authService.config.getPersistedSession(0);
-            expect(getItem).toHaveBeenCalledWith(sessions.getSessionKey(0));
+            expect(getItem).toHaveBeenCalledWith(storage.getSessionKey(0));
             expect(result).toEqual(session);
         });
     });
