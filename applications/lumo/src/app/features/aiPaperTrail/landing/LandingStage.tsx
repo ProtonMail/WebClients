@@ -4,12 +4,16 @@ import { Button } from '@proton/atoms/Button/Button';
 
 import { DEMO_SHARE_CARD_DATA } from '../demoShareCardData';
 import { ShareCardCanvasPreview } from '../shareCard/ShareCardCanvasPreview';
+import { RecentFilesSection } from './RecentFilesSection';
 
 interface Props {
     onGenerate: () => void;
+    recentFilesRefreshKey: number;
+    onOpenReport: (id: string) => void;
+    onDeleteReport: (id: string) => void;
 }
 
-export const LandingStage = ({ onGenerate }: Props) => {
+export const LandingStage = ({ onGenerate, recentFilesRefreshKey, onOpenReport, onDeleteReport }: Props) => {
     return (
         <div className="ai-paper-trail__inner ai-paper-trail__landing-split">
             <div className="ai-paper-trail__landing-copy">
@@ -38,6 +42,11 @@ export const LandingStage = ({ onGenerate }: Props) => {
                     className="ai-paper-trail__landing-card"
                 />
             </div>
+            <RecentFilesSection
+                refreshKey={recentFilesRefreshKey}
+                onOpenReport={onOpenReport}
+                onDeleteReport={onDeleteReport}
+            />
         </div>
     );
 };

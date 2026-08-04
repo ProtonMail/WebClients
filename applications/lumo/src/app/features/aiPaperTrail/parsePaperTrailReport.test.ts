@@ -1,4 +1,4 @@
-import { parsePaperTrailReport } from './parsePaperTrailReport';
+import { parsePaperTrailAnalysis, parsePaperTrailReport } from './parsePaperTrailReport';
 import { deriveCardData } from './reportTypes';
 
 const validReport = {
@@ -74,13 +74,32 @@ describe('parsePaperTrailReport', () => {
     });
 
     it('returns undefined for streaming / invalid content', () => {
-        expect(parsePaperTrailReport('{ "label": "x"')).toBeUndefined();
+        expect(parsePaperTrailReport('{ "label": "x" }')).toBeUndefined();
         expect(parsePaperTrailReport(undefined)).toBeUndefined();
         expect(parsePaperTrailReport('not json at all')).toBeUndefined();
     });
 
     it('returns undefined when required fields are missing', () => {
         expect(parsePaperTrailReport(JSON.stringify({ summary: 'no label or sections' }))).toBeUndefined();
+    });
+
+    it('parses an insufficient-data response', () => {
+        expect(parsePaperTrailAnalysis(JSON.stringify({ insufficientData: true }))).toEqual({
+            kind: 'insufficient_data',
+        });
+        expect(parsePaperTrailReport(JSON.stringify({ insufficientData: true }))).toBeUndefined();
+    });
+
+    it('prefers a full report when insufficientData is also set', () => {
+        const payload = { ...validReport, insufficientData: true };
+        expect(parsePaperTrailAnalysis(JSON.stringify(payload))?.kind).toBe('report');
+    });
+
+    it('marks prose and malformed JSON as unparseable', () => {
+        expect(parsePaperTrailAnalysis('Sorry, there is not enough information here.')).toEqual({
+            kind: 'unparseable',
+        });
+        expect(parsePaperTrailAnalysis(JSON.stringify({ label: 'x' }))).toEqual({ kind: 'unparseable' });
     });
 
     it('derives a share-safe exposure scorecard from the report', () => {

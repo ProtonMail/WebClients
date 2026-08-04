@@ -10,8 +10,15 @@ export const getExportFilename = (source: PaperTrailContext['stats']['source']):
  */
 export const buildPaperTrailPrompt = (context: PaperTrailContext): string => {
     const providerName = context.stats.source === 'claude' ? 'Claude' : 'ChatGPT';
+    const { includedPromptCount, totalPromptCount, conversationCount } = context.stats;
 
     return `I exported my conversation history from ${providerName} and attached the prompts I wrote. Analyse them and reveal my "AI Paper Trail" — the profile a Big Tech AI could build about me from what I typed.
+
+The attached export contains ${includedPromptCount} of my ${totalPromptCount} user prompts across ${conversationCount} conversation(s).
+
+DEFAULT OUTPUT: Return the full report JSON below. Build the best profile you can from whatever personal, professional, or contextual signals exist — even if the result is sparse or low-exposure. A thin but honest report is always better than refusing.
+
+Use the insufficientData fallback ONLY when the prompts are essentially devoid of inferrable signal — e.g. almost entirely generic commands ("thanks", "continue", "rewrite this") with no stable facts about my life, work, location, relationships, interests, or identity anywhere in the export. If you can write a "label" and at least one "sections" entry with grounded findings, you MUST return the full report. Do NOT set insufficientData in that case.
 
 Be specific, personal, and uncomfortably accurate, but infer ONLY from the attached prompts. Never invent facts that aren't supported by them. If evidence for something is thin, leave it out rather than fabricating.
 
@@ -27,7 +34,7 @@ Respond with ONLY a single valid JSON object — no markdown, no code fences, no
   "dataPointCount": number,         // integer: how many distinct data points you extracted
   "estimatedValueUsd": number,      // integer: rough USD value of this profile to an advertiser
   "valueRationale": string,         // one line explaining the estimate
-  "sections": [                     // 5-8 categories of what the data reveals
+  "sections": [                     // 1-8 categories — include every area the data supports; one section with findings is enough if that is all the signal allows
     {
       "title": string,              // category name (see required coverage below)
       "emoji": string,              // a single relevant emoji
@@ -84,5 +91,11 @@ For each, set "category" (e.g. "Colleague PII", "Company confidential", "Source 
 
 Put concrete identifiers (names, conditions) only in section findings. In "sensitiveCategories" name the category (e.g. "full name", "children's names", "medical condition") rather than the actual value, since that list is used on a publicly shareable card.
 
-Keep the tone direct and a little unsettling, but factual. Output the JSON object and nothing else.`;
+Keep the tone direct and a little unsettling, but factual. Output the JSON object and nothing else.
+
+RARE FALLBACK ONLY — if and only if the export meets the narrow insufficientData criteria above, return this instead of the full report (never return prose):
+
+{
+  "insufficientData": true
+}`;
 };
