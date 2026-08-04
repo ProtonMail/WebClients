@@ -1335,6 +1335,9 @@
       "Remove gift code": [
         "Fjern gavekode"
       ],
+      "Remove manager": [
+        "Fjern administrator"
+      ],
       "Remove this label": [
         "Fjern denne etiket"
       ],
@@ -1775,6 +1778,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Opgrader for at aktivere ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Professional": [
+        "Opgrader til Professional"
       ],
       "Upgrade to view all": [
         "Opgrader for at se alle"
@@ -7093,6 +7099,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Du kan fjerne deres adgang når som helst for at genvinde fuld kontrol over din konto."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Du er endnu ikke blevet udpeget som en gendannelseskontakt for nogen."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Du er endnu ikke blevet udpeget som nødkontakt for nogen."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "De har nået det maksimale antal på ${ limit } nødkontakt.",
         "Du har nået det maksimale antal på ${ limit } nødkontakter."
@@ -8740,11 +8752,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Er du sikker på du vil slette sikkerhedsnøgle ${ name }?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Når nøglen understøtter det skal du indtaste din PIN-kode hver gang du bruger din sikkerhedsnøgle med ${ BRAND_NAME }. Dette gælder kun for nøgler, der har en PIN-kode sat op."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
       ],
       "Insert your security key into your device.": [
         "Indsæt din sikkerhedsnøgle i din enhed."
+      ],
+      "PIN requirement for security keys disabled": [
+        "Krav om PIN-kode til sikkerhedsnøgle deaktiveret"
+      ],
+      "PIN requirement for security keys enabled": [
+        "Krav om PIN-kode for sikkerhedsnøgler aktiveret"
+      ],
+      "Require PIN for security key": [
+        "Påkræv PIN-kode til sikkerhedsnøgle"
       ],
       "Security key": [
         "Sikkerhedsnøgle"
@@ -10251,6 +10275,9 @@
       "add a recovery method": [
         "tilføj en gendannelsesmetode"
       ],
+      "Add additional users from your organization to manage this company.": [
+        "Tilføj flere brugere fra din organisation til at administrere denne virksomhed."
+      ],
       "Add an email address in case we need to contact you": [
         "Tilføj en e-mailadresse i tilfælde af at vi får brug for at kontakte dig"
       ],
@@ -10537,6 +10564,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Tilgængelig på macOS, Windows og Linux."
       ],
+      "Available on VPN Professional": [
+        "Tilgængeligt til VPN Professional"
+      ],
       "Awaiting transaction": [
         "Afventer transaktion"
       ],
@@ -10686,6 +10716,9 @@
       ],
       "Coming soon": [
         "Kommer snart"
+      ],
+      "Companies you've been given access to manage.": [
+        "Virksomheder som du har adgang til at administrere."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Fuldfør login på denne enhed for at begynde at bruge ${ VPN_APP_NAME } på dit TV."
@@ -11052,6 +11085,9 @@
       ],
       "Enable email notifications": [
         "Aktivér e-mailnotifikationer"
+      ],
+      "Enable groups to streamline access control": [
+        "Aktivér grupper for at strømline adgangskontrol"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivér single sign-on for at holde din organisation sikker"
@@ -11709,6 +11745,9 @@
       ],
       "Learn more about Gateways": [
         "Lær mere om gateways"
+      ],
+      "Learn more about groups": [
+        "Få mere at vide om grupper"
       ],
       "learn more about Sieve programming language": [
         "Læs mere om programmeringssproget Sieve"
@@ -12416,9 +12455,6 @@
       "Set password": [
         "Indstil adgangskode"
       ],
-      "Set the name, status, and assigned seats": [
-        "Indstil navnet, dens status, og tildelte pladser"
-      ],
       "Set up your organization": [
         "Konfigurer din organisation"
       ],
@@ -12488,6 +12524,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
+      ],
+      "Smart Routed through a different country.": [
+        "Smart Routet gennem et andet land"
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Smart Routet gennem ${ joinedCountries }"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } for dine brugerdomæne-adresser."
@@ -13050,11 +13092,23 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
+      "Upgrade now to monitor your team's account safety.": [
+        "Opgrader nu for at monitorere dit teams kontosikkerhed."
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Opgrader nu for at se ${ PASS_APP_NAME }-aktivitet på tværs af din organisation."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Opgrader eller frigør lagerplads når som helst for at overføre resten"
       ],
+      "Upgrade required": [
+        "Opgradering kræves"
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Opgradér for at tilføje en kortere @pm.me adresse til din konto, som er nemmere at dele. Det står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me\"."
+      ],
+      "Upgrade to define policies for your organization.": [
+        "Opgrader for at definere politikker for din organisation."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Opgradér for at beholde dine ${ planTitle }-fordele."
@@ -13356,6 +13410,9 @@
       "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
         "Med administrerede virksomheder kan du tilføje, redigere og fjerne adgang for organisationer, du fører tilsyn med."
       ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Med VPN Professional kan administratorer håndhæve always-on VPN for alle organisationsmedlemmer, sammen med private gateways, adgangspolitikker og overvågning."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Med dit nuværende abonnement kan du kun modtage beskeder med din @pm.me-adresse. Opgradér for at sende beskeder og oprette yderligere adresser med @pm.me."
       ],
@@ -13512,6 +13569,9 @@
       ],
       "You don't have any referrals.": [
         "De har ingen henvisninger."
+      ],
+      "You don't manage any companies yet.": [
+        "Du administrerer ingen virksomheder endnu."
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "Du behøver ikke at åbne eller læse filen – bare download den og opbevar den sikkert."
@@ -14480,6 +14540,9 @@
       "Add extra services": [
         "Tilføj ekstra tjenester"
       ],
+      "Add managers": [
+        "Tilføj administratorer"
+      ],
       "Additional comments": [
         "Yderligere kommentarer"
       ],
@@ -14575,6 +14638,9 @@
       ],
       "ANY": [
         "ENHVER"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Alt, der kræver din opmærksomhed, samt e-mails fra deaktiverede kategorier"
       ],
       "App password": [
         "App-adgangskode"
@@ -15543,9 +15609,6 @@
       "Pending": [
         "Afventende"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Personlige- og arbejds-e-mails, plus vigtige opdateringer og notifikationer"
-      ],
       "Phone number": [
         "Telefonnummer"
       ],
@@ -15588,8 +15651,8 @@
       "Primary": [
         "Primær"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Primær - Personlige og arbejdsmæssige e-mails samt vigtige opdateringer"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primære - alt, der kræver din opmærksomhed, samt e-mails fra deaktiverede kategorier"
       ],
       "Priority support": [
         "Prioriteret support"
@@ -15930,6 +15993,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Opdateringer - Automatiserede bekræftelser, advarsler og kontoopdateringer"
+      ],
+      "Upgrade": [
+        "Opgrader"
       ],
       "Upload 1 or more encryption keys": [
         "Upload 1 eller flere krypteringsnøgler"
@@ -20318,6 +20384,9 @@
       ],
       "Enter company name": [
         "Indtast navnet på virksomheden"
+      ],
+      "Enter name or email address": [
+        "Indtast navn eller e-mailadresse"
       ],
       "example@domain.com": [
         "eksempel@domæne.dk"
@@ -26001,6 +26070,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Administrér filer på tværs af enheder på Windows, Mac, Android og iOS."
       ],
+      "Managers": [
+        "Administratorer"
+      ],
       "Messages": [
         "Beskeder"
       ],
@@ -26288,6 +26360,9 @@
       ],
       "Remove via MDM": [
         "Fjern via MDM"
+      ],
+      "Remove via PowerShell": [
+        "Fjern via PowerShell"
       ],
       "Rename the gateway": [
         "Omdøb gatewayen"
@@ -26643,6 +26718,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Opgradér til ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "Opgrader for at aktivere always-on"
       ],
       "Upgrade to keep your premium benefits.": [
         "Opgradér for at beholde dine premium-fordele."
@@ -27711,6 +27789,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Dette vil oprette en ny ${ MAIL_APP_NAME }-adresse."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Opgradér til en understøttet plan for at bruge administratorroller."
       ],
       "User created": [
         "Bruger oprettet"
