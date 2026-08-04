@@ -309,9 +309,6 @@
       "Continue to ${ planOrAppName }": [
         "Продолжить с ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Продолжить с категориями"
-      ],
       "Continue with Free": [
         "Продолжить бесплатно"
       ],
@@ -1519,10 +1516,7 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверенный ключ",
-        "Доверенных ключа",
-        "Доверенных ключей",
-        "Доверенных ключей"
+        "Доверять ключу"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -1731,9 +1725,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Настроить категории"
-      ],
       "Got it": [
         "Понятно"
       ],
@@ -4398,9 +4389,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Читайте, отвечайте и управляйте почтой Gmail прямо из ${ MAIL_APP_NAME }"
-      ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Нажмите правой кнопкой мыши на электронное письмо и выберите «Переместить в» или перетащите его в другую категорию. Подобные электронные письма будут автоматически сортироваться туда в будущем."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Отправляйте и получайте сообщения Gmail прямо в ${ MAIL_APP_NAME }. Подключите свой адрес в ${ addressesSettingsLink }."
@@ -8084,7 +8072,10 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение"
+        "Вставить изображение",
+        "Вставить изображения",
+        "Вставить изображения",
+        "Вставить изображения"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -9361,12 +9352,6 @@
       "You have ${ totalLabel } in your inbox.": [
         "У вас ${ totalLabel } в вашем почтовом ящике."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "У вас есть **${ count } цепочка писем** в категории «${ categoryLabel }»",
-        "У вас есть **${ count } цепочки писем** в категории «${ categoryLabel }»",
-        "У вас есть **${ count } цепочек писем** в категории «${ categoryLabel }»",
-        "У вас есть **${ count } цепочек писем** в категории «${ categoryLabel }»"
-      ],
       "You have **${ count } conversation** stored in this folder": [
         "У Вас **${ count } цепочка писем** в этой папке",
         "У Вас **${ count } цепочки писем** в этой папке",
@@ -9378,12 +9363,6 @@
         "У Вас **${ count } цепочки писем** с этим ярлыком",
         "У Вас **${ count } цепочек писем** с этим ярлыком",
         "У Вас **${ count } цепочек писем** с этим ярлыком"
-      ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "У вас есть **${ count } сообщение** в категории «${ categoryLabel }»",
-        "У вас есть **${ count } сообщения** в категории «${ categoryLabel }»",
-        "У вас есть **${ count } сообщений** в категории «${ categoryLabel }»",
-        "У вас есть **${ count } сообщений** в категории «${ categoryLabel }»"
       ],
       "You have **${ count } message** stored in this folder": [
         "У Вас **${ count } сообщение** в этой папке",
@@ -9423,18 +9402,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Вы должны отключить или удалить всех дополнительных пользователей ${ MAIL_APP_NAME }, адреса и свои доменты перед переходом на более дешевую версию."
-      ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Вы выбрали **${ checked } цепочку писем** в категории «${ categoryLabel }»",
-        "Вы выбрали **${ checked } цепочки писем** в категории «${ categoryLabel }»",
-        "Вы выбрали **${ checked } цепочек писем** в категории «${ categoryLabel }»",
-        "Вы выбрали **${ checked } цепочек писем** в категории «${ categoryLabel }»"
-      ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Вы выбрали **${ checked } сообщение** в категории «${ categoryLabel }»",
-        "Вы выбрали **${ checked } сообщения** в категории «${ categoryLabel }»",
-        "Вы выбрали **${ checked } сообщений** в категории «${ categoryLabel }»",
-        "Вы выбрали **${ checked } сообщений** в категории «${ categoryLabel }»"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Вы выбрали **${ count } цепочку писем** из этой папки",
@@ -10551,9 +10518,6 @@
       "Payment method": [
         "Способ оплаты"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Личные и рабочие электронные письма, а также важные обновления и уведомления"
-      ],
       "PGP scheme": [
         "Схема PGP"
       ],
@@ -10574,9 +10538,6 @@
       ],
       "Primary": [
         "Основной"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Основной — личные и рабочие электронные письма, а также важные обновления"
       ],
       "Promotions": [
         "Акции"
@@ -16571,9 +16532,6 @@
       "Make a secure connection your default": [
         "Сделайте защищенное подключение вашим подключением по умолчанию"
       ],
-      "Make Categories your own": [
-        "Сделайте категории удобными для вас"
-      ],
       "Mark all messages as read": [
         "Отметить все сообщения как прочитанные"
       ],
@@ -16762,9 +16720,6 @@
       ],
       "Payment verification": [
         "Проверка платежа"
-      ],
-      "Personalize your Categories": [
-        "Персонализируйте свои категории"
       ],
       "Phone numbers": [
         "Hомера телефонов"

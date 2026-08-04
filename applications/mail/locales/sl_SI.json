@@ -306,9 +306,6 @@
       "Continue to ${ planOrAppName }": [
         "Nadaljuj v ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Nadaljuj s kategorijami"
-      ],
       "Continue with Free": [
         "Nadaljujte z brezplačnim"
       ],
@@ -1501,10 +1498,7 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Ključ zaupanja",
-        "Ključa zaupanja",
-        "Ključi zaupanja",
-        "Ključev zaupanja"
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -1710,9 +1704,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Prilagodi kategorije"
-      ],
       "Got it": [
         "Razumem"
       ],
@@ -4225,9 +4216,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Berite, odgovarjajte in bodite na tekočem z Gmailom neposredno v ${ MAIL_APP_NAME }"
-      ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Z desnim klikom na e-poštno sporočilo izberite »Premakni v« ali pa ga povlecite in spustite v drugo kategorijo. Podobna e-poštna sporočila se bodo v prihodnje samodejno razvrstila v to kategorijo."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Pošiljajte in prejemajte sporočila Gmail neposredno v ${ MAIL_APP_NAME }. Povežite svoj naslov v ${ addressesSettingsLink }."
@@ -7784,7 +7772,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -10146,9 +10137,6 @@
       "Payment method": [
         "Način plačila"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Osebna in službena sporočila ter pomembne novosti in obvestila"
-      ],
       "PGP scheme": [
         "Shema PGP"
       ],
@@ -10169,9 +10157,6 @@
       ],
       "Primary": [
         "Glavni"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Glavno: osebna in službena sporočila in pomembne novosti"
       ],
       "Promotions": [
         "Reklame"
@@ -15843,9 +15828,6 @@
       "Make a secure connection your default": [
         "Nastavite varno povezavo kot privzeto"
       ],
-      "Make Categories your own": [
-        "Ustvarite svoje lastne kategorije"
-      ],
       "Mark all messages as read": [
         "Vsa sporočila označi kot prebrana"
       ],
@@ -16031,9 +16013,6 @@
       ],
       "Payment verification": [
         "Preverjanje plačila"
-      ],
-      "Personalize your Categories": [
-        "Prilagodite svoje kategorije"
       ],
       "Phone numbers": [
         "Telefonske številke"

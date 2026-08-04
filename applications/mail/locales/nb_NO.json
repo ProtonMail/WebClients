@@ -232,6 +232,9 @@
       "Clear browser data": [
         "Tøm nettleserdata"
       ],
+      "Clear conversation": [
+        "Rensk samtalen"
+      ],
       "Clear data": [
         "Tøm data"
       ],
@@ -306,9 +309,6 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Fortsett til ${ planOrAppName }"
-      ],
-      "Continue with categories": [
-        "Fortsett med kategorier"
       ],
       "Continue with Free": [
         "Fortsett med gratis"
@@ -829,6 +829,9 @@
       "Loading${ ellipsis }": [
         "Laster${ ellipsis }"
       ],
+      "Lookup document": [
+        "Konsulter dokument"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon"
       ],
@@ -1038,6 +1041,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
+      ],
+      "Open debug menu": [
+        "Åpne feilsøkingsmenyen"
       ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
@@ -1441,6 +1447,9 @@
       "Stay": [
         "Bli"
       ],
+      "Stop": [
+        "Stopp"
+      ],
       "Stop downloading assistant": [
         "Slutt å laste ned assistenten"
       ],
@@ -1483,6 +1492,9 @@
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "For å søke sikkert i e-postene dine må vi laste ned en kopi av meldingene dine til nettleseren din. Den første nedlastingen kan ta et øyeblikk."
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Åpne/lukk ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Toggle Calendar app": [
         "Åpne/lukke kalender-app"
       ],
@@ -1511,8 +1523,7 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
+        "Klarer nøkkel"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1685,6 +1696,9 @@
       "Yes, I'll attend": [
         "Ja, jeg vil delta"
       ],
+      "Yes, organize it": [
+        "Ja, organiser"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
@@ -1719,9 +1733,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Tilpass kategorier"
-      ],
       "Got it": [
         "Skjønner"
       ],
@@ -1730,6 +1741,9 @@
       ],
       "Not now": [
         "Ikke nå"
+      ],
+      "Set up categories": [
+        "Tilpass kategoriene"
       ],
       "Skip": [
         "Hopp over"
@@ -1793,6 +1807,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } seter"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } bruker)",
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } brukere)"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
@@ -1947,6 +1965,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktiviteten til nye nivåer. La ${ LUMO_SHORT_APP_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
       ]
     },
     "Attached ics file error": {
@@ -1995,6 +2016,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seter i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } skriveassistentseter i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-seter i prøveperioden."
@@ -2106,12 +2130,19 @@
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer.",
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
@@ -4342,7 +4373,7 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Les, svar og hold deg oppdatert på Gmail fra ${ MAIL_APP_NAME }"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Høyreklikk på en e-post og velg \"Flytt til\", eller dra og slipp den i en annen kategori. Lignende e-poster vil bli sortert der automatisk i fremtiden."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
@@ -4516,6 +4547,15 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Vi har oppdaget følgende felt i CSV-filen du lastet opp. Merk av for de du ønsker å importere."
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } ny melding",
+        "${ messageCount } nye meldinger"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Fra: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -5290,6 +5330,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Noe gikk galt under henting av tilgjengelige domener"
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Noe gikk galt, lukk modalen og prøv igjen."
       ],
       "Something went wrong. Please try again.": [
         "Noe gikk galt. Forsøk igjen."
@@ -6794,6 +6837,10 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-post → ${ dest }",
+        "${ count } e-poster → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } ut av ${ totalProgress }",
         "${ currentProgress } ut av ${ totalProgress }"
@@ -6852,14 +6899,24 @@
         "${ groupCounts } gruppe funnet",
         "${ groupCounts } grupper funnet"
       ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problem under importen:",
+        "${ issues.length } problemer under importen:"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe-skriveassistenten."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer Scribe-skriveassistenten."
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } hjelper deg med å lage bedre e-poster raskt og enkelt."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME }-panel"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan også beskytte virksomheten din."
@@ -6933,6 +6990,9 @@
       "${ receivedMessagesCount } email last month": [
         "${ receivedMessagesCount } e-post forrige måned",
         "${ receivedMessagesCount } e-poster forrige måned"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minutter gjenstår…"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
@@ -7690,6 +7750,10 @@
       "Forgot password?": [
         "Glemt passord?"
       ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Fant en gjeldende kryptert søkeindeks med ${ oldIndexSize } melding.",
+        "Fant en gjeldende kryptert søkeindeks med ${ oldIndexSize } meldinger."
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Gratis å prøve i ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
         "Gratis å prøve i ${ ASSISTANT_TRIAL_TIME_DAYS } dager"
@@ -7795,6 +7859,9 @@
       "Import in progress": [
         "Import pågår"
       ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importen pågår. Du kan lukke denne dialogboksen mens den kjører og komme tilbake til den senere. Ikke lukk fanen."
+      ],
       "Import mailbox": [
         "Importer postboks"
       ],
@@ -7829,7 +7896,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8008,6 +8076,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De fleste offentlige WiFi-nettverk er trygge, men noen mangler sikkerhet, noe som utsetter deg for cybertrusler. Et VPN krypterer trafikken din og holder deg beskyttet."
       ],
+      "Move emails": [
+        "Flytt e-poster"
+      ],
+      "Move here": [
+        "Flytt hit"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
       ],
@@ -8100,6 +8174,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Åpne veiledningen for anbefalte handlinger og nyttige koblinger."
+      ],
+      "Opened ${ location }": [
+        "Åpnet ${ location }"
       ],
       "Optional": [
         "Valgfritt"
@@ -8272,6 +8349,10 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Ta kontakt med oss for å få hjelp med hva som helst ${ BRAND_NAME }."
+      ],
+      "Read ${ count } email on screen": [
+        "Les ${ count } e-post på skjermen",
+        "Les ${ count } e-poster på skjermen"
       ],
       "Recipient: ": [
         "Mottaker: "
@@ -8584,6 +8665,9 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "De kan ikke sende deg søppelpost hvis de ikke kjenner e-postadressen din. Beskytt innboksen din med hide-my-email-aliaser."
+      ],
+      "Thinking about this": [
+        "Tenker på dette"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adressen er deaktivert. For å kunne sende til denne adressen, må eieren først aktivere adressen."
@@ -9061,6 +9145,9 @@
       "You can either update your search query or clear it": [
         "Du kan enten oppdatere søket eller nullstille det"
       ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Du kan importere den som en ny foundation-search-indeks for utviklingsformål."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
@@ -9090,7 +9177,7 @@
       "You have ${ totalLabel } in your inbox.": [
         "Du har ${ totalLabel } i innboksen din."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
         "Du har **${ count } samtale** i kategorien ${ categoryLabel }.",
         "Du har **${ count } samtaler** i kategorien ${ categoryLabel }."
       ],
@@ -9102,7 +9189,7 @@
         "Du har **${ count } samtale** merket med denne etiketten",
         "Du har **${ count } samtaler** merket med denne etiketten"
       ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
+      "You have **${ count } message** in your ${ categoryLabel } category": [
         "Du har **${ count } melding** i kategorien ${ categoryLabel }.",
         "Du har **${ count } meldinger** i kategorien ${ categoryLabel }."
       ],
@@ -9141,11 +9228,11 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du må deaktivere og fjerne alle eventuelle ${ MAIL_APP_NAME }-brukere, adresser og egendefinerte domener før du kan nedgradere."
       ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
         "Du valgte **${ checked } samtale** i kategorien ${ categoryLabel }.",
         "Du valgte **${ checked } samtaler** i kategorien ${ categoryLabel }."
       ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "Du valgte **${ checked } melding** i kategorien ${ categoryLabel }.",
         "Du valgte **${ checked } meldinger** i kategorien ${ categoryLabel }."
       ],
@@ -9708,6 +9795,9 @@
       "ANY": [
         "NOEN"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Alt som trenger din oppmerksomhet, pluss e-poster fra deaktiverte kategorier"
+      ],
       "App password": [
         "App-passord"
       ],
@@ -9716,6 +9806,9 @@
       ],
       "Apply to future messages": [
         "Anvend på fremtidige meldinger"
+      ],
+      "Archive": [
+        "Arkiv"
       ],
       "Attach screenshot(s)": [
         "Legg ved skjermbilde(r)"
@@ -9792,6 +9885,12 @@
       "Clear logs": [
         "Tøm logger"
       ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversjon"
+      ],
       "Code is 6 digits without spaces": [
         "Koden består av 6 sifre uten mellomrom"
       ],
@@ -9818,6 +9917,9 @@
       ],
       "Contacts": [
         "Kontakter"
+      ],
+      "Content search version to use": [
+        "Innholdssøkversjon som skal brukes"
       ],
       "Context page": [
         "Kontekstside"
@@ -9869,6 +9971,9 @@
       ],
       "Did not follow instructions": [
         "Fulgte ikke instruksjoner"
+      ],
+      "Document ID": [
+        "Dokument-ID"
       ],
       "Don't ask again": [
         "Ikke spør igjen"
@@ -10227,9 +10332,6 @@
       "Payment method": [
         "Betalingsmåte"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Personlige og jobbrelaterte e-poster, pluss viktige oppdateringer og varsler"
-      ],
       "PGP scheme": [
         "PGP-skjema"
       ],
@@ -10251,8 +10353,8 @@
       "Primary": [
         "Primær"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Primær – Personlige og jobbrelaterte e-poster, pluss viktige oppdateringer"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primær - Alt som trenger oppmerksomhet, pluss e-poster fra deaktiverte kategorier"
       ],
       "Promotions": [
         "Kampanjer"
@@ -10445,6 +10547,12 @@
       ],
       "Username": [
         "Brukernavn"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ],
       "Verification code": [
         "Verifiseringskode"
@@ -10941,8 +11049,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Legg til ${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Legg til ${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "Add-on with free trial": [
         "Tillegg med gratis prøveperiode"
@@ -10975,6 +11089,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } seter"
+      ],
+      "${ price } per seat": [
+        "${ price } per sete"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } sete",
@@ -11334,6 +11451,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -13112,6 +13232,9 @@
       ],
       "Anytown": [
         "By"
+      ],
+      "Ask anything…": [
+        "Spør om hva som helst…"
       ],
       "Company name": [
         "Foretaksnavn"
@@ -15181,6 +15304,10 @@
         "Flytt ${ selectionCount } melding",
         "Flytt ${ selectionCount } meldinger"
       ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Flyttet til ${ label }. Lignende melding vil bli kategorisert der i fremtiden.",
+        "Flyttet til ${ label }. Lignende meldinger vil bli kategorisert der i fremtiden."
+      ],
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
       ],
@@ -15968,8 +16095,8 @@
       "Make a secure connection your default": [
         "Gjør en sikker tilkobling til standard"
       ],
-      "Make Categories your own": [
-        "Gjør kategorier til dine egne"
+      "Make your inbox your own": [
+        "Tilpass innboksen slik du vil ha den"
       ],
       "Mark all messages as read": [
         "Merk alle meldinger som lest"
@@ -16042,6 +16169,9 @@
       ],
       "Move all messages to trash": [
         "Flytt alle meldingene til papirkurven"
+      ],
+      "Move emails": [
+        "Flytt e-poster"
       ],
       "Move to": [
         "Flytt til"
@@ -16160,9 +16290,6 @@
       "Payment verification": [
         "Betalingsbekreftelse"
       ],
-      "Personalize your Categories": [
-        "Personliggjør kategoriene dine"
-      ],
       "Phone numbers": [
         "Telefonnumre"
       ],
@@ -16219,6 +16346,9 @@
       ],
       "Referral": [
         "Verving"
+      ],
+      "Refine your Categories": [
+        "Finjuster kategoriene"
       ],
       "Remove forwarding address": [
         "Fjern videresendingsadresse"
@@ -16705,6 +16835,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Oppgrader til en støttet plan for å bruke administratorroller."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
       ]
