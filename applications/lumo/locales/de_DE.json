@@ -29,6 +29,10 @@
       "Are you sure you want to delete all conversations?": [
         "Bist du sicher, dass du alle Unterhaltungen löschen möchtest?"
       ],
+      "Are you sure you want to delete this ${ count } conversation?": [
+        "Bist du sicher, dass du diese ${ count } Unterhaltung löschen möchtest?",
+        "Bist du sicher, dass du diese ${ count } Unterhaltungen löschen möchtest?"
+      ],
       "Are you sure you want to delete this conversation?": [
         "Bist du sicher, dass du diese Unterhaltung löschen möchtest?"
       ],
@@ -2069,9 +2073,6 @@
       "Partial content": [
         "Teilinhalt"
       ],
-      "Pass model: \"auto\" to let ${ LUMO_SHORT_APP_NAME } route to the best available model for your task. Specify a model ID directly for predictable latency or capability targeting.": [
-        "Pass model \"auto\", damit ${ LUMO_SHORT_APP_NAME } zum besten für deine Aufgabe verfügbaren Modell weiterleitet. Gib eine Modell-ID direkt für vorhersagbare Latenz oder gezielte Funktionen an."
-      ],
       "Please share what you expected": [
         "Bitte teile deine Erwartungen"
       ],
@@ -2156,6 +2157,9 @@
       "Space usage: ": [
         "Speichernutzung: "
       ],
+      "Specify a model ID directly for predictable latency or capability targeting.": [
+        "Gib eine Modell-ID direkt an, um die Latenz vorhersagen oder bestimmte Leistungsmerkmale anvisieren zu können."
+      ],
       "Table view": [
         "Tabellenansicht"
       ],
@@ -2194,6 +2198,9 @@
       ],
       "This chat will be removed tomorrow unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Dieser Chat wird morgen entfernt, es sei denn, du upgradest auf ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
+      "This file was removed from project knowledge.": [
+        "Diese Datei wurde aus dem Projekt-Wissensbestand entfernt."
       ],
       "This folder is empty": [
         "Dieser Ordner ist leer."
@@ -3183,6 +3190,9 @@
       "Add more information to improve the response": [
         "Füge weitere Informationen hinzu, um die Antwort zu verbessern"
       ],
+      "Add to favorites": [
+        "Zu Favoriten hinzufügen"
+      ],
       "Analyse another export": [
         "Einen weiteren Export analysieren"
       ],
@@ -3203,6 +3213,9 @@
       ],
       "Choose project icon": [
         "Projektsymbol auswählen"
+      ],
+      "Clear search": [
+        "Suche entfernen"
       ],
       "Click to edit title": [
         "Titel bearbeiten"
@@ -3230,6 +3243,9 @@
       ],
       "Delete": [
         "Löschen"
+      ],
+      "Delete analysis": [
+        "Analyse löschen"
       ],
       "Delete chat": [
         "Chat löschen"
@@ -3266,6 +3282,9 @@
       ],
       "Expand": [
         "Vergrößern"
+      ],
+      "Favorite": [
+        "Favorit"
       ],
       "Go to all projects": [
         "Gehe zu allen Projekten"
@@ -3327,6 +3346,12 @@
       "Remove file": [
         "Datei entfernen"
       ],
+      "Remove from favorites": [
+        "Aus Favoriten entfernen"
+      ],
+      "Rename chat": [
+        "Chat umbenennen"
+      ],
       "Request a shorter, more focused response": [
         "Bitte eine kürzere, präzisere Antwort"
       ],
@@ -3342,11 +3367,17 @@
       "Select all": [
         "Alles auswählen"
       ],
+      "Select chats": [
+        "Chats auswählen"
+      ],
       "Select conversation": [
         "Unterhaltung auswählen"
       ],
       "Share": [
         "Teilen"
+      ],
+      "Share your score": [
+        "Deine Wertung teilen"
       ],
       "Show knowledge panel": [
         "Wissenspanel anzeigen"
@@ -3354,11 +3385,17 @@
       "Show sidebar": [
         "Seitenleiste anzeigen"
       ],
+      "Start a chat": [
+        "Chat beginnen"
+      ],
       "Think longer": [
         "Länger nachdenken"
       ],
       "Toggle selection": [
         "Auswahl umschalten"
+      ],
+      "Try ${ LUMO_SHORT_APP_NAME } for free": [
+        "Probiere ${ LUMO_SHORT_APP_NAME } kostenlos aus"
       ],
       "Try again": [
         "Erneut versuchen"
@@ -3463,6 +3500,9 @@
       "Expand": [
         "Einblenden"
       ],
+      "Filter & Sort": [
+        "Filtern & Sortieren"
+      ],
       "Images": [
         "Bilder"
       ],
@@ -3474,6 +3514,9 @@
       ],
       "Load more": [
         "Weitere laden"
+      ],
+      "More options": [
+        "Weitere Optionen"
       ],
       "New chat": [
         "Neuer Chat"
@@ -3489,6 +3532,9 @@
       ],
       "Search": [
         "Suche"
+      ],
+      "Search chats": [
+        "Chats durchsuchen"
       ],
       "See all": [
         "Alle anzeigen"
@@ -3606,6 +3652,12 @@
       "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
         "„${ file.name }“ wird noch indiziert. Der Inhalt wird beim Absenden geladen."
       ],
+      "${ LUMO_SHORT_APP_NAME } is a private AI. Your conversations are encrypted and never used to train AI models.": [
+        "${ LUMO_SHORT_APP_NAME } ist eine private KI. Deine Unterhaltungen sind verschlüsselt und werden niemals zum Trainieren von KI-Modellen verwendet."
+      ],
+      "${ LUMO_SHORT_APP_NAME } is end-to-end encrypted and never used for training, profiling, or advertising.": [
+        "${ LUMO_SHORT_APP_NAME } ist durchgehend verschlüsselt und wird niemals für Trainingszwecke, zur Profilerstellung oder für Werbezwecke verwendet."
+      ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "${ LUMO_SHORT_APP_NAME } benötigt lokalen Datenspeicher (IndexedDB), um deine Unterhaltungen auf diesem Gerät zu speichern, dieser ist hier jedoch nicht verfügbar."
       ],
@@ -3624,6 +3676,9 @@
       "${ project.fileCount } files": [
         "${ project.fileCount } Dateien"
       ],
+      "${ report.sensitiveCategories.length } sensitive categories": [
+        "${ report.sensitiveCategories.length } sensible Kategorien"
+      ],
       "ad value": [
         "Werbewert"
       ],
@@ -3638,6 +3693,12 @@
       ],
       "All messages and chat history": [
         "Alle Nachrichten und Chatverläufe"
+      ],
+      "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what coverage you’re offered and what you pay.": [
+        "Eine beiläufige Erwähnung von Stress, einer Diagnose oder eines Medikaments kann in Risikomodelle einfließen, die still und leise Einfluss darauf nehmen, welcher Versicherungsschutz dir angeboten wird und wie viel du bezahlst."
+      ],
+      "Anthropic will email you a download link when your export is ready.": [
+        "Anthropic sendet dir per E-Mail einen Download-Link, sobald dein Export fertig ist."
       ],
       "Any images generated in these conversations will also be deleted.": [
         "Alle in diesen Unterhaltungen erstellten Bilder werden ebenfalls gelöscht."
@@ -3654,14 +3715,47 @@
       "Auto-retrieved": [
         "Automatisch abgerufen"
       ],
+      "Automated systems increasingly weigh data profiles in decisions about loans, jobs, and housing with little transparency or recourse.": [
+        "Automatisierte Systeme berücksichtigen bei Entscheidungen über Kredite, Arbeitsplätze und Wohnraum zunehmend Datenprofile, wobei es kaum Transparenz oder Rechtsmittel gibt."
+      ],
+      "Avoid including names, addresses, financial details, or other identifying information when they are not essential.": [
+        "Vermeide es, Namen, Adressen, finanzielle Angaben oder andere identifizierende Informationen anzugeben, wenn diese nicht unbedingt erforderlich sind."
+      ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Navigiere zu dem ${ DRIVE_SHORT_APP_NAME }-Ordner, den du mit diesem Projekt verknüpfen möchtest, und klicke dann auf \"Diesen Ordner verknüpfen\"."
+      ],
+      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100 million people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
+        "Von ${ BRAND_NAME } entwickelt, der Datenschutzmarke, der über 100 Millionen Menschen vertrauen, und dem Team hinter ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } und ${ PASS_APP_NAME }."
+      ],
+      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100M people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
+        "Von ${ BRAND_NAME } entwickelt, der Datenschutzmarke, der über 100 Millionen Menschen vertrauen, und dem Team hinter ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } und ${ PASS_APP_NAME }."
       ],
       "Built-in ${ BRAND_NAME } agent": [
         "Integrierter ${ BRAND_NAME }-Agent"
       ],
+      "Chats from your projects will appear here.": [
+        "Hier werden die Chats aus deinen Projekten angezeigt."
+      ],
+      "Check what your AIs store about you and delete what you no longer need.": [
+        "Überprüfe, welche Daten deine KI-Systeme über dich speichern, und lösche diejenigen, die du nicht mehr benötigst."
+      ],
+      "Choose or drop your ChatGPT or Claude export (.zip or conversations.json). We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
+        "Deine ChatGPT- oder Claude-Exportdatei (.zip oder .json der Unterhaltung) auswählen oder hierhin ziehen. Wir analysieren deine neusten ${ PAPER_TRAIL_LIMITS.maxPrompts } Eingabeaufforderungen."
+      ],
+      "Click Settings → Data controls": [
+        "Klicken Einstellungen → Datensteuerung"
+      ],
+      "Click Settings → Privacy": [
+        "Klicke Einstellungen → Datenschutz"
+      ],
+      "Click your profile icon in the bottom-left corner": [
+        "Klicke auf dein Profil-Symbol in der unteren linken Ecke"
+      ],
       "Conversation encrypted": [
         "Unterhaltung verschlüsselt"
+      ],
+      "Conversational AI doesn’t just answer — it asks follow-up questions. Each time you add detail (“actually, I’m 34 and based in Berlin”), you hand over another verified fact.": [
+        "Eine dialogorientierte KI gibt nicht nur Antworten – sie stellt auch Folgefragen. Jedes Mal, wenn du weitere Details hinzufügst („Eigentlich bin ich 34 und wohne in Berlin“), lieferst du eine weitere verifizierte Tatsache."
       ],
       "Cookies or website data are blocked in your browser settings": [
         "In deinen Browsereinstellungen sind Cookies oder Website-Daten blockiert"
@@ -3678,6 +3772,9 @@
       "Current chat:": [
         "Aktueller Chat:"
       ],
+      "Data collected today can be breached, subpoenaed, or repurposed years from now. Once it’s out, it’s out.": [
+        "Heute gesammelte Daten können in Zukunft geknackt, rechtlich angefordert oder Jahre später zweckentfremdet werden. Einmal draußen, immer draußen."
+      ],
       "data points": [
         "Datenpunkte"
       ],
@@ -3687,8 +3784,17 @@
       "Drive files are not available for guest users": [
         "Drive-Dateien sind für Gastbenutzer nicht verfügbar"
       ],
+      "Every conversation leaves behind small clues. On their own, they don't say much. Together, they can reveal a surprisingly detailed picture of your life. This report shows what other AI providers can infer from your chats. But unlike them, ${ LUMO_SHORT_APP_NAME } doesn't see your data.": [
+        "Jede Unterhaltung hinterlässt kleine Hinweise. Für sich genommen sagen sie nicht viel aus. Zusammengenommen können sie jedoch ein überraschend detailliertes Bild deines Lebens zeichnen. Dieser Bericht zeigt, welche Rückschlüsse andere KI-Anbieter aus deinen Chats ziehen können. Im Gegensatz zu ihnen hat ${ LUMO_SHORT_APP_NAME } jedoch keinen Zugriff auf deine Daten."
+      ],
+      "Every conversation with the big AI providers leaves a digital paper trail. Your job. Your health. Your relationships. Even where you live. To see what Big Tech can piece together from your chats upload your AI data below.": [
+        "Jede Unterhaltung mit KI-Diensten hinterlässt Spuren. Dein Job. Deine Gesundheit. Deine Beziehungen. Dein Zuhause. Um herauszufinden, was die KI der großen Tech-Konzerne bereits über dich wissen, lade hier unten deine KI-Daten hoch und sieh selbst."
+      ],
       "Example prompts shown when a conversation begins.": [
         "Beispiel-Eingabeaufforderungen, die zu Beginn eines Gesprächs angezeigt werden."
+      ],
+      "Exposure by life area only, no personal details.": [
+        "Angaben nur nach Lebensbereichen, keine persönlichen Daten."
       ],
       "File \"${ file.name }\" is already in this project": [
         "Die Datei \"${ file.name }\" ist bereits in diesem Projekt"
@@ -3696,14 +3802,35 @@
       "File \"${ file.name }\" is already mentioned": [
         "Datei \"${ file.name }\" wird bereits erwähnt"
       ],
+      "File attached": [
+        "Datei angehängt"
+      ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Dateien, die in dieses Projekt hochgeladen werden, werden im verknüpften Drive-Ordner gespeichert."
+      ],
+      "Follow the prompts and confirm the export": [
+        "Folge den Anweisungen und bestätige den Export"
+      ],
+      "Follow the prompts to confirm the export": [
+        "Folge den Anweisungen, um den Export zu bestätigen"
       ],
       "From ${ DRIVE_APP_NAME }": [
         "Von ${ DRIVE_APP_NAME }"
       ],
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "Erhalte schnellere, genauere Antworten aus dem Web, inklusive Quellenangaben, damit du die Quelle überprüfen kannst."
+      ],
+      "If a profile suggests you can pay more or that you’re in a hurry, you may see a higher price than the next person.I": [
+        "Wenn ein Profil darauf hindeutet, dass du mehr bezahlen kannst oder es eilig hast, wird dir möglicherweise ein höherer Preis angezeigt als der nächsten Person."
+      ],
+      "Image": [
+        "Bild"
+      ],
+      "Inferences drawn only from your prompts — grouped by life area.": [
+        "Schlussfolgerungen, die ausschließlich auf der Grundlage deiner Eingaben gezogen wurden – nach Lebensbereichen gruppiert."
+      ],
+      "Inferred details are packaged and traded. A single profile can pass through dozens of companies you’ve never heard of.": [
+        "Die abgeleiteten Daten werden gebündelt und gehandelt. Ein einzelnes Profil kann Dutzende von Unternehmen durchlaufen, von denen du noch nie gehört hast."
       ],
       "Inferred political leanings power micro-targeted messaging designed to change how you feel — and how you vote — often without you noticing.": [
         "Abgeleitete politische Orientierungen bilden die Grundlage für personalisierte Botschaften, die darauf ausgelegt sind, deine Gefühle – und dein Abstimmungsverhalten – zu beeinflussen, oft ohne dass du es merkst."
@@ -3720,6 +3847,15 @@
       "Lockdown Mode is enabled on your device": [
         "Der Sperrmodus ist auf deinem Gerät aktiviert"
       ],
+      "Log in to your AI platform and request an export of your chat history, then download it to your device.": [
+        "Melde dich bei deiner KI-Plattform an und fordere einen Export deines Chat-Verlaufs an. Lade diesen anschließend auf dein Gerät herunter."
+      ],
+      "Look for Export data": [
+        "„Daten exportieren“ suchen"
+      ],
+      "No favorites yet. Star a chat to find it here quickly.": [
+        "Noch keine Favoriten. Setze ein Sternchen auf einen Chat, um ihn hier schnell wiederzufinden."
+      ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Auf dieser Karte befinden sich keine persönlichen Details – nur dein Preisgabe-Score nach Bereich. Je niedriger, desto weniger hast du preisgegeben."
       ],
@@ -3728,6 +3864,9 @@
       ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "Öffne auf dem iPhone oder iPad „Einstellungen“ → „Apps“ → „Safari“ und stelle sicher, dass „Alle Cookies blockieren“ deaktiviert ist. Lade die Seite anschließend neu."
+      ],
+      "OpenAI will email you a download link. It can take up to 24 hours.": [
+        "OpenAI wird dir per E-Mail einen Download-Link zusenden. Dies kann bis zu 24 Stunden dauern."
       ],
       "PASTED": [
         "Eingefügt"
@@ -3747,11 +3886,41 @@
       "red flags": [
         "Warnsignale"
       ],
+      "See the profile that an AI company can build from your conversations alone.": [
+        "Sieh dir an, welches Profil eine KI-Firma allein anhand deiner Unterhaltungen erstellen kann."
+      ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Sieh dir an, was die KI der Tech-Riesen über dich weiß. Erstellt mit ${ LUMO_SHORT_APP_NAME }."
       ],
+      "Sign in to your ChatGPT account at chatgpt.com": [
+        "Melde dich unter chatgpt.com bei deinem ChatGPT-Konto an"
+      ],
+      "Sign in to your Claude account at claude.ai": [
+        "Melde dich unter claude.ai bei deinem Claude-Konto an"
+      ],
+      "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
+        "Ein Teil dessen, was du eingefügt hast, könnte gegen arbeitsrechtliche, rechtliche oder datenschutzrechtliche Vorschriften verstoßen. Dies soll dir helfen, solche Verstöße zu erkennen, und dient nicht dazu, dich zu beurteilen."
+      ],
       "Something went wrong analysing this export. Please try again.": [
         "Beim Analysieren dieses Exports ist ein Fehler aufgetreten. Bitte versuche es erneut."
+      ],
+      "Star a chat to find it here quickly.": [
+        "Setze ein Sternchen auf einen Chat, um ihn hier schnell wiederzufinden."
+      ],
+      "Start a new chat to see it here.": [
+        "Starte einen neuen Chat, um ihn hier zu sehen."
+      ],
+      "The fuller the bar, the more of that area Big Tech could reconstruct. Lower is better.": [
+        "Je voller der Balken ist, desto mehr von diesem Bereich könnte die großen Tech-Konzerne rekonstruieren. Je niedriger, desto besser."
+      ],
+      "The more an attacker knows about you, the more believable the phishing message. Personalized scams are far harder to spot.": [
+        "Je mehr ein Angreifer über dich weiß, desto glaubwürdiger wirkt die Phishing-Nachricht. Personalisierte Betrugsversuche sind weitaus schwerer zu erkennen."
+      ],
+      "These are the most sensitive categories Big Tech AI could infer about you from your chats — even when you never typed them out explicitly.": [
+        "Dies sind die sensibelsten Kategorien, die die KI der großen Tech-Konzerne aus deinen Chats ableiten könnte – selbst wenn du diese nie ausdrücklich eingetippt hast."
+      ],
+      "This is why it matters: once inferred, these details can power targeting, profiling, and decisions about you — often without transparency or consent.": [
+        "Deshalb ist das von Bedeutung: Sobald diese Details abgeleitet wurden, können sie für Targeting, Profiling und Entscheidungen über dich herangezogen werden – oft ohne Transparenz oder Einwilligung."
       ],
       "This message is empty. Sorry about that.": [
         "Diese Nachricht ist leider leer."
@@ -3771,8 +3940,14 @@
       "Try a different search term.": [
         "Versuche einen anderen Suchbegriff."
       ],
+      "Turn off chat history and model training where possible.": [
+        "Deaktiviere nach Möglichkeit den Chat-Verlauf und das Modelltraining."
+      ],
       "Type @filename to ask questions about a specific file": [
         "Gib @Dateiname ein, um Fragen zu einer bestimmten Datei zu stellen"
+      ],
+      "Under your data, click Export data": [
+        "Klicke unter deinen Daten auf \"Daten exportieren\""
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus, um unbegrenzt benutzerdefinierte ${ LUMO_SHORT_APP_NAME }s zu erstellen, fortschrittliche KI-Modelle freizuschalten und mehr."
@@ -3786,17 +3961,29 @@
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "Die Verwendung von ${ DRIVE_APP_NAME } ermöglicht ${ LUMO_SHORT_APP_NAME }, mit größeren Dateien zu arbeiten."
       ],
+      "We extract your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts to keep processing fast. Nothing is stored on our servers. You can optionally save your report on this device.": [
+        "Wir extrahieren deine ${ PAPER_TRAIL_LIMITS.maxPrompts } neuesten Eingabeaufforderungen, um die Verarbeitung schnell zu halten. Auf unseren Servern wird nichts gespeichert. Du kannst deinen Bericht optional auf diesem Gerät speichern."
+      ],
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Wir speichern deine Karte, damit du sie an den Post anhängen kannst – soziale Netzwerke können das Bild nicht für dich hinzufügen."
       ],
       "You're using private browsing": [
         "Du benutzt privates Surfen"
       ],
+      "Your export is encrypted in transit and processed without being stored on ${ LUMO_SHORT_APP_NAME }'s servers.": [
+        "Dein Export wird während der Übertragung verschlüsselt und verarbeitet, ohne auf den Servern von ${ LUMO_SHORT_APP_NAME } gespeichert zu werden."
+      ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Deine Dateien sind groß. ${ LUMO_SHORT_APP_NAME } kann möglicherweise nicht alle Informationen verarbeiten."
       ],
       "Your information is zero-access encrypted": [
         "Deine Daten sind durch Zero-Access-Verschlüsselung geschützt"
+      ],
+      "Your report is being generated privately.": [
+        "Dein Bericht wird derzeit im Hintergrund erzeugt."
+      ],
+      "Your report is stored unencrypted in this browser only. It never leaves your device and is not sent to ${ LUMO_SHORT_APP_NAME }'s servers.": [
+        "Dein Bericht wird ausschließlich in diesem Browser unverschlüsselt gespeichert. Er verlässt dein Gerät zu keinem Zeitpunkt und wird nicht an die Server von ${ LUMO_SHORT_APP_NAME } gesendet."
       ]
     },
     "collider_2025:Inspiration suggestion prompt": {
@@ -3871,6 +4058,9 @@
       ]
     },
     "collider_2025:Label": {
+      "${ selectedCount } selected": [
+        "${ selectedCount } ausgewählt"
+      ],
       "16:9": [
         "16:9"
       ],
@@ -3961,14 +4151,23 @@
       "Minimal": [
         "Minimal"
       ],
+      "My privacy type": [
+        "Meine Datenschutzpräferenz"
+      ],
       "Name": [
         "Name"
+      ],
+      "Personalized pricing": [
+        "Individuelle Preisgestaltung"
       ],
       "Politics": [
         "Politik"
       ],
       "Project Instructions (optional)": [
         "Projektanweisungen (optional)"
+      ],
+      "Save analysis on this device to view it later": [
+        "Analyse auf diesem Gerät speichern, um sie später anzusehen"
       ],
       "Scams": [
         "Betrugsversuche"
@@ -3982,8 +4181,14 @@
       "Thick": [
         "Dick"
       ],
+      "Tips": [
+        "Hinweise"
+      ],
       "Untitled chat": [
         "Unbenannter Chat"
+      ],
+      "Untitled project": [
+        "Unbenanntes Projekt"
       ]
     },
     "collider_2025:Notification": {
@@ -4003,6 +4208,9 @@
       ],
       "Favorited": [
         "Favorisiert"
+      ],
+      "From projects": [
+        "Aus Projekten"
       ],
       "Last updated": [
         "Zuletzt aktualisiert"
@@ -4047,6 +4255,9 @@
       ],
       "Holiday planner": [
         "Urlaubsplaner"
+      ],
+      "Search chats": [
+        "Chats durchsuchen"
       ],
       "Search custom ${ LUMO_SHORT_APP_NAME }": [
         "Benutzerdefinierte ${ LUMO_SHORT_APP_NAME } suchen"
@@ -4429,6 +4640,12 @@
       ]
     },
     "collider_2025:Time": {
+      "${ ageHours }h ago": [
+        "Vor ${ ageHours } Std."
+      ],
+      "${ ageMinutes }m ago": [
+        "Vor ${ ageMinutes } Min."
+      ],
       "Just now": [
         "Gerade eben"
       ]
@@ -4443,14 +4660,26 @@
       "Better web search": [
         "Bessere Web-Suche"
       ],
+      "Building your AI Paper Trail": [
+        "Deine KI-Dokumentationskette wird erstellt"
+      ],
       "Built by the team that knows privacy": [
         "Entwickelt vom Team, das Datenschutz versteht"
       ],
       "Chat knowledge": [
         "Chat-Wissen"
       ],
+      "ChatGPT import": [
+        "ChatGPT-Import"
+      ],
       "Chats": [
         "Chats"
+      ],
+      "Choose privacy-first AI": [
+        "Entscheiden dich für eine KI, bei der Datenschutz an erster Stelle steht"
+      ],
+      "Claude import": [
+        "Claude-Import"
       ],
       "Create a custom ${ LUMO_SHORT_APP_NAME }": [
         "Benutzerdefinierte ${ LUMO_SHORT_APP_NAME } erstellen"
@@ -4466,6 +4695,9 @@
       ],
       "Delete project?": [
         "Projekt löschen?"
+      ],
+      "Delete your data regularly": [
+        "Lösche deine Daten regelmäßig"
       ],
       "Detail makes fraud convincing": [
         "Details machen Betrug überzeugend"
@@ -4497,6 +4729,9 @@
       "Filters": [
         "Filter"
       ],
+      "Generate your AI Paper Trail": [
+        "Deine KI-Dokumentationskette erzeugen"
+      ],
       "Get started by creating a new project": [
         "Beginne damit, ein neues Projekt zu erstellen"
       ],
@@ -4515,6 +4750,9 @@
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Wie hält ${ LUMO_SHORT_APP_NAME } unsere Unterhaltungen vertraulich?"
       ],
+      "How to export your data": [
+        "So exportierst du deine Daten"
+      ],
       "Image generation and editing": [
         "Bilder generieren und bearbeiten"
       ],
@@ -4532,6 +4770,9 @@
       ],
       "Linked Drive Folder": [
         "Verknüpfte Drive-Ordner"
+      ],
+      "Meet your AI Paper Trail": [
+        "Lerne deine KI-Dokumentationskette kennen"
       ],
       "Memory": [
         "Erinnerung"
@@ -4557,6 +4798,18 @@
       "No chat history yet. Let's start chatting!": [
         "Noch kein Chatverlauf vorhanden. Lass uns chatten!"
       ],
+      "No chats yet": [
+        "Noch keine Chats"
+      ],
+      "No favorites yet": [
+        "Noch keine Favoriten"
+      ],
+      "No matching chats": [
+        "Keine übereinstimmenden Chats"
+      ],
+      "No project chats yet": [
+        "Noch keine Projekt-Chats"
+      ],
       "Nothing here yet": [
         "Hier gibt es noch nichts"
       ],
@@ -4572,11 +4825,29 @@
       "Project knowledge": [
         "Projektwissen"
       ],
+      "Recent": [
+        "Kürzlich"
+      ],
       "Remove all files?": [
         "Alle Dateien entfernen?"
       ],
+      "Report at a glance": [
+        "Bericht auf einen Blick"
+      ],
+      "Review privacy settings": [
+        "Datenschutzeinstellungen überprüfen"
+      ],
+      "See what Big Tech AI already knows about you": [
+        "Finden heraus, was die KI der großen Tech-Konzerne bereits über dich weiß"
+      ],
       "See your AI paper trail": [
         "Sieh dir deinen KI-Aktivitätsverlauf an"
+      ],
+      "Share only what is needed": [
+        "Teile nur, was notwendig ist"
+      ],
+      "Share your score": [
+        "Deine Wertung teilen"
       ],
       "Sign in to build your gallery": [
         "Anmelden, um deine Galerie zu erstellen"
@@ -4605,6 +4876,12 @@
       "Two models, two modes": [
         "Zwei Modelle, zwei Modi"
       ],
+      "Upload it securely": [
+        "Sicher hochladen"
+      ],
+      "Use AI on your terms": [
+        "KI zu deinen Bedingungen nutzen"
+      ],
       "We couldn't read your paper trail": [
         "Wir konnten deinen Aktivitätsverlauf nicht lesen"
       ],
@@ -4614,11 +4891,26 @@
       "What this profile exposes": [
         "Was dieses Profil offenbart"
       ],
+      "What we identified": [
+        "Was wir festgestellt haben"
+      ],
+      "You can’t un-share it": [
+        "Man kann das Teilen nicht rückgängig machen"
+      ],
       "You might be shown a higher price": [
         "Dir wird möglicherweise ein höherer Preis angezeigt"
       ],
+      "You saw the profile? Now protect the person behind it.": [
+        "Hast du das Profil gesehen? Dann schütze jetzt die Person dahinter."
+      ],
+      "Your conversations should belong to you. With ${ LUMO_SHORT_APP_NAME }, they do.": [
+        "Deine Unterhaltungen sollten dir gehören. Mit ${ LUMO_SHORT_APP_NAME } ist das auch der Fall."
+      ],
       "Your image gallery is empty": [
         "Deine Bildergalerie ist leer"
+      ],
+      "Your recent files": [
+        "Deine aktuellsten Dateien"
       ],
       "Your shareable card": [
         "Deine teilbare Karte"
@@ -7143,6 +7435,9 @@
       "Close preview": [
         "Vorschau schließen"
       ],
+      "Compaction": [
+        "Verdichtung"
+      ],
       "Composer limit banner preview": [
         "Limit-Banner-Vorschau für das Verfassen-Fenster"
       ],
@@ -7151,6 +7446,9 @@
       ],
       "Create Test Chats": [
         "Test-Chats erstellen"
+      ],
+      "Current conversation": [
+        "Aktuelle Unterhaltung"
       ],
       "Debug View": [
         "Debug-Ansicht"
@@ -7215,6 +7513,9 @@
       "No": [
         "Nein"
       ],
+      "None open": [
+        "Keine geöffnet"
+      ],
       "Notifications": [
         "Benachrichtigungen"
       ],
@@ -7247,6 +7548,9 @@
       ],
       "Resource limit notifications": [
         "Ressourcenlimit-Benachrichtigungen"
+      ],
+      "Runs the compaction engine over the displayed branch and inserts a compaction boundary, without generating a reply. \"Force summarization\" always runs the LLM summary step even when cheaper strategies already free up enough space.": [
+        "Führt die Verdichtungs-Engine für den angezeigten Zweig aus und fügt eine Verdichtungsgrenze ein, ohne eine Antwort zu erzeugen. „Zusammenfassung erzwingen“ führt den LLM-Zusammenfassungsschritt immer aus, auch wenn kostengünstigere Strategien bereits genügend Speicherplatz freigeben."
       ],
       "Search": [
         "Suchen"
@@ -7304,6 +7608,12 @@
       ],
       "Trigger assets limit": [
         "Asset-Limit auslösen"
+      ],
+      "Trigger compaction": [
+        "Verdichtungen auslösen"
+      ],
+      "Trigger compaction (force summarization)": [
+        "Verdichtungen auslösen (Zusammenfassung erzwingen)"
       ],
       "Trigger conversations limit": [
         "Limit für Unterhaltungen auslösen"
@@ -8411,6 +8721,9 @@
       ],
       "Remove from favorites": [
         "Von Favoriten entfernen"
+      ],
+      "Rename": [
+        "Umbenennen"
       ]
     },
     "pass_signup_2023: Info": {
@@ -9834,6 +10147,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Zu einem unterstützten Abonnement upgraden, um Administratorrollen nutzen zu können."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."
       ]

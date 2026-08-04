@@ -2073,9 +2073,6 @@
       "Partial content": [
         "İçeriği bir bölümü"
       ],
-      "Pass model: \"auto\" to let ${ LUMO_SHORT_APP_NAME } route to the best available model for your task. Specify a model ID directly for predictable latency or capability targeting.": [
-        "Modeli \"auto\" olarak ayarlarsanız ${ LUMO_SHORT_APP_NAME } göreviniz için en uygun modeli seçebilir. Öngörülebilir gecikme süresi veya belirli özellikler için doğrudan bir model kimliği belirtin."
-      ],
       "Please share what you expected": [
         "Lütfen ne beklediğinizi paylaşın"
       ],
@@ -2160,6 +2157,9 @@
       "Space usage: ": [
         "Kullanılan alan: "
       ],
+      "Specify a model ID directly for predictable latency or capability targeting.": [
+        "Öngörülebilir gecikme süresi veya kapasite hedeflemesi için doğrudan bir model kimliği belirtin."
+      ],
       "Table view": [
         "Tablo görünümü"
       ],
@@ -2198,6 +2198,9 @@
       ],
       "This chat will be removed tomorrow unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltmezseniz bu sohbet yarın silinecek."
+      ],
+      "This file was removed from project knowledge.": [
+        "Bu dosya proje bilgilerinden kaldırıldı."
       ],
       "This folder is empty": [
         "Bu klasör boş"
@@ -10144,6 +10147,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Yönetici rollerini kullanabilmek için bu rolleri destekleyen bir tarifeye yükseltin."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
       ]
