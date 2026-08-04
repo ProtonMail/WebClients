@@ -633,8 +633,14 @@
       "Upgrade your plan to use waiting room in your next meeting.": [
         "Actualice su plan para usar la sala de espera en su próxima reunión."
       ],
+      "Upload another image": [
+        "Cargar otra imagen"
+      ],
       "Upload another video": [
         "Cargar otro video"
+      ],
+      "Upload image": [
+        "Cargar imagen"
       ],
       "Upload video": [
         "Cargar video"
@@ -644,6 +650,12 @@
       ],
       "Use camera": [
         "Usar cámara"
+      ],
+      "Use color": [
+        "Usar color"
+      ],
+      "Use image": [
+        "Usar imagen"
       ],
       "Use microphone": [
         "Usar micrófono"
@@ -1818,6 +1830,12 @@
       "Event deleted": [
         "Evento eliminado"
       ],
+      "Failed to admit the participant. Please try again.": [
+        "Error al admitir al participante. Intente de nuevo."
+      ],
+      "Failed to admit the participants. Please try again.": [
+        "Error al admitir a los participantes. Intente de nuevo."
+      ],
       "Failed to assign host": [
         "Error al asignar anfitrión"
       ],
@@ -1838,6 +1856,9 @@
       ],
       "Failed to delete room": [
         "Error al eliminar la sala"
+      ],
+      "Failed to deny the participant. Please try again.": [
+        "Error al denegar al participante. Intente de nuevo."
       ],
       "Failed to download recording": [
         "Error al descargar grabaciones"
@@ -1877,6 +1898,9 @@
       ],
       "Failed to unlock meeting": [
         "Error al desbloquear la reunión"
+      ],
+      "Failed to update waiting room setting. Please try again.": [
+        "Error al actualizar los ajustes de la sala de espera. Intente de nuevo."
       ],
       "Incorrect username": [
         "Nombre de usuario incorrecto"
@@ -2171,6 +2195,10 @@
         "${ totalParticipantCount } participante",
         "${ totalParticipantCount } participantes"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "${ waitingRoomParticipantsCount } persona está esperando",
+        "${ waitingRoomParticipantsCount } personas están esperando"
+      ],
       "(You)": [
         "(Usted)"
       ],
@@ -2297,6 +2325,9 @@
       "Edit email address": [
         "Editar dirección de correo"
       ],
+      "Enable the camera to preview the custom background.": [
+        "Active la cámara para previsualizar el fondo personalizado."
+      ],
       "End Meeting for everyone?": [
         "¿Finalizar reunión para todos?"
       ],
@@ -2333,8 +2364,14 @@
       "Everyone has been disconnected from the call.": [
         "Todos se han desconectado de la llamada."
       ],
+      "Expires in ${ formattedCountdown }": [
+        "Expira en ${ formattedCountdown }"
+      ],
       "Failed to apply background blur": [
         "Error al aplicar el fondo difuminado"
+      ],
+      "Failed to apply custom background": [
+        "Error al aplicar el fondo personalizado"
       ],
       "Failed to update meeting name": [
         "Error al actualizar el nombre de la reunión"
@@ -2384,8 +2421,14 @@
       "Internet connection lost": [
         "Sin conexión a Internet"
       ],
+      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
+        "Solicitud de unión expirada. El anfitrión no le admitió a tiempo. Envíe otra solicitud para unirse."
+      ],
       "Joined ${ roomNameLabel }": [
         "Se unió a ${ roomNameLabel }"
+      ],
+      "Joined at ${ receivedTime }": [
+        "Se unió a las ${ receivedTime }"
       ],
       "Learn more": [
         "Más información"
@@ -2413,6 +2456,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Cargando el calendario, espere. Se le redirigirá a nuestra plataforma de programación Calendly en una pestaña nueva."
+      ],
+      "Loading meeting details...": [
+        "Cargando los detalles de la reunión..."
       ],
       "Loading meetings...": [
         "Cargando reuniones..."
@@ -2624,6 +2670,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
+      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
+        "Ejecute su cámara en directo mediante el procesador de fondo personalizado. Elija un color liso o cargue una imagen para usarla como fondo."
+      ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Programe su próxima reunión. Cree una cuenta para programar reuniones con su calendario."
       ],
@@ -2759,11 +2808,20 @@
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
         "Mejore su plan para eliminar el límite de 1 hora y omitir la cuenta atrás. Disfrute de reuniones de hasta 24 horas."
       ],
+      "Upload an image to preview it as the background.": [
+        "Cargue una imagen para previsualizarla como el fondo."
+      ],
       "Video effects": [
         "Efectos de video"
       ],
       "View ": [
         "Vista "
+      ],
+      "Waiting for the host to admit you. The host has been notified that you're waiting.": [
+        "Esperando al anfitrión para admitirle. Se notificó al anfitrión de que usted está esperando."
+      ],
+      "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
+        "Esperando al anfitrión para comenzar. Se unirá cuando el anfitrión comience la reunión y le admita."
       ],
       "Warning": [
         "Advertencia"
@@ -2809,6 +2867,9 @@
       ],
       "You were removed from the meeting": [
         "Se le retiró de la reunión"
+      ],
+      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
+        "No se le admitió en esta reunión. Puede intentar unirse de nuevo si cree que se trató de un error."
       ],
       "You will leave the meeting. Others will continue.": [
         "Saldrá de la reunión. Los demás continuarán."
@@ -2879,6 +2940,9 @@
       "Authenticator app": [
         "Aplicación de autenticación"
       ],
+      "Background color": [
+        "Color de fondo"
+      ],
       "Blurred (next)": [
         "Difuminado (siguiente)"
       ],
@@ -2893,6 +2957,12 @@
       ],
       "Category": [
         "Categoría"
+      ],
+      "Client": [
+        "Cliente"
+      ],
+      "Client version": [
+        "Versión del cliente"
       ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
@@ -2971,6 +3041,9 @@
       ],
       "Identity": [
         "Identidad"
+      ],
+      "Image": [
+        "Imagen"
       ],
       "Include application logs in bug report": [
         "Incluir registros de la aplicación en el informe de errores"
@@ -3065,6 +3138,9 @@
       "Selected Speaker": [
         "Altavoz seleccionado"
       ],
+      "Solid color": [
+        "Color sólido"
+      ],
       "Subscribed": [
         "Suscrito"
       ],
@@ -3074,11 +3150,17 @@
       "Track SID": [
         "Seguimiento de SID"
       ],
+      "Uploaded image": [
+        "Imagen cargada"
+      ],
       "Use live camera feed": [
         "Usar transmisión de la cámara en directo"
       ],
       "Use simple selfie segmentation": [
         "Usar una segmentación sencilla para selfies"
+      ],
+      "Use waiting room with a paid plan": [
+        "Usar sala de espera con un plan de pago"
       ],
       "Verification code": [
         "Código de verificación"
@@ -3469,6 +3551,9 @@
       "Create new room": [
         "Crear una sala"
       ],
+      "Custom background tester": [
+        "Probador de fondo personalizado"
+      ],
       "Date": [
         "Fecha"
       ],
@@ -3516,6 +3601,9 @@
       ],
       "Join meeting": [
         "Unirse a la reunión"
+      ],
+      "Join request expired": [
+        "Solicitud de unión expirada"
       ],
       "Joined at epoch ${ log.epoch }": [
         "Se unió en epoch ${ log.epoch }"
@@ -3629,6 +3717,9 @@
       "Thank you!": [
         "¡Gracias!"
       ],
+      "The host didn't admit you": [
+        "El anfitrión no le admitió"
+      ],
       "Time": [
         "Hora"
       ],
@@ -3640,6 +3731,9 @@
       ],
       "Video": [
         "Video"
+      ],
+      "Waiting for the host": [
+        "Esperando al anfitrión"
       ],
       "Waiting room": [
         "Sala de espera"
