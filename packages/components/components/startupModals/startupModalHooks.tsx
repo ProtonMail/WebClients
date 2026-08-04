@@ -3,8 +3,10 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import NetPromoterScoreModal from '@proton/components/containers/netPromoterScore/NetPromoterScoreModal';
 import { useNPSEligiblity } from '@proton/components/containers/netPromoterScore/hooks/useNPSEligibility';
+import ScimGroupsOnboardingModal from '@proton/components/containers/organization/ScimGroupsOnboardingModal';
 import LightLabellingFeatureModal from '@proton/components/containers/organization/logoUpload/LightLabellingFeatureModal';
 import { useShowLightLabellingFeatureModal } from '@proton/components/containers/organization/logoUpload/useShowLightLabellingFeatureModal';
+import { useShowScimGroupsOnboardingModal } from '@proton/components/containers/organization/useShowScimGroupsOnboardingModal';
 import CancellationReminderModal from '@proton/components/containers/payments/subscription/cancellationReminder/CancellationReminderModal';
 import type { ReminderFlag } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { shouldOpenReminderModal } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
@@ -25,6 +27,18 @@ export const useLightLabellingFeatureModal: () => StartupModal = () => {
         showModal: showLightLabellingFeatureModal,
         activateModal: () => setModal(true),
         component: renderModal ? <LightLabellingFeatureModal {...modal} /> : null,
+    };
+};
+
+export const useScimGroupsOnboardingModal: () => StartupModal = () => {
+    const [modal, setModal, renderModal] = useModalState();
+
+    const showScimGroupsOnboardingModal = useShowScimGroupsOnboardingModal();
+
+    return {
+        showModal: showScimGroupsOnboardingModal,
+        activateModal: () => setModal(true),
+        component: renderModal ? <ScimGroupsOnboardingModal {...modal} /> : null,
     };
 };
 
