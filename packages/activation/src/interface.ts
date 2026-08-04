@@ -132,6 +132,10 @@ export enum IMPORT_ERROR {
     TOO_LARGE = 2024,
 }
 
+export enum BYOE_ADDRESS_ERROR {
+    ADDRESS_ALREADY_EXISTS = 2011,
+}
+
 interface ImportedFolder {
     SourceFolder: string;
     DestinationFolder?: MailImportDestinationFolder;

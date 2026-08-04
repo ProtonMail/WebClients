@@ -5,7 +5,7 @@ import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import useSetupGmailBYOEAddress from '@proton/activation/src/hooks/useSetupGmailBYOEAddress';
 import type { ImportToken } from '@proton/activation/src/interface';
-import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
+import { BYOE_ADDRESS_ERROR, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 
 jest.mock('@proton/activation/src/logic/StoreProvider', () => ({
@@ -40,9 +40,10 @@ jest.mock('@proton/components/hooks/useNotifications', () => ({
     default: () => ({ createNotification: mockCreateNotification }),
 }));
 
+const mockErrorHandler = jest.fn();
 jest.mock('@proton/components/hooks/useErrorHandler', () => ({
     __esModule: true,
-    default: () => jest.fn(),
+    default: () => mockErrorHandler,
 }));
 
 jest.mock('@proton/unleash/useFlag', () => ({
@@ -185,6 +186,61 @@ describe('useSetupGmailBYOEAddress', () => {
             expect(mockDispatch).not.toHaveBeenCalled();
             expect(mockApi).not.toHaveBeenCalled();
             expect(mockShowSuccessModal).not.toHaveBeenCalled();
+        });
+
+        it('should show the address linked to another account modal when the api fails with error code 2011', async () => {
+            mockApi.mockRejectedValue({
+                data: { Code: BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS, Error: 'Address already exists' },
+            });
+            const mockShowAddressLinkedToAnotherAccountModal = jest.fn();
+            const mockShowSuccessModal = jest.fn();
+
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: mockShowSuccessModal,
+                    showAddressLinkedToAnotherAccountModal: mockShowAddressLinkedToAnotherAccountModal,
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                })
+            );
+
+            await act(async () => {
+                await result.current.handleBYOEWithImportCallback(false, true, mockToken);
+            });
+
+            expect(mockApi).toHaveBeenCalled();
+            expect(mockShowAddressLinkedToAnotherAccountModal).toHaveBeenCalled();
+            expect(mockErrorHandler).not.toHaveBeenCalled();
+            expect(mockShowSuccessModal).not.toHaveBeenCalled();
+            expect(mockDispatch).not.toHaveBeenCalled();
+        });
+
+        it('if API fails with an error other than 2011 then it should be handled as normal', async () => {
+            mockApi.mockRejectedValue({
+                data: {
+                    Code: 2000,
+                    Error: 'Source is required',
+                },
+            });
+            const mockShowAddressLinkedToAnotherAccountModal = jest.fn();
+            const mockShowSuccessModal = jest.fn();
+
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: mockShowSuccessModal,
+                    showAddressLinkedToAnotherAccountModal: mockShowAddressLinkedToAnotherAccountModal,
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                })
+            );
+
+            await act(async () => {
+                await result.current.handleBYOEWithImportCallback(false, true, mockToken);
+            });
+
+            expect(mockApi).toHaveBeenCalled();
+            expect(mockErrorHandler).toHaveBeenCalled();
+            expect(mockShowAddressLinkedToAnotherAccountModal).not.toHaveBeenCalled();
+            expect(mockShowSuccessModal).not.toHaveBeenCalled();
+            expect(mockDispatch).not.toHaveBeenCalled();
         });
 
         it('should convert address, call import API and show success modal when address exists and is not BYOE', async () => {
