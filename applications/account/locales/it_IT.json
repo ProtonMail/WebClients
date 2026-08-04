@@ -360,9 +360,6 @@
       "Connected": [
         "Connesso"
       ],
-      "Contact sales": [
-        "Contatta l'ufficio vendite"
-      ],
       "Contact support": [
         "Contatta l'assistenza"
       ],
@@ -503,9 +500,6 @@
       ],
       "Delete account": [
         "Elimina account"
-      ],
-      "Delete and confirm": [
-        "Elimina e conferma"
       ],
       "Delete device profile": [
         "Elimina profilo dispositivo"
@@ -1854,6 +1848,9 @@
       "Verify password": [
         "Verifica password"
       ],
+      "Verify recovery phrase": [
+        "Verifica la frase di recupero"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifica il dominio ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1974,6 +1971,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licenze ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utente)",
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utenti)"
       ],
       "${ price } per dedicated server": [
         "${ price } per server dedicato"
@@ -2569,6 +2570,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteggi e pianifica le tue email con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }, alias hide-my-email illimitati e altro ancora.",
+        "Proteggi e pianifica le tue email con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }, alias hide-my-email illimitati e altro ancora."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora.",
@@ -7746,6 +7751,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Questo messaggio potrebbe contenere alcuni link URL che non possono essere aperti correttamente dal browser attuale."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Questa frase non consente il recupero dell'account. Puoi generarne una nuova per assicurarti che il tuo account possa essere recuperato in futuro."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Per creare degli account utente non privati e accedere ai loro account, dovrai ripristinare i tuoi privilegi di amministratore."
       ],
@@ -9359,6 +9367,9 @@
       "Contact us": [
         "Contattaci"
       ],
+      "Downloads": [
+        "Download"
+      ],
       "Enjoying ${ planName }?": [
         "Ti piace ${ planName }?"
       ],
@@ -9850,9 +9861,6 @@
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% di sconto"
-      ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } non conserverà più le versioni precedenti dei tuoi file."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } non è valido"
@@ -10607,6 +10615,9 @@
       "Change your password": [
         "Cambia la password"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Verifica se la tua frase di recupero può essere utilizzata per recuperare completamente il tuo account."
+      ],
       "Check your network and try again.": [
         "Controlla la tua rete e riprova."
       ],
@@ -11203,9 +11214,6 @@
       ],
       "for ${ price }": [
         "per ${ price }"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Per consultare la cronologia delle versioni degli ultimi 10 anni, si prega di contattare il nostro team commerciale."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Per accedere in qualsiasi momento alla posta elettronica e ottimizzare l'esperienza mobile, scarica la nostra app ${ androidAppLink } o ${ iosAppLink }."
@@ -12243,6 +12251,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "La frase di recupero non è associata ad alcuna chiave obsoleta."
       ],
+      "Recovery phrase verified": [
+        "Frase di recupero verificata"
+      ],
       "Reddit": [
         "Reddit"
       ],
@@ -12374,9 +12385,6 @@
       ],
       "Set password": [
         "Imposta la password"
-      ],
-      "Set the name, status, and assigned seats": [
-        "Imposta il nome, lo stato e le licenze assegnate"
       ],
       "Set up your organization": [
         "Configura la tua organizzazione"
@@ -12775,12 +12783,6 @@
       "This will allow the TV to access your ${ BRAND_NAME } account.": [
         "Questo consentirà alla TV di accedere al tuo account ${ BRAND_NAME }."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Questa operazione eliminerà tutte le versioni precedenti dei tuoi file più vecchie di ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "In questo modo verranno eliminate tutte le versioni precedenti dei tuoi file."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Ciò negherà l'accesso a **${ email }**. Sei sicuro di voler continuare?"
       ],
@@ -13018,9 +13020,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Effettua l'upgrade per mantenere i tuoi ${ planTitle } vantaggi."
       ],
-      "Upgrade to unlock": [
-        "Esegui l'aggiornamento per sbloccare"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Effettua l'upgrade per sbloccare ${ monitorLink }."
       ],
@@ -13131,9 +13130,6 @@
       ],
       "Version ${ version }": [
         "Versione ${ version }"
-      ],
-      "Version history": [
-        "Cronologia delle versioni"
       ],
       "Version number successfully copied to clipboard": [
         "Numero di versione copiato con successo negli appunti"
@@ -14926,9 +14922,6 @@
       "Don't ask again": [
         "Non chiederlo più"
       ],
-      "Don't keep versions": [
-        "Non conservare le versioni"
-      ],
       "Don't show this again": [
         "Non mostrare più"
       ],
@@ -15502,9 +15495,6 @@
       "Pending": [
         "In attesa"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Email personali e di lavoro, e in più importanti aggiornamenti e notifiche"
-      ],
       "Phone number": [
         "Numero di telefono"
       ],
@@ -15546,9 +15536,6 @@
       ],
       "Primary": [
         "Primario"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Principale - Email personali e di lavoro, oltre ad aggiornamenti importanti"
       ],
       "Priority support": [
         "Supporto prioritario"
@@ -22230,6 +22217,14 @@
         "Richiesta di reimpostazione della password"
       ]
     },
+    "Setting": {
+      "Get updates about comments via email": [
+        "Ricevi aggiornamenti sui commenti via email"
+      ],
+      "Include document name in email notifications": [
+        "Includi il nome del documento nelle notifiche email"
+      ]
+    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Mantieni la tua posta in arrivo organizzata con cartelle ed etichette. ${ learnMoreLink }"
@@ -23683,6 +23678,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } server dedicato",
         "${ ipAddresses } server dedicati"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } per ${ maxAi } utente",
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } per ${ maxAi } utenti"
       ],
       "${ n } calendar per user": [
         "${ n } calendario per utente",
@@ -25415,9 +25414,6 @@
       "Delete user?": [
         "Vuoi eliminare l'utente?"
       ],
-      "Delete version history?": [
-        "Eliminare la cronologia delle versioni?"
-      ],
       "Deny access to user?": [
         "Negare l'accesso all'utente?"
       ],
@@ -26647,6 +26643,9 @@
       ],
       "Verify your password": [
         "Verifica la tua password"
+      ],
+      "Verify your phrase": [
+        "Verifica la tua frase"
       ],
       "Verifying your card...": [
         "Verifica della carta..."

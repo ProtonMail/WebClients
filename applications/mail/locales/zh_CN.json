@@ -309,9 +309,6 @@
       "Continue to ${ planOrAppName }": [
         "继续使用 ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "继续使用分类"
-      ],
       "Continue with Free": [
         "注册免费账户"
       ],
@@ -1041,6 +1038,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "打开 ${ CALENDAR_APP_NAME } 设置"
       ],
+      "Open debug menu": [
+        "打开调试菜单"
+      ],
       "Open navigation": [
         "打开导航栏"
       ],
@@ -1692,6 +1692,9 @@
       "Yes, I'll attend": [
         "是，我将参加"
       ],
+      "Yes, organize it": [
+        "是，立即整理"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
       ],
@@ -1725,9 +1728,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "自定义分类"
-      ],
       "Got it": [
         "了解"
       ],
@@ -1736,6 +1736,9 @@
       ],
       "Not now": [
         "以后再说"
+      ],
+      "Set up categories": [
+        "设置分类"
       ],
       "Skip": [
         "跳过"
@@ -4339,7 +4342,7 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "在 ${ MAIL_APP_NAME } 中阅读、回复并随时处理 Gmail 邮件"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "右键点击邮件并选择“移至”，或将其拖放到其他分类。今后，相似的邮件将自动归类到该分类中。"
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
@@ -4507,6 +4510,14 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "我们从您选择的 CSV 文件中检测到了以下信息，请选择要导入的内容。"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } 封新邮件"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "发件人：${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -6748,6 +6759,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } 位联系人"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } 封邮件 → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } / ${ totalProgress }"
       ],
@@ -7924,6 +7938,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多数公共 WiFi 网络都是安全的，但部分网络缺乏防护措施，使您面临网络威胁。通过 VPN 加密技术，您的网络活动将获得全程保护。"
       ],
+      "Move emails": [
+        "移动邮件"
+      ],
+      "Move here": [
+        "移至此处"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
       ],
@@ -8016,6 +8036,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "打开指南并查看推荐操作和实用链接。"
+      ],
+      "Opened ${ location }": [
+        "已打开 ${ location }"
       ],
       "Optional": [
         "可选"
@@ -8187,6 +8210,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "如有任何关于 ${ BRAND_NAME } 的问题，欢迎随时联系我们。"
+      ],
+      "Read ${ count } email on screen": [
+        "已读 ${ count } 封屏幕上的邮件"
       ],
       "Recipient: ": [
         "收件人："
@@ -8498,7 +8524,7 @@
         "如果他们不知道您的邮箱地址，就无法向您发送垃圾邮件。请使用“Hide-my-email”别名保护您的收件箱。"
       ],
       "Thinking about this": [
-        "正在思考这个"
+        "正在深度思考"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此地址已被停用，待其所有者予以启用后才能向该地址发送邮件。"
@@ -9004,7 +9030,7 @@
       "You have ${ totalLabel } in your inbox.": [
         "您的收件箱中有 ${ totalLabel }。"
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
         "您在 ${ categoryLabel } 分类中有 **${ count }** 项会话"
       ],
       "You have **${ count } conversation** stored in this folder": [
@@ -9013,7 +9039,7 @@
       "You have **${ count } conversation** tagged with this label": [
         "此标签下共有 **${ count } 项会话**"
       ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
+      "You have **${ count } message** in your ${ categoryLabel } category": [
         "您在 ${ categoryLabel } 分类中有 **${ count }** 封邮件"
       ],
       "You have **${ count } message** stored in this folder": [
@@ -9049,10 +9075,10 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "降级前需要停用或移除所有额外的 ${ MAIL_APP_NAME } 用户、地址和自有域名。"
       ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
         "您在 ${ categoryLabel } 分类中已选 **${ checked } 项会话**"
       ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "您在 ${ categoryLabel } 分类中已选 **${ checked } 封邮件**"
       ],
       "You selected **${ count } conversation** from this folder": [
@@ -9594,6 +9620,9 @@
       "ANY": [
         "任何"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "所有需要您关注的内容，以及来自已禁用类别的邮件"
+      ],
       "App password": [
         "应用密码"
       ],
@@ -9602,6 +9631,9 @@
       ],
       "Apply to future messages": [
         "应用于未来邮件"
+      ],
+      "Archive": [
+        "归档"
       ],
       "Attach screenshot(s)": [
         "截图"
@@ -10125,9 +10157,6 @@
       "Payment method": [
         "付款方式"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "个人和工作邮件，以及重要更新和通知"
-      ],
       "PGP scheme": [
         "PGP 方案"
       ],
@@ -10149,8 +10178,8 @@
       "Primary": [
         "基本的"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "主要 - 个人和工作邮件，以及重要更新"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "主要 - 所有需要您关注的内容，以及来自已禁用类别的邮件"
       ],
       "Promotions": [
         "优惠促销"
@@ -14977,7 +15006,7 @@
       "Move ${ selectionCount } message": [
         "移动 ${ selectionCount } 封邮件"
       ],
-      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
         "已移至 ${ label }，未来类似邮件将自动归类。"
       ],
       "Password copied to clipboard": [
@@ -15746,8 +15775,8 @@
       "Make a secure connection your default": [
         "将安全连接设为默认首选"
       ],
-      "Make Categories your own": [
-        "让分类为您所用"
+      "Make your inbox your own": [
+        "自定义您的收件箱"
       ],
       "Mark all messages as read": [
         "将全部邮件标为已读"
@@ -15820,6 +15849,9 @@
       ],
       "Move all messages to trash": [
         "将所有邮件移至回收站"
+      ],
+      "Move emails": [
+        "移动邮件"
       ],
       "Move to": [
         "移至"
@@ -15938,9 +15970,6 @@
       "Payment verification": [
         "支付验证"
       ],
-      "Personalize your Categories": [
-        "个性化您的分类"
-      ],
       "Phone numbers": [
         "电话号码"
       ],
@@ -15997,6 +16026,9 @@
       ],
       "Referral": [
         "推荐"
+      ],
+      "Refine your Categories": [
+        "优化您的分类"
       ],
       "Remove forwarding address": [
         "移除转发地址"
@@ -16481,6 +16513,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "升级至受支持的套餐以使用管理员角色。"
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "用户接受邀请后，您即可为其分配角色。"
       ]

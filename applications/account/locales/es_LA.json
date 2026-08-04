@@ -360,6 +360,9 @@
       "Connected": [
         "Conectado"
       ],
+      "Contact sales": [
+        "Contactar con ventas"
+      ],
       "Contact support": [
         "Contactar con soporte"
       ],
@@ -1332,6 +1335,9 @@
       "Remove gift code": [
         "Eliminar el código de regalo"
       ],
+      "Remove manager": [
+        "Eliminar manager"
+      ],
       "Remove this label": [
         "Borrar esta etiqueta"
       ],
@@ -1772,6 +1778,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Mejore para activar ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Professional": [
+        "Mejorar a Professional"
       ],
       "Upgrade to view all": [
         "Mejorar para ver todo"
@@ -7090,6 +7099,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Puede eliminar el acceso en cualquier momento para recuperar el control exclusivo de su cuenta."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Aún no se le ha designado como contacto de recuperación para nadie."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Aún no se le ha designado como contacto de emergencia para nadie."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Alcanzó el máximo de ${ limit } contacto de emergencia.",
         "Alcanzó el máximo de ${ limit } contactos de emergencia."
@@ -8737,11 +8752,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "¿En verdad desea eliminar la clave de seguridad ${ name }?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Ingrese su PIN cada vez que use su llave de seguridad con ${ BRAND_NAME } cuando la llave lo admita. Esto solo aplica a las llaves que tienen configurado un PIN."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserte una clave de seguridad asociada con la cuenta de ${ BRAND_NAME }."
       ],
       "Insert your security key into your device.": [
         "Inserte su llave de seguridad en su dispositivo."
+      ],
+      "PIN requirement for security keys disabled": [
+        "Desactivada la solicitud de PIN para las claves de seguridad"
+      ],
+      "PIN requirement for security keys enabled": [
+        "Activada la solicitud de PIN para las claves de seguridad"
+      ],
+      "Require PIN for security key": [
+        "Se requiere PIN para la clave de seguridad"
       ],
       "Security key": [
         "Clave de seguridad"
@@ -9381,6 +9408,9 @@
       ],
       "Contact us": [
         "Contáctenos"
+      ],
+      "Downloads": [
+        "Descargas"
       ],
       "Enjoying ${ planName }?": [
         "¿Disfrutando ${ planName }?"
@@ -10245,6 +10275,9 @@
       "add a recovery method": [
         "agregar un método de recuperación"
       ],
+      "Add additional users from your organization to manage this company.": [
+        "Añada usuarios adicionales de su organización para gestionar esta empresa."
+      ],
       "Add an email address in case we need to contact you": [
         "Añada una dirección de correo en caso de que necesitemos contactarle"
       ],
@@ -10531,6 +10564,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Disponible en macOS, Windows y Linux."
       ],
+      "Available on VPN Professional": [
+        "Disponible en VPN Professional"
+      ],
       "Awaiting transaction": [
         "Esperando la transacción"
       ],
@@ -10680,6 +10716,9 @@
       ],
       "Coming soon": [
         "Próximamente"
+      ],
+      "Companies you've been given access to manage.": [
+        "Empresas donde se le ha otorgado acceso para gestionarlas."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Complete el inicio de sesión en este dispositivo para comenzar a usar ${ VPN_APP_NAME } en su TV."
@@ -11047,6 +11086,9 @@
       "Enable email notifications": [
         "Activar las notificaciones de correo electrónico"
       ],
+      "Enable groups to streamline access control": [
+        "Permita que los grupos optimicen el control de acceso"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Active el inicio de sesión único para mantener segura la organización"
       ],
@@ -11235,6 +11277,9 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Para un historial de versiones de 10 años, contacte con nuestro equipo de ventas."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Para acceder a su correo electrónico en cualquier momento y disfrutar de una experiencia móvil optimizada, descargue nuestra aplicación desde ${ androidAppLink } o ${ iosAppLink }."
@@ -11700,6 +11745,9 @@
       ],
       "Learn more about Gateways": [
         "Más información sobre la puertas de enlace"
+      ],
+      "Learn more about groups": [
+        "Más información sobre los grupos"
       ],
       "learn more about Sieve programming language": [
         "aprender más sobre el lenguaje de programación Sieve"
@@ -12407,9 +12455,6 @@
       "Set password": [
         "Definir una contraseña"
       ],
-      "Set the name, status, and assigned seats": [
-        "Establezca el nombre, estado y licencias asignadas"
-      ],
       "Set up your organization": [
         "Configure la organización"
       ],
@@ -12479,6 +12524,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, la cuenta tiene activadas funciones adicionales."
+      ],
+      "Smart Routed through a different country.": [
+        "Enrutado inteligente a través de otro país."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Enrutado inteligente a través de: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas."
@@ -13041,11 +13092,23 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualice ahora para obtener funciones premium, productos y almacenamiento a un precio especial"
       ],
+      "Upgrade now to monitor your team's account safety.": [
+        "Actualice ahora para monitorear la seguridad de la cuenta de su equipo."
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Actualice ahora para ver la actividad de ${ PASS_APP_NAME } a través de su organización."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Actualice o libere espacio en cualquier momento para importar el resto"
       ],
+      "Upgrade required": [
+        "Actualización requerida"
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Mejore para agregar una dirección corta @pm.me a su cuenta para que sea fácil de compartir. Significa “${ MAIL_APP_NAME }” o “mensaje privado” en inglés."
+      ],
+      "Upgrade to define policies for your organization.": [
+        "Actualice para definir políticas para su organización."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Mejore para mantener sus beneficios de ${ planTitle }."
@@ -13347,6 +13410,9 @@
       "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
         "Con empresas gestionadas, puede añadir, editar y borrar accesos en organizaciones que supervisa."
       ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Con VPN Professional, los administradores pueden forzar VPN siempre activa a todos los miembros de la organización junto con las puertas de enlace privadas, políticas de acceso y monitoreo."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Con el plan actual, solo puede recibir mensajes con la dirección @pm.me. Mejore para enviar mensajes y crear direcciones adicionales usando @pm.me."
       ],
@@ -13503,6 +13569,9 @@
       ],
       "You don't have any referrals.": [
         "Aún no tiene referidos."
+      ],
+      "You don't manage any companies yet.": [
+        "Aún no gestiona ninguna empresa."
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "No necesita abrir o leer el archivo, solo descárguelo y guárdelo en un lugar seguro."
@@ -14471,6 +14540,9 @@
       "Add extra services": [
         "Agregar servicios adicionales"
       ],
+      "Add managers": [
+        "Añadir gestionadores"
+      ],
       "Additional comments": [
         "Comentarios adicionales"
       ],
@@ -14566,6 +14638,9 @@
       ],
       "ANY": [
         "CUALQUIERA"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Todo lo que necesita su atención además de correos de sus categorías desactivadas"
       ],
       "App password": [
         "Contraseña de la aplicación"
@@ -14752,6 +14827,12 @@
       ],
       "City": [
         "Ciudad"
+      ],
+      "Client": [
+        "Cliente"
+      ],
+      "Client version": [
+        "Versión del cliente"
       ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
@@ -15528,9 +15609,6 @@
       "Pending": [
         "Pendiente"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Correos electrónicos personales y profesionales, con actualizaciones y notificaciones importantes"
-      ],
       "Phone number": [
         "Número telefónico"
       ],
@@ -15573,8 +15651,8 @@
       "Primary": [
         "Principal"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Principal: correos personales y laborales más actualizaciones importantes"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principal: todo lo que necesita su atención además de correos de sus categorías desactivadas"
       ],
       "Priority support": [
         "Soporte prioritario"
@@ -15915,6 +15993,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Actualizaciones: confirmaciones automáticas, alertas y actualizaciones de cuenta"
+      ],
+      "Upgrade": [
+        "Actualizar"
       ],
       "Upload 1 or more encryption keys": [
         "Cargue 1 o más claves de cifrado"
@@ -16797,6 +16878,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } por licencia"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licencia de ${ MEET_APP_NAME }",
@@ -20300,6 +20384,9 @@
       ],
       "Enter company name": [
         "Editar nombre de la empresa"
+      ],
+      "Enter name or email address": [
+        "Ingrese el nombre o dirección de correo"
       ],
       "example@domain.com": [
         "ejemplo@dominio.com"
@@ -25983,6 +26070,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gestione archivos en dispositivos Windows, Mac, Android e iOS."
       ],
+      "Managers": [
+        "Gestionadores"
+      ],
       "Messages": [
         "Mensajes"
       ],
@@ -26270,6 +26360,9 @@
       ],
       "Remove via MDM": [
         "Eliminar mediante MDM"
+      ],
+      "Remove via PowerShell": [
+        "Eliminar mediante PowerShell"
       ],
       "Rename the gateway": [
         "Cambiar el nombre de la puerta de enlace"
@@ -26625,6 +26718,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Mejorar a ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "Actualice para activar Siempre activa"
       ],
       "Upgrade to keep your premium benefits.": [
         "Mejore para mantener sus beneficios premium."
@@ -27252,6 +27348,9 @@
       "Group membership paused": [
         "Se suspendió la suscripción al grupo."
       ],
+      "Pending user activation": [
+        "Activación de usuario pendiente"
+      ],
       "Resuming role assignment": [
         "Reanudando asignación de roles"
       ],
@@ -27510,6 +27609,9 @@
       "View request": [
         "Ver la solicitud"
       ],
+      "Waiting for admin approval": [
+        "Esperando aprobación de administrador"
+      ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Puede ${ reject } esta solicitud si no desea continuar."
       ],
@@ -27688,6 +27790,9 @@
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Esto creará una dirección de ${ MAIL_APP_NAME }."
       ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Actualice a un plan que admita usar roles de administrador."
+      ],
       "User created": [
         "Usuario creado"
       ],
@@ -27711,8 +27816,14 @@
       "Invitation sent, awaiting reply from the invited member": [
         "Invitación enviada, esperando la respuesta del miembro invitado"
       ],
+      "Invited": [
+        "Invitado"
+      ],
       "Pending": [
         "Pendiente"
+      ],
+      "Requested": [
+        "Solicitado"
       ],
       "SSO user provided by your identity provider": [
         "Usuario SSO proporcionado por el proveedor de identidad"

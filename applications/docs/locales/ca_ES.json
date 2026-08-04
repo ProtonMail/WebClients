@@ -112,15 +112,6 @@
       "Cancel": [
         "Cancel·la"
       ],
-      "Cancel all downloads": [
-        "Cancel·la totes les pujades"
-      ],
-      "Cancel all uploads": [
-        "Cancel·lar totes les pujades"
-      ],
-      "Cancel download": [
-        "Cancel·lar la descarregada"
-      ],
       "Cancel subscription": [
         "Cancel·la la subscripció"
       ],
@@ -207,9 +198,6 @@
       ],
       "Continue": [
         "Continua"
-      ],
-      "Continue downloading": [
-        "Continua la descàrrega"
       ],
       "Continue import": [
         "Continuar importació"
@@ -335,9 +323,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Descarregueu-ne una còpia (en format xlsx)"
-      ],
-      "Download anyway": [
-        "Baixa igualment"
       ],
       "Download debug information": [
         "Descarregueu la informació de depuració"
@@ -681,9 +666,6 @@
       "Rename document": [
         "Canvia el nom del document"
       ],
-      "Replace file": [
-        "Substitueix el fitxer"
-      ],
       "Report a problem": [
         "Notifica un problema"
       ],
@@ -832,7 +814,7 @@
         "Mantenir"
       ],
       "Stop": [
-        "Aturar-ho"
+        "Atura"
       ],
       "Stop sharing": [
         "Deixa de compartir"
@@ -902,9 +884,6 @@
       ],
       "Upload and share files": [
         "Carrega i comparteix fitxers"
-      ],
-      "Upload anyway": [
-        "Carrega de totes maneres"
       ],
       "Upload picture": [
         "Carrega la imatge"
@@ -3278,20 +3257,8 @@
       "Failed to update public share node": [
         "No s'ha pogut actualitzar el node de compartició públic"
       ],
-      "File \"${ name }\" is already downloading": [
-        "El fitxer «${ name }» ja s'està descarregant"
-      ],
-      "File cannot be merged with folder": [
-        "Un fitxer no es pot fusionar amb una carpeta"
-      ],
-      "File selection is already downloading": [
-        "La selecció d'arxius ja s'està descarregant"
-      ],
       "First name is too long": [
         "El nom és massa llarg."
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "La carpeta «${ name }»  ja s'està descarregant"
       ],
       "Folder name cannot be empty.": [
         "El nom de la carpeta no pot estar buit."
@@ -3543,9 +3510,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "El fitxer original encara no s'ha carregat. Torneu-ho a provar més tard"
-      ],
-      "The original folder not found": [
-        "No s'ha trobat la carpeta original"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hi ha massa carpetes al vostre compte extern. Personalitzeu la importació per eliminar algunes carpetes."
@@ -4549,9 +4513,6 @@
         "${ contactsLength } contacte",
         "${ contactsLength } contactes"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Els fitxers ${ DOCS_APP_NAME } no es poden descarregar directament i no s'inclouran en aquesta descàrrega. Podeu descarregar els altres fitxers fent clic a Continua la descàrrega."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } us permet col·laborar en temps real amb el xifratge d’extrem a extrem per a una privadesa total. Creeu una còpia per començar a editar-lo o demaneu accés d'edició al propietari."
       ],
@@ -4610,9 +4571,6 @@
         "${ updated } contacte actualitzat amb èxit.",
         "${ updated } contactes actualitzats amb èxit."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } ja existeix en aquesta ubicació."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } està emmascarant la vostra adreça IP, de manera que els llocs web no us poden identificar."
       ],
@@ -4641,12 +4599,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } connexió per a ${ VPN_APP_NAME } (permet connectar més dispositius a la VPN)",
         "+${ organization.BonusVPN } connexions per a ${ VPN_APP_NAME } (permet connectar més dispositius a la VPN)"
-      ],
-      "A number will be added to the filename": [
-        "S'afegirà un número al nom del fitxer"
-      ],
-      "A number will be added to the folder name": [
-        "S'afegirà un número al nom de la carpeta"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
@@ -4698,9 +4650,6 @@
       ],
       "Already in this folder": [
         "Ja és en aquesta carpeta"
-      ],
-      "an anonymous user": [
-        "un usuari anònim"
       ],
       "and": [
         "i"
@@ -4773,9 +4722,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Comprovant contacte ${ progress } de ${ max }..."
-      ],
-      "Checking signatures": [
-        "S'estan verificant les signatures"
       ],
       "Choose a plan that works best for you.": [
         "Trieu el pla que se us adapti millor."
@@ -4872,12 +4818,6 @@
       "Details": [
         "Detalls"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "S'ha validat la signatura digital. El fitxer va ser carregat de manera segura per ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "S'ha validat la signatura digital. La carpeta va ser carregada de manera segura per ${ emailAddress }."
-      ],
       "Display word count": [
         "Mostra el nombre de paraules"
       ],
@@ -4904,12 +4844,6 @@
       ],
       "Download current logs": [
         "Descarrega els registres actuals"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "La descàrrega de ${ downloadFileName } serà cancel·lada"
-      ],
-      "Download was canceled": [
-        "La descàrrega ha estat cancel·lada"
       ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo."
@@ -5004,15 +4938,6 @@
       "File \"${ name }\" was deleted during download": [
         "El fitxer «${ name }» s'ha eliminat durant la descarregada"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "El fitxer no està signat. No podem verificar que ${ emailAddress } va carregar ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "El fitxer no està signat. No podem verificar qui va carregar ${ fileName }."
-      ],
-      "File will not be updated": [
-        "El fitxer no s'actualitzarà"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Només fitxers (ni fotos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }): fins a un total de 100 GB, 100.000 fitxers i 50 GB per fitxer"
       ],
@@ -5021,18 +4946,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "La carpeta «${ link.name }» s'ha eliminat durant la descarregada"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "La carpeta no està signada. No podem verificar que ${ emailAddress } va carregar ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "La carpeta no està signada. No podem verificar qui va carregar ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "No es carregarà la carpeta"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Per a obtenir els millors resultats, eviteu activitats d'estríming i que consumeixin molta memòria o dividiu la càrrega en lots més petits."
       ],
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
@@ -5145,9 +5058,6 @@
       ],
       "Invite link copied": [
         "S'ha copiat l'enllaç de la invitació."
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Sembla que recentment heu intentat carregar ${ uploadName }. Si no es va poder carregar, ${ replaceFile }. Si la càrrega és encara en progrés, reemplaçar el fitxer cancel·larà la càrrega en curs."
       ],
       "It's better to have:": [
         "És millor tenir:"
@@ -5415,9 +5325,6 @@
       "Recents": [
         "Recents"
       ],
-      "recommended browser": [
-        "navegador recomanat"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
       ],
@@ -5484,12 +5391,6 @@
       "Show table of contents": [
         "Mostra la taula de continguts"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "No es pot validar la signatura a causa d'un error de xarxa. Torneu-ho a provar més tard."
-      ],
-      "Signature check will be ignored": [
-        "S'ignorarà la comprovació de la signatura"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
@@ -5539,26 +5440,14 @@
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "És possible que el compte tingui una clau nova o que el següent hagi estat manipulat: ${ items }. Obriu-ho només si hi confieu."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "No s'ha pogut verificar l'autoria de les modificacions en el document. Voleu marcar aquest document com a verificat? Podeu optar per Ignorar i decidir-ho més tard."
       ],
       "The Beginning": [
         "Inici"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "La signatura digital s'ha verificat parcialment. Aquest fitxer s'ha carregat mitjançant un enllaç compartit accessible públicament per un usuari sense un compte ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "La signatura digital s'ha verificat parcialment. Aquesta carpeta s'ha carregat mitjançant un enllaç compartit accessible públicament per un usuari sense un compte ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La informació exposada es va filtrar d'un servei de tercers. La informació del vostre compte de ${ BRAND_NAME } continua sent segura i xifrada. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "El següent pot haver estat manipulat: ${ items }. Obriu-ho només si hi confieu."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
@@ -5629,23 +5518,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Això eliminarà permanentment els elements seleccionats que heu carregat."
       ],
-      "This will replace the existing file with the folder": [
-        "Això substituirà el fitxer existent per la carpeta"
-      ],
-      "This will replace the existing folder with the file": [
-        "Això substituirà la carpeta existent pel fitxer"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Això tancarà la sessió de tots els comptes als quals teniu sessió iniciada actualment"
-      ],
-      "This will upload a new version of the file": [
-        "Això carregarà una nova versió del fitxer"
-      ],
-      "This will upload a new version of the folder": [
-        "Això carregarà una nova versió de la carpeta"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Per baixar els fitxers ${ DOCS_APP_NAME }, obriu-los a ${ DOCS_APP_NAME } i exporteu-los."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
@@ -5671,14 +5545,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "S'ha cancel·lat la transferència del fitxer \"${ name }\""
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "S'ha cancel·lat la transferència de la carpeta \"${ name }\""
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "S'ha saltat la transferència del fitxer \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "S'ha saltat la transferència de la carpeta \"${ folderName }\""
       ],
       "Trash": [
         "Paperera"
@@ -5691,9 +5559,6 @@
       ],
       "Undo successful": [
         "S'ha desfet l'acció."
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Malauradament, sembla que el fitxer o algunes de les seves dades no es poden desxifrar."
       ],
       "Update recent documents": [
         "Actualitza els documents recents"
@@ -5709,9 +5574,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
       ],
       "Uppercase and lowercase letters": [
         "Lletres majúscules i minúscules"
@@ -5736,12 +5598,6 @@
       ],
       "Warning": [
         "Advertència"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "No podem verificar que ${ emailAddress } va carregar ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "No podem verificar qui va carregar ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Us enviarem un correu electrònic un cop s'hagi completat la importació."
@@ -5905,9 +5761,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Els vostres canvis no s'han sincronitzat. Drive intentarà desar els canvis automàticament. No tanqueu la pàgina web."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "El vostre navegador actual no suporta la descàrrega de fitxers grans a causa de la indisponibilitat de prestadors de servei. La descàrrega de fitxers grans pot provocar que el navegador quedi bloquejat o que no respongui. Utilitzeu les últimes versions d'un ${ recommendedBrowser } i torneu-ho a provar."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "El vostre document actual serà substituït per aquesta versió. Els comentaris i els suggeriments s'eliminaran del document, però es mantindran accessibles a l'historial de comentaris."
       ],
@@ -6010,32 +5863,6 @@
         "Només lectura"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "atributs del fitxer"
-      ],
-      "file data": [
-        "dades del fitxer"
-      ],
-      "file data key": [
-        "clau de dades del fitxer"
-      ],
-      "file data order": [
-        "ordre de les dades del fitxer"
-      ],
-      "hash key": [
-        "clau hash"
-      ],
-      "keys": [
-        "claus"
-      ],
-      "name": [
-        "nom"
-      ],
-      "thumbnail": [
-        "miniatura"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Signant actiu"
@@ -6126,15 +5953,6 @@
       "App password": [
         "Contrasenya de l'aplicació"
       ],
-      "Apply to all duplicated files": [
-        "Aplica-ho a tots els fitxers duplicats"
-      ],
-      "Apply to all duplicated folders": [
-        "Aplicar a totes les carpetes duplicades"
-      ],
-      "Apply to all unverified items": [
-        "Aplica-ho a tots els elements no verificats"
-      ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
       ],
@@ -6161,9 +5979,6 @@
       ],
       "can view": [
         "pot veure"
-      ],
-      "Cancel download": [
-        "Cancel·lar la descarregada"
       ],
       "Category": [
         "Categoria"
@@ -6228,14 +6043,8 @@
       "Don't show this again": [
         "No ho tornis a mostrar"
       ],
-      "Download anyway": [
-        "Baixa igualment"
-      ],
       "Drive": [
         "Unitat"
-      ],
-      "Duplicate found": [
-        "S'ha trobat un duplicat"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "per exemple, Amazon, eBay, Etsy"
@@ -6338,15 +6147,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de doble factor (2FA) integrat"
-      ],
-      "Keep both": [
-        "Mantén tots dos"
-      ],
-      "Keep both files": [
-        "Mantén tots dos fitxers"
-      ],
-      "Keep both folders": [
-        "Mantén totes dues carpetes"
       ],
       "Label messages as": [
         "Etiquetar els missatges com"
@@ -6471,12 +6271,6 @@
       "Regular expression": [
         "Expressió regular"
       ],
-      "Replace existing file": [
-        "Substitueix el fitxer existent"
-      ],
-      "Replace existing folder": [
-        "Substitueix la carpeta existent"
-      ],
       "Require password": [
         "Es requereix contrasenya"
       ],
@@ -6500,12 +6294,6 @@
       ],
       "Skip feedback": [
         "Ometre els comentaris"
-      ],
-      "Skip file": [
-        "Omet el fitxer"
-      ],
-      "Skip folder": [
-        "Omet la carpeta"
       ],
       "Starts with": [
         "Comença amb"
@@ -7404,8 +7192,8 @@
         "Programació de cites"
       ],
       "Appointment scheduling with ${ n } booking page": [
-        "Programació de cites amb ${ n } pàgina de reserva",
-        "Programació de cites amb ${ n } pàgines de reserva"
+        "Programació de cites amb ${ n } pàgina de reserves",
+        "Programació de cites amb ${ n } pàgines de reserves"
       ],
       "Auto-delete Spam and Trash": [
         "Neteja automàticament el correu brossa i la paperera"
@@ -7722,8 +7510,8 @@
         "Compartició de la caixa forta (fins a ${ n } persones)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "Ús compartit de la caixa forta amb fins a ${ n } persona",
-        "Ús compartit de la caixa forta amb fins a ${ n } persones"
+        "Compartició de la caixa forta amb fins a ${ n } persona",
+        "Compartició de la caixa forta amb fins a ${ n } persones"
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
@@ -8297,14 +8085,17 @@
       "Failed to delete document": [
         "No s'ha pogut eliminar el document"
       ],
-      "Failed to download files: ${ err }": [
-        "No s'han pogut descarregar els fitxers: ${ err }"
-      ],
       "Failed to load invitation details": [
         "No s'han pogut carregar els detalls de l'invitació."
       ],
+      "Failed to load invitations": [
+        "No s'han pogut carregar les invitacions."
+      ],
       "Failed to load sharing details": [
         "No s'han pogut carregar els detalls per compartir"
+      ],
+      "Failed to reject invitation": [
+        "No s'ha pogut rebutjar la invitació"
       ],
       "Failed to reject share invitation": [
         "No s'ha pogut rebutjar la invitació per a compartir."
@@ -8318,18 +8109,12 @@
       "Failed to trash document": [
         "No s'ha pogut enviar el document a la paperera"
       ],
-      "Failed to upload files: ${ err }": [
-        "Error carregant fitxers: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "El fitxer o carpeta \"${ filename }\" i ${ count } altre ja s'estan carregant",
         "El fitxer o carpeta \"${ filename }\" i ${ count } altres ja s'estan carregant"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "El fitxer o carpeta \"${ filename }\" ja s'està carregant"
-      ],
-      "File or folder is missing a name": [
-        "Falta un nom pel fitxer o carpeta"
       ],
       "Invitation's email was sent again": [
         "S'ha tornat a enviar el correu electrònic de la invitació"
@@ -8348,9 +8133,6 @@
       "Move ${ n } item": [
         "Mou ${ n } element",
         "Mou ${ n } elements"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "No hi ha prou espai per carregar ${ formattedTotal }"
       ],
       "Public link access updated": [
         "S'ha actualitzat l'accés a l'enllaç públic."
@@ -8795,7 +8577,7 @@
         "Aquest contacte actualment signa els missatges amb aquesta clau"
       ],
       "This key is used for message verification": [
-        "Aquesta clau s'utilitza per la verificació de missatges"
+        "Aquesta clau s'utilitza per a la verificació de missatges"
       ],
       "This key is used to encrypt messages to this contact": [
         "Aquesta clau s'utilitza per xifrar missatges per a aquest contacte"
@@ -9165,7 +8947,7 @@
         "Comenceu a guanyar crèdits"
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
-        "Podeu obtenir fins a **${ maxRewardAmount }** en crèdits."
+        "Obtingueu fins a **${ maxRewardAmount }** en crèdit."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Us queda **${ daysRemaining } dia** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**.",
@@ -10297,9 +10079,6 @@
       "Birthday": [
         "Aniversari"
       ],
-      "Browser might run out of memory": [
-        "És possible que el navegador arribi al límit de memòria"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancel·la la subscripció de ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -10458,26 +10237,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Passar a ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Descarrega ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarregueu aplicacions de ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Descarrega l'aplicació"
-      ],
-      "Download unverified file?": [
-        "Baixa un fitxer no verificat?"
-      ],
-      "Download unverified folder?": [
-        "Baixa una carpeta no verificada?"
-      ],
-      "Duplicate file found": [
-        "Trobat un fitxer duplicat"
-      ],
-      "Duplicate folder found": [
-        "Carpeta duplicada trobada"
       ],
       "Edit contact": [
         "Editar contacte"
@@ -10660,9 +10424,6 @@
       "Other names": [
         "Altres noms"
       ],
-      "Performance might be affected": [
-        "El rendiment podria veure's perjudicat"
-      ],
       "Phone numbers": [
         "Números de telèfon"
       ],
@@ -10834,9 +10595,6 @@
       "Upload and share files": [
         "Carregueu i compartiu fitxers"
       ],
-      "Uploading a large file or folder": [
-        "Càrrega d'un fitxer o carpeta gran"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilitzeu ${ VPN_SHORT_APP_NAME } per a la privacitat de les dades"
       ],
@@ -10881,9 +10639,6 @@
       ],
       "Your document cannot be loaded": [
         "No s'ha pogut carregar el document"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "La vostra descàrrega inclou un fitxer ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "La vostra informació exposada"
@@ -11031,6 +10786,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Milloreu a un pla compatible per utilitzar rols d'administrador/a."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
       ]

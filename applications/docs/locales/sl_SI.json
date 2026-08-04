@@ -114,15 +114,6 @@
       "Cancel": [
         "Prekliči"
       ],
-      "Cancel all downloads": [
-        "Prekliči vse prenose"
-      ],
-      "Cancel all uploads": [
-        "Prekliči vse prenose"
-      ],
-      "Cancel download": [
-        "Prekliči prenos"
-      ],
       "Cancel subscription": [
         "Prekliči naročnino"
       ],
@@ -203,9 +194,6 @@
       ],
       "Continue": [
         "Nadaljuj"
-      ],
-      "Continue downloading": [
-        "Nadaljuj prenos"
       ],
       "Continue import": [
         "Nadaljuj z uvozom"
@@ -332,9 +320,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Prenesi kopijo (kot xlsx)"
-      ],
-      "Download anyway": [
-        "Vseeno prenesi"
       ],
       "Download logs": [
         "Prenesite dnevnike"
@@ -663,9 +648,6 @@
       "Rename document": [
         "Preimenuj dokument"
       ],
-      "Replace file": [
-        "Zamenjaj datoteko"
-      ],
       "Report a problem": [
         "Prijavite težavo"
       ],
@@ -875,9 +857,6 @@
       ],
       "Upload and share files": [
         "Naloži in deli datoteke"
-      ],
-      "Upload anyway": [
-        "Vseeno naloži"
       ],
       "Upload picture": [
         "Naloži sliko"
@@ -3094,20 +3073,8 @@
       "Failed to update public share node": [
         "Ni uspelo posodobiti vozlišča javne povezave"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Izbrana datoteka \"${ name }\" se že prenaša"
-      ],
-      "File cannot be merged with folder": [
-        "Datoteke ni mogoče združiti z mapo"
-      ],
-      "File selection is already downloading": [
-        "Izbrana datoteka se že prenaša"
-      ],
       "First name is too long": [
         "Ime je predolgo"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Mapa »${ name }« se že prenaša"
       ],
       "Folder name cannot be empty.": [
         "Ime mape ne sme biti prazno."
@@ -3360,9 +3327,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Izvirna datoteka še ni naložena, poskusite znova pozneje"
-      ],
-      "The original folder not found": [
-        "Izvirne mape ni mogoče najti"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "V vašem zunanjem računu je preveč map. Prilagodite uvoz in izbrišite nekaj map."
@@ -4399,9 +4363,6 @@
         "${ contactsLength } stiki",
         "${ contactsLength } stikov"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Datoteke ${ DOCS_APP_NAME } ni mogoče prenesti neposredno in ne bodo vključene v ta prenos. Druge datoteke lahko prenesete s klikom na 'Nadaljuj prenos'."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } vam omogoča sodelovanje v realnem času s celovitim šifriranjem za popolno zasebnost. Ustvarite kopijo in začnite urejati ali se obrnite na lastnika za dostop za urejanje."
       ],
@@ -4474,9 +4435,6 @@
         "${ updated } stiki so uspešno posodobljeni.",
         "${ updated } stikov je uspešno posodobljenih."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } že obstaja v tej lokaciji."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } prikriva vaš naslov IP, zato vas spletne strani ne morejo prepoznati."
       ],
@@ -4509,12 +4467,6 @@
         "+${ organization.BonusVPN } povezavi za ${ VPN_APP_NAME } (omogoča vam povezavo več naprav na VPN).",
         "+${ organization.BonusVPN } povezave za ${ VPN_APP_NAME } (omogoča vam povezavo več naprav na VPN).",
         "+${ organization.BonusVPN } povezav za ${ VPN_APP_NAME } (omogoča vam povezavo več naprav na VPN)."
-      ],
-      "A number will be added to the filename": [
-        "Imenu datoteke bo dodana številka"
-      ],
-      "A number will be added to the folder name": [
-        "Imenu mape bo dodana številka"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "S telefonsko številko lahko preverite samo en ${ BRAND_NAME } račun"
@@ -4566,9 +4518,6 @@
       ],
       "Already in this folder": [
         "Že v tej mapi"
-      ],
-      "an anonymous user": [
-        "anonimni uporabnik"
       ],
       "and": [
         "in"
@@ -4632,9 +4581,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Preverjanje stika ${ progress } od ${ max } ..."
-      ],
-      "Checking signatures": [
-        "Preverjanje podpisov"
       ],
       "Choose a plan that works best for you.": [
         "Izberite paket, ki vam najbolj ustreza"
@@ -4729,12 +4675,6 @@
       "Details": [
         "Podrobnosti"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digitalni podpis preverjen. To datoteko je varno naložil ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digitalni podpis preverjen. To mapo je varno naložil ${ emailAddress }."
-      ],
       "Display word count": [
         "Pokaži število besed"
       ],
@@ -4758,12 +4698,6 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Zmanjšanje paketa bo prekinila vse povezave do plačljivih ${ VPN_APP_NAME } strežnikov."
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Prenos datoteke ${ downloadFileName } bo prekinjen"
-      ],
-      "Download was canceled": [
-        "Prenos preklican"
       ],
       "Drop file here to upload": [
         "Spusti datoteko tukaj za nalaganje."
@@ -4849,15 +4783,6 @@
       "File \"${ name }\" was deleted during download": [
         "Datoteka \"${ name }\" je bila med prenosom izbrisana"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Datoteki manjka podpis. Nismo mogli preveriti, ali je ${ emailAddress } naložil ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Datoteki manjka podpis. Nismo mogli preveriti, kdo je naložil datoteko ${ fileName }."
-      ],
-      "File will not be updated": [
-        "Datoteka ne bo posodobljena"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Samo datoteke (brez fotografij, ${ DOCS_APP_NAME } ali ${ SHEETS_APP_NAME }) - do skupaj 100 GB, 100.000 datotek in 50 GB na datoteko"
       ],
@@ -4866,18 +4791,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Mapa »${ link.name }« je bila med prenosom izbrisana"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Mapi manjka podpis. Nismo mogli preveriti, ali je ${ emailAddress } naložil ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Mapi manjka podpis. Nismo mogli preveriti, kdo je naložil datoteko ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "Mapa ne bo naložena"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Za najboljše rezultate se izogibajte pretakanju in dejavnostim, ki zahtevajo veliko pomnilnika, ali pa nalaganje razdelite na manjše sklope."
       ],
       "Forgot password?": [
         "Pozabljeno geslo?"
@@ -4989,9 +4902,6 @@
       ],
       "Invite link copied": [
         "Povezava do vabila je bila kopirana."
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Videti je, da ste pred kratkim poskušali naložiti ${ uploadName }. Če nalaganje ni uspelo, ${ replaceFile }. Če nalaganje še vedno poteka, bo zamenjava preklicala nalaganje, ki je v teku."
       ],
       "It's better to have:": [
         "Bolje je imeti:"
@@ -5263,9 +5173,6 @@
       "Recents": [
         "Nedavno"
       ],
-      "recommended browser": [
-        "priporočeni brskalnik"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Podatki za obnovitev bodo ostali v tej napravi, razen če jih izbrišete."
       ],
@@ -5332,12 +5239,6 @@
       "Show table of contents": [
         "Pokaži kazalo"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Podpisa ni mogoče preveriti zaradi napake v omrežju, poskusite znova pozneje."
-      ],
-      "Signature check will be ignored": [
-        "Preverjanje podpisa bo prezrto"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
       ],
@@ -5389,26 +5290,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Začasno ni na voljo. Poskusite znova pozneje."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Račun ima morda nov ključ ali pa je bilo spremenjeno naslednje: ${ items }. Odprite le, če mu zaupate."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Avtorstva urejanj v dokumentu ni bilo mogoče preveriti. Želite označiti ta dokument kot preverjen? Lahko izberete Prezri in se odločite kasneje."
       ],
       "The Beginning": [
         "Začetek"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digitalni podpis je bil delno preverjen. Datoteka je bila naložena z javno dostopno povezavo za skupno rabo s strani uporabnika brez računa ${ BRAND_NAME }, zato njegove identitete ni mogoče preveriti."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digitalni podpis je bil delno preverjen. To mapo je uporabnik brez računa ${ BRAND_NAME } naložil z javno dostopno povezavo za skupno rabo, zato njegove identitete ni mogoče preveriti."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Morda je bilo spremenjeno brez dovoljenja: ${ items }. Odprite le, če mu zaupate."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Lastnik tega naslova je onemogočil šifriranje od konca do konca. Šifrirana sporočila boste na ta naslov lahko pošiljali, če bo lastnik znova omogočil šifriranje od konca do konca."
@@ -5476,23 +5365,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "To dejanje bo trajno izbrisalo izbrane predmete, ki ste jih naložili."
       ],
-      "This will replace the existing file with the folder": [
-        "To bo zamenjalo obstoječo datoteko z mapo"
-      ],
-      "This will replace the existing folder with the file": [
-        "To bo zamenjalo obstoječo mapo z datoteko"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "S tem se boste odjavili iz vseh računov, v katere ste trenutno prijavljeni."
-      ],
-      "This will upload a new version of the file": [
-        "To bo naložilo novo različico datoteke"
-      ],
-      "This will upload a new version of the folder": [
-        "S tem boste naložili novo različico mape"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Če želite prenesti datoteke ${ DOCS_APP_NAME }, jih odprite v ${ DOCS_APP_NAME } in jih izvozite."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Zaradi boja proti neželeni vsebini in zlorabam najprej potrdite, da ste človek."
@@ -5518,14 +5392,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Prenos za datoteko »${ name }« je preklican"
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Prenos za mapo »${ name }« je preklican"
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Prenos je preskočen za datoteko \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Prenos je preskočen za mapo \"${ folderName }\""
       ],
       "Trash": [
         "Smetnjak"
@@ -5535,9 +5403,6 @@
       ],
       "Undo successful": [
         "Uspešno razveljavljeno"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Na žalost se zdi, da datoteke ali nekaterih njenih podatkov ni mogoče dešifrirati."
       ],
       "Update recent documents": [
         "Posodobi nedavne dokumente"
@@ -5553,9 +5418,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Nadgradite za ohranitev vaših ${ planTitle } ugodnosti."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Nalaganje več sto datotek hkrati lahko vpliva na zmogljivost."
       ],
       "Uppercase and lowercase letters": [
         "Velike in male črke"
@@ -5580,12 +5442,6 @@
       ],
       "Warning": [
         "Opozorilo"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Nismo mogli preveriti, ali je ${ emailAddress } naložil ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Nismo mogli preveriti, kdo je naložil datoteko ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Ko bo uvoz končan, vam pošljemo e-poštno sporočilo."
@@ -5740,9 +5596,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Vaših sprememb ni bilo mogoče sinhronizirati. Drive bo samodejno poskušal shraniti spremembe. Prosimo, ne zaprite spletne strani."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Vaš trenutni brskalnik ne podpira prenosa velikih datotek zaradi nedosegljivosti serverjev. Prenos velikih datotek lahko zamrzne brskalnik ali se ta ne odziva. Uporabite najnovejše različice ${ recommendedBrowser } in poskusite znova."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Trenutni dokument bo zamenjan s to različico. Opombe in predlogi bodo odstranjeni iz dokumenta, vendar bodo ostali dostopni v zgodovini komentarjev."
       ],
@@ -5845,32 +5698,6 @@
         "Samo za branje"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "atributi datoteke"
-      ],
-      "file data": [
-        "podatki datoteke"
-      ],
-      "file data key": [
-        "podatkovni ključ datoteke"
-      ],
-      "file data order": [
-        "zaporedje podatkov v datoteki"
-      ],
-      "hash key": [
-        "zgoščeni ključ"
-      ],
-      "keys": [
-        "ključi"
-      ],
-      "name": [
-        "ime"
-      ],
-      "thumbnail": [
-        "sličica"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Aktivni podpisnik"
@@ -5946,15 +5773,6 @@
       "App password": [
         "Geslo aplikacije"
       ],
-      "Apply to all duplicated files": [
-        "Uporabi za vse podvojene datoteke"
-      ],
-      "Apply to all duplicated folders": [
-        "Uporabi za vse podvojene mape"
-      ],
-      "Apply to all unverified items": [
-        "Uporabi za vse nepreverjene predmete"
-      ],
       "Attach screenshot(s)": [
         "Priloži posnetke zaslona"
       ],
@@ -5981,9 +5799,6 @@
       ],
       "can view": [
         "lahko si ogledate"
-      ],
-      "Cancel download": [
-        "Prekliči prenos"
       ],
       "Category": [
         "Vrsta napake"
@@ -6048,14 +5863,8 @@
       "Don't show this again": [
         "Ne prikazuj več"
       ],
-      "Download anyway": [
-        "Vseeno prenesi"
-      ],
       "Drive": [
         "Pogon"
-      ],
-      "Duplicate found": [
-        "Najden dvojnik"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "npr. Amazon, eBay, Etsy"
@@ -6149,15 +5958,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Vgrajen modul za preverjanje pristnosti 2FA"
-      ],
-      "Keep both": [
-        "Obdrži oboje"
-      ],
-      "Keep both files": [
-        "Obdrži obe datoteki"
-      ],
-      "Keep both folders": [
-        "Obdrži obe mapi"
       ],
       "Label messages as": [
         "Dodaj sporočilom oznako"
@@ -6273,12 +6073,6 @@
       "Regular expression": [
         "Regularni izraz"
       ],
-      "Replace existing file": [
-        "Zamenjaj obstoječo datoteko"
-      ],
-      "Replace existing folder": [
-        "Zamenjaj obstoječo mapo"
-      ],
       "Require password": [
         "Zahtevaj geslo"
       ],
@@ -6302,12 +6096,6 @@
       ],
       "Skip feedback": [
         "Preskoči povratno informacijo"
-      ],
-      "Skip file": [
-        "Preskoči datoteko"
-      ],
-      "Skip folder": [
-        "Preskoči mapo"
       ],
       "Starts with": [
         "Se začne z"
@@ -8053,9 +7841,6 @@
       "Failed to delete document": [
         "Dokumenta ni bilo mogoče izbrisati."
       ],
-      "Failed to download files: ${ err }": [
-        "Prenos datotek ni uspel: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Podrobnosti o povabilu ni bilo mogoče naložiti"
       ],
@@ -8071,9 +7856,6 @@
       "Failed to trash document": [
         "Prestavljanje dokumenta v smetnjak je spodletelo."
       ],
-      "Failed to upload files: ${ err }": [
-        "Datotek ni bilo mogoče naložiti: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Datoteka ali mapa »${ filename }« in ${ count } drugo se že nalaga",
         "Datoteka ali mapa »${ filename }« in ${ count } drugi se že nalagata",
@@ -8082,9 +7864,6 @@
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Datoteka ali mapa »${ filename }« se že nalaga"
-      ],
-      "File or folder is missing a name": [
-        "Datoteki ali mapi manjka ime"
       ],
       "Invitation's email was sent again": [
         "E-poštno sporočilo s povabilom je bilo ponovno poslano"
@@ -8109,9 +7888,6 @@
         "Premakni ${ n } predmeta",
         "Premakni ${ n } predmete",
         "Premakni ${ n } predmete"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Ni dovolj prostora za nalaganje ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Dostop do javne povezave posodobljen"
@@ -9984,9 +9760,6 @@
       "Birthday": [
         "Rojstni dan"
       ],
-      "Browser might run out of memory": [
-        "Brskalniku morda manjka pomnilnika"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Prekliči ${ MAIL_SHORT_APP_NAME } naročnino"
       ],
@@ -10146,26 +9919,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Zmanjšaj na paket ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Prenesi ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Prenesite aplikacije ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Prenesi aplikacijo"
-      ],
-      "Download unverified file?": [
-        "Prenesi nepreverjeno datoteko?"
-      ],
-      "Download unverified folder?": [
-        "Prenesi nepreverjeno mapo?"
-      ],
-      "Duplicate file found": [
-        "Najdene so podvojene datoteke"
-      ],
-      "Duplicate folder found": [
-        "Najdene so podvojene mape"
       ],
       "Edit contact": [
         "Uredi stik"
@@ -10347,9 +10105,6 @@
       "Other names": [
         "Ostala imena"
       ],
-      "Performance might be affected": [
-        "To lahko vpliva na delovanje"
-      ],
       "Phone numbers": [
         "Telefonske številke"
       ],
@@ -10512,9 +10267,6 @@
       "Upload and share files": [
         "Naloži in deli datoteke"
       ],
-      "Uploading a large file or folder": [
-        "Nalaganje velike datoteke ali mape"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Uporabljajte ${ VPN_SHORT_APP_NAME } za zasebnost podatkov"
       ],
@@ -10559,9 +10311,6 @@
       ],
       "Your document cannot be loaded": [
         "Vašega dokumenta ni mogoče naložiti."
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Vaš prenos vključuje datoteko ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"

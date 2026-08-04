@@ -309,9 +309,6 @@
       "Continue to ${ planOrAppName }": [
         "Продовжити в ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Продовжити з категоріями"
-      ],
       "Continue with Free": [
         "Продовжити безкоштовно"
       ],
@@ -1519,10 +1516,7 @@
         "Довіряти"
       ],
       "Trust key": [
-        "Довіряти ключу",
-        "Довіряти ключам",
-        "Довіряти ключам",
-        "Довіряти ключам"
+        "Довіряти ключу"
       ],
       "Trust public key": [
         "Довіряти відкритому ключу"
@@ -1731,9 +1725,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Налаштувати категорії"
-      ],
       "Got it": [
         "Зрозуміло"
       ],
@@ -4398,9 +4389,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Читайте, відповідайте та керуйте Gmail безпосередньо в ${ MAIL_APP_NAME }"
-      ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Клацніть правою кнопкою миші на електронний лист і виберіть «Перемістити до» або перетягніть його в іншу категорію. Схожі листи надалі сортуватимуться туди автоматично."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Надсилайте та отримуйте повідомлення Gmail безпосередньо в ${ MAIL_APP_NAME }. Підключіть свою адресу в ${ addressesSettingsLink }."
@@ -8078,6 +8066,9 @@
         "Ініціалізація…"
       ],
       "Insert image": [
+        "Вставити зображення",
+        "Вставити зображення",
+        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -9349,12 +9340,6 @@
       "You have ${ totalLabel } in your inbox.": [
         "У ваших вхідних ${ totalLabel }."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "У вас є **${ count } розмова** в категорії ${ categoryLabel }",
-        "У вас є **${ count } розмови** в категорії ${ categoryLabel }",
-        "У вас є **${ count } розмов** в категорії ${ categoryLabel }",
-        "У вас є **${ count } розмов** в категорії ${ categoryLabel }"
-      ],
       "You have **${ count } conversation** stored in this folder": [
         "У цій теці розміщена **${ count } розмова**",
         "У цій теці розміщені **${ count } розмови**",
@@ -9366,12 +9351,6 @@
         "**${ count } розмови** позначені цією міткою",
         "**${ count } розмов** позначені цією міткою",
         "**${ count } розмов** позначені цією міткою"
-      ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "У вас є **${ count } повідомлення** в категорії ${ categoryLabel }",
-        "У вас є **${ count } повідомлення** в категорії ${ categoryLabel }",
-        "У вас є **${ count } повідомлень** в категорії ${ categoryLabel }",
-        "У вас є **${ count } повідомлень** в категорії ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "У цій теці розміщено **${ count } повідомлення**",
@@ -9411,18 +9390,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Для можливості переходу на тарифний план нижчого рівня ви повинні вилучити будь-яких додаткових користувачів ${ MAIL_APP_NAME }, адреси та власні домени."
-      ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Ви вибрали **${ checked } розмову** в категорії ${ categoryLabel }",
-        "Ви вибрали **${ checked } розмови** в категорії ${ categoryLabel }",
-        "Ви вибрали **${ checked } розмов** в категорії ${ categoryLabel }",
-        "Ви вибрали **${ checked } розмов** в категорії ${ categoryLabel }"
-      ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Ви вибрали **${ checked } повідомлення** в категорії ${ categoryLabel }",
-        "Ви вибрали **${ checked } повідомлення** в категорії ${ categoryLabel }",
-        "Ви вибрали **${ checked } повідомлень** в категорії ${ categoryLabel }",
-        "Ви вибрали **${ checked } повідомлень** в категорії ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Ви вибрали **${ count } розмову** з цієї теки",
@@ -10542,9 +10509,6 @@
       "Payment method": [
         "Спосіб оплати"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Особисті й робочі електронні листи, а також важливі оновлення та сповіщення"
-      ],
       "PGP scheme": [
         "PGP-схема"
       ],
@@ -10565,9 +10529,6 @@
       ],
       "Primary": [
         "Основний"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Основні — особисті та робочі електронні листи, а також важливі оновлення"
       ],
       "Promotions": [
         "Реклама"
@@ -16571,9 +16532,6 @@
       "Make a secure connection your default": [
         "Зробіть безпечне з'єднання типовим"
       ],
-      "Make Categories your own": [
-        "Зробіть категорії зручними для себе"
-      ],
       "Mark all messages as read": [
         "Позначити всі повідомлення як прочитані"
       ],
@@ -16762,9 +16720,6 @@
       ],
       "Payment verification": [
         "Перевірка платежу"
-      ],
-      "Personalize your Categories": [
-        "Налаштуйте свої категорії"
       ],
       "Phone numbers": [
         "Номери телефонів"

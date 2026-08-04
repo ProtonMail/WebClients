@@ -306,9 +306,6 @@
       "Continue to ${ planOrAppName }": [
         "Lanjutkan ke ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Lanjutkan dengan kategori"
-      ],
       "Continue with Free": [
         "Lanjutkan dengan Gratis"
       ],
@@ -1713,9 +1710,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Sesuaikan kategori"
-      ],
       "Got it": [
         "Paham"
       ],
@@ -4308,9 +4302,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Baca, balas, dan pantau Gmail dari dalam ${ MAIL_APP_NAME }"
-      ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Klik kanan email dan pilih \"Pindahkan ke\", atau seret dan lepas ke kategori lain. Email serupa akan disortir ke sana secara otomatis di masa mendatang."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Kirim dan terima pesan Gmail secara langsung di ${ MAIL_APP_NAME }. Hubungkan alamat Anda di ${ addressesSettingsLink }."
@@ -8929,17 +8920,11 @@
       "You have ${ totalLabel } in your inbox.": [
         "Memiliki ${ totalLabel } di kotak masuk."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "Memiliki **${ count } percakapan** dalam kategori ${ categoryLabel }"
-      ],
       "You have **${ count } conversation** stored in this folder": [
         "Anda memiliki **${ count } percakapan** yang tersimpan dalam folder ini"
       ],
       "You have **${ count } conversation** tagged with this label": [
         "Anda memiliki **${ count } percakapan** yang ditandai dengan label ini"
-      ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "Memiliki **${ count } pesan** dalam kategori ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Anda memiliki **${ count } pesan** yang tersimpan dalam folder ini"
@@ -8973,12 +8958,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Anda harus terlebih dahulu menonaktifkan atau menghapus seluruh pengguna, alamat, dan domain khusus tambahan yang terdapat pada ${ MAIL_APP_NAME } sebelum Anda dapat menurunkan jenis akun Anda."
-      ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Memilih **${ checked } percakapan** dalam kategori ${ categoryLabel }"
-      ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Memilih **${ checked } pesan** dalam kategori ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Anda memilih **${ count } percakapan** dari folder ini"
@@ -10038,9 +10017,6 @@
       "Payment method": [
         "Metode pembayaran"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Email pribadi dan kantor, serta perbarui dan notifikasi penting"
-      ],
       "PGP scheme": [
         "Skema PGP"
       ],
@@ -10061,9 +10037,6 @@
       ],
       "Primary": [
         "Utama"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Utama - Email pribadi dan kerja, serta pembaruan penting"
       ],
       "Promotions": [
         "Penawaran"
@@ -15635,9 +15608,6 @@
       "Make a secure connection your default": [
         "Jadikan koneksi aman sebagai koneksi bawaan Anda"
       ],
-      "Make Categories your own": [
-        "Sesuaikan Kategori sendiri"
-      ],
       "Mark all messages as read": [
         "Tandai semua pesan dibaca"
       ],
@@ -15826,9 +15796,6 @@
       ],
       "Payment verification": [
         "Verifikasi pembayaran"
-      ],
-      "Personalize your Categories": [
-        "Sesuaikan Kategori"
       ],
       "Phone numbers": [
         "Nomor telepon"

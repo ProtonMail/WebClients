@@ -109,15 +109,6 @@
       "Cancel": [
         "Mégsem"
       ],
-      "Cancel all downloads": [
-        "Összes letöltés megszakítása"
-      ],
-      "Cancel all uploads": [
-        "Összes letöltés megszakítása"
-      ],
-      "Cancel download": [
-        "Letöltés megszakítása"
-      ],
       "Cancel subscription": [
         "Előfizetés lemondása"
       ],
@@ -198,9 +189,6 @@
       ],
       "Continue": [
         "Tovább"
-      ],
-      "Continue downloading": [
-        "Letöltés folytatása"
       ],
       "Continue import": [
         "Importálás folytatása"
@@ -314,9 +302,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } alkalmazások letöltése"
-      ],
-      "Download anyway": [
-        "Letöltés mindenképpen"
       ],
       "Download logs": [
         "Naplók letöltése"
@@ -627,9 +612,6 @@
       "Rename document": [
         "Nevezze át a dokumentumot"
       ],
-      "Replace file": [
-        "Fájl lecserélése"
-      ],
       "Report a problem": [
         "Probléma jelentése"
       ],
@@ -812,9 +794,6 @@
       ],
       "Upload and share files": [
         "Fájlok feltöltése és megosztása"
-      ],
-      "Upload anyway": [
-        "Feltöltés mindenképpen"
       ],
       "Upload picture": [
         "Kép feltöltése"
@@ -2843,20 +2822,8 @@
       "Failed to update public share node": [
         "Nem sikerült frissíteni a nyilvános megosztási csomópontot"
       ],
-      "File \"${ name }\" is already downloading": [
-        "A fájl: \"${ name }\" már töltődik lefelé"
-      ],
-      "File cannot be merged with folder": [
-        "Fájl nem egyesíthető mappával"
-      ],
-      "File selection is already downloading": [
-        "A kiválasztott fájlok már töltődnek lefelé"
-      ],
       "First name is too long": [
         "A keresztnév túl hosszú"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "A mappa: \"${ name }\" már töltődik lefelé"
       ],
       "Folder name cannot be empty.": [
         "A mappa nevének megadása szükséges."
@@ -3084,9 +3051,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Az eredeti fájl még nincs feltöltve, próbálja meg később"
-      ],
-      "The original folder not found": [
-        "Az eredeti mappa nem található"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Túl sok mappa van a külső e-mail fiókban. Módosítsa az importálás beállításait, hogy néhány mappát töröljön."
@@ -4052,9 +4016,6 @@
         "${ contactsLength } névjegy",
         "${ contactsLength } névjegy"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "A ${ DOCS_APP_NAME } fájlok közvetlenül nem tölthetők le, és nem lesznek belefoglalva ebbe a letöltésbe. A többi fájlt a „Folytatás a letöltéssel” gombra kattintva töltheti le."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } lehetővé teszi a valós idejű együttműködést, a teljes adatvédelem érdekében végponttól végpontig tartó titkosítással. Hozzon létre egy másolatot a szerkesztés megkezdéséhez, vagy kérjen szerkesztési hozzáférést a tulajdonostól."
       ],
@@ -4106,9 +4067,6 @@
         "${ updated } névjegy sikeresen frissítve.",
         "${ updated } névjegy sikeresen frissítve."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } már létezik ezen a helyen."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "A ${ VPN_APP_NAME } maszkolja az IP-címet, így a weboldalak nem tudják azonosítani."
       ],
@@ -4128,12 +4086,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)",
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolatok (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)"
-      ],
-      "A number will be added to the filename": [
-        "Egy számot ad a fájl nevéhez"
-      ],
-      "A number will be added to the folder name": [
-        "Egy számot ad a mappa nevéhez"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Egy telefonszám csak egy ${ BRAND_NAME } fiók ellenőrzéséhez használható"
@@ -4176,9 +4128,6 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Az összes névjegye importálásra kerül, maximum ${ maxContact } darabig",
         "Az összes névjegye importálásra kerül, maximum ${ maxContact } darabig"
-      ],
-      "an anonymous user": [
-        "egy névtelen felhasználó"
       ],
       "and": [
         "és"
@@ -4233,9 +4182,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Névjegy ellenőrzése ${ progress }/${ max }..."
-      ],
-      "Checking signatures": [
-        "Aláírások ellenőrzése"
       ],
       "Choose a plan that works best for you.": [
         "Válassza ki az Önnek legjobban megfelelő csomagot."
@@ -4320,12 +4266,6 @@
       "Details": [
         "Részletek"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digitális aláírás lellenőrizve. Ezt a fájlt biztonságosan feltöltötte ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digitális aláírás lellenőrizve. Ezt a mappát biztonságosan feltöltötte ${ emailAddress }."
-      ],
       "Display word count": [
         "Szószám megjelenítése"
       ],
@@ -4343,12 +4283,6 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "A lemondás megszünteti a fizetett ${ VPN_APP_NAME } szerverekkel való összes kapcsolatot."
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "${ downloadFileName } letöltése megszakításra kerül"
-      ],
-      "Download was canceled": [
-        "A letöltés leállítva"
       ],
       "Drop file here to upload": [
         "Húzza ide a fájlokat a feltöltéshez"
@@ -4419,32 +4353,11 @@
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" fájl törölve lett letöltés közben"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "A fájl aláírása hiányzik. Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "A fájl aláírása hiányzik. Nem tudtuk megerősíteni, hogy ki töltötte fel ezt: ${ fileName }."
-      ],
-      "File will not be updated": [
-        "A fájl nem kerül frissítésre"
-      ],
       "finance": [
         "pénzügyi"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "\"${ link.name }\" mappa törölve lett letöltés közben"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "A mappa aláírása hiányzik. Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "A mappa aláírása hiányzik. Nem tudtuk megerősíteni, hogy ki töltötte fel ezt: ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "Mappa nem lesz feltöltve"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "A legjobb eredményért addig ne videózzon vagy végezzem memóriaigényes műveletet, vagy darabolja a feltöltését kisebb részekre."
       ],
       "Forgot password?": [
         "Elfelejtette a jelszavát?"
@@ -4524,9 +4437,6 @@
       ],
       "Invite link copied": [
         "Meghívó link másolva"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Úgy tűnik, hogy nemrég megpróbálta feltölteni ezt a fájlt: ${ uploadName }. Ha feltöltés nem sikerült, ${ replaceFile }. Ha a feltöltés még folyamatban van, lecserélése törölni fogja a folyamatban lévő feltöltést."
       ],
       "It's better to have:": [
         "Jobb, ha van:"
@@ -4761,9 +4671,6 @@
       "Recents": [
         "Előzmények"
       ],
-      "recommended browser": [
-        "ajánlott böngésző"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "A helyreállítási információk megmaradnak ezen az eszközön, kivéve ha törli."
       ],
@@ -4824,12 +4731,6 @@
       "Shared on": [
         "Megosztás dátuma"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Az aláírás hálózati hiba miatt nem ellenőrizhető. Próbája újra később."
-      ],
-      "Signature check will be ignored": [
-        "Az aláírás-ellenőrzés figyelmen kívül lesz hagyva"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
       ],
@@ -4873,26 +4774,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "A fióknak lehet, hogy új kulcsa van, vagy babráltak a következőkkel: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "A dokumentumban szereplő szerkesztések szerzőségét nem lehetett ellenőrizni. Szeretné ezt a dokumentumot ellenőrzöttként megjelölni? Választhatja a Figyelmen kívül hagyást, hogy később döntsön."
       ],
       "The Beginning": [
         "A Kezdet"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "A digitális aláírás részben ellenőrizve lett. Ezt a fájlt egy nyilvánosan elérhető megosztási link segítségével töltötte fel egy ${ BRAND_NAME } fiókkal nem rendelkező felhasználó, így személyazonossága nem ellenőrizhető."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "A digitális aláírást részben ellenőriztük. Ezt a mappát egy nyilvánosan elérhető megosztási hivatkozás használatával töltötte fel egy ${ BRAND_NAME } fiókkal nem rendelkező felhasználó, így a személyazonossága nem ellenőrizhető."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "A kiszivárgott információ egy harmadik féltől származó szolgáltatás volt. Az ön ${ BRAND_NAME } fiókja biztonságban van. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Az alábbiakkal, lehet, hogy babráltak: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "A cím tulajdonosa letiltotta a végpontok közötti titkosítást. Ahhoz, hogy titkosított e-maileket tudjon küldeni erre a címre, a tulajdonosnak újra engedélyeznie kell a végpontok közti titkosítást."
@@ -4948,23 +4837,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Ez véglegesen törli a kiválasztott, feltöltött elemeket."
       ],
-      "This will replace the existing file with the folder": [
-        "Ez lecseréli a meglévő fájl a mappával"
-      ],
-      "This will replace the existing folder with the file": [
-        "Ez lecseréli a meglévő mappát a fájllal"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ez minden jelenleg bejelentkezett fiókjából kilépteti."
-      ],
-      "This will upload a new version of the file": [
-        "Ez a fájl egy új változatát fogja feltölteni"
-      ],
-      "This will upload a new version of the folder": [
-        "Ez a mappa egy új változatát fogja feltölteni"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "A ${ DOCS_APP_NAME } fájlok letöltéséhez nyissa meg őket a ${ DOCS_APP_NAME } programban, majd exportálja őket."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
@@ -4987,14 +4861,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\" fájl átvitele megszakítva"
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "\"${ name }\" mappa átvitele megszakítva"
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "\"${ file.name }\" fájl átvitele átugorva"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "\"${ folderName }\" mappa átvitele átugorva"
       ],
       "Trash": [
         "Lomtár"
@@ -5004,9 +4872,6 @@
       ],
       "Undo successful": [
         "Sikeres visszavonás"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Sajnos úgy tűnik, hogy a fájl vagy egyes adatai nem fejthetők vissza."
       ],
       "Update recent documents": [
         "Frissítse a legutóbbi dokumentumokat"
@@ -5022,9 +4887,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Váltson nagyobb csomagra, hogy megőrizze ${ planTitle } előnyeit."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Fájlok százainak egyszerre való feltöltése fennakadásokat okozhat."
       ],
       "Uppercase and lowercase letters": [
         "Kis- és nagybetűk"
@@ -5049,12 +4911,6 @@
       ],
       "Warning": [
         "Figyelmeztetés"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Nem tudtuk megerősíteni, hogy ki töltötte fel ezt: ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Amint az importálás befejeződött, e-mailt küldünk Önnek."
@@ -5197,9 +5053,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "A módosításokat nem sikerült szinkronizálni. A Drive automatikusan megpróbálja menteni a változtatásokat. Ne zárja be a weboldalt."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "A jelenlegi böngészője nem támogatja a nagy fájlok letöltését a szervízszolgáltatások elérhetetlensége miatt. A nagy fájlok letöltésétől lefagyhat a böngésző, vagy nem reagálhat. Kérjük, használja a(z) ${ recommendedBrowser } legújabb verzióját és próbálja újra."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "A jelenlegi dokumentum helyébe ez a verzió lép. Az észrevételek és javaslatok eltávolításra kerülnek a dokumentumból, de a megjegyzés-előzmények között továbbra is elérhetőek maradnak."
       ],
@@ -5296,32 +5149,6 @@
         "Csak megtekintés"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "fájl tulajdonságok"
-      ],
-      "file data": [
-        "fájl adatok"
-      ],
-      "file data key": [
-        "fájl adatkulcs"
-      ],
-      "file data order": [
-        "fájl adatsorrend"
-      ],
-      "hash key": [
-        "kivonatkulcs"
-      ],
-      "keys": [
-        "kulcsok"
-      ],
-      "name": [
-        "név"
-      ],
-      "thumbnail": [
-        "miniatűr"
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Kompromittált"
@@ -5376,15 +5203,6 @@
       "App password": [
         "Jelszó hozzáadása"
       ],
-      "Apply to all duplicated files": [
-        "Alkalmazás minden duplikált fájlra"
-      ],
-      "Apply to all duplicated folders": [
-        "Alkalmazás minden duplikált mappára"
-      ],
-      "Apply to all unverified items": [
-        "Alkalmazás az összes ellenőrizetlen elemre"
-      ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
       ],
@@ -5405,9 +5223,6 @@
       ],
       "Calendars": [
         "Naptárak"
-      ],
-      "Cancel download": [
-        "Letöltés megszakítása"
       ],
       "Category": [
         "Kategória"
@@ -5453,12 +5268,6 @@
       ],
       "Don't show this again": [
         "Ne jelenjen meg többet"
-      ],
-      "Download anyway": [
-        "Letöltés mindenképpen"
-      ],
-      "Duplicate found": [
-        "Duplikált elem található"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "pl. Amazon, eBay, Etsy"
@@ -5543,15 +5352,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Beépített kétfaktoros (2FA) hitelesítés"
-      ],
-      "Keep both": [
-        "Mindkettő megtartása"
-      ],
-      "Keep both files": [
-        "Tartsa meg mindkét fájlt"
-      ],
-      "Keep both folders": [
-        "Tartsa meg mindkét mappát"
       ],
       "Label messages as": [
         "Üzenetek megjelölése címkével"
@@ -5658,12 +5458,6 @@
       "Region": [
         "Régió"
       ],
-      "Replace existing file": [
-        "Cserélje le a meglévő fájlt"
-      ],
-      "Replace existing folder": [
-        "Cserélje le a meglévő mappát"
-      ],
       "Reveal password": [
         "Jelszó felfedése"
       ],
@@ -5681,12 +5475,6 @@
       ],
       "Skip feedback": [
         "Visszajelzés kihagyása"
-      ],
-      "Skip file": [
-        "Fájl kihagyása"
-      ],
-      "Skip folder": [
-        "Mappa kihagyása"
       ],
       "Stop sharing": [
         "Megosztás megszüntetése"
@@ -7257,17 +7045,11 @@
       "Failed to accept share invitation": [
         "Nem sikerült elfogadni a megosztási meghívást"
       ],
-      "Failed to download files: ${ err }": [
-        "Fájlok letöltése nem sikerült: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Nem sikerült betölteni a meghívás részleteit"
       ],
       "Failed to reject share invitation": [
         "Nem sikerült elutasítani a megosztási meghívót"
-      ],
-      "Failed to upload files: ${ err }": [
-        "Fájlok feltöltése nem sikerült: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "A fájl vagy mappa \"${ filename }\" és ${ count } másik már feltöltés alatt van",
@@ -7275,9 +7057,6 @@
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "A fájl vagy mappa \"${ filename }\" már feltöltés alatt van"
-      ],
-      "File or folder is missing a name": [
-        "A fájl vagy mappa neve hiányzik"
       ],
       "Invitation's email was sent again": [
         "A meghívó e-mailt ismét elküldtük"
@@ -7296,9 +7075,6 @@
       "Move ${ n } item": [
         "${ n } elem áthelyezése",
         "${ n } elem áthelyezése"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Nincs elég hely a feltöltéshez: ${ formattedTotal }"
       ],
       "Public link access updated": [
         "A nyilvános hivatkozás hozzáférés frissítve"
@@ -9034,9 +8810,6 @@
       "Birthday": [
         "Születésnap"
       ],
-      "Browser might run out of memory": [
-        "A böngésző kifuthat memóriából"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } előfizetés lemondása"
       ],
@@ -9180,26 +8953,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Váltás kisebb csomagra: ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "${ date } letöltése"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } alkalmazások letöltése"
       ],
       "Download the app": [
         "Töltse le az alkalmazást"
-      ],
-      "Download unverified file?": [
-        "Ellenőrizetlen fájl letöltése?"
-      ],
-      "Download unverified folder?": [
-        "Ellenőrizetlen mappa letöltése?"
-      ],
-      "Duplicate file found": [
-        "Duplikált fájl"
-      ],
-      "Duplicate folder found": [
-        "Duplikált mappa"
       ],
       "Edit contact": [
         "Névjegy szerkesztése"
@@ -9370,9 +9128,6 @@
       "Other names": [
         "További nevek"
       ],
-      "Performance might be affected": [
-        "Hatással lehet a teljesítményre"
-      ],
       "Phone numbers": [
         "Telefonszámok"
       ],
@@ -9517,9 +9272,6 @@
       "Upload and share files": [
         "Fájlok feltöltése és megosztása"
       ],
-      "Uploading a large file or folder": [
-        "Nagy fájl vagy mappa feltöltése"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Használja a(z) ${ VPN_SHORT_APP_NAME } alkalmazást az adatok védelmének biztosításához"
       ],
@@ -9561,9 +9313,6 @@
       ],
       "Your document cannot be loaded": [
         "Az ön dokumentumját nem sikerült betölteni"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "A letöltés tartalmaz egy ${ DOCS_APP_NAME } fájlt"
       ],
       "Your exposed information": [
         "Az ön kiszivárgott információi"

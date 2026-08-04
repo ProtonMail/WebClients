@@ -310,9 +310,6 @@
       "Continue to ${ planOrAppName }": [
         "Continuar com ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Continuar com categorias"
-      ],
       "Continue with Free": [
         "Continuar com Free"
       ],
@@ -1045,6 +1042,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
       ],
+      "Open debug menu": [
+        "Abrir o menu de depuração"
+      ],
       "Open navigation": [
         "Abrir navegação"
       ],
@@ -1523,8 +1523,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1697,6 +1696,9 @@
       "Yes, I'll attend": [
         "Sim, eu vou participar"
       ],
+      "Yes, organize it": [
+        "Sim, organize isso"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
@@ -1731,9 +1733,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Personalizar categorias"
-      ],
       "Got it": [
         "Entendi"
       ],
@@ -1742,6 +1741,9 @@
       ],
       "Not now": [
         "Agora não"
+      ],
+      "Set up categories": [
+        "Configurar categorias"
       ],
       "Skip": [
         "Pular"
@@ -4371,7 +4373,7 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Leia, responda e fique por dentro do Gmail de dentro do ${ MAIL_APP_NAME }"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Clique com o botão direito em um e-mail e selecione \"Mover para\" ou arraste e solte-o em outra categoria. E-mails semelhantes serão organizados lá automaticamente no futuro."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
@@ -4545,6 +4547,15 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Detectamos os seguintes campos no arquivo CSV que você carregou. Marque os que você deseja importar."
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nova mensagem",
+        "${ messageCount } novas mensagens"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "De: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -6885,6 +6896,10 @@
         "${ groupCounts } grupo(s) encontrado(s)",
         "${ groupCounts } grupo(s) encontrado(s)"
       ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problema durante a importação:",
+        "${ issues.length } problemas durante a importação:"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclui ${ BRAND_NAME } assistente de escrita Scribe"
       ],
@@ -7871,7 +7886,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -8052,6 +8068,9 @@
       ],
       "Move emails": [
         "Mover e-mails"
+      ],
+      "Move here": [
+        "Mover aqui"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
@@ -9141,9 +9160,9 @@
       "You have ${ totalLabel } in your inbox.": [
         "Você tem ${ totalLabel } na sua caixa de entrada."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "Você tem **${ count } conversa** na categoria ${ categoryLabel }",
-        "Você tem **${ count } conversas** na categoria ${ categoryLabel }"
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Você tem **${ count } conversa** na sua categoria ${ categoryLabel }",
+        "Você tem **${ count } conversas** na sua categoria ${ categoryLabel }"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Você tem **${ count } conversa** armazenada nesta pasta",
@@ -9153,9 +9172,9 @@
         "Você tem **${ count } conversa** com este marcador",
         "Você tem **${ count } conversas** com este marcador"
       ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "Você tem **${ count } mensagem** na categoria ${ categoryLabel }",
-        "Você tem **${ count } mensagens** na categoria ${ categoryLabel }"
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Você tem **${ count } mensagem** na sua categoria ${ categoryLabel }",
+        "Você tem **${ count } mensagens** na sua categoria ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Você tem **${ count } mensagem** armazenada nesta pasta",
@@ -9192,13 +9211,13 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Você deve desativar ou remover quaisquer usuários adicionais, endereços e domínios personalizados do ${ MAIL_APP_NAME } antes de poder fazer o downgrade."
       ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Você selecionou **${ checked } conversa** na categoria ${ categoryLabel }",
-        "Você selecionou **${ checked } conversas** na categoria ${ categoryLabel }"
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Você selecionou **${ checked } conversa** na sua categoria ${ categoryLabel }",
+        "Você selecionou **${ checked } conversas** na sua categoria ${ categoryLabel }"
       ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Você selecionou **${ checked } mensagem** na categoria ${ categoryLabel }",
-        "Você selecionou **${ checked } mensagens** na categoria ${ categoryLabel }"
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Você selecionou **${ checked } mensagem** na sua categoria ${ categoryLabel }",
+        "Você selecionou **${ checked } mensagens** na sua categoria ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Você selecionou **${ count } conversa** desta pasta",
@@ -9759,6 +9778,9 @@
       "ANY": [
         "QUALQUER"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tudo o que requer sua atenção, além dos e-mails das categorias desativadas"
+      ],
       "App password": [
         "Senha do aplicativo"
       ],
@@ -10293,9 +10315,6 @@
       "Payment method": [
         "Forma de pagamento"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "E-mails pessoais e profissionais, além de atualizações e notificações importantes"
-      ],
       "PGP scheme": [
         "Esquema PGP"
       ],
@@ -10317,8 +10336,8 @@
       "Primary": [
         "Primário"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Principal - E-mails pessoais e profissionais, além de atualizações importantes"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principal — Tudo o que requer sua atenção, além dos e-mails das categorias desativadas"
       ],
       "Promotions": [
         "Promoções"
@@ -15274,8 +15293,9 @@
         "Mover ${ selectionCount } mensagem",
         "Mover ${ selectionCount } mensagens"
       ],
-      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
-        "Movidas para ${ label }. Mensagens semelhantes serão categorizadas aqui no futuro."
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Movida para ${ label }. Mensagem semelhante será categorizada lá no futuro.",
+        "Movidas para ${ label }. Mensagens semelhantes serão categorizadas lá no futuro."
       ],
       "Password copied to clipboard": [
         "A senha foi copiada para a área de transferências."
@@ -16064,8 +16084,8 @@
       "Make a secure connection your default": [
         "Defina uma conexão segura como seu padrão"
       ],
-      "Make Categories your own": [
-        "Deixe as categorias do seu jeito"
+      "Make your inbox your own": [
+        "Deixe sua caixa de entrada do jeito que você quiser"
       ],
       "Mark all messages as read": [
         "Marcar todas as mensagens como lidas"
@@ -16259,9 +16279,6 @@
       "Payment verification": [
         "Verificação de pagamento"
       ],
-      "Personalize your Categories": [
-        "Personalize suas categorias"
-      ],
       "Phone numbers": [
         "Números de telefone"
       ],
@@ -16318,6 +16335,9 @@
       ],
       "Referral": [
         "Indicação"
+      ],
+      "Refine your Categories": [
+        "Refine suas categorias"
       ],
       "Remove forwarding address": [
         "Remover endereço de encaminhamento"

@@ -546,7 +546,7 @@
         "Získat nabídku"
       ],
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
-        "Získat nápovědu od ${ LUMO_SHORT_APP_NAME }"
+        "Získejte pomoc od ${ LUMO_SHORT_APP_NAME }"
       ],
       "Get in touch": [
         "Kontaktujte nás"
@@ -2127,7 +2127,7 @@
         "Organizace nemá dostatečně velké úložiště"
       ],
       "Pending": [
-        "Čekající"
+        "Čeká na vyřízení"
       ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Vyberte přesně to, co chcete migrovat. Bude to použito pro všechny uživatele organizace."
@@ -6876,7 +6876,7 @@
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
-        "Firemní plány ${ BRAND_NAME } poskytují vašemu týmu všechny nástroje pro spolupráci, které potřebuje k tomu, aby byl produktivní a organizovaný ve své práci, a zároveň chrání vaši firmu."
+        "Firemní tarify ${ BRAND_NAME } poskytují vašemu týmu všechny nástroje pro spolupráci, které potřebuje k tomu, aby byl produktivní a organizovaný ve své práci, a zároveň chrání vaši společnost."
       ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "Služba ${ BRAND_NAME } je financována nezávisle a funguje bez reklam. Níže uvádíme příklady toho, jak se tato nezávislost uplatňuje v praxi."
@@ -7485,7 +7485,7 @@
         "Beta"
       ],
       "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
-        "Účtováno ${ monthlyDiscountedPriceElement } po dobu prvních 6 měsíců, poté se obnovuje za ${ monthlyRenewalPriceElement }."
+        "Cena za prvních 6 měsíců činí ${ monthlyDiscountedPriceElement }, při prodloužení pak ${ monthlyRenewalPriceElement }."
       ],
       "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
         "Účtováno ${ yearlyDiscountedPriceElement } po dobu prvních 12 měsíců, poté se obnovuje za ${ yearlyRenewalPriceElement }."
@@ -14550,7 +14550,7 @@
         "Jste částečně chráněni, ale stále ne úplně v bezpečí. Zapomenuté heslo by stále mohlo znamenat ztrátu e-mailů, souborů a hesel."
       ],
       "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
-        "Stále jste ve vysokém riziku. Pokud zapomenete své heslo, můžete trvale přijít o e-maily, soubory a hesla."
+        "Stále vám hrozí vysoké riziko. Pokud zapomenete své heslo, můžete trvale přijít o své e-maily, soubory a hesla."
       ],
       "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
         "Jste dobře chráněni, ale stále existují mezery. Více možností obnovení vám poskytne silnější záchrannou síť, pokud byste někdy ztratili heslo."
@@ -14574,7 +14574,7 @@
         "Nastavení obnovení účtu není kompletní. Zapomenuté heslo by stále mohlo znamenat ztrátu přístupu k vašim e-mailům, souborům a heslům."
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
-        "Nastavení obnovy vašeho účtu je solidní, zbývá jen vyřešit několik drobných mezer. Každá přidaná možnost posiluje vaši záchrannou síť."
+        "Vaše nastavení obnovení účtu je spolehlivé, zbývá však vyřešit několik posledních nedostatků. Každá přidaná možnost vaši záchrannou síť ještě více posílí."
       ]
     },
     "Recovery score item": {
@@ -14624,7 +14624,7 @@
         "Heslo ověřeno"
       ],
       "Phone recovery enabled": [
-        "Obnovení pomocí telefonu zapnuto"
+        "Obnovení pomocí telefonu aktivováno"
       ],
       "Recovery contacts added": [
         "Kontakty pro obnovení přidány"
@@ -19089,7 +19089,7 @@
         "Členství ve skupině pozastaveno"
       ],
       "Resuming role assignment": [
-        "Pokračování v přiřazování rolí"
+        "Obnovení přiřazování rolí"
       ],
       "Role assignment paused": [
         "Přiřazování rolí bylo pozastaveno"
@@ -19104,7 +19104,7 @@
         "Uživatel je vlastníkem skupiny"
       ],
       "via ${ groupNames }": [
-        "prostřednictvím ${ groupNames }"
+        "přes ${ groupNames }"
       ],
       "Waiting for admin approval": [
         "Čeká na schválení správcem"

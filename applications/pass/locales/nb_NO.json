@@ -118,6 +118,9 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Cancel bulk selection": [
+        "Avslutt flervalg"
+      ],
       "Cancel email change": [
         "Avbryt endring av e-post"
       ],
@@ -139,8 +142,14 @@
       "Clear": [
         "Tøm"
       ],
+      "Clear item type filter": [
+        "Fjern filteret for elementtype"
+      ],
       "Clear search": [
         "Tøm søk"
+      ],
+      "Clear sort filter": [
+        "Nullstill sortering"
       ],
       "Close": [
         "Lukk"
@@ -580,6 +589,9 @@
       "Reset": [
         "Tilbakestill"
       ],
+      "Reset filters": [
+        "Tilbakestill filtre"
+      ],
       "Reset history": [
         "Tilbakestill historikk"
       ],
@@ -618,6 +630,9 @@
       ],
       "See members": [
         "Vis medlemmer"
+      ],
+      "Select items": [
+        "Velg elementer"
       ],
       "Send email": [
         "Send e-post"
@@ -678,6 +693,9 @@
       ],
       "Submitting report...": [
         "Sender inn rapport..."
+      ],
+      "Switch vault": [
+        "Bytt hvelv"
       ],
       "Sync alias": [
         "Synkroniser alias",
@@ -1365,6 +1383,9 @@
       ],
       "Unsupported Bitwarden file format": [
         "Ikke støttet Bitwarden filformat"
+      ],
+      "Unsupported file type": [
+        "Filtypen støttes ikke"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Oppdatering av hvelv \"${ payload.content.name }\" mislyktes."

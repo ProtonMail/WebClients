@@ -1830,6 +1830,12 @@
       "Event deleted": [
         "Evento excluído"
       ],
+      "Failed to admit the participant. Please try again.": [
+        "Falha ao admitir o participante. Por favor, tente novamente."
+      ],
+      "Failed to admit the participants. Please try again.": [
+        "Falha ao admitir os participantes. Por favor, tente novamente."
+      ],
       "Failed to assign host": [
         "Falha ao atribuir anfitrião"
       ],
@@ -1850,6 +1856,9 @@
       ],
       "Failed to delete room": [
         "Não foi possível excluir a sala"
+      ],
+      "Failed to deny the participant. Please try again.": [
+        "Não foi possível recusar o participante. Tente novamente."
       ],
       "Failed to download recording": [
         "Erro ao baixar a gravação"
@@ -1889,6 +1898,9 @@
       ],
       "Failed to unlock meeting": [
         "Falha ao desbloquear reunião"
+      ],
+      "Failed to update waiting room setting. Please try again.": [
+        "Falha ao atualizar a configuração da sala de espera. Tente novamente."
       ],
       "Incorrect username": [
         "Nome de usuário incorreto"
@@ -2183,6 +2195,10 @@
         "${ totalParticipantCount } participante",
         "${ totalParticipantCount } participantes"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "${ waitingRoomParticipantsCount } pessoa está esperando",
+        "${ waitingRoomParticipantsCount } pessoas estão esperando"
+      ],
       "(You)": [
         "(Você)"
       ],
@@ -2348,8 +2364,14 @@
       "Everyone has been disconnected from the call.": [
         "Todos foram desconectados da chamada."
       ],
+      "Expires in ${ formattedCountdown }": [
+        "Expira em ${ formattedCountdown }"
+      ],
       "Failed to apply background blur": [
         "Falha ao aplicar desfoque de fundo"
+      ],
+      "Failed to apply custom background": [
+        "Falha ao aplicar plano de fundo personalizado"
       ],
       "Failed to update meeting name": [
         "Não foi possível atualizar o nome da reunião"
@@ -2399,8 +2421,14 @@
       "Internet connection lost": [
         "Perda de conexão com a internet"
       ],
+      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
+        "A solicitação de ingresso expirou. O organizador não permitiu sua entrada a tempo. Envie uma nova solicitação para participar."
+      ],
       "Joined ${ roomNameLabel }": [
         "Entrou em ${ roomNameLabel }"
+      ],
+      "Joined at ${ receivedTime }": [
+        "Entrou às ${ receivedTime }"
       ],
       "Learn more": [
         "Saiba mais"
@@ -2642,6 +2670,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
       ],
+      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
+        "Passe a imagem da sua câmera ao vivo pelo processador de fundo personalizado. Escolha uma cor sólida ou carregue uma imagem para usar como fundo."
+      ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Agende sua próxima reunião. Crie uma conta para agendar reuniões com seu calendário."
       ],
@@ -2786,6 +2817,12 @@
       "View ": [
         "Ver "
       ],
+      "Waiting for the host to admit you. The host has been notified that you're waiting.": [
+        "Aguardando o organizador permitir sua entrada. O organizador foi notificado de que você está aguardando."
+      ],
+      "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
+        "Aguardando o organizador iniciar. Você entrará na reunião assim que o organizador iniciar e permitir a sua entrada."
+      ],
       "Warning": [
         "Alerta"
       ],
@@ -2830,6 +2867,9 @@
       ],
       "You were removed from the meeting": [
         "Você foi removido da reunião"
+      ],
+      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
+        "Você não foi admitido nesta reunião. Você pode tentar entrar novamente se achar que isso foi um erro."
       ],
       "You will leave the meeting. Others will continue.": [
         "Você vai sair da reunião. Os outros vão continuar."
@@ -3559,6 +3599,9 @@
       "Join meeting": [
         "Participar da reunião"
       ],
+      "Join request expired": [
+        "Solicitação de participação expirada"
+      ],
       "Joined at epoch ${ log.epoch }": [
         "Juntar no epoch ${ log.epoch }"
       ],
@@ -3671,6 +3714,9 @@
       "Thank you!": [
         "Obrigado!"
       ],
+      "The host didn't admit you": [
+        "O anfitrião não admitiu você"
+      ],
       "Time": [
         "Hora"
       ],
@@ -3682,6 +3728,9 @@
       ],
       "Video": [
         "Vídeo"
+      ],
+      "Waiting for the host": [
+        "Aguardando o anfitrião"
       ],
       "Waiting room": [
         "Sala de espera"

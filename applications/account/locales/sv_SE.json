@@ -1776,6 +1776,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Uppgradera för att aktivera ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Uppgradera till Professional"
+      ],
       "Upgrade to view all": [
         "Uppgradera för att visa alla"
       ],
@@ -7083,6 +7086,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Du kan när som helst ta bort deras åtkomst för att återfå exklusiv kontroll för ditt konto."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Du har inte blivit utsedd som en återställningskontakt för någon än."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Du har inte blivit utsedd som en nödkontakt för någon än."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Du har nått maximala antalet av ${ limit } nödkontakt.",
         "Du har nått maximalt antal av ${ limit } nödkontakter."
@@ -8736,6 +8745,15 @@
       "Insert your security key into your device.": [
         "Infoga din säkerhetsnyckel i din enhet."
       ],
+      "PIN requirement for security keys disabled": [
+        "PIN-krav för säkerhetsnycklar inaktiverat"
+      ],
+      "PIN requirement for security keys enabled": [
+        "PIN-krav för säkerhetsnycklar aktiverat"
+      ],
+      "Require PIN for security key": [
+        "Kräver PIN för säkerhetsnyckel"
+      ],
       "Security key": [
         "Säkerhetsnyckel"
       ],
@@ -10241,6 +10259,9 @@
       "add a recovery method": [
         "lägg till en återställningsmetod"
       ],
+      "Add additional users from your organization to manage this company.": [
+        "Lägg till ytterligare användare från din organisation för att hantera detta företag."
+      ],
       "Add an email address in case we need to contact you": [
         "Lägg till en e-postadress ifall vi behöver kontakta dig"
       ],
@@ -10527,6 +10548,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Tillgänglig på macOS, Windows och Linux."
       ],
+      "Available on VPN Professional": [
+        "Tillgänglig på VPN Professional"
+      ],
       "Awaiting transaction": [
         "Väntar på transaktion"
       ],
@@ -10676,6 +10700,9 @@
       ],
       "Coming soon": [
         "Kommer snart"
+      ],
+      "Companies you've been given access to manage.": [
+        "Företag som du har fått åtkomst att hantera."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Slutför inloggningen på denna enhet för att börja använda ${ VPN_APP_NAME } på din TV."
@@ -11220,6 +11247,9 @@
       "for ${ price }": [
         "för ${ price }"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "För en 10-årig versionshistorik, kontakta vårt säljteam."
+      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "För åtkomst när som helst till e-post och en optimerad mobilupplevelse, ladda ner vår ${ androidAppLink }- eller ${ iosAppLink }."
       ],
@@ -11681,6 +11711,9 @@
       ],
       "Learn more about Gateways": [
         "Lär dig mer om gateways"
+      ],
+      "Learn more about groups": [
+        "Lär dig mer om grupper"
       ],
       "learn more about Sieve programming language": [
         "lär dig mer om Sieve programmeringsspråk"
@@ -12373,9 +12406,6 @@
       "Set password": [
         "Ställ in lösenord"
       ],
-      "Set the name, status, and assigned seats": [
-        "Ställ in namnet, status och tilldelade användarplatser"
-      ],
       "Set up your organization": [
         "Ställ in din organisation"
       ],
@@ -12478,6 +12508,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Börja använda den kortare, klatschigare versionen av din e-postadress."
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Stanna kvar på ditt paket och få 50 % rabatt för din nästa månad"
       ],
       "Step ${ step }": [
         "Steg ${ step }",
@@ -12770,6 +12803,12 @@
       "This will allow the TV to access your ${ BRAND_NAME } account.": [
         "Detta kommer tillåta TV:n kan komma åt ditt ${ BRAND_NAME }-konto."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Detta kommer ta bort alla tidigare versioner av dina filer äldre än ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Detta kommer ta bort alla tidigare versioner av dina filer."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Detta kommer neka åtkomst till **${ email }**. Är du säker på att du vill fortsätta?"
       ],
@@ -12989,11 +13028,23 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
+      "Upgrade now to monitor your team's account safety.": [
+        "Uppgradera nu för att övervaka ditt teams kontosäkerhet."
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Uppgradera för att visa ${ PASS_APP_NAME }-aktivitet i hela din organisation."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Uppgradera eller frigör utrymme när som helst för att flytta över resten"
       ],
+      "Upgrade required": [
+        "Uppgradering krävs"
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Uppgradera för att lägga till en kortare @pm.me-adress till ditt konto som är lättare att dela. Det står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
+      ],
+      "Upgrade to define policies for your organization.": [
+        "Uppgradera för att definiera policyer för din organisation."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Uppgradera för att behålla dina ${ planTitle }-förmåner."
@@ -13442,6 +13493,9 @@
       ],
       "You don't have any referrals.": [
         "Du har inga hänvisningar."
+      ],
+      "You don't manage any companies yet.": [
+        "Du hanterar inga företag ännu."
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "Du behöver inte öppna eller läsa filen – bara ladda ner den och spara den på ett säkert ställe."
@@ -14503,6 +14557,9 @@
       "ANY": [
         "NÅGON"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Allt som behöver din uppmärksamhet, plus e-post från inaktiverade kategorier"
+      ],
       "App password": [
         "Applösenord"
       ],
@@ -14592,6 +14649,9 @@
       ],
       "Beta": [
         "Beta"
+      ],
+      "Billable licenses": [
+        "Fakturerbara licenser"
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Faktureras med ${ priceYearly } var 12:e månad."
@@ -15464,9 +15524,6 @@
       "Pending": [
         "Väntande"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Personlig och arbetsrelaterad e-post, plus viktiga uppdateringar och aviseringar"
-      ],
       "Phone number": [
         "Telefonnummer"
       ],
@@ -15509,8 +15566,8 @@
       "Primary": [
         "Primär"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Primär - Personliga e-postmeddelanden och jobb-e-post, samt viktiga uppdateringar"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primär – Allt som behöver din uppmärksamhet, plus e-post från inaktiverade kategorier"
       ],
       "Priority support": [
         "Prioriterad support"
@@ -15851,6 +15908,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Uppdateringar - Automatiska bekräftelser, aviseringar och kontouppdateringar"
+      ],
+      "Upgrade": [
+        "Uppgradera"
       ],
       "Upload 1 or more encryption keys": [
         "Ladda upp 1 eller flera krypteringsnycklar"
@@ -20245,6 +20305,9 @@
       ],
       "Enter company name": [
         "Ange företagsnamn"
+      ],
+      "Enter name or email address": [
+        "Ange namn eller e-postadress"
       ],
       "example@domain.com": [
         "example@domain.com"
@@ -26212,6 +26275,9 @@
       ],
       "Remove via MDM": [
         "Ta bort via MDM"
+      ],
+      "Remove via PowerShell": [
+        "Ta bort via PowerShell"
       ],
       "Rename the gateway": [
         "Byt namn på gateway"
