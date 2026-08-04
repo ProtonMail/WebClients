@@ -19,6 +19,7 @@ import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useBYOEAddressesCounts from '../../hooks/useBYOEAddressesCounts';
+import AddressLinkedToAnotherAccountModal from '../Modals/AddressLinkedToAnotherAccountModal/AddressLinkedToAnotherAccountModal';
 import BYOEConversionModal from '../Modals/BYOEConversionModal/BYOEConversionModal';
 import GmailSyncModal from '../Modals/GmailSyncModal/GmailSyncModal';
 import ReachedLimitForwardingModal from '../Modals/ReachedLimitForwardingModal/ReachedLimitForwardingModal';
@@ -60,6 +61,11 @@ const ConnectGmailButton = ({
     const [upsellConversionModalProps, setUpsellConversionModalOpen, renderUpsellConversionModal] = useModalState();
     const [conversionModalProps, setConversionModalOpen, renderConversionModal] = useModalState();
     const [removeForwardingModalProps, setRemoveForwardingModalOpen, renderRemoveForwardingModal] = useModalState();
+    const [
+        addressLinkedToAnotherAccountModalProps,
+        setAddressLinkedToAnotherAccountModalOpen,
+        renderAddressLinkedToAnotherAccountModal,
+    ] = useModalState();
 
     const [expectedEmailAddress, setExpectedEmailAddress] = useState<string | undefined>();
 
@@ -72,6 +78,9 @@ const ConnectGmailButton = ({
                     skipImport: !importEmails,
                 })
             );
+        },
+        showAddressLinkedToAnotherAccountModal: () => {
+            setAddressLinkedToAnotherAccountModalOpen(true);
         },
         onComplete: () => {
             easySwitchDispatch(changeCreateLoadingState('idle'));
@@ -164,6 +173,9 @@ const ConnectGmailButton = ({
                 <UpsellForwardingModal hasAccessToBYOE={hasAccessToBYOE} modalProps={upsellForwardingModalProps} />
             )}
             {renderRemoveForwardingModal && <RemoveForwardingModal {...removeForwardingModalProps} />}
+            {renderAddressLinkedToAnotherAccountModal && (
+                <AddressLinkedToAnotherAccountModal {...addressLinkedToAnotherAccountModalProps} />
+            )}
         </>
     );
 };
