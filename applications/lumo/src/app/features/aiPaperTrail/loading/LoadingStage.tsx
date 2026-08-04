@@ -37,7 +37,7 @@ export const LoadingStage = () => {
             tag: c('collider_2025:Label').t`Personalized pricing`,
             title: c('collider_2025:Title').t`You might be shown a higher price`,
             body: c('collider_2025:Info')
-                .t`If a profile suggests you can pay more or that you’re in a hurry, you may see a higher price than the next person.I`,
+                .t`If a profile suggests you can pay more or that you’re in a hurry, you may see a higher price than the next person.`,
         },
         {
             emoji: '🛒',

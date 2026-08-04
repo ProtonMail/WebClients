@@ -74,7 +74,7 @@ describe('parsePaperTrailReport', () => {
     });
 
     it('returns undefined for streaming / invalid content', () => {
-        expect(parsePaperTrailReport('{ "label": "x" }')).toBeUndefined();
+        expect(parsePaperTrailReport('{ "label": "x"')).toBeUndefined();
         expect(parsePaperTrailReport(undefined)).toBeUndefined();
         expect(parsePaperTrailReport('not json at all')).toBeUndefined();
     });

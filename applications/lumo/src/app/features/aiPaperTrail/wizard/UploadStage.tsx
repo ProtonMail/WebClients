@@ -40,7 +40,7 @@ export const UploadStage = ({ error, saveLocallyEnabled, onSaveLocallyChange, on
         onGenerate(selectedFile);
     };
 
-    const displayError = error ?? validationError;
+    const displayError = validationError ?? (selectedFile ? undefined : error);
 
     return (
         <PaperTrailWizardShell
