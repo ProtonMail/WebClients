@@ -1335,6 +1335,9 @@
       "Remove gift code": [
         "기프트 코드 삭제"
       ],
+      "Remove manager": [
+        "매니저 제거"
+      ],
       "Remove this label": [
         "라벨 삭제"
       ],
@@ -1775,6 +1778,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME }을 활성화하려면 업그레이드"
+      ],
+      "Upgrade to Professional": [
+        "Professional로 업그레이드"
       ],
       "Upgrade to view all": [
         "업그레이드하여 모두 보기"
@@ -7044,6 +7050,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "언제든지 접근 권한을 삭제하여 사용자의 계정에 대한 독점적인 통제권을 되찾을 수 있습니다."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "아직 나를 복구 연락처로 지정한 사용자가 없습니다."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "아직 나를 비상 연락처로 지정한 사용자가 없습니다."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "최대 ${ limit }개의 비상 연락처 개수에 도달했습니다."
       ],
@@ -8675,6 +8687,12 @@
       "Insert your security key into your device.": [
         "보안 키를 기기에 삽입하세요."
       ],
+      "PIN requirement for security keys disabled": [
+        "보안 키 비활성화를 위한 PIN 요구 조건"
+      ],
+      "PIN requirement for security keys enabled": [
+        "보안 키 활성화를 위한 PIN 요구 조건"
+      ],
       "Security key": [
         "보안 키"
       ],
@@ -9306,6 +9324,9 @@
       "Contact us": [
         "문의"
       ],
+      "Downloads": [
+        "다운로드"
+      ],
       "Enjoying ${ planName }?": [
         "${ planName }을(를) 잘 사용하고 계신가요?"
       ],
@@ -9787,7 +9808,7 @@
         "${ discountPercent }% 할인"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME }가 더 이상 이전 버전의 파일을 보관하지 않습니다."
+        "${ DRIVE_APP_NAME }가 더 이상 이 파일의 기존 버전을 유지하지 않습니다."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 이(가) 유효하지 않음"
@@ -10131,6 +10152,9 @@
       "add a recovery method": [
         "복구 수단 추가"
       ],
+      "Add additional users from your organization to manage this company.": [
+        "조직에서 별도의 사용자를 추가하여 이 회사를 관리하도록 권한을 부여하세요."
+      ],
       "Add an email address in case we need to contact you": [
         "만일 연락이 필요할 경우를 위해 이메일 주소를 추가하세요"
       ],
@@ -10410,6 +10434,9 @@
       "Available on macOS, Windows, and Linux.": [
         "macOS, Windows 및 Linux에서 사용 가능"
       ],
+      "Available on VPN Professional": [
+        "VPN Professional에서 사용 가능"
+      ],
       "Awaiting transaction": [
         "거래 대기 중"
       ],
@@ -10559,6 +10586,9 @@
       ],
       "Coming soon": [
         "곧 찾아옵니다"
+      ],
+      "Companies you've been given access to manage.": [
+        "나에게 관리 권한이 주어진 회사입니다."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "TV에서 ${ VPN_APP_NAME }을 사용하려면 이 기기에서 로그인을 완료하세요."
@@ -11574,6 +11604,9 @@
       "Learn more about Gateways": [
         "게이트웨이에 대해 더 알아보기"
       ],
+      "Learn more about groups": [
+        "그룹에 대해 자세히 알아보기"
+      ],
       "learn more about Sieve programming language": [
         "Sieve 프로그래밍 언어에 대해 알아보시기 바랍니다"
       ],
@@ -12276,9 +12309,6 @@
       "Set password": [
         "비밀번호 설정"
       ],
-      "Set the name, status, and assigned seats": [
-        "이름, 상태 및 배정된 시트 설정"
-      ],
       "Set up your organization": [
         "내 조직 설정하기"
       ],
@@ -12900,11 +12930,23 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
       ],
+      "Upgrade now to monitor your team's account safety.": [
+        "팀의 계정 안전을 모니터링하려면 지금 업그레이드하세요."
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "지금 업그레이드하여 조직 전체에 걸친 ${ PASS_APP_NAME } 활동을 확인하세요."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "언제든지 업그레이드하거나 공간을 비워 남은 메일을 모두 가져오세요"
       ],
+      "Upgrade required": [
+        "업그레이드 필요"
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "공유하기 쉽도록 계정에 @pm.me 짧은 주소로 업그레이드 하세요. \"${ MAIL_APP_NAME }\" 또는 \"비공개 메시지(Private Message)me\"를 의미합니다."
+      ],
+      "Upgrade to define policies for your organization.": [
+        "조직의 정책을 설정하려면 업그레이드하세요."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
@@ -13355,6 +13397,9 @@
       ],
       "You don't have any referrals.": [
         "추천인이 없습니다."
+      ],
+      "You don't manage any companies yet.": [
+        "관리 중인 회사가 없습니다."
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "복구 파일을 열거나 읽을 필요가 없습니다. 다운로드 후 안전한 곳에 저장하세요."
@@ -14311,6 +14356,9 @@
       "Add extra services": [
         "부가 서비스 추가"
       ],
+      "Add managers": [
+        "매니저 추가"
+      ],
       "Additional comments": [
         "추가 의견"
       ],
@@ -14798,7 +14846,7 @@
         "다시 묻지 않기"
       ],
       "Don't keep versions": [
-        "버전 유지 안 함"
+        "버전을 유지하지 않기"
       ],
       "Don't show this again": [
         "다시 보지 않기"
@@ -15373,9 +15421,6 @@
       "Pending": [
         "대기 중"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "개인 및 업무 이메일, 거기에 중요한 업데이트 및 알림"
-      ],
       "Phone number": [
         "전화번호"
       ],
@@ -15417,9 +15462,6 @@
       ],
       "Primary": [
         "우선 순위"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "주요: 개인 및 업무 이메일과 중요한 업데이트"
       ],
       "Priority support": [
         "우선 지원"
@@ -15759,6 +15801,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "업데이트: 자동 전송된 확인, 알림, 계정 업데이트 이메일"
+      ],
+      "Upgrade": [
+        "업그레이드"
       ],
       "Upload 1 or more encryption keys": [
         "하나 및 하나 이상의 암호화 키를 업로드 하십시오"
@@ -16632,6 +16677,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME }개 시트"
+      ],
+      "${ price } per seat": [
+        "사용자당 ${ price }"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ MEET_APP_NAME } 시트 ${ seats }개"
@@ -20079,6 +20127,9 @@
       ],
       "Enter company name": [
         "회사 이름 입력"
+      ],
+      "Enter name or email address": [
+        "사용자 이름 또는 이메일 주소 입력"
       ],
       "example@domain.com": [
         "example@domain.com"
@@ -25139,7 +25190,7 @@
         "사용자를 삭제합니까?"
       ],
       "Delete version history?": [
-        "버전 기록을 삭제하시겠습니까?"
+        "버전 기록을 삭제합니까?"
       ],
       "Deny access to user?": [
         "사용자에게 접근을 거부할까요?"
@@ -25660,6 +25711,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Windows, Mac, Android 및 iOS에서 파일을 관리하세요."
       ],
+      "Managers": [
+        "매니저"
+      ],
       "Messages": [
         "메시지"
       ],
@@ -25947,6 +26001,9 @@
       ],
       "Remove via MDM": [
         "MDM으로 삭제"
+      ],
+      "Remove via PowerShell": [
+        "PowerShell로 제거"
       ],
       "Rename the gateway": [
         "게이트웨이 이름 변경"
@@ -26927,6 +26984,9 @@
       ],
       "Group membership paused": [
         "그룹 구성 권한 중단됨"
+      ],
+      "Pending user activation": [
+        "사용자 활성화 대기 중"
       ],
       "Resuming role assignment": [
         "규칙 할당 다시 시작"

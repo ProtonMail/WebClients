@@ -360,9 +360,6 @@
       "Connected": [
         "Conectat"
       ],
-      "Contact sales": [
-        "Contactați echipa de vânzări"
-      ],
       "Contact support": [
         "Contactați asistența"
       ],
@@ -503,9 +500,6 @@
       ],
       "Delete account": [
         "Ștergere cont"
-      ],
-      "Delete and confirm": [
-        "Ștergere și confirmare"
       ],
       "Delete device profile": [
         "Ștergere profil dispozitiv"
@@ -7142,6 +7136,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Le puteți elimina accesul în orice moment pentru a vă recâștiga controlul exclusiv al contului."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Încă nu v-a desemnat nimeni ca persoană de contact pentru recuperarea datelor."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Încă nu v-a desemnat nimeni drept contact de urgență."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Ați atins maximul de contacte de urgență: ${ limit }.",
         "Ați atins maximul de contacte de urgență: ${ limit }.",
@@ -9458,6 +9458,9 @@
       "Contact us": [
         "Contactați-ne"
       ],
+      "Downloads": [
+        "Descărcări"
+      ],
       "Enjoying ${ planName }?": [
         "Vă bucurați de ${ planName }?"
       ],
@@ -9564,6 +9567,9 @@
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
+      ],
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "Criptare și adăugare contacte: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Criptare și adăugare evenimente în calendar: ${ totalImported }/${ totalToImport }"
@@ -9958,9 +9964,6 @@
       ],
       "${ discountPercent }% discount": [
         "Reducere ${ discountPercent }%"
-      ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } nu va mai păstra versiunile anterioare ale fișierelor."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } nu este validă"
@@ -11360,9 +11363,6 @@
       "for ${ price }": [
         "cu ${ price }"
       ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Pentru un istoric de 10 ani al versiunilor, contactați echipa noastră de vânzări."
-      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Pentru acces oricând la e-mail și experiență mobilă optimizată, descărcați aplicația ${ androidAppLink } sau ${ iosAppLink }."
       ],
@@ -12541,9 +12541,6 @@
       "Set password": [
         "Setare parolă"
       ],
-      "Set the name, status, and assigned seats": [
-        "Setați numele, starea și licențele atribuite"
-      ],
       "Set up your organization": [
         "Setați organizația"
       ],
@@ -12948,12 +12945,6 @@
       "This will allow the TV to access your ${ BRAND_NAME } account.": [
         "Aceasta va permite ca TV-ul să poată accesa contul ${ BRAND_NAME }."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Aceasta va șterge toate versiunile anterioare ale fișierelor mai vechi de ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Aceasta va șterge toate versiunile anterioare ale fișierelor."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Aceasta va refuza accesul la **${ email }**. Continuați?"
       ],
@@ -13191,9 +13182,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Îmbunătățiți contul pentru a vă menține beneficiile din ${ planTitle }."
       ],
-      "Upgrade to unlock": [
-        "Pentru deblocare modificați planul contului."
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Îmbunătățiți-vă planul pentru a debloca funcția ${ monitorLink }."
       ],
@@ -13304,9 +13292,6 @@
       ],
       "Version ${ version }": [
         "Versiunea ${ version }"
-      ],
-      "Version history": [
-        "Istoric versiuni"
       ],
       "Version number successfully copied to clipboard": [
         "Numărul versiunii a fost copiat în memorie."
@@ -14727,6 +14712,9 @@
       "ANY": [
         "ORICARE"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Orice vă solicită atenția, plus mesaje din categoriile dezactivate"
+      ],
       "App password": [
         "Parola aplicației"
       ],
@@ -15118,9 +15106,6 @@
       ],
       "Don't ask again": [
         "Nu mă mai întreba"
-      ],
-      "Don't keep versions": [
-        "Fără păstrare versiuni"
       ],
       "Don't show this again": [
         "Nu mai arăta asta"
@@ -15695,9 +15680,6 @@
       "Pending": [
         "În așteptare"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Mesaje personale și de afaceri, plus actualizări importante și notificări"
-      ],
       "Phone number": [
         "Număr de telefon"
       ],
@@ -15740,8 +15722,8 @@
       "Primary": [
         "Primar"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Principal - Adrese de e-mail personale și de serviciu, plus actualizări importante"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primare - Orice vă solicită atenția, plus mesaje din categoriile dezactivate"
       ],
       "Priority support": [
         "Asistență prioritară"
@@ -25791,9 +25773,6 @@
       ],
       "Delete user?": [
         "Ștergere utilizator?"
-      ],
-      "Delete version history?": [
-        "Ștergeți istoricul versiunilor?"
       ],
       "Deny access to user?": [
         "Refuzați accesul utilizatorului?"

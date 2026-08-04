@@ -1311,6 +1311,9 @@
       "Remove gift code": [
         "Poista lahjakoodi"
       ],
+      "Remove manager": [
+        "Poista ylläpitäjä"
+      ],
       "Remove this label": [
         "Poista tunniste"
       ],
@@ -7049,6 +7052,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Voit poistaa heidän käyttöoikeutensa milloin tahansa palauttaaksesi tilisi yksinhallinnan."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Sinua ei ole vielä nimetty kenenkään palautusyhteyshenkilöksi."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Sinua ei ole vielä nimetty kenenkään hätäyhteyshenkilöksi."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Olet saavuttanut ${ limit } hätäyhteyshenkilön enimmäismäärän.",
         "Olet saavuttanut ${ limit } hätäyhteyshenkilön enimmäismäärän."
@@ -10186,6 +10195,9 @@
       "add a recovery method": [
         "lisäät palautustavan"
       ],
+      "Add additional users from your organization to manage this company.": [
+        "Lisää organisaatiostasi muita käyttäjiä hallinnoimaan tätä yritystä."
+      ],
       "Add an email address in case we need to contact you": [
         "Lisätkää sähköpostiosoite siltä varalta, että meidän on otettava teihin yhteyttä"
       ],
@@ -10612,6 +10624,9 @@
       ],
       "Coming soon": [
         "Tulossa pian"
+      ],
+      "Companies you've been given access to manage.": [
+        "Yritykset, joiden hallinnointioikeudet sinulle on myönnetty."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Kirjaudu sisään tällä laitteella, jotta voit alkaa käyttää ${ VPN_APP_NAME } -sovellusta televisiossasi."
@@ -12276,9 +12291,6 @@
       "Set password": [
         "Aseta salasana"
       ],
-      "Set the name, status, and assigned seats": [
-        "Määritä nimi, tila ja osoitetut paikat"
-      ],
       "Set up your organization": [
         "Määritä organisaatiosi"
       ],
@@ -13337,6 +13349,9 @@
       "You don't have any referrals.": [
         "Sinulla ei ole suositteluja."
       ],
+      "You don't manage any companies yet.": [
+        "Et vielä hallinnoi yhtään yritystä."
+      ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "Teidän ei tarvitse avata tai lukea tiedostoa – ladatkaa se vain ja tallentakaa se turvalliseen paikkaan."
       ],
@@ -14300,6 +14315,9 @@
       ],
       "Add extra services": [
         "Lisää lisäpalveluita"
+      ],
+      "Add managers": [
+        "Lisää ylläpitäjiä"
       ],
       "Additional comments": [
         "Lisäkommentit"
@@ -15340,9 +15358,6 @@
       "Pending": [
         "Odottaa"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Henkilökohtaiset ja työsähköpostit sekä tärkeät päivitykset ja ilmoitukset"
-      ],
       "Phone number": [
         "Puhelinnumero"
       ],
@@ -15384,9 +15399,6 @@
       ],
       "Primary": [
         "Ensisijainen"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Ensisijainen - henkilökohtaiset ja työsähköpostit sekä tärkeät päivitykset"
       ],
       "Priority support": [
         "Ensisijainen tuki"
@@ -20106,6 +20118,9 @@
       ],
       "Enter company name": [
         "Anna yrityksen nimi"
+      ],
+      "Enter name or email address": [
+        "Syötä nimi tai sähköpostiosoite"
       ],
       "example@domain.com": [
         "esimerkki@verkkotunnus.fi"
@@ -25734,6 +25749,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Hallitkaa tiedostoja laitteiden välillä Windowsilla, Macilla, Androidilla ja iOS:llä."
       ],
+      "Managers": [
+        "Ylläpitäjät"
+      ],
       "Messages": [
         "Viestit"
       ],
@@ -27429,6 +27447,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Tämä luo uuden ${ MAIL_APP_NAME } -osoitteen."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Päivitä tuettuun tilaukseen käyttääksesi järjestelmänvalvojan rooleja."
       ],
       "User created": [
         "Käyttäjä luotiin"
