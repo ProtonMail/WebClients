@@ -127,6 +127,9 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Cancel bulk selection": [
+        "Avbryt massval"
+      ],
       "Cancel email change": [
         "Avbryt ändring av e-post"
       ],
@@ -2204,7 +2207,8 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2681,6 +2685,9 @@
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "För att hålla din personliga e-postadress dold kan du skapa en aliaskontakt som maskerar din adress."
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "För att Git ska fungera med SSH-agenten ${ PASS_APP_NAME } måste Git använda Windows OpenSSH. Detta kan göras genom att köra följande kommando:"
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "För att migrera data från en annan lösenordshanterare, gå till lösenordshanteraren, exportera din data och ladda sedan upp den till ${ PASS_APP_NAME }. När din data har importerats, ta bort den exporterade filen."
