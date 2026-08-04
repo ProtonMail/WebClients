@@ -310,9 +310,6 @@
       "Continue to ${ planOrAppName }": [
         "Συνέχεια στο ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Συνεχίστε με κατηγορίες"
-      ],
       "Continue with Free": [
         "Συνέχεια με Free"
       ],
@@ -1045,6 +1042,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
       ],
+      "Open debug menu": [
+        "Άνοιγμα μενού εντοπισμού σφαλμάτων"
+      ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
@@ -1523,8 +1523,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1697,6 +1696,9 @@
       "Yes, I'll attend": [
         "Ναι, θα παρευρεθώ"
       ],
+      "Yes, organize it": [
+        "Ναι, οργανώστε το"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
@@ -1731,9 +1733,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Προσαρμογή κατηγοριών"
-      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -1742,6 +1741,9 @@
       ],
       "Not now": [
         "Όχι τώρα"
+      ],
+      "Set up categories": [
+        "Ρύθμιση κατηγοριών"
       ],
       "Skip": [
         "Παράλειψη"
@@ -4371,7 +4373,7 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Διαβάστε, απαντήστε και μείνετε ενημερωμένοι στο Gmail μέσα από το ${ MAIL_APP_NAME }"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Κάντε δεξί κλικ σε ένα email και επιλέξτε \"Μετακίνηση σε\" ή σύρετέ το και αποθέστε το σε άλλη κατηγορία. Παρόμοια μηνύματα θα ταξινομούνται αυτόματα εκεί στο μέλλον."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
@@ -7894,7 +7896,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8075,6 +8078,9 @@
       ],
       "Move emails": [
         "Μετακίνηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Move here": [
+        "Μετακίνηση εδώ"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
@@ -8343,6 +8349,10 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Επικοινωνήστε μαζί μας για βοήθεια σε οτιδήποτε ${ BRAND_NAME }."
+      ],
+      "Read ${ count } email on screen": [
+        "Ανάγνωση ${ count } μήνυμα ηλεκτρονικού ταχυδρομείου στην οθόνη",
+        "Ανάγνωση ${ count } μηνύματα ηλεκτρονικού ταχυδρομείου στην οθόνη"
       ],
       "Recipient: ": [
         "Παραλήπτης: "
@@ -9167,9 +9177,9 @@
       "You have ${ totalLabel } in your inbox.": [
         "Έχετε ${ totalLabel } στα εισερχόμενά σας."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "Έχετε **${ count } συνομιλία** σε ${ categoryLabel } κατηγορία",
-        "Έχετε **${ count } συνομιλίες** σε ${ categoryLabel } κατηγορία"
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Έχετε **${ count } συνομιλία** στην ${ categoryLabel } κατηγορία σας",
+        "Έχετε **${ count } συνομιλίες** στην ${ categoryLabel } κατηγορία σας"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Έχετε **${ count } συνομιλία** αποθηκευμένη σε αυτόν το φάκελο",
@@ -9179,9 +9189,9 @@
         "Έχετε **${ count } συνομιλία** με ετικέτα με αυτή την ετικέτα",
         "Έχετε **${ count } συνομιλίες** με ετικέτα με αυτή την ετικέτα"
       ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "Έχετε **${ count } μήνυμα** σε ${ categoryLabel } κατηγορία",
-        "Έχετε **${ count } μηνύματα** σε ${ categoryLabel } κατηγορία"
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Έχετε **${ count } μήνυμα** στην ${ categoryLabel } κατηγορία σας",
+        "Έχετε **${ count } μηνύματα** στην ${ categoryLabel } κατηγορία σας"
       ],
       "You have **${ count } message** stored in this folder": [
         "Έχετε **${ count } μήνυμα** αποθηκευμένο σε αυτόν το φάκελο",
@@ -9218,13 +9228,13 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Για να κάνετε εφικτή την υποβάθμιση, πρέπει να απενεργοποιήσετε ή αφαιρέσετε τυχόν πλεονάζοντες χρήστες, διευθύνσεις και τομείς του ${ MAIL_APP_NAME }."
       ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Επιλέξατε **${ checked } συνομιλία** σε ${ categoryLabel } κατηγορία",
-        "Επιλέξατε **${ checked } συνομιλίες** σε ${ categoryLabel } κατηγορία"
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Επιλέξατε **${ checked } συνομιλία** στην ${ categoryLabel } κατηγορία σας",
+        "Επιλέξατε **${ checked } συνομιλίες** στην ${ categoryLabel } κατηγορία σας"
       ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Επιλέξατε **${ checked } μήνυμα** σε ${ categoryLabel } κατηγορία",
-        "Επιλέξατε **${ checked } μηνύματα** σε ${ categoryLabel } κατηγορία"
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Επιλέξατε **${ checked } μήνυμα** στην ${ categoryLabel } κατηγορία σας",
+        "Επιλέξατε **${ checked } μηνύματα** στην ${ categoryLabel } κατηγορία σας"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Επιλέξατε **${ count } συνομιλία** από αυτόν το φάκελο",
@@ -9785,6 +9795,9 @@
       "ANY": [
         "ΟΠΟΙΑΔΗΠΟΤΕ"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Οτιδήποτε χρειάζεται την προσοχή σας, καθώς και ηλεκτρονικά μηνύματα από απενεργοποιημένες κατηγορίες"
+      ],
       "App password": [
         "Κωδικός πρόσβασης εφαρμογής"
       ],
@@ -10319,9 +10332,6 @@
       "Payment method": [
         "Μέθοδος πληρωμής"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Προσωπικά και επαγγελματικά μηνύματα ηλεκτρονικού ταχυδρομείου, καθώς και σημαντικές ενημερώσεις και ειδοποιήσεις"
-      ],
       "PGP scheme": [
         "Σύστημα PGP"
       ],
@@ -10343,8 +10353,8 @@
       "Primary": [
         "Κύριο"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Κύρια - Προσωπικά και επαγγελματικά μηνύματα, καθώς και σημαντικές ενημερώσεις"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Κύρια - Οτιδήποτε χρειάζεται την προσοχή σας, καθώς και ηλεκτρονικά μηνύματα από απενεργοποιημένες κατηγορίες"
       ],
       "Promotions": [
         "Προωθήσεις"
@@ -15294,8 +15304,9 @@
         "Μετακίνηση μηνύματος ${ selectionCount }",
         "Μετακίνηση ${ selectionCount } μηνυμάτων"
       ],
-      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
-        "Μετακινήθηκε στο ${ label }. Παρόμοια μηνύματα θα κατηγοριοποιηθούν εδώ στο μέλλον."
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Μετακινήθηκε στο ${ label }. Παρόμοιο μήνυμα θα κατηγοριοποιηθεί εκεί στο μέλλον.",
+        "Μετακινήθηκε στο ${ label }. Παρόμοια μηνύματα θα κατηγοριοποιηθούν εκεί στο μέλλον."
       ],
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
@@ -16084,8 +16095,8 @@
       "Make a secure connection your default": [
         "Ορισμός ασφαλούς σύνδεσης ως προεπιλογής"
       ],
-      "Make Categories your own": [
-        "Κάντε τις Κατηγορίες δικές σας"
+      "Make your inbox your own": [
+        "Κάντε τα εισερχόμενά σας δικά σας"
       ],
       "Mark all messages as read": [
         "Επισήμανση όλων των μηνυμάτων ως αναγνωσμένα"
@@ -16279,9 +16290,6 @@
       "Payment verification": [
         "Επαλήθευση Πληρωμής"
       ],
-      "Personalize your Categories": [
-        "Εξατομικεύστε τις Κατηγορίες σας"
-      ],
       "Phone numbers": [
         "Αριθμοί Τηλεφώνου"
       ],
@@ -16338,6 +16346,9 @@
       ],
       "Referral": [
         "Παραπομπή"
+      ],
+      "Refine your Categories": [
+        "Βελτιώστε τις κατηγορίες σας"
       ],
       "Remove forwarding address": [
         "Κατάργηση διεύθυνσης προώθησης"
@@ -16824,6 +16835,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Αναβαθμίστε σε ένα υποστηριζόμενο πρόγραμμα για να χρησιμοποιήσετε ρόλους διαχειριστή."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Θα μπορείτε να αναθέσετε ρόλους μόλις ο χρήστης αποδεχτεί την πρόσκληση."
       ]

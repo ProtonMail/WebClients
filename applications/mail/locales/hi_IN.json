@@ -307,9 +307,6 @@
       "Continue to ${ planOrAppName }": [
         "${ planOrAppName } पर जारी रखें"
       ],
-      "Continue with categories": [
-        "श्रेणियों के साथ जारी रखें"
-      ],
       "Continue with Free": [
         "मुफ़्त के साथ जारी रखें"
       ],
@@ -1510,10 +1507,6 @@
       "Trust": [
         "भरोसा करें"
       ],
-      "Trust key": [
-        "ट्रस्ट की",
-        "ट्रस्ट कीज़"
-      ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
       ],
@@ -1719,9 +1712,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "श्रेणियां कस्टमाइज़ करें"
-      ],
       "Got it": [
         "समझ गया"
       ],
@@ -4335,9 +4325,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } के भीतर से ही Gmail पढ़ें, जवाब दें और हर गतिविधि पर नज़र रखें"
-      ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "किसी ईमेल पर राइट-क्लिक करें और \"इसमें ले जाएं\" चुनें, या उसे खींचकर दूसरी श्रेणी में छोड़ें। भविष्य में इसी तरह के ईमेल स्वचालित रूप से वहां सॉर्ट किए जाएंगे।"
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "सीधे ${ MAIL_APP_NAME } में Gmail संदेश भेजें और प्राप्त करें। ${ addressesSettingsLink } में अपना पता कनेक्ट करें।"
@@ -7810,9 +7797,6 @@
       "Initializing…": [
         "शुरू हो रहा है…"
       ],
-      "Insert image": [
-        "तस्वीर डालें"
-      ],
       "Insert link": [
         "लिंक डालें"
       ],
@@ -9066,10 +9050,6 @@
       "You have ${ totalLabel } in your inbox.": [
         "आपके इनबॉक्स में ${ totalLabel } है।"
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "आपके पास ${ categoryLabel } श्रेणी में **${ count } बातचीत** है",
-        "आपके पास ${ categoryLabel } श्रेणी में **${ count } बातचीत** हैं"
-      ],
       "You have **${ count } conversation** stored in this folder": [
         "आपके पास **${ count } वार्तालाप** इस फ़ोल्डर में संग्रहीत है",
         "आपके पास **${ count } वार्तालाप** इस फ़ोल्डर में संग्रहीत है"
@@ -9077,10 +9057,6 @@
       "You have **${ count } conversation** tagged with this label": [
         "आपने **${ count } बातचीत** को इस लेबल के साथ टैग किया है",
         "आपने **${ count } बातचीत** को इस लेबल के साथ टैग किया है"
-      ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "आपके पास ${ categoryLabel } श्रेणी में **${ count } संदेश** है",
-        "आपके पास ${ categoryLabel } श्रेणी में **${ count } संदेश** हैं"
       ],
       "You have **${ count } message** stored in this folder": [
         "आपके पास **${ count } संदेश** इस फ़ोल्डर में संग्रहीत है",
@@ -9116,14 +9092,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "डाउनग्रेड करने से पहले आपको किसी भी अतिरिक्त ${ MAIL_APP_NAME } उपयोगकर्ताओं, पतों और कस्टम डोमेन को अक्षम या निकालना होगा।"
-      ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "आपने ${ categoryLabel } श्रेणी में **${ checked } बातचीत** चुनी है",
-        "आपने ${ categoryLabel } श्रेणी में **${ checked } बातचीत** चुनी हैं"
-      ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "आपने ${ categoryLabel } श्रेणी में **${ checked } संदेश** चुना है",
-        "आपने ${ categoryLabel } श्रेणी में **${ checked } संदेश** चुने हैं"
       ],
       "You selected **${ count } conversation** from this folder": [
         "आपने इस फ़ोल्डर से **${ count } वार्तालाप** का चयन किया",
@@ -10203,9 +10171,6 @@
       "Payment method": [
         "भुगतान तरीका"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "व्यक्तिगत और कार्य ईमेल, साथ ही महत्वपूर्ण अपडेट और सूचनाएं"
-      ],
       "PGP scheme": [
         "PGP योजना"
       ],
@@ -10226,9 +10191,6 @@
       ],
       "Primary": [
         "प्राथमिक"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "मुख्य - व्यक्तिगत और कार्य ईमेल, साथ ही महत्वपूर्ण अपडेट"
       ],
       "Promotions": [
         "प्रचार"
@@ -15944,9 +15906,6 @@
       "Make a secure connection your default": [
         "एक सुरक्षित कनेक्शन को अपना डिफ़ॉल्ट बनाएं"
       ],
-      "Make Categories your own": [
-        "श्रेणियों को अपनी पसंद के अनुसार बनाएं"
-      ],
       "Mark all messages as read": [
         "सभी संदेशों को पढ़े गए के रूप में मार्क करें"
       ],
@@ -16135,9 +16094,6 @@
       ],
       "Payment verification": [
         "भुगतान सत्यापन"
-      ],
-      "Personalize your Categories": [
-        "अपनी श्रेणियों को निजीकृत करें"
       ],
       "Phone numbers": [
         "फोन नंबर"

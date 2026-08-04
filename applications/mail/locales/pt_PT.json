@@ -307,9 +307,6 @@
       "Continue to ${ planOrAppName }": [
         "Continuar para ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Continuar com categorias"
-      ],
       "Continue with Free": [
         "Continuar com a versão gratuita"
       ],
@@ -1511,8 +1508,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
+        "Confiar na chave"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1719,9 +1715,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Personalizar categorias"
-      ],
       "Got it": [
         "Entendido"
       ],
@@ -4338,9 +4331,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Leia, responda e mantenha-se a par do Gmail a partir do ${ MAIL_APP_NAME }"
-      ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Clique com o botão direito num e-mail e selecione \"Mover para\" ou arraste e largue o mesmo noutra categoria. E-mails semelhantes serão automaticamente ordenados para lá no futuro."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Envie e receba mensagens do Gmail diretamente no ${ MAIL_APP_NAME }. Ligue o seu endereço em ${ addressesSettingsLink }."
@@ -7814,7 +7804,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -9069,10 +9060,6 @@
       "You have ${ totalLabel } in your inbox.": [
         "Tem ${ totalLabel } na sua caixa de entrada."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "Tem **${ count } conversa** na categoria ${ categoryLabel }",
-        "Tem **${ count } conversas** na categoria ${ categoryLabel }"
-      ],
       "You have **${ count } conversation** stored in this folder": [
         "Tem **${ count } conversa** armazenada nesta pasta.",
         "Tem **${ count } conversas** armazenadas nesta pasta."
@@ -9080,10 +9067,6 @@
       "You have **${ count } conversation** tagged with this label": [
         "Tem **${ count } conversa** com esta etiqueta",
         "Tem **${ count } conversas** com esta etiqueta"
-      ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "Tem **${ count } mensagem** na categoria ${ categoryLabel }",
-        "Tem **${ count } mensagens** na categoria ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Tem **${ count } mensagem** armazenada desta pasta.",
@@ -9119,14 +9102,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Deve desativar ou remover quaisquer utilizadores, endereços e domínios personalizados ${ MAIL_APP_NAME } adicionais antes de mudar para uma subscrição mais barata."
-      ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Selecionou **${ checked } conversa** na categoria ${ categoryLabel }",
-        "Selecionou **${ checked } conversas** na categoria ${ categoryLabel }"
-      ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Selecionou **${ checked } mensagem** na categoria ${ categoryLabel }",
-        "Selecionou **${ checked } mensagens** na categoria ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Selecionou **${ count } conversa** desta pasta",
@@ -10206,9 +10181,6 @@
       "Payment method": [
         "Método de pagamento"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "E-mails pessoais e profissionais, além de atualizações importantes e notificações"
-      ],
       "PGP scheme": [
         "Esquema PGP"
       ],
@@ -10229,9 +10201,6 @@
       ],
       "Primary": [
         "Principal"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Principal - E-mails pessoais e de trabalho, além de atualizações importantes"
       ],
       "Promotions": [
         "Promoções"
@@ -15947,9 +15916,6 @@
       "Make a secure connection your default": [
         "Escolha uma ligação segura como opção predeterminada"
       ],
-      "Make Categories your own": [
-        "Crie as categorias à sua medida"
-      ],
       "Mark all messages as read": [
         "Marcar todas as mensagens como lidas"
       ],
@@ -16138,9 +16104,6 @@
       ],
       "Payment verification": [
         "Verificação do pagamento"
-      ],
-      "Personalize your Categories": [
-        "Personalize as suas categorias"
       ],
       "Phone numbers": [
         "Números de telefone"

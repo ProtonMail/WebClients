@@ -1211,6 +1211,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Uppgradera för att aktivera ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Uppgradera till Professional"
+      ],
       "Upgrade to view all": [
         "Uppgradera för att visa alla"
       ],
@@ -4719,6 +4722,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Du kan när som helst ta bort deras åtkomst för att återfå exklusiv kontroll för ditt konto."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Du har inte blivit utsedd som en återställningskontakt för någon än."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Du har inte blivit utsedd som en nödkontakt för någon än."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Du har nått maximala antalet av ${ limit } nödkontakt.",
         "Du har nått maximalt antal av ${ limit } nödkontakter."
@@ -6063,6 +6072,15 @@
       "Insert your security key into your device.": [
         "Infoga din säkerhetsnyckel i din enhet."
       ],
+      "PIN requirement for security keys disabled": [
+        "PIN-krav för säkerhetsnycklar inaktiverat"
+      ],
+      "PIN requirement for security keys enabled": [
+        "PIN-krav för säkerhetsnycklar aktiverat"
+      ],
+      "Require PIN for security key": [
+        "Kräver PIN för säkerhetsnyckel"
+      ],
       "Security key": [
         "Säkerhetsnyckel"
       ],
@@ -7301,6 +7319,9 @@
       "Authenticator app 2FA enabled": [
         "Autentiseringsapp 2FA aktiverad"
       ],
+      "Available on VPN Professional": [
+        "Tillgänglig på VPN Professional"
+      ],
       "Awaiting transaction": [
         "Väntar på transaktion"
       ],
@@ -8170,6 +8191,9 @@
       "Learn more about Gateways": [
         "Lär dig mer om gateways"
       ],
+      "Learn more about groups": [
+        "Lär dig mer om grupper"
+      ],
       "Learn more about single sign-on": [
         "Lär dig mer om enkel inloggning"
       ],
@@ -8754,6 +8778,9 @@
       "Start sharing it with contacts and use it for online services.": [
         "Börja dela den med kontakter och använd den för onlinetjänster."
       ],
+      "Stay on your plan and get 50% off your next month": [
+        "Stanna kvar på ditt paket och få 50 % rabatt för din nästa månad"
+      ],
       "Storage allocated to other users in this organisation": [
         "Lagringsutrymme tilldelad andra användare i denna organisation"
       ],
@@ -9143,8 +9170,14 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Uppgradera för att visa ${ PASS_APP_NAME }-aktivitet i hela din organisation."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Uppgradera eller frigör utrymme när som helst för att flytta över resten"
+      ],
+      "Upgrade required": [
+        "Uppgradering krävs"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Uppgradera för att behålla dina ${ planTitle }-förmåner."
@@ -10751,6 +10784,9 @@
       ],
       "Unlimited": [
         "Obegränsat"
+      ],
+      "Upgrade": [
+        "Uppgradera"
       ],
       "Upload 1 or more encryption keys": [
         "Ladda upp 1 eller flera krypteringsnycklar"
@@ -18044,6 +18080,9 @@
       ],
       "Remove via MDM": [
         "Ta bort via MDM"
+      ],
+      "Remove via PowerShell": [
+        "Ta bort via PowerShell"
       ],
       "Rename the gateway": [
         "Byt namn på gateway"

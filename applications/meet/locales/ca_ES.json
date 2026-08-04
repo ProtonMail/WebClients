@@ -1830,6 +1830,12 @@
       "Event deleted": [
         "S'ha suprimit l'esdeveniment"
       ],
+      "Failed to admit the participant. Please try again.": [
+        "No s'ha pogut admetre el participant. Torneu-ho a provar."
+      ],
+      "Failed to admit the participants. Please try again.": [
+        "No s'ha pogut admetre els participants. Torneu-ho a provar."
+      ],
       "Failed to assign host": [
         "No s'ha pogut assignar amfitrió"
       ],
@@ -1850,6 +1856,9 @@
       ],
       "Failed to delete room": [
         "No s'ha pogut eliminar la sala"
+      ],
+      "Failed to deny the participant. Please try again.": [
+        "No s'ha pogut refusar la persona participant. Torneu-ho a provar."
       ],
       "Failed to download recording": [
         "No s'han pogut descarregar els enregistraments"
@@ -1889,6 +1898,9 @@
       ],
       "Failed to unlock meeting": [
         "No s'ha pogut desbloquejar la reunió"
+      ],
+      "Failed to update waiting room setting. Please try again.": [
+        "No s'han pogut actualitzar les preferències de la sala d'espera. Torneu-ho a provar."
       ],
       "Incorrect username": [
         "Nom d'usuari incorrecte"
@@ -2183,6 +2195,10 @@
         "${ totalParticipantCount } participant",
         "${ totalParticipantCount } participants"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "Hi ha ${ waitingRoomParticipantsCount } persona esperant",
+        "Hi ha ${ waitingRoomParticipantsCount } persones esperant"
+      ],
       "(You)": [
         "(Vós)"
       ],
@@ -2348,6 +2364,9 @@
       "Everyone has been disconnected from the call.": [
         "S'ha desconnectat tothom de la trucada."
       ],
+      "Expires in ${ formattedCountdown }": [
+        "Caducarà el ${ formattedCountdown }"
+      ],
       "Failed to apply background blur": [
         "No s'ha pogut aplicar el difuminat de fons"
       ],
@@ -2402,8 +2421,14 @@
       "Internet connection lost": [
         "S'ha perdut la connexió a Internet"
       ],
+      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
+        "La sol·licitud d'unió ha caducat. L'amfitrió no us ha admès a temps. Envieu una nova sol·licitud per unir-vos-hi."
+      ],
       "Joined ${ roomNameLabel }": [
         "Us heu unit a ${ roomNameLabel }"
+      ],
+      "Joined at ${ receivedTime }": [
+        "Us hi heu afegit a les ${ receivedTime }"
       ],
       "Learn more": [
         "Més informació"
@@ -2792,6 +2817,12 @@
       "View ": [
         "Visualitzar "
       ],
+      "Waiting for the host to admit you. The host has been notified that you're waiting.": [
+        "S'està esperant que l'amfitrió us admeti. Se l'ha notificat que esteu esperant."
+      ],
+      "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
+        "S'està esperant que l'amfitrió comenci. Us hi afegireu quan l'amfitrió obri la reunió i us hi admeti."
+      ],
       "Warning": [
         "Advertència"
       ],
@@ -2836,6 +2867,9 @@
       ],
       "You were removed from the meeting": [
         "Us han eliminat de la reunió"
+      ],
+      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
+        "No se us ha admès a aquesta reunió. Podeu provar de tornar-vos-hi a unir si creieu que es tracta d'un error."
       ],
       "You will leave the meeting. Others will continue.": [
         "Deixareu la reunió. Els altres continuaran."
@@ -3124,6 +3158,9 @@
       ],
       "Use simple selfie segmentation": [
         "Utilitza una segmentació d'autoretrat senzilla"
+      ],
+      "Use waiting room with a paid plan": [
+        "Utilitzeu la sala d'espera amb un pla de pagament"
       ],
       "Verification code": [
         "Codi de verificació"
@@ -3565,6 +3602,9 @@
       "Join meeting": [
         "Afegiu-vos a la reunió"
       ],
+      "Join request expired": [
+        "La sol·licitud d'unió ha caducat"
+      ],
       "Joined at epoch ${ log.epoch }": [
         "S'ha unit a l'època ${ log.epoch }"
       ],
@@ -3677,6 +3717,9 @@
       "Thank you!": [
         "Gràcies!"
       ],
+      "The host didn't admit you": [
+        "L'amfitrió no us ha admès"
+      ],
       "Time": [
         "Hora"
       ],
@@ -3688,6 +3731,9 @@
       ],
       "Video": [
         "Vídeo"
+      ],
+      "Waiting for the host": [
+        "S'està esperant l'amfitrió"
       ],
       "Waiting room": [
         "Sala d'espera"

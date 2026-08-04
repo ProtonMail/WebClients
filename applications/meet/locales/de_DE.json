@@ -633,8 +633,14 @@
       "Upgrade your plan to use waiting room in your next meeting.": [
         "Dein Abonnement upgraden, um bei deinem nächsten Meeting den Wartebereich nutzen zu können."
       ],
+      "Upload another image": [
+        "Weiteres Bild hochladen"
+      ],
       "Upload another video": [
         "Anderes Video hochladen"
+      ],
+      "Upload image": [
+        "Bild hochladen"
       ],
       "Upload video": [
         "Video hochladen"
@@ -644,6 +650,12 @@
       ],
       "Use camera": [
         "Kamera verwenden"
+      ],
+      "Use color": [
+        "Farbe benutzen"
+      ],
+      "Use image": [
+        "Bild nutzen"
       ],
       "Use microphone": [
         "Mikrofon benutzen"
@@ -1818,6 +1830,12 @@
       "Event deleted": [
         "Termin gelöscht"
       ],
+      "Failed to admit the participant. Please try again.": [
+        "Teilnehmer konnten nicht zugelassen werden. Bitte versuche es erneut."
+      ],
+      "Failed to admit the participants. Please try again.": [
+        "Teilnehmer konnten nicht zugelassen werden. Bitte versuche es erneut."
+      ],
       "Failed to assign host": [
         "Fehler beim Zuweisen eines Organisators"
       ],
@@ -1838,6 +1856,9 @@
       ],
       "Failed to delete room": [
         "Fehler beim Löschen des Raums"
+      ],
+      "Failed to deny the participant. Please try again.": [
+        "Teilnehmer konnte nicht abgelehnt werden. Bitte versuche es erneut."
       ],
       "Failed to download recording": [
         "Aufnahme konnte nicht heruntergeladen werden"
@@ -1877,6 +1898,9 @@
       ],
       "Failed to unlock meeting": [
         "Fehler beim Entsperren des Meetings"
+      ],
+      "Failed to update waiting room setting. Please try again.": [
+        "Die Aktualisierung der Warteraumeinstellung ist fehlgeschlagen. Bitte versuche es erneut."
       ],
       "Incorrect username": [
         "Falscher Benutzername"
@@ -2171,6 +2195,10 @@
         "${ totalParticipantCount } Teilnehmer",
         "${ totalParticipantCount } Teilnehmer"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "${ waitingRoomParticipantsCount } Person wartet",
+        "${ waitingRoomParticipantsCount } Personen warten"
+      ],
       "(You)": [
         "(Du)"
       ],
@@ -2297,6 +2325,9 @@
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
+      "Enable the camera to preview the custom background.": [
+        "Vorschau des benutzerdefinierten Hintergrunds in der Kamera aktivieren."
+      ],
       "End Meeting for everyone?": [
         "Meeting für alle beenden?"
       ],
@@ -2333,8 +2364,14 @@
       "Everyone has been disconnected from the call.": [
         "Alle wurden vom Anfruf getrennt."
       ],
+      "Expires in ${ formattedCountdown }": [
+        "Läuft in ${ formattedCountdown } ab"
+      ],
       "Failed to apply background blur": [
         "Hintergrundunschärfe konnte nicht angewendet werden"
+      ],
+      "Failed to apply custom background": [
+        "Das Anwenden des benutzerdefinierten Hintergrunds ist fehlgeschlagen"
       ],
       "Failed to update meeting name": [
         "Fehler beim Aktualisieren der Besprechungsbezeichnung"
@@ -2384,8 +2421,14 @@
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
       ],
+      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
+        "Die Teilnahmeanfrage ist abgelaufen. Der Organisator hat dich nicht rechtzeitig zugelassen. Sende eine neue Teilnahmeanfrage."
+      ],
       "Joined ${ roomNameLabel }": [
         "${ roomNameLabel } beigetreten"
+      ],
+      "Joined at ${ receivedTime }": [
+        "Um ${ receivedTime } beigetreten"
       ],
       "Learn more": [
         "Mehr erfahren"
@@ -2627,6 +2670,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
+      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
+        "Leite das Live-Kamerabild durch den Prozessor für benutzerdefinierte Hintergründe. Wähle eine einfarbige Fläche aus oder lade ein Bild hoch, das als Hintergrund verwendet werden soll."
+      ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Plane dein nächstes Meeting. Erstelle ein Konto, um Meetings mit deinem Kalender zu planen."
       ],
@@ -2762,11 +2808,20 @@
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
         "Upgrade, um die 1-Stunden-Begrenzung zu entfernen und den Countdown zu überspringen. Genieße Meetings von bis zu 24 Stunden."
       ],
+      "Upload an image to preview it as the background.": [
+        "Ein Bild hochladen, um eine Vorschau als Hintergrund anzuzeigen."
+      ],
       "Video effects": [
         "Videoeffekte"
       ],
       "View ": [
         "Anzeigen "
+      ],
+      "Waiting for the host to admit you. The host has been notified that you're waiting.": [
+        "Warten bis der Organisator dich zulässt. Er wurde darüber informiert, dass du wartest."
+      ],
+      "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
+        "Warten bis der Organisator das Meeting startet. Du nimmst teil, sobald der Organisator das Meeting startet und dich zulässt."
       ],
       "Warning": [
         "Warnung"
@@ -2812,6 +2867,9 @@
       ],
       "You were removed from the meeting": [
         "Du wurdest aus dem Meeting entfernt"
+      ],
+      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
+        "Du wurdest nicht zu diesem Meeting zugelassen. Du kannst erneut versuchen, beizutreten, wenn du der Meinung bist, dass dies ein Fehler war."
       ],
       "You will leave the meeting. Others will continue.": [
         "Du wirst das Meeting verlassen. Die andere werden fortfahren."
@@ -2881,6 +2939,9 @@
       ],
       "Authenticator app": [
         "Authentifizierungs-App"
+      ],
+      "Background color": [
+        "Hintergrundfarbe"
       ],
       "Blurred (next)": [
         "Unscharf (nächste)"
@@ -2981,6 +3042,9 @@
       "Identity": [
         "Identität"
       ],
+      "Image": [
+        "Bild"
+      ],
       "Include application logs in bug report": [
         "Anwendungsprotokolle im Fehlerbericht einschließen"
       ],
@@ -3074,6 +3138,9 @@
       "Selected Speaker": [
         "Ausgewählter Sprecher"
       ],
+      "Solid color": [
+        "Einfarbig"
+      ],
       "Subscribed": [
         "Abonniert"
       ],
@@ -3083,11 +3150,17 @@
       "Track SID": [
         "SID nachverfolgen"
       ],
+      "Uploaded image": [
+        "Hochgeladenes Bild"
+      ],
       "Use live camera feed": [
         "Live-Kamera-Feed verwenden"
       ],
       "Use simple selfie segmentation": [
         "Einfache Selfie-Segmentierung verwenden"
+      ],
+      "Use waiting room with a paid plan": [
+        "Wartebereich mit einem kostenpflichtigen Abonnement nutzen"
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -3478,6 +3551,9 @@
       "Create new room": [
         "Neuen Raum erstellen"
       ],
+      "Custom background tester": [
+        "Benutzerdefinierter Hintergrund-Tester"
+      ],
       "Date": [
         "Datum"
       ],
@@ -3525,6 +3601,9 @@
       ],
       "Join meeting": [
         "Meeting beitreten"
+      ],
+      "Join request expired": [
+        "Teilnahmeanfrage ist abgelaufen"
       ],
       "Joined at epoch ${ log.epoch }": [
         "Mit Epoche ${ log.epoch } beigetreten"
@@ -3638,6 +3717,9 @@
       "Thank you!": [
         "Vielen Dank."
       ],
+      "The host didn't admit you": [
+        "Der Organisator hat dich nicht zugelassen"
+      ],
       "Time": [
         "Zeit"
       ],
@@ -3649,6 +3731,9 @@
       ],
       "Video": [
         "Video"
+      ],
+      "Waiting for the host": [
+        "Auf den Organisator warten"
       ],
       "Waiting room": [
         "Wartebereich"

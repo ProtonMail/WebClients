@@ -114,15 +114,6 @@
       "Cancel": [
         "Отменить"
       ],
-      "Cancel all downloads": [
-        "Отменить все скачивания"
-      ],
-      "Cancel all uploads": [
-        "Отменить все загрузки"
-      ],
-      "Cancel download": [
-        "Отменить скачивание"
-      ],
       "Cancel subscription": [
         "Отменить подписку"
       ],
@@ -206,9 +197,6 @@
       ],
       "Continue": [
         "Продолжить"
-      ],
-      "Continue downloading": [
-        "Продолжить скачивание"
       ],
       "Continue import": [
         "Продолжить импорт"
@@ -338,9 +326,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Скачать копию (в формате xlsx)"
-      ],
-      "Download anyway": [
-        "Все равно скачать"
       ],
       "Download debug information": [
         "Скачать информацию для отладки"
@@ -681,9 +666,6 @@
       "Rename document": [
         "Переименовать документ"
       ],
-      "Replace file": [
-        "Заменить файл"
-      ],
       "Report a problem": [
         "Сообщить о проблеме"
       ],
@@ -899,9 +881,6 @@
       ],
       "Upload and share files": [
         "Загружайте и делитесь файлами"
-      ],
-      "Upload anyway": [
-        "Все равно загрузить"
       ],
       "Upload picture": [
         "Загрузить картинку"
@@ -3292,20 +3271,8 @@
       "Failed to update public share node": [
         "Не удалось обновить публичную ссылку общего доступа"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Файл \"${ name }\" уже скачивается"
-      ],
-      "File cannot be merged with folder": [
-        "Файл не может быть объединен с папкой"
-      ],
-      "File selection is already downloading": [
-        "Выбранные файлы уже скачиваются"
-      ],
       "First name is too long": [
         "Имя слишком длинное"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Папка \"${ name }\" уже скачивается"
       ],
       "Folder name cannot be empty.": [
         "Имя папки не может быть пустым."
@@ -3564,9 +3531,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Исходный файл еще не загружен, пожалуйста, повторите попытку позже"
-      ],
-      "The original folder not found": [
-        "Исходная папка не найдена"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "В вашей внешнем аккаунте слишком много папок. Пожалуйста, настройте импорт, чтобы удалить некоторые папки."
@@ -4618,9 +4582,6 @@
         "${ contactsLength } контактов",
         "${ contactsLength } контактов"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } не может быть скачан напрямую и не буден включён в загрузку. Вы можете скачать остальные объекты нажав 'Продолжить скачивание'."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } позволяет сотрудничать в режиме реального времени с использованием сквозного шифрования для обеспечения полной конфиденциальности. Создайте копию, чтобы начать редактирование, или попросите владельца предоставить вам доступ к редактированию."
       ],
@@ -4696,9 +4657,6 @@
         "${ updated } контактов успешно обновлено.",
         "${ updated } контактов успешно обновлено."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } уже существует в этой папке."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } скрывает ваш IP-адрес, поэтому веб-сайты не могут вас идентифицировать."
       ],
@@ -4731,12 +4689,6 @@
         "+${ organization.BonusVPN } подключения для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
         "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
         "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)"
-      ],
-      "A number will be added to the filename": [
-        "К имени файла будет добавлен номер"
-      ],
-      "A number will be added to the folder name": [
-        "К имени папки будет добавлен номер"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
@@ -4794,9 +4746,6 @@
       ],
       "Already in this folder": [
         "Уже в этой папке"
-      ],
-      "an anonymous user": [
-        "анонимный пользователь"
       ],
       "and": [
         "и"
@@ -4869,9 +4818,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Проверка контакта ${ progress } из ${ max }..."
-      ],
-      "Checking signatures": [
-        "Проверка подписей"
       ],
       "Choose a plan that works best for you.": [
         "Выберите тариф, который лучше всего вам подходит."
@@ -4966,12 +4912,6 @@
       "Details": [
         "Информация"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "ЭЦП проверена. Этот файл был безопасно загружен ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "ЭЦП проверена. Эта папка была безопасно загружена ${ emailAddress }."
-      ],
       "Display word count": [
         "Показывать количество слов"
       ],
@@ -4998,12 +4938,6 @@
       ],
       "Download current logs": [
         "Скачать текущие журналы"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Скачивание ${ downloadFileName } будет прервано"
-      ],
-      "Download was canceled": [
-        "Скачивание отменено"
       ],
       "Drop file here to upload": [
         "Переместите файл сюда, чтобы скачать"
@@ -5098,15 +5032,6 @@
       "File \"${ name }\" was deleted during download": [
         "Файл \"${ name }\" был удален во время загрузки"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "У файла отсутствует подпись. Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "У файла отсутствует подпись. Мы не смогли проверить, кто загрузил ${ fileName }."
-      ],
-      "File will not be updated": [
-        "Файл не будет обновлен"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Только файлы (без фото, ${ DOCS_APP_NAME } или ${ SHEETS_APP_NAME }) — в общей сложности до 100 ГБ, 100 000 файлов и 50 ГБ на один файл"
       ],
@@ -5115,18 +5040,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Папка \"${ link.name }\" была удалена во время загрузки"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "У папки отсутствует подпись. Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "У папки отсутствует подпись. Мы не смогли проверить, кто загрузил ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "Папка не будет загружена"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Для достижения наилучших результатов избегайте просмотра трансляций и действий, требующих большого объема памяти, или разделите загрузку на более мелкие пакеты."
       ],
       "Forgot password?": [
         "Забыли пароль?"
@@ -5238,9 +5151,6 @@
       ],
       "Invite link copied": [
         "Ссылка для приглашения скопирована."
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Похоже, что вы недавно пытались загрузить ${ uploadName }. Если загрузка не удалась, ${ replaceFile }. Если загрузка ещё продолжается, замена файла отменит текущую загрузку."
       ],
       "It's better to have:": [
         "Лучше иметь:"
@@ -5512,9 +5422,6 @@
       "Recents": [
         "Недавние"
       ],
-      "recommended browser": [
-        "рекомендуемый браузер"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
       ],
@@ -5581,12 +5488,6 @@
       "Show table of contents": [
         "Показать оглавление"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Подпись не может быть подтверждена из-за сетевой ошибки, повторите попытку позже."
-      ],
-      "Signature check will be ignored": [
-        "Проверка подписи будет проигнорирована"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
       ],
@@ -5638,26 +5539,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Акаунт может иметь новый ключ или могли быть взломаны следующие элементы: ${ items }. Открывайте только в том случае, если вы им доверяете."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Не удалось проверить авторство правок в этом документе. Хотите ли вы отметить этот документ как проверенный? Вы можете выбрать Игнорировать, чтобы решить это позже."
       ],
       "The Beginning": [
         "Начало"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Цифровая подпись была частично подтверждена. Данный файл был загружен через публичную ссылку без аккаунта ${ BRAND_NAME }, поэтому их личность не может быть подтверждена."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Цифровая подпись была частично подтверждена. Данная папка была загружена через публичную ссылку без аккаунта ${ BRAND_NAME }, поэтому их личность не может быть подтверждена."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Утечка информации произошла из сторонней службы. Информация о вашем аккаунте ${ BRAND_NAME } остается защищенной и зашифрованной. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Возможно, следующие элементы были взломаны: ${ items }. Открывайте их только в том случае, если вы им доверяете."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Владелец этого адреса отключил сквозное шифрование. Чтобы иметь возможность отправлять зашифрованные письма на этот адрес, владелец должен повторно включить сквозное шифрование."
@@ -5725,23 +5614,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Это навсегда удалит загруженные вами выбранные элементы"
       ],
-      "This will replace the existing file with the folder": [
-        "Это заменит существующий файл на папку"
-      ],
-      "This will replace the existing folder with the file": [
-        "Это заменит существующую папку файлом"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "В результате вы выйдете из всех аккаунтов, в которые вы на данный момент вошли."
-      ],
-      "This will upload a new version of the file": [
-        "При этом будет загружена новая версия файла"
-      ],
-      "This will upload a new version of the folder": [
-        "Будет загружена новая версия папки"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Чтобы скачать файлы ${ DOCS_APP_NAME }, откройте их в ${ DOCS_APP_NAME } и экспортируйте их."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
@@ -5767,14 +5641,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Отменена передача файла \"${ name }\""
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Отменена передача паки \"${ name }\""
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Пропущена передача файла \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Пропущена передача папки \"${ folderName }\""
       ],
       "Trash": [
         "Корзина"
@@ -5787,9 +5655,6 @@
       ],
       "Undo successful": [
         "Успешно отменено"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "К сожалению, похоже, что файл или некоторые его данные не удается расшифровать."
       ],
       "Update recent documents": [
         "Обновить недавние документы"
@@ -5805,9 +5670,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Улучшите тариф, чтобы сохранить преимущества ${ planTitle }."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Одновременная загрузка сотен файлов может повлиять на производительность."
       ],
       "Uppercase and lowercase letters": [
         "Заглавные и строчные буквы"
@@ -5832,12 +5694,6 @@
       ],
       "Warning": [
         "Предупреждение"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Мы не смогли проверить, кто загрузил ${ fileName }."
       ],
       "We'll email you once import is complete.": [
         "Мы отправим вам электронное письмо после завершения импорта."
@@ -6004,9 +5860,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Ваши изменения не удалось синхронизировать. Drive автоматически попытается сохранить изменения. Не закрывайте веб-страницу."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Ваш текущий браузер не поддерживает загрузку больших файлов из-за недоступности работников службы. Загрузка больших файлов может привести к зависанию или отсутствию реакции браузера. Используйте последние версии ${ recommendedBrowser } и повторите попытку."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Ваш текущий документ будет заменен этой версией. Комментарии и предложения будут удалены из документа, но останутся доступны в истории комментариев."
       ],
@@ -6115,32 +5968,6 @@
         "Только просмотр"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "аттрибуты файла"
-      ],
-      "file data": [
-        "данные файла"
-      ],
-      "file data key": [
-        "ключ данных файла"
-      ],
-      "file data order": [
-        "порядок данных в файле"
-      ],
-      "hash key": [
-        "хеш-ключ"
-      ],
-      "keys": [
-        "ключи"
-      ],
-      "name": [
-        "имя"
-      ],
-      "thumbnail": [
-        "значок"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Активный подписант"
@@ -6225,15 +6052,6 @@
       "App password": [
         "Пароль приложения"
       ],
-      "Apply to all duplicated files": [
-        "Применить ко всем повторяющимся файлам"
-      ],
-      "Apply to all duplicated folders": [
-        "Применить ко всем повторяющимся папкам"
-      ],
-      "Apply to all unverified items": [
-        "Применить ко всем непроверенным элементам"
-      ],
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
@@ -6260,9 +6078,6 @@
       ],
       "can view": [
         "может просматривать"
-      ],
-      "Cancel download": [
-        "Отменить скачивание"
       ],
       "Category": [
         "Категория"
@@ -6321,14 +6136,8 @@
       "Don't show this again": [
         "Больше не показывать"
       ],
-      "Download anyway": [
-        "Все равно скачать"
-      ],
       "Drive": [
         "Хранилище"
-      ],
-      "Duplicate found": [
-        "Найден дубликат"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "например, Amazon, eBay, Etsy"
@@ -6431,15 +6240,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Интегрированная двухфакторная аутентификация"
-      ],
-      "Keep both": [
-        "Оставить оба"
-      ],
-      "Keep both files": [
-        "Оставить оба файла"
-      ],
-      "Keep both folders": [
-        "Оставить обе папки"
       ],
       "Label messages as": [
         "Отметить сообщения как"
@@ -6564,12 +6364,6 @@
       "Regular expression": [
         "Регулярное выражение"
       ],
-      "Replace existing file": [
-        "Заменить существующий файл"
-      ],
-      "Replace existing folder": [
-        "Заменить существующую папку"
-      ],
       "Require password": [
         "Требовать пароль"
       ],
@@ -6593,12 +6387,6 @@
       ],
       "Skip feedback": [
         "Пропустить обратную связь"
-      ],
-      "Skip file": [
-        "Пропустить файл"
-      ],
-      "Skip folder": [
-        "Пропустить папку"
       ],
       "Starts with": [
         "Начинается с"
@@ -8411,9 +8199,6 @@
       "Failed to accept share invitation": [
         "Не удалось принять приглашение на использование общего ресурса"
       ],
-      "Failed to download files: ${ err }": [
-        "Не удалось скачать файлы: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Не удалось загрузить информацию о приглашении"
       ],
@@ -8426,9 +8211,6 @@
       "Failed to rename document": [
         "Не удалось переименовать документ"
       ],
-      "Failed to upload files: ${ err }": [
-        "Не удалось загрузить файлы: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Файл или папка \"${ filename }\" и ${ count } других уже загружаются",
         "Файл или папка \"${ filename }\" и ${ count } других уже загружаются",
@@ -8437,9 +8219,6 @@
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Файл или папка \"${ filename }\" уже загружается"
-      ],
-      "File or folder is missing a name": [
-        "У папки или файла отсутствует имя"
       ],
       "Invitation's email was sent again": [
         "Электронное письмо с приглашением было отправлено снова"
@@ -8464,9 +8243,6 @@
         "Переместить ${ n } элемента",
         "Переместить ${ n } элементов",
         "Переместить ${ n } элементов"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Недостаточно места для загрузки ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Доступ к публичной ссылке обновлен"
@@ -10512,9 +10288,6 @@
       "Birthday": [
         "День рождения"
       ],
-      "Browser might run out of memory": [
-        "У браузера могла закончиться память"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Отменить подписку ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -10677,26 +10450,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Перейти на более дешевую версию ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "Скачать ${ date }"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Скачать приложения ${ DRIVE_APP_NAME }"
       ],
       "Download the app": [
         "Скачать приложение"
-      ],
-      "Download unverified file?": [
-        "Скачать непроверенный файл?"
-      ],
-      "Download unverified folder?": [
-        "Скачать непроверенную папку?"
-      ],
-      "Duplicate file found": [
-        "Найден дубликат файла"
-      ],
-      "Duplicate folder found": [
-        "Найден дубликат папки"
       ],
       "Edit contact": [
         "Изменение контакта"
@@ -10881,9 +10639,6 @@
       "Other names": [
         "Другие названия"
       ],
-      "Performance might be affected": [
-        "Это может отразиться на производительности"
-      ],
       "Phone numbers": [
         "Hомера телефонов"
       ],
@@ -11052,9 +10807,6 @@
       "Upload and share files": [
         "Загружайте и делитесь файлами"
       ],
-      "Uploading a large file or folder": [
-        "Загрузка большого файла или папки"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Используйте ${ VPN_SHORT_APP_NAME } для обеспечения конфиденциальности данных"
       ],
@@ -11099,9 +10851,6 @@
       ],
       "Your document cannot be loaded": [
         "Не удается загрузить ваш документ"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "В вашем скачивании есть файл ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Ваша раскрытая информация"

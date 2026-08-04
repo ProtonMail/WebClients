@@ -1668,7 +1668,7 @@
         "Zjištěno ${ row.breachCount } úniků informací"
       ],
       "${ selectedShareIds.size } selected": [
-        "Vybráno: ${ selectedShareIds.size }"
+        "${ selectedShareIds.size } vybráno"
       ],
       "${ trialDaysLeft } day left": [
         "Zbývá ${ trialDaysLeft } den",
@@ -2058,7 +2058,7 @@
         "Vyprší za ${ remainingTime }"
       ],
       "Expires on ${ formattedDate }": [
-        "Platnost vyprší dne ${ formattedDate }"
+        "Vyprší ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Exportování vašich dat..."
@@ -3499,7 +3499,7 @@
         "Vypršelo"
       ],
       "Expired tokens (${ expired.length })": [
-        "Expirované tokeny (${ expired.length })"
+        "Neplatné tokeny (${ expired.length })"
       ],
       "Expires in": [
         "Vyprší za"

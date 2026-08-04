@@ -232,6 +232,9 @@
       "Clear browser data": [
         "Borrar datos del navegador"
       ],
+      "Clear conversation": [
+        "Borrar la conversación"
+      ],
       "Clear data": [
         "Limpiar datos"
       ],
@@ -306,9 +309,6 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Continuar con ${ planOrAppName }"
-      ],
-      "Continue with categories": [
-        "Continuar con categorías"
       ],
       "Continue with Free": [
         "Seguir con el plan gratuito"
@@ -1042,6 +1042,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
       ],
+      "Open debug menu": [
+        "Abrir menú de depuración"
+      ],
       "Open navigation": [
         "Abrir navegación"
       ],
@@ -1444,6 +1447,9 @@
       "Stay": [
         "Permanecer"
       ],
+      "Stop": [
+        "Detener"
+      ],
       "Stop downloading assistant": [
         "Detener la descarga del asistente"
       ],
@@ -1486,6 +1492,9 @@
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Para buscar los correos electrónicos de manera segura, necesitamos descargar una copia de los mensajes en el navegador. La descarga inicial puede tardar un momento."
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Alternar ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Toggle Calendar app": [
         "Cambiar a la aplicación Calendar"
       ],
@@ -1514,8 +1523,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1688,6 +1696,9 @@
       "Yes, I'll attend": [
         "Sí, asistiré"
       ],
+      "Yes, organize it": [
+        "Sí, organícelo"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto."
@@ -1722,9 +1733,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Personalizar categorías"
-      ],
       "Got it": [
         "Entendido"
       ],
@@ -1733,6 +1741,9 @@
       ],
       "Not now": [
         "Ahora no"
+      ],
+      "Set up categories": [
+        "Configurar categorías"
       ],
       "Skip": [
         "Omitir"
@@ -4362,7 +4373,7 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lea, responda y manténgase al día con Gmail desde dentro de ${ MAIL_APP_NAME }"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Haga clic derecho en un correo electrónico y seleccione «Mover a», o arrástrelo y suéltelo en otra categoría. Los correos similares se clasificarán ahí automáticamente en el futuro."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
@@ -4536,6 +4547,15 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Hemos detectado los siguientes campos en el archivo CSV que ha subido. Verifique los que quiere importar."
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } mensaje nuevo",
+        "${ messageCount } mensajes nuevos"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "De: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -6817,6 +6837,10 @@
         "${ contactsLength } contacto",
         "${ contactsLength } contactos"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } correo → ${ dest }",
+        "${ count } correos → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
@@ -7872,7 +7896,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8051,6 +8076,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La mayoría de las redes Wi-Fi públicas son seguras, pero algunas carecen de seguridad, exponiéndole a amenazas cibernéticas. Una VPN cifra su tráfico brindándole protección."
       ],
+      "Move emails": [
+        "Mover correos"
+      ],
+      "Move here": [
+        "Mover aquí"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nombre la carpeta nueva y seleccione la carpeta padre en la que quiere colocarla. Si no selecciona una carpeta padre, esta carpeta nueva se creará como una carpeta de nivel superior."
       ],
@@ -8143,6 +8174,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Abra la guía para ver las acciones recomendadas y los enlaces útiles."
+      ],
+      "Opened ${ location }": [
+        "Abierto ${ location }"
       ],
       "Optional": [
         "Opcional"
@@ -8315,6 +8349,10 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contáctenos para obtener ayuda con cualquier cosa de ${ BRAND_NAME }."
+      ],
+      "Read ${ count } email on screen": [
+        "Leer ${ count } correo en la pantalla",
+        "Leer ${ count } correos en la pantalla"
       ],
       "Recipient: ": [
         "Destinatario: "
@@ -8627,6 +8665,9 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "No pueden enviarle spam si no conocen la dirección de correo. Proteja el buzón con alias de Hide-my-email."
+      ],
+      "Thinking about this": [
+        "Pensando sobre esto"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está desactivada. Para poder enviar a esta dirección, el dueño debe primero activar la dirección."
@@ -9136,7 +9177,7 @@
       "You have ${ totalLabel } in your inbox.": [
         "Tiene ${ totalLabel } en su bandeja de entrada."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
         "Tiene **${ count } conversación** en la categoría ${ categoryLabel }",
         "Tiene **${ count } conversaciones** en la categoría ${ categoryLabel }"
       ],
@@ -9148,7 +9189,7 @@
         "Seleccionó **${ count } conversación** etiquetada con esta etiqueta",
         "Seleccionó **${ count } conversaciones** etiquetadas con esta etiqueta"
       ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
+      "You have **${ count } message** in your ${ categoryLabel } category": [
         "Tiene **${ count } mensaje** en la categoría ${ categoryLabel }",
         "Tiene **${ count } mensajes** en la categoría ${ categoryLabel }"
       ],
@@ -9187,11 +9228,11 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Debe desactivar o eliminar usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder darse de baja."
       ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
         "Seleccionó **${ checked } conversación** en la categoría ${ categoryLabel }",
         "Seleccionó **${ checked } conversaciones** en la categoría ${ categoryLabel }"
       ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "Seleccionó **${ checked } mensaje** en la categoría ${ categoryLabel }",
         "Seleccionó **${ checked } mensajes** en la categoría ${ categoryLabel }"
       ],
@@ -9754,6 +9795,9 @@
       "ANY": [
         "CUALQUIERA"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Todo lo que necesita su atención además de correos de sus categorías desactivadas"
+      ],
       "App password": [
         "Contraseña de la aplicación"
       ],
@@ -9762,6 +9806,9 @@
       ],
       "Apply to future messages": [
         "Aplicar a los mensajes futuros"
+      ],
+      "Archive": [
+        "Archivo"
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s)"
@@ -9837,6 +9884,12 @@
       ],
       "Clear logs": [
         "Borrar registros"
+      ],
+      "Client": [
+        "Cliente"
+      ],
+      "Client version": [
+        "Versión del cliente"
       ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
@@ -10279,9 +10332,6 @@
       "Payment method": [
         "Método de pago"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Correos electrónicos personales y profesionales, con actualizaciones y notificaciones importantes"
-      ],
       "PGP scheme": [
         "Esquema PGP"
       ],
@@ -10303,8 +10353,8 @@
       "Primary": [
         "Principal"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Principal: correos personales y laborales más actualizaciones importantes"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principal: todo lo que necesita su atención además de correos de sus categorías desactivadas"
       ],
       "Promotions": [
         "Promociones"
@@ -11039,6 +11089,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } por licencia"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licencia de ${ MEET_APP_NAME }",
@@ -13180,6 +13233,9 @@
       "Anytown": [
         "Puertoalto"
       ],
+      "Ask anything…": [
+        "Pregunte cualquier cosa…"
+      ],
       "Company name": [
         "Nombre de la empresa"
       ],
@@ -15248,6 +15304,10 @@
         "Mover ${ selectionCount } mensaje",
         "Mover ${ selectionCount } mensajes"
       ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Movido a ${ label }. Los mensajes similares se categorizarán ahí en el futuro.",
+        "Movido a ${ label }. Los mensajes similares se categorizarán ahí en el futuro."
+      ],
       "Password copied to clipboard": [
         "Contraseña copiada al portapapeles."
       ],
@@ -16035,8 +16095,8 @@
       "Make a secure connection your default": [
         "Elija una conexión segura como opción predeterminada"
       ],
-      "Make Categories your own": [
-        "Haga suyas las categorías"
+      "Make your inbox your own": [
+        "Haga propia su bandeja de entrada"
       ],
       "Mark all messages as read": [
         "Marcar todos los mensajes como leídos"
@@ -16109,6 +16169,9 @@
       ],
       "Move all messages to trash": [
         "Mover todos los mensajes a la papelera"
+      ],
+      "Move emails": [
+        "Mover correos"
       ],
       "Move to": [
         "Mover a"
@@ -16227,9 +16290,6 @@
       "Payment verification": [
         "Verificación de pago"
       ],
-      "Personalize your Categories": [
-        "Personalice sus categorías"
-      ],
       "Phone numbers": [
         "Números de teléfono"
       ],
@@ -16286,6 +16346,9 @@
       ],
       "Referral": [
         "Referido"
+      ],
+      "Refine your Categories": [
+        "Refina sus categorías"
       ],
       "Remove forwarding address": [
         "Eliminar dirección de reenvío"
@@ -16772,6 +16835,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Actualice a un plan que admita usar roles de administrador."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
       ]

@@ -1211,6 +1211,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Αναβαθμίστε για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Αναβάθμιση σε Professional"
+      ],
       "Upgrade to view all": [
         "Αναβαθμίστε για προβολή όλων"
       ],
@@ -4729,6 +4732,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Μπορείτε να αφαιρέσετε την πρόσβασή τους ανά πάσα στιγμή για να ανακτήσετε τον αποκλειστικό έλεγχο του λογαριασμού σας."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Δεν έχετε οριστεί ακόμη ως επαφή ανάκτησης για κανέναν."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Δεν έχετε ορίσει ως επαφή έκτακτης ανάγκης για κανέναν ακόμα."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Έχετε φτάσει το μέγιστο όριο ${ limit } επαφής έκτακτης ανάγκης.",
         "Έχετε φτάσει το μέγιστο όριο ${ limit } επαφών έκτακτης ανάγκης."
@@ -6064,11 +6073,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε το κλειδί ασφαλείας ${ name };"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Εισαγάγετε τον κωδικό PIN σας κάθε φορά που χρησιμοποιείτε το κλειδί ασφαλείας σας με το ${ BRAND_NAME }, όταν το κλειδί το υποστηρίζει. Αυτό ισχύει μόνο για κλειδιά που έχουν ορίσει κωδικό PIN."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
       ],
       "Insert your security key into your device.": [
         "Τοποθετήστε το κλειδί ασφαλείας στη συσκευή σας."
+      ],
+      "PIN requirement for security keys disabled": [
+        "Απενεργοποιήθηκε η απαίτηση PIN για τα κλειδιά ασφαλείας"
+      ],
+      "PIN requirement for security keys enabled": [
+        "Ενεργοποιήθηκε η απαίτηση PIN για τα κλειδιά ασφαλείας"
+      ],
+      "Require PIN for security key": [
+        "Απαιτείται PIN για το κλειδί ασφαλείας"
       ],
       "Security key": [
         "Κλειδί ασφαλείας"
@@ -7308,6 +7329,9 @@
       "Authenticator app 2FA enabled": [
         "Η ταυτοποίηση δύο παραγόντων (2FA) της εφαρμογής επαλήθευσης είναι ενεργοποιημένη"
       ],
+      "Available on VPN Professional": [
+        "Διαθέσιμο στο VPN Professional"
+      ],
       "Awaiting transaction": [
         "Εν αναμονή συναλλαγής"
       ],
@@ -7709,6 +7733,9 @@
       ],
       "Enable email notifications": [
         "Ενεργοποίηση ειδοποιήσεων email"
+      ],
+      "Enable groups to streamline access control": [
+        "Ενεργοποίηση ομάδων για βελτιστοποίηση του ελέγχου πρόσβασης"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Ενεργοποιήστε την καθολική σύνδεση για να διατηρήσετε τον οργανισμό σας ασφαλή"
@@ -8191,6 +8218,9 @@
       ],
       "Learn more about Gateways": [
         "Μάθετε περισσότερα σχετικά με τις Πύλες"
+      ],
+      "Learn more about groups": [
+        "Μάθετε περισσότερα για τις ομάδες"
       ],
       "Learn more about single sign-on": [
         "Μάθετε περισσότερα σχετικά με την ενιαία πρόσβαση"
@@ -9189,8 +9219,14 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
       ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Κάντε αναβάθμιση τώρα για να δείτε τη δραστηριότητα του ${ PASS_APP_NAME } σε ολόκληρο τον οργανισμό σας."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Αναβαθμίστε ή εκκενώστε χώρο οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
+      ],
+      "Upgrade required": [
+        "Απαιτείται αναβάθμιση"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Αναβαθμίστε για να διατηρήσετε τα ${ planTitle } προνόμιά σας."
@@ -9425,6 +9461,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Με τις ομάδες, μπορείτε γρήγορα και εύκολα να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου σε όλα τα άτομα μιας συγκεκριμένης ομάδας."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Με το VPN Professional, οι διαχειριστές μπορούν να επιβάλουν το VPN να είναι πάντα ενεργό για όλα τα μέλη του οργανισμού, παράλληλα με ιδιωτικές πύλες, πολιτικές πρόσβασης και παρακολούθηση."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Χωρίς ενεργοποίηση, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
@@ -10812,6 +10851,9 @@
       ],
       "Unlimited": [
         "Απεριόριστο"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
       ],
       "Upload 1 or more encryption keys": [
         "Ανεβάστε 1 ή περισσότερα κλειδιά κρυπτογράφησης"
@@ -18112,6 +18154,9 @@
       "Remove via MDM": [
         "Κατάργηση μέσω MDM"
       ],
+      "Remove via PowerShell": [
+        "Αφαίρεση μέσω PowerShell"
+      ],
       "Rename the gateway": [
         "Μετονομασία της πύλης"
       ],
@@ -18379,6 +18424,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Αναβάθμιση σε ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "Αναβαθμίστε για να ενεργοποιήσετε την επιλογή \"Πάντα ενεργοποιημένη\""
       ],
       "Upgrade to keep your premium benefits.": [
         "Αναβαθμίστε για να διατηρήσετε τα premium προνόμιά σας."
@@ -19148,6 +19196,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Αυτό θα δημιουργήσει μια νέα διεύθυνση ${ MAIL_APP_NAME }."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Αναβαθμίστε σε ένα υποστηριζόμενο πρόγραμμα για να χρησιμοποιήσετε ρόλους διαχειριστή."
       ],
       "User created": [
         "Ο χρήστης δημιουργήθηκε"

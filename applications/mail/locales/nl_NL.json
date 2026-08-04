@@ -307,9 +307,6 @@
       "Continue to ${ planOrAppName }": [
         "Doorgaan naar ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Ga verder met categorieën"
-      ],
       "Continue with Free": [
         "Doorgaan met gratis"
       ],
@@ -1514,8 +1511,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1722,9 +1718,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Categorieën aanpassen"
-      ],
       "Got it": [
         "Begrepen"
       ],
@@ -4361,9 +4354,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lees, beantwoord en houd uw Gmail bij vanuit ${ MAIL_APP_NAME }"
-      ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Klik met de rechtermuisknop op een e-mail en selecteer \"Verplaatsen naar\", of sleep deze naar een andere categorie. Vergelijkbare e-mails worden in de toekomst automatisch daar gesorteerd."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Verzend en ontvang Gmail-berichten rechtstreeks in ${ MAIL_APP_NAME }. Verbind uw adres in ${ addressesSettingsLink }."
@@ -7872,7 +7862,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -9136,10 +9127,6 @@
       "You have ${ totalLabel } in your inbox.": [
         "U heeft ${ totalLabel } in uw inbox."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "U heeft **${ count } gesprek** in ${ categoryLabel } categorie",
-        "U heeft **${ count } gesprekken** in ${ categoryLabel } categorie"
-      ],
       "You have **${ count } conversation** stored in this folder": [
         "U heeft **${ count } gesprek** uit deze map opgeslagen",
         "U heeft **${ count } gesprekken** uit deze map opgeslagen"
@@ -9147,10 +9134,6 @@
       "You have **${ count } conversation** tagged with this label": [
         "U heeft **${ count } gesprek** gemarkeerd met dit label",
         "U heeft **${ count } gesprekken** gemarkeerd met dit label"
-      ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "U heeft **${ count } bericht** in ${ categoryLabel } categorie",
-        "U heeft **${ count } berichten** in ${ categoryLabel } category"
       ],
       "You have **${ count } message** stored in this folder": [
         "U heeft **${ count } bericht** uit deze map opgeslagen",
@@ -9186,14 +9169,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
-      ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "U selecteerde **${ checked } gesprek** in ${ categoryLabel } categorie",
-        "U selecteerde **${ checked } gesprekken** in ${ categoryLabel } categorie"
-      ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "U selecteerde **${ checked } bericht** in ${ categoryLabel } categorie",
-        "U selecteerde **${ checked } berichten** in ${ categoryLabel } categorie"
       ],
       "You selected **${ count } conversation** from this folder": [
         "U heeft **${ count } gesprek** uit deze map geselecteerd",
@@ -10285,9 +10260,6 @@
       "Payment method": [
         "Betalingsmethode"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Persoonlijke en zakelijke e-mails, plus belangrijke updates en notificaties."
-      ],
       "PGP scheme": [
         "PGP-schema"
       ],
@@ -10308,9 +10280,6 @@
       ],
       "Primary": [
         "Primair"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Primaire - Persoonlijke en zakelijke e-mails, plus belangrijke updates"
       ],
       "Promotions": [
         "Promoties"
@@ -16041,9 +16010,6 @@
       "Make a secure connection your default": [
         "Maak een beveiligde verbinding uw standaard"
       ],
-      "Make Categories your own": [
-        "Maak categorieën uw eigen"
-      ],
       "Mark all messages as read": [
         "Markeer alle berichten als gelezen"
       ],
@@ -16232,9 +16198,6 @@
       ],
       "Payment verification": [
         "Betalingsverificatie"
-      ],
-      "Personalize your Categories": [
-        "Personaliseer uw categorieën"
       ],
       "Phone numbers": [
         "Telefoonnummers"

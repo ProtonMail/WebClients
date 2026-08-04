@@ -1827,6 +1827,12 @@
       "Event deleted": [
         "日程已删除"
       ],
+      "Failed to admit the participant. Please try again.": [
+        "批准参与者失败，请重试。"
+      ],
+      "Failed to admit the participants. Please try again.": [
+        "批准参与者失败，请重试。"
+      ],
       "Failed to assign host": [
         "指定主持人失败"
       ],
@@ -1847,6 +1853,9 @@
       ],
       "Failed to delete room": [
         "删除会议室失败"
+      ],
+      "Failed to deny the participant. Please try again.": [
+        "拒绝参与者失败，请重试。"
       ],
       "Failed to download recording": [
         "下载录制失败"
@@ -1886,6 +1895,9 @@
       ],
       "Failed to unlock meeting": [
         "解锁会议失败"
+      ],
+      "Failed to update waiting room setting. Please try again.": [
+        "更新等候室设置失败，请重试。"
       ],
       "Incorrect username": [
         "用户名不正确"
@@ -2172,6 +2184,9 @@
       "${ totalParticipantCount } participant": [
         "${ totalParticipantCount } 名参与者"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "${ waitingRoomParticipantsCount } 人正在等待"
+      ],
       "(You)": [
         "(您)"
       ],
@@ -2337,6 +2352,9 @@
       "Everyone has been disconnected from the call.": [
         "所有人都已断开通话连接。"
       ],
+      "Expires in ${ formattedCountdown }": [
+        "过期于 ${ formattedCountdown }"
+      ],
       "Failed to apply background blur": [
         "应用背景模糊失败"
       ],
@@ -2391,8 +2409,14 @@
       "Internet connection lost": [
         "网络连接已断开"
       ],
+      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
+        "加入请求已过期，主持人未能及时批准您。发送新的加入请求。"
+      ],
       "Joined ${ roomNameLabel }": [
         "已加入 ${ roomNameLabel }"
+      ],
+      "Joined at ${ receivedTime }": [
+        "加入时间 ${ receivedTime }"
       ],
       "Learn more": [
         "了解详情"
@@ -2420,6 +2444,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "正在加载日历，请稍候。您将在新选项卡中重定向到我们的日程安排平台 Calendly。"
+      ],
+      "Loading meeting details...": [
+        "正在加载会议详情..."
       ],
       "Loading meetings...": [
         "正在加载会议..."
@@ -2778,6 +2805,12 @@
       "View ": [
         "查看 "
       ],
+      "Waiting for the host to admit you. The host has been notified that you're waiting.": [
+        "等待主持人批准您的加入，已通知主持人您正在等待。"
+      ],
+      "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
+        "等待主持人开始会议。主持人开始会议并批准您加入后，您将进入会议。"
+      ],
       "Warning": [
         "注意"
       ],
@@ -2822,6 +2855,9 @@
       ],
       "You were removed from the meeting": [
         "您已被移出会议"
+      ],
+      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
+        "您未被允许加入此会议。如果您认为操作有误，可以尝试重新加入。"
       ],
       "You will leave the meeting. Others will continue.": [
         "您将离开会议，其他参与者将继续。"
@@ -3549,6 +3585,9 @@
       "Join meeting": [
         "加入会议"
       ],
+      "Join request expired": [
+        "加入请求已过期"
+      ],
       "Joined at epoch ${ log.epoch }": [
         "加入于时间点 ${ log.epoch }"
       ],
@@ -3660,6 +3699,9 @@
       "Thank you!": [
         "谢谢！"
       ],
+      "The host didn't admit you": [
+        "主持人未批准您加入"
+      ],
       "Time": [
         "时间"
       ],
@@ -3671,6 +3713,9 @@
       ],
       "Video": [
         "视频"
+      ],
+      "Waiting for the host": [
+        "等待主持人"
       ],
       "Waiting room": [
         "等候室"

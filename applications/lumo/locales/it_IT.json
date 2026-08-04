@@ -472,6 +472,10 @@
       "${ LUMO_APP_NAME } seats": [
         "Licenze ${ LUMO_APP_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utente)",
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utenti)"
+      ],
       "${ price } per dedicated server": [
         "${ price } per server dedicato"
       ],
@@ -654,6 +658,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteggi e pianifica le tue email con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }, alias hide-my-email illimitati e altro ancora.",
+        "Proteggi e pianifica le tue email con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }, alias hide-my-email illimitati e altro ancora."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora.",
@@ -2040,9 +2048,6 @@
       ],
       "Partial content": [
         "Contenuto parziale"
-      ],
-      "Pass model: \"auto\" to let ${ LUMO_SHORT_APP_NAME } route to the best available model for your task. Specify a model ID directly for predictable latency or capability targeting.": [
-        "Passa il modello: \"auto\" per consentire a ${ LUMO_SHORT_APP_NAME } di indirizzare la richiesta al miglior modello disponibile per la tua attività. Specifica direttamente l'ID di un modello per ottenere una latenza prevedibile o per targetizzare funzionalità specifiche."
       ],
       "Please share what you expected": [
         "Condividi quello che ti aspettavi"

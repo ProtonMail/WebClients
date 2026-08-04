@@ -310,9 +310,6 @@
       "Continue to ${ planOrAppName }": [
         "Continuer vers ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Continuer avec les catégories"
-      ],
       "Continue with Free": [
         "Continuer avec Free"
       ],
@@ -1045,6 +1042,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ouvrir les paramètres de ${ CALENDAR_APP_NAME }"
       ],
+      "Open debug menu": [
+        "Ouvrir le menu de debug"
+      ],
       "Open navigation": [
         "Ouvrir la navigation"
       ],
@@ -1523,8 +1523,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1697,6 +1696,9 @@
       "Yes, I'll attend": [
         "Oui, je participerai"
       ],
+      "Yes, organize it": [
+        "Oui, je souhaite que ce soit organisé"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts.",
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
@@ -1731,9 +1733,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Personnaliser les catégories"
-      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -1742,6 +1741,9 @@
       ],
       "Not now": [
         "Pas maintenant"
+      ],
+      "Set up categories": [
+        "Paramétrer les catégories"
       ],
       "Skip": [
         "Ignorer"
@@ -4371,8 +4373,8 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lisez, répondez et restez au courant de Gmail depuis ${ MAIL_APP_NAME }"
       ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Faites un clic droit sur un e-mail et sélectionnez « Déplacer vers », ou faites-le glisser et déposez-le dans une autre catégorie. Les e-mails similaires y seront automatiquement triés par la suite."
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Faites un clic droit sur un email et sélectionnez \"Déplacer vers\", ou bien glissez-déplacez cet email vers une autre catégorie. À l'avenir les emails similaires seront automatiquement déplacés ici."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Envoyez et recevez les messages Gmail directement dans ${ MAIL_APP_NAME }. Connectez votre adresse dans ${ addressesSettingsLink }."
@@ -6835,6 +6837,10 @@
         "${ contactsLength } contact",
         "${ contactsLength } contacts"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } email → ${ dest }",
+        "${ count } emails → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } sur ${ totalProgress }",
         "${ currentProgress } sur ${ totalProgress }"
@@ -7890,7 +7896,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8071,6 +8078,9 @@
       ],
       "Move emails": [
         "Déplacer les e-mails"
+      ],
+      "Move here": [
+        "Déplacer ici"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
@@ -9160,7 +9170,7 @@
       "You have ${ totalLabel } in your inbox.": [
         "Vous avez ${ totalLabel } dans votre boîte de réception."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
         "Vous avez **${ count } conversation** dans la catégorie ${ categoryLabel }",
         "Vous avez **${ count } conversations** dans la catégorie ${ categoryLabel }"
       ],
@@ -9172,9 +9182,9 @@
         "Vous avez **${ count } conversation** marqué avec ce label.",
         "Vous avez **${ count } conversations** marquées avec ce label."
       ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "Vous avez **${ count } message** dans la catégorie ${ categoryLabel }",
-        "Vous avez **${ count } messages** dans la catégorie ${ categoryLabel }"
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Il y a **${ count } message** dans votre catégorie ${ categoryLabel }.",
+        "Il y a **${ count } messages** dans votre catégorie ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Vous avez **${ count } message** stocké dans ce dossier",
@@ -9211,13 +9221,13 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Vous devez désactiver ou retirer vos autres utilisateurs ${ MAIL_APP_NAME }, adresses et domaines personnalisés avant de pouvoir passer à un abonnement inférieur."
       ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Vous avez sélectionné **${ checked } conversation** dans la catégorie ${ categoryLabel }",
-        "Vous avez sélectionné **${ checked } conversations** dans la catégorie ${ categoryLabel }"
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Vous avez sélectionné **${ checked } conversation** de la catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } conversations** de la catégorie ${ categoryLabel }"
       ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Vous avez sélectionné **${ checked } message** dans la catégorie ${ categoryLabel }",
-        "Vous avez sélectionné **${ checked } messages** dans la catégorie ${ categoryLabel }"
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Vous avez sélectionné **${ checked } message** de la catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } messages** de la catégorie ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Vous avez sélectionné **${ count } conversation** de ce dossier.",
@@ -9778,6 +9788,9 @@
       "ANY": [
         "N'IMPORTE"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tout ce qui nécessite votre attention ainsi que les emails des catégories désactivées"
+      ],
       "App password": [
         "Mot de passe de l'application"
       ],
@@ -10312,9 +10325,6 @@
       "Payment method": [
         "Moyen de paiement"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "E-mails personnels et professionnels, ainsi que mises à jour et notifications importantes"
-      ],
       "PGP scheme": [
         "Schéma PGP"
       ],
@@ -10335,9 +10345,6 @@
       ],
       "Primary": [
         "Principale"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Principal – E-mails personnels et professionnels, ainsi que mises à jour importantes"
       ],
       "Promotions": [
         "Promotions"
@@ -15287,8 +15294,9 @@
         "Déplacer ${ selectionCount } message.",
         "Déplacer ${ selectionCount } messages."
       ],
-      "Moved to ${ label }. Similar messages will be categorized here in the future.": [
-        "Déplacé vers ${ label }. Les messages similaires seront triés ici à l’avenir."
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Le message a été déplacé vers ${ label }. À l'avenir les messages similaires seront aussi déplacés à cet endroit.",
+        "Les messages ont été déplacés vers ${ label }. À l'avenir les messages similaires seront aussi déplacés à cet endroit."
       ],
       "Password copied to clipboard": [
         "Le mot de passe a été copié dans le presse-papiers."
@@ -16077,8 +16085,8 @@
       "Make a secure connection your default": [
         "Optez par défaut pour une connexion sécurisée"
       ],
-      "Make Categories your own": [
-        "Rendez vos catégories uniques"
+      "Make your inbox your own": [
+        "Personnalisez votre boîte de réception selon vos envies"
       ],
       "Mark all messages as read": [
         "Marquer tous les messages comme lus"
@@ -16271,9 +16279,6 @@
       ],
       "Payment verification": [
         "Vérification du paiement"
-      ],
-      "Personalize your Categories": [
-        "Personnalisez vos Catégories"
       ],
       "Phone numbers": [
         "Numéros de téléphone"

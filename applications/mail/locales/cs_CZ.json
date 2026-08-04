@@ -309,9 +309,6 @@
       "Continue to ${ planOrAppName }": [
         "Pokračovat na ${ planOrAppName }"
       ],
-      "Continue with categories": [
-        "Pokračovat s kategoriemi"
-      ],
       "Continue with Free": [
         "Pokračovat s tarifem Free"
       ],
@@ -1519,10 +1516,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1731,9 +1725,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "Přizpůsobit kategorie"
-      ],
       "Got it": [
         "Rozumím"
       ],
@@ -2322,7 +2313,7 @@
         "Organizace nemá dostatečně velké úložiště"
       ],
       "Pending": [
-        "Čekající"
+        "Čeká na vyřízení"
       ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Vyberte přesně to, co chcete migrovat. Bude to použito pro všechny uživatele organizace."
@@ -4398,9 +4389,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čtěte, odpovídejte a mějte přehled o Gmailu přímo z aplikace ${ MAIL_APP_NAME }"
-      ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Klikněte na e-mail pravým tlačítkem a zvolte „Přesunout do“ nebo jej přetáhněte do jiné kategorie. Podobné e-maily sem budou v budoucnu automaticky roztříděny."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Odesílejte a přijímejte zprávy Gmailu přímo v aplikaci ${ MAIL_APP_NAME }. Připojte svou adresu na stránce ${ addressesSettingsLink }."
@@ -8078,7 +8066,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9349,12 +9340,6 @@
       "You have ${ totalLabel } in your inbox.": [
         "V doručené poště máte ${ totalLabel }."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "V kategorii ${ categoryLabel } máte **${ count } konverzaci**",
-        "V kategorii ${ categoryLabel } máte **${ count } konverzace**",
-        "V kategorii ${ categoryLabel } máte **${ count } konverzací**",
-        "V kategorii ${ categoryLabel } máte **${ count } konverzací**"
-      ],
       "You have **${ count } conversation** stored in this folder": [
         "V této složce máte uloženou **${ count } konverzaci**",
         "V této složce máte uloženy **${ count } konverzace**",
@@ -9366,12 +9351,6 @@
         "Máte **${ count } konverzace** označené tímto štítkem",
         "Máte **${ count } konverzací** označených tímto štítkem",
         "Máte **${ count } konverzací** označených tímto štítkem"
-      ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "V kategorii ${ categoryLabel } máte **${ count } zprávu**",
-        "V kategorii ${ categoryLabel } máte **${ count } zprávy**",
-        "V kategorii ${ categoryLabel } máte **${ count } zpráv**",
-        "V kategorii ${ categoryLabel } máte **${ count } zpráv**"
       ],
       "You have **${ count } message** stored in this folder": [
         "V této složce máte uloženou **${ count } zprávu**",
@@ -9411,18 +9390,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Než budete moci přejít na nižší verzi, musíte deaktivovat nebo odebrat všechny další uživatele, adresy a vlastní domény účtu ${ MAIL_APP_NAME }."
-      ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "Vybrali jste **${ checked } konverzaci** v kategorii ${ categoryLabel }",
-        "Vybrali jste **${ checked } konverzace** v kategorii ${ categoryLabel }",
-        "Vybrali jste **${ checked } konverzací** v kategorii ${ categoryLabel }",
-        "Vybrali jste **${ checked } konverzací** v kategorii ${ categoryLabel }"
-      ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "Vybrali jste **${ checked } zprávu** v kategorii ${ categoryLabel }",
-        "Vybrali jste **${ checked } zprávy** v kategorii ${ categoryLabel }",
-        "Vybrali jste **${ checked } zpráv** v kategorii ${ categoryLabel }",
-        "Vybrali jste **${ checked } zpráv** v kategorii ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Z této složky jste vybral(a) **${ count } konverzaci**",
@@ -10542,9 +10509,6 @@
       "Payment method": [
         "Platební metoda"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Osobní a pracovní e-maily, důležité novinky a upozornění"
-      ],
       "PGP scheme": [
         "PGP schéma"
       ],
@@ -10565,9 +10529,6 @@
       ],
       "Primary": [
         "Primární"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Primární – osobní a pracovní e-maily a důležité aktualizace"
       ],
       "Promotions": [
         "Propagační akce"
@@ -16571,9 +16532,6 @@
       "Make a secure connection your default": [
         "Nastavte zabezpečené připojení jako výchozí"
       ],
-      "Make Categories your own": [
-        "Přizpůsobte si kategorie podle sebe"
-      ],
       "Mark all messages as read": [
         "Označit všechny zprávy jako přečtené"
       ],
@@ -16762,9 +16720,6 @@
       ],
       "Payment verification": [
         "Ověřování platby"
-      ],
-      "Personalize your Categories": [
-        "Přizpůsobte si kategorie"
       ],
       "Phone numbers": [
         "Telefonní čísla"

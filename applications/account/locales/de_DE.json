@@ -505,7 +505,7 @@
         "Konto löschen"
       ],
       "Delete and confirm": [
-        "Löschen und bestätigen"
+        "Löschen und Bestätigen"
       ],
       "Delete device profile": [
         "Geräteprofil löschen"
@@ -1335,6 +1335,9 @@
       "Remove gift code": [
         "Geschenkgutschein entfernen"
       ],
+      "Remove manager": [
+        "Manager entfernen"
+      ],
       "Remove this label": [
         "Kategorie entfernen"
       ],
@@ -1775,6 +1778,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgrade um ${ PROTON_SENTINEL_NAME } zu aktivieren"
+      ],
+      "Upgrade to Professional": [
+        "Auf Professional upgraden"
       ],
       "Upgrade to view all": [
         "Upgraden, um alle anzusehen"
@@ -7093,6 +7099,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Du kannst deren Zugang jederzeit entfernen, um die alleinige Kontrolle über dein Konto zurückzugewinnen."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Du wurdest noch für niemanden als Wiederherstellungskontakt bestimmt."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Du wurdest noch für niemanden als Notfallkontakt bestimmt."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Du hast die maximale Anzahl von ${ limit } Notfallkontakt erreicht.",
         "Du hast das Maximum von ${ limit } Notfallkontakten erreicht."
@@ -8737,11 +8749,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Bist du dir sicher, dass du den Sicherheitsschlüssel ${ name } löschen möchtest?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Gib bei jeder Verwendung deines Sicherheitsschlüssels mit ${ BRAND_NAME } deine PIN ein, sofern der Schlüssel diese Funktion unterstützt. Dies gilt nur für Schlüssel, für die eine PIN eingerichtet wurde."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Füge einen Sicherheitsschlüssel ein, der mit Ihrem ${ BRAND_NAME }-Konto verknüpft ist."
       ],
       "Insert your security key into your device.": [
         "Deinen Sicherheitsschlüssel in dein Gerät stecken."
+      ],
+      "PIN requirement for security keys disabled": [
+        "PIN-Anforderung für Sicherheitsschlüssel deaktiviert"
+      ],
+      "PIN requirement for security keys enabled": [
+        "PIN-Anforderung für Sicherheitsschlüssel aktiviert"
+      ],
+      "Require PIN for security key": [
+        "PIN für Sicherheitsschlüssel verlangen"
       ],
       "Security key": [
         "Sicherheitsschlüssel"
@@ -10248,6 +10272,9 @@
       "add a recovery method": [
         "eine Wiederherstellungsmethode hinzufügst"
       ],
+      "Add additional users from your organization to manage this company.": [
+        "Füge weitere Benutzer aus deiner Organisation hinzu, um dieses Unternehmen zu verwalten."
+      ],
       "Add an email address in case we need to contact you": [
         "Bitte gib eine E‐Mail‐Adresse an, falls wir dich kontaktieren müssen."
       ],
@@ -10534,6 +10561,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Verfügbar für macOS, Windows und Linux."
       ],
+      "Available on VPN Professional": [
+        "Mit VPN Professional verfügbar"
+      ],
       "Awaiting transaction": [
         "Warte auf Transaktion"
       ],
@@ -10683,6 +10713,9 @@
       ],
       "Coming soon": [
         "Demnächst verfügbar"
+      ],
+      "Companies you've been given access to manage.": [
+        "Unternehmen, für deren Verwaltung dir Zugriff gewährt wurde."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Schließe die Anmeldung auf diesem Gerät ab, um ${ VPN_APP_NAME } auf deinem TV zu verwenden."
@@ -11050,6 +11083,9 @@
       "Enable email notifications": [
         "E-Mail-Benachrichtigungen aktivieren"
       ],
+      "Enable groups to streamline access control": [
+        "Gruppen aktivieren, um die Zugriffskontrolle zu optimieren"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Aktiviere Single Sign-on, um die Sicherheit deines Unternehmens zu gewährleisten."
       ],
@@ -11091,6 +11127,9 @@
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpunkt-URL, die du von deinem Identitätsanbieter erhalten hast (z.B. https://idp.beispiel.com/sso/saml)."
+      ],
+      "Enforcement starts automatically as soon as the device detects the profile.": [
+        "Durchsetzen beginnt automatisch, sobald das Gerät das Profil erkennt."
       ],
       "Enhance your network security": [
         "Erhöhe die Sicherheit deines Netzwerks"
@@ -11703,6 +11742,9 @@
       ],
       "Learn more about Gateways": [
         "Mehr über Gateways erfahren"
+      ],
+      "Learn more about groups": [
+        "Mehr über Gruppen erfahren"
       ],
       "learn more about Sieve programming language": [
         "Mehr über die Programmiersprache Sieve erfahren"
@@ -12410,9 +12452,6 @@
       "Set password": [
         "Passwort festlegen"
       ],
-      "Set the name, status, and assigned seats": [
-        "Lege den Namen, den Status und die zugewiesenen Lizenzen fest"
-      ],
       "Set up your organization": [
         "Organisation einrichten"
       ],
@@ -12482,6 +12521,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
+      ],
+      "Smart Routed through a different country.": [
+        "Verbindung über Smart Routing durch ein anderes Land umgeleitet."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Smart Routing über: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "Die SMTP-Übermittlung ermöglicht es Drittanbieterdiensten oder -geräten, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domain-Adressen zu senden."
@@ -12951,6 +12996,9 @@
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
         "Um wieder Zugriff auf dein Konto und deine Daten zu erhalten, gib bitte die 12-Wort-Wiederherstellungsphrase ein, die deinem Konto zugeordnet ist."
       ],
+      "To remove Always-on VPN, delete ${ profileFile } from ${ policiesPath } on every device. The ${ VPN_APP_NAME } client stops enforcing the profile as soon as it detects the file is gone.": [
+        "Um Always-on-VPN zu entfernen, lösche auf jedem Gerät ${ profileFile } aus ${ policiesPath }. Der ${ VPN_APP_NAME }-Client hört auf, das Profil durchzusetzen, sobald er feststellt, dass die Datei nicht mehr vorhanden ist."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Um deine Internetverbindung zu schützen, lade die ${ VPN_APP_NAME }-App für dein Gerät herunter, installiere diese und verbinde dich mit einem Server."
       ],
@@ -13041,11 +13089,23 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
+      "Upgrade now to monitor your team's account safety.": [
+        "Upgraden, um die Kontosicherheit deines Teams zu überwachen."
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Upgraden, um ${ PASS_APP_NAME }-Aktivität in deiner Organisation anzusehen."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Jederzeit upgraden oder Speicherplatz freigeben, um den Rest zu übertragen"
       ],
+      "Upgrade required": [
+        "Upgrade erforderlich"
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Führe ein Upgrade durch, um deinem Konto kürzere @pm.me-Adressen hinzuzufügen, die einfacher zu teilen sind. Das steht für „${ MAIL_APP_NAME } me“ oder „Private Message me“."
+      ],
+      "Upgrade to define policies for your organization.": [
+        "Upgraden, um Richtlinien für deine Organisation festzulegen."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Upgrade, um deine ${ planTitle }-Vorteile zu behalten."
@@ -13347,6 +13407,9 @@
       "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
         "Mit verwalteten Unternehmen kannst du Zugriffsrechte für von dir betreute Organisationen hinzufügen, bearbeiten und entfernen."
       ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Mit VPN Professional können Administratoren für alle Mitglieder der Organisation ein stets aktives VPN sowie private Gateways, Zugriffsrichtlinien und Überwachungsfunktionen durchsetzen."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Mit deinem aktuellen Tarif kannst du nur Nachrichten mit deiner @pm.me-Adresse empfangen. Führe ein Upgrade durch, um Nachrichten senden und zusätzliche Adressen mit @pm.me erstellen zu können."
       ],
@@ -13503,6 +13566,9 @@
       ],
       "You don't have any referrals.": [
         "Du hast keine Empfehlungen."
+      ],
+      "You don't manage any companies yet.": [
+        "Du verwaltest noch keine Unternehmen."
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "Du musst die Datei weder öffnen noch lesen – lade sie einfach herunter und speichere sie an einem sicheren Ort."
@@ -14471,6 +14537,9 @@
       "Add extra services": [
         "Zusätzliche Dienste hinzufügen"
       ],
+      "Add managers": [
+        "Manager hinzufügen"
+      ],
       "Additional comments": [
         "Zusätzliche Kommentare"
       ],
@@ -14566,6 +14635,9 @@
       ],
       "ANY": [
         "IRGENDEINE"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Alles, was deine Aufmerksamkeit erfordert, sowie E-Mails aus deaktivierten Kategorien"
       ],
       "App password": [
         "App-Passwort"
@@ -15534,9 +15606,6 @@
       "Pending": [
         "Ausstehend"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "Private und berufliche E-Mails sowie wichtige Updates und Benachrichtigungen"
-      ],
       "Phone number": [
         "Telefonnummer"
       ],
@@ -15579,8 +15648,8 @@
       "Primary": [
         "Primäre"
       ],
-      "Primary - Personal and work emails, plus important updates": [
-        "Haupt – Persönliche und geschäftliche E-Mails sowie wichtige Aktualisierungen"
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "„Wichtig“ – Alles, was deine Aufmerksamkeit erfordert, sowie E-Mails aus deaktivierten Kategorien"
       ],
       "Priority support": [
         "Vorrangiger Support"
@@ -15921,6 +15990,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Aktualisierungen – Automatische Bestätigungen, Warnmeldungen und Konto-Aktualisierungen"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ],
       "Upload 1 or more encryption keys": [
         "Lade einen oder mehrere Verschlüsselungsschlüssel hoch"
@@ -20309,6 +20381,9 @@
       ],
       "Enter company name": [
         "Unternehmensnamen eingeben"
+      ],
+      "Enter name or email address": [
+        "Name oder E-Mail-Adresse eingeben"
       ],
       "example@domain.com": [
         "name@beispiel.de"
@@ -25356,6 +25431,9 @@
       "Currency": [
         "Währung"
       ],
+      "Current cost": [
+        "Aktuelle Kosten"
+      ],
       "Custom": [
         "Benutzerdefiniert"
       ],
@@ -25989,6 +26067,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Dateien geräteübergreifend auf Windows, Mac, Android und iOS verwalten."
       ],
+      "Managers": [
+        "Manager"
+      ],
       "Messages": [
         "Nachrichten"
       ],
@@ -26276,6 +26357,9 @@
       ],
       "Remove via MDM": [
         "Über MDM entfernen"
+      ],
+      "Remove via PowerShell": [
+        "Über PowerShell entfernen"
       ],
       "Rename the gateway": [
         "Benenne das Gateway um"
@@ -26631,6 +26715,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Auf ${ planName } upgraden"
+      ],
+      "Upgrade to enable Always-on": [
+        "Um Always-on zu aktivieren, upgraden"
       ],
       "Upgrade to keep your premium benefits.": [
         "Upgrade, um deine Premium-Vorteile zu behalten."
@@ -27699,6 +27786,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Dadurch wird eine neue ${ MAIL_APP_NAME }-Adresse erstellt."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Zu einem unterstützten Abonnement upgraden, um Administratorrollen nutzen zu können."
       ],
       "User created": [
         "Benutzer erstellt"

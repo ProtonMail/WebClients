@@ -112,15 +112,6 @@
       "Cancel": [
         "Annuleren"
       ],
-      "Cancel all downloads": [
-        "Alle downloads annuleren"
-      ],
-      "Cancel all uploads": [
-        "Alle uploads annuleren"
-      ],
-      "Cancel download": [
-        "Download annuleren"
-      ],
       "Cancel subscription": [
         "Abonnement opzeggen"
       ],
@@ -204,9 +195,6 @@
       ],
       "Continue": [
         "Doorgaan"
-      ],
-      "Continue downloading": [
-        "Doorgaan met downloaden"
       ],
       "Continue import": [
         "Doorgaan met importeren"
@@ -332,9 +320,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Download een kopie (als docx)"
-      ],
-      "Download anyway": [
-        "Toch downloaden"
       ],
       "Download debug information": [
         "Foutopsporingsinformatie downloaden"
@@ -675,9 +660,6 @@
       "Rename document": [
         "Document hernoemen"
       ],
-      "Replace file": [
-        "Bestand vervangen"
-      ],
       "Report a problem": [
         "Meld een probleem"
       ],
@@ -893,9 +875,6 @@
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"
-      ],
-      "Upload anyway": [
-        "Toch uploaden"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -3269,20 +3248,8 @@
       "Failed to update public share node": [
         "Bijwerken van openbaar gedeeld knooppunt is mislukt"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Bestand \"${ name }\" wordt reeds gedownload"
-      ],
-      "File cannot be merged with folder": [
-        "Bestand kan niet worden samengevoegd met map"
-      ],
-      "File selection is already downloading": [
-        "Geselecteerde bestanden worden reeds gedownload"
-      ],
       "First name is too long": [
         "Voornaam is te lang"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Map \"${ name }\" wordt reeds gedownload"
       ],
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
@@ -3534,9 +3501,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Het originele bestand is nog niet geüpload, probeer het later nog eens"
-      ],
-      "The original folder not found": [
-        "De originele map niet gevonden"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Er zijn te veel mappen op uw externe account. Pas de import aan om enkele mappen te verwijderen."
@@ -4540,9 +4504,6 @@
         "${ contactsLength } contact",
         "${ contactsLength } contacten"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } bestanden kunnen niet direct worden gedownload en zullen niet worden opgenomen in deze download. U kunt de andere bestanden downloaden door te klikken op 'Doorgaan met downloaden'."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } laat u real-time samenwerken met end-to-end versleuteling voor volledige privacy. Maak een kopie om te beginnen met bewerken of vraag de eigenaar toegang tot bewerken."
       ],
@@ -4601,9 +4562,6 @@
         "${ updated } contact bijgewerkt.",
         "${ updated } contacten bijgewerkt."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } bestaat al op deze plaats."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskeert uw IP-adres, zodat websites u niet kunnen identificeren."
       ],
@@ -4632,12 +4590,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
         "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
-      ],
-      "A number will be added to the filename": [
-        "Een nummer wordt toegevoegd aan de bestandsnaam"
-      ],
-      "A number will be added to the folder name": [
-        "Een nummer wordt toegevoegd aan de foldernaam"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
@@ -4689,9 +4641,6 @@
       ],
       "Already in this folder": [
         "Bestaat al in deze map"
-      ],
-      "an anonymous user": [
-        "een anonieme gebruiker"
       ],
       "and": [
         "en"
@@ -4764,9 +4713,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Controle van contact ${ progress } van ${ max }..."
-      ],
-      "Checking signatures": [
-        "Handtekeningen controleren"
       ],
       "Choose a plan that works best for you.": [
         "Kies een abonnement dat het beste bij u past."
@@ -4863,12 +4809,6 @@
       "Details": [
         "Details"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digitale handtekening geverifieerd. Dit bestand werd veilig geüpload door ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digitale handtekening geverifieerd. Deze map werd veilig geüpload door ${ emailAddress }."
-      ],
       "Display word count": [
         "Woordenaantal weergeven"
       ],
@@ -4895,12 +4835,6 @@
       ],
       "Download current logs": [
         "Huidige logboeken downloaden"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Download van ${ downloadFileName } zal afgebroken worden"
-      ],
-      "Download was canceled": [
-        "Download is geannuleerd"
       ],
       "Drop file here to upload": [
         "Sleep bestand hier om te uploaden"
@@ -4995,15 +4929,6 @@
       "File \"${ name }\" was deleted during download": [
         "Bestand \"${ name }\" werd verwijderd tijdens downloaden"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Handtekening van bestand ontbreekt. We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Handtekening van bestand ontbreekt. We konden niet verifiëren wie ${ fileName } heeft geüpload."
-      ],
-      "File will not be updated": [
-        "Het bestand zal niet worden bijgewerkt"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
       ],
@@ -5012,18 +4937,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Map \"${ link.name }\" werd verwijderd tijdens downloaden"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Handtekening van map ontbreekt. We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Handtekening van map ontbreekt. We konden niet verifiëren wie ${ fileName } heeft geüpload."
-      ],
-      "Folder will not be uploaded": [
-        "Folder zal niet worden ge-upload"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Vermijd streaming en andere geheugenintensieve activiteiten of splits je upload op in kleinere delen voor het beste resultaat."
       ],
       "Forgot password?": [
         "Wachtwoord vergeten?"
@@ -5136,9 +5049,6 @@
       ],
       "Invite link copied": [
         "Link met uitnodiging gekopieerd"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Het lijkt erop dat u recent heeft geprobeerd ${ uploadName } te uploaden. Als de upload mislukt is, ${ replaceFile }. Als de upload nog bezig is, zal het vervangen van het bestand de huidige upload annuleren."
       ],
       "It's better to have:": [
         "Het is beter om:"
@@ -5406,9 +5316,6 @@
       "Recents": [
         "Recente"
       ],
-      "recommended browser": [
-        "aanbevolen browser"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
       ],
@@ -5475,12 +5382,6 @@
       "Show table of contents": [
         "Inhoudsopgave tonen"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
-      ],
-      "Signature check will be ignored": [
-        "Handtekeningcontrole zal genegeerd worden"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
@@ -5530,26 +5431,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Het account heeft mogelijk een nieuwe sleutel of het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "De auteur van bewerkingen in het document kon niet worden geverifieerd. Wilt u dit document markeren als geverifieerd? U kan kiezen om te negeren en later te beslissen."
       ],
       "The Beginning": [
         "Het begin"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "De digitale handtekening is gedeeltelijk geverifieerd. Dit bestand is geüpload met behulp van een openbaar toegankelijke share link door een gebruiker zonder een ${ BRAND_NAME }-account, zodat hun identiteit niet kan worden geverifieerd."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "De digitale handtekening is gedeeltelijk geverifieerd. Dit bestand is geüpload met behulp van een openbaar toegankelijke share link door een gebruiker zonder een ${ BRAND_NAME }-account, zodat hun identiteit niet kan worden geverifieerd."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
@@ -5617,23 +5506,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Deze actie zal de geselecteerde items die u heeft opgeladen definitief verwijderen."
       ],
-      "This will replace the existing file with the folder": [
-        "Dit zal het bestaande bestand vervangen door de map"
-      ],
-      "This will replace the existing folder with the file": [
-        "Dit zal de bestaande map vervangen door het bestand"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
-      ],
-      "This will upload a new version of the file": [
-        "Dit zal een nieuwe versie van het bestand uploaden."
-      ],
-      "This will upload a new version of the folder": [
-        "Dit zal een nieuwe versie van de map uploaden"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Om de ${ DOCS_APP_NAME } bestanden te downloaden, open ze in ${ DOCS_APP_NAME } en exporteer ze."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
@@ -5659,14 +5533,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "Overdracht geannuleerd voor bestand \"${ name }\""
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Overdracht geannuleerd voor map \"${ name }\""
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Overdracht overgeslagen voor bestand \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Overdracht overgeslagen voor map \"${ folderName }\""
       ],
       "Trash": [
         "Prullenbak"
@@ -5679,9 +5547,6 @@
       ],
       "Undo successful": [
         "Ongedaan maken is gelukt"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Helaas lijkt het erop dat het bestand of een deel van de gegevens ervan niet kan worden gedecodeerd."
       ],
       "Update recent documents": [
         "Recente documenten bijwerken"
@@ -5697,9 +5562,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Upgraden om uw ${ planTitle } voordelen te behouden."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Het uploaden van honderden bestanden in één keer kan een prestatieeffect hebben."
       ],
       "Uppercase and lowercase letters": [
         "Hoofdletters en kleine letters"
@@ -5724,12 +5586,6 @@
       ],
       "Warning": [
         "Waarschuwing"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "We konden niet verifiëren wie ${ fileName } heeft geüpload."
       ],
       "We'll email you once import is complete.": [
         "We sturen u een e-mail zodra de import voltooid is."
@@ -5893,9 +5749,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Uw wijzigingen konden niet worden gesynchroniseerd. Drive zal automatisch proberen de wijzigingen op te slaan. Sluit de webpagina niet."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Uw huidige browser ondersteunt het downloaden van grote bestanden niet wegens de onbeschikbaarheid van service workers. Het downloaden van grote bestanden kan ervoor zorgen dat uw browser vastloopt of niet langer reageert. Gebruik de meest recente versie van een ${ recommendedBrowser } en probeer het opnieuw."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Uw huidige document wordt vervangen door deze versie. Reacties en suggesties worden verwijderd van het document, maar blijven toegankelijk in de reactiegeschiedenis."
       ],
@@ -5998,32 +5851,6 @@
         "Alleen bekijken"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "bestandsattributen"
-      ],
-      "file data": [
-        "bestandsgegevens"
-      ],
-      "file data key": [
-        "bestandsgegevenssleutel"
-      ],
-      "file data order": [
-        "bestandsgegevens volgorde"
-      ],
-      "hash key": [
-        "hash sleutel"
-      ],
-      "keys": [
-        "sleutels"
-      ],
-      "name": [
-        "naam"
-      ],
-      "thumbnail": [
-        "miniatuur"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Actieve ondertekenaar"
@@ -6114,15 +5941,6 @@
       "App password": [
         "App-wachtwoord"
       ],
-      "Apply to all duplicated files": [
-        "Toepassen op alle gedupliceerde bestanden"
-      ],
-      "Apply to all duplicated folders": [
-        "Toepassen op alle gedupliceerde mappen"
-      ],
-      "Apply to all unverified items": [
-        "Toepassen op alle ongeverifieerde items"
-      ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
@@ -6149,9 +5967,6 @@
       ],
       "can view": [
         "kan bekijken"
-      ],
-      "Cancel download": [
-        "Download annuleren"
       ],
       "Category": [
         "Categorie"
@@ -6216,14 +6031,8 @@
       "Don't show this again": [
         "Toon dit niet opnieuw"
       ],
-      "Download anyway": [
-        "Toch downloaden"
-      ],
       "Drive": [
         "Drive"
-      ],
-      "Duplicate found": [
-        "Duplicaat gevonden"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "bv. Amazon, eBay, Etsy"
@@ -6326,15 +6135,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Geïntegreerde tweestapsverificatie"
-      ],
-      "Keep both": [
-        "Beide behouden"
-      ],
-      "Keep both files": [
-        "Beide bestanden behouden"
-      ],
-      "Keep both folders": [
-        "Beide folders behouden"
       ],
       "Label messages as": [
         "Berichten labelen als"
@@ -6459,12 +6259,6 @@
       "Regular expression": [
         "Reguliere expressie"
       ],
-      "Replace existing file": [
-        "Bestaand bestand vervangen"
-      ],
-      "Replace existing folder": [
-        "Bestaande map vervangen"
-      ],
       "Require password": [
         "Wachtwoord vereist"
       ],
@@ -6488,12 +6282,6 @@
       ],
       "Skip feedback": [
         "Feedback overslaan"
-      ],
-      "Skip file": [
-        "Bestand overslaan"
-      ],
-      "Skip folder": [
-        "Sla map over"
       ],
       "Starts with": [
         "Begint met"
@@ -8225,9 +8013,6 @@
       "Failed to delete document": [
         "Verwijderen van document mislukt"
       ],
-      "Failed to download files: ${ err }": [
-        "Bestanden downloaden mislukt: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Fout bij het laden van uitnodigingsdetails"
       ],
@@ -8246,18 +8031,12 @@
       "Failed to trash document": [
         "Kan document niet in de prullenbak plaatsen"
       ],
-      "Failed to upload files: ${ err }": [
-        "Het uploaden van bestanden is mislukt: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Bestand of map \"${ filename }\" en ${ count } andere zijn al aan het uploaden",
         "Bestand of map \"${ filename }\" en ${ count } andere zijn al aan het uploaden"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Bestand of map \"${ filename }\" is al aan het uploaden"
-      ],
-      "File or folder is missing a name": [
-        "Bestand of map heeft geen naam"
       ],
       "Invitation's email was sent again": [
         "Uitnodigingsmail is opnieuw verzonden"
@@ -8276,9 +8055,6 @@
       "Move ${ n } item": [
         "Verplaats ${ n } item",
         "Verplaats ${ n } items"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Onvoldoende ruimte om ${ formattedTotal } te uploaden"
       ],
       "Public link access updated": [
         "Toegang publieke link aangepast"
@@ -10222,9 +9998,6 @@
       "Birthday": [
         "Geboortedatum"
       ],
-      "Browser might run out of memory": [
-        "Browser valt mogelijk zonder geheugen"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-abonnement annuleren"
       ],
@@ -10383,26 +10156,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Downgrade naar ${ downgradedPlanName }?"
       ],
-      "Download ${ date }": [
-        "${ date } downloaden"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
       ],
       "Download the app": [
         "Download de app"
-      ],
-      "Download unverified file?": [
-        "Ongeverifieerd bestand downloaden?"
-      ],
-      "Download unverified folder?": [
-        "Ongeverifieerde map downloaden?"
-      ],
-      "Duplicate file found": [
-        "Duplicaat bestand gevonden"
-      ],
-      "Duplicate folder found": [
-        "Duplicate map gevonden"
       ],
       "Edit contact": [
         "Contactpersoon bewerken"
@@ -10585,9 +10343,6 @@
       "Other names": [
         "Andere namen"
       ],
-      "Performance might be affected": [
-        "Prestaties kunnen beïnvloed zijn"
-      ],
       "Phone numbers": [
         "Telefoonnummers"
       ],
@@ -10759,9 +10514,6 @@
       "Upload and share files": [
         "Bestanden uploaden en delen"
       ],
-      "Uploading a large file or folder": [
-        "Groot bestand of map aan het uploaden"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gebruik ${ VPN_SHORT_APP_NAME } voor data privacy"
       ],
@@ -10806,9 +10558,6 @@
       ],
       "Your document cannot be loaded": [
         "Uw document kan niet worden geladen"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Uw download bevat een ${ DOCS_APP_NAME }-bestand"
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"

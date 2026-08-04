@@ -1830,6 +1830,12 @@
       "Event deleted": [
         "Begivenhed slettet"
       ],
+      "Failed to admit the participant. Please try again.": [
+        "Kunne ikke give deltageren adgang. Prøv igen."
+      ],
+      "Failed to admit the participants. Please try again.": [
+        "Kunne ikke give deltagerne adgang. Prøv igen."
+      ],
       "Failed to assign host": [
         "Kunne ikke angive vært"
       ],
@@ -1850,6 +1856,9 @@
       ],
       "Failed to delete room": [
         "Kunne ikke slette rummet"
+      ],
+      "Failed to deny the participant. Please try again.": [
+        "Kunne ikke afvise deltageren. Prøv igen."
       ],
       "Failed to download recording": [
         "Kunne ikke downloade optagelse"
@@ -1889,6 +1898,9 @@
       ],
       "Failed to unlock meeting": [
         "Kunne ikke låse møde op"
+      ],
+      "Failed to update waiting room setting. Please try again.": [
+        "Kunne ikke opdatere indstillingerne for venteværelset. Prøv igen."
       ],
       "Incorrect username": [
         "Forkert brugernavn"
@@ -2183,6 +2195,10 @@
         "${ totalParticipantCount } deltager",
         "${ totalParticipantCount } deltagere"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "${ waitingRoomParticipantsCount } person venter",
+        "${ waitingRoomParticipantsCount } personer venter"
+      ],
       "(You)": [
         "(Dig)"
       ],
@@ -2348,6 +2364,9 @@
       "Everyone has been disconnected from the call.": [
         "Alle er blevet afbrudt fra opkaldet."
       ],
+      "Expires in ${ formattedCountdown }": [
+        "Udløber om ${ formattedCountdown }"
+      ],
       "Failed to apply background blur": [
         "Kunne ikke anvende baggrundssløring"
       ],
@@ -2402,8 +2421,14 @@
       "Internet connection lost": [
         "Internetforbindelse mistet"
       ],
+      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
+        "Anmodning om tilslutning udløb. Værten gav dig ikke adgang i tide. Send en ny anmodning om at tilslutte."
+      ],
       "Joined ${ roomNameLabel }": [
         "Tilmeldte sig ${ roomNameLabel }"
+      ],
+      "Joined at ${ receivedTime }": [
+        "Tilsluttede ${ receivedTime }"
       ],
       "Learn more": [
         "Få mere at vide"
@@ -2792,6 +2817,12 @@
       "View ": [
         "Vis "
       ],
+      "Waiting for the host to admit you. The host has been notified that you're waiting.": [
+        "Venter på at værten giver dig adgang. Værten er blevet underrettet om at du venter."
+      ],
+      "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
+        "Venter på at værten starter. Du bliver tilsluttet når værten starter mødet, og giver dig adgang."
+      ],
       "Warning": [
         "Advarsel"
       ],
@@ -2836,6 +2867,9 @@
       ],
       "You were removed from the meeting": [
         "Du blev fjernet fra mødet"
+      ],
+      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
+        "Du fik ikke adgang til dette møde. Du kan prøve at tilslutte igen, hvis du tror det var en fejl."
       ],
       "You will leave the meeting. Others will continue.": [
         "Du forlader mødet. Andre fortsætter."
@@ -3124,6 +3158,9 @@
       ],
       "Use simple selfie segmentation": [
         "Brug simpel selfie-segmentering"
+      ],
+      "Use waiting room with a paid plan": [
+        "Brug venteværelset med et betalt abonnement"
       ],
       "Verification code": [
         "Verifikationskode"
@@ -3565,6 +3602,9 @@
       "Join meeting": [
         "Deltag i mødet"
       ],
+      "Join request expired": [
+        "Anmodning om tilslutning udløb"
+      ],
       "Joined at epoch ${ log.epoch }": [
         "Tilmeldt ved epoch ${ log.epoch }"
       ],
@@ -3677,6 +3717,9 @@
       "Thank you!": [
         "Tak!"
       ],
+      "The host didn't admit you": [
+        "Værten gav dig ikke adgang"
+      ],
       "Time": [
         "Tid"
       ],
@@ -3688,6 +3731,9 @@
       ],
       "Video": [
         "Video"
+      ],
+      "Waiting for the host": [
+        "Venter på værten"
       ],
       "Waiting room": [
         "Venteværelse"

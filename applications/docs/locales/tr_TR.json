@@ -112,15 +112,6 @@
       "Cancel": [
         "İptal"
       ],
-      "Cancel all downloads": [
-        "Tüm indirmeleri iptal et"
-      ],
-      "Cancel all uploads": [
-        "Tüm yüklemeleri iptal et"
-      ],
-      "Cancel download": [
-        "İndirmeyi iptal et"
-      ],
       "Cancel subscription": [
         "Aboneliği iptal et"
       ],
@@ -207,9 +198,6 @@
       ],
       "Continue": [
         "İlerle"
-      ],
-      "Continue downloading": [
-        "İndirmeyi sürdür"
       ],
       "Continue import": [
         "İçe aktarmayı sürdür"
@@ -335,9 +323,6 @@
       ],
       "Download a copy (as xlsx)": [
         "Kopyasını indir (xlsx olarak)"
-      ],
-      "Download anyway": [
-        "Yine de indir"
       ],
       "Download debug information": [
         "Hata ayıklama bilgilerini indir"
@@ -678,9 +663,6 @@
       "Rename document": [
         "Belgeyi yeniden adlandır"
       ],
-      "Replace file": [
-        "Dosyayı değiştir"
-      ],
       "Report a problem": [
         "Sorun bildirin"
       ],
@@ -899,9 +881,6 @@
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"
-      ],
-      "Upload anyway": [
-        "Yine de yükle"
       ],
       "Upload picture": [
         "Fotoğraf yükle"
@@ -3275,20 +3254,8 @@
       "Failed to update public share node": [
         "Herkese açık paylaşım noktası güncellenemedi"
       ],
-      "File \"${ name }\" is already downloading": [
-        "\"${ name }\" zaten indiriliyor"
-      ],
-      "File cannot be merged with folder": [
-        "Dosya klasörle birleştirilemez"
-      ],
-      "File selection is already downloading": [
-        "Seçilmiş dosyalar zaten indiriliyor"
-      ],
       "First name is too long": [
         "Ad çok uzun"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "\"${ name }\" klasörü zaten indiriliyor"
       ],
       "Folder name cannot be empty.": [
         "Klasör adı boş olamaz."
@@ -3540,9 +3507,6 @@
       ],
       "The original file is not uploaded yet, please try again later": [
         "Özgün dosya henüz yüklenmemiş. Lütfen bir süre sonra yeniden deneyin"
-      ],
-      "The original folder not found": [
-        "Özgün klasör bulunamadı"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Dış hesabınızda çok fazla klasör var. Lütfen bazı klasörleri silmek için içe aktarma işlemini özelleştirin."
@@ -4546,9 +4510,6 @@
         "${ contactsLength } kişi",
         "${ contactsLength } kişi"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } dosyaları doğrudan indirilemez ve indirilirken dosyaya katılmaz. \"İndirmeyi sürdür” üzerine tıklayarak düğer dosyaları indirebilirsiniz."
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME }, tam gizlilik için uçtan uca şifrelemeyle gerçek zamanlı olarak işbirliği yapmanızı sağlar. Düzenlemeye başlamak için dosyanın kopyasını oluşturun veya sahibinden düzenleme izni isteyin."
       ],
@@ -4607,9 +4568,6 @@
         "${ updated } kişi güncellendi.",
         "${ updated } kişi güncellendi."
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } bu konumda zaten var."
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } IP adresinizi gizler. Böylece siteler sizin kim olduğunuzu anlayamaz."
       ],
@@ -4638,12 +4596,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
-      ],
-      "A number will be added to the filename": [
-        "Dosya adına bir numara eklensin"
-      ],
-      "A number will be added to the folder name": [
-        "Klasör adına bir numara eklensin"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
@@ -4695,9 +4647,6 @@
       ],
       "Already in this folder": [
         "Zaten bu klasörde var"
-      ],
-      "an anonymous user": [
-        "isimsiz bir kullanıcı"
       ],
       "and": [
         "ve"
@@ -4770,9 +4719,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kişi denetleniyor ${ progress }/${ max }..."
-      ],
-      "Checking signatures": [
-        "İmzalar denetleniyor"
       ],
       "Choose a plan that works best for you.": [
         "Size en uygun tarifeyi seçin."
@@ -4869,12 +4815,6 @@
       "Details": [
         "Ayrıntılar"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Sayısal imza doğrulandı. Bu dosya ${ emailAddress } tarafından güvenli şekilde yüklendi."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Sayısal imza doğrulandı. Bu klasör ${ emailAddress } tarafından güvenli şekilde yüklendi."
-      ],
       "Display word count": [
         "Sözcük sayısı görüntülensin"
       ],
@@ -4901,12 +4841,6 @@
       ],
       "Download current logs": [
         "Güncel günlükleri indir"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "${ downloadFileName } dosyasının indirilmesinden vazgeçilecek"
-      ],
-      "Download was canceled": [
-        "İndirme iptal edildi"
       ],
       "Drop file here to upload": [
         "Yüklenecek dosyayı buraya bırakın"
@@ -5001,15 +4935,6 @@
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" dosyası indirme sırasında silindi"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Dosya imzası eksik. ${ fileName } ögesini ${ emailAddress } kullanıcısının yüklediği doğrulanamadı."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Dosya imzası eksik. ${ fileName } ögesini kimin yüklediği doğrulanamadı."
-      ],
-      "File will not be updated": [
-        "Dosya güncellenmeyecek"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
@@ -5018,18 +4943,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "\"${ link.name }\" klasörü indirme sırasında silindi"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Klasör imzası eksik. ${ fileName } ögesini ${ emailAddress } kullanıcısının yüklediği doğrulanamadı."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Klasör imzası eksik. ${ fileName } ögesini kimin yüklediği doğrulanamadı."
-      ],
-      "Folder will not be uploaded": [
-        "Klasör yüklenmeyecek"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "En iyi sonucu almak için yayın akışları ve fazla bellek kullanılması gereken etkinliklerden kaçının ya da yüklemenizi daha küçük gruplara ayırın."
       ],
       "Forgot password?": [
         "Parolamı unuttum"
@@ -5142,9 +5055,6 @@
       ],
       "Invite link copied": [
         "Davet bağlantısı kopyalandı"
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Yakın zamanda ${ uploadName } dosyasını yüklemeyi denemişsiniz gibi görünüyor. Yüklenemediyse, lütfen ${ replaceFile }in. Yükleme hala sürüyorsa, dosyanın değiştirilmesi süren yükleme işlemini iptal eder."
       ],
       "It's better to have:": [
         "Şöyle olması daha iyidir:"
@@ -5412,9 +5322,6 @@
       "Recents": [
         "Son kullanılanlar"
       ],
-      "recommended browser": [
-        "önerilen tarayıcı"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
       ],
@@ -5481,12 +5388,6 @@
       "Show table of contents": [
         "İçindekiler tablosunu görüntüle"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
-      ],
-      "Signature check will be ignored": [
-        "İmza denetimi yok sayılacak"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
@@ -5536,26 +5437,14 @@
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Hesabın yeni bir anahtarı olabilir ya da şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Belgedeki düzenlemelerin sahibi doğrulanamadı. Bu belgeyi doğrulanmış olarak işaretlemek ister misiniz? Daha sonra karar vermek için Yok say üzerine tıklayın."
       ],
       "The Beginning": [
         "Başlangıç"
       ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Sayısal imza kısmen doğrulandı. Bu klasör ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı kullanılarak yüklendi. Bu nedenle kullanıcının kimliği doğrulanamıyor."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Sayısal imzanın bir bölümöü doğrulandı. Bu klasör ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı kullanılarak yüklendi. Bu nedenle kimliği doğrulanamıyor."
-      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Bilgiler üçüncü taraf bir hizmetten sızdırılmış. ${ BRAND_NAME } hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Bu adresin sahibi uçtan uca şifrelemeyi kapatmış. Bu adrese şifrelenmiş e-postalar gönderebilmek için adres sahibi uçtan uca şifrelemeyi yeniden açmalıdır."
@@ -5626,23 +5515,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Bu işlem yüklediğiniz seçilmiş ögeleri kalıcı olarak silecek."
       ],
-      "This will replace the existing file with the folder": [
-        "Bu işlem var olan dosyayı klasör ile değiştirir"
-      ],
-      "This will replace the existing folder with the file": [
-        "Bu işlem var olan klasörü dosya ile değiştirir"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
-      ],
-      "This will upload a new version of the file": [
-        "Bu işlem dosyaya yeni bir sürüm yükler"
-      ],
-      "This will upload a new version of the folder": [
-        "Bu işlem klasörün yeni bir sürümünü yükler"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "${ DOCS_APP_NAME } dosyalarını indirmek için onları ${ DOCS_APP_NAME } uygulamasında açın ve dışa aktarın."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -5668,14 +5542,8 @@
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\" dosyasının aktarımı iptal edildi"
       ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "\"${ name }\" klasörünün aktarımı iptal edildi"
-      ],
       "Transfer skipped for file \"${ file.name }\"": [
         "\"${ file.name }\" dosyasının aktarımı atlandı"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "\"${ folderName }\" klasörünün aktarımı atlandı"
       ],
       "Trash": [
         "Çöp kutusu"
@@ -5688,9 +5556,6 @@
       ],
       "Undo successful": [
         "Geri alındı"
-      ],
-      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Ne yazık ki, bu dosyanın ya da dosyanın bazı verilerinin şifresi çözülemedi."
       ],
       "Update recent documents": [
         "Son kullanılan belgeleri güncelle"
@@ -5706,9 +5571,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Yüzlerce dosyanın aynı anda yüklenmesi başarımı etkileyebilir."
       ],
       "Uppercase and lowercase letters": [
         "Büyük ve küçük harfler"
@@ -5733,12 +5595,6 @@
       ],
       "Warning": [
         "Uyarı"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "${ emailAddress } kullanıcısının ${ fileName } ögesini yüklediği doğrulanamadı."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "${ fileName } dosyasını kimin yüklediği doğrulanamadı."
       ],
       "We'll email you once import is complete.": [
         "İçe aktarma işlemi tamamlanınca size e-posta göndereceğiz."
@@ -5902,9 +5758,6 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Değişiklikleriniz eşitlenemedi. Drive değişikliklerinizi otomatik olarak kaydetmeyi deneyecek. Lütfen bu sayfayı kapatmayın."
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Hizmet işlemleri kullanılamadığından kullandığınız tarayıcı büyük dosyaların indirilmesini desteklemiyor. Büyük dosyaları indirmek tarayıcının donmasına ya da yanıt vermemesine neden olabilir. Lütfen güncel ${ recommendedBrowser } sürümünü kullanarak yeniden deneyin."
-      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Geçerli belgeniz bu sürümle değiştirilecek. Yorumlar ve öneriler belgeden kaldırılacak ancak yorum geçmişinde erişilebilir kalacak."
       ],
@@ -6007,32 +5860,6 @@
         "Yalnızca görüntüleme"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "dosya öznitelikleri"
-      ],
-      "file data": [
-        "dosya verileri"
-      ],
-      "file data key": [
-        "dosya verileri anahtarı"
-      ],
-      "file data order": [
-        "dosya verileri sıralaması"
-      ],
-      "hash key": [
-        "karma anahtarı"
-      ],
-      "keys": [
-        "anahtarlar"
-      ],
-      "name": [
-        "ad"
-      ],
-      "thumbnail": [
-        "küçük görsel"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Etkin imzalayan"
@@ -6123,15 +5950,6 @@
       "App password": [
         "Uygulama parolası"
       ],
-      "Apply to all duplicated files": [
-        "Tüm çift dosyalara uygula"
-      ],
-      "Apply to all duplicated folders": [
-        "Tüm çift klasörlere uygula"
-      ],
-      "Apply to all unverified items": [
-        "Tüm doğrulanmamış ögelere uygula"
-      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -6158,9 +5976,6 @@
       ],
       "can view": [
         "görüntüleyebilir"
-      ],
-      "Cancel download": [
-        "İndirmeyi iptal et"
       ],
       "Category": [
         "Kategori"
@@ -6225,14 +6040,8 @@
       "Don't show this again": [
         "Bu bir daha görüntülenmesin"
       ],
-      "Download anyway": [
-        "Yine de indir"
-      ],
       "Drive": [
         "Drive"
-      ],
-      "Duplicate found": [
-        "Kopya bulundu"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "örneğin, Amazon, eBay, Etsy"
@@ -6335,15 +6144,6 @@
       ],
       "Integrated 2FA authenticator": [
         "Bütünleşik iki adımlı kimlik doğrulayıcı"
-      ],
-      "Keep both": [
-        "İkisi de tutulsun"
-      ],
-      "Keep both files": [
-        "İki dosya da tutulsun"
-      ],
-      "Keep both folders": [
-        "İki klasör de tutulsun"
       ],
       "Label messages as": [
         "İletiler şu şekilde etiketlensin"
@@ -6468,12 +6268,6 @@
       "Regular expression": [
         "Kurallı ifade"
       ],
-      "Replace existing file": [
-        "Var olan dosya değiştirilsin"
-      ],
-      "Replace existing folder": [
-        "Var olan klasör değiştirilsin"
-      ],
       "Require password": [
         "Parola istensin"
       ],
@@ -6497,12 +6291,6 @@
       ],
       "Skip feedback": [
         "Geri bildirimi atla"
-      ],
-      "Skip file": [
-        "Dosyayı atla"
-      ],
-      "Skip folder": [
-        "Klasör atlansın"
       ],
       "Starts with": [
         "Şununla başlayan"
@@ -8237,14 +8025,17 @@
       "Failed to delete document": [
         "Belge silinemedi"
       ],
-      "Failed to download files: ${ err }": [
-        "Dosyalar indirilemedi: ${ err }"
-      ],
       "Failed to load invitation details": [
         "Davet bilgileri yüklenemedi"
       ],
+      "Failed to load invitations": [
+        "Davetler yüklenemedi"
+      ],
       "Failed to load sharing details": [
         "Paylaşım ayrıntıları yüklenemedi"
+      ],
+      "Failed to reject invitation": [
+        "Davet reddedilemedi"
       ],
       "Failed to reject share invitation": [
         "Paylaşma daveti reddedilemedi"
@@ -8258,18 +8049,12 @@
       "Failed to trash document": [
         "Belge çöpe atılamadı"
       ],
-      "Failed to upload files: ${ err }": [
-        "Dosyalar yüklenemedi: ${ err }"
-      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "\"${ filename }\" dosya ya da klasörü ile ${ count } diğeri zaten yükleniyor",
         "\"${ filename }\" dosya ya da klasörü ile ${ count } diğeri zaten yükleniyor"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "\"${ filename }\" dosya ya da klasörü zaten yükleniyor"
-      ],
-      "File or folder is missing a name": [
-        "Dosya ya da klasörün adı eksik"
       ],
       "Invitation's email was sent again": [
         "Davet e-postası yeniden gönderildi"
@@ -8288,9 +8073,6 @@
       "Move ${ n } item": [
         "${ n } ögeyi taşı",
         "${ n } ögeyi taşı"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "${ formattedTotal } yüklemek için yeterli alan yok"
       ],
       "Public link access updated": [
         "Herkese açık bağlantı erişimi güncellendi"
@@ -10237,9 +10019,6 @@
       "Birthday": [
         "Doğum günü"
       ],
-      "Browser might run out of memory": [
-        "Bellek tarayıcı için yetersiz olabilir"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal edin"
       ],
@@ -10398,26 +10177,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "${ downgradedPlanName } tarifesine düşürülsün mü?"
       ],
-      "Download ${ date }": [
-        "${ date } indir"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
       ],
       "Download the app": [
         "Uygulamayı indirin"
-      ],
-      "Download unverified file?": [
-        "Doğrulanmamış dosya indirilsin mi?"
-      ],
-      "Download unverified folder?": [
-        "Doğrulanmamış klasör indirilsin mi?"
-      ],
-      "Duplicate file found": [
-        "Çift dosya bulundu"
-      ],
-      "Duplicate folder found": [
-        "Çift klasör bulundu"
       ],
       "Edit contact": [
         "Kişiyi düzenle"
@@ -10600,9 +10364,6 @@
       "Other names": [
         "Diğer adlar"
       ],
-      "Performance might be affected": [
-        "Başarım etkilenebilir"
-      ],
       "Phone numbers": [
         "Telefon numaraları"
       ],
@@ -10774,9 +10535,6 @@
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"
       ],
-      "Uploading a large file or folder": [
-        "Büyük bir dosya ya da klasör yükleniyor"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Veri gizliliği için ${ VPN_SHORT_APP_NAME } kullanın"
       ],
@@ -10821,9 +10579,6 @@
       ],
       "Your document cannot be loaded": [
         "Belgeniz yüklenemedi"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "İndirmenizde bir ${ DOCS_APP_NAME } dosyası var"
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
@@ -10971,6 +10726,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Yönetici rollerini kullanabilmek için bu rolleri destekleyen bir tarifeye yükseltin."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
       ]

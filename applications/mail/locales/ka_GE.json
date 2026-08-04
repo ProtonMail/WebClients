@@ -307,9 +307,6 @@
       "Continue to ${ planOrAppName }": [
         "გაგრძელება ${ planOrAppName }-ზე"
       ],
-      "Continue with categories": [
-        "კატეგორიებზე გაგრძელება"
-      ],
       "Continue with Free": [
         "უფასოთი გაგრძელება"
       ],
@@ -1511,8 +1508,7 @@
         "ნდობა"
       ],
       "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
+        "გასაღების სანდოობა"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -1719,9 +1715,6 @@
       ]
     },
     "Actions": {
-      "Customize categories": [
-        "კატეგორიების მორგება"
-      ],
       "Got it": [
         "გავიგე"
       ],
@@ -4341,9 +4334,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "წაიკითხეთ, უპასუხეთ და მართეთ Gmail-ი ${ MAIL_APP_NAME }-ის საშუალებით"
-      ],
-      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "დააწკაპუნეთ ელფოსტაზე მარჯვენა ღილაკით და აირჩიეთ „გადატანა...“ ან გადაათრიეთ და ჩააგდეთ იგი სხვა კატეგორიაში. მსგავსი ელფოსტები მომავალში აქ ავტომატურად დალაგდება."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "გაგზავნეთ და მიიღეთ Gmail-ის შეტყობინებები პირდაპირ ${ MAIL_APP_NAME }-ში. დააკავშირეთ თქვენი მისამართი ${ addressesSettingsLink }-ში."
@@ -7817,7 +7807,8 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა"
+        "გამოსახულების ჩასმა",
+        "გამოსახულებების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -9072,10 +9063,6 @@
       "You have ${ totalLabel } in your inbox.": [
         "თქვენს შემოსულებში არის ${ totalLabel }."
       ],
-      "You have **${ count } conversation** in ${ categoryLabel } category": [
-        "თქვენ გაქვთ **${ count } მიმოწერა** ${ categoryLabel } კატეგორიაში",
-        "თქვენ გაქვთ **${ count } მიმოწერა** ${ categoryLabel } კატეგორიაში"
-      ],
       "You have **${ count } conversation** stored in this folder": [
         "ამ საქაღალდეში გაქვთ **${ count } შეტყობინება**",
         "ამ საქაღალდეში გაქვთ **${ count } შეტყობინება**"
@@ -9083,10 +9070,6 @@
       "You have **${ count } conversation** tagged with this label": [
         "ამ ჭდით არსებობს **${ count } შეტყობინება**",
         "ამ ჭდით არსებობს **${ count } შეტყობინება**"
-      ],
-      "You have **${ count } message** in ${ categoryLabel } category": [
-        "თქვენ გაქვთ **${ count } შეტყობინება** ${ categoryLabel } კატეგორიაში",
-        "თქვენ გაქვთ **${ count } შეტყობინება** ${ categoryLabel } კატეგორიაში"
       ],
       "You have **${ count } message** stored in this folder": [
         "ამ საქაღალდეში შენახულია **${ count } შეტყობინება**",
@@ -9122,14 +9105,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "სატარიფო გეგმის ჩამოწევამდე საჭიროა ${ MAIL_APP_NAME }-ის მომხმარებლების, მისამართების და ხელით მითითებული დომენების წაშლა."
-      ],
-      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
-        "თქვენ მონიშნეთ **${ checked } მიმოწერა** ${ categoryLabel } კატეგორიაში",
-        "თქვენ მონიშნეთ **${ checked } მიმოწერა** ${ categoryLabel } კატეგორიაში"
-      ],
-      "You selected **${ checked } message** in ${ categoryLabel } category": [
-        "თქვენ მონიშნეთ **${ checked } შეტყობინება** ${ categoryLabel } კატეგორიაში",
-        "თქვენ მონიშნეთ **${ checked } შეტყობინება** ${ categoryLabel } კატეგორიაში"
       ],
       "You selected **${ count } conversation** from this folder": [
         "ამ საქაღალდიდან მონიშნული გაქვთ **${ count } საუბარი**",
@@ -10209,9 +10184,6 @@
       "Payment method": [
         "გადახდის მეთოდები"
       ],
-      "Personal and work emails, plus important updates and notifications": [
-        "პირადი და სამუშაო ელფოსტა, პლუს მნიშვნელოვანი განახლებები და შეტყობინებები"
-      ],
       "PGP scheme": [
         "PGP-ის სქემა"
       ],
@@ -10232,9 +10204,6 @@
       ],
       "Primary": [
         "ძირითადი"
-      ],
-      "Primary - Personal and work emails, plus important updates": [
-        "ძირითადი - პირადი და სამსახურის ელფოსტა, ასევე მნიშვნელოვანი განახლებები"
       ],
       "Promotions": [
         "რეკლამა"
@@ -15950,9 +15919,6 @@
       "Make a secure connection your default": [
         "დაცული კავშირის გამოყენება ნაგულისხმევად"
       ],
-      "Make Categories your own": [
-        "აქციეთ კატეგორიები თქვენსად"
-      ],
       "Mark all messages as read": [
         "ყველა შეტყობინებების მონიშვნა წაკითხულად"
       ],
@@ -16141,9 +16107,6 @@
       ],
       "Payment verification": [
         "გადახდის შემოწმება"
-      ],
-      "Personalize your Categories": [
-        "მოარგეთ თქვენი კატეგორიები"
       ],
       "Phone numbers": [
         "ტელეფონის ნომრები"
