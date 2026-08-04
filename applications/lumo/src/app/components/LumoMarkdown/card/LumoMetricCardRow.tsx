@@ -1,9 +1,9 @@
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import { LUMO_MARKDOWN_CARD_SHELL_CLASS } from '../lumoMarkdownCardShell';
-import { tryParseCardSpec } from './parseCardSpec';
+import { LumoInsightCard } from './LumoInsightCard';
 import { getMetricRowColumnCount } from './metricCardRowUtils';
-import { LumoMarkdownCardBlock } from './LumoMarkdownCardBlock';
+import { tryParseCardSpec } from './parseCardSpec';
 
 interface LumoMetricCardRowProps {
     cards: { code: string; language: string }[];
@@ -29,24 +29,33 @@ function MetricCardSkeleton() {
     );
 }
 
-function metricCardKey(card: { code: string; language: string }, index: number): string {
-    return tryParseCardSpec(card.code)?.title ?? `metric-${index}`;
-}
-
 export const LumoMetricCardRow = ({ cards, pendingSlot = false }: LumoMetricCardRowProps) => {
-    const columnCount = getMetricRowColumnCount(cards.length, pendingSlot);
-    const reservedSlots = cards.length + (pendingSlot ? 1 : 0);
-    const placeholderCount =
-        pendingSlot && reservedSlots < columnCount ? columnCount - reservedSlots : 0;
+    // Grid columns are sized from the cards that actually render, so an unparseable
+    // card shrinks the row instead of leaving an empty cell behind.
+    const renderableCards = cards.flatMap((card, index) => {
+        const spec = tryParseCardSpec(card.code);
+        return spec ? [{ spec, key: spec.title || `metric-${index}` }] : [];
+    });
+
+    if (renderableCards.length === 0 && !pendingSlot) {
+        return null;
+    }
+
+    const columnCount = getMetricRowColumnCount(renderableCards.length, pendingSlot);
+    const reservedSlots = renderableCards.length + (pendingSlot ? 1 : 0);
+    const placeholderCount = pendingSlot && reservedSlots < columnCount ? columnCount - reservedSlots : 0;
 
     return (
-        <div className={clsx('lumo-metric-card-row grid items-stretch gap-3 w-full my-2 mb-3', `lumo-metric-card-row--${columnCount}`)}>
-            {cards.map((card, index) => (
-                <LumoMarkdownCardBlock
-                    key={metricCardKey(card, index)}
-                    code={card.code}
-                    language={card.language}
-                />
+        <div
+            className={clsx(
+                'lumo-metric-card-row grid items-stretch gap-3 w-full my-2 mb-3',
+                `lumo-metric-card-row--${columnCount}`
+            )}
+        >
+            {renderableCards.map(({ spec, key }) => (
+                <div key={key} className="lumo-insight-card-block flex min-w-0">
+                    <LumoInsightCard spec={spec} />
+                </div>
             ))}
             {pendingSlot ? <MetricCardSkeleton key="metric-pending" /> : null}
             {Array.from({ length: placeholderCount }, (_, index) => (

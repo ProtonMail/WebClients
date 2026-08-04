@@ -2,7 +2,7 @@ import { useCallback, useLayoutEffect, useState } from 'react';
 
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
-import { useLumoUserSettings } from '../hooks';
+import { useLumoUserSettings } from '../hooks/useLumoUserSettings';
 import { setLumoSettings } from './lumoThemeStorage';
 import {
     createAutoThemeSettings,
