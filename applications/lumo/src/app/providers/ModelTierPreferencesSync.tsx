@@ -1,10 +1,10 @@
 import { useLayoutEffect } from 'react';
 
 import { useLumoUserSettings } from '../hooks/useLumoUserSettings';
+import { useMaxModelAvailability } from '../hooks/useMaxModelAvailability';
 import { resolveAvailableModelTier, useRemainingLimits } from '../services/usageLimitsStore';
 import { useIsGuest } from './IsGuestProvider';
-import { useMaxModelAvailability } from '../hooks/useMaxModelAvailability';
-import { useModelTier } from './ModelTierProvider';
+import { useModelTier } from './modelTierContext';
 
 /**
  * Applies persisted model/response preferences from lumoUserSettings for signed-in users.

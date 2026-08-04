@@ -75,7 +75,7 @@ import {
 import { updateLumoUserSettingsWithAutoSave } from '../slices/lumoUserSettings';
 import { addResourceLimitError } from '../slices/meta/errors';
 import type { LumoState } from '../store';
-import { RETRY_PUSH_EVERY_MS, callWithRetry, isClientError, isLimitReachedError } from './index';
+import { RETRY_PUSH_EVERY_MS, callWithRetry, isClientError, isLimitReachedError } from './sagaErrors';
 
 /*** helpers ***/
 export function* saveDirtySpace(serializedSpace: SerializedSpace): SagaIterator {

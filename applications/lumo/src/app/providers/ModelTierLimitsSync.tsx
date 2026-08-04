@@ -1,9 +1,10 @@
 import { useLayoutEffect } from 'react';
 
-import { getSelectedModelTier, useModelTier } from '../providers/ModelTierProvider';
 import { useMaxModelAvailability } from '../hooks/useMaxModelAvailability';
 import { useLumoPlan } from '../providers/LumoPlanProvider';
 import { resolveAvailableModelTier, useRemainingLimits } from '../services/usageLimitsStore';
+import { getSelectedModelTier } from './modelTierConstants';
+import { useModelTier } from './modelTierContext';
 
 /**
  * Keeps the selected model tier on a pool that still has quota when limits are known.

@@ -1,9 +1,8 @@
-/* eslint-disable no-nested-ternary */
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
 import config from '../config';
-import { ClientError, ConflictClientError, LimitReachedError } from '../redux/sagas';
+import { ClientError, ConflictClientError, LimitReachedError } from '../redux/sagas/sagaErrors';
 import type { Base64, MasterKey, MessageId, ProtonApiResponse } from '../types';
 import { LUMO_ELIGIBILITY, isProtonApiResponse, isRemoteId } from '../types';
 import { listify } from '../util/collections';
@@ -49,13 +48,7 @@ import { objectToPascalCaseKeys, oldestDateReducer } from './util';
 
 export type RemoteStatus = 'ok' | 'deleted';
 export type ResourceName =
-    | 'masterkeys'
-    | 'spaces'
-    | 'conversations'
-    | 'messages'
-    | 'assets'
-    | 'personalization'
-    | 'settings';
+    'masterkeys' | 'spaces' | 'conversations' | 'messages' | 'assets' | 'personalization' | 'settings';
 
 // prettier-ignore
 type PostableResource =

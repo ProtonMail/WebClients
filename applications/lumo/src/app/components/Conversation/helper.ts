@@ -9,7 +9,7 @@ import {
     planRagAttachmentStorage,
     retrieveDocumentContextForProject,
 } from '../../lib/rag';
-import { type ContextFilter, prepareTurns } from '../../llm';
+import { prepareTurns } from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { ENABLE_U2L_ENCRYPTION } from '../../llm/config';
 import { clearPendingAgent } from '../../redux/slices/composerActions';
@@ -32,7 +32,7 @@ import {
 } from '../../redux/slices/core/messages';
 import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/spaces';
 import type { Memory } from '../../redux/slices/lumoUserSettings';
-import { PERSONALITY_OPTIONS, type PersonalizationSettings } from '../../redux/slices/personalization';
+import type { PersonalizationSettings } from '../../redux/slices/personalization';
 import type { LumoDispatch as AppDispatch, LumoDispatch, LumoState } from '../../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
 import { maybeAutoSaveMemoriesFromChats } from '../../services/memoryAutoSave';
@@ -57,6 +57,7 @@ import {
     resolveReferencedFilesForSend,
 } from '../../util/resolveProjectFiles';
 import { runGenerationWithCompaction } from './compactionFlow';
+import type { ConversationContext } from './conversationContext';
 
 const createLumoErrorHandler =
     () =>
@@ -90,13 +91,7 @@ export type NewMessageData = {
     attachments: Attachment[];
 };
 
-export type ConversationContext = {
-    spaceId: SpaceId;
-    conversationId: ConversationId;
-    allConversationAttachments: Attachment[];
-    messageChain: Message[];
-    contextFilters: ContextFilter[];
-};
+export type { ConversationContext } from './conversationContext';
 
 /**
  * Merge send-time resolved attachments into the conversation context for prepareTurns.
@@ -1046,40 +1041,8 @@ export function generateFakeConversationToShowTierError({
     };
 }
 
-// Helper function to generate personalization prompt from state
-export function formatPersonalization(personalization: PersonalizationSettings | undefined): string {
-    if (!personalization || !personalization.enableForNewChats) {
-        return '';
-    }
-
-    const parts: string[] = [];
-
-    if (personalization.nickname) {
-        parts.push(`Please address me as ${personalization.nickname}.`);
-    }
-
-    if (personalization.jobRole) {
-        parts.push(`My role/job: ${personalization.jobRole}.`);
-    }
-
-    if (personalization.personality !== 'default') {
-        const personalityOption = PERSONALITY_OPTIONS.find((p) => p.value === personalization.personality);
-        const description = personalityOption?.description;
-        if (description) {
-            parts.push(`Please adopt a ${description.toLowerCase()} personality.`);
-        }
-    }
-
-    if (personalization.lumoTraits) {
-        parts.push(`Lumo traits: ${personalization.lumoTraits}`);
-    }
-
-    if (personalization.additionalContext) {
-        parts.push(`Additional context: ${personalization.additionalContext}`);
-    }
-
-    return parts.join('\n');
-}
+// Helper function to generate personalization prompt from state — see llm/formatPersonalization.ts
+export { formatPersonalization } from '../../llm/formatPersonalization';
 
 export function formatMemories(memories: Memory[] | undefined): string {
     if (!memories || memories.length === 0) {

@@ -10,11 +10,11 @@ import {
     unwrapKey,
     wrapKey,
 } from '@protontech/crypto/subtle/aesGcm.ts';
-import {computeSHA256} from '@protontech/crypto/subtle/hash.ts';
-import {uint8ArrayToUtf8String, utf8StringToUint8Array} from '@protontech/crypto/utils';
+import { computeSHA256 } from '@protontech/crypto/subtle/hash.ts';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import {type AdString, type Base64, type EncryptedData, isOldEncryptedData} from '../types';
-import type {AesGcmCryptoKey, AesKwCryptoKey} from './types';
+import { type AdString, type Base64, type EncryptedData, isOldEncryptedData } from './encryptedData';
+import type { AesGcmCryptoKey, AesKwCryptoKey } from './types';
 
 export const generateMasterKeyBytes = () => generateAesWrapKeyBytes();
 export const generateSpaceKeyBytes = () => generateAesGcmKeyBytes(); // meant to go through HKDF to achieve domain separation (e.g. `SPACE_DEK_CONTEXT`)
