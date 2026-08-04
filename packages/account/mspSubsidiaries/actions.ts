@@ -5,6 +5,7 @@ import type { KtState } from '@proton/account/kt';
 import type { MemberState } from '@proton/account/member';
 import { mspSubsidiariesActions } from '@proton/account/mspSubsidiaries';
 import { type OrganizationKeyState, organizationKeyThunk } from '@proton/account/organizationKey';
+import { userOrganizationsActions } from '@proton/account/userOrganizations';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     createMspSubsidiary,
@@ -15,9 +16,8 @@ import {
     updateMspSubsidiary,
 } from '@proton/shared/lib/api/msp';
 import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
-import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
+import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
-import { MSP_SUBSIDIARY_STATUS } from '@proton/shared/lib/interfaces/MspSubsidiary';
 import { generateSubsidiaryOrganizationKeys } from '@proton/shared/lib/keys/organizationKeys';
 
 type RequiredState = OrganizationKeyState & MemberState & KtState;
@@ -46,6 +46,11 @@ export const addCompanyThunk = ({
             Organization.ID = Organization.OrganizationID;
             delete Organization.OrganizationID;
         }
+        // The API seems to return State instead of Status. Fixup the value here.
+        if ('State' in Organization && typeof Organization.State === 'number') {
+            Organization.Status = Organization.State as ORGANIZATION_STATE;
+            delete Organization.State;
+        }
         dispatch(mspSubsidiariesActions.upsert(Organization));
     };
 };
@@ -63,7 +68,14 @@ export const updateCompanyThunk = ({
     return async (dispatch, _, extra) => {
         const api = extra.api;
         await api(updateMspSubsidiary(id, { Name: data.name, MaxMembers: data.assignedSeats }));
+        // IT managers see this company via the userOrganizations cache instead of mspSubsidiaries, so patch both.
         dispatch(mspSubsidiariesActions.patch({ id, changes: { Name: data.name, MaxMembers: data.assignedSeats } }));
+        dispatch(
+            userOrganizationsActions.patch({
+                id,
+                changes: { OrganizationName: data.name, MaxMembers: data.assignedSeats },
+            })
+        );
     };
 };
 
@@ -72,19 +84,16 @@ export const setCompanyStatusThunk = ({
     status,
 }: {
     id: string;
-    status: 'active' | 'disabled' | 'on-hold';
+    status: ORGANIZATION_STATE;
 }): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const api = extra.api;
-        if (status === 'active') {
+        if (status === ORGANIZATION_STATE.ACTIVE) {
             await api(enableMspSubsidiary(id));
-            dispatch(mspSubsidiariesActions.setStatus({ id, status: MSP_SUBSIDIARY_STATUS.ACTIVE }));
-        } else if (status === 'disabled') {
-            await api(disableMspSubsidiary(id));
-            dispatch(mspSubsidiariesActions.setStatus({ id, status: MSP_SUBSIDIARY_STATUS.DISABLED }));
         } else {
-            throw new Error('Unsupported status');
+            await api(disableMspSubsidiary(id));
         }
+        dispatch(mspSubsidiariesActions.setStatus({ id, status }));
     };
 };
 

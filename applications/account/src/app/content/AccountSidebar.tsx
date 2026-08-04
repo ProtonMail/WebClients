@@ -21,6 +21,7 @@ import { useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
 
 import SidebarListWrapper from '../containers/SidebarListWrapper';
 import CalendarSettingsSidebar from '../containers/calendar/CalendarSettingsSidebar';
+import { HideMsp } from './HideMsp';
 import SidebarAppsList from './SidebarAppsList';
 import type { Routes } from './routes';
 
@@ -83,19 +84,21 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
             primary={
                 backButtonTitle &&
                 backButtonText && (
-                    <StartUsingPassSpotlight app={app}>
-                        <SidebarBackButton
-                            to="/"
-                            toApp={app}
-                            target="_self"
-                            title={backButtonTitle}
-                            aria-label={backButtonTitle}
-                            data-testid={`account:back-to-app`}
-                            onClick={handleClick}
-                        >
-                            {backButtonText}
-                        </SidebarBackButton>
-                    </StartUsingPassSpotlight>
+                    <HideMsp>
+                        <StartUsingPassSpotlight app={app}>
+                            <SidebarBackButton
+                                to="/"
+                                toApp={app}
+                                target="_self"
+                                title={backButtonTitle}
+                                aria-label={backButtonTitle}
+                                data-testid={`account:back-to-app`}
+                                onClick={handleClick}
+                            >
+                                {backButtonText}
+                            </SidebarBackButton>
+                        </StartUsingPassSpotlight>
+                    </HideMsp>
                 )
             }
             logo={logo}
