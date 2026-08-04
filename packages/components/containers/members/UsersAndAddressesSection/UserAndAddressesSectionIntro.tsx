@@ -8,11 +8,9 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import {
-    getHasExternalMemberCapableB2BPlan,
-    getHasInboxB2BPlan,
-    hasBundleBiz2025,
-} from '@proton/payments/core/subscription/helpers';
+import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
+import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
+import { getHasInboxB2BPlan, hasBundleBiz2025 } from '@proton/payments/core/subscription/helpers';
 import { MAIL_APP_NAME, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
@@ -25,11 +23,12 @@ const UserAndAddressesSectionIntro = ({ onOpenNewDomainModal }: Props) => {
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
     const [customDomains] = useCustomDomains();
+    const [entitlements] = useEntitlementChecks();
 
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
     const selfMember = members?.find((member) => member.Self);
-    const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
+    const hasExternalMemberCapableB2BPlan = !!entitlements.quantityOrg(EntitlementName.ExternalManagedMembers);
     const hasInboxB2BPlan = getHasInboxB2BPlan(subscription);
     const hasFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
 

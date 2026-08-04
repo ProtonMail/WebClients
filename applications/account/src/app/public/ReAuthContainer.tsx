@@ -28,7 +28,6 @@ import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { queryUnlock } from '@proton/shared/lib/api/user';
-import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -138,14 +137,13 @@ const ReAuthContainer = ({
         return onLogin({ ...session, prompt: null, flow: 'reauth' });
     };
 
-    const handleSubmitKeyPassword = async (password: string, salts: tsKeySalt[], source?: SessionSource) => {
+    const handleSubmitKeyPassword = async (password: string, salts: tsKeySalt[]) => {
         const session = await handleReAuthKeyPassword({
             authSession: state.session,
             api: uidApi,
             User,
             clearKeyPassword: password,
             salts,
-            source,
         });
         return handleFinalizeLogin(session);
     };
@@ -203,7 +201,7 @@ const ReAuthContainer = ({
             return;
         }
         setData({ step: 'initial', salts });
-        return handleSubmitKeyPassword(keyPassword, salts, SessionSource.Saml);
+        return handleSubmitKeyPassword(keyPassword, salts);
     };
 
     const srpLoginForm = (
