@@ -19,8 +19,6 @@ export default defineConfig([
             curly: ['error', 'multi-line'],
             // TODO: Add the missing explicit deps and remove this rule
             'import/no-extraneous-dependencies': 'off',
-            // TODO: Remove this rule once the cycle dependency is fixed
-            'import/no-cycle': 'off',
             // TODO: Remove this rule once the compat issue is resolved
             'compat/compat': 'off',
             'no-restricted-imports': createRestrictedImportRule(restrictedImportOptions),
