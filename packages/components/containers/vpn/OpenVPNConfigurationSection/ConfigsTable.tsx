@@ -38,16 +38,16 @@ export enum CATEGORY {
 }
 
 const PlusBadge = () => (
-    <span className="ml-2">
-        <Tooltip title="Plus">
+    <span className="ml-2 cursor-default">
+        <Tooltip title="Plus" openDelay={250}>
             <div className="text-center rounded">P</div>
         </Tooltip>
     </span>
 );
 
 const ServerDown = () => (
-    <span className="ml-2">
-        <Tooltip title={c('Info').t`Server is currently down`}>
+    <span className="ml-2 cursor-default">
+        <Tooltip title={c('Info').t`Server is currently down`} openDelay={250}>
             <div className="flex inline-flex *:self-center">
                 <IcExclamationCircle className="color-danger" size={5} />
             </div>
@@ -56,17 +56,21 @@ const ServerDown = () => (
 );
 
 export const P2PIcon = () => (
-    <span className="mx-2">
-        <Tooltip title={c('Info').t`P2P`}>
-            <IcArrowRightArrowLeft size={4.5} className="rounded bg-strong p-1" />
+    <span className="mx-2 cursor-default">
+        <Tooltip title={c('Info').t`P2P`} openDelay={250}>
+            <div>
+                <IcArrowRightArrowLeft size={4.5} className="rounded bg-strong p-1" />
+            </div>
         </Tooltip>
     </span>
 );
 
 export const TorIcon = () => (
-    <span className="mx-2">
-        <Tooltip title={c('Info').t`Tor`}>
-            <IcBrandTor size={4.5} className="rounded bg-strong p-1" />
+    <span className="mx-2 cursor-default">
+        <Tooltip title={c('Info').t`Tor`} openDelay={250}>
+            <div>
+                <IcBrandTor size={4.5} className="rounded bg-strong p-1" />
+            </div>
         </Tooltip>
     </span>
 );
@@ -83,9 +87,11 @@ export const SmartRoutingIcon = ({ countries }: { countries: (string | undefined
         : c('Info').t`Smart Routed through a different country.`;
 
     return (
-        <span className="mx-2">
-            <Tooltip title={title}>
-                <IcGlobe size={4.5} className="rounded bg-strong p-1" />
+        <span className="mx-2 cursor-default">
+            <Tooltip title={title} openDelay={0}>
+                <div>
+                    <IcGlobe size={4.5} className="rounded bg-strong p-1" />
+                </div>
             </Tooltip>
         </span>
     );
