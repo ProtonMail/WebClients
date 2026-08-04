@@ -3,6 +3,7 @@ module.exports = {
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     collectCoverageFrom: [
         'src/**/*.{js,jsx,ts,tsx}',
+        '!<rootDir>/src/**/*.testing.ts',
         '!<rootDir>/src/app/locales.ts',
         '!<rootDir>/src/app/*.{js,jsx,ts,tsx}',
         '!<rootDir>/src/app/components/layout/*.{js,jsx,ts,tsx}',
