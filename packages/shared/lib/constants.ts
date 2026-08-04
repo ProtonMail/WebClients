@@ -364,7 +364,7 @@ export const VPN_TV_CLIENT_IDS = {
 
 export type APP_CLIENT_IDS =
     | (typeof APPS_CONFIGURATION)[keyof typeof APPS_CONFIGURATION]['clientID']
-    | typeof VPN_TV_CLIENT_IDS[keyof typeof VPN_TV_CLIENT_IDS];
+    | (typeof VPN_TV_CLIENT_IDS)[keyof typeof VPN_TV_CLIENT_IDS];
 
 export const VPN_TV_PATHS_MAP = {
     apple: '/appletv',
@@ -692,6 +692,7 @@ export enum ORGANIZATION_TWOFA_SETTING {
 }
 
 export enum ORGANIZATION_STATE {
+    DISABLED = 0,
     ACTIVE = 1,
     DELINQUENT = 2,
 }

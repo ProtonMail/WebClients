@@ -6,7 +6,8 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getAllMspSubsidiaries } from '@proton/shared/lib/api/msp';
-import type { MspSubsidiary, MspSubsidiaryStatusValue } from '@proton/shared/lib/interfaces/MspSubsidiary';
+import type { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
 
 import { isOwnerRole } from '../organizationRoles/helpers';
 import { userThunk } from '../user';
@@ -73,7 +74,7 @@ const slice = createSlice({
             }
             state.value = state.value.filter((s) => s.ID !== action.payload);
         },
-        setStatus: (state, action: PayloadAction<{ id: string; status: MspSubsidiaryStatusValue }>) => {
+        setStatus: (state, action: PayloadAction<{ id: string; status: ORGANIZATION_STATE }>) => {
             if (!state.value) {
                 return;
             }
