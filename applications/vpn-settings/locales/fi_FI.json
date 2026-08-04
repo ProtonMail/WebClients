@@ -1315,6 +1315,9 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Upgrade to Professional": [
+        "Päivitä Professionaliin"
       ]
     },
     "action": {
@@ -6059,6 +6062,18 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Suojausavaimesi on valmis käyttöön."
+      ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Anna PIN-koodisi aina, kun käytät suojausavainta ${ BRAND_NAME } -palvelun kanssa, jos avain tukee sitä. Tämä koskee vain avaimia, joille on määritetty PIN-koodi."
+      ],
+      "PIN requirement for security keys disabled": [
+        "PIN-koodin vaatimus suojausavaimille poistettu käytössä"
+      ],
+      "PIN requirement for security keys enabled": [
+        "PIN-koodin vaatimus suojausavaimille käytössä"
+      ],
+      "Require PIN for security key": [
+        "Vaadi PIN-koodi suojausavaimelle"
       ]
     },
     "fido2: Label": {
@@ -9609,6 +9624,30 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "Available on VPN Professional": [
+        "Saatavilla VPN Professional-tilauksella"
+      ],
+      "Enable groups to streamline access control": [
+        "Ota käyttöön ryhmät käyttöoikeuksien hallinnan tehostamiseksi"
+      ],
+      "Learn more about groups": [
+        "Lue lisää ryhmistä"
+      ],
+      "Smart Routed through a different country.": [
+        "Älykäs reititys eri maan kautta."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Älykäs reititys seuraavien maiden kautta: ${ joinedCountries }."
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Päivitä nyt nähdäksesi ${ PASS_APP_NAME }:n toiminta koko organisaatiossasi."
+      ],
+      "Upgrade required": [
+        "Tilauksen päivitys vaaditaan"
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "VPN Professionalin avulla järjestelmänvalvojat voivat pakottaa kaikille organisaation jäsenille aina päällä olevan VPN:n sekä yksityiset yhdyskäytävät, käyttöoikeuskäytännöt ja valvonnan."
       ]
     },
     "info": {
@@ -10756,6 +10795,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Upgrade": [
+        "Päivitä"
       ]
     },
     "label": {
@@ -18304,6 +18346,12 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "Remove via PowerShell": [
+        "Poista PowerShellin kautta"
+      ],
+      "Upgrade to enable Always-on": [
+        "Päivitä ottaaksesi Aina päällä -toiminnon käyttöön"
       ]
     },
     "Title for payment methods table": {
