@@ -199,7 +199,7 @@ const toSerializableUserError = (user: ApiImporterOrganizationUser, err: any): C
             return {
                 code: 2500,
                 name: 'UnavailableAddressesError',
-                message: c('BOSS')
+                message: c('Error')
                     .t`Address is already used by a user outside of your organization. Please contact customer support to resolve this`,
             };
         }
@@ -259,11 +259,11 @@ export const createMigrationBatch = createAsyncThunk<
         ]);
 
         if (!orgKey.privateKey) {
-            throw new Error(c('BOSS').t`Missing organization private key`);
+            throw new Error(c('Error').t`Missing organization private key`);
         }
 
         if (!orgKey.publicKey) {
-            throw new Error(c('BOSS').t`Missing organization public key`);
+            throw new Error(c('Error').t`Missing organization public key`);
         }
 
         const membersAddresses: Record<string, Address[]> = {};
@@ -284,7 +284,7 @@ export const createMigrationBatch = createAsyncThunk<
         const usersToCreate = users.filter(shouldCreateUser);
         const availableSeats = organization.MaxMembers - organization.UsedMembers;
         if (usersToCreate.length > availableSeats) {
-            throw { name: 'SeatsError', message: c('BOSS').t`Organization does not have enough seats available` };
+            throw { name: 'SeatsError', message: c('Error').t`Organization does not have enough seats available` };
         }
 
         const selfMember = members.find((m) => m.Self)!;
@@ -305,7 +305,7 @@ export const createMigrationBatch = createAsyncThunk<
         const userQuota = Math.floor(allocatableStorage / (providerUsers.length - existingUsers.length));
         const totalStorageRequired = usersToCreate.length * userQuota;
         if ((usersToCreate.length > 1 && userQuota < 1) || totalStorageRequired > allocatableStorage) {
-            throw { name: 'QuotaError', message: c('BOSS').t`Organization does not have enough storage available` };
+            throw { name: 'QuotaError', message: c('Error').t`Organization does not have enough storage available` };
         }
 
         const migratingSelf = users.find((u) => isSelf(u.Email));
@@ -399,7 +399,7 @@ export const createMigrationBatch = createAsyncThunk<
                 const [address] = await dispatch(getMemberAddresses({ member, cache: CacheType.None }));
                 if (!address) {
                     throw new Error(
-                        c('BOSS').t`Member address not found. Please contact customer support to resolve this`
+                        c('Error').t`Member address not found. Please contact customer support to resolve this`
                     );
                 }
 
@@ -487,11 +487,11 @@ export const completeMigration = createAsyncThunk<
     const [members, orgKey] = await Promise.all([dispatch(membersThunk()), dispatch(organizationKeyThunk())]);
 
     if (!orgKey.privateKey) {
-        throw new Error(c('BOSS').t`Missing organization private key`);
+        throw new Error(c('Error').t`Missing organization private key`);
     }
 
     if (!orgKey.publicKey) {
-        throw new Error(c('BOSS').t`Missing organization public key`);
+        throw new Error(c('Error').t`Missing organization public key`);
     }
 
     const { keyTransparencyVerify } = createKTVerifier({

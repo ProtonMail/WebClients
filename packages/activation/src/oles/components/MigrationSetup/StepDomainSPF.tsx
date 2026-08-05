@@ -43,7 +43,7 @@ const StepDomainSPF: FC<StepComponentProps> = ({ model: { domain, domainRegistra
         <div className="flex flex-nowrap gap-16 items-start steps-domain-wrapper">
             <div className="max-w-custom" style={{ '--max-w-custom': 'min(42rem, 100%)' }}>
                 <div className="flex justify-space-between flex-nowrap items-center gap-4 mb-4">
-                    <h3 className="text-4xl text-bold">{c('BOSS').t`Set up secure sending (SPF)`}</h3>
+                    <h3 className="text-4xl text-bold">{c('Title').t`Set up secure sending (SPF)`}</h3>
                     <div className="flex gap-2 shrink-0 text-semibold">
                         <Button
                             onClick={() => onNext?.()}
@@ -51,7 +51,7 @@ const StepDomainSPF: FC<StepComponentProps> = ({ model: { domain, domainRegistra
                             size="medium"
                             className="color-primary hover:color-primary rounded-lg"
                         >
-                            {c('BOSS').t`Skip`}
+                            {c('Action').t`Skip`}
                         </Button>
                         <Button
                             disabled={!onNext}
@@ -65,11 +65,11 @@ const StepDomainSPF: FC<StepComponentProps> = ({ model: { domain, domainRegistra
                     </div>
                 </div>
                 <p className="color-weak mt-0">
-                    {c('BOSS')
+                    {c('Info')
                         .t`Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${BRAND_NAME} and Google simultaneously for the duration of the migration.`}
                 </p>
 
-                <p className="color-weak mt-0">{c('BOSS')
+                <p className="color-weak mt-0">{c('Info')
                     .t`Copy the below code and paste it in the DNS section of your domain host.`}</p>
 
                 <DNSGroupRecords group={group} subdomain={subdomain} onRefresh={handleCheck} />

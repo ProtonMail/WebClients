@@ -33,17 +33,17 @@ import { isTerminal } from './ImportStatus';
 import MigratingModal from './MigratingModal';
 import ProviderUsersTable, { ProviderUserColumn, ProviderUserFilter } from './ProviderUsersTable';
 
-const getFallbackErrorMessage = () => c('BOSS').t`An unknown error ocurred. Please refresh the page and try again`;
+const getFallbackErrorMessage = () => c('Error').t`An unknown error ocurred. Please refresh the page and try again`;
 
 const getAllowedUsersMessage = (maxMembers: number) =>
-    c('BOSS').ngettext(
+    c('Warning').ngettext(
         msgid`Your current plan allows up to ${maxMembers} user. To migrate additional users, add more seats to your subscription.`,
         `Your current plan allows up to ${maxMembers} users. To migrate additional users, add more seats to your subscription.`,
         maxMembers
     );
 
 const getMigrationStartedText = (n: number) =>
-    c('BOSS').ngettext(msgid`Migration started for ${n} user`, `Migration started for ${n} users`, n);
+    c('Success').ngettext(msgid`Migration started for ${n} user`, `Migration started for ${n} users`, n);
 
 const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
     const { createNotification } = useNotifications();
@@ -149,24 +149,24 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
 
     const migrationUnavailableReason = (() => {
         if (!model.tokens?.length) {
-            return c('BOSS').t`Reauthenticate your Google Workspace account to start a migration`;
+            return c('Tooltip').t`Reauthenticate your Google Workspace account to start a migration`;
         }
 
         if (!filteredSelected.length) {
-            return c('BOSS').t`Select at least one user to start a migration`;
+            return c('Tooltip').t`Select at least one user to start a migration`;
         }
 
         if (!model.domain || !getIsDomainActive(model.domain)) {
-            return c('BOSS').t`Verify your domain to start a migration`;
+            return c('Tooltip').t`Verify your domain to start a migration`;
         }
     })();
 
     const migrationIncludesText = (() => {
         const translations: Record<ApiImporterProduct | 'Settings', string> = {
-            Mail: c('BOSS').t`Mail`,
-            Calendar: c('BOSS').t`Calendar`,
-            Contacts: c('BOSS').t`Contacts`,
-            Settings: c('BOSS').t`Settings`,
+            Mail: c('Label').t`Mail`,
+            Calendar: c('Label').t`Calendar`,
+            Contacts: c('Label').t`Contacts`,
+            Settings: c('Label').t`Settings`,
         };
 
         const included = model.selectedProducts.map((p) => translations[p]);
@@ -194,7 +194,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
                         onClick={handleAddSeats}
                         disabled={loadingSubscriptionModal}
                     >
-                        {c('BOSS').t`Add users`}
+                        {c('Action').t`Add users`}
                         {loadingSubscriptionModal && <CircleLoader size="small" />}
                     </InlineLinkButton>
                 </span>
@@ -206,7 +206,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
         <div className="w-full max-w-custom" style={{ '--max-w-custom': '60rem' }}>
             {/* Step title */}
             <div className="flex justify-space-between flex-nowrap items-center gap-4 mb-4">
-                <h3 className="text-4xl text-bold">{c('BOSS').t`Migrate accounts to ${BRAND_NAME}`}</h3>
+                <h3 className="text-4xl text-bold">{c('Title').t`Migrate accounts to ${BRAND_NAME}`}</h3>
                 <div className="flex gap-2 shrink-0 text-semibold">
                     <Button
                         disabled={!onNext}
@@ -220,7 +220,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
                 </div>
             </div>
             <p className="color-weak mt-0 max-w-custom" style={{ '--max-w-custom': '42rem' }}>
-                {c('BOSS')
+                {c('Info')
                     .t`Select the accounts you would like to bring to ${BRAND_NAME}. You can migrate your whole organization today or start small and bring the rest along when you are ready.`}
             </p>
 
@@ -234,19 +234,19 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
                 className="shadow-norm bg-elevated border-weak rounded-xl overflow-hidden"
             >
                 <section className="flex gap-4" aria-labelledby="migration-status">
-                    <h3 id="migration-status" className="sr-only">{c('BOSS').t`Migration status`}</h3>
+                    <h3 id="migration-status" className="sr-only">{c('Title').t`Migration status`}</h3>
                     <div className="flex divide-x divide-weak my-2 py-4 gap-4">
                         {/* Users migrated */}
                         <div className="px-6">
-                            <div className="color-weak pb-2">{c('BOSS').t`Users migrated`}</div>
+                            <div className="color-weak pb-2">{c('Label').t`Users migrated`}</div>
                             <div className="text-bold color-primary text-xl text-tabular-nums">
-                                {c('BOSS').t`${relevantCount} of ${totalCount}`}
+                                {c('Info').t`${relevantCount} of ${totalCount}`}
                             </div>
                         </div>
 
                         {/* Migration includes */}
                         <div className="px-6">
-                            <div className="color-weak pb-2">{c('BOSS').t`Migration includes`}</div>
+                            <div className="color-weak pb-2">{c('Label').t`Migration includes`}</div>
                             <div className="text-xl text-capitalize">{migrationIncludesText}</div>
                         </div>
                     </div>
