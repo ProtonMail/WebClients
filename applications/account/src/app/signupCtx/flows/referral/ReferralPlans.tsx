@@ -7,7 +7,6 @@ import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { getReferrerName } from '../../helpers/signupSearchParams';
 import * as signupSearchParams from '../../helpers/signupSearchParams';
@@ -18,13 +17,14 @@ import { Wrapper } from './components/Layout/Wrapper';
 import PlanSelector from './components/PlanSelector/PlanSelector';
 import { getReferralSignupHrefFromPlanIDs } from './helpers/path';
 import { REFERRAL_DEFAULT_PLAN, type SupportedReferralPlans, getReferralSelectedPlan } from './helpers/plans';
+import { useIsVPNReferralWithoutTrialVariantB } from './helpers/useIsVPNPlanWithoutTrialVariant';
 
 const ReferralPlans = () => {
     const payments = usePaymentOptimistic();
     const history = useHistory();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
-    const isVPNReferralWithoutTrialEnabled = useFlag('VPNReferralWithoutTrial');
+    const isVPNReferralWithoutTrialVariantB = useIsVPNReferralWithoutTrialVariantB();
 
     const referrerName = getReferrerName(searchParams);
     const [referralInfo] = useReferralInfo();
@@ -53,7 +53,7 @@ const ReferralPlans = () => {
             <Wrapper>
                 <main className="flex flex-column justify-center items-center w-full">
                     <h1 className="font-arizona text-semibold text-8xl text-center mb-4">
-                        {isVPNReferralWithoutTrialEnabled
+                        {isVPNReferralWithoutTrialVariantB
                             ? c('Signup').jt`Sign up and get ${referralInfo.uiData.refereeRewardAmount} in credits`
                             : // translator: full sentence "Try Proton Drive for 14 days free, and get US$20 in credits"
                               c('Signup')

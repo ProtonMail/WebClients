@@ -15,6 +15,7 @@ export const FLAGS_WITH_VARIANT = [
     'Vpn2024AddonsExperiment',
     'MeetSpotlightType',
     'OrganizationLevelEasySwitch',
+    'VPNReferralWithoutTrial',
 ] satisfies FeatureFlag[];
 
 /**
@@ -31,6 +32,7 @@ export type WebApiRateLimiterVariant = 'Config';
 export type MaxContactsImportVariant = 'Config';
 export type ShowLiteAppCheckoutV2Variant = 'A' | 'B';
 export type OrganizationLevelEasySwitchVariant = 'Config';
+export type VPNReferralWithoutTrialVariant = 'A' | 'B';
 export type EnableVpn2024AddonsExperimentVariant =
     'lumo-addon-only' | 'meet-addon-only' | 'pass-addon-only' | 'no-addon';
 
@@ -60,6 +62,7 @@ type FeatureFlagVariantMap = {
     OrganizationLevelEasySwitch: VariantReturnType<OrganizationLevelEasySwitchVariant>;
     Vpn2024AddonsExperiment: VariantReturnType<EnableVpn2024AddonsExperimentVariant>;
     MeetSpotlightType: VariantReturnType<MeetSpotlightTypeVariant>;
+    VPNReferralWithoutTrial: VariantReturnType<VPNReferralWithoutTrialVariant>;
 };
 
 /**
