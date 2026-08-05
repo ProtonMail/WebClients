@@ -27,7 +27,7 @@ export const LandingStage = ({ onGenerate, recentFilesRefreshKey, onOpenReport, 
                     </p>
                     <p className="color-hint m-0">
                         {c('collider_2025:Info')
-                            .t`Export your data from your Chat GPT or Claude, upload it securely, and we'll show you what big tech AI can infer about you.`}
+                            .t`Export your data from ChatGPT or Claude, upload it privately, and we’ll show you what big tech AI has learned about you.`}
                     </p>
                 </div>
                 <Button color="norm" size="large" pill onClick={onGenerate}>

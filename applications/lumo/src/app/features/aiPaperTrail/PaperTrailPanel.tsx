@@ -26,7 +26,7 @@ export default function PaperTrailPanel() {
                 .t`Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.`}
             actionLabel={c('collider_2025:Action').t`Reveal my profile`}
             onAction={() => {
-                window.location.assign(`${LUMO_ROUTES.GUEST}${LUMO_ROUTES.AI_PAPER_TRAIL}`);
+                window.location.assign(LUMO_ROUTES.AI_PAPER_TRAIL);
             }}
             onDismiss={() => {
                 markPaperTrailPanelDismissed();
