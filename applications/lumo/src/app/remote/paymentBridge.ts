@@ -1,7 +1,8 @@
-import {getClientID} from '@proton/shared/lib/apps/helper';
-import {getAppVersionHeaders} from '@proton/shared/lib/fetch/headers';
+import { getClientID } from '@proton/shared/lib/apps/helper';
+import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
 import config from '../config';
+import { getNativeAppInfo } from '../util/userAgent';
 
 interface Subscription {
     PaymentToken?: string;
@@ -55,9 +56,44 @@ interface PaymentTokenPayload {
     } | null;
 }
 
+/**
+ * Generic authenticated request issued by the native side, currently the Proton Payment
+ * Android SDK. The SDK owns the endpoint list and serialises its own bodies; the web app
+ * only adds the session.
+ */
+interface ApiRequest {
+    method: 'GET' | 'POST';
+    /** Absolute API path, e.g. "/payments/v5/plans". Never a full URL. */
+    endpoint: string;
+    /** Pre-serialised JSON request body, or null. Always present as a key. */
+    body: string | null;
+}
+
+interface ApiResponse {
+    Status: number;
+    Body: object | null;
+}
+
+/**
+ * Parses a response body as JSON, yielding null instead of throwing when there is no body
+ * or the body is not JSON. The status code carries the useful information in those cases.
+ */
+const parseJsonBody = async (response: Response): Promise<object | null> => {
+    const text = await response.text();
+    if (!text) {
+        return null;
+    }
+    try {
+        const parsed = JSON.parse(text);
+        return typeof parsed === 'object' ? parsed : null;
+    } catch {
+        return null;
+    }
+};
+
 // Sends the result/error of an API call back to the native side
 const sendResultToNative = (callId: string, payload: any) => {
-    const message = {callId, ...payload};
+    const message = { callId, ...payload };
     console.log(`Payment Bridge: Sending message for callId ${callId}`, message);
     try {
         if ((window as any).webkit?.messageHandlers?.paymentApiHandler) {
@@ -83,7 +119,7 @@ const createNativeWrapper = (methodName: keyof PaymentApi) => {
         if (!apiInstance) {
             const errorMsg = 'PaymentApi instance not found on window.';
             console.error(`Payment Bridge: ${errorMsg}`);
-            sendResultToNative(callId, {status: 'error', error: errorMsg});
+            sendResultToNative(callId, { status: 'error', error: errorMsg });
             return;
         }
 
@@ -91,7 +127,7 @@ const createNativeWrapper = (methodName: keyof PaymentApi) => {
         if (typeof method !== 'function') {
             const errorMsg = `Method ${methodName} not found on PaymentApi instance.`;
             console.error(`Payment Bridge: ${errorMsg}`);
-            sendResultToNative(callId, {status: 'error', error: errorMsg});
+            sendResultToNative(callId, { status: 'error', error: errorMsg });
             return;
         }
 
@@ -100,7 +136,7 @@ const createNativeWrapper = (methodName: keyof PaymentApi) => {
             if (!apiInstance.isUidSet() && methodName !== 'setUid') {
                 const errorMsg = `UID not set for PaymentApi. Call setUid first.`;
                 console.error(`Payment Bridge: ${errorMsg}`);
-                sendResultToNative(callId, {status: 'error', error: errorMsg});
+                sendResultToNative(callId, { status: 'error', error: errorMsg });
                 return;
             }
 
@@ -110,7 +146,7 @@ const createNativeWrapper = (methodName: keyof PaymentApi) => {
             if (result instanceof Promise) {
                 result
                     .then((resData) => {
-                        sendResultToNative(callId, {status: 'success', data: resData});
+                        sendResultToNative(callId, { status: 'success', data: resData });
                     })
                     .catch((error) => {
                         const errorMessage = error instanceof Error ? error.message : String(error);
@@ -118,16 +154,16 @@ const createNativeWrapper = (methodName: keyof PaymentApi) => {
                             `Payment Bridge: Error during async ${methodName} call for callId ${callId}:`,
                             error
                         );
-                        sendResultToNative(callId, {status: 'error', error: errorMessage});
+                        sendResultToNative(callId, { status: 'error', error: errorMessage });
                     });
             } else {
                 // Handle synchronous results (if any in the future, or for setUid)
-                sendResultToNative(callId, {status: 'success', data: result});
+                sendResultToNative(callId, { status: 'success', data: result });
             }
         } catch (error) {
             const errorMessage = error instanceof Error ? error.message : String(error);
             console.error(`Payment Bridge: Synchronous error during ${methodName} call for callId ${callId}:`, error);
-            sendResultToNative(callId, {status: 'error', error: errorMessage});
+            sendResultToNative(callId, { status: 'error', error: errorMessage });
         }
     };
 };
@@ -157,13 +193,17 @@ class PaymentApi {
         return !!this.uid;
     }
 
-    private protonHeaders(platform?: Platform) {
+    private requireUid(): string {
         if (!this.uid) {
             throw new Error('UID must be set before making API calls.');
         }
+        return this.uid;
+    }
+
+    private protonHeaders(platform?: Platform) {
         return {
             ...this.getAppVersion(platform),
-            'x-pm-uid': this.uid,
+            'x-pm-uid': this.requireUid(),
             'Content-Type': 'application/json',
         };
     }
@@ -182,6 +222,30 @@ class PaymentApi {
         return headers;
     }
 
+    /**
+     * App version header for the generic apiRequest path.
+     *
+     * The per-operation methods above pin `<platform>-lumo@99.9.9`; here we report the
+     * version the native client actually advertises in its User-Agent
+     * (`ProtonLumo/<version> (...)`), so server-side filtering — notably
+     * `GET /payments/v5/plans` — sees the real client.
+     *
+     * Only the `x.y.z` core of the native version is sent: build-flavour suffixes such as
+     * `-gms` or `-noGms` are part of the User-Agent but not of a valid app version. When
+     * there is no native version to report — outside a native WebView, or a User-Agent we
+     * cannot parse — the web app version is used.
+     */
+    private getNativeAppVersionHeaders(): Record<string, string> {
+        const appInfo = getNativeAppInfo();
+        const version = appInfo?.version.match(/^(\d+\.\d+\.\d+)/)?.[1];
+
+        if (!appInfo || appInfo.platform === 'unknown' || !version) {
+            return getAppVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
+        }
+
+        return { 'x-pm-appversion': `${appInfo.platform}-lumo@${version}` };
+    }
+
     private async handleApiResponse(response: Response, context: string): Promise<any> {
         // Specific handling for GET /subscriptions 422 response
         if (context === 'getSubscriptions' && response.status === 422) {
@@ -196,7 +260,7 @@ class PaymentApi {
                 // Try to parse error details from the backend
                 const errorJson = await response.json();
                 errorBody = JSON.stringify(errorJson);
-            } catch (e) {
+            } catch {
                 // Ignore if parsing fails, use status text
                 errorBody = response.statusText;
             }
@@ -265,7 +329,6 @@ class PaymentApi {
     }
 
     public async getUUID(): Promise<UUIDResponse> {
-
         // If a request is already running, reuse it.
         if (this.inFlightUUID) {
             return this.inFlightUUID;
@@ -321,6 +384,39 @@ class PaymentApi {
 
         return plansData;
     }
+
+    /**
+     * Generic authenticated passthrough for the native side.
+     *
+     * Unlike the per-operation methods above, this resolves for *every* HTTP response —
+     * 4xx and 5xx included. The payment SDK's core reads `Status` to decide whether a call
+     * is retryable, whether a payment token is still pending, and whether a vendor is
+     * disabled; surfacing a non-2xx as a rejection would lose that and leave a Google Play
+     * charge without a Proton subscription. Rejection therefore means one thing only: no
+     * HTTP response was received (offline, DNS failure, connection refused, abort).
+     *
+     * No timeout is applied here — the native side applies its own.
+     */
+    public async apiRequest({ method, endpoint, body }: ApiRequest): Promise<ApiResponse> {
+        const url = `/api${endpoint}`;
+        console.log(`PaymentApi: ${method} ${url}`);
+
+        const response = await fetch(url, {
+            method,
+            headers: {
+                ...this.getNativeAppVersionHeaders(),
+                'x-pm-uid': this.requireUid(),
+                'Content-Type': 'application/json',
+            },
+            // Already serialised by the caller — passed through byte-identical.
+            body: body ?? undefined,
+        });
+
+        return {
+            Status: response.status,
+            Body: await parseJsonBody(response),
+        };
+    }
 }
 
 // Bridge Setup
@@ -341,9 +437,9 @@ try {
     console.log('Payment Bridge: Native wrapper functions created under window.nativePaymentApi');
 
     // Signal readiness (use a unique callId or convention)
-    sendResultToNative('paymentBridgeReady', {status: 'success', data: 'Payment API bridge initialized'});
+    sendResultToNative('paymentBridgeReady', { status: 'success', data: 'Payment API bridge initialized' });
 } catch (error) {
     console.error('Payment Bridge: Failed to initialize PaymentApi bridge:', error);
     // Optionally notify native side about the failure
-    sendResultToNative('paymentBridgeError', {status: 'error', error: 'Failed to initialize Payment API bridge'});
+    sendResultToNative('paymentBridgeError', { status: 'error', error: 'Failed to initialize Payment API bridge' });
 }
