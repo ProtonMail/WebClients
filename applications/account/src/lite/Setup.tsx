@@ -58,7 +58,7 @@ const initializeTelemetry = (config: ProtonConfig, UID: string) => {
         config,
         uid: UID,
         eventOptions: {
-            pageView: false,
+            pageView: true,
             click: false,
             form: false,
             performance: false,
