@@ -32,7 +32,7 @@ const commonNodeProperties = {
     ownedBy: {},
     type: NodeType.Folder,
     isShared: true,
-    isSharedPublicly: true,
+    isSharedByUrl: true,
     creationTime: new Date(),
     modificationTime: new Date(),
     treeEventScopeId: '',
@@ -59,7 +59,7 @@ describe('SharingModal', () => {
             uid: 'qwe~123',
             name: { ok: true, value: 'root' }, // a.k.a. "My files"
             directRole: MemberRole.Admin,
-            isSharedPublicly: false,
+            isSharedByUrl: false,
         } as NodeEntity;
         const viewedNode = {
             ...commonNodeProperties,
@@ -146,7 +146,7 @@ describe('SharingModal', () => {
             uid: 'qwe~123',
             name: { ok: true, value: 'root' },
             directRole: MemberRole.Admin,
-            isSharedPublicly: false,
+            isSharedByUrl: false,
         } as NodeEntity;
         const viewedNode = {
             ...commonNodeProperties,
@@ -213,7 +213,7 @@ describe('SharingModal', () => {
             uid: 'qwe~123',
             name: { ok: true, value: 'root' },
             directRole: MemberRole.Admin,
-            isSharedPublicly: false,
+            isSharedByUrl: false,
         } as NodeEntity;
         const viewedNode = {
             ...commonNodeProperties,
@@ -301,7 +301,7 @@ describe('SharingModal', () => {
             uid: 'qwe~123',
             name: { ok: true, value: 'root' },
             directRole: MemberRole.Admin,
-            isSharedPublicly: false,
+            isSharedByUrl: false,
         } as NodeEntity;
         const viewedNode = {
             ...commonNodeProperties,
@@ -310,7 +310,7 @@ describe('SharingModal', () => {
             name: { ok: true, value: 'unshared file' },
             directRole: MemberRole.Admin,
             isShared: false,
-            isSharedPublicly: false,
+            isSharedByUrl: false,
         } as NodeEntity;
 
         const drive = {
@@ -338,7 +338,7 @@ describe('SharingModal', () => {
             uid: 'qwe~123',
             name: { ok: true, value: 'root' },
             directRole: MemberRole.Admin,
-            isSharedPublicly: false,
+            isSharedByUrl: false,
         } as NodeEntity;
         const viewedNode = {
             ...commonNodeProperties,
@@ -385,7 +385,7 @@ describe('SharingModal', () => {
             uid: 'qwe~123',
             name: { ok: true, value: 'root' },
             directRole: MemberRole.Admin,
-            isSharedPublicly: false,
+            isSharedByUrl: false,
         } as NodeEntity;
         const viewedNode = {
             ...commonNodeProperties,

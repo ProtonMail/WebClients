@@ -6,14 +6,14 @@ import type { ShareResult } from '@proton/drive';
  *
  * Finds the oldest creation time from all sharing types in a ShareResult.
  *
- * Checks creationTime from publicLink and invitationTime from all invitations and members
+ * Checks creationTime from urlAccess and invitationTime from all invitations and members
  * to determine when sharing was first initiated for a node.
  */
 export const getOldestShareCreationTime = (shareResult: ShareResult): Date | undefined => {
     const creationTimes: Date[] = [];
 
-    if (shareResult.publicLink) {
-        creationTimes.push(shareResult.publicLink.creationTime);
+    if (shareResult.urlAccess) {
+        creationTimes.push(shareResult.urlAccess.creationTime);
     }
 
     shareResult.protonInvitations.forEach((invitation) => {

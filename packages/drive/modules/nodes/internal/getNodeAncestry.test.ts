@@ -29,7 +29,7 @@ describe('getNodeAncestry', () => {
         type: NodeType.Folder,
         mediaType: 'text/plain',
         isShared: false,
-        isSharedPublicly: false,
+        isSharedByUrl: false,
         creationTime: new Date(),
         modificationTime: new Date(),
         trashTime: undefined,

@@ -47,13 +47,13 @@ const fetchSharedByMeNodes = async (abortSignal: AbortSignal, drive: Drive): Pro
                 // TODO: Update or remove that once we figure out what product want in "Created" column
                 const oldestCreationTime = getOldestShareCreationTime(shareResult);
 
-                if (shareResult.publicLink) {
+                if (shareResult.urlAccess) {
                     updateSharedByMeItem(node.uid, {
                         creationTime: oldestCreationTime,
                         publicLink: {
-                            expirationTime: shareResult.publicLink.expirationTime,
-                            numberOfInitializedDownloads: shareResult.publicLink.numberOfInitializedDownloads,
-                            url: shareResult.publicLink.url,
+                            expirationTime: shareResult.urlAccess.expirationTime,
+                            numberOfInitializedDownloads: shareResult.urlAccess.numberOfInitializedDownloads,
+                            url: shareResult.urlAccess.url,
                         },
                     });
                 } else if (oldestCreationTime) {

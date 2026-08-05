@@ -16,11 +16,9 @@ export type SignatureIssuesResult =
  * Returns success for anonymous nodes as we can't verify the signature author.
  */
 export function getSignatureIssues(node: NodeEntity): SignatureIssuesResult {
-    const activeRevision = node.activeRevision?.ok ? node.activeRevision.value : undefined;
-
     const hasKeyIssues = !node.keyAuthor.ok;
     const hasNameIssues = !node.nameAuthor.ok;
-    const hasContentIssues = Boolean(activeRevision && !activeRevision.contentAuthor.ok);
+    const hasContentIssues = Boolean(node.activeRevision && !node.activeRevision.contentAuthor.ok);
 
     const hasAnyIssues = hasKeyIssues || hasNameIssues || hasContentIssues;
 

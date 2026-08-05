@@ -55,7 +55,7 @@ const resolveNode = async (node: NodeEntity, drive: ProtonDriveClient): Promise<
         type: node.type,
         role,
         mediaType: node.mediaType,
-        activeRevisionUid: node.activeRevision?.ok ? node.activeRevision.value?.uid : undefined,
+        activeRevisionUid: node.activeRevision?.uid,
         size: node.totalStorageSize,
         modificationTime: node.modificationTime || node.creationTime,
         location,

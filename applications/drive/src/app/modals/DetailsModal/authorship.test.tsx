@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
-import type { Author, NodeEntity, Revision } from '@proton/drive';
+import type { Author, NodeEntity } from '@proton/drive';
 import { MemberRole, NodeType, RevisionState } from '@proton/drive';
 
 import { getAuthorshipStatus } from './authorship';
@@ -21,24 +21,19 @@ function createFailedAuthor(error: string, claimedAuthor?: string): Author {
 function createNode(
     keyAuthor: Author,
     nameAuthor: Author,
-    contentAuthor?: Author | Error,
+    contentAuthor?: Author,
     type: NodeType = NodeType.File
 ): NodeEntity {
     let activeRevision: NodeEntity['activeRevision'];
     if (contentAuthor) {
-        if (contentAuthor instanceof Error) {
-            activeRevision = { ok: false, error: contentAuthor };
-        } else {
-            const revision: Revision = {
-                contentAuthor,
-                uid: 'mock-uid',
-                state: RevisionState.Active,
-                creationTime: new Date(),
-                storageSize: 0,
-                isImported: false,
-            };
-            activeRevision = { ok: true, value: revision };
-        }
+        activeRevision = {
+            contentAuthor,
+            uid: 'mock-uid',
+            state: RevisionState.Active,
+            creationTime: new Date(),
+            storageSize: 0,
+            isImported: false,
+        };
     }
 
     return {
@@ -50,7 +45,7 @@ function createNode(
         name: { ok: true, value: 'mock-name' },
         directRole: MemberRole.Admin,
         isShared: false,
-        isSharedPublicly: false,
+        isSharedByUrl: false,
         creationTime: new Date(),
         modificationTime: new Date(),
         treeEventScopeId: 'tree-event-scope-id',

@@ -30,11 +30,11 @@ const createSharedByMeItemFromNode = async (nodeUid: string, drive: Drive): Prom
             activeRevisionUid: node.activeRevision?.uid,
             location,
             creationTime: oldestCreationTime,
-            publicLink: shareResult?.publicLink
+            publicLink: shareResult?.urlAccess
                 ? {
-                      numberOfInitializedDownloads: shareResult.publicLink.numberOfInitializedDownloads,
-                      url: shareResult.publicLink.url,
-                      expirationTime: shareResult.publicLink.expirationTime,
+                      numberOfInitializedDownloads: shareResult.urlAccess.numberOfInitializedDownloads,
+                      url: shareResult.urlAccess.url,
+                      expirationTime: shareResult.urlAccess.expirationTime,
                   }
                 : undefined,
             haveSignatureIssues: !signatureResult.ok,
