@@ -1,12 +1,13 @@
+import { locateHead } from '@proton/mail/helpers/locateHead';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+
 import {
     MESSAGE_IFRAME_PRINT_CLASS,
     MESSAGE_IFRAME_PRINT_FOOTER_ID,
     MESSAGE_IFRAME_PRINT_HEADER_ID,
     MESSAGE_IFRAME_ROOT_ID,
-} from '@proton/mail-renderer/constants';
-import { neutralizeStyleBreakout } from '@proton/mail-renderer/helpers/transforms/transformStylesheet';
-import { locateHead } from '@proton/mail/helpers/locateHead';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+} from '../constants';
+import { neutralizeStyleBreakout } from './transforms/transformStylesheet';
 
 type Options = {
     emailContent: string;
