@@ -40,6 +40,39 @@ export const getAllMembers = (api: Api) => {
     });
 };
 
+export type MemberUsageColumnState = 'data' | 'upsell' | 'enable';
+
+export interface MemberLastConnection {
+    LastConnectionTime: number; // unix seconds
+    Gateway: string;
+}
+
+export interface MemberUsage {
+    LastActivity: number | null; // unix seconds
+    LastConnection: MemberLastConnection | null;
+}
+
+export interface MemberUsageColumnDisplay {
+    Activity: MemberUsageColumnState;
+    Connection: MemberUsageColumnState;
+}
+
+// Keyed by the same (encrypted) member IDs sent in MemberIDs.
+export type UsageByMemberID = Record<string, MemberUsage>;
+
+export interface MembersUsageResponse {
+    Code: number;
+    ColumnDisplay: MemberUsageColumnDisplay;
+    UsageByMemberID: UsageByMemberID;
+}
+
+// VPN B2B only. Read-only POST (the request is keyed by the visible member IDs).
+export const queryMembersUsage = (memberIDs: string[]) => ({
+    method: 'post',
+    url: 'vpn/v1/business/members/usage',
+    data: { MemberIDs: memberIDs },
+});
+
 export const getMember = (memberID: string) => ({
     method: 'get',
     url: `core/v4/members/${memberID}`,

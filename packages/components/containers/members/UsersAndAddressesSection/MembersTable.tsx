@@ -1,6 +1,9 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { selectUnprivatizationState } from '@proton/account/members/unprivatizeMembers';
+import type { UseMembersUsageResult } from '@proton/account/members/useMembersUsage';
 import { isOwnerRole } from '@proton/account/organizationRoles/helpers';
 import {
     AdminRolesUIState,
@@ -9,6 +12,7 @@ import {
     useUserPermissions,
 } from '@proton/account/userPermissions/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
+import { Button } from '@proton/atoms/Button/Button';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
@@ -19,12 +23,15 @@ import TableRow from '@proton/components/components/table/TableRow';
 import { getUser2FATagProps } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import type { UseUserMemberActions } from '@proton/components/containers/members/UsersAndAddressesSection/useMemberActions';
 import useConfig from '@proton/components/hooks/useConfig';
+import useLocalState from '@proton/components/hooks/useLocalState';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcMinusCircle } from '@proton/icons/icons/IcMinusCircle';
 import { IcShareNode } from '@proton/icons/icons/IcShareNode';
 import { IcShieldHalfFilled } from '@proton/icons/icons/IcShieldHalfFilled';
 import { baseUseSelector } from '@proton/react-redux-store';
+import type { MemberUsageColumnState } from '@proton/shared/lib/api/members';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { hasMailProduct } from '@proton/shared/lib/helpers/organization';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -42,6 +49,8 @@ import MemberActions, { MagicLinkMemberActions, getMemberPermissions } from '../
 import MemberAddresses from '../MemberAddresses';
 import MemberFeatures from '../MemberFeatures';
 import MemberRole from '../MemberRole';
+import MemberUsageColumnPrompt from './MemberUsageColumnPrompt';
+import { LastActivityValue, LastConnectionValue } from './MemberUsageValues';
 import UserRowSkeleton from './UserRowSkeleton';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 import UserTableBadge from './UsersTableBadge';
@@ -53,11 +62,21 @@ export const MembersTable = ({
     members,
     loadingMembers,
     membersHook: { actions, meta, models },
+    membersUsage,
 }: {
     members: EnhancedMember[];
     loadingMembers: boolean;
     membersHook: UseUserMemberActions;
+    membersUsage?: UseMembersUsageResult;
 }) => {
+    const showUsage = membersUsage !== undefined;
+    const {
+        usageByMemberID = {},
+        columnDisplay,
+        loading: usageLoading = false,
+        refetch: refetchUsage,
+    } = membersUsage ?? {};
+
     const { APP_NAME } = useConfig();
     const [permissions] = useOrgPermissions();
     const [adminRolesUIState] = useAdminRolesUI();
@@ -68,6 +87,20 @@ export const MembersTable = ({
             : Boolean(models.user.isAdmin);
 
     const unprivatizationMemberState = baseUseSelector(selectUnprivatizationState);
+
+    const usageRowCount = members.length;
+
+    // The connection column can be permanently dismissed (per browser) while it's just an upsell.
+    // If the org later gains gateways (state becomes "data"/"enable") the column returns regardless.
+    const [connectionUpsellDismissed, setConnectionUpsellDismissed] = useLocalState(
+        false,
+        `members-usage:last-connection-upsell-dismissed:${models.organization?.ID ?? ''}`
+    );
+    // While dismissed, keep the column hidden for the upsell state and during loading (state not yet known),
+    // so it never flashes in before the response arrives.
+    const connectionState = columnDisplay?.Connection;
+    const showConnectionColumn =
+        showUsage && !(connectionUpsellDismissed && (connectionState === undefined || connectionState === 'upsell'));
 
     const tableLabel = [
         '',
@@ -87,9 +120,10 @@ export const MembersTable = ({
           ))
         : null;
 
-    const list = members.map((member) => {
+    const list = members.map((member, index) => {
         const memberAddresses = models.memberAddressesMap?.[member.ID] || [];
         const memberName = member.Name || memberAddresses[0]?.Email;
+        const primaryEmail = memberAddresses[0]?.Email;
 
         const unprivatization = getMemberUnprivatizationMode(member);
 
@@ -127,6 +161,49 @@ export const MembersTable = ({
 
         const { hasTwoFactor, twoFactorTooltip } = getUser2FATagProps(member);
 
+        // "data" renders the value per row. "upsell"/"enable" render one centered prompt spanning the whole
+        // column (a single rowSpan cell in the first row), so the column reads as one greyed panel.
+        const renderUsageColumn = (
+            state: MemberUsageColumnState,
+            value: ReactNode,
+            label: string,
+            testId: string,
+            onDismiss?: () => void
+        ): ReactNode => {
+            if (state !== 'data' && !usageLoading) {
+                if (index !== 0) {
+                    return null;
+                }
+                return (
+                    <TableCell
+                        rowSpan={usageRowCount}
+                        className="bg-weak align-middle text-center relative"
+                        data-testid={testId}
+                    >
+                        {onDismiss && state === 'upsell' && (
+                            <Tooltip title={c('Action').t`Dismiss`}>
+                                <Button
+                                    icon
+                                    shape="ghost"
+                                    size="small"
+                                    className="absolute top-0 right-0 mt-1 mr-1"
+                                    onClick={onDismiss}
+                                >
+                                    <IcCross alt={c('Action').t`Dismiss`} />
+                                </Button>
+                            </Tooltip>
+                        )}
+                        <MemberUsageColumnPrompt state={state} onEnabled={refetchUsage} />
+                    </TableCell>
+                );
+            }
+            return (
+                <TableCell className="align-middle" data-testid={testId} label={label}>
+                    {!usageLoading && value}
+                </TableCell>
+            );
+        };
+
         return (
             <TableRow
                 key={member.ID}
@@ -139,19 +216,26 @@ export const MembersTable = ({
                             <Avatar className="shrink-0 text-rg" color="weak">
                                 {getInitials(memberName)}
                             </Avatar>
-                            <button
-                                type="button"
-                                className={clsx(
-                                    'text-ellipsis shrink align-baseline',
-                                    memberPermissions.canEdit && 'link color-norm'
+                            <div className="flex flex-column flex-nowrap">
+                                <Button
+                                    type="button"
+                                    shape="underline"
+                                    color="norm"
+                                    size="small"
+                                    className="text-ellipsis shrink align-baseline text-left"
+                                    data-testid="users-and-addresses-table:memberName"
+                                    title={memberName}
+                                    disabled={!memberPermissions.canEdit}
+                                    onClick={() => actions.handleEditUser(member)}
+                                >
+                                    {memberName}
+                                </Button>
+                                {showUsage && primaryEmail && primaryEmail !== memberName && (
+                                    <span className="color-weak text-sm text-ellipsis" title={primaryEmail}>
+                                        {primaryEmail}
+                                    </span>
                                 )}
-                                data-testid="users-and-addresses-table:memberName"
-                                title={memberName}
-                                disabled={!memberPermissions.canEdit}
-                                onClick={() => actions.handleEditUser(member)}
-                            >
-                                {memberName}
-                            </button>
+                            </div>
                         </div>
                         <div className="display-contents">
                             {(() => {
@@ -292,20 +376,37 @@ export const MembersTable = ({
                         )}
                     </div>
                 </TableCell>
-                <TableCell className="align-middle">
-                    <div className={clsx(hasDisabledLayout && 'color-hint')}>
-                        {hasPendingFamilyInvitation ? (
-                            <p className="m-0 text-ellipsis">{member.Name}</p>
-                        ) : (
-                            <MemberAddresses addresses={memberAddresses} />
-                        )}
-                    </div>
-                </TableCell>
+                {!showUsage && (
+                    <TableCell className="align-middle">
+                        <div className={clsx(hasDisabledLayout && 'color-hint')}>
+                            {hasPendingFamilyInvitation ? (
+                                <p className="m-0 text-ellipsis">{member.Name}</p>
+                            ) : (
+                                <MemberAddresses addresses={memberAddresses} />
+                            )}
+                        </div>
+                    </TableCell>
+                )}
                 {meta.showFeaturesColumn && (
                     <TableCell className="align-middle">
                         {hasFeaturesColumn && <MemberFeatures member={member} organization={models.organization} />}
                     </TableCell>
                 )}
+                {showUsage &&
+                    renderUsageColumn(
+                        columnDisplay?.Activity ?? 'data',
+                        <LastActivityValue lastActivity={usageByMemberID[member.ID]?.LastActivity ?? null} />,
+                        c('Title header for members table').t`Last app activity`,
+                        'users-and-addresses-table:lastActivity'
+                    )}
+                {showConnectionColumn &&
+                    renderUsageColumn(
+                        columnDisplay?.Connection ?? 'data',
+                        <LastConnectionValue lastConnection={usageByMemberID[member.ID]?.LastConnection ?? null} />,
+                        c('Title header for members table').t`Last connection`,
+                        'users-and-addresses-table:lastConnection',
+                        () => setConnectionUpsellDismissed(true)
+                    )}
                 <TableCell className="align-middle action-cell">
                     <div>
                         {hasMagicLinkLayout ? (
@@ -344,7 +445,8 @@ export const MembersTable = ({
         <Table
             hasActions
             responsive="cards"
-            className="members-table--actions-corner"
+            responsiveBreakpoint={showUsage ? 'wide' : undefined}
+            className={clsx('members-table--actions-corner', showUsage && 'members-table--usage')}
             data-testid="users-and-addresses-table"
         >
             <thead>
@@ -352,10 +454,15 @@ export const MembersTable = ({
                     <UsersAndAddressesSectionHeader
                         showFeaturesColumn={meta.showFeaturesColumn}
                         useEmail={meta.useEmail}
+                        showUsage={showUsage}
+                        showConnectionColumn={showConnectionColumn}
+                        columnDisplay={columnDisplay}
                     />
                 </tr>
             </thead>
-            <TableBody colSpan={meta.showFeaturesColumn ? 5 : 4}>{skeleton || list}</TableBody>
+            <TableBody colSpan={4 + (showConnectionColumn ? 1 : 0) + (meta.showFeaturesColumn ? 1 : 0)}>
+                {skeleton || list}
+            </TableBody>
         </Table>
     );
 };
