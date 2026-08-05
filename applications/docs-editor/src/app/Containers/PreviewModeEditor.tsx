@@ -4,7 +4,6 @@ import { SafeLexicalComposer } from '../Tools/SafeLexicalComposer'
 import { BuildInitialEditorConfig } from '../Lib/InitialEditorConfig'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
-import clsx from '@proton/utils/clsx'
 import { ProtonContentEditable } from '../ContentEditable/ProtonContentEditable'
 import { DefaultFont } from '../Shared/Fonts'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
@@ -18,7 +17,8 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { setScrollableTablesActive } from '@lexical/table'
 import { isHTMLElement } from '../Utils/guard'
 import { TableOfContents } from '../Components/TableOfContents/TableOfContents'
-import DocsLayout from './DocsLayout'
+import DocsLayout, { useDocsLayoutContext } from './DocsLayout'
+import { getDocsLayoutScrollContainer } from './docsLayoutUtils'
 
 interface PreviewModeEditorProps {
   clonedEditorState: EditorState
@@ -56,6 +56,13 @@ export function PreviewModeEditor({
 
   const getDocumentUrl = useMemo(() => clientInvoker.getDocumentUrl.bind(clientInvoker), [clientInvoker])
   const replaceDocumentUrl = useMemo(() => clientInvoker.replaceDocumentUrl.bind(clientInvoker), [clientInvoker])
+  const { setLeftPanelVisibility } = useDocsLayoutContext()
+
+  useEffect(() => {
+    if (!tableOfContentsVisible) {
+      setLeftPanelVisibility('collapsed')
+    }
+  }, [tableOfContentsVisible, setLeftPanelVisibility])
 
   return (
     <SafeLexicalComposer
@@ -80,23 +87,20 @@ export function PreviewModeEditor({
         systemMode={EditorSystemMode.PublicView}
       />
       <DocsLayout.Grid>
-        {tableOfContentsVisible && (
-          <DocsLayout.LeftPanel>
+        <DocsLayout.LeftPanel>
+          {tableOfContentsVisible && (
             <TableOfContents getDocumentUrl={getDocumentUrl} replaceDocumentUrl={replaceDocumentUrl} />
-          </DocsLayout.LeftPanel>
-        )}
+          )}
+        </DocsLayout.LeftPanel>
         <RichTextPlugin
           contentEditable={
             <DocsLayout.RightPanel>
               <ProtonContentEditable
-                className={clsx(
-                  'DocumentEditor w-full max-w-full overflow-x-hidden max-[815px]:px-[10%] min-[816px]:pl-4 min-[816px]:pr-[var(--right-panel-padding)] print:w-full print:max-w-full',
-                )}
+                className="DocumentEditor w-full max-w-full print:w-full print:max-w-full"
                 style={{
                   fontFamily: DefaultFont.value,
                   gridRow: 1,
                   gridColumn: 1,
-                  justifySelf: 'center',
                 }}
                 isSuggestionMode={false}
                 data-testid="preview-mode-editor"
@@ -125,7 +129,7 @@ function PreviewScrollRestorePlugin({ initialScrollTop }: { initialScrollTop: nu
       return
     }
 
-    const scrollContainer = previewEditor.getRootElement()?.parentElement
+    const scrollContainer = getDocsLayoutScrollContainer(previewEditor.getRootElement())
     if (!scrollContainer) {
       return
     }

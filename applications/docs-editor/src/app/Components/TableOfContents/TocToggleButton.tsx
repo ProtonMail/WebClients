@@ -6,8 +6,7 @@ import { IcListBullets } from '@proton/icons/icons/IcListBullets'
 
 const TOC_TOGGLE_TEST_ID = 'toc-toggle'
 
-const toggleButtonClassName =
-  'relative z-20 flex w-fit shrink-0 min-h-8 min-w-8 items-center justify-center rounded-r-full p-2.5 bg-norm'
+const toggleButtonClassName = 'relative flex shrink-0 rounded-r-full p-2.5 bg-norm'
 
 interface TocButtonProps {
   onClick: () => void

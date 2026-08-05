@@ -1317,7 +1317,7 @@ export default function DocumentEditorToolbar({
   return (
     // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
     <div
-      className="bg-norm z-1 flex flex-nowrap items-center gap-1.5 print:hidden"
+      className="bg-norm z-[2] flex flex-nowrap items-center gap-1.5 print:hidden"
       style={{
         gridColumn: '1 / 3',
         gridRow: '1',

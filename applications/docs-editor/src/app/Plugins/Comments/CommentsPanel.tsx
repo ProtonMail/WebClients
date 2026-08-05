@@ -2,6 +2,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import type { CommentThreadInterface } from '@proton/docs-shared'
 import { IcCross } from '@proton/icons/icons/IcCross'
 import { CommentThreadState } from '@proton/docs-shared'
+import clsx from '@proton/utils/clsx'
 import { memo, useMemo } from 'react'
 import { c } from 'ttag'
 import { CommentsPanelList } from './CommentsPanelList'
@@ -25,7 +26,11 @@ function CommentsPanel({
 
   return (
     <div
-      className="z-30 mr-2 mt-4 flex flex-col flex-nowrap overflow-hidden rounded-t-md border-x border-t border-[--border-weak] bg-[--background-weak] [grid-column:2] [grid-row:2] print:hidden"
+      className={clsx(
+        'z-30 flex h-full max-h-full min-h-0 flex-col flex-nowrap self-end overflow-hidden bg-[--background-weak] [grid-row:2] print:hidden',
+        'mr-2 w-[max(20.5vw,300px)] max-w-[480px] rounded-md border border-[--border-weak] [grid-column:2]',
+        'max-[815px]:w-full max-[815px]:max-w-none max-[815px]:rounded-none max-[815px]:border-0 max-[815px]:[grid-column:1]',
+      )}
       data-testid="comments-main-section"
     >
       <div className="flex flex-shrink-0 items-center justify-between gap-2 px-4 py-2.5">

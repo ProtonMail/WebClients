@@ -55,7 +55,10 @@ function ContentItem({ nodeKey, text, tag, scrollToNode }: ContentItemProps) {
       className="group flex min-h-0 w-full min-w-0 shrink-0 cursor-pointer items-center justify-between pr-2"
       data-testid="table-of-contents-item-group"
     >
-      <button className="flex w-full flex-nowrap items-stretch text-left text-sm" onClick={() => scrollToNode(nodeKey)}>
+      <button
+        className={clsx('flex w-full flex-nowrap items-stretch text-left', level === 0 ? 'text-md' : 'text-sm')}
+        onClick={() => scrollToNode(nodeKey)}
+      >
         {level > 0 && (
           <div
             className="w-[1px] shrink-0"
@@ -77,7 +80,7 @@ function ContentItem({ nodeKey, text, tag, scrollToNode }: ContentItemProps) {
             'min-w-0 truncate py-2 transition-colors',
             isActive
               ? 'is-active font-semibold text-[var(--docs-primary-accent)]'
-              : 'font-normal text-[var(--text-weak)] group-hover:text-[var(--text-norm)]',
+              : 'font-normal text-[var(--text-weak)] min-[816px]:group-hover:text-[var(--text-norm)]',
           )}
         >
           {text}
@@ -89,7 +92,10 @@ function ContentItem({ nodeKey, text, tag, scrollToNode }: ContentItemProps) {
         disabled={!documentUrl}
         hasCaret={false}
         as="button"
-        className={clsx('flex items-center justify-center', isMoreOptionsOpen ? 'flex' : 'hidden', 'group-hover:flex')}
+        className={clsx(
+          'flex items-center justify-center rounded-md p-2 min-[816px]:hover:bg-[var(--background-weak)]',
+          isMoreOptionsOpen ? 'min-[816px]:flex' : 'min-[816px]:hidden min-[816px]:group-hover:flex',
+        )}
         data-testid="table-of-contents-item-options"
       >
         <IcThreeDotsVertical />
@@ -125,7 +131,7 @@ function ActiveHeadingListener({ tableOfContents }: TableOfContentsRendererProps
   const { setActiveHeadingKey } = useTableOfContentsContext()
 
   React.useEffect(() => {
-    const scrollRoot = editor.getRootElement()?.parentElement
+    const scrollRoot = editor.getRootElement()?.closest('.docs-layout-right-panel')
     if (!scrollRoot) {
       return
     }
@@ -200,7 +206,8 @@ function HeadingParamListener({ scrollToNode }: HeadingParamListenerProps) {
 
 function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererProps) {
   const [editor] = useLexicalComposerContext()
-  const { setLeftPanelActive, leftPanelActive } = useDocsLayoutContext()
+  const { setLeftPanelVisibility, leftPanelVisibility } = useDocsLayoutContext()
+  const isExpanded = leftPanelVisibility === 'expanded'
 
   const scrollToNode = React.useCallback(
     (key: NodeKey) => {
@@ -223,10 +230,10 @@ function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererPro
     (key: NodeKey) => {
       scrollToNode(key)
       if (window.innerWidth < DOCS_EDITOR_MAX_WIDTH) {
-        setLeftPanelActive(false)
+        setLeftPanelVisibility('collapsed')
       }
     },
-    [scrollToNode, setLeftPanelActive],
+    [scrollToNode, setLeftPanelVisibility],
   )
 
   return (
@@ -235,18 +242,22 @@ function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererPro
       <ActiveHeadingListener tableOfContents={tableOfContents} />
 
       <div
-        className={clsx('table-of-contents flex min-w-0 flex-col', leftPanelActive && 'is-expanded')}
+        className={clsx(
+          'table-of-contents flex w-0 min-w-0 flex-col p-0',
+          isExpanded && 'is-expanded h-full w-full p-5 pr-1.5 pt-0',
+        )}
         data-testid="table-of-contents"
       >
-        <TocHeader isActive={leftPanelActive} onToggle={() => setLeftPanelActive((prev) => !prev)} />
+        <TocHeader
+          isActive={isExpanded}
+          onToggle={() => setLeftPanelVisibility(isExpanded ? 'collapsed' : 'expanded')}
+        />
 
-        <div className="toc-list-container flex flex-col p-5 pt-0">
-          <ul className="toc-list flex min-w-0 flex-1 flex-col overflow-y-auto">
-            {tableOfContents.map(([key, text, tag]) => (
-              <ContentItem key={key} nodeKey={key} text={text} tag={tag} scrollToNode={handleHeadingClick} />
-            ))}
-          </ul>
-        </div>
+        <ul className="toc-list flex min-w-0 flex-1 flex-col overflow-y-auto">
+          {tableOfContents.map(([key, text, tag]) => (
+            <ContentItem key={key} nodeKey={key} text={text} tag={tag} scrollToNode={handleHeadingClick} />
+          ))}
+        </ul>
       </div>
     </>
   )
@@ -301,10 +312,11 @@ export function TableOfContents({ getDocumentUrl, replaceDocumentUrl }: TableOfC
     >
       <TableOfContentsPlugin>
         {(tableOfContents) => {
-          if (!tableOfContents.length) {
+          const visibleTableOfContents = tableOfContents.filter(([, text]) => text.trim().length > 0)
+          if (!visibleTableOfContents.length) {
             return <div />
           }
-          return <TableOfContentsRenderer tableOfContents={tableOfContents} />
+          return <TableOfContentsRenderer tableOfContents={visibleTableOfContents} />
         }}
       </TableOfContentsPlugin>
     </TableOfContentsContext.Provider>
