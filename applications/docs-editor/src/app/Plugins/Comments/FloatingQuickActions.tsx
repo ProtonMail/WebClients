@@ -32,24 +32,26 @@ export function FloatingQuickActions({
   const updatePosition = useCallback(() => {
     const boxElem = boxRef.current
     const rootElement = editor.getRootElement()
-    const rootElementParent = rootElement?.parentElement
+    const positionContainer = rootElement?.closest('.docs-layout-right-panel')
     const anchorElement = editor.getElementByKey(anchorKey)
 
-    if (boxElem !== null && rootElement !== null && anchorElement !== null && rootElementParent) {
-      const { width } = rootElement.getBoundingClientRect()
-      const rootStyle = getComputedStyle(rootElement)
-      const rightPadding = parseFloat(rootStyle.paddingRight)
-      const left = width - rightPadding
-      const { top } = anchorElement.getBoundingClientRect()
-      const { top: rootTop } = rootElementParent.getBoundingClientRect()
+    if (
+      boxElem !== null &&
+      rootElement !== null &&
+      anchorElement !== null &&
+      positionContainer instanceof HTMLElement
+    ) {
+      const rootRect = rootElement.getBoundingClientRect()
+      const containerRect = positionContainer.getBoundingClientRect()
+      const { top: anchorTop } = anchorElement.getBoundingClientRect()
       if (viewportWidth['<=small']) {
         boxElem.style.left = ''
         boxElem.style.right = '5px'
       } else {
-        boxElem.style.left = `${left + 10}px`
+        boxElem.style.left = `${rootRect.right - containerRect.left + 10}px`
         boxElem.style.right = ''
       }
-      boxElem.style.top = `${top - rootTop + rootElementParent.scrollTop}px`
+      boxElem.style.top = `${anchorTop - containerRect.top + positionContainer.scrollTop}px`
     }
   }, [anchorKey, editor, viewportWidth])
 

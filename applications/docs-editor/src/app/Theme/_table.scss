@@ -14,7 +14,8 @@
 
 	--margin-from-sides-in-rem: 3rem;
 
-	max-inline-size: calc(100vw - var(--margin-from-sides-in-rem));
+	// Fallback when @container is unsupported (Safari <16, Chrome <105): approximate scroll width via panel width.
+	max-inline-size: calc(100vw - var(--left-panel-layout-width, 0px) - var(--margin-from-sides-in-rem));
 	position: relative;
 	inset-block-start: 0;
 	inset-inline-start: 50%;
@@ -24,6 +25,12 @@
 
 	[contenteditable='true'] & {
 		margin-block-end: 1.65rem;
+	}
+}
+
+@container docs-scroll (min-width: 0) {
+	.Lexical__tableWrapper {
+		max-inline-size: calc(100cqw - var(--margin-from-sides-in-rem));
 	}
 }
 

@@ -57,6 +57,7 @@ import type { OpenLinkEventData } from './Spreadsheet/constants'
 import { OPEN_LINK_EVENT } from './Spreadsheet/constants'
 import { useStore } from 'zustand'
 import DocsLayout from './DocsLayout'
+import { getDocsLayoutScrollContainer } from './docsLayoutUtils'
 import SheetsLayout from './SheetsLayout'
 
 type AppProps = {
@@ -171,7 +172,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
      * So we store the current scroll position so that we can restore it ourselves.
      */
     const rootElement = editor.getRootElement()
-    const scrollContainer = rootElement?.parentElement
+    const scrollContainer = getDocsLayoutScrollContainer(rootElement)
     if (scrollContainer) {
       scrollPositionBeforePrint.current = scrollContainer.scrollTop
     }
@@ -537,7 +538,8 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
       }
 
       if (mode === EditorUserMode.Preview) {
-        scrollPositionBeforePreview.current = editorRef.current?.getRootElement()?.parentElement?.scrollTop ?? null
+        scrollPositionBeforePreview.current =
+          getDocsLayoutScrollContainer(editorRef.current?.getRootElement())?.scrollTop ?? null
       }
 
       setUserMode(mode)
@@ -581,7 +583,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           selectionBeforePrint.current = null
         })
         const rootElement = editorRef.current?.getRootElement()
-        const scrollContainer = rootElement?.parentElement
+        const scrollContainer = getDocsLayoutScrollContainer(rootElement)
         const scrollPositionBefore = scrollPositionBeforePrint.current
         if (scrollContainer && scrollPositionBefore !== null) {
           const scrollPositionAfter = scrollContainer.scrollTop
@@ -662,7 +664,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
 
   if (documentType === 'doc') {
     return (
-      <DocsLayout.Container isSuggestionMode={isSuggestionMode} tableOfContentsVisible={tableOfContentsVisibleState}>
+      <DocsLayout.Container isSuggestionMode={isSuggestionMode}>
         {showPreviewModeEditor && (
           <PreviewModeEditor
             clonedEditorState={clonedEditorState}

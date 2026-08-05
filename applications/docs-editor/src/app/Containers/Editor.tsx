@@ -62,7 +62,7 @@ import { SCROLL_TO_USER_CURSOR_COMMAND } from '../Plugins/Collaboration/ScrollTo
 import { useNotifications } from '@proton/components'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 import { TableOfContents } from '../Components/TableOfContents/TableOfContents'
-import DocsLayout from './DocsLayout'
+import DocsLayout, { useDocsLayoutContext } from './DocsLayout'
 import { useIsAlpha } from '../Hooks/useIsAlpha'
 
 const TypingBotEnabled = false
@@ -114,7 +114,14 @@ export function Editor({
 }: Props) {
   const { application } = useApplication()
   const isAlpha = useIsAlpha()
+  const { setLeftPanelVisibility } = useDocsLayoutContext()
   const editorRef = useRef<LexicalEditor | null>(null)
+
+  useEffect(() => {
+    if (!tableOfContentsVisible) {
+      setLeftPanelVisibility('collapsed')
+    }
+  }, [tableOfContentsVisible, setLeftPanelVisibility])
 
   const [collabCursorsContainer, setCollabCursorsContainer] = useState<HTMLDivElement | null>(null)
 
@@ -255,24 +262,23 @@ export function Editor({
           />
         )}
         <DocsLayout.Grid>
-          {tableOfContentsVisible && (
-            <DocsLayout.LeftPanel>
+          <DocsLayout.LeftPanel>
+            {tableOfContentsVisible && (
               <TableOfContents getDocumentUrl={getDocumentUrl} replaceDocumentUrl={replaceDocumentUrl} />
-            </DocsLayout.LeftPanel>
-          )}
+            )}
+          </DocsLayout.LeftPanel>
           <RichTextPlugin
             contentEditable={
               <DocsLayout.RightPanel>
                 <ProtonContentEditable
                   className={clsx(
-                    'DocumentEditor w-full max-w-full overflow-x-hidden max-[815px]:px-[10%] min-[816px]:pl-4 min-[816px]:pr-[var(--right-panel-padding)] print:w-full print:max-w-full',
+                    'DocumentEditor w-full max-w-full print:w-full print:max-w-full',
                     isSuggestionMode && 'suggestion-mode',
                   )}
                   style={{
                     fontFamily: DefaultFont.value,
                     gridRow: 1,
                     gridColumn: 1,
-                    justifySelf: 'center',
                   }}
                   isSuggestionMode={isSuggestionMode}
                   data-testid={systemMode === EditorSystemMode.Revision ? 'main-editor-revision' : 'main-editor'}
