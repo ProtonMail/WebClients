@@ -14,6 +14,8 @@ import { CommentInputBox } from './CommentInputBox'
 import type { RangeSelection } from 'lexical'
 import { $getNodeByKey, type LexicalNode } from 'lexical'
 import { getRangeSelectionRect } from '../../Utils/getSelectionRect'
+import { useDocsLayoutContext } from '../../Containers/DocsLayout'
+import { getContextualCommentsWidth } from '../../Containers/docsLayoutUtils'
 
 const RECALCULATE_THREAD_POSITIONS_EVENT = 'RecalculateThreadPositions'
 const dispatchRecalculateEvent = () => {
@@ -79,10 +81,14 @@ function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
   )
 }
 
-const VIEWPORT_WIDTH_THRESHOLD = 1436
-
-function ThreadComponent({ thread, isViewportLarge }: { thread: CommentThreadInterface; isViewportLarge: boolean }) {
-  if (isViewportLarge) {
+function ThreadComponent({
+  thread,
+  showContextualPanels,
+}: {
+  thread: CommentThreadInterface
+  showContextualPanels: boolean
+}) {
+  if (showContextualPanels) {
     return (
       <CommentsPanelListThread thread={thread} className="hover:translate-x-[-5px] data-[active]:translate-x-[-5px]" />
     )
@@ -93,8 +99,10 @@ function ThreadComponent({ thread, isViewportLarge }: { thread: CommentThreadInt
 
 export function ContextualComments({ activeThreads }: { activeThreads: CommentThreadInterface[] }) {
   const [editor] = useLexicalComposerContext()
+  const { leftPanelWidth } = useDocsLayoutContext()
   const { markNodeMap, activeIDs, commentInputSelection, cancelAddComment } = useCommentsContext()
   const [container, setContainer] = useState<HTMLDivElement | null>(null)
+  const [viewportWidth, setViewportWidth] = useState(() => window.innerWidth)
 
   const [items, setItems] = useState<PositionedItem[]>([])
 
@@ -108,13 +116,16 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
     return activeThreads.find((thread) => thread.markID === activeMarkID)
   }, [activeMarkID, activeThreads])
 
-  const [isViewportLarge, setIsViewportLarge] = useState(() => window.innerWidth >= VIEWPORT_WIDTH_THRESHOLD)
+  const contextualCommentsWidth = useMemo(
+    () => getContextualCommentsWidth(viewportWidth, leftPanelWidth),
+    [leftPanelWidth, viewportWidth],
+  )
+  const showContextualPanels = contextualCommentsWidth !== null
 
   const shouldShowCommentInputBox = commentInputSelection !== undefined
 
-  // we only want to position the input box as part of contextual comments if viewport is large enough
-  const shouldShowCommentInputBoxAsContextual = shouldShowCommentInputBox && isViewportLarge
-  const shouldShowCommentInputBoxAsSticky = shouldShowCommentInputBox && !isViewportLarge
+  const shouldShowCommentInputBoxAsContextual = shouldShowCommentInputBox && showContextualPanels
+  const shouldShowCommentInputBoxAsSticky = shouldShowCommentInputBox && !showContextualPanels
 
   const getThreadPositions = useCallback(() => {
     editor.read(() => {
@@ -142,8 +153,7 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
       }
 
       const items: ({ node: LexicalNode | null } & (
-        | { thread: CommentThreadInterface }
-        | { selection: RangeSelection }
+        { thread: CommentThreadInterface } | { selection: RangeSelection }
       ))[] = activeThreads.map((thread) => ({
         thread,
         node: getFirstAssociatedMarkNodeForThread(thread),
@@ -174,12 +184,12 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
             }
             return {
               id: item.thread.localID,
-              item: <ThreadComponent thread={item.thread} isViewportLarge={isViewportLarge} />,
+              item: <ThreadComponent thread={item.thread} showContextualPanels={showContextualPanels} />,
               itemProps: {
                 style: {
-                  left: isViewportLarge ? 0 : undefined,
-                  right: isViewportLarge ? undefined : 0,
-                  width: isViewportLarge ? 'calc(100% - 2rem)' : 'auto',
+                  left: showContextualPanels ? 0 : undefined,
+                  right: showContextualPanels ? undefined : '0.5rem',
+                  width: showContextualPanels ? 'calc(100% - 2rem)' : 'auto',
                 },
               },
               position: markRect.y,
@@ -216,7 +226,7 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
     cancelAddComment,
     commentInputSelection,
     editor,
-    isViewportLarge,
+    showContextualPanels,
     markNodeMap,
     shouldShowCommentInputBoxAsContextual,
   ])
@@ -225,11 +235,11 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
 
   useEffect(() => {
     debouncedGetThreadPositions()
-  }, [debouncedGetThreadPositions])
+  }, [debouncedGetThreadPositions, leftPanelWidth, showContextualPanels])
 
   useEffect(() => {
     const listener = debounce(() => {
-      setIsViewportLarge(window.innerWidth >= VIEWPORT_WIDTH_THRESHOLD)
+      setViewportWidth(window.innerWidth)
       debouncedGetThreadPositions()
     }, SIXTY_FPS_TO_MS)
 
@@ -272,9 +282,9 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
           gridRow: 1,
           gridColumn: 1,
           justifySelf: 'end',
-          width: isViewportLarge ? COMMENTS_WIDTH : 'max-content',
+          width: contextualCommentsWidth !== null ? `${contextualCommentsWidth}px` : 'max-content',
         }}
-        scrollContainer={editor.getRootElement()?.parentElement}
+        scrollContainer={editor.getRootElement()?.closest('.docs-layout-right-panel')}
       />
       {shouldShowCommentInputBoxAsSticky && (
         <div className="fixed bottom-2 left-0 w-full px-2">

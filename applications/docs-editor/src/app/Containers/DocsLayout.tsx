@@ -1,38 +1,45 @@
 import React from 'react'
 import clsx from '@proton/utils/clsx'
+import { clampLeftPanelWidth, DOCS_EDITOR_MAX_WIDTH, getDefaultLeftPanelWidth } from './docsLayoutUtils'
 import './DocsLayout.scss'
 
-export const DOCS_EDITOR_MAX_WIDTH = 816
+export { DOCS_EDITOR_MAX_WIDTH } from './docsLayoutUtils'
 
-const LEFT_PANEL_MIN_WIDTH_BREAKPOINT = 1300
-const MIN_LEFT_PANEL_WIDTH_GREATER_THAN_BREAKPOINT = 260
-const MIN_LEFT_PANEL_WIDTH_LESS_THAN_BREAKPOINT = 100
-const MAX_LEFT_PANEL_WIDTH = 800
+type LeftPanelVisibility = 'collapsed' | 'expanded'
 
-function getDesktopLeftPanelGutterWidth(viewportWidth: number) {
-  return Math.max(0, (viewportWidth - DOCS_EDITOR_MAX_WIDTH) / 2)
+type DocsLayoutContextValue = {
+  leftPanelVisibility: LeftPanelVisibility
+  setLeftPanelVisibility: (visibility: LeftPanelVisibility) => void
+
+  leftPanelWidth: number
+  setLeftPanelWidth: (width: number) => void
+  resetLeftPanelWidth: () => void
 }
 
-function getDefaultLeftPanelOpenWidth(viewportWidth: number) {
-  return viewportWidth >= LEFT_PANEL_MIN_WIDTH_BREAKPOINT
-    ? MIN_LEFT_PANEL_WIDTH_GREATER_THAN_BREAKPOINT
-    : MIN_LEFT_PANEL_WIDTH_LESS_THAN_BREAKPOINT
+const DocsLayoutContext = React.createContext<DocsLayoutContextValue | null>(null)
+
+export function useDocsLayoutContext(): DocsLayoutContextValue {
+  const context = React.useContext(DocsLayoutContext)
+  if (!context) {
+    throw new Error('useDocsLayoutContext must be used within DocsLayoutProvider')
+  }
+  return context
 }
 
 function LeftPanel({ children }: React.PropsWithChildren) {
-  const { updateLeftPanelWidth, resetLeftPanelToDefault, leftPanelActive } = useDocsLayoutContext()
-  const [canResize, setCanResize] = React.useState(false)
+  const { setLeftPanelWidth, resetLeftPanelWidth, leftPanelVisibility } = useDocsLayoutContext()
+  const [isDragging, setIsDragging] = React.useState(false)
   // store event listeners created on resize to cleanup on unmount if resize interrupted
   const cleanupRef = React.useRef<(() => void) | null>(null)
 
   React.useEffect(() => {
-    if (!leftPanelActive) {
+    if (leftPanelVisibility === 'collapsed') {
       cleanupRef.current?.()
     }
     return () => {
       cleanupRef.current?.()
     }
-  }, [leftPanelActive])
+  }, [leftPanelVisibility])
 
   function handleResize(e: React.PointerEvent<HTMLDivElement>) {
     e.preventDefault()
@@ -45,8 +52,10 @@ function LeftPanel({ children }: React.PropsWithChildren) {
     const leftPanel = handle.parentElement
     const startWidth = leftPanel?.offsetWidth ?? 0
 
+    setIsDragging(true)
+
     function onPointerMove(moveEvent: PointerEvent) {
-      updateLeftPanelWidth(startWidth + (moveEvent.clientX - startX))
+      setLeftPanelWidth(startWidth + (moveEvent.clientX - startX))
     }
 
     function cleanupListeners() {
@@ -59,6 +68,7 @@ function LeftPanel({ children }: React.PropsWithChildren) {
       handle.removeEventListener('pointerup', onPointerUp)
       handle.removeEventListener('pointercancel', onPointerUp)
       cleanupRef.current = null
+      setIsDragging(false)
     }
 
     function onPointerUp() {
@@ -74,20 +84,19 @@ function LeftPanel({ children }: React.PropsWithChildren) {
 
   return (
     <div
-      className={clsx('docs-layout-left-panel relative', leftPanelActive && 'panel-open')}
-      onMouseEnter={leftPanelActive ? () => setCanResize(true) : undefined}
-      onMouseLeave={leftPanelActive ? () => setCanResize(false) : undefined}
-      onMouseOver={leftPanelActive ? () => setCanResize(true) : undefined}
-      onFocus={leftPanelActive ? () => setCanResize(true) : undefined}
+      className={clsx(
+        'docs-layout-left-panel',
+        leftPanelVisibility === 'expanded' && 'panel-open',
+        isDragging && 'is-dragging',
+      )}
     >
       {children}
-      {leftPanelActive && (
+      {leftPanelVisibility === 'expanded' && (
         <div
           aria-orientation="vertical"
           onPointerDown={handleResize}
-          onDoubleClick={resetLeftPanelToDefault}
-          className="absolute bottom-0 right-0 top-0 h-full w-3 cursor-col-resize transition-all max-[815px]:hidden"
-          style={{ opacity: canResize ? 1 : 0 }}
+          onDoubleClick={resetLeftPanelWidth}
+          className="absolute bottom-0 right-0 top-0 h-full w-3 cursor-col-resize max-[815px]:hidden"
         >
           <div className="mx-auto h-full w-[1px] bg-[--border-weak]" />
         </div>
@@ -97,113 +106,83 @@ function LeftPanel({ children }: React.PropsWithChildren) {
 }
 
 function RightPanel({ children }: React.PropsWithChildren) {
-  return <div className="docs-layout-right-panel relative grid scroll-pt-[20px] overflow-auto">{children}</div>
+  return (
+    <div className="docs-layout-right-panel">
+      <div className="docs-layout-scroll-bleed">
+        {/* Single-cell grid overlay for contextual comments and floating quick actions
+        (portaled in CommentPluginContainer) */}
+        <div className="docs-layout-editor-stack">
+          <div className="docs-layout-editor-column">{children}</div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 function Grid({ children }: React.PropsWithChildren) {
-  const { leftPanelWidth, hasUserResized } = useDocsLayoutContext()
+  const { leftPanelWidth } = useDocsLayoutContext()
 
   return (
-    <div
-      className={clsx('docs-layout-grid grid', hasUserResized && 'user-resized')}
-      style={hasUserResized ? { '--left-panel-width': `${leftPanelWidth}px` } : undefined}
-    >
+    <div className="docs-layout-grid" style={{ '--left-panel-layout-width': `${leftPanelWidth}px` }}>
       {children}
     </div>
   )
 }
 
-type DocsLayoutContextValue = {
-  leftPanelWidth: number
-  hasUserResized: boolean
-  updateLeftPanelWidth: (width: number) => void
-  leftPanelActive: boolean
-  setLeftPanelActive: React.Dispatch<React.SetStateAction<boolean>>
-  resetLeftPanelToDefault: () => void
-}
+function DocsLayoutProvider({ children }: React.PropsWithChildren) {
+  const [leftPanelVisibility, setLeftPanelVisibilityState] = React.useState<LeftPanelVisibility>('collapsed')
+  const [leftPanelWidth, setLeftPanelWidthState] = React.useState(0)
+  const persistedLeftPanelWidthRef = React.useRef<number | null>(null)
 
-const DocsLayoutContext = React.createContext<DocsLayoutContextValue>({
-  leftPanelWidth: 0,
-  hasUserResized: false,
-  updateLeftPanelWidth: () => {},
-  leftPanelActive: false,
-  setLeftPanelActive: () => {},
-  resetLeftPanelToDefault: () => {},
-})
+  const setLeftPanelVisibility = React.useCallback((visibility: LeftPanelVisibility) => {
+    setLeftPanelVisibilityState(visibility)
 
-export function useDocsLayoutContext() {
-  return React.useContext(DocsLayoutContext)
-}
-
-interface DocsLayoutProviderProps {
-  tableOfContentsVisible: boolean
-}
-
-function DocsLayoutProvider({ children, tableOfContentsVisible }: React.PropsWithChildren<DocsLayoutProviderProps>) {
-  const [leftPanelWidth, setLeftPanelWidth] = React.useState<number>(0)
-  const [hasUserResized, setHasUserResized] = React.useState<boolean>(false)
-  const [leftPanelActive, setLeftPanelActive] = React.useState<boolean>(false)
-
-  React.useEffect(() => {
-    function applyOpenPanelWidth() {
-      const gutterWidth = getDesktopLeftPanelGutterWidth(window.innerWidth)
-      const openWidth = Math.max(gutterWidth, getDefaultLeftPanelOpenWidth(window.innerWidth))
-
-      if (openWidth > gutterWidth) {
-        setLeftPanelWidth(openWidth)
-        setHasUserResized(true)
-      }
+    if (visibility === 'collapsed') {
+      setLeftPanelWidthState(0)
+      return
     }
 
-    function handleResize() {
-      setHasUserResized(false)
+    const viewportWidth = window.innerWidth
+    const width = persistedLeftPanelWidthRef.current ?? getDefaultLeftPanelWidth(viewportWidth)
+    setLeftPanelWidthState(clampLeftPanelWidth(width, viewportWidth))
+  }, [])
 
+  React.useEffect(() => {
+    function handleResize() {
       if (window.innerWidth < DOCS_EDITOR_MAX_WIDTH) {
-        setLeftPanelActive(false)
+        setLeftPanelVisibility('collapsed')
         return
       }
 
-      if (leftPanelActive) {
-        applyOpenPanelWidth()
+      if (leftPanelVisibility === 'expanded') {
+        setLeftPanelWidthState((width) => clampLeftPanelWidth(width, window.innerWidth))
       }
-    }
-
-    if (!leftPanelActive) {
-      setHasUserResized(false)
-    } else if (window.innerWidth >= DOCS_EDITOR_MAX_WIDTH) {
-      applyOpenPanelWidth()
     }
 
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [leftPanelActive])
+  }, [leftPanelVisibility, setLeftPanelVisibility])
 
-  const updateLeftPanelWidth = React.useCallback((width: number) => {
-    const minWidth = getDefaultLeftPanelOpenWidth(window.innerWidth)
-
-    setLeftPanelWidth(Math.min(Math.max(width, minWidth), MAX_LEFT_PANEL_WIDTH))
-    setHasUserResized(true)
+  const setLeftPanelWidth = React.useCallback((width: number) => {
+    const clampedWidth = clampLeftPanelWidth(width, window.innerWidth)
+    setLeftPanelWidthState(clampedWidth)
+    persistedLeftPanelWidthRef.current = clampedWidth
   }, [])
 
-  const resetLeftPanelToDefault = React.useCallback(() => {
-    setHasUserResized(false)
+  const resetLeftPanelWidth = React.useCallback(() => {
+    const defaultWidth = getDefaultLeftPanelWidth(window.innerWidth)
+    setLeftPanelWidthState(defaultWidth)
+    persistedLeftPanelWidthRef.current = defaultWidth
   }, [])
-
-  React.useEffect(() => {
-    if (!tableOfContentsVisible) {
-      resetLeftPanelToDefault()
-    }
-  }, [tableOfContentsVisible, resetLeftPanelToDefault])
 
   return (
     <DocsLayoutContext.Provider
       value={{
+        leftPanelVisibility,
+        setLeftPanelVisibility,
         leftPanelWidth,
-        hasUserResized,
-        updateLeftPanelWidth,
-        leftPanelActive,
-        setLeftPanelActive,
-        resetLeftPanelToDefault,
+        setLeftPanelWidth,
+        resetLeftPanelWidth,
       }}
     >
       {children}
@@ -213,14 +192,17 @@ function DocsLayoutProvider({ children, tableOfContentsVisible }: React.PropsWit
 
 interface ContainerProps {
   isSuggestionMode: boolean
-  tableOfContentsVisible: boolean
 }
 
-function Container({ children, isSuggestionMode, tableOfContentsVisible }: React.PropsWithChildren<ContainerProps>) {
+function Container({ children, isSuggestionMode }: React.PropsWithChildren<ContainerProps>) {
   return (
-    <DocsLayoutProvider tableOfContentsVisible={tableOfContentsVisible}>
+    <DocsLayoutProvider>
       <div
-        className={clsx('relative grid h-full w-full bg-[white]', isSuggestionMode && 'suggestion-mode')}
+        className={clsx(
+          // Portal target for the full comments sidebar (CommentPluginContainer).
+          'docs-layout-container relative grid h-full w-full bg-[white]',
+          isSuggestionMode && 'suggestion-mode',
+        )}
         style={{
           gridTemplateRows: 'min-content 1fr',
           gridTemplateColumns: '1fr',
