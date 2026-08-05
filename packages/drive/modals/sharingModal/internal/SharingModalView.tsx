@@ -198,7 +198,7 @@ export const SharingModalView = ({
                 title: c('Title').t`Change access to viewer?`,
                 submitText: c('Action').t`Change my access`,
                 message: c('Info')
-                    .t`You won’t be able to share "${fileName}" after changing access to viewer. Only the owner can change your access again.`,
+                    .t`You won’t be able to share "${fileName}" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.`,
                 onSubmit: async () => {
                     await actions.updateShareDirect({
                         users: [{ email, role }],
