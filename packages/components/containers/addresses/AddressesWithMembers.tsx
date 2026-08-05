@@ -252,7 +252,6 @@ const AddressesWithMembers = ({
                         user={user}
                         members={selectedMembers}
                         memberAddressesMap={memberAddressesMap}
-                        organization={organization}
                         organizationKey={organizationKey}
                         allowAddressDeletion={allowAddressDeletion}
                     />
