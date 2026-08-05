@@ -28,6 +28,7 @@ import { telemetry } from '@proton/shared/lib/telemetry';
 import noop from '@proton/utils/noop';
 
 import { GUEST_MIGRATION_STORAGE_KEYS } from './constants/guestMigration';
+import { LUMO_ROUTES } from './entrypoint/lumoRoutes';
 import { DbApi } from './indexedDb/db';
 import locales from './locales';
 import { lumoEventLoop } from './redux/eventLoop';
@@ -117,7 +118,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const isGuestOrForkPathname =
         pathname === '/guest' ||
         pathname.startsWith('/guest/') ||
-        pathname === '/ai-paper-trail' ||
+        pathname === LUMO_ROUTES.AI_PAPER_TRAIL ||
         pathname === SSO_PATHS.LOGIN;
     if (!isGuestOrForkPathname && !(await hasOptimisticSessions({ api: silentApi }))) {
         // Reload to guest path.

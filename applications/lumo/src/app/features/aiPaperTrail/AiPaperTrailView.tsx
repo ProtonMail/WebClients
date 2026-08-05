@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
+import { exitPaperTrail } from '../../entrypoint/lumoRoutes';
 import { useLumoNavigate } from '../../hooks/useLumoNavigate';
 import { getMessageContent } from '../../messageHelpers';
 import { useLumoDispatch, useLumoMemoSelector, useLumoSelector } from '../../redux/hooks';
@@ -61,7 +62,7 @@ export const AiPaperTrailView = () => {
 
     const handleStartChat = useCallback(() => {
         dispatch(setGhostChatMode(false));
-        navigate('/');
+        exitPaperTrail(window.location.pathname, navigate);
     }, [dispatch, navigate]);
 
     const messagesMap = useLumoMemoSelector(selectMessagesByConversationId, [conversationId]);
