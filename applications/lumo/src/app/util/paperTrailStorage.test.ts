@@ -1,3 +1,4 @@
+import { LUMO_ROUTES } from '../entrypoint/lumoRoutes';
 import { setPaperTrailLocalSaveEnabled } from './paperTrailLocalSavePreference';
 import { getPaperTrailReport, savePaperTrailReport } from './paperTrailReportStorage';
 import { readPaperTrailStorage, writePaperTrailStorage } from './paperTrailStorage';
@@ -9,7 +10,7 @@ describe('paperTrailStorage', () => {
         localStorage.clear();
         Object.defineProperty(window, 'location', {
             configurable: true,
-            value: { ...window.location, pathname: '/guest/ai-paper-trail' },
+            value: { ...window.location, pathname: LUMO_ROUTES.AI_PAPER_TRAIL },
         });
     });
 

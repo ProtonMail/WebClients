@@ -15,7 +15,7 @@ export interface ShareCardRenderOptions {
     hideFooter?: boolean;
 }
 
-export const SHARE_CARD_URL = 'proton.me/lumo/aitrail';
+export const SHARE_CARD_URL = 'lumo.proton.me/aitrail';
 
 const FONT_STACK = `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`;
 const SYNE_FONT = `Syne, ${FONT_STACK}`;
