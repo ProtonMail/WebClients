@@ -1,24 +1,25 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import useFeature from '@proton/features/useFeature';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { useFlagsStatus } from '@proton/unleash/proxy';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useCategoriesData } from './useCategoriesData';
 
-jest.mock('@proton/account/organization/hooks');
 jest.mock('@proton/features/useFeature');
 jest.mock('@proton/unleash/proxy');
 jest.mock('@proton/redux-shared-store/sharedProvider');
 jest.mock('@proton/unleash/useFlag');
 
-jest.mock('@proton/mail/store/mailSettings/hooks', () => ({ useMailSettings: jest.fn() }));
 jest.mock('@proton/mail/store/labels/selector', () => ({
     selectActiveCategoriesTabs: jest.fn(),
     selectCategoriesLabel: jest.fn(),
+}));
+
+jest.mock('@proton/mail/store/categoriesView/categoriesViewSelector', () => ({
+    selectCategoryViewLoading: jest.fn(),
+    selectCategoryViewSettingAccess: jest.fn(),
 }));
 
 interface FlagOptions {
@@ -47,8 +48,6 @@ describe('useCategoriesData', () => {
         mockFlags();
         mockBetaAccess(false);
         jest.mocked(useFlagsStatus).mockReturnValue({ flagsReady: true } as any);
-        jest.mocked(useOrganization).mockReturnValue([undefined, false] as any);
-        jest.mocked(useMailSettings).mockReturnValue([{}, false] as any);
         jest.mocked(useSelector).mockReturnValue(undefined);
     });
 
