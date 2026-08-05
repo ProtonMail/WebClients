@@ -7,7 +7,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import DomainModal from '@proton/components/containers/domains/DomainModal';
 import { FeatureCode, useFeature } from '@proton/features';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import ScimSetupBannerAndModal from '../../organization/ScimSetupBannerAndModal';
@@ -25,6 +25,13 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const organizationUnprivatizationModals = useOrganizationUnprivatizationModals();
     const [organization] = useOrganization();
     const hasRemoteMembers = useFlag('MembersRemote');
+    const hasVpnUserActivity = useFlag('VpnB2bUserActivity');
+    // The members-usage endpoint caps the request at 250 IDs, and only the paginated MembersRemote path
+    // keeps it bounded. So only show usage when the member set stays within that cap (or is paginated);
+    // otherwise a large org on the non-paginated path would send >250 IDs and the request would be rejected.
+    const withinUsageBounds =
+        hasRemoteMembers || (organization?.UsedMembers ?? Number.POSITIVE_INFINITY) <= paginatedMemberThreshold;
+    const showUsage = app === APPS.PROTONVPN_SETTINGS && hasVpnUserActivity && withinUsageBounds;
     const [adminRolesUIState] = useAdminRolesUI();
     const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
     const {
@@ -36,7 +43,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const canShowAdminRolesModal = !adminRolesModalLoading && !!adminRolesModalFeature?.Value;
 
     return (
-        <SettingsSectionWide>
+        <SettingsSectionWide customWidth={showUsage ? '100%' : undefined}>
             <SettingsParagraph large className="flex items-center mb-12 gap-2">
                 <UserAndAddressesSectionIntro onOpenNewDomainModal={setNewDomainModalOpen} />
             </SettingsParagraph>
@@ -49,9 +56,9 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
             <ScimSetupBannerAndModal />
 
             {organization && organization.UsedMembers > paginatedMemberThreshold && hasRemoteMembers ? (
-                <MembersRemote app={app} />
+                <MembersRemote app={app} showUsage={showUsage} />
             ) : (
-                <MembersLocal app={app} />
+                <MembersLocal app={app} showUsage={showUsage} />
             )}
             {renderNewDomain && <DomainModal {...newDomainModalProps} />}
             <AdminRolesOnboardingModal
