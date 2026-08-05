@@ -3,13 +3,9 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    deleteGroupMember,
-    invalidateMemberRoles,
-    resumeGroupMember as resumeGroupMemberAction,
-    updateOverridePermissions,
-} from '@proton/account';
+import { resumeGroupMember as resumeGroupMemberAction, updateOverridePermissions } from '@proton/account';
 import { addGroupOwnerThunk } from '@proton/account/groups/addGroupOwner';
+import { deleteGroupMemberThunk } from '@proton/account/groups/deleteGroupMember';
 import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { Button } from '@proton/atoms/Button/Button';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
@@ -27,7 +23,6 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import {
     reinviteGroupMember,
     resumeGroupMember as resumeGroupMemberApi,
-    deleteGroupMember as revokeGroupInvitation,
     updateGroupMember,
 } from '@proton/shared/lib/api/groups';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
@@ -103,11 +98,7 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, isFrozen, canChan
     const handleRevokeInvitation = () =>
         withLoading(async () => {
             try {
-                await api(revokeGroupInvitation(groupMember.ID));
-                dispatch(deleteGroupMember({ groupID: group.ID, memberID: groupMember.ID }));
-                if (member) {
-                    dispatch(invalidateMemberRoles({ member }));
-                }
+                await dispatch(deleteGroupMemberThunk({ group, groupMember, member }));
             } catch (error) {
                 handleError(error);
             }
