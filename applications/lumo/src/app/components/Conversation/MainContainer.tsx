@@ -38,7 +38,8 @@ interface MainContainerProps {
 const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: MainContainerProps) => {
     const { handleSendMessage } = useConversationActions();
     const { isSmallScreen } = useIsLumoSmallScreen();
-    const { aiPaperTrail } = useLumoFlags();
+    const { aiPaperTrailPopup, aiPaperTrail } = useLumoFlags();
+
     const filesContainerRef = useRef<HTMLDivElement>(null);
     const isGuest = useIsGuest();
     const [isEditorFocused, setIsEditorFocused] = useState(false);
@@ -104,7 +105,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                             <LumoCatAnimation isGhostMode={isGhostChatMode} />
                             <LumoMainText isSmallScreen={isSmallScreen} isGhostMode={isGhostChatMode} />
                         </div>
-                        {aiPaperTrail && <PaperTrailPanel />}
+                        {aiPaperTrail && aiPaperTrailPopup && <PaperTrailPanel />}
 
                         <div className="composer-container md:px-4 w-full relative">
                             {showWeeklyLimitUpsell && <UpsellCard showSadCat={false} error={tierErrors[0]} />}

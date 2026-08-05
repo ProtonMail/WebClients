@@ -4,7 +4,7 @@ export const LUMO_ROUTES = {
     GUEST: '/guest',
     // Minimal, single-agent chatbot surface. Runs in guest mode so it loads almost instantly.
     AGENT: '/agent',
-    AI_PAPER_TRAIL: '/ai-paper-trail',
+    AI_PAPER_TRAIL: '/aitrail',
 } as const;
 
 export const isGuestPathname = (pathname: string): boolean =>
@@ -15,3 +15,22 @@ export const isAgentPathname = (pathname: string): boolean =>
 
 export const isPublicPathname = (pathname: string): boolean =>
     isGuestPathname(pathname) || isAgentPathname(pathname) || pathname === LUMO_ROUTES.AI_PAPER_TRAIL;
+
+/** Home route when exiting paper trail. */
+export const getPaperTrailExitPath = (): string => {
+    return '/';
+};
+
+export const isStandalonePaperTrailPath = (pathname: string): boolean => {
+    return pathname.replace(/\/+$/, '') === LUMO_ROUTES.AI_PAPER_TRAIL;
+};
+
+/** Leave paper trail for Lumo home (`/`). Uses a full navigation from standalone `/aitrail`. */
+export const exitPaperTrail = (pathname: string, navigate: (path: string) => void): void => {
+    if (isStandalonePaperTrailPath(pathname)) {
+        window.location.assign(getPaperTrailExitPath());
+        return;
+    }
+
+    navigate(getPaperTrailExitPath());
+};
