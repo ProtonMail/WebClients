@@ -1721,6 +1721,12 @@
       ],
       "Yes, organize it": [
         "Ja, organiser det"
+      ],
+      "Open debug menu": [
+        "Åbn fejlfindingsmenu"
+      ],
+      "View guide": [
+        "Vis guide"
       ]
     },
     "action": {
@@ -5532,6 +5538,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
+      ],
+      "Invalid URL": [
+        "Ugyldig URL"
+      ],
+      "Something went wrong": [
+        "Noget gik galt"
       ]
     },
     "error": {
@@ -9421,6 +9433,25 @@
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "Du valgte **${ checked } besked** i din ${ categoryLabel } kategori",
         "Du valgte **${ checked } beskeder** i din ${ categoryLabel } kategori"
+      ],
+      "Read ${ count } email on screen": [
+        "Læs ${ count } e-mail på skærmen",
+        "Læs ${ count } e-mails på skærmen"
+      ],
+      "Read your ${ count } filter": [
+        "Læs ${ count } filter",
+        "Læs dine ${ count } filtre"
+      ],
+      "Read your ${ count } folder": [
+        "Læs ${ count } mappe",
+        "Læs dine ${ count } mapper"
+      ],
+      "Read your ${ count } label": [
+        "Læs ${ count } etiket",
+        "Læs dine ${ count } etiketter"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Denne Gmail-adresse er registreret med en anden ${ BRAND_NAME }-konto (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, og andre). Vi arbejder på at forbedre forbindelsen, men på nuværende tidspunkt skal du gennem nogle trin."
       ]
     },
     "info": {
@@ -16696,6 +16727,9 @@
       ],
       "Refine your Categories": [
         "Forfin dine kategorier"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Bemærk: Denne Gmail er forbundet en anden ${ BRAND_NAME }-konto"
       ]
     },
     "Title header for keys table": {
@@ -16870,6 +16904,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brugeren har accepteret invitationen."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Opgrader til en understøttet plan for at bruge administratorroller."
       ]
     },
     "Validation": {

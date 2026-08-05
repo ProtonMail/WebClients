@@ -1712,6 +1712,12 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Open debug menu": [
+        "打开调试菜单"
+      ],
+      "Yes, organize it": [
+        "是，立即整理"
       ]
     },
     "action": {
@@ -1739,6 +1745,9 @@
       ],
       "Skip": [
         "跳过"
+      ],
+      "Set up categories": [
+        "设置分类"
       ]
     },
     "Actions message": {
@@ -4494,6 +4503,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "右键点击邮件并选择“移至”，或将其拖放到其他分类。今后，相似的邮件将自动归类到该分类中。"
       ]
     },
     "description": {
@@ -5464,6 +5476,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜索结果过多，请缩小搜索范围后再试。"
+      ],
+      "Invalid URL": [
+        "链接无效"
+      ],
+      "Something went wrong": [
+        "出了些问题"
       ]
     },
     "error": {
@@ -8498,7 +8516,7 @@
         "如果他们不知道您的邮箱地址，就无法向您发送垃圾邮件。请使用“Hide-my-email”别名保护您的收件箱。"
       ],
       "Thinking about this": [
-        "正在思考这个"
+        "正在深度思考"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此地址已被停用，待其所有者予以启用后才能向该地址发送邮件。"
@@ -9210,6 +9228,33 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需几步即可拥有清爽收件箱"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } 封邮件 → ${ dest }"
+      ],
+      "Move emails": [
+        "移动邮件"
+      ],
+      "Move here": [
+        "移至此处"
+      ],
+      "Opened ${ location }": [
+        "已打开 ${ location }"
+      ],
+      "Read ${ count } email on screen": [
+        "已读 ${ count } 封屏幕上的邮件"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "您在 ${ categoryLabel } 分类中有 **${ count }** 项会话"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "您在 ${ categoryLabel } 分类中有 **${ count }** 封邮件"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "您在 ${ categoryLabel } 分类中已选 **${ checked } 项会话**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "您在 ${ categoryLabel } 分类中已选 **${ checked } 封邮件**"
       ]
     },
     "info": {
@@ -10406,6 +10451,15 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "所有需要您关注的内容，以及来自已禁用类别的邮件"
+      ],
+      "Archive": [
+        "归档"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "主要 - 所有需要您关注的内容，以及来自已禁用类别的邮件"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15039,6 +15093,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "已移至 ${ label }，未来类似邮件将自动归类。"
       ]
     },
     "Success notification": {
@@ -16309,6 +16366,15 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Make your inbox your own": [
+        "自定义您的收件箱"
+      ],
+      "Move emails": [
+        "移动邮件"
+      ],
+      "Refine your Categories": [
+        "优化您的分类"
       ]
     },
     "Title header for keys table": {
@@ -16483,6 +16549,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "用户接受邀请后，您即可为其分配角色。"
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "升级至受支持的套餐以使用管理员角色。"
       ]
     },
     "Validation": {
@@ -16884,6 +16953,14 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } 封新邮件"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "发件人：${ sender } - ${ message.Subject }"
       ]
     }
   }
