@@ -173,6 +173,12 @@ const slice = createSlice({
                 group.roleState = 'rejected';
             }
         },
+        invalidateGroupRoles: (state, action: PayloadAction<{ group: Pick<Group, 'ID'> }>) => {
+            const group = getGroupFromState(state, action.payload.group);
+            if (group && group.roleState !== 'initial') {
+                group.roleState = 'stale';
+            }
+        },
         removeGroup: (state, action: PayloadAction<string>) => {
             if (state.value && action.payload) {
                 state.value = state.value.filter((group) => group.ID !== action.payload);
@@ -243,7 +249,8 @@ const slice = createSlice({
         });
     },
 });
-export const { addGroup, updateGroup, updateGroups, removeGroup, setNoEncryptFlag } = slice.actions;
+export const { addGroup, updateGroup, updateGroups, removeGroup, setNoEncryptFlag, invalidateGroupRoles } =
+    slice.actions;
 export const groupsReducer = { [name]: slice.reducer };
 export const groupsActions = slice.actions;
 export const groupThunk = modelThunk.thunk;

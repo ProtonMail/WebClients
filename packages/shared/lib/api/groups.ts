@@ -89,9 +89,7 @@ interface AddInternalGroupMemberParameters extends BaseAddInternalGroupMemberPar
 
 export const addGroupMember = (
     data:
-        | AddExternalGroupMemberParameters
-        | AddInternalNonPrivateGroupMemberParameters
-        | AddInternalGroupMemberParameters
+        AddExternalGroupMemberParameters | AddInternalNonPrivateGroupMemberParameters | AddInternalGroupMemberParameters
 ) => ({
     method: 'post',
     url: 'core/v4/groups/members',
@@ -153,11 +151,6 @@ export const resumeGroupMember = (groupMemberID: string) => ({
 export const reinviteGroupMember = (groupMemberID: string) => ({
     method: 'put',
     url: `core/v4/groups/${groupMemberID}/reinvite`,
-});
-
-export const deleteAllGroupMembers = (groupID: string) => ({
-    method: 'delete',
-    url: `core/v4/groups/members/${groupID}`,
 });
 
 export const resendGroupInvitation = (groupMemberID: string) => ({

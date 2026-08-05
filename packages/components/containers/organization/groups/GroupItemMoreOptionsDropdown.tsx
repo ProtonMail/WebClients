@@ -12,7 +12,6 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { Group } from '@proton/shared/lib/interfaces';
 
 import DeleteGroupPrompt from './DeleteGroupPrompt';
-import GroupItemActionPrompt from './GroupItemActionPrompt';
 import { useGroupsManagement } from './context/GroupsManagementContext';
 import { GROUPS_RESTRICTION_REASON } from './types';
 
@@ -20,35 +19,19 @@ interface Props {
     group: Group;
     showMailFeatures: boolean;
     handleDeleteGroup: () => Promise<void>;
-    handleDeleteAllGroupMembers: () => Promise<void>;
 }
 
-const GroupItemMoreOptionsDropdown = ({
-    group,
-    showMailFeatures,
-    handleDeleteGroup,
-    handleDeleteAllGroupMembers,
-}: Props) => {
+const GroupItemMoreOptionsDropdown = ({ group, showMailFeatures, handleDeleteGroup }: Props) => {
     const { restrictedBy, selectedGroup } = useGroupsManagement();
     const isScimGroup = getIsScimGroup(group);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const deleteGroupPrompt = useModalStateObject();
-    const removeAllMembersPrompt = useModalStateObject();
 
     const isResumingRoleAssignment =
         restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT && restrictedBy.groupId === group.ID;
     const isDeleteGroupDisabled = isResumingRoleAssignment || isScimGroup;
     return (
         <>
-            {removeAllMembersPrompt.render && (
-                <GroupItemActionPrompt
-                    title={c('Title').t`Remove all members?`}
-                    buttonTitle={c('Action').t`Remove all members`}
-                    children={c('Info').t`Are you sure you want to remove all members from this group?`}
-                    onConfirm={handleDeleteAllGroupMembers}
-                    {...removeAllMembersPrompt.modalProps}
-                />
-            )}
             {deleteGroupPrompt.render && (
                 <DeleteGroupPrompt
                     group={selectedGroup!}
