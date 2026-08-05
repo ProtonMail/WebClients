@@ -1,9 +1,12 @@
 import { createSelector } from '@reduxjs/toolkit';
 
+import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
+import { getOrgEntitlementQuantity } from '@proton/payments/core/entitlements/helpers';
 import { type EnhancedMember, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 
+import { selectEntitlements } from '../entitlements';
 import { selectGroupMembers } from '../groupMembers';
 import { selectGroups } from '../groups';
 import { getIsScimGroup, getIsScimGroupPendingKeys } from '../groups/groupFlags';
@@ -55,9 +58,15 @@ export const selectPendingScimGroups = createSelector(
     selectOrganization,
     selectGroups,
     selectPendingScimMembersByGroup,
-    (organizationState, groupsState, pendingMembersByGroup) => {
+    selectEntitlements,
+    (organizationState, groupsState, pendingMembersByGroup, entitlementsState) => {
         // Orgs on plans with the keyless-sso entitlement must not see or approve pending SCIM groups.
         if (hasKeylessSsoEntitlement(organizationState.value?.PlanName)) {
+            return [];
+        }
+
+        // Same for orgs whose plan doesn't grant the groups entitlement, and while entitlements load.
+        if (!entitlementsState.value || !getOrgEntitlementQuantity(entitlementsState.value, EntitlementName.Groups)) {
             return [];
         }
 
