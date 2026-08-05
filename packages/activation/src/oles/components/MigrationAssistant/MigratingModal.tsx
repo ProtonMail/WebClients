@@ -31,15 +31,15 @@ const MigratingModal = ({ variant }: { variant: ModalVariant }) => {
         }
     > = {
         migrating: {
-            title: c('BOSS').t`Creating accounts`,
-            subtitle: c('BOSS')
+            title: c('Title').t`Creating accounts`,
+            subtitle: c('Info')
                 .t`We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${BRAND_NAME} account.`,
             getAnimationData: () => import('../../animations/creatingAccounts.json'),
             initialSegment: animationsEnabled ? undefined : [28, 28],
         },
         completing: {
-            title: c('BOSS').t`Going private`,
-            subtitle: c('BOSS')
+            title: c('Title').t`Going private`,
+            subtitle: c('Info')
                 .t`We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.`,
             getAnimationData: () => import('../../animations/goingPrivate.json'),
             initialSegment: animationsEnabled ? undefined : [28, 28],
@@ -71,7 +71,7 @@ const MigratingModal = ({ variant }: { variant: ModalVariant }) => {
                     <p className="m-0 color-weak">{subtitle}</p>
                     <p className="color-danger flex items-center justify-center gap-2">
                         <IcInfoCircle />
-                        {c('BOSS').t`Please don’t close or refresh this window.`}
+                        {c('Warning').t`Please don’t close or refresh this window.`}
                     </p>
                 </div>
             </ModalTwoContent>

@@ -75,7 +75,7 @@ const ProviderCard = ({
             // For OLES-supported providers, only administrators can use Org-Level Easy Switch
             if (isProviderSupported(provider) && !olesFeatureStatus.allowedForUser) {
                 return createNotification({
-                    text: c('BOSS').t`Contact your administrator to start a migration.`,
+                    text: c('Error').t`Contact your administrator to start a migration.`,
                 });
             }
 
