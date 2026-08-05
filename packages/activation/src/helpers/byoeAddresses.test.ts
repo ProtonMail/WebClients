@@ -52,15 +52,6 @@ const sync2 = {
     startDate: 0,
 };
 
-const disabledAddressSync = {
-    id: 'sync3',
-    account: 'test4@gmail.com',
-    importerID: 'importer3',
-    product: ImportType.MAIL,
-    state: ApiSyncState.ACTIVE,
-    startDate: 0,
-};
-
 describe('byoeAddresses', () => {
     it('should return expected data', () => {
         const addresses: Address[] = [enabledBYOEAddress, disconnectedBYOEAddress, internalAddress];
@@ -73,9 +64,11 @@ describe('byoeAddresses', () => {
         expect(addressesOrSyncs).toEqual(syncs);
     });
 
-    it('should not count a disabled BYOE address nor its paired sync towards the quota', () => {
+    // The backend deletes the paired sync when a BYOE address is disabled or disconnected, so those syncs never
+    // reach the frontend. The address itself remains, and is excluded from the active count by its status/flags.
+    it('should not count a disabled BYOE address towards the quota', () => {
         const addresses: Address[] = [enabledBYOEAddress, disabledBYOEAddress, internalAddress];
-        const syncs: Sync[] = [sync1, disabledAddressSync];
+        const syncs: Sync[] = [sync1];
 
         const { byoeAddresses, activeBYOEAddresses, addressesOrSyncs } = getBYOEAddressesCounts(addresses, syncs);
 
@@ -84,20 +77,24 @@ describe('byoeAddresses', () => {
         expect(addressesOrSyncs).toEqual([sync1]);
     });
 
-    it('should exclude a disconnected BYOE address paired sync from the count', () => {
-        const disconnectedAddressSync = {
-            id: 'sync4',
-            account: 'test2@gmail.com',
-            importerID: 'importer4',
-            product: ImportType.MAIL,
-            state: ApiSyncState.ACTIVE,
-            startDate: 0,
-        };
+    it('should not count a disconnected BYOE address towards the quota', () => {
         const addresses: Address[] = [enabledBYOEAddress, disconnectedBYOEAddress];
-        const syncs: Sync[] = [sync1, disconnectedAddressSync];
+        const syncs: Sync[] = [sync1];
 
-        const { addressesOrSyncs } = getBYOEAddressesCounts(addresses, syncs);
+        const { byoeAddresses, activeBYOEAddresses, addressesOrSyncs } = getBYOEAddressesCounts(addresses, syncs);
 
+        expect(byoeAddresses).toEqual([enabledBYOEAddress, disconnectedBYOEAddress]);
+        expect(activeBYOEAddresses).toEqual([enabledBYOEAddress]);
         expect(addressesOrSyncs).toEqual([sync1]);
+    });
+
+    it('should fall back to the address count when syncs have not loaded yet', () => {
+        const addresses: Address[] = [enabledBYOEAddress, internalAddress];
+        const syncs: Sync[] = [];
+
+        const { activeBYOEAddresses, addressesOrSyncs } = getBYOEAddressesCounts(addresses, syncs);
+
+        expect(activeBYOEAddresses).toEqual([enabledBYOEAddress]);
+        expect(addressesOrSyncs).toEqual([enabledBYOEAddress]);
     });
 });
