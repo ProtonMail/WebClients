@@ -4,10 +4,8 @@ import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import useApi from '@proton/components/hooks/useApi';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
-import { deleteAllGroupMembers } from '@proton/shared/lib/api/groups';
 import type { EnhancedGroup } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -27,7 +25,6 @@ interface Props {
 }
 
 const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGroup }: Props) => {
-    const api = useApi();
     const [organization] = useOrganization();
     const { groupRolesMap, restrictedBy } = useGroupsManagement();
     const showMailFeatures = shouldShowMail(organization?.PlanName);
@@ -41,12 +38,6 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
     const handleDeleteGroup = async () => {
         onDeleteGroup?.();
     };
-
-    const handleDeleteAllGroupMembers = group
-        ? async () => {
-              await api(deleteAllGroupMembers(group.ID));
-          }
-        : undefined;
 
     const name = (serializedGroup?.payload.name ?? group?.Name) || c('Empty group name').t`Unnamed`;
     const email = serializedGroup?.payload.email || group?.Address?.Email || '';
@@ -115,13 +106,12 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
                             </p>
                         )}
                     </div>
-                    {group && !isNew && handleDeleteAllGroupMembers && (
+                    {group && !isNew && (
                         <div className="shrink-0">
                             <GroupItemMoreOptionsDropdown
                                 group={group}
                                 showMailFeatures={showMailFeatures}
                                 handleDeleteGroup={handleDeleteGroup}
-                                handleDeleteAllGroupMembers={handleDeleteAllGroupMembers}
                             />
                         </div>
                     )}
