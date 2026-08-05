@@ -1,10 +1,19 @@
 import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
 import type { PLANS } from '@proton/payments/core/constants';
-import { useFlag } from '@proton/unleash/useFlag';
+import { useVariant } from '@proton/unleash/useVariant';
+
+/**
+ * A/B test on the referral signup.
+ * Flag disabled or variant A: default behaviour (trial).
+ * Variant B: no trial for plans requiring a credit card.
+ */
+export const useIsVPNReferralWithoutTrialVariantB = () => {
+    return useVariant('VPNReferralWithoutTrial').name === 'B';
+};
 
 export const useIsVPNPlanWithoutTrialVariant = (plan: PLANS) => {
-    const isVPNReferralWithoutTrialEnabled = useFlag('VPNReferralWithoutTrial');
+    const isVariantB = useIsVPNReferralWithoutTrialVariantB();
     const { eligibleTrials } = useEligibleTrials();
 
-    return isVPNReferralWithoutTrialEnabled && eligibleTrials.creditCardRequiredPlans.includes(plan);
+    return isVariantB && eligibleTrials.creditCardRequiredPlans.includes(plan);
 };
