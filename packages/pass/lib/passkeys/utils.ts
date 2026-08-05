@@ -6,7 +6,7 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getBrowser, getDevice } from '@proton/shared/lib/helpers/browser';
 
-import type { SanitizedPasskey } from './types';
+import type { PasskeyCreateBridgePayload, SanitizedPasskey } from './types';
 
 export const parsePasskey = (passkey: SanitizedPasskey): Passkey => ({
     ...passkey,
@@ -14,6 +14,11 @@ export const parsePasskey = (passkey: SanitizedPasskey): Passkey => ({
     credentialId: Uint8Array.fromBase64(passkey.credentialId),
     userHandle: Uint8Array.fromBase64(passkey.userHandle),
     userId: Uint8Array.fromBase64(passkey.userId),
+});
+
+/** Strips internal passkey signing state before relaying a create response to the page. */
+export const intoPasskeyCreateBridgeResponse = (response: WasmGeneratePasskeyResponse): PasskeyCreateBridgePayload => ({
+    credential: response.credential,
 });
 
 export const sanitizePasskey = (response: WasmGeneratePasskeyResponse, config: PassConfig): SanitizedPasskey => ({
