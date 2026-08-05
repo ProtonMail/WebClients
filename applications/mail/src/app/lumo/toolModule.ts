@@ -39,6 +39,8 @@ export interface MailToolDeps {
     getFilters: () => Filter[];
     getMailSettings: () => MailSettings;
     applyLocation: ApplyLocation;
+    loadConversation: (conversationID: string) => Promise<unknown>;
+    initializeMessage: (messageID: string, labelID: string) => Promise<void>;
 }
 
 /**
