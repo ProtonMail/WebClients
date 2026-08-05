@@ -45,55 +45,55 @@ const useB2BOnboardingSteps = (): [Record<StepName, Step> | undefined, boolean] 
 
     const steps: Record<StepName, Step> = {
         billing: {
-            text: c('BOSS').t`Set up billing information`,
+            text: c('Onboarding step').t`Set up billing information`,
             action: (props) => (
-                <ButtonLike {...props} size="small" as={SettingsLink} path="/dashboard#payment-methods">{c('BOSS')
+                <ButtonLike {...props} size="small" as={SettingsLink} path="/dashboard#payment-methods">{c('Action')
                     .t`Change`}</ButtonLike>
             ),
             state: 'completed',
         },
         '2fa': {
-            text: c('BOSS').t`Set up two-factor authentication`,
+            text: c('Onboarding step').t`Set up two-factor authentication`,
             action: (props) => (
-                <ButtonLike {...props} size="small" as={SettingsLink} path="/account-password#two-fa">{c('BOSS')
+                <ButtonLike {...props} size="small" as={SettingsLink} path="/account-password#two-fa">{c('Action')
                     .t`Set up`}</ButtonLike>
             ),
             state: Boolean(userSettings['2FA'].Enabled) ? 'completed' : 'not-completed',
         },
         'add-domain': {
-            text: c('BOSS').t`Add a domain`,
-            description: c('BOSS').t`Required to create user accounts`,
+            text: c('Onboarding step').t`Add a domain`,
+            description: c('Description').t`Required to create user accounts`,
             action: (props) => (
-                <ButtonLike {...props} size="small" as={SettingsLink} path="/domain-names">{c('BOSS')
+                <ButtonLike {...props} size="small" as={SettingsLink} path="/domain-names">{c('Action')
                     .t`Configure`}</ButtonLike>
             ),
             state: Boolean(customDomains?.length) ? 'completed' : 'not-completed',
         },
         'verify-domain': {
-            text: c('BOSS').t`Verify domain ownership`,
+            text: c('Onboarding step').t`Verify domain ownership`,
             action: (props) => (
-                <ButtonLike {...props} size="small" as={SettingsLink} path="/domain-names">{c('BOSS')
+                <ButtonLike {...props} size="small" as={SettingsLink} path="/domain-names">{c('Action')
                     .t`Configure`}</ButtonLike>
             ),
             state: Boolean(customDomains?.find(getIsDomainActive)) ? 'completed' : 'not-completed',
         },
         'authenticate-provider': {
-            text: c('BOSS').t`Authenticate to Google Workspace`,
+            text: c('Onboarding step').t`Authenticate to Google Workspace`,
             state: Boolean(tokens?.length) ? 'completed' : 'not-completed',
         },
         'install-migration-assistant': {
-            text: c('BOSS').t`Install Migration assistant`,
+            text: c('Onboarding step').t`Install Migration assistant`,
             state: Boolean(importerOrgs?.length) ? 'completed' : 'not-completed',
         },
         'configure-migration': {
-            text: c('BOSS').t`Configure migration`,
+            text: c('Onboarding step').t`Configure migration`,
             state: Boolean(importerOrgs?.length) ? 'completed' : 'not-completed',
         },
         migrate: {
-            text: c('BOSS').t`Migrate users to ${BRAND_NAME}`,
+            text: c('Onboarding step').t`Migrate users to ${BRAND_NAME}`,
             action: (props) => (
                 <ButtonLike {...props} size="small" as={SettingsLink} path="/migration-assistant">
-                    {c('BOSS').t`Start migration`}
+                    {c('Action').t`Start migration`}
                 </ButtonLike>
             ),
             state: Boolean(importerOrgs?.length && (organization?.UsedMembers ?? 0) > 1)
@@ -101,7 +101,7 @@ const useB2BOnboardingSteps = (): [Record<StepName, Step> | undefined, boolean] 
                 : 'not-completed',
         },
         'finalize-migration': {
-            text: c('BOSS').t`Finalize your migration`,
+            text: c('Onboarding step').t`Finalize your migration`,
             state: (() => {
                 if (Boolean(importerOrgs?.some((o) => o.State === ApiImporterOrganizationState.COMPLETED))) {
                     return 'partial';
