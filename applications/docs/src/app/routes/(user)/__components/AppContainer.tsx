@@ -15,6 +15,7 @@ import {
 } from '~/utils/docs-url-bar'
 import { useInitializeApplication } from './useInitializeApplication'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import { HOMEPAGE_PATHS, HOMEPAGE_RECENTS_PATH } from '../__utils/homepage-paths'
 
 // container
 // ---------
@@ -58,10 +59,6 @@ function Content() {
 
 const HomepagePage = lazy(() => import('../(homepage)/recents/page'))
 const DocumentPage = lazy(() => import('../(document)/doc/page'))
-
-export const HOMEPAGE_RECENTS_PATH = '/recents'
-export const HOMEPAGE_TRASH_PATH = '/trash'
-export const HOMEPAGE_PATHS = [HOMEPAGE_RECENTS_PATH, HOMEPAGE_TRASH_PATH]
 
 type AppRoutesProps = { driveCompat: DriveCompat }
 
