@@ -5,7 +5,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 export const useMoveToPrimaryBadge = () => {
     const flagVariant = useVariant('CategoryViewVariant');
-    const experimentBucket = flagVariant.name !== 'RecategorizationButton';
+    const experimentBucket = flagVariant.name === 'RecategorizationButton';
 
     const shouldShowMoveToPrimaryBadge = useMailSelector(selectShouldShowMoveToPrimaryBadge);
 

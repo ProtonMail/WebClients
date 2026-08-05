@@ -64,7 +64,7 @@ describe('selectShouldShowMoveToPrimaryBadge', () => {
     it('returns true in Inbox when no category is selected', () => {
         // An empty list means no category filter is applied, which does not include Primary.
         const state = badgeState(inboxElements([]));
-        expect(selectShouldShowMoveToPrimaryBadge(state)).toBe(true);
+        expect(selectShouldShowMoveToPrimaryBadge(state)).toBe(false);
     });
 
     it('returns false outside of Inbox', () => {

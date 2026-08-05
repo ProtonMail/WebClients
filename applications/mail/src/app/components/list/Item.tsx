@@ -61,6 +61,7 @@ interface Props {
     onFocus: (elementID: string) => void;
     userSettings: UserSettings;
     labels?: Label[];
+    shouldShowPrimaryBadge: boolean;
 }
 
 const Item = ({
@@ -84,6 +85,7 @@ const Item = ({
     onFocus,
     userSettings,
     labels,
+    shouldShowPrimaryBadge,
 }: Props) => {
     const { listSpotlightStep, userIsInB2COnboardingFlow } = useCategoriesOnboarding();
 
@@ -251,6 +253,7 @@ const Item = ({
                     attachmentsMetadata={filteredThumbnails}
                     userSettings={userSettings}
                     oneTimeCode={oneTimeCode}
+                    shouldShowPrimaryBadge={shouldShowPrimaryBadge}
                 />
             </div>
         </div>

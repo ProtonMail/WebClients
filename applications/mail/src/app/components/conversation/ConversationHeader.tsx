@@ -1,10 +1,17 @@
-import { useMemo } from 'react';
+import { type MouseEvent, useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
+import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isElementConversation } from '../../helpers/elements';
@@ -25,7 +32,10 @@ const ConversationHeader = ({ className, loading, element, showBackButton = fals
     const { highlightMetadata, shouldHighlight } = useEncryptedSearchContext();
     const highlightSubject = shouldHighlight();
 
+    const categoryIDs = useMailSelector(selectCategoryIDs);
+    const { applyLocation } = useApplyLocation();
     const shouldShowPrimaryBadge = useMoveToPrimaryBadge();
+    const { sendReportRecategorizeExperiment } = useCategoriesTelemetry();
 
     const isConversation = isElementConversation(element);
     const subjectElement = useMemo(
@@ -38,6 +48,24 @@ const ConversationHeader = ({ className, loading, element, showBackButton = fals
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CBE081
         [element, highlightSubject]
     );
+
+    const handlePrimaryMoveClick = (event: MouseEvent) => {
+        event.stopPropagation();
+
+        if (!element) {
+            return;
+        }
+
+        void applyLocation({
+            type: APPLY_LOCATION_TYPES.MOVE,
+            elements: [element],
+            destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+        });
+
+        if (categoryIDs[0]) {
+            sendReportRecategorizeExperiment(categoryIDs[0]);
+        }
+    };
 
     return (
         <header
@@ -74,7 +102,9 @@ const ConversationHeader = ({ className, loading, element, showBackButton = fals
                     )}
                 </h1>
             </div>
-            {shouldShowPrimaryBadge && element && <MoveToPrimaryBadge element={element} className="mt-2" />}
+            {shouldShowPrimaryBadge && element && (
+                <MoveToPrimaryBadge onClick={handlePrimaryMoveClick} className="mt-2" />
+            )}
         </header>
     );
 };
