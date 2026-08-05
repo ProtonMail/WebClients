@@ -7,6 +7,7 @@ import { useLumoFlags } from '../hooks/useLumoFlags';
 import { MainLayout } from '../layouts/MainLayout';
 import { GhostChatProvider } from '../providers/GhostChatProvider';
 import { PandocProvider } from '../providers/PandocProvider';
+import { LUMO_ROUTES } from './lumoRoutes';
 
 const ConversationPage = lazy(() =>
     import('../layouts/ConversationPage').then((m) => ({ default: m.ConversationPage }))
@@ -31,10 +32,10 @@ export function InnerApp() {
                 <Switch>
                     {/* Standalone full-screen experience, rendered without the Lumo sidebar/header. */}
                     {aiPaperTrail && (
-                        <Route exact path="/ai-paper-trail">
+                        <Route exact path={LUMO_ROUTES.AI_PAPER_TRAIL}>
                             <GhostChatProvider>
-                                <Suspense fallback={<ConversationSkeleton/>}>
-                                    <AiPaperTrailView/>
+                                <Suspense fallback={<ConversationSkeleton />}>
+                                    <AiPaperTrailView />
                                 </Suspense>
                             </GhostChatProvider>
                         </Route>
