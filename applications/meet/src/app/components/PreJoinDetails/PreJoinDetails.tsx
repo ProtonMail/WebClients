@@ -18,6 +18,7 @@ import {
     selectMeetingLink,
     selectRoomName,
 } from '@proton/meet/store/slices/meetingInfo';
+import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
 import clsx from '@proton/utils/clsx';
 
@@ -55,6 +56,7 @@ export const PreJoinDetails = ({
     const isHost = useMeetSelector(selectCanManageWaitingRoom);
     const meetingLink = useMeetSelector(selectMeetingLink);
     const showWaitingRoomAdmission = useMeetSelector(selectIsWaitingRoomAdmissionActive);
+    const waitingRoomEnabled = useMeetSelector(selectWaitingRoomSetting);
 
     const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
 
@@ -105,6 +107,12 @@ export const PreJoinDetails = ({
                 >
                     {actionLabel}
                 </Button>,
+                ...(!showHostScreen && waitingRoomEnabled
+                    ? [
+                          <span className="color-hint text-sm text-no-bold">{c('Info')
+                              .t`This meeting has a waiting room`}</span>,
+                      ]
+                    : []),
             ]}
             loading={isMeetingLoading}
         >

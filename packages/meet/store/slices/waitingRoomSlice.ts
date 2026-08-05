@@ -6,8 +6,9 @@ import { SECOND } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { MeetState } from '../rootReducer';
-import { selectCanManageWaitingRoom } from './meetingInfo';
+import { selectCanManageWaitingRoom, selectMaxParticipants } from './meetingInfo';
 import { selectParticipantDecryptedNameMap } from './participants/participantsSlice';
+import { selectTotalParticipantCount } from './participants/sortedParticipantsSlice';
 import { selectWaitingRoomSetting } from './settings';
 
 export type WaitingRoomJoinRequest = {
@@ -177,6 +178,17 @@ export const selectIsWaitingRoomAdmissionActive = (state: MeetState) => {
 };
 export const selectIsWaitingRoomRejected = (state: MeetState) =>
     state.waitingRoom.admissionStatus === WaitingRoomAdmissionStatus.REJECTED;
+export const selectCanAdmitAll = createSelector(
+    [selectWaitingParticipantsCount, selectTotalParticipantCount, selectMaxParticipants],
+    (waitingParticipantsCount, totalParticipantCount, maxParticipants) =>
+        // Admit all button is enabled if
+        // thee are waiting participants waiting to join
+        waitingParticipantsCount > 0 &&
+        // There is no max participant limit
+        (maxParticipants === 0 ||
+            // There are enough slots to admit all waiting participants
+            totalParticipantCount + waitingParticipantsCount <= maxParticipants)
+);
 
 // Returns a hash of the missing names from the waiting room
 export const selectMissingNamesFromWaitingRoomHash = createSelector(

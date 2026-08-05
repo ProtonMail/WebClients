@@ -92,6 +92,7 @@ export const OptionButton = ({
                         description={description}
                         labelColor={showIcon ? 'color-norm' : 'color-weak'}
                         descriptionColor={showIcon ? 'color-norm' : 'color-weak'}
+                        size="medium"
                     />
                 </div>
             ) : (
