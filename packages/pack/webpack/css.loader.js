@@ -44,6 +44,15 @@ module.exports = ({ browserslist, noLogicalScss }) => {
                 implementation: require('sass'),
                 sassOptions: {
                     outputStyle: 'compressed',
+                    /** Dart Sass prepends a UTF-8 BOM to any compressed module whose output
+                     * contains non-ASCII (sass-loader forces `style: 'compressed'` in
+                     * production, so this only bites prod builds). postcss >=8.5.20 preserves
+                     * that BOM where older versions silently dropped it, so once
+                     * mini-css-extract concatenates the modules the BOMs sit mid-file, and
+                     * esbuild escapes them into the following selector — `\feff body:before`
+                     * never matches, which silently breaks useActiveBreakpoint. Nothing
+                     * downstream needs the declaration: esbuild escapes non-ASCII to ASCII. */
+                    charset: false,
                 },
             },
         },
