@@ -5,21 +5,19 @@ import {
     NodeType,
     type PhotoAttributes,
     type PhotoNode,
-    type Revision,
 } from '@protontech/drive-sdk';
 
 import { getNodeName } from '../../modules/nodes/internal/getNodeName';
 
-// NodeEntity.name and activeRevision are result types that must be unwrapped before use in legacy code.
-// NormalizedNode provides pre-unwrapped versions for consumers that can't handle result types directly.
-export type NormalizedNode = Omit<NodeEntity, 'name' | 'activeRevision'> & {
+// NodeEntity.name is a result type that must be unwrapped before use in legacy code.
+// NormalizedNode provides a pre-unwrapped version for consumers that can't handle result types directly.
+export type NormalizedNode = Omit<NodeEntity, 'name'> & {
     name: string;
-    activeRevision?: Revision;
 };
 
 export type GetNodeEntityType = {
     node: NormalizedNode;
-    errors: Map<'name' | 'activeRevision' | 'unhandledError', Error | InvalidNameError>;
+    errors: Map<'name' | 'unhandledError', Error | InvalidNameError>;
     photoAttributes?: PhotoAttributes;
     albumAttributes?: AlbumAttributes;
 };
@@ -31,13 +29,10 @@ const isPhotoNode = (node: NodeEntity): node is PhotoNode => {
 
 // TODO: Do not use. Just use the plain NodeEntity SDK type and getNodeName() for the name.
 export const getNodeEntity = (nodeEntity: NodeEntity): GetNodeEntityType => {
-    const errors = new Map<'name' | 'activeRevision' | 'unhandledError', Error | InvalidNameError>();
+    const errors = new Map<'name' | 'unhandledError', Error | InvalidNameError>();
 
     if (!nodeEntity.name.ok) {
         errors.set('name', nodeEntity.name.error);
-    }
-    if (nodeEntity.activeRevision !== undefined && !nodeEntity.activeRevision.ok) {
-        errors.set('activeRevision', nodeEntity.activeRevision.error);
     }
     if (nodeEntity.errors?.length) {
         errors.set('unhandledError', nodeEntity.errors?.at(0) as Error);
@@ -46,7 +41,6 @@ export const getNodeEntity = (nodeEntity: NodeEntity): GetNodeEntityType => {
     const node: NormalizedNode = {
         ...nodeEntity,
         name: getNodeName(nodeEntity),
-        activeRevision: nodeEntity.activeRevision?.ok ? nodeEntity.activeRevision.value : undefined,
     };
 
     return {

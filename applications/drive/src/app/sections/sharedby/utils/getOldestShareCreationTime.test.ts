@@ -3,7 +3,7 @@ import { MemberRole, type ShareResult } from '@proton/drive';
 import { getOldestShareCreationTime } from './getOldestShareCreationTime';
 
 const createMockShareResult = (overrides: Partial<ShareResult> = {}): ShareResult => ({
-    publicLink: undefined,
+    urlAccess: undefined,
     protonInvitations: [],
     nonProtonInvitations: [],
     members: [],
@@ -23,7 +23,7 @@ describe('getOldestShareCreationTime', () => {
     it('should return publicLink creation time when only public link exists', () => {
         const creationTime = new Date('2023-01-15T10:00:00Z');
         const shareResult = createMockShareResult({
-            publicLink: {
+            urlAccess: {
                 uid: 'public-link-uid',
                 creationTime,
                 expirationTime: undefined,
@@ -57,7 +57,7 @@ describe('getOldestShareCreationTime', () => {
         const memberTime = new Date('2023-01-20T10:00:00Z');
 
         const shareResult = createMockShareResult({
-            publicLink: {
+            urlAccess: {
                 uid: 'public-link-uid',
                 creationTime: publicLinkTime,
                 expirationTime: undefined,
@@ -78,7 +78,7 @@ describe('getOldestShareCreationTime', () => {
     it('should handle same timestamps', () => {
         const sameTime = new Date('2023-01-15T10:00:00Z');
         const shareResult = createMockShareResult({
-            publicLink: {
+            urlAccess: {
                 uid: 'public-link-uid',
                 creationTime: sameTime,
                 expirationTime: undefined,

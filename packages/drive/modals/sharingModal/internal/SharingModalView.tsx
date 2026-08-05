@@ -180,10 +180,12 @@ export const SharingModalView = ({
                     email: invitee.email,
                     role: selectedRole,
                 })),
-                emailOptions: {
-                    message: inviteMessage,
-                    includeNodeName: includeInviteMessage,
-                },
+                emailOptions: includeInviteMessage
+                    ? {
+                          clearTextMessage: inviteMessage,
+                          clearTextNodeName: fileName,
+                      }
+                    : undefined,
             });
         });
 

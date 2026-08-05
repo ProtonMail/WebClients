@@ -67,7 +67,7 @@ const mockShareResult = {
             role: MemberRole.Viewer,
         },
     ],
-    publicLink: {
+    urlAccess: {
         token: 'public-token',
         url: 'https://example.com/public-link',
         role: MemberRole.Viewer,
@@ -341,8 +341,8 @@ describe('useSharingModalState', () => {
         };
         const updatedShareResult = {
             ...mockShareResult,
-            publicLink: {
-                ...mockShareResult.publicLink,
+            urlAccess: {
+                ...mockShareResult.urlAccess,
                 role: MemberRole.Editor,
                 customPassword: 'new-password',
                 expirationTime: new Date('2025-12-31T23:59:59.000Z'),
@@ -351,7 +351,7 @@ describe('useSharingModalState', () => {
 
         when(mockDrive.shareNode)
             .calledWith(mockNodeUid, {
-                publicLink: publicLinkSettings,
+                urlAccess: publicLinkSettings,
             })
             .mockResolvedValue(updatedShareResult);
 
@@ -371,7 +371,7 @@ describe('useSharingModalState', () => {
         });
 
         expect(mockDrive.shareNode).toHaveBeenCalledWith(mockNodeUid, {
-            publicLink: publicLinkSettings,
+            urlAccess: publicLinkSettings,
         });
         expect(mockedCreateNotification).toHaveBeenCalledWith({
             text: 'Public link access updated',
@@ -385,15 +385,15 @@ describe('useSharingModalState', () => {
         };
         const updatedShareResult = {
             ...mockShareResult,
-            publicLink: {
-                ...mockShareResult.publicLink,
+            urlAccess: {
+                ...mockShareResult.urlAccess,
                 customPassword: 'new-password',
             },
         };
 
         when(mockDrive.shareNode)
             .calledWith(mockNodeUid, {
-                publicLink: {
+                urlAccess: {
                     role: MemberRole.Viewer,
                     customPassword: 'new-password',
                     expiration: new Date('2025-04-25T12:17:56.000Z'),
@@ -419,11 +419,11 @@ describe('useSharingModalState', () => {
     it('should create public link', async () => {
         const mockShareResultWithoutPublicLink = {
             ...mockShareResult,
-            publicLink: undefined,
+            urlAccess: undefined,
         };
         const updatedShareResult = {
             ...mockShareResult,
-            publicLink: {
+            urlAccess: {
                 token: 'new-public-token',
                 url: 'https://example.com/new-public-link',
                 role: MemberRole.Viewer,
@@ -432,7 +432,7 @@ describe('useSharingModalState', () => {
 
         when(mockDrive.getSharingInfo).calledWith(mockNodeUid).mockResolvedValue(mockShareResultWithoutPublicLink);
         when(mockDrive.shareNode)
-            .calledWith(mockNodeUid, { publicLink: { role: MemberRole.Viewer } })
+            .calledWith(mockNodeUid, { urlAccess: { role: MemberRole.Viewer } })
             .mockResolvedValue(updatedShareResult);
 
         const { result } = renderHook(() => useSharingModalState(mockProps));
@@ -446,7 +446,7 @@ describe('useSharingModalState', () => {
         });
 
         expect(mockDrive.shareNode).toHaveBeenCalledWith(mockNodeUid, {
-            publicLink: { role: MemberRole.Viewer },
+            urlAccess: { role: MemberRole.Viewer },
         });
         expect(mockBusEmit).toHaveBeenCalled();
     });
@@ -455,11 +455,11 @@ describe('useSharingModalState', () => {
         const onShareSnapshot = jest.fn();
         const mockShareResultWithoutPublicLink = {
             ...mockShareResult,
-            publicLink: undefined,
+            urlAccess: undefined,
         };
         const updatedShareResult = {
             ...mockShareResult,
-            publicLink: {
+            urlAccess: {
                 token: 'new-public-token',
                 url: 'https://example.com/new-public-link',
                 role: MemberRole.Viewer,
@@ -468,7 +468,7 @@ describe('useSharingModalState', () => {
 
         when(mockDrive.getSharingInfo).calledWith(mockNodeUid).mockResolvedValue(mockShareResultWithoutPublicLink);
         when(mockDrive.shareNode)
-            .calledWith(mockNodeUid, { publicLink: { role: MemberRole.Viewer } })
+            .calledWith(mockNodeUid, { urlAccess: { role: MemberRole.Viewer } })
             .mockResolvedValue(updatedShareResult);
 
         const { result } = renderHook(() => useSharingModalState({ ...mockProps, onShareSnapshot }));
@@ -572,11 +572,11 @@ describe('useSharingModalState', () => {
     it('should unshare public link', async () => {
         const updatedShareResult = {
             ...mockShareResult,
-            publicLink: undefined,
+            urlAccess: undefined,
         };
 
         when(mockDrive.unshareNode)
-            .calledWith(mockNodeUid, { publicLink: 'remove' })
+            .calledWith(mockNodeUid, { urlAccess: 'remove' })
             .mockResolvedValue(updatedShareResult);
 
         const { result } = renderHook(() => useSharingModalState(mockProps));
@@ -589,7 +589,7 @@ describe('useSharingModalState', () => {
             await result.current.actions.unsharePublic();
         });
 
-        expect(mockDrive.unshareNode).toHaveBeenCalledWith(mockNodeUid, { publicLink: 'remove' });
+        expect(mockDrive.unshareNode).toHaveBeenCalledWith(mockNodeUid, { urlAccess: 'remove' });
         expect(mockedCreateNotification).toHaveBeenCalledWith({
             text: 'The link to your item was deleted',
         });
@@ -613,7 +613,7 @@ describe('useSharingModalState', () => {
         const updatedShareResult = {
             protonInvitations: [],
             nonProtonInvitations: [],
-            publicLink: undefined,
+            urlAccess: undefined,
             members: [],
         };
 
@@ -720,7 +720,7 @@ describe('useSharingModalState', () => {
         const emptyShareResult = {
             protonInvitations: [],
             nonProtonInvitations: [],
-            publicLink: undefined,
+            urlAccess: undefined,
             members: [],
         };
 
@@ -810,7 +810,7 @@ describe('useSharingModalState', () => {
 
             when(mockDrive.shareNode)
                 .calledWith(mockNodeUid, {
-                    publicLink: {
+                    urlAccess: {
                         role: MemberRole.Editor,
                         expiration: new Date('2025-04-25T12:17:56.000Z'),
                         customPassword: 'test-password',
@@ -841,7 +841,7 @@ describe('useSharingModalState', () => {
             const error = new Error('Create public share failed');
             when(mockDrive.shareNode)
                 .calledWith(mockNodeUid, {
-                    publicLink: { role: MemberRole.Viewer },
+                    urlAccess: { role: MemberRole.Viewer },
                 })
                 .mockRejectedValue(error);
 
@@ -868,7 +868,7 @@ describe('useSharingModalState', () => {
             const onShareSnapshot = jest.fn();
             const error = new Error('Create public share failed');
             when(mockDrive.shareNode)
-                .calledWith(mockNodeUid, { publicLink: { role: MemberRole.Viewer } })
+                .calledWith(mockNodeUid, { urlAccess: { role: MemberRole.Viewer } })
                 .mockRejectedValue(error);
 
             const { result } = renderHook(() => useSharingModalState({ ...mockProps, onShareSnapshot }));
@@ -891,7 +891,7 @@ describe('useSharingModalState', () => {
 
             when(mockDrive.shareNode)
                 .calledWith(mockNodeUid, {
-                    publicLink: {
+                    urlAccess: {
                         role: MemberRole.Editor,
                         expiration: new Date('2025-04-25T12:17:56.000Z'),
                         customPassword: 'test-password',
@@ -985,7 +985,7 @@ describe('useSharingModalState', () => {
 
         it('should handle error when unsharePublic fails', async () => {
             const error = new Error('Unshare public failed');
-            when(mockDrive.unshareNode).calledWith(mockNodeUid, { publicLink: 'remove' }).mockRejectedValue(error);
+            when(mockDrive.unshareNode).calledWith(mockNodeUid, { urlAccess: 'remove' }).mockRejectedValue(error);
 
             const { result } = renderHook(() => useSharingModalState(mockProps));
 

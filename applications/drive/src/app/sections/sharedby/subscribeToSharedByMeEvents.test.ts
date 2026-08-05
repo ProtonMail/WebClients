@@ -110,7 +110,7 @@ describe('subscribeToSharedByMeEvents', () => {
         mockGetOldestShareCreationTime.mockReturnValue(new Date('2023-01-15T10:00:00Z'));
         mockDrive.getNode.mockResolvedValue(createMockNode());
         mockDrive.getSharingInfo.mockResolvedValue({
-            publicLink: {
+            urlAccess: {
                 numberOfInitializedDownloads: 5,
                 url: 'https://proton.me/urls/token#password',
                 expirationTime: new Date('2023-12-31T23:59:59Z'),
