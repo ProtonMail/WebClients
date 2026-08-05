@@ -63,12 +63,12 @@ describe('mapNodeToLegacyItem', () => {
         type: NodeType.File,
         mediaType: 'text/plain',
         isShared: false,
-        isSharedPublicly: false,
+        isSharedByUrl: false,
         creationTime: new Date(fileCreateTime),
         modificationTime: new Date(fileCreateTime),
         trashTime: undefined,
         totalStorageSize: 1024,
-        activeRevision: { ok: true, value: mockRevision },
+        activeRevision: mockRevision,
         folder: undefined,
         treeEventScopeId: 'treeEventScopeId',
         ownedBy: {},
@@ -211,7 +211,7 @@ describe('mapNodeToLegacyItem', () => {
 
         const nodeWithInactiveRevision: NodeEntity = {
             ...mockNodeEntity,
-            activeRevision: { ok: true, value: inactiveRevision },
+            activeRevision: inactiveRevision,
         };
 
         const result = await mapNodeToLegacyItem(nodeWithInactiveRevision, mockShare.shareId, mockDrive);
@@ -228,7 +228,7 @@ describe('mapNodeToLegacyItem', () => {
 
         const nodeWithDifferentSizes: NodeEntity = {
             ...mockNodeEntity,
-            activeRevision: { ok: true, value: revisionWithDifferentSizes },
+            activeRevision: revisionWithDifferentSizes,
             totalStorageSize: 3000,
         };
 
@@ -247,7 +247,7 @@ describe('mapNodeToLegacyItem', () => {
 
         const nodeWithOnlyStorageSize: NodeEntity = {
             ...mockNodeEntity,
-            activeRevision: { ok: true, value: revisionWithOnlyStorageSize },
+            activeRevision: revisionWithOnlyStorageSize,
             totalStorageSize: 3000,
         };
 
@@ -314,13 +314,10 @@ describe('mapNodeToLegacyItem', () => {
         const anonymousFileNode: NodeEntity = {
             ...mockNodeEntity,
             activeRevision: {
-                ok: true,
-                value: {
-                    ...mockRevision,
-                    contentAuthor: {
-                        ok: true,
-                        value: null,
-                    },
+                ...mockRevision,
+                contentAuthor: {
+                    ok: true,
+                    value: null,
                 },
             },
         };
@@ -404,7 +401,7 @@ describe('mapNodeToLegacyItem', () => {
 
         const nodeWithDraftRevision: NodeEntity = {
             ...mockNodeEntity,
-            activeRevision: { ok: true, value: draftRevision },
+            activeRevision: draftRevision,
         };
 
         const result = await mapNodeToLegacyItem(nodeWithDraftRevision, mockShare.shareId, mockDrive);
@@ -424,7 +421,7 @@ describe('mapNodeToLegacyItem', () => {
             type: NodeType.Folder,
             mediaType: undefined,
             isShared: false,
-            isSharedPublicly: false,
+            isSharedByUrl: false,
             creationTime: new Date(shareCreateTime),
             modificationTime: new Date(shareCreateTime),
             trashTime: undefined,

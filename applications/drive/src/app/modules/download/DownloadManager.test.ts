@@ -316,7 +316,7 @@ describe('DownloadManager', () => {
             uid: 'file-1',
             name: { ok: true as const, value: 'file.txt' },
         });
-        const nodeSize = (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0;
+        const nodeSize = node.activeRevision?.storageSize ?? 0;
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
         const controllerCompletion = createDeferred<void>();
@@ -423,9 +423,7 @@ describe('DownloadManager', () => {
             isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(
-                () => (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0
-            ),
+            getClaimedSizeInBytes: jest.fn(() => node.activeRevision?.storageSize ?? 0),
             downloadToStream: jest.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
                 onProgress(32);
                 return controller;
@@ -794,9 +792,7 @@ describe('DownloadManager', () => {
             isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(
-                () => (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0
-            ),
+            getClaimedSizeInBytes: jest.fn(() => node.activeRevision?.storageSize ?? 0),
             downloadToStream: jest.fn(() => controller),
         };
         sdkMock.driveMock.getFileDownloader.mockResolvedValue(fileDownloader);
@@ -852,9 +848,7 @@ describe('DownloadManager', () => {
             isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(
-                () => (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0
-            ),
+            getClaimedSizeInBytes: jest.fn(() => node.activeRevision?.storageSize ?? 0),
             downloadToStream: jest.fn(() => controller),
         };
         sdkMock.driveMock.getFileDownloader.mockResolvedValue(fileDownloader);
@@ -944,7 +938,7 @@ describe('DownloadManager', () => {
             uid: 'buffer-file-1',
             name: { ok: true as const, value: 'video.mp4' },
         });
-        const nodeSize = (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0;
+        const nodeSize = node.activeRevision?.storageSize ?? 0;
 
         const buffer: Uint8Array<ArrayBuffer>[] = [new Uint8Array([1, 2, 3, 4])];
         const mimeType = 'video/mp4';
@@ -1011,7 +1005,7 @@ describe('DownloadManager', () => {
             name: { ok: true as const, value: 'photo.jpg' },
             type: NodeType.Photo,
         });
-        const nodeSize = (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0;
+        const nodeSize = node.activeRevision?.storageSize ?? 0;
         hydrateAndCheckPhotosMock.mockResolvedValue({ nodes: [node] });
 
         const controllerCompletion = createDeferred<void>();
@@ -1077,7 +1071,7 @@ describe('DownloadManager', () => {
             uid: 'file-1',
             name: { ok: true as const, value: 'file.txt' },
         });
-        const nodeSize = (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0;
+        const nodeSize = node.activeRevision?.storageSize ?? 0;
         const revisionUid = 'revision-123';
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
@@ -1151,7 +1145,7 @@ describe('DownloadManager', () => {
             uid: 'file-1',
             name: { ok: true as const, value: 'file.txt' },
         });
-        const nodeSize = (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0;
+        const nodeSize = node.activeRevision?.storageSize ?? 0;
         const revisionUid = 'revision-456';
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
@@ -1243,7 +1237,7 @@ describe('DownloadManager', () => {
                 uid: 'file-1',
                 name: { ok: true as const, value: 'signed.txt' },
             });
-            const nodeSize = (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0;
+            const nodeSize = node.activeRevision?.storageSize ?? 0;
             hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
             const controllerCompletion = createDeferred<void>();

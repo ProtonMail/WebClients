@@ -60,7 +60,7 @@ interface UsePublicLinkResult {
 
 export const loadRootNode = async (url: string, password: string | undefined, isAnonymous: boolean) => {
     const drive = getDrive();
-    const publicLinkClient = await drive.experimental.authPublicLink(url, password, isAnonymous);
+    const publicLinkClient = await drive.experimental.authURLAccess(url, password, isAnonymous);
     const { accessToken, uid } = publicLinkClient.experimental.getSessionInfo();
     metrics.setAuthHeaders(uid, accessToken);
     setPublicLinkClient(publicLinkClient);
@@ -127,7 +127,7 @@ export const usePublicLink = (): UsePublicLinkResult => {
                 : `${window.location.href}#${passwordRef.current}`;
 
             try {
-                const publicLinkInfo = await drive.experimental.getPublicLinkInfo(sdkUrl);
+                const publicLinkInfo = await drive.experimental.getURLAccessInfo(sdkUrl);
 
                 if (publicLinkInfo.isCustomPasswordProtected && !passwordRef.current) {
                     setIsPasswordNeeded(true);

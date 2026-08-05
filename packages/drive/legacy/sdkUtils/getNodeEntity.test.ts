@@ -35,12 +35,12 @@ describe('getNodeEntity', () => {
         type: NodeType.File,
         mediaType: 'text/plain',
         isShared: false,
-        isSharedPublicly: false,
+        isSharedByUrl: false,
         creationTime: new Date('2023-01-01'),
         modificationTime: new Date('2023-01-01'),
         trashTime: undefined,
         totalStorageSize: 1024,
-        activeRevision: { ok: true, value: mockRevision },
+        activeRevision: mockRevision,
         folder: undefined,
         treeEventScopeId: 'tree-event-scope-id',
         ownedBy: {},
@@ -62,52 +62,14 @@ describe('getNodeEntity', () => {
             const nodeWithNameError: NodeEntity = {
                 ...mockNodeEntity,
                 name: { ok: false, error: nameError },
-                activeRevision: { ok: true, value: mockRevision },
             };
 
             const result = getNodeEntity(nodeWithNameError);
 
             expect(result.errors.has('name')).toBe(true);
             expect(result.errors.get('name')).toBe(nameError);
-            expect(result.errors.has('activeRevision')).toBe(false);
             expect(result.node.name).toBe('⚠️ Undecryptable name');
             expect(result.node.activeRevision).toBe(mockRevision);
-        });
-
-        it('should handle activeRevision error only', () => {
-            const revisionError = new Error('Revision validation failed');
-            const nodeWithRevisionError: NodeEntity = {
-                ...mockNodeEntity,
-                name: { ok: true, value: 'valid-name.txt' },
-                activeRevision: { ok: false, error: revisionError },
-            };
-
-            const result = getNodeEntity(nodeWithRevisionError);
-
-            expect(result.errors.has('activeRevision')).toBe(true);
-            expect(result.errors.get('activeRevision')).toBe(revisionError);
-            expect(result.errors.has('name')).toBe(false);
-            expect(result.node.name).toBe('valid-name.txt');
-            expect(result.node.activeRevision).toBeUndefined();
-        });
-
-        it('should handle both name and activeRevision errors', () => {
-            const nameError = new Error('Name validation failed');
-            const revisionError = new Error('Revision validation failed');
-            const nodeWithBothErrors: NodeEntity = {
-                ...mockNodeEntity,
-                name: { ok: false, error: nameError },
-                activeRevision: { ok: false, error: revisionError },
-            };
-
-            const result = getNodeEntity(nodeWithBothErrors);
-
-            expect(result.errors.has('name')).toBe(true);
-            expect(result.errors.get('name')).toBe(nameError);
-            expect(result.errors.has('activeRevision')).toBe(true);
-            expect(result.errors.get('activeRevision')).toBe(revisionError);
-            expect(result.node.name).toBe('⚠️ Undecryptable name');
-            expect(result.node.activeRevision).toBeUndefined();
         });
 
         it('should handle invalid name error (with placeholder)', () => {
@@ -115,7 +77,6 @@ describe('getNodeEntity', () => {
             const nodeWithInvalidName: NodeEntity = {
                 ...mockNodeEntity,
                 name: { ok: false, error: { error: stringError, name: 'invalid' } },
-                activeRevision: { ok: true, value: mockRevision },
             };
 
             const result = getNodeEntity(nodeWithInvalidName);
@@ -140,7 +101,6 @@ describe('getNodeEntity', () => {
 
             expect(result.errors.has('name')).toBe(true);
             expect(result.errors.get('name')).toBe(nameError);
-            expect(result.errors.has('activeRevision')).toBe(false);
             expect(result.node.activeRevision).toBeUndefined();
         });
 
@@ -150,7 +110,6 @@ describe('getNodeEntity', () => {
                 ...mockNodeEntity,
                 uid: 'error-node-id',
                 name: { ok: false, error: nameError },
-                activeRevision: { ok: true, value: mockRevision },
             };
 
             const result = getNodeEntity(nodeWithError);
@@ -195,17 +154,15 @@ describe('getNodeEntity', () => {
 
         it('should return errors as a Map with correct key types', () => {
             const nameError = new Error('Name error');
-            const revisionError = new Error('Revision error');
             const nodeWithErrors: NodeEntity = {
                 ...mockNodeEntity,
                 name: { ok: false, error: nameError },
-                activeRevision: { ok: false, error: revisionError },
             };
 
             const result = getNodeEntity(nodeWithErrors);
 
             expect(result.errors).toBeInstanceOf(Map);
-            expect(Array.from(result.errors.keys())).toEqual(expect.arrayContaining(['name', 'activeRevision']));
+            expect(Array.from(result.errors.keys())).toEqual(expect.arrayContaining(['name']));
         });
     });
 });

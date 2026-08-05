@@ -137,8 +137,7 @@ describe('ArchiveStreamGenerator', () => {
         await flushAsync();
         expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
         const scheduledTask = schedulerInstance._tasks[0];
-        const revision = node.activeRevision?.ok ? node.activeRevision.value : undefined;
-        expect(scheduledTask.storageSizeEstimate).toBe(revision?.storageSize ?? 0);
+        expect(scheduledTask.storageSizeEstimate).toBe(node.activeRevision?.storageSize ?? 0);
 
         const completion = scheduledTask.start();
 
