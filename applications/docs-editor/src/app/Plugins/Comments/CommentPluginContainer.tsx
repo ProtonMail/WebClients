@@ -363,7 +363,8 @@ export default function CommentPlugin({
     editor,
   ])
 
-  const containerElement = editor.getRootElement()?.parentElement
+  const commentsOverlayElement = editor.getRootElement()?.closest('.docs-layout-editor-stack')
+  const layoutContainerElement = editor.getRootElement()?.closest('.docs-layout-container')
 
   const [confirmModal, showConfirmModal] = useConfirmActionModal()
 
@@ -422,12 +423,16 @@ export default function CommentPlugin({
         isEditorEditable &&
         createPortal(
           <FloatingQuickActions anchorKey={activeAnchorKey} editor={editor} onAddComment={onAddComment} />,
-          containerElement || document.body,
+          commentsOverlayElement || document.body,
         )}
-      {showCommentsPanel && <CommentsPanel threads={threads} setShowComments={setShowCommentsPanel} />}
+      {showCommentsPanel &&
+        createPortal(
+          <CommentsPanel threads={threads} setShowComments={setShowCommentsPanel} />,
+          layoutContainerElement || document.body,
+        )}
       {(activeThreads.length > 0 || commentInputSelection !== undefined) &&
         !showCommentsPanel &&
-        createPortal(<ContextualComments activeThreads={activeThreads} />, containerElement || document.body)}
+        createPortal(<ContextualComments activeThreads={activeThreads} />, commentsOverlayElement || document.body)}
     </CommentsProvider>
   )
 }
