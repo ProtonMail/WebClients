@@ -1033,6 +1033,9 @@
       ],
       "Stop": [
         "중지"
+      ],
+      "Clear conversation": [
+        "대화 삭제"
       ]
     },
     "action": {
@@ -4264,6 +4267,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom 연결이 만료되었습니다. 계속하려면 재연결하십시오."
+      ],
+      "Invalid URL": [
+        "유효하지 않은 URL"
+      ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
       ]
     },
     "error": {
@@ -7850,6 +7859,9 @@
       ],
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (${ quantity }명 이용 가능)"
+      ],
+      "${ price } per seat": [
+        "사용자당 ${ price }"
       ]
     },
     "meet_2025: Feature": {
@@ -10103,6 +10115,9 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Ask anything…": [
+        "무엇이든 물어보세요..."
       ]
     },
     "Placeholder for contact group name": {
@@ -12764,6 +12779,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "사용자가 초대를 수락하면 역할을 할당할 수 있습니다."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "관리자 규칙을 사용하려면 지원하는 플랜으로 업그레이드하세요."
       ]
     },
     "Validation": {

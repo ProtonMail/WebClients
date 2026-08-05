@@ -1034,6 +1034,12 @@
       ],
       "Reject": [
         "Rechazar"
+      ],
+      "Clear conversation": [
+        "Borrar la conversación"
+      ],
+      "Stop": [
+        "Detener"
       ]
     },
     "action": {
@@ -4306,6 +4312,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Su conexión de Zoom ha expirado. Vuelva a conectarse para continuar."
+      ],
+      "Invalid URL": [
+        "URL inválida"
+      ],
+      "Something went wrong": [
+        "Ocurrió un error."
       ]
     },
     "error": {
@@ -6860,6 +6872,9 @@
       ],
       "Details": [
         "Detalles"
+      ],
+      "Thinking about this": [
+        "Pensando sobre esto"
       ]
     },
     "info": {
@@ -7645,6 +7660,12 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "Client": [
+        "Cliente"
+      ],
+      "Client version": [
+        "Versión del cliente"
       ]
     },
     "label": {
@@ -7951,6 +7972,9 @@
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (para ${ quantity } usuario)",
         "${ MEET_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "${ price } per seat": [
+        "${ price } por licencia"
       ]
     },
     "meet_2025: Feature": {
@@ -10274,6 +10298,9 @@
       ],
       "ZIP code": [
         "Código ZIP"
+      ],
+      "Ask anything…": [
+        "Pregunte cualquier cosa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -12991,6 +13018,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Actualice a un plan que admita usar roles de administrador."
       ]
     },
     "Validation": {
