@@ -1712,6 +1712,24 @@
       ],
       "Reject": [
         "Afwijzen"
+      ],
+      "Clear conversation": [
+        "Gesprek wissen"
+      ],
+      "Open debug menu": [
+        "Open het foutopsporingsmenu"
+      ],
+      "Stop": [
+        "Stop"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Schakel ${ LUMO_SHORT_APP_NAME } in/uit"
+      ],
+      "View guide": [
+        "Bekijk gids"
+      ],
+      "Yes, organize it": [
+        "Ja, organiseer het"
       ]
     },
     "action": {
@@ -1739,6 +1757,9 @@
       ],
       "Skip": [
         "Overslaan"
+      ],
+      "Set up categories": [
+        "Categorieën instellen"
       ]
     },
     "Actions message": {
@@ -4526,6 +4547,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klik met de rechtermuisknop op een e-mail en selecteer 'Verplaatsen naar', of sleep het naar een andere categorie. Soortgelijke e-mails zullen daar in de toekomst automatisch worden gesorteerd."
       ]
     },
     "description": {
@@ -4548,6 +4572,13 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "Van: ${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } nieuw bericht",
+        "${ messageCount } nieuwe berichten"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Van: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -5517,6 +5548,12 @@
       ],
       "Something went wrong, close the modal and try again.": [
         "Er is iets misgegaan. Sluit het venster en probeer opnieuw."
+      ],
+      "Invalid URL": [
+        "Ongeldige URL"
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
       ]
     },
     "error": {
@@ -9374,6 +9411,57 @@
       ],
       "Details": [
         "Details"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-mails → ${ dest }"
+      ],
+      "Move emails": [
+        "Verplaats e-mails"
+      ],
+      "Move here": [
+        "Hierheen verplaatsen"
+      ],
+      "Opened ${ location }": [
+        "${ location } geopend"
+      ],
+      "Read ${ count } email on screen": [
+        "Lees ${ count } e-mail op het scherm",
+        "Lees ${ count } e-mails op het scherm"
+      ],
+      "Read your ${ count } filter": [
+        "Lees uw ${ count } filter",
+        "Lees uw ${ count } filters"
+      ],
+      "Read your ${ count } folder": [
+        "Lees uw ${ count } map",
+        "Lees uw ${ count } mappen"
+      ],
+      "Read your ${ count } label": [
+        "Lees uw ${ count } label",
+        "Lees uw ${ count } labels"
+      ],
+      "Thinking about this": [
+        "Hierover aan het nadenken"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Dit Gmail-adres is geregistreerd bij een ander ${ BRAND_NAME }-account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI en andere). We werken eraan om deze verbinding naadloos te laten verlopen, maar voorlopig moet u een paar stappen ondernemen."
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "U heeft **${ count } gesprek** in uw ${ categoryLabel } categorie",
+        "U heeft **${ count } gesprekken** in uw ${ categoryLabel } categorie"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "U heeft **${ count } bericht** in uw ${ categoryLabel } categorie",
+        "U heeft **${ count } berichten** in uw ${ categoryLabel } categorie"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "U selecteerde **${ checked } gesprek** in uw ${ categoryLabel } categorie",
+        "U selecteerde **${ checked } gesprekken** in uw ${ categoryLabel } categorie"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "U selecteerde **${ checked } bericht** in uw ${ categoryLabel } categorie",
+        "U selecteerde **${ checked } berichten** in uw ${ categoryLabel } categorie"
       ]
     },
     "info": {
@@ -10578,6 +10666,15 @@
       ],
       "Trash": [
         "Prullenbak"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Alles dat uw aandacht nodig heeft, plus e-mails uit uitgeschakelde categorieën"
+      ],
+      "Archive": [
+        "Archiveren"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primair - Alles wat uw aandacht nodig heeft, plus e-mails uit uitgeschakelde categorieën"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11061,6 +11158,9 @@
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (voor ${ quantity } gebruiker)",
         "${ MEET_APP_NAME } (voor ${ quantity } gebruikers)"
+      ],
+      "${ price } per seat": [
+        "${ price } per licentie"
       ]
     },
     "meet_2025: Feature": {
@@ -13377,6 +13477,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Ask anything…": [
+        "Vraag alles..."
       ]
     },
     "Placeholder for contact group name": {
@@ -15307,6 +15410,10 @@
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Verplaatst naar ${ label }. Vergelijkbaar bericht wordt in de toekomst daar ondergebracht.",
+        "Verplaatst naar ${ label }. Vergelijkbare berichten worden in de toekomst daar ondergebracht."
       ]
     },
     "Success notification": {
@@ -16603,6 +16710,18 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Let op: deze Gmail is gekoppeld aan een ander ${ BRAND_NAME }-account"
+      ],
+      "Make your inbox your own": [
+        "Maak uw inbox uw eigen"
+      ],
+      "Move emails": [
+        "Verplaats e-mails"
+      ],
+      "Refine your Categories": [
+        "Verfijn uw categorieën"
       ]
     },
     "Title header for keys table": {
@@ -16777,6 +16896,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
       ]
     },
     "Validation": {

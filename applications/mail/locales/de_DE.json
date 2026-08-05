@@ -1724,6 +1724,12 @@
       ],
       "Yes, organize it": [
         "Ja, ordne es"
+      ],
+      "Open debug menu": [
+        "Fehlerbehebung-Menü öffnen"
+      ],
+      "View guide": [
+        "Anleitung ansehen"
       ]
     },
     "action": {
@@ -5542,6 +5548,94 @@
       ],
       "Something went wrong, close the modal and try again.": [
         "Es ist ein Fehler aufgetreten. Schließe das Modalfenster und versuche es erneut."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Bei der Meldung von Urheberrechtsverletzungen oder gestohlenen Daten ist eine Nachricht erforderlich."
+      ],
+      "Cannot download a folder": [
+        "Ordner kann nicht heruntergeladen werden"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Der Eintrag kann ohne gültigen Namen nicht verschoben werden. Bitte benenne den Eintrag zunächst um."
+      ],
+      "Cannot share root folder": [
+        "Der Stammordner konnte nicht geteilt werden"
+      ],
+      "Copy operation aborted": [
+        "Kopiervorgang abgebrochen"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Bildvorschau konnte nicht geladen werden: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Ein Teil dieser Datei konnte nicht gelesen werden: ${ message }"
+      ],
+      "Could not unlock this item": [
+        "Dieser Eintrag konnte nicht entsperrt werden"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Das Erstellen von Dokumenten außerhalb von Ordnern ist nicht zulässig"
+      ],
+      "Device not found": [
+        "Gerät nicht gefunden"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Name des Lesezeichens konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Name des Eintrags konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "File has no revision": [
+        "Datei hat keine Versionen"
+      ],
+      "Image preview not found": [
+        "Bildvorschau nicht gefunden"
+      ],
+      "Invalid URL": [
+        "Ungültige URL"
+      ],
+      "Invitation not found": [
+        "Einladung nicht gefunden"
+      ],
+      "Item not found": [
+        "Eintrag nicht gefunden"
+      ],
+      "Move operation aborted": [
+        "Verschiebevorgang abgebrochen"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein",
+        "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein"
+      ],
+      "Name must not be empty": [
+        "Name darf nicht leer sein"
+      ],
+      "Operation aborted": [
+        "Vorgang abgebrochen"
+      ],
+      "Photo not found": [
+        "Foto nicht gefunden"
+      ],
+      "Request aborted": [
+        "Anfrage abgebrochen"
+      ],
+      "Something went wrong": [
+        "Etwas ist schief gelaufen."
+      ],
+      "This item is no longer shared": [
+        "Dieser Eintrag wird nicht länger geteilt"
+      ],
+      "This item is not shared": [
+        "Dieser Eintrag wird nicht geteilt"
+      ],
+      "Too many server errors, please try again later": [
+        "Zu viele Server-Fehler, bitte versuche es später erneut"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kannst nur eine neue Version einer Datei hochladen"
+      ],
+      "You do not have access to this item": [
+        "Du hast keinen Zugriff auf diesen Eintrag"
       ]
     },
     "error": {
@@ -9431,6 +9525,25 @@
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "Du hast **${ checked } Nachricht** in deiner Kategorie ${ categoryLabel } ausgewählt",
         "Du hast **${ checked } Nachrichten** in deiner Kategorie ${ categoryLabel } ausgewählt"
+      ],
+      "Read ${ count } email on screen": [
+        "${ count } E-Mail am Bildschirm lesen",
+        "${ count } E-Mails am Bildschirm lesen"
+      ],
+      "Read your ${ count } filter": [
+        "Lies ${ count } Filter",
+        "Lies deine ${ count } Filter"
+      ],
+      "Read your ${ count } folder": [
+        "Lies ${ count } Ordner",
+        "Lies deine ${ count } Ordner"
+      ],
+      "Read your ${ count } label": [
+        "Lies ${ count } Kategorie",
+        "Lies deine ${ count } Kategorien"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Diese Gmail-Adresse ist mit einem anderen ${ BRAND_NAME }-Konto verknüpft (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } KI und andere). Wir arbeiten daran, diese Verknüpfung nahtlos zu gestalten, aber vorerst musst du noch einige Schritte durchführen."
       ]
     },
     "info": {
@@ -16691,6 +16804,9 @@
       ],
       "Refine your Categories": [
         "Verfeinere deine Kategorien"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Achtung: Dieses Gmail-Konto ist mit einem anderen ${ BRAND_NAME }-Konto verknüpft."
       ]
     },
     "Title header for keys table": {
@@ -16865,6 +16981,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Zu einem unterstützten Abonnement upgraden, um Administratorrollen nutzen zu können."
       ]
     },
     "Validation": {
@@ -17333,6 +17452,20 @@
       ],
       "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
         "Benutzer, Gruppen und Speicher für alle Mitglieder verwalten, Rollen und Lizenzen zuweisen."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "Merkmale"
+      ],
+      "key": [
+        "Schlüssel"
+      ],
+      "membership": [
+        "Mitgliedschaft"
+      ],
+      "name": [
+        "Name"
       ]
     }
   }
