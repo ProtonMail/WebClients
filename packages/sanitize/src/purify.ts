@@ -26,6 +26,8 @@ export enum PurifyConfig {
     PROTONIZER = 'protonizer',
     CONTENT = 'content',
     CONTENT_WITHOUT_IMG = 'contentWithoutImg',
+    /** Quoted forward/reply HTML inserted into the composer */
+    COMPOSER_BLOCKQUOTE = 'composerBlockquote',
 }
 
 const CONFIG: { [key in PurifyConfig]: any } = {
@@ -61,6 +63,32 @@ const CONFIG: { [key in PurifyConfig]: any } = {
         RETURN_DOM: true,
         RETURN_DOM_FRAGMENT: true,
         FORBID_TAGS: ['style', 'input', 'form', 'img'],
+    },
+    composerBlockquote: {
+        // Quoted messages have already passed through the Mail renderer. Keep their
+        // presentation and image metadata while removing elements that can execute
+        // code or create a new browsing context inside the composer.
+        // FORBID_TAGS/FORBID_ATTR replace the default entries rather than extending them
+        // (see getConfig), so anything still needed from `default` has to be repeated here.
+        // `style` is intentionally absent from FORBID_TAGS: stripping style tags from quoted
+        // content is gated behind the RemoveReplyStyles flag (see sanitizeComposerReply), and
+        // forbidding them here would make that kill switch unable to restore the old behaviour.
+        ADD_ATTR: ['target', ...LIST_PROTON_ATTR.map((attr) => `proton-${attr}`)],
+        FORBID_ATTR: ['srcset', 'for'],
+        FORBID_TAGS: [
+            'input',
+            'form',
+            'textarea',
+            'script',
+            'iframe',
+            'frame',
+            'object',
+            'embed',
+            'applet',
+            'link',
+            'meta',
+            'base',
+        ],
     },
 };
 
@@ -163,28 +191,36 @@ const filterFormAttributes = (node: Node) => {
     }
 };
 
+/**
+ * DOMPurify hooks are global, so they must be set to the exact state a call needs right before
+ * sanitizing rather than being cleaned up afterwards only.
+ */
 const purifyHTMLHooks = (active: boolean) => {
+    DOMPurify.removeHooks('beforeSanitizeElements');
+    DOMPurify.removeHooks('beforeSanitizeAttributes');
+
     if (active) {
         DOMPurify.addHook('beforeSanitizeElements', beforeSanitizeElements);
         DOMPurify.addHook('beforeSanitizeAttributes', filterFormAttributes);
-        return;
     }
-
-    DOMPurify.removeHook('beforeSanitizeElements');
 };
 
-const clean = (mode: PurifyConfig | 'str') => {
+const clean = (mode: PurifyConfig | 'str', attachHooks = false) => {
     const config = getConfig(mode === 'str' ? PurifyConfig.DEFAULT : mode);
 
     return (input: string | Node): string | Element => {
         DOMPurify.clearConfig();
-        const value = DOMPurify.sanitize(input, config) as string | Element;
-        purifyHTMLHooks(false); // Always remove the hooks
-        if (mode === 'str') {
-            // When a trusted type is available, DOMPurify returns a trustedHTML object and not a string, force cast it.
-            return `${value}`;
+        purifyHTMLHooks(attachHooks);
+        try {
+            const value = DOMPurify.sanitize(input, config) as string | Element;
+            if (mode === 'str') {
+                // When a trusted type is available, DOMPurify returns a trustedHTML object and not a string, force cast it.
+                return `${value}`;
+            }
+            return value;
+        } finally {
+            purifyHTMLHooks(false); // Always remove the hooks
         }
-        return value;
     };
 };
 
@@ -202,8 +238,7 @@ export const html = clean(PurifyConfig.RAW) as (input: Node) => Element;
  * Sanitize input with a config similar than Squire + ours
  */
 export const protonizer = (input: string, attachHooks: boolean): Element => {
-    const process = clean(PurifyConfig.PROTONIZER);
-    purifyHTMLHooks(attachHooks);
+    const process = clean(PurifyConfig.PROTONIZER, attachHooks);
     return process(input) as Element;
 };
 
@@ -247,6 +282,26 @@ export const sanitizeSignature = (input: string) => {
     const process = clean(PurifyConfig.DEFAULT);
     return process(input.replace(/<a\s.*href="(.+?)".*>(.+?)<\/a>/, '[URL: $1] $2'));
 };
+
+const cleanToString = (mode: PurifyConfig) => {
+    // Note: Not using the hooks since the input is already sanitized by the Mail renderer
+    return (input: string): string => {
+        DOMPurify.clearConfig();
+        const config = getConfig(mode);
+        purifyHTMLHooks(false);
+        try {
+            const value = DOMPurify.sanitize(input, config);
+            return `${value}`;
+        } finally {
+            purifyHTMLHooks(false);
+        }
+    };
+};
+
+/**
+ * Sanitize HTML for quoted forward/reply content before it is inserted into the composer.
+ */
+export const sanitizeComposerBlockquoteHtml = cleanToString(PurifyConfig.COMPOSER_BLOCKQUOTE);
 
 /**
  * Cleanup performed for the message displayed in blockquote when replying
