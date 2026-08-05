@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { isMultiUserPersonalPlan } from '@proton/payments/core/plan/helpers';
 import {
     ADDRESS_FLAGS,
     ADDRESS_PERMISSIONS,
@@ -18,7 +17,6 @@ import type {
     Address,
     CachedOrganizationKey,
     Member,
-    Organization,
     PartialMemberAddress,
     UserModel,
 } from '@proton/shared/lib/interfaces';
@@ -62,7 +60,7 @@ export const getPermissions = ({
     address,
     addresses,
     user,
-    organization,
+    isMultiUserPersonalPlan,
     organizationKey,
     addressIndex,
 }: {
@@ -71,7 +69,7 @@ export const getPermissions = ({
     address: Address;
     addresses: PartialMemberAddress[];
     user: UserModel;
-    organization?: Organization;
+    isMultiUserPersonalPlan?: boolean;
     organizationKey?: CachedOrganizationKey;
 }) => {
     const { isAdmin, canPay } = user;
@@ -88,8 +86,7 @@ export const getPermissions = ({
     const isNotEncrypted = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE);
     const isSignatureNotExpected = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED);
 
-    const isB2CPlan = !!organization?.PlanName && isMultiUserPersonalPlan(organization.PlanName);
-    const isAdminOnMemberBYOE = isBYOE && !isSelf && isB2CPlan;
+    const isAdminOnMemberBYOE = isBYOE && !isSelf && !!isMultiUserPersonalPlan;
 
     const canMakeDefault = !isDefault && !getIsNonDefault(address);
 

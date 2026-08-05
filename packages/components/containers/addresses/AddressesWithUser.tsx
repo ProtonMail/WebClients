@@ -29,6 +29,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
+import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import {
@@ -159,6 +160,7 @@ const AddressesUser = ({
     const { createNotification } = useNotifications();
     const [savingIndex, setSavingIndex] = useState<number | undefined>();
     const dispatch = useDispatch();
+    const [entitlements] = useEntitlementChecks();
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
     const sendTelemetryEvent = usePostSubscriptionTourTelemetry();
@@ -336,6 +338,7 @@ const AddressesUser = ({
                                         address,
                                         addresses: list,
                                         user,
+                                        isMultiUserPersonalPlan: entitlements.orgIsMultiUserPersonal,
                                         organizationKey,
                                     })}
                                 />

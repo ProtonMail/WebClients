@@ -12,7 +12,6 @@ import {
     permissionsSendMap,
     setupIncompletePermissionMap,
 } from '@proton/components/containers/addresses/helper';
-import { PLANS } from '@proton/payments/core/constants';
 import {
     ADDRESS_FLAGS,
     ADDRESS_PERMISSIONS,
@@ -21,7 +20,7 @@ import {
     ADDRESS_TYPE,
     MEMBER_TYPE,
 } from '@proton/shared/lib/constants';
-import type { Address, Member, Organization, PartialMemberAddress, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, Member, PartialMemberAddress, UserModel } from '@proton/shared/lib/interfaces';
 
 describe('addresses helper functions', () => {
     describe('canReceive', () => {
@@ -368,9 +367,6 @@ describe('addresses helper functions', () => {
         const selfMember = { Self: 1, Type: MEMBER_TYPE.PROTON } as Member;
         const otherMember = { Self: 0, Type: MEMBER_TYPE.PROTON } as Member;
 
-        const familyOrganization = { PlanName: PLANS.FAMILY } as Organization;
-        const b2bOrganization = { PlanName: PLANS.BUNDLE_PRO_2024 } as Organization;
-
         const buildAddress = (address: Partial<Address> = {}): Address => {
             return {
                 ID: 'address-1',
@@ -387,12 +383,12 @@ describe('addresses helper functions', () => {
         const getBYOEPermissions = ({
             address = buildAddress(),
             member,
-            organization,
+            isMultiUserPersonalPlan = true,
             addresses,
         }: {
             address?: Address;
             member?: Member;
-            organization?: Organization | null;
+            isMultiUserPersonalPlan?: boolean;
             addresses?: PartialMemberAddress[];
         }) => {
             return getPermissions({
@@ -401,7 +397,7 @@ describe('addresses helper functions', () => {
                 address,
                 addresses: addresses ?? ([address] as PartialMemberAddress[]),
                 user: adminUser,
-                organization: organization === undefined ? familyOrganization : (organization ?? undefined),
+                isMultiUserPersonalPlan,
             });
         };
 
@@ -479,24 +475,12 @@ describe('addresses helper functions', () => {
             it('should not allow disabling or enabling on a B2B plan', () => {
                 const enabledPermissions = getBYOEPermissions({
                     member: otherMember,
-                    organization: b2bOrganization,
+                    isMultiUserPersonalPlan: false,
                 });
                 const disabledPermissions = getBYOEPermissions({
                     address: buildAddress({ Status: ADDRESS_STATUS.STATUS_DISABLED }),
                     member: otherMember,
-                    organization: b2bOrganization,
-                });
-
-                expect(enabledPermissions.canDisable).toBe(false);
-                expect(disabledPermissions.canEnable).toBe(false);
-            });
-
-            it('should not allow disabling or enabling when there is no organization', () => {
-                const enabledPermissions = getBYOEPermissions({ member: otherMember, organization: null });
-                const disabledPermissions = getBYOEPermissions({
-                    address: buildAddress({ Status: ADDRESS_STATUS.STATUS_DISABLED }),
-                    member: otherMember,
-                    organization: null,
+                    isMultiUserPersonalPlan: false,
                 });
 
                 expect(enabledPermissions.canDisable).toBe(false);
