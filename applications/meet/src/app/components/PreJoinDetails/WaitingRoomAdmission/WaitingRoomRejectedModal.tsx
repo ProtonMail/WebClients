@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcExclamationFilled } from '@proton/icons/icons/IcExclamationFilled';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsWaitingRoomRejected } from '@proton/meet/store/slices/waitingRoomSlice';
+import warningIcon from '@proton/styles/assets/img/meet/warning-icon.svg';
 
 import { useWaitingRoomContext } from '../../../contexts/WaitingRoomContext';
 import { CTAModalShell } from '../../AnonymousModal/shared/CTAModalShell';
@@ -17,18 +17,19 @@ export const WaitingRoomRejectedModal = () => {
             open={isRejected}
             onClose={leaveWaitingRoom}
             icon={
-                <div
-                    className="flex items-center justify-center shrink-0 rounded-full w-custom h-custom color-danger"
+                <img
+                    className="mx-auto w-custom h-custom"
+                    src={warningIcon}
+                    alt=""
                     style={{
-                        '--w-custom': '4rem',
-                        '--h-custom': '4rem',
-                        backgroundColor: 'color-mix(in srgb, var(--signal-danger) 15%, transparent)',
+                        '--w-custom': '5rem',
+                        '--h-custom': '5rem',
                     }}
-                >
-                    <IcExclamationFilled size={7} />
-                </div>
+                />
             }
             title={c('Title').t`The host didn't admit you`}
+            headerClassName="pt-10"
+            titleClassName="text-semibold"
             subtitle={c('Info')
                 .t`You weren't admitted to this meeting. You can try joining again if you think this was a mistake.`}
             actions={
