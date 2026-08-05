@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useMembers } from '@proton/account/members/hooks';
+import { useMembersUsage } from '@proton/account/members/useMembersUsage';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import { MembersTable } from '@proton/components/containers/members/UsersAndAddressesSection/MembersTable';
 import { MembersTableHeader } from '@proton/components/containers/members/UsersAndAddressesSection/MembersTableHeader';
@@ -11,11 +12,15 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import noop from '@proton/utils/noop';
 
-export const MembersLocal = ({ app }: { app: APP_NAMES }) => {
+export const MembersLocal = ({ app, showUsage = false }: { app: APP_NAMES; showUsage?: boolean }) => {
     const [keywords, setKeywords] = useState('');
     const [members, loadingMembers] = useMembers();
 
     const membersHook = useMemberActions({ app, members, loadingMembers, syncMembers: noop });
+
+    // Fetch usage once for the full member list; client-side search just re-renders over the cached map.
+    const memberIDs = useMemo(() => (members ?? []).map((member) => member.ID), [members]);
+    const membersUsage = useMembersUsage(memberIDs, showUsage);
 
     const filteredMembers = useMemo(() => {
         if (!members) {
@@ -61,7 +66,12 @@ export const MembersLocal = ({ app }: { app: APP_NAMES }) => {
                 {c('Info').ngettext(msgid`${total} user found`, `${total} users found`, total)}
             </span>
 
-            <MembersTable members={filteredMembers} loadingMembers={loadingMembers} membersHook={membersHook} />
+            <MembersTable
+                members={filteredMembers}
+                loadingMembers={loadingMembers}
+                membersHook={membersHook}
+                membersUsage={showUsage ? membersUsage : undefined}
+            />
         </>
     );
 };
