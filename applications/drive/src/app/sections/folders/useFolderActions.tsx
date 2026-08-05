@@ -158,8 +158,8 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
             }
             const shareResult = await drive.getSharingInfo(item.uid);
             return {
-                url: shareResult?.publicLink?.url,
-                isExpired: getPublicLinkIsExpired(shareResult?.publicLink?.expirationTime),
+                url: shareResult?.urlAccess?.url,
+                isExpired: getPublicLinkIsExpired(shareResult?.urlAccess?.expirationTime),
             };
         }
     };

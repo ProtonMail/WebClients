@@ -42,11 +42,11 @@ export function useChangeAddressWhenPubliclyShared(
         .getSharingInfo(generateNodeUid(volumeId, nodeId))
         .then((result) => {
           if (result) {
-            const newAddress = result.publicLink ? getPublicURL(result.publicLink.url) : getPrivateURL(volumeId, nodeId)
+            const newAddress = result.urlAccess ? getPublicURL(result.urlAccess.url) : getPrivateURL(volumeId, nodeId)
 
             const localID = getLocalID()
-            if (result.publicLink && localID) {
-              const { pathname } = new URL(result.publicLink.url)
+            if (result.urlAccess && localID) {
+              const { pathname } = new URL(result.urlAccess.url)
               const token = getToken(pathname)
               CacheService.setLocalIDForDocumentInCache({ token }, localID)
             }

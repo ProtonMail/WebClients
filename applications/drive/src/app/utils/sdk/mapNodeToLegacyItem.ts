@@ -126,7 +126,7 @@ export const mapNodeToLegacyItem = async (
         rootShareId: rootNode.deprecatedShareId || defaultShareId,
         rootUid: rootNode.uid,
         isShared: node.isShared,
-        isSharedPublicly: node.isSharedPublicly,
+        isSharedPublicly: node.isSharedByUrl,
         treeEventScopeId: node.treeEventScopeId,
         hasSignatureIssues: !sdkSignatureIssues.ok,
         type: node.type,

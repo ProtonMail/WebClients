@@ -26,7 +26,7 @@ describe('legacyTime utilities', () => {
         type: NodeType.File,
         mediaType: 'text/plain',
         isShared: false,
-        isSharedPublicly: false,
+        isSharedByUrl: false,
         creationTime,
         modificationTime: serverModificationTime,
         trashTime: undefined,

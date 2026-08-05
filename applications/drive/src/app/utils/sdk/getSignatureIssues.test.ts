@@ -12,7 +12,7 @@ describe('getSignatureIssues', () => {
         type: NodeType.File,
         mediaType: 'text/plain',
         isShared: false,
-        isSharedPublicly: false,
+        isSharedByUrl: false,
         creationTime: baseDate,
         modificationTime: baseDate,
         trashTime: undefined,
@@ -37,11 +37,8 @@ describe('getSignatureIssues', () => {
             keyAuthor: { ok: true, value: 'test@proton.me' },
             nameAuthor: { ok: true, value: 'test@proton.me' },
             activeRevision: {
-                ok: true,
-                value: {
-                    ...baseRevision,
-                    contentAuthor: { ok: true, value: 'content@proton.me' },
-                },
+                ...baseRevision,
+                contentAuthor: { ok: true, value: 'content@proton.me' },
             },
         };
 
@@ -76,11 +73,8 @@ describe('getSignatureIssues', () => {
             },
             nameAuthor: { ok: true, value: 'test@proton.me' },
             activeRevision: {
-                ok: true,
-                value: {
-                    ...baseRevision,
-                    contentAuthor: { ok: true, value: 'content@proton.me' },
-                },
+                ...baseRevision,
+                contentAuthor: { ok: true, value: 'content@proton.me' },
             },
         };
 
@@ -105,11 +99,8 @@ describe('getSignatureIssues', () => {
                 error: { claimedAuthor: 'name@proton.me', error: 'Name verification failed' },
             },
             activeRevision: {
-                ok: true,
-                value: {
-                    ...baseRevision,
-                    contentAuthor: { ok: true, value: 'content@proton.me' },
-                },
+                ...baseRevision,
+                contentAuthor: { ok: true, value: 'content@proton.me' },
             },
         };
 
@@ -131,13 +122,10 @@ describe('getSignatureIssues', () => {
             keyAuthor: { ok: true, value: 'test@proton.me' },
             nameAuthor: { ok: true, value: 'test@proton.me' },
             activeRevision: {
-                ok: true,
-                value: {
-                    ...baseRevision,
-                    contentAuthor: {
-                        ok: false,
-                        error: { claimedAuthor: 'content@proton.me', error: 'Content verification failed' },
-                    },
+                ...baseRevision,
+                contentAuthor: {
+                    ok: false,
+                    error: { claimedAuthor: 'content@proton.me', error: 'Content verification failed' },
                 },
             },
         };
@@ -160,13 +148,10 @@ describe('getSignatureIssues', () => {
             keyAuthor: { ok: true, value: 'test@proton.me' },
             nameAuthor: { ok: true, value: 'test@proton.me' },
             activeRevision: {
-                ok: true,
-                value: {
-                    ...baseRevision,
-                    contentAuthor: {
-                        ok: false,
-                        error: { claimedAuthor: undefined, error: 'Content verification failed' },
-                    },
+                ...baseRevision,
+                contentAuthor: {
+                    ok: false,
+                    error: { claimedAuthor: undefined, error: 'Content verification failed' },
                 },
             },
         };
@@ -195,13 +180,10 @@ describe('getSignatureIssues', () => {
                 error: { claimedAuthor: 'name@proton.me', error: 'Name verification failed' },
             },
             activeRevision: {
-                ok: true,
-                value: {
-                    ...baseRevision,
-                    contentAuthor: {
-                        ok: false,
-                        error: { claimedAuthor: 'content@proton.me', error: 'Content verification failed' },
-                    },
+                ...baseRevision,
+                contentAuthor: {
+                    ok: false,
+                    error: { claimedAuthor: 'content@proton.me', error: 'Content verification failed' },
                 },
             },
         };
@@ -215,21 +197,6 @@ describe('getSignatureIssues', () => {
                 nameAuthor: true,
                 contentAuthor: true,
             },
-        });
-    });
-
-    it('should handle node error with activeRevision error', () => {
-        const node: NodeEntity = {
-            ...baseNodeProps,
-            keyAuthor: { ok: true, value: 'test@proton.me' },
-            nameAuthor: { ok: true, value: 'test@proton.me' },
-            activeRevision: { ok: false, error: new Error('Active revision error') },
-        };
-
-        const result = getSignatureIssues(node);
-
-        expect(result).toEqual({
-            ok: true,
         });
     });
 });
