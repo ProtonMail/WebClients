@@ -15,13 +15,13 @@ import {
     type TelemetryEvents,
     TelemetryMeasurementGroups,
 } from '@proton/shared/lib/api/telemetry';
-import type { CategoryLabelID } from '@proton/shared/lib/constants';
+import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-type RecategorizeSource = 'drag_and_drop' | 'context_menu' | 'move_to_folder';
+type RecategorizeSource = 'drag_and_drop' | 'context_menu' | 'move_to_folder' | 'recategorize_experiment';
 type CategoriesClickSource = 'tab' | 'sidebar' | 'commander' | 'shortcuts';
 
 export const useCategoriesTelemetry = () => {
@@ -143,6 +143,16 @@ export const useCategoriesTelemetry = () => {
             });
         };
 
+        const sendReportRecategorizeExperiment = (sourceLabelId: CategoryLabelID) => {
+            void sendReport(TelemetryCategoriesOnboardingEvents.recategorize_email, {
+                recategorizeSource: 'recategorize_experiment',
+                sourceLabelId,
+                destinationLabelId: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                // The button only moves one element at a time
+                elementsNumber: '1',
+            });
+        };
+
         return {
             sendEventOnboardingAccept,
             sendEventOnboardingDismiss,
@@ -151,6 +161,7 @@ export const useCategoriesTelemetry = () => {
             sendReportToggleNotification,
             sendReportChangeCategorySettings,
             sendReportCategoriesNav,
+            sendReportRecategorizeExperiment,
         };
     }, []);
 };
