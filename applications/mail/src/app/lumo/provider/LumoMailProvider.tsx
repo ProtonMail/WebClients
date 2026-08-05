@@ -9,7 +9,9 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
-import { useMailStore } from 'proton-mail/store/hooks';
+import { useInitializeMessage } from 'proton-mail/hooks/message/useInitializeMessage';
+import { load as loadConversationAction } from 'proton-mail/store/conversations/conversationsActions';
+import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { buildLumoMailConfig } from '../registry';
 import type { MailToolDeps } from '../toolModule';
@@ -27,8 +29,10 @@ interface Props {
  */
 const LumoMailProvider = ({ children }: Props) => {
     const store = useMailStore();
+    const dispatch = useMailDispatch();
     const history = useHistory();
     const { applyLocation } = useApplyLocation();
+    const initializeMessage = useInitializeMessage();
     const [folders = []] = useFolders();
     const [labels = []] = useLabels();
     const [filters = []] = useFilters();
@@ -36,7 +40,17 @@ const LumoMailProvider = ({ children }: Props) => {
 
     // Latest values, refreshed every render, so the once-built handlers always read the current
     // snapshot (mirrors the POC's ref pattern; keeps the config referentially stable).
-    const current = { store, history, applyLocation, folders, labels, filters, mailSettings };
+    const current = {
+        store,
+        dispatch,
+        history,
+        applyLocation,
+        initializeMessage,
+        folders,
+        labels,
+        filters,
+        mailSettings,
+    };
     const latest = useRef(current);
     latest.current = current;
 
@@ -55,6 +69,10 @@ const LumoMailProvider = ({ children }: Props) => {
             getFilters: () => latest.current.filters,
             getMailSettings: () => latest.current.mailSettings,
             applyLocation: (params) => latest.current.applyLocation(params),
+            // Unwrapped so a failed fetch rejects: dispatching a thunk resolves with a rejected action.
+            loadConversation: (conversationID) =>
+                latest.current.dispatch(loadConversationAction({ conversationID, messageID: undefined })).unwrap(),
+            initializeMessage: (messageID, labelID) => latest.current.initializeMessage(messageID, labelID),
         };
         return buildLumoMailConfig(deps);
     }, []);
