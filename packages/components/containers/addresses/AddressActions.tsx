@@ -176,6 +176,12 @@ const AddressActions = ({
             onClick: () => setMissingKeysAddressModalOpen(true),
             'aria-label': c('Address action').t`Generate missing keys for address “${emailAddress}”`,
         },
+        permissions.canEnable && {
+            text: c('Address action').t`Enable`,
+            key: 'address-action-enable-address',
+            onClick: () => withLoading(handleEnable()),
+            'aria-label': c('Address action').t`Enable address “${emailAddress}”`,
+        },
         permissions.canEditInternalAddress && {
             text: c('Address action').t`Edit`,
             key: 'address-action-edit',
@@ -194,12 +200,6 @@ const AddressActions = ({
                 onClick: () => onSetDefault(),
                 'aria-label': c('Address action').t`Set “${emailAddress}” as default address`,
             },
-        permissions.canEnable && {
-            text: c('Address action').t`Enable`,
-            key: 'address-action-enable-address',
-            onClick: () => withLoading(handleEnable()),
-            'aria-label': c('Address action').t`Enable address “${emailAddress}”`,
-        },
         permissions.canDisable && {
             text: c('Address action').t`Disable`,
             key: 'address-action-disable-address',
