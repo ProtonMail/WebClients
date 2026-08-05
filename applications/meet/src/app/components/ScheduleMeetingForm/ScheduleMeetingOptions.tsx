@@ -11,6 +11,7 @@ import { WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 import clsx from '@proton/utils/clsx';
 
 import { ExpandOptionsButton } from '../../atoms/ExpandOptionsButton/ExpandOptionsButton';
+import { useNewPill } from '../../atoms/NewPill/useNewPill';
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 
 import './ScheduleMeetingOptions.scss';
@@ -69,6 +70,7 @@ const WaitingRoomCard = ({
                 checked={isWaitingRoomEnabled}
                 size="medium"
                 changeLabelColor={false}
+                disabled={!isPaidUser}
                 onChange={() => {
                     if (!isPaidUser) {
                         return;
@@ -91,9 +93,18 @@ export const ScheduleMeetingOptions = ({
     const [showOptions, setShowOptions] = useState(false);
     const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
 
+    const { isNew, markNewPillAsRead } = useNewPill('schedule-meeting-options');
+
     return (
         <>
-            <ExpandOptionsButton containerClassName="mt-2" onClick={() => setShowOptions(!showOptions)} newPill>
+            <ExpandOptionsButton
+                containerClassName="mt-2"
+                onClick={() => {
+                    setShowOptions(!showOptions);
+                    markNewPillAsRead();
+                }}
+                newPill={isNew}
+            >
                 {showOptions ? c('Action').t`Hide options` : c('Action').t`Show options`}
             </ExpandOptionsButton>
             {showOptions && (

@@ -3,7 +3,7 @@ import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetingUpdates } from '@proton/meet/hooks/useMeetingUpdates';
+import { useUpdateMeetingWaitingRoom } from '@proton/meet/hooks/useUpdateMeetingWaitingRoom';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { updateMeeting } from '@proton/meet/store/slices/meetings';
 import { selectWaitingRoomSetting, setWaitingRoomSetting } from '@proton/meet/store/slices/settings';
@@ -14,6 +14,7 @@ import {
     removeWaitingParticipants,
     resetWaitingRoom,
 } from '@proton/meet/store/slices/waitingRoomSlice';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { SECOND } from '@proton/shared/lib/constants';
 import { WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 
@@ -41,7 +42,7 @@ export const useHostWaitingRoom = ({
     const waitingRoomSetting = useMeetSelector(selectWaitingRoomSetting);
     const notifyError = useNotifyError();
     const { reportMeetError } = useMeetErrorReporting();
-    const { saveMeetingWaitingRoom } = useMeetingUpdates();
+    const { updateMeetingWaitingRoom } = useUpdateMeetingWaitingRoom();
 
     useEffect(() => {
         if (!enabled || !meetCoreClient) {
@@ -184,21 +185,19 @@ export const useHostWaitingRoom = ({
     const toggleWaitingRoomPrejoin = useCallback(
         async (newValue: boolean = !waitingRoomSetting) => {
             try {
-                const meeting = await saveMeetingWaitingRoom({
+                const meeting = await updateMeetingWaitingRoom({
                     meetingLinkName,
                     waitingRoom: newValue ? WaitingRoomState.ENABLED : WaitingRoomState.DISABLED,
                 });
                 dispatch(setWaitingRoomSetting(newValue));
                 dispatch(updateMeeting(meeting));
             } catch (error) {
-                notifyError(c('Error').t`Failed to update waiting room setting. Please try again.`);
-                reportMeetError('Failed to update waiting room setting prejoin', {
-                    context: { error, value: newValue },
-                    tags: { meetingLinkName },
-                });
+                notifyError(
+                    getApiErrorMessage(error) ?? c('Error').t`Failed to update waiting room setting. Please try again.`
+                );
             }
         },
-        [dispatch, meetingLinkName, notifyError, reportMeetError, saveMeetingWaitingRoom, waitingRoomSetting]
+        [dispatch, meetingLinkName, notifyError, updateMeetingWaitingRoom, waitingRoomSetting]
     );
 
     return {
