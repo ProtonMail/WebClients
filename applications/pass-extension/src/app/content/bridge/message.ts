@@ -1,5 +1,5 @@
 import { CLIENT_SCRIPT_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
-import type { MessageFailure, WorkerResponse } from 'proton-pass-extension/types/messages';
+import type { MessageFailure } from 'proton-pass-extension/types/messages';
 
 import { waitForPageReady } from '@proton/pass/utils/dom/state';
 import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
@@ -7,7 +7,14 @@ import { error, throwError } from '@proton/pass/utils/fp/throw';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { ALLOWED_MESSAGES, BRIDGE_ABORT, BRIDGE_DISCONNECT, BRIDGE_REQUEST, BRIDGE_RESPONSE } from './constants';
-import type { AbstractBridgeMessage, BridgeMessage, BridgeMessageType, BridgeRequest, BridgeResponse } from './types';
+import type {
+    AbstractBridgeMessage,
+    BridgeMessage,
+    BridgeMessageType,
+    BridgeRequest,
+    BridgeResponse,
+    BridgeWorkerResponse,
+} from './types';
 
 type BridgeState = { connected: boolean; ready: Awaiter<void> };
 export const BRIDGE_INIT_TIMEOUT = 5_000;
@@ -15,7 +22,7 @@ export const BRIDGE_INIT_TIMEOUT = 5_000;
 export const createBridgeAbortSignal = (token: string) => ({ token, type: BRIDGE_ABORT });
 export const createBridgeDisconnectSignal = () => ({ type: BRIDGE_DISCONNECT });
 export const createBridgeResponse = <T extends BridgeMessageType>(
-    response: WorkerResponse<BridgeMessage<T>> | MessageFailure,
+    response: BridgeWorkerResponse<BridgeMessage<T>> | MessageFailure,
     token: string
 ): BridgeResponse<T> => ({ response, token, type: BRIDGE_RESPONSE });
 
@@ -78,10 +85,10 @@ export const createMessageBridge = () => {
     const sendMessage = async <T extends BridgeMessageType>(
         request: BridgeMessage<T>,
         options?: { timeout?: number; signal?: AbortSignal }
-    ): Promise<WorkerResponse<BridgeMessage<T>> | MessageFailure> => {
+    ): Promise<BridgeWorkerResponse<BridgeMessage<T>> | MessageFailure> => {
         const token = uniqueId(16);
         const message: BridgeRequest<T> = { request, token, type: BRIDGE_REQUEST };
-        const response = awaiter<WorkerResponse<BridgeMessage<T>> | MessageFailure>();
+        const response = awaiter<BridgeWorkerResponse<BridgeMessage<T>> | MessageFailure>();
 
         const abort = () => window.postMessage(createBridgeAbortSignal(token));
         options?.signal?.addEventListener('abort', abort);

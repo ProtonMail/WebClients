@@ -18,6 +18,8 @@ export type PasskeyQueryPayload = { credentialIds: number[][]; domain: string };
 
 export type PasskeyCreatePayload = { domain?: string; request: string };
 export type PasskeyCreateResponse = WebAuthnIntercept<WasmGeneratePasskeyResponse>;
+export type PasskeyCreateBridgePayload = Pick<WasmGeneratePasskeyResponse, 'credential'>;
+export type PasskeyCreateBridgeResponse = WebAuthnIntercept<PasskeyCreateBridgePayload>;
 
 export type PasskeyGetPayload = { domain?: string; request: string; passkey?: SelectedPasskey };
 export type PasskeyGetResponse = WebAuthnIntercept<WasmResolvePasskeyChallengeResponse>;

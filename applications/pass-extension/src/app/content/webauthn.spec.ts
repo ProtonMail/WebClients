@@ -139,7 +139,13 @@ describe('webauthn [supported]', () => {
             };
 
             mockBridge.getState.mockReturnValue({ connected: true, ready: Promise.resolve() });
-            mockBridge.sendMessage.mockReturnValue(Promise.resolve(mockResponse));
+            mockBridge.sendMessage.mockReturnValue(
+                Promise.resolve({
+                    type: 'success',
+                    intercept: true,
+                    response: { credential: mockResponse.response.credential },
+                })
+            );
 
             const result = await navigator.credentials.create({ publicKey: {} as PublicKeyCredentialCreationOptions });
             expect(mockBridge.sendMessage).toHaveBeenCalledTimes(1);

@@ -31,7 +31,7 @@ import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import type { SanitizedPublicKeyCreate } from '@proton/pass/lib/passkeys/types';
-import { sanitizePasskey } from '@proton/pass/lib/passkeys/utils';
+import { intoPasskeyCreateBridgeResponse, sanitizePasskey } from '@proton/pass/lib/passkeys/utils';
 import { validateItemName } from '@proton/pass/lib/validation/item';
 import type { SelectedItem, UniqueItem } from '@proton/pass/types/data/items';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -269,7 +269,11 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                     );
 
                     return createBridgeResponse<WorkerMessageType.PASSKEY_CREATE>(
-                        { type: 'success', response, intercept: true },
+                        {
+                            type: 'success',
+                            response: intoPasskeyCreateBridgeResponse(response),
+                            intercept: true,
+                        },
                         token
                     );
                 })();
