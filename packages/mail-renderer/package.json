@@ -18,13 +18,18 @@
         "@proton/colors": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/hooks": "workspace:^",
+        "@proton/icons": "workspace:^",
         "@proton/mail": "workspace:^",
         "@proton/sanitize": "workspace:^",
+        "@proton/shared": "workspace:^",
         "@proton/styles": "workspace:^",
         "@proton/types": "workspace:^",
+        "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
         "react": "^18.3.1",
-        "react-redux": "^9.3.0"
+        "react-dom": "^18.3.1",
+        "react-redux": "^9.3.0",
+        "ttag": "^1.8.12"
     },
     "devDependencies": {
         "@testing-library/jest-dom": "^6.9.1",
@@ -33,8 +38,6 @@
         "eslint": "^9.39.5",
         "jest": "^30.4.2",
         "jest-environment-jsdom": "^30.4.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
         "ts-jest": "^29.4.11",
         "typescript": "^6.0.3"
     }
