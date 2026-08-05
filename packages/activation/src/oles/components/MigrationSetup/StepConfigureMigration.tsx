@@ -21,17 +21,17 @@ import type { StepComponentProps } from './MigrationSetup';
 const availableProducts: { id: Product; label: string; icon: React.ReactNode }[] = [
     {
         id: 'Mail',
-        label: c('BOSS').t`Emails`,
+        label: c('Label').t`Emails`,
         icon: <IcEnvelopes className="shrink-0" />,
     },
     {
         id: 'Contacts',
-        label: c('BOSS').t`Contacts`,
+        label: c('Label').t`Contacts`,
         icon: <IcPerson2 className="shrink-0" />,
     },
     {
         id: 'Calendar',
-        label: c('BOSS').t`Calendar`,
+        label: c('Label').t`Calendar`,
         icon: <IcCalendarGrid className="shrink-0" />,
     },
 ];
@@ -48,7 +48,7 @@ const StepConfigureMigration: FC<StepComponentProps> = ({ model, onNext }) => {
     return (
         <div className="max-w-custom" style={{ '--max-w-custom': '42rem' }}>
             <div className="flex justify-space-between flex-nowrap items-center gap-4 mb-4">
-                <h3 className="text-4xl text-bold">{c('BOSS').t`Configure migration`}</h3>
+                <h3 className="text-4xl text-bold">{c('Title').t`Configure migration`}</h3>
                 <div className="flex gap-2 shrink-0 text-semibold">
                     <Button
                         disabled={!onNext}
@@ -62,9 +62,9 @@ const StepConfigureMigration: FC<StepComponentProps> = ({ model, onNext }) => {
                 </div>
             </div>
             <p className="color-weak mt-0">
-                {c('BOSS').t`Select exactly what you'd like to migrate. It will apply to all organisation users.`}
+                {c('Info').t`Select exactly what you'd like to migrate. It will apply to all organisation users.`}
             </p>
-            <h4 className="mt-6 mb-3 text-lg text-semibold">{c('BOSS').t`What are you migrating?`}</h4>
+            <h4 className="mt-6 mb-3 text-lg text-semibold">{c('Title').t`What are you migrating?`}</h4>
             <BorderedContainer className="mb-3">
                 {availableProducts.map((s) => (
                     <BorderedContainerItem key={s.id} className="py-1 color-weak flex flex-nowrap gap-4 items-start">
@@ -82,7 +82,7 @@ const StepConfigureMigration: FC<StepComponentProps> = ({ model, onNext }) => {
                 ))}
             </BorderedContainer>
             <p className="color-weak inline-flex items-center gap-1 mt-0">
-                {c('BOSS').t`Find out what can be migrated.`}
+                {c('Info').t`Find out what can be migrated.`}
                 <Href href={getKnowledgeBaseUrl('/easy-switch-for-business')} className="inline-block">{c('Link')
                     .t`Learn more`}</Href>
             </p>
