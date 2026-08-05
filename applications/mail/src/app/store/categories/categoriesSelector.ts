@@ -1,7 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { selectOrganization } from '@proton/account/organization';
-import { selectMailSettings } from '@proton/mail/store/mailSettings';
+import { selectCategoryViewSettingAccess } from '@proton/mail/store/categoriesView/categoriesViewSelector';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { selectCategoryIDs, selectIsSearching, selectLabelID } from '../elements/elementsSelectors';
@@ -11,21 +10,17 @@ import { selectCategoryIDs, selectIsSearching, selectLabelID } from '../elements
  * The selector ensure the user is in Inbox and category view is enabled.
  */
 export const selectShouldShowMoveToPrimaryBadge = createSelector(
-    [selectMailSettings, selectOrganization, selectLabelID, selectCategoryIDs],
-    (mailSettings, organization, labelID, categoryIDs) => {
+    [selectLabelID, selectCategoryIDs, selectCategoryViewSettingAccess],
+    (labelID, categoryIDs, settingAccess) => {
         const isLabelIDInbox = labelID === MAILBOX_LABEL_IDS.INBOX;
-        const isNotInPrimary = !categoryIDs.includes(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
-
-        const settingAccess = organization.value?.Settings?.MailCategoryViewEnabled
-            ? (mailSettings.value?.MailCategoryView ?? false)
-            : false;
+        const isNotInPrimary = categoryIDs.length > 0 && !categoryIDs.includes(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
 
         return isLabelIDInbox && isNotInPrimary && settingAccess;
     }
 );
 
 /**
- * Base check to determine if the category view tab can be dispalyed to the user.
+ * Base check to determine if the category view tab can be displayed to the user.
  * The user must be in Inbox and not searching to see them.
  */
 export const selectShouldShowCategoryViewTabs = createSelector(

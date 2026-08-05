@@ -44,7 +44,6 @@ export type EnableVpn2024AddonsExperimentVariant =
  */
 export type CategoryViewVariantVariant =
     | 'FeatureAccessOn'
-    | 'FeatureAccessOff'
     | 'PrimaryFiltering45'
     | 'PrimaryFiltering60'
     | 'RecategorizationButton'
