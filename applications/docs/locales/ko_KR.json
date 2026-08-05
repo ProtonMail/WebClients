@@ -7987,6 +7987,12 @@
       ],
       "Your settings have been changed successfully": [
         "설정을 저장했습니다"
+      ],
+      "Failed to load invitations": [
+        "초대 정보를 불러오지 못했습니다"
+      ],
+      "Failed to reject invitation": [
+        "초대장 거절 실패"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10525,6 +10531,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "사용자가 초대를 수락하면 역할을 할당할 수 있습니다."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "관리자 규칙을 사용하려면 지원하는 플랜으로 업그레이드하세요."
       ]
     },
     "Validation": {
