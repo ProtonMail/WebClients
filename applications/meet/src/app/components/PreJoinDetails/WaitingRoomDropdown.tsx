@@ -13,6 +13,7 @@ import { PLANS } from '@proton/payments/core/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ExpandOptionsButton } from '../../atoms/ExpandOptionsButton/ExpandOptionsButton';
+import { useNewPill } from '../../atoms/NewPill/useNewPill';
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { useWaitingRoomContext } from '../../contexts/WaitingRoomContext';
 
@@ -54,13 +55,22 @@ export const WaitingRoomDropdown = ({ instantMeeting }: { instantMeeting: boolea
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
+    const { isNew, markNewPillAsRead } = useNewPill('waiting-room-dropdown');
+
     if (!isMeetWaitingRoomEnabled) {
         return null;
     }
 
     return (
         <>
-            <ExpandOptionsButton ref={anchorRef} onClick={toggle} newPill>
+            <ExpandOptionsButton
+                ref={anchorRef}
+                onClick={() => {
+                    toggle();
+                    markNewPillAsRead();
+                }}
+                newPill={isNew}
+            >
                 {waitingRoomSetting ? c('Action').t`Waiting room enabled` : c('Action').t`Waiting room disabled`}
                 <DropdownCaret className="shrink-0 ml-1" isOpen={isOpen} />
             </ExpandOptionsButton>
@@ -69,39 +79,41 @@ export const WaitingRoomDropdown = ({ instantMeeting }: { instantMeeting: boolea
                 isOpen={isOpen}
                 onClose={close}
                 size={{ width: '25rem', maxWidth: '25rem' }}
-                className="waiting-room-dropdown rounded-xl"
+                className="waiting-room-dropdown meet-radius meet-dropdown"
                 originalPlacement="bottom-end"
             >
-                <OptionButton
-                    iconOnTheRight
-                    showIcon={waitingRoomSetting}
-                    Icon={IcCheckmark}
-                    label={c('Label').t`Enabled`}
-                    description={
-                        isPaidUser
-                            ? c('Label').t`Participants join after you approve them`
-                            : c('Label').t`Use waiting room with a paid plan`
-                    }
-                    onClick={handleEnableWaitingRoomClick}
-                    loading={loading}
-                    rightContent={
-                        !isPaidUser && (
-                            <span className="action-button shrink-0 border rounded-full px-4 py-1.5">
-                                <span className="upgrade-now">{c('Action').t`Upgrade`}</span>
-                                <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
-                            </span>
-                        )
-                    }
-                />
-                <OptionButton
-                    iconOnTheRight
-                    showIcon={!waitingRoomSetting}
-                    Icon={IcCheckmark}
-                    label={c('Label').t`Disabled`}
-                    description={c('Label').t`Anyone with the link can join`}
-                    onClick={() => handleWaitingRoomSettingToggle(false)}
-                    loading={loading}
-                />
+                <div className="flex flex-column m-2">
+                    <OptionButton
+                        iconOnTheRight
+                        showIcon={waitingRoomSetting}
+                        Icon={IcCheckmark}
+                        label={c('Label').t`Enabled`}
+                        description={
+                            isPaidUser
+                                ? c('Label').t`Participants join after you approve them`
+                                : c('Label').t`Use waiting room with a paid plan`
+                        }
+                        onClick={handleEnableWaitingRoomClick}
+                        loading={loading}
+                        rightContent={
+                            !isPaidUser && (
+                                <span className="action-button shrink-0 border rounded-full px-4 py-1.5">
+                                    <span className="upgrade-now">{c('Action').t`Upgrade`}</span>
+                                    <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
+                                </span>
+                            )
+                        }
+                    />
+                    <OptionButton
+                        iconOnTheRight
+                        showIcon={!waitingRoomSetting}
+                        Icon={IcCheckmark}
+                        label={c('Label').t`Disabled`}
+                        description={c('Label').t`Anyone with the link can join`}
+                        onClick={() => handleWaitingRoomSettingToggle(false)}
+                        loading={loading}
+                    />
+                </div>
             </Dropdown>
         </>
     );

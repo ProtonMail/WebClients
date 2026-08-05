@@ -125,12 +125,8 @@ export const useWaitingRoom = ({
     );
 
     const handleGuestTryAgain = useCallback(async () => {
-        const meetLink = waitingRoomMeetLinkRef.current;
         await clearRejection();
-        if (meetLink) {
-            void requestAdmission(meetLink);
-        }
-    }, [clearRejection, requestAdmission]);
+    }, [clearRejection]);
 
     const leaveWaitingRoom = useCallback(() => {
         void handleGuestWaitingRoomLeave();
