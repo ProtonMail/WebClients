@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { groupOwnerInvitesThunk } from '@proton/account/groupOwnerInvites';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { Button } from '@proton/atoms/Button/Button';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
+import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -131,7 +131,8 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
                     </SettingsParagraph>
                 )}
             </div>
-            {restrictedBy.reason === GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED && (
+
+            {restrictedBy.reason === GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED ? (
                 <Card
                     rounded
                     background
@@ -142,8 +143,10 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
                     {c('Info')
                         .t`The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.`}
                 </Card>
+            ) : (
+                <ScimSetupBannerAndModal />
             )}
-            <ScimSetupBannerAndModal />
+
             {(hasUsableDomain || invalidGroupSuggestion) && (
                 <>
                     {adminRolesUIState === AdminRolesUIState.Enabled && <GroupRoleAssignmentPausedBanner />}
