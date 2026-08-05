@@ -32,6 +32,8 @@ import { usePermanentDelete } from '../../hooks/actions/delete/usePermanentDelet
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import type { Element } from '../../models/element';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
+import { MoveToPrimaryBadge } from '../categoryView/moveToPrimaryBadge/MoveToPrimaryBadge';
+import { useMoveToPrimaryBadge } from '../categoryView/moveToPrimaryBadge/useMoveToPrimaryBadge';
 import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 import SnoozeDropdown from './snooze/containers/SnoozeDropdown';
 
@@ -50,6 +52,8 @@ const ItemHoverButtons = ({ element, labelID, className, onBack, hasStar = true,
     const { handleDelete: permanentDelete, deleteSelectionModal } = usePermanentDelete(labelID);
     const snoozedElement = useMailSelector(selectSnoozeElement);
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
+
+    const shouldShowPrimaryBadge = useMoveToPrimaryBadge();
 
     const elementID = useMailSelector(selectElementID);
 
@@ -148,6 +152,7 @@ const ItemHoverButtons = ({ element, labelID, className, onBack, hasStar = true,
                     className
                 )}
             >
+                {shouldShowPrimaryBadge && <MoveToPrimaryBadge element={element} className="item-move-to-primary" />}
                 <Tooltip
                     title={isUnread ? c('Title').t`Mark as read` : c('Title').t`Mark as unread`}
                     tooltipClassName="pointer-events-none"

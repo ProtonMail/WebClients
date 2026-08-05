@@ -1,3 +1,5 @@
+import type { MouseEvent } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -26,7 +28,10 @@ export const MoveToPrimaryBadge = ({ element, className }: Props) => {
     const { applyLocation } = useApplyLocation();
     const { sendReportRecategorizeExperiment } = useCategoriesTelemetry();
 
-    const handleClick = () => {
+    // The badge is rendered inside clickable list items, we don't want to open the element when moving it
+    const handleClick = (event: MouseEvent) => {
+        event.stopPropagation();
+
         void applyLocation({
             type: APPLY_LOCATION_TYPES.MOVE,
             elements: [element],
