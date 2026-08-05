@@ -20,15 +20,12 @@ describe('useFileDetailsModalState - isImported', () => {
         const node = createMockNodeEntity({
             type: NodeType.File,
             activeRevision: {
-                ok: true,
-                value: {
-                    uid: 'revision-uid',
-                    state: RevisionState.Active,
-                    creationTime: new Date('2024-01-01T00:00:00Z'),
-                    contentAuthor: { ok: true, value: 'content-author' },
-                    storageSize: 1024,
-                    isImported: true,
-                },
+                uid: 'revision-uid',
+                state: RevisionState.Active,
+                creationTime: new Date('2024-01-01T00:00:00Z'),
+                contentAuthor: { ok: true, value: 'content-author' },
+                storageSize: 1024,
+                isImported: true,
             },
         });
 
@@ -42,15 +39,12 @@ describe('useFileDetailsModalState - isImported', () => {
         const node = createMockNodeEntity({
             type: NodeType.File,
             activeRevision: {
-                ok: true,
-                value: {
-                    uid: 'revision-uid',
-                    state: RevisionState.Active,
-                    creationTime: new Date('2024-01-01T00:00:00Z'),
-                    contentAuthor: { ok: true, value: 'content-author' },
-                    storageSize: 1024,
-                    isImported: false,
-                },
+                uid: 'revision-uid',
+                state: RevisionState.Active,
+                creationTime: new Date('2024-01-01T00:00:00Z'),
+                contentAuthor: { ok: true, value: 'content-author' },
+                storageSize: 1024,
+                isImported: false,
             },
         });
 

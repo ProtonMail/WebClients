@@ -100,7 +100,6 @@ function resolveAuthor(author: Author): string {
 }
 
 export function toCoreNodeFields(node: NodeEntity): CoreNodeFields {
-    const activeRevision = node.activeRevision?.ok ? node.activeRevision.value : undefined;
     return {
         uid: node.uid,
         name: getNodeName(node),
@@ -110,12 +109,12 @@ export function toCoreNodeFields(node: NodeEntity): CoreNodeFields {
         mediaType: node.mediaType,
         sharedBy: undefined,
         isShared: node.isShared,
-        isSharedPublicly: node.isSharedPublicly,
+        isSharedPublicly: node.isSharedByUrl,
         keyAuthor: node.keyAuthor,
         trashTime: node.trashTime,
-        activeRevisionContentAuthor: activeRevision?.contentAuthor,
-        activeRevisionCreationTime: activeRevision?.creationTime,
-        activeRevisionStorageSize: activeRevision?.storageSize,
+        activeRevisionContentAuthor: node.activeRevision?.contentAuthor,
+        activeRevisionCreationTime: node.activeRevision?.creationTime,
+        activeRevisionStorageSize: node.activeRevision?.storageSize,
     };
 }
 

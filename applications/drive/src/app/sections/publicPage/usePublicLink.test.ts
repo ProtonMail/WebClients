@@ -103,8 +103,8 @@ const setLocation = (href: string, hash = '') => {
 };
 
 describe('usePublicLink', () => {
-    const mockGetPublicLinkInfo = jest.fn();
-    const mockAuthPublicLink = jest.fn();
+    const mockGetURLAccessInfo = jest.fn();
+    const mockAuthURLAccess = jest.fn();
     const mockGetRootNode = jest.fn();
     const mockGetSessionInfo = jest.fn(() => ({ accessToken: 'token', uid: 'uid' }));
 
@@ -127,12 +127,12 @@ describe('usePublicLink', () => {
         jest.mocked(shouldRedirectToPrivateApp).mockReturnValue(false);
         jest.mocked(isNativeProtonDocsAppFile).mockReturnValue(false);
 
-        mockGetPublicLinkInfo.mockResolvedValue({
+        mockGetURLAccessInfo.mockResolvedValue({
             isCustomPasswordProtected: false,
             isLegacy: false,
             vendorType: 0,
         });
-        mockAuthPublicLink.mockResolvedValue({
+        mockAuthURLAccess.mockResolvedValue({
             experimental: { getSessionInfo: mockGetSessionInfo },
             getRootNode: mockGetRootNode,
         });
@@ -140,8 +140,8 @@ describe('usePublicLink', () => {
 
         jest.mocked(getDrive).mockReturnValue({
             experimental: {
-                getPublicLinkInfo: mockGetPublicLinkInfo,
-                authPublicLink: mockAuthPublicLink,
+                getURLAccessInfo: mockGetURLAccessInfo,
+                authURLAccess: mockAuthURLAccess,
             },
         } as any);
     });
@@ -160,8 +160,8 @@ describe('usePublicLink', () => {
             expect(result.current.isLoading).toBe(false);
         });
 
-        expect(mockGetPublicLinkInfo).toHaveBeenCalledWith(href);
-        expect(mockAuthPublicLink).toHaveBeenCalledWith(href, '', true);
+        expect(mockGetURLAccessInfo).toHaveBeenCalledWith(href);
+        expect(mockAuthURLAccess).toHaveBeenCalledWith(href, '', true);
         expect(setPublicLinkClient).toHaveBeenCalled();
         expect(result.current.rootNode).toBe(fakeNode);
         expect(result.current.isPasswordNeeded).toBe(false);
@@ -180,8 +180,8 @@ describe('usePublicLink', () => {
             expect(result.current.isLoading).toBe(false);
         });
 
-        expect(mockGetPublicLinkInfo).not.toHaveBeenCalled();
-        expect(mockAuthPublicLink).not.toHaveBeenCalled();
+        expect(mockGetURLAccessInfo).not.toHaveBeenCalled();
+        expect(mockAuthURLAccess).not.toHaveBeenCalled();
         expect(result.current.isPasswordNeeded).toBe(true);
         expect(result.current.rootNode).toBeUndefined();
     });
@@ -206,8 +206,8 @@ describe('usePublicLink', () => {
         });
 
         const expectedSdkUrl = `${href}#477cjB41Q8UK`;
-        expect(mockGetPublicLinkInfo).toHaveBeenCalledWith(expectedSdkUrl);
-        expect(mockAuthPublicLink).toHaveBeenCalledWith(expectedSdkUrl, undefined, true);
+        expect(mockGetURLAccessInfo).toHaveBeenCalledWith(expectedSdkUrl);
+        expect(mockAuthURLAccess).toHaveBeenCalledWith(expectedSdkUrl, undefined, true);
         expect(window.location.hash).toBe('');
         expect(result.current.rootNode).toBe(fakeNode);
     });

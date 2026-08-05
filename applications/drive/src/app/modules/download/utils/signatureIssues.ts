@@ -47,9 +47,8 @@ export const detectMetadataSignatureIssue = (node: NodeEntity): UnverifiedAuthor
     if (!node.nameAuthor.ok) {
         error = node.nameAuthor.error;
     }
-    const activeRevision = node.activeRevision?.ok ? node.activeRevision.value : undefined;
-    if (activeRevision && !activeRevision.contentAuthor.ok) {
-        error = activeRevision.contentAuthor.error;
+    if (node.activeRevision && !node.activeRevision.contentAuthor.ok) {
+        error = node.activeRevision.contentAuthor.error;
     }
     return error;
 };

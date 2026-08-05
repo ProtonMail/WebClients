@@ -37,11 +37,7 @@ export function getNodeActiveRevisionUid(node?: NodeEntity): string | undefined 
         return undefined;
     }
 
-    if (node.activeRevision?.ok && node.activeRevision.value) {
-        return node.activeRevision.value.uid;
-    }
-
-    return undefined;
+    return node.activeRevision?.uid;
 }
 
 /**
@@ -50,15 +46,15 @@ export function getNodeActiveRevisionUid(node?: NodeEntity): string | undefined 
  * knows what it has buffered unless we feed it this value.
  */
 export function getNodeMediaDuration(node?: NodeEntity): number | undefined {
-    if (!node?.activeRevision?.ok || !node.activeRevision.value) {
+    if (!node?.activeRevision) {
         return undefined;
     }
-    return parseAdditionalMetadata(node.activeRevision.value.claimedAdditionalMetadata).media?.duration;
+    return parseAdditionalMetadata(node.activeRevision.claimedAdditionalMetadata).media?.duration;
 }
 
 export function getNodeStorageSize(node: NodeEntity): number | undefined {
-    if (node.activeRevision?.ok && node.activeRevision.value) {
-        return node.activeRevision.value.storageSize;
+    if (node.activeRevision) {
+        return node.activeRevision.storageSize;
     }
 
     return node.totalStorageSize ?? 0;
