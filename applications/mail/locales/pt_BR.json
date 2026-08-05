@@ -1724,6 +1724,12 @@
       ],
       "Yes, organize it": [
         "Sim, organize isso"
+      ],
+      "Open debug menu": [
+        "Abrir o menu de depuração"
+      ],
+      "View guide": [
+        "Ver guia"
       ]
     },
     "action": {
@@ -5539,6 +5545,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
+      ],
+      "Invalid URL": [
+        "O URL não é válido."
+      ],
+      "Something went wrong": [
+        "Algo deu errado"
       ]
     },
     "error": {
@@ -9414,6 +9426,10 @@
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "Você selecionou **${ checked } mensagem** na sua categoria ${ categoryLabel }",
         "Você selecionou **${ checked } mensagens** na sua categoria ${ categoryLabel }"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problema durante a importação:",
+        "${ issues.length } problemas durante a importação:"
       ]
     },
     "info": {

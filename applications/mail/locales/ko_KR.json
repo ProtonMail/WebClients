@@ -1709,6 +1709,21 @@
       ],
       "Stop": [
         "중지"
+      ],
+      "Clear conversation": [
+        "대화 삭제"
+      ],
+      "Open debug menu": [
+        "디버그 매뉴 열기"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } 열기"
+      ],
+      "View guide": [
+        "가이드 보기"
+      ],
+      "Yes, organize it": [
+        "정리하기"
       ]
     },
     "action": {
@@ -1736,6 +1751,9 @@
       ],
       "Skip": [
         "건너뛰기"
+      ],
+      "Set up categories": [
+        "카테고리 설정"
       ]
     },
     "Actions message": {
@@ -4484,13 +4502,16 @@
         "${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
-        "현재 요금제는 ${ MAX_SYNC_FREE_USER }개의 Gmail 주소를 지원합니다."
+        "현재 플랜에서 ${ MAX_SYNC_FREE_USER }개의 Gmail 주소를 지원합니다."
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "회원님의 플랜은 총 ${ MAX_SYNC_PAID_USER }개의 Gmail 주소를 지원합니다"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "이메일에서 우클릭하여 \"댜음으로 이동\"을 선택하거나 다른 카테고리로 이동하려면 드래그 앤 드롭하세요. 유사한 이메일이 추후에 선택한 카테고리로 자동 분류됩니다."
       ]
     },
     "description": {
@@ -4512,6 +4533,12 @@
       ],
       "From: ${ sender } - ${ Subject }": [
         "보낸 사람: ${ sender } - ${ Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount }개의 새로운 메세지"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "보낸 사람: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -5469,6 +5496,12 @@
       ],
       "Something went wrong, close the modal and try again.": [
         "문제가 발생했습니다. 이 모달을 닫고 다시 시도하세요."
+      ],
+      "Invalid URL": [
+        "유효하지 않은 URL"
+      ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
       ]
     },
     "error": {
@@ -9212,6 +9245,45 @@
       ],
       "You can import it as a new foundation-search index for development purposes.": [
         "개발 단계의 새로운 파운데이션 검색 색인으로 불러올 수 있습니다."
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count }개 이메일 → ${ dest }"
+      ],
+      "Move emails": [
+        "이메일 이동"
+      ],
+      "Move here": [
+        "여기로 이동"
+      ],
+      "Opened ${ location }": [
+        "${ location }을(를) 열었음"
+      ],
+      "Read ${ count } email on screen": [
+        "화면에서 ${ count }개 이메일 읽기"
+      ],
+      "Read your ${ count } filter": [
+        "${ count }개 필터 읽기"
+      ],
+      "Read your ${ count } folder": [
+        "${ count }개 폴더 읽기"
+      ],
+      "Read your ${ count } label": [
+        "${ count }개 라벨 읽기"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "해당 Gmail 주소는 다른 ${ BRAND_NAME } 계정 (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI 등)과 연결되어 있습니다. 다른 주소와의 연결성을 향상시키기 위해 노력 중에 있지만, 아직까지는 회원님께서 수행해야 할 조치가 있습니다."
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "${ categoryLabel } 카테고리의 대화 **${ count }개**를 선택했습니다"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "${ categoryLabel } 카테고리의 메시지는 **${ count }건**입니다"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "${ categoryLabel } 카테고리의 대화 **${ checked }개**를 선택했습니다"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "${ categoryLabel } 카테고리의 메시지 **${ checked }개**를 선택했습니다"
       ]
     },
     "info": {
@@ -10408,6 +10480,9 @@
       ],
       "Trash": [
         "휴지통"
+      ],
+      "Archive": [
+        "보관함"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10884,6 +10959,9 @@
       ],
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (${ quantity }명 이용 가능)"
+      ],
+      "${ price } per seat": [
+        "사용자당 ${ price }"
       ]
     },
     "meet_2025: Feature": {
@@ -13155,6 +13233,9 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Ask anything…": [
+        "무엇이든 물어보세요..."
       ]
     },
     "Placeholder for contact group name": {
@@ -15013,6 +15094,9 @@
       ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "${ label }(으)로 이동되었습니다. 추후 비슷한 메시지는 이곳으로 분류됩니다."
       ]
     },
     "Success notification": {
@@ -16286,6 +16370,18 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "알림: 해당 Gmail 계정이 다른 ${ BRAND_NAME } 계정과 연결되어 있습니다"
+      ],
+      "Make your inbox your own": [
+        "나만의 받은 편지함 만들기"
+      ],
+      "Move emails": [
+        "이메일 이동"
+      ],
+      "Refine your Categories": [
+        "카테고리 다듬기"
       ]
     },
     "Title header for keys table": {
@@ -16460,6 +16556,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "사용자가 초대를 수락하면 역할을 할당할 수 있습니다."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "관리자 규칙을 사용하려면 지원하는 플랜으로 업그레이드하세요."
       ]
     },
     "Validation": {

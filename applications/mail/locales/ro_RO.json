@@ -1730,6 +1730,12 @@
       ],
       "Yes, organize it": [
         "Da, vreau organizare"
+      ],
+      "Open debug menu": [
+        "Deschidere meniu de depanare"
+      ],
+      "View guide": [
+        "Afișare ghid"
       ]
     },
     "action": {
@@ -5594,6 +5600,12 @@
       ],
       "Something went wrong, close the modal and try again.": [
         "Ceva nu a funcționat bine. Închideți panoul modal și reîncercați."
+      ],
+      "Invalid URL": [
+        "Adresă URL nevalidă."
+      ],
+      "Something went wrong": [
+        "Ceva nu a funcționat corect."
       ]
     },
     "error": {
@@ -9602,6 +9614,29 @@
         "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**",
         "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**",
         "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**"
+      ],
+      "Read ${ count } email on screen": [
+        "Citire ${ count } mesaj pe ecran",
+        "Citire ${ count } mesaje pe ecran",
+        "Citire ${ count } de mesaje pe ecran"
+      ],
+      "Read your ${ count } filter": [
+        "Citire ${ count } filtru",
+        "Citire ${ count } filtre",
+        "Citire ${ count } de filtre"
+      ],
+      "Read your ${ count } folder": [
+        "Citire ${ count } folder",
+        "Citire ${ count } foldere",
+        "Citire ${ count } de foldere"
+      ],
+      "Read your ${ count } label": [
+        "Citire ${ count } etichetă",
+        "Citire ${ count } etichete",
+        "Citire ${ count } de etichete"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Această adresă de Gmail este înregistrată cu un alt cont ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } IA și altele). Lucrăm pentru a face această conexiune perfectă, dar deocamdată va trebui să parcurgeți câțiva pași."
       ]
     },
     "info": {
@@ -17018,6 +17053,9 @@
       ],
       "Refine your Categories": [
         "Rafinare categorii"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Atenție: acest cont de Gmail este conectat la un alt cont ${ BRAND_NAME }."
       ]
     },
     "Title header for keys table": {
@@ -17192,6 +17230,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Treceți la un plan care suportă roluri de administrator."
       ]
     },
     "Validation": {
