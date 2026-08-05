@@ -1031,6 +1031,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Clear conversation": [
+        "Gesprek wissen"
+      ],
+      "Stop": [
+        "Stop"
       ]
     },
     "action": {
@@ -4303,6 +4309,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Uw Zoom-verbinding is verlopen. Verbind opnieuw om door te gaan."
+      ],
+      "Invalid URL": [
+        "Ongeldige URL"
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
       ]
     },
     "error": {
@@ -6857,6 +6869,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "U heeft de limiet voor boekingen bereikt (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Thinking about this": [
+        "Hierover aan het nadenken"
       ]
     },
     "info": {
@@ -7954,6 +7969,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licentie",
         "${ seats } ${ MEET_APP_NAME } licenties"
+      ],
+      "${ price } per seat": [
+        "${ price } per licentie"
       ]
     },
     "meet_2025: Feature": {
@@ -10277,6 +10295,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Ask anything…": [
+        "Vraag alles..."
       ]
     },
     "Placeholder for contact group name": {
@@ -13013,6 +13034,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
       ]
     },
     "Validation": {

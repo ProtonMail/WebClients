@@ -1031,6 +1031,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Clear conversation": [
+        "Borrar la conversación"
+      ],
+      "Stop": [
+        "Detener"
       ]
     },
     "action": {
@@ -4303,6 +4309,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Su conexión de Zoom ha expirado. Vuelva a conectarse para continuar."
+      ],
+      "Invalid URL": [
+        "URL inválida"
+      ],
+      "Something went wrong": [
+        "Ocurrió un error."
       ]
     },
     "error": {
@@ -6857,6 +6869,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ha alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Thinking about this": [
+        "Pensando sobre esto"
       ]
     },
     "info": {
@@ -7642,6 +7657,12 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "Client": [
+        "Cliente"
+      ],
+      "Client version": [
+        "Versión del cliente"
       ]
     },
     "label": {
@@ -7948,6 +7969,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licencia de ${ MEET_APP_NAME }",
         "${ seats } licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } por licencia"
       ]
     },
     "meet_2025: Feature": {
@@ -10271,6 +10295,9 @@
       ],
       "ZIP code": [
         "Código ZIP"
+      ],
+      "Ask anything…": [
+        "Pregunte cualquier cosa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -13007,6 +13034,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Actualice a un plan que admita usar roles de administrador."
       ]
     },
     "Validation": {
