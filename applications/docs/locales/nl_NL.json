@@ -937,6 +937,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden",
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
+      ],
+      "Clear conversation": [
+        "Gesprek wissen"
+      ],
+      "Stop": [
+        "Stop"
       ]
     },
     "Actions message": {
@@ -3610,6 +3616,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Onversleutelbare naam"
+      ],
+      "Invalid URL": [
+        "Ongeldige URL"
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
       ]
     },
     "error": {
@@ -5824,6 +5836,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
+      "Thinking about this": [
+        "Hierover aan het nadenken"
       ]
     },
     "info": {
@@ -6602,6 +6617,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licentie",
         "${ seats } ${ MEET_APP_NAME } licenties"
+      ],
+      "${ price } per seat": [
+        "${ price } per licentie"
       ]
     },
     "meet_2025: Feature": {
@@ -8116,6 +8134,12 @@
       ],
       "Your settings have been changed successfully": [
         "Uw instellingen zijn succesvol gewijzigd."
+      ],
+      "Failed to load invitations": [
+        "Kan uitnodigingen niet laden"
+      ],
+      "Failed to reject invitation": [
+        "Kan uitnodiging niet weigeren"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8603,6 +8627,9 @@
       ],
       "Your organization name": [
         "Uw organisatienaam"
+      ],
+      "Ask anything…": [
+        "Vraag alles..."
       ]
     },
     "Placeholder for contact group name": {
@@ -10707,6 +10734,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
       ]
     },
     "Validation": {
