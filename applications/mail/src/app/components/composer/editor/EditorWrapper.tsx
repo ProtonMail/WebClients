@@ -10,6 +10,7 @@ import type { EditorActions, EditorMetadata } from '@proton/components/component
 import { useHandler } from '@proton/components/hooks/useHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { sanitizeComposerBlockquoteHtml } from '@proton/sanitize/purify';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
@@ -230,15 +231,16 @@ const EditorWrapper = ({
             content = getContent(message);
         } else {
             const [contentBeforeBlockquote, blockquote] = locateBlockquote(message.messageDocument?.document);
+            const sanitizedBlockquote = blockquote ? sanitizeComposerBlockquoteHtml(blockquote) : blockquote;
 
             if (blockquoteSaved === undefined) {
                 // Means it's the first content initialization
                 content = contentBeforeBlockquote;
-                setBlockquoteSaved(blockquote);
-                editorMetadata.setBlockquoteExpanded?.(blockquote === '');
+                setBlockquoteSaved(sanitizedBlockquote);
+                editorMetadata.setBlockquoteExpanded?.(sanitizedBlockquote === '');
             } else {
                 content = editorMetadata.blockquoteExpanded
-                    ? contentBeforeBlockquote + blockquote
+                    ? contentBeforeBlockquote + sanitizedBlockquote
                     : contentBeforeBlockquote;
             }
         }
