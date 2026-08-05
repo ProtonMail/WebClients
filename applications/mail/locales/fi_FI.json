@@ -1715,6 +1715,9 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Open debug menu": [
+        "Avaa virheenkorjausvalikko"
       ]
     },
     "action": {
@@ -5497,6 +5500,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
+      ],
+      "Invalid URL": [
+        "Virheellinen URL"
+      ],
+      "Something went wrong": [
+        "Jotain meni pieleen"
       ]
     },
     "error": {
@@ -9326,6 +9335,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "Read ${ count } email on screen": [
+        "Lue ${ count } sähköposti näytöltä",
+        "Lue ${ count } sähköpostia näytöltä"
       ]
     },
     "info": {
@@ -16735,6 +16748,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Voit määrittää roolit, kun käyttäjä on hyväksynyt kutsun."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Päivitä tuettuun tilaukseen käyttääksesi järjestelmänvalvojan rooleja."
       ]
     },
     "Validation": {

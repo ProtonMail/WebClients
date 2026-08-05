@@ -1709,6 +1709,21 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Clear conversation": [
+        "Borrar la conversación"
+      ],
+      "Open debug menu": [
+        "Abrir menú de depuración"
+      ],
+      "Stop": [
+        "Detener"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Alternar ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Yes, organize it": [
+        "Sí, organícelo"
       ]
     },
     "action": {
@@ -1736,6 +1751,9 @@
       ],
       "Skip": [
         "Omitir"
+      ],
+      "Set up categories": [
+        "Configurar categorías"
       ]
     },
     "Actions message": {
@@ -4523,6 +4541,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Haga clic derecho en un correo electrónico y seleccione «Mover a», o arrástrelo y suéltelo en otra categoría. Los correos similares se clasificarán ahí automáticamente en el futuro."
       ]
     },
     "description": {
@@ -5505,6 +5526,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La búsqueda coincidió con muchos resultados. Limite la búsqueda e inténtelo de nuevo."
+      ],
+      "Invalid URL": [
+        "URL inválida"
+      ],
+      "Something went wrong": [
+        "Ocurrió un error."
       ]
     },
     "error": {
@@ -9362,6 +9389,42 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } correo → ${ dest }",
+        "${ count } correos → ${ dest }"
+      ],
+      "Move emails": [
+        "Mover correos"
+      ],
+      "Move here": [
+        "Mover aquí"
+      ],
+      "Opened ${ location }": [
+        "Abierto ${ location }"
+      ],
+      "Read ${ count } email on screen": [
+        "Leer ${ count } correo en la pantalla",
+        "Leer ${ count } correos en la pantalla"
+      ],
+      "Thinking about this": [
+        "Pensando sobre esto"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Tiene **${ count } conversación** en la categoría ${ categoryLabel }",
+        "Tiene **${ count } conversaciones** en la categoría ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Tiene **${ count } mensaje** en la categoría ${ categoryLabel }",
+        "Tiene **${ count } mensajes** en la categoría ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Seleccionó **${ checked } conversación** en la categoría ${ categoryLabel }",
+        "Seleccionó **${ checked } conversaciones** en la categoría ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Seleccionó **${ checked } mensaje** en la categoría ${ categoryLabel }",
+        "Seleccionó **${ checked } mensajes** en la categoría ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10560,6 +10623,21 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Todo lo que necesita su atención además de correos de sus categorías desactivadas"
+      ],
+      "Archive": [
+        "Archivo"
+      ],
+      "Client": [
+        "Cliente"
+      ],
+      "Client version": [
+        "Versión del cliente"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principal: todo lo que necesita su atención además de correos de sus categorías desactivadas"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11043,6 +11121,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licencia de ${ MEET_APP_NAME }",
         "${ seats } licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } por licencia"
       ]
     },
     "meet_2025: Feature": {
@@ -13359,6 +13440,9 @@
       ],
       "ZIP code": [
         "Código ZIP"
+      ],
+      "Ask anything…": [
+        "Pregunte cualquier cosa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15307,6 +15391,10 @@
       ],
       "You have successfully unsubscribed": [
         "Se ha desuscrito satisfactoriamente"
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Movido a ${ label }. Los mensajes similares se categorizarán ahí en el futuro.",
+        "Movido a ${ label }. Los mensajes similares se categorizarán ahí en el futuro."
       ]
     },
     "Success notification": {
@@ -16600,6 +16688,15 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Make your inbox your own": [
+        "Haga propia su bandeja de entrada"
+      ],
+      "Move emails": [
+        "Mover correos"
+      ],
+      "Refine your Categories": [
+        "Refina sus categorías"
       ]
     },
     "Title header for keys table": {
@@ -16774,6 +16871,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Actualice a un plan que admita usar roles de administrador."
       ]
     },
     "Validation": {
@@ -17220,6 +17320,15 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } mensaje nuevo",
+        "${ messageCount } mensajes nuevos"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "De: ${ sender } - ${ message.Subject }"
       ]
     }
   }

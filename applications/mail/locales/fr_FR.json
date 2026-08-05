@@ -1718,6 +1718,15 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Open debug menu": [
+        "Ouvrir le menu de debug"
+      ],
+      "View guide": [
+        "Consultez le guide"
+      ],
+      "Yes, organize it": [
+        "Oui, je souhaite que ce soit organisé"
       ]
     },
     "action": {
@@ -1745,6 +1754,9 @@
       ],
       "Skip": [
         "Ignorer"
+      ],
+      "Set up categories": [
+        "Paramétrer les catégories"
       ]
     },
     "Actions message": {
@@ -4532,6 +4544,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Faites un clic droit sur un email et sélectionnez \"Déplacer vers\", ou bien glissez-déplacez cet email vers une autre catégorie. À l'avenir les emails similaires seront automatiquement déplacés ici."
       ]
     },
     "description": {
@@ -5523,6 +5538,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Invalid URL": [
+        "L'URL n'est pas valide."
+      ],
+      "Something went wrong": [
+        "Une erreur s'est produite."
       ]
     },
     "error": {
@@ -9386,6 +9407,33 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } email → ${ dest }",
+        "${ count } emails → ${ dest }"
+      ],
+      "Move here": [
+        "Déplacer ici"
+      ],
+      "Read ${ count } email on screen": [
+        "Lire ${ count } e-mail sur l'écran",
+        "Lire ${ count } e-mails sur l'écran"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Vous avez **${ count } conversation** dans la catégorie ${ categoryLabel }",
+        "Vous avez **${ count } conversations** dans la catégorie ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Il y a **${ count } message** dans votre catégorie ${ categoryLabel }.",
+        "Il y a **${ count } messages** dans votre catégorie ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Vous avez sélectionné **${ checked } conversation** de la catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } conversations** de la catégorie ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Vous avez sélectionné **${ checked } message** de la catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } messages** de la catégorie ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10593,6 +10641,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tout ce qui nécessite votre attention ainsi que les emails des catégories désactivées"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15349,6 +15400,10 @@
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Le message a été déplacé vers ${ label }. À l'avenir les messages similaires seront aussi déplacés à cet endroit.",
+        "Les messages ont été déplacés vers ${ label }. À l'avenir les messages similaires seront aussi déplacés à cet endroit."
       ]
     },
     "Success notification": {
@@ -16645,6 +16700,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Make your inbox your own": [
+        "Personnalisez votre boîte de réception selon vos envies"
       ]
     },
     "Title header for keys table": {
