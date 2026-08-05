@@ -32,6 +32,7 @@ import type { AgentEmailPage } from '../skills/reads/rows';
 import { buildAgentEmailRows } from '../skills/reads/rows';
 import type { MailToolDeps, ToolStore } from '../toolModule';
 import { resolveTypedId } from './references';
+import { waitForStoreState } from './storeWait';
 
 /** Give up waiting on a stuck load so a read never hangs; results just won't be ready yet. */
 const LIST_SETTLE_TIMEOUT = 20_000;
@@ -183,40 +184,22 @@ const currentView = ({ labelID, filter, sort, search }: ElementsStateParams) => 
  * a mid-navigation or mid-batch page. Times out by resolving, so a stuck load degrades to "not ready".
  * Every input is Redux state — that is what lets one subscription replace a poll.
  */
-export const waitForListSettled = (store: ToolStore, expected: ExpectedList): Promise<void> =>
-    new Promise((resolve) => {
-        const requested = requestedView(expected);
+export const waitForListSettled = async (store: ToolStore, expected: ExpectedList): Promise<void> => {
+    const requested = requestedView(expected);
 
-        const settled = () => {
-            const state = store.getState();
-            if (!isDeepEqual(currentView(selectParams(state)), requested)) {
-                return false;
-            }
-            if (loadingSelector(state, { page: selectPage(state) })) {
-                return false;
-            }
-            return contextTotalSelector(state) !== undefined;
-        };
-
-        if (settled()) {
-            resolve();
-            return;
+    const settled = (): true | undefined => {
+        const state = store.getState();
+        if (!isDeepEqual(currentView(selectParams(state)), requested)) {
+            return undefined;
         }
+        if (loadingSelector(state, { page: selectPage(state) })) {
+            return undefined;
+        }
+        return contextTotalSelector(state) !== undefined ? true : undefined;
+    };
 
-        let unsubscribe: () => void;
-        let timeout: ReturnType<typeof setTimeout>;
-        const finish = () => {
-            unsubscribe();
-            clearTimeout(timeout);
-            resolve();
-        };
-        unsubscribe = store.subscribe(() => {
-            if (settled()) {
-                finish();
-            }
-        });
-        timeout = setTimeout(finish, LIST_SETTLE_TIMEOUT);
-    });
+    await waitForStoreState(store, settled, LIST_SETTLE_TIMEOUT);
+};
 
 /** The slice of {@link MailToolDeps} a list navigation needs: the router to push, the store to read back. */
 type NavigationDeps = Pick<MailToolDeps, 'store' | 'history' | 'getFolders' | 'getLabels' | 'getMailSettings'>;
