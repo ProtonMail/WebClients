@@ -30,7 +30,7 @@ describe('getNodeEffectiveRole', () => {
         type,
         mediaType: 'text/plain',
         isShared: false,
-        isSharedPublicly: false,
+        isSharedByUrl: false,
         creationTime: new Date(),
         modificationTime: new Date(),
         trashTime: undefined,
