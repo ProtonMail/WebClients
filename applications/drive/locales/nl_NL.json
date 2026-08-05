@@ -1326,6 +1326,12 @@
       ],
       "Send": [
         "Verstuur"
+      ],
+      "Clear conversation": [
+        "Gesprek wissen"
+      ],
+      "Stop": [
+        "Stop"
       ]
     },
     "Action: Docs": {
@@ -4199,6 +4205,12 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "We konden via deze methode geen verificatiecode verzenden."
+      ],
+      "Invalid URL": [
+        "Ongeldige URL"
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
       ]
     },
     "error": {
@@ -7488,6 +7500,9 @@
       ],
       "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
         "Om zoeken mogelijk te maken, moeten we uw bestanden lokaal indexeren. U kunt ${ DRIVE_APP_NAME } nog steeds normaal gebruiken en we laten u weten wanneer het indexeren is voltooid. Als u deze pagina verlaat, wordt het indexeren gepauzeerd en hervat wanneer u terugkomt."
+      ],
+      "Thinking about this": [
+        "Hierover aan het nadenken"
       ]
     },
     "info": {
@@ -11287,6 +11302,9 @@
       ],
       "Optional feedback": [
         "Optionele feedback"
+      ],
+      "Ask anything…": [
+        "Vraag alles..."
       ]
     },
     "Placeholder for contact group name": {
@@ -14444,6 +14462,9 @@
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (voor ${ quantity } gebruiker)",
         "${ MEET_APP_NAME } (voor ${ quantity } gebruikers)"
+      ],
+      "${ price } per seat": [
+        "${ price } per licentie"
       ]
     },
     "meet_2025: Info": {
@@ -14684,6 +14705,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
       ]
     },
     "Role": {
