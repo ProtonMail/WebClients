@@ -74,11 +74,7 @@ const ConversationHeader = ({ className, loading, element, showBackButton = fals
                     )}
                 </h1>
             </div>
-            {shouldShowPrimaryBadge && element && (
-                <div className="mt-2">
-                    <MoveToPrimaryBadge element={element} />
-                </div>
-            )}
+            {shouldShowPrimaryBadge && element && <MoveToPrimaryBadge element={element} className="mt-2" />}
         </header>
     );
 };
