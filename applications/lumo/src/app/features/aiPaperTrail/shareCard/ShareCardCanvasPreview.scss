@@ -5,8 +5,4 @@
 	max-inline-size: min(100%, 32rem);
 	border-radius: 1rem;
 	box-shadow: var(--shadow-lifted);
-
-	&--modal {
-		max-inline-size: 100%;
-	}
 }
