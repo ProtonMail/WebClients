@@ -155,14 +155,12 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         return
       }
 
-      const tableWrapperInlineMargin =
-        parseFloat(getComputedStyle(tableWrapperElement).getPropertyValue('--margin-from-sides-in-rem')) * 16
       const rootContainerRect = rootContainer.getBoundingClientRect()
       const rootOffsetX = rootContainer.scrollLeft - rootContainerRect.left
       const rootOffsetY = rootContainer.scrollTop - rootContainerRect.top
       const tableWrapperRect = tableWrapperElement.getBoundingClientRect()
+      const tableWrapperLeft = tableWrapperRect.left + rootOffsetX
       const tableWrapperRight = tableWrapperRect.right + rootOffsetX
-      const tableWrapperMarginLeft = tableWrapperInlineMargin / 2
       const isTableWrapperOverflowing = tableWrapperElement.scrollWidth > tableWrapperElement.clientWidth
 
       if (rowMenuButtonRef.current && tableWrapperElement) {
@@ -173,7 +171,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         const rowMenuButton = rowMenuButtonRef.current
         const rowMenuButtonRect = rowMenuButton.getBoundingClientRect()
 
-        const left = isTableWrapperOverflowing ? tableWrapperMarginLeft : rowRect.left + rootOffsetX
+        const left = isTableWrapperOverflowing ? tableWrapperLeft : rowRect.left + rootOffsetX
 
         rowMenuButton.style.setProperty('--x', `${left - rowMenuButtonRect.width / 2}px`)
         rowMenuButton.style.setProperty(
