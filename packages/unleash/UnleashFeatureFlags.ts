@@ -106,6 +106,7 @@ enum AccountFlag {
     MembersRemote = 'MembersRemote',
     ShowLiteAppCheckoutV2 = 'ShowLiteAppCheckoutV2',
     AdminRoleMVP = 'AdminRoleMVP',
+    VpnB2bUserActivity = 'VpnB2bUserActivity',
     MspEnabled = 'MspEnabled',
     MspCostsTableEnabled = 'MspCostsTableEnabled',
     PurchaseAttributionSurveyEnabled = 'PurchaseAttributionSurveyEnabled',
