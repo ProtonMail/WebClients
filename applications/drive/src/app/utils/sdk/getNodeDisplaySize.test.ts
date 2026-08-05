@@ -32,12 +32,12 @@ describe('getNodeDisplaySize', () => {
         type: NodeType.File,
         mediaType: 'text/plain',
         isShared: false,
-        isSharedPublicly: false,
+        isSharedByUrl: false,
         creationTime: new Date('2023-01-01'),
         modificationTime: new Date('2023-01-01'),
         trashTime: undefined,
         totalStorageSize: 3000,
-        activeRevision: { ok: true, value: mockRevision },
+        activeRevision: mockRevision,
         folder: undefined,
         treeEventScopeId: 'tree-event-scope-id',
         ownedBy: {},
@@ -52,7 +52,7 @@ describe('getNodeDisplaySize', () => {
     it('should return storageSize when claimedSize is not available', () => {
         const node: NodeEntity = {
             ...mockNodeEntity,
-            activeRevision: { ok: true, value: { ...mockRevision, claimedSize: undefined } },
+            activeRevision: { ...mockRevision, claimedSize: undefined },
         };
 
         const result = getNodeDisplaySize(node);
@@ -64,34 +64,6 @@ describe('getNodeDisplaySize', () => {
         const node: NodeEntity = {
             ...mockNodeEntity,
             activeRevision: undefined,
-        };
-
-        const result = getNodeDisplaySize(node);
-
-        expect(result).toBe(3000);
-    });
-
-    it('should handle error nodes with activeRevision', () => {
-        const node: NodeEntity = {
-            ...mockNodeEntity,
-            activeRevision: {
-                ok: true,
-                value: mockRevision,
-            },
-        };
-
-        const result = getNodeDisplaySize(node);
-
-        expect(result).toBe(1500);
-    });
-
-    it('should return totalStorageSize when activeRevision has error', () => {
-        const node: NodeEntity = {
-            ...mockNodeEntity,
-            activeRevision: {
-                ok: false,
-                error: new Error('Revision error'),
-            },
         };
 
         const result = getNodeDisplaySize(node);

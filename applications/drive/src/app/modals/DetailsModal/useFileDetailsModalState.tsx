@@ -76,7 +76,7 @@ export function useFileDetailsModalState({
                 const node = await drive.getNode(nodeUid);
                 setTitle(getTitle(node));
 
-                const activeRevision = revision ?? (node.activeRevision?.ok ? node.activeRevision.value : undefined);
+                const activeRevision = revision ?? node.activeRevision;
                 const location = await getFormattedNodeLocation(drive, node);
 
                 const numberOfDownloads =
@@ -180,9 +180,6 @@ function hasDecryptionError(node: NodeEntity): boolean {
     if (node.name.ok === false && node.name.error instanceof Error) {
         return true;
     }
-    if (node.activeRevision?.ok === false) {
-        return true;
-    }
     if ((node.errors?.length || 0) > 0) {
         return true;
     }
@@ -196,10 +193,10 @@ async function getNumberOfDownloads(drive: Drive, nodeUid: string): Promise<numb
 
     try {
         const sharingInfo = await drive.getSharingInfo(nodeUid);
-        if (!sharingInfo?.publicLink) {
+        if (!sharingInfo?.urlAccess) {
             return undefined;
         }
-        return sharingInfo.publicLink.numberOfInitializedDownloads;
+        return sharingInfo.urlAccess.numberOfInitializedDownloads;
     } catch (error: unknown) {
         console.error(error);
         return c('Error').t`Unknown number of downloads`;

@@ -42,7 +42,7 @@ export {
     /** @deprecated only for transition to sdk */
     splitNodeUid,
     /** @deprecated only for transition to sdk */
-    splitPublicLinkUid,
+    splitURLAccessUid,
 } from '@protontech/drive-sdk/dist/internal/uids';
 
 export { generateNodeUid } from '@protontech/drive-sdk';
