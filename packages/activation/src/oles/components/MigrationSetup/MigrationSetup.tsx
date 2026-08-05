@@ -245,65 +245,65 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
 
     const stepConfigs: Record<StepId, StepConfig> = {
         'configure-migration': {
-            text: c('BOSS').t`Configure migration`,
+            text: c('Step').t`Configure migration`,
             isCompleted: () => Boolean(model.selectedProducts.length),
             isDisabled: false,
         },
         authenticate: {
-            text: c('BOSS').t`Authenticate`,
+            text: c('Step').t`Authenticate`,
             isCompleted: () => Boolean(model.tokens?.length),
             isDisabled: !model.selectedProducts.length,
         },
         'install-app': {
-            text: c('BOSS').t`Install migration app`,
+            text: c('Step').t`Install migration app`,
             isCompleted: () => model.connectionState === 'connected',
             isDisabled: !model.selectedProducts.length || !model.tokens?.length,
         },
         'domain-setup': {
-            text: c('BOSS').t`Configure domain`,
+            text: c('Step').t`Configure domain`,
             isCompleted: () => Boolean(model.domain),
             isDisabled: !model.selectedProducts.length || !model.domainName,
         },
         'domain-verify': {
-            text: c('BOSS').t`Verify your domain`,
+            text: c('Step').t`Verify your domain`,
             isCompleted: () => model.domain?.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD,
             isDisabled: !model.domain,
         },
         'spf-records': {
-            text: c('BOSS').t`Set up secure sending (SPF)`,
+            text: c('Step').t`Set up secure sending (SPF)`,
             isCompleted: () => model.domain?.SpfState === SPF_STATE.SPF_STATE_GOOD,
             optional: true,
             isDisabled: model.domain?.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD,
         },
         'dkim-records': {
-            text: c('BOSS').t`Set up secure sending (DKIM)`,
+            text: c('Step').t`Set up secure sending (DKIM)`,
             isCompleted: () => model.domain?.DKIM?.State === DKIM_STATE.DKIM_STATE_GOOD,
             optional: true,
             isDisabled: model.domain?.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD,
         },
         'dmarc-records': {
-            text: c('BOSS').t`Set up secure sending (DMARC)`,
+            text: c('Step').t`Set up secure sending (DMARC)`,
             isCompleted: () => model.domain?.DmarcState === DMARC_STATE.DMARC_STATE_GOOD,
             optional: true,
             isDisabled: model.domain?.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD,
         },
         'configure-users': {
-            text: c('BOSS').t`Configure users`,
+            text: c('Step').t`Configure users`,
             isCompleted: () => true,
             isDisabled: !model.tokens?.length,
         },
         'migrate-accounts': {
-            text: c('BOSS').t`Migrate accounts`,
+            text: c('Step').t`Migrate accounts`,
             isCompleted: () => hasAllSubmittedMigrated,
             isDisabled: !model.tokens?.length,
         },
         'invite-users': {
-            text: c('BOSS').t`Onboard your team`,
+            text: c('Step').t`Onboard your team`,
             isCompleted: () => hasAnySubmitted && !hasInactiveUsers,
             isDisabled: !model.importerOrganizationId || !hasAnySubmitted,
         },
         final: {
-            text: c('BOSS').t`Final step`,
+            text: c('Step').t`Final step`,
             isCompleted: () => false,
             isDisabled: !model.importerOrganizationId || !model.tokens?.length || !hasAnySubmitted,
         },
@@ -453,9 +453,9 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
                                             }}
                                         >
                                             {isStepExpanded(step.id) ? (
-                                                <IcChevronUpFilled title={c('BOSS').t`Collapse step`} />
+                                                <IcChevronUpFilled title={c('Action').t`Collapse step`} />
                                             ) : (
-                                                <IcChevronDownFilled title={c('BOSS').t`Expand step`} />
+                                                <IcChevronDownFilled title={c('Action').t`Expand step`} />
                                             )}
                                         </Button>
                                     )}

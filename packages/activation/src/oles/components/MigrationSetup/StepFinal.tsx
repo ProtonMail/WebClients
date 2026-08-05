@@ -117,17 +117,17 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
 
     const warningSpecifics =
         notMigratedCount > 2
-            ? c('BOSS').ngettext(
+            ? c('Info').ngettext(
                   msgid`Are you sure you want to continue without ${withoutString} and ${notMigratedOthers} other?`,
                   `Are you sure you want to continue without ${withoutString} and ${notMigratedOthers} others?`,
                   notMigratedOthers
               )
-            : c('BOSS').t`Are you sure you want to continue without ${withoutString}?`;
+            : c('Info').t`Are you sure you want to continue without ${withoutString}?`;
 
     return (
         <div className="max-w-custom" style={{ '--max-w-custom': '42rem' }}>
             <div className="flex justify-space-between flex-nowrap items-center gap-4 mb-4">
-                <h3 className="text-4xl text-bold">{c('BOSS').t`Final step`}</h3>
+                <h3 className="text-4xl text-bold">{c('Title').t`Final step`}</h3>
                 <div className="flex gap-4 shrink-0 text-semibold">
                     <Button
                         disabled={!confirmed || loading}
@@ -151,18 +151,18 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
                     contentWrapperClassName="flex w-full"
                 >
                     <span>
-                        {c('BOSS').t`We've noticed some users have not claimed their ${BRAND_NAME} accounts.`}{' '}
-                        {c('BOSS')
+                        {c('Warning').t`We've noticed some users have not claimed their ${BRAND_NAME} accounts.`}{' '}
+                        {c('Warning')
                             .t`Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${BRAND_NAME} organization administrator.`}
                     </span>
                 </Banner>
             )}
             <p className="color-weak m-0">
-                {c('BOSS')
+                {c('Info')
                     .t`You're almost done, you need to configure your domain to receive your emails directly on ${BRAND_NAME}. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.`}
             </p>
             <p className="color-weak">
-                {c('BOSS')
+                {c('Info')
                     .t`Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.`}
             </p>
             <DNSGroupRecords group={group} subdomain={model.subdomain} />
@@ -182,7 +182,7 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
                         className="text-semibold rounded-lg"
                         size="medium"
                         onClick={() => setConfirmed(true)}
-                    >{c('BOSS').t`Confirm`}</Button>
+                    >{c('Action').t`Confirm`}</Button>
                 </BorderedContainerItem>
             </BorderedContainer>
 
@@ -190,10 +190,13 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
 
             {renderWarningModal && (
                 <ModalTwo {...warningModalProps} size="small" className="rounded-xxl">
-                    <ModalTwoHeader title={c('BOSS').t`Some members weren't migrated`} hasClose={false} />
+                    <ModalTwoHeader
+                        title={c('Confirm modal title').t`Some members weren't migrated`}
+                        hasClose={false}
+                    />
                     <ModalTwoContent>
                         <div className="color-weak">
-                            <p className="mt-0 mb-2">{c('BOSS')
+                            <p className="mt-0 mb-2">{c('Info')
                                 .t`You will not be able to copy these users' data later.`}</p>
                             <p className="m-0">{warningSpecifics}</p>
                         </div>

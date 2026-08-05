@@ -31,7 +31,7 @@ const StepAuthenticate: FC<StepComponentProps> = ({ onNext }) => {
     const [tokens] = useProviderTokens(OAUTH_PROVIDER.GSUITE, [EASY_SWITCH_FEATURES.OLES]);
 
     const { triggerOAuthPopup } = useOAuthPopup({
-        errorMessage: c('BOSS').t`Failed to load OAuth`,
+        errorMessage: c('Error').t`Failed to load OAuth`,
     });
 
     const handleAddToken = () => {
@@ -53,7 +53,7 @@ const StepAuthenticate: FC<StepComponentProps> = ({ onNext }) => {
                     dispatch(oauthTokenActions.updateTokens(Tokens));
 
                     createNotification({
-                        text: c('BOSS').t`Account connected`,
+                        text: c('Success').t`Account connected`,
                     });
                 } catch (err) {
                     handleError(err);
@@ -66,14 +66,14 @@ const StepAuthenticate: FC<StepComponentProps> = ({ onNext }) => {
         await dispatch(deleteOAuthTokenThunk(token.ID));
 
         createNotification({
-            text: c('BOSS').t`Account disconnected`,
+            text: c('Success').t`Account disconnected`,
         });
     };
 
     return (
         <div className="max-w-custom" style={{ '--max-w-custom': '42rem' }}>
             <div className="flex justify-space-between flex-nowrap items-center gap-4 mb-4">
-                <h3 className="text-4xl text-bold">{c('BOSS').t`Authenticate your Google Workspace account`}</h3>
+                <h3 className="text-4xl text-bold">{c('Title').t`Authenticate your Google Workspace account`}</h3>
                 <div className="flex gap-2 shrink-0 text-semibold">
                     <Button
                         disabled={!onNext}
@@ -87,7 +87,7 @@ const StepAuthenticate: FC<StepComponentProps> = ({ onNext }) => {
                 </div>
             </div>
             <p className="color-weak mt-0">
-                {c('BOSS')
+                {c('Info')
                     .t`Sign-in with a Google Workspace administrator account for ${BRAND_NAME} to setup the migration.`}{' '}
                 <Href href={getKnowledgeBaseUrl('/easy-switch-for-business')} className="inline-block">{c('Link')
                     .t`Learn more`}</Href>
@@ -101,7 +101,7 @@ const StepAuthenticate: FC<StepComponentProps> = ({ onNext }) => {
                                 {tokens[0].Account}
                             </div>
                             <div className="text-sm color-weak text-ellipsis" title="Google Workspace">
-                                {c('BOSS').t`Google Workspace account`}
+                                {c('Info').t`Google Workspace account`}
                             </div>
                         </div>
                     </div>
@@ -121,7 +121,7 @@ const StepAuthenticate: FC<StepComponentProps> = ({ onNext }) => {
             {tokens && !tokens.length && (
                 <Button color="norm" onClick={handleAddToken} className="flex items-center text-semibold p-2 pr-6">
                     <img src={googleLogo} width={40} height={40} alt="" className="mr-4 bg-weak p-2 rounded" />
-                    {c('BOSS').t`Sign in to Google Workspace`}
+                    {c('Action').t`Sign in to Google Workspace`}
                 </Button>
             )}
             {!tokens && <CircleLoader />}

@@ -29,12 +29,12 @@ const DomainHelp: FC<{ registrarId?: number }> = ({ registrarId }) => {
         <div className="bg-weak rounded-lg p-6 steps-domain-help-wrapper">
             <h4 className="flex items-center text-semibold gap-2 text-lg">
                 <IcLifeRing alt="" className="shrink-0" />
-                {c('BOSS').t`Need help?`}
+                {c('Title').t`Need help?`}
             </h4>
             <ol className="my-2 color-weak text-lg px-0 pl-6">
-                <li className="mb-2">{c('BOSS')
+                <li className="mb-2">{c('Info')
                     .jt`Don’t know where to start? Watch how to update your DNS on ${registrarLink}`}</li>
-                <li className="mb-2">{c('BOSS').jt`Get help and useful tips for other domain providers ${here}`}</li>
+                <li className="mb-2">{c('Info').jt`Get help and useful tips for other domain providers ${here}`}</li>
             </ol>
         </div>
     );

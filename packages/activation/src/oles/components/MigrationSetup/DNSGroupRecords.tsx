@@ -111,7 +111,7 @@ const DNSGroupRecords: FC<{ group: DNSGroup; subdomain?: string; onRefresh?: () 
             {/* Validation */}
             {!group.hideState && (
                 <>
-                    <p className="my-6 color-weak">{c('BOSS')
+                    <p className="my-6 color-weak">{c('Info')
                         .t`It can take up to 24 hours for these changes to propagate.`}</p>
 
                     <BorderedContainer>
@@ -152,7 +152,7 @@ const DNSGroupRecords: FC<{ group: DNSGroup; subdomain?: string; onRefresh?: () 
                                     loading={loading}
                                     onClick={() => withLoading(onRefresh())}
                                 >
-                                    {c('BOSS').t`Refresh`}
+                                    {c('Action').t`Refresh`}
                                 </Button>
                             )}
                         </BorderedContainerItem>

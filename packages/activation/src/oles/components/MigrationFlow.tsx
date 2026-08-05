@@ -123,7 +123,7 @@ const MigrationFlow = () => {
             <div className="w-full flex flex-nowrap items-center justify-space-between py-5 px-4 xl:px-8 border-bottom border-top border-weak">
                 <div className="flex flex-nowrap items-center mr-2">
                     <CircledLogoWithProton iconPosition="outside-bottom-right" className="shrink-0 mb-1" />
-                    <h2 className="text-2xl text-bold ml-4 my-0">{c('BOSS').t`Migrate from Google Workspace`}</h2>
+                    <h2 className="text-2xl text-bold ml-4 my-0">{c('Title').t`Migrate from Google Workspace`}</h2>
                 </div>
                 <Href
                     href={getKnowledgeBaseUrl('/easy-switch-for-business')}
@@ -139,7 +139,7 @@ const MigrationFlow = () => {
                         <CircleLoader size="large" />
                         <br />
                         <div className="color-weak mt-2">
-                            {c('BOSS').t`Loading your organization data`}
+                            {c('Loading info').t`Loading your organization data`}
                             <EllipsisLoader />
                         </div>
                     </div>
