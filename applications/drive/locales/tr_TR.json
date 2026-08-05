@@ -4208,6 +4208,109 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Doğrulama kodu bu yöntemle gönderilemedi."
+      ],
+      "Cannot share root folder": [
+        "Kök klasör paylaşılamaz"
+      ],
+      "Cannot verify the author of this file": [
+        "Bu dosyanın sahibi doğrulanamadı"
+      ],
+      "Copy operation aborted": [
+        "Kopyalama işlemi iptal edildi"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Öge klasör olmayan bir ögeye kopyalanamaz"
+      ],
+      "Could not load sharing details": [
+        "Paylaşım ayrıntıları yüklenemedi"
+      ],
+      "Could not unlock the parent folder": [
+        "Üst klasörün kilidi açılamadı"
+      ],
+      "Could not unlock this item": [
+        "Bu ögenin kilidi açılamadı"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde klasör oluşturulamaz"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Yer iminin şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "İçerik anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Öge adının şifresi çözülemedi: ${ message }"
+      ],
+      "File has no revision": [
+        "Dosyanın bir sürümü yok"
+      ],
+      "Image preview not found": [
+        "Görsel ön izlemesi bulunamadı"
+      ],
+      "Invalid URL": [
+        "Adres geçersiz"
+      ],
+      "Invitation not found": [
+        "Davet bulunamadı"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Eski herkese açık bağlantı güncellenemedi. Lütfen yeni bir herkese açık bağlantı oluşturun."
+      ],
+      "Missing inviter email": [
+        "Davet edilenin e-posta adresi eksik"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Öge, klasör olmayan bir ögeye taşınamaz"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Ad en fazla ${ MAX_NODE_NAME_LENGTH } karakter uzunluğunda olabilir",
+        "Ad en fazla ${ MAX_NODE_NAME_LENGTH } karakter uzunluğunda olabilir"
+      ],
+      "No file data was received. Please try again.": [
+        "Herhangi bir dosya verisi alınmadı. Lütfen yeniden deneyin."
+      ],
+      "Operation aborted": [
+        "İşlem iptal edildi"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Dosyanın bir bölümü bozulmuş gibi görünüyor"
+      ],
+      "Photo not found": [
+        "Fotoğraf bulunamadı"
+      ],
+      "Signature is missing": [
+        "İmza eksik"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } için imza doğrulanamadı: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Bazı dosya verileri yüklenemedi. Lütfen yeniden deneyin."
+      ],
+      "Something went wrong": [
+        "Bir sorun çıktı"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Yüklenen dosya özgün dosya ile eşleşmiyor. Lütfen yeniden deneyin."
+      ],
+      "This file has no version available to download": [
+        "Bu dosyanın indirilebilecek bir sürümü yok"
+      ],
+      "This item is no longer shared": [
+        "Bu öge artık paylaşılmıyor"
+      ],
+      "This item is not shared": [
+        "Bu öge paylaşılmıyor"
+      ],
+      "Verification keys are not available": [
+        "Doğrulama anahtarları bulunamadı"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } için doğrulama anahtarları yok"
+      ],
+      "You do not have access to this item": [
+        "Bu ögeye erişme izniniz yok"
       ]
     },
     "error": {
@@ -14109,6 +14212,9 @@
       ],
       "Stay for 50% off your next month": [
         "Sonraki ay %50 indirimden yararlanın"
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
+        "Dosya içeriğinin ${ claimedContentAuthor } tarafından yüklendiği doğrulanamadı. Nedeni: ${ node.activeRevision.contentAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14742,6 +14848,17 @@
       ],
       "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
         "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "öznitelikler"
+      ],
+      "key": [
+        "anahtar"
+      ],
+      "membership": [
+        "üyelik"
       ]
     }
   }
