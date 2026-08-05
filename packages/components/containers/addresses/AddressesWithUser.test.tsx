@@ -41,11 +41,6 @@ const mockedUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>
 
 jest.mock('@proton/shared/lib/helpers/upsell.ts', () => ({ __esModule: true, getUpsellRef: () => '' }));
 
-jest.mock('@proton/payments/core/entitlements/hooks', () => ({
-    __esModule: true,
-    useEntitlementChecks: () => [{ orgIsMultiUserPersonal: false }, false],
-}));
-
 jest.mock('@proton/components/components/dnd/SortableList');
 const ActualSortableList = jest.requireActual('@proton/components/components/dnd/SortableList').SortableList;
 const mockedSortableList = SortableList as jest.MockedFunction<typeof SortableList>;
