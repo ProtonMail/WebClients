@@ -9,7 +9,7 @@ type OnUpdateCallback = (ID: string, update: { status: 'loading' | 'error' | 'ok
 interface MissingKeysMemberProcessArguments {
     api: Api;
     keyGenConfig: KeyGenConfig;
-    onUpdate: OnUpdateCallback;
+    onUpdate?: OnUpdateCallback;
     organizationKey: PrivateKeyReference;
     ownerAddresses: Address[];
     member: Member;
@@ -42,7 +42,7 @@ export const missingKeysMemberProcess = async ({
     return Promise.all(
         memberAddressesToGenerate.map(async (memberAddress) => {
             try {
-                onUpdate(memberAddress.ID, { status: 'loading' });
+                onUpdate?.(memberAddress.ID, { status: 'loading' });
 
                 if (hasMigratedAddressKeys) {
                     await createMemberAddressKeysV2({
@@ -68,11 +68,11 @@ export const missingKeysMemberProcess = async ({
                     });
                 }
 
-                onUpdate(memberAddress.ID, { status: 'ok' });
+                onUpdate?.(memberAddress.ID, { status: 'ok' });
 
                 return { type: 'ok' };
             } catch (e: any) {
-                onUpdate(memberAddress.ID, { status: 'error', result: e.message });
+                onUpdate?.(memberAddress.ID, { status: 'error', result: e.message });
                 return { type: 'error', e };
             }
         })

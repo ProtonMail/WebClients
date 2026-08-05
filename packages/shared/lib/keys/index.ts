@@ -11,7 +11,6 @@ export * from './getDecryptedUserKeys';
 export * from './getDecryptedOrganizationKey';
 export * from './organizationKeys';
 export * from './keyImport';
-export * from './generatePrivateMemberKeys';
 export * from './signedKeyList';
 export * from './setupKeys';
 export * from './setupAddress';

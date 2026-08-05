@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { createMissingKeys } from '@proton/account/addresses/actions';
+import { createAddressKeysThunk, getCreateAddressKeysPayload } from '@proton/account/addressKeys/createAddressKeys';
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -86,10 +86,22 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
                 });
             });
         };
-        const result = await dispatch(
-            createMissingKeys({ member, password, addressesToGenerate, onUpdate: handleUpdate })
+        const payload = await dispatch(getCreateAddressKeysPayload({ member, password }));
+        await dispatch(
+            createAddressKeysThunk({ addressKeyCreationPayload: payload, addressesToGenerate, onUpdate: handleUpdate })
         );
-        createNotification({ text: result });
+        if (payload.type === 'user') {
+            createNotification({ text: c('Info').t`Keys created` });
+        } else if (payload.type === 'non-private-member') {
+            if (payload.payload.shouldSetupMemberKeys) {
+                createNotification({ text: c('Info').t`User activated` });
+            } else {
+                createNotification({ text: c('Info').t`Keys created` });
+            }
+        } else if (payload.type === 'private-member') {
+            // Should never happen, so we don't translate this case.
+            createNotification({ text: 'Can not generate keys for private members' });
+        }
         rest.onClose?.();
     };
 
