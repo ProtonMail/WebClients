@@ -1034,6 +1034,9 @@
       ],
       "Stop": [
         "Stopp"
+      ],
+      "Clear conversation": [
+        "Rensk samtalen"
       ]
     },
     "action": {
@@ -1153,6 +1156,10 @@
       ],
       "Writing assistant seats": [
         "Skriveassistentlisenser"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } bruker)",
+        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } brukere)"
       ]
     },
     "Alarm notification": {
@@ -1215,6 +1222,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktiviteten til nye nivåer. La ${ LUMO_SHORT_APP_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
       ]
     },
     "Attached ics file error": {
@@ -1272,6 +1282,9 @@
       ],
       "You have reached the trial limit.": [
         "Du har nådd prøveperiodegrensen."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } skriveassistentseter i prøveperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -1395,6 +1408,9 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ]
     },
     "BF2025: Deal details": {
@@ -4293,6 +4309,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom-tilkoblingen har utløpt. Koble til på nytt for å fortsette."
+      ],
+      "Invalid URL": [
+        "Ugyldig nettadresse"
+      ],
+      "Something went wrong": [
+        "Noe gikk galt"
       ]
     },
     "error": {
@@ -6844,6 +6866,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer Scribe-skriveassistenten."
+      ],
+      "Thinking about this": [
+        "Tenker på dette"
       ]
     },
     "info": {
@@ -7629,6 +7657,12 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversjon"
       ]
     },
     "label": {
@@ -7916,6 +7950,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Legg til ${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "meet_2025: Addon": {
@@ -10258,6 +10295,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Ask anything…": [
+        "Spør om hva som helst…"
       ]
     },
     "Placeholder for contact group name": {
@@ -12994,6 +13034,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Oppgrader til en støttet plan for å bruke administratorroller."
       ]
     },
     "Validation": {
