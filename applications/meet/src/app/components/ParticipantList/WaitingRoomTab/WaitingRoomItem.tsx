@@ -32,11 +32,23 @@ export const WaitingRoomItem = ({ request }: Props) => {
     const participantName = useMeetSelector((state) => selectParticipantName(state, participantUid));
     const receivedTime = formatReceivedTime(request.receivedAt);
 
+    const getStatus = () => {
+        if (isAdmitting) {
+            return c('Info').t`Admitting`;
+        }
+
+        if (isRejecting) {
+            return c('Info').t`Rejecting`;
+        }
+
+        return c('Info').t`Waiting since ${receivedTime}`;
+    };
+
     return (
         <ParticipantNameWithInitials
             identity={participantUid}
             participantName={participantName}
-            statusNode={<div className="text-sm color-hint w-full">{c('Info').t`Joined at ${receivedTime}`}</div>}
+            statusNode={<div className="text-sm color-hint w-full">{getStatus()}</div>}
         >
             <ConditionalTooltip
                 title={!isAdmitting ? c('Action').t`Admit` : undefined}

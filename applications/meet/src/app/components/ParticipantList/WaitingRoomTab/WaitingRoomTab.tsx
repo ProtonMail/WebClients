@@ -1,10 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import useLoading from '@proton/hooks/useLoading';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcMeetUsers } from '@proton/icons/icons/IcMeetUsers';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import {
+    selectCanAdmitAll,
     selectWaitingParticipants,
     selectWaitingParticipantsWithNames,
 } from '@proton/meet/store/slices/waitingRoomSlice';
@@ -45,9 +47,14 @@ const EmptyWaitingRoomList = ({ hasSearchQuery }: { hasSearchQuery: boolean }) =
 
 export const WaitingRoomTab = ({ setIsScrolled, searchExpression }: Props) => {
     const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+
+    const { admitAll } = useWaitingRoomContext();
+
     const waitingParticipants = useMeetSelector(selectWaitingParticipants);
     const waitingParticipantsWithNames = useMeetSelector(selectWaitingParticipantsWithNames);
-    const { admitAll } = useWaitingRoomContext();
+    const canAdmitAll = useMeetSelector(selectCanAdmitAll);
+
+    const [admitAllLoading, withAdmitAllLoading] = useLoading();
 
     const hasSearchQuery = searchExpression !== '';
 
@@ -77,10 +84,11 @@ export const WaitingRoomTab = ({ setIsScrolled, searchExpression }: Props) => {
             <div className="waiting-room-tab-footer absolute bottom-0 left-0 w-full p-4">
                 <Button
                     className="secondary w-full rounded-full px-8 py-3"
-                    disabled={waitingParticipants.length === 0}
+                    disabled={canAdmitAll}
                     onClick={() => {
-                        void admitAll();
+                        void withAdmitAllLoading(admitAll());
                     }}
+                    loading={admitAllLoading}
                 >
                     {c('Action').t`Admit all`}
                 </Button>

@@ -27,9 +27,10 @@ import {
     useGetMeetingDependencies,
 } from '@proton/meet';
 import { useMeetingUpdates } from '@proton/meet/hooks/useMeetingUpdates';
+import { useUpdateMeetingWaitingRoom } from '@proton/meet/hooks/useUpdateMeetingWaitingRoom';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { addMeeting, removeMeeting, updateMeeting } from '@proton/meet/store/slices/meetings';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, CALENDAR_APP_NAME, MINUTE } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
 import { type Meeting, MeetingType, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
@@ -37,6 +38,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { ExpandOptionsButton } from '../../atoms/ExpandOptionsButton/ExpandOptionsButton';
+import { useNotifyError } from '../../hooks/useNotifyError';
 import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { formatTimeHHMM } from '../../utils/timeFormat';
 import { ScheduleMeetingRecapModal } from '../ScheduleMeetingRecapModal/ScheduleMeetingRecapModal';
@@ -99,12 +101,15 @@ export const ScheduleMeetingForm = ({
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const timeFormat = userSettings.TimeFormat;
-    const { saveMeetingName, saveMeetingSchedule, saveMeetingWaitingRoom } = useMeetingUpdates();
+    const { saveMeetingName, saveMeetingSchedule } = useMeetingUpdates();
+    const { updateMeetingWaitingRoom } = useUpdateMeetingWaitingRoom();
+
     const { deleteMeeting } = useDeleteMeeting();
     const dispatch = useMeetDispatch();
     const getMeetingDependencies = useGetMeetingDependencies();
 
     const notifications = useNotifications();
+    const notifyError = useNotifyError();
 
     const [loading, withLoading] = useLoading();
     const [loadingDelete, withLoadingDelete] = useLoading();
@@ -228,20 +233,22 @@ export const ScheduleMeetingForm = ({
             let meetingId;
 
             if (!!meeting) {
-                await Promise.all([
-                    await saveMeetingName({
-                        newTitle: meetingName,
-                        id: meeting.ID,
-                        meetingObject: meeting,
-                    }),
+                await saveMeetingName({
+                    newTitle: meetingName,
+                    id: meeting.ID,
+                    meetingObject: meeting,
+                });
+
+                if (
                     isMeetWaitingRoomEnabled &&
-                        values.waitingRoom !== undefined &&
-                        values.waitingRoom !== meeting.WaitingRoom &&
-                        (await saveMeetingWaitingRoom({
-                            meetingLinkName: meeting.MeetingLinkName,
-                            waitingRoom: values.waitingRoom,
-                        })),
-                ]);
+                    values.waitingRoom !== undefined &&
+                    values.waitingRoom !== meeting.WaitingRoom
+                ) {
+                    await updateMeetingWaitingRoom({
+                        meetingLinkName: meeting.MeetingLinkName,
+                        waitingRoom: values.waitingRoom,
+                    });
+                }
 
                 const response = await saveMeetingSchedule({
                     startTime: startTime.toISOString(),
@@ -282,7 +289,11 @@ export const ScheduleMeetingForm = ({
                 rrule: rrule,
             });
         } catch (error) {
-            window.alert(error instanceof Error ? error.message : c('Error').t`Failed to create meeting`);
+            const defaultErrorMessage = !!meeting
+                ? c('Error').t`Failed to edit meeting`
+                : c('Error').t`Failed to create meeting`;
+
+            notifyError(getApiErrorMessage(error) ?? defaultErrorMessage);
         }
     };
 
