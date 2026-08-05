@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useMembersRemote } from '@proton/account/members/useMembersRemote';
+import { useMembersUsage } from '@proton/account/members/useMembersUsage';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import { MembersTable } from '@proton/components/containers/members/UsersAndAddressesSection/MembersTable';
@@ -11,7 +12,7 @@ import { useMemberActions } from '@proton/components/containers/members/UsersAnd
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
 
-export const MembersRemote = ({ app }: { app: APP_NAMES }) => {
+export const MembersRemote = ({ app, showUsage = false }: { app: APP_NAMES; showUsage?: boolean }) => {
     const [page, setPage] = useState(1);
     const [keywords, setKeywords] = useState('');
 
@@ -29,18 +30,20 @@ export const MembersRemote = ({ app }: { app: APP_NAMES }) => {
     // convert raw members to enhanced members with partial addresses to prevent fetching addresses for each member in useMemberAddresses
     const members = useMemo(
         () =>
-            rawMembers.map(
-                (member): EnhancedMember => ({
-                    ...member,
-                    addressState: 'partial',
-                    roleState: 'initial',
-                    UserOrganizationRoles: [],
-                })
-            ),
+            rawMembers.map((member): EnhancedMember => ({
+                ...member,
+                addressState: 'partial',
+                roleState: 'initial',
+                UserOrganizationRoles: [],
+            })),
         [rawMembers]
     );
 
     const membersHook = useMemberActions({ app, members, loadingMembers, syncMembers });
+
+    // Fetch usage for the members visible on the current page; refetches (with abort) as page/search change.
+    const memberIDs = useMemo(() => members.map((member) => member.ID), [members]);
+    const membersUsage = useMembersUsage(memberIDs, showUsage);
 
     return (
         <>
@@ -63,7 +66,12 @@ export const MembersRemote = ({ app }: { app: APP_NAMES }) => {
                 {c('Info').ngettext(msgid`${total} user found`, `${total} users found`, total)}
             </span>
 
-            <MembersTable members={members} loadingMembers={loadingMembers} membersHook={membersHook} />
+            <MembersTable
+                members={members}
+                loadingMembers={loadingMembers}
+                membersHook={membersHook}
+                membersUsage={showUsage ? membersUsage : undefined}
+            />
 
             <div className="text-center">
                 <Pagination

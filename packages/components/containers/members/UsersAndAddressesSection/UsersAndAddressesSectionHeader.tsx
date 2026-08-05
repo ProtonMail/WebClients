@@ -10,8 +10,10 @@ import { adminTooltipText } from '@proton/components/containers/members/constant
 import AdminRolesSpotlight from '@proton/components/containers/members/rolesAndPermissions/AdminRolesSpotlight';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode, useFeature } from '@proton/features';
-import { SECOND } from '@proton/shared/lib/constants';
+import type { MemberUsageColumnDisplay } from '@proton/shared/lib/api/members';
+import { SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 type HeaderCellItem = {
@@ -24,9 +26,18 @@ type HeaderCellItem = {
 interface Props {
     useEmail?: boolean;
     showFeaturesColumn?: boolean;
+    showUsage?: boolean;
+    showConnectionColumn?: boolean;
+    columnDisplay?: MemberUsageColumnDisplay;
 }
 
-const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn }: Props) => {
+const UsersAndAddressesSectionHeader = ({
+    useEmail,
+    showFeaturesColumn,
+    showUsage,
+    showConnectionColumn,
+    columnDisplay,
+}: Props) => {
     const [adminRolesUIState] = useAdminRolesUI();
     const { feature: adminRolesModalFeature, loading: adminRolesModalLoading } = useFeature(
         FeatureCode.AdminRolesOnboardingModal
@@ -46,6 +57,29 @@ const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn }: Props)
         ? c('Title header for members table').t`Email`
         : c('Title header for members table').t`Addresses`;
 
+    const usageHeaderCell = (
+        key: 'lastActivity' | 'lastConnection',
+        title: string,
+        tooltip: string,
+        widthClass: string
+    ): HeaderCellItem => {
+        const columnState = key === 'lastActivity' ? columnDisplay?.Activity : columnDisplay?.Connection;
+        const greyed = columnState !== undefined && columnState !== 'data';
+
+        return {
+            key,
+            node: (
+                <div className="inline-flex gap-2 items-center">
+                    <span>{title}</span>
+                    <span className="hidden md:inline-flex items-center">
+                        <Info title={tooltip} />
+                    </span>
+                </div>
+            ),
+            className: clsx(widthClass, greyed && 'color-weak'),
+        };
+    };
+
     const headerCells: HeaderCellItem[] = [
         {
             key: 'name',
@@ -62,7 +96,7 @@ const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn }: Props)
                     <span>{c('Title header for members table').t`Name`}</span>
                 </AdminRolesSpotlight>
             ),
-            className: 'w-auto',
+            className: showUsage ? 'w-1/4' : 'w-auto',
         },
         {
             key: 'role',
@@ -74,9 +108,10 @@ const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn }: Props)
                     </span>
                 </div>
             ),
-            className: 'w-1/6',
+            className: showUsage ? 'w-custom max-w-custom' : 'w-1/6',
+            style: showUsage ? { '--w-custom': '3em', '--max-w-custom': '6em' } : undefined,
         },
-        {
+        !showUsage && {
             key: 'addresses',
             node: (
                 <>
@@ -99,6 +134,21 @@ const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn }: Props)
             ),
             className: 'w-1/5',
         },
+        showUsage &&
+            usageHeaderCell(
+                'lastActivity',
+                c('Title header for members table').t`Last app activity`,
+                c('Tooltip for members table')
+                    .t`Last time this user signed in or used the ${VPN_APP_NAME} app on their device.`,
+                'w-1/6'
+            ),
+        showConnectionColumn &&
+            usageHeaderCell(
+                'lastConnection',
+                c('Title header for members table').t`Last connection`,
+                c('Tooltip for members table').t`Last time this user connected to one of your organization's Gateways.`,
+                'w-1/5'
+            ),
         { key: 'actions', node: '', className: 'w-custom', style: { '--w-custom': '3em' } },
     ].filter(isTruthy);
 
