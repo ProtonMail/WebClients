@@ -49,7 +49,7 @@ export type UseSharingModalProps = ModalStateProps & SharingModalInnerProps;
 const defaultSharingInfo = {
     protonInvitations: [],
     nonProtonInvitations: [],
-    publicLink: undefined,
+    urlAccess: undefined,
     members: [],
     editorsCanShare: false,
 };
@@ -59,7 +59,7 @@ const getIsShared = (shareResult: ShareResult) => {
         shareResult.protonInvitations.length > 0 ||
         shareResult.nonProtonInvitations.length > 0 ||
         shareResult.members.length > 0;
-    const isPublicShared = !!shareResult.publicLink;
+    const isPublicShared = !!shareResult.urlAccess;
     return isDirectShared || isPublicShared;
 };
 
@@ -169,7 +169,7 @@ export const useSharingModalState = ({
     const unsharePublic = async () => {
         try {
             const updatedShareResult = await drive.unshareNode(nodeUid, {
-                publicLink: 'remove',
+                urlAccess: 'remove',
             });
             createNotification({ text: c('Notification').t`The link to your item was deleted` });
             await updateSharingState(updatedShareResult);
@@ -186,7 +186,7 @@ export const useSharingModalState = ({
     const createSharePublic = async () => {
         try {
             const updatedShareResult = await drive.shareNode(nodeUid, {
-                publicLink: {
+                urlAccess: {
                     role: MemberRole.Viewer,
                 },
             });
@@ -213,17 +213,17 @@ export const useSharingModalState = ({
         try {
             // For safety if one of the value is not passed, we used the actual one
             // If it is passed but explicitly as "undefined" we assume that it's to disable it
-            const updatedRole = 'role' in publicLinkSettings ? publicLinkSettings.role : sharingInfo.publicLink?.role;
+            const updatedRole = 'role' in publicLinkSettings ? publicLinkSettings.role : sharingInfo.urlAccess?.role;
             const updatedExpiration =
                 'expiration' in publicLinkSettings
                     ? publicLinkSettings.expiration
-                    : sharingInfo.publicLink?.expirationTime;
+                    : sharingInfo.urlAccess?.expirationTime;
             const updatedCustomPassword =
                 'customPassword' in publicLinkSettings
                     ? publicLinkSettings.customPassword
-                    : sharingInfo.publicLink?.customPassword;
+                    : sharingInfo.urlAccess?.customPassword;
             const updatedShareResult = await drive.shareNode(nodeUid, {
-                publicLink: {
+                urlAccess: {
                     role: updatedRole || MemberRole.Viewer,
                     expiration: updatedExpiration,
                     customPassword: updatedCustomPassword,
@@ -250,7 +250,7 @@ export const useSharingModalState = ({
         }
     };
 
-    const updateShareDirect = async (directShareSettings: Omit<ShareNodeSettings, 'publicLink'>) => {
+    const updateShareDirect = async (directShareSettings: Omit<ShareNodeSettings, 'urlAccess'>) => {
         try {
             const updatedShareResult = await drive.shareNode(nodeUid, directShareSettings);
             // First the button changes appearance, then comes the notification
@@ -433,12 +433,12 @@ export const useSharingModalState = ({
         initialized,
         isShared: getIsShared(sharingInfo),
         isPublicLinkEnabled,
-        publicLink: sharingInfo.publicLink
+        publicLink: sharingInfo.urlAccess
             ? {
-                  role: sharingInfo.publicLink.role,
-                  url: sharingInfo.publicLink.url,
-                  customPassword: sharingInfo.publicLink.customPassword,
-                  expirationTime: sharingInfo.publicLink.expirationTime,
+                  role: sharingInfo.urlAccess.role,
+                  url: sharingInfo.urlAccess.url,
+                  customPassword: sharingInfo.urlAccess.customPassword,
+                  expirationTime: sharingInfo.urlAccess.expirationTime,
               }
             : undefined,
         directMembers,

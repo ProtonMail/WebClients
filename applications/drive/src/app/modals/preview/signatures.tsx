@@ -34,17 +34,15 @@ export function getContentSignatureIssueLabel(
         return undefined;
     }
 
-    // If the active revision is not ok, it means the node is not decryptable.
-    // We can't check for signature issues in this case.
-    if (!node.activeRevision || !node.activeRevision.ok || !node.activeRevision.value) {
+    if (!node.activeRevision) {
         return undefined;
     }
 
-    if (node.activeRevision.value.contentAuthor.ok) {
+    if (node.activeRevision.contentAuthor.ok) {
         return undefined;
     }
 
-    return node.activeRevision.value.contentAuthor.error.error;
+    return node.activeRevision.contentAuthor.error.error;
 }
 
 export function SignatureStatus({ contentSignatureIssue }: { contentSignatureIssue?: string }) {

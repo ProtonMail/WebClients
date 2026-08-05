@@ -10,10 +10,9 @@ export function getAuthorshipStatus(node: NodeEntity): {
     message: ReactNode;
     details: string[];
 } {
-    const activeRevision = node.activeRevision?.ok ? node.activeRevision.value : undefined;
     const isFile = node.type === NodeType.File;
 
-    if (node.keyAuthor.ok && node.nameAuthor.ok && !activeRevision) {
+    if (node.keyAuthor.ok && node.nameAuthor.ok && !node.activeRevision) {
         return {
             ok: true,
             message: getAuthorshipMessage({
@@ -26,24 +25,24 @@ export function getAuthorshipStatus(node: NodeEntity): {
         };
     }
 
-    if (node.keyAuthor.ok && node.nameAuthor.ok && activeRevision?.contentAuthor?.ok) {
+    if (node.keyAuthor.ok && node.nameAuthor.ok && node.activeRevision?.contentAuthor?.ok) {
         return {
             ok: true,
             message: getAuthorshipMessage({
                 isOk: true,
                 isFile,
                 type: 'uploaded',
-                emailAddress: activeRevision.contentAuthor.value,
+                emailAddress: node.activeRevision.contentAuthor.value,
             }),
             details: [],
         };
     }
 
     let contentEmailAddress;
-    if (activeRevision) {
-        contentEmailAddress = activeRevision.contentAuthor.ok
-            ? activeRevision.contentAuthor.value
-            : activeRevision.contentAuthor.error.claimedAuthor;
+    if (node.activeRevision) {
+        contentEmailAddress = node.activeRevision.contentAuthor.ok
+            ? node.activeRevision.contentAuthor.value
+            : node.activeRevision.contentAuthor.error.claimedAuthor;
     }
     if (contentEmailAddress !== undefined) {
         return {
@@ -122,8 +121,6 @@ function getAuthorshipMessage({
 }
 
 function getAuthorshipDetails(node: NodeEntity): string[] {
-    const activeRevision = node.activeRevision?.ok ? node.activeRevision.value : undefined;
-
     const details = [];
 
     if (!node.keyAuthor.ok) {
@@ -140,12 +137,12 @@ function getAuthorshipDetails(node: NodeEntity): string[] {
                 .t`We weren’t able to confirm that the name was created or modified by ${claimedNameAuthor}. The reason is: ${node.nameAuthor.error.error}`
         );
     }
-    if (activeRevision?.contentAuthor.ok === false) {
+    if (node.activeRevision?.contentAuthor.ok === false) {
         const claimedContentAuthor =
-            activeRevision.contentAuthor.error.claimedAuthor || c('Title').t`an anonymous user`;
+            node.activeRevision.contentAuthor.error.claimedAuthor || c('Title').t`an anonymous user`;
         details.push(
             c('Title')
-                .t`We weren’t able to confirm that the file content was uploaded by ${claimedContentAuthor}. The reason is: ${activeRevision.contentAuthor.error.error}`
+                .t`We weren’t able to confirm that the file content was uploaded by ${claimedContentAuthor}. The reason is: ${node.activeRevision.contentAuthor.error.error}`
         );
     }
 

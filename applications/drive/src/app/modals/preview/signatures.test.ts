@@ -12,7 +12,7 @@ describe('getContentSignatureIssueLabel', () => {
         type: NodeType.File,
         mediaType: 'text/plain',
         isShared: false,
-        isSharedPublicly: false,
+        isSharedByUrl: false,
         creationTime: baseDate,
         modificationTime: baseDate,
         trashTime: undefined,
@@ -46,15 +46,12 @@ describe('getContentSignatureIssueLabel', () => {
             const node: NodeEntity = {
                 ...baseNodeProps,
                 activeRevision: {
-                    ok: true,
-                    value: {
-                        ...baseRevision,
-                        contentAuthor: {
-                            ok: false,
-                            error: {
-                                error: errorMessage,
-                                claimedAuthor: 'claimed@proton.me',
-                            },
+                    ...baseRevision,
+                    contentAuthor: {
+                        ok: false,
+                        error: {
+                            error: errorMessage,
+                            claimedAuthor: 'claimed@proton.me',
                         },
                     },
                 },
@@ -87,16 +84,13 @@ describe('getContentSignatureIssueLabel', () => {
         });
     });
 
-    describe('when node is ok, activeRevision is ok, and contentAuthor is ok', () => {
+    describe('when node is ok, activeRevision is set, and contentAuthor is ok', () => {
         it('should return undefined', () => {
             const node: NodeEntity = {
                 ...baseNodeProps,
                 activeRevision: {
-                    ok: true,
-                    value: {
-                        ...baseRevision,
-                        contentAuthor: { ok: true, value: 'content@proton.me' },
-                    },
+                    ...baseRevision,
+                    contentAuthor: { ok: true, value: 'content@proton.me' },
                 },
             };
 
@@ -106,21 +100,18 @@ describe('getContentSignatureIssueLabel', () => {
         });
     });
 
-    describe('when node is ok, activeRevision is ok, but contentAuthor has error', () => {
+    describe('when node is ok, activeRevision is set, but contentAuthor has error', () => {
         it('should return the contentAuthor error message', () => {
             const errorMessage = 'Content signature verification failed';
             const node: NodeEntity = {
                 ...baseNodeProps,
                 activeRevision: {
-                    ok: true,
-                    value: {
-                        ...baseRevision,
-                        contentAuthor: {
-                            ok: false,
-                            error: {
-                                error: errorMessage,
-                                claimedAuthor: 'claimed@proton.me',
-                            },
+                    ...baseRevision,
+                    contentAuthor: {
+                        ok: false,
+                        error: {
+                            error: errorMessage,
+                            claimedAuthor: 'claimed@proton.me',
                         },
                     },
                 },
@@ -129,80 +120,6 @@ describe('getContentSignatureIssueLabel', () => {
             const result = getContentSignatureIssueLabel(true, node);
 
             expect(result).toBe(errorMessage);
-        });
-    });
-
-    describe('when node is not ok but activeRevision is ok and contentAuthor is ok', () => {
-        it('should return undefined', () => {
-            const node: NodeEntity = {
-                ...baseNodeProps,
-                activeRevision: {
-                    ok: true,
-                    value: {
-                        ...baseRevision,
-                        contentAuthor: { ok: true, value: 'content@proton.me' },
-                    },
-                },
-            };
-
-            const result = getContentSignatureIssueLabel(true, node);
-
-            expect(result).toBeUndefined();
-        });
-    });
-
-    describe('when node is not ok, activeRevision is ok, but contentAuthor has error', () => {
-        it('should return the contentAuthor error message', () => {
-            const errorMessage = 'Content signature verification failed';
-            const node: NodeEntity = {
-                ...baseNodeProps,
-                activeRevision: {
-                    ok: true,
-                    value: {
-                        ...baseRevision,
-                        contentAuthor: {
-                            ok: false,
-                            error: {
-                                error: errorMessage,
-                                claimedAuthor: 'claimed@proton.me',
-                            },
-                        },
-                    },
-                },
-            };
-
-            const result = getContentSignatureIssueLabel(true, node);
-
-            expect(result).toBe(errorMessage);
-        });
-    });
-
-    describe('when node is not ok and activeRevision is not ok', () => {
-        it('should return undefined', () => {
-            const node: NodeEntity = {
-                ...baseNodeProps,
-                activeRevision: {
-                    ok: false,
-                    error: new Error('Revision error'),
-                },
-            };
-
-            const result = getContentSignatureIssueLabel(true, node);
-
-            expect(result).toBeUndefined();
-        });
-    });
-
-    describe('when node is not ok and activeRevision is undefined', () => {
-        it('should return undefined', () => {
-            const node: NodeEntity = {
-                ...baseNodeProps,
-                activeRevision: undefined,
-            };
-
-            const result = getContentSignatureIssueLabel(true, node);
-
-            expect(result).toBeUndefined();
         });
     });
 

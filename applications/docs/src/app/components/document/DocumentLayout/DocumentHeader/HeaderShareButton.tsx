@@ -40,13 +40,13 @@ export function HeaderShareButton({
               nodeUid: generateNodeUid(volumeId, nodeId),
               onShareSnapshot(result) {
                 if (result.ok) {
-                  const { publicLink } = result.value
+                  const { urlAccess } = result.value
                   try {
-                    const newAddress = publicLink ? getPublicURL(publicLink.url) : getPrivateURL(volumeId, nodeId)
-                    if (publicLink) {
+                    const newAddress = urlAccess ? getPublicURL(urlAccess.url) : getPrivateURL(volumeId, nodeId)
+                    if (urlAccess) {
                       const localID = getLocalID()
                       if (localID !== undefined) {
-                        const token = getToken(new URL(publicLink.url).pathname)
+                        const token = getToken(new URL(urlAccess.url).pathname)
                         CacheService.setLocalIDForDocumentInCache({ token }, localID)
                       }
                     }

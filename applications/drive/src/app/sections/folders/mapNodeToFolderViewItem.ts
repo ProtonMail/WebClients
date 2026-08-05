@@ -44,7 +44,7 @@ export const mapNodeToFolderViewItem = async (
         rootShareId: rootNode.deprecatedShareId || defaultShareId,
         rootUid: rootNode.uid,
         isShared: node.isShared,
-        isSharedPublicly: node.isSharedPublicly,
+        isSharedPublicly: node.isSharedByUrl,
         hasSignatureIssues: !sdkSignatureIssues.ok,
         type: node.type,
         effectiveRole,
