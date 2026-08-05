@@ -86,7 +86,7 @@ export const getPermissions = ({
     const isNotEncrypted = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE);
     const isSignatureNotExpected = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED);
 
-    const isAdminOnMemberBYOE = isBYOE && !isSelf && !!isMultiUserPersonalPlan;
+    const isAdminOnMemberBYOE = isBYOE && isAdmin && !isSelf && !!isMultiUserPersonalPlan;
 
     const canMakeDefault = !isDefault && !getIsNonDefault(address);
 
