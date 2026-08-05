@@ -1,12 +1,10 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { type UserInvitationsState, userInvitationsThunk } from '@proton/account/userInvitations';
 import {
     convertToBYOEAddress as convertToBYOEAddressApi,
     createBYOEAddress as createBYOEAddressApi,
 } from '@proton/activation/src/api/api';
-import { createKTVerifier } from '@proton/key-transparency/helpers';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -20,53 +18,43 @@ import {
 } from '@proton/shared/lib/api/addresses';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import mutatePassword from '@proton/shared/lib/authentication/mutate';
-import {
-    ADDRESS_STATUS,
-    ADDRESS_TYPE,
-    type APP_NAMES,
-    DEFAULT_KEYGEN_TYPE,
-    KEYGEN_CONFIGS,
-    MEMBER_PRIVATE,
-} from '@proton/shared/lib/constants';
+import { ADDRESS_STATUS, ADDRESS_TYPE, type APP_NAMES } from '@proton/shared/lib/constants';
 import type { Address, Member } from '@proton/shared/lib/interfaces';
 import {
     type AddressGenerationPayload,
-    getCanGenerateMemberKeys,
-    getShouldSetupMemberKeys,
     handleCreateAddressAndKey,
     handleSetupAddressAndKey,
     handleSetupAddressKeys,
-    missingKeysMemberProcess,
-    missingKeysSelfProcess,
-    setupMemberKeys,
 } from '@proton/shared/lib/keys';
-import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
+import { createAddressKeysThunk, getCreateAddressKeysPayload } from '../addressKeys/createAddressKeys';
 import type { KtState } from '../kt';
 import { getKTActivation } from '../kt/actions';
-import { getMemberAddresses, upsertMember } from '../members';
-import { getMember } from '../members/getMember';
-import { organizationThunk } from '../organization';
-import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
+import type { MemberState } from '../member';
+import { type MembersState, getMemberAddresses } from '../members';
+import { type OrganizationState, organizationThunk } from '../organization';
+import type { OrganizationKeyState } from '../organizationKey';
 import { removePersistedStateEvent } from '../persist/event';
 import { type ProtonDomainsState, protonDomainsThunk } from '../protonDomains';
 import type { UserState } from '../user';
 import { userThunk } from '../user';
-import { type UserKeysState, userKeysThunk } from '../userKeys';
-import { type UserSettingsState, userSettingsThunk } from '../userSettings';
-import { type AddressesState, addressThunk, addressesThunk } from './index';
+import { type UserInvitationsState, userInvitationsThunk } from '../userInvitations';
+import type { UserKeysState } from '../userKeys';
+import type { UserSettingsState } from '../userSettings';
+import { type AddressesState, addressesThunk } from './index';
 
 type RequiredState = KtState &
     UserState &
+    OrganizationState &
     OrganizationKeyState &
     AddressesState &
     UserKeysState &
+    MemberState &
+    MembersState &
     ProtonDomainsState &
-    UserSettingsState &
-    UserInvitationsState;
+    UserSettingsState;
 
 export const orderAddresses = ({
     member,
@@ -101,16 +89,6 @@ export const createAddress = ({
     setDefault?: boolean;
 }): ThunkAction<Promise<Address>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
-        const shouldGenerateKeys =
-            !selectedMember || Boolean(selectedMember.Self) || getCanGenerateMemberKeys(selectedMember);
-
-        const shouldGenerateSelfKeys =
-            Boolean(selectedMember.Self) && selectedMember.Private === MEMBER_PRIVATE.UNREADABLE;
-
-        const shouldGenerateMemberKeys = !shouldGenerateSelfKeys;
-        const shouldSetupMemberKeys = shouldGenerateKeys && getShouldSetupMemberKeys(selectedMember);
-
-        const organizationKey = await dispatch(organizationKeyThunk());
         const api = getSilentApi(extra.api);
         const [user, addresses, { premiumDomains }] = await Promise.all([
             dispatch(userThunk()),
@@ -129,9 +107,13 @@ export const createAddress = ({
             );
         }
 
-        if (shouldGenerateKeys && shouldGenerateMemberKeys && !organizationKey?.privateKey) {
-            throw new Error(c('Error').t`Organization key is not decrypted`);
-        }
+        // NOTE: Important this is done _before_ address creation so that the address is not created if keys can't be created.
+        const addressKeyCreationPayload = await dispatch(
+            getCreateAddressKeysPayload({
+                member: selectedMember,
+                password: memberPassword,
+            })
+        );
 
         const { Address } = await api<{ Address: Address }>(
             createAddressConfig({
@@ -143,76 +125,22 @@ export const createAddress = ({
             })
         );
 
-        if (shouldGenerateKeys) {
-            const userKeys = await dispatch(userKeysThunk());
-            const userSettings = await dispatch(userSettingsThunk());
-            const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
-
-            const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
-                ktActivation: dispatch(getKTActivation()),
-                api,
-                config: extra.config,
-            });
-
-            if (shouldGenerateSelfKeys) {
-                await missingKeysSelfProcess({
-                    api,
-                    userKeys,
-                    addresses,
-                    addressesToGenerate: [Address],
-                    password: extra.authentication.getPassword(),
-                    keyGenConfigForV4Keys: keyGenConfig,
-                    supportV6Keys: !!userSettings.Flags.SupportPgpV6Keys,
-                    keyTransparencyVerify,
-                });
-            } else {
-                if (!organizationKey?.privateKey) {
-                    throw new Error('Missing org key');
-                }
-                const memberAddresses = await getAllMemberAddresses(api, selectedMember.ID);
-                if (shouldSetupMemberKeys && memberPassword) {
-                    await setupMemberKeys({
-                        ownerAddresses: addresses,
-                        keyGenConfig,
-                        organizationKey: organizationKey.privateKey,
-                        member: selectedMember,
-                        memberAddresses,
-                        password: memberPassword,
-                        api,
-                        keyTransparencyVerify,
-                    });
-                } else {
-                    await missingKeysMemberProcess({
-                        api,
-                        keyGenConfig,
-                        ownerAddresses: addresses,
-                        memberAddressesToGenerate: [Address],
-                        member: selectedMember,
-                        memberAddresses,
-                        onUpdate: noop,
-                        organizationKey: organizationKey.privateKey,
-                        keyTransparencyVerify,
-                    });
-                }
-            }
-
-            await keyTransparencyCommit(user, userKeys);
-        }
+        const updatedAddresses = await dispatch(
+            createAddressKeysThunk({
+                addressKeyCreationPayload,
+                addressesToGenerate: [Address],
+            })
+        );
 
         if (setDefault) {
             // Default address is the first one in the list so we need to reorder the addresses
             await dispatch(orderAddresses({ member: selectedMember, addresses: [Address, ...addresses] }));
         }
 
-        // Refetch all the addresses to get the updated key for the address that was just created
-        const result = await dispatch(
-            getMemberAddresses({ member: selectedMember, cache: CacheType.None, retry: true })
-        );
-
         // Creating an address affects the `UsedAddresses` in organization
         dispatch(organizationThunk({ cache: CacheType.None })).catch(noop);
 
-        return result.find(({ ID }) => ID === Address.ID) || Address;
+        return updatedAddresses.find(({ ID }) => ID === Address.ID) || Address;
     };
 };
 
@@ -230,7 +158,6 @@ export const createPremiumAddress = ({
     setDefault?: boolean;
 }): ThunkAction<Promise<Address>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
-        const userSettings = await dispatch(userSettingsThunk());
         const addresses = await dispatch(addressesThunk());
         const defaultAddress: Address | Partial<Address> = addresses?.[0] || {};
         const {
@@ -245,6 +172,9 @@ export const createPremiumAddress = ({
             nextAddressSignature = defaultAddressSignature.replaceAll(defaultAddressEmail, domain);
         }
 
+        // NOTE: Important this is done _before_ address creation so that the address is not created if keys can't be created.
+        const addressKeyCreationPayload = await dispatch(getCreateAddressKeysPayload());
+
         const { Address } = await api<{ Address: Address }>(
             setupAddressConfig({
                 Domain: domain,
@@ -252,153 +182,20 @@ export const createPremiumAddress = ({
                 Signature: signature ?? nextAddressSignature ?? defaultAddressSignature ?? '', // Signature can be null
             })
         );
-        const userKeys = await dispatch(userKeysThunk());
-        const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
-            ktActivation: dispatch(getKTActivation()),
-            api,
-            config: extra.config,
-        });
-        await missingKeysSelfProcess({
-            api,
-            userKeys,
-            addresses,
-            addressesToGenerate: [Address],
-            password: extra.authentication.getPassword(),
-            keyGenConfigForV4Keys: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
-            keyTransparencyVerify,
-            supportV6Keys: !!userSettings.Flags.SupportPgpV6Keys,
-        });
-        await keyTransparencyCommit(await dispatch(userThunk()), userKeys);
+
+        const updatedAddresses = await dispatch(
+            createAddressKeysThunk({
+                addressKeyCreationPayload,
+                addressesToGenerate: [Address],
+            })
+        );
 
         if (setDefault) {
             // Default address is the first one in the list so we need to reorder the addresses
             await dispatch(orderAddresses({ member: undefined, addresses: [Address, ...addresses] }));
         }
 
-        return dispatch(addressThunk({ address: Address, cache: CacheType.None }));
-    };
-};
-
-export const createMissingKeys = ({
-    member,
-    // Plaintext password to set up the member
-    password: memberPassword,
-    addressesToGenerate,
-    onUpdate,
-}: {
-    member: Member | undefined;
-    password?: string;
-    addressesToGenerate: Address[];
-    onUpdate: Parameters<typeof missingKeysMemberProcess>[0]['onUpdate'];
-}): ThunkAction<Promise<string>, RequiredState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch, _, extra) => {
-        const shouldSetupMemberKeys = getShouldSetupMemberKeys(member);
-
-        const api = getSilentApi(extra.api);
-
-        const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
-            ktActivation: dispatch(getKTActivation()),
-            api,
-            config: extra.config,
-        });
-
-        const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
-
-        const processMember = async (member: Member) => {
-            const [user, organization, organizationKey, memberAddresses, addresses, userKeys] = await Promise.all([
-                dispatch(userThunk()),
-                dispatch(organizationThunk()),
-                dispatch(organizationKeyThunk()),
-                dispatch(getMemberAddresses({ member, retry: true })),
-                dispatch(addressesThunk()),
-                dispatch(userKeysThunk()),
-            ]);
-
-            const error = validateOrganizationKey(getOrganizationKeyInfo(organization, organizationKey, addresses));
-            if (error) {
-                throw new Error(error);
-            }
-            if (!organizationKey?.privateKey) {
-                throw new Error('Missing key');
-            }
-
-            if (shouldSetupMemberKeys && memberPassword) {
-                await setupMemberKeys({
-                    ownerAddresses: addresses,
-                    keyGenConfig,
-                    organizationKey: organizationKey.privateKey,
-                    member,
-                    memberAddresses,
-                    password: memberPassword,
-                    api,
-                    keyTransparencyVerify,
-                });
-
-                await keyTransparencyCommit(user, userKeys);
-                // Refetch the member to get the updated keys
-                dispatch(upsertMember({ member: await getMember(api, member.ID) }));
-                // Refetch all the addresses to get the updated key for the address that was just cr
-                await dispatch(getMemberAddresses({ member, cache: CacheType.None, retry: true }));
-
-                addressesToGenerate.forEach((address) => onUpdate(address.ID, { status: 'ok' }));
-            } else {
-                const result = await missingKeysMemberProcess({
-                    api,
-                    keyGenConfig,
-                    ownerAddresses: addresses,
-                    memberAddressesToGenerate: addressesToGenerate,
-                    member,
-                    memberAddresses,
-                    onUpdate,
-                    organizationKey: organizationKey.privateKey,
-                    keyTransparencyVerify,
-                });
-
-                await dispatch(getMemberAddresses({ member, cache: CacheType.None, retry: true }));
-
-                const errorResult = result.find((result) => result.type === 'error');
-                if (errorResult) {
-                    throw errorResult.e;
-                }
-            }
-
-            return c('Info').t`User activated`;
-        };
-
-        const processSelf = async () => {
-            const [user, userKeys, addresses, userSettings] = await Promise.all([
-                dispatch(userThunk()),
-                dispatch(userKeysThunk()),
-                dispatch(addressesThunk()),
-                dispatch(userSettingsThunk()),
-            ]);
-            const result = await missingKeysSelfProcess({
-                api,
-                userKeys,
-                addresses,
-                addressesToGenerate,
-                password: extra.authentication.getPassword(),
-                keyGenConfigForV4Keys: keyGenConfig,
-                supportV6Keys: !!userSettings.Flags.SupportPgpV6Keys,
-                onUpdate,
-                keyTransparencyVerify,
-            });
-
-            await keyTransparencyCommit(user, userKeys);
-            // Refetch all the addresses to get the updated key for the address that was just created.
-            // This can be optimized by just updating the address in question.
-            await dispatch(addressesThunk({ cache: CacheType.None }));
-
-            const errorResult = result.find((result) => result.type === 'error');
-            if (errorResult) {
-                throw errorResult.e;
-            }
-            return c('Info').t`Keys created`;
-        };
-
-        return !member || (member.Self && member.Private === MEMBER_PRIVATE.UNREADABLE)
-            ? processSelf()
-            : processMember(member);
+        return updatedAddresses.find(({ ID }) => ID === Address.ID) || Address;
     };
 };
 
@@ -451,7 +248,7 @@ export const setupExternalUserForProton = ({
 }: {
     payload: Omit<AddressGenerationPayload, 'preAuthKTVerify'>;
     app: APP_NAMES;
-}): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<Promise<void>, RequiredState & UserInvitationsState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const api = getSilentApi(extra.api);
         const authentication = extra.authentication;
@@ -520,9 +317,11 @@ export const createBYOEAddress = ({
     return async (dispatch, _, extra) => {
         const organization = await dispatch(organizationThunk());
 
-        const addresses = await dispatch(addressesThunk());
         const api = getSilentApi(extra.api);
         const emailAddress = `${emailAddressParts.Local}@${emailAddressParts.Domain}`;
+
+        // NOTE: Important this is done _before_ address creation so that the address is not created if keys can't be created.
+        const addressKeyCreationPayload = await dispatch(getCreateAddressKeysPayload());
 
         const { Address } = await api<{ Address: Address }>(
             createBYOEAddressApi({
@@ -531,31 +330,17 @@ export const createBYOEAddress = ({
             })
         );
 
-        const userSettings = await dispatch(userSettingsThunk());
-        const userKeys = await dispatch(userKeysThunk());
-        const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
-            ktActivation: dispatch(getKTActivation()),
-            api,
-            config: extra.config,
-        });
-        await missingKeysSelfProcess({
-            api,
-            userKeys,
-            addresses,
-            addressesToGenerate: [Address],
-            password: extra.authentication.getPassword(),
-            keyGenConfigForV4Keys: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
-            supportV6Keys: !!userSettings.Flags.SupportPgpV6Keys,
-            keyTransparencyVerify,
-        });
-        await keyTransparencyCommit(await dispatch(userThunk()), userKeys);
+        const updatedAddresses = await dispatch(
+            createAddressKeysThunk({
+                addressKeyCreationPayload,
+                addressesToGenerate: [Address],
+            })
+        );
 
-        const [, result] = await Promise.all([
-            dispatch(userThunk({ cache: CacheType.None })),
-            dispatch(addressesThunk({ cache: CacheType.None })),
-        ]);
+        // Update user object for BYOE. TODO: Is this still needed?
+        dispatch(userThunk({ cache: CacheType.None })).catch(noop);
 
-        return result.find(({ ID }) => ID === Address.ID) || Address;
+        return updatedAddresses.find(({ ID }) => ID === Address.ID) || Address;
     };
 };
 

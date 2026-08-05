@@ -2,11 +2,18 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { type AddressKeysState, addressKeysThunk } from '@proton/account/addressKeys';
+import { createAddressKeysThunk, getCreateAddressKeysPayload } from '@proton/account/addressKeys/createAddressKeys';
 import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import { createMissingKeys, orderAddresses } from '@proton/account/addresses/actions';
+import { orderAddresses } from '@proton/account/addresses/actions';
 import type { KtState } from '@proton/account/kt';
 import { getKTActivation } from '@proton/account/kt/actions';
-import { UnavailableAddressesError, getMemberAddresses, membersThunk } from '@proton/account/members';
+import type { MemberState } from '@proton/account/member';
+import {
+    type MembersState,
+    UnavailableAddressesError,
+    getMemberAddresses,
+    membersThunk,
+} from '@proton/account/members';
 import { createMember } from '@proton/account/members/actions';
 import { decryptTemporaryPassword, encryptTemporaryPassword } from '@proton/account/orgJoiningLink/helpers';
 import { organizationThunk } from '@proton/account/organization';
@@ -71,7 +78,9 @@ type RequiredState = KtState &
     UserSettingsState &
     UserInvitationsState &
     CalendarsState &
-    AddressKeysState;
+    AddressKeysState &
+    MembersState &
+    MemberState;
 
 type ThunkApi<T> = { state: T; extra: ProtonThunkArguments };
 
@@ -306,6 +315,10 @@ export const createMigrationBatch = createAsyncThunk<
 
                 let selfAddress = membersAddresses[selfMember.ID].find((a) => isRelevantAddress(a) && isSelf(a.Email));
                 if (!selfAddress) {
+                    const addressKeyCreationPayload = await dispatch(
+                        getCreateAddressKeysPayload({ member: selfMember })
+                    );
+
                     const [Local, Domain] = getEmailParts(oauthToken.Account);
                     const { Address: address } = await api<{ Address: Address }>(
                         createMemberAddress(selfMember.ID, {
@@ -316,11 +329,7 @@ export const createMigrationBatch = createAsyncThunk<
                     );
 
                     await dispatch(
-                        createMissingKeys({
-                            member: selfMember,
-                            addressesToGenerate: [address],
-                            onUpdate: noop,
-                        })
+                        createAddressKeysThunk({ addressKeyCreationPayload, addressesToGenerate: [address] })
                     );
 
                     await dispatch(
