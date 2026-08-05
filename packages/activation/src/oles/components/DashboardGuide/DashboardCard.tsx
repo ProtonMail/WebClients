@@ -62,16 +62,16 @@ export const DashboardCard: FC = () => {
 
     return (
         <SettingsSectionWide>
-            <h2 className="text-bold">{c('BOSS').t`Finish setting up your business account`}</h2>
-            <p>{c('BOSS').t`Choose how you want to bring your team and email setup to ${BRAND_NAME}.`}</p>
+            <h2 className="text-bold">{c('Title').t`Finish setting up your business account`}</h2>
+            <p>{c('Info').t`Choose how you want to bring your team and email setup to ${BRAND_NAME}.`}</p>
 
             <div className="flex flex-column *:min-size-auto lg:flex-row flex-nowrap gap-4">
                 <div className="flex flex-1 flex-row items-start flex-nowrap border border-weak rounded-xl p-6 gap-4">
                     <CircledLogoWithProton iconPosition="outside-bottom-right" />
                     <div className="flex flex-1 flex-column flex-nowrap">
-                        <h3 className="text-semibold text-xl">{c('BOSS').t`Migrate from Google Workspace`}</h3>
+                        <h3 className="text-semibold text-xl">{c('Title').t`Migrate from Google Workspace`}</h3>
                         <p className="color-weak my-2">
-                            {c('BOSS')
+                            {c('Info')
                                 .t`Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.`}{' '}
                             {learnMoreLink}
                         </p>
@@ -85,8 +85,8 @@ export const DashboardCard: FC = () => {
                                 path="/migration-assistant"
                             >
                                 {migrationAssistantSteps.some((name) => steps[name].state === 'completed')
-                                    ? c('BOSS').t`Continue migration`
-                                    : c('BOSS').t`Start migration`}
+                                    ? c('Action').t`Continue migration`
+                                    : c('Action').t`Start migration`}
                             </ButtonLike>
                         </p>
 
@@ -104,9 +104,9 @@ export const DashboardCard: FC = () => {
                         iconPosition="outside-bottom-right"
                     />
                     <div className="flex flex-1 flex-column flex-nowrap">
-                        <h3 className="text-semibold text-xl">{c('BOSS').t`Set up manually`}</h3>
+                        <h3 className="text-semibold text-xl">{c('Title').t`Set up manually`}</h3>
                         <p className="color-weak my-2">
-                            {c('BOSS')
+                            {c('Info')
                                 .t`Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.`}{' '}
                             {learnMoreLink}
                         </p>
@@ -119,7 +119,7 @@ export const DashboardCard: FC = () => {
                                 color="norm"
                                 className="shrink-0 rounded-lg"
                             >
-                                {c('BOSS').t`Go to Domain names`}
+                                {c('Action').t`Go to Domain names`}
                             </ButtonLike>
                         </p>
 

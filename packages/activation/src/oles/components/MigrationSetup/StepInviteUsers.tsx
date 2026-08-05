@@ -48,17 +48,17 @@ const StepInviteUsers: FC<StepComponentProps> = ({ model, onNext }) => {
                     role="link"
                     onClick={() => openLinkInBrowser(activationLink)}
                 >
-                    {c('BOSS').t`invite link`}
+                    {c('Link').t`invite link`}
                 </button>
             );
         }
-        return <a key="invite-link" href={activationLink} target="_blank">{c('BOSS').t`invite link`}</a>;
+        return <a key="invite-link" href={activationLink} target="_blank">{c('Link').t`invite link`}</a>;
     }, [activationLink, isElectronApp]);
 
     const users = (providerUsers ?? []).filter((u) => u.ImporterOrganizationUser);
 
     const messageTemplate = (() => {
-        const translated = c('BOSS').jt`We're moving to ${BRAND_NAME}, the secure email service.
+        const translated = c('Invitation message').jt`We're moving to ${BRAND_NAME}, the secure email service.
 And your ${BRAND_NAME} account is ready to claim.
 Click the ${inviteLink}.
 Enter your email address, we'll send a code to your Gmail.
@@ -83,7 +83,7 @@ Then, when everyone has made the move, we will retire Gmail. We'll remind you be
     return (
         <div className="w-full max-w-custom" style={{ '--max-w-custom': '60rem' }}>
             <div className="flex justify-space-between flex-nowrap items-center gap-4 mb-4">
-                <h3 className="text-4xl text-bold">{c('BOSS').t`Onboard your team`}</h3>
+                <h3 className="text-4xl text-bold">{c('Title').t`Onboard your team`}</h3>
                 <div className="flex gap-2 shrink-0 text-semibold">
                     <Button
                         disabled={!onNext}
@@ -97,15 +97,15 @@ Then, when everyone has made the move, we will retire Gmail. We'll remind you be
                 </div>
             </div>
             <p className="mt-0 text-semibold">
-                {c('BOSS').t`All migrated user accounts are ready to be invited to your ${BRAND_NAME} organization.`}
+                {c('Info').t`All migrated user accounts are ready to be invited to your ${BRAND_NAME} organization.`}
             </p>
             <p className="color-weak mt-0 max-w-custom" style={{ '--max-w-custom': '42rem' }}>
-                {c('BOSS')
+                {c('Info')
                     .t`Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${BRAND_NAME} password.`}
             </p>
 
             <div className="mb-4">
-                <label htmlFor="invitation-link" className="block text-semibold mb-2">{c('BOSS')
+                <label htmlFor="invitation-link" className="block text-semibold mb-2">{c('Label')
                     .t`Invitation link`}</label>
                 <div className="relative">
                     <InputFieldTwo
@@ -122,7 +122,7 @@ Then, when everyone has made the move, we will retire Gmail. We'll remind you be
             </div>
 
             <div className="mb-4">
-                <label htmlFor="message-template" className="block text-semibold mb-2">{c('BOSS')
+                <label htmlFor="message-template" className="block text-semibold mb-2">{c('Label')
                     .t`Invitation message`}</label>
                 <div
                     className={clsx(
@@ -142,8 +142,8 @@ Then, when everyone has made the move, we will retire Gmail. We'll remind you be
                             <Tooltip
                                 title={
                                     messageExpanded
-                                        ? c('BOSS').t`Collapse invitation message`
-                                        : c('BOSS').t`Expand invitation message`
+                                        ? c('Tooltip').t`Collapse invitation message`
+                                        : c('Tooltip').t`Expand invitation message`
                                 }
                             >
                                 <Button
@@ -154,9 +154,9 @@ Then, when everyone has made the move, we will retire Gmail. We'll remind you be
                                     onClick={() => setMessageExpanded(!messageExpanded)}
                                 >
                                     {messageExpanded ? (
-                                        <IcArrowsToCenter alt={c('BOSS').t`Collapse invitation message`} />
+                                        <IcArrowsToCenter alt={c('Alt').t`Collapse invitation message`} />
                                     ) : (
-                                        <IcArrowsFromCenter alt={c('BOSS').t`Expand invitation message`} />
+                                        <IcArrowsFromCenter alt={c('Alt').t`Expand invitation message`} />
                                     )}
                                 </Button>
                             </Tooltip>
@@ -173,7 +173,7 @@ Then, when everyone has made the move, we will retire Gmail. We'll remind you be
                 </div>
             </div>
 
-            <h4 className="text-2xl text-semibold mt-12 mb-4">{c('BOSS').t`Migrated accounts`}</h4>
+            <h4 className="text-2xl text-semibold mt-12 mb-4">{c('Title').t`Migrated accounts`}</h4>
             <Card
                 padded={false}
                 rounded

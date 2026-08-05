@@ -58,26 +58,26 @@ const getStatusConfig = (
         case ProductStatusState.Initialized:
         case ProductStatusState.Active:
             return {
-                text: c('BOSS').t`In progress`,
+                text: c('Import status').t`In progress`,
                 icon: 'clock',
                 className: 'color-success',
             };
         case ProductStatusState.Completed:
             return {
-                text: c('BOSS').t`Migrated`,
+                text: c('Import status').t`Migrated`,
                 icon: 'checkmark-circle-filled',
                 iconClassName: 'color-success',
                 className: 'color-weak',
             };
         case ProductStatusState.Error:
             return {
-                text: c('BOSS').t`Has errors`,
+                text: c('Import status').t`Has errors`,
                 icon: 'exclamation-triangle-filled',
                 className: 'color-danger',
             };
         default:
             return {
-                text: c('BOSS').t`Pending`,
+                text: c('Import status').t`Pending`,
                 className: 'color-hint',
             };
     }

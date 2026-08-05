@@ -66,19 +66,19 @@ type Props = {
 const getFilterTranslation = (filter: ProviderUserFilter) => {
     switch (filter) {
         case ProviderUserFilter.ALL:
-            return c('BOSS').t`All`;
+            return c('Filter').t`All`;
         case ProviderUserFilter.NOT_STARTED:
-            return c('BOSS').t`Pending`;
+            return c('Filter').t`Pending`;
         case ProviderUserFilter.IN_PROGRESS:
-            return c('BOSS').t`In progress`;
+            return c('Filter').t`In progress`;
         case ProviderUserFilter.COMPLETED:
-            return c('BOSS').t`Migrated`;
+            return c('Filter').t`Migrated`;
         case ProviderUserFilter.ERROR:
-            return c('BOSS').t`Errors`;
+            return c('Filter').t`Errors`;
         case ProviderUserFilter.ACTIVATED:
-            return c('BOSS').t`Activated`;
+            return c('Filter').t`Activated`;
         case ProviderUserFilter.NOT_ACTIVATED:
-            return c('BOSS').t`Not activated`;
+            return c('Filter').t`Not activated`;
     }
 };
 
@@ -87,19 +87,19 @@ const usersAddressesLink = <SettingsLink path="/users-addresses">{c('Title').t`U
 const getEligibilityReasonTranslation = (reason: string) => {
     switch (reason) {
         case 'source_account_disabled':
-            return c('BOSS').t`To migrate this user, enable their account in your Google Workspace Admin Console.`;
+            return c('Info').t`To migrate this user, enable their account in your Google Workspace Admin Console.`;
         case 'source_account_suspended':
-            return c('BOSS').t`To migrate this user, unsuspend them in your Google Workspace Admin Console.`;
+            return c('Info').t`To migrate this user, unsuspend them in your Google Workspace Admin Console.`;
         case 'source_account_archived':
-            return c('BOSS').t`To migrate this user, unarchive them in your Google Workspace Admin Console.`;
+            return c('Info').t`To migrate this user, unarchive them in your Google Workspace Admin Console.`;
         case 'address_disabled':
-            return c('BOSS').jt`To migrate this user, enable their address under ${usersAddressesLink}.`;
+            return c('Info').jt`To migrate this user, enable their address under ${usersAddressesLink}.`;
         case 'user_disabled':
-            return c('BOSS').jt`To migrate this user, enable their account under ${usersAddressesLink}.`;
+            return c('Info').jt`To migrate this user, enable their account under ${usersAddressesLink}.`;
         case 'address_cannot_receive':
-            return c('BOSS').t`To migrate this user, they need to accept their invitation to join ${BRAND_NAME}.`;
+            return c('Info').t`To migrate this user, they need to accept their invitation to join ${BRAND_NAME}.`;
         default:
-            return c('BOSS').t`This user can not be migrated due to platform incompatibilities.`;
+            return c('Info').t`This user can not be migrated due to platform incompatibilities.`;
     }
 };
 
@@ -172,7 +172,7 @@ const ProviderUsersTable: FC<Props> = ({
 
     return (
         <section aria-labelledby="migrate-users">
-            <h3 className="sr-only" id="migrate-users">{c('BOSS').t`Select users to migrate`}</h3>
+            <h3 className="sr-only" id="migrate-users">{c('Title').t`Select users to migrate`}</h3>
             <div className="px-6 py-4 sm:flex sm:flex-row flex-nowrap items-center gap-2 w-full border-bottom border-weak">
                 {/* Users filter */}
                 <div className="flex-1 flex gap-2">
@@ -219,7 +219,7 @@ const ProviderUsersTable: FC<Props> = ({
                                 className="flex flex-nowrap items-center gap-2 shrink-0 text-semibold"
                             >
                                 <IcUserArrowRight />
-                                {c('BOSS').t`Migrate`}
+                                {c('Action').t`Migrate`}
                             </Button>
                         </div>
                     </Tooltip>
@@ -240,24 +240,26 @@ const ProviderUsersTable: FC<Props> = ({
                                         disabled={!filteredSelectable.length || total === 0}
                                     />
                                 )}
-                                <label htmlFor="select-all" className="m-0 flex-1">{c('BOSS').t`User`}</label>
+                                <label htmlFor="select-all" className="m-0 flex-1">{c('Table header').t`User`}</label>
                             </div>
                         </TableHeaderCell>
                         <TableHeaderCell className="w-custom" style={{ '--w-custom': 'max(9rem, 12vw)' }}>
-                            <span className="text-ellipsis" title={c('BOSS').t`Estimated size`}>{c('BOSS')
-                                .t`Estimated size`}</span>
+                            <span className="text-ellipsis" title={c('Table header').t`Estimated size`}>{c(
+                                'Table header'
+                            ).t`Estimated size`}</span>
                         </TableHeaderCell>
                         {(hiddenColumns & ProviderUserColumn.Migration) !== ProviderUserColumn.Migration && (
                             <TableHeaderCell className="w-custom" style={{ '--w-custom': 'max(11rem, 13vw)' }}>
                                 <div className="flex">
                                     <Tooltip
                                         openDelay={0}
-                                        title={c('BOSS')
+                                        title={c('Tooltip')
                                             .t`Data migration status from Google Workspace to ${BRAND_NAME}`}
                                     >
                                         <div className="flex items-center flex-nowrap gap-2">
                                             <IcInfoCircle className="shrink-0" />
-                                            <span className="text-ellipsis">{c('BOSS').t`Migration status`}</span>
+                                            <span className="text-ellipsis">{c('Table header')
+                                                .t`Migration status`}</span>
                                         </div>
                                     </Tooltip>
                                 </div>
@@ -268,11 +270,11 @@ const ProviderUsersTable: FC<Props> = ({
                                 <div className="flex">
                                     <Tooltip
                                         openDelay={0}
-                                        title={c('BOSS').t`Users who have accessed their ${BRAND_NAME} account`}
+                                        title={c('Tooltip').t`Users who have accessed their ${BRAND_NAME} account`}
                                     >
                                         <div className="flex items-center flex-nowrap gap-2">
                                             <IcInfoCircle className="shrink-0" />
-                                            <span className="text-ellipsis">{c('BOSS').t`Activated`}</span>
+                                            <span className="text-ellipsis">{c('Table header').t`Activated`}</span>
                                         </div>
                                     </Tooltip>
                                 </div>
@@ -308,7 +310,7 @@ const ProviderUsersTable: FC<Props> = ({
                                         <p className="m-0 text-ellipsis" title={u.AdminSetName}>
                                             {u.AdminSetName}{' '}
                                             {areEquivalentEmails(u.Email, currentUser) && (
-                                                <span className="ml-0.5">({c('BOSS').t`You`})</span>
+                                                <span className="ml-0.5">({c('Info').t`You`})</span>
                                             )}
                                         </p>
                                         <p className="m-0 text-sm color-hint text-ellipsis" title={u.Email}>
@@ -317,11 +319,17 @@ const ProviderUsersTable: FC<Props> = ({
                                     </label>
                                 </div>
                             </TableCell>
-                            <TableCell label={c('BOSS').t`Size`} className="provider-users-table-cell color-weak">
+                            <TableCell
+                                label={c('Table header').t`Size`}
+                                className="provider-users-table-cell color-weak"
+                            >
                                 {humanSize({ bytes: u.UsedQuota, fraction: 0 })}
                             </TableCell>
                             {(hiddenColumns & ProviderUserColumn.Migration) !== ProviderUserColumn.Migration && (
-                                <TableCell label={c('BOSS').t`Status`} className="provider-users-table-cell color-weak">
+                                <TableCell
+                                    label={c('Table header').t`Status`}
+                                    className="provider-users-table-cell color-weak"
+                                >
                                     <ImportStatus
                                         status={coalesceStatus(u, transferErrors)}
                                         onClick={onViewReport(u)}
@@ -330,7 +338,7 @@ const ProviderUsersTable: FC<Props> = ({
                             )}
                             {(hiddenColumns & ProviderUserColumn.Activation) !== ProviderUserColumn.Activation && (
                                 <TableCell
-                                    label={c('BOSS').t`Activated`}
+                                    label={c('Table header').t`Activated`}
                                     className="provider-users-table-cell color-weak"
                                 >
                                     <ActivationStatus
@@ -346,7 +354,7 @@ const ProviderUsersTable: FC<Props> = ({
                     {total === 0 && (
                         <TableRow>
                             <TableCell colSpan={4}>
-                                <div className="p-4 text-center color-weak">{c('BOSS').t`No users to display`}</div>
+                                <div className="p-4 text-center color-weak">{c('Info').t`No users to display`}</div>
                             </TableCell>
                         </TableRow>
                     )}

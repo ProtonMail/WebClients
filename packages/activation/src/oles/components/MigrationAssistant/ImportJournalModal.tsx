@@ -32,19 +32,19 @@ type ProductReports = { [K in ApiImporterProduct]?: ReportModel };
 const getSkippedMessageForProduct = (product: ApiImporterProduct, count: number) => {
     switch (product) {
         case 'Mail':
-            return c('BOSS').ngettext(
+            return c('Import status').ngettext(
                 msgid`Skipped ${count} email due to incompatibilities`,
                 `Skipped ${count} emails due to incompatibilities`,
                 count
             );
         case 'Calendar':
-            return c('BOSS').ngettext(
+            return c('Import status').ngettext(
                 msgid`Skipped ${count} event due to incompatibilities`,
                 `Skipped ${count} events due to incompatibilities`,
                 count
             );
         case 'Contacts':
-            return c('BOSS').ngettext(
+            return c('Import status').ngettext(
                 msgid`Skipped ${count} contact due to incompatibilities`,
                 `Skipped ${count} contacts due to incompatibilities`,
                 count
@@ -70,7 +70,7 @@ const ImportJournalSection: FC<{
             )}
 
             {report && !report.Error && !Boolean(report.Journal.length) && (
-                <p className="m-0 color-weak">{c('BOSS').t`Import completed successfully`}</p>
+                <p className="m-0 color-weak">{c('Import status').t`Import completed successfully`}</p>
             )}
         </div>
     );
@@ -86,7 +86,8 @@ const ImportJournalModal: FC<{
     const { transferErrors } = user;
     const [productReports, setProductReports] = useState<ProductReports>();
 
-    const fallbackError = c('BOSS').t`No error details available. Please contact customer support for more information`;
+    const fallbackError = c('Import error')
+        .t`No error details available. Please contact customer support for more information`;
 
     useEffect(() => {
         void (async () => {
@@ -132,7 +133,7 @@ const ImportJournalModal: FC<{
 
     return (
         <ModalTwo {...modalProps}>
-            <ModalTwoHeader title={c('BOSS').t`Import details`} subline={`${user.AdminSetName} (${user.Email})`} />
+            <ModalTwoHeader title={c('Title').t`Import details`} subline={`${user.AdminSetName} (${user.Email})`} />
             <ModalTwoContent>
                 {transferErrors.length
                     ? transferErrors.map(({ error }, i) => (

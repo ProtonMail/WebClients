@@ -5,12 +5,12 @@ import { c } from 'ttag';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import clsx from '@proton/utils/clsx';
 
-const NotActivated = () => <span className="color-hint">{c('BOSS').t`Not activated`}</span>;
+const NotActivated = () => <span className="color-hint">{c('Status').t`Not activated`}</span>;
 
 const Activated = () => (
     <>
         <IcCheckmarkCircleFilled className="color-success" />
-        <span>{c('BOSS').t`Activated`}</span>
+        <span>{c('Status').t`Activated`}</span>
     </>
 );
 
