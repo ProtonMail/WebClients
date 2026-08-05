@@ -1,4 +1,4 @@
-import { protonizer, sanitizeComposerReply } from './purify';
+import { protonizer, sanitizeComposerBlockquoteHtml, sanitizeComposerReply, sanitizeString } from './purify';
 
 describe('protonizer', () => {
     const getBodyClass = (doc: Element) => doc.querySelector('body')?.getAttribute('class');
@@ -230,5 +230,92 @@ describe('sanitizeComposerReply', () => {
         const result = sanitizeComposerReply(null as unknown as Element);
 
         expect(result).toBeNull();
+    });
+});
+
+describe('sanitizeComposerBlockquoteHtml', () => {
+    it('should remove iframe and script while keeping inline images', () => {
+        const html = `<div class="protonmail_quote">
+            Subject: &lt;iframe srcdoc='&lt;!--<br>
+            <blockquote class="protonmail_quote" type="cite">
+                --&gt;&lt;script/&gt;<img class="proton-embedded" src="blob:https://mail.proton.me/abc">
+            </blockquote>
+        </div>`;
+
+        const result = sanitizeComposerBlockquoteHtml(html);
+
+        expect(result).not.toContain('<iframe');
+        expect(result).not.toContain('<script');
+        expect(result).toContain('blob:https://mail.proton.me/abc');
+    });
+
+    it('should preserve styles and Mail image metadata used when forwarding', () => {
+        const html = `<div class="protonmail_quote">
+            <style>.hero { display: block; }</style>
+            <picture>
+                <source
+                    srcset="https://example.test/image.png 2x"
+                    proton-srcset="https://example.test/image.png 2x"
+                >
+                <img
+                    src="blob:https://mail.proton.me/image"
+                    proton-src="https://example.test/image.png"
+                    data-embedded-img="cid:image"
+                >
+            </picture>
+            <table>
+                <tbody>
+                    <tr>
+                        <td
+                            background="blob:https://mail.proton.me/background"
+                            proton-background="https://example.test/background.png"
+                        >Content</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>`;
+
+        const result = sanitizeComposerBlockquoteHtml(html);
+        const document = new DOMParser().parseFromString(result, 'text/html');
+
+        expect(document.querySelector('style')?.textContent).toContain('.hero');
+        // The renderer never restores a raw srcset (it is absent from MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD),
+        // so only the proton- prefixed metadata is expected to survive.
+        expect(document.querySelector('source')?.hasAttribute('srcset')).toBe(false);
+        expect(document.querySelector('source')?.getAttribute('proton-srcset')).toBe(
+            'https://example.test/image.png 2x'
+        );
+        expect(document.querySelector('img')?.getAttribute('proton-src')).toBe('https://example.test/image.png');
+        expect(document.querySelector('img')?.getAttribute('data-embedded-img')).toBe('cid:image');
+        expect(document.querySelector('td')?.getAttribute('proton-background')).toBe(
+            'https://example.test/background.png'
+        );
+    });
+});
+
+describe('DOMPurify hooks isolation', () => {
+    it('should not leave the form attribute hook attached after protonizing', () => {
+        const input = '<input name="a" data-x="1">';
+        const before = sanitizeString(input);
+
+        protonizer('<div>Hello</div>', true);
+
+        expect(sanitizeString(input)).toBe(before);
+    });
+
+    it('should not apply the proton- prefix hook when protonizing threw', () => {
+        const throwingInput = {
+            toString: () => {
+                throw new Error('boom');
+            },
+        } as unknown as string;
+
+        expect(() => protonizer(throwingInput, true)).toThrow();
+
+        const result = sanitizeComposerBlockquoteHtml('<img src="blob:https://mail.proton.me/abc">');
+        const image = new DOMParser().parseFromString(result, 'text/html').querySelector('img');
+
+        expect(image?.getAttribute('src')).toBe('blob:https://mail.proton.me/abc');
+        expect(image?.hasAttribute('proton-src')).toBe(false);
     });
 });
