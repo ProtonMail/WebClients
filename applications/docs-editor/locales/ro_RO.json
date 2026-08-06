@@ -235,6 +235,18 @@
       ],
       "Superscript": [
         "Exponent"
+      ],
+      "Close outline": [
+        "Închidere contur"
+      ],
+      "Go to label": [
+        "Accesare etichetă"
+      ],
+      "Open outline": [
+        "Deschidere contur"
+      ],
+      "Remove": [
+        "Eliminare"
       ]
     },
     "color": {
@@ -459,6 +471,9 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Nu se poate converti documentul Word. Este protejat prin parolă? Dacă da, trebuie să eliminați parola și să reîncercați."
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Această foaie de calcul a detectat o inconsecvență la sincronizarea locală. Editarea a fost dezactivată pentru a preveni pierderea datelor. Trimiteți un raport de eroare și, dacă sunteți de acord să partajați conținutul, să descărcați și să includeți informațiile de depanare de mai jos."
       ]
     },
     "Error message": {
@@ -571,6 +586,12 @@
       ],
       "New": [
         "Nou"
+      ],
+      "Labels:": [
+        "Etichete:"
+      ],
+      "NEW": [
+        "NOU"
       ]
     },
     "Label": {
@@ -2116,6 +2137,9 @@
       ],
       "Language not supported": [
         "Limba nu este suportată"
+      ],
+      "Outline": [
+        "Schiță"
       ]
     },
     "Warning": {
@@ -2311,6 +2335,29 @@
       ],
       "Zero": [
         "Zero"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Media"
+      ],
+      "Count": [
+        "Total"
+      ],
+      "Customize Status Bar": [
+        "Personalizare bară de stare"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Numerical count": [
+        "Total numeric"
+      ],
+      "Sum": [
+        "Suma"
       ]
     }
   }

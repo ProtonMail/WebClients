@@ -244,6 +244,18 @@
       ],
       "Superscript": [
         "Εκθέτης"
+      ],
+      "Close outline": [
+        "Κλείσιμο περιγράμματος"
+      ],
+      "Go to label": [
+        "Μετάβαση στην ετικέτα"
+      ],
+      "Open outline": [
+        "Άνοιγμα περιγράμματος"
+      ],
+      "Remove": [
+        "Αφαίρεση"
       ]
     },
     "color": {
@@ -474,6 +486,9 @@
       ],
       "Tried to import Sheet data into Lexical": [
         "Προσπάθεια εισαγωγής δεδομένων Φύλλου στο Lexical"
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Αυτό το υπολογιστικό φύλλο εντόπισε μια τοπική ασυνέπεια συγχρονισμού. Η επεξεργασία έχει απενεργοποιηθεί για να αποτραπεί η απώλεια δεδομένων. Υποβάλετε μια αναφορά και, εάν είστε σύμφωνοι με την κοινοποίηση του περιεχομένου, κατεβάστε και συμπεριλάβετε τις πληροφορίες εντοπισμού σφαλμάτων από παρακάτω."
       ]
     },
     "Error message": {
@@ -594,6 +609,12 @@
       ],
       "New": [
         "Νέο"
+      ],
+      "Labels:": [
+        "Ετικέτες:"
+      ],
+      "NEW": [
+        "ΝΕΟ"
       ]
     },
     "Label": {
@@ -738,6 +759,9 @@
       ],
       "Explore the New Suggestion Mode": [
         "Εξερευνήστε τη Νέα Λειτουργία Προτάσεων"
+      ],
+      "Outline": [
+        "Περίγραμμα"
       ]
     },
     "sheets_2025:Bottom bar": {
@@ -2336,6 +2360,29 @@
       ],
       "Zero": [
         "Μηδέν"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Μέσος όρος"
+      ],
+      "Count": [
+        "Πλήθος"
+      ],
+      "Customize Status Bar": [
+        "Προσαρμογή Γραμμής Κατάστασης"
+      ],
+      "Max": [
+        "Μέγιστο"
+      ],
+      "Min": [
+        "Ελάχιστο"
+      ],
+      "Numerical count": [
+        "Αριθμητική καταμέτρηση"
+      ],
+      "Sum": [
+        "Άθροισμα"
       ]
     }
   }

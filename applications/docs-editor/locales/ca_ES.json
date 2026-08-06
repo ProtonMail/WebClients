@@ -244,6 +244,18 @@
       ],
       "Superscript": [
         "Superíndex"
+      ],
+      "Close outline": [
+        "Tancar l'esquema"
+      ],
+      "Go to label": [
+        "Ves a l'etiqueta"
+      ],
+      "Open outline": [
+        "Obrir l'esquema"
+      ],
+      "Remove": [
+        "Esborra"
       ]
     },
     "color": {
@@ -474,6 +486,9 @@
       ],
       "Tried to import Sheet data into Lexical": [
         "S'ha intentat importar les dades del full al Lexical"
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Aquest full de càlcul ha detectat una incongruència de sincronització local. S'ha desactivat l'edició per evitar la pèrdua de dades. Envieu un informe i, si us sembla bé compartir-ne el contingut, descarregueu i incloeu la informació de depuració de més avall."
       ]
     },
     "Error message": {
@@ -594,6 +609,12 @@
       ],
       "New": [
         "Nova"
+      ],
+      "Labels:": [
+        "Etiquetes:"
+      ],
+      "NEW": [
+        "NOU"
       ]
     },
     "Label": {
@@ -738,6 +759,9 @@
       ],
       "Explore the New Suggestion Mode": [
         "Descobriu el nou mode de suggeriments"
+      ],
+      "Outline": [
+        "Esquema"
       ]
     },
     "sheets_2025:Bottom bar": {
@@ -2336,6 +2360,29 @@
       ],
       "Zero": [
         "Zero"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Mitjana"
+      ],
+      "Count": [
+        "Comptar"
+      ],
+      "Customize Status Bar": [
+        "Personalitzar la barra d'estat"
+      ],
+      "Max": [
+        "Màxim"
+      ],
+      "Min": [
+        "Mínim"
+      ],
+      "Numerical count": [
+        "Recompte numèric"
+      ],
+      "Sum": [
+        "Suma"
       ]
     }
   }

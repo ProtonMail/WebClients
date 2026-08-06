@@ -244,6 +244,12 @@
       ],
       "Superscript": [
         "Horní index"
+      ],
+      "Go to label": [
+        "Přejít na štítek"
+      ],
+      "Remove": [
+        "Odstranit"
       ]
     },
     "color": {
@@ -474,6 +480,9 @@
       ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Tato tabulka není kompatibilní s aktuální verzí klienta. Zkuste prosím klienta znovu načíst. Pokud chyba přetrvává, obraťte se prosím na podporu."
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Tato tabulka zjistila nesrovnalost v místní synchronizaci. Úpravy byly deaktivovány, aby se zabránilo ztrátě dat. Odešlete prosím hlášení, a pokud souhlasíte se sdílením obsahu, stáhněte a přiložte informace o ladění uvedené níže."
       ]
     },
     "Error message": {
@@ -596,6 +605,9 @@
       ],
       "New": [
         "Nově"
+      ],
+      "Labels:": [
+        "Štítky:"
       ]
     },
     "Label": {
@@ -740,6 +752,9 @@
       ],
       "Explore the New Suggestion Mode": [
         "Prozkoumejte nový režim navrhování"
+      ],
+      "Outline": [
+        "Osnova"
       ]
     },
     "Warning": {
@@ -1532,6 +1547,12 @@
       ],
       "₹ Rupee": [
         "₹ Rupie"
+      ],
+      "Custom date and time": [
+        "Vlastní datum a čas"
+      ],
+      "Custom number": [
+        "Vlastní číslo"
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
@@ -2150,6 +2171,219 @@
       ],
       "Table title": [
         "Název tabulky"
+      ]
+    },
+    "sheets_2025:Formula bar": {
+      "Formula bar": [
+        "Řádek vzorců"
+      ]
+    },
+    "sheets_2025:Range selector": {
+      "Range selector": [
+        "Výběr rozsahu"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "Použít"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Custom date and time formats": [
+        "Vlastní formáty data a času"
+      ],
+      "Format": [
+        "Formát"
+      ],
+      "Sample": [
+        "Ukázka"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "Dop./Odp."
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Day": [
+        "Den"
+      ],
+      "Day as abbreviation": [
+        "Den jako zkratka"
+      ],
+      "Day as full name": [
+        "Den jako celý název"
+      ],
+      "Day with leading zero": [
+        "Den s úvodní nulou"
+      ],
+      "Day without leading zero": [
+        "Den bez úvodní nuly"
+      ],
+      "Delete": [
+        "Smazat"
+      ],
+      "Duration": [
+        "Doba trvání"
+      ],
+      "Elapsed hours": [
+        "Uplynulé hodiny"
+      ],
+      "Elapsed hours with leading zero": [
+        "Uplynulé hodiny s úvodní nulou"
+      ],
+      "Elapsed hours without leading zero": [
+        "Uplynulé hodiny bez úvodní nuly"
+      ],
+      "Elapsed minutes": [
+        "Uplynulé minuty"
+      ],
+      "Elapsed minutes with leading zero": [
+        "Uplynulé minuty s úvodní nulou"
+      ],
+      "Elapsed minutes without leading zero": [
+        "Uplynulé minuty bez úvodní nuly"
+      ],
+      "Elapsed seconds": [
+        "Uplynulé sekundy"
+      ],
+      "Elapsed seconds with leading zero": [
+        "Uplynulé sekundy s úvodní nulou"
+      ],
+      "Elapsed seconds without leading zero": [
+        "Uplynulé sekundy bez úvodní nuly"
+      ],
+      "First letter of the month": [
+        "První písmeno měsíce"
+      ],
+      "Full": [
+        "Celé"
+      ],
+      "Full numeric year": [
+        "Úplný číselný rok"
+      ],
+      "Hour": [
+        "Hodina"
+      ],
+      "Hour with leading zero": [
+        "Hodina s úvodní nulou"
+      ],
+      "Hour without leading zero": [
+        "Hodina bez úvodní nuly"
+      ],
+      "Millisecond": [
+        "Milisekunda"
+      ],
+      "Minute": [
+        "Minuta"
+      ],
+      "Minute with leading zero": [
+        "Minuta s úvodní nulou"
+      ],
+      "Minute without leading zero": [
+        "Minuta bez úvodní nuly"
+      ],
+      "Month": [
+        "Měsíc"
+      ],
+      "Month as abbreviation": [
+        "Měsíc jako zkratka"
+      ],
+      "Month as full name": [
+        "Měsíc jako celý název"
+      ],
+      "Month with leading zero": [
+        "Měsíc s úvodní nulou"
+      ],
+      "Month without leading zero": [
+        "Měsíc bez úvodní nuly"
+      ],
+      "Precision to 1/10 of a second": [
+        "Přesnost na 1/10 sekundy"
+      ],
+      "Precision to 1/100 of a second": [
+        "Přesnost na 1/100 sekundy"
+      ],
+      "Precision to 1/1000 of a second": [
+        "Přesnost na 1/1000 sekundy"
+      ],
+      "Second": [
+        "Sekunda"
+      ],
+      "Second with leading zero": [
+        "Sekunda s úvodní nulou"
+      ],
+      "Second without leading zero": [
+        "Sekunda bez úvodní nuly"
+      ],
+      "Time": [
+        "Čas"
+      ],
+      "Two digit year": [
+        "Dvojciferný rok"
+      ],
+      "Year": [
+        "Rok"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Průměr"
+      ],
+      "Count": [
+        "Počet"
+      ],
+      "Customize Status Bar": [
+        "Přizpůsobit stavový řádek"
+      ],
+      "Max": [
+        "Max."
+      ],
+      "Min": [
+        "Min."
+      ],
+      "Numerical count": [
+        "Počet čísel"
+      ],
+      "Sum": [
+        "Součet"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom number format dialog": {
+      "Apply": [
+        "Použít"
+      ],
+      "Apply to create a custom number format": [
+        "Použitím vytvoříte vlastní formát čísla"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Custom number format": [
+        "Vlastní formát čísla"
+      ],
+      "Custom number formats": [
+        "Vlastní formáty čísel"
+      ],
+      "Format": [
+        "Formát"
+      ],
+      "Negative": [
+        "Záporné"
+      ],
+      "Positive": [
+        "Kladné"
+      ],
+      "Sample": [
+        "Ukázka"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Zero": [
+        "Nula"
       ]
     }
   }

@@ -244,6 +244,12 @@
       ],
       "Superscript": [
         "Yläindeksi"
+      ],
+      "Go to label": [
+        "Siirry tunnisteeseen"
+      ],
+      "Remove": [
+        "Poista"
       ]
     },
     "color": {
@@ -471,6 +477,12 @@
       ],
       "Tried to import Sheet data into Lexical": [
         "Yritettiin tuoda taulukon tiedot Lexicaliin"
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Tämä laskentataulukko havaitsi paikallisen synkronointivirheen. Muokkaus on poistettu käytöstä tietojen menetyksen estämiseksi. Lähetä virheraportti ja jos suostut jakamaan sisällön, lataa ja liitä mukaan alla olevat vianselvitystiedot."
+      ],
+      "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
+        "Tämä laskentataulukko ei ole yhteensopiva nykyisen asiakasversion kanssa. Kokeile päivittää asiakasohjelma. Jos virhe toistuu, ota yhteyttä tukeen."
       ]
     },
     "Error message": {
@@ -591,6 +603,12 @@
       ],
       "New": [
         "Uusi"
+      ],
+      "Labels:": [
+        "Tunnisteet:"
+      ],
+      "NEW": [
+        "UUTTA"
       ]
     },
     "Label": {
@@ -735,6 +753,9 @@
       ],
       "Explore the New Suggestion Mode": [
         "Kokeile uutta ehdotustilaa"
+      ],
+      "Outline": [
+        "Rakenne"
       ]
     },
     "sheets_2025:Bottom bar": {
@@ -751,6 +772,12 @@
       ],
       "Theme colors": [
         "Teeman värit"
+      ],
+      "Recent colors": [
+        "Kaavion muokkaus"
+      ],
+      "Standard colors": [
+        "Vakiovärit"
       ]
     },
     "sheets_2025:Range selector menu": {
@@ -758,6 +785,12 @@
         "Lisää uusi"
       ],
       "Sheets": [
+        "Taulukot"
+      ],
+      "Named ranges": [
+        "Muotoile prosenteiksi"
+      ],
+      "Tables": [
         "Taulukot"
       ]
     },
@@ -779,6 +812,9 @@
       ],
       "Rename": [
         "Uudelleennimeä"
+      ],
+      "Duplicate": [
+        "Muuta rivin kokoa"
       ]
     },
     "sheets_2025:Spreadsheet cell tooltip": {
@@ -787,6 +823,9 @@
       ],
       "Invalid": [
         "Virheellinen"
+      ],
+      "Note": [
+        "Yhdistä solut"
       ]
     },
     "sheets_2025:Spreadsheet context menu": {
@@ -855,6 +894,114 @@
       ],
       "Values only": [
         "Vain arvot"
+      ],
+      "AI Quick Edit": [
+        "Tekoälypikamuokkaus"
+      ],
+      "Auto fit to data": [
+        "Vapauta rivit"
+      ],
+      "Cell value": [
+        "Solun arvo"
+      ],
+      "Conditional format": [
+        "Avaa alueen lukitus"
+      ],
+      "Convert to range": [
+        "Linkki kopioitiin leikepöydälle"
+      ],
+      "Convert to table": [
+        "Tämän laskentataulukon asetukset"
+      ],
+      "Custom": [
+        "Mukautettu"
+      ],
+      "Data validation": [
+        "Välilyönti"
+      ],
+      "Define named range": [
+        "Yläreunaviiva"
+      ],
+      "Delete cells and shift cells left": [
+        "Kaikkia sarakkeita ei voi poistaa"
+      ],
+      "Delete cells and shift cells up": [
+        "Siirry seuraavaan"
+      ],
+      "Delete table column": [
+        "Poista taulukon sarake"
+      ],
+      "Delete table row": [
+        "Poista taulukon rivi"
+      ],
+      "Formatting only": [
+        "Vain muotoilu"
+      ],
+      "Freeze up to column": [
+        "Määritä nimetty alue"
+      ],
+      "Freeze up to row": [
+        "Kaksinkertainen"
+      ],
+      "Insert cells and shift cells down": [
+        "Lisää soluja ja siirrä soluja alaspäin"
+      ],
+      "Insert cells and shift cells right": [
+        "Vakiovärit"
+      ],
+      "Insert note": [
+        "Tee uudelleen"
+      ],
+      "Insert table column to the left": [
+        "Nimetyt alueet"
+      ],
+      "Insert table column to the right": [
+        "Datan vahvistus"
+      ],
+      "Insert table row": [
+        "Lisää taulukkoon rivi"
+      ],
+      "More cell actions": [
+        "Ehdollinen muotoilu"
+      ],
+      "Paste special": [
+        "Valitse alue"
+      ],
+      "Pipe": [
+        "Pystyviiva"
+      ],
+      "Resize column": [
+        "Muuta sarakkeen kokoa"
+      ],
+      "Resize row": [
+        "Kaaviotyyppi"
+      ],
+      "Sort": [
+        "Alareunaviiva"
+      ],
+      "Sort range A → Z": [
+        "Lajittele väli A → Ö"
+      ],
+      "Sort range Z → A": [
+        "Lajittele väli Ö → A"
+      ],
+      "Sort sheet A to Z": [
+        "Ehdollinen muotoilu"
+      ],
+      "Sort sheet Z to A": [
+        "Lisää toinen nimetty alue"
+      ],
+      "Space": [
+        "Päivämäärä ja aika"
+      ],
+      "Transposed": [
+        "Muistiinpano"
+      ],
+      "Unfreeze columns": [
+        "Yhtenäinen keskipaksu"
+      ],
+      "Unfreeze rows": [
+        "Ei mitään"
       ]
     },
     "sheets_2025:Spreadsheet context menu (columns/rows)": {
@@ -866,6 +1013,20 @@
       ],
       "right": [
         "oikea"
+      ],
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } sarake",
+        "${ numberOfColumns } saraketta"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } rivi",
+        "${ numberOfRows } riviä"
+      ],
+      "above": [
+        "yläpuolelle"
+      ],
+      "Insert": [
+        "Lisää"
       ]
     },
     "sheets_2025:Spreadsheet delete sheet dialog": {
@@ -877,11 +1038,26 @@
       ],
       "Delete sheet": [
         "Poista taulukko"
+      ],
+      "Are you sure you want to delete ${ sheetName }?": [
+        "Haluatteko varmasti poistaa taulukon ${ sheetName }?"
       ]
     },
     "sheets_2025:Spreadsheet editor cell merge options": {
       "Merge all": [
         "Yhdistä kaikki"
+      ],
+      "Merge cells": [
+        "Yhdistä solut"
+      ],
+      "Merge horizontally": [
+        "Lisää nimetty alue"
+      ],
+      "Merge vertically": [
+        "Yhdistä pystysuunnassa"
+      ],
+      "Unmerge": [
+        "Erota"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar data menu": {
@@ -893,6 +1069,15 @@
       ],
       "Sort sheet": [
         "Lajittele taulukko"
+      ],
+      "Data validation": [
+        "Rivitys"
+      ],
+      "Protect range": [
+        "Vaakasuora tasaus"
+      ],
+      "Unlock range": [
+        "Datan vahvistus"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
@@ -901,6 +1086,12 @@
       ],
       "(Z to A)": [
         "(Ö - A)"
+      ],
+      "column ${ columnLetter }": [
+        "sarake ${ columnLetter } mukaan"
+      ],
+      "Sort sheet by": [
+        "Lajittele taulukko sarakkeen"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar edit menu": {
@@ -924,6 +1115,21 @@
       ],
       "Values only": [
         "Vain arvot"
+      ],
+      "Formatting only": [
+        "Vain muotoilu"
+      ],
+      "Link only": [
+        "Vain linkki"
+      ],
+      "Paste special": [
+        "Sovita automaattisesti tietoihin"
+      ],
+      "Redo": [
+        "Pystysuora tasaus"
+      ],
+      "Transposed": [
+        "Transponoitu"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar file menu": {
@@ -962,6 +1168,27 @@
       ],
       "Settings": [
         "Asetukset"
+      ],
+      "Comma Separated Values (.csv)": [
+        "Pilkuilla erotetut arvot (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Avaa ${ DRIVE_APP_NAME }"
+      ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "OpenDocument-laskentataulukko (.ods) (beeta)"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Sarkaimella erotetut arvot (.tsv)"
+      ],
+      "Toggle debug mode": [
+        "Ota vianselvitystila käyttöön tai pois käytöstä"
+      ],
+      "View recent spreadsheets": [
+        "Mobiilimuokkaus tulossa pian"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu": {
@@ -991,6 +1218,27 @@
       ],
       "Underline": [
         "Alleviivaus"
+      ],
+      "Alignment": [
+        "Tasaus"
+      ],
+      "Bold": [
+        "Poista taulukon sarake"
+      ],
+      "Cell styles": [
+        "Solutyylit"
+      ],
+      "Conditional formatting": [
+        "Kaavion otsikko"
+      ],
+      "Strikethrough": [
+        "Yliviivaus"
+      ],
+      "Table formatting": [
+        "Taulukon muotoilu"
+      ],
+      "Wrapping": [
+        "Sisäreunaviivat"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
@@ -999,6 +1247,18 @@
       ],
       "Right": [
         "Oikea"
+      ],
+      "Bottom": [
+        "Reunaviiva"
+      ],
+      "Center": [
+        "Keskitä"
+      ],
+      "Middle": [
+        "Keskelle"
+      ],
+      "Top": [
+        "Lisää muistiinpano"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
@@ -1025,6 +1285,21 @@
       ],
       "Sheet": [
         "Taulukko"
+      ],
+      "Dropdown": [
+        "Pudotusvalikko"
+      ],
+      "Function": [
+        "Toiminto"
+      ],
+      "Insert cells and shift down": [
+        "Lisää soluja ja siirrä alas"
+      ],
+      "Insert cells and shift right": [
+        "Tieteellinen"
+      ],
+      "Note": [
+        "Järjestä"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
@@ -1039,6 +1314,17 @@
       ],
       "right": [
         "oikea"
+      ],
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } sarake",
+        "${ numberOfColumns } saraketta"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } rivi",
+        "${ numberOfRows } riviä"
+      ],
+      "Insert": [
+        "Lisää"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar title": {
@@ -1047,11 +1333,35 @@
       ],
       "File": [
         "Tiedosto"
+      ],
+      "Data": [
+        "Tiedot"
+      ],
+      "Format": [
+        "Muoto"
+      ],
+      "Insert": [
+        "Lisää"
+      ],
+      "View": [
+        "Näytä"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu": {
       "Show": [
         "Näytä"
+      ],
+      "Formula bar": [
+        "Kiinnitä riviin asti"
+      ],
+      "Freeze": [
+        "Transponoitu"
+      ],
+      "Gridlines": [
+        "Lisää taulukon sarake oikealle"
+      ],
+      "Zoom": [
+        "Tämä vaikuttaa muotoiluun, kuten funktioihin, päivämääriin ja valuuttaan"
       ]
     },
     "sheets_2025:Spreadsheet editor number formats menu": {
@@ -1096,6 +1406,36 @@
       ],
       "₹ Rupee": [
         "₹ Rupia"
+      ],
+      "Accounting": [
+        "Vähennä desimaaleja"
+      ],
+      "CN¥ Chinese Yuan": [
+        "Kopioi muotoilu"
+      ],
+      "Currency rounded": [
+        "Valitse alue"
+      ],
+      "Custom date and time": [
+        "Mukautettu päivämäärä ja aika"
+      ],
+      "Custom number": [
+        "Mukautettu luku"
+      ],
+      "Date time": [
+        "Muotoilutyyli"
+      ],
+      "Financial": [
+        "Kaikkia rivejä ei voi poistaa"
+      ],
+      "Long date": [
+        "Pitkä päivämäärä"
+      ],
+      "More currency": [
+        "Lisää solutoimintoja"
+      ],
+      "Scientific": [
+        "Muunna taulukoksi"
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
@@ -1104,6 +1444,9 @@
       ],
       "Go to previous": [
         "Siirry edelliseen"
+      ],
+      "Go to next": [
+        "Sarjat"
       ]
     },
     "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
@@ -1115,6 +1458,15 @@
       ],
       "Save and reload": [
         "Tallenna ja lataa uudelleen"
+      ],
+      "Locale": [
+        "Maa-asetus"
+      ],
+      "Settings for this spreadsheet": [
+        "Vasen reunaviiva"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "Valuuttasymboli"
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
@@ -1162,6 +1514,69 @@
       ],
       "Undo": [
         "Kumoa"
+      ],
+      "Border": [
+        "Pystysuora tasaus"
+      ],
+      "Decrease decimal places": [
+        "Yhdistä vaakasuunnassa"
+      ],
+      "Decrease font size": [
+        "Pienennä kirjasinkokoa"
+      ],
+      "Default (${ defaultFont })": [
+        "Oletus (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Täyttöväri"
+      ],
+      "Format as currency": [
+        "Tuhansien erotin"
+      ],
+      "Format as percent": [
+        "Valitse yhdistämistyyppi"
+      ],
+      "Horizontal align": [
+        "Lisää taulukon sarake vasemmalle"
+      ],
+      "Increase decimal places": [
+        "Lisää soluja ja siirrä soluja alaspäin"
+      ],
+      "Increase font size": [
+        "Suurenna kirjasinkokoa"
+      ],
+      "Insert function": [
+        "Lisää funktio"
+      ],
+      "Insert note": [
+        "Keskipiste"
+      ],
+      "Merge cells": [
+        "Väriasteikko"
+      ],
+      "More formats": [
+        "Lisää muotoja"
+      ],
+      "Paint format": [
+        "Suodata ehdon mukaan"
+      ],
+      "Redo": [
+        "Ulkoreunaviivat"
+      ],
+      "Select merge type": [
+        "Suodata arvon mukaan"
+      ],
+      "Text wrapping": [
+        "Tekstin rivitys"
+      ],
+      "Unmerge cells": [
+        "Erota solut"
+      ],
+      "Vertical align": [
+        "Yhtenäinen paksu"
+      ],
+      "Zoom": [
+        "Näytä suodatinpainike"
       ]
     },
     "sheets_2025:Spreadsheet filter menu": {
@@ -1191,6 +1606,21 @@
       ],
       "Sort Z → A": [
         "Järjestä Ö → A"
+      ],
+      "Delete table column": [
+        "Käytä alueella"
+      ],
+      "Filter by condition": [
+        "Yliviivaus"
+      ],
+      "Filter by value": [
+        "Reunaviiva"
+      ],
+      "Insert 1 table column left": [
+        "Lisää 1 taulukon sarake vasemmalle"
+      ],
+      "Insert 1 table column right": [
+        "Lisää 1 taulukon sarake oikealle"
       ]
     },
     "sheets_2025:Spreadsheet insert link dialog": {
@@ -1219,6 +1649,9 @@
       ],
       "Remove link": [
         "Poista linkki"
+      ],
+      "Link copied to clipboard": [
+        "Viimeisimmät värit"
       ]
     },
     "sheets_2025:Spreadsheet resize dimension dialog": {
@@ -1239,6 +1672,9 @@
       ],
       "row height": [
         "rivin korkeus"
+      ],
+      "column width": [
+        "sarakkeen leveys"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
@@ -1289,6 +1725,60 @@
       ],
       "Underline": [
         "Alleviivaus"
+      ],
+      "Alignment": [
+        "Alareunaan"
+      ],
+      "Border": [
+        "Etsi taulukosta"
+      ],
+      "Border style": [
+        "Lisää desimaaleja"
+      ],
+      "Currency Symbol": [
+        "Suurenna"
+      ],
+      "Custom": [
+        "Mukautettu"
+      ],
+      "Decimal places": [
+        "Desimaalit"
+      ],
+      "Format cells": [
+        "Kaavapalkki"
+      ],
+      "Horizontal Alignment": [
+        "Muotoile solut"
+      ],
+      "Indent": [
+        "Sisennä"
+      ],
+      "Merge horizontally": [
+        "Yhdistä vaakasuunnassa"
+      ],
+      "Merge vertically": [
+        "Yhdistä pystysuunnassa"
+      ],
+      "Overflow": [
+        "Ylivuoto"
+      ],
+      "Strikethrough": [
+        "Yliviivaus"
+      ],
+      "Text control": [
+        "Suojaa alue"
+      ],
+      "Thousands separator": [
+        "Yhtenäinen"
+      ],
+      "Unmerge": [
+        "Erota"
+      ],
+      "Use 1000 Separator (,)": [
+        "Käytä tuhansien erotinta (,)"
+      ],
+      "Vertical Alignment": [
+        "Rahoitus"
       ]
     },
     "sheets_2025:Spreadsheet sidebar chart editor dialog": {
@@ -1309,6 +1799,42 @@
       ],
       "Value": [
         "Arvo"
+      ],
+      "Aggregate": [
+        "Näyttö on liian pieni muokkaamiseen"
+      ],
+      "Chart data range": [
+        "Kaavion tietoalue"
+      ],
+      "Chart editor": [
+        "Lisää toinen nimetty alue"
+      ],
+      "Chart title": [
+        "Kirjanpito"
+      ],
+      "Chart type": [
+        "Kiinnitä"
+      ],
+      "Horizontal (category) axis labels": [
+        "Vaakasuuntaiset (kategoria) akselin tunnisteet"
+      ],
+      "Horizontal axis title": [
+        "Vaaka-akselin otsikko"
+      ],
+      "Range": [
+        "Näytä viimeisimmät laskentataulukot"
+      ],
+      "Select a range": [
+        "Valitse alue"
+      ],
+      "Series": [
+        "Lisää toinen alue"
+      ],
+      "Show data in hidden rows and columns": [
+        "Ei reunaviivoja"
+      ],
+      "Vertical axis title": [
+        "Liitä määräten"
       ]
     },
     "sheets_2025:Spreadsheet sidebar conditional format dialog": {
@@ -1344,6 +1870,48 @@
       ],
       "Single color": [
         "Yksivärinen"
+      ],
+      "Add another range": [
+        "Kaikki reunaviivat"
+      ],
+      "Apply to range": [
+        "Käytä alueella"
+      ],
+      "Color scale": [
+        "Kiinnitä sarakkeeseen asti"
+      ],
+      "Conditional formatting": [
+        "Muunna alueeksi"
+      ],
+      "Delete range": [
+        "Poista datan vahvistussääntö"
+      ],
+      "Format rules": [
+        "Raidalliset sarakkeet"
+      ],
+      "Format style": [
+        "Tekstin hallinta"
+      ],
+      "Max point": [
+        "Valitse alue"
+      ],
+      "Max value": [
+        "Muistiinpano"
+      ],
+      "Mid point": [
+        "Tasaus"
+      ],
+      "Min point": [
+        "Vaakasuora tasaus"
+      ],
+      "Min value": [
+        "Poista nimetty alue"
+      ],
+      "None": [
+        "Ei mitään"
+      ],
+      "Select a range": [
+        "Lisää soluja ja siirrä alaspäin"
       ]
     },
     "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
@@ -1355,6 +1923,12 @@
       ],
       "Custom currencies": [
         "Mukautetut valuutat"
+      ],
+      "Apply to create a custom currency": [
+        "Luo mukautettu valuutta"
+      ],
+      "Currency symbol": [
+        "Valuuttasymboli"
       ]
     },
     "sheets_2025:Spreadsheet sidebar data validation dialog": {
@@ -1372,6 +1946,33 @@
       ],
       "Save": [
         "Tallenna"
+      ],
+      "Add another named range": [
+        "Katkaise"
+      ],
+      "Add another range": [
+        "Lihavointi"
+      ],
+      "Add named range": [
+        "Katkoviiva"
+      ],
+      "Apply to range": [
+        "Ylivuoto"
+      ],
+      "Data validation": [
+        "Minimipiste"
+      ],
+      "Delete data validation rule": [
+        "Lajittele taulukko järjestyksessä Z–A"
+      ],
+      "Enter a formula": [
+        "Syötä kaava"
+      ],
+      "Select a range": [
+        "Lisää toinen alue"
+      ],
+      "Validation rules": [
+        "Vahvistussäännöt"
       ]
     },
     "sheets_2025:Spreadsheet sidebar dialog": {
@@ -1397,6 +1998,30 @@
       ],
       "Type": [
         "Tyyppi"
+      ],
+      "Add another named range": [
+        "Näytä tiedot piilotetuilla riveillä ja sarakkeilla"
+      ],
+      "Add named range": [
+        "Lisää valuuttoja"
+      ],
+      "Apply to range": [
+        "Käytä alueella"
+      ],
+      "Delete named range": [
+        "Luo kopio"
+      ],
+      "Enter text or formula": [
+        "Syötä teksti tai kaava"
+      ],
+      "Name should not contain spaces": [
+        "Koosta"
+      ],
+      "Named Ranges": [
+        "Poista solut ja siirrä soluja ylöspäin"
+      ],
+      "Range": [
+        "Vapauta sarakkeet"
       ]
     },
     "sheets_2025:Spreadsheet sidebar table editor dialog": {
@@ -1414,6 +2039,21 @@
       ],
       "Table title": [
         "Taulukon otsikko"
+      ],
+      "Banded columns": [
+        "Tee uudelleen"
+      ],
+      "Banded rows": [
+        "Raidalliset rivit"
+      ],
+      "Select a range": [
+        "Lisää muotoiluja"
+      ],
+      "Show filter button": [
+        "Alue"
+      ],
+      "Table data range": [
+        "Taulukon tietoalue"
       ]
     },
     "Warning": {
@@ -1464,6 +2104,276 @@
       ],
       "Zero": [
         "Nolla"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "Rivitä"
+      ],
+      "Bottom border": [
+        "Lisää nimetty alue"
+      ],
+      "Dashed": [
+        "Lajittele taulukko järjestyksessä A–Z"
+      ],
+      "Dotted": [
+        "Pisteviiva"
+      ],
+      "Double": [
+        "Alue"
+      ],
+      "Horizontal borders": [
+        "Vaakaviivat"
+      ],
+      "Inner borders": [
+        "Lisää muistiinpano"
+      ],
+      "Left border": [
+        "Maksimiarvo"
+      ],
+      "No borders": [
+        "Ehdollinen muotoilu"
+      ],
+      "Outer borders": [
+        "Poista alue"
+      ],
+      "Right border": [
+        "Suurenna"
+      ],
+      "Solid": [
+        "Yhtenäinen"
+      ],
+      "Solid medium": [
+        "Nimi ei saa sisältää välilyöntejä"
+      ],
+      "Solid thick": [
+        "Reunatyyli"
+      ],
+      "Top border": [
+        "Maksimipiste"
+      ],
+      "Vertical borders": [
+        "Pystyviivat"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "Käytä"
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Custom date and time formats": [
+        "Mukautetut päivämäärän ja ajan muodot"
+      ],
+      "Format": [
+        "Muoto"
+      ],
+      "Sample": [
+        "Esimerkki"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "ap./ip."
+      ],
+      "Date": [
+        "Päivämäärä"
+      ],
+      "Day": [
+        "Päivä"
+      ],
+      "Day as abbreviation": [
+        "Päivä lyhenteenä"
+      ],
+      "Day as full name": [
+        "Päivä koko nimenä"
+      ],
+      "Day with leading zero": [
+        "Päivä etunollalla"
+      ],
+      "Day without leading zero": [
+        "Päivä ilman etunollaa"
+      ],
+      "Delete": [
+        "Poista"
+      ],
+      "Duration": [
+        "Kesto"
+      ],
+      "Elapsed hours": [
+        "Kuluneet tunnit"
+      ],
+      "Elapsed hours with leading zero": [
+        "Kuluneet tunnit etunollalla"
+      ],
+      "Elapsed hours without leading zero": [
+        "Kuluneet tunnit ilman etunollaa"
+      ],
+      "Elapsed minutes": [
+        "Kuluneet minuutit"
+      ],
+      "Elapsed minutes with leading zero": [
+        "Kuluneet minuutit etunollalla"
+      ],
+      "Elapsed minutes without leading zero": [
+        "Kuluneet minuutit ilman etunollaa"
+      ],
+      "Elapsed seconds": [
+        "Kuluneet sekunnit"
+      ],
+      "Elapsed seconds with leading zero": [
+        "Kuluneet sekunnit etunollalla"
+      ],
+      "Elapsed seconds without leading zero": [
+        "Kuluneet sekunnit ilman etunollaa"
+      ],
+      "First letter of the month": [
+        "Kuukauden ensimmäinen kirjain"
+      ],
+      "Full": [
+        "Täysi"
+      ],
+      "Full numeric year": [
+        "Koko vuosi numeroina"
+      ],
+      "Hour": [
+        "Tunti"
+      ],
+      "Hour with leading zero": [
+        "Tunti etunollalla"
+      ],
+      "Hour without leading zero": [
+        "Tunti ilman etunollaa"
+      ],
+      "Millisecond": [
+        "Millisekunti"
+      ],
+      "Minute": [
+        "Minuutti"
+      ],
+      "Minute with leading zero": [
+        "Minuutti etunollalla"
+      ],
+      "Minute without leading zero": [
+        "Minuutti ilman etunollaa"
+      ],
+      "Month": [
+        "Kuukausi"
+      ],
+      "Month as abbreviation": [
+        "Kuukausi lyhenteenä"
+      ],
+      "Month as full name": [
+        "Kuukausi koko nimenä"
+      ],
+      "Month with leading zero": [
+        "Kuukausi etunollalla"
+      ],
+      "Month without leading zero": [
+        "Kuukausi ilman etunollaa"
+      ],
+      "Precision to 1/10 of a second": [
+        "Tarkkuus sekunnin 1/10 osaan"
+      ],
+      "Precision to 1/100 of a second": [
+        "Tarkkuus sekunnin 1/100 osaan"
+      ],
+      "Precision to 1/1000 of a second": [
+        "Tarkkuus sekunnin 1/1000 osaan"
+      ],
+      "Second": [
+        "Sekunti"
+      ],
+      "Second with leading zero": [
+        "Sekunti etunollalla"
+      ],
+      "Second without leading zero": [
+        "Sekunti ilman etunollaa"
+      ],
+      "Time": [
+        "Aika"
+      ],
+      "Two digit year": [
+        "Kaksinumeroinen vuosi"
+      ],
+      "Year": [
+        "Vuosi"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "Tekstin rivitys"
+      ],
+      "Screen too small for editing": [
+        "Poista solut ja siirrä soluja vasemmalle"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "Poista taulukon sarake"
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "Näyttönne on liian pieni tämän laskentataulukon muokkaamiseen. Olette vain katselutilassa. Tehdäksenne muutoksia avatkaa tämä laskentataulukko suuremmalla näytöllä tai laajentakaa selainikkunaanne."
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "Liitä määräten"
+      ],
+      "Cannot delete all rows": [
+        "Oikea reunaviiva"
+      ],
+      "Find in sheet": [
+        "Pyöristetty valuutta"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "Ruudukko"
+      ],
+      "Overflow": [
+        "Ylivuoto"
+      ],
+      "Wrap": [
+        "Muotoilusäännöt"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "sarake ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "rivi ${ rowNumber }"
+      ],
+      "Up to": [
+        "Aina"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "Piilotetut taulukot"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Keskiarvo"
+      ],
+      "Count": [
+        "Määrä"
+      ],
+      "Customize Status Bar": [
+        "Muokkaa tilariviä"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Numerical count": [
+        "Lukumäärä"
+      ],
+      "Sum": [
+        "Summa"
       ]
     }
   }

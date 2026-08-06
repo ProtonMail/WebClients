@@ -226,6 +226,21 @@
       ],
       "Undo": [
         "復原"
+      ],
+      "Go to label": [
+        "跳至標籤"
+      ],
+      "Page break": [
+        "分頁符號"
+      ],
+      "Remove": [
+        "移除"
+      ],
+      "Subscript": [
+        "下標"
+      ],
+      "Superscript": [
+        "上標"
       ]
     },
     "color": {
@@ -444,6 +459,15 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "無法轉換 Word 文件。其是否有密碼保護？如果是，請移除密碼並重試。"
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "處理文件的更新時發生錯誤。請重新載入頁面並再試一次。"
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "此試算表偵測到本機同步不一致。編輯功能已停用，以防止資料遺失。請提報問題，如果您願意分享內容，請下載並附上下方的偵錯資訊。"
+      ],
+      "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
+        "此試算表與目前的使用端版本不相容。請嘗試重新載入使用端。如果錯誤仍然存在，請聯絡支援部門。"
       ]
     },
     "Error message": {
@@ -542,6 +566,18 @@
       ],
       "New": [
         "加入"
+      ],
+      "Importing Excel file...": [
+        "正在匯入 Excel 檔案……"
+      ],
+      "Importing ODS file...": [
+        "正在匯入 ODS 檔案……"
+      ],
+      "Labels:": [
+        "標籤："
+      ],
+      "No title": [
+        "無標題"
       ]
     },
     "Label": {
@@ -646,6 +682,9 @@
       ],
       "with \"${ replaceWith }\"": [
         "取代成「${ replaceWith }」"
+      ],
+      "Page break": [
+        "分頁符號"
       ]
     },
     "Placeholder": {
@@ -668,11 +707,20 @@
     "sheets_2025:Bottom bar": {
       "All sheets": [
         "所有的工作表"
+      ],
+      "New sheet": [
+        "新增工作表"
       ]
     },
     "sheets_2025:Spreadsheet cell tooltip": {
       "Error": [
         "錯誤"
+      ],
+      "Invalid": [
+        "無效"
+      ],
+      "Note": [
+        "附註"
       ]
     },
     "sheets_2025:Spreadsheet context menu": {
@@ -684,16 +732,232 @@
       ],
       "Period": [
         "期間"
+      ],
+      "AI Quick Edit": [
+        "AI 快速編輯"
+      ],
+      "Auto fit to data": [
+        "自動符合資料大小"
+      ],
+      "Clear content": [
+        "清除內容"
+      ],
+      "Clear formatting": [
+        "清除格式"
+      ],
+      "Comma": [
+        "逗號"
+      ],
+      "Conditional format": [
+        "條件化格式"
+      ],
+      "Convert to range": [
+        "轉換為範圍"
+      ],
+      "Convert to table": [
+        "轉換為表格"
+      ],
+      "Copy": [
+        "複製"
+      ],
+      "Create a filter": [
+        "建立篩選器"
+      ],
+      "Custom": [
+        "自訂"
+      ],
+      "Data validation": [
+        "資料驗證"
+      ],
+      "Define named range": [
+        "定義命名範圍"
+      ],
+      "Delete": [
+        "刪除"
+      ],
+      "Delete cells and shift cells left": [
+        "刪除儲存格並向左移動儲存格"
+      ],
+      "Delete cells and shift cells up": [
+        "刪除儲存格並向上移動儲存格"
+      ],
+      "Delete column": [
+        "刪除欄"
+      ],
+      "Delete row": [
+        "刪除列"
+      ],
+      "Delete table column": [
+        "刪除表格欄"
+      ],
+      "Delete table row": [
+        "刪除表格列"
+      ],
+      "Edit table": [
+        "編輯表格"
+      ],
+      "Filter": [
+        "篩選"
+      ],
+      "Formatting only": [
+        "僅貼上格式"
+      ],
+      "Formula only": [
+        "僅限公式"
+      ],
+      "Freeze up to column": [
+        "凍結至此欄"
+      ],
+      "Freeze up to row": [
+        "凍結至此列"
+      ],
+      "Hide column": [
+        "隱藏欄"
+      ],
+      "Hide row": [
+        "隱藏列"
+      ],
+      "Insert cells and shift cells down": [
+        "插入儲存格並向下移"
+      ],
+      "Insert cells and shift cells right": [
+        "插入儲存格並向右移動儲存格"
+      ],
+      "Insert link": [
+        "插入連結"
+      ],
+      "Insert note": [
+        "插入附註"
+      ],
+      "Insert table column to the left": [
+        "向左插入表格欄"
+      ],
+      "Insert table column to the right": [
+        "在右側插入表格欄"
+      ],
+      "Insert table row": [
+        "插入表格列"
+      ],
+      "Link only": [
+        "僅限連結"
+      ],
+      "More cell actions": [
+        "更多儲存格動作"
+      ],
+      "Paste": [
+        "貼上"
+      ],
+      "Paste special": [
+        "選擇性貼上"
+      ],
+      "Pipe": [
+        "垂直線"
+      ],
+      "Remove filter": [
+        "移除篩選器"
+      ],
+      "Resize column": [
+        "調整欄寬"
+      ],
+      "Resize row": [
+        "調整列大小"
+      ],
+      "Semicolon": [
+        "分號"
+      ],
+      "Sort": [
+        "排序"
+      ],
+      "Sort range A → Z": [
+        "排序範圍 A → Z"
+      ],
+      "Sort range Z → A": [
+        "排序範圍 Z → A"
+      ],
+      "Sort sheet A to Z": [
+        "排序工作表 A 到 Z"
+      ],
+      "Sort sheet Z to A": [
+        "依 Z 到 A 排序工作表"
+      ],
+      "Space": [
+        "空格"
+      ],
+      "Table": [
+        "表格"
+      ],
+      "Transposed": [
+        "轉置"
+      ],
+      "Unfreeze columns": [
+        "取消凍結欄"
+      ],
+      "Unfreeze rows": [
+        "取消凍結列"
+      ],
+      "Values only": [
+        "僅限值"
       ]
     },
     "sheets_2025:Spreadsheet context menu (columns/rows)": {
       "${ numberOfColumns } column": [
         "${ numberOfColumns } 列"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } 列"
+      ],
+      "above": [
+        "上方"
+      ],
+      "below": [
+        "下方"
+      ],
+      "Insert": [
+        "插入"
+      ],
+      "left": [
+        "左側"
+      ],
+      "right": [
+        "右側"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar edit menu": {
       "Formatting only": [
         "僅格式設定"
+      ],
+      "Copy": [
+        "複製"
+      ],
+      "Cut": [
+        "剪下"
+      ],
+      "Find": [
+        "尋找"
+      ],
+      "Formula only": [
+        "僅限公式"
+      ],
+      "Link only": [
+        "僅限連結"
+      ],
+      "Paste": [
+        "貼上"
+      ],
+      "Paste special": [
+        "選擇性貼上"
+      ],
+      "Redo": [
+        "重做"
+      ],
+      "Transposed": [
+        "轉置"
+      ],
+      "Undo": [
+        "復原"
+      ],
+      "Values only": [
+        "僅限值"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar file menu": {
@@ -720,6 +984,39 @@
       ],
       "See version history": [
         "查看版本紀錄"
+      ],
+      "Download logs": [
+        "下載日誌"
+      ],
+      "Help": [
+        "說明"
+      ],
+      "Import": [
+        "匯入"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to trash": [
+        "移至垃圾桶"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "開啟 ${ DRIVE_APP_NAME }"
+      ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "OpenDocument 試算表 (.ods) (測試版)"
+      ],
+      "Print": [
+        "列印"
+      ],
+      "Settings": [
+        "設定"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "跳格鍵分隔值 (.tsv)"
+      ],
+      "View recent spreadsheets": [
+        "查看最近的試算表"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu": {
@@ -728,11 +1025,68 @@
       ],
       "Font size": [
         "字型大小"
+      ],
+      "Bold": [
+        "粗體"
+      ],
+      "Cell styles": [
+        "儲存格樣式"
+      ],
+      "Clear": [
+        "清除"
+      ],
+      "Clear content": [
+        "清除內容"
+      ],
+      "Clear formatting": [
+        "清除格式"
+      ],
+      "Conditional formatting": [
+        "條件化格式設定"
+      ],
+      "Italic": [
+        "斜體"
+      ],
+      "Number": [
+        "數字"
+      ],
+      "Strikethrough": [
+        "刪除線"
+      ],
+      "Table formatting": [
+        "表格格式設定"
+      ],
+      "Text": [
+        "文字"
+      ],
+      "Theme": [
+        "布景主題"
+      ],
+      "Underline": [
+        "底線"
+      ],
+      "Wrapping": [
+        "換行"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
       "Middle": [
         "中間"
+      ],
+      "Bottom": [
+        "靠下"
+      ],
+      "Center": [
+        "置中"
+      ],
+      "Left": [
+        "靠左"
+      ],
+      "Right": [
+        "靠右"
+      ],
+      "Top": [
+        "頂端"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
@@ -741,6 +1095,39 @@
       ],
       "Sheet": [
         "床單"
+      ],
+      "Cells": [
+        "儲存格"
+      ],
+      "Chart": [
+        "圖表"
+      ],
+      "Checkbox": [
+        "核取方塊"
+      ],
+      "Columns": [
+        "欄"
+      ],
+      "Function": [
+        "函數"
+      ],
+      "Image": [
+        "圖片"
+      ],
+      "Insert cells and shift down": [
+        "插入儲存格並向下移動"
+      ],
+      "Insert cells and shift right": [
+        "插入儲存格並向右移動"
+      ],
+      "Link": [
+        "連結"
+      ],
+      "Note": [
+        "備註"
+      ],
+      "Rows": [
+        "列"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
@@ -752,11 +1139,29 @@
       ],
       "right": [
         "右"
+      ],
+      "above": [
+        "上方"
+      ],
+      "below": [
+        "下方"
+      ],
+      "Insert": [
+        "插入"
+      ],
+      "left": [
+        "左側"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
       "Up to": [
         "高達"
+      ],
+      "column ${ columnLetter }": [
+        "第 ${ columnLetter } 欄"
+      ],
+      "row ${ rowNumber }": [
+        "第 ${ rowNumber } 列"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
@@ -767,6 +1172,21 @@
     "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
       "Locale": [
         "語系"
+      ],
+      "Auto": [
+        "自動"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Save and reload": [
+        "儲存並重新載入"
+      ],
+      "Settings for this spreadsheet": [
+        "此試算表的設定"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "這會影響函數、日期和貨幣等格式設定詳細資料"
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
@@ -775,6 +1195,108 @@
       ],
       "Insert function": [
         "插入函數"
+      ],
+      "Bold": [
+        "粗體"
+      ],
+      "Border": [
+        "框線"
+      ],
+      "Clear formatting": [
+        "清除格式"
+      ],
+      "Create a filter": [
+        "建立篩選器"
+      ],
+      "Decrease decimal places": [
+        "減少小數位數"
+      ],
+      "Decrease font size": [
+        "縮小字型"
+      ],
+      "Default (${ defaultFont })": [
+        "預設 (${ defaultFont })"
+      ],
+      "Find": [
+        "尋找"
+      ],
+      "Font": [
+        "字型"
+      ],
+      "Font size": [
+        "字型大小"
+      ],
+      "Format as currency": [
+        "轉換為貨幣格式"
+      ],
+      "Format as percent": [
+        "轉換為百分比格式"
+      ],
+      "Horizontal align": [
+        "水平對齊"
+      ],
+      "Increase decimal places": [
+        "增加小數位數"
+      ],
+      "Increase font size": [
+        "放大字型"
+      ],
+      "Insert chart": [
+        "插入圖表"
+      ],
+      "Insert link": [
+        "插入連結"
+      ],
+      "Insert note": [
+        "插入備註"
+      ],
+      "Italic": [
+        "斜體"
+      ],
+      "Merge cells": [
+        "合併儲存格"
+      ],
+      "More": [
+        "更多"
+      ],
+      "More formats": [
+        "更多格式"
+      ],
+      "Paint format": [
+        "複製格式"
+      ],
+      "Redo": [
+        "重做"
+      ],
+      "Remove filter": [
+        "移除篩選器"
+      ],
+      "Select merge type": [
+        "選取合併類型"
+      ],
+      "Strikethrough": [
+        "刪除線"
+      ],
+      "Text color": [
+        "文字顏色"
+      ],
+      "Text wrapping": [
+        "自動換行"
+      ],
+      "Underline": [
+        "底線"
+      ],
+      "Undo": [
+        "復原"
+      ],
+      "Unmerge cells": [
+        "取消合併儲存格"
+      ],
+      "Vertical align": [
+        "垂直對齊"
+      ],
+      "Zoom": [
+        "縮放"
       ]
     },
     "sheets_2025:Spreadsheet filter menu": {
@@ -783,6 +1305,42 @@
       ],
       "Sort Z → A": [
         "排序 Z → A"
+      ],
+      "Apply": [
+        "套用"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Clear": [
+        "清除"
+      ],
+      "Copy": [
+        "複製"
+      ],
+      "Delete table column": [
+        "刪除表格欄"
+      ],
+      "Enter value": [
+        "輸入值"
+      ],
+      "Filter by condition": [
+        "依條件篩選"
+      ],
+      "Filter by value": [
+        "依值篩選"
+      ],
+      "Insert 1 table column left": [
+        "在左側插入 1 欄表格"
+      ],
+      "Insert 1 table column right": [
+        "在右側插入 1 欄表格"
+      ],
+      "Paste": [
+        "貼上"
+      ],
+      "Select all": [
+        "選取全部"
       ]
     },
     "sheets_2025:Spreadsheet resize dimension dialog": {
@@ -791,6 +1349,21 @@
       ],
       "Default": [
         "預設"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "column": [
+        "欄"
+      ],
+      "OK": [
+        "確定"
+      ],
+      "row": [
+        "列"
+      ],
+      "row height": [
+        "列高"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
@@ -805,6 +1378,96 @@
       ],
       "Merge vertically": [
         "垂直合併"
+      ],
+      "Alignment": [
+        "對齊"
+      ],
+      "Bold": [
+        "粗體"
+      ],
+      "Border": [
+        "框線"
+      ],
+      "Border style": [
+        "框線樣式"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Choose Category": [
+        "選擇類別"
+      ],
+      "Color": [
+        "色彩"
+      ],
+      "Currency Symbol": [
+        "貨幣符號"
+      ],
+      "Custom": [
+        "自訂"
+      ],
+      "Effects": [
+        "效果"
+      ],
+      "Font": [
+        "字型"
+      ],
+      "Format cells": [
+        "格式化儲存格"
+      ],
+      "General": [
+        "一般"
+      ],
+      "Horizontal Alignment": [
+        "水平對齊"
+      ],
+      "Italic": [
+        "斜體"
+      ],
+      "Merge": [
+        "合併"
+      ],
+      "Merge all": [
+        "全部合併"
+      ],
+      "Merge horizontally": [
+        "水平合併"
+      ],
+      "Number": [
+        "數字"
+      ],
+      "Overflow": [
+        "溢出"
+      ],
+      "Preview": [
+        "預覽"
+      ],
+      "Save": [
+        "儲存"
+      ],
+      "Strikethrough": [
+        "刪除線"
+      ],
+      "Text control": [
+        "文字換行控制"
+      ],
+      "Thousands separator": [
+        "千分位分隔符號"
+      ],
+      "Type": [
+        "類型"
+      ],
+      "Underline": [
+        "底線"
+      ],
+      "Unmerge": [
+        "取消合併"
+      ],
+      "Use 1000 Separator (,)": [
+        "使用千分位分隔符號 (,)"
+      ],
+      "Vertical Alignment": [
+        "垂直對齊"
       ]
     },
     "sheets_2025:Spreadsheet sidebar conditional format dialog": {
@@ -813,16 +1476,136 @@
       ],
       "Preview": [
         "預覽"
+      ],
+      "Add another range": [
+        "新增其他範圍"
+      ],
+      "Add another rule": [
+        "新增其他規則"
+      ],
+      "Add rule": [
+        "新增規則"
+      ],
+      "Apply to range": [
+        "套用至範圍"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Color scale": [
+        "色階"
+      ],
+      "Conditional formatting": [
+        "條件化格式設定"
+      ],
+      "Delete range": [
+        "刪除範圍"
+      ],
+      "Delete rule": [
+        "刪除規則"
+      ],
+      "Enter a formula": [
+        "輸入公式"
+      ],
+      "Enter value": [
+        "輸入值"
+      ],
+      "Format rules": [
+        "格式設定規則"
+      ],
+      "Format style": [
+        "格式樣式"
+      ],
+      "Max point": [
+        "最高點"
+      ],
+      "Max value": [
+        "最大值"
+      ],
+      "Mid point": [
+        "中間點"
+      ],
+      "Min point": [
+        "最小值"
+      ],
+      "Min value": [
+        "最小值"
+      ],
+      "None": [
+        "無"
+      ],
+      "Number": [
+        "數字"
+      ],
+      "Save": [
+        "儲存"
+      ],
+      "Select a range": [
+        "選取範圍"
+      ],
+      "Single color": [
+        "單一色彩"
       ]
     },
     "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
       "Apply to create a custom currency": [
         "套用於建立自訂貨幣"
+      ],
+      "Apply": [
+        "套用"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Currency symbol": [
+        "貨幣符號"
+      ],
+      "Custom currencies": [
+        "自訂貨幣"
       ]
     },
     "sheets_2025:Spreadsheet sidebar data validation dialog": {
       "Validation rules": [
         "驗證規則 (Validation rules)"
+      ],
+      "Add another named range": [
+        "新增其他命名範圍"
+      ],
+      "Add another range": [
+        "新增其他範圍"
+      ],
+      "Add named range": [
+        "新增命名範圍"
+      ],
+      "Allow blanks": [
+        "允許空白"
+      ],
+      "Apply to range": [
+        "套用至範圍"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Data validation": [
+        "資料驗證"
+      ],
+      "Delete data validation rule": [
+        "刪除資料驗證規則"
+      ],
+      "Enter a formula": [
+        "輸入公式"
+      ],
+      "Enter value": [
+        "輸入值"
+      ],
+      "Formula": [
+        "公式"
+      ],
+      "Save": [
+        "儲存"
+      ],
+      "Select a range": [
+        "選取範圍"
       ]
     },
     "sheets_2025:Spreadsheet sidebar dialog": {
@@ -833,6 +1616,45 @@
     "sheets_2025:Spreadsheet sidebar named ranges dialog": {
       "Enter text or formula": [
         "輸入文字或公式"
+      ],
+      "Add another named range": [
+        "新增其他命名範圍"
+      ],
+      "Add named range": [
+        "新增命名範圍"
+      ],
+      "Apply to range": [
+        "套用至範圍"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Delete named range": [
+        "刪除命名範圍"
+      ],
+      "Enter a formula": [
+        "輸入公式"
+      ],
+      "Name": [
+        "名稱"
+      ],
+      "Name should not contain spaces": [
+        "名稱不應包含空格"
+      ],
+      "Named Ranges": [
+        "命名範圍"
+      ],
+      "Range": [
+        "範圍"
+      ],
+      "Save": [
+        "儲存"
+      ],
+      "Text or formula": [
+        "文字或公式"
+      ],
+      "Type": [
+        "類型"
       ]
     },
     "Title": {
@@ -847,11 +1669,670 @@
       ],
       "Language not supported": [
         "不支援的語言"
+      ],
+      "Outline": [
+        "大綱"
       ]
     },
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "不支援在代碼區塊內提出建議"
+      ]
+    },
+    "sheets_2025:Color picker": {
+      "Recent colors": [
+        "最近使用的色彩"
+      ],
+      "Reset": [
+        "重設"
+      ],
+      "Standard colors": [
+        "標準顏色"
+      ],
+      "Theme colors": [
+        "布景主題色彩"
+      ]
+    },
+    "sheets_2025:Formula bar": {
+      "Formula bar": [
+        "編輯列"
+      ]
+    },
+    "sheets_2025:Range selector": {
+      "Range selector": [
+        "範圍選取器"
+      ]
+    },
+    "sheets_2025:Range selector menu": {
+      "Add new": [
+        "新增"
+      ],
+      "Named ranges": [
+        "命名範圍"
+      ],
+      "Sheets": [
+        "工作表"
+      ],
+      "Tables": [
+        "表格"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "變更色彩"
+      ],
+      "Delete": [
+        "刪除"
+      ],
+      "Duplicate": [
+        "建立複本"
+      ],
+      "Hide sheet": [
+        "隱藏工作表"
+      ],
+      "Move left": [
+        "向左移動"
+      ],
+      "Move right": [
+        "向右移動"
+      ],
+      "Rename": [
+        "重新命名"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "所有框線"
+      ],
+      "Bottom border": [
+        "下框線"
+      ],
+      "Dashed": [
+        "虛線"
+      ],
+      "Dotted": [
+        "點線"
+      ],
+      "Double": [
+        "雙線"
+      ],
+      "Horizontal borders": [
+        "水平框線"
+      ],
+      "Inner borders": [
+        "內框線"
+      ],
+      "Left border": [
+        "左框線"
+      ],
+      "No borders": [
+        "無框線"
+      ],
+      "Outer borders": [
+        "外框線"
+      ],
+      "Right border": [
+        "右框線"
+      ],
+      "Solid": [
+        "實線"
+      ],
+      "Solid medium": [
+        "實線中"
+      ],
+      "Solid thick": [
+        "粗實線"
+      ],
+      "Top border": [
+        "上框線"
+      ],
+      "Vertical borders": [
+        "垂直框線"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "套用"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Custom date and time formats": [
+        "自訂日期和時間格式"
+      ],
+      "Format": [
+        "格式"
+      ],
+      "Sample": [
+        "範例"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "上午/下午"
+      ],
+      "Date": [
+        "日期"
+      ],
+      "Day": [
+        "日"
+      ],
+      "Day as abbreviation": [
+        "星期簡寫"
+      ],
+      "Day as full name": [
+        "星期全稱"
+      ],
+      "Day with leading zero": [
+        "有前導零的日期"
+      ],
+      "Day without leading zero": [
+        "無前導零的日期"
+      ],
+      "Delete": [
+        "刪除"
+      ],
+      "Duration": [
+        "持續時間"
+      ],
+      "Elapsed hours": [
+        "累計小時數"
+      ],
+      "Elapsed hours with leading zero": [
+        "有前導零的累計小時數"
+      ],
+      "Elapsed hours without leading zero": [
+        "無前導零的累計小時數"
+      ],
+      "Elapsed minutes": [
+        "累計分鐘數"
+      ],
+      "Elapsed minutes with leading zero": [
+        "有前導零的累計分鐘數"
+      ],
+      "Elapsed minutes without leading zero": [
+        "無前導零的累計分鐘數"
+      ],
+      "Elapsed seconds": [
+        "累計秒數"
+      ],
+      "Elapsed seconds with leading zero": [
+        "有前導零的累計秒數"
+      ],
+      "Elapsed seconds without leading zero": [
+        "無前導零的累計秒數"
+      ],
+      "First letter of the month": [
+        "月份的首字母"
+      ],
+      "Full": [
+        "完整"
+      ],
+      "Full numeric year": [
+        "完整數字年份"
+      ],
+      "Hour": [
+        "小時"
+      ],
+      "Hour with leading zero": [
+        "有前導零的小時"
+      ],
+      "Hour without leading zero": [
+        "無前導零的小時"
+      ],
+      "Millisecond": [
+        "毫秒"
+      ],
+      "Minute": [
+        "分鐘"
+      ],
+      "Minute with leading zero": [
+        "有前導零的分鐘"
+      ],
+      "Minute without leading zero": [
+        "無前導零的分鐘"
+      ],
+      "Month": [
+        "月"
+      ],
+      "Month as abbreviation": [
+        "月份簡寫"
+      ],
+      "Month as full name": [
+        "月份全稱"
+      ],
+      "Month with leading zero": [
+        "有前導零的月份"
+      ],
+      "Month without leading zero": [
+        "無前導零的月份"
+      ],
+      "Precision to 1/10 of a second": [
+        "精確度至 1/10 秒"
+      ],
+      "Precision to 1/100 of a second": [
+        "精確度至 1/100 秒"
+      ],
+      "Precision to 1/1000 of a second": [
+        "精確度至 1/1000 秒"
+      ],
+      "Second": [
+        "秒"
+      ],
+      "Second with leading zero": [
+        "有前導零的秒"
+      ],
+      "Second without leading zero": [
+        "無前導零的秒"
+      ],
+      "Time": [
+        "時間"
+      ],
+      "Two digit year": [
+        "兩位數年份"
+      ],
+      "Year": [
+        "年"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "您確定要刪除 ${ sheetName } 嗎？"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Delete": [
+        "刪除"
+      ],
+      "Delete sheet": [
+        "刪除工作表"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "行動裝置編輯功能即將推出"
+      ],
+      "Screen too small for editing": [
+        "螢幕太小，無法編輯"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "我們正致力於儘快為您帶來這項功能。目前，工作表僅能在桌上型電腦上進行編輯"
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "您的螢幕太小，無法編輯此試算表。您目前處於僅限檢視模式。若要進行變更，請在較大的螢幕上開啟此試算表，或將瀏覽器視窗放大。"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "無法刪除所有欄"
+      ],
+      "Cannot delete all rows": [
+        "無法刪除所有列"
+      ],
+      "Find in sheet": [
+        "在工作表中尋找"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "全部合併"
+      ],
+      "Merge cells": [
+        "合併儲存格"
+      ],
+      "Merge horizontally": [
+        "水平合併"
+      ],
+      "Merge vertically": [
+        "垂直合併"
+      ],
+      "Unmerge": [
+        "取消合併"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "建立篩選器"
+      ],
+      "Data validation": [
+        "資料驗證"
+      ],
+      "Protect range": [
+        "保護範圍"
+      ],
+      "Remove filter": [
+        "移除篩選器"
+      ],
+      "Sort sheet": [
+        "排序工作表"
+      ],
+      "Unlock range": [
+        "解鎖範圍"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
+      "(A to Z)": [
+        "(A 到 Z)"
+      ],
+      "(Z to A)": [
+        "(Z 到 A)"
+      ],
+      "column ${ columnLetter }": [
+        "第 ${ columnLetter } 欄"
+      ],
+      "Sort sheet by": [
+        "排序工作表依據"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "裁剪"
+      ],
+      "Overflow": [
+        "溢出"
+      ],
+      "Wrap": [
+        "換行"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "Data": [
+        "資料"
+      ],
+      "Edit": [
+        "編輯"
+      ],
+      "File": [
+        "檔案"
+      ],
+      "Format": [
+        "格式"
+      ],
+      "Insert": [
+        "插入"
+      ],
+      "View": [
+        "檢視"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "編輯列"
+      ],
+      "Freeze": [
+        "凍結"
+      ],
+      "Gridlines": [
+        "網格線"
+      ],
+      "Show": [
+        "顯示"
+      ],
+      "Zoom": [
+        "縮放"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor number formats menu": {
+      "$ US Dollar": [
+        "$ 美元"
+      ],
+      "Accounting": [
+        "會計"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ 人民幣"
+      ],
+      "Currency": [
+        "貨幣"
+      ],
+      "Currency rounded": [
+        "四捨五入貨幣"
+      ],
+      "Custom currency": [
+        "自訂貨幣"
+      ],
+      "Custom date and time": [
+        "自訂日期和時間"
+      ],
+      "Custom number": [
+        "自訂數字"
+      ],
+      "Date": [
+        "日期"
+      ],
+      "Date time": [
+        "日期時間"
+      ],
+      "Duration": [
+        "持續時間"
+      ],
+      "Financial": [
+        "財經"
+      ],
+      "General": [
+        "一般"
+      ],
+      "Long date": [
+        "完整日期"
+      ],
+      "More currency": [
+        "更多貨幣"
+      ],
+      "Number": [
+        "數字"
+      ],
+      "Percent": [
+        "百分比"
+      ],
+      "Plain text": [
+        "純文字"
+      ],
+      "Scientific": [
+        "科學記號"
+      ],
+      "Time": [
+        "時間"
+      ],
+      "£ Pound": [
+        "£ 英鎊"
+      ],
+      "¥ Yen": [
+        "¥ 日圓"
+      ],
+      "€ Euro": [
+        "€ 歐元"
+      ],
+      "₹ Rupee": [
+        "₹ 盧比"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor search dialog": {
+      "Close": [
+        "關閉"
+      ],
+      "Go to next": [
+        "前往下一個"
+      ],
+      "Go to previous": [
+        "前往上一個"
+      ]
+    },
+    "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "套用"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Insert link": [
+        "插入連結"
+      ],
+      "Paste link": [
+        "貼上連結"
+      ]
+    },
+    "sheets_2025:Spreadsheet link tooltip": {
+      "Copy link": [
+        "複製連結"
+      ],
+      "Edit link": [
+        "編輯連結"
+      ],
+      "Link copied to clipboard": [
+        "連結已複製到剪貼簿"
+      ],
+      "Link removed": [
+        "連結已移除"
+      ],
+      "Remove link": [
+        "移除連結"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "平均值"
+      ],
+      "Count": [
+        "項目個數"
+      ],
+      "Customize Status Bar": [
+        "自訂狀態列"
+      ],
+      "Max": [
+        "最大值"
+      ],
+      "Min": [
+        "最小值"
+      ],
+      "Numerical count": [
+        "數值個數"
+      ],
+      "Sum": [
+        "加總"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "新增"
+      ],
+      "Aggregate": [
+        "彙總"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Chart data range": [
+        "圖表資料範圍"
+      ],
+      "Chart editor": [
+        "圖表編輯器"
+      ],
+      "Chart title": [
+        "圖表標題"
+      ],
+      "Chart type": [
+        "圖表類型"
+      ],
+      "Enter title": [
+        "輸入標題"
+      ],
+      "Horizontal (category) axis labels": [
+        "水平 (類別) 軸標籤"
+      ],
+      "Horizontal axis title": [
+        "水平軸標題"
+      ],
+      "Name": [
+        "名稱"
+      ],
+      "Range": [
+        "範圍"
+      ],
+      "Save": [
+        "儲存"
+      ],
+      "Select a range": [
+        "選取範圍"
+      ],
+      "Series": [
+        "數列"
+      ],
+      "Show data in hidden rows and columns": [
+        "顯示隱藏行列中的資料"
+      ],
+      "Value": [
+        "值"
+      ],
+      "Vertical axis title": [
+        "垂直軸標題"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom number format dialog": {
+      "Apply": [
+        "套用"
+      ],
+      "Apply to create a custom number format": [
+        "套用以建立自訂數字格式"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Custom number format": [
+        "自訂數字格式"
+      ],
+      "Custom number formats": [
+        "自訂數字格式"
+      ],
+      "Format": [
+        "格式"
+      ],
+      "Negative": [
+        "負數"
+      ],
+      "Positive": [
+        "正數"
+      ],
+      "Sample": [
+        "範例"
+      ],
+      "Text": [
+        "文字"
+      ],
+      "Zero": [
+        "零"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "交替欄色彩"
+      ],
+      "Banded rows": [
+        "交替列色彩"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Edit table": [
+        "編輯表格"
+      ],
+      "More settings": [
+        "更多設定"
+      ],
+      "Save": [
+        "儲存"
+      ],
+      "Select a range": [
+        "選取範圍"
+      ],
+      "Show filter button": [
+        "顯示篩選按鈕"
+      ],
+      "Table data range": [
+        "表格資料範圍"
+      ],
+      "Table title": [
+        "表格標題"
       ]
     }
   }

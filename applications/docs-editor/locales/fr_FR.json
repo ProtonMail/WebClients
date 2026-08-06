@@ -57,7 +57,7 @@
         "Centrer"
       ],
       "Check List": [
-        "Liste de vérification"
+        "Liste de contrôle"
       ],
       "Clear contents": [
         "Effacer les contenus"
@@ -244,6 +244,18 @@
       ],
       "Superscript": [
         "Exposant"
+      ],
+      "Close outline": [
+        "Fermer le projet"
+      ],
+      "Go to label": [
+        "Afficher le label"
+      ],
+      "Open outline": [
+        "Ouvrir le plan"
+      ],
+      "Remove": [
+        "Retirer"
       ]
     },
     "color": {
@@ -474,6 +486,9 @@
       ],
       "Tried to import Sheet data into Lexical": [
         "Tentative d'importation des données de feuille dans Lexical"
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Cette feuille de calcul a détecté un problème de synchronisation. La modification a été désactivée afin d'éviter toute perte de données. Merci de nous le signaler. Si vous n'avez pas de problème à partager le contenu, téléchargez et incluez les informations ci-dessous dans le rapport"
       ]
     },
     "Error message": {
@@ -594,6 +609,12 @@
       ],
       "New": [
         "Nouveau"
+      ],
+      "Labels:": [
+        "Labels :"
+      ],
+      "NEW": [
+        "NOUVEAU"
       ]
     },
     "Label": {
@@ -738,6 +759,9 @@
       ],
       "Explore the New Suggestion Mode": [
         "Découvrez le nouveau mode de suggestions"
+      ],
+      "Outline": [
+        "Structure"
       ]
     },
     "Warning": {
@@ -1460,7 +1484,7 @@
         "Texte brut"
       ],
       "Time": [
-        "Temps"
+        "Heure"
       ],
       "¥ Yen": [
         "¥ Yen"
@@ -2336,6 +2360,29 @@
       ],
       "Zero": [
         "Zéro"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Moyenne"
+      ],
+      "Count": [
+        "Compte"
+      ],
+      "Customize Status Bar": [
+        "Personnaliser la barre d'état"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Numerical count": [
+        "Compte numérique"
+      ],
+      "Sum": [
+        "Somme"
       ]
     }
   }

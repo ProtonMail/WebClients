@@ -244,6 +244,12 @@
       ],
       "Superscript": [
         "ზედა ინდექსი"
+      ],
+      "Go to label": [
+        "ჭდეზე გადასვლა"
+      ],
+      "Remove": [
+        "წაშლა"
       ]
     },
     "color": {
@@ -471,6 +477,12 @@
       ],
       "Tried to import Sheet data into Lexical": [
         "ვცადე ელცხრილის მონაცემების Lexical-ში შემოტანა"
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "ამ ელექტრონულმა ცხრილმა აღმოაჩინა ლოკალური სინქრონიზაციის შეუსაბამობა. რედაქტირება გამორთულია მონაცემთა დაკარგვის თავიდან ასაცილებლად. გთხოვთ, გამოაგზავნოთ ანგარიში და თუ წინააღმდეგი არ ხართ შიგთავსის გაზიარებაზე, ჩამოტვირთეთ და თან დაურთეთ ქვემოთ მოცემული გამართვის ინფორმაცია."
+      ],
+      "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
+        "ეს ელექტრონული ცხრილი შეუთავსებელია კლიენტის მიმდინარე ვერსიასთან. გთხოვთ, სცადოთ კლიენტის ხელახლა ჩატვირთვა. თუ შეცდომა კვლავ განმეორდა, მიმართეთ მხარდაჭერას."
       ]
     },
     "Error message": {
@@ -591,6 +603,9 @@
       ],
       "New": [
         "ახალი"
+      ],
+      "Labels:": [
+        "ჭდეები:"
       ]
     },
     "Label": {
@@ -735,6 +750,9 @@
       ],
       "Explore the New Suggestion Mode": [
         "დაათვალიერეთ ახალი მინიშნების რეჟიმი"
+      ],
+      "Outline": [
+        "კონტური"
       ]
     },
     "Warning": {
@@ -1018,6 +1036,24 @@
       ],
       "Values only": [
         "მხოლოდ მნიშვნელობები"
+      ],
+      "Delete cells and shift cells left": [
+        "უჯრების წაშლა და უჯრების მარცხნივ გაწევა"
+      ],
+      "Delete cells and shift cells up": [
+        "უჯრების წაშლა და უჯრების ზემოთ აწევა"
+      ],
+      "Insert cells and shift cells down": [
+        "უჯრების ჩასმა და უჯრების ქვემოთ ჩაწევა"
+      ],
+      "Insert cells and shift cells right": [
+        "უჯრების ჩასმა და უჯრების მარჯვნივ გაწევა"
+      ],
+      "Insert table column to the left": [
+        "ცხრილის სვეტის ჩასმა მარცხნივ"
+      ],
+      "Insert table column to the right": [
+        "ცხრილის სვეტის ჩასმა მარჯვნივ"
       ]
     },
     "sheets_2025:Spreadsheet context menu (columns/rows)": {
@@ -1054,6 +1090,9 @@
       ],
       "Delete sheet": [
         "ფურცლის წაშლა"
+      ],
+      "Are you sure you want to delete ${ sheetName }?": [
+        "დარწმუნებული ხართ, რომ გსურთ წაშალოთ ${ sheetName }?"
       ]
     },
     "sheets_2025:Spreadsheet editing disabled dialog": {
@@ -1062,6 +1101,12 @@
       ],
       "Screen too small for editing": [
         "ჩასასწორებლად ეკრანი ძალიან პატარაა"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "ჩვენ ვმუშაობთ იმაზე, რომ ეს ფუნქცია მალე შემოგთავაზოთ. ამჟამად, ფურცლების რედაქტირება მხოლოდ კომპიუტერზეა შესაძლებელი"
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "თქვენი ეკრანი ზედმეტად პატარაა ამ ელექტრონული ცხრილის დასარედაქტირებლად. იმყოფებით მხოლოდ ნახვის რეჟიმში. ცვლილებების შესატანად, გთხოვთ გახსნათ ეს ელექტრონული ცხრილი უფრო დიდ ეკრანზე ან გაადიდოთ ბრაუზერის ფანჯარა."
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1215,6 +1260,12 @@
       ],
       "View recent spreadsheets": [
         "უახლესი ელცხრილების ნახვა"
+      ],
+      "Comma Separated Values (.csv)": [
+        "მძიმით გამოყოფილი მნიშვნელობები (.csv)"
+      ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "OpenDocument ელექტრონული ცხრილი (.ods) (ბეტა)"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu": {
@@ -1486,6 +1537,12 @@
       ],
       "₹ Rupee": [
         "₹ რუპია"
+      ],
+      "Custom date and time": [
+        "მორგებული თარიღი და დრო"
+      ],
+      "Custom number": [
+        "მორგებული რიცხვი"
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
@@ -1511,6 +1568,12 @@
       ],
       "Save and reload": [
         "შენახვა და გადატვირთვა"
+      ],
+      "Settings for this spreadsheet": [
+        "ამ ელექტრონული ცხრილის პარამეტრები"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "ეს გავლენას ახდენს ფორმატირების ისეთ დეტალებზე, როგორიცაა ფუნქციები, თარიღები და ვალუტა"
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
@@ -1873,6 +1936,12 @@
       ],
       "Vertical axis title": [
         "ვერტიკალური ღერძის წარწერა"
+      ],
+      "Horizontal (category) axis labels": [
+        "ჰორიზონტალური (კატეგორიის) ღერძის იარლიყები"
+      ],
+      "Show data in hidden rows and columns": [
+        "მონაცემების ჩვენება დამალულ სტრიქონებსა და სვეტებში"
       ]
     },
     "sheets_2025:Spreadsheet sidebar conditional format dialog": {
@@ -1964,6 +2033,9 @@
       ],
       "Custom currencies": [
         "მორგებული ვალუტები"
+      ],
+      "Apply to create a custom currency": [
+        "გამოყენება მორგებული ვალუტის შესაქმნელად"
       ]
     },
     "sheets_2025:Spreadsheet sidebar data validation dialog": {
@@ -2054,6 +2126,9 @@
       ],
       "Type": [
         "ტიპი"
+      ],
+      "Name should not contain spaces": [
+        "სახელი არ უნდა შეიცავდეს გამოტოვებულ ადგილებს"
       ]
     },
     "sheets_2025:Spreadsheet sidebar table editor dialog": {
@@ -2117,6 +2192,188 @@
       ],
       "Zero": [
         "ნული"
+      ],
+      "Apply to create a custom number format": [
+        "გამოყენება რიცხვის მორგებული ფორმატის შესაქმნელად"
+      ],
+      "Custom number format": [
+        "რიცხვის მორგებული ფორმატი"
+      ],
+      "Custom number formats": [
+        "რიცხვის მორგებული ფორმატები"
+      ]
+    },
+    "sheets_2025:Range selector": {
+      "Range selector": [
+        "დიაპაზონის ამრჩევი"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "გადატარება"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Custom date and time formats": [
+        "თარიღისა და დროის მორგებული ფორმატები"
+      ],
+      "Format": [
+        "ფორმატი"
+      ],
+      "Sample": [
+        "ნიმუში"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "AM/PM"
+      ],
+      "Date": [
+        "თარიღი"
+      ],
+      "Day": [
+        "დღე"
+      ],
+      "Day as abbreviation": [
+        "დღე აბრევიატურით"
+      ],
+      "Day as full name": [
+        "დღე სრული სახელით"
+      ],
+      "Day with leading zero": [
+        "დღე წამყვანი ნულით"
+      ],
+      "Day without leading zero": [
+        "დღე წამყვანი ნულის გარეშე"
+      ],
+      "Delete": [
+        "წაშლა"
+      ],
+      "Duration": [
+        "ხანგრძლივობა"
+      ],
+      "Elapsed hours": [
+        "გასული საათები"
+      ],
+      "Elapsed hours with leading zero": [
+        "გასული საათები წამყვანი ნულით"
+      ],
+      "Elapsed hours without leading zero": [
+        "გასული საათები წამყვანი ნულის გარეშე"
+      ],
+      "Elapsed minutes": [
+        "გასული წუთები"
+      ],
+      "Elapsed minutes with leading zero": [
+        "გასული წუთები წამყვანი ნულით"
+      ],
+      "Elapsed minutes without leading zero": [
+        "გასული წუთები წამყვანი ნულის გარეშე"
+      ],
+      "Elapsed seconds": [
+        "გასული წამები"
+      ],
+      "Elapsed seconds with leading zero": [
+        "გასული წამები წამყვანი ნულით"
+      ],
+      "Elapsed seconds without leading zero": [
+        "გასული წამები წამყვანი ნულის გარეშე"
+      ],
+      "First letter of the month": [
+        "თვის პირველი ასო"
+      ],
+      "Full": [
+        "სრული"
+      ],
+      "Full numeric year": [
+        "სრული ციფრული წელი"
+      ],
+      "Hour": [
+        "საათი"
+      ],
+      "Hour with leading zero": [
+        "საათი წამყვანი ნულით"
+      ],
+      "Hour without leading zero": [
+        "საათი წამყვანი ნულის გარეშე"
+      ],
+      "Millisecond": [
+        "მილიწამი"
+      ],
+      "Minute": [
+        "წუთი"
+      ],
+      "Minute with leading zero": [
+        "წუთი წამყვანი ნულით"
+      ],
+      "Minute without leading zero": [
+        "წუთი წამყვანი ნულის გარეშე"
+      ],
+      "Month": [
+        "თვე"
+      ],
+      "Month as abbreviation": [
+        "თვე აბრევიატურით"
+      ],
+      "Month as full name": [
+        "თვე სრული სახელით"
+      ],
+      "Month with leading zero": [
+        "თვე წამყვანი ნულით"
+      ],
+      "Month without leading zero": [
+        "თვე წამყვანი ნულის გარეშე"
+      ],
+      "Precision to 1/10 of a second": [
+        "სიზუსტე წამის 1/10-მდე"
+      ],
+      "Precision to 1/100 of a second": [
+        "სიზუსტე წამის 1/100-მდე"
+      ],
+      "Precision to 1/1000 of a second": [
+        "სიზუსტე წამის 1/1000-მდე"
+      ],
+      "Second": [
+        "წამი"
+      ],
+      "Second with leading zero": [
+        "წამი წამყვანი ნულით"
+      ],
+      "Second without leading zero": [
+        "წამი წამყვანი ნულის გარეშე"
+      ],
+      "Time": [
+        "დრო"
+      ],
+      "Two digit year": [
+        "ორნიშნა წელი"
+      ],
+      "Year": [
+        "წელი"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "საშუალო"
+      ],
+      "Count": [
+        "რაოდენობა"
+      ],
+      "Customize Status Bar": [
+        "სტატუსის ზოლის მორგება"
+      ],
+      "Max": [
+        "მაქს"
+      ],
+      "Min": [
+        "მინ"
+      ],
+      "Numerical count": [
+        "რიცხვითი რაოდენობა"
+      ],
+      "Sum": [
+        "ჯამი"
       ]
     }
   }
