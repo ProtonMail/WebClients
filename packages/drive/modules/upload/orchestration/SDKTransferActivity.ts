@@ -3,7 +3,7 @@ import type { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonD
 import type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
 
 import { useUploadQueueStore } from '../store/uploadQueue.store';
-import { UploadStatus } from '../types';
+import { UploadStatus, isTerminalStatus } from '../types';
 
 /**
  * Tracks SDK upload transfer activity (paused/resumed state)
@@ -63,19 +63,9 @@ export class SDKTransferActivity {
      */
     checkAndUnsubscribeIfQueueEmpty(): void {
         const uploadQueueStore = useUploadQueueStore.getState();
-        const activeUploads = uploadQueueStore
-            .getQueue()
-            .filter(
-                (item) =>
-                    ![
-                        UploadStatus.Finished,
-                        UploadStatus.Failed,
-                        UploadStatus.Cancelled,
-                        UploadStatus.Skipped,
-                    ].includes(item.status)
-            );
+        const hasActiveUploads = uploadQueueStore.getQueue().some((item) => !isTerminalStatus(item.status));
 
-        if (activeUploads.length === 0 && this.sdkEventsDisposer) {
+        if (!hasActiveUploads && this.sdkEventsDisposer) {
             this.unsubscribe();
         }
     }
