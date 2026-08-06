@@ -90,6 +90,7 @@ import { getMember } from './getMember';
 import {
     MemberCreationValidationError,
     type MembersState,
+    type RoleAssignmentsResult,
     getMemberAddresses,
     invalidateMemberRoles,
     membersThunk,
@@ -364,7 +365,7 @@ export const assignMemberRoles = ({
     payload: PromoteGlobalSSOPayload | MemberKeyPayload | null;
     api: Api;
 }): ThunkAction<
-    Promise<RoleAssignment[]>,
+    Promise<RoleAssignmentsResult>,
     KtState & OrganizationKeyState & MembersState & OrganizationRolesState,
     ProtonThunkArguments,
     UnknownAction
@@ -394,9 +395,10 @@ export const assignMemberRoles = ({
         }
 
         // The order is IMPORTANT here: set admin roles first, promote second
-        const roleAssignments = await dispatch(updateMemberRoles({ member, currentRoles, desiredRoleIds, api }));
+        const result = await dispatch(updateMemberRoles({ member, currentRoles, desiredRoleIds, api }));
         await dispatch(setRole({ member, role: MEMBER_ROLE.ORGANIZATION_ADMIN, payload, api }));
-        return roleAssignments;
+        // The promotion is a change on its own, even when the role assignments stay the same.
+        return { ...result, changed: true };
     };
 };
 
