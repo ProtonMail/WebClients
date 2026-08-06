@@ -1920,6 +1920,9 @@
       "Not a valid number": [
         "Neplatné číslo"
       ],
+      "Organization key is not decrypted": [
+        "Kľúč organizácie nie je dešifrovaný"
+      ],
       "Passwords do not match": [
         "Heslá sa nezhodujú"
       ],
@@ -2397,9 +2400,6 @@
       "Failed to update meeting schedule": [
         "Nepodarilo sa aktualizovať rozvrh schôdzky"
       ],
-      "Failed to update meeting waiting room status": [
-        "Nepodarilo sa aktualizovať stav čakárne schôdzky"
-      ],
       "Free meeting": [
         "Voľné stretnutie"
       ],
@@ -2444,9 +2444,6 @@
       ],
       "Joined ${ roomNameLabel }": [
         "Pripojený k ${ roomNameLabel }"
-      ],
-      "Joined at ${ receivedTime }": [
-        "Vstúpil o ${ receivedTime }"
       ],
       "Learn more": [
         "Zistiť viac"
@@ -3310,6 +3307,20 @@
       ],
       "Video quality was poor": [
         "Kvalita videa bola zlá"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Kľúč organizácie neexistuje."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Prístup zamietnutý, oprávnenia správcu boli obmedzené."
+      ],
+      "The organization key must be activated first.": [
+        "Najprv musí byť aktivovaný kľúč organizácie."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Na vykonanie tejto operácie potrebujete prístup ku kľúču organizácie."
       ]
     },
     "Placeholder": {

@@ -491,6 +491,9 @@
       "Edit users": [
         "Gebruikers bewerken"
       ],
+      "Enable": [
+        "Inschakelen"
+      ],
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
@@ -860,9 +863,6 @@
       "Remove": [
         "Verwijderen"
       ],
-      "Remove all members": [
-        "Alle leden verwijderen"
-      ],
       "Remove all other devices": [
         "Alle andere apparaten verwijderen"
       ],
@@ -1211,6 +1211,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgrade om ${ PROTON_SENTINEL_NAME } in te schakelen"
       ],
+      "Upgrade to Professional": [
+        "Upgraden naar Professional"
+      ],
       "Upgrade to view all": [
         "Upgrade om volledig te bekijken"
       ],
@@ -1294,6 +1297,9 @@
       ],
       "View all reports": [
         "Bekijk alle rapporten"
+      ],
+      "View guide": [
+        "Bekijk gids"
       ],
       "View invoice": [
         "Factuur bekijken"
@@ -2058,125 +2064,6 @@
       ],
       "Working with sensitive data?": [
         "Werkt u met gevoelige gegevens?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Geactiveerd"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Het adres is al in gebruik voor een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Calendar": [
-        "Agenda"
-      ],
-      "Configure migration": [
-        "Migratie configureren"
-      ],
-      "Contacts": [
-        "Contacten"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Gegevensmigratiestatus van Google Workspace naar ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-mails"
-      ],
-      "Errors": [
-        "Fouten"
-      ],
-      "Estimated size": [
-        "Geschatte grootte."
-      ],
-      "Find out what can be migrated.": [
-        "Ontdek wat er gemigreerd kan worden."
-      ],
-      "Has errors": [
-        "Bevat fouten"
-      ],
-      "In progress": [
-        "Bezig"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
-      ],
-      "Migrate": [
-        "Migreer"
-      ],
-      "Migrated": [
-        "Gemigreerd"
-      ],
-      "Migration status": [
-        "Migratiestatus"
-      ],
-      "Missing organization private key": [
-        "Ontbrekende privésleutel van de organisatie"
-      ],
-      "Missing organization public key": [
-        "Ontbrekende openbare sleutel van de organisatie"
-      ],
-      "No users to display": [
-        "Geen gebruikers om weer te geven"
-      ],
-      "Not activated": [
-        "Niet geactiveerd"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisatie heeft onvoldoende licenties beschikbaar"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisatie heeft onvoldoende opslagruimte beschikbaar"
-      ],
-      "Pending": [
-        "In behandeling"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
-      ],
-      "Select users to migrate": [
-        "Selecteer gebruikers om te migreren"
-      ],
-      "Size": [
-        "Grootte"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit van het platform."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Om deze gebruiker te migreren, schakelt u diens account in in uw Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Om deze gebruiker te migreren, schakelt u diens account in onder ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Om deze gebruiker te migreren, schakelt u diens adres in onder ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Om deze gebruiker te migreren, moet deze de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Om deze gebruiker te migreren, haalt u deze uit het archief in uw Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Om deze gebruiker te migreren, heft u de schorsing op in uw Google Workspace Admin Console."
-      ],
-      "User": [
-        "Gebruiker"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
-      ],
-      "What are you migrating?": [
-        "Wat migreert u?"
-      ],
-      "You": [
-        "U"
       ]
     },
     "Browser": {
@@ -4729,6 +4616,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "U kunt hun toegang op elk moment verwijderen om de exclusieve controle over uw account te herwinnen."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "U bent nog voor niemand aangeduid als herstelcontact."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "U bent nog voor niemand aangewezen als contactpersoon voor noodgevallen."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "U heef het maximum van ${ limit } contactpersoon bereikt.",
         "U heef het maximum van ${ limit } contactpersonen bereikt."
@@ -4962,6 +4855,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "Ongeldige reset token. Vraag een andere token aan en probeer het opnieuw."
       ],
+      "Invalid URL": [
+        "Ongeldige URL"
+      ],
       "Invalid VAT number": [
         "Ongeldig btw-nummer"
       ],
@@ -4980,6 +4876,9 @@
       ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
+      ],
+      "Missing signature": [
+        "Handtekening ontbreekt"
       ],
       "Name already exists": [
         "Naam bestaat al"
@@ -5169,6 +5068,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
       ],
       "Something went wrong while converting the address": [
         "Er is iets misgegaan tijdens het aanmaken van het adres"
@@ -6064,11 +5966,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Weet u zeker dat u de beveiligingssleutel ${ name } wilt verwijderen?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Voer uw pincode in elke keer dat u uw beveiligingssleutel gebruikt met ${ BRAND_NAME }, als de sleutel dit ondersteunt. Dit geldt alleen voor sleutels waarvoor een pincode is ingesteld."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Plaats een beveiligingssleutel die is gekoppeld aan uw ${ BRAND_NAME }-account."
       ],
       "Insert your security key into your device.": [
         "Plaats uw beveiligingssleutel in uw apparaat."
+      ],
+      "PIN requirement for security keys disabled": [
+        "Pincodevereiste voor beveiligingssleutels uitgeschakeld"
+      ],
+      "PIN requirement for security keys enabled": [
+        "Pincodevereiste voor beveiligingssleutels ingeschakeld"
+      ],
+      "Require PIN for security key": [
+        "Pincode vereisen voor beveiligingssleutel"
       ],
       "Security key": [
         "Beveiligingssleutel"
@@ -6760,6 +6674,14 @@
         "Selecteer ${ boldExport } om de agenda te exporteren als een ICS-bestand."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Bezig"
+      ],
+      "Migrated": [
+        "Gemigreerd"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
@@ -7275,9 +7197,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Weet u zeker dat u beheerdersbevoegdheden van deze gebruiker wilt wegnemen?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Weet u zeker dat u alle leden uit deze groep wilt verwijderen?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Weet u zeker dat u het domein ${ boldDomain } wilt verwijderen?"
       ],
@@ -7307,6 +7226,9 @@
       ],
       "Authenticator app 2FA enabled": [
         "Authenticatie-app 2FA ingeschakeld"
+      ],
+      "Available on VPN Professional": [
+        "Beschikbaar op VPN Professional"
       ],
       "Awaiting transaction": [
         "Transactie wordt afgewacht"
@@ -7709,6 +7631,9 @@
       ],
       "Enable email notifications": [
         "E-mailmelding inschakelen"
+      ],
+      "Enable groups to streamline access control": [
+        "Geef groepen de mogelijkheid om de toegangscontrole te stroomlijnen"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Schakel eenmalig inloggen in om uw organisatie veilig te houden"
@@ -8191,6 +8116,9 @@
       ],
       "Learn more about Gateways": [
         "Meer informatie over Gateways"
+      ],
+      "Learn more about groups": [
+        "Meer informatie over groepen"
       ],
       "Learn more about single sign-on": [
         "Meer informatie over single sign-on"
@@ -8770,6 +8698,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
+      "Smart Routed through a different country.": [
+        "Slim gerouteerd door een ander land."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Smart Routed via: ${ joinedCountries }."
+      ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Sommige ${ BRAND_NAME }-apps ondersteunen mogelijk nog geen beveiligingssleutels. Als u 2FA authenticatie-app uitschakelt, kunt u mogelijk niet bij die apps aanmelden."
       ],
@@ -8957,6 +8891,9 @@
       ],
       "This file is too large to preview": [
         "Dit bestand is te groot om het te kunnen tonen"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Dit Gmail-adres is geregistreerd bij een ander ${ BRAND_NAME }-account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI en andere). We werken eraan om deze verbinding naadloos te laten verlopen, maar voorlopig moet u een paar stappen ondernemen."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dit is een zin van 12 woorden die u moest instellen."
@@ -9189,8 +9126,14 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Upgrade nu om de activiteit van ${ PASS_APP_NAME } in uw hele organisatie te bekijken."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Upgrade of maak op elk gewenst moment ruimte vrij om de rest over te brengen"
+      ],
+      "Upgrade required": [
+        "Upgrade vereist"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Upgraden om uw ${ planTitle } voordelen te behouden."
@@ -9425,6 +9368,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Met groepen kunt u snel en gemakkelijk e-mails versturen naar alle mensen in een specifieke groep."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Met VPN Professional kunnen beheerders een altijd ingeschakelde VPN afdwingen voor alle leden van de organisatie, naast privé gateways, toegangsbeleid en monitoring."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Zonder activatie kun u nog geen nieuwe gebruikers maken, adressen aan bestaande gebruikers toewijzen of toegang krijgen tot niet-privé gebruikersaccounts."
@@ -10813,6 +10759,9 @@
       "Unlimited": [
         "Onbeperkt"
       ],
+      "Upgrade": [
+        "Upgraden"
+      ],
       "Upload 1 or more encryption keys": [
         "Upload 1 of meer encryptiesleutels"
       ],
@@ -11421,6 +11370,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licenties"
+      ],
+      "${ price } per seat": [
+        "${ price } per licentie"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licentie",
@@ -14950,17 +14902,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Zorg ervoor dat u de bovenstaande SCIM-token nu kopieert."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Zodra SCIM is uitgeschakeld voor uw organisatie, **zullen alle SCIM-gebruikers die automatisch door uw identiteitsprovider worden aangeboden worden omgezet naar SSO-gebruikers** en u kunt ze direct beheren binnen de ${ BRAND_NAME } instellingen."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Vereenvoudigt gebruikersbeheer over verschillende diensten. Voeg toe, bewerk en verwijder gebruikers in uw identiteitsprovider, en deze wijzigingen zullen automatisch worden toegepast op uw ${ appName } organisatie."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "De automatische bepaling van SCIM wordt uitgeschakeld totdat u de nieuwe SCIM-token in de instellingen van uw identiteit provider invoert."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "De SCIM basis-URL en token zullen worden verwijderd."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Om het synchroniseren met uw identiteitsprovider opnieuw aan te zetten, moet u de SCIM-integratie opnieuw voltooien."
@@ -16989,6 +16935,14 @@
         "Voor particulieren"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Grootte"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Actie"
@@ -17814,6 +17768,9 @@
       "Groups": [
         "Groepen"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Let op: deze Gmail is gekoppeld aan een ander ${ BRAND_NAME }-account"
+      ],
       "Help and feedback": [
         "Hulp en feedback"
       ],
@@ -18076,9 +18033,6 @@
       "Reject device?": [
         "Apparaat weigeren?"
       ],
-      "Remove all members?": [
-        "Alle leden verwijderen?"
-      ],
       "Remove Always-on VPN device profile": [
         "Verwijder het Always-on VPN-apparaatprofiel"
       ],
@@ -18108,6 +18062,9 @@
       ],
       "Remove via MDM": [
         "Verwijderen via MDM"
+      ],
+      "Remove via PowerShell": [
+        "Verwijder via PowerShell"
       ],
       "Rename the gateway": [
         "De gateway hernoemen"
@@ -18376,6 +18333,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Upgraden naar ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "Upgrade om Always-on in te schakelen"
       ],
       "Upgrade to keep your premium benefits.": [
         "Upgraden om uw premium voordelen te behouden."
@@ -18795,6 +18755,9 @@
       "Group membership paused": [
         "Groepslidmaatschap gepauzeerd"
       ],
+      "Pending user activation": [
+        "In afwachting van gebruikersactivatie"
+      ],
       "Resuming role assignment": [
         "Functietoewijzing hervatten"
       ],
@@ -19142,6 +19105,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Dit zal een nieuw ${ MAIL_APP_NAME }-adres aanmaken."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
       ],
       "User created": [
         "Gebruiker aangemaakt"

@@ -1246,125 +1246,6 @@
         "NetShield yang dirancang khusus melindungi perangkat dan mempercepat penjelajahan dengan memblokir iklan, pelacak, dan malware."
       ]
     },
-    "BOSS": {
-      "Activated": [
-        "Diaktifkan"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Alamat sudah digunakan oleh pengguna di luar organisasi. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
-      ],
-      "All": [
-        "Semua"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Configure migration": [
-        "Atur migrasi"
-      ],
-      "Contacts": [
-        "Kontak"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status migrasi data dari Google Workspace ke ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Email"
-      ],
-      "Errors": [
-        "Kesalahan"
-      ],
-      "Estimated size": [
-        "Perkiraan ukuran"
-      ],
-      "Find out what can be migrated.": [
-        "Cari tahu apa saja yang dapat dimigrasikan."
-      ],
-      "Has errors": [
-        "Ada kesalahan"
-      ],
-      "In progress": [
-        "Sedang berlangsung"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Alamat anggota tidak ditemukan. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
-      ],
-      "Migrate": [
-        "Migrasi"
-      ],
-      "Migrated": [
-        "Dimigrasikan"
-      ],
-      "Migration status": [
-        "Status migrasi"
-      ],
-      "Missing organization private key": [
-        "Kunci pribadi organisasi hilang"
-      ],
-      "Missing organization public key": [
-        "Kunci publik organisasi hilang"
-      ],
-      "No users to display": [
-        "Tidak ada pengguna untuk ditampilkan"
-      ],
-      "Not activated": [
-        "Belum diaktifkan"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisasi tidak memiliki jumlah kuota yang memadai"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisasi tidak memiliki cukup ruang penyimpanan yang tersedia"
-      ],
-      "Pending": [
-        "Tertunda"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Pilih apa yang ingin dimigrasikan. Ini akan berlaku untuk semua pengguna organisasi."
-      ],
-      "Select users to migrate": [
-        "Pilih pengguna untuk dimigrasikan"
-      ],
-      "Size": [
-        "Ukuran"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Pengguna ini tidak dapat dimigrasikan karena ketidakcocokan platform."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Untuk memigrasikan pengguna ini, aktifkan akunnya di Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Untuk memigrasikan pengguna ini, aktifkan akunnya di bawah ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Untuk memigrasikan pengguna ini, aktifkan alamatnya di bawah ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Untuk memigrasikan pengguna ini, pengguna tersebut harus menerima undangan untuk bergabung dengan ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Untuk memigrasikan pengguna ini, batalkan pengarsipannya di Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Untuk memigrasikan pengguna ini, batalkan penangguhannya di Google Workspace Admin Console."
-      ],
-      "User": [
-        "Pengguna"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Pengguna yang telah mengakses akun ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Apa yang ingin Anda migrasikan?"
-      ],
-      "You": [
-        "Anda"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplikasi Desktop ${ MAIL_APP_NAME }"
@@ -3235,6 +3116,9 @@
       "Invalid public key file": [
         "File kunci publik tidak valid"
       ],
+      "Invalid URL": [
+        "URL tidak valid"
+      ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
@@ -3387,6 +3271,9 @@
       ],
       "Some trashed documents could not be loaded": [
         "Beberapa dokumen yang dibuang ke tempat sampah tidak dapat dimuat"
+      ],
+      "Something went wrong": [
+        "Terjadi kesalahan"
       ],
       "Something went wrong while fetching available domains": [
         "Terjadi kesalahan saat mengambil domain yang tersedia"
@@ -4366,6 +4253,14 @@
         "Pilih ${ boldExport } untuk mengekspor kalender sebagai file ICS."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Migrated": [
+        "Dimigrasikan"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
@@ -4954,9 +4849,6 @@
       "Key fingerprint": [
         "Sidik jari kunci"
       ],
-      "Keys created": [
-        "Kunci dihasilkan"
-      ],
       "Label all imported messages as": [
         "Labeli semua pesan yang diimpor"
       ],
@@ -5443,9 +5335,6 @@
       "Uppercase and lowercase letters": [
         "Huruf besar dan kecil"
       ],
-      "User activated": [
-        "Pengguna diaktifkan"
-      ],
       "username": [
         "nama pengguna"
       ],
@@ -5577,9 +5466,6 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ trialEndsOnFormatted }."
-      ],
-      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
-        "Tidak akan dapat membagikan \"${ fileName }\" setelah mengubah akses menjadi penampil. Hanya pemilik yang dapat mengubah akses kembali."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Kredit akan diterima 1 bulan setelah teman berlangganan paket tahunan, dan 2 bulan setelah teman berlangganan paket bulanan."
@@ -9661,6 +9547,9 @@
       ],
       "Name": [
         "Nama"
+      ],
+      "Size": [
+        "Ukuran"
       ],
       "Status": [
         "Status"

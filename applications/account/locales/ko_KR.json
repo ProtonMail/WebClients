@@ -741,6 +741,9 @@
       "Emoji": [
         "이모티콘"
       ],
+      "Enable": [
+        "활성화"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } 활성화"
       ],
@@ -1308,9 +1311,6 @@
       "Remove": [
         "삭제"
       ],
-      "Remove all members": [
-        "모든 구성원 추방"
-      ],
       "Remove all other devices": [
         "모든 세션 비활성화"
       ],
@@ -1871,6 +1871,9 @@
       ],
       "View all reports": [
         "모든 보고서 확인하기"
+      ],
+      "View guide": [
+        "가이드 보기"
       ],
       "View invoice": [
         "청구서 보기"
@@ -2944,431 +2947,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "개인 이메일 주소는 디지털 신원의 가장 필수적인 부분입니다. 휴대전화 번호와 같이, 만나는 모든 사람에게 알려주지 않는 것이죠. 그렇기 때문에 다양한 용도로 사용할 수 있는 다른 이메일 주소를 갖는 것이 유용합니다."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ totalCount }개 중 ${ relevantCount }개"
-      ],
-      "Account connected": [
-        "계정 연결됨"
-      ],
-      "Account disconnected": [
-        "계정 연결 해제됨"
-      ],
-      "Accounts migrated": [
-        "이전된 계정"
-      ],
-      "Activated": [
-        "활성화됨"
-      ],
-      "Add domain": [
-        "도메인 추가"
-      ],
-      "Add users": [
-        "사용자 추가"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "${ BRAND_NAME }에 조직 이메일 도메인을 추가하세요."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "해당 주소는 조직 외부의 사용자가 이미 사용하고 있습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
-      ],
-      "All": [
-        "전체"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "이전된 모든 사용자 계정이 사용자의 ${ BRAND_NAME } 조직에 초대될 준비가 되었습니다."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "알 수 없는 오류가 발생했습니다. 페이지를 새로고침하고 다시 시도해 주세요"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "${ withoutString } 및 다른 ${ notMigratedOthers }명 없이 계속 진행하시겠습니까?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "정말로 ${ withoutString } 없이 계속하시겠습니까?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "정말 진행하시겠습니까? 이전이 완료되기 전에 계정을 등록하지 않은 사용자는 ${ BRAND_NAME } 조직 관리자에게 비밀번호 재설정을 요청해야 합니다."
-      ],
-      "Authenticate": [
-        "인증"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Google Workspace 계정 인증"
-      ],
-      "Calendar": [
-        "캘린더"
-      ],
-      "Collapse invitation message": [
-        "초대 메시지 접기"
-      ],
-      "Collapse step": [
-        "단계 축소"
-      ],
-      "Configure domain": [
-        "도메인 구성"
-      ],
-      "Configure migration": [
-        "이전 작업 구성"
-      ],
-      "Configure users": [
-        "사용자 설정"
-      ],
-      "Configure your domain": [
-        "도메인 구성"
-      ],
-      "Confirm": [
-        "확인"
-      ],
-      "Contact your administrator to start a migration.": [
-        "마이그레이션을 시작하려면 관리자에게 문의하세요."
-      ],
-      "Contacts": [
-        "연락처"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "사용자의 도메인 호스트의 DNS 섹션에서 아래 코드를 복사 및 붙여놓기하새요."
-      ],
-      "Creating accounts": [
-        "계정 생성 중"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Google Workspace에서 ${ BRAND_NAME }으로의 데이터 이전 상태"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "기존의 MX 코드를 모두 삭제한 후, 아래 코드를 복사하여 도메인 호스트의 DNS 섹션에 붙여넣으세요."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM은 각 이메일에 첨부되는 디지털 서명으로서, 수신자가 메시지를 보낸 사람이 정말 본인인지와 전송 중에 변경된 사항은 없는지 검증할 수 있습니다. DKIM 없이는 메시지의 신뢰성이 떨어질 수 있습니다."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC는 수신 서버에 이러한 점검에 실패한 메시지를 처리하는 방법을 알려줌으로써 SPF 및 DKIM을 기반으로 합니다. 이는 사칭으로부터 도메인을 보호하고 전반적인 수신 신뢰성을 향상하는 데 도움이 됩니다."
-      ],
-      "Domain added": [
-        "도메인 추가됨"
-      ],
-      "Domain provider": [
-        "도메인 제공자"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "시작하는 방법을 모르시겠다명? ${ registrarLink }(에)서 DNS 업데이트 방법을 살펴보세요."
-      ],
-      "Emails": [
-        "이메일"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "이메일이 스팸 폴더가 아닌 받은 편지함에 안전하게 도달하도록 설정하세요. SPF를 업데이트하면 이전 기간 동안 사용자가 ${ BRAND_NAME }과 Google에서 동시에 이메일을 보낼 수 있습니다"
-      ],
-      "Errors": [
-        "오류"
-      ],
-      "Estimated size": [
-        "예상 용량"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "모든 사람이 동일한 초대 링크를 받습니다. 사용자가 페이지를 방문하여 이메일을 입력하면, Gmail 받은 편지함으로 인증 코드가 도착합니다. 해당 코드를 통해 ${ BRAND_NAME } 비밀번호를 설정하게 됩니다."
-      ],
-      "Expand invitation message": [
-        "초대 메시지 펼치기"
-      ],
-      "Expand step": [
-        "단계 확장"
-      ],
-      "Failed to load OAuth": [
-        "OAuth를 불러오지 못했습니다."
-      ],
-      "Final step": [
-        "마지막 단계"
-      ],
-      "Find out what can be migrated.": [
-        "이전 가능한 항목을 확인해 보세요."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "${ here }(에)서 기타 도매인 제공 업체에 대한 도움과 유용한 팁을 받아보세요."
-      ],
-      "Going private": [
-        "개인적인 공간으로 전환"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Google Marketplace 앱에서 ${ BRAND_NAME }으로 데이터를 복사"
-      ],
-      "Google Workspace account": [
-        "Google Workspace 계정"
-      ],
-      "Has errors": [
-        "오류 있음"
-      ],
-      "Import completed successfully": [
-        "불러오기를 성공적으로 완료했습니다."
-      ],
-      "Import details": [
-        "가져오기 세부사항"
-      ],
-      "In progress": [
-        "진행 중"
-      ],
-      "Install app": [
-        "앱 설치"
-      ],
-      "Install migration app": [
-        "이전 앱 설치"
-      ],
-      "Invitation link": [
-        "초대 링크"
-      ],
-      "Invitation message": [
-        "초대장 메시지"
-      ],
-      "invite link": [
-        "초대 링크"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "이 변경 사항이 전파되는 데 최대 24시간이 소요될 수 있습니다."
-      ],
-      "Loading your organization data": [
-        "조직 데이터 로드 중"
-      ],
-      "Mail": [
-        "멩리"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "구성원 주소를 찾을 수 없습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
-      ],
-      "Migrate": [
-        "이전"
-      ],
-      "Migrate accounts": [
-        "계정 이전"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "${ BRAND_NAME }으로 계정 이전"
-      ],
-      "Migrate from Google Workspace": [
-        "Google Workspace에서 이전"
-      ],
-      "Migrated": [
-        "이전 완료"
-      ],
-      "Migrated accounts": [
-        "이전된 계정"
-      ],
-      "Migration includes": [
-        "이전에 포함되는 항목:"
-      ],
-      "Migration started for ${ n } user": [
-        "${ n }명의 사용자에 대한 마이그레이션이 시작됨"
-      ],
-      "Migration status": [
-        "마이그레이션 상태"
-      ],
-      "Migration summary": [
-        "이전 요약"
-      ],
-      "Missing organization private key": [
-        "조직 비밀 키 누락"
-      ],
-      "Missing organization public key": [
-        "조직 공개 키 누락"
-      ],
-      "More details": [
-        "자세한 세부사항"
-      ],
-      "Need help?": [
-        "도움이 필요한가요?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "사용 가능한 오류 세부사항이 없습니다. 자세한 정보는 고객 지원에 문의해 주세요"
-      ],
-      "No users to display": [
-        "표시할 사용자가 없습니다"
-      ],
-      "Not activated": [
-        "활성화되지 않음"
-      ],
-      "Not confirmed": [
-        "확인되지 않음"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "정확하게 감지되지 않았나요? 목록에서 제공업체를 선택하세요."
-      ],
-      "Onboard your team": [
-        "팀 온보딩"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "이메일이 ${ BRAND_NAME }으로 전송되는 것이 확인되면 이전이 완료됩니다. 이 작업이 완료되면 확인 이메일을 받게 됩니다. 이 프로세스는 최대 24시간이 소요될 수 있습니다"
-      ],
-      "Organization does not have enough seats available": [
-        "조직의 사용 권한이 충분하지 않습니다."
-      ],
-      "Organization does not have enough storage available": [
-        "조직에 충분한 저장공간이 남아있지 않습니다."
-      ],
-      "Pending": [
-        "보류 중"
-      ],
-      "Please don’t close or refresh this window.": [
-        "이 창을 닫거나 새로고침하지 마세요."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "이전을 시작하려면 Google Workspace 계정 재인증을 하십시오"
-      ],
-      "Refresh": [
-        "새로고침"
-      ],
-      "Select at least one user to start a migration": [
-        "하나 이상의 사용자를 선택하여 마이그레이션을 시작하세요"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "이전하고자 하는 항목을 정확히 선택하세요. 모든 조직 사용자에게 적용됩니다."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "${ BRAND_NAME }으로 가져오고 싶은 계정을 선택하세요. 오늘 조직 전체를 이전할 수도 있고, 소규모로 시작한 뒤 준비가 되었을 때 나머지를 가져올 수도 있습니다"
-      ],
-      "Select users to migrate": [
-        "이전할 사용자 선택"
-      ],
-      "Set up secure sending (DKIM)": [
-        "보안 발송 설정 (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "보안 발송 설정 (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "보안 발송 설정 (SPF)"
-      ],
-      "Settings": [
-        "설정"
-      ],
-      "Sign in to Google Workspace": [
-        "Google Workspace에 로그인"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "이전을 설정하려면 Google Workspace 관리자 계정으로 로그인하여 ${ BRAND_NAME }에 접속하세요."
-      ],
-      "Size": [
-        "크기"
-      ],
-      "Skip": [
-        "건너뛰기"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "호환되지 않는 연락처 ${ count }개 건너뜀"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "호환되지 않는 이메일 ${ count }개 건너뜀"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "호환되지 않는 이벤트 ${ count }개 건너뜀"
-      ],
-      "Some accounts are not claimed": [
-        "일부 계정이 등록되지 않았습니다"
-      ],
-      "Some members weren't migrated": [
-        "일부 구성원이 이전되지 않았습니다"
-      ],
-      "Status": [
-        "상태"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "플랫폼이 호환되지 않으므로 해당 사용자를 이전할 수 없습니다."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "${ BRAND_NAME }으로 조직의 데이터를 가져오려면, Google Workspace 마켓플레이스에서 ${ BRAND_NAME } Easy Switch를 설치하세요. 설치 후 이 탭으로 다시 돌아와 절차를 계속하세요."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "이전을 완료하려면 ${ BRAND_NAME } MX 코드만 유지해야 합니다."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 활성화해야 합니다."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 계정을 활성화해야 합니다."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 주소를 활성화해야 합니다."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "해당 사용자를 이전하려면 ${ BRAND_NAME }으로의 초대장 수락을 해야합니다."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 아카이브 취소해야 합니다."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 정지 취소해야 합니다."
-      ],
-      "Update records for receiving": [
-        "수신용 레코드 업데이트"
-      ],
-      "User": [
-        "사용자"
-      ],
-      "Users activated": [
-        "사용자 활성화됨"
-      ],
-      "Users migrated": [
-        "사용자가 이전되었습니다."
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } 계정에 접근한 사용자"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "이전이 완료되기 전에 계정을 등록하지 않은 사용자는 해당 ${ BRAND_NAME } 조직 관리자에게 비밀번호 재설정을 요청해야 합니다."
-      ],
-      "Verified": [
-        "인증됨"
-      ],
-      "Verify installation": [
-        "설치 검증"
-      ],
-      "Verify your domain": [
-        "내 도메인 인증"
-      ],
-      "Verify your domain to start a migration": [
-        "마이그레이션을 시작하려면 도메인을 확인하세요"
-      ],
-      "Waiting for MX...": [
-        "MX 대기 중..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Google Workspace 계정에 설치되었는지 확인하고 다시 시도해 주세요."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "보안 이메일 서비스인 ${ BRAND_NAME }(으)로 이동합니다.\n또한 사용쟈의 ${ BRAND_NAME } 계정이 가입 준비를 마쳤습니다.\n${ inviteLink }을(를) 클릭하세요.\n이메일 주소를 입력하면 Gmail로 코드를 보내드립니다.\n이 코드를 사용해 비밀번호를 설정하면 ${ BRAND_NAME } 계정이 생성됩니다.\n당분간은 ${ BRAND_NAME }와 Gmail 모두 나란히 사용할 수 있습니다.\n이후 모든 사용자가 이전을 완료하면 Gmail을 중단할 예정입니다. 종료되기 전에 미리 알려드리겠습니다"
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "일부 사용자가 아직 ${ BRAND_NAME } 계정을 등록하지 않은 것이 감지되었습니다."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "계정을 생성하고 데이터를 가져오는 중입니다. 완료되면 사용자의 팀이 보안 ${ BRAND_NAME } 계정을 시작하는 데 필요한 모든 것을 갖추게 됩니다."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "모두를 위한 종단 간 암호화를 활성화합니다. 이제 모든 이메일과 이벤트는 오직 개인의 것입니다. 사용자의 팀원에게만 보이며, 당사를 비롯해 그 누구도 볼 수 없습니다."
-      ],
-      "What are you migrating?": [
-        "무엇을 이전하시나요?"
-      ],
-      "You": [
-        "나"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "나중에 이 사용자들의 데이터를 가져올 수 없습니다."
-      ],
-      "You're all set!": [
-        "모든 준비가 완료되었습니다!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "거의 완료되었습니다. 이메일을 ${ BRAND_NAME }으로 직접 받으려면 도메인을 설정해야 합니다. 설정이 확인되면 사용자의 팀은 Gmail에서 새 이메일을 수신하지 않게 되며 이전이 완료됩니다"
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "현재 플랜에서 최대 ${ maxMembers }명 사용자를 추가할 수 있습니다. 추가적인 사용자 전환을 위해서는 구독에 사용자 시트를 더 추가해야 합니다."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "사용자의 도메인 설정에 여전히 다른 제공업체의 MX 코드가 포함되어 있습니다."
       ]
     },
     "breadcrumb": {
@@ -5638,7 +5216,7 @@
         "${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
-        "현재 요금제는 ${ MAX_SYNC_FREE_USER }개의 Gmail 주소를 지원합니다."
+        "현재 플랜에서 ${ MAX_SYNC_FREE_USER }개의 Gmail 주소를 지원합니다."
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "회원님의 플랜은 총 ${ MAX_SYNC_PAID_USER }개의 Gmail 주소를 지원합니다"
@@ -7621,6 +7199,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
       ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
+      ],
       "Something went wrong while converting the address": [
         "주소를 변환하는 중 오류가 발생했습니다."
       ],
@@ -8681,6 +8262,9 @@
       "Are you sure you want to delete security key ${ name }?": [
         "정말 ${ name } 보안 키를 지우시겠어요?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "보안 키가 지원하는 경우 ${ BRAND_NAME }에 보안 키를 사용할 때마다 매번 PIN을 입력합니다. 키에 PIN 설정이 완료된 경우에만 적용됩니다."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입해 주세요."
       ],
@@ -8692,6 +8276,9 @@
       ],
       "PIN requirement for security keys enabled": [
         "보안 키 활성화를 위한 PIN 요구 조건"
+      ],
+      "Require PIN for security key": [
+        "보안 키에 PIN 필요"
       ],
       "Security key": [
         "보안 키"
@@ -10361,9 +9948,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "이 사용자로부터 관리 권한을 제거하시겠습니까?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "이 그룹의 모든 구성원을 정말 추방하시겠어요?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "이 도메인 ${ boldDomain }을(를) 정말 제거하시겠습니까?"
@@ -12378,6 +11962,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
       ],
+      "Smart Routed through a different country.": [
+        "다른 국가를 통해 자동 경유됨."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "다음 국가를 자동 경유함: ${ joinedCountries }."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "SMTP 권한은 제3자의 서비스나 기기가 ${ MAIL_APP_NAME } 커스텀 도메인 주소를 통해 이메일을 보낼 수 있도록 합니다."
       ],
@@ -12642,6 +12232,9 @@
       "This file is too large to preview": [
         "용량이 너무 커 미리보기를 사용할 수 없는 파일입니다."
       ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "해당 Gmail 주소는 다른 ${ BRAND_NAME } 계정 (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI 등)과 연결되어 있습니다. 다른 주소와의 연결성을 향상시키기 위해 노력 중에 있지만, 아직까지는 회원님께서 수행해야 할 조치가 있습니다."
+      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "이 초대 링크는 만료되었습니다. 관리자에게 접근이 가능한지 문의해 주세요."
       ],
@@ -12850,7 +12443,7 @@
         "제대로 작동하기 위해, 각 필터는 적어도 이름과 유효한 채 스크립트를 포함해야 합니다. ${ link }"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "새 요금제에 가입하거나 현재 요금제를 갱신하는 데 사용할 수 있는 크레딧으로 계정을 충전하세요. 사용한 ${ i18nCurrency } 당 한개의 크레딧을 받습니다."
+        "유료 플랜을 결제하거나 현재 플랜을 갱신하는 데 사용할 수 있는 크레딧으로 계정을 충전하세요. 사용한 ${ i18nCurrency } 당 한개의 크레딧을 받습니다."
       ],
       "Tor": [
         "Tor"
@@ -12955,7 +12548,7 @@
         "업그레이드하여 잠금 해제"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
-        "${ monitorLink } 잠금 해제하려면 업그레이드"
+        "${ monitorLink } 잠금을 해제하려면 업그레이드하세요"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "조직용 ${ PROTON_SENTINEL_NAME }에 접근하려면 ${ firstPlanNames } 또는 ${ lastPlanName }(으)로 업그레이드하세요."
@@ -13247,6 +12840,9 @@
       ],
       "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
         "관리 중인 회사를 통해 사용자가 감독하는 조직의 접근 권한을 추가, 편집 및 삭제할 수 있습니다."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "VPN Professional로 모든 조직 구성원들이 VPN 항상 켜기나 비공개 게이트웨이를 사용하도록 강제할 수 있고, 조직 정책 및 모니터링에 접근할 수도 있습니다."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "현재 플랜에서는, 오직 @pm.me 주소로만 메시지를 받으실 수 있습니다. 업그레이드 하여 @pm.me를 사용하는 추가적인 주소를 생성하여 메시지를 전송해 보세요."
@@ -15597,6 +15193,9 @@
       ],
       "Set password": [
         "비밀번호 설정"
+      ],
+      "Settings": [
+        "설정"
       ],
       "Share your referral link": [
         "추천인 링크 공유하기"
@@ -21569,6 +21168,9 @@
       "New": [
         "새 항목"
       ],
+      "New: Manage groups via your identity provider": [
+        "신규: 사용 중인 신원 제공자로 그룹 관리하기"
+      ],
       "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
         "승인되면 모든 ${ BRAND_NAME } 서비스에 접근하고 안전하게 공유할 수 있습니다."
       ],
@@ -21583,6 +21185,9 @@
       ],
       "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "개인으로 설정된 사용자는 설정을 마치기 위해 초대를 수락해야 합니다. 사용자가 승인하면 초대장이 발송됩니다."
+      ],
+      "What to expect now that group sync is enabled": [
+        "그룹 동기화를 활성화하는 경우:"
       ]
     },
     "scim: Action": {
@@ -21633,17 +21238,11 @@
       "Make sure you copy the above SCIM token now.": [
         "위에 있는 SCIM 토큰이 복사되어야 합니다."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "SCIM이 사용자 조직에 한 번 비활성화 되면, **사용자의 신원 인증 제공자에 의한 모든 SCIM 사용자들이 SSO 사용자로 전환됩니다.** ${ BRAND_NAME } 설정 내에서 즉시 관리 또한 가능하게 됩니다."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "여러 서비스 간에 사용자 관리를 간소화합니다. ID 공급자에서 사용자를 추가, 편집, 제거하면 해당 변경 사항이 ${ appName } 조직에 자동으로 적용됩니다."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM 자동 프로비저닝은 신원 제공자의 설정에 새 SCIM 토큰을 입력할 때까지 비활성화됩니다."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM 베이스 URL 및 토큰이 비활성됩니다."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "신원 제공자와의 동기화를 다시 활성화하려면, SCIM 통합을 다시 완료해야 합니다."
@@ -24409,6 +24008,14 @@
         "개인용"
       ]
     },
+    "Table header": {
+      "Size": [
+        "크기"
+      ],
+      "Status": [
+        "상태"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "나와 공유됨"
@@ -25564,6 +25171,9 @@
       "Groups": [
         "그룹"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "알림: 해당 Gmail 계정이 다른 ${ BRAND_NAME } 계정과 연결되어 있습니다"
+      ],
       "Help and feedback": [
         "도움말 및 의견"
       ],
@@ -25965,9 +25575,6 @@
       ],
       "Reject device?": [
         "기기를 거절할까요?"
-      ],
-      "Remove all members?": [
-        "그룹 구성원을 추방하시겠습니까?"
       ],
       "Remove Always-on VPN device profile": [
         "VPN 항상 켜기 기기 프로파일 삭제"
@@ -27422,6 +27029,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "이 작업은 새로운 ${ MAIL_APP_NAME } 주소를 생성합니다."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "관리자 규칙을 사용하려면 지원하는 플랜으로 업그레이드하세요."
       ],
       "User created": [
         "사용자를 생성했습니다."

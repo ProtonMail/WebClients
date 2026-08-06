@@ -741,6 +741,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable": [
+        "Zapnúť"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Povoliť ${ darkWebMonitoring }"
       ],
@@ -1307,9 +1310,6 @@
       ],
       "Remove": [
         "Vymazať"
-      ],
-      "Remove all members": [
-        "Odstrániť všetkých členov"
       ],
       "Remove all other devices": [
         "Odobrať všetky ostatné zariadenia"
@@ -3001,449 +3001,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Vaša osobná emailová adresa je dôležitou súčasťou vašej digitálnej identity. Rovnako ako telefónne číslo, nedávate ju každému, koho stretnete. Preto je užitočné mať ďalšie emailové adresy, ktoré môžete používať na rôzne účely."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } z ${ totalCount }"
-      ],
-      "Account connected": [
-        "Účet je pripojený"
-      ],
-      "Account disconnected": [
-        "Účet odpojený"
-      ],
-      "Accounts migrated": [
-        "Migrované účty"
-      ],
-      "Activated": [
-        "Aktivované"
-      ],
-      "Add domain": [
-        "Pridať doménu"
-      ],
-      "Add users": [
-        "Pridať používateľov"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Pridajte emailovú doménu vašej organizácie do ${ BRAND_NAME }."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresu už používa používateľ mimo vašej organizácie. Kontaktujte zákaznícku podporu, aby ste to vyriešili."
-      ],
-      "All": [
-        "Všetko"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Všetky presunuté používateľské účty sú pripravené na pozvanie do vašej organizácie ${ BRAND_NAME }."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "Došlo k neznámej chybe. Obnovte stránku a skúste to znovu, prosím."
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "Naozaj chcete pokračovať bez ${ withoutString } a ${ notMigratedOthers }?",
-        "Naozaj chcete pokračovať bez ${ withoutString } a ${ notMigratedOthers } ďalších?",
-        "Naozaj chcete pokračovať bez ${ withoutString } a ${ notMigratedOthers } ďalších?",
-        "Naozaj chcete pokračovať bez ${ withoutString } a ${ notMigratedOthers } ďalších?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "Naozaj chcete pokračovať bez ${ withoutString }?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Naozaj chcete pokračovať? Používatelia, ktorí si svoj účet neprevzali pred dokončením migrácie, budú musieť požiadať správcu organizácie ${ BRAND_NAME } o obnovenie hesla."
-      ],
-      "Authenticate": [
-        "Autentifikovať"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Overte svoj účet Google Workspace"
-      ],
-      "Calendar": [
-        "Kalendár"
-      ],
-      "Collapse invitation message": [
-        "Zatvoriť text pozvánky"
-      ],
-      "Collapse step": [
-        "Zbaliť krok"
-      ],
-      "Configure domain": [
-        "Nakonfigurovať doménu"
-      ],
-      "Configure migration": [
-        "Nastaviť migráciu"
-      ],
-      "Configure users": [
-        "Nastaviť používateľov"
-      ],
-      "Configure your domain": [
-        "Nakonfigurujte si doménu"
-      ],
-      "Confirm": [
-        "Potvrdiť"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Ak chcete začať s presunom, kontaktujte svojho správcu."
-      ],
-      "Contacts": [
-        "Kontakty"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Skopírujte nasledujúci kód a vložte ho do sekcie DNS u vášho poskytovateľa doménových služieb."
-      ],
-      "Creating accounts": [
-        "Vytváranie účtov"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Stav migrácie dát z Google Workspace do ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "Odstráňte všetky existujúce MX záznamy, potom skopírujte nižšie uvedené kódy a vložte ich do sekcie DNS u vášho poskytovateľa doménových služieb."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM pridáva ku každému emailu digitálny podpis, vďaka čomu si príjemcovia môžu overiť, že správa skutočne pochádza z vašej domény a nebola počas prenosu pozmenená. Bez neho môžu byť správy považované za menej dôveryhodné."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC nadväzuje na protokoly SPF a DKIM tým, že prijímajúcim serverom určuje, ako majú postupovať v prípade správ, ktoré tieto kontroly neprejdú. Pomáha chrániť vašu doménu pred zneužitím a zvyšuje celkovú spoľahlivosť doručovania."
-      ],
-      "Domain added": [
-        "Doména pridaná"
-      ],
-      "Domain provider": [
-        "Poskytovateľ domény"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Neviete, kde začať? Pozrite si, ako aktualizovať svoje DNS na ${ registrarLink }"
-      ],
-      "Emails": [
-        "Emaily"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Uistite sa, že vaše emaily prichádzajú do doručenej pošty a nie do priečinka so spamom. Aktualizáciou SPF umožníte používateľom počas migrácie odosielať správy súčasne z adresy ${ BRAND_NAME } aj z adresy Google."
-      ],
-      "Errors": [
-        "Chyby"
-      ],
-      "Estimated size": [
-        "Odhadovaná veľkosť"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Všetci dostanú rovnaký pozývací odkaz. Navštívia stránku, zadajú svoj email a do ich Gmailovej schránky dorazí overovací kód. Na základe toho si nastavia heslo pre ${ BRAND_NAME }."
-      ],
-      "Expand invitation message": [
-        "Otvoriť text pozvánky"
-      ],
-      "Expand step": [
-        "Rozbaliť krok"
-      ],
-      "Failed to load OAuth": [
-        "Nepodarilo sa načítať OAuth"
-      ],
-      "Final step": [
-        "Posledný krok"
-      ],
-      "Find out what can be migrated.": [
-        "Zistite, čo je možné preniesť."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Pomoc a užitočné tipy pre iných poskytovateľov domén nájdete ${ here }"
-      ],
-      "Going private": [
-        "Prechod do súkromia"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Aplikácia Google Marketplace na kopírovanie údajov do ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Účet Google Workspace"
-      ],
-      "Has errors": [
-        "Má chyby"
-      ],
-      "Import completed successfully": [
-        "Import bol úspešne dokončený"
-      ],
-      "Import details": [
-        "Podrobnosti o importe"
-      ],
-      "In progress": [
-        "Prebieha"
-      ],
-      "Install app": [
-        "Inštalovať aplikáciu"
-      ],
-      "Install migration app": [
-        "Inštalovať migračnú aplikáciu"
-      ],
-      "Invitation link": [
-        "Pozývací odkaz"
-      ],
-      "Invitation message": [
-        "Text pozvánky"
-      ],
-      "invite link": [
-        "pozývací odkaz"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Tieto zmeny sa môžu prejaviť až do 24 hodín."
-      ],
-      "Loading your organization data": [
-        "Načítavanie údajov vašej organizácie"
-      ],
-      "Mail": [
-        "Pošta"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adresa člena nebola nájdená. Na vyriešenie tohto problému kontaktujte zákaznícku podporu."
-      ],
-      "Migrate": [
-        "Migrovať"
-      ],
-      "Migrate accounts": [
-        "Migrovať účty"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Preneste účty do ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Migrovať z Google Workspace"
-      ],
-      "Migrated": [
-        "Presunuté"
-      ],
-      "Migrated accounts": [
-        "Migrované účty"
-      ],
-      "Migration includes": [
-        "Migrácia zahŕňa"
-      ],
-      "Migration started for ${ n } user": [
-        "Bola spustená migrácia ${ n } používateľa",
-        "Bola spustená migrácia pre ${ n } používateľov",
-        "Bola spustená migrácia pre ${ n } používateľov",
-        "Bola spustená migrácia pre ${ n } používateľov"
-      ],
-      "Migration status": [
-        "Stav migrácie"
-      ],
-      "Migration summary": [
-        "Súhrn informácií o migrácii"
-      ],
-      "Missing organization private key": [
-        "Chýba súkromný kľúč organizácie"
-      ],
-      "Missing organization public key": [
-        "Chýba verejný kľúč organizácie"
-      ],
-      "More details": [
-        "Ďalšie podrobnosti"
-      ],
-      "Need help?": [
-        "Potrebujete pomoc?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Podrobnosti o chybe nie sú k dispozícii. Pre viac informácií kontaktujte zákaznícku podporu."
-      ],
-      "No users to display": [
-        "Nie sú žiadni používatelia na zobrazenie"
-      ],
-      "Not activated": [
-        "Neaktivované"
-      ],
-      "Not confirmed": [
-        "Nepotvrdené"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Nenašlo sa to správne? Vyberte si svojho poskytovateľa zo zoznamu."
-      ],
-      "Onboard your team": [
-        "Zapojte svoj tím"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Akonáhle overíme, že emaily sú smerované na ${ BRAND_NAME }, migrácia bude dokončená. Po dokončení tohto procesu dostanete potvrdzovací email. Tento proces môže trvať až 24 hodín."
-      ],
-      "Organization does not have enough seats available": [
-        "Organizaícia nemá dostatok voľných licencií"
-      ],
-      "Organization does not have enough storage available": [
-        "Organzácia nemá dostatok úložného priestoru"
-      ],
-      "Pending": [
-        "Čakajúce"
-      ],
-      "Please don’t close or refresh this window.": [
-        "Nezatvárajte ani neobnovujte toto okno, prosím."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Znovu sa prihláste do svojho účtu Google Workspace, aby ste mohli začať s migráciou"
-      ],
-      "Refresh": [
-        "Obnoviť"
-      ],
-      "Select at least one user to start a migration": [
-        "Pre spustenie migrácie vyberte aspoň jedného používateľa"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Vyberte presne to, čo chcete preniesť. Zmena sa uplatní na všetkých používateľov v organizácii."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Vyberte účty, ktoré chcete preniesť do ${ BRAND_NAME }. Môžete preniesť celú svoju organizáciu hneď dnes, alebo začať v menšom rozsahu a zvyšok preniesť neskôr, keď budete pripravení."
-      ],
-      "Select users to migrate": [
-        "Vyberte používateľov na presun"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Nastavte bezpečné odosielanie (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Nastavte bezpečné odosielanie (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Nastavte bezpečné odosielanie (SPF)"
-      ],
-      "Settings": [
-        "Nastavenia"
-      ],
-      "Sign in to Google Workspace": [
-        "Prihlásiť sa do Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Prihláste sa pomocou účtu správcu služby Google Workspace pre ${ BRAND_NAME } a nastavte migráciu."
-      ],
-      "Size": [
-        "Veľkosť"
-      ],
-      "Skip": [
-        "Preskočiť"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "Vynechaný ${ count } kontakt z dôvodu nekompatibility",
-        "Vynechané ${ count } kontakty z dôvodu nekompatibility",
-        "Vynechaných ${ count } kontaktov z dôvodu nekompatibility",
-        "Vynechaných ${ count } kontaktov z dôvodu nekompatibility"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "Vynechaný ${ count } email z dôvodu nekompatibility",
-        "Vynechané ${ count } emaily z dôvodu nekompatibility",
-        "Vynechaných ${ count } emailov z dôvodu nekompatibility",
-        "Vynechaných ${ count } emailov z dôvodu nekompatibility"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "Vynechaná ${ count } udalosť z dôvodu nekompatibility",
-        "Vynechané ${ count } udalosti z dôvodu nekompatibility",
-        "Vynechaných ${ count } udalostí z dôvodu nekompatibility",
-        "Vynechaných ${ count } udalostí z dôvodu nekompatibility"
-      ],
-      "Some accounts are not claimed": [
-        "Niektoré účty neboli prevzaté"
-      ],
-      "Some members weren't migrated": [
-        "Niektorí členovia neboli prenesení"
-      ],
-      "Status": [
-        "Stav"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tohto používateľa nie je možné migrovať z dôvodu nekompatibility platforiem."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Ak chcete preniesť dáta vašej organizácie do ${ BRAND_NAME }, nainštalujte si aplikáciu ${ BRAND_NAME } Easy Switch z obchodu Google Workspace Marketplace. Po inštalácii sa vráťte sem a pokračujte."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "Aby ste migráciu dokončili, uistite sa, že ponecháte iba MX záznamy pre ${ BRAND_NAME }."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v konzole správcu Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v sekcii ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Ak chcete migrovať tohto používateľa, povoľte jeho adresu v sekcii ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Ak chcete migrovať tohto používateľa, musí prijať pozvánku do služby ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Ak chcete migrovať tohto používateľa, zrušte jeho archiváciu v konzole správcu Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Ak chcete migrovať tohto používateľa, zrušte jeho pozastavenie v konzole správcu Google Workspace."
-      ],
-      "Update records for receiving": [
-        "Aktualizovať záznamy o príjme"
-      ],
-      "User": [
-        "Používateľ"
-      ],
-      "Users activated": [
-        "Aktivovaní používatelia"
-      ],
-      "Users migrated": [
-        "Používatelia zmigrovaní"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Používatelia, ktorí sa prihlásili do svojho ${ BRAND_NAME } účtu"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Používatelia, ktorí si svoj účet neprevzali pred dokončením migrácie, budú musieť požiadať správcu organizácie ${ BRAND_NAME } o obnovenie hesla."
-      ],
-      "Verified": [
-        "Overené"
-      ],
-      "Verify installation": [
-        "Overiť inštaláciu"
-      ],
-      "Verify your domain": [
-        "Overte svoju doménu"
-      ],
-      "Verify your domain to start a migration": [
-        "Overte vašu doménu pre spustenie migrácie"
-      ],
-      "Waiting for MX...": [
-        "Čakám na MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Inštaláciu sa nám nepodarilo overiť. Skontrolujte, či ste ju nainštalovali do svojho účtu Google Workspace, a skúste to znova."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Prechádzame na ${ BRAND_NAME }, bezpečnú emailovú službu.\nVáš účet na ${ BRAND_NAME } je pripravený na aktiváciu.\nKliknite na odkaz ${ inviteLink }.\nZadajte svoju emailovú adresu a my vám pošleme kód na váš Gmail.\nPomocou neho si nastavte heslo – a účet na ${ BRAND_NAME } je váš.\nEšte chvíľu budú obe služby fungovať súbežne. ${ BRAND_NAME } a Gmail.\nPotom, keď všetci prejdú na novú službu, Gmail ukončíme. Predtým vám to pripomenieme."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Zistili sme, že niektorí používatelia si ešte neaktivovali svoje ${ BRAND_NAME } účty."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "Práve vytvárame vaše účty a importujeme vaše údaje, aby mal váš tím k dispozícii všetko potrebné, keď začne používať svoj zabezpečený účet ${ BRAND_NAME }."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Aktivujeme end-to-end šifrovanie pre všetkých. Každý email, každá udalosť je teraz len vaša. Vidí ich len váš tím. Ani my, ani nikto iný."
-      ],
-      "What are you migrating?": [
-        "Čo migrujete?"
-      ],
-      "You": [
-        "Vy"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "Údaje týchto používateľov už neskôr nebude možné skopírovať."
-      ],
-      "You're all set!": [
-        "Všetko je pripravené!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Už to máte takmer hotové, stačí nastaviť doménu tak, aby ste emaily dostávali priamo na ${ BRAND_NAME }. Po potvrdení prestane váš tím dostávať nové emaily v Gmaile a migrácia bude dokončená."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Váš súčasný plán umožňuje ${ maxMembers } používateľa. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
-        "Váš súčasný plán umožňuje ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
-        "Váš súčasný plán umožňuje až ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
-        "Váš súčasný plán umožňuje až ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "Konfigurácia vašej domény stále obsahuje MX záznamy iného poskytovateľa."
       ]
     },
     "breadcrumb": {
@@ -7795,6 +7352,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektoré z vašich názvov štítkov prekračujú maximálny limit znakov pre ${ MAIL_APP_NAME }. Prispôsobte import na úpravu týchto názvov."
       ],
+      "Something went wrong": [
+        "Niečo sa pokazilo"
+      ],
       "Something went wrong while converting the address": [
         "Pri prevode adresy došlo k chybe"
       ],
@@ -10731,9 +10291,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Naozaj chcete tomuto používateľovi odobrať oprávnenie správcu?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Skutočne chcete odstrániť všetkých členov z tejto skupiny?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Skutočne chcete odstrániť doménu ${ boldDomain }?"
       ],
@@ -12791,6 +12348,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Inteligentne smerované cez: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "Odoslanie SMTP umožňuje službám alebo zariadeniam tretích strán odosielať emaily cez ${ MAIL_APP_NAME } pre adresy vašich vlastných domén."
@@ -16101,6 +15661,9 @@
       ],
       "Set password": [
         "Nastavte heslo"
+      ],
+      "Settings": [
+        "Nastavenia"
       ],
       "Share your referral link": [
         "Zdieľajte váš odporúčací odkaz"
@@ -22380,17 +21943,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Uistite sa, že ste skopírovali vyššie uvedený SCIM token."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Po vypnutí SCIM pre vašu organizáciu sa **všetci používatelia SCIM, ktorých automaticky poskytuje poskytovateľ identity, zmenia na používateľov SSO** a budete ich môcť spravovať priamo v rámci nastavení ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Zjednodušuje správu používateľov v rôznych službách. Pridávajte, upravujte a odstraňujte používateľov vo svojom poskytovateľovi identity a tieto zmeny sa automaticky aplikujú na vašu organizáciu ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Automatické poskytovanie SCIM bude vypnuté, až kým nezadáte nový SCIM token do nastavení poskytovateľa identity."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "Základná URL adresa SCIM a token budú vymazané."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Ak chcete znovu povoliť synchronizáciu s poskytovateľom identity, musíte znovu dokončiť integráciu SCIM."
@@ -25360,6 +24917,14 @@
         "Pre jednotlivcov"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Veľkosť"
+      ],
+      "Status": [
+        "Stav"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "Zdieľané so mnou"
@@ -26967,9 +26532,6 @@
       ],
       "Reject device?": [
         "Odmietnuť zariadenie?"
-      ],
-      "Remove all members?": [
-        "Odstrániť všetkých členov?"
       ],
       "Remove Always-on VPN device profile": [
         "Odstrániť profil zariadenia so vždy zapnutou VPN"

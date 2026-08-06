@@ -2042,6 +2042,9 @@
       "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
         "다른 유료 계정에서 SSH 에이전트를 사용할 계획이 없다면, 해당 계정으로 전환하기 전에 이 설정을 비활성화해야 합니다."
       ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Git 커밋을 사용자의 SSH키로 서명하면 다음 명령도 실행해야 합니다:"
+      ],
       "Import the CSV file below.": [
         "아래에 CSV 파일을 불어오십시오."
       ],
@@ -2181,7 +2184,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"

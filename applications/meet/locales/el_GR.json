@@ -1914,6 +1914,9 @@
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
       ],
+      "Organization key is not decrypted": [
+        "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
+      ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
@@ -2379,9 +2382,6 @@
       "Failed to update meeting schedule": [
         "Αποτυχία ενημέρωσης του προγράμματος σύσκεψης"
       ],
-      "Failed to update meeting waiting room status": [
-        "Αποτυχία ενημέρωσης κατάστασης αίθουσας αναμονής συσκέψεων"
-      ],
       "Free meeting": [
         "Δωρεάν σύσκεψη"
       ],
@@ -2426,9 +2426,6 @@
       ],
       "Joined ${ roomNameLabel }": [
         "Μπήκε στο ${ roomNameLabel }"
-      ],
-      "Joined at ${ receivedTime }": [
-        "Συμμετείχε στις ${ receivedTime }"
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -3159,6 +3156,9 @@
       "Use simple selfie segmentation": [
         "Χρησιμοποιήστε απλή τμηματοποίηση selfie"
       ],
+      "Use waiting room with a paid plan": [
+        "Χρησιμοποιήστε την αίθουσα αναμονής με ένα πρόγραμμα επί πληρωμή"
+      ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
       ],
@@ -3290,6 +3290,20 @@
       ],
       "Video quality was poor": [
         "Η ποιότητα του βίντεο ήταν κακή"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Το κλειδί οργανισμού δεν υπάρχει."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
+      ],
+      "The organization key must be activated first.": [
+        "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Χρειάζεστε πρόσβαση στο κλειδί οργανισμού για να εκτελέσετε αυτήν τη λειτουργία."
       ]
     },
     "Placeholder": {
