@@ -1919,6 +1919,30 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Add users": [
+        "Adăugare utilizatori"
+      ],
+      "Collapse step": [
+        "Restrângere pas"
+      ],
+      "Expand step": [
+        "Extindere pas"
+      ],
+      "Install app": [
+        "Instalare aplicație"
+      ],
+      "Migrate": [
+        "Migrare"
+      ],
+      "More details": [
+        "Mai multe detalii"
+      ],
+      "Sign in to Google Workspace": [
+        "Conectare la Google Workspace"
+      ],
+      "Verify installation": [
+        "Verificare instalare"
       ]
     },
     "action": {
@@ -3819,6 +3843,9 @@
       ],
       "Undo this import?": [
         "Anulați această importare?"
+      ],
+      "Some members weren't migrated": [
+        "Unii membri nu au fost migrați."
       ]
     },
     "Confirmation message to delete payment method": {
@@ -7541,6 +7568,237 @@
       ],
       "Zero keys reactivated": [
         "Zero taste reactivate."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Când se raportează încălcarea drepturilor de autor sau furtul de date este necesar un mesaj."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresa este deja utilizată de un utilizator din afara propriei organizații. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
+      ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "A apărut o eroare necunoscută. Actualizați pagina și reîncercați."
+      ],
+      "Bookmark password is not available": [
+        "Parola semnului de carte nu este disponibilă."
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Fotografia nu se poate adăuga în album fără un nume valid."
+      ],
+      "Cannot download a folder": [
+        "Nu se poate descărca un folder."
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Nu se poate muta articolul fără un nume valid. Redenumiți-l mai întâi."
+      ],
+      "Cannot share root folder": [
+        "Folderul rădăcină nu se poate partaja."
+      ],
+      "Cannot verify who uploaded this file": [
+        "Nu se poate verifica autorul care a încărcat acest fișier."
+      ],
+      "Contact your administrator to start a migration.": [
+        "Contactați-vă administratorul pentru a începe o migrare."
+      ],
+      "Copy operation aborted": [
+        "Operația de copiere a fost anulată."
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Copierea articolului într-un alt folder nu este permisă."
+      ],
+      "Could not find an available name": [
+        "Nu s-a găsit un nume disponibil."
+      ],
+      "Could not load sharing details": [
+        "Nu s-au putut încărca detaliile de partajare."
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Nu s-a putut încărca previzualizarea imaginii: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Nu s-a putut citi o parte din acest fișier: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Nu s-a putut debloca folderul părinte."
+      ],
+      "Could not unlock this item": [
+        "Nu s-a putut debloca acest articol."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Crearea de documente în non-foldere nu este permisă."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Crearea de fișiere în non-foldere nu este permisă."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Crearea de foldere în non-foldere nu este permisă."
+      ],
+      "Device not found": [
+        "Dispozitivul nu a fost găsit."
+      ],
+      "Expiration date cannot be in the past": [
+        "Data de expirare nu poate fi în trecut."
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Nu s-a putut decripta cheia semnului de carte: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Nu s-a putut decripta numele semnului de carte: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Nu s-a putut decripta parola pentru semnul de carte: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Nu s-a putut decripta cheia conținutului: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Decriptarea numelui articolului a eșuat: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Nu s-a putut decripta cheia nodului: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Nu s-au putut decripta metadatele reviziei."
+      ],
+      "Failed to get inviter keys": [
+        "Eșuare obținere cheie a celui care a invitat."
+      ],
+      "Failed to load OAuth": [
+        "Încărcarea OAuth a eșuat."
+      ],
+      "Failed to verify invitation": [
+        "Verificarea invitației a eșuat."
+      ],
+      "File download failed due to empty response": [
+        "Descărcarea fișierului a eșuat din cauza unui răspuns gol."
+      ],
+      "File has no revision": [
+        "Fișierul nu are nicio revizie."
+      ],
+      "Image preview not found": [
+        "Previzualizarea imaginii nu a fost găsită."
+      ],
+      "Invitation not found": [
+        "Invitația nu a fost găsită."
+      ],
+      "Item not found": [
+        "Articol negăsit."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa membrului nu a fost găsită. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
+      ],
+      "Missing inviter email": [
+        "Lipsește adresa de e-mail a persoanei care a invitat."
+      ],
+      "Missing organization private key": [
+        "Cheia privată a organizației lipsește."
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Lipsește semnătura pentru ${ signatureType }."
+      ],
+      "Move operation aborted": [
+        "Operația de mutare a fost anulată."
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Mutarea articolului într-un non-folder nu este permisă."
+      ],
+      "Moving root item is not allowed": [
+        "Mutarea articolului rădăcină nu este permisă."
+      ],
+      "Name must not be empty": [
+        "Numele nu poate fi gol."
+      ],
+      "No file data was received. Please try again.": [
+        "Nu s-au primit date despre fișier. Reîncercați."
+      ],
+      "Only admins can convert external invitations": [
+        "Doar administratorii pot converti invitațiile externe."
+      ],
+      "Operation aborted": [
+        "Operație anulată."
+      ],
+      "Operation failed, try again later": [
+        "Operația a eșuat. Reîncercați."
+      ],
+      "Organization does not have enough seats available": [
+        "Organizația nu dispune de suficiente licențe disponibile."
+      ],
+      "Organization does not have enough storage available": [
+        "Organizația nu are suficient spațiu de stocare disponibil."
+      ],
+      "Photo is already in the target album": [
+        "Fotografia este deja în albumul țintă."
+      ],
+      "Photo not found": [
+        "Fotografie negăsită."
+      ],
+      "Renaming root item is not allowed": [
+        "Redenumirea articolului rădăcină nu este permisă."
+      ],
+      "Request aborted": [
+        "Solicitare anulată."
+      ],
+      "Signature is missing": [
+        "Semnătura lipsește."
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verificarea semnăturii a eșuat: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Verificarea semnăturii pentru ${ signatureType } a eșuat."
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Verificarea semnăturii pentru ${ signatureType } a eșuat: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Unele date din fișier nu au putut fi încărcate. Reîncercați."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Unele părți din fișier nu au putut fi încărcate. Reîncercați."
+      ],
+      "Some items could not be loaded": [
+        "Unele articole nu au putut fi încărcate."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Fișierul încărcat nu corespunde cu originalul. Reîncercați."
+      ],
+      "This file has missing crypto material": [
+        "Acest fișier are materiale criptografice lipsă."
+      ],
+      "This file has no version available to download": [
+        "Acest fișier nu are nicio versiune disponibilă pentru descărcare."
+      ],
+      "This file version could not be uploaded": [
+        "Această versiune de fișier nu a putut fi încărcată."
+      ],
+      "This item has no image preview": [
+        "Acest articol nu are o imagine de examinat."
+      ],
+      "This item is not shared": [
+        "Acest articol nu este partajat."
+      ],
+      "Too many server errors, please try again later": [
+        "Prea multe erori de server. Reîncercați mai târziu."
+      ],
+      "Too many server requests, please try again later": [
+        "Prea multe solicitări pentru server. Reîncercați mai târziu."
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Cheile de verificare pentru ${ signatureType } nu sunt disponibile."
+      ],
+      "You can create public links for your own files only": [
+        "Puteți crea o legătură web publică doar pentru propriile fișiere."
+      ],
+      "You can only leave items that are shared with you": [
+        "Puteți lăsa doar articolele care vă sunt partajate."
+      ],
+      "You can only upload a new version to a file": [
+        "Puteți încărca doar o versiune nouă a unui fișier."
+      ],
+      "You can update a public link for your own files only": [
+        "Puteți actualiza o legătură web publică doar pentru propriile fișiere."
+      ],
+      "You do not have access to this shared item": [
+        "Nu aveți acces la acest articol."
       ]
     },
     "error": {
@@ -9330,6 +9588,9 @@
       ],
       "Your password is correct.": [
         "Parola este corectă."
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "Nu sunt disponibile detalii despre eroare. Contactați serviciul de asistență pentru clienți pentru mai multe informații."
       ]
     },
     "Import error link": {
@@ -9475,6 +9736,30 @@
       ],
       "Undo in progress": [
         "Anulare în desfășurare"
+      ],
+      "Has errors": [
+        "Are erori"
+      ],
+      "Import completed successfully": [
+        "Importare realizată cu succes"
+      ],
+      "Pending": [
+        "În așteptare"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "S-a omis ${ count } contact datorită incompatibilităților.",
+        "S-au omis ${ count } contacte datorită incompatibilităților.",
+        "S-au omis ${ count } de contacte datorită incompatibilităților."
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "S-a omis ${ count } mesaj datorită incompatibilităților.",
+        "S-au omis ${ count } mesaje datorită incompatibilităților.",
+        "S-au omis ${ count } de mesaje datorită incompatibilităților."
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "S-a omis ${ count } eveniment datorită incompatibilităților.",
+        "S-au omis ${ count } evenimente datorită incompatibilităților.",
+        "S-au omis ${ count } de evenimente datorită incompatibilităților."
       ]
     },
     "Import type": {
@@ -13601,6 +13886,128 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } din ${ totalCount }"
+      ],
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Adăugați domeniul de e-mail al organizației proprii la ${ BRAND_NAME }."
+      ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Toate conturile de utilizator migrate sunt gata pentru a fi invitate în organizația proprie din ${ BRAND_NAME }."
+      ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Sigur continuați fără ${ withoutString } și încă ${ notMigratedOthers }?",
+        "Sigur continuați fără ${ withoutString } și încă ${ notMigratedOthers }?",
+        "Sigur continuați fără ${ withoutString } și încă ${ notMigratedOthers }?"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Sigur continuați fără ${ withoutString }?"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Sigur doriți să continuați? Utilizatorii care nu și-au revendicat contul înainte de finalizarea migrării vor trebui să solicite o resetare a parolei de la administratorul organizației lor din ${ BRAND_NAME }."
+      ],
+      "Author is not provided on public link": [
+        "Autorul nu este furnizat în legătura web publică."
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Copiați codul de mai jos și lipiți-l în secțiunea DNS a gazdei domeniului deținut."
+      ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Ștergeți orice coduri MX preexistente, apoi copiați codurile de mai jos și inserați-le în secțiunea DNS a gazdei domeniului personal."
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM adaugă o semnătură digitală fiecărui e-mail, astfel încât destinatarii să poată verifica dacă mesajul provine într-adevăr de pe domeniul dvs. și nu a fost modificat în timpul tranzitului. Fără aceasta, mesajele pot fi tratate ca fiind mai puțin demne de încredere."
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC se bazează pe SPF și DKIM, indicând serverelor receptoare cum să gestioneze mesajele care nu reușesc aceste verificări. Acesta ajută la protejarea domeniului împotriva falsificării identității și îmbunătățește fiabilitatea generală a livrării."
+      ],
+      "Domain added": [
+        "Domeniu adăugat"
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "Nu știți de unde să începeți? Priviți cum să vă actualizați DNS-ul pe ${ registrarLink }."
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Se asigură că e-mailurile ajung în folderul primite, nu în folderul de mesaje nedorite. Actualizând SPF va permite utilizatorilor să trimită mesaje simultan de la ${ BRAND_NAME } și Google pe durata migrării."
+      ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Toată lumea primește aceeași legătură web de invitare. Vor accesa pagina, vor introduce adresa de e-mail și un cod de verificare va ajunge în contul Gmail. De acolo, își vor seta parola pentru ${ BRAND_NAME }."
+      ],
+      "Find out what can be migrated.": [
+        "Aflați ce poate fi migrat."
+      ],
+      "Get help and useful tips for other domain providers ${ here }": [
+        "Obțineți ajutor și sfaturi utile de la alți furnizori de domenii ${ here }"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Aplicația Google Marketplace pentru a copia datele în ${ BRAND_NAME }"
+      ],
+      "Google Workspace account": [
+        "Cont Google Workspace"
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Propagarea acestor modificări poate dura până la 24 de ore."
+      ],
+      "No users to display": [
+        "Nu există utilizatori de afișat."
+      ],
+      "Not confirmed": [
+        "Neconfirmat"
+      ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "Nu a fost detectat corect? Alegeți furnizorul din listă."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "După ce vom confirma că e-mailurile sunt direcționate către ${ BRAND_NAME }, migrarea va fi finalizată. Veți primi un e-mail de confirmare care vă va anunța când se întâmplă acest lucru. Acest proces poate dura până la 24 de ore."
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Selectați conturile pe care doriți să le aduceți la ${ BRAND_NAME }. Puteți migra întreaga organizație astăzi sau puteți începe cu o migrație mică și puteți aduce restul când sunteți gata."
+      ],
+      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Conectați-vă cu un cont de administrator Google Workspace pentru ca ${ BRAND_NAME } să configureze migrarea."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Acest utilizator nu poate fi migrat din cauza unor incompatibilități de platformă."
+      ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
+        "Pentru a transfera datele organizației la ${ BRAND_NAME }, instalați ${ BRAND_NAME } Easy Switch din Google Workspace Marketplace. După instalare, reveniți aici pentru a continua."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pentru a migra acest utilizator, activați-i contul la ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Pentru a migra acest utilizator, activați-i adresa la ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Pentru a migra acest utilizator, acesta trebuie să accepte invitația de a se alătura la ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, dezarhivați-l în consola de administrare din Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, deblocați-l în consola de administrare din Google Workspace."
+      ],
+      "Verified": [
+        "Verificată"
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Am observat că unii utilizatori nu și-au revendicat conturile ${ BRAND_NAME }."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Vă creăm conturile și vă importăm datele acum, astfel încât utilizatorii din echipă să aibă tot ce au nevoie atunci când vor începe să-și utilizeze contul securizat ${ BRAND_NAME }."
+      ],
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Activăm criptarea bilaterală pentru toată lumea. Fiecare mesaj, fiecare eveniment vă aparține. Vizibil doar pentru echipa proprie. Nu pentru noi, nu pentru nimeni altcineva."
+      ],
+      "You": [
+        "Eu"
+      ],
+      "You will not be able to copy these users' data later.": [
+        "Nu veți putea copia datele acestor utilizatori ulterior."
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
+        "Aproape ați terminat. Trebuie să vă configurați domeniul pentru a primi e-mailuri direct în ${ BRAND_NAME }. După confirmare, echipa dvs. nu va mai primi e-mailuri noi pe Gmail, iar migrarea va fi finalizată."
       ]
     },
     "info": {
@@ -15912,6 +16319,30 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
+      ],
+      "Accounts migrated": [
+        "Conturi migrate"
+      ],
+      "Invitation link": [
+        "Legătură web invitație"
+      ],
+      "Invitation message": [
+        "Mesaj invitație"
+      ],
+      "Mail": [
+        "E-mail"
+      ],
+      "Migration includes": [
+        "Migrarea include"
+      ],
+      "Users activated": [
+        "Utilizatori activați"
+      ],
+      "Users migrated": [
+        "Utilizatori migrați"
       ]
     },
     "label": {
@@ -16342,6 +16773,9 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ],
+      "invite link": [
+        "legătura web a invitației"
       ]
     },
     "Link (Scribe)": {
@@ -16391,6 +16825,9 @@
       ],
       "Your import is starting": [
         "Începe importarea"
+      ],
+      "Loading your organization data": [
+        "Se încarcă datele organizației"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -20519,6 +20956,21 @@
     "Property": {
       "attributes": [
         "atribute"
+      ],
+      "content key": [
+        "cheia conținutului"
+      ],
+      "hash key": [
+        "cheia hash"
+      ],
+      "key": [
+        "cheie"
+      ],
+      "membership": [
+        "apartenență"
+      ],
+      "name": [
+        "nume"
       ]
     },
     "Property type": {
@@ -21779,6 +22231,21 @@
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Pentru a reactiva sincronizarea cu furnizorul de identitate, trebuie să finalizați din nou integrarea SCIM."
+      ],
+      "**Groups:** All groups convert to local ${ BRAND_NAME } groups. Syncing with your identity provider stops, and you'll manage membership in ${ BRAND_NAME } settings instead.": [
+        "**Grupuri:** toate grupurile se convertesc în grupuri locale ${ BRAND_NAME }. Sincronizarea cu furnizorul de identitate se oprește și veți gestiona calitatea de membru în setările din ${ BRAND_NAME }."
+      ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**Utilizatori:** toți utilizatorii SCIM furnizați automat de furnizorul de identitate vor fi convertiți în utilizatori SSO și îi veți putea gestiona direct din setările ${ BRAND_NAME }."
+      ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Reactivarea sincronizării va duplica grupurile existente. Acestea nu pot fi reintegrate în SCIM."
+      ],
+      "This will delete your SCIM base URL and token.": [
+        "Aceasta va șterge adresa URL de bază SCIM și codul de acces."
+      ],
+      "When you disable SCIM:": [
+        "Când dezactivați SCIM:"
       ]
     },
     "scim: Label": {
@@ -23521,6 +23988,15 @@
       ],
       "Verify ${ value }": [
         "Verificare ${ value }"
+      ],
+      "Activated": [
+        "Activată"
+      ],
+      "Not activated": [
+        "Neactivat"
+      ],
+      "Waiting for MX...": [
+        "Se așteaptă confirmarea pentru MX..."
       ]
     },
     "Step in filter modal": {
@@ -24537,6 +25013,20 @@
       ],
       "Your address has been activated": [
         "Adresa v-a fost activată."
+      ],
+      "Account connected": [
+        "Cont conectat"
+      ],
+      "Account disconnected": [
+        "Cont deconectat"
+      ],
+      "Domain added": [
+        "Domeniu adăugat"
+      ],
+      "Migration started for ${ n } user": [
+        "Migrare începută pentru ${ n } utilizator",
+        "Migrare începută pentru ${ n } utilizatori",
+        "Migrare inițiată pentru ${ n } de utilizatori"
       ]
     },
     "Success message": {
@@ -24684,6 +25174,18 @@
       ],
       "Status": [
         "Stare"
+      ],
+      "Activated": [
+        "Activată"
+      ],
+      "Estimated size": [
+        "Mărime estimată"
+      ],
+      "Migration status": [
+        "Stare migrare"
+      ],
+      "User": [
+        "Utilizator"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -26872,6 +27374,81 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Autentificați contul Google Workspace"
+      ],
+      "Configure migration": [
+        "Configurare migrare"
+      ],
+      "Configure your domain": [
+        "Configurați-vă domeniul"
+      ],
+      "Creating accounts": [
+        "Se creează conturile"
+      ],
+      "Domain provider": [
+        "Furnizor domeniu"
+      ],
+      "Final step": [
+        "Pas final"
+      ],
+      "Going private": [
+        "Devenire privat"
+      ],
+      "Import details": [
+        "Detalii importare"
+      ],
+      "Install migration app": [
+        "Instalare aplicație de migrare"
+      ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Migrare conturi în ${ BRAND_NAME }"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrați de la Google Workspace"
+      ],
+      "Migrated accounts": [
+        "Conturi migrate"
+      ],
+      "Migration status": [
+        "Stare migrare"
+      ],
+      "Migration summary": [
+        "Rezumat migrare"
+      ],
+      "Need help?": [
+        "Doriți ajutor?"
+      ],
+      "Onboard your team": [
+        "Înrolați-vă echipa"
+      ],
+      "Select users to migrate": [
+        "Selectați utilizatorii pentru migrare"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Configurați trimiterea securizată (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Configurare trimitere securizată (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Configurare trimitere securizată (SPF)"
+      ],
+      "Some accounts are not claimed": [
+        "Unele conturi nu sunt revendicate."
+      ],
+      "Update records for receiving": [
+        "Actualizare înregistrări pentru primire"
+      ],
+      "Verify your domain": [
+        "Verificați-vă domeniul"
+      ],
+      "What are you migrating?": [
+        "Ce migrați?"
+      ],
+      "You're all set!": [
+        "Ați terminat!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26958,6 +27535,12 @@
       ],
       "Role": [
         "Rol"
+      ],
+      "Last app activity": [
+        "Ultima activitate a aplicației"
+      ],
+      "Last connection": [
+        "Ultima conectare"
       ]
     },
     "Title subscription": {
@@ -27283,6 +27866,27 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Contul extern ar putea să fi atins limita lățimii de bandă pentru 24 de ore. ${ BRAND_NAME } va încerca să reia importarea cât mai curând posibil."
+      ],
+      "Collapse invitation message": [
+        "Restrângere mesaj de invitare"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Starea migrării datelor din Google Workspace către ${ BRAND_NAME }."
+      ],
+      "Expand invitation message": [
+        "Extindere mesaj de invitare"
+      ],
+      "Reauthenticate your Google Workspace account to start a migration": [
+        "Reautentificați-vă contul Google Workspace pentru a începe o migrare."
+      ],
+      "Select at least one user to start a migration": [
+        "Selectați cel puțin un utilizator pentru a începe o migrare."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utilizatori care și-au accesat contul ${ BRAND_NAME }"
+      ],
+      "Verify your domain to start a migration": [
+        "Verificați domeniul pentru a începe o migrare."
       ]
     },
     "tooltip": {
@@ -28188,6 +28792,29 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+      ],
+      "Please don’t close or refresh this window.": [
+        "Nu închideți și nu împrospătați această fereastră."
+      ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Pentru a finaliza migrarea, asigurați-vă că păstrați doar codurile MX ale ${ BRAND_NAME }."
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Utilizatorii care nu și-au revendicat contul înainte de finalizarea migrării vor trebui să solicite o resetare a parolei de la administratorul organizației lor din ${ BRAND_NAME }."
+      ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "Nu s-a putut verifica instalarea. Verificați dacă ați instalat-o în contul Google Workspace și reîncercați."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Am observat că unii utilizatori nu și-au revendicat conturile ${ BRAND_NAME }."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Planul actual permite maxim ${ maxMembers } utilizator. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament.",
+        "Planul actual permite maxim ${ maxMembers } utilizatori. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament.",
+        "Planul actual permite maxim ${ maxMembers } de utilizatori. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "Configurația domeniului încă include codurile MX ale unui alt furnizor."
       ]
     },
     "Warning for domain modal": {
@@ -28473,6 +29100,143 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "Alt": {
+      "Collapse invitation message": [
+        "Restrângere mesaj de invitare"
+      ],
+      "Expand invitation message": [
+        "Extindere mesaj de invitare"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Activat"
+      ],
+      "All": [
+        "Toate"
+      ],
+      "Errors": [
+        "Erori"
+      ],
+      "In progress": [
+        "In desfășurare"
+      ],
+      "Migrated": [
+        "Migrat"
+      ],
+      "Not activated": [
+        "Neactivată"
+      ],
+      "Pending": [
+        "În așteptare"
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Controale securitate avansată"
+      ],
+      "Dedicated server - ${ serverPrice }": [
+        "Server dedicat - ${ serverPrice }"
+      ],
+      "Enforce identity-based access controls": [
+        "Forțare controale de acces bazate pe identitate"
+      ],
+      "Get real-time connection insights, monitor suspicious activity and export data to SIEM tools for your private gateways": [
+        "Obțineți informații despre conexiuni în timp real, monitorizați activitățile suspecte și exportați date către instrumente SIEM pentru porțile de acces private"
+      ],
+      "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
+        "Pe lângă monitorizarea conexiunilor, porților de acces private vă permit să acordați acces în funcție de utilizator sau grup - toate rulând pe servere dedicate cu IP-uri statice."
+      ],
+      "Monitor gateway connections with VPN Professional": [
+        "Monitorizați conexiunile porților de acces cu VPN Professional"
+      ],
+      "Real-time connection insights": [
+        "Informații despre conexiuni în timp real"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Deblocați autentificarea unică (SSO), politici de administrare, monitorizare, autentificare cu doi factori forțată și multe altele."
+      ],
+      "User - ${ userPrice }": [
+        "Utilizator - ${ userPrice }"
+      ]
+    },
+    "Invitation message": {
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
+        "Ne mutăm la ${ BRAND_NAME }, serviciul de e-mail securizat.\nVă puteți revendica contul din ${ BRAND_NAME }.\nFaceți clic pe ${ inviteLink }.\nIntroduceți-vă adresa de e-mail și vă vom trimite un cod în contul Gmail.\nFolosiți-l pentru a vă seta parola — iar contul ${ BRAND_NAME } vă va aparține.\nPentru o perioadă scurtă de timp, ambele vor funcționa împreună. ${ BRAND_NAME } și Gmail.\nApoi, când toată lumea va face mutarea, vom retrage contul Gmail. Vă vom reaminti înainte de a o face."
+      ]
+    },
+    "Members table usage": {
+      "Gateway Monitor is off": [
+        "Monitorizare porți de acces este oprită"
+      ],
+      "Monitor gateways connections": [
+        "Monitorizare conexiuni la porți de acces"
+      ],
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Configurați-vă propriile porți de acces private pentru a monitoriza activitatea conexiunilor VPN din cadrul organizației proprii."
+      ],
+      "Today": [
+        "Astăzi"
+      ],
+      "Today, ${ time }": [
+        "Astăzi, ${ time }"
+      ],
+      "Turn it on to track when and where users connect.": [
+        "Activați pentru a urmări când și unde se conectează utilizatorii."
+      ],
+      "Yesterday": [
+        "Ieri"
+      ],
+      "Yesterday, ${ time }": [
+        "Ieri, ${ time }"
+      ]
+    },
+    "Step": {
+      "Authenticate": [
+        "Autentificare"
+      ],
+      "Configure domain": [
+        "Configurare domeniu"
+      ],
+      "Configure migration": [
+        "Configurare migrare"
+      ],
+      "Configure users": [
+        "Configurare utilizatori"
+      ],
+      "Final step": [
+        "Pas final"
+      ],
+      "Install migration app": [
+        "Instalați aplicația de migrare"
+      ],
+      "Migrate accounts": [
+        "Migrare conturi"
+      ],
+      "Onboard your team": [
+        "Înrolați-vă echipa"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Configurați trimiterea securizată (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Configurați trimiterea securizată (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Configurați trimiterea securizată (SPF)"
+      ],
+      "Verify your domain": [
+        "Verificați-vă domeniul"
+      ]
+    },
+    "Tooltip for members table": {
+      "Last time this user connected to one of your organization's Gateways.": [
+        "Ultima dată când acest utilizator s-a conectat la una dintre porțile de acces a organizației."
+      ],
+      "Last time this user signed in or used the ${ VPN_APP_NAME } app on their device.": [
+        "Ultima dată când acest utilizator s-a conectat sau a folosit aplicația ${ VPN_APP_NAME } pe dispozitivul său."
       ]
     }
   }
