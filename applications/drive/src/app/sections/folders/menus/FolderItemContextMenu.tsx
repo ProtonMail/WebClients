@@ -7,6 +7,7 @@ import { ItemContextMenu } from '../../../legacy/components/sections/ContextMenu
 import type { ContextMenuPosition } from '../../../modules/contextMenu';
 import { getOpenInDocsInfo } from '../../../utils/docs/openInDocs';
 import { RenameActionButton } from '../../buttons/RenameActionButton';
+import { ReportAbuseButton } from '../../commonButtons/ReportAbuseButton';
 import { CopyButton } from '../buttons/CopyButton';
 import { CopyLinkContextButton } from '../buttons/CopyLinkContextButton';
 import { DetailsButton } from '../buttons/DetailsButton';
@@ -70,6 +71,7 @@ export function FolderItemContextMenu({
         showCopyModal,
         showMoveModal,
         showSharingModal,
+        showReportAbuseModal,
         getPublicLinkInfo,
     } = actions;
 
@@ -110,6 +112,9 @@ export function FolderItemContextMenu({
                 </>
             )}
             {permissions.canTrash && <TrashButton type="context" selectedItems={selectedItems} close={close} />}
+            {permissions.canReportAbuse && isOnlyOneItem && (
+                <ReportAbuseButton buttonType="contextMenu" onClick={showReportAbuseModal} close={close} />
+            )}
             {children}
         </ItemContextMenu>
     );

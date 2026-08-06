@@ -40,7 +40,6 @@ const CONTEXT_TESTID_BY_ACTION: Record<string, string> = {
     details: 'context-menu-details',
     revisions: 'context-menu-revisions',
     trash: 'context-menu-trash',
-    // Report abuse is toolbar-only in the folder view; it must appear in neither menu surface.
     reportAbuse: 'context-menu-report-abuse',
 };
 
@@ -177,19 +176,16 @@ describe('Folder selection actions parity (context menu vs actions dropdown)', (
         });
     });
 
-    it('dropdown offers the same actions as the context menu for an admin, plus toolbar-only report abuse', async () => {
+    it('dropdown offers the same actions as the context menu for an admin', async () => {
         const permissions = buildPermissions();
 
         const contextMenuActions = await getContextMenuActions(permissions, MemberRole.Admin);
         cleanup();
         const dropdownActions = await getDropdownActions(permissions, MemberRole.Admin);
 
-        // Report abuse is toolbar-only: absent from the right-click context menu, but surfaced on
-        // mobile through the dropdown. Otherwise both menus must offer exactly the same actions.
-        expect(contextMenuActions).not.toContain('reportAbuse');
+        expect(contextMenuActions).toContain('reportAbuse');
 
         const expected = new Set([...contextMenuActions].filter((action) => !QUICK_ACTIONS.includes(action)));
-        expected.add('reportAbuse');
 
         expect(dropdownActions).toEqual(expected);
     });
