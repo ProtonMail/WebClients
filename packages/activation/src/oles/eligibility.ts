@@ -5,16 +5,10 @@ import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organiz
 import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 
-import { ImportProvider } from '../interface';
-
 const hasSupportedPlan = (plan: PLANS) =>
     [PLANS.MAIL_BUSINESS, PLANS.MAIL_PRO, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_BIZ_2025].includes(
         plan
     );
-
-export const isProviderSupported = (provider: ImportProvider) => {
-    return provider === ImportProvider.GOOGLE;
-};
 
 export const isOrganizationOLESEligible = ({ organization }: { organization: Organization | undefined }) => {
     return (

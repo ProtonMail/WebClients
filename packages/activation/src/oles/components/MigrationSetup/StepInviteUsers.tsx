@@ -28,6 +28,7 @@ const StepInviteUsers: FC<StepComponentProps> = ({ model, onNext }) => {
     const handleCopy = () => createNotification({ text: c('Success').t`Copied to clipboard` });
     const [providerUsers] = useProviderUsers(model.domainName);
     const [messageExpanded, setMessageExpanded] = useState(false);
+    const mailAppName = model.provider.mailAppName;
 
     const activationLink = model.joiningLink
         ? getJoiningLinkHref({
@@ -61,10 +62,10 @@ const StepInviteUsers: FC<StepComponentProps> = ({ model, onNext }) => {
         const translated = c('Invitation message').jt`We're moving to ${BRAND_NAME}, the secure email service.
 And your ${BRAND_NAME} account is ready to claim.
 Click the ${inviteLink}.
-Enter your email address, we'll send a code to your Gmail.
+Enter your email address, we'll send a code to your ${mailAppName}.
 Use it to set your password — and your ${BRAND_NAME} account is yours.
-For a little while, both will work side by side. ${BRAND_NAME} and Gmail.
-Then, when everyone has made the move, we will retire Gmail. We'll remind you before it does.`;
+For a little while, both will work side by side. ${BRAND_NAME} and ${mailAppName}.
+Then, when everyone has made the move, we will retire ${mailAppName}. We'll remind you before it does.`;
 
         const withLineBreaks = translated.flatMap((part, i) => {
             if (typeof part !== 'string') {
@@ -101,7 +102,7 @@ Then, when everyone has made the move, we will retire Gmail. We'll remind you be
             </p>
             <p className="color-weak mt-0 max-w-custom" style={{ '--max-w-custom': '42rem' }}>
                 {c('Info')
-                    .t`Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${BRAND_NAME} password.`}
+                    .t`Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their ${mailAppName} inbox. From there, they set their ${BRAND_NAME} password.`}
             </p>
 
             <div className="mb-4">
@@ -183,6 +184,7 @@ Then, when everyone has made the move, we will retire Gmail. We'll remind you be
                 <ProviderUsersTable
                     users={users}
                     currentUser={model.tokens?.at(0)?.Account}
+                    provider={model.provider}
                     hiddenColumns={ProviderUserColumn.Migration}
                     hiddenFilters={
                         ProviderUserFilter.COMPLETED |
