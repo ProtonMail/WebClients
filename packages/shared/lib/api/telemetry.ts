@@ -538,7 +538,10 @@ export enum TelemetryVpnAlwaysOnPolicyEvents {
     generateSuccess = 'generate_success',
     generateFailure = 'generate_failure',
     instructionsViewed = 'instructions_viewed',
+    learnMoreClicked = 'learn_more_clicked',
     removeModalOpened = 'remove_modal_opened',
+    downloadLatestClicked = 'download_latest_clicked',
+    clientDownloadClicked = 'client_download_clicked',
 }
 
 export enum TelemetryPreventWasmLoading {
