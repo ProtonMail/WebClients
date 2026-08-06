@@ -15482,6 +15482,9 @@
       ],
       "Type": [
         "Type"
+      ],
+      "Size": [
+        "Størrelse"
       ]
     },
     "TableHeader": {
@@ -17329,6 +17332,14 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "Fra: ${ sender } - ${ message.Subject }"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrert"
       ]
     }
   }

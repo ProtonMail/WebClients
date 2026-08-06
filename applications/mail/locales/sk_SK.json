@@ -16080,6 +16080,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Size": [
+        "Veľkosť"
       ]
     },
     "TableHeader": {
@@ -18062,6 +18065,14 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "Od: ${ sender } - ${ message.Subject }"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Prebieha"
+      ],
+      "Migrated": [
+        "Presunuté"
       ]
     }
   }

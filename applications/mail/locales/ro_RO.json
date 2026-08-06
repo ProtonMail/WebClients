@@ -5585,6 +5585,32 @@
       ],
       "Something went wrong": [
         "Ceva nu a funcționat corect."
+      ],
+      "Cannot verify the author of this file": [
+        "Autorul acestui fișier nu poate fi verificat."
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Legătura web publică veche nu poate fi actualizată. Creați o legătură web publică nouă."
+      ],
+      "Missing organization public key": [
+        "Cheia publică a organizației lipsește."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } caracter.",
+        "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } caractere.",
+        "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } de caractere."
+      ],
+      "Part of the file appears to be corrupted": [
+        "O parte a fișierului pare a fi coruptă."
+      ],
+      "This item is no longer shared": [
+        "Acest articol nu mai este partajat."
+      ],
+      "Verification keys are not available": [
+        "Cheile de verificare nu sunt disponibile."
+      ],
+      "You do not have access to this item": [
+        "Nu aveți acces la acest articol."
       ]
     },
     "error": {
@@ -9616,6 +9642,22 @@
       ],
       "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
         "Această adresă de Gmail este înregistrată cu un alt cont ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } IA și altele). Lucrăm pentru a face această conexiune perfectă, dar deocamdată va trebui să parcurgeți câțiva pași."
+      ],
+      "Read ${ count } email": [
+        "Citire ${ count } mesaj",
+        "Citire ${ count } mesaje",
+        "Citire ${ count } de mesaje"
+      ],
+      "Read ${ count } message in this thread": [
+        "Citire ${ count } mesaj din acest fir de discuție",
+        "Citire ${ count } mesaje din acest fir de discuție",
+        "Citire ${ count } de mesaje din acest fir de discuție"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selectați exact ce doriți să migrați. Se va aplica tuturor utilizatorilor organizației."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, activați-i contul în consola de administrare din Google Workspace."
       ]
     },
     "info": {
@@ -15808,6 +15850,9 @@
       ],
       "Type": [
         "Tip"
+      ],
+      "Size": [
+        "Mărime"
       ]
     },
     "TableHeader": {
@@ -17727,6 +17772,19 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "De la: ${ sender } - ${ message.Subject }"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "În derulare"
+      ],
+      "Migrated": [
+        "Migrat"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribute"
       ]
     }
   }

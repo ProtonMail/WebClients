@@ -15500,6 +15500,9 @@
       ],
       "Type": [
         "Soort"
+      ],
+      "Size": [
+        "Grootte"
       ]
     },
     "TableHeader": {
@@ -17350,6 +17353,14 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "Van: ${ sender } - ${ message.Subject }"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Bezig"
+      ],
+      "Migrated": [
+        "Gemigreerd"
       ]
     }
   }

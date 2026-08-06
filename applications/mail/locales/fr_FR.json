@@ -1727,6 +1727,9 @@
       ],
       "Yes, organize it": [
         "Oui, je souhaite que ce soit organisé"
+      ],
+      "Migrate": [
+        "Migrer"
       ]
     },
     "action": {
@@ -5544,6 +5547,46 @@
       ],
       "Something went wrong": [
         "Une erreur s'est produite."
+      ],
+      "Contact your administrator to start a migration.": [
+        "Contactez votre administrateur pour commencer une migration."
+      ],
+      "Invitation not found": [
+        "L'invitation est introuvable"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "L'adresse du membre n'a pas été trouvée. Veuillez contacter le service client pour résoudre ce problème."
+      ],
+      "Missing organization private key": [
+        "La clé privée de l'organisation est absente."
+      ],
+      "Missing organization public key": [
+        "La clé publique de l'organisation est absente."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Le nom doit être composé d'${ MAX_NODE_NAME_LENGTH } caractère au maximum.",
+        "Le nom doit être composé de ${ MAX_NODE_NAME_LENGTH } caractères au maximum."
+      ],
+      "Operation aborted": [
+        "Opération annulée"
+      ],
+      "Operation failed, try again later": [
+        "L'opération n'a pas abouti. Réessayez plus tard"
+      ],
+      "Photo not found": [
+        "La photo est introuvable"
+      ],
+      "Request aborted": [
+        "Requête interrompue"
+      ],
+      "Signature is missing": [
+        "La signature est manquante"
+      ],
+      "This item is no longer shared": [
+        "Cet élément n’est plus partagé"
+      ],
+      "This item is not shared": [
+        "Cet élément n’est pas partagé"
       ]
     },
     "error": {
@@ -6075,6 +6118,21 @@
       ],
       "Unread": [
         "Non lus"
+      ],
+      "Activated": [
+        "Activé"
+      ],
+      "All": [
+        "Tout"
+      ],
+      "In progress": [
+        "En cours"
+      ],
+      "Migrated": [
+        "Migré"
+      ],
+      "Pending": [
+        "En attente"
       ]
     },
     "Filter Actions": {
@@ -9434,6 +9492,18 @@
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "Vous avez sélectionné **${ checked } message** de la catégorie ${ categoryLabel }",
         "Vous avez sélectionné **${ checked } messages** de la catégorie ${ categoryLabel }"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Sélectionnez exactement ce que vous voulez migrer. Cela s'appliquera à tous les utilisateurs de l'organisation."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
+      ],
+      "You": [
+        "Vous"
       ]
     },
     "info": {
@@ -15491,6 +15561,15 @@
       ],
       "Type": [
         "Type"
+      ],
+      "Estimated size": [
+        "Taille estimée"
+      ],
+      "Size": [
+        "Taille"
+      ],
+      "User": [
+        "Utilisateur"
       ]
     },
     "TableHeader": {
@@ -17323,6 +17402,34 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "En cours"
+      ],
+      "Migrated": [
+        "Migré"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "Attributs"
+      ],
+      "content key": [
+        "clé de contenu"
+      ],
+      "hash key": [
+        "clé de hachage"
+      ],
+      "key": [
+        "clé"
+      ],
+      "membership": [
+        "abonnement"
+      ],
+      "name": [
+        "nom"
       ]
     }
   }

@@ -1727,6 +1727,9 @@
       ],
       "View guide": [
         "Veure la guia"
+      ],
+      "Migrate": [
+        "Migrar"
       ]
     },
     "action": {
@@ -5540,10 +5543,10 @@
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
       ],
       "A message is required when reporting copyright infringement or stolen data": [
-        "El missatge és requerit quan s'informa d'una infracció de drets d'autor o de dades robades"
+        "Cal un missatge quan s'informa d'una infracció de drets d'autor o de dades robades"
       ],
       "Bookmark password is not available": [
-        "La contrasenya de l'adreça d'interès no està disponible"
+        "La contrasenya del marcador de pàgina no està disponible"
       ],
       "Cannot add photo to album without a valid name": [
         "No es pot afegir la foto a l'àlbum sense un nom vàlid"
@@ -5558,13 +5561,13 @@
         "No es pot compartir la carpeta arrel"
       ],
       "Cannot verify the author of this file": [
-        "No es pot verificar l'autor d'aquest fitxer"
+        "No es pot verificar l'autoria d'aquest fitxer"
       ],
       "Cannot verify who uploaded this file": [
         "No es pot verificar qui ha carregat aquest fitxer"
       ],
       "Copy operation aborted": [
-        "S'ha avortat l'operació de còpia"
+        "S'ha cancel·lat l'operació de còpia"
       ],
       "Copying item to a non-folder is not allowed": [
         "No es permet copiar un element a un element que no sigui una carpeta"
@@ -5573,16 +5576,16 @@
         "No s'ha pogut trobar cap nom disponible"
       ],
       "Could not load sharing details": [
-        "No s'han pogut carregar els detalls de compartició"
+        "No s'han pogut carregar els detalls de l'acció de compartir."
       ],
       "Could not load the image preview: ${ message }": [
-        "No s'ha pogut carregar la previsualització de la imatge: ${ message }"
+        "No s'ha pogut carregar la vista prèvia de la imatge: ${ message }"
       ],
       "Could not read part of this file: ${ message }": [
         "No s'ha pogut llegir una part d'aquest fitxer: ${ message }"
       ],
       "Could not unlock the parent folder": [
-        "No s'ha pogut desbloquejar la carpeta pare"
+        "No s'ha pogut desbloquejar la carpeta principal"
       ],
       "Could not unlock this item": [
         "No s'ha pogut desbloquejar aquest element"
@@ -5597,19 +5600,19 @@
         "No es permet crear carpetes dins d'elements que no siguin carpetes"
       ],
       "Device not found": [
-        "Dispositiu no trobat"
+        "No s'ha trobat el dispositiu"
       ],
       "Expiration date cannot be in the past": [
         "La data de caducitat no pot ser en el passat"
       ],
       "Failed to decrypt bookmark key: ${ message }": [
-        "No s'ha pogut desxifrar la clau de l'adreça d'interès: ${ message }"
+        "No s'ha pogut desxifrar la clau del marcador de pàgina: ${ message }"
       ],
       "Failed to decrypt bookmark name: ${ message }": [
-        "No s'ha pogut desxifrar el nom de l'adreça d'interès: ${ message }"
+        "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
-        "No s'ha pogut desxifrar la contrasenya de l'adreça d'interès: ${ message }"
+        "No s'ha pogut desxifrar la contrasenya de la marca de pàgina: ${ message }"
       ],
       "Failed to decrypt content key: ${ message }": [
         "No s'ha pogut desxifrar la clau de contingut: ${ message }"
@@ -5636,7 +5639,7 @@
         "El fitxer no té cap revisió"
       ],
       "Image preview not found": [
-        "No s’ha trobat la previsualització de la imatge"
+        "No s’ha trobat la vista prèvia de la imatge"
       ],
       "Invalid URL": [
         "L'URL no és vàlid."
@@ -5648,16 +5651,16 @@
         "No s'ha trobat l'element"
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "L'enllaç públic antic no es pot actualitzar. Torneu-ne a crear un nou."
+        "L'enllaç públic heretat no es pot actualitzar. Creeu-ne un de nou."
       ],
       "Missing inviter email": [
         "Falta l'adreça electrònica de qui convida"
       ],
       "Missing signature for ${ signatureType }": [
-        "Es requereix la signatura per a ${ signatureType }"
+        "Falta la signatura per ${ signatureType }"
       ],
       "Move operation aborted": [
-        "Moviment avortat"
+        "S'ha cancel·lat l'operació de moviment"
       ],
       "Moving item to a non-folder is not allowed": [
         "No es permet moure un element a un element que no sigui una carpeta"
@@ -5679,7 +5682,7 @@
         "Només els administradors poden convertir invitacions externes"
       ],
       "Operation aborted": [
-        "S'ha avortat l'operació"
+        "S'ha cancel·lat l'operació"
       ],
       "Operation failed, try again later": [
         "Ha fallat l'operació, torneu-ho a provar més tard"
@@ -5697,7 +5700,7 @@
         "No es permet canviar el nom de l'element arrel"
       ],
       "Request aborted": [
-        "Sol·licitud avortada"
+        "Sol·licitud cancel·lada"
       ],
       "Signature is missing": [
         "Falta la signatura"
@@ -5706,10 +5709,10 @@
         "Ha fallat la verificació de la signatura: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
-        "Ha fallat la verificació de la signatura per a ${ signatureType }"
+        "Ha fallat la verificació de la signatura per ${ signatureType }"
       ],
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
-        "La verificació de la signatura per a ${ signatureType } ha fallat: ${ errorMessage }"
+        "La verificació de la signatura per ${ signatureType } ha fallat: ${ errorMessage }"
       ],
       "Some file data failed to upload. Please try again.": [
         "No s'han pogut carregar algunes dades del fitxer. Torneu-ho a provar."
@@ -5736,7 +5739,7 @@
         "No s'ha pogut carregar aquesta versió del fitxer"
       ],
       "This item has no image preview": [
-        "Aquest element no té cap previsualització de la imatge"
+        "Aquest element no té cap vista prèvia de la imatge"
       ],
       "This item is no longer shared": [
         "Aquest element ja no està compartit"
@@ -5745,22 +5748,22 @@
         "Aquest element no està compartit"
       ],
       "Too many server errors, please try again later": [
-        "S'han produït massa errors del servidor, torneu-ho a provar més tard"
+        "Hi ha massa errors del servidor, torneu-ho a provar més tard"
       ],
       "Too many server requests, please try again later": [
-        "Nombroses sol·licituds al servidor, torneu-ho a provar més tard"
+        "Hi ha massa sol·licituds al servidor, torneu-ho a provar més tard"
       ],
       "Verification keys are not available": [
         "Les claus de verificació no estan disponibles"
       ],
       "Verification keys for ${ signatureType } are not available": [
-        "Les claus de verificació per a ${ signatureType } no estan disponibles"
+        "Les claus de verificació per ${ signatureType } no estan disponibles"
       ],
       "You can create public links for your own files only": [
         "Només podeu crear enllaços públics per als vostres propis fitxers"
       ],
       "You can only leave items that are shared with you": [
-        "Només podeu abandonar elements que s'hagin compartit amb vosaltres"
+        "Només podeu deixar elements que se us hagin compartit"
       ],
       "You can only upload a new version to a file": [
         "Només podeu carregar una nova versió a un fitxer"
@@ -5773,6 +5776,27 @@
       ],
       "You do not have access to this shared item": [
         "No teniu accés a aquest element compartit"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Contacteu amb el vostre administrador per iniciar una migració."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "Missing organization private key": [
+        "Falta la clau privada de l'organització"
+      ],
+      "Missing organization public key": [
+        "Falta la clau pública de l'organització"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organització no té prou llicències disponibles"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organització no té prou espai d'emmagatzematge disponible"
       ]
     },
     "error": {
@@ -6304,6 +6328,27 @@
       ],
       "Unread": [
         "No llegit"
+      ],
+      "Activated": [
+        "Activat"
+      ],
+      "All": [
+        "Tot"
+      ],
+      "Errors": [
+        "Errors"
+      ],
+      "In progress": [
+        "En curs"
+      ],
+      "Migrated": [
+        "S'han migrat"
+      ],
+      "Not activated": [
+        "No s'ha activat"
+      ],
+      "Pending": [
+        "Està pendent"
       ]
     },
     "Filter Actions": {
@@ -9684,6 +9729,56 @@
       ],
       "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
         "Aquesta adreça de Gmail està registrada amb un altre compte de ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI i d'altres). Estem treballant per fer que aquesta connexió sigui fluida, però de moment heu de seguir uns quants passos."
+      ],
+      "Find out what can be migrated.": [
+        "Descobriu què es pot migrar."
+      ],
+      "No conversation to read": [
+        "No hi ha cap conversa per llegir"
+      ],
+      "No email open": [
+        "No hi ha cap correu obert"
+      ],
+      "No users to display": [
+        "No hi ha cap usuari per mostrar"
+      ],
+      "Read ${ count } email": [
+        "S'ha llegit ${ count } correu electrònic",
+        "S'han llegit ${ count } correus electrònics"
+      ],
+      "Read ${ count } message in this thread": [
+        "S'ha llegit ${ count } missatge d'aquest fil",
+        "S'han llegit ${ count } missatges d'aquest fil"
+      ],
+      "Read open email “${ subject }”": [
+        "S'ha llegit el correu electrònic obert \"${ subject }\""
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleccioneu exactament què voldríeu migrar. S'aplicarà a tots els usuaris de l'organització."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
+      ],
+      "You": [
+        "Vós"
       ]
     },
     "info": {
@@ -15744,6 +15839,21 @@
       ],
       "Type": [
         "Tipus"
+      ],
+      "Activated": [
+        "Activat"
+      ],
+      "Estimated size": [
+        "Mida estimada"
+      ],
+      "Migration status": [
+        "Estat de la migració"
+      ],
+      "Size": [
+        "Mida"
+      ],
+      "User": [
+        "Usuari"
       ]
     },
     "TableHeader": {
@@ -16962,6 +17072,15 @@
       ],
       "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
         "Atenció: Aquest Gmail està enllaçat a un altre compte de ${ BRAND_NAME }"
+      ],
+      "Configure migration": [
+        "Configureu la migració"
+      ],
+      "Select users to migrate": [
+        "Seleccioneu els usuaris que voleu migrar"
+      ],
+      "What are you migrating?": [
+        "Què esteu migrant?"
       ]
     },
     "Title header for keys table": {
@@ -17082,6 +17201,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Clau OpenPGP de la versió 6"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Usuaris que han accedit al seu compte de ${ BRAND_NAME }"
       ]
     },
     "tooltip": {
@@ -17605,6 +17730,20 @@
       ],
       "name": [
         "nom"
+      ]
+    },
+    "Import status": {
+      "Has errors": [
+        "Té errors"
+      ],
+      "In progress": [
+        "En curs"
+      ],
+      "Migrated": [
+        "S'han migrat"
+      ],
+      "Pending": [
+        "Està pendent"
       ]
     }
   }
