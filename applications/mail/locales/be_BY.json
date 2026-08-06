@@ -1516,7 +1516,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -2258,128 +2261,6 @@
       ],
       "Yearly": [
         "Штогод"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Актывавана"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Адрас ужо выкарыстоўваецца карыстальнікам з іншай арганізацыі. Звярніцеся ў службу падтрымкі кліентаў для вырашэння гэтай праблемы"
-      ],
-      "All": [
-        "Усе"
-      ],
-      "Calendar": [
-        "Каляндар"
-      ],
-      "Configure migration": [
-        "Сканфігурыраваць перанос"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Звяжыцеся са сваім адміністратарам, каб пачаць перанос."
-      ],
-      "Contacts": [
-        "Кантакты"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Статус пераносу даных з Google Workspace у ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Лісты"
-      ],
-      "Errors": [
-        "Памылкі"
-      ],
-      "Estimated size": [
-        "Прыблізны памер"
-      ],
-      "Find out what can be migrated.": [
-        "Даведайцеся, што перанесена."
-      ],
-      "Has errors": [
-        "З памылкамі"
-      ],
-      "In progress": [
-        "Выконваецца"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Адрас удзельніка не знойдзены. Звяжыцеся з нашай службай падтрымкі кліентаў, каб вырашыць гэта"
-      ],
-      "Migrate": [
-        "Перанос"
-      ],
-      "Migrated": [
-        "Перанесена"
-      ],
-      "Migration status": [
-        "Статус пераносу"
-      ],
-      "Missing organization private key": [
-        "Адсутнічае закрыты ключ арганізацыі"
-      ],
-      "Missing organization public key": [
-        "Адсутнічае адкрыты ключ арганізацыі"
-      ],
-      "No users to display": [
-        "Няма карыстальнікаў для адлюстравання"
-      ],
-      "Not activated": [
-        "Не актываваны"
-      ],
-      "Organization does not have enough seats available": [
-        "У арганізацыі недастаткова даступных ліцэнзій"
-      ],
-      "Organization does not have enough storage available": [
-        "У арганізацыі недастаткова даступнага месца для захоўвання"
-      ],
-      "Pending": [
-        "У чаканні"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Выберыце толькі тое, што хочаце перанесці. Гэта будзе прыменена да ўсіх карыстальнікаў арганізацыі."
-      ],
-      "Select users to migrate": [
-        "Выберыце карыстальнікаў для пераносу"
-      ],
-      "Size": [
-        "Памер"
-      ],
-      "Status": [
-        "Статус"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Гэтага карыстальніка немагчыма перанесці з-за несумяшчальнасці платформ."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у кансолі адміністратара Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Каб перанесці гэтага карыстальніка, уключыце яго адрас у ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Каб перанесці гэтага карыстальніка, яму неабходна прыняць запрашэнне далучыцца да ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Каб перанесці гэтага карыстальніка, разархівуйце яго ў кансолі адміністратара Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Каб перанесці гэтага карыстальніка, разблакіруйце яго ў кансолі адміністратара Google Workspace."
-      ],
-      "User": [
-        "Карыстальнік"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Карыстальнікі, якія маюць доступ да сваіх уліковых запісаў ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Што вы плануеце перанесці?"
-      ],
-      "You": [
-        "Вы"
       ]
     },
     "Browser": {
@@ -5114,6 +4995,9 @@
       "Invalid public key file": [
         "Памылковы файл адкрытага ключа"
       ],
+      "Invalid URL": [
+        "Памылковы URL-адрас"
+      ],
       "Invalid VAT number": [
         "Памылковы нумар ПДВ"
       ],
@@ -5380,6 +5264,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назвы некаторых вашых метак перавышаюць максімальнае абмежаванне па колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
+      ],
+      "Something went wrong": [
+        "Нешта пайшло не так"
       ],
       "Something went wrong while converting the address": [
         "Нешта пайшло не так пры пераўтварэнні адраса"
@@ -6853,6 +6740,14 @@
         "Больш параметраў імпартавання"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Выконваецца"
+      ],
+      "Migrated": [
+        "Перанесена"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Не будзе імпартавана наступная колькасць кантактаў: ${ totalContactsDiscarded } з ${ totalContacts }. Націсніце, каб даведацца больш"
@@ -8108,10 +8003,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8154,9 +8046,6 @@
       ],
       "Key fingerprint": [
         "Адбітак ключа"
-      ],
-      "Keys created": [
-        "Ключы створаны"
       ],
       "Label all imported messages as": [
         "Пазначыць усе імпартаваныя паведамленні як"
@@ -9189,9 +9078,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Выкарыстоўваць спалучэнні клавіш для больш хуткага кіравання вашымі лістамі."
-      ],
-      "User activated": [
-        "Карыстальнік актываваны"
       ],
       "username": [
         "імя карыстальніка"
@@ -15906,6 +15792,9 @@
       ],
       "Name": [
         "Назва"
+      ],
+      "Size": [
+        "Памер"
       ],
       "Status": [
         "Статус"
