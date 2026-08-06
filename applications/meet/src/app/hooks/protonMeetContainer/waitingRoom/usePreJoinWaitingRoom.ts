@@ -1,19 +1,23 @@
 import { useCallback, useEffect, useRef } from 'react';
 
+import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import { c } from 'ttag';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     WaitingRoomAdmissionStatus,
+    cancelAdmission,
+    selectAdmissionStatus,
     setAdmissionStatus,
+    settleAdmission,
     startWaitingRoomAdmissionTimer,
-    stopWaitingRoomAdmissionTimer,
 } from '@proton/meet/store/slices/waitingRoomSlice';
 import { SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
 
-import type { MeetCoreClient } from '../../../wasm/MeetCoreClient';
+import { useMeetCoreClient } from '../../../contexts/MeetCoreClientContext';
 import {
     clearWaitingRoomJoinDecisionCallback,
     setWaitingRoomJoinDecisionCallback,
@@ -22,28 +26,23 @@ import { useNotifyError } from '../../useNotifyError';
 
 const HOST_POLL_INTERVAL_MS = 3 * SECOND;
 
-// Guest-only pre-join admission state machine. Hosts must not call startAdmission.
-export const usePreJoinWaitingRoom = ({ meetCoreClient }: { meetCoreClient: MeetCoreClient | null }) => {
+type AdmissionRequest = {
+    meetLinkName: string;
+    meetingSessionKeyBase64: string;
+};
+
+/** Guest-only pre-join admission state machine. Hosts must not call startAdmission. */
+export const usePreJoinWaitingRoom = () => {
     const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
 
     const dispatch = useMeetDispatch();
+    const meetCoreClient = useMeetCoreClient();
     const notifyError = useNotifyError();
+    const admissionStatus = useMeetSelector(selectAdmissionStatus);
 
     const { reportMeetError } = useMeetErrorReporting();
 
-    // Bumped on every start/leave/reset; a detached flow only dispatches while its generation is current,
-    // so rapid join/leave can't let a stale flow flip the status.
-    const generationRef = useRef(0);
-    const awaitingDecisionRef = useRef(false);
-    const pendingMeetLinkRef = useRef<string | null>(null);
-    const pollIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-    const stopPoll = useCallback(() => {
-        if (pollIntervalRef.current !== null) {
-            clearInterval(pollIntervalRef.current);
-            pollIntervalRef.current = null;
-        }
-    }, []);
+    const admissionRequestRef = useRef<AdmissionRequest | null>(null);
 
     useEffect(() => {
         if (!isMeetWaitingRoomEnabled) {
@@ -51,103 +50,113 @@ export const usePreJoinWaitingRoom = ({ meetCoreClient }: { meetCoreClient: Meet
         }
 
         setWaitingRoomJoinDecisionCallback((_requestId, admitted) => {
-            if (!admitted && awaitingDecisionRef.current) {
-                awaitingDecisionRef.current = false;
-                dispatch(setAdmissionStatus(WaitingRoomAdmissionStatus.REJECTED));
+            if (!admitted) {
+                dispatch(settleAdmission(WaitingRoomAdmissionStatus.REJECTED));
             }
         });
+
         return () => {
             clearWaitingRoomJoinDecisionCallback();
-        };
-    }, [dispatch, isMeetWaitingRoomEnabled]);
 
-    useEffect(() => {
-        if (!isMeetWaitingRoomEnabled) {
-            return;
-        }
+            const meetLinkName = admissionRequestRef.current?.meetLinkName;
 
-        return () => {
-            stopPoll();
-            dispatch(stopWaitingRoomAdmissionTimer());
-        };
-    }, [stopPoll, dispatch, isMeetWaitingRoomEnabled]);
-
-    const startAdmission = useCallback(
-        async (meetLinkName: string, meetingSessionKeyBase64: string) => {
-            if (!meetCoreClient) {
+            if (!meetLinkName) {
                 return;
             }
 
-            const generation = (generationRef.current += 1);
-            const isStale = () => generationRef.current !== generation;
+            admissionRequestRef.current = null;
 
-            const awaitWelcome = async () => {
-                try {
-                    await meetCoreClient.waitForWaitingRoomWelcome(meetLinkName);
-                    if (!isStale()) {
-                        awaitingDecisionRef.current = false;
-                        dispatch(setAdmissionStatus(WaitingRoomAdmissionStatus.ADMITTED));
-                    }
-                } catch {
-                    if (!isStale()) {
-                        awaitingDecisionRef.current = false;
-                        dispatch(setAdmissionStatus(WaitingRoomAdmissionStatus.EXPIRED));
-                    }
-                } finally {
-                    if (!isStale()) {
-                        dispatch(stopWaitingRoomAdmissionTimer());
-                    }
-                }
-            };
+            void meetCoreClient.cancelWaitingRoomJoinRequest(meetLinkName).catch(noop);
+            void meetCoreClient.clearJoinDecisionHandler().catch(noop);
+        };
+    }, [dispatch, isMeetWaitingRoomEnabled, meetCoreClient]);
 
-            const sendJoinRequest = async () => {
-                try {
-                    await meetCoreClient.createJoinRequest(meetLinkName, meetingSessionKeyBase64);
-                    pendingMeetLinkRef.current = meetLinkName;
-                } catch (error: any) {
-                    if (!isStale()) {
-                        notifyError(c('Error').t`Failed to join meeting. Please try again.`);
-                        reportMeetError('Failed to create waiting room join request prejoin', {
-                            context: { error },
-                            tags: { meetingLinkName: meetLinkName },
-                        });
-                        dispatch(setAdmissionStatus(WaitingRoomAdmissionStatus.INACTIVE));
-                    }
+    const awaitWelcome = useCallback(
+        async (meetLinkName: string) => {
+            try {
+                await meetCoreClient.waitForWaitingRoomWelcome(meetLinkName);
+                dispatch(settleAdmission(WaitingRoomAdmissionStatus.ADMITTED));
+            } catch (error) {
+                if (error === MeetCoreErrorEnum.WaitingRoomJoinCancelled) {
                     return;
                 }
 
-                if (isStale()) {
-                    return;
-                }
-
-                awaitingDecisionRef.current = true;
-                dispatch(setAdmissionStatus(WaitingRoomAdmissionStatus.AWAITING));
-                dispatch(startWaitingRoomAdmissionTimer());
-                void awaitWelcome();
-            };
-
-            const pollForHostThenSend = async () => {
-                await new Promise<void>((resolve) => {
-                    const interval = setInterval(async () => {
-                        if (isStale()) {
-                            clearInterval(interval);
-                            resolve();
-                            return;
-                        }
-                        try {
-                            if (await meetCoreClient.hasMlsGroupInfo()) {
-                                clearInterval(interval);
-                                resolve();
-                            }
-                        } catch {}
-                    }, HOST_POLL_INTERVAL_MS);
-                    pollIntervalRef.current = interval;
+                reportMeetError('Failed to wait for waiting room welcome', {
+                    context: { error },
+                    tags: { meetingLinkName: meetLinkName },
                 });
+                dispatch(settleAdmission(WaitingRoomAdmissionStatus.EXPIRED));
+            }
+        },
+        [meetCoreClient, dispatch, reportMeetError]
+    );
 
-                if (!isStale()) {
-                    await sendJoinRequest();
-                }
-            };
+    const sendJoinRequest = useCallback(async () => {
+        const admissionRequest = admissionRequestRef.current;
+
+        if (!admissionRequest) {
+            return;
+        }
+
+        const { meetLinkName, meetingSessionKeyBase64 } = admissionRequest;
+
+        try {
+            await meetCoreClient.createJoinRequest(meetLinkName, meetingSessionKeyBase64);
+        } catch (error) {
+            notifyError(c('Error').t`Failed to join meeting. Please try again.`);
+            reportMeetError('Failed to create waiting room join request prejoin', {
+                context: { error },
+                tags: { meetingLinkName: meetLinkName },
+            });
+            dispatch(cancelAdmission());
+            return;
+        }
+
+        if (admissionRequestRef.current !== admissionRequest) {
+            return;
+        }
+
+        dispatch(setAdmissionStatus(WaitingRoomAdmissionStatus.AWAITING));
+        dispatch(startWaitingRoomAdmissionTimer());
+        void awaitWelcome(meetLinkName);
+    }, [meetCoreClient, dispatch, notifyError, reportMeetError, awaitWelcome]);
+
+    useEffect(() => {
+        if (admissionStatus !== WaitingRoomAdmissionStatus.HOST_NOT_STARTED) {
+            return;
+        }
+
+        let cancelled = false;
+        let checking = false;
+
+        const interval = setInterval(async () => {
+            if (checking) {
+                return;
+            }
+
+            checking = true;
+            const hasGroup = await meetCoreClient.hasMlsGroupInfo().catch(() => false);
+            checking = false;
+
+            if (cancelled || !hasGroup) {
+                return;
+            }
+
+            clearInterval(interval);
+            void sendJoinRequest();
+        }, HOST_POLL_INTERVAL_MS);
+
+        return () => {
+            cancelled = true;
+            clearInterval(interval);
+        };
+    }, [admissionStatus, meetCoreClient, sendJoinRequest]);
+
+    const startAdmission = useCallback(
+        async (meetLinkName: string, meetingSessionKeyBase64: string) => {
+            const admissionRequest = { meetLinkName, meetingSessionKeyBase64 };
+
+            admissionRequestRef.current = admissionRequest;
 
             try {
                 await meetCoreClient.setJoinDecisionHandler();
@@ -165,79 +174,70 @@ export const usePreJoinWaitingRoom = ({ meetCoreClient }: { meetCoreClient: Meet
                 // Assume the host hasn't created the group yet and wait for it below.
             }
 
-            if (isStale()) {
+            if (admissionRequestRef.current !== admissionRequest) {
                 return;
             }
 
             if (!hasGroup) {
+                // The polling effect takes over and sends the request once the host starts.
                 dispatch(setAdmissionStatus(WaitingRoomAdmissionStatus.HOST_NOT_STARTED));
-                void pollForHostThenSend();
                 return;
             }
 
             await sendJoinRequest();
         },
-        [meetCoreClient, dispatch, notifyError, reportMeetError]
+        [meetCoreClient, dispatch, reportMeetError, sendJoinRequest]
     );
 
     // User bailed out: cancel the pending request server-side and reset. Aborts any in-flight admission.
     const leave = useCallback(
         async (meetLinkName?: string) => {
-            generationRef.current += 1;
-            awaitingDecisionRef.current = false;
-            stopPoll();
-            dispatch(stopWaitingRoomAdmissionTimer());
+            const linkToCancel = meetLinkName ?? admissionRequestRef.current?.meetLinkName;
 
-            const linkToCancel = meetLinkName ?? pendingMeetLinkRef.current;
+            admissionRequestRef.current = null;
+            dispatch(cancelAdmission());
+
             if (linkToCancel) {
                 try {
-                    await meetCoreClient?.cancelWaitingRoomJoinRequest(linkToCancel);
+                    await meetCoreClient.cancelWaitingRoomJoinRequest(linkToCancel);
                 } catch (error) {
                     reportMeetError('Failed to cancel waiting room join request', {
                         context: { error },
                         tags: { meetingLinkName: linkToCancel },
                     });
                 }
-                pendingMeetLinkRef.current = null;
             }
             try {
-                await meetCoreClient?.clearJoinDecisionHandler();
+                await meetCoreClient.clearJoinDecisionHandler();
             } catch (error) {
                 reportMeetError('Failed to clear waiting room join decision handler', { context: { error } });
             }
-
-            dispatch(setAdmissionStatus(WaitingRoomAdmissionStatus.INACTIVE));
         },
-        [meetCoreClient, stopPoll, dispatch, reportMeetError]
+        [meetCoreClient, dispatch, reportMeetError]
     );
 
     // After a rejection: clear the local WASM state so the guest can request again.
     const clearRejection = useCallback(async () => {
-        generationRef.current += 1;
-        awaitingDecisionRef.current = false;
-        pendingMeetLinkRef.current = null;
+        admissionRequestRef.current = null;
+        dispatch(cancelAdmission());
+
         try {
-            await meetCoreClient?.clearWaitingRoomJoinRequest();
+            await meetCoreClient.clearWaitingRoomJoinRequest();
         } catch (error) {
             reportMeetError('Failed to clear waiting room join request', { context: { error } });
         }
         try {
-            await meetCoreClient?.clearJoinDecisionHandler();
+            await meetCoreClient.clearJoinDecisionHandler();
         } catch (error) {
             reportMeetError('Failed to clear waiting room join decision handler', { context: { error } });
         }
-
-        dispatch(setAdmissionStatus(WaitingRoomAdmissionStatus.INACTIVE));
     }, [meetCoreClient, dispatch, reportMeetError]);
 
     // Local reset to `inactive` (e.g. once admitted and proceeding to join). Does not touch the server.
     const reset = useCallback(() => {
-        generationRef.current += 1;
-        awaitingDecisionRef.current = false;
-        stopPoll();
-        dispatch(stopWaitingRoomAdmissionTimer());
-        dispatch(setAdmissionStatus(WaitingRoomAdmissionStatus.INACTIVE));
-    }, [stopPoll, dispatch]);
+        admissionRequestRef.current = null;
+        dispatch(cancelAdmission());
+    }, [dispatch]);
 
     return isMeetWaitingRoomEnabled
         ? {
