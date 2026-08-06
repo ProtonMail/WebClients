@@ -1,6 +1,8 @@
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
-import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useMemo } from 'react';
+
+import { useGetSubscription } from '@proton/account/subscription/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
+import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import {
     TelemetryCategoriesOnboardingEvents,
@@ -9,89 +11,105 @@ import {
 } from '@proton/shared/lib/api/telemetry';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 type RecategorizeSource = 'drag_and_drop' | 'context_menu' | 'move_to_folder';
 type CategoriesClickSource = 'tab' | 'sidebar' | 'commander' | 'shortcuts';
 
 export const useCategoriesTelemetry = () => {
     const api = useApi();
-    const [user] = useUser();
-    const [subscription] = useSubscription();
-    const [userSettings] = useUserSettings();
+    const getUser = useGetUser();
+    const getSubscription = useGetSubscription();
+    const getUserSettings = useGetUserSettings();
 
-    const sendReport = (event: TelemetryEvents, dimensions?: Record<string, string>) => {
-        void sendTelemetryReportWithBaseDimensions({
-            api,
-            user,
-            subscription,
-            userSettings,
-            measurementGroup: TelemetryMeasurementGroups.categoriesView,
-            event,
-            dimensions: dimensions,
-            delay: true,
-        });
-    };
+    return useMemo(() => {
+        const sendReport = async (event: TelemetryEvents, dimensions?: Record<string, string>) => {
+            const [user, subscription, userSettings] = await Promise.all([
+                getUser(),
+                getSubscription(),
+                getUserSettings(),
+            ]).catch((e) => {
+                traceInitiativeError(SentryMailInitiatives.CATEGORIES_VIEW, e);
+                return [];
+            });
 
-    const sendEventOnboardingAccept = () => {
-        sendReport(TelemetryCategoriesOnboardingEvents.onboarding_reply, {
-            reply: 'accept',
-        });
-    };
+            if (!user || !subscription || !userSettings) {
+                return;
+            }
 
-    const sendEventOnboardingDismiss = () => {
-        sendReport(TelemetryCategoriesOnboardingEvents.onboarding_reply, {
-            reply: 'dismiss',
-        });
-    };
+            void sendTelemetryReportWithBaseDimensions({
+                api,
+                user,
+                subscription,
+                userSettings,
+                measurementGroup: TelemetryMeasurementGroups.categoriesView,
+                event,
+                dimensions: dimensions,
+                delay: true,
+            });
+        };
 
-    const sendReportCategoriesNav = (navSource: CategoriesClickSource, categoryId: CategoryLabelID) => {
-        sendReport(TelemetryCategoriesOnboardingEvents.category_nav, {
-            navSource,
-            categoryId,
-        });
-    };
+        const sendEventOnboardingAccept = () => {
+            void sendReport(TelemetryCategoriesOnboardingEvents.onboarding_reply, {
+                reply: 'accept',
+            });
+        };
 
-    const sendReportChangeCategorySettings = (newValue: boolean) => {
-        sendReport(TelemetryCategoriesOnboardingEvents.settings_toggle_category_view, {
-            newValue: newValue ? 'true' : 'false',
-        });
-    };
+        const sendEventOnboardingDismiss = () => {
+            void sendReport(TelemetryCategoriesOnboardingEvents.onboarding_reply, {
+                reply: 'dismiss',
+            });
+        };
 
-    const sendReportToggleCategory = (categoryId: string, newValue: boolean) => {
-        sendReport(TelemetryCategoriesOnboardingEvents.settings_toggle_category, {
-            categoryId,
-            newValue: newValue ? 'true' : 'false',
-        });
-    };
+        const sendReportCategoriesNav = (navSource: CategoriesClickSource, categoryId: CategoryLabelID) => {
+            void sendReport(TelemetryCategoriesOnboardingEvents.category_nav, {
+                navSource,
+                categoryId,
+            });
+        };
 
-    const sendReportToggleNotification = (categoryId: string, newValue: boolean) => {
-        sendReport(TelemetryCategoriesOnboardingEvents.settings_toggle_notification, {
-            categoryId,
-            newValue: newValue ? 'true' : 'false',
-        });
-    };
+        const sendReportChangeCategorySettings = (newValue: boolean) => {
+            void sendReport(TelemetryCategoriesOnboardingEvents.settings_toggle_category_view, {
+                newValue: newValue ? 'true' : 'false',
+            });
+        };
 
-    const sendReportRecategorizeEmail = (
-        recategorizeSource: RecategorizeSource,
-        sourceLabelId: CategoryLabelID,
-        destinationLabelId: string,
-        elementsNumber: number
-    ) => {
-        sendReport(TelemetryCategoriesOnboardingEvents.recategorize_email, {
-            recategorizeSource,
-            sourceLabelId,
-            destinationLabelId,
-            elementsNumber: elementsNumber.toString(),
-        });
-    };
+        const sendReportToggleCategory = (categoryId: string, newValue: boolean) => {
+            void sendReport(TelemetryCategoriesOnboardingEvents.settings_toggle_category, {
+                categoryId,
+                newValue: newValue ? 'true' : 'false',
+            });
+        };
 
-    return {
-        sendEventOnboardingAccept,
-        sendEventOnboardingDismiss,
-        sendReportRecategorizeEmail,
-        sendReportToggleCategory,
-        sendReportToggleNotification,
-        sendReportChangeCategorySettings,
-        sendReportCategoriesNav,
-    };
+        const sendReportToggleNotification = (categoryId: string, newValue: boolean) => {
+            void sendReport(TelemetryCategoriesOnboardingEvents.settings_toggle_notification, {
+                categoryId,
+                newValue: newValue ? 'true' : 'false',
+            });
+        };
+
+        const sendReportRecategorizeEmail = (
+            recategorizeSource: RecategorizeSource,
+            sourceLabelId: CategoryLabelID,
+            destinationLabelId: string,
+            elementsNumber: number
+        ) => {
+            void sendReport(TelemetryCategoriesOnboardingEvents.recategorize_email, {
+                recategorizeSource,
+                sourceLabelId,
+                destinationLabelId,
+                elementsNumber: elementsNumber.toString(),
+            });
+        };
+
+        return {
+            sendEventOnboardingAccept,
+            sendEventOnboardingDismiss,
+            sendReportRecategorizeEmail,
+            sendReportToggleCategory,
+            sendReportToggleNotification,
+            sendReportChangeCategorySettings,
+            sendReportCategoriesNav,
+        };
+    }, []);
 };
