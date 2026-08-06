@@ -1517,8 +1517,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1724,6 +1723,9 @@
       ],
       "View guide": [
         "Visa guide"
+      ],
+      "Migrate": [
+        "Migrera"
       ]
     },
     "action": {
@@ -5582,6 +5584,9 @@
       ],
       "You do not have access to this shared item": [
         "Du har inte åtkomst till detta delade objekt"
+      ],
+      "This file version could not be uploaded": [
+        "Denna filversion kunde inte laddas upp"
       ]
     },
     "error": {
@@ -6113,6 +6118,24 @@
       ],
       "Unread": [
         "Oläst"
+      ],
+      "Activated": [
+        "Aktiverat"
+      ],
+      "All": [
+        "Alla"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Not activated": [
+        "Inte aktiverad"
       ]
     },
     "Filter Actions": {
@@ -7942,7 +7965,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9454,6 +9478,15 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Stanna kvar på ditt paket och få 50 % rabatt för din nästa månad"
+      ],
+      "No conversation to read": [
+        "Ingen konversation att läsa"
+      ],
+      "No users to display": [
+        "Inga användare att visa"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "info": {
@@ -15510,6 +15543,18 @@
       ],
       "Size": [
         "Storlek"
+      ],
+      "Activated": [
+        "Aktiverad"
+      ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "User": [
+        "Användare"
       ]
     },
     "TableHeader": {
@@ -16725,6 +16770,15 @@
       ],
       "Refine your Categories": [
         "Förfina dina kategorier"
+      ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
+      "Select users to migrate": [
+        "Välj användare att migrera"
+      ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
       ]
     },
     "Title header for keys table": {
@@ -17362,6 +17416,9 @@
       ],
       "Migrated": [
         "Migrerad"
+      ],
+      "Has errors": [
+        "Har fel"
       ]
     },
     "Property": {
