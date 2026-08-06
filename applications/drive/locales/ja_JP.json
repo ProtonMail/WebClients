@@ -1604,125 +1604,6 @@
         "年払い"
       ]
     },
-    "BOSS": {
-      "Activated": [
-        "有効化済み"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "アドレスはすでに組織外のユーザーによって使用されています。解決するにはカスタマーサポートまでご連絡ください"
-      ],
-      "All": [
-        "すべて"
-      ],
-      "Calendar": [
-        "カレンダー"
-      ],
-      "Configure migration": [
-        "移行を設定"
-      ],
-      "Contacts": [
-        "連絡先"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Google Workspaceから${ BRAND_NAME }へのデータ移行ステータス"
-      ],
-      "Emails": [
-        "メール"
-      ],
-      "Errors": [
-        "エラー"
-      ],
-      "Estimated size": [
-        "推定サイズ"
-      ],
-      "Find out what can be migrated.": [
-        "移行可能なデータを確認する。"
-      ],
-      "Has errors": [
-        "エラーあり"
-      ],
-      "In progress": [
-        "進行中"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "メンバーアドレスが見つかりません。解決するにはカスタマーサポートまでご連絡ください"
-      ],
-      "Migrate": [
-        "移行"
-      ],
-      "Migrated": [
-        "移行済み"
-      ],
-      "Migration status": [
-        "移行ステータス"
-      ],
-      "Missing organization private key": [
-        "組織の秘密鍵がありません"
-      ],
-      "Missing organization public key": [
-        "組織の公開鍵がありません"
-      ],
-      "No users to display": [
-        "表示するユーザーがいません"
-      ],
-      "Not activated": [
-        "未有効化"
-      ],
-      "Organization does not have enough seats available": [
-        "組織には十分なシートがありません"
-      ],
-      "Organization does not have enough storage available": [
-        "組織には十分なストレージがありません"
-      ],
-      "Pending": [
-        "保留中"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "移行したい内容を正確に選択してください。これはすべての組織ユーザーに適用されます。"
-      ],
-      "Select users to migrate": [
-        "移行するユーザーの選択"
-      ],
-      "Size": [
-        "サイズ"
-      ],
-      "Status": [
-        "ステータス"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "プラットフォームの互換性がないため、このユーザーは移行できません。"
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "このユーザーを移行するには、Google Workspace管理者管理コンソールでお客様のアカウントを有効にしてください。"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "このユーザーを移行するには、${ usersAddressesLink }でお客様のアカウントを有効にしてください。"
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "このユーザーを移行するには、${ usersAddressesLink }でお客様のアドレスを有効にしてください。"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "このユーザーを移行するには、対象のユーザーが${ BRAND_NAME }への招待を承諾する必要があります。"
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "このユーザーを移行するには、Google Workspace管理者管理コンソールでユーザーのアーカイブを解除してください。"
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "このユーザーを移行するには、Google Workspace管理者管理コンソールでユーザーの一時停止を解除してください。"
-      ],
-      "User": [
-        "ユーザー"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "${ BRAND_NAME }アカウントにアクセスしたユーザー"
-      ],
-      "What are you migrating?": [
-        "何を移行しますか？"
-      ],
-      "You": [
-        "お客様本人"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
@@ -3712,6 +3593,9 @@
       "Invalid public key file": [
         "無効な公開鍵ファイル"
       ],
+      "Invalid URL": [
+        "無効なURL"
+      ],
       "Invalid VAT number": [
         "無効なVAT番号です"
       ],
@@ -3900,6 +3784,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      ],
+      "Something went wrong": [
+        "何か問題が発生しました"
       ],
       "Something went wrong during folder listing": [
         "フォルダの一覧表示中にエラーが発生しました。"
@@ -4958,6 +4845,14 @@
         "${ boldExport } を選択して ICS ファイルとしてカレンダーをエクスポートします。"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "進行中"
+      ],
+      "Migrated": [
+        "移行済み"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。詳細はクリックしてください"
@@ -5861,9 +5756,6 @@
       "Key fingerprint": [
         "鍵のフィンガープリント"
       ],
-      "Keys created": [
-        "作成されたキー"
-      ],
       "Label all imported messages as": [
         "インポートされたすべてのメッセージに次のようにラベル"
       ],
@@ -6671,9 +6563,6 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "このフォームを使うことで、不適切であったり違法である共有ファイル、およびその他の悪意ある共有ファイルを報告することができます。レポートする内容:"
       ],
-      "User activated": [
-        "ユーザーがアクティブ化"
-      ],
       "username": [
         "ユーザー名"
       ],
@@ -6889,9 +6778,6 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted }より前にキャンセルした場合、請求はされません。"
-      ],
-      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
-        "アクセス権限を閲覧者に変更した後は、「${ fileName }」を共有できなくなります。アクセス権限を再変更できるのはオーナーのみです。"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "クレジット報酬は、ご友人が年額プランにご登録いただいてから1か月後、月額プランにご加入いただいてから2か月後に受け取れます。"
@@ -12082,6 +11968,9 @@
       "Name": [
         "名前"
       ],
+      "Size": [
+        "サイズ"
+      ],
       "Status": [
         "状態"
       ],
@@ -13103,9 +12992,6 @@
       ],
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "匿名ユーザーがこのフォルダーをアップロードしたことを検証できませんでした。"
-      ],
-      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "${ claimedContentAuthor } によるファイルのアップロードが確認できませんでした。エラー内容：${ activeRevision.contentAuthor.error.error }"
       ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "${ claimedNameAuthor } によって名前が作成または変更されたことを確認できませんでした。理由: ${ node.nameAuthor.error.error }"
