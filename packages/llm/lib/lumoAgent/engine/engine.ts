@@ -5,6 +5,7 @@ import type {
     PendingClientToolCall,
 } from '@proton/lumo-api-client';
 
+import { ToolInputError, UnknownReferenceError } from '../contracts/errors';
 import type {
     ActionRequest,
     ChipSummary,
@@ -13,7 +14,6 @@ import type {
     ToolHandlers,
     ToolName,
 } from '../contracts/types';
-import { UnknownReferenceError } from '../contracts/types';
 import { LOAD_GUIDE_TOOL_NAME } from './loadGuide';
 import { buildToolDescriptors } from './tools';
 import { validateToolArgs } from './validate';
@@ -76,8 +76,16 @@ const parseArgs = (raw: string): unknown => {
 const unknownReferenceMessage = (reference: string): string =>
     `Unknown reference "${reference}" — it was never returned by an earlier read. Re-read to get valid references, then try again.`;
 
-/** Reject any reference-shaped param value the registry never issued (hallucination guard). */
-const assertReferencesResolve = (params: Record<string, any>, references: ReferenceRegistry): void => {
+/**
+ * Reject any reference-shaped param value the registry never issued (hallucination guard), skipping the
+ * definition's {@link ToolDefinition.freeTextParams} — a keyword like "e-ticket" is reference-shaped but
+ * can only ever be free text.
+ */
+const assertReferencesResolve = (
+    params: Record<string, any>,
+    references: ReferenceRegistry,
+    freeTextParams: readonly string[] = []
+): void => {
     const check = (value: any) => {
         if (typeof value === 'string' && REFERENCE_PATTERN.test(value) && !references.has(value)) {
             throw new UnknownReferenceError(value);
@@ -85,7 +93,9 @@ const assertReferencesResolve = (params: Record<string, any>, references: Refere
             value.forEach(check);
         }
     };
-    Object.values(params).forEach(check);
+    Object.entries(params)
+        .filter(([param]) => !freeTextParams.includes(param))
+        .forEach(([, value]) => check(value));
 };
 
 /** Map each reference-shaped param value to its human-readable name, for the confirm card. */
@@ -131,9 +141,9 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
      * tool error result the model can recover from. Returns `undefined` when everything resolves; any
      * other error propagates.
      */
-    const guardReferences = (params: Record<string, any>): ClientToolResult | undefined => {
+    const guardReferences = (definition: ToolDefinition, params: Record<string, any>): ClientToolResult | undefined => {
         try {
-            assertReferencesResolve(params, references);
+            assertReferencesResolve(params, references, definition.freeTextParams);
         } catch (error) {
             if (error instanceof UnknownReferenceError) {
                 return errorResult(unknownReferenceMessage(error.reference));
@@ -159,6 +169,11 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         } catch (error: any) {
             if (error instanceof UnknownReferenceError) {
                 return { ok: false, error: errorResult(unknownReferenceMessage(error.reference)) };
+            }
+            // The model chose a bad param and the handler said how to fix it — pass that through, or the
+            // model only learns the call failed and re-issues it unchanged.
+            if (error instanceof ToolInputError) {
+                return { ok: false, error: errorResult(error.message) };
             }
             onTrace?.(error);
             return { ok: false, error: errorResult(`The ${definition.name} tool failed. Try a different approach.`) };
@@ -195,7 +210,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         }
         const args = validation.value;
 
-        const argsError = guardReferences(args);
+        const argsError = guardReferences(definition, args);
         if (argsError) {
             return argsError;
         }
@@ -215,7 +230,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
                 return okResult('The user declined that change. Suggest an alternative or ask what they want instead.');
             }
             const editedParams = decision.params;
-            const editedError = guardReferences(editedParams);
+            const editedError = guardReferences(definition, editedParams);
             if (editedError) {
                 return editedError;
             }
