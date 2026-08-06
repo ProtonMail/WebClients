@@ -478,6 +478,11 @@ export const getMemberRoles = ({
     };
 };
 
+export interface RoleAssignmentsResult {
+    roleAssignments: RoleAssignment[];
+    changed: boolean;
+}
+
 export const updateMemberRoles = ({
     member,
     currentRoles,
@@ -488,11 +493,11 @@ export const updateMemberRoles = ({
     currentRoles: RoleAssignment[];
     desiredRoleIds: Set<string>;
     api: Api;
-}): ThunkAction<Promise<RoleAssignment[]>, MembersState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<Promise<RoleAssignmentsResult>, MembersState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _getState, extra) => {
         const isAdminRoleEnabled = extra.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
         if (!isAdminRoleEnabled) {
-            return [];
+            return { roleAssignments: [], changed: false };
         }
         // Only user-sourced roles can be added/removed via this endpoint
         const groupSourcedRoleIds = getGroupSourcedRoleIds(currentRoles);
@@ -501,7 +506,7 @@ export const updateMemberRoles = ({
         const remove = [...previousRoleIds].filter((id) => !desiredRoleIds.has(id));
 
         if (add.length === 0 && remove.length === 0) {
-            return currentRoles;
+            return { roleAssignments: currentRoles, changed: false };
         }
 
         const { RoleAssignments } = await api<{ RoleAssignments: RoleAssignment[] }>(
@@ -518,7 +523,7 @@ export const updateMemberRoles = ({
             dispatch(slice.actions.upsertMember({ member: await getMember(api, member.ID) }));
         }
 
-        return RoleAssignments;
+        return { roleAssignments: RoleAssignments, changed: true };
     };
 };
 
