@@ -1297,125 +1297,6 @@
         "Специально разработанная функция NetShield защищает ваши устройства и ускоряет работу в интернете, блокируя рекламу, трекеры и вредоносные программы."
       ]
     },
-    "BOSS": {
-      "Activated": [
-        "Активировано"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Адрес уже используется пользователем вне вашей организации. Пожалуйста, обратитесь в службу поддержки клиентов для решения этой проблемы"
-      ],
-      "All": [
-        "Все"
-      ],
-      "Calendar": [
-        "Календарь"
-      ],
-      "Configure migration": [
-        "Настроить миграцию"
-      ],
-      "Contacts": [
-        "Контакты"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Статус миграции данных из Google Workspace в ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Электронные письма"
-      ],
-      "Errors": [
-        "Ошибки"
-      ],
-      "Estimated size": [
-        "Оценочный размер"
-      ],
-      "Find out what can be migrated.": [
-        "Узнайте, что можно перенести."
-      ],
-      "Has errors": [
-        "Есть ошибки"
-      ],
-      "In progress": [
-        "В процессе"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Адрес участника не найден. Пожалуйста, обратитесь в службу поддержки клиентов для решения этой проблемы"
-      ],
-      "Migrate": [
-        "Перенести"
-      ],
-      "Migrated": [
-        "Перенесено"
-      ],
-      "Migration status": [
-        "Статус переноса"
-      ],
-      "Missing organization private key": [
-        "Отсутствует закрытый ключ организации"
-      ],
-      "Missing organization public key": [
-        "Отсутствует открытый ключ организации"
-      ],
-      "No users to display": [
-        "Нет пользователей для отображения"
-      ],
-      "Not activated": [
-        "Не активировано"
-      ],
-      "Organization does not have enough seats available": [
-        "У организации недостаточно доступных лицензий"
-      ],
-      "Organization does not have enough storage available": [
-        "У организации недостаточно доступного места для хранения"
-      ],
-      "Pending": [
-        "В ожидании"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Выберите именно то, что вы хотите перенести. Это применится ко всем пользователям организации."
-      ],
-      "Select users to migrate": [
-        "Выберите пользователей для миграции"
-      ],
-      "Size": [
-        "Размер"
-      ],
-      "Status": [
-        "Статус"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Этого пользователя невозможно перенести из-за несовместимости платформ."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Чтобы перенести этого пользователя, включите его аккаунт в консоли администратора Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Чтобы перенести этого пользователя, включите его аккаунт в разделе ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Чтобы перенести этого пользователя, включите его адрес в разделе ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Чтобы перенести этого пользователя, ему необходимо принять приглашение присоединиться к ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Чтобы перенести этого пользователя, разархивируйте его в консоли администратора Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Чтобы перенести этого пользователя, разблокируйте его в консоли администратора Google Workspace."
-      ],
-      "User": [
-        "Пользователь"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Пользователи, вошедшие в свой аккаунт ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Что вы переносите?"
-      ],
-      "You": [
-        "Вы"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } для ПК"
@@ -3304,6 +3185,9 @@
       "Invalid public key file": [
         "Недействительный файл открытого ключа"
       ],
+      "Invalid URL": [
+        "Недействительный URL"
+      ],
       "Invalid verification code": [
         "Неверный код подтверждения"
       ],
@@ -3471,6 +3355,9 @@
       ],
       "Some trashed documents could not be loaded": [
         "Не удалось загрузить некоторые удаленные документы"
+      ],
+      "Something went wrong": [
+        "Что-то пошло не так"
       ],
       "Something went wrong while fetching available domains": [
         "Что-то пошло не так при получении доступных доменов"
@@ -4498,6 +4385,14 @@
         "Выберите ${ boldExport } для экспорта календаря в формате файла ICS."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "В процессе"
+      ],
+      "Migrated": [
+        "Перенесено"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности."
@@ -5170,9 +5065,6 @@
       "Key fingerprint": [
         "Отпечаток ключа"
       ],
-      "Keys created": [
-        "Ключи созданы"
-      ],
       "Label all imported messages as": [
         "Назначить всем импортированным сообщениям ярлык"
       ],
@@ -5674,9 +5566,6 @@
       "Uppercase and lowercase letters": [
         "Заглавные и строчные буквы"
       ],
-      "User activated": [
-        "Пользователь активирован"
-      ],
       "username": [
         "имя пользователя"
       ],
@@ -5814,9 +5703,6 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Плата не будет взиматься, если вы отмените подписку до ${ trialEndsOnFormatted }."
-      ],
-      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
-        "Вы не сможете делиться объектом «${ fileName }» после изменения доступа на просмотр. Только владелец сможет снова изменить ваши права доступа."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Вы получите вознаграждение на остаток на счете через 1 месяц после того, как ваш друг подпишется на годовой тариф, и через 2 месяца после того, как он подпишется на месячный тариф."
@@ -10133,6 +10019,9 @@
       ],
       "Name": [
         "Имя"
+      ],
+      "Size": [
+        "Размер"
       ],
       "Status": [
         "Состояние"

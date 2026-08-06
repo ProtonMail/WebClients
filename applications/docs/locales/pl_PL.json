@@ -1300,125 +1300,6 @@
         "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenia oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania."
       ]
     },
-    "BOSS": {
-      "Activated": [
-        "Aktywowano"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adres jest już używany przez użytkownika spoza Twojej organizacji. Skontaktuj się ze wsparciem klienta, aby rozwiązać ten problem"
-      ],
-      "All": [
-        "Wszystkie"
-      ],
-      "Calendar": [
-        "Kalendarz"
-      ],
-      "Configure migration": [
-        "Skonfiguruj migrację"
-      ],
-      "Contacts": [
-        "Kontakty"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status migracji danych z Google Workspace do ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Wiadomości"
-      ],
-      "Errors": [
-        "Błędy"
-      ],
-      "Estimated size": [
-        "Szacowany rozmiar"
-      ],
-      "Find out what can be migrated.": [
-        "Dowiedz się, co można zmigrować."
-      ],
-      "Has errors": [
-        "Zawiera błędy"
-      ],
-      "In progress": [
-        "W toku"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Nie znaleziono adresu członka. Skontaktuj się ze wsparciem klienta, aby rozwiązać ten problem"
-      ],
-      "Migrate": [
-        "Przenieś"
-      ],
-      "Migrated": [
-        "Zmigrowano"
-      ],
-      "Migration status": [
-        "Status migracji"
-      ],
-      "Missing organization private key": [
-        "Brak klucza prywatnego organizacji"
-      ],
-      "Missing organization public key": [
-        "Brak klucza publicznego organizacji"
-      ],
-      "No users to display": [
-        "Brak użytkowników do wyświetlenia"
-      ],
-      "Not activated": [
-        "Nieaktywowany"
-      ],
-      "Organization does not have enough seats available": [
-        "Organizacja nie dysponuje wystarczającą ilością dostępnych licencji"
-      ],
-      "Organization does not have enough storage available": [
-        "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
-      ],
-      "Pending": [
-        "Oczekujące"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Wybierz dokładnie to, co chcesz przenieść. Zmiany zostaną zastosowane u wszystkich użytkowników organizacji."
-      ],
-      "Select users to migrate": [
-        "Wybierz użytkowników do migracji"
-      ],
-      "Size": [
-        "Rozmiar"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tego użytkownika nie można zmigrować ze względu na niezgodność platform."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Aby zmigrować tego użytkownika, włącz jego konto w konsoli administracyjnej Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Aby zmigrować tego użytkownika, włącz jego konto w sekcji ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Aby zmigrować tego użytkownika, włącz jego adres w sekcji ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Aby zmigrować tego użytkownika, musi on zaakceptować zaproszenie do dołączenia do ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Aby zmigrować tego użytkownika, cofnij jego archiwizację w konsoli administracyjnej Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Aby zmigrować tego użytkownika, cofnij jego zawieszenie w konsoli administracyjnej Google Workspace."
-      ],
-      "User": [
-        "Użytkownik"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Użytkownicy, którzy zalogowali się na swoje konto ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Co migrujesz?"
-      ],
-      "You": [
-        "Ty"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplikacja desktopowa ${ MAIL_APP_NAME }"
@@ -3307,6 +3188,9 @@
       "Invalid public key file": [
         "Plik klucza publicznego jest nieprawidłowy"
       ],
+      "Invalid URL": [
+        "Adres URL jest nieprawidłowy"
+      ],
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
@@ -3474,6 +3358,9 @@
       ],
       "Some trashed documents could not be loaded": [
         "Nie można było załadować niektórych usuniętych dokumentów"
+      ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
       ],
       "Something went wrong while fetching available domains": [
         "Coś poszło nie tak podczas pobierania dostępnych domen"
@@ -4501,6 +4388,14 @@
         "Kliknij ${ boldExport }, aby wyeksportować plik ICS."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "W toku"
+      ],
+      "Migrated": [
+        "Przeniesione"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Niektóre kontakty (${ totalContactsDiscarded }/${ totalContacts }) nie mogą zostać zaimportowane. Kliknij po szczegóły"
@@ -5179,9 +5074,6 @@
       "Key fingerprint": [
         "Odcisk klucza"
       ],
-      "Keys created": [
-        "Klucze zostały utworzone"
-      ],
       "Label all imported messages as": [
         "Oznacz wszystkie zaimportowane wiadomości etykietą"
       ],
@@ -5683,9 +5575,6 @@
       "Uppercase and lowercase letters": [
         "Wielkie i małe litery"
       ],
-      "User activated": [
-        "Użytkownik został aktywowany"
-      ],
       "username": [
         "nazwa użytkownika"
       ],
@@ -5823,9 +5712,6 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nie zostaniesz obciążony opłatą, jeśli anulujesz przed ${ trialEndsOnFormatted }."
-      ],
-      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
-        "Nie będziesz mieć możliwości udostępniania „${ fileName }” po zmianie dostępu na wyświetlającego. Tylko właściciel może ponownie zmienić Twój dostęp."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Środki otrzymasz 1 miesiąc po zasubskrybowaniu przez Twojego znajomego planu rocznego lub 2 miesiące po zasubskrybowaniu planu miesięcznego."
@@ -10213,6 +10099,9 @@
       ],
       "Name": [
         "Nazwa"
+      ],
+      "Size": [
+        "Rozmiar"
       ],
       "Status": [
         "Status"
