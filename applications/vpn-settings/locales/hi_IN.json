@@ -485,6 +485,9 @@
       "Edit users": [
         "यूजर बदलें"
       ],
+      "Enable": [
+        "सक्षम करें"
+      ],
       "enable desktop notifications": [
         "डेस्कटॉप सूचनाएं सक्षम करें"
       ],
@@ -841,9 +844,6 @@
       ],
       "Remove": [
         "हटाएं"
-      ],
-      "Remove all members": [
-        "सभी सदस्यों को हटाएं"
       ],
       "Remove all other devices": [
         "अन्य सभी डिवाइस हटाएं"
@@ -2020,125 +2020,6 @@
       ],
       "Working with sensitive data?": [
         "संवेदनशील डाटा के साथ काम कर रहे हैं?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "सक्रिय"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "पता पहले से ही आपके संगठन के बाहर के उपयोगकर्ता द्वारा उपयोग किया जा रहा है। कृपया इसे हल करने के लिए ग्राहक सहायता से संपर्क करें"
-      ],
-      "All": [
-        "सभी"
-      ],
-      "Calendar": [
-        "कैलेंडर"
-      ],
-      "Configure migration": [
-        "माइग्रेशन कॉन्फ़िगर करें"
-      ],
-      "Contacts": [
-        "संपर्क"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Google Workspace से ${ BRAND_NAME } तक डेटा माइग्रेशन की स्थिति"
-      ],
-      "Emails": [
-        "ईमेल"
-      ],
-      "Errors": [
-        "त्रुटियाँ"
-      ],
-      "Estimated size": [
-        "अनुमानित साइज़"
-      ],
-      "Find out what can be migrated.": [
-        "पता लगाएं कि क्या माइग्रेट किया जा सकता है।"
-      ],
-      "Has errors": [
-        "त्रुटियां हैं"
-      ],
-      "In progress": [
-        "प्रगति पर"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "सदस्य का पता नहीं मिला। कृपया इसे हल करने के लिए ग्राहक सहायता से संपर्क करें"
-      ],
-      "Migrate": [
-        "माइग्रेट करें"
-      ],
-      "Migrated": [
-        "माइग्रेट किया गया"
-      ],
-      "Migration status": [
-        "माइग्रेशन स्थिति"
-      ],
-      "Missing organization private key": [
-        "अनुपस्थित संगठन निजी चाबी"
-      ],
-      "Missing organization public key": [
-        "अनुपस्थित संगठन सार्वजनिक चाबी"
-      ],
-      "No users to display": [
-        "प्रदर्शित करने के लिए कोई उपयोगकर्ता नहीं"
-      ],
-      "Not activated": [
-        "सक्रिय नहीं"
-      ],
-      "Organization does not have enough seats available": [
-        "संगठन के पास पर्याप्त सीटें उपलब्ध नहीं हैं"
-      ],
-      "Organization does not have enough storage available": [
-        "संगठन के पास पर्याप्त स्टोरेज उपलब्ध नहीं है"
-      ],
-      "Pending": [
-        "लंबित"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "ठीक से चुनें कि आप क्या माइग्रेट करना चाहते हैं। यह सभी संगठन उपयोगकर्ताओं पर लागू होगा।"
-      ],
-      "Select users to migrate": [
-        "माइग्रेट करने के लिए उपयोगकर्ताओं का चयन करें"
-      ],
-      "Size": [
-        "साइज़"
-      ],
-      "Status": [
-        "स्थिति"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "प्लैटफॉर्म की विसंगतियों के कारण इस उपयोगकर्ता को माइग्रेट नहीं किया जा सकता है।"
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, अपने Google Workspace एडमिन कंसोल में उनका खाता सक्षम करें।"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, ${ usersAddressesLink } के तहत उनका खाता सक्षम करें।"
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, ${ usersAddressesLink } के तहत उनका पता सक्षम करें।"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, उन्हें ${ BRAND_NAME } में शामिल होने का अपना न्योता स्वीकार करना होगा।"
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, उन्हें अपने Google Workspace एडमिन कंसोल में अनआर्काइव करें।"
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, उन्हें अपने Google Workspace एडमिन कंसोल में अनसस्पेंड करें।"
-      ],
-      "User": [
-        "उपयोगकर्ता"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "वे उपयोगकर्ता जिन्होंने अपने ${ BRAND_NAME } खाते को एक्सेस किया है"
-      ],
-      "What are you migrating?": [
-        "आप क्या माइग्रेट कर रहे हैं?"
-      ],
-      "You": [
-        "आप"
       ]
     },
     "Browser": {
@@ -4918,6 +4799,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "अमान्य रीसेट टोकन। कृपया पृष्ठ को रीफ्रेश करें और पुनः प्रयास करें।"
       ],
+      "Invalid URL": [
+        "अमान्य यूआरएल"
+      ],
       "Invalid VAT number": [
         "अमान्य वैट नंबर"
       ],
@@ -4936,6 +4820,9 @@
       ],
       "Missing key packet": [
         "लुप्त कुञ्जी खण्ड"
+      ],
+      "Missing signature": [
+        "लापता हस्ताक्षर"
       ],
       "Name already exists": [
         "नाम पहले से मौजूद है"
@@ -5125,6 +5012,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "आपके कुछ लेबल नाम ${ MAIL_APP_NAME } की अधिकतम वर्ण सीमा से अधिक हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
+      ],
+      "Something went wrong": [
+        "कोई गड़बड़ हो गई"
       ],
       "Something went wrong while converting the address": [
         "पता बदलते समय कुछ गलत हो गया"
@@ -6713,6 +6603,14 @@
         "कैलेंडर एक ICS फाइल की तरह निर्यात करने के लिए ${ boldExport } चुनें।"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "प्रगति पर है"
+      ],
+      "Migrated": [
+        "माइग्रेट किया गया"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } में से ${ totalContacts } संपर्क आयात नहीं किए जाएंगे। विवरण के लिए क्लिक करें"
@@ -7209,9 +7107,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "क्या आप वाकई इस उपयोगकर्ता से प्रशासनिक विशेषाधिकार हटाना चाहते हैं?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "क्या आप वाकई इस ग्रुप से सभी सदस्यों को हटाना चाहते हैं?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "क्या वाकई डोमेन ${ boldDomain } हटाना चाहते हैं?"
@@ -8632,6 +8527,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "चूंकि आप एक वफादार उपयोगकर्ता हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "स्मार्ट रूट किया गया: ${ joinedCountries } के माध्यम से।"
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "कुछ ${ BRAND_NAME } ऐप्स शायद अभी सुरक्षा कुंजियों का समर्थन न करें। यदि आप ऑथेंटिकेटर ऐप 2-एफए को बंद करते हैं, तो हो सकता है कि आप उन ऐप्स में साइनइन न कर पाएं।"
@@ -14762,17 +14660,11 @@
       "Make sure you copy the above SCIM token now.": [
         "सुनिश्चित करें कि आप ऊपर दिया गया SCIM टोकन अभी कॉपी कर लें।"
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "जब आपके संगठन के लिए SCIM अक्षम हो जाएगा, **आपके पहचान प्रदाता द्वारा स्वचालित रूप से प्रदान किए गए सभी SCIM उपयोगकर्ता SSO उपयोगकर्ताओं में परिवर्तित कर दिए जाएंगे** और आप उन्हें सीधे ${ BRAND_NAME } सेटिंग्स में संभाल सकेंगे।"
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "विभिन्न सेवाओं में उपयोगकर्ता प्रबंधन को सरल बनाता है। अपने पहचान प्रदाता में उपयोगकर्ताओं को जोड़ें, संपादित करें, और हटाएं, और ये परिवर्तन आपके ${ appName } संगठन में स्वचालित रूप से लागू हो जाएंगे।"
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "जब तक आप अपने पहचान प्रदाता की सेटिंग्स में नया SCIM टोकन दर्ज नहीं करते, तब तक SCIM स्वचालित प्रोविजनिंग अक्षम रहेगी।"
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM बेस यूआरएल और टोकन मिटा दिए जाएंगे।"
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "अपने पहचान प्रदाता के साथ सिंकिंग फिर से सक्षम करने के लिए, आपको SCIM एकीकरण को फिर से पूरा करना होगा।"
@@ -16785,6 +16677,14 @@
         "व्यक्तिगत"
       ]
     },
+    "Table header": {
+      "Size": [
+        "साइज़"
+      ],
+      "Status": [
+        "स्थिति"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "कार्य"
@@ -17838,9 +17738,6 @@
       ],
       "Reject device?": [
         "क्या डिवाइस अस्वीकार करें?"
-      ],
-      "Remove all members?": [
-        "सभी सदस्यों को हटाएं?"
       ],
       "Remove device?": [
         "डिवाइस हटाएं?"

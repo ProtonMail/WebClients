@@ -1893,6 +1893,9 @@
       "Not a valid number": [
         "Neplatné číslo"
       ],
+      "Organization key is not decrypted": [
+        "Klíč organizace není dešifrován"
+      ],
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
@@ -3226,6 +3229,20 @@
       ],
       "Video quality was poor": [
         "Kvalita videa byla špatná"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Klíč organizace neexistuje."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Přístup odepřen, oprávnění správce byla omezena."
+      ],
+      "The organization key must be activated first.": [
+        "Nejprve musí být aktivován klíč organizace."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Pro provedení této operace potřebujete přístup ke klíči organizace."
       ]
     },
     "Placeholder": {

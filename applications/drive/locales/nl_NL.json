@@ -189,6 +189,9 @@
       "Clear browser data": [
         "Wis browsergegevens"
       ],
+      "Clear conversation": [
+        "Gesprek wissen"
+      ],
       "Clear data": [
         "Gegevens wissen"
       ],
@@ -1070,6 +1073,9 @@
       "Stay": [
         "Blijf"
       ],
+      "Stop": [
+        "Stop"
+      ],
       "Stop sharing": [
         "Delen stoppen"
       ],
@@ -1640,125 +1646,6 @@
       ],
       "Yearly": [
         "Jaarlijks"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Geactiveerd"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Het adres is al in gebruik voor een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Calendar": [
-        "Agenda"
-      ],
-      "Configure migration": [
-        "Migratie configureren"
-      ],
-      "Contacts": [
-        "Contacten"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Gegevensmigratiestatus van Google Workspace naar ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-mails"
-      ],
-      "Errors": [
-        "Fouten"
-      ],
-      "Estimated size": [
-        "Geschatte grootte."
-      ],
-      "Find out what can be migrated.": [
-        "Ontdek wat er gemigreerd kan worden."
-      ],
-      "Has errors": [
-        "Bevat fouten"
-      ],
-      "In progress": [
-        "Bezig"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
-      ],
-      "Migrate": [
-        "Migreer"
-      ],
-      "Migrated": [
-        "Gemigreerd"
-      ],
-      "Migration status": [
-        "Migratiestatus"
-      ],
-      "Missing organization private key": [
-        "Ontbrekende privésleutel van de organisatie"
-      ],
-      "Missing organization public key": [
-        "Ontbrekende openbare sleutel van de organisatie"
-      ],
-      "No users to display": [
-        "Geen gebruikers om weer te geven"
-      ],
-      "Not activated": [
-        "Niet geactiveerd"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisatie heeft onvoldoende licenties beschikbaar"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisatie heeft onvoldoende opslagruimte beschikbaar"
-      ],
-      "Pending": [
-        "In behandeling"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
-      ],
-      "Select users to migrate": [
-        "Selecteer gebruikers om te migreren"
-      ],
-      "Size": [
-        "Grootte"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit van het platform."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Om deze gebruiker te migreren, schakelt u diens account in in uw Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Om deze gebruiker te migreren, schakelt u diens account in onder ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Om deze gebruiker te migreren, schakelt u diens adres in onder ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Om deze gebruiker te migreren, moet deze de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Om deze gebruiker te migreren, haalt u deze uit het archief in uw Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Om deze gebruiker te migreren, heft u de schorsing op in uw Google Workspace Admin Console."
-      ],
-      "User": [
-        "Gebruiker"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
-      ],
-      "What are you migrating?": [
-        "Wat migreert u?"
-      ],
-      "You": [
-        "U"
       ]
     },
     "Browser": {
@@ -3757,6 +3644,9 @@
       "Invalid public key file": [
         "Ongeldige openbare sleutel"
       ],
+      "Invalid URL": [
+        "Ongeldige URL"
+      ],
       "Invalid VAT number": [
         "Ongeldig btw-nummer"
       ],
@@ -3950,6 +3840,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
       ],
       "Something went wrong during folder listing": [
         "Er is iets misgegaan tijdens het oplijsten van de mappen"
@@ -5027,6 +4920,14 @@
         "Selecteer ${ boldExport } om de agenda te exporteren als een ICS-bestand."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Bezig"
+      ],
+      "Migrated": [
+        "Gemigreerd"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
@@ -5975,9 +5876,6 @@
       "Key fingerprint": [
         "Digitale vingerafdruk"
       ],
-      "Keys created": [
-        "Sleutels aangemaakt"
-      ],
       "Label all imported messages as": [
         "Label alle geïmporteerde berichten als"
       ],
@@ -6582,6 +6480,9 @@
       "There is nothing to see here": [
         "Er is hier niets te zien"
       ],
+      "Thinking about this": [
+        "Hierover aan het nadenken"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Deze actie verwijdert de link en trekt de toegang voor alle gebruikers in."
       ],
@@ -6796,9 +6697,6 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Gebruik dit formulier om ons in te lichten over ongepaste, illegale of op een andere manier schadelijke bestanden. U staat op het punt om te melden:"
-      ],
-      "User activated": [
-        "Gebruiker geactiveerd"
       ],
       "username": [
         "gebruikersnaam"
@@ -7022,9 +6920,6 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
-      ],
-      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
-        "U kunt \"${ fileName }\" niet delen na het wijzigen van de toegang tot 'alleen-lezer'. Alleen de eigenaar kan uw toegang opnieuw wijzigen."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "U ontvangt het tegoed 1 maand nadat uw vriend(in) zich abonneert op een jaarlijks abonnement, en 2 maanden nadat zij zich abonneren op een maandelijks abonnement."
@@ -8291,6 +8186,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licenties"
+      ],
+      "${ price } per seat": [
+        "${ price } per licentie"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licentie",
@@ -10677,6 +10575,9 @@
       "Anytown": [
         "Willekeurige stad"
       ],
+      "Ask anything…": [
+        "Vraag alles..."
+      ],
       "Choose password": [
         "Kies wachtwoord"
       ],
@@ -12361,6 +12262,9 @@
       "Name": [
         "Naam"
       ],
+      "Size": [
+        "Grootte"
+      ],
       "Status": [
         "Status"
       ],
@@ -13399,9 +13303,6 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "We konden niet verifiëren dat een anonieme gebruiker deze map heeft opgeladen."
       ],
-      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "We konden niet bevestigen dat het bestand is geüpload door ${ claimedContentAuthor }. De reden is: ${ activeRevision.contentAuthor.error.error }"
-      ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "We konden niet bevestigen dat de naam is aangemaakt of gewijzigd door ${ claimedNameAuthor }. De reden is: ${ node.nameAuthor.error.error }"
       ],
@@ -13636,6 +13537,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
       ]

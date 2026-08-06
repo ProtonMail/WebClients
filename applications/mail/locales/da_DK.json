@@ -1523,7 +1523,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1659,6 +1660,9 @@
       ],
       "View contact details": [
         "Vis kontaktoplysninger"
+      ],
+      "View guide": [
+        "Vis guide"
       ],
       "View headers": [
         "Vis headeroplysninger"
@@ -2235,128 +2239,6 @@
       ],
       "Yearly": [
         "Årligt"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Aktiveret"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Configure migration": [
-        "Konfigurer migrering"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Kontakt din administrator for at starte en migration."
-      ],
-      "Contacts": [
-        "Kontakter"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status for datamigration fra Google Workspace til ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-mails"
-      ],
-      "Errors": [
-        "Fejl"
-      ],
-      "Estimated size": [
-        "Anslået størrelse"
-      ],
-      "Find out what can be migrated.": [
-        "Find ud af hvad der kan migreres."
-      ],
-      "Has errors": [
-        "Fejlbehæftet"
-      ],
-      "In progress": [
-        "I gang"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adresse for medlem ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
-      ],
-      "Migrate": [
-        "Migrer"
-      ],
-      "Migrated": [
-        "Migreret"
-      ],
-      "Migration status": [
-        "Migrationsstatus"
-      ],
-      "Missing organization private key": [
-        "Mangler organisationens private nøgle"
-      ],
-      "Missing organization public key": [
-        "Mangler organisationens offentlige nøgle"
-      ],
-      "No users to display": [
-        "Ingen brugere at vise"
-      ],
-      "Not activated": [
-        "Ikke aktiveret"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisationen har ikke nok ledige pladser"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisationen har ikke tilstrækkelig ledig lagerplads"
-      ],
-      "Pending": [
-        "Afventer"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Vælg præcis det du gerne vil migrere. Det vil gælde for brugere i organisationen."
-      ],
-      "Select users to migrate": [
-        "Vælg brugere at migrere"
-      ],
-      "Size": [
-        "Størrelse"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "For at migrere denne bruger skal du aktivere vedkommendes adresse under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "For at migrere denne bruger skal vedkommende acceptere sin invitation til at tilmelde sig ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "For at migrere denne bruger skal du fjerne vedkommende fra arkivet i din Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "For at migrere denne bruger skal du ophæve suspenderingen af vedkommende i din Google Workspace Admin Console."
-      ],
-      "User": [
-        "Bruger"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
-      ],
-      "What are you migrating?": [
-        "Hvad migrerer du?"
-      ],
-      "You": [
-        "Dig"
       ]
     },
     "Browser": {
@@ -5065,6 +4947,9 @@
       "Invalid public key file": [
         "Ugyldig offentlig nøglefil"
       ],
+      "Invalid URL": [
+        "Ugyldig URL"
+      ],
       "Invalid VAT number": [
         "Ugyldigt VAT-/momsnummer"
       ],
@@ -5321,6 +5206,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Something went wrong": [
+        "Noget gik galt"
       ],
       "Something went wrong while converting the address": [
         "Noget gik galt under konverteringen af adressen"
@@ -6753,6 +6641,14 @@
         "Flere importindstillinger"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "I gang"
+      ],
+      "Migrated": [
+        "Migreret"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
@@ -7896,8 +7792,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -7940,9 +7835,6 @@
       ],
       "Key fingerprint": [
         "Nøglefingeraftryk"
-      ],
-      "Keys created": [
-        "Nøgler oprettet"
       ],
       "Label all imported messages as": [
         "Mærk alle importerede beskeder som"
@@ -8354,6 +8246,18 @@
         "Læs ${ count } e-mail på skærmen",
         "Læs ${ count } e-mails på skærmen"
       ],
+      "Read your ${ count } filter": [
+        "Læs ${ count } filter",
+        "Læs dine ${ count } filtre"
+      ],
+      "Read your ${ count } folder": [
+        "Læs ${ count } mappe",
+        "Læs dine ${ count } mapper"
+      ],
+      "Read your ${ count } label": [
+        "Læs ${ count } etiket",
+        "Læs dine ${ count } etiketter"
+      ],
       "Recipient: ": [
         "Modtager: "
       ],
@@ -8697,6 +8601,9 @@
       "This file is too large to preview": [
         "Denne fil er for stor til forhåndsvisning"
       ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Denne Gmail-adresse er registreret med en anden ${ BRAND_NAME }-konto (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, og andre). Vi arbejder på at forbedre forbindelsen, men på nuværende tidspunkt skal du gennem nogle trin."
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Denne invitation er gemt i en deaktiveret kalender."
       ],
@@ -8979,9 +8886,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Brug tastaturgenveje for at håndtere dine e-mails hurtigere."
-      ],
-      "User activated": [
-        "Bruger aktiveret"
       ],
       "username": [
         "brugernavn"
@@ -15449,6 +15353,9 @@
       "Name": [
         "Navn"
       ],
+      "Size": [
+        "Størrelse"
+      ],
       "Status": [
         "Status"
       ],
@@ -15996,6 +15903,9 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Bemærk: Denne Gmail er forbundet en anden ${ BRAND_NAME }-konto"
       ],
       "Help and feedback": [
         "Hjælp og feedback"
@@ -16836,7 +16746,7 @@
     },
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
-        "Opgradér til en understøttet plan for at bruge administratorroller."
+        "Opgrader til en understøttet plan for at bruge administratorroller."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brugeren har accepteret invitationen."

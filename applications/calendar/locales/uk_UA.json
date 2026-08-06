@@ -1511,125 +1511,6 @@
         "Щороку"
       ]
     },
-    "BOSS": {
-      "Activated": [
-        "Активовано"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Адреса вже використовується користувачем поза межами вашої організації. Будь ласка, зверніться до клієнтської підтримки, щоб вирішити це"
-      ],
-      "All": [
-        "Усі"
-      ],
-      "Calendar": [
-        "Календар"
-      ],
-      "Configure migration": [
-        "Налаштувати міграцію"
-      ],
-      "Contacts": [
-        "Контакти"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Статус міграції даних з Google Workspace до ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Електронна пошта"
-      ],
-      "Errors": [
-        "Помилки"
-      ],
-      "Estimated size": [
-        "Оціночний розмір"
-      ],
-      "Find out what can be migrated.": [
-        "Дізнайтеся, що можна мігрувати."
-      ],
-      "Has errors": [
-        "Містить помилки"
-      ],
-      "In progress": [
-        "У процесі"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Адресу учасника не знайдено. Будь ласка, зверніться до клієнтської підтримки, щоб вирішити це"
-      ],
-      "Migrate": [
-        "Мігрувати"
-      ],
-      "Migrated": [
-        "Мігровано"
-      ],
-      "Migration status": [
-        "Статус міграції"
-      ],
-      "Missing organization private key": [
-        "Відсутній приватний ключ організації"
-      ],
-      "Missing organization public key": [
-        "Відсутній відкритий ключ організації"
-      ],
-      "No users to display": [
-        "Немає користувачів для відображення"
-      ],
-      "Not activated": [
-        "Не активовано"
-      ],
-      "Organization does not have enough seats available": [
-        "В організації недостатньо вільних місць"
-      ],
-      "Organization does not have enough storage available": [
-        "В організації недостатньо вільного обсягу сховища"
-      ],
-      "Pending": [
-        "У черзі"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Виберіть саме те, що ви хочете мігрувати. Це буде застосовано до всіх користувачів організації."
-      ],
-      "Select users to migrate": [
-        "Виберіть користувачів для міграції"
-      ],
-      "Size": [
-        "Розмір"
-      ],
-      "Status": [
-        "Статус"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Цього користувача неможливо мігрувати через несумісність платформ."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Щоб мігрувати цього користувача, увімкніть його обліковий запис у консолі адміністратора Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Щоб мігрувати цього користувача, увімкніть його обліковий запис у розділі ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Щоб мігрувати цього користувача, увімкніть його адресу в розділі ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Щоб мігрувати цього користувача, він має прийняти запрошення приєднатися до ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Щоб мігрувати цього користувача, розархівуйте його в консолі адміністратора Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Щоб мігрувати цього користувача, розблокуйте його в консолі адміністратора Google Workspace."
-      ],
-      "User": [
-        "Користувач"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Користувачі, які ввійшли у свій обліковий запис ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Що ви мігруєте?"
-      ],
-      "You": [
-        "Ви"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
@@ -3989,6 +3870,9 @@
       "Invalid public key file": [
         "Недійсний файл відкритого ключа"
       ],
+      "Invalid URL": [
+        "Недійсна URL-адреса"
+      ],
       "Invalid VAT number": [
         "Недійсний номер ПДВ"
       ],
@@ -4222,6 +4106,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назви деяких ваших міток перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
+      ],
+      "Something went wrong": [
+        "Щось пішло не так"
       ],
       "Something went wrong while fetching available domains": [
         "Під час отримання доступних доменів сталася помилка"
@@ -5348,6 +5235,14 @@
         "Виберіть ${ boldExport }, щоб експортувати календар як файл ICS."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "У процесі"
+      ],
+      "Migrated": [
+        "Мігровано"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } із ${ totalContacts } контактів не будуть імпортовані. Натисніть для подробиць"
@@ -6119,9 +6014,6 @@
       "Key fingerprint": [
         "Цифровий відбиток ключа"
       ],
-      "Keys created": [
-        "Ключі створено"
-      ],
       "Label all imported messages as": [
         "Позначити всі імпортовані повідомлення"
       ],
@@ -6655,9 +6547,6 @@
       ],
       "Uppercase and lowercase letters": [
         "Великі та малі літери"
-      ],
-      "User activated": [
-        "Користувач активований"
       ],
       "username": [
         "ім'я користувача"
@@ -12337,6 +12226,9 @@
       ],
       "Name": [
         "Назва"
+      ],
+      "Size": [
+        "Розмір"
       ],
       "Status": [
         "Статус"

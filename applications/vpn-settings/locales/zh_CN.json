@@ -491,6 +491,9 @@
       "Edit users": [
         "编辑用户"
       ],
+      "Enable": [
+        "启用"
+      ],
       "enable desktop notifications": [
         "开启推送通知"
       ],
@@ -859,9 +862,6 @@
       ],
       "Remove": [
         "移除"
-      ],
-      "Remove all members": [
-        "删除所有成员"
       ],
       "Remove all other devices": [
         "移除所有其他设备"
@@ -2042,125 +2042,6 @@
       ],
       "Working with sensitive data?": [
         "正在处理敏感数据？"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "已激活"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "该地址已被您组织外的用户使用，请联系客服以解决此问题。"
-      ],
-      "All": [
-        "全部"
-      ],
-      "Calendar": [
-        "日历"
-      ],
-      "Configure migration": [
-        "配置迁移"
-      ],
-      "Contacts": [
-        "联系人"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "从 Google Workspace 到 ${ BRAND_NAME } 的数据迁移状态"
-      ],
-      "Emails": [
-        "邮件"
-      ],
-      "Errors": [
-        "错误"
-      ],
-      "Estimated size": [
-        "预计大小"
-      ],
-      "Find out what can be migrated.": [
-        "了解可以迁移哪些内容"
-      ],
-      "Has errors": [
-        "出错啦"
-      ],
-      "In progress": [
-        "进行中"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "未找到成员地址，请联系客服解决此问题。"
-      ],
-      "Migrate": [
-        "迁移"
-      ],
-      "Migrated": [
-        "已迁移"
-      ],
-      "Migration status": [
-        "迁移状态"
-      ],
-      "Missing organization private key": [
-        "缺少组织私钥"
-      ],
-      "Missing organization public key": [
-        "缺少组织公钥"
-      ],
-      "No users to display": [
-        "无可显示的用户"
-      ],
-      "Not activated": [
-        "未激活"
-      ],
-      "Organization does not have enough seats available": [
-        "组织可用席位不足"
-      ],
-      "Organization does not have enough storage available": [
-        "组织可用存储空间不足"
-      ],
-      "Pending": [
-        "待处理"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "精确选择您要迁移的内容，这将适用于所有组织用户。"
-      ],
-      "Select users to migrate": [
-        "请选择要迁移的用户"
-      ],
-      "Size": [
-        "大小"
-      ],
-      "Status": [
-        "状态"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "由于平台不兼容，无法迁移此用户。"
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "要迁移此用户，请在 Google Workspace 管理控制台中启用其账户。"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其账户。"
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其地址。"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "要迁移此用户，该用户需要接受加入 ${ BRAND_NAME } 的邀请。"
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "要迁移此用户，请在 Google Workspace 管理控制台中取消归档该用户。"
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "要迁移此用户，请在 Google Workspace 管理控制台中取消暂停该用户。"
-      ],
-      "User": [
-        "用户"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "已访问过其 ${ BRAND_NAME } 账户的用户"
-      ],
-      "What are you migrating?": [
-        "您需要迁移什么？"
-      ],
-      "You": [
-        "您"
       ]
     },
     "Browser": {
@@ -4931,6 +4812,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "重置令牌无效，请刷新页面后重试。"
       ],
+      "Invalid URL": [
+        "链接无效"
+      ],
       "Invalid VAT number": [
         "无效增值税号"
       ],
@@ -4948,6 +4832,9 @@
       ],
       "Missing key packet": [
         "缺少密钥数据包"
+      ],
+      "Missing signature": [
+        "缺少签名"
       ],
       "Name already exists": [
         "名称已存在"
@@ -5134,6 +5021,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Something went wrong": [
+        "出了些问题"
       ],
       "Something went wrong while converting the address": [
         "转换地址时出错"
@@ -6713,6 +6603,14 @@
         "选择 ${ boldExport } 将日历作为 ICS 文件下载."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "正在处理"
+      ],
+      "Migrated": [
+        "已迁移"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 联系人将不会被导入。点击查看详情"
@@ -7189,9 +7087,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "您确定要移除此用户的管理权限吗？"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "您确定要从该组中移除所有成员吗？"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "确定要移除域名 ${ boldDomain } 吗？"
@@ -8680,6 +8575,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "智能路由经由：${ joinedCountries }。"
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "某些 ${ BRAND_NAME } 应用可能尚不支持安全密钥。如果您关闭验证器的 2FA，您可能无法登录这些应用。"
@@ -14782,17 +14680,11 @@
       "Make sure you copy the above SCIM token now.": [
         "请确保现在就复制上述 SCIM 令牌。"
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "一旦组织禁用 SCIM，**身份提供商自动提供的所有 SCIM 用户都将转换为 SSO 用户**，您可以直接在 ${ BRAND_NAME } 设置中对其进行管理。"
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "简化跨不同服务的用户管理。在身份提供商中添加、编辑和删除用户，这些更改将自动应用于 ${ appName } 组织。"
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "在身份提供商的设置中输入新的 SCIM 令牌之前，SCIM 自动配置将被禁用。"
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM 基本 URL 和令牌将被删除。"
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "要重新启用与身份提供商的同步，需要再次完成 SCIM 集成。"
@@ -16769,6 +16661,14 @@
         "面向个人"
       ]
     },
+    "Table header": {
+      "Size": [
+        "大小"
+      ],
+      "Status": [
+        "状态"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "操作"
@@ -17844,9 +17744,6 @@
       ],
       "Reject device?": [
         "剔除设备？"
-      ],
-      "Remove all members?": [
-        "移除全部成员？"
       ],
       "Remove Always-on VPN device profile": [
         "移除始终开启 VPN 设备配置文件"

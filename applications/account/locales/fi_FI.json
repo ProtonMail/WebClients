@@ -729,6 +729,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable": [
+        "Käytä"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Ota ${ darkWebMonitoring } käyttöön"
       ],
@@ -1284,9 +1287,6 @@
       "Remove": [
         "Poista"
       ],
-      "Remove all members": [
-        "Poista kaikki jäsenet"
-      ],
       "Remove all other devices": [
         "Poista kaikki muut laitteet"
       ],
@@ -1754,6 +1754,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Ota ${ PROTON_SENTINEL_NAME } käyttöön päivittämällä tilauksesi"
+      ],
+      "Upgrade to Professional": [
+        "Päivitä Professionaliin"
       ],
       "Upgrade to view all": [
         "Näytä kaikki päivittämällä tilauksesi"
@@ -2919,437 +2922,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Henkilökohtainen sähköpostiosoitteenne on olennainen osa digitaalista henkilöllisyyttänne. Puhelinnumeron tavoin sitä ei anneta kaikille vastaantulijoille. Siksi on hyödyllistä käyttää eri tarkoituksiin muita sähköpostiosoitteita."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } / ${ totalCount }"
-      ],
-      "Account connected": [
-        "Tili yhdistetty"
-      ],
-      "Account disconnected": [
-        "Tilin yhteys katkaistu"
-      ],
-      "Accounts migrated": [
-        "Siirretyt tilit"
-      ],
-      "Activated": [
-        "Aktivoitu"
-      ],
-      "Add domain": [
-        "Lisää verkkotunnus"
-      ],
-      "Add users": [
-        "Lisää käyttäjiä"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Lisää organisaatiosi sähköpostin verkkotunnus palveluun ${ BRAND_NAME }."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Osoite on jo organisaationne ulkopuolisen käyttäjän käytössä. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
-      ],
-      "All": [
-        "Kaikki"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Kaikki siirretyt käyttäjätilit ovat valmiina kutsuttaviksi ${ BRAND_NAME }-organisaatioosi."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "Tapahtui tuntematon virhe. Päivitä sivu ja yritä uudelleen"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "Haluatko varmasti jatkaa ilman ${ withoutString } ja ${ notMigratedOthers } muuta?",
-        "Haluatko varmasti jatkaa ilman ${ withoutString } ja ${ notMigratedOthers } muuta?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "Haluatko varmasti jatkaa ilman ${ withoutString }?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Haluatteko varmasti jatkaa? Käyttäjien, jotka eivät ole lunastaneet tiliään ennen siirron viimeistelyä, on pyydettävä salasanan nollausta ${ BRAND_NAME }-organisaationne ylläpitäjältä."
-      ],
-      "Authenticate": [
-        "Tunnistaudu"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Todentakaa Google Workspace -tilinne"
-      ],
-      "Calendar": [
-        "Kalenteri"
-      ],
-      "Collapse invitation message": [
-        "Piilota kutsuviesti"
-      ],
-      "Collapse step": [
-        "Kutista vaihe"
-      ],
-      "Configure domain": [
-        "Määritä verkkotunnus"
-      ],
-      "Configure migration": [
-        "Määritä siirto"
-      ],
-      "Configure users": [
-        "Määritä käyttäjiä"
-      ],
-      "Configure your domain": [
-        "Määritä verkkotunnuksenne"
-      ],
-      "Confirm": [
-        "Vahvista"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Ota yhteyttä ylläpitäjään migraation aloittamiseksi."
-      ],
-      "Contacts": [
-        "Yhteystiedot"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Kopioi alla oleva koodi ja liitä se verkkotunnuspalvelimesi DNS-osioon."
-      ],
-      "Creating accounts": [
-        "Luodaan tilejä"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Tietojen siirron tila kohteesta Google Workspace kohteeseen ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "Poista kaikki olemassa olevat MX-koodit, kopioi sitten alla olevat koodit ja liitä ne verkkotunnuspalvelimesi DNS-osioon."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM lisää digitaalisen allekirjoituksen jokaiseen sähköpostiin, jotta vastaanottajat voivat varmistaa, että viesti on todella peräisin verkkotunnuksestanne eikä sitä ole muutettu matkalla. Ilman sitä viestejä saatetaan pitää vähemmän luotettavina."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC perustuu SPF- ja DKIM-tekniikoihin kertomalla vastaanottaville palvelimille, miten käsitellä viestejä, jotka eivät läpäise näitä tarkistuksia. Se auttaa suojaamaan verkkotunnustanne tekeytymiseltä ja parantaa sähköpostien yleistä toimitusvarmuutta."
-      ],
-      "Domain added": [
-        "Verkkotunnus lisätty"
-      ],
-      "Domain provider": [
-        "Verkkotunnuksen tarjoaja"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Etkö tiedä mistä aloittaa? Katso, kuinka voit päivittää DNS-tietosi kohteessa ${ registrarLink }"
-      ],
-      "Emails": [
-        "Sähköpostit"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Varmista, että sähköpostinne saapuvat saapuneet-kansioon, eivätkä roskapostikansioon. SPF-tietueen päivittäminen antaa käyttäjille mahdollisuuden lähettää sähköposteja sekä ${ BRAND_NAME }- että Google-palveluista samanaikaisesti siirron ajan."
-      ],
-      "Errors": [
-        "Virheet"
-      ],
-      "Estimated size": [
-        "Arvioitu koko"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Kaikki saavat saman kutsulinkin. He vierailevat sivulla, syöttävät sähköpostiosoitteensa ja saavat vahvistuskoodin Gmail-postilaatikkoonsa. Sieltä he asettavat oman ${ BRAND_NAME }-salasanansa."
-      ],
-      "Expand invitation message": [
-        "Laajenna kutsuviesti"
-      ],
-      "Expand step": [
-        "Laajenna vaihe"
-      ],
-      "Failed to load OAuth": [
-        "OAuthin lataaminen epäonnistui"
-      ],
-      "Final step": [
-        "Viimeinen vaihe"
-      ],
-      "Find out what can be migrated.": [
-        "Ota selvää, mitä voidaan siirtää."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Hanki ohjeita ja hyödyllisiä vinkkejä muille verkkotunnuksen tarjoajille täältä: ${ here }"
-      ],
-      "Going private": [
-        "Yksityiseksi meneminen"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Google Marketplace -sovellus tietojen kopioimiseksi ${ BRAND_NAME }-palveluun"
-      ],
-      "Google Workspace account": [
-        "Google Workspace -tili"
-      ],
-      "Has errors": [
-        "Virheitä"
-      ],
-      "Import completed successfully": [
-        "Tuonti valmistui onnistuneesti"
-      ],
-      "Import details": [
-        "Tuonnin tiedot"
-      ],
-      "In progress": [
-        "Käynnissä"
-      ],
-      "Install app": [
-        "Asenna sovellus"
-      ],
-      "Install migration app": [
-        "Asenna migraatio-sovellus"
-      ],
-      "Invitation link": [
-        "Kutsulinkki"
-      ],
-      "Invitation message": [
-        "Kutsuviesti"
-      ],
-      "invite link": [
-        "kutsulinkki"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Näiden muutosten leviämisessä voi kestää jopa 24 tuntia."
-      ],
-      "Loading your organization data": [
-        "Ladataan organisaationne tietoja"
-      ],
-      "Mail": [
-        "Sähköposti"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Jäsenen osoitetta ei löytynyt. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
-      ],
-      "Migrate": [
-        "Siirrä"
-      ],
-      "Migrate accounts": [
-        "Siirrä tilejä"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Siirrä tilit palveluun ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Siirrä Google Workspace -palvelusta"
-      ],
-      "Migrated": [
-        "Siirretty"
-      ],
-      "Migrated accounts": [
-        "Siirretyt tilit"
-      ],
-      "Migration includes": [
-        "Migraatio sisältää"
-      ],
-      "Migration started for ${ n } user": [
-        "Siirto aloitettu ${ n } käyttäjälle",
-        "Siirto aloitettu ${ n } käyttäjälle"
-      ],
-      "Migration status": [
-        "Siirron tila"
-      ],
-      "Migration summary": [
-        "Siirron yhteenveto"
-      ],
-      "Missing organization private key": [
-        "Organisaation yksityinen avain puuttuu"
-      ],
-      "Missing organization public key": [
-        "Organisaation julkinen avain puuttuu"
-      ],
-      "More details": [
-        "Enemmän tietoja"
-      ],
-      "Need help?": [
-        "Tarvitsetko apua?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Virheen tietoja ei ole saatavilla. Ottakaa yhteyttä asiakaspalveluun saadaksenne lisätietoja"
-      ],
-      "No users to display": [
-        "Ei näytettäviä käyttäjiä"
-      ],
-      "Not activated": [
-        "Ei aktivoitu"
-      ],
-      "Not confirmed": [
-        "Ei vahvistettu"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Eikö tunnistettu oikein? Valitse palveluntarjoajasi luettelosta."
-      ],
-      "Onboard your team": [
-        "Ota tiimisi mukaan"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Kun olemme vahvistaneet, että sähköpostit reititetään osoitteeseen ${ BRAND_NAME }, siirto viimeistellään. Saat vahvistussähköpostin, kun tämä tapahtuu. Tässä prosessissa voi kestää jopa 24 tuntia."
-      ],
-      "Organization does not have enough seats available": [
-        "Organisaatiolla ei ole tarpeeksi paikkoja saatavilla"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisaatiolla ei ole tarpeeksi tallennustilaa"
-      ],
-      "Pending": [
-        "Odottaa"
-      ],
-      "Please don’t close or refresh this window.": [
-        "Älä sulje tai päivitä tätä ikkunaa."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Todenna Google Workspace -tilisi uudelleen siirron aloittamiseksi"
-      ],
-      "Refresh": [
-        "Päivitä"
-      ],
-      "Select at least one user to start a migration": [
-        "Valitse vähintään yksi käyttäjä siirron aloittamiseksi"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Valitse tarkalleen, mitä haluat siirtää. Tämä koskee kaikkia organisaation käyttäjiä."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Valitse tilit, jotka haluat tuoda palveluun ${ BRAND_NAME }. Voit siirtää koko organisaatiosi tänään tai aloittaa pienestä ja tuoda loput myöhemmin, kun olette valmiita."
-      ],
-      "Select users to migrate": [
-        "Valitse siirrettävät käyttäjät"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Määritä turvallinen lähetys (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Määritä turvallinen lähetys (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Määritä turvallinen lähetys (SPF)"
-      ],
-      "Settings": [
-        "Asetukset"
-      ],
-      "Sign in to Google Workspace": [
-        "Kirjaudu Google Workspace -palveluun"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Kirjaudu sisään Google Workspace -järjestelmänvalvojan tilillä kohteeseen ${ BRAND_NAME } määrittääksesi siirron."
-      ],
-      "Size": [
-        "Koko"
-      ],
-      "Skip": [
-        "Ohita"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "Ohitettiin ${ count } yhteystieto yhteensopimattomuuden vuoksi",
-        "Ohitettiin ${ count } yhteystietoa yhteensopimattomuuksien vuoksi"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "Ohitettiin ${ count } sähköposti yhteensopimattomuuden vuoksi",
-        "Ohitettiin ${ count } sähköpostia yhteensopimattomuuksien vuoksi"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "Ohitettiin ${ count } tapahtuma yhteensopimattomuuden vuoksi",
-        "Ohitettiin ${ count } tapahtumaa yhteensopimattomuuksien vuoksi"
-      ],
-      "Some accounts are not claimed": [
-        "Joitakin tilejä ei ole lunastettu"
-      ],
-      "Some members weren't migrated": [
-        "Joitakin jäseniä ei siirretty"
-      ],
-      "Status": [
-        "Tila"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tätä käyttäjää ei voida siirtää alustojen yhteensopimattomuuden vuoksi."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Tuodaksesi organisaatiosi tiedot palveluun ${ BRAND_NAME }, asenna ${ BRAND_NAME } Easy Switch Google Workspace Marketplace -sivustolta. Palaa asennuksen jälkeen takaisin tähän jatkaaksesi."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "Viimeistele siirto varmistamalla, että säilytät vain ${ BRAND_NAME } MX -koodeja."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Siirtääksesi tämän käyttäjän, ota hänen tilinsä käyttöön Google Workspace -hallintakonsolissa."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Voit siirtää tämän käyttäjän ottamalla hänen tilinsä käyttöön kohdassa ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Siirtääksesi tämän käyttäjän, ota hänen osoitteensa käyttöön kohdassa ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Jotta tämä käyttäjä voidaan siirtää, hänen on hyväksyttävä kutsunsa liittyä ${ BRAND_NAME }:iin."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Voit siirtää tämän käyttäjän poistamalla hänet arkistosta Google Workspace -hallintakonsolissa."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Voit siirtää tämän käyttäjän poistamalla hänen jäädytyksensä Google Workspace -hallintakonsolissa."
-      ],
-      "Update records for receiving": [
-        "Päivitä tietueet vastaanottamista varten"
-      ],
-      "User": [
-        "Käyttäjä"
-      ],
-      "Users activated": [
-        "Käyttäjää aktivoitu"
-      ],
-      "Users migrated": [
-        "Käyttäjät siirretty"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Käyttäjät, jotka ovat käyttäneet ${ BRAND_NAME }-tiliään"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Käyttäjien, jotka eivät ole ottaneet tiliään käyttöön ennen siirron viimeistelyä, on pyydettävä salasanan nollausta ${ BRAND_NAME }-organisaationsa järjestelmänvalvojalta."
-      ],
-      "Verified": [
-        "Vahvistettu"
-      ],
-      "Verify installation": [
-        "Vahvista asennus"
-      ],
-      "Verify your domain": [
-        "Vahvista verkkotunnuksesi"
-      ],
-      "Verify your domain to start a migration": [
-        "Varmista verkkotunnuksesi aloittaaksesi siirron"
-      ],
-      "Waiting for MX...": [
-        "Odotetaan MX-tietoja..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Asennusta ei voitu vahvistaa. Tarkistakaa, että olette asentaneet sen Google Workspace -tilillenne, ja yrittäkää uudelleen."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Olemme siirtymässä käyttämään suojattua ${ BRAND_NAME }-sähköpostipalvelua.\nJa ${ BRAND_NAME }-tilisi on valmis otettavaksi käyttöön.\nNapsauta linkkiä ${ inviteLink }.\nSyötä sähköpostiosoitteesi, niin lähetämme koodin Gmail-osoitteeseesi.\nAseta sen avulla salasanasi – ja ${ BRAND_NAME }-tili on käytettävissäsi.\nJonkin aikaa molemmat toimivat rinnakkain: ${ BRAND_NAME } ja Gmail.\nSitten, kun kaikki ovat tehneet siirron, poistamme Gmailin käytöstä. Muistutamme sinua ennen kuin se tapahtuu."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Olemme huomanneet, että jotkut käyttäjät eivät ole lunastaneet ${ BRAND_NAME }-tilejään."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "Luomme parhaillaan tilejäsi ja tuomme tietosi järjestelmään, jotta tiimilläsi on kaikki tarvittava käytettävissään, kun he alkavat käyttää suojattua ${ BRAND_NAME } -tiliään."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Otamme käyttöön päästä päähän -salauksen kaikille käyttäjille. Jokainen sähköposti ja jokainen tapahtuma on nyt yksin sinun. Vain tiimisi voi nähdä ne. Emme me, eikä kukaan muu."
-      ],
-      "What are you migrating?": [
-        "Mitä olet siirtämässä?"
-      ],
-      "You": [
-        "Sinä"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "Et voi kopioida näiden käyttäjien tietoja myöhemmin."
-      ],
-      "You're all set!": [
-        "Kaikki on kunnossa!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Olet melkein valmis. Sinun on määritettävä verkkotunnuksesi, jotta voit vastaanottaa sähköpostisi suoraan palveluun ${ BRAND_NAME }. Kun tämä on vahvistettu, tiimisi lakkaa vastaanottamasta uusia sähköposteja Gmailiin ja siirto on valmis."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Nykyinen tilauksenne sallii enintään ${ maxMembers } käyttäjän. Voit siirtää lisää käyttäjiä lisäämällä käyttöpaikkoja tilaukseenne.",
-        "Nykyinen tilauksenne sallii enintään ${ maxMembers } käyttäjää. Voit siirtää lisää käyttäjiä lisäämällä käyttöpaikkoja tilaukseenne."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "Verkkotunnuksesi määritykset sisältävät edelleen toisen palveluntarjoajan MX-koodit."
       ]
     },
     "breadcrumb": {
@@ -7629,6 +7201,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
       ],
+      "Something went wrong": [
+        "Jotain meni pieleen"
+      ],
       "Something went wrong while converting the address": [
         "Jotain meni vikaan muutettaessa osoitetta"
       ],
@@ -8699,11 +8274,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Haluatko varmasti poistaa suojausavaimen ${ name }?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Anna PIN-koodisi aina, kun käytät suojausavainta ${ BRAND_NAME } -palvelun kanssa, jos avain tukee sitä. Tämä koskee vain avaimia, joille on määritetty PIN-koodi."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Liitä ${ BRAND_NAME }-tiliisi liitetty suojausavain."
       ],
       "Insert your security key into your device.": [
         "Aseta turva-avain laitteeseesi."
+      ],
+      "PIN requirement for security keys disabled": [
+        "PIN-koodin vaatimus suojausavaimille poistettu käytössä"
+      ],
+      "PIN requirement for security keys enabled": [
+        "PIN-koodin vaatimus suojausavaimille käytössä"
+      ],
+      "Require PIN for security key": [
+        "Vaadi PIN-koodi suojausavaimelle"
       ],
       "Security key": [
         "Suojausavain"
@@ -10406,9 +9993,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Haluatko varmasti poistaa ylläpito-oikeudet käyttäjältä?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Haluatko varmasti poistaa kaikki jäsenet tästä ryhmästä?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Haluatko varmasti poistaa verkkotunnuksen ${ boldDomain }?"
       ],
@@ -10477,6 +10061,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "Saatavilla alustoille macOS, Windows ja Linux."
+      ],
+      "Available on VPN Professional": [
+        "Saatavilla VPN Professional-tilauksella"
       ],
       "Awaiting transaction": [
         "Odotetaan siirtoa"
@@ -10966,6 +10553,9 @@
       ],
       "Enable email notifications": [
         "Ota sähköposti-ilmoitukset käyttöön"
+      ],
+      "Enable groups to streamline access control": [
+        "Ota käyttöön ryhmät käyttöoikeuksien hallinnan tehostamiseksi"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Suojaaa organisaatiotasi ottamalla kertakirjautuminen käyttöön"
@@ -11599,6 +11189,9 @@
       ],
       "Learn more about Gateways": [
         "Lue lisää yhdyskäytävistä"
+      ],
+      "Learn more about groups": [
+        "Lue lisää ryhmistä"
       ],
       "learn more about Sieve programming language": [
         "lue lisää Sieve-ohjelmointikielestä"
@@ -12361,6 +11954,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Koska olet uskollinen käyttäjä, tililläsi on lisäominaisuuksia."
       ],
+      "Smart Routed through a different country.": [
+        "Älykäs reititys eri maan kautta."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Älykäs reititys seuraavien maiden kautta: ${ joinedCountries }."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "SMTP-lähetyksen avulla kolmannen osapuolen palvelut tai laitteet voivat lähettää sähköpostia ${ MAIL_APP_NAME }-palvelun kautta omien verkkotunnustenne osoitteista."
       ],
@@ -12901,11 +12500,23 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
       ],
+      "Upgrade now to monitor your team's account safety.": [
+        "Päivitä nyt valvoaksesi tiimisi tilin turvallisuutta."
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Päivitä nyt nähdäksesi ${ PASS_APP_NAME }:n toiminta koko organisaatiossasi."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Päivitä tai tyhjennä tilaa milloin tahansa tuodaksesi loputkin"
       ],
+      "Upgrade required": [
+        "Tilauksen päivitys vaaditaan"
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Päivittäkää tilauksenne lisätäksenne tiliinne lyhyemmän @pm.me-osoitteen, joka on helpompi jakaa. Se on lyhenne sanoista ”${ MAIL_APP_NAME } me” tai ”Private Message me”."
+      ],
+      "Upgrade to define policies for your organization.": [
+        "Päivitä määrittääksesi käytäntöjä organisaatiollesi."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Päivitä säilyttääksesi ${ planTitle } tilauksesi edut."
@@ -13191,6 +12802,9 @@
       ],
       "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
         "Hallinnoitujen yritysten avulla voit lisätä, muokata ja poistaa käyttöoikeuksia organisaatioille, joita valvot."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "VPN Professionalin avulla järjestelmänvalvojat voivat pakottaa kaikille organisaation jäsenille aina päällä olevan VPN:n sekä yksityiset yhdyskäytävät, käyttöoikeuskäytännöt ja valvonnan."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Nykyisellä tilauksellanne voitte vain vastaanottaa viestejä @pm.me-osoitteellanne. Päivittäkää tilauksenne voidaksenne lähettää viestejä ja luoda uusia osoitteita @pm.me-tunnuksella."
@@ -15535,6 +15149,9 @@
       "Set password": [
         "Aseta salasana"
       ],
+      "Settings": [
+        "Asetukset"
+      ],
       "Share your referral link": [
         "Jaa suosittelulinkkisi"
       ],
@@ -15739,6 +15356,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Päivitykset - automaattiset vahvistukset, hälytykset ja tilipäivitykset"
+      ],
+      "Upgrade": [
+        "Päivitä"
       ],
       "Upload 1 or more encryption keys": [
         "Lataa yksi tai useita salausavaimia"
@@ -21639,17 +21259,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Varmista, että kopioit yllä olevan SCIM-tunnuksen nyt."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Kun SCIM on poistettu käytöstä organisaatiollesi, **kaikki tunnistietojen toimittajasi automaattisesti tarjoamat SCIM-käyttäjät muutetaan SSO-käyttäjiksi**, ja voit hallita heitä suoraan ${ BRAND_NAME } -asetuksissa."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Yksinkertaistaa eri palveluiden välistä käyttäjähallintaa. Lisää, muokkaa ja poista identiteettitarjoajasi käyttäjiä, niin muutokset toteutetaan automaattisesti myös ${ appName }-organisaatiossasi."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Automaattinen SCIM-provisiointi on pois käytöstä, kunnes syötät uuden SCIM-tunnisteen identiteetintarjoajasi asetuksiin."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM-URL-osoite ja -tunniste poistetaan."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Ottaaksesi synkronoinnin uudelleen käyttöön identiteetintarjoajasi kanssa, sinun on tehtävä SCIM-integrointi uudelleen."
@@ -24469,6 +24083,14 @@
         "Yksityisille"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Koko"
+      ],
+      "Status": [
+        "Tila"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "Jaettu minulle"
@@ -26004,9 +25626,6 @@
       "Reject device?": [
         "Hylätäänkö laite?"
       ],
-      "Remove all members?": [
-        "Poistetaanko kaikki jäsenet?"
-      ],
       "Remove calendar": [
         "Poista kalenteri"
       ],
@@ -26033,6 +25652,9 @@
       ],
       "Remove user?": [
         "Poistetaanko käyttäjä?"
+      ],
+      "Remove via PowerShell": [
+        "Poista PowerShellin kautta"
       ],
       "Rename the gateway": [
         "Nimeä yhdyskäytävä uudelleen"
@@ -26385,6 +26007,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Päivitä tilaukseen ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "Päivitä ottaaksesi Aina päällä -toiminnon käyttöön"
       ],
       "Upgrade to keep your premium benefits.": [
         "Päivitä säilyttääksesi premium-etusi."

@@ -1884,6 +1884,9 @@
       "Not a valid number": [
         "號碼無效"
       ],
+      "Organization key is not decrypted": [
+        "組織金鑰未解密"
+      ],
       "Passwords do not match": [
         "密碼不一致"
       ],
@@ -3190,6 +3193,20 @@
       ],
       "Video quality was poor": [
         "視訊品質不佳"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "組織金鑰不存在。"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "權限被拒，系統管理員權限受限。"
+      ],
+      "The organization key must be activated first.": [
+        "必須先啟用組織金鑰。"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "您要先存取至組織金鑰以完成此操作"
       ]
     },
     "Placeholder": {

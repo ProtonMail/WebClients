@@ -360,6 +360,9 @@
       "Connected": [
         "Verbonden"
       ],
+      "Contact sales": [
+        "Contact opnemen met sales"
+      ],
       "Contact support": [
         "Neem contact op met ondersteuning"
       ],
@@ -500,6 +503,9 @@
       ],
       "Delete account": [
         "Account verwijderen"
+      ],
+      "Delete and confirm": [
+        "Verwijder en bevestig"
       ],
       "Delete device profile": [
         "Apparaatprofiel genereren"
@@ -734,6 +740,9 @@
       ],
       "Emoji": [
         "Emoji"
+      ],
+      "Enable": [
+        "Inschakelen"
       ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } activeren"
@@ -1302,9 +1311,6 @@
       "Remove": [
         "Verwijderen"
       ],
-      "Remove all members": [
-        "Alle leden verwijderen"
-      ],
       "Remove all other devices": [
         "Alle andere apparaten verwijderen"
       ],
@@ -1328,6 +1334,9 @@
       ],
       "Remove gift code": [
         "Verwijder geschenkcode"
+      ],
+      "Remove manager": [
+        "Verwijder beheerder"
       ],
       "Remove this label": [
         "Label verwijderen"
@@ -1770,6 +1779,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgrade om ${ PROTON_SENTINEL_NAME } in te schakelen"
       ],
+      "Upgrade to Professional": [
+        "Upgraden naar Professional"
+      ],
       "Upgrade to view all": [
         "Upgrade om volledig te bekijken"
       ],
@@ -1859,6 +1871,9 @@
       ],
       "View all reports": [
         "Bekijk alle rapporten"
+      ],
+      "View guide": [
+        "Bekijk gids"
       ],
       "View invoice": [
         "Factuur bekijken"
@@ -2951,437 +2966,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Uw persoonlijke e-mailadres is een essentieel onderdeel van uw digitale identiteit. Net als uw telefoonnummer geeft u het niet aan iedereen die u ontmoet. Daarom is het handig om andere e-mailadressen te hebben die u voor verschillende doeleinden kunt gebruiken."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Gemakkelijke overstap"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } van ${ totalCount }"
-      ],
-      "Account connected": [
-        "Account verbonden"
-      ],
-      "Account disconnected": [
-        "Account niet verbonden"
-      ],
-      "Accounts migrated": [
-        "Accounts zijn gemigreerd"
-      ],
-      "Activated": [
-        "Geactiveerd"
-      ],
-      "Add domain": [
-        "Domein toevoegen"
-      ],
-      "Add users": [
-        "Gebruikers toevoegen"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Voeg het e-maildomein van uw organisatie toe aan ${ BRAND_NAME }."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Het adres is al in gebruik voor een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Alle gemigreerde gebruikersaccounts zijn klaar om te worden uitgenodigd voor uw ${ BRAND_NAME }-organisatie."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "Er is een onbekende fout opgetreden. Vernieuw de pagina en probeer het opnieuw"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "Weet u zeker dat u wilt doorgaan zonder ${ withoutString } en ${ notMigratedOthers } andere?",
-        "Weet u zeker dat u wilt doorgaan zonder ${ withoutString } en ${ notMigratedOthers } anderen?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "Weet u zeker dat u wilt doorgaan zonder ${ withoutString }?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Weet u zeker dat u door wilt gaan? Gebruikers die hun account nog niet hebben geclaimd voordat de migratie is voltooid, moeten een wachtwoordreset aanvragen bij hun ${ BRAND_NAME } organisatiebeheerder."
-      ],
-      "Authenticate": [
-        "Authenticeren"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Authentiseer uw Google Workspace-account"
-      ],
-      "Calendar": [
-        "Agenda"
-      ],
-      "Collapse invitation message": [
-        "Uitnodigingsbericht inklappen"
-      ],
-      "Collapse step": [
-        "Stap samenvouwen"
-      ],
-      "Configure domain": [
-        "Configureer domein"
-      ],
-      "Configure migration": [
-        "Migratie configureren"
-      ],
-      "Configure users": [
-        "Configureer gebruikers"
-      ],
-      "Configure your domain": [
-        "Configureer uw domein"
-      ],
-      "Confirm": [
-        "Bevestigen"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Neem contact op met uw beheerder om een ​​migratie te starten."
-      ],
-      "Contacts": [
-        "Contacten"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Kopieer de onderstaande code en plak deze in het DNS-sectie van uw domeinhost."
-      ],
-      "Creating accounts": [
-        "Accounts aanmaken"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Gegevensmigratiestatus van Google Workspace naar ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "Verwijder eventuele reeds bestaande MX-codes, kopieer vervolgens de onderstaande codes en plak deze in de DNS-sectie van uw domeinhost."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM voegt een digitale handtekening toe aan elke e-mail, zodat ontvangers kunnen controleren of het bericht daadwerkelijk van uw domein afkomstig is en niet is gewijzigd tijdens de verzending. Zonder DKIM worden berichten mogelijk als minder betrouwbaar beschouwd."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC bouwt voort op SPF en DKIM door ontvangende servers te vertellen hoe ze berichten moeten afhandelen die niet aan deze controles voldoen. Het helpt uw ​​domein te beschermen tegen namaak en verbetert de algehele betrouwbaarheid van de levering."
-      ],
-      "Domain added": [
-        "Domein toegevoegd"
-      ],
-      "Domain provider": [
-        "Domeinleverancier"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Weet u niet waar u moet beginnen? Bekijk hoe u uw DNS bijwerkt op ${ registrarLink }"
-      ],
-      "Emails": [
-        "E-mails"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Zorg ervoor dat uw e-mails in de inbox terechtkomen en niet in de spammap. Door SPF bij te werken, kunnen gebruikers gedurende de migratieperiode gelijktijdig e-mails verzenden vanaf ${ BRAND_NAME } en Google."
-      ],
-      "Errors": [
-        "Fouten"
-      ],
-      "Estimated size": [
-        "Geschatte grootte."
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Iedereen krijgt dezelfde uitnodigingslink. Ze bezoeken de pagina, voeren hun e-mailadres in en er verschijnt een verificatiecode in hun Gmail-inbox. Van daaruit stelden ze hun ${ BRAND_NAME }-wachtwoord in."
-      ],
-      "Expand invitation message": [
-        "Uitnodigingsbericht uitklappen"
-      ],
-      "Expand step": [
-        "Stap uitvouwen"
-      ],
-      "Failed to load OAuth": [
-        "Laden van OAuth mislukt"
-      ],
-      "Final step": [
-        "Laatste stap"
-      ],
-      "Find out what can be migrated.": [
-        "Ontdek wat er gemigreerd kan worden."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Krijg ${ here } hulp en handige tips voor andere domeinproviders"
-      ],
-      "Going private": [
-        "Privé gaan"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Google Marketplace-app om gegevens naar ${ BRAND_NAME } te kopiëren"
-      ],
-      "Google Workspace account": [
-        "Google Workspace account"
-      ],
-      "Has errors": [
-        "Bevat fouten"
-      ],
-      "Import completed successfully": [
-        "Importeren is succesvol voltooid"
-      ],
-      "Import details": [
-        "Gegevens importeren"
-      ],
-      "In progress": [
-        "Bezig"
-      ],
-      "Install app": [
-        "Installeer app"
-      ],
-      "Install migration app": [
-        "Installeer migratie app"
-      ],
-      "Invitation link": [
-        "Uitnodigingslink"
-      ],
-      "Invitation message": [
-        "Uitnodigingsbericht"
-      ],
-      "invite link": [
-        "uitnodigings link"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Het kan tot 24 uur duren voordat deze wijzigingen zijn doorgevoerd."
-      ],
-      "Loading your organization data": [
-        "Uw organisatiegegevens laden"
-      ],
-      "Mail": [
-        "Mail"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
-      ],
-      "Migrate": [
-        "Migreer"
-      ],
-      "Migrate accounts": [
-        "Accounts migreren"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Accounts migreren naar ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Migreren vanuit Google Workspace"
-      ],
-      "Migrated": [
-        "Gemigreerd"
-      ],
-      "Migrated accounts": [
-        "Gemigreerde accounts"
-      ],
-      "Migration includes": [
-        "Migratie omvat"
-      ],
-      "Migration started for ${ n } user": [
-        "Migratie gestart voor ${ n } gebruiker",
-        "Migratie gestart voor ${ n } gebruikers"
-      ],
-      "Migration status": [
-        "Migratiestatus"
-      ],
-      "Migration summary": [
-        "Samenvatting van de migratie"
-      ],
-      "Missing organization private key": [
-        "Ontbrekende privésleutel van de organisatie"
-      ],
-      "Missing organization public key": [
-        "Ontbrekende openbare sleutel van de organisatie"
-      ],
-      "More details": [
-        "Meer gegevens"
-      ],
-      "Need help?": [
-        "Hulp nodig?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Er zijn geen fout details beschikbaar .neem contact op met de klantenservice voor meer informatie."
-      ],
-      "No users to display": [
-        "Geen gebruikers om weer te geven"
-      ],
-      "Not activated": [
-        "Niet geactiveerd"
-      ],
-      "Not confirmed": [
-        "Niet bevestigd"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Niet correct gedetecteerd? Kies uw aanbieder uit de lijst."
-      ],
-      "Onboard your team": [
-        "Betrek uw team"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Zodra we hebben bevestigd dat e-mails worden doorgestuurd naar ${ BRAND_NAME }, wordt de migratie afgerond. U ontvangt een bevestigingsmail wanneer dit is gebeurd. Dit proces kan tot 24 uur duren."
-      ],
-      "Organization does not have enough seats available": [
-        "Organisatie heeft onvoldoende licenties beschikbaar"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisatie heeft onvoldoende opslagruimte beschikbaar"
-      ],
-      "Pending": [
-        "In behandeling"
-      ],
-      "Please don’t close or refresh this window.": [
-        "Sluit of vernieuw dit venster niet."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Verifieer uw Google Workspace-account opnieuw om een ​​migratie te starten"
-      ],
-      "Refresh": [
-        "Vernieuw"
-      ],
-      "Select at least one user to start a migration": [
-        "Selecteer minimaal één gebruiker om een migratie te starten"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Selecteer de accounts die u wilt toevoegen aan ${ BRAND_NAME }. U kunt uw hele organisatie vandaag nog migreren of klein beginnen en de rest meenemen wanneer u er klaar voor bent."
-      ],
-      "Select users to migrate": [
-        "Selecteer gebruikers om te migreren"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Beveiligd verzenden (DKIM) instellen"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Beveiligd verzenden (DMARC) instellen"
-      ],
-      "Set up secure sending (SPF)": [
-        "Beveiligd verzenden (SPF) instellen"
-      ],
-      "Settings": [
-        "Instellingen"
-      ],
-      "Sign in to Google Workspace": [
-        "Inloggen bij Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Log in met een Google Workspace-beheerdersaccount voor ${ BRAND_NAME } om de migratie in te stellen."
-      ],
-      "Size": [
-        "Grootte"
-      ],
-      "Skip": [
-        "Overslaan"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "${ count } contact is overgeslagen vanwege onverenigbaarheden",
-        "${ count } contacten zijn overgeslagen vanwege onverenigbaarheden"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "${ count } e-mail is overgeslagen vanwege onverenigbaarheden",
-        "${ count } e-mails zijn overgeslagen vanwege onverenigbaarheden"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "${ count } gebeurtenis werd overgeslagen vanwege onverenigbaarheden",
-        "${ count } gebeurtenissen zijn overgeslagen vanwege onverenigbaarheden"
-      ],
-      "Some accounts are not claimed": [
-        "Sommige accounts zijn niet geclaimd"
-      ],
-      "Some members weren't migrated": [
-        "Sommige leden zijn niet gemigreerd"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit van het platform."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Als u de gegevens van uw organisatie naar ${ BRAND_NAME } wilt brengen, installeert u ${ BRAND_NAME } Easy Switch vanuit de Google Workspace Marketplace. Nadat u het hebt geïnstalleerd, komt u hier terug om door te gaan."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "Om de migratie te voltooien, moet u ervoor zorgen dat u alleen ${ BRAND_NAME }-MX-codes behoudt."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Om deze gebruiker te migreren, schakelt u diens account in in uw Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Om deze gebruiker te migreren, schakelt u diens account in onder ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Om deze gebruiker te migreren, schakelt u diens adres in onder ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Om deze gebruiker te migreren, moet deze de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Om deze gebruiker te migreren, haalt u deze uit het archief in uw Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Om deze gebruiker te migreren, heft u de schorsing op in uw Google Workspace Admin Console."
-      ],
-      "Update records for receiving": [
-        "Gegevens bijwerken voor ontvangst"
-      ],
-      "User": [
-        "Gebruiker"
-      ],
-      "Users activated": [
-        "Gebruikers geactiveerd"
-      ],
-      "Users migrated": [
-        "Gebruikers gemigreerd"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Gebruikers die hun account nog niet hebben geclaimd voordat de migratie is voltooid, moeten een wachtwoordreset aanvragen bij hun ${ BRAND_NAME } organisatiebeheerder."
-      ],
-      "Verified": [
-        "Geverifiëerd"
-      ],
-      "Verify installation": [
-        "Installatie verifiëren"
-      ],
-      "Verify your domain": [
-        "Verifieer uw domein"
-      ],
-      "Verify your domain to start a migration": [
-        "Verifieer uw domein om een migratie te starten"
-      ],
-      "Waiting for MX...": [
-        "Wachten op MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "We konden de installatie niet verifiëren. Controleer of u deze in uw Google Workspace-account hebt geïnstalleerd en probeer het opnieuw."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "We gaan over op ${ BRAND_NAME }, de beveiligde e-mailservice.\nEn uw ${ BRAND_NAME }-account is klaar om te claimen.\nKlik op de ${ inviteLink }.\nVoer uw e-mailadres in, we sturen een code naar uw Gmail.\nGebruik het om uw wachtwoord in te stellen — en uw ${ BRAND_NAME }-account is van u.\nEen tijdje zullen beide naast elkaar werken. ${ BRAND_NAME } en Gmail.\nAls iedereen de overstap heeft gemaakt, beëindigen we Gmail. \nWe zullen u eraan herinneren voordat dit gebeurt."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "We hebben gemerkt dat sommige gebruikers hun ${ BRAND_NAME } profiel nog niet hebben geactiveerd."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "We maken momenteel uw accounts aan en importeren uw gegevens, zodat uw team alles heeft wat het nodig heeft wanneer het zijn beveiligde ${ BRAND_NAME }-account gaat gebruiken."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "We schakelen end-to-end versleuteling in voor iedereen. Elke e-mail en elke afspraak is nu alleen van u. Niet van ons, en ook niet van iemand anders."
-      ],
-      "What are you migrating?": [
-        "Wat migreert u?"
-      ],
-      "You": [
-        "U"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "U kunt de gegevens van deze gebruikers later niet meer kopiëren."
-      ],
-      "You're all set!": [
-        "U bent helemaal klaar!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "U bent bijna klaar. U moet uw domein configureren om uw e-mails rechtstreeks op ${ BRAND_NAME } te ontvangen. Na bevestiging ontvangt uw team geen nieuwe e-mails meer op Gmail en wordt de migratie voltooid."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Uw huidige abonnemnt staat tot ${ maxMembers } gebruiker toe. Om meer gebruikers te migreren, moet u extra licenties toevoegen aan uw abonnement.",
-        "Uw huidige abonnement staat tot ${ maxMembers } gebruikers toe. Om meer gebruikers te migreren, moet u extra licenties toevoegen aan uw abonnement."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "Uw domeinconfiguratie bevat nog steeds de MX-codes van een andere provider."
       ]
     },
     "breadcrumb": {
@@ -7087,6 +6671,12 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "U kunt hun toegang op elk moment verwijderen om de exclusieve controle over uw account te herwinnen."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "U bent nog voor niemand aangeduid als herstelcontact."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "U bent nog voor niemand aangewezen als contactpersoon voor noodgevallen."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "U heef het maximum van ${ limit } contactpersoon bereikt.",
         "U heef het maximum van ${ limit } contactpersonen bereikt."
@@ -7660,6 +7250,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
       ],
       "Something went wrong while converting the address": [
         "Er is iets misgegaan tijdens het aanmaken van het adres"
@@ -8731,11 +8324,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Weet u zeker dat u de beveiligingssleutel ${ name } wilt verwijderen?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Voer uw pincode in elke keer dat u uw beveiligingssleutel gebruikt met ${ BRAND_NAME }, als de sleutel dit ondersteunt. Dit geldt alleen voor sleutels waarvoor een pincode is ingesteld."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Plaats een beveiligingssleutel die is gekoppeld aan uw ${ BRAND_NAME }-account."
       ],
       "Insert your security key into your device.": [
         "Plaats uw beveiligingssleutel in uw apparaat."
+      ],
+      "PIN requirement for security keys disabled": [
+        "Pincodevereiste voor beveiligingssleutels uitgeschakeld"
+      ],
+      "PIN requirement for security keys enabled": [
+        "Pincodevereiste voor beveiligingssleutels ingeschakeld"
+      ],
+      "Require PIN for security key": [
+        "Pincode vereisen voor beveiligingssleutel"
       ],
       "Security key": [
         "Beveiligingssleutel"
@@ -9376,6 +8981,9 @@
       "Contact us": [
         "Contacteer ons"
       ],
+      "Downloads": [
+        "Downloads"
+      ],
       "Enjoying ${ planName }?": [
         "Tevreden met ${ planName }?"
       ],
@@ -9868,6 +9476,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% korting"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } bewaart niet langer eerdere versies van uw bestanden."
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } is ongeldig"
       ],
@@ -10236,6 +9847,9 @@
       "add a recovery method": [
         "een herstelmethode toe voegt"
       ],
+      "Add additional users from your organization to manage this company.": [
+        "Voeg extra gebruikers uit uw organisatie toe om dit bedrijf te beheren."
+      ],
       "Add an email address in case we need to contact you": [
         "Voeg een e-mailadres toe voor het geval we contact met u moeten opnemen."
       ],
@@ -10450,9 +10064,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Weet u zeker dat u beheerdersbevoegdheden van deze gebruiker wilt wegnemen?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Weet u zeker dat u alle leden uit deze groep wilt verwijderen?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Weet u zeker dat u het domein ${ boldDomain } wilt verwijderen?"
       ],
@@ -10521,6 +10132,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "Beschikbaar op macOS, Windows en Linux."
+      ],
+      "Available on VPN Professional": [
+        "Beschikbaar op VPN Professional"
       ],
       "Awaiting transaction": [
         "Transactie wordt afgewacht"
@@ -10671,6 +10285,9 @@
       ],
       "Coming soon": [
         "Binnenkort beschikbaar"
+      ],
+      "Companies you've been given access to manage.": [
+        "Bedrijven waarvoor u toegang heeft gekregen om ze te beheren."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Voltooi het aanmelden op dit apparaat om ${ VPN_APP_NAME } op uw tv te gebruiken."
@@ -11038,6 +10655,9 @@
       "Enable email notifications": [
         "E-mailmelding inschakelen"
       ],
+      "Enable groups to streamline access control": [
+        "Geef groepen de mogelijkheid om de toegangscontrole te stroomlijnen"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Schakel eenmalig inloggen in om uw organisatie veilig te houden"
       ],
@@ -11226,6 +10846,9 @@
       ],
       "for ${ price }": [
         "voor ${ price }"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Voor een versiegeschiedenis van 10 jaar kunt u contact opnemen met ons verkoopteam."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Om altijd toegang te hebben tot e-mail en een geoptimaliseerde mobiele ervaring, download onze ${ androidAppLink } of ${ iosAppLink }-app."
@@ -11691,6 +11314,9 @@
       ],
       "Learn more about Gateways": [
         "Meer informatie over Gateways"
+      ],
+      "Learn more about groups": [
+        "Meer informatie over groepen"
       ],
       "learn more about Sieve programming language": [
         "leer meer over de programmeertaal Sieve"
@@ -12468,6 +12094,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
+      "Smart Routed through a different country.": [
+        "Slim gerouteerd door een ander land."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Smart Routed via: ${ joinedCountries }."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "Met SMTP-verzendingen kunnen diensten van derden, e-mail verzenden via ${ MAIL_APP_NAME } voor uw aangepaste domeinadressen."
       ],
@@ -12738,6 +12370,9 @@
       "This file is too large to preview": [
         "Dit bestand is te groot om het te kunnen tonen"
       ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Dit Gmail-adres is geregistreerd bij een ander ${ BRAND_NAME }-account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI en andere). We werken eraan om deze verbinding naadloos te laten verlopen, maar voorlopig moet u een paar stappen ondernemen."
+      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Deze uitnodigingslink is verlopen. Neem contact op met uw beheerder om toegang aan te vragen."
       ],
@@ -12794,6 +12429,12 @@
       ],
       "This will allow the TV to access your ${ BRAND_NAME } account.": [
         "Dit geeft de TV toegang tot uw ${ BRAND_NAME } account."
+      ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Dit zal alle vorige versies van uw bestanden die ouder zijn dan ${ rententionLabel } verwijderen."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Dit zal alle vorige versies van uw bestanden verwijderen."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Dit zal de toegang van **${ email }**weigeren. Weet u zeker dat u wilt doorgaan?"
@@ -13023,14 +12664,29 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
+      "Upgrade now to monitor your team's account safety.": [
+        "Upgrade nu om de accountveiligheid van uw team te controleren."
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Upgrade nu om de activiteit van ${ PASS_APP_NAME } in uw hele organisatie te bekijken."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Upgrade of maak op elk gewenst moment ruimte vrij om de rest over te brengen"
+      ],
+      "Upgrade required": [
+        "Upgrade vereist"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Upgrade om een korter @pm.me adres aan uw account toe te voegen dat gemakkelijker te delen is. Het staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me\"."
       ],
+      "Upgrade to define policies for your organization.": [
+        "Upgrade om beleid voor uw organisatie te definiëren."
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Upgraden om uw ${ planTitle } voordelen te behouden."
+      ],
+      "Upgrade to unlock": [
+        "Upgraden om te ontgrendelen"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Upgrade om de ${ monitorLink } te ontgrendelen."
@@ -13142,6 +12798,9 @@
       ],
       "Version ${ version }": [
         "Versie ${ version }"
+      ],
+      "Version history": [
+        "Versiegeschiedenis"
       ],
       "Version number successfully copied to clipboard": [
         "Versienummer succesvol gekopieerd naar klembord"
@@ -13323,6 +12982,9 @@
       "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
         "Met beheerde bedrijven kunt u toegang toevoegen, bewerken en verwijderen voor organisaties waarop u toezicht houdt."
       ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Met VPN Professional kunnen beheerders een altijd ingeschakelde VPN afdwingen voor alle leden van de organisatie, naast privé gateways, toegangsbeleid en monitoring."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Met uw huidige abonnement kunt u met uw @pm.me-adres enkel berichten ontvangen. Upgrade om berichten te verzenden en extra adressen aan te maken met @pm.me."
       ],
@@ -13479,6 +13141,9 @@
       ],
       "You don't have any referrals.": [
         "U heeft geen doorverwijzingen."
+      ],
+      "You don't manage any companies yet.": [
+        "U beheert nog geen bedrijven."
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "U hoeft het bestand niet te openen of te lezen; download het gewoon en bewaar het op een veilige plek."
@@ -14447,6 +14112,9 @@
       "Add extra services": [
         "Extra services toevoegen"
       ],
+      "Add managers": [
+        "Beheerders toevoegen"
+      ],
       "Additional comments": [
         "Aanvullende opmerkingen"
       ],
@@ -14542,6 +14210,9 @@
       ],
       "ANY": [
         "MINIMAAL EEN"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Alles dat uw aandacht nodig heeft, plus e-mails uit uitgeschakelde categorieën"
       ],
       "App password": [
         "App-wachtwoord"
@@ -14933,6 +14604,9 @@
       ],
       "Don't ask again": [
         "Niet opnieuw vragen"
+      ],
+      "Don't keep versions": [
+        "Versies niet behouden"
       ],
       "Don't show this again": [
         "Toon dit niet opnieuw"
@@ -15549,6 +15223,9 @@
       "Primary": [
         "Primair"
       ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primair - Alles wat uw aandacht nodig heeft, plus e-mails uit uitgeschakelde categorieën"
+      ],
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
@@ -15683,6 +15360,9 @@
       ],
       "Set password": [
         "Wachtwoord instellen"
+      ],
+      "Settings": [
+        "Instellingen"
       ],
       "Share your referral link": [
         "Deel uw verwijzingslink:"
@@ -15888,6 +15568,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Updates - Geautomatiseerde bevestigingen, meldingen en account updates"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ],
       "Upload 1 or more encryption keys": [
         "Upload 1 of meer encryptiesleutels"
@@ -16770,6 +16453,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licenties"
+      ],
+      "${ price } per seat": [
+        "${ price } per licentie"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licentie",
@@ -20274,6 +19960,9 @@
       "Enter company name": [
         "Voer bedrijfsnaam in"
       ],
+      "Enter name or email address": [
+        "Voer een naam of e-mailadres in"
+      ],
       "example@domain.com": [
         "voorbeeld@domein.com"
       ],
@@ -21715,6 +21404,12 @@
       "${ usersText } and ${ groupsText } synced.": [
         "${ usersText } en ${ groupsText } gesynchroniseerd."
       ],
+      "**Existing groups** synced to ${ BRAND_NAME } before may now appear when you first access the console": [
+        "**Bestaande groepen** die eerder met ${ BRAND_NAME } zijn gesynchroniseerd, kunnen nu verschijnen wanneer u de console voor het eerst opent"
+      ],
+      "**You'll be able to review** group changes before they take effect to confirm they're intentional": [
+        "**U kunt groepswijzigingen bekijken** voordat ze van kracht worden, om te bevestigen dat ze opzettelijk zijn"
+      ],
       "Approve changes from your identity provider": [
         "Keur wijzigingen van uw identiteitsprovider goed"
       ],
@@ -21727,6 +21422,9 @@
       "New": [
         "Nieuw"
       ],
+      "New: Manage groups via your identity provider": [
+        "Nieuw: Beheer groepen via uw identiteitsprovider"
+      ],
       "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
         "Na goedkeuring hebben ze toegang tot alle ${ BRAND_NAME }-diensten en kunnen ze veilig delen."
       ],
@@ -21736,11 +21434,20 @@
       "Review users and groups before finishing setup": [
         "Beoordeel gebruikers en groepen voordat u de setup afrondt"
       ],
+      "This approval prompt will **appear every time you update** groups through your identity provider": [
+        "Deze goedkeuringsprompt verschijnt **elke keer dat u groepen bijwerkt** via uw identiteitsprovider"
+      ],
       "Updated": [
         "Bijgewerkt"
       ],
       "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Gebruikers die zijn ingesteld op privé moeten de uitnodiging accepteren om de setup te voltooien. We sturen ze een uitnodiging zodra u deze goedkeurt."
+      ],
+      "What to expect now that group sync is enabled": [
+        "Wat u kunt verwachten nu groepssynchronisatie is ingeschakeld"
+      ],
+      "You can now sync groups from your identity provider alongside users. Changes push **automatically** when you update your groups.": [
+        "U kunt nu naast gebruikers ook groepen van uw identiteitsprovider synchroniseren. Wijzigingen worden **automatisch** doorgevoerd wanneer u uw groepen bijwerkt."
       ]
     },
     "scim: Action": {
@@ -21791,17 +21498,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Zorg ervoor dat u de bovenstaande SCIM-token nu kopieert."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Zodra SCIM is uitgeschakeld voor uw organisatie, **zullen alle SCIM-gebruikers die automatisch door uw identiteitsprovider worden aangeboden worden omgezet naar SSO-gebruikers** en u kunt ze direct beheren binnen de ${ BRAND_NAME } instellingen."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Vereenvoudigt gebruikersbeheer over verschillende diensten. Voeg toe, bewerk en verwijder gebruikers in uw identiteitsprovider, en deze wijzigingen zullen automatisch worden toegepast op uw ${ appName } organisatie."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "De automatische bepaling van SCIM wordt uitgeschakeld totdat u de nieuwe SCIM-token in de instellingen van uw identiteit provider invoert."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "De SCIM basis-URL en token zullen worden verwijderd."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Om het synchroniseren met uw identiteitsprovider opnieuw aan te zetten, moet u de SCIM-integratie opnieuw voltooien."
@@ -24637,6 +24338,14 @@
         "Voor particulieren"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Grootte"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "Gedeeld met mij."
@@ -25432,6 +25141,9 @@
       "Delete user?": [
         "Gebruiker verwijderen?"
       ],
+      "Delete version history?": [
+        "Versiegeschiedenis verwijderen?"
+      ],
       "Deny access to user?": [
         "Gebruiker de toegang weigeren?"
       ],
@@ -25805,6 +25517,9 @@
       "Groups": [
         "Groepen"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Let op: deze Gmail is gekoppeld aan een ander ${ BRAND_NAME }-account"
+      ],
       "Help and feedback": [
         "Hulp en feedback"
       ],
@@ -25952,6 +25667,9 @@
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Beheer bestanden op al uw apparaten, waaronder Windows, Mac, Android en iOS."
+      ],
+      "Managers": [
+        "Beheerders"
       ],
       "Messages": [
         "Berichten"
@@ -26205,9 +25923,6 @@
       "Reject device?": [
         "Apparaat weigeren?"
       ],
-      "Remove all members?": [
-        "Alle leden verwijderen?"
-      ],
       "Remove Always-on VPN device profile": [
         "Verwijder het Always-on VPN-apparaatprofiel"
       ],
@@ -26240,6 +25955,9 @@
       ],
       "Remove via MDM": [
         "Verwijderen via MDM"
+      ],
+      "Remove via PowerShell": [
+        "Verwijder via PowerShell"
       ],
       "Rename the gateway": [
         "De gateway hernoemen"
@@ -26595,6 +26313,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Upgraden naar ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "Upgrade om Always-on in te schakelen"
       ],
       "Upgrade to keep your premium benefits.": [
         "Upgraden om uw premium voordelen te behouden."
@@ -27222,6 +26943,9 @@
       "Group membership paused": [
         "Groepslidmaatschap gepauzeerd"
       ],
+      "Pending user activation": [
+        "In afwachting van gebruikersactivatie"
+      ],
       "Resuming role assignment": [
         "Functietoewijzing hervatten"
       ],
@@ -27660,6 +27384,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Dit zal een nieuw ${ MAIL_APP_NAME }-adres aanmaken."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
       ],
       "User created": [
         "Gebruiker aangemaakt"

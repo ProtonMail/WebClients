@@ -729,6 +729,9 @@
       "Emoji": [
         "इमोजी"
       ],
+      "Enable": [
+        "सक्षम करें"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } सक्षम करें"
       ],
@@ -1283,9 +1286,6 @@
       ],
       "Remove": [
         "हटाएं"
-      ],
-      "Remove all members": [
-        "सभी सदस्यों को हटाएं"
       ],
       "Remove all other devices": [
         "अन्य सभी डिवाइस हटाएं"
@@ -2913,437 +2913,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "आपका व्यक्तिगत ईमेल पता आपकी डिजिटल पहचान का एक अनिवार्य हिस्सा है। अपने फ़ोन नंबर की तरह, आप इसे हर उस व्यक्ति को नहीं देते जिससे आप मिलते हैं। इसलिए अन्य ईमेल पते होना उपयोगी है जिनका उपयोग आप विभिन्न उद्देश्यों के लिए कर सकते हैं।"
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ totalCount } में से ${ relevantCount }"
-      ],
-      "Account connected": [
-        "खाता कनेक्ट हो गया"
-      ],
-      "Account disconnected": [
-        "खाता डिस्कनेक्ट हो गया"
-      ],
-      "Accounts migrated": [
-        "माइग्रेट किए गए खाते"
-      ],
-      "Activated": [
-        "सक्रिय"
-      ],
-      "Add domain": [
-        "डोमेन जोड़ें"
-      ],
-      "Add users": [
-        "उपयोगकर्ता जोड़ें"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "अपने संगठन का ईमेल डोमेन ${ BRAND_NAME } में जोड़ें।"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "पता पहले से ही आपके संगठन के बाहर के उपयोगकर्ता द्वारा उपयोग किया जा रहा है। कृपया इसे हल करने के लिए ग्राहक सहायता से संपर्क करें"
-      ],
-      "All": [
-        "सभी"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "सभी माइग्रेट किए गए उपयोगकर्ता खाते आपके ${ BRAND_NAME } संगठन में आमंत्रित किए जाने के लिए तैयार हैं।"
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "एक अज्ञात एरर आई। कृपया पृष्ठ को रीफ्रेश करें और पुनः प्रयास करें"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "क्या आप वाकई ${ withoutString } और ${ notMigratedOthers } अन्य के बिना जारी रखना चाहते हैं?",
-        "क्या आप वाकई ${ withoutString } और ${ notMigratedOthers } अन्य के बिना जारी रखना चाहते हैं?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "क्या आप वाकई ${ withoutString } के बिना जारी रखना चाहते हैं?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "क्या आप निश्चित रूप से आगे बढ़ना चाहते हैं? जिन उपयोगकर्ताओं ने माइग्रेशन पूरा होने से पहले अपने खाते का दावा नहीं किया है, उन्हें अपने ${ BRAND_NAME } संगठन प्रशासक से पासवर्ड रीसेट करने का अनुरोध करना होगा।"
-      ],
-      "Authenticate": [
-        "प्रमाणित करें"
-      ],
-      "Authenticate your Google Workspace account": [
-        "अपने Google Workspace खाते को प्रमाणित करें"
-      ],
-      "Calendar": [
-        "कैलेंडर"
-      ],
-      "Collapse invitation message": [
-        "न्योता संदेश समेटें"
-      ],
-      "Collapse step": [
-        "चरण समेटें"
-      ],
-      "Configure domain": [
-        "डोमेन कॉन्फ़िगर करें"
-      ],
-      "Configure migration": [
-        "माइग्रेशन कॉन्फ़िगर करें"
-      ],
-      "Configure users": [
-        "उपयोगकर्ताओं को कॉन्फ़िगर करें"
-      ],
-      "Configure your domain": [
-        "अपना डोमेन कॉन्फ़िगर करें"
-      ],
-      "Confirm": [
-        "पुष्टि करें"
-      ],
-      "Contact your administrator to start a migration.": [
-        "माइग्रेशन शुरू करने के लिए अपने एडमिनिस्ट्रेटर से संपर्क करें।"
-      ],
-      "Contacts": [
-        "संपर्क"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "नीचे दिए गए कोड को कॉपी करें और अपने डोमेन होस्ट के DNS अनुभाग में पेस्ट करें।"
-      ],
-      "Creating accounts": [
-        "खाते बनाए जा रहे हैं"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Google Workspace से ${ BRAND_NAME } तक डेटा माइग्रेशन की स्थिति"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "किसी भी पहले से मौजूद MX कोड को मिटा दें, फिर नीचे दिए गए कोड को कॉपी करें और अपने डोमेन होस्ट के DNS अनुभाग में पेस्ट करें।"
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM प्रत्येक ईमेल में एक डिजिटल हस्ताक्षर जोड़ता है ताकि प्राप्तकर्ता सत्यापित कर सकें कि संदेश वास्तव में आपके डोमेन से आया है और पारगमन में बदला नहीं गया था। इसके बिना, संदेशों को कम विश्वसनीय माना जा सकता है।"
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC प्राप्त करने वाले सर्वर को यह बताकर SPF और DKIM पर निर्माण करता है कि इन जांचों में विफल रहने वाले संदेशों को कैसे संभालना है। यह आपके डोमेन को प्रतिरूपण से बचाने में मदद करता है और समग्र वितरण विश्वसनीयता में सुधार करता है।"
-      ],
-      "Domain added": [
-        "डोमेन जोड़ा गया"
-      ],
-      "Domain provider": [
-        "डोमेन प्रदाता"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "पता नहीं कहाँ से शुरू करें? देखें कि ${ registrarLink } पर अपने DNS को कैसे अपडेट करें"
-      ],
-      "Emails": [
-        "ईमेल"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "सुनिश्चित करें कि आपके ईमेल इनबॉक्स में पहुंचे, स्पैम फोल्डर में नहीं। SPF को अपडेट करने से उपयोगकर्ता माइग्रेशन की अवधि के लिए ${ BRAND_NAME } और Google से एक साथ भेज सकेंगे।"
-      ],
-      "Errors": [
-        "त्रुटियाँ"
-      ],
-      "Estimated size": [
-        "अनुमानित साइज़"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "सभी को एक ही न्योता लिंक मिलता है। वे पृष्ठ पर जाएँगे, अपना ईमेल दर्ज करेंगे, और उनके Gmail इनबॉक्स में एक सत्यापन कोड आएगा। वहां से, वे अपना ${ BRAND_NAME } पासवर्ड सेट करते हैं।"
-      ],
-      "Expand invitation message": [
-        "न्योता संदेश का विस्तार करें"
-      ],
-      "Expand step": [
-        "चरण का विस्तार करें"
-      ],
-      "Failed to load OAuth": [
-        "OAuth लोड करने में विफल"
-      ],
-      "Final step": [
-        "अंतिम चरण"
-      ],
-      "Find out what can be migrated.": [
-        "पता लगाएं कि क्या माइग्रेट किया जा सकता है।"
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "अन्य डोमेन प्रदाताओं के लिए मदद और उपयोगी सुझाव यहाँ पाएँ: ${ here }"
-      ],
-      "Going private": [
-        "निजी हो रहा है"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "डेटा को ${ BRAND_NAME } पर कॉपी करने के लिए Google Marketplace ऐप"
-      ],
-      "Google Workspace account": [
-        "Google Workspace खाता"
-      ],
-      "Has errors": [
-        "त्रुटियां हैं"
-      ],
-      "Import completed successfully": [
-        "आयात सफलतापूर्वक पूरा हुआ"
-      ],
-      "Import details": [
-        "आयात विवरण"
-      ],
-      "In progress": [
-        "प्रगति पर"
-      ],
-      "Install app": [
-        "ऐप इंस्टॉल करें"
-      ],
-      "Install migration app": [
-        "माइग्रेशन ऐप इंस्टॉल करें"
-      ],
-      "Invitation link": [
-        "न्योता लिंक"
-      ],
-      "Invitation message": [
-        "न्योता संदेश"
-      ],
-      "invite link": [
-        "न्योता लिंक"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "इन बदलावों को प्रसारित होने में 24 घंटे तक का समय लग सकता है।"
-      ],
-      "Loading your organization data": [
-        "आपके संगठन का डेटा लोड हो रहा है"
-      ],
-      "Mail": [
-        "मेल"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "सदस्य का पता नहीं मिला। कृपया इसे हल करने के लिए ग्राहक सहायता से संपर्क करें"
-      ],
-      "Migrate": [
-        "माइग्रेट करें"
-      ],
-      "Migrate accounts": [
-        "खातों को माइग्रेट करें"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "खातों को ${ BRAND_NAME } पर माइग्रेट करें"
-      ],
-      "Migrate from Google Workspace": [
-        "Google Workspace से माइग्रेट करें"
-      ],
-      "Migrated": [
-        "माइग्रेट किया गया"
-      ],
-      "Migrated accounts": [
-        "माइग्रेट किए गए खाते"
-      ],
-      "Migration includes": [
-        "माइग्रेशन में शामिल हैं"
-      ],
-      "Migration started for ${ n } user": [
-        "${ n } उपयोगकर्ता के लिए माइग्रेशन शुरू हुआ",
-        "${ n } उपयोगकर्ताओं के लिए माइग्रेशन शुरू हुआ"
-      ],
-      "Migration status": [
-        "माइग्रेशन स्थिति"
-      ],
-      "Migration summary": [
-        "माइग्रेशन सारांश"
-      ],
-      "Missing organization private key": [
-        "अनुपस्थित संगठन निजी चाबी"
-      ],
-      "Missing organization public key": [
-        "अनुपस्थित संगठन सार्वजनिक चाबी"
-      ],
-      "More details": [
-        "अधिक जानकारी"
-      ],
-      "Need help?": [
-        "मदद चाहिए?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "कोई त्रुटि विवरण उपलब्ध नहीं है। अधिक जानकारी के लिए कृपया ग्राहक सहायता से संपर्क करें"
-      ],
-      "No users to display": [
-        "प्रदर्शित करने के लिए कोई उपयोगकर्ता नहीं"
-      ],
-      "Not activated": [
-        "सक्रिय नहीं"
-      ],
-      "Not confirmed": [
-        "पुष्टि नहीं हुई"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "सही ढंग से पता नहीं चला? सूची में से अपने प्रदाता को चुनें।"
-      ],
-      "Onboard your team": [
-        "अपनी टीम को ऑनबोर्ड करें"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "एक बार जब हम इसकी पुष्टि कर लेते हैं कि ईमेल ${ BRAND_NAME } पर भेजे जा रहे हैं, तो माइग्रेशन को अंतिम रूप दे दिया जाएगा। ऐसा होने पर आपको सूचित करने के लिए एक सत्यापन ईमेल प्राप्त होगा। इस प्रक्रिया में 24 घंटे तक का समय लग सकता है।"
-      ],
-      "Organization does not have enough seats available": [
-        "संगठन के पास पर्याप्त सीटें उपलब्ध नहीं हैं"
-      ],
-      "Organization does not have enough storage available": [
-        "संगठन के पास पर्याप्त स्टोरेज उपलब्ध नहीं है"
-      ],
-      "Pending": [
-        "लंबित"
-      ],
-      "Please don’t close or refresh this window.": [
-        "कृपया इस विंडो को बंद या रीफ्रेश न करें।"
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "माइग्रेशन शुरू करने के लिए अपने Google Workspace खाते को फिर से प्रमाणित करें"
-      ],
-      "Refresh": [
-        "रीफ्रेश करें"
-      ],
-      "Select at least one user to start a migration": [
-        "माइग्रेशन शुरू करने के लिए कम से कम एक उपयोगकर्ता चुनें"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "ठीक से चुनें कि आप क्या माइग्रेट करना चाहते हैं। यह सभी संगठन उपयोगकर्ताओं पर लागू होगा।"
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "उन खातों को चुनें जिन्हें आप ${ BRAND_NAME } पर लाना चाहते हैं। आप आज ही अपने पूरे संगठन को माइग्रेट कर सकते हैं या छोटी शुरुआत करके तैयार होने पर बाकी को ला सकते हैं।"
-      ],
-      "Select users to migrate": [
-        "माइग्रेट करने के लिए उपयोगकर्ताओं का चयन करें"
-      ],
-      "Set up secure sending (DKIM)": [
-        "सुरक्षित रूप से भेजना सेटअप करें (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "सुरक्षित रूप से भेजना सेटअप करें (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "सुरक्षित रूप से भेजना सेटअप करें (SPF)"
-      ],
-      "Settings": [
-        "सेटिंग"
-      ],
-      "Sign in to Google Workspace": [
-        "Google Workspace में साइनइन करें"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "माइग्रेशन सेटअप करने के लिए ${ BRAND_NAME } के लिए Google Workspace एडमिनिस्ट्रेटर खाते के साथ साइन-इन करें।"
-      ],
-      "Size": [
-        "साइज़"
-      ],
-      "Skip": [
-        "छोड़ें"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "असंगति के कारण ${ count } संपर्क छोड़ दिया गया",
-        "असंगतियों के कारण ${ count } संपर्क छोड़ दिए गए"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "असंगति के कारण ${ count } ईमेल छोड़ दिया गया",
-        "असंगतियों के कारण ${ count } ईमेल छोड़ दिए गए"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "असंगति के कारण ${ count } कार्यक्रम छोड़ दिया गया",
-        "असंगतियों के कारण ${ count } कार्यक्रम छोड़ दिए गए"
-      ],
-      "Some accounts are not claimed": [
-        "कुछ खातों पर दावा नहीं किया गया है"
-      ],
-      "Some members weren't migrated": [
-        "कुछ सदस्यों को माइग्रेट नहीं किया गया था"
-      ],
-      "Status": [
-        "स्थिति"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "प्लैटफॉर्म की विसंगतियों के कारण इस उपयोगकर्ता को माइग्रेट नहीं किया जा सकता है।"
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "अपने संगठन का डेटा ${ BRAND_NAME } पर लाने के लिए, Google Workspace Marketplace से ${ BRAND_NAME } Easy Switch इंस्टॉल करें। इसे इंस्टॉल करने के बाद, जारी रखने के लिए यहाँ वापस आएँ।"
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "माइग्रेशन पूरा करने के लिए, सुनिश्चित करें कि आप केवल ${ BRAND_NAME } MX कोड ही रखें।"
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, अपने Google Workspace एडमिन कंसोल में उनका खाता सक्षम करें।"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, ${ usersAddressesLink } के तहत उनका खाता सक्षम करें।"
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, ${ usersAddressesLink } के तहत उनका पता सक्षम करें।"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, उन्हें ${ BRAND_NAME } में शामिल होने का अपना न्योता स्वीकार करना होगा।"
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, उन्हें अपने Google Workspace एडमिन कंसोल में अनआर्काइव करें।"
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, उन्हें अपने Google Workspace एडमिन कंसोल में अनसस्पेंड करें।"
-      ],
-      "Update records for receiving": [
-        "प्राप्त करने के लिए रिकॉर्ड अपडेट करें"
-      ],
-      "User": [
-        "उपयोगकर्ता"
-      ],
-      "Users activated": [
-        "सक्रिय किए गए उपयोगकर्ता"
-      ],
-      "Users migrated": [
-        "स्थानांतरित उपयोगकर्ता"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "वे उपयोगकर्ता जिन्होंने अपने ${ BRAND_NAME } खाते को एक्सेस किया है"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "जिन उपयोगकर्ताओं ने माइग्रेशन अंतिम रूप से पूरा होने से पहले अपने खाते पर दावा नहीं किया है, उन्हें अपने ${ BRAND_NAME } संगठन एडमिन से पासवर्ड रीसेट का अनुरोध करना होगा।"
-      ],
-      "Verified": [
-        "सत्यापित"
-      ],
-      "Verify installation": [
-        "इंस्टॉलेशन सत्यापित करें"
-      ],
-      "Verify your domain": [
-        "अपने डोमेन को सत्यापित करें"
-      ],
-      "Verify your domain to start a migration": [
-        "माइग्रेशन शुरू करने के लिए अपने डोमेन को सत्यापित करें"
-      ],
-      "Waiting for MX...": [
-        "MX की प्रतीक्षा की जा रही है..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "हम इंस्टॉलेशन को सत्यापित करने में असमर्थ थे, कृपया जाँचें कि आपने इसे अपने Google Workspace खाते में इंस्टॉल किया है और पुनः प्रयास करें।"
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "हम सेफ ईमेल सेवा ${ BRAND_NAME } पर जा रहे हैं।\nऔर आपका ${ BRAND_NAME } खाता दावा करने के लिए तैयार है।\n${ inviteLink } पर क्लिक करें।\nअपना ईमेल पता दर्ज करें, हम आपके Gmail पर एक कोड भेजेंगे।\nअपना पासवर्ड सेट करने के लिए इसका उपयोग करें — और आपका ${ BRAND_NAME } खाता आपका हो जाएगा।\nकुछ समय के लिए, दोनों साथ-साथ काम करेंगे: ${ BRAND_NAME } और Gmail।\nफिर, जब हर कोई माइग्रेट कर लेगा, हम Gmail को सेवानिवृत्त कर देंगे। ऐसा होने से पहले हम आपको याद दिलाएंगे।"
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "हमने ध्यान दिया है कि कुछ उपयोगकर्ताओं ने अपने ${ BRAND_NAME } खातों पर दावा नहीं किया है।"
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "हम अभी आपके खाते बना रहे हैं और आपका डेटा आयात कर रहे हैं ताकि आपकी टीम के पास वह सब कुछ हो जो उन्हें अपना सुरक्षित ${ BRAND_NAME } खाता उपयोग करना शुरू करते समय चाहिए।"
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "हम सभी के लिए शुरु-से-अंत तक एन्क्रिप्शन चालू कर रहे हैं। हर ईमेल, हर कार्यक्रम अब केवल आपका है। केवल आपकी टीम को दिखाई देगा। हमें नहीं, किसी और को नहीं।"
-      ],
-      "What are you migrating?": [
-        "आप क्या माइग्रेट कर रहे हैं?"
-      ],
-      "You": [
-        "आप"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "आप इन उपयोगकर्ताओं का डेटा बाद में कॉपी नहीं कर पाएंगे।"
-      ],
-      "You're all set!": [
-        "आप पूरी तरह तैयार हैं!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "आप लगभग पूरा कर चुके हैं, सीधे ${ BRAND_NAME } पर अपने ईमेल प्राप्त करने के लिए आपको अपने डोमेन को कॉन्फ़िगर करना होगा। एक बार पुष्टि होने के बाद, आपकी टीम को Gmail पर नए ईमेल मिलना बंद हो जाएंगे और माइग्रेशन पूरा हो जाएगा।"
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "आपका वर्तमान प्लैन ${ maxMembers } उपयोगकर्ता तक की अनुमति देता है। अतिरिक्त उपयोगकर्ताओं को माइग्रेट करने के लिए, अपनी सदस्यता में और सीटें जोड़ें।",
-        "आपका वर्तमान प्लैन ${ maxMembers } उपयोगकर्ताओं तक की अनुमति देता है। अतिरिक्त उपयोगकर्ताओं को माइग्रेट करने के लिए, अपनी सदस्यता में और सीटें जोड़ें।"
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "आपके डोमेन संरचना में अभी भी किसी अन्य प्रदाता के MX कोड शामिल हैं।"
       ]
     },
     "breadcrumb": {
@@ -7614,6 +7183,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "आपके कुछ लेबल नाम ${ MAIL_APP_NAME } की अधिकतम वर्ण सीमा से अधिक हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
       ],
+      "Something went wrong": [
+        "कोई गड़बड़ हो गई"
+      ],
       "Something went wrong while converting the address": [
         "पता बदलते समय कुछ गलत हो गया"
       ],
@@ -10382,9 +9954,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "क्या आप वाकई इस उपयोगकर्ता से प्रशासनिक विशेषाधिकार हटाना चाहते हैं?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "क्या आप वाकई इस ग्रुप से सभी सदस्यों को हटाना चाहते हैं?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "क्या वाकई डोमेन ${ boldDomain } हटाना चाहते हैं?"
       ],
@@ -12321,6 +11890,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "चूंकि आप एक वफादार उपयोगकर्ता हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "स्मार्ट रूट किया गया: ${ joinedCountries } के माध्यम से।"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "SMTP सबमिशन आपके कस्टम डोमेन पतों के लिए 3rd-party सेवाओं या डिवाइसों को ${ MAIL_APP_NAME } के माध्यम से ईमेल भेजने की अनुमति देता है।"
@@ -15483,6 +15055,9 @@
       ],
       "Set password": [
         "पासवर्ड सेट करें"
+      ],
+      "Settings": [
+        "सेटिंग"
       ],
       "Share your referral link": [
         "अपना रेफरल लिंक शेयर करें"
@@ -21582,17 +21157,11 @@
       "Make sure you copy the above SCIM token now.": [
         "सुनिश्चित करें कि आप ऊपर दिया गया SCIM टोकन अभी कॉपी कर लें।"
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "जब आपके संगठन के लिए SCIM अक्षम हो जाएगा, **आपके पहचान प्रदाता द्वारा स्वचालित रूप से प्रदान किए गए सभी SCIM उपयोगकर्ता SSO उपयोगकर्ताओं में परिवर्तित कर दिए जाएंगे** और आप उन्हें सीधे ${ BRAND_NAME } सेटिंग्स में संभाल सकेंगे।"
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "विभिन्न सेवाओं में उपयोगकर्ता प्रबंधन को सरल बनाता है। अपने पहचान प्रदाता में उपयोगकर्ताओं को जोड़ें, संपादित करें, और हटाएं, और ये परिवर्तन आपके ${ appName } संगठन में स्वचालित रूप से लागू हो जाएंगे।"
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "जब तक आप अपने पहचान प्रदाता की सेटिंग्स में नया SCIM टोकन दर्ज नहीं करते, तब तक SCIM स्वचालित प्रोविजनिंग अक्षम रहेगी।"
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM बेस यूआरएल और टोकन मिटा दिए जाएंगे।"
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "अपने पहचान प्रदाता के साथ सिंकिंग फिर से सक्षम करने के लिए, आपको SCIM एकीकरण को फिर से पूरा करना होगा।"
@@ -24404,6 +23973,14 @@
         "व्यक्तिगत"
       ]
     },
+    "Table header": {
+      "Size": [
+        "साइज़"
+      ],
+      "Status": [
+        "स्थिति"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "मेरे साथ साझा किया गया"
@@ -25935,9 +25512,6 @@
       ],
       "Reject device?": [
         "क्या डिवाइस अस्वीकार करें?"
-      ],
-      "Remove all members?": [
-        "सभी सदस्यों को हटाएं?"
       ],
       "Remove calendar": [
         "कैलेंडर हटाएं"

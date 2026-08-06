@@ -1671,125 +1671,6 @@
         "Anual"
       ]
     },
-    "BOSS": {
-      "Activated": [
-        "Activat"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresa este deja utilizată de un utilizator din afara propriei organizații. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
-      ],
-      "All": [
-        "Toate"
-      ],
-      "Calendar": [
-        "Calendar"
-      ],
-      "Configure migration": [
-        "Configurare migrare"
-      ],
-      "Contacts": [
-        "Contacte"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Starea migrării datelor din Google Workspace către ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Mesaje"
-      ],
-      "Errors": [
-        "Erori"
-      ],
-      "Estimated size": [
-        "Mărime estimată"
-      ],
-      "Find out what can be migrated.": [
-        "Aflați ce poate fi migrat."
-      ],
-      "Has errors": [
-        "Are erori"
-      ],
-      "In progress": [
-        "În derulare"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adresa membrului nu a fost găsită. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
-      ],
-      "Migrate": [
-        "Migrare"
-      ],
-      "Migrated": [
-        "Migrat"
-      ],
-      "Migration status": [
-        "Stare migrare"
-      ],
-      "Missing organization private key": [
-        "Cheia privată a organizației lipsește."
-      ],
-      "Missing organization public key": [
-        "Cheia publică a organizației lipsește."
-      ],
-      "No users to display": [
-        "Nu există utilizatori de afișat."
-      ],
-      "Not activated": [
-        "Neactivat"
-      ],
-      "Organization does not have enough seats available": [
-        "Organizația nu dispune de suficiente licențe disponibile."
-      ],
-      "Organization does not have enough storage available": [
-        "Organizația nu are suficient spațiu de stocare disponibil."
-      ],
-      "Pending": [
-        "În așteptare"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Selectați exact ce doriți să migrați. Se va aplica tuturor utilizatorilor organizației."
-      ],
-      "Select users to migrate": [
-        "Selectați utilizatorii pentru migrare"
-      ],
-      "Size": [
-        "Mărime"
-      ],
-      "Status": [
-        "Stare"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Acest utilizator nu poate fi migrat din cauza unor incompatibilități de platformă."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Pentru a migra acest utilizator, activați-i contul în consola de administrare din Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Pentru a migra acest utilizator, activați-i contul la ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Pentru a migra acest utilizator, activați-i adresa la ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Pentru a migra acest utilizator, acesta trebuie să accepte invitația de a se alătura la ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Pentru a migra acest utilizator, dezarhivați-l în consola de administrare din Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Pentru a migra acest utilizator, deblocați-l în consola de administrare din Google Workspace."
-      ],
-      "User": [
-        "Utilizator"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Utilizatori care și-au accesat contul ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Ce migrați?"
-      ],
-      "You": [
-        "Eu"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicați ${ MAIL_APP_NAME } Desktop"
@@ -3600,6 +3481,9 @@
       "Cannot find move target": [
         "Nu s-a putut găsi ținta mutării"
       ],
+      "Cannot verify the author of this file": [
+        "Autorul acestui fișier nu poate fi verificat."
+      ],
       "Checkout expired, please try again": [
         "Finalizarea comenzii a expirat. Reîncercați."
       ],
@@ -3793,6 +3677,9 @@
       "Invalid public key file": [
         "Cheie publică nevalidă."
       ],
+      "Invalid URL": [
+        "Adresă URL nevalidă."
+      ],
       "Invalid VAT number": [
         "Cont TVA nevalid"
       ],
@@ -3808,6 +3695,9 @@
       "Last name is too long": [
         "Numele este prea lung."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Legătura web publică veche nu poate fi actualizată. Creați o legătură web publică nouă."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Îmbinați cel puțin ${ calendarsToFixCount } calendar cu un calendar ${ BRAND_NAME } existent.",
         "Îmbinați cel puțin ${ calendarsToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
@@ -3816,11 +3706,19 @@
       "Missing key packet": [
         "Lipsește pachetul de chei."
       ],
+      "Missing organization public key": [
+        "Cheia publică a organizației lipsește."
+      ],
       "Missing signature": [
         "Semnătură lipsă"
       ],
       "Name is required": [
         "Numele este obligatoriu."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } caracter.",
+        "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } caractere.",
+        "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } de caractere."
       ],
       "Network error": [
         "Eroare de rețea."
@@ -3864,6 +3762,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Cheia organizației trebuie activată pentru a crea utilizatori neprivați."
+      ],
+      "Part of the file appears to be corrupted": [
+        "O parte a fișierului pare a fi coruptă."
       ],
       "Password is required": [
         "Parola este obligatorie"
@@ -3992,6 +3893,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
+      "Something went wrong": [
+        "Ceva nu a funcționat corect."
+      ],
       "Something went wrong during folder listing": [
         "Ceva nu a funcționat bine pe durata listării folderelor."
       ],
@@ -4073,6 +3977,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Acest nume de folder nu este disponibil. Alegeți un nume diferit."
       ],
+      "This item is no longer shared": [
+        "Acest articol nu mai este partajat."
+      ],
       "This label name is not available. Please choose a different name.": [
         "Acest nume de etichetă nu este disponibil. Alegeți un alt nume."
       ],
@@ -4121,6 +4028,9 @@
       "VAT number must start with ${ prefixes }": [
         "Valoarea TVA trebuie să înceapă cu ${ prefixes }."
       ],
+      "Verification keys are not available": [
+        "Cheile de verificare nu sunt disponibile."
+      ],
       "We cannot retrieve this item": [
         "Acest articol nu se poate prelua."
       ],
@@ -4164,6 +4074,9 @@
         "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
         "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
         "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }"
+      ],
+      "You do not have access to this item": [
+        "Nu aveți acces la acest articol."
       ],
       "You have reached the maximum number of calendars.": [
         "Ați atins numărul maxim de calendare."
@@ -5085,6 +4998,14 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Selectați ${ boldExport } pentru a exporta calendarul ca fișier ICS."
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "În derulare"
+      ],
+      "Migrated": [
+        "Migrat"
       ]
     },
     "Import warning": {
@@ -6071,9 +5992,6 @@
       "Key fingerprint": [
         "Amprentă cheie"
       ],
-      "Keys created": [
-        "Cheile au fost create."
-      ],
       "Label all imported messages as": [
         "Etichetare toate mesajele importate cu"
       ],
@@ -6539,6 +6457,9 @@
       "Select an uploaded file or folder and create a link to it.": [
         "Selectaţi un fişier sau folder încărcat şi creaţi o legătură web la acesta."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selectați exact ce doriți să migrați. Se va aplica tuturor utilizatorilor organizației."
+      ],
       "Select item": [
         "Selectare articol"
       ],
@@ -6800,6 +6721,9 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pentru a importa evenimente, mai întâi creați un calendar în ${ CALENDAR_APP_NAME }. Aici vor apărea evenimentele după importare."
       ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, activați-i contul în consola de administrare din Google Workspace."
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pentru a vă resemna contactele, trebuie să verificăm fiecare contact în lista de chei de criptare disponibile în cont. Dacă nu se găsește nicio potrivire, contactul va fi resemnat cu cheia de criptare primară."
       ],
@@ -6904,9 +6828,6 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Folosiți acest formular pentru a ne anunța despre fișierele partajate nepotrivite, ilegale sau în vreun fel malițioase. Urmează să raportați:"
-      ],
-      "User activated": [
-        "Utilizator activat"
       ],
       "username": [
         "utilizator"
@@ -7137,9 +7058,6 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nu se va aplica taxa dacă anulați înainte de ${ trialEndsOnFormatted }."
-      ],
-      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
-        "Nu veți putea partaja „${ fileName }” după modificarea accesului la „utilizator”. Doar proprietarul vă poate modifica din nou accesul."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Vei primi recompensa în credite la o lună după ce persoana se abonează la un plan anual și la două luni după ce se abonează la un plan lunar."
@@ -11063,6 +10981,11 @@
         "Progres: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "atribute"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adresa"
@@ -12604,6 +12527,9 @@
       "Name": [
         "Nume"
       ],
+      "Size": [
+        "Mărime"
+      ],
       "Status": [
         "Stare"
       ],
@@ -13655,9 +13581,6 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Nu s-a putut verifica dacă un utilizator anonim a încărcat acest folder."
       ],
-      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Nu s-a putut confirma că fișierul a fost încărcat de către ${ claimedContentAuthor }. Motiv: ${ activeRevision.contentAuthor.error.error }"
-      ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "Nu s-a putut confirma că numele a fost creat sau modificat de către ${ claimedNameAuthor }. Motiv: ${ node.nameAuthor.error.error }"
       ],
@@ -13892,6 +13815,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Treceți la un plan care suportă roluri de administrator."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."
       ]

@@ -491,6 +491,9 @@
       "Edit users": [
         "Redigera användare"
       ],
+      "Enable": [
+        "Aktivera"
+      ],
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
       ],
@@ -859,9 +862,6 @@
       ],
       "Remove": [
         "Ta bort"
-      ],
-      "Remove all members": [
-        "Ta bort alla medlemmar"
       ],
       "Remove all other devices": [
         "Ta bort alla andra enheter"
@@ -1297,6 +1297,9 @@
       ],
       "View all reports": [
         "Visa alla rapporter"
+      ],
+      "View guide": [
+        "Visa guide"
       ],
       "View invoice": [
         "Visa faktura"
@@ -2054,125 +2057,6 @@
       ],
       "Working with sensitive data?": [
         "Arbetar du med känslig data?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Aktiverat"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
-      ],
-      "All": [
-        "Alla"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Configure migration": [
-        "Konfigurera migrering"
-      ],
-      "Contacts": [
-        "Kontakter"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status för datamigrering från Google Workspace till ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-post"
-      ],
-      "Errors": [
-        "Fel"
-      ],
-      "Estimated size": [
-        "Beräknad storlek"
-      ],
-      "Find out what can be migrated.": [
-        "Ta reda på vad som kan migreras."
-      ],
-      "Has errors": [
-        "Har fel"
-      ],
-      "In progress": [
-        "Pågår"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta."
-      ],
-      "Migrate": [
-        "Migrera"
-      ],
-      "Migrated": [
-        "Migrerad"
-      ],
-      "Migration status": [
-        "Migreringsstatus"
-      ],
-      "Missing organization private key": [
-        "Saknar organisationens privata nyckel"
-      ],
-      "Missing organization public key": [
-        "Saknar organisationens offentliga nyckel"
-      ],
-      "No users to display": [
-        "Inga användare att visa"
-      ],
-      "Not activated": [
-        "Inte aktiverat"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisation har inte tillräckligt med licenser tillgängligt"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
-      ],
-      "Pending": [
-        "Väntar"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
-      ],
-      "Select users to migrate": [
-        "Välj användare att migrera"
-      ],
-      "Size": [
-        "Storlek"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Denna användare kan inte migreras på grund av plattformsinkompatibilitet."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "För att migrera denna användare, aktivera deras konto i din Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "För att migrera denna användare måste de acceptera sin inbjudan att gå med i ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "För att migrera denna användare, återställ dem från arkivet i din Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "För att migrera denna användare, häv avstängningen för dem i din Google Workspace Admin Console."
-      ],
-      "User": [
-        "Användare"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Användare som har använt sitt ${ BRAND_NAME }-konto"
-      ],
-      "What are you migrating?": [
-        "Vad migrerar du?"
-      ],
-      "You": [
-        "Du"
       ]
     },
     "Browser": {
@@ -4809,6 +4693,12 @@
       "Calendar limit reached": [
         "Kalendergräns nådd"
       ],
+      "Cannot download a folder": [
+        "Kan inte ladda ner en mapp"
+      ],
+      "Cannot share root folder": [
+        "Kan inte dela rotmapp"
+      ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
       ],
@@ -4818,8 +4708,17 @@
       "Company name or personal name is required": [
         "Företagsnamn eller personnamn är obligatoriskt"
       ],
+      "Could not find an available name": [
+        "Kunde inte hitta ett tillgängligt namn"
+      ],
       "Could not generate the device profile. Please try again.": [
         "Kunde inte generera enhetsprofilen. Försök igen."
+      ],
+      "Could not unlock the parent folder": [
+        "Kunde inte låsa upp den överordnade mappen"
+      ],
+      "Could not unlock this item": [
+        "Kunde inte låsa upp detta objekt"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Kunde inte ladda fakturor. Försök igen senare."
@@ -4834,6 +4733,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Avmarkera minst ${ calendarsToFixCount } kalender eller",
         "Avmarkera minst ${ calendarsToFixCount } kalendrar eller"
+      ],
+      "Device not found": [
+        "Enhet hittades inte"
       ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
@@ -4888,6 +4790,12 @@
       ],
       "Failed to update detailed monitoring.": [
         "Misslyckades att uppdatera detaljerad övervakning."
+      ],
+      "Failed to verify invitation": [
+        "Misslyckades med att verifiera inbjudan"
+      ],
+      "File has no revision": [
+        "Fil har ingen version"
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Fil för stor. Din logga måste vara 30 KB eller mindre."
@@ -4961,11 +4869,20 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "Ogiltig återställningstoken. Uppdatera sidan och försök igen."
       ],
+      "Invalid URL": [
+        "Ogiltig URL"
+      ],
       "Invalid VAT number": [
         "Ogiltigt momsregistreringsnummer"
       ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
+      ],
+      "Invitation not found": [
+        "Inbjudan hittades inte"
+      ],
+      "Item not found": [
+        "Objekt hittades inte"
       ],
       "Label name cannot be empty.": [
         "Etikettnamn kan inte vara tomt."
@@ -4980,11 +4897,17 @@
       "Missing key packet": [
         "Saknar nyckelpaket"
       ],
+      "Missing signature": [
+        "Signatur saknas"
+      ],
       "Name already exists": [
         "Namn finns redan"
       ],
       "Name does not match": [
         "Namn matchar inte"
+      ],
+      "Name must not be empty": [
+        "Namn får inte vara tomt"
       ],
       "No calendars found to import": [
         "Inga kalendrar hittades att importera"
@@ -5042,6 +4965,12 @@
       ],
       "Permissions request failed.": [
         "Behörighetsbegäran misslyckades."
+      ],
+      "Photo is already in the target album": [
+        "Foto är redan i målalbum"
+      ],
+      "Photo not found": [
+        "Foto hittades inte"
       ],
       "Please add a payment method before reactivating your subscription": [
         "Lägg till en betalningsmetod innan du återaktiverar din prenumeration"
@@ -5151,8 +5080,17 @@
       "Server not found": [
         "Server hittades inte"
       ],
+      "Signature is missing": [
+        "Signatur saknas"
+      ],
       "Signature verification failed": [
         "Signaturverifiering misslyckades"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturverifiering för ${ signatureType } misslyckades"
+      ],
+      "Some items could not be loaded": [
+        "Några objekt kunde inte laddas"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Vissa av dina mappnamn är inte tillgängliga. Anpassa importen för att redigera dessa namn."
@@ -5168,6 +5106,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
+      ],
+      "Something went wrong": [
+        "Något gick fel"
       ],
       "Something went wrong while converting the address": [
         "Något gick fel när adressen konverterades"
@@ -5250,6 +5191,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Detta mappnamn är inte tillgängligt. Välj ett annat namn."
       ],
+      "This item is not shared": [
+        "Detta objekt är inte delat"
+      ],
       "This label name is not available. Please choose a different name.": [
         "Detta etikettnamn är inte tillgängligt. Välj ett annat namn."
       ],
@@ -5304,6 +5248,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Verifieringen lyckades inte, försök igen om en timme."
       ],
+      "Verification keys are not available": [
+        "Verifieringsnycklar är inte tillgängliga"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunde inte skicka en verifieringskod med den här metoden."
       ],
@@ -5318,6 +5265,12 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Fel verifieringskod. Se till att du kopierade verifieringskoden korrekt och försök igen. Det kan ta upp till 24 timmar innan ändringarna träder i kraft."
+      ],
+      "You do not have access to this item": [
+        "Du har inte åtkomst till detta objekt"
+      ],
+      "You do not have access to this shared item": [
+        "Du har inte åtkomst till detta delade objekt"
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nått det maximala antalet kalendrar."
@@ -6771,6 +6724,14 @@
         "Välj ${ boldExport } för att exportera kalendern som en ICS-fil."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } av ${ totalContacts } kontakter kommer inte att importeras. Klicka för detaljer"
@@ -7285,9 +7246,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Är du säker på att du vill ta bort administrativa behörigheter från denna användare?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "Är du säker du vill ta bort alla medlemmar från denna grupp?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Är det säker på att du vill ta bort domänen ${ boldDomain }?"
@@ -8759,6 +8717,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Smart-dirigerad via: ${ joinedCountries }."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Vissa ${ BRAND_NAME }-appar kanske inte har stöd för säkerhetsnycklar ännu. Om du inaktiverar 2FA med autentiseringsapp kan du eventuellt inte logga in på de apparna."
@@ -14063,6 +14024,20 @@
         "Uppgradera till ${ upsellPlanTitle }"
       ]
     },
+    "Property": {
+      "attributes": [
+        "attribut"
+      ],
+      "key": [
+        "nyckel"
+      ],
+      "membership": [
+        "medlemskap"
+      ],
+      "name": [
+        "namn"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adress"
@@ -14931,17 +14906,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Se till att du kopierar SCIM-token ovan nu."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "När SCIM inaktiverats för din organisation så kommer **alla SCIM-användare som erhållits automatiskt från din identitetsleverantör att konverteras till SSO-användare** och du kommer att kunna hantera dem direkt i ${ BRAND_NAME }-inställningarna."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Förenklar användarhantering över olika tjänster. Lägg till, redigera och ta bort användare i din identitetsleverantör, så kommer dessa ändringar automatiskt att tillämpas på din ${ appName }-organisation."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Den automatiska SCIM-provisioneringen kommer att inaktiveras tills du angett den nya SCIM-token i din identitetsleverantörs inställningar."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM-baswebbadressen och -token kommer att tas bort."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "För att återaktivera synkronisering med din identitetsleverantör måste du slutföra SCIM-integreringen igen."
@@ -16970,6 +16939,14 @@
         "För individer"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Storlek"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Åtgärd"
@@ -18050,9 +18027,6 @@
       ],
       "Reject device?": [
         "Neka enhet?"
-      ],
-      "Remove all members?": [
-        "Ta bort alla medlemmar?"
       ],
       "Remove device?": [
         "Ta bort enhet?"

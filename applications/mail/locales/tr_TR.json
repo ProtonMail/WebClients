@@ -901,6 +901,9 @@
       "Messages to this recipient": [
         "Bu alıcıya gönderilmiş iletiler"
       ],
+      "Migrate": [
+        "Aktar"
+      ],
       "Minimize composer": [
         "Oluşturucuyu küçült"
       ],
@@ -1523,7 +1526,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1659,6 +1663,9 @@
       ],
       "View contact details": [
         "Kişi bilgilerini görüntüle"
+      ],
+      "View guide": [
+        "Rehberi görüntüle"
       ],
       "View headers": [
         "Üst bilgileri görüntüle"
@@ -2235,128 +2242,6 @@
       ],
       "Yearly": [
         "Yıllık"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Etkinleştirildi"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından kullanılıyor. Bu sorunu çözmek için lütfen müşteri destek ekibimiz ile görüşün"
-      ],
-      "All": [
-        "Tümü"
-      ],
-      "Calendar": [
-        "Takvim"
-      ],
-      "Configure migration": [
-        "Aktarımı yapılandırın"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Aktarma işlemini başlatmak için yöneticiniz ile görüşün."
-      ],
-      "Contacts": [
-        "Kişiler"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Google Workspace üzerinden ${ BRAND_NAME } üzerine veri aktarımı durumu"
-      ],
-      "Emails": [
-        "E-postalar"
-      ],
-      "Errors": [
-        "Hatalar"
-      ],
-      "Estimated size": [
-        "Öngörülen boyut"
-      ],
-      "Find out what can be migrated.": [
-        "Nelerin aktarılabileceğini öğrenin."
-      ],
-      "Has errors": [
-        "Sorunlar çıktı"
-      ],
-      "In progress": [
-        "İşleniyor"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimizle görüşün"
-      ],
-      "Migrate": [
-        "Aktar"
-      ],
-      "Migrated": [
-        "Aktarıldı"
-      ],
-      "Migration status": [
-        "Aktarım durumu"
-      ],
-      "Missing organization private key": [
-        "Kuruluşun kişisel anahtarı eksik"
-      ],
-      "Missing organization public key": [
-        "Kuruluşun herkese açık anahtarı bulunamadı"
-      ],
-      "No users to display": [
-        "Görüntülenebilecek bir kullanıcı yok"
-      ],
-      "Not activated": [
-        "Etkinleştirilmemiş"
-      ],
-      "Organization does not have enough seats available": [
-        "Kuruluşun yeterli koltuk sayısı yok"
-      ],
-      "Organization does not have enough storage available": [
-        "Kuruluşun yeterli depolama alanı yok"
-      ],
-      "Pending": [
-        "Bekliyor"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Tam olarak neyi aktarmak istediğinizi seçin. Kuruluşun tüm kullanıcılarına uygulanır."
-      ],
-      "Select users to migrate": [
-        "Aktarılacak kullanıcıları seçin"
-      ],
-      "Size": [
-        "Boyut"
-      ],
-      "Status": [
-        "Durum"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının hesabını etkinleştirin."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcıyı arşivden çıkarın."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının askıya alınma durumunu kaldırın."
-      ],
-      "User": [
-        "Kullanıcı"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } hesaplarına erişen kullanıcılar"
-      ],
-      "What are you migrating?": [
-        "Neyi aktarıyorsunuz?"
-      ],
-      "You": [
-        "Siz"
       ]
     },
     "Browser": {
@@ -4840,6 +4725,9 @@
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Telif hakkı ihlali veya çalıntı verileri bildirirken bir ileti yazılmalıdır"
+      ],
       "A problem occurred, please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
@@ -4854,6 +4742,9 @@
       ],
       "Address is already added to your account": [
         "Adres hesabınıza zaten eklenmiş"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından halihazırda kullanılıyor. Bu sorunu çözmek için lütfen müşteri desteğiyle iletişime geçin"
       ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
@@ -4894,14 +4785,35 @@
       "Authentication error.": [
         "Kimlik doğrulama sorunu."
       ],
+      "Bookmark password is not available": [
+        "Yer imi parolası kullanılamıyor"
+      ],
       "Calendar limit reached": [
         "Takvim sayısı sınırına ulaşıldı"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Fotoğraf, geçerli bir adı olmadan albüme eklenemez"
+      ],
+      "Cannot download a folder": [
+        "Bir klasör indirilemedi"
       ],
       "Cannot export this contact": [
         "Bu kişi dışa aktarılamadı"
       ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Öge, geçerli bir adı olmadan taşınamaz. Lütfen önce ögeyi yeniden adlandırın"
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "Geçerlilik sonu tarihi, verileri tutma ilkesinin izin verdiğinden daha uzun bir süre için ayarlanamaz."
+      ],
+      "Cannot share root folder": [
+        "Kök klasör paylaşılamaz"
+      ],
+      "Cannot verify the author of this file": [
+        "Bu dosyanın sahibi doğrulanamadı"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Bu dosyanın yükleyen kişi doğrulanamadı"
       ],
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
@@ -4931,6 +4843,9 @@
       "Contact signature not verified": [
         "Kişi imzası doğrulanamadı"
       ],
+      "Contact your administrator to start a migration.": [
+        "Geçiş işlemini başlatmak için yöneticinize başvurun."
+      ],
       "Contact your organization’s administrator to resolve this": [
         "Bu sorunu çözmek için kuruluşunuzun yöneticisi ile görüşün"
       ],
@@ -4940,11 +4855,44 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "İçerik arama açılamadı. Lütfen uygulamayı yeniden başlatın ya da verileri temizleyin."
       ],
+      "Copy operation aborted": [
+        "Kopyalama işlemi iptal edildi"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Öge, klasör olmayan bir ögeye kopyalanamaz"
+      ],
+      "Could not find an available name": [
+        "Kullanılabilecek bir ad bulunamadı"
+      ],
+      "Could not load sharing details": [
+        "Paylaşım ayrıntıları yüklenemedi"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Görsel ön izlemesi yüklenemedi: ${ message }"
+      ],
       "Could not open created vault": [
         "Oluşturulan kasa açılamadı"
       ],
       "Could not open updated vault": [
         "Güncellenen kasa açılamadı"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Bu dosyanın bir parçası okunamadı: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Üst klasörün kilidi açılamadı"
+      ],
+      "Could not unlock this item": [
+        "Bu ögenin kilidi açılamadı"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde belge oluşturulamaz"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde dosya oluşturulamaz"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde klasör oluşturulamaz"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Şifre çözme sorunu: Bu iletinin şifrelenmiş içeriğinin şifresi çözülemedi."
@@ -4956,6 +4904,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "En az ${ calendarsToFixCount } takvimi kaldırın ya da",
         "En az ${ calendarsToFixCount } takvimi kaldırın ya da"
+      ],
+      "Device not found": [
+        "Aygıt bulunamadı"
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
@@ -5005,11 +4956,38 @@
       "Error while uploading attachments. Message is not sent.": [
         "Ek dosyalar yüklenirken sorun çıktı. İleti gönderilmedi."
       ],
+      "Expiration date cannot be in the past": [
+        "Geçerlilik sonu tarihi geçmişte olamaz"
+      ],
       "Failed loading group members": [
         "Grup üyeleri yüklenemedi"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Yer imi anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Yer imi adının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Yer iminin şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "İçerik anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Öge adının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Düğüm anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Sürüm üst bilgilerinin şifresi çözülemedi"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Ek dosya şifrelenemedi. Lütfen yeniden deneyin."
+      ],
+      "Failed to get inviter keys": [
+        "Davet edilenin anahtarları alınamadı"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
@@ -5019,6 +4997,15 @@
       ],
       "Failed to open to contact": [
         "Kişiye açılamadı"
+      ],
+      "Failed to verify invitation": [
+        "Davet doğrulanamadı"
+      ],
+      "File download failed due to empty response": [
+        "Boş yanıt nedeniyle dosya indirilemedi"
+      ],
+      "File has no revision": [
+        "Dosyanın bir sürümü yok"
       ],
       "Filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
@@ -5031,6 +5018,9 @@
       ],
       "Forward address is required": [
         "İletilecek adresin yazılması zorunludur"
+      ],
+      "Image preview not found": [
+        "Görsel ön izlemesi bulunamadı"
       ],
       "Image upload failed": [
         "Görsel yüklenemedi"
@@ -5065,14 +5055,23 @@
       "Invalid public key file": [
         "Herkese açık anahtar dosyası geçersiz"
       ],
+      "Invalid URL": [
+        "Adres geçersiz"
+      ],
       "Invalid VAT number": [
         "KDV numarası geçersiz"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
+      "Invitation not found": [
+        "Davet bulunamadı"
+      ],
       "Item content cannot exceed 40KB": [
         "Öge içeriği 40KB boyutundan büyük olamaz"
+      ],
+      "Item not found": [
+        "Öge bulunamadı"
       ],
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
@@ -5080,11 +5079,17 @@
       "Last name is too long": [
         "Soyad çok uzun"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Eski herkese açık bağlantı güncellenemedi. Lütfen yeni bir herkese açık bağlantı oluşturun."
+      ],
       "Maximum expiration time reached.": [
         "En uzun geçerlilik süresine ulaşıldı."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Eklenebilecek en fazla dosya sayısı (${ attachmentsCountLimit }) sınırı aşıldı"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimizle görüşün"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
@@ -5096,14 +5101,42 @@
       "Message processing error.": [
         "İleti işleme sorunu."
       ],
+      "Missing inviter email": [
+        "Davet edilenin e-posta adresi eksik"
+      ],
       "Missing key packet": [
         "Anahtar paketi eksik"
+      ],
+      "Missing organization private key": [
+        "Kuruluşun özel anahtarı eksik"
+      ],
+      "Missing organization public key": [
+        "Kuruluşun herkese açık anahtarı bulunamadı"
       ],
       "Missing signature": [
         "İmza eksik"
       ],
+      "Missing signature for ${ signatureType }": [
+        "${ signatureType } için imza eksik"
+      ],
+      "Move operation aborted": [
+        "Taşıma işlemi iptal edildi"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Öge, klasör olmayan bir ögeye taşınamaz"
+      ],
+      "Moving root item is not allowed": [
+        "Kök öge taşınamaz"
+      ],
       "Name is required": [
         "Adın yazılması zorunludur"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Ad en fazla ${ MAX_NODE_NAME_LENGTH } karakter uzunluğunda olabilir",
+        "Ad en fazla ${ MAX_NODE_NAME_LENGTH } karakter uzunluğunda olabilir"
+      ],
+      "Name must not be empty": [
+        "Ad boş olamaz"
       ],
       "Network error": [
         "Ağ sorunu"
@@ -5132,6 +5165,9 @@
       "No external key retrieved for user is valid for sending": [
         "Kullanıcının alınan hiçbir dış anahtarı gönderim için geçerli değil"
       ],
+      "No file data was received. Please try again.": [
+        "Herhangi bir dosya verisi alınmadı. Lütfen yeniden deneyin."
+      ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
       ],
@@ -5146,6 +5182,21 @@
         "Gruplardan birinde kişi yok: ${ noContactGroupList }",
         "Gruplardan bazılarında kişi yok: ${ noContactGroupList }"
       ],
+      "Only admins can convert external invitations": [
+        "Yalnızca yöneticiler dış davetleri dönüştürebilir"
+      ],
+      "Operation aborted": [
+        "İşlem iptal edildi"
+      ],
+      "Operation failed, try again later": [
+        "İşlem tamamlanamadı. Bir süre sonra yeniden deneyin"
+      ],
+      "Organization does not have enough seats available": [
+        "Kuruluşta yeterli sayıda boş koltuk yok"
+      ],
+      "Organization does not have enough storage available": [
+        "Kuruluşun yeterli depolama alanı yok"
+      ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
       ],
@@ -5154,6 +5205,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Dosyanın bir bölümü bozulmuş gibi görünüyor"
       ],
       "Password is required": [
         "Parolanın yazılması zorunludur"
@@ -5175,6 +5229,12 @@
       ],
       "Permissions request failed.": [
         "Erişim izni isteği yapılamadı."
+      ],
+      "Photo is already in the target album": [
+        "Fotoğraf zaten hedef albümde bulunuyor"
+      ],
+      "Photo not found": [
+        "Fotoğraf bulunamadı"
       ],
       "Please activate your search again": [
         "Lütfen arama özelliğini yeniden açın"
@@ -5280,6 +5340,12 @@
         "Yinelenen alıcı kaldırıldı: ${ recipents }",
         "Yinelenen alıcılar kaldırıldı: ${ recipents }"
       ],
+      "Renaming root item is not allowed": [
+        "Kök öge yeniden adlandırılamaz"
+      ],
+      "Request aborted": [
+        "İstek iptal edildi"
+      ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
@@ -5292,6 +5358,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "Tarifenizin sınırlarını aştığınızda veya tarifenizi yükseltene dek ek dosyalar gönderemeyeceksiniz."
       ],
+      "Signature is missing": [
+        "İmza eksik"
+      ],
       "Signature not verified": [
         "İmza doğrulanamadı"
       ],
@@ -5301,11 +5370,29 @@
       "Signature verification failed": [
         "İmza doğrulanamadı"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "İmza doğrulanamadı: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } için imza doğrulanamadı"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } için imza doğrulanamadı: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Bazı kişiler silinemedi"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Bazı dosya verileri yüklenemedi. Lütfen yeniden deneyin."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Bazı dosya parçaları yüklenemedi. Lütfen yeniden deneyin."
+      ],
       "Some groups could not be deleted": [
         "Bazı gruplar silinemedi"
+      ],
+      "Some items could not be loaded": [
+        "Bazı ögeler yüklenemedi"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Bazı klasör adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
@@ -5321,6 +5408,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Something went wrong": [
+        "Bir sorun çıktı"
       ],
       "Something went wrong while converting the address": [
         "Adres dönüştürülürken bir sorun çıktı"
@@ -5395,6 +5485,9 @@
       "The system is busy at the moment. Please try again in a few minutes.": [
         "Sistem şu anda meşgul. Lütfen birkaç dakika sonra yeniden deneyin."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Yüklenen dosya özgün dosya ile eşleşmiyor. Lütfen yeniden deneyin."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Yazma yardımcısı isteğinizi yerine getiremiyor. Lütfen farklı bir istekte bulunun."
       ],
@@ -5425,8 +5518,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
+      "This file has missing crypto material": [
+        "Bu dosyada şifreleme materyali eksik"
+      ],
+      "This file has no version available to download": [
+        "Bu dosyanın indirilebilecek bir sürümü yok"
+      ],
+      "This file version could not be uploaded": [
+        "Bu dosya sürümü yüklenemedi"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Bu klasör adı kullanılamaz. Lütfen farklı bir ad seçin."
+      ],
+      "This item has no image preview": [
+        "Bu ögenin görsel ön izlemesi yok"
+      ],
+      "This item is no longer shared": [
+        "Bu öge artık paylaşılmıyor"
+      ],
+      "This item is not shared": [
+        "Bu öge paylaşılmıyor"
       ],
       "This label name is not available. Please choose a different name.": [
         "Bu etiket adı kullanılamaz. Lütfen farklı bir ad seçin."
@@ -5439,6 +5550,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
+      ],
+      "Too many server errors, please try again later": [
+        "Çok fazla sayıda sunucu sorunu çıktı. Lütfen bir süre sonra yeniden deneyin"
+      ],
+      "Too many server requests, please try again later": [
+        "Çok fazla sayıda sunucu isteği yapıldı. Lütfen bir süre sonra yeniden deneyin"
       ],
       "Trusted keys are not valid for sending": [
         "Güvenilen anahtarlar gönderim için geçerli değil"
@@ -5473,6 +5590,12 @@
       "VAT number must start with ${ prefixes }": [
         "KDV numarası ${ prefixes } ile başlamalıdır"
       ],
+      "Verification keys are not available": [
+        "Doğrulama anahtarları bulunamadı"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } için doğrulama anahtarları yok"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Doğrulama kodu bu yöntemle gönderilemedi."
       ],
@@ -5481,6 +5604,18 @@
       ],
       "Wrong password": [
         "Parola yanlış"
+      ],
+      "You can create public links for your own files only": [
+        "Yalnızca kendi dosyalarınız için herkese açık bağlantı oluşturabilirsiniz"
+      ],
+      "You can only leave items that are shared with you": [
+        "Yalnızca sizinle paylaşılan ögelerden ayrılabilirsiniz"
+      ],
+      "You can only upload a new version to a file": [
+        "Bir dosyaya yalnızca yeni bir sürüm yükleyebilirsiniz"
+      ],
+      "You can update a public link for your own files only": [
+        "Yalnızca kendi dosyalarınızın herkese açık bağlantısını güncelleyebilirsiniz"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Bir e-postayı ${ maxContacts } taneden fazla alıcıya göndermezsiniz",
@@ -5492,6 +5627,12 @@
       ],
       "You did not provide a file.": [
         "Bir dosya seçmediniz."
+      ],
+      "You do not have access to this item": [
+        "Bu ögeye erişme izniniz yok"
+      ],
+      "You do not have access to this shared item": [
+        "Bu paylaşılan ögeye erişme izniniz yok"
       ],
       "You have reached the maximum number of calendars.": [
         "Eklenebilecek en fazla takvim sayısı sınırına ulaştınız."
@@ -6036,6 +6177,15 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "Etkinleştirildi"
+      ],
+      "All": [
+        "Tümü"
+      ],
+      "Errors": [
+        "Hatalar"
+      ],
       "Filter": [
         "Süz"
       ],
@@ -6047,6 +6197,18 @@
       ],
       "Has attachments": [
         "Ek dosyaları olan"
+      ],
+      "In progress": [
+        "Devam ediyor"
+      ],
+      "Migrated": [
+        "Aktarıldı"
+      ],
+      "Not activated": [
+        "Etkinleştirilmemiş"
+      ],
+      "Pending": [
+        "Bekliyor"
       ],
       "Read": [
         "Okunmuş"
@@ -6753,6 +6915,20 @@
         "Diğer içe aktarma seçenekleri"
       ]
     },
+    "Import status": {
+      "Has errors": [
+        "Hatalar var"
+      ],
+      "In progress": [
+        "İşlem sürüyor"
+      ],
+      "Migrated": [
+        "Aktarıldı"
+      ],
+      "Pending": [
+        "Beklemede"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Ayrıntılı bilgi almak için tıklayın"
@@ -7295,6 +7471,9 @@
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
+      "Author is not provided on public link": [
+        "Sahip herkese açık bağlantıda belirtilmemiş"
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Çöp ve İstenmeyen kutularındaki 30 günden eski e-postaları otomatik olarak temizleyin."
       ],
@@ -7726,6 +7905,9 @@
       "finance": [
         "finans"
       ],
+      "Find out what can be migrated.": [
+        "Nelerin taşınabileceğini öğrenin."
+      ],
       "Folder": [
         "Klasör"
       ],
@@ -7896,8 +8078,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7940,9 +8121,6 @@
       ],
       "Key fingerprint": [
         "Anahtar parmak izi"
-      ],
-      "Keys created": [
-        "Anahtarlar oluşturuldu"
       ],
       "Label all imported messages as": [
         "İçe aktarılan iletiler şu şekilde etiketlensin"
@@ -8100,8 +8278,14 @@
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
       ],
+      "No conversation to read": [
+        "Okunacak yazışma yok"
+      ],
       "No email address": [
         "E-posta adresi yok"
+      ],
+      "No email open": [
+        "Hiçbir e-posta açılmadı"
       ],
       "No folder found": [
         "Herhangi bir klasör bulunamadı"
@@ -8135,6 +8319,9 @@
       ],
       "No trackers found": [
         "Herhangi bir izleyici bulunamadı"
+      ],
+      "No users to display": [
+        "Görüntülenecek kullanıcı yok"
       ],
       "non-${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } kullanmayan"
@@ -8350,9 +8537,32 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME } ile ilgili her konuda yardım almak için bizimle görüşün."
       ],
+      "Read ${ count } email": [
+        "${ count } e-posta oku",
+        "${ count } e-posta oku"
+      ],
       "Read ${ count } email on screen": [
         "Ekrandaki ${ count } e-postayı oku",
         "Ekrandaki ${ count } e-postayı oku"
+      ],
+      "Read ${ count } message in this thread": [
+        "Bu konudaki ${ count } iletiyi oku",
+        "Bu konudaki ${ count } iletiyi oku"
+      ],
+      "Read open email “${ subject }”": [
+        "“${ subject }” başlıklı açık e-postayı oku"
+      ],
+      "Read your ${ count } filter": [
+        "${ count } süzgecinizi okuyun",
+        "${ count } süzgecinizi okuyun"
+      ],
+      "Read your ${ count } folder": [
+        "${ count } klasörünüzü okuyun",
+        "${ count } klasörünüzü okuyun"
+      ],
+      "Read your ${ count } label": [
+        "${ count } etiketinizi okuyun",
+        "${ count } etiketinizi okuyun"
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -8435,6 +8645,9 @@
       "Select all ${ elementsCount } in ${ location }": [
         "${ location } içindeki ${ elementsCount } ögeyi seç",
         "${ location } içindeki ${ elementsCount } ögeyi seç"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Tam olarak neyi aktarmak istediğinizi seçin. Kuruluşun tüm kullanıcılarına uygulanır."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
@@ -8697,6 +8910,9 @@
       "This file is too large to preview": [
         "Bu dosya ön izleme için çok büyük"
       ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Bu Gmail adresi başka bir ${ BRAND_NAME } hesabında kayıtlı (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI ve diğerleri). Bu bağlantıyı birleştirmeye çalışıyoruz, ancak şimdilik birkaç adım atmanız gerekecek."
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Bu davet, kullanım dışı bırakılmış bir takvime kaydedilmiş."
       ],
@@ -8800,6 +9016,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Bu benzersiz kod, siteler ve internet hizmeti sağlayıcıları tarafından konumunuzu ve tarama geçmişinizi aygıtınızla ilişkilendirmek için kullanılabilir."
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Platform uyumsuzlukları nedeniyle bu kullanıcı taşınamaz."
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Bu bilgi, e-posta konu satırınızda parola sıfırlama anahtar sözcükleri bulunduğundan görüntülendi."
       ],
@@ -8826,6 +9045,18 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Etkinlikleri içe aktarmak için önce ${ CALENDAR_APP_NAME } içinde bir takvim oluşturun. Etkinlikleriniz içe aktarma işleminden sonra bu takvimde görüntülenir."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı taşıyabilmek için ${ usersAddressesLink } altındaki adresi etkinleştirin."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Bu kullanıcının geçiş işleminin gerçekleştirilebilmesi için ${ BRAND_NAME } üzerinden katılma davetini kabul etmesi gerekmektedir."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcıyı arşivden çıkarın."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle karşılaştırarak denetlememiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
@@ -8980,9 +9211,6 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "E-postanızı daha hızlı yönetmek için klavye kısayollarını kullanın."
       ],
-      "User activated": [
-        "Kullanıcı ektinleştirildi"
-      ],
       "username": [
         "kullanıcı adı"
       ],
@@ -9102,6 +9330,9 @@
       ],
       "Yearly": [
         "Yıllık"
+      ],
+      "You": [
+        "Siz"
       ],
       "You already have a free account": [
         "Zaten ücretsiz bir hesabınız var"
@@ -13473,6 +13704,26 @@
         "İlerleme: %${ combinedProgress }"
       ]
     },
+    "Property": {
+      "attributes": [
+        "öznitelikler"
+      ],
+      "content key": [
+        "içerik anahtarı"
+      ],
+      "hash key": [
+        "karma anahtarı"
+      ],
+      "key": [
+        "anahtar"
+      ],
+      "membership": [
+        "üyelik"
+      ],
+      "name": [
+        "ad"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adres"
@@ -15434,11 +15685,17 @@
       "Actions": [
         "İşlemler"
       ],
+      "Activated": [
+        "Etkinleştirildi"
+      ],
       "Address": [
         "Adres"
       ],
       "Created": [
         "Oluşturulma"
+      ],
+      "Estimated size": [
+        "Öngörülen boyut"
       ],
       "Expires": [
         "Geçerlilik sonu"
@@ -15446,14 +15703,23 @@
       "Fingerprint": [
         "Parmak izi"
       ],
+      "Migration status": [
+        "Aktarım durumu"
+      ],
       "Name": [
         "Ad"
+      ],
+      "Size": [
+        "Boyut"
       ],
       "Status": [
         "Durum"
       ],
       "Type": [
         "Tür"
+      ],
+      "User": [
+        "Kullanıcı"
       ]
     },
     "TableHeader": {
@@ -15740,6 +16006,9 @@
       "Collaborate on documents": [
         "Belgeler üzerinde işbirliği yapın"
       ],
+      "Configure migration": [
+        "Aktarımı yapılandır"
+      ],
       "Confirm downgrade": [
         "Tarife düşürmeyi onayla"
       ],
@@ -15996,6 +16265,9 @@
       ],
       "Groups": [
         "Gruplar"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Dikkat: Bu Gmail adresi başka bir ${ BRAND_NAME } hesabına bağlı"
       ],
       "Help and feedback": [
         "Yardım ve geri bildirim"
@@ -16401,6 +16673,9 @@
       "Select data to import": [
         "İçe aktarılacak verileri seçin"
       ],
+      "Select users to migrate": [
+        "Aktarılacak kullanıcıları seçin"
+      ],
       "Self-destruct message": [
         "Kendini yok eden ileti"
       ],
@@ -16616,6 +16891,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business uygulamasına hoş geldiniz"
       ],
+      "What are you migrating?": [
+        "Neyi aktarıyorsunuz?"
+      ],
       "What can a VPN protect you from?": [
         "Bir VPN sizi nelerden koruyabilir?"
       ],
@@ -16703,6 +16981,9 @@
       "Customize import to reduce the number of labels": [
         "Etiket sayısını azaltmak için içe aktarmayı özelleştirin"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspace'ten ${ BRAND_NAME } üzerine veri aktarım durumu"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "E-postaları dijital olarak imzalamak, iletilerin sizin tarafınızdan gönderildiğinin doğrulanmasını sağlar"
       ],
@@ -16780,6 +17061,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } hesaplarında oturum açmış kullanıcılar"
       ],
       "Version 6 OpenPGP key": [
         "6. sürüm OpenPGP anahtarı"

@@ -232,6 +232,9 @@
       "Clear browser data": [
         "Wis browsergegevens"
       ],
+      "Clear conversation": [
+        "Gesprek wissen"
+      ],
       "Clear data": [
         "Gegevens wissen"
       ],
@@ -1039,6 +1042,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
       ],
+      "Open debug menu": [
+        "Open het foutopsporingsmenu"
+      ],
       "Open navigation": [
         "Navigatie openen"
       ],
@@ -1441,6 +1447,9 @@
       "Stay": [
         "Blijf"
       ],
+      "Stop": [
+        "Stop"
+      ],
       "Stop downloading assistant": [
         "Stop met downloaden assistent"
       ],
@@ -1483,6 +1492,9 @@
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Om uw e-mails veilig te zoeken, moeten we een kopie van uw berichten downloaden naar uw browser. De aanvankelijke download kan even duren."
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Schakel ${ LUMO_SHORT_APP_NAME } in/uit"
+      ],
       "Toggle Calendar app": [
         "Agenda app kiezen"
       ],
@@ -1511,7 +1523,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1648,6 +1661,9 @@
       "View contact details": [
         "Contactdetails bekijken"
       ],
+      "View guide": [
+        "Bekijk gids"
+      ],
       "View headers": [
         "Headers bekijken"
       ],
@@ -1683,6 +1699,9 @@
       ],
       "Yes, I'll attend": [
         "Ja, ik zal deelnemen"
+      ],
+      "Yes, organize it": [
+        "Ja, organiseer het"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden",
@@ -1726,6 +1745,9 @@
       ],
       "Not now": [
         "Niet nu"
+      ],
+      "Set up categories": [
+        "Categorieën instellen"
       ],
       "Skip": [
         "Overslaan"
@@ -2217,128 +2239,6 @@
       ],
       "Yearly": [
         "Jaarlijks"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Geactiveerd"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Het adres is al in gebruik voor een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Calendar": [
-        "Agenda"
-      ],
-      "Configure migration": [
-        "Migratie configureren"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Neem contact op met uw beheerder om een ​​migratie te starten."
-      ],
-      "Contacts": [
-        "Contacten"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Gegevensmigratiestatus van Google Workspace naar ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-mails"
-      ],
-      "Errors": [
-        "Fouten"
-      ],
-      "Estimated size": [
-        "Geschatte grootte."
-      ],
-      "Find out what can be migrated.": [
-        "Ontdek wat er gemigreerd kan worden."
-      ],
-      "Has errors": [
-        "Bevat fouten"
-      ],
-      "In progress": [
-        "Bezig"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
-      ],
-      "Migrate": [
-        "Migreer"
-      ],
-      "Migrated": [
-        "Gemigreerd"
-      ],
-      "Migration status": [
-        "Migratiestatus"
-      ],
-      "Missing organization private key": [
-        "Ontbrekende privésleutel van de organisatie"
-      ],
-      "Missing organization public key": [
-        "Ontbrekende openbare sleutel van de organisatie"
-      ],
-      "No users to display": [
-        "Geen gebruikers om weer te geven"
-      ],
-      "Not activated": [
-        "Niet geactiveerd"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisatie heeft onvoldoende licenties beschikbaar"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisatie heeft onvoldoende opslagruimte beschikbaar"
-      ],
-      "Pending": [
-        "In behandeling"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
-      ],
-      "Select users to migrate": [
-        "Selecteer gebruikers om te migreren"
-      ],
-      "Size": [
-        "Grootte"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit van het platform."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Om deze gebruiker te migreren, schakelt u diens account in in uw Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Om deze gebruiker te migreren, schakelt u diens account in onder ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Om deze gebruiker te migreren, schakelt u diens adres in onder ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Om deze gebruiker te migreren, moet deze de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Om deze gebruiker te migreren, haalt u deze uit het archief in uw Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Om deze gebruiker te migreren, heft u de schorsing op in uw Google Workspace Admin Console."
-      ],
-      "User": [
-        "Gebruiker"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
-      ],
-      "What are you migrating?": [
-        "Wat migreert u?"
-      ],
-      "You": [
-        "U"
       ]
     },
     "Browser": {
@@ -4355,6 +4255,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lees, beantwoord en houd uw Gmail bij vanuit ${ MAIL_APP_NAME }"
       ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klik met de rechtermuisknop op een e-mail en selecteer 'Verplaatsen naar', of sleep het naar een andere categorie. Soortgelijke e-mails zullen daar in de toekomst automatisch worden gesorteerd."
+      ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Verzend en ontvang Gmail-berichten rechtstreeks in ${ MAIL_APP_NAME }. Verbind uw adres in ${ addressesSettingsLink }."
       ],
@@ -4526,6 +4429,15 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "We hebben de volgende velden gedetecteerd in het CSV-bestand dat u heeft geüpload. Controleer de velden die u wilt importeren."
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nieuw bericht",
+        "${ messageCount } nieuwe berichten"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Van: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -5035,6 +4947,9 @@
       "Invalid public key file": [
         "Ongeldige openbare sleutel"
       ],
+      "Invalid URL": [
+        "Ongeldige URL"
+      ],
       "Invalid VAT number": [
         "Ongeldig btw-nummer"
       ],
@@ -5291,6 +5206,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
       ],
       "Something went wrong while converting the address": [
         "Er is iets misgegaan tijdens het aanmaken van het adres"
@@ -6723,6 +6641,14 @@
         "Meer importopties"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Bezig"
+      ],
+      "Migrated": [
+        "Gemigreerd"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
@@ -6806,6 +6732,10 @@
       "${ contactsLength } contact": [
         "${ contactsLength } contact",
         "${ contactsLength } contacten"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-mails → ${ dest }"
       ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } van ${ totalProgress }",
@@ -7862,8 +7792,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -7906,9 +7835,6 @@
       ],
       "Key fingerprint": [
         "Digitale vingerafdruk"
-      ],
-      "Keys created": [
-        "Sleutels aangemaakt"
       ],
       "Label all imported messages as": [
         "Label alle geïmporteerde berichten als"
@@ -8042,6 +7968,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De meeste openbare wifi-netwerken zijn veilig, maar sommige zijn onveilig, waardoor u wordt blootgesteld aan cyberbedreigingen. Een VPN versleutelt uw verkeer en houdt u beschermd."
       ],
+      "Move emails": [
+        "Verplaats e-mails"
+      ],
+      "Move here": [
+        "Hierheen verplaatsen"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
@@ -8134,6 +8066,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Open de handleiding voor aanbevolen acties en nuttige koppelingen."
+      ],
+      "Opened ${ location }": [
+        "${ location } geopend"
       ],
       "Optional": [
         "Optioneel"
@@ -8306,6 +8241,22 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contacteer ons voor hulp met ${ BRAND_NAME }."
+      ],
+      "Read ${ count } email on screen": [
+        "Lees ${ count } e-mail op het scherm",
+        "Lees ${ count } e-mails op het scherm"
+      ],
+      "Read your ${ count } filter": [
+        "Lees uw ${ count } filter",
+        "Lees uw ${ count } filters"
+      ],
+      "Read your ${ count } folder": [
+        "Lees uw ${ count } map",
+        "Lees uw ${ count } mappen"
+      ],
+      "Read your ${ count } label": [
+        "Lees uw ${ count } label",
+        "Lees uw ${ count } labels"
       ],
       "Recipient: ": [
         "Ontvanger: "
@@ -8619,6 +8570,9 @@
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Ze kunnen u geen spam versturen, als ze uw echte e-mailadres niet kennen. Bescherm uw inbox met Hide-my-email-aliassen."
       ],
+      "Thinking about this": [
+        "Hierover aan het nadenken"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
       ],
@@ -8646,6 +8600,9 @@
       ],
       "This file is too large to preview": [
         "Dit bestand is te groot om het te kunnen tonen"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Dit Gmail-adres is geregistreerd bij een ander ${ BRAND_NAME }-account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI en andere). We werken eraan om deze verbinding naadloos te laten verlopen, maar voorlopig moet u een paar stappen ondernemen."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Deze uitnodiging is opgeslagen in een uitgeschakelde agenda."
@@ -8930,9 +8887,6 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Gebruik sneltoetsen om uw e-mails sneller te beheren."
       ],
-      "User activated": [
-        "Gebruiker geactiveerd"
-      ],
       "username": [
         "gebruikersnaam"
       ],
@@ -9127,6 +9081,10 @@
       "You have ${ totalLabel } in your inbox.": [
         "U heeft ${ totalLabel } in uw inbox."
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "U heeft **${ count } gesprek** in uw ${ categoryLabel } categorie",
+        "U heeft **${ count } gesprekken** in uw ${ categoryLabel } categorie"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "U heeft **${ count } gesprek** uit deze map opgeslagen",
         "U heeft **${ count } gesprekken** uit deze map opgeslagen"
@@ -9134,6 +9092,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "U heeft **${ count } gesprek** gemarkeerd met dit label",
         "U heeft **${ count } gesprekken** gemarkeerd met dit label"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "U heeft **${ count } bericht** in uw ${ categoryLabel } categorie",
+        "U heeft **${ count } berichten** in uw ${ categoryLabel } categorie"
       ],
       "You have **${ count } message** stored in this folder": [
         "U heeft **${ count } bericht** uit deze map opgeslagen",
@@ -9169,6 +9131,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "U selecteerde **${ checked } gesprek** in uw ${ categoryLabel } categorie",
+        "U selecteerde **${ checked } gesprekken** in uw ${ categoryLabel } categorie"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "U selecteerde **${ checked } bericht** in uw ${ categoryLabel } categorie",
+        "U selecteerde **${ checked } berichten** in uw ${ categoryLabel } categorie"
       ],
       "You selected **${ count } conversation** from this folder": [
         "U heeft **${ count } gesprek** uit deze map geselecteerd",
@@ -9729,6 +9699,9 @@
       "ANY": [
         "MINIMAAL EEN"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Alles dat uw aandacht nodig heeft, plus e-mails uit uitgeschakelde categorieën"
+      ],
       "App password": [
         "App-wachtwoord"
       ],
@@ -9737,6 +9710,9 @@
       ],
       "Apply to future messages": [
         "Pas toe op toekomstige berichten"
+      ],
+      "Archive": [
+        "Archiveren"
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
@@ -10280,6 +10256,9 @@
       ],
       "Primary": [
         "Primair"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primair - Alles wat uw aandacht nodig heeft, plus e-mails uit uitgeschakelde categorieën"
       ],
       "Promotions": [
         "Promoties"
@@ -11014,6 +10993,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licenties"
+      ],
+      "${ price } per seat": [
+        "${ price } per licentie"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licentie",
@@ -13155,6 +13137,9 @@
       "Anytown": [
         "Willekeurige stad"
       ],
+      "Ask anything…": [
+        "Vraag alles..."
+      ],
       "Company name": [
         "Bedrijfsnaam"
       ],
@@ -15223,6 +15208,10 @@
         "Verplaats ${ selectionCount } bericht",
         "Verplaats ${ selectionCount } berichten"
       ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Verplaatst naar ${ label }. Vergelijkbaar bericht wordt in de toekomst daar ondergebracht.",
+        "Verplaatst naar ${ label }. Vergelijkbare berichten worden in de toekomst daar ondergebracht."
+      ],
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
       ],
@@ -15363,6 +15352,9 @@
       ],
       "Name": [
         "Naam"
+      ],
+      "Size": [
+        "Grootte"
       ],
       "Status": [
         "Status"
@@ -15912,6 +15904,9 @@
       "Groups": [
         "Groepen"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Let op: deze Gmail is gekoppeld aan een ander ${ BRAND_NAME }-account"
+      ],
       "Help and feedback": [
         "Hulp en feedback"
       ],
@@ -16010,6 +16005,9 @@
       "Make a secure connection your default": [
         "Maak een beveiligde verbinding uw standaard"
       ],
+      "Make your inbox your own": [
+        "Maak uw inbox uw eigen"
+      ],
       "Mark all messages as read": [
         "Markeer alle berichten als gelezen"
       ],
@@ -16081,6 +16079,9 @@
       ],
       "Move all messages to trash": [
         "Alle berichten naar prullenbak verplaatsen"
+      ],
+      "Move emails": [
+        "Verplaats e-mails"
       ],
       "Move to": [
         "Verplaatsen naar"
@@ -16255,6 +16256,9 @@
       ],
       "Referral": [
         "Verwijzing"
+      ],
+      "Refine your Categories": [
+        "Verfijn uw categorieën"
       ],
       "Remove forwarding address": [
         "Doorschakeladres verwijderen"
@@ -16741,6 +16745,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
       ]

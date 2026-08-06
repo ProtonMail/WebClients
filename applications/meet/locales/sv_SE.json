@@ -1908,6 +1908,9 @@
       "Not a valid number": [
         "Inte ett giltigt nummer"
       ],
+      "Organization key is not decrypted": [
+        "Organisationsnyckel är inte dekrypterad"
+      ],
       "Passwords do not match": [
         "Lösenorden matchar inte"
       ],
@@ -2366,9 +2369,6 @@
       "Failed to update meeting schedule": [
         "Misslyckades att uppdatera mötesschema"
       ],
-      "Failed to update meeting waiting room status": [
-        "Misslyckades att uppdatera status för mötets väntrum"
-      ],
       "Free meeting": [
         "Gratis möte"
       ],
@@ -2410,9 +2410,6 @@
       ],
       "Joined ${ roomNameLabel }": [
         "Gick med ${ roomNameLabel }"
-      ],
-      "Joined at ${ receivedTime }": [
-        "Gick med kl. ${ receivedTime }"
       ],
       "Learn more": [
         "Lär dig mer"
@@ -3265,6 +3262,20 @@
       ],
       "Video quality was poor": [
         "Videokvaliteten var dålig"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Organisationsnyckel finns inte."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Åtkomst nekad, administratörsrättigheter har begränsats."
+      ],
+      "The organization key must be activated first.": [
+        "Organisationsnyckeln måste aktiveras först."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Du behöver åtkomst till organisationsnyckeln för att utföra denna åtgärd."
       ]
     },
     "Placeholder": {
