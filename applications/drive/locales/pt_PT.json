@@ -1308,6 +1308,9 @@
       ],
       "Send": [
         "Enviar"
+      ],
+      "Stop": [
+        "Parar"
       ]
     },
     "Actions": {
@@ -1568,6 +1571,10 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "O espaço de armazenamento é partilhado por todos os serviços da ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteja os seus e-mails e agende com encriptação de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, o assistente de escrita ${ LUMO_SHORT_APP_NAME }, aliases «hide-my-email» ilimitados e muito mais.",
+        "Proteja os seus e-mails e agende com encriptação de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, o assistente de escrita ${ LUMO_SHORT_APP_NAME }, aliases «hide-my-email» ilimitados e muito mais."
       ]
     },
     "Billing cycle option": {
@@ -1731,6 +1738,9 @@
       ],
       "Take a tour": [
         "Visita guiada"
+      ],
+      "Get 50% offer": [
+        "Obtenha uma oferta de 50%"
       ]
     },
     "Cancellation reminder": {
@@ -3957,6 +3967,70 @@
       ],
       "Something went wrong": [
         "Algo correu mal"
+      ],
+      "Cannot verify the author of this file": [
+        "Não é possível verificar o autor deste ficheiro"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Não é permitido copiar um item para um local que não seja uma pasta"
+      ],
+      "Could not load sharing details": [
+        "Não foi possível carregar os detalhes da partilha"
+      ],
+      "Could not unlock the parent folder": [
+        "Não foi possível desbloquear a pasta principal"
+      ],
+      "Could not unlock this item": [
+        "Não foi possível desbloquear este item"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Não é permitido criar pastas dentro de elementos que não sejam pastas"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Não foi possível descodificar a palavra-passe do marcador: ${ message }"
+      ],
+      "File has no revision": [
+        "O ficheiro não tem nenhuma revisão"
+      ],
+      "Image preview not found": [
+        "Não foi encontrada a pré-visualização da imagem"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "O link público antigo não pode ser atualizado. Por favor, crie um novo link público."
+      ],
+      "Missing inviter email": [
+        "Falta o e-mail do convidante"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } carácter",
+        "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } caracteres"
+      ],
+      "No file data was received. Please try again.": [
+        "Não foram recebidos dados do ficheiro. Por favor, tente novamente."
+      ],
+      "Operation aborted": [
+        "Operação cancelada"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte do ficheiro parece estar corrompida"
+      ],
+      "Signature is missing": [
+        "Assinatura em falta."
+      ],
+      "This file has no version available to download": [
+        "Este ficheiro não tem nenhuma versão disponível para descarregar"
+      ],
+      "This item is no longer shared": [
+        "Este item já não está partilhado"
+      ],
+      "This item is not shared": [
+        "Este item não é partilhado"
+      ],
+      "Verification keys are not available": [
+        "As chaves de verificação não estão disponíveis"
+      ],
+      "You do not have access to this item": [
+        "Não tem acesso a este artigo"
       ]
     },
     "Error importing calendar": {
@@ -7161,6 +7235,9 @@
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Os seus ficheiros estão a ser reindexados. Pode continuar a pesquisar - os resultados podem estar incompletos até terminar. Iremos avisá-lo quando terminar."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "info": {
@@ -8313,6 +8390,9 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Message": {
@@ -9094,6 +9174,9 @@
       ],
       "Short domain (@pm.me)": [
         "Domínio curto (@pm.me)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -12350,6 +12433,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Size": [
+        "Tamanho"
       ]
     },
     "TableHeader": {
@@ -14062,6 +14148,9 @@
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (para ${ quantity } utilizador)",
         "${ MEET_APP_NAME } (para ${ quantity } utilizadores)"
+      ],
+      "${ price } per seat": [
+        "${ price } por licença"
       ]
     },
     "meet_2025: Feature": {
@@ -14493,6 +14582,19 @@
       ],
       "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
         "Gerir utilizadores, grupos e armazenamento para todos os membros, atribuir cargos e alocar licenças."
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Em curso"
+      ],
+      "Migrated": [
+        "Migrado"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atributos"
       ]
     }
   }
