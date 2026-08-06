@@ -9,7 +9,7 @@ import { CapacityManager } from '../scheduling/CapacityManager';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { UploadEventSubscriberCallback, UploadTask } from '../types';
 import { type UploadConflictStrategy, type UploadConflictType, UploadStatus } from '../types';
-import { getBlockedChildren } from '../utils/dependencyHelpers';
+import { getBlockedDescendants } from '../utils/dependencyHelpers';
 import { getNextTasks } from '../utils/schedulerHelpers';
 import { uploadLogDebug } from '../utils/uploadLogger';
 import { ConflictManager } from './ConflictManager';
@@ -201,18 +201,18 @@ export class UploadOrchestrator {
     }
 
     /**
-     * Cancel all children of a failed folder
+     * Cancel the whole sub-tree of a failed folder
      */
     private cancelFolderChildren(uploadId: string): void {
         const queueStore = useUploadQueueStore.getState();
         const allItems = queueStore.getQueue();
 
-        const childrenIds = getBlockedChildren(uploadId, allItems);
-        if (childrenIds.length === 0) {
+        const descendantIds = getBlockedDescendants([uploadId], allItems);
+        if (descendantIds.length === 0) {
             return;
         }
 
-        queueStore.updateQueueItems(childrenIds, {
+        queueStore.updateQueueItems(descendantIds, {
             status: UploadStatus.ParentCancelled,
         });
     }

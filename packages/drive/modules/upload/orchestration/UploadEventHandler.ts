@@ -15,7 +15,7 @@ import type {
     UploadEventSubscriberCallback,
 } from '../types';
 import { UploadStatus, isPhotosUploadItem } from '../types';
-import { getBlockedChildren } from '../utils/dependencyHelpers';
+import { getBlockedDescendants, getDirectChildren } from '../utils/dependencyHelpers';
 import { uploadLogDebug, uploadLogError } from '../utils/uploadLogger';
 import type { ConflictManager } from './ConflictManager';
 import type { SDKTransferActivity } from './SDKTransferActivity';
@@ -191,7 +191,7 @@ export class UploadEventHandler {
         });
 
         const allItems = Array.from(queueStore.queue.values());
-        const childrenIds = getBlockedChildren(event.uploadId, allItems);
+        const childrenIds = getDirectChildren(event.uploadId, allItems);
         if (childrenIds.length > 0) {
             queueStore.updateQueueItems(childrenIds, {
                 parentUid: event.nodeUid,
@@ -270,7 +270,7 @@ export class UploadEventHandler {
         if (cancelledIds.length === 0) {
             return;
         }
-        const cancelledIdsSet = new Set(cancelledIds);
+        const parentCancelledIds = getBlockedDescendants(cancelledIds, allItems);
 
         for (const uploadId of cancelledIds) {
             // Folders aren't tracked by the speed metrics, so only report file/photo ends.
@@ -280,18 +280,6 @@ export class UploadEventHandler {
             const controller = controllerStore.getController(uploadId);
             if (controller) {
                 controller.abortController.abort();
-            }
-        }
-
-        // One pass over the queue keeps this O(queue size) no matter how many ids are cancelled.
-        const parentCancelledIds: string[] = [];
-        for (const item of allItems) {
-            if (
-                item.parentUploadId &&
-                cancelledIdsSet.has(item.parentUploadId) &&
-                !cancelledIdsSet.has(item.uploadId)
-            ) {
-                parentCancelledIds.push(item.uploadId);
             }
         }
 
