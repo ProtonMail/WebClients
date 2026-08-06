@@ -195,8 +195,16 @@ describe('FolderBrowser', () => {
         });
     });
 
-    it('does not show report abuse in the item context menu', async () => {
+    it('shows report abuse in the item context menu when allowed', async () => {
         renderFolderBrowser(MemberRole.Admin, 'contextMenu', buildPermissions({ canReportAbuse: true }));
+
+        await waitFor(() => {
+            expect(screen.getByTestId('context-menu-report-abuse')).toBeInTheDocument();
+        });
+    });
+
+    it('does not show report abuse in the item context menu when not allowed', async () => {
+        renderFolderBrowser(MemberRole.Admin, 'contextMenu', buildPermissions({ canReportAbuse: false }));
 
         await waitFor(() => {
             expect(screen.getByTestId('context-menu-details')).toBeInTheDocument();
