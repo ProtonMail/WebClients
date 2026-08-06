@@ -41,10 +41,16 @@ export enum WaitingRoomAdmissionStatus {
 export const ADMISSION_TIMEOUT_S = 300;
 
 export type WaitingRoomState = {
+    /** For host: list of waiting participants */
     waitingParticipants: WaitingRoomJoinRequest[];
+
+    /** For guests: admission status */
     admissionStatus: WaitingRoomAdmissionStatus;
+    /** For guests: Countdown timer in seconds */
     admissionCountdown: number;
+    /** For guests: Admission request expiration time in milliseconds */
     admissionExpiresAt: number | null;
+    /** For guests: Countdown setInterval handler */
     admissionTimer: number | null;
 };
 
@@ -96,7 +102,7 @@ const slice = createSlice({
         setAdmissionTimer: (state, action: PayloadAction<number | null>) => {
             state.admissionTimer = action.payload;
         },
-        // Internal: use the `resetWaitingRoom` thunk.
+        /** Internal: use the `resetWaitingRoom` thunk. */
         _resetWaitingRoom: () => initialState,
     },
 });
@@ -112,15 +118,37 @@ export const stopWaitingRoomAdmissionTimer =
         dispatch(slice.actions.setAdmissionTimer(null));
     };
 
-/**
- * Recomputes the remaining time from the absolute deadline each tick, so it stays correct when a
- * background tab throttles setInterval.
- */
+const isAdmissionInFlight = (status: WaitingRoomAdmissionStatus) =>
+    status === WaitingRoomAdmissionStatus.HOST_NOT_STARTED || status === WaitingRoomAdmissionStatus.AWAITING;
+
+// Settle in-flight admissions to the given status and prevents overwriting it when is already in a terminal status.
+export const settleAdmission =
+    (
+        status:
+            | WaitingRoomAdmissionStatus.ADMITTED
+            | WaitingRoomAdmissionStatus.EXPIRED
+            | WaitingRoomAdmissionStatus.REJECTED
+    ): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> =>
+    (dispatch, getState) => {
+        if (!isAdmissionInFlight(getState().waitingRoom.admissionStatus)) {
+            return;
+        }
+
+        dispatch(stopWaitingRoomAdmissionTimer());
+        dispatch(slice.actions.setAdmissionStatus(status));
+    };
+
+/** Reset the admission status to inactive and stop the countdown timer. */
+export const cancelAdmission = (): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> => (dispatch) => {
+    dispatch(stopWaitingRoomAdmissionTimer());
+    dispatch(slice.actions.setAdmissionStatus(WaitingRoomAdmissionStatus.INACTIVE));
+};
+
+/** Start Admission timer: recomputes the remaining time from the absolute deadline each tick to avoid drift. */
 export const startWaitingRoomAdmissionTimer =
     (): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> => (dispatch, getState) => {
         const { admissionTimer } = getState().waitingRoom;
 
-        // Defensively stop a previous timer.
         if (admissionTimer) {
             clearInterval(admissionTimer);
         }
@@ -129,15 +157,14 @@ export const startWaitingRoomAdmissionTimer =
         dispatch(slice.actions.setAdmissionExpiresAt(expiresAt));
 
         const computeAndTick = () => {
-            const { admissionExpiresAt, admissionStatus } = getState().waitingRoom;
+            const { admissionExpiresAt } = getState().waitingRoom;
             if (admissionExpiresAt === null) {
                 return;
             }
             const remaining = Math.max(0, Math.ceil((admissionExpiresAt - Date.now()) / SECOND));
             dispatch(slice.actions.setAdmissionCountdown(remaining));
-            if (remaining === 0 && admissionStatus === WaitingRoomAdmissionStatus.AWAITING) {
-                dispatch(stopWaitingRoomAdmissionTimer());
-                dispatch(slice.actions.setAdmissionStatus(WaitingRoomAdmissionStatus.EXPIRED));
+            if (remaining === 0) {
+                dispatch(settleAdmission(WaitingRoomAdmissionStatus.EXPIRED));
             }
         };
 
