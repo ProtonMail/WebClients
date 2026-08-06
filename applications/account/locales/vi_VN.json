@@ -729,6 +729,9 @@
       "Emoji": [
         "Biểu tượng cảm xúc"
       ],
+      "Enable": [
+        "Kích hoạt"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Kích hoạt ${ darkWebMonitoring }"
       ],
@@ -1283,9 +1286,6 @@
       ],
       "Remove": [
         "Xóa"
-      ],
-      "Remove all members": [
-        "Xóa toàn bộ thành viên"
       ],
       "Remove all other devices": [
         "Xóa tất cả các thiết bị khác"
@@ -2896,431 +2896,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Địa chỉ email cá nhân là một phần thiết yếu của danh tính kỹ thuật số. Giống như số điện thoại, bạn không đưa nó cho tất cả mọi người bạn gặp. Đó là lý do tại sao việc có các địa chỉ email khác để sử dụng cho các mục đích khác nhau lại hữu ích."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } trên ${ totalCount }"
-      ],
-      "Account connected": [
-        "Đã kết nối tài khoản"
-      ],
-      "Account disconnected": [
-        "Đã ngắt kết nối tài khoản"
-      ],
-      "Accounts migrated": [
-        "Tài khoản đã chuyển dữ liệu"
-      ],
-      "Activated": [
-        "Đã kích hoạt"
-      ],
-      "Add domain": [
-        "Thêm miền"
-      ],
-      "Add users": [
-        "Thêm người dùng"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Thêm miền email của tổ chức vào ${ BRAND_NAME }."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Địa chỉ đã được sử dụng bởi một người dùng bên ngoài tổ chức của bạn. Vui lòng liên hệ với bộ phận hỗ trợ khách hàng để giải quyết vấn đề này"
-      ],
-      "All": [
-        "Tất cả"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Tất cả tài khoản người dùng đã chuyển dữ liệu đều sẵn sàng để nhận lời mời tham gia tổ chức ${ BRAND_NAME }."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "Đã xảy ra lỗi không xác định. Vui lòng làm mới trang và thử lại"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "Chắc chắn muốn tiếp tục mà không có ${ withoutString } và ${ notMigratedOthers } người khác không?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "Chắc chắn muốn tiếp tục mà không có ${ withoutString } không?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Bạn có chắc chắn muốn tiếp tục không? Những người dùng chưa nhận tài khoản trước khi quá trình chuyển dữ liệu hoàn tất sẽ cần yêu cầu quản trị viên tổ chức ${ BRAND_NAME } đặt lại mật khẩu."
-      ],
-      "Authenticate": [
-        "Xác thực"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Xác thực tài khoản Google Workspace"
-      ],
-      "Calendar": [
-        "Lịch"
-      ],
-      "Collapse invitation message": [
-        "Thu gọn thư mời"
-      ],
-      "Collapse step": [
-        "Thu gọn bước"
-      ],
-      "Configure domain": [
-        "Cấu hình miền"
-      ],
-      "Configure migration": [
-        "Cấu hình chuyển dữ liệu"
-      ],
-      "Configure users": [
-        "Cấu hình người dùng"
-      ],
-      "Configure your domain": [
-        "Cấu hình miền của bạn"
-      ],
-      "Confirm": [
-        "Xác nhận"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Liên hệ quản trị viên để bắt đầu quá trình di chuyển."
-      ],
-      "Contacts": [
-        "Liên hệ"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Sao chép mã dưới đây và dán vào phần DNS của nhà lưu trữ miền."
-      ],
-      "Creating accounts": [
-        "Đang tạo tài khoản"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Trạng thái chuyển dữ liệu từ Google Workspace sang ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "Xóa mọi mã MX đã có từ trước, sau đó sao chép các mã bên dưới và dán vào phần DNS của nhà cung cấp máy chủ lưu trữ miền."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM thêm chữ ký số vào mỗi email để người nhận có thể xác minh rằng thư thực sự đến từ miền của bạn và không bị thay đổi trong quá trình truyền tải. Không có chữ ký này, các thư có thể bị coi là kém tin cậy hơn."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC xây dựng trên SPF và DKIM bằng cách cho các máy chủ nhận biết cách xử lý các thư không qua được các bước kiểm tra này. Nó giúp bảo vệ miền của bạn khỏi bị giả mạo và cải thiện độ tin cậy phân phối tổng thể."
-      ],
-      "Domain added": [
-        "Đã thêm miền"
-      ],
-      "Domain provider": [
-        "Nhà cung cấp miền"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Không biết bắt đầu từ đâu? Xem cách cập nhật DNS trên ${ registrarLink }"
-      ],
-      "Emails": [
-        "Email"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Đảm bảo rằng email của bạn đến được hộp thư đến chứ không phải thư mục thư rác. Cập nhật SPF sẽ cho phép người dùng gửi đồng thời từ ${ BRAND_NAME } và Google trong suốt thời gian chuyển dữ liệu."
-      ],
-      "Errors": [
-        "Lỗi"
-      ],
-      "Estimated size": [
-        "Kích thước ước tính"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Tất cả mọi người đều nhận được cùng một liên kết mời. Họ sẽ truy cập trang, nhập email và nhận mã xác minh trong hộp thư đến Gmail. Từ đó, họ có thể thiết lập mật khẩu ${ BRAND_NAME }."
-      ],
-      "Expand invitation message": [
-        "Mở rộng thư mời"
-      ],
-      "Expand step": [
-        "Mở rộng bước"
-      ],
-      "Failed to load OAuth": [
-        "Không tải được OAuth"
-      ],
-      "Final step": [
-        "Bước cuối cùng"
-      ],
-      "Find out what can be migrated.": [
-        "Tìm hiểu những gì có thể chuyển dữ liệu."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Nhận trợ giúp và mẹo hữu ích cho các nhà cung cấp miền khác tại ${ here }"
-      ],
-      "Going private": [
-        "Chuyển sang riêng tư"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Ứng dụng Google Marketplace để sao chép dữ liệu sang ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Tài khoản Google Workspace"
-      ],
-      "Has errors": [
-        "Có lỗi"
-      ],
-      "Import completed successfully": [
-        "Nhập thành công"
-      ],
-      "Import details": [
-        "Chi tiết nhập"
-      ],
-      "In progress": [
-        "Đang tiến hành"
-      ],
-      "Install app": [
-        "Cài đặt ứng dụng"
-      ],
-      "Install migration app": [
-        "Cài đặt ứng dụng chuyển dữ liệu"
-      ],
-      "Invitation link": [
-        "Liên kết mời"
-      ],
-      "Invitation message": [
-        "Thư mời"
-      ],
-      "invite link": [
-        "liên kết mời"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Có thể mất tới 24 giờ để các thay đổi này được cập nhật hoàn toàn."
-      ],
-      "Loading your organization data": [
-        "Đang tải dữ liệu tổ chức"
-      ],
-      "Mail": [
-        "Thư"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Không tìm thấy địa chỉ thành viên. Vui lòng liên hệ với bộ phận hỗ trợ khách hàng để giải quyết vấn đề này"
-      ],
-      "Migrate": [
-        "Chuyển dữ liệu"
-      ],
-      "Migrate accounts": [
-        "Chuyển dữ liệu tài khoản"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Chuyển dữ liệu tài khoản sang ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Chuyển từ Google Workspace"
-      ],
-      "Migrated": [
-        "Đã chuyển dữ liệu"
-      ],
-      "Migrated accounts": [
-        "Tài khoản đã chuyển dữ liệu"
-      ],
-      "Migration includes": [
-        "Chuyển dữ liệu bao gồm"
-      ],
-      "Migration started for ${ n } user": [
-        "Đã bắt đầu chuyển dữ liệu cho ${ n } người dùng"
-      ],
-      "Migration status": [
-        "Trạng thái chuyển dữ liệu"
-      ],
-      "Migration summary": [
-        "Tóm tắt chuyển dữ liệu"
-      ],
-      "Missing organization private key": [
-        "Thiếu khóa riêng tư của tổ chức"
-      ],
-      "Missing organization public key": [
-        "Thiếu khóa công khai của tổ chức"
-      ],
-      "More details": [
-        "Thêm chi tiết"
-      ],
-      "Need help?": [
-        "Cần trợ giúp?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Không có thông tin chi tiết về lỗi. Vui lòng liên hệ với bộ phận hỗ trợ khách hàng để biết thêm thông tin"
-      ],
-      "No users to display": [
-        "Không có người dùng để hiển thị"
-      ],
-      "Not activated": [
-        "Chưa kích hoạt"
-      ],
-      "Not confirmed": [
-        "Chưa xác nhận"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Không được phát hiện chính xác? Chọn nhà cung cấp từ danh sách."
-      ],
-      "Onboard your team": [
-        "Thiết lập cho nhóm"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Sau khi đã xác nhận rằng các email được định tuyến đến ${ BRAND_NAME }, quá trình chuyển dữ liệu sẽ được hoàn tất. Bạn sẽ nhận được một email xác nhận để thông báo khi điều này diễn ra. Quá trình này có thể mất tới 24 giờ."
-      ],
-      "Organization does not have enough seats available": [
-        "Tổ chức không có đủ số chỗ khả dụng"
-      ],
-      "Organization does not have enough storage available": [
-        "Tổ chức không có đủ dung lượng lưu trữ khả dụng"
-      ],
-      "Pending": [
-        "Đang chờ"
-      ],
-      "Please don’t close or refresh this window.": [
-        "Vui lòng không đóng hoặc làm mới cửa sổ này."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Xác thực lại tài khoản Google Workspace để bắt đầu chuyển dữ liệu"
-      ],
-      "Refresh": [
-        "Làm mới"
-      ],
-      "Select at least one user to start a migration": [
-        "Chọn ít nhất một người dùng để bắt đầu chuyển dữ liệu"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Chọn chính xác những gì muốn chuyển dữ liệu. Lựa chọn này sẽ áp dụng cho tất cả người dùng trong tổ chức."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Chọn tài khoản muốn chuyển sang ${ BRAND_NAME }. Có thể chuyển toàn bộ tổ chức ngay hôm nay hoặc bắt đầu với quy mô nhỏ trước và chuyển phần còn lại khi đã sẵn sàng."
-      ],
-      "Select users to migrate": [
-        "Chọn người dùng cần chuyển dữ liệu"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Thiết lập gửi an toàn (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Thiết lập gửi an toàn (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Thiết lập gửi an toàn (SPF)"
-      ],
-      "Settings": [
-        "Cài đặt"
-      ],
-      "Sign in to Google Workspace": [
-        "Đăng nhập vào Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Đăng nhập bằng tài khoản quản trị viên Google Workspace để thiết lập chuyển dữ liệu sang ${ BRAND_NAME }."
-      ],
-      "Size": [
-        "Kích thước"
-      ],
-      "Skip": [
-        "Bỏ qua"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "Đã bỏ qua ${ count } liên hệ do không tương thích"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "Đã bỏ qua ${ count } email do không tương thích"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "Đã bỏ qua ${ count } sự kiện do không tương thích"
-      ],
-      "Some accounts are not claimed": [
-        "Một số tài khoản chưa được nhận"
-      ],
-      "Some members weren't migrated": [
-        "Một số thành viên đã không được di chuyển"
-      ],
-      "Status": [
-        "Trạng thái"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Không thể di dời người dùng này do không tương thích nền tảng."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Để chuyển dữ liệu của tổ chức sang ${ BRAND_NAME }, hãy cài đặt ${ BRAND_NAME } Easy Switch từ Google Workspace Marketplace. Sau khi cài đặt, hãy quay lại đây để tiếp tục."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "Để hoàn tất di chuyển, hãy đảm bảo chỉ giữ lại các mã MX của ${ BRAND_NAME }."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Để di dời người dùng này, hãy kích hoạt tài khoản của họ trong Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Để di dời người dùng này, hãy kích hoạt tài khoản của họ tại ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Để di dời người dùng này, hãy kích hoạt địa chỉ của họ tại ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Để di dời người dùng này, họ cần chấp nhận lời mời tham gia ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Để di dời người dùng này, hãy hủy lưu trữ họ trong Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Để di dời người dùng này, hãy hủy tạm ngưng họ trong Google Workspace Admin Console."
-      ],
-      "Update records for receiving": [
-        "Cập nhật các bản ghi để nhận"
-      ],
-      "User": [
-        "Người dùng"
-      ],
-      "Users activated": [
-        "Người dùng đã được kích hoạt"
-      ],
-      "Users migrated": [
-        "Người dùng đã di chuyển"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Người dùng đã truy cập tài khoản ${ BRAND_NAME }"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Người dùng chưa nhận tài khoản trước khi hoàn tất chuyển dữ liệu sẽ cần yêu cầu đặt lại mật khẩu từ quản trị viên tổ chức ${ BRAND_NAME }."
-      ],
-      "Verified": [
-        "Đã xác minh"
-      ],
-      "Verify installation": [
-        "Xác minh cài đặt"
-      ],
-      "Verify your domain": [
-        "Xác minh miền"
-      ],
-      "Verify your domain to start a migration": [
-        "Xác minh miền để bắt đầu chuyển dữ liệu"
-      ],
-      "Waiting for MX...": [
-        "Đang chờ MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Không thể xác minh cài đặt, vui lòng kiểm tra xem đã cài đặt ứng dụng trong tài khoản Google Workspace chưa và thử lại."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Đang chuyển sang ${ BRAND_NAME }, dịch vụ email bảo mật.\nVà tài khoản ${ BRAND_NAME } đã sẵn sàng để nhận.\nNhấp vào ${ inviteLink }.\nNhập địa chỉ email, mã xác minh sẽ được gửi đến Gmail.\nSử dụng mã để thiết lập mật khẩu — tài khoản ${ BRAND_NAME } sẽ sẵn sàng hoạt động.\nTrong một thời gian ngắn, cả hai dịch vụ sẽ hoạt động song song. ${ BRAND_NAME } và Gmail.\nSau đó, khi tất cả mọi người đã hoàn tất chuyển đổi, Gmail sẽ dừng hoạt động. Thông báo nhắc nhở sẽ được gửi trước khi thực hiện việc này."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Chúng tôi nhận thấy một số người dùng chưa nhận tài khoản ${ BRAND_NAME } của họ."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "Đang tạo tài khoản và nhập dữ liệu để nhóm có mọi thứ cần thiết khi bắt đầu sử dụng tài khoản ${ BRAND_NAME } bảo mật."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Đang kích hoạt mã hóa đầu cuối cho tất cả mọi người. Mọi email, mọi sự kiện giờ đây chỉ thuộc về riêng bạn. Chỉ hiển thị với nhóm của bạn. Không dành cho chúng tôi hay bất kỳ ai khác."
-      ],
-      "What are you migrating?": [
-        "Bạn đang chuyển dữ liệu gì?"
-      ],
-      "You": [
-        "Bạn"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "Sẽ không thể sao chép dữ liệu của những người dùng này sau."
-      ],
-      "You're all set!": [
-        "Đã hoàn tất!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Gần hoàn tất, cần cấu hình miền để nhận email trực tiếp trên ${ BRAND_NAME }. Sau khi xác nhận, nhóm sẽ ngừng nhận email mới trên Gmail và quá trình chuyển dữ liệu sẽ hoàn tất."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Gói hiện tại cho phép tối đa ${ maxMembers } người dùng. Để chuyển thêm người dùng, hãy thêm nhiều chỗ hơn vào gói đăng ký."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "Cấu hình miền vẫn bao gồm các mã MX của nhà cung cấp khác."
       ]
     },
     "breadcrumb": {
@@ -7558,6 +7133,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Một số tên nhãn vượt quá giới hạn ký tự tối đa của ${ MAIL_APP_NAME }. Vui lòng tùy chỉnh nhập khẩu để chỉnh sửa các tên này."
       ],
+      "Something went wrong": [
+        "Đã xảy ra sự cố"
+      ],
       "Something went wrong while converting the address": [
         "Đã xảy ra lỗi khi chuyển đổi địa chỉ"
       ],
@@ -10263,9 +9841,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Bạn có chắc bạn muốn xóa các đặc quyền quản trị khỏi người dùng này?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Chắc chắn muốn xóa tất cả thành viên khỏi nhóm này không?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Chắc chắn muốn xóa miền ${ boldDomain } không?"
       ],
@@ -12188,6 +11763,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vì bạn là một người dùng trung thành, tài khoản có thêm các tính năng bổ sung được mở."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Định tuyến thông minh qua: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "Gửi qua SMTP cho phép các dịch vụ hoặc thiết bị của bên thứ 3 gửi email thông qua ${ MAIL_APP_NAME } cho các địa chỉ miền tùy chỉnh."
@@ -15324,6 +14902,9 @@
       ],
       "Set password": [
         "Đặt mật khẩu"
+      ],
+      "Settings": [
+        "Cài đặt"
       ],
       "Share your referral link": [
         "Chia sẻ liên kết giới thiệu"
@@ -21342,17 +20923,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Hãy chắc chắn sao chép mã thông báo SCIM ở trên ngay bây giờ."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Khi SCIM bị vô hiệu hóa cho tổ chức, **tất cả người dùng SCIM được cung cấp tự động bởi nhà cung cấp danh tính sẽ được chuyển đổi thành người dùng SSO** và bạn sẽ có thể quản lý họ trực tiếp trong cài đặt ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Đơn giản hóa việc quản lý người dùng trên các dịch vụ khác nhau. Thêm, chỉnh sửa và xóa người dùng trong nhà cung cấp danh tính, những thay đổi đó sẽ tự động được áp dụng cho tổ chức ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Tính năng cung cấp tự động SCIM sẽ bị vô hiệu hóa cho đến khi bạn nhập mã thông báo SCIM mới vào cài đặt của nhà cung cấp danh tính."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "URL cơ sở và mã thông báo SCIM sẽ bị xóa."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Để kích hoạt lại đồng bộ với nhà cung cấp danh tính, cần hoàn tất lại việc tích hợp SCIM."
@@ -24098,6 +23673,14 @@
         "Dành cho cá nhân"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Kích thước"
+      ],
+      "Status": [
+        "Trạng thái"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "Đã chia sẻ với tôi"
@@ -25612,9 +25195,6 @@
       ],
       "Reject device?": [
         "Từ chối thiết bị?"
-      ],
-      "Remove all members?": [
-        "Xóa toàn bộ thành viên?"
       ],
       "Remove calendar": [
         "Xóa lịch"

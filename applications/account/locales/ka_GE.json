@@ -729,6 +729,9 @@
       "Emoji": [
         "ემოჯი"
       ],
+      "Enable": [
+        "ჩართვა"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring }-ის ჩართვა"
       ],
@@ -1286,9 +1289,6 @@
       ],
       "Remove": [
         "წაშლა"
-      ],
-      "Remove all members": [
-        "ყველა წევრის წაშლა"
       ],
       "Remove all other devices": [
         "ყველა სხვა მოწყობილობის წაშლა"
@@ -2916,437 +2916,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "თქვენი პირადი ელფოსტის მისამართი თქვენი ციფრული იდენტობის აუცილებელი ნაწილია. ისევე როგორც თქვენი ტელეფონის ნომერი, თქვენ მას ყველას არ აძლევთ, ვისაც შეხვდებით. სწორედ ამიტომ არის სასარგებლო სხვა ელფოსტის მისამართების ქონა, რომლებიც შეგიძლიათ გამოიყენოთ სხვადასხვა მიზნებისთვის."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } ${ totalCount }-დან"
-      ],
-      "Account connected": [
-        "ანგარიში დაკავშირებულია"
-      ],
-      "Account disconnected": [
-        "ანგარიში გათიშულია"
-      ],
-      "Accounts migrated": [
-        "ანგარიშების მიგრაცია დასრულებულია"
-      ],
-      "Activated": [
-        "აქტიურია"
-      ],
-      "Add domain": [
-        "დომენის დამატება"
-      ],
-      "Add users": [
-        "მომხმარებლების დამატება"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "დაამატეთ თქვენი ორგანიზაციის ელფოსტის დომენი ${ BRAND_NAME }-ზე."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "მისამართს უკვე იყენებს მომხმარებელი თქვენი ორგანიზაციის გარეთ. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
-      ],
-      "All": [
-        "ყველა"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "ყველა მიგრირებული მომხმარებლის ანგარიში მზად არის თქვენს ${ BRAND_NAME } ორგანიზაციაში მოსაწვევად."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "მოხდა უცნობი შეცდომა. გთხოვთ, განაახლოთ გვერდი და თავიდან სცადოთ"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "დარწმუნებული ხართ, რომ გსურთ გაგრძელება ${ withoutString }-ისა და ${ notMigratedOthers } სხვა წევრის გარეშე?",
-        "დარწმუნებული ხართ, რომ გსურთ გაგრძელება ${ withoutString }-ისა და ${ notMigratedOthers } სხვა წევრის გარეშე?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "დარწმუნებული ხართ, რომ გსურთ გაგრძელება ${ withoutString }-ის გარეშე?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "დარწმუნებული ხართ, რომ გსურთ გაგრძელება? მომხმარებლებს, რომლებსაც არ მოუთხოვიათ თავიანთი ანგარიში მიგრაციის დასრულებამდე, დასჭირდებათ პაროლის გადატვირთვის მოთხოვნა ${ BRAND_NAME }-ის ორგანიზაციის ადმინისტრატორისგან."
-      ],
-      "Authenticate": [
-        "ავთენტიკაცია"
-      ],
-      "Authenticate your Google Workspace account": [
-        "მოახდინეთ თქვენი Google Workspace ანგარიშის ავთენტიფიკაცია"
-      ],
-      "Calendar": [
-        "კალენდარი"
-      ],
-      "Collapse invitation message": [
-        "მოწვევის შეტყობინების აკეცვა"
-      ],
-      "Collapse step": [
-        "ნაბიჯის აკეცვა"
-      ],
-      "Configure domain": [
-        "დომენის მორგება"
-      ],
-      "Configure migration": [
-        "მიგრაციის მორგება"
-      ],
-      "Configure users": [
-        "მომხმარებლების მორგება"
-      ],
-      "Configure your domain": [
-        "მოირგეთ თქვენი დომენი"
-      ],
-      "Confirm": [
-        "დადასტურება"
-      ],
-      "Contact your administrator to start a migration.": [
-        "მიგრაციის დასაწყებად დაუკავშირდით თქვენს ადმინისტრატორს."
-      ],
-      "Contacts": [
-        "კონტაქტები"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "დააკოპირეთ ქვემოთ მოცემული კოდი და ჩასვით თქვენი დომენის ჰოსტის DNS სექციაში."
-      ],
-      "Creating accounts": [
-        "ანგარიშების შექმნა"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "მონაცემთა მიგრაციის სტატუსი Google Workspace-დან ${ BRAND_NAME }-ში"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "წაშალეთ ნებისმიერი არსებული MX კოდი, შემდეგ დააკოპირეთ ქვემოთ მოცემული კოდები და ჩასვით თქვენი დომენის ჰოსტის DNS სექციაში."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM უმატებს ციფრულ ხელმოწერას თითოეულ ელფოსტას, რათა მიმღებებმა შეძლონ იმის შემოწმება, რომ შეტყობინება ნამდვილად თქვენი დომენიდან მოვიდა და არ შეცვლილა გადაგზავნისას. მის გარეშე, შეტყობინებები შეიძლება ჩაითვალოს ნაკლებად სანდოდ."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC ეფუძნება SPF-სა და DKIM-ს და ეუბნება მიმღებ სერვერებს, როგორ მოეპყრონ შეტყობინებებს, რომლებიც ვერ გაივლიან ამ შემოწმებებს. ის გეხმარებათ დაიცვათ თქვენი დომენი გაყალბებისგან და აუმჯობესებს მიწოდების საერთო საიმედოობას."
-      ],
-      "Domain added": [
-        "დომენი დაემატა"
-      ],
-      "Domain provider": [
-        "დომენის პროვაიდერი"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "არ იცით, საიდან დაიწყოთ? ნახეთ, როგორ განაახლოთ თქვენი DNS აქ: ${ registrarLink }"
-      ],
-      "Emails": [
-        "ელფოსტები"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "დარწმუნდით, რომ თქვენი ელფოსტა აღწევს შემოსულებში და არა სპამის საქაღალდეში. SPF-ის განახლება მომხმარებლებს საშუალებას მისცემს გააგზავნონ ${ BRAND_NAME }-დან და Google-იდან ერთდროულად მიგრაციის განმავლობაში."
-      ],
-      "Errors": [
-        "შეცდომები"
-      ],
-      "Estimated size": [
-        "სავარაუდო ზომა"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "ყველა იღებს ერთსა და იმავე მოწვევის ბმულს. ისინი ეწვევიან გვერდს, შეიყვანენ ელფოსტას და დამოწმების კოდი მოვა მათ Gmail-ის შემოსულებში. იქიდან ისინი დააყენებენ თავიანთ ${ BRAND_NAME } პაროლს."
-      ],
-      "Expand invitation message": [
-        "მოწვევის შეტყობინების გაშლა"
-      ],
-      "Expand step": [
-        "ნაბიჯის გაფართოება"
-      ],
-      "Failed to load OAuth": [
-        "OAuth-ის ჩატვირთვა ჩავარდა"
-      ],
-      "Final step": [
-        "ბოლო ნაბიჯი"
-      ],
-      "Find out what can be migrated.": [
-        "გაიგეთ, რისი მიგრაციაა შესაძლებელი."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "მიიღეთ დახმარება და სასარგებლო რჩევები დომენის სხვა პროვაიდერებისთვის აქ: ${ here }"
-      ],
-      "Going private": [
-        "გადასვლა პირად რეჟიმში"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Google Marketplace აპი ${ BRAND_NAME }-ში მონაცემების დასაკოპირებლად"
-      ],
-      "Google Workspace account": [
-        "Google Workspace ანგარიში"
-      ],
-      "Has errors": [
-        "აქვს შეცდომები"
-      ],
-      "Import completed successfully": [
-        "იმპორტი წარმატებით დასრულდა"
-      ],
-      "Import details": [
-        "იმპორტის დეტალები"
-      ],
-      "In progress": [
-        "მიმდინარეობს"
-      ],
-      "Install app": [
-        "აპის დაყენება"
-      ],
-      "Install migration app": [
-        "მიგრაციის პროგრამის დაყენება"
-      ],
-      "Invitation link": [
-        "მოწვევის ბმული"
-      ],
-      "Invitation message": [
-        "მოწვევის შეტყობინება"
-      ],
-      "invite link": [
-        "მოწვევის ბმული"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "ამ ცვლილებების გავრცელებას შეიძლება 24 საათამდე დასჭირდეს."
-      ],
-      "Loading your organization data": [
-        "თქვენი ორგანიზაციის მონაცემები იტვირთება"
-      ],
-      "Mail": [
-        "ფოსტა"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "წევრის მისამართი ვერ მოიძებნა. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
-      ],
-      "Migrate": [
-        "მიგრაცია"
-      ],
-      "Migrate accounts": [
-        "ანგარიშების მიგრაცია"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "ანგარიშების მიგრაცია ${ BRAND_NAME }-ში"
-      ],
-      "Migrate from Google Workspace": [
-        "მიგრაცია Google Workspace-დან"
-      ],
-      "Migrated": [
-        "მიგრირებულია"
-      ],
-      "Migrated accounts": [
-        "მიგრირებული ანგარიშები"
-      ],
-      "Migration includes": [
-        "მიგრაცია შეიცავს"
-      ],
-      "Migration started for ${ n } user": [
-        "მიგრაცია დაიწყო ${ n } მომხმარებლისთვის",
-        "მიგრაცია დაიწყო ${ n } მომხმარებლისთვის"
-      ],
-      "Migration status": [
-        "მიგრაციის სტატუსი"
-      ],
-      "Migration summary": [
-        "მიგრაციის რეზიუმე"
-      ],
-      "Missing organization private key": [
-        "ორგანიზაციის პირადი გასაღები აკლია"
-      ],
-      "Missing organization public key": [
-        "ორგანიზაციის საჯარო გასაღები აკლია"
-      ],
-      "More details": [
-        "მეტი დეტალი"
-      ],
-      "Need help?": [
-        "დახმარება გჭირდებათ?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "შეცდომის დეტალები ხელმისაწვდომი არაა. მეტი ინფორმაციისთვის დაუკავშირდით მომხმარებელთა მხარდაჭერას"
-      ],
-      "No users to display": [
-        "საჩვენებელი მომხმარებლები არ არის"
-      ],
-      "Not activated": [
-        "არ არის გააქტიურებული"
-      ],
-      "Not confirmed": [
-        "არ არის დადასტურებული"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "სწორად არ არის აღმოჩენილი? აირჩიეთ თქვენი პროვაიდერი სიიდან."
-      ],
-      "Onboard your team": [
-        "მიიღეთ თქვენი გუნდი"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "მას შემდეგ, რაც დავადასტურებთ, რომ ელფოსტა მიმართულია ${ BRAND_NAME }-სკენ, მიგრაცია დასრულდება. თქვენ მიიღებთ დადასტურების ელფოსტას, რათა გაგაგებინოთ, როდის მოხდება ეს. ამ პროცესს შეიძლება დასჭირდეს 24 საათამდე."
-      ],
-      "Organization does not have enough seats available": [
-        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
-      ],
-      "Organization does not have enough storage available": [
-        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
-      ],
-      "Pending": [
-        "რიგში"
-      ],
-      "Please don’t close or refresh this window.": [
-        "გთხოვთ, არ დახუროთ ან განაახლოთ ეს ფანჯარა."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "ხელახლა დაადასტურეთ თქვენი Google Workspace ანგარიში მიგრაციის დასაწყებად"
-      ],
-      "Refresh": [
-        "განახლება"
-      ],
-      "Select at least one user to start a migration": [
-        "მიგრაციის დასაწყებად აირჩიეთ, სულ ცოტა, ერთი მომხმარებელი"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "აირჩიეთ ზუსტად ის, რისი მიგრაციაც გსურთ. ეს გავრცელდება ორგანიზაციის ყველა მომხმარებელზე."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "აირჩიეთ ანგარიშები, რომელთა გადმოტანაც გსურთ ${ BRAND_NAME }-ში. შეგიძლიათ განახორციელოთ თქვენი მთელი ორგანიზაციის მიგრაცია დღესვე, ან დაიწყოთ მცირედით და გადმოიტანოთ დანარჩენი, როდესაც მზად იქნებით."
-      ],
-      "Select users to migrate": [
-        "აირჩიეთ მომხმარებლები მიგრაციისთვის"
-      ],
-      "Set up secure sending (DKIM)": [
-        "უსაფრთხო გაგზავნის აწყობა (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "უსაფრთხო გაგზავნის აწყობა (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "ააწყვეთ უსაფრთხო გაგზავნა (SPF)"
-      ],
-      "Settings": [
-        "მორგება"
-      ],
-      "Sign in to Google Workspace": [
-        "შესვლა Google Workspace-ში"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "შედით Google Workspace-ის ადმინისტრატორის ანგარიშით ${ BRAND_NAME }-ისთვის მიგრაციის დასაყენებლად."
-      ],
-      "Size": [
-        "ზომა"
-      ],
-      "Skip": [
-        "გამოტოვება"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "გამოტოვებულია ${ count } კონტაქტი შეუთავსებლობის გამო",
-        "გამოტოვებულია ${ count } კონტაქტი შეუთავსებლობის გამო"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "გამოტოვებულია ${ count } ელფოსტა შეუთავსებლობის გამო",
-        "გამოტოვებულია ${ count } ელფოსტა შეუთავსებლობის გამო"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "გამოტოვებულია ${ count } ღონისძიება შეუთავსებლობის გამო",
-        "გამოტოვებულია ${ count } ღონისძიება შეუთავსებლობის გამო"
-      ],
-      "Some accounts are not claimed": [
-        "ზოგიერთი ანგარიში მოთხოვნილი არ არის"
-      ],
-      "Some members weren't migrated": [
-        "ზოგიერთი წევრის მიგრაცია ვერ მოხერხდა"
-      ],
-      "Status": [
-        "სტატუსი"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "პლატფორმების შეუთავსებლობის გამო ამ მომხმარებლის მიგრაცია შეუძლებელია."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "თქვენი ორგანიზაციის მონაცემების ${ BRAND_NAME }-ში გადმოსატანად, დააინსტალირეთ ${ BRAND_NAME } Easy Switch Google Workspace Marketplace-დან. ინსტალაციის შემდეგ, დაბრუნდით აქ გასაგრძელებლად."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "მიგრაციის დასასრულებლად, დარწმუნდით, რომ ინახავთ მხოლოდ ${ BRAND_NAME } MX კოდებს."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში აქ: ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი მისამართი აქ: ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "ამ მომხმარებლის მიგრაციისთვის, მან უნდა მიიღოს მოწვევა ${ BRAND_NAME }-ში გასაწევრიანებლად."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "ამ მომხმარებლის მიგრაციისთვის, ამოიღეთ იგი არქივიდან თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "ამ მომხმარებლის მიგრაციისთვის, მოუხსენით მას შეჩერება თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
-      ],
-      "Update records for receiving": [
-        "განაახლეთ ჩანაწერები მიღებისთვის"
-      ],
-      "User": [
-        "მომხმარებელი"
-      ],
-      "Users activated": [
-        "მომხმარებლები გააქტიურებულია"
-      ],
-      "Users migrated": [
-        "მომხმარებლები მიგრირებულია"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "მომხმარებლები, რომლებმაც მიიღეს წვდომა თავიანთ ${ BRAND_NAME } ანგარიშზე"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "მომხმარებლებს, რომლებსაც არ მოუთხოვიათ თავიანთი ანგარიში მიგრაციის დასრულებამდე, დასჭირდებათ პაროლის გადატვირთვის მოთხოვნა თავიანთი ${ BRAND_NAME } ორგანიზაციის ადმინისტრატორისგან."
-      ],
-      "Verified": [
-        "გადამოწმებულია"
-      ],
-      "Verify installation": [
-        "დაყენების გადამოწმება"
-      ],
-      "Verify your domain": [
-        "თქვენი დომენის გადამოწმება"
-      ],
-      "Verify your domain to start a migration": [
-        "დაადასტურეთ თქვენი დომენი მიგრაციის დასაწყებად"
-      ],
-      "Waiting for MX...": [
-        "MX-ის მოლოდინი..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "ინსტალაციის ვერიფიკაცია ვერ მოხერხდა, გთხოვთ შეამოწმოთ, რომ ის დააინსტალირეთ თქვენს Google Workspace ანგარიშში და სცადოთ თავიდან."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "ჩვენ გადავდივართ ${ BRAND_NAME }-ზე, უსაფრთხო ელფოსტის სერვისზე.\nდა თქვენი ${ BRAND_NAME } ანგარიში მზად არის მისაღებად.\nდააწკაპუნეთ ბმულზე: ${ inviteLink }.\nშეიყვანეთ თქვენი ელფოსტის მისამართი, ჩვენ გამოვაგზავნით კოდს თქვენს Gmail-ზე.\nგამოიყენეთ იგი თქვენი პაროლის დასაყენებლად — და ${ BRAND_NAME } ანგარიში თქვენია.\nგარკვეული პერიოდის განმავლობაში, ორივე იმუშავებს პარალელურად: ${ BRAND_NAME } და Gmail.\nშემდეგ, როდესაც ყველა გადავა, ჩვენ გავაუქმებთ Gmail-ს. ამის შესახებ წინასწარ შეგახსენებთ."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "ჩვენ შევამჩნიეთ, რომ ზოგიერთ მომხმარებელს არ დაუდასტურებია თავისი ${ BRAND_NAME } ანგარიში."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "ჩვენ ახლა ვქმნით თქვენს ანგარიშებს და ვაწარმოებთ თქვენი მონაცემების იმპორტს, რათა თქვენს გუნდს ჰქონდეს ყველაფერი, რაც სჭირდება, როდესაც დაიწყებენ თავიანთი უსაფრთხო ${ BRAND_NAME } ანგარიშის გამოყენებას."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "ჩვენ ყველასთვის ვრთავთ ბოლოდან ბოლომდე დაშიფვრას. ყოველი ელფოსტა და ყოველი ღონისძიება ახლა მხოლოდ თქვენ გეკუთვნით. ხილულია მხოლოდ თქვენი გუნდისთვის. არც ჩვენ და არც სხვას არავის."
-      ],
-      "What are you migrating?": [
-        "რის მიგრაციას ახდენთ?"
-      ],
-      "You": [
-        "თქვენ"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "თქვენ ვერ შეძლებთ ამ მომხმარებლების მონაცემების კოპირებას მოგვიანებით."
-      ],
-      "You're all set!": [
-        "ყველაფერი მზად არის!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "თქვენ თითქმის დაასრულეთ, გჭირდებათ თქვენი დომენის მორგება, რათა მიიღოთ თქვენი ელფოსტა პირდაპირ ${ BRAND_NAME }-ზე. დადასტურების შემდეგ, თქვენი გუნდი შეწყვეტს ახალი ელფოსტის მიღებას Gmail-ზე და მიგრაცია დასრულდება."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "თქვენი ამჟამინდელი პაკეტი გათვალისწინებულია ${ maxMembers } მომხმარებელზე. დამატებითი მომხმარებლების მიგრაციისთვის, დაამატეთ მეტი ადგილი თქვენს გამოწერაში.",
-        "თქვენი ამჟამინდელი პაკეტი გათვალისწინებულია ${ maxMembers } მომხმარებელზე. დამატებითი მომხმარებლების მიგრაციისთვის, დაამატეთ მეტი ადგილი თქვენს გამოწერაში."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "თქვენი დომენის კონფიგურაცია კვლავ მოიცავს სხვა პროვაიდერის MX კოდებს."
       ]
     },
     "breadcrumb": {
@@ -7620,6 +7189,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ჭდეების ზოგიერთი სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
       ],
+      "Something went wrong": [
+        "რაღაც არასწორად წავიდა"
+      ],
       "Something went wrong while converting the address": [
         "მისამართის კონვერტაციისას დაფიქსირდა შეცდომა"
       ],
@@ -10388,9 +9960,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, ამ მომხმარებელს ადმინისტრირების პრივილეგიები წაართვათ?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, ამ ჯგუფის ყველა წევრი წაშალოთ?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ დომენი ${ boldDomain }?"
       ],
@@ -12330,6 +11899,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "სმარტ-მარშრუტიზებული შემდეგი ქვეყნების გავლით: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "SMTP გამოგზავნა საშუალებას აძლევს მესამე მხარის სერვისებს ან მოწყობილობებს გაგზავნონ ელფოსტა ${ MAIL_APP_NAME }-ის მეშვეობით თქვენი საკუთარი დომენის მისამართებისთვის."
@@ -15495,6 +15067,9 @@
       ],
       "Set password": [
         "პაროლის დაყენება"
+      ],
+      "Settings": [
+        "მორგება"
       ],
       "Share your referral link": [
         "თქვენი მიმართვის ბმულის გაზიარება"
@@ -21594,17 +21169,11 @@
       "Make sure you copy the above SCIM token now.": [
         "დარწმუნდით, რომ დააკოპირეთ ზემორე SCIM კოდი."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "როცა თქვენს ორგანიზაციაზე SCIM-ს გამორთავთ, **ყველა SCIM-ის მომხმარებლები, რომლებიც ავტომატურადაა მოწოდებული თქვენი იდენტიფიკატორების მომწოდებლის მიერ, ავტომატურად იქნება გადაყვანილი SSO-ის მომხმარებლებში** და საშუალება გექნებათ, ისინი პირდაპირ ${ BRAND_NAME }-ის მორგების ფანჯრიდან მართოთ."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "ამარტივებს მომხმარებლის მართვას სხვადასხვა სერვისისთვი. დაამატეთ, ჩაასწორეთ და წაშალეთ მომხმარებლები თქვენს იდენტიფიკატორის მომწოდებელში და ის ცვლილებები თქვენს ${ appName } ორგანიზაციაზე ავტომატურად გადატარდა."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM-ის ავტომატური გაშლა გაითიშება, სანამ არ შეიყვანთ ახალ SCIM-ის კოდს თქვენი იდენტიფიკატორის მომწოდებლის პარამეტრებში."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM-ის საბაზისო URL და კოდი წაიშლება."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "იმისათვის, რომ თავიდან ჩართოთ სინქრონიზაცია თქვენი იდენტიფიკაციის მომწოდებლისთვის, SCIM-თან ინტეგრაცია თავიდან უნდა დაასრულოთ."
@@ -24422,6 +23991,14 @@
         "ინდივიდუალური პირებისთვის"
       ]
     },
+    "Table header": {
+      "Size": [
+        "ზომა"
+      ],
+      "Status": [
+        "სტატუსი"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "ჩემთან გაზიარებული"
@@ -25959,9 +25536,6 @@
       ],
       "Reject device?": [
         "უარვყო მოწყობილობა?"
-      ],
-      "Remove all members?": [
-        "წავშალო ყველა წევრი?"
       ],
       "Remove calendar": [
         "კალენდრის წაშლა"

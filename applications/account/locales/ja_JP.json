@@ -729,6 +729,9 @@
       "Emoji": [
         "絵文字"
       ],
+      "Enable": [
+        "有効化する"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } を有効にする"
       ],
@@ -1283,9 +1286,6 @@
       ],
       "Remove": [
         "削除"
-      ],
-      "Remove all members": [
-        "すべてのメンバーを削除"
       ],
       "Remove all other devices": [
         "全ての他のデバイスを削除する"
@@ -2896,431 +2896,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "お客様の個人のメールアドレスは、お客様のデジタルユーザー情報の不可欠な一部です。電話番号と同様に、お客様は出会うすべての人にそれを教えることはありません。そのため、さまざまな目的に使用できる他のメールアドレスを持つことが役立ちます。"
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } / ${ totalCount }"
-      ],
-      "Account connected": [
-        "アカウント接続済み"
-      ],
-      "Account disconnected": [
-        "アカウント切断済み"
-      ],
-      "Accounts migrated": [
-        "移行されたアカウント"
-      ],
-      "Activated": [
-        "有効化済み"
-      ],
-      "Add domain": [
-        "ドメインを追加"
-      ],
-      "Add users": [
-        "ユーザーを追加"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "組織のメールドメインを${ BRAND_NAME }に追加します。"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "アドレスはすでに組織外のユーザーによって使用されています。解決するにはカスタマーサポートまでご連絡ください"
-      ],
-      "All": [
-        "すべて"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "移行されたすべてのユーザーアカウントの、${ BRAND_NAME }組織への招待準備が整いました。"
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "不明なエラーが発生しました。ページを再読み込みして、もう一度お試しください"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "本当に${ withoutString }および他の${ notMigratedOthers }人なしで続行しますか？"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "本当に${ withoutString }なしで続行しますか？"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "本当に続行しますか？移行が完了する前にアカウントを要求しなかったユーザーは、${ BRAND_NAME }組織管理者にパスワードリセットを依頼する必要があります。"
-      ],
-      "Authenticate": [
-        "認証"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Google Workspace アカウントを認証する"
-      ],
-      "Calendar": [
-        "カレンダー"
-      ],
-      "Collapse invitation message": [
-        "招待メッセージを折りたたむ"
-      ],
-      "Collapse step": [
-        "ステップを折りたたむ"
-      ],
-      "Configure domain": [
-        "ドメインを設定"
-      ],
-      "Configure migration": [
-        "移行を設定"
-      ],
-      "Configure users": [
-        "ユーザーを設定"
-      ],
-      "Configure your domain": [
-        "ドメインの設定"
-      ],
-      "Confirm": [
-        "確認"
-      ],
-      "Contact your administrator to start a migration.": [
-        "移行を開始するには管理者に連絡してください。"
-      ],
-      "Contacts": [
-        "連絡先"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "以下のコードをコピーして、ドメインホストのDNSセクションに貼り付けてください。"
-      ],
-      "Creating accounts": [
-        "アカウントを作成中"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Google Workspaceから${ BRAND_NAME }へのデータ移行ステータス"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "既存のMXコードをすべて削除し、以下のコードをコピーしてお客様のドメインホストのDNSセクションに貼り付けてください。"
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIMは各メールにデジタル署名を追加します。これにより受信者はメッセージが本当に送信元のドメインから届き、送信中に改ざんされていないことを検証できます。これがないと、メッセージの信頼性が低いと見なされる可能性があります。"
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARCは、これらのチェックに合格しなかったメッセージを受信サーバーがどのように処理するかを指示することで、SPFとDKIMを強化します。ドメインをなりすましから保護し、配信の信頼性全体を向上させます。"
-      ],
-      "Domain added": [
-        "ドメイン追加済み"
-      ],
-      "Domain provider": [
-        "ドメインプロバイダー"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "どこから始めればよいかわかりませんか？${ registrarLink }でDNSの更新方法を確認してください"
-      ],
-      "Emails": [
-        "メール"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "メールが迷惑メールフォルダーではなく受信トレイに届くようにします。SPFを更新することで、移行期間中にユーザーは${ BRAND_NAME }とGoogleから同時に送信できるようになります。"
-      ],
-      "Errors": [
-        "エラー"
-      ],
-      "Estimated size": [
-        "推定サイズ"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "全員が同じ招待リンクを受け取ります。お客様はページにアクセスしてメールを入力し、Gmailの受信トレイに届いた検証コードを使用します。そこから、${ BRAND_NAME }のパスワードを設定します。"
-      ],
-      "Expand invitation message": [
-        "招待メッセージを展開する"
-      ],
-      "Expand step": [
-        "ステップを展開"
-      ],
-      "Failed to load OAuth": [
-        "OAuthの読み込みに失敗しました"
-      ],
-      "Final step": [
-        "最終ステップ"
-      ],
-      "Find out what can be migrated.": [
-        "移行可能なデータを確認する。"
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "他のドメインプロバイダーに関するヘルプや便利なヒントはこちら：${ here }"
-      ],
-      "Going private": [
-        "プライベートへの移行中"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "${ BRAND_NAME } にデータをコピーするための Google Marketplace アプリ"
-      ],
-      "Google Workspace account": [
-        "Google Workspaceアカウント"
-      ],
-      "Has errors": [
-        "エラーあり"
-      ],
-      "Import completed successfully": [
-        "インポートが正常に完了しました"
-      ],
-      "Import details": [
-        "インポート詳細"
-      ],
-      "In progress": [
-        "進行中"
-      ],
-      "Install app": [
-        "アプリをインストール"
-      ],
-      "Install migration app": [
-        "移行アプリをインストール"
-      ],
-      "Invitation link": [
-        "招待リンク"
-      ],
-      "Invitation message": [
-        "招待メッセージ"
-      ],
-      "invite link": [
-        "招待リンク"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "これらの変更が反映されるまでに最大24時間かかる場合があります。"
-      ],
-      "Loading your organization data": [
-        "組織データを読み込んでいます"
-      ],
-      "Mail": [
-        "メール"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "メンバーアドレスが見つかりません。解決するにはカスタマーサポートまでご連絡ください"
-      ],
-      "Migrate": [
-        "移行"
-      ],
-      "Migrate accounts": [
-        "アカウントを移行"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "アカウントを${ BRAND_NAME }に移行"
-      ],
-      "Migrate from Google Workspace": [
-        "Google Workspaceから移行"
-      ],
-      "Migrated": [
-        "移行済み"
-      ],
-      "Migrated accounts": [
-        "移行されたアカウント"
-      ],
-      "Migration includes": [
-        "移行に含まれるもの"
-      ],
-      "Migration started for ${ n } user": [
-        "${ n }ユーザーの移行を開始しました"
-      ],
-      "Migration status": [
-        "移行ステータス"
-      ],
-      "Migration summary": [
-        "移行の概要"
-      ],
-      "Missing organization private key": [
-        "組織の秘密鍵がありません"
-      ],
-      "Missing organization public key": [
-        "組織の公開鍵がありません"
-      ],
-      "More details": [
-        "詳細情報"
-      ],
-      "Need help?": [
-        "ヘルプが必要ですか？"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "利用可能なエラーの詳細はありません。詳細についてはカスタマーサポートまでお問い合わせください"
-      ],
-      "No users to display": [
-        "表示するユーザーがいません"
-      ],
-      "Not activated": [
-        "未有効化"
-      ],
-      "Not confirmed": [
-        "未確認"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "正しく検出されませんでしたか？リストからプロバイダーを選択してください。"
-      ],
-      "Onboard your team": [
-        "チームのオンボーディング"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "メールが${ BRAND_NAME }にルーティングされていることを確認でき次第、移行が完了します。完了時には確認メールが送信されます。このプロセスには最大24時間かかる場合があります。"
-      ],
-      "Organization does not have enough seats available": [
-        "組織には十分なシートがありません"
-      ],
-      "Organization does not have enough storage available": [
-        "組織には十分なストレージがありません"
-      ],
-      "Pending": [
-        "保留中"
-      ],
-      "Please don’t close or refresh this window.": [
-        "このウィンドウを閉じたり再読み込みしたりしないでください。"
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Google Workspaceアカウントを再認証して移行を開始する"
-      ],
-      "Refresh": [
-        "再読み込み"
-      ],
-      "Select at least one user to start a migration": [
-        "移行を開始するには少なくとも1人のユーザーを選択してください"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "移行したい内容を正確に選択してください。これはすべての組織ユーザーに適用されます。"
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "${ BRAND_NAME }に移行したいアカウントを選択してください。本日組織全体を移行することも、小規模に始めて準備ができた際残りを移行することも可能です。"
-      ],
-      "Select users to migrate": [
-        "移行するユーザーの選択"
-      ],
-      "Set up secure sending (DKIM)": [
-        "安全な送信の設定（DKIM）"
-      ],
-      "Set up secure sending (DMARC)": [
-        "安全な送信の設定（DMARC）"
-      ],
-      "Set up secure sending (SPF)": [
-        "安全な送信の設定（SPF）"
-      ],
-      "Settings": [
-        "設定"
-      ],
-      "Sign in to Google Workspace": [
-        "Google Workspaceにサインイン"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "移行を設定するために、Google Workspace管理者アカウントで${ BRAND_NAME }にサインインしてください。"
-      ],
-      "Size": [
-        "サイズ"
-      ],
-      "Skip": [
-        "スキップ"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "互換性がないため、${ count }個の連絡先がスキップされました"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "互換性がないため、${ count }通のメールがスキップされました"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "互換性がないため、${ count }個の予定がスキップされました"
-      ],
-      "Some accounts are not claimed": [
-        "一部のアカウントが要求されていません"
-      ],
-      "Some members weren't migrated": [
-        "一部のメンバーは移行されませんでした"
-      ],
-      "Status": [
-        "ステータス"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "プラットフォームの互換性がないため、このユーザーは移行できません。"
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "組織のデータを${ BRAND_NAME }に移行するには、Google Workspace Marketplaceから${ BRAND_NAME } Easy Switchをインストールしてください。インストール後、ここに戻って続行してください。"
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "移行を完了するために、${ BRAND_NAME }のMXコードのみを保持していることを確認してください。"
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "このユーザーを移行するには、Google Workspace管理者管理コンソールでお客様のアカウントを有効にしてください。"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "このユーザーを移行するには、${ usersAddressesLink }でお客様のアカウントを有効にしてください。"
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "このユーザーを移行するには、${ usersAddressesLink }でお客様のアドレスを有効にしてください。"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "このユーザーを移行するには、対象のユーザーが${ BRAND_NAME }への招待を承諾する必要があります。"
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "このユーザーを移行するには、Google Workspace管理者管理コンソールでユーザーのアーカイブを解除してください。"
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "このユーザーを移行するには、Google Workspace管理者管理コンソールでユーザーの一時停止を解除してください。"
-      ],
-      "Update records for receiving": [
-        "受信用のレコードを更新"
-      ],
-      "User": [
-        "ユーザー"
-      ],
-      "Users activated": [
-        "有効化されたユーザー"
-      ],
-      "Users migrated": [
-        "移行完了ユーザー"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "${ BRAND_NAME }アカウントにアクセスしたユーザー"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "移行が完了する前にアカウントを要求しなかったユーザーは、${ BRAND_NAME }組織管理者にパスワードリセットを依頼する必要があります。"
-      ],
-      "Verified": [
-        "検証済み"
-      ],
-      "Verify installation": [
-        "インストールを確認する"
-      ],
-      "Verify your domain": [
-        "ドメインの検証"
-      ],
-      "Verify your domain to start a migration": [
-        "移行を開始するにはドメインを確認してください"
-      ],
-      "Waiting for MX...": [
-        "MXを待機中…"
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "インストールの検証ができませんでした。Google Workspace アカウントにインストールされていることを確認し、もう一度お試しください。"
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "安全なメールサービスである${ BRAND_NAME }に移行します。\n${ BRAND_NAME }アカウントを要求する準備が整いました。\n${ inviteLink }をクリックしてください。\nメールアドレスを入力すると、Gmailにコードが送信されます。\nそれを使用してパスワードを設定すると、${ BRAND_NAME }アカウントをご利用いただけるようになります。\nしばらくの間は、${ BRAND_NAME }とGmailの両方が同時に機能します。\n全員の移行が完了した後、Gmailを廃止します。廃止前に改めてお知らせします。"
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "一部のユーザーがまだ自身の${ BRAND_NAME }アカウントを要求していないことを検出しました。"
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "チームが安全な${ BRAND_NAME }アカウントを使い始めたときに必要なものがすべて揃っているよう、現在アカウントの作成とデータのインポートを行っています。"
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "全員のエンドツーエンド暗号化を有効にしています。すべてのメール、すべての予定はお客様だけのものです。チームのみが閲覧可能で、弊社やその他の第三者が閲覧することはできません。"
-      ],
-      "What are you migrating?": [
-        "何を移行しますか？"
-      ],
-      "You": [
-        "お客様本人"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "後でこれらのユーザーのデータをコピーすることはできません。"
-      ],
-      "You're all set!": [
-        "準備が完了しました！"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "完了まであと少しです。${ BRAND_NAME }で直接メールを受信できるようにドメインを設定する必要があります。確認され次第、チームはGmailでの新しいメールの受信を停止し、移行が完了します。"
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "現在のプランで利用可能なユーザー数は最大${ maxMembers }人です。さらにユーザーを移行するには、サブスクリプションにシートを追加してください。"
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "お客様のドメイン構成に、依然として他のプロバイダーのMXコードが含まれています。"
       ]
     },
     "breadcrumb": {
@@ -7561,6 +7136,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
+      "Something went wrong": [
+        "何か問題が発生しました"
+      ],
       "Something went wrong while converting the address": [
         "アドレスの変換中にエラーが発生しました"
       ],
@@ -10272,9 +9850,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "このユーザーから管理者権限を削除してもよろしいですか？"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "このグループからすべてのメンバーを削除してよろしいですか？"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "ドメイン ${ boldDomain } を削除してもよろしいですか?"
       ],
@@ -12209,6 +11784,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "スマートルーティング経由: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "SMTP 送信により、サードパーティのサービスまたはデバイスが、お客様のカスタムドメインのメールアドレス宛てに ${ MAIL_APP_NAME } を介してメールを送信できるようになります。"
@@ -15348,6 +14926,9 @@
       ],
       "Set password": [
         "パスワードを設定"
+      ],
+      "Settings": [
+        "設定"
       ],
       "Share your referral link": [
         "紹介リンクを共有"
@@ -21366,17 +20947,11 @@
       "Make sure you copy the above SCIM token now.": [
         "上記の SCIM トークンを今すぐコピーしてください。"
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "組織で SCIM が無効になると、**アイデンティティ プロバイダーによって自動的に提供されたすべての SCIM ユーザーが SSO ユーザーに変換され**、${ BRAND_NAME } 設定内で直接管理できるようになります。"
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "ユーザー管理を異なるサービス間で簡素化します。アイデンティティプロバイダーでユーザーを追加、編集、削除すると、それらの変更は自動的に${ appName }組織に適用されます。"
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM 自動プロビジョニングは、新しい SCIM トークンを ID プロバイダーの設定に入力するまで無効になります。"
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM ベース URL とトークンは削除されます。"
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "ID プロバイダーとの同期を再度有効にするには、SCIM 統合を再度完了する必要があります。"
@@ -24122,6 +23697,14 @@
         "個人向け"
       ]
     },
+    "Table header": {
+      "Size": [
+        "サイズ"
+      ],
+      "Status": [
+        "状態"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "自分と共有"
@@ -25636,9 +25219,6 @@
       ],
       "Reject device?": [
         "デバイスを拒否しますか？"
-      ],
-      "Remove all members?": [
-        "すべてのメンバーを削除しますか？"
       ],
       "Remove calendar": [
         "カレンダーを削除"

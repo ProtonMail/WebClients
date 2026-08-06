@@ -741,6 +741,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable": [
+        "Aktiver"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Aktiver ${ darkWebMonitoring }"
       ],
@@ -1307,9 +1310,6 @@
       ],
       "Remove": [
         "Fjern"
-      ],
-      "Remove all members": [
-        "Fjern alle medlemmer"
       ],
       "Remove all other devices": [
         "Fjern alle andre enheter"
@@ -2963,437 +2963,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Din personlige e-postadresse er en viktig del av din digitale identitet. Som telefonnummeret ditt, gir du det ikke til alle du møter. Derfor er det nyttig å ha andre e-postadresser du kan bruke til forskjellige formål."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } av ${ totalCount }"
-      ],
-      "Account connected": [
-        "Konto tilkoblet"
-      ],
-      "Account disconnected": [
-        "Konto frakoblet"
-      ],
-      "Accounts migrated": [
-        "Kontoer migrert"
-      ],
-      "Activated": [
-        "Aktivert"
-      ],
-      "Add domain": [
-        "Legg til domene"
-      ],
-      "Add users": [
-        "Legg til brukere"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Legg til organisasjonens e-postdomene til ${ BRAND_NAME }."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
-      ],
-      "All": [
-        "Alle"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Alle migrerte brukerkontoer er klare til å bli invitert til ${ BRAND_NAME }-organisasjonen din."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "En ukjent feil oppstod. Oppdater siden og prøv igjen."
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "Er du sikker på at du ønsker å fortsette uten ${ withoutString } og ${ notMigratedOthers } annen?",
-        "Er du sikker på at du ønsker å fortsette uten ${ withoutString } og ${ notMigratedOthers } andre?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "Er du sikker på at du ønsker å fortsette uten ${ withoutString }?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Er du sikker på at du vil fortsette? Brukere som ikke har gjort krav på kontoen sin før overføringen er fullført, må be om en tilbakestilling av passordet fra administratoren for ${ BRAND_NAME }-organisasjonen."
-      ],
-      "Authenticate": [
-        "Autentiser"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Autentiser Google Workspace-kontoen din"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Collapse invitation message": [
-        "Skjul invitasjonsmelding"
-      ],
-      "Collapse step": [
-        "Skjul trinn"
-      ],
-      "Configure domain": [
-        "Konfigurer domene"
-      ],
-      "Configure migration": [
-        "Konfigurer migrering"
-      ],
-      "Configure users": [
-        "Konfigurer brukere"
-      ],
-      "Configure your domain": [
-        "Konfigurer domenet ditt"
-      ],
-      "Confirm": [
-        "Bekreft"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Kontakt administratoren din for å starte en migrering."
-      ],
-      "Contacts": [
-        "Kontakter"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Kopier koden nedenfor og lim den inn i DNS-delen av domeneverten din."
-      ],
-      "Creating accounts": [
-        "Oppretter kontoer"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status for dataoverføring fra Google Workspace til ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "Slett eventuelle eksisterende MX-koder, kopier deretter kodene nedenfor og lim dem inn i DNS-delen av domeneverten din."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM legger til en digital signatur i hver e-post, slik at mottakerne kan bekrefte at meldingen faktisk kom fra domenet ditt og ikke ble endret underveis. Uten den kan meldinger bli behandlet som mindre pålitelige."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC bygger på SPF og DKIM ved å fortelle mottakerserverne hvordan de skal håndtere meldinger som ikke består disse kontrollene. Det bidrar til å beskytte domenet ditt mot etterligning og forbedrer den generelle leveringspåliteligheten."
-      ],
-      "Domain added": [
-        "Domene lagt til"
-      ],
-      "Domain provider": [
-        "Domeneleverandør"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Vet du ikke hvor du skal begynne? Se hvordan du oppdaterer DNS-en din på ${ registrarLink }"
-      ],
-      "Emails": [
-        "E-poster"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Sørg for at e-postene dine havner i innboksen, ikke i søppelpostmappen. Hvis du oppdaterer SPF, kan brukere sende fra ${ BRAND_NAME } og Google samtidig under migreringen."
-      ],
-      "Errors": [
-        "Feil"
-      ],
-      "Estimated size": [
-        "Estimert størrelse"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Alle får den samme invitasjonskoblingen. De besøker siden, skriver inn e-postadressen sin, og en bekreftelseskode kommer til Gmail-innboksen deres. Derfra angir de ${ BRAND_NAME }-passordet sitt."
-      ],
-      "Expand invitation message": [
-        "Vis invitasjonsmelding"
-      ],
-      "Expand step": [
-        "Vis trinn"
-      ],
-      "Failed to load OAuth": [
-        "Kunne ikke laste inn OAuth"
-      ],
-      "Final step": [
-        "Siste trinn"
-      ],
-      "Find out what can be migrated.": [
-        "Finn ut hva som kan migreres."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Få hjelp og nyttige tips fra andre domeneleverandører ${ here }"
-      ],
-      "Going private": [
-        "Går privat"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Google Marketplace-app for å kopiere data til ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Google Workspace-konto"
-      ],
-      "Has errors": [
-        "Inneholder feil"
-      ],
-      "Import completed successfully": [
-        "Import fullført uten problemer"
-      ],
-      "Import details": [
-        "Importdetaljer"
-      ],
-      "In progress": [
-        "Pågår"
-      ],
-      "Install app": [
-        "Installer app"
-      ],
-      "Install migration app": [
-        "Installer migreringsappen"
-      ],
-      "Invitation link": [
-        "Invitasjonskobling"
-      ],
-      "Invitation message": [
-        "Melding i invitasjon"
-      ],
-      "invite link": [
-        "invitasjonskobling"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Det kan ta opptil 24 timer før disse endringene trer i kraft."
-      ],
-      "Loading your organization data": [
-        "Laster inn organisasjonsdataene dine"
-      ],
-      "Mail": [
-        "E-post"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
-      ],
-      "Migrate": [
-        "Migrer"
-      ],
-      "Migrate accounts": [
-        "Migrer kontoer"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Migrer kontoer til ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Migrer fra Google Workspace"
-      ],
-      "Migrated": [
-        "Migrert"
-      ],
-      "Migrated accounts": [
-        "Migrerte kontoer"
-      ],
-      "Migration includes": [
-        "Migrering inkluderer"
-      ],
-      "Migration started for ${ n } user": [
-        "Migrering startet for ${ n } bruker",
-        "Migrering startet for ${ n } brukere"
-      ],
-      "Migration status": [
-        "Migreringsstatus"
-      ],
-      "Migration summary": [
-        "Migreringssammendrag"
-      ],
-      "Missing organization private key": [
-        "Mangler privat nøkkel for organisasjonen"
-      ],
-      "Missing organization public key": [
-        "Mangler offentlig nøkkel for organisasjonen"
-      ],
-      "More details": [
-        "Flere detaljer"
-      ],
-      "Need help?": [
-        "Trenger du hjelp?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Ingen feilinformasjon tilgjengelig. Ta kontakt med kundestøtte for mer informasjon."
-      ],
-      "No users to display": [
-        "Ingen brukere å vise"
-      ],
-      "Not activated": [
-        "Ikke aktivert"
-      ],
-      "Not confirmed": [
-        "Ikke bekreftet"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Ikke funnet riktig? Velg leverandøren din fra listen."
-      ],
-      "Onboard your team": [
-        "Inviter teamet ditt"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Når vi har bekreftet at e-postene er sendt til ${ BRAND_NAME }, vil overføringen være fullført. Du vil motta en bekreftelses-e-post som gir deg beskjed når dette skjer. Denne prosessen kan ta opptil 24 timer."
-      ],
-      "Organization does not have enough seats available": [
-        "Organisasjonen har ikke nok ledige seter"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisasjonen har ikke nok lagringsplass tilgjengelig"
-      ],
-      "Pending": [
-        "Venter"
-      ],
-      "Please don’t close or refresh this window.": [
-        "Ikke lukk eller oppdater dette vinduet"
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Autentiser Google Workspace-kontoen din på nytt for å starte en overføring"
-      ],
-      "Refresh": [
-        "Oppdater"
-      ],
-      "Select at least one user to start a migration": [
-        "Velg minst én bruker for å starte en migrering"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Velg nøyaktig hva du vil migrere. Det vil gjelde for alle brukere i organisasjonen."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Velg kontoene du vil overføre til ${ BRAND_NAME }. Du kan migrere hele organisasjonen din i dag, eller starte i det små og ta med resten når du er klar."
-      ],
-      "Select users to migrate": [
-        "Velg brukere som skal migreres"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Konfigurer sikker sending (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Konfigurer sikker sending (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Konfigurer sikker sending (SPF)"
-      ],
-      "Settings": [
-        "Innstillinger"
-      ],
-      "Sign in to Google Workspace": [
-        "Logg på Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Logg på med en Google Workspace-administratorkonto for ${ BRAND_NAME } for å konfigurere migreringen."
-      ],
-      "Size": [
-        "Størrelse"
-      ],
-      "Skip": [
-        "Hopp over"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "Hoppet over ${ count } kontakt på grunn av inkompatibiliteter",
-        "Hoppet over ${ count } kontakter på grunn av inkompatibiliteter"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "Hoppet over ${ count } e-post på grunn av inkompatibiliteter",
-        "Hoppet over ${ count } e-poster på grunn av inkompatibiliteter"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "Hoppet over ${ count } hendelse på grunn av inkompatibiliteter",
-        "Hoppet over ${ count } hendelser på grunn av inkompatibiliteter"
-      ],
-      "Some accounts are not claimed": [
-        "Noen kontoer er ikke gjort krav på"
-      ],
-      "Some members weren't migrated": [
-        "Noen medlemmer ble ikke migrert"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Denne brukeren kan ikke migreres på grunn av plattformuforenlighet."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "For å overføre organisasjonens data til ${ BRAND_NAME }, installer ${ BRAND_NAME } Easy Switch fra Google Workspace Marketplace. Etter at du har installert det, kan du komme tilbake hit for å fortsette."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "For å fullføre migreringen, sørg for at du bare beholder ${ BRAND_NAME } MX-koder."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "For å migrere denne brukeren må du aktivere kontoen deres i Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "For å migrere denne brukeren må du aktivere kontoen deres under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "For å migrere denne brukeren må du aktivere adressen deres under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "For å migrere denne brukeren må de godta invitasjonen sin til å bli med i ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "For å migrere denne brukeren må du oppheve arkiveringen av dem i Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "For å migrere denne brukeren må du oppheve suspensjonen av dem i Google Workspace Admin Console."
-      ],
-      "Update records for receiving": [
-        "Oppdater poster for mottak"
-      ],
-      "User": [
-        "Bruker"
-      ],
-      "Users activated": [
-        "Brukere aktivert"
-      ],
-      "Users migrated": [
-        "Brukere migrert"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Brukere som har aktivert ${ BRAND_NAME }-kontoen sin"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Brukere som ikke har gjort krav på kontoen sin før overføringen er fullført, må be om en tilbakestilling av passordet fra administratoren for ${ BRAND_NAME }-organisasjonen."
-      ],
-      "Verified": [
-        "Verifisert"
-      ],
-      "Verify installation": [
-        "Verifiser installasjon"
-      ],
-      "Verify your domain": [
-        "Verifiser domenet ditt"
-      ],
-      "Verify your domain to start a migration": [
-        "Verifiser domenet ditt for å starte en migrering"
-      ],
-      "Waiting for MX...": [
-        "Venter på MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Vi kunne ikke bekrefte installasjonen. Sjekk at du har installert den i Google Workspace-kontoen din, og prøv på nytt."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Vi flytter til ${ BRAND_NAME }, den sikre e-posttjenesten.\nOg ${ BRAND_NAME }-kontoen din er klar til å bli gjort krav på.\nKlikk ${ inviteLink }.\nSkriv inn e-postadressen din, så sender vi en kode til Gmail-kontoen din.\nBruk den til å angi passordet ditt – så er ${ BRAND_NAME }-kontoen din.\nI en liten stund vil begge fungere side om side. ${ BRAND_NAME } og Gmail.\nTil slutt, når alle har fullført flyttingen, avvikler vi Gmail. Vi gir deg en påminnelse før det skjer."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Vi har lagt merke til at noen brukere ikke har gjort krav på ${ BRAND_NAME }-kontoene sine."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "Vi oppretter kontoene og importerer dataene deres nå, slik at teamet har alt de trenger når de begynner å bruke den sikre ${ BRAND_NAME }-kontoen sin."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Vi slår på ende-til-ende-kryptering for alle. Hver e-post, hver hendelse er nå bare din. Synlig kun for teamet ditt. Ikke oss, ikke noen andre."
-      ],
-      "What are you migrating?": [
-        "Hva migrerer du?"
-      ],
-      "You": [
-        "Du"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "Du vil ikke kunne kopiere dataene til disse brukerne senere."
-      ],
-      "You're all set!": [
-        "Nå er du klar!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Du er nesten ferdig. Du må konfigurere domenet ditt til å motta e-postene direkte på ${ BRAND_NAME }. Når dette er bekreftet, vil teamet ditt slutte å motta nye e-poster på Gmail, og overføringen vil være fullført."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Din nåværende plan tillater opptil ${ maxMembers } bruker. For å migrere flere brukere, legg til flere seter i abonnementet ditt.",
-        "Din nåværende plan tillater opptil ${ maxMembers } brukere. For å migrere flere brukere, legg til flere seter i abonnementet ditt."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "Domenekonfigurasjonen din inkluderer fortsatt MX-koder fra en annen leverandør."
       ]
     },
     "breadcrumb": {
@@ -7679,6 +7248,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
       ],
+      "Something went wrong": [
+        "Noe gikk galt"
+      ],
       "Something went wrong while converting the address": [
         "Noe gikk galt under konvertering av adressen"
       ],
@@ -10489,9 +10061,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Er du sikker du ønsker å fjerne administrative privilegier fra denne brukeren?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Er du sikker på at du vil fjerne alle medlemmer fra denne gruppen?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Er du sikker på at du ønsker å fjerne domenet ${ boldDomain }?"
       ],
@@ -12521,6 +12090,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Smart-rutet gjennom: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "SMTP-innsending tillater tredjepartstjenester eller -enheter å sende e-post via ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser."
@@ -15779,6 +15351,9 @@
       ],
       "Set password": [
         "Angi passord"
+      ],
+      "Settings": [
+        "Innstillinger"
       ],
       "Share your referral link": [
         "Del vervekoblingen din"
@@ -21896,17 +21471,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Pass på at du kopierer SCIM-tokenet ovenfor nå."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Når SCIM er deaktivert for organisasjonen, blir **alle SCIM-brukere som leveres automatisk av identitetsleverandøren, konvertert til SSO-brukere**, og du kan administrere dem direkte i ${ BRAND_NAME }-innstillingene."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Forenkler brukeradministrasjon på tvers av ulike tjenester. Legg til, rediger og fjern brukere i identitetsleverandøren, så brukes disse endringene automatisk på ${ appName }-organisasjonen."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Den automatiske klargjøringen av SCIM deaktiveres til du angir det nye SCIM-tokenet i identitetsleverandørens innstillinger."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM-grunnadressen og tokenet vil bli slettet."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "For å aktivere synkronisering med identitetsleverandøren på nytt, må du fullføre SCIM-integreringen på nytt."
@@ -24742,6 +24311,14 @@
         "For enkeltpersoner"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "Delt med meg"
@@ -26315,9 +25892,6 @@
       ],
       "Reject device?": [
         "Avvise enhet?"
-      ],
-      "Remove all members?": [
-        "Fjern alle medlemmer?"
       ],
       "Remove Always-on VPN device profile": [
         "Fjern enhetsprofilen for Alltid-på-VPN"

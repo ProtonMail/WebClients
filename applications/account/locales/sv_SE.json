@@ -741,6 +741,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable": [
+        "Aktivera"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Aktivera ${ darkWebMonitoring }"
       ],
@@ -1308,9 +1311,6 @@
       "Remove": [
         "Ta bort"
       ],
-      "Remove all members": [
-        "Ta bort alla medlemmar"
-      ],
       "Remove all other devices": [
         "Ta bort alla andra enheter"
       ],
@@ -1868,6 +1868,9 @@
       ],
       "View all reports": [
         "Visa alla rapporter"
+      ],
+      "View guide": [
+        "Visa guide"
       ],
       "View invoice": [
         "Visa faktura"
@@ -2953,437 +2956,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Din personliga e-postadress är en viktig del av din digitala identitet. Precis som ditt telefonnummer ger du det inte till alla du möter. Därför är det bra att ha andra e-postadresser som du kan använda för olika ändamål."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } av ${ totalCount }"
-      ],
-      "Account connected": [
-        "Konto anslutet"
-      ],
-      "Account disconnected": [
-        "Konto frånkopplat"
-      ],
-      "Accounts migrated": [
-        "Konton migrerade"
-      ],
-      "Activated": [
-        "Aktiverat"
-      ],
-      "Add domain": [
-        "Lägg till domän"
-      ],
-      "Add users": [
-        "Lägg till användare"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Lägg till din organisations e-postdomän till ${ BRAND_NAME }."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
-      ],
-      "All": [
-        "Alla"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Alla migrerade användarkonton är redo att bjudas in till din ${ BRAND_NAME }-organisation."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "Ett okänt fel uppstod. Uppdatera sidan och försök igen"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "Är du säker på att du vill fortsätta utan ${ withoutString } och ${ notMigratedOthers } annan?",
-        "Är du säker på att du vill fortsätta utan ${ withoutString } och ${ notMigratedOthers } andra?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "Är du säker på att du vill fortsätta utan ${ withoutString }?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Är du säker på att du vill fortsätta? Användare som inte har gjort anspråk på sina konton innan migreringen slutförs måste begära en lösenordsåterställning från administratören för sin ${ BRAND_NAME }-organisation."
-      ],
-      "Authenticate": [
-        "Autentisera"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Autentisera ditt Google Workspace-konto"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Collapse invitation message": [
-        "Minimera inbjudningsmeddelande"
-      ],
-      "Collapse step": [
-        "Minimera steg"
-      ],
-      "Configure domain": [
-        "Konfigurera domän"
-      ],
-      "Configure migration": [
-        "Konfigurera migrering"
-      ],
-      "Configure users": [
-        "Konfigurera användare"
-      ],
-      "Configure your domain": [
-        "Konfigurera din domän"
-      ],
-      "Confirm": [
-        "Bekräfta"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Kontakta din administratör för att starta en migrering."
-      ],
-      "Contacts": [
-        "Kontakter"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Kopiera koden nedan och klistra in den i DNS-avsnittet hos din domänvärd."
-      ],
-      "Creating accounts": [
-        "Skapar konton"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status för datamigrering från Google Workspace till ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "Ta bort eventuella befintliga MX-koder, kopiera sedan koderna nedan och klistra in dem i DNS-avsnittet hos din domänvärd."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM lägger till en digital signatur på varje e-postmeddelande så att mottagare kan verifiera att meddelandet verkligen kom från din domän och inte ändrades under överföringen. Utan detta kan meddelanden behandlas som mindre betrodda."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC bygger vidare på SPF och DKIM genom att tala om för mottagande servrar hur de ska hantera meddelanden som misslyckas i kontrollerna. Det hjälper till att skydda din domän mot imitation och förbättrar leveranssäkerheten i allmänhet."
-      ],
-      "Domain added": [
-        "Domän tillagd"
-      ],
-      "Domain provider": [
-        "Domänleverantör"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Vet du inte var du ska börja? Se hur du uppdaterar din DNS på ${ registrarLink }"
-      ],
-      "Emails": [
-        "E-post"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Se till att din e-post når inkorgen och inte skräppostmappen. Att uppdatera SPF gör att användare kan skicka från ${ BRAND_NAME } och Google samtidigt under migreringens gång."
-      ],
-      "Errors": [
-        "Fel"
-      ],
-      "Estimated size": [
-        "Beräknad storlek"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Alla får samma inbjudningslänk. De besöker sidan, anger sin e-post, och en verifieringskod skickas till deras Gmail-inkorg. Därifrån ställer de in sitt lösenord för ${ BRAND_NAME }."
-      ],
-      "Expand invitation message": [
-        "Expandera inbjudningsmeddelande"
-      ],
-      "Expand step": [
-        "Expandera steg"
-      ],
-      "Failed to load OAuth": [
-        "Misslyckades att ladda OAuth"
-      ],
-      "Final step": [
-        "Sista steget"
-      ],
-      "Find out what can be migrated.": [
-        "Ta reda på vad som kan migreras."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Få hjälp och användbara tips för andra domänleverantörer ${ here }"
-      ],
-      "Going private": [
-        "Blir privat"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Google Marketplace-app för att kopiera data till ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Google Workspace-konto"
-      ],
-      "Has errors": [
-        "Har fel"
-      ],
-      "Import completed successfully": [
-        "Import slutförd"
-      ],
-      "Import details": [
-        "Importdetaljer"
-      ],
-      "In progress": [
-        "Pågår"
-      ],
-      "Install app": [
-        "Installera app"
-      ],
-      "Install migration app": [
-        "Installera migreringsappen"
-      ],
-      "Invitation link": [
-        "Inbjudningslänk"
-      ],
-      "Invitation message": [
-        "Inbjudningsmeddelande"
-      ],
-      "invite link": [
-        "inbjudningslänk"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Det kan ta upp till 24 timmar för dessa ändringar att spridas."
-      ],
-      "Loading your organization data": [
-        "Laddar din organisationsdata"
-      ],
-      "Mail": [
-        "E-post"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta."
-      ],
-      "Migrate": [
-        "Migrera"
-      ],
-      "Migrate accounts": [
-        "Migrera konton"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Migrera konton till ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Migrera från Google Workspace"
-      ],
-      "Migrated": [
-        "Migrerad"
-      ],
-      "Migrated accounts": [
-        "Migrerade konton"
-      ],
-      "Migration includes": [
-        "Migrering inkluderar"
-      ],
-      "Migration started for ${ n } user": [
-        "Migrering startad för ${ n } användare",
-        "Migrering startad för ${ n } användare"
-      ],
-      "Migration status": [
-        "Migreringsstatus"
-      ],
-      "Migration summary": [
-        "Migreringssammanfattning"
-      ],
-      "Missing organization private key": [
-        "Saknar organisationens privata nyckel"
-      ],
-      "Missing organization public key": [
-        "Saknar organisationens offentliga nyckel"
-      ],
-      "More details": [
-        "Mer detaljer"
-      ],
-      "Need help?": [
-        "Behöver du hjälp?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Inga feldetaljer tillgängliga. Kontakta kundsupport för mer information."
-      ],
-      "No users to display": [
-        "Inga användare att visa"
-      ],
-      "Not activated": [
-        "Inte aktiverat"
-      ],
-      "Not confirmed": [
-        "Inte bekräftat"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Inte identifierad korrekt? Välj din leverantör från listan."
-      ],
-      "Onboard your team": [
-        "Bjud in ditt team"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "När vi har bekräftat att e-post styrs till ${ BRAND_NAME } kommer migreringen att slutföras. Du får en e-postbekräftelse som låter dig veta när det sker. Den här processen kan ta upp till 24 timmar."
-      ],
-      "Organization does not have enough seats available": [
-        "Organisation har inte tillräckligt med licenser tillgängligt"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
-      ],
-      "Pending": [
-        "Väntar"
-      ],
-      "Please don’t close or refresh this window.": [
-        "Stäng inte eller uppdatera detta fönster."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Autentisera ditt Google Workspace-konto igen för att starta en migrering"
-      ],
-      "Refresh": [
-        "Uppdatera"
-      ],
-      "Select at least one user to start a migration": [
-        "Välj minst en användare för att starta en migrering"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Välj de konton du vill flytta till ${ BRAND_NAME }. Du kan migrera hela organisationen idag eller börja i liten skala och flytta över resten när du är redo."
-      ],
-      "Select users to migrate": [
-        "Välj användare att migrera"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Ställ in säker sändning (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Ställ in säker sändning (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Ställ in säker sändning (SPF)"
-      ],
-      "Settings": [
-        "Inställningar"
-      ],
-      "Sign in to Google Workspace": [
-        "Logga in på Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Logga in med ett Google Workspace-administratörskonto för att konfigurera migreringen i ${ BRAND_NAME }."
-      ],
-      "Size": [
-        "Storlek"
-      ],
-      "Skip": [
-        "Hoppa över"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "Hoppade över ${ count } kontakt på grund av inkompatibiliteter",
-        "Hoppade över ${ count } kontakter på grund av inkompatibiliteter"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "Hoppade över ${ count } e-postmeddelande på grund av inkompatibilitet",
-        "Hoppade över ${ count } e-postmeddelanden på grund av inkompatibilitet"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "Hoppade över ${ count } händelse på grund av inkompatibiliteter",
-        "Hoppade över ${ count } händelser på grund av inkompatibiliteter"
-      ],
-      "Some accounts are not claimed": [
-        "Vissa konton har inte gjorts anspråk på"
-      ],
-      "Some members weren't migrated": [
-        "Några medlemmar migrerades inte"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Denna användare kan inte migreras på grund av plattformsinkompatibilitet."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "För att överföra din organisations data till ${ BRAND_NAME }, installera ${ BRAND_NAME } Easy Switch från Google Workspace Marketplace. Gå tillbaka hit efter installationen för att fortsätta."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "För att slutföra migreringen, se till att du endast behåller MX-koder för ${ BRAND_NAME }."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "För att migrera denna användare, aktivera deras konto i din Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "För att migrera denna användare måste de acceptera sin inbjudan att gå med i ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "För att migrera denna användare, återställ dem från arkivet i din Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "För att migrera denna användare, häv avstängningen för dem i din Google Workspace Admin Console."
-      ],
-      "Update records for receiving": [
-        "Uppdatera poster för mottagning"
-      ],
-      "User": [
-        "Användare"
-      ],
-      "Users activated": [
-        "Användare aktiverade"
-      ],
-      "Users migrated": [
-        "Användare migrerade"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Användare som har använt sitt ${ BRAND_NAME }-konto"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Användare som inte har gjort anspråk på sitt konto innan migreringen slutförts måste begära en lösenordsåterställning av administratören för sin ${ BRAND_NAME }-organisation."
-      ],
-      "Verified": [
-        "Verified"
-      ],
-      "Verify installation": [
-        "Verifiera installation"
-      ],
-      "Verify your domain": [
-        "Verifiera din domän"
-      ],
-      "Verify your domain to start a migration": [
-        "Verifiera din domän för att starta en migrering"
-      ],
-      "Waiting for MX...": [
-        "Väntar på MX…"
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Vi kunde inte verifiera installationen, kontrollera att du har installerat den i ditt Google Workspace-konto och försök igen."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Vi flyttar till ${ BRAND_NAME }, den säkra e-posttjänsten.\nOch ditt ${ BRAND_NAME }-konto är redo att tas i anspråk.\nKlicka på ${ inviteLink }.\nAnge din e-postadress, så skickar vi en kod till din Gmail.\nAnvänd den för att ställa in ditt lösenord – så är ditt ${ BRAND_NAME }-konto ditt.\nUnder en kort övergångsperiod kommer båda att fungera sida vid sida. ${ BRAND_NAME } och Gmail.\nSedan, när alla har flyttat, kommer vi att avveckla Gmail. Vi kommer att påminna dig innan det sker."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Vi har märkt att några användare inte har gjort anspråk på sina ${ BRAND_NAME }-konton."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "Vi skapar dina konton och importerar din data nu så att ditt team har allt de behöver när de börjar använda sitt säkra ${ BRAND_NAME }-konto."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Vi aktiverar end-to-end-kryptering för alla. Varje e-postmeddelande, varje händelse är nu bara din. Endast synlig för ditt team. Inte för oss, inte för någon annan."
-      ],
-      "What are you migrating?": [
-        "Vad migrerar du?"
-      ],
-      "You": [
-        "Du"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "Du kommer inte att kunna kopiera dessa användares data senare."
-      ],
-      "You're all set!": [
-        "Du är klar!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Du är nästan klar, du behöver konfigurera din domän för att ta emot din e-post direkt i ${ BRAND_NAME }. När det har bekräftats kommer ditt team att sluta ta emot nya e-postmeddelanden i Gmail och migreringen är klar."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Ditt nuvarande paket tillåter upp till ${ maxMembers } användare. För att migrera fler användare, lägg till fler användarplatser i din prenumeration.",
-        "Ditt nuvarande paket tillåter upp till ${ maxMembers } användare. För att migrera fler användare, lägg till fler användarplatser i din prenumeration."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "Din domänkonfiguration innehåller fortfarande en annan leverantörs MX-koder."
       ]
     },
     "breadcrumb": {
@@ -7209,6 +6781,12 @@
       "Calendar limit reached": [
         "Kalendergräns nådd"
       ],
+      "Cannot download a folder": [
+        "Kan inte ladda ner en mapp"
+      ],
+      "Cannot share root folder": [
+        "Kan inte dela rotmapp"
+      ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
       ],
@@ -7227,6 +6805,9 @@
       "Contact signature not verified": [
         "Kontaktsignatur inte verifierad"
       ],
+      "Could not find an available name": [
+        "Kunde inte hitta ett tillgängligt namn"
+      ],
       "Could not generate the device profile. Please try again.": [
         "Kunde inte generera enhetsprofilen. Försök igen."
       ],
@@ -7238,6 +6819,12 @@
       ],
       "Could not save preference": [
         "Kunde inte spara preferens"
+      ],
+      "Could not unlock the parent folder": [
+        "Kunde inte låsa upp den överordnade mappen"
+      ],
+      "Could not unlock this item": [
+        "Kunde inte låsa upp detta objekt"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Kunde inte ladda fakturor. Försök igen senare."
@@ -7252,6 +6839,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Avmarkera minst ${ calendarsToFixCount } kalender eller",
         "Avmarkera minst ${ calendarsToFixCount } kalendrar eller"
+      ],
+      "Device not found": [
+        "Enhet hittades inte"
       ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
@@ -7327,6 +6917,12 @@
       ],
       "Failed to update detailed monitoring.": [
         "Misslyckades att uppdatera detaljerad övervakning."
+      ],
+      "Failed to verify invitation": [
+        "Misslyckades med att verifiera inbjudan"
+      ],
+      "File has no revision": [
+        "Fil har ingen version"
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Fil för stor. Din logga måste vara 30 KB eller mindre."
@@ -7421,8 +7017,14 @@
       "Invalid verification code": [
         "Ogiltig verifieringskod"
       ],
+      "Invitation not found": [
+        "Inbjudan hittades inte"
+      ],
       "Item content cannot exceed 40KB": [
         "Objektinnehåll får inte överstiga 40 kB"
+      ],
+      "Item not found": [
+        "Objekt hittades inte"
       ],
       "Label name cannot be empty.": [
         "Etikettnamn kan inte vara tomt."
@@ -7445,6 +7047,9 @@
       ],
       "Name does not match": [
         "Namn matchar inte"
+      ],
+      "Name must not be empty": [
+        "Namn får inte vara tomt"
       ],
       "Name required": [
         "Namn krävs"
@@ -7517,6 +7122,12 @@
       ],
       "Permissions request failed.": [
         "Behörighetsbegäran misslyckades."
+      ],
+      "Photo is already in the target album": [
+        "Foto är redan i målalbum"
+      ],
+      "Photo not found": [
+        "Foto hittades inte"
       ],
       "Please add a payment method before reactivating your subscription": [
         "Lägg till en betalningsmetod innan du återaktiverar din prenumeration"
@@ -7645,11 +7256,20 @@
       "Session expired. Please refresh the page.": [
         "Session löpt ut. Uppdatera sidan."
       ],
+      "Signature is missing": [
+        "Signatur saknas"
+      ],
       "Signature not verified": [
         "Signatur inte verifierad"
       ],
       "Signature verification failed": [
         "Signaturverifiering misslyckades"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturverifiering för ${ signatureType } misslyckades"
+      ],
+      "Some items could not be loaded": [
+        "Några objekt kunde inte laddas"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Vissa av dina mappnamn är inte tillgängliga. Anpassa importen för att redigera dessa namn."
@@ -7665,6 +7285,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
+      ],
+      "Something went wrong": [
+        "Något gick fel"
       ],
       "Something went wrong while converting the address": [
         "Något gick fel när adressen konverterades"
@@ -7759,6 +7382,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Detta mappnamn är inte tillgängligt. Välj ett annat namn."
       ],
+      "This item is not shared": [
+        "Detta objekt är inte delat"
+      ],
       "This label name is not available. Please choose a different name.": [
         "Detta etikettnamn är inte tillgängligt. Välj ett annat namn."
       ],
@@ -7822,6 +7448,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Verifieringen lyckades inte, försök igen om en timme."
       ],
+      "Verification keys are not available": [
+        "Verifieringsnycklar är inte tillgängliga"
+      ],
       "We couldn't sign you in": [
         "Vi kunde inte logga in dig"
       ],
@@ -7842,6 +7471,12 @@
       ],
       "You already added this holidays calendar": [
         "Du har redan lagt till denna helgdagskalender"
+      ],
+      "You do not have access to this item": [
+        "Du har inte åtkomst till detta objekt"
+      ],
+      "You do not have access to this shared item": [
+        "Du har inte åtkomst till detta delade objekt"
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nått det maximala antalet kalendrar."
@@ -10476,9 +10111,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Är du säker på att du vill ta bort administrativa behörigheter från denna användare?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Är du säker du vill ta bort alla medlemmar från denna grupp?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Är det säker på att du vill ta bort domänen ${ boldDomain }?"
       ],
@@ -12475,6 +12107,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Smart-dirigerad via: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "SMTP-inlämning tillåter tjänster från tredje part eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser."
@@ -15703,6 +15338,9 @@
       ],
       "Set password": [
         "Ställ in lösenord"
+      ],
+      "Settings": [
+        "Inställningar"
       ],
       "Share your referral link": [
         "Dela din hänvisningslänk"
@@ -20607,6 +20245,20 @@
         "Sekundär tidszon"
       ]
     },
+    "Property": {
+      "attributes": [
+        "attribut"
+      ],
+      "key": [
+        "nyckel"
+      ],
+      "membership": [
+        "medlemskap"
+      ],
+      "name": [
+        "namn"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adress"
@@ -21826,17 +21478,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Se till att du kopierar SCIM-token ovan nu."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "När SCIM inaktiverats för din organisation så kommer **alla SCIM-användare som erhållits automatiskt från din identitetsleverantör att konverteras till SSO-användare** och du kommer att kunna hantera dem direkt i ${ BRAND_NAME }-inställningarna."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Förenklar användarhantering över olika tjänster. Lägg till, redigera och ta bort användare i din identitetsleverantör, så kommer dessa ändringar automatiskt att tillämpas på din ${ appName }-organisation."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Den automatiska SCIM-provisioneringen kommer att inaktiveras tills du angett den nya SCIM-token i din identitetsleverantörs inställningar."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM-baswebbadressen och -token kommer att tas bort."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "För att återaktivera synkronisering med din identitetsleverantör måste du slutföra SCIM-integreringen igen."
@@ -24672,6 +24318,14 @@
         "För individer"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Storlek"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "Delat med mig"
@@ -26242,9 +25896,6 @@
       ],
       "Reject device?": [
         "Neka enhet?"
-      ],
-      "Remove all members?": [
-        "Ta bort alla medlemmar?"
       ],
       "Remove calendar": [
         "Ta bort kalender"

@@ -735,6 +735,9 @@
       "Emoji": [
         "الرموز التعبيرية"
       ],
+      "Enable": [
+        "تفعيل"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "تفعيل ${ darkWebMonitoring }"
       ],
@@ -1289,9 +1292,6 @@
       ],
       "Remove": [
         "حذف"
-      ],
-      "Remove all members": [
-        "إزالة جميع الأعضاء"
       ],
       "Remove all other devices": [
         "إزالة كل الأجهزة الأخرى"
@@ -2987,461 +2987,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "عنوان بريدك الإلكتروني الشخصي جزء أساسي من هويتك الرقمية. وعل غرار رقم هاتفك، لا تعطه لكل شخص تقابله. من المُستحسن أن تتوفر على عناوين أخرى لاستخدامها لأغراض مختلفة."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } من ${ totalCount }"
-      ],
-      "Account connected": [
-        "تم توصيل الحساب"
-      ],
-      "Account disconnected": [
-        "تم قطع اتصال الحساب"
-      ],
-      "Accounts migrated": [
-        "الحسابات المرحّلة"
-      ],
-      "Activated": [
-        "مفعّل"
-      ],
-      "Add domain": [
-        "إضافة نطاق"
-      ],
-      "Add users": [
-        "إضافة مستخدمين"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "إضافة نطاق البريد الإلكتروني للمؤسسة إلى ${ BRAND_NAME }."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "العنوان مستخدم بالفعل من قبل مستخدم خارج المؤسسة. يُرجى الاتصال بدعم العملاء لحل هذه المشكلة"
-      ],
-      "All": [
-        "الكل"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "جميع حسابات المستخدمين المرحّلة جاهزة لدعوتها إلى مؤسسة ${ BRAND_NAME }."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "حدث خطأ غير معروف. يُرجى تحديث الصفحة والمحاولة مرة أخرى"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } others?": [
-        "هل هناك تأكيد على رغبة المتابعة بدون ${ withoutString } و ${ notMigratedOthers } آخرين؟",
-        "هل هناك تأكيد على رغبة المتابعة بدون ${ withoutString } وشخص واحد آخر ${ notMigratedOthers }؟",
-        "هل هناك تأكيد على رغبة المتابعة بدون ${ withoutString } وشخصين آخرين ${ notMigratedOthers }؟",
-        "هل هناك تأكيد على رغبة المتابعة بدون ${ withoutString } و ${ notMigratedOthers } آخرين؟",
-        "هل هناك تأكيد على رغبة المتابعة بدون ${ withoutString } و ${ notMigratedOthers } آخرين؟",
-        "هل هناك تأكيد على رغبة المتابعة بدون ${ withoutString } و ${ notMigratedOthers } آخرين؟"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "هل هناك تأكيد على رغبة المتابعة بدون ${ withoutString }؟"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "هل بالتأكيد تريد المتابعة؟ سيحتاج المستخدمون الذين لم يطالبوا بحسابهم قبل إتمام الترحيل إلى طلب إعادة تعيين كلمة المرور من مسؤول مؤسسة ${ BRAND_NAME }."
-      ],
-      "Authenticate": [
-        "مصادقة"
-      ],
-      "Authenticate your Google Workspace account": [
-        "مصادقة حساب Google Workspace"
-      ],
-      "Calendar": [
-        "تقويم"
-      ],
-      "Collapse invitation message": [
-        "طي رسالة الدعوة"
-      ],
-      "Collapse step": [
-        "طي الخطوة"
-      ],
-      "Configure domain": [
-        "إعداد النطاق"
-      ],
-      "Configure migration": [
-        "تهيئة الترحيل"
-      ],
-      "Configure users": [
-        "إعداد المستخدمين"
-      ],
-      "Configure your domain": [
-        "تكوين النطاق"
-      ],
-      "Confirm": [
-        "تأكيد"
-      ],
-      "Contact your administrator to start a migration.": [
-        "التواصل مع المسؤول لبدء الترحيل."
-      ],
-      "Contacts": [
-        "جهات الاتصال"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "يُرجى نسخ الرمز أدناه ولصقه في قسم الـ DNS الخاص بمضيف النطاق."
-      ],
-      "Creating accounts": [
-        "جارٍ إنشاء الحسابات"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "حالة ترحيل البيانات من Google Workspace إلى ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "يرجى حذف أي رموز MX سابقة، ثم نسخ الرموز أدناه ولصقها في قسم DNS الخاص بمضيف النطاق."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "يضيف DKIM توقيعًا رقميًا إلى كل بريد إلكتروني بحيث يمكن للمستلمين التحقق من أن الرسالة جاءت بالفعل من نطاقك ولم يتم تعديلها أثناء النقل. وبدونه، قد تُعامل الرسائل على أنها أقل موثوقية."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "يعتمد DMARC على SPF وDKIM من خلال إخبار الخوادم المستلمة بكيفية التعامل مع الرسائل التي تفشل في هذه الفحوصات. يساعد ذلك في حماية نطاقك من انتحال الهوية ويحسن موثوقية التسليم الإجمالية."
-      ],
-      "Domain added": [
-        "تمت إضافة النطاق"
-      ],
-      "Domain provider": [
-        "مزوّد النطاق"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "عدم معرفة من أين تبدأ؟ يُرجى مشاهدة كيفية تحديث الـ DNS على ${ registrarLink }"
-      ],
-      "Emails": [
-        "الرسائل"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "تأكد من وصول رسائل البريد الإلكتروني إلى صندوق الوارد، وليس إلى مجلد البريد المزعج. سيتيح تحديث SPF للمستخدمين الإرسال من ${ BRAND_NAME } وGoogle في الوقت نفسه طوال فترة النقل."
-      ],
-      "Errors": [
-        "أخطاء"
-      ],
-      "Estimated size": [
-        "الحجم التقديري"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "يحصل الجميع على رابط الدعوة نفسه. سيزورون الصفحة، ويدخلون بريدهم الإلكتروني، ويصل رمز التحقق إلى صندوق وارد Gmail الخاص بهم. ومن هناك، يقومون بتعيين كلمة مرور ${ BRAND_NAME } الخاصة بهم."
-      ],
-      "Expand invitation message": [
-        "توسيع رسالة الدعوة"
-      ],
-      "Expand step": [
-        "توسيع الخطوة"
-      ],
-      "Failed to load OAuth": [
-        "فشل تحميل OAuth"
-      ],
-      "Final step": [
-        "الخطوة الأخيرة"
-      ],
-      "Find out what can be migrated.": [
-        "معرفة ما يمكن ترحيله."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "الحصول على المساعدة ونصائح مفيدة لمزوّدي النطاق الآخرين ${ here }"
-      ],
-      "Going private": [
-        "التحول إلى الخصوصية"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "تطبيق Google Marketplace لنسخ البيانات إلى ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "حساب Google Workspace"
-      ],
-      "Has errors": [
-        "يحتوي على أخطاء"
-      ],
-      "Import completed successfully": [
-        "اكتمل الاستيراد بنجاح"
-      ],
-      "Import details": [
-        "تفاصيل الاستيراد"
-      ],
-      "In progress": [
-        "قيد التنفيذ"
-      ],
-      "Install app": [
-        "تثبيت التطبيق"
-      ],
-      "Install migration app": [
-        "تثبيت تطبيق الترحيل"
-      ],
-      "Invitation link": [
-        "رابط الدعوة"
-      ],
-      "Invitation message": [
-        "رسالة الدعوة"
-      ],
-      "invite link": [
-        "رابط الدعوة"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "قد يستغرق انتشار هذه التغييرات ما يصل إلى 24 ساعة."
-      ],
-      "Loading your organization data": [
-        "تحميل بيانات المؤسسة"
-      ],
-      "Mail": [
-        "البريد الإلكتروني"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "عنوان العضو غير موجود. يُرجى الاتصال بدعم العملاء لحل هذه المشكلة"
-      ],
-      "Migrate": [
-        "ترحيل"
-      ],
-      "Migrate accounts": [
-        "ترحيل الحسابات"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "ترحيل الحسابات إلى ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "ترحيل من Google Workspace"
-      ],
-      "Migrated": [
-        "تم ترحيله"
-      ],
-      "Migrated accounts": [
-        "الحسابات المرحّلة"
-      ],
-      "Migration includes": [
-        "يشمل الترحيل"
-      ],
-      "Migration started for ${ n } users": [
-        "لم يبدأ الترحيل لأي مستخدم ${ n }",
-        "بدأ الترحيل لمستخدم واحد (${ n })",
-        "بدأ الترحيل لمستخدمين اثنين (${ n })",
-        "بدأ الترحيل لـ ${ n } مستخدمين",
-        "بدأ الترحيل لـ ${ n } مستخدمًا",
-        "بدأت عملية الترحيل لـ ${ n } مستخدمين."
-      ],
-      "Migration status": [
-        "حالة الترحيل"
-      ],
-      "Migration summary": [
-        "ملخص الترحيل"
-      ],
-      "Missing organization private key": [
-        "مفتاح خاص للمؤسسة مفقود"
-      ],
-      "Missing organization public key": [
-        "مفتاح عام للمؤسسة مفقود"
-      ],
-      "More details": [
-        "مزيد من التفاصيل"
-      ],
-      "Need help?": [
-        "بحاجة لمساعدة؟"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "لا تتوفر تفاصيل عن الخطأ. يُرجى الاتصال بدعم العملاء لمزيد من المعلومات"
-      ],
-      "No users to display": [
-        "لا يوجد مستخدمون لعرضهم"
-      ],
-      "Not activated": [
-        "غير مفعَّل"
-      ],
-      "Not confirmed": [
-        "غير مؤكد"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "لم يتم اكتشافه بشكل صحيح؟ يُرجى اختيار المزوّد من القائمة."
-      ],
-      "Onboard your team": [
-        "تهيئة الفريق"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "بمجرد التأكيد على توجيه رسائل البريد الإلكتروني إلى ${ BRAND_NAME }، سيتم الانتهاء من النقل. سيتم إرسال رسالة تأكيد بالبريد الإلكتروني لإعلامك فور حدوث ذلك. قد تستغرق هذه العملية ما يصل إلى 24 ساعة."
-      ],
-      "Organization does not have enough seats available": [
-        "المؤسسة لا تملك مقاعد كافية متاحة"
-      ],
-      "Organization does not have enough storage available": [
-        "المؤسسة لا تملك مساحة تخزين كافية متاحة"
-      ],
-      "Pending": [
-        "قيد الانتظار"
-      ],
-      "Please don’t close or refresh this window.": [
-        "يُرجى عدم إغلاق هذه النافذة أو تحديثها."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "إعادة مصادقة حساب Google Workspace لبدء الترحيل"
-      ],
-      "Refresh": [
-        "تحديث"
-      ],
-      "Select at least one user to start a migration": [
-        "تحديد مستخدم واحد على الأقل لبدء الترحيل"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "تحديد ما ترغب في ترحيله بالضبط. سيتم تطبيق هذا على جميع مستخدمي المؤسسة."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "تحديد الحسابات المرغوب في جلبها إلى ${ BRAND_NAME }. يمكن ترحيل المؤسسة بأكملها اليوم أو البدء تدريجيًا وجلب الباقي لاحقًا عند الاستعداد."
-      ],
-      "Select users to migrate": [
-        "تحديد المستخدمين المراد نقل بياناتهم"
-      ],
-      "Set up secure sending (DKIM)": [
-        "إعداد الإرسال الآمن (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "إعداد الإرسال الآمن (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "إعداد الإرسال الآمن (SPF)"
-      ],
-      "Settings": [
-        "الإعدادات"
-      ],
-      "Sign in to Google Workspace": [
-        "تسجيل الدخول إلى Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "تسجيل الدخول باستخدام حساب مسؤول Google Workspace لـ ${ BRAND_NAME } لإعداد الترحيل."
-      ],
-      "Size": [
-        "الحجم"
-      ],
-      "Skip": [
-        "تخطي"
-      ],
-      "Skipped ${ count } contacts due to incompatibilities": [
-        "تم تخطي جهات الاتصال بسبب عدم التوافق (${ count })",
-        "تم تخطي جهة اتصال واحدة بسبب عدم التوافق (${ count })",
-        "تم تخطي جهتي اتصال بسبب عدم التوافق (${ count })",
-        "تم تخطي ${ count } جهات اتصال بسبب عدم التوافق",
-        "تم تخطي ${ count } جهة اتصال بسبب عدم التوافق",
-        "تم تخطي ${ count } جهة اتصال بسبب عدم التوافق"
-      ],
-      "Skipped ${ count } emails due to incompatibilities": [
-        "تم تخطي رسائل البريد الإلكتروني بسبب عدم التوافق (${ count })",
-        "تم تخطي رسالة بريد إلكتروني واحدة بسبب عدم التوافق (${ count })",
-        "تم تخطي رسالتي بريد إلكتروني بسبب عدم التوافق (${ count })",
-        "تم تخطي ${ count } رسائل بريد إلكتروني بسبب عدم التوافق",
-        "تم تخطي ${ count } رسالة بريد إلكتروني بسبب عدم التوافق",
-        "تم تخطي ${ count } رسالة بريد إلكتروني بسبب عدم التوافق"
-      ],
-      "Skipped ${ count } events due to incompatibilities": [
-        "تم تخطي الأحداث بسبب عدم التوافق (${ count })",
-        "تم تخطي حدث واحد بسبب عدم التوافق (${ count })",
-        "تم تخطي حدثين بسبب عدم التوافق (${ count })",
-        "تم تخطي ${ count } أحداث بسبب عدم التوافق",
-        "تم تخطي ${ count } حدثًا بسبب عدم التوافق",
-        "تم تخطي ${ count } حدث بسبب عدم التوافق"
-      ],
-      "Some accounts are not claimed": [
-        "بعض الحسابات لم تتم المطالبة بها بعد"
-      ],
-      "Some members weren't migrated": [
-        "لم تتم هجرة بعض الأعضاء"
-      ],
-      "Status": [
-        "الحالة"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "لا يمكن نقل هذا المستخدم بسبب عدم توافق المنصة."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "لجلب بيانات المؤسسة إلى ${ BRAND_NAME }، يُرجى تثبيت ${ BRAND_NAME } Easy Switch من Google Workspace Marketplace. بعد التثبيت، يُرجى العودة إلى هنا للمتابعة."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "لإكمال الهجرة، يجب الحرص على الاحتفاظ برموز MX الخاصة بـ ${ BRAND_NAME } فقط."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "لنقل هذا المستخدم، يجب تفعيل حسابه في وحدة تحكم مسؤول Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "لنقل هذا المستخدم، يجب تفعيل حسابه ضمن ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "لنقل هذا المستخدم، يجب تفعيل عنوانه ضمن ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "لنقل هذا المستخدم، يجب عليه قبول دعوته للانضمام إلى ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "لنقل هذا المستخدم، يجب إلغاء أرشفته في وحدة تحكم مسؤول Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "لنقل هذا المستخدم، يجب إلغاء تعليقه في وحدة تحكم مسؤول Google Workspace."
-      ],
-      "Update records for receiving": [
-        "تحديث سجلات الاستلام"
-      ],
-      "User": [
-        "مستخدم"
-      ],
-      "Users activated": [
-        "المستخدمون النشطون"
-      ],
-      "Users migrated": [
-        "المستخدمون الذين تم نقلهم"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "المستخدمون الذين وصلوا إلى حساب ${ BRAND_NAME } الخاص بهم"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "سيحتاج المستخدمون الذين لم يطالبوا بحسابهم قبل إتمام الترحيل إلى طلب إعادة تعيين كلمة المرور من مسؤول مؤسسة ${ BRAND_NAME }."
-      ],
-      "Verified": [
-        "تم التحقق"
-      ],
-      "Verify installation": [
-        "التحقق من التثبيت"
-      ],
-      "Verify your domain": [
-        "التحقق من النطاق"
-      ],
-      "Verify your domain to start a migration": [
-        "يرجى التحقق من النطاق لبدء الترحيل"
-      ],
-      "Waiting for MX...": [
-        "بانتظار الـ MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "تعذر التحقق من التثبيت، يرجى التحقق من تثبيته في حساب Google Workspace والمحاولة مرة أخرى."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "ننتقل إلى ${ BRAND_NAME }، خدمة البريد الإلكتروني الآمن.\nوحساب ${ BRAND_NAME } جاهز للمطالبة به.\nيُرجى النقر على ${ inviteLink }.\nوإدخال عنوان البريد الإلكتروني، سنرسل رمزًا إلى Gmail.\nيُرجى استخدامه لتعيين كلمة المرور — وحساب ${ BRAND_NAME } يصبح ملكك.\nلفترة قصيرة، سيعمل كلاهما جنبًا إلى جنب. ${ BRAND_NAME } وGmail.\nثم، عندما يكمل الجميع الانتقال، سنقوم بإيقاف Gmail. وسنذكرك قبل حدوث ذلك."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "لوحظ أن بعض المستخدمين لم يطالبوا بحسابات ${ BRAND_NAME } الخاصة بهم."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "يجري إنشاء الحسابات واستيراد البيانات الآن ليتوفر للفريق كل ما يحتاجه عند البدء في استخدام حساب ${ BRAND_NAME } الآمن."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "يجري تشغيل التشفير من طرف إلى طرف للجميع. كل بريد إلكتروني وكل حدث ملك لك وحدك الآن. ومرئي لفريقك فقط. لا يمكننا الاطلاع عليه ولا أي شخص آخر."
-      ],
-      "What are you migrating?": [
-        "ما الذي يتم ترحيله؟"
-      ],
-      "You": [
-        "أنت"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "لن يكون من الممكن نسخ بيانات هؤلاء المستخدمين لاحقًا."
-      ],
-      "You're all set!": [
-        "كل شيء جاهز!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "تم الانتهاء تقريبًا، يلزم إعداد النطاق لتلقي رسائل البريد الإلكتروني مباشرة على ${ BRAND_NAME }. بمجرد التأكيد، سيتوقف الفريق عن تلقي رسائل بريد إلكتروني جديدة على Gmail وسيتم إكمال الترحيل."
-      ],
-      "Your current plan allows up to ${ maxMembers } users. To migrate additional users, add more seats to your subscription.": [
-        "لا تسمح الخطة الحالية بأكثر من ${ maxMembers } مستخدم. لترحيل مستخدمين إضافيين، يُرجى إضافة المزيد من المقاعد إلى الاشتراك.",
-        "تسمح الخطة الحالية بمستخدم واحد فقط (${ maxMembers }). لترحيل مستخدمين إضافيين، يُرجى إضافة المزيد من المقاعد إلى الاشتراك.",
-        "تسمح الخطة الحالية بمستخدمين اثنين (${ maxMembers }). لترحيل مستخدمين إضافيين، يُرجى إضافة المزيد من المقاعد إلى الاشتراك.",
-        "تسمح الخطة الحالية بما يصل إلى ${ maxMembers } مستخدمين. لترحيل مستخدمين إضافيين، يُرجى إضافة المزيد من المقاعد إلى الاشتراك.",
-        "تسمح الخطة الحالية بما يصل إلى ${ maxMembers } مستخدمًا. لترحيل مستخدمين إضافيين، يُرجى إضافة المزيد من المقاعد إلى الاشتراك.",
-        "تسمح الخطة الحالية بما يصل إلى ${ maxMembers } مستخدم. لترحيل مستخدمين إضافيين، يُرجى إضافة المزيد من المقاعد إلى الاشتراك."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "لا يزال تكوين النطاق يتضمن رموز MX الخاصة بموفر آخر."
       ]
     },
     "breadcrumb": {
@@ -7804,6 +7349,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "تتجاوز بعض أسماء التسميات الخاصة بك الحد الأقصى لعدد الأحرف في ${ MAIL_APP_NAME }. يرجى تخصيص الاستيراد لتعديل هذه الأسماء."
       ],
+      "Something went wrong": [
+        "طرأ خللٌ ما"
+      ],
       "Something went wrong while converting the address": [
         "حدث خطأ ما أثناء تحويل العنوان"
       ],
@@ -10827,9 +10375,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "هل أنت متأكد من إزالة الامتيازات الإدارية من هذا المستخدم؟"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "هل أنت متأكد من رغبتك في إزالة جميع الأعضاء من هذه المجموعة؟"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "هل أنت متأكد من أنك تريد إزالة النطاق ${ boldDomain }؟"
       ],
@@ -12822,6 +12367,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "نظرًا لأنك مستخدم مخلص، فإن حسابك يحتوي على ميزات إضافية مفعلة."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "موجَّه ذكيًا عبر: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "يتيح إرسال SMTP لخدمات أو أجهزة الطرف الثالث إرسال بريد إلكتروني عبر ${ MAIL_APP_NAME } لعناوين النطاق المخصَّص."
@@ -16103,6 +15651,9 @@
       ],
       "Set password": [
         "تعيين كلمة مرور"
+      ],
+      "Settings": [
+        "الإعدادات"
       ],
       "Share your referral link": [
         "شارك رابط إحالتك"
@@ -22526,17 +22077,11 @@
       "Make sure you copy the above SCIM token now.": [
         "تأكد من نسخ رمز SCIM أعلاه الآن."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "بمجرد تعطيل SCIM لمؤسستك، **سيتم تحويل جميع مستخدمي SCIM الذين يوفرهم موفر الهوية تلقائيًا إلى مستخدمي SSO** وستتمكن من إدارتهم مباشرةً من إعدادات ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "يبسط إدارة المستخدمين عبر الخدمات المختلفة. أضف المستخدمين وعدلهم وأزلهم في موفر الهوية، وستُطبق هذه التغييرات تلقائيًا على مؤسستك في ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "سيتم تعطيل التزويد التلقائي لـ SCIM حتى تدخل رمز SCIM الجديد في إعدادات موفر الهوية."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "سيتم حذف عنوان URL الأساسي ورمز SCIM."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "لإعادة تفعيل المزامنة مع موفر الهوية، تحتاج إلى إكمال تكامل SCIM مرة أخرى."
@@ -25598,6 +25143,14 @@
         "للأفراد"
       ]
     },
+    "Table header": {
+      "Size": [
+        "الحجم"
+      ],
+      "Status": [
+        "الحالة"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "مشارَكة معي"
@@ -27200,9 +26753,6 @@
       ],
       "Reject device?": [
         "هل تريد رفض الجهاز؟"
-      ],
-      "Remove all members?": [
-        "هل تريد إزالة جميع الأعضاء؟"
       ],
       "Remove calendar": [
         "إزالة التقويم"

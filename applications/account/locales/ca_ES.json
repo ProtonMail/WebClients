@@ -168,6 +168,9 @@
       "Add user": [
         "Afegir usuari"
       ],
+      "Add users": [
+        "Afegir usuaris"
+      ],
       "Added ${ memberName } as group owner": [
         "S'ha afegit ${ memberName } com a propietari del grup"
       ],
@@ -311,6 +314,9 @@
       ],
       "Collaborate on documents": [
         "Col·labora en documents"
+      ],
+      "Collapse step": [
+        "Plegar el pas"
       ],
       "Color": [
         "Color"
@@ -741,6 +747,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable": [
+        "Activa"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Activa ${ darkWebMonitoring }"
       ],
@@ -764,6 +773,9 @@
       ],
       "Enter code": [
         "Introduïu el codi"
+      ],
+      "Expand step": [
+        "Desplegar el pas"
       ],
       "Explore ${ target }": [
         "Descobriu ${ target }"
@@ -1014,6 +1026,9 @@
       "Insert link": [
         "Insereix un enllaç"
       ],
+      "Install app": [
+        "Instal·lar l'aplicació"
+      ],
       "Instructions": [
         "Instruccions"
       ],
@@ -1140,11 +1155,17 @@
       "Microsoft Intune": [
         "Microsoft Intune"
       ],
+      "Migrate": [
+        "Migrar"
+      ],
       "More": [
         "Més"
       ],
       "More benefits": [
         "Més avantatges"
+      ],
+      "More details": [
+        "Més detalls"
       ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
@@ -1307,9 +1328,6 @@
       ],
       "Remove": [
         "Esborra"
-      ],
-      "Remove all members": [
-        "Suprimeix tots els membres"
       ],
       "Remove all other devices": [
         "Esborra tots els altres dispositius"
@@ -1620,6 +1638,9 @@
       "Sign in": [
         "Inicia la sessió"
       ],
+      "Sign in to Google Workspace": [
+        "Inicieu la sessió a Google Workspace"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Inicia sessió amb ${ BRAND_NAME }"
       ],
@@ -1854,6 +1875,9 @@
       "Verify domain": [
         "Verifica el domini"
       ],
+      "Verify installation": [
+        "Verifiqueu la instal·lació"
+      ],
       "Verify now": [
         "Verifiqueu-ho ara"
       ],
@@ -1871,6 +1895,9 @@
       ],
       "View all reports": [
         "Mostra tots els informes"
+      ],
+      "View guide": [
+        "Veure la guia"
       ],
       "View invoice": [
         "Mostra la factura"
@@ -2218,6 +2245,14 @@
       ],
       "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
         "Amb ${ PASS_APP_NAME } podreu generar àlies únics per ocultar la vostra identitat i reenviar correus a la vostra safata d'entrada principal."
+      ]
+    },
+    "Alt": {
+      "Collapse invitation message": [
+        "Plegar el missatge d'invitació"
+      ],
+      "Expand invitation message": [
+        "Desplegar el missatge d'invitació"
       ]
     },
     "Alter": {
@@ -2963,437 +2998,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "La vostra adreça de correu electrònic personal és una part essencial de la vostra identitat digital. Com el vostre número de telèfon, no la doneu a tothom que conegueu. Per això és útil tenir altres adreces de correu electrònic que podeu utilitzar per a diferents propòsits."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } de ${ totalCount }"
-      ],
-      "Account connected": [
-        "S'ha connectat el compte"
-      ],
-      "Account disconnected": [
-        "S'ha desconnectat el compte"
-      ],
-      "Accounts migrated": [
-        "Comptes migrats"
-      ],
-      "Activated": [
-        "Activat"
-      ],
-      "Add domain": [
-        "Afegeix un domini"
-      ],
-      "Add users": [
-        "Afegiu usuaris"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Afegiu el domini de correu electrònic de la vostra organització a ${ BRAND_NAME }."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
-      ],
-      "All": [
-        "Tots"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Tots els comptes d'usuari migrats estan a punt per ser convidats a la vostra organització de ${ BRAND_NAME }."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "S'ha produït un error desconegut. Actualitzeu la pàgina i torneu-ho a provar"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "Esteu segur que voleu continuar sense ${ withoutString } i ${ notMigratedOthers } altre?",
-        "Esteu segur que voleu continuar sense ${ withoutString } i ${ notMigratedOthers } altres?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "Esteu segur que voleu continuar sense ${ withoutString }?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Segur que voleu continuar? Els usuaris que no hagin demanat el compte abans que finalitzi la migració hauran de sol·licitar un restabliment de contrasenya a l'administrador de la seva organització de ${ BRAND_NAME }."
-      ],
-      "Authenticate": [
-        "Autentiqueu-vos"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Autentiqueu el vostre compte de Google Workspace"
-      ],
-      "Calendar": [
-        "Calendari"
-      ],
-      "Collapse invitation message": [
-        "Plegar el missatge d'invitació"
-      ],
-      "Collapse step": [
-        "Plegueu el pas"
-      ],
-      "Configure domain": [
-        "Configureu el domini"
-      ],
-      "Configure migration": [
-        "Configureu la migració"
-      ],
-      "Configure users": [
-        "Configureu els usuaris"
-      ],
-      "Configure your domain": [
-        "Configureu el vostre domini"
-      ],
-      "Confirm": [
-        "Confirmar"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Contacteu amb el vostre administrador per iniciar una migració."
-      ],
-      "Contacts": [
-        "Contactes"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Copieu el codi següent i enganxeu-lo a la secció DNS del vostre proveïdor de domini."
-      ],
-      "Creating accounts": [
-        "S'estan creant els comptes"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "Elimineu tots els codis MX existents, després copieu els codis de més avall i enganxeu-los a la secció de DNS del vostre proveïdor de domini."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM afegeix una signatura digital a cada correu electrònic perquè els destinataris puguin verificar que el missatge prové realment del vostre domini i no ha estat alterat durant el trànsit. Sense ella, els missatges poden ser considerats menys fiables."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC es basa en SPF i DKIM indicant als servidors receptors com gestionar els missatges que no superin aquestes comprovacions. Ajuda a protegir el vostre domini contra la suplantació i millora la fiabilitat general dels lliuraments."
-      ],
-      "Domain added": [
-        "S'ha afegit el domini"
-      ],
-      "Domain provider": [
-        "Proveïdor de domini"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "No sabeu per on començar? Mireu com actualitzar el vostre DNS a ${ registrarLink }"
-      ],
-      "Emails": [
-        "Correus electrònics"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Assegureu-vos que els vostres correus electrònics arribin a la bústia d'entrada i no a la carpeta de correu brossa. L'actualització de l'SPF permetrà als usuaris enviar correus des de ${ BRAND_NAME } i Google simultàniament mentre duri la migració."
-      ],
-      "Errors": [
-        "Errors"
-      ],
-      "Estimated size": [
-        "Mida estimada"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Tothom rep el mateix enllaç d'invitació. Visitaran la pàgina, introduiran el seu correu electrònic i rebran un codi de verificació a la seva bústia d'entrada de Gmail. Des d'allà, establiran la seva contrasenya de ${ BRAND_NAME }."
-      ],
-      "Expand invitation message": [
-        "Expandir el missatge d'invitació"
-      ],
-      "Expand step": [
-        "Desplegueu el pas"
-      ],
-      "Failed to load OAuth": [
-        "No s'ha pogut carregar OAuth"
-      ],
-      "Final step": [
-        "Pas final"
-      ],
-      "Find out what can be migrated.": [
-        "Descobriu què es pot migrar."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Obtingueu ajuda i consells útils per a altres proveïdors de dominis ${ here }"
-      ],
-      "Going private": [
-        "Passar a privat"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Aplicació de Google Marketplace per copiar dades a ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Compte de Google Workspace"
-      ],
-      "Has errors": [
-        "Té errors"
-      ],
-      "Import completed successfully": [
-        "La importació s'ha completat correctament"
-      ],
-      "Import details": [
-        "Detalls de la importació"
-      ],
-      "In progress": [
-        "En curs"
-      ],
-      "Install app": [
-        "Instal·lar aplicació"
-      ],
-      "Install migration app": [
-        "Instal·leu l’aplicació de migració"
-      ],
-      "Invitation link": [
-        "Enllaç d'invitació"
-      ],
-      "Invitation message": [
-        "Missatge d'invitació"
-      ],
-      "invite link": [
-        "enllaç d'invitació"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Pot trigar fins a 24 hores perquè aquests canvis es propaguin."
-      ],
-      "Loading your organization data": [
-        "S'estan carregant les dades de la vostra organització"
-      ],
-      "Mail": [
-        "Correu"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
-      ],
-      "Migrate": [
-        "Migrar"
-      ],
-      "Migrate accounts": [
-        "Migrar els comptes"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Migreu els comptes a ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Migreu des de Google Workspace"
-      ],
-      "Migrated": [
-        "S'ha migrat"
-      ],
-      "Migrated accounts": [
-        "Comptes migrats"
-      ],
-      "Migration includes": [
-        "La migració inclou"
-      ],
-      "Migration started for ${ n } user": [
-        "S'ha iniciat la migració per ${ n } usuari",
-        "S'ha iniciat la migració per ${ n } usuaris"
-      ],
-      "Migration status": [
-        "Estat de la migració"
-      ],
-      "Migration summary": [
-        "Resum de la migració"
-      ],
-      "Missing organization private key": [
-        "Falta la clau privada de l'organització"
-      ],
-      "Missing organization public key": [
-        "Falta la clau pública de l'organització"
-      ],
-      "More details": [
-        "Més detalls"
-      ],
-      "Need help?": [
-        "Necessiteu ajuda?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "No hi ha detalls de l'error disponibles. Poseu-vos en contacte amb el servei d'atenció al client per més informació"
-      ],
-      "No users to display": [
-        "No hi ha cap usuari per mostrar"
-      ],
-      "Not activated": [
-        "No s'ha activat"
-      ],
-      "Not confirmed": [
-        "No confirmat"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "No s'ha detectat correctament? Trieu el vostre proveïdor de la llista."
-      ],
-      "Onboard your team": [
-        "Incorporeu el vostre equip"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Un cop hàgim confirmat que els correus electrònics s'envien a ${ BRAND_NAME }, la migració es completarà. Rebreu un correu electrònic de confirmació per informar-vos quan això passi. Aquest procés pot trigar fins a 24 hores."
-      ],
-      "Organization does not have enough seats available": [
-        "L'organització no té prou llicències disponibles"
-      ],
-      "Organization does not have enough storage available": [
-        "L'organització no té prou espai d'emmagatzematge disponible"
-      ],
-      "Pending": [
-        "Està pendent"
-      ],
-      "Please don’t close or refresh this window.": [
-        "No tanqueu ni actualitzeu aquesta finestra."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Torneu a autenticar el vostre compte de Google Workspace per iniciar una migració"
-      ],
-      "Refresh": [
-        "Actualitzar"
-      ],
-      "Select at least one user to start a migration": [
-        "Seleccioneu almenys un usuari per iniciar una migració"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Seleccioneu exactament què voleu migrar. S'aplicarà a tots els usuaris de l'organització."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Seleccioneu els comptes que voleu portar a ${ BRAND_NAME }. Podeu migrar tota la vostra organització avui mateix o començar a petita escala i portar la resta quan estigueu a punt."
-      ],
-      "Select users to migrate": [
-        "Seleccioneu els usuaris que voleu migrar"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Configureu l'enviament segur (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Configurar l'enviament segur (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Configura l'enviament segur (SPF)"
-      ],
-      "Settings": [
-        "Preferències"
-      ],
-      "Sign in to Google Workspace": [
-        "Inicieu la sessió a Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Inicieu sessió amb un compte d'administrador de Google Workspace per a ${ BRAND_NAME } per configurar la migració."
-      ],
-      "Size": [
-        "Mida"
-      ],
-      "Skip": [
-        "Ometre"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "S'ha omès ${ count } contacte a causa d'incompatibilitats",
-        "S'han omès ${ count } contactes a causa d'incompatibilitats"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "S'ha omès ${ count } correu electrònic a causa d'incompatibilitats",
-        "S'han omès ${ count } correus electrònics a causa d'incompatibilitats"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "S'ha omès ${ count } esdeveniment a causa d'incompatibilitats",
-        "S'han omès ${ count } esdeveniments a causa d'incompatibilitats"
-      ],
-      "Some accounts are not claimed": [
-        "Alguns comptes no s'han reclamat"
-      ],
-      "Some members weren't migrated": [
-        "Alguns membres no s'han migrat"
-      ],
-      "Status": [
-        "Estat"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Per portar les dades de la vostra organització a ${ BRAND_NAME }, instal·leu ${ BRAND_NAME } Easy Switch des del Marketplace de Google Workspace. Després d'instal·lar-lo, torneu aquí per continuar."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "Per completar la migració, assegureu-vos que només manteniu els codis MX de ${ BRAND_NAME }."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Per migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
-      ],
-      "Update records for receiving": [
-        "Actualitzeu els registres per a la recepció"
-      ],
-      "User": [
-        "Usuari"
-      ],
-      "Users activated": [
-        "S'han activat els usuaris"
-      ],
-      "Users migrated": [
-        "S'han migrat els usuaris"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Usuaris que han accedit al seu compte de ${ BRAND_NAME }"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Els usuaris que no hagin reclamat el seu compte abans que finalitzi la migració hauran de sol·licitar un restabliment de la contrasenya a l'administrador de la seva organització de ${ BRAND_NAME }."
-      ],
-      "Verified": [
-        "Verificat"
-      ],
-      "Verify installation": [
-        "Verifiqueu la instal·lació"
-      ],
-      "Verify your domain": [
-        "Verifiqueu el vostre domini"
-      ],
-      "Verify your domain to start a migration": [
-        "Verifiqueu el vostre domini per iniciar una migració"
-      ],
-      "Waiting for MX...": [
-        "S'està esperant el registre MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "No s'ha pogut verificar la instal·lació; comproveu que estigui instal·lada al vostre compte de Google Workspace i torneu-ho a provar."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Ens traslladem a ${ BRAND_NAME }, el servei de correu electrònic segur.\nI el vostre compte de ${ BRAND_NAME } ja està a punt per reclamar-lo.\nFeu clic a ${ inviteLink }.\nIntroduïu la vostra adreça de correu electrònic i us enviarem un codi al vostre Gmail.\nUtilitzeu-lo per establir la contrasenya i el compte de ${ BRAND_NAME } serà vostre.\nDurant una estona, tots dos funcionaran alhora: ${ BRAND_NAME } i Gmail.\nDesprés, quan tothom s'hagi traslladat, retirarem Gmail. Us ho recordarem abans que passi."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Hem observat que alguns usuaris no han demanat els seus comptes de ${ BRAND_NAME }."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "Estem creant els vostres comptes i important les vostres dades perquè el vostre equip tingui tot el que necessita quan comenci a utilitzar el seu compte segur de ${ BRAND_NAME }."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Estem activant el xifratge d'extrem a extrem per a tothom. Ara cada correu electrònic i cada esdeveniment és exclusivament vostre. Només és visible per al vostre equip. Ni per a nosaltres, ni per a ningú més."
-      ],
-      "What are you migrating?": [
-        "Què esteu migrant?"
-      ],
-      "You": [
-        "Tú"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "No podreu copiar les dades d'aquests usuaris més endavant."
-      ],
-      "You're all set!": [
-        "Ja ho teniu tot a punt!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Gairebé heu acabat, cal que configureu el vostre domini per rebre els vostres correus electrònics directament a ${ BRAND_NAME }. Un cop confirmat, el vostre equip deixarà de rebre correus electrònics nous a Gmail i es completarà la migració."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "El vostre pla actual us permet fins a ${ maxMembers } usuari. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció.",
-        "El vostre pla actual us permet fins a ${ maxMembers } usuaris. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "La configuració del vostre domini encara inclou els codis MX d'un altre proveïdor."
       ]
     },
     "breadcrumb": {
@@ -4218,6 +3822,9 @@
       ],
       "Remove from the list?": [
         "Esborra de la llista?"
+      ],
+      "Some members weren't migrated": [
+        "Alguns membres no s'han migrat"
       ],
       "Undo this import?": [
         "Voleu desfer aquesta importació?"
@@ -7165,6 +6772,9 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Cal un missatge quan s'informa d'una infracció de drets d'autor o de dades robades"
+      ],
       "Account does not exist": [
         "El compte no existeix."
       ],
@@ -7186,6 +6796,9 @@
       "Address is already added to your account": [
         "L'adreça ja s'ha afegit al vostre compte"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
@@ -7204,6 +6817,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "L'import és inferior al mínim (${ minimumAmount })."
       ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "S'ha produït un error desconegut. Actualitzeu la pàgina i torneu-ho a provar"
+      ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
       ],
@@ -7216,11 +6832,32 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Les respostes automàtiques són una característica de pagament. Milloreu a un compte de pagament per a utilitzar-la."
       ],
+      "Bookmark password is not available": [
+        "La contrasenya del marcador de pàgina no està disponible"
+      ],
       "Calendar cannot be found": [
         "No es pot trobar el calendari"
       ],
       "Calendar limit reached": [
         "Límit de calendari assolit"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "No es pot afegir la foto a l'àlbum sense un nom vàlid"
+      ],
+      "Cannot download a folder": [
+        "No es pot descarregar una carpeta"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "No es pot moure l'element sense un nom vàlid, canvieu-ne el nom primer"
+      ],
+      "Cannot share root folder": [
+        "No es pot compartir la carpeta arrel"
+      ],
+      "Cannot verify the author of this file": [
+        "No es pot verificar l'autoria d'aquest fitxer"
+      ],
+      "Cannot verify who uploaded this file": [
+        "No es pot verificar qui ha carregat aquest fitxer"
       ],
       "Checkout expired, please try again": [
         "El termini de pagament ha expirat. Torneu-ho a provar"
@@ -7240,8 +6877,26 @@
       "Contact signature not verified": [
         "Signatura del contacte no verificada"
       ],
+      "Contact your administrator to start a migration.": [
+        "Contacteu amb el vostre administrador per iniciar una migració."
+      ],
+      "Copy operation aborted": [
+        "S'ha cancel·lat l'operació de còpia"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "No es permet copiar un element a un element que no sigui una carpeta"
+      ],
+      "Could not find an available name": [
+        "No s'ha pogut trobar cap nom disponible"
+      ],
       "Could not generate the device profile. Please try again.": [
         "No s'ha pogut generar el perfil de dispositiu. Torneu-ho a provar."
+      ],
+      "Could not load sharing details": [
+        "No s'han pogut carregar els detalls de l'acció de compartir."
+      ],
+      "Could not load the image preview: ${ message }": [
+        "No s'ha pogut carregar la vista prèvia de la imatge: ${ message }"
       ],
       "Could not open created vault": [
         "No s'ha pogut obrir la caixa forta creada"
@@ -7249,14 +6904,32 @@
       "Could not open updated vault": [
         "No s'ha pogut obrir la caixa forta actualitzada"
       ],
+      "Could not read part of this file: ${ message }": [
+        "No s'ha pogut llegir una part d'aquest fitxer: ${ message }"
+      ],
       "Could not save preference": [
         "No s'ha pogut desar la preferència"
+      ],
+      "Could not unlock the parent folder": [
+        "No s'ha pogut desbloquejar la carpeta principal"
+      ],
+      "Could not unlock this item": [
+        "No s'ha pogut desbloquejar aquest element"
       ],
       "Couldn't load invoices. Please try again later.": [
         "No s'han pogut carregar les factures. Torneu a provar més tard."
       ],
       "Couldn't load transactions. Please try again later.": [
         "No s'han pogut carregar les transaccions. Torneu a provar més tard."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "No es permet crear documents dins d'elements que no siguin carpetes"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "No es permet crear fitxers dins d'elements que no siguin carpetes"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "No es permet crear carpetes dins d'elements que no siguin carpetes"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
@@ -7265,6 +6938,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
         "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
+      ],
+      "Device not found": [
+        "No s'ha trobat el dispositiu"
       ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
@@ -7305,6 +6981,9 @@
       "Error publishing changes": [
         "S'ha produït un error en publicar els canvis."
       ],
+      "Expiration date cannot be in the past": [
+        "La data de caducitat no pot ser en el passat"
+      ],
       "Expired": [
         "Caducat"
       ],
@@ -7317,8 +6996,35 @@
       "Failed to add group member": [
         "No s'ha pogut afegir el membre al grup"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "No s'ha pogut desxifrar la clau del marcador de pàgina: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "No s'ha pogut desxifrar la contrasenya de la marca de pàgina: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "No s'ha pogut desxifrar la clau de contingut: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "No s'ha pogut desxifrar el nom de l'element: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "No s'ha pogut desxifrar la clau del node: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "No s'han pogut desxifrar les metadades de la revisió"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "No s'han pogut obtenir sessions actives. ${ refresh } o torneu-ho a provar més tard."
+      ],
+      "Failed to get inviter keys": [
+        "No s'han pogut obtenir les claus de qui convida"
+      ],
+      "Failed to load OAuth": [
+        "No s'ha pogut carregar OAuth"
       ],
       "Failed to load OAuth modal.": [
         "No s'ha pogut carregar la finestra OAuth."
@@ -7341,6 +7047,15 @@
       "Failed to update detailed monitoring.": [
         "No s'ha pogut actualitzar el monitoratge detallat."
       ],
+      "Failed to verify invitation": [
+        "No s'ha pogut verificar la invitació"
+      ],
+      "File download failed due to empty response": [
+        "Ha fallat la descàrrega del fitxer perquè la resposta era buida"
+      ],
+      "File has no revision": [
+        "El fitxer no té cap revisió"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "El fitxer és massa gran. El logo ha de tenir 30 KB o menys."
       ],
@@ -7352,6 +7067,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si el temps a la vostra televisió s'ha exhaurit, premeu-hi a Refresca i escriviu-hi el codi un altre cop."
+      ],
+      "Image preview not found": [
+        "No s’ha trobat la vista prèvia de la imatge"
       ],
       "IMAP server is required": [
         "Es requereix un servidor IMAP."
@@ -7434,30 +7152,70 @@
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
       ],
+      "Invitation not found": [
+        "No s'ha trobat la invitació"
+      ],
       "Item content cannot exceed 40KB": [
         "El contingut de l'element no pot excedir 40 kB."
+      ],
+      "Item not found": [
+        "No s'ha trobat l'element"
       ],
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "L'enllaç públic heretat no es pot actualitzar. Creeu-ne un de nou."
+      ],
       "Maximum ${ displayMaxValue } allowed": [
         "El màxim permès és ${ displayMaxValue }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
         "Combineu almenys ${ calendarsToFixCount } calendaris amb calendaris de ${ BRAND_NAME } existents"
       ],
+      "Missing inviter email": [
+        "Falta l'adreça electrònica de qui convida"
+      ],
       "Missing key packet": [
         "Falta el paquet de claus"
       ],
+      "Missing organization private key": [
+        "Falta la clau privada de l'organització"
+      ],
+      "Missing organization public key": [
+        "Falta la clau pública de l'organització"
+      ],
       "Missing signature": [
         "Signatura no trobada"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Falta la signatura per ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "S'ha cancel·lat l'operació de moviment"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "No es permet moure un element a un element que no sigui una carpeta"
+      ],
+      "Moving root item is not allowed": [
+        "No es permet moure l'element arrel"
       ],
       "Name already exists": [
         "Aquest nom ja existeix"
       ],
       "Name does not match": [
         "El nom no coincideix."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "El nom ha de tenir com a màxim ${ MAX_NODE_NAME_LENGTH } caràcter",
+        "El nom ha de tenir com a màxim ${ MAX_NODE_NAME_LENGTH } caràcters"
+      ],
+      "Name must not be empty": [
+        "El nom no pot estar buit"
       ],
       "Name required": [
         "Nom requerit"
@@ -7483,6 +7241,9 @@
       "No external key retrieved for user is valid for sending": [
         "Cap clau externa recuperada per a l'usuari és vàlida per a l'enviament"
       ],
+      "No file data was received. Please try again.": [
+        "No s'han rebut dades del fitxer. Torneu-ho a provar."
+      ],
       "No image selected": [
         "No s'ha seleccionat cap imatge."
       ],
@@ -7495,8 +7256,23 @@
       "Not a valid number": [
         "Número no vàlid"
       ],
+      "Only admins can convert external invitations": [
+        "Només els administradors poden convertir invitacions externes"
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Només es poden canviar les majúscules i la puntuació (punts, guionets i guions baixos) per aquesta adreça"
+      ],
+      "Operation aborted": [
+        "S'ha cancel·lat l'operació"
+      ],
+      "Operation failed, try again later": [
+        "Ha fallat l'operació, torneu-ho a provar més tard"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organització no té prou llicències disponibles"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organització no té prou espai d'emmagatzematge disponible"
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
@@ -7506,6 +7282,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "S'ha d'activar la clau d'organització per a crear usuaris no privats"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Sembla que una part del fitxer està malmesa"
       ],
       "Password is required": [
         "La contrasenya és obligatòria"
@@ -7530,6 +7309,12 @@
       ],
       "Permissions request failed.": [
         "La sol·licitud de permisos ha fallat."
+      ],
+      "Photo is already in the target album": [
+        "La foto ja és a l'àlbum de destí"
+      ],
+      "Photo not found": [
+        "No s’ha trobat la foto"
       ],
       "Please add a payment method before reactivating your subscription": [
         "Afegiu un mètode de pagament abans de reactivar la vostra subscripció"
@@ -7638,6 +7423,12 @@
         "Destinatari duplicat esborrat: ${ joinedRecipients }",
         "Destinataris duplicats esborrats: ${ joinedRecipients }"
       ],
+      "Renaming root item is not allowed": [
+        "No es permet canviar el nom de l'element arrel"
+      ],
+      "Request aborted": [
+        "Sol·licitud cancel·lada"
+      ],
       "Request timed out": [
         "La sol·licitud ha caducat"
       ],
@@ -7658,11 +7449,32 @@
       "Session expired. Please refresh the page.": [
         "La sessió ha caducat. Actualitzeu la pàgina."
       ],
+      "Signature is missing": [
+        "Falta la signatura"
+      ],
       "Signature not verified": [
         "Signatura no verificada"
       ],
       "Signature verification failed": [
         "No s'ha pogut verificar la signatura."
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Ha fallat la verificació de la signatura: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Ha fallat la verificació de la signatura per ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "La verificació de la signatura per ${ signatureType } ha fallat: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "No s'han pogut carregar algunes dades del fitxer. Torneu-ho a provar."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "No s'han pogut carregar algunes parts del fitxer. Torneu-ho a provar."
+      ],
+      "Some items could not be loaded": [
+        "No s'han pogut carregar alguns elements"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alguns dels vostres noms de carpeta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
@@ -7678,6 +7490,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
+      ],
+      "Something went wrong": [
+        "S'ha produït un error."
       ],
       "Something went wrong while converting the address": [
         "Alguna cosa ha anat malament en convertir l'adreça"
@@ -7751,6 +7566,9 @@
       "The session has expired. Please sign in again.": [
         "La sessió ha caducat. Torneu a accedir."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "El fitxer carregat no coincideix amb l'original. Torneu-ho a provar."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hi ha massa carpetes al vostre compte extern. Personalitzeu la importació per eliminar algunes carpetes."
       ],
@@ -7769,8 +7587,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
+      "This file has missing crypto material": [
+        "Aquest fitxer no té el material criptogràfic necessari"
+      ],
+      "This file has no version available to download": [
+        "Aquest fitxer no té cap versió disponible per descarregar"
+      ],
+      "This file version could not be uploaded": [
+        "No s'ha pogut carregar aquesta versió del fitxer"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Aquest nom de carpeta no està disponible. Trieu-ne un altre."
+      ],
+      "This item has no image preview": [
+        "Aquest element no té cap vista prèvia de la imatge"
+      ],
+      "This item is no longer shared": [
+        "Aquest element ja no està compartit"
+      ],
+      "This item is not shared": [
+        "Aquest element no està compartit"
       ],
       "This label name is not available. Please choose a different name.": [
         "Aquest nom d'etiqueta no està disponible. Trieu-ne un altre."
@@ -7789,6 +7625,12 @@
       ],
       "Too many requests. Please try again later": [
         "S'han rebut massa sol·licituds. Torneu-ho a provar més tard."
+      ],
+      "Too many server errors, please try again later": [
+        "Hi ha massa errors del servidor, torneu-ho a provar més tard"
+      ],
+      "Too many server requests, please try again later": [
+        "Hi ha massa sol·licituds al servidor, torneu-ho a provar més tard"
       ],
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
@@ -7835,6 +7677,12 @@
       "Verification did not succeed, please try again in an hour.": [
         "No s'ha pogut realitzar la verificació. Intenteu-ho de nou d'aquí a una hora."
       ],
+      "Verification keys are not available": [
+        "Les claus de verificació no estan disponibles"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Les claus de verificació per ${ signatureType } no estan disponibles"
+      ],
       "We couldn't sign you in": [
         "No hem pogut iniciar la sessió."
       ],
@@ -7855,6 +7703,24 @@
       ],
       "You already added this holidays calendar": [
         "Ja heu afegit aquest calendari de festius"
+      ],
+      "You can create public links for your own files only": [
+        "Només podeu crear enllaços públics per als vostres propis fitxers"
+      ],
+      "You can only leave items that are shared with you": [
+        "Només podeu deixar elements que se us hagin compartit"
+      ],
+      "You can only upload a new version to a file": [
+        "Només podeu carregar una nova versió a un fitxer"
+      ],
+      "You can update a public link for your own files only": [
+        "Només podeu actualitzar un enllaç públic per als vostres propis fitxers"
+      ],
+      "You do not have access to this item": [
+        "No teniu accés a aquest element"
+      ],
+      "You do not have access to this shared item": [
+        "No teniu accés a aquest element compartit"
       ],
       "You have reached the maximum number of calendars.": [
         "Heu arribat al nombre màxim de calendaris."
@@ -8861,6 +8727,29 @@
         "Terabytes"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Activat"
+      ],
+      "All": [
+        "Tot"
+      ],
+      "Errors": [
+        "Errors"
+      ],
+      "In progress": [
+        "En curs"
+      ],
+      "Migrated": [
+        "S'han migrat"
+      ],
+      "Not activated": [
+        "No s'ha activat"
+      ],
+      "Pending": [
+        "Està pendent"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arxiva"
@@ -9060,6 +8949,35 @@
       ],
       "Your desktop app free trial has ended": [
         "Ha finalitzat la prova gratuïta de l'aplicació d'escriptori"
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Controls de seguretat avançats"
+      ],
+      "Dedicated server - ${ serverPrice }": [
+        "Servidor dedicat - ${ serverPrice }"
+      ],
+      "Enforce identity-based access controls": [
+        "Aplicar controls d'accés basats en la identitat"
+      ],
+      "Get real-time connection insights, monitor suspicious activity and export data to SIEM tools for your private gateways": [
+        "Obtingueu informació en temps real sobre les connexions, feu el seguiment de l'activitat sospitosa i exporteu dades a eines SIEM per a les vostres passarel·les privades"
+      ],
+      "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
+        "A més del seguiment de les connexions, les passarel·les privades us permeten concedir l'accés per usuari o per grup, tot funcionant en servidors dedicats amb adreces IP estàtiques."
+      ],
+      "Monitor gateway connections with VPN Professional": [
+        "Feu el seguiment de les connexions de la passarel·la amb VPN Professional"
+      ],
+      "Real-time connection insights": [
+        "Informació de la connexió en temps real"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Desbloquegeu l'inici de sessió únic (SSO), les polítiques d'administració, el seguiment, l'autenticació de doble factor obligatòria i molt més."
+      ],
+      "User - ${ userPrice }": [
+        "Usuari - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -9620,6 +9538,9 @@
       "IMAP access is enabled in your Yahoo account.": [
         "L’accés IMAP està activat al vostre compte de Yahoo."
       ],
+      "No error details available. Please contact customer support for more information": [
+        "No hi ha detalls de l'error disponibles. Poseu-vos en contacte amb el servei d'atenció al client per més informació"
+      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Masses peticions recents. Torneu-ho a provar d'aquí a una estona."
       ],
@@ -9777,6 +9698,12 @@
       "Failed": [
         "Error"
       ],
+      "Has errors": [
+        "Té errors"
+      ],
+      "Import completed successfully": [
+        "La importació s'ha completat correctament"
+      ],
       "Imported": [
         "S'ha importat"
       ],
@@ -9791,6 +9718,21 @@
       ],
       "Paused": [
         "Pausat"
+      ],
+      "Pending": [
+        "Està pendent"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "S'ha omès ${ count } contacte a causa d'incompatibilitats",
+        "S'han omès ${ count } contactes a causa d'incompatibilitats"
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "S'ha omès ${ count } correu electrònic a causa d'incompatibilitats",
+        "S'han omès ${ count } correus electrònics a causa d'incompatibilitats"
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "S'ha omès ${ count } esdeveniment a causa d'incompatibilitats",
+        "S'han omès ${ count } esdeveniments a causa d'incompatibilitats"
       ],
       "Undo finished": [
         "S'ha acabat de desfer"
@@ -10054,6 +9996,9 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: demanar a les plataformes destinatàries que rebutgin els correus electrònics no autoritzats."
       ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } de ${ totalCount }"
+      ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } més",
         "${ remainingAddresses.length } més"
@@ -10306,6 +10251,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Afegiu el vostre nom i logo per a crear una experiència més personalitzada per a la vostra organització."
       ],
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Afegiu el domini de correu electrònic de la vostra organització a ${ BRAND_NAME }."
+      ],
       "Adding ${ total } gateway server": [
         "S'està afegint ${ total } servidor de passarel·la",
         "S'estan afegint ${ total } servidors de passarel·la"
@@ -10367,6 +10315,9 @@
       ],
       "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
         "Tots els missatges es mostraran a la safata d'entrada i les pestanyes i etiquetes de categoria ja no seran visibles. "
+      ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Tots els comptes d'usuari migrats estan a punt per ser convidats a la vostra organització de ${ BRAND_NAME }."
       ],
       "All users": [
         "Tots els usuaris"
@@ -10450,6 +10401,13 @@
       "Are you sure you want to cancel editing the group?": [
         "Esteu segur que voleu cancel·lar l'edició d'aquest grup?"
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Segur que voleu continuar sense ${ withoutString } i ${ notMigratedOthers } altre?",
+        "Segur que voleu continuar sense ${ withoutString } i ${ notMigratedOthers } altres?"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Esteu segur que voleu continuar sense ${ withoutString }?"
+      ],
       "Are you sure you want to delete this calendar?": [
         "Segur que voleu eliminar aquest calendari?"
       ],
@@ -10486,11 +10444,11 @@
       "Are you sure you want to permanently delete all your logs?": [
         "Segur que voleu eliminar permanentment tots els registres?"
       ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Segur que voleu continuar? Els usuaris que no hagin demanat el compte abans que finalitzi la migració hauran de sol·licitar un restabliment de contrasenya a l'administrador de la seva organització de ${ BRAND_NAME }."
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Esteu segur que voleu esborrar els privilegis d'administració d'aquest usuari?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "Esteu segur que voleu esborrar tots els membres d'aquest grup?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Segur que voleu esborrar el domini «${ boldDomain }»?"
@@ -10533,6 +10491,9 @@
       ],
       "Authenticator app 2FA enabled": [
         "S'ha habilitat l'aplicació d'autenticació 2FA"
+      ],
+      "Author is not provided on public link": [
+        "No s'ha proporcionat l'autor a l'enllaç públic"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "La resposta automàtica està activa cada mes entre les hores d'inici i de finalització seleccionades."
@@ -10768,6 +10729,9 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copieu i enganxeu aquest URL al camp ID de l'entitat del vostre proveïdor d'identitat"
       ],
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Copieu el codi següent i enganxeu-lo a la secció DNS del vostre proveïdor de domini."
+      ],
       "Copy the link to clipboard": [
         "Copia l'enllaç al porta-retalls"
       ],
@@ -10886,6 +10850,9 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimineu qualsevol altre registre MX o assegureu-vos que la prioritat de ${ MAIL_APP_NAME } és el número més baix."
       ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Elimineu tots els codis MX existents, després copieu els codis de més avall i enganxeu-los a la secció de DNS del vostre proveïdor de domini."
+      ],
       "Delete link?": [
         "Voleu eliminar l'enllaç?"
       ],
@@ -10938,8 +10905,14 @@
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM afegeix una signatura digital a cada correu electrònic perquè els destinataris puguin verificar que el missatge prové realment del vostre domini i no ha estat alterat durant el trànsit. Sense això els missatges poden ser considerats menys fiables."
+      ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
         "DKIM permet a ${ BRAND_NAME } signar criptogràficament els vostres correus electrònics i evitar que els atacants modifiquin el vostre correu electrònic. Assegureu-vos d'afegir els següents tres registres CNAME a la vostra consola DNS (ubicada a la plataforma on heu comprat el domini personalitzat)."
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC es basa en SPF i DKIM tot indicant als servidors receptors com gestionar els missatges que no superin aquestes comprovacions. Ajuda a protegir el vostre domini contra la suplantació i millora la fiabilitat general dels lliuraments."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC comprova si els registres SPF i DKIM del remitent procedeixen del vostre domini. Això pot evitar que els atacants utilitzin registres SPF i DKIM d'un altre domini per fer-se passar pel vostre. La \"p=\" (política) d'aquest registre indica com voleu que les plataformes destinatàries gestionin els correus electrònics no autoritzats. Recomanem usar la política \"p=quarantine\" per a la majoria dels dominis. Assegureu-vos d'afegir el següent registre TXT a la vostra consola DNS (ubicada a la plataforma on heu adquirit el domini personalitzat)."
@@ -10955,6 +10928,9 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Voleu revocar totes les altres sessions i l’actual?"
+      ],
+      "Domain added": [
+        "S'ha afegit el domini"
       ],
       "Domain ownership failed verification.": [
         "No s'ha pogut verificar la propietat del domini."
@@ -10974,6 +10950,9 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "No perdeu l'accés a les funcions prèmium. Activeu la renovació automàtica avui mateix."
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "No sabeu per on començar? Vegeu com actualitzar el vostre DNS a ${ registrarLink }"
       ],
       "Don’t know your recovery phrase?": [
         "No sabeu la vostra frase de recuperació?"
@@ -11137,6 +11116,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu electrònic de ${ BRAND_NAME }."
       ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Assegureu-vos que els vostres correus electrònics arribin a la bústia d'entrada i no a la carpeta de correu brossa. L'actualització de l'SPF permetrà als usuaris enviar correus des de ${ BRAND_NAME } i Google simultàniament mentre duri la migració."
+      ],
       "Ensure your organization is always protected": [
         "Assegureu-vos que la vostra organització estigui sempre protegida"
       ],
@@ -11206,6 +11188,9 @@
       "Event invitations and responses will be sent in this language.": [
         "Les invitacions i respostes als esdeveniments s'enviaran en aquest idioma."
       ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Tothom rep el mateix enllaç d'invitació. Visitaran la pàgina, introduiran el seu correu electrònic i rebran un codi de verificació a la seva bústia d'entrada de Gmail. Des d'allà, establiran la seva contrasenya de ${ BRAND_NAME }."
+      ],
       "Everything in ${ planOrAppName }": [
         "Tot a ${ planOrAppName }"
       ],
@@ -11268,6 +11253,9 @@
       ],
       "finance": [
         "finances"
+      ],
+      "Find out what can be migrated.": [
+        "Descobriu què es pot migrar."
       ],
       "for ${ price }": [
         "per ${ price }"
@@ -11332,6 +11320,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Accedeix creant un compte ${ BRAND_NAME } i acceptant la invitació."
       ],
+      "Get help and useful tips for other domain providers ${ here }": [
+        "Obtingueu ajuda i consells útils per altres proveïdors de domini ${ here }"
+      ],
       "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
         "Acudiu als vostres contactes d'emergència per veure si us poden ajudar. Després de sol·licitar l'accés d'emergència al vostre compte, podran canviar la vostra contrasenya **un cop hagi passat el temps d'espera per l'accés**."
       ],
@@ -11362,11 +11353,17 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Aneu al vostre proveïdor d'identitat, obteniu les metadades SAML per a ${ appName } i importeu-les aquí."
       ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Aplicació de Google Marketplace per copiar dades a ${ BRAND_NAME }"
+      ],
       "Google or other search engine": [
         "Google o un altre motor de cerca"
       ],
       "Google Pay mark": [
         "Marca de Google Pay"
+      ],
+      "Google Workspace account": [
+        "Compte de Google Workspace"
       ],
       "Got it": [
         "D'acord"
@@ -11637,6 +11634,9 @@
       ],
       "Invited": [
         "Convidat"
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Pot trigar fins a 24 hores perquè aquests canvis es propaguin."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Es triga 10 dies a canviar el país d'un servidor. Assegureu-vos que la vostra selecció sigui correcta."
@@ -11965,8 +11965,17 @@
       "No single sign-on": [
         "Sense inici de sessió únic"
       ],
+      "No users to display": [
+        "No hi ha cap usuari per mostrar"
+      ],
       "Not a valid URL": [
         "No és un URL vàlid."
+      ],
+      "Not confirmed": [
+        "No confirmat"
+      ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "No s'ha detectat correctament? Trieu el vostre proveïdor de la llista."
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
@@ -12000,6 +12009,9 @@
       ],
       "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
         "Un cop s'hagi desplegat correctament, els dispositius poden trigar fins a unes quantes hores a detectar i aplicar la política."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Un cop hàgim confirmat que els correus electrònics s'envien a ${ BRAND_NAME }, la migració es completarà. Rebreu un correu electrònic de confirmació per informar-vos quan això passi. Aquest procés pot trigar fins a 24 hores."
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Només podeu canviar les majúscules i la puntuació (punts, guionets i guions baixos). Per utilitzar una adreça diferent, afegiu-ne una de nova."
@@ -12401,11 +12413,17 @@
       "Select a group to view its members and settings.": [
         "Seleccioneu un grup per veure els seus membres i preferències."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleccioneu exactament què voldríeu migrar. S'aplicarà a tots els usuaris de l'organització."
+      ],
       "Select one or multiple user affiliations": [
         "Seleccioneu una o diverses afiliacions per a l'usuari."
       ],
       "Select recently used servers": [
         "Selecciona els servidors utilitzats recentment"
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Seleccioneu els comptes que voleu portar a ${ BRAND_NAME }. Podeu migrar tota la vostra organització avui mateix o començar a petita escala i portar la resta quan estigueu a punt."
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Seleccioneu les afiliacions dels usuaris de ${ getFormattedOrganization } que voleu permetre a la vostra organització ${ BRAND_NAME }:"
@@ -12512,6 +12530,9 @@
       ],
       "Sign-in complete": [
         "S’ha completat l'inici de sessió"
+      ],
+      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Inicieu sessió amb un compte d'administrador de Google Workspace per a ${ BRAND_NAME } per configurar la migració."
       ],
       "Signed up": [
         "Registat"
@@ -12795,6 +12816,9 @@
       "This file is too large to preview": [
         "Aquest fitxer és massa gran per a previsualitzar-lo."
       ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Aquesta adreça de Gmail està registrada amb un altre compte de ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI i d'altres). Estem treballant per fer que aquesta connexió sigui fluida, però de moment heu de seguir uns quants passos."
+      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Aquest enllaç d'invitació ha caducat. Poseu-vos en contacte amb el vostre administrador per a sol·licitar l'accés."
       ],
@@ -12842,6 +12866,9 @@
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Aquest enllaç d'anul·lació de la subscripció ha caducat. Obriu un correu electrònic més recent des d'aquesta llista de correu."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Actualment, aquest usuari és responsable dels pagaments de la vostra organització. Degradant aquest membre, sereu responsable dels pagaments de la vostra organització."
@@ -12927,6 +12954,9 @@
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Per evitar la pèrdua de dades, elimineu-lo només si sabeu el que esteu fent o n'heu exportat una còpia."
       ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
+        "Per portar les dades de la vostra organització a ${ BRAND_NAME }, instal·leu ${ BRAND_NAME } Easy Switch des del Marketplace de Google Workspace. Després d'instal·lar-lo, torneu aquí per continuar."
+      ],
       "To cancel your subscription, please reach out to us.": [
         "Per a cancel·lar la vostra subscripció, contacteu amb nosaltres."
       ],
@@ -12980,6 +13010,24 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Per a mantenir-vos al dia amb els darrers desenvolupaments dels productes de ${ BRAND_NAME }, podeu subscriure-us als nostres diversos correus electrònics i ${ blogLink } de tant en tant."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Per prevenir abusos o fraus, sol·licitem una donació mínima de ${ minimumDonation }. Això donarà suport a la tasca de ${ protonFoundationLink } en defensa de la privacitat digital a escala mundial i ajudarà a protegir la propera generació."
@@ -13206,6 +13254,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificació obrirà una pestanya nova. Desactiveu els bloquejadors de finestres emergents. No se us farà cap càrrec. Qualsevol quantitat utilitzada per verificar la targeta serà retornada immediatament."
       ],
+      "Verified": [
+        "Verificat"
+      ],
       "Verify domain": [
         "Verifica el domini"
       ],
@@ -13320,6 +13371,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
       ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Hem observat que alguns usuaris no han demanat els seus comptes de ${ BRAND_NAME }."
+      ],
       "Web sessions detected:": [
         "S'han detectat sessions web:"
       ],
@@ -13337,6 +13391,12 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Enviarem un codi de restabliment a ${ boldValue }."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Estem creant els vostres comptes i important les vostres dades perquè el vostre equip tingui tot el que necessita quan comenci a utilitzar el seu compte segur de ${ BRAND_NAME }."
+      ],
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Estem activant el xifratge d'extrem a extrem per a tothom. Ara cada correu electrònic i cada esdeveniment és exclusivament vostre. Només és visible per al vostre equip. Ni per a nosaltres, ni per a ningú més."
       ],
       "What happens:": [
         "Què passa:"
@@ -13427,6 +13487,9 @@
       ],
       "Yearly": [
         "Anual"
+      ],
+      "You": [
+        "Vós"
       ],
       "You already have a free account": [
         "Ja teniu un compte gratuït"
@@ -13647,6 +13710,9 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necessitareu una adreça de ${ BRAND_NAME } per a utilitzar ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
+      "You will not be able to copy these users' data later.": [
+        "No podreu copiar les dades d'aquests usuaris més endavant."
+      ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "NO podreu desxifrar cap missatge, fitxer ni altres dades xifrades amb aquesta clau. Totes les dades signades amb aquesta clau ja no seran verificades per les aplicacions de ${ BRAND_NAME }."
       ],
@@ -13683,6 +13749,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
         "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
+        "Gairebé heu acabat, cal que configureu el vostre domini per rebre els vostres correus electrònics directament a ${ BRAND_NAME }. Un cop confirmat, el vostre equip deixarà de rebre correus electrònics nous a Gmail i es completarà la migració."
       ],
       "You're now signed in on your TV.": [
         "Ja heu iniciat la sessió al vostre televisor."
@@ -13947,6 +14016,11 @@
     "Input placeholder": {
       "Add label": [
         "Afegeix etiqueta"
+      ]
+    },
+    "Invitation message": {
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
+        "Ens traslladem a ${ BRAND_NAME }, el servei de correu electrònic segur.\nI el vostre compte de ${ BRAND_NAME } ja està a punt per reclamar-lo.\nFeu clic a ${ inviteLink }.\nIntroduïu la vostra adreça de correu electrònic i us enviarem un codi al vostre Gmail.\nUtilitzeu-lo per establir la contrasenya i el compte de ${ BRAND_NAME } serà vostre.\nDurant una estona, tots dos funcionaran alhora: ${ BRAND_NAME } i Gmail.\nDesprés, quan tothom s'hagi traslladat, retirarem Gmail. Us ho recordarem abans que passi."
       ]
     },
     "invitation status": {
@@ -14410,6 +14484,9 @@
       "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
       ],
+      "${ BRAND_NAME } Easy Switch": [
+        "Easy Switch de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } per empreses"
       ],
@@ -14515,6 +14592,9 @@
       ],
       "Account storage": [
         "Emmagatzematge del compte"
+      ],
+      "Accounts migrated": [
+        "Comptes migrats"
       ],
       "Action": [
         "Acció"
@@ -15297,6 +15377,12 @@
       "Interval": [
         "Interval"
       ],
+      "Invitation link": [
+        "Enllaç d'invitació"
+      ],
+      "Invitation message": [
+        "Missatge d'invitació"
+      ],
       "Invite people": [
         "Convideu persones"
       ],
@@ -15366,6 +15452,9 @@
       "Logo": [
         "Logo"
       ],
+      "Mail": [
+        "Correu"
+      ],
       "Mail Server (IMAP)": [
         "Servidor de correu (IMAP)"
       ],
@@ -15416,6 +15505,9 @@
       ],
       "Method for importing metadata": [
         "Mètode per a importar metadades"
+      ],
+      "Migration includes": [
+        "La migració inclou"
       ],
       "Minimum ${ MIN_CHARS } characters": [
         "Mínim ${ MIN_CHARS } caràcters"
@@ -15783,6 +15875,9 @@
       "Set password": [
         "Establiu una contrasenya"
       ],
+      "Settings": [
+        "Preferències"
+      ],
       "Share your referral link": [
         "Compartiu el vostre enllaç de recomanació"
       ],
@@ -16035,6 +16130,12 @@
       ],
       "Users": [
         "Usuaris"
+      ],
+      "Users activated": [
+        "S'han activat els usuaris"
+      ],
+      "Users migrated": [
+        "S'han migrat els usuaris"
       ],
       "Value": [
         "Valor"
@@ -16486,6 +16587,9 @@
       "Import/export": [
         "Importa/exporta"
       ],
+      "invite link": [
+        "enllaç d'invitació"
+      ],
       "Learn how": [
         "Apreneu-ne com"
       ],
@@ -16614,6 +16718,9 @@
       ],
       "Gathering your data": [
         "Obtenint les vostres dades"
+      ],
+      "Loading your organization data": [
+        "S'estan carregant les dades de la vostra organització"
       ],
       "We're gathering your data from your provider": [
         "Estem obtenint les vostres dades des del vostre proveïdor"
@@ -17072,6 +17179,32 @@
       ],
       "Sign in": [
         "Inicia la sessió"
+      ]
+    },
+    "Members table usage": {
+      "Gateway Monitor is off": [
+        "El seguiment de la passarel·la està desactivat"
+      ],
+      "Monitor gateways connections": [
+        "Feu el seguiment de les connexions de les passarel·les"
+      ],
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Configureu les vostres passarel·les privades per a fer el seguiment de l'activitat de la connexió VPN de la vostra organització."
+      ],
+      "Today": [
+        "Avui"
+      ],
+      "Today, ${ time }": [
+        "Avui, ${ time }"
+      ],
+      "Turn it on to track when and where users connect.": [
+        "Activeu-ho per a fer el seguiment de quan i on es connecten els usuaris."
+      ],
+      "Yesterday": [
+        "Ahir"
+      ],
+      "Yesterday, ${ time }": [
+        "Ahir, ${ time }"
       ]
     },
     "Message": {
@@ -20680,6 +20813,26 @@
         "Zona horària secundària"
       ]
     },
+    "Property": {
+      "attributes": [
+        "atributs"
+      ],
+      "content key": [
+        "clau de contingut"
+      ],
+      "hash key": [
+        "clau d'empremta electrònica"
+      ],
+      "key": [
+        "clau"
+      ],
+      "membership": [
+        "subscripció"
+      ],
+      "name": [
+        "nom"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adreça"
@@ -21823,6 +21976,12 @@
       "${ usersText } and ${ groupsText } synced.": [
         "${ usersText } i ${ groupsText } s'han sincronitzat."
       ],
+      "**Existing groups** synced to ${ BRAND_NAME } before may now appear when you first access the console": [
+        "És possible que els **grups existents** sincronitzats anteriorment a ${ BRAND_NAME } apareguin ara quan accediu per primer cop a la consola"
+      ],
+      "**You'll be able to review** group changes before they take effect to confirm they're intentional": [
+        "**Podreu revisar** els canvis de grup abans que s'apliquin per confirmar que són intencionats"
+      ],
       "Approve changes from your identity provider": [
         "Aproveu els canvis del vostre proveïdor d'identitat"
       ],
@@ -21835,6 +21994,9 @@
       "New": [
         "Nou"
       ],
+      "New: Manage groups via your identity provider": [
+        "Nou: Gestioneu els grups mitjançant el vostre proveïdor d'identitat"
+      ],
       "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
         "Un cop aprovats, podran accedir a tots els serveis de ${ BRAND_NAME } i compartir de manera segura."
       ],
@@ -21844,11 +22006,20 @@
       "Review users and groups before finishing setup": [
         "Reviseu els usuaris i els grups abans de completar la configuració"
       ],
+      "This approval prompt will **appear every time you update** groups through your identity provider": [
+        "Aquesta sol·licitud d'aprovació **apareixerà cada vegada que actualitzeu** els grups mitjançant el vostre proveïdor d'identitat"
+      ],
       "Updated": [
         "Actualitzat"
       ],
       "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Els usuaris configurats com a privats han d'acceptar la invitació per acabar la configuració. Els enviarem una invitació un cop ho aproveu."
+      ],
+      "What to expect now that group sync is enabled": [
+        "Què podeu esperar ara que la sincronització de grups està activada"
+      ],
+      "You can now sync groups from your identity provider alongside users. Changes push **automatically** when you update your groups.": [
+        "Ara podeu sincronitzar grups des del vostre proveïdor d'identitat juntament amb els usuaris. Els canvis s'aplicaran **automàticament** quan actualitzeu els vostres grups."
       ]
     },
     "scim: Action": {
@@ -21869,11 +22040,17 @@
       ]
     },
     "scim: Info": {
+      "**Groups:** All groups convert to local ${ BRAND_NAME } groups. Syncing with your identity provider stops, and you'll manage membership in ${ BRAND_NAME } settings instead.": [
+        "**Grups:** Tots els grups es convertiran en grups locals de ${ BRAND_NAME }. La sincronització amb el vostre proveïdor d'identitat s'aturarà i, en canvi, gestionareu la pertinença a les configuracions de ${ BRAND_NAME }."
+      ],
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Prerequisit:** Cal configurar l'autenticació SAML per a activar el subministrament SCIM."
       ],
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
         "**Prerequisit:** Per a activar el subministrament SCIM, heu de verificar la propietat del domini **${ domainName }**. Aquesta verificació pot trigar fins a una hora."
+      ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**Usuaris**: Tots els usuaris de SCIM proporcionats automàticament pel vostre proveïdor d'identitat es convertiran en usuaris de SSO i els podreu gestionar directament des de la configuració de ${ BRAND_NAME }."
       ],
       "Enter the token into your identity provider": [
         "Introduïu el testimoni al vostre proveïdor d'identitat."
@@ -21899,8 +22076,8 @@
       "Make sure you copy the above SCIM token now.": [
         "Assegureu-vos de copiar el testimoni d'SCIM anterior."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Quan SCIM estigui desactivat per a la vostra organització, **tots els usuaris d'SCIM proporcionats automàticament pel vostre proveïdor d'identitat es convertiran en usuaris d'SSO** i podreu gestionar-los directament des de les preferències de ${ BRAND_NAME }."
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Tornar a habilitar la sincronització duplicarà els grups existents. No es podran tornar a fusionar al SCIM."
       ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Se simplifica la gestió d'usuaris en diferents serveis. Afegiu, editeu i esborreu usuaris del vostre proveïdor d'identitat i aquests canvis s'aplicaran automàticament a la vostra organització de ${ appName }."
@@ -21908,11 +22085,14 @@
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "El subministrament automàtic d'SCIM es desactivarà fins que introduïu el nou testimoni d'SCIM a la configuració del vostre proveïdor d'identitat."
       ],
-      "The SCIM base URL and token will be deleted.": [
-        "Se suprimiran l'URL base i el testimoni SCIM."
+      "This will delete your SCIM base URL and token.": [
+        "Això eliminarà l'adreça URL base i el testimoni del SCIM."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Per a tornar a activar la sincronització amb el vostre proveïdor d'identitat, heu de tornar a completar la integració SCIM."
+      ],
+      "When you disable SCIM:": [
+        "Quan desactiveu el SCIM:"
       ]
     },
     "scim: Label": {
@@ -23557,6 +23737,9 @@
       "... waiting": [
         "... esperant"
       ],
+      "Activated": [
+        "Activat"
+      ],
       "Active": [
         "Actiu"
       ],
@@ -23593,6 +23776,9 @@
       "Last updated ${ formattedUpdateDate }": [
         "Darrera actualització el ${ formattedUpdateDate }"
       ],
+      "Not activated": [
+        "No s'ha activat"
+      ],
       "Not saved": [
         "No s'ha desat"
       ],
@@ -23616,6 +23802,47 @@
       ],
       "Verify ${ value }": [
         "Verifiqueu ${ value }"
+      ],
+      "Waiting for MX...": [
+        "S'està esperant el registre MX..."
+      ]
+    },
+    "Step": {
+      "Authenticate": [
+        "Autentiqueu-vos"
+      ],
+      "Configure domain": [
+        "Configureu el domini"
+      ],
+      "Configure migration": [
+        "Configureu la migració"
+      ],
+      "Configure users": [
+        "Configurar els usuaris"
+      ],
+      "Final step": [
+        "Pas final"
+      ],
+      "Install migration app": [
+        "Instal·leu l’aplicació de migració"
+      ],
+      "Migrate accounts": [
+        "Migrar els comptes"
+      ],
+      "Onboard your team": [
+        "Incorporeu el vostre equip"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Configurar l'enviament segur (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Configurar l'enviament segur (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Configurar l'enviament segur (SPF)"
+      ],
+      "Verify your domain": [
+        "Verifiqueu el vostre domini"
       ]
     },
     "Step in filter modal": {
@@ -24371,8 +24598,14 @@
       "${ data.name } updated": [
         "S'ha actualitzat ${ data.name }."
       ],
+      "Account connected": [
+        "S'ha connectat el compte"
+      ],
       "Account deleted. Signing out...": [
         "S'ha eliminat el compte. S'està tancant la sessió..."
+      ],
+      "Account disconnected": [
+        "S'ha desconnectat el compte"
       ],
       "Address added": [
         "Adreça afegida"
@@ -24440,6 +24673,9 @@
       "DMARC value copied to clipboard": [
         "Valor DMARC copiat al portaretalls"
       ],
+      "Domain added": [
+        "S'ha afegit el domini"
+      ],
       "Domain verified": [
         "Domini verificat"
       ],
@@ -24484,6 +24720,10 @@
       ],
       "Locale updated": [
         "S'ha actualitzat l'idioma"
+      ],
+      "Migration started for ${ n } user": [
+        "S'ha iniciat la migració per a ${ n } usuari",
+        "S'ha iniciat la migració per a ${ n } usuaris"
       ],
       "New policy created. It will take effect only after you publish the changes.": [
         "S'ha creat una política. Només tindrà efecte després de publicar els canvis."
@@ -24746,6 +24986,26 @@
       ],
       "For individuals": [
         "Per a particulars"
+      ]
+    },
+    "Table header": {
+      "Activated": [
+        "Activat"
+      ],
+      "Estimated size": [
+        "Mida estimada"
+      ],
+      "Migration status": [
+        "Estat de la migració"
+      ],
+      "Size": [
+        "Mida"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "User": [
+        "Usuari"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25190,6 +25450,9 @@
       "Ask your emergency contacts for help": [
         "Demaneu ajuda als vostres contactes d'emergència"
       ],
+      "Authenticate your Google Workspace account": [
+        "Autentiqueu el vostre compte de Google Workspace"
+      ],
       "Auto-deletion is active": [
         "La supressió automàtica està activada."
       ],
@@ -25310,6 +25573,12 @@
       "Configure Always-on VPN device profile": [
         "Configureu el perfil de dispositiu de la VPN sempre activa"
       ],
+      "Configure migration": [
+        "Configureu la migració"
+      ],
+      "Configure your domain": [
+        "Configureu el vostre domini"
+      ],
       "Confirm": [
         "Confirma"
       ],
@@ -25415,6 +25684,9 @@
       ],
       "Created!": [
         "S'ha creat!"
+      ],
+      "Creating accounts": [
+        "S'estan creant els comptes"
       ],
       "Creating user accounts": [
         "Creació de comptes d'usuari"
@@ -25612,6 +25884,9 @@
       "Domain names": [
         "Noms de domini"
       ],
+      "Domain provider": [
+        "Proveïdor de domini"
+      ],
       "Don't show again?": [
         "No voleu que es torni a mostrar?"
       ],
@@ -25802,6 +26077,9 @@
       "Filters": [
         "Filtres"
       ],
+      "Final step": [
+        "Últim pas"
+      ],
       "Find email or username": [
         "Cerca correu electrònic o nom d’usuari"
       ],
@@ -25907,6 +26185,9 @@
       "Gift code": [
         "Codi regal"
       ],
+      "Going private": [
+        "Passar a privat"
+      ],
       "Group": [
         "Grup"
       ],
@@ -25918,6 +26199,9 @@
       ],
       "Groups": [
         "Grups"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Atenció: Aquest Gmail està enllaçat a un altre compte de ${ BRAND_NAME }"
       ],
       "Help and feedback": [
         "Ajuda i comentaris"
@@ -25962,6 +26246,9 @@
       "Import contacts": [
         "Importar contactes"
       ],
+      "Import details": [
+        "Detalls de la importació"
+      ],
       "Import emails, calendars, contacts": [
         "Importeu correus, calendaris i contactes"
       ],
@@ -25994,6 +26281,9 @@
       ],
       "Install it manually": [
         "Instal·leu-lo manualment"
+      ],
+      "Install migration app": [
+        "Instal·lar l’aplicació de migració"
       ],
       "Integrations": [
         "Integracions"
@@ -26076,11 +26366,26 @@
       "Messages and composing": [
         "Missatges i redacció"
       ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Migreu els comptes a ${ BRAND_NAME }"
+      ],
+      "Migrate from Google Workspace": [
+        "Migreu des de Google Workspace"
+      ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migreu la vostra organització a ${ BRAND_NAME }"
       ],
+      "Migrated accounts": [
+        "Comptes migrats"
+      ],
       "Migration assistant": [
         "Assistent de migració"
+      ],
+      "Migration status": [
+        "Estat de la migració"
+      ],
+      "Migration summary": [
+        "Resum de la migració"
       ],
       "Minicalendar": [
         "Minicalendari"
@@ -26118,6 +26423,9 @@
       "Name": [
         "Nom"
       ],
+      "Need help?": [
+        "Necessiteu ajuda?"
+      ],
       "Need more labels or folders?": [
         "Necessiteu més etiquetes o carpetes?"
       ],
@@ -26144,6 +26452,9 @@
       ],
       "Notifications": [
         "Notificacions"
+      ],
+      "Onboard your team": [
+        "Incorporeu el vostre equip"
       ],
       "Open": [
         "Pendent"
@@ -26322,9 +26633,6 @@
       "Reject device?": [
         "Voleu rebutjar el dispositiu?"
       ],
-      "Remove all members?": [
-        "Voleu suprimir tots els membres?"
-      ],
       "Remove Always-on VPN device profile": [
         "Esborreu el perfil de dispositiu de la VPN sempre activa"
       ],
@@ -26448,6 +26756,9 @@
       "Select the way to send this notification": [
         "Seleccioneu la manera d’enviar aquesta notificació"
       ],
+      "Select users to migrate": [
+        "Seleccioneu els usuaris que voleu migrar"
+      ],
       "Select when you want this notification to be sent": [
         "Selecciona quan vols que s'enviï aquesta notificació"
       ],
@@ -26489,6 +26800,15 @@
       ],
       "Set up email forwarding": [
         "Configuració del reenviament de correu"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Configureu l'enviament segur (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Configurar l'enviament segur (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Configurar l'enviament segur (SPF)"
       ],
       "Set up your family account": [
         "Configureu el vostre compte familiar"
@@ -26564,6 +26884,9 @@
       ],
       "Snooze:": [
         "Ajorna:"
+      ],
+      "Some accounts are not claimed": [
+        "Alguns comptes no s'han reclamat"
       ],
       "Some of your encrypted data is locked": [
         "Algunes de les vostres dades xifrades estan bloquejades"
@@ -26707,6 +27030,9 @@
       "Unlock your data": [
         "Desbloqueu les vostres dades"
       ],
+      "Update records for receiving": [
+        "Actualitzeu els registres per a la recepció"
+      ],
       "Upgrade complete!": [
         "S'ha millorat el pla."
       ],
@@ -26779,6 +27105,9 @@
       "Verify it’s you": [
         "Verifiqueu que sou vós"
       ],
+      "Verify your domain": [
+        "Verifiqueu el vostre domini"
+      ],
       "Verify your email": [
         "Verifiqueu el correu electrònic"
       ],
@@ -26830,6 +27159,9 @@
       "Welcome to your new password manager!": [
         "Us donem la benvinguda al vostre nou gestor de contrasenyes!"
       ],
+      "What are you migrating?": [
+        "Què esteu migrant?"
+      ],
       "What changes if you switch to the Free plan": [
         "Què canviarà si us passeu al pla gratuït"
       ],
@@ -26862,6 +27194,9 @@
       ],
       "You have no resolved alerts": [
         "No teniu alertes resoltes"
+      ],
+      "You're all set!": [
+        "Ja ho teniu tot llest!"
       ],
       "You've successfully signed in!": [
         "Heu iniciat la sessió."
@@ -26997,6 +27332,12 @@
       "Features": [
         "Característiques"
       ],
+      "Last app activity": [
+        "Darrera activitat de l'aplicació"
+      ],
+      "Last connection": [
+        "Última connexió"
+      ],
       "Name": [
         "Nom"
       ],
@@ -27073,6 +27414,9 @@
       "Click here to learn how to create a customized signature with HTML.": [
         "Feu clic aquí per saber com crear una signatura personalitzada amb HTML."
       ],
+      "Collapse invitation message": [
+        "Plegar el missatge d'invitació"
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copieu i enganxeu aquest URL al camp URL de l'ACS (Assertion Consumer Service) del vostre proveïdor d'identitat"
       ],
@@ -27084,6 +27428,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Personalitzeu la importació per reduir el nombre d'etiquetes"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Elimina els missatges de la paperera i el correu brossa passats 30 dies. Activant l'eliminació automàtica, es donarà als missatges que ja estan a la paperera o al correu brossa una data d'eliminació basada en la data en què s'hi hagin mogut."
@@ -27123,6 +27470,9 @@
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
         "S'estan excloent els usuaris de l'inici de sessió únic el 2FA dels quals és administrat pel vostre proveïdor d'identitat"
+      ],
+      "Expand invitation message": [
+        "Desplegar el missatge d'invitació"
       ],
       "Feature in early access": [
         "Característica en accés anticipat"
@@ -27178,6 +27528,9 @@
       "Origin IP address and Internet Service Provider (ISP)": [
         "Adreça IP d'origen i proveïdor de serveis d'internet (ISP)"
       ],
+      "Reauthenticate your Google Workspace account to start a migration": [
+        "Torneu a autenticar el vostre compte de Google Workspace per iniciar una migració"
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Elimineu les metadades de les imatges per protegir la vostra privadesa."
       ],
@@ -27192,6 +27545,9 @@
       ],
       "See number of unread messages in the tab icon": [
         "Vegeu el nombre de missatges no llegits a la icona de la pestanya"
+      ],
+      "Select at least one user to start a migration": [
+        "Seleccioneu almenys un usuari per iniciar una migració"
       ],
       "Set how your list of messages looks like by default.": [
         "Configureu l'aspecte per defecte de la vostra llista de missatges."
@@ -27289,6 +27645,9 @@
       "User's approximate location (based on their IP address)": [
         "Ubicació aproximada de l'usuari (basada en la seva adreça IP)"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Usuaris que han accedit al seu compte de ${ BRAND_NAME }"
+      ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Els usuaris veuran el vostre logo en comptes de la icona de ${ BRAND_NAME } quan iniciïn la sessió a les nostres aplicacions web."
       ],
@@ -27297,6 +27656,9 @@
       ],
       "Verified email address": [
         "Adreça de correu electrònic verificada"
+      ],
+      "Verify your domain to start a migration": [
+        "Verifiqueu el vostre domini per iniciar una migració"
       ],
       "Version 6 OpenPGP key": [
         "Clau OpenPGP de la versió 6"
@@ -27381,6 +27743,14 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Seleccioneu la configuració PGP per defecte per signar o xifrar missatges amb usuaris de PGP que no siguin de ${ BRAND_NAME }. Tingueu en compte que el PGP en línia obliga a l'ús de missatges de text sense format."
+      ]
+    },
+    "Tooltip for members table": {
+      "Last time this user connected to one of your organization's Gateways.": [
+        "Darrera vegada que aquest usuari es va connectar a una de les passarel·les de la vostra organització."
+      ],
+      "Last time this user signed in or used the ${ VPN_APP_NAME } app on their device.": [
+        "Darrera vegada que aquest usuari va iniciar la sessió o va utilitzar l'aplicació ${ VPN_APP_NAME } al seu dispositiu."
       ]
     },
     "Tooltip prompt to trust keys": {
@@ -28162,6 +28532,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Comproveu que l'extensió estigui instal·lada i activada."
       ],
+      "Please don’t close or refresh this window.": [
+        "No tanqueu ni actualitzeu aquesta finestra."
+      ],
       "Please update the extension to its latest version": [
         "Actualitzeu l'extensió a la seva darrera versió"
       ],
@@ -28186,14 +28559,26 @@
       "This will remove all messages, folders, and labels created during the import.": [
         "Això esborrarà tots els missatges, carpetes i etiquetes creades durant la importació."
       ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Per completar la migració, assegureu-vos que només manteniu els codis MX de ${ BRAND_NAME }."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Els usuaris que no hagin reclamat el seu compte abans que finalitzi la migració hauran de sol·licitar un restabliment de la contrasenya a l'administrador de la seva organització de ${ BRAND_NAME }."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "No s'ha pogut verificar el servidor de correu. Si hi confieu, podeu ometre aquesta verificació."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Hem detectat un problema amb la vostra configuració DNS. Assegureu-vos que els vostres registres coincideixin amb les instruccions següents. Si el problema continua, haurem de desactivar la signatura de DKIM."
+      ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "No s'ha pogut verificar la instal·lació; comproveu que estigui instal·lada al vostre compte de Google Workspace i torneu-ho a provar."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Hem observat que alguns usuaris no han demanat els seus comptes de ${ BRAND_NAME }."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Heu de ${ activateLink } la clau de l'organització abans d'afegir una adreça de correu electrònic a un membre no privat."
@@ -28203,6 +28588,13 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Ja no veureu més a la llista aquest registre d'importació."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "El vostre pla actual us permet fins a ${ maxMembers } usuari. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció.",
+        "El vostre pla actual us permet fins a ${ maxMembers } usuaris. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "La configuració del vostre domini encara inclou els codis MX d'un altre proveïdor."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prova gratuïta acaba el ${ textDate }. ${ action }"
