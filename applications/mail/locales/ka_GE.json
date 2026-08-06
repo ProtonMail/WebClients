@@ -1508,7 +1508,8 @@
         "ნდობა"
       ],
       "Trust key": [
-        "გასაღების სანდოობა"
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -2197,128 +2198,6 @@
       ],
       "Yearly": [
         "წლიურად"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "აქტიურია"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "მისამართს უკვე იყენებს მომხმარებელი თქვენი ორგანიზაციის გარეთ. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
-      ],
-      "All": [
-        "ყველა"
-      ],
-      "Calendar": [
-        "კალენდარი"
-      ],
-      "Configure migration": [
-        "მიგრაციის მორგება"
-      ],
-      "Contact your administrator to start a migration.": [
-        "მიგრაციის დასაწყებად დაუკავშირდით თქვენს ადმინისტრატორს."
-      ],
-      "Contacts": [
-        "კონტაქტები"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "მონაცემთა მიგრაციის სტატუსი Google Workspace-დან ${ BRAND_NAME }-ში"
-      ],
-      "Emails": [
-        "ელფოსტები"
-      ],
-      "Errors": [
-        "შეცდომები"
-      ],
-      "Estimated size": [
-        "სავარაუდო ზომა"
-      ],
-      "Find out what can be migrated.": [
-        "გაიგეთ, რისი მიგრაციაა შესაძლებელი."
-      ],
-      "Has errors": [
-        "აქვს შეცდომები"
-      ],
-      "In progress": [
-        "მიმდინარეობს"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "წევრის მისამართი ვერ მოიძებნა. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
-      ],
-      "Migrate": [
-        "მიგრაცია"
-      ],
-      "Migrated": [
-        "მიგრირებულია"
-      ],
-      "Migration status": [
-        "მიგრაციის სტატუსი"
-      ],
-      "Missing organization private key": [
-        "ორგანიზაციის პირადი გასაღები აკლია"
-      ],
-      "Missing organization public key": [
-        "ორგანიზაციის საჯარო გასაღები აკლია"
-      ],
-      "No users to display": [
-        "საჩვენებელი მომხმარებლები არ არის"
-      ],
-      "Not activated": [
-        "არ არის გააქტიურებული"
-      ],
-      "Organization does not have enough seats available": [
-        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
-      ],
-      "Organization does not have enough storage available": [
-        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
-      ],
-      "Pending": [
-        "რიგში"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "აირჩიეთ ზუსტად ის, რისი მიგრაციაც გსურთ. ეს გავრცელდება ორგანიზაციის ყველა მომხმარებელზე."
-      ],
-      "Select users to migrate": [
-        "აირჩიეთ მომხმარებლები მიგრაციისთვის"
-      ],
-      "Size": [
-        "ზომა"
-      ],
-      "Status": [
-        "სტატუსი"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "პლატფორმების შეუთავსებლობის გამო ამ მომხმარებლის მიგრაცია შეუძლებელია."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში აქ: ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი მისამართი აქ: ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "ამ მომხმარებლის მიგრაციისთვის, მან უნდა მიიღოს მოწვევა ${ BRAND_NAME }-ში გასაწევრიანებლად."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "ამ მომხმარებლის მიგრაციისთვის, ამოიღეთ იგი არქივიდან თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "ამ მომხმარებლის მიგრაციისთვის, მოუხსენით მას შეჩერება თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
-      ],
-      "User": [
-        "მომხმარებელი"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "მომხმარებლები, რომლებმაც მიიღეს წვდომა თავიანთ ${ BRAND_NAME } ანგარიშზე"
-      ],
-      "What are you migrating?": [
-        "რის მიგრაციას ახდენთ?"
-      ],
-      "You": [
-        "თქვენ"
       ]
     },
     "Browser": {
@@ -5015,6 +4894,9 @@
       "Invalid public key file": [
         "არასწორი საჯარო გასაღების ფაილი"
       ],
+      "Invalid URL": [
+        "არასწორი URL"
+      ],
       "Invalid VAT number": [
         "არასწორი დღგს ნომერი"
       ],
@@ -5271,6 +5153,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ჭდეების ზოგიერთი სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
+      ],
+      "Something went wrong": [
+        "რაღაც არასწორად წავიდა"
       ],
       "Something went wrong while converting the address": [
         "მისამართის კონვერტაციისას დაფიქსირდა შეცდომა"
@@ -6700,6 +6585,14 @@
         "მეტი შემოტანის პარამეტრები"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "მიმდინარეობს"
+      ],
+      "Migrated": [
+        "მიგრირებულია"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "შემოტანილი იქნება ${ totalContactsDiscarded } ${ totalContacts }-დან. დეტალებისთვის დააწკაპუნეთ"
@@ -7807,8 +7700,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -7851,9 +7743,6 @@
       ],
       "Key fingerprint": [
         "გასაღებს ანაბეჭდი"
-      ],
-      "Keys created": [
-        "გასაღებები შექმნა"
       ],
       "Label all imported messages as": [
         "ყველა შემოტანილ შეტყობინებაზე ჭდის დადება"
@@ -8868,9 +8757,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "ელფოსტის უფრო სწრაფად სამართავად გამოიყენეთ მალსახმობები."
-      ],
-      "User activated": [
-        "მომხმრებელი გააქტიურდა"
       ],
       "username": [
         "მომხმარებლის სახელი"
@@ -15272,6 +15158,9 @@
       ],
       "Name": [
         "სახელი"
+      ],
+      "Size": [
+        "ზომა"
       ],
       "Status": [
         "სტატუსი"

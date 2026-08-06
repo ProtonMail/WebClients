@@ -491,6 +491,9 @@
       "Edit users": [
         "Editar usuários"
       ],
+      "Enable": [
+        "Habilitar"
+      ],
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
       ],
@@ -859,9 +862,6 @@
       ],
       "Remove": [
         "Remover"
-      ],
-      "Remove all members": [
-        "Remover todos os membros"
       ],
       "Remove all other devices": [
         "Remova todos os outros dispositivos"
@@ -1297,6 +1297,9 @@
       ],
       "View all reports": [
         "Ver todos os relatórios"
+      ],
+      "View guide": [
+        "Ver guia"
       ],
       "View invoice": [
         "Visualizar fatura"
@@ -2061,125 +2064,6 @@
       ],
       "Working with sensitive data?": [
         "Trabalhando com dados confidenciais?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Ativado"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "O endereço já é usado por um usuário fora da sua organização. Entre em contato com o suporte ao cliente para resolver isso"
-      ],
-      "All": [
-        "Todos"
-      ],
-      "Calendar": [
-        "Calendário"
-      ],
-      "Configure migration": [
-        "Configurar migração"
-      ],
-      "Contacts": [
-        "Contatos"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status de migração de dados do Google Workspace para o ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-mails"
-      ],
-      "Errors": [
-        "Errors"
-      ],
-      "Estimated size": [
-        "Tempo estimado"
-      ],
-      "Find out what can be migrated.": [
-        "Descubra o que pode ser migrado."
-      ],
-      "Has errors": [
-        "Tem erros"
-      ],
-      "In progress": [
-        "Em processo"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Endereço do membro não encontrado. Entre em contato com o suporte ao cliente para resolver isso"
-      ],
-      "Migrate": [
-        "Migrar"
-      ],
-      "Migrated": [
-        "Migrado"
-      ],
-      "Migration status": [
-        "Status da migração"
-      ],
-      "Missing organization private key": [
-        "Falta a chave privada da organização"
-      ],
-      "Missing organization public key": [
-        "Falta a chave pública da organização"
-      ],
-      "No users to display": [
-        "Nenhum usuário para exibir"
-      ],
-      "Not activated": [
-        "Não ativado"
-      ],
-      "Organization does not have enough seats available": [
-        "A organização não tem licenças suficientes disponíveis"
-      ],
-      "Organization does not have enough storage available": [
-        "A organização não tem armazenamento suficientes disponíveis"
-      ],
-      "Pending": [
-        "Pendente"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Selecione exatamente o que deseja migrar. Isso se aplicará a todos os usuários da organização."
-      ],
-      "Select users to migrate": [
-        "Selecione os usuários a serem migrados"
-      ],
-      "Size": [
-        "Tamanho"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Este usuário não pode ser migrado devido a incompatibilidades de plataforma."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Para migrar este usuário, ative a conta dele no seu Console do Administrador do Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Para migrar este usuário, ative a conta dele em ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Para migrar este usuário, ative o endereço dele em ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Para migrar este usuário, ele precisa aceitar o convite para se juntar ao ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Para migrar este usuário, desarquive-o no seu Console do Administrador do Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Para migrar este usuário, reative-o no seu Console do Administrador do Google Workspace."
-      ],
-      "User": [
-        "Usuário"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Usuários que acessaram sua conta do ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "O que você está migrando?"
-      ],
-      "You": [
-        "Você"
       ]
     },
     "Browser": {
@@ -4971,6 +4855,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "Token de redefinição inválido. Por favor, atualize a página e tente novamente."
       ],
+      "Invalid URL": [
+        "O URL não é válido."
+      ],
       "Invalid VAT number": [
         "Número de IVA inválido"
       ],
@@ -4989,6 +4876,9 @@
       ],
       "Missing key packet": [
         "Pacote de chave ausente"
+      ],
+      "Missing signature": [
+        "Assinatura ausente"
       ],
       "Name already exists": [
         "Nome já existe"
@@ -5178,6 +5068,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
+      "Something went wrong": [
+        "Algo deu errado"
       ],
       "Something went wrong while converting the address": [
         "Ocorreu um erro ao converter o endereço"
@@ -6775,6 +6668,14 @@
         "Selecione ${ boldExport } para exportar o calendário como um arquivo ICS."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Em processo"
+      ],
+      "Migrated": [
+        "Migrado"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contatos não serão importados. Clique para detalhes"
@@ -7289,9 +7190,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Tem certeza de que deseja remover os privilégios administrativos deste usuário?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "Tem certeza que deseja remover todos os membros deste grupo?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Você tem certeza que deseja remover o domínio ${ boldDomain }?"
@@ -8790,6 +8688,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Roteamento inteligente via: ${ joinedCountries }."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Alguns aplicativos da ${ BRAND_NAME } podem ainda não ter suporte para chaves de segurança. Se você desativar a A2F do aplicativo de autenticação, talvez não consiga iniciar sessão nesses aplicativos."
@@ -14980,17 +14881,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Certifique-se de copiar o token SCIM acima agora."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Assim que o SCIM for desabilitado para sua organização, **todos os usuários SCIM fornecidos automaticamente pelo seu provedor de identidade serão convertidos para usuários SSO** e você poderá administrá-los diretamente através das configurações da ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Simplifica o gerenciamento de usuário entre diferentes serviços. Adicione, edite e remova usuários do seu provedor de identidade, e essas mudanças serão automaticamente aplicadas à sua organização ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "O provisionamento automático do SCIM será desabilitado até você inserir o novo token SCIM nas configurações do seu provedor de identidade."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "O URL base e o token do SCIM serão excluídos."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Para reabilitar a sincronização com seu provedor de identidade, é necessário completar a integração com o SCIM novamente."
@@ -17019,6 +16914,14 @@
         "Para indivíduos"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Tamanho"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Ação"
@@ -18105,9 +18008,6 @@
       ],
       "Reject device?": [
         "Rejeitar o dispositivo?"
-      ],
-      "Remove all members?": [
-        "Remover todos os membros?"
       ],
       "Remove Always-on VPN device profile": [
         "Remover o perfil de dispositivo VPN sempre ativa"

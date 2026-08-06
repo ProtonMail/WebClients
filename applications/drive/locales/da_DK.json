@@ -1648,125 +1648,6 @@
         "Årligt"
       ]
     },
-    "BOSS": {
-      "Activated": [
-        "Aktiveret"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Configure migration": [
-        "Konfigurer migrering"
-      ],
-      "Contacts": [
-        "Kontakter"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status for datamigration fra Google Workspace til ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-mails"
-      ],
-      "Errors": [
-        "Fejl"
-      ],
-      "Estimated size": [
-        "Anslået størrelse"
-      ],
-      "Find out what can be migrated.": [
-        "Find ud af hvad der kan migreres."
-      ],
-      "Has errors": [
-        "Fejlbehæftet"
-      ],
-      "In progress": [
-        "I gang"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adresse for medlem ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
-      ],
-      "Migrate": [
-        "Migrer"
-      ],
-      "Migrated": [
-        "Migreret"
-      ],
-      "Migration status": [
-        "Migrationsstatus"
-      ],
-      "Missing organization private key": [
-        "Mangler organisationens private nøgle"
-      ],
-      "Missing organization public key": [
-        "Mangler organisationens offentlige nøgle"
-      ],
-      "No users to display": [
-        "Ingen brugere at vise"
-      ],
-      "Not activated": [
-        "Ikke aktiveret"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisationen har ikke nok ledige pladser"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisationen har ikke tilstrækkelig ledig lagerplads"
-      ],
-      "Pending": [
-        "Afventer"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Vælg præcis det du gerne vil migrere. Det vil gælde for brugere i organisationen."
-      ],
-      "Select users to migrate": [
-        "Vælg brugere at migrere"
-      ],
-      "Size": [
-        "Størrelse"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "For at migrere denne bruger skal du aktivere vedkommendes adresse under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "For at migrere denne bruger skal vedkommende acceptere sin invitation til at tilmelde sig ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "For at migrere denne bruger skal du fjerne vedkommende fra arkivet i din Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "For at migrere denne bruger skal du ophæve suspenderingen af vedkommende i din Google Workspace Admin Console."
-      ],
-      "User": [
-        "Bruger"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
-      ],
-      "What are you migrating?": [
-        "Hvad migrerer du?"
-      ],
-      "You": [
-        "Dig"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } skrivebordsapp"
@@ -3763,6 +3644,9 @@
       "Invalid public key file": [
         "Ugyldig offentlig nøglefil"
       ],
+      "Invalid URL": [
+        "Ugyldig URL"
+      ],
       "Invalid VAT number": [
         "Ugyldigt VAT-/momsnummer"
       ],
@@ -3956,6 +3840,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Something went wrong": [
+        "Noget gik galt"
       ],
       "Something went wrong during folder listing": [
         "Der opstod en fejl under mappelistningen"
@@ -5033,6 +4920,14 @@
         "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "I gang"
+      ],
+      "Migrated": [
+        "Migreret"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
@@ -5981,9 +5876,6 @@
       "Key fingerprint": [
         "Nøglefingeraftryk"
       ],
-      "Keys created": [
-        "Nøgler oprettet"
-      ],
       "Label all imported messages as": [
         "Mærk alle importerede beskeder som"
       ],
@@ -6806,9 +6698,6 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Brug denne formular til at give os besked om upassende, ulovlige,\neller på anden måde skadelige delte filer. Du er ved at anmelde:"
       ],
-      "User activated": [
-        "Bruger aktiveret"
-      ],
       "username": [
         "brugernavn"
       ],
@@ -7031,9 +6920,6 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Der bliver ikke trukket noget hvis du annullerer inden ${ trialEndsOnFormatted }."
-      ],
-      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
-        "Du vil ikke kunne dele \"${ fileName }\" efter du har ændret adgangen til seer. Kun ejeren kan ændre din adgang igen."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du vil modtage kreditten 1 måned efter at din ven abonnerer på et årligt abonnement, og 2 måneder efter de abonnerer på et månedligt abonnement."
@@ -12376,6 +12262,9 @@
       "Name": [
         "Navn"
       ],
+      "Size": [
+        "Størrelse"
+      ],
       "Status": [
         "Status"
       ],
@@ -13414,9 +13303,6 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Vi kunne ikke bekræfte, at en anonym bruger uploadede denne mappe."
       ],
-      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Vi kunne ikke bekræfte, at filens indhold blev uploadet af ${ claimedContentAuthor }. Årsagen er: ${ activeRevision.contentAuthor.error.error }"
-      ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "Vi kunne ikke bekræfte, at navnet blev oprettet eller ændret af ${ claimedNameAuthor }. Årsagen: ${ node.nameAuthor.error.error }"
       ],
@@ -13652,7 +13538,7 @@
     },
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
-        "Opgradér til en understøttet plan for at bruge administratorroller."
+        "Opgrader til en understøttet plan for at bruge administratorroller."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brugeren har accepteret invitationen."

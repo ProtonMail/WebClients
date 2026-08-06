@@ -608,6 +608,9 @@
       "Merge contacts": [
         "Fusionner les contacts"
       ],
+      "Migrate": [
+        "Migrer"
+      ],
       "More actions": [
         "Actions supplémentaires"
       ],
@@ -1494,125 +1497,6 @@
       ],
       "Yearly": [
         "Annuel"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Activé"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "L'adresse est déjà utilisée par un utilisateur en dehors de votre organisation. Nous vous invitons à prendre contact avec le service client pour résoudre ce problème."
-      ],
-      "All": [
-        "Tout"
-      ],
-      "Calendar": [
-        "Calendrier"
-      ],
-      "Configure migration": [
-        "Configurer la migration"
-      ],
-      "Contacts": [
-        "Contacts"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "État de migration des données depuis Google Workspace vers ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-mails"
-      ],
-      "Errors": [
-        "Erreurs"
-      ],
-      "Estimated size": [
-        "Taille estimée"
-      ],
-      "Find out what can be migrated.": [
-        "Découvrez ce qui peut être migré."
-      ],
-      "Has errors": [
-        "Il y a des erreurs"
-      ],
-      "In progress": [
-        "En cours"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "L'adresse du membre n'a pas été trouvée. Veuillez contacter le service client pour résoudre ce problème."
-      ],
-      "Migrate": [
-        "Migrer"
-      ],
-      "Migrated": [
-        "Migré"
-      ],
-      "Migration status": [
-        "État de la migration"
-      ],
-      "Missing organization private key": [
-        "La clé privée de l'organisation est absente."
-      ],
-      "Missing organization public key": [
-        "La clé publique de l'organisation est absente."
-      ],
-      "No users to display": [
-        "Il n'y a aucun utilisateur à afficher."
-      ],
-      "Not activated": [
-        "Non activé"
-      ],
-      "Organization does not have enough seats available": [
-        "L'organisation n'a pas assez d'accès disponibles."
-      ],
-      "Organization does not have enough storage available": [
-        "L'organisation n'a pas assez d'espace de stockage disponible."
-      ],
-      "Pending": [
-        "En attente"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Sélectionnez exactement ce que vous voulez migrer. Cela s'appliquera à tous les utilisateurs de l'organisation."
-      ],
-      "Select users to migrate": [
-        "Sélectionnez les utilisateurs à migrer"
-      ],
-      "Size": [
-        "Taille"
-      ],
-      "Status": [
-        "État"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Cet utilisateur ne peut pas être migré en raison d'incompatibilités de plateforme."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Pour migrer cet utilisateur, activez son adresse sous ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Pour migrer cet utilisateur, celui-ci doit accepter son invitation à rejoindre ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Pour migrer cet utilisateur, réactivez-le dans votre console d'administration Google Workspace."
-      ],
-      "User": [
-        "Utilisateur"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Utilisateurs qui ont activé leur compte ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Que migrez-vous ?"
-      ],
-      "You": [
-        "Vous"
       ]
     },
     "Browser": {
@@ -3941,6 +3825,9 @@
       "Invalid public key file": [
         "Le fichier de clé publique n'est pas valide."
       ],
+      "Invalid URL": [
+        "L'URL n'est pas valide."
+      ],
       "Invalid VAT number": [
         "Numéro de TVA incorrect."
       ],
@@ -3949,6 +3836,9 @@
       ],
       "Invitation failed to be sent": [
         "L'invitation n'a pas pu être envoyée."
+      ],
+      "Invitation not found": [
+        "L'invitation est introuvable"
       ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
         "Il est uniquement possible de créer des événements entre ${ minDateString } et ${ maxDateString }."
@@ -3968,6 +3858,9 @@
       "Location is required": [
         "L'emplacement est requis"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "L'adresse du membre n'a pas été trouvée. Veuillez contacter le service client pour résoudre ce problème."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Fusionnez au moins ${ calendarsToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
         "Fusionnez au moins ${ calendarsToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants."
@@ -3975,11 +3868,21 @@
       "Missing key packet": [
         "Le paquet de clés est manquant."
       ],
+      "Missing organization private key": [
+        "La clé privée de l'organisation est absente."
+      ],
+      "Missing organization public key": [
+        "La clé publique de l'organisation est absente."
+      ],
       "Missing signature": [
         "Il manque la signature."
       ],
       "Name is required": [
         "Veuillez indiquer un nom."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Le nom doit être composé d'${ MAX_NODE_NAME_LENGTH } caractère au maximum.",
+        "Le nom doit être composé de ${ MAX_NODE_NAME_LENGTH } caractères au maximum."
       ],
       "Name required": [
         "Le nom est nécessaire."
@@ -4025,6 +3928,12 @@
         "L'un des groupes n'a aucun contact : ${ noContactGroupList }",
         "Certains groupes n'ont aucun contact : ${ noContactGroupList } "
       ],
+      "Operation aborted": [
+        "Opération annulée"
+      ],
+      "Operation failed, try again later": [
+        "L'opération n'a pas abouti. Réessayez plus tard"
+      ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
       ],
@@ -4051,6 +3960,9 @@
       ],
       "Payment process not supported": [
         "Le traitement du paiement n'est pas pris en charge."
+      ],
+      "Photo not found": [
+        "La photo est introuvable"
       ],
       "Please activate your search again": [
         "Veuillez réactiver votre recherche."
@@ -4129,6 +4041,9 @@
         "Le destinataire dupliqué a été retiré : ${ joinedRecipients }",
         "Les destinataires dupliqués ont été retirés : ${ joinedRecipients }"
       ],
+      "Request aborted": [
+        "Requête interrompue"
+      ],
       "Request timed out": [
         "La requête a expiré."
       ],
@@ -4137,6 +4052,9 @@
       ],
       "Self invitation not allowed": [
         "Vous ne pouvez pas vous inviter vous-même."
+      ],
+      "Signature is missing": [
+        "La signature est manquante"
       ],
       "Signature not verified": [
         "La signature n'est pas vérifiée."
@@ -4164,6 +4082,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
+      ],
+      "Something went wrong": [
+        "Une erreur s'est produite."
       ],
       "Something went wrong while fetching available domains": [
         "Quelque chose s'est mal passé lors de la récupération des domaines disponibles"
@@ -4230,6 +4151,12 @@
       ],
       "This folder name is not available. Please choose a different name.": [
         "Ce nom de dossier n'est pas disponible, veuillez en choisir un autre."
+      ],
+      "This item is no longer shared": [
+        "Cet élément n’est plus partagé"
+      ],
+      "This item is not shared": [
+        "Cet élément n’est pas partagé"
       ],
       "This label name is not available. Please choose a different name.": [
         "Ce nom de label n'est pas disponible, veuillez en choisir un autre."
@@ -4841,6 +4768,23 @@
         "Téraoctets"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Activé"
+      ],
+      "All": [
+        "Tout"
+      ],
+      "In progress": [
+        "En cours"
+      ],
+      "Migrated": [
+        "Migré"
+      ],
+      "Pending": [
+        "En attente"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } a été mis à jour."
@@ -5252,6 +5196,14 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Sélectionnez ${ boldExport } pour exporter le calendrier en tant que fichier ICS."
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "En cours"
+      ],
+      "Migrated": [
+        "Migré"
       ]
     },
     "Import warning": {
@@ -5845,9 +5797,6 @@
       "Failed to update meeting schedule": [
         "La mise à jour de la réunion n'a pas abouti."
       ],
-      "Failed to update meeting waiting room status": [
-        "Impossible de mettre à jour l'état de la salle d'attente de la réunion"
-      ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Des vitesses VPN ultra-rapides pouvant atteindre 10 Gbps"
       ],
@@ -5989,9 +5938,6 @@
       ],
       "Key fingerprint": [
         "Empreinte de la clé"
-      ],
-      "Keys created": [
-        "Les clés ont été créées."
       ],
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
@@ -6295,6 +6241,9 @@
       "Scan the QR code with your mobile device": [
         "Scannez le QR code avec votre appareil mobile."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Sélectionnez exactement ce que vous voulez migrer. Cela s'appliquera à tous les utilisateurs de l'organisation."
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous voulez utiliser par défaut pour l'envoi d'un message à cette adresse e-mail."
       ],
@@ -6485,6 +6434,12 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pour importer des événements, créez d'abord un calendrier dans ${ CALENDAR_APP_NAME }. Ce calendrier contiendra les événements après leur importation."
       ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l’aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n’est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
       ],
@@ -6529,9 +6484,6 @@
       ],
       "Uppercase and lowercase letters": [
         "Lettres majuscules et minuscules"
-      ],
-      "User activated": [
-        "L'utilisateur a été activé."
       ],
       "username": [
         "nom d'utilisateur"
@@ -6649,6 +6601,9 @@
       ],
       "Yearly": [
         "Chaque année"
+      ],
+      "You": [
+        "Vous"
       ],
       "You already have a free account": [
         "Vous avez déjà un compte gratuit."
@@ -10355,6 +10310,26 @@
         "Progression : ${ combinedProgress } %"
       ]
     },
+    "Property": {
+      "attributes": [
+        "Attributs"
+      ],
+      "content key": [
+        "clé de contenu"
+      ],
+      "hash key": [
+        "clé de hachage"
+      ],
+      "key": [
+        "clé"
+      ],
+      "membership": [
+        "abonnement"
+      ],
+      "name": [
+        "nom"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adresse"
@@ -11968,6 +11943,9 @@
       "Created": [
         "Créé"
       ],
+      "Estimated size": [
+        "Taille estimée"
+      ],
       "Expires": [
         "Expire"
       ],
@@ -11977,11 +11955,17 @@
       "Name": [
         "Nom"
       ],
+      "Size": [
+        "Taille"
+      ],
       "Status": [
         "État"
       ],
       "Type": [
         "Type"
+      ],
+      "User": [
+        "Utilisateur"
       ]
     },
     "TableHeader": {

@@ -3199,6 +3199,9 @@
       "Ask the model to be more careful and thorough": [
         "Sag dem Modell, es soll vorsichtiger und gründlicher sein."
       ],
+      "Back": [
+        "Zurück"
+      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -3222,6 +3225,9 @@
       ],
       "Close": [
         "Schließen"
+      ],
+      "Continue": [
+        "Fortfahren"
       ],
       "Copy link & caption": [
         "Link & Bildunterschrift kopieren"
@@ -3285,6 +3291,9 @@
       ],
       "Favorite": [
         "Favorit"
+      ],
+      "Generate my report": [
+        "Meinen Bericht erzeugen"
       ],
       "Go to all projects": [
         "Gehe zu allen Projekten"
@@ -3697,9 +3706,6 @@
       "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what coverage you’re offered and what you pay.": [
         "Eine beiläufige Erwähnung von Stress, einer Diagnose oder eines Medikaments kann in Risikomodelle einfließen, die still und leise Einfluss darauf nehmen, welcher Versicherungsschutz dir angeboten wird und wie viel du bezahlst."
       ],
-      "Anthropic will email you a download link when your export is ready.": [
-        "Anthropic sendet dir per E-Mail einen Download-Link, sobald dein Export fertig ist."
-      ],
       "Any images generated in these conversations will also be deleted.": [
         "Alle in diesen Unterhaltungen erstellten Bilder werden ebenfalls gelöscht."
       ],
@@ -3724,9 +3730,6 @@
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Navigiere zu dem ${ DRIVE_SHORT_APP_NAME }-Ordner, den du mit diesem Projekt verknüpfen möchtest, und klicke dann auf \"Diesen Ordner verknüpfen\"."
       ],
-      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100 million people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
-        "Von ${ BRAND_NAME } entwickelt, der Datenschutzmarke, der über 100 Millionen Menschen vertrauen, und dem Team hinter ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } und ${ PASS_APP_NAME }."
-      ],
       "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100M people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
         "Von ${ BRAND_NAME } entwickelt, der Datenschutzmarke, der über 100 Millionen Menschen vertrauen, und dem Team hinter ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } und ${ PASS_APP_NAME }."
       ],
@@ -3739,8 +3742,8 @@
       "Check what your AIs store about you and delete what you no longer need.": [
         "Überprüfe, welche Daten deine KI-Systeme über dich speichern, und lösche diejenigen, die du nicht mehr benötigst."
       ],
-      "Choose or drop your ChatGPT or Claude export (.zip or conversations.json). We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
-        "Deine ChatGPT- oder Claude-Exportdatei (.zip oder .json der Unterhaltung) auswählen oder hierhin ziehen. Wir analysieren deine neusten ${ PAPER_TRAIL_LIMITS.maxPrompts } Eingabeaufforderungen."
+      "Choose or drop your .zip or conversations.json file. We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
+        "Deine Dateien .zip oder .json der Unterhaltung auswählen oder hierhin ziehen. Wir analysieren deine neusten ${ PAPER_TRAIL_LIMITS.maxPrompts } Eingabeaufforderungen."
       ],
       "Click Settings → Data controls": [
         "Klicken Einstellungen → Datensteuerung"
@@ -3748,8 +3751,8 @@
       "Click Settings → Privacy": [
         "Klicke Einstellungen → Datenschutz"
       ],
-      "Click your profile icon in the bottom-left corner": [
-        "Klicke auf dein Profil-Symbol in der unteren linken Ecke"
+      "Click your profile icon in the bottom-left corner of the page": [
+        "Klicke auf dein Profil-Symbol in der unteren linken Ecke der Seite"
       ],
       "Conversation encrypted": [
         "Unterhaltung verschlüsselt"
@@ -3781,17 +3784,23 @@
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Finde heraus, was die KI von Big Tech aus deinem Chatverlauf über dich zusammensetzen könnte – und erhalte einen Privatsphäre-Score, den du teilen kannst."
       ],
+      "Drag and drop or click to browse": [
+        "Per Drag-and-Drop oder per Klick auswählen"
+      ],
       "Drive files are not available for guest users": [
         "Drive-Dateien sind für Gastbenutzer nicht verfügbar"
       ],
       "Every conversation leaves behind small clues. On their own, they don't say much. Together, they can reveal a surprisingly detailed picture of your life. This report shows what other AI providers can infer from your chats. But unlike them, ${ LUMO_SHORT_APP_NAME } doesn't see your data.": [
         "Jede Unterhaltung hinterlässt kleine Hinweise. Für sich genommen sagen sie nicht viel aus. Zusammengenommen können sie jedoch ein überraschend detailliertes Bild deines Lebens zeichnen. Dieser Bericht zeigt, welche Rückschlüsse andere KI-Anbieter aus deinen Chats ziehen können. Im Gegensatz zu ihnen hat ${ LUMO_SHORT_APP_NAME } jedoch keinen Zugriff auf deine Daten."
       ],
-      "Every conversation with the big AI providers leaves a digital paper trail. Your job. Your health. Your relationships. Even where you live. To see what Big Tech can piece together from your chats upload your AI data below.": [
-        "Jede Unterhaltung mit KI-Diensten hinterlässt Spuren. Dein Job. Deine Gesundheit. Deine Beziehungen. Dein Zuhause. Um herauszufinden, was die KI der großen Tech-Konzerne bereits über dich wissen, lade hier unten deine KI-Daten hoch und sieh selbst."
+      "Every conversation with the big AI providers leaves a digital paper trail. Your job. Your health. Your relationships. Even where you live.": [
+        "Jede Unterhaltung mit den großen KI-Anbietern hinterlässt digitale Spuren. Dein Beruf. Deine Gesundheit. Deine Beziehungen. Sogar dein Wohnort."
       ],
       "Example prompts shown when a conversation begins.": [
         "Beispiel-Eingabeaufforderungen, die zu Beginn eines Gesprächs angezeigt werden."
+      ],
+      "Export your data from ChatGPT or Claude, upload it privately, and we’ll show you what big tech AI has learned about you.": [
+        "Exportiere deine Daten aus ChatGPT oder Claude, lade sie vertraulich hoch, und wir zeigen dir, was die KI der großen Tech-Konzerne über dich gelernt hat."
       ],
       "Exposure by life area only, no personal details.": [
         "Angaben nur nach Lebensbereichen, keine persönlichen Daten."
@@ -3808,9 +3817,6 @@
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Dateien, die in dieses Projekt hochgeladen werden, werden im verknüpften Drive-Ordner gespeichert."
       ],
-      "Follow the prompts and confirm the export": [
-        "Folge den Anweisungen und bestätige den Export"
-      ],
       "Follow the prompts to confirm the export": [
         "Folge den Anweisungen, um den Export zu bestätigen"
       ],
@@ -3820,11 +3826,14 @@
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "Erhalte schnellere, genauere Antworten aus dem Web, inklusive Quellenangaben, damit du die Quelle überprüfen kannst."
       ],
-      "If a profile suggests you can pay more or that you’re in a hurry, you may see a higher price than the next person.I": [
+      "If a profile suggests you can pay more or that you’re in a hurry, you may see a higher price than the next person.": [
         "Wenn ein Profil darauf hindeutet, dass du mehr bezahlen kannst oder es eilig hast, wird dir möglicherweise ein höherer Preis angezeigt als der nächsten Person."
       ],
       "Image": [
         "Bild"
+      ],
+      "In the pop-up window, click Confirm export": [
+        "Klicke im Pop-up-Fenster auf „Export bestätigen“"
       ],
       "Inferences drawn only from your prompts — grouped by life area.": [
         "Schlussfolgerungen, die ausschließlich auf der Grundlage deiner Eingaben gezogen wurden – nach Lebensbereichen gruppiert."
@@ -3847,11 +3856,8 @@
       "Lockdown Mode is enabled on your device": [
         "Der Sperrmodus ist auf deinem Gerät aktiviert"
       ],
-      "Log in to your AI platform and request an export of your chat history, then download it to your device.": [
-        "Melde dich bei deiner KI-Plattform an und fordere einen Export deines Chat-Verlaufs an. Lade diesen anschließend auf dein Gerät herunter."
-      ],
-      "Look for Export data": [
-        "„Daten exportieren“ suchen"
+      "Look for Export data, then click Export": [
+        "Suche nach „Daten exportieren“ und klicke dann auf „Exportieren“."
       ],
       "No favorites yet. Star a chat to find it here quickly.": [
         "Noch keine Favoriten. Setze ein Sternchen auf einen Chat, um ihn hier schnell wiederzufinden."
@@ -3865,11 +3871,11 @@
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "Öffne auf dem iPhone oder iPad „Einstellungen“ → „Apps“ → „Safari“ und stelle sicher, dass „Alle Cookies blockieren“ deaktiviert ist. Lade die Seite anschließend neu."
       ],
-      "OpenAI will email you a download link. It can take up to 24 hours.": [
-        "OpenAI wird dir per E-Mail einen Download-Link zusenden. Dies kann bis zu 24 Stunden dauern."
-      ],
       "PASTED": [
         "Eingefügt"
+      ],
+      "Please upload your AI export before continuing.": [
+        "Bitte lade deinen KI-Export hoch, bevor du fortfährst."
       ],
       "Processing file...": [
         "Datei wird verarbeitet..."
@@ -3886,13 +3892,10 @@
       "red flags": [
         "Warnsignale"
       ],
-      "See the profile that an AI company can build from your conversations alone.": [
-        "Sieh dir an, welches Profil eine KI-Firma allein anhand deiner Unterhaltungen erstellen kann."
-      ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Sieh dir an, was die KI der Tech-Riesen über dich weiß. Erstellt mit ${ LUMO_SHORT_APP_NAME }."
       ],
-      "Sign in to your ChatGPT account at chatgpt.com": [
+      "Sign in to your ChatGPT account on chatgpt.com": [
         "Melde dich unter chatgpt.com bei deinem ChatGPT-Konto an"
       ],
       "Sign in to your Claude account at claude.ai": [
@@ -3915,6 +3918,9 @@
       ],
       "The more an attacker knows about you, the more believable the phishing message. Personalized scams are far harder to spot.": [
         "Je mehr ein Angreifer über dich weiß, desto glaubwürdiger wirkt die Phishing-Nachricht. Personalisierte Betrugsversuche sind weitaus schwerer zu erkennen."
+      ],
+      "There wasn't enough information in the data you uploaded to build a meaningful profile. Either you haven't used this AI much, or your exported data doesn't contain enough detail for us to make reliable inferences.": [
+        "Die von dir hochgeladenen Daten enthielten nicht genügend Informationen, um ein aussagekräftiges Profil zu erstellen. Entweder hast du diese KI noch nicht oft genutzt, oder deine exportierten Daten enthalten nicht genügend Details, um zuverlässige Rückschlüsse ziehen zu können."
       ],
       "These are the most sensitive categories Big Tech AI could infer about you from your chats — even when you never typed them out explicitly.": [
         "Dies sind die sensibelsten Kategorien, die die KI der großen Tech-Konzerne aus deinen Chats ableiten könnte – selbst wenn du diese nie ausdrücklich eingetippt hast."
@@ -3961,9 +3967,6 @@
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "Die Verwendung von ${ DRIVE_APP_NAME } ermöglicht ${ LUMO_SHORT_APP_NAME }, mit größeren Dateien zu arbeiten."
       ],
-      "We extract your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts to keep processing fast. Nothing is stored on our servers. You can optionally save your report on this device.": [
-        "Wir extrahieren deine ${ PAPER_TRAIL_LIMITS.maxPrompts } neuesten Eingabeaufforderungen, um die Verarbeitung schnell zu halten. Auf unseren Servern wird nichts gespeichert. Du kannst deinen Bericht optional auf diesem Gerät speichern."
-      ],
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Wir speichern deine Karte, damit du sie an den Post anhängen kannst – soziale Netzwerke können das Bild nicht für dich hinzufügen."
       ],
@@ -3984,6 +3987,9 @@
       ],
       "Your report is stored unencrypted in this browser only. It never leaves your device and is not sent to ${ LUMO_SHORT_APP_NAME }'s servers.": [
         "Dein Bericht wird ausschließlich in diesem Browser unverschlüsselt gespeichert. Er verlässt dein Gerät zu keinem Zeitpunkt und wird nicht an die Server von ${ LUMO_SHORT_APP_NAME } gesendet."
+      ],
+      "You’ll receive your data export as a download link to your email. This may take some time depending on the size of your export, and is not available for Business or Enterprise accounts.": [
+        "Du erhältst deinen Datenexport als Download-Link per E-Mail. Je nach Umfang deines Exports kann dies einige Zeit dauern; für Business- oder Enterprise-Konten ist diese Funktion nicht verfügbar."
       ]
     },
     "collider_2025:Inspiration suggestion prompt": {
@@ -4076,6 +4082,9 @@
       "9:16": [
         "9:16"
       ],
+      "AI platform": [
+        "KI-Plattform"
+      ],
       "Card theme": [
         "Karten-Farbschema"
       ],
@@ -4097,9 +4106,6 @@
       "Data brokers": [
         "Datenhändler"
       ],
-      "Date": [
-        "Datum"
-      ],
       "Describe what to change": [
         "Beschreibe, was geändert werden soll"
       ],
@@ -4117,6 +4123,12 @@
       ],
       "Folder name": [
         "Ordnername"
+      ],
+      "Generating": [
+        "Wird erzeugt"
+      ],
+      "Generating your report": [
+        "Dein Bericht wird erzeugt"
       ],
       "High": [
         "Hoch"
@@ -4160,14 +4172,20 @@
       "Personalized pricing": [
         "Individuelle Preisgestaltung"
       ],
+      "Platform": [
+        "Plattform"
+      ],
       "Politics": [
         "Politik"
+      ],
+      "Progress": [
+        "Fortschritt"
       ],
       "Project Instructions (optional)": [
         "Projektanweisungen (optional)"
       ],
-      "Save analysis on this device to view it later": [
-        "Analyse auf diesem Gerät speichern, um sie später anzusehen"
+      "Save report on this device to view it later": [
+        "Bericht auf diesem Gerät speichern, um ihn später anzusehen"
       ],
       "Scams": [
         "Betrugsversuche"
@@ -4189,6 +4207,9 @@
       ],
       "Untitled project": [
         "Unbenanntes Projekt"
+      ],
+      "Upload": [
+        "Hochladen"
       ]
     },
     "collider_2025:Notification": {
@@ -4717,9 +4738,6 @@
       "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
         "Entdecke Bilder, die mit ${ LUMO_SHORT_APP_NAME } erstellt wurden"
       ],
-      "Export your data": [
-        "Exportiere deine Daten"
-      ],
       "Favorites": [
         "Favoriten"
       ],
@@ -4729,14 +4747,8 @@
       "Filters": [
         "Filter"
       ],
-      "Generate your AI Paper Trail": [
-        "Deine KI-Dokumentationskette erzeugen"
-      ],
       "Get started by creating a new project": [
         "Beginne damit, ein neues Projekt zu erstellen"
-      ],
-      "Get your AI Paper Trail": [
-        "Hol dir deinen KI-Paper-Trail"
       ],
       "Ghost mode": [
         "Ghost-Modus"
@@ -4770,6 +4782,9 @@
       ],
       "Linked Drive Folder": [
         "Verknüpfte Drive-Ordner"
+      ],
+      "Looks like you've kept a low profile": [
+        "Sieht so aus, als hättest du dich zurückgehalten"
       ],
       "Meet your AI Paper Trail": [
         "Lerne deine KI-Dokumentationskette kennen"
@@ -4876,8 +4891,8 @@
       "Two models, two modes": [
         "Zwei Modelle, zwei Modi"
       ],
-      "Upload it securely": [
-        "Sicher hochladen"
+      "Upload your data export": [
+        "Deinen Daten-Export hochladen"
       ],
       "Use AI on your terms": [
         "KI zu deinen Bedingungen nutzen"
@@ -4903,14 +4918,11 @@
       "You saw the profile? Now protect the person behind it.": [
         "Hast du das Profil gesehen? Dann schütze jetzt die Person dahinter."
       ],
-      "Your conversations should belong to you. With ${ LUMO_SHORT_APP_NAME }, they do.": [
-        "Deine Unterhaltungen sollten dir gehören. Mit ${ LUMO_SHORT_APP_NAME } ist das auch der Fall."
-      ],
       "Your image gallery is empty": [
         "Deine Bildergalerie ist leer"
       ],
-      "Your recent files": [
-        "Deine aktuellsten Dateien"
+      "Your recent reports": [
+        "Dein neuster Bericht"
       ],
       "Your shareable card": [
         "Deine teilbare Karte"
@@ -6024,6 +6036,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } ist dein Benutzername. Um ${ emailAddress } zu erstellen, gehe bitte zu Einstellungen > Identität und E-Mail-Adressen > Kurzdomain (pm.me)"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Bei der Meldung von Urheberrechtsverletzungen oder gestohlenen Daten ist eine Nachricht erforderlich."
+      ],
       "Amount above the maximum.": [
         "Höchstbetrag überschritten"
       ],
@@ -6033,11 +6048,68 @@
       "An error occurred": [
         "Ein Fehler ist aufgetreten"
       ],
+      "Bookmark password is not available": [
+        "Lesezeichen-Passwort nicht verfügbar"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Ohne einen gültigen Namen kann kein Foto zum Album hinzugefügt werden"
+      ],
+      "Cannot download a folder": [
+        "Ordner kann nicht heruntergeladen werden"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Der Eintrag kann ohne gültigen Namen nicht verschoben werden. Bitte benenne den Eintrag zunächst um."
+      ],
+      "Cannot share root folder": [
+        "Der Stammordner konnte nicht geteilt werden"
+      ],
+      "Cannot verify the author of this file": [
+        "Der Urheber dieser Datei kann nicht überprüft werden"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Es lässt sich nicht feststellen, wer diese Datei hochgeladen hat"
+      ],
       "Checkout expired, please try again": [
         "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
       ],
       "Company name or personal name is required": [
         "Firmenname oder Name der Person erforderlich"
+      ],
+      "Copy operation aborted": [
+        "Kopiervorgang abgebrochen"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Das Kopieren eines Eintrags nach außerhalb eines Ordners ist nicht zulässig"
+      ],
+      "Could not find an available name": [
+        "Es konnte kein verfügbarer Name gefunden werden"
+      ],
+      "Could not load sharing details": [
+        "Freigabeinformationen konnten nicht geladen werden"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Bildvorschau konnte nicht geladen werden: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Ein Teil dieser Datei konnte nicht gelesen werden: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Der übergeordnete Ordner konnte nicht entsperrt werden"
+      ],
+      "Could not unlock this item": [
+        "Dieser Eintrag konnte nicht entsperrt werden"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Das Erstellen von Dokumenten außerhalb von Ordnern ist nicht zulässig"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Das Erstellen von Dokumenten außerhalb von Ordnern ist nicht zulässig"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Das Erstellen von Ordnern außerhalb von Ordnern ist nicht zulässig."
+      ],
+      "Device not found": [
+        "Gerät nicht gefunden"
       ],
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
@@ -6057,8 +6129,47 @@
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
       ],
+      "Expiration date cannot be in the past": [
+        "Ablaufdatum darf nicht in der Vergangenheit liegen"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Lesezeichenschlüssel konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Name des Lesezeichens konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Das Lesezeichen-Passwort konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Entschlüsselung des Inhaltsschlüssels fehlgeschlagen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Name des Eintrags konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Entschlüsselung des Knotenschlüssels fehlgeschlagen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Die Entschlüsselung der Versionsmetadaten ist fehlgeschlagen"
+      ],
+      "Failed to get inviter keys": [
+        "Schlüssel des Einladers konnten nicht abgerufen werden"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
+      ],
+      "Failed to verify invitation": [
+        "Einladung konnte nicht verifiziert werden"
+      ],
+      "File download failed due to empty response": [
+        "Das Herunterladen der Datei ist aufgrund einer leeren Antwort fehlgeschlagen"
+      ],
+      "File has no revision": [
+        "Datei hat keine Versionen"
+      ],
+      "Image preview not found": [
+        "Bildvorschau nicht gefunden"
       ],
       "Incorrect username": [
         "Falscher Benutzername"
@@ -6075,14 +6186,63 @@
       "Invalid postal code": [
         "Ungültige Postleitzahl"
       ],
+      "Invalid URL": [
+        "Ungültige URL"
+      ],
       "Invalid VAT number": [
         "Ungültige USt-IdNr."
       ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
       ],
+      "Invitation not found": [
+        "Einladung nicht gefunden"
+      ],
+      "Item not found": [
+        "Eintrag nicht gefunden"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Der alte öffentliche Link kann nicht aktualisiert werden. Bitte erstelle einen neuen öffentlichen Link."
+      ],
+      "Missing inviter email": [
+        "E-Mail-Adresse des Einladers fehlt"
+      ],
+      "Missing signature": [
+        "Fehlende Signatur"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Signatur für ${ signatureType } fehlt"
+      ],
+      "Move operation aborted": [
+        "Verschiebevorgang abgebrochen"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Das Verschieben eines Eintrags nach außerhalb eines Ordners ist nicht zulässig"
+      ],
+      "Moving root item is not allowed": [
+        "Das Verschieben des Stammeintrags ist nicht zulässig"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein",
+        "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein"
+      ],
+      "Name must not be empty": [
+        "Name darf nicht leer sein"
+      ],
+      "No file data was received. Please try again.": [
+        "Es wurden keine Dateidaten empfangen. Bitte versuche es erneut."
+      ],
       "Not a valid number": [
         "Keine gültige Zahl"
+      ],
+      "Only admins can convert external invitations": [
+        "Nur Administratoren können externe Einladungen umwandeln"
+      ],
+      "Operation aborted": [
+        "Vorgang abgebrochen"
+      ],
+      "Operation failed, try again later": [
+        "Vorgang fehlgeschlagen, versuche es später erneut"
       ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
@@ -6092,6 +6252,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsschlüssel muss aktiviert sein, um nicht-private Benutzer anzulegen"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Ein Teil der Datei scheint beschädigt zu sein"
       ],
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
@@ -6107,6 +6270,12 @@
       ],
       "Payment process not supported": [
         "Bezahlvorgang nicht unterstützt"
+      ],
+      "Photo is already in the target album": [
+        "Foto befindet sich bereits im Zielalbum"
+      ],
+      "Photo not found": [
+        "Foto nicht gefunden"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Bitte überprüfe, ob deine ABN für die grenzüberschreitende Mehrwertsteuer registriert ist"
@@ -6141,14 +6310,44 @@
       "Process aborted": [
         "Prozess abgebrochen"
       ],
+      "Renaming root item is not allowed": [
+        "Das Umbenennen des Stammeintrags ist nicht zulässig"
+      ],
+      "Request aborted": [
+        "Anfrage abgebrochen"
+      ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Rückerstattung der Umsatzsteuer ist für dieses Abonnement nicht unterstützt"
       ],
+      "Signature is missing": [
+        "Signatur fehlt"
+      ],
       "Signature verification failed": [
         "Signaturprüfung fehlgeschlagen"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturprüfung ist fehlgeschlagen: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturprüfung für ${ signatureType } ist fehlgeschlagen"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturprüfung für ${ signatureType } ist fehlgeschlagen: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Einige Dateidaten konnten nicht hochgeladen werden. Bitte versuche es erneut."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Einige Dateiteile konnten nicht hochgeladen werden. Bitte versuche es erneut."
+      ],
+      "Some items could not be loaded": [
+        "Einige Einträge konnten nicht geladen werden"
+      ],
+      "Something went wrong": [
+        "Etwas ist schief gelaufen."
       ],
       "Something went wrong. Please try again.": [
         "Etwas ist schief gelaufen. Bitte versuche es später erneut."
@@ -6168,6 +6367,9 @@
       "The minimum donation amount is ${ price }": [
         "Der Mindestspendenbetrag ist ${ price }"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Die hochgeladene Datei stimmt nicht mit dem Original überein. Bitte versuche es erneut."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
       ],
@@ -6179,6 +6381,30 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
+      ],
+      "This file has missing crypto material": [
+        "In dieser Datei fehlt Kryptomaterial"
+      ],
+      "This file has no version available to download": [
+        "Für diese Datei steht keine Version zum Herunterladen zur Verfügung"
+      ],
+      "This file version could not be uploaded": [
+        "Diese Dateiversion konnte nicht hochgeladen werden"
+      ],
+      "This item has no image preview": [
+        "Dieser Eintrag hat keine Bildvorschau"
+      ],
+      "This item is no longer shared": [
+        "Dieser Eintrag wird nicht länger geteilt"
+      ],
+      "This item is not shared": [
+        "Dieser Eintrag wird nicht geteilt"
+      ],
+      "Too many server errors, please try again later": [
+        "Zu viele Server-Fehler, bitte versuche es später erneut"
+      ],
+      "Too many server requests, please try again later": [
+        "Zu viele Server-Anfragen bitte versuche es später erneut"
       ],
       "Try using only letters, numerals, and _.-": [
         "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
@@ -6198,11 +6424,35 @@
       "VAT number must start with ${ prefixes }": [
         "MWST-Nummer muss mit ${ prefixes } beginnen"
       ],
+      "Verification keys are not available": [
+        "Verifizierungsschlüssel sind nicht verfügbar"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifizierungsschlüssel für ${ signatureType } sind nicht verfügbar"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Wir konnten mit dieser Methode keinen Bestätigungscode senden."
       ],
       "Wrong billing address": [
         "Ungültige Rechnungsadresse"
+      ],
+      "You can create public links for your own files only": [
+        "Du kannst öffentliche Links nur für deine eigenen Dateien erstellen"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kannst nur Einträge verlassen, die für dich freigegeben sind"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kannst nur eine neue Version einer Datei hochladen"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kannst einen öffentlichen Link nur für deine eigenen Dateien aktualisieren"
+      ],
+      "You do not have access to this item": [
+        "Du hast keinen Zugriff auf diesen Eintrag"
+      ],
+      "You do not have access to this shared item": [
+        "Du hast keinen Zugriff auf diesen geteilten Eintrag"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nicht entschlüsselbarer Name"
@@ -6532,6 +6782,9 @@
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
+      "Author is not provided on public link": [
+        "Urheber wird unter dem öffentlichen Link nicht angegeben"
+      ],
       "Awaiting transaction": [
         "Warte auf Transaktion"
       ],
@@ -6718,9 +6971,6 @@
       ],
       "JCB logo": [
         "JCB-Logo"
-      ],
-      "Keys created": [
-        "Schlüssel erstellt"
       ],
       "Learn more": [
         "Mehr erfahren"
@@ -6920,9 +7170,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
-      ],
-      "User activated": [
-        "Benutzer aktiviert"
       ],
       "Users": [
         "Benutzer"
@@ -9206,6 +9453,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Auf ${ upsellPlanTitle } upgraden"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "Merkmale"
+      ],
+      "content key": [
+        "Inhaltsschlüssel"
+      ],
+      "hash key": [
+        "Hash-Schlüssel"
+      ],
+      "key": [
+        "Schlüssel"
+      ],
+      "membership": [
+        "Mitgliedschaft"
+      ],
+      "name": [
+        "Name"
       ]
     },
     "Provider option": {

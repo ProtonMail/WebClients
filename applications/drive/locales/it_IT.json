@@ -1639,125 +1639,6 @@
         "Annuale"
       ]
     },
-    "BOSS": {
-      "Activated": [
-        "Attivato"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "L'indirizzo è già utilizzato da un utente esterno alla tua organizzazione. Contatta l'assistenza clienti per risolvere il problema"
-      ],
-      "All": [
-        "Tutti"
-      ],
-      "Calendar": [
-        "Calendario"
-      ],
-      "Configure migration": [
-        "Configura la migrazione"
-      ],
-      "Contacts": [
-        "Contatti"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Stato della migrazione dei dati da Google Workspace a ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Email"
-      ],
-      "Errors": [
-        "Errori"
-      ],
-      "Estimated size": [
-        "Dimensioni Stimate"
-      ],
-      "Find out what can be migrated.": [
-        "Scopri cosa può essere migrato."
-      ],
-      "Has errors": [
-        "Presenta errori"
-      ],
-      "In progress": [
-        "In corso"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Indirizzo del membro non trovato. Contatta l'assistenza clienti per risolvere il problema"
-      ],
-      "Migrate": [
-        "Migra"
-      ],
-      "Migrated": [
-        "Migrato"
-      ],
-      "Migration status": [
-        "Stato della migrazione"
-      ],
-      "Missing organization private key": [
-        "Chiave privata dell'organizzazione mancante"
-      ],
-      "Missing organization public key": [
-        "Chiave pubblica dell'organizzazione mancante"
-      ],
-      "No users to display": [
-        "Nessun utente da mostrare"
-      ],
-      "Not activated": [
-        "Non attivato"
-      ],
-      "Organization does not have enough seats available": [
-        "L'organizzazione non dispone di licenze sufficienti"
-      ],
-      "Organization does not have enough storage available": [
-        "L'organizzazione non dispone di spazio di archiviazione sufficiente"
-      ],
-      "Pending": [
-        "In attesa"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Seleziona esattamente cosa desideri migrare. Si applicherà a tutti gli utenti dell'organizzazione."
-      ],
-      "Select users to migrate": [
-        "Seleziona gli utenti da migrare"
-      ],
-      "Size": [
-        "Dimensione"
-      ],
-      "Status": [
-        "Stato"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Impossibile migrare questo utente a causa di incompatibilità della piattaforma."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Per migrare questo utente, attiva il suo account nella tua Console di amministrazione di Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Per migrare questo utente, attiva il suo account in ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Per migrare questo utente, attiva il suo indirizzo in ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Per migrare questo utente, è necessario che accetti l'invito a unirti a ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Per migrare questo utente, ripristinalo dall'archivio nella tua Console di amministrazione di Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Per migrare questo utente, riattivalo nella tua Console di amministrazione di Google Workspace."
-      ],
-      "User": [
-        "Utente"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Utenti che hanno effettuato l'accesso al proprio account ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Cosa stai migrando?"
-      ],
-      "You": [
-        "Tu"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Applicazione desktop ${ MAIL_APP_NAME }"
@@ -3754,6 +3635,9 @@
       "Invalid public key file": [
         "File chiave pubblica non valido"
       ],
+      "Invalid URL": [
+        "URL non valido"
+      ],
       "Invalid VAT number": [
         "Partita IVA non valida"
       ],
@@ -3947,6 +3831,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alcuni nomi delle etichette superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
+      ],
+      "Something went wrong": [
+        "Qualcosa è andato storto"
       ],
       "Something went wrong during folder listing": [
         "Qualcosa è andato storto durante l'elenco delle cartelle"
@@ -5024,6 +4911,14 @@
         "Seleziona ${ boldExport } per esportare il calendario come file ICS."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "In corso"
+      ],
+      "Migrated": [
+        "Migrato"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } su ${ totalContacts } contatti non saranno importati. Clicca per i dettagli"
@@ -5966,9 +5861,6 @@
       "Key fingerprint": [
         "Impronta digitale della chiave"
       ],
-      "Keys created": [
-        "Chiavi create"
-      ],
       "Label all imported messages as": [
         "Etichetta tutti i messaggi importati come"
       ],
@@ -6791,9 +6683,6 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilizza questo modulo per informarci di contenuti inappropriati, illegali,\no altri file condivisi dannosi. Stai per segnalare:"
       ],
-      "User activated": [
-        "Utente attivato"
-      ],
       "username": [
         "nome utente"
       ],
@@ -7016,9 +6905,6 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Non ti verrà addebitato nulla se annulli prima del ${ trialEndsOnFormatted }."
-      ],
-      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
-        "Non potrai più condividere \"${ fileName }\" dopo aver modificato l'accesso in visualizzatore. Solo il proprietario potrà modificare di nuovo il tuo accesso."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Riceverai il premio in crediti 1 mese dopo che il tuo amico si sarà abbonato a un piano annuale e 2 mesi dopo che si sarà abbonato a un piano mensile."
@@ -12394,6 +12280,9 @@
       "Name": [
         "Nome"
       ],
+      "Size": [
+        "Dimensione"
+      ],
       "Status": [
         "Stato"
       ],
@@ -13431,9 +13320,6 @@
       ],
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Non abbiamo potuto verificare che un utente anonimo abbia creato questa cartella."
-      ],
-      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Non siamo riusciti a confermare che il contenuto del file sia stato caricato da ${ claimedContentAuthor }. Il motivo è: ${ activeRevision.contentAuthor.error.error }"
       ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "Non siamo riusciti a confermare che il nome sia stato creato o modificato da ${ claimedNameAuthor }. Il motivo è: ${ node.nameAuthor.error.error }"

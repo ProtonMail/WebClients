@@ -485,6 +485,9 @@
       "Edit users": [
         "Edit pengguna"
       ],
+      "Enable": [
+        "Aktifkan"
+      ],
       "enable desktop notifications": [
         "mengaktifkan notifikasi desktop"
       ],
@@ -841,9 +844,6 @@
       ],
       "Remove": [
         "Hapus"
-      ],
-      "Remove all members": [
-        "Keluarkan semua anggota"
       ],
       "Remove all other devices": [
         "Hapus seluruh perangkat lainnya"
@@ -2003,125 +2003,6 @@
       ],
       "Working with sensitive data?": [
         "Bekerja dengan data yang sensitif?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Diaktifkan"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Alamat sudah digunakan oleh pengguna di luar organisasi. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
-      ],
-      "All": [
-        "Semua"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Configure migration": [
-        "Atur migrasi"
-      ],
-      "Contacts": [
-        "Kontak"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status migrasi data dari Google Workspace ke ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Email"
-      ],
-      "Errors": [
-        "Kesalahan"
-      ],
-      "Estimated size": [
-        "Perkiraan ukuran"
-      ],
-      "Find out what can be migrated.": [
-        "Cari tahu apa saja yang dapat dimigrasikan."
-      ],
-      "Has errors": [
-        "Ada kesalahan"
-      ],
-      "In progress": [
-        "Sedang berlangsung"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Alamat anggota tidak ditemukan. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
-      ],
-      "Migrate": [
-        "Migrasi"
-      ],
-      "Migrated": [
-        "Dimigrasikan"
-      ],
-      "Migration status": [
-        "Status migrasi"
-      ],
-      "Missing organization private key": [
-        "Kunci pribadi organisasi hilang"
-      ],
-      "Missing organization public key": [
-        "Kunci publik organisasi hilang"
-      ],
-      "No users to display": [
-        "Tidak ada pengguna untuk ditampilkan"
-      ],
-      "Not activated": [
-        "Belum diaktifkan"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisasi tidak memiliki jumlah kuota yang memadai"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisasi tidak memiliki cukup ruang penyimpanan yang tersedia"
-      ],
-      "Pending": [
-        "Tertunda"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Pilih apa yang ingin dimigrasikan. Ini akan berlaku untuk semua pengguna organisasi."
-      ],
-      "Select users to migrate": [
-        "Pilih pengguna untuk dimigrasikan"
-      ],
-      "Size": [
-        "Ukuran"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Pengguna ini tidak dapat dimigrasikan karena ketidakcocokan platform."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Untuk memigrasikan pengguna ini, aktifkan akunnya di Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Untuk memigrasikan pengguna ini, aktifkan akunnya di bawah ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Untuk memigrasikan pengguna ini, aktifkan alamatnya di bawah ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Untuk memigrasikan pengguna ini, pengguna tersebut harus menerima undangan untuk bergabung dengan ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Untuk memigrasikan pengguna ini, batalkan pengarsipannya di Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Untuk memigrasikan pengguna ini, batalkan penangguhannya di Google Workspace Admin Console."
-      ],
-      "User": [
-        "Pengguna"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Pengguna yang telah mengakses akun ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Apa yang ingin Anda migrasikan?"
-      ],
-      "You": [
-        "Anda"
       ]
     },
     "Browser": {
@@ -4880,6 +4761,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "Token atur ulang tidak valid. Silakan muat ulang halaman dan coba lagi."
       ],
+      "Invalid URL": [
+        "URL tidak valid"
+      ],
       "Invalid VAT number": [
         "Nomor PPN tidak valid"
       ],
@@ -4897,6 +4781,9 @@
       ],
       "Missing key packet": [
         "Paket kunci hilang"
+      ],
+      "Missing signature": [
+        "Tanda tangan hilang"
       ],
       "Name already exists": [
         "Nama sudah ada"
@@ -5083,6 +4970,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      ],
+      "Something went wrong": [
+        "Terjadi kesalahan"
       ],
       "Something went wrong while converting the address": [
         "Terjadi kesalahan saat mengonversi alamat"
@@ -6647,6 +6537,14 @@
         "Pilih ${ boldExport } untuk mengekspor kalender sebagai file ICS."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Migrated": [
+        "Dimigrasikan"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
@@ -7105,9 +7003,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Apakah Anda yakin untuk menghapus hak administratif pengguna ini?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "Apakah Anda yakin ingin menghapus seluruh anggota dari grup ini?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Apakah Anda yakin untuk menghapus domain ${ boldDomain }?"
@@ -8515,6 +8410,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Dirutekan secara pintar melalui: ${ joinedCountries }."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Sebagian aplikasi ${ BRAND_NAME } dapat belum mendukung kunci keamanan. Apabila Anda menonaktifkan 2FA milik aplikasi autentikator, Anda mungkin tidak akan dapat masuk ke aplikasi ini."
@@ -14551,17 +14449,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Pastikan Anda menyalin token SCIM di atas sekarang."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Setelah SCIM dinonaktifkan untuk organisasi Anda, **semua pengguna SCIM yang sebelumnya disediakan otomatis oleh penyedia identitas Anda akan dikonversi menjadi pengguna SSO** dan Anda akan dapat mengelolanya langsung di pengaturan ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Menyederhanakan pengelolaan pengguna di berbagai layanan. Tambahkan, edit, dan hapus pengguna di penyedia identitas Anda, dan perubahan tersebut akan otomatis diterapkan ke organisasi ${ appName } Anda."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Penyediaan SCIM otomatis akan dinonaktifkan hingga Anda memasukkan token SCIM yang baru ke pengaturan penyedia identitas Anda."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "URL dasar dan token SCIM akan dihapus."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Untuk mengaktifkan kembali sinkronisasi dengan penyedia identitas yang Anda gunakan, Anda perlu untuk menyelesaikan ulang proses integrasi SCIM."
@@ -16523,6 +16415,14 @@
         "Untuk individu"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Ukuran"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Tindakan"
@@ -17565,9 +17465,6 @@
       ],
       "Reject device?": [
         "Tolak perangkat?"
-      ],
-      "Remove all members?": [
-        "Hapus seluruh anggota?"
       ],
       "Remove device?": [
         "Hapus perangkat?"

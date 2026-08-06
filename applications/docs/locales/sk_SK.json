@@ -1327,125 +1327,6 @@
         "Špeciálne navrhnutý NetShield chráni vaše zariadenia a zrýchľuje vaše prehliadanie tým, že blokuje reklamy, sledovače a malvér."
       ]
     },
-    "BOSS": {
-      "Activated": [
-        "Aktivované"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresu už používa používateľ mimo vašej organizácie. Kontaktujte zákaznícku podporu, aby ste to vyriešili."
-      ],
-      "All": [
-        "Všetko"
-      ],
-      "Calendar": [
-        "Kalendár"
-      ],
-      "Configure migration": [
-        "Nastaviť migráciu"
-      ],
-      "Contacts": [
-        "Kontakty"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Stav migrácie dát z Google Workspace do ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Emaily"
-      ],
-      "Errors": [
-        "Chyby"
-      ],
-      "Estimated size": [
-        "Odhadovaná veľkosť"
-      ],
-      "Find out what can be migrated.": [
-        "Zistite, čo je možné preniesť."
-      ],
-      "Has errors": [
-        "Má chyby"
-      ],
-      "In progress": [
-        "Prebieha"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adresa člena nebola nájdená. Na vyriešenie tohto problému kontaktujte zákaznícku podporu."
-      ],
-      "Migrate": [
-        "Migrovať"
-      ],
-      "Migrated": [
-        "Presunuté"
-      ],
-      "Migration status": [
-        "Stav migrácie"
-      ],
-      "Missing organization private key": [
-        "Chýba súkromný kľúč organizácie"
-      ],
-      "Missing organization public key": [
-        "Chýba verejný kľúč organizácie"
-      ],
-      "No users to display": [
-        "Nie sú žiadni používatelia na zobrazenie"
-      ],
-      "Not activated": [
-        "Neaktivované"
-      ],
-      "Organization does not have enough seats available": [
-        "Organizaícia nemá dostatok voľných licencií"
-      ],
-      "Organization does not have enough storage available": [
-        "Organzácia nemá dostatok úložného priestoru"
-      ],
-      "Pending": [
-        "Čakajúce"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Vyberte presne to, čo chcete preniesť. Zmena sa uplatní na všetkých používateľov v organizácii."
-      ],
-      "Select users to migrate": [
-        "Vyberte používateľov na presun"
-      ],
-      "Size": [
-        "Veľkosť"
-      ],
-      "Status": [
-        "Stav"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tohto používateľa nie je možné migrovať z dôvodu nekompatibility platforiem."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v konzole správcu Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v sekcii ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Ak chcete migrovať tohto používateľa, povoľte jeho adresu v sekcii ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Ak chcete migrovať tohto používateľa, musí prijať pozvánku do služby ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Ak chcete migrovať tohto používateľa, zrušte jeho archiváciu v konzole správcu Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Ak chcete migrovať tohto používateľa, zrušte jeho pozastavenie v konzole správcu Google Workspace."
-      ],
-      "User": [
-        "Používateľ"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Používatelia, ktorí sa prihlásili do svojho ${ BRAND_NAME } účtu"
-      ],
-      "What are you migrating?": [
-        "Čo migrujete?"
-      ],
-      "You": [
-        "Vy"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } desktopová aplikácia"
@@ -3337,6 +3218,9 @@
       "Invalid public key file": [
         "Zlý verejný kľúč"
       ],
+      "Invalid URL": [
+        "Neplatná URL"
+      ],
       "Invalid verification code": [
         "Nesprávny overovací kód"
       ],
@@ -3507,6 +3391,9 @@
       ],
       "Some trashed documents could not be loaded": [
         "Niektoré odstránené dokumenty sa nepodarilo načítať"
+      ],
+      "Something went wrong": [
+        "Niečo sa pokazilo"
       ],
       "Something went wrong while fetching available domains": [
         "Pri načítavaní dostupných domén sa vyskytla chyba"
@@ -4534,6 +4421,14 @@
         "Ak chcete kalendár exportovať ako ICS súbor, vyberte ${ boldExport }."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Prebieha"
+      ],
+      "Migrated": [
+        "Presunuté"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktov nebude importované. Kliknite pre detaily"
@@ -5218,9 +5113,6 @@
       "Key fingerprint": [
         "Identifikátor kľúča"
       ],
-      "Keys created": [
-        "Kľúče vytvorené"
-      ],
       "Label all imported messages as": [
         "Označiť všetky importované správy ako"
       ],
@@ -5725,9 +5617,6 @@
       "Uppercase and lowercase letters": [
         "Veľké a malé písmená"
       ],
-      "User activated": [
-        "Používateľ aktivovaný"
-      ],
       "username": [
         "používateľské meno"
       ],
@@ -5868,9 +5757,6 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
-      ],
-      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
-        "Po zmene prístupu na prehliadač nebudete môcť zdieľať \"${ fileName }\". Iba vlastník môže znova zmeniť váš prístup."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
@@ -10246,6 +10132,9 @@
       ],
       "Name": [
         "Meno"
+      ],
+      "Size": [
+        "Veľkosť"
       ],
       "Status": [
         "Stav"

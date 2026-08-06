@@ -1830,6 +1830,12 @@
       "Event deleted": [
         "Afspraak verwijderd"
       ],
+      "Failed to admit the participant. Please try again.": [
+        "Kan de deelnemer niet toelaten. Probeer het opnieuw."
+      ],
+      "Failed to admit the participants. Please try again.": [
+        "Het is niet gelukt de deelnemers toe te laten. Probeer het opnieuw."
+      ],
       "Failed to assign host": [
         "Host toewijzen mislukt"
       ],
@@ -1850,6 +1856,9 @@
       ],
       "Failed to delete room": [
         "Fout bij het verwijderen van de ruimte"
+      ],
+      "Failed to deny the participant. Please try again.": [
+        "Kan de deelnemer niet weigeren. Probeer het opnieuw."
       ],
       "Failed to download recording": [
         "Kon opname niet downloaden"
@@ -1890,6 +1899,9 @@
       "Failed to unlock meeting": [
         "Ontgrendelen van vergadering is mislukt"
       ],
+      "Failed to update waiting room setting. Please try again.": [
+        "Kan de wachtkamerinstelling niet updaten. Probeer het opnieuw."
+      ],
       "Incorrect username": [
         "Onjuiste gebruikersnaam"
       ],
@@ -1901,6 +1913,9 @@
       ],
       "Not a valid number": [
         "Geen geldig getal"
+      ],
+      "Organization key is not decrypted": [
+        "Organisatiesleutel is niet ontsleuteld"
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
@@ -2183,6 +2198,10 @@
         "${ totalParticipantCount } deelnemer",
         "${ totalParticipantCount } deelnemers"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "${ waitingRoomParticipantsCount } persoon wacht",
+        "${ waitingRoomParticipantsCount } personen wachten"
+      ],
       "(You)": [
         "(U)"
       ],
@@ -2348,6 +2367,9 @@
       "Everyone has been disconnected from the call.": [
         "De verbinding met iedereen is verbroken."
       ],
+      "Expires in ${ formattedCountdown }": [
+        "Verloopt over ${ formattedCountdown }"
+      ],
       "Failed to apply background blur": [
         "Toepassen van achtergrondvervaging mislukt"
       ],
@@ -2359,9 +2381,6 @@
       ],
       "Failed to update meeting schedule": [
         "Bijwerken vergaderingsschema mislukt"
-      ],
-      "Failed to update meeting waiting room status": [
-        "Kan de wachtkamerstatus van de vergadering niet updaten"
       ],
       "Free meeting": [
         "Gratis vergadering"
@@ -2402,6 +2421,9 @@
       "Internet connection lost": [
         "Internetverbinding verbroken"
       ],
+      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
+        "Deelnameverzoek is verlopen. De gastheer heeft u niet op tijd toegelaten. Stuur een nieuw verzoek om lid te worden."
+      ],
       "Joined ${ roomNameLabel }": [
         "Deelname aan ${ roomNameLabel }"
       ],
@@ -2431,6 +2453,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
+      ],
+      "Loading meeting details...": [
+        "Vergaderingsgegevens laden..."
       ],
       "Loading meetings...": [
         "Vergaderingen laden..."
@@ -2789,6 +2814,12 @@
       "View ": [
         "Bekijken "
       ],
+      "Waiting for the host to admit you. The host has been notified that you're waiting.": [
+        "Wachten tot de host u toelaat. De host heeft een melding ontvangen dat u wacht."
+      ],
+      "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
+        "Wachten tot de host begint. U neemt deel wanneer de gastheer de vergadering start en u toelaat."
+      ],
       "Warning": [
         "Waarschuwing"
       ],
@@ -2833,6 +2864,9 @@
       ],
       "You were removed from the meeting": [
         "U bent uit de vergadering verwijderd"
+      ],
+      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
+        "U bent niet toegelaten tot deze bijeenkomst. U kunt proberen opnieuw lid te worden als u denkt dat dit een vergissing was."
       ],
       "You will leave the meeting. Others will continue.": [
         "U verlaat de vergadering. Anderen gaan door."
@@ -3122,6 +3156,9 @@
       "Use simple selfie segmentation": [
         "Eenvoudige selfie-segmentatie gebruiken"
       ],
+      "Use waiting room with a paid plan": [
+        "Gebruik wachtkamer met een betaald abonnement"
+      ],
       "Verification code": [
         "Verificatiecode"
       ],
@@ -3253,6 +3290,20 @@
       ],
       "Video quality was poor": [
         "De videokwaliteit was slecht"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Organisatiesleutel bestaat niet."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
+      ],
+      "The organization key must be activated first.": [
+        "De organisatiesleutel moet eerst geactiveerd worden."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "U heeft toegang nodig tot de organisatiesleutel om deze bewerking uit te voeren."
       ]
     },
     "Placeholder": {
@@ -3562,6 +3613,9 @@
       "Join meeting": [
         "Deelnemen aan vergadering"
       ],
+      "Join request expired": [
+        "Deelnameverzoek is verlopen"
+      ],
       "Joined at epoch ${ log.epoch }": [
         "Toegetreden op epoch ${ log.epoch }"
       ],
@@ -3674,6 +3728,9 @@
       "Thank you!": [
         "Bedankt!"
       ],
+      "The host didn't admit you": [
+        "De host heeft u niet toegelaten"
+      ],
       "Time": [
         "Tijd"
       ],
@@ -3685,6 +3742,9 @@
       ],
       "Video": [
         "Video"
+      ],
+      "Waiting for the host": [
+        "Wachten op de host"
       ],
       "Waiting room": [
         "Wachtruimte"

@@ -1863,6 +1863,9 @@
       "Failed to download recording": [
         "No s'han pogut descarregar els enregistraments"
       ],
+      "Failed to edit meeting": [
+        "No s'ha pogut editar la reunió"
+      ],
       "Failed to edit room name": [
         "No s'ha pogut editar el nom de la sala"
       ],
@@ -1913,6 +1916,9 @@
       ],
       "Not a valid number": [
         "Número no vàlid"
+      ],
+      "Organization key is not decrypted": [
+        "La clau de l'organització no està desxifrada"
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen."
@@ -2211,6 +2217,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
       ],
+      "Admitting": [
+        "Admetent"
+      ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Mode avançat: ajusteu cada constant de difuminat per a la versió següent i després apliqueu-ho per tornar a generar la previsualització. Les sobreescriptures tenen prioritat sobre els valors del fitxer i d'Unleash."
       ],
@@ -2379,9 +2388,6 @@
       "Failed to update meeting schedule": [
         "No s'ha pogut actualitzar la programació de la reunió"
       ],
-      "Failed to update meeting waiting room status": [
-        "S'ha produït un error en actualitzar l'estat de la sala d'espera de la reunió"
-      ],
       "Free meeting": [
         "Reunió gratuïta"
       ],
@@ -2426,9 +2432,6 @@
       ],
       "Joined ${ roomNameLabel }": [
         "Us heu unit a ${ roomNameLabel }"
-      ],
-      "Joined at ${ receivedTime }": [
-        "Us hi heu afegit a les ${ receivedTime }"
       ],
       "Learn more": [
         "Més informació"
@@ -2670,6 +2673,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
+      "Rejecting": [
+        "Rebutjant"
+      ],
       "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
         "Utilitzeu la vostra càmera en directe mitjançant el processador de fons personalitzat. Trieu un color pla o carregueu una imatge per utilitzar-la com a fons."
       ],
@@ -2741,6 +2747,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Aquest és un xat xifrat d'extrem a extrem amb missatges efímers que desapareixeran al final de la trucada."
+      ],
+      "This meeting has a waiting room": [
+        "Aquesta reunió té una sala d'espera"
       ],
       "This meeting is being recorded": [
         "S'està enregistrant aquesta reunió"
@@ -2822,6 +2831,9 @@
       ],
       "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
         "S'està esperant que l'amfitrió comenci. Us hi afegireu quan l'amfitrió obri la reunió i us hi admeti."
+      ],
+      "Waiting since ${ receivedTime }": [
+        "S'està esperant des de ${ receivedTime }"
       ],
       "Warning": [
         "Advertència"
@@ -3293,6 +3305,20 @@
       ],
       "Video quality was poor": [
         "La qualitat del vídeo era baixa"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "La clau de l'organització no existeix."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "S'ha denegat el permís. S'han restringit els privilegis d'administrador."
+      ],
+      "The organization key must be activated first.": [
+        "S'ha d'activar primer la clau de l'organització."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Necessiteu accés a la clau de l'organització per a realitzar aquesta operació."
       ]
     },
     "Placeholder": {

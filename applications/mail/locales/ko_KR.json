@@ -1656,6 +1656,9 @@
       "View contact details": [
         "연락처 세부 정보 보기"
       ],
+      "View guide": [
+        "가이드 보기"
+      ],
       "View headers": [
         "헤더 보기"
       ],
@@ -2213,128 +2216,6 @@
       ],
       "Yearly": [
         "연간"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "활성화됨"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "해당 주소는 조직 외부의 사용자가 이미 사용하고 있습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
-      ],
-      "All": [
-        "전체"
-      ],
-      "Calendar": [
-        "캘린더"
-      ],
-      "Configure migration": [
-        "이전 작업 구성"
-      ],
-      "Contact your administrator to start a migration.": [
-        "마이그레이션을 시작하려면 관리자에게 문의하세요."
-      ],
-      "Contacts": [
-        "연락처"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Google Workspace에서 ${ BRAND_NAME }으로의 데이터 이전 상태"
-      ],
-      "Emails": [
-        "이메일"
-      ],
-      "Errors": [
-        "오류"
-      ],
-      "Estimated size": [
-        "예상 용량"
-      ],
-      "Find out what can be migrated.": [
-        "이전 가능한 항목을 확인해 보세요."
-      ],
-      "Has errors": [
-        "오류 있음"
-      ],
-      "In progress": [
-        "진행 중"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "구성원 주소를 찾을 수 없습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
-      ],
-      "Migrate": [
-        "이전"
-      ],
-      "Migrated": [
-        "이전 완료"
-      ],
-      "Migration status": [
-        "마이그레이션 상태"
-      ],
-      "Missing organization private key": [
-        "조직 비밀 키 누락"
-      ],
-      "Missing organization public key": [
-        "조직 공개 키 누락"
-      ],
-      "No users to display": [
-        "표시할 사용자가 없습니다"
-      ],
-      "Not activated": [
-        "활성화되지 않음"
-      ],
-      "Organization does not have enough seats available": [
-        "조직의 사용 권한이 충분하지 않습니다."
-      ],
-      "Organization does not have enough storage available": [
-        "조직에 충분한 저장공간이 남아있지 않습니다."
-      ],
-      "Pending": [
-        "보류 중"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "이전하고자 하는 항목을 정확히 선택하세요. 모든 조직 사용자에게 적용됩니다."
-      ],
-      "Select users to migrate": [
-        "이전할 사용자 선택"
-      ],
-      "Size": [
-        "크기"
-      ],
-      "Status": [
-        "상태"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "플랫폼이 호환되지 않으므로 해당 사용자를 이전할 수 없습니다."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 활성화해야 합니다."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 계정을 활성화해야 합니다."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 주소를 활성화해야 합니다."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "해당 사용자를 이전하려면 ${ BRAND_NAME }으로의 초대장 수락을 해야합니다."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 아카이브 취소해야 합니다."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 정지 취소해야 합니다."
-      ],
-      "User": [
-        "사용자"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } 계정에 접근한 사용자"
-      ],
-      "What are you migrating?": [
-        "무엇을 이전하시나요?"
-      ],
-      "You": [
-        "나"
       ]
     },
     "Browser": {
@@ -4490,7 +4371,7 @@
         "${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
-        "현재 요금제는 ${ MAX_SYNC_FREE_USER }개의 Gmail 주소를 지원합니다."
+        "현재 플랜에서 ${ MAX_SYNC_FREE_USER }개의 Gmail 주소를 지원합니다."
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "회원님의 플랜은 총 ${ MAX_SYNC_PAID_USER }개의 Gmail 주소를 지원합니다"
@@ -5023,6 +4904,9 @@
       "Invalid public key file": [
         "공개 키 파일이 유효하지 않습니다"
       ],
+      "Invalid URL": [
+        "유효하지 않은 URL"
+      ],
       "Invalid VAT number": [
         "유효하지 않은 VAT 넘버"
       ],
@@ -5274,6 +5158,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
+      ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
       ],
       "Something went wrong while converting the address": [
         "주소를 변환하는 중 오류가 발생했습니다."
@@ -6684,6 +6571,14 @@
         "추가 불러오기 옵션"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "진행 중"
+      ],
+      "Migrated": [
+        "이전됨"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 연락처 중 ${ totalContactsDiscarded } 개가 불러오지 않습니다. 자세한 정보를 보려면 클릭하세요"
@@ -7803,9 +7698,6 @@
       "Key fingerprint": [
         "지문 키"
       ],
-      "Keys created": [
-        "키 생성됨"
-      ],
       "Label all imported messages as": [
         "가져온 모든 메시지에 라벨 지정:"
       ],
@@ -8214,6 +8106,15 @@
       "Read ${ count } email on screen": [
         "화면에서 ${ count }개 이메일 읽기"
       ],
+      "Read your ${ count } filter": [
+        "${ count }개 필터 읽기"
+      ],
+      "Read your ${ count } folder": [
+        "${ count }개 폴더 읽기"
+      ],
+      "Read your ${ count } label": [
+        "${ count }개 라벨 읽기"
+      ],
       "Recipient: ": [
         "입금처: "
       ],
@@ -8550,6 +8451,9 @@
       "This file is too large to preview": [
         "용량이 너무 커 미리보기를 사용할 수 없는 파일입니다."
       ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "해당 Gmail 주소는 다른 ${ BRAND_NAME } 계정 (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI 등)과 연결되어 있습니다. 다른 주소와의 연결성을 향상시키기 위해 노력 중에 있지만, 아직까지는 회원님께서 수행해야 할 조치가 있습니다."
+      ],
       "This invitation is saved in a disabled calendar.": [
         "이 초대가 비활성화된 캘린더에 저장되어 있습니다."
       ],
@@ -8831,9 +8735,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "이메일을 빠르게 관리하려면 키보드 단축키를 사용하세요."
-      ],
-      "User activated": [
-        "사용자 활성화됨"
       ],
       "username": [
         "사용자 이름"
@@ -15141,6 +15042,9 @@
       "Name": [
         "이름"
       ],
+      "Size": [
+        "크기"
+      ],
       "Status": [
         "상태"
       ],
@@ -15669,6 +15573,9 @@
       ],
       "Groups": [
         "그룹"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "알림: 해당 Gmail 계정이 다른 ${ BRAND_NAME } 계정과 연결되어 있습니다"
       ],
       "Help and feedback": [
         "도움말 및 의견"
@@ -16504,6 +16411,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "관리자 규칙을 사용하려면 지원하는 플랜으로 업그레이드하세요."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "사용자가 초대를 수락하면 역할을 할당할 수 있습니다."
       ]
