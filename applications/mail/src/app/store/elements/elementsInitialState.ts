@@ -26,6 +26,7 @@ export const newElementsState = ({
         pendingRequest: false,
         pendingActions: 0,
         pendingESSearches: 0,
+        usedEncryptedSearch: undefined,
         params: { ...defaultParams, ...params },
         page,
         total: {},
