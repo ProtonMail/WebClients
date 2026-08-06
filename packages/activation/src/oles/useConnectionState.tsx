@@ -6,6 +6,7 @@ import noop from '@proton/utils/noop';
 import { getConnectionStatus } from '../api';
 import type { ApiImporterConnectionStatus } from '../api/api.interface';
 import type { ImportToken } from '../interface';
+import type { OlesProvider } from './providers';
 
 export type ConnectionState = 'connected' | 'disconnected';
 
@@ -29,6 +30,7 @@ export const ConnectionStateProvider = ({ children }: { children: ReactNode }) =
 };
 
 export const useConnectionState = (
+    provider: OlesProvider,
     tokens: ImportToken[] | undefined
 ): [ConnectionState | undefined, boolean, () => Promise<void>] => {
     const api = useSilentApi();
@@ -47,15 +49,15 @@ export const useConnectionState = (
             return;
         }
 
-        return api<{ Status: ApiImporterConnectionStatus }>(getConnectionStatus())
+        return api<{ Status: ApiImporterConnectionStatus }>(getConnectionStatus(provider.connectivityProvider))
             .then((r) => setData(r.Status.IsConnected ? 'connected' : 'disconnected'))
             .catch(data ? noop : () => setData('disconnected'))
             .finally(() => setLoading(false));
-    }, [data, tokens]);
+    }, [data, provider, tokens]);
 
     useEffect(() => {
         void refresh();
-    }, [tokens]);
+    }, [provider, tokens]);
 
     return [data, loading, refresh];
 };
