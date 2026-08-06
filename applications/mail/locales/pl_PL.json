@@ -1516,7 +1516,10 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi"
+        "Zaufany klucz",
+        "Zaufane klucze",
+        "Zaufanych kluczy",
+        "Zaufane klucze"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -2237,128 +2240,6 @@
       ],
       "Yearly": [
         "Rocznie"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Aktywowano"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adres jest już używany przez użytkownika spoza Twojej organizacji. Skontaktuj się ze wsparciem klienta, aby rozwiązać ten problem"
-      ],
-      "All": [
-        "Wszystkie"
-      ],
-      "Calendar": [
-        "Kalendarz"
-      ],
-      "Configure migration": [
-        "Skonfiguruj migrację"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Skontaktuj się ze swoim administratorem, aby rozpocząć migrację."
-      ],
-      "Contacts": [
-        "Kontakty"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status migracji danych z Google Workspace do ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Wiadomości"
-      ],
-      "Errors": [
-        "Błędy"
-      ],
-      "Estimated size": [
-        "Szacowany rozmiar"
-      ],
-      "Find out what can be migrated.": [
-        "Dowiedz się, co można zmigrować."
-      ],
-      "Has errors": [
-        "Zawiera błędy"
-      ],
-      "In progress": [
-        "W toku"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Nie znaleziono adresu członka. Skontaktuj się ze wsparciem klienta, aby rozwiązać ten problem"
-      ],
-      "Migrate": [
-        "Przenieś"
-      ],
-      "Migrated": [
-        "Zmigrowano"
-      ],
-      "Migration status": [
-        "Status migracji"
-      ],
-      "Missing organization private key": [
-        "Brak klucza prywatnego organizacji"
-      ],
-      "Missing organization public key": [
-        "Brak klucza publicznego organizacji"
-      ],
-      "No users to display": [
-        "Brak użytkowników do wyświetlenia"
-      ],
-      "Not activated": [
-        "Nieaktywowany"
-      ],
-      "Organization does not have enough seats available": [
-        "Organizacja nie dysponuje wystarczającą ilością dostępnych licencji"
-      ],
-      "Organization does not have enough storage available": [
-        "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
-      ],
-      "Pending": [
-        "Oczekujące"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Wybierz dokładnie to, co chcesz przenieść. Zmiany zostaną zastosowane u wszystkich użytkowników organizacji."
-      ],
-      "Select users to migrate": [
-        "Wybierz użytkowników do migracji"
-      ],
-      "Size": [
-        "Rozmiar"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tego użytkownika nie można zmigrować ze względu na niezgodność platform."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Aby zmigrować tego użytkownika, włącz jego konto w konsoli administracyjnej Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Aby zmigrować tego użytkownika, włącz jego konto w sekcji ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Aby zmigrować tego użytkownika, włącz jego adres w sekcji ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Aby zmigrować tego użytkownika, musi on zaakceptować zaproszenie do dołączenia do ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Aby zmigrować tego użytkownika, cofnij jego archiwizację w konsoli administracyjnej Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Aby zmigrować tego użytkownika, cofnij jego zawieszenie w konsoli administracyjnej Google Workspace."
-      ],
-      "User": [
-        "Użytkownik"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Użytkownicy, którzy zalogowali się na swoje konto ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Co migrujesz?"
-      ],
-      "You": [
-        "Ty"
       ]
     },
     "Browser": {
@@ -5093,6 +4974,9 @@
       "Invalid public key file": [
         "Plik klucza publicznego jest nieprawidłowy"
       ],
+      "Invalid URL": [
+        "Adres URL jest nieprawidłowy"
+      ],
       "Invalid VAT number": [
         "Nieprawidłowy numer VAT"
       ],
@@ -5359,6 +5243,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektóre nazwy etykiet przekraczają maksymalny limit znaków ${ MAIL_APP_NAME }. Dostosuj proces importowania, aby zmienić te nazwy."
+      ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
       ],
       "Something went wrong while converting the address": [
         "Coś poszło nie tak podczas konwertowania adresu"
@@ -6832,6 +6719,14 @@
         "Więcej opcji importu"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "W toku"
+      ],
+      "Migrated": [
+        "Przeniesione"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Niektóre kontakty (${ totalContactsDiscarded }/${ totalContacts }) nie mogą zostać zaimportowane. Kliknij po szczegóły"
@@ -8081,10 +7976,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8127,9 +8019,6 @@
       ],
       "Key fingerprint": [
         "Odcisk klucza"
-      ],
-      "Keys created": [
-        "Klucze zostały utworzone"
       ],
       "Label all imported messages as": [
         "Oznacz wszystkie zaimportowane wiadomości etykietą"
@@ -9162,9 +9051,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Użyj skrótów klawiszowych, aby szybciej zarządzać swoimi wiadomościami."
-      ],
-      "User activated": [
-        "Użytkownik został aktywowany"
       ],
       "username": [
         "nazwa użytkownika"
@@ -15864,6 +15750,9 @@
       ],
       "Name": [
         "Nazwa"
+      ],
+      "Size": [
+        "Rozmiar"
       ],
       "Status": [
         "Status"

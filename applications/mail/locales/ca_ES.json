@@ -901,6 +901,9 @@
       "Messages to this recipient": [
         "Missatges per a aquest destinatari"
       ],
+      "Migrate": [
+        "Migrar"
+      ],
       "Minimize composer": [
         "Minimitzar l'editor"
       ],
@@ -1523,7 +1526,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1659,6 +1663,9 @@
       ],
       "View contact details": [
         "Mostra el detalls del contacte"
+      ],
+      "View guide": [
+        "Veure la guia"
       ],
       "View headers": [
         "Mostra les capçaleres"
@@ -2235,128 +2242,6 @@
       ],
       "Yearly": [
         "Anual"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Activat"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
-      ],
-      "All": [
-        "Tots"
-      ],
-      "Calendar": [
-        "Calendari"
-      ],
-      "Configure migration": [
-        "Configureu la migració"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Contacteu amb el vostre administrador per iniciar una migració."
-      ],
-      "Contacts": [
-        "Contactes"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Correus electrònics"
-      ],
-      "Errors": [
-        "Errors"
-      ],
-      "Estimated size": [
-        "Mida estimada"
-      ],
-      "Find out what can be migrated.": [
-        "Descobriu què es pot migrar."
-      ],
-      "Has errors": [
-        "Té errors"
-      ],
-      "In progress": [
-        "En curs"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
-      ],
-      "Migrate": [
-        "Migrar"
-      ],
-      "Migrated": [
-        "S'ha migrat"
-      ],
-      "Migration status": [
-        "Estat de la migració"
-      ],
-      "Missing organization private key": [
-        "Falta la clau privada de l'organització"
-      ],
-      "Missing organization public key": [
-        "Falta la clau pública de l'organització"
-      ],
-      "No users to display": [
-        "No hi ha cap usuari per mostrar"
-      ],
-      "Not activated": [
-        "No s'ha activat"
-      ],
-      "Organization does not have enough seats available": [
-        "L'organització no té prou llicències disponibles"
-      ],
-      "Organization does not have enough storage available": [
-        "L'organització no té prou espai d'emmagatzematge disponible"
-      ],
-      "Pending": [
-        "Està pendent"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Seleccioneu exactament què voleu migrar. S'aplicarà a tots els usuaris de l'organització."
-      ],
-      "Select users to migrate": [
-        "Seleccioneu els usuaris que voleu migrar"
-      ],
-      "Size": [
-        "Mida"
-      ],
-      "Status": [
-        "Estat"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Per migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
-      ],
-      "User": [
-        "Usuari"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Usuaris que han accedit al seu compte de ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Què esteu migrant?"
-      ],
-      "You": [
-        "Tú"
       ]
     },
     "Browser": {
@@ -4840,6 +4725,9 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Cal un missatge quan s'informa d'una infracció de drets d'autor o de dades robades"
+      ],
       "A problem occurred, please try again.": [
         "S'ha produït un problema. Intenteu-ho de nou."
       ],
@@ -4854,6 +4742,9 @@
       ],
       "Address is already added to your account": [
         "L'adreça ja s'ha afegit al vostre compte"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
       ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
@@ -4894,14 +4785,35 @@
       "Authentication error.": [
         "Error d'autenticació."
       ],
+      "Bookmark password is not available": [
+        "La contrasenya del marcador de pàgina no està disponible"
+      ],
       "Calendar limit reached": [
         "Límit de calendari assolit"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "No es pot afegir la foto a l'àlbum sense un nom vàlid"
+      ],
+      "Cannot download a folder": [
+        "No es pot descarregar una carpeta"
       ],
       "Cannot export this contact": [
         "No es pot exportar aquest contacte."
       ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "No es pot moure l'element sense un nom vàlid, canvieu-ne el nom primer"
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "No es pot establir una caducitat superior a la que permet la política de conservació."
+      ],
+      "Cannot share root folder": [
+        "No es pot compartir la carpeta arrel"
+      ],
+      "Cannot verify the author of this file": [
+        "No es pot verificar l'autoria d'aquest fitxer"
+      ],
+      "Cannot verify who uploaded this file": [
+        "No es pot verificar qui ha carregat aquest fitxer"
       ],
       "Checkout expired, please try again": [
         "El termini de pagament ha expirat. Torneu-ho a provar"
@@ -4931,6 +4843,9 @@
       "Contact signature not verified": [
         "Signatura del contacte no verificada"
       ],
+      "Contact your administrator to start a migration.": [
+        "Contacteu amb el vostre administrador per iniciar una migració."
+      ],
       "Contact your organization’s administrator to resolve this": [
         "Contacteu amb l'administrador de la vostra organització per solucionar-ho"
       ],
@@ -4940,11 +4855,44 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "No es pot activar la cerca de contingut. Reinicieu l'aplicació o netegeu les dades."
       ],
+      "Copy operation aborted": [
+        "S'ha cancel·lat l'operació de còpia"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "No es permet copiar un element a un element que no sigui una carpeta"
+      ],
+      "Could not find an available name": [
+        "No s'ha pogut trobar cap nom disponible"
+      ],
+      "Could not load sharing details": [
+        "No s'han pogut carregar els detalls de l'acció de compartir."
+      ],
+      "Could not load the image preview: ${ message }": [
+        "No s'ha pogut carregar la vista prèvia de la imatge: ${ message }"
+      ],
       "Could not open created vault": [
         "No s'ha pogut obrir la caixa forta creada"
       ],
       "Could not open updated vault": [
         "No s'ha pogut obrir la caixa forta actualitzada"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "No s'ha pogut llegir una part d'aquest fitxer: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "No s'ha pogut desbloquejar la carpeta principal"
+      ],
+      "Could not unlock this item": [
+        "No s'ha pogut desbloquejar aquest element"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "No es permet crear documents dins d'elements que no siguin carpetes"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "No es permet crear fitxers dins d'elements que no siguin carpetes"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "No es permet crear carpetes dins d'elements que no siguin carpetes"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "S'ha produït un error de desxifratge: no s'ha pogut desxifrar el contingut d’aquest missatge."
@@ -4956,6 +4904,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
         "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
+      ],
+      "Device not found": [
+        "No s'ha trobat el dispositiu"
       ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
@@ -5005,11 +4956,38 @@
       "Error while uploading attachments. Message is not sent.": [
         "Hi ha hagut un error en carregar fitxers adjunts. No s'ha enviat el missatge."
       ],
+      "Expiration date cannot be in the past": [
+        "La data de caducitat no pot ser en el passat"
+      ],
       "Failed loading group members": [
         "No s'han pogut carregar els membres del grup"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "No s'ha pogut desxifrar la clau del marcador de pàgina: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "No s'ha pogut desxifrar la contrasenya de la marca de pàgina: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "No s'ha pogut desxifrar la clau de contingut: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "No s'ha pogut desxifrar el nom de l'element: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "No s'ha pogut desxifrar la clau del node: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "No s'han pogut desxifrar les metadades de la revisió"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "No s'ha pogut xifrar el fitxer adjunt. Torneu-ho a provar."
+      ],
+      "Failed to get inviter keys": [
+        "No s'han pogut obtenir les claus de qui convida"
       ],
       "Failed to load subscription data. Please try again later.": [
         "No s'han pogut carregar les dades de la subscripció. Torneu-ho a provar més tard."
@@ -5019,6 +4997,15 @@
       ],
       "Failed to open to contact": [
         "No s'ha pogut obrir el contacte"
+      ],
+      "Failed to verify invitation": [
+        "No s'ha pogut verificar la invitació"
+      ],
+      "File download failed due to empty response": [
+        "Ha fallat la descàrrega del fitxer perquè la resposta era buida"
+      ],
+      "File has no revision": [
+        "El fitxer no té cap revisió"
       ],
       "Filter with this name already exists": [
         "Ja existeix un filtre amb aquest nom"
@@ -5031,6 +5018,9 @@
       ],
       "Forward address is required": [
         "L'adreça de reenviament és obligatòria."
+      ],
+      "Image preview not found": [
+        "No s’ha trobat la vista prèvia de la imatge"
       ],
       "Image upload failed": [
         "No s'ha pogut carregar la imatge."
@@ -5065,14 +5055,23 @@
       "Invalid public key file": [
         "Arxiu de clau pública invàlid"
       ],
+      "Invalid URL": [
+        "L'URL no és vàlid."
+      ],
       "Invalid VAT number": [
         "El número d'IVA no és vàlid"
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
       ],
+      "Invitation not found": [
+        "No s'ha trobat la invitació"
+      ],
       "Item content cannot exceed 40KB": [
         "El contingut de l'element no pot excedir 40 kB."
+      ],
+      "Item not found": [
+        "No s'ha trobat l'element"
       ],
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
@@ -5080,11 +5079,17 @@
       "Last name is too long": [
         "El cognom és massa llarg."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "L'enllaç públic heretat no es pot actualitzar. Creeu-ne un de nou."
+      ],
       "Maximum expiration time reached.": [
         "S'ha assolit el temps màxim de caducitat."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "S'ha excedit el nombre màxim d'adjunts (${ attachmentsCountLimit })"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
@@ -5096,14 +5101,42 @@
       "Message processing error.": [
         "Hi ha hagut un error de processament del missatge."
       ],
+      "Missing inviter email": [
+        "Falta l'adreça electrònica de qui convida"
+      ],
       "Missing key packet": [
         "Falta el paquet de claus"
+      ],
+      "Missing organization private key": [
+        "Falta la clau privada de l'organització"
+      ],
+      "Missing organization public key": [
+        "Falta la clau pública de l'organització"
       ],
       "Missing signature": [
         "Signatura no trobada"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Falta la signatura per ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "S'ha cancel·lat l'operació de moviment"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "No es permet moure un element a un element que no sigui una carpeta"
+      ],
+      "Moving root item is not allowed": [
+        "No es permet moure l'element arrel"
+      ],
       "Name is required": [
         "Es requereix un nom."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "El nom ha de tenir com a màxim ${ MAX_NODE_NAME_LENGTH } caràcter",
+        "El nom ha de tenir com a màxim ${ MAX_NODE_NAME_LENGTH } caràcters"
+      ],
+      "Name must not be empty": [
+        "El nom no pot estar buit"
       ],
       "Network error": [
         "Error de xarxa"
@@ -5132,6 +5165,9 @@
       "No external key retrieved for user is valid for sending": [
         "Cap clau externa recuperada per a l'usuari és vàlida per a l'enviament"
       ],
+      "No file data was received. Please try again.": [
+        "No s'han rebut dades del fitxer. Torneu-ho a provar."
+      ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
       ],
@@ -5146,6 +5182,21 @@
         "Un dels grups no té contactes: ${ noContactGroupList }",
         "Alguns grups no tenen contactes: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Només els administradors poden convertir invitacions externes"
+      ],
+      "Operation aborted": [
+        "S'ha cancel·lat l'operació"
+      ],
+      "Operation failed, try again later": [
+        "Ha fallat l'operació, torneu-ho a provar més tard"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organització no té prou llicències disponibles"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organització no té prou espai d'emmagatzematge disponible"
+      ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
       ],
@@ -5154,6 +5205,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "S'ha d'activar la clau d'organització per a crear usuaris no privats"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Sembla que una part del fitxer està malmesa"
       ],
       "Password is required": [
         "La contrasenya és obligatòria"
@@ -5175,6 +5229,12 @@
       ],
       "Permissions request failed.": [
         "La sol·licitud de permisos ha fallat."
+      ],
+      "Photo is already in the target album": [
+        "La foto ja és a l'àlbum de destí"
+      ],
+      "Photo not found": [
+        "No s’ha trobat la foto"
       ],
       "Please activate your search again": [
         "Activeu de nou la vostra cerca."
@@ -5280,6 +5340,12 @@
         "S'ha eliminat aquest destinatari duplicat: ${ recipents }",
         "S'han eliminat aquests destinataris duplicats: ${ recipents }"
       ],
+      "Renaming root item is not allowed": [
+        "No es permet canviar el nom de l'element arrel"
+      ],
+      "Request aborted": [
+        "Sol·licitud cancel·lada"
+      ],
       "Request timed out": [
         "La sol·licitud ha caducat"
       ],
@@ -5292,6 +5358,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "L'enviament de fitxers adjunts estarà restringit mentre supereu els límits del vostre pla o fins que el milloreu."
       ],
+      "Signature is missing": [
+        "Falta la signatura"
+      ],
       "Signature not verified": [
         "Signatura no verificada"
       ],
@@ -5301,11 +5370,29 @@
       "Signature verification failed": [
         "No s'ha pogut verificar la signatura."
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Ha fallat la verificació de la signatura: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Ha fallat la verificació de la signatura per ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "La verificació de la signatura per ${ signatureType } ha fallat: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Alguns contactes no poden ser esborrats"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "No s'han pogut carregar algunes dades del fitxer. Torneu-ho a provar."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "No s'han pogut carregar algunes parts del fitxer. Torneu-ho a provar."
+      ],
       "Some groups could not be deleted": [
         "Alguns grups no poden ser esborrats"
+      ],
+      "Some items could not be loaded": [
+        "No s'han pogut carregar alguns elements"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alguns dels vostres noms de carpeta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
@@ -5321,6 +5408,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
+      ],
+      "Something went wrong": [
+        "S'ha produït un error."
       ],
       "Something went wrong while converting the address": [
         "Alguna cosa ha anat malament en convertir l'adreça"
@@ -5395,6 +5485,9 @@
       "The system is busy at the moment. Please try again in a few minutes.": [
         "El sistema està ocupat en aquests moments. Torneu-ho a provar d'aquí a uns minuts."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "El fitxer carregat no coincideix amb l'original. Torneu-ho a provar."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "L'assistent d'escriptura no pot processar la vostra sol·licitud. Proveu una altra indicació."
       ],
@@ -5425,8 +5518,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
+      "This file has missing crypto material": [
+        "Aquest fitxer no té el material criptogràfic necessari"
+      ],
+      "This file has no version available to download": [
+        "Aquest fitxer no té cap versió disponible per descarregar"
+      ],
+      "This file version could not be uploaded": [
+        "No s'ha pogut carregar aquesta versió del fitxer"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Aquest nom de carpeta no està disponible. Trieu-ne un altre."
+      ],
+      "This item has no image preview": [
+        "Aquest element no té cap vista prèvia de la imatge"
+      ],
+      "This item is no longer shared": [
+        "Aquest element ja no està compartit"
+      ],
+      "This item is not shared": [
+        "Aquest element no està compartit"
       ],
       "This label name is not available. Please choose a different name.": [
         "Aquest nom d'etiqueta no està disponible. Trieu-ne un altre."
@@ -5439,6 +5550,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Aquest missatge pot contenir adreces URL que no es puguin obrir amb el navegador actual."
+      ],
+      "Too many server errors, please try again later": [
+        "Hi ha massa errors del servidor, torneu-ho a provar més tard"
+      ],
+      "Too many server requests, please try again later": [
+        "Hi ha massa sol·licituds al servidor, torneu-ho a provar més tard"
       ],
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
@@ -5473,6 +5590,12 @@
       "VAT number must start with ${ prefixes }": [
         "El número d'IVA ha de començar per ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "Les claus de verificació no estan disponibles"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Les claus de verificació per ${ signatureType } no estan disponibles"
+      ],
       "We couldn’t send a verification code using this method.": [
         "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
       ],
@@ -5481,6 +5604,18 @@
       ],
       "Wrong password": [
         "La contrasenya no es correcta."
+      ],
+      "You can create public links for your own files only": [
+        "Només podeu crear enllaços públics per als vostres propis fitxers"
+      ],
+      "You can only leave items that are shared with you": [
+        "Només podeu deixar elements que se us hagin compartit"
+      ],
+      "You can only upload a new version to a file": [
+        "Només podeu carregar una nova versió a un fitxer"
+      ],
+      "You can update a public link for your own files only": [
+        "Només podeu actualitzar un enllaç públic per als vostres propis fitxers"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
@@ -5492,6 +5627,12 @@
       ],
       "You did not provide a file.": [
         "No heu proporcionat un fitxer."
+      ],
+      "You do not have access to this item": [
+        "No teniu accés a aquest element"
+      ],
+      "You do not have access to this shared item": [
+        "No teniu accés a aquest element compartit"
       ],
       "You have reached the maximum number of calendars.": [
         "Heu arribat al nombre màxim de calendaris."
@@ -6036,6 +6177,15 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "Activat"
+      ],
+      "All": [
+        "Tot"
+      ],
+      "Errors": [
+        "Errors"
+      ],
       "Filter": [
         "Filtre"
       ],
@@ -6047,6 +6197,18 @@
       ],
       "Has attachments": [
         "Té adjunts"
+      ],
+      "In progress": [
+        "En curs"
+      ],
+      "Migrated": [
+        "S'han migrat"
+      ],
+      "Not activated": [
+        "No s'ha activat"
+      ],
+      "Pending": [
+        "Està pendent"
       ],
       "Read": [
         "Llegit"
@@ -6753,6 +6915,20 @@
         "Més opcions d'importació"
       ]
     },
+    "Import status": {
+      "Has errors": [
+        "Té errors"
+      ],
+      "In progress": [
+        "En curs"
+      ],
+      "Migrated": [
+        "S'han migrat"
+      ],
+      "Pending": [
+        "Està pendent"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactes no es poden importar. Cliqueu per obtenir més informació"
@@ -7295,6 +7471,9 @@
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
+      "Author is not provided on public link": [
+        "No s'ha proporcionat l'autor a l'enllaç públic"
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Esborreu automàticament els correus electrònics moguts a la paperera i al correu brossa si tenen més de 30 dies."
       ],
@@ -7726,6 +7905,9 @@
       "finance": [
         "finances"
       ],
+      "Find out what can be migrated.": [
+        "Descobriu què es pot migrar."
+      ],
       "Folder": [
         "Carpeta"
       ],
@@ -7896,8 +8078,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7940,9 +8121,6 @@
       ],
       "Key fingerprint": [
         "Clau d'empremta digital"
-      ],
-      "Keys created": [
-        "S'han creat les claus."
       ],
       "Label all imported messages as": [
         "Etiqueta tots els missatges importats com a"
@@ -8100,8 +8278,14 @@
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
       ],
+      "No conversation to read": [
+        "No hi ha cap conversa per llegir"
+      ],
       "No email address": [
         "Sense adreça de correu electrònic"
+      ],
+      "No email open": [
+        "No hi ha cap correu obert"
       ],
       "No folder found": [
         "No s'ha trobat cap carpeta"
@@ -8135,6 +8319,9 @@
       ],
       "No trackers found": [
         "No s'han trobat rastrejadors"
+      ],
+      "No users to display": [
+        "No hi ha cap usuari per mostrar"
       ],
       "non-${ MAIL_APP_NAME }": [
         "de fora de ${ MAIL_APP_NAME }"
@@ -8350,9 +8537,32 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Poseu-vos en contacte amb nosaltres per a qualsevol ajuda relacionada amb ${ BRAND_NAME }."
       ],
+      "Read ${ count } email": [
+        "S'ha llegit ${ count } correu electrònic",
+        "S'han llegit ${ count } correus electrònics"
+      ],
       "Read ${ count } email on screen": [
         "Llegir ${ count } correu electrònic a la pantalla",
         "Llegir ${ count } correus electrònics a la pantalla"
+      ],
+      "Read ${ count } message in this thread": [
+        "S'ha llegit ${ count } missatge d'aquest fil",
+        "S'han llegit ${ count } missatges d'aquest fil"
+      ],
+      "Read open email “${ subject }”": [
+        "S'ha llegit el correu electrònic obert \"${ subject }\""
+      ],
+      "Read your ${ count } filter": [
+        "Llegeix el vostre ${ count } filtre",
+        "Llegeix els vostres ${ count } filtres"
+      ],
+      "Read your ${ count } folder": [
+        "Llegiu la vostra ${ count } carpeta",
+        "Llegiu les vostres ${ count } carpetes"
+      ],
+      "Read your ${ count } label": [
+        "Llegiu la vostra ${ count } etiqueta",
+        "Llegiu les vostres ${ count } etiquetes"
       ],
       "Recipient: ": [
         "Destinatari: "
@@ -8435,6 +8645,9 @@
       "Select all ${ elementsCount } in ${ location }": [
         "Selecciona ${ elementsCount } element de ${ location }",
         "Selecciona tots ${ elementsCount } elements de ${ location }"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleccioneu exactament què voldríeu migrar. S'aplicarà a tots els usuaris de l'organització."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioni el format de correu electronic que vols fer us per defecte quan enviis un correu electronic a aquesta direcció."
@@ -8697,6 +8910,9 @@
       "This file is too large to preview": [
         "Aquest fitxer és massa gran per a previsualitzar-lo."
       ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Aquesta adreça de Gmail està registrada amb un altre compte de ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI i d'altres). Estem treballant per fer que aquesta connexió sigui fluida, però de moment heu de seguir uns quants passos."
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Aquesta invitació s'ha desat en un calendari desactivat."
       ],
@@ -8800,6 +9016,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Aquest codi únic el poden utilitzar els llocs web i els ISP (proveïdors de serveis d'internet) per a enllaçar la vostra ubicació i l'historial de navegació al vostre dispositiu."
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Se us ha mostrat això perquè la línia d'assumpte del vostre correu electrònic conté paraules clau de restabliment de la contrasenya."
       ],
@@ -8826,6 +9045,24 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per a importar esdeveniments, creeu abans un calendari en ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Per tornar a signar els vostres contactes necessitem comprovar cada contacte comparant-lo amb la llista de claus xifrades disponibles al vostre compte. Si no es troben coincidències, el vostre contacte es tornarà a signar amb la clau de xifratge primària."
@@ -8980,9 +9217,6 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilitzeu dreceres de teclat per gestionar el vostre correu electrònic més ràpidament."
       ],
-      "User activated": [
-        "S'ha activat l'usuari."
-      ],
       "username": [
         "nom d'usuari"
       ],
@@ -9102,6 +9336,9 @@
       ],
       "Yearly": [
         "Anual"
+      ],
+      "You": [
+        "Vós"
       ],
       "You already have a free account": [
         "Ja teniu un compte gratuït"
@@ -13473,6 +13710,26 @@
         "Progrés: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "atributs"
+      ],
+      "content key": [
+        "clau de contingut"
+      ],
+      "hash key": [
+        "clau d'empremta electrònica"
+      ],
+      "key": [
+        "clau"
+      ],
+      "membership": [
+        "subscripció"
+      ],
+      "name": [
+        "nom"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adreça"
@@ -15434,11 +15691,17 @@
       "Actions": [
         "Accions"
       ],
+      "Activated": [
+        "Activat"
+      ],
       "Address": [
         "Adreça"
       ],
       "Created": [
         "Creat"
+      ],
+      "Estimated size": [
+        "Mida estimada"
       ],
       "Expires": [
         "Expira"
@@ -15446,14 +15709,23 @@
       "Fingerprint": [
         "Empremta dactilar"
       ],
+      "Migration status": [
+        "Estat de la migració"
+      ],
       "Name": [
         "Nom"
+      ],
+      "Size": [
+        "Mida"
       ],
       "Status": [
         "Estat"
       ],
       "Type": [
         "Tipus"
+      ],
+      "User": [
+        "Usuari"
       ]
     },
     "TableHeader": {
@@ -15740,6 +16012,9 @@
       "Collaborate on documents": [
         "Col·laboració en documents"
       ],
+      "Configure migration": [
+        "Configureu la migració"
+      ],
       "Confirm downgrade": [
         "Confirma el pas a un pla inferior"
       ],
@@ -15996,6 +16271,9 @@
       ],
       "Groups": [
         "Grups"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Atenció: Aquest Gmail està enllaçat a un altre compte de ${ BRAND_NAME }"
       ],
       "Help and feedback": [
         "Ajuda i comentaris"
@@ -16401,6 +16679,9 @@
       "Select data to import": [
         "Seleccioneu les dades que voleu importar"
       ],
+      "Select users to migrate": [
+        "Seleccioneu els usuaris que voleu migrar"
+      ],
       "Self-destruct message": [
         "Destrucció automàtica de missatges"
       ],
@@ -16616,6 +16897,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Us donem la benvinguda a ${ BRAND_NAME } for Business"
       ],
+      "What are you migrating?": [
+        "Què esteu migrant?"
+      ],
       "What can a VPN protect you from?": [
         "De què us pot protegir una VPN?"
       ],
@@ -16703,6 +16987,9 @@
       "Customize import to reduce the number of labels": [
         "Personalitzeu la importació per reduir el nombre d'etiquetes"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "La signatura digital de correus electrònics ajuda a autentificar els missatges que envies"
       ],
@@ -16780,6 +17067,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Usuaris que han accedit al seu compte de ${ BRAND_NAME }"
       ],
       "Version 6 OpenPGP key": [
         "Clau OpenPGP de la versió 6"
