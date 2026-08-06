@@ -55,6 +55,9 @@ export const selectCategoryIDs = createSelector([selectParams], (params): Catego
 /** Unlike {@link loading}, stays true across ES's intermediate result batches. */
 export const esSearching = (state: MailState) => state.elements.pendingESSearches > 0;
 
+/** Whether the elements on screen came from Encrypted Search — i.e. whether bodies were searched. */
+export const usedEncryptedSearch = (state: MailState) => state.elements.usedEncryptedSearch === true;
+
 const beforeFirstLoad = (state: MailState) => state.elements.beforeFirstLoad;
 export const elementsMap = (state: MailState) => state.elements.elements;
 export const selectPage = (state: MailState) => state.elements.page;

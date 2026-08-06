@@ -66,6 +66,14 @@ export interface ElementsState {
     pendingESSearches: number;
 
     /**
+     * Whether the elements now in state were produced by Encrypted Search rather than the server's
+     * metadata-only search. The two are otherwise indistinguishable downstream, and a fallback to the
+     * server leaves ES's own status untouched — so this is the only thing that says whether message
+     * bodies were searched at all. Undefined before the first load.
+     */
+    usedEncryptedSearch: boolean | undefined;
+
+    /**
      * Current parameters of the list (label, filter, sort, search)
      */
     params: ElementsStateParams;
