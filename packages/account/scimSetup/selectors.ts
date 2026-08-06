@@ -15,6 +15,14 @@ import { selectJoinedUnprivatizationState } from '../members/unprivatizeMembers'
 import { selectOrganization } from '../organization';
 import hasKeylessSsoEntitlement from './hasKeylessSsoEntitlement';
 
+/**
+ * Orgs on a plan with the keyless-sso entitlement don't need group keys, so nothing about a
+ * SCIM sync ever needs admin approval.
+ */
+export const selectIsKeylessSsoOrganizationPlan = createSelector(selectOrganization, (organizationState) =>
+    hasKeylessSsoEntitlement(organizationState.value?.PlanName)
+);
+
 /** Members awaiting manual approval (unprivatization). */
 export const selectPendingScimUsers = createSelector(selectJoinedUnprivatizationState, (joinedState) =>
     joinedState.approval.map(({ member }) => member)
@@ -55,13 +63,13 @@ export const selectPendingScimMembersByGroup = createSelector(
  * existing SCIM groups that have keys but gained pending-admin members.
  */
 export const selectPendingScimGroups = createSelector(
-    selectOrganization,
+    selectIsKeylessSsoOrganizationPlan,
     selectGroups,
     selectPendingScimMembersByGroup,
     selectEntitlements,
-    (organizationState, groupsState, pendingMembersByGroup, entitlementsState) => {
+    (isKeylessSsoOrganizationPlan, groupsState, pendingMembersByGroup, entitlementsState) => {
         // Orgs on plans with the keyless-sso entitlement must not see or approve pending SCIM groups.
-        if (hasKeylessSsoEntitlement(organizationState.value?.PlanName)) {
+        if (isKeylessSsoOrganizationPlan) {
             return [];
         }
 
