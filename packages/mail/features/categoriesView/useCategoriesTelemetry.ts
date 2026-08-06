@@ -4,6 +4,7 @@ import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {
     TelemetryCategoriesOnboardingEvents,
     type TelemetryEvents,
@@ -12,6 +13,7 @@ import {
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 type RecategorizeSource = 'drag_and_drop' | 'context_menu' | 'move_to_folder';
 type CategoriesClickSource = 'tab' | 'sidebar' | 'commander' | 'shortcuts';
@@ -21,6 +23,7 @@ export const useCategoriesTelemetry = () => {
     const getUser = useGetUser();
     const getSubscription = useGetSubscription();
     const getUserSettings = useGetUserSettings();
+    const getMailSettings = useGetMailSettings();
 
     return useMemo(() => {
         const sendReport = async (event: TelemetryEvents, dimensions?: Record<string, string>) => {
@@ -48,7 +51,6 @@ export const useCategoriesTelemetry = () => {
                 delay: true,
             });
         };
-
         const sendEventOnboardingAccept = () => {
             void sendReport(TelemetryCategoriesOnboardingEvents.onboarding_reply, {
                 reply: 'accept',
@@ -61,10 +63,24 @@ export const useCategoriesTelemetry = () => {
             });
         };
 
-        const sendReportCategoriesNav = (navSource: CategoriesClickSource, categoryId: CategoryLabelID) => {
+        const sendReportCategoriesNav = async (
+            navSource: CategoriesClickSource,
+            categoryId: CategoryLabelID,
+            isCategoryUnseen: boolean | 'n/a'
+        ) => {
+            const mailSettings = await getMailSettings();
+            let isUnseen: 'n/a' | 'true' | 'false';
+            if (isCategoryUnseen === 'n/a') {
+                isUnseen = 'n/a';
+            } else {
+                isUnseen = isCategoryUnseen ? 'true' : 'false';
+            }
+
             void sendReport(TelemetryCategoriesOnboardingEvents.category_nav, {
                 navSource,
                 categoryId,
+                viewMode: mailSettings.ViewMode === VIEW_MODE.GROUP ? 'conversations' : 'messages',
+                isUnseen,
             });
         };
 
