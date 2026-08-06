@@ -2,6 +2,7 @@ import {
     canReceive,
     canSend,
     getPermission,
+    getPermissions,
     getReceivePermission,
     getSendPermission,
     hasIncompleteSetup,
@@ -11,7 +12,15 @@ import {
     permissionsSendMap,
     setupIncompletePermissionMap,
 } from '@proton/components/containers/addresses/helper';
-import { ADDRESS_PERMISSIONS, ADDRESS_PERMISSION_TYPE } from '@proton/shared/lib/constants';
+import {
+    ADDRESS_FLAGS,
+    ADDRESS_PERMISSIONS,
+    ADDRESS_PERMISSION_TYPE,
+    ADDRESS_STATUS,
+    ADDRESS_TYPE,
+    MEMBER_TYPE,
+} from '@proton/shared/lib/constants';
+import type { Address, Member, PartialMemberAddress, UserModel } from '@proton/shared/lib/interfaces';
 
 describe('addresses helper functions', () => {
     describe('canReceive', () => {
@@ -349,6 +358,175 @@ describe('addresses helper functions', () => {
                     ADDRESS_PERMISSION_TYPE.SEND
                 )
             ).toEqual('No permission');
+        });
+    });
+
+    describe('getPermissions', () => {
+        const adminUser = { isAdmin: true, canPay: true, Private: 1 } as UserModel;
+
+        const selfMember = { Self: 1, Type: MEMBER_TYPE.PROTON } as Member;
+        const otherMember = { Self: 0, Type: MEMBER_TYPE.PROTON } as Member;
+
+        const buildAddress = (address: Partial<Address> = {}): Address => {
+            return {
+                ID: 'address-1',
+                Email: 'test@gmail.com',
+                Type: ADDRESS_TYPE.TYPE_EXTERNAL,
+                Status: ADDRESS_STATUS.STATUS_ENABLED,
+                Priority: 2,
+                Flags: ADDRESS_FLAGS.BYOE,
+                HasKeys: 1,
+                ...address,
+            } as Address;
+        };
+
+        const getBYOEPermissions = ({
+            address = buildAddress(),
+            member,
+            isMultiUserPersonalPlan = true,
+            addresses,
+        }: {
+            address?: Address;
+            member?: Member;
+            isMultiUserPersonalPlan?: boolean;
+            addresses?: PartialMemberAddress[];
+        }) => {
+            return getPermissions({
+                addressIndex: 1,
+                member,
+                address,
+                addresses: addresses ?? ([address] as PartialMemberAddress[]),
+                user: adminUser,
+                isMultiUserPersonalPlan,
+            });
+        };
+
+        describe('BYOE actions are restricted to the address owner', () => {
+            it('should allow the owner to grant permissions and disconnect their own connected BYOE address', () => {
+                const permissions = getBYOEPermissions({ member: selfMember });
+
+                expect(permissions.canGrantBYOEPermissions).toBe(true);
+                expect(permissions.canDisconnectBYOE).toBe(true);
+                expect(permissions.canReconnectBYOE).toBe(false);
+            });
+
+            it('should allow the owner to reconnect their own disconnected BYOE address', () => {
+                const disconnectedAddress = buildAddress({
+                    Flags:
+                        ADDRESS_FLAGS.BYOE |
+                        ADDRESS_FLAGS.FLAG_DISABLE_E2EE |
+                        ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED,
+                });
+
+                const permissions = getBYOEPermissions({ address: disconnectedAddress, member: selfMember });
+
+                expect(permissions.canReconnectBYOE).toBe(true);
+                expect(permissions.canGrantBYOEPermissions).toBe(false);
+                expect(permissions.canDisconnectBYOE).toBe(false);
+            });
+
+            it('should not let an admin grant, reconnect or disconnect a member BYOE address', () => {
+                const permissions = getBYOEPermissions({ member: otherMember });
+
+                expect(permissions.canGrantBYOEPermissions).toBe(false);
+                expect(permissions.canReconnectBYOE).toBe(false);
+                expect(permissions.canDisconnectBYOE).toBe(false);
+            });
+
+            it('should not let an admin reconnect a disconnected member BYOE address', () => {
+                const disconnectedAddress = buildAddress({
+                    Flags:
+                        ADDRESS_FLAGS.BYOE |
+                        ADDRESS_FLAGS.FLAG_DISABLE_E2EE |
+                        ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED,
+                });
+
+                const permissions = getBYOEPermissions({ address: disconnectedAddress, member: otherMember });
+
+                expect(permissions.canReconnectBYOE).toBe(false);
+            });
+
+            it('should not allow disconnecting a disabled BYOE address', () => {
+                const disabledAddress = buildAddress({ Status: ADDRESS_STATUS.STATUS_DISABLED });
+
+                const permissions = getBYOEPermissions({ address: disabledAddress, member: selfMember });
+
+                expect(permissions.canDisconnectBYOE).toBe(false);
+            });
+        });
+
+        describe('admin managing a member BYOE address on a multi-user personal plan', () => {
+            it('should allow disabling an enabled member BYOE address', () => {
+                const permissions = getBYOEPermissions({ member: otherMember });
+
+                expect(permissions.canDisable).toBe(true);
+                expect(permissions.canEnable).toBe(false);
+            });
+
+            it('should allow enabling a disabled member BYOE address', () => {
+                const disabledAddress = buildAddress({ Status: ADDRESS_STATUS.STATUS_DISABLED });
+
+                const permissions = getBYOEPermissions({ address: disabledAddress, member: otherMember });
+
+                expect(permissions.canEnable).toBe(true);
+                expect(permissions.canDisable).toBe(false);
+            });
+
+            it('should not allow disabling or enabling on a B2B plan', () => {
+                const enabledPermissions = getBYOEPermissions({
+                    member: otherMember,
+                    isMultiUserPersonalPlan: false,
+                });
+                const disabledPermissions = getBYOEPermissions({
+                    address: buildAddress({ Status: ADDRESS_STATUS.STATUS_DISABLED }),
+                    member: otherMember,
+                    isMultiUserPersonalPlan: false,
+                });
+
+                expect(enabledPermissions.canDisable).toBe(false);
+                expect(disabledPermissions.canEnable).toBe(false);
+            });
+
+            it('should not extend the BYOE exception to non-BYOE external addresses', () => {
+                const externalAddress = buildAddress({ Flags: undefined });
+
+                const permissions = getBYOEPermissions({ address: externalAddress, member: otherMember });
+
+                expect(permissions.canDisable).toBe(false);
+                expect(permissions.canEnable).toBe(false);
+            });
+        });
+
+        describe('managed member constraints', () => {
+            it('should not allow disabling a member BYOE address that is their only enabled address', () => {
+                const address = buildAddress();
+                const managedSelfMember = { Self: 1, Type: MEMBER_TYPE.MANAGED } as Member;
+
+                const permissions = getBYOEPermissions({
+                    address,
+                    member: managedSelfMember,
+                    addresses: [address] as PartialMemberAddress[],
+                });
+
+                expect(permissions.canDisable).toBe(false);
+            });
+
+            it('should not allow disabling a member BYOE address that is their default address', () => {
+                const address = buildAddress({ Priority: 1 });
+                const managedMember = { Self: 0, Type: MEMBER_TYPE.MANAGED } as Member;
+                const otherEnabledAddress = {
+                    ID: 'address-2',
+                    Status: ADDRESS_STATUS.STATUS_ENABLED,
+                } as PartialMemberAddress;
+
+                const permissions = getBYOEPermissions({
+                    address,
+                    member: managedMember,
+                    addresses: [address as PartialMemberAddress, otherEnabledAddress],
+                });
+
+                expect(permissions.canDisable).toBe(false);
+            });
         });
     });
 });
