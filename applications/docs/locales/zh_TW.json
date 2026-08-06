@@ -860,6 +860,99 @@
       ],
       "Verify now": [
         "立即驗證"
+      ],
+      "Accept invitation": [
+        "接受邀請"
+      ],
+      "Accept invitation to document": [
+        "接受文件邀請"
+      ],
+      "Change sort order": [
+        "變更排序順序"
+      ],
+      "characters out of": [
+        "個字元，總計"
+      ],
+      "Collapse list of pending invitations": [
+        "收合待處理邀請列表"
+      ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "建立新的 ${ SHEETS_APP_NAME }"
+      ],
+      "Decline invitation to document": [
+        "拒絕文件邀請"
+      ],
+      "Download a copy (as docx)": [
+        "下載副本 (為 docx 格式)"
+      ],
+      "Download a copy (as xlsx)": [
+        "下載副本 (為 xlsx 格式)"
+      ],
+      "Download debug information": [
+        "下載偵錯資訊"
+      ],
+      "Explore other plans": [
+        "探索其他方案"
+      ],
+      "Export editor state for version": [
+        "匯出版本的編輯器狀態"
+      ],
+      "Export this version (as docx)": [
+        "匯出此版本 (為 docx 格式)"
+      ],
+      "Export this version (as xlsx)": [
+        "匯出此版本 (為 xlsx 格式)"
+      ],
+      "Export YJS state for version": [
+        "匯出版本的 YJS 狀態"
+      ],
+      "Hide": [
+        "隱藏"
+      ],
+      "Make a copy": [
+        "建立副本"
+      ],
+      "Reject": [
+        "婉拒"
+      ],
+      "Reload spreadsheet": [
+        "重新載入試算表"
+      ],
+      "Remove file": [
+        "移除檔案"
+      ],
+      "Report issue": [
+        "回報問題"
+      ],
+      "Restoring...": [
+        "正在還原……"
+      ],
+      "Search recent documents": [
+        "搜尋最近的文件"
+      ],
+      "Search recent spreadsheets": [
+        "搜尋最近的試算表"
+      ],
+      "Send": [
+        "送出"
+      ],
+      "Stop": [
+        "停止"
+      ],
+      "Subscribe now": [
+        "立即訂閱"
+      ],
+      "Take out of trash": [
+        "移出垃圾桶"
+      ],
+      "Try Workspace": [
+        "試用 Workspace"
+      ],
+      "View ${ pendingCount } invitation": [
+        "檢視所有 ${ pendingCount } 個邀請"
+      ],
+      "words out of": [
+        "字，總計"
       ]
     },
     "Actions message": {
@@ -924,6 +1017,30 @@
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI 授權"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 撰寫幫手（供 ${ quantity } 位使用者使用）"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 助理"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 助理（供 ${ quantity } 位使用者使用）"
+      ],
+      "${ price } per dedicated server": [
+        "每專用伺服器${ price }"
+      ],
+      "${ price } per domain": [
+        "每網域${ price }"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席"
+      ],
+      "${ price } per user": [
+        "每使用者${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 個自訂網域"
       ]
     },
     "Alert": {
@@ -961,7 +1078,7 @@
     },
     "Autocomplete": {
       "${ hiddenResultsCount } more result not shown": [
-        "未顯示 ${ hiddenResultsCount } 個結果"
+        "${ hiddenResultsCount } 個以上的結果未顯示"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -970,6 +1087,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "在 ${ formattedDate1 } 試用結束後，它會變成付費訂閱，並將每月自動續訂。若您在 ${ formattedDate2 } 前取消，則不會被收費。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "您可在試用內享用多達 ${ TRIAL_MAX_DEDICATED_IPS } 臺獨立伺服器。"
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } 席位。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } 撰寫幫手的席位。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "您可在使用期內盡情享用多達 ${ TRIAL_MAX_USERS } 個使用者。"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "您無法於試用期新增自訂網域。"
       ]
     },
     "b2b_trials_Action": {
@@ -1076,6 +1211,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "儲存空間於全部的 ${ BRAND_NAME } 服務。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "透過端對端加密保護您的電子郵件和排程。包含 ${ addresses } 個電子郵件地址、支援自訂電子郵件網域、${ BRAND_NAME } 抄寫寫作助理、無限個 hide-my-email 別名等功能。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "用已加密的雲端儲存空間保護您的檔案。包含線上文件編輯器、照片備份、版本歷史紀錄、已加密檔案共享等功能。"
       ]
     },
     "BF2025: Deal details": {
@@ -1108,6 +1249,15 @@
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "全部的頂級質子版服 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "完整的聊天記錄，提供輕鬆的搜尋與收藏功能"
+      ],
+      "Individual accounts for you and a partner": [
+        "供您與夥伴使用的個人帳號"
+      ],
+      "Stronger protection against cyber threats": [
+        "針對網路威脅的更強大保護"
       ]
     },
     "BF2025: Tooltip": {
@@ -1204,6 +1354,9 @@
       ],
       "Website access problem": [
         "網站存取問題"
+      ],
+      "Sheets problem": [
+        "工作表問題"
       ]
     },
     "Button": {
@@ -1218,6 +1371,9 @@
       ],
       "Maybe later": [
         "稍後再說"
+      ],
+      "Get 50% offer": [
+        "取得 50% 折扣"
       ]
     },
     "Cancellation upsell": {
@@ -1225,7 +1381,7 @@
         "${ maxSpaceTB }儲存"
       ],
       "${ numberOfUsers } user": [
-        "最多 ${ numberOfUsers } 位使用者"
+        "至多 ${ numberOfUsers } 位使用者"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }電子郵件儲存"
@@ -2308,6 +2464,9 @@
       ],
       "North Macedonia": [
         "北馬其頓"
+      ],
+      "Canary Islands": [
+        "加那利群島"
       ]
     },
     "customer_support.feature.all": {
@@ -2507,6 +2666,24 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "您免費的 ${ MAIL_APP_NAME } 帳號儲存空間有限所以我們將只匯入您最新的 Gmail 電子郵。"
+      ],
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DRIVE_APP_NAME } 中的 ${ DOCS_SHORT_APP_NAME } 讓您能在安全且已加密的環境中與他人協同工作。"
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "在桌上型電腦和行動裝置上輕鬆存取您的電子郵件與行事曆。"
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "從您的桌上型電腦輕鬆將檔案同步到雲端，並透過您的行動裝置進行存取。"
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "在您的組織中鼓勵使用雙重身分驗證，以獲得額外的安全保護。"
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "為了讓您的團隊順利加入 ${ BRAND_NAME }，請從 Google、Outlook 及其他服務匯入您的資料。"
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "很遺憾看到您要離開。如果您有時間，我們非常希望能了解您想要取消的原因。您的意見回饋有助於我們為大家將 ${ BRAND_NAME } 變得更好。"
       ]
     },
     "description": {
@@ -3230,6 +3407,81 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "輸入不包含網域 (@example.com) 的使用者名稱"
+      ],
+      "Failed to change permissions settings": [
+        "變更權限設定失敗"
+      ],
+      "Failed to create public share node": [
+        "建立公開共享節點失敗"
+      ],
+      "Failed to fetch sharing info": [
+        "擷取共享資訊失敗"
+      ],
+      "Failed to load 'My files' folder": [
+        "無法載入「我的檔案」資料夾"
+      ],
+      "Failed to load recent documents": [
+        "無法載入最近的文件"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "無法載入訂閱資料。請稍後再試。"
+      ],
+      "Failed to remove older revisions": [
+        "未能成功移除較舊修訂版本"
+      ],
+      "Failed to rename document": [
+        "無法重新命名文件"
+      ],
+      "Failed to unshare node": [
+        "取消共享節點失敗"
+      ],
+      "Failed to update direct share node": [
+        "更新直接共享節點失敗"
+      ],
+      "Failed to update public share node": [
+        "更新公開共享節點失敗"
+      ],
+      "Invalid URL": [
+        "URL 無效"
+      ],
+      "No drive found to import": [
+        "找不到可匯入的雲端硬碟"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "此方案不支援逆向徵稅機制"
+      ],
+      "Some trashed documents could not be loaded": [
+        "部分垃圾桶中的文件無法載入"
+      ],
+      "Something went wrong": [
+        "發生錯誤"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "停止共享此項目失敗"
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "處理文件的更新時發生錯誤。請重新載入頁面並再試一次。"
+      ],
+      "Unable to import file": [
+        "無法匯入檔案"
+      ],
+      "Unexpected error, we can't import the files": [
+        "發生非預期錯誤，我們無法匯入檔案"
+      ],
+      "We are having trouble syncing your document. Please refresh the page.": [
+        "我們在同步您的文件時遇到問題。請重新整理網頁。"
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "我們無法將此檔案匯入 ${ SHEETS_APP_NAME }。您可以嘗試將內容複製並貼到新的 ${ SHEETS_APP_NAME } 中。"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "我們無法使用此方法傳送驗證碼。"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "您已使用方案中的所有位址。請升級您的方案以新增新位址，或在您的帳號中停用某個位址。"
       ]
     },
     "error": {
@@ -3621,6 +3873,9 @@
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
+      ],
+      "Touch your security key.": [
+        "觸碰您的安全性金鑰。"
       ]
     },
     "fido2: Label": {
@@ -5244,6 +5499,246 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "隨時升級或清理空間以帶入更多"
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "「${ documentTitle }」目前在垃圾桶中，並會一直保留在該處，直到您將其永久刪除。"
+      ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } 讓您能以端對端加密進行即時協作，以確保完整的隱私。建立副本以開始編輯，或向擁有者要求編輯存取權限。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } 今日過期。"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "使用您的推薦連結**邀請朋友**加入 ${ BRAND_NAME }。"
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**緊急終止開關**：如果 VPN 意外斷線，則會封鎖您的網際網路，以防止資料外洩。"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "若他們訂閱，**即可獲得 ${ refereeRewardAmount }** 可用額度。"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "每有一位朋友訂閱，**您即可獲得 ${ referrerRewardAmount }** 可用額度。"
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "遠端工作時，安全連線至關重要。VPN 可保護公司資料免受網路威脅，並保持您的工作私密。"
+      ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN 可以隱藏您的 IP 位址並加密您的瀏覽活動，使網站、廣告商和 ISP 更難在一段時間內追蹤您。"
+      ],
+      "Accept/decline": [
+        "接受/拒絕"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "存取 20,000+ 臺伺服器，分布於 145 個國家"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "在您的試用期 ${ boldCancelDate } 結束時，您將降級為 ${ boldProtonFree }。所有使用者帳號將從您的組織中移除。"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "連線至 ${ VPN_APP_NAME } 進行私密瀏覽"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "替成員創建一個安全 ${ memberCount } 雲端"
+      ],
+      "Create an end-to-end encrypted document.": [
+        "建立端對端加密的文件。"
+      ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "建立端對端加密的文件和試算表。"
+      ],
+      "Custom email domains": [
+        "自訂電郵網域"
+      ],
+      "Decrypting your document": [
+        "正在解密您的文件"
+      ],
+      "Details": [
+        "詳細資訊"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "電郵網域名稱託管服務，僅適用於您已擁有的網域名稱。 ${ BRAND_NAME } 現階段並未提供網域名稱註冊服務。 您的託管服務，可使用任何網域註冊商已註冊的名稱。"
+      ],
+      "Enter code": [
+        "輸入代碼"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "輸入驗證碼。第 ${ digit } 位數字。"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "輸入您自己的密碼（作為受信任聯絡人）。"
+      ],
+      "Every change you make is automatically and securely saved to Drive.": [
+        "您所做的每項變更都會自動且安全地儲存到磁碟。"
+      ],
+      "Failing signatures will be re-signed by you": [
+        "驗證失敗的簽名將由您重新簽名"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "更快速的 VPN 速度至多 10Gbps"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "僅限檔案（不含相片、${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME }）- 總計最高 100 GB、100,000 個檔案，且單一檔案最高 50 GB"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "使用 ${ BRAND_NAME } Workspace 取得專業的 @your-company.com 電子郵件、每位使用者 1 TB 的安全儲存空間、更長的視訊通話等服務。"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "政府和 ISP 可以監控您的線上活動。透過隱藏您的真實 IP 並加密您的活動，您的瀏覽將變得私密。"
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "回報此問題以協助我們改進此體驗。如果您不介意分享試算表內容，請在您的報告中附加下方的偵錯資訊。"
+      ],
+      "Hide table of contents": [
+        "隱藏目錄"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "如果您現在取消，您將於 ${ expiryDate } 失去存取 ${ BRAND_NAME } ${ planTitle }，包含這些功能:"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您失去驗證 app 的存取權，您可以使用在設定雙重身分驗證時提供的 16 個備份復原代碼中的 1 個。 ${ learnMoreLink }"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "若你移除自己，你將失去對「${ fileName }」的存取權，且除非擁有者再次與你共享，否則你將無法重新開啟它。"
+      ],
+      "Importing ODS files is currently in beta": [
+        "匯入 ODS 檔案目前處於測試階段"
+      ],
+      "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
+        "您似乎處於離線狀態。離線時無法編輯此文件。請檢查您裝置的連線狀態。"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "糟糕！此試算表無法儲存您最近的編輯，因此我們已暫停編輯以防止您遺失工作內容。"
+      ],
+      "Organization size": [
+        "組織規模"
+      ],
+      "Password verified": [
+        "密碼已驗證"
+      ],
+      "Please export a copy of your current changes from the main menu and reload the page.": [
+        "請從主選單中匯出您目前變更的副本，並重新載入此網頁。"
+      ],
+      "Please select the labels you would like to import:": [
+        "請選取您想匯入的標籤："
+      ],
+      "Premium privacy protection across all your devices": [
+        "頂級質子版隱私保護於您全部的裝置"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "私密瀏覽（或「無痕」模式）僅適用於在您的裝置上隱藏您的活動。它會阻止您的瀏覽器儲存歷程記錄和 Cookie，但並不會讓您變得隱形。您的 ISP、網路管理員以及您訪問的網站仍然可以看到您在線上進行的操作。"
+      ],
+      "Public documents are not yet enabled for your organization.": [
+        "您的組織尚未啟用公開文件功能。"
+      ],
+      "Recent spreadsheets": [
+        "最近的試算表"
+      ],
+      "Restored version to": [
+        "已將版本還原至"
+      ],
+      "Show table of contents": [
+        "顯示目錄"
+      ],
+      "Some edits are taking longer to sync than expected.": [
+        "部分編輯同步所需的時間比預期長。"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "部分政府會封鎖或限制存取特定網站。VPN 有助於繞過審查，同時保持您的活動和身分私密。"
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "啟用以下 VPN 設定，輕鬆保持連線："
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "維持您的方案並於下個月取得 50% 折扣的優惠"
+      ],
+      "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
+        "無法驗證此文件中編輯的作者身分。您要將此文件標記為已驗證嗎？您可以選擇「忽略」以稍後再做決定。"
+      ],
+      "There are no documents in the trash.": [
+        "垃圾桶中沒有任何文件。"
+      ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "此文件已變得太大，無法進行編輯。您可以移除較舊的修訂版本以繼續編輯。"
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "此文件已變得太大，無法儲存您最近的變更。請下載副本以保留您的工作。"
+      ],
+      "This document has lots of activity. Some features may be temporarily unavailable.": [
+        "此文件的活動非常頻繁。部分功能可能會暫時無法使用。"
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "此文件有許多作用中的協作者。即時編輯功能暫時無法使用。請重新整理以檢視最新更新。"
+      ],
+      "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
+        "此文件可能不存在，或我們在載入時遇到問題。請重新載入網頁並重試。"
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
+        "此文件可能不存在，或者您可能沒有檢視的權限。您可以嘗試重新載入網頁以確認問題是否仍然存在，或聯絡擁有者以取得存取權限。"
+      ],
+      "This message will be presented again later": [
+        "此訊息稍後將會再次顯示"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "此唯一代碼可供網站和 ISP（網際網路服務供應商）使用，用以將您的位置和瀏覽歷程記錄與您的裝置進行連結"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "為協助您記住您的密碼，我們會要求您定期輸入。隨著時間推移，要求的頻率會降低。"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "信任「${ activeSignerText }」金鑰以驗證來自此聯絡人的新訊息。"
+      ],
+      "Update recent documents": [
+        "更新最近的文件"
+      ],
+      "Users": [
+        "使用者"
+      ],
+      "We'll remind you to verify your password again later": [
+        "我們稍後會提醒您再次驗證您的密碼"
+      ],
+      "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
+        "當對話方塊開啟時，將「目的地」變更為「儲存為 PDF」，然後按下「儲存」。"
+      ],
+      "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
+        "當對話方塊開啟時，選取左下角的「PDF」，然後按下「儲存」。"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "當您連線到 VPN 時，它會使用加密技術來隱藏您的 IP 位址（分配給您裝置的唯一代碼）。"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "您目前已登入為 ${ organizationName } 的 ${ username }。"
+      ],
+      "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
+        "您目前正在以唯讀模式檢視此文件。請聯絡擁有者以要求編輯和註解的存取權限。"
+      ],
+      "You don't have access": [
+        "您沒有存取權限"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "你即將拒絕加入共享相簿 ${ invitationName } 的邀請。若繼續，除非擁有者再次邀請你，否則你將無法存取該相簿。確定要繼續嗎？"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "你即將拒絕加入 ${ invitationName } 項目的邀請。若繼續，除非擁有者再次邀請你，否則你將無法存取該項目。確定要繼續嗎？"
+      ],
+      "Your changes are being synced to Drive. Please do not close the web page.": [
+        "您的變更正在同步至磁碟。請勿關閉此網頁。"
+      ],
+      "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
+        "您的變更未能成功同步。磁碟將會自動嘗試儲存這些變更。請勿關閉此網頁。"
+      ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "您目前的文件將會被此版本取代。註解和建議將會從文件中移除，但仍可在註解歷程紀錄中存取。"
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "您的網際網路服務供應商可以監控並有時出售您的資料，甚至限制您可以存取的網站。"
       ]
     },
     "info": {
@@ -5316,6 +5811,15 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "作用中簽署者"
+      ],
+      "Fallback": [
+        "後備"
+      ],
+      "KOO": [
+        "KOO"
       ]
     },
     "Label": {
@@ -5783,6 +6287,48 @@
       ],
       "Emails": [
         "電郵"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } 個字元"
+      ],
+      "Allow editors to change permissions and share": [
+        "允許編輯者變更權限和共享"
+      ],
+      "Disable this link on a specific date": [
+        "在特定日期停用此連結"
+      ],
+      "Drive": [
+        "磁碟"
+      ],
+      "Exact host matching": [
+        "精確的主機比對"
+      ],
+      "Exact URL matching": [
+        "精確的 URL 比對"
+      ],
+      "Expiry": [
+        "到期時間"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "必須具有至少 ${ MIN_PASSWORD_LENGTH } 個字元"
+      ],
+      "Never fill on this exact URL": [
+        "絕不在此精確的 URL 填入"
+      ],
+      "Parent domain and subdomains (default)": [
+        "上層網域和子網域 (預設)"
+      ],
+      "Regular expression": [
+        "正規表示式"
+      ],
+      "Starts with": [
+        "開頭為"
+      ],
+      "Unknown user": [
+        "未知的使用者"
+      ],
+      "URL wildcard pattern": [
+        "URL 萬用字元模式"
       ]
     },
     "Label for contact group color": {
@@ -5995,6 +6541,9 @@
       ],
       "Add-on with free trial": [
         "可免費試用的擴充功能"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
       ]
     },
     "meet_2025: Addon": {
@@ -6006,6 +6555,12 @@
       ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } 授權"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME }（適用於 ${ quantity } 名使用者）"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席"
       ]
     },
     "meet_2025: Feature": {
@@ -6056,6 +6611,9 @@
       ],
       "Video meetings, ${ n } participant": [
         "視訊， ${ n } 參與者"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "主持人可以在他們的電腦上進行會議本地錄製"
       ]
     },
     "Message": {
@@ -6064,6 +6622,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免費滿意體驗期已結束。您即將無法存取您的帳戶。${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "「開頭為」相符規則"
+      ],
+      "Exact (sub) domain matching rule": [
+        "精確的 (子) 網域比對規則"
+      ],
+      "Exact URL matching rule": [
+        "精確的 URL 比對規則"
+      ],
+      "Never fill with this exact URL": [
+        "絕不填入此精確的 URL"
+      ],
+      "Regular expression rule": [
+        "正規表示式規則"
+      ],
+      "Wildcard pattern matching rule": [
+        "萬用字元模式比對規則"
       ]
     },
     "Message display when a new app version is available": {
@@ -6768,7 +7344,7 @@
         "保管庫共享 (至多 ${ n } 人)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "與最多 ${ n } 個人分享保管庫"
+        "至多可與 ${ n } 個人共用保管庫"
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN 附帶廣告攔截器及惡意軟體防護"
@@ -6787,6 +7363,18 @@
       ],
       "Unlock streaming": [
         "解鎖串流"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
+      "${ options }-day file version history": [
+        "історія версій файлів за ${ options } дня"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "使用 ${ n } 個預約頁面進行預約排程"
+      ],
+      "No streaming support": [
+        "不支援串流"
       ]
     },
     "new_plans: feature highlight": {
@@ -6891,6 +7479,12 @@
       ],
       "Pay once, secure your passwords and identity forever.": [
         "一次性付款，永久保護您的密碼和身分。"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "超越業界標準的團隊進階保護。"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "為無限量的使用者提供基本保護與安全協作。"
       ]
     },
     "new_plans: Subtext": {
@@ -7122,6 +7716,15 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "您可有多於一位管理員。所有管理員可新增並管理使用者，惟僅限主要管理員可控制繳款單管理。"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "自動將傳送到您的 ${ MAIL_APP_NAME } 帳號的電子郵件轉寄至任何其他電子郵件地址。"
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "選擇自訂時間以接收電子郵件提醒，或設定訊息送達時間"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "如同資料夾一樣，保管庫是組織項目的一種便捷方式"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7405,6 +8008,36 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "您的 ${ BRAND_NAME } 位址已就緒"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "「${ ellipsedName }」已移動"
+      ],
+      "Document moved to trash": [
+        "文件已移至垃圾桶"
+      ],
+      "Document restored from trash": [
+        "已從垃圾桶還原文件"
+      ],
+      "Failed to load sharing details": [
+        "載入共享詳細資料失敗"
+      ],
+      "Failed to rename document": [
+        "無法重新命名文件"
+      ],
+      "Recent documents updated": [
+        "最近的文件已更新"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "設定已更新。編輯者可以變更權限和共享。"
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "設定已更新。編輯者無法變更權限或進行共享。"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "停止共享此項目失敗"
+      ],
+      "The spreadsheet failed to be created": [
+        "試算表建立失敗"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7545,6 +8178,9 @@
       ],
       "Collaborate with non-${ BRAND_NAME } users": [
         "與非 ${ BRAND_NAME } 使用者合作"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "無限個別名，保護您的身分"
       ]
     },
     "Onboarding Trial": {
@@ -7589,6 +8225,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "您可以免費使用 ${ planTitle }，直到試用結束為止。"
       ]
     },
     "Option": {
@@ -7704,6 +8343,15 @@
       ],
       "You need access to the organization key to perform this operation.": [
         "您要先存取至組織金鑰以完成此操作"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "需啟用組織金鑰才能授予管理員權限"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "私有使用者首次登入後即可提升至管理員"
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "在產生新的組織金鑰前，您必須刪除所有群組"
       ]
     },
     "Payments": {
@@ -7739,6 +8387,12 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "到期後將自動以 ${ renewPriceStr } 的價格續約 ${ renewalLength } 個月。您可以隨時取消。"
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice }（不含稅）"
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "續約價格可能會根據 ${ termsAndConditionsLink } 調整。"
       ]
     },
     "PGP key encryption warning": {
@@ -7770,6 +8424,9 @@
       ],
       "This key is used to encrypt messages to this contact on older apps": [
         "此金鑰是用於舊版的應用程式以加密通訊錄"
+      ],
+      "This contact currently signs messages with this key": [
+        "此聯絡人目前使用此金鑰簽署訊息"
       ]
     },
     "PGP key warning": {
@@ -7861,6 +8518,12 @@
       ],
       "Search": [
         "搜尋"
+      ],
+      "Ask anything…": [
+        "詢問任何事…"
+      ],
+      "Search for users or addresses": [
+        "搜尋使用者或位址"
       ]
     },
     "Placeholder for contact group name": {
@@ -8082,6 +8745,12 @@
       ],
       "Yesterday": [
         "昨天"
+      ],
+      "Earlier": [
+        "更早以前"
+      ],
+      "Viewed": [
+        "已檢視"
       ]
     },
     "Referral": {
@@ -8120,6 +8789,30 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "您將取得至多 **${ maxRewardAmount }** 額度。"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**如果您在此日期前取消，**試用結束時您將會被**降級**至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**如果您不訂閱，**您將會被**降級**至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您不取消，**您的完整方案將會開始，且您將獲得 **${ referrerRewardAmount }** 的可用額度。"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您在此日期前訂閱，**您將會獲得 **${ referrerRewardAmount }** 的可用額度。"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "免費使用 **${ planTitle }** 直至 **${ textDate }**。"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "最後機會探索 **${ planTitle }** 提供的所有強大功能。"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "您還有 **${ daysRemaining } 天**的時間來探索 **${ planTitle }** 提供的所有強大功能。"
+      ],
+      "your subscription": [
+        "您的訂閱"
       ]
     },
     "Safety review": {
@@ -8259,6 +8952,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "你有${ timeRemaining.inDays }天重設密碼。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "你還有 ${ timeRemaining.inHours } 小時來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "你還有 ${ timeRemaining.inMinutes } 分鐘來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "你還有 ${ timeRemaining.inSeconds } 秒來重設你的密碼。"
       ]
     },
     "session_recovery:available:link": {
@@ -8398,6 +9100,12 @@
       ],
       "Name": [
         "檔名"
+      ],
+      "Created by": [
+        "建立者為"
+      ],
+      "Last viewed first": [
+        "最晚檢視優先"
       ]
     },
     "specialoffer: Action": {
@@ -8497,6 +9205,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升級至${ pricingTitle }"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 實現更多目標"
       ]
     },
     "specialoffer: Offers": {
@@ -8588,6 +9299,9 @@
       ],
       "Keep your passwords safe and organized in multiple vaults": [
         "保持您的密碼安全和整齊於多個保管庫"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "取得無限個別名以保護您的身分並減少垃圾郵件"
       ]
     },
     "specialoffer: Tooltip": {
@@ -8616,6 +9330,9 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "一個至此項目的連結已儲存至您的雲端磁碟。您可於\"與共享的區域\"存區它。"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "若要編輯此文件，請建立一份您可以修改的副本。"
       ]
     },
     "sso": {
@@ -8741,6 +9458,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "您將不能使用我們的無限密碼記錄、無限的 hide-my-email 別名、高達20個密碼保險箱與我們的全力支援。"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "我們將把剩餘時間的可用額度加入到您的 ${ BRAND_NAME } 帳號。"
       ]
     },
     "Subscription attribute": {
@@ -8847,6 +9567,9 @@
       ],
       "Priority support": [
         "優先支援"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } 為您提供所有應用程式、所有功能、搶先體驗新版本，以及您掌握資料及其安全性所需的一切。"
       ]
     },
     "Success": {
@@ -8972,6 +9695,9 @@
       ],
       "Type": [
         "類型"
+      ],
+      "Size": [
+        "大小"
       ]
     },
     "TableHeader": {
@@ -9621,6 +10347,54 @@
       ],
       "You are all set": [
         "你已就緒"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }訂閱撰寫扳手"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
+      "Account temporarily locked": [
+        "帳號暫時鎖定"
+      ],
+      "Document Size Limit Exceeded": [
+        "超出文件大小限制"
+      ],
+      "Document Size Limit Reached": [
+        "已達文件大小限制"
+      ],
+      "Editing paused": [
+        "編輯已暫停"
+      ],
+      "How your free trial works": [
+        "您的免費試用如何運作"
+      ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "建立副本至您的 ${ DRIVE_APP_NAME }"
+      ],
+      "Make a secure connection your default": [
+        "將安全連線設為您的預設設定"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "將您的組織轉移至 ${ BRAND_NAME }"
+      ],
+      "This document is password protected": [
+        "此文件受密碼保護"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "未命名試算表 ${ date }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "以 ${ formattedPrice } 訂閱 ${ planName }，升級您的工作效率"
+      ],
+      "Users and addresses": [
+        "使用者及電郵位址"
+      ],
+      "What can a VPN protect you from?": [
+        "VPN 可以保護您免受什麼威脅？"
+      ],
+      "Your document cannot be loaded": [
+        "無法載入您的文件"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9697,6 +10471,21 @@
       ],
       "We have sent them an invite to access the item.": [
         "您已寄送他們存取項目的邀請。"
+      ],
+      "Change shared item settings": [
+        "變更共享項目設定"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "即時 AI 協助，真人專家隨時待命！"
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "此處列出的資訊並非所有使用者的資訊皆已遭外洩。"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "除非被破解，否則即使已加密的密碼遭到外洩，仍可保持安全。"
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP 金鑰"
       ]
     },
     "tooltip": {
@@ -9729,6 +10518,9 @@
       ],
       "Name must not be empty": [
         "名稱不得留空"
+      ],
+      "Name must not contain slashes (/)": [
+        "名稱不得包含斜線 (/)"
       ]
     },
     "Video control": {
@@ -9877,6 +10669,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } 提供了強大的控制，但單個錯誤可能會導致自動填入在欺詐性或網路釣魚網站上比對並填入資料。"
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "這將取代試算表中的所有資料"
       ]
     },
     "fido2: Error": {
@@ -9887,6 +10685,15 @@
     "sheets_2025:Action": {
       "New spreadsheet": [
         "新增工作表"
+      ],
+      "Comma Separated Values (.csv)": [
+        "逗號分隔值檔案 (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "定位字元分隔值 (.tsv)"
       ]
     },
     "BOSS": {
@@ -9970,6 +10777,137 @@
       ],
       "SUMMER SALE": [
         "夏季特賣"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "使電子郵件生產力至新的等級。讓${ BRAND_NAME }以幫助書寫，回覆至，和校閱您的電子郵件。"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "極速體驗"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "進行中"
+      ],
+      "Migrated": [
+        "已移轉"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } 席位。"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "擁有者"
+      ],
+      "Security Admin": [
+        "安全管理員"
+      ],
+      "User Admin": [
+        "使用者管理員"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "設定安全政策、資料保留及 VPN 基礎架構，並管理稽核日誌。"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "管理所有使用者、群組、安全性、帳務及系統組態。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "管理所有成員的使用者、群組和儲存空間，分配角色並分配授權。"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "登入未成功完成。"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Detect automatically": [
+        "自動偵測"
+      ],
+      "Insert as new sheet": [
+        "插入為新工作表"
+      ],
+      "Replace current sheet": [
+        "取代目前工作表"
+      ],
+      "Replace data at selected cell": [
+        "取代所選儲存格處的資料"
+      ],
+      "Replace spreadsheet": [
+        "取代試算表"
+      ],
+      "Select a file to import": [
+        "選取要匯入的檔案"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "您目前的試算表，包含其中的所有工作表，將會被此版本取代。"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "將文字轉換為數字、日期和公式"
+      ],
+      "Destination": [
+        "目的地"
+      ],
+      "Format": [
+        "格式"
+      ],
+      "Separator type": [
+        "分隔符號類型"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "匯入資料"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "動作"
+      ],
+      "Created": [
+        "已創建"
+      ],
+      "Expires": [
+        "到期日"
+      ],
+      "Fingerprint": [
+        "指紋"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "Type": [
+        "類型"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "管理員無法存取私有使用者的資料，也無法重設其密碼。"
+      ],
+      "Member activation incomplete": [
+        "成員啟用未完成"
+      ],
+      "Organization key must be activated to request data access": [
+        "必須啟用組織金鑰才能請求存取資料"
+      ],
+      "The user must have an address to request data access": [
+        "使用者必須擁有位址才能請求資料存取"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "一旦使用者接受邀請，您便能分配角色。"
       ]
     }
   }

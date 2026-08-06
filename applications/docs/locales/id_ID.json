@@ -995,6 +995,51 @@
       ],
       "Reconnect to Gmail": [
         "Hubungkan ulang ke Gmail"
+      ],
+      "Change my access": [
+        "Ubah akses saya"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Lanjutkan ke ${ planOrAppName }"
+      ],
+      "Download debug information": [
+        "Unduh informasi debug"
+      ],
+      "Export editor state for version": [
+        "Ekspor status editor untuk versi"
+      ],
+      "Export this version (as docx)": [
+        "Ekspor versi ini (sebagai docx)"
+      ],
+      "Export YJS state for version": [
+        "Ekspor status YJS untuk versi"
+      ],
+      "Reject": [
+        "Tolak"
+      ],
+      "Reload spreadsheet": [
+        "Muat ulang spreadsheet"
+      ],
+      "Remove my access": [
+        "Hapus akses saya"
+      ],
+      "Report issue": [
+        "Laporkan isu"
+      ],
+      "Send": [
+        "Kirim"
+      ],
+      "Set password or expiration date": [
+        "Atur kata sandi atau tanggal kedalewarsa"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Berbagi terenkripsi secara end-to-end"
+      ],
+      "Try Workspace": [
+        "Coba Workspace"
+      ],
+      "Verify now": [
+        "Verifikasi sekarang"
       ]
     },
     "Action subscription": {
@@ -1052,6 +1097,45 @@
       ],
       "Users": [
         "Pengguna"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe (untuk ${ quantity } pengguna)"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } server VPN khusus"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asisten AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asisten AI ${ LUMO_APP_NAME } (untuk ${ quantity } pengguna)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Lisensi AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Kuota ${ LUMO_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } per kuota"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domain khusus"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } lisensi AI ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } lisensi ${ MEET_APP_NAME }"
+      ],
+      "Dedicated VPN servers": [
+        "Server VPN khusus"
+      ],
+      "Writing assistant": [
+        "Asisten penulisan"
+      ],
+      "Writing assistant seats": [
+        "Kuota asisten penulisan"
       ]
     },
     "Alert": {
@@ -2476,6 +2560,9 @@
       ],
       "Åland Islands": [
         "Kepulauan Åland"
+      ],
+      "Canary Islands": [
+        "Kepulauan Canary"
       ]
     },
     "Cycle": {
@@ -2680,6 +2767,15 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Akun ${ MAIL_APP_NAME } gratis Anda memiliki penyimpanan terbatas, sehingga hanya email Gmail terbaru Anda yang akan diimpor."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Untuk proses onboarding tim ke ${ BRAND_NAME } yang mulus, impor data dari Google, Outlook, dan layanan lainnya."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Untuk mengimpor melalui file CSV dan VCF, pastikan file tidak melebihi ${ MAX_IMPORT_FILE_SIZE_STRING } atau ${ maxContactString } kontak. Jika file melebihi batas ini, silakan pisahkan menjadi beberapa file yang lebih kecil. ${ learnMoreLink }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Sangat disayangkan Anda akan pergi. Jika ada waktu, kirimkan alasan pembatalan Anda. Masukan Anda membantu menjadikan ${ BRAND_NAME } lebih baik untuk semua orang."
       ]
     },
     "description": {
@@ -3494,6 +3590,69 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } item gagal dipindahkan"
+      ],
+      "Address could not be added.": [
+        "Alamat tidak dapat ditambahkan."
+      ],
+      "Cannot find move target": [
+        "Tidak dapat menemukan target pemindahan"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Masukkan nama pengguna tanpa domain (@example.com)"
+      ],
+      "Failed loading group members": [
+        "Gagal memuat anggota grup"
+      ],
+      "Failed to change permissions settings": [
+        "Gagal mengubah pengaturan izin"
+      ],
+      "Failed to load 'My files' folder": [
+        "Gagal memuat folder 'File saya'"
+      ],
+      "Failed to load recent documents": [
+        "Gagal memuat dokumen terbaru"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Gagal memuat data langganan. Silakan coba lagi nanti."
+      ],
+      "Failed to rename document": [
+        "Gagal mengubah nama dokumen"
+      ],
+      "Invalid coupon": [
+        "Kupon tidak valid"
+      ],
+      "Invalid URL": [
+        "URL tidak valid"
+      ],
+      "No drive found to import": [
+        "Tidak ada drive yang ditemukan untuk diimpor"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Skema reverse charge tidak didukung untuk paket ini"
+      ],
+      "Some trashed documents could not be loaded": [
+        "Beberapa dokumen yang dibuang ke tempat sampah tidak dapat dimuat"
+      ],
+      "Something went wrong": [
+        "Terjadi kesalahan"
+      ],
+      "This field is invalid": [
+        "Kolom tidak valid"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Terjadi kesalahan tak terduga, tidak dapat mengimpor file"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Tidak dapat mengirim kode verifikasi menggunakan metode ini."
+      ],
+      "Wrong billing address": [
+        "Alamat penagihan salah"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Semua alamat dalam paket telah digunakan. Harap tingkatkan paket untuk menambah alamat baru atau nonaktifkan alamat di akun Anda."
       ]
     },
     "Error importing calendar": {
@@ -3560,6 +3719,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Berkas ${ formattedFilename } Anda kosong."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "File ${ formattedFilename } berisi lebih dari ${ maxContactString } kontak."
       ]
     },
     "Error importing event": {
@@ -3899,15 +4061,18 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
+        "Terjadi kesalahan saat melakukan autentikasi dengan kunci keamanan. Silakan coba lagi."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Masukkan kunci keamanan yang terhubung dengan Akun ${ BRAND_NAME } Anda."
+        "Sisipkan kunci keamanan yang terhubung dengan Akun ${ BRAND_NAME } Anda."
       ],
       "Security key": [
         "Kunci keamanan"
+      ],
+      "Touch your security key.": [
+        "Sentuh kunci keamanan."
       ]
     },
     "fido2: Label": {
@@ -4400,7 +4565,7 @@
         "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Pengguna di sini didefinisikan sebagai akun yang terhubung dengan nama pengguna, kotak surat, dan individu tunggal"
+        "Pengguna adalah akun yang terkait dengan satu nama pengguna, kotak surat, dan satu orang."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Akses akun dibatasi karena tagihan yang tertunggak. Silakan hubungi administrator Anda."
@@ -4619,7 +4784,7 @@
         "Kunci duplikat diperbarui"
       ],
       "Each code can only be used once": [
-        "Masing-masing kode hanya dapat digunakan sekali"
+        "Setiap kode hanya dapat digunakan sekali"
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -4631,7 +4796,7 @@
         "Layanan hosting email gratis untuk domain khusus terbatas hanya pada 10 domain. Anda dapat membeli domain tambahan dengan harga ${ price } per domainnya."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
-        "Hosting email hanya tersedia untuk domain yang Anda miliki. Pendaftaran domain melalui ${ BRAND_NAME } saat ini tidak didukung. Anda dapat meng-host email untuk domain yang terdaftar pada badan registrasi domain manapun."
+        "Hosting email hanya tersedia untuk domain yang sudah Anda miliki. Pendaftaran domain saat ini tidak tersedia melalui ${ BRAND_NAME }. Anda dapat menghosting email untuk domain yang terdaftar di registrar domain mana pun."
       ],
       "Emails are automatically signed": [
         "Email ditandatangani secara otomatis"
@@ -5874,6 +6039,117 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Tingkatkan atau bersihkan ruang penyimpanan kapan saja untuk memindahkan sisanya"
+      ],
+      "${ total } user found": [
+        "${ total } pengguna ditemukan"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Undang teman** ke ${ BRAND_NAME } dengan tautan rujukan Anda."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Teman Anda mendapatkan ${ refereeRewardAmount }** dalam bentuk kredit jika mereka berlangganan."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Anda mendapatkan ${ referrerRewardAmount }** dalam bentuk kredit untuk setiap teman yang berlangganan."
+      ],
+      "Already in this folder": [
+        "Sudah ada di folder ini"
+      ],
+      "Can edit and manage access": [
+        "Dapat mengedit dan mengelola akses"
+      ],
+      "Can view and edit": [
+        "Dapat melihat dan mengedit"
+      ],
+      "Can't move a folder into itself": [
+        "Tidak dapat memindahkan folder ke dalam dirinya sendiri"
+      ],
+      "Can't write into folder": [
+        "Tidak dapat menulis ke dalam folder"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Buat cloud yang aman untuk ${ memberCount } anggota"
+      ],
+      "Decrypting your document": [
+        "Mendekripsi dokumen"
+      ],
+      "Details": [
+        "Rincian"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Apakah Anda mengingat kata sandi? ${ verifyButton }"
+      ],
+      "Enter code": [
+        "Masukkan kode"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Semua yang ada di ${ planOrAppName }, ditambah:"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Hanya file (tanpa foto, ${ DOCS_APP_NAME } atau ${ SHEETS_APP_NAME }) - hingga total 100 GB, 100.000 file, dan 50 GB per file"
+      ],
+      "Forgot password?": [
+        "Lupa kata sandi?"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Dapatkan email @your-company.com profesional, penyimpanan aman sebesar 1 TB per pengguna, panggilan video yang lebih lama, dan lainnya dengan ${ BRAND_NAME } Workspace."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Bantu kami meningkatkan pengalaman ini dengan melaporkan isu. Jika bersedia membagikan konten spreadsheet, lampirkan informasi debug di bawah ini ke laporan Anda."
+      ],
+      "Hide table of contents": [
+        "Sembunyikan daftar isi"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Jika kehilangan akses ke aplikasi autentikator, gunakan 1 dari 16 kode pemulihan cadangan yang disediakan saat menyiapkan autentikasi dua faktor. ${ learnMoreLink }"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Jika menghapus diri sendiri, Anda akan kehilangan akses ke \"${ fileName }\" dan tidak akan dapat membukanya lagi kecuali pemilik membagikannya kembali kepada Anda."
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ups! Spreadsheet ini tidak dapat menyimpan edit terbaru Anda, sehingga pengeditan dijeda untuk mencegah hilangnya hasil kerja Anda."
+      ],
+      "Password verified": [
+        "Kata sandi terverifikasi"
+      ],
+      "Please select the labels you would like to import:": [
+        "Silakan pilih label yang ingin diimpor:"
+      ],
+      "Select a destination folder": [
+        "Pilih folder tujuan"
+      ],
+      "Show table of contents": [
+        "Tampilkan daftar isi"
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Dokumen ini memiliki banyak kolaborator aktif. Pengeditan waktu nyata untuk sementara tidak tersedia. Muat ulang untuk melihat pembaruan terbaru."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Untuk membantu mengingat kata sandi, diminta untuk memasukkannya secara berkala. Frekuensi permintaan akan berkurang seiring waktu."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Percayai kunci \"${ activeSignerText }\" untuk memverifikasi pesan baru dari kontak ini."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Pengingat untuk memverifikasi kata sandi akan diberikan nanti"
+      ],
+      "Who has access": [
+        "Siapa yang memiliki akses"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Saat ini masuk sebagai ${ username } untuk ${ organizationName }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Kredit akan diterima 1 bulan setelah teman berlangganan paket tahunan, dan 2 bulan setelah teman berlangganan paket bulanan."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Tagihan akan dibebankan setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }. Anda dapat membatalkan kapan saja."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Tanggal penagihan berikutnya adalah ${ renewalTime }. Pembatalan dapat dilakukan kapan saja."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Tanggal penagihan berikutnya adalah ${ renewalTime }. Pembatalan dapat dilakukan kapan saja. Hubungi dukungan jika memerlukan perubahan paket segera."
       ]
     },
     "info": {
@@ -5964,6 +6240,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Penanda Aktif"
+      ],
+      "Fallback": [
+        "Cadangan"
       ]
     },
     "Label": {
@@ -6506,6 +6788,75 @@
       ],
       "Expiry": [
         "Kedaluwarsa"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } karakter"
+      ],
+      "Additional comments": [
+        "Komentar tambahan"
+      ],
+      "Allow editors to change permissions and share": [
+        "Izinkan editor untuk mengubah izin dan membagikan"
+      ],
+      "Anyone on the Internet with the link": [
+        "Siapa saja di Internet yang memiliki tautan"
+      ],
+      "Continue cancelling": [
+        "Lanjutkan pembatalan"
+      ],
+      "Delete link and remove access for everyone": [
+        "Hapus tautan dan hapus akses untuk semua orang"
+      ],
+      "Disable this link on a specific date": [
+        "Nonaktifkan tautan ini pada tanggal tertentu"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Emails (last 6 months)": [
+        "Email (6 bulan terakhir)"
+      ],
+      "Exact host matching": [
+        "Pencocokan host persis"
+      ],
+      "Exact URL matching": [
+        "Pencocokan URL persis"
+      ],
+      "Last 6 months only": [
+        "Hanya 6 bulan terakhir"
+      ],
+      "Main reason for cancelling": [
+        "Alasan utama untuk membatalkan"
+      ],
+      "Never fill on this exact URL": [
+        "Jangan pernah isi pada URL persis ini"
+      ],
+      "Not active": [
+        "Tidak aktif"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domain induk dan subdomain (bawaan)"
+      ],
+      "Regular expression": [
+        "Ekspresi reguler"
+      ],
+      "Require password": [
+        "Wajibkan kata sandi"
+      ],
+      "Set a password to limit access via link": [
+        "Atur kata sandi untuk membatasi akses melalui tautan"
+      ],
+      "Skip feedback": [
+        "Lewati masukan"
+      ],
+      "Starts with": [
+        "Mulai dengan"
+      ],
+      "Unknown user": [
+        "Pengguna tidak dikenal"
+      ],
+      "URL wildcard pattern": [
+        "Pola wildcard URL"
       ]
     },
     "Label for contact group color": {
@@ -6776,6 +7127,24 @@
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Uji coba gratis Anda telah berakhir. ${ nonAutoRenewalAction }"
+      ],
+      "'Starts with' matching rule": [
+        "Aturan pencocokan 'Mulai dengan'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Aturan pencocokan domain (sub) persis"
+      ],
+      "Exact URL matching rule": [
+        "Aturan pencocokan URL persis"
+      ],
+      "Never fill with this exact URL": [
+        "Jangan pernah isi dengan URL persis ini"
+      ],
+      "Regular expression rule": [
+        "Aturan ekspresi reguler"
+      ],
+      "Wildcard pattern matching rule": [
+        "Aturan pencocokan pola wildcard"
       ]
     },
     "Message display when a new app version is available": {
@@ -7177,7 +7546,7 @@
         "HIngga ${ numberOfUsers } pengguna"
       ],
       "${ options }-day file version history": [
-        "Riwayat versi berkas ${ options } hari"
+        "Riwayat versi file ${ options } hari"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } dengan ${ n } alias hide-my-email"
@@ -7598,6 +7967,36 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "Berbagi brankas dengan hingga ${ n } pengguna"
+      ],
+      "Access all countries": [
+        "Akses seluruh negara"
+      ],
+      "Appointment scheduling": [
+        "Penjadwalan janji temu"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Penjadwalan janji temu dengan ${ n } halaman pemesanan"
+      ],
+      "Data retention policies": [
+        "Kebijakan retensi data"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Server khusus yang dioptimalkan untuk kecepatan"
+      ],
+      "No streaming support": [
+        "Tidak ada dukungan streaming"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Dukungan telepon (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ pengguna)"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Obrolan AI Pribadi (${ LUMO_APP_NAME })"
+      ],
+      "Unlock streaming": [
+        "Buka kunci streaming"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN dengan pemblokir iklan dan perlindungan malware"
       ]
     },
     "new_plans: feature highlight": {
@@ -7969,6 +8368,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Arahkan lalu lintas internet Anda melalui jaringan Tor dengan satu klik"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Dukungan telepon tersedia dari tim Dukungan Pelanggan ${ BRAND_NAME } selama jam kerja Eropa, untuk pelanggan dengan ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } pengguna atau lebih"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8028,6 +8430,9 @@
       ],
       "Support for ${ n } custom email domain": [
         "Dukungan untuk ${ n } domain email khusus"
+      ],
+      "${ n } country": [
+        "${ n } negara"
       ]
     },
     "Notification": {
@@ -8267,6 +8672,39 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Alamat ${ BRAND_NAME } Anda siap digunakan"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" berhasil dibuat"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" gagal dibuat"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" dipindahkan"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" dibagikan"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item dipindahkan"
+      ],
+      "Document moved to trash": [
+        "Dokumen dipindahkan ke tempat sampah"
+      ],
+      "Document restored from trash": [
+        "Dokumen dipulihkan dari sampah"
+      ],
+      "Failed to load sharing details": [
+        "Gagal memuat rincian berbagi"
+      ],
+      "Failed to rename document": [
+        "Gagal mengubah nama dokumen"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Pengaturan diperbarui. Editor dapat mengubah izin dan membagikan."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Pengaturan diperbarui. Editor tidak dapat mengubah izin atau membagikan."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8520,6 +8958,9 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (tidak termasuk pajak)"
       ]
     },
     "Payments.Error": {
@@ -8573,6 +9014,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci ini."
+      ],
+      "This contact currently signs messages with this key": [
+        "Kontak ini saat ini menandatangani pesan dengan kunci ini"
+      ],
+      "This key is used for message verification": [
+        "Kunci ini digunakan untuk verifikasi pesan"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Kunci ini digunakan untuk enkripsi pesan ke kontak ini pada aplikasi versi lama"
       ]
     },
     "PGP key warning": {
@@ -8664,6 +9114,18 @@
       ],
       "Search": [
         "Pencarian"
+      ],
+      "Anything you'd like us to know": [
+        "Ada hal lain yang perlu disampaikan"
+      ],
+      "Enter a name": [
+        "Masukkan nama"
+      ],
+      "Search for users or addresses": [
+        "Cari pengguna atau alamat"
+      ],
+      "Select a provider": [
+        "Pilih penyedia"
       ]
     },
     "Placeholder for contact group name": {
@@ -8900,13 +9362,13 @@
         "Anda memiliki ${ timeRemaining.inDays } hari tersisa untuk mengatur ulang kata sandi Anda."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Anda memiliki ${ timeRemaining.inHours } jam tersisa untuk mengatur ulang kata sandi Anda."
+        "Tersisa ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Anda memiliki ${ timeRemaining.inMinutes } menit tersisa untuk mengatur ulang kata sandi Anda."
+        "Tersisa ${ timeRemaining.inMinutes } menit untuk mengatur ulang kata sandi."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Anda memiliki ${ timeRemaining.inSeconds } tersisa untuk mengatur ulang kata sandi Anda."
+        "Tersisa ${ timeRemaining.inSeconds } detik untuk mengatur ulang kata sandi."
       ]
     },
     "session_recovery:available:link": {
@@ -9248,6 +9710,9 @@
       ],
       "Protect your account from threats with Sentinel": [
         "Lindungi akun Anda dari ancaman dengan Sentinel"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Simpan kata sandi dengan aman dan terorganisasi di beberapa brankas"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9312,6 +9777,9 @@
       ],
       "pending": [
         "menunggu"
+      ],
+      "user joined": [
+        "pengguna bergabung"
       ]
     },
     "Storage": {
@@ -9748,6 +10216,9 @@
       ],
       "Type": [
         "Tipe"
+      ],
+      "Size": [
+        "Ukuran"
       ]
     },
     "TableHeader": {
@@ -10479,6 +10950,48 @@
       ],
       "You are all set": [
         "Semua sudah siap"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asisten penulisan ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Change access to viewer?": [
+        "Ubah akses menjadi penampil?"
+      ],
+      "Choose a provider": [
+        "Pilih penyedia"
+      ],
+      "Editing paused": [
+        "Pengeditan dijeda"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Impor data Anda ke ${ BRAND_NAME }"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrasikan organisasi ke ${ BRAND_NAME }"
+      ],
+      "Public link settings": [
+        "Pengaturan tautan publik"
+      ],
+      "Remove your access?": [
+        "Hapus akses Anda?"
+      ],
+      "Select data to import": [
+        "Pilih data untuk impor"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Pengaturan untuk ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Bagikan \"${ fileName }\""
+      ],
+      "Users and addresses": [
+        "Pengguna dan alamat"
+      ],
+      "Verify your password": [
+        "Verifikasi kata sandi Anda"
       ]
     },
     "Title subscription": {
@@ -10581,6 +11094,15 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Kecuali kata sandi ini didekripsi, kata sandi yang terenkripsi akan tetap aman bahkan apabila terpapar."
+      ],
+      "Change shared item settings": [
+        "Ubah pengaturan item yang dibagikan"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Bantuan AI instan, pakar manusia siap membantu!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Kunci OpenPGP Versi 6"
       ]
     },
     "tooltip": {
@@ -10800,6 +11322,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uji coba Anda akan berakhir pada ${ textDate }. Anda tidak akan dikenakan biaya apabila Anda membatalkan sebelum ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } memberikan kendali yang kuat, tetapi satu kesalahan saja dapat menyebabkan isi otomatis mencocokkan dan mengisi data pada situs web penipuan atau phishing."
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "Tindakan ini akan mengganti semua data di spreadsheet"
       ]
     },
     "Autocomplete": {
@@ -10813,6 +11341,21 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Setelah masa uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_DEDICATED_IPS } server khusus selama masa uji coba."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_LUMO_SEATS } kuota ${ LUMO_SHORT_APP_NAME } selama masa uji coba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_USERS } pengguna selama masa uji coba."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Anda tidak dapat menambahkan domain khusus selama masa uji coba."
       ]
     },
     "b2b_trials_Action": {
@@ -11111,6 +11654,15 @@
       ],
       "Up to ${ n } participant": [
         "Hingga ${ n } peserta"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Tuan rumah dapat merekam rapat secara lokal di komputer"
+      ],
+      "Meeting recording": [
+        "Rekaman rapat"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Rapat video, ${ n } peserta"
       ]
     },
     "new_plans: Subtext": {
@@ -11328,6 +11880,12 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
       ]
     },
     "Recent documents table header": {
@@ -11441,6 +11999,12 @@
       ],
       "Format": [
         "Format"
+      ],
+      "Convert text to numbers, dates, and formulas": [
+        "Konversikan teks menjadi angka, tanggal, dan rumus"
+      ],
+      "Separator type": [
+        "Jenis pemisah"
       ]
     },
     "sheets_2025:Title": {
@@ -11603,6 +12167,163 @@
       ],
       "SUMMER SALE": [
         "PROMO MUSIM PANAS"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "Penyimpanan data 2 TB"
+      ],
+      "3 TB data storage": [
+        "Penyimpanan data 3 TB"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Akses 15.000+ server di 120+ negara"
+      ],
+      "Access advanced AI models": [
+        "Akses model AI lanjutan"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Seluruh fitur premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokir iklan, pelacak, dan malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
+      ],
+      "Connect 10 devices at once": [
+        "Hubungkan 10 perangkat secara bersamaan"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Riwayat obrolan lengkap dengan fitur cari dan favorit yang mudah"
+      ],
+      "Individual accounts for 6 users": [
+        "Akun individu untuk 6 pengguna"
+      ],
+      "Individual accounts for you and a partner": [
+        "Akun individu untuk Anda dan pasangan"
+      ],
+      "Stronger protection against cyber threats": [
+        "Perlindungan lebih kuat terhadap ancaman siber"
+      ],
+      "Unlimited daily chats": [
+        "Obrolan harian tanpa batas"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield yang dirancang khusus melindungi perangkat dan mempercepat penjelajahan dengan memblokir iklan, pelacak, dan malware."
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Migrated": [
+        "Dimigrasikan"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (untuk ${ quantity } pengguna)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "Lisensi ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Kuota ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } kuota ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Tersedia hingga ${ TRIAL_MAX_MEET_SEATS } kuota ${ MEET_SHORT_APP_NAME } selama masa uji coba."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Pemilik"
+      ],
+      "Security Admin": [
+        "Admin Keamanan"
+      ],
+      "User Admin": [
+        "Admin Pengguna"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurasikan kebijakan keamanan, retensi data, dan infrastruktur VPN, serta kelola log audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Kelola semua pengguna, grup, keamanan, penagihan, dan konfigurasi sistem."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Kelola pengguna, grup, dan penyimpanan untuk semua anggota, tetapkan peran, dan alokasikan lisensi."
+      ]
+    },
+    "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Nilai Dipisahkan Koma (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "New spreadsheet": [
+        "Spreadsheet baru"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Nilai Dipisahkan Tab (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Detect automatically": [
+        "Deteksi otomatis"
+      ],
+      "Insert as new sheet": [
+        "Sisipkan sebagai lembar baru"
+      ],
+      "Replace current sheet": [
+        "Ganti lembar saat ini"
+      ],
+      "Replace data at selected cell": [
+        "Ganti data pada sel yang dipilih"
+      ],
+      "Replace spreadsheet": [
+        "Ganti spreadsheet"
+      ],
+      "Select a file to import": [
+        "Pilih file untuk diimpor"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Spreadsheet saat ini, termasuk semua lembar di dalamnya, akan diganti dengan versi ini."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Tindakan"
+      ],
+      "Created": [
+        "Dibuat"
+      ],
+      "Expires": [
+        "Kedaluwarsa"
+      ],
+      "Fingerprint": [
+        "Sidik jari"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Tipe"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Anda akan dapat menetapkan peran setelah pengguna menerima undangan."
       ]
     }
   }

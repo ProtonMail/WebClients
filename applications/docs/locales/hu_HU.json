@@ -862,6 +862,15 @@
       ],
       "Reconnect to Gmail": [
         "Kapcsolódjon újra a Gmailhez"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Folytatás itt: ${ planOrAppName }"
+      ],
+      "Reject": [
+        "Elutasítás"
+      ],
+      "Send": [
+        "Küldés"
       ]
     },
     "Actions message": {
@@ -897,6 +906,27 @@
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME } licenc",
         "${ seats } ${ MEET_APP_NAME } licenc"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } / dedikált szerver"
+      ],
+      "${ price } per domain": [
+        "${ price } / domain"
+      ],
+      "${ price } per seat": [
+        "${ price } felhasználónként"
+      ],
+      "${ price } per user": [
+        "${ price } felhasználónként"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikált VPN szerverek"
+      ],
+      "Domains": [
+        "Domain nevek"
+      ],
+      "Writing assistant": [
+        "Írási segéd"
       ]
     },
     "Alert": {
@@ -1213,6 +1243,9 @@
       ],
       "Web search access": [
         "Webes keresési hozzáférés"
+      ],
+      "Zero-access encryption": [
+        "Zéró hozzáférésű titkosítás"
       ]
     },
     "collider_2025: Info": {
@@ -2184,6 +2217,9 @@
       ],
       "Åland Islands": [
         "Aland-szigetek"
+      ],
+      "Canary Islands": [
+        "Kanári-szigetek"
       ]
     },
     "customer_support.feature.all": {
@@ -3106,6 +3142,18 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Valamennyi, az előfizetéséhez rendelkezésére álló felhasználót elhasználta. Több felhasználó létrehozásához váltson nagyobb csomagra."
+      ],
+      "Address could not be added.": [
+        "A cím hozzáadása nem sikerült."
+      ],
+      "Invalid URL": [
+        "Érvénytelen URL cím"
+      ],
+      "Something went wrong": [
+        "Hiba történt"
+      ],
+      "Wrong billing address": [
+        "Hibás számlázási cím"
       ]
     },
     "error": {
@@ -3824,6 +3872,9 @@
       ],
       "Your password is correct.": [
         "A jelszava helyes."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
       ]
     },
     "Import instructions": {
@@ -5194,6 +5245,31 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja.",
         "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja."
+      ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "A felhasználó egy fiókot jelent, amely egyetlen felhasználói nevet, e-mail fiókot és személyt takar"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Hozzon létre biztonságos felhőárhelyet ${ memberCount } tagnak",
+        "Hozzon létre biztonságos felhőárhelyet ${ memberCount } tagnak"
+      ],
+      "Custom email domains": [
+        "Saját domain nevek"
+      ],
+      "Details": [
+        "Részletek"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Az e-mail szolgáltatás olyan domain nevekre lehetséges, amelyek már a tulajdonában vannak. A ${ BRAND_NAME } jelenleg nem biztosít domain név regisztrációt. Bármilyen regisztrátornál regisztrált domain nevet használhat."
+      ],
+      "Forgot password?": [
+        "Elfelejtette a jelszavát?"
+      ],
+      "Organization size": [
+        "Szervezet mérete"
+      ],
+      "Users": [
+        "Felhasználók"
       ]
     },
     "info": {
@@ -5681,6 +5757,9 @@
       ],
       "Emails": [
         "E-mailek"
+      ],
+      "Skip feedback": [
+        "Visszajelzés kihagyása"
       ]
     },
     "Label for contact group color": {
@@ -5806,6 +5885,9 @@
       ],
       "What’s this?": [
         "Mi ez?"
+      ],
+      "Terms and conditions": [
+        "Felhasználási feltételek"
       ]
     },
     "List title": {
@@ -6623,6 +6705,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Átvizsgáljuk a sötét webet, hogy ellenőrizzük, kiszivárogtak-e a ${ BRAND_NAME } címei vagy e-mail álnevei, és azonnal értesítjük, ha bármit találunk."
+      ],
+      "Access all countries": [
+        "Hozzáférés minden országhoz"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Időpontfoglalás ${ n } jelentkezési oldallal",
+        "Időpontfoglalás ${ n } jelentkezési oldallal"
       ]
     },
     "new_plans: feature highlight": {
@@ -7022,6 +7111,10 @@
       "Support for ${ n } custom email domain": [
         "${ n } saját e-mail domain név használata",
         "${ n } saját e-mail domain név használata"
+      ],
+      "${ n } country": [
+        "${ n } ország",
+        "${ n } ország"
       ]
     },
     "Notification": {
@@ -9396,6 +9489,15 @@
       ],
       "You are all set": [
         "Minden készen áll"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe írási segéd"
+      ],
+      "Select data to import": [
+        "Válassza ki az importálni kívánt adatokat"
+      ],
+      "Users and addresses": [
+        "Felhasználók és címek"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9768,6 +9870,54 @@
       ],
       "SUMMER SALE": [
         "NYÁRI AKCIÓ"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Emelje új szintre az e-mailes produktivitást. Hagyja, hogy a ${ BRAND_NAME } Scribe segítsen megírni, válaszolni és lektorálni az e-mailjeit."
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután automatikusan megújuló havi előfizetésre alakul át. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Akár ${ TRIAL_MAX_DEDICATED_IPS } dedikált szerverrel is rendelkezhet a próbaidőszakban."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Maximum ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licence lehet a próbaidőszakban."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Maximum ${ TRIAL_MAX_SCRIBE_SEATS } Scribe licence lehet a próbaidőszakban."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Maximum ${ TRIAL_MAX_USERS } felhasználó lehet a próbaidőszakban."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nem adhat hozzá saját domain neveket a próbaidőszak alatt."
+      ]
+    },
+    "BF2025: Deal details": {
+      "3 TB data storage": [
+        "3 TB tárhely"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "15,000+ szerver elérése, 120+ országban"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } résztvevő",
+        "${ n } résztvevő"
+      ],
+      "Up to ${ n } participant": [
+        "${ n } résztvevő",
+        "Akár ${ n } résztvevő"
+      ]
+    },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Új táblázat"
       ]
     }
   }

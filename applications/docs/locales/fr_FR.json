@@ -1030,6 +1030,39 @@
       ],
       "Verify now": [
         "Vérifier maintenant"
+      ],
+      "Clear conversation": [
+        "Effacer la conversation"
+      ],
+      "Download debug information": [
+        "Télécharger les informations de débogage"
+      ],
+      "Export editor state for version": [
+        "Exporter l'état de l'éditeur pour la version"
+      ],
+      "Export this version (as docx)": [
+        "Exporter cette version (en docx)"
+      ],
+      "Export YJS state for version": [
+        "Exporter l'état YJS pour la version"
+      ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "Reject": [
+        "Refuser"
+      ],
+      "Reload spreadsheet": [
+        "Recharger la feuille de calcul"
+      ],
+      "Report issue": [
+        "Signaler un problème"
+      ],
+      "Send": [
+        "Envoyer"
+      ],
+      "Stop": [
+        "Arrêter"
       ]
     },
     "Action subscription": {
@@ -1119,6 +1152,28 @@
       ],
       "Writing assistant seats": [
         "Accès à l'assistant d'écriture"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateurs)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistant IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
+      "${ price } per seat": [
+        "${ price } par siège"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domaine personnalisé",
+        "${ quantity } domaines personnalisés"
       ]
     },
     "Alert": {
@@ -1137,6 +1192,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Améliorez la productivité de vos e-mails. Laissez ${ BRAND_NAME } Scribe vous aider à rédiger, répondre et corriger vos e-mails."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Améliorez la productivité de vos e-mails. Laissez ${ LUMO_SHORT_APP_NAME } vous aider à rédiger, répondre et corriger vos e-mails."
       ]
     },
     "Attached ics file error": {
@@ -1369,6 +1427,13 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ LUMO_SHORT_APP_NAME }, des alias « hide-my-email » illimités et bien plus encore.",
+        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ LUMO_SHORT_APP_NAME }, des alias « hide-my-email » illimités et bien plus encore."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend 15 adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ LUMO_SHORT_APP_NAME }, des alias « hide-my-email » illimités et bien plus encore."
       ]
     },
     "Billing cycle": {
@@ -1506,6 +1571,9 @@
       ],
       "Maybe later": [
         "Peut-être plus tard"
+      ],
+      "Get 50% offer": [
+        "Profitez d'une réduction de 50 %"
       ]
     },
     "Cancellation upsell": {
@@ -3637,6 +3705,67 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tous les utilisateurs de votre abonnement sont utilisés. Nous vous invitons à mettre à jour votre abonnement pour ajouter un nouvel utilisateur."
+      ],
+      "Failed to rename document": [
+        "La modification du nom du document n'a pas abouti."
+      ],
+      "Failed to trash document": [
+        "Le document n'a pas pu être mis à la corbeille"
+      ],
+      "Invalid URL": [
+        "L'URL n'est pas valide."
+      ],
+      "Invitation not found": [
+        "L'invitation est introuvable"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "L'adresse du membre n'a pas été trouvée. Veuillez contacter le service client pour résoudre ce problème."
+      ],
+      "Missing organization private key": [
+        "La clé privée de l'organisation est absente."
+      ],
+      "Missing organization public key": [
+        "La clé publique de l'organisation est absente."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Le nom doit être composé d'${ MAX_NODE_NAME_LENGTH } caractère au maximum.",
+        "Le nom doit être composé de ${ MAX_NODE_NAME_LENGTH } caractères au maximum."
+      ],
+      "No drive found to import": [
+        "Aucun disque à importer détecté"
+      ],
+      "Operation aborted": [
+        "Opération annulée"
+      ],
+      "Operation failed, try again later": [
+        "L'opération n'a pas abouti. Réessayez plus tard"
+      ],
+      "Photo not found": [
+        "La photo est introuvable"
+      ],
+      "Request aborted": [
+        "Requête interrompue"
+      ],
+      "Signature is missing": [
+        "La signature est manquante"
+      ],
+      "Some documents could not be loaded": [
+        "Certains documents n'ont pas pu être chargés"
+      ],
+      "Something went wrong": [
+        "Une erreur s'est produite."
+      ],
+      "This item is no longer shared": [
+        "Cet élément n’est plus partagé"
+      ],
+      "This item is not shared": [
+        "Cet élément n’est pas partagé"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
       ]
     },
     "Error importing calendar": {
@@ -4056,6 +4185,9 @@
       ],
       "Security key": [
         "Clé de sécurité"
+      ],
+      "Touch your security key.": [
+        "Touchez votre clé de sécurité."
       ]
     },
     "fido2: Label": {
@@ -6183,6 +6315,73 @@
       ],
       "We'll remind you to verify your password again later": [
         "Nous vous rappellerons de vérifier votre mot de passe ultérieurement."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Accédez à plus de 20 000 serveurs dans plus de 145 pays"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Créer un cloud sécurisé pour ${ memberCount } membre",
+        "Créer un cloud sécurisé pour ${ memberCount } membres"
+      ],
+      "Details": [
+        "Informations"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Des vitesses VPN ultra-rapides pouvant atteindre 10 Gbps"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Fichiers uniquement (pas de photos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Prenez encore un peu de temps pour vous décider, sans être dérangé."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Aidez-nous à améliorer cette expérience en signalant le problème. Si vous souhaitez partager le contenu de votre feuille de calcul, veuillez joindre les informations de débogage ci-dessous à votre rapport."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Aidez-nous à améliorer cette expérience en signalant le problème. Veuillez joindre les informations de débogage ci-dessous à votre rapport."
+      ],
+      "Hide table of contents": [
+        "Ne pas afficher la table des matières"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Si vous résiliez votre abonnement maintenant, vous perdrez l'accès à ${ BRAND_NAME } ${ planTitle } à compter du ${ expiryDate }, y compris les fonctionnalités suivantes :"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Oups ! Cette feuille de calcul ne peut pas enregistrer vos dernières modifications ; nous avons donc suspendu l'édition pour éviter que vous ne perdiez votre travail."
+      ],
+      "Premium privacy protection across all your devices": [
+        "Une protection optimale de la vie privée sur tous vos appareils"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Sélectionnez exactement ce que vous voulez migrer. Cela s'appliquera à tous les utilisateurs de l'organisation."
+      ],
+      "Show table of contents": [
+        "Afficher la table des matières"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Continuez à souscrire à votre forfait et bénéficiez de 50 % de réduction sur votre abonnement du mois prochain"
+      ],
+      "Thinking about this": [
+        "Réflexion en cours..."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Nous avons constaté que vous aviez déjà rencontré des problèmes lors de l'ouverture d'un document."
+      ],
+      "You": [
+        "Vous"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Vous êtes actuellement connecté en tant que ${ username } pour ${ organizationName }."
       ]
     },
     "info": {
@@ -6875,6 +7074,39 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Permettre aux éditeurs de modifier les autorisations et de partager."
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Version client"
+      ],
+      "Exact host matching": [
+        "Correspondance exacte de l'hôte"
+      ],
+      "Exact URL matching": [
+        "Correspondance exacte d'URL"
+      ],
+      "Never fill on this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domaine parent et sous-domaines (par défaut)"
+      ],
+      "Regular expression": [
+        "Expression régulière"
+      ],
+      "Starts with": [
+        "Commence par"
+      ],
+      "Unknown user": [
+        "Utilisateur inconnu"
+      ],
+      "URL wildcard pattern": [
+        "Modèle d'URL avec caractères génériques"
       ]
     },
     "Label for contact group color": {
@@ -7116,6 +7348,9 @@
       ],
       "Add-on with free trial": [
         "Module complémentaire avec essai gratuit"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "mailtrial2024: Action": {
@@ -7150,6 +7385,24 @@
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Votre essai gratuit est terminé. ${ nonAutoRenewalAction }"
+      ],
+      "'Starts with' matching rule": [
+        "Règle de correspondance « commence par »"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Règle de correspondance exacte des (sous-)domaines"
+      ],
+      "Exact URL matching rule": [
+        "Règle de correspondance exacte d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
+      ],
+      "Regular expression rule": [
+        "Règle d'expression régulière"
+      ],
+      "Wildcard pattern matching rule": [
+        "Règle de correspondance avec des caractères génériques"
       ]
     },
     "Message display when a new app version is available": {
@@ -8027,6 +8280,9 @@
       ],
       "Unlock streaming": [
         "Débloquez le streaming"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -8748,6 +9004,36 @@
       "${ numberOfItems } item moved": [
         "${ numberOfItems } élément a été déplacé",
         "${ numberOfItems } éléments ont été déplacés"
+      ],
+      "\"Document deleted permanently": [
+        "« Document supprimé définitivement"
+      ],
+      "Document moved to trash": [
+        "Le document a été mis à la corbeille."
+      ],
+      "Document restored from trash": [
+        "Le document a été restauré depuis la corbeille."
+      ],
+      "Failed to delete document": [
+        "Impossible de supprimer le document"
+      ],
+      "Failed to load invitations": [
+        "Le chargement des invitations n'a pas abouti."
+      ],
+      "Failed to load sharing details": [
+        "Les informations du partage n'ont pas pu être chargés"
+      ],
+      "Failed to reject invitation": [
+        "L'invitation n'a pas pu être refusée."
+      ],
+      "Failed to rename document": [
+        "Le document n'a pas pu être renommé."
+      ],
+      "Failed to restore document": [
+        "Le document n'a pas pu être restauré."
+      ],
+      "Failed to trash document": [
+        "Le document n'a pas pu être mis à la corbeille"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9178,6 +9464,9 @@
       ],
       "Search for users or addresses": [
         "Rechercher des utilisateurs ou des adresses"
+      ],
+      "Ask anything…": [
+        "Demandez ce que vous voulez…"
       ]
     },
     "Placeholder for contact group name": {
@@ -9824,6 +10113,12 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "Pour modifier ce document, créez une copie à modifier."
+      ],
+      "Editor permissions": [
+        "Autorisations de l'éditeur"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Les éditeurs peuvent désormais gérer le partage et inviter d'autres personnes. Vous pouvez le désactiver à tout moment dans les paramètres de partage."
       ]
     },
     "sso": {
@@ -10302,6 +10597,15 @@
       ],
       "Type": [
         "Type"
+      ],
+      "Estimated size": [
+        "Taille estimée"
+      ],
+      "Size": [
+        "Taille"
+      ],
+      "User": [
+        "Utilisateur"
       ]
     },
     "TableHeader": {
@@ -11074,6 +11378,24 @@
       ],
       "You are all set": [
         "Vous êtes paré"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Editing paused": [
+        "Modification en pause"
+      ],
+      "Problems Detected": [
+        "Problèmes détectés"
+      ],
+      "Stay for 50% off your next month": [
+        "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
+      ],
+      "Users and addresses": [
+        "Utilisateurs et adresses"
       ]
     },
     "Title subscription": {
@@ -11182,6 +11504,12 @@
       ],
       "Instant assistance with AI and human experts.": [
         "Assistance immédiate grâce à l'IA et à des experts humains."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Une assistance IA immédiate, avec un expert à votre disposition !"
+      ],
+      "Version 6 OpenPGP key": [
+        "Clé OpenPGP version 6"
       ]
     },
     "tooltip": {
@@ -11421,6 +11749,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Votre version d'essai se terminera le ${ textDate }. Vous ne serez pas facturé si vous annulez avant le ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } offre un contrôle très efficace, mais une seule erreur peut entraîner la saisie automatique de données sur des sites frauduleux ou d'hameçonnage."
       ]
     },
     "Autocomplete": {
@@ -11435,6 +11766,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Une fois la période d'essai terminée le ${ formattedDate1 }, l'abonnement deviendra payant et se renouvellera automatiquement chaque mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_LUMO_SEATS } accès à ${ LUMO_SHORT_APP_NAME } pendant la période d’essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_SCRIBE_SEATS } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME } pendant la période d'essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_USERS } utilisateurs pendant la période d’essai."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Vous ne pouvez pas ajouter de domaines personnalisés pendant la période d’essai."
       ]
     },
     "b2b_trials_Action": {
@@ -11747,6 +12096,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } accès ${ MEET_APP_NAME }",
         "${ seats } accès ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateur)",
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
+      "${ price } per seat": [
+        "${ price } par accès"
       ]
     },
     "meet_2025: Feature": {
@@ -12515,6 +12871,103 @@
       ],
       "SUMMER SALE": [
         "OFFRE ESTIVALE"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Activé"
+      ],
+      "All": [
+        "Tout"
+      ],
+      "In progress": [
+        "En cours"
+      ],
+      "Migrated": [
+        "Migré"
+      ],
+      "Pending": [
+        "En attente"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "En cours"
+      ],
+      "Migrated": [
+        "Migré"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_MEET_SEATS } accès à ${ MEET_SHORT_APP_NAME } pendant la période d’essai."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "Attributs"
+      ],
+      "content key": [
+        "clé de contenu"
+      ],
+      "hash key": [
+        "clé de hachage"
+      ],
+      "key": [
+        "clé"
+      ],
+      "membership": [
+        "abonnement"
+      ],
+      "name": [
+        "nom"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Propriétaire"
+      ],
+      "Security Admin": [
+        "Administrateur de sécurité"
+      ],
+      "User Admin": [
+        "Administrateur des utilisateurs"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurez les politiques de sécurité, la conservation des données et l’infrastructure VPN, et gérez les journaux d’audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gérez tous les utilisateurs, groupes, sécurité, facturation, journaux d'audit et configurations système."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gérez les utilisateurs, les groupes et le stockage de tous les membres, attribuez des rôles et attribuez des licences."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Actions"
+      ],
+      "Created": [
+        "Créé"
+      ],
+      "Expires": [
+        "Expire"
+      ],
+      "Fingerprint": [
+        "Empreinte digitale"
+      ],
+      "Status": [
+        "Statut"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
       ]
     }
   }

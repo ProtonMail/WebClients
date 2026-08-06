@@ -989,6 +989,36 @@
       ],
       "Reconnect to Gmail": [
         "Znova se povežite z Gmailom"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Nadaljuj v ${ planOrAppName }"
+      ],
+      "Export editor state for version": [
+        "Izvozi stanje urednika za verzijo"
+      ],
+      "Export this version (as docx)": [
+        "Izvozi to različico (kot docx)"
+      ],
+      "Export YJS state for version": [
+        "Izvozi stanje YJS za verzijo"
+      ],
+      "Reject": [
+        "Zavrni"
+      ],
+      "Reload spreadsheet": [
+        "Ponovno naloži preglednico"
+      ],
+      "Report issue": [
+        "Prijavi težavo"
+      ],
+      "Send": [
+        "Pošlji"
+      ],
+      "Try Workspace": [
+        "Preizkusite Workspace"
+      ],
+      "Verify now": [
+        "Preveri zdaj"
       ]
     },
     "Action subscription": {
@@ -1051,7 +1081,7 @@
         "${ ips } namenski VPN strežnik",
         "${ ips } namenska VPN strežnika",
         "${ ips } namenski VPN strežniki",
-        "${ ips } namenski VPN strežniki"
+        "${ ips } namenskih VPN strežnikov"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } licenca UI"
@@ -1062,7 +1092,7 @@
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } licenca UI",
         "${ seats } ${ LUMO_APP_NAME } licenci UI",
-        "${ seats } ${ LUMO_APP_NAME } licenc UI",
+        "${ seats } ${ LUMO_APP_NAME } licence UI",
         "${ seats } ${ LUMO_APP_NAME } licenc UI"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
@@ -1088,6 +1118,15 @@
       ],
       "Writing assistant seats": [
         "Licence za pomočnika pri pisanju"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnika)",
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnika)",
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnike)",
+        "${ LUMO_SHORT_APP_NAME } Scribe pomočnik pri pisanju (za ${ quantity } uporabnikov)"
+      ],
+      "${ price } per seat": [
+        "${ price } na licenco"
       ]
     },
     "Alert": {
@@ -1106,6 +1145,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ LUMO_SHORT_APP_NAME } pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
       ]
     },
     "Attached ics file error": {
@@ -1335,6 +1377,15 @@
         "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštna naslova, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
         "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
         "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštnih naslovov, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštna naslova, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštnih naslovov, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje 15 e-poštnih naslovov, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več."
       ]
     },
     "Billing cycle": {
@@ -1468,6 +1519,9 @@
       ],
       "Maybe later": [
         "Morda kasneje"
+      ],
+      "Get 50% offer": [
+        "Izkoristite ponudbo s 50 % popustom"
       ]
     },
     "Checkout row": {
@@ -2462,6 +2516,9 @@
       ],
       "Åland Islands": [
         "Alandski otoki"
+      ],
+      "Canary Islands": [
+        "Kanarski otoki"
       ]
     },
     "Cycle": {
@@ -2647,10 +2704,13 @@
         "Zdaj lahko s tega naslova pošiljate e-pošto iz ${ BRAND_NAME }."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le ${ newUserStorageText } vaših najnovejših sporočil Gmail"
+        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le ${ newUserStorageText } vaših najnovejših sporočil Gmail."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le vaša najnovejša e-poštna sporočila iz Gmaila."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Žal nam je, da odhajate. Če imate trenutek časa, bi bili zelo hvaležni, če bi nam povedali, zakaj želite prekiniti naročnino. Vaša povratna informacija nam pomaga izboljševati ${ BRAND_NAME } za vse."
       ]
     },
     "description": {
@@ -2797,6 +2857,9 @@
       ],
       "TITLE:": [
         "NASLOV:"
+      ],
+      "You are invited to": [
+        "Povabljeni ste na"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3439,6 +3502,42 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Uporabili ste vse uporabnike v svojem paketu. Prosimo nadgradite paket, da dodate novega uporabnika."
+      ],
+      "Failed to load 'My files' folder": [
+        "Ni bilo mogoče naložiti mape \"Moje datoteke\""
+      ],
+      "Failed to load recent documents": [
+        "Nalaganje nedavnih dokumentov ni uspelo."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Nalaganje podatkov o naročnini ni uspelo. Poizkusite znova kasneje."
+      ],
+      "Failed to rename document": [
+        "Dokumenta ni bilo mogoče preimenovati."
+      ],
+      "Failed to trash document": [
+        "Prestavljanje dokumenta v smetnjak je spodletelo."
+      ],
+      "Invalid URL": [
+        "Neveljaven URL"
+      ],
+      "No drive found to import": [
+        "Ni mogoče najti pogona za uvoz"
+      ],
+      "Some documents could not be loaded": [
+        "Nekaterih dokumentov ni mogoče naložiti"
+      ],
+      "Some trashed documents could not be loaded": [
+        "Nekaterih dokumentov v smetnjaku ni mogoče naložiti"
+      ],
+      "Something went wrong": [
+        "Nekaj je šlo narobe"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Nepričakovana napaka, ne moremo uvoziti datotek"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "S to metodo nam ni uspelo poslati potrditvenega kode."
       ]
     },
     "Error importing calendar": {
@@ -4160,6 +4259,9 @@
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
         "Vaš e-poštni naslov in geslo za aplikacijo sta pravilna. Ne uporabljajte običajnega gesla."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Dvojno preverjanje pristnosti je omogočeno v vašem zunanjem računu."
       ]
     },
     "Import error emphasis": {
@@ -5934,6 +6036,87 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Nadgradite ali kadar koli počistite prostor, da prenesete preostalo"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Povabite vaše prijatelje** na ${ BRAND_NAME } z vašo povezavo za priporočilo."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Pridobijo ${ refereeRewardAmount }** v dobroimetju, če se naročijo."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Pridobite ${ referrerRewardAmount }** kot dobropis za vsakega prijatelja, ki se naroči na paket."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Dostop do več kot 20.000 strežnikov v več kot 145 državah"
+      ],
+      "Details": [
+        "Podrobnosti"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Se spomnite vašega gesla? ${ verifyButton }"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Največja hitrost VPN s hitrostjo do 10 Gbps"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Samo datoteke (brez fotografij, ${ DOCS_APP_NAME } ali ${ SHEETS_APP_NAME }) - do skupaj 100 GB, 100.000 datotek in 50 GB na datoteko"
+      ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Pridobite profesionalni e-poštni naslov @vaše-podjetje.com, 1 TB varnega prostora shrambe na uporabnika, daljše video klice in drugo s ${ BRAND_NAME } Workspace."
+      ],
+      "Have some more time to decide without interruption.": [
+        "Imate še nekaj časa, da se odločite, ne da bi vas pri tem kaj motilo."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Sporočite nam težavo in pomagajte izboljšati uporabniško izkušnjo. Če se strinjate z deljenjem vsebine preglednice, k poročilu priložite spodaj navedene podatke o napaki."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Sporočite nam težavo in pomagajte izboljšati uporabniško izkušnjo. K poročilu priložite spodaj navedene podatke o napaki."
+      ],
+      "Hide table of contents": [
+        "Skrij kazalo"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Če naročnino prekinete zdaj, boste dne ${ expiryDate } izgubili dostop do ${ BRAND_NAME } ${ planTitle }, vključno z naslednjimi funkcijami:"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ojoj! Ta preglednica ne more shraniti vaših zadnjih sprememb, zato smo prekinili urejanje, da bi preprečili izgubo vašega dela."
+      ],
+      "Password verified": [
+        "Geslo preverjeno"
+      ],
+      "Please select the labels you would like to import:": [
+        "Izberite oznake, ki jih želite uvoziti:"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Premijska zaščita zasebnosti na vseh vaših napravah"
+      ],
+      "Show table of contents": [
+        "Pokaži kazalo"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Ostanite pri trenutnem paketu in naslednji mesec izkoristite 50 % popust"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Da si boste lažje zapomnili geslo, vas bomo občasno prosili, da ga vnesete. Sčasoma vas bomo za to prosili vse redkeje."
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Nadgradite za ohranitev vaših ${ planTitle } ugodnosti."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Kasneje vas bomo opomnili, da znova preverite vaše geslo."
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Ugotovili smo, da ste v preteklosti imeli težave pri odpiranju dokumenta."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Trenutno ste prijavljeni kot ${ username } v (${ organizationName }."
       ]
     },
     "info": {
@@ -6022,6 +6205,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktivni podpisnik"
       ]
     },
     "Label": {
@@ -6564,6 +6750,42 @@
       ],
       "Set a password to limit access via link": [
         "Nastavi geslo za omejitev dostopa preko povezave"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znakov"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Dovoli urejevalcem spremeniti dovoljenja in dati v skupno rabo."
+      ],
+      "Client": [
+        "Odjemalec"
+      ],
+      "Client version": [
+        "Različica odjemalca"
+      ],
+      "Command line interface (CLI)": [
+        "Ukazna vrstica (CLI)"
+      ],
+      "Continue cancelling": [
+        "Nadaljuj s preklicem"
+      ],
+      "Drive": [
+        "Pogon"
+      ],
+      "Main reason for cancelling": [
+        "Glavni razlog za preklic naročnine"
+      ],
+      "Regular expression": [
+        "Regularni izraz"
+      ],
+      "Skip feedback": [
+        "Preskoči povratno informacijo"
+      ],
+      "Starts with": [
+        "Se začne z"
+      ],
+      "Unknown user": [
+        "Neznan uporabnik"
       ]
     },
     "Label for contact group color": {
@@ -6806,6 +7028,9 @@
       ],
       "Add-on with free trial": [
         "Dodatek z brezplačno preizkusno dobo"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
       ]
     },
     "mailtrial2024: Action": {
@@ -6840,6 +7065,9 @@
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaše brezplačno preizkusno obdobje se je izteklo. ${ nonAutoRenewalAction }"
+      ],
+      "Regular expression rule": [
+        "Pravilo regularnega izraza"
       ]
     },
     "Message display when a new app version is available": {
@@ -7644,6 +7872,36 @@
         "Uporabite na do ${ n } napravah hkrati",
         "Uporabite na do ${ n } napravah hkrati",
         "Uporabite na do ${ n } napravah hkrati"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
+      "Access all countries": [
+        "Dostop do vseh držav"
+      ],
+      "Appointment scheduling": [
+        "Načrtovanje sestanka"
+      ],
+      "Data retention policies": [
+        "Pravilniki hrambe podatkov"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Namenski strežniki, optimizirani za hitrost"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Ugodnosti obstoječega ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
+      "No streaming support": [
+        "Brez podpore pretočnim storitvam"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Zasebni pogovor z AI (${ LUMO_APP_NAME })"
+      ],
+      "Unlock streaming": [
+        "Odkleni pretakanje"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN z blokiranjem oglasov in zaščito pred zlonamerno programsko opremo"
       ]
     },
     "new_plans: feature info": {
@@ -7993,6 +8251,9 @@
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
         "Varno dajte posamezne predmete v skupno rabo s komer koli (tudi če ne uporablja ${ PASS_APP_NAME })"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonska podpora je na voljo s strani ekipe za ${ BRAND_NAME } podporo strankam med evropskim delovnim časom za stranke z ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ali več uporabniki."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8357,6 +8618,24 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Vaš naslov ${ BRAND_NAME } je pripravljen za uporabo"
+      ],
+      "Document moved to trash": [
+        "Dokument premaknjen v smetnjak"
+      ],
+      "Document restored from trash": [
+        "Dokument obnovljen iz smetnjaka."
+      ],
+      "Failed to delete document": [
+        "Dokumenta ni bilo mogoče izbrisati."
+      ],
+      "Failed to rename document": [
+        "Dokumenta ni bilo mogoče preimenovati."
+      ],
+      "Failed to restore document": [
+        "Dokumenta ni bilo mogoče obnoviti."
+      ],
+      "Failed to trash document": [
+        "Prestavljanje dokumenta v smetnjak je spodletelo."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8557,6 +8836,12 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Priporočamo, da temu ključu prekličete zaupanje."
+      ],
+      "This contact currently signs messages with this key": [
+        "Ta stik trenutno podpisuje sporočila s tem ključem."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "S tem ključem se šifrirajo sporočila za ta stik na starejših aplikacijah."
       ]
     },
     "PGP key warning": {
@@ -8651,6 +8936,12 @@
       ],
       "Search": [
         "Iskanje"
+      ],
+      "Anything you'd like us to know": [
+        "Karkoli želite, da vemo"
+      ],
+      "Select a provider": [
+        "Izberite ponudnika"
       ]
     },
     "Placeholder for contact group name": {
@@ -9296,6 +9587,12 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "Za urejanje tega dokumenta najprej ustvarite kopijo, ki jo lahko spreminjate."
+      ],
+      "Editor permissions": [
+        "Dovoljenja urejevalcev"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Urejevalci lahko zdaj upravljajo z deljenjem in vabijo druge. To lahko kadarkoli izklopite v nastavitvah deljenja."
       ]
     },
     "State": {
@@ -10537,6 +10834,33 @@
       ],
       "You are all set": [
         "Vse je nastavljeno"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
+      "Editing paused": [
+        "Urejanje prekinjeno"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Prestavite vašo organizacijo na ${ BRAND_NAME }"
+      ],
+      "Problems Detected": [
+        "Ugotovljene težave"
+      ],
+      "Share your link": [
+        "Delite vašo povezavo"
+      ],
+      "Stay for 50% off your next month": [
+        "V naslednjem mesecu izkoristite 50 % popust"
+      ],
+      "Users and addresses": [
+        "Uporabniki in naslovi"
+      ],
+      "Verify your password": [
+        "Preverite geslo"
       ]
     },
     "Title subscription": {
@@ -10639,11 +10963,17 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Če niso dešifrirana, šifrirana gesla ostanejo varna, tudi če so izpostavljena."
+      ],
+      "Version 6 OpenPGP key": [
+        "Ključ OpenPGP verzija 6"
       ]
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
+      ],
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Pomočnik UI, ki spoštuje vašo zasebnost"
       ]
     },
     "Validation": {
@@ -11019,11 +11349,26 @@
       ],
       "Strict no-logs policy": [
         "Strogo brez hrambe dnevniških zapisov"
+      ],
+      "Limited daily chats": [
+        "Omejeni dnevni pogovori"
+      ],
+      "Limited favorites": [
+        "Omejene priljubljene"
+      ],
+      "Web search access": [
+        "Dostop do spletnega iskanja"
       ]
     },
     "collider_2025: Info": {
       "Advanced account and network security in one plan": [
         "Napredna varnost računa in omrežja v enem paketu"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Hitri pogovori in napredne funkcije umetne inteligence."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Zasebni video klici za pomembne pogovore."
       ]
     },
     "customer_support.feature.all": {
@@ -11106,6 +11451,9 @@
     "Duo offer: Title": {
       "Get 4x more storage with ${ BRAND_NAME } Duo": [
         "Pridobite 4x več shrambe s ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Delite prednosti vašega paketa z ${ BRAND_NAME } Duo"
       ]
     },
     "emergency_access": {
@@ -11261,6 +11609,18 @@
         "Do ${ n } udeleženca",
         "Do ${ n } udeleženci",
         "Do ${ n } udeležencev"
+      ],
+      "Booking pages": [
+        "Strani za rezervacijo"
+      ],
+      "Built-in chat": [
+        "Vgrajen pogovor"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Gostitelji lahko snemajo srečanja lokalno na svojih računalnikih"
+      ],
+      "Meeting recording": [
+        "Snemanje seje"
       ]
     },
     "new_plans: feature highlight": {
@@ -11468,6 +11828,9 @@
       ],
       "Team policies": [
         "Pravilniki skupine"
+      ],
+      "File attachments (up to 10GB)": [
+        "Priloge datotek (do 10 GB)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -11558,6 +11921,18 @@
       ],
       "your subscription": [
         "vaša naročnina"
+      ],
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } na priporočilo"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Ko se vaša polna naročnina začne, jo še vedno lahko prekličete v 30 dneh in dobite vrnjen sorazmerni delež."
+      ],
+      "Refer friends": [
+        "Priporočite prijateljem"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Lahko prejmete do **${ maxRewardAmount }** kot dobroimetje."
       ]
     },
     "Safety review": {
@@ -11820,6 +12195,55 @@
       ],
       "SUMMER SALE": [
         "POLETNA RAZPRODAJA"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } mest."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } pomočnikov pri pisanju."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_USERS } uporabnikov."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Ne morete dodati domen po meri med preizkusnim obdobjem."
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Za ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnike)",
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnikov)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licenca"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } uporabniška mesta"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } mest."
+      ]
+    },
+    "Title header for keys table": {
+      "Created": [
+        "Ustvarjeno"
+      ],
+      "Expires": [
+        "Poteče"
+      ],
+      "Type": [
+        "Vrsta"
       ]
     }
   }
