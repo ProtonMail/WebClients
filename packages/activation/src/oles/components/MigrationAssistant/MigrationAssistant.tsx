@@ -55,6 +55,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
     const dispatch = useDispatch();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const [reportUser, setReportUser] = useState<UserWithExtendedErrors>();
+    const providerName = model.provider.displayName;
 
     const [selectedUsers, setSelectedUsers] = useState<string[]>([]);
     const selectableUsers = providerUsers?.filter(isProviderUserSelectable).map((u) => u.ID) ?? [];
@@ -149,7 +150,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
 
     const migrationUnavailableReason = (() => {
         if (!model.tokens?.length) {
-            return c('Tooltip').t`Reauthenticate your Google Workspace account to start a migration`;
+            return c('Tooltip').t`Reauthenticate your ${providerName} account to start a migration`;
         }
 
         if (!filteredSelected.length) {
@@ -255,6 +256,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
                 {/* Migrate users */}
                 <ProviderUsersTable
                     currentUser={model.tokens?.at(0)?.Account}
+                    provider={model.provider}
                     users={providerUsers ?? []}
                     selected={filteredSelected}
                     setSelected={setSelectedUsers}
