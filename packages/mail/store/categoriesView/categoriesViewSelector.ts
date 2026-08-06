@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAIL_SETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { type ConversationCountsState, selectConversationCounts } from '../counts/conversationCountsSlice';
 import { type MessageCountsState, selectMessageCounts } from '../counts/messageCountsSlice';
@@ -40,8 +40,8 @@ export const selectCategoryUnreadCount = createSelector(
         mailSettings,
         categoryID
     ): SelectCategoryUnreadCountResult => {
-        const counter =
-            mailSettings.value?.ViewMode === VIEW_MODE.GROUP ? conversationCounts.value : messageCounts.value;
+        const viewMode = mailSettings.value?.ViewMode ?? DEFAULT_MAIL_SETTINGS.ViewMode;
+        const counter = viewMode === VIEW_MODE.GROUP ? conversationCounts.value : messageCounts.value;
 
         const loading = !counter;
 
