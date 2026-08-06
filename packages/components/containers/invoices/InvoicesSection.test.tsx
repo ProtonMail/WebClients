@@ -2,8 +2,10 @@ import { fireEvent, render } from '@testing-library/react';
 
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { APPS } from '@proton/shared/lib/constants';
-import { applyHOCs } from '@proton/testing/lib/context/hocs';
-import { withConfig, withNotifications, withReduxStore } from '@proton/testing/lib/context/providers';
+import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
+import { withConfig } from '@proton/testing/lib/context/hocs/with-config';
+import { withNotifications } from '@proton/testing/lib/context/hocs/with-notifications';
+import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
 
 import useApiResult from '../../hooks/useApiResult';
 import InvoicesSection from './InvoicesSection';
