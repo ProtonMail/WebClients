@@ -2,6 +2,7 @@ import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 
 import type { ApiImporterOrganizationState, ApiImporterProduct } from '../api/api.interface';
 import type { ImportToken } from '../interface';
+import type { OlesProvider } from './providers';
 import type { CreateMigrationBatchError } from './thunk';
 import type { ConnectionState } from './useConnectionState';
 
@@ -30,6 +31,7 @@ export type MigrationConfiguration = {
     tokens: ImportToken[] | undefined;
     connectionState: ConnectionState | undefined;
     transferErrors: CreateMigrationBatchError[];
+    provider: OlesProvider;
 };
 
 export type MigrationModel = MigrationConfiguration & {
