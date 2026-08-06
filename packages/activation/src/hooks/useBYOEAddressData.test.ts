@@ -7,8 +7,8 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Address, User } from '@proton/shared/lib/interfaces';
 import { ClaimableAddressType } from '@proton/shared/lib/keys';
 import { addApiMock } from '@proton/testing/lib/api';
-import { hookWrapper } from '@proton/testing/lib/context/hocs';
-import { withApi } from '@proton/testing/lib/context/providers';
+import { hookWrapper } from '@proton/testing/lib/context/hocs/helpers';
+import { withApi } from '@proton/testing/lib/context/hocs/with-api';
 
 const wrapper = hookWrapper(withApi());
 

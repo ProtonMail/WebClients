@@ -5,8 +5,8 @@ import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/cor
 import type { Currency } from '@proton/payments/core/interface';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { addApiMock, apiMock } from '@proton/testing/lib/api';
-import { applyHOCs } from '@proton/testing/lib/context/hocs';
-import { withNotifications } from '@proton/testing/lib/context/providers';
+import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
+import { withNotifications } from '@proton/testing/lib/context/hocs/with-notifications';
 import { flushPromises } from '@proton/testing/lib/flush-promises';
 
 import type { OnBitcoinTokenValidated } from '../../../payments/react-extensions/useBitcoin';

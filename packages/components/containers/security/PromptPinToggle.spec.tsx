@@ -1,8 +1,11 @@
 import { fireEvent, render } from '@testing-library/react';
 
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
-import { applyHOCs } from '@proton/testing/lib/context/hocs';
-import { withApi, withEventManager, withNotifications, withReduxStore } from '@proton/testing/lib/context/providers';
+import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
+import { withApi } from '@proton/testing/lib/context/hocs/with-api';
+import { withEventManager } from '@proton/testing/lib/context/hocs/with-event-manager';
+import { withNotifications } from '@proton/testing/lib/context/hocs/with-notifications';
+import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
 import { mockUseApi } from '@proton/testing/lib/mockUseApi';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 import { mockUseNotifications } from '@proton/testing/lib/mockUseNotifications';
