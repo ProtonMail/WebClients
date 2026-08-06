@@ -55,6 +55,7 @@ import UserRowSkeleton from './UserRowSkeleton';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 import UserTableBadge from './UsersTableBadge';
 import UserTableIcon from './UsersTableIcon';
+import useUserActivityTelemetry from './useUserActivityTelemetry';
 
 import './MembersTable.scss';
 
@@ -87,6 +88,8 @@ export const MembersTable = ({
             : Boolean(models.user.isAdmin);
 
     const unprivatizationMemberState = baseUseSelector(selectUnprivatizationState);
+
+    const { trackConnectionUpsellDismissed: reportConnectionUpsellDismissed } = useUserActivityTelemetry();
 
     const usageRowCount = members.length;
 
@@ -405,7 +408,10 @@ export const MembersTable = ({
                         <LastConnectionValue lastConnection={usageByMemberID[member.ID]?.LastConnection ?? null} />,
                         c('Title header for members table').t`Last connection`,
                         'users-and-addresses-table:lastConnection',
-                        () => setConnectionUpsellDismissed(true)
+                        () => {
+                            reportConnectionUpsellDismissed();
+                            setConnectionUpsellDismissed(true);
+                        }
                     )}
                 <TableCell className="align-middle action-cell">
                     <div>
