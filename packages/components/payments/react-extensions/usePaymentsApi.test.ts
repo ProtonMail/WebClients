@@ -4,8 +4,10 @@ import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { PLANS } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { addApiMock, apiMock } from '@proton/testing/lib/api';
-import { hookWrapper } from '@proton/testing/lib/context/hocs';
-import { defaultProtonConfig, withApi, withConfig, withReduxStore } from '@proton/testing/lib/context/providers';
+import { hookWrapper } from '@proton/testing/lib/context/hocs/helpers';
+import { withApi } from '@proton/testing/lib/context/hocs/with-api';
+import { defaultProtonConfig, withConfig } from '@proton/testing/lib/context/hocs/with-config';
+import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
 
 import { usePaymentsApi } from './usePaymentsApi';
 

@@ -4,8 +4,9 @@ import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
-import { applyHOCs } from '@proton/testing/lib/context/hocs';
-import { withApi, withCache } from '@proton/testing/lib/context/providers';
+import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
+import { withApi } from '@proton/testing/lib/context/hocs/with-api';
+import { withCache } from '@proton/testing/lib/context/hocs/with-cache';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
