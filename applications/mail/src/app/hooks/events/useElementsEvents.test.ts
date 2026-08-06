@@ -33,6 +33,7 @@ const mockElementsState = (elementIds: string[] = []): ElementsState => ({
     beforeFirstLoad: false,
     pendingActions: 0,
     pendingESSearches: 0,
+    usedEncryptedSearch: undefined,
     params: {
         labelID: 'inbox',
         categoryIDs: [],
