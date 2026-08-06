@@ -5,6 +5,7 @@ import 'fake-indexeddb/auto';
 
 import { RateLimitedError as SdkRateLimitedError } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
+import metrics from '@proton/metrics';
 
 import { SearchDB } from '../../shared/SearchDB';
 import {
@@ -776,6 +777,30 @@ describe('IndexerTaskQueue', () => {
         const errored = await state.waitForPermanentError();
         expect(errored.permanentError).toBe('search_library_error');
         queue.stop();
+    });
+
+    // The state assertion above passes even when the metric is wrong, because the queue's own
+    // stop/retry decision is taken in the worker where the error is still intact. The counter
+    // is reported through the bridged metrics proxy, which structured-clones its arguments and
+    // strips the Error subclass - so it must be asserted separately.
+    it('permanent error: reports search_library_error across the bridge, not transient/unknown', async () => {
+        const permanentCounter = jest.spyOn(metrics.drive_search_permanent_errors_total, 'increment');
+        const transientCounter = jest.spyOn(metrics.drive_search_transient_errors_total, 'increment');
+
+        const queue = makeQueueWithFailingPopulator(new SearchLibraryError('Unable to upsert node', null));
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+
+        await state.waitForPermanentError();
+        // The metric hop is fire-and-forget (Promise.resolve().then in createBridgedSearchMetrics).
+        await waitForCondition(() => permanentCounter.mock.calls.length > 0);
+        queue.stop();
+
+        expect(permanentCounter).toHaveBeenCalledWith({ errorKind: 'search_library_error' });
+        expect(transientCounter).not.toHaveBeenCalled();
+
+        permanentCounter.mockRestore();
+        transientCounter.mockRestore();
     });
 
     it('rate-limited error retries with DEFAULT_RETRY_AFTER_IN_MS, not computeBackoff', async () => {
