@@ -491,6 +491,9 @@
       "Edit users": [
         "Rediger brugere"
       ],
+      "Enable": [
+        "Aktiver"
+      ],
       "enable desktop notifications": [
         "at aktivere skrivebordsmeddelelser"
       ],
@@ -859,9 +862,6 @@
       ],
       "Remove": [
         "Fjern"
-      ],
-      "Remove all members": [
-        "Fjern alle medlemmer"
       ],
       "Remove all other devices": [
         "Fjern alle andre enheder"
@@ -1297,6 +1297,9 @@
       ],
       "View all reports": [
         "Se alle rapporter"
+      ],
+      "View guide": [
+        "Vis guide"
       ],
       "View invoice": [
         "Vis faktura"
@@ -2061,125 +2064,6 @@
       ],
       "Working with sensitive data?": [
         "Arbejder du med følsomme data?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Aktiveret"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Configure migration": [
-        "Konfigurer migrering"
-      ],
-      "Contacts": [
-        "Kontakter"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status for datamigration fra Google Workspace til ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-mails"
-      ],
-      "Errors": [
-        "Fejl"
-      ],
-      "Estimated size": [
-        "Anslået størrelse"
-      ],
-      "Find out what can be migrated.": [
-        "Find ud af hvad der kan migreres."
-      ],
-      "Has errors": [
-        "Fejlbehæftet"
-      ],
-      "In progress": [
-        "I gang"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adresse for medlem ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
-      ],
-      "Migrate": [
-        "Migrer"
-      ],
-      "Migrated": [
-        "Migreret"
-      ],
-      "Migration status": [
-        "Migrationsstatus"
-      ],
-      "Missing organization private key": [
-        "Mangler organisationens private nøgle"
-      ],
-      "Missing organization public key": [
-        "Mangler organisationens offentlige nøgle"
-      ],
-      "No users to display": [
-        "Ingen brugere at vise"
-      ],
-      "Not activated": [
-        "Ikke aktiveret"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisationen har ikke nok ledige pladser"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisationen har ikke tilstrækkelig ledig lagerplads"
-      ],
-      "Pending": [
-        "Afventer"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Vælg præcis det du gerne vil migrere. Det vil gælde for brugere i organisationen."
-      ],
-      "Select users to migrate": [
-        "Vælg brugere at migrere"
-      ],
-      "Size": [
-        "Størrelse"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "For at migrere denne bruger skal du aktivere vedkommendes konto i din Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "For at migrere denne bruger skal du aktivere vedkommendes adresse under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "For at migrere denne bruger skal vedkommende acceptere sin invitation til at tilmelde sig ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "For at migrere denne bruger skal du fjerne vedkommende fra arkivet i din Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "For at migrere denne bruger skal du ophæve suspenderingen af vedkommende i din Google Workspace Admin Console."
-      ],
-      "User": [
-        "Bruger"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
-      ],
-      "What are you migrating?": [
-        "Hvad migrerer du?"
-      ],
-      "You": [
-        "Dig"
       ]
     },
     "Browser": {
@@ -4971,6 +4855,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "Ugyldigt nulstillingstoken. Opdater siden og prøv igen."
       ],
+      "Invalid URL": [
+        "Ugyldig URL"
+      ],
       "Invalid VAT number": [
         "Ugyldigt VAT-/momsnummer"
       ],
@@ -4989,6 +4876,9 @@
       ],
       "Missing key packet": [
         "Manglende nøglepakke"
+      ],
+      "Missing signature": [
+        "Manglende signatur"
       ],
       "Name already exists": [
         "Navnet findes allerede"
@@ -5178,6 +5068,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Something went wrong": [
+        "Noget gik galt"
       ],
       "Something went wrong while converting the address": [
         "Noget gik galt under konverteringen af adressen"
@@ -6784,6 +6677,14 @@
         "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "I gang"
+      ],
+      "Migrated": [
+        "Migreret"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
@@ -7298,9 +7199,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Er du sikker på, at du vil fjerne administrative privilegier fra denne bruger?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "Er du sikker på, at du vil fjerne alle medlemmer fra denne gruppe?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Er du sikker på, at du vil fjerne domænet ${ boldDomain }?"
@@ -8804,10 +8702,10 @@
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
       "Smart Routed through a different country.": [
-        "Smart Routet gennem et andet land"
+        "Smart Routet gennem et andet land."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
-        "Smart Routet gennem ${ joinedCountries }"
+        "Smart Routet gennem: ${ joinedCountries }."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Nogle ${ BRAND_NAME }-apps understøtter muligvis ikke sikkerhedsnøgler endnu. Det er ikke sikkert, du kan logge ind på disse apps, his du deaktiverer 2FA fra godkender-appen ."
@@ -8996,6 +8894,9 @@
       ],
       "This file is too large to preview": [
         "Denne fil er for stor til forhåndsvisning"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Denne Gmail-adresse er registreret med en anden ${ BRAND_NAME }-konto (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, og andre). Vi arbejder på at forbedre forbindelsen, men på nuværende tidspunkt skal du gennem nogle trin."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dette er en 12-ords sætning, som du blev bedt om at indstille."
@@ -15004,17 +14905,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Sørg for at kopiere ovennævnte SCIM-token nu."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Så snart SCIM er deaktiveret for din organisation, bliver **alle SCIM-brugere, der tildeles automatisk af din identitetsudbyder, omdannet til SSO-brugere**, og du vil kunne styre dem direkte i ${ BRAND_NAME }-indstillingerne."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Brugeradministration forenkles på tværs af forskellige tjenester. Tilføj, rediger og fjern brugere i din identitetsudbyder, og disse ændringer anvendes automatisk i din ${ appName }-organisation."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM's automatiske provisionering deaktiveres, indtil du indtaster det nye SCIM-token via din identitetsudbyders indstillinger."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM-basens URL og token vil blive slettet."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "For at genaktivere synkronisering med din identitetsudbyder skal du gennemføre SCIM-integreringen igen."
@@ -17043,6 +16938,14 @@
         "Til enkeltpersoner"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Handling"
@@ -17868,6 +17771,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Bemærk: Denne Gmail er forbundet en anden ${ BRAND_NAME }-konto"
+      ],
       "Help and feedback": [
         "Hjælp og feedback"
       ],
@@ -18129,9 +18035,6 @@
       ],
       "Reject device?": [
         "Afvis enhed?"
-      ],
-      "Remove all members?": [
-        "Fjern alle medlemmer?"
       ],
       "Remove Always-on VPN device profile": [
         "Fjern konstant VPN enhedsprofil"
@@ -19207,7 +19110,7 @@
         "Dette vil oprette en ny ${ MAIL_APP_NAME }-adresse."
       ],
       "Upgrade to a supported plan to use admin roles.": [
-        "Opgradér til en understøttet plan for at bruge administratorroller."
+        "Opgrader til en understøttet plan for at bruge administratorroller."
       ],
       "User created": [
         "Bruger oprettet"

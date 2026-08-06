@@ -485,6 +485,9 @@
       "Edit users": [
         "Chỉnh sửa người dùng"
       ],
+      "Enable": [
+        "Kích hoạt"
+      ],
       "enable desktop notifications": [
         "kích hoạt các thông báo màn hình"
       ],
@@ -841,9 +844,6 @@
       ],
       "Remove": [
         "Xóa"
-      ],
-      "Remove all members": [
-        "Xóa toàn bộ thành viên"
       ],
       "Remove all other devices": [
         "Xóa tất cả các thiết bị khác"
@@ -2003,125 +2003,6 @@
       ],
       "Working with sensitive data?": [
         "Đang xử lý dữ liệu nhạy cảm?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Đã kích hoạt"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Địa chỉ đã được sử dụng bởi một người dùng bên ngoài tổ chức của bạn. Vui lòng liên hệ với bộ phận hỗ trợ khách hàng để giải quyết vấn đề này"
-      ],
-      "All": [
-        "Tất cả"
-      ],
-      "Calendar": [
-        "Lịch"
-      ],
-      "Configure migration": [
-        "Cấu hình chuyển dữ liệu"
-      ],
-      "Contacts": [
-        "Liên hệ"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Trạng thái chuyển dữ liệu từ Google Workspace sang ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Email"
-      ],
-      "Errors": [
-        "Lỗi"
-      ],
-      "Estimated size": [
-        "Kích thước ước tính"
-      ],
-      "Find out what can be migrated.": [
-        "Tìm hiểu những gì có thể chuyển dữ liệu."
-      ],
-      "Has errors": [
-        "Có lỗi"
-      ],
-      "In progress": [
-        "Đang tiến hành"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Không tìm thấy địa chỉ thành viên. Vui lòng liên hệ với bộ phận hỗ trợ khách hàng để giải quyết vấn đề này"
-      ],
-      "Migrate": [
-        "Chuyển dữ liệu"
-      ],
-      "Migrated": [
-        "Đã chuyển dữ liệu"
-      ],
-      "Migration status": [
-        "Trạng thái chuyển dữ liệu"
-      ],
-      "Missing organization private key": [
-        "Thiếu khóa riêng tư của tổ chức"
-      ],
-      "Missing organization public key": [
-        "Thiếu khóa công khai của tổ chức"
-      ],
-      "No users to display": [
-        "Không có người dùng để hiển thị"
-      ],
-      "Not activated": [
-        "Chưa kích hoạt"
-      ],
-      "Organization does not have enough seats available": [
-        "Tổ chức không có đủ số chỗ khả dụng"
-      ],
-      "Organization does not have enough storage available": [
-        "Tổ chức không có đủ dung lượng lưu trữ khả dụng"
-      ],
-      "Pending": [
-        "Đang chờ"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Chọn chính xác những gì muốn chuyển dữ liệu. Lựa chọn này sẽ áp dụng cho tất cả người dùng trong tổ chức."
-      ],
-      "Select users to migrate": [
-        "Chọn người dùng cần chuyển dữ liệu"
-      ],
-      "Size": [
-        "Kích thước"
-      ],
-      "Status": [
-        "Trạng thái"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Không thể di dời người dùng này do không tương thích nền tảng."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Để di dời người dùng này, hãy kích hoạt tài khoản của họ trong Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Để di dời người dùng này, hãy kích hoạt tài khoản của họ tại ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Để di dời người dùng này, hãy kích hoạt địa chỉ của họ tại ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Để di dời người dùng này, họ cần chấp nhận lời mời tham gia ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Để di dời người dùng này, hãy hủy lưu trữ họ trong Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Để di dời người dùng này, hãy hủy tạm ngưng họ trong Google Workspace Admin Console."
-      ],
-      "User": [
-        "Người dùng"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Người dùng đã truy cập tài khoản ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Bạn đang chuyển dữ liệu gì?"
-      ],
-      "You": [
-        "Bạn"
       ]
     },
     "Browser": {
@@ -4880,6 +4761,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "Mã thông báo đặt lại không hợp lệ. Vui lòng làm mới trang và thử lại."
       ],
+      "Invalid URL": [
+        "URL không hợp lệ"
+      ],
       "Invalid VAT number": [
         "Số VAT không hợp lệ"
       ],
@@ -4897,6 +4781,9 @@
       ],
       "Missing key packet": [
         "Thiếu khóa gói"
+      ],
+      "Missing signature": [
+        "Thiếu chữ ký"
       ],
       "Name already exists": [
         "Tên đã tồn tại"
@@ -5083,6 +4970,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Một số tên nhãn vượt quá giới hạn ký tự tối đa của ${ MAIL_APP_NAME }. Vui lòng tùy chỉnh nhập khẩu để chỉnh sửa các tên này."
+      ],
+      "Something went wrong": [
+        "Đã xảy ra sự cố"
       ],
       "Something went wrong while converting the address": [
         "Đã xảy ra lỗi khi chuyển đổi địa chỉ"
@@ -6647,6 +6537,14 @@
         "Chọn ${ boldExport } để xuất lịch dưới dạng tệp ICS."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Đang tiến hành"
+      ],
+      "Migrated": [
+        "Đã chuyển dữ liệu"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } trên ${ totalContacts } liên hệ sẽ không được nhập. Nhấp để xem chi tiết"
@@ -7105,9 +7003,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Bạn có chắc bạn muốn xóa các đặc quyền quản trị khỏi người dùng này?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "Chắc chắn muốn xóa tất cả thành viên khỏi nhóm này không?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Chắc chắn muốn xóa miền ${ boldDomain } không?"
@@ -8515,6 +8410,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vì bạn là một người dùng trung thành, tài khoản có thêm các tính năng bổ sung được mở."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Định tuyến thông minh qua: ${ joinedCountries }."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Một số ứng dụng ${ BRAND_NAME } có thể chưa hỗ trợ khóa bảo mật. Nếu tắt ứng dụng xác thực 2FA, có thể không đăng nhập được vào các ứng dụng đó."
@@ -14551,17 +14449,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Hãy chắc chắn sao chép mã thông báo SCIM ở trên ngay bây giờ."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Khi SCIM bị vô hiệu hóa cho tổ chức, **tất cả người dùng SCIM được cung cấp tự động bởi nhà cung cấp danh tính sẽ được chuyển đổi thành người dùng SSO** và bạn sẽ có thể quản lý họ trực tiếp trong cài đặt ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Đơn giản hóa việc quản lý người dùng trên các dịch vụ khác nhau. Thêm, chỉnh sửa và xóa người dùng trong nhà cung cấp danh tính, những thay đổi đó sẽ tự động được áp dụng cho tổ chức ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Tính năng cung cấp tự động SCIM sẽ bị vô hiệu hóa cho đến khi bạn nhập mã thông báo SCIM mới vào cài đặt của nhà cung cấp danh tính."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "URL cơ sở và mã thông báo SCIM sẽ bị xóa."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Để kích hoạt lại đồng bộ với nhà cung cấp danh tính, cần hoàn tất lại việc tích hợp SCIM."
@@ -16523,6 +16415,14 @@
         "Dành cho cá nhân"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Kích thước"
+      ],
+      "Status": [
+        "Trạng thái"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Thao tác"
@@ -17565,9 +17465,6 @@
       ],
       "Reject device?": [
         "Từ chối thiết bị?"
-      ],
-      "Remove all members?": [
-        "Xóa toàn bộ thành viên?"
       ],
       "Remove device?": [
         "Xóa thiết bị?"

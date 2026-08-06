@@ -485,6 +485,9 @@
       "Edit users": [
         "تعديل المستخدمين"
       ],
+      "Enable": [
+        "تفعيل"
+      ],
       "enable desktop notifications": [
         "تمكين إشعارات سطح المكتب"
       ],
@@ -841,9 +844,6 @@
       ],
       "Remove": [
         "حذف"
-      ],
-      "Remove all members": [
-        "إزالة جميع الأعضاء"
       ],
       "Remove all other devices": [
         "إزالة كل الأجهزة الأخرى"
@@ -2088,125 +2088,6 @@
       ],
       "Working with sensitive data?": [
         "هل تعمل ببيانات حساسة؟"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "مفعّل"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "العنوان مستخدم بالفعل من قبل مستخدم خارج المؤسسة. يُرجى الاتصال بدعم العملاء لحل هذه المشكلة"
-      ],
-      "All": [
-        "الكل"
-      ],
-      "Calendar": [
-        "تقويم"
-      ],
-      "Configure migration": [
-        "تهيئة الترحيل"
-      ],
-      "Contacts": [
-        "جهات الاتصال"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "حالة ترحيل البيانات من Google Workspace إلى ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "الرسائل"
-      ],
-      "Errors": [
-        "أخطاء"
-      ],
-      "Estimated size": [
-        "الحجم التقديري"
-      ],
-      "Find out what can be migrated.": [
-        "معرفة ما يمكن ترحيله."
-      ],
-      "Has errors": [
-        "يحتوي على أخطاء"
-      ],
-      "In progress": [
-        "قيد التنفيذ"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "عنوان العضو غير موجود. يُرجى الاتصال بدعم العملاء لحل هذه المشكلة"
-      ],
-      "Migrate": [
-        "ترحيل"
-      ],
-      "Migrated": [
-        "تم ترحيله"
-      ],
-      "Migration status": [
-        "حالة الترحيل"
-      ],
-      "Missing organization private key": [
-        "مفتاح خاص للمؤسسة مفقود"
-      ],
-      "Missing organization public key": [
-        "مفتاح عام للمؤسسة مفقود"
-      ],
-      "No users to display": [
-        "لا يوجد مستخدمون لعرضهم"
-      ],
-      "Not activated": [
-        "غير مفعَّل"
-      ],
-      "Organization does not have enough seats available": [
-        "المؤسسة لا تملك مقاعد كافية متاحة"
-      ],
-      "Organization does not have enough storage available": [
-        "المؤسسة لا تملك مساحة تخزين كافية متاحة"
-      ],
-      "Pending": [
-        "قيد الانتظار"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "تحديد ما ترغب في ترحيله بالضبط. سيتم تطبيق هذا على جميع مستخدمي المؤسسة."
-      ],
-      "Select users to migrate": [
-        "تحديد المستخدمين المراد نقل بياناتهم"
-      ],
-      "Size": [
-        "الحجم"
-      ],
-      "Status": [
-        "الحالة"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "لا يمكن نقل هذا المستخدم بسبب عدم توافق المنصة."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "لنقل هذا المستخدم، يجب تفعيل حسابه في وحدة تحكم مسؤول Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "لنقل هذا المستخدم، يجب تفعيل حسابه ضمن ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "لنقل هذا المستخدم، يجب تفعيل عنوانه ضمن ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "لنقل هذا المستخدم، يجب عليه قبول دعوته للانضمام إلى ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "لنقل هذا المستخدم، يجب إلغاء أرشفته في وحدة تحكم مسؤول Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "لنقل هذا المستخدم، يجب إلغاء تعليقه في وحدة تحكم مسؤول Google Workspace."
-      ],
-      "User": [
-        "مستخدم"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "المستخدمون الذين وصلوا إلى حساب ${ BRAND_NAME } الخاص بهم"
-      ],
-      "What are you migrating?": [
-        "ما الذي يتم ترحيله؟"
-      ],
-      "You": [
-        "أنت"
       ]
     },
     "Browser": {
@@ -5070,6 +4951,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "رمز إعادة تعيين غير صالح. يرجى تحديث الصفحة والمحاولة مرة أخرى."
       ],
+      "Invalid URL": [
+        "الرابط غير صحيح"
+      ],
       "Invalid VAT number": [
         "رقم ضريبة القيمة المضافة غير صالح"
       ],
@@ -5092,6 +4976,9 @@
       ],
       "Missing key packet": [
         "حزمة المفتاح مفقودة"
+      ],
+      "Missing signature": [
+        "التوقيع مفقود"
       ],
       "Name already exists": [
         "الاسم موجود بالفعل"
@@ -5293,6 +5180,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "تتجاوز بعض أسماء التسميات الخاصة بك الحد الأقصى لعدد الأحرف في ${ MAIL_APP_NAME }. يرجى تخصيص الاستيراد لتعديل هذه الأسماء."
+      ],
+      "Something went wrong": [
+        "طرأ خللٌ ما"
       ],
       "Something went wrong while converting the address": [
         "حدث خطأ ما أثناء تحويل العنوان"
@@ -6977,6 +6867,14 @@
         "حدد ${ boldExport } لتصدير التقويم كملف ICS."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "قيد التنفيذ"
+      ],
+      "Migrated": [
+        "تم ترحيله"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } من أصل ${ totalContacts } جهات الاتصال لن يتم استيرادها. انقر للحصول على التفاصيل"
@@ -7625,9 +7523,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "هل أنت متأكد من إزالة الامتيازات الإدارية من هذا المستخدم؟"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "هل أنت متأكد من رغبتك في إزالة جميع الأعضاء من هذه المجموعة؟"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "هل أنت متأكد من أنك تريد إزالة النطاق ${ boldDomain }؟"
@@ -9100,6 +8995,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "نظرًا لأنك مستخدم مخلص، فإن حسابك يحتوي على ميزات إضافية مفعلة."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "موجَّه ذكيًا عبر: ${ joinedCountries }."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "قد لا تدعم بعض تطبيقات ${ BRAND_NAME } مفاتيح الأمان حتى الآن. في حال إيقاف تشغيل المصادقة الثنائية (2FA) عبر تطبيق المصادقة، قد لا يكون بالإمكان تسجيل الدخول إلى تلك التطبيقات."
@@ -15606,17 +15504,11 @@
       "Make sure you copy the above SCIM token now.": [
         "تأكد من نسخ رمز SCIM أعلاه الآن."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "بمجرد تعطيل SCIM لمؤسستك، **سيتم تحويل جميع مستخدمي SCIM الذين يوفرهم موفر الهوية تلقائيًا إلى مستخدمي SSO** وستتمكن من إدارتهم مباشرةً من إعدادات ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "يبسط إدارة المستخدمين عبر الخدمات المختلفة. أضف المستخدمين وعدلهم وأزلهم في موفر الهوية، وستُطبق هذه التغييرات تلقائيًا على مؤسستك في ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "سيتم تعطيل التزويد التلقائي لـ SCIM حتى تدخل رمز SCIM الجديد في إعدادات موفر الهوية."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "سيتم حذف عنوان URL الأساسي ورمز SCIM."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "لإعادة تفعيل المزامنة مع موفر الهوية، تحتاج إلى إكمال تكامل SCIM مرة أخرى."
@@ -17830,6 +17722,14 @@
         "للأفراد"
       ]
     },
+    "Table header": {
+      "Size": [
+        "الحجم"
+      ],
+      "Status": [
+        "الحالة"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "الإجراء"
@@ -18927,9 +18827,6 @@
       ],
       "Reject device?": [
         "هل تريد رفض الجهاز؟"
-      ],
-      "Remove all members?": [
-        "هل تريد إزالة جميع الأعضاء؟"
       ],
       "Remove device?": [
         "إزالة الجهاز؟"
