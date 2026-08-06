@@ -1,4 +1,4 @@
-import { type ToolDefinition, type ToolName, UnknownReferenceError } from './types';
+import type { ToolDefinition, ToolName } from './types';
 
 describe('framework contracts', () => {
     describe('open ToolName model', () => {
@@ -23,17 +23,6 @@ describe('framework contracts', () => {
                 summarizeChip: () => ({ label: 'ran' }),
             };
             expect(definition.name).toBe('some_product_tool');
-        });
-    });
-
-    describe('UnknownReferenceError', () => {
-        it('carries the offending reference and a self-correcting message', () => {
-            const error = new UnknownReferenceError('email-a3f9k2');
-            expect(error).toBeInstanceOf(Error);
-            expect(error.name).toBe('UnknownReferenceError');
-            expect(error.reference).toBe('email-a3f9k2');
-            expect(error.message).toContain('email-a3f9k2');
-            expect(error.message).toContain('not returned by any earlier tool');
         });
     });
 });
