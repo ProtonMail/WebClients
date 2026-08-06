@@ -27,6 +27,7 @@ import { SheetsPatchesType } from '../Database/SheetsDBSchema'
 import { downloadUpdateTimeline } from '../utils/create-update-timeline'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 import downloadFile from '@proton/shared/lib/helpers/downloadFile'
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype'
 
 export interface EditorControllerInterface {
   getCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<string | null>
@@ -189,16 +190,25 @@ export class EditorController implements EditorControllerInterface {
 
     this.logger.info('Sending base commit messages to editor')
     try {
+      const docType = this.documentState.getProperty('decryptedNode').mimeType
+      const isDoc = isProtonDocsDocument(docType)
+
       for (const message of baseCommit.messages) {
         let content = message.content
         if (isCompressedDocumentUpdate(content)) {
           content = decompressDocumentUpdate(content)
         }
-        await this.editorInvoker?.receiveMessage({
+
+        const receivePromise = this.editorInvoker?.receiveMessage({
           type: { wrapper: 'du' },
           content,
           origin: DocUpdateOrigin.BaseCommit,
         })
+
+        // await du replays on docs to give lexical room to sync
+        if (isDoc) {
+          await receivePromise
+        }
       }
     } catch (error) {
       if (error instanceof Error) {
