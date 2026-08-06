@@ -55,6 +55,22 @@ import {
 } from './helpers/elementContextCount';
 import { newRetry } from './helpers/elementQuery';
 
+const getContextIdentifierFromParams = (params: ElementsStateParams) =>
+    getElementContextIdentifier({
+        labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search.from,
+        to: params.search.to,
+        address: params.search.address,
+        begin: params.search.begin,
+        end: params.search.end,
+        keyword: params.search.keyword,
+        newsletterSubscriptionID: params.newsletterSubscriptionID,
+    });
+
 export const globalReset = (state: Draft<ElementsState>) => {
     Object.assign(state, newElementsState());
 };
@@ -114,20 +130,7 @@ export const loadFulfilled = (
 
     const isResponseStale = Stale === 1;
 
-    const contextFilter = getElementContextIdentifier({
-        labelID: params.labelID,
-        categoryIDs: params.categoryIDs,
-        conversationMode: params.conversationMode,
-        filter: params.filter,
-        sort: params.sort,
-        from: params.search.from,
-        to: params.search.to,
-        address: params.search.address,
-        begin: params.search.begin,
-        end: params.search.end,
-        keyword: params.search.keyword,
-        newsletterSubscriptionID: params.newsletterSubscriptionID,
-    });
+    const contextFilter = getContextIdentifierFromParams(params);
 
     Object.assign(state, {
         beforeFirstLoad: false,
@@ -137,6 +140,13 @@ export const loadFulfilled = (
         retry: newRetry(state.retry, state.params, undefined),
         taskRunning,
     });
+
+    // The server search reads metadata only, and it is also where Encrypted Search falls back to.
+    // Scoped to the response's own context so a load resolving for a context the user has already
+    // left cannot clear the flag a later Encrypted Search set.
+    if (contextFilter === getContextIdentifierFromParams(state.params)) {
+        state.usedEncryptedSearch = false;
+    }
 
     state.awaitingStaleRetry[contextFilter] = isResponseStale;
 
@@ -278,26 +288,14 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
     const pages = pagesArray.length === 0 ? [0] : pagesArray;
 
     const params = action.payload.params;
-    const contextFilter = getElementContextIdentifier({
-        labelID: params.labelID,
-        categoryIDs: params.categoryIDs,
-        conversationMode: params.conversationMode,
-        filter: params.filter,
-        sort: params.sort,
-        from: params.search.from,
-        to: params.search.to,
-        address: params.search.address,
-        begin: params.search.begin,
-        end: params.search.end,
-        keyword: params.search.keyword,
-        newsletterSubscriptionID: params.newsletterSubscriptionID,
-    });
+    const contextFilter = getContextIdentifierFromParams(params);
 
     state.bypassFilter = [];
     state.beforeFirstLoad = false;
     state.invalidated = false;
     state.pendingRequest = false;
     state.page = action.payload.page;
+    state.usedEncryptedSearch = true;
     state.elements = { ...state.elements, ...toMap(action.payload.elements, 'ID') };
     state.retry = { payload: undefined, count: 0, error: undefined };
     state.total[contextFilter] = total;

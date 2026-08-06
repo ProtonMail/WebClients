@@ -210,6 +210,7 @@ export const setup = async ({
                 pendingRequest: false,
                 pendingActions: 0,
                 pendingESSearches: 0,
+                usedEncryptedSearch: undefined,
                 page: 0,
                 total: {},
                 elements: {},
