@@ -76,6 +76,7 @@ export enum TelemetryMeasurementGroups {
     /** Vpn TV */
     vpnTv = 'vpn.any.tv_signin',
     vpnAlwaysOnPolicy = 'vpn.web.always_on_policy',
+    vpnB2bUserActivity = 'vpn.web.b2b_user_activity',
 }
 
 export enum TelemetryMailOnboardingEvents {
@@ -544,6 +545,14 @@ export enum TelemetryVpnAlwaysOnPolicyEvents {
     clientDownloadClicked = 'client_download_clicked',
 }
 
+export enum TelemetryVpnB2bUserActivityEvents {
+    upsell_shown = 'upsell_shown',
+    upsell_learn_more_clicked = 'upsell_learn_more_clicked',
+    upsell_upgrade_started = 'upsell_upgrade_started',
+    upsell_dismissed = 'upsell_dismissed',
+    enable_clicked = 'enable_clicked',
+}
+
 export enum TelemetryPreventWasmLoading {
     wasm_unsupported = 'wasm_unsupported',
     wasm_loading = 'wasm_loading',
@@ -610,6 +619,7 @@ export type TelemetryEvents =
     | TelemetryUpgradePageEvents
     | TelemetryVpnTvEvents
     | TelemetryVpnAlwaysOnPolicyEvents
+    | TelemetryVpnB2bUserActivityEvents
     | TelemetryPreventWasmLoading
     | TelemetryCategoriesOnboardingEvents
     | TelemetryMeetFunnelTelemetry;
