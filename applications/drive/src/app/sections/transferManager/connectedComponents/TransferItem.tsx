@@ -113,6 +113,7 @@ export const TransferItem = ({ entry, onShare, cancelTransfer, retryTransfer, on
         BaseTransferStatus.MalwareDetected,
         BaseTransferStatus.MalwareScanUnavailable,
         UploadStatus.Skipped,
+        UploadStatus.ParentCancelled,
         UploadStatus.PhotosDuplicate,
         UploadStatus.NotSupportedForPhotos,
         UploadStatus.EmptyFile,

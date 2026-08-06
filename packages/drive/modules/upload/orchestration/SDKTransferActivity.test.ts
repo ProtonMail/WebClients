@@ -181,6 +181,45 @@ describe('SDKTransferActivity', () => {
             expect(mockUnsubscribePaused).toHaveBeenCalled();
         });
 
+        it('should unsubscribe when the sub-tree of a cancelled folder is all that is left', () => {
+            mockGetQueue.mockReturnValue([
+                { uploadId: 'folder1', status: UploadStatus.Cancelled },
+                { uploadId: 'file1', status: UploadStatus.ParentCancelled },
+                { uploadId: 'file2', status: UploadStatus.ParentCancelled },
+            ]);
+            manager.subscribe(mockDrive);
+
+            manager.checkAndUnsubscribeIfQueueEmpty();
+
+            expect(mockUnsubscribePaused).toHaveBeenCalled();
+            expect(mockUnsubscribeResumed).toHaveBeenCalled();
+        });
+
+        it('should unsubscribe when queue only has photo and empty file outcomes', () => {
+            mockGetQueue.mockReturnValue([
+                { uploadId: 'photo1', status: UploadStatus.PhotosDuplicate },
+                { uploadId: 'photo2', status: UploadStatus.NotSupportedForPhotos },
+                { uploadId: 'file1', status: UploadStatus.EmptyFile },
+            ]);
+            manager.subscribe(mockDrive);
+
+            manager.checkAndUnsubscribeIfQueueEmpty();
+
+            expect(mockUnsubscribePaused).toHaveBeenCalled();
+        });
+
+        it('should not unsubscribe when an item still waits for a conflict decision', () => {
+            mockGetQueue.mockReturnValue([
+                { uploadId: 'file1', status: UploadStatus.Finished },
+                { uploadId: 'file2', status: UploadStatus.ConflictFound },
+            ]);
+            manager.subscribe(mockDrive);
+
+            manager.checkAndUnsubscribeIfQueueEmpty();
+
+            expect(mockUnsubscribePaused).not.toHaveBeenCalled();
+        });
+
         it('should do nothing when not subscribed', () => {
             mockGetQueue.mockReturnValue([]);
 
