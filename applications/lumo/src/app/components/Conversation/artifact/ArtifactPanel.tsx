@@ -377,6 +377,7 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
         goToVersion,
         hasUnseenRevision,
         streamingArtifact,
+        pendingArtifact,
         closePanel,
     } = useArtifactContext();
     const [showLineNumbers, setShowLineNumbers] = useState(false);
@@ -384,11 +385,11 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
     const contentRef = useRef<HTMLDivElement>(null);
 
     // Nothing to show
-    if (!selectedArtifact && !streamingArtifact) {
+    if (!selectedArtifact && !streamingArtifact && !pendingArtifact) {
         return null;
     }
 
-    // --- Streaming state ---
+    // --- Streaming state (still receiving raw, not-yet-valid-JSON arguments) ---
     if (streamingArtifact && !selectedArtifact) {
         return (
             <div className="artifact-panel flex flex-column h-full overflow-hidden w-full">
@@ -400,6 +401,26 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
                     onClose={closePanel}
                 />
                 <StreamingPreview streaming={streamingArtifact} />
+            </div>
+        );
+    }
+
+    // --- Pending state: tool call parsed complete (real title/type/content), but its message
+    // hasn't finished generating yet, so it isn't in `registry` yet. Render with the same full
+    // content renderer as the complete state below (we have real content, not a raw preview) —
+    // just keep version nav/copy/download hidden via `isStreaming` until it's actually finalized.
+    // Respects an unrelated artifact the user has open, same rule the finish-promotion effect uses.
+    if (pendingArtifact && !streamingArtifact && (selectedId === null || selectedId === pendingArtifact.id)) {
+        return (
+            <div className="artifact-panel flex flex-column h-full overflow-hidden w-full">
+                <PanelHeader
+                    type={pendingArtifact.type}
+                    language={pendingArtifact.language}
+                    title={pendingArtifact.title}
+                    isStreaming
+                    onClose={closePanel}
+                />
+                <ArtifactContent artifact={pendingArtifact} showLineNumbers={showLineNumbers} />
             </div>
         );
     }

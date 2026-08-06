@@ -1189,6 +1189,7 @@ export interface ActionParams {
     retryStrategy?: RetryStrategy;
     customRetryInstructions?: string;
     imageOptions?: ImageGenerationOptions;
+    artifactModeActive?: boolean;
     /** True when the message was auto-sent from a ?q= URL parameter. */
     isFromQueryParam?: boolean;
 }

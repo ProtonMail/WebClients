@@ -66,6 +66,7 @@ export type HandleSendMessage = (
     newMessage: string,
     isWebSearchButtonToggled: boolean,
     imageOptions?: ImageGenerationOptions,
+    artifactModeActive?: boolean,
     isFromQueryParam?: boolean
 ) => Promise<void>;
 export type HandleRegenerateMessage = (
@@ -194,7 +195,7 @@ export const useLumoActions = ({
         spaceDek: AesGcmCryptoKey | undefined,
         signal: AbortSignal
     ) => {
-        const { newMessageContent, isWebSearchButtonToggled, imageOptions, isFromQueryParam } = actionParams;
+        const { newMessageContent, isWebSearchButtonToggled, imageOptions, artifactModeActive, isFromQueryParam } = actionParams;
         if (!newMessageContent?.trim() && provisionalAttachments.length === 0) return;
 
         const enableExternalTools = ffExternalTools && isWebSearchButtonToggled;
@@ -271,6 +272,7 @@ export const useLumoActions = ({
                     enableSmoothing,
                     isGhostMode,
                     imageAspectRatio: imageOptions?.aspectRatio,
+                    canvasModeActive: artifactModeActive ?? false,
                     isFromQueryParam,
                 },
                 settingsContext: {
@@ -637,6 +639,7 @@ export const useLumoActions = ({
         messageContent: string,
         isWebSearchButtonToggled: boolean,
         imageOptions?: ImageGenerationOptions,
+        artifactModeActive?: boolean,
         isFromQueryParam?: boolean
     ) => {
         sendMessageSendEvent();
@@ -646,6 +649,7 @@ export const useLumoActions = ({
             newMessageContent: messageContent,
             isWebSearchButtonToggled,
             imageOptions,
+            artifactModeActive,
             isFromQueryParam,
         });
     };
