@@ -9,9 +9,10 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 interface Props extends Omit<PromptProps, 'title' | 'children' | 'buttons'> {
     email: string;
     onDisable: () => Promise<void>;
+    disablingMemberAddress?: boolean;
 }
 
-const DisableAddressModal = ({ email, onDisable, ...rest }: Props) => {
+const DisableAddressModal = ({ email, onDisable, disablingMemberAddress, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const address = (
         <strong key="address" className="text-break">
@@ -29,8 +30,11 @@ const DisableAddressModal = ({ email, onDisable, ...rest }: Props) => {
             ]}
             {...rest}
         >
-            {c('Disable address prompt')
-                .jt`By disabling this address ${address}, you will no longer be able to send or receive emails using this address and all the linked ${BRAND_NAME} products will be disabled.`}
+            {disablingMemberAddress
+                ? c('Disable address prompt')
+                      .jt`By disabling this address ${address}, the member will no longer be able to send or receive emails using this address and all the linked ${BRAND_NAME} products will be disabled.`
+                : c('Disable address prompt')
+                      .jt`By disabling this address ${address}, you will no longer be able to send or receive emails using this address and all the linked ${BRAND_NAME} products will be disabled.`}
             <br />
             <br />
             {c('Disable address prompt').t`Are you sure you want to disable this address?`}

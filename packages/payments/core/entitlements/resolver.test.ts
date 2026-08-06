@@ -92,4 +92,46 @@ describe('createEntitlementResolver', () => {
         expect(business.orgIsBusiness).toBe(true);
         expect(consumer.orgIsBusiness).toBe(false);
     });
+
+    describe('orgIsMultiUserPersonal', () => {
+        const switchEntitlement = (name: EntitlementName) => {
+            return {
+                Name: name,
+                Quantity: 1 as const,
+                Type: EntitlementType.Switch as const,
+                Scope: EntitlementScope.Global,
+            };
+        };
+
+        it('should be true for a multi-user plan that is not a business', () => {
+            const resolver = createEntitlementResolver(
+                makeEntitlements([switchEntitlement(EntitlementName.MultiUser)])
+            );
+
+            expect(resolver.orgIsMultiUserPersonal).toBe(true);
+        });
+
+        it('should be false for a multi-user business plan', () => {
+            const resolver = createEntitlementResolver(
+                makeEntitlements([
+                    switchEntitlement(EntitlementName.MultiUser),
+                    switchEntitlement(EntitlementName.Business),
+                ])
+            );
+
+            expect(resolver.orgIsMultiUserPersonal).toBe(false);
+        });
+
+        it('should be false for a single-user personal plan', () => {
+            const resolver = createEntitlementResolver(makeEntitlements([]));
+
+            expect(resolver.orgIsMultiUserPersonal).toBe(false);
+        });
+
+        it('should be false when there are no entitlements at all', () => {
+            const resolver = createEntitlementResolver(undefined);
+
+            expect(resolver.orgIsMultiUserPersonal).toBe(false);
+        });
+    });
 });
