@@ -66,7 +66,7 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
         }
 
         if (tabState !== TabState.ACTIVE) {
-            sendReportCategoriesNav('tab', category.id);
+            void sendReportCategoriesNav('tab', category.id, shouldShowNewBadge);
         }
 
         void dispatch(updateLastSeenEventId({ labelID: category.id }));

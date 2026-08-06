@@ -23,16 +23,16 @@ import {
 
 const name = 'messageCounts' as const;
 
-interface State extends MailSettingState, OrganizationState {
+export interface MessageCountsState extends MailSettingState, OrganizationState {
     [name]: ModelState<LabelCount[]>;
 }
 
-type SliceState = State[typeof name];
+type SliceState = MessageCountsState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectMessageCounts = (state: State) => state[name];
+export const selectMessageCounts = (state: MessageCountsState) => state[name];
 
-const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${name}/fetch`, {
+const modelThunk = createAsyncModelThunk<Model, MessageCountsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ dispatch, extraArgument }) => {
         const [mailSettings, organization] = await Promise.all([
             dispatch(mailSettingsThunk()),
