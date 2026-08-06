@@ -22,8 +22,8 @@ import { getUIDHeaders } from '../fetch/headers';
 import type { ProtonConfig } from '../interfaces';
 import { isElectronApp } from './desktop';
 
+export type { SeverityLevel, Span } from '@sentry/browser';
 export { spanToJSON } from '@sentry/core';
-export type { Span, SeverityLevel } from '@sentry/browser';
 
 type SentryContext = {
     authHeaders: { [key: string]: string };
@@ -376,6 +376,7 @@ export enum SentryMailInitiatives {
     REMOVE_EMAIL_TRACKERS = 'remove-email-trackers',
     UPSELL_MODALS = 'upsell-modals',
     MAILBOX_REDIRECT = 'mailbox-redirect',
+    CATEGORIES_VIEW = 'categories-view',
 }
 
 export enum SentryMailPerformanceInitiatives {
