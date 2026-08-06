@@ -4,7 +4,12 @@ import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import {
+    type CategoriesViewState,
+    selectCategoryUnreadCount,
+} from '@proton/mail/store/categoriesView/categoriesViewSelector';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { baseUseStore } from '@proton/react-redux-store';
 import {
     TelemetryCategoriesOnboardingEvents,
     type TelemetryEvents,
@@ -25,8 +30,10 @@ export const useCategoriesTelemetry = () => {
     const getUserSettings = useGetUserSettings();
     const getMailSettings = useGetMailSettings();
 
+    const store = baseUseStore<CategoriesViewState>();
+
     return useMemo(() => {
-        const sendReport = async (event: TelemetryEvents, dimensions?: Record<string, string>) => {
+        const sendReport = async (event: TelemetryEvents, dimensions?: Record<string, string>, values?: any) => {
             const [user, subscription, userSettings] = await Promise.all([
                 getUser(),
                 getSubscription(),
@@ -47,7 +54,8 @@ export const useCategoriesTelemetry = () => {
                 userSettings,
                 measurementGroup: TelemetryMeasurementGroups.categoriesView,
                 event,
-                dimensions: dimensions,
+                values,
+                dimensions,
                 delay: true,
             });
         };
@@ -68,7 +76,9 @@ export const useCategoriesTelemetry = () => {
             categoryId: CategoryLabelID,
             isCategoryUnseen: boolean | 'n/a'
         ) => {
+            const { count } = selectCategoryUnreadCount(store.getState(), categoryId);
             const mailSettings = await getMailSettings();
+
             let isUnseen: 'n/a' | 'true' | 'false';
             if (isCategoryUnseen === 'n/a') {
                 isUnseen = 'n/a';
@@ -76,12 +86,16 @@ export const useCategoriesTelemetry = () => {
                 isUnseen = isCategoryUnseen ? 'true' : 'false';
             }
 
-            void sendReport(TelemetryCategoriesOnboardingEvents.category_nav, {
-                navSource,
-                categoryId,
-                viewMode: mailSettings.ViewMode === VIEW_MODE.GROUP ? 'conversations' : 'messages',
-                isUnseen,
-            });
+            void sendReport(
+                TelemetryCategoriesOnboardingEvents.category_nav,
+                {
+                    navSource,
+                    categoryId,
+                    viewMode: mailSettings.ViewMode === VIEW_MODE.GROUP ? 'conversations' : 'messages',
+                    isUnseen,
+                },
+                { unreadCount: count }
+            );
         };
 
         const sendReportChangeCategorySettings = (newValue: boolean) => {
