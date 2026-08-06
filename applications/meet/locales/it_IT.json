@@ -1902,6 +1902,9 @@
       "Not a valid number": [
         "Numero non valido"
       ],
+      "Organization key is not decrypted": [
+        "La chiave dell'organizzazione non è decriptata"
+      ],
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
@@ -2359,9 +2362,6 @@
       ],
       "Failed to update meeting schedule": [
         "Impossibile aggiornare la pianificazione della riunione"
-      ],
-      "Failed to update meeting waiting room status": [
-        "Mancato aggiornamento dello stato della sala d'attesa"
       ],
       "Free meeting": [
         "Incontro gratuito"
@@ -3256,6 +3256,20 @@
       ],
       "Video quality was poor": [
         "La qualità video era scarsa"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Chiave dell'organizzazione non esistente."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Autorizzazione negata, i privilegi di amministratore sono stati limitati."
+      ],
+      "The organization key must be activated first.": [
+        "La chiave dell'organizzazione deve essere prima attivata."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Devi avere accesso alla chiave dell'organizzazione per eseguire questa operazione."
       ]
     },
     "Placeholder": {

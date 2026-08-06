@@ -1833,6 +1833,12 @@
       "Event deleted": [
         "Eveniment șters."
       ],
+      "Failed to admit the participant. Please try again.": [
+        "Participantul nu a putut fi admis. Reîncercați."
+      ],
+      "Failed to admit the participants. Please try again.": [
+        "Participanții nu au putut fi admiși. Reîncercați."
+      ],
       "Failed to assign host": [
         "Desemnarea gazdei a eșuat."
       ],
@@ -1853,6 +1859,9 @@
       ],
       "Failed to delete room": [
         "Eroare la ștergerea camerei."
+      ],
+      "Failed to deny the participant. Please try again.": [
+        "Participantul nu s-a putut respinge. Reîncercați."
       ],
       "Failed to download recording": [
         "Descărcarea înregistrării a eșuat."
@@ -1893,6 +1902,9 @@
       "Failed to unlock meeting": [
         "Deblocarea conferinței a eșuat."
       ],
+      "Failed to update waiting room setting. Please try again.": [
+        "Nu s-a putut actualiza setările pentru sala de așteptare. Reîncercați."
+      ],
       "Incorrect username": [
         "Nume de utilizator incorect."
       ],
@@ -1904,6 +1916,9 @@
       ],
       "Not a valid number": [
         "Nu este un număr valid"
+      ],
+      "Organization key is not decrypted": [
+        "Cheia organizației nu este decriptată."
       ],
       "Passwords do not match": [
         "Parolele nu coincid"
@@ -2194,6 +2209,11 @@
         "${ totalParticipantCount } participanți",
         "${ totalParticipantCount } de participanți"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "Persoane care așteaptă: ${ waitingRoomParticipantsCount }",
+        "Persoane care așteaptă: ${ waitingRoomParticipantsCount }",
+        "Persoane care așteaptă: ${ waitingRoomParticipantsCount }"
+      ],
       "(You)": [
         "(Eu)"
       ],
@@ -2359,6 +2379,9 @@
       "Everyone has been disconnected from the call.": [
         "Toată lumea a fost deconectată de la apel."
       ],
+      "Expires in ${ formattedCountdown }": [
+        "Expiră peste ${ formattedCountdown }"
+      ],
       "Failed to apply background blur": [
         "Aplicarea fundalului estompat a eșuat."
       ],
@@ -2370,9 +2393,6 @@
       ],
       "Failed to update meeting schedule": [
         "Actualizarea planificării conferinței a eșuat."
-      ],
-      "Failed to update meeting waiting room status": [
-        "Actualizarea stării sălii de așteptare a conferinței a eșuat."
       ],
       "Free meeting": [
         "Întâlnire gratuită"
@@ -2412,6 +2432,9 @@
       ],
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
+      ],
+      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
+        "Cererea de participare a expirat. Gazda nu v-a admis la timp. Trimiteți o nouă solicitare de participare."
       ],
       "Joined ${ roomNameLabel }": [
         "A intrat în ${ roomNameLabel }"
@@ -2803,6 +2826,12 @@
       "View ": [
         "Afișare "
       ],
+      "Waiting for the host to admit you. The host has been notified that you're waiting.": [
+        "Se așteaptă ca gazda să vă admită. Gazda a fost anunțată că așteptați."
+      ],
+      "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
+        "Se așteaptă ca gazda să înceapă conferința. Vă veți alătura când gazda începe conferința și vă acceptă."
+      ],
       "Warning": [
         "Avertizare"
       ],
@@ -2847,6 +2876,9 @@
       ],
       "You were removed from the meeting": [
         "Gazda v-a eliminat din conferință"
+      ],
+      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
+        "Nu vi s-a admis participarea la această conferință. Poți încerca să te vă realăturați dacă credeți că a fost o greșeală."
       ],
       "You will leave the meeting. Others will continue.": [
         "Veți părăsi conferința. Ceilalți vor continua."
@@ -3137,6 +3169,9 @@
       "Use simple selfie segmentation": [
         "Folosire segmentată simplă a autoportretelor"
       ],
+      "Use waiting room with a paid plan": [
+        "Folosiți săli de așteptare cu un abonament plătit"
+      ],
       "Verification code": [
         "Cod de verificare"
       ],
@@ -3268,6 +3303,20 @@
       ],
       "Video quality was poor": [
         "Calitatea video a fost slabă"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Cheia organizației nu există."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permisiune refuzată, drepturile de administrator au fost restricționate."
+      ],
+      "The organization key must be activated first.": [
+        "Cheia organizației trebuie mai întâi activată."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Aveți nevoie de accesul la cheia organizației pentru a efectua această operație."
       ]
     },
     "Placeholder": {
@@ -3578,6 +3627,9 @@
       "Join meeting": [
         "Alăturare la întâlnire"
       ],
+      "Join request expired": [
+        "Solicitare de participare expirată"
+      ],
       "Joined at epoch ${ log.epoch }": [
         "Alăturat la epoca ${ log.epoch }"
       ],
@@ -3691,6 +3743,9 @@
       "Thank you!": [
         "Vă mulțumim!"
       ],
+      "The host didn't admit you": [
+        "Gazda nu v-a admis"
+      ],
       "Time": [
         "Ora"
       ],
@@ -3702,6 +3757,9 @@
       ],
       "Video": [
         "Videoclip"
+      ],
+      "Waiting for the host": [
+        "Se așteaptă gazda"
       ],
       "Waiting room": [
         "Sală de așteptare"

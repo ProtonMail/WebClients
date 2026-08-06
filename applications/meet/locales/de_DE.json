@@ -1863,6 +1863,9 @@
       "Failed to download recording": [
         "Aufnahme konnte nicht heruntergeladen werden"
       ],
+      "Failed to edit meeting": [
+        "Die Bearbeitung des Meetings ist fehlgeschlagen"
+      ],
       "Failed to edit room name": [
         "Fehler beim Bearbeiten des Raumnamens"
       ],
@@ -1913,6 +1916,9 @@
       ],
       "Not a valid number": [
         "Keine gültige Zahl"
+      ],
+      "Organization key is not decrypted": [
+        "Organisationsschlüssel ist nicht entschlüsselt"
       ],
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
@@ -2211,6 +2217,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Eine Telefonnummer kann nur zum Verifizieren eines ${ BRAND_NAME }-Kontos verwendet werden."
       ],
+      "Admitting": [
+        "Wird zugelassen"
+      ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Erweiterter Modus: Passe jede Unschärfe-Konstante für die nächste Version an und wende sie dann an, um die Vorschau neu zu erstellen. Überschreibungen haben Vorrang vor Datei- und Unleash-Werten."
       ],
@@ -2379,9 +2388,6 @@
       "Failed to update meeting schedule": [
         "Fehler beim Aktualisieren des Meeting-Zeitplans"
       ],
-      "Failed to update meeting waiting room status": [
-        "Der Status des Meeting-Warteraums konnte nicht aktualisiert werden"
-      ],
       "Free meeting": [
         "Kostenloses Meeting"
       ],
@@ -2426,9 +2432,6 @@
       ],
       "Joined ${ roomNameLabel }": [
         "${ roomNameLabel } beigetreten"
-      ],
-      "Joined at ${ receivedTime }": [
-        "Um ${ receivedTime } beigetreten"
       ],
       "Learn more": [
         "Mehr erfahren"
@@ -2670,6 +2673,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
+      "Rejecting": [
+        "Wird abgelehnt"
+      ],
       "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
         "Leite das Live-Kamerabild durch den Prozessor für benutzerdefinierte Hintergründe. Wähle eine einfarbige Fläche aus oder lade ein Bild hoch, das als Hintergrund verwendet werden soll."
       ],
@@ -2741,6 +2747,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Dies ist ein Ende-zu-Ende-verschlüsselter Chat mit temporären Nachrichten, die am Ende des Anrufs verschwinden."
+      ],
+      "This meeting has a waiting room": [
+        "Dieses Meeting hat einen Warteraum"
       ],
       "This meeting is being recorded": [
         "Dieses Meeting wird aufgezeichnet"
@@ -2822,6 +2831,9 @@
       ],
       "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
         "Warten bis der Organisator das Meeting startet. Du nimmst teil, sobald der Organisator das Meeting startet und dich zulässt."
+      ],
+      "Waiting since ${ receivedTime }": [
+        "Wartet seit ${ receivedTime }"
       ],
       "Warning": [
         "Warnung"
@@ -3293,6 +3305,20 @@
       ],
       "Video quality was poor": [
         "Die Videoqualität war schlecht"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Organisation-Schlüssel ist nicht vorhanden."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Berechtigung verweigert, Administrationsprivilegien wurden eingeschränkt."
+      ],
+      "The organization key must be activated first.": [
+        "Der Organisationsschlüssel muss zuerst aktiviert werden."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Du benötigst Zugriff auf den Organisationsschlüssel, um diese Operation durchzuführen."
       ]
     },
     "Placeholder": {
