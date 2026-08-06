@@ -8,13 +8,20 @@ import type { AlwaysOnPolicy } from '../types/AlwaysOn';
  *
  * `policy === null` means "never configured" (show the call-to-action); a policy means "show the
  * overview", whether or not enforcement is currently enabled.
+ *
+ * `enabled` holds the request back until we know the organization can actually use the feature, so
+ * plans without it never call the endpoint. It stays loading while disabled — there is nothing to show.
  */
-export const useAlwaysOnPolicy = () => {
+export const useAlwaysOnPolicy = ({ enabled }: { enabled: boolean }) => {
     const service = useAlwaysOnPolicyService();
     const [policy, setPolicy] = useState<AlwaysOnPolicy | null>(null);
     const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
+        if (!enabled) {
+            return;
+        }
+
         let active = true;
 
         const load = async () => {
@@ -39,7 +46,7 @@ export const useAlwaysOnPolicy = () => {
         return () => {
             active = false;
         };
-    }, [service]);
+    }, [service, enabled]);
 
     return { policy, isLoading, setPolicy };
 };
