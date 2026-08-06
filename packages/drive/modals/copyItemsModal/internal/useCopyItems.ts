@@ -1,6 +1,7 @@
 import { NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
+import { c } from 'ttag';
 
-import { getDrive, useDrive } from '../../../index';
+import { ProtonDriveError, getDrive, useDrive } from '../../../index';
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '../../../modules/busDriver';
 import { useCopiedItemsNotification } from './useCopiedItemsNotification';
@@ -10,6 +11,20 @@ interface Item {
     name: string;
 }
 
+/**
+ * A ProtonDriveError message is meant for the user, so it is displayed as is.
+ * Any other error is not, so it is reported and a generic message is shown instead.
+ */
+const getErrorMessage = (error: Error | unknown, extra: {}) => {
+    if (error instanceof ProtonDriveError) {
+        return error.message;
+    }
+
+    handleSdkError(error, { showNotification: false, extra });
+
+    return c('Error').t`Something went wrong, please try again later`;
+};
+
 export const useCopyItems = () => {
     const { drive } = useDrive();
     const { showCopiedItemsNotifications, showUndoCopyNotification } = useCopiedItemsNotification();
@@ -18,7 +33,7 @@ export const useCopyItems = () => {
         const itemsByUid = Object.fromEntries(copies.map((item) => [item.uid, item]));
         const uidsToDelete = Object.keys(itemsByUid);
         const deleted = [];
-        const errors = [];
+        const errors: { error: string }[] = [];
 
         try {
             for await (const result of drive.trashNodes(uidsToDelete)) {
@@ -26,8 +41,7 @@ export const useCopyItems = () => {
                 if (ok) {
                     deleted.push({ uid, name: itemsByUid[uid].name });
                 } else {
-                    // TODO: Improve error handling, we need to check if it's ProtonDriveError
-                    errors.push({ error: result.error.message });
+                    errors.push({ error: getErrorMessage(result.error, { uid, uidsToDelete }) });
                 }
             }
         } catch (error) {
@@ -40,7 +54,7 @@ export const useCopyItems = () => {
     const copyItems = async (itemsToCopy: Item[], targetFolderUid: string) => {
         const itemsByUid = Object.fromEntries(itemsToCopy.map((item) => [item.uid, item]));
         const copies: Record<string, { uid: string; name: any; parentUid: string }> = {};
-        const errors = [];
+        const errors: { error: string }[] = [];
 
         try {
             for await (const result of drive.copyNodes(itemsToCopy, targetFolderUid)) {
@@ -69,13 +83,15 @@ export const useCopyItems = () => {
                                     parentUid: targetFolderUid,
                                 };
                             } else {
-                                errors.push({ error: conflict.error.toString() });
+                                errors.push({
+                                    error: getErrorMessage(conflict.error, { uid: result.uid, targetFolderUid }),
+                                });
                             }
 
                             continue;
                         }
                     }
-                    errors.push({ error: result.error.toString() });
+                    errors.push({ error: getErrorMessage(result.error, { uid: result.uid, targetFolderUid }) });
                 }
             }
         } catch (error) {
