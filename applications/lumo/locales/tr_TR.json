@@ -3199,6 +3199,9 @@
       "Ask the model to be more careful and thorough": [
         "Modelden daha dikkatli ve kapsamlı olmasını isteyin."
       ],
+      "Back": [
+        "Geri"
+      ],
       "Cancel": [
         "İptal"
       ],
@@ -3222,6 +3225,9 @@
       ],
       "Close": [
         "Kapat"
+      ],
+      "Continue": [
+        "İlerle"
       ],
       "Copy link & caption": [
         "Bağlantıyı ve açıklamayı kopyala"
@@ -3285,6 +3291,9 @@
       ],
       "Favorite": [
         "Sık kullanılanlara ekle"
+      ],
+      "Generate my report": [
+        "Raporumu oluştur"
       ],
       "Go to all projects": [
         "Tüm projelere git"
@@ -3697,9 +3706,6 @@
       "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what coverage you’re offered and what you pay.": [
         "Stresten, bir teşhisten veya bir ilaçtan bahsetmek bile size sunulan sigortanın kapsamını ve ödeyeceğiniz tutarı sessizce etkileyen risk modellerini besleyebilir."
       ],
-      "Anthropic will email you a download link when your export is ready.": [
-        "Anthropic, dışa aktarma dosyanız hazır olduğunda size e-posta ile bir indirme bağlantısı gönderecek."
-      ],
       "Any images generated in these conversations will also be deleted.": [
         "Bu yazışmalar sırasında oluşturulan tüm görseller de silinecek."
       ],
@@ -3724,9 +3730,6 @@
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Bu projeye bağlamak istediğiniz ${ DRIVE_SHORT_APP_NAME } klasörüne gidin ve ardından “Bu klasörü bağla” seçeneğine tıklayın."
       ],
-      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100 million people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
-        "100 milyondan fazla kişinin güvendiği ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } ürünlerinin arkasındaki gizlilik markası ${ BRAND_NAME } ekibi tarafından geliştirilmiştir."
-      ],
       "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100M people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
         "100 milyondan fazla kişinin güvendiği ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } ürünlerinin arkasındaki gizlilik markası ${ BRAND_NAME } ekibi tarafından geliştirilmiştir."
       ],
@@ -3739,8 +3742,8 @@
       "Check what your AIs store about you and delete what you no longer need.": [
         "Yapay zeka sistemlerinizin sizinle ilgili hangi bilgileri tuttuğunu kontrol edin ve gerek duymadıklarınızı silin."
       ],
-      "Choose or drop your ChatGPT or Claude export (.zip or conversations.json). We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
-        "ChatGPT veya Claude dışa aktarım dosyanızı (.zip veya conversations.json) seçin ya da sürükleyip bırakın. Son ${ PAPER_TRAIL_LIMITS.maxPrompts } bilgi isteminizi inceleriz."
+      "Choose or drop your .zip or conversations.json file. We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
+        ".zip ya da conversations.json dosyanızı seçin veya sürükleyip bırakın. ${ PAPER_TRAIL_LIMITS.maxPrompts } son istemlerinizi inceliyoruz."
       ],
       "Click Settings → Data controls": [
         "Ayarlar → Veri denetimleri üzerine tıklayın"
@@ -3748,8 +3751,8 @@
       "Click Settings → Privacy": [
         "Ayarlar → Gizlilik üzerine tıklayın"
       ],
-      "Click your profile icon in the bottom-left corner": [
-        "Sol alt köşedeki profil simgenize tıklayın"
+      "Click your profile icon in the bottom-left corner of the page": [
+        "Sayfanın sol alt köşesindeki profil simgenize tıklayın"
       ],
       "Conversation encrypted": [
         "Sohbet şifrelendi"
@@ -3781,14 +3784,17 @@
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Sohbet geçmişinizden yola çıkarak Big Tech yapay zekasının sizinle ilgili neler öğrenebileceğini görün ve paylaşabileceğiniz bir gizlilik notu alın."
       ],
+      "Drag and drop or click to browse": [
+        "Dosyayı sürükleyip bırakın ya da göz atmak için tıklayın"
+      ],
       "Drive files are not available for guest users": [
         "Konuk kullanıcılar Drive dosyalarını kullanamaz"
       ],
       "Every conversation leaves behind small clues. On their own, they don't say much. Together, they can reveal a surprisingly detailed picture of your life. This report shows what other AI providers can infer from your chats. But unlike them, ${ LUMO_SHORT_APP_NAME } doesn't see your data.": [
         "Her sohbet ardında küçük ipuçları bırakır. Bunlar tek başlarına pek bir şey ifade etmezler. Ancak bir araya geldiklerinde hayatınızla ilgili şaşırtıcı derecede ayrıntılı bir tablo ortaya çıkarabilirler. Bu rapor diğer yapay zeka sağlayıcılarının sohbetlerinizden ne tür çıkarımlarda bulunabileceğini gösterir. Ancak onlardan farklı olarak ${ LUMO_SHORT_APP_NAME } verilerinizi görmez."
       ],
-      "Every conversation with the big AI providers leaves a digital paper trail. Your job. Your health. Your relationships. Even where you live. To see what Big Tech can piece together from your chats upload your AI data below.": [
-        "Büyük yapay zeka hizmeti sağlayıcılarıyla yaptığınız her konuşma dijital bir iz bırakır. İşiniz. Sağlığınız. İlişkileriniz. Hatta yaşadığınız yer bile. Big Tech şirketlerinin sohbetlerinizden neleri bir araya getirebildiğini görmek için aşağıya yapay zeka verilerinizi yükleyin."
+      "Every conversation with the big AI providers leaves a digital paper trail. Your job. Your health. Your relationships. Even where you live.": [
+        "Büyük yapay zeka hizmeti sağlayıcılarıyla yaptığı her yazışma bir dijital veri izi bırakıyor. Sizin işiniz. Sağlığınız. İlişkileriniz. Yaşadığınız yerde bile."
       ],
       "Example prompts shown when a conversation begins.": [
         "Bir yazışma başladığında görüntülenecek örnek sorular."
@@ -3808,9 +3814,6 @@
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Bu projeye yüklenen dosyalar bağlantılı Drive klasörüne kaydedilir."
       ],
-      "Follow the prompts and confirm the export": [
-        "Ekrandaki yönergeyi izleyin ve dışa aktarmayı onaylayın"
-      ],
       "Follow the prompts to confirm the export": [
         "Dışa aktarmayı onaylamak için ekrandaki yönergeyi izleyin"
       ],
@@ -3820,11 +3823,14 @@
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "İnternet üzerinden alıntılarla daha hızlı, daha doğru yanıt alarak kaynağı kontrol edebilirsiniz."
       ],
-      "If a profile suggests you can pay more or that you’re in a hurry, you may see a higher price than the next person.I": [
+      "If a profile suggests you can pay more or that you’re in a hurry, you may see a higher price than the next person.": [
         "Profiliniz daha fazla ödeyebileceğinizi veya aceleniz olduğunu gösteriyorsa, sıradaki kişiden daha yüksek bir fiyat alabilirsiniz.I"
       ],
       "Image": [
         "Görsel"
+      ],
+      "In the pop-up window, click Confirm export": [
+        "Açılan pencerede, Dışa aktarmayı onayla üzerine tıklayın"
       ],
       "Inferences drawn only from your prompts — grouped by life area.": [
         "Yalnızca verdiğiniz ipuçlarından çıkarılan sonuçlar. Yaşam alanlarına göre gruplanmıştır."
@@ -3847,11 +3853,8 @@
       "Lockdown Mode is enabled on your device": [
         "Aygıtınızda kilitleme kipi açıldı"
       ],
-      "Log in to your AI platform and request an export of your chat history, then download it to your device.": [
-        "Yapay zeka platformunuzda oturum açın ve sohbet geçmişinizi dışa aktarma isteğinde bulunun. Ardından bunu aygıtınıza indirin."
-      ],
-      "Look for Export data": [
-        "Verileri dışa aktar seçeneğini arayın"
+      "Look for Export data, then click Export": [
+        "Verileri dışa aktar seçeneğini arayın, ardından Dışa aktar üzerine tıklayın"
       ],
       "No favorites yet. Star a chat to find it here quickly.": [
         "Henüz bir sık kullanılan yok. Bir sohbeti sık kullanılanlara ekleyerek buradan hızlıca bulabilirsiniz."
@@ -3865,11 +3868,11 @@
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "iPhone veya iPad üzerinde Ayarlar → Uygulamalar → Safari → İleri Düzey yolunu izleyin ve \"Tüm Çerezleri Engelle\" seçeneğinin kapalı olduğundan emin olun. Ardından sayfayı yeniden yükleyin."
       ],
-      "OpenAI will email you a download link. It can take up to 24 hours.": [
-        "OpenAI size e-posta ile bir indirme bağlantısı gönderecek. Bu işlem 24 saate kadar sürebilir."
-      ],
       "PASTED": [
         "YAPIŞTIRILDI"
+      ],
+      "Please upload your AI export before continuing.": [
+        "İlerlemeden önce lütfen AI dışa aktarma dosyanızı yükleyin."
       ],
       "Processing file...": [
         "Dosya işleniyor..."
@@ -3886,14 +3889,11 @@
       "red flags": [
         "kırmızı bayrak"
       ],
-      "See the profile that an AI company can build from your conversations alone.": [
-        "Bir yapay zeka şirketinin yalnızca yazışmalarınızdan oluşturabileceği profili inceleyin."
-      ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Big Tech şirketlerinin yapay zekalarının sizinle ilgili neler bildiğini görün. ${ LUMO_SHORT_APP_NAME } ile hazırlanmıştır."
       ],
-      "Sign in to your ChatGPT account at chatgpt.com": [
-        "chatgpt.com adresinden ChatGPT hesabınızda oturum açın"
+      "Sign in to your ChatGPT account on chatgpt.com": [
+        "Chatgpt.com adresinden ChatGPT hesabınızda oturum açın"
       ],
       "Sign in to your Claude account at claude.ai": [
         "claude.ai adresinden Claude hesabınızda oturum açın"
@@ -3915,6 +3915,9 @@
       ],
       "The more an attacker knows about you, the more believable the phishing message. Personalized scams are far harder to spot.": [
         "Bir saldırgan sizinle ilgili ne kadar çok şey bilirse, kimlik avı girişimi iletisi o kadar inandırıcı olur. Kişiselleştirilmiş dolandırıcılıkları farketmek çok daha zor olur."
+      ],
+      "There wasn't enough information in the data you uploaded to build a meaningful profile. Either you haven't used this AI much, or your exported data doesn't contain enough detail for us to make reliable inferences.": [
+        "Anlamlı bir profil oluşturmak için yüklediğiniz verilerde yeterli bilgi yoktu. Ya bu yapay zekayı çok fazla kullanmadınız ya da dışa aktarılan verilerinizde güvenilir çıkarımlar yapmamız için yeterli ayrıntı içermiyor."
       ],
       "These are the most sensitive categories Big Tech AI could infer about you from your chats — even when you never typed them out explicitly.": [
         "Bunlar, siz bunları açıkça yazmamış olsanız bile, Big Tech şirketlerinin yapay zeka hizmetlerinin sohbetlerinizden çıkarabileceği en önemli sınıflardır."
@@ -3961,9 +3964,6 @@
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "${ DRIVE_APP_NAME } kullanıldığında ${ LUMO_SHORT_APP_NAME } daha büyük dosyalarla çalışabilir."
       ],
-      "We extract your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts to keep processing fast. Nothing is stored on our servers. You can optionally save your report on this device.": [
-        "İşlemleri hızlı yapabilmek için son ${ PAPER_TRAIL_LIMITS.maxPrompts } bilgi istemini alıyoruz. Sunucularımızda hiçbir veri saklanmaz. İsterseniz raporunuzu bu aygıta kaydedebilirsiniz."
-      ],
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Kartınızı, gönderiye ekleyebilmeniz için kaydedeceğiz. Sosyal ağ siteleri görseli sizin için ekleyemez."
       ],
@@ -3984,6 +3984,9 @@
       ],
       "Your report is stored unencrypted in this browser only. It never leaves your device and is not sent to ${ LUMO_SHORT_APP_NAME }'s servers.": [
         "Raporunuz yalnızca bu tarayıcıda şifrelenmemiş olarak tutulur. Raporunuz aygıtınızdan asla dışarı çıkmaz ve ${ LUMO_SHORT_APP_NAME } sunucularına gönderilmez."
+      ],
+      "You’ll receive your data export as a download link to your email. This may take some time depending on the size of your export, and is not available for Business or Enterprise accounts.": [
+        "Verileri dışa aktarma dosyanızı e-posta adresinize gönderilen bir indirme bağlantısı ile alacaksınız. Bu işlem, dışa aktarılan verilerinizin boyutuna bağlı olarak biraz zaman alabilir ve Business veya Enterprise hesaplarında kullanılamaz."
       ]
     },
     "collider_2025:Inspiration suggestion prompt": {
@@ -4076,6 +4079,9 @@
       "9:16": [
         "9:16"
       ],
+      "AI platform": [
+        "AI platformu"
+      ],
       "Card theme": [
         "Kart teması"
       ],
@@ -4097,9 +4103,6 @@
       "Data brokers": [
         "Veri tüccarları"
       ],
-      "Date": [
-        "Tarih"
-      ],
       "Describe what to change": [
         "Neyin değiştirileceğini açıklayın"
       ],
@@ -4117,6 +4120,12 @@
       ],
       "Folder name": [
         "Klasör adı"
+      ],
+      "Generating": [
+        "Oluşturuluyor"
+      ],
+      "Generating your report": [
+        "Raporunuz oluşturuluyor"
       ],
       "High": [
         "Yüksek"
@@ -4160,14 +4169,20 @@
       "Personalized pricing": [
         "Kişiye özel fiyatlar"
       ],
+      "Platform": [
+        "Platform"
+      ],
       "Politics": [
         "Politika"
+      ],
+      "Progress": [
+        "İlerleme"
       ],
       "Project Instructions (optional)": [
         "Proje yönergeleri (isteğe bağlı)"
       ],
-      "Save analysis on this device to view it later": [
-        "İncelmeyi bu aygıta kaydedin ve daha sonra görüntüleyin"
+      "Save report on this device to view it later": [
+        "Raporu daha sonra görüntülemek için bu aygıta kaydedin"
       ],
       "Scams": [
         "Dolandırıcılık"
@@ -4189,6 +4204,9 @@
       ],
       "Untitled project": [
         "Adsız proje"
+      ],
+      "Upload": [
+        "Yükle"
       ]
     },
     "collider_2025:Notification": {
@@ -4717,9 +4735,6 @@
       "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } ile oluşturulan görselleri keşfedin"
       ],
-      "Export your data": [
-        "Verilerinizi dışa aktarın"
-      ],
       "Favorites": [
         "Beğenilenler"
       ],
@@ -4729,14 +4744,8 @@
       "Filters": [
         "Süzgeçler"
       ],
-      "Generate your AI Paper Trail": [
-        "Yapay zeka veri izinizi oluşturun"
-      ],
       "Get started by creating a new project": [
         "Yeni bir proje oluşturarak başlayın"
-      ],
-      "Get your AI Paper Trail": [
-        "Yapay zekâ veri izinizi alın"
       ],
       "Ghost mode": [
         "Hayalet kipi"
@@ -4770,6 +4779,9 @@
       ],
       "Linked Drive Folder": [
         "Bağlı Drive klasörü"
+      ],
+      "Looks like you've kept a low profile": [
+        "Düşük profilde tutuyorsunuz gibi görünüyor"
       ],
       "Meet your AI Paper Trail": [
         "Yapay zeka veri iziniz ile tanışın"
@@ -4876,8 +4888,8 @@
       "Two models, two modes": [
         "İki model, iki kip"
       ],
-      "Upload it securely": [
-        "Güvenliği koruyarak yükleyin"
+      "Upload your data export": [
+        "Verileri dışa aktarma dosyanızı yükleyin"
       ],
       "Use AI on your terms": [
         "Yapay zekayı kendi belirleyeceğiniz koşullar ile kullanın"
@@ -4903,14 +4915,11 @@
       "You saw the profile? Now protect the person behind it.": [
         "Profili gördünüz mü? Şimdi de o profilin arkasındaki kişiyi koruyun."
       ],
-      "Your conversations should belong to you. With ${ LUMO_SHORT_APP_NAME }, they do.": [
-        "Yazışmalarınız size ait olmalı. ${ LUMO_SHORT_APP_NAME } ile tam da öyle oluyor."
-      ],
       "Your image gallery is empty": [
         "Görsel galeriniz boş"
       ],
-      "Your recent files": [
-        "Son kullandığınız dosyalar"
+      "Your recent reports": [
+        "Geçmiş raporlarınız"
       ],
       "Your shareable card": [
         "Paylaşılabilir kartınız"
@@ -6024,6 +6033,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Telif hakkı ihlali veya çalıntı verileri bildirirken bir ileti yazılmalıdır"
+      ],
       "Amount above the maximum.": [
         "Tutar en fazla miktarın üstünde."
       ],
@@ -6033,11 +6045,68 @@
       "An error occurred": [
         "Bir sorun çıktı"
       ],
+      "Bookmark password is not available": [
+        "Yer imi parolası kullanılamıyor"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Fotoğraf, geçerli bir adı olmadan albüme eklenemez"
+      ],
+      "Cannot download a folder": [
+        "Bir klasör indirilemedi"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Öge, geçerli bir adı olmadan taşınamaz. Lütfen önce ögeyi yeniden adlandırın"
+      ],
+      "Cannot share root folder": [
+        "Kök klasör paylaşılamaz"
+      ],
+      "Cannot verify the author of this file": [
+        "Bu dosyanın sahibi doğrulanamadı"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Bu dosyanın yükleyen kişi doğrulanamadı"
+      ],
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
       ],
       "Company name or personal name is required": [
         "Kuruluş adının veya kişi adının yazılması zorunludur"
+      ],
+      "Copy operation aborted": [
+        "Kopyalama işlemi iptal edildi"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Öge, klasör olmayan bir ögeye kopyalanamaz"
+      ],
+      "Could not find an available name": [
+        "Kullanılabilecek bir ad bulunamadı"
+      ],
+      "Could not load sharing details": [
+        "Paylaşım ayrıntıları yüklenemedi"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Görsel ön izlemesi yüklenemedi: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Bu dosyanın bir parçası okunamadı: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Üst klasörün kilidi açılamadı"
+      ],
+      "Could not unlock this item": [
+        "Bu ögenin kilidi açılamadı"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde belge oluşturulamaz"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde dosya oluşturulamaz"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde klasör oluşturulamaz"
+      ],
+      "Device not found": [
+        "Aygıt bulunamadı"
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
@@ -6057,8 +6126,47 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
       ],
+      "Expiration date cannot be in the past": [
+        "Geçerlilik sonu tarihi geçmişte olamaz"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Yer imi anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Yer imi adının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Yer iminin şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "İçerik anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Öge adının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Düğüm anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Sürüm üst bilgilerinin şifresi çözülemedi"
+      ],
+      "Failed to get inviter keys": [
+        "Davet edilenin anahtarları alınamadı"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Failed to verify invitation": [
+        "Davet doğrulanamadı"
+      ],
+      "File download failed due to empty response": [
+        "Boş yanıt nedeniyle dosya indirilemedi"
+      ],
+      "File has no revision": [
+        "Dosyanın bir sürümü yok"
+      ],
+      "Image preview not found": [
+        "Görsel ön izlemesi bulunamadı"
       ],
       "Incorrect username": [
         "Kullanıcı adı yanlış"
@@ -6075,14 +6183,63 @@
       "Invalid postal code": [
         "Posta kodu geçersiz"
       ],
+      "Invalid URL": [
+        "Adres geçersiz"
+      ],
       "Invalid VAT number": [
         "KDV numarası geçersiz"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
+      "Invitation not found": [
+        "Davet bulunamadı"
+      ],
+      "Item not found": [
+        "Öge bulunamadı"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Eski herkese açık bağlantı güncellenemedi. Lütfen yeni bir herkese açık bağlantı oluşturun."
+      ],
+      "Missing inviter email": [
+        "Davet edilenin e-posta adresi eksik"
+      ],
+      "Missing signature": [
+        "İmza eksik"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "${ signatureType } için imza eksik"
+      ],
+      "Move operation aborted": [
+        "Taşıma işlemi iptal edildi"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Öge, klasör olmayan bir ögeye taşınamaz"
+      ],
+      "Moving root item is not allowed": [
+        "Kök öge taşınamaz"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Ad en fazla ${ MAX_NODE_NAME_LENGTH } karakter uzunluğunda olabilir",
+        "Ad en fazla ${ MAX_NODE_NAME_LENGTH } karakter uzunluğunda olabilir"
+      ],
+      "Name must not be empty": [
+        "Ad boş olamaz"
+      ],
+      "No file data was received. Please try again.": [
+        "Herhangi bir dosya verisi alınmadı. Lütfen yeniden deneyin."
+      ],
       "Not a valid number": [
         "Numara geçerli değil"
+      ],
+      "Only admins can convert external invitations": [
+        "Yalnızca yöneticiler dış davetleri dönüştürebilir"
+      ],
+      "Operation aborted": [
+        "İşlem iptal edildi"
+      ],
+      "Operation failed, try again later": [
+        "İşlem tamamlanamadı. Bir süre sonra yeniden deneyin"
       ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
@@ -6092,6 +6249,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Dosyanın bir bölümü bozulmuş gibi görünüyor"
       ],
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
@@ -6107,6 +6267,12 @@
       ],
       "Payment process not supported": [
         "Ödeme işlemi desteklenmiyor"
+      ],
+      "Photo is already in the target album": [
+        "Fotoğraf zaten hedef albümde bulunuyor"
+      ],
+      "Photo not found": [
+        "Fotoğraf bulunamadı"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Lütfen ABN numaranızın sınır ötesi KDV için kayıtlı olup olmadığını denetleyin"
@@ -6141,14 +6307,44 @@
       "Process aborted": [
         "İşlem iptal edildi"
       ],
+      "Renaming root item is not allowed": [
+        "Kök öge yeniden adlandırılamaz"
+      ],
+      "Request aborted": [
+        "İstek iptal edildi"
+      ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Bu tarifede tersine KDV uygulaması desteklenmiyor"
       ],
+      "Signature is missing": [
+        "İmza eksik"
+      ],
       "Signature verification failed": [
         "İmza doğrulanamadı"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "İmza doğrulanamadı: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } için imza doğrulanamadı"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } için imza doğrulanamadı: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Bazı dosya verileri yüklenemedi. Lütfen yeniden deneyin."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Bazı dosya parçaları yüklenemedi. Lütfen yeniden deneyin."
+      ],
+      "Some items could not be loaded": [
+        "Bazı ögeler yüklenemedi"
+      ],
+      "Something went wrong": [
+        "Bir sorun çıktı"
       ],
       "Something went wrong. Please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
@@ -6168,6 +6364,9 @@
       "The minimum donation amount is ${ price }": [
         "En az bağış tutarı ${ price }"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Yüklenen dosya özgün dosya ile eşleşmiyor. Lütfen yeniden deneyin."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
       ],
@@ -6179,6 +6378,30 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
+      ],
+      "This file has missing crypto material": [
+        "Bu dosyada şifreleme materyali eksik"
+      ],
+      "This file has no version available to download": [
+        "Bu dosyanın indirilebilecek bir sürümü yok"
+      ],
+      "This file version could not be uploaded": [
+        "Bu dosya sürümü yüklenemedi"
+      ],
+      "This item has no image preview": [
+        "Bu ögenin görsel ön izlemesi yok"
+      ],
+      "This item is no longer shared": [
+        "Bu öge artık paylaşılmıyor"
+      ],
+      "This item is not shared": [
+        "Bu öge paylaşılmıyor"
+      ],
+      "Too many server errors, please try again later": [
+        "Çok fazla sayıda sunucu sorunu çıktı. Lütfen bir süre sonra yeniden deneyin"
+      ],
+      "Too many server requests, please try again later": [
+        "Çok fazla sayıda sunucu isteği yapıldı. Lütfen bir süre sonra yeniden deneyin"
       ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
@@ -6198,11 +6421,35 @@
       "VAT number must start with ${ prefixes }": [
         "KDV numarası ${ prefixes } ile başlamalıdır"
       ],
+      "Verification keys are not available": [
+        "Doğrulama anahtarları bulunamadı"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } için doğrulama anahtarları yok"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Doğrulama kodu bu yöntemle gönderilemedi."
       ],
       "Wrong billing address": [
         "Fatura adresi yanlış"
+      ],
+      "You can create public links for your own files only": [
+        "Yalnızca kendi dosyalarınız için herkese açık bağlantı oluşturabilirsiniz"
+      ],
+      "You can only leave items that are shared with you": [
+        "Yalnızca sizinle paylaşılan ögelerden ayrılabilirsiniz"
+      ],
+      "You can only upload a new version to a file": [
+        "Bir dosyaya yalnızca yeni bir sürüm yükleyebilirsiniz"
+      ],
+      "You can update a public link for your own files only": [
+        "Yalnızca kendi dosyalarınızın herkese açık bağlantısını güncelleyebilirsiniz"
+      ],
+      "You do not have access to this item": [
+        "Bu ögeye erişme izniniz yok"
+      ],
+      "You do not have access to this shared item": [
+        "Bu paylaşılan ögeye erişme izniniz yok"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Şifresi çözülemeyen ad"
@@ -6532,6 +6779,9 @@
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
+      "Author is not provided on public link": [
+        "Sahip herkese açık bağlantıda belirtilmemiş"
+      ],
       "Awaiting transaction": [
         "Ödemenin tamamlanması bekleniyor"
       ],
@@ -6718,9 +6968,6 @@
       ],
       "JCB logo": [
         "JCB logosu"
-      ],
-      "Keys created": [
-        "Anahtarlar oluşturuldu"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -6920,9 +7167,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
-      ],
-      "User activated": [
-        "Kullanıcı ektinleştirildi"
       ],
       "Users": [
         "Kullanıcılar"
@@ -9206,6 +9450,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "${ upsellPlanTitle } tarifesine yükselt"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "öznitelikler"
+      ],
+      "content key": [
+        "içerik anahtarı"
+      ],
+      "hash key": [
+        "karma anahtarı"
+      ],
+      "key": [
+        "anahtar"
+      ],
+      "membership": [
+        "üyelik"
+      ],
+      "name": [
+        "ad"
       ]
     },
     "Provider option": {
