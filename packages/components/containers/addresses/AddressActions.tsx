@@ -293,7 +293,12 @@ const AddressActions = ({
                 />
             )}
             {renderDisableAddress && (
-                <DisableAddressModal email={address.Email} onDisable={handleDisable} {...disableAddressProps} />
+                <DisableAddressModal
+                    email={address.Email}
+                    onDisable={handleDisable}
+                    disablingMemberAddress={member !== undefined && !member.Self}
+                    {...disableAddressProps}
+                />
             )}
             {renderDisconnectBYOEModal && <DisconnectBYOEModal address={address} {...disconnectBYOEProps} />}
             {renderReachedLimitForwardingModal && <ReachedLimitForwardingModal {...reachedLimitForwardingModalProps} />}

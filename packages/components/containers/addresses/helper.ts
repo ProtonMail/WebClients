@@ -60,6 +60,7 @@ export const getPermissions = ({
     address,
     addresses,
     user,
+    isMultiUserPersonalPlan,
     organizationKey,
     addressIndex,
 }: {
@@ -68,6 +69,7 @@ export const getPermissions = ({
     address: Address;
     addresses: PartialMemberAddress[];
     user: UserModel;
+    isMultiUserPersonalPlan?: boolean;
     organizationKey?: CachedOrganizationKey;
 }) => {
     const { isAdmin, canPay } = user;
@@ -78,10 +80,13 @@ export const getPermissions = ({
     const isSelf = !member || !!member.Self;
     const isDefault = addressIndex === 0;
     const isEnabled = Status === ADDRESS_STATUS.STATUS_ENABLED;
+    const isDisabled = Status === ADDRESS_STATUS.STATUS_DISABLED;
     const isExternal = Type === ADDRESS_TYPE.TYPE_EXTERNAL;
     const isBYOE = Type === ADDRESS_TYPE.TYPE_EXTERNAL && getIsBYOEAddress(address);
     const isNotEncrypted = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE);
     const isSignatureNotExpected = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED);
+
+    const isAdminOnMemberBYOE = isBYOE && isAdmin && !isSelf && !!isMultiUserPersonalPlan;
 
     const canMakeDefault = !isDefault && !getIsNonDefault(address);
 
@@ -96,7 +101,7 @@ export const getPermissions = ({
     const canGenerateSelfAddressKeys = isSelf && user.Private === MEMBER_PRIVATE.UNREADABLE && !address.HasKeys;
     const canGenerate = canGenerateMemberAddressKeys || canGenerateSelfAddressKeys;
 
-    let canDisable = isEnabled && isAdmin && !isSpecialAddress && !isExternal;
+    let canDisable = (isEnabled && isAdmin && !isSpecialAddress && !isExternal) || (isAdminOnMemberBYOE && isEnabled);
 
     const isManagedUser = member?.Type === MEMBER_TYPE.MANAGED;
     if (isManagedUser) {
@@ -128,13 +133,13 @@ export const getPermissions = ({
         canEditInternalAddress,
         canEditExternalAddress,
         canDisable,
-        canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && Type !== TYPE_ORIGINAL && !isBYOE,
+        canEnable: (isDisabled && isAdmin && Type !== TYPE_ORIGINAL && !isBYOE) || (isAdminOnMemberBYOE && isDisabled),
         canDeleteAddress: adminCanDeleteCustom,
         canDeleteAddressOncePerYear: !adminCanDeleteCustom && isAdmin && !isSpecialAddress && !isExternal && !isDefault,
         canEdit: isSelf,
-        canGrantBYOEPermissions: isBYOE && !isNotEncrypted && !isSignatureNotExpected, // Used to reconnect a BYOE address when a sync is lost
-        canReconnectBYOE: isBYOE && isNotEncrypted && isSignatureNotExpected, // Used to reconnect a BYOE when manually disconnected by the user
-        canDisconnectBYOE: isBYOE && !isNotEncrypted && !isSignatureNotExpected, // Used to manually disconnect a BYOE address
+        canGrantBYOEPermissions: isSelf && isBYOE && !isNotEncrypted && !isSignatureNotExpected, // Used to reconnect a BYOE address when a sync is lost
+        canReconnectBYOE: isSelf && isBYOE && isNotEncrypted && isSignatureNotExpected, // Used to reconnect a BYOE when manually disconnected by the user
+        canDisconnectBYOE: isSelf && isBYOE && !isNotEncrypted && !isSignatureNotExpected && !isDisabled, // Used to manually disconnect a BYOE address
     };
 };
 
