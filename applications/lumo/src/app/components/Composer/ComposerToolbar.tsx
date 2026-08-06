@@ -104,6 +104,8 @@ export interface ComposerToolbarProps {
     onAspectRatioChange: (ratio: ImageAspectRatio) => void;
     isCreateImageMode: boolean;
     onCreateImageModeChange: (enabled: boolean) => void;
+    isArtifactMode: boolean;
+    onArtifactModeChange: (enabled: boolean) => void;
     canUseAgents?: boolean;
     isAgent?: boolean;
 }
@@ -118,6 +120,8 @@ export const ComposerToolbar = ({
     onAspectRatioChange,
     isCreateImageMode,
     onCreateImageModeChange,
+    isArtifactMode,
+    onArtifactModeChange,
     canUseAgents = false,
     isAgent = false,
 }: ComposerToolbarProps) => {
@@ -148,7 +152,7 @@ export const ComposerToolbar = ({
         <div className="flex flex-row flex-nowrap items-center justify-space-between w-full mt-1">
             <div className="flex flex-row flex-nowrap items-center gap-1 pl-2">
                 <UploadMenuSection {...uploadSectionProps} />
-                {isToolsFlagEnabled && !isCreateImageMode && !isAgent && (
+                {isToolsFlagEnabled && !isCreateImageMode && !isArtifactMode && !isAgent && (
                     <>
                         <Button
                             ref={toolsButtonRef}
@@ -169,6 +173,7 @@ export const ComposerToolbar = ({
                             anchorRef={toolsButtonRef}
                             onClose={() => setShowToolsMenu(false)}
                             onClickCreateImageOption={() => onCreateImageModeChange(true)}
+                            onClickCreateArtifactOption={() => onArtifactModeChange(true)}
                             canUseAgents={canUseAgents}
                         />
                     </>
@@ -184,6 +189,20 @@ export const ComposerToolbar = ({
                     >
                         <LumoIcon name="Palette" size={16} />
                         <span className="text-sm hidden sm:block">{c('collider_2025: Button').t`Create image`}</span>
+                        <LumoIcon name="X" width={12} height={12} className="group-hover:opacity-100" />
+                    </Button>
+                )}
+                {isArtifactMode && (
+                    <Button
+                        onClick={() => onArtifactModeChange(false)}
+                        className="border-none shrink-0 flex flex-row flex-nowrap gap-2 items-center color-primary py-1.5 rounded-full group-hover-opacity-container hover:color-primary"
+                        shape="ghost"
+                        size="small"
+                        title={c('collider_2025: Button').t`Create artifact`}
+                        aria-label={c('collider_2025: Button').t`Create artifact`}
+                    >
+                        <LumoIcon name="FileText" size={16} />
+                        <span className="text-sm hidden sm:block">{c('collider_2025: Button').t`Create artifact`}</span>
                         <LumoIcon name="X" width={12} height={12} className="group-hover:opacity-100" />
                     </Button>
                 )}
