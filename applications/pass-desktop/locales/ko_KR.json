@@ -2896,6 +2896,9 @@
       ],
       "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
         "Git이 ${ PASS_APP_NAME } SSH 에이전트와 함께 동작하려면, Git은 Windows OpenSSH를 사용해야 합니다. 아래 명령어를 통해 설정할 수 있습니다:"
+      ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Git 커밋을 사용자의 SSH키로 서명하면 다음 명령도 실행해야 합니다:"
       ]
     },
     "Keyboard key": {
