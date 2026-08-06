@@ -13,8 +13,9 @@ import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { ApiImporterOrganizationState } from '../../api/api.interface';
-import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '../../interface';
+import { EASY_SWITCH_FEATURES, ImportProvider } from '../../interface';
 import { getSubdomain } from '../domains';
+import { OLES_PROVIDERS } from '../providers';
 import { setupMigration } from '../thunk';
 import type { MigrationConfiguration, MigrationModel, MigrationSetupModel } from '../types';
 import { useConnectionState } from '../useConnectionState';
@@ -26,7 +27,7 @@ import FinishModal from './MigrationAssistant/FinishModal';
 import MigrationSummary from './MigrationAssistant/MigrationSummary';
 import MigrationSetup from './MigrationSetup/MigrationSetup';
 
-const SETUP_DEFAULTS: MigrationConfiguration = {
+const SETUP_DEFAULTS: Omit<MigrationConfiguration, 'provider'> = {
     selectedProducts: ['Mail', 'Contacts', 'Calendar'],
     tokens: [],
     notifyList: [],
@@ -48,8 +49,9 @@ const MigrationFlow = () => {
     const dispatch = useDispatch();
     const [customDomains] = useCustomDomains();
     const [importerOrganizations] = useImporterOrganizations();
-    const [tokens] = useProviderTokens(OAUTH_PROVIDER.GSUITE, [EASY_SWITCH_FEATURES.OLES]);
-    const [connectionState] = useConnectionState(tokens);
+    const provider = OLES_PROVIDERS[ImportProvider.GOOGLE];
+    const [tokens] = useProviderTokens(provider.oauthProvider, [EASY_SWITCH_FEATURES.OLES]);
+    const [connectionState] = useConnectionState(provider, tokens);
     const [migrationConfig, setMigrationConfig] = useState<MigrationConfiguration>();
     const [providerUsers] = useProviderUsers(migrationConfig?.domainName);
     const [finishModalProps, setFinishModalOpen, renderFinishModal] = useModalState();
@@ -61,7 +63,7 @@ const MigrationFlow = () => {
     };
 
     const onUpdate = (diff: Partial<MigrationConfiguration>) =>
-        setMigrationConfig((prev) => ({ ...(prev || SETUP_DEFAULTS), ...diff }));
+        setMigrationConfig((prev) => ({ ...(prev || SETUP_DEFAULTS), provider, ...diff }));
 
     useEffect(() => {
         if (!importerOrganizations?.length) {
@@ -96,6 +98,7 @@ const MigrationFlow = () => {
 
     const model: MigrationSetupModel = {
         ...(migrationConfig || SETUP_DEFAULTS),
+        provider,
         domainName,
         subdomain: getSubdomain(domainName),
         domain,
@@ -103,6 +106,8 @@ const MigrationFlow = () => {
         connectionState,
         update: onUpdate,
     };
+
+    const providerName = provider.displayName;
 
     const prevModelState = usePrevious(model.state);
     useEffect(() => {
@@ -122,8 +127,12 @@ const MigrationFlow = () => {
         <div className="relative flex-1 flex flex-column flex-nowrap">
             <div className="w-full flex flex-nowrap items-center justify-space-between py-5 px-4 xl:px-8 border-bottom border-top border-weak">
                 <div className="flex flex-nowrap items-center mr-2">
-                    <CircledLogoWithProton iconPosition="outside-bottom-right" className="shrink-0 mb-1" />
-                    <h2 className="text-2xl text-bold ml-4 my-0">{c('Title').t`Migrate from Google Workspace`}</h2>
+                    <CircledLogoWithProton
+                        iconSrc={provider.iconSrc}
+                        iconPosition="outside-bottom-right"
+                        className="shrink-0 mb-1"
+                    />
+                    <h2 className="text-2xl text-bold ml-4 my-0">{c('Title').t`Migrate from ${providerName}`}</h2>
                 </div>
                 <Href
                     href={getKnowledgeBaseUrl('/easy-switch-for-business')}

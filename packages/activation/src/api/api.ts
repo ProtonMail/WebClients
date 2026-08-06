@@ -256,8 +256,8 @@ export const createOrganizationImporterMigration = (data: ApiCreateImporterOrgan
     data,
 });
 
-export const getConnectionStatus = () => ({
-    url: 'importer/v1/provider/googleworkspace/connection/status',
+export const getConnectionStatus = (connectivityProvider: string) => ({
+    url: `importer/v1/provider/${connectivityProvider}/connection/status`,
     method: 'GET',
 });
 

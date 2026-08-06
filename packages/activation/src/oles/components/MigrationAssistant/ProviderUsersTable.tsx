@@ -25,6 +25,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { areEquivalentEmails } from '../../helpers';
+import type { OlesProvider } from '../../providers';
 import type { CreateMigrationBatchError } from '../../thunk';
 import ActivationStatus from './ActivationStatus';
 import ImportStatus, { coalesceStatus } from './ImportStatus';
@@ -51,6 +52,7 @@ export enum ProviderUserFilter {
 type Props = {
     users: ApiImporterOrganizationUser[];
     currentUser: string | undefined;
+    provider: OlesProvider;
     selected?: string[];
     setSelected?: (users: string[]) => void;
     selectable?: string[];
@@ -84,28 +86,10 @@ const getFilterTranslation = (filter: ProviderUserFilter) => {
 
 const usersAddressesLink = <SettingsLink path="/users-addresses">{c('Title').t`Users and addresses`}</SettingsLink>;
 
-const getEligibilityReasonTranslation = (reason: string) => {
-    switch (reason) {
-        case 'source_account_disabled':
-            return c('Info').t`To migrate this user, enable their account in your Google Workspace Admin Console.`;
-        case 'source_account_suspended':
-            return c('Info').t`To migrate this user, unsuspend them in your Google Workspace Admin Console.`;
-        case 'source_account_archived':
-            return c('Info').t`To migrate this user, unarchive them in your Google Workspace Admin Console.`;
-        case 'address_disabled':
-            return c('Info').jt`To migrate this user, enable their address under ${usersAddressesLink}.`;
-        case 'user_disabled':
-            return c('Info').jt`To migrate this user, enable their account under ${usersAddressesLink}.`;
-        case 'address_cannot_receive':
-            return c('Info').t`To migrate this user, they need to accept their invitation to join ${BRAND_NAME}.`;
-        default:
-            return c('Info').t`This user can not be migrated due to platform incompatibilities.`;
-    }
-};
-
 const ProviderUsersTable: FC<Props> = ({
     users,
     currentUser,
+    provider,
     selected = [],
     setSelected,
     selectable = [],
@@ -119,6 +103,7 @@ const ProviderUsersTable: FC<Props> = ({
 }) => {
     const [keywords, setKeywords] = useState('');
     const [filter, setFilter] = useState<ProviderUserFilter>(ProviderUserFilter.ALL);
+    const providerName = provider.displayName;
 
     const providerFilters: Record<ProviderUserFilter, (user: ApiImporterOrganizationUser) => boolean> = {
         [ProviderUserFilter.ALL]: () => true,
@@ -169,6 +154,25 @@ const ProviderUsersTable: FC<Props> = ({
     useEffect(() => {
         setSelected?.([]);
     }, [filter]);
+
+    const getEligibilityReasonTranslation = (reason: string) => {
+        switch (reason) {
+            case 'source_account_disabled':
+                return c('Info').t`To migrate this user, enable their account in your ${provider.adminConsoleName}.`;
+            case 'source_account_suspended':
+                return c('Info').t`To migrate this user, unsuspend them in your ${provider.adminConsoleName}.`;
+            case 'source_account_archived':
+                return c('Info').t`To migrate this user, unarchive them in your ${provider.adminConsoleName}.`;
+            case 'address_disabled':
+                return c('Info').jt`To migrate this user, enable their address under ${usersAddressesLink}.`;
+            case 'user_disabled':
+                return c('Info').jt`To migrate this user, enable their account under ${usersAddressesLink}.`;
+            case 'address_cannot_receive':
+                return c('Info').t`To migrate this user, they need to accept their invitation to join ${BRAND_NAME}.`;
+            default:
+                return c('Info').t`This user can not be migrated due to platform incompatibilities.`;
+        }
+    };
 
     return (
         <section aria-labelledby="migrate-users">
@@ -253,8 +257,7 @@ const ProviderUsersTable: FC<Props> = ({
                                 <div className="flex">
                                     <Tooltip
                                         openDelay={0}
-                                        title={c('Tooltip')
-                                            .t`Data migration status from Google Workspace to ${BRAND_NAME}`}
+                                        title={c('Tooltip').t`Data migration status from ${providerName} to ${BRAND_NAME}`}
                                     >
                                         <div className="flex items-center flex-nowrap gap-2">
                                             <IcInfoCircle className="shrink-0" />

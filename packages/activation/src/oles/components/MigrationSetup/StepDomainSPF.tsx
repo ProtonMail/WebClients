@@ -12,10 +12,13 @@ import DNSGroupRecords, { type DNSGroup } from './DNSGroupRecords';
 import DomainHelp from './DomainHelp';
 import type { StepComponentProps } from './MigrationSetup';
 
-const PROTON_AND_GOOGLE_SPF_POLICY = 'v=spf1 include:_spf.protonmail.ch include:_spf.google.com ~all';
-
-const StepDomainSPF: FC<StepComponentProps> = ({ model: { domain, domainRegistrarId, subdomain }, onNext }) => {
+const StepDomainSPF: FC<StepComponentProps> = ({
+    model: { domain, domainRegistrarId, subdomain, provider },
+    onNext,
+}) => {
     const dispatch = useDispatch();
+    const spfPolicy = `v=spf1 include:_spf.protonmail.ch include:${provider.spfInclude} ~all`;
+    const providerBrand = provider.brandName;
     const handleCheck = async () => {
         await dispatch(syncDomain(domain!));
     };
@@ -25,7 +28,7 @@ const StepDomainSPF: FC<StepComponentProps> = ({ model: { domain, domainRegistra
         records: [
             {
                 dnsType: 'TXT',
-                value: PROTON_AND_GOOGLE_SPF_POLICY,
+                value: spfPolicy,
                 state: (() => {
                     if (domain?.SpfState === SPF_STATE.SPF_STATE_DEFAULT) {
                         return 'not-found';
@@ -66,7 +69,7 @@ const StepDomainSPF: FC<StepComponentProps> = ({ model: { domain, domainRegistra
                 </div>
                 <p className="color-weak mt-0">
                     {c('Info')
-                        .t`Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${BRAND_NAME} and Google simultaneously for the duration of the migration.`}
+                        .t`Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${BRAND_NAME} and ${providerBrand} simultaneously for the duration of the migration.`}
                 </p>
 
                 <p className="color-weak mt-0">{c('Info')
