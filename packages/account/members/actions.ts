@@ -131,7 +131,10 @@ export const unprivatizeMember = ({
         });
         await api(unprivatizeMemberKeysRoute(member.ID, payload));
         if (member.Self) {
-            await dispatch(userThunk({ cache: CacheType.None }));
+            await Promise.all([
+                dispatch(userThunk({ cache: CacheType.None })),
+                dispatch(memberThunk({ cache: CacheType.None })),
+            ]).catch(noop);
         }
     };
 };
