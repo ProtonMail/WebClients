@@ -17,14 +17,15 @@ import { UnconfiguredProfileView } from './views/UnconfiguredProfileView';
 import { UpgradeView } from './views/UpgradeView';
 
 const AlwaysOnOverview = () => {
-    const { policy, isLoading, setPolicy } = useAlwaysOnPolicy();
+    const [subscription, isSubscriptionLoading] = useSubscription();
+    const isPlanVpnEssentials = hasVpnPro(subscription);
+    const hasAlwaysOnAccess = !isSubscriptionLoading && !isPlanVpnEssentials;
+    const { policy, isLoading, setPolicy } = useAlwaysOnPolicy({ enabled: hasAlwaysOnAccess });
     const { sendConfigureOpenedReport, sendInstructionsViewedReport, sendRemoveModalOpenedReport } =
         useAlwaysOnPolicyTelemetry();
     const [configureModalOpen, setConfigureModalOpen] = useState(false);
     const [instructionsModalOpen, setInstructionsModalOpen] = useState(false);
     const [removeModalOpen, setRemoveModalOpen] = useState(false);
-    const [subscription, isSubscriptionLoading] = useSubscription();
-    const isPlanVpnEssentials = hasVpnPro(subscription);
 
     if (isSubscriptionLoading) {
         return <Loader />;
@@ -45,7 +46,7 @@ const AlwaysOnOverview = () => {
             return (
                 <UnconfiguredProfileView
                     onConfigure={() => {
-                        sendConfigureOpenedReport('call-to-action');
+                        sendConfigureOpenedReport('request-to-configure');
                         setConfigureModalOpen(true);
                     }}
                 />
@@ -60,7 +61,7 @@ const AlwaysOnOverview = () => {
                     setInstructionsModalOpen(true);
                 }}
                 onReconfigure={() => {
-                    sendConfigureOpenedReport('reconfigure');
+                    sendConfigureOpenedReport('reconfigure-new-profile');
                     setConfigureModalOpen(true);
                 }}
                 onRemove={() => {

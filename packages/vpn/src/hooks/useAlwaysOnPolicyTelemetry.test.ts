@@ -24,13 +24,13 @@ describe('useAlwaysOnPolicyTelemetry', () => {
     it('sends configureOpened with the given source', () => {
         const { result } = renderHook(() => useAlwaysOnPolicyTelemetry());
 
-        result.current.sendConfigureOpenedReport('reconfigure');
+        result.current.sendConfigureOpenedReport('reconfigure-new-profile');
 
         expect(mockSendTelemetryReport).toHaveBeenCalledWith({
             api,
             measurementGroup: TelemetryMeasurementGroups.vpnAlwaysOnPolicy,
             event: TelemetryVpnAlwaysOnPolicyEvents.configureOpened,
-            dimensions: { source: 'reconfigure' },
+            dimensions: { source: 'reconfigure-new-profile' },
             delay: false,
         });
     });
@@ -81,4 +81,52 @@ describe('useAlwaysOnPolicyTelemetry', () => {
             delay: false,
         });
     });
+
+    it('sends learnMoreClicked with the platform', () => {
+        const { result } = renderHook(() => useAlwaysOnPolicyTelemetry());
+
+        result.current.sendLearnMoreClickedReport('windows');
+
+        expect(mockSendTelemetryReport).toHaveBeenCalledWith({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.vpnAlwaysOnPolicy,
+            event: TelemetryVpnAlwaysOnPolicyEvents.learnMoreClicked,
+            dimensions: { platform: 'windows' },
+            delay: false,
+        });
+    });
+
+    it.each(['build', 'download-page'] as const)(
+        'sends downloadLatestClicked with source %s and the version',
+        (source) => {
+            const { result } = renderHook(() => useAlwaysOnPolicyTelemetry());
+
+            result.current.sendDownloadLatestClickedReport(source, '5.3.0');
+
+            expect(mockSendTelemetryReport).toHaveBeenCalledWith({
+                api,
+                measurementGroup: TelemetryMeasurementGroups.vpnAlwaysOnPolicy,
+                event: TelemetryVpnAlwaysOnPolicyEvents.downloadLatestClicked,
+                dimensions: { source, version: '5.3.0' },
+                delay: false,
+            });
+        }
+    );
+
+    it.each(['build', 'download-page'] as const)(
+        'sends clientDownloadClicked with source %s and the version',
+        (source) => {
+            const { result } = renderHook(() => useAlwaysOnPolicyTelemetry());
+
+            result.current.sendClientDownloadClickedReport(source, '5.3.0');
+
+            expect(mockSendTelemetryReport).toHaveBeenCalledWith({
+                api,
+                measurementGroup: TelemetryMeasurementGroups.vpnAlwaysOnPolicy,
+                event: TelemetryVpnAlwaysOnPolicyEvents.clientDownloadClicked,
+                dimensions: { source, version: '5.3.0' },
+                delay: false,
+            });
+        }
+    );
 });
