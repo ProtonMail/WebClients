@@ -485,6 +485,9 @@
       "Edit users": [
         "მომხმარებლების ჩასწორება"
       ],
+      "Enable": [
+        "ჩართვა"
+      ],
       "enable desktop notifications": [
         "სამუშაო მაგიდის გაფრთხილებების ჩართვა"
       ],
@@ -844,9 +847,6 @@
       ],
       "Remove": [
         "წაშლა"
-      ],
-      "Remove all members": [
-        "ყველა წევრის წაშლა"
       ],
       "Remove all other devices": [
         "ყველა სხვა მოწყობილობის წაშლა"
@@ -2023,125 +2023,6 @@
       ],
       "Working with sensitive data?": [
         "მუშაობთ საიდუმლო მონაცემებთან?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "აქტიურია"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "მისამართს უკვე იყენებს მომხმარებელი თქვენი ორგანიზაციის გარეთ. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
-      ],
-      "All": [
-        "ყველა"
-      ],
-      "Calendar": [
-        "კალენდარი"
-      ],
-      "Configure migration": [
-        "მიგრაციის მორგება"
-      ],
-      "Contacts": [
-        "კონტაქტები"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "მონაცემთა მიგრაციის სტატუსი Google Workspace-დან ${ BRAND_NAME }-ში"
-      ],
-      "Emails": [
-        "ელფოსტები"
-      ],
-      "Errors": [
-        "შეცდომები"
-      ],
-      "Estimated size": [
-        "სავარაუდო ზომა"
-      ],
-      "Find out what can be migrated.": [
-        "გაიგეთ, რისი მიგრაციაა შესაძლებელი."
-      ],
-      "Has errors": [
-        "აქვს შეცდომები"
-      ],
-      "In progress": [
-        "მიმდინარეობს"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "წევრის მისამართი ვერ მოიძებნა. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
-      ],
-      "Migrate": [
-        "მიგრაცია"
-      ],
-      "Migrated": [
-        "მიგრირებულია"
-      ],
-      "Migration status": [
-        "მიგრაციის სტატუსი"
-      ],
-      "Missing organization private key": [
-        "ორგანიზაციის პირადი გასაღები აკლია"
-      ],
-      "Missing organization public key": [
-        "ორგანიზაციის საჯარო გასაღები აკლია"
-      ],
-      "No users to display": [
-        "საჩვენებელი მომხმარებლები არ არის"
-      ],
-      "Not activated": [
-        "არ არის გააქტიურებული"
-      ],
-      "Organization does not have enough seats available": [
-        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
-      ],
-      "Organization does not have enough storage available": [
-        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
-      ],
-      "Pending": [
-        "რიგში"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "აირჩიეთ ზუსტად ის, რისი მიგრაციაც გსურთ. ეს გავრცელდება ორგანიზაციის ყველა მომხმარებელზე."
-      ],
-      "Select users to migrate": [
-        "აირჩიეთ მომხმარებლები მიგრაციისთვის"
-      ],
-      "Size": [
-        "ზომა"
-      ],
-      "Status": [
-        "სტატუსი"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "პლატფორმების შეუთავსებლობის გამო ამ მომხმარებლის მიგრაცია შეუძლებელია."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში აქ: ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი მისამართი აქ: ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "ამ მომხმარებლის მიგრაციისთვის, მან უნდა მიიღოს მოწვევა ${ BRAND_NAME }-ში გასაწევრიანებლად."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "ამ მომხმარებლის მიგრაციისთვის, ამოიღეთ იგი არქივიდან თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "ამ მომხმარებლის მიგრაციისთვის, მოუხსენით მას შეჩერება თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
-      ],
-      "User": [
-        "მომხმარებელი"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "მომხმარებლები, რომლებმაც მიიღეს წვდომა თავიანთ ${ BRAND_NAME } ანგარიშზე"
-      ],
-      "What are you migrating?": [
-        "რის მიგრაციას ახდენთ?"
-      ],
-      "You": [
-        "თქვენ"
       ]
     },
     "Browser": {
@@ -4924,6 +4805,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "გადატვირთვის არასწორი ტოკენი. გთხოვთ, განაახლოთ გვერდი და თავიდან სცადოთ."
       ],
+      "Invalid URL": [
+        "არასწორი URL"
+      ],
       "Invalid VAT number": [
         "არასწორი დღგს ნომერი"
       ],
@@ -4942,6 +4826,9 @@
       ],
       "Missing key packet": [
         "აკლია საკვანძო პაკეტი"
+      ],
+      "Missing signature": [
+        "ხელმოწერა აკლია"
       ],
       "Name already exists": [
         "სახელი უკვე არსებობს"
@@ -5131,6 +5018,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ჭდეების ზოგიერთი სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
+      ],
+      "Something went wrong": [
+        "რაღაც არასწორად წავიდა"
       ],
       "Something went wrong while converting the address": [
         "მისამართის კონვერტაციისას დაფიქსირდა შეცდომა"
@@ -6719,6 +6609,14 @@
         "კალენდრის ICS ფაილად გასატანად აირჩიეთ ${ boldExport }."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "მიმდინარეობს"
+      ],
+      "Migrated": [
+        "მიგრირებულია"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "შემოტანილი იქნება ${ totalContactsDiscarded } ${ totalContacts }-დან. დეტალებისთვის დააწკაპუნეთ"
@@ -7215,9 +7113,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, ამ მომხმარებელს ადმინისტრირების პრივილეგიები წაართვათ?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, ამ ჯგუფის ყველა წევრი წაშალოთ?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ დომენი ${ boldDomain }?"
@@ -8641,6 +8536,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "სმარტ-მარშრუტიზებული შემდეგი ქვეყნების გავლით: ${ joinedCountries }."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "ზოგიერთმა ${ BRAND_NAME } აპმა შეიძლება ჯერ კიდევ არ დაუჭიროს მხარი უსაფრთხოების გასაღებებს. თუ გამორთავთ აუტენტიფიკატორი აპლიკაციის 2FA-ს, შესაძლოა ვერ შეძლოთ ამ აპებში შესვლა."
@@ -14774,17 +14672,11 @@
       "Make sure you copy the above SCIM token now.": [
         "დარწმუნდით, რომ დააკოპირეთ ზემორე SCIM კოდი."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "როცა თქვენს ორგანიზაციაზე SCIM-ს გამორთავთ, **ყველა SCIM-ის მომხმარებლები, რომლებიც ავტომატურადაა მოწოდებული თქვენი იდენტიფიკატორების მომწოდებლის მიერ, ავტომატურად იქნება გადაყვანილი SSO-ის მომხმარებლებში** და საშუალება გექნებათ, ისინი პირდაპირ ${ BRAND_NAME }-ის მორგების ფანჯრიდან მართოთ."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "ამარტივებს მომხმარებლის მართვას სხვადასხვა სერვისისთვი. დაამატეთ, ჩაასწორეთ და წაშალეთ მომხმარებლები თქვენს იდენტიფიკატორის მომწოდებელში და ის ცვლილებები თქვენს ${ appName } ორგანიზაციაზე ავტომატურად გადატარდა."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM-ის ავტომატური გაშლა გაითიშება, სანამ არ შეიყვანთ ახალ SCIM-ის კოდს თქვენი იდენტიფიკატორის მომწოდებლის პარამეტრებში."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM-ის საბაზისო URL და კოდი წაიშლება."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "იმისათვის, რომ თავიდან ჩართოთ სინქრონიზაცია თქვენი იდენტიფიკაციის მომწოდებლისთვის, SCIM-თან ინტეგრაცია თავიდან უნდა დაასრულოთ."
@@ -16803,6 +16695,14 @@
         "ინდივიდუალური პირებისთვის"
       ]
     },
+    "Table header": {
+      "Size": [
+        "ზომა"
+      ],
+      "Status": [
+        "სტატუსი"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "ქმედება"
@@ -17862,9 +17762,6 @@
       ],
       "Reject device?": [
         "უარვყო მოწყობილობა?"
-      ],
-      "Remove all members?": [
-        "წავშალო ყველა წევრი?"
       ],
       "Remove device?": [
         "წავშალო მოწყობილობა?"

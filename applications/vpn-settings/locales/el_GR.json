@@ -491,6 +491,9 @@
       "Edit users": [
         "Επεξεργασία χρηστών"
       ],
+      "Enable": [
+        "Ενεργοποίηση"
+      ],
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
       ],
@@ -737,6 +740,9 @@
       "Microsoft Intune": [
         "Microsoft Intune"
       ],
+      "Migrate": [
+        "Μετεγκατάσταση"
+      ],
       "More benefits": [
         "Περισσότερα οφέλη"
       ],
@@ -859,9 +865,6 @@
       ],
       "Remove": [
         "Αφαίρεση"
-      ],
-      "Remove all members": [
-        "Κατάργηση όλων των μελών"
       ],
       "Remove all other devices": [
         "Κατάργηση όλων των άλλων συσκευών"
@@ -1297,6 +1300,9 @@
       ],
       "View all reports": [
         "Προβολή όλων των αναφορών"
+      ],
+      "View guide": [
+        "Προβολή οδηγού"
       ],
       "View invoice": [
         "Προβολή τιμολογίου"
@@ -2061,125 +2067,6 @@
       ],
       "Working with sensitive data?": [
         "Εργάζεστε με ευαίσθητα δεδομένα;"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Ενεργοποιήθηκε"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Η διεύθυνση χρησιμοποιείται ήδη από χρήστη εκτός του οργανισμού σας. Για επίλυση, παρακαλούμε απευθυνθείτε στην υποστήριξη πελατών."
-      ],
-      "All": [
-        "Όλοι"
-      ],
-      "Calendar": [
-        "Ημερολόγιο"
-      ],
-      "Configure migration": [
-        "Διαμόρφωση μετεγκατάστασης"
-      ],
-      "Contacts": [
-        "Επαφές"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Κατάσταση μετεγκατάστασης δεδομένων από το Google Workspace στο ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Μηνύματα"
-      ],
-      "Errors": [
-        "Σφάλματα"
-      ],
-      "Estimated size": [
-        "Εκτιμώμενος χρόνος"
-      ],
-      "Find out what can be migrated.": [
-        "Μάθετε τι μπορεί να μετεγκατασταθεί."
-      ],
-      "Has errors": [
-        "Έχει σφάλματα"
-      ],
-      "In progress": [
-        "Σε εξέλιξη"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Η διεύθυνση μέλους δε βρέθηκε. Επικοινωνήστε με την υποστήριξη πελατών για να επιλύσετε αυτό το πρόβλημα."
-      ],
-      "Migrate": [
-        "Μετεγκατάσταση"
-      ],
-      "Migrated": [
-        "Μετεγκαταστάθηκε"
-      ],
-      "Migration status": [
-        "Κατάσταση μετεγκατάστασης"
-      ],
-      "Missing organization private key": [
-        "Λείπει το ιδιωτικό κλειδί του οργανισμού"
-      ],
-      "Missing organization public key": [
-        "Λείπει το δημόσιο κλειδί του οργανισμού"
-      ],
-      "No users to display": [
-        "Δεν υπάρχουν χρήστες για εμφάνιση"
-      ],
-      "Not activated": [
-        "Δεν έχει ενεργοποιηθεί"
-      ],
-      "Organization does not have enough seats available": [
-        "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
-      ],
-      "Organization does not have enough storage available": [
-        "Ο οργανισμός δεν διαθέτει αρκετό χώρο αποθήκευσης"
-      ],
-      "Pending": [
-        "Σε εκκρεμότητα"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Επιλέξτε ακριβώς αυτό που θέλετε να μετεγκαταστήσετε. Θα εφαρμοστεί για όλους τους χρήστες του οργανισμού."
-      ],
-      "Select users to migrate": [
-        "Επιλογή χρηστών για μετεγκατάσταση"
-      ],
-      "Size": [
-        "Μέγεθος"
-      ],
-      "Status": [
-        "Κατάσταση"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην Κονσόλα διαχειριστή του Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην ενότητα ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τη διεύθυνσή του στην περιοχή ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αρχειοθέτησή του στην Κονσόλα διαχειριστή Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αναστολή του στην Κονσόλα διαχειριστή του Google Workspace."
-      ],
-      "User": [
-        "Χρήστης"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Χρήστες που έχουν κάνει πρόσβαση στον λογαριασμό τους ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Τι μεταφέρετε;"
-      ],
-      "You": [
-        "Εσείς"
       ]
     },
     "Browser": {
@@ -4798,6 +4685,9 @@
       "Address is already added to your account": [
         "Η διεύθυνση έχει ήδη προστεθεί στον λογαριασμό σας"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Η διεύθυνση χρησιμοποιείται ήδη από χρήστη εκτός του οργανισμού σας. Για επίλυση, παρακαλούμε απευθυνθείτε στην υποστήριξη πελατών."
+      ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
       ],
@@ -4819,6 +4709,12 @@
       "Calendar limit reached": [
         "Φτάσατε το μέγιστο όριο ημερολογίων"
       ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Δεν είναι δυνατή η μετακίνηση στοιχείου χωρίς έγκυρο όνομα. Παρακαλούμε μετονομάστε το στοιχείο πρώτα."
+      ],
+      "Cannot verify the author of this file": [
+        "Δεν είναι δυνατή η επαλήθευση του δημιουργού αυτού του αρχείου"
+      ],
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
@@ -4830,6 +4726,15 @@
       ],
       "Could not generate the device profile. Please try again.": [
         "Δεν ήταν δυνατή η δημιουργία του προφίλ συσκευής. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Δεν ήταν δυνατή η ανάγνωση μέρους αυτού του αρχείου: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Δεν ήταν δυνατό το ξεκλείδωμα του γονικού φακέλου"
+      ],
+      "Could not unlock this item": [
+        "Αδυναμία ξεκλείδωσης αυτού του στοιχείου"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Δεν ήταν δυνατή η φόρτωση των τιμολογίων. Παρακαλούμε προσπαθήστε ξανά αργότερα."
@@ -4844,6 +4749,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο ή",
         "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια ή"
+      ],
+      "Device not found": [
+        "Η συσκευή δε βρέθηκε"
       ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
@@ -4875,8 +4783,14 @@
       "Error publishing changes": [
         "Σφάλμα κατά τη δημοσίευση αλλαγών"
       ],
+      "Expiration date cannot be in the past": [
+        "Η ημερομηνία λήξης δεν μπορεί να είναι στο παρελθόν"
+      ],
       "Failed to add group member": [
         "Αποτυχία προσθήκης μέλους ομάδας"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης του κλειδιού κόμβου: ${ message }"
       ],
       "Failed to load OAuth modal.": [
         "Αποτυχία φόρτωσης του παράθυρου OAuth."
@@ -4898,6 +4812,9 @@
       ],
       "Failed to update detailed monitoring.": [
         "Αποτυχία ενημέρωσης λεπτομερούς παρακολούθησης."
+      ],
+      "Failed to verify invitation": [
+        "Αποτυχία επαλήθευσης πρόσκλησης"
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Το αρχείο είναι πολύ μεγάλο. Το λογότυπό σας πρέπει να είναι 30 KB ή μικρότερο."
@@ -4971,17 +4888,29 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "Μη έγκυρο διακριτικό επαναφοράς. Παρακαλούμε ανανεώστε τη σελίδα και δοκιμάστε ξανά."
       ],
+      "Invalid URL": [
+        "Μη έγκυρη διεύθυνση URL"
+      ],
       "Invalid VAT number": [
         "Μη έγκυρος αριθμός ΦΠΑ"
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
+      "Invitation not found": [
+        "Η πρόσκληση δεν βρέθηκε"
+      ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Δεν είναι δυνατή η ενημέρωση του παλαιού δημόσιου συνδέσμου. Δημιουργήστε ξανά έναν νέο δημόσιο σύνδεσμο."
+      ],
       "Maximum ${ displayMaxValue } allowed": [
         "Μέγιστα ${ displayMaxValue } επιτρέπονται"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Η διεύθυνση μέλους δε βρέθηκε. Επικοινωνήστε με την υποστήριξη πελατών για να επιλύσετε αυτό το πρόβλημα."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
@@ -4990,11 +4919,30 @@
       "Missing key packet": [
         "Λείπει πακέτο κλειδιού"
       ],
+      "Missing organization private key": [
+        "Λείπει το ιδιωτικό κλειδί του οργανισμού"
+      ],
+      "Missing organization public key": [
+        "Λείπει το δημόσιο κλειδί του οργανισμού"
+      ],
+      "Missing signature": [
+        "Λείπει η υπογραφή"
+      ],
+      "Move operation aborted": [
+        "Η λειτουργία μετακίνησης ματαιώθηκε"
+      ],
       "Name already exists": [
         "Το όνομα υπάρχει ήδη"
       ],
       "Name does not match": [
         "Το όνομα δεν ταιριάζει"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Το όνομα δεν πρέπει να υπερβαίνει τον ${ MAX_NODE_NAME_LENGTH } χαρακτήρα",
+        "Το όνομα δεν πρέπει να υπερβαίνει τους ${ MAX_NODE_NAME_LENGTH } χαρακτήρες"
+      ],
+      "Name must not be empty": [
+        "Το όνομα δεν πρέπει να είναι κενό"
       ],
       "No calendars found to import": [
         "Δεν βρέθηκαν ημερολόγια προς εισαγωγή."
@@ -5008,6 +4956,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Δεν βρέθηκαν μηνύματα προς εισαγωγή - ο λογαριασμός δεν διαθέτει εισερχόμενα"
       ],
+      "No file data was received. Please try again.": [
+        "Δεν ελήφθησαν δεδομένα αρχείου. Δοκιμάστε ξανά."
+      ],
       "No image selected": [
         "Δεν επιλέχθηκε εικόνα"
       ],
@@ -5019,6 +4970,15 @@
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Μόνο τα κεφαλαία και τα σημεία στίξης (τελείες, παύλες και παύλες υπογράμμισης) μπορούν να αλλάξουν για αυτήν τη διεύθυνση"
+      ],
+      "Operation aborted": [
+        "Η λειτουργία ακυρώθηκε"
+      ],
+      "Organization does not have enough seats available": [
+        "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
+      ],
+      "Organization does not have enough storage available": [
+        "Ο οργανισμός δεν διαθέτει αρκετό χώρο αποθήκευσης"
       ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
@@ -5144,6 +5104,9 @@
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
       ],
+      "Request aborted": [
+        "Το αίτημα ακυρώθηκε"
+      ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
       ],
@@ -5164,6 +5127,9 @@
       "Signature verification failed": [
         "Η επαλήθευση υπογραφής απέτυχε"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Αποτυχία επαλήθευσης υπογραφής: ${ errorMessage }"
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Ορισμένα από τα ονόματα φακέλων σας δεν είναι διαθέσιμα. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
       ],
@@ -5178,6 +5144,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Κάποια από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
       ],
       "Something went wrong while converting the address": [
         "Κάτι πήγε στραβά κατά τη μετατροπή της διεύθυνσης"
@@ -5260,6 +5229,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
+      "This item is no longer shared": [
+        "Αυτό το στοιχείο δεν είναι πλέον κοινόχρηστο"
+      ],
       "This label name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
@@ -5314,6 +5286,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Η επαλήθευση δεν επετεύχθη, παρακαλώ δοκιμάστε ξανά σε μια ώρα."
       ],
+      "Verification keys are not available": [
+        "Τα κλειδιά επαλήθευσης δεν είναι διαθέσιμα"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Δεν μπορέσαμε να αποστείλουμε κωδικό επιβεβαίωσης με αυτήν τη μέθοδο."
       ],
@@ -5328,6 +5303,12 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Λανθασμένος κωδικός επαλήθευσης. Παρακαλούμε βεβαιωθείτε ότι αντιγράψατε σωστά τον κωδικό επαλήθευσης και δοκιμάστε ξανά. Μπορεί να πάρει έως και 24 ώρες για να εφαρμοστούν οι αλλαγές."
+      ],
+      "You can only leave items that are shared with you": [
+        "Μπορείτε να αφήσετε μόνο στοιχεία που έχουν κοινοποιηθεί σε εσάς"
+      ],
+      "You do not have access to this item": [
+        "Δεν έχετε πρόσβαση σε αυτό το στοιχείο"
       ],
       "You have reached the maximum number of calendars.": [
         "Έχετε φτάσει τον μέγιστο αριθμό ημερολογίων."
@@ -6185,6 +6166,29 @@
         "Terabytes"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Ενεργοποιήθηκε"
+      ],
+      "All": [
+        "Όλα"
+      ],
+      "Errors": [
+        "Σφάλματα"
+      ],
+      "In progress": [
+        "Σε εξέλιξη"
+      ],
+      "Migrated": [
+        "Μετεγκαταστάθηκε"
+      ],
+      "Not activated": [
+        "Δεν έχει ενεργοποιηθεί"
+      ],
+      "Pending": [
+        "Σε εκκρεμότητα"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } ενημερώθηκε"
@@ -6781,6 +6785,20 @@
         "Για εξαγωγή του ημερολογίου ως αρχείου ICS, επιλέξτε ${ boldExport }."
       ]
     },
+    "Import status": {
+      "Has errors": [
+        "Έχει σφάλματα"
+      ],
+      "In progress": [
+        "Σε εξέλιξη"
+      ],
+      "Migrated": [
+        "Μετεγκαταστάθηκε"
+      ],
+      "Pending": [
+        "Σε εκκρεμότητα"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
@@ -7295,9 +7313,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Θέλετε σίγουρα να αφαιρέσετε τα προνόμια διαχειριστή από αυτόν τον χρήστη;"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "Θέλετε σίγουρα να καταργήσετε όλα τα μέλη από αυτήν την ομάδα;"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Θέλετε σίγουρα να καταργήσετε τον τομέα ${ boldDomain };"
@@ -7866,6 +7881,9 @@
       "finance": [
         "οικονομικά"
       ],
+      "Find out what can be migrated.": [
+        "Μάθετε τι μπορεί να μετεγκατασταθεί."
+      ],
       "for ${ price }": [
         "για ${ price }"
       ],
@@ -8378,6 +8396,9 @@
       "No single sign-on": [
         "Χωρίς καθολική σύνδεση"
       ],
+      "No users to display": [
+        "Δεν υπάρχουν χρήστες για εμφάνιση"
+      ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
@@ -8718,6 +8739,9 @@
       "Select a group to view its members and settings.": [
         "Επιλέξτε μια ομάδα για να δείτε τα μέλη και τις ρυθμίσεις της."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Επιλέξτε ακριβώς αυτό που θέλετε να μετεγκαταστήσετε. Θα εφαρμοστεί για όλους τους χρήστες του οργανισμού."
+      ],
       "Select one or multiple user affiliations": [
         "Επιλέξτε μία ή περισσότερες συνεργασίες χρηστών"
       ],
@@ -8799,6 +8823,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
+      ],
+      "Smart Routed through a different country.": [
+        "Έξυπνη δρομολόγηση μέσω διαφορετικής χώρας."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Δρομολογήθηκε έξυπνα μέσω: ${ joinedCountries }."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Ορισμένες εφαρμογές ${ BRAND_NAME } ενδέχεται να μην υποστηρίζουν ακόμη κλειδιά ασφαλείας. Εάν απενεργοποιήσετε την εφαρμογή ταυτοποίησης 2FA, ενδέχεται να μην μπορείτε να συνδεθείτε σε αυτές τις εφαρμογές."
@@ -8988,6 +9018,9 @@
       "This file is too large to preview": [
         "Αυτό το αρχείο είναι πολύ μεγάλο για προεπισκόπηση"
       ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Αυτή η διεύθυνση Gmail είναι καταχωρημένη σε έναν άλλο λογαριασμό ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } ΤΝ και άλλους). Προσπαθούμε να κάνουμε αυτήν τη σύνδεση απρόσκοπτη, αλλά προς το παρόν θα πρέπει να κάνετε μερικά βήματα."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Αυτή είναι μια 12-λεκτη φράση που σας είχε ζητηθεί να ορίσετε."
       ],
@@ -9014,6 +9047,9 @@
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Αυτή η υπηρεσία δεν είναι διαθέσιμη στους χρήστες που συνδέονται με καθολική σύνδεση."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Αυτός ο χρήστης είναι προς το παρόν υπεύθυνος για τις πληρωμές του οργανισμού σας. Με την υποβάθμιση αυτού του μέλους, θα είστε εσείς υπεύθυνοι για τις πληρωμές του οργανισμού σας."
@@ -9131,6 +9167,24 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Για να ακολουθείτε την τελευταία εξέλιξη στα προϊόντα ${ BRAND_NAME }, μπορείτε να εγγραφείτε στα διάφορα email μας και ${ blogLink } κατά διαστήματα."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην Κονσόλα διαχειριστή του Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην ενότητα ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τη διεύθυνσή του στην περιοχή ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αρχειοθέτησή του στην Κονσόλα διαχειριστή Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αναστολή του στην Κονσόλα διαχειριστή του Google Workspace."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Για να συνεχίσετε, επιλέξτε μια μέθοδο ανάκτησης λογαριασμού, ώστε να επαληθεύσουμε το αίτημα."
@@ -9479,6 +9533,9 @@
       ],
       "X": [
         "X"
+      ],
+      "You": [
+        "Εσείς"
       ],
       "You already have a free account": [
         "Έχετε ήδη έναν δωρεάν λογαριασμό"
@@ -14127,6 +14184,23 @@
         "Αναβάθμιση σε ${ upsellPlanTitle }"
       ]
     },
+    "Property": {
+      "attributes": [
+        "χαρακτηριστικά"
+      ],
+      "hash key": [
+        "κλειδί hash"
+      ],
+      "key": [
+        "κλειδί"
+      ],
+      "membership": [
+        "συνδρομή"
+      ],
+      "name": [
+        "όνομα"
+      ]
+    },
     "Property type": {
       "Address": [
         "Διεύθυνση"
@@ -14995,17 +15069,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Βεβαιωθείτε ότι έχετε αντιγράψει το παραπάνω διακριτικό SCIM τώρα."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Μόλις απενεργοποιηθεί το SCIM για τον οργανισμό σας, **όλοι οι χρήστες SCIM που παρέχονται αυτόματα από τον πάροχο ταυτότητάς σας θα μετατραπούν σε χρήστες SSO** και θα μπορείτε να τους διαχειριστείτε απευθείας από τις ρυθμίσεις του ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Απλοποιεί τη διαχείριση χρηστών σε διάφορες υπηρεσίες. Προσθέστε, επεξεργαστείτε και καταργήστε χρήστες στην υπηρεσία παροχής ταυτότητάς σας και αυτές οι αλλαγές θα εφαρμοστούν αυτόματα στον οργανισμό σας ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Η αυτόματη παροχή SCIM θα απενεργοποιηθεί μέχρι να εισαγάγετε το νέο διακριτικό SCIM στις ρυθμίσεις της υπηρεσίας παροχής ταυτότητάς σας."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "Η βασική διεύθυνση URL και το διακριτικό SCIM θα διαγραφούν."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Για να ενεργοποιήσετε ξανά τον συγχρονισμό με την υπηρεσία παροχής ταυτότητάς σας, πρέπει να ολοκληρώσετε ξανά την ενοποίηση SCIM."
@@ -17034,6 +17102,26 @@
         "Για ιδιώτες"
       ]
     },
+    "Table header": {
+      "Activated": [
+        "Ενεργοποιήθηκε"
+      ],
+      "Estimated size": [
+        "Εκτιμώμενος χρόνος"
+      ],
+      "Migration status": [
+        "Κατάσταση μετεγκατάστασης"
+      ],
+      "Size": [
+        "Μέγεθος"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "User": [
+        "Χρήστης"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Ενέργεια"
@@ -17454,6 +17542,9 @@
       "Configure Always-on VPN device profile": [
         "Ρύθμιση παραμέτρων Always-on VPN προφίλ συσκευής"
       ],
+      "Configure migration": [
+        "Διαμόρφωση μετεγκατάστασης"
+      ],
       "Confirm": [
         "Επιβεβαίωση"
       ],
@@ -17859,6 +17950,9 @@
       "Groups": [
         "Ομάδες"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Προσοχή: Αυτό το Gmail είναι συνδεδεμένο με έναν άλλο λογαριασμό ${ BRAND_NAME }"
+      ],
       "Help and feedback": [
         "Βοήθεια και σχόλια"
       ],
@@ -18121,9 +18215,6 @@
       "Reject device?": [
         "Απόρριψη συσκευής;"
       ],
-      "Remove all members?": [
-        "Κατάργηση όλων των μελών;"
-      ],
       "Remove Always-on VPN device profile": [
         "Αφαίρεση Always-on VPN προφίλ συσκευής"
       ],
@@ -18219,6 +18310,9 @@
       ],
       "Select data to import": [
         "Επιλέξτε δεδομένα για εισαγωγή"
+      ],
+      "Select users to migrate": [
+        "Επιλογή χρηστών για μετεγκατάσταση"
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Αποστολή και λήψη Gmail χρησιμοποιώντας ${ MAIL_APP_NAME }"
@@ -18512,6 +18606,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Καλώς ορίσατε στο ${ BRAND_NAME } για Business"
       ],
+      "What are you migrating?": [
+        "Τι μετεγκαταστάτε;"
+      ],
       "What changes if you switch to the Free plan": [
         "Τι αλλάζει αν μεταβείτε στο Free πλάνο"
       ],
@@ -18688,6 +18785,9 @@
       "Customize import to reduce the number of labels": [
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των ετικετών"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Κατάσταση μετεγκατάστασης δεδομένων από το Google Workspace στο ${ BRAND_NAME }"
+      ],
       "Device name and app version": [
         "Όνομα συσκευής και έκδοση εφαρμογής"
       ],
@@ -18810,6 +18910,9 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Κατά προσέγγιση τοποθεσία του χρήστη (βάσει της διεύθυνσης IP του)"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Χρήστες που έχουν κάνει πρόσβαση στον λογαριασμό τους ${ BRAND_NAME }"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Οι χρήστες θα βλέπουν το λογότυπό σας αντί για το εικονίδιο του ${ BRAND_NAME } όταν είναι συνδεδεμένοι στις εφαρμογές ιστού μας."

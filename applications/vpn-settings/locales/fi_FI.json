@@ -485,6 +485,9 @@
       "Edit users": [
         "Muokkaa käyttäjiä"
       ],
+      "Enable": [
+        "Käytä"
+      ],
       "enable desktop notifications": [
         "näyttääkseen työpöytäilmoituksia"
       ],
@@ -842,9 +845,6 @@
       "Remove": [
         "Poista"
       ],
-      "Remove all members": [
-        "Poista kaikki jäsenet"
-      ],
       "Remove all other devices": [
         "Poista kaikki muut laitteet"
       ],
@@ -1192,6 +1192,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Ota ${ PROTON_SENTINEL_NAME } käyttöön päivittämällä tilauksesi"
+      ],
+      "Upgrade to Professional": [
+        "Päivitä Professionaliin"
       ],
       "Upgrade to view all": [
         "Näytä kaikki päivittämällä tilauksesi"
@@ -2023,125 +2026,6 @@
       ],
       "Working with sensitive data?": [
         "Työskenteletkö arkaluonteisten tietojen kanssa?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Aktivoitu"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Osoite on jo organisaationne ulkopuolisen käyttäjän käytössä. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
-      ],
-      "All": [
-        "Kaikki"
-      ],
-      "Calendar": [
-        "Kalenteri"
-      ],
-      "Configure migration": [
-        "Määritä siirto"
-      ],
-      "Contacts": [
-        "Yhteystiedot"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Tietojen siirron tila kohteesta Google Workspace kohteeseen ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Sähköpostit"
-      ],
-      "Errors": [
-        "Virheet"
-      ],
-      "Estimated size": [
-        "Arvioitu koko"
-      ],
-      "Find out what can be migrated.": [
-        "Ota selvää, mitä voidaan siirtää."
-      ],
-      "Has errors": [
-        "Virheitä"
-      ],
-      "In progress": [
-        "Käynnissä"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Jäsenen osoitetta ei löytynyt. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
-      ],
-      "Migrate": [
-        "Siirrä"
-      ],
-      "Migrated": [
-        "Siirretty"
-      ],
-      "Migration status": [
-        "Siirron tila"
-      ],
-      "Missing organization private key": [
-        "Organisaation yksityinen avain puuttuu"
-      ],
-      "Missing organization public key": [
-        "Organisaation julkinen avain puuttuu"
-      ],
-      "No users to display": [
-        "Ei näytettäviä käyttäjiä"
-      ],
-      "Not activated": [
-        "Ei aktivoitu"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisaatiolla ei ole tarpeeksi paikkoja saatavilla"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisaatiolla ei ole tarpeeksi tallennustilaa"
-      ],
-      "Pending": [
-        "Odottaa"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Valitse tarkalleen, mitä haluat siirtää. Tämä koskee kaikkia organisaation käyttäjiä."
-      ],
-      "Select users to migrate": [
-        "Valitse siirrettävät käyttäjät"
-      ],
-      "Size": [
-        "Koko"
-      ],
-      "Status": [
-        "Tila"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tätä käyttäjää ei voida siirtää alustojen yhteensopimattomuuden vuoksi."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Siirtääksesi tämän käyttäjän, ota hänen tilinsä käyttöön Google Workspace -hallintakonsolissa."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Voit siirtää tämän käyttäjän ottamalla hänen tilinsä käyttöön kohdassa ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Siirtääksesi tämän käyttäjän, ota hänen osoitteensa käyttöön kohdassa ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Jotta tämä käyttäjä voidaan siirtää, hänen on hyväksyttävä kutsunsa liittyä ${ BRAND_NAME }:iin."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Voit siirtää tämän käyttäjän poistamalla hänet arkistosta Google Workspace -hallintakonsolissa."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Voit siirtää tämän käyttäjän poistamalla hänen jäädytyksensä Google Workspace -hallintakonsolissa."
-      ],
-      "User": [
-        "Käyttäjä"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Käyttäjät, jotka ovat käyttäneet ${ BRAND_NAME }-tiliään"
-      ],
-      "What are you migrating?": [
-        "Mitä olet siirtämässä?"
-      ],
-      "You": [
-        "Sinä"
       ]
     },
     "Browser": {
@@ -4927,6 +4811,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "Virheellinen palautustunniste. Päivitä sivu ja yritä uudelleen."
       ],
+      "Invalid URL": [
+        "Virheellinen URL"
+      ],
       "Invalid VAT number": [
         "Virheellinen VAT-numero"
       ],
@@ -4945,6 +4832,9 @@
       ],
       "Missing key packet": [
         "Avainpaketti puuttuu"
+      ],
+      "Missing signature": [
+        "Allekirjoitus puuttuu"
       ],
       "Name already exists": [
         "Nimi on jo olemassa"
@@ -5134,6 +5024,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
+      ],
+      "Something went wrong": [
+        "Jotain meni pieleen"
       ],
       "Something went wrong while converting the address": [
         "Jotain meni vikaan muutettaessa osoitetta"
@@ -6029,11 +5922,23 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Haluatko varmasti poistaa suojausavaimen ${ name }?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Anna PIN-koodisi aina, kun käytät suojausavainta ${ BRAND_NAME } -palvelun kanssa, jos avain tukee sitä. Tämä koskee vain avaimia, joille on määritetty PIN-koodi."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Liitä ${ BRAND_NAME }-tiliisi liitetty suojausavain."
       ],
       "Insert your security key into your device.": [
         "Aseta turva-avain laitteeseesi."
+      ],
+      "PIN requirement for security keys disabled": [
+        "PIN-koodin vaatimus suojausavaimille poistettu käytössä"
+      ],
+      "PIN requirement for security keys enabled": [
+        "PIN-koodin vaatimus suojausavaimille käytössä"
+      ],
+      "Require PIN for security key": [
+        "Vaadi PIN-koodi suojausavaimelle"
       ],
       "Security key": [
         "Suojausavain"
@@ -6725,6 +6630,14 @@
         "Valitse ${ boldExport } viedäksesi kalenterin ICS-tiedostona."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Käynnissä"
+      ],
+      "Migrated": [
+        "Siirretty"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } yhteystietoa ei tuoda. Näytä tiedot painamalla tästä."
@@ -7222,9 +7135,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Haluatko varmasti poistaa ylläpito-oikeudet käyttäjältä?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Haluatko varmasti poistaa kaikki jäsenet tästä ryhmästä?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Haluatko varmasti poistaa verkkotunnuksen ${ boldDomain }?"
       ],
@@ -7254,6 +7164,9 @@
       ],
       "Authenticator app 2FA enabled": [
         "Tunnistautumissovelluksen 2FA otettu käyttöön"
+      ],
+      "Available on VPN Professional": [
+        "Saatavilla VPN Professional-tilauksella"
       ],
       "Awaiting transaction": [
         "Odotetaan siirtoa"
@@ -7626,6 +7539,9 @@
       ],
       "Enable email notifications": [
         "Ota sähköposti-ilmoitukset käyttöön"
+      ],
+      "Enable groups to streamline access control": [
+        "Ota käyttöön ryhmät käyttöoikeuksien hallinnan tehostamiseksi"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Suojaaa organisaatiotasi ottamalla kertakirjautuminen käyttöön"
@@ -8087,6 +8003,9 @@
       ],
       "Learn more about Gateways": [
         "Lue lisää yhdyskäytävistä"
+      ],
+      "Learn more about groups": [
+        "Lue lisää ryhmistä"
       ],
       "Learn more about single sign-on": [
         "Lue lisää kertakirjautumisesta"
@@ -8651,6 +8570,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Koska olet uskollinen käyttäjä, tililläsi on lisäominaisuuksia."
       ],
+      "Smart Routed through a different country.": [
+        "Älykäs reititys eri maan kautta."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Älykäs reititys seuraavien maiden kautta: ${ joinedCountries }."
+      ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Jotkin ${ BRAND_NAME } -sovellukset eivät ehkä vielä tue turva-avaimia. Jos poistat todennusohjelman 2FA-toiminnon käytöstä, et ehkä voi kirjautua kyseisiin sovelluksiin."
       ],
@@ -9055,8 +8980,14 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
       ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Päivitä nyt nähdäksesi ${ PASS_APP_NAME }:n toiminta koko organisaatiossasi."
+      ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Päivitä tai tyhjennä tilaa milloin tahansa tuodaksesi loputkin"
+      ],
+      "Upgrade required": [
+        "Tilauksen päivitys vaaditaan"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Päivitä säilyttääksesi ${ planTitle } tilauksesi edut."
@@ -9282,6 +9213,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Ryhmien avulla voit helposti ja nopeasti lähettää sähköposteja kaikille tiettyyn ryhmään kuuluville henkilöille."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "VPN Professionalin avulla järjestelmänvalvojat voivat pakottaa kaikille organisaation jäsenille aina päällä olevan VPN:n sekä yksityiset yhdyskäytävät, käyttöoikeuskäytännöt ja valvonnan."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ilman aktivointia et voi luoda uusia käyttäjiä, lisätä osoitteita olemassa oleville käyttäjille, etkä käyttää muita kuin yksityisiä käyttäjätilejä."
@@ -10657,6 +10591,9 @@
       ],
       "Unlimited": [
         "Unlimited"
+      ],
+      "Upgrade": [
+        "Päivitä"
       ],
       "Upload 1 or more encryption keys": [
         "Lataa yksi tai useita salausavaimia"
@@ -14789,17 +14726,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Varmista, että kopioit yllä olevan SCIM-tunnuksen nyt."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Kun SCIM on poistettu käytöstä organisaatiollesi, **kaikki tunnistietojen toimittajasi automaattisesti tarjoamat SCIM-käyttäjät muutetaan SSO-käyttäjiksi**, ja voit hallita heitä suoraan ${ BRAND_NAME } -asetuksissa."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Yksinkertaistaa eri palveluiden välistä käyttäjähallintaa. Lisää, muokkaa ja poista identiteettitarjoajasi käyttäjiä, niin muutokset toteutetaan automaattisesti myös ${ appName }-organisaatiossasi."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Automaattinen SCIM-provisiointi on pois käytöstä, kunnes syötät uuden SCIM-tunnisteen identiteetintarjoajasi asetuksiin."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM-URL-osoite ja -tunniste poistetaan."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Ottaaksesi synkronoinnin uudelleen käyttöön identiteetintarjoajasi kanssa, sinun on tehtävä SCIM-integrointi uudelleen."
@@ -16812,6 +16743,14 @@
         "Yksityisille"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Koko"
+      ],
+      "Status": [
+        "Tila"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Toiminto"
@@ -17866,9 +17805,6 @@
       "Reject device?": [
         "Hylätäänkö laite?"
       ],
-      "Remove all members?": [
-        "Poistetaanko kaikki jäsenet?"
-      ],
       "Remove device?": [
         "Poistetaanko laite?"
       ],
@@ -17892,6 +17828,9 @@
       ],
       "Remove user?": [
         "Poistetaanko käyttäjä?"
+      ],
+      "Remove via PowerShell": [
+        "Poista PowerShellin kautta"
       ],
       "Rename the gateway": [
         "Nimeä yhdyskäytävä uudelleen"
@@ -18157,6 +18096,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Päivitä tilaukseen ${ planName }"
+      ],
+      "Upgrade to enable Always-on": [
+        "Päivitä ottaaksesi Aina päällä -toiminnon käyttöön"
       ],
       "Upgrade to keep your premium benefits.": [
         "Päivitä säilyttääksesi premium-etusi."

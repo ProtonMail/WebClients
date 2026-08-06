@@ -485,6 +485,9 @@
       "Edit users": [
         "Изменить пользователей"
       ],
+      "Enable": [
+        "Включить"
+      ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
       ],
@@ -841,9 +844,6 @@
       ],
       "Remove": [
         "Удалить"
-      ],
-      "Remove all members": [
-        "Удалить всех участников"
       ],
       "Remove all other devices": [
         "Удалить все остальные устройства"
@@ -2051,125 +2051,6 @@
       ],
       "Working with sensitive data?": [
         "Работаете с конфиденциальными данными?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Активировано"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Адрес уже используется пользователем вне вашей организации. Пожалуйста, обратитесь в службу поддержки клиентов для решения этой проблемы"
-      ],
-      "All": [
-        "Все"
-      ],
-      "Calendar": [
-        "Календарь"
-      ],
-      "Configure migration": [
-        "Настроить миграцию"
-      ],
-      "Contacts": [
-        "Контакты"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Статус миграции данных из Google Workspace в ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Электронные письма"
-      ],
-      "Errors": [
-        "Ошибки"
-      ],
-      "Estimated size": [
-        "Оценочный размер"
-      ],
-      "Find out what can be migrated.": [
-        "Узнайте, что можно перенести."
-      ],
-      "Has errors": [
-        "Есть ошибки"
-      ],
-      "In progress": [
-        "В процессе"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Адрес участника не найден. Пожалуйста, обратитесь в службу поддержки клиентов для решения этой проблемы"
-      ],
-      "Migrate": [
-        "Перенести"
-      ],
-      "Migrated": [
-        "Перенесено"
-      ],
-      "Migration status": [
-        "Статус переноса"
-      ],
-      "Missing organization private key": [
-        "Отсутствует закрытый ключ организации"
-      ],
-      "Missing organization public key": [
-        "Отсутствует открытый ключ организации"
-      ],
-      "No users to display": [
-        "Нет пользователей для отображения"
-      ],
-      "Not activated": [
-        "Не активировано"
-      ],
-      "Organization does not have enough seats available": [
-        "У организации недостаточно доступных лицензий"
-      ],
-      "Organization does not have enough storage available": [
-        "У организации недостаточно доступного места для хранения"
-      ],
-      "Pending": [
-        "В ожидании"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Выберите именно то, что вы хотите перенести. Это применится ко всем пользователям организации."
-      ],
-      "Select users to migrate": [
-        "Выберите пользователей для миграции"
-      ],
-      "Size": [
-        "Размер"
-      ],
-      "Status": [
-        "Статус"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Этого пользователя невозможно перенести из-за несовместимости платформ."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Чтобы перенести этого пользователя, включите его аккаунт в консоли администратора Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Чтобы перенести этого пользователя, включите его аккаунт в разделе ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Чтобы перенести этого пользователя, включите его адрес в разделе ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Чтобы перенести этого пользователя, ему необходимо принять приглашение присоединиться к ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Чтобы перенести этого пользователя, разархивируйте его в консоли администратора Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Чтобы перенести этого пользователя, разблокируйте его в консоли администратора Google Workspace."
-      ],
-      "User": [
-        "Пользователь"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Пользователи, вошедшие в свой аккаунт ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Что вы переносите?"
-      ],
-      "You": [
-        "Вы"
       ]
     },
     "Browser": {
@@ -4994,6 +4875,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "Недействительный токен сброса. Пожалуйста, обновите страницу и попробуйте еще раз."
       ],
+      "Invalid URL": [
+        "Недействительный URL"
+      ],
       "Invalid VAT number": [
         "Недействительный номер НДС"
       ],
@@ -5014,6 +4898,9 @@
       ],
       "Missing key packet": [
         "Отсутствует пакет ключей"
+      ],
+      "Missing signature": [
+        "Подпись отсутствует"
       ],
       "Name already exists": [
         "Имя уже существует"
@@ -5209,6 +5096,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
+      ],
+      "Something went wrong": [
+        "Что-то пошло не так"
       ],
       "Something went wrong while converting the address": [
         "Что-то пошло не так при конвертации адреса"
@@ -6845,6 +6735,14 @@
         "Выберите ${ boldExport } для экспорта календаря в формате файла ICS."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "В процессе"
+      ],
+      "Migrated": [
+        "Перенесено"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности."
@@ -7420,9 +7318,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы уверены, что хотите удалить административные полномочия у этого пользователя?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "Вы уверены, что хотите удалить всех участников из этой группы?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Вы уверены, что хотите удалить домен ${ boldDomain }?"
@@ -8875,6 +8770,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Смарт-маршрутизация через: ${ joinedCountries }."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Некоторые приложения ${ BRAND_NAME } могут пока не поддерживать ключи безопасности. Если вы отключите приложение для аутентификации в качестве метода 2FA, возможно, вы не сможете войти в эти приложения."
@@ -15184,17 +15082,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Убедитесь, что вы скопировали указанный выше токен SCIM."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "После отключения SCIM в вашей организации **все пользователи SCIM, автоматически созданные вашим поставщиком идентификационных данных, будут преобразованы в пользователей SSO**, и вы сможете управлять ими непосредственно в настройках ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Упрощает управление пользователями в различных службах. Добавляйте, редактируйте и удаляйте пользователей в своем провайдере идентификации, и эти изменения будут автоматически применены к вашей организации ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Автоматическая настройка SCIM будет отключена до тех пор, пока вы не введете новый токен SCIM в настройках вашего провайдера."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "URL базы SCIM и токен будут удалены."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Чтобы снова включить синхронизацию с поставщиком личных данных, необходимо снова завершить интеграцию SCIM."
@@ -17309,6 +17201,14 @@
         "Для частных лиц"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Размер"
+      ],
+      "Status": [
+        "Состояние"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Действие"
@@ -18384,9 +18284,6 @@
       ],
       "Reject device?": [
         "Отклонить устройство?"
-      ],
-      "Remove all members?": [
-        "Удалить всех участников?"
       ],
       "Remove device?": [
         "Удалить устройство?"

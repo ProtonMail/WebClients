@@ -485,6 +485,9 @@
       "Edit users": [
         "I-edit ang mga user"
       ],
+      "Enable": [
+        "Paganahin"
+      ],
       "enable desktop notifications": [
         "paganahin ang mga abiso sa desktop"
       ],
@@ -841,9 +844,6 @@
       ],
       "Remove": [
         "Alisin"
-      ],
-      "Remove all members": [
-        "Alisin ang lahat ng miyembro"
       ],
       "Remove all other devices": [
         "Alisin ang lahat ng ibang device"
@@ -2020,125 +2020,6 @@
       ],
       "Working with sensitive data?": [
         "Nagtatrabaho gamit ang sensitibong data?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Na-activate"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Ginagamit na ang address ng isang user sa labas ng organisasyon. Pakikontak ang suporta sa customer upang malutas ito"
-      ],
-      "All": [
-        "Lahat"
-      ],
-      "Calendar": [
-        "Kalendaryo"
-      ],
-      "Configure migration": [
-        "I-configure ang migration"
-      ],
-      "Contacts": [
-        "Mga Contact"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status ng migration ng data mula sa Google Workspace patungong ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Mga email"
-      ],
-      "Errors": [
-        "Mga error"
-      ],
-      "Estimated size": [
-        "Tinatayang laki"
-      ],
-      "Find out what can be migrated.": [
-        "Alamin kung ano ang maaaring i-migrate."
-      ],
-      "Has errors": [
-        "May mga error"
-      ],
-      "In progress": [
-        "Isinasagawa"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Hindi nahanap ang address ng miyembro. Pakikontak ang suporta sa customer upang malutas ito"
-      ],
-      "Migrate": [
-        "I-migrate"
-      ],
-      "Migrated": [
-        "Na-migrate"
-      ],
-      "Migration status": [
-        "Status ng migration"
-      ],
-      "Missing organization private key": [
-        "Nawawala ang pribadong key ng organisasyon"
-      ],
-      "Missing organization public key": [
-        "Nawawala ang pampublikong key ng organisasyon"
-      ],
-      "No users to display": [
-        "Walang mga user na ipapakita"
-      ],
-      "Not activated": [
-        "Hindi na-activate"
-      ],
-      "Organization does not have enough seats available": [
-        "Walang sapat na seat ang organisasyon"
-      ],
-      "Organization does not have enough storage available": [
-        "Walang sapat na storage ang organisasyon"
-      ],
-      "Pending": [
-        "Nakabinbin"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Piliin nang eksakto kung ano ang gusto mong i-migrate. Ilalapat ito sa lahat ng user ng organisasyon."
-      ],
-      "Select users to migrate": [
-        "Piliin ang mga user na i-migrate"
-      ],
-      "Size": [
-        "Laki"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Hindi maaaring i-migrate ang user dahil sa mga hindi pagiging tugma ng platform."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Upang i-migrate ang user, paganahin ang account sa Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Upang i-migrate ang user, paganahin ang account sa ilalim ng ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Upang i-migrate ang user, paganahin ang address sa ilalim ng ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Upang i-migrate ang user, kailangang tanggapin ang imbitasyon na sumali sa ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Upang i-migrate ang user, i-unarchive ito sa Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Upang i-migrate ang user, i-unsuspend ito sa Google Workspace Admin Console."
-      ],
-      "User": [
-        "User"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Mga user na nag-access sa kanilang ${ BRAND_NAME } account"
-      ],
-      "What are you migrating?": [
-        "Ano ang iyong minamigrate?"
-      ],
-      "You": [
-        "Ikaw"
       ]
     },
     "Browser": {
@@ -4918,6 +4799,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "Hindi valid na reset token. Pakisariwa ang pahina at subukang muli."
       ],
+      "Invalid URL": [
+        "Hindi valid na URL"
+      ],
       "Invalid VAT number": [
         "Hindi valid na VAT number"
       ],
@@ -4936,6 +4820,9 @@
       ],
       "Missing key packet": [
         "Nawawala ang key packet"
+      ],
+      "Missing signature": [
+        "Nawawala ang signature"
       ],
       "Name already exists": [
         "Umiiral na ang pangalan"
@@ -5125,6 +5012,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Lumampas ang ilan sa mga pangalan ng iyong label sa limitasyon ng character ng ${ MAIL_APP_NAME }. I-customize ang import para i-edit ang mga pangalang ito."
+      ],
+      "Something went wrong": [
+        "Nagkaproblema"
       ],
       "Something went wrong while converting the address": [
         "Nagkaroon ng mali habang kino-convert ang address"
@@ -6713,6 +6603,14 @@
         "Piliin ang ${ boldExport } upang i-export ang kalendaryo bilang ICS file."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Kasalukuyang isinasagawa"
+      ],
+      "Migrated": [
+        "Na-migrate na"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } sa ${ totalContacts } na contact ang hindi mai-import. I-click para sa mga detalye"
@@ -7209,9 +7107,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Sigurado ka bang gusto mong alisin ang mga pribilehiyo ng administrator sa user na ito?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "Sigurado ka bang gusto mong alisin ang lahat ng miyembro mula sa pangkat na ito?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Sigurado ka bang aalisin ang domain na ${ boldDomain }?"
@@ -8632,6 +8527,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dahil isa kang tapat na user, may mga pinaganang karagdagang feature ang account."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Smart Routed sa pamamagitan ng: ${ joinedCountries }."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Maaaring hindi pa suportado ng ilang ${ BRAND_NAME } app ang mga security key. Kung io-off mo ang authenticator app 2FA, maaaring hindi ka makapag-sign in sa mga app na iyon."
@@ -14762,17 +14660,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Siguraduhing kopyahin ang SCIM token sa itaas ngayon."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Kapag hindi na pinagana ang SCIM para sa organisasyon, **lahat ng SCIM user na awtomatikong ibinigay ng provider ng pagkakakilanlan ay gagawing SSO user** at mapapamahalaan mo na sila nang direkta sa mga setting ng ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Pinapasimple ang pamamahala ng user sa iba't ibang serbisyo. Magdagdag, i-edit at alisin ang mga user sa iyong identity provider, at ang mga pagbabagong iyon ay awtomatikong ilalapat sa iyong organisasyon sa ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Hindi pagaganahin ang awtomatikong paglalaan ng SCIM hanggang sa ilagay mo ang bagong SCIM token sa mga setting ng provider ng pagkakakilanlan."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "Ang SCIM base URL at token ay i-de-delete."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Upang muling paganahin ang pag-sync sa provider ng pagkakakilanlan, kailangang kumpletuhin muli ang integrasyon ng SCIM."
@@ -16785,6 +16677,14 @@
         "Para sa mga indibidwal"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Laki"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Aksyon"
@@ -17838,9 +17738,6 @@
       ],
       "Reject device?": [
         "Tanggihan ang device?"
-      ],
-      "Remove all members?": [
-        "Alisin ang lahat ng miyembro?"
       ],
       "Remove device?": [
         "Alisin ang device?"
