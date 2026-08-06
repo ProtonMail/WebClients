@@ -3,18 +3,15 @@ import type { PropsWithChildren, ReactElement } from 'react';
 import type { RenderOptions } from '@testing-library/react';
 import { render as originalRender } from '@testing-library/react';
 
-import { applyHOCs } from './hocs';
-import {
-    getPreloadedState,
-    withApi,
-    withAuthentication,
-    withCache,
-    withConfig,
-    withEventManager,
-    withMemoryRouter,
-    withNotifications,
-    withReduxStore,
-} from './providers';
+import { applyHOCs } from './hocs/helpers';
+import { withApi } from './hocs/with-api';
+import { withAuthentication } from './hocs/with-authentication';
+import { withCache } from './hocs/with-cache';
+import { withConfig } from './hocs/with-config';
+import { withEventManager } from './hocs/with-event-manager';
+import { withMemoryRouter } from './hocs/with-memory-router';
+import { withNotifications } from './hocs/with-notifications';
+import { getPreloadedState, withReduxStore } from './hocs/with-redux-store';
 import { setupStore } from './store';
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
