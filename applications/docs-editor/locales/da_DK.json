@@ -244,6 +244,18 @@
       ],
       "Superscript": [
         "Hævet skrift"
+      ],
+      "Close outline": [
+        "Luk indholdsfortegnelse"
+      ],
+      "Go to label": [
+        "Gå til etikette"
+      ],
+      "Open outline": [
+        "Åbn indholdsfortegnelse"
+      ],
+      "Remove": [
+        "Fjern"
       ]
     },
     "color": {
@@ -474,6 +486,9 @@
       ],
       "Tried to import Sheet data into Lexical": [
         "Forsøgte at importere regnearksdata i Lexical."
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Dette regneark registrerede en lokal synkroniseringsfejl. Redigering er blevet deaktiveret for at forhindre datatab. Indsend en rapport - og hvis du har det fint med at dele indholdet kan du downloade og inkludere nedenstående fejlfindingsoplysninger."
       ]
     },
     "Error message": {
@@ -593,6 +608,12 @@
         "Ingen titel"
       ],
       "New": [
+        "Ny"
+      ],
+      "Labels:": [
+        "Etiketter:"
+      ],
+      "NEW": [
         "Ny"
       ]
     },
@@ -738,6 +759,9 @@
       ],
       "Explore the New Suggestion Mode": [
         "Udforsk den nye forslagstilstand"
+      ],
+      "Outline": [
+        "Kontur"
       ]
     },
     "sheets_2025:Bottom bar": {
@@ -2336,6 +2360,29 @@
       ],
       "Zero": [
         "Nul"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Gennemsnit"
+      ],
+      "Count": [
+        "Antal"
+      ],
+      "Customize Status Bar": [
+        "Tilpas statuslinje"
+      ],
+      "Max": [
+        "Maks."
+      ],
+      "Min": [
+        "Min."
+      ],
+      "Numerical count": [
+        "Numerisk antal"
+      ],
+      "Sum": [
+        "Sum"
       ]
     }
   }

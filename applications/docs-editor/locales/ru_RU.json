@@ -235,6 +235,21 @@
       ],
       "Table of contents": [
         "Оглавление"
+      ],
+      "Go to label": [
+        "Перейти к ярлыку"
+      ],
+      "Page break": [
+        "Разрыв страницы"
+      ],
+      "Remove": [
+        "Удалить"
+      ],
+      "Subscript": [
+        "Подстрочный знак"
+      ],
+      "Superscript": [
+        "Надстрочный знак"
       ]
     },
     "color": {
@@ -445,6 +460,15 @@
       ],
       "Tried to import Sheet data into Lexical": [
         "Попытка импорта данных Sheet в Lexical"
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Произошла ошибка при обработке обновлений документа. Пожалуйста, перезагрузите страницу и попробуйте еще раз."
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "В этой электронной таблице обнаружено несоответствие локальной синхронизации. Редактирование отключено во избежание потери данных. Пожалуйста, отправьте отчет и, если вы не против поделиться содержимым, скачайте и приложите отладочную информацию ниже."
+      ],
+      "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
+        "Эта электронная таблица несовместима с текущей версией клиента. Попробуйте обновить страницу. Если ошибка не исчезнет, обратитесь в службу поддержки."
       ]
     },
     "Error message": {
@@ -558,6 +582,18 @@
       ],
       "New": [
         "Новый"
+      ],
+      "Importing Excel file...": [
+        "Импортирование файла Excel..."
+      ],
+      "Importing ODS file...": [
+        "Импортирование файла ODS..."
+      ],
+      "Labels:": [
+        "Ярлыки:"
+      ],
+      "No title": [
+        "Без названия"
       ]
     },
     "Label": {
@@ -668,6 +704,9 @@
       ],
       "with \"${ replaceWith }\"": [
         "с помощью \"${ replaceWith }\""
+      ],
+      "Page break": [
+        "Разрыв страницы"
       ]
     },
     "Placeholder": {
@@ -699,6 +738,9 @@
       ],
       "Explore the New Suggestion Mode": [
         "Изучить Новый Режим Предложения"
+      ],
+      "Outline": [
+        "Структура"
       ]
     },
     "Description": {
@@ -718,6 +760,1627 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Создание предложений внутри блоков кода не поддерживается"
+      ]
+    },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "Все листы"
+      ],
+      "New sheet": [
+        "Новый лист"
+      ]
+    },
+    "sheets_2025:Color picker": {
+      "Recent colors": [
+        "Последние цвета"
+      ],
+      "Reset": [
+        "Сбросить"
+      ],
+      "Standard colors": [
+        "Стандартные цвета"
+      ],
+      "Theme colors": [
+        "Цвета темы"
+      ]
+    },
+    "sheets_2025:Formula bar": {
+      "Formula bar": [
+        "Строка формул"
+      ]
+    },
+    "sheets_2025:Range selector": {
+      "Range selector": [
+        "Выбор диапазона"
+      ]
+    },
+    "sheets_2025:Range selector menu": {
+      "Add new": [
+        "Добавить"
+      ],
+      "Named ranges": [
+        "Именованные диапазоны"
+      ],
+      "Sheets": [
+        "Листы"
+      ],
+      "Tables": [
+        "Таблицы"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "Изменить цвет"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Duplicate": [
+        "Дублировать"
+      ],
+      "Hide sheet": [
+        "Скрыть лист"
+      ],
+      "Move left": [
+        "Переместить влево"
+      ],
+      "Move right": [
+        "Переместить вправо"
+      ],
+      "Rename": [
+        "Переименовать"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "Все границы"
+      ],
+      "Bottom border": [
+        "Нижняя граница"
+      ],
+      "Dashed": [
+        "Штриховой"
+      ],
+      "Dotted": [
+        "Точечный"
+      ],
+      "Double": [
+        "Двойная"
+      ],
+      "Horizontal borders": [
+        "Горизонтальные границы"
+      ],
+      "Inner borders": [
+        "Внутренние границы"
+      ],
+      "Left border": [
+        "Левая граница"
+      ],
+      "No borders": [
+        "Без границ"
+      ],
+      "Outer borders": [
+        "Внешние границы"
+      ],
+      "Right border": [
+        "Правая граница"
+      ],
+      "Solid": [
+        "Сплошной"
+      ],
+      "Solid medium": [
+        "Сплошная средняя"
+      ],
+      "Solid thick": [
+        "Сплошной толстый"
+      ],
+      "Top border": [
+        "Верхняя граница"
+      ],
+      "Vertical borders": [
+        "Вертикальные границы"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "Ошибка"
+      ],
+      "Invalid": [
+        "Недействительно"
+      ],
+      "Note": [
+        "Примечание"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "Быстрое редактирование ИИ"
+      ],
+      "Auto fit to data": [
+        "Автоподбор размера"
+      ],
+      "Cell value": [
+        "Значение ячейки"
+      ],
+      "Clear": [
+        "Очистить"
+      ],
+      "Clear content": [
+        "Очистить содержимое"
+      ],
+      "Clear formatting": [
+        "Очистить форматирование"
+      ],
+      "Comma": [
+        "Запятая"
+      ],
+      "Conditional format": [
+        "Условное форматирование"
+      ],
+      "Convert to range": [
+        "Преобразовать в диапазон"
+      ],
+      "Convert to table": [
+        "Преобразовать в таблицу"
+      ],
+      "Copy": [
+        "Копировать"
+      ],
+      "Create a filter": [
+        "Создать фильтр"
+      ],
+      "Custom": [
+        "Пользовательский"
+      ],
+      "Data validation": [
+        "Проверка данных"
+      ],
+      "Define named range": [
+        "Определить именованный диапазон"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Delete cells and shift cells left": [
+        "Удалить ячейки со сдвигом влево"
+      ],
+      "Delete cells and shift cells up": [
+        "Удалить ячейки со сдвигом вверх"
+      ],
+      "Delete column": [
+        "Удалить столбец"
+      ],
+      "Delete row": [
+        "Удалить строку"
+      ],
+      "Delete table column": [
+        "Удалить столбец таблицы"
+      ],
+      "Delete table row": [
+        "Удалить строку таблицы"
+      ],
+      "Edit table": [
+        "Изменить таблицу"
+      ],
+      "Filter": [
+        "Фильтр"
+      ],
+      "Formatting only": [
+        "Только форматирование"
+      ],
+      "Formula only": [
+        "Только формула"
+      ],
+      "Freeze up to column": [
+        "Закрепить по столбец"
+      ],
+      "Freeze up to row": [
+        "Закрепить по строку"
+      ],
+      "Hide column": [
+        "Скрыть столбец"
+      ],
+      "Hide row": [
+        "Скрыть строку"
+      ],
+      "Insert cells and shift cells down": [
+        "Вставить ячейки со сдвигом вниз"
+      ],
+      "Insert cells and shift cells right": [
+        "Вставить ячейки со сдвигом вправо"
+      ],
+      "Insert link": [
+        "Вставить ссылку"
+      ],
+      "Insert note": [
+        "Вставить примечание"
+      ],
+      "Insert table column to the left": [
+        "Вставить столбец таблицы слева"
+      ],
+      "Insert table column to the right": [
+        "Вставить столбец таблицы справа"
+      ],
+      "Insert table row": [
+        "Вставить строку таблицы"
+      ],
+      "Link only": [
+        "Только ссылка"
+      ],
+      "More cell actions": [
+        "Дополнительные действия с ячейками"
+      ],
+      "Paste": [
+        "Вставить"
+      ],
+      "Paste special": [
+        "Специальная вставка"
+      ],
+      "Period": [
+        "Точка"
+      ],
+      "Pipe": [
+        "Вертикальная черта"
+      ],
+      "Remove filter": [
+        "Удалить фильтр"
+      ],
+      "Resize column": [
+        "Изменить ширину столбца"
+      ],
+      "Resize row": [
+        "Изменить высоту строки"
+      ],
+      "Semicolon": [
+        "Точка с запятой"
+      ],
+      "Sort": [
+        "Сортировка"
+      ],
+      "Sort range A → Z": [
+        "Сортировать диапазон от А до Я"
+      ],
+      "Sort range Z → A": [
+        "Сортировать диапазон от Я до А"
+      ],
+      "Sort sheet A to Z": [
+        "Сортировать лист от А до Я"
+      ],
+      "Sort sheet Z to A": [
+        "Сортировать лист от Я до А"
+      ],
+      "Space": [
+        "Пробел"
+      ],
+      "Table": [
+        "Таблица"
+      ],
+      "Transposed": [
+        "Транспонированный"
+      ],
+      "Unfreeze columns": [
+        "Разблокировать столбцы"
+      ],
+      "Unfreeze rows": [
+        "Разблокировать строки"
+      ],
+      "Values only": [
+        "Только значения"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } столбец",
+        "${ numberOfColumns } столбца",
+        "${ numberOfColumns } столбцов",
+        "${ numberOfColumns } столбца"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } строка",
+        "${ numberOfRows } строки",
+        "${ numberOfRows } строк",
+        "${ numberOfRows } строки"
+      ],
+      "above": [
+        "выше"
+      ],
+      "below": [
+        "снизу"
+      ],
+      "Insert": [
+        "Вставить"
+      ],
+      "left": [
+        "слева"
+      ],
+      "right": [
+        "справа"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "Применить"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Custom date and time formats": [
+        "Пользовательские форматы даты и времени"
+      ],
+      "Format": [
+        "Формат"
+      ],
+      "Sample": [
+        "Образец"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "AM/PM"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Day": [
+        "День"
+      ],
+      "Day as abbreviation": [
+        "Сокращенное название дня недели"
+      ],
+      "Day as full name": [
+        "Полное название дня недели"
+      ],
+      "Day with leading zero": [
+        "День с ведущим нулем"
+      ],
+      "Day without leading zero": [
+        "День без ведущего нуля"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Duration": [
+        "Продолжительность"
+      ],
+      "Elapsed hours": [
+        "Прошедшие часы"
+      ],
+      "Elapsed hours with leading zero": [
+        "Прошедшие часы с ведущим нулем"
+      ],
+      "Elapsed hours without leading zero": [
+        "Прошедшие часы без ведущего нуля"
+      ],
+      "Elapsed minutes": [
+        "Прошедшие минуты"
+      ],
+      "Elapsed minutes with leading zero": [
+        "Прошедшие минуты с ведущим нулем"
+      ],
+      "Elapsed minutes without leading zero": [
+        "Прошедшие минуты без ведущего нуля"
+      ],
+      "Elapsed seconds": [
+        "Прошедшие секунды"
+      ],
+      "Elapsed seconds with leading zero": [
+        "Прошедшие секунды с ведущим нулем"
+      ],
+      "Elapsed seconds without leading zero": [
+        "Прошедшие секунды без ведущего нуля"
+      ],
+      "First letter of the month": [
+        "Первая буква месяца"
+      ],
+      "Full": [
+        "Полный"
+      ],
+      "Full numeric year": [
+        "Год полностью"
+      ],
+      "Hour": [
+        "Час"
+      ],
+      "Hour with leading zero": [
+        "Час с ведущим нулем"
+      ],
+      "Hour without leading zero": [
+        "Час без ведущего нуля"
+      ],
+      "Millisecond": [
+        "Миллисекунда"
+      ],
+      "Minute": [
+        "Минута"
+      ],
+      "Minute with leading zero": [
+        "Минута с ведущим нулем"
+      ],
+      "Minute without leading zero": [
+        "Минуты без ведущего нуля"
+      ],
+      "Month": [
+        "Месяц"
+      ],
+      "Month as abbreviation": [
+        "Сокращенное название месяца"
+      ],
+      "Month as full name": [
+        "Полное название месяца"
+      ],
+      "Month with leading zero": [
+        "Месяц с ведущим нулем"
+      ],
+      "Month without leading zero": [
+        "Месяц без ведущего нуля"
+      ],
+      "Precision to 1/10 of a second": [
+        "Точность до 1/10 секунды"
+      ],
+      "Precision to 1/100 of a second": [
+        "Точность до 1/100 секунды"
+      ],
+      "Precision to 1/1000 of a second": [
+        "Точность до 1/1000 секунды"
+      ],
+      "Second": [
+        "Секунда"
+      ],
+      "Second with leading zero": [
+        "Секунда с ведущим нулем"
+      ],
+      "Second without leading zero": [
+        "Секунда без ведущего нуля"
+      ],
+      "Time": [
+        "Время"
+      ],
+      "Two digit year": [
+        "Двузначный год"
+      ],
+      "Year": [
+        "Год"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "Вы действительно хотите удалить лист «${ sheetName }»?"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Delete sheet": [
+        "Удалить лист"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "Редактирование на мобильных устройствах появится в ближайшее время"
+      ],
+      "Screen too small for editing": [
+        "Экран слишком мал для редактирования"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "Мы работаем над тем, чтобы вскоре предоставить вам эту функцию. На данный момент листы можно редактировать только на компьютере"
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "Ваш экран слишком мал для редактирования этой электронной таблицы. Вы находитесь в режиме только для чтения. Чтобы внести изменения, откройте эту электронную таблицу на более крупном экране или увеличьте окно браузера."
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "Не удается удалить все столбцы"
+      ],
+      "Cannot delete all rows": [
+        "Не удается удалить все строки"
+      ],
+      "Find in sheet": [
+        "Найти на листе"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "Объединить все"
+      ],
+      "Merge cells": [
+        "Объединить ячейки"
+      ],
+      "Merge horizontally": [
+        "Объединить по горизонтали"
+      ],
+      "Merge vertically": [
+        "Объединить по вертикали"
+      ],
+      "Unmerge": [
+        "Разъединить ячейки"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Создать фильтр"
+      ],
+      "Data validation": [
+        "Проверка данных"
+      ],
+      "Protect range": [
+        "Защитить диапазон"
+      ],
+      "Remove filter": [
+        "Удалить фильтр"
+      ],
+      "Sort sheet": [
+        "Сортировать лист"
+      ],
+      "Unlock range": [
+        "Разблокировать диапазон"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
+      "(A to Z)": [
+        "(А → Я)"
+      ],
+      "(Z to A)": [
+        "(Я → А)"
+      ],
+      "column ${ columnLetter }": [
+        "столбец ${ columnLetter }"
+      ],
+      "Sort sheet by": [
+        "Сортировать лист по"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar edit menu": {
+      "Copy": [
+        "Копировать"
+      ],
+      "Cut": [
+        "Вырезать"
+      ],
+      "Find": [
+        "Найти"
+      ],
+      "Formatting only": [
+        "Только форматирование"
+      ],
+      "Formula only": [
+        "Только формула"
+      ],
+      "Link only": [
+        "Только ссылка"
+      ],
+      "Paste": [
+        "Вставить"
+      ],
+      "Paste special": [
+        "Специальная вставка"
+      ],
+      "Redo": [
+        "Повторить"
+      ],
+      "Transposed": [
+        "Транспонированный"
+      ],
+      "Undo": [
+        "Отменить"
+      ],
+      "Values only": [
+        "Только значения"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Значения, разделенные запятыми (.csv)"
+      ],
+      "Download": [
+        "Скачать"
+      ],
+      "Download logs": [
+        "Скачать журналы"
+      ],
+      "Help": [
+        "Справка"
+      ],
+      "Import": [
+        "Импортировать"
+      ],
+      "Make a copy": [
+        "Создать копию"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "Переместить в папку"
+      ],
+      "Move to trash": [
+        "Переместить в корзину"
+      ],
+      "New document": [
+        "Новый документ"
+      ],
+      "New spreadsheet": [
+        "Новая электронная таблица"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Открыть ${ DRIVE_APP_NAME }"
+      ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "Электронная таблица OpenDocument (.ods) (бета)"
+      ],
+      "Print": [
+        "Печать"
+      ],
+      "See version history": [
+        "Просмотреть историю версий"
+      ],
+      "Settings": [
+        "Настройки"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Значения, разделённые табуляцией (.tsv)"
+      ],
+      "Toggle debug mode": [
+        "Переключить режим отладки"
+      ],
+      "View recent spreadsheets": [
+        "Просмотреть недавние электронные таблицы"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu": {
+      "Alignment": [
+        "Выравнивание"
+      ],
+      "Bold": [
+        "Полужирный"
+      ],
+      "Cell styles": [
+        "Стили ячеек"
+      ],
+      "Clear": [
+        "Очистить"
+      ],
+      "Clear content": [
+        "Очистить содержимое"
+      ],
+      "Clear formatting": [
+        "Очистить форматирование"
+      ],
+      "Conditional formatting": [
+        "Условное форматирование"
+      ],
+      "Font size": [
+        "Размер шрифта"
+      ],
+      "Italic": [
+        "Курсив"
+      ],
+      "Number": [
+        "Число"
+      ],
+      "Strikethrough": [
+        "Зачеркнутый"
+      ],
+      "Table formatting": [
+        "Форматирование таблицы"
+      ],
+      "Text": [
+        "Текст"
+      ],
+      "Theme": [
+        "Тема"
+      ],
+      "Underline": [
+        "Подчеркнутый"
+      ],
+      "Wrapping": [
+        "Перенос"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "Внизу"
+      ],
+      "Center": [
+        "По центру"
+      ],
+      "Left": [
+        "Слева"
+      ],
+      "Middle": [
+        "По центру"
+      ],
+      "Right": [
+        "Справа"
+      ],
+      "Top": [
+        "Сверху"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "Обрезать"
+      ],
+      "Overflow": [
+        "Переполнение"
+      ],
+      "Wrap": [
+        "Переносить"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "Ячейки"
+      ],
+      "Chart": [
+        "Диаграмма"
+      ],
+      "Checkbox": [
+        "Флажок"
+      ],
+      "Columns": [
+        "Столбцы"
+      ],
+      "Dropdown": [
+        "Раскрывающийся список"
+      ],
+      "Function": [
+        "Функция"
+      ],
+      "Image": [
+        "Изображение"
+      ],
+      "Insert cells and shift down": [
+        "Вставить ячейки со сдвигом вниз"
+      ],
+      "Insert cells and shift right": [
+        "Вставить ячейки со сдвигом вправо"
+      ],
+      "Link": [
+        "Ссылка"
+      ],
+      "Note": [
+        "Примечание"
+      ],
+      "Rows": [
+        "Строки"
+      ],
+      "Sheet": [
+        "Лист"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } столбец",
+        "${ numberOfColumns } столбца",
+        "${ numberOfColumns } столбцов",
+        "${ numberOfColumns } столбца"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } строка",
+        "${ numberOfRows } строки",
+        "${ numberOfRows } строк",
+        "${ numberOfRows } строки"
+      ],
+      "above": [
+        "сверху"
+      ],
+      "below": [
+        "снизу"
+      ],
+      "Insert": [
+        "Вставить"
+      ],
+      "left": [
+        "слева"
+      ],
+      "right": [
+        "справа"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "Data": [
+        "Данные"
+      ],
+      "Edit": [
+        "Правка"
+      ],
+      "File": [
+        "Файл"
+      ],
+      "Format": [
+        "Формат"
+      ],
+      "Insert": [
+        "Вставка"
+      ],
+      "View": [
+        "Вид"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "Строка формул"
+      ],
+      "Freeze": [
+        "Закрепить"
+      ],
+      "Gridlines": [
+        "Сетка"
+      ],
+      "Show": [
+        "Показать"
+      ],
+      "Zoom": [
+        "Масштаб"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "столбец ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "строку ${ rowNumber }"
+      ],
+      "Up to": [
+        "До"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "Скрытые листы"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor number formats menu": {
+      "$ US Dollar": [
+        "$ Доллар США"
+      ],
+      "Accounting": [
+        "Бухгалтерский"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Китайский юань"
+      ],
+      "Currency": [
+        "Валюта"
+      ],
+      "Currency rounded": [
+        "Округленная валюта"
+      ],
+      "Custom currency": [
+        "Собственная валюта"
+      ],
+      "Custom date and time": [
+        "Пользовательские дата и время"
+      ],
+      "Custom number": [
+        "Пользовательское число"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Date time": [
+        "Дата и время"
+      ],
+      "Duration": [
+        "Продолжительность"
+      ],
+      "Financial": [
+        "Финансовый"
+      ],
+      "General": [
+        "Общий"
+      ],
+      "Long date": [
+        "Полная дата"
+      ],
+      "More currency": [
+        "Другие валюты"
+      ],
+      "Number": [
+        "Числовой"
+      ],
+      "Percent": [
+        "Процентный"
+      ],
+      "Plain text": [
+        "Простой текст"
+      ],
+      "Scientific": [
+        "Экспоненциальный"
+      ],
+      "Time": [
+        "Время"
+      ],
+      "£ Pound": [
+        "£ Фунт"
+      ],
+      "¥ Yen": [
+        "¥ Иена"
+      ],
+      "€ Euro": [
+        "€ Евро"
+      ],
+      "₹ Rupee": [
+        "₹ Рупия"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor search dialog": {
+      "Close": [
+        "Закрыть"
+      ],
+      "Go to next": [
+        "Перейти к следующему"
+      ],
+      "Go to previous": [
+        "Перейти к предыдущему"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Auto": [
+        "Авто"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Locale": [
+        "Региональные настройки"
+      ],
+      "Save and reload": [
+        "Сохранить и перезагрузить"
+      ],
+      "Settings for this spreadsheet": [
+        "Настройки этой электронной таблицы"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "Это влияет на такие параметры форматирования, как функции, даты и валюта"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Полужирный"
+      ],
+      "Border": [
+        "Граница"
+      ],
+      "Clear formatting": [
+        "Очистить форматирование"
+      ],
+      "Create a filter": [
+        "Создать фильтр"
+      ],
+      "Decrease decimal places": [
+        "Уменьшить количество знаков после запятой"
+      ],
+      "Decrease font size": [
+        "Уменьшить размер шрифта"
+      ],
+      "Default (${ defaultFont })": [
+        "По умолчанию (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Цвет заливки"
+      ],
+      "Find": [
+        "Найти"
+      ],
+      "Font": [
+        "Шрифт"
+      ],
+      "Font size": [
+        "Размер шрифта"
+      ],
+      "Format as currency": [
+        "Форматировать как валюту"
+      ],
+      "Format as percent": [
+        "Форматировать как процент"
+      ],
+      "Horizontal align": [
+        "Горизонтальное выравнивание"
+      ],
+      "Increase decimal places": [
+        "Увеличить количество знаков после запятой"
+      ],
+      "Increase font size": [
+        "Увеличить размер шрифта"
+      ],
+      "Insert chart": [
+        "Вставить диаграмму"
+      ],
+      "Insert function": [
+        "Вставить функцию"
+      ],
+      "Insert link": [
+        "Вставить ссылку"
+      ],
+      "Insert note": [
+        "Вставить примечание"
+      ],
+      "Italic": [
+        "Курсив"
+      ],
+      "Merge cells": [
+        "Объединить ячейки"
+      ],
+      "More": [
+        "Ещё"
+      ],
+      "More formats": [
+        "Другие форматы"
+      ],
+      "Paint format": [
+        "Копировать форматирование"
+      ],
+      "Redo": [
+        "Вернуть"
+      ],
+      "Remove filter": [
+        "Удалить фильтр"
+      ],
+      "Select merge type": [
+        "Выбрать тип объединения"
+      ],
+      "Strikethrough": [
+        "Зачеркнутый"
+      ],
+      "Text color": [
+        "Цвет текста"
+      ],
+      "Text wrapping": [
+        "Перенос текста"
+      ],
+      "Underline": [
+        "Подчеркнутый"
+      ],
+      "Undo": [
+        "Отменить"
+      ],
+      "Unmerge cells": [
+        "Разъединить ячейки"
+      ],
+      "Vertical align": [
+        "Вертикальное выравнивание"
+      ],
+      "Zoom": [
+        "Масштаб"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "Применить"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Clear": [
+        "Очистить"
+      ],
+      "Copy": [
+        "Копировать"
+      ],
+      "Delete table column": [
+        "Удалить столбец таблицы"
+      ],
+      "Enter value": [
+        "Введите значение"
+      ],
+      "Filter by condition": [
+        "Фильтр по условию"
+      ],
+      "Filter by value": [
+        "Фильтр по значению"
+      ],
+      "Insert 1 table column left": [
+        "Вставить 1 столбец таблицы слева"
+      ],
+      "Insert 1 table column right": [
+        "Вставить 1 столбец таблицы справа"
+      ],
+      "Paste": [
+        "Вставить"
+      ],
+      "Select all": [
+        "Выбрать все"
+      ],
+      "Sort A → Z": [
+        "Сортировка А → Я"
+      ],
+      "Sort Z → A": [
+        "Сортировка Я → А"
+      ]
+    },
+    "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "Применить"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Insert link": [
+        "Вставить ссылку"
+      ],
+      "Paste link": [
+        "Вставить ссылку"
+      ]
+    },
+    "sheets_2025:Spreadsheet link tooltip": {
+      "Copy link": [
+        "Копировать ссылку"
+      ],
+      "Edit link": [
+        "Изменить ссылку"
+      ],
+      "Link copied to clipboard": [
+        "Ссылка скопирована в буфер обмена"
+      ],
+      "Link removed": [
+        "Ссылка удалена"
+      ],
+      "Remove link": [
+        "Удалить ссылку"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "Отмена"
+      ],
+      "column": [
+        "столбец"
+      ],
+      "column width": [
+        "ширина столбца"
+      ],
+      "Default": [
+        "По умолчанию"
+      ],
+      "OK": [
+        "ОК"
+      ],
+      "row": [
+        "строка"
+      ],
+      "row height": [
+        "высота строки"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Среднее"
+      ],
+      "Count": [
+        "Количество"
+      ],
+      "Customize Status Bar": [
+        "Настроить строку состояния"
+      ],
+      "Max": [
+        "Макс"
+      ],
+      "Min": [
+        "Мин"
+      ],
+      "Numerical count": [
+        "Количество чисел"
+      ],
+      "Sum": [
+        "Сумма"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "Выравнивание"
+      ],
+      "Bold": [
+        "Полужирный"
+      ],
+      "Border": [
+        "Граница"
+      ],
+      "Border style": [
+        "Стиль границы"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Choose Category": [
+        "Выбрать категорию"
+      ],
+      "Color": [
+        "Цвет"
+      ],
+      "Currency Symbol": [
+        "Символ валюты"
+      ],
+      "Custom": [
+        "Другой"
+      ],
+      "Decimal places": [
+        "Десятичные разряды"
+      ],
+      "Effects": [
+        "Эффекты"
+      ],
+      "Font": [
+        "Шрифт"
+      ],
+      "Font size": [
+        "Размер шрифта"
+      ],
+      "Format cells": [
+        "Формат ячеек"
+      ],
+      "General": [
+        "Общий"
+      ],
+      "Horizontal Alignment": [
+        "Выравнивание по горизонтали"
+      ],
+      "Indent": [
+        "Отступ"
+      ],
+      "Italic": [
+        "Курсив"
+      ],
+      "Merge": [
+        "Объединить"
+      ],
+      "Merge all": [
+        "Объединить все"
+      ],
+      "Merge horizontally": [
+        "Объединить по горизонтали"
+      ],
+      "Merge vertically": [
+        "Объединить по вертикали"
+      ],
+      "Number": [
+        "Число"
+      ],
+      "Overflow": [
+        "Переполнение"
+      ],
+      "Preview": [
+        "Предпросмотр"
+      ],
+      "Save": [
+        "Сохранить"
+      ],
+      "Strikethrough": [
+        "Зачеркнутый"
+      ],
+      "Text control": [
+        "Управление текстом"
+      ],
+      "Thousands separator": [
+        "Разделитель тысяч"
+      ],
+      "Type": [
+        "Тип"
+      ],
+      "Underline": [
+        "Подчеркнутый"
+      ],
+      "Unmerge": [
+        "Разъединить"
+      ],
+      "Use 1000 Separator (,)": [
+        "Разделитель тысяч (,)"
+      ],
+      "Vertical Alignment": [
+        "Вертикальное выравнивание"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "Добавить"
+      ],
+      "Aggregate": [
+        "Агрегировать"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Chart data range": [
+        "Диапазон данных диаграммы"
+      ],
+      "Chart editor": [
+        "Редактор диаграмм"
+      ],
+      "Chart title": [
+        "Название диаграммы"
+      ],
+      "Chart type": [
+        "Тип диаграммы"
+      ],
+      "Enter title": [
+        "Введите название"
+      ],
+      "Horizontal (category) axis labels": [
+        "Подписи горизонтальной оси (категорий)"
+      ],
+      "Horizontal axis title": [
+        "Название горизонтальной оси"
+      ],
+      "Name": [
+        "Имя"
+      ],
+      "Range": [
+        "Диапазон"
+      ],
+      "Save": [
+        "Сохранить"
+      ],
+      "Select a range": [
+        "Выбрать диапазон"
+      ],
+      "Series": [
+        "Ряды"
+      ],
+      "Show data in hidden rows and columns": [
+        "Показывать данные в скрытых строках и столбцах"
+      ],
+      "Value": [
+        "Значение"
+      ],
+      "Vertical axis title": [
+        "Название вертикальной оси"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "Добавить другой диапазон"
+      ],
+      "Add another rule": [
+        "Добавить другое правило"
+      ],
+      "Add rule": [
+        "Добавить правило"
+      ],
+      "Apply to range": [
+        "Применить к диапазону"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Close": [
+        "Закрыть"
+      ],
+      "Color scale": [
+        "Цветовая шкала"
+      ],
+      "Conditional formatting": [
+        "Условное форматирование"
+      ],
+      "Delete range": [
+        "Удалить диапазон"
+      ],
+      "Delete rule": [
+        "Удалить правило"
+      ],
+      "Enter a formula": [
+        "Введите формулу"
+      ],
+      "Enter value": [
+        "Введите значение"
+      ],
+      "Format rules": [
+        "Правила форматирования"
+      ],
+      "Format style": [
+        "Стиль форматирования"
+      ],
+      "Max point": [
+        "Макс. точка"
+      ],
+      "Max value": [
+        "Макс. значение"
+      ],
+      "Mid point": [
+        "Промежуточная точка"
+      ],
+      "Min point": [
+        "Минимальная точка"
+      ],
+      "Min value": [
+        "Мин. значение"
+      ],
+      "None": [
+        "Нет"
+      ],
+      "Number": [
+        "Число"
+      ],
+      "Preview": [
+        "Предпросмотр"
+      ],
+      "Save": [
+        "Сохранить"
+      ],
+      "Select a range": [
+        "Выбрать диапазон"
+      ],
+      "Single color": [
+        "Один цвет"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "Применить"
+      ],
+      "Apply to create a custom currency": [
+        "Применить для создания собственной валюты"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Currency symbol": [
+        "Символ валюты"
+      ],
+      "Custom currencies": [
+        "Собственные валюты"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom number format dialog": {
+      "Apply": [
+        "Применить"
+      ],
+      "Apply to create a custom number format": [
+        "Применить для создания пользовательского числового формата"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Custom number format": [
+        "Пользовательский числовой формат"
+      ],
+      "Custom number formats": [
+        "Пользовательские числовые форматы"
+      ],
+      "Format": [
+        "Формат"
+      ],
+      "Negative": [
+        "Отрицательное"
+      ],
+      "Positive": [
+        "Положительное"
+      ],
+      "Sample": [
+        "Образец"
+      ],
+      "Text": [
+        "Текст"
+      ],
+      "Zero": [
+        "Ноль"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "Добавить еще один именованный диапазон"
+      ],
+      "Add another range": [
+        "Добавить еще один диапазон"
+      ],
+      "Add named range": [
+        "Добавить именованный диапазон"
+      ],
+      "Allow blanks": [
+        "Разрешить пустые значения"
+      ],
+      "Apply to range": [
+        "Применить к диапазону"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Data validation": [
+        "Проверка данных"
+      ],
+      "Delete data validation rule": [
+        "Удалить правило проверки данных"
+      ],
+      "Enter a formula": [
+        "Введите формулу"
+      ],
+      "Enter value": [
+        "Введите значение"
+      ],
+      "Formula": [
+        "Формула"
+      ],
+      "Save": [
+        "Сохранить"
+      ],
+      "Select a range": [
+        "Выбрать диапазон"
+      ],
+      "Validation rules": [
+        "Правила проверки"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "Закрыть"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "Добавить еще один именованный диапазон"
+      ],
+      "Add named range": [
+        "Добавить именованный диапазон"
+      ],
+      "Apply to range": [
+        "Применить к диапазону"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Delete named range": [
+        "Удалить именованный диапазон"
+      ],
+      "Enter a formula": [
+        "Введите формулу"
+      ],
+      "Enter text or formula": [
+        "Введите текст или формулу"
+      ],
+      "Name": [
+        "Имя"
+      ],
+      "Name should not contain spaces": [
+        "Имя не должно содержать пробелов"
+      ],
+      "Named Ranges": [
+        "Именованные диапазоны"
+      ],
+      "Range": [
+        "Диапазон"
+      ],
+      "Save": [
+        "Сохранить"
+      ],
+      "Text or formula": [
+        "Текст или формула"
+      ],
+      "Type": [
+        "Тип"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "Чередующиеся столбцы"
+      ],
+      "Banded rows": [
+        "Чередующиеся строки"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Edit table": [
+        "Изменить таблицу"
+      ],
+      "More settings": [
+        "Другие настройки"
+      ],
+      "Save": [
+        "Сохранить"
+      ],
+      "Select a range": [
+        "Выбрать диапазон"
+      ],
+      "Show filter button": [
+        "Показывать кнопку фильтра"
+      ],
+      "Table data range": [
+        "Диапазон данных таблицы"
+      ],
+      "Table title": [
+        "Название таблицы"
       ]
     }
   }

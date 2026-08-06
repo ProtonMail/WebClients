@@ -244,6 +244,12 @@
       ],
       "Superscript": [
         "Верхні індэкс"
+      ],
+      "Go to label": [
+        "Перайсці ў меткі"
+      ],
+      "Remove": [
+        "Выдаліць"
       ]
     },
     "color": {
@@ -474,6 +480,9 @@
       ],
       "Tried to import Sheet data into Lexical": [
         "Спроба імпартаваць даныя з табліцы ў Lexical"
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "У гэтай электроннай табліцы выяўлена лакальная неадпаведнасць сінхранізацыі. Рэдагаванне было адключана, каб прадухіліць страту даных. Спампуйте і ўключыце адладачныя звесткі ніжэй, калі вы не супраць падзяліцца змесцівам файла з нашай камандай для вывучэння праблемы."
       ]
     },
     "Error message": {
@@ -596,6 +605,9 @@
       ],
       "New": [
         "Новы"
+      ],
+      "Labels:": [
+        "Меткі:"
       ]
     },
     "Label": {
@@ -740,6 +752,9 @@
       ],
       "Explore the New Suggestion Mode": [
         "Даследуйце новы рэжым прапановы"
+      ],
+      "Outline": [
+        "Контур"
       ]
     },
     "Warning": {
@@ -1535,6 +1550,9 @@
       ],
       "Custom number": [
         "Карыстальніцкі лік"
+      ],
+      "Custom date and time": [
+        "Карыстальніцкія дата і час"
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
@@ -2171,6 +2189,15 @@
       ],
       "Format": [
         "Фармат"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Custom date and time formats": [
+        "Карыстальніцкія даныя і фарматы часу"
+      ],
+      "Sample": [
+        "Прыклад"
       ]
     },
     "sheets_2025:Spreadsheet custom date and time formats editor": {
@@ -2193,13 +2220,112 @@
         "Гадзіна без пачатковага нуля"
       ],
       "Minute with leading zero": [
-        "Хвіліна з пачатковы нулём"
+        "Хвіліна з пачатковым нулём"
       ],
       "Month": [
         "Месяц"
       ],
       "Precision to 1/1000 of a second": [
         "З дакладнасцю 1/1000 секунды"
+      ],
+      "AM/PM": [
+        "АМ/РМ"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Day": [
+        "Дзень"
+      ],
+      "Day as abbreviation": [
+        "Дзень як скарачэнне"
+      ],
+      "Day as full name": [
+        "Дзень як поўная назва"
+      ],
+      "Day with leading zero": [
+        "Дзень з пачатковым нулём"
+      ],
+      "Day without leading zero": [
+        "Дзень без пачатковага нуля"
+      ],
+      "Delete": [
+        "Выдаліць"
+      ],
+      "Elapsed hours": [
+        "Прайшло гадзін"
+      ],
+      "Elapsed hours with leading zero": [
+        "Прайшло гадзін з пачатковым нулём"
+      ],
+      "Elapsed hours without leading zero": [
+        "Прайшло гадзін без пачатковага нуля"
+      ],
+      "Elapsed minutes with leading zero": [
+        "Прайшло хвілін з пачатковым нулём"
+      ],
+      "Elapsed minutes without leading zero": [
+        "Прайшло хвілін без пачатковага нуля"
+      ],
+      "Elapsed seconds": [
+        "Прайшло секунд"
+      ],
+      "Elapsed seconds with leading zero": [
+        "Прайшло секунд з пачатковым нулём"
+      ],
+      "Elapsed seconds without leading zero": [
+        "Прайшло секунд без пачатковага нуля"
+      ],
+      "Hour": [
+        "Гадзіна"
+      ],
+      "Hour with leading zero": [
+        "Гадзін з пачатковым нулём"
+      ],
+      "Millisecond": [
+        "Мілісекунда"
+      ],
+      "Minute": [
+        "Хвіліна"
+      ],
+      "Minute without leading zero": [
+        "Хвіліна без пачатковага нуля"
+      ],
+      "Month as abbreviation": [
+        "Месяц як скарачэнне"
+      ],
+      "Month as full name": [
+        "Месяц як поўная назва"
+      ],
+      "Month with leading zero": [
+        "Месяц з пачатковым нулём"
+      ],
+      "Month without leading zero": [
+        "Месяц без пачатковага нуля"
+      ],
+      "Precision to 1/10 of a second": [
+        "З дакладнасцю 1/10 секунды"
+      ],
+      "Precision to 1/100 of a second": [
+        "З дакладнасцю 1/100 секунды"
+      ],
+      "Second": [
+        "Секунда"
+      ],
+      "Second with leading zero": [
+        "Секунда з пачатковым нулём"
+      ],
+      "Second without leading zero": [
+        "Секунда без пачатковага нуля"
+      ],
+      "Time": [
+        "Час"
+      ],
+      "Two digit year": [
+        "Фармат года 2 лічбы"
+      ],
+      "Year": [
+        "Год"
       ]
     },
     "sheets_2025:Spreadsheet sidebar custom number format dialog": {
@@ -2235,6 +2361,29 @@
       ],
       "Zero": [
         "Нуль"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Сярэдняе значэнне"
+      ],
+      "Count": [
+        "Колькасць"
+      ],
+      "Customize Status Bar": [
+        "Наладжванне панэлі стану"
+      ],
+      "Max": [
+        "Максімум"
+      ],
+      "Min": [
+        "Хв"
+      ],
+      "Numerical count": [
+        "Колькасць лікавых значэнняў"
+      ],
+      "Sum": [
+        "Сума"
       ]
     }
   }

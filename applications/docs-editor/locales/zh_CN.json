@@ -132,7 +132,7 @@
         "插入评论"
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert left": [
         "在左侧插入"
@@ -235,6 +235,18 @@
       ],
       "Superscript": [
         "上标"
+      ],
+      "Close outline": [
+        "关闭大纲"
+      ],
+      "Go to label": [
+        "转至标签"
+      ],
+      "Open outline": [
+        "打开大纲"
+      ],
+      "Remove": [
+        "移除"
       ]
     },
     "color": {
@@ -459,11 +471,14 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "无法转换 Word 文档。它是否受密码保护？如果受密码保护，请删除密码并重试。"
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "此电子表格检测到本地同步不一致。为避免数据丢失，编辑功能已被禁用。请提交报告，如果您愿意分享内容，请下载并附上下方的调试信息。"
       ]
     },
     "Error message": {
       "Please refresh the page or try again later.": [
-        "请刷新页面或稍后重试。"
+        "请刷新或稍后重试！"
       ],
       "Something went wrong": [
         "出错了"
@@ -569,6 +584,12 @@
       ],
       "New": [
         "新"
+      ],
+      "Labels:": [
+        "标签："
+      ],
+      "NEW": [
+        "新"
       ]
     },
     "Label": {
@@ -603,7 +624,7 @@
         "删除分割线"
       ],
       "Delete image": [
-        "删除图片"
+        "删除图像"
       ],
       "Delete link": [
         "移除链接"
@@ -636,7 +657,7 @@
         "插入分割线"
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert paragraph": [
         "插入段落"
@@ -1302,7 +1323,7 @@
         "函数"
       ],
       "Image": [
-        "图片"
+        "图像"
       ],
       "Insert cells and shift down": [
         "插入单元格并将现有单元格下移"
@@ -1468,6 +1489,12 @@
       ],
       "₹ Rupee": [
         "₹ 卢比"
+      ],
+      "Custom date and time": [
+        "自定义日期和时间"
+      ],
+      "Custom number": [
+        "自定义数字"
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
@@ -2100,6 +2127,9 @@
       ],
       "Language not supported": [
         "不支持的语言"
+      ],
+      "Outline": [
+        "大纲"
       ]
     },
     "Warning": {
@@ -2150,6 +2180,174 @@
       ],
       "Zero": [
         "零"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "应用"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Custom date and time formats": [
+        "自定义日期和时间格式"
+      ],
+      "Format": [
+        "格式"
+      ],
+      "Sample": [
+        "示例"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "上午/下午"
+      ],
+      "Date": [
+        "日期"
+      ],
+      "Day": [
+        "天"
+      ],
+      "Day as abbreviation": [
+        "星期几 (缩写)"
+      ],
+      "Day as full name": [
+        "星期几 (完整名称)"
+      ],
+      "Day with leading zero": [
+        "日期 (带前导零)"
+      ],
+      "Day without leading zero": [
+        "日期 (无前导零)"
+      ],
+      "Delete": [
+        "删除"
+      ],
+      "Duration": [
+        "时长"
+      ],
+      "Elapsed hours": [
+        "已用小时"
+      ],
+      "Elapsed hours with leading zero": [
+        "已用小时 (带前导零)"
+      ],
+      "Elapsed hours without leading zero": [
+        "已用小时 (无前导零)"
+      ],
+      "Elapsed minutes": [
+        "已用分钟"
+      ],
+      "Elapsed minutes with leading zero": [
+        "已用分钟 (带前导零)"
+      ],
+      "Elapsed minutes without leading zero": [
+        "已用分钟 (无前导零)"
+      ],
+      "Elapsed seconds": [
+        "已用秒"
+      ],
+      "Elapsed seconds with leading zero": [
+        "已用秒 (带前导零)"
+      ],
+      "Elapsed seconds without leading zero": [
+        "已用秒 (无前导零)"
+      ],
+      "First letter of the month": [
+        "月份首字母"
+      ],
+      "Full": [
+        "完整"
+      ],
+      "Full numeric year": [
+        "完整年份"
+      ],
+      "Hour": [
+        "小时"
+      ],
+      "Hour with leading zero": [
+        "小时 (带前导零)"
+      ],
+      "Hour without leading zero": [
+        "小时 (无前导零)"
+      ],
+      "Millisecond": [
+        "毫秒"
+      ],
+      "Minute": [
+        "分钟"
+      ],
+      "Minute with leading zero": [
+        "分钟 (带前导零)"
+      ],
+      "Minute without leading zero": [
+        "分钟 (无前导零)"
+      ],
+      "Month": [
+        "月"
+      ],
+      "Month as abbreviation": [
+        "月份 (缩写)"
+      ],
+      "Month as full name": [
+        "月份 (完整名称)"
+      ],
+      "Month with leading zero": [
+        "月份 (带前导零)"
+      ],
+      "Month without leading zero": [
+        "月份 (无前导零)"
+      ],
+      "Precision to 1/10 of a second": [
+        "精确到 1/10 秒"
+      ],
+      "Precision to 1/100 of a second": [
+        "精确到 1/100 秒"
+      ],
+      "Precision to 1/1000 of a second": [
+        "精确到 1/1000 秒"
+      ],
+      "Second": [
+        "秒"
+      ],
+      "Second with leading zero": [
+        "秒 (带前导零)"
+      ],
+      "Second without leading zero": [
+        "秒 (无前导零)"
+      ],
+      "Time": [
+        "时间"
+      ],
+      "Two digit year": [
+        "两位数年份"
+      ],
+      "Year": [
+        "年"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "均值"
+      ],
+      "Count": [
+        "计数"
+      ],
+      "Customize Status Bar": [
+        "自定义状态栏"
+      ],
+      "Max": [
+        "最大"
+      ],
+      "Min": [
+        "最小"
+      ],
+      "Numerical count": [
+        "数值计数"
+      ],
+      "Sum": [
+        "求和"
       ]
     }
   }
