@@ -1914,6 +1914,9 @@
       "Not a valid number": [
         "Não é um número válido"
       ],
+      "Organization key is not decrypted": [
+        "A chave de organização não está descriptografada"
+      ],
       "Passwords do not match": [
         "As senhas não correspondem"
       ],
@@ -2379,9 +2382,6 @@
       "Failed to update meeting schedule": [
         "Não foi possível atualizar o agendamento da reunião"
       ],
-      "Failed to update meeting waiting room status": [
-        "Falha ao atualizar o status da sala de espera da reunião"
-      ],
       "Free meeting": [
         "Reunião gratuita"
       ],
@@ -2426,9 +2426,6 @@
       ],
       "Joined ${ roomNameLabel }": [
         "Entrou em ${ roomNameLabel }"
-      ],
-      "Joined at ${ receivedTime }": [
-        "Entrou às ${ receivedTime }"
       ],
       "Learn more": [
         "Saiba mais"
@@ -3290,6 +3287,20 @@
       ],
       "Video quality was poor": [
         "A qualidade do vídeo está ruim"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "A chave da organização não existe."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permissão negada. Os privilégios de administrador foram restringidos."
+      ],
+      "The organization key must be activated first.": [
+        "A chave da organização deve ser ativada primeiro."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Você precisa ter acesso à chave da organização para realizar esta operação."
       ]
     },
     "Placeholder": {

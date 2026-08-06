@@ -1893,6 +1893,9 @@
       "Not a valid number": [
         "Номер недействителен"
       ],
+      "Organization key is not decrypted": [
+        "Ключ организации не расшифрован"
+      ],
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
@@ -3226,6 +3229,20 @@
       ],
       "Video quality was poor": [
         "Качество видео было плохим"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Ключ организации не существует."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Отказано в доступе, права администратора ограничены."
+      ],
+      "The organization key must be activated first.": [
+        "Сначала должен быть активирован ключ организации."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Для выполнения этой операции вам необходим доступ к ключу организации."
       ]
     },
     "Placeholder": {

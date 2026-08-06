@@ -1887,6 +1887,9 @@
       "Not a valid number": [
         "No es un número válido."
       ],
+      "Organization key is not decrypted": [
+        "La clave de la organización no está descifrada."
+      ],
       "Passwords do not match": [
         "Las contraseñas no coinciden."
       ],
@@ -3202,6 +3205,20 @@
       ],
       "Video quality was poor": [
         "La calidad del vídeo era baja"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "La clave de la organización no existe."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "El permiso ha sido denegado. Los privilegios de administrador se han limitado."
+      ],
+      "The organization key must be activated first.": [
+        "La clave de la organización debe activarse primero."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Necesitas acceso a la clave de la organización para realizar esta acción."
       ]
     },
     "Placeholder": {
