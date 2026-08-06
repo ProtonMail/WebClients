@@ -136,6 +136,30 @@ describe('buildArtifactRegistry', () => {
         expect(registry['letter-1']!.versions[1]!.content).toBe('Dear landlord, revised.');
     });
 
+    it('collapses multiple tool calls for the same id within one message into a single version', () => {
+        const makeArgs = (title: string) => ({ id: 'letter-1', type: 'document', title, content: 'Dear landlord,' });
+        const toolCallBlock = (args: ReturnType<typeof makeArgs>, callId: string) => ({
+            type: 'tool_call' as const,
+            content: JSON.stringify({ id: callId, name: CREATE_ARTIFACT_TOOL_NAME, arguments: args }),
+            toolCall: { id: callId, name: CREATE_ARTIFACT_TOOL_NAME, arguments: args },
+        });
+        const chain: Message[] = [
+            makeMessage({
+                content: '',
+                blocks: [
+                    toolCallBlock(makeArgs('First Attempt'), 'call_1'),
+                    toolCallBlock(makeArgs('First Attempt'), 'call_2'),
+                    toolCallBlock(makeArgs('Final Title'), 'call_3'),
+                ],
+            }),
+        ];
+
+        const registry = buildArtifactRegistry(chain);
+
+        expect(registry['letter-1']!.versions).toHaveLength(1);
+        expect(registry['letter-1']!.title).toBe('Final Title');
+    });
+
     it('maps a message id to its artifact version index', () => {
         const first = makeMessage({
             content: '<artifact id="poem" type="document" title="Poem">Roses are red</artifact>',

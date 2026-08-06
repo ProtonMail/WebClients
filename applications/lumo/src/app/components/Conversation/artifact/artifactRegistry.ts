@@ -31,8 +31,12 @@ function getTagArtifacts(message: Message): ParsedArtifact[] {
 }
 
 // Current path: artifacts created via the create_artifact tool call, carried in message.blocks.
+// Keyed by id: a single message can call create_artifact more than once for the same id (e.g. the
+// model retrying/self-correcting within one reply) — that should collapse to one version for this
+// message, not one version per call, or the panel's version history would show phantom
+// intermediate attempts the user never actually saw settle.
 function getToolCallArtifacts(message: Message): ParsedArtifact[] {
-    const artifacts: ParsedArtifact[] = [];
+    const artifacts = new Map<string, ParsedArtifact>();
     for (const block of getMessageBlocks(message)) {
         if (block.type !== 'tool_call') {
             continue;
@@ -43,10 +47,10 @@ function getToolCallArtifacts(message: Message): ParsedArtifact[] {
         }
         const artifact = parseCompleteArtifactToolCall(parsed.arguments as Record<string, unknown>);
         if (artifact) {
-            artifacts.push(artifact);
+            artifacts.set(artifact.id, artifact);
         }
     }
-    return artifacts;
+    return Array.from(artifacts.values());
 }
 
 function getParsedArtifacts(message: Message): ParsedArtifact[] {

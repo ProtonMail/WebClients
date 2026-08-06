@@ -20,7 +20,15 @@ interface ArtifactContextValue {
     // In-progress artifact being streamed — renders as plain text preview
     streamingArtifact: StreamingArtifact | null;
     setStreamingArtifact: (artifact: StreamingArtifact | null) => void;
-    // True when either artifact is present (controls panel visibility)
+    // A create_artifact tool call that has fully parsed (real title/type/content available)
+    // but whose message hasn't finished generating yet, so it isn't in `registry` yet either.
+    // Lets the panel/chip show and open real content immediately instead of waiting for the
+    // message to finish, without needing a version index from the (not-yet-updated) registry.
+    pendingArtifact: ParsedArtifact | null;
+    setPendingArtifact: (artifact: ParsedArtifact | null) => void;
+    // Focuses the panel on `pendingArtifact` even if a different artifact is currently selected.
+    openPendingArtifact: () => void;
+    // True when any artifact is present (controls panel visibility)
     isPanelOpen: boolean;
     closePanel: () => void;
 }
@@ -38,8 +46,13 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
     const [selectedId, setSelectedId] = useState<string | null>(null);
     const [selectedVersionIndex, setSelectedVersionIndex] = useState(0);
     const [streamingArtifact, setStreamingArtifact] = useState<StreamingArtifact | null>(null);
+    const [pendingArtifact, setPendingArtifact] = useState<ParsedArtifact | null>(null);
     const [seenVersionKeys, setSeenVersionKeys] = useState<Set<string>>(new Set());
     const prevVersionCountsRef = useRef<Record<string, number>>({});
+
+    const openPendingArtifact = useCallback(() => {
+        setSelectedId(null);
+    }, []);
 
     const markSeen = useCallback((id: string, versionIndex: number) => {
         const key = `${id}:${versionIndex}`;
@@ -57,6 +70,7 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
         setSelectedId(null);
         setSelectedVersionIndex(0);
         setStreamingArtifact(null);
+        setPendingArtifact(null);
     }, []);
 
     // Reset all state when navigating to a different conversation
@@ -162,7 +176,10 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
                 hasUnseenRevision,
                 streamingArtifact,
                 setStreamingArtifact,
-                isPanelOpen: selectedArtifact !== null || streamingArtifact !== null,
+                pendingArtifact,
+                setPendingArtifact,
+                openPendingArtifact,
+                isPanelOpen: selectedArtifact !== null || streamingArtifact !== null || pendingArtifact !== null,
                 closePanel,
             }}
         >
