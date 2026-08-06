@@ -27,16 +27,16 @@ import { getCountQueryParams } from './countHelpers';
 
 const name = 'conversationCounts' as const;
 
-interface State extends MailSettingState, OrganizationState {
+export interface ConversationCountsState extends MailSettingState, OrganizationState {
     [name]: ModelState<LabelCount[]>;
 }
 
-type SliceState = State[typeof name];
+type SliceState = ConversationCountsState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectConversationCounts = (state: State) => state[name];
+export const selectConversationCounts = (state: ConversationCountsState) => state[name];
 
-const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${name}/fetch`, {
+const modelThunk = createAsyncModelThunk<Model, ConversationCountsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {
         const [mailSettings, organization] = await Promise.all([
             dispatch(mailSettingsThunk()),
