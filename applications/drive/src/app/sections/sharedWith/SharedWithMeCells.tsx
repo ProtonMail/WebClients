@@ -5,10 +5,14 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Badge, type Breakpoints, useContactEmailsCache } from '@proton/components';
 import type { ConfirmActionModalProps } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
-import { NodeType } from '@proton/drive';
+import { MemberRole, NodeType, getDrivePerNodeType } from '@proton/drive';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
 
 import { NameCell, defaultNameCellConfig } from '../../sections/commonDriveExplorerCells/NameCell';
+import {
+    ShareOptionsCell,
+    defaultShareOptionsCellConfig,
+} from '../../sections/commonDriveExplorerCells/ShareOptionsCell';
 import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
 import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
@@ -17,6 +21,16 @@ import { SharedByCell, defaultSharedByCellConfig } from './driveExplorerCells/Sh
 import { SharedOnCell, defaultSharedOnCellConfig } from './driveExplorerCells/SharedOnCell';
 import { useInvitationsActions } from './hooks/useInvitationsActions';
 import { ItemType, useSharedWithMeStore } from './useSharedWithMe.store';
+
+const ShareOptionsCellComponent = ({ uid }: { uid: string }) => {
+    const item = useSharedWithMeStore(useShallow((state) => state.getSharedWithMeItem(uid)));
+
+    if (!item || item.itemType !== ItemType.DIRECT_SHARE || item.role !== MemberRole.Admin) {
+        return null;
+    }
+
+    return <ShareOptionsCell nodeUid={item.nodeUid} drive={getDrivePerNodeType(item.type)} />;
+};
 
 export const getSharedWithMeCells = ({
     viewportWidth,
@@ -128,6 +142,11 @@ export const getSharedWithMeCells = ({
             };
             return <RenderedSharedOnCell />;
         },
+    },
+    {
+        ...defaultShareOptionsCellConfig,
+        disabled: !viewportWidth['>=large'],
+        render: (uid) => <ShareOptionsCellComponent uid={uid} />,
     },
 ];
 

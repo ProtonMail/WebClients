@@ -2,20 +2,18 @@ import { useShallow } from 'zustand/react/shallow';
 
 import type { Breakpoints } from '@proton/components';
 import { MemberRole, getDrive } from '@proton/drive';
-import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
 
-import { ShareIcon } from '../../legacy/components/sections/FileBrowser/ShareIcon';
 import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
 import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
 import { DateCell } from '../commonDriveExplorerCells/DateCell';
 import { NameCell, defaultNameCellConfig } from '../commonDriveExplorerCells/NameCell';
+import { ShareOptionsCell, defaultShareOptionsCellConfig } from '../commonDriveExplorerCells/ShareOptionsCell';
 import { SizeCell, defaultSizeCellConfig } from '../commonDriveExplorerCells/SizeCell';
 import { defaultModifiedTimeCellConfig } from '../commonDriveExplorerCells/modifiedTimeCellConfig';
 import { useFolderStore } from './useFolder.store';
 
-// Hoisted so its identity is stable across cell's re-renders.
 const ShareOptionsCellComponent = ({ uid }: { uid: string }) => {
     const { isShared, trashed, volumeId, linkId, role } = useFolderStore(
         useShallow((state) => {
@@ -29,24 +27,12 @@ const ShareOptionsCellComponent = ({ uid }: { uid: string }) => {
             };
         })
     );
-    const isAdmin = role === MemberRole.Admin;
-    const { sharingModal, showSharingModal } = useSharingModal();
 
-    if (!isShared || !volumeId || !linkId) {
+    if (!isShared || !volumeId || !linkId || trashed || role !== MemberRole.Admin) {
         return null;
     }
 
-    return (
-        <>
-            <ShareIcon
-                trashed={trashed}
-                isAdmin={isAdmin}
-                // For folder section so we can force getDrive
-                onClick={() => showSharingModal({ nodeUid: uid, drive: getDrive() })}
-            />
-            {sharingModal}
-        </>
-    );
+    return <ShareOptionsCell nodeUid={uid} drive={getDrive()} />;
 };
 
 export const getFolderCells = ({
@@ -115,10 +101,7 @@ export const getFolderCells = ({
         },
     },
     {
-        id: 'share-options',
-        className:
-            'file-browser-list--icon-column file-browser-list--context-menu-column flex items-center relative z-up',
-        testId: 'column-share-options',
+        ...defaultShareOptionsCellConfig,
         disabled: !viewportWidth['>=large'],
         render: (uid) => <ShareOptionsCellComponent uid={uid} />,
     },
