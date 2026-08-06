@@ -18,6 +18,7 @@ import {
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 type RecategorizeSource = 'drag_and_drop' | 'context_menu' | 'move_to_folder';
@@ -33,7 +34,11 @@ export const useCategoriesTelemetry = () => {
     const store = baseUseStore<CategoriesViewState>();
 
     return useMemo(() => {
-        const sendReport = async (event: TelemetryEvents, dimensions?: Record<string, string>, values?: any) => {
+        const sendReport = async (
+            event: TelemetryEvents,
+            dimensions?: Record<string, string>,
+            values?: SimpleMap<number>
+        ) => {
             const [user, subscription, userSettings] = await Promise.all([
                 getUser(),
                 getSubscription(),
@@ -82,7 +87,13 @@ export const useCategoriesTelemetry = () => {
             isCategoryUnseen?: boolean
         ) => {
             const { count } = selectCategoryUnreadCount(store.getState(), categoryId);
-            const mailSettings = await getMailSettings();
+            let mailSettings;
+            try {
+                mailSettings = await getMailSettings();
+            } catch (e) {
+                traceInitiativeError(SentryMailInitiatives.CATEGORIES_VIEW, e);
+                return;
+            }
 
             const isUnseen = isCategoryUnseen === undefined ? 'n/a' : String(isCategoryUnseen);
 
