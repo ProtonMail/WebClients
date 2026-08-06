@@ -1,4 +1,5 @@
 import { CREATE_ARTIFACT_TOOL_NAME } from '../components/Conversation/artifact/createArtifactTool';
+import type { ArtifactToolMode } from '../components/Conversation/helper';
 import { type ConversationContext, formatPersonalization } from '../components/Conversation/helper';
 import { decryptString } from '../crypto';
 import type { AesGcmCryptoKey } from '../crypto/types';
@@ -105,16 +106,16 @@ function attachmentToWireImage(attachment: Attachment): WireImage {
     };
 }
 
-// A short standing directive — NOT the tag-format spec that used to live here (the tool's own
-// JSON schema in createArtifactTool.ts already covers format, id/title conventions, and when to
-// use it). Models are conservative about *proactively* reaching for a tool unless the system
-// prompt actively pushes them to; in practice the tool's `description` field alone wasn't enough
-// for requests that don't explicitly ask for a separate panel or mention the tool by name.
-// Observed failure mode worth naming explicitly: the model's own visible reasoning on a plain
-// "write me an email to my landlord..." request concluded "I don't need any tools for this — it's
-// a writing task", treating "writing task" and "tool-worthy task" as mutually exclusive. The nudge
-// below exists specifically to break that false dichotomy.
-const ARTIFACT_TOOL_NUDGE = `You have a "${CREATE_ARTIFACT_TOOL_NAME}" tool for showing substantial, standalone content in a dedicated side panel instead of inline — see its description for exactly when it applies. This includes ordinary writing tasks (an email, letter, essay, report), not only code: do not reason that a request is "just writing" or "doesn't need tools" as a basis for skipping it — the only question is whether the CONTENT qualifies. Proactively call it whenever it does, even if the user never said "artifact," "panel," or the tool's name, and only asked you to write or draft something.`;
+// The user explicitly opted in this turn (clicked "Create artifact" in the composer), so there's
+// no need to convince the model the content "qualifies" — just tell it what to do.
+const ARTIFACT_TOOL_CREATE_NUDGE = `The user has activated Create Artifact mode for this message. Produce your response using the "${CREATE_ARTIFACT_TOOL_NAME}" tool (see its description for format and when it applies) — either creating a new artifact or revising one already in this conversation, whichever the request calls for.`;
+
+// Mode isn't active, but an artifact already exists in this conversation — the tool stays
+// available so ordinary follow-ups (including the artifact panel's own selection-based inline-edit
+// requests) can revise it without the user re-entering the mode. Explicitly scoped to revision only:
+// without this, the model could reach for the tool to spawn a second, unrelated artifact on its own
+// initiative, which defeats the point of gating creation behind an explicit user action.
+const ARTIFACT_TOOL_REVISE_NUDGE = `The "${CREATE_ARTIFACT_TOOL_NAME}" tool is available in this conversation only to revise an artifact already created earlier (reuse its exact "id"). Do not use it to create a new, unrelated artifact — if the user wants a genuinely new one, they need to activate Create Artifact mode again.`;
 
 /**
  * Determine which image attachments should be sent to the backend, keeping only the
@@ -150,7 +151,8 @@ export function prepareTurns(
     memories?: string,
     agentInstructions?: string,
     includeVisualizationInstructions = false,
-    isFromQueryParam = false
+    isFromQueryParam = false,
+    artifactToolMode: ArtifactToolMode = 'off'
 ): Turn[] {
     // Step 0: Apply any context-compaction boundary. Summarized messages are
     // replaced by a single summary turn and dropped from the chain, so the model
@@ -232,12 +234,15 @@ export function prepareTurns(
     // via proper attachment turns created in Step 1 above (expandAttachmentsIntoTurns), which emit
     // user-role turns with the file content in the `content` field that the API does read.
 
-    // Step 4a: Always inject the artifact-tool nudge as its own leading system turn
-    const artifactToolTurn: TurnInProgress = {
-        role: Role.System,
-        content: ARTIFACT_TOOL_NUDGE,
-    };
-    turns = [artifactToolTurn, ...turns];
+    // Step 4a: Inject an artifact-tool nudge as a leading system turn, only when the tool is
+    // actually registered for this request (see `resolveArtifactToolMode`) — no tool, no nudge.
+    if (artifactToolMode !== 'off') {
+        const artifactToolTurn: TurnInProgress = {
+            role: Role.System,
+            content: artifactToolMode === 'create' ? ARTIFACT_TOOL_CREATE_NUDGE : ARTIFACT_TOOL_REVISE_NUDGE,
+        };
+        turns = [artifactToolTurn, ...turns];
+    }
 
     // Step 4b: Add personalization, memories and project instructions to the last user message
     // These are per-request instructions that should apply to the current question
