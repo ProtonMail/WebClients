@@ -1126,6 +1126,7 @@ export interface ActionParams {
     retryStrategy?: RetryStrategy;
     customRetryInstructions?: string;
     imageOptions?: ImageGenerationOptions;
+    artifactModeActive?: boolean;
 }
 
 export interface ErrorContext {

@@ -12,6 +12,54 @@ describe('llm encryption configuration', () => {
     });
 });
 
+describe('prepareTurns — artifact tool nudge', () => {
+    const personalization = {} as PersonalizationSettings;
+    const message = {
+        id: 'msg-1',
+        role: Role.User,
+        content: 'hello',
+        conversationId: 'conv-1',
+    } as unknown as Message;
+
+    it('injects no nudge turn when artifactToolMode is "off" (the default)', () => {
+        const turns = prepareTurns([message], personalization);
+        expect(turns.some((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'))).toBe(
+            false
+        );
+    });
+
+    it('injects the create-mode nudge when artifactToolMode is "create"', () => {
+        const turns = prepareTurns(
+            [message],
+            personalization,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            false,
+            'create'
+        );
+        const nudge = turns.find((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'));
+        expect(nudge?.content).toContain('activated Create Artifact mode');
+    });
+
+    it('injects the revise-only nudge when artifactToolMode is "revise"', () => {
+        const turns = prepareTurns(
+            [message],
+            personalization,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            false,
+            'revise'
+        );
+        const nudge = turns.find((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'));
+        expect(nudge?.content).toContain('only to revise');
+        expect(nudge?.content).not.toContain('activated Create Artifact mode');
+    });
+});
+
 describe('prepareTurns — attachment content blocks', () => {
     const personalization = {} as PersonalizationSettings;
 
