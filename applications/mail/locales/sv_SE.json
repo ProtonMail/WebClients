@@ -5541,6 +5541,66 @@
       ],
       "Something went wrong": [
         "Något gick fel"
+      ],
+      "Cannot download a folder": [
+        "Kan inte ladda ner en mapp"
+      ],
+      "Cannot share root folder": [
+        "Kan inte dela rotmapp"
+      ],
+      "Could not find an available name": [
+        "Kunde inte hitta ett tillgängligt namn"
+      ],
+      "Could not unlock the parent folder": [
+        "Kunde inte låsa upp den överordnade mappen"
+      ],
+      "Could not unlock this item": [
+        "Kunde inte låsa upp detta objekt"
+      ],
+      "Device not found": [
+        "Enhet hittades inte"
+      ],
+      "Failed to verify invitation": [
+        "Misslyckades med att verifiera inbjudan"
+      ],
+      "File has no revision": [
+        "Fil har ingen version"
+      ],
+      "Invitation not found": [
+        "Inbjudan hittades inte"
+      ],
+      "Item not found": [
+        "Objekt hittades inte"
+      ],
+      "Name must not be empty": [
+        "Namn får inte vara tomt"
+      ],
+      "Photo is already in the target album": [
+        "Foto är redan i målalbum"
+      ],
+      "Photo not found": [
+        "Foto hittades inte"
+      ],
+      "Signature is missing": [
+        "Signatur saknas"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturverifiering för ${ signatureType } misslyckades"
+      ],
+      "Some items could not be loaded": [
+        "Några objekt kunde inte laddas"
+      ],
+      "This item is not shared": [
+        "Detta objekt är inte delat"
+      ],
+      "Verification keys are not available": [
+        "Verifieringsnycklar är inte tillgängliga"
+      ],
+      "You do not have access to this item": [
+        "Du har inte åtkomst till detta objekt"
+      ],
+      "You do not have access to this shared item": [
+        "Du har inte åtkomst till detta delade objekt"
       ]
     },
     "error": {
@@ -15448,6 +15508,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Size": [
+        "Storlek"
       ]
     },
     "TableHeader": {
@@ -17308,6 +17371,28 @@
       ],
       "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
         "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attribut"
+      ],
+      "key": [
+        "nyckel"
+      ],
+      "membership": [
+        "medlemskap"
+      ],
+      "name": [
+        "namn"
       ]
     }
   }
