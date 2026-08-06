@@ -6,7 +6,7 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타날 것입니다."
+        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타납니다."
       ],
       "Mail forward stopped": [
         "메일 전달 중단됨"
@@ -1019,6 +1019,39 @@
       ],
       "Verify now": [
         "지금 인증"
+      ],
+      "Clear conversation": [
+        "대화 삭제"
+      ],
+      "Download debug information": [
+        "디버그 정보 다운로드"
+      ],
+      "Export editor state for version": [
+        "이 버전의 에디터 상태 내보내기"
+      ],
+      "Export this version (as docx)": [
+        "이 버전 내보내기(docx 형식)"
+      ],
+      "Export YJS state for version": [
+        "이 버전의 YJS 상태 내보내기"
+      ],
+      "Reject": [
+        "거절"
+      ],
+      "Reload spreadsheet": [
+        "스프레드시트 새로고침"
+      ],
+      "Report issue": [
+        "문제 보고"
+      ],
+      "Send": [
+        "보내기"
+      ],
+      "Stop": [
+        "중지"
+      ],
+      "Try Workspace": [
+        "Workspace 체험하기"
       ]
     },
     "Action subscription": {
@@ -1100,6 +1133,24 @@
       ],
       "Writing assistant seats": [
         "글쓰기 도우미 이용 권한"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미 (${ quantity }명 사용자용)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 어시스턴트"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI 어시스턴트 (${ quantity }명 사용자용)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 (${ quantity }명 사용자용)"
+      ],
+      "${ price } per seat": [
+        "사용자당 ${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "사용자 지정 도메인 ${ quantity }개"
       ]
     },
     "Alert": {
@@ -1118,6 +1169,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "이메일 생산성을 한 단계 더 높은 경지로. ${ LUMO_SHORT_APP_NAME }가 이메일의 작성과 답장, 교정에 도움을 드립니다."
       ]
     },
     "Attached ics file error": {
@@ -1347,6 +1401,12 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "모든 기기의 로그인 항목을 보호하세요. 무제한 hide-my-email 별칭 공유, 통합된 2단계 인증기, ${ DARK_WEB_MONITORING_NAME } 등 기능이 포함되어 있습니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
       ]
     },
     "Billing cycle": {
@@ -1483,6 +1543,9 @@
       ],
       "Maybe later": [
         "나중에"
+      ],
+      "Get 50% offer": [
+        "50% 할인 받기"
       ]
     },
     "Cancellation upsell": {
@@ -2727,16 +2790,19 @@
         "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
+        "Gmail에서 회원님의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "이제 이 주소를 이용해 ${ BRAND_NAME }로부터 이메일을 보낼 수 있습니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
+        "${ MAIL_APP_NAME } 무료 계정의 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+        "${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "회원님의 팀이 ${ BRAND_NAME }으로 원활하게 온보딩할 수 있도록 Google, Outlook 등에서 데이터를 불러오기 하세요"
       ]
     },
     "description": {
@@ -3581,6 +3647,45 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "현재 플랜에서 추가 가능한 모든 사용자를 추가했습니다. 새 사용자를 추가하려면 플랜을 업그레이드해 주세요."
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length }개 항목 이동 실패"
+      ],
+      "Failed to load 'My files' folder": [
+        "'내 파일' 폴더를 불러오지 못했습니다"
+      ],
+      "Failed to load recent documents": [
+        "최근 문서를 불러오지 못했습니다"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
+      ],
+      "Failed to rename document": [
+        "문서 이름 변경 실패"
+      ],
+      "Failed to trash document": [
+        "문서 휴지통 이동에 실패했습니다"
+      ],
+      "Invalid URL": [
+        "유효하지 않은 URL"
+      ],
+      "No drive found to import": [
+        "불러올 드라이브가 없습니다"
+      ],
+      "Some documents could not be loaded": [
+        "일부 문서를 불러올 수 없습니다."
+      ],
+      "Some trashed documents could not be loaded": [
+        "휴지통에 있는 일부 문서를 불러올 수 없습니다"
+      ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
+      ],
+      "Unexpected error, we can't import the files": [
+        "예상치 못한 오류가 발생하여, 파일을 가져올 수 없습니다."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "해당 방법으로 인증 코드를 전송할 수 없습니다."
       ]
     },
     "Error importing calendar": {
@@ -3833,7 +3938,7 @@
         "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
+        "답장이 전송되었습니다, 이벤트가 사용자의 캘린더에서 업데이트되지 않을 수 있습니다"
       ]
     },
     "Event title": {
@@ -3998,6 +4103,9 @@
       ],
       "Security key": [
         "보안 키"
+      ],
+      "Touch your security key.": [
+        "보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -5630,7 +5738,7 @@
         "클립보드로 복사함"
       ],
       "Copy your referral link": [
-        "당신의 추천인 링크를 공유하세요"
+        "나의 추천인 링크를 공유하세요"
       ],
       "Create an end-to-end encrypted document.": [
         "종단간 암호화 문서를 생성하세요."
@@ -6045,6 +6153,84 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "언제든지 업그레이드하거나 공간을 비워 남은 메일을 모두 가져오세요"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "145개국의 20,000개 이상 서버에 접근"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount }명의 구성원을 위한 보안 클라우드 만들기"
+      ],
+      "Details": [
+        "세부 사항"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "비밀번호가 기억 나시나요? ${ verifyButton }"
+      ],
+      "Enter code": [
+        "코드 입력"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "최대 10 Gbps의 빠른 VPN 속도"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "파일 전용 (사진 불가, ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME }) - 최대 총 100 GB, 100,000개 파일 및 파일 당 50 GB)"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "${ BRAND_NAME } Workspace를 통해 사용자당 1 TB의 안전한 저장공간, 프로페셔널한 @your-company.com 이메일, 더 긴 영상 통화 등을 이용해 보세요."
+      ],
+      "Have some more time to decide without interruption.": [
+        "방해받지 않고 결정할 수 있는 시간이 더 있으니 천천히 결정하세요."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "문제를 보고하여 서비스 개선에 도움을 주세요. 스프레드시트 콘텐츠를 공유해도 괜찮으시다면, 아래의 디버그 정보를 보고서에 첨부해 주세요."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "회원님이 겪으신 문제를 제보하여 Proton을 도와주세요. 아래 리포트에서 디버그 정보를 첨부해 주세요."
+      ],
+      "Hide table of contents": [
+        "목차 숨기기"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "지금 취소하면 ${ expiryDate }부로 ${ BRAND_NAME } ${ planTitle }에 접근할 수 없으며, 다음 기능이 제한됩니다:"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "이런! 이 스프레드시트에 사용자의 최신 편집 내용을 저장할 수 없어, 작업 내용을 잃지 않도록 편집을 일시정지했습니다."
+      ],
+      "Password verified": [
+        "비밀번호 확인 완료"
+      ],
+      "Please select the labels you would like to import:": [
+        "불러올 라벨을 선택해 주십시오:"
+      ],
+      "Premium privacy protection across all your devices": [
+        "모든 기기에 걸친 프리미엄 프라이버시 보호"
+      ],
+      "Show table of contents": [
+        "목차 보기"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "현재 플랜을 유지허고 다음 달에는 50% 할인 받으세요"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "비밀번호를 기억하실 수 있도록 주기적으로 비밀번호 입력을 요청드립니다. 시간이 지날수록 요청 빈도는 줄어듭니다."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "이 연락처로부터 오는 새 메시지를 인증하려면 \"${ activeSignerText }\" 키를 신뢰하세요."
+      ],
+      "We'll remind you to verify your password again later": [
+        "회원님의 비밀번호를 나중에 다시 확인하도록 알려드립니다."
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "문서 여는 중 기존에 발생했던 문제가 감지되었습니다."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "현재 ${ organizationName }에 소속된 ${ username }(으)로 로그인 했습니다."
       ]
     },
     "info": {
@@ -6135,6 +6321,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "활성 서명자"
+      ],
+      "Fallback": [
+        "대체용"
       ]
     },
     "Label": {
@@ -6721,10 +6913,46 @@
         "비밀번호 요구"
       ],
       "Set a password to limit access via link": [
-        "링크로 접근을 제한하도록 비밀번호를 설정하세요"
+        "비밀번호를 설정하여 링크를 통한 접근 제한"
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength }자"
+      ],
+      "Allow editors to change permissions and share.": [
+        "편집자가 권한을 변경하거나 공유하도록 허용합니다."
+      ],
+      "Client": [
+        "클라이언트"
+      ],
+      "Client version": [
+        "클라이언트 버전"
+      ],
+      "Drive": [
+        "드라이브"
+      ],
+      "Exact host matching": [
+        "정확한 호스트 일치"
+      ],
+      "Exact URL matching": [
+        "정확한 URL 일치"
+      ],
+      "Never fill on this exact URL": [
+        "이 정확한 URL에서 자동완성 사용 안 함"
+      ],
+      "Parent domain and subdomains (default)": [
+        "상위 도메인 및 하위 도메인(기본값)"
+      ],
+      "Regular expression": [
+        "정규식"
+      ],
+      "Starts with": [
+        "다음으로 시작"
+      ],
+      "Unknown user": [
+        "알 수 없는 사용자"
+      ],
+      "URL wildcard pattern": [
+        "URL 와일드카드 패턴"
       ]
     },
     "Label for contact group color": {
@@ -6961,6 +7189,9 @@
       ],
       "Add-on with free trial": [
         "무료 체험 애드온"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ]
     },
     "mailtrial2024: Action": {
@@ -6995,6 +7226,24 @@
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "무료 체험이 종료되었습니다. ${ nonAutoRenewalAction }"
+      ],
+      "'Starts with' matching rule": [
+        "'다음으로 시작' 일치 규칙"
+      ],
+      "Exact (sub) domain matching rule": [
+        "정확한 (하위) 도메인 일치 규칙"
+      ],
+      "Exact URL matching rule": [
+        "정확한 URL 일치 규칙"
+      ],
+      "Never fill with this exact URL": [
+        "이 정확한 URL에서는 자동완성 안 함"
+      ],
+      "Regular expression rule": [
+        "정규식 규칙"
+      ],
+      "Wildcard pattern matching rule": [
+        "와일드카드 패턴 일치 규칙"
       ]
     },
     "Message display when a new app version is available": {
@@ -7432,7 +7681,7 @@
         "중앙집중화된 결제"
       ],
       "Collaborate and share large files": [
-        "큰 파일을 공동으로 작업하고 공유하세요"
+        "큰 파일을 공동으로 작업하고 공유하기"
       ],
       "Contact groups": [
         "연락처 그룹"
@@ -7775,6 +8024,24 @@
       ],
       "Appointment scheduling": [
         "일정 예약"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "Access all countries": [
+        "모든 국가로 접근"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n }개의 예약 페이지를 통한 일정 예약"
+      ],
+      "Dedicated servers optimized for speed": [
+        "속도에 최적화된 전용 서버"
+      ],
+      "No streaming support": [
+        "스트리밍 서비스 지원 안 됨"
+      ],
+      "Unlock streaming": [
+        "스트리밍 서비스 차단 해제"
       ]
     },
     "new_plans: feature highlight": {
@@ -8168,10 +8435,10 @@
         "자동 연결"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
-        "사용자 당 ${ bundleStorage }으로 저장 공간을 부스트 하세요."
+        "사용자 당 ${ bundleStorage }(으)로 저장 공간 확장하기"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "최종 ${ bundleStorage }으로 저장 공간을 부스트 하세요"
+        "최종 ${ bundleStorage }(으)로 저장 공간을 부스트하기"
       ],
       "Browser extension": [
         "브라우저 확장 프로그램"
@@ -8459,6 +8726,48 @@
       ],
       "Setting updated. Editors can't change permissions or share.": [
         "설정이 업데이트되었습니다. 편집자는 권한이나 공유 사항을 변경할 수 없습니다."
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\"이(가) 성공적으로 생성되었습니다"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\"을(를) 생성할 수 없습니다"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" 항목이 이동되었습니다"
+      ],
+      "\"Document deleted permanently": [
+        "\"문서가 영구적으로 삭제되었습니다"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems }개 항목 이동"
+      ],
+      "Document moved to trash": [
+        "문서가 휴지통으로 이동되었습니다"
+      ],
+      "Document restored from trash": [
+        "문서가 휴지통에서 복원되었습니다"
+      ],
+      "Failed to delete document": [
+        "문서 삭제에 실패하였습니다."
+      ],
+      "Failed to load invitations": [
+        "초대 정보를 불러오지 못했습니다"
+      ],
+      "Failed to load sharing details": [
+        "공유 상세 정보를 불러올 수 없음"
+      ],
+      "Failed to reject invitation": [
+        "초대장 거절 실패"
+      ],
+      "Failed to rename document": [
+        "문서 이름 변경 실패"
+      ],
+      "Failed to restore document": [
+        "문서 복구에 실패했습니다"
+      ],
+      "Failed to trash document": [
+        "문서 휴지통 이동에 실패했습니다"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8771,6 +9080,12 @@
       ],
       "This key is used for message verification": [
         "이 키는 메시지 검증에 사용됩니다."
+      ],
+      "This contact currently signs messages with this key": [
+        "이 연락처는 현재 이 키로 메시지에 서명합니다"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "이 키는 이전 앱에서 이 연락처로 메시지를 암호화하는 데 사용됩니다"
       ]
     },
     "PGP key warning": {
@@ -8871,6 +9186,12 @@
       ],
       "Search": [
         "검색"
+      ],
+      "Ask anything…": [
+        "무엇이든 물어보세요..."
+      ],
+      "Search for users or addresses": [
+        "사용자 및 주소를 검색하세요"
       ]
     },
     "Placeholder for contact group name": {
@@ -9495,6 +9816,12 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "이 문서를 편집하려면, 수정할 수 있는 복사본을 생성하세요."
+      ],
+      "Editor permissions": [
+        "편집자 권한"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "이제 편집자가 공유 권한을 관리하고 타인을 초대할 수 있습니다. 언제든지 공유 설정에서 해제할 수 있습니다."
       ]
     },
     "sso": {
@@ -9961,6 +10288,9 @@
       ],
       "Type": [
         "유형"
+      ],
+      "Size": [
+        "크기"
       ]
     },
     "TableHeader": {
@@ -10716,6 +11046,30 @@
       ],
       "You are all set": [
         "모든 준비가 완료되었어요"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "Editing paused": [
+        "편집 일시정지됨"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "당신의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
+      ],
+      "Problems Detected": [
+        "문제 감지됨"
+      ],
+      "Stay for 50% off your next month": [
+        "첫 달은 50% 할인으로 누리기"
+      ],
+      "Users and addresses": [
+        "사용자 및 주소"
+      ],
+      "Verify your password": [
+        "비밀번호 확인"
       ]
     },
     "Title subscription": {
@@ -10821,6 +11175,12 @@
       ],
       "Change shared item settings": [
         "공유된 항목 설정 변경"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "즉각적인 AI 지원, 상시 대기 중인 전문가!"
+      ],
+      "Version 6 OpenPGP key": [
+        "버전 6 OpenPGP 키"
       ]
     },
     "tooltip": {
@@ -10952,7 +11312,7 @@
         "${ BRAND_NAME } 이(가) 모든 폴더를 같은 이름으로 병합합니다. 원치 않는다면, 불러오기 전에 이름을 변경하십시오."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+        "${ BRAND_NAME }이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송합니다."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"
@@ -11043,6 +11403,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate }에 종료됩니다. ${ textDate } 이전에 취소시 요금이 청구되지 않습니다. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong }은 강력한 제어 기능을 제공하지만, 단 하나의 오류로도 사기 또는 피싱 웹사이트에서 자동완성이 일치하여 데이터가 입력될 수 있습니다."
       ]
     },
     "Autocomplete": {
@@ -11056,6 +11419,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "${ formattedDate1 }에 무료 체험이 종료되면, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate2 } 이전 취소시 요금 청구가 되지 않습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_DEDICATED_IPS }개의 전용 서버를 사용할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_LUMO_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 계정을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "무료 체험 기간 중 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미 시트를 포함할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 Scribe 사용 권한을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_USERS }명의 사용자를 추가할 수 있습니다."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "체험 기간 동안 사용자 지정 도메인을 추가할 수 없습니다."
       ]
     },
     "b2b_trials_Action": {
@@ -11367,6 +11748,12 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ MEET_APP_NAME } 시트 ${ seats }개"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity }명 이용 가능)"
+      ],
+      "${ price } per seat": [
+        "사용자당 ${ price }"
       ]
     },
     "meet_2025: Feature": {
@@ -12066,6 +12453,69 @@
       ],
       "SUMMER SALE": [
         "여름 세일"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "진행 중"
+      ],
+      "Migrated": [
+        "이전됨"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "무료 체험 기간 중 최대 ${ TRIAL_MAX_MEET_SEATS }개의 ${ MEET_SHORT_APP_NAME } 시트를 포함할 수 있습니다."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "소유자"
+      ],
+      "Security Admin": [
+        "보안 관리자"
+      ],
+      "User Admin": [
+        "사용자 관리자"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "보안 정책, 데이터 보존, VPN 인프라를 설정하고 감사 로그를 관리합니다."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "모든 사용자, 그룹, 보안, 결제 및 시스템 설정을 관리합니다."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "모든 구성원의 사용자, 그룹, 저장공간을 관리하고 역할을 부여하며 라이선스를 할당합니다."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "작업"
+      ],
+      "Created": [
+        "생성됨"
+      ],
+      "Expires": [
+        "만료"
+      ],
+      "Fingerprint": [
+        "지문"
+      ],
+      "Status": [
+        "상태"
+      ],
+      "Type": [
+        "종류"
+      ]
+    },
+    "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "관리자 규칙을 사용하려면 지원하는 플랜으로 업그레이드하세요."
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "사용자가 초대를 수락하면 역할을 할당할 수 있습니다."
       ]
     }
   }

@@ -959,6 +959,99 @@
       ],
       "Reconnect to Gmail": [
         "Połącz ponownie z Gmailem"
+      ],
+      "Change my access": [
+        "Zmień mój dostęp"
+      ],
+      "characters": [
+        "znaki"
+      ],
+      "characters out of": [
+        "znaki z"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Kontynuuj do ${ planOrAppName }"
+      ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "Utwórz nowy ${ SHEETS_APP_NAME }"
+      ],
+      "Delete older revisions": [
+        "Usuń starsze wersje"
+      ],
+      "Download a copy (as docx)": [
+        "Pobierz kopię (jako docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Pobierz kopię (jako xlsx)"
+      ],
+      "Download debug information": [
+        "Pobierz informacje diagnostyczne"
+      ],
+      "Encrypted": [
+        "Zaszyfrowane"
+      ],
+      "Export editor state for version": [
+        "Eksportuj stan edytora dla wersji"
+      ],
+      "Export this version (as docx)": [
+        "Eksportuj tę wersję (jako docx)"
+      ],
+      "Export YJS state for version": [
+        "Eksportuj stan YJS dla wersji"
+      ],
+      "Hide": [
+        "Ukryj"
+      ],
+      "Okay": [
+        "Ok"
+      ],
+      "Reject": [
+        "Odrzuć"
+      ],
+      "Reload spreadsheet": [
+        "Przeładuj arkusz kalkulacyjny"
+      ],
+      "Remove my access": [
+        "Odbierz mi dostęp"
+      ],
+      "Report issue": [
+        "Zgłoś problem"
+      ],
+      "Search recent spreadsheets": [
+        "Szukaj ostatnich arkuszy kalkulacyjnych"
+      ],
+      "Search recents": [
+        "Szukaj ostatnich"
+      ],
+      "Send": [
+        "Wyślij"
+      ],
+      "Set password or expiration date": [
+        "Ustaw hasło lub datę wygaśnięcia"
+      ],
+      "Shared": [
+        "Udostępniono"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Udostępnianie jest szyfrowane end-to-end"
+      ],
+      "Toggle debug mode": [
+        "Przełącz tryb debugowania"
+      ],
+      "Try Workspace": [
+        "Wypróbuj Workspace"
+      ],
+      "Verify now": [
+        "Zweryfikuj teraz"
+      ],
+      "View only": [
+        "Tylko do odczytu"
+      ],
+      "words": [
+        "słowa"
+      ],
+      "words out of": [
+        "słowa z"
       ]
     },
     "Action subscription": {
@@ -1022,6 +1115,72 @@
         "${ seats } ${ LUMO_APP_NAME } licencje",
         "${ seats } ${ LUMO_APP_NAME } licencji",
         "${ seats } ${ LUMO_APP_NAME } licencji"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkownika)",
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkowników)",
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkowników)",
+        "Asystent pisania ${ BRAND_NAME } Scribe (dla ${ quantity } użytkowników)"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedykowany serwer VPN",
+        "${ ips } dedykowane serwery VPN",
+        "${ ips } dedykowanych serwerów VPN",
+        "${ ips } dedykowanych serwerów VPN"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asystent AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkownika)",
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkowników)",
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkowników)",
+        "Asystent AI ${ LUMO_APP_NAME } (dla ${ quantity } użytkowników)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Licencja AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } licencji"
+      ],
+      "${ price } per seat": [
+        "${ price } za licencję"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } niestandardowa domena",
+        "${ quantity } niestandardowe domeny",
+        "${ quantity } niestandardowych domen",
+        "${ quantity } niestandardowych domen"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licencja AI ${ LUMO_APP_NAME }",
+        "${ seats } licencje AI ${ LUMO_APP_NAME }",
+        "${ seats } licencji AI ${ LUMO_APP_NAME }",
+        "${ seats } licencji AI ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licencja ${ MEET_APP_NAME }",
+        "${ seats } licencje ${ MEET_APP_NAME }",
+        "${ seats } licencji ${ MEET_APP_NAME }",
+        "${ seats } licencji ${ MEET_APP_NAME }"
+      ],
+      "Dedicated VPN servers": [
+        "Dedykowane serwery VPN"
+      ],
+      "Domains": [
+        "Domeny"
+      ],
+      "Servers": [
+        "Serwery"
+      ],
+      "Users": [
+        "Użytkownicy"
+      ],
+      "Writing assistant": [
+        "Asystent pisania"
+      ],
+      "Writing assistant seats": [
+        "Licencje asystenta pisania"
       ]
     },
     "Alert": {
@@ -1207,6 +1366,12 @@
       ],
       "Unlimited logins, credit cards, hide-my-email aliases and more": [
         "Nieograniczona liczba danych logowania, karty płatniczych, aliasów hide-my-email i nie tylko"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB przestrzeni dyskowej: 40 × Twój obecny plan"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
       ]
     },
     "BF2024: Footer": {
@@ -1391,6 +1556,12 @@
       ],
       "Sheets problem": [
         "Problem z arkuszem"
+      ],
+      "Authenticator problem": [
+        "Problem z aplikacją uwierzytelniającą"
+      ],
+      "Meet problem": [
+        "Problem z Meet"
       ]
     },
     "Button": {
@@ -1405,6 +1576,9 @@
       ],
       "Maybe later": [
         "Może później"
+      ],
+      "Get 50% offer": [
+        "Uzyskaj 50% zniżki"
       ]
     },
     "Cancellation upsell": {
@@ -1455,6 +1629,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Wszystkie funkcje premium usług ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } użytkownik",
+        "Do ${ numberOfUsers } użytkowników",
+        "Do ${ numberOfUsers } użytkowników",
+        "Do ${ numberOfUsers } użytkowników"
       ]
     },
     "Checkout row": {
@@ -2449,6 +2629,9 @@
       ],
       "Åland Islands": [
         "Wyspy Alandzkie"
+      ],
+      "Canary Islands": [
+        "Wyspy Kanaryjskie"
       ]
     },
     "Cycle": {
@@ -2653,6 +2836,15 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Twoje bezpłatne konto ${ MAIL_APP_NAME } ma ograniczoną przestrzeń dyskową, dlatego zaimportujemy tylko najnowsze wiadomości z Gmaila."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Aby zapewnić płynne wdrożenie Twojego zespołu w ${ BRAND_NAME }, importuj dane z Google, Outlook i innych usług."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Aby zaimportować pliki przez CSV lub VCF, upewnij się, że plik nie przekracza ${ MAX_IMPORT_FILE_SIZE_STRING } lub ${ maxContactString } kontaktów. Jeśli Twój plik jest większy, podziel go na mniejsze pliki. ${ learnMoreLink }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Przykro nam, że odchodzisz. Jeśli masz chwilę, będziemy wdzięczni za informację, dlaczego chcesz anulować subskrypcję. Twoja opinia pomaga nam ulepszać ${ BRAND_NAME } dla wszystkich."
       ]
     },
     "description": {
@@ -2825,6 +3017,21 @@
       ],
       "NOTE:": [
         "WIADOMOŚĆ:"
+      ],
+      "DESCRIPTION:": [
+        "Opis:"
+      ],
+      "LOCATION:": [
+        "Lokalizacja:"
+      ],
+      "TIME:": [
+        "Czas:"
+      ],
+      "TITLE:": [
+        "Tytuł:"
+      ],
+      "You are invited to": [
+        "Otrzymujesz zaproszenie na"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3461,6 +3668,87 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "Przeniesienie ${ failureItems.length } elementu nie powiodło się",
+        "Przeniesienie ${ failureItems.length } elementów nie powiodło się",
+        "Przeniesienie ${ failureItems.length } elementów nie powiodło się",
+        "Przeniesienie ${ failureItems.length } elementów nie powiodło się"
+      ],
+      "Address could not be added.": [
+        "Nie udało się dodać adresu."
+      ],
+      "Cannot find move target": [
+        "Nie można znaleźć celu przeniesienia"
+      ],
+      "Failed loading group members": [
+        "Błąd podczas wczytywania członków grupy"
+      ],
+      "Failed to change permissions settings": [
+        "Nie udało się zmienić ustawień uprawnień"
+      ],
+      "Failed to expand folder": [
+        "Nie udało się rozwinąć folderu"
+      ],
+      "Failed to load 'My files' folder": [
+        "Nie udało się załadować folderu „Moje pliki”"
+      ],
+      "Failed to load recent documents": [
+        "Nie udało się załadować ostatnich dokumentów"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Nie udało się załadować danych subskrypcji. Spróbuj ponownie później."
+      ],
+      "Failed to remove older revisions": [
+        "Nie udało się usunąć starszych wersji"
+      ],
+      "Failed to rename document": [
+        "Nie udało się zmienić nazwy dokumentu"
+      ],
+      "Invalid coupon": [
+        "Nieprawidłowy kupon"
+      ],
+      "Invalid URL": [
+        "Adres URL jest nieprawidłowy"
+      ],
+      "No drive found to import": [
+        "Nie znaleziono dysku do zaimportowania"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Mechanizm odwrotnego obciążenia nie jest obsługiwany w przypadku tego planu"
+      ],
+      "Some trashed documents could not be loaded": [
+        "Nie można było załadować niektórych usuniętych dokumentów"
+      ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
+      ],
+      "This field is invalid": [
+        "To pole jest nieprawidłowe"
+      ],
+      "Unable to import file": [
+        "Nie można zaimportować pliku"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Nieoczekiwany błąd, nie możemy zaimportować plików"
+      ],
+      "We are having trouble syncing your document. Please refresh the page.": [
+        "Mamy problemy z synchronizacją Twojego dokumentu. Odśwież stronę."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "Nie mogliśmy zaimportować tego pliku do aplikacji ${ SHEETS_APP_NAME }. Możesz spróbować skopiować i wkleić zawartość do nowego programu ${ SHEETS_APP_NAME }."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Nie udało się wysłać kodu weryfikacyjnego tą metodą."
+      ],
+      "Wrong billing address": [
+        "Nieprawidłowy adres rozliczeniowy"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Wykorzystano wszystkie adresy w Twoim planie. Ulepsz swój plan, aby dodać nowy adres, lub wyłącz jeden z adresów na swoim koncie."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Nieodszyfrowywalne urządzenie"
       ]
     },
     "Error importing calendar": {
@@ -3530,6 +3818,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Plik ${ formattedFilename } jest pusty."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Twój plik ${ formattedFilename } zawiera więcej niż ${ maxContactString } kontaktów."
       ]
     },
     "Error importing event": {
@@ -3824,6 +4115,15 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Twoje konto wykorzystuje ${ usedSpace } przestrzeni dyskowej, co przekracza przypisany limit (${ inviteSpace }). Usuń dane lub skontaktuj się z administratorem planu, żeby zwiększyć przestrzeń dyskową."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Plany rodzinne nie obsługują obecnie kont zewnętrznych. Przed dołączeniem utwórz adres ${ BRAND_NAME }. ${ link }"
+      ],
+      "View the invitation": [
+        "Wyświetl zaproszenie",
+        "Wyświetl zaproszenia",
+        "Wyświetl zaproszenia",
+        "Wyświetl zaproszenia"
       ]
     },
     "familyOffer_2023:Label": {
@@ -3872,6 +4172,9 @@
       ],
       "Security key": [
         "Klucz bezpieczeństwa"
+      ],
+      "Touch your security key.": [
+        "Dotknij swojego klucza bezpieczeństwa."
       ]
     },
     "fido2: Label": {
@@ -4688,7 +4991,7 @@
         "Zduplikowany klucz został zaktualizowany"
       ],
       "Each code can only be used once": [
-        "Każdy kod może zostać użyty tylko jeden raz"
+        "Każdego kodu można użyć tylko raz"
       ],
       "Edit email address": [
         "Edytuj adres e-mail"
@@ -4724,7 +5027,7 @@
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
+        "Wpisz kod weryfikacyjny. Cyfra ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Wpisz swoje hasło (jako administrator organizacji)."
@@ -5916,6 +6219,210 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Ulepsz konto lub zwolnij miejsce w dowolnym momencie, aby przenieść resztę"
+      ],
+      "${ total } user found": [
+        "Znaleziono ${ total } użytkownika",
+        "Znaleziono ${ total } użytkowników",
+        "Znaleziono ${ total } użytkowników",
+        "Znaleziono ${ total } użytkowników"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Zaproś znajomych** do ${ BRAND_NAME } za pomocą swojego linku polecającego."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Otrzymują oni ${ refereeRewardAmount }** w środkach, jeśli zasubskrybują plan."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Otrzymujesz ${ referrerRewardAmount }** w środkach za każdego znajomego, który zasubskrybuje plan."
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Dostęp do ponad 20 000 serwerów w 145 krajach"
+      ],
+      "All": [
+        "Wszystko"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Wszystkie Twoje kontakty zostaną zaimportowane, do limitu ${ maxContact } kontaktu",
+        "Wszystkie Twoje kontakty zostaną zaimportowane, do limitu ${ maxContact } kontaktów",
+        "Wszystkie Twoje kontakty zostaną zaimportowane, do limitu ${ maxContact }",
+        "Wszystkie Twoje kontakty zostaną zaimportowane, do limitu ${ maxContact }"
+      ],
+      "Already in this folder": [
+        "Już w tym folderze"
+      ],
+      "Can edit": [
+        "Może edytować"
+      ],
+      "Can edit and manage access": [
+        "Może edytować i zarządzać dostępem"
+      ],
+      "Can view and edit": [
+        "Może wyświetlać i edytować"
+      ],
+      "Can view only": [
+        "Tylko do odczytu"
+      ],
+      "Can't move a folder into itself": [
+        "Nie można przenieść folderu do samego siebie"
+      ],
+      "Can't write into folder": [
+        "Nie można zapisać w folderze"
+      ],
+      "characters": [
+        "znaki"
+      ],
+      "characters without spaces": [
+        "znaki bez spacji"
+      ],
+      "Choose a plan that works best for you.": [
+        "Wybierz plan, który najlepiej Ci odpowiada."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Utwórz bezpieczną chmurę dla ${ memberCount } użytkownika",
+        "Utwórz bezpieczną chmurę dla ${ memberCount } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ memberCount } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ memberCount } użytkowników"
+      ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "Twórz zaszyfrowane end-to-end dokumenty i arkusze kalkulacyjne."
+      ],
+      "Decrypting your document": [
+        "Odszyfrowywanie dokumentu"
+      ],
+      "Details": [
+        "Szczegóły"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Pamiętasz swoje hasło? ${ verifyButton }"
+      ],
+      "Documents": [
+        "Dokumenty"
+      ],
+      "Enter code": [
+        "Wpisz kod"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Wszystko, co w ${ planOrAppName }, plus:"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Najwyższe prędkości VPN do 10 Gb/s"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Tylko pliki (bez zdjęć, ${ DOCS_APP_NAME } lub ${ SHEETS_APP_NAME }) – łącznie do 100 GB, 100 000 plików i 50 GB na plik"
+      ],
+      "Forgot password?": [
+        "Nie pamiętasz hasła?"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Uzyskaj profesjonalny adres e-mail @twoja-firma.com, 1 TB bezpiecznej przestrzeni dyskowej na użytkownika, dłuższe połączenia wideo i nie tylko dzięki ${ BRAND_NAME } Workspace."
+      ],
+      "Have some more time to decide without interruption.": [
+        "Podejmij decyzję bez żadnych zakłóceń, mając na to więcej czasu."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Pomóż nam ulepszyć tę funkcję, zgłaszając problem. Jeśli nie masz nic przeciwko udostępnieniu zawartości arkusza kalkulacyjnego, dołącz poniższe informacje diagnostyczne do swojego zgłoszenia."
+      ],
+      "Hide table of contents": [
+        "Ukryj spis treści"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "W przypadku anulowania teraz subskrypcji utracisz dostęp do ${ BRAND_NAME } ${ planTitle } w dniu ${ expiryDate }, w tym do następujących funkcji:"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Jeśli stracisz dostęp do swojej aplikacji uwierzytelniającej, możesz użyć 1 z 16 zapasowych kodów odzyskiwania dostarczonych podczas konfigurowania uwierzytelniania dwustopniowego. ${ learnMoreLink }"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Jeśli się usuniesz, stracisz dostęp do „${ fileName }” i nie będziesz mieć możliwości ponownego otwarcia tego elementu, chyba że właściciel ponownie go Tobie udostępni."
+      ],
+      "Importing ODS files is currently in beta": [
+        "Importowanie plików ODS jest obecnie w fazie beta"
+      ],
+      "Link copied": [
+        "Link został skopiowany"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ojej! W tym arkuszu kalkulacyjnym nie można zapisać Twoich ostatnich zmian, więc wstrzymaliśmy edycję, aby zapobiec utracie Twojej pracy."
+      ],
+      "owner": [
+        "właściciel"
+      ],
+      "Password verified": [
+        "Hasło zweryfikowane"
+      ],
+      "Please select the labels you would like to import:": [
+        "Wybierz etykiety, które chcesz zaimportować:"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Najwyższej klasy ochrona prywatności na wszystkich Twoich urządzeniach"
+      ],
+      "Read-only": [
+        "Tylko do odczytu"
+      ],
+      "Recent documents": [
+        "Ostatnie dokumenty"
+      ],
+      "Recent spreadsheets": [
+        "Ostatnie arkusze kalkulacyjne"
+      ],
+      "Select a destination folder": [
+        "Wybierz folder docelowy"
+      ],
+      "Show table of contents": [
+        "Pokaż spis treści"
+      ],
+      "Spreadsheets": [
+        "Arkusze kalkulacyjne"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Pozostań przy swoim planie i otrzymaj 50% zniżki na kolejny miesiąc"
+      ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Ten dokument jest zbyt duży, aby go edytować. Możesz usunąć starsze wersje, aby kontynuować edycję."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Ten dokument jest zbyt duży i Twoje ostatnie zmiany nie mogły zostać zapisane. Pobierz kopię, aby zachować swoją pracę."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Ten dokument ma wielu aktywnych współtwórców. Edycja w czasie rzeczywistym jest chwilowo niedostępna. Odśwież, aby wyświetlić najnowsze aktualizacje."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Aby pomóc Ci zapamiętać hasło, będziemy prosić o jego okresowe wpisywanie. Z czasem będziemy prosić o to coraz rzadziej."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Zaufaj kluczowi \"${ activeSignerText }\", aby zweryfikować nowe wiadomości od tego kontaktu."
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Ulepsz, aby zachować korzyści z planu ${ planTitle }."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Przypomnimy Ci później o ponownej weryfikacji hasła"
+      ],
+      "Who has access": [
+        "Kto ma dostęp"
+      ],
+      "words": [
+        "słowa"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Obecnie zalogowano jako ${ username } dla organizacji ${ organizationName }."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Jesteś obecnie zalogowany jako ${ username }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Środki otrzymasz 1 miesiąc po zasubskrybowaniu przez Twojego znajomego planu rocznego lub 2 miesiące po zasubskrybowaniu planu miesięcznego."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Następnie zapłacisz co ${ renewCycle } miesiąc ${ renewAmountStr }. Możesz anulować w dowolnym momencie.",
+        "Następnie zapłacisz co ${ renewCycle } miesiące ${ renewAmountStr }. Możesz anulować w dowolnym momencie.",
+        "Następnie zapłacisz co ${ renewCycle } miesięcy ${ renewAmountStr }. Możesz anulować w dowolnym momencie.",
+        "Następnie zapłacisz co ${ renewCycle } miesięcy ${ renewAmountStr }. Możesz anulować w dowolnym momencie."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Data Twojego następnego rozliczenia to ${ renewalTime }. Możesz zrezygnować w dowolnym momencie."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Twoja następna data rozliczenia to ${ renewalTime }. Możesz anulować w dowolnym momencie. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem."
       ]
     },
     "info": {
@@ -6012,6 +6519,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktywny podpisujący"
+      ],
+      "Fallback": [
+        "Awaryjny"
       ]
     },
     "Label": {
@@ -6533,6 +7046,99 @@
       ],
       "Your password (trusted contact)": [
         "Twoje hasło (zaufany kontakt)"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znaków"
+      ],
+      "Access": [
+        "Dostęp"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Uzyskaj bezpieczny dostęp do ${ PASS_APP_NAME } z terminala, co jest idealne do skryptów, automatyzacji i przepływów pracy programistycznej."
+      ],
+      "Active": [
+        "Aktywny"
+      ],
+      "Additional comments": [
+        "Dodatkowe uwagi"
+      ],
+      "Allow editors to change permissions and share": [
+        "Zezwalaj osobom edytującym na zmianę uprawnień i udostępnianie"
+      ],
+      "Anonymous": [
+        "Anonimowy użytkownik"
+      ],
+      "Anyone on the Internet with the link": [
+        "Każdy w Internecie, kto posiada link"
+      ],
+      "can edit": [
+        "może edytować"
+      ],
+      "can view": [
+        "może przeglądać"
+      ],
+      "Command line interface (CLI)": [
+        "Interfejs wiersza poleceń (CLI)"
+      ],
+      "Continue cancelling": [
+        "Kontynuuj anulowanie"
+      ],
+      "Delete link and remove access for everyone": [
+        "Usuń link i zablokuj dostęp dla wszystkich"
+      ],
+      "Disable this link on a specific date": [
+        "Wyłącz ten link w określonym dniu"
+      ],
+      "Drive": [
+        "Dysk"
+      ],
+      "Emails (last 6 months)": [
+        "Wiadomości (ostatnie 6 miesięcy)"
+      ],
+      "Exact host matching": [
+        "Dopasowanie dokładnego hosta"
+      ],
+      "Exact URL matching": [
+        "Dopasowanie dokładnego adresu URL"
+      ],
+      "Expiry": [
+        "Wygaśnięcie"
+      ],
+      "Last 6 months only": [
+        "Tylko ostatnie 6 miesięcy"
+      ],
+      "Main reason for cancelling": [
+        "Główny powód anulowania"
+      ],
+      "Never fill on this exact URL": [
+        "Nigdy nie uzupełniaj na tym dokładnym adresie URL"
+      ],
+      "Not active": [
+        "Nieaktywny"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domena nadrzędna i subdomeny (domyślnie)"
+      ],
+      "Regular expression": [
+        "Wyrażenie regularne"
+      ],
+      "Require password": [
+        "Wymagaj hasła"
+      ],
+      "Set a password to limit access via link": [
+        "Ustaw hasło, aby ograniczyć dostęp za pośrednictwem linku"
+      ],
+      "Skip feedback": [
+        "Pomiń opinię"
+      ],
+      "Starts with": [
+        "Zaczyna się od"
+      ],
+      "Unknown user": [
+        "Nieznany użytkownik"
+      ],
+      "URL wildcard pattern": [
+        "Wzorzec adresu URL ze znakami wieloznacznymi"
       ]
     },
     "Label for contact group color": {
@@ -6736,6 +7342,9 @@
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
         "Przestrzeń dyskowa jest pełna. Aby korzystać z usług ${ BRAND_NAME }, zwolnij część miejsca lub ${ cta }."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Aby kontynuować korzystanie z ${ BRAND_NAME }, upewnij się, że nie korzystasz już z funkcji premium, lub ulepsz swój plan."
       ]
     },
     "Log preference": {
@@ -6812,6 +7421,27 @@
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Darmowa wersja próbna zakończyła się. Dostęp do konta zostanie wkrótce wyłączony. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Reguła dopasowania „Zaczyna się od”"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Zasada dopasowania dokładnej (pod)domeny"
+      ],
+      "Exact URL matching rule": [
+        "Reguła dopasowania dokładnego adresu URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nigdy nie uzupełniaj tym dokładnym adresem URL"
+      ],
+      "Regular expression rule": [
+        "Reguła wyrażenia regularnego"
+      ],
+      "Wildcard pattern matching rule": [
+        "Reguła dopasowania wzorca ze znakiem wieloznacznym"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Twoja darmowa wersja próbna zakończyła się. ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7261,7 +7891,7 @@
         "${ options }-dniowa historia wersji plików",
         "${ options }-dniowa historia wersji plików",
         "${ options }-dniowa historia wersji plików",
-        "${ options }-dniowa historia wersji plików"
+        "${ options } päivän tiedostoversiohistoria"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } z ${ n } aliasem hide-my-email",
@@ -7694,6 +8324,51 @@
         "Na ${ n } urządzenia jednocześnie",
         "Na ${ n } urządzeń jednocześnie",
         "Używanie na maksymalnie ${ n } urządzeniach jednocześnie"
+      ],
+      "Access all countries": [
+        "Dostęp do wszystkich krajów"
+      ],
+      "Appointment scheduling": [
+        "Planowanie spotkań"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planowanie spotkań z ${ n } stroną rezerwacji",
+        "Planowanie spotkań z ${ n } stronami rezerwacji",
+        "Planowanie spotkań z ${ n } stronami rezerwacji",
+        "Planowanie spotkań z ${ n } stronami rezerwacji"
+      ],
+      "Data retention policies": [
+        "Zasady przechowywania danych"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedykowane serwery zoptymalizowane pod kątem szybkości"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Dotychczasowe korzyści planu ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
+      "No streaming support": [
+        "Brak wsparcia dla streamingu"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Wsparcie telefoniczne (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ użytkowników)"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Prywatny czat AI (${ LUMO_APP_NAME })"
+      ],
+      "Short domain (@pm.me)": [
+        "Krótka domena (@pm.me)"
+      ],
+      "Unlock streaming": [
+        "Odblokuj streaming"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Udostępnianie sejfu dla maksymalnie ${ n } osoby",
+        "Udostępnianie sejfu dla maksymalnie ${ n } osób",
+        "Udostępnianie sejfu dla maksymalnie ${ n } osób",
+        "Udostępnianie sejfu dla maksymalnie ${ n } osób"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN z blokadą reklam i ochroną przed złośliwym oprogramowaniem"
       ]
     },
     "new_plans: feature highlight": {
@@ -8074,6 +8749,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Przekieruj ruch sieciowy przez sieć Tor jednym kliknięciem"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Wsparcie telefoniczne jest dostępne dla klientów posiadających co najmniej ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } użytkowników i jest realizowane podczas europejskich godzin pracy zespołu wsparcia klienta ${ BRAND_NAME }"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8139,6 +8817,12 @@
         "Wsparcie dla ${ n } niestandardowych domen",
         "Wsparcie dla ${ n } niestandardowych domen",
         "Wsparcie dla ${ n } niestandardowych domen"
+      ],
+      "${ n } country": [
+        "${ n } kraj",
+        "${ n } kraje",
+        "${ n } krajów",
+        "${ n } krajów"
       ]
     },
     "Notification": {
@@ -8432,6 +9116,42 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Twój adres ${ BRAND_NAME } jest gotowy do użycia"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "Pomyślnie utworzono „${ ellipsedName }”"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Utworzenie „${ ellipsedName }” nie powiodło się"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "Element „${ ellipsedName }” został przeniesiony"
+      ],
+      "\"${ fileName }\" shared": [
+        "Udostępniono „${ fileName }”"
+      ],
+      "${ numberOfItems } item moved": [
+        "Przeniesiono ${ numberOfItems } element",
+        "Przeniesiono ${ numberOfItems } elementy",
+        "Przeniesiono ${ numberOfItems } elementów",
+        "Przeniesiono ${ numberOfItems } elementy"
+      ],
+      "Document moved to trash": [
+        "Dokument został przeniesiony do kosza"
+      ],
+      "Document restored from trash": [
+        "Przywrócono dokument z kosza"
+      ],
+      "Failed to load sharing details": [
+        "Nie udało się załadować szczegółów udostępniania"
+      ],
+      "Failed to rename document": [
+        "Nie udało się zmienić nazwy dokumentu"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Ustawienie zaktualizowane. Osoby edytujące mogą zmieniać uprawnień i udostępniać."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Ustawienie zaktualizowane. Osoby edytujące nie mogą zmieniać uprawnień ani udostępniać."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8528,6 +9248,9 @@
       ],
       "Team policies": [
         "Zasady zespołu"
+      ],
+      "File attachments (up to 10GB)": [
+        "Załączniki (do 10 GB)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8676,6 +9399,42 @@
         "Automatycznie odnowienie nastąpi w cenie ${ renewPriceStr } za ${ renewalLength } miesiące. Możesz anulować w dowolnym momencie.",
         "Automatycznie odnowienie nastąpi w cenie ${ renewPriceStr } za ${ renewalLength } miesięcy. Możesz anulować w dowolnym momencie.",
         "Automatycznie odnowienie nastąpi w cenie ${ renewPriceStr } za ${ renewalLength } miesiąca. Możesz anulować w dowolnym momencie."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (bez podatku)"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Kwota do zapłaty po zakończeniu wersji próbnej w dniu ${ formattedDate }"
+      ],
+      "terms and conditions": [
+        "regulamin"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Zniżka jest ważna przez ${ renewalsWithCoupon } odnowienie.",
+        "Zniżka jest ważna przez ${ renewalsWithCoupon } odnowienia.",
+        "Zniżka jest ważna przez ${ renewalsWithCoupon } odnowień.",
+        "Zniżka jest ważna przez ${ renewalsWithCoupon } odnowień."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Specjalna obniżona cena jest ważna przez ${ couponRedemptions } miesiąc. Następnie zostanie automatycznie odnowiona w cenie ${ renewPriceStr } za 1 miesiąc. Możesz anulować w dowolnym momencie.",
+        "Specjalna obniżona cena jest ważna przez ${ couponRedemptions } miesiące. Następnie zostanie automatycznie odnowiona w cenie ${ renewPriceStr } za 1 miesiąc. Możesz anulować w dowolnym momencie.",
+        "Specjalna obniżona cena jest ważna przez ${ couponRedemptions } miesięcy. Następnie zostanie automatycznie odnowiona w cenie ${ renewPriceStr } za 1 miesiąc. Możesz anulować w dowolnym momencie.",
+        "Specjalna obniżona cena obowiązuje przez ${ couponRedemptions } miesięcy. Następnie zostanie automatycznie odnowiona w cenie ${ renewPriceStr } za 1 miesiąc. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Specjalna obniżona cena obowiązuje przez pierwszy ${ subscriptionLength } miesiąc.",
+        "Specjalna obniżona cena obowiązuje przez pierwsze ${ subscriptionLength } miesiące.",
+        "Specjalna obniżona cena jest ważna przez pierwsze ${ subscriptionLength } miesięcy.",
+        "Specjalna zniżka obowiązuje przez pierwsze ${ subscriptionLength } miesiące."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Specjalna obniżona cena obowiązuje przez pierwszy miesiąc. Następnie będzie ona automatycznie odnawiana w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } obowiązuje przez ${ couponRedemptions } miesiąc. Następnie zostanie automatycznie odnowiona w cenie ${ renewPriceStr } za 1 miesiąc. Możesz anulować w dowolnym momencie.",
+        "Specjalna obniżona cena ${ priceWithDiscount } obowiązuje przez ${ couponRedemptions } miesiące. Następnie zostanie automatycznie odnowiona w cenie ${ renewPriceStr } za 1 miesiąc. Możesz anulować w dowolnym momencie.",
+        "Specjalna obniżona cena ${ priceWithDiscount } obowiązuje przez ${ couponRedemptions } miesięcy. Następnie zostanie automatycznie odnowiona w cenie ${ renewPriceStr } za 1 miesiąc. Możesz anulować w dowolnym momencie.",
+        "Specjalna zniżka ${ priceWithDiscount } obowiązuje przez ${ couponRedemptions } miesiące. Następnie subskrypcja zostanie automatycznie odnowiona w cenie ${ renewPriceStr } za 1 miesiąc. Możesz anulować w dowolnym momencie."
       ]
     },
     "Payments.Error": {
@@ -8729,6 +9488,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Zalecamy przestać ufać temu kluczowi."
+      ],
+      "This contact currently signs messages with this key": [
+        "Ten kontakt podpisuje obecnie wiadomości tym kluczem"
+      ],
+      "This key is used for message verification": [
+        "Ten klucz jest używany do weryfikacji wiadomości"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Ten klucz jest używany do szyfrowania wiadomości dla tego kontaktu w starszych aplikacjach"
       ]
     },
     "PGP key warning": {
@@ -8820,6 +9588,18 @@
       ],
       "Search": [
         "Szukaj"
+      ],
+      "Anything you'd like us to know": [
+        "Czy jest coś jeszcze, o czym powinniśmy wiedzieć"
+      ],
+      "Enter a name": [
+        "Wpisz nazwę"
+      ],
+      "Search for users or addresses": [
+        "Szukaj użytkowników lub adresów"
+      ],
+      "Select a provider": [
+        "Wybierz dostawcę"
       ]
     },
     "Placeholder for contact group name": {
@@ -9271,19 +10051,19 @@
         "${ hours } godzina",
         "${ hours } godziny",
         "${ hours } godzin",
-        "${ hours } godziny"
+        "${ hours } godzin"
       ],
       "${ minutes } minute": [
         "${ minutes } minuta",
         "${ minutes } minuty",
         "${ minutes } minut",
-        "${ minutes } minuty"
+        "${ minutes } minut"
       ],
       "${ seconds } second": [
         "${ seconds } sekunda",
         "${ seconds } sekundy",
         "${ seconds } sekund",
-        "${ seconds } sekundy"
+        "${ seconds } sekund"
       ]
     },
     "specialoffer: Deal": {
@@ -9470,6 +10250,9 @@
       ],
       "Protect your account from threats with Sentinel": [
         "Chroń swoje konto przed zagrożeniami dzięki funkcji Proton Sentinel"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Przechowuj hasła bezpiecznie i uporządkowane w wielu sejfach"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9531,6 +10314,12 @@
       ],
       "Pending": [
         "Oczekujące"
+      ],
+      "pending": [
+        "oczekujący"
+      ],
+      "user joined": [
+        "użytkownik dołączył"
       ]
     },
     "Storage": {
@@ -9635,6 +10424,9 @@
       ],
       "Storage used": [
         "Wykorzystana przestrzeń"
+      ],
+      "${ app } storage used": [
+        "Wykorzystana przestrzeń dyskowa ${ app }"
       ]
     },
     "Subscription": {
@@ -10000,6 +10792,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Size": [
+        "Rozmiar"
       ]
     },
     "TableHeader": {
@@ -10740,6 +11535,75 @@
       ],
       "You are all set": [
         "Wszystko gotowe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asystent pisania ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Account temporarily locked": [
+        "Konto tymczasowo zablokowane"
+      ],
+      "Change access to viewer?": [
+        "Zmienić dostęp na wyświetlającego?"
+      ],
+      "Choose a provider": [
+        "Wybierz dostawcę"
+      ],
+      "Custom": [
+        "Niestandardowy"
+      ],
+      "Document Size Limit Exceeded": [
+        "Przekroczono limit rozmiaru dokumentu"
+      ],
+      "Document Size Limit Reached": [
+        "Osiągnięto limit rozmiaru dokumentu"
+      ],
+      "Editing paused": [
+        "Edycja wstrzymana"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Otrzymaj **${ referralInfo.uiData.refereeRewardAmount }** środków dzięki ${ planTitle }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importuj dane do ${ BRAND_NAME }"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Przenieś swoją organizację do ${ BRAND_NAME }"
+      ],
+      "Public link": [
+        "Link publiczny"
+      ],
+      "Public link settings": [
+        "Ustawienia linku publicznego"
+      ],
+      "Read-only": [
+        "Tylko do odczytu"
+      ],
+      "Remove your access?": [
+        "Odebrać Ci dostęp?"
+      ],
+      "Select data to import": [
+        "Wybierz dane do importu"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Ustawienia dla: ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Udostępnij „${ fileName }”"
+      ],
+      "Stay for 50% off your next month": [
+        "Zostań z nami, aby uzyskać 50% zniżki w następnym miesiącu"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Ulepsz konto, aby zachować korzyści premium."
+      ],
+      "Users and addresses": [
+        "Użytkownicy i adresy"
+      ],
+      "Verify your password": [
+        "Zweryfikuj swoje hasło"
       ]
     },
     "Title subscription": {
@@ -10842,11 +11706,23 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Zaszyfrowane hasła (nawet ujawnione) pozostaną bezpieczne, dopóki nie zostaną odszyfrowane."
+      ],
+      "Change shared item settings": [
+        "Zmień ustawienia udostępnionego elementu"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Błyskawiczna pomoc AI, ludzki ekspert pod ręką!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Klucz OpenPGP w wersji 6"
       ]
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ],
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Asystent AI, który szanuje Twoją prywatność"
       ]
     },
     "Validation": {
@@ -11106,6 +11982,15 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Darmowa wersja próbna zakończy się ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Opcja ${ modeLabelStong } zapewnia potężną kontrolę, ale pojedynczy błąd może sprawić, że autouzupełnianie dopasuje i uzupełni dane na fałszywych lub wyłudzających informacje stronach internetowych."
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "Spowoduje to zastąpienie wszystkich danych w arkuszu kalkulacyjnym"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Twoja wersja próbna zakończy się ${ textDate }. Nie zostaną naliczone opłaty, jeśli anulujesz subskrypcję przed ${ textDate }. ${ action }"
       ]
     },
     "b2b_trials_Action": {
@@ -11127,6 +12012,45 @@
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
+      ],
+      "Access to advanced AI models": [
+        "Dostęp do zaawansowanych modeli AI"
+      ],
+      "Built and based in Europe": [
+        "Stworzone i zlokalizowane w Europie"
+      ],
+      "Compliance with data protection regulations": [
+        "Zgodność z regulacjami dotyczącymi ochrony danych"
+      ],
+      "Data never used for AI training": [
+        "Dane nigdy nie są wykorzystywane do trenowania sztucznej inteligencji"
+      ],
+      "Full chat history with search": [
+        "Pełna historia czatów z opcją szukaj"
+      ],
+      "Limited daily chats": [
+        "Ograniczona liczba codziennych czatów"
+      ],
+      "Limited favorites": [
+        "Ograniczona liczba ulubionych"
+      ],
+      "Unlimited daily chats": [
+        "Nieograniczone codzienne czaty"
+      ],
+      "Unlimited favorites for quick access": [
+        "Nieograniczona liczba ulubionych zapewniająca szybki dostęp"
+      ],
+      "Upload and query multiple large files": [
+        "Prześlij i zapytaj wiele dużych plików"
+      ],
+      "Upload and query small files": [
+        "Przesyłaj i sprawdzaj małe pliki"
+      ],
+      "Web search access": [
+        "Dostęp do wyszukiwania w sieci"
+      ],
+      "Zero-access encryption": [
+        "Szyfrowanie z zerowym dostępem"
       ]
     },
     "customer_support.feature.all": {
@@ -11190,6 +12114,12 @@
       ],
       "Storage": [
         "Przestrzeń dyskowa"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Szyfrowana przestrzeń dyskowa w chmurze na pliki, zdjęcia i dokumenty"
+      ],
+      "More premium features": [
+        "Więcej funkcji premium"
       ]
     },
     "Features": {
@@ -11203,6 +12133,12 @@
       ],
       "Drawer": [
         "Panel boczny"
+      ],
+      "Password ends with": [
+        "Hasło kończy się na"
+      ],
+      "Username": [
+        "Nazwa użytkownika"
       ]
     },
     "ICS event error": {
@@ -11257,6 +12193,69 @@
     "meet_2025: Feature": {
       "Screen-sharing": [
         "Udostępnianie ekranu"
+      ],
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Poufne wideokonferencje dla ważnych wątków"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktywne spotkanie jednocześnie",
+        "${ n } aktywne spotkania jednocześnie",
+        "${ n } aktywnych spotkań jednocześnie",
+        "${ n } aktywnych spotkań jednocześnie"
+      ],
+      "${ n } participant": [
+        "${ n } uczestnik",
+        "${ n } uczestnicy",
+        "${ n } uczestników",
+        "${ n } uczestnika"
+      ],
+      "24 hours per meeting": [
+        "24 godziny na spotkanie"
+      ],
+      "60 minutes per meeting": [
+        "60 minut na spotkanie"
+      ],
+      "Booking pages": [
+        "Strony rezerwacji"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Przeglądarka oraz aplikacje mobilne i desktopowe"
+      ],
+      "Built-in chat": [
+        "Wbudowany czat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Udostępnianie ekranu z szyfrowaniem end-to-end i efemeryczny czat w trakcie połączenia"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Organizatorzy mogą nagrywać spotkania lokalnie na swoich komputerach"
+      ],
+      "Meeting recording": [
+        "Nagranie spotkania"
+      ],
+      "One active meeting at a time": [
+        "Jedno aktywne spotkanie w danym czasie"
+      ],
+      "Unlimited meetings per day": [
+        "Nieograniczona liczba spotkań dziennie"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Do ${ n } spotkania dziennie",
+        "Do ${ n } spotkań dziennie",
+        "Do ${ n } spotkań dziennie",
+        "Do ${ n } spotkań dziennie"
+      ],
+      "Up to ${ n } participant": [
+        "Do ${ n } uczestnika",
+        "Do ${ n } uczestników",
+        "Do ${ n } uczestników",
+        "Do ${ n } uczestników"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Spotkania wideo, ${ n } uczestnik",
+        "Spotkania wideo, ${ n } uczestnicy",
+        "Spotkania wideo, ${ n } uczestników",
+        "Spotkania wideo, ${ n } uczestników"
       ]
     },
     "new_plans: Subtext": {
@@ -11339,6 +12338,12 @@
       ],
       "Your subscription renews soon": [
         "Subskrypcja odnowi się wkrótce"
+      ],
+      "Don't show this again": [
+        "Nie pokazuj ponownie"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Wybierz plan ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -11459,6 +12464,21 @@
     "Provider option": {
       "Yahoo": [
         "Yahoo"
+      ],
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Inna"
+      ],
+      "Outlook": [
+        "Outlook"
       ]
     },
     "q1campaign: Action": {
@@ -11613,6 +12633,57 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Możesz otrzymać do **${ maxRewardAmount }** w środkach."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Jeśli anulujesz przed tą datą,** po zakończeniu okresu próbnego Twój plan zostanie **obniżony** do ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Jeśli nie dokonasz subskrypcji,** Twój plan zostanie **obniżony** do ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Jeśli nie anulujesz subskrypcji,** rozpocznie się pełny plan i otrzymasz **${ referrerRewardAmount }** w środkach."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Jeśli dokonasz subskrypcji przed tą datą,** otrzymasz **${ referrerRewardAmount }** w środkach."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Po tej dacie Twoje konto zostanie obniżone do **${ BRAND_NAME } Free**. Jeśli zmienisz zdanie, możesz **reaktywować subskrypcję**, aby zachować dostęp do funkcji premium."
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Zyskaj do ${ maxRewardAmount } w ramach środków. Otrzymasz ${ referrerRewardAmount }, gdy osoba zaproszona przez Ciebie zasubskrybuje plan ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Korzystaj z planu **${ planTitle }** za darmo do dnia **${ textDate }**."
+      ],
+      "Friend joined": [
+        "Znajomy dołączył",
+        "Znajomi dołączyli",
+        "Znajomi dołączyli",
+        "Znajomi dołączyli"
+      ],
+      "Friend subscribed": [
+        "Znajomy zasubskrybował",
+        "Znajomi zasubskrybowali",
+        "Znajomych zasubskrybowało",
+        "Znajomych zasubskrybowało"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Ostatnia szansa, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**."
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Gdy Twoja pełna subskrypcja się rozpocznie, nadal możesz ją anulować w ciągu 30 dni i otrzymać proporcjonalny zwrot kosztów."
+      ],
+      "Refer friends": [
+        "Poleć znajomym"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Pozostał Ci **${ daysRemaining } dzień**, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**.",
+        "Pozostały Ci **${ daysRemaining } dni**, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**.",
+        "Pozostało Ci **${ daysRemaining } dni**, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**.",
+        "Pozostało Ci **${ daysRemaining } dni**, aby wypróbować wszystkie zaawansowane funkcje, jakie oferuje plan **${ planTitle }**."
+      ],
+      "your subscription": [
+        "twoja subskrypcja"
       ]
     },
     "Section": {
@@ -11766,6 +12837,276 @@
       ],
       "SUMMER SALE": [
         "LETNIE PROMOCJE"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } kolejny wynik nie jest pokazywany",
+        "${ hiddenResultsCount } kolejne wyniki nie są pokazywane",
+        "${ hiddenResultsCount } kolejnych wyników nie jest pokazywanych",
+        "${ hiddenResultsCount } kolejnych wyników nie jest pokazywanych"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Po zakończeniu okresu próbnego ${ formattedDate1 } subskrypcja zmieni się w płatną i będzie automatycznie odnawiana co ${ renewCycle } miesiące. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Po zakończeniu okresu próbnego ${ formattedDate1 } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "W okresie próbnym możesz mieć do ${ TRIAL_MAX_LUMO_SEATS } licencji ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_SCRIBE_SEATS } miejsc Scribe w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_USERS } użytkowników w okresie próbnym."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nie możesz dodać niestandardowych domen w okresie próbnym."
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB przestrzeni dyskowej na dane"
+      ],
+      "3 TB data storage": [
+        "3 TB przestrzeni dyskowej na dane"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Dostęp do ponad 15 000 serwerów w ponad 120 krajach"
+      ],
+      "Access advanced AI models": [
+        "Uzyskaj dostęp do zaawansowanych modeli AI"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Wszystkie funkcje premium usług ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokuj reklamy, elementy śledzące i złośliwe oprogramowanie"
+      ],
+      "Built-in 2FA authenticator": [
+        "Wbudowana aplikacja uwierzytelniająca"
+      ],
+      "Connect 10 devices at once": [
+        "Połącz 10 urządzeń jednocześnie"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Pełna historia czatu z łatwym wyszukiwaniem i ulubionymi"
+      ],
+      "Individual accounts for 6 users": [
+        "Indywidualne konta dla 6 użytkowników"
+      ],
+      "Individual accounts for you and a partner": [
+        "Indywidualne konta dla Ciebie i partnera"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silniejsza ochrona przed cyberzagrożeniami"
+      ],
+      "Unlimited daily chats": [
+        "Nieograniczone codzienne czaty"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenia oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania."
+      ]
+    },
+    "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "Zaawansowane bezpieczeństwo konta i sieci w jednym planie"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Szybkie czaty i zaawansowane funkcje AI."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Prywatne rozmowy wideo dla ważnych dla Ciebie wątków."
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Na ${ MEET_APP_NAME }"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/miesiąc"
+      ],
+      "2 TB of storage to share": [
+        "2 TB przestrzeni dyskowej do udostępnienia"
+      ],
+      "2 user accounts": [
+        "2 konta użytkowników"
+      ],
+      "All premium features from your current plan": [
+        "Wszystkie funkcje premium z Twojego obecnego planu"
+      ],
+      "Only": [
+        "Tylko"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Uzyskaj 4x więcej przestrzeni dyskowej"
+      ],
+      "Share your plan": [
+        "Udostępnij swój plan"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Uzyskaj 4x więcej przestrzeni dyskowej z ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Udostępnij korzyści swojego planu z ${ BRAND_NAME } Duo"
+      ]
+    },
+    "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Zaloguj się przy użyciu adresu Gmail, który przekazuje już dalej wiadomości do ${ MAIL_APP_NAME }"
+      ],
+      "Please sign in with the same Gmail address you originally connected": [
+        "Zaloguj się przy użyciu tego samego adresu Gmail, który pierwotnie połączono"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "W toku"
+      ],
+      "Migrated": [
+        "Przeniesione"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkownika)",
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkowników)",
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkowników)",
+        "${ MEET_APP_NAME } (dla ${ quantity } użytkowników)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "Licencja ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } liczby licencji"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licencja ${ MEET_APP_NAME }",
+        "${ seats } licencje ${ MEET_APP_NAME }",
+        "${ seats } licencji ${ MEET_APP_NAME }",
+        "${ seats } licencji ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "W okresie próbnym możesz mieć do ${ TRIAL_MAX_MEET_SEATS } licencji ${ MEET_SHORT_APP_NAME }."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Właściciel"
+      ],
+      "Security Admin": [
+        "Administrator bezpieczeństwa"
+      ],
+      "User Admin": [
+        "Administrator użytkowników"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfiguruj zasady bezpieczeństwa, przechowywanie danych oraz infrastrukturę VPN i zarządzaj logami audytowymi."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Zarządzaj wszystkimi użytkownikami, grupami, bezpieczeństwem, rozliczeniami i konfiguracjami systemu."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Zarządzaj użytkownikami, grupami i przestrzenią dyskową dla wszystkich członków, przypisuj stanowiska i przydzielaj licencje."
+      ]
+    },
+    "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Wartości rozdzielone przecinkami (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "New spreadsheet": [
+        "Nowy arkusz kalkulacyjny"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Wartości rozdzielone tabulatorami (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Detect automatically": [
+        "Wykryj automatycznie"
+      ],
+      "Insert as new sheet": [
+        "Wstaw jako nowy arkusz"
+      ],
+      "Replace current sheet": [
+        "Zastąp bieżący arkusz"
+      ],
+      "Replace data at selected cell": [
+        "Zastąp dane w wybranej komórce"
+      ],
+      "Replace spreadsheet": [
+        "Zastąp arkusz kalkulacyjny"
+      ],
+      "Select a file to import": [
+        "Wybierz plik do zaimportowania"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Twój obecny arkusz kalkulacyjny, w tym wszystkie jego arkusze, zostanie zastąpiony tą wersją."
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Konwertuj tekst na liczby, daty i formuły"
+      ],
+      "Destination": [
+        "Miejsce docelowe"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Separator type": [
+        "Typ separatora"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Importuj dane"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Akcje"
+      ],
+      "Created": [
+        "Utworzono"
+      ],
+      "Expires": [
+        "Wygasa"
+      ],
+      "Fingerprint": [
+        "Odcisk klucza"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Rodzaj"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Będziesz mieć możliwość przypisywania stanowisk, gdy tylko użytkownik zaakceptuje zaproszenie."
       ]
     }
   }

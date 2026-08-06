@@ -1037,6 +1037,36 @@
       ],
       "Verify now": [
         "Overiť teraz"
+      ],
+      "Clear conversation": [
+        "Vyčistiť konverzáciu"
+      ],
+      "Download debug information": [
+        "Stiahnuť ladiace informácie"
+      ],
+      "Export editor state for version": [
+        "Exportovať stav editora pre danú verziu"
+      ],
+      "Export this version (as docx)": [
+        "Exportovať túto verziu (ako docx)"
+      ],
+      "Export YJS state for version": [
+        "Exportovať stav YJS pre danú verziu"
+      ],
+      "Reject": [
+        "Odmietnuť"
+      ],
+      "Reload spreadsheet": [
+        "Znovu načítať tabuľku"
+      ],
+      "Report issue": [
+        "Nahlásiť problém"
+      ],
+      "Send": [
+        "Odoslať"
+      ],
+      "Stop": [
+        "Zastaviť"
       ]
     },
     "Action subscription": {
@@ -1142,6 +1172,36 @@
       ],
       "Writing assistant seats": [
         "Licencie pre asistenta písania"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľa)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľa)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľa)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)",
+        "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)"
+      ],
+      "${ price } per seat": [
+        "${ price } za licenciu"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } vlastná doména",
+        "${ quantity } vlastné domény",
+        "${ quantity } vlastných domén",
+        "${ quantity } vlastných domén"
       ]
     },
     "Alert": {
@@ -1160,6 +1220,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ BRAND_NAME } Scribe, aby vám pomohol písať, odpovedať a opravovať emaily."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ LUMO_SHORT_APP_NAME }, aby vám pomohol písať, odpovedať a opravovať emaily."
       ]
     },
     "Attached ics file error": {
@@ -1398,6 +1461,15 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ LUMO_SHORT_APP_NAME }, neobmedzený počet hide-my-email aliasov a ďalšie."
       ]
     },
     "Billing cycle": {
@@ -1537,6 +1609,9 @@
       ],
       "Maybe later": [
         "Možno neskôr"
+      ],
+      "Get 50% offer": [
+        "Využite 50 % zľavu"
       ]
     },
     "Cancellation upsell": {
@@ -3692,6 +3767,30 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu používateľov vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať ďalšieho používateľa."
+      ],
+      "Failed to rename document": [
+        "Premenovanie dokumentu zlyhalo"
+      ],
+      "Failed to trash document": [
+        "Odstránenie dokumentu do koša zlyhalo"
+      ],
+      "Invalid URL": [
+        "Neplatná URL"
+      ],
+      "No drive found to import": [
+        "Nenašiel sa žiadny disk na import"
+      ],
+      "Some documents could not be loaded": [
+        "Niektoré dokumenty sa nepodarilo načítať"
+      ],
+      "Something went wrong": [
+        "Niečo sa pokazilo"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Neočakávaná chyba, nemôžeme importovať súbory"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Touto metódou sa nám nepodarilo odoslať overovací kód."
       ]
     },
     "Error importing calendar": {
@@ -4110,6 +4209,9 @@
       ],
       "Security key": [
         "Bezpečnostný kľúč"
+      ],
+      "Touch your security key.": [
+        "Dotknite sa svojho bezpečnostného kľúča."
       ]
     },
     "fido2: Label": {
@@ -6334,6 +6436,63 @@
       ],
       "We'll remind you to verify your password again later": [
         "Neskôr vám pripomenieme, aby ste si heslo overili ešte raz"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Pristupujte k 20 000+ serverom vo viac ako 145 krajinách"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Vytvoriť bezpečný cloud pre ${ memberCount } člena",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov"
+      ],
+      "Details": [
+        "Podrobnosti"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Najvyššia rýchlosť VPN až 10 Gbps"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Iba súbory (bez fotografií, ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME }) – celkovo až 100 GB, 100 000 súborov a 50 GB na jeden súbor"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Máte ešte trochu času na rozhodnutie bez toho, aby vás niekto rušil."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Pomôžte nám vylepšiť túto funkciu tým, že nahlásite tento problém. Ak vám nevadí zdieľať obsah tabuľky, priložte k hláseniu nižšie uvedené informácie na účely ladenia."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Pomôžte nám vylepšiť túto službu tým, že nahlásite tento problém. K hláseniu prosím priložte nižšie uvedené ladiace informácie."
+      ],
+      "Hide table of contents": [
+        "Skryť obsah"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Ak zrušíte predplatné teraz, stratíte prístup k službe ${ BRAND_NAME } ${ planTitle } dňa ${ expiryDate }, vrátane týchto funkcií:"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ups! Táto tabuľka nedokáže uložiť vaše posledné úpravy, preto sme pozastavili úpravy, aby ste o svoju prácu neprišli."
+      ],
+      "Premium privacy protection across all your devices": [
+        "Prémiová ochrana súkromia na všetkých vašich zariadeniach"
+      ],
+      "Show table of contents": [
+        "Zobraziť obsah"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Držte sa svojho plánu a získajte 50 % zľavu na nasledujúci mesiac"
+      ],
+      "Thinking about this": [
+        "Premýšľam o tom"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Zistili sme, že ste v minulosti mali problémy s otvorením dokumentu."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Momentálne ste prihlásený ako ${ username } v (${ organizationName }."
       ]
     },
     "info": {
@@ -7029,6 +7188,42 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } znakov"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Povoliť editorom zmeniť oprávnenia a zdieľať."
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Verzia klienta"
+      ],
+      "Drive": [
+        "Jednotka"
+      ],
+      "Exact host matching": [
+        "Presná zhoda hostiteľa"
+      ],
+      "Exact URL matching": [
+        "Presná zhoda URL"
+      ],
+      "Never fill on this exact URL": [
+        "Nikdy nevypĺňať túto presnú URL adresu"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadradená doména a subdomény (predvolené nastavenie)"
+      ],
+      "Regular expression": [
+        "Regulárny výraz"
+      ],
+      "Starts with": [
+        "Začína s"
+      ],
+      "Unknown user": [
+        "Neznámy používateľ"
+      ],
+      "URL wildcard pattern": [
+        "Vzor so zástupnými znakmi v URL"
       ]
     },
     "Label for contact group color": {
@@ -7280,6 +7475,9 @@
       ],
       "Add-on with free trial": [
         "Doplnok s bezplatnou skúšobnou verziou"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "mailtrial2024: Action": {
@@ -7314,6 +7512,24 @@
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaša bezplatná skúšobná verzia skončila. ${ nonAutoRenewalAction }"
+      ],
+      "'Starts with' matching rule": [
+        "Pravidlo porovnávania „začína na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo presnej zhody (pod)domén"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo presnej zhody URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevypĺňať presne túto URL adresu"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárneho výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo porovnávania vzorov so zástupnými znakmi"
       ]
     },
     "Message display when a new app version is available": {
@@ -8184,6 +8400,9 @@
       ],
       "Unlock streaming": [
         "Odomknite streamovanie"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -8955,6 +9174,36 @@
         "${ numberOfItems } položky presunuté",
         "${ numberOfItems } položiek presunutých",
         "${ numberOfItems } položiek presunutých"
+      ],
+      "\"Document deleted permanently": [
+        "Dokument bol trvalo odstránený"
+      ],
+      "Document moved to trash": [
+        "Dokument bol presunutý do koša"
+      ],
+      "Document restored from trash": [
+        "Dokument z koša bol obnovený"
+      ],
+      "Failed to delete document": [
+        "Vymazanie dokumentu zlyhalo"
+      ],
+      "Failed to load invitations": [
+        "Nepodarilo sa načítať pozvánky"
+      ],
+      "Failed to load sharing details": [
+        "Nepodarilo sa načítať podrobnosti zdieľania"
+      ],
+      "Failed to reject invitation": [
+        "Odmietnutie pozvánky zlyhalo"
+      ],
+      "Failed to rename document": [
+        "Premenovanie dokumentu zlyhalo"
+      ],
+      "Failed to restore document": [
+        "Obnovenie dokumentu zlyhalo"
+      ],
+      "Failed to trash document": [
+        "Odstránenie dokumentu do koša zlyhalo"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9403,6 +9652,9 @@
       ],
       "Search for users or addresses": [
         "Hľadať používateľov alebo adresy"
+      ],
+      "Ask anything…": [
+        "Opýtajte sa na čokoľvek..."
       ]
     },
     "Placeholder for contact group name": {
@@ -10088,6 +10340,12 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "Ak chcete tento dokument upraviť, vytvorte si kópiu, ktorú môžete meniť."
+      ],
+      "Editor permissions": [
+        "Oprávnenia redaktora"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Redaktori teraz môžu spravovať zdieľanie a pozývať ďalších používateľov. Túto funkciu môžete kedykoľvek vypnúť v nastaveniach zdieľania."
       ]
     },
     "State": {
@@ -10579,6 +10837,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Size": [
+        "Veľkosť"
       ]
     },
     "TableHeader": {
@@ -11373,6 +11634,24 @@
       ],
       "You are all set": [
         "Všetko je nastavené"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe, asistent písania"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } asistenta písania"
+      ],
+      "Editing paused": [
+        "Úprava pozastavená"
+      ],
+      "Problems Detected": [
+        "Zistené problémy"
+      ],
+      "Stay for 50% off your next month": [
+        "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
+      ],
+      "Users and addresses": [
+        "Používatelia a adresy"
       ]
     },
     "Title subscription": {
@@ -11478,6 +11757,12 @@
       ],
       "Change shared item settings": [
         "Zmeniť nastavenia zdieľanej položky"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Okamžitá pomoc AI, k dispozícii je aj ľudský odborník!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Kľúč OpenPGP verzie 6"
       ]
     },
     "tooltip": {
@@ -11751,6 +12036,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Funkcia ${ modeLabelStong } ponúka rozsiahle možnosti ovládania, avšak už jediná chyba môže spôsobiť, že funkcia automatického vypĺňania bude na podvodných alebo phishingových webových stránkach vyhľadávať a vypĺňať údaje."
       ]
     },
     "Autocomplete": {
@@ -11767,6 +12055,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Po skončení skúšobného obdobia dňa ${ formattedDate1 } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_DEDICATED_IPS } vyhradených serverov počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } miest počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } licencií na asistenta písania ${ LUMO_SHORT_APP_NAME } počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } Scribe miest počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_USERS } používateľov počas skúšobného obdobia."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Počas skúšobného obdobia nemôžete pridať vlastné domény."
       ]
     },
     "b2b_trials_Action": {
@@ -12086,6 +12392,15 @@
         "${ seats }${ MEET_APP_NAME } licencie",
         "${ seats }${ MEET_APP_NAME } licencií",
         "${ seats }${ MEET_APP_NAME } licencií"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľa)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)"
+      ],
+      "${ price } per seat": [
+        "${ price } za licenciu"
       ]
     },
     "meet_2025: Feature": {
@@ -12798,6 +13113,66 @@
       ],
       "SUMMER SALE": [
         "LETNÝ VÝPREDAJ"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Prebieha"
+      ],
+      "Migrated": [
+        "Presunuté"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } miest počas skúšobného obdobia."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Vlastník"
+      ],
+      "Security Admin": [
+        "Bezpečnostný správca"
+      ],
+      "User Admin": [
+        "Správca používateľov"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurácia bezpečnostných politík, uchovávania údajov a infraštruktúry VPN a správa auditových záznamov."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Spravujte všetkých používateľov, skupiny, zabezpečenie, fakturáciu a systémové konfigurácie."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Správa používateľov, skupín a úložného priestoru pre všetkých členov, prideľovanie rolí a prideľovanie licencií."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Akcie"
+      ],
+      "Created": [
+        "Vytvorené"
+      ],
+      "Expires": [
+        "Vyprší"
+      ],
+      "Fingerprint": [
+        "Odtlačok prsta"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Akonáhle používateľ prijme pozvánku, budete môcť priradiť pozície."
       ]
     }
   }

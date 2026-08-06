@@ -937,6 +937,36 @@
       ],
       "Verify now": [
         "Verifiser nå"
+      ],
+      "Clear conversation": [
+        "Rensk samtalen"
+      ],
+      "Download debug information": [
+        "Last ned feilsøkingsinformasjon"
+      ],
+      "Export editor state for version": [
+        "Eksporter redigeringsstatus for versjon"
+      ],
+      "Export this version (as docx)": [
+        "Eksporter denne versjonen (som docx)"
+      ],
+      "Export YJS state for version": [
+        "Eksporter YJS-status for versjon"
+      ],
+      "Reject": [
+        "Avvis"
+      ],
+      "Reload spreadsheet": [
+        "Last inn regneark på nytt"
+      ],
+      "Report issue": [
+        "Rapporter problem"
+      ],
+      "Send": [
+        "Send"
+      ],
+      "Stop": [
+        "Stopp"
       ]
     },
     "Actions message": {
@@ -969,23 +999,23 @@
         "${ LUMO_APP_NAME } KI-lisens"
       ],
       "${ LUMO_APP_NAME } seats": [
-        "${ LUMO_APP_NAME }-lisenser"
+        "${ LUMO_APP_NAME } seter"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } KI-lisens",
         "${ seats } ${ LUMO_APP_NAME } KI-lisenser"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } lisens",
-        "${ seats } ${ LUMO_APP_NAME } lisenser"
+        "${ seats } ${ LUMO_APP_NAME } sete",
+        "${ seats } ${ LUMO_APP_NAME } seter"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
-        "${ seats } ${ MEET_APP_NAME }-lisens",
-        "${ seats } ${ MEET_APP_NAME }-lisenser"
+        "${ seats } ${ MEET_APP_NAME } sete",
+        "${ seats } ${ MEET_APP_NAME } seter"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } skriveassistentlisens",
-        "${ seats } skriveassistentlisenser"
+        "${ seats } skriveassistentsete",
+        "${ seats } skriveassistentseter"
       ],
       "${ users } user": [
         "${ users } bruker",
@@ -1007,7 +1037,38 @@
         "Skriveassistent"
       ],
       "Writing assistant seats": [
-        "Skriveassistentlisenser"
+        "Skriveassistentseter"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } bruker)",
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } brukere)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } bruker)",
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } brukere)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (for ${ quantity } bruker)",
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (for ${ quantity } brukere)"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } per dedikerte tjener"
+      ],
+      "${ price } per domain": [
+        "${ price } per domene"
+      ],
+      "${ price } per seat": [
+        "${ price } per sete"
+      ],
+      "${ price } per user": [
+        "${ price } per bruker"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } egendefinert domene",
+        "${ quantity } egendefinerte domener"
       ]
     },
     "Alert": {
@@ -1055,6 +1116,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert server i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seter i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } skriveassistentseter i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-seter i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_USERS } brukere i prøveperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan ikke legge til egendefinerte domener i prøveperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -1169,6 +1248,13 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ]
     },
     "BF2025: Deal details": {
@@ -1323,6 +1409,9 @@
       ],
       "Maybe later": [
         "Kanskje senere"
+      ],
+      "Get 50% offer": [
+        "Få 50 % tilbud"
       ]
     },
     "Cancellation upsell": {
@@ -3430,6 +3519,30 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brukt alle brukerne i planen din. Oppgrader planen din for å legge til en ny bruker."
+      ],
+      "Failed to rename document": [
+        "Kunne ikke endre navn på dokumentet"
+      ],
+      "Failed to trash document": [
+        "Kunne ikke legge dokumentet i papirkurven"
+      ],
+      "Invalid URL": [
+        "Ugyldig nettadresse"
+      ],
+      "No drive found to import": [
+        "Ingen disker å importere funnet"
+      ],
+      "Some documents could not be loaded": [
+        "Kunne ikke laste inn enkelte dokumenter"
+      ],
+      "Something went wrong": [
+        "Noe gikk galt"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Uventet feil, vi kan ikke importere filene"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekreftelseskode med denne metoden."
       ]
     },
     "error": {
@@ -3833,6 +3946,9 @@
       ],
       "Security key": [
         "Sikkerhetsnøkkel"
+      ],
+      "Touch your security key.": [
+        "Berør sikkerhetsnøkkelen din."
       ]
     },
     "fido2: Label": {
@@ -5715,6 +5831,76 @@
       ],
       "We'll remind you to verify your password again later": [
         "Vi minner deg på å bekrefte passordet ditt igjen senere."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Tilgang til over 20 000 servere i 145 land"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opprett en sikker sky for ${ memberCount } medlem",
+        "Opprett en sikker sky for ${ memberCount } medlemmer"
+      ],
+      "Custom email domains": [
+        "Egendefinerte e-postdomener"
+      ],
+      "Details": [
+        "Detaljer"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Raskeste VPN-hastigheter på opptil 10 Gbps"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Bare filer (ingen bilder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – opptil 100 GB totalt, 100 000 filer og 50 GB per fil"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Ha litt mer tid til å bestemme deg uten avbrudd."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Hjelp oss med å forbedre denne opplevelsen ved å rapportere problemet. Hvis du føler deg komfortabel med å dele regnearkinnhold, kan du legge ved feilsøkingsinformasjonen nedenfor i rapporten din."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Hjelp oss med å forbedre denne opplevelsen ved å rapportere problemet. Legg ved feilsøkingsinformasjonen nedenfor i rapporten din."
+      ],
+      "Hide table of contents": [
+        "Skjul innholdsfortegnelse"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Hvis du kansellerer nå, mister du tilgangen til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inkludert disse funksjonene:"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Beklager! Dette regnearket kan ikke lagre de nyeste redigeringene dine, så vi har satt redigeringen på pause for å hindre at du mister arbeidet ditt."
+      ],
+      "Organization size": [
+        "Organisasjonsstørrelse"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Førsteklasses personvernbeskyttelse på tvers av alle enhetene dine"
+      ],
+      "Show table of contents": [
+        "Vis innholdsfortegnelse"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Hold deg til planen din og få 50 % rabatt neste måned"
+      ],
+      "Thinking about this": [
+        "Tenker på dette"
+      ],
+      "Users": [
+        "Brukere"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Vi har oppdaget at du tidligere har opplevd problemer med å åpne et dokument."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du er for øyeblikket pålogget som ${ username } for (${ organizationName }."
       ]
     },
     "info": {
@@ -6286,6 +6472,42 @@
       ],
       "Emails": [
         "E-poster"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Tillat redaktører å endre tillatelser og dele."
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversjon"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Exact host matching": [
+        "Nøyaktig vertsmatching"
+      ],
+      "Exact URL matching": [
+        "Nøyaktig URL-samsvar"
+      ],
+      "Never fill on this exact URL": [
+        "Fyll aldri på denne nøyaktige nettadressen"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domene og underdomener (standard)"
+      ],
+      "Regular expression": [
+        "Regulært uttrykk"
+      ],
+      "Starts with": [
+        "Begynner med"
+      ],
+      "Unknown user": [
+        "Ukjent bruker"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
       ]
     },
     "Label for contact group color": {
@@ -6503,6 +6725,9 @@
       ],
       "Add-on with free trial": [
         "Tillegg med gratis prøveperiode"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "meet_2025: Addon": {
@@ -6510,11 +6735,18 @@
         "${ MEET_APP_NAME }-tilgang"
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME }-tilganger"
+        "${ MEET_APP_NAME } seter"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
-        "${ seats } ${ MEET_APP_NAME }-tilgang",
-        "${ seats } ${ MEET_APP_NAME }-tilganger"
+        "${ seats } ${ MEET_APP_NAME } sete",
+        "${ seats } ${ MEET_APP_NAME } seter"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (for ${ quantity } bruker)",
+        "${ MEET_APP_NAME } (for ${ quantity } brukere)"
+      ],
+      "${ price } per seat": [
+        "${ price } per sete"
       ]
     },
     "meet_2025: Feature": {
@@ -6581,6 +6813,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Prøveperioden er avsluttet. Tilgang til kontoen din vil snart bli deaktivert. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "\"Begynner med\"-samsvarsregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regel for nøyaktig (under)domenesamsvar"
+      ],
+      "Exact URL matching rule": [
+        "Regel for nøyaktig URL-samsvar"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldri med denne nøyaktige nettadressen"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært uttrykk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for samsvar med jokertegnmønster"
       ]
     },
     "Message display when a new app version is available": {
@@ -7393,6 +7643,9 @@
       ],
       "Unlock streaming": [
         "Lås opp strømming"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "new_plans: feature highlight": {
@@ -8044,7 +8297,7 @@
         "Innstillingene dine ble endret"
       ],
       "\"${ fileName }\" shared": [
-        "\"${ fileName }}\" delt"
+        "\"${ fileName }\" delt"
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Innstilling oppdatert. Redaktører kan endre tillatelser og dele."
@@ -8067,6 +8320,36 @@
       "${ numberOfItems } item moved": [
         "${ numberOfItems } element flyttet",
         "${ numberOfItems } elementer flyttet"
+      ],
+      "\"Document deleted permanently": [
+        "\"Dokument slettet permanent\""
+      ],
+      "Document moved to trash": [
+        "Dokument flyttet til papirkurven"
+      ],
+      "Document restored from trash": [
+        "Dokument gjenopprettet fra papirkurven"
+      ],
+      "Failed to delete document": [
+        "Kunne ikke slette dokumentet"
+      ],
+      "Failed to load invitations": [
+        "Kunne ikke laste inn invitasjoner"
+      ],
+      "Failed to load sharing details": [
+        "Kunne ikke laste inn delingsdetaljene"
+      ],
+      "Failed to reject invitation": [
+        "Kunne ikke avvise invitasjonen"
+      ],
+      "Failed to rename document": [
+        "Kunne ikke endre navn på dokumentet"
+      ],
+      "Failed to restore document": [
+        "Kunne ikke gjenopprette dokumentet"
+      ],
+      "Failed to trash document": [
+        "Kunne ikke legge dokumentet i papirkurven"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8557,6 +8840,9 @@
       ],
       "Search for users or addresses": [
         "Søk etter brukere eller adresser"
+      ],
+      "Ask anything…": [
+        "Spør om hva som helst…"
       ]
     },
     "Placeholder for contact group name": {
@@ -9452,6 +9738,12 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "For å redigere dette dokumentet, lag en kopi som du kan endre."
+      ],
+      "Editor permissions": [
+        "Redaktørtillatelser"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Redaktører kan nå administrere deling og invitere andre. Du kan slå det av når som helst i delingsinnstillingene."
       ]
     },
     "sso": {
@@ -9826,6 +10118,9 @@
       ],
       "Type": [
         "Type"
+      ],
+      "Size": [
+        "Størrelse"
       ]
     },
     "TableHeader": {
@@ -10501,7 +10796,7 @@
         "Innstillinger for ${ sharedFileName }"
       ],
       "Share \"${ fileName }\"": [
-        "Del \"${ fileName }}\""
+        "Del \"${ fileName }\""
       ],
       "Computers": [
         "Datamaskiner"
@@ -10526,6 +10821,24 @@
       ],
       "You are all set": [
         "Du er klar"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skriveassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "Editing paused": [
+        "Redigering satt på pause"
+      ],
+      "Problems Detected": [
+        "Problemer oppdaget"
+      ],
+      "Stay for 50% off your next month": [
+        "Bli og få 50 % rabatt neste måned"
+      ],
+      "Users and addresses": [
+        "Brukere og adresser"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10611,6 +10924,12 @@
       ],
       "Change shared item settings": [
         "Endre innstillinger for delt element"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Øyeblikkelig KI-assistanse, menneskelig ekspert er klar!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Versjon 6 OpenPGP-nøkkel"
       ]
     },
     "tooltip": {
@@ -10826,6 +11145,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } gir kraftig kontroll, men én enkelt feil kan føre til at autofyll samsvarer med og fyller ut data på svindel- eller nettfisking-nettsteder."
       ]
     },
     "BOSS": {
@@ -10996,6 +11318,77 @@
       ],
       "SUMMER SALE": [
         "SOMMERSALG"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktiviteten til nye nivåer. La ${ LUMO_SHORT_APP_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrert"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seter i prøveperioden."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Eier"
+      ],
+      "Security Admin": [
+        "Sikkerhetsadministrator"
+      ],
+      "User Admin": [
+        "Brukeradministrator"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurer sikkerhetsretningslinjer, dataoppbevaring, VPN-infrastruktur og administrer revisjonslogger."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brukere, grupper, sikkerhet, fakturering og systemkonfigurasjoner."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrer brukere, grupper og lagring for alle medlemmer, tildel roller og alloker lisenser."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Created": [
+        "Opprettet"
+      ],
+      "Expires": [
+        "Utløper"
+      ],
+      "Fingerprint": [
+        "Fingeravtrykk"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
+    "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Oppgrader til en støttet plan for å bruke administratorroller."
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
       ]
     }
   }

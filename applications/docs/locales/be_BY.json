@@ -70,7 +70,7 @@
         "Дадаць нататку"
       ],
       "Add people or groups to share": [
-        "Дадаць карыстальнікаў або групы для абагулення"
+        "Дадаць карыстальнікаў або групы для абагульвання"
       ],
       "Add phone number": [
         "Дадаць нумар тэлефона"
@@ -1040,6 +1040,30 @@
       ],
       "Verify now": [
         "Спраўдзіць"
+      ],
+      "Download debug information": [
+        "Спампаваць адладачную інфармацыю"
+      ],
+      "Export editor state for version": [
+        "Экспартаваць стан рэдактара для версіі"
+      ],
+      "Export this version (as docx)": [
+        "Экспартаваць гэту версію (у фармаце docx)"
+      ],
+      "Export YJS state for version": [
+        "Экспартаваць стан YJS для версіі"
+      ],
+      "Reject": [
+        "Адхіліць"
+      ],
+      "Reload spreadsheet": [
+        "Перазагрузіць электронную табліцу"
+      ],
+      "Report issue": [
+        "Паведаміць аб праблеме"
+      ],
+      "Send": [
+        "Адправіць"
       ]
     },
     "Action subscription": {
@@ -1145,6 +1169,36 @@
       ],
       "Writing assistant seats": [
         "Ліцэнзій памочніка ў напісанні"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальніка)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Памочнік ШІ ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальніка)",
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)",
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)",
+        "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальніка)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } (для ${ quantity } карыстальнікаў)"
+      ],
+      "${ price } per seat": [
+        "${ price } за ліцэнзію"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } карыстальніцкі дамен",
+        "${ quantity } карыстальніцкія дамены",
+        "${ quantity } карыстальніцкіх даменаў",
+        "${ quantity } карыстальніцкіх даменаў"
       ]
     },
     "Alert": {
@@ -1162,7 +1216,10 @@
     },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
+        "Выведзіце прадукцыйнасць электроннай пошты на новыя ўзроўні. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ LUMO_SHORT_APP_NAME } дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
       ]
     },
     "Attached ics file error": {
@@ -1396,6 +1453,15 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне, інтэграцыю з 2ФА, ${ DARK_WEB_MONITORING_NAME } і іншыя функцыі."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ LUMO_SHORT_APP_NAME }, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ]
     },
     "Billing cycle": {
@@ -1535,6 +1601,9 @@
       ],
       "Maybe later": [
         "Магчыма пазней"
+      ],
+      "Get 50% offer": [
+        "Скарыстайцеся скідкай у памеры 50%"
       ]
     },
     "Cancellation upsell": {
@@ -3690,6 +3759,30 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы дасягнулі максімальнай колькасці карыстальнікаў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новага карыстальніка."
+      ],
+      "Failed to rename document": [
+        "Не ўдалося перайменаваць дакумент"
+      ],
+      "Failed to trash document": [
+        "Не ўдалося перамясціць дакумент у сметніцу"
+      ],
+      "Invalid URL": [
+        "Памылковы URL-адрас"
+      ],
+      "No drive found to import": [
+        "Не знойдзены дыск для імпартавання"
+      ],
+      "Some documents could not be loaded": [
+        "Некаторыя дакументы не ўдалося загрузіць"
+      ],
+      "Something went wrong": [
+        "Нешта пайшло не так"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Нечаканая памылка. Немагчыма імпартаваць файлы."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
       ]
     },
     "Error importing calendar": {
@@ -4113,6 +4206,9 @@
       ],
       "Security key": [
         "Ключ бяспекі"
+      ],
+      "Touch your security key.": [
+        "Дакраніцеся да свайго ключа бяспекі."
       ]
     },
     "fido2: Label": {
@@ -4704,7 +4800,7 @@
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
+        "Карыстальнік - гэта ўліковы запіс, які звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
@@ -5394,7 +5490,7 @@
         "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
       ],
       "Share via link settings": [
-        "Налады для абагулення праз спасылку"
+        "Налады для абагульвання праз спасылку"
       ],
       "Shareable link for ${ boldNameText }": [
         "Агульнадаступная спасылка для ${ boldNameText }"
@@ -6337,6 +6433,60 @@
       ],
       "We'll remind you to verify your password again later": [
         "Сістэма нагадае вам спраўдзіць пароль пазней яшчэ раз"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Доступ да больш чым 20 000 сервераў у больш чым 145 краінах"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельніка",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў"
+      ],
+      "Details": [
+        "Падрабязнасці"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Найвышэйшая хуткасць VPN, якая дасягае 10 Гбіт/с"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
+      ],
+      "Have some more time to decide without interruption.": [
+        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення ў працы сэрвісу."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Дапамажыце нам палепшыць гэты сэрвіс, паведаміўшы пра праблему. Далучыце прыведзеную ніжэй адладачную інфармацыю да вашага паведамлення, калі электронная табліца не змяшчае канфідэнцыяльных даных."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Дапамажыце нам палепшыць гэты сэрвіс, паведаміўшы пра праблему. Далучыце адладачную інфармацыю ніжэй да вашай справаздачы."
+      ],
+      "Hide table of contents": [
+        "Схаваць змест"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Вы страціце доступ да ${ BRAND_NAME } з тарыфным планам ${ planTitle } (дзейнічае да ${ expiryDate }), які ўключае наступныя функцыі:"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Вой! Не ўдалося захаваць апошнія змены ў гэтай электроннай табліцы. Рэдагаванне часова прыпынена, каб не дапусціць страты вашай працы."
+      ],
+      "Premium privacy protection across all your devices": [
+        "Прэміяльная абарона прыватнасці паміж усімі вашымі прыладамі"
+      ],
+      "Show table of contents": [
+        "Адлюстраваць змест"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Застаньцеся на сваім тарыфным плане і атрымайце скідку ў памеры 50% у наступным месяцы"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Сістэма выявіла, што вы сутыкаліся з праблемай пры адкрыцці дакумента."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Вы ўжо ўвайшлі як ${ username } у ${ organizationName }."
       ]
     },
     "info": {
@@ -7032,6 +7182,39 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "Сімвалаў: ${ value.length }/${ maxLength }"
+      ],
+      "Client": [
+        "Кліент"
+      ],
+      "Client version": [
+        "Версія кліента"
+      ],
+      "Drive": [
+        "Дыск"
+      ],
+      "Exact host matching": [
+        "Дакладнае супадзенне з вузлом"
+      ],
+      "Exact URL matching": [
+        "Дакладнае супадзенне URL-адраса"
+      ],
+      "Never fill on this exact URL": [
+        "Ніколі не запаўняць на гэтым дакладным URL-адрасе"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Бацькоўскі дамен і паддамены (прадвызначана)"
+      ],
+      "Regular expression": [
+        "Рэгулярны выраз"
+      ],
+      "Starts with": [
+        "Пачынаецца з"
+      ],
+      "Unknown user": [
+        "Невядомы карыстальнік"
+      ],
+      "URL wildcard pattern": [
+        "Узор падстаноўчых знакаў URL-адраса"
       ]
     },
     "Label for contact group color": {
@@ -7283,6 +7466,9 @@
       ],
       "Add-on with free trial": [
         "Дадатак з бясплатным пробным перыядам"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "mailtrial2024: Action": {
@@ -7317,6 +7503,24 @@
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш бясплатны пробны перыяд завяршыўся. ${ nonAutoRenewalAction }"
+      ],
+      "'Starts with' matching rule": [
+        "Правіла супадзення \"Пачынаць з\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правіла дакладнага супадзення (пад)дамена"
+      ],
+      "Exact URL matching rule": [
+        "Правіла дакладнага супадзення URL-адраса"
+      ],
+      "Never fill with this exact URL": [
+        "Ніколі не запаўняць з гэтага дакладнага URL-адраса"
+      ],
+      "Regular expression rule": [
+        "Правіла рэгулярнага выразу"
+      ],
+      "Wildcard pattern matching rule": [
+        "Правіла супастаўлення па шаблоне з падстаноўчымі знакамі"
       ]
     },
     "Message display when a new app version is available": {
@@ -7952,7 +8156,7 @@
         "Інтэграваная аўтэнтыфікацыя 2ФА"
       ],
       "Kill switch/always-on VPN": [
-        "Kill Switch/Пастаянны VPN"
+        "Kill Switch/Пастаянная VPN"
       ],
       "Limited support": [
         "Абмежаваная падтрымка"
@@ -8238,6 +8442,9 @@
       ],
       "Unlock streaming": [
         "Разблакіраваць трансляцыі"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -9009,6 +9216,30 @@
         "${ numberOfItems } элементы перамешчаны",
         "${ numberOfItems } элементаў перамешчаны",
         "${ numberOfItems } элементаў перамешчаны"
+      ],
+      "\"Document deleted permanently": [
+        "\"Дакумент незваротна выдалены"
+      ],
+      "Document moved to trash": [
+        "Дакумент перамешчаны ў сметніцу"
+      ],
+      "Document restored from trash": [
+        "Дакумент адноўлены са сметніцы"
+      ],
+      "Failed to delete document": [
+        "Не ўдалося выдаліць дакумент"
+      ],
+      "Failed to load sharing details": [
+        "Не ўдалося загрузіць абагуленыя падрабязнасці"
+      ],
+      "Failed to rename document": [
+        "Не ўдалося перайменаваць дакумент"
+      ],
+      "Failed to restore document": [
+        "Не ўдалося аднавіць дакумент"
+      ],
+      "Failed to trash document": [
+        "Не ўдалося перамясціць дакумент у сметніцу"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10649,6 +10880,9 @@
       ],
       "Type": [
         "Тып"
+      ],
+      "Size": [
+        "Памер"
       ]
     },
     "TableHeader": {
@@ -11443,6 +11677,24 @@
       ],
       "You are all set": [
         "Усё гатова"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Editing paused": [
+        "Рэдагаванне прыпынена"
+      ],
+      "Problems Detected": [
+        "Выяўленыя праблемы"
+      ],
+      "Stay for 50% off your next month": [
+        "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
+      ],
+      "Users and addresses": [
+        "Карыстальнікі і адрасы"
       ]
     },
     "Title subscription": {
@@ -11548,6 +11800,12 @@
       ],
       "Change shared item settings": [
         "Змяніць налады абагуленага элемента"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Імгненная дапамога ШІ, эксперт-чалавек заўсёды напагатове!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Ключ OpenPGP версіі 6"
       ]
     },
     "tooltip": {
@@ -11821,6 +12079,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } забяспечвае магутны кантроль, але адна памылка можа прывесці да таго, што аўтазапаўненне спрацуе і запоўніць даныя на махлярскіх або фішынгавых вэб-сайтах."
       ]
     },
     "Autocomplete": {
@@ -11837,6 +12098,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_DEDICATED_IPS } вылучаных сервераў на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_LUMO_SEATS } ліцэнзій ${ LUMO_SHORT_APP_NAME } на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_SCRIBE_SEATS } ліцэнзій памочніка ў напісанні ${ LUMO_SHORT_APP_NAME } на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_SCRIBE_SEATS } ліцэнзій Scribe на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_USERS } карыстальнікаў на працягу пробнага перыяду."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "У вас няма магчымасці дадаваць карыстальніцкія дамены падчас пробнага перыяду."
       ]
     },
     "b2b_trials_Action": {
@@ -12151,6 +12430,12 @@
         "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
         "${ seats } ліцэнзій ${ MEET_APP_NAME }",
         "${ seats } ліцэнзій ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальніка)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)"
       ]
     },
     "meet_2025: Feature": {
@@ -12847,6 +13132,66 @@
       ],
       "SUMMER SALE": [
         "ЛЕТНІ РАСПРОДАЖ"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Выконваецца"
+      ],
+      "Migrated": [
+        "Перанесена"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_MEET_SEATS } ліцэнзій ${ MEET_SHORT_APP_NAME } на працягу пробнага перыяду."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Уладальнік"
+      ],
+      "Security Admin": [
+        "Адміністратар бяспекі"
+      ],
+      "User Admin": [
+        "Адміністратар карыстальніка"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Канфіграцыя палітык бяспекі, захоўванне даных, інфраструктура VPN і кіраванне журналамі аўдыту."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Кіраванне ўсімі карыстальнікамі, групы, бяспека, білінг і сістэмныя канфігурацыі."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Кіраванне карыстальнікамі, групы, сховішча для ўсіх удзельнікаў, прызначэнне роляў і размеркаванне ліцэнзій."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Дзеянні"
+      ],
+      "Created": [
+        "Створаны"
+      ],
+      "Expires": [
+        "Дзейнічаюць да"
+      ],
+      "Fingerprint": [
+        "Адбітак пальца"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Type": [
+        "Тып"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
       ]
     }
   }
