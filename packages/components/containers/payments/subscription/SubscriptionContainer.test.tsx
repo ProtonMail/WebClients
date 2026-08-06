@@ -21,8 +21,10 @@ import { buildSubscription } from '@proton/testing/builders/subscription';
 import { buildUser } from '@proton/testing/builders/user';
 import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
 import { addApiMock, apiMock } from '@proton/testing/lib/api';
-import { applyHOCs } from '@proton/testing/lib/context/hocs';
-import { withDeprecatedModals, withPaymentContext, withReduxStore } from '@proton/testing/lib/context/providers';
+import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
+import { withDeprecatedModals } from '@proton/testing/lib/context/hocs/with-deprecated-modals';
+import { withPaymentContext } from '@proton/testing/lib/context/hocs/with-payment-context';
+import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
