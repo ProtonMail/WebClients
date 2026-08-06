@@ -416,7 +416,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
             return;
         }
 
-        const pausedGroups = filteredGroups.filter((group) => group.hasPendingOrgKeyAccess);
+        const pausedGroups = filteredGroups.filter((group) => group.requiresOrgKeyPromotion);
         if (pausedGroups.length === 0) {
             return;
         }
