@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { EnhancedMember, Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
@@ -67,6 +69,7 @@ export const GroupMemberItem = ({
     showMailFeatures,
 }: Props) => {
     const { restrictedBy } = useGroupsManagement();
+    const isKeylessSsoOrganizationPlan = useSelector(selectIsKeylessSsoOrganizationPlan);
     const isFrozen =
         restrictedBy.reason === GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED ||
         (restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT &&
@@ -76,7 +79,11 @@ export const GroupMemberItem = ({
     const isPendingUserActivation =
         State === GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL && member !== undefined && !getIsMemberSetup(member);
 
-    const badge = getInvitationBadgeMap({ isPendingUserActivation })[State];
+    const badge =
+        State === GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL && isKeylessSsoOrganizationPlan
+            ? undefined
+            : getInvitationBadgeMap({ isPendingUserActivation })[State];
+
     const isGroupOwner = hasBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
     const isGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');
     const memberName = member?.Name ?? '';
@@ -88,7 +95,9 @@ export const GroupMemberItem = ({
                 memberName={memberName ?? Email}
                 groupMemberType={groupMember.Type}
                 showMailFeatures={showMailFeatures}
-                isMemberDisabled={groupMember.State === GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL}
+                isMemberDisabled={
+                    groupMember.State === GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL && !isKeylessSsoOrganizationPlan
+                }
             >
                 <div className="flex flex-row gap-2 flex-nowrap self-center">
                     {badge && (

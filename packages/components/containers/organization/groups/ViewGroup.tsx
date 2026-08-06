@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { getIsScimGroup, getIsScimGroupPendingKeys } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { PanelHeader } from '@proton/atoms/Panel/PanelHeader';
@@ -20,6 +21,7 @@ import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { KEY_FLAG, SECOND } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -48,6 +50,7 @@ const ViewGroup = () => {
         addressEmailToMemberMap,
         groupRolesMap,
     } = useGroupsManagement();
+    const isKeylessSsoOrganizationPlan = useSelector(selectIsKeylessSsoOrganizationPlan);
     const [organization] = useOrganization();
     const addUsersToGroupModal = useModalStateObject();
     const deleteGroupPrompt = useModalStateObject();
@@ -184,13 +187,13 @@ const ViewGroup = () => {
                     />
                 </div>
                 <div className="flex flex-column text-left pl-6 py-3 gap-4">
-                    {isScimGroupPendingKeys && (
+                    {isScimGroupPendingKeys && !isKeylessSsoOrganizationPlan && (
                         <GroupInfoBanner icon={<IcCogWheel size={4.5} className="shrink-0" />}>
                             {c('Info').t`New group created via your identity provider and pending review.`}
                         </GroupInfoBanner>
                     )}
 
-                    {pendingAdminApprovalCount > 0 && (
+                    {pendingAdminApprovalCount > 0 && !isKeylessSsoOrganizationPlan && (
                         <GroupInfoBanner icon={<IcCogWheel size={4.5} className="shrink-0" />}>
                             {c('Info').ngettext(
                                 msgid`${pendingAdminApprovalCount} new member added via your identity provider and pending review.`,
