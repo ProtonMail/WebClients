@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
+import { selectCategoryUnreadCount } from '@proton/mail/store/categoriesView/categoriesViewSelector';
 import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { selectLabelIDUnreadCount } from 'proton-mail/hooks/mailboxCounter/useMaiboxCounter.selector';
 import { selectActiveCategoryID, selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 import { selectDraggingElements, selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
@@ -35,7 +35,7 @@ export const CategoriesTabsList = () => {
     const dispatch = useDispatch();
 
     const activeCategoryUnreadCount = useMailSelector((state) =>
-        activeCategoryID ? selectLabelIDUnreadCount(state, activeCategoryID) : 0
+        activeCategoryID ? selectCategoryUnreadCount(state, activeCategoryID).count : 0
     );
 
     // We mark the current category as seen on first load and whenever a new email arrives in the active
