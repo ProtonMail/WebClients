@@ -28,12 +28,15 @@ import {
 } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
 import { createArtifactToolExecutor } from './artifact/createArtifactTool';
+import type { ArtifactToolMode } from './helper';
 
 /** Options forwarded to sendMessageWithRedux, minus the per-attempt identifiers we manage here. */
 type ForwardedSendOptions = AssistantCallOptions & {
     config?: Partial<LumoApiClientConfig>;
     generateTitle?: boolean;
     errorHandler?: (message: GenerationResponseMessage, conversationId: string) => any;
+    /** Whether/how the `create_artifact` client tool is registered for this request. See `resolveArtifactToolMode`. */
+    artifactToolMode?: ArtifactToolMode;
 };
 
 export type GenerationWithCompactionParams = {
@@ -156,7 +159,10 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
                 await dispatch(
                     sendMessageWithRedux(api, turns, {
                         ...sendOptions,
-                        clientToolExecutor: createArtifactToolExecutor,
+                        clientToolExecutor:
+                            sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off'
+                                ? createArtifactToolExecutor
+                                : undefined,
                         messageId: currentAssistantId,
                         conversationId,
                         spaceId,
