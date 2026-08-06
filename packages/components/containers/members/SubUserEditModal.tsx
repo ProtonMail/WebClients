@@ -220,7 +220,8 @@ const SubUserEditModal = ({
 
     const handleUpdateMember = async (
         memberDiff: Parameters<typeof editMember>[0]['memberDiff'],
-        memberKeyPacketPayload: PromoteGlobalSSOPayload | MemberKeyPayload | null = null
+        memberKeyPacketPayload: PromoteGlobalSSOPayload | MemberKeyPayload | null = null,
+        notify: boolean = true
     ) => {
         const result = await dispatch(
             editMember({
@@ -235,7 +236,9 @@ const SubUserEditModal = ({
             const memberDiff = getMemberDiff({ model, initialModel, hasVPN });
             // Keep the partially updated member diff values if any
             updateModel({ ...newValue, ...memberDiff });
-            createNotification({ text: c('Success').t`User updated` });
+            if (notify) {
+                createNotification({ text: c('Success').t`User updated` });
+            }
         }
         return result.diff;
     };
@@ -620,9 +623,10 @@ const SubUserEditModal = ({
 
                     const handleSubmit = async () => {
                         const memberDiff = getMemberDiff({ model, initialModel, hasVPN });
-                        await handleUpdateMember(memberDiff);
+                        const hasMemberChanges = await handleUpdateMember(memberDiff, null, false);
+                        let hasRoleChanges = false;
                         if (adminRolesUIState === AdminRolesUIState.Enabled) {
-                            await dispatch(
+                            const result = await dispatch(
                                 assignMemberRoles({
                                     member,
                                     currentRoles: member.UserOrganizationRoles ?? [],
@@ -631,6 +635,10 @@ const SubUserEditModal = ({
                                     api: silentApi,
                                 })
                             );
+                            hasRoleChanges = result.changed;
+                        }
+                        if (hasMemberChanges || hasRoleChanges) {
+                            createNotification({ text: c('Success').t`User updated` });
                         }
                         rest.onClose?.();
                     };
