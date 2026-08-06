@@ -178,6 +178,12 @@ export const selectIsWaitingRoomAdmissionActive = (state: MeetState) => {
 };
 export const selectIsWaitingRoomRejected = (state: MeetState) =>
     state.waitingRoom.admissionStatus === WaitingRoomAdmissionStatus.REJECTED;
+
+export const selectIsMeetingFull = createSelector(
+    [selectTotalParticipantCount, selectMaxParticipants],
+    (totalParticipantCount, maxParticipants) => maxParticipants !== 0 && totalParticipantCount >= maxParticipants
+);
+
 export const selectCanAdmitAll = createSelector(
     [selectWaitingParticipantsCount, selectTotalParticipantCount, selectMaxParticipants],
     (waitingParticipantsCount, totalParticipantCount, maxParticipants) =>
