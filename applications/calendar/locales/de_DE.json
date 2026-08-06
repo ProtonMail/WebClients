@@ -608,6 +608,9 @@
       "Merge contacts": [
         "Kontakte zusammenführen"
       ],
+      "Migrate": [
+        "Übernehmen"
+      ],
       "More actions": [
         "Weitere Aktionen"
       ],
@@ -1494,125 +1497,6 @@
       ],
       "Yearly": [
         "Jährlich"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Aktiviert"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Die Adresse wird bereits von einem Benutzer außerhalb deiner Organisation verwendet. Bitte wende dich an den Kundensupport, um dies zu klären"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Configure migration": [
-        "Übernahme konfigurieren"
-      ],
-      "Contacts": [
-        "Kontakte"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status der Datenmigration von Google Workspace zu ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-Mails"
-      ],
-      "Errors": [
-        "Fehler"
-      ],
-      "Estimated size": [
-        "Geschätzte Größe"
-      ],
-      "Find out what can be migrated.": [
-        "Finde heraus, was migriert werden kann."
-      ],
-      "Has errors": [
-        "Hat Fehler"
-      ],
-      "In progress": [
-        "In Bearbeitung"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
-      ],
-      "Migrate": [
-        "Migrieren"
-      ],
-      "Migrated": [
-        "Migriert"
-      ],
-      "Migration status": [
-        "Migrationsstatus"
-      ],
-      "Missing organization private key": [
-        "Privater Schlüssel der Organisation fehlt"
-      ],
-      "Missing organization public key": [
-        "Öffentlicher Schlüssel der Organisation fehlt"
-      ],
-      "No users to display": [
-        "Keine Benutzer vorhanden"
-      ],
-      "Not activated": [
-        "Nicht aktiviert"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisation hat nicht genügend Lizenzen verfügbar"
-      ],
-      "Organization does not have enough storage available": [
-        "Die Organisation hat nicht genügend Speicherplatz verfügbar"
-      ],
-      "Pending": [
-        "Ausstehend"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Wähle genau aus, was du migrieren möchtest. Dies gilt für alle Benutzer der Organisation."
-      ],
-      "Select users to migrate": [
-        "Benutzer für die Übernahme auswählen"
-      ],
-      "Size": [
-        "Größe"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Dieser Benutzer kann aufgrund von Plattform-Inkompatibilitäten nicht migriert werden."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Um diesen Benutzer zu migrieren, aktiviere sein Konto in deiner Google Workspace Admin-Konsole."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Um diesen Benutzer zu migrieren, aktiviere sein Konto unter ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Um diesen Benutzer zu migrieren, aktiviere seine Adresse unter ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Um diesen Benutzer zu migrieren, muss er deine Einladung annehmen, ${ BRAND_NAME } beizutreten."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Um diesen Benutzer zu migrieren, dearchiviere ihn in deiner Google Workspace Admin-Konsole."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Um diesen Benutzer zu migrieren, hebe seine Sperrung in deiner Google Workspace Admin-Konsole auf."
-      ],
-      "User": [
-        "Benutzer"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
-      ],
-      "What are you migrating?": [
-        "Was übernimmst du?"
-      ],
-      "You": [
-        "Du"
       ]
     },
     "Browser": {
@@ -3717,6 +3601,9 @@
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Bei der Meldung von Urheberrechtsverletzungen oder gestohlenen Daten ist eine Nachricht erforderlich."
+      ],
       "A problem occurred, please try again.": [
         "Es ist ein Problem aufgetreten, bitte versuche es erneut."
       ],
@@ -3768,17 +3655,38 @@
       "Authentication error.": [
         "Authentifizierungsfehler."
       ],
+      "Bookmark password is not available": [
+        "Lesezeichen-Passwort nicht verfügbar"
+      ],
       "Calendar limit reached": [
         "Max. Anzahl von Kalendern erreicht"
       ],
       "Cancellation failed to be sent": [
         "Absage konnte nicht gesendet werden"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Ohne einen gültigen Namen kann kein Foto zum Album hinzugefügt werden"
+      ],
       "Cannot create a booking with a disabled address": [
         "Du kannst keine Buchung mit einer deaktivierten Adresse erstellen."
       ],
+      "Cannot download a folder": [
+        "Ordner kann nicht heruntergeladen werden"
+      ],
       "Cannot export this contact": [
         "Dieser Kontakt kann nicht exportiert werden."
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Der Eintrag kann ohne gültigen Namen nicht verschoben werden. Bitte benenne den Eintrag zunächst um."
+      ],
+      "Cannot share root folder": [
+        "Der Stammordner konnte nicht geteilt werden"
+      ],
+      "Cannot verify the author of this file": [
+        "Der Urheber dieser Datei kann nicht überprüft werden"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Es lässt sich nicht feststellen, wer diese Datei hochgeladen hat"
       ],
       "Checkout expired, please try again": [
         "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
@@ -3804,11 +3712,44 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Fehler beim Aktivieren der Inhaltssuche. Bitte starte die Anwendung neu oder leere den Cache."
       ],
+      "Copy operation aborted": [
+        "Kopiervorgang abgebrochen"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Das Kopieren eines Eintrags nach außerhalb eines Ordners ist nicht zulässig"
+      ],
+      "Could not find an available name": [
+        "Es konnte kein verfügbarer Name gefunden werden"
+      ],
+      "Could not load sharing details": [
+        "Freigabeinformationen konnten nicht geladen werden"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Bildvorschau konnte nicht geladen werden: ${ message }"
+      ],
       "Could not open created vault": [
         "Erstellter Tresor konnte nicht geöffnet werden."
       ],
       "Could not open updated vault": [
         "Aktualisierter Tresor konnte nicht geöffnet werden."
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Ein Teil dieser Datei konnte nicht gelesen werden: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Der übergeordnete Ordner konnte nicht entsperrt werden"
+      ],
+      "Could not unlock this item": [
+        "Dieser Eintrag konnte nicht entsperrt werden"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Das Erstellen von Dokumenten außerhalb von Ordnern ist nicht zulässig"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Das Erstellen von Dokumenten außerhalb von Ordnern ist nicht zulässig"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Das Erstellen von Ordnern außerhalb von Ordnern ist nicht zulässig."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Entschlüsselungsfehler: Die Entschlüsselung des Inhalts dieses Termins ist fehlgeschlagen."
@@ -3820,6 +3761,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Mindestens ${ calendarsToFixCount } Kalender abwählen oder",
         "Mindestens ${ calendarsToFixCount } Kalender abwählen oder"
+      ],
+      "Device not found": [
+        "Gerät nicht gefunden"
       ],
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
@@ -3860,6 +3804,9 @@
       "Event not found": [
         "Termin nicht gefunden"
       ],
+      "Expiration date cannot be in the past": [
+        "Ablaufdatum darf nicht in der Vergangenheit liegen"
+      ],
       "Failed loading group members": [
         "Gruppenmitglieder konnten nicht geladen werden"
       ],
@@ -3872,11 +3819,35 @@
       "Failed to create meeting": [
         "Fehler beim Erstellen des Meetings."
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Lesezeichenschlüssel konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Name des Lesezeichens konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Das Lesezeichen-Passwort konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Entschlüsselung des Inhaltsschlüssels fehlgeschlagen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Name des Eintrags konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Entschlüsselung des Knotenschlüssels fehlgeschlagen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Die Entschlüsselung der Versionsmetadaten ist fehlgeschlagen"
+      ],
       "Failed to decrypt session key": [
         "Entschlüsselung des Sitzungsschlüssels fehlgeschlagen"
       ],
       "Failed to get event": [
         "Fehler beim Abrufen des Termins."
+      ],
+      "Failed to get inviter keys": [
+        "Schlüssel des Einladers konnten nicht abgerufen werden"
       ],
       "Failed to get original occurrence in series": [
         "Abrufen des ursprünglichen Serienelements fehlgeschlagen"
@@ -3893,6 +3864,15 @@
       "Failed to update settings": [
         "Aktualisieren der Einstellungen fehlgeschlagen"
       ],
+      "Failed to verify invitation": [
+        "Einladung konnte nicht verifiziert werden"
+      ],
+      "File download failed due to empty response": [
+        "Das Herunterladen der Datei ist aufgrund einer leeren Antwort fehlgeschlagen"
+      ],
+      "File has no revision": [
+        "Datei hat keine Versionen"
+      ],
       "First name is too long": [
         "Der Vorname ist zu lang."
       ],
@@ -3901,6 +3881,9 @@
       ],
       "Forward address is required": [
         "Weiterleitungsadresse ist erforderlich"
+      ],
+      "Image preview not found": [
+        "Bildvorschau nicht gefunden"
       ],
       "Image upload failed": [
         "Hochladen des Bilds fehlgeschlagen"
@@ -3941,6 +3924,9 @@
       "Invalid public key file": [
         "Ungültige öffentliche Schlüsseldatei"
       ],
+      "Invalid URL": [
+        "Ungültige URL"
+      ],
       "Invalid VAT number": [
         "Ungültige USt-IdNr."
       ],
@@ -3949,6 +3935,9 @@
       ],
       "Invitation failed to be sent": [
         "Einladung konnte nicht gesendet werden"
+      ],
+      "Invitation not found": [
+        "Einladung nicht gefunden"
       ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
         "Termine können nur zwischen ${ minDateString } und ${ maxDateString } erstellt werden"
@@ -3959,11 +3948,17 @@
       "Item content cannot exceed 40KB": [
         "Der Inhalt des Eintrags darf 40 KB nicht überschreiten."
       ],
+      "Item not found": [
+        "Eintrag nicht gefunden"
+      ],
       "Label name cannot be empty.": [
         "Name der Kategorie kann nicht leer sein."
       ],
       "Last name is too long": [
         "Der Nachname ist zu lang."
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Der alte öffentliche Link kann nicht aktualisiert werden. Bitte erstelle einen neuen öffentlichen Link."
       ],
       "Location is required": [
         "Ort erforderlich"
@@ -3972,14 +3967,36 @@
         "Mindestens ${ calendarsToFixCount } Kalender mit einem bestehenden ${ BRAND_NAME }-Kalender zusammenführen",
         "Mindestens ${ calendarsToFixCount } Kalender mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen"
       ],
+      "Missing inviter email": [
+        "E-Mail-Adresse des Einladers fehlt"
+      ],
       "Missing key packet": [
         "Fehlendes Schlüsselpaket"
       ],
       "Missing signature": [
         "Fehlende Signatur"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Signatur für ${ signatureType } fehlt"
+      ],
+      "Move operation aborted": [
+        "Verschiebevorgang abgebrochen"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Das Verschieben eines Eintrags nach außerhalb eines Ordners ist nicht zulässig"
+      ],
+      "Moving root item is not allowed": [
+        "Das Verschieben des Stammeintrags ist nicht zulässig"
+      ],
       "Name is required": [
         "Name ist erforderlich"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein",
+        "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein"
+      ],
+      "Name must not be empty": [
+        "Name darf nicht leer sein"
       ],
       "Name required": [
         "Name erforderlich"
@@ -4005,6 +4022,9 @@
       "No external key retrieved for user is valid for sending": [
         "Keiner der für den Benutzer abgerufenen externen Schlüssel ist für den Versand gültig."
       ],
+      "No file data was received. Please try again.": [
+        "Es wurden keine Dateidaten empfangen. Bitte versuche es erneut."
+      ],
       "No valid address found": [
         "Keine gültige E-Mail-Adresse gefunden"
       ],
@@ -4025,6 +4045,15 @@
         "Eine der Gruppen enthält keine Kontakte: ${ noContactGroupList }",
         "Einige Gruppen enthalten keine Kontakte: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Nur Administratoren können externe Einladungen umwandeln"
+      ],
+      "Operation aborted": [
+        "Vorgang abgebrochen"
+      ],
+      "Operation failed, try again later": [
+        "Vorgang fehlgeschlagen, versuche es später erneut"
+      ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
       ],
@@ -4033,6 +4062,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsschlüssel muss aktiviert sein, um nicht-private Benutzer anzulegen"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Ein Teil der Datei scheint beschädigt zu sein"
       ],
       "Password is required": [
         "Passwort ist erforderlich"
@@ -4051,6 +4083,12 @@
       ],
       "Payment process not supported": [
         "Bezahlvorgang nicht unterstützt"
+      ],
+      "Photo is already in the target album": [
+        "Foto befindet sich bereits im Zielalbum"
+      ],
+      "Photo not found": [
+        "Foto nicht gefunden"
       ],
       "Please activate your search again": [
         "Bitte aktiviere die Inhaltssuche erneut."
@@ -4129,6 +4167,12 @@
         "Doppelten Empfänger entfernt: ${ joinedRecipients }",
         "Doppelte Empfänger entfernt: ${ joinedRecipients }"
       ],
+      "Renaming root item is not allowed": [
+        "Das Umbenennen des Stammeintrags ist nicht zulässig"
+      ],
+      "Request aborted": [
+        "Anfrage abgebrochen"
+      ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
@@ -4138,17 +4182,38 @@
       "Self invitation not allowed": [
         "Selbsteinladung nicht zulässig"
       ],
+      "Signature is missing": [
+        "Signatur fehlt"
+      ],
       "Signature not verified": [
         "Signatur nicht bestätigt"
       ],
       "Signature verification failed": [
         "Signaturprüfung fehlgeschlagen"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturprüfung ist fehlgeschlagen: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturprüfung für ${ signatureType } ist fehlgeschlagen"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturprüfung für ${ signatureType } ist fehlgeschlagen: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Einige Kontakte konnten nicht gelöscht werden"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Einige Dateidaten konnten nicht hochgeladen werden. Bitte versuche es erneut."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Einige Dateiteile konnten nicht hochgeladen werden. Bitte versuche es erneut."
+      ],
       "Some groups could not be deleted": [
         "Einige Gruppen konnten nicht gelöscht werden"
+      ],
+      "Some items could not be loaded": [
+        "Einige Einträge konnten nicht geladen werden"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Einige deiner Ordnernamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
@@ -4164,6 +4229,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
+      ],
+      "Something went wrong": [
+        "Etwas ist schief gelaufen."
       ],
       "Something went wrong while fetching available domains": [
         "Etwas ist schiefgegangen beim Abrufen der verfügbaren Domains"
@@ -4210,6 +4278,9 @@
       "The sending key is not valid": [
         "Der Sendeschlüssel ist ungültig"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Die hochgeladene Datei stimmt nicht mit dem Original überein. Bitte versuche es erneut."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Es gibt zu viele Ordner in deinem externen Konto. Bitte passe den Import an, um einige Ordner zu löschen."
       ],
@@ -4228,14 +4299,38 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
       ],
+      "This file has missing crypto material": [
+        "In dieser Datei fehlt Kryptomaterial"
+      ],
+      "This file has no version available to download": [
+        "Für diese Datei steht keine Version zum Herunterladen zur Verfügung"
+      ],
+      "This file version could not be uploaded": [
+        "Diese Dateiversion konnte nicht hochgeladen werden"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Dieser Ordnername ist nicht verfügbar. Bitte wähle einen anderen Namen."
+      ],
+      "This item has no image preview": [
+        "Dieser Eintrag hat keine Bildvorschau"
+      ],
+      "This item is no longer shared": [
+        "Dieser Eintrag wird nicht länger geteilt"
+      ],
+      "This item is not shared": [
+        "Dieser Eintrag wird nicht geteilt"
       ],
       "This label name is not available. Please choose a different name.": [
         "Dieser Kategoriename ist nicht verfügbar. Bitte wähle einen anderen Namen."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
+      ],
+      "Too many server errors, please try again later": [
+        "Zu viele Server-Fehler, bitte versuche es später erneut"
+      ],
+      "Too many server requests, please try again later": [
+        "Zu viele Server-Anfragen bitte versuche es später erneut"
       ],
       "Trusted keys are not valid for sending": [
         "Die vertrauenswürdigen Schlüssel sind für den Versand nicht gültig"
@@ -4270,6 +4365,12 @@
       "VAT number must start with ${ prefixes }": [
         "MWST-Nummer muss mit ${ prefixes } beginnen"
       ],
+      "Verification keys are not available": [
+        "Verifizierungsschlüssel sind nicht verfügbar"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifizierungsschlüssel für ${ signatureType } sind nicht verfügbar"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Wir konnten mit dieser Methode keinen Bestätigungscode senden."
       ],
@@ -4282,12 +4383,30 @@
       "You are reconnected to Zoom. You can save your event now.": [
         "Du bist wieder mit Zoom verbunden. Du kannst deinen Termin jetzt speichern."
       ],
+      "You can create public links for your own files only": [
+        "Du kannst öffentliche Links nur für deine eigenen Dateien erstellen"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kannst nur Einträge verlassen, die für dich freigegeben sind"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kannst nur eine neue Version einer Datei hochladen"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kannst einen öffentlichen Link nur für deine eigenen Dateien aktualisieren"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden.",
         "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden."
       ],
       "You cannot enter the organizer's email": [
         "Du kannst die E-Mail-Adresse des Organisators nicht eingeben."
+      ],
+      "You do not have access to this item": [
+        "Du hast keinen Zugriff auf diesen Eintrag"
+      ],
+      "You do not have access to this shared item": [
+        "Du hast keinen Zugriff auf diesen geteilten Eintrag"
       ],
       "You have reached the maximum number of calendars.": [
         "Du hast die maximale Anzahl an Kalendern erreicht."
@@ -4841,6 +4960,29 @@
         "Terabyte"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Aktiviert"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Fehler"
+      ],
+      "In progress": [
+        "In Bearbeitung"
+      ],
+      "Migrated": [
+        "Übernommen"
+      ],
+      "Not activated": [
+        "Nicht aktiviert"
+      ],
+      "Pending": [
+        "Ausstehend"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } aktualisiert"
@@ -5254,6 +5396,20 @@
         "Wähle ${ boldExport }, um den Kalender als ICS-Datei zu exportieren."
       ]
     },
+    "Import status": {
+      "Has errors": [
+        "Hat Fehler"
+      ],
+      "In progress": [
+        "In Bearbeitung"
+      ],
+      "Migrated": [
+        "Migriert"
+      ],
+      "Pending": [
+        "Ausstehend"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } von ${ totalContacts } Kontakten werden nicht importiert. Für Details klicken"
@@ -5559,6 +5715,9 @@
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
+      "Author is not provided on public link": [
+        "Urheber wird unter dem öffentlichen Link nicht angegeben"
+      ],
       "Awaiting transaction": [
         "Warte auf Transaktion"
       ],
@@ -5845,9 +6004,6 @@
       "Failed to update meeting schedule": [
         "Fehler beim Aktualisieren des Meeting-Zeitplans"
       ],
-      "Failed to update meeting waiting room status": [
-        "Der Status des Meeting-Warteraums konnte nicht aktualisiert werden"
-      ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Die schnellsten VPN-Geschwindigkeiten von bis zu 10 Gbit/s"
       ],
@@ -5990,9 +6146,6 @@
       "Key fingerprint": [
         "Schlüssel-Fingerabdruck"
       ],
-      "Keys created": [
-        "Schlüssel erstellt"
-      ],
       "Label all imported messages as": [
         "Alle importierten Nachrichten kennzeichnen als"
       ],
@@ -6106,6 +6259,9 @@
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
+      ],
+      "No users to display": [
+        "Keine Benutzer vorhanden"
       ],
       "None of the participants can be notified about your changes:": [
         "Keiner der Teilnehmer konnte über deine Änderungen informiert werden:"
@@ -6530,9 +6686,6 @@
       "Uppercase and lowercase letters": [
         "Groß- und Kleinbuchstaben."
       ],
-      "User activated": [
-        "Benutzer aktiviert"
-      ],
       "username": [
         "Benutzername"
       ],
@@ -6649,6 +6802,9 @@
       ],
       "Yearly": [
         "Jährlich"
+      ],
+      "You": [
+        "Du"
       ],
       "You already have a free account": [
         "Du verfügst bereits über ein kostenloses Konto."
@@ -10355,6 +10511,26 @@
         "Fortschritt: ${ combinedProgress } %"
       ]
     },
+    "Property": {
+      "attributes": [
+        "Merkmale"
+      ],
+      "content key": [
+        "Inhaltsschlüssel"
+      ],
+      "hash key": [
+        "Hash-Schlüssel"
+      ],
+      "key": [
+        "Schlüssel"
+      ],
+      "membership": [
+        "Mitgliedschaft"
+      ],
+      "name": [
+        "Name"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adresse"
@@ -11962,11 +12138,17 @@
       "Actions": [
         "Aktionen"
       ],
+      "Activated": [
+        "Aktiviert"
+      ],
       "Address": [
         "Anschrift"
       ],
       "Created": [
         "Erstellt"
+      ],
+      "Estimated size": [
+        "Geschätzte Größe"
       ],
       "Expires": [
         "Ablauf"
@@ -11974,14 +12156,23 @@
       "Fingerprint": [
         "Fingerabdruck"
       ],
+      "Migration status": [
+        "Übernahmestatus"
+      ],
       "Name": [
         "Name"
+      ],
+      "Size": [
+        "Größe"
       ],
       "Status": [
         "Status"
       ],
       "Type": [
         "Typ"
+      ],
+      "User": [
+        "Benutzer"
       ]
     },
     "TableHeader": {
@@ -12220,6 +12411,9 @@
       ],
       "Collaborate on documents": [
         "Gemeinsam an Dokumenten arbeiten"
+      ],
+      "Configure migration": [
+        "Übernahme konfigurieren"
       ],
       "Confirm downgrade": [
         "Zurückstufen bestätigen"
@@ -12665,6 +12859,9 @@
       "Select the way to send this notification": [
         "Auswählen, wie diese Benachrichtigung gesendet werden soll"
       ],
+      "Select users to migrate": [
+        "Benutzer für die Übernahme auswählen"
+      ],
       "Select when you want this notification to be sent": [
         "Auswählen, wann diese Benachrichtigung gesendet werden soll"
       ],
@@ -12811,6 +13008,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Willkommen bei ${ BRAND_NAME } for Business"
+      ],
+      "What are you migrating?": [
+        "Was übernimmst du?"
       ],
       "What can a VPN protect you from?": [
         "Wovor kann dich ein VPN beschützen?"

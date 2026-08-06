@@ -1511,125 +1511,6 @@
         "Ročně"
       ]
     },
-    "BOSS": {
-      "Activated": [
-        "Aktivováno"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresu již používá uživatel mimo vaši organizaci. Pro vyřešení kontaktujte prosím zákaznickou podporu"
-      ],
-      "All": [
-        "Vše"
-      ],
-      "Calendar": [
-        "Kalendář"
-      ],
-      "Configure migration": [
-        "Nastavte migraci"
-      ],
-      "Contacts": [
-        "Kontakty"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Stav migrace dat z Google Workspace do ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-maily"
-      ],
-      "Errors": [
-        "Chyby"
-      ],
-      "Estimated size": [
-        "Odhadovaná velikost"
-      ],
-      "Find out what can be migrated.": [
-        "Zjistěte, co lze migrovat."
-      ],
-      "Has errors": [
-        "Má chyby"
-      ],
-      "In progress": [
-        "Probíhá"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adresa člena nebyla nalezena. Pro vyřešení kontaktujte prosím zákaznickou podporu"
-      ],
-      "Migrate": [
-        "Migrovat"
-      ],
-      "Migrated": [
-        "Migrováno"
-      ],
-      "Migration status": [
-        "Stav migrace"
-      ],
-      "Missing organization private key": [
-        "Chybí soukromý klíč organizace"
-      ],
-      "Missing organization public key": [
-        "Chybí veřejný klíč organizace"
-      ],
-      "No users to display": [
-        "Žádní uživatelé k zobrazení"
-      ],
-      "Not activated": [
-        "Neaktivováno"
-      ],
-      "Organization does not have enough seats available": [
-        "Organizace nemá dostatek volných licencí"
-      ],
-      "Organization does not have enough storage available": [
-        "Organizace nemá dostatečně velké úložiště"
-      ],
-      "Pending": [
-        "Čeká na vyřízení"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Vyberte přesně to, co chcete migrovat. Bude to použito pro všechny uživatele organizace."
-      ],
-      "Select users to migrate": [
-        "Vyberte uživatele k migraci"
-      ],
-      "Size": [
-        "Velikost"
-      ],
-      "Status": [
-        "Stav"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tohoto uživatele nelze migrovat z důvodu nekompatibility platformy."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v administrátorské konzoli Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Chcete-li tohoto uživatele migrovat, aktivujte jeho adresu v ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Chcete-li tohoto uživatele migrovat, musí nejprve přijmout pozvánku k připojení ke službě ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Chcete-li tohoto uživatele migrovat, zrušte jeho archivaci v administrátorské konzoli Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Chcete-li tohoto uživatele migrovat, zrušte jeho pozastavení v administrátorské konzoli Google Workspace."
-      ],
-      "User": [
-        "Uživatel"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Uživatelé, kteří přistoupili ke svému účtu ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "Co migrujete?"
-      ],
-      "You": [
-        "Vy"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } desktopová aplikace"
@@ -3989,6 +3870,9 @@
       "Invalid public key file": [
         "Neplatný soubor veřejného klíče"
       ],
+      "Invalid URL": [
+        "Neplatná URL"
+      ],
       "Invalid VAT number": [
         "Neplatné DIČ"
       ],
@@ -4222,6 +4106,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
+      ],
+      "Something went wrong": [
+        "Něco se pokazilo"
       ],
       "Something went wrong while fetching available domains": [
         "Při vyhledávání volných domén došlo k chybě"
@@ -5348,6 +5235,14 @@
         "Chcete-li kalendář exportovat jako ICS soubor, vyberte ${ boldExport }."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Probíhá"
+      ],
+      "Migrated": [
+        "Migrováno"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktů nebude importováno. Klikněte pro detaily"
@@ -6119,9 +6014,6 @@
       "Key fingerprint": [
         "Otisk klíče"
       ],
-      "Keys created": [
-        "Klíče vytvořeny"
-      ],
       "Label all imported messages as": [
         "Označit všechny importované zprávy jako"
       ],
@@ -6655,9 +6547,6 @@
       ],
       "Uppercase and lowercase letters": [
         "Velká a malá písmena"
-      ],
-      "User activated": [
-        "Uživatel aktivován"
       ],
       "username": [
         "uživatelské jméno"
@@ -12337,6 +12226,9 @@
       ],
       "Name": [
         "Název"
+      ],
+      "Size": [
+        "Velikost"
       ],
       "Status": [
         "Stav"

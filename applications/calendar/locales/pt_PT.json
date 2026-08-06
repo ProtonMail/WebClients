@@ -890,6 +890,9 @@
       "Stay": [
         "Ficar"
       ],
+      "Stop": [
+        "Parar"
+      ],
       "Submit": [
         "Submeter"
       ],
@@ -1373,6 +1376,10 @@
         "Proteja os seus e-mails e agende com encriptação ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escrita ${ BRAND_NAME } Scribe, aliases ilimitados do hide-my-email e muito mais.",
         "Proteja os seus e-mails e agende com encriptação ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escrita ${ BRAND_NAME } Scribe, aliases ilimitados do hide-my-email e muito mais."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteja os seus e-mails e agende com encriptação de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, o assistente de escrita ${ LUMO_SHORT_APP_NAME }, aliases «hide-my-email» ilimitados e muito mais.",
+        "Proteja os seus e-mails e agende com encriptação de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, o assistente de escrita ${ LUMO_SHORT_APP_NAME }, aliases «hide-my-email» ilimitados e muito mais."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Proteja os seus e-mails e agendamentos com encriptação ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte a domínios de e-mail personalizados, aliases de hide-my-email ilimitados e mais.",
         "Proteja os seus e-mails e agendamentos com encriptação ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte a domínios de e-mail personalizados, aliases de hide-my-email ilimitados e mais."
@@ -1471,125 +1478,6 @@
       ],
       "Yearly": [
         "Anual"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Ativado"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "O endereço já está a ser utilizado por um utilizador fora da sua organização. Contacte o apoio ao cliente para resolver este problema"
-      ],
-      "All": [
-        "Todos"
-      ],
-      "Calendar": [
-        "Calendário"
-      ],
-      "Configure migration": [
-        "Configurar migração"
-      ],
-      "Contacts": [
-        "Contactos"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Estado da migração de dados do Google Workspace para o ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-mails"
-      ],
-      "Errors": [
-        "Erros"
-      ],
-      "Estimated size": [
-        "Tamanho estimado"
-      ],
-      "Find out what can be migrated.": [
-        "Descubra o que pode ser migrado."
-      ],
-      "Has errors": [
-        "Tem erros"
-      ],
-      "In progress": [
-        "Em progresso"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Endereço de membro não encontrado. Contacte o apoio ao cliente para resolver este problema"
-      ],
-      "Migrate": [
-        "Migrar"
-      ],
-      "Migrated": [
-        "Migrado"
-      ],
-      "Migration status": [
-        "Estado da migração"
-      ],
-      "Missing organization private key": [
-        "Chave privada da organização em falta"
-      ],
-      "Missing organization public key": [
-        "Chave pública da organização em falta"
-      ],
-      "No users to display": [
-        "Nenhum utilizador para apresentar"
-      ],
-      "Not activated": [
-        "Não ativado"
-      ],
-      "Organization does not have enough seats available": [
-        "A organização não tem licenças suficientes disponíveis"
-      ],
-      "Organization does not have enough storage available": [
-        "A organização não tem armazenamento suficiente disponível"
-      ],
-      "Pending": [
-        "Pendente"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Selecione exatamente o que gostaria de migrar. Isto aplicar-se-á a todos os utilizadores da organização."
-      ],
-      "Select users to migrate": [
-        "Selecionar utilizadores para migrar"
-      ],
-      "Size": [
-        "Tamanho"
-      ],
-      "Status": [
-        "Estado"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Este utilizador não pode ser migrado devido a incompatibilidades de plataforma."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Para migrar este utilizador, ative a sua conta na sua Consola de Administração do Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Para migrar este utilizador, ative a sua conta sob ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Para migrar este utilizador, ative o seu endereço sob ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Para migrar este utilizador, este precisa de aceitar o seu convite para se juntar à ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Para migrar este utilizador, retire-o do arquivo na sua Consola de Administração do Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Para migrar este utilizador, reative-o na sua Consola de Administração do Google Workspace."
-      ],
-      "User": [
-        "Utilizador"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Utilizadores que acederam à sua conta do ${ BRAND_NAME }"
-      ],
-      "What are you migrating?": [
-        "O que está a migrar?"
-      ],
-      "You": [
-        "Você"
       ]
     },
     "Browser": {
@@ -1704,6 +1592,9 @@
       ],
       "Discover and set up features": [
         "Descubra e configure as funcionalidades"
+      ],
+      "Get 50% offer": [
+        "Obtenha uma oferta de 50%"
       ],
       "Maybe later": [
         "Talvez mais tarde"
@@ -3754,6 +3645,9 @@
       "Cannot export this contact": [
         "Não é possível exportar este contacto"
       ],
+      "Cannot verify the author of this file": [
+        "Não é possível verificar o autor deste ficheiro"
+      ],
       "Checkout expired, please try again": [
         "A finalização da compra expirou. Tente novamente."
       ],
@@ -3778,11 +3672,26 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "A pesquisa de conteúdo não pode ser ativada. Reinicie a aplicação, ou limpe os dados."
       ],
+      "Copying item to a non-folder is not allowed": [
+        "Não é permitido copiar um item para um local que não seja uma pasta"
+      ],
+      "Could not load sharing details": [
+        "Não foi possível carregar os detalhes da partilha"
+      ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
       ],
       "Could not open updated vault": [
         "Não foi possível abrir o cofre actualizado"
+      ],
+      "Could not unlock the parent folder": [
+        "Não foi possível desbloquear a pasta principal"
+      ],
+      "Could not unlock this item": [
+        "Não foi possível desbloquear este item"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Não é permitido criar pastas dentro de elementos que não sejam pastas"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Erro de desencriptação: este evento não pôde ser desencriptado."
@@ -3846,6 +3755,9 @@
       "Failed to create meeting": [
         "Erro ao criar a reunião"
       ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Não foi possível descodificar a palavra-passe do marcador: ${ message }"
+      ],
       "Failed to decrypt session key": [
         "Falha ao desencriptar a chave de sessão"
       ],
@@ -3867,6 +3779,9 @@
       "Failed to update settings": [
         "Falha ao atualizar definições"
       ],
+      "File has no revision": [
+        "O ficheiro não tem nenhuma revisão"
+      ],
       "First name is too long": [
         "O primeiro nome é muito longo"
       ],
@@ -3875,6 +3790,9 @@
       ],
       "Forward address is required": [
         "Endereço de encaminhamento é necessário"
+      ],
+      "Image preview not found": [
+        "Não foi encontrada a pré-visualização da imagem"
       ],
       "Image upload failed": [
         "Erro ao enviar a imagem"
@@ -3915,6 +3833,9 @@
       "Invalid public key file": [
         "O ficheiro da chave pública não é válido."
       ],
+      "Invalid URL": [
+        "O URL não é válido."
+      ],
       "Invalid VAT number": [
         "NIF inválido"
       ],
@@ -3939,12 +3860,18 @@
       "Last name is too long": [
         "O último nome é muito longo."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "O link público antigo não pode ser atualizado. Por favor, crie um novo link público."
+      ],
       "Location is required": [
         "A localização é obrigatória"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Combine pelo menos ${ calendarsToFixCount } calendário com um calendário ${ BRAND_NAME } existente.",
         "Combine pelo menos ${ calendarsToFixCount } calendários com calendários ${ BRAND_NAME } existentes"
+      ],
+      "Missing inviter email": [
+        "Falta o e-mail do convidante"
       ],
       "Missing key packet": [
         "Pacote chave em falta."
@@ -3954,6 +3881,10 @@
       ],
       "Name is required": [
         "É necessário um nome."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } carácter",
+        "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } caracteres"
       ],
       "Name required": [
         "Nome obrigatório"
@@ -3979,6 +3910,9 @@
       "No external key retrieved for user is valid for sending": [
         "Nenhuma das chaves externas recuperadas para o utilizador é válida para o envio."
       ],
+      "No file data was received. Please try again.": [
+        "Não foram recebidos dados do ficheiro. Por favor, tente novamente."
+      ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
       ],
@@ -3999,6 +3933,9 @@
         "Um dos grupos não tem contactos: ${ noContactGroupList }",
         "Alguns grupos não têm contactos: ${ noContactGroupList } "
       ],
+      "Operation aborted": [
+        "Operação cancelada"
+      ],
       "Organization key is not decrypted": [
         "A chave da organização não está encriptada."
       ],
@@ -4007,6 +3944,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "A chave da organização deve ser ativada para criar utilizadores não privados."
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte do ficheiro parece estar corrompida"
       ],
       "Password is required": [
         "A palavra-passe é obrigatória."
@@ -4112,6 +4052,9 @@
       "Self invitation not allowed": [
         "Não é possível convidar-se a si próprio"
       ],
+      "Signature is missing": [
+        "Assinatura em falta."
+      ],
       "Signature not verified": [
         "Assinatura não verificada"
       ],
@@ -4138,6 +4081,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas etiquetas excedem o limite máximo de carateres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
+      "Something went wrong": [
+        "Algo correu mal"
       ],
       "Something went wrong while fetching available domains": [
         "Ocorreu um erro ao obter os domínios disponíveis"
@@ -4202,8 +4148,17 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } carateres."
       ],
+      "This file has no version available to download": [
+        "Este ficheiro não tem nenhuma versão disponível para descarregar"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Este nome de pasta não está disponível. Escolha um nome diferente."
+      ],
+      "This item is no longer shared": [
+        "Este item já não está partilhado"
+      ],
+      "This item is not shared": [
+        "Este item não é partilhado"
       ],
       "This label name is not available. Please choose a different name.": [
         "Este nome de etiqueta não está disponível. Escolha um nome diferente."
@@ -4244,6 +4199,9 @@
       "VAT number must start with ${ prefixes }": [
         "O número de IVA deve começar por ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "As chaves de verificação não estão disponíveis"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Não conseguimos enviar um código de verificação através deste método."
       ],
@@ -4262,6 +4220,9 @@
       ],
       "You cannot enter the organizer's email": [
         "Não é possível introduzir o e-mail do organizador"
+      ],
+      "You do not have access to this item": [
+        "Não tem acesso a este artigo"
       ],
       "You have reached the maximum number of calendars.": [
         "Atingiu o número máximo de calendários."
@@ -5228,6 +5189,14 @@
         "Selecione ${ boldExport } para exportar o calendário no formato de ficheiro ICS."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Em curso"
+      ],
+      "Migrated": [
+        "Migrado"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos não serão importados. Clique para detalhes"
@@ -5302,6 +5271,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "O ${ LUMO_APP_NAME } inclui o assistente de escrita ${ BRAND_NAME } Scribe."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "O ${ MEET_APP_NAME } é uma solução de videoconferência encriptada de ponto a ponto. Adicione-o ao seu plano para realizar reuniões seguras."
@@ -5943,9 +5915,6 @@
       "Key fingerprint": [
         "Impressão digital da chave"
       ],
-      "Keys created": [
-        "Chaves criadas"
-      ],
       "Label all imported messages as": [
         "Etiquetar todas as mensagens importadas como"
       ],
@@ -6473,9 +6442,6 @@
       ],
       "Uppercase and lowercase letters": [
         "Letras maiúsculas e minúsculas"
-      ],
-      "User activated": [
-        "O utilizador foi ativado."
       ],
       "username": [
         "nome de utilizador"
@@ -7871,6 +7837,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Adicionar o assistente de escrita ${ BRAND_NAME } Scribe"
       ],
@@ -7891,6 +7860,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licenças"
+      ],
+      "${ price } per seat": [
+        "${ price } por licença"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licença do ${ MEET_APP_NAME }",
@@ -8269,6 +8241,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendar": [
         "${ n } calendário",
@@ -10278,6 +10253,11 @@
         "Progresso: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "atributos"
+      ]
+    },
     "Property type": {
       "Address": [
         "Endereço"
@@ -11899,6 +11879,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Size": [
+        "Tamanho"
       ],
       "Status": [
         "Estado"
