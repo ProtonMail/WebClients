@@ -3,7 +3,8 @@ import { useCallback, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { setJoiningInProgress } from '@proton/meet/store/slices/connectionSlice';
 import {
     WaitingRoomAdmissionStatus,
     selectAdmissionStatus,
@@ -12,14 +13,12 @@ import {
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { WaitingRoomContextValues } from '../../../contexts/WaitingRoomContext';
-import type { MeetCoreClient } from '../../../wasm/MeetCoreClient';
 import { useNotifyError } from '../../useNotifyError';
 import type { GetSessionKeyBase64 } from '../useSessionKey';
 import { useHostWaitingRoom } from './useHostWaitingRoom';
 import { usePreJoinWaitingRoom } from './usePreJoinWaitingRoom';
 
 interface UseWaitingRoomParams {
-    meetCoreClient: MeetCoreClient;
     meetingLinkName: string;
     getSessionKeyBase64: GetSessionKeyBase64;
     prepareGuestSession: (meetingToken: string) => Promise<boolean>;
@@ -37,7 +36,6 @@ type UseWaitingRoomResult = {
 };
 
 export const useWaitingRoom = ({
-    meetCoreClient,
     meetingLinkName,
     getSessionKeyBase64,
     prepareGuestSession,
@@ -47,18 +45,17 @@ export const useWaitingRoom = ({
 }: UseWaitingRoomParams): UseWaitingRoomResult => {
     const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
 
+    const dispatch = useMeetDispatch();
     const notifyError = useNotifyError();
     const { reportMeetError } = useMeetErrorReporting();
 
     const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost);
-
     const admissionStatus = useMeetSelector(selectAdmissionStatus);
 
     const waitingRoomMeetLinkRef = useRef<string | null>(null);
     const guestSessionPreparedRef = useRef(false);
 
     const { admitRequest, rejectRequest, admitAll, toggleWaitingRoom, toggleWaitingRoomPrejoin } = useHostWaitingRoom({
-        meetCoreClient,
         meetingLinkName,
         enabled: isWaitingRoomHost && isMeetWaitingRoomEnabled,
         getSessionKeyBase64,
@@ -69,7 +66,7 @@ export const useWaitingRoom = ({
         leave,
         clearRejection,
         reset: resetAdmission,
-    } = usePreJoinWaitingRoom({ meetCoreClient });
+    } = usePreJoinWaitingRoom();
 
     useEffect(() => {
         if (admissionStatus !== WaitingRoomAdmissionStatus.ADMITTED) {
@@ -87,9 +84,10 @@ export const useWaitingRoom = ({
     }, [admissionStatus]);
 
     const handleGuestWaitingRoomLeave = useCallback(async () => {
+        dispatch(setJoiningInProgress(false));
         await leave(waitingRoomMeetLinkRef.current ?? undefined);
         cleanupJoin();
-    }, [leave, cleanupJoin]);
+    }, [dispatch, leave, cleanupJoin]);
 
     const requestAdmission = useCallback(
         async (meetingToken: string) => {

@@ -109,8 +109,9 @@ export const PreJoinDetails = ({
                 </Button>,
                 ...(!showHostScreen && waitingRoomEnabled
                     ? [
-                          <span className="color-hint text-sm text-no-bold">{c('Info')
-                              .t`This meeting has a waiting room`}</span>,
+                          <span key="meeting-with-waiting-room-message" className="color-hint text-sm text-no-bold">{c(
+                              'Info'
+                          ).t`This meeting has a waiting room`}</span>,
                       ]
                     : []),
             ]}

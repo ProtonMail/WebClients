@@ -423,8 +423,7 @@ export const useJoinFlow = ({
     const cleanupWaitingRoomJoin = useCallback(() => {
         disallowHealthCheck();
         cleanupMlsState();
-        dispatch(setJoiningInProgress(false));
-    }, [disallowHealthCheck, cleanupMlsState, dispatch]);
+    }, [disallowHealthCheck, cleanupMlsState]);
 
     const getGuestWaitingRoomAccessToken = async (meetingToken: string) => {
         setDisplayName(displayName);
@@ -491,7 +490,6 @@ export const useJoinFlow = ({
     });
 
     const { beginJoin: beginWaitingRoomJoin, providerProps: waitingRoomProviderProps } = useWaitingRoom({
-        meetCoreClient,
         meetingLinkName: token,
         getSessionKeyBase64,
         prepareGuestSession,

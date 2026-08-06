@@ -18,7 +18,7 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import { SECOND } from '@proton/shared/lib/constants';
 import { WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 
-import type { MeetCoreClient } from '../../../wasm/MeetCoreClient';
+import { useMeetCoreClient } from '../../../contexts/MeetCoreClientContext';
 import {
     clearWaitingRoomJoinRequestCallback,
     setWaitingRoomJoinRequestCallback,
@@ -28,24 +28,24 @@ import { useStableCallback } from '../../useStableCallback';
 import type { GetSessionKeyBase64 } from '../useSessionKey';
 
 export const useHostWaitingRoom = ({
-    meetCoreClient,
     meetingLinkName,
     enabled,
     getSessionKeyBase64,
 }: {
-    meetCoreClient: MeetCoreClient | null;
     meetingLinkName: string;
     enabled: boolean;
     getSessionKeyBase64: GetSessionKeyBase64;
 }) => {
     const dispatch = useMeetDispatch();
-    const waitingRoomSetting = useMeetSelector(selectWaitingRoomSetting);
+    const meetCoreClient = useMeetCoreClient();
     const notifyError = useNotifyError();
     const { reportMeetError } = useMeetErrorReporting();
     const { updateMeetingWaitingRoom } = useUpdateMeetingWaitingRoom();
 
+    const waitingRoomSetting = useMeetSelector(selectWaitingRoomSetting);
+
     useEffect(() => {
-        if (!enabled || !meetCoreClient) {
+        if (!enabled) {
             return;
         }
 
@@ -89,8 +89,8 @@ export const useHostWaitingRoom = ({
         async (requestId: string) => {
             try {
                 const sessionKeyBase64 = await getSessionKeyBase64(meetingLinkName);
-                if (!meetCoreClient || !sessionKeyBase64) {
-                    throw new Error('Missing meet core client or session key');
+                if (!sessionKeyBase64) {
+                    throw new Error('Missing session key');
                 }
 
                 await meetCoreClient.admitWaitingRoomJoinRequest(meetingLinkName, requestId, sessionKeyBase64);
@@ -109,10 +109,6 @@ export const useHostWaitingRoom = ({
     const rejectRequest = useCallback(
         async (requestId: string, participantUid: string) => {
             try {
-                if (!meetCoreClient) {
-                    throw new Error('Missing meet core client');
-                }
-
                 await meetCoreClient.rejectWaitingRoomJoinRequest(meetingLinkName, requestId, participantUid);
                 dispatch(removeWaitingParticipant(requestId));
             } catch (error) {
@@ -129,8 +125,8 @@ export const useHostWaitingRoom = ({
     const admitAll = useStableCallback(async () => {
         try {
             const sessionKeyBase64 = await getSessionKeyBase64(meetingLinkName);
-            if (!meetCoreClient || !sessionKeyBase64) {
-                throw new Error('Missing meet core client or session key');
+            if (!sessionKeyBase64) {
+                throw new Error('Missing session key');
             }
 
             const admittedRequestIds = await meetCoreClient.admitAllWaitingRoomJoinRequests(
@@ -152,8 +148,8 @@ export const useHostWaitingRoom = ({
         async (newValue: boolean = !waitingRoomSetting) => {
             try {
                 const sessionKeyBase64 = await getSessionKeyBase64(meetingLinkName);
-                if (!meetCoreClient || !sessionKeyBase64) {
-                    throw new Error('Missing meet core client or session key');
+                if (!sessionKeyBase64) {
+                    throw new Error('Missing session key');
                 }
 
                 await meetCoreClient.updateWaitingRoomSetting(meetingLinkName, newValue, sessionKeyBase64);
