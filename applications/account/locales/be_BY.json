@@ -735,6 +735,9 @@
       "Emoji": [
         "Эмодзі"
       ],
+      "Enable": [
+        "Уключыць"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Уключыць ${ darkWebMonitoring }"
       ],
@@ -1301,9 +1304,6 @@
       ],
       "Remove": [
         "Выдаліць"
-      ],
-      "Remove all members": [
-        "Выдаліць усіх удзельнікаў"
       ],
       "Remove all other devices": [
         "Выдаліць усе іншыя прылады"
@@ -2986,449 +2986,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Ваш асабісты адрас электроннай пошты - гэта важная частка вашай лічбавай ідэнтычнасці. Як і ваш нумар тэлефона, які вы не распаўсюджваеце сярод незнаёмых людзей. Вось чаму карысна мець іншыя адрасы электроннай пошты, якія можна выкарыстоўваць для розных мэт."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } з ${ totalCount }"
-      ],
-      "Account connected": [
-        "Уліковы запіс падключаны"
-      ],
-      "Account disconnected": [
-        "Уліковы запіс адключаны"
-      ],
-      "Accounts migrated": [
-        "Уліковы запіс перанесены"
-      ],
-      "Activated": [
-        "Актывавана"
-      ],
-      "Add domain": [
-        "Дадаць дамен"
-      ],
-      "Add users": [
-        "Дадаць карыстальнікаў"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Дадайце дамен электроннай пошты арганізацыі ў ${ BRAND_NAME }."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Адрас ужо выкарыстоўваецца карыстальнікам з іншай арганізацыі. Звярніцеся ў службу падтрымкі кліентаў для вырашэння гэтай праблемы"
-      ],
-      "All": [
-        "Усе"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Усе перанесеныя ўліковыя запісы карыстальнікаў гатовы да запрашэння ў вашу арганізацыю ${ BRAND_NAME }."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "Адбылася невядомая памылка. Абнавіце старонку і паспрабуйце яшчэ раз"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "Вы сапраўды хочаце працягнуць без ${ withoutString } і яшчэ ${ notMigratedOthers } іншага?",
-        "Вы сапраўды хочаце працягнуць без ${ withoutString } і яшчэ ${ notMigratedOthers } іншых?",
-        "Вы сапраўды хочаце працягнуць без ${ withoutString } і яшчэ ${ notMigratedOthers } іншых?",
-        "Вы сапраўды хочаце працягнуць без ${ withoutString } і яшчэ ${ notMigratedOthers } іншых?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "Вы сапраўды хочаце працягнуць без ${ withoutString }?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Вы сапраўды хочаце працягнуць? Карыстальнікі, якія не запыталі свой уліковы запіс да завяршэння пераносу, неабходна будзе скінуць пароль праз адміністратара арганізацыі ${ BRAND_NAME }."
-      ],
-      "Authenticate": [
-        "Аўтэнтыфікаваць"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Аўтэнтыфікацыя вашага ўліковага запісу Google Workspace"
-      ],
-      "Calendar": [
-        "Каляндар"
-      ],
-      "Collapse invitation message": [
-        "Згарнуць запрашальныя паведамленні"
-      ],
-      "Collapse step": [
-        "Згарнуць крок"
-      ],
-      "Configure domain": [
-        "Сканіфігурыраваць дамен"
-      ],
-      "Configure migration": [
-        "Сканфігурыраваць перанос"
-      ],
-      "Configure users": [
-        "Канфігурацыя карыстальнікаў"
-      ],
-      "Configure your domain": [
-        "Сканфігурыруйце свой дамен"
-      ],
-      "Confirm": [
-        "Пацвердзіць"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Звяжыцеся са сваім адміністратарам, каб пачаць перанос."
-      ],
-      "Contacts": [
-        "Кантакты"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Скапіюйце код ніжэй і ўстаўце яго ў раздзел DNS вашага вузла дамена."
-      ],
-      "Creating accounts": [
-        "Стварэнне ўліковых запісаў"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Статус пераносу даных з Google Workspace у ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "Выдаліце любыя коды MX, якія былі прапісаны раней, а потым скапіюйце коды і ўстаўце іх у раздзел DNS свайго пастаўшчыка даменаў."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM дадае лічбавы подпіс да кожнага ліста, каб атрымальнікі маглі спраўдзіць, што паведамленне сапраўды паступіла з вашага дамена і не было зменена пры перадачы. Без гэтага спосабу спраўджання паведамленні могуць лічыцца менш надзейнымі."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC заснаваны на SPF і DKIM. Сутнасць тэхналогіі заключаецца ў тым, што ён паведамляе правілы апрацоўкі паведамленняў, якія не прайшлі спраўджанне на серверы, які атрымаў гэтыя паведамленні. Гэта дапамагае абараніць ваш дамен ад імітацыі і павышае агульную надзейнасць дастаўкі."
-      ],
-      "Domain added": [
-        "Дамены дададзены"
-      ],
-      "Domain provider": [
-        "Пастаўшчык даменаў"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Не ведаеце з чаго пачаць? Паглядзіце, як абнавіць свой DNS на ${ registrarLink }"
-      ],
-      "Emails": [
-        "Лісты"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Пераканайцеся, што вашы электронныя лісты трапляюць у паштовую скрыню, а не ў папку са спамам. Абнаўленне SPF дазволіць карыстальнікам адначасова адпраўляць лісты з ${ BRAND_NAME } і Google на працягу ўсяго перыяду пераносу."
-      ],
-      "Errors": [
-        "Памылкі"
-      ],
-      "Estimated size": [
-        "Прыблізны памер"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Усе атрымліваюць аднолькавую запрашальную спасылку. Яны наведваюць старонку, уводзяць свой адрас электроннай пошты, і код пацвярджэння прыходзіць на іх паштовую скрыню Gmail. Пасля гэтага яны задаюць пароль для ${ BRAND_NAME }."
-      ],
-      "Expand invitation message": [
-        "Разгарнуць запрашальныя паведамленні"
-      ],
-      "Expand step": [
-        "Пашырыць крок"
-      ],
-      "Failed to load OAuth": [
-        "Не ўдалося загрузіць OAuth"
-      ],
-      "Final step": [
-        "Апошні крок"
-      ],
-      "Find out what can be migrated.": [
-        "Даведайцеся, што перанесена."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Атрымайце дапамогу і карысныя парады для іншых пастаўшчыкоў даменаў ${ here }"
-      ],
-      "Going private": [
-        "Пераход да прыватнасці"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Праграма Google Marketplace для капіявання даных у ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Уліковы запіс Google Workspace"
-      ],
-      "Has errors": [
-        "З памылкамі"
-      ],
-      "Import completed successfully": [
-        "Імпартаванне паспяхова завершана"
-      ],
-      "Import details": [
-        "Імпартаваць падрабязнасці"
-      ],
-      "In progress": [
-        "Выконваецца"
-      ],
-      "Install app": [
-        "Усталяваць праграму"
-      ],
-      "Install migration app": [
-        "Усталяваць праграму пераносу"
-      ],
-      "Invitation link": [
-        "Запрашальная спасылка"
-      ],
-      "Invitation message": [
-        "Запрашальнае паведамленне"
-      ],
-      "invite link": [
-        "запрашальная спасылка"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Гэтыя змены ўвойдуць у сілу на працягу 24 гадзін."
-      ],
-      "Loading your organization data": [
-        "Загрузка даных вашай арганізацыі"
-      ],
-      "Mail": [
-        "Пошта"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Адрас удзельніка не знойдзены. Звяжыцеся з нашай службай падтрымкі кліентаў, каб вырашыць гэта"
-      ],
-      "Migrate": [
-        "Перанос"
-      ],
-      "Migrate accounts": [
-        "Перанесці ўліковыя запісы"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Перанос уліковых запісаў у ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Перанесці з Google Workspace"
-      ],
-      "Migrated": [
-        "Перанесена"
-      ],
-      "Migrated accounts": [
-        "Перанесеныя ўліковыя запісы"
-      ],
-      "Migration includes": [
-        "Перанос уключаны"
-      ],
-      "Migration started for ${ n } user": [
-        "Перанос пачаты для ${ n } карыстальніка",
-        "Перанос пачаты для ${ n } карыстальнікаў",
-        "Перанос пачаты для ${ n } карыстальнікаў",
-        "Перанос пачаты для ${ n } карыстальнікаў"
-      ],
-      "Migration status": [
-        "Статус пераносу"
-      ],
-      "Migration summary": [
-        "Зводка па пераносу"
-      ],
-      "Missing organization private key": [
-        "Адсутнічае закрыты ключ арганізацыі"
-      ],
-      "Missing organization public key": [
-        "Адсутнічае адкрыты ключ арганізацыі"
-      ],
-      "More details": [
-        "Дадатковая інфармацыя"
-      ],
-      "Need help?": [
-        "Неабходна дапамога?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Падрабязнасці памылкі недаступны. Звяжыцеся са службай падтрымкі для атрымання дадатковай інфармацыі."
-      ],
-      "No users to display": [
-        "Няма карыстальнікаў для адлюстравання"
-      ],
-      "Not activated": [
-        "Не актываваны"
-      ],
-      "Not confirmed": [
-        "Не пацверджана"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Сістэма не змагла вызначыць аўтаматычна? Выберыце пастаўшчыка са спіса ўручную."
-      ],
-      "Onboard your team": [
-        "Запрасіце сваю каманду"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Як толькі будзе пацверджана, што лісты накіроўваюцца ў ${ BRAND_NAME } перанос будзе завершаны. Вы атрымаеце ліст з пацвярджэннем, калі гэта адбудзецца. Гэты працэс зойме да 24 гадзін."
-      ],
-      "Organization does not have enough seats available": [
-        "У арганізацыі недастаткова даступных ліцэнзій"
-      ],
-      "Organization does not have enough storage available": [
-        "У арганізацыі недастаткова даступнага месца для захоўвання"
-      ],
-      "Pending": [
-        "У чаканні"
-      ],
-      "Please don’t close or refresh this window.": [
-        "Не закрывайце і не абнаўляйце гэта акно."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Паўторная аўтэнтыфікацыя ў вашым уліковым запісе Google Workspace, каб пачаць перанос"
-      ],
-      "Refresh": [
-        "Абнавіць"
-      ],
-      "Select at least one user to start a migration": [
-        "Выберыце прынамсі аднаго карыстальніка, каб пачаць перанос"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Выберыце толькі тое, што хочаце перанесці. Гэта будзе прыменена да ўсіх карыстальнікаў арганізацыі."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Выберыце ўліковы запісы, якія хочаце перанесці ў ${ BRAND_NAME }. Вы можаце перанесці ўсю арганізацыю за раз або пачаць з пераносу яе невялікай часткі, а потым перанесці ўсё астатняе."
-      ],
-      "Select users to migrate": [
-        "Выберыце карыстальнікаў для пераносу"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Наладзьце бяспечную адпраўку (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Наладзьце бяспечную адпраўку (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Наладзьце бяспечную адпраўку (SPF)"
-      ],
-      "Settings": [
-        "Налады"
-      ],
-      "Sign in to Google Workspace": [
-        "Увайсці ў Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Увайдзіце з уліковым запісам адміністратара Google Workspace для ${ BRAND_NAME }, каб наладзіць перанос."
-      ],
-      "Size": [
-        "Памер"
-      ],
-      "Skip": [
-        "Прапусціць"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "Прапушчаны ${ count } кантакт з-за несумяшчальнасці",
-        "Прапушчаны ${ count } кантакты з-за несумяшчальнасці",
-        "Прапушчаны ${ count } кантактаў з-за несумяшчальнасці",
-        "Прапушчаны ${ count } кантактаў з-за несумяшчальнасці"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "Прапушчаны ${ count } ліст з-за несумяшчальнасці",
-        "Прапушчаны ${ count } лісты з-за несумяшчальнасці",
-        "Прапушчаны ${ count } лістоў з-за несумяшчальнасці",
-        "Прапушчаны ${ count } лістоў з-за несумяшчальнасці"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "Прапушчана ${ count } падзея з-за несумяшчальнасці",
-        "Прапушчана ${ count } падзеі з-за несумяшчальнасці",
-        "Прапушчана ${ count } падзей з-за несумяшчальнасці",
-        "Прапушчана ${ count } падзей з-за несумяшчальнасці"
-      ],
-      "Some accounts are not claimed": [
-        "Некаторыя ўліковыя запісы не пацверджаны"
-      ],
-      "Some members weren't migrated": [
-        "Некаторыя ўдзельнікі не былі перанесены."
-      ],
-      "Status": [
-        "Статус"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Гэтага карыстальніка немагчыма перанесці з-за несумяшчальнасці платформ."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Усталюйце ${ BRAND_NAME } Easy Switch з Google Workspace Marketplace, каб перанесці даныя сваёй арганізацыі ў ${ BRAND_NAME }. Вярніцеся сюды зноў для працягу, калі праграма будзе ўсталявана."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "Пакіньце сабе толькі коды ${ BRAND_NAME } MX, каб завяршыць перанос."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у кансолі адміністратара Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Каб перанесці гэтага карыстальніка, уключыце яго адрас у ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Каб перанесці гэтага карыстальніка, яму неабходна прыняць запрашэнне далучыцца да ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Каб перанесці гэтага карыстальніка, разархівуйце яго ў кансолі адміністратара Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Каб перанесці гэтага карыстальніка, разблакіруйце яго ў кансолі адміністратара Google Workspace."
-      ],
-      "Update records for receiving": [
-        "Абнавіце запісы для атрымання"
-      ],
-      "User": [
-        "Карыстальнік"
-      ],
-      "Users activated": [
-        "Карыстальнікі актываваны"
-      ],
-      "Users migrated": [
-        "Карыстальнікі перанесены"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Карыстальнікі, якія маюць доступ да сваіх уліковых запісаў ${ BRAND_NAME }"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Карыстальнікі, якія не запыталі свой уліковы запіс да завяршэння пераносу, неабходна будзе скінуць пароль праз адміністратара арганізацыі ${ BRAND_NAME }."
-      ],
-      "Verified": [
-        "Спраўджана"
-      ],
-      "Verify installation": [
-        "Спраўдзіць усталяванне"
-      ],
-      "Verify your domain": [
-        "Спраўдзіць свой дамен"
-      ],
-      "Verify your domain to start a migration": [
-        "Спраўдзіце свой дамен, каб пачаць перанос"
-      ],
-      "Waiting for MX...": [
-        "Чаканне MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Немагчыма спраўдзіць усталяванне. Праверце, што ўсталяванне было зроблена ва ўліковым запісе Google Workspace і паспрабуйце яшчэ раз."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Адбываецца перанос даных у ${ BRAND_NAME }. Бяспечны сэрвіс электроннай пошты.\nВаш уліковы запіс ${ BRAND_NAME } гатовы да запыту.\nНацісніце на спасылку ${ inviteLink }.\nУвядзіце ў свой адрас электроннай пошты, і вы атрымаеце код на вашу пошту Gmail.\nСкарыстайцеся ім, каб задаць пароль — і ўліковы запіс ${ BRAND_NAME } будзе належыць толькі вам.\nНекаторы час два паштовыя сэрвісы будуць працаваць паралельна. ${ BRAND_NAME } і Gmail. \nКалі ўсе даныя будуць перанесены, сэрвіс Gmail будзе закрыты. Вы атрымаеце напамін, калі гэта адбудзецца."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Звярніце ўвагу, што некаторыя карыстальнікі не запыталі свае ўліковыя запісы ${ BRAND_NAME }."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "У цяперашні час сістэма стварае вашы ўліковыя запісы і імпартуе вашы даныя. Такім чынам ва ўдзельнікаў вашай каманды будзе ўсё неабходнае, калі яны пачнуць выкарыстоўваць бяспечныя ўліковыя запісы ${ BRAND_NAME }."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Скразное шыфраванне ўключана ва ўсе нашы праграмныя прадукты для кожнага карыстальніка. Кожны ліст, кожная падзея належаць толькі вам або бачныя толькі вашай камандзе. Вашы даныя недаступны супрацоўнікам Proton і іншым асобам."
-      ],
-      "What are you migrating?": [
-        "Што вы плануеце перанесці?"
-      ],
-      "You": [
-        "Вы"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "Пазней вы не зможаце скапіяваць даныя гэтых карыстальнікаў."
-      ],
-      "You're all set!": [
-        "Усё гатова!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Амаль гатова. Вам неабходна сканфігурыраваць свой дамен, каб атрымліваць лісты непасрэдна ў ${ BRAND_NAME }. Пасля пацвярджэння, ваша каманда больш не будзе атрымліваць лісты ў паштовую скрыню Gmail, а перанос будзе завершаным."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальніка. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
-        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
-        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
-        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "Канфігурацыя вашага дамена ўсё яшчэ ўключае коды MX ад іншых пастаўшчыкоў"
       ]
     },
     "breadcrumb": {
@@ -7774,6 +7331,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назвы некаторых вашых метак перавышаюць максімальнае абмежаванне па колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
+      "Something went wrong": [
+        "Нешта пайшло не так"
+      ],
       "Something went wrong while converting the address": [
         "Нешта пайшло не так пры пераўтварэнні адраса"
       ],
@@ -10686,9 +10246,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы сапраўды хочаце пазбавіць гэтага карыстальніка правоў адміністратара?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Вы сапраўды хочаце выдаліць усіх удзельнікаў з гэтай групы?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Вы сапраўды хочаце выдаліць дамен ${ boldDomain }?"
       ],
@@ -12725,6 +12282,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Разумна маршрутызуецца праз: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для вашых карыстальніцкіх адрасоў дамена."
@@ -15981,6 +15541,9 @@
       ],
       "Set password": [
         "Задаць пароль"
+      ],
+      "Settings": [
+        "Налады"
       ],
       "Share your referral link": [
         "Абагуліць сваю рэферальную спасылку"
@@ -22251,17 +21814,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Пераканайцеся, што вы цяпер скапіявалі токен SCIM вышэй."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Пасля адключэння SCIM для вашай арганізацыі **ўсе карыстальнікі SCIM, якія аўтаматычна забяспечаны вашым пастаўшчыком пасведчанняў, будуць пераўтвораны ў карыстальнікаў SSO** і ў вас будзе магчымасць кіраваць імі наўпрост у наладах ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Спрашчае кіраванне карыстальнікамі паміж рознымі сэрвісамі. Дадаванне, рэдагаванне і выдаленне карыстальнікаў у вашым пастаўшчыку пасведчанняў. Усе пералічаныя змены будуць аўтаматычна ўжывацца для вашай арганізацыі ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Аўтаматычная падрыхтоўка SCIM будзе адключана да таго моманту, пакуль вамі не будзе ўведзены новы токен SCIM у налады вашага пастаўшчыка пасведчанняў."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM на базе URL-адраса і токен будуць выдалены."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Для паўторнага ўключэння сінхранізацыі з вашым пастаўшчыком пасведчанняў, вам неабходна прайсці інтэграцыю SCIM яшчэ раз."
@@ -25223,6 +24780,14 @@
         "Асабісты"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Памер"
+      ],
+      "Status": [
+        "Статус"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "Абагулена са мной"
@@ -26821,9 +26386,6 @@
       ],
       "Reject device?": [
         "Адхіліць прыладу?"
-      ],
-      "Remove all members?": [
-        "Выдаліць усіх удзельнікаў?"
       ],
       "Remove Always-on VPN device profile": [
         "Выдаліць профіль прылады пастаяннай VPN"

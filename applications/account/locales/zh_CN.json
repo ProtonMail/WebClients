@@ -741,6 +741,9 @@
       "Emoji": [
         "表情符号"
       ],
+      "Enable": [
+        "启用"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "启用 ${ darkWebMonitoring }"
       ],
@@ -1307,9 +1310,6 @@
       ],
       "Remove": [
         "移除"
-      ],
-      "Remove all members": [
-        "删除所有成员"
       ],
       "Remove all other devices": [
         "移除所有其他设备"
@@ -2944,431 +2944,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "您的个人邮箱地址是您数字身份的重要组成部分。就像您的电话号码一样，您不会把它交给每个遇见的人。因此，拥有可用于不同目的的其他邮箱地址非常有用。"
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } / ${ totalCount }"
-      ],
-      "Account connected": [
-        "账户已连接"
-      ],
-      "Account disconnected": [
-        "账户已断开连接"
-      ],
-      "Accounts migrated": [
-        "已迁移账户"
-      ],
-      "Activated": [
-        "已激活"
-      ],
-      "Add domain": [
-        "添加域名"
-      ],
-      "Add users": [
-        "添加用户"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "将您的组织邮箱域名添加到 ${ BRAND_NAME }。"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "该地址已被您组织外的用户使用，请联系客服以解决此问题。"
-      ],
-      "All": [
-        "全部"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "所有已迁移的用户账户均已准备就绪，可邀请加入您的 ${ BRAND_NAME } 组织。"
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "发生未知错误，请刷新页面后重试！"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "确定要在没有 ${ withoutString } 和其他 ${ notMigratedOthers } 人的情况下继续吗？"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "确定要在没有 ${ withoutString } 的情况下继续吗？"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "您确定要继续吗？在迁移完成前未领取账户的用户，需要向其 ${ BRAND_NAME } 组织管理员申请重置密码。"
-      ],
-      "Authenticate": [
-        "身份验证"
-      ],
-      "Authenticate your Google Workspace account": [
-        "验证您的 Google Workspace 账户"
-      ],
-      "Calendar": [
-        "日历"
-      ],
-      "Collapse invitation message": [
-        "收起邀请消息"
-      ],
-      "Collapse step": [
-        "收起步骤"
-      ],
-      "Configure domain": [
-        "配置域名"
-      ],
-      "Configure migration": [
-        "配置迁移"
-      ],
-      "Configure users": [
-        "配置用户"
-      ],
-      "Configure your domain": [
-        "配置域名"
-      ],
-      "Confirm": [
-        "确认"
-      ],
-      "Contact your administrator to start a migration.": [
-        "请联系您的管理员开始迁移"
-      ],
-      "Contacts": [
-        "联系人"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "复制下方代码并将其粘贴到您的域名提供商的 DNS 区域中！"
-      ],
-      "Creating accounts": [
-        "正在创建账户"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "从 Google Workspace 到 ${ BRAND_NAME } 的数据迁移状态"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "删除任何已有的 MX 记录，然后复制以下记录并粘贴到您域名托管商的 DNS 设置中。"
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM 为每封邮件添加数字签名，以便收件人验证邮件确实来自您的域名且未被篡改。否则，邮件可能被认为可信度较低！"
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC 在 SPF 和 DKIM 的基础上，告知接收服务器如何处理未通过这些检查的邮件。它有助于保护您的域名免遭冒充，并提高整体的投递可靠性。"
-      ],
-      "Domain added": [
-        "已添加域名"
-      ],
-      "Domain provider": [
-        "域名提供商"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "不知从何开始？观看如何在 ${ registrarLink } 上更新您的 DNS！"
-      ],
-      "Emails": [
-        "邮件"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "请确保您的邮件进入收件箱而非垃圾邮件文件夹，更新 SPF 将允许用户在迁移期间同时通过 ${ BRAND_NAME } 和 Google 发送邮件。"
-      ],
-      "Errors": [
-        "错误"
-      ],
-      "Estimated size": [
-        "预计大小"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "每位成员都会收到相同的邀请链接。他们访问页面、输入邮箱后，验证码将发送至其 Gmail 收件箱。然后，他们即可设置自己的 ${ BRAND_NAME } 密码。"
-      ],
-      "Expand invitation message": [
-        "展开邀请消息"
-      ],
-      "Expand step": [
-        "展开步骤"
-      ],
-      "Failed to load OAuth": [
-        "加载 OAuth 失败"
-      ],
-      "Final step": [
-        "最后一步"
-      ],
-      "Find out what can be migrated.": [
-        "了解可以迁移哪些内容"
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "获取其他域名提供商的帮助和实用技巧 ${ here }"
-      ],
-      "Going private": [
-        "正在设为私密"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "用于将数据复制到 ${ BRAND_NAME } 的 Google Marketplace 应用"
-      ],
-      "Google Workspace account": [
-        "Google Workspace 账户"
-      ],
-      "Has errors": [
-        "出错啦"
-      ],
-      "Import completed successfully": [
-        "导入成功"
-      ],
-      "Import details": [
-        "导入详情"
-      ],
-      "In progress": [
-        "进行中"
-      ],
-      "Install app": [
-        "安装应用"
-      ],
-      "Install migration app": [
-        "安装迁移应用"
-      ],
-      "Invitation link": [
-        "邀请链接"
-      ],
-      "Invitation message": [
-        "邀请邮件"
-      ],
-      "invite link": [
-        "邀请链接"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "这些更改最多可能需要 24 小时才能生效。"
-      ],
-      "Loading your organization data": [
-        "正在加载您的组织数据"
-      ],
-      "Mail": [
-        "邮箱"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "未找到成员地址，请联系客服解决此问题。"
-      ],
-      "Migrate": [
-        "迁移"
-      ],
-      "Migrate accounts": [
-        "迁移账户"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "将账户迁移到 ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "从 Google Workspace 迁移"
-      ],
-      "Migrated": [
-        "已迁移"
-      ],
-      "Migrated accounts": [
-        "已迁移账户"
-      ],
-      "Migration includes": [
-        "迁移内容包括"
-      ],
-      "Migration started for ${ n } user": [
-        "已开始为 ${ n } 位用户迁移数据"
-      ],
-      "Migration status": [
-        "迁移状态"
-      ],
-      "Migration summary": [
-        "迁移摘要"
-      ],
-      "Missing organization private key": [
-        "缺少组织私钥"
-      ],
-      "Missing organization public key": [
-        "缺少组织公钥"
-      ],
-      "More details": [
-        "更多详情"
-      ],
-      "Need help?": [
-        "需要帮助？"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "没有可用的错误详情，请联系客服以获取更多信息。"
-      ],
-      "No users to display": [
-        "无可显示的用户"
-      ],
-      "Not activated": [
-        "未激活"
-      ],
-      "Not confirmed": [
-        "尚未确认"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "未正确识别？请从列表中选择您的提供商。"
-      ],
-      "Onboard your team": [
-        "团队引导"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "一旦我们确认邮件已路由到 ${ BRAND_NAME }，迁移即告完成。完成后您将收到一封确认邮件。此过程最多可能需要 24 小时。"
-      ],
-      "Organization does not have enough seats available": [
-        "组织可用席位不足"
-      ],
-      "Organization does not have enough storage available": [
-        "组织可用存储空间不足"
-      ],
-      "Pending": [
-        "待处理"
-      ],
-      "Please don’t close or refresh this window.": [
-        "请不要关闭或刷新此窗口！"
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "重新验证您的 Google Workspace 账户以开始迁移"
-      ],
-      "Refresh": [
-        "刷新"
-      ],
-      "Select at least one user to start a migration": [
-        "请至少选择一位用户以开始迁移"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "精确选择您要迁移的内容，这将适用于所有组织用户。"
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "请选择您希望迁移到 ${ BRAND_NAME } 的账户。您可以立即迁移整个组织，也可以从小范围开始，待准备就绪后再迁移其余部分。"
-      ],
-      "Select users to migrate": [
-        "请选择要迁移的用户"
-      ],
-      "Set up secure sending (DKIM)": [
-        "设置安全发送 (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "设置安全发送 (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "设置安全发送 (SPF)"
-      ],
-      "Settings": [
-        "设置"
-      ],
-      "Sign in to Google Workspace": [
-        "登录 Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "请使用 Google Workspace 管理员账户登录 ${ BRAND_NAME } 以设置迁移。"
-      ],
-      "Size": [
-        "大小"
-      ],
-      "Skip": [
-        "跳过"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "因不兼容已跳过 ${ count } 个联系人"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "因不兼容已跳过 ${ count } 封邮件"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "因不兼容已跳过 ${ count } 个事件"
-      ],
-      "Some accounts are not claimed": [
-        "部分账户未被领取"
-      ],
-      "Some members weren't migrated": [
-        "部分成员未迁移"
-      ],
-      "Status": [
-        "状态"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "由于平台不兼容，无法迁移此用户。"
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "若要将您组织的数据迁移到 ${ BRAND_NAME }，请从 Google Workspace 应用市场安装 ${ BRAND_NAME } Easy Switch。安装后，请返回此处继续。"
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "要完成迁移，请确保仅保留 ${ BRAND_NAME } MX 记录。"
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "要迁移此用户，请在 Google Workspace 管理控制台中启用其账户。"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其账户。"
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其地址。"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "要迁移此用户，该用户需要接受加入 ${ BRAND_NAME } 的邀请。"
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "要迁移此用户，请在 Google Workspace 管理控制台中取消归档该用户。"
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "要迁移此用户，请在 Google Workspace 管理控制台中取消暂停该用户。"
-      ],
-      "Update records for receiving": [
-        "更新接收记录"
-      ],
-      "User": [
-        "用户"
-      ],
-      "Users activated": [
-        "已激活用户"
-      ],
-      "Users migrated": [
-        "已迁移的用户"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "已访问过其 ${ BRAND_NAME } 账户的用户"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "在迁移完成前未领取账户的用户，需要向其 ${ BRAND_NAME } 组织管理员申请重置密码。"
-      ],
-      "Verified": [
-        "已验证"
-      ],
-      "Verify installation": [
-        "验证安装"
-      ],
-      "Verify your domain": [
-        "验证您的域名"
-      ],
-      "Verify your domain to start a migration": [
-        "验证您的域名以开始迁移"
-      ],
-      "Waiting for MX...": [
-        "正在等待 MX 记录..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "我们无法验证安装，请检查您已在 Google Workspace 账户中安装该应用，然后重试。"
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "我们将迁移至 ${ BRAND_NAME }，这款安全邮箱服务。\n您的 ${ BRAND_NAME } 账户已准备就绪，等待领取。\n请点击 ${ inviteLink }。\n请输入您的邮箱地址，我们会将验证码发送到您的 Gmail 邮箱。\n使用验证码设置您的密码 — 您的 ${ BRAND_NAME } 账户就属于您了。\n在一段时间内，${ BRAND_NAME } 和 Gmail 会同时并行使用。\n待所有人都完成迁移后，我们将停用 Gmail 邮箱，在此之前我们会提醒您。"
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "我们注意到部分用户尚未领取其 ${ BRAND_NAME } 账户！"
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "我们正在为您创建账户并导入数据，以便您的团队在开始使用安全的 ${ BRAND_NAME } 账户时能获得所需的一切。"
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "我们正在为所有人启用端到端加密。每封邮件、每个日程现在都只属于您自己。仅您的团队可见。我们或任何其他人都无法看到。"
-      ],
-      "What are you migrating?": [
-        "您需要迁移什么？"
-      ],
-      "You": [
-        "您"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "您之后将无法复制这些用户的数据！"
-      ],
-      "You're all set!": [
-        "一切就绪！"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "您即将完成，需要配置您的域名以直接在 ${ BRAND_NAME } 上接收邮件。确认后，您的团队将停止在 Gmail 上接收新邮件，迁移即告完成。"
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "您当前的套餐最多允许 ${ maxMembers } 位用户。如需迁移更多用户，请为您的订阅增加席位。"
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "您的域名配置仍包含其他提供商的 MX 记录！"
       ]
     },
     "breadcrumb": {
@@ -7621,6 +7196,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
       ],
+      "Something went wrong": [
+        "出了些问题"
+      ],
       "Something went wrong while converting the address": [
         "转换地址时发生错误"
       ],
@@ -10368,9 +9946,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "您确定要移除此用户的管理权限吗？"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "您确定要从该组中移除所有成员吗？"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "确定要移除域名 ${ boldDomain } 吗？"
       ],
@@ -12386,6 +11961,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "智能路由经由：${ joinedCountries }。"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "第三方服务或设备可以使用 SMTP 投递功能通过您的 ${ MAIL_APP_NAME } 自有域名地址发送邮件。"
@@ -15618,6 +15196,9 @@
       ],
       "Set password": [
         "设置密码"
+      ],
+      "Settings": [
+        "设置"
       ],
       "Share your referral link": [
         "分享您的推荐链接"
@@ -21654,17 +21235,11 @@
       "Make sure you copy the above SCIM token now.": [
         "请确保现在就复制上述 SCIM 令牌。"
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "一旦组织禁用 SCIM，**身份提供商自动提供的所有 SCIM 用户都将转换为 SSO 用户**，您可以直接在 ${ BRAND_NAME } 设置中对其进行管理。"
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "简化跨不同服务的用户管理。在身份提供商中添加、编辑和删除用户，这些更改将自动应用于 ${ appName } 组织。"
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "在身份提供商的设置中输入新的 SCIM 令牌之前，SCIM 自动配置将被禁用。"
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM 基本 URL 和令牌将被删除。"
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "要重新启用与身份提供商的同步，需要再次完成 SCIM 集成。"
@@ -24433,6 +24008,14 @@
         "面向个人"
       ]
     },
+    "Table header": {
+      "Size": [
+        "大小"
+      ],
+      "Status": [
+        "状态"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "与我共享"
@@ -25989,9 +25572,6 @@
       ],
       "Reject device?": [
         "剔除设备？"
-      ],
-      "Remove all members?": [
-        "移除全部成员？"
       ],
       "Remove Always-on VPN device profile": [
         "移除始终开启 VPN 设备配置文件"

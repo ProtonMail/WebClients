@@ -729,6 +729,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable": [
+        "Aktifkan"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Aktfkan ${ darkWebMonitoring }"
       ],
@@ -1283,9 +1286,6 @@
       ],
       "Remove": [
         "Hapus"
-      ],
-      "Remove all members": [
-        "Keluarkan semua anggota"
       ],
       "Remove all other devices": [
         "Hapus seluruh perangkat lainnya"
@@ -2896,431 +2896,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Alamat email pribadi Anda adalah bagian penting dari identitas digital Anda. Seperti nomor telepon, Anda tidak memberikannya kepada setiap orang yang Anda temui. Itulah sebabnya memiliki alamat email lain yang dapat digunakan untuk berbagai keperluan sangatlah berguna."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } dari ${ totalCount }"
-      ],
-      "Account connected": [
-        "Akun terhubung"
-      ],
-      "Account disconnected": [
-        "Akun terputus"
-      ],
-      "Accounts migrated": [
-        "Akun dimigrasikan"
-      ],
-      "Activated": [
-        "Diaktifkan"
-      ],
-      "Add domain": [
-        "Tambah domain"
-      ],
-      "Add users": [
-        "Tambah pengguna"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Tambahkan domain email organisasi ke ${ BRAND_NAME }."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Alamat sudah digunakan oleh pengguna di luar organisasi. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
-      ],
-      "All": [
-        "Semua"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Semua akun pengguna yang dimigrasikan siap diundang ke organisasi ${ BRAND_NAME }."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "Terjadi kesalahan yang tidak diketahui. Silakan muat ulang halaman dan coba lagi"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "Apakah Anda yakin ingin melanjutkan tanpa ${ withoutString } dan ${ notMigratedOthers } lainnya?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "Apakah Anda yakin ingin melanjutkan tanpa ${ withoutString }?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Apakah yakin ingin melanjutkan? Pengguna yang belum mengeklaim akun mereka sebelum migrasi diselesaikan perlu meminta atur ulang kata sandi dari administrator organisasi ${ BRAND_NAME } mereka."
-      ],
-      "Authenticate": [
-        "Autentikasi"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Autentikasi akun Google Workspace"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Collapse invitation message": [
-        "Ciutkan pesan undangan"
-      ],
-      "Collapse step": [
-        "Ciutkan langkah"
-      ],
-      "Configure domain": [
-        "Konfigurasikan domain"
-      ],
-      "Configure migration": [
-        "Atur migrasi"
-      ],
-      "Configure users": [
-        "Konfigurasikan pengguna"
-      ],
-      "Configure your domain": [
-        "Konfigurasikan domain"
-      ],
-      "Confirm": [
-        "Konfirmasi"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Hubungi administrator untuk memulai migrasi."
-      ],
-      "Contacts": [
-        "Kontak"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Salin kode di bawah ini dan tempel di bagian DNS dari host domain."
-      ],
-      "Creating accounts": [
-        "Membuat akun"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status migrasi data dari Google Workspace ke ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "Hapus kode MX yang sudah ada sebelumnya, lalu salin kode di bawah ini dan tempel di bagian DNS dari host domain Anda."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM menambahkan tanda tangan digital ke setiap email sehingga penerima dapat memverifikasi bahwa pesan benar-benar berasal dari domain Anda dan tidak diubah dalam transit. Tanpanya, pesan mungkin dianggap kurang tepercaya."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC dibangun di atas SPF dan DKIM dengan memberi tahu server penerima cara menangani pesan yang gagal dalam pemeriksaan ini. Ini membantu melindungi domain dari peniruan identitas dan meningkatkan keandalan pengiriman secara keseluruhan."
-      ],
-      "Domain added": [
-        "Domain ditambahkan"
-      ],
-      "Domain provider": [
-        "Penyedia domain"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Bingung harus mulai dari mana? Tonton cara memperbarui DNS di ${ registrarLink }"
-      ],
-      "Emails": [
-        "Email"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Pastikan email mencapai kotak masuk, bukan folder spam. Memperbarui SPF akan memungkinkan pengguna mengirim dari ${ BRAND_NAME } dan Google secara bersamaan selama migrasi berlangsung."
-      ],
-      "Errors": [
-        "Kesalahan"
-      ],
-      "Estimated size": [
-        "Perkiraan ukuran"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Semua orang mendapatkan tautan undangan yang sama. Mereka akan mengunjungi halaman tersebut, memasukkan email, dan kode verifikasi akan masuk ke kotak masuk Gmail mereka. Dari sana, mereka dapat mengatur kata sandi ${ BRAND_NAME }."
-      ],
-      "Expand invitation message": [
-        "Lebarkan pesan undangan"
-      ],
-      "Expand step": [
-        "Lebarkan langkah"
-      ],
-      "Failed to load OAuth": [
-        "OAuth gagal dimuat"
-      ],
-      "Final step": [
-        "Langkah terakhir"
-      ],
-      "Find out what can be migrated.": [
-        "Cari tahu apa saja yang dapat dimigrasikan."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Dapatkan bantuan dan tips berguna untuk penyedia domain lainnya ${ here }"
-      ],
-      "Going private": [
-        "Beralih ke pribadi"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Aplikasi Google Marketplace untuk menyalin data ke ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Akun Google Workspace"
-      ],
-      "Has errors": [
-        "Ada kesalahan"
-      ],
-      "Import completed successfully": [
-        "Impor berhasil diselesaikan"
-      ],
-      "Import details": [
-        "Rincian impor"
-      ],
-      "In progress": [
-        "Sedang berlangsung"
-      ],
-      "Install app": [
-        "Pasang aplikasi"
-      ],
-      "Install migration app": [
-        "Instal aplikasi migrasi"
-      ],
-      "Invitation link": [
-        "Tautan undangan"
-      ],
-      "Invitation message": [
-        "Pesan undangan"
-      ],
-      "invite link": [
-        "tautan undangan"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Perubahan ini memerlukan waktu hingga 24 jam untuk menyebar."
-      ],
-      "Loading your organization data": [
-        "Memuat data organisasi"
-      ],
-      "Mail": [
-        "Surat"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Alamat anggota tidak ditemukan. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
-      ],
-      "Migrate": [
-        "Migrasi"
-      ],
-      "Migrate accounts": [
-        "Migrasikan akun"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Migrasikan akun ke ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Migrasikan dari Google Workspace"
-      ],
-      "Migrated": [
-        "Dimigrasikan"
-      ],
-      "Migrated accounts": [
-        "Akun yang dimigrasikan"
-      ],
-      "Migration includes": [
-        "Migrasi meliputi"
-      ],
-      "Migration started for ${ n } user": [
-        "Migrasi dimulai untuk ${ n } pengguna"
-      ],
-      "Migration status": [
-        "Status migrasi"
-      ],
-      "Migration summary": [
-        "Ringkasan migrasi"
-      ],
-      "Missing organization private key": [
-        "Kunci pribadi organisasi hilang"
-      ],
-      "Missing organization public key": [
-        "Kunci publik organisasi hilang"
-      ],
-      "More details": [
-        "Rincian lebih lanjut"
-      ],
-      "Need help?": [
-        "Butuh bantuan?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Detail kesalahan tidak tersedia. Silakan hubungi dukungan pelanggan untuk informasi lebih lanjut"
-      ],
-      "No users to display": [
-        "Tidak ada pengguna untuk ditampilkan"
-      ],
-      "Not activated": [
-        "Belum diaktifkan"
-      ],
-      "Not confirmed": [
-        "Belum dikonfirmasi"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Tidak terdeteksi dengan benar? Pilih penyedia dari daftar."
-      ],
-      "Onboard your team": [
-        "Urus orientasi tim"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Setelah mengonfirmasi bahwa email diarahkan ke ${ BRAND_NAME }, migrasi akan diselesaikan. Email konfirmasi akan dikirimkan untuk memberi tahu saat hal ini terjadi. Proses ini dapat memakan waktu hingga 24 jam."
-      ],
-      "Organization does not have enough seats available": [
-        "Organisasi tidak memiliki jumlah kuota yang memadai"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisasi tidak memiliki cukup ruang penyimpanan yang tersedia"
-      ],
-      "Pending": [
-        "Tertunda"
-      ],
-      "Please don’t close or refresh this window.": [
-        "Jangan tutup atau muat ulang jendela ini."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Autentikasi ulang akun Google Workspace untuk memulai migrasi"
-      ],
-      "Refresh": [
-        "Muat ulang"
-      ],
-      "Select at least one user to start a migration": [
-        "Pilih setidaknya satu pengguna untuk memulai migrasi"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Pilih apa yang ingin dimigrasikan. Ini akan berlaku untuk semua pengguna organisasi."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Pilih akun yang ingin dipindahkan ke ${ BRAND_NAME }. Anda dapat memigrasikan seluruh organisasi hari ini atau mulai dari yang kecil dan memindahkan sisanya saat sudah siap."
-      ],
-      "Select users to migrate": [
-        "Pilih pengguna untuk dimigrasikan"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Siapkan pengiriman aman (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Siapkan pengiriman aman (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Siapkan pengiriman aman (SPF)"
-      ],
-      "Settings": [
-        "Pengaturan"
-      ],
-      "Sign in to Google Workspace": [
-        "Masuk ke Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Masuk dengan akun administrator Google Workspace untuk ${ BRAND_NAME } untuk mengatur migrasi."
-      ],
-      "Size": [
-        "Ukuran"
-      ],
-      "Skip": [
-        "Lewati"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "Melewati ${ count } kontak karena ketidakcocokan"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "Melewati ${ count } email karena ketidakcocokan"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "Melewati ${ count } acara karena ketidakcocokan"
-      ],
-      "Some accounts are not claimed": [
-        "Beberapa akun belum diklaim"
-      ],
-      "Some members weren't migrated": [
-        "Beberapa anggota tidak dimigrasi"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Pengguna ini tidak dapat dimigrasikan karena ketidakcocokan platform."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Untuk memindahkan data organisasi ke ${ BRAND_NAME }, instal ${ BRAND_NAME } Easy Switch dari Google Workspace Marketplace. Setelah menginstalnya, kembali ke sini untuk melanjutkan."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "Untuk menyelesaikan migrasi, pastikan hanya menyimpan kode MX ${ BRAND_NAME }."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Untuk memigrasikan pengguna ini, aktifkan akunnya di Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Untuk memigrasikan pengguna ini, aktifkan akunnya di bawah ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Untuk memigrasikan pengguna ini, aktifkan alamatnya di bawah ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Untuk memigrasikan pengguna ini, pengguna tersebut harus menerima undangan untuk bergabung dengan ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Untuk memigrasikan pengguna ini, batalkan pengarsipannya di Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Untuk memigrasikan pengguna ini, batalkan penangguhannya di Google Workspace Admin Console."
-      ],
-      "Update records for receiving": [
-        "Perbarui rekam untuk menerima"
-      ],
-      "User": [
-        "Pengguna"
-      ],
-      "Users activated": [
-        "Pengguna diaktifkan"
-      ],
-      "Users migrated": [
-        "Pengguna dimigrasikan"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Pengguna yang telah mengakses akun ${ BRAND_NAME }"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Pengguna yang belum mengklaim akun sebelum migrasi diselesaikan harus meminta atur ulang kata sandi dari administrator organisasi ${ BRAND_NAME } mereka."
-      ],
-      "Verified": [
-        "Terverifikasi"
-      ],
-      "Verify installation": [
-        "Verifikasi penginstalan"
-      ],
-      "Verify your domain": [
-        "Verifikasi domain Anda"
-      ],
-      "Verify your domain to start a migration": [
-        "Verifikasi domain Anda untuk memulai migrasi"
-      ],
-      "Waiting for MX...": [
-        "Menunggu MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Gagal memverifikasi penginstalan, harap periksa apakah aplikasi telah diinstal di akun Google Workspace dan coba lagi."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Kami beralih ke ${ BRAND_NAME }, layanan email aman.\nDan akun ${ BRAND_NAME } siap diklaim.\nKlik ${ inviteLink }.\nMasukkan alamat email, kami akan mengirimkan kode ke Gmail.\nGunakan kode tersebut untuk mengatur kata sandi — dan akun ${ BRAND_NAME } resmi menjadi milik Anda.\nUntuk sementara waktu, keduanya akan berfungsi berdampingan. ${ BRAND_NAME } dan Gmail.\nKemudian, setelah semua orang telah beralih, kami akan menonaktifkan Gmail. Kami akan mengingatkan Anda sebelum hal itu terjadi."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Tercatat beberapa pengguna belum mengeklaim akun ${ BRAND_NAME } mereka."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "Kami sedang membuat akun dan mengimpor data sekarang agar tim memiliki semua yang mereka butuhkan saat mulai menggunakan akun ${ BRAND_NAME } yang aman."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Kami mengaktifkan enkripsi end-to-end untuk semua orang. Setiap email, setiap acara kini menjadi milik Anda sendiri. Hanya dapat dilihat oleh tim Anda. Bukan kami, bukan orang lain."
-      ],
-      "What are you migrating?": [
-        "Apa yang ingin Anda migrasikan?"
-      ],
-      "You": [
-        "Anda"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "Anda tidak akan dapat menyalin data pengguna ini nanti."
-      ],
-      "You're all set!": [
-        "Semua siap!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Langkah Anda hampir selesai, Anda perlu mengonfigurasi domain untuk menerima email secara langsung di ${ BRAND_NAME }. Setelah dikonfirmasi, tim akan berhenti menerima email baru di Gmail dan migrasi akan selesai."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Paket saat ini mengizinkan hingga ${ maxMembers } pengguna. Untuk memigrasikan pengguna tambahan, tambahkan lebih banyak kuota ke langganan."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "Konfigurasi domain Anda masih menyertakan kode MX penyedia lain."
       ]
     },
     "breadcrumb": {
@@ -7558,6 +7133,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
+      "Something went wrong": [
+        "Terjadi kesalahan"
+      ],
       "Something went wrong while converting the address": [
         "Terjadi kesalahan saat mengonversi alamat"
       ],
@@ -10263,9 +9841,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Apakah Anda yakin untuk menghapus hak administratif pengguna ini?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Apakah Anda yakin ingin menghapus seluruh anggota dari grup ini?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Apakah Anda yakin untuk menghapus domain ${ boldDomain }?"
       ],
@@ -12188,6 +11763,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Dirutekan secara pintar melalui: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "Pengiriman SMTP memungkinkan layanan atau perangkat pihak ketiga mengirim email melalui ${ MAIL_APP_NAME } untuk alamat domain khusus Anda."
@@ -15324,6 +14902,9 @@
       ],
       "Set password": [
         "Atur kata sandi"
+      ],
+      "Settings": [
+        "Pengaturan"
       ],
       "Share your referral link": [
         "Bagikan tautan rujukan Anda"
@@ -21342,17 +20923,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Pastikan Anda menyalin token SCIM di atas sekarang."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Setelah SCIM dinonaktifkan untuk organisasi Anda, **semua pengguna SCIM yang sebelumnya disediakan otomatis oleh penyedia identitas Anda akan dikonversi menjadi pengguna SSO** dan Anda akan dapat mengelolanya langsung di pengaturan ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Menyederhanakan pengelolaan pengguna di berbagai layanan. Tambahkan, edit, dan hapus pengguna di penyedia identitas Anda, dan perubahan tersebut akan otomatis diterapkan ke organisasi ${ appName } Anda."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Penyediaan SCIM otomatis akan dinonaktifkan hingga Anda memasukkan token SCIM yang baru ke pengaturan penyedia identitas Anda."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "URL dasar dan token SCIM akan dihapus."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Untuk mengaktifkan kembali sinkronisasi dengan penyedia identitas yang Anda gunakan, Anda perlu untuk menyelesaikan ulang proses integrasi SCIM."
@@ -24098,6 +23673,14 @@
         "Untuk individu"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Ukuran"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "Dibagikan dengan saya"
@@ -25612,9 +25195,6 @@
       ],
       "Reject device?": [
         "Tolak perangkat?"
-      ],
-      "Remove all members?": [
-        "Hapus seluruh anggota?"
       ],
       "Remove calendar": [
         "Hapus kalender"

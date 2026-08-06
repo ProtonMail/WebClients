@@ -741,6 +741,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable": [
+        "Habilitar"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Ative o ${ darkWebMonitoring }"
       ],
@@ -1308,9 +1311,6 @@
       "Remove": [
         "Remover"
       ],
-      "Remove all members": [
-        "Remover todos os membros"
-      ],
       "Remove all other devices": [
         "Remova todos os outros dispositivos"
       ],
@@ -1871,6 +1871,9 @@
       ],
       "View all reports": [
         "Ver todos os relatórios"
+      ],
+      "View guide": [
+        "Ver guia"
       ],
       "View invoice": [
         "Visualizar fatura"
@@ -2963,437 +2966,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Seu endereço de e-mail pessoal é uma parte essencial da sua identidade digital. Assim como seu número de telefone, você não o fornece a todas as pessoas que conhece. Por isso, é útil ter outros endereços de e-mail que você possa usar para diferentes finalidades."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } de ${ totalCount }"
-      ],
-      "Account connected": [
-        "Conta conectada"
-      ],
-      "Account disconnected": [
-        "Conta desconectada"
-      ],
-      "Accounts migrated": [
-        "Contas migradas"
-      ],
-      "Activated": [
-        "Ativado"
-      ],
-      "Add domain": [
-        "Adicionar domínio"
-      ],
-      "Add users": [
-        "Adicionar usuários"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Adicione o domínio de e-mail da sua organização para a ${ BRAND_NAME }."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "O endereço já é usado por um usuário fora da sua organização. Entre em contato com o suporte ao cliente para resolver isso"
-      ],
-      "All": [
-        "Todos"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Todas as contas de usuário migradas estão prontas para serem convidadas para a sua organização do ${ BRAND_NAME }."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "Ocorreu um erro desconhecido. Por favor, atualize a página e tente novamente"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "Tem certeza de que deseja continuar sem ${ withoutString } e ${ notMigratedOthers } outro?",
-        "Tem certeza de que deseja continuar sem ${ withoutString } e ${ notMigratedOthers } outros?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "Tem certeza de que deseja continuar sem ${ withoutString }?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Tem certeza de que deseja prosseguir? Os usuários que não reivindicarem sua conta antes da finalização da migração precisarão solicitar uma redefinição de senha ao administrador da organização do ${ BRAND_NAME }."
-      ],
-      "Authenticate": [
-        "Autenticar"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Autentique sua conta do Google Workspace"
-      ],
-      "Calendar": [
-        "Calendário"
-      ],
-      "Collapse invitation message": [
-        "Recolher mensagem de convite"
-      ],
-      "Collapse step": [
-        "Ocultar etapa"
-      ],
-      "Configure domain": [
-        "Configurar domínio"
-      ],
-      "Configure migration": [
-        "Configurar migração"
-      ],
-      "Configure users": [
-        "Configurar usuários"
-      ],
-      "Configure your domain": [
-        "Configure seu domínio"
-      ],
-      "Confirm": [
-        "Confirmar"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Contate seu administrador para iniciar a migração."
-      ],
-      "Contacts": [
-        "Contatos"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Copie o código abaixo e cole-o na seção de DNS do host do seu domínio."
-      ],
-      "Creating accounts": [
-        "Criando contas"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status de migração de dados do Google Workspace para o ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "Exclua quaisquer códigos MX pré-existentes, depois copie os códigos abaixo e cole-os na seção de DNS do host do seu domínio."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "O DKIM adiciona uma assinatura digital a cada e-mail para que os destinatários possam verificar se a mensagem veio realmente do seu domínio e não foi alterada em trânsito. Sem ele, as mensagens podem ser tratadas como menos confiáveis."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "O DMARC se baseia no SPF e no DKIM, informando aos servidores de recebimento como lidar com mensagens que falham nessas verificações. Ele ajuda a proteger seu domínio contra falsificação de identidade e melhora a confiabilidade geral da entrega."
-      ],
-      "Domain added": [
-        "Domínio adicionado"
-      ],
-      "Domain provider": [
-        "Fornecedor de domínio"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Não sabe por onde começar? Assista como atualizar seu DNS em ${ registrarLink }"
-      ],
-      "Emails": [
-        "E-mails"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Garanta que seus e-mails cheguem à caixa de entrada, não à pasta de spam. Atualizar o SPF permitirá que os usuários enviem mensagens do ${ BRAND_NAME } e do Google simultaneamente durante a migração."
-      ],
-      "Errors": [
-        "Errors"
-      ],
-      "Estimated size": [
-        "Tempo estimado"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Todos recebem o mesmo link de convite. Eles visitarão a página, inserirão seu e-mail e um código de verificação chegará à caixa de entrada do Gmail. A partir daí, definirão a senha do ${ BRAND_NAME }."
-      ],
-      "Expand invitation message": [
-        "Expandir mensagem de convite"
-      ],
-      "Expand step": [
-        "Expandir etapa"
-      ],
-      "Failed to load OAuth": [
-        "Falha ao carregar o OAuth"
-      ],
-      "Final step": [
-        "Etapa final"
-      ],
-      "Find out what can be migrated.": [
-        "Descubra o que pode ser migrado."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Obtenha ajuda e dicas úteis para outros provedores de domínio ${ here }"
-      ],
-      "Going private": [
-        "Tornando-se privado"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Aplicativo do Google Marketplace para copiar dados para a ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Conta do Google Workspace"
-      ],
-      "Has errors": [
-        "Tem erros"
-      ],
-      "Import completed successfully": [
-        "Importação concluída com sucesso"
-      ],
-      "Import details": [
-        "Detalhes da importação"
-      ],
-      "In progress": [
-        "Em processo"
-      ],
-      "Install app": [
-        "Instalar aplicativo"
-      ],
-      "Install migration app": [
-        "Instalar aplicativo de migração"
-      ],
-      "Invitation link": [
-        "Link do convite"
-      ],
-      "Invitation message": [
-        "Mensagem de convite"
-      ],
-      "invite link": [
-        "link de convite"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Pode levar até 24 horas para que essas alterações se propaguem."
-      ],
-      "Loading your organization data": [
-        "Carregando os dados da sua organização"
-      ],
-      "Mail": [
-        "E-mail"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Endereço do membro não encontrado. Entre em contato com o suporte ao cliente para resolver isso"
-      ],
-      "Migrate": [
-        "Migrar"
-      ],
-      "Migrate accounts": [
-        "Migrar contas"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Migrar contas para ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Migrar do Google Workspace"
-      ],
-      "Migrated": [
-        "Migrado"
-      ],
-      "Migrated accounts": [
-        "Contas migradas"
-      ],
-      "Migration includes": [
-        "A migração foi concluída"
-      ],
-      "Migration started for ${ n } user": [
-        "Migração iniciada para ${ n } usuário",
-        "Migração iniciada para ${ n } usuários"
-      ],
-      "Migration status": [
-        "Status da migração"
-      ],
-      "Migration summary": [
-        "Resumo da migração"
-      ],
-      "Missing organization private key": [
-        "Falta a chave privada da organização"
-      ],
-      "Missing organization public key": [
-        "Falta a chave pública da organização"
-      ],
-      "More details": [
-        "Mais detalhes"
-      ],
-      "Need help?": [
-        "Precisa de ajuda?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Nenhum detalhe do erro disponível. Entre em contato com o suporte ao cliente para obter mais informações"
-      ],
-      "No users to display": [
-        "Nenhum usuário para exibir"
-      ],
-      "Not activated": [
-        "Não ativado"
-      ],
-      "Not confirmed": [
-        "Não confirmado"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Não detectado corretamente? Escolha seu provedor na lista."
-      ],
-      "Onboard your team": [
-        "Integre-se à sua equipe"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Assim que confirmarmos que os e-mails estão sendo roteados para o ${ BRAND_NAME }, a migração será finalizada. Você receberá um e-mail de confirmação para informar quando isso acontecer. Esse processo pode levar até 24 horas."
-      ],
-      "Organization does not have enough seats available": [
-        "A organização não tem licenças suficientes disponíveis"
-      ],
-      "Organization does not have enough storage available": [
-        "A organização não tem armazenamento suficientes disponíveis"
-      ],
-      "Pending": [
-        "Pendente"
-      ],
-      "Please don’t close or refresh this window.": [
-        "Não feche ou atualize essa janela."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Reautentique sua conta do Google Workspace para iniciar uma migração"
-      ],
-      "Refresh": [
-        "Atualizar"
-      ],
-      "Select at least one user to start a migration": [
-        "Selecione pelo menos um usuário para iniciar uma migração"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Selecione exatamente o que deseja migrar. Isso se aplicará a todos os usuários da organização."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Selecione as contas que gostaria de trazer para o ${ BRAND_NAME }. Você pode migrar toda a sua organização hoje ou começar aos poucos e trazer o restante quando estiver pronto."
-      ],
-      "Select users to migrate": [
-        "Selecione os usuários a serem migrados"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Configurar envio seguro (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Configurar envio seguro (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Configurar envio seguro (SPF)"
-      ],
-      "Settings": [
-        "Configurações"
-      ],
-      "Sign in to Google Workspace": [
-        "Iniciar sessão do Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Inicie sessão com uma conta de administrador do Google Workspace do ${ BRAND_NAME } para configurar a migração."
-      ],
-      "Size": [
-        "Tamanho"
-      ],
-      "Skip": [
-        "Pular"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "Ignorado ${ count } contato devido a incompatibilidades",
-        "Ignorados ${ count } contatos devido a incompatibilidades"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "Ignorado ${ count } e-mail devido a incompatibilidades",
-        "Ignorados ${ count } e-mails devido a incompatibilidades"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "Ignorado ${ count } evento devido a incompatibilidades",
-        "Ignorados ${ count } eventos devido a incompatibilidades"
-      ],
-      "Some accounts are not claimed": [
-        "Algumas contas não foram reivindicadas"
-      ],
-      "Some members weren't migrated": [
-        "Alguns membros não foram migrados"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Este usuário não pode ser migrado devido a incompatibilidades de plataforma."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Para migrar os dados da sua organização para a ${ BRAND_NAME }, instale o ${ BRAND_NAME } Easy Switch no Google Workspace Marketplace. Após a instalação, volte aqui para continuar."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "Para concluir a migração, certifique-se de manter apenas códigos MX do ${ BRAND_NAME }."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Para migrar este usuário, ative a conta dele no seu Console do Administrador do Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Para migrar este usuário, ative a conta dele em ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Para migrar este usuário, ative o endereço dele em ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Para migrar este usuário, ele precisa aceitar o convite para se juntar ao ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Para migrar este usuário, desarquive-o no seu Console do Administrador do Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Para migrar este usuário, reative-o no seu Console do Administrador do Google Workspace."
-      ],
-      "Update records for receiving": [
-        "Atualize os registros para recener"
-      ],
-      "User": [
-        "Usuário"
-      ],
-      "Users activated": [
-        "Usuários ativados"
-      ],
-      "Users migrated": [
-        "Usuários migrados"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Usuários que acessaram sua conta do ${ BRAND_NAME }"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Os usuários que não reivindicarem sua conta antes da finalização da migração precisarão solicitar uma redefinição de senha ao administrador da organização do ${ BRAND_NAME }."
-      ],
-      "Verified": [
-        "Verificado"
-      ],
-      "Verify installation": [
-        "Verificar instalação"
-      ],
-      "Verify your domain": [
-        "Verifique seu domínio"
-      ],
-      "Verify your domain to start a migration": [
-        "Verifique seu domínio para iniciar uma migração"
-      ],
-      "Waiting for MX...": [
-        "Aguardando por MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Não foi possível verificar a instalação. Verifique se você a instalou na sua conta do Google Workspace e tente novamente."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Estamos mudando para o ${ BRAND_NAME }, o serviço de e-mail seguro.\nE sua conta do ${ BRAND_NAME } está pronta para ser reivindicada.\nClique em ${ inviteLink }.\nInsira seu endereço de e-mail, enviaremos um código para o seu Gmail.\nUse-o para definir sua senha — e sua conta do ${ BRAND_NAME } será sua.\nPor um tempo, ambos funcionarão lado a lado: ${ BRAND_NAME } e Gmail.\nDepois, quando todos tiverem feito a transição, desativaremos o Gmail. Avisaremos você antes que isso aconteça."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Percebemos que alguns usuários não resgataram suas contas do ${ BRAND_NAME }."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "Estamos criando suas contas e importando seus dados agora para que sua equipe tenha tudo o que precisa quando começar a usar a nova conta segura do ${ BRAND_NAME }."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Estamos ativando a criptografia de ponta a ponta para todos. Cada e-mail, cada evento agora pertence somente a você. Visível apenas para a sua equipe. Nem para nós, nem para mais ninguém."
-      ],
-      "What are you migrating?": [
-        "O que você está migrando?"
-      ],
-      "You": [
-        "Você"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "Não será possível copiar os dados desses usuários mais tarde."
-      ],
-      "You're all set!": [
-        "Tudo pronto!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Você está quase lá, precisa configurar seu domínio para receber seus e-mails diretamente no ${ BRAND_NAME }. Uma vez confirmado, sua equipe deixará de receber novos e-mails no Gmail e a migração estará concluída."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Seu plano atual permite até ${ maxMembers } usuário. Para migrar usuários adicionais, adicione mais licenças à sua assinatura.",
-        "Seu plano atual permite até ${ maxMembers } usuários. Para migrar usuários adicionais, adicione mais licenças à sua assinatura."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "A configuração do seu domínio ainda inclui códigos MX de outro provedor."
       ]
     },
     "breadcrumb": {
@@ -7679,6 +7251,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
+      "Something went wrong": [
+        "Algo deu errado"
+      ],
       "Something went wrong while converting the address": [
         "Ocorreu um erro ao converter o endereço"
       ],
@@ -10480,9 +10055,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Tem certeza de que deseja remover os privilégios administrativos deste usuário?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Tem certeza que deseja remover todos os membros deste grupo?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Você tem certeza que deseja remover o domínio ${ boldDomain }?"
       ],
@@ -12503,6 +12075,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Roteamento inteligente via: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "O envio SMTP permite que serviços ou dispositivos de terceiros enviem correio e-mail através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado."
@@ -15740,6 +15315,9 @@
       ],
       "Set password": [
         "Definir senha"
+      ],
+      "Settings": [
+        "Configurações"
       ],
       "Share your referral link": [
         "Compartilhe seu link de referência"
@@ -21866,17 +21444,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Certifique-se de copiar o token SCIM acima agora."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Assim que o SCIM for desabilitado para sua organização, **todos os usuários SCIM fornecidos automaticamente pelo seu provedor de identidade serão convertidos para usuários SSO** e você poderá administrá-los diretamente através das configurações da ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Simplifica o gerenciamento de usuário entre diferentes serviços. Adicione, edite e remova usuários do seu provedor de identidade, e essas mudanças serão automaticamente aplicadas à sua organização ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "O provisionamento automático do SCIM será desabilitado até você inserir o novo token SCIM nas configurações do seu provedor de identidade."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "O URL base e o token do SCIM serão excluídos."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Para reabilitar a sincronização com seu provedor de identidade, é necessário completar a integração com o SCIM novamente."
@@ -24712,6 +24284,14 @@
         "Para indivíduos"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Tamanho"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "Compartilhado comigo"
@@ -26291,9 +25871,6 @@
       ],
       "Reject device?": [
         "Rejeitar o dispositivo?"
-      ],
-      "Remove all members?": [
-        "Remover todos os membros?"
       ],
       "Remove Always-on VPN device profile": [
         "Remover o perfil de dispositivo VPN sempre ativa"

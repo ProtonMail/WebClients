@@ -729,6 +729,9 @@
       "Emoji": [
         "Emotikoni"
       ],
+      "Enable": [
+        "Omogući"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Omogući ${ darkWebMonitoring }"
       ],
@@ -1283,9 +1286,6 @@
       ],
       "Remove": [
         "Ukloni"
-      ],
-      "Remove all members": [
-        "Ukloniti sve članove"
       ],
       "Remove all other devices": [
         "Uklanjanje svih ostalih uređaja"
@@ -2930,443 +2930,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Vaša osobna adresa e-pošte bitan je dio Vašeg digitalnog identiteta. Poput svog telefonskog broja, ne dajete je svima koje sretnete. Zato je korisno imati druge adrese e-pošte koje možete koristiti u različite svrhe."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } od ${ totalCount }"
-      ],
-      "Account connected": [
-        "Korisnički račun je povezan"
-      ],
-      "Account disconnected": [
-        "Korisnički račun je odspojen"
-      ],
-      "Accounts migrated": [
-        "Korisnički računi su migrirani"
-      ],
-      "Activated": [
-        "Aktivirano"
-      ],
-      "Add domain": [
-        "Dodaj domenu"
-      ],
-      "Add users": [
-        "Dodaj korisnike"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Dodajte domenu e-pošte svoje organizacije u ${ BRAND_NAME }."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresu već koristi korisnik izvan vaše organizacije. Obratite se korisničkoj podršci kako biste to riješili"
-      ],
-      "All": [
-        "Sve"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Svi migrirani korisnički računi spremni su za slanje pozivnica u vašu ${ BRAND_NAME } organizaciju."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "Dogodila se nepoznata pogreška. Osvježite stranicu i pokušajte ponovno"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "Jeste li sigurni da želite nastaviti bez ${ withoutString } i još ${ notMigratedOthers } drugog?",
-        "Jeste li sigurni da želite nastaviti bez ${ withoutString } i još ${ notMigratedOthers } druga?",
-        "Jeste li sigurni da želite nastaviti bez ${ withoutString } i još ${ notMigratedOthers } drugih?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "Jeste li sigurni da želite nastaviti bez ${ withoutString }?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Jeste li sigurni da želite nastaviti? Korisnici koji nisu preuzeli svoj korisnički račun prije dovršetka migracije morat će zatražiti ponovno pokretanje lozinke od administratora svoje ${ BRAND_NAME } organizacije."
-      ],
-      "Authenticate": [
-        "Autenticiraj"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Potvrdite autentičnost svog Google Workspace korisničkog računa"
-      ],
-      "Calendar": [
-        "Kalendar"
-      ],
-      "Collapse invitation message": [
-        "Sažmi poruku pozivnice"
-      ],
-      "Collapse step": [
-        "Sažmi korak"
-      ],
-      "Configure domain": [
-        "Konfiguriraj domenu"
-      ],
-      "Configure migration": [
-        "Konfiguriraj migraciju"
-      ],
-      "Configure users": [
-        "Konfiguriraj korisnike"
-      ],
-      "Configure your domain": [
-        "Konfigurirajte svoju domenu"
-      ],
-      "Confirm": [
-        "Potvrdi"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Obratite se svom administratoru kako biste započeli migraciju."
-      ],
-      "Contacts": [
-        "Kontakti"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Kopirajte donji kôd i zalijepite ga u DNS odjeljak svog domenskog poslužitelja."
-      ],
-      "Creating accounts": [
-        "Stvaranje korisničkih računa"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status migracije podataka iz Google Workspacea na ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "Izbrišite sve postojeće MX kodove, a zatim kopirajte donje kodove i zalijepite ih u odjeljak za DNS kod svog pružatelja domene."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM dodaje digitalni potpis svakoj e-pošti kako bi primatelji mogli potvrditi da je poruka stvarno stigla s vaše domene i da nije izmijenjena u prijenosu. Bez toga se poruke mogu smatrati manje pouzdanima."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC se nadograđuje na SPF i DKIM govoreći poslužiteljima primateljima kako postupati s porukama koje ne prođu ove provjere. Pomaže u zaštiti vaše domene od lažnog predstavljanja i poboljšava ukupnu pouzdanost isporuke."
-      ],
-      "Domain added": [
-        "Domena je dodana"
-      ],
-      "Domain provider": [
-        "Davatelj domene"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Ne znate odakle početi? Pogledajte kako ažurirati svoj DNS na ${ registrarLink }"
-      ],
-      "Emails": [
-        "E-pošta"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Osigurajte da vaša e-pošta stigne u pristiglu poštu, a ne u mapu s neželjenom poštom. Ažuriranje SPF-a omogućit će korisnicima slanje s platformi ${ BRAND_NAME } i Google istovremeno tijekom trajanja migracije."
-      ],
-      "Errors": [
-        "Pogreške"
-      ],
-      "Estimated size": [
-        "Procijenjena veličina"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Svi dobivaju istu poveznicu za pozivnicu. Posjetit će stranicu, unijeti svoju e-poštu, a kôd za potvrdu stići će u njihovu Gmail pristiglu poštu. Odatle postavljaju svoju lozinku za ${ BRAND_NAME }."
-      ],
-      "Expand invitation message": [
-        "Proširi poruku pozivnice"
-      ],
-      "Expand step": [
-        "Proširi korak"
-      ],
-      "Failed to load OAuth": [
-        "Učitavanje OAuth protokola nije uspjelo"
-      ],
-      "Final step": [
-        "Zadnji korak"
-      ],
-      "Find out what can be migrated.": [
-        "Saznajte što se može migrirati."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Potražite pomoć i korisne savjete za druge davatelje domena ${ here }"
-      ],
-      "Going private": [
-        "Prelazak na privatno"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Google Marketplace aplikacija za kopiranje podataka na ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Google Workspace korisnički račun"
-      ],
-      "Has errors": [
-        "Ima pogreške"
-      ],
-      "Import completed successfully": [
-        "Uvoz uspješno dovršen"
-      ],
-      "Import details": [
-        "Pojedinosti o uvozu"
-      ],
-      "In progress": [
-        "U tijeku"
-      ],
-      "Install app": [
-        "Instaliraj aplikaciju"
-      ],
-      "Install migration app": [
-        "Instaliraj aplikaciju za migraciju"
-      ],
-      "Invitation link": [
-        "Poveznica za pozivnicu"
-      ],
-      "Invitation message": [
-        "Poruka pozivnice"
-      ],
-      "invite link": [
-        "poveznica za pozivnicu"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Može proći i do 24 sata dok se ove promjene ne prošire."
-      ],
-      "Loading your organization data": [
-        "Učitavanje podataka vaše organizacije"
-      ],
-      "Mail": [
-        "Pošta"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adresa člana nije pronađena. Obratite se korisničkoj podršci kako biste to riješili"
-      ],
-      "Migrate": [
-        "Migriraj"
-      ],
-      "Migrate accounts": [
-        "Migriraj korisničke račune"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Migriraj korisničke račune na ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Migrirajte s Google Workspacea"
-      ],
-      "Migrated": [
-        "Migrirano"
-      ],
-      "Migrated accounts": [
-        "Migrirani korisnički računi"
-      ],
-      "Migration includes": [
-        "Migracija uključuje"
-      ],
-      "Migration started for ${ n } user": [
-        "Migracija je započela za ${ n } korisnika",
-        "Migracija je započela za ${ n } korisnika",
-        "Migracija je započela za ${ n } korisnika"
-      ],
-      "Migration status": [
-        "Status migracije"
-      ],
-      "Migration summary": [
-        "Sažetak migracije"
-      ],
-      "Missing organization private key": [
-        "Nedostaje privatni ključ organizacije"
-      ],
-      "Missing organization public key": [
-        "Nedostaje javni ključ organizacije"
-      ],
-      "More details": [
-        "Više pojedinosti"
-      ],
-      "Need help?": [
-        "Trebate pomoć?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Pojedinosti o pogrešci nisu dostupne. Za više informacija obratite se korisničkoj podršci"
-      ],
-      "No users to display": [
-        "Nema korisnika za prikaz"
-      ],
-      "Not activated": [
-        "Nije aktivirano"
-      ],
-      "Not confirmed": [
-        "Nije potvrđeno"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Nije ispravno detektirano? Odaberite svog davatelja usluge s popisa."
-      ],
-      "Onboard your team": [
-        "Uvedite svoj tim"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Nakon što potvrdimo da se e-pošta usmjerava na ${ BRAND_NAME }, migracija će biti dovršena. Primit ćete potvrdnu e-poštu kada se to dogodi. Ovaj postupak može potrajati do 24 sata."
-      ],
-      "Organization does not have enough seats available": [
-        "Organizacija nema dovoljno slobodnih licenci"
-      ],
-      "Organization does not have enough storage available": [
-        "Organizacija nema dovoljno dostupne pohrane"
-      ],
-      "Pending": [
-        "Na čekanju"
-      ],
-      "Please don’t close or refresh this window.": [
-        "Nemojte zatvarati ili osvježavati ovaj prozor."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Ponovno autentificirajte svoj Google Workspace račun kako biste započeli migraciju"
-      ],
-      "Refresh": [
-        "Osvježi"
-      ],
-      "Select at least one user to start a migration": [
-        "Odaberite barem jednog korisnika za početak migracije"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Odaberite točno ono što želite migrirati. Primijenit će se na sve korisnike organizacije."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Odaberite korisničke račune koje želite prebaciti na ${ BRAND_NAME }. Danas možete migrirati cijelu svoju organizaciju ili započeti s malim brojem pa prenijeti ostatak kada budete spremni."
-      ],
-      "Select users to migrate": [
-        "Odaberite korisnike za migraciju"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Postavi sigurno slanje (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Postavi sigurno slanje (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Postavi sigurno slanje (SPF)"
-      ],
-      "Settings": [
-        "Postavke"
-      ],
-      "Sign in to Google Workspace": [
-        "Prijavite se na Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Prijavite se administratorskim računom za Google Workspace za ${ BRAND_NAME } kako biste postavili migraciju."
-      ],
-      "Size": [
-        "Veličina"
-      ],
-      "Skip": [
-        "Preskoči"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "Preskočen ${ count } kontakt zbog nekompatibilnosti",
-        "Preskočena ${ count } kontakta zbog nekompatibilnosti",
-        "Preskočeno ${ count } kontakata zbog nekompatibilnosti"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "Preskočena ${ count } e-pošta zbog nekompatibilnosti",
-        "Preskočene ${ count } e-pošte zbog nekompatibilnosti",
-        "Preskočeno ${ count } e-pošta zbog nekompatibilnosti"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "Preskočen ${ count } događaj zbog nekompatibilnosti",
-        "Preskočena ${ count } događaja zbog nekompatibilnosti",
-        "Preskočeno ${ count } događaja zbog nekompatibilnosti"
-      ],
-      "Some accounts are not claimed": [
-        "Neki korisnički računi nisu preuzeti"
-      ],
-      "Some members weren't migrated": [
-        "Neki članovi nisu migrirani"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Ovaj korisnik ne može se migrirati zbog nekompatibilnosti platforme."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Kako biste prenijeli podatke svoje organizacije na ${ BRAND_NAME }, instalirajte ${ BRAND_NAME } Easy Switch iz Google Workspace Marketplacea. Nakon što ga instalirate, vratite se ovdje za nastavak."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "Kako biste dovršili migraciju, pobrinite se da zadržite samo ${ BRAND_NAME } MX kodove."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Da biste migrirali ovog korisnika, omogućite njegov korisnički račun u svojoj Google Workspace administratorskoj konzoli."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Da biste migrirali ovog korisnika, omogućite njegov korisnički račun pod ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Da biste migrirali ovog korisnika, omogućite njegovu adresu pod ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Da biste migrirali ovog korisnika, on mora prihvatiti svoju pozivnicu za pridruživanje usluzi ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Da biste migrirali ovog korisnika, dehivirajte ga u svojoj Google Workspace administratorskoj konzoli."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Da biste migrirali ovog korisnika, aktivirajte ga u svojoj Google Workspace administratorskoj konzoli."
-      ],
-      "Update records for receiving": [
-        "Ažurirajte zapise za primanje"
-      ],
-      "User": [
-        "Korisnik"
-      ],
-      "Users activated": [
-        "Aktivirani korisnici"
-      ],
-      "Users migrated": [
-        "Korisnici su migrirani"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Korisnici koji su pristupili svom ${ BRAND_NAME } korisničkom računu"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Korisnici koji nisu preuzeli svoj korisnički račun prije dovršetka migracije morat će zatražiti ponovno pokretanje lozinke od administratora svoje ${ BRAND_NAME } organizacije."
-      ],
-      "Verified": [
-        "Potvrđeno"
-      ],
-      "Verify installation": [
-        "Potvrdi instalaciju"
-      ],
-      "Verify your domain": [
-        "Potvrdite svoju domenu"
-      ],
-      "Verify your domain to start a migration": [
-        "Potvrdite svoju domenu za početak migracije"
-      ],
-      "Waiting for MX...": [
-        "Čekanje na MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Nismo mogli potvrditi instalaciju, provjerite jeste li je instalirali na svom korisničkom računu za Google Workspace i pokušajte ponovno."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Prelazimo na ${ BRAND_NAME }, sigurnu uslugu e-pošte.\nI vaš ${ BRAND_NAME } korisnički račun spreman je za preuzimanje.\nKliknite na ${ inviteLink }.\nUnesite svoju adresu e-pošte i poslat ćemo vam kôd na vaš Gmail.\nUpotrijebite ga za postavljanje lozinke — i vaš ${ BRAND_NAME } korisnički račun je vaš.\nNeko vrijeme radit će i ${ BRAND_NAME } i Gmail usporedno.\nZatim, kada svi prijeđu, Gmail ćemo ugasiti. Podsjetit ćemo vas prije nego što se to dogodi."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Primijetili smo da neki korisnici nisu preuzeli svoje ${ BRAND_NAME } korisničke račune."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "Sada stvaramo vaše korisničke račune i uvozimo vaše podatke kako bi vaš tim imao sve što im je potrebno kada počnu koristiti svoj sigurni ${ BRAND_NAME } korisnički račun."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Uključujemo end-to-end šifriranje za sve. Svaka e-pošta, svaki događaj sada je samo vaš. Vidljiv samo vašem timu. Ne nama, niti bilo kome drugome."
-      ],
-      "What are you migrating?": [
-        "Što migrirate?"
-      ],
-      "You": [
-        "Vi"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "Podatke ovih korisnika nećete moći kopirati kasnije."
-      ],
-      "You're all set!": [
-        "Sve je spremno!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Skoro ste gotovi, trebate konfigurirati svoju domenu za primanje e-pošte izravno na ${ BRAND_NAME }. Nakon potvrde, vaš tim će prestati primati novu e-poštu na Gmail i migracija će biti dovršena."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Vaš trenutni plan dopušta najviše ${ maxMembers } korisnika. Za migraciju dodatnih korisnika dodajte još licenci svojoj pretplati.",
-        "Vaš trenutni plan dopušta najviše ${ maxMembers } korisnika. Za migraciju dodatnih korisnika dodajte još licenci svojoj pretplati.",
-        "Vaš trenutni plan dopušta najviše ${ maxMembers } korisnika. Za migraciju dodatnih korisnika dodajte još licenci svojoj pretplati."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "Konfiguracija vaše domene još uvijek uključuje MX kodove drugog pružatelja."
       ]
     },
     "breadcrumb": {
@@ -7670,6 +7233,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Neki nazivi vaših oznaka premašuju ${ MAIL_APP_NAME }ovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
       ],
+      "Something went wrong": [
+        "Nešto je pošlo po zlu"
+      ],
       "Something went wrong while converting the address": [
         "Došlo je do pogreške prilikom pretvaranja adrese"
       ],
@@ -10501,9 +10067,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Jeste li sigurni da želite ukloniti administrativne ovlasti ovog korisnika?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Jeste li sigurni da želite ukloniti sve članove iz ove grupe?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Jeste li sigurni da želite ukloniti domenu ${ boldDomain }?"
       ],
@@ -12454,6 +12017,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Pametno usmjereno kroz: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "SMTP slanje omogućuje uslugama treće strane ili uređajima slanje e-pošte putem ${ MAIL_APP_NAME } za adrese vaše prilagođene domene."
@@ -15642,6 +15208,9 @@
       ],
       "Set password": [
         "Postavi lozinku"
+      ],
+      "Settings": [
+        "Postavke"
       ],
       "Share your referral link": [
         "Podijeli svoju poveznicu preporuke"
@@ -21822,17 +21391,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Pobrinite se da sada kopirate gore navedeni SCIM token."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Nakon što se SCIM onemogući za Vašu organizaciju, **svi SCIM korisnici koje je automatski dodijelio vaš davatelj identiteta bit će pretvoreni u SSO korisnike** i a moći ćete izravno upravljati njima unutar ${ BRAND_NAME } postavki."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Pojednostavljuje upravljanje korisnicima na različitim uslugama. Dodajte, uredite i uklonite korisnike u svom davatelju identiteta i te će se promjene automatski primijeniti na Vašu ${ appName } organizaciju."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM automatsko dodjeljivanje resursa bit će onemogućeno dok ne unesete novi SCIM token u postavke svog davatelja identiteta."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "Osnovni SCIM URL i token bit će izbrisani."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Kako biste ponovno omogućili sinkronizaciju sa svojim davateljem identiteta, morate ponovno dovršiti SCIM integraciju."
@@ -24710,6 +24273,14 @@
         "Za pojedince"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Veličina"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "Podijeljeno sa mnom"
@@ -26258,9 +25829,6 @@
       ],
       "Reject device?": [
         "Odbiti uređaj?"
-      ],
-      "Remove all members?": [
-        "Ukloniti sve članove?"
       ],
       "Remove calendar": [
         "Ukloni kalendar"
