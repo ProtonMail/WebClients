@@ -1,4 +1,3 @@
-import { RateLimitedError as SdkRateLimitedError } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import type { MainThreadBridge } from '../../mainThread/MainThreadBridge';
@@ -8,10 +7,9 @@ import { deleteLegacyEncryptedSearchDb } from '../../shared/encryptedSearchUtils
 import type { PermanentErrorKind } from '../../shared/errors';
 import {
     DEFAULT_RETRY_AFTER_IN_MS,
-    classifyPermanentError,
+    classifyError,
     computeBackoff,
     isAbortError,
-    isPermanentIndexerError,
     sendErrorReportForSearch,
 } from '../../shared/errors';
 import type { SearchMetrics } from '../../shared/searchMetrics';
@@ -326,7 +324,11 @@ export class IndexerTaskQueue {
                 return;
             }
 
+            // Classify here, in the worker, while the error prototype is still intact.
+            const decision = classifyError(e);
+
             this.searchMetrics.markIndexerError({
+                decision,
                 error: e,
                 taskUid: uid,
                 taskKind: task.getKind(),
@@ -334,12 +336,9 @@ export class IndexerTaskQueue {
                 isIncrementalUpdate: task instanceof IncrementalUpdateTask,
             });
 
-            if (isPermanentIndexerError(e)) {
-                const permanentKind = classifyPermanentError(e);
+            if (decision.kind === 'permanent') {
                 this.taskAttempts.delete(uid);
-                if (permanentKind) {
-                    await this.updateState({ permanentError: permanentKind });
-                }
+                await this.updateState({ permanentError: decision.reason });
                 this.stop();
                 return;
             }
@@ -352,7 +351,9 @@ export class IndexerTaskQueue {
             // Other task types (maintenance) rely on their own scheduling mechanism.
             if (task instanceof IndexPopulatorTask) {
                 const delayMs =
-                    e instanceof SdkRateLimitedError ? DEFAULT_RETRY_AFTER_IN_MS : computeBackoff(currentAttemptCount);
+                    decision.reason === 'rate-limited'
+                        ? DEFAULT_RETRY_AFTER_IN_MS
+                        : computeBackoff(currentAttemptCount);
                 ctx.enqueueDelayed(task, delayMs);
             }
         }
