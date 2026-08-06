@@ -1,5 +1,7 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 
+import { UploadStatus } from '@proton/drive/modules/upload';
+
 import { AbuseCategory } from '../../../modals/ReportAbuseModal';
 import { DownloadManager } from '../../../modules/download/DownloadManager';
 import {
@@ -237,5 +239,35 @@ describe('TransferItem - preparing state', () => {
         );
 
         expect(screen.getByTestId('transfer-row:transferred-data').textContent).toContain('2 KB');
+    });
+});
+
+describe('TransferItem - cancelled state', () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+        jest.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager as unknown as DownloadManager);
+        act(() => {
+            useDownloadManagerStore.getState().clearQueue();
+        });
+    });
+
+    it('does not show the size of an upload cancelled through its parent folder', () => {
+        render(
+            <TransferItem
+                entry={createEntry({
+                    id: 'upload-1',
+                    type: 'upload',
+                    name: 'tiny.txt',
+                    status: UploadStatus.ParentCancelled,
+                    transferredBytes: 0,
+                    clearTextSize: 396,
+                })}
+                cancelTransfer={jest.fn()}
+                retryTransfer={jest.fn()}
+            />
+        );
+
+        expect(screen.getByTestId('transfer-row:status').textContent).toBe('Canceled');
+        expect(screen.queryByTestId('transfer-row:transferred-data')).not.toBeInTheDocument();
     });
 });
