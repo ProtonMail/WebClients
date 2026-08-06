@@ -40,7 +40,7 @@ import { RenderBlocks } from './toolCallTimeline/RenderBlocks';
 
 import './AssistantMessage.scss';
 
-const ENABLE_DEBUG_INFO = true;
+const ENABLE_DEBUG_INFO = false;
 
 interface AssistantActionToolbarProps {
     message: Message;
@@ -243,7 +243,11 @@ const AssistantMessage = ({
     // once complete (set by the redux tool-call reducers), so completeness here is unambiguous —
     // unlike the old `<artifact>` tag scanner, there's no transient "is it still open" state to guess.
     const { completeArtifacts, streamingArtifact } = useMemo(() => {
-        const complete: ParsedArtifact[] = [];
+        // Keyed by artifact id so a message that calls create_artifact more than once for the
+        // same id (e.g. the model retrying/self-correcting within one reply) collapses to a
+        // single chip showing the final call's content, instead of one chip per call — which
+        // would otherwise duplicate the id as a React key and show stale intermediate attempts.
+        const complete = new Map<string, ParsedArtifact>();
         let streaming: StreamingArtifact | null = null;
 
         for (const block of blocks) {
@@ -265,12 +269,12 @@ const AssistantMessage = ({
             } else if (parsed.arguments && typeof parsed.arguments === 'object') {
                 const artifact = parseCompleteArtifactToolCall(parsed.arguments as Record<string, unknown>);
                 if (artifact) {
-                    complete.push(artifact);
+                    complete.set(artifact.id, artifact);
                 }
             }
         }
 
-        return { completeArtifacts: complete, streamingArtifact: streaming };
+        return { completeArtifacts: Array.from(complete.values()), streamingArtifact: streaming };
     }, [blocks, isGenerating, isLastMessage]);
 
     const hasArtifacts = completeArtifacts.length > 0 || streamingArtifact !== null;
@@ -296,17 +300,31 @@ const AssistantMessage = ({
         });
     }, [blocks, hasArtifacts]);
 
-    const { selectedId, openArtifact, setStreamingArtifact, registry } = useArtifactContext();
+    const { selectedId, openArtifact, setStreamingArtifact, setPendingArtifact, registry } = useArtifactContext();
 
-    // Push the in-progress artifact into context so the panel can show a live preview.
-    // Only the actively-generating last message drives this; clear it for all other messages.
+    // Push the in-progress artifact into context so the panel can show a live preview. Once a
+    // create_artifact call's JSON finishes parsing (usually near-instant — see DESIGN.md's
+    // streaming-state notes), its real content is already available even though the message
+    // itself hasn't finished and isn't in `registry` yet: push it as `pendingArtifact` so the
+    // panel/chip can show and open it immediately instead of waiting for the message to finish.
+    // Only the actively-generating last message drives this; clear both for all other messages.
     useEffect(() => {
         if (isLastMessage && isGenerating && !isFinishedGenerating) {
             setStreamingArtifact(streamingArtifact);
+            setPendingArtifact(streamingArtifact ? null : (completeArtifacts[0] ?? null));
         } else if (isLastMessage && !isGenerating) {
             setStreamingArtifact(null);
+            setPendingArtifact(null);
         }
-    }, [isLastMessage, isGenerating, isFinishedGenerating, streamingArtifact, setStreamingArtifact]);
+    }, [
+        isLastMessage,
+        isGenerating,
+        isFinishedGenerating,
+        streamingArtifact,
+        completeArtifacts,
+        setStreamingArtifact,
+        setPendingArtifact,
+    ]);
 
     // When generation completes, promote the first artifact into the panel — but only if
     // nothing else is open, or it's a revision of what's already open. Don't steal focus
@@ -316,6 +334,7 @@ const AssistantMessage = ({
             const artifact = completeArtifacts[0];
             const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, message.id);
             setStreamingArtifact(null);
+            setPendingArtifact(null);
             if (versionIndex !== null && (selectedId === null || selectedId === artifact.id)) {
                 openArtifact(artifact.id, versionIndex);
             }
@@ -327,6 +346,7 @@ const AssistantMessage = ({
         selectedId,
         openArtifact,
         setStreamingArtifact,
+        setPendingArtifact,
         registry,
         message.id,
     ]);
