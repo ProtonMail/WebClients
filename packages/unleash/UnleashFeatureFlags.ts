@@ -90,6 +90,7 @@ enum AccountFlag {
     B2BNonPrivateEmailPhone = 'B2BNonPrivateEmailPhone',
     B2BDarkWebMonitoring = 'B2BDarkWebMonitoring',
     B2BAlwaysOnEnabled = 'B2BAlwaysOnEnabled',
+    B2BAlwaysOnWindowsRelease = 'B2BAlwaysOnWindowsRelease',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
     UserGroupsGroupOwner = 'UserGroupsGroupOwner',
     EasySwitchOutlookSelectAccountDisabled = 'EasySwitchOutlookSelectAccountDisabled',

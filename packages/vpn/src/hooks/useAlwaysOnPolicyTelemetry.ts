@@ -4,7 +4,9 @@ import useApi from '@proton/components/hooks/useApi';
 import { TelemetryMeasurementGroups, TelemetryVpnAlwaysOnPolicyEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
-export type ConfigureOpenedSource = 'call-to-action' | 'reconfigure';
+type ConfigureOpenedSource = 'request-to-configure' | 'reconfigure-new-profile';
+type ClientDownloadSource = 'build' | 'download-page';
+type InstructionsPlatform = 'windows' | 'macos';
 
 export const useAlwaysOnPolicyTelemetry = () => {
     const api = useApi();
@@ -58,6 +60,19 @@ export const useAlwaysOnPolicyTelemetry = () => {
         });
     }, [api]);
 
+    const sendLearnMoreClickedReport = useCallback(
+        (platform: InstructionsPlatform) => {
+            void sendTelemetryReport({
+                api,
+                measurementGroup: TelemetryMeasurementGroups.vpnAlwaysOnPolicy,
+                event: TelemetryVpnAlwaysOnPolicyEvents.learnMoreClicked,
+                dimensions: { platform },
+                delay: false,
+            });
+        },
+        [api]
+    );
+
     const sendRemoveModalOpenedReport = useCallback(() => {
         void sendTelemetryReport({
             api,
@@ -67,13 +82,42 @@ export const useAlwaysOnPolicyTelemetry = () => {
         });
     }, [api]);
 
+    const sendDownloadLatestClickedReport = useCallback(
+        (source: ClientDownloadSource, version: string) => {
+            void sendTelemetryReport({
+                api,
+                measurementGroup: TelemetryMeasurementGroups.vpnAlwaysOnPolicy,
+                event: TelemetryVpnAlwaysOnPolicyEvents.downloadLatestClicked,
+                dimensions: { source, version },
+                delay: false,
+            });
+        },
+        [api]
+    );
+
+    const sendClientDownloadClickedReport = useCallback(
+        (source: ClientDownloadSource, version: string) => {
+            void sendTelemetryReport({
+                api,
+                measurementGroup: TelemetryMeasurementGroups.vpnAlwaysOnPolicy,
+                event: TelemetryVpnAlwaysOnPolicyEvents.clientDownloadClicked,
+                dimensions: { source, version },
+                delay: false,
+            });
+        },
+        [api]
+    );
+
     return {
         sendConfigureOpenedReport,
         sendGenerateStartReport,
         sendGenerateSuccessReport,
         sendGenerateFailureReport,
         sendInstructionsViewedReport,
+        sendLearnMoreClickedReport,
         sendRemoveModalOpenedReport,
+        sendDownloadLatestClickedReport,
+        sendClientDownloadClickedReport,
     };
 };
 
