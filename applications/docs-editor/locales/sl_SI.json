@@ -235,6 +235,21 @@
       ],
       "Table of contents": [
         "Kazalo"
+      ],
+      "Go to label": [
+        "Pojdi na oznako"
+      ],
+      "Page break": [
+        "Prelom strani"
+      ],
+      "Remove": [
+        "Odstrani"
+      ],
+      "Subscript": [
+        "Podpisano"
+      ],
+      "Superscript": [
+        "Nadpisano"
       ]
     },
     "color": {
@@ -573,6 +588,12 @@
       ],
       "New": [
         "Novo"
+      ],
+      "Labels:": [
+        "Oznake:"
+      ],
+      "NEW": [
+        "NOVO"
       ]
     },
     "Label": {
@@ -683,6 +704,9 @@
       ],
       "with \"${ replaceWith }\"": [
         "z \"${ replaceWith }\""
+      ],
+      "Page break": [
+        "Prelom strani"
       ]
     },
     "Placeholder": {
@@ -714,6 +738,9 @@
       ],
       "Language not supported": [
         "Jezik ni podprt"
+      ],
+      "Outline": [
+        "Obroba"
       ]
     },
     "Description": {
@@ -1515,6 +1542,12 @@
       ],
       "₹ Rupee": [
         "₹ Rupija"
+      ],
+      "Custom date and time": [
+        "Datum in čas po meri"
+      ],
+      "Custom number": [
+        "Število po meri"
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
@@ -2138,6 +2171,219 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Ustvarjanje predlogov znotraj delov kode ni podprto."
+      ]
+    },
+    "sheets_2025:Formula bar": {
+      "Formula bar": [
+        "Vrstica s formulo"
+      ]
+    },
+    "sheets_2025:Range selector": {
+      "Range selector": [
+        "Izbira območja"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "Uporabi"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Custom date and time formats": [
+        "Oblike datuma in časa po meri"
+      ],
+      "Format": [
+        "Oblika"
+      ],
+      "Sample": [
+        "Primer"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "dop./pop."
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Day": [
+        "Dan"
+      ],
+      "Day as abbreviation": [
+        "Datum kot okrajšava"
+      ],
+      "Day as full name": [
+        "Datum kot polno ime"
+      ],
+      "Day with leading zero": [
+        "Dan z vodilno ničlo"
+      ],
+      "Day without leading zero": [
+        "Dan brez vodilne ničle"
+      ],
+      "Delete": [
+        "Izbriši"
+      ],
+      "Duration": [
+        "Trajanje"
+      ],
+      "Elapsed hours": [
+        "Pretečene ure"
+      ],
+      "Elapsed hours with leading zero": [
+        "Pretečene ure z vodilno ničlo"
+      ],
+      "Elapsed hours without leading zero": [
+        "Pretečene ure brez vodilne ničle"
+      ],
+      "Elapsed minutes": [
+        "Pretečene minute"
+      ],
+      "Elapsed minutes with leading zero": [
+        "Pretečene minute z vodilno ničlo"
+      ],
+      "Elapsed minutes without leading zero": [
+        "Pretečene minute brez vodilne ničle"
+      ],
+      "Elapsed seconds": [
+        "Pretečene sekunde"
+      ],
+      "Elapsed seconds with leading zero": [
+        "Pretečene sekunde z vodilno ničlo"
+      ],
+      "Elapsed seconds without leading zero": [
+        "Pretečene sekunde brez vodilne ničle"
+      ],
+      "First letter of the month": [
+        "Prva črka meseca"
+      ],
+      "Full": [
+        "Polno"
+      ],
+      "Full numeric year": [
+        "Polno številčno leto"
+      ],
+      "Hour": [
+        "Ura"
+      ],
+      "Hour with leading zero": [
+        "Ura z vodilno ničlo"
+      ],
+      "Hour without leading zero": [
+        "Ura brez vodilne ničle"
+      ],
+      "Millisecond": [
+        "Milisekunda"
+      ],
+      "Minute": [
+        "Minuta"
+      ],
+      "Minute with leading zero": [
+        "Minuta z vodilno ničlo"
+      ],
+      "Minute without leading zero": [
+        "Minuta brez vodilne ničle"
+      ],
+      "Month": [
+        "Mesec"
+      ],
+      "Month as abbreviation": [
+        "Mesec kot okrajšava"
+      ],
+      "Month as full name": [
+        "Mesec kot polno ime"
+      ],
+      "Month with leading zero": [
+        "Mesec z vodilno ničlo"
+      ],
+      "Month without leading zero": [
+        "Mesec brez vodilne ničle"
+      ],
+      "Precision to 1/10 of a second": [
+        "Natančnost do 1/10 sekunde"
+      ],
+      "Precision to 1/100 of a second": [
+        "Natančnost do 1/100 sekunde"
+      ],
+      "Precision to 1/1000 of a second": [
+        "Natančnost do 1/1000 sekunde"
+      ],
+      "Second": [
+        "Sekunda"
+      ],
+      "Second with leading zero": [
+        "Sekunda z vodilno ničlo"
+      ],
+      "Second without leading zero": [
+        "Sekunda brez vodilne ničle"
+      ],
+      "Time": [
+        "Čas"
+      ],
+      "Two digit year": [
+        "Dvoštevilčno leto"
+      ],
+      "Year": [
+        "Leto"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Povprečje"
+      ],
+      "Count": [
+        "Število"
+      ],
+      "Customize Status Bar": [
+        "Prilagodi vrstico stanja"
+      ],
+      "Max": [
+        "Največ"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Numerical count": [
+        "Številčno štetje"
+      ],
+      "Sum": [
+        "Vsota"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom number format dialog": {
+      "Apply": [
+        "Uporabi"
+      ],
+      "Apply to create a custom number format": [
+        "Uporabi za ustvarjanje oblike številke po meri"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Custom number format": [
+        "Oblika številke po meri"
+      ],
+      "Custom number formats": [
+        "Oblike številke po meri"
+      ],
+      "Format": [
+        "Oblika"
+      ],
+      "Negative": [
+        "Negativno"
+      ],
+      "Positive": [
+        "Pozitivno"
+      ],
+      "Sample": [
+        "Primer"
+      ],
+      "Text": [
+        "Besedilo"
+      ],
+      "Zero": [
+        "Nič"
       ]
     }
   }
