@@ -15477,6 +15477,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Size": [
+        "Tamanho"
       ]
     },
     "TableHeader": {
@@ -17321,6 +17324,14 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "De: ${ sender } - ${ message.Subject }"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Em processo"
+      ],
+      "Migrated": [
+        "Migrado"
       ]
     }
   }

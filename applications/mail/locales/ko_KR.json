@@ -15186,6 +15186,9 @@
       ],
       "Type": [
         "유형"
+      ],
+      "Size": [
+        "크기"
       ]
     },
     "TableHeader": {
@@ -16967,6 +16970,14 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "보낸 사람: ${ sender } - ${ message.Subject }"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "진행 중"
+      ],
+      "Migrated": [
+        "이전됨"
       ]
     }
   }

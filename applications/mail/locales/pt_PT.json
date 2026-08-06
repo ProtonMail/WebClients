@@ -1706,6 +1706,15 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ],
+      "Lookup document": [
+        "Consultar documento"
+      ],
+      "Stop": [
+        "Parar"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Alternar ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -2121,6 +2130,10 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "O espaço de armazenamento é partilhado por todos os serviços da ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteja os seus e-mails e agende com encriptação de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, o assistente de escrita ${ LUMO_SHORT_APP_NAME }, aliases «hide-my-email» ilimitados e muito mais.",
+        "Proteja os seus e-mails e agende com encriptação de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, o assistente de escrita ${ LUMO_SHORT_APP_NAME }, aliases «hide-my-email» ilimitados e muito mais."
       ]
     },
     "BF2025: Deal details": {
@@ -2458,6 +2471,9 @@
       ],
       "Take a tour": [
         "Visita guiada"
+      ],
+      "Get 50% offer": [
+        "Obtenha uma oferta de 50%"
       ]
     },
     "BYOE": {
@@ -5485,6 +5501,70 @@
       ],
       "Something went wrong": [
         "Algo correu mal"
+      ],
+      "Cannot verify the author of this file": [
+        "Não é possível verificar o autor deste ficheiro"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Não é permitido copiar um item para um local que não seja uma pasta"
+      ],
+      "Could not load sharing details": [
+        "Não foi possível carregar os detalhes da partilha"
+      ],
+      "Could not unlock the parent folder": [
+        "Não foi possível desbloquear a pasta principal"
+      ],
+      "Could not unlock this item": [
+        "Não foi possível desbloquear este item"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Não é permitido criar pastas dentro de elementos que não sejam pastas"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Não foi possível descodificar a palavra-passe do marcador: ${ message }"
+      ],
+      "File has no revision": [
+        "O ficheiro não tem nenhuma revisão"
+      ],
+      "Image preview not found": [
+        "Não foi encontrada a pré-visualização da imagem"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "O link público antigo não pode ser atualizado. Por favor, crie um novo link público."
+      ],
+      "Missing inviter email": [
+        "Falta o e-mail do convidante"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } carácter",
+        "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } caracteres"
+      ],
+      "No file data was received. Please try again.": [
+        "Não foram recebidos dados do ficheiro. Por favor, tente novamente."
+      ],
+      "Operation aborted": [
+        "Operação cancelada"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte do ficheiro parece estar corrompida"
+      ],
+      "Signature is missing": [
+        "Assinatura em falta."
+      ],
+      "This file has no version available to download": [
+        "Este ficheiro não tem nenhuma versão disponível para descarregar"
+      ],
+      "This item is no longer shared": [
+        "Este item já não está partilhado"
+      ],
+      "This item is not shared": [
+        "Este item não é partilhado"
+      ],
+      "Verification keys are not available": [
+        "As chaves de verificação não estão disponíveis"
+      ],
+      "You do not have access to this item": [
+        "Não tem acesso a este artigo"
       ]
     },
     "error": {
@@ -9301,6 +9381,47 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a alguns cliques de ter uma caixa de entrada organizada"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-mails → ${ dest }"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problema durante a importação:",
+        "${ issues.length } problemas durante a importação:"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Encontrou um índice de pesquisa encriptado atual com ${ oldIndexSize } mensagem.",
+        "Encontrou um índice de pesquisa encriptado atual com ${ oldIndexSize } mensagems."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "A importação está em curso, pode fechar esta caixa de diálogo enquanto estiver a decorrer e regressar mais tarde. No entanto, não feche o separador."
+      ],
+      "Move emails": [
+        "Mover e-mails"
+      ],
+      "Read ${ count } email on screen": [
+        "Ler ${ count } e-mail no ecrã",
+        "Ler ${ count } e-mails no ecrã"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Tem **${ count } conversa** na sua categoria ${ categoryLabel }",
+        "Tem **${ count } conversas** na sua categoria ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Tem **${ count } mensagem** na sua categoria ${ categoryLabel }",
+        "Tem **${ count } mensagens** na sua categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Selecionou **${ checked } conversa** na sua categoria ${ categoryLabel }",
+        "Selecionou **${ checked } conversas** na sua categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Selecionou **${ checked } mensagem** na sua categoria ${ categoryLabel }",
+        "Selecionou **${ checked } mensagens** na sua categoria ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10487,6 +10608,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Archive": [
+        "Arquivar"
+      ],
+      "v1": [
+        "v1"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10934,6 +11061,9 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Mailbox": {
@@ -10964,6 +11094,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licença do ${ MEET_APP_NAME }",
         "${ seats } licenças do ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } por licença"
       ]
     },
     "meet_2025: Feature": {
@@ -11786,6 +11919,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nós analisamos a dark web para verificar se os seus endereços ou aliases ${ BRAND_NAME } foram vazados e alertamo-lo imediatamente se encontrarmos algo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -15225,6 +15361,10 @@
       ],
       "You have successfully unsubscribed": [
         "A sua subscrição foi cancelada."
+      ],
+      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+        "Movido para ${ label }. Uma mensagem semelhante será categorizada nessa secção no futuro.",
+        "Movido para ${ label }. Mensagens semelhantes serão categorizadas nessa secção no futuro."
       ]
     },
     "Success notification": {
@@ -15312,6 +15452,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Size": [
+        "Tamanho"
       ]
     },
     "TableHeader": {
@@ -16515,6 +16658,12 @@
       ],
       "Your shorter address is now ready": [
         "O seu endereço mais curto já está pronto"
+      ],
+      "Move emails": [
+        "Mover e-mails"
+      ],
+      "Refine your Categories": [
+        "Refine as suas categorias"
       ]
     },
     "Title header for keys table": {
@@ -17135,6 +17284,25 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nova mensagem",
+        "${ messageCount } novas mensagens"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Em curso"
+      ],
+      "Migrated": [
+        "Migrado"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atributos"
       ]
     }
   }

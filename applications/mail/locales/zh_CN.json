@@ -15183,6 +15183,9 @@
       ],
       "Type": [
         "类型"
+      ],
+      "Size": [
+        "大小"
       ]
     },
     "TableHeader": {
@@ -16961,6 +16964,14 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "发件人：${ sender } - ${ message.Subject }"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "正在处理"
+      ],
+      "Migrated": [
+        "已迁移"
       ]
     }
   }
