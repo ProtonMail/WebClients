@@ -1252,125 +1252,6 @@
         "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
       ]
     },
-    "BOSS": {
-      "Activated": [
-        "已啟用"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "您組織外部的使用者已在使用此位址。請聯絡客戶支援服務以解決此問題"
-      ],
-      "All": [
-        "全部"
-      ],
-      "Calendar": [
-        "行事曆"
-      ],
-      "Configure migration": [
-        "設定轉移"
-      ],
-      "Contacts": [
-        "聯絡人"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "從 Google Workspace 到 ${ BRAND_NAME } 的資料移轉狀態"
-      ],
-      "Emails": [
-        "電子郵件"
-      ],
-      "Errors": [
-        "錯誤"
-      ],
-      "Estimated size": [
-        "預估大小"
-      ],
-      "Find out what can be migrated.": [
-        "了解可以遷移哪些內容。"
-      ],
-      "Has errors": [
-        "有錯誤"
-      ],
-      "In progress": [
-        "進行中"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
-      ],
-      "Migrate": [
-        "移轉"
-      ],
-      "Migrated": [
-        "已遷移"
-      ],
-      "Migration status": [
-        "轉移狀態"
-      ],
-      "Missing organization private key": [
-        "缺少組織私有密鑰"
-      ],
-      "Missing organization public key": [
-        "缺少組織公用密鑰"
-      ],
-      "No users to display": [
-        "沒有可顯示的使用者"
-      ],
-      "Not activated": [
-        "未啟用"
-      ],
-      "Organization does not have enough seats available": [
-        "組織沒有足夠的可用座席"
-      ],
-      "Organization does not have enough storage available": [
-        "組織沒有足夠的可用儲存空間"
-      ],
-      "Pending": [
-        "擱置中"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "選取您確切想移轉的項目。這將套用至所有組織使用者。"
-      ],
-      "Select users to migrate": [
-        "選取要遷移的使用者"
-      ],
-      "Size": [
-        "大小"
-      ],
-      "Status": [
-        "狀態"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "由於平台不相容，無法遷移此使用者。"
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中啟用他們的帳號。"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "若要遷移此使用者，請在 ${ usersAddressesLink } 下啟用他們的帳號。"
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "若要遷移此使用者，請在 ${ usersAddressesLink } 下啟用他們的位址。"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "若要遷移此使用者，他們需要接受加入 ${ BRAND_NAME } 的邀請。"
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中將其取消封存。"
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中取消停用他們。"
-      ],
-      "User": [
-        "使用者"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "已存取其 ${ BRAND_NAME } 帳號的使用者"
-      ],
-      "What are you migrating?": [
-        "您要轉移什麼？"
-      ],
-      "You": [
-        "您"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME }桌面應用程式"
@@ -3244,6 +3125,9 @@
       "Invalid public key file": [
         "公開金鑰檔案無效"
       ],
+      "Invalid URL": [
+        "URL 無效"
+      ],
       "Invalid verification code": [
         "驗證碼無效"
       ],
@@ -3396,6 +3280,9 @@
       ],
       "Some trashed documents could not be loaded": [
         "部分垃圾桶中的文件無法載入"
+      ],
+      "Something went wrong": [
+        "發生錯誤"
       ],
       "Something went wrong while fetching available domains": [
         "擷取可用網域時發生錯誤"
@@ -4375,6 +4262,14 @@
         "選取 ${ boldExport } 以將行事曆匯出為 ICS 檔案。"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "進行中"
+      ],
+      "Migrated": [
+        "已移轉"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
@@ -4975,9 +4870,6 @@
       "Key fingerprint": [
         "金鑰指紋"
       ],
-      "Keys created": [
-        "金鑰已更新"
-      ],
       "Label all imported messages as": [
         "將所有匯入的郵件標記為"
       ],
@@ -5470,9 +5362,6 @@
       "Uppercase and lowercase letters": [
         "大寫及小寫字母"
       ],
-      "User activated": [
-        "使用者已啟用"
-      ],
       "username": [
         "使用者名稱"
       ],
@@ -5604,9 +5493,6 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "在截止日 ${ trialEndsOnFormatted } 到期之前取消，便不會向您收取任何費用。"
-      ],
-      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
-        "將存取權變更為檢視者後，你將無法共享「${ fileName }」。只有擁有者能再次變更你的存取權。"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "若您的朋友訂閱年費方案，您將在 1 個月後獲得點數獎勵；若他們訂閱月費方案，則會在 2 個月後獲得。"
@@ -9643,6 +9529,9 @@
       ],
       "Name": [
         "名稱"
+      ],
+      "Size": [
+        "大小"
       ],
       "Status": [
         "狀態"

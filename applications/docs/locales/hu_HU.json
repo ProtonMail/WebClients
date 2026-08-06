@@ -2855,6 +2855,9 @@
       "Invalid public key file": [
         "Érvénytelen nyilvános kulcs fájl"
       ],
+      "Invalid URL": [
+        "Érvénytelen URL cím"
+      ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
@@ -2991,6 +2994,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bizonyos címkék neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
+      ],
+      "Something went wrong": [
+        "Hiba történt"
       ],
       "Something went wrong while fetching available domains": [
         "Hiba történt az elérhető domainnevek lekérése közben"
@@ -4456,9 +4462,6 @@
       "Key fingerprint": [
         "Kulcs ujjlenyomat"
       ],
-      "Keys created": [
-        "Kulcsok létrehozva"
-      ],
       "Label all imported messages as": [
         "Az importált üzenetek megjelölése mint"
       ],
@@ -4890,9 +4893,6 @@
       ],
       "Uppercase and lowercase letters": [
         "Kis- és nagybetűk"
-      ],
-      "User activated": [
-        "Felhasználó aktiválva"
       ],
       "username": [
         "felhasználónév"

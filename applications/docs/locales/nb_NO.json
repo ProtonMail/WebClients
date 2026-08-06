@@ -1287,125 +1287,6 @@
         "Spesialdesignet NetShield beskytter enhetene dine og øker hastigheten på nettlesingen ved å blokkere annonser, sporingsprogrammer og skadelig programvare."
       ]
     },
-    "BOSS": {
-      "Activated": [
-        "Aktivert"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Configure migration": [
-        "Konfigurer migrering"
-      ],
-      "Contacts": [
-        "Kontakter"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status for dataoverføring fra Google Workspace til ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-poster"
-      ],
-      "Errors": [
-        "Feil"
-      ],
-      "Estimated size": [
-        "Estimert størrelse"
-      ],
-      "Find out what can be migrated.": [
-        "Finn ut hva som kan migreres."
-      ],
-      "Has errors": [
-        "Inneholder feil"
-      ],
-      "In progress": [
-        "Pågår"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
-      ],
-      "Migrate": [
-        "Migrer"
-      ],
-      "Migrated": [
-        "Migrert"
-      ],
-      "Migration status": [
-        "Migreringsstatus"
-      ],
-      "Missing organization private key": [
-        "Mangler privat nøkkel for organisasjonen"
-      ],
-      "Missing organization public key": [
-        "Mangler offentlig nøkkel for organisasjonen"
-      ],
-      "No users to display": [
-        "Ingen brukere å vise"
-      ],
-      "Not activated": [
-        "Ikke aktivert"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisasjonen har ikke nok ledige seter"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisasjonen har ikke nok lagringsplass tilgjengelig"
-      ],
-      "Pending": [
-        "Venter"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Velg nøyaktig hva du vil migrere. Det vil gjelde for alle brukere i organisasjonen."
-      ],
-      "Select users to migrate": [
-        "Velg brukere som skal migreres"
-      ],
-      "Size": [
-        "Størrelse"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Denne brukeren kan ikke migreres på grunn av plattformuforenlighet."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "For å migrere denne brukeren må du aktivere kontoen deres i Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "For å migrere denne brukeren må du aktivere kontoen deres under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "For å migrere denne brukeren må du aktivere adressen deres under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "For å migrere denne brukeren må de godta invitasjonen sin til å bli med i ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "For å migrere denne brukeren må du oppheve arkiveringen av dem i Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "For å migrere denne brukeren må du oppheve suspensjonen av dem i Google Workspace Admin Console."
-      ],
-      "User": [
-        "Bruker"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Brukere som har aktivert ${ BRAND_NAME }-kontoen sin"
-      ],
-      "What are you migrating?": [
-        "Hva migrerer du?"
-      ],
-      "You": [
-        "Du"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME }-skrivebordsapplikasjon"
@@ -3287,6 +3168,9 @@
       "Invalid public key file": [
         "Ugyldig offentlig nøkkelfil"
       ],
+      "Invalid URL": [
+        "Ugyldig nettadresse"
+      ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
       ],
@@ -3447,6 +3331,9 @@
       ],
       "Some trashed documents could not be loaded": [
         "Kunne ikke laste inn enkelte dokumenter i papirkurven"
+      ],
+      "Something went wrong": [
+        "Noe gikk galt"
       ],
       "Something went wrong while fetching available domains": [
         "Noe gikk galt under henting av tilgjengelige domener"
@@ -4442,6 +4329,14 @@
         "Velg ${ boldExport } for å eksportere kalenderen som en ICS-fil."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrert"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ut av ${ totalContacts } blir ikke importert. Klikk for detaljer."
@@ -5074,9 +4969,6 @@
       "Key fingerprint": [
         "Nøkkelfingeravtrykk"
       ],
-      "Keys created": [
-        "Nøkler opprettet"
-      ],
       "Label all imported messages as": [
         "Merk alle importerte meldinger som"
       ],
@@ -5575,9 +5467,6 @@
       "Uppercase and lowercase letters": [
         "Store og små bokstaver"
       ],
-      "User activated": [
-        "Bruker aktivert"
-      ],
       "username": [
         "brukernavn"
       ],
@@ -5714,9 +5603,6 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
-      ],
-      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
-        "Du vil ikke kunne dele \"${ fileName }\" etter at tilgangen din endres til kun visning. Bare eieren kan endre tilgangen din igjen."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du mottar kredittbelønningen én måned etter at vennen din abonnerer på en årsplan, og to måneder etter at de abonnerer på en månedlig plan."
@@ -9945,6 +9831,9 @@
       ],
       "Name": [
         "Navn"
+      ],
+      "Size": [
+        "Størrelse"
       ],
       "Status": [
         "Status"
