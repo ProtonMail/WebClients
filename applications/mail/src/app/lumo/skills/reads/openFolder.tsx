@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 
 import { filterHashFor, navigateAndReadRows, resolveMailboxLocation, sortHashFor } from '../../helpers/navigation';
@@ -46,13 +47,13 @@ export const resolveOpenFolderTarget = (
     const { location, target } = params;
     // (location == null) === (target == null) is true when BOTH are null or BOTH are set.
     if ((location == null) === (target == null)) {
-        throw new Error(
+        throw new ToolInputError(
             'open_folder needs EXACTLY ONE of `location` (a standard location) or `target` (a custom folder/label reference): set one and leave the other null.'
         );
     }
     if (location != null) {
         if (!(OPEN_FOLDER_LOCATIONS as readonly string[]).includes(location)) {
-            throw new Error(
+            throw new ToolInputError(
                 `Unknown location "${location}". Valid locations are: ${OPEN_FOLDER_LOCATIONS.join(
                     ', '
                 )}. For a custom folder or label, pass its reference as \`target\` instead.`
