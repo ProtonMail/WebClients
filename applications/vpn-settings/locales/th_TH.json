@@ -485,6 +485,9 @@
       "Edit users": [
         "แก้ไขผู้ใช้"
       ],
+      "Enable": [
+        "เปิดใช้งาน"
+      ],
       "enable desktop notifications": [
         "เปิดการแจ้งเตือนบนเดสก์ท็อป"
       ],
@@ -841,9 +844,6 @@
       ],
       "Remove": [
         "เอาออก"
-      ],
-      "Remove all members": [
-        "ลบสมาชิกทั้งหมดออก"
       ],
       "Remove all other devices": [
         "ลบอุปกรณ์อื่นทั้งหมดออก"
@@ -2003,125 +2003,6 @@
       ],
       "Working with sensitive data?": [
         "ทำงานกับข้อมูลที่ละเอียดอ่อนอยู่หรือไม่?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "เปิดใช้งานแล้ว"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "ที่อยู่นี้ถูกใช้งานโดยผู้ใช้นอกองค์กรแล้ว โปรดติดต่อฝ่ายสนับสนุนลูกค้าเพื่อแก้ไขปัญหานี้"
-      ],
-      "All": [
-        "ทั้งหมด"
-      ],
-      "Calendar": [
-        "ปฏิทิน"
-      ],
-      "Configure migration": [
-        "กำหนดค่าการย้ายข้อมูล"
-      ],
-      "Contacts": [
-        "ผู้ติดต่อ"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "สถานะการย้ายข้อมูลจาก Google Workspace ไปยัง ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "อีเมล"
-      ],
-      "Errors": [
-        "ข้อผิดพลาด"
-      ],
-      "Estimated size": [
-        "ขนาดโดยประมาณ"
-      ],
-      "Find out what can be migrated.": [
-        "ดูข้อมูลเกี่ยวกับสิ่งที่สามารถย้ายข้อมูลได้"
-      ],
-      "Has errors": [
-        "มีข้อผิดพลาด"
-      ],
-      "In progress": [
-        "กำลังดำเนินการ"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "ไม่พบที่อยู่ของสมาชิก โปรดติดต่อฝ่ายสนับสนุนลูกค้าเพื่อแก้ไขปัญหานี้"
-      ],
-      "Migrate": [
-        "ย้ายข้อมูล"
-      ],
-      "Migrated": [
-        "ย้ายข้อมูลแล้ว"
-      ],
-      "Migration status": [
-        "สถานะการย้ายข้อมูล"
-      ],
-      "Missing organization private key": [
-        "คีย์ส่วนตัวขององค์กรสูญหาย"
-      ],
-      "Missing organization public key": [
-        "คีย์สาธารณะขององค์กรสูญหาย"
-      ],
-      "No users to display": [
-        "ไม่มีผู้ใช้ที่จะแสดง"
-      ],
-      "Not activated": [
-        "ไม่ได้เปิดใช้งาน"
-      ],
-      "Organization does not have enough seats available": [
-        "องค์กรมีสิทธิ์ผู้ใช้ไม่เพียงพอ"
-      ],
-      "Organization does not have enough storage available": [
-        "องค์กรมีพื้นที่จัดเก็บไม่เพียงพอ"
-      ],
-      "Pending": [
-        "รอดำเนินการ"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "เลือกสิ่งที่ต้องการย้ายข้อมูลอย่างแน่นอน โดยจะมีผลกับผู้ใช้องค์กรทั้งหมด"
-      ],
-      "Select users to migrate": [
-        "เลือกผู้ใช้ที่ต้องการย้ายข้อมูล"
-      ],
-      "Size": [
-        "ขนาด"
-      ],
-      "Status": [
-        "สถานะ"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "ไม่สามารถย้ายข้อมูลผู้ใช้นี้ได้เนื่องจากความไม่เข้ากันของแพลตฟอร์ม"
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้เปิดใช้งานบัญชีใน Google Workspace Admin Console"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้เปิดใช้งานบัญชีภายใต้ ${ usersAddressesLink }"
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้เปิดใช้งานที่อยู่ภายใต้ ${ usersAddressesLink }"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ผู้ใช้จำเป็นต้องตอบรับคำเชิญเพื่อเข้าร่วม ${ BRAND_NAME }"
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้ยกเลิกการเก็บถาวรผู้ใช้ใน Google Workspace Admin Console"
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้ยกเลิกการระงับผู้ใช้ใน Google Workspace Admin Console"
-      ],
-      "User": [
-        "ผู้ใช้"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "ผู้ใช้ที่เข้าถึงบัญชี ${ BRAND_NAME } แล้ว"
-      ],
-      "What are you migrating?": [
-        "คุณกำลังย้ายข้อมูลอะไร?"
-      ],
-      "You": [
-        "คุณ"
       ]
     },
     "Browser": {
@@ -4880,6 +4761,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "โทเค็นรีเซ็ตไม่ถูกต้อง โปรดรีเฟรชหน้าเว็บและลองอีกครั้ง"
       ],
+      "Invalid URL": [
+        "URL ไม่ถูกต้อง"
+      ],
       "Invalid VAT number": [
         "หมายเลขภาษีมูลค่าเพิ่มไม่ถูกต้อง"
       ],
@@ -4897,6 +4781,9 @@
       ],
       "Missing key packet": [
         "ไม่พบแพ็กเก็ตคีย์"
+      ],
+      "Missing signature": [
+        "ไม่พบลายเซ็น"
       ],
       "Name already exists": [
         "ชื่อนี้มีอยู่แล้ว"
@@ -5083,6 +4970,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "บางชื่อป้ายกำกับของคุณเกินขีดจำกัดจำนวนตัวอักษรสูงสุดของ ${ MAIL_APP_NAME } แล้วโปรดปรับแก้การนำเข้าเพื่อแก้ไขชื่อเหล่านี้"
+      ],
+      "Something went wrong": [
+        "มีข้อผิดพลาดเกิดขึ้น"
       ],
       "Something went wrong while converting the address": [
         "เกิดข้อผิดพลาดขณะแปลงที่อยู่"
@@ -6647,6 +6537,14 @@
         "เลือก ${ boldExport } เพื่อส่งออกปฏิทินเป็นไฟล์ ICS"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "อยู่ระหว่างดำเนินการ"
+      ],
+      "Migrated": [
+        "ย้ายข้อมูลแล้ว"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "มีรายชื่อติดต่อ ${ totalContactsDiscarded } จากทั้งหมด ${ totalContacts } รายชื่อติดต่อที่ได้นำเข้ามา คลิกเพื่อดูรายละเอียด"
@@ -7105,9 +7003,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "คุณแน่ใจหรือไม่ที่จะถอนสิทธิ์ของผู้ดูแลระบบจากผู้ใช้ผู้นี้?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "คุณแน่ใจหรือไม่ว่าต้องการลบสมาชิกทั้งหมดออกจากกลุ่มนี้?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "แน่ใจหรือไม่ว่าต้องการลบโดเมน ${ boldDomain } ออก?"
@@ -8515,6 +8410,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "เราได้เปิดฟีเจอร์เพิ่มให้กับบัญชีของคุณเพราะคุณคือผู้ใช้บริการที่ยึดมั่นในบริการของเรา"
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "กำหนดเส้นทางอัจฉริยะผ่าน: ${ joinedCountries }."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "แอป ${ BRAND_NAME } บางแอปอาจยังไม่รองรับคีย์ความปลอดภัย หากคุณปิด 2FA ของแอปยืนยันตัวตน คุณอาจไม่สามารถเข้าสู่ระบบแอปเหล่านั้นได้"
@@ -14551,17 +14449,11 @@
       "Make sure you copy the above SCIM token now.": [
         "ตรวจสอบให้แน่ใจว่าคัดลอกโทเค็น SCIM ด้านบนแล้วในตอนนี้"
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "เมื่อปิดใช้งาน SCIM สำหรับองค์กร **ผู้ใช้ SCIM ทั้งหมดที่จัดเตรียมโดยอัตโนมัติโดยผู้ให้บริการข้อมูลระบุตัวตนจะถูกแปลงเป็นผู้ใช้ SSO** และคุณจะสามารถจัดการพวกเขาได้โดยตรงภายในการตั้งค่า ${ BRAND_NAME }"
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "ลดความซับซ้อนในการจัดการผู้ใช้ในบริการต่างๆ เพิ่ม แก้ไข และลบผู้ใช้ในผู้ให้บริการข้อมูลระบุตัวตน และการเปลี่ยนแปลงเหล่านั้นจะถูกนำไปใช้กับองค์กร ${ appName } โดยอัตโนมัติ"
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "การจัดเตรียม SCIM อัตโนมัติจะถูกปิดใช้งานจนกว่าจะป้อนโทเค็น SCIM ใหม่ลงในการตั้งค่าของผู้ให้บริการข้อมูลระบุตัวตน"
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM Base URL และโทเค็นจะถูกลบ"
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "เพื่อเปิดใช้งานการซิงค์กับผู้ให้บริการข้อมูลระบุตัวตนอีกครั้ง คุณต้องดำเนินการรวม SCIM ให้เสร็จสมบูรณ์อีกครั้ง"
@@ -16523,6 +16415,14 @@
         "สำหรับบุคคลทั่วไป"
       ]
     },
+    "Table header": {
+      "Size": [
+        "ขนาด"
+      ],
+      "Status": [
+        "สถานะ"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "การดำเนินการ"
@@ -17565,9 +17465,6 @@
       ],
       "Reject device?": [
         "ปฏิเสธอุปกรณ์?"
-      ],
-      "Remove all members?": [
-        "ลบสมาชิกทั้งหมดออกหรือไม่?"
       ],
       "Remove device?": [
         "ลบอุปกรณ์นี้หรือไม่?"

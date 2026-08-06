@@ -491,6 +491,9 @@
       "Edit users": [
         "사용자 편집"
       ],
+      "Enable": [
+        "활성화"
+      ],
       "enable desktop notifications": [
         "데스크톱 알림을 활성화"
       ],
@@ -859,9 +862,6 @@
       ],
       "Remove": [
         "삭제"
-      ],
-      "Remove all members": [
-        "모든 구성원 추방"
       ],
       "Remove all other devices": [
         "모든 세션 비활성화"
@@ -1297,6 +1297,9 @@
       ],
       "View all reports": [
         "모든 보고서 확인하기"
+      ],
+      "View guide": [
+        "가이드 보기"
       ],
       "View invoice": [
         "청구서 보기"
@@ -2042,125 +2045,6 @@
       ],
       "Working with sensitive data?": [
         "민감한 데이터를 다루고 계신가요?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "활성화됨"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "해당 주소는 조직 외부의 사용자가 이미 사용하고 있습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
-      ],
-      "All": [
-        "전체"
-      ],
-      "Calendar": [
-        "캘린더"
-      ],
-      "Configure migration": [
-        "이전 작업 구성"
-      ],
-      "Contacts": [
-        "연락처"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Google Workspace에서 ${ BRAND_NAME }으로의 데이터 이전 상태"
-      ],
-      "Emails": [
-        "이메일"
-      ],
-      "Errors": [
-        "오류"
-      ],
-      "Estimated size": [
-        "예상 용량"
-      ],
-      "Find out what can be migrated.": [
-        "이전 가능한 항목을 확인해 보세요."
-      ],
-      "Has errors": [
-        "오류 있음"
-      ],
-      "In progress": [
-        "진행 중"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "구성원 주소를 찾을 수 없습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
-      ],
-      "Migrate": [
-        "이전"
-      ],
-      "Migrated": [
-        "이전 완료"
-      ],
-      "Migration status": [
-        "마이그레이션 상태"
-      ],
-      "Missing organization private key": [
-        "조직 비밀 키 누락"
-      ],
-      "Missing organization public key": [
-        "조직 공개 키 누락"
-      ],
-      "No users to display": [
-        "표시할 사용자가 없습니다"
-      ],
-      "Not activated": [
-        "활성화되지 않음"
-      ],
-      "Organization does not have enough seats available": [
-        "조직의 사용 권한이 충분하지 않습니다."
-      ],
-      "Organization does not have enough storage available": [
-        "조직에 충분한 저장공간이 남아있지 않습니다."
-      ],
-      "Pending": [
-        "보류 중"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "이전하고자 하는 항목을 정확히 선택하세요. 모든 조직 사용자에게 적용됩니다."
-      ],
-      "Select users to migrate": [
-        "이전할 사용자 선택"
-      ],
-      "Size": [
-        "크기"
-      ],
-      "Status": [
-        "상태"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "플랫폼이 호환되지 않으므로 해당 사용자를 이전할 수 없습니다."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 활성화해야 합니다."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 계정을 활성화해야 합니다."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 주소를 활성화해야 합니다."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "해당 사용자를 이전하려면 ${ BRAND_NAME }으로의 초대장 수락을 해야합니다."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 아카이브 취소해야 합니다."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 정지 취소해야 합니다."
-      ],
-      "User": [
-        "사용자"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } 계정에 접근한 사용자"
-      ],
-      "What are you migrating?": [
-        "무엇을 이전하시나요?"
-      ],
-      "You": [
-        "나"
       ]
     },
     "Browser": {
@@ -3860,7 +3744,7 @@
         "${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
-        "현재 요금제는 ${ MAX_SYNC_FREE_USER }개의 Gmail 주소를 지원합니다."
+        "현재 플랜에서 ${ MAX_SYNC_FREE_USER }개의 Gmail 주소를 지원합니다."
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "회원님의 플랜은 총 ${ MAX_SYNC_PAID_USER }개의 Gmail 주소를 지원합니다"
@@ -4931,6 +4815,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "재설정 토큰이 유효하지 않습니다. 페이지를 새로고침하고 다시 시도해 주세요."
       ],
+      "Invalid URL": [
+        "유효하지 않은 URL"
+      ],
       "Invalid VAT number": [
         "유효하지 않은 VAT 넘버"
       ],
@@ -4948,6 +4835,9 @@
       ],
       "Missing key packet": [
         "키 패킷 없음"
+      ],
+      "Missing signature": [
+        "서명 없음"
       ],
       "Name already exists": [
         "이름이 이미 존재합니다."
@@ -5134,6 +5024,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
+      ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
       ],
       "Something went wrong while converting the address": [
         "주소를 변환하는 중 오류가 발생했습니다."
@@ -6020,6 +5913,9 @@
       "Are you sure you want to delete security key ${ name }?": [
         "정말 ${ name } 보안 키를 지우시겠어요?"
       ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "보안 키가 지원하는 경우 ${ BRAND_NAME }에 보안 키를 사용할 때마다 매번 PIN을 입력합니다. 키에 PIN 설정이 완료된 경우에만 적용됩니다."
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입해 주세요."
       ],
@@ -6031,6 +5927,9 @@
       ],
       "PIN requirement for security keys enabled": [
         "보안 키 활성화를 위한 PIN 요구 조건"
+      ],
+      "Require PIN for security key": [
+        "보안 키에 PIN 필요"
       ],
       "Security key": [
         "보안 키"
@@ -6707,6 +6606,14 @@
         "캘린더를 ICS 파일로 내보내기 위해 ${ boldExport }를 선택하세요."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "진행 중"
+      ],
+      "Migrated": [
+        "이전됨"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 연락처 중 ${ totalContactsDiscarded } 개가 불러오지 않습니다. 자세한 정보를 보려면 클릭하세요"
@@ -7183,9 +7090,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "이 사용자로부터 관리 권한을 제거하시겠습니까?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "이 그룹의 모든 구성원을 정말 추방하시겠어요?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "이 도메인 ${ boldDomain }을(를) 정말 제거하시겠습니까?"
@@ -8672,6 +8576,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
       ],
+      "Smart Routed through a different country.": [
+        "다른 국가를 통해 자동 경유됨."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "다음 국가를 자동 경유함: ${ joinedCountries }."
+      ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "일부 ${ BRAND_NAME } 앱이 보안 키를 아직 지원하지 않습니다. 2단계 인증 앱 사용을 중지하는 경우 해당 앱에 로그인하지 못할 가능성이 있습니다."
       ],
@@ -8855,6 +8765,9 @@
       "This file is too large to preview": [
         "용량이 너무 커 미리보기를 사용할 수 없는 파일입니다."
       ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "해당 Gmail 주소는 다른 ${ BRAND_NAME } 계정 (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI 등)과 연결되어 있습니다. 다른 주소와의 연결성을 향상시키기 위해 노력 중에 있지만, 아직까지는 회원님께서 수행해야 할 조치가 있습니다."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "설정하라는 메시지가 표시된 12단어 키 입니다."
       ],
@@ -9012,7 +8925,7 @@
         "인터넷 연결을 안전하게 보호하기 위해, 기기에 맞는 ${ VPN_APP_NAME } 애플리케이션을 다운로드 및 설치하여 서버에 접속하세요."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "새 요금제에 가입하거나 현재 요금제를 갱신하는 데 사용할 수 있는 크레딧으로 계정을 충전하세요. 사용한 ${ i18nCurrency } 당 한개의 크레딧을 받습니다."
+        "유료 플랜을 결제하거나 현재 플랜을 갱신하는 데 사용할 수 있는 크레딧으로 계정을 충전하세요. 사용한 ${ i18nCurrency } 당 한개의 크레딧을 받습니다."
       ],
       "Tor": [
         "Tor"
@@ -9096,7 +9009,7 @@
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
-        "${ monitorLink } 잠금 해제하려면 업그레이드"
+        "${ monitorLink } 잠금을 해제하려면 업그레이드하세요"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "조직용 ${ PROTON_SENTINEL_NAME }에 접근하려면 ${ firstPlanNames } 또는 ${ lastPlanName }(으)로 업그레이드하세요."
@@ -9325,6 +9238,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "그룹으로, 빠르고 쉽게 특정 그룹 내의 사용자에게 이메일 전송이 가능합니다."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "VPN Professional로 모든 조직 구성원들이 VPN 항상 켜기나 비공개 게이트웨이를 사용하도록 강제할 수 있고, 조직 정책 및 모니터링에 접근할 수도 있습니다."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "활성화하지 않으면 새 사용자를 만들거나 기존 사용자에게 주소를 추가하거나 개인이 아닌 사용자 계정에 액세스할 수 없습니다."
@@ -14767,17 +14683,11 @@
       "Make sure you copy the above SCIM token now.": [
         "위에 있는 SCIM 토큰이 복사되어야 합니다."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "SCIM이 사용자 조직에 한 번 비활성화 되면, **사용자의 신원 인증 제공자에 의한 모든 SCIM 사용자들이 SSO 사용자로 전환됩니다.** ${ BRAND_NAME } 설정 내에서 즉시 관리 또한 가능하게 됩니다."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "여러 서비스 간에 사용자 관리를 간소화합니다. ID 공급자에서 사용자를 추가, 편집, 제거하면 해당 변경 사항이 ${ appName } 조직에 자동으로 적용됩니다."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM 자동 프로비저닝은 신원 제공자의 설정에 새 SCIM 토큰을 입력할 때까지 비활성화됩니다."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM 베이스 URL 및 토큰이 비활성됩니다."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "신원 제공자와의 동기화를 다시 활성화하려면, SCIM 통합을 다시 완료해야 합니다."
@@ -16754,6 +16664,14 @@
         "개인용"
       ]
     },
+    "Table header": {
+      "Size": [
+        "크기"
+      ],
+      "Status": [
+        "상태"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "동작"
@@ -17569,6 +17487,9 @@
       "Groups": [
         "그룹"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "알림: 해당 Gmail 계정이 다른 ${ BRAND_NAME } 계정과 연결되어 있습니다"
+      ],
       "Help and feedback": [
         "도움말 및 의견"
       ],
@@ -17829,9 +17750,6 @@
       ],
       "Reject device?": [
         "기기를 거절할까요?"
-      ],
-      "Remove all members?": [
-        "그룹 구성원을 추방하시겠습니까?"
       ],
       "Remove Always-on VPN device profile": [
         "VPN 항상 켜기 기기 프로파일 삭제"
@@ -18898,6 +18816,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "이 작업은 새로운 ${ MAIL_APP_NAME } 주소를 생성합니다."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "관리자 규칙을 사용하려면 지원하는 플랜으로 업그레이드하세요."
       ],
       "User created": [
         "사용자를 생성했습니다."

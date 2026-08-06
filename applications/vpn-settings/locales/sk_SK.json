@@ -491,6 +491,9 @@
       "Edit users": [
         "Upraviť používateľov"
       ],
+      "Enable": [
+        "Zapnúť"
+      ],
       "enable desktop notifications": [
         "povoliť notifikácie na pracovnej ploche"
       ],
@@ -859,9 +862,6 @@
       ],
       "Remove": [
         "Vymazať"
-      ],
-      "Remove all members": [
-        "Odstrániť všetkých členov"
       ],
       "Remove all other devices": [
         "Odobrať všetky ostatné zariadenia"
@@ -2099,125 +2099,6 @@
       ],
       "Working with sensitive data?": [
         "Pracujete s citlivými údajmi?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Aktivované"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresu už používa používateľ mimo vašej organizácie. Kontaktujte zákaznícku podporu, aby ste to vyriešili."
-      ],
-      "All": [
-        "Všetko"
-      ],
-      "Calendar": [
-        "Kalendár"
-      ],
-      "Configure migration": [
-        "Nastaviť migráciu"
-      ],
-      "Contacts": [
-        "Kontakty"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Stav migrácie dát z Google Workspace do ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Emaily"
-      ],
-      "Errors": [
-        "Chyby"
-      ],
-      "Estimated size": [
-        "Odhadovaná veľkosť"
-      ],
-      "Find out what can be migrated.": [
-        "Zistite, čo je možné preniesť."
-      ],
-      "Has errors": [
-        "Má chyby"
-      ],
-      "In progress": [
-        "Prebieha"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adresa člena nebola nájdená. Na vyriešenie tohto problému kontaktujte zákaznícku podporu."
-      ],
-      "Migrate": [
-        "Migrovať"
-      ],
-      "Migrated": [
-        "Presunuté"
-      ],
-      "Migration status": [
-        "Stav migrácie"
-      ],
-      "Missing organization private key": [
-        "Chýba súkromný kľúč organizácie"
-      ],
-      "Missing organization public key": [
-        "Chýba verejný kľúč organizácie"
-      ],
-      "No users to display": [
-        "Nie sú žiadni používatelia na zobrazenie"
-      ],
-      "Not activated": [
-        "Neaktivované"
-      ],
-      "Organization does not have enough seats available": [
-        "Organizaícia nemá dostatok voľných licencií"
-      ],
-      "Organization does not have enough storage available": [
-        "Organzácia nemá dostatok úložného priestoru"
-      ],
-      "Pending": [
-        "Čakajúce"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Vyberte presne to, čo chcete preniesť. Zmena sa uplatní na všetkých používateľov v organizácii."
-      ],
-      "Select users to migrate": [
-        "Vyberte používateľov na presun"
-      ],
-      "Size": [
-        "Veľkosť"
-      ],
-      "Status": [
-        "Stav"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tohto používateľa nie je možné migrovať z dôvodu nekompatibility platforiem."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v konzole správcu Google Workspace."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v sekcii ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Ak chcete migrovať tohto používateľa, povoľte jeho adresu v sekcii ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Ak chcete migrovať tohto používateľa, musí prijať pozvánku do služby ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Ak chcete migrovať tohto používateľa, zrušte jeho archiváciu v konzole správcu Google Workspace."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Ak chcete migrovať tohto používateľa, zrušte jeho pozastavenie v konzole správcu Google Workspace."
-      ],
-      "User": [
-        "Používateľ"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Používatelia, ktorí sa prihlásili do svojho ${ BRAND_NAME } účtu"
-      ],
-      "What are you migrating?": [
-        "Čo migrujete?"
-      ],
-      "You": [
-        "Vy"
       ]
     },
     "Browser": {
@@ -5051,6 +4932,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "Neplatný token na obnovenie. Obnovte stránku a skúste to znova, prosím."
       ],
+      "Invalid URL": [
+        "Neplatná URL"
+      ],
       "Invalid VAT number": [
         "Naplatné IČ DPH"
       ],
@@ -5071,6 +4955,9 @@
       ],
       "Missing key packet": [
         "Chýbajúci kľúčový balík"
+      ],
+      "Missing signature": [
+        "Chýbajúci podpis"
       ],
       "Name already exists": [
         "Názov už existuje"
@@ -5266,6 +5153,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektoré z vašich názvov štítkov prekračujú maximálny limit znakov pre ${ MAIL_APP_NAME }. Prispôsobte import na úpravu týchto názvov."
+      ],
+      "Something went wrong": [
+        "Niečo sa pokazilo"
       ],
       "Something went wrong while converting the address": [
         "Pri prevode adresy došlo k chybe"
@@ -6917,6 +6807,14 @@
         "Ak chcete kalendár exportovať ako ICS súbor, vyberte ${ boldExport }."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Prebieha"
+      ],
+      "Migrated": [
+        "Presunuté"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktov nebude importované. Kliknite pre detaily"
@@ -7507,9 +7405,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Naozaj chcete tomuto používateľovi odobrať oprávnenie správcu?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "Skutočne chcete odstrániť všetkých členov z tejto skupiny?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Skutočne chcete odstrániť doménu ${ boldDomain }?"
@@ -9037,6 +8932,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Inteligentne smerované cez: ${ joinedCountries }."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Niektoré ${ BRAND_NAME } aplikácie ešte nemusia podporovať bezpečnostné kľúče. Ak vypnete 2FA z autentifikačnej aplikácie, možno sa do týchto aplikácií nebudete môcť prihlásiť."
@@ -15421,17 +15319,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Uistite sa, že ste skopírovali vyššie uvedený SCIM token."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Po vypnutí SCIM pre vašu organizáciu sa **všetci používatelia SCIM, ktorých automaticky poskytuje poskytovateľ identity, zmenia na používateľov SSO** a budete ich môcť spravovať priamo v rámci nastavení ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Zjednodušuje správu používateľov v rôznych službách. Pridávajte, upravujte a odstraňujte používateľov vo svojom poskytovateľovi identity a tieto zmeny sa automaticky aplikujú na vašu organizáciu ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Automatické poskytovanie SCIM bude vypnuté, až kým nezadáte nový SCIM token do nastavení poskytovateľa identity."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "Základná URL adresa SCIM a token budú vymazané."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Ak chcete znovu povoliť synchronizáciu s poskytovateľom identity, musíte znovu dokončiť integráciu SCIM."
@@ -17564,6 +17456,14 @@
         "Pre jednotlivcov"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Veľkosť"
+      ],
+      "Status": [
+        "Stav"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Akcia"
@@ -18672,9 +18572,6 @@
       ],
       "Reject device?": [
         "Odmietnuť zariadenie?"
-      ],
-      "Remove all members?": [
-        "Odstrániť všetkých členov?"
       ],
       "Remove Always-on VPN device profile": [
         "Odstrániť profil zariadenia so vždy zapnutou VPN"

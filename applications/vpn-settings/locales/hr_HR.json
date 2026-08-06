@@ -485,6 +485,9 @@
       "Edit users": [
         "Uredi korisnike"
       ],
+      "Enable": [
+        "Omogući"
+      ],
       "enable desktop notifications": [
         "omogući obavijesti radne površine"
       ],
@@ -841,9 +844,6 @@
       ],
       "Remove": [
         "Ukloni"
-      ],
-      "Remove all members": [
-        "Ukloniti sve članove"
       ],
       "Remove all other devices": [
         "Uklanjanje svih ostalih uređaja"
@@ -2037,125 +2037,6 @@
       ],
       "Working with sensitive data?": [
         "Radite s osjetljivim podacima?"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Aktivirano"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresu već koristi korisnik izvan vaše organizacije. Obratite se korisničkoj podršci kako biste to riješili"
-      ],
-      "All": [
-        "Sve"
-      ],
-      "Calendar": [
-        "Kalendar"
-      ],
-      "Configure migration": [
-        "Konfiguriraj migraciju"
-      ],
-      "Contacts": [
-        "Kontakti"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status migracije podataka iz Google Workspacea na ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-pošta"
-      ],
-      "Errors": [
-        "Pogreške"
-      ],
-      "Estimated size": [
-        "Procijenjena veličina"
-      ],
-      "Find out what can be migrated.": [
-        "Saznajte što se može migrirati."
-      ],
-      "Has errors": [
-        "Ima pogreške"
-      ],
-      "In progress": [
-        "U tijeku"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adresa člana nije pronađena. Obratite se korisničkoj podršci kako biste to riješili"
-      ],
-      "Migrate": [
-        "Migriraj"
-      ],
-      "Migrated": [
-        "Migrirano"
-      ],
-      "Migration status": [
-        "Status migracije"
-      ],
-      "Missing organization private key": [
-        "Nedostaje privatni ključ organizacije"
-      ],
-      "Missing organization public key": [
-        "Nedostaje javni ključ organizacije"
-      ],
-      "No users to display": [
-        "Nema korisnika za prikaz"
-      ],
-      "Not activated": [
-        "Nije aktivirano"
-      ],
-      "Organization does not have enough seats available": [
-        "Organizacija nema dovoljno slobodnih licenci"
-      ],
-      "Organization does not have enough storage available": [
-        "Organizacija nema dovoljno dostupne pohrane"
-      ],
-      "Pending": [
-        "Na čekanju"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Odaberite točno ono što želite migrirati. Primijenit će se na sve korisnike organizacije."
-      ],
-      "Select users to migrate": [
-        "Odaberite korisnike za migraciju"
-      ],
-      "Size": [
-        "Veličina"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Ovaj korisnik ne može se migrirati zbog nekompatibilnosti platforme."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Da biste migrirali ovog korisnika, omogućite njegov korisnički račun u svojoj Google Workspace administratorskoj konzoli."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Da biste migrirali ovog korisnika, omogućite njegov korisnički račun pod ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Da biste migrirali ovog korisnika, omogućite njegovu adresu pod ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Da biste migrirali ovog korisnika, on mora prihvatiti svoju pozivnicu za pridruživanje usluzi ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Da biste migrirali ovog korisnika, dehivirajte ga u svojoj Google Workspace administratorskoj konzoli."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Da biste migrirali ovog korisnika, aktivirajte ga u svojoj Google Workspace administratorskoj konzoli."
-      ],
-      "User": [
-        "Korisnik"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Korisnici koji su pristupili svom ${ BRAND_NAME } korisničkom računu"
-      ],
-      "What are you migrating?": [
-        "Što migrirate?"
-      ],
-      "You": [
-        "Vi"
       ]
     },
     "Browser": {
@@ -4956,6 +4837,9 @@
       "Invalid reset token. Please refresh the page and try again.": [
         "Nevažeći token za ponovno pokretanje. Osvježite stranicu i pokušajte ponovno."
       ],
+      "Invalid URL": [
+        "Nevažeći URL"
+      ],
       "Invalid VAT number": [
         "Nevaljani PDV broj"
       ],
@@ -4975,6 +4859,9 @@
       ],
       "Missing key packet": [
         "Nedostaje paket ključa"
+      ],
+      "Missing signature": [
+        "Nedostaje potpis"
       ],
       "Name already exists": [
         "Ime već postoji"
@@ -5167,6 +5054,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Neki nazivi vaših oznaka premašuju ${ MAIL_APP_NAME }ovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
+      ],
+      "Something went wrong": [
+        "Nešto je pošlo po zlu"
       ],
       "Something went wrong while converting the address": [
         "Došlo je do pogreške prilikom pretvaranja adrese"
@@ -6779,6 +6669,14 @@
         "Odaberite ${ boldExport } za izvoz kalendara kao ICS datoteke."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "U tijeku"
+      ],
+      "Migrated": [
+        "Migrirano"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
@@ -7313,9 +7211,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Jeste li sigurni da želite ukloniti administrativne ovlasti ovog korisnika?"
-      ],
-      "Are you sure you want to remove all members from this group?": [
-        "Jeste li sigurni da želite ukloniti sve članove iz ove grupe?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Jeste li sigurni da želite ukloniti domenu ${ boldDomain }?"
@@ -8749,6 +8644,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Pametno usmjereno kroz: ${ joinedCountries }."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Neke apl. ${ BRAND_NAME } možda još ne podržavaju sigurnosne ključeve. Ako isključite 2FA putem autentifikator apl., možda se nećete moći prijaviti u te apl."
@@ -14973,17 +14871,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Pobrinite se da sada kopirate gore navedeni SCIM token."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Nakon što se SCIM onemogući za Vašu organizaciju, **svi SCIM korisnici koje je automatski dodijelio vaš davatelj identiteta bit će pretvoreni u SSO korisnike** i a moći ćete izravno upravljati njima unutar ${ BRAND_NAME } postavki."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Pojednostavljuje upravljanje korisnicima na različitim uslugama. Dodajte, uredite i uklonite korisnike u svom davatelju identiteta i te će se promjene automatski primijeniti na Vašu ${ appName } organizaciju."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM automatsko dodjeljivanje resursa bit će onemogućeno dok ne unesete novi SCIM token u postavke svog davatelja identiteta."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "Osnovni SCIM URL i token bit će izbrisani."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Kako biste ponovno omogućili sinkronizaciju sa svojim davateljem identiteta, morate ponovno dovršiti SCIM integraciju."
@@ -17047,6 +16939,14 @@
         "Za pojedince"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Veličina"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Radnja"
@@ -18111,9 +18011,6 @@
       ],
       "Reject device?": [
         "Odbiti uređaj?"
-      ],
-      "Remove all members?": [
-        "Ukloniti sve članove?"
       ],
       "Remove device?": [
         "Ukloni uređaj?"
