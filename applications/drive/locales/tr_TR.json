@@ -1332,6 +1332,9 @@
       ],
       "Stop": [
         "Durdur"
+      ],
+      "Migrate": [
+        "Aktar"
       ]
     },
     "Action: Docs": {
@@ -4219,7 +4222,7 @@
         "Kopyalama işlemi iptal edildi"
       ],
       "Copying item to a non-folder is not allowed": [
-        "Öge klasör olmayan bir ögeye kopyalanamaz"
+        "Öge, klasör olmayan bir ögeye kopyalanamaz"
       ],
       "Could not load sharing details": [
         "Paylaşım ayrıntıları yüklenemedi"
@@ -4311,6 +4314,156 @@
       ],
       "You do not have access to this item": [
         "Bu ögeye erişme izniniz yok"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Telif hakkı ihlali veya çalıntı verileri bildirirken bir ileti yazılmalıdır"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından kullanılıyor. Bu sorunu çözmek için lütfen müşteri destek ekibimiz ile görüşün"
+      ],
+      "Bookmark password is not available": [
+        "Yer imi parolası kullanılamıyor"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Fotoğraf, geçerli bir adı olmadan albüme eklenemez"
+      ],
+      "Cannot download a folder": [
+        "Bir klasör indirilemedi"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Öge, geçerli bir adı olmadan taşınamaz. Lütfen önce ögeyi yeniden adlandırın"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Bu dosyanın yükleyen kişi doğrulanamadı"
+      ],
+      "Could not find an available name": [
+        "Kullanılabilecek bir ad bulunamadı"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Görsel ön izlemesi yüklenemedi: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Bu dosyanın bir parçası okunamadı: ${ message }"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde belge oluşturulamaz"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde dosya oluşturulamaz"
+      ],
+      "Device not found": [
+        "Aygıt bulunamadı"
+      ],
+      "Expiration date cannot be in the past": [
+        "Geçerlilik sonu tarihi geçmişte olamaz"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Yer imi anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Yer imi adının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Düğüm anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Sürüm üst bilgilerinin şifresi çözülemedi"
+      ],
+      "Failed to get inviter keys": [
+        "Davet edilenin anahtarları alınamadı"
+      ],
+      "Failed to verify invitation": [
+        "Davet doğrulanamadı"
+      ],
+      "File download failed due to empty response": [
+        "Boş yanıt nedeniyle dosya indirilemedi"
+      ],
+      "Item not found": [
+        "Öge bulunamadı"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimiz ile görüşün"
+      ],
+      "Missing organization private key": [
+        "Kuruluşun kişisel anahtarı eksik"
+      ],
+      "Missing organization public key": [
+        "Kuruluşun herkese açık anahtarı bulunamadı"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "${ signatureType } için imza eksik"
+      ],
+      "Move operation aborted": [
+        "Taşıma işlemi iptal edildi"
+      ],
+      "Moving root item is not allowed": [
+        "Kök öge taşınamaz"
+      ],
+      "Name must not be empty": [
+        "Ad boş olamaz"
+      ],
+      "Only admins can convert external invitations": [
+        "Yalnızca yöneticiler dış davetleri dönüştürebilir"
+      ],
+      "Operation failed, try again later": [
+        "İşlem tamamlanamadı. Bir süre sonra yeniden deneyin"
+      ],
+      "Organization does not have enough seats available": [
+        "Kuruluşun yeterli koltuk sayısı yok"
+      ],
+      "Organization does not have enough storage available": [
+        "Kuruluşun yeterli depolama alanı yok"
+      ],
+      "Photo is already in the target album": [
+        "Fotoğraf zaten hedef albümde bulunuyor"
+      ],
+      "Renaming root item is not allowed": [
+        "Kök öge yeniden adlandırılamaz"
+      ],
+      "Request aborted": [
+        "İstek iptal edildi"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "İmza doğrulanamadı: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } için imza doğrulanamadı"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Bazı dosya parçaları yüklenemedi. Lütfen yeniden deneyin."
+      ],
+      "Some items could not be loaded": [
+        "Bazı ögeler yüklenemedi"
+      ],
+      "This file has missing crypto material": [
+        "Bu dosyada şifreleme materyali eksik"
+      ],
+      "This file version could not be uploaded": [
+        "Bu dosya sürümü yüklenemedi"
+      ],
+      "This item has no image preview": [
+        "Bu ögenin görsel ön izlemesi yok"
+      ],
+      "Too many server errors, please try again later": [
+        "Çok fazla sayıda sunucu sorunu çıktı. Lütfen bir süre sonra yeniden deneyin"
+      ],
+      "Too many server requests, please try again later": [
+        "Çok fazla sayıda sunucu isteği yapıldı. Lütfen bir süre sonra yeniden deneyin"
+      ],
+      "You can create public links for your own files only": [
+        "Yalnızca kendi dosyalarınız için herkese açık bağlantı oluşturabilirsiniz"
+      ],
+      "You can only leave items that are shared with you": [
+        "Yalnızca sizinle paylaşılan ögelerden ayrılabilirsiniz"
+      ],
+      "You can only upload a new version to a file": [
+        "Bir dosyaya yalnızca yeni bir sürüm yükleyebilirsiniz"
+      ],
+      "You can update a public link for your own files only": [
+        "Yalnızca kendi dosyalarınızın herkese açık bağlantısını güncelleyebilirsiniz"
+      ],
+      "You do not have access to this shared item": [
+        "Bu paylaşılan ögeye erişme izniniz yok"
       ]
     },
     "error": {
@@ -7620,6 +7773,45 @@
       ],
       "Thinking about this": [
         "Bunun hakkında düşünülüyor"
+      ],
+      "Author is not provided on public link": [
+        "Sahip herkese açık bağlantıda belirtilmemiş"
+      ],
+      "Find out what can be migrated.": [
+        "Nelerin aktarılabileceğini öğrenin."
+      ],
+      "No users to display": [
+        "Görüntülenebilecek bir kullanıcı yok"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Tam olarak neyi aktarmak istediğinizi seçin. Kuruluşun tüm kullanıcılarına uygulanır."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcıyı arşivden çıkarın."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının askıya alınma durumunu kaldırın."
+      ],
+      "You": [
+        "Siz"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Görüntüleyiciye erişme izninizi değiştirdikten sonra \"${ fileName }\" dosyasını paylaşamazsınız. Sahibi veya paylaşma izni olan bir düzenleyici, düzenleme izninizi yeniden verebilir. Bu değişikliği siz geri alamazsınız."
       ]
     },
     "info": {
@@ -9876,7 +10068,7 @@
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca size özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -10044,7 +10236,7 @@
         "Çeşitli platformları destekler"
       ],
       "Private gateways": [
-        "Özel ağ geçitleri"
+        "Size özel ağ geçitleri"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } özel e-posta etki alanı desteği",
@@ -12991,6 +13183,21 @@
       ],
       "Type": [
         "Tür"
+      ],
+      "Activated": [
+        "Etkinleştirildi"
+      ],
+      "Estimated size": [
+        "Öngörülen boyut"
+      ],
+      "Migration status": [
+        "Aktarım durumu"
+      ],
+      "Size": [
+        "Boyut"
+      ],
+      "User": [
+        "Kullanıcı"
       ]
     },
     "TableHeader": {
@@ -14215,6 +14422,15 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
         "Dosya içeriğinin ${ claimedContentAuthor } tarafından yüklendiği doğrulanamadı. Nedeni: ${ node.activeRevision.contentAuthor.error.error }"
+      ],
+      "Configure migration": [
+        "Aktarımı yapılandır"
+      ],
+      "Select users to migrate": [
+        "Aktarılacak kullanıcıları seçin"
+      ],
+      "What are you migrating?": [
+        "Neyi aktarıyorsunuz?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14324,6 +14540,12 @@
       ],
       "Version 6 OpenPGP key": [
         "6. sürüm OpenPGP anahtarı"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspace üzerinden ${ BRAND_NAME } üzerine veri aktarımı durumu"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } hesaplarına erişen kullanıcılar"
       ]
     },
     "tooltip": {
@@ -14859,6 +15081,52 @@
       ],
       "membership": [
         "üyelik"
+      ],
+      "content key": [
+        "içerik anahtarı"
+      ],
+      "hash key": [
+        "karma anahtarı"
+      ],
+      "name": [
+        "ad"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Etkinleştirildi"
+      ],
+      "All": [
+        "Tümü"
+      ],
+      "Errors": [
+        "Hatalar"
+      ],
+      "In progress": [
+        "İşleniyor"
+      ],
+      "Migrated": [
+        "Aktarıldı"
+      ],
+      "Not activated": [
+        "Etkinleştirilmemiş"
+      ],
+      "Pending": [
+        "Bekliyor"
+      ]
+    },
+    "Import status": {
+      "Has errors": [
+        "Sorunlar çıktı"
+      ],
+      "In progress": [
+        "İşlem sürüyor"
+      ],
+      "Migrated": [
+        "Aktarıldı"
+      ],
+      "Pending": [
+        "Bekliyor"
       ]
     }
   }

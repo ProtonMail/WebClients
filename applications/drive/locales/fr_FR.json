@@ -1332,6 +1332,9 @@
       ],
       "Stop": [
         "Arrêter"
+      ],
+      "Migrate": [
+        "Migrer"
       ]
     },
     "Action: Docs": {
@@ -4214,6 +4217,43 @@
       ],
       "Something went wrong": [
         "Une erreur s'est produite."
+      ],
+      "Invitation not found": [
+        "L'invitation est introuvable"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "L'adresse du membre n'a pas été trouvée. Veuillez contacter le service client pour résoudre ce problème."
+      ],
+      "Missing organization private key": [
+        "La clé privée de l'organisation est absente."
+      ],
+      "Missing organization public key": [
+        "La clé publique de l'organisation est absente."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Le nom doit être composé d'${ MAX_NODE_NAME_LENGTH } caractère au maximum.",
+        "Le nom doit être composé de ${ MAX_NODE_NAME_LENGTH } caractères au maximum."
+      ],
+      "Operation aborted": [
+        "Opération annulée"
+      ],
+      "Operation failed, try again later": [
+        "L'opération n'a pas abouti. Réessayez plus tard"
+      ],
+      "Photo not found": [
+        "La photo est introuvable"
+      ],
+      "Request aborted": [
+        "Requête interrompue"
+      ],
+      "Signature is missing": [
+        "La signature est manquante"
+      ],
+      "This item is no longer shared": [
+        "Cet élément n’est plus partagé"
+      ],
+      "This item is not shared": [
+        "Cet élément n’est pas partagé"
       ]
     },
     "error": {
@@ -7515,6 +7555,18 @@
       ],
       "Thinking about this": [
         "Réflexion en cours..."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Sélectionnez exactement ce que vous voulez migrer. Cela s'appliquera à tous les utilisateurs de l'organisation."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
+      ],
+      "You": [
+        "Vous"
       ]
     },
     "info": {
@@ -12946,6 +12998,15 @@
       ],
       "Type": [
         "Type"
+      ],
+      "Estimated size": [
+        "Taille estimée"
+      ],
+      "Size": [
+        "Taille"
+      ],
+      "User": [
+        "Utilisateur"
       ]
     },
     "TableHeader": {
@@ -14167,6 +14228,9 @@
       ],
       "Stay for 50% off your next month": [
         "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
+        "Nous n'avons pas pu confirmer que le contenu du fichier a été importé par ${ claimedContentAuthor }. La raison est la suivante : ${ node.activeRevision.contentAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14802,6 +14866,51 @@
       ],
       "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
         "Gérez les utilisateurs, les groupes et le stockage de tous les membres, attribuez des rôles et attribuez des licences."
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Activé"
+      ],
+      "All": [
+        "Tout"
+      ],
+      "In progress": [
+        "En cours"
+      ],
+      "Migrated": [
+        "Migré"
+      ],
+      "Pending": [
+        "En attente"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "En cours"
+      ],
+      "Migrated": [
+        "Migré"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "Attributs"
+      ],
+      "content key": [
+        "clé de contenu"
+      ],
+      "hash key": [
+        "clé de hachage"
+      ],
+      "key": [
+        "clé"
+      ],
+      "membership": [
+        "abonnement"
+      ],
+      "name": [
+        "nom"
       ]
     }
   }
