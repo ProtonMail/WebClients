@@ -1507,6 +1507,10 @@
       "Trust": [
         "भरोसा करें"
       ],
+      "Trust key": [
+        "ट्रस्ट की",
+        "ट्रस्ट कीज़"
+      ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
       ],
@@ -2194,128 +2198,6 @@
       ],
       "Yearly": [
         "हर साल"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "सक्रिय"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "पता पहले से ही आपके संगठन के बाहर के उपयोगकर्ता द्वारा उपयोग किया जा रहा है। कृपया इसे हल करने के लिए ग्राहक सहायता से संपर्क करें"
-      ],
-      "All": [
-        "सभी"
-      ],
-      "Calendar": [
-        "कैलेंडर"
-      ],
-      "Configure migration": [
-        "माइग्रेशन कॉन्फ़िगर करें"
-      ],
-      "Contact your administrator to start a migration.": [
-        "माइग्रेशन शुरू करने के लिए अपने एडमिनिस्ट्रेटर से संपर्क करें।"
-      ],
-      "Contacts": [
-        "संपर्क"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Google Workspace से ${ BRAND_NAME } तक डेटा माइग्रेशन की स्थिति"
-      ],
-      "Emails": [
-        "ईमेल"
-      ],
-      "Errors": [
-        "त्रुटियाँ"
-      ],
-      "Estimated size": [
-        "अनुमानित साइज़"
-      ],
-      "Find out what can be migrated.": [
-        "पता लगाएं कि क्या माइग्रेट किया जा सकता है।"
-      ],
-      "Has errors": [
-        "त्रुटियां हैं"
-      ],
-      "In progress": [
-        "प्रगति पर"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "सदस्य का पता नहीं मिला। कृपया इसे हल करने के लिए ग्राहक सहायता से संपर्क करें"
-      ],
-      "Migrate": [
-        "माइग्रेट करें"
-      ],
-      "Migrated": [
-        "माइग्रेट किया गया"
-      ],
-      "Migration status": [
-        "माइग्रेशन स्थिति"
-      ],
-      "Missing organization private key": [
-        "अनुपस्थित संगठन निजी चाबी"
-      ],
-      "Missing organization public key": [
-        "अनुपस्थित संगठन सार्वजनिक चाबी"
-      ],
-      "No users to display": [
-        "प्रदर्शित करने के लिए कोई उपयोगकर्ता नहीं"
-      ],
-      "Not activated": [
-        "सक्रिय नहीं"
-      ],
-      "Organization does not have enough seats available": [
-        "संगठन के पास पर्याप्त सीटें उपलब्ध नहीं हैं"
-      ],
-      "Organization does not have enough storage available": [
-        "संगठन के पास पर्याप्त स्टोरेज उपलब्ध नहीं है"
-      ],
-      "Pending": [
-        "लंबित"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "ठीक से चुनें कि आप क्या माइग्रेट करना चाहते हैं। यह सभी संगठन उपयोगकर्ताओं पर लागू होगा।"
-      ],
-      "Select users to migrate": [
-        "माइग्रेट करने के लिए उपयोगकर्ताओं का चयन करें"
-      ],
-      "Size": [
-        "साइज़"
-      ],
-      "Status": [
-        "स्थिति"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "प्लैटफॉर्म की विसंगतियों के कारण इस उपयोगकर्ता को माइग्रेट नहीं किया जा सकता है।"
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, अपने Google Workspace एडमिन कंसोल में उनका खाता सक्षम करें।"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, ${ usersAddressesLink } के तहत उनका खाता सक्षम करें।"
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, ${ usersAddressesLink } के तहत उनका पता सक्षम करें।"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, उन्हें ${ BRAND_NAME } में शामिल होने का अपना न्योता स्वीकार करना होगा।"
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, उन्हें अपने Google Workspace एडमिन कंसोल में अनआर्काइव करें।"
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "इस उपयोगकर्ता को माइग्रेट करने के लिए, उन्हें अपने Google Workspace एडमिन कंसोल में अनसस्पेंड करें।"
-      ],
-      "User": [
-        "उपयोगकर्ता"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "वे उपयोगकर्ता जिन्होंने अपने ${ BRAND_NAME } खाते को एक्सेस किया है"
-      ],
-      "What are you migrating?": [
-        "आप क्या माइग्रेट कर रहे हैं?"
-      ],
-      "You": [
-        "आप"
       ]
     },
     "Browser": {
@@ -5006,6 +4888,9 @@
       "Invalid public key file": [
         "अमान्य सार्वजनिक कुंजी फ़ाइल"
       ],
+      "Invalid URL": [
+        "अमान्य यूआरएल"
+      ],
       "Invalid VAT number": [
         "अमान्य वैट नंबर"
       ],
@@ -5262,6 +5147,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "आपके कुछ लेबल नाम ${ MAIL_APP_NAME } की अधिकतम वर्ण सीमा से अधिक हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
+      ],
+      "Something went wrong": [
+        "कोई गड़बड़ हो गई"
       ],
       "Something went wrong while converting the address": [
         "पता बदलते समय कुछ गलत हो गया"
@@ -6691,6 +6579,14 @@
         "अधिक आयात विकल्प"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "प्रगति पर है"
+      ],
+      "Migrated": [
+        "माइग्रेट किया गया"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } में से ${ totalContacts } संपर्क आयात नहीं किए जाएंगे। विवरण के लिए क्लिक करें"
@@ -7797,6 +7693,9 @@
       "Initializing…": [
         "शुरू हो रहा है…"
       ],
+      "Insert image": [
+        "तस्वीर डालें"
+      ],
       "Insert link": [
         "लिंक डालें"
       ],
@@ -7838,9 +7737,6 @@
       ],
       "Key fingerprint": [
         "कुंजी फ़िंगरप्रिंट"
-      ],
-      "Keys created": [
-        "कुंजी बनाई गई"
       ],
       "Label all imported messages as": [
         "सभी आयातित संदेशों को लेबल करें"
@@ -8855,9 +8751,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "अपने ईमेल को तेज़ी से प्रबंधित करने के लिए कीबोर्ड शॉर्टकट का उपयोग करें।"
-      ],
-      "User activated": [
-        "उपयोगकर्ता सक्रिय किया गया"
       ],
       "username": [
         "यूज़रनेम"
@@ -15259,6 +15152,9 @@
       ],
       "Name": [
         "नाम"
+      ],
+      "Size": [
+        "साइज़"
       ],
       "Status": [
         "स्थिति"

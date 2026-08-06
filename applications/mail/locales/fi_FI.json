@@ -1039,6 +1039,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
+      "Open debug menu": [
+        "Avaa virheenkorjausvalikko"
+      ],
       "Open navigation": [
         "Avaa navigaatio"
       ],
@@ -1517,7 +1520,8 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen"
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -2206,128 +2210,6 @@
       ],
       "Yearly": [
         "Vuosittain"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Aktivoitu"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Osoite on jo organisaationne ulkopuolisen käyttäjän käytössä. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
-      ],
-      "All": [
-        "Kaikki"
-      ],
-      "Calendar": [
-        "Kalenteri"
-      ],
-      "Configure migration": [
-        "Määritä siirto"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Ota yhteyttä ylläpitäjään migraation aloittamiseksi."
-      ],
-      "Contacts": [
-        "Yhteystiedot"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Tietojen siirron tila kohteesta Google Workspace kohteeseen ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "Sähköpostit"
-      ],
-      "Errors": [
-        "Virheet"
-      ],
-      "Estimated size": [
-        "Arvioitu koko"
-      ],
-      "Find out what can be migrated.": [
-        "Ota selvää, mitä voidaan siirtää."
-      ],
-      "Has errors": [
-        "Virheitä"
-      ],
-      "In progress": [
-        "Käynnissä"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Jäsenen osoitetta ei löytynyt. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
-      ],
-      "Migrate": [
-        "Siirrä"
-      ],
-      "Migrated": [
-        "Siirretty"
-      ],
-      "Migration status": [
-        "Siirron tila"
-      ],
-      "Missing organization private key": [
-        "Organisaation yksityinen avain puuttuu"
-      ],
-      "Missing organization public key": [
-        "Organisaation julkinen avain puuttuu"
-      ],
-      "No users to display": [
-        "Ei näytettäviä käyttäjiä"
-      ],
-      "Not activated": [
-        "Ei aktivoitu"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisaatiolla ei ole tarpeeksi paikkoja saatavilla"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisaatiolla ei ole tarpeeksi tallennustilaa"
-      ],
-      "Pending": [
-        "Odottaa"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Valitse tarkalleen, mitä haluat siirtää. Tämä koskee kaikkia organisaation käyttäjiä."
-      ],
-      "Select users to migrate": [
-        "Valitse siirrettävät käyttäjät"
-      ],
-      "Size": [
-        "Koko"
-      ],
-      "Status": [
-        "Tila"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tätä käyttäjää ei voida siirtää alustojen yhteensopimattomuuden vuoksi."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Siirtääksesi tämän käyttäjän, ota hänen tilinsä käyttöön Google Workspace -hallintakonsolissa."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Voit siirtää tämän käyttäjän ottamalla hänen tilinsä käyttöön kohdassa ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Siirtääksesi tämän käyttäjän, ota hänen osoitteensa käyttöön kohdassa ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Jotta tämä käyttäjä voidaan siirtää, hänen on hyväksyttävä kutsunsa liittyä ${ BRAND_NAME }:iin."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Voit siirtää tämän käyttäjän poistamalla hänet arkistosta Google Workspace -hallintakonsolissa."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Voit siirtää tämän käyttäjän poistamalla hänen jäädytyksensä Google Workspace -hallintakonsolissa."
-      ],
-      "User": [
-        "Käyttäjä"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Käyttäjät, jotka ovat käyttäneet ${ BRAND_NAME }-tiliään"
-      ],
-      "What are you migrating?": [
-        "Mitä olet siirtämässä?"
-      ],
-      "You": [
-        "Sinä"
       ]
     },
     "Browser": {
@@ -5030,6 +4912,9 @@
       "Invalid public key file": [
         "Virheellinen julkisen avaimen tiedosto"
       ],
+      "Invalid URL": [
+        "Virheellinen URL"
+      ],
       "Invalid VAT number": [
         "Virheellinen VAT-numero"
       ],
@@ -5286,6 +5171,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
+      ],
+      "Something went wrong": [
+        "Jotain meni pieleen"
       ],
       "Something went wrong while converting the address": [
         "Jotain meni vikaan muutettaessa osoitetta"
@@ -6715,6 +6603,14 @@
         "Lisää tuontiasetuksia"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Käynnissä"
+      ],
+      "Migrated": [
+        "Siirretty"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } yhteystietoa ei tuoda. Näytä tiedot painamalla tästä."
@@ -7826,8 +7722,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -7870,9 +7765,6 @@
       ],
       "Key fingerprint": [
         "Avaimen sormenjälki"
-      ],
-      "Keys created": [
-        "Avaimet luotiin"
       ],
       "Label all imported messages as": [
         "Merkitse kaikki viestit tunnisteella"
@@ -8900,9 +8792,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Hallitse sähköpostiasi nopeammin pikanäppäimillä."
-      ],
-      "User activated": [
-        "Käyttäjä aktivoitiin"
       ],
       "username": [
         "käyttäjätunnus"
@@ -15319,6 +15208,9 @@
       ],
       "Name": [
         "Nimi"
+      ],
+      "Size": [
+        "Koko"
       ],
       "Status": [
         "Tila"

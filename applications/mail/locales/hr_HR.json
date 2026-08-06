@@ -1512,7 +1512,9 @@
         "Vjeruj"
       ],
       "Trust key": [
-        "Ključ povjerenja"
+        "Vjeruj ključu",
+        "Vjeruj ključevima",
+        "Vjeruj ključevima"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -2217,128 +2219,6 @@
       ],
       "Yearly": [
         "Godišnje"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Aktivirano"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresu već koristi korisnik izvan vaše organizacije. Obratite se korisničkoj podršci kako biste to riješili"
-      ],
-      "All": [
-        "Sve"
-      ],
-      "Calendar": [
-        "Kalendar"
-      ],
-      "Configure migration": [
-        "Konfiguriraj migraciju"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Obratite se svom administratoru kako biste započeli migraciju."
-      ],
-      "Contacts": [
-        "Kontakti"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status migracije podataka iz Google Workspacea na ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-pošta"
-      ],
-      "Errors": [
-        "Pogreške"
-      ],
-      "Estimated size": [
-        "Procijenjena veličina"
-      ],
-      "Find out what can be migrated.": [
-        "Saznajte što se može migrirati."
-      ],
-      "Has errors": [
-        "Ima pogreške"
-      ],
-      "In progress": [
-        "U tijeku"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adresa člana nije pronađena. Obratite se korisničkoj podršci kako biste to riješili"
-      ],
-      "Migrate": [
-        "Migriraj"
-      ],
-      "Migrated": [
-        "Migrirano"
-      ],
-      "Migration status": [
-        "Status migracije"
-      ],
-      "Missing organization private key": [
-        "Nedostaje privatni ključ organizacije"
-      ],
-      "Missing organization public key": [
-        "Nedostaje javni ključ organizacije"
-      ],
-      "No users to display": [
-        "Nema korisnika za prikaz"
-      ],
-      "Not activated": [
-        "Nije aktivirano"
-      ],
-      "Organization does not have enough seats available": [
-        "Organizacija nema dovoljno slobodnih licenci"
-      ],
-      "Organization does not have enough storage available": [
-        "Organizacija nema dovoljno dostupne pohrane"
-      ],
-      "Pending": [
-        "Na čekanju"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Odaberite točno ono što želite migrirati. Primijenit će se na sve korisnike organizacije."
-      ],
-      "Select users to migrate": [
-        "Odaberite korisnike za migraciju"
-      ],
-      "Size": [
-        "Veličina"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Ovaj korisnik ne može se migrirati zbog nekompatibilnosti platforme."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Da biste migrirali ovog korisnika, omogućite njegov korisnički račun u svojoj Google Workspace administratorskoj konzoli."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Da biste migrirali ovog korisnika, omogućite njegov korisnički račun pod ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Da biste migrirali ovog korisnika, omogućite njegovu adresu pod ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Da biste migrirali ovog korisnika, on mora prihvatiti svoju pozivnicu za pridruživanje usluzi ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Da biste migrirali ovog korisnika, dehivirajte ga u svojoj Google Workspace administratorskoj konzoli."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Da biste migrirali ovog korisnika, aktivirajte ga u svojoj Google Workspace administratorskoj konzoli."
-      ],
-      "User": [
-        "Korisnik"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Korisnici koji su pristupili svom ${ BRAND_NAME } korisničkom računu"
-      ],
-      "What are you migrating?": [
-        "Što migrirate?"
-      ],
-      "You": [
-        "Vi"
       ]
     },
     "Browser": {
@@ -5051,6 +4931,9 @@
       "Invalid public key file": [
         "Nevažeća datoteka javnog ključa"
       ],
+      "Invalid URL": [
+        "Nevažeći URL"
+      ],
       "Invalid VAT number": [
         "Nevaljani PDV broj"
       ],
@@ -5312,6 +5195,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Neki nazivi vaših oznaka premašuju ${ MAIL_APP_NAME }ovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
+      ],
+      "Something went wrong": [
+        "Nešto je pošlo po zlu"
       ],
       "Something went wrong while converting the address": [
         "Došlo je do pogreške prilikom pretvaranja adrese"
@@ -6763,6 +6649,14 @@
         "Više opcija uvoza"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "U tijeku"
+      ],
+      "Migrated": [
+        "Migrirano"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
@@ -7935,9 +7829,7 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku",
-        "Umetni slike",
-        "Umetni slike"
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -7980,9 +7872,6 @@
       ],
       "Key fingerprint": [
         "Otisak prsta ključa"
-      ],
-      "Keys created": [
-        "Ključevi su stvoreni"
       ],
       "Label all imported messages as": [
         "Označi sve uvezene poruke kao"
@@ -9003,9 +8892,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Koristite tipkovne prečace za brže upravljanje e-poštom."
-      ],
-      "User activated": [
-        "Korisnik je aktiviran"
       ],
       "username": [
         "korisničko ime"
@@ -15556,6 +15442,9 @@
       ],
       "Name": [
         "Naziv"
+      ],
+      "Size": [
+        "Veličina"
       ],
       "Status": [
         "Status"

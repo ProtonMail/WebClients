@@ -1523,7 +1523,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarer nøkkel"
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -2235,128 +2236,6 @@
       ],
       "Yearly": [
         "Årlig"
-      ]
-    },
-    "BOSS": {
-      "Activated": [
-        "Aktivert"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Configure migration": [
-        "Konfigurer migrering"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Kontakt administratoren din for å starte en migrering."
-      ],
-      "Contacts": [
-        "Kontakter"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status for dataoverføring fra Google Workspace til ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-poster"
-      ],
-      "Errors": [
-        "Feil"
-      ],
-      "Estimated size": [
-        "Estimert størrelse"
-      ],
-      "Find out what can be migrated.": [
-        "Finn ut hva som kan migreres."
-      ],
-      "Has errors": [
-        "Inneholder feil"
-      ],
-      "In progress": [
-        "Pågår"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
-      ],
-      "Migrate": [
-        "Migrer"
-      ],
-      "Migrated": [
-        "Migrert"
-      ],
-      "Migration status": [
-        "Migreringsstatus"
-      ],
-      "Missing organization private key": [
-        "Mangler privat nøkkel for organisasjonen"
-      ],
-      "Missing organization public key": [
-        "Mangler offentlig nøkkel for organisasjonen"
-      ],
-      "No users to display": [
-        "Ingen brukere å vise"
-      ],
-      "Not activated": [
-        "Ikke aktivert"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisasjonen har ikke nok ledige seter"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisasjonen har ikke nok lagringsplass tilgjengelig"
-      ],
-      "Pending": [
-        "Venter"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Velg nøyaktig hva du vil migrere. Det vil gjelde for alle brukere i organisasjonen."
-      ],
-      "Select users to migrate": [
-        "Velg brukere som skal migreres"
-      ],
-      "Size": [
-        "Størrelse"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Denne brukeren kan ikke migreres på grunn av plattformuforenlighet."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "For å migrere denne brukeren må du aktivere kontoen deres i Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "For å migrere denne brukeren må du aktivere kontoen deres under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "For å migrere denne brukeren må du aktivere adressen deres under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "For å migrere denne brukeren må de godta invitasjonen sin til å bli med i ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "For å migrere denne brukeren må du oppheve arkiveringen av dem i Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "For å migrere denne brukeren må du oppheve suspensjonen av dem i Google Workspace Admin Console."
-      ],
-      "User": [
-        "Bruker"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Brukere som har aktivert ${ BRAND_NAME }-kontoen sin"
-      ],
-      "What are you migrating?": [
-        "Hva migrerer du?"
-      ],
-      "You": [
-        "Du"
       ]
     },
     "Browser": {
@@ -5065,6 +4944,9 @@
       "Invalid public key file": [
         "Ugyldig offentlig nøkkelfil"
       ],
+      "Invalid URL": [
+        "Ugyldig nettadresse"
+      ],
       "Invalid VAT number": [
         "Ugyldig MVA-nummer"
       ],
@@ -5321,6 +5203,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
+      ],
+      "Something went wrong": [
+        "Noe gikk galt"
       ],
       "Something went wrong while converting the address": [
         "Noe gikk galt under konvertering av adressen"
@@ -6753,6 +6638,14 @@
         "Flere importalternativer"
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrert"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ut av ${ totalContacts } blir ikke importert. Klikk for detaljer."
@@ -7896,8 +7789,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7940,9 +7832,6 @@
       ],
       "Key fingerprint": [
         "Nøkkelfingeravtrykk"
-      ],
-      "Keys created": [
-        "Nøkler opprettet"
       ],
       "Label all imported messages as": [
         "Merk alle importerte meldinger som"
@@ -8979,9 +8868,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Bruk tastatursnarveier for å behandle e-posten din raskere."
-      ],
-      "User activated": [
-        "Bruker aktivert"
       ],
       "username": [
         "brukernavn"
@@ -15448,6 +15334,9 @@
       ],
       "Name": [
         "Navn"
+      ],
+      "Size": [
+        "Størrelse"
       ],
       "Status": [
         "Status"
