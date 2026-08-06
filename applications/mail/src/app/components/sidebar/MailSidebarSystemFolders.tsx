@@ -227,7 +227,7 @@ const MailSidebarSystemFolders = ({
 
     const moreClickCallback = (labelID: string) => {
         if (isCategoryLabel(labelID)) {
-            sendReportCategoriesNav('sidebar', labelID);
+            void sendReportCategoriesNav('sidebar', labelID, 'n/a');
         }
 
         // Mark the labelID as seen to remove unseen badge

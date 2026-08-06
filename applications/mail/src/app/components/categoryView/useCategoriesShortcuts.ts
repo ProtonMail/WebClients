@@ -27,7 +27,7 @@ export const useCategoriesShortcuts = () => {
     };
 
     const navigateToCategory = (categoryID: CategoryLabelID, source: 'commander' | 'shortcuts') => {
-        sendReportCategoriesNav(source, categoryID);
+        void sendReportCategoriesNav(source, categoryID, 'n/a');
         history.push(setCategoryInUrl(categoryID));
     };
 
