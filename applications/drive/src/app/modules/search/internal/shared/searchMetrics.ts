@@ -3,11 +3,11 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { Logger } from './Logger';
 import {
+    type ErrorDecision,
     type PermanentErrorKind,
     SENTRY_REPORT_BURST_MAX_ATTEMPTS,
     SENTRY_REPORT_BURST_WINDOW_MS,
     type TransientErrorKind,
-    classifyError,
     sendErrorReportForSearch,
 } from './errors';
 import type { IndexerTaskKind } from './types';
@@ -66,28 +66,34 @@ function shouldReportQuarantineToSentry(populatorUid: string): boolean {
 
 export const searchMetrics = {
     /**
-     * Indexer task failed. Classifies the error, increments severity counter
-     * (permanent / transient), increments lifecycle counter (when
-     * `isInitialIndexing` / `isIncrementalUpdate` is set), and sends to Sentry.
-     * Transient Sentry calls are throttled per `taskUid` to avoid flooding when a single
-     * task keeps flapping; the throttle window resets when the task succeeds (see
+     * Indexer task failed. Increments severity counter (permanent / transient), increments
+     * lifecycle counter (when `isInitialIndexing` / `isIncrementalUpdate` is set), and sends
+     * to Sentry. Transient Sentry calls are throttled per `taskUid` to avoid flooding when a
+     * single task keeps flapping; the throttle window resets when the task succeeds (see
      * `markIndexerTaskSucceeded`).
+     *
+     * The caller supplies the already-computed `decision` because this method may run on the
+     * far side of the worker bridge, where structured clone has stripped the error's prototype,
+     * its `name` and its own properties (e.g. `status`) - leaving every `instanceof` / name /
+     * status check in `classifyError` unable to match, so everything would bucket as
+     * transient-`unknown`. Classification must happen in the worker while the error is still
+     * intact; only the plain-string verdict may cross the bridge. `error` is kept for Sentry.
      */
     markIndexerError({
+        decision,
         error,
         taskUid,
         taskKind,
         isInitialIndexing,
         isIncrementalUpdate,
     }: {
+        decision: ErrorDecision;
         error: unknown;
         taskUid: string;
         taskKind: IndexerTaskKind;
         isInitialIndexing?: boolean;
         isIncrementalUpdate?: boolean;
     }): void {
-        const decision = classifyError(error);
-
         if (isInitialIndexing) {
             metrics.drive_search_initial_indexing_total.increment({ outcome: 'failure' });
         }
@@ -98,7 +104,7 @@ export const searchMetrics = {
         if (decision.kind === 'permanent') {
             metrics.drive_search_permanent_errors_total.increment({ errorKind: decision.reason });
             sendErrorReportForSearch(`Search permanent error (${decision.reason})`, error, {
-                tags: { label: 'search-permanent-error', taskKind },
+                tags: { label: 'search-permanent-error', taskKind, errorKind: decision.reason },
             });
         } else {
             metrics.drive_search_transient_errors_total.increment({ kind: decision.reason });

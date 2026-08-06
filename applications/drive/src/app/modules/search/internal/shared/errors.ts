@@ -228,17 +228,9 @@ export class MissingUserKeyEncryptionError extends Error {
 }
 
 /**
- * Returns true for indexer errors that are unrecoverable and should permanently
- * stop the task processor. These errors require user intervention (free disk
- * space, clear DB, etc).
- */
-export function isPermanentIndexerError(e: unknown): boolean {
-    return classifyPermanentError(e) !== null;
-}
-
-/**
  * Classifies a permanent error into a specific kind, or returns null if the error
- * is not permanent.
+ * is not permanent. Permanent errors are unrecoverable and permanently stop the task
+ * processor; they require user intervention (free disk space, clear DB, etc).
  */
 export function classifyPermanentError(e: unknown): PermanentErrorKind | null {
     if (isQuotaExceededError(e)) {
@@ -279,8 +271,7 @@ export function tryCatchWithNotification<T>(fn: () => T | Promise<T>): () => Pro
 export type TransientErrorKind = 'rate-limited' | 'server' | 'network' | 'offline' | 'abort' | 'unknown';
 
 export type ErrorDecision =
-    | { kind: 'permanent'; reason: PermanentErrorKind }
-    | { kind: 'transient'; reason: TransientErrorKind };
+    { kind: 'permanent'; reason: PermanentErrorKind } | { kind: 'transient'; reason: TransientErrorKind };
 
 /**
  * Classifies an error into one of two buckets driving the queue's reaction:
