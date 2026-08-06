@@ -8,7 +8,7 @@ import {
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { FileUploadItem, FolderCreationItem } from '../types';
 import { UploadConflictStrategy, UploadConflictType, UploadStatus } from '../types';
-import { getBlockedChildren } from '../utils/dependencyHelpers';
+import { getBlockedDescendants, getDirectChildren } from '../utils/dependencyHelpers';
 import { ConflictManager } from './ConflictManager';
 
 jest.mock('../store/uploadQueue.store', () => {
@@ -55,7 +55,8 @@ describe('ConflictManager', () => {
         });
 
         jest.mocked(useUploadQueueStore.getState).mockImplementation(mockGetState);
-        jest.mocked(getBlockedChildren).mockReturnValue([]);
+        jest.mocked(getDirectChildren).mockReturnValue([]);
+        jest.mocked(getBlockedDescendants).mockReturnValue([]);
 
         const { getDrive } = require('../../../index');
         jest.mocked(getDrive).mockReturnValue({
@@ -364,7 +365,7 @@ describe('ConflictManager', () => {
                 { uploadId: 'child2', parentUploadId: 'task1' },
                 { uploadId: 'other', parentUploadId: 'other-parent' },
             ]);
-            jest.mocked(getBlockedChildren).mockReturnValue(['child1', 'child2']);
+            jest.mocked(getDirectChildren).mockReturnValue(['child1', 'child2']);
 
             await conflictManager.chooseConflictStrategy('task1', UploadConflictStrategy.Replace);
 
@@ -384,7 +385,7 @@ describe('ConflictManager', () => {
             expect(mockUpdateQueueItems).toHaveBeenCalledTimes(2);
         });
 
-        it('should resolve folder conflict with skip strategy and cancel children', async () => {
+        it('should resolve folder conflict with skip strategy and cancel the whole sub-tree', async () => {
             const folderItem = {
                 ...createFolderItem('MyFolder', UploadStatus.ConflictFound),
                 error: createConflictError('existing-folder-456'),
@@ -393,9 +394,9 @@ describe('ConflictManager', () => {
             mockGetQueue.mockReturnValue([
                 folderItem,
                 { uploadId: 'child1', parentUploadId: 'task1' },
-                { uploadId: 'child2', parentUploadId: 'task1' },
+                { uploadId: 'nested-child', parentUploadId: 'child1' },
             ]);
-            jest.mocked(getBlockedChildren).mockReturnValue(['child1', 'child2']);
+            jest.mocked(getBlockedDescendants).mockReturnValue(['child1', 'nested-child']);
 
             await conflictManager.chooseConflictStrategy('task1', UploadConflictStrategy.Skip);
 
@@ -406,7 +407,7 @@ describe('ConflictManager', () => {
                 })
             );
 
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith(['child1', 'child2'], {
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith(['child1', 'nested-child'], {
                 status: UploadStatus.ParentCancelled,
             });
 

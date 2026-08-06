@@ -195,6 +195,25 @@ export function isPhotosUploadItem(item: UploadItem): item is PhotosUploadItem {
     return 'isForPhotos' in item && item.isForPhotos === true;
 }
 
+const TERMINAL_UPLOAD_STATUSES = new Set<UploadStatus>([
+    UploadStatus.Finished,
+    UploadStatus.Failed,
+    UploadStatus.Cancelled,
+    UploadStatus.ParentCancelled,
+    UploadStatus.Skipped,
+    UploadStatus.PhotosDuplicate,
+    UploadStatus.NotSupportedForPhotos,
+    UploadStatus.EmptyFile,
+]);
+
+/**
+ * An item that reached its final state: it will not upload, progress or change on its own again.
+ * ConflictFound and PausedServer are not terminal, they still wait for the user or the server.
+ */
+export function isTerminalStatus(status: UploadStatus | undefined): boolean {
+    return status !== undefined && TERMINAL_UPLOAD_STATUSES.has(status);
+}
+
 export type DriveUploadClient = ProtonDriveClient | ProtonDrivePublicLinkClient | ProtonDrivePhotosClient;
 
 export type EventCallback = (event: UploadEvent) => Promise<void>;

@@ -5,7 +5,7 @@ import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { FileUploadItem, FolderCreationItem } from '../types';
 import { UploadConflictStrategy, UploadConflictType, UploadStatus, isPhotosUploadItem } from '../types';
-import { getBlockedChildren } from '../utils/dependencyHelpers';
+import { getBlockedDescendants, getDirectChildren } from '../utils/dependencyHelpers';
 import { uploadLogError } from '../utils/uploadLogger';
 
 type ResolutionResult =
@@ -203,7 +203,7 @@ export class ConflictManager {
                     });
                     if (isFolder && resolution.existingNodeUid) {
                         const allItems = queueStore.getQueue();
-                        const childrenIds = getBlockedChildren(uploadId, allItems);
+                        const childrenIds = getDirectChildren(uploadId, allItems);
                         if (childrenIds.length > 0) {
                             queueStore.updateQueueItems(childrenIds, {
                                 parentUid: resolution.existingNodeUid,
@@ -268,18 +268,18 @@ export class ConflictManager {
     }
 
     /**
-     * Cancel all children of a failed/skipped folder
+     * Cancel the whole sub-tree of a failed/skipped folder
      */
     private cancelFolderChildren(uploadId: string): void {
         const queueStore = useUploadQueueStore.getState();
         const allItems = queueStore.getQueue();
 
-        const childrenIds = getBlockedChildren(uploadId, allItems);
-        if (childrenIds.length === 0) {
+        const descendantIds = getBlockedDescendants([uploadId], allItems);
+        if (descendantIds.length === 0) {
             return;
         }
 
-        queueStore.updateQueueItems(childrenIds, {
+        queueStore.updateQueueItems(descendantIds, {
             status: UploadStatus.ParentCancelled,
         });
     }
