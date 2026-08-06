@@ -1,6 +1,11 @@
 import metrics from '@proton/metrics';
 
-import { SENTRY_REPORT_BURST_MAX_ATTEMPTS, SENTRY_REPORT_BURST_WINDOW_MS, sendErrorReportForSearch } from './errors';
+import {
+    SENTRY_REPORT_BURST_MAX_ATTEMPTS,
+    SENTRY_REPORT_BURST_WINDOW_MS,
+    SearchLibraryError,
+    sendErrorReportForSearch,
+} from './errors';
 import { resetTransientReportBurstsForTests, searchMetrics } from './searchMetrics';
 import type { IndexerTaskKind } from './types';
 
@@ -22,11 +27,13 @@ jest.mock('./errors', () => ({
 
 const sendErrorReportMock = sendErrorReportForSearch as jest.MockedFunction<typeof sendErrorReportForSearch>;
 const transientCounter = metrics.drive_search_transient_errors_total.increment as jest.Mock;
+const permanentCounter = metrics.drive_search_permanent_errors_total.increment as jest.Mock;
 
 const TASK_KIND: IndexerTaskKind = 'index-populator-task';
 
 const triggerTransient = (taskUid: string) =>
     searchMetrics.markIndexerError({
+        decision: { kind: 'transient', reason: 'unknown' },
         error: new Error('boom'),
         taskUid,
         taskKind: TASK_KIND,
@@ -123,7 +130,12 @@ describe('searchMetrics transient Sentry throttling', () => {
         const quotaError = new DOMException('', 'QuotaExceededError');
 
         for (let i = 0; i < SENTRY_REPORT_BURST_MAX_ATTEMPTS + 3; i++) {
-            searchMetrics.markIndexerError({ error: quotaError, taskUid: 'task-1', taskKind: TASK_KIND });
+            searchMetrics.markIndexerError({
+                decision: { kind: 'permanent', reason: 'quota_exceeded' },
+                error: quotaError,
+                taskUid: 'task-1',
+                taskKind: TASK_KIND,
+            });
         }
 
         expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 3);
@@ -131,7 +143,9 @@ describe('searchMetrics transient Sentry throttling', () => {
             expect.stringContaining('Search permanent error'),
             quotaError,
             expect.objectContaining({
-                tags: expect.objectContaining({ label: 'search-permanent-error' }),
+                // errorKind must be a tag, not just baked into the message string, so Sentry
+                // issues are filterable/facetable by it - not just human-readable.
+                tags: expect.objectContaining({ label: 'search-permanent-error', errorKind: 'quota_exceeded' }),
             })
         );
     });
@@ -226,5 +240,55 @@ describe('searchMetrics node-quarantine Sentry throttling', () => {
         // Same UID string used as a populator UID still gets its own fresh quarantine budget.
         triggerQuarantine('shared-uid');
         expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1);
+    });
+});
+
+describe('searchMetrics markIndexerError decision handling', () => {
+    beforeEach(() => {
+        sendErrorReportMock.mockClear();
+        permanentCounter.mockClear();
+        transientCounter.mockClear();
+    });
+
+    it('uses the supplied decision, not the (bridge-degraded) error, to pick the counter', () => {
+        // Simulates what Comlink does to the error on its way out of the SharedWorker: the
+        // subclass prototype and the custom `name` are both lost, so no `instanceof` or
+        // name-based check in classifyError could recover the kind on the main thread.
+        const degraded = structuredClone(new SearchLibraryError('Unable to upsert node', null));
+        expect(degraded).not.toBeInstanceOf(SearchLibraryError);
+        expect(degraded.name).toBe('Error');
+
+        searchMetrics.markIndexerError({
+            decision: { kind: 'permanent', reason: 'search_library_error' },
+            error: degraded,
+            taskUid: 'task-1',
+            taskKind: TASK_KIND,
+        });
+
+        expect(permanentCounter).toHaveBeenCalledWith({ errorKind: 'search_library_error' });
+        expect(transientCounter).not.toHaveBeenCalled();
+        expect(sendErrorReportMock).toHaveBeenCalledWith(
+            'Search permanent error (search_library_error)',
+            degraded,
+            expect.objectContaining({
+                tags: expect.objectContaining({ label: 'search-permanent-error', errorKind: 'search_library_error' }),
+            })
+        );
+    });
+
+    it('keeps the transient reason supplied by the worker instead of re-deriving it', () => {
+        // An offline error is detected by `name`, which structured clone also destroys.
+        const degraded = structuredClone(Object.assign(new Error('offline'), { name: 'OfflineError' }));
+        expect(degraded.name).toBe('Error');
+
+        searchMetrics.markIndexerError({
+            decision: { kind: 'transient', reason: 'offline' },
+            error: degraded,
+            taskUid: 'task-1',
+            taskKind: TASK_KIND,
+        });
+
+        expect(transientCounter).toHaveBeenCalledWith({ kind: 'offline' });
+        expect(permanentCounter).not.toHaveBeenCalled();
     });
 });
