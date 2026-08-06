@@ -6,8 +6,10 @@ import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { getTestPlans } from '@proton/testing/data/payments/data-plans';
-import { hookWrapper } from '@proton/testing/lib/context/hocs';
-import { withApi, withConfig, withReduxStore } from '@proton/testing/lib/context/providers';
+import { hookWrapper } from '@proton/testing/lib/context/hocs/helpers';
+import { withApi } from '@proton/testing/lib/context/hocs/with-api';
+import { withConfig } from '@proton/testing/lib/context/hocs/with-config';
+import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
 
 import { useSubscriptionPriceComparison } from './helper';
 
