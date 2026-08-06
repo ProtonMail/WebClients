@@ -1,4 +1,5 @@
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
+import { selectCategoryUnreadCount } from '@proton/mail/store/categoriesView/categoriesViewSelector';
 import { useSystemFolders } from '@proton/mail/store/labels/hooks';
 import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -6,7 +7,6 @@ import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { selectLabelIDUnreadCount } from 'proton-mail/hooks/mailboxCounter/useMaiboxCounter.selector';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { TabState } from './tabsInterface';
@@ -21,7 +21,7 @@ export const useCategoriesBadge = ({ category, tabState }: Props) => {
     const [systemFolders] = useSystemFolders();
 
     const disabledCategoriesIDs = useMailSelector(selectDisabledCategoriesIDs);
-    const count = useMailSelector((state) => selectLabelIDUnreadCount(state, category.id)).count;
+    const count = useMailSelector((state) => selectCategoryUnreadCount(state, category.id).count);
 
     const isUnseenBadgeEnabled = useFlag('MailRecordLastUnseenIncomingMessageEventID');
 
