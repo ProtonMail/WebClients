@@ -74,8 +74,7 @@ export interface GroupsManagementReturn {
     addressEmailToMemberMap: { [key: string]: EnhancedMember | undefined };
     groupRolesMap: { [groupID: string]: RoleAssignment[] | undefined };
     getSerializedGroup: () =>
-        | { type: GROUPS_STATE.NEW | GROUPS_STATE.EDIT; payload: SerializedGroupFormData }
-        | undefined;
+        { type: GROUPS_STATE.NEW | GROUPS_STATE.EDIT; payload: SerializedGroupFormData } | undefined;
     actions: {
         onDiscardChanges: () => void;
         onSaveGroup: () => Promise<void>;
