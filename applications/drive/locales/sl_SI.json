@@ -1536,47 +1536,6 @@
         "Letno"
       ]
     },
-    "BOSS": {
-      "Calendar": [
-        "Koledar"
-      ],
-      "Contacts": [
-        "Stiki"
-      ],
-      "Has errors": [
-        "Ima napake"
-      ],
-      "In progress": [
-        "V obdelavi"
-      ],
-      "Organization does not have enough seats available": [
-        "Organizacija nima na voljo dovolj sedežev"
-      ],
-      "Status": [
-        "Stanje"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tega uporabnika ni mogoče prenesti zaradi nezdružljivosti platform."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Če želite tega uporabnika prenesti, morajo sprejeti njihovo povabilo k pridružitvi ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Če želite tega uporabnika prenesti, ga odstranite iz arhiva v Google Workspace administratorski konzoli."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Namizna aplikacija"
@@ -3492,6 +3451,9 @@
       "Invalid public key file": [
         "Neveljavna datoteka z javnim ključem"
       ],
+      "Invalid URL": [
+        "Neveljaven URL"
+      ],
       "Invalid VAT number": [
         "Neveljavna DDV številka"
       ],
@@ -3686,6 +3648,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nekatera imena vaših oznak presegajo največje dovoljeno število znakov za ${ MAIL_APP_NAME }. Prilagodite uvoz za urejanje teh imen."
+      ],
+      "Something went wrong": [
+        "Nekaj je šlo narobe"
       ],
       "Something went wrong during folder listing": [
         "Nekaj je šlo narobe med seznamom map"
@@ -5638,9 +5603,6 @@
       "Key fingerprint": [
         "Ključ prstnega odtisa naprave"
       ],
-      "Keys created": [
-        "Ključi so bili ustvarjeni."
-      ],
       "Label all imported messages as": [
         "Označi vsa uvožena sporočila kot"
       ],
@@ -6369,9 +6331,6 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "S tem obrazcem nas obvestite o neprimernih, nezakonitih,\nali kako drugače zlonamernih datotekah v skupni rabi. Prijavili boste:"
-      ],
-      "User activated": [
-        "Uporabnik je aktiviran."
       ],
       "username": [
         "uporabniško ime"
