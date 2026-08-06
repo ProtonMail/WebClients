@@ -71,20 +71,20 @@ export const useCategoriesTelemetry = () => {
             });
         };
 
+        /**
+         * `isCategoryUnseen` tells whether the category was showing the unseen badge
+         * at the time of the navigation. Only the tabs display that badge, so callers that
+         * navigate from elsewhere (sidebar, commander, shortcuts) omit it and we report 'n/a'.
+         */
         const sendReportCategoriesNav = async (
             navSource: CategoriesClickSource,
             categoryId: CategoryLabelID,
-            isCategoryUnseen: boolean | 'n/a'
+            isCategoryUnseen?: boolean
         ) => {
             const { count } = selectCategoryUnreadCount(store.getState(), categoryId);
             const mailSettings = await getMailSettings();
 
-            let isUnseen: 'n/a' | 'true' | 'false';
-            if (isCategoryUnseen === 'n/a') {
-                isUnseen = 'n/a';
-            } else {
-                isUnseen = isCategoryUnseen ? 'true' : 'false';
-            }
+            const isUnseen = isCategoryUnseen === undefined ? 'n/a' : String(isCategoryUnseen);
 
             void sendReport(
                 TelemetryCategoriesOnboardingEvents.category_nav,
