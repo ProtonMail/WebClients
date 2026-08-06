@@ -84,8 +84,12 @@ export const WaitingRoomTab = ({ setIsScrolled, searchExpression }: Props) => {
             <div className="waiting-room-tab-footer absolute bottom-0 left-0 w-full p-4">
                 <Button
                     className="secondary w-full rounded-full px-8 py-3"
-                    disabled={canAdmitAll}
+                    disabled={!canAdmitAll}
                     onClick={() => {
+                        if (!canAdmitAll) {
+                            return;
+                        }
+
                         void withAdmitAllLoading(admitAll());
                     }}
                     loading={admitAllLoading}
