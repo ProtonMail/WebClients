@@ -1520,8 +1520,7 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
+        "Luota avaimeen"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -5506,6 +5505,21 @@
       ],
       "Something went wrong": [
         "Jotain meni pieleen"
+      ],
+      "Invitation not found": [
+        "Kutsua ei löytynyt"
+      ],
+      "Item not found": [
+        "Kohdetta ei löytynyt"
+      ],
+      "Name must not be empty": [
+        "Nimi ei voi olla tyhjä"
+      ],
+      "Photo not found": [
+        "Kuvaa ei löytynyt"
+      ],
+      "Signature is missing": [
+        "Allekirjoitus puuttuu"
       ]
     },
     "error": {
@@ -6037,6 +6051,12 @@
       ],
       "Unread": [
         "Lukematon"
+      ],
+      "All": [
+        "Kaikki"
+      ],
+      "Errors": [
+        "Virheet"
       ]
     },
     "Filter Actions": {
@@ -7845,7 +7865,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -9339,6 +9360,12 @@
       "Read ${ count } email on screen": [
         "Lue ${ count } sähköposti näytöltä",
         "Lue ${ count } sähköpostia näytöltä"
+      ],
+      "Move here": [
+        "Siirrä tänne"
+      ],
+      "You": [
+        "Sinä"
       ]
     },
     "info": {
@@ -10534,6 +10561,12 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15371,6 +15404,12 @@
       ],
       "Size": [
         "Koko"
+      ],
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
+      "User": [
+        "Käyttäjä"
       ]
     },
     "TableHeader": {
@@ -17208,6 +17247,14 @@
       ],
       "Migrated": [
         "Siirretty"
+      ]
+    },
+    "Property": {
+      "key": [
+        "avain"
+      ],
+      "name": [
+        "nimi"
       ]
     }
   }

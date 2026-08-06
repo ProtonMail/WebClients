@@ -1718,6 +1718,9 @@
       ],
       "Yes, organize it": [
         "是，立即整理"
+      ],
+      "Migrate": [
+        "迁移"
       ]
     },
     "action": {
@@ -5482,6 +5485,9 @@
       ],
       "Something went wrong": [
         "出了些问题"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
       ]
     },
     "error": {
@@ -9255,6 +9261,24 @@
       ],
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "您在 ${ categoryLabel } 分类中已选 **${ checked } 封邮件**"
+      ],
+      "Read ${ count } email": [
+        "读取 ${ count } 封邮件"
+      ],
+      "Read ${ count } message in this thread": [
+        "读取话题中的 ${ count } 条消息"
+      ],
+      "Read your ${ count } filter": [
+        "读取您的 ${ count } 筛选"
+      ],
+      "Read your ${ count } folder": [
+        "读取您的 ${ count } 文件夹"
+      ],
+      "Read your ${ count } label": [
+        "读取您的 ${ count } 标签"
+      ],
+      "You": [
+        "您"
       ]
     },
     "info": {
@@ -16972,6 +16996,11 @@
       ],
       "Migrated": [
         "已迁移"
+      ]
+    },
+    "Property": {
+      "key": [
+        "密钥"
       ]
     }
   }
