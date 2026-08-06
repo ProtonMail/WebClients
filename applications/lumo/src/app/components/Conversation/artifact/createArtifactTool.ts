@@ -15,16 +15,15 @@ export const createArtifactToolExecutor: ClientToolExecutor = {
                     'Show a code snippet or document to the user in a dedicated side panel, instead of ' +
                     'inline in the chat. This does not change what you write, only where it is shown — it ' +
                     'applies to ordinary writing tasks too, not just code: a drafted email, letter, cover ' +
-                    'letter, essay, or report is a "document" for this tool just as much as a script is. Use ' +
-                    'it for substantial, self-contained content the user is likely to copy, send, or reuse — ' +
-                    'even if they never say "artifact" or "panel" and only asked you to "write" or "draft" ' +
-                    'something. Do NOT use it for short code snippets (1-2 lines) used to illustrate a point, ' +
-                    'brief structured answers (a small table, a short list), or content that only makes ' +
-                    'sense as part of your explanation — write those inline instead. To revise something you ' +
-                    'already created earlier in this conversation, call this again with the exact same `id` ' +
-                    'and the full updated content (never a diff or partial update); use a new `id` only for ' +
-                    "a genuinely new, unrelated artifact. If the user's message references an artifact by " +
-                    'its id, reuse that same id. Write a brief intro in your reply before calling this.',
+                    'letter, essay, or report is a "document" for this tool just as much as a script is. Do ' +
+                    'NOT use it for short code snippets (1-2 lines) used to illustrate a point, brief ' +
+                    'structured answers (a small table, a short list), or content that only makes sense as ' +
+                    'part of your explanation — write those inline instead. To revise something you ' +
+                    'already created earlier in this conversation, call this again with the exact same ' +
+                    '`id` and the full updated content (never a diff or partial update); use a new `id` ' +
+                    "only for a genuinely new, unrelated artifact. If the user's message references an " +
+                    'artifact by its id, reuse that same id. Write a brief intro in your reply before ' +
+                    'calling this.',
                 parameters: {
                     type: 'object',
                     properties: {
