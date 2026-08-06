@@ -2,12 +2,11 @@ import { c } from 'ttag';
 
 import { updateBYOEAddressConnection } from '@proton/account/addressKeys/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { isMultiUserPersonalPlan } from '@proton/payments/core/plan/helpers';
+import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
@@ -27,15 +26,15 @@ const DisconnectBYOEModal = ({ address, ...rest }: Props) => {
     const dispatch = useDispatch();
     const easySwitchDispatch = useEasySwitchDispatch();
     const [user] = useUser();
-    const [organization] = useOrganization();
+    const [entitlements, loadingEntitlements] = useEntitlementChecks();
     const [addresses] = useAddresses();
 
-    // The disable request needs the organisation scope, which non-admin members of a family plan
+    // The disable request needs the organisation scope, which non-admin members of an organisation
     // don't have. It's also impossible to disable your only address. In both cases the disconnect
     // runs without the disable step.
     const isBYOEOnlyAccount = getIsBYOEOnlyAccount(addresses);
-    const isFamilyMember = !!organization?.PlanName && isMultiUserPersonalPlan(organization.PlanName) && !isAdmin(user);
-    const skipDisable = isBYOEOnlyAccount || isFamilyMember;
+    const isOrganisationMember = entitlements.orgIsMultiUser && !isAdmin(user);
+    const skipDisable = isBYOEOnlyAccount || isOrganisationMember;
 
     const handleSubmit = async () => {
         await dispatch(updateBYOEAddressConnection({ address, type: 'disconnect', skipDisable }));
@@ -70,7 +69,7 @@ const DisconnectBYOEModal = ({ address, ...rest }: Props) => {
                     color="danger"
                     className="w-full inline-flex items-center justify-center gap-2"
                     onClick={() => withLoading(handleSubmit)}
-                    loading={loading}
+                    loading={loading || loadingEntitlements}
                 >
                     {c('Action').t`Disconnect`}
                 </Button>
