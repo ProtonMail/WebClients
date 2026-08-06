@@ -1025,6 +1025,36 @@
       ],
       "New folder": [
         "Nová složka"
+      ],
+      "Download debug information": [
+        "Stáhnout informace o ladění"
+      ],
+      "Export editor state for version": [
+        "Exportovat stav editoru pro verzi"
+      ],
+      "Export this version (as docx)": [
+        "Exportovat tuto verzi (jako docx)"
+      ],
+      "Export YJS state for version": [
+        "Exportovat stav YJS pro verzi"
+      ],
+      "Reject": [
+        "Odmítnout"
+      ],
+      "Reload spreadsheet": [
+        "Znovu načíst tabulku"
+      ],
+      "Report issue": [
+        "Nahlásit problém"
+      ],
+      "Send": [
+        "Odeslat"
+      ],
+      "Try Workspace": [
+        "Vyzkoušet Workspace"
+      ],
+      "Verify now": [
+        "Ověřit nyní"
       ]
     },
     "Action subscription": {
@@ -1130,6 +1160,30 @@
         "${ seats } ${ MEET_APP_NAME } licence",
         "${ seats } ${ MEET_APP_NAME } licencí",
         "${ seats } ${ MEET_APP_NAME } licencí"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatele)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatele)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatelů)",
+        "${ BRAND_NAME } Scribe asistent psaní (pro ${ quantity } uživatelů)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatele)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatele)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatelů)",
+        "${ LUMO_APP_NAME } AI asistent (pro ${ quantity } uživatelů)"
+      ],
+      "${ price } per seat": [
+        "${ price } za licenci"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } vlastní doména",
+        "${ quantity } vlastní domény",
+        "${ quantity } vlastních domén",
+        "${ quantity } vlastních domén"
       ]
     },
     "Alert": {
@@ -2575,6 +2629,9 @@
       ],
       "Åland Islands": [
         "Ålandské ostrovy"
+      ],
+      "Canary Islands": [
+        "Kanárské ostrovy"
       ]
     },
     "Cycle": {
@@ -2785,6 +2842,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Váš bezplatný účet ${ MAIL_APP_NAME } má omezené úložiště, takže naimportujeme pouze vaše nejnovější e-maily z Gmailu."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pro bezproblémové zahájení používání ${ BRAND_NAME } vaším týmem importujte data ze služeb Google, Outlook a dalších."
       ]
     },
     "description": {
@@ -3662,6 +3722,33 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
+      ],
+      "Failed to load 'My files' folder": [
+        "Složku „Moje soubory“ se nepodařilo načíst"
+      ],
+      "Failed to load recent documents": [
+        "Načtení posledních dokumentů selhalo"
+      ],
+      "Failed to rename document": [
+        "Přejmenování dokumentu selhalo"
+      ],
+      "Invalid URL": [
+        "Neplatná URL"
+      ],
+      "No drive found to import": [
+        "Nebyl nalezen žádný disk k importu"
+      ],
+      "Some trashed documents could not be loaded": [
+        "Některé dokumenty v koši se nepodařilo načíst"
+      ],
+      "Something went wrong": [
+        "Něco se pokazilo"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Neočekávaná chyba, soubory nelze importovat"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Pomocí této metody se nám nepodařilo odeslat ověřovací kód."
       ]
     },
     "Error importing calendar": {
@@ -4085,6 +4172,9 @@
       ],
       "Security key": [
         "Bezpečnostní klíč"
+      ],
+      "Touch your security key.": [
+        "Dotkněte se svého bezpečnostního klíče."
       ]
     },
     "fido2: Label": {
@@ -6254,16 +6344,76 @@
         "Nelze zapisovat do složky"
       ],
       "Included": [
-        "Včetně"
+        "Zahrnuto"
       ],
       "Select a destination folder": [
         "Vyberte cílovou složku"
       ],
       "Upgrade anytime to bring over the rest": [
-        "Kdykoli upgradujte, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet, abyste přenesli i zbytek"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
+        "Navyšte účet nebo uvolněte místo, abyste přenesli i zbytek"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pozvěte své přátele** do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Získají ${ refereeRewardAmount }** v kreditech, pokud si pořídí předplatné."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Získáte ${ referrerRewardAmount }** kreditů za každého přítele, který si pořídí předplatné."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Vytvořte bezpečný cloud pro ${ memberCount } člena",
+        "Vytvořte bezpečný cloud pro ${ memberCount } členy",
+        "Vytvořte bezpečný cloud pro ${ memberCount } členů",
+        "Vytvořte bezpečný cloud pro ${ memberCount } členů"
+      ],
+      "Details": [
+        "Podrobnosti"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Pamatujete si své heslo? ${ verifyButton }"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Pouze soubory (žádné fotky, ${ DOCS_APP_NAME } nebo ${ SHEETS_APP_NAME }) – celkem do 100 GB, 100 000 souborů a 50 GB na soubor"
+      ],
+      "Forgot password?": [
+        "Zapomněli jste heslo?"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Získejte profesionální e-mail s adresou @vasespolecnost.com, 1 TB zabezpečeného úložiště na jednoho uživatele, delší videohovory a další výhody se službou ${ BRAND_NAME } Workspace."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Pomozte nám tuto zkušenost vylepšit nahlášením problému. Pokud vám nevadí sdílet obsah tabulky, přiložte k hlášení níže uvedené informace o ladění."
+      ],
+      "Hide table of contents": [
+        "Skrýt obsah"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "A jéje! V této tabulce nelze uložit vaše nejnovější úpravy, proto jsme úpravy pozastavili, abychom zabránili ztrátě vaší práce."
+      ],
+      "Password verified": [
+        "Heslo ověřeno"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vyberte štítky, které chcete importovat:"
+      ],
+      "Show table of contents": [
+        "Zobrazit obsah"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Abychom vám pomohli zapamatovat si vaše heslo, budeme vás žádat o jeho pravidelné zadávání. Časem budeme tyto žádosti omezovat."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Důvěřujte klíči \"${ activeSignerText }\" pro ověření nových zpráv od tohoto kontaktu."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Později vám připomeneme, abyste si znovu ověřili své heslo"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Aktuálně jste přihlášeni jako ${ username } pro organizaci ${ organizationName }."
       ]
     },
     "info": {
@@ -6360,6 +6510,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktivní podepisovatel"
+      ],
+      "Fallback": [
+        "Záložní"
       ]
     },
     "Label": {
@@ -6944,6 +7100,36 @@
       ],
       "Skip feedback": [
         "Přeskočit zpětnou vazbu"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znaků"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Exact host matching": [
+        "Shoda přesného hostitele"
+      ],
+      "Exact URL matching": [
+        "Shoda přesné URL"
+      ],
+      "Never fill on this exact URL": [
+        "Nikdy nevyplňovat na této přesné URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadřazená doména a subdomény (výchozí)"
+      ],
+      "Regular expression": [
+        "Regulární výraz"
+      ],
+      "Starts with": [
+        "Začíná na"
+      ],
+      "Unknown user": [
+        "Neznámý uživatel"
+      ],
+      "URL wildcard pattern": [
+        "Vzor URL se zástupnými znaky"
       ]
     },
     "Label for contact group color": {
@@ -7229,6 +7415,24 @@
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Bezplatná zkušební verze skončila. ${ nonAutoRenewalAction }"
+      ],
+      "'Starts with' matching rule": [
+        "Pravidlo shody „Začíná na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo pro shodu přesné (sub)domény"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo shody přesné URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevyplňovat s touto přesnou URL"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárního výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo shody se vzorem se zástupnými znaky"
       ]
     },
     "Message display when a new app version is available": {
@@ -8090,6 +8294,15 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN s blokováním reklam a ochranou proti malware"
+      ],
+      "Access all countries": [
+        "Přístup ke všem zemím"
+      ],
+      "No streaming support": [
+        "Bez podpory streamování"
+      ],
+      "Unlock streaming": [
+        "Odemkněte streamování"
       ]
     },
     "new_plans: feature highlight": {
@@ -8538,6 +8751,12 @@
         "Podpora ${ n } vlastních e-mailových domén",
         "Podpora ${ n } vlastních e-mailových domén",
         "Podpora ${ n } vlastních e-mailových domén"
+      ],
+      "${ n } country": [
+        "${ n } země",
+        "${ n } země",
+        "${ n } zemí",
+        "${ n } zemí"
       ]
     },
     "Notification": {
@@ -8855,6 +9074,18 @@
         "${ numberOfItems } položky přesunuty",
         "${ numberOfItems } položek přesunuto",
         "${ numberOfItems } položek přesunuto"
+      ],
+      "Document moved to trash": [
+        "Dokument byl přesunut do koše"
+      ],
+      "Document restored from trash": [
+        "Dokument byl obnoven z koše"
+      ],
+      "Failed to load sharing details": [
+        "Nepodařilo se načíst podrobnosti o sdílení"
+      ],
+      "Failed to rename document": [
+        "Přejmenování dokumentu selhalo"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9191,6 +9422,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Doporučujeme, abyste u tohoto klíče zvolili \"Nedůvěřovat\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Tento kontakt v současnosti podepisuje zprávy tímto klíčem"
+      ],
+      "This key is used for message verification": [
+        "Tento klíč se používá k ověření zpráv"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Tento klíč se používá k šifrování zpráv tomuto kontaktu ve starších aplikacích"
       ]
     },
     "PGP key warning": {
@@ -9291,6 +9531,9 @@
       ],
       "Search": [
         "Vyhledat"
+      ],
+      "Search for users or addresses": [
+        "Hledat uživatele nebo adresy"
       ]
     },
     "Placeholder for contact group name": {
@@ -10483,6 +10726,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Size": [
+        "Velikost"
       ]
     },
     "TableHeader": {
@@ -11271,6 +11517,24 @@
       ],
       "You are all set": [
         "Vše je nastaveno"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent psaní ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Editing paused": [
+        "Úpravy jsou pozastaveny"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrujte svou organizaci do ${ BRAND_NAME }"
+      ],
+      "Users and addresses": [
+        "Uživatelé a adresy"
+      ],
+      "Verify your password": [
+        "Ověřte své heslo"
       ]
     },
     "Title subscription": {
@@ -11376,6 +11640,12 @@
       ],
       "Change shared item settings": [
         "Změnit nastavení sdílených položek"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Okamžitá asistence AI, lidský expert po ruce!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Klíč OpenPGP verze 6"
       ]
     },
     "tooltip": {
@@ -11649,6 +11919,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše zkušební verze skončí ${ textDate }. Pokud ji zrušíte před ${ textDate }, nebudou vám účtovány žádné poplatky. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Pravidlo ${ modeLabelStong } poskytuje silnou kontrolu, ale jediná chyba může způsobit, že automatické vyplňování porovná a vyplní údaje na podvodných nebo phishingových webech."
       ]
     },
     "Autocomplete": {
@@ -11665,6 +11938,21 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Po konci zkušební doby ${ formattedDate1 } začne placené předplatné, které se automaticky obnovuje každý měsíc. Pokud předplatné zrušíte před ${ formattedDate2 }, nebudou vám účtovány žádné poplatky."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_DEDICATED_IPS } vyhrazený server během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_LUMO_SEATS } licencí ${ LUMO_SHORT_APP_NAME } během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_SCRIBE_SEATS } licencí Scribe během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_USERS } uživatelů během zkušební doby."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Ve zkušební verzi nelze přidávat vlastní domény."
       ]
     },
     "b2b_trials_Action": {
@@ -12578,6 +12866,12 @@
         "${ seats } ${ MEET_APP_NAME } licence",
         "${ seats } ${ MEET_APP_NAME } licencí",
         "${ seats } ${ MEET_APP_NAME } licencí"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatele)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatele)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatelů)",
+        "${ MEET_APP_NAME } (pro ${ quantity } uživatelů)"
       ]
     },
     "Provider option": {
@@ -12708,6 +13002,66 @@
       ],
       "SUMMER SALE": [
         "LETNÍ VÝPRODEJ"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Probíhá"
+      ],
+      "Migrated": [
+        "Migrováno"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_MEET_SEATS } licencí ${ MEET_SHORT_APP_NAME } během zkušební doby."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Vlastník"
+      ],
+      "Security Admin": [
+        "Správce zabezpečení"
+      ],
+      "User Admin": [
+        "Správce uživatelů"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Spravujte všechny uživatele, skupiny, zabezpečení, fakturaci a systémové konfigurace."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Spravujte uživatele, skupiny a úložiště pro všechny členy, přiřazujte role a přidělujte licence."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Akce"
+      ],
+      "Created": [
+        "Vytvořeno"
+      ],
+      "Expires": [
+        "Vyprší"
+      ],
+      "Fingerprint": [
+        "Digitální otisk"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Jakmile uživatel přijme pozvánku, budete mu moci přiřadit role."
       ]
     }
   }

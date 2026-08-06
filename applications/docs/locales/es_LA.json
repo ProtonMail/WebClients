@@ -1030,6 +1030,36 @@
       ],
       "Verify now": [
         "Verificar ahora"
+      ],
+      "Clear conversation": [
+        "Borrar la conversación"
+      ],
+      "Download debug information": [
+        "Descargar información de depuración"
+      ],
+      "Export editor state for version": [
+        "Exportar estado del editor para la versión"
+      ],
+      "Export this version (as docx)": [
+        "Exportar esta versión (como docx)"
+      ],
+      "Export YJS state for version": [
+        "Exportar estado YJS para la versión"
+      ],
+      "Reject": [
+        "Rechazar"
+      ],
+      "Reload spreadsheet": [
+        "Recargar hoja de cálculo"
+      ],
+      "Report issue": [
+        "Reportar problema"
+      ],
+      "Send": [
+        "Enviar"
+      ],
+      "Stop": [
+        "Detener"
       ]
     },
     "Action subscription": {
@@ -1119,6 +1149,28 @@
       ],
       "Writing assistant seats": [
         "Licencias del asistente de escritura"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuario)",
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuarios)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asistente de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuario)",
+        "Asistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuario)",
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "${ price } per seat": [
+        "${ price } por licencia"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } dominio personalizado",
+        "${ quantity } dominios personalizados"
       ]
     },
     "Alert": {
@@ -1137,6 +1189,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ BRAND_NAME } Scribe le ayude a escribir, responder y revisar sus correos electrónicos."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ LUMO_SHORT_APP_NAME } le ayude a escribir, responder y revisar sus correos electrónicos."
       ]
     },
     "Attached ics file error": {
@@ -1369,6 +1424,13 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Inicios de sesión seguros en todos sus dispositivos. Incluye un número ilimitado de alias de hide-my-email, uso compartido, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } y mucho más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos electrónicos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más.",
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más."
       ]
     },
     "Billing cycle": {
@@ -1506,6 +1568,9 @@
       ],
       "Maybe later": [
         "Quizás más tarde"
+      ],
+      "Get 50% offer": [
+        "Obtener oferta del 50%"
       ]
     },
     "Cancellation upsell": {
@@ -3637,6 +3702,30 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ha utilizado todos los usuarios en el plan. Mejore el plan para agregar un usuario nuevo."
+      ],
+      "Failed to rename document": [
+        "Error al cambiar el nombre del documento"
+      ],
+      "Failed to trash document": [
+        "Error al enviar el documento a la papelera"
+      ],
+      "Invalid URL": [
+        "URL inválida"
+      ],
+      "No drive found to import": [
+        "No se encontró ninguna unidad para importar"
+      ],
+      "Some documents could not be loaded": [
+        "No se pudieron cargar algunos documentos"
+      ],
+      "Something went wrong": [
+        "Ocurrió un error."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Error inesperado, no se pueden importar los archivos"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No pudimos enviar un código de verificación usando este método."
       ]
     },
     "Error importing calendar": {
@@ -4056,6 +4145,9 @@
       ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Touch your security key.": [
+        "Toque su llave de seguridad."
       ]
     },
     "fido2: Label": {
@@ -6180,6 +6272,61 @@
       ],
       "We'll remind you to verify your password again later": [
         "Le recordaremos nuevamente que verifique su contraseña después"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Acceda a más de 20 000 servidores en 145 países"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crear una nube segura para ${ memberCount } miembro",
+        "Crear una nube segura para ${ memberCount } miembros"
+      ],
+      "Details": [
+        "Detalles"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Velocidades VPN más rápidas de hasta 10 Gbps"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Tenga más tiempo para decidir sin interrupciones."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Ayúdenos a mejorar esta experiencia informando del problema. Si está de acuerdo en compartir el contenido de la hoja de cálculo, adjunte la información de depuración que aparece a continuación a su informe."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Ayúdenos a mejorar esta experiencia informando del problema. Adjunte la información de depuración que aparece a continuación a su informe."
+      ],
+      "Hide table of contents": [
+        "Ocultar tabla de contenidos"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Si cancela ahora, perderá acceso a ${ BRAND_NAME }${ planTitle } el ${ expiryDate }, incluyendo estas funciones:"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "¡Ups! Esta hoja de cálculo no puede guardar sus últimas ediciones así que hemos pausado la edición para evitar que pierda su trabajo."
+      ],
+      "Premium privacy protection across all your devices": [
+        "Protección de privacidad premium en todos sus dispositivos"
+      ],
+      "Show table of contents": [
+        "Mostrar tabla de contenidos"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Quédese en su plan y obtenga un 50% de descuento en su próximo mes"
+      ],
+      "Thinking about this": [
+        "Pensando sobre esto"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Hemos detectado que anteriormente tuvo problemas al abrir un documento."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente inició sesión como ${ username } en (${ organizationName }."
       ]
     },
     "info": {
@@ -6869,6 +7016,42 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } caracteres"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Permita que los editores cambien permisos y compartan."
+      ],
+      "Client": [
+        "Cliente"
+      ],
+      "Client version": [
+        "Versión del cliente"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Exact host matching": [
+        "Coincidencia de host exacta"
+      ],
+      "Exact URL matching": [
+        "Coincidencia de URL exacta"
+      ],
+      "Never fill on this exact URL": [
+        "Nunca completar esta URL exacta"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
+      ],
+      "Regular expression": [
+        "Expresión regular"
+      ],
+      "Starts with": [
+        "Comienza con"
+      ],
+      "Unknown user": [
+        "Usuario desconocido"
+      ],
+      "URL wildcard pattern": [
+        "Patrón comodín de URL"
       ]
     },
     "Label for contact group color": {
@@ -7110,6 +7293,9 @@
       ],
       "Add-on with free trial": [
         "Complemento con prueba gratuita"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "mailtrial2024: Action": {
@@ -7144,6 +7330,24 @@
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Su prueba gratuita ha finalizado. ${ nonAutoRenewalAction }"
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidencia «Comienza con»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia de (sub)dominio exacto"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia de URL exacta"
+      ],
+      "Never fill with this exact URL": [
+        "Nunca completar con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón comodín"
       ]
     },
     "Message display when a new app version is available": {
@@ -8021,6 +8225,9 @@
       ],
       "Unlock streaming": [
         "Desbloquear streaming"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -8742,6 +8949,36 @@
       "${ numberOfItems } item moved": [
         "${ numberOfItems } elemento movido",
         "${ numberOfItems } elementos movidos"
+      ],
+      "\"Document deleted permanently": [
+        "«Documento eliminado de forma permanente"
+      ],
+      "Document moved to trash": [
+        "Documento movido a la papelera"
+      ],
+      "Document restored from trash": [
+        "Documento restaurado de la papelera"
+      ],
+      "Failed to delete document": [
+        "Error al eliminar el documento"
+      ],
+      "Failed to load invitations": [
+        "Error al cargar las invitaciones"
+      ],
+      "Failed to load sharing details": [
+        "Error al cargar los detalles de uso compartido"
+      ],
+      "Failed to reject invitation": [
+        "Error al rechazar la invitación"
+      ],
+      "Failed to rename document": [
+        "Error al cambiar el nombre del documento"
+      ],
+      "Failed to restore document": [
+        "Error al restaurar el documento"
+      ],
+      "Failed to trash document": [
+        "Error al enviar el documento a la papelera"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9172,6 +9409,9 @@
       ],
       "Search for users or addresses": [
         "Buscar usuarios o direcciones"
+      ],
+      "Ask anything…": [
+        "Pregunte cualquier cosa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -9818,6 +10058,12 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "Para editar este documento, cree una copia que pueda modificar."
+      ],
+      "Editor permissions": [
+        "Permisos de editor"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Ahora los editores pueden gestionar la opción de compartir e invitar a otros. Puede desactivarla en cualquier momento en los ajustes de Compartir."
       ]
     },
     "sso": {
@@ -10296,6 +10542,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Size": [
+        "Tamaño"
       ]
     },
     "TableHeader": {
@@ -11068,6 +11317,24 @@
       ],
       "You are all set": [
         "Ya está todo listo"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Editing paused": [
+        "Edición pausada"
+      ],
+      "Problems Detected": [
+        "Problemas detectados"
+      ],
+      "Stay for 50% off your next month": [
+        "Quédese y obtenga un 50% de descuento en su próximo mes"
+      ],
+      "Users and addresses": [
+        "Usuarios y direcciones"
       ]
     },
     "Title subscription": {
@@ -11173,6 +11440,12 @@
       ],
       "Change shared item settings": [
         "Cambiar ajustes de archivos compartidos"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "¡Asistencia IA inmediata, experto humano a su disposición!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Clave OpenPGP versión 6"
       ]
     },
     "tooltip": {
@@ -11412,6 +11685,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Su prueba finalizará el ${ textDate }. No se le cobrará si cancela antes del ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } brinda un control potente, pero un solo error puede provocar que la función de autocompletar coincida con datos de sitios web fraudulentos o de suplantación y los complete automáticamente."
       ]
     },
     "Autocomplete": {
@@ -11426,6 +11702,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Cuando finalice la prueba el ${ formattedDate1 }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se le cobrará nada si cancela antes del ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de ${ LUMO_SHORT_APP_NAME } durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias del asistente de escritura ${ LUMO_SHORT_APP_NAME } durante el periodo de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_USERS } usuarios durante el período de prueba."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "No puede agregar dominios personalizados durante el período de prueba."
       ]
     },
     "b2b_trials_Action": {
@@ -11738,6 +12032,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licencia de ${ MEET_APP_NAME }",
         "${ seats } licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } usuario)",
+        "${ MEET_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "${ price } per seat": [
+        "${ price } por licencia"
       ]
     },
     "meet_2025: Feature": {
@@ -12506,6 +12807,69 @@
       ],
       "SUMMER SALE": [
         "OFERTAS DE VERANO"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "En progreso"
+      ],
+      "Migrated": [
+        "Migrado"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_MEET_SEATS } licencias de ${ MEET_SHORT_APP_NAME } durante el período de prueba."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Propietario"
+      ],
+      "Security Admin": [
+        "Administrador de seguridad"
+      ],
+      "User Admin": [
+        "Administrador de usuarios"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure las políticas de seguridad, conservación de datos, infraestructura VPN y gestione registros de auditoría."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestione todos los usuarios, grupos, seguridad, facuración y configuraciones del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestione usuarios, grupos y almacenamiento para todos los miembros, asigne roles y licencias."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Created": [
+        "Creada"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Fingerprint": [
+        "Huella digital"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "Type": [
+        "Tipo"
+      ]
+    },
+    "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Actualice a un plan que admita usar roles de administrador."
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
       ]
     }
   }

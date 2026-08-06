@@ -1030,6 +1030,39 @@
       ],
       "Verify now": [
         "Verifiqueu-ho ara"
+      ],
+      "Clear conversation": [
+        "Netejar la conversa"
+      ],
+      "Download debug information": [
+        "Descarregueu la informació de depuració"
+      ],
+      "Export editor state for version": [
+        "Exportar l'estat de l'editor per a la versió"
+      ],
+      "Export this version (as docx)": [
+        "Exportar aquesta versió (com a docx)"
+      ],
+      "Export YJS state for version": [
+        "Exportar l'estat de YJS per a la versió"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Reject": [
+        "Rebutja"
+      ],
+      "Reload spreadsheet": [
+        "Torneu a carregar el full de càlcul"
+      ],
+      "Report issue": [
+        "Informeu d'un problema"
+      ],
+      "Send": [
+        "Enviar"
+      ],
+      "Stop": [
+        "Atura"
       ]
     },
     "Action subscription": {
@@ -1119,6 +1152,28 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistent d'IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ price } per seat": [
+        "${ price } per llicència"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domini personalitzat",
+        "${ quantity } dominis personalitzats"
       ]
     },
     "Alert": {
@@ -1137,6 +1192,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Porteu la productivitat del correu electrònic a nivells nous. Deixeu que ${ BRAND_NAME } Scribe us ajudi a escriure, respondre i corregir els correus electrònics. "
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Porteu la productivitat del correu electrònic a nous nivells. Deixeu que ${ LUMO_SHORT_APP_NAME } us ajudi a redactar, respondre i corregir els vostres correus electrònics."
       ]
     },
     "Attached ics file error": {
@@ -1364,6 +1422,13 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més.",
         "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protegiu els vostres correus i la vostra agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu personalitzats, l'assistent de redacció de ${ LUMO_SHORT_APP_NAME }, àlies hide-my-email il·limitats i molt més.",
+        "Protegiu els vostres correus i la vostra agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, suport per a dominis de correu personalitzats, l'assistent de redacció de ${ LUMO_SHORT_APP_NAME }, àlies hide-my-email il·limitats i molt més."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protegiu els vostres correus i la vostra agenda amb xifratge d’extrem a extrem. Inclou 15 adreces de correu, compatibilitat amb dominis de correu personalitzats, l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }, àlies de hide-my-email il·limitats i molt més."
       ]
     },
     "Billing cycle": {
@@ -1501,6 +1566,9 @@
       ],
       "Maybe later": [
         "Potser més tard"
+      ],
+      "Get 50% offer": [
+        "Aconseguiu una oferta del 50%"
       ]
     },
     "Cancellation upsell": {
@@ -3618,6 +3686,277 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Cal un missatge quan s'informa d'una infracció de drets d'autor o de dades robades"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "Bookmark password is not available": [
+        "La contrasenya del marcador de pàgina no està disponible"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "No es pot afegir la foto a l'àlbum sense un nom vàlid"
+      ],
+      "Cannot download a folder": [
+        "No es pot descarregar una carpeta"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "No es pot moure l'element sense un nom vàlid, canvieu-ne el nom primer"
+      ],
+      "Cannot share root folder": [
+        "No es pot compartir la carpeta arrel"
+      ],
+      "Cannot verify the author of this file": [
+        "No es pot verificar l'autoria d'aquest fitxer"
+      ],
+      "Cannot verify who uploaded this file": [
+        "No es pot verificar qui ha carregat aquest fitxer"
+      ],
+      "Copy operation aborted": [
+        "S'ha cancel·lat l'operació de còpia"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "No es permet copiar un element a un element que no sigui una carpeta"
+      ],
+      "Could not find an available name": [
+        "No s'ha pogut trobar cap nom disponible"
+      ],
+      "Could not load sharing details": [
+        "No s'han pogut carregar els detalls de l'acció de compartir."
+      ],
+      "Could not load the image preview: ${ message }": [
+        "No s'ha pogut carregar la vista prèvia de la imatge: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "No s'ha pogut llegir una part d'aquest fitxer: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "No s'ha pogut desbloquejar la carpeta principal"
+      ],
+      "Could not unlock this item": [
+        "No s'ha pogut desbloquejar aquest element"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "No es permet crear documents dins d'elements que no siguin carpetes"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "No es permet crear fitxers dins d'elements que no siguin carpetes"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "No es permet crear carpetes dins d'elements que no siguin carpetes"
+      ],
+      "Device not found": [
+        "No s'ha trobat el dispositiu"
+      ],
+      "Expiration date cannot be in the past": [
+        "La data de caducitat no pot ser en el passat"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "No s'ha pogut desxifrar la clau del marcador de pàgina: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "No s'ha pogut desxifrar la contrasenya de la marca de pàgina: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "No s'ha pogut desxifrar la clau de contingut: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "No s'ha pogut desxifrar el nom de l'element: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "No s'ha pogut desxifrar la clau del node: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "No s'han pogut desxifrar les metadades de la revisió"
+      ],
+      "Failed to get inviter keys": [
+        "No s'han pogut obtenir les claus de qui convida"
+      ],
+      "Failed to rename document": [
+        "No s'ha pogut canviar el nom del document"
+      ],
+      "Failed to trash document": [
+        "No s'ha pogut enviar el document a la paperera"
+      ],
+      "Failed to verify invitation": [
+        "No s'ha pogut verificar la invitació"
+      ],
+      "File download failed due to empty response": [
+        "Ha fallat la descàrrega del fitxer perquè la resposta era buida"
+      ],
+      "File has no revision": [
+        "El fitxer no té cap revisió"
+      ],
+      "Image preview not found": [
+        "No s’ha trobat la vista prèvia de la imatge"
+      ],
+      "Invalid URL": [
+        "L'URL no és vàlid."
+      ],
+      "Invitation not found": [
+        "No s'ha trobat la invitació"
+      ],
+      "Item not found": [
+        "No s'ha trobat l'element"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "L'enllaç públic heretat no es pot actualitzar. Creeu-ne un de nou."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "Missing inviter email": [
+        "Falta l'adreça electrònica de qui convida"
+      ],
+      "Missing organization private key": [
+        "Falta la clau privada de l'organització"
+      ],
+      "Missing organization public key": [
+        "Falta la clau pública de l'organització"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Falta la signatura per ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "S'ha cancel·lat l'operació de moviment"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "No es permet moure un element a un element que no sigui una carpeta"
+      ],
+      "Moving root item is not allowed": [
+        "No es permet moure l'element arrel"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "El nom ha de tenir com a màxim ${ MAX_NODE_NAME_LENGTH } caràcter",
+        "El nom ha de tenir com a màxim ${ MAX_NODE_NAME_LENGTH } caràcters"
+      ],
+      "Name must not be empty": [
+        "El nom no pot estar buit"
+      ],
+      "No drive found to import": [
+        "No s'ha trobat cap unitat per importar"
+      ],
+      "No file data was received. Please try again.": [
+        "No s'han rebut dades del fitxer. Torneu-ho a provar."
+      ],
+      "Only admins can convert external invitations": [
+        "Només els administradors poden convertir invitacions externes"
+      ],
+      "Operation aborted": [
+        "S'ha cancel·lat l'operació"
+      ],
+      "Operation failed, try again later": [
+        "Ha fallat l'operació, torneu-ho a provar més tard"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organització no té prou llicències disponibles"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organització no té prou espai d'emmagatzematge disponible"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Sembla que una part del fitxer està malmesa"
+      ],
+      "Photo is already in the target album": [
+        "La foto ja és a l'àlbum de destí"
+      ],
+      "Photo not found": [
+        "No s’ha trobat la foto"
+      ],
+      "Renaming root item is not allowed": [
+        "No es permet canviar el nom de l'element arrel"
+      ],
+      "Request aborted": [
+        "Sol·licitud cancel·lada"
+      ],
+      "Signature is missing": [
+        "Falta la signatura"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Ha fallat la verificació de la signatura: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Ha fallat la verificació de la signatura per ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "La verificació de la signatura per ${ signatureType } ha fallat: ${ errorMessage }"
+      ],
+      "Some documents could not be loaded": [
+        "Alguns documents no s'han pogut carregar"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "No s'han pogut carregar algunes dades del fitxer. Torneu-ho a provar."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "No s'han pogut carregar algunes parts del fitxer. Torneu-ho a provar."
+      ],
+      "Some items could not be loaded": [
+        "No s'han pogut carregar alguns elements"
+      ],
+      "Something went wrong": [
+        "S'ha produït un error."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "El fitxer carregat no coincideix amb l'original. Torneu-ho a provar."
+      ],
+      "This file has missing crypto material": [
+        "Aquest fitxer no té el material criptogràfic necessari"
+      ],
+      "This file has no version available to download": [
+        "Aquest fitxer no té cap versió disponible per descarregar"
+      ],
+      "This file version could not be uploaded": [
+        "No s'ha pogut carregar aquesta versió del fitxer"
+      ],
+      "This item has no image preview": [
+        "Aquest element no té cap vista prèvia de la imatge"
+      ],
+      "This item is no longer shared": [
+        "Aquest element ja no està compartit"
+      ],
+      "This item is not shared": [
+        "Aquest element no està compartit"
+      ],
+      "Too many server errors, please try again later": [
+        "Hi ha massa errors del servidor, torneu-ho a provar més tard"
+      ],
+      "Too many server requests, please try again later": [
+        "Hi ha massa sol·licituds al servidor, torneu-ho a provar més tard"
+      ],
+      "Unexpected error, we can't import the files": [
+        "S'ha produït un error inesperat, no podem importar els fitxers"
+      ],
+      "Verification keys are not available": [
+        "Les claus de verificació no estan disponibles"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Les claus de verificació per ${ signatureType } no estan disponibles"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
+      ],
+      "You can create public links for your own files only": [
+        "Només podeu crear enllaços públics per als vostres propis fitxers"
+      ],
+      "You can only leave items that are shared with you": [
+        "Només podeu deixar elements que se us hagin compartit"
+      ],
+      "You can only upload a new version to a file": [
+        "Només podeu carregar una nova versió a un fitxer"
+      ],
+      "You can update a public link for your own files only": [
+        "Només podeu actualitzar un enllaç públic per als vostres propis fitxers"
+      ],
+      "You do not have access to this item": [
+        "No teniu accés a aquest element"
+      ],
+      "You do not have access to this shared item": [
+        "No teniu accés a aquest element compartit"
       ]
     },
     "Error importing calendar": {
@@ -4032,6 +4371,9 @@
       ],
       "Security key": [
         "Clau de seguretat"
+      ],
+      "Touch your security key.": [
+        "Toqueu la vostra clau de seguretat."
       ]
     },
     "fido2: Label": {
@@ -6149,6 +6491,100 @@
       ],
       "We'll remind you to verify your password again later": [
         "Us recordarem més tard que torneu a verificar la contrasenya"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Accediu a més de 20.000 servidors en 145 països"
+      ],
+      "Author is not provided on public link": [
+        "No s'ha proporcionat l'autor a l'enllaç públic"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un núvol segur per a ${ memberCount } membre",
+        "Crea un núvol segur per a ${ memberCount } membres"
+      ],
+      "Details": [
+        "Detalls"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Velocitats de VPN més ràpides de fins a 10 Gbps"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Només fitxers (ni fotos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }): fins a un total de 100 GB, 100.000 fitxers i 50 GB per fitxer"
+      ],
+      "Find out what can be migrated.": [
+        "Descobriu què es pot migrar."
+      ],
+      "Have some more time to decide without interruption.": [
+        "Tingueu més temps per decidir sense interrupcions."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Ajudeu-nos a millorar aquesta experiència informant del problema. Si us sentiu còmode compartint el contingut del full de càlcul, adjunteu la informació de depuració següent al vostre informe."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Ajudeu-nos a millorar aquesta experiència informant de la incidència. Adjunteu la informació de depuració de més avall al vostre informe."
+      ],
+      "Hide table of contents": [
+        "Amagar la taula de continguts"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Si ho cancel·leu ara, perdreu l'accés a ${ BRAND_NAME } ${ planTitle } el ${ expiryDate }, incloent-hi aquestes característiques:"
+      ],
+      "No users to display": [
+        "No hi ha cap usuari per mostrar"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Vaja! Aquest full de càlcul no pot desar les darreres modificacions, així que hem aturat l'edició per evitar que perdeu la feina."
+      ],
+      "Premium privacy protection across all your devices": [
+        "Protecció de privacitat prèmium a tots els vostres dispositius"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleccioneu exactament què voldríeu migrar. S'aplicarà a tots els usuaris de l'organització."
+      ],
+      "Show table of contents": [
+        "Mostra la taula de continguts"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Mantingueu el vostre pla i gaudiu d'un 50% de descompte el mes vinent."
+      ],
+      "Thinking about this": [
+        "Hi estem pensant"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Hem detectat que anteriorment heu tingut problemes per obrir un document."
+      ],
+      "You": [
+        "Vós"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualment heu iniciat sessió com a ${ username } per a ${ organizationName }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "No podreu compartir \"${ fileName }\" després de canviar l'accés al visualitzador. El propietari o un editor amb accés de compartició us podrà restablir l'accés d'edició. No podreu desfer aquest canvi vós mateix."
       ]
     },
     "info": {
@@ -6838,6 +7274,39 @@
       ],
       "Drive": [
         "Unitat"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Permet als editors canviar els permisos i compartir."
+      ],
+      "Client": [
+        "Client"
+      ],
+      "Client version": [
+        "Versió del client"
+      ],
+      "Exact host matching": [
+        "Coincidència exacta d'amfitrió"
+      ],
+      "Exact URL matching": [
+        "Coincidència exacta d'URL"
+      ],
+      "Never fill on this exact URL": [
+        "No empleneu mai en aquest URL exacte"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domini principal i subdominis (per defecte)"
+      ],
+      "Regular expression": [
+        "Expressió regular"
+      ],
+      "Starts with": [
+        "Comença amb"
+      ],
+      "Unknown user": [
+        "Usuari desconegut"
+      ],
+      "URL wildcard pattern": [
+        "Patró de comodí d'URL"
       ]
     },
     "Label for contact group color": {
@@ -7079,6 +7548,9 @@
       ],
       "Add-on with free trial": [
         "Complement amb prova gratuïta"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "mailtrial2024: Action": {
@@ -7113,6 +7585,24 @@
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "La prova gratuïta us ha finalitzat. ${ nonAutoRenewalAction }"
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidència «Comença amb»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidència exacta de (sub)domini"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidència exacta d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "No ho emplenis mai amb aquest URL exacte"
+      ],
+      "Regular expression rule": [
+        "Regla d'expressió regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidència de patró de comodí"
       ]
     },
     "Message display when a new app version is available": {
@@ -7926,8 +8416,8 @@
         "Programació de cites"
       ],
       "Appointment scheduling with ${ n } booking page": [
-        "Programació de cites amb ${ n } pàgina de reserva",
-        "Programació de cites amb ${ n } pàgines de reserva"
+        "Programació de cites amb ${ n } pàgina de reserves",
+        "Programació de cites amb ${ n } pàgines de reserves"
       ],
       "Data retention policies": [
         "Polítiques de conservació de dades"
@@ -7973,8 +8463,8 @@
         "Ús en fins a ${ n } dispositius al mateix temps"
       ],
       "Vault sharing with up to ${ n } person": [
-        "Ús compartit de la caixa forta amb fins a ${ n } persona",
-        "Ús compartit de la caixa forta amb fins a ${ n } persones"
+        "Compartició de la caixa forta amb fins a ${ n } persona",
+        "Compartició de la caixa forta amb fins a ${ n } persones"
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
@@ -7990,6 +8480,9 @@
       ],
       "Unlock streaming": [
         "Desbloquegeu la reproducció en continu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -8705,6 +9198,36 @@
       "${ numberOfItems } item moved": [
         "S'ha mogut ${ numberOfItems } element",
         "S'han mogut ${ numberOfItems } elements"
+      ],
+      "\"Document deleted permanently": [
+        "\"S'ha eliminat el document permanentment"
+      ],
+      "Document moved to trash": [
+        "S'ha enviat el document a la paperera"
+      ],
+      "Document restored from trash": [
+        "S'ha restaurat el document de la paperera"
+      ],
+      "Failed to delete document": [
+        "No s'ha pogut eliminar el document"
+      ],
+      "Failed to load invitations": [
+        "No s'han pogut carregar les invitacions."
+      ],
+      "Failed to load sharing details": [
+        "No s'han pogut carregar els detalls per compartir"
+      ],
+      "Failed to reject invitation": [
+        "No s'ha pogut rebutjar la invitació"
+      ],
+      "Failed to rename document": [
+        "No s'ha pogut canviar el nom del document"
+      ],
+      "Failed to restore document": [
+        "No s'ha pogut restaurar el document"
+      ],
+      "Failed to trash document": [
+        "No s'ha pogut enviar el document a la paperera"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9016,7 +9539,7 @@
         "Aquest contacte actualment signa els missatges amb aquesta clau"
       ],
       "This key is used for message verification": [
-        "Aquesta clau s'utilitza per la verificació de missatges"
+        "Aquesta clau s'utilitza per a la verificació de missatges"
       ],
       "This key is used to encrypt messages to this contact on older apps": [
         "Aquesta clau s'utilitza per xifrar missatges per aquest contacte en aplicacions antigues"
@@ -9123,6 +9646,9 @@
       ],
       "Search for users or addresses": [
         "Cercar un usuari o adreça"
+      ],
+      "Ask anything…": [
+        "Pregunteu qualsevol cosa…"
       ]
     },
     "Placeholder for contact group name": {
@@ -9769,6 +10295,12 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "Per editar aquest document, creeu una còpia que pugueu editar."
+      ],
+      "Editor permissions": [
+        "Permisos de l'editor"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Ara els editors podran gestionar les comparticions i convidar altres persones. Podreu desactivar-ho quan vulgueu a les preferències de compartició."
       ]
     },
     "sso": {
@@ -10242,6 +10774,21 @@
       ],
       "Type": [
         "Tipus"
+      ],
+      "Activated": [
+        "Activat"
+      ],
+      "Estimated size": [
+        "Mida estimada"
+      ],
+      "Migration status": [
+        "Estat de la migració"
+      ],
+      "Size": [
+        "Mida"
+      ],
+      "User": [
+        "Usuari"
       ]
     },
     "TableHeader": {
@@ -11014,6 +11561,33 @@
       ],
       "You are all set": [
         "Ja esteu a punt"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Configure migration": [
+        "Configureu la migració"
+      ],
+      "Editing paused": [
+        "S'ha pausat l'edició"
+      ],
+      "Problems Detected": [
+        "S'han detectat problemes"
+      ],
+      "Select users to migrate": [
+        "Seleccioneu els usuaris que voleu migrar"
+      ],
+      "Stay for 50% off your next month": [
+        "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
+      ],
+      "Users and addresses": [
+        "Usuaris i adreces"
+      ],
+      "What are you migrating?": [
+        "Què esteu migrant?"
       ]
     },
     "Title subscription": {
@@ -11122,6 +11696,18 @@
       ],
       "Instant assistance with AI and human experts.": [
         "Assistència instantània amb IA i persones expertes."
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Assistència immediata de la IA, amb una persona experta a la vostra disposició!"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Usuaris que han accedit al seu compte de ${ BRAND_NAME }"
+      ],
+      "Version 6 OpenPGP key": [
+        "Clau OpenPGP de la versió 6"
       ]
     },
     "tooltip": {
@@ -11348,6 +11934,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
       ]
     },
     "Autocomplete": {
@@ -11362,6 +11951,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Quan finalitzi la prova el ${ formattedDate1 }, es convertirà en una subscripció de pagament que es renovarà mensualment. No se us cobrarà res si cancel·leu abans del ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències de l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències d'Scribe durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_USERS } usuaris durant el període de prova."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "No podeu afegir dominis personalitzats durant el període de prova."
       ]
     },
     "b2b_trials_Action": {
@@ -11679,6 +12286,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } llicència de ${ MEET_APP_NAME }",
         "${ seats } llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (per ${ quantity } usuari)",
+        "${ MEET_APP_NAME } (per ${ quantity } usuaris)"
+      ],
+      "${ price } per seat": [
+        "${ price } per llicència"
       ]
     },
     "meet_2025: Feature": {
@@ -12055,7 +12669,7 @@
         "Comenceu a guanyar crèdits"
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
-        "Podeu obtenir fins a **${ maxRewardAmount }** en crèdits."
+        "Obtingueu fins a **${ maxRewardAmount }** en crèdit."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Us queda **${ daysRemaining } dia** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**.",
@@ -12366,6 +12980,118 @@
       ],
       "SUMMER SALE": [
         "REBAIXES D'ESTIU"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Activat"
+      ],
+      "All": [
+        "Tot"
+      ],
+      "Errors": [
+        "Errors"
+      ],
+      "In progress": [
+        "En curs"
+      ],
+      "Migrated": [
+        "S'han migrat"
+      ],
+      "Not activated": [
+        "No s'ha activat"
+      ],
+      "Pending": [
+        "Està pendent"
+      ]
+    },
+    "Import status": {
+      "Has errors": [
+        "Té errors"
+      ],
+      "In progress": [
+        "En curs"
+      ],
+      "Migrated": [
+        "S'han migrat"
+      ],
+      "Pending": [
+        "Està pendent"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_MEET_SEATS } llicències de ${ MEET_SHORT_APP_NAME } durant el període de prova."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atributs"
+      ],
+      "content key": [
+        "clau de contingut"
+      ],
+      "hash key": [
+        "clau d'empremta electrònica"
+      ],
+      "key": [
+        "clau"
+      ],
+      "membership": [
+        "subscripció"
+      ],
+      "name": [
+        "nom"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Propietari"
+      ],
+      "Security Admin": [
+        "Administrador/a de seguretat"
+      ],
+      "User Admin": [
+        "Administrador/a d'usuaris"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configureu les polítiques de seguretat, la retenció de dades i la infraestructura VPN, i gestioneu els registres d'auditoria."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestioneu tots els usuaris, grups, seguretat, facturació i configuracions del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestioneu els usuaris, els grups i l'emmagatzematge de tots els membres, assigneu rols i adjudiqueu llicències."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Accions"
+      ],
+      "Created": [
+        "S'ha creat"
+      ],
+      "Expires": [
+        "Caduca"
+      ],
+      "Fingerprint": [
+        "Empremta digital"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "Type": [
+        "Tipus"
+      ]
+    },
+    "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Milloreu a un pla compatible per utilitzar rols d'administrador/a."
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
       ]
     }
   }

@@ -1027,6 +1027,39 @@
       ],
       "Verify now": [
         "Verifiera nu"
+      ],
+      "Clear conversation": [
+        "Rensa konversation"
+      ],
+      "Download debug information": [
+        "Ladda ner felsökningsinformation"
+      ],
+      "Export editor state for version": [
+        "Exportera redigeringsläge för version"
+      ],
+      "Export this version (as docx)": [
+        "Exportera denna version (som docx)"
+      ],
+      "Export YJS state for version": [
+        "Exportera YJS-läge för version"
+      ],
+      "Migrate": [
+        "Migrera"
+      ],
+      "Reject": [
+        "Avvisa"
+      ],
+      "Reload spreadsheet": [
+        "Ladda om kalkylblad"
+      ],
+      "Report issue": [
+        "Rapportera problem"
+      ],
+      "Send": [
+        "Skicka"
+      ],
+      "Stop": [
+        "Stoppa"
       ]
     },
     "Action subscription": {
@@ -1113,6 +1146,31 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe skrivassistent (för ${ quantity } användare)",
+        "${ BRAND_NAME } Scribe skrivassistent för ${ quantity } användare)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)",
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)",
+        "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)"
+      ],
+      "${ price } per seat": [
+        "${ price } per plats"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } anpassad domän",
+        "${ quantity } anpassade domäner"
+      ],
+      "Writing assistant seats": [
+        "Användarplatser för skrivassistent"
       ]
     },
     "Alert": {
@@ -1131,6 +1189,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktivitet till nya nivåer. Låt ${ LUMO_SHORT_APP_NAME } hjälpa dig att skriva, svara på och korrekturläsa din e-post."
       ]
     },
     "Attached ics file error": {
@@ -1363,6 +1424,9 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer.",
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ LUMO_SHORT_APP_NAME } skrivassistent, obegränsade hide-my-email-alias och mer."
       ]
     },
     "Billing cycle": {
@@ -2757,6 +2821,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera dina senaste Gmail-e-postmeddelanden."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "För en sömlös introduktion av ditt team till ${ BRAND_NAME }, importera din data från Google, Outlook och andra."
       ]
     },
     "description": {
@@ -3608,6 +3675,105 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har använt alla användare i ditt paket. Uppgradera ditt paket för att lägga till en ny användare."
+      ],
+      "Cannot download a folder": [
+        "Kan inte ladda ner en mapp"
+      ],
+      "Cannot share root folder": [
+        "Kan inte dela rotmapp"
+      ],
+      "Could not find an available name": [
+        "Kunde inte hitta ett tillgängligt namn"
+      ],
+      "Could not unlock the parent folder": [
+        "Kunde inte låsa upp den överordnade mappen"
+      ],
+      "Could not unlock this item": [
+        "Kunde inte låsa upp detta objekt"
+      ],
+      "Device not found": [
+        "Enhet hittades inte"
+      ],
+      "Failed to load 'My files' folder": [
+        "Misslyckades att ladda mappen 'Mina filer'"
+      ],
+      "Failed to rename document": [
+        "Misslyckades att byta namn på dokument"
+      ],
+      "Failed to trash document": [
+        "Misslyckades att slänga dokument"
+      ],
+      "Failed to verify invitation": [
+        "Misslyckades med att verifiera inbjudan"
+      ],
+      "File has no revision": [
+        "Fil har ingen version"
+      ],
+      "Invalid URL": [
+        "Ogiltig URL"
+      ],
+      "Invitation not found": [
+        "Inbjudan hittades inte"
+      ],
+      "Item not found": [
+        "Objekt hittades inte"
+      ],
+      "Name must not be empty": [
+        "Namn får inte vara tomt"
+      ],
+      "No drive found to import": [
+        "Ingen drive hittades att importera"
+      ],
+      "Photo is already in the target album": [
+        "Foto är redan i målalbum"
+      ],
+      "Photo not found": [
+        "Foto hittades inte"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "System för omvänd skattskyldighet stöds inte för detta paket"
+      ],
+      "Signature is missing": [
+        "Signatur saknas"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturverifiering för ${ signatureType } misslyckades"
+      ],
+      "Some documents could not be loaded": [
+        "Några dokument kunde inte laddas"
+      ],
+      "Some items could not be loaded": [
+        "Några objekt kunde inte laddas"
+      ],
+      "Something went wrong": [
+        "Något gick fel"
+      ],
+      "This file version could not be uploaded": [
+        "Denna filversion kunde inte laddas upp"
+      ],
+      "This item is not shared": [
+        "Detta objekt är inte delat"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Oväntat fel, vi kan inte importera filerna"
+      ],
+      "Verification keys are not available": [
+        "Verifieringsnycklar är inte tillgängliga"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunde inte skicka en verifieringskod med den här metoden."
+      ],
+      "You do not have access to this item": [
+        "Du har inte åtkomst till detta objekt"
+      ],
+      "You do not have access to this shared item": [
+        "Du har inte åtkomst till detta delade objekt"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Okrypterbar enhet"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Odekrypterbart namn"
       ]
     },
     "Error importing calendar": {
@@ -4027,6 +4193,9 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
+      ],
+      "Touch your security key.": [
+        "Tryck din säkerhetsnyckel."
       ]
     },
     "fido2: Label": {
@@ -6129,6 +6298,80 @@
       ],
       "We'll remind you to verify your password again later": [
         "Vi kommer påminna dig om att verifiera ditt lösenord igen senare"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Åtkomst till över 20 000 servrar i över 145 länder"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Skapa ett säkert moln för ${ memberCount } medlem",
+        "Skapa ett säkert moln för ${ memberCount } medlemmar"
+      ],
+      "Details": [
+        "Detaljer"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Snabbaste VPN-hastigheter på upp till 10 Gbps"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Endast filer (inga foton, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – totalt upp till 100 GB, 100 000 filer och 50 GB per fil"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Ha lite mer tid att bestämma utan avbrott."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Hjälp oss att förbättra denna upplevelse genom att rapportera problemet. Om du känner dig bekväm med att dela kalkylbladets innehåll kan du bifoga felsökningsinformationen nedan till din rapport."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Hjälp oss förbättra denna upplevelse genom att rapportera problemet. Bifoga felsökningsinformationen nedan till din rapport."
+      ],
+      "Hide table of contents": [
+        "Dölj innehållsförteckning"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat åtkomsten till din autentiseringsapp kan du använda 1 av de 16 återställningskoderna för säkerhetskopiering som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Om du tar bort dig själv förlorar du åtkomst till “${ fileName }“ och kommer inte kunna öppna det igen om inte ägaren delar det med dig."
+      ],
+      "No users to display": [
+        "Inga användare att visa"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Hoppsan! Det här kalkylbladet kan inte spara dina senaste redigeringar, så vi har pausat redigeringen för att förhindra att du förlorar ditt arbete."
+      ],
+      "Show table of contents": [
+        "Visa innehållsförteckning"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Stanna kvar på ditt paket och få 50 % rabatt för din nästa månad"
+      ],
+      "Thinking about this": [
+        "Tänker på detta"
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Det här dokumentet har många aktiva medarbetare. Realtidsredigering är tillfälligt otillgänglig. Uppdatera för att visa de senaste uppdateringarna."
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Vi har upptäckt att du tidigare upplevt problem med att öppna ett dokument."
+      ],
+      "You": [
+        "Du"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Du får kreditbelöningen 1 månad efter att din vän har börjat prenumerera på ett årspaket, och 2 månader efter att de har börjat prenumerera på ett månadspaket."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }. Du kan avbryt när som helst.",
+        "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }. Du kan avbryt när som helst."
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Din prenumeration på ${ plan } kommer att ersättas med ${ PASS_SHORT_APP_NAME } Lifetime. Det återstående saldot på din prenumeration kommer att läggas till på ditt konto. Lifetime-erbjudandet för ${ PASS_SHORT_APP_NAME } har inget förnyelsepris – det är en engångsbetalning för att få livstids åtkomst till ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -6224,6 +6467,9 @@
       ],
       "Fallback": [
         "Reserv"
+      ],
+      "Active Signer": [
+        "Aktiv undertecknare"
       ]
     },
     "Label": {
@@ -6815,6 +7061,42 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Tillåt redaktörer att ändra behörigheter och dela."
+      ],
+      "Client": [
+        "Klient"
+      ],
+      "Client version": [
+        "Klientversion"
+      ],
+      "Exact host matching": [
+        "Exakt värdmatchning"
+      ],
+      "Exact URL matching": [
+        "Exakt URL-matchning"
+      ],
+      "Main reason for cancelling": [
+        "Huvudsaklig anledning till att avbryta"
+      ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
+      ],
+      "Regular expression": [
+        "Vanligt uttryck"
+      ],
+      "Starts with": [
+        "Börjar med"
+      ],
+      "Unknown user": [
+        "Okänd användare"
+      ],
+      "URL wildcard pattern": [
+        "Jokerteckenmönster för URL"
       ]
     },
     "Label for contact group color": {
@@ -7056,6 +7338,9 @@
       ],
       "Add-on with free trial": [
         "Utökning med gratis provperiod"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
       ]
     },
     "mailtrial2024: Action": {
@@ -7090,6 +7375,24 @@
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis provperiod har slutat. ${ nonAutoRenewalAction }"
+      ],
+      "'Starts with' matching rule": [
+        "Matchningsregel för \"Börjar med\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Matchningsregel för exakt (under)domän"
+      ],
+      "Exact URL matching rule": [
+        "Matchningsregel för exakt URL"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
+      ],
+      "Regular expression rule": [
+        "Regel för reguljärt uttryck"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchningsregel för jokerteckenmönster"
       ]
     },
     "Message display when a new app version is available": {
@@ -7957,6 +8260,19 @@
       ],
       "Unlock streaming": [
         "Lås upp streaming"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "Appointment scheduling": [
+        "Mötesbokning"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Mötesbokning med ${ n } bokningssida",
+        "Mötesbokning med ${ n } bokningssidor"
+      ],
+      "Data retention policies": [
+        "Policy för datalagring"
       ]
     },
     "new_plans: feature highlight": {
@@ -8681,6 +8997,36 @@
       "${ numberOfItems } item moved": [
         "${ numberOfItems } objekt flyttat",
         "${ numberOfItems } objekt flyttade"
+      ],
+      "\"Document deleted permanently": [
+        "”Dokument borttaget permanent"
+      ],
+      "Document moved to trash": [
+        "Dokument flyttat till papperskorg"
+      ],
+      "Document restored from trash": [
+        "Dokument återställd från papperskorg"
+      ],
+      "Failed to delete document": [
+        "Misslyckades att ta bort dokument"
+      ],
+      "Failed to load invitations": [
+        "Misslyckades att ladda inbjudningar"
+      ],
+      "Failed to load sharing details": [
+        "Misslyckades att ladda delningsdetaljer"
+      ],
+      "Failed to reject invitation": [
+        "Misslyckades att avvisa inbjudan"
+      ],
+      "Failed to rename document": [
+        "Misslyckades att byta namn på dokument"
+      ],
+      "Failed to restore document": [
+        "Misslyckades att återställa dokument"
+      ],
+      "Failed to trash document": [
+        "Misslyckades att slänga dokument"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9114,6 +9460,9 @@
       ],
       "Search for users or addresses": [
         "Sök efter användare eller adresser"
+      ],
+      "Ask anything…": [
+        "Fråga vad som helst …"
       ]
     },
     "Placeholder for contact group name": {
@@ -9760,6 +10109,12 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "För att redigera detta dokument, skapa en kopia som du kan ändra."
+      ],
+      "Editor permissions": [
+        "Redaktörsbehörigheter"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Redaktörer kan nu hantera delning och bjuda in andra. Du kan stänga av det när som helst i delningsinställningar."
       ]
     },
     "sso": {
@@ -10238,6 +10593,21 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Activated": [
+        "Aktiverad"
+      ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "Size": [
+        "Storlek"
+      ],
+      "User": [
+        "Användare"
       ]
     },
     "TableHeader": {
@@ -11001,6 +11371,42 @@
       ],
       "You are all set": [
         "Du är klar"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "Change access to viewer?": [
+        "Ändra behörighet till visare?"
+      ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
+      "Document Size Limit Exceeded": [
+        "Gränsen för dokumentstorlek har överskridits"
+      ],
+      "Document Size Limit Reached": [
+        "Gränsen för dokumentstorlek har nåtts"
+      ],
+      "Editing paused": [
+        "Redigering pausad"
+      ],
+      "Problems Detected": [
+        "Problem upptäckta"
+      ],
+      "Select users to migrate": [
+        "Välj användare att migrera"
+      ],
+      "Stay for 50% off your next month": [
+        "Stanna kvar för 50 % rabatt nästa månad"
+      ],
+      "Users and addresses": [
+        "Användare och adresser"
+      ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
       ]
     },
     "Title subscription": {
@@ -11103,6 +11509,15 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Om de inte avkodas förblir krypterade lösenord säkra även om de exponeras."
+      ],
+      "Change shared item settings": [
+        "Ändra inställningar för delat objekt"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Omedelbar AI-assistans, mänsklig expert nära till hands!"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nyckel version 6"
       ]
     },
     "tooltip": {
@@ -11227,6 +11642,9 @@
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
         "Krypterad och säker ${ MAIL_APP_NAME } e-postadress. Du kan enkelt skicka Bitcoin till vem som helst med bara deras ${ BRAND_NAME }-namn."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Överför Bitcoin på ett säkert sätt via e-post istället för att använda komplexa Bitcoin-adresser med 26 tecken som är känsliga för fel"
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -11339,6 +11757,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ger kraftfull kontroll, men ett enda fel kan göra att autofyll matchar och fyller i data på bedrägliga webbplatser eller nätfiske-webbplatser."
       ]
     },
     "Autocomplete": {
@@ -11353,6 +11774,21 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenser under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-licenser under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_USERS } användare under provperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan inte lägga till anpassade domäner under provperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -11453,6 +11889,12 @@
       ],
       "Zero-access encryption": [
         "Kryptering med noll åtkomst"
+      ],
+      "Upload and query multiple large files": [
+        "Ladda upp och sök i flera stora filer"
+      ],
+      "Upload and query small files": [
+        "Ladda upp och sök i små filer"
       ]
     },
     "collider_2025: Info": {
@@ -11652,6 +12094,17 @@
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-licens"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (för ${ quantity } användare)",
+        "${ MEET_APP_NAME } (för ${ quantity } användare)"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-användarplatser"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-användarplats",
+        "${ seats } ${ MEET_APP_NAME }-användarplatser"
       ]
     },
     "meet_2025: Feature": {
@@ -12414,6 +12867,103 @@
       ],
       "SUMMER SALE": [
         "SOMMARREA"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Aktiverat"
+      ],
+      "All": [
+        "Alla"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Not activated": [
+        "Inte aktiverad"
+      ]
+    },
+    "Import status": {
+      "Has errors": [
+        "Har fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-användarplatser under provperioden."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attribut"
+      ],
+      "key": [
+        "nyckel"
+      ],
+      "membership": [
+        "medlemskap"
+      ],
+      "name": [
+        "namn"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Ägare"
+      ],
+      "Security Admin": [
+        "Säkerhetsadministratör"
+      ],
+      "User Admin": [
+        "Användaradministratör"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurera säkerhetspolicyer, datalagring och VPN-infrastruktur och hantera granskningsloggar."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Åtgärder"
+      ],
+      "Created": [
+        "Skapad"
+      ],
+      "Expires": [
+        "Löper ut"
+      ],
+      "Fingerprint": [
+        "Fingeravtryck"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]
     }
   }
