@@ -1511,8 +1511,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -5659,7 +5658,7 @@
         "Telif hakkı ihlali veya çalıntı verileri bildirirken bir ileti yazılmalıdır"
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından halihazırda kullanılıyor. Bu sorunu çözmek için lütfen müşteri desteğiyle iletişime geçin"
+        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından kullanılıyor. Bu sorunu çözmek için lütfen müşteri destek ekibimiz ile görüşün"
       ],
       "Bookmark password is not available": [
         "Yer imi parolası kullanılamıyor"
@@ -5677,7 +5676,7 @@
         "Bu dosyanın yükleyen kişi doğrulanamadı"
       ],
       "Contact your administrator to start a migration.": [
-        "Geçiş işlemini başlatmak için yöneticinize başvurun."
+        "Aktarma işlemini başlatmak için yöneticiniz ile görüşün."
       ],
       "Could not find an available name": [
         "Kullanılabilecek bir ad bulunamadı"
@@ -5725,10 +5724,10 @@
         "Öge bulunamadı"
       ],
       "Member address not found. Please contact customer support to resolve this": [
-        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimizle görüşün"
+        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimiz ile görüşün"
       ],
       "Missing organization private key": [
-        "Kuruluşun özel anahtarı eksik"
+        "Kuruluşun kişisel anahtarı eksik"
       ],
       "Missing organization public key": [
         "Kuruluşun herkese açık anahtarı bulunamadı"
@@ -5752,7 +5751,7 @@
         "İşlem tamamlanamadı. Bir süre sonra yeniden deneyin"
       ],
       "Organization does not have enough seats available": [
-        "Kuruluşta yeterli sayıda boş koltuk yok"
+        "Kuruluşun yeterli koltuk sayısı yok"
       ],
       "Organization does not have enough storage available": [
         "Kuruluşun yeterli depolama alanı yok"
@@ -6349,7 +6348,7 @@
         "Hatalar"
       ],
       "In progress": [
-        "Devam ediyor"
+        "İşleniyor"
       ],
       "Migrated": [
         "Aktarıldı"
@@ -8178,7 +8177,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9741,48 +9741,51 @@
         "Sahip herkese açık bağlantıda belirtilmemiş"
       ],
       "Find out what can be migrated.": [
-        "Nelerin taşınabileceğini öğrenin."
+        "Nelerin aktarılabileceğini öğrenin."
       ],
       "No conversation to read": [
-        "Okunacak yazışma yok"
+        "Okunabilecek bir yazışma yok"
       ],
       "No email open": [
-        "Hiçbir e-posta açılmadı"
+        "Açık bir e-posta yok"
       ],
       "No users to display": [
-        "Görüntülenecek kullanıcı yok"
+        "Görüntülenebilecek bir kullanıcı yok"
       ],
       "Read ${ count } email": [
-        "${ count } e-posta oku",
-        "${ count } e-posta oku"
+        "${ count } e-postayı oku",
+        "${ count } e-postayı oku"
       ],
       "Read ${ count } message in this thread": [
         "Bu konudaki ${ count } iletiyi oku",
         "Bu konudaki ${ count } iletiyi oku"
       ],
       "Read open email “${ subject }”": [
-        "“${ subject }” başlıklı açık e-postayı oku"
+        "“${ subject }” konulu açık e-postayı oku"
       ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Tam olarak neyi aktarmak istediğinizi seçin. Kuruluşun tüm kullanıcılarına uygulanır."
       ],
       "This user can not be migrated due to platform incompatibilities.": [
-        "Platform uyumsuzlukları nedeniyle bu kullanıcı taşınamaz."
+        "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
       ],
       "To migrate this user, enable their account in your Google Workspace Admin Console.": [
         "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının hesabını etkinleştirin."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı taşıyabilmek için ${ usersAddressesLink } altındaki adresi etkinleştirin."
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Bu kullanıcının geçiş işleminin gerçekleştirilebilmesi için ${ BRAND_NAME } üzerinden katılma davetini kabul etmesi gerekmektedir."
+        "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
       ],
       "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
         "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcıyı arşivden çıkarın."
       ],
       "You": [
         "Siz"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
       ]
     },
     "info": {
@@ -12553,7 +12556,7 @@
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca size özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -12722,7 +12725,7 @@
         "Çeşitli platformları destekler"
       ],
       "Private gateways": [
-        "Özel ağ geçitleri"
+        "Size özel ağ geçitleri"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } özel e-posta etki alanı desteği",
@@ -17195,7 +17198,7 @@
         "Google Workspace'ten ${ BRAND_NAME } üzerine veri aktarım durumu"
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } hesaplarında oturum açmış kullanıcılar"
+        "${ BRAND_NAME } hesaplarına erişen kullanıcılar"
       ]
     },
     "tooltip": {
@@ -17745,7 +17748,7 @@
     },
     "Import status": {
       "Has errors": [
-        "Hatalar var"
+        "Sorunlar çıktı"
       ],
       "In progress": [
         "İşlem sürüyor"
@@ -17754,7 +17757,7 @@
         "Aktarıldı"
       ],
       "Pending": [
-        "Beklemede"
+        "Bekliyor"
       ]
     }
   }
