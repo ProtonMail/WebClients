@@ -608,6 +608,9 @@
       "Emoji": [
         "Čustveni simboli"
       ],
+      "Enable": [
+        "Omogoči"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Omogoči ${ darkWebMonitoring }"
       ],
@@ -1024,9 +1027,6 @@
       ],
       "Remove": [
         "Odstrani"
-      ],
-      "Remove all members": [
-        "Odstrani vse člane"
       ],
       "Remove all other devices": [
         "Odstrani vse ostale naprave"
@@ -2192,77 +2192,6 @@
       ],
       "Worried about data breaches?": [
         "Zaskrbljeni zaradi kršitve podatkov?"
-      ]
-    },
-    "BOSS": {
-      "Authenticate your Google Workspace account": [
-        "Preverjanje pristnosti računa Google Workspace"
-      ],
-      "Calendar": [
-        "Koledar"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Obrnite se na skrbnika za začetek prenosa."
-      ],
-      "Contacts": [
-        "Stiki"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Aplikacija Google Marketplace za kopiranje podatkov v ${ BRAND_NAME }"
-      ],
-      "Has errors": [
-        "Ima napake"
-      ],
-      "In progress": [
-        "V obdelavi"
-      ],
-      "Install app": [
-        "Namesti aplikacijo"
-      ],
-      "Migration started for ${ n } user": [
-        "Začela se je migracija ${ n } uporabnika",
-        "Začela se je migracija ${ n } uporabnikov",
-        "Začela se je migracija ${ n } uporabnikov",
-        "Začela se je migracija ${ n } uporabnikov"
-      ],
-      "Organization does not have enough seats available": [
-        "Organizacija nima na voljo dovolj sedežev"
-      ],
-      "Settings": [
-        "Nastavitve"
-      ],
-      "Status": [
-        "Stanje"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tega uporabnika ni mogoče prenesti zaradi nezdružljivosti platform."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Če želite tega uporabnika prenesti, morajo sprejeti njihovo povabilo k pridružitvi ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Če želite tega uporabnika prenesti, ga odstranite iz arhiva v Google Workspace administratorski konzoli."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
-      ],
-      "Users migrated": [
-        "Uporabniki so preneseni"
-      ],
-      "Verify installation": [
-        "Preveri namestitev"
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Nismo mogli preveriti namestitve, preverite, ali ste jo namestili v svoj Google Workspace račun in poskusite znova."
       ]
     },
     "Bridge version load failed": {
@@ -5568,6 +5497,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nekatera imena vaših oznak presegajo največje dovoljeno število znakov za ${ MAIL_APP_NAME }. Prilagodite uvoz za urejanje teh imen."
       ],
+      "Something went wrong": [
+        "Nekaj je šlo narobe"
+      ],
       "Something went wrong while converting the address": [
         "Med pretvorbo naslova je prišlo do napake"
       ],
@@ -7925,9 +7857,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Ali ste prepričani, da želite odstraniti skrbniške pravice temu uporabniku?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Ali ste prepričani, da želite odstraniti vse člane iz te skupine?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Ali ste prepričani, da želite odstraniti domeno ${ boldDomain }?"
       ],
@@ -9358,6 +9287,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Pametno usmerjeno prek: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "Pošiljanje SMTP omogoča tretjim osebam ali napravam, da pošiljajo e-pošto prek ${ MAIL_APP_NAME } za vaše naslove z domen po meri. Če želite uporabiti to funkcijo, najprej ustvarite nov žeton."
@@ -11707,6 +11639,9 @@
       ],
       "Set password": [
         "Nastavi geslo"
+      ],
+      "Settings": [
+        "Nastavitve"
       ],
       "Share your referral link": [
         "Delite vašo povezavo za priporočilo"
@@ -16172,17 +16107,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Prepričajte se, da ste zdaj kopirali zgornji žeton SCIM."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Ko je SCIM onemogočen za vašo organizacijo, bodo **vsi uporabniki SCIM, ki jih samodejno zagotovi vaš ponudnik identitete, pretvorjeni v uporabnike SSO** in upravljali jih boste lahko neposredno v nastavitvah ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Poenostavlja upravljanje uporabnikov v različnih storitvah. Dodajte, uredite in odstranite uporabnike v svojem ponudniku identitete in te spremembe bodo samodejno uporabljene v vaši organizaciji ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Samodejno zagotavljanje SCIM bo onemogočeno, dokler ne vnesete novega žetona SCIM v nastavitve svojega ponudnika identitete."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "Osnovni URL in žeton SCIM bosta izbrisana."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Če želite znova omogočiti sinhronizacijo s svojim ponudnikom identitete, morate znova dokončati integracijo SCIM."
@@ -18433,6 +18362,11 @@
         "Za posameznike"
       ]
     },
+    "Table header": {
+      "Status": [
+        "Stanje"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Dejanje"
@@ -19619,9 +19553,6 @@
       ],
       "Reject device?": [
         "Zavrni napravo?"
-      ],
-      "Remove all members?": [
-        "Odstrani vse člane?"
       ],
       "Remove device?": [
         "Odstrani napravo?"

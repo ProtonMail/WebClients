@@ -729,6 +729,9 @@
       "Emoji": [
         "อิโมจิ"
       ],
+      "Enable": [
+        "เปิดใช้งาน"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "เปิดใช้งาน ${ darkWebMonitoring }"
       ],
@@ -1283,9 +1286,6 @@
       ],
       "Remove": [
         "เอาออก"
-      ],
-      "Remove all members": [
-        "ลบสมาชิกทั้งหมดออก"
       ],
       "Remove all other devices": [
         "ลบอุปกรณ์อื่นทั้งหมดออก"
@@ -2896,431 +2896,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "ที่อยู่อีเมลส่วนตัวเป็นส่วนสำคัญของข้อมูลระบุตัวตนดิจิทัล เช่นเดียวกับหมายเลขโทรศัพท์ คุณไม่ได้ให้เบอร์กับทุกคนที่พบ นั่นคือเหตุผลที่มีประโยชน์ที่จะมีที่อยู่อีเมลอื่นเพื่อใช้สำหรับวัตถุประสงค์ที่แตกต่างกัน"
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } จาก ${ totalCount }"
-      ],
-      "Account connected": [
-        "เชื่อมต่อบัญชีแล้ว"
-      ],
-      "Account disconnected": [
-        "ตัดการเชื่อมต่อบัญชีแล้ว"
-      ],
-      "Accounts migrated": [
-        "ย้ายข้อมูลบัญชีแล้ว"
-      ],
-      "Activated": [
-        "เปิดใช้งานแล้ว"
-      ],
-      "Add domain": [
-        "เพิ่มโดเมน"
-      ],
-      "Add users": [
-        "เพิ่มผู้ใช้"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "เพิ่มโดเมนอีเมลองค์กรไปยัง ${ BRAND_NAME }"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "ที่อยู่นี้ถูกใช้งานโดยผู้ใช้นอกองค์กรแล้ว โปรดติดต่อฝ่ายสนับสนุนลูกค้าเพื่อแก้ไขปัญหานี้"
-      ],
-      "All": [
-        "ทั้งหมด"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "บัญชีผู้ใช้ที่ย้ายข้อมูลทั้งหมดพร้อมที่จะรับคำเชิญเข้าสู่องค์กร ${ BRAND_NAME } แล้ว"
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "เกิดข้อผิดพลาดที่ไม่รู้จัก โปรดรีเฟรชหน้าเว็บและลองอีกครั้ง"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "แน่ใจหรือไม่ว่าต้องการดำเนินการต่อโดยไม่มี ${ withoutString } และคนอื่นๆ อีก ${ notMigratedOthers } คน?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "แน่ใจหรือไม่ว่าต้องการดำเนินการต่อโดยไม่มี ${ withoutString }?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "แน่ใจหรือไม่ว่าต้องการดำเนินการต่อ? ผู้ใช้ที่ไม่ได้อ้างสิทธิ์การเป็นเจ้าของบัญชีก่อนที่การย้ายข้อมูลจะเสร็จสมบูรณ์จะต้องขอรีเซ็ตรหัสผ่านจากผู้ดูแลระบบองค์กร ${ BRAND_NAME }"
-      ],
-      "Authenticate": [
-        "ยืนยันตัวตน"
-      ],
-      "Authenticate your Google Workspace account": [
-        "ยืนยันตัวตนบัญชี Google Workspace ของคุณ"
-      ],
-      "Calendar": [
-        "ปฏิทิน"
-      ],
-      "Collapse invitation message": [
-        "ย่อข้อความคำเชิญ"
-      ],
-      "Collapse step": [
-        "ย่อขั้นตอน"
-      ],
-      "Configure domain": [
-        "กำหนดค่าโดเมน"
-      ],
-      "Configure migration": [
-        "กำหนดค่าการย้ายข้อมูล"
-      ],
-      "Configure users": [
-        "กำหนดค่าผู้ใช้"
-      ],
-      "Configure your domain": [
-        "กำหนดค่าโดเมน"
-      ],
-      "Confirm": [
-        "ยืนยัน"
-      ],
-      "Contact your administrator to start a migration.": [
-        "ติดต่อผู้ดูแลระบบเพื่อเริ่มการย้ายข้อมูล"
-      ],
-      "Contacts": [
-        "ผู้ติดต่อ"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "คัดลอกรหัสข้อมูลด้านล่างนี้แล้วนำไปวางในส่วน DNS ของผู้ให้บริการโดเมน"
-      ],
-      "Creating accounts": [
-        "กำลังสร้างบัญชี"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "สถานะการย้ายข้อมูลจาก Google Workspace ไปยัง ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "ลบรหัส MX ที่มีอยู่ก่อนแล้ว จากนั้นคัดลอกรหัสด้านล่างนี้และวางในส่วน DNS ของผู้ให้บริการโฮสต์โดเมน"
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM จะเพิ่มลายเซ็นดิจิทัลให้กับแต่ละอีเมลเพื่อให้ผู้รับสามารถยืนยันได้ว่าข้อความมาจากโดเมนดังกล่าวจริงๆ และไม่ได้รับการแก้ไขระหว่างทาง หากไม่มีลายเซ็นนี้ ข้อความอาจได้รับการปฏิบัติเสมือนมีความน่าเชื่อถือน้อยลง"
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC ต่อยอดจาก SPF และ DKIM โดยการแจ้งให้เซิร์ฟเวอร์ผู้รับทราบว่าควรจัดการกับข้อความที่ไม่ผ่านการตรวจสอบเหล่านี้อย่างไร ซึ่งจะช่วยปกป้องโดเมนจากการแอบอ้างบุคคลอื่นและปรับปรุงความน่าเชื่อถือในการส่งข้อความโดยรวม"
-      ],
-      "Domain added": [
-        "เพิ่มโดเมนแล้ว"
-      ],
-      "Domain provider": [
-        "ผู้ให้บริการโดเมน"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "ไม่ทราบว่าจะเริ่มต้นอย่างไรใช่หรือไม่? ดูวิธีอัปเดต DNS บน ${ registrarLink }"
-      ],
-      "Emails": [
-        "อีเมล"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "ตรวจสอบให้แน่ใจว่าอีเมลเข้าสู่กล่องขาเข้า ไม่ใช่โฟลเดอร์สแปม การอัปเดต SPF จะช่วยให้ผู้ใช้สามารถส่งจาก ${ BRAND_NAME } และ Google พร้อมกันได้ในช่วงระหว่างการย้ายข้อมูล"
-      ],
-      "Errors": [
-        "ข้อผิดพลาด"
-      ],
-      "Estimated size": [
-        "ขนาดโดยประมาณ"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "ทุกคนจะได้รับลิงก์คำเชิญเดียวกัน โดยจะเข้าสู่หน้าเว็บ ป้อนอีเมล และรับรหัสยืนยันในกล่องขาเข้าของ Gmail จากนั้นจึงตั้งรหัสผ่านสำหรับ ${ BRAND_NAME }"
-      ],
-      "Expand invitation message": [
-        "ขยายข้อความคำเชิญ"
-      ],
-      "Expand step": [
-        "ขยายขั้นตอน"
-      ],
-      "Failed to load OAuth": [
-        "โหลด OAuth ล้มเหลว"
-      ],
-      "Final step": [
-        "ขั้นตอนสุดท้าย"
-      ],
-      "Find out what can be migrated.": [
-        "ดูข้อมูลเกี่ยวกับสิ่งที่สามารถย้ายข้อมูลได้"
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "รับความช่วยเหลือและคำแนะนำที่เป็นประโยชน์สำหรับผู้ให้บริการโดเมนรายอื่น ${ here }"
-      ],
-      "Going private": [
-        "กำลังเปลี่ยนเป็นแบบส่วนตัว"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "แอป Google Marketplace สำหรับคัดลอกข้อมูลไปยัง ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "บัญชี Google Workspace"
-      ],
-      "Has errors": [
-        "มีข้อผิดพลาด"
-      ],
-      "Import completed successfully": [
-        "นำเข้าเสร็จสมบูรณ์แล้ว"
-      ],
-      "Import details": [
-        "รายละเอียดการนำเข้า"
-      ],
-      "In progress": [
-        "กำลังดำเนินการ"
-      ],
-      "Install app": [
-        "ติดตั้งแอป"
-      ],
-      "Install migration app": [
-        "ติดตั้งแอปย้ายข้อมูล"
-      ],
-      "Invitation link": [
-        "ลิงก์คำเชิญ"
-      ],
-      "Invitation message": [
-        "ข้อความคำเชิญ"
-      ],
-      "invite link": [
-        "ลิงก์คำเชิญ"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "อาจใช้เวลานานถึง 24 ชั่วโมงเพื่อให้การเปลี่ยนแปลงเหล่านี้มีผล"
-      ],
-      "Loading your organization data": [
-        "กำลังโหลดข้อมูลองค์กร"
-      ],
-      "Mail": [
-        "อีเมล"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "ไม่พบที่อยู่ของสมาชิก โปรดติดต่อฝ่ายสนับสนุนลูกค้าเพื่อแก้ไขปัญหานี้"
-      ],
-      "Migrate": [
-        "ย้ายข้อมูล"
-      ],
-      "Migrate accounts": [
-        "ย้ายข้อมูลบัญชี"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "ย้ายข้อมูลบัญชีไปยัง ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "ย้ายข้อมูลจาก Google Workspace"
-      ],
-      "Migrated": [
-        "ย้ายข้อมูลแล้ว"
-      ],
-      "Migrated accounts": [
-        "บัญชีที่ย้ายข้อมูลแล้ว"
-      ],
-      "Migration includes": [
-        "การย้ายข้อมูลรวมถึง"
-      ],
-      "Migration started for ${ n } user": [
-        "เริ่มการย้ายข้อมูลสำหรับผู้ใช้ ${ n } คน"
-      ],
-      "Migration status": [
-        "สถานะการย้ายข้อมูล"
-      ],
-      "Migration summary": [
-        "สรุปการย้ายข้อมูล"
-      ],
-      "Missing organization private key": [
-        "คีย์ส่วนตัวขององค์กรสูญหาย"
-      ],
-      "Missing organization public key": [
-        "คีย์สาธารณะขององค์กรสูญหาย"
-      ],
-      "More details": [
-        "รายละเอียดเพิ่มเติม"
-      ],
-      "Need help?": [
-        "ต้องการความช่วยเหลือหรือไม่?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "ไม่มีรายละเอียดข้อผิดพลาด โปรดติดต่อฝ่ายสนับสนุนลูกค้าสำหรับข้อมูลเพิ่มเติม"
-      ],
-      "No users to display": [
-        "ไม่มีผู้ใช้ที่จะแสดง"
-      ],
-      "Not activated": [
-        "ไม่ได้เปิดใช้งาน"
-      ],
-      "Not confirmed": [
-        "ไม่ได้ยืนยัน"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "ตรวจไม่พบอย่างถูกต้องใช่หรือไม่? เลือกผู้ให้บริการจากรายการ"
-      ],
-      "Onboard your team": [
-        "เริ่มต้นใช้งานสำหรับทีม"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "เมื่อยืนยันแล้วว่าอีเมลได้รับการกำหนดเส้นทางไปยัง ${ BRAND_NAME } การย้ายข้อมูลจะเสร็จสมบูรณ์ และจะได้รับอีเมลยืนยันเพื่อแจ้งให้ทราบเมื่อขั้นตอนดังกล่าวเสร็จสิ้น กระบวนการนี้อาจใช้เวลาสูงสุด 24 ชั่วโมง"
-      ],
-      "Organization does not have enough seats available": [
-        "องค์กรมีสิทธิ์ผู้ใช้ไม่เพียงพอ"
-      ],
-      "Organization does not have enough storage available": [
-        "องค์กรมีพื้นที่จัดเก็บไม่เพียงพอ"
-      ],
-      "Pending": [
-        "รอดำเนินการ"
-      ],
-      "Please don’t close or refresh this window.": [
-        "โปรดอย่าปิดหรือรีเฟรชหน้าต่างนี้"
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "ยืนยันตัวตนบัญชี Google Workspace อีกครั้งเพื่อเริ่มการย้ายข้อมูล"
-      ],
-      "Refresh": [
-        "รีเฟรช"
-      ],
-      "Select at least one user to start a migration": [
-        "เลือกผู้ใช้อย่างน้อยหนึ่งคนเพื่อเริ่มการย้ายข้อมูล"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "เลือกสิ่งที่ต้องการย้ายข้อมูลอย่างแน่นอน โดยจะมีผลกับผู้ใช้องค์กรทั้งหมด"
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "เลือกบัญชีที่ต้องการย้ายไปยัง ${ BRAND_NAME } สามารถย้ายข้อมูลทั้งองค์กรได้ในวันนี้ หรือจะเริ่มจากส่วนย่อยๆ ก่อนแล้วค่อยย้ายส่วนที่เหลือเมื่อพร้อม"
-      ],
-      "Select users to migrate": [
-        "เลือกผู้ใช้ที่ต้องการย้ายข้อมูล"
-      ],
-      "Set up secure sending (DKIM)": [
-        "ตั้งค่าการส่งแบบปลอดภัย (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "ตั้งค่าการส่งแบบปลอดภัย (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "ตั้งค่าการส่งแบบปลอดภัย (SPF)"
-      ],
-      "Settings": [
-        "การตั้งค่า"
-      ],
-      "Sign in to Google Workspace": [
-        "เข้าสู่ระบบ Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "ลงชื่อเข้าใช้ด้วยบัญชีผู้ดูแลระบบ Google Workspace สำหรับ ${ BRAND_NAME } เพื่อตั้งค่าการย้ายข้อมูล"
-      ],
-      "Size": [
-        "ขนาด"
-      ],
-      "Skip": [
-        "ข้าม"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "ข้ามผู้ติดต่อ ${ count } รายเนื่องจากไม่เข้ากัน"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "ข้ามอีเมล ${ count } ฉบับเนื่องจากไม่เข้ากัน"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "ข้ามกิจกรรม ${ count } รายการเนื่องจากไม่เข้ากัน"
-      ],
-      "Some accounts are not claimed": [
-        "บัญชีบางส่วนยังไม่ได้อ้างสิทธิ์การเป็นเจ้าของ"
-      ],
-      "Some members weren't migrated": [
-        "สมาชิกบางรายไม่ได้รับการย้ายข้อมูล"
-      ],
-      "Status": [
-        "สถานะ"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "ไม่สามารถย้ายข้อมูลผู้ใช้นี้ได้เนื่องจากความไม่เข้ากันของแพลตฟอร์ม"
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "หากต้องการนำข้อมูลองค์กรไปยัง ${ BRAND_NAME } ให้ติดตั้ง ${ BRAND_NAME } Easy Switch จาก Google Workspace Marketplace หลังจากติดตั้งเสร็จแล้ว ให้กลับมาที่นี่เพื่อดำเนินการต่อ"
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "เพื่อให้การย้ายข้อมูลเสร็จสิ้น ตรวจสอบให้แน่ใจว่าได้เก็บเฉพาะรหัส MX ของ ${ BRAND_NAME } ไว้"
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้เปิดใช้งานบัญชีใน Google Workspace Admin Console"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้เปิดใช้งานบัญชีภายใต้ ${ usersAddressesLink }"
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้เปิดใช้งานที่อยู่ภายใต้ ${ usersAddressesLink }"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ผู้ใช้จำเป็นต้องตอบรับคำเชิญเพื่อเข้าร่วม ${ BRAND_NAME }"
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้ยกเลิกการเก็บถาวรผู้ใช้ใน Google Workspace Admin Console"
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "หากต้องการย้ายข้อมูลผู้ใช้นี้ ให้ยกเลิกการระงับผู้ใช้ใน Google Workspace Admin Console"
-      ],
-      "Update records for receiving": [
-        "อัปเดตระเบียนสำหรับการรับ"
-      ],
-      "User": [
-        "ผู้ใช้"
-      ],
-      "Users activated": [
-        "ผู้ใช้ที่เปิดใช้งานแล้ว"
-      ],
-      "Users migrated": [
-        "ย้ายข้อมูลผู้ใช้แล้ว"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "ผู้ใช้ที่เข้าถึงบัญชี ${ BRAND_NAME } แล้ว"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "ผู้ใช้ที่ยังไม่ได้เปิดใช้งานบัญชีก่อนการย้ายข้อมูลเสร็จสมบูรณ์จะต้องขอรีเซ็ตรหัสผ่านจากผู้ดูแลระบบองค์กร ${ BRAND_NAME }"
-      ],
-      "Verified": [
-        "ยืนยันแล้ว"
-      ],
-      "Verify installation": [
-        "ยืนยันการติดตั้ง"
-      ],
-      "Verify your domain": [
-        "ยืนยันโดเมนของคุณ"
-      ],
-      "Verify your domain to start a migration": [
-        "ยืนยันโดเมนของคุณเพื่อเริ่มการย้ายข้อมูล"
-      ],
-      "Waiting for MX...": [
-        "กำลังรอ MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "ไม่สามารถยืนยันการติดตั้งได้ โปรดตรวจสอบว่าได้ติดตั้งในบัญชี Google Workspace แล้วและลองใหม่อีกครั้ง"
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "กำลังจะย้ายไปใช้ ${ BRAND_NAME } ซึ่งเป็นบริการอีเมลที่ปลอดภัย\nและบัญชี ${ BRAND_NAME } พร้อมให้เปิดใช้งานแล้ว\nคลิก ${ inviteLink }\nป้อนที่อยู่อีเมล จะมีการส่งรหัสไปยัง Gmail\nใช้รหัสนั้นเพื่อตั้งรหัสผ่าน — แล้วบัญชี ${ BRAND_NAME } ก็จะเป็นของทันที\nในช่วงระยะเวลาสั้นๆ ทั้งสองบัญชีจะทำงานควบคู่กันไป ทั้ง ${ BRAND_NAME } และ Gmail\nจากนั้นเมื่อทุกคนย้ายข้อมูลเสร็จสิ้นแล้ว จะหยุดใช้งาน Gmail โดยจะมีการแจ้งเตือนให้ทราบก่อนล่วงหน้า"
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "พบว่าผู้ใช้บางรายยังไม่ได้อ้างสิทธิ์การเป็นเจ้าของบัญชี ${ BRAND_NAME }"
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "กำลังสร้างบัญชีและนำเข้าข้อมูลในขณะนี้ เพื่อให้ทีมมีทุกสิ่งที่จำเป็นเมื่อเริ่มต้นใช้งานบัญชี ${ BRAND_NAME } ที่ปลอดภัย"
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "กำลังเปิดใช้งานการเข้ารหัสลับจากต้นทางถึงปลายทางสำหรับทุกคน ทุกอีเมลและทุกกิจกรรมจะเป็นของคนเดียวเท่านั้น และจะปรากฏให้ทีมเห็นเท่านั้น ไม่ใช่ผู้ให้บริการหรือบุคคลอื่นใด"
-      ],
-      "What are you migrating?": [
-        "คุณกำลังย้ายข้อมูลอะไร?"
-      ],
-      "You": [
-        "คุณ"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "จะไม่สามารถคัดลอกข้อมูลของผู้ใช้เหล่านี้ได้ในภายหลัง"
-      ],
-      "You're all set!": [
-        "ทุกอย่างเรียบร้อยแล้ว!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "ใกล้จะเสร็จสมบูรณ์แล้ว จะต้องกำหนดค่าโดเมนเพื่อรับอีเมลโดยตรงบน ${ BRAND_NAME } เมื่อยืนยันแล้ว ทีมจะหยุดรับอีเมลใหม่บน Gmail และการย้ายข้อมูลจะเสร็จสมบูรณ์"
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "แผนปัจจุบันอนุญาตให้มีผู้ใช้ได้สูงสุด ${ maxMembers } ราย หากต้องการย้ายข้อมูลผู้ใช้เพิ่มเติม โปรดเพิ่มสิทธิ์ผู้ใช้ในการสมัครสมาชิก"
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "การกำหนดค่าโดเมนยังคงรวมรหัส MX ของผู้ให้บริการรายอื่นอยู่"
       ]
     },
     "breadcrumb": {
@@ -7558,6 +7133,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "บางชื่อป้ายกำกับของคุณเกินขีดจำกัดจำนวนตัวอักษรสูงสุดของ ${ MAIL_APP_NAME } แล้วโปรดปรับแก้การนำเข้าเพื่อแก้ไขชื่อเหล่านี้"
       ],
+      "Something went wrong": [
+        "มีข้อผิดพลาดเกิดขึ้น"
+      ],
       "Something went wrong while converting the address": [
         "เกิดข้อผิดพลาดขณะแปลงที่อยู่"
       ],
@@ -10263,9 +9841,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "คุณแน่ใจหรือไม่ที่จะถอนสิทธิ์ของผู้ดูแลระบบจากผู้ใช้ผู้นี้?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "คุณแน่ใจหรือไม่ว่าต้องการลบสมาชิกทั้งหมดออกจากกลุ่มนี้?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "แน่ใจหรือไม่ว่าต้องการลบโดเมน ${ boldDomain } ออก?"
       ],
@@ -12188,6 +11763,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "เราได้เปิดฟีเจอร์เพิ่มให้กับบัญชีของคุณเพราะคุณคือผู้ใช้บริการที่ยึดมั่นในบริการของเรา"
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "กำหนดเส้นทางอัจฉริยะผ่าน: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "การส่งผ่าน SMTP ช่วยให้บริการหรืออุปกรณ์ของบุคคลที่สามส่งอีเมลผ่าน ${ MAIL_APP_NAME } สำหรับที่อยู่โดเมนที่กำหนดเองได้"
@@ -15324,6 +14902,9 @@
       ],
       "Set password": [
         "ตั้งค่ารหัสผ่าน"
+      ],
+      "Settings": [
+        "การตั้งค่า"
       ],
       "Share your referral link": [
         "แชร์ลิงก์แนะนำของคุณ"
@@ -21342,17 +20923,11 @@
       "Make sure you copy the above SCIM token now.": [
         "ตรวจสอบให้แน่ใจว่าคัดลอกโทเค็น SCIM ด้านบนแล้วในตอนนี้"
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "เมื่อปิดใช้งาน SCIM สำหรับองค์กร **ผู้ใช้ SCIM ทั้งหมดที่จัดเตรียมโดยอัตโนมัติโดยผู้ให้บริการข้อมูลระบุตัวตนจะถูกแปลงเป็นผู้ใช้ SSO** และคุณจะสามารถจัดการพวกเขาได้โดยตรงภายในการตั้งค่า ${ BRAND_NAME }"
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "ลดความซับซ้อนในการจัดการผู้ใช้ในบริการต่างๆ เพิ่ม แก้ไข และลบผู้ใช้ในผู้ให้บริการข้อมูลระบุตัวตน และการเปลี่ยนแปลงเหล่านั้นจะถูกนำไปใช้กับองค์กร ${ appName } โดยอัตโนมัติ"
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "การจัดเตรียม SCIM อัตโนมัติจะถูกปิดใช้งานจนกว่าจะป้อนโทเค็น SCIM ใหม่ลงในการตั้งค่าของผู้ให้บริการข้อมูลระบุตัวตน"
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM Base URL และโทเค็นจะถูกลบ"
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "เพื่อเปิดใช้งานการซิงค์กับผู้ให้บริการข้อมูลระบุตัวตนอีกครั้ง คุณต้องดำเนินการรวม SCIM ให้เสร็จสมบูรณ์อีกครั้ง"
@@ -24098,6 +23673,14 @@
         "สำหรับบุคคลทั่วไป"
       ]
     },
+    "Table header": {
+      "Size": [
+        "ขนาด"
+      ],
+      "Status": [
+        "สถานะ"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "แชร์กับฉัน"
@@ -25612,9 +25195,6 @@
       ],
       "Reject device?": [
         "ปฏิเสธอุปกรณ์?"
-      ],
-      "Remove all members?": [
-        "ลบสมาชิกทั้งหมดออกหรือไม่?"
       ],
       "Remove calendar": [
         "ลบปฏิทินออก"

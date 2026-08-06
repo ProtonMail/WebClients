@@ -729,6 +729,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable": [
+        "Paganahin"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Paganahin ang ${ darkWebMonitoring }"
       ],
@@ -1283,9 +1286,6 @@
       ],
       "Remove": [
         "Alisin"
-      ],
-      "Remove all members": [
-        "Alisin ang lahat ng miyembro"
       ],
       "Remove all other devices": [
         "Alisin ang lahat ng ibang device"
@@ -2913,437 +2913,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Ang iyong personal na email address ay mahalagang bahagi ng iyong digital na pagkakakilanlan. Tulad ng iyong numero ng telepono, hindi mo ito ibinibigay sa lahat ng nakikilala mo. Kaya kapaki-pakinabang na magkaroon ng ibang mga email address na magagamit para sa iba't ibang layunin."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } ng ${ totalCount }"
-      ],
-      "Account connected": [
-        "Konektado ang account"
-      ],
-      "Account disconnected": [
-        "Naka-disconnect ang account"
-      ],
-      "Accounts migrated": [
-        "Mga account na na-migrate"
-      ],
-      "Activated": [
-        "Na-activate"
-      ],
-      "Add domain": [
-        "Magdagdag ng domain"
-      ],
-      "Add users": [
-        "Magdagdag ng mga user"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Idagdag ang domain ng email ng iyong organisasyon sa ${ BRAND_NAME }."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Ginagamit na ang address ng isang user sa labas ng organisasyon. Pakikontak ang suporta sa customer upang malutas ito"
-      ],
-      "All": [
-        "Lahat"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Ang lahat ng na-migrate na account ng user ay handa nang imbitahan sa iyong ${ BRAND_NAME } organisasyon."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "Nagkaroon ng hindi kilalang error. Pakisariwa ang pahina at subukang muli"
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "Sigurado ka bang gusto mong magpatuloy nang walang ${ withoutString } at ${ notMigratedOthers } iba pa?",
-        "Sigurado ka bang gusto mong magpatuloy nang walang ${ withoutString } at ${ notMigratedOthers } na iba pa?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "Sigurado ka bang gusto mong magpatuloy nang walang ${ withoutString }?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Sigurado ka bang gusto mong magpatuloy? Ang mga user na hindi pa naka-claim ng kanilang account bago matapos ang migration ay kailangang humiling ng pag-reset ng password mula sa administrator ng organisasyon ng ${ BRAND_NAME }."
-      ],
-      "Authenticate": [
-        "Mag-authenticate"
-      ],
-      "Authenticate your Google Workspace account": [
-        "I-authenticate ang iyong Google Workspace account"
-      ],
-      "Calendar": [
-        "Kalendaryo"
-      ],
-      "Collapse invitation message": [
-        "I-collapse ang mensahe ng imbitasyon"
-      ],
-      "Collapse step": [
-        "I-collapse ang hakbang"
-      ],
-      "Configure domain": [
-        "I-configure ang domain"
-      ],
-      "Configure migration": [
-        "I-configure ang migration"
-      ],
-      "Configure users": [
-        "I-configure ang mga user"
-      ],
-      "Configure your domain": [
-        "I-configure ang domain"
-      ],
-      "Confirm": [
-        "Kumpirmahin"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Makipag-ugnayan sa administrator upang magsimula ng migration."
-      ],
-      "Contacts": [
-        "Mga Contact"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Kopyahin ang code sa ibaba at i-paste ito sa seksyon ng DNS ng domain host."
-      ],
-      "Creating accounts": [
-        "Gumagawa ng mga account"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status ng migration ng data mula sa Google Workspace patungong ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "I-delete ang anumang umiiral nang MX code, pagkatapos ay kopyahin ang mga code sa ibaba at i-paste ang mga ito sa seksyon ng DNS ng host ng iyong domain."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "Nagdaragdag ang DKIM ng digital na signature sa bawat email upang ma-verify ng mga tatanggap na ang mensahe ay talagang nanggaling sa domain at hindi nabago habang ipinapadala. Kung wala ito, ang mga mensahe ay maaaring ituring na hindi gaanong mapagkakatiwalaan."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "Bumubuo ang DMARC sa SPF at DKIM sa pamamagitan ng pagsasabi sa mga tumatanggap na server kung paano hahawakan ang mga mensahe na bigo sa mga pagsusuring ito. Tumutulong ito na protektahan ang domain mula sa pagpapanggap at nagpapabuti sa pangkalahatang pagiging maaasahan ng paghahatid."
-      ],
-      "Domain added": [
-        "Naidagdag ang domain"
-      ],
-      "Domain provider": [
-        "Tagapagbigay ng domain"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Hindi alam kung saan magsisimula? Panoorin kung paano i-update ang DNS sa ${ registrarLink }"
-      ],
-      "Emails": [
-        "Mga email"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Tiyakin na ang mga email ay makakarating sa inbox, hindi sa spam folder. Ang pag-update sa SPF ay magbibigay-daan sa mga user na magpadala mula sa ${ BRAND_NAME } at Google nang sabay habang nagpapatuloy ang migration."
-      ],
-      "Errors": [
-        "Mga error"
-      ],
-      "Estimated size": [
-        "Tinatayang laki"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Makakakuha ang lahat ng parehong link ng imbitasyon. Bisitahin nila ang pahina, ilalagay ang kanilang email, at may darating na verification code sa kanilang Gmail inbox. Mula roon, itatakda nila ang kanilang password sa ${ BRAND_NAME }."
-      ],
-      "Expand invitation message": [
-        "I-expand ang mensahe ng imbitasyon"
-      ],
-      "Expand step": [
-        "I-expand ang hakbang"
-      ],
-      "Failed to load OAuth": [
-        "Nabigong i-load ang OAuth"
-      ],
-      "Final step": [
-        "Huling hakbang"
-      ],
-      "Find out what can be migrated.": [
-        "Alamin kung ano ang maaaring i-migrate."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Kumuha ng tulong at mga kapaki-pakinabang na tip para sa iba pang mga tagapagbigay ng domain ${ here }"
-      ],
-      "Going private": [
-        "Nagiging pribado"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Google Marketplace app upang kopyahin ang data sa ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Google Workspace account"
-      ],
-      "Has errors": [
-        "May mga error"
-      ],
-      "Import completed successfully": [
-        "Matagumpay na nakumpleto ang pag-import"
-      ],
-      "Import details": [
-        "Mga detalye ng pag-import"
-      ],
-      "In progress": [
-        "Isinasagawa"
-      ],
-      "Install app": [
-        "I-install ang app"
-      ],
-      "Install migration app": [
-        "I-install ang migration app"
-      ],
-      "Invitation link": [
-        "Link ng imbitasyon"
-      ],
-      "Invitation message": [
-        "Mensahe ng imbitasyon"
-      ],
-      "invite link": [
-        "link ng imbitasyon"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Maaaring umabot nang hanggang 24 na oras bago lumaganap ang mga pagbabagong ito."
-      ],
-      "Loading your organization data": [
-        "Ipino-load ang data ng organisasyon"
-      ],
-      "Mail": [
-        "Mail"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Hindi nahanap ang address ng miyembro. Pakikontak ang suporta sa customer upang malutas ito"
-      ],
-      "Migrate": [
-        "I-migrate"
-      ],
-      "Migrate accounts": [
-        "I-migrate ang mga account"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "I-migrate ang mga account sa ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "I-migrate mula sa Google Workspace"
-      ],
-      "Migrated": [
-        "Na-migrate"
-      ],
-      "Migrated accounts": [
-        "Mga na-migrate na account"
-      ],
-      "Migration includes": [
-        "Kasama sa migration ang"
-      ],
-      "Migration started for ${ n } user": [
-        "Nagsimula na ang migration para sa ${ n } user",
-        "Nagsimula na ang migration para sa ${ n } na user"
-      ],
-      "Migration status": [
-        "Status ng migration"
-      ],
-      "Migration summary": [
-        "Buod ng migration"
-      ],
-      "Missing organization private key": [
-        "Nawawala ang pribadong key ng organisasyon"
-      ],
-      "Missing organization public key": [
-        "Nawawala ang pampublikong key ng organisasyon"
-      ],
-      "More details": [
-        "Higit pang mga detalye"
-      ],
-      "Need help?": [
-        "Kailangan ng tulong?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Walang available na mga detalye ng error. Pakikontak ang suporta sa customer para sa karagdagdang impormasyon"
-      ],
-      "No users to display": [
-        "Walang mga user na ipapakita"
-      ],
-      "Not activated": [
-        "Hindi na-activate"
-      ],
-      "Not confirmed": [
-        "Hindi nakumpirma"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Hindi natukoy nang tama? Piliin ang tagapagbigay mula sa listahan."
-      ],
-      "Onboard your team": [
-        "I-onboard ang pangkat"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Kapag nakumpirma na ang mga email ay iniruruta sa ${ BRAND_NAME } ang migration ay pinal na tatapusin. Makakatanggap ng email ng kumpirmasyon upang ipaalam kapag nangyari ito. Ang prosesong ito ay maaaring tumagal ng hanggang 24 na oras."
-      ],
-      "Organization does not have enough seats available": [
-        "Walang sapat na seat ang organisasyon"
-      ],
-      "Organization does not have enough storage available": [
-        "Walang sapat na storage ang organisasyon"
-      ],
-      "Pending": [
-        "Nakabinbin"
-      ],
-      "Please don’t close or refresh this window.": [
-        "Pakiusap huwag isara o i-refresh ang window na ito."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Muling i-authenticate ang Google Workspace account upang simulan ang migration"
-      ],
-      "Refresh": [
-        "I-refresh"
-      ],
-      "Select at least one user to start a migration": [
-        "Pumili ng kahit isang user upang simulan ang migration"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Piliin nang eksakto kung ano ang gusto mong i-migrate. Ilalapat ito sa lahat ng user ng organisasyon."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Piliin ang mga account na gusto mong dalhin sa ${ BRAND_NAME }. Maaari mong i-migrate ang iyong buong organisasyon ngayon o magsimula sa kaunti muna at dalhin ang iba kapag handa ka na."
-      ],
-      "Select users to migrate": [
-        "Piliin ang mga user na i-migrate"
-      ],
-      "Set up secure sending (DKIM)": [
-        "I-set up ang ligtas na pagpapadala (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "I-set up ang ligtas na pagpapadala (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "I-set up ang ligtas na pagpapadala (SPF)"
-      ],
-      "Settings": [
-        "Mga setting"
-      ],
-      "Sign in to Google Workspace": [
-        "Mag-sign in sa Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Mag-sign in gamit ang Google Workspace administrator account para sa ${ BRAND_NAME } upang i-setup ang migration."
-      ],
-      "Size": [
-        "Laki"
-      ],
-      "Skip": [
-        "Laktawan"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "Nilaktawan ang ${ count } na contact dahil sa mga hindi tugmang bagay",
-        "Nilaktawan ang ${ count } na mga contact dahil sa mga hindi tugmang bagay"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "Nilaktawan ang ${ count } na email dahil sa mga hindi tugmang bagay",
-        "Nilaktawan ang ${ count } na mga email dahil sa mga hindi tugmang bagay"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "Nilaktawan ang ${ count } na kaganapan dahil sa mga hindi tugmang bagay",
-        "Nilaktawan ang ${ count } na mga kaganapan dahil sa mga hindi tugmang bagay"
-      ],
-      "Some accounts are not claimed": [
-        "Ang ilang account ay hindi pa na-claim"
-      ],
-      "Some members weren't migrated": [
-        "May mga miyembrong hindi na-migrate"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Hindi maaaring i-migrate ang user dahil sa mga hindi pagiging tugma ng platform."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Upang dalhin ang data ng organisasyon sa ${ BRAND_NAME }, i-install ang ${ BRAND_NAME } Easy Switch mula sa Google Workspace Marketplace. Pagkatapos itong i-install, bumalik dito upang magpatuloy."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "Upang makumpleto ang migrasyon, tiyaking mga MX code lang ng ${ BRAND_NAME } ang iyong itatabi."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Upang i-migrate ang user, paganahin ang account sa Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Upang i-migrate ang user, paganahin ang account sa ilalim ng ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Upang i-migrate ang user, paganahin ang address sa ilalim ng ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Upang i-migrate ang user, kailangang tanggapin ang imbitasyon na sumali sa ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Upang i-migrate ang user, i-unarchive ito sa Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Upang i-migrate ang user, i-unsuspend ito sa Google Workspace Admin Console."
-      ],
-      "Update records for receiving": [
-        "I-update ang mga record para sa pagtanggap"
-      ],
-      "User": [
-        "User"
-      ],
-      "Users activated": [
-        "Na-activate na ang mga user"
-      ],
-      "Users migrated": [
-        "Na-migrate na mga user"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Mga user na nag-access sa kanilang ${ BRAND_NAME } account"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Ang mga user na hindi pa nakuha ang kanilang account bago matapos ang migration ay kakailanganing humingi ng pag-reset ng password mula sa administrator ng kanilang ${ BRAND_NAME } organisasyon."
-      ],
-      "Verified": [
-        "Na-verify"
-      ],
-      "Verify installation": [
-        "I-verify ang pagkakainstall"
-      ],
-      "Verify your domain": [
-        "I-verify ang iyong domain"
-      ],
-      "Verify your domain to start a migration": [
-        "I-verify ang iyong domain upang simulan ang migration"
-      ],
-      "Waiting for MX...": [
-        "Naghihintay para sa MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Hindi namin ma-verify ang pagkakainstall, pakisuyong suriin kung na-install mo ito sa iyong Google Workspace account at subukang muli."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Lalipat kami sa ${ BRAND_NAME }, ang secure na email na serbisyo.\nAt handa nang kunin ang iyong ${ BRAND_NAME } account.\nI-click ang ${ inviteLink }.\nIlagay ang iyong email address, magpapadala kami ng code sa iyong Gmail.\nGamitin ito upang i-set ang password — at sa iyo na ang iyong ${ BRAND_NAME } account.\nSa maikling panahon, magkasabay na gagana ang dalawa. ${ BRAND_NAME } at Gmail.\nPagkatapos, kapag lumipat na ang lahat, hihinto na kami sa paggamit ng Gmail. Paaalalahanan ka namin bago ito mangyari."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Napansin na ang ilang user ay hindi pa na-claim ang kanilang mga ${ BRAND_NAME } account."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "Ginagawa na namin ang iyong mga account at ina-import ang iyong data ngayon upang makuha ng iyong pangkat ang lahat ng kailangan nila kapag nagsimula na silang gumamit ng kanilang secure na ${ BRAND_NAME } account."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Pinapagana namin ang end-to-end na encryption para sa lahat. Ang bawat email, bawat kaganapan ay sa iyo na lamang ngayon. Nakikita lamang ng iyong pangkat. Hindi kami, hindi ng kahit sino pa."
-      ],
-      "What are you migrating?": [
-        "Ano ang iyong minamigrate?"
-      ],
-      "You": [
-        "Ikaw"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "Hindi mo makokopya ang data ng mga user na ito sa ibang pagkakataon."
-      ],
-      "You're all set!": [
-        "Ayos na ang lahat!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Halos tapos ka na, kailangan mong i-configure ang domain upang direktang matanggap ang mga email sa ${ BRAND_NAME }. Kapag nakumpirma na, hihinto na sa pagtanggap ng mga bagong email sa Gmail ang pangkat at makukumpleto na ang migration."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Ang kasalukuyang plano ay nagpapahintulot ng hanggang ${ maxMembers } na user. Upang i-migrate ang karagdagang mga user, magdagdag ng higit pang mga seat sa subscription.",
-        "Ang kasalukuyang plano ay nagpapahintulot ng hanggang ${ maxMembers } na mga user. Upang i-migrate ang karagdagang mga user, magdagdag ng higit pang mga seat sa subscription."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "Kasama pa rin sa configuration ng iyong domain ang mga MX code ng ibang provider."
       ]
     },
     "breadcrumb": {
@@ -7614,6 +7183,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Lumampas ang ilan sa mga pangalan ng iyong label sa limitasyon ng character ng ${ MAIL_APP_NAME }. I-customize ang import para i-edit ang mga pangalang ito."
       ],
+      "Something went wrong": [
+        "Nagkaproblema"
+      ],
       "Something went wrong while converting the address": [
         "Nagkaroon ng mali habang kino-convert ang address"
       ],
@@ -10382,9 +9954,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Sigurado ka bang gusto mong alisin ang mga pribilehiyo ng administrator sa user na ito?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Sigurado ka bang gusto mong alisin ang lahat ng miyembro mula sa pangkat na ito?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Sigurado ka bang aalisin ang domain na ${ boldDomain }?"
       ],
@@ -12321,6 +11890,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dahil isa kang tapat na user, may mga pinaganang karagdagang feature ang account."
+      ],
+      "Smart Routed through: ${ joinedCountries }.": [
+        "Smart Routed sa pamamagitan ng: ${ joinedCountries }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "Pinapayagan ng SMTP submission ang mga 3rd-party na serbisyo o device na magpadala ng email sa pamamagitan ng ${ MAIL_APP_NAME } para sa mga custom na domain address."
@@ -15483,6 +15055,9 @@
       ],
       "Set password": [
         "I-set ang password"
+      ],
+      "Settings": [
+        "Mga Setting"
       ],
       "Share your referral link": [
         "I-share ang iyong referral link"
@@ -21582,17 +21157,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Siguraduhing kopyahin ang SCIM token sa itaas ngayon."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Kapag hindi na pinagana ang SCIM para sa organisasyon, **lahat ng SCIM user na awtomatikong ibinigay ng provider ng pagkakakilanlan ay gagawing SSO user** at mapapamahalaan mo na sila nang direkta sa mga setting ng ${ BRAND_NAME }."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Pinapasimple ang pamamahala ng user sa iba't ibang serbisyo. Magdagdag, i-edit at alisin ang mga user sa iyong identity provider, at ang mga pagbabagong iyon ay awtomatikong ilalapat sa iyong organisasyon sa ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Hindi pagaganahin ang awtomatikong paglalaan ng SCIM hanggang sa ilagay mo ang bagong SCIM token sa mga setting ng provider ng pagkakakilanlan."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "Ang SCIM base URL at token ay i-de-delete."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Upang muling paganahin ang pag-sync sa provider ng pagkakakilanlan, kailangang kumpletuhin muli ang integrasyon ng SCIM."
@@ -24404,6 +23973,14 @@
         "Para sa mga indibidwal"
       ]
     },
+    "Table header": {
+      "Size": [
+        "Laki"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Table header; invitations to share calendar": {
       "Shared with me": [
         "Naka-share sa akin"
@@ -25935,9 +25512,6 @@
       ],
       "Reject device?": [
         "Tanggihan ang device?"
-      ],
-      "Remove all members?": [
-        "Alisin ang lahat ng miyembro?"
       ],
       "Remove calendar": [
         "Alisin ang kalendaryo"

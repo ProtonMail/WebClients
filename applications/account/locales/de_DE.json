@@ -168,6 +168,9 @@
       "Add user": [
         "Benutzer hinzuf."
       ],
+      "Add users": [
+        "Benutzer hinzufügen"
+      ],
       "Added ${ memberName } as group owner": [
         "${ memberName } als Gruppeneigentümer hinzufügen"
       ],
@@ -741,6 +744,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable": [
+        "Aktivieren"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } aktivieren"
       ],
@@ -1014,6 +1020,9 @@
       "Insert link": [
         "Link einfügen"
       ],
+      "Install app": [
+        "App installieren"
+      ],
       "Instructions": [
         "Anweisungen"
       ],
@@ -1140,11 +1149,17 @@
       "Microsoft Intune": [
         "Microsoft Intune"
       ],
+      "Migrate": [
+        "Übernehmen"
+      ],
       "More": [
         "Mehr"
       ],
       "More benefits": [
         "Weitere Vorteile"
+      ],
+      "More details": [
+        "Mehr Details"
       ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
@@ -1307,9 +1322,6 @@
       ],
       "Remove": [
         "Entfernen"
-      ],
-      "Remove all members": [
-        "Alle Mitglieder entfernen"
       ],
       "Remove all other devices": [
         "Alle anderen Geräte entfernen"
@@ -1620,6 +1632,9 @@
       "Sign in": [
         "Anmelden"
       ],
+      "Sign in to Google Workspace": [
+        "Bei Google Workspace anmelden"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Mit ${ BRAND_NAME } anmelden"
       ],
@@ -1854,6 +1869,9 @@
       "Verify domain": [
         "Domain verifizieren"
       ],
+      "Verify installation": [
+        "Installation überprüfen"
+      ],
       "Verify now": [
         "Jetzt verifizieren"
       ],
@@ -1871,6 +1889,9 @@
       ],
       "View all reports": [
         "Alle Berichte anzeigen"
+      ],
+      "View guide": [
+        "Anleitung ansehen"
       ],
       "View invoice": [
         "Rechnung anzeigen"
@@ -2963,437 +2984,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Deine persönliche E-Mail-Adresse ist ein wesentlicher Teil deiner digitalen Identität. Wie deine Telefonnummer gibst du sie nicht jedem, den du triffst. Deshalb ist es nützlich, andere E-Mail-Adressen zu haben, die du für verschiedene Zwecke nutzen kannst."
-      ]
-    },
-    "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } von ${ totalCount }"
-      ],
-      "Account connected": [
-        "Konto verbunden"
-      ],
-      "Account disconnected": [
-        "Konto getrennt"
-      ],
-      "Accounts migrated": [
-        "Konto migriert"
-      ],
-      "Activated": [
-        "Aktiviert"
-      ],
-      "Add domain": [
-        "Domain hinzufügen"
-      ],
-      "Add users": [
-        "Benutzer hinzufügen"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "E-Mail-Domain deiner Organisation zu ${ BRAND_NAME } hinzufügen."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Die Adresse wird bereits von einem Benutzer außerhalb deiner Organisation verwendet. Bitte wende dich an den Kundensupport, um dies zu klären"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Alle migrierten Benutzerkonten können nun in deine ${ BRAND_NAME }-Organisation eingeladen werden."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "Ein unbekannter Fehler ist aufgetreten. Lade die Seite neu und versuche es erneut."
-      ],
-      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
-        "Möchtest du wirklich ohne ${ withoutString } und ${ notMigratedOthers } fortfahren?",
-        "Möchtest du wirklich ohne ${ withoutString } und ${ notMigratedOthers } fortfahren?"
-      ],
-      "Are you sure you want to continue without ${ withoutString }?": [
-        "Möchtest du wirklich ohne ${ withoutString } fortfahren?"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Bist du sicher, dass du fortfahren möchtest? Benutzer, die ihr Konto vor dem Abschluss der Migration nicht beansprucht haben, müssen bei ihrem Administrator der ${ BRAND_NAME }-Organisation eine Passwortzurücksetzung beantragen."
-      ],
-      "Authenticate": [
-        "Authentifizieren"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Dein Google Workspace-Konto authentifizieren"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Collapse invitation message": [
-        "Einladungsnachricht einklappen"
-      ],
-      "Collapse step": [
-        "Schritt einklappen"
-      ],
-      "Configure domain": [
-        "Domain konfigurieren"
-      ],
-      "Configure migration": [
-        "Übernahme konfigurieren"
-      ],
-      "Configure users": [
-        "Benutzer konfigurieren"
-      ],
-      "Configure your domain": [
-        "Deine Domain konfigurieren"
-      ],
-      "Confirm": [
-        "Bestätigen"
-      ],
-      "Contact your administrator to start a migration.": [
-        "Kontaktiere deinen Administrator um, eine Migration zu starten."
-      ],
-      "Contacts": [
-        "Kontakte"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Kopiere den folgenden Code und füge ihn im DNS-Bereich deines Domain-Hosts ein."
-      ],
-      "Creating accounts": [
-        "Konten werden erstellt"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status der Datenmigration von Google Workspace zu ${ BRAND_NAME }"
-      ],
-      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
-        "Lösche allen bereits vorhandenen MX-Code, kopiere dann den unten stehenden Code und füge ihn im DNS-Bereich deiner Domain-Organisation ein."
-      ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM fügt jeder E-Mail eine digitale Signatur hinzu, damit Empfänger überprüfen können, ob die Nachricht tatsächlich von deiner Domain stammt und während der Übertragung nicht verändert wurde. Ohne diese Signatur werden Nachrichten möglicherweise als weniger vertrauenswürdig eingestuft."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC baut auf SPF und DKIM auf, indem es empfangenden Servern mitteilt, wie sie mit Nachrichten verfahren sollen, die diese Prüfungen nicht bestehen. Es hilft, deine Domain vor Identitätsdiebstahl zu schützen, und verbessert die allgemeine Zustellsicherheit."
-      ],
-      "Domain added": [
-        "Domain hinzugefügt"
-      ],
-      "Domain provider": [
-        "Domain-Anbieter"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Du weißt nicht, wo du anfangen sollst? Sieh dir an, wie du deine DNS-Einstellungen auf ${ registrarLink } aktualisieren kannst."
-      ],
-      "Emails": [
-        "E-Mails"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Sorge dafür, dass deine E-Mails den Posteingang erreichen und nicht im Spam-Ordner landen. Durch die Aktualisierung von SPF können Benutzer für die Dauer der Migration gleichzeitig über ${ BRAND_NAME } und Google senden."
-      ],
-      "Errors": [
-        "Fehler"
-      ],
-      "Estimated size": [
-        "Geschätzte Größe"
-      ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Jeder erhält denselben Einladungslink. Sie rufen die Seite auf, geben ihre E-Mail-Adresse ein und erhalten einen Bestätigungscode in ihrem Gmail-Posteingang. Dort legen sie dann ihr Passwort für ${ BRAND_NAME } fest."
-      ],
-      "Expand invitation message": [
-        "Einladungsnachricht erweitern"
-      ],
-      "Expand step": [
-        "Schritt erweitern"
-      ],
-      "Failed to load OAuth": [
-        "OAuth konnte nicht geladen werden"
-      ],
-      "Final step": [
-        "Letzter Schritt"
-      ],
-      "Find out what can be migrated.": [
-        "Finde heraus, was migriert werden kann."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "${ here } findest du Hilfe und nützliche Tipps zu anderen Domain-Anbietern"
-      ],
-      "Going private": [
-        "Erhöhung der Privatsphäre"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Google Marketplace-App zum Kopieren von Daten nach ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Google Workspace-Konto"
-      ],
-      "Has errors": [
-        "Hat Fehler"
-      ],
-      "Import completed successfully": [
-        "Import erfolgreich abgeschlossen"
-      ],
-      "Import details": [
-        "Importdetails"
-      ],
-      "In progress": [
-        "In Bearbeitung"
-      ],
-      "Install app": [
-        "App installieren"
-      ],
-      "Install migration app": [
-        "Übernahme-App installieren"
-      ],
-      "Invitation link": [
-        "Einladungslink"
-      ],
-      "Invitation message": [
-        "Einladungsnachricht"
-      ],
-      "invite link": [
-        "Einladungslink"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Es kann bis zu 24 Stunden dauern, bis diese Änderungen wirksam werden."
-      ],
-      "Loading your organization data": [
-        "Deine Organisationsdaten werden geladen"
-      ],
-      "Mail": [
-        "E-Mail"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
-      ],
-      "Migrate": [
-        "Migrieren"
-      ],
-      "Migrate accounts": [
-        "Konto migrieren"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Konten nach ${ BRAND_NAME } migrieren"
-      ],
-      "Migrate from Google Workspace": [
-        "Von Google Workspace übernehmen"
-      ],
-      "Migrated": [
-        "Migriert"
-      ],
-      "Migrated accounts": [
-        "Migrierte Konten"
-      ],
-      "Migration includes": [
-        "Übernahme beinhaltet"
-      ],
-      "Migration started for ${ n } user": [
-        "Migration für ${ n } Benutzer gestartet",
-        "Migration für ${ n } Benutzer gestartet"
-      ],
-      "Migration status": [
-        "Migrationsstatus"
-      ],
-      "Migration summary": [
-        "Migrationsübersicht"
-      ],
-      "Missing organization private key": [
-        "Privater Schlüssel der Organisation fehlt"
-      ],
-      "Missing organization public key": [
-        "Öffentlicher Schlüssel der Organisation fehlt"
-      ],
-      "More details": [
-        "Weitere Details"
-      ],
-      "Need help?": [
-        "Brauchst du Hilfe?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Keine Fehlerdetails verfügbar. Bitte kontaktiere den Kundensupport für weitere Informationen"
-      ],
-      "No users to display": [
-        "Keine Benutzer vorhanden"
-      ],
-      "Not activated": [
-        "Nicht aktiviert"
-      ],
-      "Not confirmed": [
-        "Nicht bestätigt"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Nicht richtig erkannt? Wähle deinen Anbieter aus der Liste aus."
-      ],
-      "Onboard your team": [
-        "Dein Team einführen"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Sobald wir bestätigt haben, dass E-Mails an ${ BRAND_NAME } weitergeleitet werden, wird die Migration abgeschlossen. Du erhältst eine Bestätigungs-E-Mail, die dich darüber informiert, wann dies geschieht. Dieser Vorgang kann bis zu 24 Stunden dauern."
-      ],
-      "Organization does not have enough seats available": [
-        "Organisation hat nicht genügend Lizenzen verfügbar"
-      ],
-      "Organization does not have enough storage available": [
-        "Die Organisation hat nicht genügend Speicherplatz verfügbar"
-      ],
-      "Pending": [
-        "Ausstehend"
-      ],
-      "Please don’t close or refresh this window.": [
-        "Bitte schließe dieses Fenster nicht und aktualisiere es nicht."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Melde dich erneut bei deinem Google Workspace-Konto an, um die Migration zu starten"
-      ],
-      "Refresh": [
-        "Aktualisieren"
-      ],
-      "Select at least one user to start a migration": [
-        "Wähle mindestens einen Benutzer aus, um eine Migration zu starten"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Wähle genau aus, was du migrieren möchtest. Dies gilt für alle Benutzer der Organisation."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Konten auswählen, die du zu ${ BRAND_NAME } übertragen möchtest. Du kannst entweder gleich deine gesamte Organisation migrieren oder klein anfangen und den Rest später hinzufügen, wenn du bereit bist."
-      ],
-      "Select users to migrate": [
-        "Benutzer für die Übernahme auswählen"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Sicheren Versand einrichten (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Sicheren Versand einrichten (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Sicheren Versand einrichten (SPF)"
-      ],
-      "Settings": [
-        "Einstellungen"
-      ],
-      "Sign in to Google Workspace": [
-        "Bei Google Workspace anmelden"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Melde dich mit einem Google Workspace-Administratorkonto für ${ BRAND_NAME } an, um die Migration einzurichten."
-      ],
-      "Size": [
-        "Größe"
-      ],
-      "Skip": [
-        "Überspringen"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "${ count } Kontakt aufgrund von Inkompatibilitäten übersprungen",
-        "${ count } Kontakte aufgrund von Inkompatibilitäten übersprungen"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "${ count } E-Mail aufgrund von Inkompatibilitäten übersprungen",
-        "${ count } E-Mails aufgrund von Inkompatibilitäten übersprungen"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "${ count } Termin aufgrund von Inkompatibilitäten übersprungen",
-        "${ count } Termine aufgrund von Inkompatibilitäten übersprungen"
-      ],
-      "Some accounts are not claimed": [
-        "Einige Konten wurden noch nicht beansprucht"
-      ],
-      "Some members weren't migrated": [
-        "Einige Mitglieder wurden nicht übernommen"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Dieser Benutzer kann aufgrund von Plattform-Inkompatibilitäten nicht migriert werden."
-      ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Um die Daten deines Unternehmens auf ${ BRAND_NAME } zu übertragen, installiere „${ BRAND_NAME } Easy Switch“ aus dem Google Workspace Marketplace. Kehren nach der Installation hierher zurück, um fortzufahren."
-      ],
-      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
-        "Um die Migration abzuschließen, stelle sicher, dass du ausschließlich den MX-Code von ${ BRAND_NAME } beibehältst."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Um diesen Benutzer zu migrieren, aktiviere sein Konto in deiner Google Workspace Admin-Konsole."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Um diesen Benutzer zu migrieren, aktiviere sein Konto unter ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Um diesen Benutzer zu migrieren, aktiviere seine Adresse unter ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Um diesen Benutzer zu migrieren, muss er deine Einladung annehmen, ${ BRAND_NAME } beizutreten."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Um diesen Benutzer zu migrieren, dearchiviere ihn in deiner Google Workspace Admin-Konsole."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Um diesen Benutzer zu migrieren, hebe seine Sperrung in deiner Google Workspace Admin-Konsole auf."
-      ],
-      "Update records for receiving": [
-        "Einträge für Empfang aktualisieren"
-      ],
-      "User": [
-        "Benutzer"
-      ],
-      "Users activated": [
-        "Benutzer aktiviert"
-      ],
-      "Users migrated": [
-        "Benutzer übernommen"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Benutzer, die ihr Konto nicht vor Abschluss der Migration beansprucht haben, müssen beim Administrator ihrer ${ BRAND_NAME }-Organisation eine Passwortzurücksetzung beantragen."
-      ],
-      "Verified": [
-        "Verifiziert"
-      ],
-      "Verify installation": [
-        "Installation überprüfen"
-      ],
-      "Verify your domain": [
-        "Deine Domain verifizieren"
-      ],
-      "Verify your domain to start a migration": [
-        "Überprüfe deine Domain, um eine Migration zu starten"
-      ],
-      "Waiting for MX...": [
-        "Auf MX warten..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Wir konnten die Installation nicht überprüfen. Bitte stelle sicher, dass du sie in deinem Google Workspace-Konto installiert hast, und versuche es erneut."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Wir wechseln zu ${ BRAND_NAME }, dem sicheren E-Mail-Dienst.\nUnd dein ${ BRAND_NAME }-Konto steht bereit.\nKlicke auf ${ inviteLink }.\nGib deine E-Mail-Adresse ein, wir senden dir einen Code an deine Gmail-Adresse.\nVerwende diesen, um dein Passwort festzulegen – und schon gehört dein ${ BRAND_NAME }-Konto dir.\nFür eine kurze Zeit werden beide Dienste parallel funktionieren: ${ BRAND_NAME } und Gmail.\nSobald alle den Wechsel vollzogen haben, werden wir Gmail einstellen. Wir werden dich rechtzeitig daran erinnern."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Uns ist aufgefallen, dass einige Nutzer ihre ${ BRAND_NAME }-Konten noch nicht beansprucht haben."
-      ],
-      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "Wir richten gerade deine Konten ein und importieren deine Daten, damit dein Team über alles verfügt, was es benötigt, wenn es mit der Nutzung seines sicheren ${ BRAND_NAME }-Kontos beginnt."
-      ],
-      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Wir schalten die End-to-End-Verschlüsselung für alle ein. Jede E-Mail, jeder Termin gehört nun ganz allein dir. Nur dein Team kann sie einsehen. Weder wir noch sonst jemand."
-      ],
-      "What are you migrating?": [
-        "Was übernimmst du?"
-      ],
-      "You": [
-        "Du"
-      ],
-      "You will not be able to copy these users' data later.": [
-        "Du kannst die Daten dieser Benutzer später nicht mehr kopieren."
-      ],
-      "You're all set!": [
-        "Du kannst loslegen!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Du bist fast fertig. Du musst deine Domain so konfigurieren, dass du deine E-Mails direkt in ${ BRAND_NAME } erhältst. Sobald dies bestätigt ist, wird dein Team keine neuen E-Mails mehr in Gmail erhalten und die Migration ist abgeschlossen."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Dein aktuelles Abonnement umfasst bis zu ${ maxMembers } Benutzer. Um weitere Benutzer zu migrieren, füge deinem Abonnement weitere Lizenzen hinzu.",
-        "Dein aktuelles Abonnement umfasst bis zu ${ maxMembers } Benutzer. Um weitere Benutzer zu migrieren, füge deinem Abonnement weitere Lizenzen hinzu."
-      ],
-      "Your domain configuration still includes another provider's MX codes.": [
-        "Deine Domain-Konfiguration enthält noch immer den MX-Code eines anderen Anbieters."
       ]
     },
     "breadcrumb": {
@@ -7165,6 +6755,9 @@
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Bei der Meldung von Urheberrechtsverletzungen oder gestohlenen Daten ist eine Nachricht erforderlich."
+      ],
       "Account does not exist": [
         "Konto existiert nicht"
       ],
@@ -7216,11 +6809,32 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "„Automatisches Antworten“ ist eine kostenpflichtige Funktion. Bitte aktualisiere auf ein kostenpflichtiges Konto, um diese Funktion nutzen zu können."
       ],
+      "Bookmark password is not available": [
+        "Lesezeichen-Passwort nicht verfügbar"
+      ],
       "Calendar cannot be found": [
         "Kalender kann nicht gefunden werden"
       ],
       "Calendar limit reached": [
         "Max. Anzahl von Kalendern erreicht"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Ohne einen gültigen Namen kann kein Foto zum Album hinzugefügt werden"
+      ],
+      "Cannot download a folder": [
+        "Ordner kann nicht heruntergeladen werden"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Der Eintrag kann ohne gültigen Namen nicht verschoben werden. Bitte benenne den Eintrag zunächst um."
+      ],
+      "Cannot share root folder": [
+        "Der Stammordner konnte nicht geteilt werden"
+      ],
+      "Cannot verify the author of this file": [
+        "Der Urheber dieser Datei kann nicht überprüft werden"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Es lässt sich nicht feststellen, wer diese Datei hochgeladen hat"
       ],
       "Checkout expired, please try again": [
         "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
@@ -7240,8 +6854,23 @@
       "Contact signature not verified": [
         "Kontaktsignatur nicht bestätigt"
       ],
+      "Copy operation aborted": [
+        "Kopiervorgang abgebrochen"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Das Kopieren eines Eintrags nach außerhalb eines Ordners ist nicht zulässig"
+      ],
+      "Could not find an available name": [
+        "Es konnte kein verfügbarer Name gefunden werden"
+      ],
       "Could not generate the device profile. Please try again.": [
         "Das Geräteprofil konnte nicht erzeugt werden. Bitte versuche es erneut."
+      ],
+      "Could not load sharing details": [
+        "Freigabeinformationen konnten nicht geladen werden"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Bildvorschau konnte nicht geladen werden: ${ message }"
       ],
       "Could not open created vault": [
         "Erstellter Tresor konnte nicht geöffnet werden."
@@ -7249,14 +6878,32 @@
       "Could not open updated vault": [
         "Aktualisierter Tresor konnte nicht geöffnet werden."
       ],
+      "Could not read part of this file: ${ message }": [
+        "Ein Teil dieser Datei konnte nicht gelesen werden: ${ message }"
+      ],
       "Could not save preference": [
         "Einstellung konnte nicht gespeichert werden."
+      ],
+      "Could not unlock the parent folder": [
+        "Der übergeordnete Ordner konnte nicht entsperrt werden"
+      ],
+      "Could not unlock this item": [
+        "Dieser Eintrag konnte nicht entsperrt werden"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Rechnungen konnten nicht geladen werden. Bitte versuche es später erneut."
       ],
       "Couldn't load transactions. Please try again later.": [
         "Fehler beim Laden der Transaktionen. Bitte versuche es später erneut."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Das Erstellen von Dokumenten außerhalb von Ordnern ist nicht zulässig"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Das Erstellen von Dokumenten außerhalb von Ordnern ist nicht zulässig"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Das Erstellen von Ordnern außerhalb von Ordnern ist nicht zulässig."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Mindestens ${ calendarsToFixCount } Kalender abwählen",
@@ -7265,6 +6912,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Mindestens ${ calendarsToFixCount } Kalender abwählen oder",
         "Mindestens ${ calendarsToFixCount } Kalender abwählen oder"
+      ],
+      "Device not found": [
+        "Gerät nicht gefunden"
       ],
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
@@ -7305,6 +6955,9 @@
       "Error publishing changes": [
         "Fehler bei der Veröffentlichung von Änderungen"
       ],
+      "Expiration date cannot be in the past": [
+        "Ablaufdatum darf nicht in der Vergangenheit liegen"
+      ],
       "Expired": [
         "Abgelaufen"
       ],
@@ -7317,8 +6970,35 @@
       "Failed to add group member": [
         "Gruppenmitglied konnte nicht hinzugefügt werden"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Lesezeichenschlüssel konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Name des Lesezeichens konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Das Lesezeichen-Passwort konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Entschlüsselung des Inhaltsschlüssels fehlgeschlagen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Name des Eintrags konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Entschlüsselung des Knotenschlüssels fehlgeschlagen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Die Entschlüsselung der Versionsmetadaten ist fehlgeschlagen"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Aktive Sitzungen konnten nicht erhalten werden. Bitte ${ refresh } oder später erneut versuchen."
+      ],
+      "Failed to get inviter keys": [
+        "Schlüssel des Einladers konnten nicht abgerufen werden"
+      ],
+      "Failed to load OAuth": [
+        "OAuth konnte nicht geladen werden"
       ],
       "Failed to load OAuth modal.": [
         "OAuth-Modal konnte nicht geladen werden."
@@ -7341,6 +7021,15 @@
       "Failed to update detailed monitoring.": [
         "Die detaillierte Überwachung konnte nicht aktualisiert werden."
       ],
+      "Failed to verify invitation": [
+        "Einladung konnte nicht verifiziert werden"
+      ],
+      "File download failed due to empty response": [
+        "Das Herunterladen der Datei ist aufgrund einer leeren Antwort fehlgeschlagen"
+      ],
+      "File has no revision": [
+        "Datei hat keine Versionen"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Datei zu groß. Die Logo-Datei muss 30 KB oder kleiner sein."
       ],
@@ -7352,6 +7041,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Kam es auf deinem Fernseher zu einer Zeitüberschreitung, klicke auf „Aktualisieren” auf deinem Fernseher und gib deinen Code erneut ein."
+      ],
+      "Image preview not found": [
+        "Bildvorschau nicht gefunden"
       ],
       "IMAP server is required": [
         "IMAP-Server ist erforderlich"
@@ -7434,11 +7126,20 @@
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
       ],
+      "Invitation not found": [
+        "Einladung nicht gefunden"
+      ],
       "Item content cannot exceed 40KB": [
         "Der Inhalt des Eintrags darf 40 KB nicht überschreiten."
       ],
+      "Item not found": [
+        "Eintrag nicht gefunden"
+      ],
       "Label name cannot be empty.": [
         "Name der Kategorie kann nicht leer sein."
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Der alte öffentliche Link kann nicht aktualisiert werden. Bitte erstelle einen neuen öffentlichen Link."
       ],
       "Maximum ${ displayMaxValue } allowed": [
         "Maximal ${ displayMaxValue } erlaubt"
@@ -7447,17 +7148,39 @@
         "Mindestens ${ calendarsToFixCount } Kalender mit einem bestehenden ${ BRAND_NAME }-Kalender zusammenführen",
         "Mindestens ${ calendarsToFixCount } Kalender mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen"
       ],
+      "Missing inviter email": [
+        "E-Mail-Adresse des Einladers fehlt"
+      ],
       "Missing key packet": [
         "Fehlendes Schlüsselpaket"
       ],
       "Missing signature": [
         "Fehlende Signatur"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Signatur für ${ signatureType } fehlt"
+      ],
+      "Move operation aborted": [
+        "Verschiebevorgang abgebrochen"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Das Verschieben eines Eintrags nach außerhalb eines Ordners ist nicht zulässig"
+      ],
+      "Moving root item is not allowed": [
+        "Das Verschieben des Stammeintrags ist nicht zulässig"
+      ],
       "Name already exists": [
         "Name existiert bereits"
       ],
       "Name does not match": [
         "Name stimmt nicht überein"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein",
+        "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein"
+      ],
+      "Name must not be empty": [
+        "Name darf nicht leer sein"
       ],
       "Name required": [
         "Name erforderlich"
@@ -7483,6 +7206,9 @@
       "No external key retrieved for user is valid for sending": [
         "Keiner der für den Benutzer abgerufenen externen Schlüssel ist für den Versand gültig."
       ],
+      "No file data was received. Please try again.": [
+        "Es wurden keine Dateidaten empfangen. Bitte versuche es erneut."
+      ],
       "No image selected": [
         "Kein Bild ausgewählt"
       ],
@@ -7495,8 +7221,17 @@
       "Not a valid number": [
         "Keine gültige Zahl"
       ],
+      "Only admins can convert external invitations": [
+        "Nur Administratoren können externe Einladungen umwandeln"
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Bei dieser E-Mail-Adresse können nur Groß- und Kleinschreibung sowie die Zeichensetzung (Punkte, Bindestriche und Unterstriche) geändert werden."
+      ],
+      "Operation aborted": [
+        "Vorgang abgebrochen"
+      ],
+      "Operation failed, try again later": [
+        "Vorgang fehlgeschlagen, versuche es später erneut"
       ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
@@ -7506,6 +7241,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsschlüssel muss aktiviert sein, um nicht-private Benutzer anzulegen"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Ein Teil der Datei scheint beschädigt zu sein"
       ],
       "Password is required": [
         "Passwort ist erforderlich"
@@ -7530,6 +7268,12 @@
       ],
       "Permissions request failed.": [
         "Berechtigungsanfrage fehlgeschlagen."
+      ],
+      "Photo is already in the target album": [
+        "Foto befindet sich bereits im Zielalbum"
+      ],
+      "Photo not found": [
+        "Foto nicht gefunden"
       ],
       "Please add a payment method before reactivating your subscription": [
         "Bitte füge eine Zahlungsmethode hinzu, bevor du dein Abonnement reaktivierst."
@@ -7638,6 +7382,12 @@
         "Doppelten Empfänger entfernt: ${ joinedRecipients }",
         "Doppelte Empfänger entfernt: ${ joinedRecipients }"
       ],
+      "Renaming root item is not allowed": [
+        "Das Umbenennen des Stammeintrags ist nicht zulässig"
+      ],
+      "Request aborted": [
+        "Anfrage abgebrochen"
+      ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
@@ -7658,11 +7408,32 @@
       "Session expired. Please refresh the page.": [
         "Die Sitzung ist abgelaufen. Bitte aktualisiere die Seite."
       ],
+      "Signature is missing": [
+        "Signatur fehlt"
+      ],
       "Signature not verified": [
         "Signatur nicht bestätigt"
       ],
       "Signature verification failed": [
         "Signaturprüfung fehlgeschlagen"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturprüfung ist fehlgeschlagen: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturprüfung für ${ signatureType } ist fehlgeschlagen"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturprüfung für ${ signatureType } ist fehlgeschlagen: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Einige Dateidaten konnten nicht hochgeladen werden. Bitte versuche es erneut."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Einige Dateiteile konnten nicht hochgeladen werden. Bitte versuche es erneut."
+      ],
+      "Some items could not be loaded": [
+        "Einige Einträge konnten nicht geladen werden"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Einige deiner Ordnernamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
@@ -7678,6 +7449,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
+      ],
+      "Something went wrong": [
+        "Etwas ist schief gelaufen."
       ],
       "Something went wrong while converting the address": [
         "Bei der Umwandlung der E-Mail-Adresse ist ein Fehler aufgetreten"
@@ -7751,6 +7525,9 @@
       "The session has expired. Please sign in again.": [
         "Die Sitzung ist abgelaufen. Bitte melde dich erneut an."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Die hochgeladene Datei stimmt nicht mit dem Original überein. Bitte versuche es erneut."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Es gibt zu viele Ordner in deinem externen Konto. Bitte passe den Import an, um einige Ordner zu löschen."
       ],
@@ -7769,8 +7546,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
       ],
+      "This file has missing crypto material": [
+        "In dieser Datei fehlt Kryptomaterial"
+      ],
+      "This file has no version available to download": [
+        "Für diese Datei steht keine Version zum Herunterladen zur Verfügung"
+      ],
+      "This file version could not be uploaded": [
+        "Diese Dateiversion konnte nicht hochgeladen werden"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Dieser Ordnername ist nicht verfügbar. Bitte wähle einen anderen Namen."
+      ],
+      "This item has no image preview": [
+        "Dieser Eintrag hat keine Bildvorschau"
+      ],
+      "This item is no longer shared": [
+        "Dieser Eintrag wird nicht länger geteilt"
+      ],
+      "This item is not shared": [
+        "Dieser Eintrag wird nicht geteilt"
       ],
       "This label name is not available. Please choose a different name.": [
         "Dieser Kategoriename ist nicht verfügbar. Bitte wähle einen anderen Namen."
@@ -7789,6 +7584,12 @@
       ],
       "Too many requests. Please try again later": [
         "Zu viele Anfragen. Bitte versuche es später erneut."
+      ],
+      "Too many server errors, please try again later": [
+        "Zu viele Server-Fehler, bitte versuche es später erneut"
+      ],
+      "Too many server requests, please try again later": [
+        "Zu viele Server-Anfragen bitte versuche es später erneut"
       ],
       "Trusted keys are not valid for sending": [
         "Die vertrauenswürdigen Schlüssel sind für den Versand nicht gültig"
@@ -7835,6 +7636,12 @@
       "Verification did not succeed, please try again in an hour.": [
         "Die Überprüfung konnte nicht abgeschlossen werden. Bitte versuche es in einer Stunde erneut."
       ],
+      "Verification keys are not available": [
+        "Verifizierungsschlüssel sind nicht verfügbar"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifizierungsschlüssel für ${ signatureType } sind nicht verfügbar"
+      ],
       "We couldn't sign you in": [
         "Wir konnten dich nicht anmelden"
       ],
@@ -7855,6 +7662,24 @@
       ],
       "You already added this holidays calendar": [
         "Du hast diesen Feiertagskalender bereits hinzugefügt."
+      ],
+      "You can create public links for your own files only": [
+        "Du kannst öffentliche Links nur für deine eigenen Dateien erstellen"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kannst nur Einträge verlassen, die für dich freigegeben sind"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kannst nur eine neue Version einer Datei hochladen"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kannst einen öffentlichen Link nur für deine eigenen Dateien aktualisieren"
+      ],
+      "You do not have access to this item": [
+        "Du hast keinen Zugriff auf diesen Eintrag"
+      ],
+      "You do not have access to this shared item": [
+        "Du hast keinen Zugriff auf diesen geteilten Eintrag"
       ],
       "You have reached the maximum number of calendars.": [
         "Du hast die maximale Anzahl an Kalendern erreicht."
@@ -8861,6 +8686,29 @@
         "Terabyte"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Aktiviert"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Fehler"
+      ],
+      "In progress": [
+        "In Bearbeitung"
+      ],
+      "Migrated": [
+        "Übernommen"
+      ],
+      "Not activated": [
+        "Nicht aktiviert"
+      ],
+      "Pending": [
+        "Ausstehend"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Archiv"
@@ -9060,6 +8908,35 @@
       ],
       "Your desktop app free trial has ended": [
         "Deine kostenlose Testversion der Desktop-App ist beendet."
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Erweiterte Sicherheitsmaßnahmen"
+      ],
+      "Dedicated server - ${ serverPrice }": [
+        "Dedizierter Server - ${ serverPrice }"
+      ],
+      "Enforce identity-based access controls": [
+        "Identitätsbasierte Zugriffskontrollen durchsetzen"
+      ],
+      "Get real-time connection insights, monitor suspicious activity and export data to SIEM tools for your private gateways": [
+        "Erhalte Einblicke in Verbindungen in Echtzeit, überwache verdächtige Aktivitäten und exportiere Daten in SIEM-Tools für deine privaten Gateways"
+      ],
+      "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
+        "Neben der Verbindungsüberwachung ermöglichen private Gateways die Zugriffsgewährung nach Benutzer oder Gruppe – und das alles auf dedizierten Servern mit statischen IP-Adressen."
+      ],
+      "Monitor gateway connections with VPN Professional": [
+        "Gateway-Verbindungen mit VPN Professional überwachen"
+      ],
+      "Real-time connection insights": [
+        "Echtzeit-Einblicke in die Verbindungen"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Single-Sign-On (SSO), Verwaltungsrichtlinien, Überwachung, obligatorische Zwei-Faktor-Authentifizierung und vieles mehr freischalten."
+      ],
+      "User - ${ userPrice }": [
+        "Benutzer - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -9777,6 +9654,9 @@
       "Failed": [
         "Fehlgeschlagen"
       ],
+      "Has errors": [
+        "Hat Fehler"
+      ],
       "Imported": [
         "Importiert"
       ],
@@ -9791,6 +9671,9 @@
       ],
       "Paused": [
         "Angehalten"
+      ],
+      "Pending": [
+        "Ausstehend"
       ],
       "Undo finished": [
         "Rückgängig machen abgeschlossen"
@@ -10489,9 +10372,6 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Möchtest du diesem Benutzer wirklich die Administratorrechte entziehen?"
       ],
-      "Are you sure you want to remove all members from this group?": [
-        "Bist du sicher, dass du alle Mitglieder aus dieser Gruppe entfernen willst?"
-      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Bist du sicher, dass du die Domain ${ boldDomain } entfernen möchtest?"
       ],
@@ -10533,6 +10413,9 @@
       ],
       "Authenticator app 2FA enabled": [
         "2FA-Authentifizierungs-App aktiviert"
+      ],
+      "Author is not provided on public link": [
+        "Urheber wird unter dem öffentlichen Link nicht angegeben"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Automatische Antworten sind jeden Monat im ausgewählten Zeitraum aktiv."
@@ -10958,6 +10841,9 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Möchtest du alle anderen (außer der aktuellen) Sitzungen widerrufen?"
+      ],
+      "Domain added": [
+        "Domain hinzugefügt"
       ],
       "Domain ownership failed verification.": [
         "Die Überprüfung der Domaininhaberschaft schlug fehl."
@@ -11968,8 +11854,14 @@
       "No single sign-on": [
         "Kein Single Sign-on"
       ],
+      "No users to display": [
+        "Keine Benutzer vorhanden"
+      ],
       "Not a valid URL": [
         "Ungültige URL"
+      ],
+      "Not confirmed": [
+        "Nicht bestätigt"
       ],
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
@@ -12798,6 +12690,9 @@
       "This file is too large to preview": [
         "Die Datei ist zu groß, um in der Vorschau angezeigt zu werden."
       ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Diese Gmail-Adresse ist mit einem anderen ${ BRAND_NAME }-Konto verknüpft (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } KI und andere). Wir arbeiten daran, diese Verknüpfung nahtlos zu gestalten, aber vorerst musst du noch einige Schritte durchführen."
+      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Dieser Einladungslink ist abgelaufen. Bitte kontaktiere deinen Administrator, um Zugriff anzufordern."
       ],
@@ -13430,6 +13325,9 @@
       ],
       "Yearly": [
         "Jährlich"
+      ],
+      "You": [
+        "Du"
       ],
       "You already have a free account": [
         "Du verfügst bereits über ein kostenloses Konto."
@@ -14519,6 +14417,9 @@
       "Account storage": [
         "Kontenspeicher"
       ],
+      "Accounts migrated": [
+        "Konten übernommen"
+      ],
       "Action": [
         "Aktion"
       ],
@@ -15300,6 +15201,9 @@
       "Interval": [
         "Intervall"
       ],
+      "Invitation message": [
+        "Einladungsnachricht"
+      ],
       "Invite people": [
         "Personen einladen"
       ],
@@ -15369,6 +15273,9 @@
       "Logo": [
         "Logo"
       ],
+      "Mail": [
+        "E-Mail"
+      ],
       "Mail Server (IMAP)": [
         "Mail-Server (IMAP)"
       ],
@@ -15419,6 +15326,9 @@
       ],
       "Method for importing metadata": [
         "Methode zum Importieren von Metadaten"
+      ],
+      "Migration includes": [
+        "Übernahme beinhaltet"
       ],
       "Minimum ${ MIN_CHARS } characters": [
         "Mindestens ${ MIN_CHARS } Zeichen"
@@ -15786,6 +15696,9 @@
       "Set password": [
         "Passwort festlegen"
       ],
+      "Settings": [
+        "Einstellungen"
+      ],
       "Share your referral link": [
         "Teile deinen Empfehlungslink"
       ],
@@ -16038,6 +15951,12 @@
       ],
       "Users": [
         "Benutzer"
+      ],
+      "Users activated": [
+        "Benutzer aktiviert"
+      ],
+      "Users migrated": [
+        "Benutzer übernommen"
       ],
       "Value": [
         "Wert"
@@ -16618,6 +16537,9 @@
       "Gathering your data": [
         "Deine Daten werden gesammelt"
       ],
+      "Loading your organization data": [
+        "Deine Organisationsdaten werden geladen"
+      ],
       "We're gathering your data from your provider": [
         "Wir sammeln deine Daten bei deinem Anbieter"
       ],
@@ -17075,6 +16997,32 @@
       ],
       "Sign in": [
         "Anmelden"
+      ]
+    },
+    "Members table usage": {
+      "Gateway Monitor is off": [
+        "Gateway-Monitor ist ausgeschaltet"
+      ],
+      "Monitor gateways connections": [
+        "Gateway-Verbindungen überwachen"
+      ],
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Richte deinen eigenen privaten Gateways ein, um die VPN-Verbindungsaktivitäten innerhalb deines Unternehmens zu überwachen."
+      ],
+      "Today": [
+        "Heute"
+      ],
+      "Today, ${ time }": [
+        "Heute, ${ time }"
+      ],
+      "Turn it on to track when and where users connect.": [
+        "Einschalten, um zu verfolgen, wann und wo sich Benutzer verbinden."
+      ],
+      "Yesterday": [
+        "Gestern"
+      ],
+      "Yesterday, ${ time }": [
+        "Gestern ${ time }"
       ]
     },
     "Message": {
@@ -20683,6 +20631,26 @@
         "Sekundäre Zeitzone"
       ]
     },
+    "Property": {
+      "attributes": [
+        "Merkmale"
+      ],
+      "content key": [
+        "Inhaltsschlüssel"
+      ],
+      "hash key": [
+        "Hash-Schlüssel"
+      ],
+      "key": [
+        "Schlüssel"
+      ],
+      "membership": [
+        "Mitgliedschaft"
+      ],
+      "name": [
+        "Name"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adresse"
@@ -21826,6 +21794,12 @@
       "${ usersText } and ${ groupsText } synced.": [
         "${ usersText } und ${ groupsText } synchronisiert."
       ],
+      "**Existing groups** synced to ${ BRAND_NAME } before may now appear when you first access the console": [
+        "**Vorhandene Gruppen**, die zuvor mit ${ BRAND_NAME } synchronisiert wurden, erscheinen jetzt möglicherweise, wenn du zum ersten Mal auf die Konsole zugreifst."
+      ],
+      "**You'll be able to review** group changes before they take effect to confirm they're intentional": [
+        "Änderungen an Gruppen **kannst du überprüfen**, bevor sie in Kraft treten, um sicherzustellen, dass sie beabsichtigt sind"
+      ],
       "Approve changes from your identity provider": [
         "Änderungen deines Identitätsanbieters genehmigen"
       ],
@@ -21838,6 +21812,9 @@
       "New": [
         "Neu"
       ],
+      "New: Manage groups via your identity provider": [
+        "Neu: Gruppen über deinen Identitätsanbieter verwalten"
+      ],
       "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
         "Sobald sie freigeschaltet sind, können sie auf alle Dienste von ${ BRAND_NAME } zugreifen und Daten sicher weitergeben."
       ],
@@ -21847,11 +21824,20 @@
       "Review users and groups before finishing setup": [
         "Überprüfe die Benutzer und Gruppen, bevor du das Einrichten abschließt"
       ],
+      "This approval prompt will **appear every time you update** groups through your identity provider": [
+        "Diese Genehmigungsaufforderung **erscheint jedes Mal beim Aktualisieren** von Gruppen über deinen Identitätsanbieter."
+      ],
       "Updated": [
         "Aktualisiert"
       ],
       "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Benutzer, die du als privat markiert hast, müssen die Einladung annehmen, um das Einrichten abzuschließen. Wir senden ihnen eine Einladung, sobald du diese genehmigt hast."
+      ],
+      "What to expect now that group sync is enabled": [
+        "Was du nun erwarten kannst, nachdem die Gruppensynchronisierung aktiviert wurde"
+      ],
+      "You can now sync groups from your identity provider alongside users. Changes push **automatically** when you update your groups.": [
+        "Du kannst nun neben Benutzern auch Gruppen von deinem Identitätsanbieter synchronisieren. Änderungen werden **automatisch** übernommen, sobald du deine Gruppen aktualisierst."
       ]
     },
     "scim: Action": {
@@ -21902,17 +21888,11 @@
       "Make sure you copy the above SCIM token now.": [
         "Stelle sicher, dass du den obigen SCIM-Token jetzt kopierst."
       ],
-      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Sobald SCIM für deine Organisation deaktiviert ist, werden **alle SCIM-Benutzer, die automatisch von deinem Identitätsanbieter bereitgestellt werden, in SSO-Benutzer** umgewandelt und du kannst sie direkt in den Einstellungen von ${ BRAND_NAME } verwalten."
-      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Vereinfacht die Benutzerverwaltung über verschiedene Dienste hinweg. Füge Benutzer in deinem Identitätsanbieter hinzu, bearbeite und entferne sie, und diese Änderungen werden automatisch auf deine ${ appName } Organisation angewendet."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Das automatische SCIM-Provisioning wird deaktiviert, bis du den neuen SCIM-Token in die Einstellungen deines Identitätsanbieters eingibst."
-      ],
-      "The SCIM base URL and token will be deleted.": [
-        "SCIM-Basis-URL und -Token werden gelöscht."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Um die Synchronisierung mit deinem Identitätsanbieter wieder zu aktivieren, musst du die SCIM-Integration erneut abschließen."
@@ -23557,6 +23537,9 @@
       "... waiting": [
         "... warte"
       ],
+      "Activated": [
+        "Aktiviert"
+      ],
       "Active": [
         "Aktiv"
       ],
@@ -23593,6 +23576,9 @@
       "Last updated ${ formattedUpdateDate }": [
         "Letzte Aktualisierung ${ formattedUpdateDate }"
       ],
+      "Not activated": [
+        "Nicht aktiviert"
+      ],
       "Not saved": [
         "Nicht gespeichert"
       ],
@@ -23616,6 +23602,32 @@
       ],
       "Verify ${ value }": [
         "${ value } verifizieren"
+      ],
+      "Waiting for MX...": [
+        "Auf MX warten..."
+      ]
+    },
+    "Step": {
+      "Authenticate": [
+        "Authentifizieren"
+      ],
+      "Configure domain": [
+        "Domain konfigurieren"
+      ],
+      "Configure migration": [
+        "Übernahme konfigurieren"
+      ],
+      "Configure users": [
+        "Benutzer konfigurieren"
+      ],
+      "Install migration app": [
+        "Übernahme-App installieren"
+      ],
+      "Migrate accounts": [
+        "Konten übernehmen"
+      ],
+      "Onboard your team": [
+        "Dein Team einführen"
       ]
     },
     "Step in filter modal": {
@@ -24371,8 +24383,14 @@
       "${ data.name } updated": [
         "${ data.name } aktualisiert"
       ],
+      "Account connected": [
+        "Konto verbunden"
+      ],
       "Account deleted. Signing out...": [
         "Konto gelöscht. Abmeldung wird ausgeführt..."
+      ],
+      "Account disconnected": [
+        "Konto getrennt"
       ],
       "Address added": [
         "Adresse hinzugefügt"
@@ -24439,6 +24457,9 @@
       ],
       "DMARC value copied to clipboard": [
         "DMARC-Wert wurde in die Zwischenablage kopiert"
+      ],
+      "Domain added": [
+        "Domain hinzugefügt"
       ],
       "Domain verified": [
         "Domain verifiziert"
@@ -24746,6 +24767,26 @@
       ],
       "For individuals": [
         "Für Einzelpersonen"
+      ]
+    },
+    "Table header": {
+      "Activated": [
+        "Aktiviert"
+      ],
+      "Estimated size": [
+        "Geschätzte Größe"
+      ],
+      "Migration status": [
+        "Übernahmestatus"
+      ],
+      "Size": [
+        "Größe"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Benutzer"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25310,6 +25351,12 @@
       "Configure Always-on VPN device profile": [
         "Always-on-VPN Geräteprofil konfigurieren"
       ],
+      "Configure migration": [
+        "Übernahme konfigurieren"
+      ],
+      "Configure your domain": [
+        "Deine Domain konfigurieren"
+      ],
       "Confirm": [
         "Bestätigen"
       ],
@@ -25415,6 +25462,9 @@
       ],
       "Created!": [
         "Erstellt"
+      ],
+      "Creating accounts": [
+        "Konten werden erstellt"
       ],
       "Creating user accounts": [
         "Benutzerkonten werden erstellt"
@@ -25611,6 +25661,9 @@
       ],
       "Domain names": [
         "Domainnamen"
+      ],
+      "Domain provider": [
+        "Domain-Anbieter"
       ],
       "Don't show again?": [
         "Nicht erneut anzeigen?"
@@ -25919,6 +25972,9 @@
       "Groups": [
         "Gruppen"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Achtung: Dieses Gmail-Konto ist mit einem anderen ${ BRAND_NAME }-Konto verknüpft."
+      ],
       "Help and feedback": [
         "Hilfe und Feedback"
       ],
@@ -25994,6 +26050,9 @@
       ],
       "Install it manually": [
         "Manuell installieren"
+      ],
+      "Install migration app": [
+        "Übernahme-App installieren"
       ],
       "Integrations": [
         "Integrationen"
@@ -26076,11 +26135,23 @@
       "Messages and composing": [
         "Nachrichten und verfassen"
       ],
+      "Migrate from Google Workspace": [
+        "Von Google Workspace übernehmen"
+      ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Deine Organisation nach ${ BRAND_NAME } migrieren"
       ],
+      "Migrated accounts": [
+        "Übernommene Konten"
+      ],
       "Migration assistant": [
         "Übernahmeassistent"
+      ],
+      "Migration status": [
+        "Übernahmestatus"
+      ],
+      "Migration summary": [
+        "Übernahmeübersicht"
       ],
       "Minicalendar": [
         "Minikalender"
@@ -26118,6 +26189,9 @@
       "Name": [
         "Name"
       ],
+      "Need help?": [
+        "Brauchst du Hilfe?"
+      ],
       "Need more labels or folders?": [
         "Benötigst du weitere Kategorien oder Ordner?"
       ],
@@ -26144,6 +26218,9 @@
       ],
       "Notifications": [
         "Benachrichtigungen"
+      ],
+      "Onboard your team": [
+        "Dein Team einführen"
       ],
       "Open": [
         "Offen"
@@ -26322,9 +26399,6 @@
       "Reject device?": [
         "Gerät verweigern?"
       ],
-      "Remove all members?": [
-        "Alle Mitglieder entfernen?"
-      ],
       "Remove Always-on VPN device profile": [
         "Always-on-VPN Geräteprofil entfernen"
       ],
@@ -26447,6 +26521,9 @@
       ],
       "Select the way to send this notification": [
         "Auswählen, wie diese Benachrichtigung gesendet werden soll"
+      ],
+      "Select users to migrate": [
+        "Benutzer für die Übernahme auswählen"
       ],
       "Select when you want this notification to be sent": [
         "Auswählen, wann diese Benachrichtigung gesendet werden soll"
@@ -26830,6 +26907,9 @@
       "Welcome to your new password manager!": [
         "Willkommen bei deinem neuen Passwort-Manager!"
       ],
+      "What are you migrating?": [
+        "Was übernimmst du?"
+      ],
       "What changes if you switch to the Free plan": [
         "Was sich ändert, wenn du zum kostenlosen Abonnement wechselst"
       ],
@@ -26997,6 +27077,12 @@
       "Features": [
         "Funktionen"
       ],
+      "Last app activity": [
+        "Letzte App-Aktivität"
+      ],
+      "Last connection": [
+        "Letzte Verbindung"
+      ],
       "Name": [
         "Name"
       ],
@@ -27123,6 +27209,9 @@
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
         "Ausschluss von Single Sign-On-Benutzern, deren 2FA von Ihrem Identitätsanbieter verwaltet wird"
+      ],
+      "Expand invitation message": [
+        "Einladungsnachricht erweitern"
       ],
       "Feature in early access": [
         "Funktion im frühzeitigen Zugang"
@@ -27381,6 +27470,14 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Wähle die Standard-PGP-Einstellungen, die zum Signieren oder Verschlüsseln von Nachrichten mit Nicht-${ BRAND_NAME }-PGP-Benutzern verwendet werden sollen. Beachte, dass Inline-PGP reine Textnachrichten erzwingt."
+      ]
+    },
+    "Tooltip for members table": {
+      "Last time this user connected to one of your organization's Gateways.": [
+        "Letztes Mal, als sich dieser Benutzer mit einem der Gateways deiner Organisation verbunden hat."
+      ],
+      "Last time this user signed in or used the ${ VPN_APP_NAME } app on their device.": [
+        "Wann hat sich dieser Benutzer zuletzt angemeldet oder die ${ VPN_APP_NAME }-App auf seinem Gerät genutzt?"
       ]
     },
     "Tooltip prompt to trust keys": {
