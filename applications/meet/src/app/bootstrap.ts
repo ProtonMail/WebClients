@@ -42,6 +42,7 @@ import { meetTelemetryConfig } from './telemetryConfig';
 import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
 import { startMeetingDetailsPreload } from './utils/meetingDetailsPreload';
+import { installWaitingRoomCallbackNamespaces } from './utils/wasmUtils';
 import { DirectMeetCoreClient } from './wasm/DirectMeetCoreClient';
 import type { MeetCoreClient } from './wasm/MeetCoreClient';
 import { MeetCoreWorkerClient } from './wasm/MeetCoreWorkerClient';
@@ -77,6 +78,10 @@ const createDirectMeetCoreClient = async (params: MeetCoreInitParams): Promise<D
         params.userId,
         params.uid
     );
+
+    // The worker client installs them in its own global scope on init, this is the direct equivalent.
+    installWaitingRoomCallbackNamespaces();
+
     return new DirectMeetCoreClient(app);
 };
 

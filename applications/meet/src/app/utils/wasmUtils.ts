@@ -78,8 +78,6 @@ export const cleanupWasmDependencies = () => {
     };
     window.disconnectionEvent = { disconnection_handler: async () => {} };
     window.mlsSyncStateChangeEvent = { on_mls_sync_state_changed: async () => {} };
-    window.joinDecisionEvent = { on_join_decision: () => {} };
-    window.joinRequestEvent = { on_join_request: () => {} };
 
     resetMeetCoreCallbacks();
 };
