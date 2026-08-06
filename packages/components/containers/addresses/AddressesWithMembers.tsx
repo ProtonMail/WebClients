@@ -27,7 +27,7 @@ import { ALL_MEMBERS_ID, APPS, BRAND_NAME, MAIL_APP_NAME, MEMBER_PRIVATE } from 
 import { getAvailableAddressDomains, getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
-import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
+import { getOrganizationKeyInfo, isSuperAdmin, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 
 import AddressModal from './AddressModal';
 import AddressesTable from './AddressesTable';
@@ -252,6 +252,7 @@ const AddressesWithMembers = ({
                         user={user}
                         members={selectedMembers}
                         memberAddressesMap={memberAddressesMap}
+                        isPrimaryAdmin={isSuperAdmin(members ?? [])}
                         organizationKey={organizationKey}
                         allowAddressDeletion={allowAddressDeletion}
                     />
