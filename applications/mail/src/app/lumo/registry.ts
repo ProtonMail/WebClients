@@ -1,5 +1,6 @@
 import type { CardRenderers, LumoAgentConfig } from '@proton/components/components/lumoAgent/types';
 import type { ToolDefinition, ToolHandlers } from '@proton/llm/lib/lumoAgent/contracts/types';
+import { createLoadGuideDefinition } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
 
 import { MAIL_RULES } from './rules';
 import { moveEmailsModule } from './skills/organise/moveEmails';
@@ -50,5 +51,13 @@ export const buildLumoMailConfig = (deps: MailToolDeps): LumoAgentConfig => {
         MODULES.filter((module) => module.cardRenderer).map((module) => [module.definition.name, module.cardRenderer])
     );
 
-    return { definitions, handlers, cardRenderers, productRules: MAIL_RULES };
+    // Framework-owned and executor-handled, so it contributes a definition but no handler.
+    const loadGuide = createLoadGuideDefinition(definitions);
+
+    return {
+        definitions: loadGuide ? [...definitions, loadGuide] : definitions,
+        handlers,
+        cardRenderers,
+        productRules: MAIL_RULES,
+    };
 };

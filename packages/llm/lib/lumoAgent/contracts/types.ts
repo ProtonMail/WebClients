@@ -61,14 +61,6 @@ export interface ReferenceRegistry {
     has(reference: string): boolean;
 }
 
-/** Thrown by a handler when a param cites a reference the {@link ReferenceRegistry} never issued. */
-export class UnknownReferenceError extends Error {
-    constructor(public readonly reference: string) {
-        super(`Unknown reference "${reference}" — it was not returned by any earlier tool.`);
-        this.name = 'UnknownReferenceError';
-    }
-}
-
 /**
  * One authored few-shot example for a tool — a scenario plus the correct call JSON. Injected into
  * the request context only for the tools active in a turn (progressive disclosure), so the model
@@ -118,6 +110,13 @@ export interface ToolDefinition<Params = any, Result = any> {
      *  `parameters` and the validation middleware. Kept `$ref`-free with `additionalProperties: false`. */
     paramsSchema: JSONSchema;
     /**
+     * Params carrying free text rather than references, exempted from the hallucination guard. Free text
+     * can be shaped exactly like a reference (`e-ticket` matches `<kind>-<6 base36>`), and the guard would
+     * then reject the call outright. Naming a param here is safe only because the guard is what stops a
+     * hallucinated id reaching the API — so list the ones that can never hold an id, and nothing else.
+     */
+    freeTextParams?: readonly string[];
+    /**
      * Few-shot examples of correct usage, injected into the system prompt for this tool ONLY when it
      * is active in the turn (progressive disclosure — keeps inactive guided-tool examples out of
      * context). Additive: leaving it undefined is fine.
@@ -132,7 +131,7 @@ export interface ToolDefinition<Params = any, Result = any> {
 /**
  * A product-side handler for a tool: reads the store / drives the product / applies a mutation and
  * returns the plain {@link Result} that the definition serialises. Handlers resolve incoming
- * references to real ids via `deps.references` and throw {@link UnknownReferenceError} for unknown
+ * references to real ids via `deps.references` and throw `UnknownReferenceError` for unknown
  * references before touching the API.
  */
 export type ToolHandler<Params = any, Result = any> = (params: Params, deps: ToolDeps) => Promise<Result>;

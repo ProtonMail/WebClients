@@ -2,10 +2,11 @@
  * Shared, store-free view controls for the navigation reads (`open_folder`, `search`): a single-value
  * `filter` (read / unread / has-attachment) and a `sort` (date or size). These map onto the mailbox
  * toolbar's Filter and Sort. Kept pure so a handler can validate a value before touching the store — a
- * bad token throws a self-correcting Error the engine feeds back to the model, not a user-facing halt.
- * Mapping these semantic tokens onto Mail's URL hash lives in the handler (see `helpers/navigation`),
- * not here.
+ * bad token throws a {@link ToolInputError} the engine feeds back to the model verbatim, not a
+ * user-facing halt. Mapping these semantic tokens onto Mail's URL hash lives in the handler (see
+ * `helpers/navigation`), not here.
  */
+import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 
 /** The three single-value view filters. Exactly ONE may apply: the `filter` hash key holds one value. */
 export const MAILBOX_FILTERS = ['read', 'unread', 'has_attachment'] as const;
@@ -27,7 +28,7 @@ export const resolveMailboxFilter = (filter: string | null): MailboxFilter | und
         return undefined;
     }
     if (!(MAILBOX_FILTERS as readonly string[]).includes(filter)) {
-        throw new Error(
+        throw new ToolInputError(
             `Unknown filter "${filter}". Valid filters are: ${MAILBOX_FILTERS.join(
                 ', '
             )} (single-value — pick exactly one).`
@@ -46,7 +47,7 @@ export const resolveMailboxSort = (sort: string | null): MailboxSort | undefined
         return undefined;
     }
     if (!(MAILBOX_SORTS as readonly string[]).includes(sort)) {
-        throw new Error(`Unknown sort "${sort}". Valid sorts are: ${MAILBOX_SORTS.join(', ')}.`);
+        throw new ToolInputError(`Unknown sort "${sort}". Valid sorts are: ${MAILBOX_SORTS.join(', ')}.`);
     }
     return sort as MailboxSort;
 };
