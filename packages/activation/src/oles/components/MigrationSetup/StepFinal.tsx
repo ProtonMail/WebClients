@@ -32,6 +32,7 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
     const model = migrationConfiguration as MigrationModel;
     const dispatch = useDispatch();
     const handleError = useErrorHandler();
+    const mailAppName = model.provider.mailAppName;
 
     const [providerUsers] = useProviderUsers(model.domainName);
     const [loading, withLoading] = useLoading();
@@ -159,7 +160,7 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
             )}
             <p className="color-weak m-0">
                 {c('Info')
-                    .t`You're almost done, you need to configure your domain to receive your emails directly on ${BRAND_NAME}. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.`}
+                    .t`You're almost done, you need to configure your domain to receive your emails directly on ${BRAND_NAME}. Once confirmed, your team will stop receiving new emails on ${mailAppName} and the migration will be completed.`}
             </p>
             <p className="color-weak">
                 {c('Info')

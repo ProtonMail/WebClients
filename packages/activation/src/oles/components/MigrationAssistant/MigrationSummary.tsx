@@ -144,6 +144,7 @@ const MigrationSummary: FC<{ model: MigrationModel }> = ({ model }) => {
                         <ProviderUsersTable
                             users={users}
                             currentUser={model.tokens?.at(0)?.Account}
+                            provider={model.provider}
                             hiddenFilters={
                                 ProviderUserFilter.NOT_STARTED |
                                 ProviderUserFilter.ERROR |

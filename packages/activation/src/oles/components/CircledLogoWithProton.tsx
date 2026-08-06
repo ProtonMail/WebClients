@@ -6,46 +6,15 @@ import generateUID from '@proton/utils/generateUID';
 interface CircledLogoWithProtonProps {
     className?: string;
     /**
-     * The icon to display inside the circled logo, usually a 16x16 icon. Default is the Google logo
+     * The icon to display inside the circled logo
      */
-    icon?: React.ReactNode;
+    iconSrc: string;
     /**
      * inside-bottom-right: the proton icon and the border of the circled logo are aligned on their bottom
      * outside-bottom-right: the proton icon is a bit outside the circled logo
      */
     iconPosition: 'inside-bottom-right' | 'outside-bottom-right';
 }
-
-const GoogleIcon = () => {
-    const [uid] = useState(generateUID('google-icon'));
-    return (
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clipPath={`url(#${uid}-clip0_4487_15283)`}>
-                <path
-                    d="M15.6263 8.14945C15.6263 7.49394 15.5731 7.01559 15.458 6.51953H7.97266V9.47819H12.3664C12.2778 10.2135 11.7995 11.3208 10.7364 12.0648L10.7215 12.1639L13.0883 13.9973L13.2522 14.0137C14.7581 12.6229 15.6263 10.5766 15.6263 8.14945Z"
-                    fill="#4285F4"
-                />
-                <path
-                    d="M7.97272 15.9446C10.1253 15.9446 11.9324 15.2358 13.2523 14.0134L10.7365 12.0646C10.0633 12.534 9.15972 12.8618 7.97272 12.8618C5.86445 12.8618 4.07507 11.4711 3.43721 9.54883L3.34372 9.55677L0.882769 11.4613L0.850586 11.5508C2.16161 14.1551 4.85456 15.9446 7.97272 15.9446Z"
-                    fill="#34A853"
-                />
-                <path
-                    d="M3.43701 9.54985C3.2687 9.05379 3.1713 8.52225 3.1713 7.97306C3.1713 7.4238 3.2687 6.89232 3.42815 6.39626L3.42369 6.29061L0.931908 4.35547L0.850382 4.39425C0.310046 5.47498 0 6.6886 0 7.97306C0 9.25751 0.310046 10.4711 0.850382 11.5518L3.43701 9.54985Z"
-                    fill="#FBBC05"
-                />
-                <path
-                    d="M7.97272 3.08269C9.46976 3.08269 10.4796 3.72934 11.0554 4.26974L13.3054 2.07285C11.9236 0.788397 10.1253 0 7.97272 0C4.85456 0 2.16161 1.78937 0.850586 4.39371L3.42836 6.39573C4.07507 4.47347 5.86445 3.08269 7.97272 3.08269Z"
-                    fill="#EB4335"
-                />
-            </g>
-            <defs>
-                <clipPath id={`${uid}-clip0_4487_15283`}>
-                    <rect width="16" height="16" fill="white" />
-                </clipPath>
-            </defs>
-        </svg>
-    );
-};
 
 const ProtonIcon = ({ className, style }: { className?: string; style?: React.CSSProperties }) => {
     const [uid] = useState(generateUID('proton-biz'));
@@ -86,7 +55,7 @@ const ProtonIcon = ({ className, style }: { className?: string; style?: React.CS
 
 export const CircledLogoWithProton = ({
     className,
-    icon = <GoogleIcon />,
+    iconSrc,
     iconPosition = 'inside-bottom-right',
 }: CircledLogoWithProtonProps) => {
     return (
@@ -97,7 +66,7 @@ export const CircledLogoWithProton = ({
             )}
             style={{ '--min-w-custom': '2.75rem' }}
         >
-            {icon}
+            <img src={iconSrc} alt="" width={16} height={16} />
             <ProtonIcon
                 className="absolute bottom-custom end-custom"
                 style={{

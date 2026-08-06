@@ -62,7 +62,6 @@ import {
     patchOrganizationImporter,
 } from '../api';
 import {
-    ApiImportProvider,
     type ApiImporterOrganization,
     ApiImporterOrganizationState,
     type ApiImporterOrganizationUser,
@@ -171,7 +170,7 @@ export const setupMigration = createAsyncThunk<
 >('oles/setupMigration', async (payload, { dispatch, extra: { api } }) => {
     const { ImporterOrganizationID, DomainName, State } = await api<ApiImporterOrganization>(
         createOrganizationImporter({
-            Provider: ApiImportProvider.GOOGLE,
+            Provider: payload.provider.apiProvider,
             Products: payload.selectedProducts,
             ImportOrganizationSettings: payload.importOrganizationSettings,
         })
