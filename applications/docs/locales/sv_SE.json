@@ -943,6 +943,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
+      ],
+      "Migrate": [
+        "Migrera"
       ]
     },
     "Actions message": {
@@ -3553,6 +3556,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Odekrypterbart namn"
+      ],
+      "This file version could not be uploaded": [
+        "Denna filversion kunde inte laddas upp"
       ]
     },
     "error": {
@@ -4385,6 +4391,9 @@
       ],
       "Migrated": [
         "Migrerad"
+      ],
+      "Has errors": [
+        "Har fel"
       ]
     },
     "Import warning": {
@@ -5763,6 +5772,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "No users to display": [
+        "Inga användare att visa"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "info": {
@@ -9895,6 +9910,18 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Activated": [
+        "Aktiverad"
+      ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "User": [
+        "Användare"
       ]
     },
     "TableHeader": {
@@ -10583,6 +10610,15 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
+      ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
+      "Select users to migrate": [
+        "Välj användare att migrera"
+      ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
       ]
     },
     "Title header for keys table": {
@@ -10917,6 +10953,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Aktiverat"
+      ],
+      "All": [
+        "Alla"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Not activated": [
+        "Inte aktiverad"
       ]
     }
   }
