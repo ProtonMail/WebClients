@@ -244,6 +244,18 @@
       ],
       "Superscript": [
         "Horný index"
+      ],
+      "Close outline": [
+        "Zatvoriť obsah"
+      ],
+      "Go to label": [
+        "Prejsť na štítok"
+      ],
+      "Open outline": [
+        "Otvoriť obsah"
+      ],
+      "Remove": [
+        "Vymazať"
       ]
     },
     "color": {
@@ -474,6 +486,9 @@
       ],
       "Tried to import Sheet data into Lexical": [
         "Pokúsil sa importovať údaje hárka do nástroja Lexical"
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Táto tabuľka zistila lokálnu nezhodu pri synchronizácii. Úpravy boli deaktivované, aby sa predišlo strate údajov. Nahláste to, prosím, a ak súhlasíte so zdieľaním obsahu, stiahnite si a priložte ladiace informácie uvedené nižšie."
       ]
     },
     "Error message": {
@@ -596,6 +611,12 @@
       ],
       "New": [
         "Nový"
+      ],
+      "Labels:": [
+        "Štítky:"
+      ],
+      "NEW": [
+        "NOVÉ"
       ]
     },
     "Label": {
@@ -740,6 +761,9 @@
       ],
       "Explore the New Suggestion Mode": [
         "Preskúmajte nový režim návrhov"
+      ],
+      "Outline": [
+        "Okraje"
       ]
     },
     "sheets_2025:Bottom bar": {
@@ -2346,6 +2370,29 @@
       ],
       "Zero": [
         "Nula"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Priemer"
+      ],
+      "Count": [
+        "Počet"
+      ],
+      "Customize Status Bar": [
+        "Prispôsobenie stavového riadku"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Numerical count": [
+        "Číselný súčet"
+      ],
+      "Sum": [
+        "Súčet"
       ]
     }
   }

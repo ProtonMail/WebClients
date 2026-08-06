@@ -244,6 +244,12 @@
       ],
       "Superscript": [
         "Sobrescrito"
+      ],
+      "Go to label": [
+        "Ir para marcador"
+      ],
+      "Remove": [
+        "Remover"
       ]
     },
     "color": {
@@ -474,6 +480,9 @@
       ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Esta planilha é incompatível com a atual versão do cliente. Tente recarregar o cliente. Se o erro persistir, entre em contato com o suporte."
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Esta planilha detectou uma inconsistência na sincronização local. A edição foi desativada para evitar a perda de dados. Registre uma notificação e, caso concorde em compartilhar o conteúdo, baixe e inclua as informações de depuração abaixo."
       ]
     },
     "Error message": {
@@ -594,6 +603,12 @@
       ],
       "New": [
         "Novo"
+      ],
+      "Labels:": [
+        "Marcadores:"
+      ],
+      "NEW": [
+        "NOVO"
       ]
     },
     "Label": {
@@ -610,7 +625,7 @@
         "Alterar tamanho da imagem"
       ],
       "Change indent level": [
-        "Modificar o nível de indentação"
+        "Alterar nível de indentação"
       ],
       "Clear formatting": [
         "Limpar formatação"
@@ -697,7 +712,7 @@
         "Cor de fundo de ${ name } e cor do texto branca."
       ],
       "${ name } text color and highlight": [
-        "Cor do texto e destaque de ${ name }"
+        "Cor do texto e destaque em ${ name }"
       ],
       "${ name } text color with no background": [
         "Cor do texto de ${ name } sem fundo."
@@ -738,6 +753,9 @@
       ],
       "Explore the New Suggestion Mode": [
         "Explore o novo modo de sugestão"
+      ],
+      "Outline": [
+        "Esquema"
       ]
     },
     "sheets_2025:Bottom bar": {
@@ -1517,6 +1535,12 @@
       ],
       "₹ Rupee": [
         "₹ Rúpia"
+      ],
+      "Custom date and time": [
+        "Data e hora personalizadas"
+      ],
+      "Custom number": [
+        "Número personalizado"
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
@@ -2185,6 +2209,174 @@
       ],
       "Zero": [
         "Zero"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "Aplicar"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Custom date and time formats": [
+        "Formatos personalizados de data e hora"
+      ],
+      "Format": [
+        "Formatar"
+      ],
+      "Sample": [
+        "Exemplo"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "AM/PM"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Day": [
+        "Dia"
+      ],
+      "Day as abbreviation": [
+        "Dia como abreviação"
+      ],
+      "Day as full name": [
+        "Dia como nome completo"
+      ],
+      "Day with leading zero": [
+        "Dia com zero inicial"
+      ],
+      "Day without leading zero": [
+        "Dia sem zero inicial"
+      ],
+      "Delete": [
+        "Excluir"
+      ],
+      "Duration": [
+        "Duração"
+      ],
+      "Elapsed hours": [
+        "Horas decorridas"
+      ],
+      "Elapsed hours with leading zero": [
+        "Horas decorridas sem zero inicial"
+      ],
+      "Elapsed hours without leading zero": [
+        "Horas decorridas com zero inicial"
+      ],
+      "Elapsed minutes": [
+        "Minutos decorridos"
+      ],
+      "Elapsed minutes with leading zero": [
+        "Minutos decorridos com zero inicial"
+      ],
+      "Elapsed minutes without leading zero": [
+        "Minutos decorridos sem zero inicial"
+      ],
+      "Elapsed seconds": [
+        "Segundos decorridos"
+      ],
+      "Elapsed seconds with leading zero": [
+        "Segundos decorridos com zero inicial"
+      ],
+      "Elapsed seconds without leading zero": [
+        "Segundos decorridos sem zero inicial"
+      ],
+      "First letter of the month": [
+        "Primeira letra do mês"
+      ],
+      "Full": [
+        "Completo"
+      ],
+      "Full numeric year": [
+        "Ano numérico completo"
+      ],
+      "Hour": [
+        "Hora"
+      ],
+      "Hour with leading zero": [
+        "Hora com o zero inicial"
+      ],
+      "Hour without leading zero": [
+        "Hora sem zero inicial"
+      ],
+      "Millisecond": [
+        "Milissegundo"
+      ],
+      "Minute": [
+        "Minuto"
+      ],
+      "Minute with leading zero": [
+        "Minuto com zero inicial"
+      ],
+      "Minute without leading zero": [
+        "Minuto sem zero inicial"
+      ],
+      "Month": [
+        "Mês"
+      ],
+      "Month as abbreviation": [
+        "Mês como abreviação"
+      ],
+      "Month as full name": [
+        "Mês como nome completo"
+      ],
+      "Month with leading zero": [
+        "Mês com zero inicial"
+      ],
+      "Month without leading zero": [
+        "Mês sem zero inicial"
+      ],
+      "Precision to 1/10 of a second": [
+        "Precisão de 1/10 de segundo"
+      ],
+      "Precision to 1/100 of a second": [
+        "Precisão de 1/100 de segundo"
+      ],
+      "Precision to 1/1000 of a second": [
+        "Precisão de 1/1000 de segundo"
+      ],
+      "Second": [
+        "Segundo"
+      ],
+      "Second with leading zero": [
+        "Segundo com zero inicial"
+      ],
+      "Second without leading zero": [
+        "Segundo sem zero inicial"
+      ],
+      "Time": [
+        "Hora"
+      ],
+      "Two digit year": [
+        "Ano com dois dígitos"
+      ],
+      "Year": [
+        "Ano"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Média"
+      ],
+      "Count": [
+        "Contagem"
+      ],
+      "Customize Status Bar": [
+        "Personalizar a barra de status"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Numerical count": [
+        "Contagem numérica"
+      ],
+      "Sum": [
+        "Soma"
       ]
     }
   }

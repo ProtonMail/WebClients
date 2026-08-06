@@ -241,6 +241,15 @@
       ],
       "Page break": [
         "Sidbrytning"
+      ],
+      "Go to label": [
+        "Gå till etikett"
+      ],
+      "Remove": [
+        "Ta bort"
+      ],
+      "Superscript": [
+        "Upphöjd"
       ]
     },
     "color": {
@@ -471,6 +480,9 @@
       ],
       "Tried to import Sheet data into Lexical": [
         "Försökte importera arkdata till Lexical"
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Detta kalkylblad har upptäckt en inkonsekvens i den lokala synkroniseringen. Redigering har inaktiverats för att förhindra dataförlust. Skicka in en felrapport och ladda ner och bifoga felsökningsinformationen nedan om du kan tänka dig att dela innehållet."
       ]
     },
     "Error message": {
@@ -591,6 +603,12 @@
       ],
       "New": [
         "Ny"
+      ],
+      "Labels:": [
+        "Etiketter:"
+      ],
+      "NEW": [
+        "NYTT"
       ]
     },
     "Label": {
@@ -735,6 +753,9 @@
       ],
       "Explore the New Suggestion Mode": [
         "Utforska det nya förslagsläget"
+      ],
+      "Outline": [
+        "Disposition"
       ]
     },
     "Warning": {
@@ -1009,6 +1030,33 @@
       ],
       "Values only": [
         "Endast värden"
+      ],
+      "Delete cells and shift cells left": [
+        "Ta bort celler och flytta celler åt vänster"
+      ],
+      "Delete cells and shift cells up": [
+        "Ta bort celler och flytta celler uppåt"
+      ],
+      "Freeze up to column": [
+        "Lås fram till kolumn"
+      ],
+      "Insert cells and shift cells down": [
+        "Infoga celler och flytta celler nedåt"
+      ],
+      "Insert cells and shift cells right": [
+        "Infoga celler och flytta celler åt höger"
+      ],
+      "Pipe": [
+        "Vertikalstreck"
+      ],
+      "Transposed": [
+        "Transponerad"
+      ],
+      "Unfreeze columns": [
+        "Frigör kolumner"
+      ],
+      "Unfreeze rows": [
+        "Frigör rader"
       ]
     },
     "sheets_2025:Spreadsheet context menu (columns/rows)": {
@@ -1059,6 +1107,9 @@
       ],
       "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
         "Vi arbetar på att erbjuda denna funktion till dig snart. För närvarande kan kalkylblad endast redigeras på stationär dator"
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "Din skärm är för liten för att redigera detta kalkylblad. Du är i visningsläge. För att göra ändringar öppnar du kalkylbladet på en större skärm eller förstorar ditt webbläsarfönster."
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1084,6 +1135,9 @@
       ],
       "Merge vertically": [
         "Sammanfoga vertikalt"
+      ],
+      "Unmerge": [
+        "Dela upp"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar data menu": {
@@ -1262,6 +1316,9 @@
       ],
       "Underline": [
         "Understreck"
+      ],
+      "Wrapping": [
+        "Radbrytning"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
@@ -1317,6 +1374,12 @@
       ],
       "Sheet": [
         "Kalkylblad"
+      ],
+      "Insert cells and shift down": [
+        "Infoga celler och flytta ner"
+      ],
+      "Insert cells and shift right": [
+        "Infoga celler och flytta åt höger"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
@@ -1376,6 +1439,9 @@
       ],
       "Zoom": [
         "Zooma"
+      ],
+      "Gridlines": [
+        "Rutnät"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
@@ -1460,6 +1526,15 @@
       ],
       "Custom number": [
         "Anpassat nummer"
+      ],
+      "Accounting": [
+        "Redovisning"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ kinesisk yuan"
+      ],
+      "Custom date and time": [
+        "Anpassat datum och tid"
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
@@ -1592,6 +1667,15 @@
       ],
       "Zoom": [
         "Zooma"
+      ],
+      "Paint format": [
+        "Hämta format"
+      ],
+      "Text wrapping": [
+        "Radbrytning"
+      ],
+      "Unmerge cells": [
+        "Dela upp celler"
       ]
     },
     "sheets_2025:Spreadsheet filter menu": {
@@ -1788,6 +1872,12 @@
       ],
       "Vertical Alignment": [
         "Vertikal justering"
+      ],
+      "Overflow": [
+        "Spill över"
+      ],
+      "Unmerge": [
+        "Dela upp"
       ]
     },
     "sheets_2025:Spreadsheet sidebar chart editor dialog": {
@@ -1838,6 +1928,12 @@
       ],
       "Vertical axis title": [
         "Vertikalt axelrubrik"
+      ],
+      "Chart data range": [
+        "Diagramdataintervall"
+      ],
+      "Horizontal (category) axis labels": [
+        "Etiketter för horisontell axel (kategori)"
       ]
     },
     "sheets_2025:Spreadsheet sidebar conditional format dialog": {
@@ -1912,6 +2008,9 @@
       ],
       "Single color": [
         "En färg"
+      ],
+      "Min point": [
+        "Minimipunkt"
       ]
     },
     "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
@@ -2045,11 +2144,26 @@
       ],
       "Table title": [
         "Tabellrubrik"
+      ],
+      "Banded columns": [
+        "Alternerande kolumner"
+      ],
+      "Banded rows": [
+        "Alternerande rader"
+      ],
+      "Table data range": [
+        "Tabelldataintervall"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
       "Clip": [
         "Klipp"
+      ],
+      "Overflow": [
+        "Spill över"
+      ],
+      "Wrap": [
+        "Radbryt"
       ]
     },
     "sheets_2025:Spreadsheet custom date and time formats dialog": {
@@ -2064,6 +2178,9 @@
       ],
       "Format": [
         "Format"
+      ],
+      "Sample": [
+        "Prov"
       ]
     },
     "sheets_2025:Spreadsheet custom date and time formats editor": {
@@ -2174,6 +2291,24 @@
       ],
       "Year": [
         "År"
+      ],
+      "Day with leading zero": [
+        "Dag med inledande nolla"
+      ],
+      "Day without leading zero": [
+        "Dag utan inledande nolla"
+      ],
+      "Full": [
+        "Full"
+      ],
+      "Minute without leading zero": [
+        "Minut utan inledande nolla"
+      ],
+      "Precision to 1/100 of a second": [
+        "Noggrannhet till 1/100 sekund"
+      ],
+      "Second with leading zero": [
+        "Sekund med inledande nolla"
       ]
     },
     "sheets_2025:Spreadsheet sidebar custom number format dialog": {
@@ -2206,6 +2341,42 @@
       ],
       "Zero": [
         "Noll"
+      ],
+      "Sample": [
+        "Exempel"
+      ]
+    },
+    "sheets_2025:Formula bar": {
+      "Formula bar": [
+        "Formelfält"
+      ]
+    },
+    "sheets_2025:Range selector": {
+      "Range selector": [
+        "Områdesväljare"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Genomsnittlig"
+      ],
+      "Count": [
+        "Antal"
+      ],
+      "Customize Status Bar": [
+        "Anpassa statusfältet"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Numerical count": [
+        "Numeriskt antal"
+      ],
+      "Sum": [
+        "Summa"
       ]
     }
   }

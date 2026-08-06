@@ -244,6 +244,18 @@
       ],
       "Superscript": [
         "Hochgestellt"
+      ],
+      "Close outline": [
+        "Gliederung schließen"
+      ],
+      "Go to label": [
+        "Zu Kategorie wechseln"
+      ],
+      "Open outline": [
+        "Gliederung öffnen"
+      ],
+      "Remove": [
+        "Entfernen"
       ]
     },
     "color": {
@@ -474,6 +486,9 @@
       ],
       "Tried to import Sheet data into Lexical": [
         "Es wurde versucht, Sheet-Daten in Lexical zu importieren"
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "In dieser Tabelle wurde eine lokale Synchronisierungsinkonsistenz festgestellt. Die Bearbeitung wurde deaktiviert, um Datenverluste zu vermeiden. Bitte erstelle einen Bericht und lade die unten stehenden Debug-Informationen herunter und füge diese bei, sofern du mit der Weitergabe des Inhalts einverstanden bist."
       ]
     },
     "Error message": {
@@ -594,6 +609,12 @@
       ],
       "New": [
         "Neu"
+      ],
+      "Labels:": [
+        "Kategorien:"
+      ],
+      "NEW": [
+        "NEU"
       ]
     },
     "Label": {
@@ -738,6 +759,9 @@
       ],
       "Explore the New Suggestion Mode": [
         "Den neuen Vorschlagsmodus erkunden"
+      ],
+      "Outline": [
+        "Umrandung"
       ]
     },
     "Warning": {
@@ -1522,6 +1546,12 @@
       ],
       "₹ Rupee": [
         "₹ Rupie"
+      ],
+      "Custom date and time": [
+        "Benutzerdefinierte Datum und Uhrzeit"
+      ],
+      "Custom number": [
+        "Benutzerdefinierte Nummer"
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
@@ -2185,6 +2215,174 @@
       ],
       "Zero": [
         "Null"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "Anwenden"
+      ],
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Custom date and time formats": [
+        "Benutzerdefinierte Datum- und Uhrzeitformate"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Sample": [
+        "Beispiel"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "AM/PM"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Day": [
+        "Tag"
+      ],
+      "Day as abbreviation": [
+        "Tag als Abkürzung"
+      ],
+      "Day as full name": [
+        "Tag als vollständiger Name"
+      ],
+      "Day with leading zero": [
+        "Tag mit führender Null"
+      ],
+      "Day without leading zero": [
+        "Tag ohne führende Null"
+      ],
+      "Delete": [
+        "Löschen"
+      ],
+      "Duration": [
+        "Dauer"
+      ],
+      "Elapsed hours": [
+        "Verstrichene Stunden"
+      ],
+      "Elapsed hours with leading zero": [
+        "Verstrichene Stunden mit führender Null"
+      ],
+      "Elapsed hours without leading zero": [
+        "Verstrichene Stunden ohne führende Null"
+      ],
+      "Elapsed minutes": [
+        "Vergangene Minuten"
+      ],
+      "Elapsed minutes with leading zero": [
+        "Verstrichene Minuten mit führender Null"
+      ],
+      "Elapsed minutes without leading zero": [
+        "Verstrichene Minuten ohne führende Null"
+      ],
+      "Elapsed seconds": [
+        "Vergangene Sekunden"
+      ],
+      "Elapsed seconds with leading zero": [
+        "Verstrichene Sekunden mit führender Null"
+      ],
+      "Elapsed seconds without leading zero": [
+        "Verstrichene Sekunden ohne führende Null"
+      ],
+      "First letter of the month": [
+        "Erster Buchstabe des Monats"
+      ],
+      "Full": [
+        "Vollständig"
+      ],
+      "Full numeric year": [
+        "Vollständiges numerisches Jahr"
+      ],
+      "Hour": [
+        "Stunde"
+      ],
+      "Hour with leading zero": [
+        "Stunde mit führender Null"
+      ],
+      "Hour without leading zero": [
+        "Stunde ohne führende Null"
+      ],
+      "Millisecond": [
+        "Millisekunde"
+      ],
+      "Minute": [
+        "Minute"
+      ],
+      "Minute with leading zero": [
+        "Minute mit führender Null"
+      ],
+      "Minute without leading zero": [
+        "Minute ohne führende Null"
+      ],
+      "Month": [
+        "Monat"
+      ],
+      "Month as abbreviation": [
+        "Monat als Abkürzung"
+      ],
+      "Month as full name": [
+        "Tag als vollständiger Name"
+      ],
+      "Month with leading zero": [
+        "Monat mit führender Null"
+      ],
+      "Month without leading zero": [
+        "Monat ohne führende Null"
+      ],
+      "Precision to 1/10 of a second": [
+        "1/10 Sekunde genau"
+      ],
+      "Precision to 1/100 of a second": [
+        "1/100 Sekunde genau"
+      ],
+      "Precision to 1/1000 of a second": [
+        "1/1000 Sekunde genau"
+      ],
+      "Second": [
+        "Sekunde"
+      ],
+      "Second with leading zero": [
+        "Sekunde mit führender Null"
+      ],
+      "Second without leading zero": [
+        "Sekunde ohne führende Null"
+      ],
+      "Time": [
+        "Uhrzeit"
+      ],
+      "Two digit year": [
+        "Zweistelliges Jahr"
+      ],
+      "Year": [
+        "Jahr"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Durchschnitt"
+      ],
+      "Count": [
+        "Anzahl"
+      ],
+      "Customize Status Bar": [
+        "Statusleiste anpassen"
+      ],
+      "Max": [
+        "Maximum"
+      ],
+      "Min": [
+        "Minimum"
+      ],
+      "Numerical count": [
+        "Anzahl"
+      ],
+      "Sum": [
+        "Summe"
       ]
     }
   }

@@ -235,6 +235,18 @@
       ],
       "Superscript": [
         "Hevet skrift"
+      ],
+      "Close outline": [
+        "Lukk disposisjon"
+      ],
+      "Go to label": [
+        "Gå til etikett"
+      ],
+      "Open outline": [
+        "Åpne disposisjon"
+      ],
+      "Remove": [
+        "Fjern"
       ]
     },
     "color": {
@@ -459,6 +471,9 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Kan ikke konvertere Word-dokument. Er det passordbeskyttet? I så fall må du fjerne passordet og prøve igjen."
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Dette regnearket oppdaget en inkonsekvens i lokal synkronisering. Redigering er deaktivert for å forhindre datatap. Send inn en rapport, og hvis du er enig i å dele innholdet, last ned og inkluder feilsøkingsinformasjonen nedenfor."
       ]
     },
     "Error message": {
@@ -570,6 +585,12 @@
       ],
       "New": [
         "Ny"
+      ],
+      "Labels:": [
+        "Etiketter:"
+      ],
+      "NEW": [
+        "NY"
       ]
     },
     "Label": {
@@ -1473,6 +1494,12 @@
       ],
       "₹ Rupee": [
         "₹ Rupi"
+      ],
+      "Custom date and time": [
+        "Tilpasset dato og klokkeslett"
+      ],
+      "Custom number": [
+        "Tilpasset nummer"
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
@@ -2105,6 +2132,9 @@
       ],
       "Language not supported": [
         "Språk ikke støttet"
+      ],
+      "Outline": [
+        "Omriss"
       ]
     },
     "Warning": {
@@ -2155,6 +2185,174 @@
       ],
       "Zero": [
         "Null"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "Bruk"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Custom date and time formats": [
+        "Tilpassede dato- og klokkeslettformater"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Sample": [
+        "Eksempel"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "AM/PM"
+      ],
+      "Date": [
+        "Dato"
+      ],
+      "Day": [
+        "Dag"
+      ],
+      "Day as abbreviation": [
+        "Dag som forkortelse"
+      ],
+      "Day as full name": [
+        "Dag som fullt navn"
+      ],
+      "Day with leading zero": [
+        "Dag med innledende null"
+      ],
+      "Day without leading zero": [
+        "Dag uten innledende null"
+      ],
+      "Delete": [
+        "Slett"
+      ],
+      "Duration": [
+        "Varighet"
+      ],
+      "Elapsed hours": [
+        "Forløpte timer"
+      ],
+      "Elapsed hours with leading zero": [
+        "Forløpte timer med innledende null"
+      ],
+      "Elapsed hours without leading zero": [
+        "Forløpte timer uten innledende null"
+      ],
+      "Elapsed minutes": [
+        "Forløpte minutter"
+      ],
+      "Elapsed minutes with leading zero": [
+        "Forløpte minutter med innledende null"
+      ],
+      "Elapsed minutes without leading zero": [
+        "Forløpte minutter uten innledende null"
+      ],
+      "Elapsed seconds": [
+        "Forløpte sekunder"
+      ],
+      "Elapsed seconds with leading zero": [
+        "Forløpte sekunder med innledende null"
+      ],
+      "Elapsed seconds without leading zero": [
+        "Forløpte sekunder uten innledende null"
+      ],
+      "First letter of the month": [
+        "Månedens første bokstav"
+      ],
+      "Full": [
+        "Full"
+      ],
+      "Full numeric year": [
+        "Fullt numerisk år"
+      ],
+      "Hour": [
+        "Time"
+      ],
+      "Hour with leading zero": [
+        "Time med null foran"
+      ],
+      "Hour without leading zero": [
+        "Time uten innledende null"
+      ],
+      "Millisecond": [
+        "Millisekund"
+      ],
+      "Minute": [
+        "Minutt"
+      ],
+      "Minute with leading zero": [
+        "Minutt med null foran"
+      ],
+      "Minute without leading zero": [
+        "Minutt uten innledende null"
+      ],
+      "Month": [
+        "Måned"
+      ],
+      "Month as abbreviation": [
+        "Måned som forkortelse"
+      ],
+      "Month as full name": [
+        "Måned som fullt navn"
+      ],
+      "Month with leading zero": [
+        "Måned med null foran"
+      ],
+      "Month without leading zero": [
+        "Måned uten innledende null"
+      ],
+      "Precision to 1/10 of a second": [
+        "Presisjon til 1/10 sekund"
+      ],
+      "Precision to 1/100 of a second": [
+        "Presisjon til 1/100 sekund"
+      ],
+      "Precision to 1/1000 of a second": [
+        "Presisjon til 1/1000 sekund"
+      ],
+      "Second": [
+        "Sekund"
+      ],
+      "Second with leading zero": [
+        "Sekund med innledende null"
+      ],
+      "Second without leading zero": [
+        "Sekund uten innledende null"
+      ],
+      "Time": [
+        "Tid"
+      ],
+      "Two digit year": [
+        "Tosifret årstall"
+      ],
+      "Year": [
+        "År"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Gjennomsnitt"
+      ],
+      "Count": [
+        "Antall"
+      ],
+      "Customize Status Bar": [
+        "Tilpass statuslinjen"
+      ],
+      "Max": [
+        "Maks"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Numerical count": [
+        "Numerisk antall"
+      ],
+      "Sum": [
+        "Sum"
       ]
     }
   }
