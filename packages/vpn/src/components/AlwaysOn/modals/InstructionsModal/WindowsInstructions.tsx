@@ -7,14 +7,14 @@ import { IcUsersMerge } from '@proton/icons/icons/IcUsersMerge';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-// TODO: VPNB2B-164
-import jumpcloud from '@proton/styles/assets/img/illustrations/vpn/always-on/jumpcloud.svg';
-import windowsIcon from '@proton/styles/assets/img/illustrations/vpn/always-on/windows-colored.svg';
 
+import { useAlwaysOnPolicyTelemetry } from '../../../../hooks/useAlwaysOnPolicyTelemetry';
+import { useAlwaysOnWindowsRelease } from '../../../../hooks/useAlwaysOnWindowsRelease';
+import { WINDOWS_DOWNLOAD_PAGE, useWindowsDownloadLinks } from '../../../../hooks/useWindowsDownloadLinks';
 import type { AlwaysOnPolicyArtifact } from '../../../../types/AlwaysOn';
 import { DeploymentMethodBody, DeploymentMethodHeader } from './DeploymentMethod';
-import { MdmProviderButton } from './MdmProviderButton';
-import { PlatformInstructions } from './PlatformInstructions';
+import { Instructions } from './Instructions';
+import { MinimumClientVersion } from './MinimumClientVersion';
 
 const WINDOWS_SCRIPT_FILENAME = 'protonvpn-deviceprofile.ps1';
 const REGO_FILENAME = 'protonvpn-deviceprofile.rego';
@@ -29,8 +29,21 @@ interface Props {
 }
 
 export const WindowsInstructions = ({ windows, rego }: Props) => {
+    const minimumVersion = useAlwaysOnWindowsRelease();
+    const downloadLinks = useWindowsDownloadLinks();
+    const { sendLearnMoreClickedReport } = useAlwaysOnPolicyTelemetry();
+
+    const learnMore = (
+        <Href
+            key="learn-more"
+            href={getKnowledgeBaseUrl('/mdm-always-on-vpn')}
+            onClick={() => sendLearnMoreClickedReport('windows')}
+        >{c('Link').t`Learn more`}</Href>
+    );
+
+    // translator: example: "To enable Always-on VPN, the device profile needs to reach C:\Program Files\Proton\VPN\Policies on every device — the Proton VPN client detects it there and enforces the profile automatically. Learn more."
     const intro = c('Info')
-        .jt`To enable Always-on VPN, the device profile needs to reach ${policiesPath} on every device — the ${VPN_APP_NAME} client detects it there and enforces the profile automatically.`;
+        .jt`To enable Always-on VPN, the device profile needs to reach ${policiesPath} on every device — the ${VPN_APP_NAME} client detects it there and enforces the profile automatically. ${learnMore}.`;
 
     const powershellArtifact = (
         <Href
@@ -60,52 +73,59 @@ export const WindowsInstructions = ({ windows, rego }: Props) => {
     );
 
     return (
-        <PlatformInstructions intro={intro}>
-            <Collapsible key="mdm" className="border rounded-lg">
-                <DeploymentMethodHeader
-                    icon={<IcUsersMerge className="color-hint" />}
-                    title={c('Title').t`Deploy via MDM`}
-                    recommended
-                />
-                <DeploymentMethodBody>
-                    <span>{c('Info').t`Choose one:`}</span>
-                    <ul className="m-0 flex flex-column gap-2">
-                        <li>{c('Info').jt`Deploy ${regoArtifact} directly via your MDM file deployment`}</li>
-                        <li>{c('Info').jt`Or run ${powershellArtifact} via your MDM script execution`}</li>
-                    </ul>
+        <Instructions.Root>
+            <Instructions.Intro>{intro}</Instructions.Intro>
+            {minimumVersion && (
+                <Instructions.Notice>
+                    <MinimumClientVersion
+                        version={minimumVersion}
+                        links={downloadLinks}
+                        downloadPage={WINDOWS_DOWNLOAD_PAGE}
+                    />
+                </Instructions.Notice>
+            )}
+            <Instructions.Methods>
+                <Collapsible key="mdm" className="border rounded-lg">
+                    <DeploymentMethodHeader
+                        icon={<IcUsersMerge className="color-hint" />}
+                        title={c('Title').t`Deploy via MDM`}
+                        recommended
+                    />
+                    <DeploymentMethodBody>
+                        <span>{c('Info').t`Choose one:`}</span>
+                        <ul className="m-0 flex flex-column gap-2">
+                            <li>
+                                {
+                                    // translator: example: "Deploy protonvpn-deviceprofile.rego directly via your MDM file deployment"
+                                    c('Info').jt`Deploy ${regoArtifact} directly via your MDM file deployment`
+                                }
+                            </li>
+                            <li>
+                                {
+                                    // translator: example: "Or run protonvpn-deviceprofile.ps1 via your MDM script execution"
+                                    c('Info').jt`Or run ${powershellArtifact} via your MDM script execution`
+                                }
+                            </li>
+                        </ul>
+                    </DeploymentMethodBody>
+                </Collapsible>
 
-                    <div className="flex flex-row gap-2">
-                        <MdmProviderButton
-                            name={c('Action').t`Microsoft Intune`}
-                            href={getKnowledgeBaseUrl('/business-mdm-intune-windows')}
-                            icon={<img src={windowsIcon} className="shrink-0" alt="" />}
-                        />
-                        <MdmProviderButton
-                            name={c('Action').t`JumpCloud`}
-                            href="#"
-                            icon={<img src={jumpcloud} className="shrink-0" alt="" />}
-                        />
-                    </div>
-
-                    <span className="color-weak text-sm">
-                        {c('Info')
-                            .t`Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.`}
-                    </span>
-                </DeploymentMethodBody>
-            </Collapsible>
-
-            <Collapsible key="powershell" className="border rounded-lg">
-                <DeploymentMethodHeader
-                    icon={<IcFileArrowInUp className="color-hint" />}
-                    title={c('Title').t`Deploy via PowerShell`}
-                />
-                <DeploymentMethodBody>
-                    <span className="color-weak">
-                        {c('Info')
-                            .jt`Download ${powershellArtifact} and run on each device as the system user to automatically place the device profile.`}
-                    </span>
-                </DeploymentMethodBody>
-            </Collapsible>
-        </PlatformInstructions>
+                <Collapsible key="powershell" className="border rounded-lg">
+                    <DeploymentMethodHeader
+                        icon={<IcFileArrowInUp className="color-hint" />}
+                        title={c('Title').t`Deploy via PowerShell`}
+                    />
+                    <DeploymentMethodBody>
+                        <span className="color-weak">
+                            {
+                                // translator: example: "Download protonvpn-deviceprofile.ps1 and run on each device as the system user to automatically place the device profile."
+                                c('Info')
+                                    .jt`Download ${powershellArtifact} and run on each device as the system user to automatically place the device profile.`
+                            }
+                        </span>
+                    </DeploymentMethodBody>
+                </Collapsible>
+            </Instructions.Methods>
+        </Instructions.Root>
     );
 };
