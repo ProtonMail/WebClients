@@ -47,7 +47,8 @@ const mockSelector = (selector: any, options?: MockSelectorParams) => {
         return options?.disabledCategories || [];
     }
 
-    return { count: options?.unreadCount || 0, loading: false };
+    // The hook reads `.count` inside the selector, so the mocked store returns the number
+    return options?.unreadCount || 0;
 };
 
 describe('useCategoriesBadge', () => {
