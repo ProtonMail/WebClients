@@ -1,6 +1,7 @@
 import type { DriveEvent, NodeEntity } from '@protontech/drive-sdk';
 
 import { type EventIdStorage, MainThreadBridge } from '../mainThread/MainThreadBridge';
+import type { SearchMetrics } from '../shared/searchMetrics';
 import type { TreeEventScopeId } from '../shared/types';
 import { FakeSdkDriveClient } from './FakeSdkDriveClient';
 import { FakeSearchDriveClient } from './FakeSearchDriveClient';
@@ -47,6 +48,19 @@ export class FakeMainThreadBridge {
         this.bridge.cryptoProxyBridge.openpgpEncryptIndexKey = async (plaintext: string) => `fake-openpgp:${plaintext}`;
         this.bridge.cryptoProxyBridge.openpgpDecryptIndexKey = async (armored: string) =>
             armored.replace('fake-openpgp:', '');
+
+        // Comlink structured-clones every argument crossing the worker -> main-thread boundary,
+        // which strips Error subclass identity (prototype, `name`, and own properties like
+        // `status`). Mirror that here so tests exercise the real serialization boundary instead
+        // of passing objects by reference - otherwise a metric that misclassifies a bridged
+        // error looks fine in tests and reports the wrong kind in production.
+        // Caveat: jsdom's DOMException degrades to a bare object under Node's structuredClone,
+        // where a real browser preserves its `name`. Don't assert on a bridged DOMException.
+        const dispatchSearchMetric = this.bridge.dispatchSearchMetric;
+        this.bridge.dispatchSearchMetric = <K extends keyof SearchMetrics>(
+            method: K,
+            args: Parameters<SearchMetrics[K]>[0]
+        ) => dispatchSearchMetric(method, structuredClone(args));
     }
 
     /** Set the root node returned by getMyFilesRootFolder. */
