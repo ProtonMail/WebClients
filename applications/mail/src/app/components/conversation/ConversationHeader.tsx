@@ -9,6 +9,8 @@ import clsx from '@proton/utils/clsx';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isElementConversation } from '../../helpers/elements';
 import type { Element } from '../../models/element';
+import { MoveToPrimaryBadge } from '../categoryView/moveToPrimaryBadge/MoveToPrimaryBadge';
+import { useMoveToPrimaryBadge } from '../categoryView/moveToPrimaryBadge/useMoveToPrimaryBadge';
 import NumMessages from './NumMessages';
 
 interface Props {
@@ -22,6 +24,8 @@ interface Props {
 const ConversationHeader = ({ className, loading, element, showBackButton = false, onBack }: Props) => {
     const { highlightMetadata, shouldHighlight } = useEncryptedSearchContext();
     const highlightSubject = shouldHighlight();
+
+    const shouldShowPrimaryBadge = useMoveToPrimaryBadge();
 
     const isConversation = isElementConversation(element);
     const subjectElement = useMemo(
@@ -70,6 +74,11 @@ const ConversationHeader = ({ className, loading, element, showBackButton = fals
                     )}
                 </h1>
             </div>
+            {shouldShowPrimaryBadge && element && (
+                <div className="mt-2">
+                    <MoveToPrimaryBadge element={element} />
+                </div>
+            )}
         </header>
     );
 };
