@@ -1027,6 +1027,36 @@
       ],
       "Verify now": [
         "Nu verifiëren"
+      ],
+      "Clear conversation": [
+        "Gesprek wissen"
+      ],
+      "Download debug information": [
+        "Foutopsporingsinformatie downloaden"
+      ],
+      "Export editor state for version": [
+        "Editorstatus exporteren voor versie"
+      ],
+      "Export this version (as docx)": [
+        "Exporteer deze versie (als docx)"
+      ],
+      "Export YJS state for version": [
+        "YJS-status exporteren voor versie"
+      ],
+      "Reject": [
+        "Afwijzen"
+      ],
+      "Reload spreadsheet": [
+        "Spreadsheet opnieuw laden"
+      ],
+      "Report issue": [
+        "Probleem melden"
+      ],
+      "Send": [
+        "Verstuur"
+      ],
+      "Stop": [
+        "Stop"
       ]
     },
     "Action subscription": {
@@ -1116,6 +1146,28 @@
       ],
       "Writing assistant seats": [
         "Licenties voor schrijfassistent"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruiker)",
+        "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruikers)"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruikers)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent (voor ${ quantity } gebruikers)"
+      ],
+      "${ price } per seat": [
+        "${ price } per zitplaats"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } aangepast domein",
+        "${ quantity } aangepaste domeinen"
       ]
     },
     "Alert": {
@@ -1134,6 +1186,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Breng e-mailproductiviteit naar een nieuw niveau. Laat ${ LUMO_SHORT_APP_NAME } u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
       ]
     },
     "Attached ics file error": {
@@ -1366,6 +1421,13 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, ${ DARK_WEB_MONITORING_NAME } en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-emailde-my-email aliassen en meer.",
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-emailde-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-email mailaliassen en meer."
       ]
     },
     "Billing cycle": {
@@ -1503,6 +1565,9 @@
       ],
       "Maybe later": [
         "Misschien later"
+      ],
+      "Get 50% offer": [
+        "Neem de 50% deal"
       ]
     },
     "Cancellation upsell": {
@@ -3634,6 +3699,30 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
+      ],
+      "Failed to rename document": [
+        "Kan document niet hernoemen"
+      ],
+      "Failed to trash document": [
+        "Kan document niet in de prullenbak plaatsen"
+      ],
+      "Invalid URL": [
+        "Ongeldige URL"
+      ],
+      "No drive found to import": [
+        "Geen drive gevonden om te importeren"
+      ],
+      "Some documents could not be loaded": [
+        "Sommige documenten konden niet worden geladen"
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Onverwachte fout, we kunnen de bestanden niet importeren"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "We konden via deze methode geen verificatiecode verzenden."
       ]
     },
     "Error importing calendar": {
@@ -4053,6 +4142,9 @@
       ],
       "Security key": [
         "Beveiligingssleutel"
+      ],
+      "Touch your security key.": [
+        "Raak uw beveiligingssleutel aan."
       ]
     },
     "fido2: Label": {
@@ -6177,6 +6269,61 @@
       ],
       "We'll remind you to verify your password again later": [
         "We herinneren u er later aan om uw wachtwoord opnieuw te controleren"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Toegang tot meer dan 20.000 servers in 145 landen"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Maak een beveiligde cloud voor ${ memberCount } lid",
+        "Maak een beveiligde cloud voor ${ memberCount } leden"
+      ],
+      "Details": [
+        "Details"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "De hoogste VPN-snelheden tot 10 Gbps"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Neem nog even de tijd om in alle rust een beslissing te nemen."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Help ons deze ervaring te verbeteren door het probleem te melden. Als u er geen problemen mee heeft om de inhoud van de spreadsheet te delen, voeg dan de onderstaande foutopsporingsinformatie toe aan uw melding."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Help ons deze ervaring te verbeteren door het probleem te melden. Voeg de onderstaande foutopsporingsinformatie toe aan uw rapport."
+      ],
+      "Hide table of contents": [
+        "Inhoudsopgave verbergen"
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Als u nu annuleert, hebt u vanaf ${ expiryDate }geen toegang meer tot ${ BRAND_NAME } ${ planTitle }, waaronder deze functies:"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Oeps! Deze spreadsheet kan uw meest recente bewerkingen niet opslaan. Daarom hebben we het bewerken onderbroken om te voorkomen dat u uw werk verliest."
+      ],
+      "Premium privacy protection across all your devices": [
+        "Eersteklas privacybescherming op al uw apparaten"
+      ],
+      "Show table of contents": [
+        "Inhoudsopgave tonen"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Behoud uw abonnement aan en u ontvangt 50% korting op uw volgende maand"
+      ],
+      "Thinking about this": [
+        "Hierover aan het nadenken"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "We hebben vastgesteld dat u eerder problemen heeft ondervonden bij het openen van een document."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "U bent momenteel aangemeld als ${ username } voor ${ organizationName }."
       ]
     },
     "info": {
@@ -6866,6 +7013,42 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } tekens"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Sta bewerkers toe om toelatingen te wijzigen en te delen."
+      ],
+      "Client": [
+        "Klant"
+      ],
+      "Client version": [
+        "Klantenversie"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Exact host matching": [
+        "Exacte hostovereenkomst"
+      ],
+      "Exact URL matching": [
+        "Exacte URL-overeenkomst"
+      ],
+      "Never fill on this exact URL": [
+        "Nooit invullen op deze exacte URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Bovenliggende domein en subdomeinen (standaard)"
+      ],
+      "Regular expression": [
+        "Reguliere expressie"
+      ],
+      "Starts with": [
+        "Begint met"
+      ],
+      "Unknown user": [
+        "Onbekende gebruiker"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertekenpatroon"
       ]
     },
     "Label for contact group color": {
@@ -7107,6 +7290,9 @@
       ],
       "Add-on with free trial": [
         "Add-on met gratis proefversie"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
       ]
     },
     "mailtrial2024: Action": {
@@ -7141,6 +7327,24 @@
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Uw gratis proefversie is beëindigd. ${ nonAutoRenewalAction }"
+      ],
+      "'Starts with' matching rule": [
+        "'Begint met'-matchregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Exacte (sub)domein matchregel"
+      ],
+      "Exact URL matching rule": [
+        "Exacte URL-matchregel"
+      ],
+      "Never fill with this exact URL": [
+        "Nooit invullen met deze exacte URL"
+      ],
+      "Regular expression rule": [
+        "Reguliere expressieregel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchregel met jokertekenpatroon"
       ]
     },
     "Message display when a new app version is available": {
@@ -7961,6 +8165,9 @@
       ],
       "Unlock streaming": [
         "Deblokkeer streaming"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
       ]
     },
     "new_plans: feature highlight": {
@@ -8682,6 +8889,36 @@
       "${ numberOfItems } item moved": [
         "${ numberOfItems } item verplaatst",
         "${ numberOfItems } items verplaatst"
+      ],
+      "\"Document deleted permanently": [
+        "\"Document definitief verwijderd"
+      ],
+      "Document moved to trash": [
+        "Document verplaatst naar prullenbak"
+      ],
+      "Document restored from trash": [
+        "Document hersteld uit prullenbak"
+      ],
+      "Failed to delete document": [
+        "Verwijderen van document mislukt"
+      ],
+      "Failed to load invitations": [
+        "Kan uitnodigingen niet laden"
+      ],
+      "Failed to load sharing details": [
+        "Kan de details over het delen niet laden"
+      ],
+      "Failed to reject invitation": [
+        "Kan uitnodiging niet weigeren"
+      ],
+      "Failed to rename document": [
+        "Kan document niet hernoemen"
+      ],
+      "Failed to restore document": [
+        "Herstellen van document mislukt"
+      ],
+      "Failed to trash document": [
+        "Kan document niet in de prullenbak plaatsen"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9112,6 +9349,9 @@
       ],
       "Search for users or addresses": [
         "Naar gebruikers of adressen zoeken"
+      ],
+      "Ask anything…": [
+        "Vraag alles..."
       ]
     },
     "Placeholder for contact group name": {
@@ -9758,6 +9998,12 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "Om dit document te bewerken, maak een kopie die u kunt wijzigen."
+      ],
+      "Editor permissions": [
+        "Bewerk machtigingen"
+      ],
+      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
+        "Bewerkers kunnen nu het delen beheren en anderen uitnodigen. U kunt dit op elk gewenst moment uitschakelen via de instellingen voor delen."
       ]
     },
     "sso": {
@@ -10023,7 +10269,7 @@
         "${ planMaxSpace } opslagruimte per gebruiker"
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over uw gegevens en de beveiliging daarvan te hebben."
       ],
       "${ planNumberOfDomains } custom email domain": [
         "${ planNumberOfDomains } eigen e-maildomein",
@@ -10236,6 +10482,9 @@
       ],
       "Type": [
         "Soort"
+      ],
+      "Size": [
+        "Grootte"
       ]
     },
     "TableHeader": {
@@ -11008,6 +11257,24 @@
       ],
       "You are all set": [
         "U bent helemaal klaar"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-schrijfassistent"
+      ],
+      "Editing paused": [
+        "Bewerken onderbroken"
+      ],
+      "Problems Detected": [
+        "Problemen gedetecteerd"
+      ],
+      "Stay for 50% off your next month": [
+        "Blijf en ontvang 50% korting op uw volgende maand"
+      ],
+      "Users and addresses": [
+        "Gebruikers en adressen"
       ]
     },
     "Title subscription": {
@@ -11113,6 +11380,12 @@
       ],
       "Change shared item settings": [
         "Instellingen voor het delen van items wijzigen"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Directe AI-ondersteuning, menselijke expert binnen handbereik!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Versie 6 OpenPGP-sleutel"
       ]
     },
     "tooltip": {
@@ -11352,6 +11625,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } biedt krachtige controle, maar een enkele fout kan ertoe leiden dat automatisch aanvullen gegevens matcht en invult op frauduleuze of phishing-websites."
       ]
     },
     "Autocomplete": {
@@ -11366,6 +11642,24 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Nadat de proefversie eindigt op ${ formattedDate1 }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate2 } annuleert."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Tijdens de proefperiode kunt u maximaal ${ TRIAL_MAX_SCRIBE_SEATS } schrijfassistent-licenties ${ LUMO_SHORT_APP_NAME } hebben."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_USERS } gebruikers hebben tijdens de proefperiode."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "U kunt geen aangepaste domeinen toevoegen tijdens de proefperiode."
       ]
     },
     "b2b_trials_Action": {
@@ -11678,6 +11972,13 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licentie",
         "${ seats } ${ MEET_APP_NAME } licenties"
+      ],
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (voor ${ quantity } gebruiker)",
+        "${ MEET_APP_NAME } (voor ${ quantity } gebruikers)"
+      ],
+      "${ price } per seat": [
+        "${ price } per licentie"
       ]
     },
     "meet_2025: Feature": {
@@ -12446,6 +12747,69 @@
       ],
       "SUMMER SALE": [
         "ZOMER SALE"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Bezig"
+      ],
+      "Migrated": [
+        "Gemigreerd"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Eigenaar"
+      ],
+      "Security Admin": [
+        "Beveiligingsbeheerder"
+      ],
+      "User Admin": [
+        "Gebruiker Beheerder"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configureer beveiligingsbeleid, gegevensbewaring en VPN-infrastructuur, en beheer auditlogboeken."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Beheer alle gebruikers, groepen, opslag, beveiliging, facturering, auditlogboeken en systeemconfiguraties."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Beheer gebruikers, groepen en opslagruimte voor alle leden, wijs rollen toe en deel licenties uit."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Acties"
+      ],
+      "Created": [
+        "Aangemaakt"
+      ],
+      "Expires": [
+        "Verloopt"
+      ],
+      "Fingerprint": [
+        "Vingerafdruk"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Soort"
+      ]
+    },
+    "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
       ]
     }
   }
