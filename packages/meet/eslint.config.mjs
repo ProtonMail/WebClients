@@ -11,6 +11,8 @@ export default defineConfig([
             'react-hooks/exhaustive-deps': 'warn',
             // TODO: Remove this rule once the compat issue is resolved
             'compat/compat': 'off',
+            // TODO: Migrate same-package imports to relative paths and remove this rule
+            'custom-rules/no-package-self-import': 'off',
         },
     },
 ]);
