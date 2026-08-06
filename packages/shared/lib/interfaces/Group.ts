@@ -41,5 +41,5 @@ export interface Group {
 export type EnhancedGroup = Group & {
     roleState: 'initial' | 'stale' | 'pending' | 'rejected' | 'full';
     GroupOrganizationRoles: RoleAssignment[];
-    hasPendingOrgKeyAccess: boolean;
+    requiresOrgKeyPromotion: boolean;
 };

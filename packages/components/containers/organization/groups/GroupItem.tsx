@@ -44,7 +44,7 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
     const subtitle = roleNames || (showMailFeatures && email ? email : undefined);
 
     const renderRoleAssignmentIcon = () => {
-        if (!group?.hasPendingOrgKeyAccess) {
+        if (!group?.requiresOrgKeyPromotion) {
             return null;
         }
 
