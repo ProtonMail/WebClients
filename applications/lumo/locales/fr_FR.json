@@ -3178,6 +3178,9 @@
       "Ask the model to be more careful and thorough": [
         "Demander au modèle d'être plus attentif et rigoureux"
       ],
+      "Back": [
+        "Précédent"
+      ],
       "Cancel": [
         "Annuler"
       ],
@@ -3198,6 +3201,9 @@
       ],
       "Close": [
         "Fermer"
+      ],
+      "Continue": [
+        "Continuer"
       ],
       "Copy link & caption": [
         "Copier le lien et la légende"
@@ -3252,6 +3258,9 @@
       ],
       "Expand": [
         "Développer"
+      ],
+      "Generate my report": [
+        "Générer mon rapport"
       ],
       "Go to all projects": [
         "Accéder à tous les projets"
@@ -3929,6 +3938,12 @@
       "Folder name": [
         "Nom du dossier"
       ],
+      "Generating": [
+        "En cours de génération"
+      ],
+      "Generating your report": [
+        "Génération en cours de votre rapport"
+      ],
       "High": [
         "Élevée"
       ],
@@ -3965,8 +3980,14 @@
       "Name": [
         "Nom"
       ],
+      "Platform": [
+        "Plateforme"
+      ],
       "Politics": [
         "Politiques"
+      ],
+      "Progress": [
+        "Progression"
       ],
       "Project Instructions (optional)": [
         "Instructions du projet (facultatif)"
@@ -3988,6 +4009,9 @@
       ],
       "Untitled project": [
         "Projet sans titre"
+      ],
+      "Upload": [
+        "Importer"
       ]
     },
     "collider_2025:Notification": {
@@ -4481,9 +4505,6 @@
       "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
         "Explorez les images créées avec ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Export your data": [
-        "Exportez vos données"
-      ],
       "Favorites": [
         "Favoris"
       ],
@@ -4492,9 +4513,6 @@
       ],
       "Get started by creating a new project": [
         "Commencez par créer un nouveau projet"
-      ],
-      "Get your AI Paper Trail": [
-        "Obtenez vos traces d'IA"
       ],
       "Ghost mode": [
         "Mode fantôme"
@@ -4615,9 +4633,6 @@
       ],
       "Your image gallery is empty": [
         "Votre galerie d'images est vide."
-      ],
-      "Your recent files": [
-        "Vos fichiers récents"
       ],
       "Your shareable card": [
         "Votre carte partageable"
@@ -5782,14 +5797,33 @@
       "Invalid postal code": [
         "Le code postal n'est pas valide."
       ],
+      "Invalid URL": [
+        "L'URL n'est pas valide."
+      ],
       "Invalid VAT number": [
         "Numéro de TVA incorrect."
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
       ],
+      "Invitation not found": [
+        "L'invitation est introuvable"
+      ],
+      "Missing signature": [
+        "Il manque la signature."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Le nom doit être composé d'${ MAX_NODE_NAME_LENGTH } caractère au maximum.",
+        "Le nom doit être composé de ${ MAX_NODE_NAME_LENGTH } caractères au maximum."
+      ],
       "Not a valid number": [
         "Le numéro n'est pas valide."
+      ],
+      "Operation aborted": [
+        "Opération annulée"
+      ],
+      "Operation failed, try again later": [
+        "L'opération n'a pas abouti. Réessayez plus tard"
       ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
@@ -5814,6 +5848,9 @@
       ],
       "Payment process not supported": [
         "Le traitement du paiement n'est pas pris en charge."
+      ],
+      "Photo not found": [
+        "La photo est introuvable"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Veuillez vérifier si votre numéro ABN est enregistré pour la TVA transfrontalière."
@@ -5848,14 +5885,23 @@
       "Process aborted": [
         "Le processus a été abandonné."
       ],
+      "Request aborted": [
+        "Requête interrompue"
+      ],
       "Request timed out": [
         "La requête a expiré."
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Le régime de TVA intracommunautaire n'est pas pris en charge pour cet abonnement."
       ],
+      "Signature is missing": [
+        "La signature est manquante"
+      ],
       "Signature verification failed": [
         "La signature n'a pas pu être vérifiée."
+      ],
+      "Something went wrong": [
+        "Une erreur s'est produite."
       ],
       "Something went wrong. Please try again.": [
         "Une erreur s'est produite. Nous vous invitons à réessayer."
@@ -5886,6 +5932,12 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
+      ],
+      "This item is no longer shared": [
+        "Cet élément n’est plus partagé"
+      ],
+      "This item is not shared": [
+        "Cet élément n’est pas partagé"
       ],
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
@@ -6426,9 +6478,6 @@
       "JCB logo": [
         "Logo JCB"
       ],
-      "Keys created": [
-        "Les clés ont été créées."
-      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -6627,9 +6676,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
-      ],
-      "User activated": [
-        "L'utilisateur a été activé."
       ],
       "Users": [
         "Utilisateurs"
@@ -8910,6 +8956,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Passez à ${ upsellPlanTitle }"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "Attributs"
+      ],
+      "content key": [
+        "clé de contenu"
+      ],
+      "hash key": [
+        "clé de hachage"
+      ],
+      "key": [
+        "clé"
+      ],
+      "membership": [
+        "abonnement"
+      ],
+      "name": [
+        "nom"
       ]
     },
     "Provider option": {
