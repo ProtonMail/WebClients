@@ -1,7 +1,14 @@
 import { NodeType } from '@protontech/drive-sdk';
 
 import { UploadStatus } from '../types';
-import { buildItemsById, getBlockedChildren, getFolderDepth, isParentReady } from './dependencyHelpers';
+import {
+    buildItemsById,
+    getAllDescendants,
+    getBlockedDescendants,
+    getDirectChildren,
+    getFolderDepth,
+    isParentReady,
+} from './dependencyHelpers';
 
 describe('dependencyHelpers', () => {
     describe('isParentReady', () => {
@@ -67,9 +74,9 @@ describe('dependencyHelpers', () => {
         });
     });
 
-    describe('getBlockedChildren', () => {
+    describe('getDirectChildren', () => {
         it('should return empty array when no children', () => {
-            const result = getBlockedChildren('folder-1', []);
+            const result = getDirectChildren('folder-1', []);
             expect(result).toEqual([]);
         });
 
@@ -79,7 +86,7 @@ describe('dependencyHelpers', () => {
                 { uploadId: 'child-2', parentUploadId: 'folder-1' },
                 { uploadId: 'other', parentUploadId: 'other-folder' },
             ] as any;
-            const result = getBlockedChildren('folder-1', allItems);
+            const result = getDirectChildren('folder-1', allItems);
             expect(result).toEqual(['child-1', 'child-2']);
         });
 
@@ -88,7 +95,7 @@ describe('dependencyHelpers', () => {
                 { uploadId: 'child-1', parentUploadId: 'folder-1' },
                 { uploadId: 'child-2', parentUploadId: 'folder-1' },
             ] as any;
-            const result = getBlockedChildren('folder-1', allItems);
+            const result = getDirectChildren('folder-1', allItems);
             expect(result).toEqual(['child-1', 'child-2']);
         });
 
@@ -97,8 +104,70 @@ describe('dependencyHelpers', () => {
                 { uploadId: 'child-1', parentUploadId: 'other-folder' },
                 { uploadId: 'child-2', parentUploadId: 'another-folder' },
             ] as any;
-            const result = getBlockedChildren('folder-1', allItems);
+            const result = getDirectChildren('folder-1', allItems);
             expect(result).toEqual([]);
+        });
+    });
+
+    describe('getAllDescendants', () => {
+        it('should return empty array when no children', () => {
+            expect(getAllDescendants(['folder-1'], [])).toEqual([]);
+        });
+
+        it('should find nested children of any depth', () => {
+            const allItems = [
+                { uploadId: 'subfolder', parentUploadId: 'folder-1' },
+                { uploadId: 'file-in-subfolder', parentUploadId: 'subfolder' },
+                { uploadId: 'file-in-folder', parentUploadId: 'folder-1' },
+                { uploadId: 'other', parentUploadId: 'other-folder' },
+            ] as any;
+            const result = getAllDescendants(['folder-1'], allItems);
+            expect(result).toEqual(['subfolder', 'file-in-folder', 'file-in-subfolder']);
+        });
+
+        it('should not return the given uploads themselves', () => {
+            const allItems = [
+                { uploadId: 'folder-1' },
+                { uploadId: 'subfolder', parentUploadId: 'folder-1' },
+                { uploadId: 'file', parentUploadId: 'subfolder' },
+            ] as any;
+            const result = getAllDescendants(['folder-1', 'subfolder'], allItems);
+            expect(result).toEqual(['file']);
+        });
+    });
+
+    describe('getBlockedDescendants', () => {
+        it('should keep descendants that can still be blocked', () => {
+            const allItems = [
+                { uploadId: 'folder-1', status: UploadStatus.InProgress },
+                { uploadId: 'pending-file', parentUploadId: 'folder-1', status: UploadStatus.Pending },
+                { uploadId: 'waiting-file', parentUploadId: 'folder-1', status: UploadStatus.Waiting },
+                { uploadId: 'conflicting-file', parentUploadId: 'folder-1', status: UploadStatus.ConflictFound },
+            ] as any;
+            const result = getBlockedDescendants(['folder-1'], allItems);
+            expect(result).toEqual(['pending-file', 'waiting-file', 'conflicting-file']);
+        });
+
+        it('should leave descendants in a terminal status alone', () => {
+            const allItems = [
+                { uploadId: 'folder-1', status: UploadStatus.InProgress },
+                { uploadId: 'finished-file', parentUploadId: 'folder-1', status: UploadStatus.Finished },
+                { uploadId: 'failed-file', parentUploadId: 'folder-1', status: UploadStatus.Failed },
+                { uploadId: 'skipped-file', parentUploadId: 'folder-1', status: UploadStatus.Skipped },
+                { uploadId: 'pending-file', parentUploadId: 'folder-1', status: UploadStatus.Pending },
+            ] as any;
+            const result = getBlockedDescendants(['folder-1'], allItems);
+            expect(result).toEqual(['pending-file']);
+        });
+
+        it('should still reach pending items under a finished sub-folder', () => {
+            const allItems = [
+                { uploadId: 'folder-1', status: UploadStatus.InProgress },
+                { uploadId: 'finished-subfolder', parentUploadId: 'folder-1', status: UploadStatus.Finished },
+                { uploadId: 'pending-file', parentUploadId: 'finished-subfolder', status: UploadStatus.Pending },
+            ] as any;
+            const result = getBlockedDescendants(['folder-1'], allItems);
+            expect(result).toEqual(['pending-file']);
         });
     });
 });
