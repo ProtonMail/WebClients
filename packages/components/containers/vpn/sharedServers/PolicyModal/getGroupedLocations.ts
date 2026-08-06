@@ -36,8 +36,9 @@ export function getGroupedLocations(
                 cities: [],
                 localizedCities: {},
             };
+            const countryTranslations = citiesTranslations[loc.Country] ?? {};
             groups_[loc.Country].cities.push(loc.City);
-            groups_[loc.Country].localizedCities[loc.City] = citiesTranslations[loc.Country][loc.City] || loc.City;
+            groups_[loc.Country].localizedCities[loc.City] = countryTranslations[loc.City] || loc.City;
             return groups_;
         },
         {} as Record</** country code */ string, GroupedLocation>
