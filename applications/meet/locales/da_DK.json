@@ -1914,6 +1914,9 @@
       "Not a valid number": [
         "Ikke et gyldigt nummer"
       ],
+      "Organization key is not decrypted": [
+        "Organisationsnøgle er ikke dekrypteret"
+      ],
       "Passwords do not match": [
         "Adgangskoder stemmer ikke overens"
       ],
@@ -2379,9 +2382,6 @@
       "Failed to update meeting schedule": [
         "Kunne ikke opdatere mødeplanen"
       ],
-      "Failed to update meeting waiting room status": [
-        "Kunne ikke opdatere status for møde-venteværelset"
-      ],
       "Free meeting": [
         "Gratis møde"
       ],
@@ -2426,9 +2426,6 @@
       ],
       "Joined ${ roomNameLabel }": [
         "Tilmeldte sig ${ roomNameLabel }"
-      ],
-      "Joined at ${ receivedTime }": [
-        "Tilsluttede ${ receivedTime }"
       ],
       "Learn more": [
         "Få mere at vide"
@@ -3293,6 +3290,20 @@
       ],
       "Video quality was poor": [
         "Videokvaliteten var dårlig"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Organisationsnøglen findes ikke."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
+      ],
+      "The organization key must be activated first.": [
+        "Organisationsnøglen skal først aktiveres."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Du skal have adgang til organisationsnøglen for at udføre denne handling."
       ]
     },
     "Placeholder": {

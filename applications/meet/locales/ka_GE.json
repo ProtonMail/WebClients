@@ -1887,6 +1887,9 @@
       "Not a valid number": [
         "არასწორი ნომერი"
       ],
+      "Organization key is not decrypted": [
+        "ორგანიზაციის გასაღები გაშიფრული არაა"
+      ],
       "Passwords do not match": [
         "პაროლები არ ემთხვევა"
       ],
@@ -3202,6 +3205,20 @@
       ],
       "Video quality was poor": [
         "ვიდეოს ხარისხი იყო ცუდი"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "ორგანიზაციის გასაღები არ არსებობს."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
+      ],
+      "The organization key must be activated first.": [
+        "ჯერ საჭიროა ორგანიზაციის გასაღების აქტივაცია."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "ოპერაციის შესასრულებლად ორგანიზაციის გასაღებთან წვდომა გჭირდებათ."
       ]
     },
     "Placeholder": {

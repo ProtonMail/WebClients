@@ -1914,6 +1914,9 @@
       "Not a valid number": [
         "Numara geçerli değil"
       ],
+      "Organization key is not decrypted": [
+        "Kuruluş anahtarının şifresi çözülmedi"
+      ],
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
@@ -2379,9 +2382,6 @@
       "Failed to update meeting schedule": [
         "Görüşme zamanlaması güncellenemedi"
       ],
-      "Failed to update meeting waiting room status": [
-        "Görüşme bekleme odasının durumu güncellenemedi"
-      ],
       "Free meeting": [
         "Serbest görüşme"
       ],
@@ -2426,9 +2426,6 @@
       ],
       "Joined ${ roomNameLabel }": [
         "${ roomNameLabel } odasına katılındı"
-      ],
-      "Joined at ${ receivedTime }": [
-        "${ receivedTime } zamanında katılındı"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -3293,6 +3290,20 @@
       ],
       "Video quality was poor": [
         "Video kalitesi düşüktü"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Kuruluş anahtarı bulunamadı."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "İzin verilmedi, yönetici yetkileri kısıtlandı."
+      ],
+      "The organization key must be activated first.": [
+        "Önce kuruluş anahtarı kullanıma alınmalıdır."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Bu işlemi gerçekleştirmek için kuruluş anahtarına erişebilmeniz gerekir."
       ]
     },
     "Placeholder": {

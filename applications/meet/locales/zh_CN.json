@@ -1911,6 +1911,9 @@
       "Not a valid number": [
         "无效号码"
       ],
+      "Organization key is not decrypted": [
+        "机构密钥尚未解密"
+      ],
       "Passwords do not match": [
         "密码不匹配"
       ],
@@ -2367,9 +2370,6 @@
       "Failed to update meeting schedule": [
         "更新会议计划失败"
       ],
-      "Failed to update meeting waiting room status": [
-        "更新会议等候室状态失败"
-      ],
       "Free meeting": [
         "免费会议"
       ],
@@ -2414,9 +2414,6 @@
       ],
       "Joined ${ roomNameLabel }": [
         "已加入 ${ roomNameLabel }"
-      ],
-      "Joined at ${ receivedTime }": [
-        "加入时间 ${ receivedTime }"
       ],
       "Learn more": [
         "了解详情"
@@ -3277,6 +3274,20 @@
       ],
       "Video quality was poor": [
         "视频质量较差"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "组织密钥不存在."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "权限被拒绝, 管理员权限受到限制。"
+      ],
+      "The organization key must be activated first.": [
+        "必须先激活机构密钥。"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "您需要访问组织密钥才能执行此操作。"
       ]
     },
     "Placeholder": {
