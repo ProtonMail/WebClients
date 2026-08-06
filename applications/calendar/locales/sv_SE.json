@@ -1489,125 +1489,6 @@
         "Årsvis"
       ]
     },
-    "BOSS": {
-      "Activated": [
-        "Aktiverat"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
-      ],
-      "All": [
-        "Alla"
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Configure migration": [
-        "Konfigurera migrering"
-      ],
-      "Contacts": [
-        "Kontakter"
-      ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Status för datamigrering från Google Workspace till ${ BRAND_NAME }"
-      ],
-      "Emails": [
-        "E-post"
-      ],
-      "Errors": [
-        "Fel"
-      ],
-      "Estimated size": [
-        "Beräknad storlek"
-      ],
-      "Find out what can be migrated.": [
-        "Ta reda på vad som kan migreras."
-      ],
-      "Has errors": [
-        "Har fel"
-      ],
-      "In progress": [
-        "Pågår"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta."
-      ],
-      "Migrate": [
-        "Migrera"
-      ],
-      "Migrated": [
-        "Migrerad"
-      ],
-      "Migration status": [
-        "Migreringsstatus"
-      ],
-      "Missing organization private key": [
-        "Saknar organisationens privata nyckel"
-      ],
-      "Missing organization public key": [
-        "Saknar organisationens offentliga nyckel"
-      ],
-      "No users to display": [
-        "Inga användare att visa"
-      ],
-      "Not activated": [
-        "Inte aktiverat"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisation har inte tillräckligt med licenser tillgängligt"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
-      ],
-      "Pending": [
-        "Väntar"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
-      ],
-      "Select users to migrate": [
-        "Välj användare att migrera"
-      ],
-      "Size": [
-        "Storlek"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Denna användare kan inte migreras på grund av plattformsinkompatibilitet."
-      ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "För att migrera denna användare, aktivera deras konto i din Google Workspace Admin Console."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "För att migrera denna användare måste de acceptera sin inbjudan att gå med i ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "För att migrera denna användare, återställ dem från arkivet i din Google Workspace Admin Console."
-      ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "För att migrera denna användare, häv avstängningen för dem i din Google Workspace Admin Console."
-      ],
-      "User": [
-        "Användare"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Användare som har använt sitt ${ BRAND_NAME }-konto"
-      ],
-      "What are you migrating?": [
-        "Vad migrerar du?"
-      ],
-      "You": [
-        "Du"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Applikation för stationär dator ${ MAIL_APP_NAME }"
@@ -3767,8 +3648,14 @@
       "Cannot create a booking with a disabled address": [
         "Kan inte skapa en bokning med en inaktiverad adress"
       ],
+      "Cannot download a folder": [
+        "Kan inte ladda ner en mapp"
+      ],
       "Cannot export this contact": [
         "Kan inte exportera denna kontakt"
+      ],
+      "Cannot share root folder": [
+        "Kan inte dela rotmapp"
       ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
@@ -3794,11 +3681,20 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Innehållssökning kan inte aktiveras. Starta om applikationen eller rensa data."
       ],
+      "Could not find an available name": [
+        "Kunde inte hitta ett tillgängligt namn"
+      ],
       "Could not open created vault": [
         "Kunde inte öppna skapat valv"
       ],
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
+      ],
+      "Could not unlock the parent folder": [
+        "Kunde inte låsa upp den överordnade mappen"
+      ],
+      "Could not unlock this item": [
+        "Kunde inte låsa upp detta objekt"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Dekrypteringsfel: Dekryptering av innehållet i den här händelsen misslyckades."
@@ -3810,6 +3706,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Avmarkera minst ${ calendarsToFixCount } kalender eller",
         "Avmarkera minst ${ calendarsToFixCount } kalendrar eller"
+      ],
+      "Device not found": [
+        "Enhet hittades inte"
       ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
@@ -3883,6 +3782,12 @@
       "Failed to update settings": [
         "Misslyckades att uppdatera inställningar"
       ],
+      "Failed to verify invitation": [
+        "Misslyckades med att verifiera inbjudan"
+      ],
+      "File has no revision": [
+        "Fil har ingen version"
+      ],
       "First name is too long": [
         "Förnamn är för långt"
       ],
@@ -3931,6 +3836,9 @@
       "Invalid public key file": [
         "Ogiltig offentlig nyckelfil"
       ],
+      "Invalid URL": [
+        "Ogiltig URL"
+      ],
       "Invalid VAT number": [
         "Ogiltigt momsregistreringsnummer"
       ],
@@ -3940,6 +3848,9 @@
       "Invitation failed to be sent": [
         "Inbjudan kunde inte skickas"
       ],
+      "Invitation not found": [
+        "Inbjudan hittades inte"
+      ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
         "Det är endast möjligt att skapa händelser mellan ${ minDateString } - ${ maxDateString }"
       ],
@@ -3948,6 +3859,9 @@
       ],
       "Item content cannot exceed 40KB": [
         "Objektinnehåll får inte överstiga 40 kB"
+      ],
+      "Item not found": [
+        "Objekt hittades inte"
       ],
       "Label name cannot be empty.": [
         "Etikettnamn kan inte vara tomt."
@@ -3970,6 +3884,9 @@
       ],
       "Name is required": [
         "Namn är obligatoriskt"
+      ],
+      "Name must not be empty": [
+        "Namn får inte vara tomt"
       ],
       "Name required": [
         "Namn krävs"
@@ -4041,6 +3958,12 @@
       ],
       "Payment process not supported": [
         "Betalningsprocessen stöds inte"
+      ],
+      "Photo is already in the target album": [
+        "Foto är redan i målalbum"
+      ],
+      "Photo not found": [
+        "Foto hittades inte"
       ],
       "Please activate your search again": [
         "Aktivera din sökning igen"
@@ -4128,17 +4051,26 @@
       "Self invitation not allowed": [
         "Självinbjudan är inte tillåten"
       ],
+      "Signature is missing": [
+        "Signatur saknas"
+      ],
       "Signature not verified": [
         "Signatur inte verifierad"
       ],
       "Signature verification failed": [
         "Signaturverifiering misslyckades"
       ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturverifiering för ${ signatureType } misslyckades"
+      ],
       "Some contacts could not be deleted": [
         "Några kontakter kunde inte tas bort"
       ],
       "Some groups could not be deleted": [
         "Några grupper kunde inte tas bort"
+      ],
+      "Some items could not be loaded": [
+        "Några objekt kunde inte laddas"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Vissa av dina mappnamn är inte tillgängliga. Anpassa importen för att redigera dessa namn."
@@ -4154,6 +4086,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
+      ],
+      "Something went wrong": [
+        "Något gick fel"
       ],
       "Something went wrong while fetching available domains": [
         "Något gick fel vid hämtning av tillgängliga domäner"
@@ -4221,6 +4156,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Detta mappnamn är inte tillgängligt. Välj ett annat namn."
       ],
+      "This item is not shared": [
+        "Detta objekt är inte delat"
+      ],
       "This label name is not available. Please choose a different name.": [
         "Detta etikettnamn är inte tillgängligt. Välj ett annat namn."
       ],
@@ -4260,6 +4198,9 @@
       "VAT number must start with ${ prefixes }": [
         "Momsregistreringsnumret måste börja med ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "Verifieringsnycklar är inte tillgängliga"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunde inte skicka en verifieringskod med den här metoden."
       ],
@@ -4278,6 +4219,12 @@
       ],
       "You cannot enter the organizer's email": [
         "Du kan inte ange organisatörens e-post"
+      ],
+      "You do not have access to this item": [
+        "Du har inte åtkomst till detta objekt"
+      ],
+      "You do not have access to this shared item": [
+        "Du har inte åtkomst till detta delade objekt"
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nått det maximala antalet kalendrar."
@@ -5244,6 +5191,14 @@
         "Välj ${ boldExport } för att exportera kalendern som en ICS-fil."
       ]
     },
+    "Import status": {
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } av ${ totalContacts } kontakter kommer inte att importeras. Klicka för detaljer"
@@ -5835,9 +5790,6 @@
       "Failed to update meeting schedule": [
         "Misslyckades att uppdatera mötesschema"
       ],
-      "Failed to update meeting waiting room status": [
-        "Misslyckades att uppdatera status för mötets väntrum"
-      ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Snabbaste VPN-hastigheter på upp till 10 Gbps"
       ],
@@ -5976,9 +5928,6 @@
       ],
       "Key fingerprint": [
         "Nyckelfingeravtryck"
-      ],
-      "Keys created": [
-        "Nycklar skapade"
       ],
       "Label all imported messages as": [
         "Märk alla importerade meddelanden som"
@@ -6513,9 +6462,6 @@
       ],
       "Uppercase and lowercase letters": [
         "Stora och små bokstäver"
-      ],
-      "User activated": [
-        "Användare aktiverad"
       ],
       "username": [
         "användarnamn"
@@ -10342,6 +10288,20 @@
         "Förlopp: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "attribut"
+      ],
+      "key": [
+        "nyckel"
+      ],
+      "membership": [
+        "medlemskap"
+      ],
+      "name": [
+        "namn"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adress"
@@ -11963,6 +11923,9 @@
       ],
       "Name": [
         "Namn"
+      ],
+      "Size": [
+        "Storlek"
       ],
       "Status": [
         "Status"
