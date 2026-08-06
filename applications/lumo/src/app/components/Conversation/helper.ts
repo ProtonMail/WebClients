@@ -56,6 +56,7 @@ import {
     refreshAttachmentFromSearchIndex,
     resolveReferencedFilesForSend,
 } from '../../util/resolveProjectFiles';
+import { buildArtifactRegistry } from './artifact/artifactRegistry';
 import { runGenerationWithCompaction } from './compactionFlow';
 import type { ConversationContext } from './conversationContext';
 
@@ -127,7 +128,31 @@ export type UiContext = {
     navigateCallback?: (conversationId: ConversationId) => void; // todo remove optional
     isGhostMode?: boolean; // todo remove optional
     imageAspectRatio?: ImageAspectRatio;
+    // True only on the turn where the user explicitly entered Create Artifact mode in the
+    // composer. See `resolveArtifactToolMode` for how this combines with existing-artifact
+    // state to decide whether/how the `create_artifact` tool is made available.
+    canvasModeActive?: boolean;
 };
+
+// Whether/how the `create_artifact` client tool is made available on this turn:
+// - 'off': not registered at all — no artifact exists yet and the user hasn't opted in.
+// - 'create': the user just entered Create Artifact mode — may create a new artifact or
+//   revise an existing one.
+// - 'revise': mode isn't active, but the conversation already has an artifact — may only
+//   revise it, not spawn an unrelated new one. Covers follow-ups (including the artifact
+//   panel's selection-based inline-edit flow) without requiring the user to re-enter the mode.
+export type ArtifactToolMode = 'off' | 'create' | 'revise';
+
+export function resolveArtifactToolMode(
+    canvasModeActive: boolean | undefined,
+    messageChain: Message[]
+): ArtifactToolMode {
+    if (canvasModeActive) {
+        return 'create';
+    }
+    const hasArtifact = Object.keys(buildArtifactRegistry(messageChain)).length > 0;
+    return hasArtifact ? 'revise' : 'off';
+}
 
 export type SettingsContext = {
     personalization?: PersonalizationSettings;
@@ -462,6 +487,8 @@ export function sendMessage({
                     ? formatMemories(state.lumoUserSettings?.memories)
                     : '';
 
+            const artifactToolMode = resolveArtifactToolMode(ui.canvasModeActive, updatedLinearChain);
+
             const buildTurns = (chain: Message[]) =>
                 prepareTurns(
                     chain,
@@ -470,7 +497,8 @@ export function sendMessage({
                     updatedC,
                     memories,
                     agentInstructions,
-                    shouldIncludeVisualizationInstructions(s, state.lumoUserSettings)
+                    shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
+                    artifactToolMode
                 );
 
             await dispatch(
@@ -494,6 +522,7 @@ export function sendMessage({
                         enableSuggestedQuestions: false,
                         generateTitle,
                         imageAspectRatio: ui.imageAspectRatio,
+                        artifactToolMode,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -636,6 +665,8 @@ export function regenerateMessage({
 
             const agentInstructions = dispatch(resolveAgentInstructions(c.conversationId));
 
+            const artifactToolMode = resolveArtifactToolMode(ui.canvasModeActive, c.messageChain);
+
             const buildTurns = (chain: Message[]) => {
                 const builtTurns = prepareTurns(
                     chain,
@@ -644,7 +675,8 @@ export function regenerateMessage({
                     c,
                     memories,
                     agentInstructions,
-                    shouldIncludeVisualizationInstructions(s, state.lumoUserSettings)
+                    shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
+                    artifactToolMode
                 );
 
                 // Add retry instructions if provided
@@ -684,6 +716,7 @@ export function regenerateMessage({
                         enableReasoning: ui.enableReasoning,
                         modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
+                        artifactToolMode,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -839,6 +872,8 @@ export function retrySendMessage({
 
         const agentInstructions = c.conversationId ? dispatch(resolveAgentInstructions(c.conversationId)) : undefined;
 
+        const artifactToolMode = resolveArtifactToolMode(ui.canvasModeActive, updatedLinearChain);
+
         const buildTurns = (chain: Message[]) =>
             prepareTurns(
                 chain,
@@ -847,7 +882,8 @@ export function retrySendMessage({
                 c2,
                 memories,
                 agentInstructions,
-                shouldIncludeVisualizationInstructions(s, state.lumoUserSettings)
+                shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
+                artifactToolMode
             );
 
         // Call the LLM
@@ -872,6 +908,7 @@ export function retrySendMessage({
                         modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
                         generateTitle: requestTitle,
+                        artifactToolMode,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,

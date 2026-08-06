@@ -17,9 +17,16 @@ interface CompleteChipProps {
 }
 
 export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
-    const { openArtifact, selectedId, selectedVersionIndex, registry } = useArtifactContext();
+    const { openArtifact, openPendingArtifact, selectedId, selectedVersionIndex, registry, pendingArtifact } =
+        useArtifactContext();
     const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, messageId);
-    const isActive = selectedId === artifact.id && selectedVersionIndex === versionIndex;
+    // The message that produced this chip hasn't finished generating, so `registry` doesn't
+    // have it yet (see artifactRegistry.ts) — fall back to the not-yet-finalized content the
+    // panel already has, instead of a stale previous version (or nothing) via `openArtifact`.
+    const isPending = versionIndex === null && pendingArtifact?.id === artifact.id;
+    const isActive = isPending
+        ? selectedId === null || selectedId === artifact.id
+        : selectedId === artifact.id && selectedVersionIndex === versionIndex;
 
     return (
         <button
@@ -27,6 +34,10 @@ export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
             onClick={() => {
                 if (versionIndex !== null) {
                     openArtifact(artifact.id, versionIndex);
+                    return;
+                }
+                if (isPending) {
+                    openPendingArtifact();
                     return;
                 }
                 openArtifact(artifact.id);
@@ -73,10 +84,10 @@ export const ArtifactChipLoading = ({ streaming }: LoadingChipProps) => {
             className={clsx([
                 'artifact-chip',
                 'flex flex-row items-center gap-2',
-                'border border-weak rounded-lg px-3 py-4 my-2',
+                'rounded-lg px-3 py-4 my-2',
                 'text-sm text-norm',
                 'w-full max-w-xs',
-                'opacity-60',
+                'opacity-60 border border-danger',
             ])}
             aria-busy="true"
         >
@@ -97,7 +108,6 @@ export const ArtifactChipLoading = ({ streaming }: LoadingChipProps) => {
                     );
                 })()}
             </span>
-            <span>LOADING</span>
             {streaming.title ? (
                 <span className="flex-1 text-ellipsis overflow-hidden whitespace-nowrap">{streaming.title}</span>
             ) : (
