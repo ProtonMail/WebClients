@@ -4,6 +4,7 @@ import deprecateResponsiveUtilityClasses from './deprecate-responsive-utility-cl
 import deprecateSizingClasses from './deprecate-sizing-classes.js';
 import deprecateSpacingUtilityClasses from './deprecate-spacing-utility-classes.js';
 import noNestedPackages from './no-nested-packages.js';
+import noPackageSelfImport from './no-package-self-import.js';
 import noPlaywrightStringTag from './no-playwright-string-tag.js';
 import noTemplateInTranslatorContext from './no-template-in-translator-context.js';
 import useSubscriptionModalLoading from './use-subscription-modal-loading.js';
@@ -22,6 +23,7 @@ export default {
         'deprecate-sizing-classes': deprecateSizingClasses,
         'deprecate-spacing-utility-classes': deprecateSpacingUtilityClasses,
         'no-nested-packages': noNestedPackages,
+        'no-package-self-import': noPackageSelfImport,
         'no-playwright-string-tag': noPlaywrightStringTag,
         'no-template-in-translator-context': noTemplateInTranslatorContext,
         'use-subscription-modal-loading': useSubscriptionModalLoading,

@@ -23,6 +23,8 @@ export default defineConfig([
                 },
             ],
             'max-classes-per-file': 'off',
+            // TODO: Migrate same-package imports to relative paths and remove this rule
+            'custom-rules/no-package-self-import': 'off',
         },
     },
     {
