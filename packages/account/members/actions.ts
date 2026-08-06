@@ -68,7 +68,7 @@ import type { KtState } from '../kt';
 import { getKTActivation, getKTUserContext } from '../kt/actions';
 import { type MemberState, memberThunk } from '../member';
 import { getPendingUnprivatizationRequest, memberAcceptUnprivatization } from '../member/actions';
-import { organizationThunk } from '../organization';
+import { type OrganizationState, organizationThunk } from '../organization';
 import type { OrganizationKeyState } from '../organizationKey';
 import { organizationKeyThunk } from '../organizationKey';
 import {
@@ -168,6 +168,10 @@ export const deleteMembers = ({
         }
         for (const member of success) {
             dispatch(upsertMember({ member, type: 'delete' }));
+        }
+        if (success.length > 0) {
+            // Ensure org used member get updated
+            dispatch(organizationThunk({ cache: CacheType.None })).catch(noop);
         }
         return { success, failure };
     };
@@ -848,13 +852,15 @@ export const deleteMember = ({
 }: {
     member: Member;
     api: Api;
-}): ThunkAction<Promise<void>, MembersState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<Promise<void>, MembersState & OrganizationState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
         if (member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
             await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
         }
         await api(deleteMemberConfig(member.ID));
         dispatch(upsertMember({ member, type: 'delete' }));
+        // Ensure org used member get updated
+        dispatch(organizationThunk({ cache: CacheType.None })).catch(noop);
     };
 };
 
