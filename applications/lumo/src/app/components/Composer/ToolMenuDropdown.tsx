@@ -23,6 +23,7 @@ import './ToolMenuDropdown.scss';
 
 interface ToolMenuDropdownProps extends Pick<MenuDropdownProps, 'isOpen' | 'anchorRef' | 'onClose'> {
     onClickCreateImageOption: () => void;
+    onClickCreateArtifactOption: () => void;
     canUseAgents?: boolean;
 }
 
@@ -31,6 +32,7 @@ export const ToolMenuDropdown = ({
     anchorRef,
     onClose,
     onClickCreateImageOption,
+    onClickCreateArtifactOption,
     canUseAgents = false,
 }: ToolMenuDropdownProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
@@ -89,6 +91,15 @@ export const ToolMenuDropdown = ({
             onClose: onClose,
             canShow: isImageToolsFlagEnabled,
             isDisabled: imageLimitExhausted,
+        },
+        {
+            icon: <LumoIcon name="FileText" size={16} />,
+            getLabel: () => c('collider_2025: Action').t`Create artifact`,
+            getDescription: undefined,
+            onClick: onClickCreateArtifactOption,
+            onClose: onClose,
+            canShow: true,
+            isDisabled: false,
         },
         {
             icon: <LumoIcon name="Bot" size={16} />,

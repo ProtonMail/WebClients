@@ -65,7 +65,8 @@ interface Props {
 export type HandleSendMessage = (
     newMessage: string,
     isWebSearchButtonToggled: boolean,
-    imageOptions?: ImageGenerationOptions
+    imageOptions?: ImageGenerationOptions,
+    artifactModeActive?: boolean
 ) => Promise<void>;
 export type HandleRegenerateMessage = (
     message: Message,
@@ -193,7 +194,7 @@ export const useLumoActions = ({
         spaceDek: AesGcmCryptoKey | undefined,
         signal: AbortSignal
     ) => {
-        const { newMessageContent, isWebSearchButtonToggled, imageOptions } = actionParams;
+        const { newMessageContent, isWebSearchButtonToggled, imageOptions, artifactModeActive } = actionParams;
         if (!newMessageContent?.trim() && provisionalAttachments.length === 0) return;
 
         const enableExternalTools = ffExternalTools && isWebSearchButtonToggled;
@@ -270,6 +271,7 @@ export const useLumoActions = ({
                     enableSmoothing,
                     isGhostMode,
                     imageAspectRatio: imageOptions?.aspectRatio,
+                    canvasModeActive: artifactModeActive ?? false,
                 },
                 settingsContext: {
                     personalization,
@@ -634,7 +636,8 @@ export const useLumoActions = ({
     const handleSendMessage: HandleSendMessage = async (
         messageContent: string,
         isWebSearchButtonToggled: boolean,
-        imageOptions?: ImageGenerationOptions
+        imageOptions?: ImageGenerationOptions,
+        artifactModeActive?: boolean
     ) => {
         sendMessageSendEvent();
 
@@ -643,6 +646,7 @@ export const useLumoActions = ({
             newMessageContent: messageContent,
             isWebSearchButtonToggled,
             imageOptions,
+            artifactModeActive,
         });
     };
 
