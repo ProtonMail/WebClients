@@ -4,6 +4,7 @@ import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import { c } from 'ttag';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
+import { useIsWaitingRoomJoinEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     WaitingRoomAdmissionStatus,
@@ -14,7 +15,6 @@ import {
     startWaitingRoomAdmissionTimer,
 } from '@proton/meet/store/slices/waitingRoomSlice';
 import { SECOND } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { useMeetCoreClient } from '../../../contexts/MeetCoreClientContext';
@@ -33,7 +33,7 @@ type AdmissionRequest = {
 
 /** Guest-only pre-join admission state machine. Hosts must not call startAdmission. */
 export const usePreJoinWaitingRoom = () => {
-    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+    const isWaitingRoomJoinEnabled = useIsWaitingRoomJoinEnabled();
 
     const dispatch = useMeetDispatch();
     const meetCoreClient = useMeetCoreClient();
@@ -45,7 +45,7 @@ export const usePreJoinWaitingRoom = () => {
     const admissionRequestRef = useRef<AdmissionRequest | null>(null);
 
     useEffect(() => {
-        if (!isMeetWaitingRoomEnabled) {
+        if (!isWaitingRoomJoinEnabled) {
             return;
         }
 
@@ -69,7 +69,7 @@ export const usePreJoinWaitingRoom = () => {
             void meetCoreClient.cancelWaitingRoomJoinRequest(meetLinkName).catch(noop);
             void meetCoreClient.clearJoinDecisionHandler().catch(noop);
         };
-    }, [dispatch, isMeetWaitingRoomEnabled, meetCoreClient]);
+    }, [dispatch, isWaitingRoomJoinEnabled, meetCoreClient]);
 
     const awaitWelcome = useCallback(
         async (meetLinkName: string) => {
@@ -239,7 +239,7 @@ export const usePreJoinWaitingRoom = () => {
         dispatch(cancelAdmission());
     }, [dispatch]);
 
-    return isMeetWaitingRoomEnabled
+    return isWaitingRoomJoinEnabled
         ? {
               startAdmission,
               leave,
