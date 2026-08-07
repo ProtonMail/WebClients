@@ -6,7 +6,10 @@ import { renderHook } from '@testing-library/react';
 import { VideoQuality } from 'livekit-client';
 import type { Mock } from 'vitest';
 
-import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices/meetingInfo';
+import {
+    currentMeetingReducer,
+    initialState as initialCurrentMeetingState,
+} from '@proton/meet/store/slices/currentMeeting';
 import {
     initialState as initialScreenShareStatusState,
     screenShareStatusReducer,
@@ -22,11 +25,11 @@ vi.mock('@livekit/components-react', () => ({
 const createMockStore = ({ isScreenShare = false }: { isScreenShare?: boolean }) => {
     return configureStore({
         reducer: {
-            ...meetingInfoReducer,
+            ...currentMeetingReducer,
             ...screenShareStatusReducer,
         },
         preloadedState: {
-            meetingInfo: { ...initialMeetingInfoState },
+            currentMeeting: { ...initialCurrentMeetingState },
             screenShareStatus: {
                 ...initialScreenShareStatusState,
                 participantScreenSharingIdentity: isScreenShare ? 'test-participant' : null,

@@ -132,8 +132,8 @@ const slice = createSlice({
             state.participantListTab = action.payload;
         },
         openWaitingRoomSideBar: (state) => {
-            Object.keys(state.popupState).forEach((key) => {
-                state.popupState[key as PopUpControls] = false;
+            Object.keys(state.sideBarState).forEach((key) => {
+                state.sideBarState[key as MeetingSideBars] = false;
             });
             state.sideBarState[MeetingSideBars.Participants] = true;
             state.participantListTab = ParticipantListTabs.WaitingRoom;
