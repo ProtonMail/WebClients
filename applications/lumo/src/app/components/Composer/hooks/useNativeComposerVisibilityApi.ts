@@ -3,7 +3,7 @@ import { useCallback, useEffect } from 'react';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useSidebar } from '../../../providers/SidebarProvider';
 import { setNativeComposerVisibility, setNativeIsSmallScreen } from '../../../remote/nativeComposerBridgeHelpers';
-import { canShowWebComposer } from '../../../util/userAgent';
+import { canShowWebComposer, canUseNativeSidebarLayout } from '../../../util/userAgent';
 
 interface NativeComposerVisibilityConfig {
     showDrawingModal?: boolean; // true when drawing
@@ -31,7 +31,9 @@ export const useNativeComposerVisibilityApi = ({
     }, [isSmallScreen]);
 
     useEffect(() => {
-        const shouldShowNativeComposer = (!isSidebarVisible && isSmallScreen) || (isSidebarVisible && !isSmallScreen);
+        const shouldShowNativeComposer = isSmallScreen
+            ? !isSidebarVisible // phone: the sidebar drawer covers the screen
+            : canUseNativeSidebarLayout() || isSidebarVisible; // large: always, or legacy behavior
 
         if (isBlocking) {
             setNativeComposerVisibility(false);
