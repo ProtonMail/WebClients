@@ -38,7 +38,11 @@ const validateAddUser = ({
         AssignedSpace = 0,
     } = organization || {};
 
-    if (MaxMembers === 1) {
+    // If UsedMembers is 0, it means current active user is an external account,
+    // currently this scenario only happens to external MSP managers.
+    const isExternalAdmin = !!organization && UsedMembers === 0;
+
+    if (MaxMembers === 1 && !isExternalAdmin) {
         return c('Error').t`Please upgrade to a business plan with more than 1 user to manage multiple users.`;
     }
     if (!HasKeys) {
