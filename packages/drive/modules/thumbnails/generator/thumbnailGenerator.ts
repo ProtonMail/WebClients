@@ -1,49 +1,20 @@
 import { ThumbnailType } from '@protontech/drive-sdk';
-import type { Context } from '@sentry/types';
 
-import metrics from '@proton/metrics';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
-import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { isIosDevice, isSafariDevice } from './constants';
 import { ThumbnailProcessor } from './handlerRegistry';
+import { reportThumbnailError, reportThumbnailSuccess } from './metrics';
 import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
-import { ThumbnailError, ThumbnailSizeError } from './thumbnailError';
 import type { ThumbnailResult } from './utils';
 
 let processorInstance: ThumbnailProcessor | null = null;
-
-const ERROR_TO_LEVEL: Record<string, Context['level']> = {
-    ThumbnailTimeoutError: 'debug',
-    NoHandlerError: 'info',
-    CorruptedImageError: 'info',
-    ThumbnailSizeError: 'info',
-    UnsupportedFormatError: 'info',
-    MissingDataError: 'info',
-};
 
 function getProcessor(): ThumbnailProcessor {
     if (!processorInstance) {
         processorInstance = new ThumbnailProcessor();
     }
     return processorInstance;
-}
-
-function reportThumbnailError(thumbnailError: ThumbnailError): void {
-    const context: Context = {
-        tags: {
-            component: 'drive-thumbnail-generator',
-            errorType: thumbnailError.name,
-        },
-        extra: thumbnailError.context,
-        level: ERROR_TO_LEVEL[thumbnailError.name] || 'error',
-    };
-
-    traceError(thumbnailError, context);
-
-    if (thumbnailError instanceof ThumbnailSizeError) {
-        metrics.drive_warnings_total.increment({ warning: 'cannot_create_small_enough_thumbnail' });
-    }
 }
 
 async function processThumbnail(
@@ -70,6 +41,8 @@ async function processThumbnail(
             debug,
             detectedMimeType
         );
+
+        reportThumbnailSuccess(result.generationInfo.handler);
 
         if (debug) {
             const totalTime = performance.now() - startTime;
@@ -98,11 +71,7 @@ async function processThumbnail(
             });
         }
 
-        if (error instanceof ThumbnailError) {
-            reportThumbnailError(error);
-        } else {
-            traceError(error, { tags: { component: 'drive-thumbnail-generator' } });
-        }
+        reportThumbnailError(error);
         return { ok: false, error };
     }
 }
