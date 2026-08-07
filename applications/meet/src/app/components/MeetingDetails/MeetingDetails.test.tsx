@@ -4,7 +4,11 @@ import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
-import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices/meetingInfo';
+import {
+    currentMeetingReducer,
+    initialState as initialCurrentMeetingState,
+} from '@proton/meet/store/slices/currentMeeting';
+import { meetingInfoModelReducer } from '@proton/meet/store/slices/meetingInfoModel';
 import {
     initialState as initialSortedParticipantsState,
     sortedParticipantsReducer,
@@ -40,7 +44,8 @@ const createMockStore = ({ sideBarOpen = false }) => {
         // @ts-expect-error - mock data
         reducer: {
             ...uiStateReducer,
-            ...meetingInfoReducer,
+            ...currentMeetingReducer,
+            ...meetingInfoModelReducer,
             ...sortedParticipantsReducer,
         },
         preloadedState: {
@@ -64,11 +69,19 @@ const createMockStore = ({ sideBarOpen = false }) => {
                 permissionPromptStatus: 'CLOSED',
                 noDeviceDetected: 'CLOSED',
             },
-            meetingInfo: {
-                ...initialMeetingInfoState,
+            currentMeeting: {
+                ...initialCurrentMeetingState,
                 meetingLinkName,
                 meetingPassword,
-                meetingName: mockMeetingName,
+            },
+            meetingInfoModel: {
+                value: {
+                    meetingLinkName,
+                    meetingName: mockMeetingName,
+                    meetingInfo: { MeetingLinkName: meetingLinkName },
+                },
+                error: undefined,
+                meta: { fetchedAt: 0, fetchedEphemeral: true },
             },
             sortedParticipants: {
                 ...initialSortedParticipantsState,

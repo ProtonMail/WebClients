@@ -41,7 +41,7 @@ import locales from './locales';
 import { meetTelemetryConfig } from './telemetryConfig';
 import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
-import { startMeetingDetailsPreload } from './utils/meetingDetailsPreload';
+import { startMeetingInfoPreload } from './utils/startMeetingInfoPreload';
 import { installWaitingRoomCallbackNamespaces } from './utils/wasmUtils';
 import { DirectMeetCoreClient } from './wasm/DirectMeetCoreClient';
 import type { MeetCoreClient } from './wasm/MeetCoreClient';
@@ -224,7 +224,6 @@ export const initAppDependencies = async (
 };
 
 const completeAppBootstrap = async ({
-    api,
     store,
     authentication,
     unleashClient,
@@ -250,7 +249,7 @@ const completeAppBootstrap = async ({
 
     const cryptoPromise = bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient });
 
-    startMeetingDetailsPreload({ api, uid: authentication.UID, cryptoReady: cryptoPromise });
+    startMeetingInfoPreload({ dispatch, cryptoReady: cryptoPromise });
 
     const [userData] = await Promise.all([
         loadUserData(dispatch),
@@ -427,12 +426,6 @@ export const bootstrapGuestApp = async (
 
     await unauthenticatedApi.startUnAuthFlow();
 
-    startMeetingDetailsPreload({
-        api: unauthenticatedApi.apiCallback,
-        uid: authentication.UID,
-        cryptoReady: Promise.resolve(),
-    });
-
     const store = setupStore({
         extraThunkArguments: {
             api: unauthenticatedApi.apiCallback as ApiWithListener,
@@ -445,6 +438,8 @@ export const bootstrapGuestApp = async (
             meetEventManager: undefined as any,
         },
     });
+
+    startMeetingInfoPreload({ dispatch: store.dispatch });
 
     return {
         authentication,

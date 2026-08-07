@@ -6,6 +6,7 @@ import { lockMeetingCall, unlockMeetingCall } from '@proton/shared/lib/api/meet'
 
 import type { MeetState } from '../rootReducer';
 import type { MeetExtraThunkArguments } from '../store';
+import type { ServerMeetingInfo } from './meetingInfoModel';
 
 export interface MeetSettingsState {
     disableVideos: boolean;
@@ -77,14 +78,15 @@ const slice = createSlice({
         setSelfView: (state, action: PayloadAction<boolean>) => {
             state.selfView = action.payload;
         },
-        setMeetingLocked: (state, action: PayloadAction<boolean>) => {
-            state.meetingLocked = action.payload;
-        },
         setPipEnabled: (state, action: PayloadAction<boolean>) => {
             state.pipEnabled = action.payload;
         },
         setWaitingRoomSetting: (state, action: PayloadAction<boolean>) => {
             state.waitingRoomSetting = action.payload;
+        },
+        hydrateMeetingPolicies: (state, action: PayloadAction<ServerMeetingInfo>) => {
+            state.meetingLocked = !!action.payload.Locked;
+            state.waitingRoomSetting = !!action.payload.WaitingRoom;
         },
         resetWaitingRoomSetting: (state) => {
             state.waitingRoomSetting = initialState.waitingRoomSetting;
@@ -103,9 +105,9 @@ export const {
     enableParticipantVideo,
     setParticipantsWithDisabledVideos,
     setSelfView,
-    setMeetingLocked,
     setPipEnabled,
     setWaitingRoomSetting,
+    hydrateMeetingPolicies,
     resetWaitingRoomSetting,
 } = slice.actions;
 

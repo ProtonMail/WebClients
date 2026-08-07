@@ -4,9 +4,8 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { setMeetingInfo } from '@proton/meet/store/slices/meetingInfo';
+import { setCurrentMeeting } from '@proton/meet/store/slices/currentMeeting';
 
-import { useMeetingAuthentication } from './useMeetingAuthentication';
 import { getPublicToken, getUrlPassword } from './usePublicToken';
 
 export const useMeetingSetup = () => {
@@ -30,17 +29,11 @@ export const useMeetingSetup = () => {
     }
 
     useEffect(() => {
-        dispatch(setMeetingInfo({ meetingLinkName: token, meetingPassword: urlPassword }));
+        dispatch(setCurrentMeeting({ meetingLinkName: token, meetingPassword: urlPassword }));
     }, [dispatch, token, urlPassword]);
-
-    const { getMeetingDetails, getAccessDetails, initHandshake, getMeetingInfo } = useMeetingAuthentication();
 
     return {
         token,
         urlPassword,
-        getMeetingDetails,
-        getAccessDetails,
-        initHandshake,
-        getMeetingInfo,
     };
 };
