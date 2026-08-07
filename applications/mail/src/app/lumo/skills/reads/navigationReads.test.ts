@@ -59,7 +59,7 @@ const harness = ({
         const rawID = getParamsFromPathname(pathname).params.labelID;
         const labelID = HUMAN_TO_LABEL_IDS[rawID] || rawID;
         const filed = landing.map((element) => ({ ...element, Labels: [{ ID: labelID, ContextNumMessages: 1 }] }));
-        change(settledView(labelID, hash, filed as Element[]));
+        change(settledView({ labelID, hash, elements: filed as Element[] }));
     };
 
     const deps = {

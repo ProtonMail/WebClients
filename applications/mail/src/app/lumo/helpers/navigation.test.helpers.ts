@@ -6,8 +6,11 @@
  */
 import { createLocation } from 'history';
 
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
 import { getElementContextIdentifier } from 'proton-mail/helpers/elements';
-import { extractSearchParameters, filterFromUrl, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
+import { categoryIDFromUrl, extractSearchParameters, filterFromUrl, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
 import type { Element } from 'proton-mail/models/element';
 import { newElementsState } from 'proton-mail/store/elements/elementsSlice';
 import type { ElementsState } from 'proton-mail/store/elements/elementsTypes';
@@ -16,10 +19,29 @@ import type { ToolStore } from '../toolModule';
 
 export const locationFor = (labelID: string, hash = '') => createLocation(`/${labelID}${hash && `#${hash}`}`);
 
-/** The state the app reaches once the list has loaded the view described by `labelID` + `hash`. */
-export const settledView = (labelID: string, hash = '', elements: Element[] = []): Partial<ElementsState> => {
+interface SettledView {
+    labelID: string;
+    hash?: string;
+    elements?: Element[];
+    /** Off by default, matching a mailbox with no category tabs: `useElements` then leaves `categoryIDs` empty. */
+    categoryViewEnabled?: boolean;
+}
+
+/** The state the app reaches once the list has loaded the view described by `labelID` + `hash`. Loaded
+ *  from the server, so bodies were not searched — an Encrypted Search run overrides `usedEncryptedSearch`. */
+export const settledView = ({
+    labelID,
+    hash = '',
+    elements = [],
+    categoryViewEnabled = false,
+}: SettledView): Partial<ElementsState> => {
     const location = locationFor(labelID, hash);
     const search = extractSearchParameters(location);
+    // Mirrors useElements: the category is read off the URL only on the Inbox, and only with the view on.
+    const categoryIDs: CategoryLabelID[] =
+        categoryViewEnabled && labelID === MAILBOX_LABEL_IDS.INBOX
+            ? [categoryIDFromUrl(location) ?? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]
+            : [];
     const params = {
         ...newElementsState().params,
         labelID,
@@ -27,10 +49,11 @@ export const settledView = (labelID: string, hash = '', elements: Element[] = []
         filter: filterFromUrl(location),
         search,
         isSearching: !!search.keyword,
+        categoryIDs,
     };
     const context = getElementContextIdentifier({
         labelID,
-        categoryIDs: params.categoryIDs,
+        categoryIDs,
         conversationMode: params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -48,6 +71,8 @@ export const settledView = (labelID: string, hash = '', elements: Element[] = []
         elements: Object.fromEntries(elements.map((element) => [element.ID, element])),
         beforeFirstLoad: false,
         pendingRequest: false,
+        pendingESSearches: 0,
+        usedEncryptedSearch: false,
         invalidated: false,
         total: { [context]: elements.length },
         pages: { [context]: [0] },
