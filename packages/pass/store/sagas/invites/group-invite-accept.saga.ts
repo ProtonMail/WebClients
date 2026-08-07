@@ -14,7 +14,7 @@ function* acceptGroupInviteWorker({ payload, meta: { request } }: ReturnType<typ
         yield put(stopEventPolling());
 
         const invite: Maybe<Invite> = yield select(selectInviteByToken(inviteToken));
-        if (!invite) throw new Error(c('Error').t`Unknown invite`);
+        if (!invite) throw new Error(c('Error').t`This invite is no longer available`);
 
         yield acceptGroupInvite(payload, invite.invitedGroupId!, invite.keys, invite.type === InviteType.GroupOrg);
         yield put(groupInviteAccept.success(requestId, { inviteToken }));
