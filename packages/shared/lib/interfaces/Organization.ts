@@ -111,7 +111,7 @@ export interface UserOrganization {
     MemberRole: MEMBER_ROLE;
     MemberState: MEMBER_STATE;
     MaxMembers: number;
-    State: ORGANIZATION_STATE;
+    Status: ORGANIZATION_STATE;
     UsedMembers: number;
     OrganizationID: string;
     OrganizationName: string;

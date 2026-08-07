@@ -52,6 +52,7 @@ import {
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { resendUnprivatizationLink } from '@proton/shared/lib/api/members';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { APPS, type APP_NAMES, MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
@@ -112,7 +113,7 @@ export const useMemberActions = ({
     const cleanOption = {
         onExit: () => setTmpMemberID(null),
     };
-
+    const isMSPManager = user?.accessType === AccessType.Msp;
     const hasDriveB2BPlan = getHasDriveB2BPlan(subscription);
     const hasMeetPlan = hasMeetBusiness(subscription) || hasMeet(subscription);
     const hasExternalMemberCapableB2BPlan = !!entitlements.quantityOrg(EntitlementName.ExternalManagedMembers);
@@ -142,7 +143,7 @@ export const useMemberActions = ({
 
     // Allow to display a toggle in the UI
     const allowLumoConfiguration =
-        lumoAddonAvailable && !visionary && app !== APPS.PROTONVPN_SETTINGS && app !== APPS.PROTONPASS;
+        !isMSPManager && lumoAddonAvailable && !visionary && app !== APPS.PROTONVPN_SETTINGS && app !== APPS.PROTONPASS;
     // Allow to update seats (this should be done automatically for visionary)
     const allowLumoUpdate = lumoAddonAvailable;
 
