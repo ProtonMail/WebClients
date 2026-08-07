@@ -17,9 +17,9 @@ const AiPaperTrailView = lazy(() =>
  */
 export function AiPaperTrailApp() {
     const { url } = useRouteMatch();
-    const { aiPaperTrail } = useLumoFlags();
+    const { aiPaperTrailRoute } = useLumoFlags();
 
-    if (!aiPaperTrail) {
+    if (!aiPaperTrailRoute) {
         return <Redirect to={LUMO_ROUTES.GUEST} />;
     }
 

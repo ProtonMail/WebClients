@@ -295,7 +295,7 @@ export const ApiDocsPage = () => {
                                                         .t`Document intelligence`}</div>
                                                     <p className="m-0 text-sm color-weak">
                                                         {c('collider_2025: Info')
-                                                            .t`Extract, analyse, and summarise documents, PDFs, and images.`}
+                                                            .t`Extract, analyze, and summarise documents, PDFs, and images.`}
                                                     </p>
                                                 </div>
                                                 <div className="api-docs-page-feature-card">

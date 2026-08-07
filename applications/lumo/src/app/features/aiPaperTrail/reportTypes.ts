@@ -54,6 +54,8 @@ export interface PaperTrailReport {
     name: string;
     /** Short identity headline / archetype. */
     label: string;
+    /** Social-style @username for the profile card (model-generated, sanitized on parse). */
+    handle?: string;
     /** At-a-glance demographic facts (age, education, politics, location, …). */
     quickFacts: PaperTrailFact[];
     /** One or two sentence overview. */
@@ -97,7 +99,7 @@ export interface PaperTrailCardData {
     estimatedValueUsd: number;
 }
 
-/** Turn an archetype label into a social-style @handle. */
+/** Turn an archetype label into a social-style @handle (fallback when the model omits "handle"). */
 export const toHandle = (label: string): string => {
     const slug = label
         .toLowerCase()
@@ -108,6 +110,19 @@ export const toHandle = (label: string): string => {
         .slice(0, 3)
         .join('_');
     return slug || 'anonymous';
+};
+
+/** Prefer a model-provided handle; sanitize it and fall back to a slug of the label. */
+export const resolveProfileHandle = (handle: string | undefined, label: string): string => {
+    const raw = (handle ?? '').replace(/^@+/, '').trim().toLowerCase();
+    const slug = raw
+        .replace(/[^a-z0-9_]+/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_+|_+$/g, '');
+    if (slug) {
+        return slug;
+    }
+    return toHandle(label);
 };
 
 const clampScore = (n: number): number => Math.max(0, Math.min(100, Math.round(n)));
@@ -147,5 +162,10 @@ export const deriveCardData = (report: PaperTrailReport): PaperTrailCardData => 
     const exposureScore = areas.length
         ? clampScore(areas.reduce((sum, area) => sum + area.exposureScore, 0) / areas.length)
         : 0;
-    return { exposureScore, grade: privacyTypeLabel(exposureScore), areas, estimatedValueUsd: report.estimatedValueUsd };
+    return {
+        exposureScore,
+        grade: privacyTypeLabel(exposureScore),
+        areas,
+        estimatedValueUsd: report.estimatedValueUsd,
+    };
 };
