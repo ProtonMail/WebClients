@@ -46,17 +46,17 @@
         "react-redux": "^9.3.0",
         "react-router-dom": "^5.3.4",
         "ttag": "^1.8.12",
-        "webpack": "^5.108.4"
+        "webpack": "^5.109.2"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
-        "@vitejs/plugin-react": "^6.0.3",
+        "@vitejs/plugin-react": "^6.0.5",
         "eslint": "^9.39.5",
-        "happy-dom": "^20.10.6",
-        "prettier": "^3.9.5",
+        "happy-dom": "^20.11.1",
+        "prettier": "^3.9.6",
         "typescript": "^6.0.3",
         "vite-plugin-wasm": "^3.6.0",
         "vitest": "^4.1.10"
