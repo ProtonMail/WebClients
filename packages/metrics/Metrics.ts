@@ -82,6 +82,9 @@ import type { HttpsProtonMeDriveSyncItemsTotalV1SchemaJson } from './types/drive
 import type { HttpsProtonMeDriveSyncResyncItemsTotalV1SchemaJson } from './types/drive_sync_resync_items_total_v1.schema';
 import type { HttpsProtonMeDriveSyncResyncSuccessTotalV1SchemaJson } from './types/drive_sync_resync_success_total_v1.schema';
 import type { HttpsProtonMeDriveSyncResyncTotalV1SchemaJson } from './types/drive_sync_resync_total_v1.schema';
+import type { HttpsProtonMeDriveThumbnailErrorsTotalV1SchemaJson } from './types/drive_thumbnail_errors_total_v1.schema';
+import type { HttpsProtonMeDriveThumbnailNoHandlerTotalV1SchemaJson } from './types/drive_thumbnail_no_handler_total_v1.schema';
+import type { HttpsProtonMeDriveThumbnailSuccessRateTotalV1SchemaJson } from './types/drive_thumbnail_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveUploadErroringUsersTotalV2SchemaJson } from './types/drive_upload_erroring_users_total_v2.schema';
 import type { HttpsProtonMeDriveUploadErrorsFileSizeHistogramV1SchemaJson } from './types/drive_upload_errors_file_size_histogram_v1.schema';
 import type { HttpsProtonMeDriveUploadErrorsTotalV2SchemaJson } from './types/drive_upload_errors_total_v2.schema';
@@ -352,6 +355,12 @@ class Metrics extends MetricsBase {
     public drive_sync_resync_success_total: Counter<HttpsProtonMeDriveSyncResyncSuccessTotalV1SchemaJson>;
 
     public drive_sync_resync_total: Counter<HttpsProtonMeDriveSyncResyncTotalV1SchemaJson>;
+
+    public drive_thumbnail_errors_total: Counter<HttpsProtonMeDriveThumbnailErrorsTotalV1SchemaJson>;
+
+    public drive_thumbnail_no_handler_total: Counter<HttpsProtonMeDriveThumbnailNoHandlerTotalV1SchemaJson>;
+
+    public drive_thumbnail_success_rate_total: Counter<HttpsProtonMeDriveThumbnailSuccessRateTotalV1SchemaJson>;
 
     public drive_upload_erroring_users_total: Counter<HttpsProtonMeDriveUploadErroringUsersTotalV2SchemaJson>;
 
@@ -997,6 +1006,21 @@ class Metrics extends MetricsBase {
 
         this.drive_sync_resync_total = new Counter<HttpsProtonMeDriveSyncResyncTotalV1SchemaJson>(
             { name: 'drive_sync_resync_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_thumbnail_errors_total = new Counter<HttpsProtonMeDriveThumbnailErrorsTotalV1SchemaJson>(
+            { name: 'drive_thumbnail_errors_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_thumbnail_no_handler_total = new Counter<HttpsProtonMeDriveThumbnailNoHandlerTotalV1SchemaJson>(
+            { name: 'drive_thumbnail_no_handler_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_thumbnail_success_rate_total = new Counter<HttpsProtonMeDriveThumbnailSuccessRateTotalV1SchemaJson>(
+            { name: 'drive_thumbnail_success_rate_total', version: 1 },
             this.requestService
         );
 
