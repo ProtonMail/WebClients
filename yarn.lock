@@ -10489,6 +10489,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/logger@workspace:packages/logger":
+  version: 0.0.0-use.local
+  resolution: "@proton/logger@workspace:packages/logger"
+  dependencies:
+    "@proton/eslint-config-proton": "workspace:^"
+    "@protontech/crypto": "npm:*"
+    "@swc/jest": "npm:^0.2.39"
+    "@types/jest": "npm:^30.0.0"
+    eslint: "npm:^9.39.5"
+    fake-indexeddb: "npm:^6.2.5"
+    idb: "npm:^8.0.3"
+    jest: "npm:^30.4.2"
+    jest-junit: "npm:^16.0.0"
+    prettier: "npm:^3.9.6"
+    typescript: "npm:^6.0.3"
+  languageName: unknown
+  linkType: soft
+
 "@proton/lumo-api-client@workspace:^, @proton/lumo-api-client@workspace:packages/lumo-api-client":
   version: 0.0.0-use.local
   resolution: "@proton/lumo-api-client@workspace:packages/lumo-api-client"
