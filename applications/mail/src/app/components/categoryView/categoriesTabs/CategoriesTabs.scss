@@ -7,6 +7,10 @@
 $tab-dot-ease: easing(ease-out-quint);
 
 @mixin reveal-tab-labels() {
+	.tab-wrapper {
+		flex: 1 1 0;
+	}
+
 	.tab-container {
 		.tab-label,
 		.tag-count {
@@ -75,11 +79,26 @@ $tab-dot-ease: easing(ease-out-quint);
 			display: none;
 		}
 
-		&[aria-selected='true'],
-		&.hovered {
+		&[aria-selected='true'] {
 			.tab-label,
 			.tag-count {
 				display: block;
+			}
+		}
+
+		&.hovered {
+			.tab-label {
+				display: block;
+			}
+		}
+
+		// While dragging, the counter makes room for the drop affordance. Declared after the
+		// reveal rule above so it wins the equal-specificity tie, and it outweighs the
+		// class-less reveals in the media queries below.
+		&.dashed,
+		&.hovered {
+			.tag-count {
+				display: none;
 			}
 		}
 
