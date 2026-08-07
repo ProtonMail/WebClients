@@ -32,7 +32,9 @@ const DEFAULT_WINDOW_BOUNDS = {
     y: -1,
 } satisfies WindowBounds;
 
-const store = new Store<{ windowBounds: WindowBounds }>();
+const store = new Store<{ windowBounds: WindowBounds }>({
+    configFileMode: 0o600,
+});
 
 const isValidBounds = (bounds: WindowBounds): bounds is WindowBounds => {
     return (
