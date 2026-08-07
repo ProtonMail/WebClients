@@ -61,6 +61,16 @@ describe('classifyError', () => {
                 reason: 'offline',
             });
         });
+
+        it('plain Error with name RateLimitedError (e.g. crossed the Comlink boundary) -> transient rate-limited', () => {
+            const e = Object.assign(new Error('429'), { name: 'RateLimitedError' });
+            expect(classifyError(e)).toEqual({ kind: 'transient', reason: 'rate-limited' });
+        });
+
+        it('plain Error with name ServerError (e.g. crossed the Comlink boundary) -> transient server', () => {
+            const e = Object.assign(new Error('5xx'), { name: 'ServerError' });
+            expect(classifyError(e)).toEqual({ kind: 'transient', reason: 'server' });
+        });
     });
 
     describe('abort detection (beats other transients)', () => {
@@ -74,6 +84,11 @@ describe('classifyError', () => {
                 kind: 'transient',
                 reason: 'abort',
             });
+        });
+
+        it('plain Error with name AbortError (e.g. crossed the Comlink boundary) -> transient abort', () => {
+            const e = Object.assign(new Error('Request aborted'), { name: 'AbortError' });
+            expect(classifyError(e)).toEqual({ kind: 'transient', reason: 'abort' });
         });
     });
 
@@ -119,6 +134,7 @@ describe('isRepairableError', () => {
     it('treats abort as not repairable', () => {
         expect(isRepairableError(new DOMException('aborted', 'AbortError'))).toBe(false);
         expect(isRepairableError(new SdkAbortError('aborted'))).toBe(false);
+        expect(isRepairableError(Object.assign(new Error('Request aborted'), { name: 'AbortError' }))).toBe(false);
     });
 
     it('treats permanent errors as not repairable', () => {
