@@ -35,6 +35,11 @@ jest.mock('@proton/components/hooks/usePreferredPlansMap', () => ({
     }),
 }));
 
+jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
+    ...jest.requireActual('@proton/redux-shared-store/sharedProvider'),
+    useDispatch: () => () => Promise.resolve(undefined),
+}));
+
 describe('MemberUsageColumnPrompt', () => {
     afterEach(() => {
         jest.clearAllMocks();
