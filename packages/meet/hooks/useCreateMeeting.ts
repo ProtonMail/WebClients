@@ -1,15 +1,15 @@
 import { c } from 'ttag';
 
 import { MeetingType, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import type { CreateMeetingParams } from '../types/types';
 import { getMeetingLink } from '../utils/getMeetingLink';
 import { useGetMeetingDependencies } from './useGetMeetingDependencies';
 import { useSaveMeeting } from './useSaveMeeting';
+import { useIsWaitingRoomCreationEnabled } from './useWaitingRoomFlags';
 
 export const useCreateMeeting = () => {
-    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+    const isWaitingRoomCreationEnabled = useIsWaitingRoomCreationEnabled();
 
     const saveMeeting = useSaveMeeting();
 
@@ -37,7 +37,7 @@ export const useCreateMeeting = () => {
                     recurrence,
                     timeZone,
                     type,
-                    ...(isMeetWaitingRoomEnabled ? { waitingRoom } : {}),
+                    ...(isWaitingRoomCreationEnabled ? { waitingRoom } : {}),
                 },
                 privateKey,
                 addressId,
