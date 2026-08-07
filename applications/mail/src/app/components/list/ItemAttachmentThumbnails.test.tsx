@@ -78,6 +78,7 @@ const setup = async (
             onBack={jest.fn()}
             isSelected={false}
             attachmentsMetadata={filterAttachmentToPreview(attachmentsMetadata)}
+            shouldShowPrimaryBadge={false}
         />,
         {
             preloadedState: {

@@ -4,10 +4,8 @@ import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import {
-    type CategoriesViewState,
-    selectCategoryUnreadCount,
-} from '@proton/mail/store/categoriesView/categoriesViewSelector';
+import type { CategoriesViewState } from '@proton/mail/store/categoriesView/categoriesViewSelector';
+import { selectCategoryUnreadCount } from '@proton/mail/store/categoriesView/categoriesViewSelector';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { baseUseStore } from '@proton/react-redux-store';
 import {
@@ -15,13 +13,14 @@ import {
     type TelemetryEvents,
     TelemetryMeasurementGroups,
 } from '@proton/shared/lib/api/telemetry';
-import type { CategoryLabelID } from '@proton/shared/lib/constants';
+import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { useUnleashClient } from '@proton/unleash/proxy';
 
-type RecategorizeSource = 'drag_and_drop' | 'context_menu' | 'move_to_folder';
+type RecategorizeSource = 'drag_and_drop' | 'context_menu' | 'move_to_folder' | 'recategorize_experiment';
 type CategoriesClickSource = 'tab' | 'sidebar' | 'commander' | 'shortcuts';
 
 export const useCategoriesTelemetry = () => {
@@ -31,6 +30,7 @@ export const useCategoriesTelemetry = () => {
     const getUserSettings = useGetUserSettings();
     const getMailSettings = useGetMailSettings();
 
+    const client = useUnleashClient();
     const store = baseUseStore<CategoriesViewState>();
 
     return useMemo(() => {
@@ -52,6 +52,7 @@ export const useCategoriesTelemetry = () => {
                 return;
             }
 
+            const variant = client.getVariant('CategoryViewVariant').name;
             void sendTelemetryReportWithBaseDimensions({
                 api,
                 user,
@@ -60,10 +61,11 @@ export const useCategoriesTelemetry = () => {
                 measurementGroup: TelemetryMeasurementGroups.categoriesView,
                 event,
                 values,
-                dimensions,
+                dimensions: { ...dimensions, variant },
                 delay: true,
             });
         };
+
         const sendEventOnboardingAccept = () => {
             void sendReport(TelemetryCategoriesOnboardingEvents.onboarding_reply, {
                 reply: 'accept',
@@ -143,6 +145,16 @@ export const useCategoriesTelemetry = () => {
             });
         };
 
+        const sendReportRecategorizeExperiment = (sourceLabelId: CategoryLabelID) => {
+            void sendReport(TelemetryCategoriesOnboardingEvents.recategorize_email, {
+                recategorizeSource: 'recategorize_experiment',
+                sourceLabelId,
+                destinationLabelId: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                // The button only moves one element at a time
+                elementsNumber: '1',
+            });
+        };
+
         return {
             sendEventOnboardingAccept,
             sendEventOnboardingDismiss,
@@ -151,6 +163,7 @@ export const useCategoriesTelemetry = () => {
             sendReportToggleNotification,
             sendReportChangeCategorySettings,
             sendReportCategoriesNav,
+            sendReportRecategorizeExperiment,
         };
     }, []);
 };

@@ -646,7 +646,7 @@ describe('mailboxHelpers', () => {
                     folders: [],
                     isComingFromSpam: false,
                 });
-                expect(result).toBe('Moved to Social. Similar message will be categorized there in the future.');
+                expect(result).toBe('Moved to Social. Similar messages will be categorized there in the future.');
             });
 
             it('should return the recategorized notification when moving multiple messages to a category', () => {
