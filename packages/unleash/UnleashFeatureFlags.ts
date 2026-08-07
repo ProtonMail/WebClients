@@ -326,6 +326,7 @@ enum MeetFeatureFlag {
     MeetEnableScreenShareAudio = 'MeetEnableScreenShareAudio',
     EnableAccessibilityAnnouncements = 'EnableAccessibilityAnnouncements',
     MeetWaitingRoom = 'MeetWaitingRoom',
+    MeetWaitingRoomJoin = 'MeetWaitingRoomJoin',
     MeetDtlnPerfMonitor = 'MeetDtlnPerfMonitor',
     MeetBlurPersonConfidenceBoost = 'MeetBlurPersonConfidenceBoost',
     MeetBlurMulticlassPersonConfidenceBoost = 'MeetBlurMulticlassPersonConfidenceBoost',

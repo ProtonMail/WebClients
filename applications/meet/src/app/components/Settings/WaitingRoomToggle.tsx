@@ -1,16 +1,16 @@
 import { c } from 'ttag';
 
 import useLoading from '@proton/hooks/useLoading';
+import { useIsWaitingRoomCreationEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { useWaitingRoomContext } from '../../contexts/WaitingRoomContext';
 
 export const WaitingRoomToggle = () => {
-    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+    const isWaitingRoomCreationEnabled = useIsWaitingRoomCreationEnabled();
 
     const { toggleWaitingRoom } = useWaitingRoomContext();
 
@@ -26,7 +26,8 @@ export const WaitingRoomToggle = () => {
         void withLoading(toggleWaitingRoom(!waitingRoomSetting));
     };
 
-    if (!isMeetWaitingRoomEnabled) {
+    // Allow disabling the waiting room if creation is not enabled, remove all the condition when cleaning up isWaitingRoomCreationEnabled
+    if (!isWaitingRoomCreationEnabled && !waitingRoomSetting) {
         return null;
     }
 
