@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import type { AesGcmCryptoKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
@@ -24,9 +25,7 @@ interface PendingLog {
 }
 
 const consoleFor = (level: LogLevel): ((...args: unknown[]) => void) => {
-    // eslint-disable-next-line no-console
     const method = console[level];
-    // eslint-disable-next-line no-console
     return (method ?? console.log).bind(console);
 };
 
@@ -144,7 +143,6 @@ export class Logger {
 
     public async initialize(options: LoggerOptions): Promise<void> {
         if (this.initialized) {
-            // eslint-disable-next-line no-console
             console.warn(`Logger '${this.name}' already initialized, ignoring subsequent initialization`);
             return;
         }
@@ -209,7 +207,6 @@ export class Logger {
      */
     private enqueue(task: () => Promise<void>): void {
         this.writes = this.writes.then(task).catch((error) => {
-            // eslint-disable-next-line no-console
             console.warn(`[${this.name}] failed to write logs:`, error);
         });
     }
@@ -274,12 +271,10 @@ export class Logger {
         } catch (error) {
             if (error instanceof UnreadableEntryError) {
                 // Most likely written under a different session key, content is unrecoverable and would keep failing on every read.
-                // eslint-disable-next-line no-console
                 console.warn(`[${this.name}] failed to decrypt logs, clearing:`, error);
                 await this.clearLogs();
                 return '';
             }
-            // eslint-disable-next-line no-console
             console.error(`[${this.name}] failed to read logs:`, error);
             return '';
         }
@@ -303,7 +298,6 @@ export class Logger {
             await this.writes;
             await this.storage.clear();
         } catch (error) {
-            // eslint-disable-next-line no-console
             console.warn(`[${this.name}] failed to clear logs:`, error);
         }
     }
@@ -348,7 +342,6 @@ export class Logger {
         try {
             await this.storage?.close();
         } catch (error) {
-            // eslint-disable-next-line no-console
             console.warn(`[${this.name}] failed to close storage:`, error);
         }
 
