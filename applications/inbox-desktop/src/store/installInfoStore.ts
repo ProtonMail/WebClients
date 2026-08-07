@@ -6,7 +6,9 @@ const store = new Store<{
         source: string | null;
         reported: boolean;
     };
-}>({});
+}>({
+    configFileMode: 0o600,
+});
 
 export function setInstallSource(installSource: string) {
     mainLogger.info("set install source", installSource);

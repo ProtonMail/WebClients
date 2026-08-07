@@ -13,7 +13,9 @@ const defaultUserSettings: UserSettings = {
 type UserSettingsStore = { [userID: string]: UserSettings };
 const USER_SETTINGS = "userSettings";
 
-const store = new Store<{ userSettings?: UserSettingsStore }>({});
+const store = new Store<{ userSettings?: UserSettingsStore }>({
+    configFileMode: 0o600,
+});
 
 const getUserSettings = (userID: string): UserSettings | null => {
     const storedSettings = store.get(USER_SETTINGS);

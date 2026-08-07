@@ -3,7 +3,9 @@ import Store from "electron-store";
 import { mainLogger } from "../utils/log";
 import { z } from "zod";
 
-const store = new Store<{ appID: AppID }>();
+const store = new Store<{ appID: AppID }>({
+    configFileMode: 0o600,
+});
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const appIDSchema = z.object({

@@ -11,7 +11,9 @@ const localUrls = {
     calendar: `https://calendar.${BASE_LOCAL_URL}`,
 };
 
-const store = new Store();
+const store = new Store({
+    configFileMode: 0o600,
+});
 
 const urlValidators = (subdomain: string) => {
     return z
