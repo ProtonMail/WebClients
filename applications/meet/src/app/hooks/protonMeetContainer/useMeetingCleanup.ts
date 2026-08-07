@@ -5,7 +5,6 @@ import { useRoomContext } from '@livekit/components-react';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
 import { resetParticipantMaps } from '@proton/meet/store/slices/participants/participantsSlice';
-import type { MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { useStableCallback } from '../useStableCallback';
@@ -13,7 +12,6 @@ import { useStableCallback } from '../useStableCallback';
 interface UseMeetingCleanupParams {
     instantMeetingRef: MutableRefObject<boolean>;
     meetingLinkNameRef: MutableRefObject<string>;
-    meetingInfoRef: MutableRefObject<MeetingInfoResponse | null>;
     decryptionKeyRef: MutableRefObject<CryptoKey | null>;
     disallowHealthCheck: () => void;
     cleanupMlsState: () => void;
@@ -31,7 +29,6 @@ export interface UseMeetingCleanupResult {
 export const useMeetingCleanup = ({
     instantMeetingRef,
     meetingLinkNameRef,
-    meetingInfoRef,
     decryptionKeyRef,
     disallowHealthCheck,
     cleanupMlsState,
@@ -52,7 +49,6 @@ export const useMeetingCleanup = ({
         }
 
         dispatch(resetParticipantMaps());
-        meetingInfoRef.current = null;
         decryptionKeyRef.current = null;
         disallowHealthCheck();
         cleanupMlsState();

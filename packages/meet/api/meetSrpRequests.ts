@@ -10,7 +10,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { AccessTokenResponse, MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 import { srpAuth } from '@proton/shared/lib/srp';
 
-import { INVALID_SRP_PARAMS_ERROR_CODE } from '../../constants';
+import { INVALID_SRP_PARAMS_ERROR_CODE } from './constants';
 
 export interface SRPHandshakeInfo {
     Code: number;

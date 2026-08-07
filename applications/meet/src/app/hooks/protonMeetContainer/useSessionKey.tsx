@@ -2,22 +2,16 @@ import { useCallback, useRef } from 'react';
 
 import type { SessionKey } from '@protontech/crypto';
 
+import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { meetingInfoThunk } from '@proton/meet/store/slices/meetingInfoModel';
 import { decryptSessionKey } from '@proton/meet/utils/cryptoUtils';
-
-import type { useMeetingSetup } from '../srp/useMeetingSetup';
-
-type MeetingSetup = ReturnType<typeof useMeetingSetup>;
 
 export type GetSessionKey = (meetingLinkName: string, password?: string) => Promise<SessionKey | null>;
 export type GetSessionKeyBase64 = (meetingLinkName: string, password?: string) => Promise<string | null>;
 
-export const useSessionKey = ({
-    getCachedMeetingInfo,
-    urlPassword,
-}: {
-    getCachedMeetingInfo: MeetingSetup['getMeetingInfo'];
-    urlPassword: string;
-}) => {
+export const useSessionKey = ({ urlPassword }: { urlPassword: string }) => {
+    const dispatch = useMeetDispatch();
+
     const meetingSessionKeyBase64Ref = useRef<string | null>(null);
     const sessionKeyRef = useRef<SessionKey | null>(null);
 
@@ -27,16 +21,19 @@ export const useSessionKey = ({
                 return sessionKeyRef.current;
             }
 
-            const meetingInfo = await getCachedMeetingInfo(meetingLinkName);
+            const meetingPassword = password ?? urlPassword;
+
+            const { meetingInfo } = await dispatch(meetingInfoThunk({ meetingLinkName, meetingPassword }));
+
             const sessionKey = await decryptSessionKey({
-                encryptedSessionKey: meetingInfo.MeetingInfo.SessionKey,
-                password: password ?? urlPassword,
-                salt: meetingInfo.MeetingInfo.Salt,
+                encryptedSessionKey: meetingInfo.SessionKey,
+                password: meetingPassword,
+                salt: meetingInfo.Salt,
             });
             sessionKeyRef.current = sessionKey ?? null;
             return sessionKeyRef.current;
         },
-        [getCachedMeetingInfo, urlPassword]
+        [dispatch, urlPassword]
     );
 
     const getSessionKeyBase64 = useCallback<GetSessionKeyBase64>(

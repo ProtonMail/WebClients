@@ -14,17 +14,22 @@ import {
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
+import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import { useMeetingConnection } from './useMeetingConnection';
 
 vi.mock('@livekit/components-react', () => ({ useRoomContext: vi.fn() }));
 vi.mock('@proton/meet/store/hooks', () => ({ useMeetDispatch: vi.fn() }));
 vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));
 vi.mock('../../contexts/MeetCoreClientContext', () => ({ useMeetCoreClient: vi.fn() }));
+vi.mock('../srp/useMeetingAuthentication', () => ({ useMeetingAuthentication: vi.fn() }));
 
 const useRoomContextMock = useRoomContext as unknown as Mock;
 const useMeetDispatchMock = useMeetDispatch as unknown as Mock;
 const useFlagMock = useFlag as unknown as Mock;
 const useMeetCoreClientMock = useMeetCoreClient as unknown as Mock;
+const useMeetingAuthenticationMock = useMeetingAuthentication as unknown as Mock;
+
+const mockGetAccessDetails = vi.fn();
 
 const mockDispatch = vi.fn();
 
@@ -48,7 +53,6 @@ const createParams = (overrides: Record<string, any> = {}): any => ({
     accessTokenRef: { current: null },
     keyProvider: { setKeyWithEpoch: vi.fn().mockResolvedValue(undefined) },
     keyRotationScheduler: { schedule: vi.fn().mockResolvedValue(undefined) },
-    getAccessDetails: vi.fn().mockResolvedValue({ websocketUrl: 'wss://x', accessToken: 'tok' }),
     handleMlsSetup: vi.fn().mockResolvedValue({ key: 'group-key', epoch: 1n }),
     reportMLSRelatedError: vi.fn(),
     connectWithStunFallbackToTurnRelay: vi.fn().mockResolvedValue({ stunFailed: false, connectionAttempts: 2 }),
@@ -77,6 +81,8 @@ describe('useMeetingConnection', () => {
         useRoomContextMock.mockReturnValue(mockRoom);
         useMeetDispatchMock.mockReturnValue(mockDispatch);
         useMeetCoreClientMock.mockReturnValue(mockMeetCoreClient);
+        mockGetAccessDetails.mockResolvedValue({ websocketUrl: 'wss://x', accessToken: 'tok' });
+        useMeetingAuthenticationMock.mockReturnValue({ getAccessDetails: mockGetAccessDetails });
         useFlagMock.mockReturnValue(false);
         mockRoom.setE2EEEnabled.mockResolvedValue(undefined);
         mockRoom.disconnect.mockResolvedValue(undefined);
@@ -92,7 +98,7 @@ describe('useMeetingConnection', () => {
                 res = await result.current.connectWithMls({ ...baseConnectParams, queryParticipantsCount: true });
             });
 
-            expect(params.getAccessDetails).toHaveBeenCalledWith(expect.objectContaining({ token: 'meeting-abc' }));
+            expect(mockGetAccessDetails).toHaveBeenCalledWith(expect.objectContaining({ token: 'meeting-abc' }));
             expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false);
             expect(params.keyProvider.setKeyWithEpoch).toHaveBeenCalledWith('group-key', 1n);
             expect(mockRoom.setE2EEEnabled).toHaveBeenCalledWith(true);
@@ -193,7 +199,7 @@ describe('useMeetingConnection', () => {
             });
 
             expect(mockDispatch).not.toHaveBeenCalledWith(setIsReconnecting(true));
-            expect(params.getAccessDetails).not.toHaveBeenCalled();
+            expect(mockGetAccessDetails).not.toHaveBeenCalled();
         });
 
         it('no-ops when a reconnection is already in progress', async () => {
@@ -219,7 +225,7 @@ describe('useMeetingConnection', () => {
             expect(mockDispatch).toHaveBeenCalledWith(setIsReconnecting(true));
             expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(false));
             expect(mockDispatch).toHaveBeenCalledWith(setMlsRetrying(false));
-            expect(params.getAccessDetails).toHaveBeenCalled();
+            expect(mockGetAccessDetails).toHaveBeenCalled();
             expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
             expect(mockDispatch).toHaveBeenCalledWith(setIsReconnecting(false));
             expect(params.allowHealthCheck).toHaveBeenCalledTimes(1);
