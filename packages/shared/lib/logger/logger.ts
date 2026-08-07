@@ -1,3 +1,4 @@
+import type { AesGcmCryptoKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
@@ -29,10 +30,31 @@ const consoleFor = (level: LogLevel): ((...args: unknown[]) => void) => {
     return (method ?? console.log).bind(console);
 };
 
-/** WebCrypto reports every decryption failure as a DOMException, usually `OperationError`. */
-const isDecryptionError = (error: unknown): boolean =>
-    error instanceof DOMException ||
-    (error instanceof Error && ['OperationError', 'InvalidAccessError', 'DataError'].includes(error.name));
+/** A stored entry could not be turned back into a log line, whatever the reason. */
+class UnreadableEntryError extends Error {
+    constructor(cause: unknown) {
+        super('Log entry could not be decoded', { cause });
+        this.name = 'UnreadableEntryError';
+    }
+}
+
+/**
+ * Decodes one stored payload. Base64, AES-GCM and JSON failures all mean the same
+ * thing here — the bytes on disk are not readable by this session — so they are
+ * reported as one error rather than inspected individually.
+ */
+const decodeEntryOrThrow = async (
+    key: AesGcmCryptoKey,
+    data: string,
+    context: Uint8Array<ArrayBuffer>
+): Promise<{ message: string; args: string[] }> => {
+    try {
+        const decrypted = await decryptData(key, Uint8Array.fromBase64(data), context);
+        return JSON.parse(uint8ArrayToUtf8String(decrypted)) as { message: string; args: string[] };
+    } catch (error) {
+        throw new UnreadableEntryError(error);
+    }
+};
 
 const serializeArg = (arg: unknown): string => {
     if (arg instanceof Error) {
@@ -250,8 +272,8 @@ export class Logger {
             const lines = await Promise.all(entries.map((entry) => this.format(entry)));
             return lines.join('\n');
         } catch (error) {
-            if (isDecryptionError(error)) {
-                // Written under a different session key, so the contents are unrecoverable.
+            if (error instanceof UnreadableEntryError) {
+                // Most likely written under a different session key, content is unrecoverable and would keep failing on every read.
                 // eslint-disable-next-line no-console
                 console.warn(`[${this.name}] failed to decrypt logs, clearing:`, error);
                 await this.clearLogs();
@@ -264,13 +286,8 @@ export class Logger {
     }
 
     private async format(entry: LogEntry): Promise<string> {
-        const decrypted = await decryptData(
-            this.encryptionKey!,
-            Uint8Array.fromBase64(entry.data),
-            this.encryptionContext!
-        ).then(uint8ArrayToUtf8String);
+        const { message, args } = await decodeEntryOrThrow(this.encryptionKey!, entry.data, this.encryptionContext!);
 
-        const { message, args } = JSON.parse(decrypted) as { message: string; args: string[] };
         const timestamp = new Date(entry.timestamp).toISOString();
         const suffix = args.length > 0 ? ` ${args.join(' ')}` : '';
 
