@@ -38,7 +38,10 @@ type SliceState = OrganizationState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
 export const selectOrganization = (state: OrganizationState) => state[name];
-export const selectOrganizationLoading = (state: OrganizationState) => selectOrganization(state).value === undefined;
+export const selectOrganizationLoading = (state: OrganizationState) => {
+    const { value, error } = selectOrganization(state);
+    return value === undefined && error === undefined;
+};
 
 const freeOrganization = {
     Settings: {
