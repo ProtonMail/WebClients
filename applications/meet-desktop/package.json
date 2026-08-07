@@ -62,9 +62,9 @@
         "@electron/fuses": "^1.7.0",
         "@proton/i18n": "workspace:^",
         "@proton/types": "workspace:^",
-        "@sentry/electron": "^7.15.0",
+        "@sentry/electron": "^7.16.0",
         "@types/jest": "^30.0.0",
-        "@types/lodash": "^4.17.24",
+        "@types/lodash": "^4.17.25",
         "@types/node": "^24.13.3",
         "@vercel/webpack-asset-relocator-loader": "1.7.3",
         "cross-env": "^10.1.0",
@@ -76,13 +76,13 @@
         "fork-ts-checker-webpack-plugin": "^9.1.0",
         "jest": "^30.4.2",
         "node-loader": "^2.1.0",
-        "prettier": "3.9.5",
+        "prettier": "3.9.6",
         "style-loader": "^4.0.0",
-        "ts-jest": "^29.4.11",
+        "ts-jest": "^29.4.12",
         "ts-loader": "^9.6.2",
         "ts-node": "^10.9.2",
         "typescript": "^6.0.3",
-        "typescript-eslint": "^8.64.0"
+        "typescript-eslint": "^8.66.0"
     },
     "icon": "assets/icons/icon.png",
     "productName": "Proton Meet"

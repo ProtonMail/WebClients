@@ -19,7 +19,7 @@
         "@protontech/crypto": "*",
         "@types/react": "^18.3.31",
         "cross-env": "^10.1.0",
-        "livekit-client": "2.20.1",
+        "livekit-client": "2.21.0",
         "react": "^18.3.1",
         "ttag": "^1.8.12"
     },
@@ -29,12 +29,12 @@
         "@proton/testing": "workspace:packages/testing",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
-        "@vitejs/plugin-react": "^6.0.3",
+        "@vitejs/plugin-react": "^6.0.5",
         "@vitest/coverage-v8": "^4.1.10",
         "@vitest/ui": "3.2.7",
         "eslint": "^9.39.5",
-        "happy-dom": "^20.10.6",
-        "prettier": "^3.9.5",
+        "happy-dom": "^20.11.1",
+        "prettier": "^3.9.6",
         "typescript": "^6.0.3",
         "vitest": "^4.1.10"
     }
