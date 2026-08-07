@@ -34,6 +34,8 @@ export type WebApiRateLimiterVariant = 'Config';
 export type MaxContactsImportVariant = 'Config';
 export type ShowLiteAppCheckoutV2Variant = 'A' | 'B';
 export type OlesM1Variant = 'Config';
+export type OrganizationLevelEasySwitchVariant = 'Config';
+export type VPNReferralWithoutTrialVariant = 'A' | 'B';
 export type EnableVpn2024AddonsExperimentVariant =
     'lumo-addon-only' | 'meet-addon-only' | 'pass-addon-only' | 'no-addon';
 /**
@@ -74,10 +76,10 @@ type FeatureFlagVariantMap = {
     MaxContactsImport: VariantReturnType<MaxContactsImportVariant>;
     ShowLiteAppCheckoutV2: VariantReturnType<ShowLiteAppCheckoutV2Variant>;
     OlesM1: VariantReturnType<OlesM1Variant>;
+    OrganizationLevelEasySwitch: VariantReturnType<OrganizationLevelEasySwitchVariant>;
     Vpn2024AddonsExperiment: VariantReturnType<EnableVpn2024AddonsExperimentVariant>;
     MeetSpotlightType: VariantReturnType<MeetSpotlightTypeVariant>;
     VPNReferralWithoutTrial: VariantReturnType<VPNReferralWithoutTrialVariant>;
-    B2BAlwaysOnWindowsRelease: VariantReturnType<B2BAlwaysOnWindowsReleaseVariant>;
     CategoryViewVariant: VariantReturnType<CategoryViewVariantVariant>;
 };
 
