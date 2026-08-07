@@ -1325,6 +1325,9 @@
       ],
       "Stop": [
         "停止"
+      ],
+      "Migrate": [
+        "迁移"
       ]
     },
     "Action: Docs": {
@@ -4171,6 +4174,9 @@
       ],
       "Something went wrong": [
         "出了些问题"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
       ]
     },
     "error": {
@@ -7390,6 +7396,12 @@
       ],
       "Thinking about this": [
         "正在深度思考"
+      ],
+      "You": [
+        "您"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "将您的访问权限更改为查看者后，您将无法再共享“${ fileName }”。所有者或具有共享权限的编辑者可以恢复您的编辑权限，您无法自行撤消此更改！"
       ]
     },
     "info": {
@@ -13747,6 +13759,9 @@
       ],
       "Stay for 50% off your next month": [
         "下月继续享受 5 折优惠"
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
+        "我们无法确认此文件内容是由 ${ claimedContentAuthor } 上传的。原因是：${ node.activeRevision.contentAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14370,6 +14385,11 @@
       ],
       "Migrated": [
         "已迁移"
+      ]
+    },
+    "Property": {
+      "key": [
+        "密钥"
       ]
     }
   }

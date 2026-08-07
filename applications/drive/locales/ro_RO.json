@@ -4502,6 +4502,9 @@
       ],
       "You do not have access to this shared item": [
         "Nu aveți acces la acest articol."
+      ],
+      "Something went wrong, please try again later": [
+        "Ceva nu a funcționat bine. Reîncercați mai târziu."
       ]
     },
     "error": {
@@ -7934,6 +7937,15 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
         "Nu veți putea partaja „${ fileName }” după ce vă schimbați accesul la doar vizualizare. Proprietarul sau un editor cu acces de partajare vă poate restabili accesul de editare. Nu puteți anula această modificare personal."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Pentru a migra acest utilizator, activați-i contul din ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Pentru a migra acest utilizator, dezarhivați-l din ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Pentru a migra acest utilizator, anulați-i suspendarea din ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -14810,6 +14822,9 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Utilizatori care și-au accesat contul ${ BRAND_NAME }"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Starea migrării datelor de la ${ providerName } la ${ BRAND_NAME }"
       ]
     },
     "tooltip": {

@@ -4464,6 +4464,9 @@
       ],
       "You do not have access to this shared item": [
         "Bu paylaşılan ögeye erişme izniniz yok"
+      ],
+      "Something went wrong, please try again later": [
+        "Bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin"
       ]
     },
     "error": {
@@ -7812,6 +7815,15 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
         "Görüntüleyiciye erişme izninizi değiştirdikten sonra \"${ fileName }\" dosyasını paylaşamazsınız. Sahibi veya paylaşma izni olan bir düzenleyici, düzenleme izninizi yeniden verebilir. Bu değişikliği siz geri alamazsınız."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını etkinleştirin."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için onu ${ provider.adminConsoleName } üzerindeki arşivden çıkarın."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden kullanıcının askıya alınma durumunu kaldırın."
       ]
     },
     "info": {
@@ -14546,6 +14558,9 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "${ BRAND_NAME } hesaplarına erişen kullanıcılar"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "${ providerName } üzerinden ${ BRAND_NAME } üzerine veri aktarma durumu"
       ]
     },
     "tooltip": {
