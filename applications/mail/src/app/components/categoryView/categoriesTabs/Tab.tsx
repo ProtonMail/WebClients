@@ -33,7 +33,7 @@ interface Props {
 
 const navClasses: Record<TabState, string> = {
     [TabState.ACTIVE]: 'color-norm border-bottom border-top text-semibold mail-category-border',
-    [TabState.DRAGGING_OVER]: 'hovered border border-transparent z-up',
+    [TabState.DRAGGING_OVER]: 'tab-drop-over border border-transparent z-up',
     [TabState.INACTIVE]: 'border border-transparent',
 };
 
@@ -82,7 +82,7 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
             className={clsx(
                 'tab-container h-full text-no-decoration color-hint hover:mail-category-color',
                 navClasses[tabState],
-                shouldShowDragHelper && 'dashed'
+                shouldShowDragHelper && 'tab-drop-target'
             )}
             role="tab"
             aria-selected={tabState === TabState.ACTIVE}
@@ -101,10 +101,11 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
                 />
                 {showNewBadge && <span className="tab-new-dot color-blue-500" aria-hidden="true" />}
             </span>
-            {/* Zero-height copy of the label at its active weight. It is what sizes the label
-                column, so the tab keeps the same width whether it is active or not, and while
-                dragging when the real text spans over the counter. */}
-            <span className="tab-label tab-label-ghost text-sm text-semibold" aria-hidden="true">
+            {/*
+                Copy of the label with the active font weight.
+                Ensures there is no jump when a tab goes from inactive to active.
+            */}
+            <span className="tab-label-ghost text-sm text-semibold" aria-hidden="true">
                 {label}
             </span>
 
