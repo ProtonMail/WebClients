@@ -1033,6 +1033,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Migrate": [
+        "迁移"
       ]
     },
     "action": {
@@ -4151,6 +4154,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "您的 Zoom 连接已过期，请重新连接以继续。"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
       ]
     },
     "error": {
@@ -6655,6 +6661,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已达到预约时段数量上限 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You": [
+        "您"
       ]
     },
     "info": {
@@ -13087,6 +13096,11 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Property": {
+      "key": [
+        "密钥"
       ]
     }
   }
