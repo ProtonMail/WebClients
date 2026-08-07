@@ -9,7 +9,6 @@ import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymen
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/index';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { getHasConsumerVpnPlan } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { DARK_WEB_MONITORING_NAME, DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
@@ -62,20 +61,13 @@ const getMailFeatures = (): PlanCardFeatureDefinition[] => {
     ];
 };
 
-export const useMailPlusFromFreeUpsells = ({
-    app,
-    subscription,
-    plansMap,
-    freePlan,
-    user,
-}: UpsellSectionProps): UpsellsHook => {
+export const useMailPlusFromFreeUpsells = ({ app, plansMap, freePlan, user }: UpsellSectionProps): UpsellsHook => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
 
     const upsellsPayload: GetPlanUpsellArgs = {
         app,
         plansMap,
-        hasVPN: getHasConsumerVpnPlan(subscription),
         freePlan,
         openSubscriptionModal,
         telemetryFlow,
