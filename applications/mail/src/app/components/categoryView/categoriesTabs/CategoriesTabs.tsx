@@ -89,7 +89,7 @@ export const CategoriesTabsList = () => {
                         return (
                             <CategoriesOnboardingSpotlight step={socialTabSpotlightStep} key={category.id}>
                                 <div
-                                    className="tab-wrapper shrink-0"
+                                    className="tab-wrapper"
                                     onDragOver={handleDragOver(category.id)}
                                     onDrop={handleDrop(category.id)}
                                 >
@@ -108,7 +108,7 @@ export const CategoriesTabsList = () => {
                     return (
                         <div
                             key={category.id}
-                            className="tab-wrapper flex-none min-w-0"
+                            className="tab-wrapper"
                             onDragOver={handleDragOver(category.id)}
                             onDrop={handleDrop(category.id)}
                         >
