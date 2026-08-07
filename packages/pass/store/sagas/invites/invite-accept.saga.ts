@@ -30,7 +30,7 @@ function* acceptInviteWorker(options: RootSagaOptions, action: ReturnType<typeof
         yield put(stopEventPolling());
 
         const invite: Maybe<Invite> = yield select(selectInviteByToken(inviteToken));
-        if (!invite) throw new Error(c('Error').t`Unknown invite`);
+        if (!invite) throw new Error(c('Error').t`This invite is no longer available`);
 
         const encryptedShare: ShareGetResponse = yield acceptInvite(payload, invite.keys);
         const share: Maybe<Share> = yield parseShareResponse(encryptedShare);
