@@ -355,6 +355,7 @@ enum LumoFeatureFlag {
     LumoNativeAuth = 'LumoNativeAuth',
     LumoCustomAgents = 'LumoCustomAgents',
     LumoAiPaperTrail = 'LumoAiPaperTrail',
+    LumoAiPaperTrailRoute = 'LumoAiPaperTrailRoute',
     LumoAiPaperTrailPopup = 'LumoAiPaperTrailPopup',
     LumoMaxAvailableGuest = 'LumoMaxAvailableGuest',
     LumoMaxAvailableFree = 'LumoMaxAvailableFree',

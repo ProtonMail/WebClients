@@ -4,6 +4,7 @@ import { deriveCardData } from './reportTypes';
 const validReport = {
     name: 'Alex',
     label: 'Anxious professional, 30s, financially stretched',
+    handle: 'anxious_professional_30s',
     quickFacts: [
         { label: 'Age', value: 'early 30s' },
         { label: 'Education', value: "Master's degree" },
@@ -47,6 +48,7 @@ describe('parsePaperTrailReport', () => {
         const report = parsePaperTrailReport(JSON.stringify(validReport));
         expect(report?.label).toBe(validReport.label);
         expect(report?.name).toBe('Alex');
+        expect(report?.handle).toBe('anxious_professional_30s');
         expect(report?.dataPointCount).toBe(142);
         expect(report?.estimatedValueUsd).toBe(480);
         // Sections with no findings are dropped.
@@ -66,6 +68,17 @@ describe('parsePaperTrailReport', () => {
                 guidance: 'Strip names and use roles instead when asking for help.',
             },
         ]);
+    });
+
+    it('falls back to a label slug when handle is missing', () => {
+        const { handle: _handle, ...withoutHandle } = validReport;
+        const report = parsePaperTrailReport(JSON.stringify(withoutHandle));
+        expect(report?.handle).toBe('anxious_professional_30s');
+    });
+
+    it('sanitizes a handle with a leading @', () => {
+        const report = parsePaperTrailReport(JSON.stringify({ ...validReport, handle: '@tech_savvy_user' }));
+        expect(report?.handle).toBe('tech_savvy_user');
     });
 
     it('parses JSON wrapped in code fences and prose', () => {

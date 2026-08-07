@@ -12,7 +12,7 @@ export const buildPaperTrailPrompt = (context: PaperTrailContext): string => {
     const providerName = context.stats.source === 'claude' ? 'Claude' : 'ChatGPT';
     const { includedPromptCount, totalPromptCount, conversationCount } = context.stats;
 
-    return `I exported my conversation history from ${providerName} and attached the prompts I wrote. Analyse them and reveal my "AI Paper Trail" — the profile a Big Tech AI could build about me from what I typed.
+    return `I exported my conversation history from ${providerName} and attached the prompts I wrote. Analyze them and reveal my "AI Paper Trail" — the profile a Big Tech AI could build about me from what I typed.
 
 The attached export contains ${includedPromptCount} of my ${totalPromptCount} user prompts across ${conversationCount} conversation(s).
 
@@ -27,6 +27,7 @@ Respond with ONLY a single valid JSON object — no markdown, no code fences, no
 {
   "name": string,                   // REQUIRED EFFORT: the person's real name (first, or first + last if known). This is the single most important field — try hard before giving up.
   "label": string,                  // a short identity headline / role, e.g. "Anxious professional, 30s, financially stretched, politically engaged"
+  "handle": string,                 // profile-card @username only — see HANDLE field rules below
   "summary": string,                // 1-2 sentences summarising the profile
   "quickFacts": [                   // 4-7 at-a-glance demographic facts for the top of the profile
     { "label": string, "value": string }   // e.g. {"label":"Age","value":"early 30s (likely)"}, plus Education, Politics, Location, Relationship, Profession, Income — include each only with real signal
@@ -61,6 +62,8 @@ FINDING THE NAME ("name" field) — do this first and thoroughly. Scan every pro
 - names embedded in pasted documents, CVs, calendar invites, or code authored by them
 - a partner's surname or family references that imply their own name
 Reconstruct first and/or last name from these fragments and commit to your single best guess. Only return "" if, after genuinely checking all of the above, there is truly nothing. Put the name in the "name" field (a person's name only — never a job title or archetype).
+
+HANDLE ("handle" field only) — the @username on the profile card. Write it the way a sharp friend would nickname you after skimming your chats: specific, a little teasing, just uncomfortably accurate enough to make someone pause and think "wait… it got all that from what I typed?" Format: 2-4 words, lowercase_with_underscores, no @ prefix, never their real name. Good: "pasted_my_salary_again", "anxious_homeowner_dad", "therapy_and_tax_questions". Bad: "tech_user_42", "concerned_professional". Do not carry this voice into any other field — summary, findings, and everything else stay direct and factual.
 
 For "dataExposure", score these life areas (include each that has any signal, omit ones with none): "Location", "Relationships", "Work", "Education", "Health", "Finances", "Politics", "Identity", "Interests". Be honest: a higher score means they gave away more in that area.
 
