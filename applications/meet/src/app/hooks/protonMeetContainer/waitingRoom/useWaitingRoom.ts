@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
+import { useIsWaitingRoomJoinEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setJoiningInProgress } from '@proton/meet/store/slices/connectionSlice';
 import {
@@ -10,7 +11,6 @@ import {
     selectAdmissionStatus,
     selectIsWaitingRoomHost,
 } from '@proton/meet/store/slices/waitingRoomSlice';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import type { WaitingRoomContextValues } from '../../../contexts/WaitingRoomContext';
 import { useNotifyError } from '../../useNotifyError';
@@ -43,7 +43,7 @@ export const useWaitingRoom = ({
     joinAfterAdmission,
     cleanupJoin,
 }: UseWaitingRoomParams): UseWaitingRoomResult => {
-    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+    const isWaitingRoomJoinEnabled = useIsWaitingRoomJoinEnabled();
 
     const dispatch = useMeetDispatch();
     const notifyError = useNotifyError();
@@ -57,7 +57,7 @@ export const useWaitingRoom = ({
 
     const { admitRequest, rejectRequest, admitAll, toggleWaitingRoom, toggleWaitingRoomPrejoin } = useHostWaitingRoom({
         meetingLinkName,
-        enabled: isWaitingRoomHost && isMeetWaitingRoomEnabled,
+        enabled: isWaitingRoomHost && isWaitingRoomJoinEnabled,
         getSessionKeyBase64,
     });
 
@@ -142,7 +142,7 @@ export const useWaitingRoom = ({
         meetingToken: string,
         { canManageWaitingRoom, waitingRoom }: { canManageWaitingRoom: boolean; waitingRoom: boolean }
     ) => {
-        if (!isMeetWaitingRoomEnabled) {
+        if (!isWaitingRoomJoinEnabled) {
             return { handled: false, isWaitingRoomHostJoin: false };
         }
 

@@ -3,11 +3,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { useIsWaitingRoomJoinEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
 import { selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { selectIsWaitingRoomHost } from '@proton/meet/store/slices/waitingRoomSlice.ts';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useMediaManagementContext } from '../../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -23,7 +23,7 @@ type Props = {
 };
 
 export const AllParticipantsTab = ({ participants, setIsScrolled }: Props) => {
-    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+    const isWaitingRoomJoinEnabled = useIsWaitingRoomJoinEnabled();
 
     const activeSpeakers = useDebouncedActiveSpeakers();
     const { toggleVideo, isVideoEnabled } = useMediaManagementContext();
@@ -31,7 +31,7 @@ export const AllParticipantsTab = ({ participants, setIsScrolled }: Props) => {
 
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
     const meetingLink = useMeetSelector(selectMeetingLink);
-    const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost) && isMeetWaitingRoomEnabled;
+    const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost) && isWaitingRoomJoinEnabled;
 
     return (
         <div className={clsx('flex flex-column flex-nowrap h-full relative', !isWaitingRoomHost && 'pt-4')}>
