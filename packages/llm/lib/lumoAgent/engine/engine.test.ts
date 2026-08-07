@@ -125,6 +125,56 @@ describe('createClientToolExecutor', () => {
             expect(result.content).toContain('THE GUIDE');
         });
 
+        it('resolves a thunk guide ONCE, so the chip shows the same body the model is given', async () => {
+            let resolutions = 0;
+            const thunked = def('thunked_filter', { needsGuide: true, guide: () => `BODY ${++resolutions}` });
+            const { executor, chips } = setup({ definitions: [...DEFINITIONS, thunked] });
+
+            const [result] = await executor.execute([call('load_guide', { guide: 'thunked_filter' })]);
+
+            expect(result.content).toContain('BODY 1');
+            expect(chips[0].payload).toBe('BODY 1');
+        });
+
+        it('unblocks the tool when a thunk guide yields no body, rather than dead-ending the model', async () => {
+            const empty = def('empty_filter', { needsGuide: true, guide: () => '' });
+            const { executor } = setup({ definitions: [...DEFINITIONS, empty] });
+
+            const [result] = await executor.execute([call('load_guide', { guide: 'empty_filter' })]);
+
+            expect(result.is_error).toBeUndefined();
+            expect(executor.getLoadedGuides()).toEqual(['empty_filter']);
+            expect((await executor.getClientTools!()).map((tool) => tool.function.name)).toContain('empty_filter');
+        });
+
+        it('unblocks the tool when a thunk guide throws, instead of aborting the turn', async () => {
+            const broken = def('broken_filter', {
+                needsGuide: true,
+                guide: () => {
+                    throw new Error('deps not ready');
+                },
+            });
+            const { executor } = setup({ definitions: [...DEFINITIONS, broken] });
+
+            const [result] = await executor.execute([call('load_guide', { guide: 'broken_filter' })]);
+
+            expect(result.is_error).toBeUndefined();
+            expect(executor.getLoadedGuides()).toEqual(['broken_filter']);
+        });
+
+        it('does not re-emit a loaded guide, so a thunk cannot put two bodies in one context', async () => {
+            let resolutions = 0;
+            const thunked = def('thunked_filter', { needsGuide: true, guide: () => `BODY ${++resolutions}` });
+            const { executor } = setup({ definitions: [...DEFINITIONS, thunked] });
+
+            await executor.execute([call('load_guide', { guide: 'thunked_filter' })]);
+            const [second] = await executor.execute([call('load_guide', { guide: 'thunked_filter' })]);
+
+            expect(resolutions).toBe(1);
+            expect(second.is_error).toBeUndefined();
+            expect(second.content).not.toContain('BODY');
+        });
+
         it('reports an unknown guide as an error without loading anything', async () => {
             const { executor } = setup();
 
