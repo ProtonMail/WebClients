@@ -938,6 +938,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
+      ],
+      "Migrate": [
+        "迁移"
       ]
     },
     "Actions message": {
@@ -3472,6 +3475,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 无法解密的名称"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
       ]
     },
     "error": {
@@ -5640,6 +5646,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "You": [
+        "您"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "将您的访问权限更改为查看者后，您将无法再共享“${ fileName }”。所有者或具有共享权限的编辑者可以恢复您的编辑权限，您无法自行撤消此更改！"
       ]
     },
     "info": {
@@ -10599,6 +10611,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的试用将于 ${ textDate } 结束。若在 ${ textDate } 前取消，则不会向您收费。${ action }"
+      ]
+    },
+    "Property": {
+      "key": [
+        "密钥"
       ]
     }
   }

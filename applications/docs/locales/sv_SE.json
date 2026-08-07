@@ -943,6 +943,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
+      ],
+      "Migrate": [
+        "Migrera"
       ]
     },
     "Actions message": {
@@ -3553,6 +3556,45 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Odekrypterbart namn"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Kan inte lägga till foto i album utan ett giltigt namn"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan inte verifiera vem som laddade upp denna fil"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunde inte läsa del av denna fil: ${ message }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta"
+      ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Saknar signatur för ${ signatureType }"
+      ],
+      "Only admins can convert external invitations": [
+        "Endast administratörer kan konvertera externa inbjudningar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturverifiering misslyckades: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturverifiering för ${ signatureType } misslyckades: ${ errorMessage }"
+      ],
+      "This file version could not be uploaded": [
+        "Denna filversion kunde inte laddas upp"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan bara ladda upp en ny version till en fil"
       ]
     },
     "error": {
@@ -4385,6 +4427,9 @@
       ],
       "Migrated": [
         "Migrerad"
+      ],
+      "Has errors": [
+        "Har fel"
       ]
     },
     "Import warning": {
@@ -5763,6 +5808,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Find out what can be migrated.": [
+        "Ta reda på vad som kan migreras."
+      ],
+      "No users to display": [
+        "Inga användare att visa"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
+      ],
+      "You": [
+        "Du"
       ]
     },
     "info": {
@@ -9895,6 +9955,18 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Activated": [
+        "Aktiverad"
+      ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "User": [
+        "Användare"
       ]
     },
     "TableHeader": {
@@ -10583,6 +10655,15 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
+      ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
+      "Select users to migrate": [
+        "Välj användare att migrera"
+      ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
       ]
     },
     "Title header for keys table": {
@@ -10917,6 +10998,29 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Aktiverat"
+      ],
+      "All": [
+        "Alla"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Not activated": [
+        "Inte aktiverad"
+      ],
+      "Pending": [
+        "Väntande"
       ]
     }
   }

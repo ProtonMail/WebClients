@@ -938,6 +938,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
+      ],
+      "Migrate": [
+        "이전"
       ]
     },
     "Actions message": {
@@ -3472,6 +3475,90 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 복호화할 수 없는 이름"
+      ],
+      "Cannot share root folder": [
+        "상위 폴더를 공유할 수 없습니다"
+      ],
+      "Cannot verify the author of this file": [
+        "이 파일의 소유자를 확인할 수 없습니다"
+      ],
+      "Could not load sharing details": [
+        "공유 상세 정보를 불러올 수 없음"
+      ],
+      "Could not unlock the parent folder": [
+        "상위 폴더를 잠금할 수 없습니다"
+      ],
+      "Could not unlock this item": [
+        "이 항목을 잠금 해제할 수 없음"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "북마크 비밀번호 복호화 실패: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "콘텐츠 키를 복호화할 수 없습니다: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "항목 이름을 복호화할 수 없음: ${ message }"
+      ],
+      "Image preview not found": [
+        "이미지 미리보기를 사용할 수 없음"
+      ],
+      "Invitation not found": [
+        "초대를 찾을 수 없음"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "기존 공개 링크는 업데이트되지 않습니다. 새로운 공개 링크로 다시 생성해야 합니다."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "구성원 주소를 찾을 수 없습니다. 해당 문제를 해결하기 위해 고객 지원 팀에 문의해 주시기 바랍니다."
+      ],
+      "Missing organization private key": [
+        "조직 비공개 키 유실"
+      ],
+      "Missing organization public key": [
+        "조직 공개 키 유실"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "이름은 최대 ${ MAX_NODE_NAME_LENGTH }글자까지입니다."
+      ],
+      "No file data was received. Please try again.": [
+        "수신된 데이터가 없습니다. 다시 시도하세요."
+      ],
+      "Part of the file appears to be corrupted": [
+        "파일 일부가 손상되었을 가능성이 있습니다"
+      ],
+      "Photo not found": [
+        "사진을 찾을 수 없음"
+      ],
+      "Signature is missing": [
+        "서명이 유실되었습니다"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType }에 대한 서명 인증 실패"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "일부 파일의 데이터 업로드가 실패했습니다. 다시 시도하세요."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "업로드된 파일과 원본 파일이 일치하지 않습니다. 다시 시도해 주세요."
+      ],
+      "This file has no version available to download": [
+        "이 파일에 다운로드할 수 있는 사용 가능한 버전이 없습니다."
+      ],
+      "This item is no longer shared": [
+        "더 이상 공유되지 않는 항목입니다."
+      ],
+      "This item is not shared": [
+        "더 이상 공유되지 않는 항목입니다."
+      ],
+      "Verification keys are not available": [
+        "인증 키를 사용할 수 없습니다"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType }용 인증 키가 사용할 수 없습니다"
+      ],
+      "You do not have access to this item": [
+        "이 항목에 접근할 권한이 없습니디"
       ]
     },
     "error": {
@@ -5637,6 +5724,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "이전하고자 하는 항목을 선택하세요. 모든 조직 구성원들에게 적용됩니다."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "이 사용자를 이전하려면 ${ provider.adminConsoleName }(에)서 해당 사용자를 보관 해제헤야 합니다."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "이 사용자를 이전하려면 ${ provider.adminConsoleName }(에)서 해당 사용자를 정지 취소해야 합니다."
+      ],
+      "You": [
+        "나"
       ]
     },
     "info": {
@@ -9601,6 +9700,9 @@
       ],
       "Type": [
         "유형"
+      ],
+      "Estimated size": [
+        "예상 용량"
       ]
     },
     "TableHeader": {
@@ -10596,6 +10698,25 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate }에 종료됩니다. ${ textDate } 이전에 취소시 요금이 청구되지 않습니다. ${ action }"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "활성화됨"
+      ],
+      "Errors": [
+        "오류"
+      ],
+      "Not activated": [
+        "비활성화됨"
+      ],
+      "Pending": [
+        "대기 중"
+      ]
+    },
+    "Property": {
+      "key": [
+        "키"
       ]
     }
   }

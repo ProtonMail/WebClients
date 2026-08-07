@@ -946,6 +946,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
+      ],
+      "Migrate": [
+        "Migrar"
       ]
     },
     "Actions message": {
@@ -9831,6 +9834,15 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Activated": [
+        "Ativado"
+      ],
+      "Estimated size": [
+        "Tempo estimado"
+      ],
+      "User": [
+        "Usuário"
       ]
     },
     "TableHeader": {
@@ -10853,6 +10865,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Seu período de teste terminará em ${ textDate }. Você não será cobrado se cancelar antes de ${ textDate }. ${ action }"
+      ]
+    },
+    "Filter": {
+      "Errors": [
+        "Errors"
+      ],
+      "Not activated": [
+        "Não ativado"
       ]
     }
   }
