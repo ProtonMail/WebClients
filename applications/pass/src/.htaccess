@@ -14,6 +14,10 @@ RewriteRule ^$ /index.html [NC,L]
 # Hide .git stuff
 RewriteRule ^.*?\.git.* /index.html [NC,L]
 
+# Publicly shareable secure-link pages must never be indexed, regardless of
+# whether a crawler honors robots.txt, so flag them for an X-Robots-Tag header below
+RewriteRule ^secure-link(/|$) - [E=NOINDEX:1]
+
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
@@ -35,6 +39,9 @@ ErrorDocument 404 /assets/404.html
   Header set Service-Worker-Allowed "/"
   Header set Service-Worker "script"
 </Files>
+
+Header set X-Robots-Tag "noindex" env=NOINDEX
+Header set X-Robots-Tag "noindex" env=REDIRECT_NOINDEX
 
 <IfModule mod_deflate.c>
   AddOutputFilter INCLUDES;DEFLATE svg
