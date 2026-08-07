@@ -15,6 +15,9 @@ export const FLAGS_WITH_VARIANT = [
     'OlesM1',
     'Vpn2024AddonsExperiment',
     'MeetSpotlightType',
+    'OrganizationLevelEasySwitch',
+    'VPNReferralWithoutTrial',
+    'CategoryViewVariant',
 ] satisfies FeatureFlag[];
 
 /**
@@ -32,10 +35,20 @@ export type MaxContactsImportVariant = 'Config';
 export type ShowLiteAppCheckoutV2Variant = 'A' | 'B';
 export type OlesM1Variant = 'Config';
 export type EnableVpn2024AddonsExperimentVariant =
-    | 'lumo-addon-only'
-    | 'meet-addon-only'
-    | 'pass-addon-only'
-    | 'no-addon';
+    'lumo-addon-only' | 'meet-addon-only' | 'pass-addon-only' | 'no-addon';
+/**
+ * The important variant for the client is `RecategorizationButton`. Users with this variant will see the move to primary badge.
+ * The other variants are used for other experiments and are here for reference.
+ */
+export type CategoryViewVariantVariant =
+    | 'FeatureAccessOn'
+    | 'PrimaryFiltering45'
+    | 'PrimaryFiltering60'
+    | 'RecategorizationButton'
+    | 'RecategorizationNoButton'
+    | 'BackBucket'
+    | 'GradualRollout'
+    | 'NoAccess';
 
 /**
  * @description Union type of the list of feature flags with a variant.
@@ -63,6 +76,9 @@ type FeatureFlagVariantMap = {
     OlesM1: VariantReturnType<OlesM1Variant>;
     Vpn2024AddonsExperiment: VariantReturnType<EnableVpn2024AddonsExperimentVariant>;
     MeetSpotlightType: VariantReturnType<MeetSpotlightTypeVariant>;
+    VPNReferralWithoutTrial: VariantReturnType<VPNReferralWithoutTrialVariant>;
+    B2BAlwaysOnWindowsRelease: VariantReturnType<B2BAlwaysOnWindowsReleaseVariant>;
+    CategoryViewVariant: VariantReturnType<CategoryViewVariantVariant>;
 };
 
 /**
