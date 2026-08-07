@@ -30,6 +30,13 @@ export const ACCOUNT_URL_RULES: SerializedUrlRule[] = [
 
     // Close-ticket relies on window.close(), which only works in a real browser tab.
     urlRule('account-close-ticket').forSubdomain(ACCOUNT_SUBDOMAIN).pathExact('/close-ticket').build(),
+
+    // Join-org invite opens in the browser.
+    urlRule('account-join-org-invite')
+        .forSubdomain(ACCOUNT_SUBDOMAIN)
+        .pathIncludes('/join-org')
+        .withAnyHashParam(['t'])
+        .build(),
 ];
 
 /**
