@@ -1,19 +1,20 @@
 import { useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { setMeetingInfo } from '@proton/meet/store/slices/meetingInfo';
-import { setWaitingRoomSetting } from '@proton/meet/store/slices/settings';
+import { setCurrentMeeting, setNavigationSeed } from '@proton/meet/store/slices/currentMeeting';
+import { meetingInfoThunk } from '@proton/meet/store/slices/meetingInfoModel';
+import { hydrateMeetingPolicies, setWaitingRoomSetting } from '@proton/meet/store/slices/settings';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import type { JoinLocationState } from '../../types';
-import { getPreloadedMeetingDetails } from '../../utils/meetingDetailsPreload';
-import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 
 /**
- * Resolves the meeting details for the prejoin and puts them in the redux store.
+ * Resolves the meeting info for the prejoin.
  *
- * The request is normally already in flight from the bootstrap preload, so this awaits that cache and
- * only falls back to the API when it is missing or failed.
+ * The request is normally already in flight from the bootstrap preload, so dispatching the thunk here
+ * hits the cache instead of firing a second one.
  */
 export const useMeetingInfoHydration = ({
     meetingLinkName,
@@ -26,7 +27,7 @@ export const useMeetingInfoHydration = ({
 }) => {
     const dispatch = useMeetDispatch();
 
-    const { getMeetingDetails, initHandshake } = useMeetingAuthentication();
+    const { reportMeetError } = useMeetErrorReporting();
 
     // Check meeting details from the join state, only exist when navigating from the dashboard.
     const { state: joinState } = useLocation<JoinLocationState | undefined>();
@@ -34,58 +35,46 @@ export const useMeetingInfoHydration = ({
 
     useLayoutEffect(() => {
         if (instantMeeting) {
-            dispatch(setMeetingInfo({ isMeetingLoading: false }));
+            dispatch(setCurrentMeeting({ isMeetingLoading: false }));
             return;
         }
 
         if (navigationDetails) {
             dispatch(
-                setMeetingInfo({
+                setNavigationSeed({
                     meetingName: navigationDetails.meetingName,
                     isPersonalRoom: navigationDetails.isPersonalRoom,
                     canManageWaitingRoom: navigationDetails.canManageWaitingRoom,
-                    isMeetingLoading: false,
                 })
             );
+            dispatch(setCurrentMeeting({ isMeetingLoading: false }));
             dispatch(setWaitingRoomSetting(navigationDetails.waitingRoom));
         }
 
         if (!meetingPassword) {
-            dispatch(setMeetingInfo({ isMeetingLoading: false }));
+            dispatch(setCurrentMeeting({ isMeetingLoading: false }));
             return;
         }
 
-        const fetchFromApi = async () => {
-            const handshakeInfo = await initHandshake(meetingLinkName);
-            return getMeetingDetails({
-                urlPassword: meetingPassword,
-                token: meetingLinkName,
-                handshakeInfo,
-            });
-        };
-
-        const resolveMeetingDetails = async () => {
+        const resolveMeetingInfo = async () => {
             try {
-                const preloaded = await getPreloadedMeetingDetails(meetingLinkName)?.catch(() => undefined);
+                const { meetingInfo } = await dispatch(meetingInfoThunk({ meetingLinkName, meetingPassword }));
 
-                const { roomName, isPersonalRoom, waitingRoom, canManageWaitingRoom } =
-                    preloaded ?? (await fetchFromApi());
+                dispatch(hydrateMeetingPolicies(meetingInfo));
+            } catch (error: any) {
+                if (!error?.userNotified) {
+                    const { code, message } = getApiError(error);
 
-                dispatch(setMeetingInfo({ meetingName: roomName, isPersonalRoom, canManageWaitingRoom }));
-                dispatch(setWaitingRoomSetting(waitingRoom));
+                    reportMeetError(`Failed to resolve meeting info: ${code} - ${message}`, {
+                        context: { error },
+                        tags: { meetingLinkName },
+                    });
+                }
             } finally {
-                dispatch(setMeetingInfo({ isMeetingLoading: false }));
+                dispatch(setCurrentMeeting({ isMeetingLoading: false }));
             }
         };
 
-        void resolveMeetingDetails();
-    }, [
-        dispatch,
-        getMeetingDetails,
-        initHandshake,
-        instantMeeting,
-        navigationDetails,
-        meetingPassword,
-        meetingLinkName,
-    ]);
+        void resolveMeetingInfo();
+    }, [dispatch, instantMeeting, navigationDetails, meetingPassword, meetingLinkName, reportMeetError]);
 };
