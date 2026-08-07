@@ -19,8 +19,12 @@ import useUserActivityTelemetry from './useUserActivityTelemetry';
 const wrapperClassName = 'flex flex-column items-center text-center gap-2 color-weak mx-auto p-6 max-w-custom';
 
 const UpsellPrompt = () => {
-    const { trackConnectionUpsellShown, trackConnectionUpsellLearnMoreClicked, trackConnectionUpsellUpgradeStarted } =
-        useUserActivityTelemetry();
+    const {
+        trackConnectionUpsellShown,
+        trackConnectionUpsellLearnMoreClicked,
+        trackConnectionUpsellUpgradeStarted,
+        trackConnectionUpsellUpgradeSuccess,
+    } = useUserActivityTelemetry();
     const [openSubscriptionModal, loadingSubscription] = useSubscriptionModal();
     const [upsellModalProps, setUpsellModalOpen, renderUpsellModal] = useModalState();
 
@@ -54,6 +58,7 @@ const UpsellPrompt = () => {
                         void openSubscriptionModal({
                             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
                             defaultAudience: Audience.B2B,
+                            onSubscribed: trackConnectionUpsellUpgradeSuccess,
                         });
                     }}
                 />
