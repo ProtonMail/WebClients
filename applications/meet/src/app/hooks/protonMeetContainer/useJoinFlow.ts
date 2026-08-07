@@ -6,32 +6,32 @@ import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import type { SRPHandshakeInfo } from '@proton/meet/api/meetSrpRequests';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setJoinedRoom, setJoiningInProgress } from '@proton/meet/store/slices/connectionSlice';
-import { setMeetingInfo } from '@proton/meet/store/slices/meetingInfo';
+import { setCurrentMeeting } from '@proton/meet/store/slices/currentMeeting';
+import { meetingInfoThunk, refreshMeetingInfoThunk } from '@proton/meet/store/slices/meetingInfoModel';
 import { setIsGuestAdmin } from '@proton/meet/store/slices/participants/participantsSlice';
-import { selectWaitingRoomSetting, setMeetingLocked, setWaitingRoomSetting } from '@proton/meet/store/slices/settings';
+import { hydrateMeetingPolicies, selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { setMeetingReadyPopupOpen } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest, selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { deriveEncryptionKeyFromSessionKey, encryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { SECOND } from '@proton/shared/lib/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { getIceCandidateInfo } from '../../utils/checkIfUsingTurnRelay';
-import { getPreloadedMeetingInfo } from '../../utils/meetingDetailsPreload';
-import type { SRPHandshakeInfo } from '../srp/useMeetSrp';
-import type { useMeetingSetup } from '../srp/useMeetingSetup';
+import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import { logJoinStats } from '../telemetry/meetingTelemetry';
 import { getUrlWithoutProtocol } from '../telemetry/utils';
 import { isConnectionTimeoutError } from '../useLiveKitConnection';
@@ -40,8 +40,6 @@ import { useStableCallback } from '../useStableCallback';
 import type { ConnectWithMlsResult, UseMeetingConnectionResult } from './useMeetingConnection';
 import { useSessionKey } from './useSessionKey';
 import { useWaitingRoom } from './waitingRoom/useWaitingRoom';
-
-type MeetingSetup = ReturnType<typeof useMeetingSetup>;
 
 interface UseJoinFlowParams {
     token: string;
@@ -52,7 +50,6 @@ interface UseJoinFlowParams {
     websocketUrlRef: MutableRefObject<string | null>;
     decryptionKeyRef: MutableRefObject<CryptoKey | null>;
     accessTokenRef: MutableRefObject<string | null>;
-    meetingInfoRef: MutableRefObject<MeetingInfoResponse | null>;
     meetingLinkRef: MutableRefObject<string | null>;
     meetingLinkNameRef: MutableRefObject<string>;
     isExpiringRef: MutableRefObject<boolean>;
@@ -60,12 +57,10 @@ interface UseJoinFlowParams {
     setIsWebRtcUnsupportedModalOpen: Dispatch<SetStateAction<boolean>>;
     setIsMeetingLockedModalOpen: Dispatch<SetStateAction<boolean>>;
     setIsConnectionFailedModalOpen: Dispatch<SetStateAction<boolean>>;
-    getMeetingDetails: MeetingSetup['getMeetingDetails'];
-    getAccessDetails: MeetingSetup['getAccessDetails'];
-    initHandshake: MeetingSetup['initHandshake'];
-    getMeetingInfo: MeetingSetup['getMeetingInfo'];
     isUsingTurnRelay: boolean;
-    handleHandshakeInfoFetch: (token: string) => Promise<{ handshakeInfo?: unknown; readyToDecrypt?: boolean }>;
+    handleHandshakeInfoFetch: (
+        token: string
+    ) => Promise<{ handshakeInfo: SRPHandshakeInfo; readyToDecrypt: boolean } | undefined>;
     reportMeetError: ReportMeetError;
     withMeetingLinkNameTag: (options?: unknown) => unknown;
     displayName: string;
@@ -157,7 +152,6 @@ export const useJoinFlow = ({
     websocketUrlRef,
     decryptionKeyRef,
     accessTokenRef,
-    meetingInfoRef,
     meetingLinkRef,
     meetingLinkNameRef,
     isExpiringRef,
@@ -165,10 +159,6 @@ export const useJoinFlow = ({
     setIsWebRtcUnsupportedModalOpen,
     setIsMeetingLockedModalOpen,
     setIsConnectionFailedModalOpen,
-    getMeetingDetails,
-    getAccessDetails,
-    initHandshake,
-    getMeetingInfo,
     isUsingTurnRelay,
     handleHandshakeInfoFetch,
     reportMeetError,
@@ -178,6 +168,7 @@ export const useJoinFlow = ({
     disallowHealthCheck,
 }: UseJoinFlowParams): UseJoinFlowResult => {
     const dispatch = useMeetDispatch();
+    const { getAccessDetails, initHandshake } = useMeetingAuthentication();
     const room = useRoomContext();
     const history = useHistory();
     const meetCoreClient = useMeetCoreClient();
@@ -194,22 +185,7 @@ export const useJoinFlow = ({
     const joinBlockedRef = useRef(false);
     const loadingStartTimeRef = useRef(0);
 
-    const getCachedMeetingInfo = useCallback(
-        async (meetingLinkName: string, forceRefresh = false) => {
-            if (meetingInfoRef.current && !forceRefresh) {
-                return meetingInfoRef.current;
-            }
-            const preloaded = !forceRefresh
-                ? await getPreloadedMeetingInfo(meetingLinkName)?.catch(() => undefined)
-                : undefined;
-            const info = preloaded ?? (await getMeetingInfo(meetingLinkName));
-            meetingInfoRef.current = info;
-            return info;
-        },
-        [getMeetingInfo, meetingInfoRef]
-    );
-
-    const { getSessionKey, getSessionKeyBase64 } = useSessionKey({ getCachedMeetingInfo, urlPassword });
+    const { getSessionKey, getSessionKeyBase64 } = useSessionKey({ urlPassword });
 
     const updateAccessToken = (accessToken: string) => {
         accessTokenRef.current = accessToken;
@@ -375,37 +351,25 @@ export const useJoinFlow = ({
                 return;
             }
 
-            const { roomName, locked, maxDuration, maxParticipants, waitingRoom, canManageWaitingRoom } =
-                await getMeetingDetails({
-                    token: id,
-                    urlPassword: passwordBase,
-                    handshakeInfo: handshakeResult.handshakeInfo as SRPHandshakeInfo,
-                });
-
-            dispatch(
-                setMeetingInfo({
+            const { meetingInfo } = await dispatch(
+                meetingInfoThunk({
                     meetingLinkName: id,
                     meetingPassword: passwordBase,
-                    meetingName: roomName,
-                    maxDuration,
-                    maxParticipants,
-                    canManageWaitingRoom,
+                    handshakeInfo: handshakeResult.handshakeInfo,
                 })
             );
-            dispatch(setMeetingLocked(locked));
-            dispatch(setWaitingRoomSetting(waitingRoom));
+
+            const waitingRoom = !!meetingInfo.WaitingRoom;
+
+            dispatch(setCurrentMeeting({ meetingLinkName: id, meetingPassword: passwordBase }));
+            dispatch(hydrateMeetingPolicies(meetingInfo));
             dispatch(setMeetingReadyPopupOpen(true));
 
             await handleJoin(displayName, id, passwordBase, waitingRoom);
 
-            // Force refresh the meeting info to get the latest expiration time
-            const meetingInfo = await getCachedMeetingInfo(id, true);
+            // ExpirationTime only exists once the meeting started
+            await dispatch(refreshMeetingInfoThunk({ meetingLinkName: id, meetingPassword: passwordBase }));
 
-            dispatch(
-                setMeetingInfo({
-                    expirationTime: SECOND * (meetingInfo.MeetingInfo.ExpirationTime ?? 0),
-                })
-            );
             dispatch(setIsGuestAdmin(isGuest));
 
             history.push(getMeetingLink(id, passwordBase));
@@ -528,31 +492,18 @@ export const useJoinFlow = ({
                 return;
             }
 
-            let details = {
-                meetingName: '',
-                locked: false,
-                maxDuration: 0,
-                maxParticipants: 0,
-                waitingRoom: false,
-                canManageWaitingRoom: false,
-            };
+            let meetingInfo;
 
             try {
-                const { roomName, locked, maxDuration, maxParticipants, waitingRoom, canManageWaitingRoom } =
-                    await getMeetingDetails({
-                        token: meetingToken,
-                        urlPassword,
-                        handshakeInfo: handshakeInfo as SRPHandshakeInfo,
-                    });
-
-                details = {
-                    meetingName: roomName,
-                    locked,
-                    maxDuration,
-                    maxParticipants,
-                    waitingRoom,
-                    canManageWaitingRoom,
-                };
+                // Not cached: the join needs a fresh meeting session, not just the data
+                ({ meetingInfo } = await dispatch(
+                    meetingInfoThunk({
+                        meetingLinkName: meetingToken,
+                        meetingPassword: urlPassword,
+                        handshakeInfo,
+                        cache: CacheType.None,
+                    })
+                ));
             } catch (error: any) {
                 dispatch(setJoiningInProgress(false));
                 joinBlockedRef.current = false;
@@ -562,21 +513,11 @@ export const useJoinFlow = ({
                 return;
             }
 
-            dispatch(
-                setMeetingInfo({
-                    meetingName: details.meetingName,
-                    maxDuration: details.maxDuration,
-                    maxParticipants: details.maxParticipants,
-                    canManageWaitingRoom: details.canManageWaitingRoom,
-                })
-            );
-
-            dispatch(setMeetingLocked(details.locked));
-            dispatch(setWaitingRoomSetting(details.waitingRoom));
+            dispatch(hydrateMeetingPolicies(meetingInfo));
 
             const waitingRoom = await beginWaitingRoomJoin(meetingToken, {
-                canManageWaitingRoom: details.canManageWaitingRoom,
-                waitingRoom: details.waitingRoom,
+                canManageWaitingRoom: !!meetingInfo.ManageWaitingRoom,
+                waitingRoom: !!meetingInfo.WaitingRoom,
             });
             if (waitingRoom.handled) {
                 // Guest is now in the waiting room; the real join happens after the host admits them.
@@ -587,10 +528,8 @@ export const useJoinFlow = ({
 
             await handleJoin(displayName, meetingToken, urlPassword, waitingRoom.isWaitingRoomHostJoin);
 
-            // Force refresh the meeting info to get the latest expiration time
-            const meetingInfo = await getCachedMeetingInfo(meetingToken, true);
-
-            dispatch(setMeetingInfo({ expirationTime: SECOND * (meetingInfo.MeetingInfo.ExpirationTime ?? 0) }));
+            // ExpirationTime only exists once the meeting started
+            await dispatch(refreshMeetingInfoThunk({ meetingLinkName: meetingToken, meetingPassword: urlPassword }));
         } catch (error: any) {
             reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
             dispatch(setJoiningInProgress(false));
