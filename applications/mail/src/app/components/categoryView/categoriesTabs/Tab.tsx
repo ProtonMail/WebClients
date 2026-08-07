@@ -74,19 +74,20 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
 
     const navigateTo = setCategoryInUrl(category.id);
     const shouldShowDragHelper = userIsDragging && tabState !== TabState.ACTIVE;
+    const label = getLabelFromCategoryId(category.id);
 
     return (
         <Link
             to={navigateTo}
             className={clsx(
-                'tab-container h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
+                'tab-container h-full text-no-decoration color-hint hover:mail-category-color',
                 navClasses[tabState],
                 shouldShowDragHelper && 'dashed'
             )}
             role="tab"
             aria-selected={tabState === TabState.ACTIVE}
             title={getTitleFromCategoryId(category.id)}
-            aria-label={getLabelFromCategoryId(category.id)}
+            aria-label={label}
             data-testid={`category-tab-${category.id}`}
             data-color={tabState === TabState.INACTIVE ? undefined : category.colorShade}
             onClick={handleClick}
@@ -100,14 +101,21 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
                 />
                 {showNewBadge && <span className="tab-new-dot color-blue-500" aria-hidden="true" />}
             </span>
-            <span className="flex flex-column justify-center min-w-0">
+            {/* Zero-height copy of the label at its active weight. It is what sizes the label
+                column, so the tab keeps the same width whether it is active or not, and while
+                dragging when the real text spans over the counter. */}
+            <span className="tab-label tab-label-ghost text-sm text-semibold" aria-hidden="true">
+                {label}
+            </span>
+
+            <span className="tab-text flex flex-column justify-center min-w-0">
                 <span
                     className={clsx(
                         'tab-label text-sm text-ellipsis min-w-0',
                         tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak'
                     )}
                 >
-                    {getLabelFromCategoryId(category.id)}
+                    {label}
                 </span>
                 {shouldShowDragHelper ? (
                     // translator: As concise as possible, under 20 characters if possible
