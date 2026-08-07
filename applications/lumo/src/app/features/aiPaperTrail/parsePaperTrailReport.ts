@@ -1,12 +1,13 @@
 import type { PaperTrailAnalysisResult } from './analysisTypes';
-import type {
-    PaperTrailComplianceRisk,
-    PaperTrailExposure,
-    PaperTrailFact,
-    PaperTrailFinding,
-    PaperTrailReport,
-    PaperTrailRiskLevel,
-    PaperTrailSection,
+import {
+    type PaperTrailComplianceRisk,
+    type PaperTrailExposure,
+    type PaperTrailFact,
+    type PaperTrailFinding,
+    type PaperTrailReport,
+    type PaperTrailRiskLevel,
+    type PaperTrailSection,
+    resolveProfileHandle,
 } from './reportTypes';
 
 const toStr = (value: unknown): string => (typeof value === 'string' ? value.trim() : '');
@@ -126,6 +127,7 @@ const parseReportFields = (raw: Record<string, unknown>): PaperTrailReport | und
     return {
         name: toStr(raw.name),
         label,
+        handle: resolveProfileHandle(toStr(raw.handle), label),
         quickFacts: parseFacts(raw.quickFacts),
         summary: toStr(raw.summary),
         dataPointCount: toNumber(raw.dataPointCount),

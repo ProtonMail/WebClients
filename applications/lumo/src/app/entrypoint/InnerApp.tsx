@@ -24,14 +24,14 @@ const AllChatsView = lazy(() => import('../features/allChats/AllChatsView').then
 
 export function InnerApp() {
     const { url } = useRouteMatch(); // either "/guest" or "/u/:sessionId"
-    const { apiKeyManagement, imageTools, aiPaperTrail } = useLumoFlags();
+    const { apiKeyManagement, imageTools, aiPaperTrailRoute } = useLumoFlags();
 
     return (
         <PandocProvider>
             <Router basename={url}>
                 <Switch>
                     {/* Standalone full-screen experience, rendered without the Lumo sidebar/header. */}
-                    {aiPaperTrail && (
+                    {aiPaperTrailRoute && (
                         <Route exact path={LUMO_ROUTES.AI_PAPER_TRAIL}>
                             <GhostChatProvider>
                                 <Suspense fallback={<ConversationSkeleton />}>
