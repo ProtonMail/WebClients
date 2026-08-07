@@ -45,11 +45,6 @@ $tab-dot-ease: easing(ease-out-quint);
 			}
 		}
 
-		// The top border reserves space but should be transparent when the tab is active
-		&.active {
-			border-block-start: rem(3) solid transparent !important;
-		}
-
 		// Border drawn while the user drags an element: dashed on the tabs that can receive
 		// the drop, solid and colored on the tab currently dragged over.
 		&.dashed::after,
@@ -80,6 +75,10 @@ $tab-dot-ease: easing(ease-out-quint);
 		}
 
 		&[aria-selected='true'] {
+			// The top border reserves space but should be transparent on the active tab, which
+			// is the one drawing the colored bottom border. `!important` beats `.border-top`.
+			border-block-start: rem(3) solid transparent !important;
+
 			.tab-label,
 			.tag-count {
 				display: block;

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -32,7 +32,7 @@ interface Props {
 }
 
 const navClasses: Record<TabState, string> = {
-    [TabState.ACTIVE]: 'active color-norm border-bottom border-top text-semibold mail-category-border',
+    [TabState.ACTIVE]: 'color-norm border-bottom border-top text-semibold mail-category-border',
     [TabState.DRAGGING_OVER]: 'hovered border border-transparent z-up',
     [TabState.INACTIVE]: 'border border-transparent',
 };
@@ -76,7 +76,7 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
     const shouldShowDragHelper = userIsDragging && tabState !== TabState.ACTIVE;
 
     return (
-        <NavLink
+        <Link
             to={navigateTo}
             className={clsx(
                 'tab-container h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
@@ -116,6 +116,6 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
             </span>
 
             <TabBadge count={count} tabState={tabState} shouldShowCounter={shouldShowCounter} />
-        </NavLink>
+        </Link>
     );
 };
