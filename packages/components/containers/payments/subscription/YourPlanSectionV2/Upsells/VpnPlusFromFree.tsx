@@ -8,7 +8,6 @@ import useApi from '@proton/components/hooks/useApi';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { getHasConsumerVpnPlan } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
@@ -129,7 +128,6 @@ const getVPNUpsell = ({
 export const useVpnPlusFromFreeUpsells = ({
     show24MonthPlan,
     app,
-    subscription,
     plansMap,
     freePlan,
     user,
@@ -141,7 +139,6 @@ export const useVpnPlusFromFreeUpsells = ({
     const upsellsPayload: GetPlanUpsellArgs & { api: Api; user: User } = {
         app,
         plansMap,
-        hasVPN: getHasConsumerVpnPlan(subscription),
         freePlan,
         openSubscriptionModal,
         telemetryFlow,

@@ -35,7 +35,6 @@ import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymen
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/index';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { getHasConsumerVpnPlan } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { DASHBOARD_UPSELL_PATHS, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
@@ -103,7 +102,6 @@ const getWorkspacePremiumUpsellFeatures = (maxSpace: number, maxDomains: number)
 
 export const useMeetProfessionalFromFreeUpsells = ({
     app,
-    subscription,
     plansMap,
     freePlan,
     user,
@@ -118,7 +116,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
     const upsellsPayload: GetPlanUpsellArgs = {
         app,
         plansMap,
-        hasVPN: getHasConsumerVpnPlan(subscription),
         freePlan,
         openSubscriptionModal,
         telemetryFlow,

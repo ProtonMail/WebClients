@@ -19,7 +19,7 @@ import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
 import { getPricePerCycle } from '@proton/payments/core/price-helpers';
-import { getHasConsumerVpnPlan, getNormalCycleFromCustomCycle } from '@proton/payments/core/subscription/helpers';
+import { getNormalCycleFromCustomCycle } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -212,7 +212,6 @@ const UnlimitedProductCards = ({ plansMap, freePlan }: { plansMap: PlansMap; fre
 };
 
 export const useUnlimitedBannerGradientUpsells = ({
-    subscription,
     app,
     plansMap,
     freePlan,
@@ -232,7 +231,6 @@ export const useUnlimitedBannerGradientUpsells = ({
     const upsellsPayload: GetPlanUpsellArgs = {
         app,
         plansMap,
-        hasVPN: getHasConsumerVpnPlan(subscription),
         freePlan,
         openSubscriptionModal,
         telemetryFlow,

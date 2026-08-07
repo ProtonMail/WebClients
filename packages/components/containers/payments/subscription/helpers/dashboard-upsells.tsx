@@ -12,7 +12,6 @@ import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan
 import { getPrice } from '@proton/payments/core/price-helpers';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
-    getHasConsumerVpnPlan,
     hasBundle,
     hasBundlePro,
     hasBundlePro2024,
@@ -217,7 +216,6 @@ type GetUpsellArgs = {
 
 export type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'> & {
     hasPaidMail?: boolean;
-    hasVPN: boolean;
     hasUsers?: boolean;
     hasDriveBusinessPlan?: boolean;
     openSubscriptionModal: OpenSubscriptionModalCallback;
@@ -818,7 +816,6 @@ export const resolveUpsellsToDisplay = ({
         const upsellsPayload = {
             app,
             plansMap,
-            hasVPN: getHasConsumerVpnPlan(subscription),
             freePlan,
             telemetryFlow,
             ...rest,
