@@ -104,8 +104,13 @@ export interface ToolDefinition<Params = any, Result = any> {
      * {@link paramsSchema} enters the active tool list) once the model pulls the guide via `load_guide`.
      */
     needsGuide?: boolean;
-    /** The full usage doc, injected into context only when the tool's guide is loaded. */
-    guide?: string;
+    /**
+     * The full usage doc, injected into context only when the tool's guide is loaded. A thunk when the
+     * body depends on state that can change mid-conversation: it is resolved on the `load_guide` call and
+     * on each system-prompt build (one per user message, not per round). A thunk that throws or returns
+     * nothing unblocks its tool without a body.
+     */
+    guide?: string | (() => string);
     /** JSON schema for this tool's params — the single source of truth for both the tool descriptor's
      *  `parameters` and the validation middleware. Kept `$ref`-free with `additionalProperties: false`. */
     paramsSchema: JSONSchema;

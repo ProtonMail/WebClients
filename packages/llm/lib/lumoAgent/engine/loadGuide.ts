@@ -2,11 +2,24 @@ import type { ToolDefinition, ToolName } from '../contracts/types';
 
 export const LOAD_GUIDE_TOOL_NAME = 'load_guide';
 
+/** Reads a definition's {@link ToolDefinition.guide}. A thunk is product code, so a throw degrades to "no body". */
+export const resolveGuide = (definition: ToolDefinition): string | undefined => {
+    if (typeof definition.guide !== 'function') {
+        return definition.guide;
+    }
+    try {
+        return definition.guide();
+    } catch {
+        return undefined;
+    }
+};
+
 /**
  * The framework's own tool, derived from whichever registered tools carry a guide. It has no product
  * handler — {@link createClientToolExecutor} intercepts the call. `undefined` when nothing needs a guide.
  */
 export const createLoadGuideDefinition = (definitions: ToolDefinition[]): ToolDefinition | undefined => {
+    // Presence, not resolution: a thunk's body depends on live state and this catalogue is built once.
     const guidedTools: ToolName[] = definitions
         .filter((definition) => definition.needsGuide && definition.guide)
         .map((definition) => definition.name);
