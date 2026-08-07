@@ -1,11 +1,13 @@
 /**
- * A fake elements store for the navigation reads, deriving its params from a URL exactly as `useElements`
- * does — so the settle predicate and the handlers are exercised against the real URL vocabulary rather
- * than a hand-built params object. Shared by the `waitForListSettled` unit tests and the `open_folder` /
- * `search` handler tests.
+ * Shared fixtures for the navigation reads. The fake elements store derives its params from a URL exactly
+ * as `useElements` does — so the settle predicate and the handlers are exercised against the real URL
+ * vocabulary rather than a hand-built params object. Used by the `waitForListSettled` unit tests and the
+ * `open_folder` / `search` / content-coverage tests.
  */
 import { createLocation } from 'history';
 
+import { defaultESStatus } from '@proton/encrypted-search/constants';
+import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -18,6 +20,18 @@ import type { ElementsState } from 'proton-mail/store/elements/elementsTypes';
 import type { ToolStore } from '../toolModule';
 
 export const locationFor = (labelID: string, hash = '') => createLocation(`/${labelID}${hash && `#${hash}`}`);
+
+/**
+ * A device with Encrypted Search present, on and fully indexed — the state every content-coverage case
+ * degrades from. Built off the production default so a new `ESStatusBooleans` field can never be missed.
+ */
+export const indexedESStatus = (overrides: Partial<ESStatusBooleans> = {}): ESStatusBooleans => ({
+    ...defaultESStatus,
+    dbExists: true,
+    esEnabled: true,
+    contentIndexingDone: true,
+    ...overrides,
+});
 
 interface SettledView {
     labelID: string;
