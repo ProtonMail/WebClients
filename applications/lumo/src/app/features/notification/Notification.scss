@@ -35,6 +35,14 @@ im.$media-expressions: $media-expressions;
 	animation: notif-slide-down 0.28s cubic-bezier(0.4, 0, 1, 1) both;
 }
 
+// Placement used whenever the bottom-end corner is unavailable: a full-width
+// banner pinned to the top with a small gap all around.
+@mixin top-banner {
+	inline-size: auto;
+	inset-block: 10px auto;
+	inset-inline: 10px;
+}
+
 .notification-panel {
 	inline-size: 320px;
 	background: var(--background-norm);
@@ -49,11 +57,19 @@ im.$media-expressions: $media-expressions;
 
 	// On small screens, stretch into a full-width top banner with a small gap all around.
 	@include im.media('<=small') {
-		inline-size: auto;
+		@include top-banner;
+	}
 
-		// inset-block: calc(10px + env(safe-area-inset-top, 0px)) auto;
-		inset-block: 10px auto;
-		inset-inline: 10px;
+	// The native composer is drawn over the bottom of the WebView, so the bottom-end
+	// corner is covered on large screens too. Use the same top banner there, but
+	// anchored to the chat column (the nearest positioned ancestor) instead of the
+	// viewport, so it lines up with the composer instead of running under the sidebar.
+	&--native-composer {
+		@include im.media('>small') {
+			position: absolute;
+
+			@include top-banner;
+		}
 	}
 }
 

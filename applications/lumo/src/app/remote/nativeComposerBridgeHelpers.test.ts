@@ -4,6 +4,7 @@ import {
     onNativeSelectCustomLumo,
     setNativeCustomLumos,
     setNativeSelectedCustomLumo,
+    setNativeSidebarLayout,
 } from './nativeComposerBridgeHelpers';
 
 describe('nativeComposerBridgeHelpers - custom lumos', () => {
@@ -64,5 +65,30 @@ describe('nativeComposerBridgeHelpers - custom lumos', () => {
         unsubscribe();
         window.dispatchEvent(new CustomEvent('lumo:clearCustomLumo'));
         expect(handler).toHaveBeenCalledTimes(1);
+    });
+});
+
+describe('nativeComposerBridgeHelpers - sidebar layout', () => {
+    afterEach(() => {
+        jest.restoreAllMocks();
+    });
+
+    it('forwards the layout to the bridge instance when available', () => {
+        const spy = jest.spyOn((window as any).nativeComposerApiInstance, 'setSidebarLayout');
+
+        setNativeSidebarLayout({ width: 300, animationDurationMs: 300 });
+        expect(spy).toHaveBeenCalledWith({ width: 300, animationDurationMs: 300 });
+
+        setNativeSidebarLayout(null);
+        expect(spy).toHaveBeenCalledWith(null);
+    });
+
+    it('is a no-op when the bridge is unavailable', () => {
+        const original = (window as any).nativeComposerApiInstance;
+        delete (window as any).nativeComposerApiInstance;
+
+        expect(() => setNativeSidebarLayout(null)).not.toThrow();
+
+        (window as any).nativeComposerApiInstance = original;
     });
 });

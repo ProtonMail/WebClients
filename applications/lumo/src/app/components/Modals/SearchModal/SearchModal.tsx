@@ -16,6 +16,7 @@ import { useLumoSelector } from '../../../redux/hooks';
 import { SearchService } from '../../../services/search/searchService';
 import type { SearchResult } from '../../../services/search/types';
 import type { Attachment } from '../../../types';
+import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { FilePreviewPanel } from '../../Files/Common/FilePreviewPanel';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { ProjectIcon as ProjectIconComponent } from '../../ProjectIcon/ProjectIcon';
@@ -196,6 +197,10 @@ interface SearchModalInnerProps {
 }
 
 const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
+    // The search overlay covers the whole viewport, including the area the native
+    // composer is drawn over on large screens. Hide it while the modal is mounted.
+    useNativeComposerVisibilityApi({ isBlocking: true });
+
     const history = useHistory();
     const [user] = useUser();
     const { hasLumoPlus } = useLumoPlan();

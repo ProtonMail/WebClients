@@ -56,6 +56,24 @@ export const canUseNativeEditMode = (): boolean => {
 };
 
 /**
+ * Returns true if the native app understands `State.sidebar` and can lay its composer out
+ * around the sidebar. Older clients would render a full-width composer over an expanded
+ * sidebar, so they keep the previous behavior (composer only when the sidebar is collapsed).
+ *
+ * iOS has no target version yet — the gate stays closed there until native support ships.
+ */
+export const canUseNativeSidebarLayout = (): boolean => {
+    const appInfo = getNativeAppInfo();
+    if (!appInfo) {
+        return false;
+    }
+
+    const targetVersion = appInfo.platform === 'android' ? '2.0.4' : null;
+
+    return targetVersion !== null && !isNativeVersionOlderThan(appInfo.version, targetVersion);
+};
+
+/**
  * Extracts the native mobile app version from the User-Agent string
  * Expected format: ProtonLumo/VERSION (Platform details)
  *

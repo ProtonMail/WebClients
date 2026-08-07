@@ -177,6 +177,18 @@ export interface CustomLumo {
     source: 'personal' | 'published' | 'shared';
 }
 
+/**
+ * Large-screen sidebar geometry, so native can size its composer to the space the sidebar
+ * leaves and animate in step with the web. Widths are CSS px, which equal Android dp because
+ * the WebView runs at `width=device-width, initial-scale=1` (index.html).
+ */
+export interface SidebarLayout {
+    /** Target width of the sidebar once the transition settles. 0 when collapsed. */
+    width: number;
+    /** How long the web takes to reach `width`. 0 = apply immediately, do not animate. */
+    animationDurationMs: number;
+}
+
 export interface State {
     lumoMode: LumoMode;
     /** Legacy field for old native clients; derived from `responseMode`. */
@@ -204,6 +216,16 @@ export interface State {
     selectedAspectRatio: AspectRatioKey;
     isVisible: boolean;
     isSmallScreen: boolean;
+    /**
+     * Large-screen sidebar geometry, or `null` on small screens where the sidebar is a
+     * full-height overlay native must ignore.
+     *
+     * `isSmallScreen` is authoritative: while it is `true`, ignore `sidebar` regardless of its
+     * value. The two fields are pushed by separate effects, so when the breakpoint crosses, a
+     * single intermediate push may show them disagreeing (e.g. `isSmallScreen: true` with a
+     * non-null `sidebar`) before the next push corrects it.
+     */
+    sidebar: SidebarLayout | null;
     showTsAndCs: boolean;
     userFlags: UserFlags;
     attachedFiles: LumoFile[];
@@ -350,6 +372,7 @@ class NativeComposerApi {
         isWebSearchEnabled: false,
         isVisible: true,
         isSmallScreen: true,
+        sidebar: null,
         showTsAndCs: true,
         userFlags: {
             isGuestUser: true,
@@ -701,6 +724,11 @@ class NativeComposerApi {
     public setIsSmallScreen(isSmallScreen: boolean): void {
         console.log(`NativeComposerApi: Setting isSmallScreen to ${isSmallScreen}`);
         this.updateState({ isSmallScreen });
+    }
+
+    public setSidebarLayout(sidebar: SidebarLayout | null): void {
+        console.log('NativeComposerApi: Setting sidebar layout', sidebar);
+        this.updateState({ sidebar });
     }
 
     public toggleImageGenEnabled(enabled: boolean): void {
