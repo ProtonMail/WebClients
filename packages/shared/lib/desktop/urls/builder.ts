@@ -28,6 +28,7 @@ export type SerializedUrlRule = {
     regex: RegExp;
     flags: UrlRuleFlags;
     searchParamsAnyOf?: string[];
+    hashParamsAnyOf?: string[];
 };
 
 class UrlRuleBuilder {
@@ -36,6 +37,8 @@ class UrlRuleBuilder {
     private pathPattern = anyPathPattern();
 
     private searchParamsAnyOf?: string[];
+
+    private hashParamsAnyOf?: string[];
 
     constructor(private readonly id: string) {}
 
@@ -74,6 +77,11 @@ class UrlRuleBuilder {
         return this;
     }
 
+    withAnyHashParam(names: string[]): this {
+        this.hashParamsAnyOf = names;
+        return this;
+    }
+
     build(providedFlags?: UrlRuleFlags): SerializedUrlRule {
         try {
             const flags = providedFlags ?? 'i';
@@ -85,6 +93,7 @@ class UrlRuleBuilder {
                 regex,
                 flags,
                 ...(this.searchParamsAnyOf ? { searchParamsAnyOf: this.searchParamsAnyOf } : {}),
+                ...(this.hashParamsAnyOf ? { hashParamsAnyOf: this.hashParamsAnyOf } : {}),
             };
         } catch (error) {
             logger.error('Failed to build URL rule', {
