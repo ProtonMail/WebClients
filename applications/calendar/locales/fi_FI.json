@@ -4176,6 +4176,21 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom-yhteytesi on vanhentunut. Ole hyvä ja yhdistä uudelleen jatkaaksesi."
+      ],
+      "Invitation not found": [
+        "Kutsua ei löytynyt"
+      ],
+      "Item not found": [
+        "Kohdetta ei löytynyt"
+      ],
+      "Name must not be empty": [
+        "Nimi ei voi olla tyhjä"
+      ],
+      "Photo not found": [
+        "Kuvaa ei löytynyt"
+      ],
+      "Signature is missing": [
+        "Allekirjoitus puuttuu"
       ]
     },
     "error": {
@@ -6708,6 +6723,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "You": [
+        "Sinä"
       ]
     },
     "info": {
@@ -11818,6 +11836,12 @@
       ],
       "Type": [
         "Tyyppi"
+      ],
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
+      "User": [
+        "Käyttäjä"
       ]
     },
     "TableHeader": {
@@ -13311,6 +13335,22 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Filter": {
+      "All": [
+        "Kaikki"
+      ],
+      "Errors": [
+        "Virheet"
+      ]
+    },
+    "Property": {
+      "key": [
+        "avain"
+      ],
+      "name": [
+        "nimi"
       ]
     }
   }
