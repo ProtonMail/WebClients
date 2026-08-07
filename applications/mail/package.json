@@ -61,7 +61,7 @@
         "@types/react": "^18.3.31",
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
-        "browserslist": "^4.28.6",
+        "browserslist": "^4.28.7",
         "clsx": "^2.1.1",
         "comlink": "^4.4.2",
         "core-js": "^3.49.0",
@@ -95,9 +95,9 @@
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
-        "@testing-library/user-event": "^14.6.1",
+        "@testing-library/user-event": "^14.6.3",
         "@types/jest": "^30.0.0",
-        "@types/lodash": "^4.17.24",
+        "@types/lodash": "^4.17.25",
         "@types/turndown": "^5.0.6",
         "@webgpu/types": "^0.1.71",
         "babel-jest": "^30.4.1",
@@ -105,13 +105,13 @@
         "eslint": "^9.39.5",
         "eslint-config-prettier": "^10.1.8",
         "fake-indexeddb": "^6.2.5",
-        "html-webpack-plugin": "^5.6.7",
+        "html-webpack-plugin": "^5.6.8",
         "immer": "11.1.15",
         "jest": "^30.4.2",
         "jest-junit": "^16.0.0",
         "jest-mock": "^30.4.1",
-        "prettier": "^3.9.5",
+        "prettier": "^3.9.6",
         "typescript": "^6.0.3",
-        "webpack": "^5.108.4"
+        "webpack": "^5.109.2"
     }
 }
