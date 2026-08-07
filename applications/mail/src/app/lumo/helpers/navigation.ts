@@ -12,6 +12,7 @@ import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
 import { getStandardFolders } from 'proton-mail/helpers/labels';
 import {
+    categoryIDFromUrl,
     extractSearchParameters,
     filterFromUrl,
     filterToString,
@@ -20,9 +21,12 @@ import {
 } from 'proton-mail/helpers/mailboxUrl';
 import {
     contextTotal as contextTotalSelector,
+    esSearching as esSearchingSelector,
     loading as loadingSelector,
+    selectActiveCategoryID,
     selectPage,
     selectParams,
+    usedEncryptedSearch as usedEncryptedSearchSelector,
 } from 'proton-mail/store/elements/elementsSelectors';
 import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 
@@ -139,6 +143,8 @@ const CLEARED_LIST_QUERY = {
     wildcard: undefined,
     sort: undefined,
     page: undefined,
+    // Left behind, a read of "the Inbox" silently covers only the category tab the user happens to be on.
+    category: undefined,
 };
 
 export type ListQuery = Partial<Record<keyof typeof CLEARED_LIST_QUERY, string | undefined>>;
@@ -179,46 +185,75 @@ const currentView = ({ labelID, filter, sort, search }: ElementsStateParams) => 
     search: searchView(search),
 });
 
+/** What the wait can tell a read about the page it is about to project. */
+export interface ListSettleOutcome {
+    /** False when the wait timed out: the view is still loading, so an empty page proves nothing. */
+    settled: boolean;
+    /** Whether Encrypted Search produced the results, rather than the server's metadata-only search. Only
+     *  ever true for a settled search: the store flag is global, so it says nothing about any other view. */
+    usedEncryptedSearch: boolean;
+}
+
 /**
  * Resolve once the list has settled on the expected view, so a read sees what the user sees rather than
- * a mid-navigation or mid-batch page. Times out by resolving, so a stuck load degrades to "not ready".
+ * a mid-navigation or mid-batch page. Times out by resolving, so a stuck load degrades to "not ready" —
+ * which the outcome reports, since a timed-out wait projects a page that is not yet the answer.
  * Every input is Redux state — that is what lets one subscription replace a poll.
  */
-export const waitForListSettled = async (store: ToolStore, expected: ExpectedList): Promise<void> => {
+export const waitForListSettled = async (store: ToolStore, expected: ExpectedList): Promise<ListSettleOutcome> => {
     const requested = requestedView(expected);
+    // Only a search can be mid-stream, and the counter is global: gating a plain open on it would hold the
+    // read hostage to a search the user started elsewhere.
+    const isQuery = Object.values(requested.search).some((value) => value !== undefined);
+    const requestedCategory = categoryIDFromUrl(expected.location) ?? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
 
     const settled = (): true | undefined => {
         const state = store.getState();
         if (!isDeepEqual(currentView(selectParams(state)), requested)) {
             return undefined;
         }
-        if (loadingSelector(state, { page: selectPage(state) })) {
+        // A category change keeps the same labelID and goes through `setParams`, so nothing above tells the
+        // two tabs apart and no loading flag is raised: without this, clearing `category` resolves on the
+        // tab the user was on. Absent means the category view is off, not that the default tab was asked for.
+        const activeCategory = selectActiveCategoryID(state);
+        if (activeCategory !== undefined && activeCategory !== requestedCategory) {
+            return undefined;
+        }
+        if (loadingSelector(state, { page: selectPage(state) }) || (isQuery && esSearchingSelector(state))) {
             return undefined;
         }
         return contextTotalSelector(state) !== undefined ? true : undefined;
     };
 
-    await waitForStoreState(store, settled, LIST_SETTLE_TIMEOUT);
+    const outcome = await waitForStoreState(store, settled, LIST_SETTLE_TIMEOUT);
+
+    return {
+        settled: outcome === true,
+        // The store flag is global and sticky — only a load for the current context clears it — so a plain
+        // open, or a wait that timed out, would otherwise report a search the user ran somewhere else.
+        usedEncryptedSearch: isQuery && outcome === true && usedEncryptedSearchSelector(store.getState()),
+    };
 };
 
 /** The slice of {@link MailToolDeps} a list navigation needs: the router to push, the store to read back. */
 type NavigationDeps = Pick<MailToolDeps, 'store' | 'history' | 'getFolders' | 'getLabels' | 'getMailSettings'>;
 
 /**
- * The whole shape of a navigation read (`open_folder`): push the requested view, wait for the list to
- * settle on it, then project what landed. Waiting is what stops the rows describing the *previous* view,
- * so the returned page always matches what the user now sees — and it means the tool needs no follow-up
- * `view_emails`.
+ * The whole shape of a navigation read (`open_folder`, `search`): push the requested view, wait for the
+ * list to settle on it, then project what landed. Waiting is what stops the rows describing the *previous*
+ * view, so the returned page always matches what the user now sees — and it means neither tool needs a
+ * follow-up `view_emails`. It also covers Encrypted Search, which streams its results in batches: without
+ * the settle, a search reads one partial batch and reports it as the whole result.
  */
 export const navigateAndReadRows = async (
     deps: NavigationDeps,
     references: ReferenceRegistry,
     { pathname, labelID, query }: { pathname: string; labelID: string; query: ListQuery }
-): Promise<AgentEmailPage> => {
+): Promise<AgentEmailPage & ListSettleOutcome> => {
     const url = changeSearchParams(pathname, deps.history.location.hash, { ...CLEARED_LIST_QUERY, ...query });
     deps.history.push(url);
 
-    await waitForListSettled(deps.store, { labelID, location: createLocation(url) });
+    const outcome = await waitForListSettled(deps.store, { labelID, location: createLocation(url) });
 
-    return buildAgentEmailRows(deps, references);
+    return { ...buildAgentEmailRows(deps, references), ...outcome };
 };
