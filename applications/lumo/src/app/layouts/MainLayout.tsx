@@ -1,6 +1,7 @@
 import { type ReactNode, lazy } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
+import { useNativeSidebarLayoutApi } from '../components/Composer/hooks/useNativeSidebarLayoutApi';
 import HighLoadWarning from '../components/Notifications/HighLoadWarning';
 import { RightDrawer } from '../components/RightDrawer';
 import { useGuestMigrationNotification } from '../components/useGuestMigrationNotification';
@@ -30,6 +31,7 @@ const MainLayoutContent = ({ children }: Props) => {
 
     useGuestMigrationNotification();
     useResourceLimitNotifications();
+    useNativeSidebarLayoutApi();
 
     useKeyboardShortcuts({ onOpenSearch: openSearchModal });
 

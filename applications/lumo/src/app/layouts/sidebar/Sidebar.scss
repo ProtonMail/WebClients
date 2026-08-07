@@ -10,7 +10,7 @@ im.$media-expressions: $media-expressions;
 
 	// Smooth width transitions for desktop
 	transition:
-		inline-size 0.3s ease-in-out,
+		inline-size var(--lumo-sidebar-transition-duration) ease-in-out,
 		transform 0.3s ease-in-out;
 
 	// Hardware acceleration
@@ -22,10 +22,10 @@ im.$media-expressions: $media-expressions;
 		transform: translateZ(0);
 	}
 
-	// Desktop: Expanded state (300px width)
+	// Desktop: Expanded state
 	&:not(.sidebar--hidden) {
 		@include im.media('>small') {
-			inline-size: 300px; // Expanded width - comfortable for text
+			inline-size: var(--lumo-sidebar-expanded-width); // comfortable for text
 		}
 	}
 
