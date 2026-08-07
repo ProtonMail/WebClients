@@ -11,6 +11,7 @@ export const entitlementChecks = {
     orgHasSentinel: (r) => !!r.quantityOrg(EntitlementName.Sentinel),
     orgHasLumo: (r) => !!r.quantityOrg(EntitlementName.FlagsLumo),
     orgHasPassActivityMonitor: (r) => !!r.quantityOrg(EntitlementName.ActivityMonitorPass),
+    orgHasVpnActivityMonitor: (r) => !!r.quantityOrg(EntitlementName.ActivityMonitorVpn),
     orgHasSubsidiaries: (r) => !!r.quantityOrg(EntitlementName.MaxSubsidiaries),
     orgHasMembersSubsidiaries: (r) => !!r.quantityOrg(EntitlementName.MaxMembersSubsidiaries),
     orgHasAdminRoles: (r) => !!r.quantityOrg(EntitlementName.AdminRoles),

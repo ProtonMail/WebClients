@@ -547,8 +547,8 @@ const MainContainer = () => {
                                 organizationAppRoutes={routes.organization}
                                 redirect={redirect}
                                 organization={organization}
-                                subscription={subscription}
                                 onOpenChat={handleOpenZendeskChat}
+                                entitlements={entitlements}
                             />
                         </Route>
                         <Route path={anyMspAppRoute}>
