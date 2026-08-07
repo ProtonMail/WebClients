@@ -48,6 +48,18 @@ describe('desktop url rules', () => {
             expect(match('https://account.proton.me/close-ticket/')).toBeTruthy();
             expect(match('https://account.proton.me/Close-Ticket')).toBeTruthy();
         });
+
+        it('opens account-join-org-invite', () => {
+            expect(match('https://account.proton.me/join-org')).toBeFalsy();
+            expect(match('https://account.proton.me/join-org?org_id=123123')).toBeFalsy();
+
+            expect(match('https://account.proton.me/join-org#dD0xMjIyMw')).toBeTruthy();
+
+            const hashWithSpecialChars = 'dD1zb21ldG9rZW6-7_8';
+            expect(hashWithSpecialChars).toContain('-');
+            expect(hashWithSpecialChars).toContain('_');
+            expect(match(`https://account.proton.me/join-org#${hashWithSpecialChars}`)).toBeTruthy();
+        });
     });
 
     describe('fallbacks', () => {
