@@ -2,6 +2,7 @@ import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
 import type { NodeEntity, NodeType } from '@proton/drive';
+import { ValidationError } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import { SearchDB } from '../../../../shared/SearchDB';
@@ -147,6 +148,44 @@ describe('ResumableFolderBFSVisitor', () => {
 
             expect(nodeEvents(events)).toHaveLength(0);
             expect(events).toEqual([{ type: 'folder-boundary', checkpoint: { queue: [], generation: 1 } }]);
+        });
+    });
+
+    describe('visit — gone folder', () => {
+        it('treats a folder that vanished mid-walk as childless and continues to sibling folders', async () => {
+            bridge.setChildren('root', [folder('gone'), folder('sibling')]);
+            bridge.setChildren('gone', [file('gone-child')]);
+            bridge.setChildren('sibling', [file('sibling-child')]);
+            bridge.failNextIterateForFolder('gone', new ValidationError('Node not found'));
+            // The fix confirms via a follow-up getNode before treating the folder as gone.
+            bridge.setGetNodeError('gone', new ValidationError('Node not found'));
+
+            const visitor = new ResumableFolderBFSVisitor(VISITOR_ID);
+            const events = await collect(visitor.visit({ folderUid: 'root', parentPath: '' }, 1, makeCtx()));
+
+            expect(nodeEvents(events).map((e) => e.node.uid)).toEqual(['gone', 'sibling', 'sibling-child']);
+            expect(events.filter((e) => e.type === 'folder-boundary')).toHaveLength(3);
+        });
+
+        it('still propagates a ValidationError when the follow-up getNode confirms the folder still exists', async () => {
+            bridge.setChildren('root', [folder('still-here')]);
+            bridge.setNode('still-here', folder('still-here'));
+            bridge.failNextIterateForFolder('still-here', new ValidationError('Pagination failed'));
+
+            const visitor = new ResumableFolderBFSVisitor(VISITOR_ID);
+            await expect(collect(visitor.visit({ folderUid: 'root', parentPath: '' }, 1, makeCtx()))).rejects.toThrow(
+                'Pagination failed'
+            );
+        });
+
+        it('still propagates a non-ValidationError from a queued folder', async () => {
+            bridge.setChildren('root', [folder('gone'), folder('sibling')]);
+            bridge.failNextIterateForFolder('gone', new Error('network blip'));
+
+            const visitor = new ResumableFolderBFSVisitor(VISITOR_ID);
+            await expect(collect(visitor.visit({ folderUid: 'root', parentPath: '' }, 1, makeCtx()))).rejects.toThrow(
+                'network blip'
+            );
         });
     });
 
