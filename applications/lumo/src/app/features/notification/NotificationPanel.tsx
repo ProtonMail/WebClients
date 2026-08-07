@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { markNotificationPanelDismissed } from '../../util/notificationPanelStorage';
+import { canShowWebComposer, getNativeAppInfo } from '../../util/userAgent';
 
 import './Notification.scss';
 
@@ -34,6 +37,12 @@ export default function NotificationPanel({
 }: NotificationProps) {
     const [visible, setVisible] = useState(false);
     const [exiting, setExiting] = useState(false);
+    const { nativeComposer: nativeComposerEnabled } = useLumoFlags();
+
+    // Android draws its composer over the bottom of the WebView, where this panel sits on
+    // large screens. Small screens already move it out of the way; do the same there.
+    const isCoveredByNativeComposer =
+        getNativeAppInfo()?.platform === 'android' && !canShowWebComposer(nativeComposerEnabled);
 
     useEffect(() => {
         const t = setTimeout(() => setVisible(true), 50);
@@ -60,7 +69,13 @@ export default function NotificationPanel({
 
     return (
         <>
-            <div className={'notification-panel border border-weak ' + (exiting ? 'notif-exit' : 'notif-enter')}>
+            <div
+                className={clsx(
+                    'notification-panel border border-weak',
+                    exiting ? 'notif-exit' : 'notif-enter',
+                    isCoveredByNativeComposer && 'notification-panel--native-composer'
+                )}
+            >
                 <button className="notif-close" onClick={finishDismiss} aria-label="Dismiss">
                     ✕
                 </button>

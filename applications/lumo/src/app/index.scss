@@ -16,6 +16,12 @@ im.$media-expressions: $media-expressions;
 // while still respecting the user's --setting-font-family preference.
 :root {
 	--optional-font-family: 'Inter', system-ui, sans-serif;
+
+	// Sidebar layout tokens, consumed by Sidebar.scss and read back by readSidebarMetrics()
+	// to tell native how wide the sidebar is and how long it animates. Keep the width in px
+	// (not rem()) and the duration in ms.
+	--lumo-sidebar-expanded-width: 300px;
+	--lumo-sidebar-transition-duration: 300ms;
 }
 
 .main-text-container {

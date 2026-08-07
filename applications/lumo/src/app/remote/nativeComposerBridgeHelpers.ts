@@ -8,6 +8,7 @@ import {
     type LimitReachedResource,
     type LumoFile,
     type LumoMode,
+    type SidebarLayout,
     type State,
     limitResourceToErrorType,
 } from './nativeComposerBridge';
@@ -231,6 +232,14 @@ export const setNativeIsSmallScreen = (isSmallScreen: boolean): void => {
         return;
     }
     (window as any).nativeComposerApiInstance.setIsSmallScreen(isSmallScreen);
+};
+
+export const setNativeSidebarLayout = (sidebar: SidebarLayout | null): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        console.warn('Native Composer Bridge not available');
+        return;
+    }
+    (window as any).nativeComposerApiInstance.setSidebarLayout(sidebar);
 };
 
 export const setNativeComposerIsImageGenEnabled = (enabled: boolean): void => {
