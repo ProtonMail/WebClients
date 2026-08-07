@@ -1,0 +1,32 @@
+{
+    "name": "@proton/logger",
+    "version": "0.0.1",
+    "description": "Encrypted, persistent client-side application logger",
+    "license": "GPL-3.0",
+    "sideEffects": false,
+    "type": "module",
+    "exports": {
+        ".": "./src/Logger.ts"
+    },
+    "scripts": {
+        "check-types": "tsc",
+        "lint": "eslint --quiet",
+        "test": "jest",
+        "test:ci": "jest --coverage --runInBand --ci"
+    },
+    "dependencies": {
+        "@protontech/crypto": "*",
+        "idb": "^8.0.3"
+    },
+    "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
+        "@swc/jest": "^0.2.39",
+        "@types/jest": "^30.0.0",
+        "eslint": "^9.39.5",
+        "fake-indexeddb": "^6.2.5",
+        "jest": "^30.4.2",
+        "jest-junit": "^16.0.0",
+        "prettier": "^3.9.6",
+        "typescript": "^6.0.3"
+    }
+}
