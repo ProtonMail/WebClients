@@ -38,10 +38,12 @@ export const InviteStepResponse: FC<Props> = ({ acceptText, disabled, invite }) 
 
     const onReject = useCallback(() => onInviteResponse({ ok: false }), []);
 
-    const acceptInvite = useRequest(inviteAccept, { onSuccess: onAccept });
-    const acceptGroupInvite = useRequest(groupInviteAccept, { onSuccess: onGroupAccept });
-    const rejectInvite = useRequest(inviteReject, { onSuccess: onReject });
-    const rejectGroupInvite = useRequest(groupInviteReject, { onSuccess: onReject });
+    const onFailure = useCallback(() => onInviteResponse({ ok: false }), []);
+
+    const acceptInvite = useRequest(inviteAccept, { onSuccess: onAccept, onFailure });
+    const acceptGroupInvite = useRequest(groupInviteAccept, { onSuccess: onGroupAccept, onFailure });
+    const rejectInvite = useRequest(inviteReject, { onSuccess: onReject, onFailure });
+    const rejectGroupInvite = useRequest(groupInviteReject, { onSuccess: onReject, onFailure });
 
     const handleRejectInvite = () =>
         (invite.type === InviteType.User ? rejectInvite : rejectGroupInvite).dispatch({ inviteToken: token });
