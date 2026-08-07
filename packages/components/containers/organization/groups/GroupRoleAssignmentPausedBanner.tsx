@@ -9,7 +9,7 @@ import { GROUPS_RESTRICTION_REASON } from './types';
 const GroupRoleAssignmentPausedBanner = () => {
     const { groups, actions, restrictedBy } = useGroupsManagement();
     const isResumingRoleAssignments = restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT;
-    const pausedCount = groups.filter((group) => group.hasPendingOrgKeyAccess).length;
+    const pausedCount = groups.filter((group) => group.requiresOrgKeyPromotion).length;
 
     if (pausedCount === 0) {
         return null;
