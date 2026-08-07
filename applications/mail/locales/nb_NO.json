@@ -1810,8 +1810,8 @@
         "${ LUMO_APP_NAME } seter"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
-        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } bruker)",
-        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } brukere)"
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (for ${ quantity } bruker)",
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (for ${ quantity } brukere)"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
@@ -5410,6 +5410,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "Cannot verify the author of this file": [
+        "Kan ikke bekrefte forfatteren av denne filen"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Eldre offentlig kobling kan ikke oppdateres. Opprett en ny offentlig kobling på nytt."
+      ],
+      "Part of the file appears to be corrupted": [
+        "En del av filen ser ut til å være ødelagt"
+      ],
+      "This item is no longer shared": [
+        "Dette elementet deles ikke lenger"
+      ],
+      "Verification keys are not available": [
+        "Verifiseringsnøkler er ikke tilgjengelige"
+      ],
+      "You do not have access to this item": [
+        "Du har ikke tilgang til dette elementet"
       ]
     },
     "error": {
@@ -9289,6 +9307,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Velg nøyaktig hva du vil migrere. Det vil gjelde for alle brukere i organisasjonen."
       ]
     },
     "info": {
@@ -17175,6 +17196,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attributter"
       ]
     }
   }

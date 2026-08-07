@@ -1526,8 +1526,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -4744,7 +4744,7 @@
         "Adres hesabınıza zaten eklenmiş"
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından halihazırda kullanılıyor. Bu sorunu çözmek için lütfen müşteri desteğiyle iletişime geçin"
+        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından kullanılıyor. Bu sorunu çözmek için lütfen müşteri destek ekibimiz ile görüşün"
       ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
@@ -4844,7 +4844,7 @@
         "Kişi imzası doğrulanamadı"
       ],
       "Contact your administrator to start a migration.": [
-        "Geçiş işlemini başlatmak için yöneticinize başvurun."
+        "Aktarma işlemini başlatmak için yöneticiniz ile görüşün."
       ],
       "Contact your organization’s administrator to resolve this": [
         "Bu sorunu çözmek için kuruluşunuzun yöneticisi ile görüşün"
@@ -5089,7 +5089,7 @@
         "Eklenebilecek en fazla dosya sayısı (${ attachmentsCountLimit }) sınırı aşıldı"
       ],
       "Member address not found. Please contact customer support to resolve this": [
-        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimizle görüşün"
+        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimiz ile görüşün"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
@@ -5108,7 +5108,7 @@
         "Anahtar paketi eksik"
       ],
       "Missing organization private key": [
-        "Kuruluşun özel anahtarı eksik"
+        "Kuruluşun kişisel anahtarı eksik"
       ],
       "Missing organization public key": [
         "Kuruluşun herkese açık anahtarı bulunamadı"
@@ -5192,7 +5192,7 @@
         "İşlem tamamlanamadı. Bir süre sonra yeniden deneyin"
       ],
       "Organization does not have enough seats available": [
-        "Kuruluşta yeterli sayıda boş koltuk yok"
+        "Kuruluşun yeterli koltuk sayısı yok"
       ],
       "Organization does not have enough storage available": [
         "Kuruluşun yeterli depolama alanı yok"
@@ -6199,7 +6199,7 @@
         "Ek dosyaları olan"
       ],
       "In progress": [
-        "Devam ediyor"
+        "İşleniyor"
       ],
       "Migrated": [
         "Aktarıldı"
@@ -6917,7 +6917,7 @@
     },
     "Import status": {
       "Has errors": [
-        "Hatalar var"
+        "Sorunlar çıktı"
       ],
       "In progress": [
         "İşlem sürüyor"
@@ -6926,7 +6926,7 @@
         "Aktarıldı"
       ],
       "Pending": [
-        "Beklemede"
+        "Bekliyor"
       ]
     },
     "Import warning": {
@@ -7906,7 +7906,7 @@
         "finans"
       ],
       "Find out what can be migrated.": [
-        "Nelerin taşınabileceğini öğrenin."
+        "Nelerin aktarılabileceğini öğrenin."
       ],
       "Folder": [
         "Klasör"
@@ -8279,13 +8279,13 @@
         "Henüz bir kişi eklenmemiş"
       ],
       "No conversation to read": [
-        "Okunacak yazışma yok"
+        "Okunabilecek bir yazışma yok"
       ],
       "No email address": [
         "E-posta adresi yok"
       ],
       "No email open": [
-        "Hiçbir e-posta açılmadı"
+        "Açık bir e-posta yok"
       ],
       "No folder found": [
         "Herhangi bir klasör bulunamadı"
@@ -8321,7 +8321,7 @@
         "Herhangi bir izleyici bulunamadı"
       ],
       "No users to display": [
-        "Görüntülenecek kullanıcı yok"
+        "Görüntülenebilecek bir kullanıcı yok"
       ],
       "non-${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } kullanmayan"
@@ -8538,8 +8538,8 @@
         "${ BRAND_NAME } ile ilgili her konuda yardım almak için bizimle görüşün."
       ],
       "Read ${ count } email": [
-        "${ count } e-posta oku",
-        "${ count } e-posta oku"
+        "${ count } e-postayı oku",
+        "${ count } e-postayı oku"
       ],
       "Read ${ count } email on screen": [
         "Ekrandaki ${ count } e-postayı oku",
@@ -8550,7 +8550,7 @@
         "Bu konudaki ${ count } iletiyi oku"
       ],
       "Read open email “${ subject }”": [
-        "“${ subject }” başlıklı açık e-postayı oku"
+        "“${ subject }” konulu açık e-postayı oku"
       ],
       "Read your ${ count } filter": [
         "${ count } süzgecinizi okuyun",
@@ -9017,7 +9017,7 @@
         "Bu benzersiz kod, siteler ve internet hizmeti sağlayıcıları tarafından konumunuzu ve tarama geçmişinizi aygıtınızla ilişkilendirmek için kullanılabilir."
       ],
       "This user can not be migrated due to platform incompatibilities.": [
-        "Platform uyumsuzlukları nedeniyle bu kullanıcı taşınamaz."
+        "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
       ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Bu bilgi, e-posta konu satırınızda parola sıfırlama anahtar sözcükleri bulunduğundan görüntülendi."
@@ -9050,10 +9050,10 @@
         "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının hesabını etkinleştirin."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı taşıyabilmek için ${ usersAddressesLink } altındaki adresi etkinleştirin."
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Bu kullanıcının geçiş işleminin gerçekleştirilebilmesi için ${ BRAND_NAME } üzerinden katılma davetini kabul etmesi gerekmektedir."
+        "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
       ],
       "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
         "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcıyı arşivden çıkarın."
@@ -9634,6 +9634,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için onu ${ provider.adminConsoleName } üzerindeki arşivden çıkarın."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden kullanıcının askıya alınma durumunu kaldırın."
       ]
     },
     "info": {
@@ -12398,7 +12410,7 @@
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca size özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -12567,7 +12579,7 @@
         "Çeşitli platformları destekler"
       ],
       "Private gateways": [
-        "Özel ağ geçitleri"
+        "Size özel ağ geçitleri"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } özel e-posta etki alanı desteği",
@@ -17063,10 +17075,13 @@
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } hesaplarında oturum açmış kullanıcılar"
+        "${ BRAND_NAME } hesaplarına erişen kullanıcılar"
       ],
       "Version 6 OpenPGP key": [
         "6. sürüm OpenPGP anahtarı"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "${ providerName } üzerinden ${ BRAND_NAME } üzerine veri aktarma durumu"
       ]
     },
     "tooltip": {

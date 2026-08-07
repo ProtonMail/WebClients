@@ -1715,6 +1715,9 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Migrate": [
+        "迁移"
       ]
     },
     "action": {
@@ -5359,6 +5362,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜索结果过多，请缩小搜索范围后再试。"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
       ]
     },
     "error": {
@@ -9122,6 +9128,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需几步即可拥有清爽收件箱"
+      ],
+      "Read ${ count } email": [
+        "读取 ${ count } 封邮件"
+      ],
+      "Read ${ count } message in this thread": [
+        "读取话题中的 ${ count } 条消息"
+      ],
+      "Read your ${ count } filter": [
+        "读取您的 ${ count } 筛选"
+      ],
+      "Read your ${ count } folder": [
+        "读取您的 ${ count } 文件夹"
+      ],
+      "Read your ${ count } label": [
+        "读取您的 ${ count } 标签"
+      ],
+      "You": [
+        "您"
       ]
     },
     "info": {
@@ -16808,6 +16832,11 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Property": {
+      "key": [
+        "密钥"
       ]
     }
   }
