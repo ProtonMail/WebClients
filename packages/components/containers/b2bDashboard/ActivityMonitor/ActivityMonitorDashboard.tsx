@@ -3,14 +3,8 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Tabs } from '@proton/components/components/tabs/Tabs';
+import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
-import {
-    type MaybeFreeSubscription,
-    hasAnyB2bBundle,
-    hasPassBusiness,
-    hasVPNPassProfessional,
-    hasVpnBusiness,
-} from '@proton/payments/core/subscription/helpers';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
@@ -24,27 +18,24 @@ import ActivityMonitorEvents from './ActivityMonitorEvents';
 
 interface Props {
     organization?: OrganizationExtended;
-    subscription: MaybeFreeSubscription;
+    entitlements: EntitlementChecks;
 }
 
-const getTabPermissions = (subscription: MaybeFreeSubscription, organization: OrganizationExtended | undefined) => {
+const getTabPermissions = (organization: OrganizationExtended | undefined, entitlements: EntitlementChecks) => {
     const hasOrganizationSetupOrKey = hasOrganizationSetupWithKeys(organization) || hasOrganizationSetup(organization);
     const isB2B = getIsB2BAudienceFromPlan(organization?.PlanName);
-    const hasPlanWithEventLogging =
-        hasVpnBusiness(subscription) || hasAnyB2bBundle(subscription) || hasVPNPassProfessional(subscription);
-    const hasPassOrBundleB2B = hasPassBusiness(subscription) || hasAnyB2bBundle(subscription);
 
     return {
         canDisplayAccountEvents: hasOrganizationSetupOrKey || isB2B,
         canDisplayB2BOrganizationEvents: hasOrganizationSetupOrKey,
-        canDisplayB2BLogsVPN: hasPlanWithEventLogging && !!organization,
-        canDisplayB2BLogsPass: hasPassOrBundleB2B && !!organization,
+        canDisplayB2BLogsVPN: entitlements.orgHasVpnActivityMonitor && !!organization,
+        canDisplayB2BLogsPass: entitlements.orgHasPassActivityMonitor && !!organization,
     };
 };
 
-const ActivityMonitorDashboard = ({ organization, subscription }: Props) => {
+const ActivityMonitorDashboard = ({ organization, entitlements }: Props) => {
     const [activeTab, setActiveTab] = useState(0);
-    const tabPermissions = useMemo(() => getTabPermissions(subscription, organization), [subscription, organization]);
+    const tabPermissions = useMemo(() => getTabPermissions(organization, entitlements), [organization, entitlements]);
 
     const tabs = useMemo(
         () =>
