@@ -23,7 +23,7 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - customAgents: Enable the custom agents option in the composer tools dropdown
  * - maxAvailableFree: When enabled, free users can select Lumo Max (default off during high load)
  * - maxAvailableGuest: When enabled, guest users can select Lumo Max (default off during high load)
- * - aiPaperTrail: Enable the AI Paper Trail route (/aitrail)
+ * - aiPaperTrailRoute: Enable the AI Paper Trail route (/aitrail)
  * - aiPaperTrailPopup: Show the AI Paper Trail popup panel on the home screen
  */
 export const useLumoFlags = () => {
@@ -45,7 +45,7 @@ export const useLumoFlags = () => {
     const visualizationInstructions = useFlag('LumoVisualizationInstructions');
     const lumoNativeAuth = useFlag('LumoNativeAuth');
     const customAgents = useFlag('LumoCustomAgents');
-    const aiPaperTrail = useFlag('LumoAiPaperTrail');
+    const aiPaperTrailRoute = useFlag('LumoAiPaperTrailRoute');
     const aiPaperTrailPopup = useFlag('LumoAiPaperTrailPopup');
     const maxAvailableFree = useFlag('LumoMaxAvailableFree');
     const maxAvailableGuest = useFlag('LumoMaxAvailableGuest');
@@ -54,7 +54,7 @@ export const useLumoFlags = () => {
         memory,
         visualizationInstructions,
         customAgents,
-        aiPaperTrail,
+        aiPaperTrailRoute,
         aiPaperTrailPopup,
         imageTools,
         smoothRendering,
