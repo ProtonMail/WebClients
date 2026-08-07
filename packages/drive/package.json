@@ -29,7 +29,7 @@
         "@types/node": "^24.13.3",
         "@xmldom/xmldom": "^0.9.10",
         "core-js": "^3.49.0",
-        "exifreader": "^4.41.0",
+        "exifreader": "^4.41.3",
         "heic-to": "^1.5.2",
         "idb": "^8.0.3",
         "mime-types": "^2.1.35",
@@ -43,17 +43,17 @@
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
-        "@testing-library/user-event": "^14.6.1",
+        "@testing-library/user-event": "^14.6.3",
         "@types/jest": "^30.0.0",
         "eslint": "^9.39.5",
         "fake-indexeddb": "^6.2.5",
         "jest": "^30.4.2",
         "jest-when": "3.7.0",
-        "ts-jest": "^29.4.11",
+        "ts-jest": "^29.4.12",
         "ts-loader": "^9.6.2",
         "ts-node": "^10.9.2",
         "typescript": "^6.0.3",
-        "webpack": "^5.108.4",
-        "webpack-cli": "^7.2.1"
+        "webpack": "^5.109.2",
+        "webpack-cli": "^7.2.2"
     }
 }
