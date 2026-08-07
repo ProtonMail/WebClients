@@ -22,6 +22,7 @@ import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import type { InitializeDevices } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import type { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
+import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import type { UseKeyManagementResult } from '../useKeyManagement';
 import type { UseLiveKitConnectionResult } from '../useLiveKitConnection';
 import { useStableCallback } from '../useStableCallback';
@@ -51,12 +52,6 @@ export interface ConnectWithMlsResult {
     participantCountPromise: Promise<number | undefined>;
 }
 
-interface GetAccessDetailsParams {
-    displayName: string;
-    token: string;
-    encryptedDisplayName: string;
-}
-
 interface UseMeetingConnectionParams {
     meetingLinkNameRef: MutableRefObject<string>;
     meetingPassword: string;
@@ -66,7 +61,6 @@ interface UseMeetingConnectionParams {
     accessTokenRef: MutableRefObject<string | null>;
     keyProvider: ProtonMeetKeyProvider;
     keyRotationScheduler: KeyRotationScheduler;
-    getAccessDetails: (params: GetAccessDetailsParams) => Promise<{ accessToken: string; websocketUrl: string }>;
     handleMlsSetup: UseMlsSessionResult['handleMlsSetup'];
     reportMLSRelatedError: UseKeyManagementResult['reportMLSRelatedError'];
     connectWithStunFallbackToTurnRelay: UseLiveKitConnectionResult['connectWithStunFallbackToTurnRelay'];
@@ -97,7 +91,6 @@ export const useMeetingConnection = ({
     accessTokenRef,
     keyProvider,
     keyRotationScheduler,
-    getAccessDetails,
     handleMlsSetup,
     reportMLSRelatedError,
     connectWithStunFallbackToTurnRelay,
@@ -115,6 +108,7 @@ export const useMeetingConnection = ({
     const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
 
     const dispatch = useMeetDispatch();
+    const { getAccessDetails } = useMeetingAuthentication();
     const meetCoreClient = useMeetCoreClient();
     const room = useRoomContext();
 

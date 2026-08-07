@@ -1,101 +1,27 @@
 import { useCallback } from 'react';
 
-import { c } from 'ttag';
-
-import useNotifications from '@proton/components/hooks/useNotifications';
+import useApi from '@proton/components/hooks/useApi';
 import { useMeetErrorReporting } from '@proton/meet';
-import { decryptMeetingName } from '@proton/meet/utils/cryptoUtils';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-
-import { INVALID_SRP_PARAMS_ERROR_CODE } from '../../constants';
-import type { PreloadedMeetingDetails } from '../../utils/meetingDetailsPreload';
-import type { SRPHandshakeInfo } from './useMeetSrp';
-import { useMeetSrp } from './useMeetSrp';
+import { requestAccessToken, requestHandshakeInfo } from '@proton/meet/api/meetSrpRequests';
 
 export const useMeetingAuthentication = () => {
-    const { initHandshake, getSessionToken, getMeetingInfo, getAccessToken } = useMeetSrp();
-    const { createNotification } = useNotifications();
+    const api = useApi();
+
     const { reportMeetError } = useMeetErrorReporting();
 
-    const getMeetingDetails = useCallback(
-        async ({
-            urlPassword,
-            token,
-            handshakeInfo,
-        }: {
-            urlPassword: string;
-            token: string;
-            handshakeInfo?: SRPHandshakeInfo;
-        }): Promise<PreloadedMeetingDetails> => {
-            let meetingName = '';
-
-            if (!handshakeInfo) {
-                return {
-                    locked: false,
-                    maxDuration: 0,
-                    maxParticipants: 0,
-                    expirationTime: 0,
-                    roomName: '',
-                    isPersonalRoom: false,
-                    waitingRoom: false,
-                    canManageWaitingRoom: false,
-                };
-            }
-
+    const initHandshake = useCallback(
+        async (token: string) => {
             try {
-                await getSessionToken(token, urlPassword, handshakeInfo);
+                return await requestHandshakeInfo(api, token);
             } catch (error) {
-                const { code, message } = getApiError(error);
-
-                if (code !== INVALID_SRP_PARAMS_ERROR_CODE) {
-                    reportMeetError(`Failed to get session token: ${code} - ${message}`, {
-                        context: { error },
-                        tags: { meetingLinkName: token },
-                    });
-                } else {
-                    createNotification({
-                        type: 'error',
-                        text: c('Error').t`The meeting password is incorrect`,
-                    });
-                    Object.assign(error as object, { userNotified: true });
-                }
-
-                throw error;
-            }
-
-            try {
-                const meetingInfo = await getMeetingInfo(token);
-
-                meetingName = await decryptMeetingName({
-                    password: urlPassword,
-                    encryptedSessionKey: meetingInfo.MeetingInfo.SessionKey,
-                    encryptedMeetingName: meetingInfo.MeetingInfo.MeetingName,
-                    salt: meetingInfo.MeetingInfo.Salt,
-                });
-
-                return {
-                    roomName: meetingName,
-                    locked: !!meetingInfo.MeetingInfo.Locked,
-                    maxDuration: meetingInfo.MeetingInfo.MaxDuration,
-                    maxParticipants: meetingInfo.MeetingInfo.MaxParticipants,
-                    expirationTime: meetingInfo.MeetingInfo.ExpirationTime ?? 0,
-                    isPersonalRoom: !!meetingInfo.MeetingInfo.PersonalMeeting,
-                    waitingRoom: !!meetingInfo.MeetingInfo.WaitingRoom,
-                    canManageWaitingRoom: !!meetingInfo.MeetingInfo.ManageWaitingRoom,
-                };
-            } catch (error) {
-                const { code, message } = getApiError(error);
-
-                reportMeetError(`Failed to get meeting info: ${code} - ${message}`, {
+                reportMeetError('Error initializing handshake', {
                     context: { error },
                     tags: { meetingLinkName: token },
                 });
-
                 throw error;
             }
         },
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        [getSessionToken, getMeetingInfo]
+        [api, reportMeetError]
     );
 
     const getAccessDetails = useCallback(
@@ -109,10 +35,15 @@ export const useMeetingAuthentication = () => {
             encryptedDisplayName: string;
         }) => {
             try {
-                const data = await getAccessToken(token, displayName, encryptedDisplayName);
+                const { AccessToken, WebsocketUrl } = await requestAccessToken(api, {
+                    meetingLinkName: token,
+                    displayName,
+                    encryptedDisplayName,
+                });
+
                 return {
-                    accessToken: data.AccessToken,
-                    websocketUrl: data.WebsocketUrl.replace('/rtc', ''),
+                    accessToken: AccessToken,
+                    websocketUrl: WebsocketUrl.replace('/rtc', ''),
                 };
             } catch (error: any) {
                 reportMeetError('Failed to get access details', {
@@ -122,8 +53,8 @@ export const useMeetingAuthentication = () => {
                 throw error;
             }
         },
-        [getAccessToken, reportMeetError]
+        [api, reportMeetError]
     );
 
-    return { getMeetingDetails, getAccessDetails, initHandshake, getMeetingInfo };
+    return { getAccessDetails, initHandshake };
 };

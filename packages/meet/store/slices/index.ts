@@ -1,9 +1,10 @@
 import { chatAndReactionsReducer } from './chatAndReactionsSlice';
 import { connectionReducer } from './connectionSlice';
+import { currentMeetingReducer } from './currentMeeting';
 import { devToolsReducer } from './devToolsSlice';
 import { deviceManagementReducer } from './deviceManagementSlice';
 import { meetAppStateReducer } from './meetAppStateSlice';
-import { meetingInfoReducer } from './meetingInfo';
+import { meetingInfoModelReducer } from './meetingInfoModel';
 import { meetingsReducer } from './meetings';
 import { participantsReducer } from './participants/participantsSlice';
 import { sortedParticipantsReducer } from './participants/sortedParticipantsSlice';
@@ -22,7 +23,8 @@ export const meetReducers = {
     ...devToolsReducer,
     ...deviceManagementReducer,
     ...meetAppStateReducer,
-    ...meetingInfoReducer,
+    ...currentMeetingReducer,
+    ...meetingInfoModelReducer,
     ...meetingsReducer,
     ...participantsReducer,
     ...sortedParticipantsReducer,

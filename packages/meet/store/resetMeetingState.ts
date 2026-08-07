@@ -5,7 +5,8 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { MeetState } from './rootReducer';
 import { resetChatAndReactions } from './slices/chatAndReactionsSlice';
 import { resetConnection } from './slices/connectionSlice';
-import { resetMeetingInfo, stopMeetingDurationTimer } from './slices/meetingInfo';
+import { resetCurrentMeeting, stopMeetingDurationTimer } from './slices/currentMeeting';
+import { resetMeetingInfoModel } from './slices/meetingInfoModel';
 import { resetParticipants } from './slices/participants/participantsSlice';
 import { resetSortedParticipants } from './slices/participants/sortedParticipantsSlice';
 import { resetRecordingStatus } from './slices/recordingStatusSlice';
@@ -19,7 +20,8 @@ export const resetMeetingState =
     (): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> => (dispatch) => {
         dispatch(resetRecordingStatus());
         dispatch(stopMeetingDurationTimer());
-        dispatch(resetMeetingInfo());
+        dispatch(resetCurrentMeeting());
+        dispatch(resetMeetingInfoModel());
         dispatch(resetChatAndReactions());
         dispatch(resetUiState());
         dispatch(resetConnection());

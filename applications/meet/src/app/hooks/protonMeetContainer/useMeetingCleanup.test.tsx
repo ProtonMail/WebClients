@@ -76,7 +76,6 @@ function createTestWrapper(store: ReturnType<typeof createMockStore>) {
 const createParams = () => ({
     instantMeetingRef: { current: true },
     meetingLinkNameRef: { current: 'meeting-abc' },
-    meetingInfoRef: { current: { some: 'info' } as any },
     decryptionKeyRef: { current: {} as unknown as CryptoKey },
     disallowHealthCheck: vi.fn(),
     cleanupMlsState: vi.fn(),
@@ -103,7 +102,6 @@ describe('useMeetingCleanup', () => {
 
         expect(params.instantMeetingRef.current).toBe(false);
         expect(params.meetingLinkNameRef.current).toBe('');
-        expect(params.meetingInfoRef.current).toBeNull();
         expect(params.decryptionKeyRef.current).toBeNull();
 
         const { participants, connection } = store.getState();
