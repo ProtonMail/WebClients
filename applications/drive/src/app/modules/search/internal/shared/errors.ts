@@ -86,8 +86,16 @@ export function listenForWorkerErrors() {
 }
 
 export function isAbortError(e: unknown): boolean {
-    // DOMException covers fetch/AbortController aborts; SdkAbortError covers SDK-thrown aborts.
-    return (e instanceof DOMException && e.name === 'AbortError') || e instanceof SdkAbortError;
+    // DOMException covers fetch/AbortController aborts; SdkAbortError covers SDK-thrown aborts
+    // that never crossed a serialization boundary. The plain-Error/name check covers the same
+    // SDK AbortError after crossing the main-thread <-> SharedWorker Comlink boundary: structured
+    // clone (see comlinkErrorTransferHandler.ts) preserves `.name`/`.message` but not custom
+    // subclass identity, so `instanceof SdkAbortError` no longer holds on the worker side.
+    return (
+        (e instanceof DOMException && e.name === 'AbortError') ||
+        e instanceof SdkAbortError ||
+        (e instanceof Error && e.name === 'AbortError')
+    );
 }
 
 export function isQuotaExceededError(e: unknown): boolean {
@@ -294,10 +302,13 @@ export function classifyError(e: unknown): ErrorDecision {
     if (e instanceof SdkConnectionError || getIsOfflineError(e)) {
         return { kind: 'transient', reason: 'offline' };
     }
-    if (e instanceof SdkRateLimitedError) {
+    // Same Comlink boundary problem as isAbortError above: RateLimitedError/ServerError thrown by
+    // the SDK on the main thread and crossed back to the worker lose their subclass identity, so
+    // instanceof alone misses them. Fall back to the name preserved by structured clone.
+    if (e instanceof SdkRateLimitedError || (e instanceof Error && e.name === 'RateLimitedError')) {
         return { kind: 'transient', reason: 'rate-limited' };
     }
-    if (e instanceof SdkServerError || getIsUnreachableError(e)) {
+    if (e instanceof SdkServerError || (e instanceof Error && e.name === 'ServerError') || getIsUnreachableError(e)) {
         return { kind: 'transient', reason: 'server' };
     }
     if (getIsNetworkError(e) || getIsTimeoutError(e)) {
