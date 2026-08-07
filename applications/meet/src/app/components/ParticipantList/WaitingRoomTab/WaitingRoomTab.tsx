@@ -10,8 +10,6 @@ import {
     selectWaitingParticipants,
     selectWaitingParticipantsWithNames,
 } from '@proton/meet/store/slices/waitingRoomSlice';
-import { useFlag } from '@proton/unleash/useFlag';
-import clsx from '@proton/utils/clsx';
 
 import { useWaitingRoomContext } from '../../../contexts/WaitingRoomContext';
 import { EmptyList } from '../shared/EmptyList';
@@ -46,8 +44,6 @@ const EmptyWaitingRoomList = ({ hasSearchQuery }: { hasSearchQuery: boolean }) =
 };
 
 export const WaitingRoomTab = ({ setIsScrolled, searchExpression }: Props) => {
-    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
-
     const { admitAll } = useWaitingRoomContext();
 
     const waitingParticipants = useMeetSelector(selectWaitingParticipants);
@@ -67,7 +63,7 @@ export const WaitingRoomTab = ({ setIsScrolled, searchExpression }: Props) => {
     const isEmpty = filteredRequests.length === 0;
 
     return (
-        <div className={clsx('flex flex-column flex-nowrap h-full relative', !isMeetWaitingRoomEnabled && 'pt-4')}>
+        <div className="flex flex-column flex-nowrap h-full relative">
             {isEmpty ? (
                 <EmptyWaitingRoomList hasSearchQuery={hasSearchQuery} />
             ) : (

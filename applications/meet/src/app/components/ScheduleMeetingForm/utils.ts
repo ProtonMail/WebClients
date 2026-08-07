@@ -98,7 +98,7 @@ export const validate = (values: FormValues) => {
     return errors;
 };
 
-export const getInitialValues = (isMeetWaitingRoomEnabled: boolean): FormValues => {
+export const getInitialValues = (isWaitingRoomCreationEnabled: boolean): FormValues => {
     const now = new Date();
     const end = new Date(now.getTime() + 30 * MINUTE);
     const pad = (n: number) => String(n).padStart(2, '0');
@@ -117,6 +117,6 @@ export const getInitialValues = (isMeetWaitingRoomEnabled: boolean): FormValues 
         endTime,
         timeZone: '',
         recurrence: 'NO_REPEAT',
-        waitingRoom: isMeetWaitingRoomEnabled ? WaitingRoomState.DISABLED : undefined,
+        waitingRoom: isWaitingRoomCreationEnabled ? WaitingRoomState.DISABLED : undefined,
     };
 };

@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { useIsWaitingRoomJoinEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMaxParticipants } from '@proton/meet/store/slices/meetingInfo';
-import { useFlag } from '@proton/unleash/useFlag';
+import { selectIsWaitingRoomHost } from '@proton/meet/store/slices/waitingRoomSlice';
 
 import { SideBarSearch } from '../SideBarSearch/SideBarSearch';
 
@@ -23,9 +24,10 @@ export const ParticipantListHeader = ({
     setIsSearchOn,
     participantsCount,
 }: Props) => {
-    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+    const isWaitingRoomJoinEnabled = useIsWaitingRoomJoinEnabled();
 
     const maxParticipants = useMeetSelector(selectMaxParticipants);
+    const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost) && isWaitingRoomJoinEnabled;
 
     return (
         <div className="flex items-center w-full">
@@ -40,7 +42,7 @@ export const ParticipantListHeader = ({
                 <div className="text-semibold flex items-center flex-nowrap">
                     <div className="flex items-baseline gap-1 flex-nowrap">
                         <h2 className="text-semibold text-2xl text-ellipsis m-0">{c('Title').t`Participants`}</h2>
-                        {!isMeetWaitingRoomEnabled && (
+                        {!isWaitingRoomHost && (
                             <span className="text-semibold text-sm color-hint text-tabular-nums">
                                 {maxParticipants
                                     ? `(${participantsCount}/${maxParticipants})`

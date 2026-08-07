@@ -9,11 +9,11 @@ import {
     WaitingRoomState,
 } from '@proton/shared/lib/interfaces/Meet';
 import type { CreateMeetingResponse } from '@proton/shared/lib/interfaces/Meet';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import type { CreateMeetingParams } from '../types/types';
 import { prepareMeetingCryptoData } from '../utils/cryptoUtils';
 import { useMeetErrorReporting } from './useMeetErrorReporting';
+import { useIsWaitingRoomCreationEnabled } from './useWaitingRoomFlags';
 
 export interface SaveMeetingParams {
     params: CreateMeetingParams;
@@ -23,7 +23,7 @@ export interface SaveMeetingParams {
 }
 
 export const useSaveMeeting = () => {
-    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+    const isWaitingRoomCreationEnabled = useIsWaitingRoomCreationEnabled();
 
     const api = useApi();
 
@@ -71,7 +71,7 @@ export const useSaveMeeting = () => {
                     ProtonCalendar: !!protonCalendar
                         ? ProtonCalendarState.FROM_PROTON_CALENDAR
                         : ProtonCalendarState.NOT_FROM_PROTON_CALENDAR,
-                    ...(isMeetWaitingRoomEnabled ? { WaitingRoom: waitingRoom ?? WaitingRoomState.DISABLED } : {}),
+                    ...(isWaitingRoomCreationEnabled ? { WaitingRoom: waitingRoom ?? WaitingRoomState.DISABLED } : {}),
                 }),
             });
 
