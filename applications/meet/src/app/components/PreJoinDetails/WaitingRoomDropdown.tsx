@@ -6,11 +6,11 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import { useSettingsLink } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { useIsWaitingRoomCreationEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectWaitingRoomSetting, setWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { PLANS } from '@proton/payments/core/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { ExpandOptionsButton } from '../../atoms/ExpandOptionsButton/ExpandOptionsButton';
 import { useNewPill } from '../../atoms/NewPill/useNewPill';
@@ -20,7 +20,7 @@ import { useWaitingRoomContext } from '../../contexts/WaitingRoomContext';
 import './WaitingRoomDropdown.scss';
 
 export const WaitingRoomDropdown = ({ instantMeeting }: { instantMeeting: boolean }) => {
-    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+    const isWaitingRoomCreationEnabled = useIsWaitingRoomCreationEnabled();
     const dispatch = useMeetDispatch();
     const waitingRoomSetting = useMeetSelector(selectWaitingRoomSetting);
     const [loading, withLoading] = useLoading();
@@ -57,7 +57,7 @@ export const WaitingRoomDropdown = ({ instantMeeting }: { instantMeeting: boolea
 
     const { isNew, markNewPillAsRead } = useNewPill('waiting-room-dropdown');
 
-    if (!isMeetWaitingRoomEnabled) {
+    if (!isWaitingRoomCreationEnabled) {
         return null;
     }
 

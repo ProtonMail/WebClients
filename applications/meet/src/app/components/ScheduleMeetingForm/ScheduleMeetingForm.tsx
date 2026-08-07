@@ -28,13 +28,13 @@ import {
 } from '@proton/meet';
 import { useMeetingUpdates } from '@proton/meet/hooks/useMeetingUpdates';
 import { useUpdateMeetingWaitingRoom } from '@proton/meet/hooks/useUpdateMeetingWaitingRoom';
+import { useIsWaitingRoomCreationEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { addMeeting, removeMeeting, updateMeeting } from '@proton/meet/store/slices/meetings';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, CALENDAR_APP_NAME, MINUTE } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
 import { type Meeting, MeetingType, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { ExpandOptionsButton } from '../../atoms/ExpandOptionsButton/ExpandOptionsButton';
@@ -96,7 +96,7 @@ export const ScheduleMeetingForm = ({
     onClose,
     onMeetingCreated,
 }: ScheduleMeetingFormProps) => {
-    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+    const isWaitingRoomCreationEnabled = useIsWaitingRoomCreationEnabled();
 
     const [user] = useUser();
     const [userSettings] = useUserSettings();
@@ -130,7 +130,7 @@ export const ScheduleMeetingForm = ({
     } | null>(null);
 
     const [values, setValues] = useState({
-        ...getInitialValues(isMeetWaitingRoomEnabled),
+        ...getInitialValues(isWaitingRoomCreationEnabled),
         timeZone: userTimeZone,
         meetingName: '',
     });
@@ -145,7 +145,9 @@ export const ScheduleMeetingForm = ({
         if (meeting) {
             const updates: Partial<typeof values> = {
                 meetingName: meeting.MeetingName,
-                ...(isMeetWaitingRoomEnabled ? { waitingRoom: meeting.WaitingRoom ?? WaitingRoomState.DISABLED } : {}),
+                ...(isWaitingRoomCreationEnabled
+                    ? { waitingRoom: meeting.WaitingRoom ?? WaitingRoomState.DISABLED }
+                    : {}),
             };
 
             if (meeting.Timezone) {
@@ -181,7 +183,7 @@ export const ScheduleMeetingForm = ({
                 ...updates,
             }));
         }
-    }, [isMeetWaitingRoomEnabled, meeting]);
+    }, [isWaitingRoomCreationEnabled, meeting]);
 
     useEffect(() => {
         const generateLink = async () => {
@@ -240,7 +242,7 @@ export const ScheduleMeetingForm = ({
                 });
 
                 if (
-                    isMeetWaitingRoomEnabled &&
+                    isWaitingRoomCreationEnabled &&
                     values.waitingRoom !== undefined &&
                     values.waitingRoom !== meeting.WaitingRoom
                 ) {
@@ -564,7 +566,7 @@ export const ScheduleMeetingForm = ({
                             ))}
                         </SelectTwo>
                     </div>
-                    {isMeetWaitingRoomEnabled && values.waitingRoom !== undefined && (
+                    {isWaitingRoomCreationEnabled && values.waitingRoom !== undefined && (
                         <ScheduleMeetingOptions
                             waitingRoom={values.waitingRoom}
                             onWaitingRoomChange={(value) => {

@@ -5,12 +5,12 @@ import { clsx } from 'clsx';
 import { RoomEvent } from 'livekit-client';
 import { c } from 'ttag';
 
+import { useIsWaitingRoomJoinEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectSortedParticipantIdentities } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsWaitingRoomHost } from '@proton/meet/store/slices/waitingRoomSlice';
-import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
@@ -41,7 +41,7 @@ const updateOnlyOn = [
 ];
 
 export const ParticipantList = () => {
-    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+    const isWaitingRoomJoinEnabled = useIsWaitingRoomJoinEnabled();
     const dispatch = useMeetDispatch();
 
     const [isSearchOn, setIsSearchOn] = useState(false);
@@ -51,7 +51,7 @@ export const ParticipantList = () => {
     const sortedParticipantIdentities = useMeetSelector(selectSortedParticipantIdentities);
     const sideBarState = useMeetSelector(selectSideBarState);
     const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
-    const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost) && isMeetWaitingRoomEnabled;
+    const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost) && isWaitingRoomJoinEnabled;
 
     const participants = useParticipants({
         updateOnlyOn,
