@@ -9640,6 +9640,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "Move to Primary": [
+        "Mou a Primari"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -15624,6 +15636,9 @@
       ],
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "S'han mogut a ${ label }. Els missatges similars es classificaran aquí en el futur."
       ]
     },
     "Success notification": {
@@ -17073,6 +17088,9 @@
       ],
       "Version 6 OpenPGP key": [
         "Clau OpenPGP de la versió 6"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de ${ providerName } a ${ BRAND_NAME }"
       ]
     },
     "tooltip": {
