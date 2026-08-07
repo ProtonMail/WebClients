@@ -3,8 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
-import hasKeylessSsoEntitlement from '@proton/account/scimSetup/hasKeylessSsoEntitlement';
+import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -14,6 +13,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import StepDot from '@proton/components/components/stepDot/StepDot';
 import StepDots from '@proton/components/components/stepDots/StepDots';
 import { FeatureCode, useFeature } from '@proton/features';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import scimGroupsHeroImg from '@proton/styles/assets/img/onboarding/scim-groups-onboarding-hero.svg';
 import scimGroupsApprovalImg from '@proton/styles/assets/img/onboarding/scim-groups-onboarding-tile-approval.svg';
@@ -42,9 +42,7 @@ const ExpectationRow = ({ illustration, text }: { illustration: string; text: Re
 
 const ScimGroupsOnboardingModal = ({ onClose, ...rest }: ModalProps) => {
     const { update } = useFeature<boolean>(FeatureCode.ScimGroupsOnboardingModal);
-    const [organization] = useOrganization();
-
-    const isKeyless = hasKeylessSsoEntitlement(organization?.PlanName);
+    const isKeyless = useSelector(selectIsKeylessSsoOrganizationPlan);
 
     const [step, setStep] = useState(0);
     const totalSteps = getTotalSteps(isKeyless);
