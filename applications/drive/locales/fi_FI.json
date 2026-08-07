@@ -4171,6 +4171,21 @@
       ],
       "Something went wrong": [
         "Jotain meni pieleen"
+      ],
+      "Invitation not found": [
+        "Kutsua ei löytynyt"
+      ],
+      "Item not found": [
+        "Kohdetta ei löytynyt"
+      ],
+      "Name must not be empty": [
+        "Nimi ei voi olla tyhjä"
+      ],
+      "Photo not found": [
+        "Kuvaa ei löytynyt"
+      ],
+      "Signature is missing": [
+        "Allekirjoitus puuttuu"
       ]
     },
     "error": {
@@ -7433,6 +7448,9 @@
       ],
       "Thinking about this": [
         "Mietitään tätä"
+      ],
+      "You": [
+        "Sinä"
       ]
     },
     "info": {
@@ -12777,6 +12795,12 @@
       ],
       "Size": [
         "Koko"
+      ],
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
+      "User": [
+        "Käyttäjä"
       ]
     },
     "TableHeader": {
@@ -14654,6 +14678,22 @@
       ],
       "Migrated": [
         "Siirretty"
+      ]
+    },
+    "Filter": {
+      "All": [
+        "Kaikki"
+      ],
+      "Errors": [
+        "Virheet"
+      ]
+    },
+    "Property": {
+      "key": [
+        "avain"
+      ],
+      "name": [
+        "nimi"
       ]
     }
   }

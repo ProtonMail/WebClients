@@ -4214,6 +4214,235 @@
       ],
       "Something went wrong": [
         "Noget gik galt"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Det kræver en besked for at oprette en rapport om krænkelse af ophavsretten eller stjålet data"
+      ],
+      "Bookmark password is not available": [
+        "Adgangskoden for bogmærket er ikke tilgængeligt"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Kan ikke tilføj et foto til et album uden et gyldigt navn"
+      ],
+      "Cannot download a folder": [
+        "Kan ikke downloade en mappe"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan ikke flytte et element uden et gyldigt navn – omdøb det først"
+      ],
+      "Cannot share root folder": [
+        "Kan ikke dele rodmappen"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan ikke bekræfte forfatteren af filen"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan ikke bekræfte hvem, der uploadede filen"
+      ],
+      "Copy operation aborted": [
+        "Kopiering afbrudt"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiering af et element til udenfor en mappe er ikke tilladt"
+      ],
+      "Could not find an available name": [
+        "Kunne ikke finde et tilgængeligt navn"
+      ],
+      "Could not load sharing details": [
+        "Kunne ikke indlæse oplysninger om deling"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Kunne ikke indlæse forhåndsvisningen: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunne ikke læse en del af denne fil: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Kunne ikke låse op for den overordnede mappe"
+      ],
+      "Could not unlock this item": [
+        "Kunne ikke låse op for dette element"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Oprettelse af dokumenter udenfor mapper er ikke tilladt"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Oprettelse af filer udenfor mapper er ikke tilladt"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Oprettelse af mapper udenfor mapper er ikke tilladt"
+      ],
+      "Device not found": [
+        "Enheden blev ikke fundet"
+      ],
+      "Expiration date cannot be in the past": [
+        "Udløbsdatoen kan ikke være i fortiden"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Kunne ikke dekryptere bogmærkets nøgle: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Kunne ikke dekryptere bogmærkets navn: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Kunne ikke dekryptere adgangskoden til bogmærket: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Kunne ikke dekryptere indholdsnøglen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kunne ikke dekryptere navnet på elementet: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Kunne ikke dekryptere knudens nøgle: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Kunne ikke dekryptere revision metadata"
+      ],
+      "Failed to get inviter keys": [
+        "Kunne ikke hente invitationsnøgler"
+      ],
+      "Failed to verify invitation": [
+        "Kunne ikke bekræfte invitationen"
+      ],
+      "File download failed due to empty response": [
+        "Kunne ikke downloade på grund af tomt svar"
+      ],
+      "File has no revision": [
+        "Filen har ingen revisioner"
+      ],
+      "Image preview not found": [
+        "Forhåndsvisning ikke fundet"
+      ],
+      "Invitation not found": [
+        "Invitation ikke fundet"
+      ],
+      "Item not found": [
+        "Element ikke fundet"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Legacy offentlige links kan ikke opdateres. Opret et nyt offentligt link."
+      ],
+      "Missing inviter email": [
+        "Mangler invitations-e-mail"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Mangler signatur for ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Flytning afbrudt"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Flytning af et element til udenfor en mappe er ikke tilladt"
+      ],
+      "Moving root item is not allowed": [
+        "Flytning af rodelementet er ikke tilladt"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Navnet må højst være på ${ MAX_NODE_NAME_LENGTH } tegn",
+        "Navnet må højst være på ${ MAX_NODE_NAME_LENGTH } tegn"
+      ],
+      "Name must not be empty": [
+        "Navnet må ikke være tomt"
+      ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata blev modtaget. Prøv igen."
+      ],
+      "Only admins can convert external invitations": [
+        "Kun admins kan konvertere eksterne invitationer"
+      ],
+      "Operation aborted": [
+        "Handling afbrudt"
+      ],
+      "Operation failed, try again later": [
+        "Handlingen mislykkedes, prøv igen sere"
+      ],
+      "Part of the file appears to be corrupted": [
+        "En del af filen er tilsyneladende beskadiget"
+      ],
+      "Photo is already in the target album": [
+        "Fotoet er allerede i destinationsalbummet"
+      ],
+      "Photo not found": [
+        "Foto ikke fundet"
+      ],
+      "Renaming root item is not allowed": [
+        "Omdøbning af rodelementet er ikke tilladt"
+      ],
+      "Request aborted": [
+        "Forespørgsel afbrudt"
+      ],
+      "Signature is missing": [
+        "Signaturen mangler"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturbekræftelse mislykkedes: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturbekræftelse for ${ signatureType } mislykkedes"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturbekræftelse for ${ signatureType } mislykkedes: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Noget fildata kunne ikke uploades. Prøv igen."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Nogle fildele kunne ikke uploades. Prøv igen."
+      ],
+      "Some items could not be loaded": [
+        "Nogle elementer kunne ikke indlæses"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den uploadede fil matcher ikke den originale. Prøv igen."
+      ],
+      "This file has missing crypto material": [
+        "Denne fil mangler krypto-materiale"
+      ],
+      "This file has no version available to download": [
+        "Filen har ingen versioner, der kan downloades"
+      ],
+      "This file version could not be uploaded": [
+        "Denne filversion kunne ikke uploades"
+      ],
+      "This item has no image preview": [
+        "Dette element har ingen forhåndsvisning"
+      ],
+      "This item is no longer shared": [
+        "Dette element er ikke længere delt"
+      ],
+      "This item is not shared": [
+        "Dette element er ikke delt"
+      ],
+      "Too many server errors, please try again later": [
+        "For mange serverfejl, prøv igen senere"
+      ],
+      "Too many server requests, please try again later": [
+        "For mange serverforespørgsler, prøv igen senere"
+      ],
+      "Verification keys are not available": [
+        "Bekræftelsesnøgler er ikke tilgængelige"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Bekræftelsesnøgler til ${ signatureType } er ikke tilgængelige"
+      ],
+      "You can create public links for your own files only": [
+        "Du kan kun oprette et offentligt link for dine egne filer"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan kun forlade elementer, som er delt med dig"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan kun uploade en ny version af en fil"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kan kun opdatere et offentligt link for dine egne filer"
+      ],
+      "You do not have access to this item": [
+        "Du har ikke adgang til dette element"
+      ],
+      "You do not have access to this shared item": [
+        "Du har ikke adgang til dette delte element"
       ]
     },
     "error": {
@@ -7510,6 +7739,9 @@
       ],
       "Thinking about this": [
         "Overvejer..."
+      ],
+      "Author is not provided on public link": [
+        "Forfatter er ikke angivet på offentligt link"
       ]
     },
     "info": {
@@ -14105,6 +14337,9 @@
       ],
       "Stay for 50% off your next month": [
         "Bliv hængende for 50% rabat i den næste måned"
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
+        "Vi kunne ikke bekræfte, at filens indhold blev uploadet af ${ claimedContentAuthor }. Årsagen er: ${ node.activeRevision.contentAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14756,6 +14991,26 @@
       ],
       "Migrated": [
         "Migreret"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attributter"
+      ],
+      "content key": [
+        "indholdsnøgle"
+      ],
+      "hash key": [
+        "hash-nøgle"
+      ],
+      "key": [
+        "nøgle"
+      ],
+      "membership": [
+        "medlemsskab"
+      ],
+      "name": [
+        "navn"
       ]
     }
   }
