@@ -18,7 +18,7 @@ import type { MailToolDeps, MailToolModule } from './toolModule';
  * The Mail tool pack. Each entry is a self-contained module (definition + handler factory + optional
  * card renderer — see {@link MailToolModule}); adding a tool means adding it here and nowhere else.
  * {@link buildLumoMailConfig} splits the modules back into the layered inputs the framework expects:
- * pure definitions for the engine, store-bound handlers for dispatch, card renderers for the UI.
+ * definitions for the engine, store-bound handlers for dispatch, card renderers for the UI.
  */
 const MODULES: MailToolModule[] = [
     // Reads
@@ -41,7 +41,13 @@ const MODULES: MailToolModule[] = [
  * the config identity changes).
  */
 export const buildLumoMailConfig = (deps: MailToolDeps): LumoAgentConfig => {
-    const definitions: ToolDefinition[] = MODULES.map((module) => module.definition);
+    const definitions: ToolDefinition[] = MODULES.map(({ definition, createGuide }) => {
+        if (!createGuide) {
+            return definition;
+        }
+        // needsGuide too: a guide is only ever reachable through `load_guide`.
+        return { ...definition, needsGuide: true, guide: () => createGuide(deps) };
+    });
 
     const handlers: ToolHandlers = Object.fromEntries(
         MODULES.map((module) => [module.definition.name, module.createHandler(deps)])

@@ -46,14 +46,15 @@ export interface MailToolDeps {
 }
 
 /**
- * One Mail tool, authored as a single co-located module (the "class per tool"): its pure
- * {@link ToolDefinition} (data the framework advertises), a {@link ToolHandler} factory bound to the
+ * One Mail tool, authored as a single co-located module (the "class per tool"): its
+ * {@link ToolDefinition} (what the framework advertises), a {@link ToolHandler} factory bound to the
  * Mail store, and — for a mutation — the {@link CardRenderer} for its confirm card + result tile.
- * {@link buildLumoMailConfig} assembles the registered modules into the framework's config; the pure
- * engine only ever receives `definition` + `handler`, the UI only the `cardRenderer`.
+ * {@link buildLumoMailConfig} assembles the registered modules into the framework's config; the engine
+ * only ever receives `definition` + `handler`, the UI only the `cardRenderer`.
  */
 export interface MailToolModule {
     definition: ToolDefinition;
     createHandler: (deps: MailToolDeps) => ToolHandler;
+    createGuide?: (deps: MailToolDeps) => string;
     cardRenderer?: CardRenderer;
 }
