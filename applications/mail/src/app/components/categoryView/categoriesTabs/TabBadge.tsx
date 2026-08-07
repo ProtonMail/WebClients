@@ -36,7 +36,7 @@ export const TabBadge = ({ tabState, shouldShowCounter, count }: TabBadgeProps) 
             aria-label={getLabel()}
             dir="ltr"
             className={clsx(
-                'tag-count px-1.5 py-0.5 text-sm',
+                'tab-badge px-1.5 py-0.5 text-sm',
                 tabState === TabState.ACTIVE ? 'mail-category-color mail-category-count-bg' : 'bg-weak color-weak',
                 count === 0 && 'visibility-hidden'
             )}

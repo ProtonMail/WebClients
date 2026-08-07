@@ -6,16 +6,41 @@
 
 $tab-dot-ease: easing(ease-out-quint);
 
-@mixin reveal-tab-labels($tab-max-width) {
-	// Tabs hug their content, the cap only bites for long labels, which then ellipsis.
-	.tab-wrapper {
-		max-inline-size: rem($tab-max-width);
-	}
-
+// Icon-only tabs. The active tab keeps its label and its counter so the user can still tell where
+// they are, and the tab being dragged over keeps its label so they can tell where they are dropping.
+@mixin hide-tab-labels() {
 	.tab-container {
-		.tab-label,
-		.tag-count {
-			display: block;
+		padding-inline-end: rem(14);
+
+		.tab-dragging-help {
+			display: none;
+		}
+
+		&:not([aria-selected='true']) {
+			.tab-badge {
+				display: none;
+			}
+		}
+
+		// Nothing is left but the icon, so it gets even padding on both sides and the empty label
+		// column stops holding the gap that used to separate it from the counter.
+		&:not([aria-selected='true'], .tab-drop-over) {
+			padding-inline-end: rem(16);
+
+			.tab-label {
+				display: none;
+			}
+
+			.tab-text,
+			.tab-label-ghost {
+				margin-inline-start: 0;
+			}
+
+			// Stays laid out at zero width so its `scrollWidth` keeps reporting the width the
+			// label would need, see `useCategoriesTabsCompact`.
+			.tab-label-ghost {
+				inline-size: 0;
+			}
 		}
 	}
 }
@@ -30,18 +55,25 @@ $tab-dot-ease: easing(ease-out-quint);
 		min-inline-size: 0;
 	}
 
+	// The error fallbacks borrow the bar's height and inset, not the tab layout: they are not
+	// tabs, so they must not pick up the grid or the icon-only rules.
+	.tab-error {
+		block-size: rem(44);
+		padding-inline: rem(16);
+	}
+
 	.tab-container {
 		position: relative;
 
 		// Three tracks: icon | label + drop helper | counter. A grid (rather than a flex row)
-		// lets the label span into the counter track while dragging, see `.dashed`.
+		// lets the label span into the counter track while dragging, see `.tab-drop-target`.
 		display: grid;
 		grid-template-columns: auto minmax(0, 1fr) auto;
 		align-items: center;
 		block-size: rem(44);
 
 		// Only the block borders are drawn, they reserve the space the active tab needs.
-		// States that need a border on the whole tab use an overlay, see `.dashed`.
+		// States that need a border on the whole tab use an overlay, see `.tab-drop-target`.
 		border-width: rem(3) 0;
 		padding-block: 0;
 		padding-inline: rem(16) 0;
@@ -60,8 +92,8 @@ $tab-dot-ease: easing(ease-out-quint);
 
 		// Border drawn while the user drags an element: dashed on the tabs that can receive
 		// the drop, solid and colored on the tab currently dragged over.
-		&.dashed::after,
-		&.hovered::after {
+		&.tab-drop-target::after,
+		&.tab-drop-over::after {
 			content: '';
 			position: absolute;
 			inset-block: 0 rem(-3);
@@ -71,7 +103,7 @@ $tab-dot-ease: easing(ease-out-quint);
 			pointer-events: none;
 		}
 
-		&.hovered::after {
+		&.tab-drop-over::after {
 			border: rem(2) solid var(--cat-border);
 
 			[data-theme-mode='dark'] & {
@@ -79,37 +111,18 @@ $tab-dot-ease: easing(ease-out-quint);
 			}
 		}
 
-		// Default (< 820px): icon-only — label and count hidden. Shown again at ≥ 820px
-		// and, for the label, on the active tab or when dragging over it.
-		.tab-label,
-		.tag-count,
-		.tab-dragging-help {
-			display: none;
-		}
-
+		// The top border reserves space but should be transparent on the active tab, which is
+		// the one drawing the colored bottom border. `!important` beats `.border-top`.
 		&[aria-selected='true'] {
-			// The top border reserves space but should be transparent on the active tab, which
-			// is the one drawing the colored bottom border. `!important` beats `.border-top`.
 			border-block-start: rem(3) solid transparent !important;
-
-			.tab-label,
-			.tag-count {
-				display: block;
-			}
-		}
-
-		&.hovered {
-			.tab-label {
-				display: block;
-			}
 		}
 
 		// While dragging, the counter gives its room to the label and the drop helper. It keeps
 		// its grid track (`visibility` rather than `display`) so the tab does not resize, and
 		// the text spans both tracks to claim the freed space.
-		&.dashed,
-		&.hovered {
-			.tag-count {
+		&.tab-drop-target,
+		&.tab-drop-over {
+			.tab-badge {
 				visibility: hidden;
 			}
 
@@ -132,12 +145,14 @@ $tab-dot-ease: easing(ease-out-quint);
 			min-inline-size: 100%;
 		}
 
-		// The ghost is the only thing measuring the label column, see the markup.
+		// The ghost is the only thing measuring the label column, see the markup. `nowrap` matters
+		// twice over: it keeps the reserved width honest, and it keeps `scrollWidth` reporting the
+		// full label rather than the longest word.
 		.tab-label-ghost {
 			grid-area: 1 / 2;
-			inline-size: auto;
 			block-size: 0;
 			overflow: hidden;
+			white-space: nowrap;
 			visibility: hidden;
 			pointer-events: none;
 		}
@@ -152,7 +167,7 @@ $tab-dot-ease: easing(ease-out-quint);
 			grid-area: 1 / 2;
 		}
 
-		.tag-count {
+		.tab-badge {
 			grid-area: 1 / 3;
 			border-radius: rem(6);
 			margin-block: rem(-2);
@@ -162,7 +177,7 @@ $tab-dot-ease: easing(ease-out-quint);
 		// counter (counters disabled) does not keep a trailing gap.
 		.tab-text,
 		.tab-label-ghost,
-		.tag-count {
+		.tab-badge {
 			margin-inline-start: rem(8);
 		}
 
@@ -192,32 +207,30 @@ $tab-dot-ease: easing(ease-out-quint);
 		}
 	}
 
-	// Medium (820–1023px): reveal labels, tabs hug their content capped at 136px each.
-	@include media('>=#{em(820, 16)}') {
-		@include reveal-tab-labels(136);
-
-		.tab-container {
-			.tab-dragging-help {
-				display: block;
-			}
-		}
+	// The labels do not fit, measured against the width they would need, see the hook.
+	&.tabs-compact {
+		@include hide-tab-labels;
 	}
 
-	// Large (≥ 1024px): tabs hug their content capped at 200px each, with a larger label
-	// and roomier spacing between the icon, the label and the counter.
-	@include media('>=#{em(1024, 16)}') {
-		@include reveal-tab-labels(200);
+	// Below 820px the bar sits under a truncated toolbar, nothing but the icons fits whatever the
+	// labels measure.
+	@include media('<#{em(820, 16)}') {
+		@include hide-tab-labels;
+	}
 
+	// Large (≥ 1024px): a larger label and roomier spacing between icon, label and counter.
+	@include media('>=#{em(1024, 16)}') {
 		.tab-container {
 			padding-inline-end: rem(14);
 
 			.tab-text,
 			.tab-label-ghost,
-			.tag-count {
+			.tab-badge {
 				margin-inline-start: rem(18);
 			}
 
-			.tab-label {
+			.tab-label,
+			.tab-label-ghost {
 				font-size: rem(13);
 			}
 		}

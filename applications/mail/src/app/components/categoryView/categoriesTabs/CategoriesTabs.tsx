@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
@@ -6,6 +6,7 @@ import { selectCategoryUnreadCount } from '@proton/mail/store/categoriesView/cat
 import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { selectActiveCategoryID, selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
@@ -19,6 +20,7 @@ import { CategoriesTabsError, CategoryTabError } from './CategoryTabsErrors';
 import { Tab } from './Tab';
 import { getTabState } from './categoriesTabsHelper';
 import { useCategoriesDrag } from './useCategoriesDrag';
+import { useCategoriesTabsCompact } from './useCategoriesTabsCompact';
 
 import './CategoriesTabs.scss';
 
@@ -33,6 +35,9 @@ export const CategoriesTabsList = () => {
     const isDraggingElements = useMailSelector(selectDraggingElements);
 
     const dispatch = useDispatch();
+
+    const barRef = useRef<HTMLDivElement>(null);
+    const compact = useCategoriesTabsCompact(barRef, activeCategoriesTabs);
 
     const activeCategoryUnreadCount = useMailSelector((state) =>
         activeCategoryID ? selectCategoryUnreadCount(state, activeCategoryID).count : 0
@@ -70,7 +75,11 @@ export const CategoriesTabsList = () => {
     return (
         <>
             <div
-                className="categories-tabs flex flex-nowrap px-2 h-fit-content border-bottom border-weak"
+                ref={barRef}
+                className={clsx(
+                    'categories-tabs flex flex-nowrap px-2 h-fit-content border-bottom border-weak',
+                    compact && 'tabs-compact'
+                )}
                 data-testid="categories-tabs"
                 onDragEnter={handleDragEnter}
                 onDragLeave={handleDragLeave}
