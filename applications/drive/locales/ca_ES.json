@@ -4464,6 +4464,9 @@
       ],
       "Organization does not have enough storage available": [
         "L'organització no té prou espai d'emmagatzematge disponible"
+      ],
+      "Something went wrong, please try again later": [
+        "Alguna cosa ha anat malament. Torneu-ho a provar més tard"
       ]
     },
     "error": {
@@ -7812,6 +7815,15 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
         "No podreu compartir \"${ fileName }\" després de canviar l'accés al visualitzador. El propietari o un editor amb accés de compartició us podrà restablir l'accés d'edició. No podreu desfer aquest canvi vós mateix."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -14510,6 +14522,9 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Usuaris que han accedit al seu compte de ${ BRAND_NAME }"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de ${ providerName } a ${ BRAND_NAME }"
       ]
     },
     "tooltip": {
