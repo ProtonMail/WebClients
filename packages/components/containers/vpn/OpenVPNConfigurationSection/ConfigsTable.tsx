@@ -28,7 +28,7 @@ import Country from './Country';
 import LoadIndicator from './LoadIndicator';
 import type { EnhancedLogical } from './interface';
 import { normalizeName } from './normalizeName';
-import { isP2PEnabled, isSmartRouting, isTorEnabled } from './utils';
+import { isIPv6Enabled, isP2PEnabled, isSmartRouting, isTorEnabled } from './utils';
 
 export enum CATEGORY {
     SECURE_CORE = 'SecureCore',
@@ -92,6 +92,20 @@ export const SmartRoutingIcon = ({ countries }: { countries: (string | undefined
                 <div>
                     <IcGlobe size={4.5} className="rounded bg-strong p-1" />
                 </div>
+            </Tooltip>
+        </span>
+    );
+};
+
+export const IPv6Icon = () => {
+    return (
+        <span className="mx-2 cursor-default">
+            <Tooltip
+                title={c('Info')
+                    .t`Allows IPv6 traffic to pass through the VPN tunnel. This improves compatibility with IPv6 websites and services.`}
+                openDelay={0}
+            >
+                <span className="rounded bg-strong p-1">IPv6</span>
             </Tooltip>
         </span>
     );
@@ -189,6 +203,7 @@ const ConfigsTable = ({
                                         countries={[getLocalizedCountryByAbbr(server.HostCountry, countryOptions)]}
                                     />
                                 )}
+                                {isIPv6Enabled(server.Features) && <IPv6Icon />}
                             </div>,
                             (() => {
                                 if (server.isUpgradeRequired) {
