@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -259,15 +259,6 @@ const BugModal = ({
 
     const link = <Href key="linkClearCache" href={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
 
-    // Start reading logs as soon as the modal opens so submitting does not wait on
-    // decryption. `handleSubmit` awaits this same promise rather than re-reading.
-    const logsPromise = useRef<Promise<string>>();
-    useEffect(() => {
-        if (collectLogs) {
-            logsPromise.current = loggerManager.getAllLogs();
-        }
-    }, [collectLogs]);
-
     const { validator, onFormSubmit } = useFormErrors();
 
     const setModelDiff = (model: Partial<Model>) => {
@@ -296,9 +287,10 @@ const BugModal = ({
                 {}
             );
 
-            // Get logs from all logger instances if user opted in
+            // Read at submit rather than at open, so lines logged while the form was
+            // being filled in — often the very error being reported — are included.
             if (collectLogs && includeLogs) {
-                const logs = await (logsPromise.current ?? loggerManager.getAllLogs());
+                const logs = await loggerManager.getAllLogs();
                 if (logs && logs.trim()) {
                     const filename = `logs-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
                     attachments[filename] = new Blob([logs], { type: 'text/plain' });
