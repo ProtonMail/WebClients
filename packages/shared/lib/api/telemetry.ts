@@ -549,6 +549,7 @@ export enum TelemetryVpnB2bUserActivityEvents {
     upsell_shown = 'upsell_shown',
     upsell_learn_more_clicked = 'upsell_learn_more_clicked',
     upsell_upgrade_started = 'upsell_upgrade_started',
+    upsell_upgrade_success = 'upsell_upgrade_success',
     upsell_dismissed = 'upsell_dismissed',
     enable_clicked = 'enable_clicked',
 }
