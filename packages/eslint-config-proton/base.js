@@ -1,6 +1,7 @@
 //@ts-check
 import protontechEnforceUint8ArrayArraybuffer from '@protontech/eslint-plugin-enforce-uint8array-arraybuffer';
 import compat from 'eslint-plugin-compat';
+import customRules from 'eslint-plugin-custom-rules';
 import importPlugin from 'eslint-plugin-import';
 import lodash from 'eslint-plugin-lodash';
 import monorepoCop from 'eslint-plugin-monorepo-cop';
@@ -17,6 +18,7 @@ export default defineConfig(
         name: 'register-all-plugins',
         plugins: {
             '@typescript-eslint': plugin,
+            'custom-rules': customRules,
             import: importPlugin,
             // monorepo-cop is legacy typed, so we need to cast it to the correct type
             'monorepo-cop': /** @type {import('eslint').ESLint.Plugin} */ (/** @type {unknown} */ (monorepoCop)),
@@ -30,7 +32,10 @@ export default defineConfig(
 
     {
         name: 'monorepo',
-        rules: /** @type {Partial<import('@eslint/core').RulesConfig>} */ (monorepoCop.configs.recommended.rules),
+        rules: /** @type {Partial<import('@eslint/core').RulesConfig>} */ ({
+            ...monorepoCop.configs.recommended.rules,
+            'custom-rules/no-package-self-import': 'error',
+        }),
     },
 
     compat.configs['flat/recommended'],
