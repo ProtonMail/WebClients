@@ -14,7 +14,7 @@ import type {
     ToolHandlers,
     ToolName,
 } from '../contracts/types';
-import { LOAD_GUIDE_TOOL_NAME } from './loadGuide';
+import { LOAD_GUIDE_TOOL_NAME, resolveGuide } from './loadGuide';
 import { buildToolDescriptors } from './tools';
 import { validateToolArgs } from './validate';
 
@@ -186,15 +186,23 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         if (!targetDefinition?.guide) {
             return errorResult(`There is no guide for "${target}".`);
         }
+        if (loadedGuides.has(target)) {
+            return okResult(`The ${target} guide is already loaded. Call ${target} now; do not load it again.`);
+        }
+
         loadedGuides.add(target);
+        const guide = resolveGuide(targetDefinition);
+        if (!guide) {
+            return okResult(`There is no extra guidance for ${target}. It is now available — call it as described.`);
+        }
         const loadGuide = byName.get(loadGuideToolName);
         onChip?.({
             tool: loadGuideToolName,
             summary: loadGuide?.summarizeChip(args, undefined as never) ?? { label: `Loaded guide for ${target}` },
-            payload: targetDefinition.guide,
+            payload: guide,
         });
         return okResult(
-            `Usage guide for ${target} — its tool is now available, and you MUST follow this guide every time you call it. Call it now to continue the work; never reply to the user about this guide.\n\n${targetDefinition.guide}`
+            `Usage guide for ${target} — its tool is now available, and you MUST follow this guide every time you call it. Call it now to continue the work; never reply to the user about this guide.\n\n${guide}`
         );
     };
 

@@ -1,5 +1,6 @@
 import type { ToolDefinition, ToolName } from '../contracts/types';
 import { getActiveTools } from '../engine/activeSet';
+import { resolveGuide } from '../engine/loadGuide';
 
 /**
  * Composes the system prompt: a generic protocol base, then the product's own rules block, then worked
@@ -64,13 +65,19 @@ export const buildSystemPrompt = ({ definitions, loadedGuides, productRules }: B
         sections.push(`## Examples\n${exampleLines.join('\n\n')}`);
     }
 
-    // Each loaded guide body once, deduped — two tools may share one guide.
+    // Each loaded guide body once, deduped — two tools may share one guide, so dedupe on the RESOLVED
+    // body: two tools sharing one thunk are only equal after it has been called.
     const seenGuides = new Set<string>();
     definitions.forEach((definition) => {
-        if (definition.guide && loaded.has(definition.name) && !seenGuides.has(definition.guide)) {
-            seenGuides.add(definition.guide);
-            sections.push(`## Guide: ${definition.name}\n${definition.guide}`);
+        if (!loaded.has(definition.name)) {
+            return;
         }
+        const guide = resolveGuide(definition);
+        if (!guide || seenGuides.has(guide)) {
+            return;
+        }
+        seenGuides.add(guide);
+        sections.push(`## Guide: ${definition.name}\n${guide}`);
     });
 
     return sections.join('\n\n');
