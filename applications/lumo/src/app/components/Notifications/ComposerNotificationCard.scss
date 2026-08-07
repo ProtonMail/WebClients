@@ -6,16 +6,24 @@
 	// loads.
 	opacity: 1;
 	transform: translateY(0);
-	transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.3s ease;
+	transition:
+		opacity 0.2s ease,
+		transform 0.2s ease,
+		box-shadow 0.3s ease;
 
 	&:hover {
 		box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
 	}
 
-	&--hidden {
+	&#{&}--hidden {
 		opacity: 0;
 		transform: translateY(-8px);
 		pointer-events: none;
+		block-size: 0;
+		padding-block: 0;
+		margin-block-end: 0;
+		border-block-width: 0;
+		overflow: hidden;
 	}
 
 	&--warning {
