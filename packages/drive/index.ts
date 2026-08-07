@@ -8,7 +8,7 @@ import type {
 } from '@protontech/drive-sdk';
 import { MemoryCache, NodeType, ProtonDriveClient, VERSION } from '@protontech/drive-sdk';
 import { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
-import type { LogHandler, MetricHandler, MetricRecord } from '@protontech/drive-sdk/dist/telemetry';
+import { type LogHandler, LogLevel, type MetricHandler, type MetricRecord } from '@protontech/drive-sdk/dist/telemetry';
 // TODO: Remove that when sdk will be transpile with bun
 import 'core-js/actual/array/from-async';
 
@@ -195,6 +195,7 @@ export function useDrive() {
                 telemetry,
                 featureFlagProvider,
             });
+
             driveSingleton = proxyDriveClientWithEventTracking(driveClient, driveLatestEventIdProvider);
 
             photosLatestEventIdProvider = new LatestEventIdProvider();
@@ -218,6 +219,13 @@ export function useDrive() {
                 driveSingleton = proxyDriveClientWithSDKMismatchDetection(driveSingleton, 'drive');
                 photosSingleton = proxyDriveClientWithSDKMismatchDetection(photosSingleton, 'photos');
             }
+
+            loggingSingleton.log({
+                time: new Date(),
+                level: LogLevel.INFO,
+                loggerName: 'drive',
+                message: `ProtonDriveClient ${VERSION} instantiated for ${options.appName}@${options.appVersion}`,
+            });
         },
         [
             setAppVersionHeaders,
