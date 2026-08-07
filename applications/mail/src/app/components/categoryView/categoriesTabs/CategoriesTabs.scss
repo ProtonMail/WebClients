@@ -6,9 +6,10 @@
 
 $tab-dot-ease: easing(ease-out-quint);
 
-@mixin reveal-tab-labels() {
+@mixin reveal-tab-labels($tab-max-width) {
+	// Tabs hug their content, the cap only bites for long labels, which then ellipsis.
 	.tab-wrapper {
-		flex: 1 1 0;
+		max-inline-size: rem($tab-max-width);
 	}
 
 	.tab-container {
@@ -23,8 +24,20 @@ $tab-dot-ease: easing(ease-out-quint);
 	background-color: var(--toolbar-background-color);
 	border-block-start: 1px solid var(--border-weak);
 
+	// Hug the content but stay squeezable: never grow, shrink before the bar overflows.
+	.tab-wrapper {
+		flex: 0 1 auto;
+		min-inline-size: 0;
+	}
+
 	.tab-container {
 		position: relative;
+
+		// Three tracks: icon | label + drop helper | counter. A grid (rather than a flex row)
+		// lets the label span into the counter track while dragging, see `.dashed`.
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr) auto;
+		align-items: center;
 		block-size: rem(44);
 
 		// Only the block borders are drawn, they reserve the space the active tab needs.
@@ -91,40 +104,66 @@ $tab-dot-ease: easing(ease-out-quint);
 			}
 		}
 
-		// While dragging, the counter makes room for the drop affordance. Declared after the
-		// reveal rule above so it wins the equal-specificity tie, and it outweighs the
-		// class-less reveals in the media queries below.
+		// While dragging, the counter gives its room to the label and the drop helper. It keeps
+		// its grid track (`visibility` rather than `display`) so the tab does not resize, and
+		// the text spans both tracks to claim the freed space.
 		&.dashed,
 		&.hovered {
 			.tag-count {
-				display: none;
+				visibility: hidden;
+			}
+
+			.tab-text {
+				grid-column: 2 / span 2;
 			}
 		}
 
 		// Pin to the parent width so text-ellipsis clips the text instead of letting its
 		// min-content width overflow into the counter badge and past the tab
-		.tab-label,
-		.tab-dragging-help {
+		.tab-label {
 			inline-size: 100%;
+			transition: color 0.2s ease;
 		}
 
-		.tab-label {
-			transition: color 0.2s ease;
+		// Sized by the label column but contributing nothing to it, so the drop helper can be
+		// wider than the label without stretching the tab. It ellipsis instead.
+		.tab-dragging-help {
+			inline-size: 0;
+			min-inline-size: 100%;
+		}
 
-			// Reserves width to avoid layout shift when label gets semibold weight
-			&::before {
-				display: block;
-				content: attr(title);
-				font-weight: 600;
-				block-size: 0;
-				overflow: hidden;
-				visibility: hidden;
-			}
+		// The ghost is the only thing measuring the label column, see the markup.
+		.tab-label-ghost {
+			grid-area: 1 / 2;
+			inline-size: auto;
+			block-size: 0;
+			overflow: hidden;
+			visibility: hidden;
+			pointer-events: none;
+		}
+
+		// Placement is explicit: auto-placement pushes the counter onto a second row as soon as
+		// the text is told to span two tracks while dragging.
+		.tab-icon {
+			grid-area: 1 / 1;
+		}
+
+		.tab-text {
+			grid-area: 1 / 2;
 		}
 
 		.tag-count {
+			grid-area: 1 / 3;
 			border-radius: rem(6);
 			margin-block: rem(-2);
+		}
+
+		// Spacing lives on the items rather than on a grid `column-gap` so a tab without a
+		// counter (counters disabled) does not keep a trailing gap.
+		.tab-text,
+		.tab-label-ghost,
+		.tag-count {
+			margin-inline-start: rem(8);
 		}
 
 		.tab-new-dot {
@@ -153,9 +192,9 @@ $tab-dot-ease: easing(ease-out-quint);
 		}
 	}
 
-	// Medium (820–1023px): reveal labels, tabs fill the bar capped at 136px each.
+	// Medium (820–1023px): reveal labels, tabs hug their content capped at 136px each.
 	@include media('>=#{em(820, 16)}') {
-		@include reveal-tab-labels;
+		@include reveal-tab-labels(136);
 
 		.tab-container {
 			.tab-dragging-help {
@@ -164,24 +203,22 @@ $tab-dot-ease: easing(ease-out-quint);
 		}
 	}
 
-	// Large (≥ 1024px): tabs fill the bar capped at 200px each, with a larger centered label.
+	// Large (≥ 1024px): tabs hug their content capped at 200px each, with a larger label
+	// and roomier spacing between the icon, the label and the counter.
 	@include media('>=#{em(1024, 16)}') {
-		@include reveal-tab-labels;
+		@include reveal-tab-labels(200);
 
 		.tab-container {
 			padding-inline-end: rem(14);
 
-			.tab-label {
-				font-size: rem(13);
-				padding-inline-start: rem(18);
-			}
-
+			.tab-text,
+			.tab-label-ghost,
 			.tag-count {
 				margin-inline-start: rem(18);
 			}
 
-			.tab-dragging-help {
-				padding-inline-start: rem(18);
+			.tab-label {
+				font-size: rem(13);
 			}
 		}
 	}
