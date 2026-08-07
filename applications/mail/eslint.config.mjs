@@ -49,4 +49,26 @@ export default defineConfig([
             '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
         },
     },
+    {
+        /**
+         * Test state factories must stay import-light. Importing `rootReducer` as a value pulls in every slice of the application.
+         * On a single test the imported modules went from 181 to 2449, and the time went from 0.33s to 0.92s when root reducer is loaded.
+         */
+        files: ['src/app/store/**/*.testing.ts'],
+        rules: {
+            '@typescript-eslint/no-restricted-imports': [
+                'error',
+                {
+                    patterns: [
+                        {
+                            group: ['**/rootReducer', '**/store/store', '**/hooks'],
+                            allowTypeImports: true,
+                            message:
+                                'Test state factories may only import types from the store. Build the slice from its own factory or initial state instead.',
+                        },
+                    ],
+                },
+            ],
+        },
+    },
 ]);

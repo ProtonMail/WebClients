@@ -70,6 +70,7 @@ const MailboxListItems = ({
         useLoadingElement,
         loadingElement,
         total,
+        shouldShowPrimaryBadge,
     } = useMailboxListContext();
 
     const labelID = useMailSelector(selectLabelID);
@@ -164,6 +165,7 @@ const MailboxListItems = ({
                             userSettings={userSettings}
                             onBack={onBack}
                             labels={labels}
+                            shouldShowPrimaryBadge={shouldShowPrimaryBadge}
                         />
                     );
 

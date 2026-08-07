@@ -17,6 +17,7 @@ export const FLAGS_WITH_VARIANT = [
     'OrganizationLevelEasySwitch',
     'VPNReferralWithoutTrial',
     'B2BAlwaysOnWindowsRelease',
+    'CategoryViewVariant',
 ] satisfies FeatureFlag[];
 
 /**
@@ -37,6 +38,19 @@ export type VPNReferralWithoutTrialVariant = 'A' | 'B';
 export type B2BAlwaysOnWindowsReleaseVariant = 'version';
 export type EnableVpn2024AddonsExperimentVariant =
     'lumo-addon-only' | 'meet-addon-only' | 'pass-addon-only' | 'no-addon';
+/**
+ * The important variant for the client is `RecategorizationButton`. Users with this variant will see the move to primary badge.
+ * The other variants are used for other experiments and are here for reference.
+ */
+export type CategoryViewVariantVariant =
+    | 'FeatureAccessOn'
+    | 'PrimaryFiltering45'
+    | 'PrimaryFiltering60'
+    | 'RecategorizationButton'
+    | 'RecategorizationNoButton'
+    | 'BackBucket'
+    | 'GradualRollout'
+    | 'NoAccess';
 
 /**
  * @description Union type of the list of feature flags with a variant.
@@ -66,6 +80,7 @@ type FeatureFlagVariantMap = {
     MeetSpotlightType: VariantReturnType<MeetSpotlightTypeVariant>;
     VPNReferralWithoutTrial: VariantReturnType<VPNReferralWithoutTrialVariant>;
     B2BAlwaysOnWindowsRelease: VariantReturnType<B2BAlwaysOnWindowsReleaseVariant>;
+    CategoryViewVariant: VariantReturnType<CategoryViewVariantVariant>;
 };
 
 /**

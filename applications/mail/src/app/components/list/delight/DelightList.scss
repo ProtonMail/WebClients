@@ -1,5 +1,6 @@
 @use 'sass:math';
 @use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/em' as *;
 @use '~@proton/styles/scss/lib/config' as *;
 
 .items-column-list {
@@ -52,6 +53,22 @@ html:not(.feature-scrollbars-off) .items-column-list-container {
 		&::-webkit-scrollbar-track {
 			border-inline-start: 1px solid var(--border-weak);
 		}
+	}
+}
+
+.items-column-list-container {
+	container: mailbox-list / inline-size;
+}
+
+// In column mode the badge sits on the subject line, so only show it when the list
+// is wide enough to keep the subject readable. Row mode always shows it.
+.item-container--column .item-move-to-primary {
+	display: none;
+}
+
+@container mailbox-list (min-inline-size: #{em(672, 16)}) {
+	.item-container--column .item-move-to-primary {
+		display: inline-flex;
 	}
 }
 

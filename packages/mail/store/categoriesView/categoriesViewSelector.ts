@@ -1,5 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
+import { selectOrganization, selectOrganizationLoading } from '@proton/account/organization';
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { DEFAULT_MAIL_SETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
@@ -8,7 +9,7 @@ import { type ConversationCountsState, selectConversationCounts } from '../count
 import { type MessageCountsState, selectMessageCounts } from '../counts/messageCountsSlice';
 import type { CategoriesState } from '../labels';
 import { selectDisabledCategoriesIDs } from '../labels/selector';
-import { selectMailSettings } from '../mailSettings';
+import { selectMailSettings, selectMailSettingsLoading } from '../mailSettings';
 
 export type CategoriesViewState = ConversationCountsState & MessageCountsState & CategoriesState;
 
@@ -61,4 +62,18 @@ export const selectCategoryUnreadCount = createSelector(
             loading,
         };
     }
+);
+
+export const selectCategoryViewSettingAccess = createSelector(
+    [selectMailSettings, selectOrganization],
+    (mailSettings, organization) => {
+        return organization?.value?.Settings?.MailCategoryViewEnabled
+            ? (mailSettings?.value?.MailCategoryView ?? false)
+            : false;
+    }
+);
+
+export const selectCategoryViewLoading = createSelector(
+    [selectMailSettingsLoading, selectOrganizationLoading],
+    (mailSettingsLoading, organizationLoading) => mailSettingsLoading || organizationLoading
 );
