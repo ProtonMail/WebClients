@@ -73,6 +73,31 @@ describe('buildSystemPrompt', () => {
         expect(prompt.split('THE FILTER GUIDE BODY').length - 1).toBe(1);
     });
 
+    it('re-resolves a thunk guide on every build, so a body that has since changed is the one emitted', () => {
+        let body = 'MATCHING IS BY SUBSTRING';
+        const search = def('search', { needsGuide: true, guide: () => body });
+        const config = { definitions: [search], loadedGuides: ['search'] };
+
+        expect(buildSystemPrompt(config)).toContain('MATCHING IS BY SUBSTRING');
+
+        body = 'OPERATORS ARE LIVE';
+        const next = buildSystemPrompt(config);
+        expect(next).toContain('OPERATORS ARE LIVE');
+        expect(next).not.toContain('MATCHING IS BY SUBSTRING');
+    });
+
+    it('dedupes two thunk guides returning the same body, which are only equal once resolved', () => {
+        const prompt = buildSystemPrompt({
+            definitions: [
+                def('search', { needsGuide: true, guide: () => 'THE SHARED GUIDE BODY' }),
+                def('search_thread', { needsGuide: true, guide: () => 'THE SHARED GUIDE BODY' }),
+            ],
+            loadedGuides: ['search', 'search_thread'],
+        });
+
+        expect(prompt.split('THE SHARED GUIDE BODY').length - 1).toBe(1);
+    });
+
     it('accepts loadedGuides as a Set as well as an array', () => {
         const asArray = buildSystemPrompt({ definitions: DEFINITIONS, loadedGuides: ['make_filter'] });
         const asSet = buildSystemPrompt({ definitions: DEFINITIONS, loadedGuides: new Set(['make_filter']) });
