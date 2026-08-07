@@ -76,7 +76,7 @@ const toManagedCompany = (org: UserOrganization): MspCompany => ({
     name: org.OrganizationName,
     assignedSeats: org.MaxMembers,
     usedSeats: org.UsedMembers,
-    status: org.State,
+    status: org.Status,
 });
 
 const MspCompaniesSection = ({ path }: { path: string }) => {
