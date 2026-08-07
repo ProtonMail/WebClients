@@ -2,6 +2,7 @@ import type { History } from 'history';
 
 import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import type { Filter } from '@proton/components/containers/filters/interfaces';
+import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { Folder, Label, MailSettings } from '@proton/shared/lib/interfaces';
 
@@ -39,6 +40,7 @@ export interface MailToolDeps {
     getFilters: () => Filter[];
     getMailSettings: () => MailSettings;
     applyLocation: ApplyLocation;
+    getESStatus: () => ESStatusBooleans;
     loadConversation: (conversationID: string) => Promise<unknown>;
     initializeMessage: (messageID: string, labelID: string) => Promise<void>;
 }
