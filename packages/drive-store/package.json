@@ -39,7 +39,7 @@
         "@xmldom/xmldom": "^0.9.10",
         "client-zip": "^2.5.0",
         "comlink": "^4.4.2",
-        "exifreader": "^4.41.0",
+        "exifreader": "^4.41.3",
         "heic-to": "^1.5.2",
         "mime-types": "^2.1.35",
         "react": "^18.3.1",
@@ -75,10 +75,10 @@
         "jest-junit": "^16.0.0",
         "jest-when": "3.7.0",
         "path-browserify": "^1.0.1",
-        "prettier": "^3.9.5",
+        "prettier": "^3.9.6",
         "pretty-format": "^30.4.1",
         "typescript": "^6.0.3",
-        "webpack": "^5.108.4"
+        "webpack": "^5.109.2"
     },
     "peerDependencies": {
         "@openpgp/web-stream-tools": "^0.3.1"
