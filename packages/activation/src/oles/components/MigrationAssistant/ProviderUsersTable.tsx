@@ -85,6 +85,7 @@ const getFilterTranslation = (filter: ProviderUserFilter) => {
 };
 
 const usersAddressesLink = <SettingsLink path="/users-addresses">{c('Title').t`Users and addresses`}</SettingsLink>;
+const domainNamesLink = <SettingsLink path="/domain-names">{c('Title').t`Domain names`}</SettingsLink>;
 
 const ProviderUsersTable: FC<Props> = ({
     users,
@@ -157,6 +158,11 @@ const ProviderUsersTable: FC<Props> = ({
 
     const getEligibilityReasonTranslation = (reason: string) => {
         switch (reason) {
+            case 'address_unavailable':
+                return c('Info')
+                    .t`This user can not be migrated because their email address is not available on ${BRAND_NAME}.`;
+            case 'domain_not_owned_by_organization':
+                return c('Info').jt`To migrate this user, add and verify the email domain under ${domainNamesLink}`;
             case 'source_account_disabled':
                 return c('Info').t`To migrate this user, enable their account in your ${provider.adminConsoleName}.`;
             case 'source_account_suspended':
@@ -257,7 +263,8 @@ const ProviderUsersTable: FC<Props> = ({
                                 <div className="flex">
                                     <Tooltip
                                         openDelay={0}
-                                        title={c('Tooltip').t`Data migration status from ${providerName} to ${BRAND_NAME}`}
+                                        title={c('Tooltip')
+                                            .t`Data migration status from ${providerName} to ${BRAND_NAME}`}
                                     >
                                         <div className="flex items-center flex-nowrap gap-2">
                                             <IcInfoCircle className="shrink-0" />
