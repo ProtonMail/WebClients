@@ -237,9 +237,14 @@ const addGroupMemberThunk = ({
             forwardeeAddress,
             organizationKey,
         });
+        // The managed path has no activation step, so nothing downstream
+        // corrects a UserID lifted from the member's self-asserted primary
+        // key (unlike the private path, where acceptGroupInvitation rebinds
+        // on mismatch). Bind the forwarded key to the address it is actually
+        // being issued for.
         const { forwardeeKey, proxyInstances } = await getInternalParameters(
             forwarderKey.privateKey,
-            userIDsForForwardeeKey,
+            [{ email: canonicalEmail, name: canonicalEmail }],
             decryptedToken
         );
         return api(
@@ -417,9 +422,14 @@ export const addGroupMemberKeysThunk = ({
             organizationKey,
         });
 
+        // The managed path has no activation step, so nothing downstream
+        // corrects a UserID lifted from the member's self-asserted primary
+        // key (unlike the private path, where acceptGroupInvitation rebinds
+        // on mismatch). Bind the forwarded key to the address it is actually
+        // being issued for.
         const { forwardeeKey, proxyInstances } = await getInternalParameters(
             forwarderKey.privateKey,
-            userIDsForForwardeeKey,
+            [{ email: canonicalEmail, name: canonicalEmail }],
             decryptedToken
         );
         return api(
