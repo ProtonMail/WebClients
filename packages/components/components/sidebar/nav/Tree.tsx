@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
 import { Sidebar } from '@proton/components/components/sidebar/nav';
-import { Icon } from '@proton/components/index';
+import { Badge, Icon } from '@proton/components/index';
 import type { SidebarNode, SidebarTree } from '@proton/nav/types/sidebar';
 
 import { getActiveBranches } from './traverse';
@@ -18,6 +18,10 @@ function hasNotifications(meta: SidebarNode['meta']): meta is SidebarNode['meta'
     return 'hasNotifications' in meta && isThemeColor(meta.hasNotifications);
 }
 
+function isBeta(meta: SidebarNode['meta']): boolean {
+    return meta.beta === true;
+}
+
 function Leaf({ item }: { item: SidebarNode }) {
     const notification = hasNotifications(item.meta) ? item.meta.hasNotifications : undefined;
     if (!item.to) {
@@ -28,6 +32,9 @@ function Leaf({ item }: { item: SidebarNode }) {
         <Sidebar.Leaf to={item.to}>
             {item.icon ? <Icon name={item.icon} className="color-weak" /> : <Sidebar.Leaf.IconPlaceholder />}
             <Sidebar.Leaf.Text>{item.label}</Sidebar.Leaf.Text>
+            {isBeta(item.meta) ? (
+                <Badge className="color-weak text-capitalize" data-testid="beta-badge">{c('Info').t`Beta`}</Badge>
+            ) : null}
             {notification ? <NotificationDot color={notification} alt={c('Info').t`Attention required`} /> : null}
         </Sidebar.Leaf>
     );
