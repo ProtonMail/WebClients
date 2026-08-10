@@ -4,12 +4,11 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { isIos } from '@proton/shared/lib/helpers/browser';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import type { ImageAspectRatio } from '../../types';
 import { ComposerMode } from '../../types';
-import { getAcceptAttributeString, getAcceptAttributeStringWithoutImages } from '../../util/filetypes';
+import { getAcceptAttributeString } from '../../util/filetypes';
 import { sendFileUploadEvent, sendVoiceEntryClickEvent } from '../../util/telemetry';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 import AspectRatioDropdown from './AspectRatioDropdown';
@@ -63,8 +62,7 @@ const UploadMenuSection = ({
                 type="file"
                 ref={fileInputRef}
                 id="emptyFileCardInput"
-                // FIXME: Remove after releasing Lumo 2.0.0 — use getAcceptAttributeString() once iOS native app handles file picker without camera
-                accept={isIos() ? getAcceptAttributeStringWithoutImages() : getAcceptAttributeString()}
+                accept={getAcceptAttributeString()}
                 className="hidden"
                 multiple
                 onChange={handleFileInputChange}
