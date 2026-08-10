@@ -184,6 +184,7 @@ export const UNAUTHENTICATED_ROUTES = {
     GROUP_INVITE: '/groups',
     CLOSE_TICKET: '/close-ticket',
     TRIAL_ENDED: '/trial-ended',
+    MSP_SETTING_UP_ACCESS: '/msp/setting-up-access',
 };
 
 export const getPreAppIntent = ({
