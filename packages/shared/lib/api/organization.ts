@@ -48,6 +48,7 @@ export const updateOrganizationSettings = (data: {
     ShowScribeWritingAssistant?: boolean;
     VideoConferencingEnabled?: boolean;
     MailCategoryViewEnabled?: boolean;
+    SSOBackupPasswordDisabled?: boolean;
     AllowedProducts?: OrganizationSettings['AllowedProducts'];
     PasswordPolicies?: OrganizationSettings['PasswordPolicies'];
 }) => ({
@@ -144,8 +145,10 @@ export const updatePasswordlessOrganizationKeys = (data: UpdatePasswordlessOrgan
     method: 'put',
 });
 
-interface MigratePasswordlessOrganizationKeysPayload
-    extends Omit<UpdatePasswordlessOrganizationKeysPayload, 'Members' | 'AdminInvitations' | 'GroupAddressKeyTokens'> {
+interface MigratePasswordlessOrganizationKeysPayload extends Omit<
+    UpdatePasswordlessOrganizationKeysPayload,
+    'Members' | 'AdminInvitations' | 'GroupAddressKeyTokens'
+> {
     AdminInvitations: ({
         MemberID: string;
     } & OrganizationKeyActivation)[];

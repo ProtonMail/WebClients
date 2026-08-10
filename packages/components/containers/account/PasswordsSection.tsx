@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useSessionRecoveryLocalStorage } from '@proton/account/recovery/sessionRecoveryHooks';
 import {
     selectAvailableRecoveryMethods,
@@ -36,6 +37,7 @@ import PasswordResetAvailableAccountModal from './sessionRecovery/PasswordResetA
 const PasswordsSection = () => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
+    const [organization, loadingOrganization] = useOrganization();
     const { availableRecoveryMethods, hasRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
     const { isSessionRecoveryInitiationAvailable } = useSelector(selectSessionRecoveryData);
 
@@ -66,7 +68,8 @@ const PasswordsSection = () => {
     const changePasswordMode = isOnePasswordMode
         ? MODES.CHANGE_ONE_PASSWORD_MODE
         : MODES.CHANGE_TWO_PASSWORD_LOGIN_MODE;
-    const loading = loadingUserSettings || loadingUser;
+    const loading = loadingUserSettings || loadingUser || loadingOrganization;
+    const backupPasswordDisabled = !!organization?.Settings.SSOBackupPasswordDisabled;
 
     const handleChangePassword = (mode: MODES) => {
         setTmpPasswordMode(mode);
@@ -203,6 +206,11 @@ const PasswordsSection = () => {
             )}
             {(() => {
                 if (getIsGlobalSSOAccount(user)) {
+                    // When the organization disabled the backup password there is nothing to
+                    // change: the key passphrase is random and the login flow never asks for it.
+                    if (backupPasswordDisabled) {
+                        return null;
+                    }
                     return (
                         <SettingsSection>
                             <SettingsLayout>
