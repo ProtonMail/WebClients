@@ -24,7 +24,7 @@ import {
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { SetupOrganizationSection } from '@proton/components/containers/organization/SetupOrganizationSection';
 import AccessControlSettingsSection from '@proton/components/containers/organization/accessControl/AccessControlSettingsSection';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import {
@@ -43,16 +43,16 @@ const OrganizationSettingsRouter = ({
     path,
     organizationAppRoutes,
     organization,
-    subscription,
     onOpenChat,
+    entitlements,
 }: {
     app: APP_NAMES;
     redirect: ReactNode;
     path: string;
     organizationAppRoutes: ReturnType<typeof getOrganizationAppRoutes>;
     organization?: OrganizationExtended;
-    subscription: MaybeFreeSubscription;
     onOpenChat?: () => void;
+    entitlements: EntitlementChecks;
 }) => {
     const onceRef = useRef(false);
     // The setup organization route becomes unavailable post organization setup.
@@ -181,7 +181,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(activityMonitor) && (
                 <Route path={getSectionPath(path, activityMonitor)}>
                     <PrivateMainSettingsArea config={activityMonitor}>
-                        <ActivityMonitorDashboard organization={organization} subscription={subscription} />
+                        <ActivityMonitorDashboard organization={organization} entitlements={entitlements} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
