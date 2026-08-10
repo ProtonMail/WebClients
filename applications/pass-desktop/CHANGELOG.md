@@ -1,3 +1,14 @@
+### Version 1.39.0
+
+- Support SSH agent
+- Fix macOS unable to drag window
+- Support importing autofill matching rules from Bitwarden
+- Show the admin panel link in the sidebar for organization admins
+- Access tokens now show a readable expiration date and an easier expiry picker
+- Hide the "Edit vault" button for users who only have editor access
+- Fix shared vault not showing up after being added to a group
+- Faster and more reliable data sync
+
 ### Version 1.38.1
 
 - Add "Check for update" button in Settings on macOS/Windows
