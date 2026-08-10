@@ -22,7 +22,7 @@ import type {
     PlanIDs,
     SavedPaymentMethod,
 } from '@proton/payments/core/interface';
-import { useSepaCurrencyOverride } from '@proton/payments/core/payment-methods/useSepaCurrencyOverride';
+import { useCurrencyOverride } from '@proton/payments/core/payment-methods/useCurrencyOverride';
 import type { ChargebeePaypalModalHandles } from '@proton/payments/core/payment-processors/chargebeePaypalPayment';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 import { type ApplePayModalHandles, useApplePay } from '@proton/payments/core/payment-processors/useApplePay';
@@ -36,6 +36,7 @@ import type { Api, User } from '@proton/shared/lib/interfaces';
 
 import useBitcoin from './useBitcoin';
 import { useChargebeeCard } from './useChargebeeCard';
+import { type ChargebeeIdealModalHandles, useChargebeeIdeal } from './useChargebeeIdeal';
 import { useChargebeePaypal } from './useChargebeePaypal';
 import type { OnMethodChangedHandler } from './useMethods';
 import { useMethods } from './useMethods';
@@ -206,6 +207,7 @@ export const usePaymentFacade = (
         canUseGooglePay,
         enablePaypalRegionalCurrenciesBatch3,
         enablePaypalKrw,
+        enableIdeal,
         onDeclined,
         onValidationFailed,
         telemetryContext,
@@ -241,6 +243,7 @@ export const usePaymentFacade = (
         canUseGooglePay?: boolean;
         enablePaypalRegionalCurrenciesBatch3: boolean;
         enablePaypalKrw: boolean;
+        enableIdeal: boolean;
         telemetryContext: PaymentTelemetryContext;
         onDeclined: ({
             selectedMethodType,
@@ -265,6 +268,7 @@ export const usePaymentFacade = (
         chargebeeHandles,
         chargebeeEvents,
         chargebeePaypalModalHandles,
+        chargebeeIdealModalHandles,
         applePayModalHandles,
         googlePayModalHandles,
     }: {
@@ -274,6 +278,7 @@ export const usePaymentFacade = (
         chargebeeHandles: ChargebeeIframeHandles;
         chargebeeEvents: ChargebeeIframeEvents;
         chargebeePaypalModalHandles?: ChargebeePaypalModalHandles;
+        chargebeeIdealModalHandles?: ChargebeeIdealModalHandles;
         applePayModalHandles?: ApplePayModalHandles;
         googlePayModalHandles?: GooglePayModalHandles;
     }
@@ -313,6 +318,7 @@ export const usePaymentFacade = (
             isTrial,
             enablePaypalRegionalCurrenciesBatch3,
             enablePaypalKrw,
+            enableIdeal,
             sortNewMethods,
         },
         {
@@ -414,6 +420,32 @@ export const usePaymentFacade = (
             handles: chargebeeHandles,
             events: chargebeeEvents,
             chargebeePaypalModalHandles,
+        }
+    );
+
+    const chargebeeIdeal = useChargebeeIdeal(
+        {
+            amountAndCurrency,
+            onChargeable: (params) =>
+                onChargeable(
+                    getOperations(api, params, paymentContext.getOperationsData(), {
+                        paymentMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
+                        ...operationProps,
+                    }),
+                    {
+                        chargeablePaymentParameters: params,
+                        source: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
+                        sourceType: params.type,
+                        context: paymentContext.getOperationsData(),
+                        paymentProcessorType: chargebeeIdeal.meta.type,
+                    }
+                ),
+        },
+        {
+            api,
+            handles: chargebeeHandles,
+            events: chargebeeEvents,
+            chargebeeIdealModalHandles,
         }
     );
 
@@ -534,6 +566,7 @@ export const usePaymentFacade = (
             if (
                 paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL ||
+                paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.GOOGLE_PAY ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
@@ -565,12 +598,17 @@ export const usePaymentFacade = (
         if (paymentMethodValue === PAYMENT_METHOD_TYPES.GOOGLE_PAY) {
             return googlePay;
         }
+
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
+            return chargebeeIdeal;
+        }
     }, [
         paymentMethodValue,
         paymentMethodType,
         savedChargebeeMethod,
         chargebeeCard,
         chargebeePaypal,
+        chargebeeIdeal,
         applePay,
         googlePay,
     ]);
@@ -582,6 +620,7 @@ export const usePaymentFacade = (
             savedChargebeeMethod,
             chargebeeCard,
             chargebeePaypal,
+            chargebeeIdeal,
             bitcoinChargebee,
             directDebit,
             applePay,
@@ -589,7 +628,7 @@ export const usePaymentFacade = (
         ].forEach((paymentProcessor) => paymentProcessor.reset());
     };
 
-    const currencyOverride = useSepaCurrencyOverride({
+    const currencyOverride = useCurrencyOverride({
         currentCurrency: currency,
         currentSelectedMethodType: paymentMethodType,
         methods: methods.allMethods,
@@ -599,6 +638,7 @@ export const usePaymentFacade = (
         methods,
         chargebeeCard,
         chargebeePaypal,
+        chargebeeIdeal,
         applePay,
         googlePay,
         bitcoinChargebee,

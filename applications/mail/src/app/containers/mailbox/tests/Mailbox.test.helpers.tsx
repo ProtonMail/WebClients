@@ -8,6 +8,7 @@ import { serverEvent } from '@proton/account';
 import { getModelState } from '@proton/account/test';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
+import { DEFAULT_PAYMENT_VENDOR_STATES } from '@proton/payments/core/constants';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
@@ -222,14 +223,7 @@ export const setup = async ({
                 deletedSinceLastLoad: 0,
             },
             paymentStatus: getModelState({
-                VendorStates: {
-                    Card: true,
-                    Paypal: true,
-                    Apple: true,
-                    Cash: true,
-                    Bitcoin: true,
-                    Google: true,
-                },
+                VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
                 ...DEFAULT_TAX_BILLING_ADDRESS,
             }),
             ...preloadedState, // TODO merge object instead of overwriting, if needed for new test-cases

@@ -11,6 +11,7 @@ import type {
     SavedPaymentMethod,
     SepaDetails,
 } from '@proton/payments/core/interface';
+import { IDEAL_BRAND_NAME } from '@proton/shared/lib/constants';
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -18,7 +19,7 @@ import type { MethodsHook, Props } from '../react-extensions/useMethods';
 import { useMethods as _useMethods } from '../react-extensions/useMethods';
 
 export interface ViewPaymentMethod extends AvailablePaymentMethod {
-    readonly icon: IconName | undefined;
+    readonly icon?: IconName | undefined;
     readonly text: string;
 }
 
@@ -29,6 +30,7 @@ export interface ClientMethodsHook extends MethodsHook {
     lastUsedMethod: ViewPaymentMethod | undefined;
 }
 
+// CHARGEBEE_IDEAL icon is overriden in the paymentMetodSelector
 const getIcon = (paymentMethod: SavedPaymentMethod): IconName | undefined => {
     if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
         return 'brand-paypal';
@@ -84,6 +86,7 @@ const getMethod = (paymentMethod: SavedPaymentMethod): string => {
             return c('new_plans: info').t`${brand} ending in ${last4}`;
         case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
             return `PayPal - ${paymentMethod.Details.PayerID}`;
+        case PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL:
         case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
             const details = formattedSavedSepaDetails(paymentMethod.Details);
 
@@ -160,8 +163,12 @@ function convertMethod(
         };
     } else if (method.type === PAYMENT_METHOD_TYPES.GOOGLE_PAY) {
         return {
-            icon: 'brand-google' as const,
             text: c('Payment method option').t`Google Pay`,
+            ...method,
+        };
+    } else if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
+        return {
+            text: `${IDEAL_BRAND_NAME}`,
             ...method,
         };
     }

@@ -27,6 +27,7 @@ import type { Currency, PaymentStatus, PlainPaymentMethodType } from '@proton/pa
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
+import { ChargebeeIdealButton } from '@proton/payments/ui/components/ChargebeeIdealButton';
 import { ChargebeePaypalButton } from '@proton/payments/ui/components/ChargebeePaypalButton';
 import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -146,6 +147,25 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
                 <div>
                     <ChargebeePaypalButton
                         chargebeePaypal={paymentFacade.chargebeePaypal}
+                        iframeHandles={paymentFacade.iframeHandles}
+                    />
+                </div>
+            );
+        }
+
+        if (methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
+            if (loading) {
+                return (
+                    <ButtonLike disabled loading={true}>
+                        {c('Payments').t`Processing payment`}
+                    </ButtonLike>
+                );
+            }
+
+            return (
+                <div>
+                    <ChargebeeIdealButton
+                        chargebeeIdeal={paymentFacade.chargebeeIdeal}
                         iframeHandles={paymentFacade.iframeHandles}
                     />
                 </div>

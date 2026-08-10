@@ -10,12 +10,14 @@ import type {
     FormValidationErrors,
     GetHeightResponse,
     GooglePayAuthorizedPayload,
+    IdealAuthorizedPayload,
     MessageBusResponse,
     MessageBusResponseSuccess,
     PaymentIntent,
     PaypalAuthorizedPayload,
     SetApplePayPaymentIntentPayload,
     SetGooglePayPaymentIntentPayload,
+    SetIdealPaymentIntentPayload,
     SetPaypalPaymentIntentPayload,
     ThreeDsChallengePayload,
 } from '@proton/chargebee/lib';
@@ -97,7 +99,8 @@ export type ChargeablePaymentParameters = Partial<V5PaymentToken> &
             | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
             | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
             | PAYMENT_METHOD_TYPES.APPLE_PAY
-            | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
+            | PAYMENT_METHOD_TYPES.GOOGLE_PAY
+            | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
         chargeable: true;
     };
 
@@ -108,17 +111,19 @@ export type ChargeablePaymentToken = V5PaymentToken &
             | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
             | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
             | PAYMENT_METHOD_TYPES.APPLE_PAY
-            | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
+            | PAYMENT_METHOD_TYPES.GOOGLE_PAY
+            | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
         chargeable: true;
     };
 
-interface PaymentVendorStates {
+export interface PaymentVendorStates {
     Card: boolean;
     Paypal: boolean;
     Apple: boolean;
     Cash: boolean;
     Bitcoin: boolean;
     Google: boolean;
+    Ideal: boolean;
 }
 
 export interface PaymentStatus extends BillingAddress {
@@ -195,12 +200,22 @@ export type PaymentMethodGooglePay = {
     IsDefault?: boolean;
 };
 
+export type PaymentMethodIdeal = {
+    ID: string;
+    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
+    Order: number;
+    Autopay: Autopay;
+    Details: SepaDetails;
+    IsDefault?: boolean;
+};
+
 export type SavedPaymentMethod =
     | PaymentMethodPaypal
     | PaymentMethodCardDetails
     | PaymentMethodSepa
     | PaymentMethodApplePay
-    | PaymentMethodGooglePay;
+    | PaymentMethodGooglePay
+    | PaymentMethodIdeal;
 export interface PreviousSubscription {
     cycle: Cycle;
     currency: Currency;
@@ -236,7 +251,7 @@ export type ExistingPaymentMethod = string;
 export type PaymentMethodType = PlainPaymentMethodType | ExistingPaymentMethod;
 
 export interface AvailablePaymentMethod {
-    readonly type: PlainPaymentMethodType;
+    readonly type: PAYMENT_METHOD_TYPES;
     readonly paymentMethodId?: string; // defined only for existing payment methods
     readonly isExpired?: boolean; // defined only for existing credit cards
     readonly value: PaymentMethodType;
@@ -276,6 +291,7 @@ export type ChargeableV5PaymentToken = ChargeablePaymentToken & {
         | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
         | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL
         | PAYMENT_METHOD_TYPES.APPLE_PAY
         | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
 };
@@ -299,6 +315,7 @@ export type ChargeableV5PaymentParameters = ChargeablePaymentParameters & {
         | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
         | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL
         | PAYMENT_METHOD_TYPES.APPLE_PAY
         | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
 };
@@ -369,6 +386,11 @@ export type ChargebeeIframeHandles = {
     getCanMakePaymentsWithActiveCard: () => Promise<boolean>;
     setGooglePayPaymentIntent: (payload: SetGooglePayPaymentIntentPayload, abortSignal?: AbortSignal) => Promise<any>;
     initializeGooglePay: () => Promise<any>;
+    initializeIdeal: () => Promise<any>;
+    setIdealPaymentIntent: (
+        payload: Omit<SetIdealPaymentIntentPayload, 'buttonLabel'>,
+        abortSignal: AbortSignal
+    ) => Promise<any>;
 };
 
 export type ChargebeeIframeEvents = {
@@ -396,6 +418,11 @@ export type ChargebeeIframeEvents = {
     onGooglePayFailure: (callback: (error: any) => any) => RemoveEventListener;
     onGooglePayClicked: (callback: () => any) => RemoveEventListener;
     onGooglePayCancelled: (callback: () => any) => RemoveEventListener;
+
+    onIdealAuthorized: (callback: (payload: IdealAuthorizedPayload) => any) => RemoveEventListener;
+    onIdealFailure: (callback: (error: any) => any) => RemoveEventListener;
+    onIdealClicked: (callback: () => any) => RemoveEventListener;
+    onIdealCancelled: (callback: () => any) => RemoveEventListener;
 };
 
 type CryptocurrencyType = 'bitcoin';

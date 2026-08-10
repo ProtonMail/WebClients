@@ -23,11 +23,12 @@ import { useEditBillingAddressModal } from '../billing-address/containers/useEdi
 import type { TaxCountryHook } from '../billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '../billing-address/hooks/useVatNumber';
 import { ApplePayButton } from './ApplePayButton';
+import { ChargebeeIdealButton } from './ChargebeeIdealButton';
 import { ChargebeePaypalButton } from './ChargebeePaypalButton';
 import { GooglePayButton } from './GooglePayButton';
 
 export type PayButtonOnClickPayload = {
-    type: 'paypal' | 'apple-pay' | 'google-pay' | 'card';
+    type: 'paypal' | 'apple-pay' | 'google-pay' | 'card' | 'ideal';
     source: 'fake-button' | 'real-button';
 };
 
@@ -137,6 +138,7 @@ export const PayButton = ({
 
     const submitButton = (() => {
         const isChargebeePaypal = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+        const isChargebeeIdeal = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
         const isApplePay = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.APPLE_PAY;
         const isGooglePay = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.GOOGLE_PAY;
         const submitButtonDisabled =
@@ -158,6 +160,21 @@ export const PayButton = ({
                     width="100%"
                     onClick={handleOnClick}
                 />
+            );
+        } else if (isChargebeeIdeal) {
+            return (
+                <ChargebeeIdealButton
+                    chargebeeIdeal={paymentFacade.chargebeeIdeal}
+                    iframeHandles={paymentFacade.iframeHandles}
+                    disabled={submitButtonDisabled}
+                    formInvalid={formInvalid}
+                    loading={rest.loading}
+                    width="100%"
+                    onClick={handleOnClick}
+                    {...rest}
+                >
+                    {children}
+                </ChargebeeIdealButton>
             );
         } else if (isApplePay) {
             return (

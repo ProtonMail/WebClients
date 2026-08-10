@@ -3,6 +3,21 @@ import { useState } from 'react';
 import { PAYMENT_METHOD_TYPES } from '../constants';
 import type { AvailablePaymentMethod, Currency, PaymentMethodType, PlainPaymentMethodType } from '../interface';
 
+export const getMethodSupportedCurrencies = (type: PaymentMethodType | undefined): Currency[] | undefined => {
+    switch (type) {
+        case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
+            return ['EUR'];
+        case PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL:
+            return ['EUR'];
+        default:
+            return undefined;
+    }
+};
+
+export const isCurrencyRestrictedMethod = (type: PaymentMethodType | undefined): boolean => {
+    return getMethodSupportedCurrencies(type) !== undefined;
+};
+
 export const getIsCurrencyOverriden = ({
     currentCurrency,
     currencyBeforeOverride,
@@ -10,8 +25,6 @@ export const getIsCurrencyOverriden = ({
     currentCurrency: Currency;
     currencyBeforeOverride: Currency | undefined;
 }) => !!currencyBeforeOverride && currentCurrency !== currencyBeforeOverride;
-
-export const SEPA_CURRENCY = 'EUR';
 
 export const updateCurrencyOverride = ({
     currentCurrency,
@@ -29,28 +42,21 @@ export const updateCurrencyOverride = ({
           currencyBeforeOverride: Currency | undefined;
       }
     | undefined => {
-    const shouldOverrideCurrency =
-        currentCurrency !== SEPA_CURRENCY &&
-        // the first condition checks if user just selected SEPA_DIRECT_DEBIT
-        (newSelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT ||
-            // the second condition checks if user already has SEPA_DIRECT_DEBIT. Important: we need to make sure
-            // that selectedMethod is undefined. That means that user didn't just select another payment method to
-            // switch from SEPA to something else.
-            (!newSelectedMethod && currentSelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT));
+    const supportedCurrencies = getMethodSupportedCurrencies(newSelectedMethod ?? currentSelectedMethod);
 
-    // if user currently has SEPA and selects non-SEPA and currency was overriden then we need to change the
-    // currency back
+    const shouldOverrideCurrency = !!supportedCurrencies && !supportedCurrencies.includes(currentCurrency);
+
+    // Switching away from a restricted method to one that supports the pre-override currency.
     const shouldChangeCurrencyBack =
         getIsCurrencyOverriden({ currentCurrency, currencyBeforeOverride }) &&
-        currentSelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT &&
-        // make sure that selectedMethod is defined - that means that that's user's action to change the selected
-        // method
+        isCurrencyRestrictedMethod(currentSelectedMethod) &&
         !!newSelectedMethod &&
-        newSelectedMethod !== PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+        !!currencyBeforeOverride &&
+        (getMethodSupportedCurrencies(newSelectedMethod)?.includes(currencyBeforeOverride) ?? true);
 
     if (shouldOverrideCurrency) {
         return {
-            currency: SEPA_CURRENCY,
+            currency: supportedCurrencies[0],
             currencyBeforeOverride: currentCurrency,
         };
     }
@@ -63,7 +69,7 @@ export const updateCurrencyOverride = ({
     }
 };
 
-export const useSepaCurrencyOverride = ({
+export const useCurrencyOverride = ({
     currentCurrency,
     currentSelectedMethodType,
     methods,
@@ -82,14 +88,11 @@ export const useSepaCurrencyOverride = ({
             }
 
             const newPaymentType = methods.find((method) => method.value === newPaymentMethodValue)?.type;
-            const userSelectedSEPA = newPaymentType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+            const selectedRestrictedMethod = isCurrencyRestrictedMethod(newPaymentType);
+            const unselectedRestrictedMethod =
+                isCurrencyRestrictedMethod(currentSelectedMethodType) && newPaymentType !== currentSelectedMethodType;
 
-            // current type is SEPA and the selected type is not SEPA.
-            const userUnselectedSEPA =
-                currentSelectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT &&
-                newPaymentType !== PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
-
-            if (!userSelectedSEPA && !userUnselectedSEPA) {
+            if (!selectedRestrictedMethod && !unselectedRestrictedMethod) {
                 return;
             }
 

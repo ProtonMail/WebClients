@@ -1,5 +1,10 @@
 import { createToken } from '@proton/payments/core/api/api';
-import { Autopay, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
+import {
+    Autopay,
+    DEFAULT_PAYMENT_VENDOR_STATES,
+    PAYMENT_METHOD_TYPES,
+    PAYMENT_TOKEN_STATUS,
+} from '@proton/payments/core/constants';
 import type {
     PayPalDetails,
     PaymentStatus,
@@ -49,14 +54,7 @@ export function addTokensResolver() {
 
 export const MOCK_PAYMENT_STATUS: PaymentStatus = {
     CountryCode: 'CH',
-    VendorStates: {
-        Card: true,
-        Paypal: true,
-        Apple: true,
-        Cash: true,
-        Bitcoin: true,
-        Google: true,
-    },
+    VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
 };
 
 export function mockPaymentStatus(status = MOCK_PAYMENT_STATUS) {

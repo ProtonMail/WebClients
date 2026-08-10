@@ -49,6 +49,7 @@ interface PaymentMethodsParameters {
     isTrial?: boolean;
     enablePaypalRegionalCurrenciesBatch3?: boolean;
     enablePaypalKrw?: boolean;
+    enableIdeal?: boolean;
 }
 
 const sepaCountries = new Set([
@@ -179,6 +180,7 @@ export class PaymentMethods {
     public enablePaypalRegionalCurrenciesBatch3: boolean;
 
     public enablePaypalKrw: boolean;
+    public enableIdeal: boolean;
 
     constructor({
         paymentStatus,
@@ -199,6 +201,7 @@ export class PaymentMethods {
         isTrial,
         enablePaypalRegionalCurrenciesBatch3,
         enablePaypalKrw,
+        enableIdeal,
     }: PaymentMethodsParameters) {
         this._paymentStatus = paymentStatus;
 
@@ -219,6 +222,7 @@ export class PaymentMethods {
         this.isTrial = !!isTrial;
         this.enablePaypalRegionalCurrenciesBatch3 = !!enablePaypalRegionalCurrenciesBatch3;
         this.enablePaypalKrw = !!enablePaypalKrw;
+        this.enableIdeal = !!enableIdeal;
     }
 
     getAvailablePaymentMethods(): { usedMethods: AvailablePaymentMethod[]; methods: AvailablePaymentMethod[] } {
@@ -257,12 +261,16 @@ export class PaymentMethods {
                 const isExistingGooglePay =
                     paymentMethod.Type === PAYMENT_METHOD_TYPES.GOOGLE_PAY && this.paymentStatus.VendorStates.Google;
 
+                const isExistingChargebeeIdeal =
+                    paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL &&
+                    this.paymentStatus.VendorStates.Ideal;
                 // Only Paypal and Card can be saved/used payment methods.
                 // E.g. it's not possible to make Bitcoin/Cash a saved payment method.
                 return (
                     isExistingChargebeeCard ||
                     isExistingChargebeePaypal ||
                     isExistingChargebeeSepaDirectDebit ||
+                    isExistingChargebeeIdeal ||
                     isExistingApplePay ||
                     isExistingGooglePay
                 );
@@ -323,6 +331,10 @@ export class PaymentMethods {
                 available: this.isGooglePayAvailable(),
                 type: PAYMENT_METHOD_TYPES.GOOGLE_PAY,
             },
+            {
+                available: this.isChargebeeIdealAvailable(),
+                type: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
+            },
         ]
             .filter(({ available }) => available)
             .map(({ type }) => ({ type, value: type, isSaved: false, isDefault: false }));
@@ -353,6 +365,8 @@ export class PaymentMethods {
                 return this.isApplePayAvailable();
             case PAYMENT_METHOD_TYPES.GOOGLE_PAY:
                 return this.isGooglePayAvailable();
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL:
+                return this.isChargebeeIdealAvailable();
             default:
                 return false;
         }
@@ -458,6 +472,20 @@ export class PaymentMethods {
         return paypalAvailable;
     }
 
+    private isChargebeeIdealAvailable(): boolean {
+        const alreadyHasIdeal = this.paymentMethods.some(({ Type }) => Type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL);
+
+        const billingCountryIsNetherlands = this.billingAddress?.CountryCode === 'NL';
+
+        return (
+            this.paymentStatus.VendorStates.Ideal &&
+            billingCountryIsNetherlands &&
+            !alreadyHasIdeal &&
+            !this.isTrial &&
+            this.enableIdeal
+        );
+    }
+
     private isApplePayAvailable(): boolean {
         const flows = [
             'signup',
@@ -552,6 +580,7 @@ export async function initializePaymentMethods({
     isTrial?: boolean;
     enablePaypalRegionalCurrenciesBatch3: boolean;
     enablePaypalKrw: boolean;
+    enableIdeal: boolean;
 }) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.paymentStatus();
     const paymentMethodsPromise = (() => {
