@@ -14,6 +14,7 @@ import { BreachUpsellCard } from '@proton/pass/components/Monitor/Breach/Card/Br
 import { Sentinel } from '@proton/pass/components/Monitor/Sentinel/Sentinel';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
 import { useUpsellPlanFeatures } from '@proton/pass/hooks/usePlanFeatures';
@@ -31,7 +32,7 @@ import './MonitorSummary.scss';
 
 export const MonitorSummary: FC = () => {
     const navigate = useNavigate();
-    const { duplicates, insecure, missing2FAs, excluded } = useMonitor();
+    const { duplicates, insecure, compromised, missing2FAs, excluded } = useMonitor();
     const { plan, features, upsellType, upgradePath } = useUpsellPlanFeatures();
 
     const paid = isPaidPlan(plan);
@@ -42,6 +43,7 @@ export const MonitorSummary: FC = () => {
     useTelemetryEvent(TelemetryEventName.PassMonitorDisplayHome, {}, {})([]);
 
     const insecureReady = !(insecure.loading && insecure.count === 0);
+    const compromisedReady = !(compromised.loading && compromised.count === 0);
     const twofasReady = !(missing2FAs.loading && missing2FAs.count === 0);
 
     return (
@@ -105,6 +107,38 @@ export const MonitorSummary: FC = () => {
                                     title={c('Title').t`Reused passwords`}
                                     type={duplicates.count > 0 ? 'warning' : 'success'}
                                 />
+
+                                {paid ? (
+                                    <ButtonCard
+                                        actions={compromisedReady && <PillBadge label={compromised.count} />}
+                                        disabled={compromised.loading}
+                                        onClick={() => navigate(getLocalPath('monitor/compromised'))}
+                                        subtitle={c('Description').t`Change these passwords immediately`}
+                                        title={c('Title').t`Compromised passwords`}
+                                        type={
+                                            compromised.count > 0
+                                                ? 'danger'
+                                                : compromised.loading
+                                                  ? 'primary'
+                                                  : 'success'
+                                        }
+                                        icon={
+                                            compromisedReady
+                                                ? compromised.count > 0
+                                                    ? 'exclamation-filled'
+                                                    : 'checkmark'
+                                                : () => <CircleLoader size="small" />
+                                        }
+                                    />
+                                ) : (
+                                    <ButtonCard
+                                        actions={<PassPlusPromotionButton onClick={onUpsell} />}
+                                        onClick={onUpsell}
+                                        subtitle={c('Description').t`Check if your passwords have been exposed`}
+                                        title={c('Title').t`Compromised passwords`}
+                                        type="primary"
+                                    />
+                                )}
 
                                 <ButtonCard
                                     actions={twofasReady && <PillBadge label={missing2FAs.count} />}
