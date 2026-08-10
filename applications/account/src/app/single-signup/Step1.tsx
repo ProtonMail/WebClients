@@ -43,6 +43,7 @@ import type {
     PlanIDs,
     TokenPayment,
 } from '@proton/payments/core/interface';
+import { isCurrencyRestrictedMethod } from '@proton/payments/core/payment-methods/useCurrencyOverride';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import type { Plan, StrictPlan } from '@proton/payments/core/plan/interface';
@@ -1043,7 +1044,7 @@ const Step1 = ({
             currency={options.currency}
             loading={changingCurrency}
             onSelect={(currency) => handleChangeCurrency(currency)}
-            disabled={paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT}
+            disabled={isCurrencyRestrictedMethod(paymentFacade.selectedMethodType)}
         />
     );
 

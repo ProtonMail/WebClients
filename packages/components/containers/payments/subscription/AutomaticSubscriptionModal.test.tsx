@@ -3,7 +3,14 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { getModelState } from '@proton/account/test';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import type { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { ADDON_PREFIXES, CURRENCIES, CYCLE, DEFAULT_CYCLE, PLANS } from '@proton/payments/core/constants';
+import {
+    ADDON_PREFIXES,
+    CURRENCIES,
+    CYCLE,
+    DEFAULT_CYCLE,
+    DEFAULT_PAYMENT_VENDOR_STATES,
+    PLANS,
+} from '@proton/payments/core/constants';
 import { getPreferredCurrency } from '@proton/payments/core/currencies';
 import type { PaymentStatus } from '@proton/payments/core/interface';
 import { getAddonNameByPlan } from '@proton/payments/core/plan/helpers';
@@ -23,7 +30,7 @@ const plans = getLongTestPlans();
 const paymentStatus: PaymentStatus = {
     CountryCode: 'CH',
     State: null,
-    VendorStates: { Card: true, Paypal: true, Apple: true, Cash: true, Bitcoin: true, Google: true },
+    VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
 };
 const getPreferredCurrencyHook = (params: Parameters<ReturnType<typeof useCurrencies>['getPreferredCurrency']>[0]) =>
     getPreferredCurrency({ ...params, enableNewBatchCurrencies: true });

@@ -27,6 +27,12 @@ jest.mock('@proton/payments/ui/components/ChargebeeWrapper', () => ({
     ChargebeeCreditCardWrapper: () => <div data-testid="chargebee-credit-card-wrapper" />,
 }));
 
+// Same for the SEPA form: it renders a third-party iframe and reads the full directDebit hook.
+jest.mock('@proton/components/payments/chargebee/SepaDirectDebit', () => ({
+    ...jest.requireActual('@proton/components/payments/chargebee/SepaDirectDebit'),
+    SepaDirectDebit: () => <div data-testid="sepa-direct-debit" />,
+}));
+
 let paymentMethods: SavedPaymentMethod[];
 let options;
 
@@ -385,12 +391,21 @@ describe('Payment', () => {
         });
     });
 
-    it('displays currency override banner when isCurrencyOverriden is true', () => {
+    it.each([
+        [
+            PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
+            'Your currency has been changed to euros (€) because iDEAL only supports payments in euros.',
+        ],
+        [
+            PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+            'Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.',
+        ],
+    ])('displays currency override banner for %s when isCurrencyOverriden is true', (method, bannerText) => {
         render(
             <WrappedPaymentsNoApi
                 onMethod={() => {}}
                 flow="subscription"
-                method="my-custom-method-123"
+                method={method}
                 amount={1000}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
@@ -424,11 +439,7 @@ describe('Payment', () => {
             />
         );
 
-        expect(
-            screen.getByText(
-                'Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.'
-            )
-        ).toBeInTheDocument();
+        expect(screen.getByText(bannerText)).toBeInTheDocument();
     });
 
     describe('PaymentMethodSelector disabled state', () => {

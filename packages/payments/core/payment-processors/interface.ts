@@ -12,7 +12,8 @@ export type PaymentProcessorType =
     | 'chargebee-bitcoin'
     | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
     | PAYMENT_METHOD_TYPES.APPLE_PAY
-    | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
+    | PAYMENT_METHOD_TYPES.GOOGLE_PAY
+    | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
 
 export function getSystemByHookType(
     type: PaymentProcessorType | 'n/a' | undefined

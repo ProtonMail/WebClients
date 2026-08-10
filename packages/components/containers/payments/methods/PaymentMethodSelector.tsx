@@ -10,9 +10,11 @@ import type { ViewPaymentMethod } from '@proton/components/payments/client-exten
 import type { IconName } from '@proton/icons/types';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { AvailablePaymentMethod, PaymentMethodType } from '@proton/payments/core/interface';
+import { IDEAL_BRAND_NAME } from '@proton/shared/lib/constants';
 import americanExpressSafekeySvg from '@proton/styles/assets/img/bank-icons/amex-safekey-colored.svg';
 import discoverProtectBuySvg from '@proton/styles/assets/img/bank-icons/discover-protectbuy-colored.svg';
 import googlePayMarkSvg from '@proton/styles/assets/img/bank-icons/google-pay-mark.svg';
+import idealMarkSvg from '@proton/styles/assets/img/bank-icons/ideal.svg';
 import jcbLogoSvg from '@proton/styles/assets/img/bank-icons/jcb-logo.png';
 import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/mastercard-securecode-colored.svg';
 import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure-colored.svg';
@@ -45,6 +47,18 @@ const PaymentMethodIcon = ({
                     src={googlePayMarkSvg}
                     alt={c('Info').t`Google Pay mark`}
                     style={{ maxHeight: '1.25rem', marginTop: '-0.15625rem' }}
+                />
+            </span>
+        );
+    }
+
+    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
+        return (
+            <span className="mr-2 w-custom" style={{ '--w-custom': '3.5rem' }}>
+                <img
+                    src={idealMarkSvg}
+                    alt={c('Info').t`${IDEAL_BRAND_NAME} mark`}
+                    style={{ marginTop: '-0.15625rem' }}
                 />
             </span>
         );

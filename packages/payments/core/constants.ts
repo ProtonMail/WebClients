@@ -1,4 +1,4 @@
-import type { PaymentMethodFlow } from './interface';
+import type { PaymentMethodFlow, PaymentVendorStates } from './interface';
 
 export enum PAYMENT_TOKEN_STATUS {
     PENDING = 0,
@@ -14,6 +14,7 @@ export enum PAYMENT_METHOD_TYPES {
     TOKEN = 'token',
     CHARGEBEE_CARD = 'chargebee-card',
     CHARGEBEE_PAYPAL = 'chargebee-paypal',
+    CHARGEBEE_IDEAL = 'chargebee-ideal',
     CHARGEBEE_SEPA_DIRECT_DEBIT = 'sepa-direct-debit',
     APPLE_PAY = 'apple-pay',
     GOOGLE_PAY = 'google-pay',
@@ -376,6 +377,15 @@ export enum CYCLE {
 }
 
 export const DEFAULT_CYCLE = CYCLE.YEARLY;
+export const DEFAULT_PAYMENT_VENDOR_STATES: PaymentVendorStates = {
+    Card: true,
+    Paypal: true,
+    Apple: true,
+    Cash: true,
+    Bitcoin: true,
+    Google: true,
+    Ideal: true,
+};
 
 export enum COUPON_CODES {
     PORKBUN = 'PORKBUN',

@@ -133,6 +133,7 @@ enum PaymentsFlag {
     DomainVpnBiz2023 = 'DomainVpnBiz2023',
     Vpn2024AddonsExperiment = 'Vpn2024AddonsExperiment',
     Vpn2024SignupExperiment = 'Vpn2024SignupExperiment',
+    EnableIdeal = 'EnableIdeal',
 }
 
 export enum CalendarFeatureFlag {

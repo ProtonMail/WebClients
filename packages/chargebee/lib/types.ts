@@ -35,6 +35,10 @@ export type CssVariables = {
     '--field-text-color': string;
     '--selection-text-color': string;
     '--selection-background-color': string;
+    '--interaction-norm': string;
+    '--interaction-norm-contrast': string;
+    '--interaction-norm-major-1': string;
+    '--interaction-norm-major-2': string;
 };
 
 export type Translations = {
@@ -72,6 +76,10 @@ export const chargebeeCssVariables: ChargebeeCssVariable[] = [
     '--field-text-color',
     '--selection-text-color',
     '--selection-background-color',
+    '--interaction-norm',
+    '--interaction-norm-contrast',
+    '--interaction-norm-major-1',
+    '--interaction-norm-major-2',
 ];
 
 export type CbPaypalConfig = {
@@ -94,13 +102,18 @@ export type CbGooglePayConfig = {
     paymentMethodType: 'google-pay';
 } & SharedConfig;
 
+export type CbIdealConfig = {
+    paymentMethodType: 'ideal';
+} & SharedConfig;
+
 export type CbIframeConfig =
     | CbCardConfig
     | CbPaypalConfig
     | CbSavedCardConfig
     | CbDirectDebitConfig
     | CbApplePayConfig
-    | CbGooglePayConfig;
+    | CbGooglePayConfig
+    | CbIdealConfig;
 
 export type PaymentIntent = {
     id: string;
@@ -425,4 +438,45 @@ export type GooglePayCancelledMessage = MessageBusResponseSuccess<{}> & {
 };
 export function isGooglePayCancelledMessage(obj: any): obj is GooglePayCancelledMessage {
     return obj && obj.type === googlePayCancelledMessageType;
+}
+
+export type SetIdealPaymentIntentPayload = {
+    paymentIntent: PaymentIntent;
+    buttonLabel: string;
+};
+
+export const idealAuthorizedMessageType = 'ideal-authorized';
+export type IdealAuthorizedPayload = {
+    paymentIntent: AuthorizedPaymentIntent;
+};
+export type IdealAuthorizedMessage = {
+    type: typeof idealAuthorizedMessageType;
+} & MessageBusResponseSuccess<IdealAuthorizedPayload>;
+
+export function isIdealAuthorizedMessage(obj: any): obj is IdealAuthorizedMessage {
+    return obj && obj.type === idealAuthorizedMessageType;
+}
+
+export const idealFailedMessageType = 'ideal-failed';
+export type IdealFailedMessage = MessageBusResponseFailure & {
+    type: typeof idealFailedMessageType;
+};
+export function isIdealFailedMessage(obj: any): obj is IdealFailedMessage {
+    return obj && obj.type === idealFailedMessageType;
+}
+
+export const idealClickedMessageType = 'ideal-clicked';
+export type IdealClickedMessage = MessageBusResponseSuccess<{}> & {
+    type: typeof idealClickedMessageType;
+};
+export function isIdealClickedMessage(obj: any): obj is IdealClickedMessage {
+    return obj && obj.type === idealClickedMessageType;
+}
+
+export const idealCancelledMessageType = 'ideal-cancelled';
+export type IdealCancelledMessage = MessageBusResponseSuccess<{}> & {
+    type: typeof idealCancelledMessageType;
+};
+export function isIdealCancelledMessage(obj: any): obj is IdealCancelledMessage {
+    return obj && obj.type === idealCancelledMessageType;
 }

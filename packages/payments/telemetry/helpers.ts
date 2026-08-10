@@ -101,7 +101,7 @@ export function formatPaymentTelemetryPayload(
  * Payment methods that can be saved for future use.
  * When saved, they're prefixed with `saved_` in telemetry.
  */
-type SavablePaymentMethods = 'card' | 'paypal' | 'apple_pay' | 'google_pay' | 'sepa';
+type SavablePaymentMethods = 'card' | 'paypal' | 'apple_pay' | 'google_pay' | 'sepa' | 'ideal';
 
 /**
  * Telemetry representation of a saved payment method.
@@ -136,6 +136,7 @@ const PAYMENT_METHOD_MAPPING = {
     [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: 'paypal',
     [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: 'card',
     [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: 'bitcoin',
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL]: 'ideal',
     [PAYMENT_METHOD_TYPES.CASH]: 'cash',
     [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: 'sepa',
     [PAYMENT_METHOD_TYPES.TOKEN]: 'token',

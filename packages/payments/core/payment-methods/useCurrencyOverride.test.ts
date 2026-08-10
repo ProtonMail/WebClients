@@ -1,8 +1,23 @@
 import { PAYMENT_METHOD_TYPES } from '../constants';
 import type { Currency } from '../interface';
-import { SEPA_CURRENCY, getIsCurrencyOverriden, updateCurrencyOverride } from './useSepaCurrencyOverride';
+import { getIsCurrencyOverriden, getMethodSupportedCurrencies, updateCurrencyOverride } from './useCurrencyOverride';
 
-describe('sepa-currency-override', () => {
+describe('currency-override', () => {
+    describe('getMethodSupportedCurrencies', () => {
+        it('should return EUR for SEPA', () => {
+            expect(getMethodSupportedCurrencies(PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT)).toEqual(['EUR']);
+        });
+
+        it('should return EUR for iDEAL', () => {
+            expect(getMethodSupportedCurrencies(PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL)).toEqual(['EUR']);
+        });
+
+        it('should return undefined for unrestricted methods', () => {
+            expect(getMethodSupportedCurrencies(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBeUndefined();
+            expect(getMethodSupportedCurrencies(undefined)).toBeUndefined();
+        });
+    });
+
     describe('getIsCurrencyOverriden', () => {
         it('should return false when currencyBeforeOverride is undefined', () => {
             const result = getIsCurrencyOverriden({
@@ -22,7 +37,7 @@ describe('sepa-currency-override', () => {
 
         it('should return true when currencyBeforeOverride is different from currentCurrency', () => {
             const result = getIsCurrencyOverriden({
-                currentCurrency: SEPA_CURRENCY,
+                currentCurrency: 'EUR',
                 currencyBeforeOverride: 'USD',
             });
             expect(result).toBe(true);
@@ -31,39 +46,45 @@ describe('sepa-currency-override', () => {
 
     describe('updateCurrencyOverride', () => {
         describe('should override currency to EUR', () => {
-            it('when user selects SEPA_DIRECT_DEBIT and current currency is not EUR', () => {
-                const result = updateCurrencyOverride({
-                    currentCurrency: 'USD',
-                    currencyBeforeOverride: undefined,
-                    currentSelectedMethod: undefined,
-                    newSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
-                });
+            it.each([PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT, PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL])(
+                'when user selects %s and current currency is not EUR',
+                (method) => {
+                    const result = updateCurrencyOverride({
+                        currentCurrency: 'USD',
+                        currencyBeforeOverride: undefined,
+                        currentSelectedMethod: undefined,
+                        newSelectedMethod: method,
+                    });
 
-                expect(result).toEqual({
-                    currency: SEPA_CURRENCY,
-                    currencyBeforeOverride: 'USD',
-                });
-            });
+                    expect(result).toEqual({
+                        currency: 'EUR',
+                        currencyBeforeOverride: 'USD',
+                    });
+                }
+            );
 
-            it('when user already has SEPA_DIRECT_DEBIT selected and no new method is selected', () => {
-                const result = updateCurrencyOverride({
-                    currentCurrency: 'USD',
-                    currencyBeforeOverride: undefined,
-                    currentSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
-                    newSelectedMethod: undefined,
-                });
+            it.each([PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT, PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL])(
+                'when user already has %s selected and no new method is selected',
+                (method) => {
+                    const result = updateCurrencyOverride({
+                        currentCurrency: 'USD',
+                        currencyBeforeOverride: undefined,
+                        currentSelectedMethod: method,
+                        newSelectedMethod: undefined,
+                    });
 
-                expect(result).toEqual({
-                    currency: SEPA_CURRENCY,
-                    currencyBeforeOverride: 'USD',
-                });
-            });
+                    expect(result).toEqual({
+                        currency: 'EUR',
+                        currencyBeforeOverride: 'USD',
+                    });
+                }
+            );
         });
 
         describe('should NOT override currency to EUR', () => {
             it('when current currency is already EUR', () => {
                 const result = updateCurrencyOverride({
-                    currentCurrency: SEPA_CURRENCY,
+                    currentCurrency: 'EUR',
                     currencyBeforeOverride: undefined,
                     currentSelectedMethod: undefined,
                     newSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
@@ -72,7 +93,7 @@ describe('sepa-currency-override', () => {
                 expect(result).toBeUndefined();
             });
 
-            it('when user selects a non-SEPA payment method', () => {
+            it('when user selects an unrestricted payment method', () => {
                 const result = updateCurrencyOverride({
                     currentCurrency: 'USD',
                     currencyBeforeOverride: undefined,
@@ -83,7 +104,7 @@ describe('sepa-currency-override', () => {
                 expect(result).toBeUndefined();
             });
 
-            it('when user has SEPA selected but switches to another method without previous override', () => {
+            it('when user has a restricted method selected but switches to another method without previous override', () => {
                 const result = updateCurrencyOverride({
                     currentCurrency: 'USD',
                     currencyBeforeOverride: undefined,
@@ -96,9 +117,9 @@ describe('sepa-currency-override', () => {
         });
 
         describe('should change currency back', () => {
-            it('when switching from SEPA to another method and currency was overridden', () => {
+            it('when switching from a restricted method to an unrestricted one and currency was overridden', () => {
                 const result = updateCurrencyOverride({
-                    currentCurrency: SEPA_CURRENCY,
+                    currentCurrency: 'EUR',
                     currencyBeforeOverride: 'USD',
                     currentSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
                     newSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
@@ -110,11 +131,11 @@ describe('sepa-currency-override', () => {
                 });
             });
 
-            it('when switching from SEPA to PayPal and currency was overridden', () => {
+            it('when switching from iDEAL to PayPal and currency was overridden', () => {
                 const result = updateCurrencyOverride({
-                    currentCurrency: SEPA_CURRENCY,
+                    currentCurrency: 'EUR',
                     currencyBeforeOverride: 'CHF',
-                    currentSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+                    currentSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
                     newSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
                 });
 
@@ -128,7 +149,7 @@ describe('sepa-currency-override', () => {
         describe('should NOT change currency back', () => {
             it('when currency was not overridden', () => {
                 const result = updateCurrencyOverride({
-                    currentCurrency: SEPA_CURRENCY,
+                    currentCurrency: 'EUR',
                     currencyBeforeOverride: undefined,
                     currentSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
                     newSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
@@ -137,9 +158,9 @@ describe('sepa-currency-override', () => {
                 expect(result).toBeUndefined();
             });
 
-            it('when current method is not SEPA', () => {
+            it('when current method is unrestricted', () => {
                 const result = updateCurrencyOverride({
-                    currentCurrency: SEPA_CURRENCY,
+                    currentCurrency: 'EUR',
                     currencyBeforeOverride: 'USD',
                     currentSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                     newSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
@@ -150,7 +171,7 @@ describe('sepa-currency-override', () => {
 
             it('when no new method is selected and currency is already EUR', () => {
                 const result = updateCurrencyOverride({
-                    currentCurrency: SEPA_CURRENCY,
+                    currentCurrency: 'EUR',
                     currencyBeforeOverride: 'USD',
                     currentSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
                     newSelectedMethod: undefined,
@@ -159,12 +180,12 @@ describe('sepa-currency-override', () => {
                 expect(result).toBeUndefined();
             });
 
-            it('when switching from SEPA to SEPA', () => {
+            it('when switching between two restricted methods that do not support the previous currency', () => {
                 const result = updateCurrencyOverride({
-                    currentCurrency: SEPA_CURRENCY,
+                    currentCurrency: 'EUR',
                     currencyBeforeOverride: 'USD',
                     currentSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
-                    newSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+                    newSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
                 });
 
                 expect(result).toBeUndefined();
@@ -185,7 +206,7 @@ describe('sepa-currency-override', () => {
 
             it('should prioritize currency change back over currency override', () => {
                 const result = updateCurrencyOverride({
-                    currentCurrency: SEPA_CURRENCY,
+                    currentCurrency: 'EUR',
                     currencyBeforeOverride: 'USD',
                     currentSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
                     newSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
@@ -201,16 +222,16 @@ describe('sepa-currency-override', () => {
                 const currencies: Currency[] = ['USD', 'EUR', 'CHF', 'GBP'];
 
                 currencies.forEach((currency) => {
-                    if (currency !== SEPA_CURRENCY) {
+                    if (currency !== 'EUR') {
                         const result = updateCurrencyOverride({
                             currentCurrency: currency,
                             currencyBeforeOverride: undefined,
                             currentSelectedMethod: undefined,
-                            newSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+                            newSelectedMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
                         });
 
                         expect(result).toEqual({
-                            currency: SEPA_CURRENCY,
+                            currency: 'EUR',
                             currencyBeforeOverride: currency,
                         });
                     }
