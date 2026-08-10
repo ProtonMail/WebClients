@@ -54,6 +54,14 @@ const routes: SidebarTree = {
                             children: undefined,
                             icon: undefined,
                         },
+                        {
+                            id: 'organization.vpn.always-on',
+                            label: 'Always-on VPN',
+                            to: '/vpn/always-on-vpn',
+                            meta: { beta: true },
+                            children: undefined,
+                            icon: undefined,
+                        },
                     ],
                 },
             ],
@@ -218,5 +226,17 @@ describe('Tree', () => {
     it('does not mark leaves that do not match the current pathname', () => {
         renderTree({ pathname: '/vpn/dashboard' });
         expect(screen.getByText('Recovery').closest('a')).not.toHaveAttribute('aria-current');
+    });
+
+    it('badges a leaf whose meta marks it as beta', () => {
+        renderTree({ pathname: '/vpn/gateways' });
+        const leaf = screen.getByText('Always-on VPN').closest('a')!;
+        expect(leaf.querySelector('[data-testid="beta-badge"]')).toHaveTextContent('Beta');
+    });
+
+    it('leaves non-beta items unbadged', () => {
+        renderTree({ pathname: '/vpn/gateways' });
+        const leaf = screen.getByText('Gateways').closest('a')!;
+        expect(leaf.querySelector('[data-testid="beta-badge"]')).toBeNull();
     });
 });
