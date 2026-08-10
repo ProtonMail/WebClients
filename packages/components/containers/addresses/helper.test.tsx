@@ -18,6 +18,7 @@ import {
     ADDRESS_PERMISSION_TYPE,
     ADDRESS_STATUS,
     ADDRESS_TYPE,
+    MEMBER_ROLE,
     MEMBER_TYPE,
 } from '@proton/shared/lib/constants';
 import type { Address, Member, PartialMemberAddress, UserModel } from '@proton/shared/lib/interfaces';
@@ -383,21 +384,23 @@ describe('addresses helper functions', () => {
         const getBYOEPermissions = ({
             address = buildAddress(),
             member,
-            isMultiUserPersonalPlan = true,
+            isPrimaryAdmin = false,
             addresses,
+            user = adminUser,
         }: {
             address?: Address;
             member?: Member;
-            isMultiUserPersonalPlan?: boolean;
+            isPrimaryAdmin?: boolean;
             addresses?: PartialMemberAddress[];
+            user?: UserModel;
         }) => {
             return getPermissions({
                 addressIndex: 1,
                 member,
                 address,
                 addresses: addresses ?? ([address] as PartialMemberAddress[]),
-                user: adminUser,
-                isMultiUserPersonalPlan,
+                user,
+                isPrimaryAdmin,
             });
         };
 
@@ -472,19 +475,54 @@ describe('addresses helper functions', () => {
                 expect(permissions.canDisable).toBe(false);
             });
 
-            it('should not allow disabling or enabling on a B2B plan', () => {
-                const enabledPermissions = getBYOEPermissions({
-                    member: otherMember,
-                    isMultiUserPersonalPlan: false,
-                });
+            it('should not let an ordinary admin disable or enable another admin BYOE address', () => {
+                const adminMember = {
+                    Self: 0,
+                    Type: MEMBER_TYPE.PROTON,
+                    Role: MEMBER_ROLE.ORGANIZATION_ADMIN,
+                } as Member;
+
+                const enabledPermissions = getBYOEPermissions({ member: adminMember });
                 const disabledPermissions = getBYOEPermissions({
                     address: buildAddress({ Status: ADDRESS_STATUS.STATUS_DISABLED }),
-                    member: otherMember,
-                    isMultiUserPersonalPlan: false,
+                    member: adminMember,
                 });
 
                 expect(enabledPermissions.canDisable).toBe(false);
                 expect(disabledPermissions.canEnable).toBe(false);
+            });
+
+            it('should let the primary admin disable and enable another admin BYOE address', () => {
+                const adminMember = {
+                    Self: 0,
+                    Type: MEMBER_TYPE.PROTON,
+                    Role: MEMBER_ROLE.ORGANIZATION_ADMIN,
+                } as Member;
+
+                const enabledPermissions = getBYOEPermissions({ member: adminMember, isPrimaryAdmin: true });
+                const disabledPermissions = getBYOEPermissions({
+                    address: buildAddress({ Status: ADDRESS_STATUS.STATUS_DISABLED }),
+                    member: adminMember,
+                    isPrimaryAdmin: true,
+                });
+
+                expect(enabledPermissions.canDisable).toBe(true);
+                expect(disabledPermissions.canEnable).toBe(true);
+            });
+
+            it('should only offer disconnect, never disable, on your own BYOE address', () => {
+                const memberUser = { isAdmin: false, canPay: false, Private: 1 } as UserModel;
+
+                const memberPermissions = getBYOEPermissions({ member: selfMember, user: memberUser });
+                const adminPermissions = getBYOEPermissions({ member: selfMember });
+                const primaryAdminPermissions = getBYOEPermissions({ member: selfMember, isPrimaryAdmin: true });
+
+                expect(memberPermissions.canDisable).toBe(false);
+                expect(memberPermissions.canDisconnectBYOE).toBe(true);
+                expect(adminPermissions.canDisable).toBe(false);
+                expect(adminPermissions.canDisconnectBYOE).toBe(true);
+                expect(primaryAdminPermissions.canDisable).toBe(false);
+                expect(primaryAdminPermissions.canDisconnectBYOE).toBe(true);
             });
 
             it('should not extend the BYOE exception to non-BYOE external addresses', () => {

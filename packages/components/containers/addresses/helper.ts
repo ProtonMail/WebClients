@@ -9,6 +9,7 @@ import {
     ADDRESS_STATUS,
     ADDRESS_TYPE,
     MEMBER_PRIVATE,
+    MEMBER_ROLE,
     MEMBER_TYPE,
 } from '@proton/shared/lib/constants';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
@@ -60,7 +61,7 @@ export const getPermissions = ({
     address,
     addresses,
     user,
-    isMultiUserPersonalPlan,
+    isPrimaryAdmin,
     organizationKey,
     addressIndex,
 }: {
@@ -69,7 +70,7 @@ export const getPermissions = ({
     address: Address;
     addresses: PartialMemberAddress[];
     user: UserModel;
-    isMultiUserPersonalPlan?: boolean;
+    isPrimaryAdmin?: boolean;
     organizationKey?: CachedOrganizationKey;
 }) => {
     const { isAdmin, canPay } = user;
@@ -86,7 +87,11 @@ export const getPermissions = ({
     const isNotEncrypted = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE);
     const isSignatureNotExpected = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED);
 
-    const isAdminOnMemberBYOE = isBYOE && isAdmin && !isSelf && !!isMultiUserPersonalPlan;
+    const isTargetAdmin = member?.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
+    // The primary admin (B2B) / owner (B2C multi-user) can disable anyone else's BYOE address, admins included.
+    const isPrimaryAdminOnOtherBYOE = isBYOE && !!isPrimaryAdmin && !isSelf;
+    // Any admin can disable a non-admin member's BYOE address.
+    const isAdminOnMemberBYOE = isBYOE && isAdmin && !isSelf && !isTargetAdmin;
 
     const canMakeDefault = !isDefault && !getIsNonDefault(address);
 
@@ -101,7 +106,11 @@ export const getPermissions = ({
     const canGenerateSelfAddressKeys = isSelf && user.Private === MEMBER_PRIVATE.UNREADABLE && !address.HasKeys;
     const canGenerate = canGenerateMemberAddressKeys || canGenerateSelfAddressKeys;
 
-    let canDisable = (isEnabled && isAdmin && !isSpecialAddress && !isExternal) || (isAdminOnMemberBYOE && isEnabled);
+    // Disable is only ever offered to an admin acting on someone else. On your own BYOE address the
+    // disconnect modal decides whether a disable runs alongside it, so showing both would be redundant.
+    const canDisableBYOE = isPrimaryAdminOnOtherBYOE || isAdminOnMemberBYOE;
+
+    let canDisable = (isEnabled && isAdmin && !isSpecialAddress && !isExternal) || (canDisableBYOE && isEnabled);
 
     const isManagedUser = member?.Type === MEMBER_TYPE.MANAGED;
     if (isManagedUser) {
@@ -133,7 +142,7 @@ export const getPermissions = ({
         canEditInternalAddress,
         canEditExternalAddress,
         canDisable,
-        canEnable: (isDisabled && isAdmin && Type !== TYPE_ORIGINAL && !isBYOE) || (isAdminOnMemberBYOE && isDisabled),
+        canEnable: (isDisabled && isAdmin && Type !== TYPE_ORIGINAL && !isBYOE) || (canDisableBYOE && isDisabled),
         canDeleteAddress: adminCanDeleteCustom,
         canDeleteAddressOncePerYear: !adminCanDeleteCustom && isAdmin && !isSpecialAddress && !isExternal && !isDefault,
         canEdit: isSelf,
