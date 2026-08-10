@@ -2,6 +2,7 @@ import noop from '@proton/utils/noop';
 
 import type { ElectronNotification } from '../desktop/desktopTypes';
 import { invokeInboxDesktopIPC } from '../desktop/ipcHelpers';
+import { traceError } from './sentry';
 
 export enum Status {
     DENIED = 'denied',
@@ -95,13 +96,19 @@ export const request = async (onGranted: () => void = noop, onDenied: () => void
 
 const createWebNotification = (title: string, options?: NotificationOptions, onClick?: () => void) => {
     if (isEnabled()) {
-        const notification = new Notification(title, options);
+        try {
+            const notification = new Notification(title, options);
 
-        addNotification(notification);
+            addNotification(notification);
 
-        setupNotificationHandlers(notification, onClick);
+            setupNotificationHandlers(notification, onClick);
 
-        return notification;
+            return notification;
+        } catch (error) {
+            // Some browsers report Notification support and permission as granted,
+            // but still throw (e.g. "Illegal constructor" when notifications require a service worker).
+            traceError(error);
+        }
     }
 };
 
