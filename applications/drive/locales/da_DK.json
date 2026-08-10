@@ -1332,6 +1332,9 @@
       ],
       "Stop": [
         "Stop"
+      ],
+      "Migrate": [
+        "Migrer"
       ]
     },
     "Action: Docs": {
@@ -4443,6 +4446,27 @@
       ],
       "You do not have access to this shared item": [
         "Du har ikke adgang til dette delte element"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adressen for medlemmet blev ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
+      ],
+      "Missing organization private key": [
+        "Mangler organisationens private nøgle"
+      ],
+      "Missing organization public key": [
+        "Mangler organisationens offentlige nøgle"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisationen har ikke nok ledige pladser"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisationen har ikke tilstrækkelig ledig lagerplads"
+      ],
+      "Something went wrong, please try again later": [
+        "Noget gik galt, prøv igen senere"
       ]
     },
     "error": {
@@ -7742,6 +7766,39 @@
       ],
       "Author is not provided on public link": [
         "Forfatter er ikke angivet på offentligt link"
+      ],
+      "Find out what can be migrated.": [
+        "Find ud af hvad der kan migreres."
+      ],
+      "No users to display": [
+        "Ingen brugere"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vælg præcis det du gerne vil migrere. Det vil gælde for alle brugere i organisationen."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Denne bruger kan ikke migreres da brugerens e-mailadresse ikke er tilgængelig på ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "For at migrere denne bruger skal du tilføje og bekræfte e-mail-domænet under ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes adresse under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "For at migrere denne bruger skal de acceptere deres invitation til at tilslutte sig ${ BRAND_NAME }."
+      ],
+      "You": [
+        "Dig"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Du vil ikke kunne dele \"${ fileName }\" efter at have ændret din adgang til seer. Ejeren eller en redaktør med adgang til at dele kan give dig adgang til at redigere igen. Du kan ikke selv fortryde det."
       ]
     },
     "info": {
@@ -13116,6 +13173,18 @@
       ],
       "Size": [
         "Størrelse"
+      ],
+      "Activated": [
+        "Aktiveret"
+      ],
+      "Estimated size": [
+        "Anslået størrelse"
+      ],
+      "Migration status": [
+        "Migrationsstatus"
+      ],
+      "User": [
+        "Bruger"
       ]
     },
     "TableHeader": {
@@ -14340,6 +14409,18 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
         "Vi kunne ikke bekræfte, at filens indhold blev uploadet af ${ claimedContentAuthor }. Årsagen er: ${ node.activeRevision.contentAuthor.error.error }"
+      ],
+      "Configure migration": [
+        "Konfigurer migration"
+      ],
+      "Domain names": [
+        "Domænenavne"
+      ],
+      "Select users to migrate": [
+        "Vælg brugere at migrere"
+      ],
+      "What are you migrating?": [
+        "Hvad migrerer du?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14446,6 +14527,9 @@
       ],
       "Version 6 OpenPGP key": [
         "OpenPGP-nøgle version 6"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
       ]
     },
     "tooltip": {
@@ -14991,6 +15075,12 @@
       ],
       "Migrated": [
         "Migreret"
+      ],
+      "Has errors": [
+        "Har fejl"
+      ],
+      "Pending": [
+        "Afventer"
       ]
     },
     "Property": {
@@ -15011,6 +15101,29 @@
       ],
       "name": [
         "navn"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Aktiveret"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Fejl"
+      ],
+      "In progress": [
+        "I gang"
+      ],
+      "Migrated": [
+        "Migreret"
+      ],
+      "Not activated": [
+        "Ikke aktiveret"
+      ],
+      "Pending": [
+        "Afventer"
       ]
     }
   }

@@ -7824,6 +7824,12 @@
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "Per migrar aquest usuari, reactiveu-lo a la vostra ${ provider.adminConsoleName }."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Aquest usuari no es pot migrar perquè la seva adreça de correu electrònic no està disponible a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Per migrar aquest usuari, afegiu i verifiqueu-ne el domini de correu electrònic a ${ domainNamesLink }"
       ]
     },
     "info": {
@@ -14407,6 +14413,9 @@
       ],
       "What are you migrating?": [
         "Què esteu migrant?"
+      ],
+      "Domain names": [
+        "Noms de domini"
       ]
     },
     "Today icon tooltip in mini calendar": {

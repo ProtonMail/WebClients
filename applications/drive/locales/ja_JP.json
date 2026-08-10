@@ -7334,6 +7334,12 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "現在のプランを継続すると、翌月が50%オフ"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "このユーザーはメールアドレスが ${ BRAND_NAME } に登録されていないため、移行することができません。"
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "このユーザーを移行するには、${ domainNamesLink } にメールドメインを追加して確認してください"
       ]
     },
     "info": {
@@ -13754,6 +13760,9 @@
       ],
       "Stay for 50% off your next month": [
         "継続すると、翌月が50%オフ"
+      ],
+      "Domain names": [
+        "ドメイン名"
       ]
     },
     "Today icon tooltip in mini calendar": {
