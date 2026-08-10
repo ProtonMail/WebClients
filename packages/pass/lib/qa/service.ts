@@ -1,6 +1,6 @@
 import type { MaybeNull, Storage } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { fromEntries, objectEntries } from '@proton/pass/utils/object/generic';
+import { objectEntries } from '@proton/pass/utils/object/generic';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import noop from '@proton/utils/noop';
 
@@ -16,9 +16,11 @@ export const QA_SERVICE =
     ENV === 'development'
         ? (() => {
               let store: MaybeNull<Storage<QAStorage>> = null;
-              const state: QAState = fromEntries<QAScenario, boolean>(
-                  QA_SCENARIOS.map((scenario) => [scenario, false])
-              );
+              const state: QAState = {
+                  login_without_offline_components: false,
+                  api_downtime: false,
+                  sync_strategy_v2: true,
+              };
               const pubsub = createPubSub<QAEvent>();
 
               const onScenarioUpdate = (type: QAScenario, enabled: boolean) => {
