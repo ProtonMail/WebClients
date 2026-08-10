@@ -966,6 +966,15 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Τα προσωπικά σας στοιχεία διέρρευσαν σε παραβίαση δεδομένων μιας υπηρεσίας τρίτου μέρους."
+      ],
+      "Change these passwords immediately": [
+        "Αλλάξτε αμέσως αυτούς τους κωδικούς πρόσβασης"
+      ],
+      "Check if your passwords have been exposed": [
+        "Ελέγξτε αν οι κωδικοί πρόσβασής σας έχουν αποκαλυφθεί"
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Αυτός ο κωδικός πρόσβασης σύνδεσης εμφανίζεται σε μια παραβίαση δεδομένων. Επισκεφθείτε την υπηρεσία και αλλάξτε τον κωδικό πρόσβασης."
       ]
     },
     "Email": {
@@ -1491,6 +1500,9 @@
       ],
       "Unsupported file type": [
         "Μη υποστηριζόμενος τύπος αρχείου"
+      ],
+      "This invite is no longer available": [
+        "Αυτή η πρόσκληση δεν είναι πλέον διαθέσιμη"
       ]
     },
     "Error message": {
@@ -5304,6 +5316,18 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ],
+      "Compromised password": [
+        "Παραβιασμένος κωδικός πρόσβασης"
+      ],
+      "Compromised passwords": [
+        "Παραβιασμένοι κωδικοί πρόσβασης"
+      ],
+      "No compromised passwords": [
+        "Μη παραβιασμένοι κωδικοί πρόσβασης"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Αναβάθμιση για έλεγχο για παραβιασμένους κωδικούς πρόσβασης"
       ]
     },
     "Title_cloned_item": {
