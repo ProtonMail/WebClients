@@ -228,7 +228,11 @@ export const setApplicationMenu = () => {
                 },
                 { type: "separator" },
                 { label: c("App menu").t`Actual Size`, accelerator: "CmdOrCtrl+0", click: resetZoom },
-                { label: c("App menu").t`Zoom In`, accelerator: "CmdOrCtrl+Plus", click: () => updateZoom("in") },
+                {
+                    label: c("App menu").t`Zoom In`,
+                    accelerator: isMac ? "CmdOrCtrl+Plus" : "CmdOrCtrl+=",
+                    click: () => updateZoom("in"),
+                },
                 { label: c("App menu").t`Zoom Out`, accelerator: "CmdOrCtrl+-", click: () => updateZoom("out") },
                 { type: "separator" },
                 { role: "togglefullscreen", label: c("App menu").t`Toggle Full Screen` },
