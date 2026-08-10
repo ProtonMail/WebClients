@@ -13587,6 +13587,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Tidak dapat mengonfirmasi bahwa node dibuat oleh ${ claimedKeyAuthor }. Alasannya: ${ node.keyAuthor.error.error }"
+      ],
+      "Domain names": [
+        "Nama domain"
       ]
     },
     "Today icon tooltip in mini calendar": {
