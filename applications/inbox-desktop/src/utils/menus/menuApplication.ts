@@ -1,8 +1,9 @@
-import { app, dialog, Menu, shell, WebContentsView, type MenuItemConstructorOptions } from "electron";
+import { app, clipboard, dialog, Menu, shell, WebContentsView, type MenuItemConstructorOptions } from "electron";
 import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
-import { clearStorage, isMac } from "../helpers";
+import { clearStorage, isMac, isSnap, isWindows } from "../helpers";
 import {
+    getCurrentView,
     getMainWindow,
     getSpellCheckStatus,
     openCalendarWithoutReload,
@@ -16,30 +17,55 @@ import { getSettings, updateSettings } from "../../store/settingsStore";
 import { CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { profiler } from "../profiler/profiler";
 import { restartApp } from "../restartApp";
+import { getIconResourcePath } from "../../constants/resources";
+import pkg from "../../../package.json";
 
-type MenuKey = "app" | "file" | "edit" | "view" | "window";
+type MenuKey = "app" | "file" | "edit" | "view" | "window" | "help";
 interface MenuProps extends MenuItemConstructorOptions {
     key: MenuKey;
 }
 
 let switchToMailItem: Electron.MenuItem | undefined;
 let switchToCalendarItem: Electron.MenuItem | undefined;
-let appSwitchShortcutsEnabled = false;
+let helpAndFeedbackItem: Electron.MenuItem | undefined;
+let notInAccountMenuItemsEnabled = false;
 
-export const enableAppSwitcherMenuItems = (enabled: boolean) => {
+export const enableNotInAccountMenuItems = (notInAccountView: boolean) => {
     // Avoid unnecessary re-renders.
-    if (appSwitchShortcutsEnabled === enabled) return;
+    if (notInAccountMenuItemsEnabled === notInAccountView) return;
 
-    if (switchToMailItem) switchToMailItem.enabled = enabled;
-    if (switchToCalendarItem) switchToCalendarItem.enabled = enabled;
-    appSwitchShortcutsEnabled = enabled;
+    if (switchToMailItem) switchToMailItem.enabled = notInAccountView;
+    if (switchToCalendarItem) switchToCalendarItem.enabled = notInAccountView;
+    if (helpAndFeedbackItem) helpAndFeedbackItem.enabled = notInAccountView;
+    notInAccountMenuItemsEnabled = notInAccountView;
 };
 
 const switchToAppLabel = (appName: string) => c("App menu").t`Switch to ${appName}`;
 
+const showAboutDialog = () => {
+    const version = app.getVersion();
+    const buildInfo = `${process.env.BUILD_TAG?.replace("ida-", "") ?? "dev"}${isSnap ? " + snap" : ""}`;
+    const detail = c("App menu").t`Version ${version} (${buildInfo})\n${pkg.config.copyright}`;
+
+    dialog
+        .showMessageBox({
+            type: "info",
+            icon: getIconResourcePath(isWindows ? "icon.ico" : "icon.png"),
+            title: c("Title").t`About ${MAIL_APP_NAME}`,
+            message: MAIL_APP_NAME,
+            detail,
+            buttons: [c("App menu").t`OK`, c("App menu").t`Copy`],
+            defaultId: 0,
+        })
+        .then(({ response }) => {
+            if (response === 1) {
+                clipboard.writeText(`${MAIL_APP_NAME} ${version} (${buildInfo})`);
+            }
+        });
+};
+
 export const setApplicationMenu = () => {
     const quitMenuProps: MenuProps["submenu"] = isMac ? [] : [{ role: "quit", label: c("App menu").t`Quit` }];
-
     const hardwareAccelerationDisabled = getSettings().disableHardwareAcceleration;
 
     const temp: MenuProps[] = [
@@ -249,6 +275,30 @@ export const setApplicationMenu = () => {
         },
     ];
 
+    const aboutSubmenuItems: MenuProps["submenu"] = isMac
+        ? []
+        : [
+              { type: "separator" },
+              { label: c("App menu").t`About ${MAIL_APP_NAME}`, type: "normal", click: () => showAboutDialog() },
+          ];
+
+    temp.push({
+        label: c("Menu").t`Help`,
+        key: "help",
+        submenu: [
+            {
+                id: "help-and-feedback",
+                label: c("App menu").t`Help and feedback`,
+                type: "normal",
+                enabled: false,
+                click: () => {
+                    getCurrentView()?.webContents.send("hostUpdate", { type: "openHelpAndFeedback" });
+                },
+            },
+            ...aboutSubmenuItems,
+        ],
+    });
+
     if (isMac) {
         const editIndex = temp.findIndex((item) => item.key === "edit");
         if (editIndex !== -1) {
@@ -307,7 +357,8 @@ export const setApplicationMenu = () => {
 
     switchToMailItem = menu.getMenuItemById("switch-to-mail") ?? undefined;
     switchToCalendarItem = menu.getMenuItemById("switch-to-calendar") ?? undefined;
-    enableAppSwitcherMenuItems(false);
+    helpAndFeedbackItem = menu.getMenuItemById("help-and-feedback") ?? undefined;
+    enableNotInAccountMenuItems(false);
 
     Menu.setApplicationMenu(menu);
 };
