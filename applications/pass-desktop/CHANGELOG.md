@@ -1,3 +1,7 @@
+### Version 1.39.1
+
+- Fix "Check for updates" button not working for version 1.39 beta on macOS
+
 ### Version 1.39.0
 
 - Support SSH agent
