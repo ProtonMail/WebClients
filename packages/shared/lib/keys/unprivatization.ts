@@ -333,10 +333,14 @@ export const acceptUnprivatization = async ({
     }
     const token = generateActivationToken();
     const { orgPublicKey } = parsedUnprivatizationData.payload;
+    const primaryAddressKey = addressKeys.at(0);
+    if (!primaryAddressKey) {
+        throw new Error('Missing primary address key');
+    }
     const orgActivationToken = await getEncryptedOrganizationActivationToken({
         token,
         encryptionKeys: [orgPublicKey],
-        signingKeys: addressKeys,
+        signingKeys: [primaryAddressKey],
     });
     const orgPrimaryUserKeysArmored = await Promise.all(
         userKeys.map((userKey) => {
@@ -372,11 +376,18 @@ export const setupKeysWithUnprivatization = async ({
         const { orgPublicKey } = parsedUnprivatizationData.payload;
         const token = generateActivationToken();
         const primaryUserKey = payload.privateKeys.userKey;
-        const addressKeys = payload.privateKeys.addressKeys.map(({ privateKey }) => privateKey);
+        const invitationAddressID = parsedUnprivatizationData.payload.invitationAddress.ID;
+        // The activation token signature is verified against the invitation address keys only
+        const primaryAddressKey = payload.privateKeys.addressKeys.find(
+            ({ addressID }) => addressID === invitationAddressID
+        )?.privateKey;
+        if (!primaryAddressKey) {
+            throw new Error('Missing primary address key');
+        }
         const orgActivationToken = await getEncryptedOrganizationActivationToken({
             token,
             encryptionKeys: [orgPublicKey],
-            signingKeys: addressKeys,
+            signingKeys: [primaryAddressKey],
         });
         const orgPrimaryUserKeyArmored = await CryptoProxy.exportPrivateKey({
             privateKey: primaryUserKey,
