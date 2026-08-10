@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import useApi from '@proton/components/hooks/useApi';
 import type { User } from '@proton/shared/lib/interfaces';
 
+import { buildArtifactActionLlmPrompt } from '../components/Conversation/artifact/artifactActionPrompts';
 import {
     formatPersonalization,
     regenerateMessage,
@@ -29,7 +30,14 @@ import type { ConversationError } from '../redux/slices/meta/errors';
 import { useActionErrorHandler } from '../services/errors/useActionErrorHandler';
 import { OPERATION_IN_PROGRESS_MESSAGE, generationRegistry } from '../services/generation/generationRegistry';
 import { SearchService } from '../services/search/searchService';
-import type { ActionParams, Attachment, ErrorContext, ImageGenerationOptions, RetryStrategy } from '../types';
+import type {
+    ActionParams,
+    ArtifactActionMeta,
+    Attachment,
+    ErrorContext,
+    ImageGenerationOptions,
+    RetryStrategy,
+} from '../types';
 import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
 import {
     fillAttachmentFromSearchIndex,
@@ -68,6 +76,7 @@ export type HandleSendMessage = (
     imageOptions?: ImageGenerationOptions,
     artifactModeActive?: boolean
 ) => Promise<void>;
+export type HandleSendArtifactAction = (meta: ArtifactActionMeta, isWebSearchButtonToggled: boolean) => Promise<void>;
 export type HandleRegenerateMessage = (
     message: Message,
     isWebSearchButtonToggled: boolean,
@@ -194,7 +203,8 @@ export const useLumoActions = ({
         spaceDek: AesGcmCryptoKey | undefined,
         signal: AbortSignal
     ) => {
-        const { newMessageContent, isWebSearchButtonToggled, imageOptions, artifactModeActive } = actionParams;
+        const { newMessageContent, isWebSearchButtonToggled, imageOptions, artifactModeActive, artifactAction } =
+            actionParams;
         if (!newMessageContent?.trim() && provisionalAttachments.length === 0) return;
 
         const enableExternalTools = ffExternalTools && isWebSearchButtonToggled;
@@ -254,6 +264,7 @@ export const useLumoActions = ({
                 newMessageData: {
                     content: newMessageContent ?? '',
                     attachments: filledAttachments,
+                    ...(artifactAction && { artifactAction }),
                 },
                 conversationContext: {
                     spaceId,
@@ -651,6 +662,20 @@ export const useLumoActions = ({
         });
     };
 
+    const handleSendArtifactAction: HandleSendArtifactAction = async (
+        meta: ArtifactActionMeta,
+        isWebSearchButtonToggled: boolean
+    ) => {
+        sendMessageSendEvent();
+
+        return handleMessageAction({
+            actionType: 'send',
+            newMessageContent: buildArtifactActionLlmPrompt(meta),
+            isWebSearchButtonToggled,
+            artifactAction: meta,
+        });
+    };
+
     const handleRegenerateMessage: HandleRegenerateMessage = async (
         message: Message,
         isWebSearchButtonToggled: boolean,
@@ -759,6 +784,7 @@ export const useLumoActions = ({
         getSiblingInfo,
         handleRegenerateMessage,
         handleSendMessage,
+        handleSendArtifactAction,
         handleEditMessage,
         handleAbort,
         messageChainRef,
