@@ -3,10 +3,10 @@ import React, { memo } from 'react';
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../..//hooks/useLumoActions';
 import type { SiblingInfo } from '../../../..//hooks/usePreferredSiblings';
 import type { Message } from '../../../../types';
-import { type Attachment, isCompactionMessage, Role } from '../../../../types';
+import { type Attachment, Role, isCompactionMessage } from '../../../../types';
 import ChatContainerItem from '../../../ChatContainerItem';
 import AssistantMessage from './AssistantMessage/AssistantMessage';
-import CompactionMarker from './CompactionMarker/CompactionMarker';
+import { CompactionMarker } from './CompactionMarker/CompactionMarker';
 import UserMessage from './UserMessage/UserMessage';
 
 export type MessageComponentProps = {
@@ -49,7 +49,8 @@ const areEqual = (prevProps: MessageComponentProps, nextProps: MessageComponentP
         prevProps.message.toolResult !== nextProps.message.toolResult ||
         prevProps.message.reasoning !== nextProps.message.reasoning ||
         prevProps.message.thinkingTimeline?.length !== nextProps.message.thinkingTimeline?.length ||
-        prevProps.message.suggestedQuestions?.length !== nextProps.message.suggestedQuestions?.length;
+        prevProps.message.suggestedQuestions?.length !== nextProps.message.suggestedQuestions?.length ||
+        prevProps.message.artifactAction !== nextProps.message.artifactAction;
 
     // Compare siblingInfo by its key properties
     const siblingInfoChanged =

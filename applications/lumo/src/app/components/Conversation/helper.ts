@@ -38,6 +38,7 @@ import { maybeAutoSaveMemoriesFromChats } from '../../services/memoryAutoSave';
 import { SearchService } from '../../services/search/searchService';
 import type { ImageAspectRatio, MessageId, ShallowAttachment } from '../../types';
 import {
+    type ArtifactActionMeta,
     type Attachment,
     type ConversationId,
     ConversationStatus,
@@ -90,6 +91,7 @@ export type ApplicationContext = {
 export type NewMessageData = {
     content: string;
     attachments: Attachment[];
+    artifactAction?: ArtifactActionMeta;
 };
 
 export type { ConversationContext } from './conversationContext';
@@ -365,7 +367,8 @@ export function sendMessage({
             conversationId,
             lastMessage,
             date1,
-            date2
+            date2,
+            m.artifactAction
         );
 
         // Save the user message to Redux and request push to persistence HTTP API
@@ -991,7 +994,8 @@ function createMessagePair(
     conversationId: ConversationId,
     lastMessage: Message | undefined,
     date1: string,
-    date2: string
+    date2: string,
+    artifactAction?: ArtifactActionMeta
 ) {
     const context = flattenAttachmentsForLlm(attachments);
     const shallowAttachments = stripDataFromAttachments(attachments);
@@ -1007,6 +1011,7 @@ function createMessagePair(
         context,
         blocks: [{ type: 'text', content }],
         ...(shallowAttachments.length && { attachments: shallowAttachments }),
+        ...(artifactAction && { artifactAction }),
     };
 
     const assistantMessage: Message = {
