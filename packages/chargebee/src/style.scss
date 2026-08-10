@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:math';
 @use '~@proton/styles/scss/lib' as *;
 @use '~@proton/styles/scss/base/custom-properties' as *;
 @use '~@proton/styles/scss/base/typo' as *;
@@ -7,6 +8,7 @@
 
 body {
 	font-family:
+		system-ui,
 		Inter,
 		-apple-system,
 		BlinkMacSystemFont,
@@ -210,6 +212,11 @@ $input-border-size: 1;
 	--focus-ring: rgb(109 74 255 / 0.2);
 	--text-hint: #8f8d8a;
 	--signal-danger: #dc3251;
+	--border-radius-md: 8px;
+	--interaction-norm: #6d4aff;
+	--interaction-norm-contrast: white;
+	--interaction-norm-major-1: #6243e6;
+	--interaction-norm-major-2: #573bcc;
 }
 
 .icon-16p {
@@ -232,6 +239,38 @@ $input-border-size: 1;
 	display: block;
 	margin-block: 0;
 	margin-inline: auto;
+}
+
+// Tries to mimic ButtonLike Style
+.ideal-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	inline-size: 100%;
+	padding-block: #{em(6)}; // 40px height
+	padding-inline: #{em(16)};
+	font-size: rem(16);
+	border: 1px solid transparent;
+	border-radius: var(--border-radius-md);
+	background-color: var(--interaction-norm);
+	cursor: pointer;
+	transition: 0.15s easing(ease-out-quint);
+	color: var(--interaction-norm-contrast);
+	line-height: math.div(24, 16);
+
+	&:hover {
+		background-color: var(--interaction-norm-major-1);
+	}
+
+	&:active {
+		background-color: var(--interaction-norm-major-2);
+	}
+
+	&:disabled {
+		background-color: var(--interaction-norm);
+		cursor: default;
+		opacity: 0.5;
+	}
 }
 
 /* purgecss end ignore */

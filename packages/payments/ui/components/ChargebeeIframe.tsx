@@ -2,6 +2,7 @@ import { type MutableRefObject, type RefObject, useEffect, useRef, useState } fr
 
 import { c } from 'ttag';
 
+import type { IdealAuthorizedPayload, SetIdealPaymentIntentPayload } from '@proton/chargebee/lib';
 import {
     type ApplePayAuthorizedPayload,
     type CardFormRenderMode,
@@ -22,6 +23,7 @@ import {
     type ThreeDsChallengePayload,
     type UpdateFieldsPayload,
     chargebeeCssVariables,
+    idealAuthorizedMessageType,
     isApplePayAuthorizedMessage,
     isApplePayCancelledMessage,
     isApplePayClickedMessage,
@@ -30,6 +32,9 @@ import {
     isGooglePayCancelledMessage,
     isGooglePayClickedMessage,
     isGooglePayFailedMessage,
+    isIdealCancelledMessage,
+    isIdealClickedMessage,
+    isIdealFailedMessage,
     isPaypalCancelledMessage,
     isPaypalClickedMessage,
     isPaypalFailedMessage,
@@ -49,8 +54,10 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { ThemeCode } from '@proton/components/payments/client-extensions';
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
+import type { ChargebeeIdealProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeIdeal';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import type { ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
+import { IDEAL_BRAND_NAME } from '@proton/shared/lib/constants';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { ColorScheme } from '@proton/shared/lib/themes/constants';
 
@@ -264,10 +271,11 @@ export function getChargebeeErrorMessage(error: any) {
 }
 
 type ChargebeeIframeProps = React.IframeHTMLAttributes<HTMLIFrameElement> & {
-    type: 'card' | 'paypal' | 'saved-card' | 'direct-debit' | 'apple-pay' | 'google-pay';
+    type: 'card' | 'paypal' | 'saved-card' | 'direct-debit' | 'apple-pay' | 'google-pay' | 'ideal';
     iframeHandles: CbIframeHandles;
     chargebeeCard?: ChargebeeCardProcessorHook;
     chargebeePaypal?: ChargebeePaypalProcessorHook;
+    chargebeeIdeal?: ChargebeeIdealProcessorHook;
     directDebit?: ChargebeeDirectDebitProcessorHook;
     applePay?: ApplePayProcessorHook;
     googlePay?: GooglePayProcessorHook;
@@ -596,6 +604,44 @@ function useChargebeeHandles(
 
             return iframeAction('set-configuration', config, iframeRef, targetOrigin, signal);
         },
+        initializeIdeal: async () => {
+            const chargebeeInstanceConfig = await getConfig();
+
+            const config: CbIframeConfig = {
+                paymentMethodType: 'ideal',
+                themeType,
+                ...chargebeeInstanceConfig,
+            };
+
+            return iframeAction('set-configuration', config, iframeRef, targetOrigin, signal);
+        },
+        setIdealPaymentIntent: async (
+            payload: Omit<SetIdealPaymentIntentPayload, 'buttonLabel'>,
+            abortSignal: AbortSignal
+        ) => {
+            const setIdealPaymentIntentActionType = 'set-ideal-payment-intent';
+            const buttonLabel = c('Payments').t`Pay with ${IDEAL_BRAND_NAME}`;
+
+            try {
+                return await iframeAction(
+                    setIdealPaymentIntentActionType,
+                    { ...payload, buttonLabel },
+                    iframeRef,
+                    targetOrigin,
+                    abortSignal
+                );
+            } catch (error: any) {
+                // make sure that only the latest error is handled, and all others are ignored
+                if (error.correlationId === getLatestCorrelationIdByType(setIdealPaymentIntentActionType)) {
+                    const errorMessage = getChargebeeErrorMessage(error);
+                    createNotification({
+                        type: 'error',
+                        text: errorMessage,
+                    });
+                }
+                throw error;
+            }
+        },
     };
 
     return {
@@ -761,6 +807,34 @@ export const useCbIframe = (): CbIframeHandles => {
                     callback();
                 }
             }),
+        onIdealAuthorized: (callback: (payload: IdealAuthorizedPayload) => any) =>
+            listenToIframeEvents(iframeRef, (e) => {
+                const payload = parseEvent(e.data);
+                if (payload.type === idealAuthorizedMessageType) {
+                    callback(payload.data);
+                }
+            }),
+        onIdealFailure: (callback: (error: any) => any) =>
+            listenToIframeEvents(iframeRef, (e) => {
+                const payload = parseEvent(e.data);
+                if (isIdealFailedMessage(payload)) {
+                    callback(payload.error);
+                }
+            }),
+        onIdealClicked: (callback: () => any) =>
+            listenToIframeEvents(iframeRef, (e) => {
+                const payload = parseEvent(e.data);
+                if (isIdealClickedMessage(payload)) {
+                    callback();
+                }
+            }),
+        onIdealCancelled: (callback: () => any) =>
+            listenToIframeEvents(iframeRef, (e) => {
+                const payload = parseEvent(e.data);
+                if (isIdealCancelledMessage(payload)) {
+                    callback();
+                }
+            }),
     };
 
     useEffect(() => {
@@ -860,6 +934,7 @@ function getInitialStyles(type: ChargebeeIframeProps['type']): {
         'apple-pay': { initialHeight: 52, initialWidth: '100%' },
         'direct-debit': { initialHeight: 0, initialWidth: '100%' },
         'google-pay': { initialHeight: 56, initialWidth: '100%' },
+        ideal: { initialHeight: 56, initialWidth: '100%' },
     };
 
     return styles[type] ?? styles.card;
@@ -870,6 +945,7 @@ export const ChargebeeIframe = ({
     iframeHandles,
     chargebeeCard,
     chargebeePaypal,
+    chargebeeIdeal,
     directDebit,
     applePay,
     googlePay,
@@ -881,6 +957,7 @@ export const ChargebeeIframe = ({
 }: ChargebeeIframeProps) => {
     const [initialized, setInitialized] = useState(false);
     const paypalAbortRef = useRef<AbortController | null>(null);
+    const idealAbortRef = useRef<AbortController | null>(null);
     const applePayAbortRef = useRef<AbortController | null>(null);
     const googlePayAbortRef = useRef<AbortController | null>(null);
     const loadingTimeoutRef = useRef<any>(null);
@@ -893,6 +970,8 @@ export const ChargebeeIframe = ({
                 applePay.applePayIframeLoadedRef.current = false;
             } else if (type === 'google-pay' && googlePay) {
                 googlePay.googlePayIframeLoadedRef.current = false;
+            } else if (type === 'ideal' && chargebeeIdeal) {
+                chargebeeIdeal.idealIframeLoadedRef.current = false;
             }
         };
     }, []);
@@ -906,6 +985,8 @@ export const ChargebeeIframe = ({
             eventListeners.push(iframeHandles.events.onApplePayClicked(() => onClick?.()));
         } else if (type === 'google-pay') {
             eventListeners.push(iframeHandles.events.onGooglePayClicked(() => onClick?.()));
+        } else if (type === 'ideal') {
+            eventListeners.push(iframeHandles.events.onIdealClicked(() => onClick?.()));
         }
 
         return () => {
@@ -969,6 +1050,10 @@ export const ChargebeeIframe = ({
             googlePay.googlePayIframeLoadedRef.current = true;
             googlePayAbortRef.current = new AbortController();
             await googlePay.initialize(googlePayAbortRef.current.signal);
+        } else if (type === 'ideal' && chargebeeIdeal) {
+            chargebeeIdeal.idealIframeLoadedRef.current = true;
+            idealAbortRef.current = new AbortController();
+            await chargebeeIdeal.initialize(idealAbortRef.current.signal);
         }
 
         if (!iframeRef.current) {
@@ -1004,8 +1089,11 @@ export const ChargebeeIframe = ({
             applePayAbortRef.current = null;
             googlePayAbortRef.current?.abort();
             googlePayAbortRef.current = null;
+            idealAbortRef.current?.abort();
+            idealAbortRef.current = null;
             chargebeeCard?.reset();
             chargebeePaypal?.reset();
+            chargebeeIdeal?.reset();
             directDebit?.reset();
             applePay?.reset();
             googlePay?.reset();

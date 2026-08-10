@@ -18,6 +18,7 @@ import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency, Invoice } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
+import { ChargebeeIdealButton } from '@proton/payments/ui/components/ChargebeeIdealButton';
 import { ChargebeePaypalButton } from '@proton/payments/ui/components/ChargebeePaypalButton';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
@@ -134,6 +135,14 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
             return (
                 <ChargebeePaypalButton
                     chargebeePaypal={paymentFacade.chargebeePaypal}
+                    iframeHandles={paymentFacade.iframeHandles}
+                />
+            );
+        }
+        if (paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
+            return (
+                <ChargebeeIdealButton
+                    chargebeeIdeal={paymentFacade.chargebeeIdeal}
                     iframeHandles={paymentFacade.iframeHandles}
                 />
             );

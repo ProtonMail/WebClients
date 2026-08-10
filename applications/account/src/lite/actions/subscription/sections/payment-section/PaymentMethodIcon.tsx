@@ -8,6 +8,7 @@ import applePayIcon from './payment-method-icons/apple-pay.svg';
 import bankTransferIcon from './payment-method-icons/bank-transfer.svg';
 import bitcoinIcon from './payment-method-icons/bitcoin.svg';
 import googlePaySvg from './payment-method-icons/google-pay.svg';
+import idealIcon from './payment-method-icons/ideal.svg';
 import paypalIcon from './payment-method-icons/paypal.svg';
 
 const visaIcon = getBankSvg(getCreditCardTypeByBrand('Visa'));
@@ -29,6 +30,8 @@ const PaymentMethodIcon = ({ type }: Props) => {
         return <img src={bitcoinIcon} alt="Bitcoin" />;
     } else if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
         return <img src={paypalIcon} alt="PayPal" />;
+    } else if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
+        return <img src={idealIcon} alt="iDEAL" />;
     } else if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
         return (
             <span className="flex gap-1">

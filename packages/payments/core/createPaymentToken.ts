@@ -94,6 +94,11 @@ type ChargebeePaypalParams = {
     amountAndCurrency: AmountAndCurrency;
 };
 
+type ChargebeeIdealParams = {
+    type: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
+    amountAndCurrency: AmountAndCurrency;
+};
+
 type Dependencies = {
     api: Api;
     handles: ChargebeeIframeHandles;
@@ -333,6 +338,48 @@ export async function createPaymentTokenV5Paypal(
     };
 }
 
+export async function createPaymentTokenV5Ideal(
+    params: ChargebeeIdealParams,
+    { api }: Dependencies,
+    abortController?: AbortController
+): Promise<
+    {
+        paymentIntent: PaymentIntent;
+    } & ChargebeeFetchedPaymentToken
+> {
+    const { type, amountAndCurrency } = params;
+
+    const data: CreatePaymentIntentData = {
+        ...amountAndCurrency,
+        Payment: {
+            Type: 'ideal',
+        },
+    };
+
+    const {
+        Token: PaymentToken,
+        Status,
+        Data: paymentIntentData,
+    } = await fetchPaymentIntentV5(api, data, abortController?.signal);
+
+    const paymentIntent = convertPaymentIntentData(paymentIntentData);
+    const authorizedStatus: AuthorizedV5PaymentToken = {
+        authorized: true,
+    };
+
+    const chargeable = Status === PAYMENT_TOKEN_STATUS.CHARGEABLE;
+
+    return {
+        ...amountAndCurrency,
+        ...authorizedStatus,
+        type,
+        v: 5,
+        PaymentToken,
+        chargeable,
+        paymentIntent,
+    };
+}
+
 export function savedMethodRequires3DS(type: PAYMENT_METHOD_TYPES): boolean {
     return (
         type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
@@ -349,7 +396,8 @@ export const createPaymentTokenForExistingChargebeePayment = async (
         | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
         | PAYMENT_METHOD_TYPES.APPLE_PAY
-        | PAYMENT_METHOD_TYPES.GOOGLE_PAY,
+        | PAYMENT_METHOD_TYPES.GOOGLE_PAY
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
     api: Api,
     handles: ChargebeeIframeHandles,
     events: ChargebeeIframeEvents,

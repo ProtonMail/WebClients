@@ -7,6 +7,7 @@ import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
 import PayPalInfoMessage from '@proton/components/containers/payments/PayPalInfoMessage';
+import { IdealAuthorizationText } from '@proton/components/payments/chargebee/IdealAuthorizationText';
 import { type DirectDebitProps, SepaDirectDebit } from '@proton/components/payments/chargebee/SepaDirectDebit';
 import type { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
@@ -28,7 +29,7 @@ import type {
     PlainPaymentMethodType,
     SavedPaymentMethod,
 } from '@proton/payments/core/interface';
-import type { useSepaCurrencyOverride } from '@proton/payments/core/payment-methods/useSepaCurrencyOverride';
+import type { useCurrencyOverride } from '@proton/payments/core/payment-methods/useCurrencyOverride';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { TaxFields } from '@proton/payments/ui/billing-address/components/TaxFields';
@@ -50,9 +51,11 @@ import { ApplePayView } from './ApplePayView';
 import Cash from './Cash';
 import DefaultPaymentMethodMessage from './DefaultPaymentMethodMessage';
 import { GooglePayView } from './GooglePayView';
+import { IdealInfoMessage } from './IdealInfoMessage';
 import PayPalView from './PayPalView';
 import Bitcoin from './bitcoin/Bitcoin';
 import BitcoinInfoMessage from './bitcoin/BitcoinInfoMessage';
+import { CurrencyOverrideBannerText } from './currencyOverrideBannerText';
 import PaymentMethodDetails from './methods/PaymentMethodDetails';
 import PaymentMethodSelector from './methods/PaymentMethodSelector';
 import { getPaymentMethodRequired } from './subscription/helpers/getPaymentMethodRequired';
@@ -94,7 +97,7 @@ export interface Props {
     loadingBitcoin?: boolean;
     showTaxCountry: boolean;
     subscription?: Subscription | FreeSubscription;
-    currencyOverride: ReturnType<typeof useSepaCurrencyOverride>;
+    currencyOverride: ReturnType<typeof useCurrencyOverride>;
     creditCardDetailsRef?: Ref<HTMLDivElement>;
     selectedProcessor: PaymentProcessorHook | undefined;
     processingPayment: boolean;
@@ -232,10 +235,7 @@ export const PaymentsNoApi = ({
                     selectedPaymentMethod={method}
                 />
             )}
-            {currencyOverride.isCurrencyOverriden && (
-                <Banner className="mt-2 mb-4" variant={BannerVariants.INFO}>{c('Payments')
-                    .t`Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.`}</Banner>
-            )}
+            {currencyOverride.isCurrencyOverriden && <CurrencyOverrideBannerText selectedMethod={method} />}
         </>
     );
 
@@ -307,6 +307,17 @@ export const PaymentsNoApi = ({
                             <>
                                 <SepaDirectDebit {...sharedCbProps} />
                                 <div className="mt-2">{taxFields}</div>
+                            </>
+                        )}
+                        {method === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL && (
+                            <>
+                                <div className="my-2">
+                                    <IdealAuthorizationText />
+                                </div>
+                                {taxFields}
+                                <div className="p-4 border rounded bg-weak mb-4" data-testid="ideal-view">
+                                    <IdealInfoMessage />
+                                </div>
                             </>
                         )}
                         {(function renderBitcoin() {
