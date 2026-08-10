@@ -1490,6 +1490,9 @@
       ],
       "Unsupported file type": [
         "Filtypen stöds inte"
+      ],
+      "This invite is no longer available": [
+        "Denna inbjudan är inte längre tillgänglig"
       ]
     },
     "Error message": {
@@ -2864,7 +2867,8 @@
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
         "${ PASS_APP_NAME } kommer använda SSH-nycklarna sparade i dina valv."

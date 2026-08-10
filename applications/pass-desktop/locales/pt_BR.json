@@ -821,6 +821,15 @@
       ],
       "Switch vault": [
         "Alternar cofre"
+      ],
+      "Cancel bulk selection": [
+        "Cancelar seleção em massa"
+      ],
+      "Clear item type filter": [
+        "Limpar filtro de tipo de item"
+      ],
+      "Clear sort filter": [
+        "Limpar ordem de filtro"
       ]
     },
     "Activity": {
@@ -1484,6 +1493,9 @@
       ],
       "Unsupported file type": [
         "Tipo de arquivo não suportado"
+      ],
+      "This invite is no longer available": [
+        "Este convite não está mais disponível"
       ]
     },
     "Error message": {
@@ -2198,7 +2210,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outra pasta apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -5293,6 +5306,12 @@
       ],
       "Test a URL against this rule": [
         "Testar uma URL com esta regra"
+      ],
+      "Compromised password": [
+        "Senha comprometida"
+      ],
+      "Compromised passwords": [
+        "Senhas comprometidas"
       ]
     },
     "Title_cloned_item": {
