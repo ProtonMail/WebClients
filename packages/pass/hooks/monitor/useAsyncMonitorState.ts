@@ -23,3 +23,6 @@ const useAsyncMonitorState = (datasource: () => Promise<UniqueItem[]>): AsyncMon
 
 export const useMissing2FAs = () => useAsyncMonitorState(usePassCore().monitor.checkMissing2FAs);
 export const useInsecurePasswords = () => useAsyncMonitorState(usePassCore().monitor.checkWeakPasswords);
+
+// TODO:
+export const useCompromisedPasswords = () => useAsyncMonitorState(async () => []);

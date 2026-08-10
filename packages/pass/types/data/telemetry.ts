@@ -25,6 +25,7 @@ export enum TelemetryEventName {
     PasskeysSuggestionsDisplay = 'passkey.display_suggestions',
     PassFileUploaded = 'pass_file_attachment.file_uploaded',
     PassMonitorAddCustomEmailFromSuggestion = 'pass_monitor.add_custom_email_from_suggestion',
+    PassMonitorDisplayCompromisedPasswords = 'pass_monitor.display_compromised_passwords',
     PassMonitorDisplayDarkWebMonitoring = 'pass_monitor.display_dark_web_monitoring',
     PassMonitorDisplayExcludedItems = 'pass_monitor.display_excluded_items',
     PassMonitorDisplayHome = 'pass_monitor.display_home',
@@ -33,6 +34,7 @@ export enum TelemetryEventName {
     PassMonitorDisplayMonitoringProtonAddresses = 'pass_monitor.display_monitoring_proton_addresses',
     PassMonitorDisplayReusedPasswords = 'pass_monitor.display_reused_passwords',
     PassMonitorDisplayWeakPasswords = 'pass_monitor.display_weak_passwords',
+    PassMonitorItemDetailFromCompromisedPassword = 'pass_monitor.item_detail_from_compromised_password',
     PassMonitorItemDetailFromMissing2FA = 'pass_monitor.item_detail_from_missing_2fa',
     PassMonitorItemDetailFromReusedPassword = 'pass_monitor.item_detail_from_reused_password',
     PassMonitorItemDetailFromWeakPassword = 'pass_monitor.item_detail_from_weak_password',
@@ -123,8 +125,7 @@ type AutosaveDismissedDimensions = {
 } & AutofillPageTelemetryDimensions;
 type ErrorResumingSessionDimensions = { extensionBrowser: string; extensionReloadRequired: string };
 type TargetDimensions =
-    | { type: TelemetryTargetType.item; itemType: TelemetryItemType }
-    | { type: TelemetryTargetType.vault };
+    { type: TelemetryTargetType.item; itemType: TelemetryItemType } | { type: TelemetryTargetType.vault };
 type InviteDimensions = TargetDimensions & { extensionBrowser?: string };
 type SecureLinkDimensions = TargetDimensions & { extensionBrowser?: string };
 
@@ -149,6 +150,7 @@ type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.PasskeysSuggestionsDisplay>
     | BaseTelemetryEvent<TelemetryEventName.PassFileUploaded, {}, FileDimensions>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorAddCustomEmailFromSuggestion>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayCompromisedPasswords>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayDarkWebMonitoring>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayExcludedItems>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayHome>
@@ -157,6 +159,7 @@ type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayMonitoringProtonAddresses>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayReusedPasswords>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayWeakPasswords>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromCompromisedPassword>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromMissing2FA>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromReusedPassword>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromWeakPassword>
