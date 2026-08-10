@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { belongsToShares, isActiveMonitored, isExcluded } from '@proton/pass/lib/items/item.predicates';
-import { intoSelectedItem } from '@proton/pass/lib/items/item.utils';
+import { getItemKey, intoSelectedItem } from '@proton/pass/lib/items/item.utils';
 import { getDuplicatePasswords } from '@proton/pass/lib/monitor/monitor.utils';
 import type { MonitorDomain } from '@proton/pass/lib/monitor/types';
 import { AddressType } from '@proton/pass/lib/monitor/types';
@@ -24,6 +24,13 @@ export const selectMonitoredLogins = (shareIds?: ShareId[]) =>
     createSelector(selectVisibleLoginItems, (items) => items.filter(and(isActiveMonitored, belongsToShares(shareIds))));
 
 export const selectDuplicatePasswords = (shareIds?: ShareId[]) => createSelector(selectMonitoredLogins(shareIds), getDuplicatePasswords);
+
+export const selectCompromisedPasswordsCache = (state: State) => state.compromisedPasswords;
+
+export const selectCompromisedPasswords = (shareIds?: ShareId[]) =>
+    createSelector([selectMonitoredLogins(shareIds), selectCompromisedPasswordsCache], (items, cache) =>
+        items.filter((item) => cache[getItemKey(item)]).map(intoSelectedItem)
+    );
 
 export const selectExcludedItems = (shareIds?: ShareId[]) =>
     createSelector(selectVisibleLoginItems, (items) => items.filter(and(isExcluded, belongsToShares(shareIds))).map(intoSelectedItem));
