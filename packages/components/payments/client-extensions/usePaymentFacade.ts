@@ -40,6 +40,7 @@ import { type TelemetryPaymentFlow, usePaymentsTelemetry } from './usePaymentsTe
 import {
     useApplePayDependencies,
     useChargebeeCardVerifyPayment,
+    useChargebeeIdealHandles,
     useChargebeePaypalHandles,
     useGooglePayDependencies,
 } from './validators/validators';
@@ -147,6 +148,7 @@ export const usePaymentFacade = ({
     const enableSepaB2C = useFlag('SepaPaymentsB2C');
     const enablePaypalRegionalCurrenciesBatch3 = useFlag('PaypalRegionalCurrenciesBatch3');
     const enablePaypalKrw = useFlag('PaypalKrw');
+    const enableIdeal = useFlag('EnableIdeal');
 
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
@@ -215,6 +217,13 @@ export const usePaymentFacade = ({
         onVerificationSuccess: () => reportPaymentEvent('verification_success', PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL),
     });
 
+    const chargebeeIdealModalHandles = useChargebeeIdealHandles({
+        onPaymentFailure: () => reportPaymentEvent('payment_declined', PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL),
+        onVerificationCancelled: () =>
+            reportPaymentEvent('verification_rejected_by_user', PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL),
+        onVerificationSuccess: () => reportPaymentEvent('verification_success', PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL),
+    });
+
     const { canUseApplePay, applePayModalHandles } = useApplePayDependencies(chargebeeHandles, {
         onPaymentFailure: () => reportPaymentEvent('payment_declined', PAYMENT_METHOD_TYPES.APPLE_PAY),
         onVerificationCancelled: () =>
@@ -266,6 +275,7 @@ export const usePaymentFacade = ({
             canUseGooglePay,
             enablePaypalRegionalCurrenciesBatch3,
             enablePaypalKrw,
+            enableIdeal,
             telemetryContext,
             onDeclined: ({ selectedMethodType, selectedMethodValue }) =>
                 reportPaymentEvent('payment_declined', selectedMethodType, selectedMethodValue),
@@ -280,6 +290,7 @@ export const usePaymentFacade = ({
             chargebeeHandles,
             chargebeeEvents,
             chargebeePaypalModalHandles,
+            chargebeeIdealModalHandles,
             applePayModalHandles,
             googlePayModalHandles,
         }
@@ -304,6 +315,33 @@ export const usePaymentFacade = ({
             hook.chargebeePaypal.reset();
             try {
                 await hook.chargebeePaypal.initialize(paypalAbortRef.current.signal);
+            } catch {
+                abort();
+            }
+        }
+
+        void run();
+
+        return abort;
+    }, [hook.methods.selectedMethod?.type, amount, currency]);
+
+    const idealAbortRef = useRef<AbortController | null>(null);
+    useEffect(() => {
+        const abort = () => {
+            idealAbortRef.current?.abort();
+            idealAbortRef.current = null;
+        };
+
+        async function run() {
+            if (hook.methods.selectedMethod?.type !== PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
+                return;
+            }
+
+            idealAbortRef.current = new AbortController();
+
+            hook.chargebeeIdeal.reset();
+            try {
+                await hook.chargebeeIdeal.initialize(idealAbortRef.current.signal);
             } catch {
                 abort();
             }

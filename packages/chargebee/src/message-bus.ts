@@ -20,6 +20,10 @@ import type {
     GooglePayCancelledMessage,
     GooglePayClickedMessage,
     GooglePayFailedMessage,
+    IdealAuthorizedPayload,
+    IdealCancelledMessage,
+    IdealClickedMessage,
+    IdealFailedMessage,
     MessageBusResponse,
     PaypalAuthorizedPayload,
     PaypalCancelledMessage,
@@ -27,6 +31,7 @@ import type {
     PaypalFailedMessage,
     SavedCardVerificationFailureMessage,
     SavedCardVerificationSuccessMessage,
+    SetIdealPaymentIntentPayload,
     ThreeDsChallengeMessage,
     ThreeDsChallengePayload,
     ThreeDsFailedMessage,
@@ -43,6 +48,10 @@ import {
     googlePayCancelledMessageType,
     googlePayClickedMessageType,
     googlePayFailedMessageType,
+    idealAuthorizedMessageType,
+    idealCancelledMessageType,
+    idealClickedMessageType,
+    idealFailedMessageType,
     paypalAuthorizedMessageType,
     paypalCancelledMessageType,
     paypalClickedMessageType,
@@ -262,6 +271,22 @@ export type OnSetGooglePayPaymentIntentHandler = (
     sendResponseToParent: SendResponseToParent<void>
 ) => void;
 
+export type SetIdealPaymentIntentEvent = {
+    type: 'set-ideal-payment-intent';
+    correlationId: string;
+} & SetIdealPaymentIntentPayload;
+
+export type OnSetIdealPaymentIntentHandler = (
+    event: SetIdealPaymentIntentEvent,
+    sendResponseToParent: SendResponseToParent<void>
+) => void;
+
+export const setIdealPaymentIntentMessageType = 'set-ideal-payment-intent';
+
+export function isSetIdealPaymentIntentEvent(event: any): event is SetIdealPaymentIntentEvent {
+    return event?.type === setIdealPaymentIntentMessageType;
+}
+
 export interface ParentMessagesProps {
     onSetConfiguration?: (event: SetConfigurationEvent, sendResponseToParent: SendResponseToParent<{}>) => void;
     onSubmit?: OnSubmitHandler;
@@ -276,6 +301,7 @@ export interface ParentMessagesProps {
     onSetApplePayPaymentIntent?: OnSetApplePayPaymentIntentHandler;
     onGetCanMakePaymentsWithActiveCard?: OnGetCanMakePaymentsWithActiveCardHandler;
     onSetGooglePayPaymentIntent?: OnSetGooglePayPaymentIntentHandler;
+    onSetIdealPaymentIntent?: OnSetIdealPaymentIntentHandler;
 }
 
 // the event handler function must be async to make sure that we catch all errors, sync and async
@@ -394,6 +420,14 @@ const getEventListener = (messageBus: MessageBus) => async (e: MessageEvent) => 
                     ...result,
                 });
             });
+        } else if (isSetIdealPaymentIntentEvent(event)) {
+            await messageBus.onSetIdealPaymentIntent(event, (result) => {
+                messageBus.sendMessage({
+                    type: `${setIdealPaymentIntentMessageType}-response`,
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
         } else if (isGetCanMakePaymentsWithActiveCardEvent(event)) {
             await messageBus.onGetCanMakePaymentsWithActiveCard(event, (result) => {
                 messageBus.sendMessage({
@@ -439,6 +473,7 @@ export class MessageBus {
     public onGetCanMakePaymentsWithActiveCard;
 
     public onSetGooglePayPaymentIntent;
+    public onSetIdealPaymentIntent;
 
     private eventListener: ((e: MessageEvent) => void) | null = null;
 
@@ -456,6 +491,7 @@ export class MessageBus {
         onSetApplePayPaymentIntent,
         onGetCanMakePaymentsWithActiveCard,
         onSetGooglePayPaymentIntent,
+        onSetIdealPaymentIntent,
     }: ParentMessagesProps) {
         this.onSetConfiguration = onSetConfiguration ?? noop;
         this.onSubmit = onSubmit ?? noop;
@@ -470,6 +506,7 @@ export class MessageBus {
         this.onSetApplePayPaymentIntent = onSetApplePayPaymentIntent ?? noop;
         this.onGetCanMakePaymentsWithActiveCard = onGetCanMakePaymentsWithActiveCard ?? noop;
         this.onSetGooglePayPaymentIntent = onSetGooglePayPaymentIntent ?? noop;
+        this.onSetIdealPaymentIntent = onSetIdealPaymentIntent ?? noop;
     }
 
     initialize() {
@@ -693,6 +730,48 @@ export class MessageBus {
     sendGooglePayCancelledMessage() {
         const message: GooglePayCancelledMessage = {
             type: googlePayCancelledMessageType,
+            status: 'success',
+            data: {},
+        };
+
+        this.sendMessage(message);
+    }
+
+    sendIdealAuthorizedMessage(data: IdealAuthorizedPayload) {
+        const message: MessageBusResponse<IdealAuthorizedPayload> = {
+            status: 'success',
+            data,
+        };
+
+        this.sendMessage({
+            type: idealAuthorizedMessageType,
+            ...message,
+        });
+    }
+
+    sendIdealFailedMessage(error: any) {
+        const message: IdealFailedMessage = {
+            type: idealFailedMessageType,
+            status: 'failure',
+            error,
+        };
+
+        this.sendMessage(message);
+    }
+
+    sendIdealClickedMessage() {
+        const message: IdealClickedMessage = {
+            type: idealClickedMessageType,
+            status: 'success',
+            data: {},
+        };
+
+        this.sendMessage(message);
+    }
+
+    sendIdealCancelledMessage() {
+        const message: IdealCancelledMessage = {
+            type: idealCancelledMessageType,
             status: 'success',
             data: {},
         };

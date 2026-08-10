@@ -3,7 +3,6 @@ import type { PropsWithChildren } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Badge } from '@proton/components/components/badge/Badge';
 import Price from '@proton/components/components/price/Price';
 import Alert3DS from '@proton/components/containers/payments/Alert3ds';
@@ -12,6 +11,7 @@ import PayPalInfoMessage from '@proton/components/containers/payments/PayPalInfo
 import PayPalView from '@proton/components/containers/payments/PayPalView';
 import Bitcoin from '@proton/components/containers/payments/bitcoin/Bitcoin';
 import BitcoinInfoMessage from '@proton/components/containers/payments/bitcoin/BitcoinInfoMessage';
+import { CurrencyOverrideBannerText } from '@proton/components/containers/payments/currencyOverrideBannerText';
 import PaymentMethodDetails from '@proton/components/containers/payments/methods/PaymentMethodDetails';
 import { NoPaymentRequiredNote } from '@proton/components/containers/payments/subscription/modal-components/NoPaymentRequiredNote';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
@@ -236,6 +236,17 @@ const PaymentMethodForm = ({
                         {children}
                     </>
                 )}
+                {selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL && (
+                    <>
+                        <div className="mt-2">{taxFields}</div>
+                        <TotalAmountWithDiscount
+                            amountDue={checkResult.AmountDue}
+                            currency={currency}
+                            discount={discountAmount}
+                        />
+                        {children}
+                    </>
+                )}
                 {savedMethod && (
                     <>
                         <PaymentMethodDetails type={savedMethod.Type} details={savedMethod.Details} />
@@ -265,8 +276,7 @@ const PaymentMethodForm = ({
                         />
                     )}
                     {currencyOverride.isCurrencyOverriden && (
-                        <Banner className="mt-2 mb-4" variant={BannerVariants.INFO}>{c('Payments')
-                            .t`Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.`}</Banner>
+                        <CurrencyOverrideBannerText selectedMethod={selectedMethodValue} />
                     )}
                 </>
             </div>

@@ -8,6 +8,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import useConfig from '@proton/components/hooks/useConfig';
 import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentVerificatorV5, PaymentVerificatorV5Params } from '@proton/payments/core/createPaymentToken';
 import { ensureTokenChargeableV5 } from '@proton/payments/core/ensureTokenChargeable';
 import type { ChargebeeIframeHandles, FreeSubscription, V5PaymentToken } from '@proton/payments/core/interface';
@@ -154,7 +155,8 @@ const PendingValidationModal = ({
     type,
     ...props
 }: Omit<ModalOwnProps, 'children'> & {
-    type: 'chargebee-paypal' | 'google-pay';
+    type:
+        PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL | PAYMENT_METHOD_TYPES.GOOGLE_PAY | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
 }) => {
     const [hasClose, setHasClose] = useState(false);
     useEffect(() => {
@@ -165,7 +167,7 @@ const PendingValidationModal = ({
     }, []);
 
     const redirectionWarningText =
-        type === 'chargebee-paypal'
+        type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
             ? c('Payments').t`You will soon be redirected to PayPal to verify your payment.`
             : c('Payments').t`You will soon be redirected to verify your payment.`;
 
@@ -222,7 +224,7 @@ export function useChargebeePaypalHandles({
 
         const id = createModal(
             <PendingValidationModal
-                type="chargebee-paypal"
+                type={PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL}
                 onClose={() => {
                     onVerificationCancelled();
                     hideModal();
@@ -244,6 +246,72 @@ export function useChargebeePaypalHandles({
 
     const onClick = () => {
         showModal();
+    };
+
+    return {
+        onCancel,
+        onFailure,
+        onAuthorize,
+        onClick,
+    };
+}
+
+export function useChargebeeIdealHandles({
+    onPaymentFailure,
+    onVerificationCancelled,
+    onVerificationSuccess,
+}: {
+    onPaymentFailure: () => void;
+    onVerificationCancelled: () => void;
+    onVerificationSuccess: () => void;
+}) {
+    const { createModal, removeModal } = useModals();
+    const { createNotification } = useNotifications();
+    const modalIdRef = useRef<string | null>(null);
+
+    const hideModal = (error?: any) => {
+        if (!modalIdRef.current) {
+            return;
+        }
+
+        removeModal(modalIdRef.current);
+        modalIdRef.current = null;
+
+        if (error) {
+            createNotification({ text: getChargebeeErrorMessage(error), type: 'error' });
+        }
+    };
+
+    const onCancel = () => {
+        onVerificationCancelled();
+        hideModal();
+    };
+
+    const onClick = () => {
+        if (modalIdRef.current) {
+            hideModal();
+        }
+
+        const id = createModal(
+            <PendingValidationModal
+                type={PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL}
+                onClose={() => {
+                    onVerificationCancelled();
+                    hideModal();
+                }}
+            />
+        );
+        modalIdRef.current = id;
+    };
+
+    const onFailure = (error: any) => {
+        onPaymentFailure();
+        hideModal(error);
+    };
+
+    const onAuthorize = () => {
+        onVerificationSuccess();
+        hideModal();
     };
 
     return {
@@ -350,7 +418,7 @@ export const useGooglePayDependencies = (
 
         const id = createModal(
             <PendingValidationModal
-                type="google-pay"
+                type={PAYMENT_METHOD_TYPES.GOOGLE_PAY}
                 onClose={() => {
                     hideModal();
                     onVerificationCancelled();

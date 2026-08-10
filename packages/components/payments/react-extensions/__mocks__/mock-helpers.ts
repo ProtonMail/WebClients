@@ -58,5 +58,7 @@ export function getMockedIframeHandles(): ChargebeeIframeHandles {
         getCanMakePaymentsWithActiveCard: jest.fn(),
         initializeGooglePay: jest.fn(),
         setGooglePayPaymentIntent: jest.fn(),
+        initializeIdeal: jest.fn(),
+        setIdealPaymentIntent: jest.fn(),
     };
 }

@@ -19,6 +19,7 @@ import type {
     PaymentsApi,
     TokenPayment,
 } from '@proton/payments/core/interface';
+import { isCurrencyRestrictedMethod } from '@proton/payments/core/payment-methods/useCurrencyOverride';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import type { Plan } from '@proton/payments/core/plan/interface';
@@ -235,10 +236,8 @@ const AccountStepPayment = ({
     });
 
     useEffect(
-        function disableCurrencySelectorWhenSepaSelected() {
-            setCurrencySelectorDisabled(
-                paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-            );
+        function disableCurrencySelectorForCurrencyRestrictedMethod() {
+            setCurrencySelectorDisabled(isCurrencyRestrictedMethod(paymentFacade.selectedMethodType));
         },
         [paymentFacade.selectedMethodType]
     );
