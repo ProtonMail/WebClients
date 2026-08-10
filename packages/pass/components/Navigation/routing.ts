@@ -1,6 +1,6 @@
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { type Location, createBrowserHistory } from 'history';
 
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { authStore } from '@proton/pass/lib/auth/store';
 import type { ItemFilters, ItemType, MaybeNull, Unpack } from '@proton/pass/types';
 import { partialMerge } from '@proton/pass/utils/object/merge';
@@ -26,6 +26,7 @@ export const ItemScopes = [
     'trash',
     'secure-links',
     'monitor/weak',
+    'monitor/compromised',
     'monitor/duplicates',
     'monitor/2fa',
     'monitor/excluded',
@@ -82,7 +83,12 @@ export const getOnboardingRoute = () => getLocalPath('onboarding');
 export const getSecureLinksRoute = () => getLocalPath('secure-links');
 export const getMonitorRoute = () => getLocalPath('monitor');
 
-export const getInitialFilters = (): ItemFilters => ({ search: '', sort: 'relevant', type: '*', selectedShareId: null });
+export const getInitialFilters = (): ItemFilters => ({
+    search: '',
+    sort: 'relevant',
+    type: '*',
+    selectedShareId: null,
+});
 
 export const decodeFilters = (encodedFilters: MaybeNull<string>): ItemFilters =>
     partialMerge(
@@ -102,7 +108,8 @@ export const decodeFiltersFromSearch = (search: string) => {
     return decodeFilters(params.get('filters'));
 };
 
-export const encodeFilters = (filters: ItemFilters): string => utf8StringToUint8Array(JSON.stringify(filters)).toBase64();
+export const encodeFilters = (filters: ItemFilters): string =>
+    utf8StringToUint8Array(JSON.stringify(filters)).toBase64();
 
 export const getPassWebUrl = (apiUrl: string, subPath: string = '') => {
     const appUrl = getAppUrlFromApiUrl(apiUrl, APPS.PROTONPASS);

@@ -5,7 +5,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useInsecurePasswords, useMissing2FAs } from '@proton/pass/hooks/monitor/useAsyncMonitorState';
+import {
+    useCompromisedPasswords,
+    useInsecurePasswords,
+    useMissing2FAs,
+} from '@proton/pass/hooks/monitor/useAsyncMonitorState';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { intoAliasMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
@@ -44,6 +48,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const excluded = useMemoSelector(selectExcludedItems, []);
     const missing2FAs = useMissing2FAs();
     const insecure = useInsecurePasswords();
+    const compromised = useCompromisedPasswords();
 
     const [action, setAction] = useState<MaybeNull<MonitorAction>>(null);
     const onClose = () => setAction(null);
@@ -87,12 +92,13 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
             didLoad,
             breaches,
             insecure,
+            compromised,
             missing2FAs,
             duplicates: { data: duplicates, count: duplicates.length },
             excluded: { data: excluded, count: excluded.length },
             ...handles,
         }),
-        [breaches, insecure, duplicates, missing2FAs, excluded, didLoad]
+        [breaches, insecure, compromised, duplicates, missing2FAs, excluded, didLoad]
     );
 
     useEffect(() => {
