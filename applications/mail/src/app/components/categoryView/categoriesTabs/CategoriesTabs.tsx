@@ -20,7 +20,7 @@ import { CategoriesTabsError, CategoryTabError } from './CategoryTabsErrors';
 import { Tab } from './Tab';
 import { getTabState } from './categoriesTabsHelper';
 import { useCategoriesDrag } from './useCategoriesDrag';
-import { useCategoriesTabsCompact } from './useCategoriesTabsCompact';
+import { useCategoriesTabsDensity } from './useCategoriesTabsDensity';
 
 import './CategoriesTabs.scss';
 
@@ -37,7 +37,7 @@ export const CategoriesTabsList = () => {
     const dispatch = useDispatch();
 
     const barRef = useRef<HTMLDivElement>(null);
-    const compact = useCategoriesTabsCompact(barRef, activeCategoriesTabs);
+    const density = useCategoriesTabsDensity(barRef, activeCategoriesTabs);
 
     const activeCategoryUnreadCount = useMailSelector((state) =>
         activeCategoryID ? selectCategoryUnreadCount(state, activeCategoryID).count : 0
@@ -78,7 +78,8 @@ export const CategoriesTabsList = () => {
                 ref={barRef}
                 className={clsx(
                     'categories-tabs flex flex-nowrap px-2 h-fit-content border-bottom border-weak',
-                    compact && 'tabs-compact'
+                    density === 'roomy' && 'tabs-roomy',
+                    density === 'compact' && 'tabs-compact'
                 )}
                 data-testid="categories-tabs"
                 onDragEnter={handleDragEnter}
