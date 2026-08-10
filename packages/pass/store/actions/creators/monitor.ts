@@ -18,7 +18,7 @@ import { withNotification } from '@proton/pass/store/actions/enhancers/notificat
 import { selectedItemKey } from '@proton/pass/store/actions/requests';
 import { dataRequest } from '@proton/pass/store/request/configs';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { ItemRevision, SelectedItem } from '@proton/pass/types';
+import type { ItemRevision, SelectedItem, UniqueItem } from '@proton/pass/types';
 import type { BreachCustomEmailGetResponse, BreachesGetResponse, UpdateUserMonitorStateRequest } from '@proton/pass/types/api/pass';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -220,6 +220,11 @@ export const setItemFlags = requestActionsFactory<SelectedItem & { SkipHealthChe
             })({ payload: {} }),
     },
 });
+
+/** `compromisedPasswordsSync` replaces the whole known set
+ * `compromisedPasswordUpdate` adds/removes a single item's entry **/
+export const compromisedPasswordsSync = createAction<UniqueItem[]>('monitor::compromised-passwords::sync');
+export const compromisedPasswordUpdate = createAction<{ item: UniqueItem; compromised: boolean }>('monitor::compromised-password::update');
 
 export const resendVerificationCode = requestActionsFactory<CustomAddressID, boolean>('monitor::breaches::custom::resend::verification')({
     key: identity,

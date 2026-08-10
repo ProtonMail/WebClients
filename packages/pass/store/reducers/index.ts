@@ -10,6 +10,7 @@ import { zeroize } from '@proton/pass/utils/object/zero';
 import { access } from './access';
 import accessTokens from './access-tokens';
 import alias from './alias';
+import compromisedPasswords from './compromised-passwords';
 import files from './files';
 import filters from './filters';
 import groups from './groups';
@@ -28,6 +29,7 @@ import user from './user';
 export * from './access';
 export * from './access-tokens';
 export * from './alias';
+export * from './compromised-passwords';
 export * from './files';
 export * from './filters';
 export * from './import';
@@ -42,6 +44,7 @@ export const reducerMap = {
     access,
     accessTokens,
     alias,
+    compromisedPasswords,
     files,
     filters,
     groups,
