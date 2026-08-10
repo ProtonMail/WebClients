@@ -11,12 +11,7 @@ interface LoggerDB extends DBSchema {
     };
 }
 
-/**
- * v1 stored one ciphertext per log argument. v2 stores a single ciphertext per line,
- * so the old rows cannot be read back. Logs are 7-day diagnostic data, so the upgrade
- * drops them rather than migrating.
- */
-const DB_VERSION = 2;
+const DB_VERSION = 1;
 
 /**
  * IndexedDB-backed log storage.
@@ -31,17 +26,24 @@ export class IndexedDBStorage {
     private readonly dbName: string;
 
     constructor(loggerName: string, loggerID: string) {
-        this.dbName = `${LOGGER_DB_PREFIX}${loggerName}${loggerID}`;
+        // Separated, so that ('mail', 'abc') and ('mailabc', '') cannot name the same database.
+        this.dbName = `${LOGGER_DB_PREFIX}${loggerName}-${loggerID}`;
     }
 
     private getDB(): Promise<IDBPDatabase<LoggerDB>> {
         if (!this.dbPromise) {
             this.dbPromise = openDB<LoggerDB>(this.dbName, DB_VERSION, {
                 upgrade(db) {
-                    if (db.objectStoreNames.contains('logs')) {
-                        db.deleteObjectStore('logs');
-                    }
                     db.createObjectStore('logs', { keyPath: 'id' }).createIndex('by-timestamp', 'timestamp');
+                },
+                // Another tab is upgrading or deleting this database and this connection is what
+                // holds it up. Close so it can proceed; the next call reopens behind it.
+                blocking: () => {
+                    this.close().catch(() => {});
+                },
+                // The browser dropped the connection (storage cleared, quota reclaimed).
+                terminated: () => {
+                    this.dbPromise = null;
                 },
             });
         }
@@ -106,12 +108,16 @@ export class IndexedDBStorage {
     }
 
     async close(): Promise<void> {
-        if (!this.dbPromise) {
+        const opening = this.dbPromise;
+        if (!opening) {
             return;
         }
-        const db = await this.dbPromise;
-        db.close();
+
         this.dbPromise = null;
+        // An open that failed has no connection to close, and must not fail the caller: closing
+        // is also how `deleteDatabase` and the logger's `destroy` start.
+        const db = await opening.catch(() => null);
+        db?.close();
     }
 
     /** Closes the connection and removes the database entirely. */
