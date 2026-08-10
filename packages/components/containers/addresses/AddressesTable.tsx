@@ -5,7 +5,6 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
-import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import type {
     Address,
     CachedOrganizationKey,
@@ -24,6 +23,7 @@ interface AddressesTableProps {
     user: UserModel;
     members: Member[];
     memberAddressesMap?: { [key: string]: (Address | PartialMemberAddress)[] | undefined };
+    isPrimaryAdmin?: boolean;
     organizationKey?: CachedOrganizationKey;
     allowAddressDeletion: boolean;
 }
@@ -34,11 +34,10 @@ const AddressesTable = ({
     user,
     members,
     memberAddressesMap,
+    isPrimaryAdmin,
     organizationKey,
     allowAddressDeletion,
 }: AddressesTableProps) => {
-    const [entitlements] = useEntitlementChecks();
-
     return (
         <Table responsive="cards" hasActions>
             <TableHeader
@@ -94,7 +93,7 @@ const AddressesTable = ({
                                             address,
                                             addresses: memberAddresses,
                                             user,
-                                            isMultiUserPersonalPlan: entitlements.orgIsMultiUserPersonal,
+                                            isPrimaryAdmin,
                                             organizationKey,
                                         })}
                                         allowAddressDeletion={allowAddressDeletion}

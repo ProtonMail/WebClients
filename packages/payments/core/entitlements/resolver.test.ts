@@ -93,7 +93,7 @@ describe('createEntitlementResolver', () => {
         expect(consumer.orgIsBusiness).toBe(false);
     });
 
-    describe('orgIsMultiUserPersonal', () => {
+    describe('orgIsMultiUser', () => {
         const switchEntitlement = (name: EntitlementName) => {
             return {
                 Name: name,
@@ -103,15 +103,15 @@ describe('createEntitlementResolver', () => {
             };
         };
 
-        it('should be true for a multi-user plan that is not a business', () => {
+        it('should be true for a multi-user personal plan', () => {
             const resolver = createEntitlementResolver(
                 makeEntitlements([switchEntitlement(EntitlementName.MultiUser)])
             );
 
-            expect(resolver.orgIsMultiUserPersonal).toBe(true);
+            expect(resolver.orgIsMultiUser).toBe(true);
         });
 
-        it('should be false for a multi-user business plan', () => {
+        it('should be true for a multi-user business plan', () => {
             const resolver = createEntitlementResolver(
                 makeEntitlements([
                     switchEntitlement(EntitlementName.MultiUser),
@@ -119,19 +119,19 @@ describe('createEntitlementResolver', () => {
                 ])
             );
 
-            expect(resolver.orgIsMultiUserPersonal).toBe(false);
+            expect(resolver.orgIsMultiUser).toBe(true);
         });
 
-        it('should be false for a single-user personal plan', () => {
+        it('should be false for a single-user plan', () => {
             const resolver = createEntitlementResolver(makeEntitlements([]));
 
-            expect(resolver.orgIsMultiUserPersonal).toBe(false);
+            expect(resolver.orgIsMultiUser).toBe(false);
         });
 
         it('should be false when there are no entitlements at all', () => {
             const resolver = createEntitlementResolver(undefined);
 
-            expect(resolver.orgIsMultiUserPersonal).toBe(false);
+            expect(resolver.orgIsMultiUser).toBe(false);
         });
     });
 });
