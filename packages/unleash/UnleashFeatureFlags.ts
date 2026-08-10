@@ -118,6 +118,7 @@ enum AccountFlag {
     UserGroupsScimGroups = 'UserGroupsScimGroups',
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
     WorldCupRetention = 'WorldCupRetention',
+    DisableSsoBackupPassword = 'DisableSsoBackupPassword',
     ShowFido2CredentialsPinOptInToggle = 'ShowFido2CredentialsPinOptInToggle',
 }
 

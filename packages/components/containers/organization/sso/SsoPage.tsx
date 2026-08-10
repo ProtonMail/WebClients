@@ -38,6 +38,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import SubSettingsSection from '../../layout/SubSettingsSection';
+import AdvancedSsoSettingsSection from './AdvancedSsoSettingsSection';
 import ConfigureSamlEdugainModal from './ConfigureSamlEdugainModal';
 import ConfigureSamlModal from './ConfigureSamlModal';
 import DomainVerificationState from './DomainVerificationState';
@@ -296,6 +297,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const [permissions] = useOrgPermissions();
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
+    const isDisableSsoBackupPasswordEnabled = useFlag('DisableSsoBackupPassword');
 
     const [setupSSODomainModalProps, setSetupSSODomainModalOpen, renderSetupSSODomainModal] = useModalState();
     const [verifySSODOmainModalProps, setVerifySSODomainModalOpen, renderVerifySSODomainModal] = useModalState();
@@ -464,6 +466,10 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                     }}
                     ssoAppInfo={ssoAppInfo}
                 />
+            )}
+
+            {isDisableSsoBackupPasswordEnabled && hasSsoConfig && permissions?.['account.sso_config.read'] && (
+                <AdvancedSsoSettingsSection />
             )}
 
             {hasSsoDomain && hasSsoConfig && permissions?.['account.sso_config.delete'] && (
