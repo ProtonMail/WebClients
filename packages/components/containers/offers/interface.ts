@@ -1,4 +1,4 @@
-import type { JSXElementConstructor, ReactNode } from 'react';
+import type { ComponentType, JSXElementConstructor, ReactNode } from 'react';
 
 import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import type { FeatureCode } from '@proton/features';
@@ -7,7 +7,9 @@ import type { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
-export type OfferId = 'go-unlimited-2022' | 'mail-trial-2023' | 'pass-family-plan-2024-yearly';
+import type { Q3Sale2026OfferId } from './operations/q3Sale2026offers';
+
+export type OfferId = 'go-unlimited-2022' | 'mail-trial-2023' | 'pass-family-plan-2024-yearly' | Q3Sale2026OfferId;
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
@@ -63,6 +65,7 @@ export interface OfferConfig {
         iconGradient?: boolean;
         iconSize?: IconSize;
         icon?: IconName;
+        iconContent?: ComponentType;
         getCTAContent?: () => string;
         variant?: string;
     };
