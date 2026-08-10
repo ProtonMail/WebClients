@@ -16,7 +16,11 @@ import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { ForkType } from '@proton/shared/lib/authentication/fork';
 import type { ExtraSessionForkData } from '@proton/shared/lib/authentication/interface';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
-import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
+import {
+    addIPCHostUpdateListener,
+    canListenInboxDesktopHostMessages,
+    hasInboxDesktopFeature,
+} from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -74,6 +78,20 @@ const UserDropdown = ({
         renderSessionRecoverySignOutConfirmPrompt,
     ] = useModalState();
     const [helpModal, setHelpModal, renderHelpModal] = useModalState();
+
+    useEffect(() => {
+        if (!canListenInboxDesktopHostMessages) {
+            return;
+        }
+
+        const listener = addIPCHostUpdateListener('openHelpAndFeedback', () => {
+            setHelpModal(true);
+        });
+
+        return () => {
+            listener.removeListener();
+        };
+    }, [setHelpModal]);
 
     const handleSignOut = (clearDeviceRecovery: boolean) => {
         accountSessions.actions.signOut({ clearDeviceRecovery, logoutRedirectUrl });

@@ -119,6 +119,14 @@ import { quitTracker } from "./utils/log/quitTracker";
 
     app.setAppUserModelId(pkg.config.appUserModelId);
 
+    // Adds build tag info to the about panel.
+    if (isMac) {
+        app.setAboutPanelOptions({
+            applicationVersion: app.getVersion(),
+            version: process.env.BUILD_TAG?.replace("ida-", "") ?? "dev",
+        });
+    }
+
     quitTracker.setBeforeQuitHandler(() => {
         const mainWindow = getMainWindow();
 
