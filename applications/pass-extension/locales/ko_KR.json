@@ -1483,6 +1483,9 @@
       ],
       "Unsupported file type": [
         "지원되지 않는 파일 형식"
+      ],
+      "This invite is no longer available": [
+        "이 초대는 더 이상 유효하지 않습니다"
       ]
     },
     "Error message": {
@@ -2211,7 +2214,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
