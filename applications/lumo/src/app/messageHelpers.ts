@@ -1,5 +1,6 @@
-import type { ContentBlock, Message, TextBlock, ToolCallBlock, ToolResultBlock } from './types';
-import { isTextBlock, isToolCallBlock, isToolResultBlock } from './types';
+import { getArtifactActionDisplayContent } from './components/Conversation/artifact/artifactActionPrompts';
+import type { ArtifactActionMeta, ContentBlock, Message, TextBlock, ToolCallBlock, ToolResultBlock } from './types';
+import { isArtifactActionMeta, isTextBlock, isToolCallBlock, isToolResultBlock } from './types';
 
 /**
  * Try to parse JSON, returning the parsed value or undefined on failure.
@@ -27,6 +28,21 @@ export function getMessageContent(message: Message): string {
     }
     // V1
     return message.content || '';
+}
+
+/**
+ * Human-readable content for UI previews (chat list, etc.).
+ * Artifact selection actions store the LLM prompt in `content` but render from `artifactAction`.
+ */
+export function getMessageDisplayContent(message: Message): string {
+    if (message.artifactAction) {
+        return getArtifactActionDisplayContent(message.artifactAction);
+    }
+    return getMessageContent(message);
+}
+
+export function hasArtifactAction(message: Message): message is Message & { artifactAction: ArtifactActionMeta } {
+    return isArtifactActionMeta(message.artifactAction);
 }
 
 /**
@@ -208,7 +224,8 @@ export function messageContentEqual(a: Message, b: Message): boolean {
         a.toolCall === b.toolCall && // String comparison (cheap)
         a.toolResult === b.toolResult && // String comparison (cheap)
         a.blocks === b.blocks && // Reference equality (cheap, blocks array replaced on update)
-        a.reasoning === b.reasoning // String comparison for reasoning content
+        a.reasoning === b.reasoning && // String comparison for reasoning content
+        a.artifactAction === b.artifactAction
     );
 }
 
