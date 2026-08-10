@@ -14,7 +14,6 @@ import StepDot from '@proton/components/components/stepDot/StepDot';
 import StepDots from '@proton/components/components/stepDots/StepDots';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 import scimGroupsHeroImg from '@proton/styles/assets/img/onboarding/scim-groups-onboarding-hero.svg';
 import scimGroupsApprovalImg from '@proton/styles/assets/img/onboarding/scim-groups-onboarding-tile-approval.svg';
 import scimGroupsInviteImg from '@proton/styles/assets/img/onboarding/scim-groups-onboarding-tile-invite.svg';
@@ -88,14 +87,14 @@ const ScimGroupsOnboardingModal = ({ onClose, ...rest }: ModalProps) => {
                             <p className="m-0">
                                 {getBoldFormattedText(
                                     c('scim')
-                                        .t`You can now sync groups from your identity provider alongside users. Changes push **automatically** when you update your groups.`
+                                        .t`You can now sync groups alongside users. Changes push **automatically** when you update your groups on your identity provider.`
                                 )}
                             </p>
                             {isKeyless && (
                                 <p className="m-0">
                                     {getBoldFormattedText(
                                         c('scim')
-                                            .t`**Existing groups** synced to ${BRAND_NAME} before may now appear when you first access the console`
+                                            .t`**Groups you already set up** in your identity provider are imported automatically.`
                                     )}
                                 </p>
                             )}
@@ -107,7 +106,7 @@ const ScimGroupsOnboardingModal = ({ onClose, ...rest }: ModalProps) => {
                                 illustration={scimGroupsSyncedImg}
                                 text={getBoldFormattedText(
                                     c('scim')
-                                        .t`**Existing groups** synced to ${BRAND_NAME} before may now appear when you first access the console`
+                                        .t`**Groups you already set up** in your identity provider are imported automatically.`
                                 )}
                             />
                             <ExpectationRow
