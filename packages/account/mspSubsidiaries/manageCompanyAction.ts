@@ -14,7 +14,7 @@ import { pullForkSession, pushForkSession } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { assignMspSubsidiaryManager } from '@proton/shared/lib/api/msp';
-import { getClientID } from '@proton/shared/lib/apps/helper';
+import { getAppHref, getClientID } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { persistForkedSession } from '@proton/shared/lib/authentication/fork';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
@@ -178,5 +178,47 @@ export const manageCompanyThunk = ({
         });
 
         return result;
+    };
+};
+
+export type ManageCompanyTabResult =
+    | { type: 'opened' }
+    /** The tab couldn't be opened, so the caller should offer the href some other way. */
+    | { type: 'blocked'; href: string };
+
+/**
+ * Wraps manageCompanyThunk with the tab handling. The tab is opened synchronously, before any await, so that
+ * it's still attributed to the user gesture that triggered it and doesn't get caught by popup blockers. It
+ * lands on a loading route until the forked session exists and we know the local ID to navigate to.
+ */
+export const manageCompanyAndOpenTabThunk = ({
+    id,
+    path,
+    loadingPath,
+}: {
+    id: string;
+    /** Route the new tab ends up on once the forked session has been persisted. */
+    path: string;
+    /** Route the new tab shows while the fork is in progress. */
+    loadingPath: string;
+}): ThunkAction<Promise<ManageCompanyTabResult>, RequiredState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        const loadingHref = getAppHref(loadingPath, APPS.PROTONACCOUNT, extra.authentication.getLocalID());
+        const otherWindow = window.open(loadingHref);
+
+        try {
+            const result = await dispatch(manageCompanyThunk({ id }));
+            const href = getAppHref(path, APPS.PROTONACCOUNT, result.localID);
+
+            if (otherWindow && !otherWindow.closed) {
+                otherWindow.location.href = href;
+                return { type: 'opened' };
+            }
+
+            return { type: 'blocked', href };
+        } catch (error) {
+            otherWindow?.close();
+            throw error;
+        }
     };
 };
