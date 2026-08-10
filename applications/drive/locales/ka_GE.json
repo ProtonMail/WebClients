@@ -13842,6 +13842,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "ჩვენ ვერ შევძელით იმის დადასტურება, რომ კვანძი შეიქმნა ${ claimedKeyAuthor }-ის მიერ. მიზეზი: ${ node.keyAuthor.error.error }"
+      ],
+      "Domain names": [
+        "დომენის სახელი"
       ]
     },
     "Today icon tooltip in mini calendar": {

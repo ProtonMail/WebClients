@@ -7946,6 +7946,12 @@
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "Pentru a migra acest utilizator, anulați-i suspendarea din ${ provider.adminConsoleName }."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Acest utilizator nu poate fi migrat deoarece adresa sa de e-mail nu este disponibilă în ${ BRAND_NAME }."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Pentru a migra acest utilizator, adăugați și verificați domeniul de e-mail în ${ domainNamesLink }."
       ]
     },
     "info": {
@@ -14707,6 +14713,9 @@
       ],
       "What are you migrating?": [
         "Ce migrați?"
+      ],
+      "Domain names": [
+        "Nume de domenii"
       ]
     },
     "Today icon tooltip in mini calendar": {

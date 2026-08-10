@@ -7824,6 +7824,12 @@
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden kullanıcının askıya alınma durumunu kaldırın."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Bu kullanıcı, ${ BRAND_NAME } üzerinde e-posta adresi bulunmadığı için aktarılamaz."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Bu kullanıcıyı aktarabilmek için ${ domainNamesLink } altındaki e-posta etki alanını ekleyin ve doğrulayın."
       ]
     },
     "info": {
@@ -14443,6 +14449,9 @@
       ],
       "What are you migrating?": [
         "Neyi aktarıyorsunuz?"
+      ],
+      "Domain names": [
+        "Etki alanları"
       ]
     },
     "Today icon tooltip in mini calendar": {

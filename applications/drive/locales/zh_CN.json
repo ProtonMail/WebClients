@@ -13762,6 +13762,9 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
         "我们无法确认此文件内容是由 ${ claimedContentAuthor } 上传的。原因是：${ node.activeRevision.contentAuthor.error.error }"
+      ],
+      "Domain names": [
+        "域名"
       ]
     },
     "Today icon tooltip in mini calendar": {
