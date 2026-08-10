@@ -394,6 +394,34 @@ export type CompactionMeta = {
     createdAt: string; // ISO date
 };
 
+export type ArtifactActionKind = 'explain' | 'improve' | 'edit';
+
+/** UI metadata for artifact panel selection actions (Explain / Improve / Edit). */
+export type ArtifactActionMeta = {
+    kind: ArtifactActionKind;
+    artifactId: string;
+    artifactTitle: string;
+    artifactType: 'code' | 'document';
+    selection: string;
+    /** Present for document edits — the user's freeform change instruction. */
+    userInstruction?: string;
+};
+
+export function isArtifactActionMeta(value: unknown): value is ArtifactActionMeta {
+    if (typeof value !== 'object' || value === null) {
+        return false;
+    }
+    const meta = value as ArtifactActionMeta;
+    return (
+        (meta.kind === 'explain' || meta.kind === 'improve' || meta.kind === 'edit') &&
+        typeof meta.artifactId === 'string' &&
+        typeof meta.artifactTitle === 'string' &&
+        (meta.artifactType === 'code' || meta.artifactType === 'document') &&
+        typeof meta.selection === 'string' &&
+        (meta.userInstruction === undefined || typeof meta.userInstruction === 'string')
+    );
+}
+
 export type MessagePriv = {
     // Legacy fields (kept for backward compatibility)
     context?: string;
@@ -429,6 +457,9 @@ export type MessagePriv = {
     // rather than ordinary content: it records how the conversation was condensed
     // and is rendered as a divider in the UI. See CompactionMeta.
     compaction?: CompactionMeta;
+
+    /** When set, the user message was sent from the artifact panel selection UI. */
+    artifactAction?: ArtifactActionMeta;
 };
 
 export type Message = MessagePub & MessagePriv;
@@ -488,7 +519,8 @@ export function isMessagePriv(value: any): value is MessagePriv {
         (value.suggestedQuestions === undefined || Array.isArray(value.suggestedQuestions)) &&
         (value.modelID === undefined || typeof value.modelID === 'string') &&
         (value.requestedModel === undefined || typeof value.requestedModel === 'string') &&
-        (value.compaction === undefined || (typeof value.compaction === 'object' && value.compaction !== null))
+        (value.compaction === undefined || (typeof value.compaction === 'object' && value.compaction !== null)) &&
+        (value.artifactAction === undefined || isArtifactActionMeta(value.artifactAction))
     );
 }
 
@@ -513,6 +545,7 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         modelID,
         requestedModel,
         compaction,
+        artifactAction,
     } = m;
     return {
         content,
@@ -529,6 +562,7 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         modelID,
         requestedModel,
         compaction,
+        artifactAction,
     };
 }
 
@@ -639,7 +673,8 @@ export function isEmptyMessagePriv(value: MessagePriv): boolean {
         value.suggestedQuestions === undefined &&
         value.modelID === undefined &&
         value.requestedModel === undefined &&
-        value.compaction === undefined
+        value.compaction === undefined &&
+        value.artifactAction === undefined
     );
 }
 
@@ -1129,6 +1164,7 @@ export interface ActionParams {
     customRetryInstructions?: string;
     imageOptions?: ImageGenerationOptions;
     artifactModeActive?: boolean;
+    artifactAction?: ArtifactActionMeta;
 }
 
 export interface ErrorContext {
