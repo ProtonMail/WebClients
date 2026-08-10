@@ -60,6 +60,12 @@ describe('desktop url rules', () => {
             expect(hashWithSpecialChars).toContain('_');
             expect(match(`https://account.proton.me/join-org#${hashWithSpecialChars}`)).toBeTruthy();
         });
+
+        it('opens account-update-daily-email-preferences', () => {
+            expect(match('https://account.proton.me/unsubscribe/64#123123123123')).toBeTruthy();
+            expect(match('https://account.proton.me/unsubscribe')).toBeTruthy();
+            expect(match('https://account.proton.me/unsubscribe/query=random&second=thing')).toBeTruthy();
+        });
     });
 
     describe('fallbacks', () => {
