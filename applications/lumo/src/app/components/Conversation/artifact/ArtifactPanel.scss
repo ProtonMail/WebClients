@@ -70,9 +70,24 @@
 		background: color-mix(in srgb, var(--primary) 8%, transparent);
 	}
 
+	&--pending {
+		animation: artifact-chip-pending-pulse 1.5s ease-in-out infinite;
+	}
+
 	.artifact-type-badge {
 		background: var(--background-strong);
 		font-size: 0.625rem;
+	}
+}
+
+@keyframes artifact-chip-pending-pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.6;
 	}
 }
 

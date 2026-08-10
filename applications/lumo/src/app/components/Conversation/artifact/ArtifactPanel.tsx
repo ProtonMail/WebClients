@@ -486,6 +486,7 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
                     containerRef={contentRef}
                     artifactId={artifact.id}
                     title={artifact.title}
+                    artifactType={artifact.type}
                     isGenerating={isGenerating}
                 />
             </div>
