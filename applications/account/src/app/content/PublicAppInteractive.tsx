@@ -2,6 +2,7 @@ import { type Dispatch, type ReactNode, type SetStateAction, useCallback, useEff
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
 import type * as H from 'history';
+import { c } from 'ttag';
 
 import { loadCrypto } from '@proton/account/bootstrap';
 import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
@@ -66,6 +67,7 @@ import SingleSignupContainer from '../single-signup/SingleSignupContainer';
 import { extraThunkArguments } from '../store/public-thunk';
 import { ResetPasswordPage } from '../unauthed-forgot-password/ResetPasswordPage';
 import type useLocationWithoutLocale from '../useLocationWithoutLocale';
+import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
 import { ProductAttribution } from './ProductAttribution';
@@ -292,6 +294,11 @@ const PublicAppInteractive = ({
             <Route path={UNAUTHENTICATED_ROUTES.TRIAL_ENDED}>
                 <UnAuthenticated>
                     <InboxDesktopFreeTrialEnded />
+                </UnAuthenticated>
+            </Route>
+            <Route path={UNAUTHENTICATED_ROUTES.MSP_SETTING_UP_ACCESS}>
+                <UnAuthenticated>
+                    <AccountLoaderPage text={c('Info').t`Setting up your access…`} />
                 </UnAuthenticated>
             </Route>
             {locationState?.type === 'auth-ext' && (

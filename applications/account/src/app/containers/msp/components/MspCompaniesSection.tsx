@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { addCompanyThunk, setCompanyStatusThunk, updateCompanyThunk } from '@proton/account/mspSubsidiaries/actions';
 import { useMspSubsidiaries } from '@proton/account/mspSubsidiaries/hooks';
-import { manageCompanyThunk } from '@proton/account/mspSubsidiaries/manageCompanyAction';
+import { manageCompanyAndOpenTabThunk } from '@proton/account/mspSubsidiaries/manageCompanyAction';
 import { useMspDispatch } from '@proton/account/mspSubsidiaries/useMspDispatch';
 import { isOwnerRole } from '@proton/account/organizationRoles/helpers';
 import { useUser } from '@proton/account/user/hooks';
@@ -17,6 +17,7 @@ import {
     DropdownActions,
     IllustrationPlaceholder,
     Loader,
+    NotificationButton,
     Pagination,
     SearchInput,
     Table,
@@ -27,7 +28,6 @@ import {
     TableRow,
     useActiveBreakpoint,
     useErrorHandler,
-    useModalStateWithData,
     useNotifications,
     usePagination,
 } from '@proton/components';
@@ -36,8 +36,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces/Member';
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
 import type { UserOrganization } from '@proton/shared/lib/interfaces/Organization';
@@ -45,10 +44,10 @@ import emptyCompaniesImg from '@proton/styles/assets/img/illustrations/empty-com
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { UNAUTHENTICATED_ROUTES } from '../../../content/helper';
 import type { CompanyFormData, MspCompany } from '../types';
 import CompanyModal from './CompanyModal';
 import DisableCompanyModal from './DisableCompanyModal';
-import { MspLoginModal } from './MspLoginModal';
 
 import './MspCompaniesSection.scss';
 
@@ -102,10 +101,7 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
     const [search, setSearch] = useState('');
     const [modal, setModal] = useState<ModalState>(null);
     const [confirmDisable, setConfirmDisable] = useState<MspCompany | null>(null);
-    const [{ data: manageAccountModalData, ...manageAccountModalProps }, openManageAccountModal, renderManageAccount] =
-        useModalStateWithData<{
-            linkUrl: string;
-        }>();
+    const [managingIds, setManagingIds] = useState<Set<string>>(new Set());
 
     const filtered = companies
         .filter((company) => company.name.toLowerCase().includes(search.toLowerCase()))
@@ -162,11 +158,44 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
     };
 
     const handleManageCompany = async (company: MspCompany) => {
+        if (managingIds.has(company.id)) {
+            return;
+        }
+
+        setManagingIds((prev) => new Set(prev).add(company.id));
+
         try {
-            const result = await dispatch(manageCompanyThunk({ id: company.id }));
-            openManageAccountModal({ linkUrl: getAppHref(path, APPS.PROTONACCOUNT, result.localID) });
+            const result = await dispatch(
+                manageCompanyAndOpenTabThunk({
+                    id: company.id,
+                    path,
+                    loadingPath: UNAUTHENTICATED_ROUTES.MSP_SETTING_UP_ACCESS,
+                })
+            );
+
+            if (result.type === 'blocked') {
+                createNotification({
+                    key: `msp-manage-${company.id}`,
+                    type: 'warning',
+                    expiration: -1,
+                    text: (
+                        <>
+                            <span>{c('Info').t`Your browser blocked the new tab.`}</span>
+                            <NotificationButton as="a" href={result.href} target="_blank" rel="noopener noreferrer">
+                                {c('Action').t`Open ${company.name} manually`}
+                            </NotificationButton>
+                        </>
+                    ),
+                });
+            }
         } catch (e) {
             handleError(e);
+        } finally {
+            setManagingIds((prev) => {
+                const next = new Set(prev);
+                next.delete(company.id);
+                return next;
+            });
         }
     };
 
@@ -284,6 +313,7 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                                                 className="inline-flex gap-1 justify-center md:hidden"
                                                 fullWidth
                                                 disabled={!isActive}
+                                                loading={managingIds.has(company.id)}
                                                 onClick={() => handleManageCompany(company)}
                                             />
                                         </TableCell>
@@ -293,6 +323,7 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                                                     size="small"
                                                     className="md:inline-flex gap-1 hidden"
                                                     disabled={!isActive}
+                                                    loading={managingIds.has(company.id)}
                                                     onClick={() => handleManageCompany(company)}
                                                 />
                                                 <DropdownActions
@@ -335,10 +366,6 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
 
             {confirmDisable && (
                 <DisableCompanyModal onConfirm={handleConfirmDisable} onClose={() => setConfirmDisable(null)} />
-            )}
-
-            {renderManageAccount && manageAccountModalData && (
-                <MspLoginModal {...manageAccountModalProps} linkUrl={manageAccountModalData.linkUrl} />
             )}
         </SettingsSectionExtraWide>
     );
