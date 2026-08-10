@@ -90,6 +90,7 @@ const AgentPageInner = () => {
     const {
         messageChain,
         handleSendMessage,
+        handleSendArtifactAction,
         handleEditMessage,
         handleRegenerateMessage,
         getSiblingInfo,
@@ -124,6 +125,7 @@ const AgentPageInner = () => {
     return (
         <ConversationActionsProvider
             handleSendMessage={handleSendMessage}
+            handleSendArtifactAction={handleSendArtifactAction}
             handleAbort={handleAbort}
             handleEditMessage={handleEditMessage}
             handleRegenerateMessage={handleRegenerateMessage}
