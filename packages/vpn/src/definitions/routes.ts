@@ -250,6 +250,7 @@ const routesDefinition = {
                             id: 'organization.vpn.always-on',
                             label: () => c('Title').t`Always-on VPN`,
                             to: '/always-on-vpn',
+                            meta: { beta: true },
                             isVisible: ({ context }) => !!context.flags.B2BAlwaysOnEnabled,
                         },
                         {

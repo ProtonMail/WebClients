@@ -17,8 +17,9 @@ vi.mock('@proton/components/components/loader/Loader', () => ({
 vi.mock('@proton/components/containers/layout/PrivateMainSettingsArea', () => ({
     __esModule: true,
     default: ({ children }: any) => <div data-testid="legacy-area">{children}</div>,
-    PrivateMainSettingsAreaBase: ({ title, children }: any) => (
+    PrivateMainSettingsAreaBase: ({ title, description, children }: any) => (
         <div data-testid="nav-area" data-title={title}>
+            {description}
             {children}
         </div>
     ),
@@ -114,6 +115,8 @@ describe.each(navSectionsRoutes)('$name', ({ Component, navId }) => {
 });
 
 describe('AlwaysOnVpnRoute', () => {
+    const ssoWarning = /SSO users can't sign in on devices with always-on enforced/;
+
     beforeEach(() => {
         vi.clearAllMocks();
     });
@@ -158,5 +161,13 @@ describe('AlwaysOnVpnRoute', () => {
 
         expect(screen.getByTestId('nav-area')).toHaveAttribute('data-title', 'Route title');
         expect(routes.findNavItem).not.toHaveBeenCalled();
+    });
+
+    it('warns that SSO users cannot sign in on devices with always-on enforced', () => {
+        (navigation.useB2BAdminNavigation as Mock).mockReturnValue({ loading: false, enabled: false });
+
+        render(<AlwaysOnVpnRoute config={config} />);
+
+        expect(screen.getByText(ssoWarning)).toBeInTheDocument();
     });
 });
