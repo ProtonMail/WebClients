@@ -157,6 +157,7 @@ export const MembersTable = ({
             organization: models.organization,
             organizationKey: models.organizationKey,
             disableMemberSignIn: meta.hasExternalMemberCapableB2BPlan,
+            backupPasswordDisabled: !!models.organization?.Settings.SSOBackupPasswordDisabled,
             isOwner,
         });
 

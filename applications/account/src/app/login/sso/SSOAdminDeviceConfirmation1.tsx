@@ -11,9 +11,16 @@ interface Props {
     ssoData: AuthCacheResult['data']['ssoData'];
     onUseBackupPassword?: () => void;
     onConfirmAskAdmin: () => Promise<void>;
+    /** The organization disabled the SSO backup password, see `getSSOIntent` */
+    backupPasswordDisabled: boolean;
 }
 
-const SSOAdminDeviceConfirmation = ({ onConfirmAskAdmin, onUseBackupPassword, ssoData }: Props) => {
+const SSOAdminDeviceConfirmation = ({
+    onConfirmAskAdmin,
+    onUseBackupPassword,
+    ssoData,
+    backupPasswordDisabled,
+}: Props) => {
     const [loading, withLoading] = useLoading();
     const safeSsoData = ssoData && ssoData.type !== 'set-password' ? ssoData : null;
     const organizationData = safeSsoData?.organizationData;
@@ -28,8 +35,10 @@ const SSOAdminDeviceConfirmation = ({ onConfirmAskAdmin, onUseBackupPassword, ss
                 className="border border-weak p-3"
             />
             <div className="mt-4">
-                {c('sso')
-                    .t`This will sign you out of your other devices and you will have to create a new backup password.`}
+                {backupPasswordDisabled
+                    ? c('sso').t`This will sign you out of your other devices.`
+                    : c('sso')
+                          .t`This will sign you out of your other devices and you will have to create a new backup password.`}
             </div>
             <Button
                 loading={loading}

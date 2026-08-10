@@ -42,9 +42,11 @@ export interface AuthTypes {
 
 export enum SSOLoginCapabilites {
     SETUP_BACKUP_PASSWORD,
+    SETUP_WITHOUT_BACKUP_PASSWORD,
     ASK_ADMIN,
     ENTER_BACKUP_PASSWORD,
     NEW_BACKUP_PASSWORD,
+    NEW_BACKUP_PASSWORD_DISABLED,
     OTHER_DEVICES,
 }
 
@@ -106,6 +108,8 @@ export interface SSOInactiveData {
     };
 }
 
+export type SSODataTypes = SSOSetupData | SSOUnlockData | SSOInactiveData | SSOSetPasswordData;
+
 export interface AuthCacheResult {
     ktActivation: KeyTransparencyActivation;
     appName: APP_NAMES;
@@ -120,7 +124,7 @@ export interface AuthCacheResult {
         user?: tsUser;
         salts?: tsKeySalt[];
         addresses?: Address[];
-        ssoData?: SSOSetupData | SSOUnlockData | SSOInactiveData | SSOSetPasswordData;
+        ssoData?: SSODataTypes;
         passwordPolicies?: OrganizationData['passwordPolicies'];
     };
     authTypes: AuthTypes;

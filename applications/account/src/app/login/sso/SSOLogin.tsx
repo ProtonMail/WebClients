@@ -2,9 +2,16 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { AuthActionResponse, AuthCacheResult, AuthSession } from '@proton/components/containers/login/interface';
-import { AuthStep, SSOLoginCapabilites } from '@proton/components/containers/login/interface';
 import {
+    type AuthActionResponse,
+    type AuthCacheResult,
+    type AuthSession,
+    AuthStep,
+    type SSODataTypes,
+    SSOLoginCapabilites,
+} from '@proton/components/containers/login/interface';
+import {
+    getBackupPasswordDisabled,
     handleChangeSSOUserKeysPassword,
     handleSSODeviceConfirmed,
     handleSetupSSOUserKeys,
@@ -18,12 +25,36 @@ import Text from '../../public/Text';
 import type { Render } from '../LoginRender';
 import SetBackupPasswordForm from '../SetBackupPasswordForm';
 import SetPasswordWithPolicyForm from '../SetPasswordWithPolicyForm';
+import SetupWithoutBackupPasswordForm from '../SetupWithoutBackupPasswordForm';
 import SSOAdminDeviceConfirmation1 from './SSOAdminDeviceConfirmation1';
 import SSOAdminDeviceConfirmation2 from './SSOAdminDeviceConfirmation2';
 import SSOBackupPasswordForm from './SSOBackupPasswordForm';
+import SSODeviceAccessGranted from './SSODeviceAccessGranted';
 import SSODeviceAdminGranted from './SSODeviceAdminGranted';
 import SSODeviceConfirmation from './SSODeviceConfirmation';
 import SSODeviceRejected from './SSODeviceRejected';
+
+const getKeyPasswordForChange = (ssoData: SSODataTypes, sessionData: AuthSession | null) => {
+    if (ssoData.type === 'set-password') {
+        if (!ssoData.keyPassword || !ssoData.deviceSecretData) {
+            throw new Error('Missing SSO setup data');
+        }
+        return {
+            keyPassword: ssoData.keyPassword,
+            deviceSecretData: ssoData.deviceSecretData,
+        };
+    }
+
+    const keyPassword = sessionData?.data.keyPassword;
+    const deviceSecretData = ssoData.deviceData.deviceSecretData;
+    if (!keyPassword || !deviceSecretData) {
+        throw new Error('Missing SSO setup data');
+    }
+    return {
+        keyPassword,
+        deviceSecretData,
+    };
+};
 
 interface Props {
     render: Render;
@@ -66,10 +97,14 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
         }
     };
 
+    const backupPasswordDisabled = getBackupPasswordDisabled(cache);
+
     const handleResult = async (result: AuthActionResponse) => {
         if (result.to === AuthStep.DONE && result.session.data.User.Flags['has-temporary-password']) {
             sessionDataRef.current = result.session;
-            setStep('AdminGranted');
+            // The admin granted screen announces the backup password step, which doesn't happen
+            // when the organization disabled it
+            setStep(backupPasswordDisabled ? SSOLoginCapabilites.NEW_BACKUP_PASSWORD_DISABLED : 'AdminGranted');
         } else {
             return onResult(result);
         }
@@ -165,6 +200,38 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
                         />
                     ),
                 })}
+            {step === SSOLoginCapabilites.SETUP_WITHOUT_BACKUP_PASSWORD &&
+                cache &&
+                render({
+                    ...sharedProps,
+                    title: '',
+                    onBack: handleBackStep,
+                    content: (
+                        <SetupWithoutBackupPasswordForm
+                            userData={cache.data.user}
+                            ssoSetupData={ssoData.type === 'setup' ? ssoData : null}
+                            onSubmit={async () => {
+                                try {
+                                    if (ssoData.type !== 'setup') {
+                                        throw new Error('Missing SSO setup data');
+                                    }
+                                    const validateFlow = createFlow();
+                                    const result = await handleSetupSSOUserKeys({
+                                        cache,
+                                        newPassword: null,
+                                        deviceData: ssoData.deviceData,
+                                    });
+                                    if (validateFlow()) {
+                                        return await handleResult(result);
+                                    }
+                                } catch (e: any) {
+                                    handleError(e);
+                                    handleCancel();
+                                }
+                            }}
+                        />
+                    ),
+                })}
             {step === SSOLoginCapabilites.OTHER_DEVICES &&
                 cache &&
                 render({
@@ -207,6 +274,7 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
                                 }
                             }}
                             onUseBackupPassword={maybeStepSetter(SSOLoginCapabilites.ENTER_BACKUP_PASSWORD)}
+                            backupPasswordDisabled={backupPasswordDisabled}
                         />
                     ),
                 })}
@@ -315,22 +383,10 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
                                 passwordPolicies={ssoData.organizationData.passwordPolicies}
                                 onSubmit={async ({ password }) => {
                                     try {
-                                        const { keyPassword, deviceSecretData } = (() => {
-                                            if (ssoData?.type === 'set-password') {
-                                                return {
-                                                    keyPassword: ssoData.keyPassword,
-                                                    deviceSecretData: ssoData.deviceSecretData,
-                                                };
-                                            }
-                                            const sessionData = sessionDataRef.current;
-                                            return {
-                                                keyPassword: sessionData?.data.keyPassword,
-                                                deviceSecretData: ssoData.deviceData.deviceSecretData,
-                                            };
-                                        })();
-                                        if (!keyPassword || !deviceSecretData) {
-                                            throw new Error('Missing SSO setup data');
-                                        }
+                                        const { keyPassword, deviceSecretData } = getKeyPasswordForChange(
+                                            ssoData,
+                                            sessionDataRef.current
+                                        );
                                         const validateFlow = createFlow();
                                         const result = await handleChangeSSOUserKeysPassword({
                                             oldKeyPassword: keyPassword,
@@ -349,6 +405,38 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
                                 type="backup"
                             />
                         </>
+                    ),
+                })}
+            {step === SSOLoginCapabilites.NEW_BACKUP_PASSWORD_DISABLED &&
+                cache &&
+                render({
+                    ...sharedProps,
+                    title: '',
+                    onBack: handleBackStep,
+                    content: (
+                        <SSODeviceAccessGranted
+                            onContinue={async () => {
+                                try {
+                                    const { keyPassword, deviceSecretData } = getKeyPasswordForChange(
+                                        ssoData,
+                                        sessionDataRef.current
+                                    );
+                                    const validateFlow = createFlow();
+                                    const result = await handleChangeSSOUserKeysPassword({
+                                        oldKeyPassword: keyPassword,
+                                        newBackupPassword: null,
+                                        deviceSecretData,
+                                        cache,
+                                    });
+                                    if (validateFlow()) {
+                                        return await onResult(result);
+                                    }
+                                } catch (e: any) {
+                                    handleError(e);
+                                    handleCancel();
+                                }
+                            }}
+                        />
                     ),
                 })}
         </>

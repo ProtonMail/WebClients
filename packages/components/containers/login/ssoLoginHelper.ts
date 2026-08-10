@@ -35,6 +35,7 @@ import {
 } from '@proton/shared/lib/keys/device';
 import { changeSSOUserKeysPasswordHelper } from '@proton/shared/lib/keys/password';
 import { getOrganizationData, getUnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
+import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';
 
 import { finalizeLogin } from './finalizeLogin';
@@ -51,7 +52,25 @@ import type {
 import { type AuthActionResponse, AuthStep, SSOLoginCapabilites } from './interface';
 import { getBackupPasswordError, handleUnlockKey } from './loginHelper';
 
-export const getSSOIntent = ({ user, authDevices }: { user: User; authDevices: AuthDeviceOutput[] }) => {
+/**
+ * Whether the organization disabled the SSO backup password. Only present on SSO login responses.
+ */
+export const getBackupPasswordDisabled = (cache: AuthCacheResult) =>
+    cache.authResponse.SSOBackupPasswordDisabled === true;
+
+export const getSSOIntent = ({
+    user,
+    authDevices,
+    backupPasswordDisabled,
+}: {
+    user: User;
+    authDevices: AuthDeviceOutput[];
+    backupPasswordDisabled: boolean;
+}) => {
+    // Members of an organization that disabled the backup password have no password to enter, so
+    // the only ways in are another device or an administrator
+    const enterBackupPassword = backupPasswordDisabled ? [] : [SSOLoginCapabilites.ENTER_BACKUP_PASSWORD];
+
     if (!authDevices.length) {
         if (user.Flags['has-temporary-password']) {
             return {
@@ -60,14 +79,14 @@ export const getSSOIntent = ({ user, authDevices }: { user: User; authDevices: A
             };
         }
         return {
-            capabilities: new Set([SSOLoginCapabilites.ASK_ADMIN, SSOLoginCapabilites.ENTER_BACKUP_PASSWORD]),
+            capabilities: new Set([SSOLoginCapabilites.ASK_ADMIN, ...enterBackupPassword]),
             step: SSOLoginCapabilites.ASK_ADMIN,
         };
     }
     return {
         capabilities: new Set([
             SSOLoginCapabilites.ASK_ADMIN,
-            SSOLoginCapabilites.ENTER_BACKUP_PASSWORD,
+            ...enterBackupPassword,
             SSOLoginCapabilites.OTHER_DEVICES,
         ]),
         step: SSOLoginCapabilites.OTHER_DEVICES,
@@ -135,13 +154,22 @@ export const handleUnlockSSO = async ({
     });
 };
 
+/**
+ * When the organization has disabled the SSO backup password there is no user-chosen password to
+ * derive the key passphrase from, so a random one is generated instead. It is never shown to the
+ * user: the passphrase is only recoverable through the device secret, which means signing in on a
+ * new device always requires another device or an administrator to approve it.
+ */
+const generateRandomBackupPassword = () => getRandomString(32);
+
 export const handleSetupSSOUserKeys = async ({
     cache,
     newPassword,
     deviceData,
 }: {
     cache: AuthCacheResult;
-    newPassword: string;
+    /** Null when the organization disabled the backup password, see {@link generateRandomBackupPassword} */
+    newPassword: string | null;
     deviceData: DeviceData;
 }) => {
     const {
@@ -158,7 +186,9 @@ export const handleSetupSSOUserKeys = async ({
         unprivatizationContextData: { addresses },
     } = ssoData;
 
-    const { passphrase, salt } = await generateKeySaltAndPassphrase(newPassword);
+    const backupPassword = newPassword ?? generateRandomBackupPassword();
+
+    const { passphrase, salt } = await generateKeySaltAndPassphrase(backupPassword);
     const { onSKLPublishSuccess, ...resetPayload } = await getResetAddressesKeysV2({
         addresses,
         passphrase,
@@ -175,7 +205,7 @@ export const handleSetupSSOUserKeys = async ({
 
     await setupKeysWithUnprivatization({
         api,
-        password: newPassword,
+        password: backupPassword,
         parsedUnprivatizationData,
         payload: {
             ...resetPayload,
@@ -193,7 +223,9 @@ export const handleSetupSSOUserKeys = async ({
         cache,
         loginPassword: '',
         keyPassword: passphrase,
-        clearKeyPassword: newPassword,
+        // Deliberately empty when the backup password is disabled, so that no offline key is
+        // derived from a password the user has no way of entering
+        clearKeyPassword: newPassword ?? '',
         source: SessionSource.Saml,
     });
 };
@@ -205,7 +237,8 @@ export const handleChangeSSOUserKeysPassword = async ({
     cache,
 }: {
     oldKeyPassword: string;
-    newBackupPassword: string;
+    /** Null when the organization disabled the backup password, see {@link generateRandomBackupPassword} */
+    newBackupPassword: string | null;
     deviceSecretData: DeviceSecretData;
     cache: AuthCacheResult;
 }) => {
@@ -213,7 +246,7 @@ export const handleChangeSSOUserKeysPassword = async ({
     const userKeys = await getDecryptedUserKeysHelper(user, oldKeyPassword);
 
     const { keyPassword } = await changeSSOUserKeysPasswordHelper({
-        newBackupPassword,
+        newBackupPassword: newBackupPassword ?? generateRandomBackupPassword(),
         deviceSecretData,
         api: cache.api,
         user,
@@ -227,7 +260,8 @@ export const handleChangeSSOUserKeysPassword = async ({
         cache,
         loginPassword: '',
         keyPassword,
-        clearKeyPassword: newBackupPassword,
+        // See the equivalent note in handleSetupSSOUserKeys
+        clearKeyPassword: newBackupPassword ?? '',
         attemptResume: false,
         source: SessionSource.Saml,
     });
@@ -280,6 +314,12 @@ export const getSSOSetupData = async ({
         },
     });
 
+    // The organization can disable the backup password, in which case the member joins without
+    // being asked to set one
+    const setupStep = getBackupPasswordDisabled(cache)
+        ? SSOLoginCapabilites.SETUP_WITHOUT_BACKUP_PASSWORD
+        : SSOLoginCapabilites.SETUP_BACKUP_PASSWORD;
+
     return {
         type: 'setup',
         parsedUnprivatizationData,
@@ -288,20 +328,25 @@ export const getSSOSetupData = async ({
         authDevices: [],
         organizationData: unprivatizationContextData.organizationData,
         intent: {
-            capabilities: new Set([SSOLoginCapabilites.SETUP_BACKUP_PASSWORD]),
-            step: SSOLoginCapabilites.SETUP_BACKUP_PASSWORD,
+            capabilities: new Set([setupStep]),
+            step: setupStep,
         },
     };
 };
 
 export const getSSOSetPasswordData = async ({
     deviceSecretUser,
-    api,
+    cache,
 }: {
     deviceSecretUser: DeviceSecretUser;
-    api: Api;
+    cache: AuthCacheResult;
 }): Promise<SSOSetPasswordData> => {
-    const organizationData = await getOrganizationData({ api });
+    const organizationData = await getOrganizationData({ api: cache.api });
+    // Nothing to choose when the backup password is disabled: the keys are re-encrypted with a
+    // random password instead of one the member picks
+    const step = getBackupPasswordDisabled(cache)
+        ? SSOLoginCapabilites.NEW_BACKUP_PASSWORD_DISABLED
+        : SSOLoginCapabilites.NEW_BACKUP_PASSWORD;
     return {
         type: 'set-password',
         keyPassword: deviceSecretUser.keyPassword,
@@ -309,8 +354,8 @@ export const getSSOSetPasswordData = async ({
         deviceSecretData: deviceSecretUser.deviceSecretData,
         organizationData: organizationData,
         intent: {
-            capabilities: new Set([SSOLoginCapabilites.NEW_BACKUP_PASSWORD]),
-            step: SSOLoginCapabilites.NEW_BACKUP_PASSWORD,
+            capabilities: new Set([step]),
+            step,
         },
     };
 };
@@ -423,7 +468,11 @@ export const getSSOInactiveData = async ({
         address,
         organizationData,
         poll: createSSOPolling({ api, user }),
-        intent: getSSOIntent({ user, authDevices: activeAuthDevicesExceptSelf }),
+        intent: getSSOIntent({
+            user,
+            authDevices: activeAuthDevicesExceptSelf,
+            backupPasswordDisabled: getBackupPasswordDisabled(cache),
+        }),
     };
 };
 
@@ -457,7 +506,11 @@ export const getSSOUnlockData = async ({ cache }: { cache: AuthCacheResult }): P
         address: primaryAddress,
         organizationData,
         poll: createSSOPolling({ api, user }),
-        intent: getSSOIntent({ authDevices: activeAuthDevicesExceptSelf, user }),
+        intent: getSSOIntent({
+            authDevices: activeAuthDevicesExceptSelf,
+            user,
+            backupPasswordDisabled: getBackupPasswordDisabled(cache),
+        }),
     };
 };
 
@@ -488,7 +541,7 @@ export const handlePrepareSSOData = async ({ cache }: { cache: AuthCacheResult }
     try {
         const deviceSecretUser = await getAuthDeviceDataByUser({ user, api: cache.api });
         if (user.Flags['has-temporary-password']) {
-            cache.data.ssoData = await getSSOSetPasswordData({ deviceSecretUser, api: cache.api });
+            cache.data.ssoData = await getSSOSetPasswordData({ deviceSecretUser, cache });
             return {
                 cache,
                 to: AuthStep.SSO,
