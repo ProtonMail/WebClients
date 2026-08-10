@@ -14513,6 +14513,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Nepodařilo se nám potvrdit, že objekt byl vytvořen uživatelem ${ claimedKeyAuthor }. Důvod: ${ node.keyAuthor.error.error }"
+      ],
+      "Domain names": [
+        "Názvy domén"
       ]
     },
     "Today icon tooltip in mini calendar": {

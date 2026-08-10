@@ -7681,6 +7681,12 @@
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Cet utilisateur ne peut pas être migré car son adresse e-mail n'est pas disponible sur ${ BRAND_NAME }."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Pour migrer cet utilisateur, ajoutez et vérifiez le domaine de messagerie sous ${ domainNamesLink }"
       ]
     },
     "info": {
@@ -11117,7 +11123,7 @@
         "Montant dû après la version d'essai le ${ formattedDate }"
       ],
       "Billing Country": [
-        "Pays de facturation "
+        "Pays de facturation"
       ],
       "Card number": [
         "Numéro de la carte"
@@ -14345,6 +14351,9 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
         "Nous n'avons pas pu confirmer que le contenu du fichier a été importé par ${ claimedContentAuthor }. La raison est la suivante : ${ node.activeRevision.contentAuthor.error.error }"
+      ],
+      "Domain names": [
+        "Noms de domaine"
       ]
     },
     "Today icon tooltip in mini calendar": {
