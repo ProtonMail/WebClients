@@ -20,7 +20,7 @@ Two matching system-prompt nudges (`ARTIFACT_TOOL_CREATE_NUDGE` / `ARTIFACT_TOOL
 
 **Decision:** once an artifact exists anywhere in the conversation, the tool stays available for follow-up turns (`'revise'` mode) without the user re-entering Create Artifact mode. But outside of explicitly (re-)entering the mode, the model should only revise what already exists — it should not spawn a new, unrelated artifact on its own initiative.
 
-**Why:** the artifact panel's selection-based inline-edit flow (`ArtifactInlineEdit.tsx`) sends a plain follow-up message via the normal `handleSendMessage` path, with no mode re-entry — it depends on the tool still being reachable. Requiring re-entry for every revision would break that flow and create needless friction for "make it shorter"-style follow-ups. Simultaneously, allowing the model to create unrelated new artifacts outside the mode would reintroduce the same automatic-detection guessing problem we just removed, just narrower in scope.
+**Why:** the artifact panel's selection-based inline-edit flow (`ArtifactInlineEdit.tsx`) sends a follow-up via `handleSendArtifactAction`, with no mode re-entry — it depends on the tool still being reachable. Requiring re-entry for every revision would break that flow and create needless friction for "make it shorter"-style follow-ups. Simultaneously, allowing the model to create unrelated new artifacts outside the mode would reintroduce the same automatic-detection guessing problem we just removed, just narrower in scope.
 
 **Mechanism:** `resolveArtifactToolMode` derives `'revise'` purely from conversation state (`buildArtifactRegistry(messageChain)` non-empty) — no UI state threading needed, and it automatically covers the inline-edit flow for free.
 
@@ -67,3 +67,33 @@ Two matching system-prompt nudges (`ARTIFACT_TOOL_CREATE_NUDGE` / `ARTIFACT_TOOL
 - Versioning/multi-artifact switching is a UI concern about presenting history the client already has — not something content generation needs to know about to do its job.
 
 The registry isn't extra/duplicated mutable state in the problematic sense — it's a pure projection over the message chain (the single source of truth), recomputed fresh each time, the same pattern as a memoized selector. The in-flight-message gap described above is a narrow bug in that derivation, not a reason to reconsider the architecture.
+
+## Selection UI differs by artifact type (code vs document)
+
+**Decision:** when the user selects text in the artifact panel, the inline UI is type-specific:
+
+- **Code** — one-click **Explain** or **Improve** buttons (no freeform input). Explain asks for a chat explanation; Improve asks the model to revise the selected snippet in the artifact.
+- **Document** — freeform inline input ("Describe what you would like to update…") + send, same as a Canvas-style targeted edit.
+
+**Why:** code and prose have different interaction patterns. Code benefits from quick, well-scoped actions; documents need open-ended edit instructions ("make it shorter", "change the tone"). A single doc-style textarea for both (introduced with the first inline editor) exposed the wrong affordance on code and regressed an intended Explain/Improve flow that never landed in git but was the product target.
+
+**Mechanism:** `ArtifactInlineEdit` branches on `artifactType`; prompt wording lives in `artifactActionPrompts.ts`.
+
+## User messages from selection actions: separate LLM payload from chat display
+
+**Finding:** the first inline-editor implementation stored the full structured LLM prompt (artifact id, title, quoted selection, instruction) in `message.content` and rendered it verbatim in the user bubble — readable as a debug template, not as user intent.
+
+**Decision:** artifact selection actions store **two** things on the user message:
+
+- `content` / `blocks[0].content` — the structured LLM prompt (what the model and compaction/token logic see). Built by `buildArtifactActionLlmPrompt()` in `artifactActionPrompts.ts`.
+- `artifactAction` (`ArtifactActionMeta` on `MessagePriv`) — UI metadata: `{ kind, artifactId, artifactTitle, artifactType, selection, userInstruction? }`. Rendered by `ArtifactActionUserMessage` in the chat bubble (action label + type badge + title + monospace snippet; `userInstruction` shown for document edits).
+
+**Why:** `message.content` already serves as the LLM-facing string everywhere (API, regenerate, retry, token estimates). Reusing it for display forced a false choice. A separate metadata field mirrors the existing pattern for UI-specific message shapes (e.g. `compaction` on `MessagePriv`) without inventing a new block type for user messages.
+
+**Mechanism:**
+
+- `handleSendArtifactAction(meta)` in `useLumoActions` — thin wrapper used only from `ArtifactInlineEdit`; builds the LLM prompt and threads `artifactAction` through `ActionParams` → `NewMessageData` → `createMessagePair`. The composer's `handleSendMessage` signature is unchanged.
+- `getMessageDisplayContent()` for human-facing previews (e.g. all-chats list); `getMessageContent()` unchanged for model/context use.
+- Edit on user messages is **disabled** when `artifactAction` is set — editing the raw LLM template would be confusing and is not supported in v1.
+
+**Explicitly out of scope:** retroactive prettification of older user messages that predate `artifactAction` (they still show the raw prompt string). No prompt-string parsing fallback — metadata is set at send time only.
