@@ -16,7 +16,7 @@ function* syncFeatures({ getAuthStore, onFeatureFlags, extensionId }: RootSagaOp
         if (!loggedIn || locked) throw new Error('Cannot fetch user features');
 
         const incoming: FeatureFlagAndVariantState = yield getFeatureFlags(extensionId);
-        if (ENV === 'development') incoming.features.PassUserEventsV1 = QA_SERVICE?.state.sync_strategy_v2 ?? false;
+        if (ENV === 'development') incoming.features.PassUserEventsV1 = QA_SERVICE?.state.sync_strategy_v2 ?? true;
 
         yield put(getUserFeaturesSuccess(meta.request.id, incoming));
 
