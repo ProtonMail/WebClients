@@ -47,6 +47,7 @@ export const SIMPLELOGIN_DOMAIN_SETTINGS_URL = 'https://app.simplelogin.io/dashb
 export const PASS_DOWNLOAD_URL = 'https://proton.me/pass/download';
 export const PASS_TROUBLESHOOT_URL = 'https://proton.me/support/pass-troubleshooting';
 export const PASS_HOWTO_URL = 'https://proton.me/support/pass/using-proton-pass';
+export const PASS_CREDENTIAL_CHECK_URL = 'https://credential-check.protonweb.com';
 
 export const PRIVATE_DOMAINS_URL = 'https://proton.me/download/pass/auto-detection/public_suffix_list.dat';
 export const WEBSITE_RULES_URL = 'https://proton.me/download/pass/auto-detection/rules.json';
