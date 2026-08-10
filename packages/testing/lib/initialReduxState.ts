@@ -1,5 +1,6 @@
 import type { OrganizationState, PaymentStatusState, SubscriptionState } from '@proton/account';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
+import { DEFAULT_PAYMENT_VENDOR_STATES } from '@proton/payments/core/constants';
 import type { PaymentStatus } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
@@ -30,14 +31,7 @@ export const getOrganizationState = (value: OrganizationExtended = {} as any): O
 
 export const getPaymentStatusState = (
     value: PaymentStatus = {
-        VendorStates: {
-            Card: true,
-            Paypal: true,
-            Apple: true,
-            Cash: true,
-            Bitcoin: true,
-            Google: true,
-        },
+        VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
         ...DEFAULT_TAX_BILLING_ADDRESS,
     }
 ): PaymentStatusState['paymentStatus'] => {

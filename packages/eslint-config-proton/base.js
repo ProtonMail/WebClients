@@ -233,6 +233,12 @@ export default defineConfig(
                         'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\Lumo\\b/i]',
                     message: 'Use `LUMO_SHORT_APP_NAME` instead to avoid possible translation.',
                 },
+                {
+                    // Case-sensitive on purpose: only the brand `iDEAL`, never the word `ideal`.
+                    selector:
+                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\biDEAL\\b/]',
+                    message: 'Use `IDEAL_BRAND_NAME` instead to avoid possible translation.',
+                },
             ],
 
             'no-restricted-properties': [

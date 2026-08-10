@@ -3,7 +3,15 @@ import { buildSubscription } from '@proton/testing/builders/subscription';
 import { buildUser } from '@proton/testing/builders/user';
 
 import { getMinApplePayAmount, getMinBitcoinAmount, getMinPaypalAmountChargebee } from './amount-limits';
-import { Autopay, CYCLE, FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES, PLANS, signupFlows } from './constants';
+import {
+    Autopay,
+    CYCLE,
+    DEFAULT_PAYMENT_VENDOR_STATES,
+    FREE_SUBSCRIPTION,
+    PAYMENT_METHOD_TYPES,
+    PLANS,
+    signupFlows,
+} from './constants';
 import type { PaymentMethodFlow, PaymentStatus, PaymentsApi, SavedPaymentMethod } from './interface';
 import { PaymentMethods, formatPaymentMethod, initializePaymentMethods } from './methods';
 
@@ -14,14 +22,7 @@ let status: PaymentStatus;
 beforeEach(() => {
     status = {
         CountryCode: 'CH',
-        VendorStates: {
-            Card: true,
-            Paypal: true,
-            Apple: true,
-            Cash: true,
-            Bitcoin: true,
-            Google: true,
-        },
+        VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
     };
 });
 
@@ -278,6 +279,8 @@ describe('getNewMethods()', () => {
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(false);
+
+        status.VendorStates.Card = true;
     });
 
     // tests for PayPal
@@ -765,14 +768,7 @@ describe('initializePaymentMethods()', () => {
         const apiMock = jest.fn();
         const paymentMethodStatus: PaymentStatus = {
             CountryCode: 'CH',
-            VendorStates: {
-                Card: true,
-                Paypal: true,
-                Apple: true,
-                Cash: true,
-                Bitcoin: true,
-                Google: true,
-            },
+            VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
         };
 
         const paymentMethods: SavedPaymentMethod[] = [
@@ -829,6 +825,7 @@ describe('initializePaymentMethods()', () => {
             enableSepa: false,
             enablePaypalRegionalCurrenciesBatch3: false,
             enablePaypalKrw: false,
+            enableIdeal: false,
         });
 
         expect(methods).toBeDefined();
@@ -843,14 +840,7 @@ describe('initializePaymentMethods()', () => {
 
         const paymentMethodStatus: PaymentStatus = {
             CountryCode: 'CH',
-            VendorStates: {
-                Card: true,
-                Paypal: true,
-                Apple: true,
-                Cash: true,
-                Bitcoin: true,
-                Google: true,
-            },
+            VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
         };
 
         apiMock.mockImplementation(({ url }) => {
@@ -879,6 +869,7 @@ describe('initializePaymentMethods()', () => {
             enableSepa: false,
             enablePaypalRegionalCurrenciesBatch3: false,
             enablePaypalKrw: false,
+            enableIdeal: false,
         });
 
         expect(methods).toBeDefined();
@@ -2000,6 +1991,80 @@ describe('SEPA', () => {
         expect(
             methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT)
         ).toBe(true);
+    });
+});
+
+describe('iDEAL', () => {
+    it('should display iDEAL when billing country is the Netherlands', () => {
+        const methods = new PaymentMethods({
+            paymentStatus: status,
+            paymentMethods: [],
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: 'subscription',
+            selectedPlanName: PLANS.MAIL,
+            billingAddress: { CountryCode: 'NL' },
+            enableIdeal: true,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL)).toBe(
+            true
+        );
+    });
+
+    it('should not display iDEAL when the feature flag is disabled', () => {
+        const methods = new PaymentMethods({
+            paymentStatus: status,
+            paymentMethods: [],
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: 'subscription',
+            selectedPlanName: PLANS.MAIL,
+            billingAddress: { CountryCode: 'NL' },
+            enableIdeal: false,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL)).toBe(
+            false
+        );
+    });
+
+    it('should not display iDEAL when billing country is not the Netherlands', () => {
+        const methods = new PaymentMethods({
+            paymentStatus: status,
+            paymentMethods: [],
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: 'subscription',
+            selectedPlanName: PLANS.MAIL,
+            billingAddress: { CountryCode: 'CH' },
+            enableIdeal: true,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL)).toBe(
+            false
+        );
+    });
+
+    it('should not display iDEAL when billing country is unknown', () => {
+        const methods = new PaymentMethods({
+            paymentStatus: status,
+            paymentMethods: [],
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: 'subscription',
+            selectedPlanName: PLANS.MAIL,
+            billingAddress: undefined,
+            enableIdeal: true,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL)).toBe(
+            false
+        );
     });
 });
 

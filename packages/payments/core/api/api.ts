@@ -368,13 +368,20 @@ export type CreatePaymentIntentGooglePayData = AmountAndCurrency & {
     };
 };
 
+export type CreatePaymentIntentIdealPayData = AmountAndCurrency & {
+    Payment: {
+        Type: 'ideal';
+    };
+};
+
 export type CreatePaymentIntentData =
     | CreatePaymentIntentPaypalData
     | CreatePaymentIntentCardData
     | CreatePaymentIntentSavedCardData
     | CreatePaymentIntentDirectDebitData
     | CreatePaymentIntentApplePayData
-    | CreatePaymentIntentGooglePayData;
+    | CreatePaymentIntentGooglePayData
+    | CreatePaymentIntentIdealPayData;
 
 export const createPaymentIntentV5 = (data: CreatePaymentIntentData) => ({
     url: `payments/v5/tokens`,

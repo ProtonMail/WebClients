@@ -10,6 +10,7 @@ import {
     isPaypalDetails,
     isSavedPaymentMethodApplePay,
     isSavedPaymentMethodGooglePay,
+    isSavedPaymentMethodIdeal,
     isSavedPaymentMethodSepa,
 } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -44,7 +45,7 @@ const MethodCell = ({ method }: { method: SavedPaymentMethod }) => {
 
     const hiddenDigitsPlaceholder = '••••';
 
-    if (isSavedPaymentMethodSepa(method)) {
+    if (isSavedPaymentMethodSepa(method) || isSavedPaymentMethodIdeal(method)) {
         return (
             <>
                 <span className="mr-2 align-middle" data-testid="sepa-payment-method">

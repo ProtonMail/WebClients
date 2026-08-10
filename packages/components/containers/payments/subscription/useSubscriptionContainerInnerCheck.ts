@@ -294,7 +294,8 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                         ZipCode: copyNewModel.taxBillingAddress.ZipCode,
                     },
                     ProrationMode:
-                        currentlySelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+                        currentlySelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT ||
+                        currentlySelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL
                             ? ProrationMode.Exact
                             : undefined,
                     IsTrial: shouldPassIsTrial(newModel, false),

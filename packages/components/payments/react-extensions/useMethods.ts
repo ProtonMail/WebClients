@@ -43,6 +43,7 @@ export interface Props {
     isTrial?: boolean;
     enablePaypalRegionalCurrenciesBatch3: boolean;
     enablePaypalKrw: boolean;
+    enableIdeal: boolean;
     sortNewMethods?: (methods: AvailablePaymentMethod[]) => AvailablePaymentMethod[];
 }
 
@@ -96,6 +97,7 @@ export const useMethods = (
         isTrial,
         enablePaypalRegionalCurrenciesBatch3,
         enablePaypalKrw,
+        enableIdeal,
         sortNewMethods,
     }: Props,
     { api, isAuthenticated }: Dependencies
@@ -184,6 +186,7 @@ export const useMethods = (
                 isTrial,
                 enablePaypalRegionalCurrenciesBatch3,
                 enablePaypalKrw,
+                enableIdeal,
             });
 
             // Initialization might take some time, so we need to check if there is any pending data

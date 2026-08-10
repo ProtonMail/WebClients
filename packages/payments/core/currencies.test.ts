@@ -1,7 +1,7 @@
 import type { User, UserModel } from '@proton/shared/lib/interfaces';
 import { getTestPlans } from '@proton/testing/data/payments/data-plans';
 
-import { FREE_SUBSCRIPTION, PLANS } from './constants';
+import { DEFAULT_PAYMENT_VENDOR_STATES, FREE_SUBSCRIPTION, PLANS } from './constants';
 import {
     getAvailableCurrencies,
     getCurrencyFormattingConfig,
@@ -555,15 +555,7 @@ describe('currencies', () => {
                 // as we add more regional currencies and countries
                 CountryCode: 'XX',
                 State: null,
-                VendorStates: {
-                    Apple: true,
-                    Bitcoin: true,
-                    Card: true,
-                    InApp: false,
-                    Paypal: true,
-                    Cash: true,
-                    Google: true,
-                },
+                VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
             };
 
             expect(

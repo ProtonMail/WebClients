@@ -20,28 +20,19 @@ const getDefaultSubscriptionData = (cycle: Cycle): SubscriptionData => {
 };
 
 const getOptimisticPaymentMethods = (): PaymentStatus => {
-    const defaultValue = {
+    return {
         VendorStates: {
-            Card: false,
-            Paypal: false,
+            Google: true,
+            Card: true,
+            Paypal: true, // We guess that card, Google and PayPal are active by default
             Apple: false,
             Cash: false,
             Bitcoin: false,
-            Google: true,
+            Ideal: false,
         },
         CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
         State: DEFAULT_TAX_BILLING_ADDRESS.State,
         ZipCode: DEFAULT_TAX_BILLING_ADDRESS.ZipCode,
-    };
-
-    return {
-        ...defaultValue,
-        VendorStates: {
-            ...defaultValue.VendorStates,
-            // We guess that card and PayPal are active by default
-            Card: true,
-            Paypal: true,
-        },
     };
 };
 
