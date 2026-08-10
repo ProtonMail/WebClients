@@ -76,6 +76,7 @@ export const getMemberPermissions = ({
     organization,
     organizationKey,
     disableMemberSignIn,
+    backupPasswordDisabled,
     ssoDomainsSet,
     isOwner,
 }: {
@@ -87,6 +88,8 @@ export const getMemberPermissions = ({
     organization?: Organization;
     organizationKey?: CachedOrganizationKey;
     disableMemberSignIn: boolean;
+    /** The organization disabled the SSO backup password, see `getSSOIntent` */
+    backupPasswordDisabled: boolean;
     ssoDomainsSet: ReturnType<typeof getSSODomainsSet>;
     isOwner: boolean;
 }) => {
@@ -113,6 +116,7 @@ export const getMemberPermissions = ({
     const isMemberSetup = getIsMemberSetup(member);
     const isSelf = Boolean(member.Self);
     const isEnabled = getIsMemberEnabled(member);
+    const isMemberSSO = Boolean(member.SSO);
     const canRevokeSessions = !member.Self && isNonPrivate && hasUpdatePermission;
 
     const canLogin =
@@ -138,9 +142,11 @@ export const getMemberPermissions = ({
         !!organizationKey?.privateKey &&
         addresses &&
         addresses.length > 0 &&
-        hasUpdatePermission;
+        hasUpdatePermission &&
+        // For an SSO member this action sets their backup password. When the organization disabled
+        // it there is no step in the login flow to enter it, so the password would be unusable.
+        !(isMemberSSO && backupPasswordDisabled);
 
-    const isMemberSSO = Boolean(member.SSO);
     const canAddAddress = !isMemberSSO && addresses && addresses.length === 0 && !!permissions?.['account.user.update'];
 
     const hasSSOAddress = Boolean(

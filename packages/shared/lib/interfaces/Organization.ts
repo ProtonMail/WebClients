@@ -89,6 +89,7 @@ export interface OrganizationSettings {
     ShowScribeWritingAssistant: boolean;
     VideoConferencingEnabled: boolean;
     MailCategoryViewEnabled: boolean;
+    SSOBackupPasswordDisabled: boolean;
     AllowedProducts: SerializedOrganizationSettingsAllowedProduct[];
     // Settings for admin
     PasswordPolicies: PasswordPolicySettings;
