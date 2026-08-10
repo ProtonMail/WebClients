@@ -10,7 +10,11 @@ import illustration from '@proton/styles/assets/img/illustrations/vpn/always-on/
 
 import { useIsMacOSSupportEnabled } from '../../../contexts/AlwaysOnPolicyServiceContext';
 
-export const UnconfiguredProfileView = ({ onConfigure }: { onConfigure: () => void }) => {
+interface Props {
+    onConfigure: () => void;
+}
+
+export const UnconfiguredProfileView = ({ onConfigure }: Props) => {
     const isMacOSSupportEnabled = useIsMacOSSupportEnabled();
     const callouts = [
         c('Info').t`Employees can't go online without a VPN connection`,
