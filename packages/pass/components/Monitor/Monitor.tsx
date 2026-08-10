@@ -8,6 +8,7 @@ import { DarkWebMonitoring } from '@proton/pass/components/Monitor/Breach/DarkWe
 import { ExcludedItems } from '@proton/pass/components/Monitor/Item/ExcludedItems';
 import { MonitorProvider } from '@proton/pass/components/Monitor/MonitorProvider';
 import { MonitorSummary } from '@proton/pass/components/Monitor/MonitorSummary';
+import { CompromisedPasswords } from '@proton/pass/components/Monitor/Password/CompromisedPasswords';
 import { DuplicatePasswords } from '@proton/pass/components/Monitor/Password/DuplicatePasswords';
 import { WeakPasswords } from '@proton/pass/components/Monitor/Password/WeakPasswords';
 import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
@@ -20,13 +21,14 @@ export const Monitor: FC<RouteChildrenProps> = ({ match }) => (
                 <Route path={`${match?.path}/duplicates`} component={DuplicatePasswords} />
                 <Route path={`${match?.path}/2fa`} component={Missing2FAs} />
                 <Route path={`${match?.path}/weak`} component={WeakPasswords} />
+                <Route path={`${match?.path}/compromised`} component={CompromisedPasswords} />
                 <Route path={`${match?.path}/excluded`} component={ExcludedItems} />
                 <Route path={`${match?.path}/dark-web`} component={DarkWebMonitoring} />
                 <Route component={MonitorSummary} />
             </Switch>
         </SubSidebar>
         <Switch>
-            <Route path={`${match?.path}/(duplicates|2fa|weak|excluded)`}>
+            <Route path={`${match?.path}/(duplicates|2fa|weak|compromised|excluded)`}>
                 {(subRoute) => {
                     const { match } = subRoute;
                     if (!match) return null;

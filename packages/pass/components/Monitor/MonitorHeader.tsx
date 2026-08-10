@@ -12,6 +12,7 @@ import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_SHORT_APP_NAME } from '@prot
 const getMonitorBreadcrumbs = (): BreadcrumbRoute[] => [
     { path: 'duplicates', label: c('Title').t`Reused passwords`, active: true },
     { path: 'weak', label: c('Title').t`Weak passwords`, active: true },
+    { path: 'compromised', label: c('Title').t`Compromised passwords`, active: true },
     { path: '2fa', label: c('Title').t`Inactive 2FA`, active: true },
     { path: 'excluded', label: c('Title').t`Excluded items`, active: true },
     {
