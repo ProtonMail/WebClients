@@ -429,7 +429,7 @@ const MainContainer: FunctionComponent = () => {
                                         redirect={redirect}
                                         onOpenChat={handleOpenZendeskChat}
                                         organization={organization}
-                                        subscription={subscription}
+                                        entitlements={entitlements}
                                     />
                                 </Route>
                                 <Route path={`${CANCEL_ROUTE}`}>
