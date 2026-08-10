@@ -10,7 +10,7 @@ import { urlHasOpenMailParams, readAndClearOpenMailArgs, readAndClearOpenCalenda
 import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";
 import { registerWindowEventLog } from "../log/appEventLog";
-import { enableAppSwitcherMenuItems, setApplicationMenu } from "../menus/menuApplication";
+import { enableNotInAccountMenuItems, setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
 import {
     getLocalID,
@@ -377,7 +377,7 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
     // We cannot cleanly differentiate whether the app is running in an auth state / forcibly logged out / switching accounts.
     // Depending on the case switching between the apps may present the user with an unexpected view, thus we disable it whenever we
     // display any account page or view.
-    enableAppSwitcherMenuItems(viewID !== "account");
+    enableNotInAccountMenuItems(viewID !== "account");
 
     telemetry.showView(viewID);
 
