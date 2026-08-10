@@ -2,36 +2,27 @@ import { useCallback, useRef } from 'react';
 
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
-import { isIos } from '@proton/shared/lib/helpers/browser';
 
-import { getAcceptAttributeString, getAcceptAttributeStringWithoutImages } from '../../util/filetypes';
+import { getAcceptAttributeString } from '../../util/filetypes';
 import { sendFileUploadEvent } from '../../util/telemetry';
 
 interface FileUploadButtonProps extends Omit<ButtonProps, 'onClick'> {
     onFilesSelected: (files: File[]) => void;
-    accept?: string;
     multiple?: boolean;
     children: React.ReactNode;
-    /**
-     * Whether to use iOS-compatible file acceptance (without images)
-     * Defaults to true for iOS devices
-     */
-    useIosCompatibility?: boolean;
 }
 
 /**
  * Reusable file upload button component that handles:
- * - Hidden file input with proper iOS compatibility
+ * - Visually hidden file input driven by a styled button
  * - File selection and validation
  * - Telemetry tracking
  * - Consistent styling and behavior
  */
 export const FileUploadButton = ({
     onFilesSelected,
-    accept,
     multiple = true,
     children,
-    useIosCompatibility,
     ...buttonProps
 }: FileUploadButtonProps) => {
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -51,22 +42,13 @@ export const FileUploadButton = ({
         sendFileUploadEvent();
     }, []);
 
-    // Determine the accept attribute
-    const getAcceptAttribute = () => {
-        if (accept) return accept;
-
-        // Use iOS compatibility check
-        const shouldUseIosCompatibility = useIosCompatibility ?? isIos();
-        return shouldUseIosCompatibility ? getAcceptAttributeStringWithoutImages() : getAcceptAttributeString();
-    };
-
     return (
         <>
             <input
                 type="file"
                 ref={fileInputRef}
                 className="hidden"
-                accept={getAcceptAttribute()}
+                accept={getAcceptAttributeString()}
                 multiple={multiple}
                 onChange={handleFileInputChange}
             />
