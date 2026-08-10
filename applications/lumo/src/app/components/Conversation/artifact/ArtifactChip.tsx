@@ -1,6 +1,7 @@
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
 import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
@@ -45,18 +46,29 @@ export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
             className={clsx([
                 'artifact-chip',
                 'flex flex-row items-center gap-2',
-                'border border-weak rounded-lg px-3 py-2 mt-2',
+                'border border-weak rounded-lg p-4 mt-2 mb-4',
                 'text-sm cursor-pointer text-norm',
                 'w-full max-w-xs text-left',
                 isActive && 'artifact-chip--active',
+                isPending && 'artifact-chip--pending',
             ])}
+            aria-busy={isPending || undefined}
         >
             <span className="shrink-0 color-hint">
                 {artifact.type === 'code' ? <IcCode size={4} /> : <IcFileLines size={4} />}
             </span>
             <span className="flex-1 text-ellipsis overflow-hidden whitespace-nowrap">{artifact.title}</span>
-            <span className="artifact-type-badge shrink-0">{artifact.type === 'code' ? 'CODE' : 'DOC'}</span>
-            <IcArrowOutFromRectangle size={3} className="shrink-0 color-hint" />
+            {isPending ? (
+                <span className="flex flex-row items-center gap-1 shrink-0 color-hint text-xs">
+                    <CircleLoader size="small" className="shrink-0" />
+                    {c('collider_2025:Status').t`Generating…`}
+                </span>
+            ) : (
+                <>
+                    <span className="artifact-type-badge shrink-0">{artifact.type === 'code' ? 'CODE' : 'DOC'}</span>
+                    <IcArrowOutFromRectangle size={3} className="shrink-0 color-hint" />
+                </>
+            )}
         </button>
     );
 };
@@ -83,11 +95,11 @@ export const ArtifactChipLoading = ({ streaming }: LoadingChipProps) => {
         <div
             className={clsx([
                 'artifact-chip',
+                'artifact-chip--pending',
                 'flex flex-row items-center gap-2',
-                'rounded-lg px-3 py-4 my-2',
+                'border border-danger rounded-lg px-4 py-2 mt-2 mb-4',
                 'text-sm text-norm',
                 'w-full max-w-xs',
-                'opacity-60 border border-danger',
             ])}
             aria-busy="true"
         >
@@ -119,7 +131,10 @@ export const ArtifactChipLoading = ({ streaming }: LoadingChipProps) => {
                 </span>
             )}
             {typeLabel && <span className="artifact-type-badge shrink-0">{typeLabel}</span>}
-            <span className="shrink-0 color-hint text-xs">{c('collider_2025:Status').t`…`}</span>
+            <span className="flex flex-row items-center gap-1 shrink-0 color-hint text-xs">
+                <CircleLoader size="small" className="shrink-0" />
+                {c('collider_2025:Status').t`Generating…`}
+            </span>
         </div>
     );
 };
