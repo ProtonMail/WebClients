@@ -130,6 +130,26 @@ const WeakPasswordReport: FC<SelectedItem> = (item) => {
     );
 };
 
+const CompromisedPasswordReport: FC<SelectedItem> = (item) => {
+    const { compromised } = useMonitor();
+    const isCompromised = compromised.data.some(itemEq(item));
+
+    return (
+        isCompromised && (
+            <Card className="mb-2" type="warning">
+                <CardContent
+                    icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-0.5" />}
+                    titleClassname="color-interaction-norm-major-2 text-lg text-semibold"
+                    subtitleClassname="color-interaction-norm-major-2"
+                    title={c('Title').t`Compromised password`}
+                    subtitle={c('Description')
+                        .t`This login password appears in a data breach. Please visit the service and change the password.`}
+                />
+            </Card>
+        )
+    );
+};
+
 const Missing2FAReport: FC<SelectedItem> = (item) => {
     const { missing2FAs } = useMonitor();
     const isMissing2FA = missing2FAs.data.some(itemEq(item));
@@ -152,6 +172,7 @@ export const ItemReport: FC<SelectedItem> = (item) => (
     <Switch>
         <Route path={getLocalPath('monitor/duplicates')} render={() => <DuplicatePasswordReport {...item} />} />
         <Route path={getLocalPath('monitor/weak')} render={() => <WeakPasswordReport {...item} />} />
+        <Route path={getLocalPath('monitor/compromised')} render={() => <CompromisedPasswordReport {...item} />} />
         <Route path={getLocalPath('monitor/2fa')} render={() => <Missing2FAReport {...item} />} />
     </Switch>
 );

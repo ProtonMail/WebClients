@@ -21,6 +21,7 @@ export interface MonitorContextValue {
         loading: boolean;
     };
     insecure: AsyncMonitorState;
+    compromised: AsyncMonitorState;
     duplicates: { data: UniqueItem[][]; count: number };
     missing2FAs: AsyncMonitorState;
     excluded: { data: UniqueItem[]; count: number };
