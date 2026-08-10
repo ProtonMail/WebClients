@@ -4,8 +4,11 @@ import { WASM_PROCEDURE_BATCH_SIZE } from '@proton/pass/lib/core/constants';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { hasDomain, hasOTP, hasPasskeys } from '@proton/pass/lib/items/item.predicates';
 import { intoSelectedItem } from '@proton/pass/lib/items/item.utils';
+import { isPasswordCompromised } from '@proton/pass/lib/monitor/compromised-password.request';
 import { getAutofillUrls } from '@proton/pass/lib/urls/utils/autofill';
-import { selectMonitoredLogins } from '@proton/pass/store/selectors';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
+import { compromisedPasswordsSync } from '@proton/pass/store/actions';
+import { selectMonitoredLogins, selectPassPlan } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { ShareId, UniqueItem } from '@proton/pass/types';
 import { and, not, or } from '@proton/pass/utils/fp/predicates';
@@ -15,6 +18,7 @@ import chunk from '@proton/utils/chunk';
 
 export type MonitorCheckOptions = { shareIds?: ShareId[] };
 export interface MonitorService {
+    checkCompromisedPasswords: (options?: MonitorCheckOptions) => Promise<UniqueItem[]>;
     checkMissing2FAs: (options?: MonitorCheckOptions) => Promise<UniqueItem[]>;
     checkWeakPasswords: (options?: MonitorCheckOptions) => Promise<UniqueItem[]>;
 }
@@ -25,6 +29,22 @@ export const createMonitorService = (core: PassCoreProxy, store: Store<State>): 
     const getLoginItems = (shareIds?: ShareId[]) => selectMonitoredLogins(shareIds)(store.getState());
 
     const service: MonitorService = {
+        checkCompromisedPasswords: async (options) => {
+            if (!isPaidPlan(selectPassPlan(store.getState()))) return [];
+
+            const logins = getLoginItems(options?.shareIds);
+            const candidates = logins.filter((item) => item.data.content.password.v.length);
+            const passwords = candidates.map((item) => deobfuscate(item.data.content.password));
+            const results = await seq(passwords, isPasswordCompromised);
+            const compromised = candidates.filter((_, idx) => results[idx]).map(intoSelectedItem);
+
+            /** Full re-check, so this is authoritative
+             * replaces the whole local cache */
+            store.dispatch(compromisedPasswordsSync(compromised));
+
+            return compromised;
+        },
+
         checkMissing2FAs: async (options) => {
             const logins = getLoginItems(options?.shareIds);
             /** Valid 2FAs : OTPs or Passkeys */

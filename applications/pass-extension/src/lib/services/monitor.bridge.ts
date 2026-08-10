@@ -4,6 +4,11 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 
 export const createMonitorBridge = (messageFactory: MessageWithSenderFactory): MonitorService => ({
+    checkCompromisedPasswords: (payload) =>
+        sendMessage.on(messageFactory({ type: WorkerMessageType.MONITOR_COMPROMISED_PASSWORDS, payload }), (res) =>
+            res.type === 'success' ? res.result : []
+        ),
+
     checkMissing2FAs: (payload) =>
         sendMessage.on(messageFactory({ type: WorkerMessageType.MONITOR_2FAS, payload }), (res) =>
             res.type === 'success' ? res.result : []
