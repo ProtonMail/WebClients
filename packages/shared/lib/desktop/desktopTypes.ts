@@ -136,6 +136,10 @@ export const IPCInboxHostUpdateMessageSchema = z.discriminatedUnion('type', [
         type: z.literal('refreshEventLoop'),
         payload: z.undefined().optional(),
     }),
+    z.object({
+        type: z.literal('openHelpAndFeedback'),
+        payload: z.undefined().optional(),
+    }),
 ]);
 
 export type IPCInboxHostUpdateMessage = z.infer<typeof IPCInboxHostUpdateMessageSchema>;
