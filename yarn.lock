@@ -11251,9 +11251,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/crypto@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "@protontech/crypto@npm:2.1.1"
+"@protontech/crypto@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "@protontech/crypto@npm:2.1.2"
   dependencies:
     "@noble/hashes": "npm:^2.2.0"
     "@openpgp/web-stream-tools": "npm:~0.3.1"
@@ -11261,8 +11261,8 @@ __metadata:
     comlink: "npm:^4.4.2"
     core-js: "npm:^3.49.0"
     jsmimeparser: "npm:@protontech/jsmimeparser@^3.0.2"
-    openpgp: "npm:@protontech/openpgp@~6.3.1-0"
-  checksum: 10/423f82d1cdad92c329e1686ac55625a2a5cdfdc5aac2528dfc11fe9654bb2c011bf6dae32312c84d20f780d7f7f156114f1555f8149709256422599071ff1c2b
+    openpgp: "npm:@protontech/openpgp@~6.3.1"
+  checksum: 10/35e2026bfb4e8d495f1d7e464626672bce25d28b9bac4e7ee12d7eb3ba1af8f12c38e49e1f7fe420c18c62deb3b92d93a66d7c7f87087488b5a6924bc678411c
   languageName: node
   linkType: hard
 
@@ -38306,10 +38306,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openpgp@npm:@protontech/openpgp@~6.3.1-0":
-  version: 6.3.1-0
-  resolution: "@protontech/openpgp@npm:6.3.1-0"
-  checksum: 10/9f78cf2ed2dbb8be39ce8767985a1dc04c9c85b70e01bf23865666f9c7ebbfe5ec2c8a9024742ba76cfe9c2767de5d92af8ca48f7a7d1f63fda9ca2900a14019
+"openpgp@npm:@protontech/openpgp@~6.3.1":
+  version: 6.3.1
+  resolution: "@protontech/openpgp@npm:6.3.1"
+  peerDependencies:
+    "@openpgp/web-stream-tools": ~0.3.0
+  peerDependenciesMeta:
+    "@openpgp/web-stream-tools":
+      optional: true
+  checksum: 10/fdab0a23a1a46c2b6e024696231e92a3405c9c06f78d7ac9ae77d53ef14a627938378538421f6d8234b8335ded0398d619e625be2eac65323d80153a7fb3e657
   languageName: node
   linkType: hard
 
