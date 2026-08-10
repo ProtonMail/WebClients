@@ -15,6 +15,5 @@ export const entitlementChecks = {
     orgHasSubsidiaries: (r) => !!r.quantityOrg(EntitlementName.MaxSubsidiaries),
     orgHasMembersSubsidiaries: (r) => !!r.quantityOrg(EntitlementName.MaxMembersSubsidiaries),
     orgHasAdminRoles: (r) => !!r.quantityOrg(EntitlementName.AdminRoles),
-    orgIsMultiUserPersonal: (r) =>
-        !r.quantityOrg(EntitlementName.Business) && !!r.quantityOrg(EntitlementName.MultiUser),
+    orgIsMultiUser: (r) => !!r.quantityOrg(EntitlementName.MultiUser),
 } satisfies Record<string, EntitlementCheck>;
