@@ -37,7 +37,7 @@ $tab-dot-ease: easing(ease-out-quint);
 			}
 
 			// Stays laid out at zero width so its `scrollWidth` keeps reporting the width the
-			// label would need, see `useCategoriesTabsCompact`.
+			// label would need, see `useCategoriesTabsDensity`.
 			.tab-label-ghost {
 				inline-size: 0;
 			}
@@ -207,19 +207,15 @@ $tab-dot-ease: easing(ease-out-quint);
 		}
 	}
 
-	// The labels do not fit, measured against the width they would need, see the hook.
+	// No viewport fallback on purpose: a rule pinning icon-only below a fixed width would beat the
+	// measured density in the cascade and put the two back out of step.
 	&.tabs-compact {
 		@include hide-tab-labels;
 	}
 
-	// Below 820px the bar sits under a truncated toolbar, nothing but the icons fits whatever the
-	// labels measure.
-	@include media('<#{em(820, 16)}') {
-		@include hide-tab-labels;
-	}
-
-	// Large (≥ 1024px): a larger label and roomier spacing between icon, label and counter.
-	@include media('>=#{em(1024, 16)}') {
+	// Roomier spacing, applied only once the bar measures wide enough for it. On a `>=1024px` media
+	// query this dropped every label, costing more spacing than the wider viewport gave the bar.
+	&.tabs-roomy {
 		.tab-container {
 			padding-inline-end: rem(14);
 
