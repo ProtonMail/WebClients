@@ -19,6 +19,8 @@ interface PrivateMainSettingsAreaBaseProps {
     breadcrumbs?: ReactNode;
     backButton?: ReactNode;
     title?: string;
+    /** Rendered next to the title, e.g. a `Beta` badge. Kept separate from `title` so the document title stays plain text. */
+    titleBadge?: ReactNode;
     noTitle?: boolean;
     description?: ReactNode;
     children?: ReactNode;
@@ -33,6 +35,7 @@ export const PrivateMainSettingsAreaBase = ({
     breadcrumbs,
     backButton,
     title,
+    titleBadge,
     noTitle,
     description,
     children,
@@ -144,6 +147,7 @@ export const PrivateMainSettingsAreaBase = ({
                     >
                         {backButton}
                         {title}
+                        {titleBadge}
                     </SettingsPageTitle>
                 )}
                 {description && <SettingsParagraph className="mb-6">{description}</SettingsParagraph>}
