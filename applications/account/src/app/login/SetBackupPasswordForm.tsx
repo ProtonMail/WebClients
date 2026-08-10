@@ -6,6 +6,7 @@ import type { AuthCacheResult, SSOSetupData } from '@proton/components/container
 import JoinOrganizationAdminItem from '../public/JoinOrganizationAdminItem';
 import Text from '../public/Text';
 import SetPasswordWithPolicyForm from './SetPasswordWithPolicyForm';
+import { getJoinOrganizationData } from './joinOrganizationHelper';
 
 interface Props {
     onSubmit: (data: { password: string }) => Promise<void>;
@@ -14,23 +15,15 @@ interface Props {
 }
 
 const SetBackupPasswordForm = ({ onSubmit, ssoSetupData, userData }: Props) => {
-    const username = ssoSetupData?.unprivatizationContextData.addresses[0]?.Email || userData?.Email || userData?.Name;
-
-    const organizationData = ssoSetupData?.organizationData;
-    const organizationLogoUrl = organizationData?.logo?.url;
-    const organizationName = organizationData?.organization.Name || '';
-    const organizationIdentityAddress = organizationData?.identity.FingerprintSignatureAddress || '';
-
-    const parsedUnprivatizationData = ssoSetupData?.parsedUnprivatizationData;
-    const adminEmail =
-        parsedUnprivatizationData?.type === 'gsso'
-            ? parsedUnprivatizationData.payload.unprivatizationData.AdminEmail
-            : organizationIdentityAddress;
+    const { organizationLogoUrl, organizationName, adminEmail, passwordPolicies, username } = getJoinOrganizationData(
+        ssoSetupData,
+        userData
+    );
 
     return (
         <>
             <JoinOrganizationAdminItem
-                adminEmail={adminEmail || ''}
+                adminEmail={adminEmail}
                 organizationLogoUrl={organizationLogoUrl}
                 organizationName={organizationName}
             />
@@ -39,11 +32,7 @@ const SetBackupPasswordForm = ({ onSubmit, ssoSetupData, userData }: Props) => {
                 {c('sso')
                     .t`Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.`}
             </Text>
-            <SetPasswordWithPolicyForm
-                passwordPolicies={organizationData?.passwordPolicies ?? []}
-                onSubmit={onSubmit}
-                type="backup"
-            >
+            <SetPasswordWithPolicyForm passwordPolicies={passwordPolicies} onSubmit={onSubmit} type="backup">
                 <InputFieldTwo
                     id="username"
                     bigger
