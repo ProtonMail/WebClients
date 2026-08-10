@@ -966,6 +966,15 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "La vostra informació personal s'ha filtrat en una violació de les dades d'un servei de tercers."
+      ],
+      "Change these passwords immediately": [
+        "Canvieu aquestes contrasenyes immediatament"
+      ],
+      "Check if your passwords have been exposed": [
+        "Comproveu si les vostres contrasenyes s'han exposat"
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "S'ha trobat aquesta contrasenya d'inici de sessió en una infracció de dades. Aneu al servei i canvieu-la."
       ]
     },
     "Email": {
@@ -1491,6 +1500,9 @@
       ],
       "Unsupported file type": [
         "Tipus de fitxer no permès"
+      ],
+      "This invite is no longer available": [
+        "Aquesta invitació ja no està disponible"
       ]
     },
     "Error message": {
@@ -5304,6 +5316,18 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ],
+      "Compromised password": [
+        "Contrasenya en risc"
+      ],
+      "Compromised passwords": [
+        "Contrasenyes en risc"
+      ],
+      "No compromised passwords": [
+        "No hi ha cap contrasenya en risc"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Milloreu el pla per comprovar les contrasenyes en risc"
       ]
     },
     "Title_cloned_item": {
