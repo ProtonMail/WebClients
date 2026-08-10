@@ -85,6 +85,14 @@ export enum FeatureCode {
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',
     OfferMailTrial2023 = 'OfferMailTrial2023',
 
+    // Q3 Sale 2026 — Mail
+    OfferQ3Sale2026FreeToUnlimited = 'OfferQ3Sale2026FreeToUnlimited',
+    OfferQ3Sale2026PlusToUnlimited = 'OfferQ3Sale2026PlusToUnlimited',
+    // Q3 Sale 2026 — Multi-user
+    OfferQ3Sale2026UnlimitedToDuo = 'OfferQ3Sale2026UnlimitedToDuo',
+    OfferQ3Sale2026DuoToFamily = 'OfferQ3Sale2026DuoToFamily',
+    OfferQ3Sale2026FamilyMonthlyToYearly = 'OfferQ3Sale2026FamilyMonthlyToYearly',
+
     // Bookings spotlights
     SpotlightIntroduceBookings = 'SpotlightIntroduceBookings',
     BookingPageLocationSpotlight = 'BookingPageLocationSpotlight',
