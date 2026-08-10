@@ -73,7 +73,7 @@ const AlwaysOnOverview = () => {
     };
 
     return (
-        <div className="flex gap-12 flex-column">
+        <div className="flex gap-12 flex-column pb-6">
             {renderContent()}
 
             <ConfigureProfileModal

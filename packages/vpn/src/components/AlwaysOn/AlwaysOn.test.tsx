@@ -120,7 +120,7 @@ describe('AlwaysOn', () => {
         render(<AlwaysOn />);
 
         expect(await screen.findByText('Ensure your organization is always protected')).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Configure Always-on VPN' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Configure Always-on VPN' })).toBeEnabled();
     });
 
     test.each`
