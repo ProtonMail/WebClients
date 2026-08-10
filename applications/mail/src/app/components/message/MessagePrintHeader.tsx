@@ -26,7 +26,7 @@ const MessagePrintHeader = ({ message, labelID }: Props) => {
                 <div className="message-print-recipient-container">
                     <RecipientType label={c('Label').t`From`}>
                         {getRecipientLabel(sender as Recipient, true)}{' '}
-                        <span className="color-weak">&lt;{sender?.Address}&gt;</span>
+                        <span className="color-weak onprint-reset-colors">&lt;{sender?.Address}&gt;</span>
                     </RecipientType>
                     <RecipientsDetails
                         message={message}
