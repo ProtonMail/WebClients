@@ -1,7 +1,7 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
 import { componentsHookRenderer, componentsHookWrapper } from '@proton/components/containers/contacts/tests/render';
-import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { Autopay, DEFAULT_PAYMENT_VENDOR_STATES, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentStatus, PaymentsApi, SavedPaymentMethod } from '@proton/payments/core/interface';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock, apiMock } from '@proton/testing/lib/api';
@@ -18,14 +18,7 @@ beforeEach(() => {
     paymentStatus = {
         CountryCode: 'US',
         State: 'AL',
-        VendorStates: {
-            Card: true,
-            Paypal: true,
-            Apple: true,
-            Cash: true,
-            Bitcoin: true,
-            Google: true,
-        },
+        VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
     };
 
     paymentMethods = [
@@ -68,6 +61,7 @@ it('should render', () => {
                 selectedPlanName: undefined,
                 enablePaypalRegionalCurrenciesBatch3: false,
                 enablePaypalKrw: false,
+                enableIdeal: false,
             },
             {
                 api: apiMock,
@@ -93,6 +87,7 @@ it('should initialize payment methods (with chargebee)', async () => {
                 selectedPlanName: undefined,
                 enablePaypalRegionalCurrenciesBatch3: false,
                 enablePaypalKrw: false,
+                enableIdeal: false,
             },
             {
                 api: apiMock,
@@ -196,6 +191,7 @@ it('should update methods when amount changes', async () => {
                     selectedPlanName: undefined,
                     enablePaypalRegionalCurrenciesBatch3: false,
                     enablePaypalKrw: false,
+                    enableIdeal: false,
                 },
                 {
                     api: apiMock,
@@ -257,6 +253,7 @@ it('should get saved method by its ID', async () => {
                 selectedPlanName: undefined,
                 enablePaypalRegionalCurrenciesBatch3: false,
                 enablePaypalKrw: false,
+                enableIdeal: false,
             },
             {
                 api: apiMock,
@@ -299,6 +296,7 @@ it('should set selected method', async () => {
                 selectedPlanName: undefined,
                 enablePaypalRegionalCurrenciesBatch3: false,
                 enablePaypalKrw: false,
+                enableIdeal: false,
             },
             {
                 api: apiMock,
@@ -360,6 +358,7 @@ it('should update amount correctly even if the initialization is slow', async ()
                     selectedPlanName: undefined,
                     enablePaypalRegionalCurrenciesBatch3: false,
                     enablePaypalKrw: false,
+                    enableIdeal: false,
                 },
                 {
                     api: apiMock,

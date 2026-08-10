@@ -49,6 +49,10 @@ const TestComponent = () => {
                 onGooglePayFailure: jest.fn(),
                 onGooglePayClicked: jest.fn(),
                 onGooglePayCancelled: jest.fn(),
+                onIdealAuthorized: jest.fn(),
+                onIdealFailure: jest.fn(),
+                onIdealClicked: jest.fn(),
+                onIdealCancelled: jest.fn(),
             },
             handles: {
                 submitDirectDebit: jest.fn(),

@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/payments/core/constants';
+import { DEFAULT_PAYMENT_VENDOR_STATES, PLANS } from '@proton/payments/core/constants';
 import type { Currency, PaymentStatus } from '@proton/payments/core/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -54,14 +54,7 @@ describe('plans', () => {
     const defaultPaymentStatus: PaymentStatus = {
         CountryCode: 'CH',
         State: null,
-        VendorStates: {
-            Card: true,
-            Cash: true,
-            Paypal: true,
-            Apple: true,
-            Bitcoin: true,
-            Google: true,
-        },
+        VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
     };
 
     const defaultUser = {

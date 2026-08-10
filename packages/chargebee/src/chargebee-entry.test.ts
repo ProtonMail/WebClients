@@ -3,7 +3,7 @@ import { fireEvent } from '@testing-library/dom';
 import type { BinData } from '../lib';
 import type { AuthorizedPaymentIntent, DirectDebitCustomer, PaymentIntent } from '../lib/types';
 import { resetChargebee } from './chargebee';
-import { formatCustomer, initialize } from './chargebee-entry';
+import { FALLBACK_EMAIL, formatCustomer, initialize } from './chargebee-entry';
 import type { DirectDebitSubmitEvent, GetHeightEvent, SetConfigurationEvent } from './message-bus';
 import { getMessageBus } from './message-bus';
 
@@ -103,6 +103,10 @@ const defaultSetConfigurationEvent: SetConfigurationEvent = {
         '--field-text-color': '#000000',
         '--selection-text-color': '#000000',
         '--selection-background-color': '#000000',
+        '--interaction-norm': '#000000',
+        '--interaction-norm-contrast': '#000000',
+        '--interaction-norm-major-1': '#000000',
+        '--interaction-norm-major-2': '#000000',
     },
     translations: {
         cardNumberPlaceholder: '0000 0000 0000 0000',
@@ -312,7 +316,7 @@ describe('Credit card', () => {
                 countryCode: 'US',
                 zip: '97531',
             },
-            email: 'fallback@payments.protontech.ch',
+            email: FALLBACK_EMAIL,
         });
 
         const { challengeCallback, thenCallback, catchCallback } = extractAuthorizeWith3dsCallbacks();

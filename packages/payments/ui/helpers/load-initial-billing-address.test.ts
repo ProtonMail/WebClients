@@ -3,6 +3,7 @@ import type {
     BillingAddressExtended,
     FullBillingAddress,
 } from '../../core/billing-address/billing-address';
+import { DEFAULT_PAYMENT_VENDOR_STATES } from '../../core/constants';
 import type { GetFullBillingAddressOptions, PaymentStatus } from '../../core/interface';
 import { loadInitialBillingAddress } from './load-initial-billing-address';
 
@@ -11,14 +12,7 @@ function createPaymentStatus(billingAddress: Partial<BillingAddress>): PaymentSt
         CountryCode: billingAddress.CountryCode ?? '',
         State: billingAddress.State ?? null,
         ZipCode: billingAddress.ZipCode ?? null,
-        VendorStates: {
-            Card: true,
-            Paypal: true,
-            Apple: true,
-            Cash: true,
-            Bitcoin: true,
-            Google: true,
-        },
+        VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
     };
 }
 

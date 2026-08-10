@@ -61,6 +61,9 @@ export const MEET_APP_NAME = `${BRAND_NAME} ${MEET_SHORT_APP_NAME}`;
 export const ACCOUNT_SHORT_APP_NAME = 'Account';
 export const ACCOUNT_APP_NAME = `${BRAND_NAME} ${ACCOUNT_SHORT_APP_NAME}`;
 
+// Third-party payment method brand name.
+export const IDEAL_BRAND_NAME = 'iDEAL';
+
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
     PROTONACCOUNTLITE: 'proton-account-lite',

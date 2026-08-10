@@ -80,6 +80,10 @@ it('should listen to set configuration event', () => {
             '--field-text-color': '#000000',
             '--selection-text-color': '#000000',
             '--selection-background-color': '#000000',
+            '--interaction-norm': '#000000',
+            '--interaction-norm-contrast': '#000000',
+            '--interaction-norm-major-1': '#000000',
+            '--interaction-norm-major-2': '#000000',
         },
         translations: {
             cardNumberPlaceholder: '0000 0000 0000 0000',

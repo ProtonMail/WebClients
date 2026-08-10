@@ -21,21 +21,27 @@ import type {
     OnGetBinHandler,
     OnSetApplePayPaymentIntentHandler,
     OnSetGooglePayPaymentIntentHandler,
+    OnSetIdealPaymentIntentHandler,
     OnSetPaypalPaymentIntentHandler,
     OnUpdateFieldsHandler,
     OnValidateFormHandler,
     OnVerifySavedCardHandler,
     SetApplePayPaymentIntentEvent,
     SetGooglePayPaymentIntentEvent,
+    SetIdealPaymentIntentEvent,
     SetPaypalPaymentIntentEvent,
 } from './message-bus';
 import { createMessageBus, getMessageBus } from './message-bus';
 import applePayTemplateString from './templates/apple-pay.html?raw';
 import cardTemplateString from './templates/card.html?raw';
 import googlePayTemplateString from './templates/google-pay.html?raw';
+import idealTemplateString from './templates/ideal.html?raw';
 import paypalTemplateString from './templates/paypal.html?raw';
 import warningIcon from './templates/warningicon.html?raw';
 import { trackFocus } from './ui-utils';
+
+export const FALLBACK_USERNAME: string = 'fallback';
+export const FALLBACK_EMAIL: string = 'fallback@payments.protontech.ch';
 
 function getChargebeeFormWrapper(): HTMLElement {
     const chargebeeFormWrapper = document.getElementById('chargebee-form-wrapper');
@@ -320,7 +326,7 @@ async function renderCreditCardForm() {
             billingAddress: {
                 countryCode,
             },
-            email: paymentIntent.email ?? 'fallback@payments.protontech.ch',
+            email: paymentIntent.email ?? FALLBACK_EMAIL,
         };
 
         const countiesWithZip = ['US', 'CA'];
@@ -502,6 +508,94 @@ async function renderPaypal() {
     };
 
     getMessageBus().onSetPaypalPaymentIntent = onSetPaypalPaymentIntent;
+}
+
+async function renderIdeal() {
+    setTemplate(idealTemplateString);
+
+    const cbInstance = getChargebeeInstance();
+    await cbInstance.load('ideal');
+    addCheckpoint('ideal_loaded');
+
+    let currentPaymentIntent: PaymentIntent | null = null;
+    let userName = '';
+    let userEmail = '';
+
+    const handleIdealPayment = () => {
+        addCheckpoint('ideal_clicked');
+        getMessageBus().sendIdealClickedMessage();
+
+        cbInstance
+            .handlePayment('ideal', {
+                paymentIntent: () => Promise.resolve(currentPaymentIntent),
+                paymentInfo: {
+                    userName,
+                    userEmail,
+                },
+                callbacks: {
+                    success: (result: AuthorizedPaymentIntent) => {
+                        addCheckpoint('ideal_payment_success');
+                        getMessageBus().sendIdealAuthorizedMessage({
+                            paymentIntent: result,
+                        });
+                    },
+                    error: (_: PaymentIntent, error: any) => {
+                        addCheckpoint('ideal_payment_failed');
+                        getMessageBus().sendIdealFailedMessage(error);
+                    },
+                    cancel: () => {
+                        addCheckpoint('ideal_cancelled');
+                        getMessageBus().sendIdealCancelledMessage();
+                    },
+                },
+            })
+            .catch((error: any) => {
+                addCheckpoint('ideal_payment_failed');
+                getMessageBus().sendIdealFailedMessage(error);
+            });
+    };
+
+    const handleSetIdealPaymentIntent = async (
+        event: SetIdealPaymentIntentEvent
+    ): Promise<MessageBusResponse<void>> => {
+        try {
+            currentPaymentIntent = event.paymentIntent;
+            const email = currentPaymentIntent?.email;
+
+            userName = email?.split('@')?.[0] || FALLBACK_USERNAME;
+            userEmail = email || FALLBACK_EMAIL;
+
+            const button = document.querySelector<HTMLButtonElement>('#ideal-button');
+            if (!button) {
+                return {
+                    status: 'failure',
+                    error: { message: 'CB ideal: button element not found' },
+                };
+            }
+
+            button.innerText = event.buttonLabel ?? '';
+            button.onclick = handleIdealPayment;
+            button.disabled = false;
+            addCheckpoint('ideal_set_payment_intent');
+
+            return {
+                status: 'success',
+                data: undefined,
+            };
+        } catch (error) {
+            return {
+                status: 'failure',
+                error,
+            };
+        }
+    };
+
+    const onSetIdealPaymentIntent: OnSetIdealPaymentIntentHandler = async (event, sendResponseToParent) => {
+        const response = await handleSetIdealPaymentIntent(event);
+        sendResponseToParent(response);
+    };
+
+    getMessageBus().onSetIdealPaymentIntent = onSetIdealPaymentIntent;
 }
 
 async function renderSavedCard() {
@@ -775,6 +869,9 @@ async function cbInit() {
     } else if (getConfiguration().paymentMethodType === 'google-pay') {
         addCheckpoint('rendering_google_pay');
         await renderGooglePay();
+    } else if (getConfiguration().paymentMethodType === 'ideal') {
+        addCheckpoint('rendering_ideal');
+        await renderIdeal();
     }
 
     addCheckpoint('rendered');

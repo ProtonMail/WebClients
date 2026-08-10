@@ -8,6 +8,7 @@ import type {
     PayPalDetails,
     PaymentMethodApplePay,
     PaymentMethodGooglePay,
+    PaymentMethodIdeal,
     PaymentMethodSepa,
     PaymentMethodType,
     PlainPaymentMethodType,
@@ -62,6 +63,10 @@ export function isSavedCardDetails(
 
 export function isSavedPaymentMethodSepa(obj: SavedPaymentMethod | undefined): obj is PaymentMethodSepa {
     return Boolean(obj && obj.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && !!obj.Details);
+}
+
+export function isSavedPaymentMethodIdeal(obj: SavedPaymentMethod | undefined): obj is PaymentMethodIdeal {
+    return Boolean(obj && obj.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL && !!obj.Details);
 }
 
 export function isSavedPaymentMethodApplePay(obj: SavedPaymentMethod | undefined): obj is PaymentMethodApplePay {

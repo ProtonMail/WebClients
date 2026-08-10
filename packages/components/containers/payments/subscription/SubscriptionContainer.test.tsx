@@ -8,7 +8,7 @@ import {
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
-import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
+import { CYCLE, DEFAULT_PAYMENT_VENDOR_STATES, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -152,14 +152,7 @@ describe('SubscriptionContainer', () => {
             freePlan: FREE_PLAN,
             paymentStatus: {
                 CountryCode: 'CH',
-                VendorStates: {
-                    Card: true,
-                    Cash: true,
-                    Bitcoin: true,
-                    Apple: true,
-                    Paypal: true,
-                    Google: true,
-                },
+                VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
             },
             initialBillingAddress: DEFAULT_TAX_BILLING_ADDRESS,
         };
