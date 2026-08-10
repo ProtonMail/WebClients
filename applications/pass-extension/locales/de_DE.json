@@ -1491,6 +1491,9 @@
       ],
       "Unsupported file type": [
         "Nicht unterstützter Dateityp"
+      ],
+      "This invite is no longer available": [
+        "Diese Einladung ist nicht mehr verfügbar"
       ]
     },
     "Error message": {
@@ -3003,7 +3006,8 @@
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
         "Sortiert nach Feld (zuerst Titel, dann Benutzername oder E-Mail, Website, Notizen) und Übereinstimmungsgenauigkeit (exakt, beginnt mit, enthält)."
