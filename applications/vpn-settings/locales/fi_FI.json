@@ -329,6 +329,9 @@
       "Delete account": [
         "Poista tili"
       ],
+      "Delete device profile": [
+        "Poista laiteprofiili"
+      ],
       "Delete Gateway": [
         "Oletusyhdyskäytävä"
       ],
@@ -415,6 +418,9 @@
       ],
       "Download CSV sample": [
         "Lataa CSV-näyte"
+      ],
+      "Download latest": [
+        "Lataa viimeisin"
       ],
       "Download logs": [
         "Lataa lokitiedot"
@@ -643,6 +649,9 @@
       ],
       "Increase": [
         "Lisää"
+      ],
+      "Instructions": [
+        "Ohjeet"
       ],
       "Invite": [
         "Kutsu"
@@ -4820,6 +4829,12 @@
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
       ],
+      "Invitation not found": [
+        "Kutsua ei löytynyt"
+      ],
+      "Item not found": [
+        "Kohdetta ei löytynyt"
+      ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
       ],
@@ -4841,6 +4856,9 @@
       ],
       "Name does not match": [
         "Nimi ei täsmää"
+      ],
+      "Name must not be empty": [
+        "Nimi ei voi olla tyhjä"
       ],
       "No calendars found to import": [
         "Tuotavia kalentereita ei löytynyt"
@@ -4898,6 +4916,9 @@
       ],
       "Permissions request failed.": [
         "Käyttöoikeuspyyntö epäonnistui."
+      ],
+      "Photo not found": [
+        "Kuvaa ei löytynyt"
       ],
       "Please add a payment method before reactivating your subscription": [
         "Lisätkää maksutapa ennen kuin aktivoitte tilauksenne uudelleen"
@@ -5006,6 +5027,9 @@
       ],
       "Server not found": [
         "Palvelinta ei löytynyt"
+      ],
+      "Signature is missing": [
+        "Allekirjoitus puuttuu"
       ],
       "Signature verification failed": [
         "Allekirjoituksen vahvistus epäonnistui"
@@ -6034,6 +6058,14 @@
         "Teratavua"
       ]
     },
+    "Filter": {
+      "All": [
+        "Kaikki"
+      ],
+      "Errors": [
+        "Virheet"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } päivitettiin"
@@ -6096,6 +6128,11 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gateway monitor upsell": {
+      "User - ${ userPrice }": [
+        "Käyttäjä - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -8046,6 +8083,9 @@
       "Low Priority": [
         "Alhainen tärkeys"
       ],
+      "macOS": [
+        "macOS"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Monet sähköpostipalvelut saattavat hylätä tai suodattaa sähköpostisi roskapostiksi, jos SPF/DKIM/DMARC puuttuvat tai niitä ei ole määritetty oikein."
       ],
@@ -9231,6 +9271,9 @@
       ],
       "X": [
         "X"
+      ],
+      "You": [
+        "Sinä"
       ],
       "You already have a free account": [
         "Sinulla on jo ilmainen tili"
@@ -11356,6 +11399,14 @@
       ],
       "Sign in": [
         "Kirjaudu sisään"
+      ]
+    },
+    "Members table usage": {
+      "Today": [
+        "Tänään"
+      ],
+      "Yesterday": [
+        "Eilen"
       ]
     },
     "Message": {
@@ -13856,6 +13907,14 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Päivitä ${ upsellPlanTitle } -tilaukseen"
+      ]
+    },
+    "Property": {
+      "key": [
+        "avain"
+      ],
+      "name": [
+        "nimi"
       ]
     },
     "Property type": {
@@ -16744,11 +16803,17 @@
       ]
     },
     "Table header": {
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
       "Size": [
         "Koko"
       ],
       "Status": [
         "Tila"
+      ],
+      "User": [
+        "Käyttäjä"
       ]
     },
     "TableHeader": {
@@ -17141,6 +17206,9 @@
       "Choose a provider": [
         "Valitse tarjoaja"
       ],
+      "Choose a removal method": [
+        "Valitse poistotapa"
+      ],
       "Choose user affiliations": [
         "Valitse käyttäjäyhteydet"
       ],
@@ -17240,6 +17308,9 @@
       ],
       "Created": [
         "Luotu"
+      ],
+      "Created!": [
+        "Luotu!"
       ],
       "Creating user accounts": [
         "Käyttäjätilien luonti"
@@ -17604,6 +17675,9 @@
       "Information exposed in breach": [
         "Tietomurrossa paljastuneet tiedot"
       ],
+      "Install it manually": [
+        "Asenna se manuaalisesti"
+      ],
       "Integrations": [
         "Integraatiot"
       ],
@@ -17627,6 +17701,9 @@
       ],
       "Lower your cost without losing features": [
         "Alenna kustannuksiasi menettämättä ominaisuuksia"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Main password": [
         "Pääsalasana"
@@ -18193,6 +18270,9 @@
       "What is the dark web?": [
         "Mikä on pimeä verkko?"
       ],
+      "Windows": [
+        "Windows"
+      ],
       "Wipe all logs?": [
         "Pyyhitäänkö kaikki lokitiedot?"
       ],
@@ -18603,7 +18683,7 @@
         "Lahjakortti"
       ],
       "Migration": [
-        "Migraatio"
+        "Siirto"
       ],
       "Payment": [
         "Maksu"

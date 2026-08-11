@@ -662,9 +662,6 @@
       "Invite user": [
         "邀请用户"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "保留"
       ],
@@ -737,8 +734,8 @@
       "Mark as resolved": [
         "标记为已解决"
       ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
+      "Migrate": [
+        "迁移"
       ],
       "More benefits": [
         "更多福利"
@@ -4842,6 +4839,9 @@
       "Name does not match": [
         "名称不正确"
       ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
+      ],
       "No calendars found to import": [
         "未找到可导入的日历"
       ],
@@ -8882,9 +8882,6 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "要启用始终开启 VPN，需要在每台 Mac 上安装配置文件 — ${ VPN_APP_NAME } 客户端会在配置文件就位后自动强制执行该设备配置文件。"
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "要启用始终开启 VPN，设备配置文件需要到达每台设备上的 ${ policiesPath } — ${ VPN_APP_NAME } 客户端会在该位置检测到它并自动强制执行该配置文件。"
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "为确保您账户的最高安全性，请禁用**通过密保邮箱恢复**！"
       ],
@@ -9058,9 +9055,6 @@
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "使用其他 MDM？任何支持部署配置文件的 MDM 均可使用。请参阅您的 MDM 文档，了解如何上传并将其分配给您的设备集群。"
-      ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "使用其他 MDM？任何支持部署文件或执行 PowerShell 脚本的 MDM 均可使用。请参阅您的 MDM 文档以获取更多信息。"
       ],
       "Vault created": [
         "保险库已创建"
@@ -9253,6 +9247,9 @@
       ],
       "X": [
         "X"
+      ],
+      "You": [
+        "您"
       ],
       "You already have a free account": [
         "您的账户已经是免费版了"
@@ -13823,6 +13820,11 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "升级至 ${ upsellPlanTitle }"
+      ]
+    },
+    "Property": {
+      "key": [
+        "密钥"
       ]
     },
     "Property type": {

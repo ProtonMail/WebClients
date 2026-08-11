@@ -662,9 +662,6 @@
       "Invite user": [
         "Invita utente"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "Mantieni"
       ],
@@ -736,9 +733,6 @@
       ],
       "Mark as resolved": [
         "Segna come risolto"
-      ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
       ],
       "More benefits": [
         "Più vantaggi"
@@ -8961,9 +8955,6 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Per abilitare la VPN sempre attiva, è necessario installare il profilo di configurazione su ogni Mac: il client ${ VPN_APP_NAME } applica automaticamente il profilo del dispositivo una volta installato."
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "Per abilitare la VPN sempre attiva, il profilo del dispositivo deve essere presente in ${ policiesPath } su ogni dispositivo: il client ${ VPN_APP_NAME } lo rileva in quella posizione e applica automaticamente il profilo."
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Per garantire la massima sicurezza possibile del tuo account, disattiva il **recupero tramite email di recupero**."
       ],
@@ -9131,9 +9122,6 @@
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Utilizzi un altro MDM? È compatibile qualsiasi MDM che supporti la distribuzione di un profilo di configurazione. Consulta la documentazione del tuo MDM per sapere come caricarlo e assegnarlo al tuo parco dispositivi."
-      ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "Utilizzi un altro MDM? È compatibile qualsiasi MDM che supporti la distribuzione di file o l'esecuzione di script PowerShell. Per ulteriori informazioni, consulta la documentazione del tuo MDM."
       ],
       "Vault created": [
         "Cassaforte creata"
