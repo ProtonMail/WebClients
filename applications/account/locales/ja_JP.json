@@ -1080,9 +1080,6 @@
       "Manage communication preferences": [
         "コミュニケーション設定を管理する"
       ],
-      "Manage company": [
-        "会社を管理"
-      ],
       "Manage folders": [
         "フォルダーを管理"
       ],
@@ -12097,6 +12094,9 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "この購読解除リンクは有効期限が切れています。 このメーリング リストから最新のメールを開いてください。"
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "このユーザーはメールアドレスが ${ BRAND_NAME } に登録されていないため、移行することができません。"
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "このユーザーは組織の経理責任を負っています。このユーザーを降格させた場合、あなたが経理責任を負います。"
       ],
@@ -12222,6 +12222,9 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } 製品の最新の開発状況を把握するために、さまざまなメールや ${ blogLink } を随時購読していただけます。"
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "このユーザーを移行するには、${ domainNamesLink } にメールドメインを追加して確認してください"
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "乱用や詐欺を防ぐため、最低 ${ minimumDonation } の寄付をお願いしております。これにより、世界中でデジタルプライバシーを保護する ${ protonFoundationLink } の活動をサポートし、次世代を守ることに繋がります。"
@@ -12714,9 +12717,6 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "管理者としてのアカウントでアクセスし管理することが可能です。"
-      ],
-      "You can now access and manage the company as an administrator.": [
-        "管理者として会社にアクセスし、管理できるようになりました。"
       ],
       "You can now close this tab.": [
         "これで、このタブを閉じることができます。"
@@ -24961,9 +24961,6 @@
       ],
       "Make your business stand out": [
         "ビジネスの存在感を高める"
-      ],
-      "Manage company": [
-        "会社を管理"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Windows、Mac、Android、iOSのデバイス間でファイルを管理します。"
