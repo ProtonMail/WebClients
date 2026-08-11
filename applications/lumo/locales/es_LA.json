@@ -1950,7 +1950,7 @@
       "Expires tomorrow": [
         "Expira mañana"
       ],
-      "Extract, analyse, and summarise documents, PDFs, and images.": [
+      "Extract, analyze, and summarise documents, PDFs, and images.": [
         "Extraiga, analice y resuma documentos, archivos PDF e imágenes."
       ],
       "File too large for preview (>150k tokens)": [
@@ -3193,11 +3193,14 @@
       "Add to favorites": [
         "Añadir a favoritos"
       ],
-      "Analyse another export": [
+      "Analyze another export": [
         "Analizar otra exportación"
       ],
       "Ask the model to be more careful and thorough": [
         "Pida al modelo que sea más cuidadoso y exhaustivo"
+      ],
+      "Back": [
+        "Atrás"
       ],
       "Cancel": [
         "Cancelar"
@@ -3222,6 +3225,9 @@
       ],
       "Close": [
         "Cerrar"
+      ],
+      "Continue": [
+        "Continuar"
       ],
       "Copy link & caption": [
         "Copiar enlace y subtítulo"
@@ -3285,6 +3291,9 @@
       ],
       "Favorite": [
         "Favorito"
+      ],
+      "Generate my report": [
+        "Generar mi reporte"
       ],
       "Go to all projects": [
         "Ir a todos los proyectos"
@@ -3721,7 +3730,7 @@
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Navegue hasta la carpeta de ${ DRIVE_SHORT_APP_NAME } que desea enlazar a este proyecto y luego haga clic en «Enlazar esta carpeta»."
       ],
-      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100M people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
+      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100 million people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
         "Creado por ${ BRAND_NAME }, la marca de privacidad confiada por más de 100 millones de personas y del equipo detrás de ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } y ${ PASS_APP_NAME }."
       ],
       "Built-in ${ BRAND_NAME } agent": [
@@ -3733,11 +3742,17 @@
       "Check what your AIs store about you and delete what you no longer need.": [
         "Compruebe qué información almacenan los sistemas de IA sobre usted y elimine lo que ya no necesite."
       ],
+      "Choose or drop your .zip or conversations.json file. We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
+        "Seleccione o suelte su archivo .zip o conversations.json. Analizaremos sus ${ PAPER_TRAIL_LIMITS.maxPrompts } prompts más recientes."
+      ],
       "Click Settings → Data controls": [
         "Pulse Ajustes → Controles de datos"
       ],
       "Click Settings → Privacy": [
         "Pulse en Ajustes → Privacidad"
+      ],
+      "Click your profile icon in the bottom-left corner of the page": [
+        "Pulse el ícono de su perfil en la esquina inferior izquierda de la página"
       ],
       "Conversation encrypted": [
         "Conversación cifrada"
@@ -3769,14 +3784,23 @@
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Descubra qué información sobre usted podría obtener la IA de las grandes tecnológicas a partir de su historial de chat y obtenga una puntuación de privacidad que podrá compartir."
       ],
+      "Drag and drop or click to browse": [
+        "Arrastre y suelte o pulse para navegar"
+      ],
       "Drive files are not available for guest users": [
         "Los archivos de Drive no están disponibles para usuarios invitados"
       ],
       "Every conversation leaves behind small clues. On their own, they don't say much. Together, they can reveal a surprisingly detailed picture of your life. This report shows what other AI providers can infer from your chats. But unlike them, ${ LUMO_SHORT_APP_NAME } doesn't see your data.": [
         "Cada conversación deja pistas pequeñas. Por sí solas, no dicen mucho. Juntas, pueden revelar una imagen sorprendentemente detallada de su vida. Este informe muestra lo que otros proveedores de IA pueden inferir de sus chats. Pero a diferencia de ellos, ${ LUMO_SHORT_APP_NAME } no ve sus datos."
       ],
+      "Every conversation with the big AI providers leaves a digital paper trail. Your job. Your health. Your relationships. Even where you live.": [
+        "Cada conversación con los grandes proveedores de IA deja una huella digital. Su trabajo. Su salud. Sus relaciones. Incluso dónde vive."
+      ],
       "Example prompts shown when a conversation begins.": [
         "Ejemplos de instrucciones que se muestran al iniciar una conversación."
+      ],
+      "Export your data from ChatGPT or Claude, upload it privately, and we’ll show you what big tech AI has learned about you.": [
+        "Exporte sus datos de ChatGPT o Claude, cárguelos de forma privada y le mostraremos lo que las grandes empresas de IA han aprendido de usted."
       ],
       "Exposure by life area only, no personal details.": [
         "Información compartida únicamente por área de residencia, sin datos personales."
@@ -3802,8 +3826,14 @@
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "Obtenga respuestas más rápidas y precisas de la web, con citas para que pueda verificar la fuente."
       ],
+      "If a profile suggests you can pay more or that you’re in a hurry, you may see a higher price than the next person.": [
+        "Si un perfil sugiere que puede pagar más, o que tiene prisa, es posible que vea un precio más alto que el de otra persona."
+      ],
       "Image": [
         "Imagen"
+      ],
+      "In the pop-up window, click Confirm export": [
+        "En la ventana emergente, pulse Confirmar exportación"
       ],
       "Inferences drawn only from your prompts — grouped by life area.": [
         "Inferencias extraídas únicamente de sus prompts, agrupadas por área de la vida."
@@ -3826,6 +3856,9 @@
       "Lockdown Mode is enabled on your device": [
         "El Modo hermético está activado en su dispositivo"
       ],
+      "Look for Export data, then click Export": [
+        "Busque Exportar datos, luego pulse Exportar"
+      ],
       "No favorites yet. Star a chat to find it here quickly.": [
         "Aún no hay favoritos. Destaque un chat para encontrarlo aquí rápidamente."
       ],
@@ -3840,6 +3873,9 @@
       ],
       "PASTED": [
         "PEGADO"
+      ],
+      "Please upload your AI export before continuing.": [
+        "Cargue su exportación de IA antes de continuar."
       ],
       "Processing file...": [
         "Procesando archivo..."
@@ -3858,6 +3894,9 @@
       ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Mire lo que las Big Tech de IA saben de usted. Hecho con ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Sign in to your ChatGPT account on chatgpt.com": [
+        "Inicie sesión en su cuenta de ChatGPT en chatgpt.com"
       ],
       "Sign in to your Claude account at claude.ai": [
         "Inicie sesión en su cuenta de Claude en claude.ai"
@@ -3879,6 +3918,9 @@
       ],
       "The more an attacker knows about you, the more believable the phishing message. Personalized scams are far harder to spot.": [
         "Cuanto más sepa un atacante sobre usted, más creíble será el mensaje de suplantación. Las estafas personalizadas son mucho más difíciles de detectar."
+      ],
+      "There wasn't enough information in the data you uploaded to build a meaningful profile. Either you haven't used this AI much, or your exported data doesn't contain enough detail for us to make reliable inferences.": [
+        "Los datos que cargó no contenían información suficiente para crear un perfil significativo. O no ha usado mucho esta IA, o bien los datos que exportó no tienen el nivel de detalle necesario para que podamos hacer inferencias fiables."
       ],
       "These are the most sensitive categories Big Tech AI could infer about you from your chats — even when you never typed them out explicitly.": [
         "Estas son las categorías más delicadas que la IA de las grandes empresas tecnológicas podría inferir sobre usted a partir de sus chats, incluso cuando nunca los haya escrito explícitamente."
@@ -3945,6 +3987,9 @@
       ],
       "Your report is stored unencrypted in this browser only. It never leaves your device and is not sent to ${ LUMO_SHORT_APP_NAME }'s servers.": [
         "Su informe se almacena sin cifrar únicamente en este navegador. Nunca sale de su dispositivo y no se envía a los servidores de ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "You’ll receive your data export as a download link to your email. This may take some time depending on the size of your export, and is not available for Business or Enterprise accounts.": [
+        "Recibirá la exportación de sus datos como un enlace de descarga en su correo electrónico. Esto puede tardar un tiempo dependiendo del tamaño de la exportación y no está disponible para cuentas Business o Enterprise."
       ]
     },
     "collider_2025:Inspiration suggestion prompt": {
@@ -4037,6 +4082,9 @@
       "9:16": [
         "9:16"
       ],
+      "AI platform": [
+        "Plataforma IA"
+      ],
       "Card theme": [
         "Tema de la tarjeta"
       ],
@@ -4075,6 +4123,12 @@
       ],
       "Folder name": [
         "Nombre de la carpeta"
+      ],
+      "Generating": [
+        "Generando"
+      ],
+      "Generating your report": [
+        "Generando su reporte"
       ],
       "High": [
         "Alto"
@@ -4118,11 +4172,20 @@
       "Personalized pricing": [
         "Precio personalizado"
       ],
+      "Platform": [
+        "Plataforma"
+      ],
       "Politics": [
         "Política"
       ],
+      "Progress": [
+        "Progreso"
+      ],
       "Project Instructions (optional)": [
         "Instrucciones del proyecto (opcional)"
+      ],
+      "Save report on this device to view it later": [
+        "Guardar reporte en este dispositivo para verlo después"
       ],
       "Scams": [
         "Estafas"
@@ -4144,6 +4207,9 @@
       ],
       "Untitled project": [
         "Proyecto sin nombre"
+      ],
+      "Upload": [
+        "Cargar"
       ]
     },
     "collider_2025:Notification": {
@@ -4717,6 +4783,9 @@
       "Linked Drive Folder": [
         "Carpeta de Drive vinculada"
       ],
+      "Looks like you've kept a low profile": [
+        "Parece que ha mantenido un perfil bajo"
+      ],
       "Meet your AI Paper Trail": [
         "Conozca su rastro digital de IA"
       ],
@@ -4822,6 +4891,9 @@
       "Two models, two modes": [
         "Dos modelos, dos modos"
       ],
+      "Upload your data export": [
+        "Cargue su exportación de datos"
+      ],
       "Use AI on your terms": [
         "Use la IA bajo sus términos"
       ],
@@ -4848,6 +4920,9 @@
       ],
       "Your image gallery is empty": [
         "Su galería de imágenes está vacía"
+      ],
+      "Your recent reports": [
+        "Sus reportes recientes"
       ],
       "Your shareable card": [
         "Su tarjeta compartible"
@@ -5961,6 +6036,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Se requiere un mensaje cuando se reporte una infracción de derechos de autor o datos robados"
+      ],
       "Amount above the maximum.": [
         "Cantidad superior al máximo."
       ],
@@ -5970,11 +6048,68 @@
       "An error occurred": [
         "Ocurrió un error"
       ],
+      "Bookmark password is not available": [
+        "La contraseña del marcador no está disponible"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "No se puede añadir una foto al álbum sin un nombre válido"
+      ],
+      "Cannot download a folder": [
+        "No se puede descargar una carpeta"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "No se puede mover un elemento si un nombre válido, renombre el elemento primero"
+      ],
+      "Cannot share root folder": [
+        "No se puede compartir la carpeta raíz"
+      ],
+      "Cannot verify the author of this file": [
+        "No se puede verificar el autor de este archivo"
+      ],
+      "Cannot verify who uploaded this file": [
+        "No se puede verificar quién cargó este archivo"
+      ],
       "Checkout expired, please try again": [
         "La compra ha expirado, intente de nuevo"
       ],
       "Company name or personal name is required": [
         "Se requiere el nombre de la empresa o el nombre personal"
+      ],
+      "Copy operation aborted": [
+        "Operación de copiado abortada"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "No se permite copiar un elemento en un elemento que no sea carpeta"
+      ],
+      "Could not find an available name": [
+        "No se pudo encontrar un nombre disponible"
+      ],
+      "Could not load sharing details": [
+        "No se pudieron cargar los detalles compartidos"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "No se pudo cargar la vista previa de imagen: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "No se pudo leer parte de este archivo: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "No se pudo desbloquear la carpeta principal"
+      ],
+      "Could not unlock this item": [
+        "No se pudo desbloquear este elemento"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "No se permite crear documentos en elementos que no sean carpetas"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "No se permite crear archivos en elementos que no sean carpetas"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "No se permite crear carpetas en elementos que no sean carpetas"
+      ],
+      "Device not found": [
+        "Dispositivo no encontrado"
       ],
       "Domain not available, try again later": [
         "Dominio no disponible, inténtelo más tarde"
@@ -5994,8 +6129,47 @@
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
       ],
+      "Expiration date cannot be in the past": [
+        "La fecha de expiración no puede ser pasada"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Error al descifrar la clave del marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Error al descifrar el nombre del marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Error al descifrar la contraseña del marcador: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Error al descifrar la clave de contenido: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Error al descifrar el nombre del elemento: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Error al descifrar la clave del nodo: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Error al descifrar los metadatos de la revisión"
+      ],
+      "Failed to get inviter keys": [
+        "Error al obtener las claves de quien invita"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Error al cargar los datos de la suscripción. Intente más tarde."
+      ],
+      "Failed to verify invitation": [
+        "Error al verificar la invitación"
+      ],
+      "File download failed due to empty response": [
+        "Error al descargar el archivo debido a una respuesta vacía"
+      ],
+      "File has no revision": [
+        "El archivo no tiene revisión"
+      ],
+      "Image preview not found": [
+        "Vista previa de imagen no encontrada"
       ],
       "Incorrect username": [
         "Nombre de usuario incorrecto"
@@ -6021,11 +6195,54 @@
       "Invalid verification code": [
         "Código de verificación inválido"
       ],
+      "Invitation not found": [
+        "Invitación no encontrada"
+      ],
+      "Item not found": [
+        "Elemento no encontrado"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "El enlace público anterior no se puede actualizar. Cree otro enlace público."
+      ],
+      "Missing inviter email": [
+        "Falta el correo electrónico de invitación"
+      ],
       "Missing signature": [
         "Falta la firma"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Falta la firma para ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Operación de mover abortada"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "No se permite mover un elemento en un elemento que no sea carpeta"
+      ],
+      "Moving root item is not allowed": [
+        "No está permitido mover el elemento raíz"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "El nombre debe tener como máximo ${ MAX_NODE_NAME_LENGTH } caracter",
+        "El nombre debe tener como máximo ${ MAX_NODE_NAME_LENGTH } caracteres"
+      ],
+      "Name must not be empty": [
+        "El nombre no debe estar vacío"
+      ],
+      "No file data was received. Please try again.": [
+        "No se recibió ningún dato del archivo. Intente de nuevo."
+      ],
       "Not a valid number": [
         "Número no válido"
+      ],
+      "Only admins can convert external invitations": [
+        "Solo los administradores pueden convertir invitaciones externas"
+      ],
+      "Operation aborted": [
+        "Operación abortada"
+      ],
+      "Operation failed, try again later": [
+        "Operación fallida, intente de nuevo más tarde"
       ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada"
@@ -6035,6 +6252,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "La clave de la organización debe activarse para crear usuarios no privados"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte del archivo parece estar corrupto"
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
@@ -6050,6 +6270,12 @@
       ],
       "Payment process not supported": [
         "Proceso de pago no soportado"
+      ],
+      "Photo is already in the target album": [
+        "La foto ya está en el álbum objetivo"
+      ],
+      "Photo not found": [
+        "Foto no encontrada"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Revise si su IVA está registrado para el IVA transfronterizo"
@@ -6084,14 +6310,41 @@
       "Process aborted": [
         "Proceso abortado"
       ],
+      "Renaming root item is not allowed": [
+        "No está permitido renombrar el elemento raíz"
+      ],
+      "Request aborted": [
+        "Solicitud abortada"
+      ],
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
       "Reverse charge scheme is not supported for this plan": [
         "El esquema de cobro inverso no es compatible con este plan"
       ],
+      "Signature is missing": [
+        "Falta la firma"
+      ],
       "Signature verification failed": [
         "Error en la verificación de la firma"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Error en la verificación de la firma: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Error al verificar la firma de ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Error al verificar la firma de ${ signatureType }: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Error al cargar algunos datos del archivo. Intente de nuevo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Error al cargar algunas partes del archivo. Intente de nuevo."
+      ],
+      "Some items could not be loaded": [
+        "No se pudieron cargar algunos elementos"
       ],
       "Something went wrong": [
         "Ocurrió un error."
@@ -6114,6 +6367,9 @@
       "The minimum donation amount is ${ price }": [
         "El importe mínimo de la donación es de ${ price }"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "El archivo cargado no coincide con el original. Intente de nuevo."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
@@ -6125,6 +6381,30 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
+      ],
+      "This file has missing crypto material": [
+        "Este archivo tiene material cripto faltante"
+      ],
+      "This file has no version available to download": [
+        "Este archivo no tiene una versión disponible para descargar"
+      ],
+      "This file version could not be uploaded": [
+        "No se pudo cargar esta versión del archivo"
+      ],
+      "This item has no image preview": [
+        "Este elemento no tiene vista previa de imagen"
+      ],
+      "This item is no longer shared": [
+        "Este elemento ya no está compartido"
+      ],
+      "This item is not shared": [
+        "Este elemento no está compartido"
+      ],
+      "Too many server errors, please try again later": [
+        "Demasiados errores del servidor, intente de nuevo más tarde"
+      ],
+      "Too many server requests, please try again later": [
+        "Demasiadas solicitudes del servidor, intente de nuevo más tarde"
       ],
       "Try using only letters, numerals, and _.-": [
         "Intente usando solo letras, números y _.-"
@@ -6144,11 +6424,35 @@
       "VAT number must start with ${ prefixes }": [
         "El número IVA debe comenzar con ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "Las claves de verificación no están disponibles"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Las claves de verificación para ${ signatureType } no están disponibles"
+      ],
       "We couldn’t send a verification code using this method.": [
         "No pudimos enviar un código de verificación usando este método."
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
+      ],
+      "You can create public links for your own files only": [
+        "Puede crear enlaces públicos solo para sus propios archivos"
+      ],
+      "You can only leave items that are shared with you": [
+        "Solo puede abandonar elementos que fueron compartidos con usted"
+      ],
+      "You can only upload a new version to a file": [
+        "Solo puede cargar una versión nueva a este archivo"
+      ],
+      "You can update a public link for your own files only": [
+        "Puede actualizar un enlace público solo para sus propios archivos"
+      ],
+      "You do not have access to this item": [
+        "No tiene acceso a este elemento"
+      ],
+      "You do not have access to this shared item": [
+        "No tiene acceso a este elemento compartido"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
@@ -6387,6 +6691,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_BRAND_NAME }"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe"
       ],
@@ -6477,6 +6784,9 @@
       ],
       "Attention required": [
         "Atención requerida"
+      ],
+      "Author is not provided on public link": [
+        "No se proporciona al autor en el enlace público"
       ],
       "Awaiting transaction": [
         "Esperando la transacción"
@@ -6887,6 +7197,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Se usa 3-D Secure para proteger sus pagos."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Le redirigiremos a ${ IDEAL_BRAND_NAME } en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Le redirigiremos a PayPal en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
@@ -8832,6 +9145,9 @@
       "More plans are available in other currencies": [
         "Más planes disponibles en otras divisas"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagar con ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Se requiere un método de pago para activar la suscripción después de que finalice el periodo de prueba."
       ],
@@ -8913,6 +9229,9 @@
       "You will soon be redirected to verify your payment.": [
         "Pronto se le redirigirá para verificar el pago."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Su moneda ha sido cambiada a euros (€) porque ${ IDEAL_BRAND_NAME } solo admite pagos en euros."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo admiten pagos en euros."
       ],
@@ -8924,6 +9243,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Error al inicializar ${ IDEAL_BRAND_NAME }. Intente de nuevo más tarde."
+      ],
       "Invalid card number": [
         "Número de tarjeta inválido"
       ],
@@ -8946,6 +9268,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Algo salió mal. Falló la verificación de Google Pay."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Al confirmar este pago, autoriza a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a su banco para que realice el cargo en su cuenta. Puede obtener un reembolso en un plazo de 8 semanas a partir de la fecha del cargo, según las condiciones de su acuerdo con su banco."
       ]
     },
     "Payments.info": {
@@ -9146,6 +9473,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Actualizar a ${ upsellPlanTitle }"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atributos"
+      ],
+      "content key": [
+        "clave de contenido"
+      ],
+      "hash key": [
+        "clave hash"
+      ],
+      "key": [
+        "clave"
+      ],
+      "membership": [
+        "suscripción"
+      ],
+      "name": [
+        "nombre"
       ]
     },
     "Provider option": {

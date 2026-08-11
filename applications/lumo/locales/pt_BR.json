@@ -1947,9 +1947,6 @@
       "Expires tomorrow": [
         "Expira amanhã"
       ],
-      "Extract, analyse, and summarise documents, PDFs, and images.": [
-        "Extrair, analisar e resumir documentos, PDFs e imagens."
-      ],
       "File too large for preview (>150k tokens)": [
         "Arquivo muito grande para pré-visualização (>150k tokens)"
       ],
@@ -3181,11 +3178,11 @@
       "Add to favorites": [
         "Adicionar aos favoritos"
       ],
-      "Analyse another export": [
-        "Analisar outra exportação"
-      ],
       "Ask the model to be more careful and thorough": [
         "Peça ao modelo para ser mais cauteloso e detalhista"
+      ],
+      "Back": [
+        "Voltar"
       ],
       "Cancel": [
         "Cancelar"
@@ -3210,6 +3207,9 @@
       ],
       "Close": [
         "Fechar"
+      ],
+      "Continue": [
+        "Continuar"
       ],
       "Copy link & caption": [
         "Copiar link e legenda"
@@ -3706,9 +3706,6 @@
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Navegue até a pasta do ${ DRIVE_SHORT_APP_NAME } que você deseja vincular a este projeto e clique em \"Vincular esta pasta\"."
       ],
-      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100M people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
-        "Desenvolvido pela ${ BRAND_NAME }, a marca de privacidade em que mais de 100 milhões de pessoas confiam e a equipe por trás da ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } e ${ PASS_APP_NAME }."
-      ],
       "Built-in ${ BRAND_NAME } agent": [
         "Agente integrado da ${ BRAND_NAME }"
       ],
@@ -3980,6 +3977,9 @@
       "9:16": [
         "9:16"
       ],
+      "AI platform": [
+        "Plataforma de IA"
+      ],
       "Card theme": [
         "Tema do cartão"
       ],
@@ -4018,6 +4018,12 @@
       ],
       "Folder name": [
         "Nome da pasta"
+      ],
+      "Generating": [
+        "Gerando"
+      ],
+      "Generating your report": [
+        "Gerando seu relatório"
       ],
       "High": [
         "Alta"
@@ -4061,11 +4067,20 @@
       "Personalized pricing": [
         "Preços personalizados"
       ],
+      "Platform": [
+        "Plataforma"
+      ],
       "Politics": [
         "Política"
       ],
+      "Progress": [
+        "Progresso"
+      ],
       "Project Instructions (optional)": [
         "Instruções do projeto (opcional)"
+      ],
+      "Save report on this device to view it later": [
+        "Salve o relatório neste dispositivo para visualizá-la mais tarde"
       ],
       "Scams": [
         "Golpes"
@@ -4087,6 +4102,9 @@
       ],
       "Untitled project": [
         "Projeto sem título"
+      ],
+      "Upload": [
+        "Enviar"
       ]
     },
     "collider_2025:Notification": {
@@ -4687,6 +4705,9 @@
       "No chat history yet. Let's start chatting!": [
         "Nenhum histórico de bate-papo ainda. Vamos começar a conversar!"
       ],
+      "No chats yet": [
+        "Sem bate-papos ainda"
+      ],
       "No favorites yet": [
         "Nenhum favorito"
       ],
@@ -4782,6 +4803,9 @@
       ],
       "Your image gallery is empty": [
         "Sua galeria de imagem está vazia"
+      ],
+      "Your recent reports": [
+        "Seus relatórios recentes"
       ],
       "Your shareable card": [
         "Seu cartão compartilhável"
@@ -5904,11 +5928,47 @@
       "An error occurred": [
         "Ocorreu um erro"
       ],
+      "Cannot download a folder": [
+        "Não é possível baixar uma pasta"
+      ],
+      "Cannot share root folder": [
+        "Não é possível compartilhar a pasta raiz"
+      ],
+      "Cannot verify the author of this file": [
+        "Não é possível verificar o autor deste arquivo"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Não é possível verificar quem é autor enviou este arquivo"
+      ],
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
       ],
       "Company name or personal name is required": [
         "É necessário informar o nome da empresa ou o nome pessoal"
+      ],
+      "Copy operation aborted": [
+        "Operação de cópia interrompida"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Não é permitido copiar o item para um local que não seja uma pasta"
+      ],
+      "Could not load sharing details": [
+        "Não foi possível carregar os detalhes do compartilhamento"
+      ],
+      "Could not unlock the parent folder": [
+        "Não foi possível desbloquear a pasta pai"
+      ],
+      "Could not unlock this item": [
+        "Não foi possível desbloquear este item"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Não é permitido criar arquivos dentro de itens que não sejam pastas"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Não é permitido criar pastas dentro de itens que não sejam pastas"
+      ],
+      "Device not found": [
+        "Dispositivo não encontrado"
       ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
@@ -5928,8 +5988,29 @@
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Falha ao descriptografar a chave de marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Falha ao descriptografar a senha dos favoritos: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Falha ao descriptografar a chave de conteúdo: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Falha ao descriptografar o nome do item: ${ message }"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Falha ao carregar os dados da assinatura. Tente novamente mais tarde."
+      ],
+      "Failed to verify invitation": [
+        "Erro ao verificar o convite"
+      ],
+      "File has no revision": [
+        "O arquivo não possui revisão"
+      ],
+      "Image preview not found": [
+        "Pré-visualização da imagem não encontrada"
       ],
       "Incorrect username": [
         "Nome de usuário incorreto"
@@ -5955,11 +6036,42 @@
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
+      "Invitation not found": [
+        "Convite não encontrado"
+      ],
+      "Item not found": [
+        "Item não encontrado"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "O link público antigo não pode ser atualizado. Crie um novo link público."
+      ],
+      "Missing inviter email": [
+        "E-mail de quem fez o convite ausente"
+      ],
       "Missing signature": [
         "Assinatura ausente"
       ],
+      "Moving item to a non-folder is not allowed": [
+        "Não é permitido mover o item para um local que não seja uma pasta"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caractere",
+        "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caracteres"
+      ],
+      "Name must not be empty": [
+        "O nome não pode estar vazio"
+      ],
+      "No file data was received. Please try again.": [
+        "Nenhum dado de arquivo foi recebido. Tente novamente."
+      ],
       "Not a valid number": [
         "Não é um número válido"
+      ],
+      "Operation aborted": [
+        "Operação abortada"
+      ],
+      "Operation failed, try again later": [
+        "Erro na operação, tente novamente mais tarde"
       ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
@@ -5969,6 +6081,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "A chave da organização deve ser ativada para criar usuários não privados"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte do arquivo parece estar corrompida"
       ],
       "Passwords do not match": [
         "As senhas não correspondem"
@@ -5984,6 +6099,9 @@
       ],
       "Payment process not supported": [
         "Processo de pagamento não suportado"
+      ],
+      "Photo not found": [
+        "Foto não encontrada"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Por favor, verifique se o seu ABN está registrado para IVA transfronteiriço"
@@ -6018,14 +6136,35 @@
       "Process aborted": [
         "Processo abortado"
       ],
+      "Request aborted": [
+        "Solicitação abortada"
+      ],
       "Request timed out": [
         "A solicitação expirou"
       ],
       "Reverse charge scheme is not supported for this plan": [
         "O regime de reverse charge não é suportado para este plano"
       ],
+      "Signature is missing": [
+        "Assinatura ausente"
+      ],
       "Signature verification failed": [
         "Erro na verificação da assinatura"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "A verificação de assinatura para ${ signatureType } falhou"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "A verificação de assinatura para ${ signatureType } falhou: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "O envio de alguns dados de arquivo falhou. Tente novamente."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "O envio de algumas partes de arquivo falhou. Tente novamente."
+      ],
+      "Some items could not be loaded": [
+        "Não foi possível carregar alguns itens"
       ],
       "Something went wrong": [
         "Algo deu errado"
@@ -6048,6 +6187,9 @@
       "The minimum donation amount is ${ price }": [
         "O valor mínimo da doação é de ${ price }"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "O arquivo enviado não corresponde ao original. Por favor, tente novamente."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
       ],
@@ -6059,6 +6201,21 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
+      ],
+      "This file has no version available to download": [
+        "O arquivo não possui uma versão para download"
+      ],
+      "This file version could not be uploaded": [
+        "Não foi possível fazer o envio desta versão do arquivo"
+      ],
+      "This item is no longer shared": [
+        "Este item não está mais sendo compartilhado"
+      ],
+      "This item is not shared": [
+        "Este item não está compartilhado"
+      ],
+      "Too many server requests, please try again later": [
+        "Muitas solicitações ao servidor, tente novamente mais tarde"
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
@@ -6078,11 +6235,26 @@
       "VAT number must start with ${ prefixes }": [
         "O número de IVA deve começar com ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "As chaves de verificação não estão disponíveis"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "As chaves de verificação para ${ signatureType } não estão disponíveis"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Não conseguimos enviar um código de verificação usando este método."
       ],
       "Wrong billing address": [
         "Endereço de cobrança incorreto"
+      ],
+      "You can create public links for your own files only": [
+        "Você pode criar links públicos apenas para seus próprios arquivos"
+      ],
+      "You can update a public link for your own files only": [
+        "Você pode atualizar um link público apenas para seus próprios arquivos"
+      ],
+      "You do not have access to this item": [
+        "Você não tem acesso a esse item"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrável"
@@ -6411,6 +6583,9 @@
       ],
       "Attention required": [
         "Atenção necessária"
+      ],
+      "Author is not provided on public link": [
+        "O autor não forneceu um link público"
       ],
       "Awaiting transaction": [
         "Esperando transação"
@@ -7386,6 +7561,9 @@
       ],
       "No": [
         "Não"
+      ],
+      "None open": [
+        "Nenhum aberto"
       ],
       "Notifications": [
         "Notificações"
@@ -9082,6 +9260,26 @@
         "Faça upgrade para ${ upsellPlanTitle }"
       ]
     },
+    "Property": {
+      "attributes": [
+        "atributos"
+      ],
+      "content key": [
+        "chave de conteúdo"
+      ],
+      "hash key": [
+        "chave hash"
+      ],
+      "key": [
+        "chave"
+      ],
+      "membership": [
+        "subscrição"
+      ],
+      "name": [
+        "nome"
+      ]
+    },
     "Provider option": {
       "Gmail": [
         "Gmail"
@@ -10021,6 +10219,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Faça upgrade para um plano suportado para usar funções de administrador."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Você poderá atribuir funções assim que o usuário aceitar o convite."
       ]
