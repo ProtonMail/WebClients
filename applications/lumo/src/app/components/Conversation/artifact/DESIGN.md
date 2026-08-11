@@ -56,9 +56,38 @@ Two matching system-prompt nudges (`ARTIFACT_TOOL_CREATE_NUDGE` / `ARTIFACT_TOOL
 
 **Explicitly reverted:** a first attempt also added a visible "Finalizing…" + `CircleLoader` treatment on both the chip and panel header for this pending state. Removed after a follow-up conversation revealed it was solving a different problem than the one being asked about (a per-message "this call revised vs. created the artifact" indicator, not a generation-in-progress indicator). The underlying `pendingArtifact` correctness fix above was shipped briefly but then removed entirely — see next section.
 
+## Provisional registry overlay: early open without polluting finalized history
+
+**Decision:** overlay **provisional** versions from in-flight assistant messages onto the finalized registry, instead of a separate `pendingArtifact` state or a disabled chip while waiting for message finish.
+
+**Why:** once the `create_artifact` tool call parses, the artifact content is complete and stable — only registry bookkeeping waits on message finalization. Users should be able to open and read the panel immediately. The previous `pendingArtifact` path caused close/auto-open bugs and panel re-render storms; a registry overlay keeps one code path for chip, panel, and version navigation.
+
+**Mechanism:**
+
+- **`buildArtifactRegistry`** — unchanged; only finalized assistant messages (`status !== undefined`).
+- **`mergeProvisionalArtifactRegistry`** — adds `provisional: true` versions from in-flight messages with complete tool calls. Same `messageId` updates in-place; drops automatically when the message finalizes (picked up by the finalized build instead).
+- **`useArtifactRegistry`** — returns merged registry. Recomputes on finalized message-id changes or in-flight artifact fingerprint changes (`getInFlightArtifactFingerprint`), not on every prose token.
+- **`ArtifactChip`** — Open enabled as soon as provisional version exists. Normal default/active/superseded states.
+- **`ArtifactPanel`** — reads from merged registry and renders full content immediately (markdown/code highlighting, same as finalized). Copy, download, and version nav are available as soon as the tool call parses — the content is complete; there is nothing to "prepare." **Inline edit alone** stays disabled until finalize (`isSelectedVersionProvisional`), silently — no spinner or status label, since sending a selection-based revision against an unfinalized version is the only action that actually depends on message completion.
+- **Auto-open** — fires when the tool call first lands (provisional version appears), once per message, respecting `panelUserClosed`.
+
+**No loading indicator on provisional versions:** a brief attempt added "Preparing…" / "Finalizing…" + `CircleLoader` on the panel header (and earlier, on the chip). Removed — the same reasoning as the earlier `pendingArtifact` revert applies: once the tool call parses, content is atomic and fully readable; a generation-style indicator misleads users into thinking the artifact itself is still arriving. Message-level loading in the chat (avatar/thinking) already covers "assistant still writing prose." Provisional is a registry bookkeeping flag, not a content-readiness signal.
+
+**UX summary:**
+
+| Phase | Chat | Panel |
+| --- | --- | --- |
+| Message generating, no tool call yet | Avatar/thinking (message loading) | Closed |
+| Tool call lands (message still generating) | Chip visible, **Open** enabled | Auto-opens (unless user closed); full content readable; copy/download enabled; inline edit disabled |
+| Message finishes | Chip unchanged | Inline edit enabled |
+| User closes panel | Chip default | Closed, stays closed |
+| Revision (newer version open) | Older chips superseded | Shows selected version |
+
+**Explicitly not done:** including in-flight messages directly in `buildArtifactRegistry` (would blur finalized-history semantics). `resolveArtifactToolMode` / revise detection still uses finalized registry only. Visible loading/pending indicators on chip or panel for provisional state.
+
 ## No early panel preview: chip in chat, panel only after finalize
 
-**Decision:** remove `pendingArtifact` entirely. The chip appears in the chat as soon as the tool call parses, but the side panel only opens once the message is finalized and the version is in the registry. Open on the chip is disabled until then.
+**Decision (superseded — see provisional overlay section):** remove `pendingArtifact` entirely. The chip appears in the chat as soon as the tool call parses, but the side panel only opens once the message is finalized and the version is in the registry. Open on the chip is disabled until then.
 
 **Why:** live testing with temporary instrumentation confirmed that `create_artifact` tool-call arguments arrive atomically (zero observed partial-JSON chunks), so a loading skeleton or incremental preview UI was dead code. The `pendingArtifact` approach that replaced it introduced worse problems:
 
@@ -72,7 +101,7 @@ The gap before the chip appears (while the model is still writing its intro / th
 **Mechanism:**
 
 - **`completeArtifacts`** — parsed from `message.blocks` via `extractCompleteArtifactsFromBlocks` / `getCompleteArtifactBlocksKey` in `createArtifactTool.ts`. Parsing is keyed on a stable fingerprint of tool-call arguments (id + title + content length), not the full `blocks` array, so it does not re-run on every prose token.
-- **`ArtifactChip`** — renders as soon as `completeArtifacts` has an entry. Open is **disabled** while `getArtifactVersionIndexForMessage` returns `null` (message not finalized → not in registry). Active/superseded states only apply once a version exists in the registry and the panel is open.
+- **`ArtifactChip`** — renders as soon as `completeArtifacts` has an entry. While the message is still generating (not yet in registry), shows a **`preparing`** visual state: pulsing dot + "Preparing • vN" subtitle, disabled outline button with spinner + "Preparing…". Transitions to the normal default/active states once the message finalizes and Open becomes enabled. Active/superseded states only apply once a version exists in the registry and the panel is open.
 - **`ArtifactPanel`** — reads only from `selectedArtifact` (registry-backed). No pre-registry preview branch.
 - **Auto-open on finish** — `AssistantMessage` opens the panel once on the `generating → finished` transition (`justFinished` ref), not whenever `selectedId` changes. Only fires if:
     - this is the last message,
@@ -87,7 +116,7 @@ The gap before the chip appears (while the model is still writing its intro / th
 | Phase | Chat | Panel |
 | --- | --- | --- |
 | Message generating, no tool call yet | Avatar/thinking (message loading) | Closed |
-| Tool call lands (message still generating) | Chip visible, Open disabled | Closed |
+| Tool call lands (message still generating) | Chip visible, **Preparing…** state | Closed |
 | Message finishes | Chip visible, Open enabled | Auto-opens once (unless user closed) |
 | User closes panel | Chip shows default state | Closed, stays closed |
 | Revision (newer version open) | Older chips show "View vN" (superseded) | Shows selected version |
