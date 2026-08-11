@@ -17,9 +17,8 @@ export async function trashAndNotify(
     try {
       await restoreDocument(drive, nodeUid)
       createNotification({ type: 'success', text: c('Notification').t`Document restored from trash` })
-    } catch (error) {
-      reportTrashError(error)
-      createNotification({ type: 'error', text: c('Notification').t`Failed to restore document` })
+    } catch (error: any) {
+      handleRestoreError(createNotification, error)
     }
   }
 
@@ -93,4 +92,16 @@ export function reportTrashError(error: unknown) {
       feature: 'DocsTrashWithDriveSDK',
     },
   })
+}
+
+export function handleRestoreError(createNotification: CreateNotification, error: any) {
+  if (error.message.includes('Insufficient permissions')) {
+    createNotification({
+      type: 'error',
+      text: c('Notification').t`Because this document was in a shared folder, only the folder owner can restore it`,
+    })
+  } else {
+    createNotification({ type: 'error', text: c('Notification').t`Failed to restore document` })
+    reportTrashError(error)
+  }
 }
