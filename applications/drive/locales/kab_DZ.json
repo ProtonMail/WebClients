@@ -52,9 +52,6 @@
       "Add phone number": [
         "Rnu uṭṭun n usawal"
       ],
-      "Add photos": [
-        "Rnu tiwlafin"
-      ],
       "Add to group": [
         "Rnu ɣer ugraw"
       ],
@@ -139,9 +136,6 @@
       "Close transfers": [
         "Mdel asiweḍ"
       ],
-      "Collapse folder": [
-        "Fneẓ akaram"
-      ],
       "Compose": [
         "Aru"
       ],
@@ -193,9 +187,6 @@
       "Create new folder": [
         "Rnu akaram amaynut"
       ],
-      "Create new text file": [
-        "Rnu afaylu n uḍris amaynu"
-      ],
       "Current plan": [
         "Aɣawas amiran"
       ],
@@ -234,12 +225,6 @@
       "Delete permanently": [
         "Kkes i lebda"
       ],
-      "Delete this version": [
-        "Kkes lqem-a"
-      ],
-      "Delete version": [
-        "Err-d lqem-a"
-      ],
       "Deselect all": [
         "Kkes afran i meṛṛa"
       ],
@@ -267,9 +252,6 @@
       "Download logs": [
         "Sader iɣmisen"
       ],
-      "Drive Locked": [
-        "Ameɣri usekkeṛ"
-      ],
       "Edit": [
         "Ẓreg"
       ],
@@ -296,12 +278,6 @@
       ],
       "enable desktop notifications": [
         "rmed talɣutin n tnarit"
-      ],
-      "Enable drive search": [
-        "Rmed n unadi n yibenk"
-      ],
-      "Expand folder": [
-        "Semɣer akaram"
       ],
       "Export": [
         "Sifeḍ"
@@ -341,9 +317,6 @@
       ],
       "Go to label": [
         "Ddu ɣer tecreḍt"
-      ],
-      "Go to parent": [
-        "Uɣal ɣer umaraw"
       ],
       "Go to settings": [
         "Ddu s iɣewwaren"
@@ -447,9 +420,6 @@
       "Move to trash": [
         "Awi ar iḍumman"
       ],
-      "New": [
-        "Amynut"
-      ],
       "New document": [
         "Isemli amaynut"
       ],
@@ -534,14 +504,8 @@
       "Remove bonuses": [
         "Kkes ibunusen"
       ],
-      "Remove device": [
-        "Kkes ibenk"
-      ],
       "Remove gift code": [
         "Kkes tangalt n usefk"
-      ],
-      "Remove me": [
-        "Kkes-iyi"
       ],
       "Rename": [
         "Beddel isem"
@@ -582,9 +546,6 @@
       "Restore this version": [
         "Kkes lqem-a"
       ],
-      "Restore version": [
-        "Err-d lqem"
-      ],
       "Retry": [
         "Ɛref̣ tikelt-nniḍen"
       ],
@@ -599,9 +560,6 @@
       ],
       "Search countries": [
         "Nadi timura"
-      ],
-      "Search drive": [
-        "Nadi deg umeɣri"
       ],
       "See plan features": [
         "Wali timahilin n uɣawas"
@@ -629,9 +587,6 @@
       ],
       "Share": [
         "Bḍu"
-      ],
-      "Share file": [
-        "Bḍu afaylu"
       ],
       "Share item": [
         "Bḍu aferdis"
@@ -669,14 +624,8 @@
       "Skip verification": [
         "Zgel asenqed"
       ],
-      "Start": [
-        "Bdu"
-      ],
       "Start import": [
         "Bdu taktert"
-      ],
-      "Start recovering": [
-        "Bdu tiririt"
       ],
       "Stay": [
         "Qqim"
@@ -794,11 +743,6 @@
       ],
       "Zoom out": [
         "Semẓi"
-      ]
-    },
-    "Actions": {
-      "Upload": [
-        "Sali"
       ]
     },
     "Actions message": {
@@ -2118,9 +2062,6 @@
       "Could not open updated vault": [
         "Yugi ad yeldi usenduq yettwaleqqmen"
       ],
-      "Device name does not match": [
-        "Isem n yibenk ur imṣada ara"
-      ],
       "Domain not available, try again later": [
         "Ulac taɣult, ɛreḍ tikkelt-nniḍen ticki"
       ],
@@ -2251,9 +2192,6 @@
       ],
       "Request timed out": [
         "Akud n usuter yemmut"
-      ],
-      "Search failed": [
-        "Anadi yecceḍ"
       ],
       "Signature not verified": [
         "Azmul ur yettwasenqed ara"
@@ -2479,20 +2417,8 @@
       ]
     },
     "Error message": {
-      "Access denied": [
-        "Anekcum yegdel"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Ttxil rǧu ard yefru wugur."
-      ],
       "Error: ${ errorMessage }": [
         "Tuccḍa: ${ errorMessage }"
-      ],
-      "Internal server error": [
-        "Tuccḍa n uqeddac agensan"
-      ],
-      "Not found": [
-        "Ulac-it"
       ],
       "Oops, something went wrong": [
         "Ihuh, yeḍran-d wugur"
@@ -2502,9 +2428,6 @@
       ],
       "Something went wrong": [
         "Yella wayen yeḍran"
-      ],
-      "You may also refresh the page or try again later.": [
-        "Ahat ilaq asmiren n usebter neɣ εreḍ ticki."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -2555,12 +2478,6 @@
     "Event title": {
       "(no title)": [
         "(ulac azwel)"
-      ]
-    },
-    "Failed": {
-      "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } ccḍen",
-        "${ countOfFailedLinks } ccḍen"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -2709,11 +2626,6 @@
     "Header": {
       "Contacts": [
         "Inermisen"
-      ]
-    },
-    "Heading": {
-      "Recent": [
-        "Melmi kan"
       ]
     },
     "Hint": {
@@ -3016,12 +2928,6 @@
         "${ contactsLength } n unermis",
         "${ contactsLength } inermisen"
       ],
-      "${ DRIVE_APP_NAME } on App Store": [
-        "${ DRIVE_APP_NAME } ɣef App Store"
-      ],
-      "${ DRIVE_APP_NAME } on Play Store": [
-        "${ DRIVE_APP_NAME } ɣef Play Store"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: tugna s teɣzi taččurant"
       ],
@@ -3031,10 +2937,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } n ugraw yettwafen",
         "${ groupCounts } n yigrawen yettwafen"
-      ],
-      "${ photoCount } item": [
-        "${ photoCount } n uferdis",
-        "${ photoCount } yiferdisen"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } d ukaram yettwafen",
@@ -3113,9 +3015,6 @@
       "All your changes will be lost.": [
         "Ad ruḥen akk ibeddilen-inek/m."
       ],
-      "Also try looking in Trash.": [
-        "Wali daɣen deg tqecwalt."
-      ],
       "American Express SafeKey logo": [
         "Alugu n American Express SafeKey"
       ],
@@ -3125,17 +3024,8 @@
       "Amount below minimum (${ amount }).": [
         "Azal ddaw n wadday (${ amount })."
       ],
-      "An active recovery file": [
-        "Afaylu n tririt urmid"
-      ],
       "and": [
         "akked"
-      ],
-      "And access it from anywhere": [
-        "Kcem ɣur-s seg wanda i ak-yehwa"
-      ],
-      "Apr": [
-        "Yeb"
       ],
       "Are you sure you want to discard your changes?": [
         "D tidet tebɣiḍ ad tesfesxeḍ ibeddilen-ik m?"
@@ -3146,9 +3036,6 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Tebɣiḍ s tidet ad tsefḍeḍ taqecwalt daɣen ad tekkseḍ s wudem imezgi akk iferdisen?"
       ],
-      "Are you sure you want to permanently delete": [
-        "Tebɣiḍ s tidet ad tekkseḍ i lebda"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Tebɣiḍ s tidet ad tekkseḍ \"${ itemName }\" seg tqecwalt?"
       ],
@@ -3157,9 +3044,6 @@
       ],
       "Attention required": [
         "Yesra leḥdar"
-      ],
-      "Aug": [
-        "Ɣuc"
       ],
       "Billing cycle: ${ text }": [
         "Asellek yal:${ text }"
@@ -3172,9 +3056,6 @@
       ],
       "Canceled": [
         "Yettwasefsex"
-      ],
-      "Cannot load links": [
-        "Gguman ad d-alin iseɣwan"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Ur tezmireḍ ara ad d-temmektiḍ awal uffir-inek•m? Nezmer ad k-nɛiwen akken ad tsefḍeḍ isefka iwgelhanen n yinermisen meṛṛa iwgelhen s tsarut-agi akked telɣut n uzgel."
@@ -3200,9 +3081,6 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Anermis yettwarna ɣer ugraw ${ contactGroupName }"
       ],
-      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "Kemmel aseqdec n ${ DRIVE_APP_NAME }, syen kkes asekkeṛ imeɣri ticki"
-      ],
       "Country code": [
         "Tangalt n tmurt"
       ],
@@ -3222,9 +3100,6 @@
       "Create in": [
         "Snulfu-d di"
       ],
-      "Create links and share your files with others.": [
-        "Snulfu-d isɣewnen akken ad tebḍuḍ ifuyla-inek m akked wiyiḍ."
-      ],
       "Current plan": [
         "Aɣawas amiran"
       ],
@@ -3234,9 +3109,6 @@
       "Custom email domains": [
         "Tiɣula n yimayl tudmawanin"
       ],
-      "Dec": [
-        "Duǧ"
-      ],
       "Decrypting files": [
         "Kkes awgelhen i yifuyla"
       ],
@@ -3245,10 +3117,6 @@
       ],
       "default email address": [
         "tansa yimayl n lexṣas"
-      ],
-      "Delete locked drive": [
-        "Kkes ameɣri isekkren",
-        "Kkes imeɣriyen isekkren"
       ],
       "Details": [
         "Ifatusen"
@@ -3292,12 +3160,6 @@
       "Emails are automatically signed": [
         "Imaylen ttwazemlen s wudem awurman"
       ],
-      "Enabling drive search": [
-        "Armad n unadi n yibenk"
-      ],
-      "Encrypted search is here": [
-        "Anadi awgelhan ha-t-a da"
-      ],
       "End-to-end encrypted": [
         "Awgelhen si tazwara ar tagara"
       ],
@@ -3329,23 +3191,14 @@
       "Expired": [
         "Yemmut"
       ],
-      "Feb": [
-        "Fuṛ"
-      ],
       "File will not be updated": [
         "Afaylu ur yettuleqqem ara"
       ],
       "Folder will not be uploaded": [
         "Akaram ur d-yettali ara"
       ],
-      "from the version history?": [
-        "seg uzray n lqem?"
-      ],
       "here": [
         "da"
-      ],
-      "How does encrypted search work?": [
-        "Amek i iteddu unadi awgelhan?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
@@ -3378,9 +3231,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ fromEmail } ɣer ${ toEmail }."
       ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Timerna n umatar n yiferdisen ${ esProgress } ɣef ${ totalProgressToShow }"
-      ],
       "Inherited from parent folder": [
         "Yettwaɣellet seg ukaram agejdan"
       ],
@@ -3392,18 +3242,6 @@
       ],
       "Internet connection restored.": [
         "Tuqqna internet tuɣal-d."
-      ],
-      "It’s easy and secure": [
-        "D afessas, d aɣellsan"
-      ],
-      "Jan": [
-        "Yen"
-      ],
-      "Jul": [
-        "Yul"
-      ],
-      "Jun": [
-        "Yun"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Sentem kan tafrayt-inek•inem nekni ad neg ayen iqqimen."
@@ -3420,9 +3258,6 @@
       "Large imports can take several days.": [
         "Tektert tameqrant tezmer ad teṭṭef aṭas n wussan."
       ],
-      "Last week": [
-        "Dduṛt yezrin"
-      ],
       "Learn more": [
         "Issin ugar"
       ],
@@ -3438,41 +3273,20 @@
       "Loading ${ appName }": [
         "Asali ${ appName }"
       ],
-      "Loading links": [
-        "Asali n useɣwen"
-      ],
       "Loading preview": [
         "Asali n teskant"
       ],
       "Loading...": [
         "Asali..."
       ],
-      "Makes your account safer": [
-        "Seɣles amiḍan-ik"
-      ],
-      "Mar": [
-        "Meɣ"
-      ],
       "Mastercard SecureCode logo": [
         "Alugu n Mastercard SecureCode"
-      ],
-      "May": [
-        "May"
       ],
       "Member": [
         "Aεeggal"
       ],
       "Merged": [
         "Ttusmezdin"
-      ],
-      "More": [
-        "Ugar"
-      ],
-      "Moving files": [
-        "Asmutti n yifuyla"
-      ],
-      "My Links": [
-        "Iseɣwan-iw"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Semmi akaram-ik·im amaynut syen fren akaram amaraw ideg tebɣiḍ ad t-terreḍ. Ma yella ur tefrneḍ ara akaram amaraw, akaram-a amaynut ad yettwarnu d akaram n uswir afellay."
@@ -3498,26 +3312,14 @@
       "No results found": [
         "Ulac igmaḍ"
       ],
-      "No synced folders": [
-        "Ulac ikaramen yemtawan"
-      ],
       "Not a valid URL": [
         "Mačči d URL ameɣtu"
-      ],
-      "Nov": [
-        "Wam"
       ],
       "Numbers": [
         "Imḍanen"
       ],
-      "Oct": [
-        "Tub"
-      ],
       "of": [
         "si"
-      ],
-      "Or use the \"+ New\" button": [
-        "Neɣ seqdec taqeffalt \"+ Amaynut\""
       ],
       "Organization size": [
         "Teɣzi n tkebbanit"
@@ -3568,17 +3370,11 @@
       "Preview failed to be loaded": [
         "Taskant tegguma ad d-yali"
       ],
-      "Previous versions are not saved": [
-        "Acegger yezrin ur yettisekles ara"
-      ],
       "Primary": [
         "Agejdan"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Talɣut n tririt ad teqqim ɣef yibenk-a alamma tferneḍ ad tt-tekkseḍ."
-      ],
-      "Recovery process might take some time.": [
-        "Akala n tririt yezmer ad yeṭṭef kra n wakud."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Asmiren n usebter n ${ link } ad yefru s wudem awurman aṭas n wuguren."
@@ -3595,17 +3391,8 @@
       "Saving...": [
         "Asekles..."
       ],
-      "Search Enabled": [
-        "Anadi yettwarmed"
-      ],
-      "Select an uploaded file or folder and create a link to it.": [
-        "Fren afaylu neɣ akaram yulin syen snulfu-d aseɣwen ɣur-s."
-      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Fren amasal n yimayl i tebɣiḍ ad yettwaseqdec d amezwer mi ara tazneḍ imayl ɣer tansa-a imayl."
-      ],
-      "Sep": [
-        "Cṭe"
       ],
       "Session timed out": [
         "Yemmed wakud n tɣimit"
@@ -3616,23 +3403,11 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Asesteb n PGP ad ak·am-imudd tisirag i wakken ad tazneḍ imaylen yettwawgelhen seg yixef ɣer yixef i useqdac ur nesɛi ara ${ BRAND_NAME } i iseqdacen ameẓlu yemṣadan d PGP."
       ],
-      "Share files with links": [
-        "Bḍu ifuyla s yisɣewnen"
-      ],
-      "Shared": [
-        "Yettwabḍa"
-      ],
       "Shared link not found": [
         "Aseɣwen yettwabḍan ulac-it"
       ],
-      "Shared with me": [
-        "Yebḍa yid-i"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Segmi telliḍ d aseqdac imekdi, amiḍan-inek• inem yesɛa tiwuriwin n zzyada iremden."
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Kra seg yifuyla-inek·inem anekcum ɣur-sen d awezɣi. Err-d anekcum ɣer yifuyla-inek·inem. ${ StartRecoveryButton }"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Ulac-it akka tura. Ma ulac aɣilif, senqed ticki."
@@ -3652,12 +3427,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aseɣwen-a yezmer ad yili d aẓdam homograph. Ttxil-k·m senqed ma d aseɣwen-a iwuɣur tebɣiḍ ad terzuḍ, neɣ ur tettalday ara."
       ],
-      "This month": [
-        "Ayyur-a"
-      ],
-      "Time": [
-        "Akud"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
       ],
@@ -3673,9 +3442,6 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "I useqdec n usenqed n tansa, issefk ad tettekleḍ ɣef yiwet neɣ ugar seg tsura tizuyaz i yellan, ula d tin i tebɣiḍ ad tt-tesqedceḍ i tuzna. Aya ad isewḥel abeddel n tsura n uwgelhen."
       ],
-      "Today": [
-        "Ass-a"
-      ],
       "Total email addresses": [
         "Asemday n tansiwin n yimayl"
       ],
@@ -3688,20 +3454,11 @@
       "Trash": [
         "Taqecwalt"
       ],
-      "Trash is empty": [
-        "Taqecwalt d tilemt"
-      ],
-      "Unlock drive to recover files": [
-        "Kkes asekkeṛ i wakken ad d-terreḍ ifuyla"
-      ],
       "Unsaved changes": [
         "Isenfal ur ttwaskelsen ara"
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
-      ],
-      "Updating drive search...": [
-        "Akeqqem n unadi n yimeɣri..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Salu tura aɣawas-ik i wakken ad tesɛuḍ timahilin, ifarisen d uḥraz premium s ssuma igerrzen"
@@ -3723,12 +3480,6 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Asenqed ad yeldi iccer amaynut, ttxil-k·m sens isewḥalen n yisfuyla udhimen. Ur tseɛɛuḍ ara tafakturt. Tadrimt akk ara yettusqedcen i usenqed n tkarḍa ad d-tuɣal din din."
-      ],
-      "Version is deleted": [
-        "Lqem yettwakkes"
-      ],
-      "Version is restored": [
-        "Lqem yettwarr-d"
       ],
       "Visa Secure logo": [
         "Alugu n Visa Secure"
@@ -3754,23 +3505,14 @@
       "What do you want to do?": [
         "Acu tebɣiḍ ad txedmeḍ?"
       ],
-      "What would you like to do?": [
-        "Acu tebɣiḍ ad t-tgeḍ?"
-      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Tebɣiḍ ad d-teṭṭfeḍ tangalt n usenqed tamaynut neɣ ad tesqedceḍ ttawil n usenqed nniḍen?"
       ],
       "Would you like to receive a new verification code?": [
         "Tebɣiḍ ad teṭṭfeḍ tangalt tamaynutt n uselken ?"
       ],
-      "Would you like to restore your files?": [
-        "Tebqiḍ ad d-terreḍ ifuyla-inek·inem?"
-      ],
       "Yes": [
         "Ih"
-      ],
-      "Yesterday": [
-        "Iḍelli"
       ],
       "you": [
         "kečč·kemm"
@@ -3808,9 +3550,6 @@
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Dayen ur tettizmireḍ ara ad tkecmeḍ ɣer yifuyla-inek·inem ssebba n uwenez n wawal uffir. Ales asali n tsarut n uwgelhen taqburt i wakken ad d-terred anekcum. ${ KeyReactivationButton }"
-      ],
       "Your files will be encrypted and then saved": [
         "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen"
       ],
@@ -3825,12 +3564,6 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Tangalt n tmurt"
-      ],
-      "Your previous password": [
-        "Awal-ik•im uffir yezrin"
-      ],
-      "Your previous recovery phrase": [
-        "Tafyirt-ik•im n tririt yezrin"
       ]
     },
     "info": {
@@ -3882,12 +3615,6 @@
       ]
     },
     "Label": {
-      "# of downloads": [
-        "# n yisadaren"
-      ],
-      "${ albumProgress.added } of ${ albumProgress.total }": [
-        "${ albumProgress.added } n ${ albumProgress.total }"
-      ],
       "${ BRAND_NAME } username": [
         "Isem n useqdac ${ BRAND_NAME }"
       ],
@@ -3902,9 +3629,6 @@
       "${ nbYear } year": [
         "${ nbYear } n useggas",
         "${ nbYear } yiseggasen"
-      ],
-      "(Expired)": [
-        "(Ifut)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Ulac-it akka tura. Ma ulac aɣilif, senqed ticki.)"
@@ -4029,9 +3753,6 @@
       "Country": [
         "Tamurt"
       ],
-      "Create ${ BRAND_NAME } account": [
-        "Rnu amiḍan ${ BRAND_NAME }"
-      ],
       "Created": [
         "Yettwarna"
       ],
@@ -4041,21 +3762,11 @@
       "Delete": [
         "Kkes"
       ],
-      "Delete drive?": [
-        "Kkes ameɣri?",
-        "Kkes imeɣriyen?"
-      ],
       "Delete recovery-related information.": [
         "Kkes talɣut icudden ɣer tririt."
       ],
-      "Deleted": [
-        "Ittwakkes"
-      ],
       "Device": [
         "Ibenk"
-      ],
-      "Device name": [
-        "Isem n yibenk"
       ],
       "Don't ask again": [
         "Ur d-ssutur ara tikkelt niḍen"
@@ -4095,9 +3806,6 @@
       ],
       "Encrypt emails": [
         "Wgelhen imaylen"
-      ],
-      "Enter device name": [
-        "Sekcem isem n yibenk"
       ],
       "Expired": [
         "Ifut"
@@ -4249,9 +3957,6 @@
       "Phone number": [
         "Uṭṭun n tiliɣri"
       ],
-      "Photo": [
-        "Tawlaft"
-      ],
       "Please provide full details to help us take appropriate action": [
         "Ttxil-k mudd-d akk umlan ilaqen i wakken ad aɣ-yall ad neg ayen ilaqen."
       ],
@@ -4281,9 +3986,6 @@
       ],
       "Selected": [
         "Yettwafren"
-      ],
-      "Set recovery method": [
-        "Sbadu tarrayt n tririt"
       ],
       "Shared": [
         "Yettwabḍa"
@@ -4345,20 +4047,8 @@
       "Type": [
         "Anaw"
       ],
-      "Unlock drive": [
-        "Kkes asekkeṛ i uleɣri"
-      ],
-      "Unlock drive (recommended)": [
-        "Kkes asekkeṛ i umeɣri (yettuwelleh)"
-      ],
-      "Unlock later": [
-        "Kkes asekkeṛ ticki"
-      ],
       "Upload picture": [
         "Sali-d tugna"
-      ],
-      "Upload your first file": [
-        "Sali-d afaylu-k amezwaru"
       ],
       "Uploaded by": [
         "Yuli s"
@@ -4371,9 +4061,6 @@
       ],
       "What happened?": [
         "D acu akka ay yeḍran?"
-      ],
-      "Yes, I want to permanently delete my old files": [
-        "Ih, bɣiɣ ad kkseɣ i lebda ifuyla-w iqburen"
       ],
       "Your password (admin)": [
         "Awal-ik uffir (anedbal)"
@@ -4448,9 +4135,6 @@
       "Pay invoice": [
         "Xelleṣ tafaturt"
       ],
-      "Photos": [
-        "Tiwlafin"
-      ],
       "Reactivate now": [
         "Rmed tura"
       ],
@@ -4459,12 +4143,6 @@
       ],
       "settings": [
         "iɣewwaren"
-      ],
-      "Shared": [
-        "Yettwabḍa"
-      ],
-      "Shared with me": [
-        "Yebḍa yid-i"
       ],
       "Trash": [
         "Taqecwalt n yiḍumman"
@@ -4979,10 +4657,6 @@
         "${ numberOfItems } n uferdis ittwarra-d seg tqecwalt",
         "${ numberOfItems } n yiferdisen ttwarran-d seg tqecwalt"
       ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } n uferdis imutti akken iwata",
-        "${ numberOfItems } n yiferdisen muttin akken iwata"
-      ],
       "${ reason } has been disabled": [
         "${ reason } yensa"
       ],
@@ -5013,9 +4687,6 @@
       "Device renamed": [
         "Yettwabeddel yisem n yibenk"
       ],
-      "Encrypted search activated": [
-        "Anadi awgelgan yermed"
-      ],
       "Failed to move, please try again": [
         "Asmutti ur yeddi, ttxil ɛreḍ tikkelt-nniḍen"
       ],
@@ -5035,9 +4706,6 @@
       ],
       "Trash failed to be emptied": [
         "Yecceḍ usilem n tqecwalt"
-      ],
-      "Your old files will be deleted in 72 hours": [
-        "Ifuyla-k iqburen ad ttwakksen"
       ],
       "Your settings have been changed successfully": [
         "Iɣewwaren-ik·im ggwabeddlen war ugur"
@@ -5074,37 +4742,6 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Ansuf ɣer ${ appName }"
-      ]
-    },
-    "Onboarding Action": {
-      "Continue": [
-        "Kemmel"
-      ],
-      "Get started": [
-        "Bdu"
-      ],
-      "Maybe Later": [
-        "Ahat ticki"
-      ],
-      "Maybe later": [
-        "Ahat ticki"
-      ],
-      "Skip": [
-        "Zgel"
-      ],
-      "Upload file": [
-        "Sali afaylu"
-      ],
-      "Upload folder": [
-        "Sali akaram"
-      ]
-    },
-    "Onboarding Info": {
-      "Manage access": [
-        "Sefrek n unekcum"
-      ],
-      "Upload your first file": [
-        "Sali-d afaylu-k amezwaru"
       ]
     },
     "Onboarding Trial": {
@@ -5227,14 +4864,8 @@
       "Email": [
         "Imayl"
       ],
-      "Enter a new file name": [
-        "Sekcem isem n ufaylu amaynut"
-      ],
       "Enter a new folder name": [
         "Sekcem isem n ukaram amaynut"
-      ],
-      "Enter device name": [
-        "Sekcem isem n yibenk"
       ],
       "Enter your email address": [
         "Sekcem tansa-inek·inem n yimayl"
@@ -5668,11 +5299,6 @@
         "Sali, tḥerzeḍ ugar s 2 yiseggasen n ${ planName }"
       ]
     },
-    "Spotlight": {
-      "Encrypted search is here": [
-        "Anadi awgelhan ha-t-a da"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Qqen"
@@ -5858,9 +5484,6 @@
       "Preferences saved": [
         "Ismenyifen ttwaskelsen"
       ],
-      "Recovery has started": [
-        "Tiririt tebda"
-      ],
       "Undo in progress": [
         "Asefsex iteddu"
       ],
@@ -5945,11 +5568,6 @@
       ],
       "vCard field": [
         "urti vCard"
-      ]
-    },
-    "Tag": {
-      "RAW": [
-        "RAW"
       ]
     },
     "Time unit": {
@@ -6066,9 +5684,6 @@
       "Continue with partial import?": [
         "Kemmel d uktar abruyan?"
       ],
-      "Create a new file": [
-        "Rnu afaylu tamaynut"
-      ],
       "Create a new folder": [
         "Rnu tabzimt tamaynut"
       ],
@@ -6140,6 +5755,9 @@
       "Discard changes?": [
         "Sefsex ibeddilen?"
       ],
+      "Domain names": [
+        "Ismawen n taɣult"
+      ],
       "Downgrade account": [
         "Sider aswir n umiḍan"
       ],
@@ -6179,9 +5797,6 @@
       "Empty trash": [
         "Silem iḍumman"
       ],
-      "Enable drive search": [
-        "Rmed n unadi n yibenk"
-      ],
       "Enter your password": [
         "Sekcem awal-ik uffir"
       ],
@@ -6193,9 +5808,6 @@
       ],
       "File details": [
         "Ifatusen n ufaylu"
-      ],
-      "File recovery process": [
-        "Akala n ufaylu n tririt"
       ],
       "Folder": [
         "Akaram"
@@ -6246,17 +5858,11 @@
       "Location": [
         "Amḍiq"
       ],
-      "Logs": [
-        "Inekcam"
-      ],
       "Merge contacts": [
         "Smezdi inermisen"
       ],
       "Merging contacts": [
         "Azday inermisen"
-      ],
-      "Message": [
-        "Izen"
       ],
       "Minicalendar": [
         "Awitay ameẓẓyan"
@@ -6287,9 +5893,6 @@
       ],
       "Notes": [
         "Tizmilin"
-      ],
-      "Number of items": [
-        "Amḍan n yiferdisen"
       ],
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"
@@ -6351,23 +5954,11 @@
       "Rename a folder": [
         "Beddel isem n ukaram"
       ],
-      "Rename device": [
-        "Ales isem n yibenk"
-      ],
       "Report a problem": [
         "Azen aneqqis n wugur"
       ],
       "Request new code": [
         "Suter tangalt tamaynutt"
-      ],
-      "Restore your files": [
-        "Err-d ifuyla-inek·inem"
-      ],
-      "Search results": [
-        "Igmaḍ n unadi"
-      ],
-      "Searching…": [
-        "Anadi…"
       ],
       "Select a plan": [
         "Fren aɣawas"
@@ -6395,9 +5986,6 @@
       ],
       "Shared with me": [
         "Yebḍa yid-i"
-      ],
-      "Show actions": [
-        "Sken tigawin"
       ],
       "Sign in and grant access": [
         "Qqen, tmuddeḍ anekcum"
@@ -6435,12 +6023,6 @@
       "Time": [
         "Akud"
       ],
-      "Total size": [
-        "Tiddi tuɣridt"
-      ],
-      "Trash": [
-        "Taqecwalt"
-      ],
       "Two-factor authentication": [
         "Asesteb s snat n tarrayin"
       ],
@@ -6474,20 +6056,11 @@
       "Warning: suspected fake website": [
         "Ɣur-k•m: yettban d yir asmel web"
       ],
-      "You have inaccessible files": [
-        "Γur-k·m ifuyla wuɣur anekcum d awezɣi"
-      ],
       "Your changes are not synced yet": [
         "Isenfal-ik mazal ur mtawan ara"
       ],
       "Your plan": [
         "Aɣawas-ik·im"
-      ],
-      "Your welcome actions": [
-        "Tigawin-ik n unsuf"
-      ],
-      "You’ve got 5 GB of storage": [
-        "Ɣur-k 5 GAṬ n uḥraz"
       ]
     },
     "Today icon tooltip in mini calendar": {

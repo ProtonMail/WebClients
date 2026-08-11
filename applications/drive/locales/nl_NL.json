@@ -48,10 +48,6 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
       ],
-      "Add ${ photoCount } photo to a new album": [
-        "Voeg ${ photoCount } foto toe aan een nieuw album",
-        "Voeg ${ photoCount } foto's toe aan een nieuw album"
-      ],
       "Add account": [
         "Account toevoegen"
       ],
@@ -88,24 +84,11 @@
       "Add phone number": [
         "Telefoonnummer toevoegen"
       ],
-      "Add photos": [
-        "Foto's toevoegen"
-      ],
       "Add storage": [
         "Opslagruimte toevoegen"
       ],
-      "Add to \"${ name }\" (${ photoCount } photo)": [
-        "Toevoegen aan \"${ name }\" (${ photoCount } foto)",
-        "Toevoegen aan \"${ name }\" (${ photoCount } foto's)"
-      ],
-      "Add to album": [
-        "Voeg toe aan album"
-      ],
       "Add to group": [
         "Aan groep toevoegen"
-      ],
-      "Album name": [
-        "Albumnaam"
       ],
       "Apply": [
         "Toepassen"
@@ -219,9 +202,6 @@
       "Collaborate on documents": [
         "Samenwerken aan documenten"
       ],
-      "Collapse folder": [
-        "Map samenvouwen"
-      ],
       "Collapse navigation bar": [
         "Navigatiebalk inklappen"
       ],
@@ -294,14 +274,8 @@
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
       ],
-      "Create album": [
-        "Creëer Album"
-      ],
       "Create and copy alias": [
         "Maak en kopieer alias"
-      ],
-      "Create business account": [
-        "Maak een bedrijfsaccount aan"
       ],
       "Create folder": [
         "Maak map"
@@ -311,9 +285,6 @@
       ],
       "Create new password": [
         "Nieuw wachtwoord instellen"
-      ],
-      "Create new text file": [
-        "Nieuw tekstbestand aanmaken"
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -344,9 +315,6 @@
         "${ selectedCount } contactgroep verwijderen",
         "${ selectedCount } contactgroepen verwijderen"
       ],
-      "Delete album": [
-        "Album verwijderen"
-      ],
       "Delete contact": [
         "Contactpersoon verwijderen"
       ],
@@ -356,23 +324,11 @@
       "Delete permanently": [
         "Permanent verwijderen"
       ],
-      "Delete this version": [
-        "Deze versie verwijderen"
-      ],
-      "Delete version": [
-        "Versie verwijderen"
-      ],
-      "Delete without saving": [
-        "Verwijder zonder op te slaan"
-      ],
       "Deselect all": [
         "Alles deselecteren"
       ],
       "Details": [
         "Details"
-      ],
-      "Diagnostics": [
-        "Diagnostiek"
       ],
       "Discard": [
         "Verwijderen"
@@ -382,12 +338,6 @@
       ],
       "Display navigation bar": [
         "Navigatiebalk weergeven"
-      ],
-      "Display next": [
-        "Toon volgende"
-      ],
-      "Display previous": [
-        "Toon vorige"
       ],
       "Done": [
         "Klaar"
@@ -407,26 +357,14 @@
       "Download anyway": [
         "Toch downloaden"
       ],
-      "Download for Mac": [
-        "Downloaden voor Mac"
-      ],
       "Download for macOS": [
         "Download voor macOS"
       ],
       "Download for Windows": [
         "Download voor Windows"
       ],
-      "Download info": [
-        "Info downloaden"
-      ],
       "Download logs": [
         "Logboeken downloaden"
-      ],
-      "Download results": [
-        "Resultaten downloaden"
-      ],
-      "Drive Locked": [
-        "Drive versleuteld"
       ],
       "Edit": [
         "Bewerken"
@@ -458,17 +396,8 @@
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
-      "Enable drive search": [
-        "Drive doorzoeken inschakelen"
-      ],
       "Encrypted": [
         "Versleuteld"
-      ],
-      "Expand folder": [
-        "Map uitklappen"
-      ],
-      "Explore more": [
-        "Meer ontdekken"
       ],
       "Explore other plans": [
         "Ontdek andere abonnementen"
@@ -481,9 +410,6 @@
       ],
       "Export selection as .vcf": [
         "Exporteer selectie als .vcf"
-      ],
-      "Export system log": [
-        "Exporteer systeemlogboek"
       ],
       "Fit to window": [
         "Passend in venster"
@@ -530,20 +456,11 @@
       "Go back": [
         "Ga terug"
       ],
-      "Go back to album \"${ ellipsedAlbumName }\"": [
-        "Ga terug naar album “${ ellipsedAlbumName }\""
-      ],
       "Go to ${ planOrAppName }": [
         "Ga naar ${ planOrAppName }"
       ],
       "Go to label": [
         "Ga naar label"
-      ],
-      "Go to my files": [
-        "Ga naar mijn bestanden"
-      ],
-      "Go to parent": [
-        "Ga naar bovenliggende"
       ],
       "Go to settings": [
         "Ga naar instellingen"
@@ -599,9 +516,6 @@
       "Increase": [
         "Verhogen"
       ],
-      "Join album": [
-        "Deelnemen aan album"
-      ],
       "Keep my subscription": [
         "Mijn abonnement behouden"
       ],
@@ -616,9 +530,6 @@
       ],
       "Leave": [
         "Verlaat"
-      ],
-      "Leave album": [
-        "Album verlaten"
       ],
       "Let's talk": [
         "Laten we praten!"
@@ -650,9 +561,6 @@
       "Manage labels": [
         "Labels beheeren"
       ],
-      "Manage share": [
-        "Delen beheren"
-      ],
       "Manage users/addresses": [
         "Gebruikers/adressen beheren"
       ],
@@ -673,6 +581,9 @@
       ],
       "Merge contacts": [
         "Contacten samenvoegen"
+      ],
+      "Migrate": [
+        "Migreer"
       ],
       "Minimize transfers": [
         "Minimaliseer overdrachten"
@@ -704,15 +615,6 @@
       "Move to trash": [
         "Naar prullenbak verplaatsen"
       ],
-      "Name your album": [
-        "Geef uw album een naam"
-      ],
-      "New": [
-        "Nieuw"
-      ],
-      "New album": [
-        "Nieuw album"
-      ],
       "New document": [
         "Nieuw document"
       ],
@@ -721,9 +623,6 @@
       ],
       "New message": [
         "Nieuw bericht"
-      ],
-      "New shared album": [
-        "Nieuw gedeeld album"
       ],
       "New spreadsheet": [
         "Nieuw spreadsheet"
@@ -779,17 +678,8 @@
       "Quit": [
         "Afsluiten"
       ],
-      "Re-index": [
-        "Opnieuw indexeren"
-      ],
-      "Re-indexing in progress": [
-        "Bezig met opnieuw indexeren"
-      ],
       "Re-sign": [
         "Opnieuw ondertekenen"
-      ],
-      "Rebuild index": [
-        "Index herbouwen"
       ],
       "Reconnect": [
         "Opnieuw verbinden"
@@ -802,9 +692,6 @@
       ],
       "Refer a friend": [
         "Verwijs een vriend door"
-      ],
-      "Refetch index": [
-        "Opnieuw indexeren"
       ],
       "Refresh the page": [
         "Pagina vernieuwen"
@@ -827,32 +714,17 @@
       "Remove button": [
         "Knop verwijderen"
       ],
-      "Remove device": [
-        "Verwijder apparaat"
-      ],
-      "Remove from album": [
-        "Uit album verwijderen"
-      ],
       "Remove from favorites": [
         "Verwijder uit favorieten"
       ],
       "Remove gift code": [
         "Verwijder geschenkcode"
       ],
-      "Remove me": [
-        "Verwijder mij"
-      ],
       "Remove my access": [
         "Mijn toegang verwijderen"
       ],
-      "Remove without saving": [
-        "Verwijder zonder op te slaan"
-      ],
       "Rename": [
         "Hernoem"
-      ],
-      "Rename album": [
-        "Album hernoemen"
       ],
       "Replace file": [
         "Bestand vervangen"
@@ -862,9 +734,6 @@
       ],
       "Report a problem": [
         "Meld een probleem"
-      ],
-      "Report abuse": [
-        "Misbruik melden"
       ],
       "Report an issue": [
         "Een probleem melden"
@@ -896,32 +765,17 @@
       "Restore this version": [
         "Deze versie herstellen"
       ],
-      "Restore version": [
-        "Versie herstellen"
-      ],
       "Retry": [
         "Opnieuw proberen"
       ],
       "Retry failed items": [
         "Mislukte items opnieuw proberen"
       ],
-      "Run diagnostics": [
-        "Diagnostiek uitvoeren"
-      ],
       "Save": [
         "Opslaan"
       ],
-      "Save and remove": [
-        "Opslaan en verwijderen"
-      ],
       "Save changes": [
         "Wijzigingen opslaan"
-      ],
-      "Save photo to your gallery": [
-        "Sla de foto op in uw galerij"
-      ],
-      "Save photos and remove": [
-        "Sla foto's op en verwijder ze"
       ],
       "Scan & Download": [
         "Scan & download"
@@ -937,12 +791,6 @@
       ],
       "Search countries": [
         "Zoek landen"
-      ],
-      "Search drive": [
-        "Drive doorzoeken"
-      ],
-      "Search is unavailable": [
-        "Zoeken is niet beschikbaar"
       ],
       "See how": [
         "Zie hoe"
@@ -977,9 +825,6 @@
       "Set as album cover": [
         "Instellen als omslag"
       ],
-      "Set as cover": [
-        "Instellen als omslag"
-      ],
       "Set password or expiration date": [
         "Stel wachtwoord of vervaldatum in"
       ],
@@ -1003,12 +848,6 @@
       ],
       "Share": [
         "Delen"
-      ],
-      "Share album": [
-        "Album delen"
-      ],
-      "Share file": [
-        "Deel Bestand"
       ],
       "Share item": [
         "Deel item"
@@ -1061,14 +900,8 @@
       "Skip verification": [
         "Verificatie overslaan"
       ],
-      "Start": [
-        "Start"
-      ],
       "Start import": [
         "Begin met importeren"
-      ],
-      "Start recovering": [
-        "Herstellen starten"
       ],
       "Stay": [
         "Blijf"
@@ -1097,9 +930,6 @@
       "Take a tour": [
         "Volg een rondleiding"
       ],
-      "This album is empty": [
-        "Dit album is leeg."
-      ],
       "Toggle Calendar app": [
         "Agenda app kiezen"
       ],
@@ -1114,9 +944,6 @@
       ],
       "Trust": [
         "Vertrouwen"
-      ],
-      "Try ${ BRAND_NAME } Workspace": [
-        "Probeer ${ BRAND_NAME } Werkruimte"
       ],
       "Try again": [
         "Opnieuw proberen"
@@ -1172,12 +999,6 @@
       "Upload folder": [
         "Map uploaden"
       ],
-      "Upload from computer": [
-        "Uploaden vanaf deze computer"
-      ],
-      "Upload photos": [
-        "Foto's uploaden"
-      ],
       "Upload picture": [
         "Afbeelding uploaden"
       ],
@@ -1226,18 +1047,9 @@
       "What do I get?": [
         "Wat krijg ik?"
       ],
-      "Windows 11 (ARM64)": [
-        "Windows 11 (ARM64)"
-      ],
-      "Windows 11/10 (x64)": [
-        "Windows 11/10 (x64)"
-      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden",
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
-      ],
-      "Your 3 GB bonus": [
-        "Uw 3 GB bonus"
       ],
       "Zoom in": [
         "Inzoomen"
@@ -1254,11 +1066,6 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Openen in ${ SHEETS_APP_NAME }"
-      ]
-    },
-    "Actions": {
-      "Upload": [
-        "Opladen"
       ]
     },
     "Actions message": {
@@ -1450,11 +1257,6 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "Uw gratis proefversie eindigt over ${ timeRemaining }"
-      ]
-    },
-    "Badge": {
-      "Invited": [
-        "Uitgenodigd"
       ]
     },
     "bf2023: Deal details": {
@@ -3144,14 +2946,6 @@
         "We hebben de volgende velden gedetecteerd in het CSV-bestand dat u heeft geüpload. Controleer de velden die u wilt importeren."
       ]
     },
-    "Docs Info": {
-      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
-        "Samenwerken is nu nog eenvoudiger. Nu kan iedereen bewerkingen voorstellen zonder het document te wijzigen."
-      ],
-      "Suggestion mode is here": [
-        "Suggestie-mode is hier"
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Bugs of kwaliteitsproblemen"
@@ -3396,6 +3190,9 @@
       "Address could not be added.": [
         "Adres kon niet worden toegevoegd."
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adres wordt al gebruikt door een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
+      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -3441,17 +3238,23 @@
       "Calendar limit reached": [
         "Agendalimiet bereikt"
       ],
-      "Can't find any secure link": [
-        "Kan geen beveiligde koppeling vinden"
-      ],
-      "Can't retrieve device name": [
-        "Kan apparaatnaam niet ophalen"
+      "Cannot add photo to album without a valid name": [
+        "Kan geen foto aan album toevoegen zonder een geldige naam"
       ],
       "Cannot export this contact": [
         "Kan dit contact niet exporteren"
       ],
       "Cannot find move target": [
         "Kan geen doel voor verplaatsings vinden"
+      ],
+      "Cannot share root folder": [
+        "Kan hoofdmap niet delen"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan de auteur van dit bestand niet verifiëren"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan niet verifiëren wie dit bestand heeft geüpload"
       ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
@@ -3474,8 +3277,14 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Zoeken naar inhoud kan niet worden ingeschakeld. Herstart de applicatie of wis de gegevens."
       ],
-      "Could not add to favorites": [
-        "Kon niet aan favorieten toevoegen"
+      "Copy operation aborted": [
+        "Kopieerbewerking afgebroken"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Het kopiëren van een item naar een niet-map is niet toegestaan"
+      ],
+      "Could not load sharing details": [
+        "Kan de deelgegevens niet laden"
       ],
       "Could not open created vault": [
         "Kon aangemaakte kluis niet openen"
@@ -3483,8 +3292,17 @@
       "Could not open updated vault": [
         "Kon bijgewerkte kluis niet openen"
       ],
-      "Could not remove from favorites": [
-        "Kon niet verwijderen uit favorieten"
+      "Could not unlock the parent folder": [
+        "Kan de bovenliggende map niet ontgrendelen"
+      ],
+      "Could not unlock this item": [
+        "Kan dit item niet ontgrendelen"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Het aanmaken van bestanden in niet-mappen is niet toegestaan"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Het aanmaken van mappen in niet-mappen is niet toegestaan"
       ],
       "Data integrity check failed": [
         "Gegevensintegriteitscontrole mislukt"
@@ -3497,17 +3315,11 @@
         "Deselecteer tenminste ${ calendarsToFixCount } agenda of",
         "Deselecteer tenminste ${ calendarsToFixCount } agenda's of"
       ],
-      "Device name does not match": [
-        "Apparaatnaam komt niet overeen"
-      ],
-      "Diagnostics failed": [
-        "Diagnose mislukt"
+      "Device not found": [
+        "Apparaat niet gevonden"
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
-      ],
-      "Downloads of desktop apps are currently unavailable": [
-        "Downloads van desktop-apps zijn momenteel niet beschikbaar"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Factuuradres bewerken is op dit moment niet beschikbaar. Probeer het later opnieuw."
@@ -3529,12 +3341,6 @@
       ],
       "Error decrypting a computer": [
         "Fout bij het ontsleutelen van een computer"
-      ],
-      "Error reading file": [
-        "Fout bij lezen bestand"
-      ],
-      "Expected structure attached": [
-        "Verwachte structuur bijgevoegd"
       ],
       "External accounts are not supported yet": [
         "Externe accounts worden nog niet ondersteund"
@@ -3560,6 +3366,18 @@
       "Failed to create public share node": [
         "Aanmaken van openbaar gedeelde node is mislukt"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Kan de bladwijzersleutel niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Kan bladwijzerwachtwoord niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Kan inhoudssleutel niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kan itemnaam niet ontsleutelen: ${ message }"
+      ],
       "Failed to expand folder": [
         "Map uitvouwen mislukt"
       ],
@@ -3571,6 +3389,9 @@
       ],
       "Failed to get details, please try again later": [
         "Het ophalen van gegevens is mislukt. Probeer het later opnieuw"
+      ],
+      "Failed to get inviter keys": [
+        "Kan uitnodigingssleutels niet ophalen"
       ],
       "Failed to load signature details, please try again later": [
         "Kon details van de handtekening worden geladen, probeer het later opnieuw"
@@ -3596,17 +3417,23 @@
       "Failed to update public share node": [
         "Bijwerken van openbaar gedeeld knooppunt is mislukt"
       ],
+      "File download failed due to empty response": [
+        "Het downloaden van bestanden is mislukt vanwege een leeg antwoord"
+      ],
+      "File has no revision": [
+        "Bestand heeft geen revisie"
+      ],
       "First name is too long": [
         "Voornaam is te lang"
       ],
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
       ],
-      "Folder not found": [
-        "Map niet gevonden"
-      ],
       "Forward address is required": [
         "Doorstuuradres is vereist"
+      ],
+      "Image preview not found": [
+        "Afbeeldingsvoorbeeld niet gevonden"
       ],
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
@@ -3632,9 +3459,6 @@
       "Invalid IBAN": [
         "Ongeldige IBAN"
       ],
-      "Invalid JSON file": [
-        "Ongeldig JSON-bestand"
-      ],
       "Invalid name": [
         "Ongeldige naam"
       ],
@@ -3653,8 +3477,14 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
+      "Invitation not found": [
+        "Uitnodiging niet gevonden"
+      ],
       "Item content cannot exceed 40KB": [
         "Item mag niet groter zijn dan 40KB"
+      ],
+      "Item not found": [
+        "Item niet gevonden"
       ],
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
@@ -3662,18 +3492,46 @@
       "Last name is too long": [
         "Achternaam is te lang"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Verouderde openbare link kan niet worden bijgewerkt. Maak opnieuw een nieuwe openbare link."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
         "Minstens ${ calendarsToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
       ],
+      "Missing inviter email": [
+        "Ontbrekende e-mail uitnodiger"
+      ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
+      ],
+      "Missing organization private key": [
+        "Ontbrekende privésleutel van de organisatie"
+      ],
+      "Missing organization public key": [
+        "Ontbrekende openbare sleutel van de organisatie"
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
+      "Moving item to a non-folder is not allowed": [
+        "Het is niet toegestaan ​​om een ​​item naar een niet-map te verplaatsen"
+      ],
+      "Moving root item is not allowed": [
+        "Het verplaatsen van het hoofditem is niet toegestaan"
+      ],
       "Name is required": [
         "Naam is verplicht"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "De naam mag maximaal ${ MAX_NODE_NAME_LENGTH } tekens lang zijn",
+        "De naam mag maximaal ${ MAX_NODE_NAME_LENGTH } tekens lang zijn"
+      ],
+      "Name must not be empty": [
+        "Naam mag niet leeg zijn"
       ],
       "Network error": [
         "Netwerkfout"
@@ -3689,6 +3547,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
+      ],
+      "No file data was received. Please try again.": [
+        "Geen bestandsgegevens ontvangen. Probeer het opnieuw."
       ],
       "No file to upload": [
         "Geen bestand om te op te laden"
@@ -3707,6 +3568,12 @@
         "Eén van de groepen heeft geen contacten: ${ noContactGroupList }",
         "Sommige groepen hebben geen contacten: ${ noContactGroupList } "
       ],
+      "Operation aborted": [
+        "Bewerking afgebroken"
+      ],
+      "Operation failed, try again later": [
+        "Bewerking mislukt. Probeer het later opnieuw"
+      ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
@@ -3715,6 +3582,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Een deel van het bestand lijkt beschadigd te zijn"
       ],
       "Password is required": [
         "Wachtwoord is vereist"
@@ -3733,6 +3603,12 @@
       ],
       "Payment process not supported": [
         "Betalingsproces niet ondersteund"
+      ],
+      "Photo is already in the target album": [
+        "De foto staat al in het doelalbum"
+      ],
+      "Photo not found": [
+        "Foto niet gevonden"
       ],
       "Please activate your search again": [
         "Activeer het zoeken opnieuw"
@@ -3802,6 +3678,9 @@
         "Dubbele genodigden verwijderd: ${ joinedInvitee }",
         "Dubbele genodigden verwijderd: ${ joinedInvitee }"
       ],
+      "Renaming root item is not allowed": [
+        "Het hernoemen van het rootitem is niet toegestaan"
+      ],
       "Report failed to be sent": [
         "Rapport kon niet verzonden worden"
       ],
@@ -3811,8 +3690,8 @@
       "Reverse charge scheme is not supported for this plan": [
         "Omgekeerde btw-regeling wordt niet ondersteund voor dit abonnement"
       ],
-      "Search failed": [
-        "Zoeken mislukt"
+      "Signature is missing": [
+        "Handtekening ontbreekt"
       ],
       "Signature not verified": [
         "Handtekening niet geverifieerd"
@@ -3820,11 +3699,26 @@
       "Signature verification failed": [
         "Controle van handtekening mislukt"
       ],
+      "Signature verification for ${ signatureType } failed": [
+        "Handtekeningverificatie voor ${ signatureType } mislukt"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Handtekeningverificatie voor ${ signatureType } mislukt: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Enkele contacten konden niet verwijderd worden"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Sommige bestandsgegevens konden niet worden geüpload. Probeer het opnieuw."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Sommige bestandsdelen konden niet worden geüpload. Probeer het opnieuw."
+      ],
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
+      ],
+      "Some items could not be loaded": [
+        "Sommige items konden niet worden geladen"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sommige namen van mappen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
@@ -3844,17 +3738,8 @@
       "Something went wrong": [
         "Er is iets fout gegaan."
       ],
-      "Something went wrong during folder listing": [
-        "Er is iets misgegaan tijdens het oplijsten van de mappen"
-      ],
       "Something went wrong while fetching available domains": [
         "Er is een fout opgetreden bij het ophalen van beschikbare domeinnamen"
-      ],
-      "Something went wrong with search. Please try again later.": [
-        "Er ging iets mis. Probeer het later nog eens."
-      ],
-      "Something went wrong with search: Not enough storage space.": [
-        "Er ging iets mis met zoeken: Onvoldoende opslagruimte."
       ],
       "Something went wrong. Please try again.": [
         "Er is iets fout gegaan. Probeer het later nog eens."
@@ -3904,6 +3789,9 @@
       "The minimum donation amount is ${ price }": [
         "Het minimale donatiebedrag is ${ price }"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Het geüploade bestand komt niet overeen met het origineel. Probeer het opnieuw."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Er zijn te veel mappen op uw externe account. Pas de import aan om enkele mappen te verwijderen."
       ],
@@ -3922,14 +3810,35 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
+      "This file has missing crypto material": [
+        "Dit bestand bevat ontbrekend cryptomateriaal"
+      ],
+      "This file has no version available to download": [
+        "Er is geen versie beschikbaar om te downloaden van dit bestand"
+      ],
+      "This file version could not be uploaded": [
+        "Deze bestandsversie kan niet worden geüpload"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Deze mapnaam is niet beschikbaar. Kies een andere naam."
+      ],
+      "This item has no image preview": [
+        "Dit item heeft geen afbeeldingsvoorbeeld"
+      ],
+      "This item is no longer shared": [
+        "Dit item wordt niet langer gedeeld"
+      ],
+      "This item is not shared": [
+        "Dit item is niet gedeeld"
       ],
       "This label name is not available. Please choose a different name.": [
         "Deze labelnaam is niet beschikbaar. Kies een andere naam."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
+      ],
+      "Too many server requests, please try again later": [
+        "Te veel serververzoeken. Probeer het later opnieuw"
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
@@ -3973,48 +3882,39 @@
       "VAT number must start with ${ prefixes }": [
         "BTW-nummer moet beginnen met ${ prefixes }"
       ],
-      "We cannot retrieve this item": [
-        "We kunnen dit item niet raadplegen"
+      "Verification keys are not available": [
+        "Verificatiesleutels zijn niet beschikbaar"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verificatiesleutels voor ${ signatureType } zijn niet beschikbaar"
       ],
       "We couldn’t send a verification code using this method.": [
         "We konden via deze methode geen verificatiecode verzenden."
       ],
-      "We were not able to load some invitations": [
-        "We konden sommige uitnodigingen niet laden."
-      ],
       "We were not able to load some items": [
         "Enkele items konden niet geladen worden."
-      ],
-      "We were not able to load some items shared with you": [
-        "We konden enkele met u gedeelde items niet laden."
-      ],
-      "We were not able to load some of your invitation to shared items": [
-        "We konden sommige van uw uitnodigingen voor gedeelde items niet laden."
-      ],
-      "We were not able to load some of your saved shared links": [
-        "We konden sommige van uw opgeslagen gedeelde koppelingen niet laden."
-      ],
-      "We were not able to load some of your shared items": [
-        "We konden een aantal van uw gedeelde items niet laden."
-      ],
-      "We were not able to load some search results": [
-        "Sommige zoekresultaten konden niet geladen worden."
-      ],
-      "We were not able to load the file history": [
-        "We konden de bestandsgeschiedenis niet laden"
       ],
       "We were not able to load the folder contents": [
         "De mapinhoud kon niet worden geladen"
       ],
-      "We're sorry, but free upload is not available right now.": [
-        "Het is momenteel niet mogelijk om gratis te uploaden."
-      ],
       "Wrong billing address": [
         "Verkeerd factuuradres"
+      ],
+      "You can create public links for your own files only": [
+        "U kunt alleen openbare links voor uw eigen bestanden maken"
+      ],
+      "You can update a public link for your own files only": [
+        "U kunt een openbare link alleen voor uw eigen bestanden bijwerken"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
         "U kunt geen e-mail verzenden naar meer dan ${ maxContacts } ontvangers"
+      ],
+      "You do not have access to this item": [
+        "U heeft geen toegang tot dit item"
+      ],
+      "You do not have access to this shared item": [
+        "U heeft geen toegang tot dit gedeelde item"
       ],
       "You have reached the maximum number of calendars.": [
         "U hebt het maximum aantal agenda's bereikt."
@@ -4176,23 +4076,11 @@
       ]
     },
     "Error message": {
-      "Access denied": [
-        "Toegang geweigerd"
-      ],
       "App currently unavailable": [
         "App momenteel niet beschikbaar"
       ],
-      "Brace yourself till we get the error fixed.": [
-        "Wacht rustig af terwijl wij de fout herstellen."
-      ],
       "Error: ${ errorMessage }": [
         "Fout: ${ errorMessage }"
-      ],
-      "Internal server error": [
-        "Interne serverfout"
-      ],
-      "Not found": [
-        "Niet gevonden"
       ],
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
@@ -4214,9 +4102,6 @@
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "Wanneer extra wachtwoord is ingeschakeld, kan aliasbeheer alleen worden gedaan in ${ PASS_APP_NAME }."
-      ],
-      "You may also refresh the page or try again later.": [
-        "Vernieuw de pagina of probeer het later opnieuw."
       ]
     },
     "Error notification": {
@@ -4278,12 +4163,6 @@
     "Event title": {
       "(no title)": [
         "(geen titel)"
-      ]
-    },
-    "Failed": {
-      "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } mislukt",
-        "${ countOfFailedLinks } mislukt"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4513,6 +4392,29 @@
         "Terabytes"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Geactiveerd"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Fouten"
+      ],
+      "In progress": [
+        "In uitvoering"
+      ],
+      "Migrated": [
+        "Gemigreerd"
+      ],
+      "Not activated": [
+        "Niet geactiveerd"
+      ],
+      "Pending": [
+        "In behandeling"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } bijgewerkt"
@@ -4564,12 +4466,6 @@
       "Contacts": [
         "Contacten"
       ],
-      "Create new album": [
-        "Nieuw album maken"
-      ],
-      "Create new shared album": [
-        "Nieuw gedeeld album maken"
-      ],
       "Domain": [
         "Domein"
       ],
@@ -4579,33 +4475,11 @@
       "Password ends with": [
         "Wachtwoord eindigt met"
       ],
-      "Rename album": [
-        "Albumnaam wijzigen"
-      ],
       "Security Center": [
         "Beveiligingscentrum"
       ],
       "Username": [
         "Gebruikersnaam"
-      ]
-    },
-    "Heading": {
-      "Add ${ photoCount } photo to": [
-        "Voeg ${ photoCount } foto toe aan",
-        "Voeg ${ photoCount } foto's toe aan"
-      ],
-      "Add to shared album": [
-        "Toevoegen aan gedeeld album"
-      ],
-      "All albums": [
-        "Alle albums"
-      ],
-      "Recent": [
-        "Recent"
-      ],
-      "Share ${ photoCount } photo via": [
-        "Deel ${ photoCount } foto via",
-        "Deel ${ photoCount } foto's via"
       ]
     },
     "Hint": {
@@ -4951,21 +4825,11 @@
         "${ addressCount } e-mailadres",
         "${ addressCount } e-mailadressen"
       ],
-      "${ albumName } has been successfully deleted": [
-        "${ albumName } is succesvol verwijderd"
-      ],
-      "${ albums } album": [
-        "${ albums } album",
-        "${ albums } albums"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
-      ],
-      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
-        "${ BRAND_NAME } Workspace stelt uw team in staat efficiënt samen te werken zonder ooit de gegevens van uw bedrijf in gevaar te brengen."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
@@ -5009,39 +4873,18 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } en ${ SHEETS_APP_NAME } bestanden kunnen niet direct worden gedownload en zullen niet worden opgenomen in deze download. U kunt de andere bestanden downloaden door te klikken op 'Doorgaan met downloaden'."
       ],
-      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } heeft gedetecteerd dat de lokale zoekindex beschadigd is en niet langer kan worden gebruikt. Bouw de index opnieuw op om de zoekopdracht te herstellen."
-      ],
-      "${ DRIVE_APP_NAME } on App Store": [
-        "${ DRIVE_APP_NAME } in de App Store"
-      ],
-      "${ DRIVE_APP_NAME } on Play Store": [
-        "${ DRIVE_APP_NAME } in de Play Store"
-      ],
-      "${ email } invited you to join ${ albumName }": [
-        "${ email } heeft u uitgenodigd om lid te worden van ${ albumName }"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: afbeelding op volledige grootte"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: voorbeeld in lage resolutie"
       ],
-      "${ files } file": [
-        "${ files }-bestand",
-        "${ files }-bestanden"
-      ],
-      "${ folders } folder": [
-        "${ folders } map",
-        "${ folders } mappen"
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
       ],
-      "${ invitationsCount } pending invitation": [
-        "${ invitationsCount } uitnodiging in behandeling",
-        "${ invitationsCount } uitnodigingen in behandeling"
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME }-markering"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
@@ -5066,14 +4909,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }. De verlengingsprijs en de datum van uw ${ planTitle } abonnement blijven ongewijzigd."
-      ],
-      "${ photoCount } item": [
-        "${ photoCount } item",
-        "${ photoCount } items"
-      ],
-      "${ photos } photo": [
-        "${ photos } foto",
-        "${ photos } foto's"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
@@ -5115,9 +4950,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
-      ],
-      "${ state.result.entries.length } entries": [
-        "${ state.result.entries.length } vermeldingen"
       ],
       "${ storage } storage": [
         "${ storage } opslag"
@@ -5170,9 +5002,6 @@
       ],
       "30-day money-back guarantee.": [
         "30-dagen geld terug garantie."
-      ],
-      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
-        "Een nieuwe versie van ${ DRIVE_APP_NAME } is beschikbaar. Herlaad de pagina om de zoekfunctie te blijven gebruiken."
       ],
       "A number will be added to the filename": [
         "Een nummer wordt toegevoegd aan de bestandsnaam"
@@ -5249,9 +5078,6 @@
       "Already in your library": [
         "Al aanwezig in uw bibliotheek"
       ],
-      "Also try looking in Trash.": [
-        "Probeer ook te zoeken in de Prullenbak."
-      ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
       ],
@@ -5261,23 +5087,11 @@
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
       ],
-      "An active recovery file": [
-        "Een actief herstelbestand"
-      ],
-      "An issue occurred during the restore process.": [
-        "Er is een probleem opgetreden tijdens het herstelproces."
-      ],
       "and": [
         "en"
       ],
-      "And access it from anywhere": [
-        "En krijg er overal toegang toe"
-      ],
       "Anonymous": [
         "Anoniem"
-      ],
-      "Apr": [
-        "Apr"
       ],
       "Are you sure you want to discard your changes?": [
         "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
@@ -5288,17 +5102,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Weet u zeker dat u de prullenbak wilt leegmaken en alle items permanent wilt verwijderen?"
       ],
-      "Are you sure you want to permanently delete": [
-        "Weet u zeker dat u definitief wilt verwijderen"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Weet u zeker dat u \"${ itemName }\" permanent wilt verwijderen uit prullenbak?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Weet u zeker dat u de geselecteerde items permanent wilt verwijderen uit de prullenbak?"
-      ],
-      "Are you sure you want to proceed?": [
-        "Weet u zeker dat u verder wilt gaan?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Voer minstens ${ BETTER_PASSWORD_LENGTH } tekens in"
@@ -5309,8 +5117,8 @@
       "Attention required": [
         "Aandacht vereist"
       ],
-      "Aug": [
-        "Aug"
+      "Author is not provided on public link": [
+        "De auteur wordt niet vermeld op de openbare link"
       ],
       "Awaiting transaction": [
         "Transactie wordt afgewacht"
@@ -5318,14 +5126,8 @@
       "Balance from your previous subscription": [
         "Balans van uw vorige abonnement"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Omdat ${ DRIVE_APP_NAME } end-to-end versleuteld is, kunnen we geen toegang krijgen of uw bestanden voor u decoderen. Om uw schijf te ontgrendelen na een wachtwoord reset, moet u een van de volgende dingen hebben:"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
-      ],
-      "Better in the app": [
-        "Beter in de app"
       ],
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
@@ -5354,17 +5156,11 @@
       "Can't move a folder into itself": [
         "Een map kan niet naar zichzelf worden verplaatst"
       ],
-      "Can't rename to same name": [
-        "Kan niet hernoemen naar dezelfde naam"
-      ],
       "Can't write into folder": [
         "Kan niet naar map schrijven"
       ],
       "Canceled": [
         "Geannuleerd"
-      ],
-      "Cannot load links": [
-        "Kan koppelingen niet laden"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -5378,23 +5174,14 @@
       "Choose a plan that works best for you.": [
         "Kies een abonnement dat het beste bij u past."
       ],
-      "Clear all search data": [
-        "Wis alle zoekgegevens"
-      ],
       "Clear data": [
         "Gegevens wissen"
       ],
       "Clear encrypted search data": [
         "Versleutelde zoekgegevens wissen"
       ],
-      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Browsergegevens wissen, zal de zoekindex op dit apparaat wissen. Alle bestanden zullen opnieuw geïndexeerd moeten worden terwijl u de zoekfunctie gebruikt."
-      ],
       "Clears browser data related to the encrypted search.": [
         "Wist browsergegevens gerelateerd aan het versleuteld zoeken."
-      ],
-      "Clears browser data related to the search.": [
-        "Wist browsergegevens met betrekking tot het zoeken."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
@@ -5413,9 +5200,6 @@
       ],
       "Continue": [
         "Ga verder"
-      ],
-      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "Blijf ${ DRIVE_APP_NAME } gebruiken en ontgrendel de schijf later"
       ],
       "Copy the link to clipboard": [
         "Link kopiëren naar klembord"
@@ -5449,9 +5233,6 @@
       "Create in": [
         "Maak in"
       ],
-      "Create links and share your files with others.": [
-        "Maak links en deel uw bestanden met anderen."
-      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
       ],
@@ -5467,9 +5248,6 @@
       "Data integrity check failed": [
         "Gegevensintegriteitscontrole mislukt"
       ],
-      "Dec": [
-        "Dec"
-      ],
       "Decrypting files": [
         "Bestanden ontsleutelen"
       ],
@@ -5481,10 +5259,6 @@
       ],
       "default email address": [
         "standaard e-mailadres"
-      ],
-      "Delete locked drive": [
-        "Verwijder vergrendelde drive",
-        "Verwijder vergrendelde drives"
       ],
       "Details": [
         "Details"
@@ -5517,9 +5291,6 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
       ],
-      "Download ${ name } app": [
-        "Download ${ name }-app"
-      ],
       "Download current logs": [
         "Huidige logboeken downloaden"
       ],
@@ -5540,9 +5311,6 @@
       ],
       "Drop file here to upload": [
         "Sleep bestand hier om te uploaden"
-      ],
-      "Drop files here": [
-        "Drop bestanden hier"
       ],
       "Drop files here to upload or click on the upload button": [
         "Sleep bestanden hierheen om te uploaden of klik op de upload knop"
@@ -5571,17 +5339,8 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "E-mails die meer dan 30 dagen geleden naar prullenbak werden verplaatst worden automatisch gewist."
       ],
-      "Empty folder": [
-        "Map leegmaken"
-      ],
       "Enabling auto-deletion…": [
         "Activatie automatisch verwijderen"
-      ],
-      "Enabling drive search": [
-        "Drive doorzoeken wordt ingeschakeld"
-      ],
-      "Encrypted search is here": [
-        "Versleuteld zoeken is hier"
       ],
       "End-to-end encrypted": [
         "End-to-end versleuteld"
@@ -5632,14 +5391,8 @@
       "Expired": [
         "Verlopen"
       ],
-      "Export diagnostic logs for technical support and troubleshooting": [
-        "Diagnostische logboeken exporteren voor technische ondersteuning en probleemoplossing"
-      ],
       "Fastest VPN speeds of up to 10Gbps": [
         "De hoogste VPN-snelheden tot 10 Gbps"
-      ],
-      "Feb": [
-        "Feb"
       ],
       "File could not be scanned": [
         "Bestand kan niet gescanned worden"
@@ -5650,20 +5403,17 @@
       "File will not be updated": [
         "Het bestand zal niet worden bijgewerkt"
       ],
-      "Files and folders that others shared with you will appear here": [
-        "Bestanden en mappen die anderen met u hebben gedeeld worden hier weergegeven"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
       ],
       "finance": [
         "financiën"
       ],
+      "Find out what can be migrated.": [
+        "Ontdek wat er gemigreerd kan worden."
+      ],
       "Folder will not be uploaded": [
         "Folder zal niet worden ge-upload"
-      ],
-      "Folders you sync from your computer will appear here.": [
-        "Mappen die u synchroniseert vanaf uw computer zullen hier verschijnen."
       ],
       "for ${ price }": [
         "voor ${ price }"
@@ -5677,23 +5427,8 @@
       "Free 5GB encrypted storage to get started": [
         "Gratis 5GB versleutelde opslag om te beginnen"
       ],
-      "from the version history?": [
-        "van de versie geschiedenis?"
-      ],
       "Geoblocking": [
         "Geoblocking"
-      ],
-      "Get logs and other information for technical support and troubleshooting": [
-        "Logboeken en andere informatie ophalen voor technische ondersteuning en probleemoplossing."
-      ],
-      "Get the app to backup photos from your phone or upload them here.": [
-        "Download de app om foto's van uw telefoon te back-uppen of upload hier."
-      ],
-      "Get the desktop app to sync files from your computer.": [
-        "Download de desktopapp om bestanden van uw computer te synchroniseren."
-      ],
-      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
-        "Leer ${ DRIVE_APP_NAME } kennen en verdien uw 3 GB opslagbonus! Neem vandaag actie."
       ],
       "Google Pay mark": [
         "Google Pay merk"
@@ -5710,14 +5445,8 @@
       "High Priority": [
         "Hoge Prioriteit"
       ],
-      "How does encrypted search work?": [
-        "Hoe werkt versleuteld zoeken?"
-      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Ik bevestig hierbij, te goeder trouw, dat de informatie en verklaringen in dit rapport juist en volledig zijn."
-      ],
-      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
-        "Als die bestanden niet volledig lokaal zijn gedownload op ${ deviceName }, verliest u er de toegang toe."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
@@ -5733,9 +5462,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
-      ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "Als u een van deze heeft, ga dan verder naar ${ BRAND_NAME }-account instelling om het deblokkeer proces voort te zetten."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "Als u de toegang tot uw authenticatie-app bent kwijtgeraakt, kunt u 1 van de 16 back-up herstelcodes gebruiken die zijn verstrekt toen u tweestapsverificatie instelde. ${ learnMoreLink }"
@@ -5783,38 +5509,8 @@
       "Included": [
         "inbegrepen"
       ],
-      "Index is empty.": [
-        "Index niet ingevuld."
-      ],
-      "Indexed ${ first }": [
-        "${ first } geïndexeerd"
-      ],
-      "Indexed ${ first } and ${ second }": [
-        "${ first } en ${ second } geïndexeerd"
-      ],
-      "Indexed ${ first }, ${ second } and ${ third }": [
-        "${ first }, ${ second } en ${ third } geïndexeerd"
-      ],
-      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
-        "${ first }, ${ second }, ${ third } en ${ fourth } geïndexeerd"
-      ],
-      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "Het indexeren heeft een onverwachte status bereikt en kan niet worden voortgezet. Bouw de index opnieuw op om te herstellen."
-      ],
-      "Indexing in progress": [
-        "Bezig met indexeren"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Items ${ esProgress } van ${ totalProgressToShow } aan het indexeren"
-      ],
-      "Indexing search results…": [
-        "Zoekresultaten indexeren…"
-      ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
-      ],
-      "Integrity issues found": [
-        "Integriteitsproblemen gevonden"
       ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
@@ -5825,17 +5521,8 @@
       "Internet connection restored.": [
         "Internetverbinding hersteld."
       ],
-      "Invitation confirmed": [
-        "Uitnodiging bevestigd"
-      ],
       "Invite link copied": [
         "Link met uitnodiging gekopieerd"
-      ],
-      "iOS and Android Apps": [
-        "iOS en Android Apps"
-      ],
-      "Issues found": [
-        "Problemen gevonden"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Het lijkt erop dat u recent heeft geprobeerd ${ uploadName } te uploaden. Als de upload mislukt is, ${ replaceFile }. Als de upload nog bezig is, zal het vervangen van het bestand de huidige upload annuleren."
@@ -5843,29 +5530,11 @@
       "It's better to have:": [
         "Het is beter om:"
       ],
-      "Items in the trash will stay here until you delete them permanently": [
-        "Items in de prullenbak blijven daar tot u ze permanent verwijdert"
-      ],
-      "Items moved to the trash will stay here until deleted": [
-        "Items verplaatst naar de prullenbak blijven hier tot het verwijderd is"
-      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Het is het beste om op elk moment een VPN te gebruiken. Maar hier is wanneer cyberbeveiligingsbedreigingen het grootst kunnen zijn:"
       ],
-      "It’s easy and secure": [
-        "Het is eenvoudig en veilig"
-      ],
-      "Jan": [
-        "Jan"
-      ],
       "JCB logo": [
         "JCB-logo"
-      ],
-      "Jul": [
-        "Jul"
-      ],
-      "Jun": [
-        "Jun"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
@@ -5884,9 +5553,6 @@
       ],
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
-      ],
-      "Last week": [
-        "Laatste week"
       ],
       "Learn more": [
         "Meer informatie"
@@ -5912,9 +5578,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
       ],
-      "Loading links": [
-        "Koppelingen laden"
-      ],
       "Loading preview": [
         "Voorbeeld laden"
       ],
@@ -5924,14 +5587,8 @@
       "Low Priority": [
         "Lage Prioriteit"
       ],
-      "Makes your account safer": [
-        "Maakt uw account veiliger"
-      ],
       "Malware detected": [
         "Malware gedetecteerd"
-      ],
-      "Mar": [
-        "Mrt"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -5939,9 +5596,6 @@
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakters"
-      ],
-      "May": [
-        "Mei"
       ],
       "Medium Priority": [
         "Middelmatige prioriteit"
@@ -5958,29 +5612,8 @@
       "Monitor accounts": [
         "Accounts monitoren"
       ],
-      "More": [
-        "Meer"
-      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De meeste openbare wifi-netwerken zijn veilig, maar sommige zijn onveilig, waardoor u wordt blootgesteld aan cyberbedreigingen. Een VPN versleutelt uw verkeer en houdt u beschermd."
-      ],
-      "Move ${ dragCount } item": [
-        "Verplaats ${ dragCount } item",
-        "Verplaats ${ dragCount } items"
-      ],
-      "Move ${ fileCount } file": [
-        "Verplaats ${ fileCount } bestand",
-        "Verplaats ${ fileCount } bestanden"
-      ],
-      "Move ${ folderCount } folder": [
-        "Verplaats ${ folderCount } map",
-        "Verplaats ${ folderCount } mappen"
-      ],
-      "Moving files": [
-        "Bestanden verplaatsen"
-      ],
-      "My Links": [
-        "Mijn linken"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
@@ -5991,9 +5624,6 @@
       "No": [
         "Nee"
       ],
-      "No Albums": [
-        "Geen albums"
-      ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
       ],
@@ -6003,20 +5633,14 @@
       "No group found": [
         "Geen groep gevonden"
       ],
-      "No issue found": [
-        "Geen probleem gevonden"
-      ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
-      ],
-      "No populator states found.": [
-        "Geen populatorstaten gevonden."
       ],
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "No synced folders": [
-        "Geen gesynchroniseerde mappen"
+      "No users to display": [
+        "Er zijn geen gebruikers om weer te geven."
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Geen van de geüploade sleutels zijn geldig voor versleuteling. Upload een geldige sleutel of schakel \"E-mails versleutelen\" uit om berichten te kunnen versturen naar dit adres."
@@ -6027,15 +5651,6 @@
       "Not connected": [
         "Niet verbonden"
       ],
-      "Not enough storage space": [
-        "Onvoldoende opslagruimte"
-      ],
-      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Opmerking: gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ DRIVE_APP_NAME } hebt geïnstalleerd."
-      ],
-      "Nov": [
-        "Nov"
-      ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
@@ -6045,20 +5660,11 @@
       "Numbers": [
         "Nummers"
       ],
-      "Oct": [
-        "Okt"
-      ],
       "of": [
         "van"
       ],
       "On public WiFi networks": [
         "Op openbare wifinetwerken"
-      ],
-      "One encrypted suite. Full business protection.": [
-        "Eén gecodeerde suite. Volledige bedrijfsbescherming."
-      ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "Eén van uw versleutelde drives is vergrendeld. Dit is waarschijnlijk het gevolg van een recente wachtwoordwijziging."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
@@ -6068,9 +5674,6 @@
       ],
       "or discover other features:": [
         "of andere functies ontdekken:"
-      ],
-      "Or use the \"+ New\" button": [
-        "Of gebruik de \"+ Nieuw\" knop"
       ],
       "Organization size": [
         "Grootte van de organisatie"
@@ -6102,30 +5705,11 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
       ],
-      "Permanently delete all files in your locked drive": [
-        "Verwijder permanent alle bestanden op uw vergrendelde schijf"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline is enkel compatibel met Plain Text-formaat."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME verzendt automatisch het bericht gebruikmakend van de huidige opstelmodus."
-      ],
-      "Photo is not saved to your library": [
-        "Foto is niet opgeslagen in uw bibliotheek"
-      ],
-      "Photo is set as album cover": [
-        "Foto is ingesteld als albumhoes"
-      ],
-      "Photo saved to your Drive": [
-        "Foto opgeslagen in uw Drive",
-        "Foto's opgeslagen in uw Drive"
-      ],
-      "Photo was copied to stream and marked favorite there.": [
-        "Foto is gekopieerd naar de stream en daar als favoriet gemarkeerd."
-      ],
-      "Photos have been successfully recovered.": [
-        "Foto's zijn succesvol hersteld."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Vraag aan de eigenaar om u rechtstreeks uit te nodigen voor het document."
@@ -6209,12 +5793,6 @@
       "Preview of documents is not yet supported.": [
         "Voorbeelden van documenten is nog niet ondersteund."
       ],
-      "Previous versions are kept for ${ retentionLabel }": [
-        "Vorige versies worden bewaard voor ${ retentionLabel }"
-      ],
-      "Previous versions are not saved": [
-        "Vorige versies worden niet opgeslagen"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
       ],
@@ -6224,29 +5802,14 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privé browsen (of \"incognito\" modus) is alleen handig om uw activiteit verborgen te houden op uw apparaat. Het stopt uw browser om geschiedenis en cookies op te slaan, maar het maakt u niet onzichtbaar. Uw ISP, netwerkbeheerder en de websites die u bezoekt kunnen nog steeds zien wat u online doet."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Privézoeken ingeschakeld. U kunt dit dialoog nu afsluiten, en naar bestanden en folders zoeken."
-      ],
-      "Public link": [
-        "Publieke link"
-      ],
       "Public sharing of documents is not yet supported.": [
         "Publiek delen van documenten is nog niet ondersteund."
-      ],
-      "Re-indexing in progress": [
-        "Bezig met opnieuw indexeren"
-      ],
-      "Ready to add some photos?": [
-        "Klaar om foto's toe te voegen?"
       ],
       "RECOMMENDED": [
         "AANBEVOLEN"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
-      ],
-      "Recovery process might take some time.": [
-        "Het herstelproces kan enige tijd in beslag nemen."
       ],
       "Referral link copied to your clipboard": [
         "Doorverwijslink gekopieerd naar het klembord"
@@ -6260,26 +5823,14 @@
       "Report has been sent": [
         "Rapport werd verzonden"
       ],
-      "Request access, or switch to an account with access.": [
-        "Vraag toegang aan, of schakel over naar een account met toegang."
-      ],
       "Requested item doesn't exist anymore": [
         "Aangevraagd item bestaat niet meer"
       ],
       "Restore": [
         "Herstel"
       ],
-      "Restore Photos": [
-        "Foto's herstellen"
-      ],
       "Restored files ${ formattedDate }": [
         "Herstelde bestanden ${ formattedDate }"
-      ],
-      "Restoring Photos... Please keep the tab open": [
-        "Foto's herstellen. Sluit het tabblad niet"
-      ],
-      "Running diagnostics...": [
-        "Diagnose wordt uitgevoerd..."
       ],
       "Saving...": [
         "Opslaan..."
@@ -6287,65 +5838,20 @@
       "Scan the QR code with your mobile device": [
         "Scan de QR-code met uw mobiele apparaat"
       ],
-      "Scan to download": [
-        "Scan om te downloaden"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Zoeken kan niet ingeschakeld worden in deze browser"
-      ],
-      "Search data is corrupted": [
-        "Zoekgegevens zijn beschadigd"
-      ],
-      "Search Enabled": [
-        "Zoeken Ingeschakeld"
-      ],
-      "Search enabled. You may now close this dialogue and search for files and folders.": [
-        "Zoeken ingeschakeld. U kunt dit dialoog nu sluiten en zoeken naar bestanden en mappen."
-      ],
-      "Search encountered an internal error. Rebuild the index to recover.": [
-        "Zoeken heeft een interne fout aangetroffen. Bouw de index opnieuw op om te herstellen."
-      ],
-      "Search engine error": [
-        "Fout in zoekmachine"
-      ],
-      "Search error": [
-        "Zoekopdracht fout"
-      ],
-      "Search is in an invalid state": [
-        "De zoekopdracht heeft een ongeldige status"
-      ],
-      "Search is ready. Your files have been indexed.": [
-        "Zoeken is klaar. Uw bestanden zijn geïndexeerd."
-      ],
-      "Search module is not available.": [
-        "De zoekfunctie is niet beschikbaar."
-      ],
       "Select a destination folder": [
         "Selecteer een doelmap"
-      ],
-      "Select a folder to make the copy in": [
-        "Kies een map om de kopie in te plaatsen"
       ],
       "Select a folder to move to.": [
         "Kies een map om naartoe te verplaatsen"
       ],
-      "Select all items for": [
-        "Selecteer alle items voor"
-      ],
-      "Select an uploaded file or folder and create a link to it.": [
-        "Selecteer een geüpload bestand of map en maak er een link naartoe."
-      ],
-      "Select item": [
-        "Selecteer item"
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wil gebruiken wanneer u een e-mail stuurt aan deze geadresseerde."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt afhankelijk van het aantal beschikbare agenda's binnen uw abonnement."
-      ],
-      "Sep": [
-        "Sep"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalingen zijn momenteel niet beschikbaar. Probeer het later nogmaals."
@@ -6368,23 +5874,8 @@
       "Setting up your new address…": [
         "Uw nieuwe adres instellen…"
       ],
-      "Share files with links": [
-        "Bestanden delen met links"
-      ],
-      "Shared": [
-        "Gedeeld"
-      ],
-      "Shared by ": [
-        "Gedeeld door "
-      ],
       "Shared link not found": [
         "Gedeelde link niet gevonden"
-      ],
-      "Shared with me": [
-        "Gedeeld met mij"
-      ],
-      "Shared with you": [
-        "Gedeeld met u"
       ],
       "Signature check will be ignored": [
         "Handtekeningcontrole zal genegeerd worden"
@@ -6397,12 +5888,6 @@
       ],
       "Some items failed": [
         "Sommige items zijn mislukt"
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Sommige bestanden zijn niet meer toegankelijk. Herstel de toegang tot uw bestanden. ${ StartRecoveryButton }"
-      ],
-      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Sommige foto's in dit album zijn niet opgeslagen in uw tijdlijn. Als u dit album verwijdert, worden die foto's permanent verwijderd."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Sommige websites en streaming services blokkeren de inhoud per regio. Een VPN stelt u in staat om deze beperkingen te omzeilen en toegang tot het internet te krijgen."
@@ -6453,9 +5938,6 @@
       "that": [
         "dat"
       ],
-      "The albums you create are shown here.": [
-        "De albums die u maakt worden hier weergegeven."
-      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Het aantal downloads omvat zowel daadwerkelijke downloads als exemplaren waarin bestanden worden bekeken."
       ],
@@ -6468,17 +5950,11 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
       ],
-      "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "De zoekmachine heeft een interne fout aangetroffen. Bouw de index opnieuw op om te herstellen."
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Er zijn bestanden die nog overgedragen moeten worden. Het overdrachtsbeheer sluiten zal alle handelingen stopzetten."
-      ],
-      "There is nothing to see here": [
-        "Er is hier niets te zien"
       ],
       "Thinking about this": [
         "Hierover aan het nadenken"
@@ -6491,9 +5967,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
-      ],
-      "This can NOT be undone. Please enter the device name to confirm removal.": [
-        "Deze actie kan NIET ongedaan gemaakt worden. Wilt u de naam van uw toestel in te geven om uw verwijdering te bevestigen."
       ],
       "This file appears to be empty:": [
         "Dit bestand lijkt leeg te zijn:",
@@ -6514,10 +5987,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "Dit item is niet opgeslagen in uw Foto's bibliotheek. Als u het verwijdert uit dit album, verliest u toegang tot het item.",
-        "Sommige van de geselecteerde items zijn niet opgeslagen in uw Foto's bibliotheek. Als u ze verwijdert uit dit album, verliest u toegang tot de items."
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
@@ -6527,11 +5996,14 @@
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Dit betekent dat uw internetprovider en de websites die u bezoekt, uw persoonlijke gegevens niet kunnen koppelen aan uw online activiteiten."
       ],
-      "This month": [
-        "Deze maand"
-      ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Deze unieke code kan worden gebruikt door websites en ISP's (internet service providers) om uw locatie en browsegeschiedenis te koppelen aan uw apparaat"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Deze gebruiker kan niet worden gemigreerd omdat zijn e-mailadres niet beschikbaar is op ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit met het platform."
       ],
       "This will cancel any remaining downloads.": [
         "Dit annuleert alle resterende downloads."
@@ -6541,9 +6013,6 @@
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Dit zal alle resterende uploads annuleren. Geannuleerde bestanden worden niet opgeslagen in ${ DRIVE_APP_NAME }."
-      ],
-      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "Dit verwijdert alleen het album. Uw foto's blijven in uw tijdlijn. Deze actie kan niet ongedaan worden gemaakt."
       ],
       "This will permanently delete the file you uploaded.": [
         "Deze actie zal het bestand dat u heeft opgeladen definitief verwijderen."
@@ -6563,23 +6032,11 @@
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
       ],
-      "Time": [
-        "Tijd"
-      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
       ],
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "Om deze bestanden te downloaden, open ze in ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME } en exporteer ze."
-      ],
-      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
-        "Om zoeken mogelijk te maken, moeten we uw bestanden lokaal indexeren. U kunt ${ DRIVE_APP_NAME } nog steeds normaal gebruiken en we laten u weten wanneer het indexeren is voltooid. Als u deze pagina verlaat, wordt het indexeren gepauzeerd en hervat wanneer u terugkomt."
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Om echt privé zoeken in te schakelen moet ${ DRIVE_APP_NAME } uw bestanden lokaal indexeren."
-      ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Om echt privé zoeken in te schakelen, moeten we uw bestanden lokaal indexeren. U kan ${ DRIVE_APP_NAME } normaal blijven gebruiken - we laten u weten wanneer het indexeren klaar is."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
@@ -6593,6 +6050,21 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Maak eerst een agenda aan in ${ CALENDAR_APP_NAME } om afspraken te importeren. Dit is waar de afspraken tevoorschijn komen na het importeren."
       ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Om deze gebruiker te migreren, voegt u het e-maildomein toe en verifieert u het onder ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Als u deze gebruiker wilt migreren, schakelt u het account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Om deze gebruiker te migreren, moet hij/zij de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Om deze gebruiker te migreren, haalt u hem uit het archief in uw ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Als u deze gebruiker wilt migreren, heft u de opschorting op in uw ${ provider.adminConsoleName }."
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Om uw contacten opnieuw te ondertekenen, moeten we elk contactpersoon controleren op de lijst met versleutelingssleuteld die beschikbaar zijn in uw account. Als er geen overeenkomst is gevonden, zal uw contactpersoon opnieuw worden ondertekend met de primaire versleutelingssleutel."
       ],
@@ -6601,9 +6073,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "U moet een of meerdere beschikbare openbare sleutels vertrouwen, als u adresverificatie wil gebruiken. Dit betreft ook de sleutels die u wil gebruiken voor het versturen. Het voorkomt dat er misbruik gemaakt wordt van de sleutels."
-      ],
-      "Today": [
-        "Vandaag"
       ],
       "Total email addresses": [
         "Totaal e-mailadressen"
@@ -6623,29 +6092,17 @@
       "Trash": [
         "Prullenbak"
       ],
-      "Trash is empty": [
-        "Uw prullenbak is leeg."
-      ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Vertrouw op de sleutel \"${ activeSignerText }\" om nieuwe berichten van dit contact te verifiëren."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
-      "Try searching by file name, date, or type.": [
-        "Zoek ook op bestandsnaam, datum of type."
-      ],
       "Unexpected download error": [
         "Onverwachte downloadfout"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Helaas lijkt het erop dat het bestand of een deel van de gegevens ervan niet kan worden gedecodeerd."
-      ],
-      "Unknown date": [
-        "Onbekende datum"
-      ],
-      "Unlock drive to recover files": [
-        "Ontgrendel schijf om bestanden te herstellen"
       ],
       "Unsaved changes": [
         "Niet-opgeslagen wijzigingen"
@@ -6655,12 +6112,6 @@
       ],
       "Unsupported file type for Photos": [
         "Bestandstype wordt niet ondersteund voor Foto's"
-      ],
-      "Update required": [
-        "Update vereist"
-      ],
-      "Updating drive search...": [
-        "Drive doorzoeken bijwerken..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Upgrade op elk gewenst moment om de rest over te brengen"
@@ -6676,9 +6127,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Upgraden om uw ${ planTitle } voordelen te behouden."
-      ],
-      "upgrade your storage": [
-        "upgrade uw opslag"
       ],
       "Upload Failed": [
         "Opladen mislukt"
@@ -6710,12 +6158,6 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificatie opent een nieuw tabblad, schakel alle popup blockers uit. U wordt niet in rekening gebracht. Elk bedrag dat wordt gebruikt om de kaart te verifiëren zal onmiddellijk worden terugbetaald."
       ],
-      "Version is deleted": [
-        "Versie verwijderd"
-      ],
-      "Version is restored": [
-        "Versie hersteld"
-      ],
       "Version number successfully copied to clipboard": [
         "Versienummer succesvol gekopieerd naar klembord"
       ],
@@ -6728,18 +6170,8 @@
       "Waiting": [
         "Wachten"
       ],
-      "Want to sync files faster?": [
-        "Wilt u bestanden sneller synchroniseren?"
-      ],
       "Warning": [
         "Waarschuwing"
-      ],
-      "Way to go, you've just increased your storage to 5 GB!": [
-        "Hoera! U hebt zojuist uw opslagruimte verhoogd tot 5 GB!"
-      ],
-      "We couldn't save this photo to your Drive": [
-        "We kunnen deze foto niet opslaan op uw Drive",
-        "We kunnen niet meerdere foto's op uw Drive opslaan"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "We konden niet verifiëren dat ${ nameAuthor }, ${ nodeName } heeft geüpload. Het volgende kan onrechtmatig zijn bewerkt: volgorde van de bestandsgegevens. Open alleen als u het vertrouwt."
@@ -6756,9 +6188,8 @@
       "We use 3-D Secure to protect your payments": [
         "We gebruiken 3-D Secure om uw betalingen te beschermen"
       ],
-      "We were not able to add this photo to your album": [
-        "We konden deze foto niet aan uw album toevoegen",
-        "We konden sommige foto's niet aan uw album toevoegen"
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "We sturen u door naar ${ IDEAL_BRAND_NAME } in een nieuw browsertabblad om deze transactie te voltooien. Als u pop-upblokkering gebruikt, schakel deze dan uit om door te gaan."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
@@ -6778,14 +6209,8 @@
       "Week": [
         "Week"
       ],
-      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
-        "Welkom bij ${ DRIVE_APP_NAME }, de eerste 10 minuten tellen de bestanden die u uploadt niet mee voor uw opslagquotum."
-      ],
       "What do you want to do?": [
         "Wat wilt u doen?"
-      ],
-      "What would you like to do?": [
-        "Wat zou u willen doen?"
       ],
       "When working remotely": [
         "Bij werken op afstand"
@@ -6793,17 +6218,11 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Wanneer u verbinding maakt met VPN, gebruikt het versleutelingstechnologie om uw IP-adres te verbergen (een unieke code toegewezen aan uw apparaat)."
       ],
-      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
-        "Wanneer u ${ deviceName } verwijdert als een gesynchroniseerd apparaat, worden alle mappen die zijn toegevoegd aan Mijn Computers van dit apparaat permanent verwijderd uit ${ DRIVE_APP_NAME }."
-      ],
       "who": [
         "wie"
       ],
       "Who has access": [
         "Wie heeft toegang"
-      ],
-      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
-        "wordt hersteld naar de versie van ${ formattedRevisionDate }. Alle andere versies blijven bewaard."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
@@ -6811,33 +6230,20 @@
       "Would you like to receive a new verification code?": [
         "Wil u graag een nieuwe verificatiecode ontvangen?"
       ],
-      "Would you like to restore your files?": [
-        "Wilt u uw bestanden herstellen?"
-      ],
-      "Would you like to save it before removing?": [
-        "Wilt u het opslaan voordat u het verwijdert?",
-        "Wilt u ze opslaan voordat u ze verwijdert?"
-      ],
-      "Would you like to save them before removing?": [
-        "Wilt u ze opslaan voordat u ze verwijdert?"
-      ],
       "Writing assistant": [
         "Schrijfassistent"
       ],
       "Yes": [
         "Ja"
       ],
-      "Yesterday": [
-        "Gisteren"
+      "You": [
+        "U"
       ],
       "you": [
         "u"
       ],
       "You already have a free account": [
         "U heeft al een gratis account"
-      ],
-      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "U staat op het punt om het gedeelde item te verlaten. U zult geen toegang meer hebben tot de eigenaar het met u deelt."
       ],
       "You are about to open another browser tab and visit:": [
         "U staat het punt om een nieuw tabblad te openen en de volgende locatie te bezoeken:"
@@ -6883,15 +6289,8 @@
       "You cannot undo this action.": [
         "U kunt deze actie niet ongedaan maken."
       ],
-      "You don't have permission to copy files to this folder.": [
-        "U heeft geen rechten om bestanden naar deze map te kopiëren."
-      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "U krijgt een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
-      ],
-      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "U heeft nog ${ expiresInDays } dag om uw 3 GB welkomstbonus op te eisen en ",
-        "U heeft nog ${ expiresInDays } dagen om uw 3 GB welkomstbonus op te eisen en "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Je hebt een trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
@@ -6905,18 +6304,11 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
       ],
-      "You need access": [
-        "U heeft toegang nodig"
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "U verliest toegang tot ${ planTitle } functies op deze datum."
       ],
       "You will lose all unsaved changes.": [
         "U zal alle wijzigingen kwijtraken."
-      ],
-      "You will need to save it again from the public link page.": [
-        "U zult het opnieuw moeten opslaan vanuit de pagina met publieke link",
-        "U zult ze opnieuw moeten opslaan vanuit de pagina met publieke link"
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
@@ -6955,9 +6347,6 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
       ],
-      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "Uw browser had onvoldoende ruimte tijdens het indexeren van bestanden voor zoeken. Maak opslagruimte vrij en bouw de index opnieuw op."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw ${ BRAND_NAME } account."
       ],
@@ -6969,12 +6358,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
-      ],
-      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
-        "Uw bestanden worden opnieuw geïndexeerd. U kunt blijven zoeken - de resultaten kunnen onvolledig zijn totdat het proces is voltooid. We laten u weten wanneer het klaar is."
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Uw bestanden zijn niet meer toegankelijk vanwege een wachtwoord-reset. Upload de oude versleutelingssleutel om weer toegang te krijgen. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
@@ -7023,12 +6406,6 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Uw abonnement is beperkt tot 10 versies tot 7 dagen."
-      ],
-      "Your previous password": [
-        "Uw vorige wachtwoord"
-      ],
-      "Your previous recovery phrase": [
-        "Uw vorige herstelzin"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd.",
@@ -7122,17 +6499,8 @@
       ]
     },
     "Label": {
-      "# of downloads": [
-        "# downloads"
-      ],
-      "${ albumProgress.added } of ${ albumProgress.total }": [
-        "${ albumProgress.added } van ${ albumProgress.total }"
-      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
-      ],
-      "${ downloads } downloads": [
-        "${ downloads } downloads"
       ],
       "${ n } month": [
         "${ n } maand",
@@ -7148,9 +6516,6 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } tekens"
-      ],
-      "(Expired)": [
-        "(Verlopen)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
@@ -7206,9 +6571,6 @@
       "App password": [
         "App-wachtwoord"
       ],
-      "Applications in a business setting": [
-        "Toepassingen in een zakelijke omgeving"
-      ],
       "Apply to all duplicated files": [
         "Toepassen op alle gedupliceerde bestanden"
       ],
@@ -7217,9 +6579,6 @@
       ],
       "Apply to all unverified items": [
         "Toepassen op alle ongeverifieerde items"
-      ],
-      "Asset": [
-        "Bezit"
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
@@ -7332,14 +6691,8 @@
       "Country": [
         "Land"
       ],
-      "Create ${ BRAND_NAME } account": [
-        "Maak een ${ BRAND_NAME }-account aan"
-      ],
       "Created": [
         "Aangemaakt"
-      ],
-      "Created ${ created }": [
-        "Gemaakt op ${ created }"
       ],
       "Credits": [
         "Tegoed"
@@ -7347,33 +6700,14 @@
       "Delete": [
         "Verwijderen"
       ],
-      "Delete drive?": [
-        "Drive verwijderen?",
-        "Drives verwijderen?"
-      ],
       "Delete link and remove access for everyone": [
         "Link verwijderen en iedereen toegang ontnemen"
       ],
       "Delete recovery-related information.": [
         "Verwijder herstel-gerelateerde informatie."
       ],
-      "Deleted": [
-        "Verwijderd"
-      ],
-      "Deleted ${ deleted }": [
-        "${ deleted } verwijderd"
-      ],
       "Device": [
         "Apparaat"
-      ],
-      "Device #${ position }": [
-        "Apparaat #${ position }"
-      ],
-      "Device name": [
-        "Apparaatnaam"
-      ],
-      "Device: ${ name }": [
-        "Apparaat: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Schakel deze koppeling uit op een specifieke datum"
@@ -7429,12 +6763,6 @@
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
-      "Enter device name": [
-        "Apparaatnaam invoeren"
-      ],
-      "Environment compatible": [
-        "Omgevingscompatibiliteit"
-      ],
       "Exact host matching": [
         "Exacte hostovereenkomst"
       ],
@@ -7444,14 +6772,8 @@
       "Expired": [
         "Verlopen"
       ],
-      "Expired on ${ formatted }": [
-        "Verlopen op ${ formatted }"
-      ],
       "Expires": [
         "Verloopt"
-      ],
-      "Expires ${ formatted }": [
-        "Verloopt op ${ formatted }"
       ],
       "Expiry": [
         "Vervaldatum"
@@ -7519,12 +6841,6 @@
       "Include message and file name in invite email": [
         "Bericht- en bestandsnaam opnemen in uitnodigingsmail"
       ],
-      "Index kinds": [
-        "Soorten indexen"
-      ],
-      "Indexing": [
-        "Indexeren"
-      ],
       "Integrated 2FA authenticator": [
         "Geïntegreerde tweestapsverificatie"
       ],
@@ -7555,9 +6871,6 @@
       "Location": [
         "Locatie"
       ],
-      "Location: ${ item.location }": [
-        "Locatie: ${ item.location }"
-      ],
       "Log in or sign up ": [
         "Inloggen of registreren "
       ],
@@ -7579,9 +6892,6 @@
       "Modified": [
         "Gewijzigd"
       ],
-      "Modified ${ modified }": [
-        "Gewijzigd op ${ modified }"
-      ],
       "Move to Archive": [
         "Verplaats naar Archief"
       ],
@@ -7591,9 +6901,6 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten"
       ],
-      "My Albums": [
-        "Mijn albums"
-      ],
       "Name": [
         "Naam"
       ],
@@ -7602,9 +6909,6 @@
       ],
       "Never": [
         "Nooit"
-      ],
-      "Never expires": [
-        "Vervalt nooit"
       ],
       "Never fill on this exact URL": [
         "Nooit invullen op deze exacte URL"
@@ -7639,9 +6943,6 @@
       "Other": [
         "Overig"
       ],
-      "Outdated version": [
-        "Verouderde versie"
-      ],
       "Parent domain and subdomains (default)": [
         "Bovenliggende domein en subdomeinen (standaard)"
       ],
@@ -7660,17 +6961,11 @@
       "Payment method": [
         "Betalingsmethode"
       ],
-      "Pending invitation": [
-        "Uitnodiging in behandeling"
-      ],
       "PGP scheme": [
         "PGP-schema"
       ],
       "Phone number": [
         "Telefoonnummer"
-      ],
-      "Photo": [
-        "Foto"
       ],
       "Please provide full details to help us take appropriate action": [
         "Verstrek volledige details om ons te helpen de gepaste actie uit te voeren"
@@ -7714,9 +7009,6 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
       ],
-      "Searchable": [
-        "Doorzoekbaar"
-      ],
       "Select type of abuse": [
         "Selecteer soort misbruik"
       ],
@@ -7726,35 +7018,11 @@
       "Set a password to limit access via link": [
         "Stel een wachtwoord in om toegang via een koppeling te beperken"
       ],
-      "Set recovery method": [
-        "Herstelmethode instellen"
-      ],
-      "Share a file, folder, or album": [
-        "Deel een bestand, map of album"
-      ],
       "Shared": [
         "Gedeeld"
       ],
-      "Shared by": [
-        "Gedeeld door"
-      ],
-      "Shared by ${ sharedBy }": [
-        "Gedeeld door ${ sharedBy }"
-      ],
-      "Shared by Public link": [
-        "Gedeeld via een openbare link"
-      ],
-      "Shared on": [
-        "Gedeeld op"
-      ],
-      "Shared on ${ sharedOn }": [
-        "Gedeeld op ${ sharedOn }"
-      ],
       "Shared with me": [
         "Gedeeld met mij"
-      ],
-      "Show indexing progress of Encrypted Search": [
-        "Toon indexeringsvoortgang van Versleuteld Zoeken"
       ],
       "Sign emails": [
         "E-mails ondertekenen"
@@ -7813,9 +7081,6 @@
       "Theme": [
         "Thema"
       ],
-      "This will permanently delete all files in your locked drive.": [
-        "Dit zal alle bestanden op uw vergrendelde schijf permanent verwijderen."
-      ],
       "Thomas": [
         "Thomas"
       ],
@@ -7828,29 +7093,14 @@
       "Type": [
         "Soort"
       ],
-      "Unlock drive": [
-        "Drive ontgrendelen"
-      ],
-      "Unlock drive (recommended)": [
-        "Drive ontgrendelen (aanbevolen)"
-      ],
-      "Unlock later": [
-        "Ontgrendel later"
-      ],
       "Upload picture": [
         "Afbeelding uploaden"
-      ],
-      "Upload your first file": [
-        "Upload uw eerste bestand"
       ],
       "Uploaded by": [
         "Geüpload door"
       ],
       "URL wildcard pattern": [
         "URL-jokertekenpatroon"
-      ],
-      "User opted in": [
-        "De gebruiker heeft ingestemd"
       ],
       "Username": [
         "Gebruikersnaam"
@@ -7863,9 +7113,6 @@
       ],
       "Viewer": [
         "Kijker"
-      ],
-      "Visible columns:": [
-        "Zichtbare kolommen:"
       ],
       "Vulnerable": [
         "Kwetsbaar"
@@ -7881,9 +7128,6 @@
       ],
       "What happened?": [
         "Wat is er gebeurd?"
-      ],
-      "Yes, I want to permanently delete my old files": [
-        "Ja, ik wil mijn oude bestanden permanent verwijderen"
       ],
       "Your alias": [
         "Uw alias"
@@ -7975,9 +7219,6 @@
       "Add a gift code": [
         "Voeg een geschenkcode toe"
       ],
-      "Albums": [
-        "Albums"
-      ],
       "clearing your browser cache": [
         "browsercache legen"
       ],
@@ -8038,9 +7279,6 @@
       "Pay invoice": [
         "Factuur betalen"
       ],
-      "Photos": [
-        "Foto's"
-      ],
       "Reactivate now": [
         "Heractiveren"
       ],
@@ -8055,12 +7293,6 @@
       ],
       "settings": [
         "instellingen"
-      ],
-      "Shared": [
-        "Gedeeld"
-      ],
-      "Shared with me": [
-        "Gedeeld met mij"
       ],
       "Terms and conditions": [
         "Algemene voorwaarden"
@@ -9464,41 +8696,14 @@
       ]
     },
     "Notification": {
-      "\"${ ellipsedName }\" copied": [
-        "\"${ ellipsedName }\" gekopieerd"
-      ],
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" succesvol aangemaakt"
-      ],
-      "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\" verwijderd"
-      ],
-      "\"${ ellipsedName }\" deleted permanently from trash": [
-        "\"${ ellipsedName }\" permanent verwijderd uit de prullenbak"
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "\"${ ellipsedName }\" kon niet aangemaakt worden"
       ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "\"${ ellipsedName }\" kon niet verwijderd worden"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "\"${ ellipsedName }\" kon niet permanent verwijderd worden uit prullenbak"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "\"${ ellipsedName }\" kon niet verplaatst worden"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "\"${ ellipsedName }\" kon niet hersteld worden uit prullenbak"
-      ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" verplaatst"
-      ],
-      "\"${ ellipsedName }\" restored from trash": [
-        "\"${ ellipsedName }\" hersteld uit de prullenbak"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "\"${ ellipsedName }\" succesvol verplaatst"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" gedeeld"
@@ -9518,33 +8723,13 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" succesvol hernoemd"
       ],
-      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
-        "${ addedUids.length } foto is toegevoegd aan \"${ albumName }\"",
-        "${ addedUids.length } foto's zijn toegevoegd aan \"${ albumName }\""
-      ],
       "${ count } item failed to be decrypted": [
         "${ count } item kon niet worden ontsleuteld",
         "${ count } items konden niet worden ontsleuteld"
       ],
-      "${ errors.length } item failed to be copied": [
-        "${ errors.length } item kon niet worden gekopieerd",
-        "${ errors.length } items konden niet gekopieerd worden"
-      ],
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } item kon niet worden verwijderd",
         "${ errors.length } items konden niet verwijderd worden"
-      ],
-      "${ errors.length } item failed to be trashed": [
-        "${ errors.length } item kon niet in de prullenbak worden geplaatst",
-        "${ errors.length } items konden niet naar de prullenbak worden verplaatst"
-      ],
-      "${ numberOfItems } copied item moved to trash": [
-        "${ numberOfItems } gekopieerd item verplaatst naar de prullenbak",
-        "${ numberOfItems } gekopieerde items verplaatst naar de prullenbak"
-      ],
-      "${ numberOfItems } item copied": [
-        "${ numberOfItems } item gekopieerd",
-        "${ numberOfItems } items gekopieerd"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item verwijderd",
@@ -9586,31 +8771,17 @@
         "${ numberOfItems } item hersteld uit prullenbak",
         "${ numberOfItems } items hersteld uit prullenbak"
       ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } item succesvol verplaatst",
-        "${ numberOfItems } items succesvol verplaatst"
-      ],
       "${ reason } has been disabled": [
         "${ reason } is uitgezet"
       ],
       "${ reason } has been enabled": [
         "${ reason } is aangezet"
       ],
-      "${ removed } photo have been removed from \"${ albumName }\"": [
-        "${ removed } foto is verwijderd uit \"${ albumName }\"",
-        "${ removed } foto's zijn verwijderd uit \"${ albumName }\""
-      ],
       "Access for the member removed": [
         "Toegang voor het lid verwijderd"
       ],
       "Access updated": [
         "Toegang bijgewerkt."
-      ],
-      "Album renamed successfully": [
-        "Album is hernoemd"
-      ],
-      "All items deleted permanently from trash": [
-        "Alle items permanent verwijderd uit de prullenbak"
       ],
       "Cannot load link": [
         "Kan koppelingen niet laden"
@@ -9624,9 +8795,6 @@
       "Contact group updated": [
         "Contactgroep bijgewerkt"
       ],
-      "Copy of \"${ ellipsedName }\" moved to trash": [
-        "Kopie van \"${ ellipsedName }\" verplaatst naar de prullenbak"
-      ],
       "Device failed to be removed": [
         "Apparaat kon niet worden verwijderd"
       ],
@@ -9639,12 +8807,6 @@
       "Device renamed": [
         "Apparaat hernoemd"
       ],
-      "Encrypted search activated": [
-        "Versleuteld zoeken geactiveerd"
-      ],
-      "Error while listing devices": [
-        "Fout tijdens het weergeven van apparaten"
-      ],
       "Failed to accept share invitation": [
         "Accepteren van uitnodiging mislukt"
       ],
@@ -9656,18 +8818,6 @@
       ],
       "Failed to reject share invitation": [
         "Weigeren van deel-uitnodiging mislukt"
-      ],
-      "Failed to remove device": [
-        "Verwijderen van apparaat is mislukt"
-      ],
-      "Failed to remove the file": [
-        "Verwijderen van bestand is mislukt"
-      ],
-      "Failed to rename device": [
-        "Hernoemen van apparaat is mislukt"
-      ],
-      "File removed": [
-        "Bestand verwijderd"
       ],
       "Invitation's email was sent again": [
         "Uitnodigingsmail is opnieuw verzonden"
@@ -9690,14 +8840,6 @@
       "Public link access updated": [
         "Toegang publieke link aangepast"
       ],
-      "Selected item was not removed from your list": [
-        "Geselecteerd item werd niet uit uw lijst verwijderd.",
-        "Geselecteerde items werden niet uit uw lijst verwijderd."
-      ],
-      "Selected item was successfully removed from your list": [
-        "Geselecteerd item is met succes uit uw lijst verwijderd",
-        "Geselecteerde items zijn met succes verwijderd uit uw lijst"
-      ],
       "Setting updated. Editors can change permissions and share.": [
         "Instelling bijgewerkt. Bewerkers kunnen machtigingen wijzigen en delen."
       ],
@@ -9713,17 +8855,8 @@
       "Stopping the sharing of this item has failed": [
         "Het stoppen van het delen van dit item is mislukt"
       ],
-      "The item was not added to your drive": [
-        "Het item werd niet aan uw schijf toegevoegd"
-      ],
-      "The item was successfully added to your drive": [
-        "Het item is succesvol toegevoegd aan uw drive"
-      ],
       "The link to your item was deleted": [
         "De link naar uw item werd verwijderd"
-      ],
-      "This secure link expired, please change expire date in sharing settings": [
-        "Deze beveiligde koppeling is verlopen, wijzig de verloopdatum in de deelinstellingen."
       ],
       "Trash failed to be emptied": [
         "Prullenbak legen mislukt"
@@ -9734,9 +8867,6 @@
       "Your ${ BRAND_NAME } address is ready to use": [
         "Uw ${ BRAND_NAME }-adres is klaar voor gebruik"
       ],
-      "Your old files will be deleted in 72 hours": [
-        "Uw oude bestanden worden binnen 72 uur verwijderd"
-      ],
       "Your settings have been changed successfully": [
         "Uw instellingen zijn succesvol gewijzigd."
       ]
@@ -9744,11 +8874,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
-      ]
-    },
-    "Notitication": {
-      "Album renamed successfully": [
-        "Album is hernoemd"
       ]
     },
     "Oauth instructions": {
@@ -9894,169 +9019,6 @@
         "Welkom bij ${ appName }"
       ]
     },
-    "Onboarding Action": {
-      "Continue": [
-        "Doorgaan"
-      ],
-      "Create a document": [
-        "Een document maken"
-      ],
-      "Get started": [
-        "Aan de slag"
-      ],
-      "Install and continue": [
-        "Installeren en doorgaan"
-      ],
-      "Install later": [
-        "Later installeren"
-      ],
-      "Invite members": [
-        "Nodig leden uit"
-      ],
-      "Maybe Later": [
-        "Misschien later"
-      ],
-      "Maybe later": [
-        "Misschien later"
-      ],
-      "Select theme": [
-        "Selecteer thema"
-      ],
-      "Skip": [
-        "Overslaan"
-      ],
-      "Skip for now": [
-        "Sla voorlopig over"
-      ],
-      "Try the app": [
-        "Probeer de app"
-      ],
-      "Upload file": [
-        "Bestand uploaden"
-      ],
-      "Upload folder": [
-        "Map uploaden"
-      ],
-      "Upload more files": [
-        "Meer bestanden opladen"
-      ]
-    },
-    "Onboarding Info": {
-      "10 minutes": [
-        "10 minuten"
-      ],
-      "Access your files on the go": [
-        "Onderweg toegang tot uw bestanden"
-      ],
-      "Back up your photos and memories": [
-        "Back-up maken van uw foto's en herinneringen"
-      ],
-      "Backup your photos and memories": [
-        "Back-up maken van uw foto's en herinneringen"
-      ],
-      "Choose your favorite theme": [
-        "Kies uw favoriete thema"
-      ],
-      "Collaborate on documents": [
-        "Samenwerken aan documenten"
-      ],
-      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "Wilt u ${ DRIVE_APP_NAME } liever in licht- of donkere modus? Selecteer de kleur die u het meest inspireert."
-      ],
-      "Drag and drop your files here": [
-        "Sleep en plaats uw bestanden hier naartoe"
-      ],
-      "Edit documents online": [
-        "Documenten online bewerken"
-      ],
-      "End-to-end encrypted storage for your files": [
-        "End-to-end versleutelde opslag voor uw bestanden"
-      ],
-      "Faster uploads for large or multiple files": [
-        "Sneller uploaden voor grote of meerdere bestanden"
-      ],
-      "Files uploaded during this time won’t count towards your storage limit.": [
-        "Bestanden die gedurende deze periode zijn opgeladen, tellen niet mee voor uw opslaglimiet."
-      ],
-      "Files uploaded now will not count towards your storage limit": [
-        "Bestanden die nu zijn opgeladen, tellen niet mee voor uw opslaglimiet."
-      ],
-      "Final approval in progress": [
-        "De laatste goedkeuring is bezig"
-      ],
-      "Final approval pending": [
-        "Laatste goedkeuring in afwachting"
-      ],
-      "Free up hard drive space on your computer": [
-        "Maak ruimte vrij op de harde schijf op uw computer"
-      ],
-      "Get the desktop app": [
-        "Download de desktop-app"
-      ],
-      "Get the mobile app": [
-        "Download de mobiele app"
-      ],
-      "Got an Android? We've got you covered.": [
-        "Heeft u een Android? We hebben alles voor u."
-      ],
-      "Got an iPhone? We've got you covered.": [
-        "Heeft u een iPhone? We hebben alles voor u."
-      ],
-      "Hang tight": [
-        "Hou vol"
-      ],
-      "Invitation accepted": [
-        "Uitnodiging geaccepteerd"
-      ],
-      "Invitation received": [
-        "Uitnodiging ontvangen"
-      ],
-      "Invite team members": [
-        "Teamleden uitnodigen"
-      ],
-      "Keep the momentum going by uploading more files using the storage included with your plan.": [
-        "Houd het momentum vast door meer bestanden op te laden met de opslagruimte die bij uw abonnement is inbegrepen."
-      ],
-      "Manage access": [
-        "Toegang beheren"
-      ],
-      "Organize files right from your desktop": [
-        "Beheer bestanden direct vanaf uw bureaublad"
-      ],
-      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
-        "Bescherm uw financiële documenten, identiteitskaarten, projectbestanden, foto's en meer met end-to-end versleuteling."
-      ],
-      "Scan the QR code to install the mobile app": [
-        "Scan de QR-code om de mobiele app te installeren"
-      ],
-      "Secure your files": [
-        "Beveilig uw bestanden"
-      ],
-      "Securely share files and folders": [
-        "Veilig bestanden en mappen delen"
-      ],
-      "Share files & folders": [
-        "Deel bestanden & mappen"
-      ],
-      "Sync and access your files from anywhere": [
-        "Synchroniseer en krijg overal toegang tot uw bestanden"
-      ],
-      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
-        "De eigenaar moet de toegang tot delen goedkeuren. U ontvangt een e-mail zodra dit is gedaan."
-      ],
-      "Upload your first file": [
-        "Upload uw eerste bestand"
-      ],
-      "Work faster, smarter": [
-        "Werk sneller, slimmer"
-      ],
-      "Work together": [
-        "Werk samen"
-      ],
-      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "U heeft zojuist gratis data bemachtigd en uw bestanden beveiligd met end-to-end versleuteling — in recordtijd!"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " bezoek ons ${ helpCenterLink } of ${ contactSupportLink }."
@@ -10114,29 +9076,11 @@
       "Create new group": [
         "Nieuwe groep maken"
       ],
-      "Expected structure": [
-        "Verwachte structuur"
-      ],
       "Ignore group": [
         "Groep negeren"
       ],
       "No parent folder": [
         "Geen bovenliggende map"
-      ],
-      "Only current location": [
-        "Alleen huidige locatie"
-      ],
-      "Only current location: ${ name }": [
-        "Alleen huidige locatie: ${ name }"
-      ],
-      "Select JSON file": [
-        "Selecteer JSON-bestand"
-      ],
-      "Verify content": [
-        "Inhoud bevestigen"
-      ],
-      "Verify thumbnails": [
-        "Miniaturen verifiëren"
       ]
     },
     "Option group label": {
@@ -10318,6 +9262,9 @@
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betaal met ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betaalmethode vereist voor de activering van het abonnement nadat de proefversie is afgelopen."
       ],
@@ -10399,6 +9346,9 @@
       "You will soon be redirected to verify your payment.": [
         "Binnenkort wordt u doorgestuurd om uw betaling te verifiëren."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Uw valuta is gewijzigd naar euro's (€), omdat ${ IDEAL_BRAND_NAME } alleen betalingen in euro's ondersteunt."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
@@ -10410,6 +9360,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Kan ${ IDEAL_BRAND_NAME } niet initialiseren. Probeer het later opnieuw."
+      ],
       "Invalid card number": [
         "Ongeldig kaartnummer"
       ],
@@ -10432,6 +9385,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Er ging iets mis. Google Pay verificatie mislukt."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, om uw bank opdracht te geven het bedrag van uw rekening af te schrijven. U kunt binnen 8 weken na de incassodatum een ​​terugbetaling krijgen, onder de voorwaarden van uw overeenkomst met uw bank."
       ]
     },
     "Payments.info": {
@@ -10596,14 +9554,8 @@
       "Enter a name": [
         "Voer een naam in"
       ],
-      "Enter a new file name": [
-        "Voer een nieuwe bestandsnaam in"
-      ],
       "Enter a new folder name": [
         "Voer een nieuwe naam in"
-      ],
-      "Enter device name": [
-        "Apparaatnaam invoeren"
       ],
       "Enter your email address": [
         "Voer uw e-mailadres in"
@@ -10756,6 +9708,20 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Voortgang: ${ combinedProgress }%"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attributen"
+      ],
+      "hash key": [
+        "hash sleutel"
+      ],
+      "key": [
+        "sleutel"
+      ],
+      "membership": [
+        "lidmaatschap"
       ]
     },
     "Property type": {
@@ -11519,12 +10485,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "Bewerkers kunnen nu het delen beheren en anderen uitnodigen. U kunt dit op elk gewenst moment uitschakelen via de instellingen voor delen."
-      ],
-      "Encrypted search is here": [
-        "Versleuteld zoeken is hier"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "U kan nu eenvoudig Drive-bestanden zoeken terwijl u uw gegevens veilig houdt."
       ]
     },
     "sso": {
@@ -12063,54 +11023,14 @@
       ]
     },
     "Subtitle": {
-      "Albums shared with you will appear here": [
-        "Albums met u gedeeld zullen hier weergegeven worden"
-      ],
-      "Albums you've shared will appear here": [
-        "Uw gedeelde albums zullen hier weergegeven worden"
-      ],
       "Shared by ${ sharedBy }": [
         "Gedeeld door ${ sharedBy }"
-      ],
-      "Your favorited photos will appear here": [
-        "Uw favoriete foto's zullen hier weergegeven worden"
-      ],
-      "Your Live Photos will appear here": [
-        "Uw Live Foto's zullen hier weergegeven worden"
-      ],
-      "Your panorama photos will appear here": [
-        "Uw panorama foto's zullen hier weergegeven worden"
-      ],
-      "Your photo bursts will appear here": [
-        "Uw foto reeksen zullen hier weergegeven worden"
-      ],
-      "Your portraits photos will appear here": [
-        "Uw portretten zullen hier weergegeven worden"
-      ],
-      "Your RAW photos will appear here": [
-        "Uw RAW foto's zullen hier weergegeven worden"
-      ],
-      "Your screenshots will appear here": [
-        "Uw schermafbeeldingen zullen hier weergegeven worden"
-      ],
-      "Your selfies photos will appear here": [
-        "Uw selfies zullen hier weergegeven worden"
-      ],
-      "Your tagged photos will appear here": [
-        "Uw gelabelde foto's zullen hier weergegeven worden"
-      ],
-      "Your videos will appear here": [
-        "Uw video's zullen hier weergegeven worden"
       ]
     },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contact ziet er identiek uit.",
         "${ countMergeableContacts } contacten zien er identiek uit."
-      ],
-      "${ countOfUnrecoveredLinksLeft } left": [
-        "${ countOfUnrecoveredLinksLeft } over",
-        "${ countOfUnrecoveredLinksLeft } over"
       ],
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
@@ -12180,9 +11100,6 @@
       "Problem reported": [
         "Probleem gerapporteerd"
       ],
-      "Recovery has started": [
-        "Herstel is gestart"
-      ],
       "Secure link copied": [
         "Veilige link gekopieerd"
       ],
@@ -12247,11 +11164,17 @@
       "Actions": [
         "Acties"
       ],
+      "Activated": [
+        "Geactiveerd"
+      ],
       "Address": [
         "Adres"
       ],
       "Created": [
         "Aangemaakt"
+      ],
+      "Estimated size": [
+        "Geschatte grootte"
       ],
       "Expires": [
         "Verloopt"
@@ -12270,6 +11193,9 @@
       ],
       "Type": [
         "Soort"
+      ],
+      "User": [
+        "Gebruiker"
       ]
     },
     "TableHeader": {
@@ -12301,35 +11227,6 @@
         "vCard-veld"
       ]
     },
-    "Tag": {
-      "Bursts": [
-        "Bursts"
-      ],
-      "Favorites": [
-        "Favorieten"
-      ],
-      "Live Photos": [
-        "Live foto"
-      ],
-      "Panoramas": [
-        "Panorama's"
-      ],
-      "Portraits": [
-        "Portretfoto's"
-      ],
-      "RAW": [
-        "RAW"
-      ],
-      "Screenshots": [
-        "Schermafbeeldingen"
-      ],
-      "Selfies": [
-        "Selfies"
-      ],
-      "Videos": [
-        "Video's"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dag",
@@ -12358,9 +11255,6 @@
       ],
       "${ feature } is now active": [
         "${ feature } is nu actief"
-      ],
-      "${ freeUploadLength } of free uploads.": [
-        "${ freeUploadLength } van gratis uploads."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-schrijfassistent"
@@ -12411,9 +11305,6 @@
       "Album details": [
         "Album gegevens"
       ],
-      "Albums": [
-        "Albums"
-      ],
       "All settings": [
         "Alle instellingen"
       ],
@@ -12431,10 +11322,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Weet u zeker dat u het voorbeeld wil sluiten?"
-      ],
-      "Are you sure you want to remove this item from your list?": [
-        "Weet u zeker dat u dit item uit uw lijst wilt verwijderen?",
-        "Weet u zeker dat u deze items uit uw lijst wilt verwijderen?"
       ],
       "Are you sure?": [
         "Weet u het zeker?"
@@ -12496,14 +11383,14 @@
       "Computers": [
         "Computers"
       ],
+      "Configure migration": [
+        "Migratie configureren"
+      ],
       "Confirm downgrade": [
         "Downgrade bevestigen"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Bevestig verlies van ${ BRAND_NAME }-bonussen"
-      ],
-      "Confirmation required": [
-        "Bevestiging vereist"
       ],
       "Connect apps and devices": [
         "Apps en apparaten verbinden"
@@ -12531,9 +11418,6 @@
       ],
       "Coupon": [
         "Kortingscode"
-      ],
-      "Create a new file": [
-        "Nieuw bestand aanmaken"
       ],
       "Create a new folder": [
         "Nieuwe map aanmaken"
@@ -12610,9 +11494,6 @@
       "Devices": [
         "Apparaten"
       ],
-      "Diagnostics": [
-        "Diagnostische gegevens"
-      ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Digitale handtekening gedeeltelijk geverifieerd. Dit bestand is gemaakt met een openbaar toegankelijke share link door een gebruiker zonder een ${ BRAND_NAME }-account, zodat hun identiteit niet kan worden geverifieerd."
       ],
@@ -12646,6 +11527,9 @@
       "Disconnected from Gmail": [
         "Ontkoppeld van Gmail"
       ],
+      "Domain names": [
+        "Domeinnamen"
+      ],
       "Downgrade account": [
         "Account downgraden"
       ],
@@ -12666,9 +11550,6 @@
       ],
       "Download unverified folder?": [
         "Ongeverifieerde map downloaden?"
-      ],
-      "Drive": [
-        "Drive"
       ],
       "Drop to upload": [
         "Sleep hier om te uploaden"
@@ -12706,9 +11587,6 @@
       "Enable advanced account protection": [
         "Schakel geavanceerde accountbeveiliging in"
       ],
-      "Enable drive search": [
-        "Drive doorzoeken inschakelen"
-      ],
       "Enhance security with 2FA": [
         "Verbeter de beveiliging met 2FA"
       ],
@@ -12724,21 +11602,11 @@
       "File details": [
         "Bestandsdetails"
       ],
-      "File recovery process": [
-        "Herstelproces van bestanden"
-      ],
       "Folder": [
         "Map"
       ],
       "Folder details": [
         "Map details"
-      ],
-      "Found ${ resultCount } result": [
-        "${ resultCount } zoekresultaat",
-        "${ resultCount } zoekresultaten"
-      ],
-      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
-        "Installeer ${ DRIVE_SHORT_APP_NAME } op uw telefoon"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Krijg **${ referralInfo.uiData.refereeRewardAmount }** in tegoed met ${ planTitle }"
@@ -12746,26 +11614,17 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Krijg volledige toegang tot ${ CALENDAR_APP_NAME }"
       ],
-      "Get mobile and desktop apps": [
-        "Download mobiele en desktop apps"
-      ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Krijg meer opslagruimte met ${ MAIL_APP_NAME } Plus"
       ],
-      "Get started with 10 minutes of free uploads, on the house.": [
-        "Ga aan de slag met 10 minuten gratis uploadtijd, van het huis."
-      ],
       "Get the apps": [
         "Verkrijg de apps"
       ],
       "Gift": [
         "Geschenk"
-      ],
-      "Global": [
-        "Globaal"
       ],
       "Groups": [
         "Groepen"
@@ -12816,9 +11675,6 @@
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Geïmporteerd door ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Index populators": [
-        "Indexeer populators"
-      ],
       "Information exposed in breach": [
         "Informatie die is blootgesteld bij datalek"
       ],
@@ -12831,23 +11687,11 @@
       "Last uploaded by": [
         "Laatst opgeladen door"
       ],
-      "Level": [
-        "Niveau"
-      ],
       "Link confirmation": [
         "Link bevestigen"
       ],
       "Location": [
         "Locatie"
-      ],
-      "Logger": [
-        "Logger"
-      ],
-      "Logs": [
-        "Logboeken"
-      ],
-      "Make a copy": [
-        "Een kopie maken"
       ],
       "Make a secure connection your default": [
         "Maak een beveiligde verbinding uw standaard"
@@ -12860,9 +11704,6 @@
       ],
       "Merging contacts": [
         "Contacten worden samengevoegd"
-      ],
-      "Message": [
-        "Bericht"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migreer uw organisatie naar ${ BRAND_NAME }"
@@ -12897,56 +11738,17 @@
       "Night theme": [
         "Nacht thema"
       ],
-      "No albums shared with me": [
-        "Geen albums met mij gedeeld"
-      ],
       "No breaches detected": [
         "Geen inbreuken gedetecteerd"
       ],
-      "No bursts": [
-        "Geen uitbarstingen"
-      ],
-      "No favorites": [
-        "Geen favorieten"
-      ],
-      "No Live Photos": [
-        "Geen Live Foto's"
-      ],
-      "No panorama": [
-        "Geen panorama"
-      ],
-      "No photos": [
-        "Geen foto's"
-      ],
-      "No portraits": [
-        "Geen portretten"
-      ],
-      "No RAW": [
-        "Geen RAW"
-      ],
       "No results found": [
         "Geen resultaten"
-      ],
-      "No screenshots": [
-        "Geen schermafbeelding"
-      ],
-      "No selfies": [
-        "Geen selfies"
-      ],
-      "No shared albums": [
-        "Geen gedeelde albums"
-      ],
-      "No videos": [
-        "Geen video's"
       ],
       "Notes": [
         "Notities"
       ],
       "Number of downloads": [
         "Aantal downloads"
-      ],
-      "Number of items": [
-        "Aantal items"
       ],
       "One email, many recipients": [
         "Één e-mail, veel ontvangers"
@@ -13014,9 +11816,6 @@
       "Re-signing contacts": [
         "Contacten opnieuw ondertekenen"
       ],
-      "Ready, set, upload.": [
-        "Klaar, instellen, opladen."
-      ],
       "Recommended": [
         "Aanbevolen"
       ],
@@ -13035,10 +11834,6 @@
       "Remove device?": [
         "Apparaat verwijderen?"
       ],
-      "Remove item?": [
-        "Item verwijderen?",
-        "Items verwijderen?"
-      ],
       "Remove your access?": [
         "Mijn toegang verwijderen?"
       ],
@@ -13048,32 +11843,17 @@
       "Rename a folder": [
         "Een map hernoemen"
       ],
-      "Rename device": [
-        "Hernoem apparaat"
-      ],
       "Report a problem": [
         "Meld een probleem"
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
       ],
-      "Restore your files": [
-        "Herstel uw bestanden"
-      ],
       "Reverse charge not supported": [
         "Omgekeerde btw niet ondersteund"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Opslaan voor later in ${ DRIVE_APP_NAME }"
-      ],
-      "Search": [
-        "Zoeken"
-      ],
-      "Search results": [
-        "Zoekresultaten"
-      ],
-      "Searching…": [
-        "Zoeken…"
       ],
       "Security center": [
         "Beveiligingscentrum"
@@ -13092,6 +11872,9 @@
       ],
       "Select link expiration date": [
         "Selecteer vervaldatum link"
+      ],
+      "Select users to migrate": [
+        "Selecteer gebruikers om te migreren"
       ],
       "Set recovery methods": [
         "Herstelmethoden instellen"
@@ -13128,9 +11911,6 @@
       ],
       "Shared with me": [
         "Gedeeld met mij"
-      ],
-      "Show actions": [
-        "Actie weergeven"
       ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
@@ -13197,12 +11977,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Om een voorbeeld van dit rekenblad te bekijken, opent u het in ${ SHEETS_APP_NAME } of downloadt u het."
-      ],
-      "Total size": [
-        "Totale grootte"
-      ],
-      "Trash": [
-        "Prullenbak"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen"
@@ -13312,9 +12086,6 @@
       "We'd love to hear from you!": [
         "We horen graag van jou!"
       ],
-      "Welcome offer": [
-        "Welkomstaanbieding"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
       ],
@@ -13333,17 +12104,11 @@
       "You can now create unlimited folders and labels": [
         "U kunt nu onbeperkt mappen en labels maken"
       ],
-      "You have inaccessible files": [
-        "U hebt ontoegankelijke bestanden"
-      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
       ],
       "Your ${ planTitle } subscription has started": [
         "Uw ${ planTitle }-abonnement is nu gestart."
-      ],
-      "Your 3 GB bonus": [
-        "Uw 3 GB bonus"
       ],
       "Your account is protected": [
         "Uw account is beschermd"
@@ -13362,15 +12127,6 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
-      ],
-      "Your welcome actions": [
-        "Uw welkomstacties"
-      ],
-      "You’re off to a great start!": [
-        "U bent goed begonnen!"
-      ],
-      "You’ve got 5 GB of storage": [
-        "U heeft 5 GB aan opslag"
       ]
     },
     "Title header for keys table": {
@@ -13529,11 +12285,6 @@
       ],
       "The user must have an address to request data access": [
         "De gebruiker moet een adres hebben om gegevenstoegang aan te vragen"
-      ]
-    },
-    "Upsell": {
-      "Get Drive for Business": [
-        "Gebruik Drive for Business"
       ]
     },
     "user_modal": {
