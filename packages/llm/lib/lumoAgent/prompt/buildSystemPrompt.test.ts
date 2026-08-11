@@ -24,7 +24,10 @@ const DEFINITIONS: ToolDefinition[] = [viewItems, makeFilter];
 describe('buildSystemPrompt', () => {
     it('always includes the generic protocol base (turn mechanics + references)', () => {
         const prompt = buildSystemPrompt({ definitions: DEFINITIONS, loadedGuides: [] });
-        expect(prompt).toContain('On each turn, do exactly ONE of');
+        expect(prompt).toContain('Each individual turn produces exactly one of');
+        expect(prompt).toContain('A task runs over AS MANY turns as it needs');
+        expect(prompt).toContain('may ride along in the SAME message as the call');
+        expect(prompt).toContain('the call has to be in the message');
         expect(prompt).toContain('The review card IS the confirmation');
         expect(prompt).toContain('referenced by references');
     });
@@ -33,7 +36,7 @@ describe('buildSystemPrompt', () => {
         const productRules = '## Proton Mail rules\nNever permanently delete mail.';
         const prompt = buildSystemPrompt({ definitions: DEFINITIONS, loadedGuides: [], productRules });
         expect(prompt).toContain(productRules);
-        expect(prompt.indexOf('On each turn')).toBeLessThan(prompt.indexOf(productRules));
+        expect(prompt.indexOf('## How each turn works')).toBeLessThan(prompt.indexOf(productRules));
     });
 
     it('omits the product rules block when none (or only whitespace) is supplied', () => {
