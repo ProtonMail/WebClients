@@ -99,7 +99,7 @@ describe('useCategoriesBadge', () => {
             expect(result.current.count).toBe(10);
         });
 
-        it('is false where counters are on and there are no unread messages', () => {
+        it('is true with count of 0 when counters are ON and there are 0 unread messages', () => {
             jest.mocked(useMailSelector).mockImplementation((selector) => mockSelector(selector, { unreadCount: 0 }));
             jest.mocked(useMailSettings).mockReturnValue([
                 { ...DEFAULT_MAIL_SETTINGS, MailCategoryViewCountersEnabled: true },
@@ -108,7 +108,7 @@ describe('useCategoriesBadge', () => {
 
             const { result } = renderHook(() => useCategoriesBadge({ category, tabState: TabState.INACTIVE }));
 
-            expect(result.current.shouldShowCounter).toBe(false);
+            expect(result.current.shouldShowCounter).toBe(true);
             expect(result.current.count).toBe(0);
         });
     });
