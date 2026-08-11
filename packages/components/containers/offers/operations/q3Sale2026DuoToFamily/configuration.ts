@@ -5,7 +5,7 @@ import type { OfferConfig } from '../../interface';
 import { getModalTitle, topButton } from '../q3Sale2026constants';
 import { offers } from '../q3Sale2026offers';
 
-const { ID, featureCode, ref, dealName, couponCode, features } = offers['duo-to-family'];
+const { ID, featureCode, ref, getRef, dealName, couponCode, features } = offers['duo-to-family'];
 
 export const configuration: OfferConfig = {
     ID,
@@ -15,6 +15,7 @@ export const configuration: OfferConfig = {
     deals: [
         {
             ref,
+            getRef,
             dealName,
             couponCode,
             planIDs: {

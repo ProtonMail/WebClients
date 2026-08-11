@@ -6,6 +6,7 @@ import {
     accountAppConfig,
     buildSubscription,
     calendarAppConfig,
+    docsAppConfig,
     driveAppConfig,
     eligibleCurrency,
     freeUser,
@@ -25,14 +26,10 @@ const baseProps = {
 };
 
 describe('q3Sale2026PlusToUnlimited eligibility', () => {
-    beforeEach(() => {
-        setPathname('/');
-    });
-
     describe('eligible plans', () => {
-        // The spec targets Mail Plus users plus users paying for another product while using Mail
-        // for free: VPN (vpn2022 and vpn2024), Pass Plus, and Drive Plus (drive2022 and drive1tb2025).
-        it.each([PLANS.MAIL, PLANS.VPN, PLANS.VPN2024, PLANS.PASS, PLANS.DRIVE, PLANS.DRIVE_1TB])(
+        // Any paid single-product user can upgrade to the bundle: Mail Plus, Drive Plus (drive2022 and
+        // drive1tb2025), VPN (vpn2022 and vpn2024), or Pass Plus.
+        it.each([PLANS.MAIL, PLANS.DRIVE, PLANS.DRIVE_1TB, PLANS.VPN, PLANS.VPN2024, PLANS.PASS])(
             'should be eligible on %s',
             (plan) => {
                 expect(getIsEligible({ ...baseProps, subscription: buildSubscription({ plan }) })).toBe(true);
@@ -45,35 +42,22 @@ describe('q3Sale2026PlusToUnlimited eligibility', () => {
             );
         });
 
-        it('should be eligible for pass lifetime users', () => {
-            const passLifetimeUser = {
-                ...paidUser,
-                Flags: { 'pass-lifetime': true },
-            } as unknown as UserModel;
+        // Pass lifetime and Pass-via-SimpleLogin users are deliberately out of scope: they have no
+        // Plus subscription, so the spec's "Pass Plus 1/12/24M" audience does not cover them.
+        it.each([{ 'pass-lifetime': true }, { 'pass-from-sl': true }])(
+            'should not be eligible for a user with flags %o and no paid plan',
+            (Flags) => {
+                const user = { ...paidUser, Flags } as unknown as UserModel;
 
-            expect(
-                getIsEligible({
-                    ...baseProps,
-                    user: passLifetimeUser,
-                    subscription: buildSubscription({ plan: PLANS.FREE }),
-                })
-            ).toBe(true);
-        });
-
-        it('should be eligible for pass via SimpleLogin users', () => {
-            const passSimpleLoginUser = {
-                ...paidUser,
-                Flags: { 'pass-from-sl': true },
-            } as unknown as UserModel;
-
-            expect(
-                getIsEligible({
-                    ...baseProps,
-                    user: passSimpleLoginUser,
-                    subscription: buildSubscription({ plan: PLANS.FREE }),
-                })
-            ).toBe(true);
-        });
+                expect(
+                    getIsEligible({
+                        ...baseProps,
+                        user,
+                        subscription: buildSubscription({ plan: PLANS.FREE }),
+                    })
+                ).toBe(false);
+            }
+        );
     });
 
     describe('plans already at or above Unlimited', () => {
@@ -99,27 +83,51 @@ describe('q3Sale2026PlusToUnlimited eligibility', () => {
     });
 
     describe('app scope', () => {
-        it('should be eligible in the mail and calendar apps', () => {
-            const subscription = buildSubscription({ plan: PLANS.MAIL });
-            expect(getIsEligible({ ...baseProps, protonConfig: mailAppConfig, subscription })).toBe(true);
-            expect(getIsEligible({ ...baseProps, protonConfig: calendarAppConfig, subscription })).toBe(true);
-        });
-
-        it('should be eligible in the account app under the mail and calendar dashboards', () => {
-            const subscription = buildSubscription({ plan: PLANS.MAIL });
-
-            setPathname('/mail/dashboard');
-            expect(getIsEligible({ ...baseProps, protonConfig: accountAppConfig, subscription })).toBe(true);
-
-            setPathname('/calendar/dashboard');
-            expect(getIsEligible({ ...baseProps, protonConfig: accountAppConfig, subscription })).toBe(true);
-        });
-
-        it('should not be eligible in the drive app', () => {
+        // The campaign runs in Mail, Calendar and Drive, plus the matching account dashboards. The
+        // audience is defined by plan rather than by app, so the check is the union of all three: which
+        // app the user was in is recorded in the tracking ref instead.
+        it.each([mailAppConfig, calendarAppConfig, driveAppConfig])('should be eligible in %o', (protonConfig) => {
             expect(
                 getIsEligible({
                     ...baseProps,
-                    protonConfig: driveAppConfig,
+                    protonConfig,
+                    subscription: buildSubscription({ plan: PLANS.MAIL }),
+                })
+            ).toBe(true);
+        });
+
+        it.each(['/mail/dashboard', '/calendar/dashboard', '/drive/dashboard'])(
+            'should be eligible in the account app under %s',
+            (pathname) => {
+                setPathname(pathname);
+
+                expect(
+                    getIsEligible({
+                        ...baseProps,
+                        protonConfig: accountAppConfig,
+                        subscription: buildSubscription({ plan: PLANS.MAIL }),
+                    })
+                ).toBe(true);
+            }
+        );
+
+        it('should not be eligible in apps outside the campaign', () => {
+            expect(
+                getIsEligible({
+                    ...baseProps,
+                    protonConfig: docsAppConfig,
+                    subscription: buildSubscription({ plan: PLANS.MAIL }),
+                })
+            ).toBe(false);
+        });
+
+        it('should not be eligible in the account app with no product in the path', () => {
+            setPathname('/');
+
+            expect(
+                getIsEligible({
+                    ...baseProps,
+                    protonConfig: accountAppConfig,
                     subscription: buildSubscription({ plan: PLANS.MAIL }),
                 })
             ).toBe(false);

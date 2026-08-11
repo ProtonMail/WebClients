@@ -21,6 +21,11 @@ export const driveAppConfig = {
     APP_NAME: 'proton-drive',
 } as unknown as ProtonConfig;
 
+/** Renders the upsell via PrivateHeader but is outside the campaign scope. */
+export const docsAppConfig = {
+    APP_NAME: 'proton-docs',
+} as unknown as ProtonConfig;
+
 export const freeUser = {
     canPay: true,
     isDelinquent: false,
