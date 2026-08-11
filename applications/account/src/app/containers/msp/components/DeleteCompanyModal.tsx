@@ -32,7 +32,7 @@ const DeleteCompanyModal = ({ companyName, onConfirm, onClose }: Props) => {
                         <ul className="m-0 pl-4">
                             <li>{c('Info').t`Members are signed out and lose access`}</li>
                             <li>{c('Info').t`All data, files, and settings are permanently deleted`}</li>
-                            <li>{c('Info').t`Assigned seats are released and won't be billed`}</li>
+                            <li>{c('Info').t`Allocated licenses are released and won't be billed`}</li>
                             <li>{c('Info').t`Audit logs and billing history are kept for compliance`}</li>
                         </ul>
                     </div>

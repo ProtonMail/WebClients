@@ -1,6 +1,8 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { type AddressKeysState, addressKeysThunk } from '@proton/account/addressKeys';
+import { addressesThunk } from '@proton/account/addresses';
 import type { KtState } from '@proton/account/kt';
 import type { MemberState } from '@proton/account/member';
 import { mspSubsidiariesActions } from '@proton/account/mspSubsidiaries';
@@ -11,7 +13,7 @@ import {
     createMspSubsidiary,
     disableMspSubsidiary,
     enableMspSubsidiary,
-    getMspSubsidiaryManagers,
+    getAllMspSubsidiaryManagers,
     unassignMspSubsidiaryManager,
     updateMspSubsidiary,
 } from '@proton/shared/lib/api/msp';
@@ -20,7 +22,7 @@ import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, ORGANIZATION_STATE } from '@proton
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
 import { generateSubsidiaryOrganizationKeys } from '@proton/shared/lib/keys/organizationKeys';
 
-type RequiredState = OrganizationKeyState & MemberState & KtState;
+type RequiredState = OrganizationKeyState & MemberState & KtState & AddressKeysState;
 export const addCompanyThunk = ({
     data,
 }: {
@@ -36,10 +38,32 @@ export const addCompanyThunk = ({
         if (!adminOrgKey) {
             throw new Error(c('Error').t`Please set up your organization before adding a company.`);
         }
+
+        // Subsidiaries inherit the MSP's own organization identity: the same address that signed
+        // the parent org's key fingerprint also signs the new subsidiary's key fingerprint.
+        const identityAddressEmail = organizationKey.Key.FingerprintSignatureAddress;
+        const addresses = await dispatch(addressesThunk());
+        const identityAddress = addresses.find((address) => address.Email === identityAddressEmail);
+        const [identityAddressKey] = identityAddress
+            ? await dispatch(addressKeysThunk({ addressID: identityAddress.ID }))
+            : [];
+        if (!identityAddress || !identityAddressKey?.privateKey) {
+            throw new Error(c('Error').t`Please set up your organization identity before adding a company.`);
+        }
+
         const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
-        const cryptoPayload = await generateSubsidiaryOrganizationKeys({ adminOrgKey, keyGenConfig });
+        const cryptoPayload = await generateSubsidiaryOrganizationKeys({
+            adminOrgKey,
+            signingAddressKey: identityAddressKey.privateKey,
+            keyGenConfig,
+        });
         const { Organization } = await api<{ Organization: MspSubsidiary }>(
-            createMspSubsidiary({ Name: data.name, MaxMembers: data.assignedSeats, ...cryptoPayload })
+            createMspSubsidiary({
+                Name: data.name,
+                MaxMembers: data.assignedSeats,
+                OrganizationIdentityAddressID: identityAddress.ID,
+                ...cryptoPayload,
+            })
         );
         // The API seems to return OrganizationID instead of ID. Fixup the value here.
         if ('OrganizationID' in Organization && typeof Organization.OrganizationID === 'string') {
@@ -51,6 +75,8 @@ export const addCompanyThunk = ({
             Organization.Status = Organization.State as ORGANIZATION_STATE;
             delete Organization.State;
         }
+        // A brand new subsidiary has no delegated managers yet.
+        Organization.DelegatedManagers ??= [];
         dispatch(mspSubsidiariesActions.upsert(Organization));
     };
 };
@@ -103,10 +129,7 @@ export const getSubsidiaryManagersThunk = ({
     id: string;
 }): ThunkAction<Promise<MspDelegatedManager[]>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (_dispatch, _, extra) => {
-        const { DelegatedManagers } = await extra.api<{ DelegatedManagers: MspDelegatedManager[] }>(
-            getMspSubsidiaryManagers(id)
-        );
-        return DelegatedManagers;
+        return getAllMspSubsidiaryManagers(extra.api, id);
     };
 };
 

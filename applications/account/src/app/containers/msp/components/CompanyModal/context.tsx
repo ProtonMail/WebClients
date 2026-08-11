@@ -1,14 +1,15 @@
 import type { ReactNode } from 'react';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
+import { mspSubsidiariesActions } from '@proton/account/mspSubsidiaries';
 import { getSubsidiaryManagersThunk, unassignMemberFromCompanyThunk } from '@proton/account/mspSubsidiaries/actions';
+import { useMspSubsidiaries } from '@proton/account/mspSubsidiaries/hooks';
 import { assignMemberToCompanyThunk } from '@proton/account/mspSubsidiaries/manageCompanyAction';
 import { useMspDispatch } from '@proton/account/mspSubsidiaries/useMspDispatch';
 import { isOwnerRole } from '@proton/account/organizationRoles/helpers';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useErrorHandler } from '@proton/components';
-import { useLoading } from '@proton/hooks';
 import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { Member } from '@proton/shared/lib/interfaces';
@@ -27,7 +28,6 @@ interface CompanyModalContextValue {
     assignedSeats: number;
     minSeats: number;
     managers: MspDelegatedManager[];
-    managersLoading: boolean;
     pendingManagerIds: Set<string>;
     addManager: (member: Member) => Promise<void>;
     removeManager: (managerId: string) => Promise<void>;
@@ -52,7 +52,7 @@ interface Props {
     children: ReactNode;
 }
 
-// Company fields (name/seats) are staged here and only sent to the API from `handleSubmit`.
+// Company fields (name/licenses) are staged here and only sent to the API from `handleSubmit`.
 // Delegated managers are added/removed immediately against the API.
 export const CompanyModalProvider = ({ mode, initial, onSave, children }: Props) => {
     const dispatch = useMspDispatch();
@@ -69,16 +69,10 @@ export const CompanyModalProvider = ({ mode, initial, onSave, children }: Props)
     const [seatsText, setSeatsText] = useState(String(initial?.assignedSeats ?? 1));
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const [managers, setManagers] = useState<MspDelegatedManager[]>([]);
-    const [managersLoading, withManagersLoading] = useLoading(canManageManagers);
+    // Read live from the store instead of copying into local state, so it can't drift from the cached companies list.
+    const [subsidiaries] = useMspSubsidiaries();
+    const managers = subsidiaries?.find((s) => s.ID === initial?.id)?.DelegatedManagers ?? [];
     const [pendingManagerIds, setPendingManagerIds] = useState(new Set<string>());
-
-    useEffect(() => {
-        if (!canManageManagers) {
-            return;
-        }
-        void withManagersLoading(dispatch(getSubsidiaryManagersThunk({ id: initial.id })).then(setManagers));
-    }, [canManageManagers, initial?.id]);
 
     const minSeats = Math.max(1, initial?.usedSeats ?? 0);
     const assignedSeats = Math.max(minSeats, parseInt(seatsText, 10) || minSeats);
@@ -101,11 +95,16 @@ export const CompanyModalProvider = ({ mode, initial, onSave, children }: Props)
         }
         setManagerPending(member.ID, true);
         try {
+            const knownManagerIds = new Set(managers.map((manager) => manager.ID));
             await dispatch(assignMemberToCompanyThunk({ id: initial.id, member }));
-            // The assign call takes the member's parent-org ID, but delegated managers are
-            // identified by a different, subsidiary-scoped ID everywhere else (including the
-            // unassign call) — refetch instead of guessing that ID for an optimistic append.
-            setManagers(await dispatch(getSubsidiaryManagersThunk({ id: initial.id })));
+            // The assign call returns the member's parent-org ID, not the subsidiary-scoped ID managers
+            // are keyed by elsewhere, so refetch and diff instead of guessing it. Merging only the new
+            // record (rather than replacing the array) avoids clobbering a concurrent add/remove.
+            const refreshedManagers = await dispatch(getSubsidiaryManagersThunk({ id: initial.id }));
+            const newManager = refreshedManagers.find((manager) => !knownManagerIds.has(manager.ID));
+            if (newManager) {
+                dispatch(mspSubsidiariesActions.addDelegatedManager({ id: initial.id, manager: newManager }));
+            }
         } catch (e) {
             handleError(e);
         } finally {
@@ -120,7 +119,8 @@ export const CompanyModalProvider = ({ mode, initial, onSave, children }: Props)
         setManagerPending(managerId, true);
         try {
             await dispatch(unassignMemberFromCompanyThunk({ id: initial.id, memberId: managerId }));
-            setManagers((prev) => prev.filter((manager) => manager.ID !== managerId));
+            // Dispatched synchronously against the latest state, so concurrent removals can't race.
+            dispatch(mspSubsidiariesActions.removeDelegatedManager({ id: initial.id, managerId }));
         } catch (e) {
             handleError(e);
         } finally {
@@ -155,7 +155,6 @@ export const CompanyModalProvider = ({ mode, initial, onSave, children }: Props)
         assignedSeats,
         minSeats,
         managers,
-        managersLoading,
         pendingManagerIds,
         addManager,
         removeManager,

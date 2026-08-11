@@ -64,6 +64,7 @@ import {
     getOrganizationKeyInfo,
     validateOrganizationKey,
 } from '@proton/shared/lib/organization/helper';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import ChangeMemberPasswordModal from '../ChangeMemberPasswordModal';
 import ResendInvitePrompt from '../ResendInvitePrompt';
@@ -114,6 +115,7 @@ export const useMemberActions = ({
         onExit: () => setTmpMemberID(null),
     };
     const isMSPManager = user?.accessType === AccessType.Msp;
+    const isMSPStorageOptionEnabled = useFlag('MSPStorageOptionEnabled');
     const hasDriveB2BPlan = getHasDriveB2BPlan(subscription);
     const hasMeetPlan = hasMeetBusiness(subscription) || hasMeet(subscription);
     const hasExternalMemberCapableB2BPlan = !!entitlements.quantityOrg(EntitlementName.ExternalManagedMembers);
@@ -125,11 +127,12 @@ export const useMemberActions = ({
     // Allow using custom domain if organization has meetbiz2025 and a verified custom domain
     const hasMeetB2BPlanAndVerifiedCustomDomain = hasMeetPlan && hasCustomDomains;
     const useEmail = hasExternalMemberCapableB2BPlan && !hasMeetB2BPlanAndVerifiedCustomDomain;
-    const allowStorageConfiguration =
+    const allowStorageConfigurationForPlan =
         !hasExternalMemberCapableB2BPlan ||
         hasDriveB2BPlan ||
         !!entitlements.quantityOrg(EntitlementName.PassBusiness) ||
         hasVPNPassProfessional(subscription);
+    const allowStorageConfiguration = (!isMSPManager || isMSPStorageOptionEnabled) && allowStorageConfigurationForPlan;
     // VPN + Pass B2B bundle needs to disable VPN to be able to downgrade to Pass Professional
     const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan || hasVPNPassProfessional(subscription);
     const allowPrivateMemberConfiguration = !hasExternalMemberCapableB2BPlan;
