@@ -6,13 +6,16 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
-        ".": "./src/Logger.ts"
+        ".": "./src/logger.ts",
+        "./types": "./src/types.ts",
+        "./constants": "./src/constants.ts"
     },
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",
         "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci"
+        "test:ci": "jest --coverage --runInBand --ci",
+        "test:watch": "jest --watch"
     },
     "dependencies": {
         "@protontech/crypto": "*",
