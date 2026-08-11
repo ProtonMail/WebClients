@@ -127,7 +127,7 @@ export const useMlsSession = ({
                     message = c('Error')
                         .t`This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.`;
                     break;
-                case MeetCoreErrorEnum.TimeDriftError:
+                case MeetCoreErrorEnum.CheckDeviceClock:
                     message = c('Error')
                         .t`Your device's clock appears to be out of sync. Please check your system time and try again.`;
                     break;
