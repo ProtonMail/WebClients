@@ -2,6 +2,7 @@ import { type ReactNode, createContext, useCallback, useContext, useEffect, useM
 
 import type { Message } from '../../../types';
 import type { ArtifactRegistry } from './artifactRegistry';
+import { isArtifactVersionProvisional } from './artifactRegistry';
 import type { ParsedArtifact } from './parseArtifacts';
 import { useArtifactRegistry } from './useArtifactRegistry';
 
@@ -23,6 +24,7 @@ interface ArtifactContextValue {
     // Set when the user explicitly closes the panel; suppresses auto-open for the current generation.
     panelUserClosed: boolean;
     resetPanelUserClosed: () => void;
+    isSelectedVersionProvisional: boolean;
 }
 
 const ArtifactContext = createContext<ArtifactContextValue | null>(null);
@@ -157,6 +159,9 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
               }
             : null;
 
+    const isSelectedVersionProvisional =
+        selectedId !== null && isArtifactVersionProvisional(registry, selectedId, selectedVersionIndex);
+
     const value = useMemo(
         () => ({
             registry,
@@ -170,6 +175,7 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
             closePanel,
             panelUserClosed,
             resetPanelUserClosed,
+            isSelectedVersionProvisional,
         }),
         [
             registry,
@@ -182,6 +188,7 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
             closePanel,
             panelUserClosed,
             resetPanelUserClosed,
+            isSelectedVersionProvisional,
         ]
     );
 
