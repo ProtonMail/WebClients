@@ -90,9 +90,6 @@
       "Apply": [
         "Zastosuj"
       ],
-      "Ask me next time": [
-        "Zapytaj mnie następnym razem"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakt",
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakty",
@@ -710,9 +707,6 @@
       ],
       "Save changes": [
         "Zapisz zmiany"
-      ],
-      "Save preferences": [
-        "Zapisz ustawienia"
       ],
       "Search": [
         "Szukaj"
@@ -4738,9 +4732,6 @@
       "Continue": [
         "Kontynuuj"
       ],
-      "Converting document...": [
-        "Konwertowanie dokumentu..."
-      ],
       "Copied to clipboard": [
         "Skopiowano do schowka"
       ],
@@ -4797,9 +4788,6 @@
       ],
       "Creating link to folder": [
         "Tworzenie linku do folderu"
-      ],
-      "Creating new document...": [
-        "Tworzenie nowego dokumentu..."
       ],
       "Current plan": [
         "Obecny plan"
@@ -4900,12 +4888,6 @@
       "Enter your own password (as trusted contact).": [
         "Wpisz swoje hasło (jako zaufany kontakt)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Błąd podczas konwertowania dokumentu: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Błąd podczas ładowania dokumentu: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Błąd synchronizacji"
       ],
@@ -4956,12 +4938,6 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Uzyskaj profesjonalny adres e-mail @twoja-firma.com, 1 TB bezpiecznej przestrzeni dyskowej na użytkownika, dłuższe połączenia wideo i nie tylko dzięki ${ BRAND_NAME } Workspace."
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Otrzymuj powiadomienia e-mail o komentarzach i sugestiach dodanych do Twoich dokumentów."
-      ],
-      "Get Notified About Comments": [
-        "Otrzymuj powiadomienia o komentarzach"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Rządy i dostawcy Internetu mogą monitorować Twoją aktywność online. Ukrywając swój prawdziwy adres IP i szyfrując połączenie, przeglądanie staje się prywatne."
@@ -5122,9 +5098,6 @@
       "Low Priority": [
         "Niski priorytet"
       ],
-      "Making a copy...": [
-        "Tworzenie kopii..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksymalnie ${ MAX_SHARED_URL_PASSWORD_LENGTH } znak",
         "Maksymalnie ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaki",
@@ -5157,9 +5130,6 @@
       ],
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "W adresie URL nie podano dokumentu. Wróć do aplikacji ${ DRIVE_APP_NAME } i wybierz dokument."
       ],
       "No email address": [
         "Brak adresu e-mail"
@@ -5451,9 +5421,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Właściciel adresu wyłączył szyfrowanie end-to-end. Aby móc wysyłać wiadomości zaszyfrowane na ten adres, właściciel musi ponownie włączyć szyfrowanie end-to-end."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Wygląda na to, że adres URL, który wpisałeś, został nieprawidłowo skopiowany ze Slacka. Kopiując długie linki ze Slacka, kliknij link prawym przyciskiem myszy, a następnie wybierz „Kopiuj link”, zamiast bezpośrednio kopiować skrócony tekst adresu URL."
       ],
       "There are no documents in the trash.": [
         "Brak dokumentów w koszu."
@@ -6070,9 +6037,6 @@
       "Emails (last month)": [
         "Wiadomości (ostatni miesiąc)"
       ],
-      "Enable email notifications": [
-        "Włącz powiadomienia e-mail"
-      ],
       "Encrypt emails": [
         "Zaszyfruj wiadomości"
       ],
@@ -6129,9 +6093,6 @@
       ],
       "Include application logs in bug report": [
         "Dołącz logi aplikacji do raportu błędu"
-      ],
-      "Include document name in notification": [
-        "Dołącz nazwę dokumentu w powiadomieniu"
       ],
       "Include message and file name in invite email": [
         "Dołącz wiadomość i nazwę pliku w zaproszeniu"
@@ -9401,9 +9362,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Tworzenie nowego arkusza kalkulacyjnego..."
-      ],
       "Detect automatically": [
         "Wykryj automatycznie"
       ],
@@ -10412,6 +10370,9 @@
       ],
       "Document verification failed": [
         "Weryfikacja dokumentu nie powiodła się"
+      ],
+      "Domain names": [
+        "Nazwy domen"
       ],
       "Downgrade account": [
         "Obniż plan"

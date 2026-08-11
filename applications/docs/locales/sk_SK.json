@@ -531,6 +531,9 @@
       "Merge contacts": [
         "Zlúčiť kontakty"
       ],
+      "Migrate": [
+        "Migrovať"
+      ],
       "More actions": [
         "Ďalšie akcie"
       ],
@@ -3002,11 +3005,17 @@
       "A group with this name already exists": [
         "Skupina s týmto názvom už existuje"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Pri nahlásení porušenia autorských práv alebo odcudzenia údajov je potrebné zanechať správu"
+      ],
       "Account does not exist": [
         "Účet neexistuje"
       ],
       "Address could not be added.": [
         "Adresu nebolo možné pridať."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresu už používa používateľ mimo vašej organizácie. Kontaktujte zákaznícku podporu, aby ste to vyriešili."
       ],
       "Address primary private key not found": [
         "Primárny súkromný kľúč adresy nenájdený"
@@ -3059,14 +3068,35 @@
       "Authentication error.": [
         "Chyba prihlásenia."
       ],
+      "Bookmark password is not available": [
+        "Heslo záložky nie je k dispozícii"
+      ],
       "Calendar limit reached": [
         "Dosiahnutý limit kalendára"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Fotografiu bez platného názvu nie je možné pridať do albumu"
+      ],
+      "Cannot download a folder": [
+        "Priečinok nie je možné stiahnuť"
       ],
       "Cannot export this contact": [
         "Nie je možné exportovať tento kontakt"
       ],
       "Cannot find move target": [
         "Cieľ presunu nebol nájdený"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Položku bez platného názvu nie je možné presunúť, najskôr ju premenujte, prosím"
+      ],
+      "Cannot share root folder": [
+        "Koreňový priečinok nie je možné zdieľať"
+      ],
+      "Cannot verify the author of this file": [
+        "Nie je možné overiť autora tohto súboru"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Nie je možné overiť, kto tento súbor nahral"
       ],
       "Contact could not be saved": [
         "Kontakt sa nepodarilo uložiť"
@@ -3077,11 +3107,44 @@
       "Contact signature not verified": [
         "Podpis kontaktu nebol overený"
       ],
+      "Copy operation aborted": [
+        "Operácia kopírovania bola prerušená"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopírovanie položky do miesta, ktoré nie je priečinkom, nie je povolené"
+      ],
+      "Could not find an available name": [
+        "Nepodarilo sa nájsť voľné meno"
+      ],
+      "Could not load sharing details": [
+        "Nepodarilo sa načítať podrobnosti o zdieľaní"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Nepodarilo sa načítať náhľad obrázku: ${ message }"
+      ],
       "Could not open created vault": [
         "Nepodarilo sa otvoriť vytvorený trezor"
       ],
       "Could not open updated vault": [
         "Nepodarilo sa otvoriť aktualizovaný trezor"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Nepodarilo sa prečítať časť tohto súboru: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Nepodarilo sa odomknúť nadradený priečinok"
+      ],
+      "Could not unlock this item": [
+        "Túto položku sa nepodarilo odomknúť"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Vytváranie dokumentov mimo zložiek nie je povolené"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Vytváranie súborov mimo priečinkov nie je povolené"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Vytváranie priečinkov mimo priečinkov nie je povolené"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendára",
@@ -3094,6 +3157,9 @@
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov alebo",
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov alebo",
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov alebo"
+      ],
+      "Device not found": [
+        "Zariadenie nebolo nájdené"
       ],
       "Domain not available, try again later": [
         "Doména nie je dostupná, skúste to znova neskôr"
@@ -3112,6 +3178,9 @@
       ],
       "Error decrypting a computer": [
         "Chyba pri dešifrovaní počítača"
+      ],
+      "Expiration date cannot be in the past": [
+        "Dátum ukončenia platnosti nemôže byť v minulosti"
       ],
       "External accounts are not supported yet": [
         "Externé účty zatiaľ nie sú podporované"
@@ -3140,6 +3209,27 @@
       "Failed to create public share node": [
         "Nepodarilo sa vytvoriť uzol verejného zdieľania"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Nepodarilo sa dešifrovať kľúč záložky: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Nepodarilo sa dešifrovať názov záložky: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Nepodarilo sa dešifrovať heslo záložky: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Nepodarilo sa dešifrovať kľúč obsahu: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Nepodarilo sa dešifrovať názov položky: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Nepodarilo sa dešifrovať kľúč uzla: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Nepodarilo sa dešifrovať metadáta revízie"
+      ],
       "Failed to expand folder": [
         "Nepodarilo sa rozbaliť priečinok"
       ],
@@ -3148,6 +3238,9 @@
       ],
       "Failed to fetch sharing info": [
         "Načítanie informácií o zdieľaní zlyhalo"
+      ],
+      "Failed to get inviter keys": [
+        "Nepodarilo sa získať kľúče pozývajúceho"
       ],
       "Failed to load 'My files' folder": [
         "Nepodarilo sa načítať priečinok „Moje súbory“"
@@ -3185,6 +3278,15 @@
       "Failed to update public share node": [
         "Nepodarilo sa aktualizovať uzol verejného zdieľania"
       ],
+      "Failed to verify invitation": [
+        "Overenie pozvánky zlyhalo"
+      ],
+      "File download failed due to empty response": [
+        "Sťahovanie súboru sa nepodarilo kvôli prázdnej odpovedi"
+      ],
+      "File has no revision": [
+        "Súbor nemá žiadnu revíziu"
+      ],
       "First name is too long": [
         "Meno je príliš dlhé"
       ],
@@ -3193,6 +3295,9 @@
       ],
       "Forward address is required": [
         "Adresa preposielania je povinná"
+      ],
+      "Image preview not found": [
+        "Náhľad obrázka nebol nájdený"
       ],
       "Image upload failed": [
         "Nahrávanie obrázka zlyhalo"
@@ -3224,8 +3329,14 @@
       "Invalid verification code": [
         "Nesprávny overovací kód"
       ],
+      "Invitation not found": [
+        "Pozvánka nenájdená"
+      ],
       "Item content cannot exceed 40KB": [
         "Obsah položky nesmie presiahnuť 40KB"
+      ],
+      "Item not found": [
+        "Položka nebola nájdená"
       ],
       "Label name cannot be empty.": [
         "Názov štítku nesmie byť prázdny."
@@ -3233,20 +3344,56 @@
       "Last name is too long": [
         "Priezvisko je príliš dlhé"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Starý verejný odkaz nie je možné aktualizovať. Vytvorte nový verejný odkaz, prosím."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa člena nebola nájdená. Na vyriešenie tohto problému kontaktujte zákaznícku podporu."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Zlúčte aspoň ${ calendarsToFixCount } kalendár s existujúcim ${ BRAND_NAME } kalendárom",
         "Zlúčte aspoň ${ calendarsToFixCount } kalendárov s existujúcimi ${ BRAND_NAME } kalendármi",
         "Zlúčte aspoň ${ calendarsToFixCount } kalendárov s existujúcimi ${ BRAND_NAME } kalendármi",
         "Zlúčte aspoň ${ calendarsToFixCount } kalendárov s existujúcimi ${ BRAND_NAME } kalendármi"
       ],
+      "Missing inviter email": [
+        "Chýba emailová adresa pozývajúceho"
+      ],
       "Missing key packet": [
         "Chýbajúci kľúčový balík"
+      ],
+      "Missing organization private key": [
+        "Chýba súkromný kľúč organizácie"
+      ],
+      "Missing organization public key": [
+        "Chýba verejný kľúč organizácie"
       ],
       "Missing signature": [
         "Chýbajúci podpis"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Chýba podpis pre ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Operácia presunu bola prerušená"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Presun položky do miesta, ktoré nie je priečinkom, nie je povolené"
+      ],
+      "Moving root item is not allowed": [
+        "Presun koreňovej položky nie je povolený"
+      ],
       "Name is required": [
         "Názov je povinný"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znak",
+        "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znaky",
+        "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znakov",
+        "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znakov"
+      ],
+      "Name must not be empty": [
+        "Názov nesmie byť prázdny"
       ],
       "Network error": [
         "Chyba siete"
@@ -3262,6 +3409,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Neboli nájdené žiadne emaily na import - účet nemá priečinok Doručená pošta"
+      ],
+      "No file data was received. Please try again.": [
+        "Neboli prijaté žiadne údaje zo súboru. Skúste to znova, prosím."
       ],
       "No valid address found": [
         "Nebola nájdená žiadna platná adresa"
@@ -3281,6 +3431,21 @@
         "Niektoré skupny nemajú žiadne kontakty: ${ noContactGroupList } ",
         "Niektoré skupny nemajú žiadne kontakty: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Externé pozvánky môžu konvertovať len správcovia"
+      ],
+      "Operation aborted": [
+        "Operácia bola prerušená"
+      ],
+      "Operation failed, try again later": [
+        "Operácia sa nepodarila, skúste to neskôr"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizaícia nemá dostatok voľných licencií"
+      ],
+      "Organization does not have enough storage available": [
+        "Organzácia nemá dostatok úložného priestoru"
+      ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
       ],
@@ -3290,11 +3455,20 @@
       "Organization key must be activated to create non-private users": [
         "Na vytvorenie nesúkromných používateľov musí byť aktivovaný kľúč organizácie"
       ],
+      "Part of the file appears to be corrupted": [
+        "Zdá sa, že časť súboru je poškodená"
+      ],
       "Password is required": [
         "Heslo je požadované"
       ],
       "Passwords do not match": [
         "Heslá sa nezhodujú"
+      ],
+      "Photo is already in the target album": [
+        "Fotografia sa už v cieľovom albume nachádza"
+      ],
+      "Photo not found": [
+        "Fotografia nebola nájdená"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Nahrávanie fotografií je dočasne nedostupné. Skúste to prosím, neskôr."
@@ -3353,11 +3527,20 @@
         "Duplicitní pozývatelia odstránení: ${ joinedInvitee }",
         "Odstránené duplicitné pozvánky: ${ joinedInvitee }"
       ],
+      "Renaming root item is not allowed": [
+        "Pomenovanie koreňovej položky nie je povolené"
+      ],
+      "Request aborted": [
+        "Dopyt prerušený"
+      ],
       "Request timed out": [
         "Požiadavka časovo omeškaná"
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Systém prenesenia daňovej povinnosti nie je pre tento plán podporovaný."
+      ],
+      "Signature is missing": [
+        "Chýba podpis"
       ],
       "Signature not verified": [
         "Podpis nebol overený"
@@ -3365,14 +3548,32 @@
       "Signature verification failed": [
         "Overenie podpisu zlyhalo"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Overenie podpisu zlyhalo: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Overenie podpisu ${ signatureType } zlyhalo"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Overenie podpisu ${ signatureType } zlyhalo: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Niektoré kontakty nemožno zmazať"
       ],
       "Some documents could not be loaded": [
         "Niektoré dokumenty sa nepodarilo načítať"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Niektoré súbory sa nepodarilo nahrať. Skúste to znova, prosím."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Niektoré časti súboru sa nepodarilo nahrať. Skúste to znova, prosím."
+      ],
       "Some groups could not be deleted": [
         "Niektoré skupiny nie je možné odstrániť"
+      ],
+      "Some items could not be loaded": [
+        "Niektoré položky sa nepodarilo načítať"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Niektoré z názvov vašich priečinkov nie sú k dispozícii. Prispôsobte import a upravte tieto názvy, prosím."
@@ -3455,6 +3656,9 @@
       "The original file is not uploaded yet, please try again later": [
         "Pôvodný súbor ešte nie je nahratý, skúste to znova neskôr, prosím"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Nahratý súbor nezodpovedá originálu. Skúste to znova, prosím."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašom externom účte je príliš veľa priečinkov. Upravte import na zmazanie niektorých priečinkov, prosím."
       ],
@@ -3476,14 +3680,38 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Toto pole musí obsahovať minimálne ${ minimumLength } znakov."
       ],
+      "This file has missing crypto material": [
+        "V tomto súbore chýba šifrovací materiál"
+      ],
+      "This file has no version available to download": [
+        "Tento súbor nie je k dispozícii na stiahnutie v žiadnej verzii"
+      ],
+      "This file version could not be uploaded": [
+        "Túto verziu súboru nebolo možné nahrať"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Tento názov priečinka nie je k dispozícii. Zvoľte prosím iný názov."
+      ],
+      "This item has no image preview": [
+        "Tento produkt nemá obrazovú ukážku"
+      ],
+      "This item is no longer shared": [
+        "Táto položka už nie je zdieľaná"
+      ],
+      "This item is not shared": [
+        "Táto položka nie je zdieľaná"
       ],
       "This label name is not available. Please choose a different name.": [
         "Tento názov štítku nie je k dispozícii. Zvoľte prosím iný názov."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Táto správa môže obsahovať URL odkazy, ktoré nemôžu by správne otvorené vaším aktuálnym prehliadačom."
+      ],
+      "Too many server errors, please try again later": [
+        "Vyskytlo sa príliš veľa chýb servera, skúste to neskôr, prosím"
+      ],
+      "Too many server requests, please try again later": [
+        "Príliš veľa požiadaviek na server, skúste to neskôr, prosím"
       ],
       "Try using only letters, numerals, and _.-": [
         "Skúste používať iba písmená, číslice a _.-"
@@ -3521,6 +3749,12 @@
       "Validation error": [
         "Chyba overenia"
       ],
+      "Verification keys are not available": [
+        "Overovacie kľúče nie sú k dispozícii"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Overovacie kľúče pre ${ signatureType } nie sú k dispozícii"
+      ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Máme problémy s ukladaním posledných úprav. Obnovte stránku, prosím."
       ],
@@ -3536,11 +3770,29 @@
       "Wrong billing address": [
         "Nesprávna fakturačná adresa"
       ],
+      "You can create public links for your own files only": [
+        "Verejné odkazy môžete vytvárať iba na svoje vlastné súbory"
+      ],
+      "You can only leave items that are shared with you": [
+        "Môžete opustiť len položky, ktoré sú s vami zdieľané"
+      ],
+      "You can only upload a new version to a file": [
+        "Do súboru môžete nahrať iba novú verziu"
+      ],
+      "You can update a public link for your own files only": [
+        "Verejný odkaz môžete aktualizovať iba pre svoje vlastné súbory"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcovi",
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcom",
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcom",
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcom"
+      ],
+      "You do not have access to this item": [
+        "K tejto položke nemáte prístup"
+      ],
+      "You do not have access to this shared item": [
+        "K tejto zdieľanej položke nemáte prístup"
       ],
       "You have reached the maximum number of calendars.": [
         "Dosiahli ste maximálny počet kalendárov."
@@ -4034,6 +4286,29 @@
         "terabajtov"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Aktivované"
+      ],
+      "All": [
+        "Všetci"
+      ],
+      "Errors": [
+        "Chyby"
+      ],
+      "In progress": [
+        "Prebieha"
+      ],
+      "Migrated": [
+        "Presunuté"
+      ],
+      "Not activated": [
+        "Neaktivovaný"
+      ],
+      "Pending": [
+        "Čaká"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "Štítok ${ Label.Name } bol aktualizovaný"
@@ -4422,11 +4697,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Má chyby"
+      ],
       "In progress": [
         "Prebieha"
       ],
       "Migrated": [
         "Presunuté"
+      ],
+      "Pending": [
+        "Čaká"
       ]
     },
     "Import warning": {
@@ -4711,6 +4992,9 @@
       "Attention required": [
         "Vyžaduje sa pozornosť"
       ],
+      "Author is not provided on public link": [
+        "Vo verejnom odkaze nie je uvedený autor"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Pred vyžiadaním nového overovacieho kódu skontrolujte priečinok spam a skontrolujte, či je adresa ${ strong } správna."
       ],
@@ -4978,6 +5262,9 @@
       "finance": [
         "financie"
       ],
+      "Find out what can be migrated.": [
+        "Zistite, čo je možné preniesť."
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Priečinok „${ link.name }“ bol vymazaný počas sťahovania"
       ],
@@ -5212,6 +5499,9 @@
       "No results found": [
         "Nenájdené žiadne výsledky"
       ],
+      "No users to display": [
+        "Nie sú žiadni používatelia na zobrazenie"
+      ],
       "No version history available": [
         "História verzií nie je k dispozícii"
       ],
@@ -5392,6 +5682,9 @@
       "Select a folder to move to.": [
         "Vyberte priečinok na presun."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vyberte presne to, čo chcete preniesť. Zmena sa uplatní na všetkých používateľov v organizácii."
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, ktorý chcete aby bol použitý ako predvolený pre zasielanie emailu na túto emailovú adresu."
       ],
@@ -5548,6 +5841,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Tento jedinečný kód môžu webové stránky a poskytovatelia internetových služieb (ISP) použiť na prepojenie vašej polohy a histórie prehliadania s vaším zariadením"
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Tento používateľ nemôže byť prenesený, pretože jeho emailová adresa nie je k dispozícii na ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tento používateľ nemôže byť prenesený z dôvodu nekompatibility platforiem."
+      ],
       "This will permanently delete the file you uploaded.": [
         "Týmto sa natrvalo odstráni nahraný súbor."
       ],
@@ -5568,6 +5867,27 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Ak chcete importovať udalosti, najprv vytvorte kalendár v ${ CALENDAR_APP_NAME }. Po importe sa tu zobrazia udalosti."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Ak chcete tohto používateľa presunúť, pridajte a overte emailovú doménu na stránke ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Ak chcete tohto používateľa presunúť, aktivujte jeho účet vo vašom ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Ak chcete tohto používateľa presunúť, aktivujte jeho účet na ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Ak chcete tohto používateľa presunúť, aktivujte jeho adresu na ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Na presun tohto používateľa je potrebné, aby prijal pozvánku na pripojenie sa k ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Ak chcete tohto používateľa presunúť, odarchivujte ho vo vašej ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Ak chcete tohto používateľa presunúť, zrušte jeho pozastavenie vo vašom ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Na opätovné podpísanie vašich kontaktov musíme porovnať každý kontakt so zoznamom šifrovacích kľúčov dostupných vo vašom účte. Ak sa nenájde žiadna zhoda, váš kontakt bude znova podpísaný primárnym šifrovacím kľúčom."
@@ -5686,6 +6006,9 @@
       "Writing assistant": [
         "Asistent písania"
       ],
+      "You": [
+        "Vy"
+      ],
       "you": [
         "vy"
       ],
@@ -5757,6 +6080,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Po zmene vášho prístupu na čitateľa nebudete môcť zdieľať „${ fileName }“. Vlastník alebo redaktor s oprávnením na zdieľanie vám môže obnoviť prístup na úpravy. Túto zmenu nemôžete sami vrátiť späť."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
@@ -8844,6 +9170,26 @@
         "Priebeh: ${ combinedProgress } %"
       ]
     },
+    "Property": {
+      "attributes": [
+        "atribúty"
+      ],
+      "content key": [
+        "kľúč obsahu"
+      ],
+      "hash key": [
+        "hash kľúč"
+      ],
+      "key": [
+        "kľúč"
+      ],
+      "membership": [
+        "členstvo"
+      ],
+      "name": [
+        "názov"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adresa"
@@ -10118,17 +10464,26 @@
       "Actions": [
         "Akcie"
       ],
+      "Activated": [
+        "Aktivovaný"
+      ],
       "Address": [
         "Adresa"
       ],
       "Created": [
         "Vytvorené"
       ],
+      "Estimated size": [
+        "Odhadovaná veľkosť"
+      ],
       "Expires": [
         "Vyprší"
       ],
       "Fingerprint": [
         "Digitálny odtlačok"
+      ],
+      "Migration status": [
+        "Stav migrácie"
       ],
       "Name": [
         "Meno"
@@ -10141,6 +10496,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "User": [
+        "Používateľ"
       ]
     },
     "TableHeader": {
@@ -10323,6 +10681,9 @@
       "Computers": [
         "Počítače"
       ],
+      "Configure migration": [
+        "Nastaviť migráciu"
+      ],
       "Confirm downgrade": [
         "Potvrďte zníženie"
       ],
@@ -10445,6 +10806,9 @@
       ],
       "Document verification failed": [
         "Overenie dokumentu zlyhalo"
+      ],
+      "Domain names": [
+        "Názvy domén"
       ],
       "Downgrade account": [
         "Znížiť úroveň účtu"
@@ -10710,6 +11074,9 @@
       "Select link expiration time": [
         "Vyberte čas vypršania platnosti odkazu"
       ],
+      "Select users to migrate": [
+        "Vyberte používateľov na presun"
+      ],
       "Set recovery methods": [
         "Nastaviť spôsoby obnovenia"
       ],
@@ -10833,6 +11200,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vitajte v službe ${ BRAND_NAME } pre Business"
       ],
+      "What are you migrating?": [
+        "Čo migrujete?"
+      ],
       "What can a VPN protect you from?": [
         "Pred čím vás môže VPN ochrániť?"
       ],
@@ -10905,6 +11275,9 @@
       "Customize import to reduce the number of labels": [
         "Prispôsobiť import na zníženie počtu štítkov"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Stav migrácie dát z ${ providerName } do ${ BRAND_NAME }"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitálne podpisovanie emailov pomáha overiť, že sú správy zaslané vami"
       ],
@@ -10965,6 +11338,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pre zasielanie emailov s koncovým šifrovaním na túto emailovú adresu, nahrajte prosím verejný kľúč"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Používatelia, ktorí sa prihlásili do svojho ${ BRAND_NAME } účtu"
+      ],
       "Version 6 OpenPGP key": [
         "Kľúč OpenPGP verzie 6"
       ],
@@ -11003,6 +11379,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Navýšte úroveň na podporovaný plán, aby ste mohli využívať pozície správcov."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Akonáhle používateľ prijme pozvánku, budete môcť priradiť pozície."
       ]

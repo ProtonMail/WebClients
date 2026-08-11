@@ -90,9 +90,6 @@
       "Apply": [
         "Toepassen"
       ],
-      "Ask me next time": [
-        "Vraag het mij de volgende keer"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
         "Ten hoogste ${ maxContacts } contacten zijn toegelaten per contactgroep"
@@ -525,6 +522,9 @@
       "Merge contacts": [
         "Contacten samenvoegen"
       ],
+      "Migrate": [
+        "Migreer"
+      ],
       "More actions": [
         "Meer acties"
       ],
@@ -707,9 +707,6 @@
       ],
       "Save changes": [
         "Wijzigingen opslaan"
-      ],
-      "Save preferences": [
-        "Voorkeuren opslaan"
       ],
       "Search": [
         "Zoeken"
@@ -2962,6 +2959,9 @@
       "Address could not be added.": [
         "Adres kon niet worden toegevoegd."
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adres wordt al gebruikt door een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
+      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -3016,11 +3016,23 @@
       "Calendar limit reached": [
         "Agendalimiet bereikt"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Kan geen foto aan album toevoegen zonder een geldige naam"
+      ],
       "Cannot export this contact": [
         "Kan dit contact niet exporteren"
       ],
       "Cannot find move target": [
         "Kan geen doel voor verplaatsings vinden"
+      ],
+      "Cannot share root folder": [
+        "Kan hoofdmap niet delen"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan de auteur van dit bestand niet verifiëren"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan niet verifiëren wie dit bestand heeft geüpload"
       ],
       "Contact could not be saved": [
         "Contact kan niet opgeslagen worden"
@@ -3031,11 +3043,32 @@
       "Contact signature not verified": [
         "Handtekening van contact niet geverifieerd"
       ],
+      "Copy operation aborted": [
+        "Kopieerbewerking afgebroken"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Het kopiëren van een item naar een niet-map is niet toegestaan"
+      ],
+      "Could not load sharing details": [
+        "Kan de deelgegevens niet laden"
+      ],
       "Could not open created vault": [
         "Kon aangemaakte kluis niet openen"
       ],
       "Could not open updated vault": [
         "Kon bijgewerkte kluis niet openen"
+      ],
+      "Could not unlock the parent folder": [
+        "Kan de bovenliggende map niet ontgrendelen"
+      ],
+      "Could not unlock this item": [
+        "Kan dit item niet ontgrendelen"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Het aanmaken van bestanden in niet-mappen is niet toegestaan"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Het aanmaken van mappen in niet-mappen is niet toegestaan"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deselecteer tenminste ${ calendarsToFixCount } agenda",
@@ -3044,6 +3077,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Deselecteer tenminste ${ calendarsToFixCount } agenda of",
         "Deselecteer tenminste ${ calendarsToFixCount } agenda's of"
+      ],
+      "Device not found": [
+        "Apparaat niet gevonden"
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
@@ -3090,6 +3126,18 @@
       "Failed to create public share node": [
         "Aanmaken van openbaar gedeelde node is mislukt"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Kan de bladwijzersleutel niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Kan bladwijzerwachtwoord niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Kan inhoudssleutel niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kan itemnaam niet ontsleutelen: ${ message }"
+      ],
       "Failed to expand folder": [
         "Map uitvouwen mislukt"
       ],
@@ -3098,6 +3146,9 @@
       ],
       "Failed to fetch sharing info": [
         "Fout bij het ophalen van informatie over delen"
+      ],
+      "Failed to get inviter keys": [
+        "Kan uitnodigingssleutels niet ophalen"
       ],
       "Failed to load 'My files' folder": [
         "Kan de map 'Mijn bestanden' niet laden"
@@ -3135,6 +3186,12 @@
       "Failed to update public share node": [
         "Bijwerken van openbaar gedeeld knooppunt is mislukt"
       ],
+      "File download failed due to empty response": [
+        "Het downloaden van bestanden is mislukt vanwege een leeg antwoord"
+      ],
+      "File has no revision": [
+        "Bestand heeft geen revisie"
+      ],
       "First name is too long": [
         "Voornaam is te lang"
       ],
@@ -3143,6 +3200,9 @@
       ],
       "Forward address is required": [
         "Doorstuuradres is vereist"
+      ],
+      "Image preview not found": [
+        "Afbeeldingsvoorbeeld niet gevonden"
       ],
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
@@ -3174,8 +3234,14 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
+      "Invitation not found": [
+        "Uitnodiging niet gevonden"
+      ],
       "Item content cannot exceed 40KB": [
         "Item mag niet groter zijn dan 40KB"
+      ],
+      "Item not found": [
+        "Item niet gevonden"
       ],
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
@@ -3183,18 +3249,46 @@
       "Last name is too long": [
         "Achternaam is te lang"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Verouderde openbare link kan niet worden bijgewerkt. Maak opnieuw een nieuwe openbare link."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
         "Minstens ${ calendarsToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
       ],
+      "Missing inviter email": [
+        "Ontbrekende e-mail uitnodiger"
+      ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
+      ],
+      "Missing organization private key": [
+        "Ontbrekende privésleutel van de organisatie"
+      ],
+      "Missing organization public key": [
+        "Ontbrekende openbare sleutel van de organisatie"
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
+      "Moving item to a non-folder is not allowed": [
+        "Het is niet toegestaan ​​om een ​​item naar een niet-map te verplaatsen"
+      ],
+      "Moving root item is not allowed": [
+        "Het verplaatsen van het hoofditem is niet toegestaan"
+      ],
       "Name is required": [
         "Naam is verplicht"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "De naam mag maximaal ${ MAX_NODE_NAME_LENGTH } tekens lang zijn",
+        "De naam mag maximaal ${ MAX_NODE_NAME_LENGTH } tekens lang zijn"
+      ],
+      "Name must not be empty": [
+        "Naam mag niet leeg zijn"
       ],
       "Network error": [
         "Netwerkfout"
@@ -3211,6 +3305,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
+      "No file data was received. Please try again.": [
+        "Geen bestandsgegevens ontvangen. Probeer het opnieuw."
+      ],
       "No valid address found": [
         "Geen geldig adres gevonden"
       ],
@@ -3225,6 +3322,12 @@
         "Eén van de groepen heeft geen contacten: ${ noContactGroupList }",
         "Sommige groepen hebben geen contacten: ${ noContactGroupList } "
       ],
+      "Operation aborted": [
+        "Bewerking afgebroken"
+      ],
+      "Operation failed, try again later": [
+        "Bewerking mislukt. Probeer het later opnieuw"
+      ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
@@ -3234,11 +3337,20 @@
       "Organization key must be activated to create non-private users": [
         "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
       ],
+      "Part of the file appears to be corrupted": [
+        "Een deel van het bestand lijkt beschadigd te zijn"
+      ],
       "Password is required": [
         "Wachtwoord is vereist"
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
+      ],
+      "Photo is already in the target album": [
+        "De foto staat al in het doelalbum"
+      ],
+      "Photo not found": [
+        "Foto niet gevonden"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Foto-upload is tijdelijk uitgeschakeld. Probeer het later opnieuw"
@@ -3293,11 +3405,17 @@
         "Dubbele genodigden verwijderd: ${ joinedInvitee }",
         "Dubbele genodigden verwijderd: ${ joinedInvitee }"
       ],
+      "Renaming root item is not allowed": [
+        "Het hernoemen van het rootitem is niet toegestaan"
+      ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Omgekeerde btw-regeling wordt niet ondersteund voor dit abonnement"
+      ],
+      "Signature is missing": [
+        "Handtekening ontbreekt"
       ],
       "Signature not verified": [
         "Handtekening niet geverifieerd"
@@ -3305,14 +3423,29 @@
       "Signature verification failed": [
         "Controle van handtekening mislukt"
       ],
+      "Signature verification for ${ signatureType } failed": [
+        "Handtekeningverificatie voor ${ signatureType } mislukt"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Handtekeningverificatie voor ${ signatureType } mislukt: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Enkele contacten konden niet verwijderd worden"
       ],
       "Some documents could not be loaded": [
         "Sommige documenten konden niet worden geladen"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Sommige bestandsgegevens konden niet worden geüpload. Probeer het opnieuw."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Sommige bestandsdelen konden niet worden geüpload. Probeer het opnieuw."
+      ],
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
+      ],
+      "Some items could not be loaded": [
+        "Sommige items konden niet worden geladen"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sommige namen van mappen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
@@ -3395,6 +3528,9 @@
       "The original file is not uploaded yet, please try again later": [
         "Het originele bestand is nog niet geüpload, probeer het later nog eens"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Het geüploade bestand komt niet overeen met het origineel. Probeer het opnieuw."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Er zijn te veel mappen op uw externe account. Pas de import aan om enkele mappen te verwijderen."
       ],
@@ -3416,14 +3552,35 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
+      "This file has missing crypto material": [
+        "Dit bestand bevat ontbrekend cryptomateriaal"
+      ],
+      "This file has no version available to download": [
+        "Er is geen versie beschikbaar om te downloaden van dit bestand"
+      ],
+      "This file version could not be uploaded": [
+        "Deze bestandsversie kan niet worden geüpload"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Deze mapnaam is niet beschikbaar. Kies een andere naam."
+      ],
+      "This item has no image preview": [
+        "Dit item heeft geen afbeeldingsvoorbeeld"
+      ],
+      "This item is no longer shared": [
+        "Dit item wordt niet langer gedeeld"
+      ],
+      "This item is not shared": [
+        "Dit item is niet gedeeld"
       ],
       "This label name is not available. Please choose a different name.": [
         "Deze labelnaam is niet beschikbaar. Kies een andere naam."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
+      ],
+      "Too many server requests, please try again later": [
+        "Te veel serververzoeken. Probeer het later opnieuw"
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
@@ -3461,6 +3618,12 @@
       "Validation error": [
         "Validatiefout"
       ],
+      "Verification keys are not available": [
+        "Verificatiesleutels zijn niet beschikbaar"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verificatiesleutels voor ${ signatureType } zijn niet beschikbaar"
+      ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "We hebben problemen met het opslaan van recente aanpassingen. Laad de pagina opnieuw alstublieft."
       ],
@@ -3476,9 +3639,21 @@
       "Wrong billing address": [
         "Verkeerd factuuradres"
       ],
+      "You can create public links for your own files only": [
+        "U kunt alleen openbare links voor uw eigen bestanden maken"
+      ],
+      "You can update a public link for your own files only": [
+        "U kunt een openbare link alleen voor uw eigen bestanden bijwerken"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
         "U kunt geen e-mail verzenden naar meer dan ${ maxContacts } ontvangers"
+      ],
+      "You do not have access to this item": [
+        "U heeft geen toegang tot dit item"
+      ],
+      "You do not have access to this shared item": [
+        "U heeft geen toegang tot dit gedeelde item"
       ],
       "You have reached the maximum number of calendars.": [
         "U hebt het maximum aantal agenda's bereikt."
@@ -3954,6 +4129,29 @@
       "Terabyte": [
         "Terabyte",
         "Terabytes"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Geactiveerd"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Fouten"
+      ],
+      "In progress": [
+        "In uitvoering"
+      ],
+      "Migrated": [
+        "Gemigreerd"
+      ],
+      "Not activated": [
+        "Niet geactiveerd"
+      ],
+      "Pending": [
+        "In behandeling"
       ]
     },
     "Filter notification": {
@@ -4573,6 +4771,9 @@
       "Attention required": [
         "Aandacht vereist"
       ],
+      "Author is not provided on public link": [
+        "De auteur wordt niet vermeld op de openbare link"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
@@ -4636,9 +4837,6 @@
       "Continue": [
         "Ga verder"
       ],
-      "Converting document...": [
-        "Document converteren..."
-      ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
@@ -4691,9 +4889,6 @@
       ],
       "Creating link to folder": [
         "Link naar map maken"
-      ],
-      "Creating new document...": [
-        "Nieuw document wordt aangemaakt..."
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -4794,12 +4989,6 @@
       "Enter your own password (as trusted contact).": [
         "Voer uw eigen wachtwoord in (als vertrouwd contact)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Fout bij het converteren van het document: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Fout bij het laden van document: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Synchronisatiefout"
       ],
@@ -4836,6 +5025,9 @@
       "finance": [
         "financiën"
       ],
+      "Find out what can be migrated.": [
+        "Ontdek wat er gemigreerd kan worden."
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Map \"${ link.name }\" werd verwijderd tijdens downloaden"
       ],
@@ -4850,12 +5042,6 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Ontvang een professionele @uw-bedrijf.com e-mail, 1 TB beveiligde opslag per gebruiker, langere videogesprekken en meer met ${ BRAND_NAME } Workspace."
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Ontvang e-mailupdates voor opmerkingen en suggesties die aan uw documenten zijn toegevoegd."
-      ],
-      "Get Notified About Comments": [
-        "Krijg een melding bij opmerkingen"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
@@ -5017,9 +5203,6 @@
       "Low Priority": [
         "Lage Prioriteit"
       ],
-      "Making a copy...": [
-        "Een kopie maken..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakters"
@@ -5051,9 +5234,6 @@
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
       ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Geen document opgegeven in URL. Keer terug naar ${ DRIVE_APP_NAME } en selecteer een document."
-      ],
       "No email address": [
         "Geen e-mailadres"
       ],
@@ -5065,6 +5245,9 @@
       ],
       "No results found": [
         "Geen resultaten gevonden"
+      ],
+      "No users to display": [
+        "Er zijn geen gebruikers om weer te geven."
       ],
       "No version history available": [
         "Geen versiegeschiedenis beschikbaar"
@@ -5244,6 +5427,9 @@
       "Select a folder to move to.": [
         "Kies een map om naartoe te verplaatsen"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wil gebruiken wanneer u een e-mail stuurt aan deze geadresseerde."
       ],
@@ -5341,9 +5527,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
       ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "De URL die u heeft ingevoerd, lijkt onjuist uit Slack te zijn gekopieerd. Wanneer u lange koppelingen uit Slack kopieert, klikt u met de rechtermuisknop op de koppeling en kiest u \"Koppeling kopiëren\" in plaats van de ingekorte URL-tekst rechtstreeks te kopiëren."
-      ],
       "There are no documents in the trash.": [
         "Er zijn geen documenten in de prullenbak."
       ],
@@ -5398,6 +5581,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Deze unieke code kan worden gebruikt door websites en ISP's (internet service providers) om uw locatie en browsegeschiedenis te koppelen aan uw apparaat"
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Deze gebruiker kan niet worden gemigreerd omdat zijn e-mailadres niet beschikbaar is op ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit met het platform."
+      ],
       "This will permanently delete the file you uploaded.": [
         "Deze actie zal het bestand dat u heeft opgeladen definitief verwijderen."
       ],
@@ -5418,6 +5607,21 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Maak eerst een agenda aan in ${ CALENDAR_APP_NAME } om afspraken te importeren. Dit is waar de afspraken tevoorschijn komen na het importeren."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Om deze gebruiker te migreren, voegt u het e-maildomein toe en verifieert u het onder ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Als u deze gebruiker wilt migreren, schakelt u het account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Om deze gebruiker te migreren, moet hij/zij de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Om deze gebruiker te migreren, haalt u hem uit het archief in uw ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Als u deze gebruiker wilt migreren, heft u de opschorting op in uw ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Om uw contacten opnieuw te ondertekenen, moeten we elk contactpersoon controleren op de lijst met versleutelingssleuteld die beschikbaar zijn in uw account. Als er geen overeenkomst is gevonden, zal uw contactpersoon opnieuw worden ondertekend met de primaire versleutelingssleutel."
@@ -5535,6 +5739,9 @@
       ],
       "Writing assistant": [
         "Schrijfassistent"
+      ],
+      "You": [
+        "U"
       ],
       "you": [
         "u"
@@ -5962,9 +6169,6 @@
       "Emails (last month)": [
         "E-mails (laatste maand)"
       ],
-      "Enable email notifications": [
-        "E-mailmeldingen inschakelen"
-      ],
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
@@ -6021,9 +6225,6 @@
       ],
       "Include application logs in bug report": [
         "Applicatie logs toevoegen aan het foutenrapport"
-      ],
-      "Include document name in notification": [
-        "Neem de documentnaam op in de melding"
       ],
       "Include message and file name in invite email": [
         "Bericht- en bestandsnaam opnemen in uitnodigingsmail"
@@ -8548,6 +8749,20 @@
         "Voortgang: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "attributen"
+      ],
+      "hash key": [
+        "hash sleutel"
+      ],
+      "key": [
+        "sleutel"
+      ],
+      "membership": [
+        "lidmaatschap"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adres"
@@ -9104,9 +9319,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Nieuwe spreadsheet maken..."
-      ],
       "Detect automatically": [
         "Automatisch detecteren"
       ],
@@ -9760,11 +9972,17 @@
       "Actions": [
         "Acties"
       ],
+      "Activated": [
+        "Geactiveerd"
+      ],
       "Address": [
         "Adres"
       ],
       "Created": [
         "Aangemaakt"
+      ],
+      "Estimated size": [
+        "Geschatte grootte"
       ],
       "Expires": [
         "Verloopt"
@@ -9783,6 +10001,9 @@
       ],
       "Type": [
         "Soort"
+      ],
+      "User": [
+        "Gebruiker"
       ]
     },
     "TableHeader": {
@@ -9941,6 +10162,9 @@
       "Computers": [
         "Computers"
       ],
+      "Configure migration": [
+        "Migratie configureren"
+      ],
       "Confirm downgrade": [
         "Downgrade bevestigen"
       ],
@@ -10059,6 +10283,9 @@
       ],
       "Document verification failed": [
         "Documentverificatie mislukt"
+      ],
+      "Domain names": [
+        "Domeinnamen"
       ],
       "Downgrade account": [
         "Account downgraden"
@@ -10321,6 +10548,9 @@
       ],
       "Select link expiration time": [
         "Selecteer vervaltijd link"
+      ],
+      "Select users to migrate": [
+        "Selecteer gebruikers om te migreren"
       ],
       "Set recovery methods": [
         "Herstelmethoden instellen"

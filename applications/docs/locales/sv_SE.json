@@ -525,6 +525,9 @@
       "Merge contacts": [
         "Slå ihop kontakter"
       ],
+      "Migrate": [
+        "Migrera"
+      ],
       "More actions": [
         "Fler åtgärder"
       ],
@@ -2952,6 +2955,9 @@
       "Address could not be added.": [
         "Adress kunde inte läggas till."
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
       "Address primary private key not found": [
         "Adressens privata nyckel hittades inte"
       ],
@@ -3006,6 +3012,9 @@
       "Calendar limit reached": [
         "Kalendergräns nådd"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Kan inte lägga till foto i album utan ett giltigt namn"
+      ],
       "Cannot download a folder": [
         "Kan inte ladda ner en mapp"
       ],
@@ -3017,6 +3026,9 @@
       ],
       "Cannot share root folder": [
         "Kan inte dela rotmapp"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan inte verifiera vem som laddade upp denna fil"
       ],
       "Contact could not be saved": [
         "Kontakten kunde inte sparas"
@@ -3030,11 +3042,17 @@
       "Could not find an available name": [
         "Kunde inte hitta ett tillgängligt namn"
       ],
+      "Could not load sharing details": [
+        "Kunde inte ladda delningsdetaljer"
+      ],
       "Could not open created vault": [
         "Kunde inte öppna skapat valv"
       ],
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunde inte läsa del av denna fil: ${ message }"
       ],
       "Could not unlock the parent folder": [
         "Kunde inte låsa upp den överordnade mappen"
@@ -3203,6 +3221,9 @@
       "Last name is too long": [
         "Efternamn är för långt"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
         "Slå samman minst ${ calendarsToFixCount } kalendrar med befintliga ${ BRAND_NAME }-kalendrar"
@@ -3210,8 +3231,17 @@
       "Missing key packet": [
         "Saknar nyckelpaket"
       ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
+      ],
       "Missing signature": [
         "Signatur saknas"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Saknar signatur för ${ signatureType }"
       ],
       "Name is required": [
         "Namn är obligatoriskt"
@@ -3247,6 +3277,18 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "En av grupperna har inga kontakter: ${ noContactGroupList }",
         "Vissa grupper har inga kontakter: ${ noContactGroupList } "
+      ],
+      "Only admins can convert external invitations": [
+        "Endast administratörer kan konvertera externa inbjudningar"
+      ],
+      "Operation aborted": [
+        "Åtgärd avbröts"
+      ],
+      "Operation failed, try again later": [
+        "Åtgärd misslyckades, försök igen senare"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
       ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
@@ -3337,8 +3379,14 @@
       "Signature verification failed": [
         "Signaturverifiering misslyckades"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturverifiering misslyckades: ${ errorMessage }"
+      ],
       "Signature verification for ${ signatureType } failed": [
         "Signaturverifiering för ${ signatureType } misslyckades"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturverifiering för ${ signatureType } misslyckades: ${ errorMessage }"
       ],
       "Some contacts could not be deleted": [
         "Några kontakter kunde inte tas bort"
@@ -3454,8 +3502,14 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
       ],
+      "This file version could not be uploaded": [
+        "Denna filversion kunde inte laddas upp"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Detta mappnamn är inte tillgängligt. Välj ett annat namn."
+      ],
+      "This item is no longer shared": [
+        "Detta objekt är inte delat längre"
       ],
       "This item is not shared": [
         "Detta objekt är inte delat"
@@ -3519,6 +3573,9 @@
       ],
       "Wrong billing address": [
         "Fel faktureringsadress"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan bara ladda upp en ny version till en fil"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
@@ -4006,6 +4063,29 @@
         "Terabyte"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Aktiverat"
+      ],
+      "All": [
+        "Alla"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Not activated": [
+        "Inte aktiverad"
+      ],
+      "Pending": [
+        "Väntande"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } uppdaterad"
@@ -4380,11 +4460,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Har fel"
+      ],
       "In progress": [
         "Pågår"
       ],
       "Migrated": [
         "Migrerad"
+      ],
+      "Pending": [
+        "Väntar"
       ]
     },
     "Import warning": {
@@ -4622,6 +4708,9 @@
       ],
       "Attention required": [
         "Uppmärksamhet krävs"
+      ],
+      "Author is not provided on public link": [
+        "Författare är inte angiven på offentlig länk"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Innan du begär en ny verifieringskod, kontrollera din skräppostmapp och kontrollera att ${ strong } är rätt adress."
@@ -4886,6 +4975,9 @@
       "finance": [
         "finans"
       ],
+      "Find out what can be migrated.": [
+        "Ta reda på vad som kan migreras."
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Mapp “${ link.name }“ togs bort under nedladdningen"
       ],
@@ -5113,6 +5205,9 @@
       "No results found": [
         "Inga resultat hittades"
       ],
+      "No users to display": [
+        "Inga användare att visa"
+      ],
       "No version history available": [
         "Ingen versionshistorik tillgänglig"
       ],
@@ -5287,6 +5382,9 @@
       ],
       "Select a folder to move to.": [
         "Välj en mapp att flytta till."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Välj det e-postformat du vill använda som standard när du skickar ett e-postmeddelande till den här e-postadressen."
@@ -5463,6 +5561,15 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "För att signera om dina kontakter måste vi kontrollera varje kontakt mot listan över tillgängliga krypteringsnycklar på ditt konto. Om ingen matchning hittas kommer din kontakt att signeras om med den primära krypteringsnyckeln."
       ],
@@ -5579,6 +5686,9 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "You": [
+        "Du"
       ],
       "you": [
         "du"
@@ -9872,17 +9982,26 @@
       "Actions": [
         "Åtgärder"
       ],
+      "Activated": [
+        "Aktiverad"
+      ],
       "Address": [
         "Adress"
       ],
       "Created": [
         "Skapad"
       ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
       "Expires": [
         "Löper ut"
       ],
       "Fingerprint": [
         "Fingeravtryck"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
       ],
       "Name": [
         "Namn"
@@ -9895,6 +10014,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "User": [
+        "Användare"
       ]
     },
     "TableHeader": {
@@ -10053,6 +10175,9 @@
       "Computers": [
         "Datorer"
       ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
       "Confirm downgrade": [
         "Bekräfta nedgradering"
       ],
@@ -10171,6 +10296,9 @@
       ],
       "Document verification failed": [
         "Dokumentverifiering misslyckades"
+      ],
+      "Domain names": [
+        "Domännamn"
       ],
       "Downgrade account": [
         "Nedgradera konto"
@@ -10434,6 +10562,9 @@
       "Select link expiration time": [
         "Välj länkens utgångstid"
       ],
+      "Select users to migrate": [
+        "Välj användare att migrera"
+      ],
       "Set recovery methods": [
         "Ställ in återställningsmetoder"
       ],
@@ -10556,6 +10687,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
+      ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
       ],
       "What can a VPN protect you from?": [
         "Vad kan en VPN skydda dig från?"

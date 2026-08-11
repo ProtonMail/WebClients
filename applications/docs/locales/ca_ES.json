@@ -5636,7 +5636,7 @@
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Sembla que l'URL que heu introduït s'ha copiat incorrectament de l'Slack. Quan copieu enllaços llargs de l'Slack, heu de tocar amb el botó dret a l'enllaç i, a continuació, heu de triar «Copiar l'enllaç» en lloc de copiar directament el segment de text de l'URL."
+        "Sembla que l'URL que heu introduït s'ha copiat incorrectament d'Slack. Quan copieu enllaços llargs d'Slack, feu clic amb el botó dret a l'enllaç i trieu \"Copiar l'enllaç\", en lloc de copiar directament el text truncat de l'URL."
       ],
       "There are no documents in the trash.": [
         "No hi ha documents a la paperera."
@@ -5692,6 +5692,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Aquest codi únic el poden utilitzar els llocs web i els ISP (proveïdors de serveis d'internet) per a enllaçar la vostra ubicació i l'historial de navegació al vostre dispositiu."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Aquest usuari no es pot migrar perquè la seva adreça de correu electrònic no està disponible a ${ BRAND_NAME }."
+      ],
       "This user can not be migrated due to platform incompatibilities.": [
         "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
       ],
@@ -5716,8 +5719,11 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per a importar esdeveniments, creeu abans un calendari en ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
       ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Per migrar aquest usuari, afegiu i verifiqueu-ne el domini de correu electrònic a ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra ${ provider.adminConsoleName }."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
@@ -5728,11 +5734,11 @@
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
       ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra ${ provider.adminConsoleName }."
       ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Per tornar a signar els vostres contactes necessitem comprovar cada contacte comparant-lo amb la llista de claus xifrades disponibles al vostre compte. Si no es troben coincidències, el vostre contacte es tornarà a signar amb la clau de xifratge primària."
@@ -6284,7 +6290,7 @@
         "Correus electrònics (el mes passat)"
       ],
       "Enable email notifications": [
-        "Habilitar les notificacions per correu electrònic"
+        "Habilita les notificacions per correu electrònic"
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
@@ -6344,7 +6350,7 @@
         "Inclou els registres de l'aplicació a l'informe d'errors"
       ],
       "Include document name in notification": [
-        "Inclou el nom del document a la notificació"
+        "Incloure el nom del document a la notificació"
       ],
       "Include message and file name in invite email": [
         "Inclou el missatge i el nom del fitxer al correu electrònic d'invitació"
@@ -9503,7 +9509,7 @@
     },
     "sheets_2025:Info": {
       "Creating new spreadsheet...": [
-        "S'està creant el full de càlcul nou..."
+        "S'està creant el full de càlcul..."
       ],
       "Detect automatically": [
         "Ho detecta automàticament"
@@ -10473,6 +10479,9 @@
       "Document verification failed": [
         "No s'ha pogut verificar el document."
       ],
+      "Domain names": [
+        "Noms de domini"
+      ],
       "Downgrade account": [
         "Passa a un pla inferior"
       ],
@@ -10936,8 +10945,8 @@
       "Customize import to reduce the number of labels": [
         "Personalitzeu la importació per reduir el nombre d'etiquetes"
       ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de ${ providerName } a ${ BRAND_NAME }"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "La signatura digital de correus electrònics ajuda a autentificar els missatges que envies"
