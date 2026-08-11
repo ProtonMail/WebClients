@@ -1,17 +1,17 @@
 import type { Currency } from '@proton/payments/core/interface';
 import { hasIntentionalScheduledModification } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
-import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
+import { isCampaignApp } from '../../helpers/isCampaignApp';
 import { isEligibleCurrency } from '../../helpers/isEligibleCurrency';
 import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
 import type { OfferConfig } from '../../interface';
 
-// Targets Duo users in the inbox apps, offering Family 12M.
-// Monthly Family users are handled by the separate q3Sale2026FamilyMonthlyToYearly operation.
+// Targets Duo users, offering Family 12M. Duo is an account-level plan, so the audience is the same
+// in every campaign app, with the ref recording which one via the deal's getRef.
+// Monthly Family users are handled by q3Sale2026FamilyMonthlyToYearly, which carries its own ref.
 export function getIsEligible({
     user,
     subscription,
@@ -25,13 +25,7 @@ export function getIsEligible({
     offerConfig: OfferConfig;
     preferredCurrency: Currency;
 }) {
-    if (
-        user.isDelinquent ||
-        !user.canPay ||
-        !subscription ||
-        hasIntentionalScheduledModification(subscription) ||
-        !isSubscriptionCheckAllowed(subscription, offerConfig)
-    ) {
+    if (user.isDelinquent || !user.canPay || !subscription || hasIntentionalScheduledModification(subscription)) {
         return false;
     }
 
@@ -45,18 +39,11 @@ export function getIsEligible({
         offerSubscription.isTrial() ||
         offerSubscription.isManagedExternally() ||
         offerSubscription.hasVisionary() ||
-        offerSubscription.usedQ3Sale2026()
+        offerSubscription.usedQ3Sale2026() ||
+        !isSubscriptionCheckAllowed(subscription, offerConfig)
     ) {
         return false;
     }
 
-    const parentApp = getAppFromPathnameSafe(window.location.pathname);
-
-    const isValidApp =
-        protonConfig.APP_NAME === APPS.PROTONMAIL ||
-        protonConfig.APP_NAME === APPS.PROTONCALENDAR ||
-        (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONMAIL) ||
-        (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONCALENDAR);
-
-    return user.isPaid && isValidApp && offerSubscription.hasDuo();
+    return user.isPaid && offerSubscription.hasDuo() && isCampaignApp(protonConfig, window.location.pathname);
 }

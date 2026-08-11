@@ -21,9 +21,10 @@ export const q3Sale2026Configs: Record<Q3Sale2026OfferId, OfferConfig> = {
 };
 
 export function useQ3Sale2026(): Operation[] {
-    // Ordered most-specific audience first. The five audiences are disjoint by plan
-    // (Bundle / Duo / Family monthly / single-product paid / free), so exactly one should match
-    // any given user — this ordering is a safety net, not load-bearing.
+    // None of these offers are scoped to an app: they all run in Inbox and Drive, and their tracking
+    // refs record which product the user converted from. The audiences are disjoint by plan
+    // (Unlimited / Duo / Family monthly / single-product paid / free), so exactly one should match any
+    // given user. Ordered most-specific first as a safety net.
     const unlimitedToDuo = useUnlimitedToDuo();
     const duoToFamily = useDuoToFamily();
     const familyMonthlyToYearly = useFamilyMonthlyToYearly();
