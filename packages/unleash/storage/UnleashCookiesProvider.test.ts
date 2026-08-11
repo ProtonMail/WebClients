@@ -3,7 +3,7 @@ import { addDays, endOfDay } from 'date-fns';
 import * as cookiesModule from '@proton/shared/lib/helpers/cookies';
 
 import type { FeatureFlagToggle } from '../interface';
-import saveWhitelistedFlagInCookies, { UNLEASH_FLAG_COOKIE_NAME } from './UnleashCookiesProvider';
+import saveAllowlistedFlagInCookies, { UNLEASH_FLAG_COOKIE_NAME } from './UnleashCookiesProvider';
 
 // ------------------------------
 // Mocks
@@ -58,7 +58,7 @@ describe('UnleashCookiesProvider', () => {
         beforeEach(() => {
             const whitelistedFlags = ['ValidFlag'];
             const unleashFlagsList = [generateFlag('ValidFlag', 'VariantA'), generateFlag('InvalidFlag', 'VariantB')];
-            saveWhitelistedFlagInCookies(unleashFlagsList, whitelistedFlags);
+            saveAllowlistedFlagInCookies(unleashFlagsList, whitelistedFlags);
         });
 
         it.each([
@@ -83,7 +83,7 @@ describe('UnleashCookiesProvider', () => {
         const whitelistedFlags = ['ValidFlag'];
         const unleashFlagsList = [generateFlag('ValidFlag', 'VariantA'), generateFlag('InvalidFlag', 'VariantB')];
 
-        saveWhitelistedFlagInCookies(unleashFlagsList, whitelistedFlags);
+        saveAllowlistedFlagInCookies(unleashFlagsList, whitelistedFlags);
         expect(setCookie).toHaveBeenCalledWith(
             expect.objectContaining({
                 cookieValue: 'ValidFlag:VariantA',
@@ -99,7 +99,7 @@ describe('UnleashCookiesProvider', () => {
             generateFlag('InvalidFlag', 'VariantB'),
         ];
 
-        saveWhitelistedFlagInCookies(unleashFlagsList, whitelistedFlags);
+        saveAllowlistedFlagInCookies(unleashFlagsList, whitelistedFlags);
         expect(setCookie).not.toHaveBeenCalled();
     });
 
@@ -111,7 +111,7 @@ describe('UnleashCookiesProvider', () => {
             generateFlag('InvalidFlag', 'VariantB'),
         ];
 
-        saveWhitelistedFlagInCookies(unleashFlagsList, whitelistedFlags);
+        saveAllowlistedFlagInCookies(unleashFlagsList, whitelistedFlags);
         expect(setCookie).not.toHaveBeenCalled();
     });
 
@@ -130,7 +130,7 @@ describe('UnleashCookiesProvider', () => {
             const whitelistedFlags = [flagName];
             const unleashFlagsList = [generateFlag(flagName, variantName)];
 
-            saveWhitelistedFlagInCookies(unleashFlagsList, whitelistedFlags);
+            saveAllowlistedFlagInCookies(unleashFlagsList, whitelistedFlags);
             expect(setCookie).not.toHaveBeenCalled();
         });
     });
