@@ -374,6 +374,7 @@ const SubUserCreateModal = ({
             <InputFieldTwo
                 id="name"
                 autoFocus
+                data-protonpass-ignore={true}
                 value={model.name}
                 hint={optionalName ? c('user_modal').t`Optional` : undefined}
                 error={validator([!optionalName && requiredValidator(model.name)].filter(isTruthy))}
@@ -384,6 +385,7 @@ const SubUserCreateModal = ({
                 <>
                     <InputFieldTwo
                         id="address"
+                        data-protonpass-ignore={true}
                         value={model.address}
                         error={validator([requiredValidator(model.address), emailValidator(emailAddress)])}
                         onValue={handleChange('address')}
@@ -419,6 +421,7 @@ const SubUserCreateModal = ({
                     {!useEmail && (
                         <InputFieldTwo
                             id="address"
+                            data-protonpass-ignore={true}
                             value={model.address}
                             error={validator([requiredValidator(model.address), emailValidator(emailAddress)])}
                             onValue={handleChange('address')}
@@ -428,6 +431,7 @@ const SubUserCreateModal = ({
                     )}
                     <InputFieldTwo
                         id="invitation-email"
+                        data-protonpass-ignore={true}
                         rootClassName="mb-4"
                         value={model.invitationEmail}
                         error={validator([

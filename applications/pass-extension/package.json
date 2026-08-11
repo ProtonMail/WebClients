@@ -23,6 +23,7 @@
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "yarn clean && RESUME_FALLBACK=true API_ENV=${API_ENV:-proton.black} ts-node ./tools/dev-server.ts",
         "start:prod": "yarn clean && API_ENV=proton.me ts-node ./tools/dev-server.ts",
+        "start:prod:reload": "yarn clean && API_ENV=proton.me RUNTIME_RELOAD=true ts-node ./tools/dev-server.ts",
         "start:reload": "cross-env RUNTIME_RELOAD=true sh -c 'yarn start'",
         "test": "jest --coverage",
         "test:ci": "jest --coverage --runInBand --ci",
