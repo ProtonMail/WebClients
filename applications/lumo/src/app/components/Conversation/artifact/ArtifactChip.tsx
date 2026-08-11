@@ -1,140 +1,162 @@
 import { clsx } from 'clsx';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
 import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 
 import type { MessageId } from '../../../types';
 import { useArtifactContext } from './ArtifactContext';
+import {
+    type ArtifactChipVisualState,
+    getArtifactChipVersionNumber,
+    getArtifactChipVisualState,
+    getArtifactLineCount,
+    getArtifactWordCount,
+    isArtifactChipAwaitingRegistry,
+} from './artifactChipHelpers';
 import { getArtifactVersionIndexForMessage } from './artifactRegistry';
-import type { ParsedArtifact, StreamingArtifact } from './parseArtifacts';
+import type { ParsedArtifact } from './parseArtifacts';
 
-// Chip for a fully-generated artifact — clickable, opens the panel
 interface CompleteChipProps {
     artifact: ParsedArtifact;
     messageId: MessageId;
 }
 
-export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
-    const { openArtifact, openPendingArtifact, selectedId, selectedVersionIndex, registry, pendingArtifact } =
-        useArtifactContext();
-    const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, messageId);
-    // The message that produced this chip hasn't finished generating, so `registry` doesn't
-    // have it yet (see artifactRegistry.ts) — fall back to the not-yet-finalized content the
-    // panel already has, instead of a stale previous version (or nothing) via `openArtifact`.
-    const isPending = versionIndex === null && pendingArtifact?.id === artifact.id;
-    const isActive = isPending
-        ? selectedId === null || selectedId === artifact.id
-        : selectedId === artifact.id && selectedVersionIndex === versionIndex;
+const ArtifactChipIcon = ({
+    type,
+    visualState,
+}: {
+    type: ParsedArtifact['type'];
+    visualState: ArtifactChipVisualState;
+}) => {
+    const icon = type === 'code' ? <IcCode size={4} /> : <IcFileLines size={4} />;
 
     return (
-        <button
-            type="button"
-            onClick={() => {
-                if (versionIndex !== null) {
-                    openArtifact(artifact.id, versionIndex);
-                    return;
-                }
-                if (isPending) {
-                    openPendingArtifact();
-                    return;
-                }
-                openArtifact(artifact.id);
-            }}
-            className={clsx([
-                'artifact-chip',
-                'flex flex-row items-center gap-2',
-                'border border-weak rounded-lg p-4 mt-2 mb-4',
-                'text-sm cursor-pointer text-norm',
-                'w-full max-w-xs text-left',
-                isActive && 'artifact-chip--active',
-                isPending && 'artifact-chip--pending',
-            ])}
-            aria-busy={isPending || undefined}
-        >
-            <span className="shrink-0 color-hint">
-                {artifact.type === 'code' ? <IcCode size={4} /> : <IcFileLines size={4} />}
-            </span>
-            <span className="flex-1 text-ellipsis overflow-hidden whitespace-nowrap">{artifact.title}</span>
-            {isPending ? (
-                <span className="flex flex-row items-center gap-1 shrink-0 color-hint text-xs">
-                    <CircleLoader size="small" className="shrink-0" />
-                    {c('collider_2025:Status').t`Generating…`}
-                </span>
-            ) : (
-                <>
-                    <span className="artifact-type-badge shrink-0">{artifact.type === 'code' ? 'CODE' : 'DOC'}</span>
-                    <IcArrowOutFromRectangle size={3} className="shrink-0 color-hint" />
-                </>
+        <span
+            className={clsx(
+                'artifact-chip-icon shrink-0 flex items-center justify-center rounded',
+                visualState === 'active' && 'artifact-chip-icon--active',
+                visualState === 'default' && 'artifact-chip-icon--default',
+                visualState === 'superseded' && 'artifact-chip-icon--superseded'
             )}
-        </button>
+        >
+            {icon}
+        </span>
     );
 };
 
-// Chip shown while the artifact is still being streamed — not clickable
-interface LoadingChipProps {
-    streaming: StreamingArtifact;
+interface ArtifactChipSubtitleProps {
+    artifact: ParsedArtifact;
+    visualState: ArtifactChipVisualState;
+    versionNumber: number;
 }
 
-export const ArtifactChipLoading = ({ streaming }: LoadingChipProps) => {
-    const getTypeLabel = (type: string | undefined) => {
-        if (type === 'code') {
-            return 'CODE';
+const ArtifactChipSubtitle = ({ artifact, visualState, versionNumber }: ArtifactChipSubtitleProps) => {
+    if (visualState === 'active') {
+        return (
+            <span className="flex flex-row items-center gap-1 text-xs color-primary">
+                <span className="artifact-chip-active-dot rounded-full bg-primary shrink-0" />
+                {c('collider_2025:Info').t`Open in panel • v${versionNumber}`}
+            </span>
+        );
+    }
+
+    const lineCount = getArtifactLineCount(artifact.content);
+    const wordCount = getArtifactWordCount(artifact.content);
+    const countLabel =
+        artifact.type === 'code'
+            ? c('collider_2025:Info').ngettext(msgid`${lineCount} line`, `${lineCount} lines`, lineCount)
+            : c('collider_2025:Info').ngettext(msgid`${wordCount} word`, `${wordCount} words`, wordCount);
+
+    return (
+        <span className={clsx('text-xs', visualState === 'superseded' ? 'color-hint' : 'color-weak')}>
+            {countLabel} • {c('collider_2025:Info').t`v${versionNumber}`}
+        </span>
+    );
+};
+
+export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
+    const { openArtifact, closePanel, selectedId, selectedVersionIndex, registry } = useArtifactContext();
+    const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, messageId);
+    const isAwaitingRegistry = isArtifactChipAwaitingRegistry(registry, artifact.id, messageId);
+    const visualState = getArtifactChipVisualState({
+        artifactId: artifact.id,
+        messageId,
+        selectedId,
+        selectedVersionIndex,
+        registry,
+    });
+    const versionNumber = getArtifactChipVersionNumber(registry, artifact.id, messageId);
+
+    const handleOpen = () => {
+        if (versionIndex !== null) {
+            openArtifact(artifact.id, versionIndex);
         }
-        if (type === 'document') {
-            return 'DOC';
-        }
-        return null;
     };
 
-    const typeLabel = getTypeLabel(streaming.type);
+    const handleAction = () => {
+        if (visualState === 'active') {
+            closePanel();
+            return;
+        }
+        handleOpen();
+    };
+
+    const actionLabel = (() => {
+        if (visualState === 'active') {
+            return c('collider_2025:Action').t`Close`;
+        }
+        if (visualState === 'superseded') {
+            return c('collider_2025:Action').t`View v${versionNumber}`;
+        }
+        return c('collider_2025:Action').t`Open`;
+    })();
+
+    const actionButtonProps = (() => {
+        if (visualState === 'active') {
+            return { color: 'norm' as const, shape: 'outline' as const };
+        }
+        if (visualState === 'superseded') {
+            return { color: 'weak' as const, shape: 'outline' as const };
+        }
+        return { color: 'norm' as const, shape: 'solid' as const };
+    })();
 
     return (
         <div
-            className={clsx([
-                'artifact-chip',
-                'artifact-chip--pending',
-                'flex flex-row items-center gap-2',
-                'border border-danger rounded-lg px-4 py-2 mt-2 mb-4',
-                'text-sm text-norm',
-                'w-full max-w-xs',
-            ])}
-            aria-busy="true"
-        >
-            <span className="shrink-0 color-hint">
-                {(() => {
-                    if (streaming.type === 'code') {
-                        return <IcCode size={4} />;
-                    }
-                    if (streaming.type === 'document') {
-                        return <IcFileLines size={4} />;
-                    }
-                    // Skeleton icon placeholder while we don't know the type yet
-                    return (
-                        <div
-                            className="rectangle-skeleton keep-motion rounded"
-                            style={{ width: '1rem', height: '1rem' }}
-                        />
-                    );
-                })()}
-            </span>
-            {streaming.title ? (
-                <span className="flex-1 text-ellipsis overflow-hidden whitespace-nowrap">{streaming.title}</span>
-            ) : (
-                <span className="flex-1">
-                    <span
-                        className="rectangle-skeleton keep-motion rounded inline-block"
-                        style={{ width: '8rem', height: '0.875rem' }}
-                    />
-                </span>
+            className={clsx(
+                'artifact-chip flex flex-row items-center gap-3 border rounded-lg p-3 mt-2 mb-4 w-full',
+                visualState === 'default' && 'bg-norm border-weak',
+                visualState === 'active' && 'artifact-chip--active',
+                visualState === 'superseded' && 'bg-norm border-weak artifact-chip--superseded'
             )}
-            {typeLabel && <span className="artifact-type-badge shrink-0">{typeLabel}</span>}
-            <span className="flex flex-row items-center gap-1 shrink-0 color-hint text-xs">
-                <CircleLoader size="small" className="shrink-0" />
-                {c('collider_2025:Status').t`Generating…`}
-            </span>
+        >
+            <ArtifactChipIcon type={artifact.type} visualState={visualState} />
+            <div className="flex-1 min-w-0 flex flex-column gap-0.5">
+                <span
+                    className={clsx(
+                        'text-sm text-ellipsis overflow-hidden whitespace-nowrap',
+                        visualState === 'superseded' ? 'color-hint' : 'color-norm text-semibold'
+                    )}
+                >
+                    {artifact.title}
+                </span>
+                <ArtifactChipSubtitle artifact={artifact} visualState={visualState} versionNumber={versionNumber} />
+            </div>
+            <Button
+                {...actionButtonProps}
+                size="small"
+                pill
+                className="shrink-0"
+                disabled={visualState === 'default' && isAwaitingRegistry}
+                onClick={handleAction}
+                title={actionLabel}
+            >
+                {actionLabel}
+                {visualState === 'default' && <IcArrowOutFromRectangle size={3} className="ml-1" />}
+            </Button>
         </div>
     );
 };

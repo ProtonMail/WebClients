@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useRef, useState } from 'react';
+import { Suspense, lazy, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -16,7 +16,7 @@ import DropdownMenu from '../../DropdownMenu';
 import { useArtifactContext } from './ArtifactContext';
 import { ArtifactInlineEdit } from './ArtifactInlineEdit';
 import type { ArtifactRegistry } from './artifactRegistry';
-import type { ParsedArtifact, StreamingArtifact } from './parseArtifacts';
+import type { ParsedArtifact } from './parseArtifacts';
 import { getFileExtension } from './parseArtifacts';
 
 import './ArtifactPanel.scss';
@@ -116,52 +116,6 @@ const ArtifactContent = ({ artifact, showLineNumbers }: ArtifactContentProps) =>
             </div>
         );
     }
-};
-
-// ---------------------------------------------------------------------------
-// Streaming preview — cheap plain-text render while content is arriving
-// ---------------------------------------------------------------------------
-
-interface StreamingPreviewProps {
-    streaming: StreamingArtifact;
-}
-
-const StreamingPreview = ({ streaming }: StreamingPreviewProps) => {
-    const scrollRef = useRef<HTMLDivElement>(null);
-
-    // Auto-scroll to bottom as content arrives — cheap scrollTop assignment, no re-parse
-    useEffect(() => {
-        const el = scrollRef.current;
-        if (el) {
-            el.scrollTop = el.scrollHeight;
-        }
-    }, [streaming.content]);
-
-    return (
-        <div ref={scrollRef} className="flex-1 overflow-auto p-4">
-            {streaming.content ? (
-                <pre className="artifact-streaming-pre text-monospace text-sm m-0 color-norm whitespace-pre-wrap break-all">
-                    {streaming.content}
-                </pre>
-            ) : (
-                // Opening tag seen but no content bytes yet
-                <div className="flex flex-column gap-2 pt-2">
-                    <div
-                        className="rectangle-skeleton keep-motion rounded"
-                        style={{ height: '0.875rem', width: '80%' }}
-                    />
-                    <div
-                        className="rectangle-skeleton keep-motion rounded"
-                        style={{ height: '0.875rem', width: '60%' }}
-                    />
-                    <div
-                        className="rectangle-skeleton keep-motion rounded"
-                        style={{ height: '0.875rem', width: '70%' }}
-                    />
-                </div>
-            )}
-        </div>
-    );
 };
 
 // ---------------------------------------------------------------------------
@@ -376,57 +330,17 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
         openArtifact,
         goToVersion,
         hasUnseenRevision,
-        streamingArtifact,
-        pendingArtifact,
         closePanel,
     } = useArtifactContext();
     const [showLineNumbers, setShowLineNumbers] = useState(false);
     const [copySuccess, setCopySuccess] = useState(false);
     const contentRef = useRef<HTMLDivElement>(null);
 
-    // Nothing to show
-    if (!selectedArtifact && !streamingArtifact && !pendingArtifact) {
+    if (!selectedArtifact) {
         return null;
     }
 
-    // --- Streaming state (still receiving raw, not-yet-valid-JSON arguments) ---
-    if (streamingArtifact && !selectedArtifact) {
-        return (
-            <div className="artifact-panel flex flex-column h-full overflow-hidden w-full">
-                <PanelHeader
-                    type={streamingArtifact.type}
-                    language={streamingArtifact.language}
-                    title={streamingArtifact.title}
-                    isStreaming
-                    onClose={closePanel}
-                />
-                <StreamingPreview streaming={streamingArtifact} />
-            </div>
-        );
-    }
-
-    // --- Pending state: tool call parsed complete (real title/type/content), but its message
-    // hasn't finished generating yet, so it isn't in `registry` yet. Render with the same full
-    // content renderer as the complete state below (we have real content, not a raw preview) —
-    // just keep version nav/copy/download hidden via `isStreaming` until it's actually finalized.
-    // Respects an unrelated artifact the user has open, same rule the finish-promotion effect uses.
-    if (pendingArtifact && !streamingArtifact && (selectedId === null || selectedId === pendingArtifact.id)) {
-        return (
-            <div className="artifact-panel flex flex-column h-full overflow-hidden w-full">
-                <PanelHeader
-                    type={pendingArtifact.type}
-                    language={pendingArtifact.language}
-                    title={pendingArtifact.title}
-                    isStreaming
-                    onClose={closePanel}
-                />
-                <ArtifactContent artifact={pendingArtifact} showLineNumbers={showLineNumbers} />
-            </div>
-        );
-    }
-
-    // --- Complete state ---
-    const artifact = selectedArtifact!;
+    const artifact = selectedArtifact;
     const versionCount = selectedId ? registry[selectedId]?.versions.length : undefined;
     const switcherEntries = buildSwitcherEntries(registry, hasUnseenRevision);
 
