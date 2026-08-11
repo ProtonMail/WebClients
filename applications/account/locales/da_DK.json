@@ -1934,6 +1934,9 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Sign in to ${ providerName }": [
+        "Log ind på ${ providerName }"
       ]
     },
     "action": {
@@ -5336,6 +5339,9 @@
       ],
       "Disable address?": [
         "Deaktiver adresse?"
+      ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Ved at deaktivere denne adresse ${ address }, vil det ikke længere være muligt for medlemmet at sende eller modtage e-mails via denne adresse, og alle tilknyttede ${ BRAND_NAME }-produkter deaktiveres."
       ]
     },
     "dollar_offer": {
@@ -13883,6 +13889,36 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "${ providerName } account": [
+        "${ providerName }-konto"
+      ],
+      "${ storeName } app to copy data to ${ BRAND_NAME }": [
+        "${ storeName } app for at kopiere data til ${ BRAND_NAME }"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and ${ providerBrand } simultaneously for the duration of the migration.": [
+        "Sørg for at dine e-mails når indbakken, og ikke spammappen. Ved at opdatere SPF kan brugere sende e-mails fra ${ BRAND_NAME } og ${ providerBrand } på samme tid under hele migrationen."
+      ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their ${ mailAppName } inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Alle får det samme invitationslink. De besøger siden, indtaster deres e-mail, og får en bekræftelseskode i deres ${ mailAppName }-indbakke. Derfra angiver de deres adgangskode til ${ BRAND_NAME }."
+      ],
+      "Sign-in with a ${ providerName } administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Log ind med en ${ providerName }-administratorkonto til ${ BRAND_NAME } for at konfigurere migrationen."
+      ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the ${ storeName }. After installing it, come back here to continue.": [
+        "Installer ${ BRAND_NAME } Easy Switch fra ${ storeName } for at overføre din organisations data til ${ BRAND_NAME }. Kom tilbage her efter det er installeret for at fortsætte."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Aktivér kontoen for denne bruger i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Fjern denne bruger fra arkivet i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Ophæv suspenderingen af denne bruger i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on ${ mailAppName } and the migration will be completed.": [
+        "Du er næsten færdig. Du skal bare konfigurere dit domæne til at modtage e-mails direkte på ${ BRAND_NAME }. Når det er blevet bekræftet vil dit team ikke længere modtage nye e-mails på ${ mailAppName }, og dermed er migrationen slut."
       ]
     },
     "info": {
@@ -27198,6 +27234,12 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Authenticate your ${ providerName } account": [
+        "Godkend din ${ providerName }-konto"
+      ],
+      "Migrate from ${ providerName }": [
+        "Migrer fra ${ providerName }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27630,6 +27672,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Din eksterne konto har muligvis nået sin 24-timers båndbreddegrænse. ${ BRAND_NAME } vil forsøge at genoptage importen så hurtig som muligt."
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status for datamigration fra ${ providerName } til ${ BRAND_NAME }"
+      ],
+      "Reauthenticate your ${ providerName } account to start a migration": [
+        "Log ind igen på din ${ providerName }-konto igen for at starte en migration"
       ]
     },
     "tooltip": {
@@ -28545,6 +28593,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din prøveperiode udløber den ${ textDate }. Du vil ikke blive opkrævet, hvis du opsiger før den ${ textDate }. ${ action }"
+      ],
+      "We were unable to verify the installation, please check that you have installed it in your ${ providerName } account and try again.": [
+        "Vi kunne ikke verificere installationen. Kontrollér, at du har installeret den i din ${ providerName }-konto, og prøv igen."
       ]
     },
     "Warning for domain modal": {
@@ -28800,6 +28851,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
+      ]
+    },
+    "Invitation message": {
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your ${ mailAppName }.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and ${ mailAppName }.\nThen, when everyone has made the move, we will retire ${ mailAppName }. We'll remind you before it does.": [
+        "Vi flytter til ${ BRAND_NAME }, en sikker e-mailtjeneste.\nOg din ${ BRAND_NAME }-konto er klar til at blive indløst.\nKlik på ${ inviteLink }.\nIndtast din e-mailadresse, og så sender vi dig en kode til din ${ mailAppName }.\nBrug koden til at angive dit kodeord – og derefter har du din egen ${ BRAND_NAME }-konto.\nI en kort periode, vil begge kunne bruges samtidig. ${ BRAND_NAME } og ${ mailAppName }.\nDerefter, når alle er flyttet, udfases ${ mailAppName }. Vi giver dig besked før det sker."
       ]
     }
   }
