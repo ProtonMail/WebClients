@@ -1527,9 +1527,7 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie",
-        "Aprobare chei",
-        "Aprobare chei"
+        "Aprobare cheie"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -8211,7 +8209,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -9816,6 +9816,21 @@
       ],
       "You": [
         "Eu"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Marca ${ IDEAL_BRAND_NAME }"
+      ],
+      "Move to Primary": [
+        "Mutare în primare"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Acest utilizator nu poate fi migrat deoarece adresa sa de e-mail nu este disponibilă în ${ BRAND_NAME }."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Pentru a migra acest utilizator, adăugați și verificați domeniul de e-mail în ${ domainNamesLink }."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Pentru finalizarea tranzacției prin ${ IDEAL_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ]
     },
     "info": {
@@ -13538,6 +13553,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Plata cu ${ IDEAL_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Moneda a fost schimbată în euro (€) deoarece ${ IDEAL_BRAND_NAME } acceptă doar plăți în euro."
       ]
     },
     "Payments.Error": {
@@ -13558,6 +13579,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Eșuare inițializare ${ IDEAL_BRAND_NAME }. Reîncercați."
       ]
     },
     "Payments.error": {
@@ -15932,6 +15956,9 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise acolo în viitor."
       ]
     },
     "Success notification": {
@@ -17278,6 +17305,9 @@
       ],
       "What are you migrating?": [
         "Ce migrați?"
+      ],
+      "Domain names": [
+        "Nume de domenii"
       ]
     },
     "Title header for keys table": {
@@ -17952,6 +17982,11 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Prin confirmarea acestei plăți, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să vă instruiască banca să vă debiteze contul în mod corespunzător. Puteți primi o rambursare în termen de 8 săptămâni de la data debitării, în condițiile acordului dvs. cu banca."
       ]
     }
   }

@@ -1526,8 +1526,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -8078,7 +8077,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9642,7 +9642,7 @@
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
       ],
       "Move to Primary": [
-        "Mou a Primari"
+        "Moure a Primari"
       ],
       "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
         "Per migrar aquest usuari, habiliteu el seu compte a la vostra ${ provider.adminConsoleName }."
@@ -9652,6 +9652,18 @@
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "Per migrar aquest usuari, reactiveu-lo a la vostra ${ provider.adminConsoleName }."
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_BRAND_NAME }"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Aquest usuari no es pot migrar perquè la seva adreça de correu electrònic no està disponible a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Per migrar aquest usuari, afegiu i verifiqueu-ne el domini de correu electrònic a ${ domainNamesLink }"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Us redirigirem a ${ IDEAL_BRAND_NAME } en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu algun bloquejador de finestres emergents, desactiveu-lo per continuar."
       ]
     },
     "info": {
@@ -10859,6 +10871,12 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "No unread conversations": [
+        "No hi ha converses no llegides"
+      ],
+      "No unread messages": [
+        "No hi ha missatges no llegits"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13314,6 +13332,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagueu amb ${ IDEAL_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "S'ha canviat la vostra moneda a euros (€) perquè ${ IDEAL_BRAND_NAME } només admet pagaments en euros."
       ]
     },
     "Payments.Error": {
@@ -13334,6 +13358,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "No s'ha pogut inicialitzar ${ IDEAL_BRAND_NAME }. Torneu-ho a provar més tard."
       ]
     },
     "Payments.error": {
@@ -16962,6 +16989,9 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Domain names": [
+        "Noms de domini"
       ]
     },
     "Title header for keys table": {
@@ -17594,6 +17624,11 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "En confirmar aquest pagament autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a donar instruccions al vostre banc perquè el carregui al vostre compte. Podreu obtenir un reemborsament en un termini de 8 setmanes des de la data del càrrec, d'acord amb les condicions del vostre acord amb el banc."
       ]
     }
   }

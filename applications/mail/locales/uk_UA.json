@@ -1516,10 +1516,7 @@
         "Довіряти"
       ],
       "Trust key": [
-        "Довіряти ключу",
-        "Довіряти ключам",
-        "Довіряти ключам",
-        "Довіряти ключам"
+        "Довіряти ключу"
       ],
       "Trust public key": [
         "Довіряти відкритому ключу"
@@ -1715,6 +1712,18 @@
       ],
       "Zoom out": [
         "Зменшити"
+      ],
+      "Lookup document": [
+        "Довідковий документ"
+      ],
+      "Migrate": [
+        "Мігрувати"
+      ],
+      "Stop": [
+        "Стоп"
+      ],
+      "Yes, organize it": [
+        "Так, організуй це"
       ]
     },
     "action": {
@@ -1973,6 +1982,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Вдоскональте рівень продуктивності електронної пошти. Дозвольте ${ BRAND_NAME } Scribe допомогти вам писати, відповідати й рецензувати ваші листи."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Підніміть ефективність роботи з електронною поштою на новий рівень. Дозвольте ${ LUMO_SHORT_APP_NAME } допомогти вам писати, відповідати та вичитувати ваші електронні листи."
       ]
     },
     "Attached ics file error": {
@@ -2372,6 +2384,9 @@
       ],
       "Take a tour": [
         "Показати знайомство"
+      ],
+      "Get 50% offer": [
+        "Отримайте знижку 50%"
       ]
     },
     "BYOE": {
@@ -4441,6 +4456,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Клацніть правою кнопкою миші на листі та виберіть “Перемістити до”, або перетягніть його в іншу категорію. Надалі подібні листи будуть автоматично сортуватися саме туди."
       ]
     },
     "description": {
@@ -5450,6 +5468,153 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "За вашим пошуковим запитом знайдено надто багато результатів. Обмежте пошуковий запит і спробуйте знову."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Для звітування про порушення авторських прав або викрадення даних необхідно залишити повідомлення"
+      ],
+      "Bookmark password is not available": [
+        "Пароль для закладки недоступний"
+      ],
+      "Cannot download a folder": [
+        "Не вдається завантажити теку"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Неможливо перемістити елемент без дійсної назви. Спочатку перейменуйте елемент."
+      ],
+      "Cannot verify the author of this file": [
+        "Неможливо перевірити автора цього файлу"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Неможливо перевірити, хто вивантажив цей файл"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Копіювання елемента в місце, яке не є текою, заборонено"
+      ],
+      "Could not load sharing details": [
+        "Не вдалося завантажити дані про спільний доступ"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Не вдалося завантажити попередній перегляд зображення: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Не вдалося прочитати частину цього файлу: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Не вдалося розблокувати батьківську теку"
+      ],
+      "Could not unlock this item": [
+        "Не вдалося розблокувати цей елемент"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Створення документів поза теками заборонено"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Створення файлів поза теками заборонено"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Створення тек в елементах, що не є теками, заборонено"
+      ],
+      "Device not found": [
+        "Пристрій не знайдено"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Не вдалося розшифрувати ключ закладки: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Не вдалося розшифрувати назву закладки: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Не вдалося розшифрувати пароль закладки: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Не вдалося розшифрувати ключ вузла: ${ message }"
+      ],
+      "File download failed due to empty response": [
+        "Завантаження файлу не вдалося через порожню відповідь"
+      ],
+      "File has no revision": [
+        "Файл не має редакції"
+      ],
+      "Item not found": [
+        "Елемент не знайдено"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Старе публічне посилання неможливо оновити. Будь ласка, повторно створіть нове публічне посилання."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адресу учасника не знайдено. Для розв'язання цієї проблеми, будь ласка, зверніться до служби підтримки клієнтів"
+      ],
+      "Missing organization public key": [
+        "Відсутній відкритий ключ організації"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Відсутній підпис для ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Операція переміщення перервана"
+      ],
+      "Moving root item is not allowed": [
+        "Переміщення кореневого елемента заборонено"
+      ],
+      "No file data was received. Please try again.": [
+        "Дані файлу не отримано. Будь ласка, спробуйте ще раз."
+      ],
+      "Operation aborted": [
+        "Операцію перервано"
+      ],
+      "Operation failed, try again later": [
+        "Операція не вдалася, спробуйте пізніше"
+      ],
+      "Photo is already in the target album": [
+        "Фотографія вже знаходиться в цільовому альбомі"
+      ],
+      "Photo not found": [
+        "Фотографію не знайдено"
+      ],
+      "Request aborted": [
+        "Запит перервано"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Деякі частини файлу не вдалося вивантажити. Будь ласка, спробуйте ще раз."
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Сталася помилка. Закрийте модальне вікно та спробуйте ще раз."
+      ],
+      "This file has missing crypto material": [
+        "У цьому файлі відсутні криптографічні дані"
+      ],
+      "This file has no version available to download": [
+        "Цей файл не має версій, доступних для завантаження"
+      ],
+      "This file version could not be uploaded": [
+        "Цю версію файлу не вдалося вивантажити"
+      ],
+      "This item is no longer shared": [
+        "Цей елемент більше не доступний для спільного використання"
+      ],
+      "This item is not shared": [
+        "Цей елемент не доступний для спільного використання"
+      ],
+      "Too many server errors, please try again later": [
+        "Занадто багато помилок сервера. Будь ласка, спробуйте ще раз пізніше."
+      ],
+      "Too many server requests, please try again later": [
+        "Занадто багато запитів до сервера. Будь ласка, спробуйте ще раз пізніше."
+      ],
+      "Verification keys are not available": [
+        "Ключі для перевірки недоступні"
+      ],
+      "You can create public links for your own files only": [
+        "Ви можете створювати загальнодоступні посилання лише на свої власні файли"
+      ],
+      "You can only upload a new version to a file": [
+        "Ви можете вивантажити нову версію лише для одного файлу"
+      ],
+      "You can update a public link for your own files only": [
+        "Ви можете оновлювати публічне посилання лише для своїх власних файлів"
+      ],
+      "You do not have access to this item": [
+        "У вас немає доступу до цього елемента"
       ]
     },
     "error": {
@@ -5999,6 +6164,15 @@
       ],
       "Unread": [
         "Непрочитані"
+      ],
+      "All": [
+        "Все"
+      ],
+      "In progress": [
+        "В процесі"
+      ],
+      "Pending": [
+        "Очікування"
       ]
     },
     "Filter Actions": {
@@ -6722,6 +6896,12 @@
       ],
       "Migrated": [
         "Мігровано"
+      ],
+      "Has errors": [
+        "Містить помилки"
+      ],
+      "Pending": [
+        "Очікування"
       ]
     },
     "Import warning": {
@@ -7961,6 +8141,9 @@
         "Ініціалізація…"
       ],
       "Insert image": [
+        "Вставити зображення",
+        "Вставити зображення",
+        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -9468,6 +9651,60 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Лише кілька кліків відділяють вас від вхідних без безладу"
+      ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Доступ до понад 20 000 серверів у 145 країнах"
+      ],
+      "Author is not provided on public link": [
+        "У публічному посиланні не вказано автора"
+      ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Найвища швидкість VPN — до 10 Гбіт/с"
+      ],
+      "Find out what can be migrated.": [
+        "Дізнайтеся, що можна перенести."
+      ],
+      "Have some more time to decide without interruption.": [
+        "Майте ще трохи часу, щоб прийняти рішення без перешкод."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Імпорт триває. Ви можете закрити це діалогове вікно під час його виконання та повернутися до нього пізніше. Однак не закривайте вкладку."
+      ],
+      "Move emails": [
+        "Перемістити електронну пошту"
+      ],
+      "No conversation to read": [
+        "Немає тексту розмови для прочитання"
+      ],
+      "No email open": [
+        "Електронного листа не відкрито"
+      ],
+      "No users to display": [
+        "Немає користувачів для показу"
+      ],
+      "Premium privacy protection across all your devices": [
+        "Високоякісний захист приватності на всіх ваших пристроях"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Виберіть саме те, що ви хочете перенести. Це буде застосовано до всіх користувачів організації."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Цього користувача неможливо перенести, оскільки його адреса електронної пошти відсутня в системі ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Цього користувача неможливо перенести через несумісність платформ."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Щоб перенести цього користувача, активуйте його обліковий запис у вашій ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Щоб перенести цього користувача, увімкніть його обліковий запис за посиланням ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Щоб перенести цього користувача, увімкніть його адресу за посиланням ${ usersAddressesLink }."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Ви можете імпортувати його як новий індекс foundation-search для цілей розробки."
       ]
     },
     "info": {
@@ -10664,6 +10901,18 @@
       ],
       "ZIP code": [
         "Поштовий індекс"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Усе, що вимагає вашої уваги, а також листи з вимкнених категорій"
+      ],
+      "Archive": [
+        "Архів"
+      ],
+      "Document ID": [
+        "ID документа"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "«Основні» — все, що вимагає вашої уваги, а також листи з вимкнених категорій"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13231,6 +13480,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Вашу картку відхилено. Спробуйте скористатися іншою картою або зверніться до свого банку, щоб авторизувати платіж."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Не вдалося ініціалізувати ${ IDEAL_BRAND_NAME }. Будь ласка, спробуйте ще раз пізніше."
       ]
     },
     "Payments.error": {
@@ -15738,6 +15990,12 @@
       ],
       "Type": [
         "Тип"
+      ],
+      "Estimated size": [
+        "Орієнтовний розмір"
+      ],
+      "Migration status": [
+        "Статус міграції"
       ]
     },
     "TableHeader": {
@@ -16981,6 +17239,21 @@
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
+      ],
+      "Domain names": [
+        "Домени"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Зверніть увагу: цей обліковий запис Gmail пов’язаний з іншим обліковим записом ${ BRAND_NAME }"
+      ],
+      "Refine your Categories": [
+        "Уточніть свої категорії"
+      ],
+      "Stay for 50% off your next month": [
+        "Залишайтеся зі знижкою 50% на наступний місяць"
+      ],
+      "What are you migrating?": [
+        "Що саме ви переносите?"
       ]
     },
     "Title header for keys table": {
@@ -17155,6 +17428,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Ви зможете призначати ролі після того, як користувач прийме запрошення."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Перейдіть на тарифний план, що підтримує цю функцію, щоб користуватися ролями адміністратора."
       ]
     },
     "Validation": {
@@ -17691,6 +17967,25 @@
       ],
       "Passcode:": [
         "Код доступу"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Підтверджуючи цей платіж, ви надаєте дозвіл компанії ${ BRAND_NAME } та Stripe, нашому постачальнику платіжних послуг, дати вказівку вашому банку списати відповідну суму з вашого рахунку. Ви можете отримати повернення коштів протягом 8 тижнів з дати списання відповідно до умов вашої угоди з банком."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "атрибути"
+      ],
+      "content key": [
+        "ключ вмісту"
+      ],
+      "hash key": [
+        "хеш-ключ"
+      ],
+      "name": [
+        "назва"
       ]
     }
   }

@@ -1523,8 +1523,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1721,6 +1720,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "View guide": [
+        "Ver guía"
       ]
     },
     "action": {
@@ -5410,6 +5415,256 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La búsqueda coincidió con muchos resultados. Limite la búsqueda e inténtelo de nuevo."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Se requiere un mensaje cuando se reporte una infracción de derechos de autor o datos robados"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "La dirección ya está en uso por otra persona de la organización. Contacte con soporte al cliente para resolverlo."
+      ],
+      "Bookmark password is not available": [
+        "La contraseña del marcador no está disponible"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "No se puede añadir una foto al álbum sin un nombre válido"
+      ],
+      "Cannot download a folder": [
+        "No se puede descargar una carpeta"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "No se puede mover un elemento si un nombre válido, renombre el elemento primero"
+      ],
+      "Cannot share root folder": [
+        "No se puede compartir la carpeta raíz"
+      ],
+      "Cannot verify the author of this file": [
+        "No se puede verificar el autor de este archivo"
+      ],
+      "Cannot verify who uploaded this file": [
+        "No se puede verificar quién cargó este archivo"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Contacte con su administrador para iniciar una migración."
+      ],
+      "Copy operation aborted": [
+        "Operación de copiado abortada"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "No se permite copiar un elemento en un elemento que no sea carpeta"
+      ],
+      "Could not find an available name": [
+        "No se pudo encontrar un nombre disponible"
+      ],
+      "Could not load sharing details": [
+        "No se pudieron cargar los detalles compartidos"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "No se pudo cargar la vista previa de imagen: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "No se pudo leer parte de este archivo: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "No se pudo desbloquear la carpeta principal"
+      ],
+      "Could not unlock this item": [
+        "No se pudo desbloquear este elemento"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "No se permite crear documentos en elementos que no sean carpetas"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "No se permite crear archivos en elementos que no sean carpetas"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "No se permite crear carpetas en elementos que no sean carpetas"
+      ],
+      "Device not found": [
+        "Dispositivo no encontrado"
+      ],
+      "Expiration date cannot be in the past": [
+        "La fecha de expiración no puede ser pasada"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Error al descifrar la clave del marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Error al descifrar el nombre del marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Error al descifrar la contraseña del marcador: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Error al descifrar la clave de contenido: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Error al descifrar el nombre del elemento: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Error al descifrar la clave del nodo: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Error al descifrar los metadatos de la revisión"
+      ],
+      "Failed to get inviter keys": [
+        "Error al obtener las claves de quien invita"
+      ],
+      "Failed to verify invitation": [
+        "Error al verificar la invitación"
+      ],
+      "File download failed due to empty response": [
+        "Error al descargar el archivo debido a una respuesta vacía"
+      ],
+      "File has no revision": [
+        "El archivo no tiene revisión"
+      ],
+      "Image preview not found": [
+        "Vista previa de imagen no encontrada"
+      ],
+      "Invitation not found": [
+        "Invitación no encontrada"
+      ],
+      "Item not found": [
+        "Elemento no encontrado"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "El enlace público anterior no se puede actualizar. Cree otro enlace público."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Falta la dirección de miembro. Contacte con el soporte al cliente para resolver esto."
+      ],
+      "Missing inviter email": [
+        "Falta el correo electrónico de invitación"
+      ],
+      "Missing organization private key": [
+        "Falta la clave privada de la organización"
+      ],
+      "Missing organization public key": [
+        "Falta la clave pública de la organización"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Falta la firma para ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Operación de mover abortada"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "No se permite mover un elemento en un elemento que no sea carpeta"
+      ],
+      "Moving root item is not allowed": [
+        "No está permitido mover el elemento raíz"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "El nombre debe tener como máximo ${ MAX_NODE_NAME_LENGTH } caracter",
+        "El nombre debe tener como máximo ${ MAX_NODE_NAME_LENGTH } caracteres"
+      ],
+      "Name must not be empty": [
+        "El nombre no debe estar vacío"
+      ],
+      "No file data was received. Please try again.": [
+        "No se recibió ningún dato del archivo. Intente de nuevo."
+      ],
+      "Only admins can convert external invitations": [
+        "Solo los administradores pueden convertir invitaciones externas"
+      ],
+      "Operation aborted": [
+        "Operación abortada"
+      ],
+      "Operation failed, try again later": [
+        "Operación fallida, intente de nuevo más tarde"
+      ],
+      "Organization does not have enough seats available": [
+        "La organización no tiene suficientes licencias disponibles"
+      ],
+      "Organization does not have enough storage available": [
+        "La organización no tiene suficiente almacenamiento disponible"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte del archivo parece estar corrupto"
+      ],
+      "Photo is already in the target album": [
+        "La foto ya está en el álbum objetivo"
+      ],
+      "Photo not found": [
+        "Foto no encontrada"
+      ],
+      "Renaming root item is not allowed": [
+        "No está permitido renombrar el elemento raíz"
+      ],
+      "Request aborted": [
+        "Solicitud abortada"
+      ],
+      "Signature is missing": [
+        "Falta la firma"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Error en la verificación de la firma: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Error al verificar la firma de ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Error al verificar la firma de ${ signatureType }: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Error al cargar algunos datos del archivo. Intente de nuevo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Error al cargar algunas partes del archivo. Intente de nuevo."
+      ],
+      "Some items could not be loaded": [
+        "No se pudieron cargar algunos elementos"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "El archivo cargado no coincide con el original. Intente de nuevo."
+      ],
+      "This file has missing crypto material": [
+        "Este archivo tiene material cripto faltante"
+      ],
+      "This file has no version available to download": [
+        "Este archivo no tiene una versión disponible para descargar"
+      ],
+      "This file version could not be uploaded": [
+        "No se pudo cargar esta versión del archivo"
+      ],
+      "This item has no image preview": [
+        "Este elemento no tiene vista previa de imagen"
+      ],
+      "This item is no longer shared": [
+        "Este elemento ya no está compartido"
+      ],
+      "This item is not shared": [
+        "Este elemento no está compartido"
+      ],
+      "Too many server errors, please try again later": [
+        "Demasiados errores del servidor, intente de nuevo más tarde"
+      ],
+      "Too many server requests, please try again later": [
+        "Demasiadas solicitudes del servidor, intente de nuevo más tarde"
+      ],
+      "Verification keys are not available": [
+        "Las claves de verificación no están disponibles"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Las claves de verificación para ${ signatureType } no están disponibles"
+      ],
+      "You can create public links for your own files only": [
+        "Puede crear enlaces públicos solo para sus propios archivos"
+      ],
+      "You can only leave items that are shared with you": [
+        "Solo puede abandonar elementos que fueron compartidos con usted"
+      ],
+      "You can only upload a new version to a file": [
+        "Solo puede cargar una versión nueva a este archivo"
+      ],
+      "You can update a public link for your own files only": [
+        "Puede actualizar un enlace público solo para sus propios archivos"
+      ],
+      "You do not have access to this item": [
+        "No tiene acceso a este elemento"
+      ],
+      "You do not have access to this shared item": [
+        "No tiene acceso a este elemento compartido"
       ]
     },
     "error": {
@@ -5941,6 +6196,27 @@
       ],
       "Unread": [
         "Sin leer"
+      ],
+      "Activated": [
+        "Activado"
+      ],
+      "All": [
+        "Todo"
+      ],
+      "Errors": [
+        "Errores"
+      ],
+      "In progress": [
+        "En progreso"
+      ],
+      "Migrated": [
+        "Migrado"
+      ],
+      "Not activated": [
+        "No activado"
+      ],
+      "Pending": [
+        "Pendiente"
       ]
     },
     "Filter Actions": {
@@ -6644,6 +6920,12 @@
       ],
       "Migrated": [
         "Migrado"
+      ],
+      "Has errors": [
+        "Tiene errores"
+      ],
+      "Pending": [
+        "Pendiente"
       ]
     },
     "Import warning": {
@@ -7789,7 +8071,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9289,6 +9572,77 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_BRAND_NAME }"
+      ],
+      "Author is not provided on public link": [
+        "No se proporciona al autor en el enlace público"
+      ],
+      "Find out what can be migrated.": [
+        "Descubra lo que puede ser migrado."
+      ],
+      "Move to Primary": [
+        "Mover a principal"
+      ],
+      "No conversation to read": [
+        "No hay conversaciones que leer"
+      ],
+      "No email open": [
+        "No hay un correo abierto"
+      ],
+      "No users to display": [
+        "No hay usuarios que mostrar"
+      ],
+      "Read ${ count } email": [
+        "Leer ${ count } correo",
+        "Leer ${ count } correos"
+      ],
+      "Read ${ count } message in this thread": [
+        "Leer ${ count } mensaje en este hilo",
+        "Leer ${ count } mensajes en este hilo"
+      ],
+      "Read open email “${ subject }”": [
+        "Leer correo abierto «${ subject }»"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleccione exactamente qué desea migrar. Se aplicará a todos los usuarios de la organización."
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Esta cuenta de Gmail está registrada con otra cuenta de ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME }AI y otros). Estamos trabajando para que esta conexión sea perfecta, pero por ahora tendrá que seguir algunos pasos."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "No se puede migrar este usuario porque su dirección de correo no está disponible en ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Este usuario no se puede migrar debido a incompatibilidades de la plataforma."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Para migrar este usuario, añada y verifique el dominio de correo en ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Para migrar a este usuario, active su cuenta en su ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, active su cuenta en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, active su dirección en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Para migrar a este usuario, éste debe aceptar su invitación para unirse a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuario, desarchívelo en su ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuario, quítele la suspensión en su ${ provider.adminConsoleName }."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Le redirigiremos a ${ IDEAL_BRAND_NAME } en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
+      ],
+      "You": [
+        "Usted"
       ]
     },
     "info": {
@@ -12951,6 +13305,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagar con ${ IDEAL_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Su moneda ha sido cambiada a euros (€) porque ${ IDEAL_BRAND_NAME } solo admite pagos en euros."
       ]
     },
     "Payments.Error": {
@@ -12971,6 +13331,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tarjeta fue rechazada. Pruebe otra tarjeta o póngase en contacto con el banco para autorizar el cargo."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Error al inicializar ${ IDEAL_BRAND_NAME }. Intente de nuevo más tarde."
       ]
     },
     "Payments.error": {
@@ -15253,6 +15616,9 @@
       ],
       "You have successfully unsubscribed": [
         "Se ha desuscrito satisfactoriamente"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Movido a ${ label }. Los mensajes similares se categorizarán ahí en el futuro."
       ]
     },
     "Success notification": {
@@ -15343,6 +15709,18 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Activated": [
+        "Activado"
+      ],
+      "Estimated size": [
+        "Tamaño estimado"
+      ],
+      "Migration status": [
+        "Estado de la migración"
+      ],
+      "User": [
+        "Usuario"
       ]
     },
     "TableHeader": {
@@ -16552,6 +16930,21 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Configure migration": [
+        "Configurar migración"
+      ],
+      "Domain names": [
+        "Nombres de dominio"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Aviso: este Gmail está enlazado a otra cuenta de ${ BRAND_NAME }"
+      ],
+      "Select users to migrate": [
+        "Seleccione los usuarios para migrar"
+      ],
+      "What are you migrating?": [
+        "¿Qué está migrando?"
       ]
     },
     "Title header for keys table": {
@@ -16672,6 +17065,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Clave OpenPGP versión 6"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Estado de migración de datos de ${ providerName } a ${ BRAND_NAME }"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Usuarios que han accedido a sus cuentas de ${ BRAND_NAME }"
       ]
     },
     "tooltip": {
@@ -17175,6 +17574,31 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Al confirmar este pago, autoriza a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a su banco para que realice el cargo en su cuenta. Puede obtener un reembolso en un plazo de 8 semanas a partir de la fecha del cargo, según las condiciones de su acuerdo con su banco."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atributos"
+      ],
+      "content key": [
+        "clave de contenido"
+      ],
+      "hash key": [
+        "clave hash"
+      ],
+      "key": [
+        "clave"
+      ],
+      "membership": [
+        "suscripción"
+      ],
+      "name": [
+        "nombre"
       ]
     }
   }
