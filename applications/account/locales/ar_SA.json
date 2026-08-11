@@ -168,6 +168,9 @@
       "Add user": [
         "إضافة مستخدم"
       ],
+      "Add users": [
+        "إضافة مستخدمين"
+      ],
       "Added ${ memberName } as group owner": [
         "تمت إضافة ${ memberName } كمالك للمجموعة"
       ],
@@ -311,6 +314,9 @@
       ],
       "Collaborate on documents": [
         "التعاون في المستندات"
+      ],
+      "Collapse step": [
+        "طيّ الخطوة"
       ],
       "Color": [
         "اللون"
@@ -762,6 +768,9 @@
       "Enter code": [
         "إدخال الرمز"
       ],
+      "Expand step": [
+        "توسيع الخطوة"
+      ],
       "Explore ${ target }": [
         "استكشف ${ target }"
       ],
@@ -1008,6 +1017,9 @@
       "Insert link": [
         "أدرج الرابط"
       ],
+      "Install app": [
+        "تثبيت التطبيق"
+      ],
       "Invite": [
         "دعوة"
       ],
@@ -1086,9 +1098,6 @@
       "Manage communication preferences": [
         "إدارة تفضيلات التواصل"
       ],
-      "Manage company": [
-        "إدارة الشركة"
-      ],
       "Manage folders": [
         "إدارة المجلدات"
       ],
@@ -1125,11 +1134,17 @@
       "Maybe later": [
         "ربما لاحقًا"
       ],
+      "Migrate": [
+        "نقل"
+      ],
       "More": [
         "المزيد"
       ],
       "More benefits": [
         "مزايا إضافية"
+      ],
+      "More details": [
+        "مزيد من التفاصيل"
       ],
       "More info: ${ safeTitle }": [
         "مزيد من المعلومات: ${ safeTitle }"
@@ -2227,6 +2242,14 @@
       ],
       "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
         "باستخدام ${ PASS_APP_NAME } يمكن إنشاء أسماء مستعارة فريدة لإخفاء الهوية وإعادة توجيه رسائل البريد الإلكتروني إلى صندوق الوارد الرئيسي."
+      ]
+    },
+    "Alt": {
+      "Collapse invitation message": [
+        "طيّ رسالة الدعوة"
+      ],
+      "Expand invitation message": [
+        "توسيع رسالة الدعوة"
       ]
     },
     "Alter": {
@@ -6834,6 +6857,9 @@
       "Address is already added to your account": [
         "العنوان مضاف بالفعل إلى حسابك"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "العنوان مستخدم بالفعل من قِبل مستخدم خارج مؤسستك. يُرجى التواصل مع دعم العملاء لحل هذه المشكلة."
+      ],
       "Address primary private key not found": [
         "لم يتم العثور على المفتاح الخاص الرئيسي للعنوان"
       ],
@@ -6887,6 +6913,9 @@
       ],
       "Contact signature not verified": [
         "لم يتم التحقق من توقيع جهة الاتصال"
+      ],
+      "Contact your administrator to start a migration.": [
+        "تواصل مع مسؤول النظام لبدء عملية النقل."
       ],
       "Could not open created vault": [
         "تعذّر فتح الخزنة التي تم إنشاؤها"
@@ -7096,6 +7125,9 @@
       "Maximum ${ displayMaxValue } allowed": [
         "الحد الأقصى المسموح به هو ${ displayMaxValue }"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "لم يتم العثور على عنوان العضو. يُرجى التواصل مع دعم العملاء لحل هذه المشكلة."
+      ],
       "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
         "دمج ما لا يقل عن ${ calendarsToFixCount } من التقاويم مع تقاويم ${ BRAND_NAME } الحالية",
         "دمج تقويم واحد (${ calendarsToFixCount }) على الأقل مع تقويم ${ BRAND_NAME } حالي",
@@ -7106,6 +7138,12 @@
       ],
       "Missing key packet": [
         "حزمة المفتاح مفقودة"
+      ],
+      "Missing organization private key": [
+        "المفتاح الخاص بالمؤسسة مفقود"
+      ],
+      "Missing organization public key": [
+        "مفتاح المؤسسة العام مفقود"
       ],
       "Missing signature": [
         "التوقيع مفقود"
@@ -7154,6 +7192,12 @@
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "يمكن تغيير حالة الأحرف وعلامات الترقيم (النقاط، والواصلات، والشرطات السفلية) فقط لهذا العنوان"
+      ],
+      "Organization does not have enough seats available": [
+        "لا تتوفر لدى المؤسسة مقاعد كافية"
+      ],
+      "Organization does not have enough storage available": [
+        "لا تتوفر لدى المؤسسة مساحة تخزين كافية"
       ],
       "Organization key is not decrypted": [
         "لم يتم فك تشفير مفتاح المنظمة"
@@ -8587,6 +8631,29 @@
         "تيرابايت"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "مُفعّل"
+      ],
+      "All": [
+        "الكل"
+      ],
+      "Errors": [
+        "أخطاء"
+      ],
+      "In progress": [
+        "قيد التنفيذ"
+      ],
+      "Migrated": [
+        "تم النقل"
+      ],
+      "Not activated": [
+        "غير مُفعّل"
+      ],
+      "Pending": [
+        "قيد الانتظار"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "الأرشيف"
@@ -9375,6 +9442,9 @@
       "IMAP access is enabled in your Yahoo account.": [
         "تم تفعيل الوصول عبر بروتوكول IMAP في حسابك على Yahoo."
       ],
+      "No error details available. Please contact customer support for more information": [
+        "لا تتوفر تفاصيل عن الخطأ. يُرجى التواصل مع دعم العملاء للحصول على مزيد من المعلومات."
+      ],
       "Too many recent requests. Please try again in a few moments.": [
         "عدة طلبات محفوظات متكررة. يرجى المحاولة مرة أخرى في بضع لحظات."
       ],
@@ -9532,6 +9602,12 @@
       "Failed": [
         "فشل"
       ],
+      "Has errors": [
+        "به أخطاء"
+      ],
+      "Import completed successfully": [
+        "اكتملت عملية الاستيراد بنجاح"
+      ],
       "Imported": [
         "تم استيراده"
       ],
@@ -9546,6 +9622,9 @@
       ],
       "Paused": [
         "متوقف مؤقتاً"
+      ],
+      "Pending": [
+        "معلق"
       ],
       "Undo finished": [
         "اكتمل التراجع"
@@ -9882,6 +9961,9 @@
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: مطالبة منصات المستلمين برفض رسائل البريد الإلكتروني غير المصرح بها."
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } من أصل ${ totalCount }"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } عنوانًا إضافيًا",
@@ -10250,6 +10332,9 @@
       "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
         "ستُعرض جميع الرسائل في صندوق الوارد، ولن تعود علامات تبويب الفئات والوسوم مرئية بعد الآن. "
       ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "جميع حسابات المستخدمين التي تم نقلها جاهزة الآن لدعوتها إلى مؤسستك في ${ BRAND_NAME }."
+      ],
       "All users": [
         "جميع المستخدمين"
       ],
@@ -10336,6 +10421,9 @@
       "Are you sure you want to cancel editing the group?": [
         "هل ترغب في إلغاء تعديل المجموعة؟"
       ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "هل أنت متأكد من رغبتك في المتابعة بدون ${ withoutString }؟"
+      ],
       "Are you sure you want to delete this calendar?": [
         "هل بالتأكيد تريد حذف هذا التقويم؟"
       ],
@@ -10371,6 +10459,9 @@
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "هل تريد فعلاً حذف جميع سجلاتك بشكل دائم؟"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "هل أنت متأكد من رغبتك في المتابعة؟ سيتعين على المستخدمين الذين لم يطالبوا بحساباتهم قبل إتمام عملية النقل طلب إعادة تعيين كلمة المرور من مسؤول مؤسسة ${ BRAND_NAME } الخاصة بهم."
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "هل أنت متأكد من إزالة الامتيازات الإدارية من هذا المستخدم؟"
@@ -10820,6 +10911,9 @@
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
         "يسمح DKIM لـ ${ BRAND_NAME } بالتوقيع المشفر لرسائل بريدك الإلكتروني ومنع المخترقين من العبث ببريدك الإلكتروني. تأكد من إضافة سجلات CNAME الثلاثة التالية في وحدة تحكمك في الـDNS (ستجدها على المنصة التي اشتريت منها النطاق المخصص)."
       ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "يعتمد DMARC على SPF وDKIM من خلال إبلاغ خوادم الاستقبال بكيفية التعامل مع الرسائل التي تفشل في اجتياز عمليات التحقق هذه. ويساعد ذلك على حماية نطاقك من انتحال الهوية وتحسين موثوقية تسليم الرسائل بشكل عام."
+      ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "يتحقق DMARC مما إذا كانت سجلات SPF و DKIM الخاصة بالمُرسِل تنشأ من نطاقك. يمكن أن يمنع هذا المهاجمين من استخدام سجلات SPF و DKIM لنطاق آخر لانتحال شخصية نطاقك. تشير \"p=\" (السياسة) في هذا السجل إلى كيف تريد أن تتعامل منصات المستلمين مع رسائل البريد الإلكتروني غير المصرح بها. نوصي باستخدام سياسة \"p=quarantine\" لمعظم النطاقات. تأكد من إضافة سجل TXT التالي في وحدة تحكم DNS الخاصة بك (الموجودة على المنصة التي اشتريت منها النطاق المخصَّص)."
       ],
@@ -10834,6 +10928,9 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "هل تريد تسجيل الخروج من جميع الجلسات السابقة عدا الجلسة الحالية؟"
+      ],
+      "Domain added": [
+        "تمت إضافة النطاق"
       ],
       "Domain ownership failed verification.": [
         "فشل التحقق من ملكيّة النطاق."
@@ -10857,6 +10954,9 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "لا تفقد الوصول إلى ميزاتك المميزة. فعّل التجديد التلقائي اليوم."
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "لا تعرف من أين تبدأ؟ شاهد كيفية تحديث إعدادات DNS لدى ${ registrarLink }"
       ],
       "Don’t know your recovery phrase?": [
         "لا تعرف عبارة الاسترداد؟"
@@ -11128,6 +11228,9 @@
       "finance": [
         "مالية"
       ],
+      "Find out what can be migrated.": [
+        "تعرّف على ما يمكن نقله."
+      ],
       "for ${ price }": [
         "مقابل ${ price }"
       ],
@@ -11187,6 +11290,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "احصل على حق الوصول عن طريق إنشاء حساب ${ BRAND_NAME } وقبول الدعوة."
+      ],
+      "Get help and useful tips for other domain providers ${ here }": [
+        "احصل على المساعدة والنصائح المفيدة لموفّري النطاقات الآخرين ${ here }"
       ],
       "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
         "تواصل مع جهات اتصال الطوارئ الخاصة بك، لمعرفة ما إذا كان بإمكانهم المساعدة. بعد طلب الوصول الطارئ إلى حسابك، سيتمكنون من تغيير كلمة المرور الخاصة بك **بعد مرور وقت الانتظار للوصول**."
@@ -11812,8 +11918,14 @@
       "No single sign-on": [
         "لا يوجد تسجيل دخول فردي"
       ],
+      "No users to display": [
+        "لا يوجد مستخدمون للعرض"
+      ],
       "Not a valid URL": [
         "عنوان الURL ليس صحيحاً"
+      ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "لم يتم اكتشافه بشكل صحيح؟ اختر مقدم الخدمة الخاص بك من القائمة."
       ],
       "Number of dedicated servers in the organization": [
         "عدد الخوادم المخصصة في المؤسسة"
@@ -12246,11 +12358,17 @@
       "Select a group to view its members and settings.": [
         "تحديد مجموعة لعرض أعضائها وإعداداتها."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "حدّد بالضبط ما ترغب في نقله. وسيُطبَّق ذلك على جميع مستخدمي المؤسسة."
+      ],
       "Select one or multiple user affiliations": [
         "حدد انتماء مستخدم واحد أو أكثر"
       ],
       "Select recently used servers": [
         "تحديد الخوادم المستخدمة مؤخرًا"
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "حدّد الحسابات التي ترغب في نقلها إلى ${ BRAND_NAME }. يمكنك نقل مؤسستك بالكامل اليوم، أو البدء بعدد قليل من الحسابات ونقل البقية عندما"
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "حدد انتماءات المستخدمين من ${ getFormattedOrganization } التي تريد السماح بها في مؤسستك على ${ BRAND_NAME }:"
@@ -12707,6 +12825,9 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "انتهت صلاحية رابط إلغاء الاشتراك هذا. يرجى فتح رسالة بريد إلكتروني أحدث من هذه القائمة البريدية."
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "لا يمكن نقل هذا المستخدم بسبب عدم توافق المنصات."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "هذا المستخدم مسؤول حالياً عن مدفوعات مؤسستك. بتخفيض صلاحيات هذا العضو، ستصبح أنت المسؤول عن مدفوعات مؤسستك."
       ],
@@ -12838,6 +12959,15 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "لمواكبة آخر التطورات في منتجات ${ BRAND_NAME }، يمكنك الاشتراك في رسائل البريد الإلكتروني المختلفة لدينا و ${ blogLink } من وقت لآخر."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "لنقل هذا المستخدم، فعِّل حسابه ضمن ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "لنقل هذا المستخدم، فعِّل عنوانه ضمن ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "لنقل هذا المستخدم، يجب عليه قبول دعوته للانضمام إلى ${ BRAND_NAME }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "لمنع إساءة الاستخدام أو الاحتيال، نطلب تبرعًا بحد أدنى قدره ${ minimumDonation }. يدعم ذلك عمل ${ protonFoundationLink } في الدفاع عن الخصوصية الرقمية عالميًا ويساعد على حماية الجيل القادم."
@@ -13039,6 +13169,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "سيؤدي التحقق إلى فتح علامة تبويب جديدة، يُرجى تعطيل أي أدوات لحظر النوافذ المنبثقة. لن يتم تحصيل رسوم منك. سيتم رد أي مبلغ تم استخدامه للتحقق من البطاقة على الفور."
+      ],
+      "Verified": [
+        "تم التحقق"
       ],
       "Verify domain": [
         "التحقق من النطاق"
@@ -13259,6 +13392,9 @@
       "Yearly": [
         "سنويًا"
       ],
+      "You": [
+        "أنت"
+      ],
       "You already have a free account": [
         "لديك حساب مجاني بالفعل"
       ],
@@ -13366,9 +13502,6 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "يمكنك الآن الوصول إلى الحساب وإدارته كمسؤول."
-      ],
-      "You can now access and manage the company as an administrator.": [
-        "يمكنك الآن الوصول إلى المؤسسة وإدارتها بصفتك مسؤولًا."
       ],
       "You can now close this tab.": [
         "يمكنك الآن إغلاق علامة التبويب هذه."
@@ -13510,6 +13643,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "ستحتاج إلى عنوان ${ BRAND_NAME } لاستخدام ${ MAIL_APP_NAME } و${ CALENDAR_APP_NAME }"
+      ],
+      "You will not be able to copy these users' data later.": [
+        "لن تتمكن من نسخ بيانات هؤلاء المستخدمين لاحقًا."
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "لن يكون بالإمكان فك تشفير أي رسائل أو ملفات أو بيانات أخرى مشفرة بهذا المفتاح. ولن يتم التحقق من صحة أي بيانات موقعة بهذا المفتاح بواسطة تطبيقات ${ BRAND_NAME }."
@@ -14295,6 +14431,9 @@
       "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
         "تطبيق سطح المكتب لـ ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
       ],
+      "${ BRAND_NAME } Easy Switch": [
+        "ميزة Easy Switch من ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } للأعمال"
       ],
@@ -14416,6 +14555,9 @@
       ],
       "Account storage": [
         "تخزين الحساب"
+      ],
+      "Accounts migrated": [
+        "تم نقل الحسابات"
       ],
       "Action": [
         "الإجراء"
@@ -15175,6 +15317,9 @@
       "Interval": [
         "فترة"
       ],
+      "Invitation link": [
+        "رابط الدعوة"
+      ],
       "Invite people": [
         "دعوة أشخاص"
       ],
@@ -15288,6 +15433,9 @@
       ],
       "Method for importing metadata": [
         "طريقة استيراد البيانات الوصفية"
+      ],
+      "Migration includes": [
+        "تتضمن عملية النقل"
       ],
       "Minimum ${ MIN_CHARS } characters": [
         "${ MIN_CHARS } أحرف كحد أدنى"
@@ -15909,6 +16057,9 @@
       "Users": [
         "المستخدمين"
       ],
+      "Users migrated": [
+        "تم نقل المستخدمين"
+      ],
       "Value": [
         "القيمة"
       ],
@@ -16362,6 +16513,9 @@
       ],
       "Import/export": [
         "استيراد/تصدير"
+      ],
+      "invite link": [
+        "رابط الدعوة"
       ],
       "Learn how": [
         "تعلم كيف"
@@ -22047,11 +22201,17 @@
       ]
     },
     "scim: Info": {
+      "**Groups:** All groups convert to local ${ BRAND_NAME } groups. Syncing with your identity provider stops, and you'll manage membership in ${ BRAND_NAME } settings instead.": [
+        "**المجموعات:** سيتم تحويل جميع المجموعات إلى مجموعات محلية في ${ BRAND_NAME }. وستتوقف المزامنة مع موفّر الهوية، وستدير عضوية المجموعات من إعدادات ${ BRAND_NAME } بدلًا من ذلك."
+      ],
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**شرط أساسي:** يجب تكوين مصادقة SAML لتمكين توفير SCIM."
       ],
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
         "**شرط أساسي:** لتمكين توفير SCIM، يجب عليك التحقق من ملكية النطاق **${ domainName }**. قد يستغرق هذا التحقق ما يصل إلى ساعة واحدة."
+      ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**المستخدمون:** سيتم تحويل جميع مستخدمي SCIM الذين يوفرهم موفّر الهوية تلقائيًا إلى مستخدمي SSO، وستتمكن من إدارتهم مباشرةً من إعدادات ${ BRAND_NAME }."
       ],
       "Enter the token into your identity provider": [
         "أدخل الرمز في موفر الهوية الخاص بك"
@@ -22085,6 +22245,9 @@
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "لإعادة تفعيل المزامنة مع موفر الهوية، تحتاج إلى إكمال تكامل SCIM مرة أخرى."
+      ],
+      "When you disable SCIM:": [
+        "عند تعطيل SCIM:"
       ]
     },
     "scim: Label": {
@@ -23863,6 +24026,9 @@
       "... waiting": [
         "... في الانتظار"
       ],
+      "Activated": [
+        "مفعل"
+      ],
       "Active": [
         "نشط"
       ],
@@ -23922,6 +24088,29 @@
       ],
       "Verify ${ value }": [
         "التحقق من ${ value }"
+      ]
+    },
+    "Step": {
+      "Configure migration": [
+        "إعداد عملية النقل"
+      ],
+      "Configure users": [
+        "إعداد المستخدمين"
+      ],
+      "Final step": [
+        "الخطوة الأخيرة"
+      ],
+      "Migrate accounts": [
+        "ترحيل الحسابات"
+      ],
+      "Set up secure sending (DKIM)": [
+        "إعداد الإرسال الآمن (DKIM)"
+      ],
+      "Set up secure sending (SPF)": [
+        "إعداد الإرسال الآمن (SPF)"
+      ],
+      "Verify your domain": [
+        "تحقق من نطاقك"
       ]
     },
     "Step in filter modal": {
@@ -24835,6 +25024,9 @@
       "DMARC value copied to clipboard": [
         "تم نسخ قيمة DMARC إلى الحافظة"
       ],
+      "Domain added": [
+        "تمت إضافة النطاق"
+      ],
       "Domain verified": [
         "تم التحقق من النطاق"
       ],
@@ -25144,11 +25336,23 @@
       ]
     },
     "Table header": {
+      "Activated": [
+        "مفعل"
+      ],
+      "Estimated size": [
+        "الحجم المقدر"
+      ],
+      "Migration status": [
+        "حالة النقل"
+      ],
       "Size": [
         "الحجم"
       ],
       "Status": [
         "الحالة"
+      ],
+      "User": [
+        "المستخدم"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25750,6 +25954,9 @@
       "Composing": [
         "الإنشاء"
       ],
+      "Configure migration": [
+        "إعداد عملية النقل"
+      ],
       "Confirm": [
         "تأكيد"
       ],
@@ -26044,6 +26251,9 @@
       ],
       "Domain names": [
         "أسماء النطاق"
+      ],
+      "Domain provider": [
+        "موفّر النطاق"
       ],
       "Don't show again?": [
         "لا تظهر مرة أخرى؟"
@@ -26344,6 +26554,9 @@
       "Gift code": [
         "رمز الهدية"
       ],
+      "Going private": [
+        "الذهاب إلى القطاع الخاص"
+      ],
       "Group": [
         "المجموعة"
       ],
@@ -26433,6 +26646,9 @@
       "Information exposed in breach": [
         "المعلومات المكشوفة في الاختراق"
       ],
+      "Install migration app": [
+        "تثبيت تطبيق النقل"
+      ],
       "Integrations": [
         "التكاملات"
       ],
@@ -26496,9 +26712,6 @@
       "Make your business stand out": [
         "جعل الأعمال تتميز"
       ],
-      "Manage company": [
-        "إدارة الشركة"
-      ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "إدارة الملفات عبر الأجهزة على أنظمة Windows و Mac و Android و iOS."
       ],
@@ -26508,11 +26721,17 @@
       "Messages and composing": [
         "الرسائل والإنشاء"
       ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "نقل الحسابات إلى ${ BRAND_NAME }"
+      ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "ترحيل مؤسستك إلى ${ BRAND_NAME }"
       ],
       "Migration assistant": [
         "مساعد الترحيل"
+      ],
+      "Migration status": [
+        "حالة النقل"
       ],
       "Minicalendar": [
         "التقويم المصغر"
@@ -26550,6 +26769,9 @@
       "Name": [
         "الاسم"
       ],
+      "Need help?": [
+        "هل تحتاج إلى مساعدة؟"
+      ],
       "Need more labels or folders?": [
         "هل تحتاج إلى المزيد من التسميات أو المجلدات؟"
       ],
@@ -26576,6 +26798,9 @@
       ],
       "Notifications": [
         "الإشعارات"
+      ],
+      "Onboard your team": [
+        "إعداد فريقك"
       ],
       "Open": [
         "فتح"
@@ -26868,6 +27093,9 @@
       "Select the way to send this notification": [
         "حدد طريقة إرسال هذا الإشعار"
       ],
+      "Select users to migrate": [
+        "تحديد المستخدمين المراد نقلهم"
+      ],
       "Select when you want this notification to be sent": [
         "حدد متى تريد إرسال هذا الإشعار"
       ],
@@ -26909,6 +27137,9 @@
       ],
       "Set up email forwarding": [
         "إعداد إعادة توجيه البريد الإلكتروني"
+      ],
+      "Set up secure sending (SPF)": [
+        "إعداد الإرسال الآمن (SPF)"
       ],
       "Set up your family account": [
         "إعداد الحساب العائلي"
@@ -26984,6 +27215,9 @@
       ],
       "Snooze:": [
         "جدولة:"
+      ],
+      "Some accounts are not claimed": [
+        "بعض الحسابات لم تتم المطالبة بها"
       ],
       "Some of your encrypted data is locked": [
         "بعض البيانات المشفرة مقفلة"
@@ -27128,6 +27362,9 @@
       "Unlock your data": [
         "إلغاء قفل بياناتك"
       ],
+      "Update records for receiving": [
+        "تحديث سجلات استقبال البريد"
+      ],
       "Upgrade complete!": [
         "اكتملت الترقية!"
       ],
@@ -27197,6 +27434,9 @@
       "Verify it’s you": [
         "تحقق من أنك أنت"
       ],
+      "Verify your domain": [
+        "تحقق من نطاقك"
+      ],
       "Verify your email": [
         "تحقق من بريدك الإلكتروني"
       ],
@@ -27244,6 +27484,9 @@
       ],
       "Welcome to your new password manager!": [
         "مرحبًا بك في مدير كلمات المرور الجديد!"
+      ],
+      "What are you migrating?": [
+        "ما الذي تريد نقله؟"
       ],
       "What changes if you switch to the Free plan": [
         "التغييرات عند الانتقال إلى Free plan"
@@ -27485,6 +27728,9 @@
       "Click here to learn how to create a customized signature with HTML.": [
         "انقر هنا لمعرفة كيفية إنشاء توقيع مخصص باستخدام HTML."
       ],
+      "Collapse invitation message": [
+        "طيّ رسالة الدعوة"
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "قم بنسخ ولصق هذا الرابط في حقل URL لخدمة ACS (خدمة المستهلكين) الخاص بمزود الهوية الخاص بك"
       ],
@@ -27602,6 +27848,9 @@
       "See number of unread messages in the tab icon": [
         "عرض عدد الرسائل غير المقروءة في أيقونة علامة التبويب"
       ],
+      "Select at least one user to start a migration": [
+        "حدّد مستخدمًا واحدًا على الأقل لبدء عملية النقل"
+      ],
       "Set how your list of messages looks like by default.": [
         "تعيين مظهر قائمة الرسائل افتراضيًا."
       ],
@@ -27697,6 +27946,9 @@
       ],
       "User's approximate location (based on their IP address)": [
         "الموقع التقريبي للمستخدم (بناءً على عنوان IP الخاص به)"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "المستخدمون الذين سبق لهم الوصول إلى حسابهم في ${ BRAND_NAME }"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "سيرى المستخدمون شعارك بدلاً من أيقونة ${ BRAND_NAME } عند تسجيل الدخول إلى تطبيقات الويب الخاصة بنا."
@@ -28651,6 +28903,9 @@
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "قد يتجاوز هذا الاستيراد سعة التخزين المتاحة حاليًا في حساب ${ BRAND_NAME } الخاص بك. يرجى التفكير في تخصيص عملية الاستيراد."
       ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "لإكمال عملية النقل، تأكد من الاحتفاظ بسجلات MX الخاصة بـ ${ BRAND_NAME } فقط."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "للأسف، نحن لسنا متصلين بالإنترنت في الوقت الحالي. يرجى إكمال النموذج أدناه لوصف مشكلتك، وسنقوم بالنظر فيها والاتصال بك عندما نعود للعمل."
       ],
@@ -28660,6 +28915,9 @@
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "تم اكتشاف مشكلة في تكوين DNS الخاص بك. يرجى التأكد من مطابقة سجلاتك للتعليمات التالية. إذا استمرت المشكلة، فسيتعين علينا إيقاف تشغيل تسجيل DKIM."
       ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "لاحظنا أن بعض المستخدمين لم يطالبوا بحساباتهم في ${ BRAND_NAME } بعد."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "يجب عليك ${ activateLink } مفتاح المؤسسة قبل إضافة عنوان بريد إلكتروني إلى عضو غير خاص."
       ],
@@ -28668,6 +28926,9 @@
       ],
       "You will not see this import record in the list anymore.": [
         "لن يظهر سجل الاستيراد هذا في القائمة بعد الآن."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "لا يزال إعداد نطاقك يتضمن سجلات MX الخاصة بموفّر آخر."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "تنتهي فترتك التجريبية المجانية في ${ textDate }. ${ action }"

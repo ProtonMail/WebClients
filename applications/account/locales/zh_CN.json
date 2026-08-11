@@ -1032,9 +1032,6 @@
       "Italic": [
         "斜体"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "保留"
       ],
@@ -1101,9 +1098,6 @@
       "Manage communication preferences": [
         "管理通讯偏好设置"
       ],
-      "Manage company": [
-        "管理公司"
-      ],
       "Manage folders": [
         "管理文件夹"
       ],
@@ -1140,8 +1134,8 @@
       "Maybe later": [
         "以后再说"
       ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
+      "Migrate": [
+        "迁移"
       ],
       "More": [
         "更多"
@@ -6980,6 +6974,9 @@
       "Name does not match": [
         "名称不正确"
       ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
+      ],
       "Name required": [
         "名称（必填）"
       ],
@@ -12385,9 +12382,6 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "要启用始终开启 VPN，需要在每台 Mac 上安装配置文件 — ${ VPN_APP_NAME } 客户端会在配置文件就位后自动强制执行该设备配置文件。"
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "要启用始终开启 VPN，设备配置文件需要到达每台设备上的 ${ policiesPath } — ${ VPN_APP_NAME } 客户端会在该位置检测到它并自动强制执行该配置文件。"
-      ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "若要启用后量子保护，您需要完成新后量子加密密钥的生成。"
       ],
@@ -12609,9 +12603,6 @@
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "使用其他 MDM？任何支持部署配置文件的 MDM 均可使用。请参阅您的 MDM 文档，了解如何上传并将其分配给您的设备集群。"
-      ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "使用其他 MDM？任何支持部署文件或执行 PowerShell 脚本的 MDM 均可使用。请参阅您的 MDM 文档以获取更多信息。"
       ],
       "Vault created": [
         "保险库已创建"
@@ -12862,6 +12853,9 @@
       "Yearly": [
         "每年"
       ],
+      "You": [
+        "您"
+      ],
       "You already have a free account": [
         "您的账户已经是免费版了"
       ],
@@ -12939,9 +12933,6 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "作为机构管理员，您可以对账户执行管理操作。"
-      ],
-      "You can now access and manage the company as an administrator.": [
-        "您现在可以作为管理员访问和管理公司。"
       ],
       "You can now close this tab.": [
         "您现在可以关闭此标签页。"
@@ -20029,6 +20020,11 @@
         "次要时区"
       ]
     },
+    "Property": {
+      "key": [
+        "密钥"
+      ]
+    },
     "Property type": {
       "Address": [
         "地址"
@@ -25311,9 +25307,6 @@
       ],
       "Make your business stand out": [
         "让您的企业脱颖而出"
-      ],
-      "Manage company": [
-        "管理公司"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "在 Windows、Mac、Android 和 iOS 设备间管理文件。"
