@@ -29,7 +29,7 @@ const LumoAgentDrawerContext = createContext<LumoAgentDrawerValue | null>(null);
 export const useLumoAgentDrawer = (): LumoAgentDrawerValue => {
     const value = useContext(LumoAgentDrawerContext);
     if (!value) {
-        throw new Error('useLumoAgentDrawer must be used within a LumoMailProvider');
+        throw new Error('useLumoAgentDrawer must be used within a product Lumo provider (e.g. LumoMailProvider)');
     }
     return value;
 };

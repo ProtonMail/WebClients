@@ -11,6 +11,8 @@ import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import type { CustomAction } from '@proton/components/containers/contacts/widget/types';
 import { useReferralDiscover } from '@proton/components/containers/referral/hooks/useReferralDiscover';
+import useConfig from '@proton/components/hooks/useConfig';
+import { APPS } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -53,10 +55,13 @@ interface Props {
 }
 
 const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomActions, onContainerClick }: Props) => {
+    const { APP_NAME } = useConfig();
     const { appInView, iframeSrcMap } = useDrawer();
     const isSecurityCenterEnabled = useSecurityCenter();
     const isVPNDrawerEnabled = useVPNDrawer();
-    const isLumoInMailEnabled = useLumoInMail();
+    const isLumoInMailEnabled = useLumoInMail() && APP_NAME === APPS.PROTONMAIL;
+    const isLumoInDriveEnabled = useFlag('DriveWebLumo') && APP_NAME === APPS.PROTONDRIVE;
+    const isLumoInAppEnabled = isLumoInMailEnabled || isLumoInDriveEnabled;
     const getBreachesCount = useGetBreachesCounts();
     const canDisplayBreachNotifications = useFlag('BreachAlertsNotificationsCommon');
     const { canShowDrawerApp } = useReferralDiscover();
@@ -134,7 +139,7 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
 
                         {canShowDrawerApp && appInView === DRAWER_NATIVE_APPS.REFERRAL && <DrawerReferralView />}
 
-                        {isLumoInMailEnabled && appInView === DRAWER_NATIVE_APPS.LUMO && (
+                        {isLumoInAppEnabled && appInView === DRAWER_NATIVE_APPS.LUMO && (
                             <Suspense fallback={<Loader size="large" />}>
                                 <DrawerLumoView />
                             </Suspense>
