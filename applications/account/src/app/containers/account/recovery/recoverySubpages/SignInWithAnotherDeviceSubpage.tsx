@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getLastModifiedDate } from '@proton/account/recovery/lastModifiedTime';
 import { toggleQrCodeSignIn } from '@proton/account/recovery/userSettingsActions';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
@@ -11,6 +12,7 @@ import SettingsDescription, {
     SettingsDescriptionItem,
 } from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
+import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import SignInWithAnotherDeviceModal from '@proton/components/containers/recovery/SignInWithAnotherDeviceModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
@@ -113,6 +115,11 @@ const SignInWithAnotherDeviceSubpage = () => {
                         {!allowScanningQrCode && <RecoveryWarning />}
                     </DashboardCardContent>
                 </DashboardCard>
+                <LastChanged
+                    className="block mt-2"
+                    date={getLastModifiedDate(userSettings?.QrCodeSignInLastModifiedTime)}
+                    data-testid="account:recovery:qr-code-sign-in:last-changed-date"
+                />
             </DashboardGrid>
         </>
     );

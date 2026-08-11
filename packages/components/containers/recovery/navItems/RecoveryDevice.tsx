@@ -6,6 +6,8 @@ import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/la
 import { IcDeviceDataBackup } from '@proton/icons/icons/IcDeviceDataBackup';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
+import { NavItemStatus } from './NavItemStatus';
+
 const RecoveryDeviceBadge = ({ recoveryFileData }: { recoveryFileData: ReturnType<typeof selectRecoveryFileData> }) => {
     const { hasDeviceRecoveryEnabled, loading } = recoveryFileData;
 
@@ -32,12 +34,12 @@ const RecoveryDevice = ({ to }: Props) => {
             tooltip={c('Tooltip')
                 .t`Save an encryption backup file in this browser to recover your data after a password reset`}
         >
-            <span className="flex items-center gap-2">
+            <NavItemStatus>
                 <RecoveryDeviceBadge recoveryFileData={recoveryFileData} />
                 {recoveryFileData.isAvailableOnDevice && (
                     <span className="text-sm color-weak">{c('Status').t`Available on this device`}</span>
                 )}
-            </span>
+            </NavItemStatus>
         </SettingsNavItem>
     );
 };

@@ -8,16 +8,15 @@ import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamati
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 import { StatusBadge, StatusBadgeStatus } from '../../layout/StatusBadge';
+import { LastChanged } from '../LastChanged';
+import { NavItemStatus } from './NavItemStatus';
 
 interface Props {
     to: string;
 }
 
 type PhoneState =
-    | { type: 'no-phone' }
-    | { type: 'unverified'; phone: string }
-    | { type: 'off' }
-    | { type: 'active'; phone: string };
+    { type: 'no-phone' } | { type: 'unverified'; phone: string } | { type: 'off' } | { type: 'active'; phone: string };
 
 const getPhoneState = (phoneRecovery: ReturnType<typeof selectAccountRecovery>['phoneRecovery']): PhoneState => {
     if (!phoneRecovery.value) {
@@ -65,6 +64,8 @@ const RecoveryPhoneBadge = () => {
 };
 
 const RecoveryPhone = ({ to }: Props) => {
+    const { phoneRecovery } = useSelector(selectAccountRecovery);
+
     return (
         <SettingsNavItem
             to={to}
@@ -72,7 +73,13 @@ const RecoveryPhone = ({ to }: Props) => {
             title={c('Title').t`SMS verification`}
             tooltip={c('Tooltip').t`Allow recovering your account with a one-time code sent to your recovery phone`}
         >
-            <RecoveryPhoneBadge />
+            <NavItemStatus>
+                <RecoveryPhoneBadge />
+                <LastChanged
+                    date={phoneRecovery.value ? phoneRecovery.updateTime : null}
+                    data-testid="account:recovery-phone:last-changed-date"
+                />
+            </NavItemStatus>
         </SettingsNavItem>
     );
 };

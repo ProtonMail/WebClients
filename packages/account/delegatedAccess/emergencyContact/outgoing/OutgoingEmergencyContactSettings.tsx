@@ -17,6 +17,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useConfig from '@proton/components/hooks/useConfig';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
@@ -320,6 +321,11 @@ export const OutgoingEmergencyContactSettings = () => {
                     </DashboardCardContent>
                 </DashboardCard>
             )}
+            <LastChanged
+                className="block mt-2"
+                date={controller.outgoingDelegatedAccess.emergencyContacts.lastModifiedTime}
+                data-testid="account:recovery:emergency-contacts:last-changed-date"
+            />
         </>
     );
 };
