@@ -331,6 +331,7 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
         goToVersion,
         hasUnseenRevision,
         closePanel,
+        isSelectedVersionProvisional,
     } = useArtifactContext();
     const [showLineNumbers, setShowLineNumbers] = useState(false);
     const [copySuccess, setCopySuccess] = useState(false);
@@ -366,7 +367,7 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
     };
 
     return (
-        <div className="artifact-panel flex flex-column h-full overflow-hidden w-full">
+        <div className="artifact-panel flex flex-column h-full overflow-hidden w-full rounded-xl">
             <PanelHeader
                 type={artifact.type}
                 language={artifact.language}
@@ -401,7 +402,7 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
                     artifactId={artifact.id}
                     title={artifact.title}
                     artifactType={artifact.type}
-                    isGenerating={isGenerating}
+                    isGenerating={isGenerating || isSelectedVersionProvisional}
                 />
             </div>
         </div>
