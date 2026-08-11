@@ -16,6 +16,7 @@ import AccountLockedUpsellForm from '@proton/components/components/upsell/modals
 import useInstance from '@proton/hooks/useInstance';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
+import { submitExternalCaptcha } from '@proton/shared/lib/api/verification';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
@@ -149,6 +150,22 @@ const Verify = () => {
                 throw e;
             }
         } else {
+            // External browser: grant a redeemable proof on the HV token so the app's retry can redeem
+            // it. Skipped when embedded - there the parent app receives the captcha token and retries
+            // in-process, and consuming it here would break that flow.
+            if (type === 'captcha' && !isEmbedded && search.token) {
+                try {
+                    await api({ ...submitExternalCaptcha(search.token, token), silence: true });
+                } catch (e: any) {
+                    createNotification({
+                        type: 'error',
+                        text: getApiErrorMessage(e) || c('Error').t`Unknown error`,
+                    });
+
+                    throw e;
+                }
+            }
+
             broadcast({
                 type: MessageType.HUMAN_VERIFICATION_SUCCESS,
                 payload: { token, type },

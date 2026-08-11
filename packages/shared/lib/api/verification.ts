@@ -12,3 +12,9 @@ export const verifyVerificationCode = (token: string, method: string, code: stri
     url: `core/v4/verification/${method}/${token}/${code}`,
     method: 'post',
 });
+
+export const submitExternalCaptcha = (token: string, captchaToken: string) => ({
+    url: `core/v4/verification/captcha/${token}`,
+    method: 'post',
+    data: { CaptchaToken: captchaToken },
+});
