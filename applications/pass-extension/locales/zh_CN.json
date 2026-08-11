@@ -1406,9 +1406,6 @@
       "Unknown error.": [
         "未知错误"
       ],
-      "Unknown invite": [
-        "无效的邀请"
-      ],
       "Unknown item": [
         "未知项目"
       ],
@@ -2208,7 +2205,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"

@@ -1382,9 +1382,6 @@
       "Unknown error.": [
         "Lỗi không xác định."
       ],
-      "Unknown invite": [
-        "Lời mời không xác định"
-      ],
       "Unknown item": [
         "Mục không xác định"
       ],
@@ -2181,7 +2178,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
+        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
       ],
       "Moving items": [
         "Đang chuyển mục"
