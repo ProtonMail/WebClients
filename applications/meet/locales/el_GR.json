@@ -148,9 +148,6 @@
       "Add another account": [
         "Προσθήκη επιπλέον λογαριασμού"
       ],
-      "Admit": [
-        "Αποδοχή"
-      ],
       "Admit ${ participantName }": [
         "Αποδοχή ${ participantName }"
       ],
@@ -1863,6 +1860,9 @@
       "Failed to download recording": [
         "Αποτυχία λήψης ηχογράφησης"
       ],
+      "Failed to edit meeting": [
+        "Αποτυχία επεξεργασίας σύσκεψης"
+      ],
       "Failed to edit room name": [
         "Αποτυχία επεξεργασίας ονόματος αίθουσας"
       ],
@@ -2214,6 +2214,12 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
       ],
+      "Admit": [
+        "Αποδοχή"
+      ],
+      "Admitting": [
+        "Αποδοχή"
+      ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Λειτουργία για προχωρημένους: ρυθμίστε κάθε σταθερά θολώματος για την επόμενη έκδοση και, στη συνέχεια, εφαρμόστε για να δημιουργήσετε ξανά την προεπισκόπηση. Οι παρακάμψεις έχουν προτεραιότητα έναντι των τιμών αρχείου και Unleash."
       ],
@@ -2490,6 +2496,9 @@
       "Meeting is decrypting...": [
         "Η σύσκεψη αποκρυπτογραφείται..."
       ],
+      "Meeting is full": [
+        "Η σύσκεψη είναι πλήρης"
+      ],
       "Meeting link": [
         "Σύνδεσμος σύσκεψης"
       ],
@@ -2667,6 +2676,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
+      "Rejecting": [
+        "Απόρριψη"
+      ],
       "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
         "Εκτελέστε τη ζωντανή κάμερά σας μέσω του προσαρμοσμένου επεξεργαστή φόντου. Επιλέξτε ένα απλό χρώμα ή ανεβάστε μια εικόνα για να τη χρησιμοποιήσετε ως φόντο."
       ],
@@ -2738,6 +2750,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Αυτό είναι μια κρυπτογραφημένη συνομιλία από άκρη σε άκρη με προσωρινά μηνύματα, τα οποία εξαφανίζονται στο τέλος της κλήσης."
+      ],
+      "This meeting has a waiting room": [
+        "Αυτή η σύσκεψη έχει αίθουσα αναμονής"
       ],
       "This meeting is being recorded": [
         "Αυτή η συνεδρία καταγράφεται"
@@ -2819,6 +2834,9 @@
       ],
       "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
         "Αναμονή για την έναρξη της σύσκεψης από τον οικοδεσπότη. Θα συμμετάσχετε όταν ο οικοδεσπότης ξεκινήσει τη σύσκεψη και σας δεχτεί."
+      ],
+      "Waiting since ${ receivedTime }": [
+        "Αναμονή από ${ receivedTime }"
       ],
       "Warning": [
         "Προειδοποίηση"

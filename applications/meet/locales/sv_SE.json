@@ -148,9 +148,6 @@
       "Add another account": [
         "Lägg till ett annat konto"
       ],
-      "Admit": [
-        "Släpp in"
-      ],
       "Admit ${ participantName }": [
         "Släpp in ${ participantName }"
       ],
@@ -1857,6 +1854,9 @@
       "Failed to download recording": [
         "Misslyckades att ladda ner inspelning"
       ],
+      "Failed to edit meeting": [
+        "Misslyckades att redigera möte"
+      ],
       "Failed to edit room name": [
         "Misslyckades att redigera rumsnamn"
       ],
@@ -2192,6 +2192,10 @@
         "${ totalParticipantCount } deltagare",
         "${ totalParticipantCount } deltagare"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "${ waitingRoomParticipantsCount } person väntar",
+        "${ waitingRoomParticipantsCount } personer väntar"
+      ],
       "(You)": [
         "(Du)"
       ],
@@ -2474,6 +2478,9 @@
       "Meeting is decrypting...": [
         "Mötet dekrypteras …"
       ],
+      "Meeting is full": [
+        "Möte är fullt"
+      ],
       "Meeting link": [
         "Möteslänk"
       ],
@@ -2651,6 +2658,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
+      "Rejecting": [
+        "Avisar"
+      ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Schemalägg ditt nästa möte. Skapa ett konto för att schemalägga möten med din kalender."
       ],
@@ -2719,6 +2729,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Det här är en end-to-end-krypterad chatt med efemära meddelanden som försvinner när samtalet avslutas."
+      ],
+      "This meeting has a waiting room": [
+        "Detta möte har ett väntrum"
       ],
       "This meeting is being recorded": [
         "Detta möte spelas in"
@@ -2794,6 +2807,9 @@
       ],
       "View ": [
         "Visa "
+      ],
+      "Waiting since ${ receivedTime }": [
+        "Väntar sedan ${ receivedTime }"
       ],
       "Warning": [
         "Varning"
@@ -3130,6 +3146,9 @@
       ],
       "Use simple selfie segmentation": [
         "Använd enkel selfie-segmentering"
+      ],
+      "Use waiting room with a paid plan": [
+        "Använd väntrum med ett betalt paket"
       ],
       "Verification code": [
         "Verifieringskod"

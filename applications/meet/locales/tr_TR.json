@@ -148,9 +148,6 @@
       "Add another account": [
         "Başka bir hesap ekle"
       ],
-      "Admit": [
-        "Kabul et"
-      ],
       "Admit ${ participantName }": [
         "${ participantName } katılımcısını kabul et"
       ],
@@ -1863,6 +1860,9 @@
       "Failed to download recording": [
         "Kayıt indirilemedi"
       ],
+      "Failed to edit meeting": [
+        "Görüşme düzenlenemedi"
+      ],
       "Failed to edit room name": [
         "Oda adı düzenlenemedi"
       ],
@@ -2214,6 +2214,12 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
       ],
+      "Admit": [
+        "Kabul et"
+      ],
+      "Admitting": [
+        "İzin veriliyor"
+      ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Gelişmiş kip: Sonraki sürümün bulanıklık sabitlerini ayarlayın ardından ön izlemeyi yeniden oluşturmak için uygulayın. Bu ayarlar dosyaya ve belirtilmemiş değerlere göre önceliklidir."
       ],
@@ -2490,6 +2496,9 @@
       "Meeting is decrypting...": [
         "Toplantının şifresi çözülüyor..."
       ],
+      "Meeting is full": [
+        "Görüşme dolu"
+      ],
       "Meeting link": [
         "Görüşme bağlantısı"
       ],
@@ -2667,6 +2676,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
+      "Rejecting": [
+        "Reddediliyor"
+      ],
       "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
         "Canlı kamera görüntünüzde özel arka plan işleyici kullanın. Düz bir renk seçin ya da arka plan olarak kullanılacak bir görsel yükleyin."
       ],
@@ -2738,6 +2750,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Bu şifrelenmiş sohbette, çağrı sonunda kaybolacak olan süreli iletiler kullanılıyor."
+      ],
+      "This meeting has a waiting room": [
+        "Bu görüşmenin bekleme odası var"
       ],
       "This meeting is being recorded": [
         "Bu görüşme kaydediliyor"
@@ -2819,6 +2834,9 @@
       ],
       "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
         "Görüşme sahibinin görüşmeyi başlatması bekleniyor. Görüşme sahibi görüşmeyi başlattıktan sonra sizi kabul ettiğinde katılacaksınız."
+      ],
+      "Waiting since ${ receivedTime }": [
+        "${ receivedTime } zamanından beri bekliyor"
       ],
       "Warning": [
         "Uyarı"
