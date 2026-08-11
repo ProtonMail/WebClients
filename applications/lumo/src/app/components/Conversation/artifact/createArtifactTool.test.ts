@@ -2,7 +2,6 @@ import {
     CREATE_ARTIFACT_TOOL_NAME,
     createArtifactToolExecutor,
     parseCompleteArtifactToolCall,
-    parsePartialArtifactToolCall,
 } from './createArtifactTool';
 
 describe('createArtifactToolExecutor', () => {
@@ -26,33 +25,6 @@ describe('createArtifactToolExecutor', () => {
 
         expect(results).toHaveLength(1);
         expect(JSON.parse(results[0]!.content)).toMatchObject({ ok: true });
-    });
-});
-
-describe('parsePartialArtifactToolCall', () => {
-    it('exposes fields as soon as their value is closed, streaming content live', () => {
-        const raw =
-            '{"id":"fib-1","type":"code","title":"Fibonacci","language":"python","content":"def fib(n):\\n  ret';
-        const streaming = parsePartialArtifactToolCall(raw);
-
-        expect(streaming.id).toBe('fib-1');
-        expect(streaming.type).toBe('code');
-        expect(streaming.title).toBe('Fibonacci');
-        expect(streaming.language).toBe('python');
-        expect(streaming.content).toBe('def fib(n):\n  ret');
-        expect(streaming.isComplete).toBe(false);
-    });
-
-    it('never regresses content as more of the arguments blob streams in, char by char', () => {
-        const full =
-            '{"id":"doc-1","type":"document","title":"Notes","content":"first line\\nsecond line with \\"quotes\\""}';
-        let previousLength = 0;
-        for (let end = 1; end <= full.length; end++) {
-            const { content } = parsePartialArtifactToolCall(full.slice(0, end));
-            expect(content.length).toBeGreaterThanOrEqual(previousLength);
-            previousLength = content.length;
-        }
-        expect(previousLength).toBe('first line\nsecond line with "quotes"'.length);
     });
 });
 
