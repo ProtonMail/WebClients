@@ -5,6 +5,7 @@ import {
     accountAppConfig,
     buildSubscription,
     calendarAppConfig,
+    docsAppConfig,
     driveAppConfig,
     eligibleCurrency,
     freeUser,
@@ -24,10 +25,6 @@ const baseProps = {
 };
 
 describe('q3Sale2026UnlimitedToDuo eligibility', () => {
-    beforeEach(() => {
-        setPathname('/');
-    });
-
     describe('audience', () => {
         it.each([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS])(
             'should be eligible for Unlimited users on cycle %s',
@@ -38,7 +35,7 @@ describe('q3Sale2026UnlimitedToDuo eligibility', () => {
             }
         );
 
-        it.each([PLANS.MAIL, PLANS.DUO, PLANS.FAMILY, PLANS.DRIVE, PLANS.PASS, PLANS.VPN2024])(
+        it.each([PLANS.MAIL, PLANS.DRIVE, PLANS.DUO, PLANS.FAMILY, PLANS.PASS, PLANS.VPN2024])(
             'should not be eligible on %s',
             (plan) => {
                 expect(getIsEligible({ ...baseProps, subscription: buildSubscription({ plan }) })).toBe(false);
@@ -61,27 +58,51 @@ describe('q3Sale2026UnlimitedToDuo eligibility', () => {
     });
 
     describe('app scope', () => {
-        it('should be eligible in the mail and calendar apps', () => {
-            const subscription = buildSubscription({ plan: PLANS.BUNDLE });
-            expect(getIsEligible({ ...baseProps, protonConfig: mailAppConfig, subscription })).toBe(true);
-            expect(getIsEligible({ ...baseProps, protonConfig: calendarAppConfig, subscription })).toBe(true);
-        });
-
-        it('should be eligible in the account app under the mail and calendar dashboards', () => {
-            const subscription = buildSubscription({ plan: PLANS.BUNDLE });
-
-            setPathname('/mail/dashboard');
-            expect(getIsEligible({ ...baseProps, protonConfig: accountAppConfig, subscription })).toBe(true);
-
-            setPathname('/calendar/dashboard');
-            expect(getIsEligible({ ...baseProps, protonConfig: accountAppConfig, subscription })).toBe(true);
-        });
-
-        it('should not be eligible in the drive app', () => {
+        // The campaign runs in Mail, Calendar and Drive, plus the matching account dashboards. The
+        // audience is defined by plan rather than by app, so the check is the union of all three: which
+        // app the user was in is recorded in the tracking ref instead.
+        it.each([mailAppConfig, calendarAppConfig, driveAppConfig])('should be eligible in %o', (protonConfig) => {
             expect(
                 getIsEligible({
                     ...baseProps,
-                    protonConfig: driveAppConfig,
+                    protonConfig,
+                    subscription: buildSubscription({ plan: PLANS.BUNDLE }),
+                })
+            ).toBe(true);
+        });
+
+        it.each(['/mail/dashboard', '/calendar/dashboard', '/drive/dashboard'])(
+            'should be eligible in the account app under %s',
+            (pathname) => {
+                setPathname(pathname);
+
+                expect(
+                    getIsEligible({
+                        ...baseProps,
+                        protonConfig: accountAppConfig,
+                        subscription: buildSubscription({ plan: PLANS.BUNDLE }),
+                    })
+                ).toBe(true);
+            }
+        );
+
+        it('should not be eligible in apps outside the campaign', () => {
+            expect(
+                getIsEligible({
+                    ...baseProps,
+                    protonConfig: docsAppConfig,
+                    subscription: buildSubscription({ plan: PLANS.BUNDLE }),
+                })
+            ).toBe(false);
+        });
+
+        it('should not be eligible in the account app with no product in the path', () => {
+            setPathname('/');
+
+            expect(
+                getIsEligible({
+                    ...baseProps,
+                    protonConfig: accountAppConfig,
                     subscription: buildSubscription({ plan: PLANS.BUNDLE }),
                 })
             ).toBe(false);

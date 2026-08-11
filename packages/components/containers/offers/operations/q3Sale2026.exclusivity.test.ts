@@ -48,9 +48,12 @@ const getMatchingOperations = (user: UserModel, subscription?: Subscription) => 
 };
 
 /**
- * The five Q3 audiences are disjoint by plan, so any given user should match exactly one offer.
- * Two offers matching the same user would mean whichever happens to be ordered first in
- * useQ3Sale2026() silently wins — an eligibility bug rather than an ordering preference.
+ * All five offers share the same app scope (Mail, Calendar, Drive and their account dashboards), so
+ * within that scope the audiences are separated purely by plan: Unlimited / Duo / Family monthly /
+ * single-product paid / free. Any given user should match exactly one offer.
+ *
+ * Two offers matching the same user would mean whichever is ordered first in useQ3Sale2026() silently
+ * wins, which is an eligibility bug rather than an ordering preference.
  */
 describe('q3Sale2026 offers are mutually exclusive', () => {
     beforeEach(() => {
@@ -61,7 +64,7 @@ describe('q3Sale2026 offers are mutually exclusive', () => {
         expect(getMatchingOperations(freeUser)).toEqual(['free-to-unlimited']);
     });
 
-    it.each([PLANS.MAIL, PLANS.VPN, PLANS.VPN2024, PLANS.PASS, PLANS.DRIVE, PLANS.DRIVE_1TB])(
+    it.each([PLANS.MAIL, PLANS.DRIVE, PLANS.DRIVE_1TB, PLANS.VPN, PLANS.VPN2024, PLANS.PASS])(
         'matches only plus-to-unlimited for a %s user',
         (plan) => {
             expect(getMatchingOperations(paidUser, buildSubscription({ plan }))).toEqual(['plus-to-unlimited']);
@@ -92,11 +95,13 @@ describe('q3Sale2026 offers are mutually exclusive', () => {
         ).toEqual(['family-monthly-to-yearly']);
     });
 
-    it.each([CYCLE.YEARLY, CYCLE.TWO_YEARS])('matches nothing for a Family user on cycle %s', (cycle) => {
-        expect(getMatchingOperations(paidUser, buildSubscription({ plan: PLANS.FAMILY, cycle }))).toEqual([]);
-    });
+    describe('nobody is eligible', () => {
+        it.each([CYCLE.YEARLY, CYCLE.TWO_YEARS])('matches nothing for a Family user on cycle %s', (cycle) => {
+            expect(getMatchingOperations(paidUser, buildSubscription({ plan: PLANS.FAMILY, cycle }))).toEqual([]);
+        });
 
-    it('matches nothing for a visionary user', () => {
-        expect(getMatchingOperations(paidUser, buildSubscription({ plan: PLANS.VISIONARY }))).toEqual([]);
+        it('matches nothing for a visionary user', () => {
+            expect(getMatchingOperations(paidUser, buildSubscription({ plan: PLANS.VISIONARY }))).toEqual([]);
+        });
     });
 });

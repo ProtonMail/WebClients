@@ -7,6 +7,7 @@ import type { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
+import type { OfferProduct } from './helpers/getOfferProduct';
 import type { Q3Sale2026OfferId } from './operations/q3Sale2026offers';
 
 export type OfferId = 'go-unlimited-2022' | 'mail-trial-2023' | 'pass-family-plan-2024-yearly' | Q3Sale2026OfferId;
@@ -90,9 +91,16 @@ export interface Feature {
 export interface Deal {
     couponCode?: COUPON_CODES;
     ref: string;
+    /**
+     * Derives the tracking ref from the plan the user is currently on and the app they are in, both of
+     * which are only known at runtime. Format is
+     * `offer_<campaign>_<currentPlan>_<offerPlan>_<app>_web`. Falls back to `ref` when absent.
+     */
+    getRef?: (product: OfferProduct, currentPlan: string) => string;
     cycle: CYCLE;
     isLifeTime?: boolean;
-    features?: () => Feature[];
+    /** Receives the current product for offers that vary their copy by app. */
+    features?: (product?: OfferProduct) => Feature[];
     getCTAContent?: () => string;
     buttonSize?: ButtonLikeSize;
     planIDs: PlanIDs; // planIDs used to subscribe

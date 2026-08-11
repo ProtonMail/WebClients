@@ -5,6 +5,7 @@ import {
     accountAppConfig,
     buildSubscription,
     calendarAppConfig,
+    docsAppConfig,
     driveAppConfig,
     eligibleCurrency,
     freeUser,
@@ -24,10 +25,6 @@ const baseProps = {
 };
 
 describe('q3Sale2026FreeToUnlimited eligibility', () => {
-    beforeEach(() => {
-        setPathname('/');
-    });
-
     describe('audience', () => {
         it('should be eligible for a free user with no subscription', () => {
             expect(getIsEligible({ ...baseProps })).toBe(true);
@@ -45,26 +42,50 @@ describe('q3Sale2026FreeToUnlimited eligibility', () => {
     });
 
     describe('app scope', () => {
-        it('should be eligible in the mail and calendar apps', () => {
-            expect(getIsEligible({ ...baseProps, protonConfig: mailAppConfig })).toBe(true);
-            expect(getIsEligible({ ...baseProps, protonConfig: calendarAppConfig })).toBe(true);
+        // The campaign runs in Mail, Calendar and Drive, plus the matching account dashboards. The
+        // audience is defined by plan rather than by app, so the check is the union of all three: which
+        // app the user was in is recorded in the tracking ref instead.
+        it.each([mailAppConfig, calendarAppConfig, driveAppConfig])('should be eligible in %o', (protonConfig) => {
+            expect(
+                getIsEligible({
+                    ...baseProps,
+                    protonConfig,
+                })
+            ).toBe(true);
         });
 
-        it('should be eligible in the account app under the mail and calendar dashboards', () => {
-            setPathname('/mail/dashboard');
-            expect(getIsEligible({ ...baseProps, protonConfig: accountAppConfig })).toBe(true);
+        it.each(['/mail/dashboard', '/calendar/dashboard', '/drive/dashboard'])(
+            'should be eligible in the account app under %s',
+            (pathname) => {
+                setPathname(pathname);
 
-            setPathname('/calendar/dashboard');
-            expect(getIsEligible({ ...baseProps, protonConfig: accountAppConfig })).toBe(true);
+                expect(
+                    getIsEligible({
+                        ...baseProps,
+                        protonConfig: accountAppConfig,
+                    })
+                ).toBe(true);
+            }
+        );
+
+        it('should not be eligible in apps outside the campaign', () => {
+            expect(
+                getIsEligible({
+                    ...baseProps,
+                    protonConfig: docsAppConfig,
+                })
+            ).toBe(false);
         });
 
-        it('should not be eligible in the drive app', () => {
-            expect(getIsEligible({ ...baseProps, protonConfig: driveAppConfig })).toBe(false);
-        });
+        it('should not be eligible in the account app with no product in the path', () => {
+            setPathname('/');
 
-        it('should not be eligible in the account app under the drive dashboard', () => {
-            setPathname('/drive/dashboard');
-            expect(getIsEligible({ ...baseProps, protonConfig: accountAppConfig })).toBe(false);
+            expect(
+                getIsEligible({
+                    ...baseProps,
+                    protonConfig: accountAppConfig,
+                })
+            ).toBe(false);
         });
     });
 
@@ -144,8 +165,8 @@ describe('q3Sale2026FreeToUnlimited eligibility', () => {
     });
 
     describe('external subscriptions', () => {
-        // Free users have no subscription to be managed externally, so this offer deliberately
-        // does not exclude mobile subscribers — matching the spec.
+        // Free users have no subscription to be managed externally, so this offer deliberately does
+        // not exclude mobile subscribers, matching the spec.
         it.each([SubscriptionPlatform.Android, SubscriptionPlatform.iOS])(
             'should still evaluate an externally managed %s subscription on plan checks alone',
             (external) => {
