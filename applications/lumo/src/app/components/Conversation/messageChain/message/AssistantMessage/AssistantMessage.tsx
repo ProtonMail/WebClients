@@ -282,12 +282,13 @@ const AssistantMessage = ({
         }
     }, [isLastMessage, isGenerating, resetPanelUserClosed]);
 
-    const wasFinishedRef = useRef(isFinishedGenerating);
+    const hasAutoOpenedRef = useRef(false);
     useEffect(() => {
-        const justFinished = !wasFinishedRef.current && isFinishedGenerating;
-        wasFinishedRef.current = isFinishedGenerating;
+        hasAutoOpenedRef.current = false;
+    }, [message.id]);
 
-        if (!isLastMessage || !justFinished || completeArtifacts.length === 0 || !completeArtifacts[0]) {
+    useEffect(() => {
+        if (!isLastMessage || completeArtifacts.length === 0 || !completeArtifacts[0] || hasAutoOpenedRef.current) {
             return;
         }
 
@@ -305,17 +306,9 @@ const AssistantMessage = ({
             return;
         }
 
+        hasAutoOpenedRef.current = true;
         openArtifact(artifact.id, versionIndex);
-    }, [
-        isLastMessage,
-        isFinishedGenerating,
-        completeArtifacts,
-        registry,
-        message.id,
-        panelUserClosed,
-        selectedId,
-        openArtifact,
-    ]);
+    }, [isLastMessage, completeArtifacts, registry, message.id, panelUserClosed, selectedId, openArtifact]);
 
     // Extract search results for legacy sources button
     const searchResults = useMemo(() => extractSearchResults(blocks), [blocks]);
