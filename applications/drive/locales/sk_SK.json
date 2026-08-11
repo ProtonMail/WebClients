@@ -361,7 +361,7 @@
         "Zmazať túto verziu"
       ],
       "Delete version": [
-        "Zmazať verziu"
+        "Vymazať verziu"
       ],
       "Delete without saving": [
         "Vymazať bez uloženia"
@@ -373,7 +373,7 @@
         "Detaily"
       ],
       "Diagnostics": [
-        "Diagnostika"
+        "Diagnostiky"
       ],
       "Discard": [
         "Zahodiť"
@@ -421,7 +421,7 @@
         "Stiahnuť pre Windows"
       ],
       "Download info": [
-        "Stiahnuť informácie"
+        "Informácie o sťahovaní"
       ],
       "Download logs": [
         "Záznamy sťahovania"
@@ -430,7 +430,7 @@
         "Stiahnuť výsledky"
       ],
       "Drive Locked": [
-        "Disk uzamknutý"
+        "Jednotka uzamknutá"
       ],
       "Edit": [
         "Upraviť"
@@ -487,7 +487,7 @@
         "Exportovať výber ako .vcf"
       ],
       "Export system log": [
-        "Exportovať systémový log"
+        "Exportovať systémový záznam"
       ],
       "Fit to window": [
         "Prispôsobiť oknu"
@@ -619,7 +619,7 @@
         "Zvýšiť"
       ],
       "Join album": [
-        "Pripojiť album"
+        "Pridať sa do albumu"
       ],
       "Keep my subscription": [
         "Ponechať moje predplatné"
@@ -727,7 +727,7 @@
         "Pomenujte svoj album"
       ],
       "New": [
-        "Nový"
+        "Nové"
       ],
       "New album": [
         "Nový album"
@@ -838,7 +838,7 @@
         "Odstrániť tlačidlo"
       ],
       "Remove device": [
-        "Odstrániť zariadenie"
+        "Odstráňte zariadenie"
       ],
       "Remove from album": [
         "Odstrániť z albumu"
@@ -961,7 +961,7 @@
         "Vyhľadať krajiny"
       ],
       "Search drive": [
-        "Prehľadávať disk"
+        "Prehľadávať jednotku"
       ],
       "See how": [
         "Pozrieť ako"
@@ -1072,13 +1072,13 @@
         "Preskočiť overenie"
       ],
       "Start": [
-        "Štart"
+        "Spustiť"
       ],
       "Start import": [
         "Spustiť import"
       ],
       "Start recovering": [
-        "Začať obnovenie"
+        "Spustiť obnovu"
       ],
       "Stay": [
         "Zostať"
@@ -4695,7 +4695,7 @@
         "Chyba: ${ errorMessage }"
       ],
       "Internal server error": [
-        "Interná chyba serveru"
+        "Interná chyba servera"
       ],
       "Not found": [
         "Nenájdené"
@@ -5787,7 +5787,7 @@
         "30-dňová záruka vrátenia peňazí."
       ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
-        "K dispozícii je nová verzia aplikácie ${ DRIVE_APP_NAME }. Na pokračovanie vo vyhľadávaní obnovte stránku, prosím."
+        "K dispozícii je nová verzia aplikácie ${ DRIVE_APP_NAME }. Pre pokračovanie vo vyhľadávaní obnovte stránku, prosím."
       ],
       "A number will be added to the filename": [
         "K názvu súboru bude pridané číslo"
@@ -5934,7 +5934,7 @@
         "Zostatok z vášho predchádzajúceho predplatného"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "K vašim súborom nemáme prístup a nemôžeme ich  dešifrovať, pretože ${ DRIVE_APP_NAME } je end-to-end šifrovaný. Na odomknutie vášho disku po resete hesla musíte mať jedno z nasledovných:"
+        "K vašim súborom nemáme prístup a nemôžeme ich dešifrovať, pretože ${ DRIVE_APP_NAME } je end-to-end šifrovaný. Na odomknutie vášho disku po resete hesla musíte mať jedno z nasledovných:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Pred vyžiadaním nového overovacieho kódu skontrolujte priečinok spam a skontrolujte, či je adresa ${ strong } správna."
@@ -6159,7 +6159,7 @@
         "Prechod na nižšiu verziu ukončí všetky pripojenia k plateným serverom ${ VPN_APP_NAME }."
       ],
       "Download ${ name } app": [
-        "Prevziať aplikáciu ${ name }"
+        "Stiahnuť aplikáciu ${ name }"
       ],
       "Download current logs": [
         "Stiahnuť aktuálne záznamy"
@@ -6186,7 +6186,7 @@
         "Sem presuňte súbor na nahranie"
       ],
       "Drop files here": [
-        "Presuňte sem súbory"
+        "Presuňte súbory sem"
       ],
       "Drop files here to upload or click on the upload button": [
         "Ak chcete nahrať súbory, vložte ich sem alebo kliknite na tlačidlo nahrať"
@@ -6618,7 +6618,7 @@
         "Nebola nájdená žiadna skupina"
       ],
       "No issue found": [
-        "Žiadny problém sa nenašiel"
+        "Nebol nájdený žiadny problém"
       ],
       "No payment is required at this time.": [
         "Momentálne nie je nutná žiadna platba."
@@ -6876,7 +6876,7 @@
         "Súbory obnovené ${ formattedDate }"
       ],
       "Restoring Photos... Please keep the tab open": [
-        "Obnovovanie fotografií... Ponechajte prosím kartu otvorenú"
+        "Obnovovanie fotografií... Ponechajte kartu otvorenú, prosím"
       ],
       "Running diagnostics...": [
         "Prebieha diagnostika..."
@@ -6891,7 +6891,7 @@
         "Naskenujte QR kód pomocou mobilného zariadenia"
       ],
       "Scan to download": [
-        "Naskenujte na prevzatie"
+        "Naskenovaním stiahnite"
       ],
       "Search cannot be enabled in this browser": [
         "V tomto prehliadači nie je možné povoliť vyhľadávanie"
@@ -6954,7 +6954,7 @@
         "Zdieľajte súbory pomocou odkazov"
       ],
       "Shared": [
-        "Zdieľaný"
+        "Zdieľané"
       ],
       "Shared by ": [
         "Zdieľané používateľom "
@@ -7308,7 +7308,7 @@
         "Zvýšte si úroveň, aby ste si zachovali svoje ${ planTitle } výhody."
       ],
       "upgrade your storage": [
-        "upgradujte svoje úložisko"
+        "zväčšte svoje úložisko"
       ],
       "Upload Failed": [
         "Nahrávanie zlyhalo"
@@ -7416,7 +7416,7 @@
         "Čo si prajete urobiť?"
       ],
       "What would you like to do?": [
-        "Čo si prajete urobiť?"
+        "Čo by ste chceli urobiť?"
       ],
       "When working remotely": [
         "Pri práci na diaľku"
@@ -7559,8 +7559,8 @@
       "You will need to save it again from the public link page.": [
         "Budete ho musieť znova uložiť zo stránky s verejným odkazom",
         "Budete ich musieť znova uložiť zo stránky s verejným odkazom",
-        "Budete ich musieť znova uložiť zo stránky s verejným odkazom",
-        "Budete ich musieť znova uložiť zo stránky s verejným odkazom"
+        "Budete ich musieť znova uložiť zo stránky s verejným odkazom.",
+        "Budete ich musieť znova uložiť zo stránky s verejným odkazom."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelom overenia platby budete presmerovaný na PayPal."
@@ -7674,7 +7674,7 @@
         "Vaše predchádzajúce heslo"
       ],
       "Your previous recovery phrase": [
-        "Vaša predchádzajúca obnovovacia fráza"
+        "Vaša predchádzajúca fráza na obnovenie"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každý ${ cycle } mesiac.",
@@ -7752,7 +7752,7 @@
         "Presunúť ${ folderCount } priečinok",
         "Presunúť ${ folderCount } priečinky",
         "Presunúť ${ folderCount } priečinkov",
-        "Presunúť ${ folderCount } priečinka"
+        "Presunúť ${ folderCount } priečinkov"
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "Ak ste stratili prístup k aplikácii na overovanie, môžete použiť jeden zo 16 záložných obnovovacích kódov, ktoré ste dostali pri nastavovaní dvojfaktorovej autentifikácie. ${ learnMoreLink }"
@@ -8056,6 +8056,12 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
         "Po zmene vášho prístupu na čitateľa nebudete môcť zdieľať „${ fileName }“. Vlastník alebo redaktor s oprávnením na zdieľanie vám môže obnoviť prístup na úpravy. Túto zmenu nemôžete sami vrátiť späť."
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } značka"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Na dokončenie tejto transakcie vás presmerujeme do ${ IDEAL_BRAND_NAME } v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ]
     },
     "info": {
@@ -8158,7 +8164,7 @@
     },
     "Label": {
       "# of downloads": [
-        "počet stiahnutí"
+        "# stiahnutí"
       ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } z ${ albumProgress.total }"
@@ -8185,7 +8191,7 @@
         "${ nbYear } rokov"
       ],
       "(Expired)": [
-        "(Expirované)"
+        "(Exspirované)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
@@ -8359,10 +8365,10 @@
         "Odstrániť"
       ],
       "Delete drive?": [
-        "Vymazať disk?",
-        "Vymazať disky?",
-        "Vymazať disky?",
-        "Vymazať disky?"
+        "Vymazať jednotku?",
+        "Vymazať jednotky?",
+        "Vymazať jednotky?",
+        "Vymazať jednotky?"
       ],
       "Delete link and remove access for everyone": [
         "Odstrániť odkaz a zrušiť pre všetkých prístup"
@@ -8371,7 +8377,7 @@
         "Odstrániť informácie súvisiace s obnovením."
       ],
       "Deleted": [
-        "Odstránený"
+        "Vymazané"
       ],
       "Device": [
         "Zariadenie"
@@ -8677,7 +8683,7 @@
         "Nastaviť metódu obnovenia"
       ],
       "Share a file, folder, or album": [
-        "Zdieľanie súboru, priečinka alebo albumu"
+        "Zdieľajte súbory, priečinky alebo albumy"
       ],
       "Shared": [
         "Zdieľané"
@@ -8758,7 +8764,7 @@
         "Typ"
       ],
       "Unlock drive": [
-        "Odomknúť disk"
+        "Odomknúť jednotku"
       ],
       "Unlock drive (recommended)": [
         "Odomknúť disk (odporúčané)"
@@ -8917,7 +8923,7 @@
         "${ value.length }/${ maxLength } znakov"
       ],
       "Asset": [
-        "Aktívum"
+        "Príloha"
       ],
       "Non-consensual intimate imagery": [
         "Intímne snímky bez súhlasu"
@@ -10952,7 +10958,7 @@
         "Dokument sa nepodarilo vytvoriť"
       ],
       "The item was not added to your drive": [
-        "Položka nebola pridaná na váš disk"
+        "Položka nebola pridaná do vašej jednotky"
       ],
       "The item was successfully added to your drive": [
         "Položka bola úspešne pridaná na váš disk"
@@ -11254,7 +11260,7 @@
     },
     "Onboarding Info": {
       "10 minutes": [
-        "10 minútové"
+        "10 minútach"
       ],
       "Access your files on the go": [
         "Pristupujte k svojim súborom na cestách"
@@ -11266,10 +11272,10 @@
         "Zálohujte svoje fotografie a spomienky"
       ],
       "Choose your favorite theme": [
-        "Vyberte si obľúbený vzhľad"
+        "Vyberte si obľúbený motív"
       ],
       "Collaborate on documents": [
-        "Spolupráca na dokumentoch"
+        "Spolupracujte na dokumentoch"
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
         "Páči sa vám ${ DRIVE_APP_NAME } v svetlom alebo tmavom režime? Vyberte si farbu, ktorá vás inšpiruje najviac."
@@ -11320,7 +11326,7 @@
         "Pozvánka prijatá"
       ],
       "Invitation received": [
-        "Doručená pozvánka"
+        "Pozvánka bola prijatá"
       ],
       "Invite team members": [
         "Pozvite členov tímu"
@@ -11329,7 +11335,7 @@
         "Udržujte tempo a nahrajte ďalšie súbory pomocou úložiska, ktoré je súčasťou vášho plánu."
       ],
       "Manage access": [
-        "Spravovanie prístupu"
+        "Spravovať prístup"
       ],
       "Organize files right from your desktop": [
         "Organizácia súborov priamo z pracovnej plochy"
@@ -11353,7 +11359,7 @@
         "Synchronizujte svoje súbory a pristupujte k nim odkiaľkoľvek"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
-        "Majiteľ musí potvrdiť zdieľanie prístupu. Po jeho dokončení dostanete email."
+        "Vlastník musí potvrdiť zdieľanie prístupu. Po jeho dokončení dostanete email."
       ],
       "Upload your first file": [
         "Nahrajte váš prvý súbor"
@@ -11441,7 +11447,7 @@
         "Iba aktuálna poloha: ${ name }"
       ],
       "Select JSON file": [
-        "Vybrať JSON súbor"
+        "Vybrerte JSON súbor"
       ],
       "Verify content": [
         "Overiť obsah"
@@ -11732,6 +11738,12 @@
       ],
       "Edit billing address": [
         "Upraviť fakturačnú adresu"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Platba cez ${ IDEAL_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_BRAND_NAME } podporuje platby len v eurách."
       ]
     },
     "Payments.Error": {
@@ -11752,6 +11764,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Inicializácia ${ IDEAL_BRAND_NAME } zlyhala. Skúste to neskôr znova, prosím."
       ]
     },
     "Payments.error": {
@@ -13652,7 +13667,7 @@
         "Snímky obrazovky"
       ],
       "Selfies": [
-        "Selfíčka"
+        "Selfie"
       ],
       "Videos": [
         "Videá"
@@ -13869,7 +13884,7 @@
         "Potvrďte stratu bonusov ${ BRAND_NAME }"
       ],
       "Confirmation required": [
-        "Je potrebné potvrdenie"
+        "Vyžadované potvrdenie"
       ],
       "Connect apps and devices": [
         "Pripojenie aplikácií a zariadení"
@@ -13980,7 +13995,7 @@
         "Zariadenia"
       ],
       "Diagnostics": [
-        "Diagnostika"
+        "Diagnostiky"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Elektronický podpis bol čiastočne overený. Tento súbor bol vytvorený pomocou verejne prístupného zdieľaného odkazu používateľom bez účtu ${ BRAND_NAME }, takže jeho identita nemôže byť overená."
@@ -14037,7 +14052,7 @@
         "Stiahnuť neoverený priečinok?"
       ],
       "Drive": [
-        "Drive"
+        "Jednotka"
       ],
       "Drop to upload": [
         "Pretiahnuť a nahrať"
@@ -14445,7 +14460,7 @@
         "Vyžiadať nový kód"
       ],
       "Restore your files": [
-        "Obnoviť súbory"
+        "Obnovte svoje súbory"
       ],
       "Reverse charge not supported": [
         "Obrátené zdanenie nie je podporované"
@@ -14769,7 +14784,7 @@
         "Akcie"
       ],
       "Global": [
-        "Globálna"
+        "Globálne"
       ],
       "Search": [
         "Hľadať"
@@ -15595,6 +15610,11 @@
       ],
       "name": [
         "názov"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potvrdením tejto platby oprávňujete ${ BRAND_NAME } a spoločnosť Stripe, nášho poskytovateľa platobných služieb, aby dali vašej banke pokyn na odpísanie prostriedkov z vášho účtu. Peniaze vám môžu byť vrátené do 8 týždňov od dátumu odpísania z účtu za podmienok stanovených v zmluve s vašou bankou."
       ]
     }
   }
