@@ -90,9 +90,6 @@
       "Apply": [
         "Terapkan"
       ],
-      "Ask me next time": [
-        "Tanyakan saya lain kali"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Hanya ${ maxContacts } kontak yang dapat disisipkan dalam satu grup kontak"
       ],
@@ -701,9 +698,6 @@
       ],
       "Save changes": [
         "Simpan perubahan"
-      ],
-      "Save preferences": [
-        "Simpan preferensi"
       ],
       "Search": [
         "Cari"
@@ -4531,9 +4525,6 @@
       "Continue": [
         "Lanjutkan"
       ],
-      "Converting document...": [
-        "Mengonversi dokumen..."
-      ],
       "Copied to clipboard": [
         "Disalin ke papan klip"
       ],
@@ -4584,9 +4575,6 @@
       ],
       "Creating link to folder": [
         "Membuat tautan ke folder"
-      ],
-      "Creating new document...": [
-        "Membuat dokumen baru..."
       ],
       "Current plan": [
         "Paket saat ini"
@@ -4687,12 +4675,6 @@
       "Enter your own password (as trusted contact).": [
         "Masukkan kata sandi Anda (selaku kontak tepercaya)"
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Kesalahan mengonversi dokumen: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Kesalahan memuat dokumen: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Kesalahan Sinkronisasi"
       ],
@@ -4740,12 +4722,6 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Dapatkan email @your-company.com profesional, penyimpanan aman sebesar 1 TB per pengguna, panggilan video yang lebih lama, dan lainnya dengan ${ BRAND_NAME } Workspace."
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Dapatkan pembaruan email untuk komentar dan saran yang ditambahkan ke dokumen."
-      ],
-      "Get Notified About Comments": [
-        "Dapatkan Notifikasi Seputar Komentar"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Pemerintah dan ISP dapat memonitor aktivitas daring Anda. Dengan menyembunyikan IP asli Anda dan mengenkripsi aktivitas Anda, penjelajahan Anda menjadi pribadi."
@@ -4897,9 +4873,6 @@
       "Low Priority": [
         "Prioritas Rendah"
       ],
-      "Making a copy...": [
-        "Membuat salinan..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksimal ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
       ],
@@ -4929,9 +4902,6 @@
       ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Tidak ada dokumen yang disertakan dalam URL. Kembali ke ${ DRIVE_APP_NAME } dan pilih dokumen."
       ],
       "No email address": [
         "Tidak ada alamat email"
@@ -5211,9 +5181,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Pemilik alamat ini telah menonaktifkan enkripsi ujung ke ujung. Untuk dapat mengirim email terenkripsi kealamat ini, pemiliknya harus mengaktifkan ulang enkripsi ujung ke ujung."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "URL yang dimasukkan sepertinya tidak disalin dari Slack dengan benar. Saat menyalin tautan panjang dari Slack, klik kanan tautan tersebut, lalu pilih \"Salin tautan\" alih-alih langsung menyalin teks URL yang terpotong."
       ],
       "There are no documents in the trash.": [
         "Tidak ada dokumen di sampah."
@@ -5812,9 +5779,6 @@
       "Emails (last month)": [
         "Email (sebulan terakhir)"
       ],
-      "Enable email notifications": [
-        "Aktifkan notifikasi email"
-      ],
       "Encrypt emails": [
         "Enkripsi email"
       ],
@@ -5871,9 +5835,6 @@
       ],
       "Include application logs in bug report": [
         "Sertakan log aplikasi dalam laporan bug"
-      ],
-      "Include document name in notification": [
-        "Sertakan nama dokumen dalam notifikasi"
       ],
       "Include message and file name in invite email": [
         "Sertakan pesan dan nama file dalam email undangan"
@@ -8900,9 +8861,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Membuat spreadsheet baru..."
-      ],
       "Detect automatically": [
         "Deteksi otomatis"
       ],
@@ -9818,6 +9776,9 @@
       ],
       "Document verification failed": [
         "Verifikasi dokumen gagal"
+      ],
+      "Domain names": [
+        "Nama domain"
       ],
       "Downgrade account": [
         "Turunkan jenis akun"
