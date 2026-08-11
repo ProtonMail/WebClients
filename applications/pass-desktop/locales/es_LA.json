@@ -909,8 +909,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de correo electrónico funciona como una dirección de correo electrónico, pero reduce el spam y mantiene su dirección de correo electrónico e identidad real ocultas."
       ],
+      "Change these passwords immediately": [
+        "Cambie estas contraseñas de inmediato"
+      ],
       "Change your passwords": [
         "Cambie las contraseñas"
+      ],
+      "Check if your passwords have been exposed": [
+        "Compruebe si sus contraseñas han sido expuestas"
       ],
       "Create unique passwords": [
         "Cree contraseñas únicas"
@@ -965,6 +971,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta cuenta es vulnerable. Visite el servicio y cambie la contraseña."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Esta contraseña de inicio de sesión aparece en una filtración de datos. Visite el servicio y cambie la contraseña."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Este servicio ofrece 2FA. Actívelo para agregar seguridad a la cuenta."
@@ -1398,6 +1407,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Hubo un error al eliminar el enlace seguro. Intente de nuevo en unos minutos."
       ],
+      "This invite is no longer available": [
+        "Esta invitación ya no está disponible"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Demasiados intentos erróneos. Inicie sesión de nuevo."
       ],
@@ -1418,9 +1430,6 @@
       ],
       "Unknown error.": [
         "Error desconocido."
-      ],
-      "Unknown invite": [
-        "Invitación desconocida"
       ],
       "Unknown item": [
         "Elemento desconocido"
@@ -4849,6 +4858,12 @@
       "Clear clipboard": [
         "Vaciar portapapeles"
       ],
+      "Compromised password": [
+        "Contraseña comprometida"
+      ],
+      "Compromised passwords": [
+        "Contraseñas comprometidas"
+      ],
       "Confirm extra password": [
         "Confirmar la contraseña adicional"
       ],
@@ -5065,6 +5080,9 @@
       "No access tokens yet": [
         "Aún no hay tokens de acceso"
       ],
+      "No compromised passwords": [
+        "No hay contraseñas comprometidas"
+      ],
       "No excluded items": [
         "No hay elementos excluidos"
       ],
@@ -5252,6 +5270,9 @@
       ],
       "Update available": [
         "Actualización disponible"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Actualice para comprobar contraseñas comprometidas"
       ],
       "URL matching": [
         "Coincidencia de URL"
