@@ -3805,6 +3805,9 @@
       ],
       "Disable address?": [
         "Deaktiver adresse?"
+      ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Ved at deaktivere denne adresse ${ address }, vil det ikke længere være muligt for medlemmet at sende eller modtage e-mails via denne adresse, og alle tilknyttede ${ BRAND_NAME }-produkter deaktiveres."
       ]
     },
     "dollar_offer": {
@@ -10042,6 +10045,15 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Aktivér kontoen for denne bruger i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Fjern denne bruger fra arkivet i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Ophæv suspenderingen af denne bruger i ${ provider.adminConsoleName } for at migrere dem."
       ]
     },
     "info": {
@@ -19169,6 +19181,9 @@
       ],
       "Your DKIM signing is working.": [
         "Din DKIM-signering fungerer."
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status for datamigration fra ${ providerName } til ${ BRAND_NAME }"
       ]
     },
     "tooltip": {
