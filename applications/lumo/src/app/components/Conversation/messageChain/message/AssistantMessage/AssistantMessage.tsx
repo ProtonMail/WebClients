@@ -23,15 +23,14 @@ import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import AssistantFeedbackModal from '../../../../Modals/AssistantFeedbackModal';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
 import SiblingSelector from '../../../../SiblingSelector';
-import { ArtifactChip, ArtifactChipLoading } from '../../../artifact/ArtifactChip';
+import { ArtifactChip } from '../../../artifact/ArtifactChip';
 import { useArtifactContext } from '../../../artifact/ArtifactContext';
 import { getArtifactVersionIndexForMessage } from '../../../artifact/artifactRegistry';
 import {
     CREATE_ARTIFACT_TOOL_NAME,
-    parseCompleteArtifactToolCall,
-    parsePartialArtifactToolCall,
+    extractCompleteArtifactsFromBlocks,
+    getCompleteArtifactBlocksKey,
 } from '../../../artifact/createArtifactTool';
-import type { ParsedArtifact, StreamingArtifact } from '../../../artifact/parseArtifacts';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
 import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
@@ -239,48 +238,19 @@ const AssistantMessage = ({
     const hasContent = blocks.length > 0;
 
     // Extract create_artifact tool calls directly from the structured blocks — no text parsing.
-    // `arguments` is a raw string while the call is still streaming and becomes a parsed object
-    // once complete (set by the redux tool-call reducers), so completeness here is unambiguous —
-    // unlike the old `<artifact>` tag scanner, there's no transient "is it still open" state to guess.
-    const { completeArtifacts, streamingArtifact } = useMemo(() => {
-        // Keyed by artifact id so a message that calls create_artifact more than once for the
-        // same id (e.g. the model retrying/self-correcting within one reply) collapses to a
-        // single chip showing the final call's content, instead of one chip per call — which
-        // would otherwise duplicate the id as a React key and show stale intermediate attempts.
-        const complete = new Map<string, ParsedArtifact>();
-        let streaming: StreamingArtifact | null = null;
+    // In practice arguments arrive as a parsed object in one shot (see DESIGN.md); partial
+    // string arguments are ignored until JSON completes.
+    const artifactBlocksKey = useMemo(() => {
+        return getCompleteArtifactBlocksKey(blocks);
+    }, [blocks]);
+    const completeArtifacts = useMemo(() => {
+        return extractCompleteArtifactsFromBlocks(blocks);
+    }, [artifactBlocksKey, blocks]);
 
-        for (const block of blocks) {
-            if (block.type !== 'tool_call') {
-                continue;
-            }
-            const parsed = block.toolCall as { name?: string; arguments?: unknown } | undefined;
-            if (parsed?.name !== CREATE_ARTIFACT_TOOL_NAME) {
-                continue;
-            }
-
-            if (typeof parsed.arguments === 'string') {
-                // isLastMessage guard: only show a live preview for the actively-generating
-                // message. Older messages that happen to still be mid-stream (shouldn't normally
-                // happen) just render nothing for this block.
-                if (isGenerating && isLastMessage) {
-                    streaming = parsePartialArtifactToolCall(parsed.arguments);
-                }
-            } else if (parsed.arguments && typeof parsed.arguments === 'object') {
-                const artifact = parseCompleteArtifactToolCall(parsed.arguments as Record<string, unknown>);
-                if (artifact) {
-                    complete.set(artifact.id, artifact);
-                }
-            }
-        }
-
-        return { completeArtifacts: Array.from(complete.values()), streamingArtifact: streaming };
-    }, [blocks, isGenerating, isLastMessage]);
-
-    const hasArtifacts = completeArtifacts.length > 0 || streamingArtifact !== null;
+    const hasArtifacts = completeArtifacts.length > 0;
 
     // Hide create_artifact tool_call/tool_result blocks from the generic tool-call timeline —
-    // ArtifactChip/ArtifactChipLoading render them instead, below.
+    // ArtifactChip renders them instead, below.
     const cleanedBlocks = useMemo(() => {
         if (!hasArtifacts) {
             return blocks;
@@ -300,55 +270,51 @@ const AssistantMessage = ({
         });
     }, [blocks, hasArtifacts]);
 
-    const { selectedId, openArtifact, setStreamingArtifact, setPendingArtifact, registry } = useArtifactContext();
+    const { selectedId, openArtifact, registry, panelUserClosed, resetPanelUserClosed } = useArtifactContext();
 
-    // Push the in-progress artifact into context so the panel can show a live preview. Once a
-    // create_artifact call's JSON finishes parsing (usually near-instant — see DESIGN.md's
-    // streaming-state notes), its real content is already available even though the message
-    // itself hasn't finished and isn't in `registry` yet: push it as `pendingArtifact` so the
-    // panel/chip can show and open it immediately instead of waiting for the message to finish.
-    // Only the actively-generating last message drives this; clear both for all other messages.
+    const wasGeneratingRef = useRef(isGenerating);
     useEffect(() => {
-        if (isLastMessage && isGenerating && !isFinishedGenerating) {
-            setStreamingArtifact(streamingArtifact);
-            setPendingArtifact(streamingArtifact ? null : (completeArtifacts[0] ?? null));
-        } else if (isLastMessage && !isGenerating) {
-            setStreamingArtifact(null);
-            setPendingArtifact(null);
-        }
-    }, [
-        isLastMessage,
-        isGenerating,
-        isFinishedGenerating,
-        streamingArtifact,
-        completeArtifacts,
-        setStreamingArtifact,
-        setPendingArtifact,
-    ]);
+        const generationStarted = !wasGeneratingRef.current && isGenerating;
+        wasGeneratingRef.current = isGenerating;
 
-    // When generation completes, promote the first artifact into the panel — but only if
-    // nothing else is open, or it's a revision of what's already open. Don't steal focus
-    // from an unrelated artifact the user is actively reading.
-    useEffect(() => {
-        if (isLastMessage && isFinishedGenerating && completeArtifacts.length > 0 && completeArtifacts[0]) {
-            const artifact = completeArtifacts[0];
-            const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, message.id);
-            setStreamingArtifact(null);
-            setPendingArtifact(null);
-            if (versionIndex !== null && (selectedId === null || selectedId === artifact.id)) {
-                openArtifact(artifact.id, versionIndex);
-            }
+        if (isLastMessage && generationStarted) {
+            resetPanelUserClosed();
         }
+    }, [isLastMessage, isGenerating, resetPanelUserClosed]);
+
+    const wasFinishedRef = useRef(isFinishedGenerating);
+    useEffect(() => {
+        const justFinished = !wasFinishedRef.current && isFinishedGenerating;
+        wasFinishedRef.current = isFinishedGenerating;
+
+        if (!isLastMessage || !justFinished || completeArtifacts.length === 0 || !completeArtifacts[0]) {
+            return;
+        }
+
+        const artifact = completeArtifacts[0];
+        const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, message.id);
+        if (versionIndex === null) {
+            return;
+        }
+
+        if (panelUserClosed) {
+            return;
+        }
+
+        if (selectedId !== null && selectedId !== artifact.id) {
+            return;
+        }
+
+        openArtifact(artifact.id, versionIndex);
     }, [
         isLastMessage,
         isFinishedGenerating,
         completeArtifacts,
-        selectedId,
-        openArtifact,
-        setStreamingArtifact,
-        setPendingArtifact,
         registry,
         message.id,
+        panelUserClosed,
+        selectedId,
+        openArtifact,
     ]);
 
     // Extract search results for legacy sources button
@@ -392,13 +358,6 @@ const AssistantMessage = ({
 
     const shouldShowNextPromptSuggestions =
         showNextPromptSuggestionEnabled && isLastMessage && isFinishedGenerating && !generationFailed;
-
-    console.log('💥 ASSISTANT MESSAGE: ', {
-        message,
-        content: message?.content,
-        toolCall: message?.toolCall,
-        toolResult: message?.toolResult,
-    });
 
     return (
         <>
@@ -446,9 +405,6 @@ const AssistantMessage = ({
                                                             messageId={message.id}
                                                         />
                                                     ))}
-                                                    {streamingArtifact && (
-                                                        <ArtifactChipLoading streaming={streamingArtifact} />
-                                                    )}
                                                 </div>
                                             )}
                                         </>
