@@ -1,5 +1,7 @@
 import type { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 
+import type { MspDelegatedManager } from '../api/msp';
+
 export interface MspSubsidiary {
     ID: string;
     Name: string;
@@ -7,4 +9,5 @@ export interface MspSubsidiary {
     MaxMembers: number;
     ActiveMembers: number;
     ParentOrgToken: string | undefined;
+    DelegatedManagers: MspDelegatedManager[];
 }
