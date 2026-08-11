@@ -6,8 +6,6 @@ import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 export const useIsSsoOrganization = (): { isSsoOrganization: boolean; isLoading: boolean } => {
     const [samlSSO, isLoading] = useSamlSSO();
 
-    return {
-        isSsoOrganization: Boolean(samlSSO?.configs.some((config) => config.Enabled)),
-        isLoading,
-    };
+    const isSsoOrganization = samlSSO?.configs.some((config) => config.Enabled) ?? false;
+    return { isSsoOrganization, isLoading };
 };
