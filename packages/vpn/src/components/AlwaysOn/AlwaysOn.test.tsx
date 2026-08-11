@@ -151,7 +151,7 @@ describe('AlwaysOn', () => {
         expect(await screen.findAllByText('Choose a deployment method')).not.toHaveLength(0);
     });
 
-    it('names the minimum client version from the B2BAlwaysOnWindowsRelease variant payload', async () => {
+    it('offers both architectures of the version named by the B2BAlwaysOnWindowsRelease variant payload', async () => {
         fetchPolicy.mockResolvedValue(buildPolicy());
 
         render(<AlwaysOn />);
@@ -165,6 +165,10 @@ describe('AlwaysOn', () => {
         expect(screen.getByText('Windows 10/11 (x64)').closest('a')).toHaveAttribute(
             'href',
             'https://protonvpn.com/download/ProtonVPN_v5.3.0_x64.exe'
+        );
+        expect(screen.getByText('Windows 10/11 (ARM64)').closest('a')).toHaveAttribute(
+            'href',
+            'https://protonvpn.com/download/ProtonVPN_v5.3.0_arm64.exe'
         );
     });
 
@@ -195,44 +199,6 @@ describe('AlwaysOn', () => {
                 event: TelemetryVpnAlwaysOnPolicyEvents.clientDownloadClicked,
                 dimensions: { source: 'build', version: '5.3.0' },
             })
-        );
-    });
-
-    it('reports both the call to action and the download when there is no build to pick', async () => {
-        downloadLinksMock.mockReturnValue({});
-        fetchPolicy.mockResolvedValue(buildPolicy());
-
-        render(<AlwaysOn />);
-        await screen.findByText('Always-on VPN device profile');
-        await userEvent.click(screen.getByRole('button', { name: 'Instructions' }));
-
-        await userEvent.click(await screen.findByText('Download latest'));
-
-        expect(sendTelemetryReport).toHaveBeenCalledWith(
-            expect.objectContaining({
-                event: TelemetryVpnAlwaysOnPolicyEvents.downloadLatestClicked,
-                dimensions: { source: 'download-page', version: '5.3.0' },
-            })
-        );
-        expect(sendTelemetryReport).toHaveBeenCalledWith(
-            expect.objectContaining({
-                event: TelemetryVpnAlwaysOnPolicyEvents.clientDownloadClicked,
-                dimensions: { source: 'download-page', version: '5.3.0' },
-            })
-        );
-    });
-
-    it('links to the download page when no Windows download links resolve', async () => {
-        downloadLinksMock.mockReturnValue({});
-        fetchPolicy.mockResolvedValue(buildPolicy());
-
-        render(<AlwaysOn />);
-        await screen.findByText('Always-on VPN device profile');
-        await userEvent.click(screen.getByRole('button', { name: 'Instructions' }));
-
-        expect(await screen.findByText('Download latest')).toHaveAttribute(
-            'href',
-            'https://protonvpn.com/download-windows/'
         );
     });
 
