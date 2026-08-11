@@ -9,7 +9,7 @@ import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag'
 import { useTrashWithSDK } from '~/utils/flags'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import type { NodeMeta } from '@proton/drive-store/lib/NodeMeta'
-import { reportTrashError, restoreDocument } from '~/drive-sdk/trash'
+import { handleRestoreError, restoreDocument } from '~/drive-sdk/trash'
 import { useEvent } from '~/utils/misc'
 
 export type TrashedDocumentModalProps = {
@@ -40,8 +40,7 @@ export function TrashedDocumentModal({
           controller.markAsRestored()
         })
         .catch((error) => {
-          reportTrashError(error)
-          createNotification({ type: 'error', text: c('Notification').t`Failed to restore document` })
+          handleRestoreError(createNotification, error)
         })
     } else {
       void controller.restoreDocument()

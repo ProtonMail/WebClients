@@ -16,7 +16,13 @@ import { getDrive, generateNodeUid } from '@proton/drive'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { c } from 'ttag'
-import { deleteDocument, reportTrashError, trashAndNotify, restoreAndNotify } from '~/drive-sdk/trash'
+import {
+  deleteDocument,
+  reportTrashError,
+  trashAndNotify,
+  restoreAndNotify,
+  handleRestoreError,
+} from '~/drive-sdk/trash'
 import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
 export type DocumentActionsContextValue = {
@@ -200,9 +206,8 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
       try {
         const nodeUid = generateNodeUid(document.volumeId, document.linkId)
         await restoreAndNotify(drive, createNotification, nodeUid)
-      } catch (error) {
-        reportTrashError(error)
-        createNotification({ type: 'error', text: c('Notification').t`Failed to restore document` })
+      } catch (error: any) {
+        handleRestoreError(createNotification, error)
         return
       }
     } else {

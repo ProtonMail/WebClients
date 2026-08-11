@@ -15,7 +15,7 @@ import { useEvent } from '~/utils/misc'
 import { useHomepageView } from '../../../__utils/homepage-view'
 import { RestoreFromTrashButton } from './buttons/RestoreFromTrash'
 import { DeletePermanentlyButton } from './buttons/DeletePermanently'
-import { useLoadRecentsWithSdkEnabled, useSharingModalDriveSdkEnabled } from '~/utils/flags'
+import { useLoadRecentsWithSdkEnabled, useSharingModalDriveSdkEnabled, useTrashWithSDK } from '~/utils/flags'
 import { MemberRole } from '@proton/drive'
 
 export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
@@ -28,6 +28,7 @@ export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
 
 export function DocContextMenu({ anchorRef, isOpen, position, open, close, currentDocument }: DocContextMenuProps) {
   const canShare = useCanShare(currentDocument)
+  const canTrash = useCanTrash(currentDocument)
 
   // NOTE: this effect was copied from packages/drive-store/components/sections/ContextMenu/ItemContextMenu.tsx
   // I'm not actually sure it's necessary here, but I'm leaving it in for now just in case.
@@ -94,7 +95,7 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
             <MoveButton currentDocument={currentDocument} close={close} />
             <OpenFolderButton currentDocument={currentDocument} close={close} />
             <RenameButton currentDocument={currentDocument} close={close} />
-            {!currentDocument.isSharedWithMe ? (
+            {canTrash ? (
               <>
                 {separator}
                 <MoveToTrashButton currentDocument={currentDocument} />
@@ -126,6 +127,20 @@ function useCanShare(currentDocument: RecentDocumentsItem | undefined) {
     } else if (currentDocument.permissions) {
       return rawPermissionToRole(currentDocument.permissions).canShare()
     }
+  }
+  return !currentDocument.isSharedWithMe
+}
+
+function useCanTrash(currentDocument: RecentDocumentsItem | undefined) {
+  const trashWithSDK = useTrashWithSDK()
+  const loadRecentsWithSdkEnabled = useLoadRecentsWithSdkEnabled()
+
+  if (!currentDocument) {
+    return false
+  }
+
+  if (trashWithSDK && loadRecentsWithSdkEnabled) {
+    return currentDocument.effectiveRole === MemberRole.Admin
   }
   return !currentDocument.isSharedWithMe
 }
