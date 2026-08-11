@@ -8,9 +8,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 // eslint-disable-next-line no-restricted-imports
-import { loggerManager } from '@proton/shared/lib/logger';
-
-const mailLogger = loggerManager.getLogger('mail');
+import { logger } from '@proton/shared/lib/logger';
 
 export const DebugModalLogs = () => {
     const [logs, setLogs] = useState<string>();
@@ -19,7 +17,7 @@ export const DebugModalLogs = () => {
 
     useEffect(() => {
         const getLogs = async () => {
-            const logs = await mailLogger.getLogs();
+            const logs = await logger.getLogs();
             setLogs(logs);
         };
 
@@ -27,12 +25,12 @@ export const DebugModalLogs = () => {
     }, []);
 
     const handleClearLog = () => {
-        void mailLogger.clearLogs();
+        void logger.clearLogs();
         setLogs(undefined);
     };
 
     const handleRefreshLog = async () => {
-        const logs = await mailLogger.getLogs();
+        const logs = await logger.getLogs();
         setLogs(logs);
     };
 
@@ -48,7 +46,7 @@ export const DebugModalLogs = () => {
             <Button size="small" onClick={handleRefreshLog}>
                 {c('Label').t`Refresh logs`}
             </Button>
-            <Button size="small" onClick={() => mailLogger.downloadLogs()}>
+            <Button size="small" onClick={() => logger.downloadLogs()}>
                 {c('Label').t`Download logs`}
             </Button>
             <Button size="small" onClick={(e) => handleCopy(e, logs || '')}>
