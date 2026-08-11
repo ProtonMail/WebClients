@@ -26,6 +26,8 @@ export interface CreateMspSubsidiaryData {
     ParentOrgToken: string;
     ParentOrgSignature: string;
     PrivateKey: string;
+    OrganizationIdentitySignature: string;
+    OrganizationIdentityAddressID: string;
 }
 
 export const createMspSubsidiary = (data: CreateMspSubsidiaryData) => ({
@@ -78,3 +80,9 @@ export const getMspSubsidiaryManagers = (id: string) => ({
     method: 'get',
     url: `organizations/subsidiaries/${id}/members`,
 });
+
+export const getAllMspSubsidiaryManagers = (api: Api, id: string) => {
+    return api<{ DelegatedManagers: MspDelegatedManager[] }>(getMspSubsidiaryManagers(id)).then(
+        ({ DelegatedManagers }) => DelegatedManagers
+    );
+};

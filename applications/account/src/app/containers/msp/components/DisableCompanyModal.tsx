@@ -20,7 +20,7 @@ const DisableCompanyModal = ({ onConfirm, onClose }: Props) => {
                         <ul className="m-0 pl-4">
                             <li>{c('Info').t`Members are signed out and can't sign back in`}</li>
                             <li>{c('Info').t`All data and settings are preserved`}</li>
-                            <li>{c('Info').t`Assigned seats won't be billed while disabled`}</li>
+                            <li>{c('Info').t`Allocated licenses won't be billed while disabled`}</li>
                         </ul>
                     </div>
                     <p className="m-0">{c('Info').t`You can enable this company again at any time.`}</p>

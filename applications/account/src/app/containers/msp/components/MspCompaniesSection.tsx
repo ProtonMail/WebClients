@@ -36,6 +36,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces/Member';
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
@@ -54,13 +55,8 @@ import './MspCompaniesSection.scss';
 type ModalState = { mode: 'add' } | { mode: 'edit'; company: MspCompany } | null;
 
 const PAGE_SIZE = 15;
-
-const ManageButton = ({ className, ...props }: { className?: string } & ButtonProps) => (
-    <Button shape="outline" color="weak" className={clsx('flex-nowrap items-center gap-1', className)} {...props}>
-        <span>{c('Action').t`Manage`}</span>
-        <IcArrowOutSquare className="shrink-0" />
-    </Button>
-);
+const MANAGERS_COLLAPSE_THRESHOLD = 5;
+const MANAGERS_VISIBLE_COUNT = 3;
 
 const toCompany = (sub: MspSubsidiary): MspCompany => ({
     id: sub.ID,
@@ -68,6 +64,7 @@ const toCompany = (sub: MspSubsidiary): MspCompany => ({
     assignedSeats: sub.MaxMembers,
     usedSeats: sub.ActiveMembers,
     status: sub.Status,
+    managers: sub.DelegatedManagers,
 });
 
 const toManagedCompany = (org: UserOrganization): MspCompany => ({
@@ -76,7 +73,43 @@ const toManagedCompany = (org: UserOrganization): MspCompany => ({
     assignedSeats: org.MaxMembers,
     usedSeats: org.UsedMembers,
     status: org.Status,
+    // IT managers can't view co-managers of a company they manage — the backend only allows the
+    // MSP owner (admin of the parent org) to list a subsidiary's delegated managers.
+    managers: [],
 });
+
+const ManagersCell = ({ managers }: { managers: MspDelegatedManager[] }) => {
+    const [expanded, setExpanded] = useState(false);
+    const names = managers.map((manager) => manager.Name);
+
+    if (names.length <= MANAGERS_COLLAPSE_THRESHOLD) {
+        return <span>{names.join(', ')}</span>;
+    }
+
+    if (expanded) {
+        return (
+            <span>
+                {names.join(', ')}{' '}
+                <InlineLinkButton onClick={() => setExpanded(false)}>{c('Action').t`Show less`}</InlineLinkButton>
+            </span>
+        );
+    }
+
+    const remaining = names.length - MANAGERS_VISIBLE_COUNT;
+    return (
+        <span>
+            {names.slice(0, MANAGERS_VISIBLE_COUNT).join(', ')}{' '}
+            <InlineLinkButton onClick={() => setExpanded(true)}>{c('Action').t`+${remaining} more`}</InlineLinkButton>
+        </span>
+    );
+};
+
+const ManageButton = ({ className, ...props }: { className?: string } & ButtonProps) => (
+    <Button shape="outline" color="weak" className={clsx('flex-nowrap items-center gap-1', className)} {...props}>
+        <span>{c('Action').t`Manage`}</span>
+        <IcArrowOutSquare className="shrink-0" />
+    </Button>
+);
 
 const MspCompaniesSection = ({ path }: { path: string }) => {
     const { createNotification } = useNotifications();
@@ -206,12 +239,8 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
     return (
         <SettingsSectionExtraWide>
             <SettingsPageTitle className="mt-14">{c('Title').t`Companies`}</SettingsPageTitle>
-            <SettingsParagraph className="mb-12">
-                {isAdmin
-                    ? c('Info')
-                          .t`With managed companies, you can add, edit, and remove access for organizations you oversee.`
-                    : c('Info').t`Companies you've been given access to manage.`}
-            </SettingsParagraph>
+            <SettingsParagraph className="mb-12">{c('Info')
+                .t`Manage the companies you're responsible for.`}</SettingsParagraph>
             <div className="mb-4 flex items-center justify-space-between">
                 <div className="w-custom" style={{ '--w-custom': '20em' }}>
                     <SearchInput
@@ -254,9 +283,13 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                                 <TableHeaderCell className="text-ellipsis">{c('Column header')
                                     .t`Company`}</TableHeaderCell>
                                 <TableHeaderCell className="text-ellipsis">{c('Column header')
-                                    .t`Used / assigned seats`}</TableHeaderCell>
+                                    .t`Used / allocated licenses`}</TableHeaderCell>
                                 <TableHeaderCell className="msp-col-narrow text-ellipsis">{c('Column header')
                                     .t`Status`}</TableHeaderCell>
+                                {isAdmin && (
+                                    <TableHeaderCell className="text-ellipsis">{c('Column header')
+                                        .t`Managers`}</TableHeaderCell>
+                                )}
                                 <TableHeaderCell className="msp-col-narrow" />
                             </tr>
                         </TableHeader>
@@ -291,7 +324,7 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                                                 {company.name}
                                             </InlineLinkButton>
                                         </TableCell>
-                                        <TableCell label={c('Column header').t`Used / assigned seats`}>
+                                        <TableCell label={c('Column header').t`Used / allocated licenses`}>
                                             <span className={clsx(isDisabled && 'color-weak')}>
                                                 {company.usedSeats}/{company.assignedSeats}
                                             </span>
@@ -308,6 +341,13 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                                                 </span>
                                             </span>
                                         </TableCell>
+                                        {isAdmin && (
+                                            <TableCell label={c('Column header').t`Managers`}>
+                                                <span className={clsx(isDisabled && 'color-weak')}>
+                                                    <ManagersCell managers={company.managers} />
+                                                </span>
+                                            </TableCell>
+                                        )}
                                         <TableCell className="md:hidden">
                                             <ManageButton
                                                 className="inline-flex gap-1 justify-center md:hidden"
