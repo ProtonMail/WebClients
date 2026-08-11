@@ -1,7 +1,7 @@
 import type { ClientToolExecutor } from '@proton/lumo-api-client';
 
-import { type ParsedArtifact, type StreamingArtifact, hashArtifactIdentity } from './parseArtifacts';
-import { parsePartialFlatJsonStringObject } from './parsePartialJson';
+import type { ContentBlock } from '../../../types';
+import { type ParsedArtifact, hashArtifactIdentity } from './parseArtifacts';
 
 export const CREATE_ARTIFACT_TOOL_NAME = 'create_artifact';
 
@@ -85,28 +85,6 @@ function resolveType(rawType: unknown, language: string | undefined): 'code' | '
 }
 
 /**
- * Builds the live streaming-preview state from a `create_artifact` tool call's `arguments` while
- * they're still arriving as a raw, not-yet-valid-JSON string.
- */
-export function parsePartialArtifactToolCall(rawArguments: string): StreamingArtifact {
-    const { fields, partial } = parsePartialFlatJsonStringObject(rawArguments);
-    const content = partial?.key === 'content' ? partial.value : (fields.content ?? '');
-    const language = fields.language || undefined;
-
-    return {
-        id: fields.id || undefined,
-        title: fields.title || undefined,
-        // Only infer once a type-determining signal (explicit type, or language) has actually
-        // streamed in — otherwise leave it undefined so the chip shows its "unknown yet" skeleton
-        // instead of guessing "document" prematurely just because language hasn't arrived yet.
-        type: normalizeType(fields.type) ?? (language ? 'code' : undefined),
-        language,
-        content,
-        isComplete: false,
-    };
-}
-
-/**
  * Builds the final artifact once the tool call's `arguments` have parsed as valid JSON.
  * Returns `null` only if a field with no reasonable fallback (title/content) is missing.
  */
@@ -129,4 +107,58 @@ export function parseCompleteArtifactToolCall(args: Record<string, unknown>): Pa
         title,
         content,
     };
+}
+
+function isCreateArtifactToolCallBlock(block: ContentBlock): block is ContentBlock & { type: 'tool_call' } {
+    if (block.type !== 'tool_call') {
+        return false;
+    }
+    const parsed = block.toolCall as { name?: string } | undefined;
+    return parsed?.name === CREATE_ARTIFACT_TOOL_NAME;
+}
+
+/**
+ * Stable fingerprint of complete create_artifact tool calls in a message's blocks.
+ * Ignores prose and other tool calls so artifact parsing doesn't re-run on every token.
+ */
+export function getCompleteArtifactBlocksKey(blocks: ContentBlock[]): string {
+    const parts: string[] = [];
+
+    for (const block of blocks) {
+        if (!isCreateArtifactToolCallBlock(block)) {
+            continue;
+        }
+        const parsed = block.toolCall as { arguments?: unknown } | undefined;
+        if (!parsed?.arguments || typeof parsed.arguments !== 'object') {
+            continue;
+        }
+        const args = parsed.arguments as Record<string, unknown>;
+        const id = typeof args.id === 'string' ? args.id : '';
+        const title = typeof args.title === 'string' ? args.title : '';
+        const contentLen = typeof args.content === 'string' ? args.content.length : 0;
+        parts.push(`${id}:${title}:${contentLen}`);
+    }
+
+    return parts.join('|');
+}
+
+/** Parses fully-formed create_artifact tool calls from structured message blocks. */
+export function extractCompleteArtifactsFromBlocks(blocks: ContentBlock[]): ParsedArtifact[] {
+    const complete = new Map<string, ParsedArtifact>();
+
+    for (const block of blocks) {
+        if (!isCreateArtifactToolCallBlock(block)) {
+            continue;
+        }
+        const parsed = block.toolCall as { arguments?: unknown } | undefined;
+        if (!parsed?.arguments || typeof parsed.arguments !== 'object') {
+            continue;
+        }
+        const artifact = parseCompleteArtifactToolCall(parsed.arguments as Record<string, unknown>);
+        if (artifact) {
+            complete.set(artifact.id, artifact);
+        }
+    }
+
+    return Array.from(complete.values());
 }
