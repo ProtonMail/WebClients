@@ -37,6 +37,7 @@ import { AutoFocusPlugin } from '../Plugins/AutoFocusPlugin'
 import type { EditorLoadResult } from '../Lib/EditorLoadResult'
 import { KeyboardShortcutsPlugin } from '../Plugins/KeyboardShortcuts/KeyboardShortcutsPlugin'
 import { PasteLimitPlugin } from '../Plugins/PasteLimitPlugin'
+import { CombiningMarkPasteGuardPlugin } from '../Plugins/CombiningMarkPasteGuardPlugin'
 import { SuggestionModePlugin } from '../Plugins/Suggestions/SuggestionModePlugin'
 import { CustomOrderedListPlugin } from '../Plugins/CustomList/CustomListPlugin'
 import { WordCountPlugin } from '../Plugins/WordCount/WordCountPlugin'
@@ -333,6 +334,7 @@ export function Editor({
         <ImagesPlugin />
         <EditorReadonlyPlugin editingEnabled={!editingLocked} />
         {hasMutationDisplay && <PasteLimitPlugin showGenericAlertModal={showGenericAlertModal} />}
+        {hasMutationDisplay && <CombiningMarkPasteGuardPlugin showGenericAlertModal={showGenericAlertModal} />}
         <AutoFocusPlugin isEditorHidden={hidden} />
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
