@@ -411,7 +411,7 @@
         "Ladda ner för Windows"
       ],
       "Download info": [
-        "Ladda ner info"
+        "Nedladdningsinfo"
       ],
       "Download logs": [
         "Ladda ner loggar"
@@ -717,7 +717,7 @@
         "Namnge ditt album"
       ],
       "New": [
-        "Ny"
+        "Nytt"
       ],
       "New album": [
         "Nytt album"
@@ -1224,7 +1224,7 @@
         "Vad får jag?"
       ],
       "Windows 11 (ARM64)": [
-        "Windows 11/ (ARM64)"
+        "Windows 11 (ARM64)"
       ],
       "Windows 11/10 (x64)": [
         "Windows 11/10 (x64)"
@@ -1271,7 +1271,7 @@
         "Ladda ner för macOS"
       ],
       "Save photo to your gallery": [
-        "Spara foto ditt galleri"
+        "Spara foto till ditt galleri"
       ],
       "Rebuild index": [
         "Bygg om index"
@@ -3880,7 +3880,7 @@
         "Förfrågan gjorde timeout"
       ],
       "Search failed": [
-        "Sökning misslyckades"
+        "Sökningen misslyckades"
       ],
       "Signature not verified": [
         "Signatur inte verifierad"
@@ -4315,6 +4315,12 @@
       ],
       "This item is no longer shared": [
         "Detta objekt är inte delat längre"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
+      ],
+      "Something went wrong, please try again later": [
+        "Något gick fel, försök igen senare"
       ]
     },
     "error": {
@@ -5992,7 +5998,7 @@
         "Skaffa appen för att säkerhetskopiera foton från din telefon eller ladda upp dem här."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Skaffa skrivbordsappen för att synkronisera filer från din dator."
+        "Skaffa appen för stationär dator för att synkronisera filer från din dator."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Lär känna ${ DRIVE_APP_NAME } och tjäna din bonus på 3 GB lagringsutrymme! Passa på idag."
@@ -6128,7 +6134,7 @@
         "JCB-logga"
       ],
       "Jul": [
-        "Juli"
+        "Jul"
       ],
       "Jun": [
         "Jun"
@@ -6553,7 +6559,7 @@
         "Välj en målmapp"
       ],
       "Select a folder to make the copy in": [
-        "Välj en mapp att göra en kopia i"
+        "Välj en mapp att göra kopian i"
       ],
       "Select a folder to move to.": [
         "Välj en mapp att flytta till."
@@ -6601,7 +6607,7 @@
         "Dela filer med länkar"
       ],
       "Shared": [
-        "Delat"
+        "Delad"
       ],
       "Shared by ": [
         "Delat av "
@@ -6936,7 +6942,7 @@
         "Ingen rubrik"
       ],
       "Update required": [
-        "Uppgradering krävs"
+        "Uppdatering krävs"
       ],
       "Updating drive search...": [
         "Uppdaterar Drive-sök…"
@@ -7384,7 +7390,7 @@
         "För endast ${ bundlePlanPriceInline }"
       ],
       "Not enough storage space": [
-        "Inte tillräckligt ledigt lagringsutrymme"
+        "Inte tillräckligt med lagringsutrymme"
       ],
       "RECOMMENDED": [
         "REKOMMENDERAT"
@@ -7615,6 +7621,15 @@
       ],
       "You": [
         "Du"
+      ],
+      "Author is not provided on public link": [
+        "Författare är inte angiven på offentlig länk"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -8227,7 +8242,7 @@
         "Delat"
       ],
       "Shared by": [
-        "Delat av"
+        "Delad av"
       ],
       "Shared on": [
         "Delat på"
@@ -8443,7 +8458,7 @@
         "Valda"
       ],
       "Shared by ${ sharedBy }": [
-        "Delad av ${ sharedBy }"
+        "Delat av ${ sharedBy }"
       ],
       "Shared by Public link": [
         "Delad av offentlig länk"
@@ -8668,7 +8683,7 @@
         "inställningar"
       ],
       "Shared": [
-        "Delade"
+        "Delat"
       ],
       "Shared with me": [
         "Delat med mig"
@@ -10753,7 +10768,7 @@
         "Frigör hårddiskutrymme på din dator"
       ],
       "Get the desktop app": [
-        "Skaffa skrivbordsappen"
+        "Skaffa appen för stationär dator"
       ],
       "Get the mobile app": [
         "Skaffa mobilappen"
@@ -13867,7 +13882,7 @@
         "Byt namn på en mapp"
       ],
       "Rename device": [
-        "Döp om enhet"
+        "Byt namn på enhet"
       ],
       "Report a problem": [
         "Rapportera ett problem"
@@ -13885,7 +13900,7 @@
         "Sökresultat"
       ],
       "Searching…": [
-        "Söker…"
+        "Söker …"
       ],
       "Security center": [
         "Säkerhetscenter"
@@ -14929,6 +14944,9 @@
       ],
       "Has errors": [
         "Har fel"
+      ],
+      "Pending": [
+        "Väntar"
       ]
     },
     "Property": {

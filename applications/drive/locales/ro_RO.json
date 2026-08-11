@@ -87,7 +87,7 @@
         "Adăugare număr de telefon"
       ],
       "Add photos": [
-        "Adaugă fotografii"
+        "Adăugare fotografii"
       ],
       "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
         "Adăugare în „${ album.name }” (${ album.photoCount } fotografie)",
@@ -95,7 +95,7 @@
         "Adăugare în „${ album.name }” (${ album.photoCount } de fotografii)"
       ],
       "Add to album": [
-        "Adăugare în album"
+        "Adăugare la album"
       ],
       "Add to group": [
         "Adăugare la grup"
@@ -371,7 +371,7 @@
         "Detalii"
       ],
       "Diagnostics": [
-        "Diagnosticare"
+        "Diagnostice"
       ],
       "Discard": [
         "Renunțare"
@@ -383,10 +383,10 @@
         "Afișare bară de navigare"
       ],
       "Display next": [
-        "Afișare următoare"
+        "Afișare următoarea"
       ],
       "Display previous": [
-        "Afișare anterioare"
+        "Afișare anterioara"
       ],
       "Done": [
         "Gata"
@@ -419,7 +419,7 @@
         "Descărcare pentru Windows"
       ],
       "Download info": [
-        "Descărcare informații"
+        "Informații descărcare"
       ],
       "Download logs": [
         "Jurnal descărcare"
@@ -470,7 +470,7 @@
         "Extindere folder"
       ],
       "Explore more": [
-        "Explorați mai mult"
+        "Explorați mai multe"
       ],
       "Explore other plans": [
         "Explorare alte planuri"
@@ -617,7 +617,7 @@
         "Mărire"
       ],
       "Join album": [
-        "Alăturați-vă albumului"
+        "Alăturare la album"
       ],
       "Keep my subscription": [
         "Îmi păstrez abonamentul"
@@ -932,7 +932,7 @@
         "Reluare articole eșuate"
       ],
       "Run diagnostics": [
-        "Rulare diagnostic"
+        "Rulare diagnosticări"
       ],
       "Save": [
         "Salvare"
@@ -944,7 +944,7 @@
         "Salvare modificări"
       ],
       "Save photos and remove": [
-        "Salvare și eliminare fotografii"
+        "Salvare fotografii și eliminare"
       ],
       "Scan & Download": [
         "Scanare și descărcare"
@@ -962,7 +962,7 @@
         "Căutare țări"
       ],
       "Search drive": [
-        "Căutare"
+        "Căutare în unitate"
       ],
       "See how": [
         "Vedeți cum"
@@ -1019,7 +1019,7 @@
         "Partajare album"
       ],
       "Share file": [
-        "Partajare fişier"
+        "Partajare fișier"
       ],
       "Share item": [
         "Partajare articol"
@@ -1073,7 +1073,7 @@
         "Ignorare verificare"
       ],
       "Start": [
-        "Start"
+        "Pornire"
       ],
       "Start import": [
         "Pornire importare"
@@ -1184,7 +1184,7 @@
         "Încărcare folder"
       ],
       "Upload from computer": [
-        "Încărcare din computer"
+        "Încărcare din calculator"
       ],
       "Upload photos": [
         "Încărcare fotografii"
@@ -3271,7 +3271,7 @@
         "Colaborarea a devenit mai ușoară. Acum oricine poate sugera modificări fără a schimba documentul."
       ],
       "Suggestion mode is here": [
-        "Este disponibil modul sugerare"
+        "Modul sugerare a sosit"
       ]
     },
     "Downgrade account reason": {
@@ -3934,7 +3934,7 @@
         "Schema de taxare inversă nu este acceptată pentru acest plan."
       ],
       "Search failed": [
-        "Căutarea a eșuat."
+        "Căutare eșuată"
       ],
       "Signature not verified": [
         "Semnătură neverificată"
@@ -4117,7 +4117,7 @@
         "Nu s-au putut încărca unele articole."
       ],
       "We were not able to load some items shared with you": [
-        "Unele elemente care vi s-au partajat nu sau putut încărca."
+        "Unele articole care vi s-au partajat nu s-au putut încărca."
       ],
       "We were not able to load some of your bookmarks": [
         "Unele semnele de carte nu s-au putut încărca."
@@ -4126,10 +4126,10 @@
         "Unele invitații la articolele partajate nu s-au putut încărca."
       ],
       "We were not able to load some of your saved shared links": [
-        "Invitații în așteptare: ${ invitationsCount }"
+        "Unele dintre legăturile web partajate salvate nu s-au putut încărca."
       ],
       "We were not able to load some of your shared items": [
-        "Nu sau putut încărca unele dintre articolele partajate."
+        "Unele articolele partajate nu s-au putut încărca."
       ],
       "We were not able to load some search results": [
         "Nu s-au putut încărca unele rezultate ale căutării."
@@ -4656,7 +4656,7 @@
         "Eroare: ${ errorMessage }"
       ],
       "Internal server error": [
-        "Eroare internă server"
+        "Eroare internă la server."
       ],
       "Not found": [
         "Negăsit"
@@ -4749,9 +4749,9 @@
     },
     "Failed": {
       "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } a eșuat",
-        "${ countOfFailedLinks } au eșuat",
-        "${ countOfFailedLinks } au eșuat"
+        "Eșuate: ${ countOfFailedLinks }",
+        "Eșuate: ${ countOfFailedLinks }",
+        "Eșuate: ${ countOfFailedLinks }"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -5577,9 +5577,9 @@
         "${ pausedCount } suspendate"
       ],
       "${ photoCount } item": [
-        "Articole: ${ photoCount }",
-        "Articole: ${ photoCount }",
-        "Articole: ${ photoCount }"
+        "${ photoCount } articol",
+        "${ photoCount } articole",
+        "${ photoCount } de articole"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
@@ -5767,7 +5767,7 @@
         "Există deja în librărie"
       ],
       "Also try looking in Trash.": [
-        "Puteți căuta și în «Gunoi»."
+        "Puteți căuta și în gunoi."
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -5809,7 +5809,7 @@
         "Goliți gunoiul și ștergeți definitiv tot din el?"
       ],
       "Are you sure you want to permanently delete": [
-        "Ștergeți definitiv"
+        "Sigur ștergeți definitiv"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Confirmați ștergerea definitivă a „${ itemName }” din «Gunoi»?"
@@ -5818,7 +5818,7 @@
         "Ștergeți definitiv articolele selectate din «Gunoi»?"
       ],
       "Are you sure you want to proceed?": [
-        "Continuați?"
+        "Sunteți sigur că doriți să procedați?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
@@ -5842,7 +5842,7 @@
         "Balanța de la abonamentul anterior"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Deoarece ${ DRIVE_APP_NAME } este criptat de la un capăt la altul, nu se pot accesa sau decripta fișierele. Pentru a vă debloca unitatea după o resetare a parolei, trebuie să aveți una dintre următoarele:"
+        "Deoarece ${ DRIVE_APP_NAME } este criptat bilateral, nu se pot accesa sau decripta fișierele. Pentru a vă debloca unitatea după o resetare a parolei, trebuie să aveți una dintre următoarele:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
@@ -5996,7 +5996,7 @@
         "Creare în"
       ],
       "Create links and share your files with others.": [
-        "Creați legături web şi partajați fişierele cu alții."
+        "Creați legături web și partajați fișierele cu alții."
       ],
       "Creating": [
         "Se crează"
@@ -6091,7 +6091,7 @@
         "Plasați fișiere aici pentru încărcare"
       ],
       "Drop files here": [
-        "Trageți fișierele aici"
+        "Plasați aici fișierele"
       ],
       "Drop files here to upload or click on the upload button": [
         "Trageți aici fișiere sau faceți clic pe butonul de încărcare"
@@ -6240,7 +6240,7 @@
         "Obțineți jurnale și alte informații pentru asistență tehnică și depanare."
       ],
       "Get the app to backup photos from your phone or upload them here.": [
-        "Luați aplicația pentru a vă conserva fotografiile din telefon sau încărcați-le aici."
+        "Luați aplicația pentru a vă conserva fotografiile din telefon sau a le încărca acolo."
       ],
       "Get the desktop app to sync files from your computer.": [
         "Luați aplicația pentru desktop pentru a sincroniza fișiere din calculator."
@@ -6323,7 +6323,7 @@
         "În pasul următor, veți putea trimite o depunere folosind o adresă de Bitcoin."
       ],
       "Indexing in progress": [
-        "Indexare în curs"
+        "Indexare în derulare"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "S-au indexat ${ esProgress } articole din ${ totalProgressToShow }"
@@ -6374,7 +6374,7 @@
         "Este bine să folosiți un VPN tot timpul. Dar amenințările cibernetice pot fi maxime în aceste situații:"
       ],
       "It’s easy and secure": [
-        "Este ușor și sigur"
+        "Este simplu și sigur"
       ],
       "Jan": [
         "Ian"
@@ -6487,7 +6487,7 @@
         "Monitorizare conturi"
       ],
       "More": [
-        "Detalii"
+        "Mai mult"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Majoritatea rețelelor Wi-Fi publice sunt sigure, dar unele nu au securitate, expunându-vă la amenințări cibernetice. Un VPN vă criptează traficul, păstrându-vă protecția."
@@ -6523,7 +6523,7 @@
         "Nu există grupuri"
       ],
       "No issue found": [
-        "Nu s-au găsit probleme"
+        "Nu s-au găsit probleme."
       ],
       "No payment is required at this time.": [
         "Momentan nu este necesară nicio plată."
@@ -6532,7 +6532,7 @@
         "Nu s-au găsit rezultate"
       ],
       "No synced folders": [
-        "Foldere nesincronizate"
+        "Nu există foldere sincronizate"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Niciuna din cheile încărcate nu este validă pentru criptare. Pentru a putea trimite mesaje către această adresă, încărcați o cheie validă sau dezactivați „Criptare mesaje”."
@@ -6735,7 +6735,7 @@
         "Căutarea privată este activată. Acum puteți închide acest dialog și căuta fișiere sau foldere."
       ],
       "Public link": [
-        "Legătură publică"
+        "Legătură web publică"
       ],
       "Public sharing of documents is not yet supported.": [
         "Partajarea publică a documentelor nu este încă implementată."
@@ -6783,7 +6783,7 @@
         "Se restaurează fotografiile... Păstrați fila deschisă."
       ],
       "Running diagnostics...": [
-        "Se execută diagnosticul..."
+        "Se execută diagnosticarea..."
       ],
       "Saving...": [
         "Se salvează..."
@@ -6795,13 +6795,13 @@
         "Scanați codul QR cu dispozitivul mobil"
       ],
       "Scan to download": [
-        "Scanați pentru a descărca"
+        "Scanați pentru descărcare"
       ],
       "Search cannot be enabled in this browser": [
         "Căutarea nu poate fi activată în acest navigator."
       ],
       "Search Enabled": [
-        "Căutare actvată."
+        "Căutare activată."
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Căutarea este activată. Puteți închide acest dialog și căuta fișiere și foldere."
@@ -6816,10 +6816,10 @@
         "Selectați folderul sursă."
       ],
       "Select all items for": [
-        "Selectare toate fotografiile din"
+        "Selectare toate articolele din"
       ],
       "Select an uploaded file or folder and create a link to it.": [
-        "Selectaţi un fişier sau folder încărcat şi creaţi o legătură web la acesta."
+        "Selectați un fișier sau folder încărcat și creați o legătură web la acesta."
       ],
       "Select item": [
         "Selectare articol"
@@ -6858,7 +6858,7 @@
         "Partajare fișiere prin legături web"
       ],
       "Shared": [
-        "Partajat"
+        "Partajate"
       ],
       "Shared by ": [
         "Partajat de "
@@ -6909,7 +6909,7 @@
         "Unele dintre fișiere nu mai sunt accesibile. Restaurați accesul la fișiere. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Unele fotografii din acest album nu sunt salvate în cronologi. Ștergerea acestui album va șterge definitiv acele fotografii."
+        "Unele fotografii din acest album nu sunt salvate în cronologie. Ștergerea acestui album va șterge definitiv acele fotografii."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Unele site-uri web și servicii de redare în flux blochează conținutul în funcție de regiune. Un VPN vă permite să ocoliți aceste restricții și să accesați internetul în mod liber."
@@ -7090,7 +7090,7 @@
         "Aceasta va încărca o nouă versiune a folderului."
       ],
       "Time": [
-        "Ora"
+        "Timp"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pentru a finaliza plata, trimiteți ${ btcAmountBold } la adresa de mai jos."
@@ -7129,7 +7129,7 @@
         "Pentru a utiliza verificarea adresei, trebuie să aprobați una sau mai multe chei publice disponibile, inclusiv pe cea care o veți folosi pentru trimiteri. Aceasta va împiedica falsificarea cheilor de criptare."
       ],
       "Today": [
-        "Astăzi"
+        "Azi"
       ],
       "Total email addresses": [
         "Total adrese de e-mail"
@@ -7318,7 +7318,7 @@
         "Ce doriți să faceți?"
       ],
       "What would you like to do?": [
-        "Ce v-ar plăcea să faceți?"
+        "Ce ați dori să faceți?"
       ],
       "When working remotely": [
         "Când lucrați la distanță"
@@ -7351,7 +7351,7 @@
         "Doriți să primiți un cod nou de verificare?"
       ],
       "Would you like to restore your files?": [
-        "Doriţi să restauraţi fişierele?"
+        "Doriți să restaurați fișierele?"
       ],
       "Would you like to save it before removing?": [
         "Doriți să-l salvați înainte de a-l elimina?",
@@ -7455,9 +7455,9 @@
         "Veți pierde toate modificările nesalvate."
       ],
       "You will need to save it again from the public link page.": [
-        "Va trebui să-l salvați din nou de pe pagina cu legături web publice.",
-        "Va trebui să le salvați din nou de pe pagina cu legături web publice.",
-        "Va trebui să le salvați din nou de pe pagina cu legături web publice."
+        "Fișierul va trebui resalvat de pe pagina cu legătura web publică.",
+        "Fișierele vor trebui resalvate de pe pagina cu legăturile web publice.",
+        "Fișierele vor trebui resalvate de pe pagina cu legăturile web publice."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
@@ -7643,7 +7643,7 @@
         "Mutare ${ dragCount } de articole."
       ],
       "Move ${ fileCount } file": [
-        "Mută ${ fileCount } fișier",
+        "Mutare ${ fileCount } fișier",
         "Mutare ${ fileCount } fișiere",
         "Mutare ${ fileCount } de fișiere"
       ],
@@ -7671,7 +7671,7 @@
       "${ folders } folder": [
         "${ folders } folder",
         "${ folders } foldere",
-        "${ folders } de foldere"
+        "${ folders } de folder"
       ],
       "${ photos } photo": [
         "${ photos } fotografie",
@@ -7952,6 +7952,12 @@
       ],
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "Pentru a migra acest utilizator, adăugați și verificați domeniul de e-mail în ${ domainNamesLink }."
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Marca ${ IDEAL_BRAND_NAME }"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Pentru finalizarea tranzacției prin ${ IDEAL_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ]
     },
     "info": {
@@ -8052,7 +8058,7 @@
     },
     "Label": {
       "# of downloads": [
-        "Descărcări"
+        "Nr. descărcări"
       ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } din ${ albumProgress.total }"
@@ -8564,7 +8570,7 @@
         "Setare parolă pentru a limita accesarea prin legătura web"
       ],
       "Set recovery method": [
-        "Setați metoda de recuperare"
+        "Setare metodă de recuperare"
       ],
       "Share a file, folder, or album": [
         "Partajați un fișier, folder sau album"
@@ -8576,7 +8582,7 @@
         "Partajat de"
       ],
       "Shared on": [
-        "Partajat"
+        "Distribuit la"
       ],
       "Shared with me": [
         "Partajate cu mine"
@@ -8648,7 +8654,7 @@
         "Tip"
       ],
       "Unlock drive": [
-        "Deblocați unitatea"
+        "Deblocare unitate"
       ],
       "Unlock drive (recommended)": [
         "Deblocare unitate (recomandat)"
@@ -8744,7 +8750,7 @@
         "Versiune învechită"
       ],
       "Searchable": [
-        "Permite căutare"
+        "Căutare posibilă"
       ],
       "User opted in": [
         "Utilizatorul a optat pentru"
@@ -8753,7 +8759,7 @@
         "Coloane vizibile:"
       ],
       "${ downloads } downloads": [
-        "Descărcări ${ downloads }"
+        "${ downloads } descărcări"
       ],
       "Created ${ created }": [
         "Creat ${ created }"
@@ -8762,7 +8768,7 @@
         "Șters ${ deleted }"
       ],
       "Device #${ position }": [
-        "Dispozitiv #${ position }"
+        "Dispozitiv nr. ${ position }"
       ],
       "Device: ${ name }": [
         "Dispozitiv: ${ name }"
@@ -9011,7 +9017,7 @@
         "setări"
       ],
       "Shared": [
-        "Partajat"
+        "Partajate"
       ],
       "Shared with me": [
         "Partajate cu mine"
@@ -10496,14 +10502,14 @@
         "Nu s-au putut decripta ${ count } de articole."
       ],
       "${ errors.length } item failed to be copied": [
-        "Articole care nu s-au putut copia: ${ errors.length }",
-        "Articole care nu s-au putut copia: ${ errors.length }",
-        "Articole care nu s-au putut copia: ${ errors.length }"
+        "Eșuare copiere articole: ${ errors.length }",
+        "Eșuare copiere articole: ${ errors.length }",
+        "Eșuare copiere articole: ${ errors.length }"
       ],
       "${ errors.length } item failed to be trashed": [
-        "Articole care nu s-au putut șterge: ${ errors.length }",
-        "Articole care nu s-au putut șterge: ${ errors.length }",
-        "Articole care nu s-au putut șterge: ${ errors.length }"
+        "Eșuare ștergere articole: ${ errors.length }",
+        "Eșuare ștergere articole: ${ errors.length }",
+        "Eșuare ștergere articole: ${ errors.length }"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }",
@@ -10586,9 +10592,9 @@
         "Articole copiate: ${ numberOfItems }"
       ],
       "${ numberOfItems } item successfully moved": [
-        "Un element a fost mutat cu succes.",
-        "${ numberOfItems } articole au fost mutate cu succes.",
-        "${ numberOfItems } de articole au fost mutate cu succes."
+        "Articole mutate: ${ numberOfItems }",
+        "Articole mutate: ${ numberOfItems }",
+        "Articole mutate: ${ numberOfItems }"
       ],
       "${ reason } has been disabled": [
         "${ reason } a fost dezactivat"
@@ -10612,7 +10618,7 @@
         "Albumul a fost redenumit."
       ],
       "All items deleted permanently from trash": [
-        "S-au eliminat definitiv toate articolele din «Gunoi»."
+        "S-au eliminat definitiv toate articolele din gunoi."
       ],
       "An invitation has been sent": [
         "A fost trimisă o invitație."
@@ -10781,7 +10787,7 @@
         "Articolul nu a fost adăugat la Drive."
       ],
       "The item was successfully added to your drive": [
-        "Articolul a fost adăugat la Drive."
+        "Articolul a fost adăugat la unitate."
       ],
       "The link to your item was deleted": [
         "Legătura către element a fost ștearsă."
@@ -11090,7 +11096,7 @@
         "Colaborați la documente"
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "Preferați ${ DRIVE_APP_NAME } cu fundal alb sau negru? Selectați culoarea care vi se potrivește."
+        "Preferați ${ DRIVE_APP_NAME } în mod luminos sau întunecat? Selectați culoarea care vi se potrivește."
       ],
       "Drag and drop your files here": [
         "Trageți și plasați fișierele aici"
@@ -11123,7 +11129,7 @@
         "Luați aplicația pentru desktop"
       ],
       "Get the mobile app": [
-        "Luați aplicația pentru mobil"
+        "Obțineți aplicația pentru mobil"
       ],
       "Got an Android? We've got you covered.": [
         "Aveți un Android? Ne-am gândit și la asta."
@@ -11147,7 +11153,7 @@
         "Mențineți ritmul încărcând mai multe fișiere, folosind stocarea inclusă în planul actual."
       ],
       "Manage access": [
-        "Gestionați accesul"
+        "Gestionare acces"
       ],
       "Organize files right from your desktop": [
         "Organizați fișierele chiar de pe desktop"
@@ -11180,7 +11186,7 @@
         "Lucrați mai repede, mai inteligent"
       ],
       "Work together": [
-        "Lucrați împreună"
+        "Colaborați"
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Ați obținut date gratuite și v-ați securizat fișierele cu criptare bilaterală — într-un timp record!"
@@ -11543,6 +11549,12 @@
       ],
       "Edit billing address": [
         "Editați adresa de facturare"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Plata cu ${ IDEAL_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Moneda a fost schimbată în euro (€) deoarece ${ IDEAL_BRAND_NAME } acceptă doar plăți în euro."
       ]
     },
     "Payments.Error": {
@@ -11563,6 +11575,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Eșuare inițializare ${ IDEAL_BRAND_NAME }. Reîncercați."
       ]
     },
     "Payments.error": {
@@ -11724,7 +11739,7 @@
         "E-mail"
       ],
       "Enter a new file name": [
-        "Introducere nume fișier"
+        "Introduceți numele noului fișier"
       ],
       "Enter a new folder name": [
         "Introducere nume folder nou"
@@ -13285,9 +13300,9 @@
         "${ countMergeableContacts } de contacte arată identic."
       ],
       "${ countOfUnrecoveredLinksLeft } left": [
-        "${ countOfUnrecoveredLinksLeft } rămas",
-        "${ countOfUnrecoveredLinksLeft } rămase",
-        "${ countOfUnrecoveredLinksLeft } rămase"
+        "Rămase: ${ countOfUnrecoveredLinksLeft }",
+        "Rămase: ${ countOfUnrecoveredLinksLeft }",
+        "Rămase: ${ countOfUnrecoveredLinksLeft }"
       ],
       "Address copied to clipboard": [
         "Adresa a fost copiată în memorie"
@@ -13648,9 +13663,9 @@
         "Închideți examinarea?"
       ],
       "Are you sure you want to remove this item from your list?": [
-        "Eliminați acest articol din listă?",
-        "Eliminați aceste articole din listă?",
-        "Eliminați aceste articole din listă?"
+        "Sigur eliminați acest articol din listă?",
+        "Sigur eliminați aceste articole din listă?",
+        "Sigur eliminați aceste articole din listă?"
       ],
       "Are you sure?": [
         "Confirmați?"
@@ -13728,7 +13743,7 @@
         "Confirmare pierdere bonusuri ${ BRAND_NAME }"
       ],
       "Confirmation required": [
-        "Necesită confirmare"
+        "Confirmare necesară"
       ],
       "Connect apps and devices": [
         "Conectați aplicații și dispozitive"
@@ -13836,7 +13851,7 @@
         "Dispozitive"
       ],
       "Diagnostics": [
-        "Diagnosticare"
+        "Diagnostice"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Semnătura digitală parțial verificată. Acest fișier a fost creat folosind o legătură web de partajare accesibilă public de către un utilizator fără un cont ${ BRAND_NAME }, astfel că identitatea acestuia nu poate fi verificată."
@@ -14577,7 +14592,7 @@
         "Acum puteți crea foldere și fișiere nelimitate"
       ],
       "You have inaccessible files": [
-        "Aveţi fişiere inaccesibile"
+        "Aveți fișiere inaccesibile"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"
@@ -15433,6 +15448,11 @@
       ],
       "name": [
         "nume"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Prin confirmarea acestei plăți, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să vă instruiască banca să vă debiteze contul în mod corespunzător. Puteți primi o rambursare în termen de 8 săptămâni de la data debitării, în condițiile acordului dvs. cu banca."
       ]
     }
   }
