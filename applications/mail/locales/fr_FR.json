@@ -4788,6 +4788,12 @@
       "Cannot set expiration longer than retention policy allows.": [
         "Il est impossible de définir une expiration plus longue que celle autorisée par la politique de conservation."
       ],
+      "Cannot share root folder": [
+        "Le dossier racine ne peut pas être partagé."
+      ],
+      "Cannot verify the author of this file": [
+        "L'auteur de ce fichier n'a pas pu être vérifié."
+      ],
       "Checkout expired, please try again": [
         "La commande a expiré, nous vous invitons à réessayer."
       ],
@@ -4828,11 +4834,32 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "La recherche dans le contenu n'a pas pu être activée. Nous vous invitons à redémarrer l'application ou à effacer les données."
       ],
+      "Copy operation aborted": [
+        "L'opération de copie a été annulée."
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Vous ne pouvez pas copier d'élément dans un élément qui n'est pas un dossier."
+      ],
+      "Could not load sharing details": [
+        "Les informations du partage n'ont pas pu être chargées."
+      ],
       "Could not open created vault": [
         "Le coffre-fort créé n'a pas pu être ouvert."
       ],
       "Could not open updated vault": [
         "Le coffre-fort mis à jour n'a pas pu être ouvert."
+      ],
+      "Could not unlock the parent folder": [
+        "Le dossier parent n'a pas pu être déverrouillé."
+      ],
+      "Could not unlock this item": [
+        "Cet élément n'a pas pu être déverrouillé."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Vous ne pouvez pas créer de fichier dans un élément qui n'est pas un dossier."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Vous ne pouvez pas créer de dossier dans un élément qui n'est pas un dossier."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Erreur de déchiffrement : le contenu chiffré de ce message n'a pas pu être déchiffré."
@@ -4896,6 +4923,18 @@
       "Failed loading group members": [
         "Le chargement des membres du groupe n'a pas abouti."
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "La clé de signet n'a pas pu être déchiffrée : ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Le mot de passe du signet n'a pas pu être déchiffré : ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "La clé de contenu n'a pas pu être déchiffrée : ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Le nom de l'élément n'a pas pu être déchiffré : ${ message }"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "La pièce jointe n'a pas pu être chiffrée. Nous vous invitons à réessayer."
       ],
@@ -4908,6 +4947,9 @@
       "Failed to open to contact": [
         "Le contact n'a pas pu être ouvert."
       ],
+      "File has no revision": [
+        "Le fichier n'a aucune révision."
+      ],
       "Filter with this name already exists": [
         "Un filtre avec ce nom existe déjà."
       ],
@@ -4919,6 +4961,9 @@
       ],
       "Forward address is required": [
         "L'adresse de transfert est nécessaire."
+      ],
+      "Image preview not found": [
+        "L'aperçu de l'image n'a pas été trouvé."
       ],
       "Image upload failed": [
         "L'image n'a pas pu être chargée."
@@ -4974,6 +5019,9 @@
       "Last name is too long": [
         "Le nom de famille est trop long."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Ce lien public obsolète ne peut pas être mis à jour. Veuillez en recréer un nouveau."
+      ],
       "Maximum expiration time reached.": [
         "Le délai d'expiration maximum a été atteint."
       ],
@@ -4993,6 +5041,9 @@
       "Message processing error.": [
         "Erreur de traitement du message"
       ],
+      "Missing inviter email": [
+        "L'e-mail de l'inviteur est manquant."
+      ],
       "Missing key packet": [
         "Le paquet de clés est manquant."
       ],
@@ -5004,6 +5055,9 @@
       ],
       "Missing signature": [
         "Il manque la signature."
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Vous ne pouvez pas déplacer d'élément dans un élément qui n'est pas un dossier."
       ],
       "Name is required": [
         "Veuillez indiquer un nom."
@@ -5039,6 +5093,9 @@
       "No external key retrieved for user is valid for sending": [
         "Aucune clé externe récupérée pour l’utilisateur n’est valide pour l’envoi."
       ],
+      "No file data was received. Please try again.": [
+        "Aucune donnée de fichier n'a été reçue. Veuillez réessayer."
+      ],
       "No valid address found": [
         "Aucune adresse valide n'a été trouvée."
       ],
@@ -5068,6 +5125,9 @@
       "Organization key must be activated to create non-private users": [
         "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
       ],
+      "Part of the file appears to be corrupted": [
+        "Une partie du fichier semble corrompue."
+      ],
       "Password is required": [
         "Le mot de passe est nécessaire."
       ],
@@ -5088,6 +5148,9 @@
       ],
       "Permissions request failed.": [
         "La demande d'autorisations n'a pas abouti."
+      ],
+      "Photo is already in the target album": [
+        "La photo se trouve déjà dans l'album indiqué."
       ],
       "Photo not found": [
         "La photo est introuvable"
@@ -5223,8 +5286,20 @@
       "Signature verification failed": [
         "La signature n'a pas pu être vérifiée."
       ],
+      "Signature verification for ${ signatureType } failed": [
+        "La vérification de signature pour ${ signatureType } n'a pas abouti."
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "La vérification de signature pour ${ signatureType } n'a pas abouti : ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Certains contacts n’ont pas pu être supprimés."
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Des données de fichier n'ont pas pu être importées. Veuillez réessayer."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Des parties de fichier n'ont pas pu être importées. Veuillez réessayer."
       ],
       "Some groups could not be deleted": [
         "Certains groupes n'ont pas pu être supprimés."
@@ -5320,6 +5395,9 @@
       "The system is busy at the moment. Please try again in a few minutes.": [
         "Le système est présentement occupé. Nous vous invitons à réessayer dans quelques minutes."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Le fichier importé ne correspond pas à l'original. Veuillez réessayer."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "L'assistant d'écriture ne peut pas traiter votre demande. Veuillez essayer un autre prompt."
       ],
@@ -5350,6 +5428,15 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
+      "This file has missing crypto material": [
+        "Des éléments de chiffrement manquent dans ce fichier."
+      ],
+      "This file has no version available to download": [
+        "Ce fichier n'a aucune version disponible au téléchargement."
+      ],
+      "This file version could not be uploaded": [
+        "Cette version de fichier n'a pas pu être importée."
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Ce nom de dossier n'est pas disponible, veuillez en choisir un autre."
       ],
@@ -5370,6 +5457,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
+      ],
+      "Too many server requests, please try again later": [
+        "Le nombre de requêtes serveur est trop important. Veuillez réessayer plus tard."
       ],
       "Trusted keys are not valid for sending": [
         "Les clés approuvées ne sont pas valides pour l'envoi."
@@ -5404,6 +5494,12 @@
       "VAT number must start with ${ prefixes }": [
         "Le numéro de TVA doit commencer par ${ prefixes }."
       ],
+      "Verification keys are not available": [
+        "Les clés de vérification ne sont pas disponibles."
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Les clés de vérification pour ${ signatureType } ne sont pas disponibles."
+      ],
       "We couldn’t send a verification code using this method.": [
         "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
       ],
@@ -5412,6 +5508,9 @@
       ],
       "Wrong password": [
         "Le mot de passe n'est pas correct."
+      ],
+      "You can update a public link for your own files only": [
+        "Vous pouvez uniquement mettre à jour les liens publics pour vos propres fichiers."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataire.",
@@ -5423,6 +5522,9 @@
       ],
       "You did not provide a file.": [
         "Vous n'avez pas fourni de fichier."
+      ],
+      "You do not have access to this item": [
+        "Vous n'avez pas accès à cet élément."
       ],
       "You have reached the maximum number of calendars.": [
         "Vous avez atteint le nombre maximum de calendriers."
@@ -7249,6 +7351,9 @@
       "Attention required": [
         "Attention requise"
       ],
+      "Author is not provided on public link": [
+        "L'auteur n'est pas fourni pour le lien public."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Effacez automatiquement les e-mails déplacés dans la corbeille et le dossier Indésirables/spam de plus de 30 jours."
       ],
@@ -8032,6 +8137,9 @@
       "Move here": [
         "Déplacer ici"
       ],
+      "Move to Primary": [
+        "Déplacer vers Principal"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
       ],
@@ -8750,6 +8858,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Ce code unique peut être utilisé par les sites web et les FAI (Fournisseurs d'accès internet) pour lier votre emplacement et votre historique de navigation à votre appareil."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Cet utilisateur ne peut pas être migré car son adresse e-mail n'est pas disponible sur ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Cet utilisateur ne peut pas être migré en raison d'incompatibilités de plateforme."
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Ceci s'affiche car la ligne de l'objet de votre e-mail contient des mots-clés de réinitialisation de mot de passe."
       ],
@@ -8777,11 +8891,11 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pour importer des événements, créez d'abord un calendrier dans ${ CALENDAR_APP_NAME }. Ce calendrier contiendra les événements après leur importation."
       ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Pour migrer cet utilisateur, ajoutez et vérifiez le domaine de messagerie sous ${ domainNamesLink }"
       ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l’aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n’est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
@@ -9636,7 +9750,7 @@
         "Navigation basique"
       ],
       "Composer shortcuts": [
-        "Raccourcis de l'éditeur "
+        "Raccourcis de l'éditeur"
       ],
       "Desktop app navigation": [
         "Navigation de l'application de bureau"
@@ -12888,7 +13002,7 @@
         "Montant dû après la version d'essai le ${ formattedDate }"
       ],
       "Billing Country": [
-        "Pays de facturation "
+        "Pays de facturation"
       ],
       "Card number": [
         "Numéro de la carte"
@@ -15277,9 +15391,8 @@
         "Déplacer ${ selectionCount } message.",
         "Déplacer ${ selectionCount } messages."
       ],
-      "Moved to ${ label }. Similar message will be categorized there in the future.": [
-        "Le message a été déplacé vers ${ label }. À l'avenir les messages similaires seront aussi déplacés à cet endroit.",
-        "Les messages ont été déplacés vers ${ label }. À l'avenir les messages similaires seront aussi déplacés à cet endroit."
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Déplacé vers ${ label }. Les messages similaires y seront triés à l’avenir."
       ],
       "Password copied to clipboard": [
         "Le mot de passe a été copié dans le presse-papiers."
@@ -15865,6 +15978,9 @@
       "Distraction-free emailing": [
         "Une messagerie électronique sans distractions"
       ],
+      "Domain names": [
+        "Noms de domaine"
+      ],
       "Don't give spam a chance": [
         "Ne laissez aucune chance aux messages indésirables/spam"
       ],
@@ -15978,6 +16094,9 @@
       ],
       "Groups": [
         "Groupes"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Attention : ce compte Gmail est associé à un autre compte ${ BRAND_NAME }."
       ],
       "Help and feedback": [
         "Aide et commentaires"
@@ -16328,6 +16447,9 @@
       ],
       "Referral": [
         "Parrainage"
+      ],
+      "Refine your Categories": [
+        "Affinez vos catégories"
       ],
       "Remove forwarding address": [
         "Retirer l'adresse de transfert"
@@ -16814,6 +16936,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Passez à une formule prise en charge pour pouvoir utiliser les rôles d'administrateur."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
       ]

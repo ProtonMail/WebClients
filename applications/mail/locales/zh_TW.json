@@ -1035,6 +1035,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
       ],
+      "Open debug menu": [
+        "開啟偵錯選單"
+      ],
       "Open navigation": [
         "開啟導覽"
       ],
@@ -1682,6 +1685,9 @@
       ],
       "Yes, I'll attend": [
         "是，我會出席"
+      ],
+      "Yes, organize it": [
+        "是，整理它。"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
@@ -4664,6 +4670,9 @@
       "Address is already added to your account": [
         "位址已添加至您的帳號"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "郵件位址已被組織外的使用者使用了。請聯絡客服"
+      ],
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
       ],
@@ -4706,11 +4715,17 @@
       "Calendar limit reached": [
         "行事曆數量已達上限"
       ],
+      "Cannot download a folder": [
+        "無法下載個資料夾"
+      ],
       "Cannot export this contact": [
         "無法匯出通訊名片"
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "無法設置長於保留政策允許的過期時間。"
+      ],
+      "Cannot verify who uploaded this file": [
+        "無法驗證上傳此檔案的人"
       ],
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
@@ -4748,11 +4763,26 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "無法啟用內文搜尋。請重新啟動應用程式或清除資料。"
       ],
+      "Copying item to a non-folder is not allowed": [
+        "不允許將項目複製到非資料夾"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "無法載入照片預覽: ${ message }"
+      ],
       "Could not open created vault": [
         "無法開啟被新增的保管庫"
       ],
       "Could not open updated vault": [
         "無法開啟已更新的保管庫"
+      ],
+      "Could not unlock this item": [
+        "無法解鎖此項目"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "允許於非資料夾內創建檔案"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "不允許於非資料夾內創建資料夾"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密錯誤：此郵件的加密內容解密失敗。"
@@ -4762,6 +4792,9 @@
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "請取消選取至少 ${ calendarsToFixCount } 個行事曆或"
+      ],
+      "Device not found": [
+        "找不到裝置"
       ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
@@ -4813,6 +4846,9 @@
       ],
       "Failed loading group members": [
         "無法再入群組成員"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "解密書籤金鑰失敗: ${ message }"
       ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失敗。請再試一次。"
@@ -4883,6 +4919,9 @@
       "Item content cannot exceed 40KB": [
         "項目無法超越40KB"
       ],
+      "Item not found": [
+        "找不到項目"
+      ],
       "Label name cannot be empty.": [
         "標籤名稱不能留空。"
       ],
@@ -4907,11 +4946,23 @@
       "Missing key packet": [
         "缺少金鑰封包"
       ],
+      "Missing organization public key": [
+        "缺少組織公用密鑰"
+      ],
       "Missing signature": [
         "簽章遺失"
       ],
+      "Move operation aborted": [
+        "以終止移動操作"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "不允許將項目移動到非資料夾"
+      ],
       "Name is required": [
         "名稱為必填"
+      ],
+      "Name must not be empty": [
+        "名稱不得留空"
       ],
       "Network error": [
         "網路連線錯誤"
@@ -4951,6 +5002,12 @@
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "部份群組無聯絡人：${ noContactGroupList }"
+      ],
+      "Operation aborted": [
+        "操作取消"
+      ],
+      "Operation failed, try again later": [
+        "作業失敗。稍後再試。"
       ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
@@ -5096,6 +5153,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "當您超出方案限制時，附件無法使用，直到升級您的方案。"
       ],
+      "Signature is missing": [
+        "缺少簽名"
+      ],
       "Signature not verified": [
         "簽章尚未驗證"
       ],
@@ -5108,8 +5168,17 @@
       "Some contacts could not be deleted": [
         "某些聯絡名片無法刪除"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "部分檔案上載失敗。請稍後再試。"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "檔案部分上傳失敗。請稍後再試。"
+      ],
       "Some groups could not be deleted": [
         "部分聯絡人群組無法刪除"
+      ],
+      "Some items could not be loaded": [
+        "無法載入部分項目"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
@@ -5228,8 +5297,23 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
+      "This file has missing crypto material": [
+        "此檔案缺乏密鑰元件"
+      ],
+      "This file has no version available to download": [
+        "此檔案無可下載版本"
+      ],
+      "This file version could not be uploaded": [
+        "此檔案的版本紀錄無法被上傳"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "此資料夾名稱不適用。請選擇其它名稱。"
+      ],
+      "This item has no image preview": [
+        "此項目無可預覽的項目"
+      ],
+      "This item is not shared": [
+        "此項目未被共享"
       ],
       "This label name is not available. Please choose a different name.": [
         "此標籤名稱無法使用。請選擇其它名稱。"
@@ -5242,6 +5326,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "此郵件可能包含某些您目前的瀏覽器無法正確開啟的連結 URL。"
+      ],
+      "Too many server errors, please try again later": [
+        "太多伺服器錯誤，請稍後再試"
+      ],
+      "Too many server requests, please try again later": [
+        "太多伺服器查詢，請稍後再試"
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密鑰用於寄送時無效"
@@ -5293,6 +5383,12 @@
       ],
       "You did not provide a file.": [
         "您沒有提供檔案。"
+      ],
+      "You do not have access to this item": [
+        "您沒有權限訪問此項目"
+      ],
+      "You do not have access to this shared item": [
+        "您沒有權限訪問此共享的項目"
       ],
       "You have reached the maximum number of calendars.": [
         "您已用鑿行事曆組的上限。"
@@ -5828,6 +5924,9 @@
       ]
     },
     "Filter": {
+      "All": [
+        "全部"
+      ],
       "Filter": [
         "過濾"
       ],
@@ -5839,6 +5938,15 @@
       ],
       "Has attachments": [
         "有附件"
+      ],
+      "In progress": [
+        "進行中"
+      ],
+      "Migrated": [
+        "遷移"
+      ],
+      "Pending": [
+        "等待中"
       ],
       "Read": [
         "已讀"
@@ -6541,6 +6649,9 @@
       ],
       "Migrated": [
         "已移轉"
+      ],
+      "Pending": [
+        "等待中"
       ]
     },
     "Import warning": {
@@ -7782,6 +7893,9 @@
       "Move emails": [
         "將電郵移動到"
       ],
+      "Move to Primary": [
+        "移動到主要"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾創建。"
       ],
@@ -7799,6 +7913,9 @@
       ],
       "No contacts added yet": [
         "仍未加入任何通訊錄"
+      ],
+      "No conversation to read": [
+        "無對話內容為未讀"
       ],
       "No email address": [
         "沒有電郵位址"
@@ -7874,6 +7991,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "開啟指南，以查看建議的動作和實用連結。"
+      ],
+      "Opened ${ location }": [
+        "開啟 ${ location }"
       ],
       "Optional": [
         "選項"
@@ -8045,6 +8165,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "聯繫我們以取得任何關於${ BRAND_NAME }的協助。"
+      ],
+      "Read ${ count } email": [
+        "已讀 ${ count } 封電子郵件"
       ],
       "Recipient: ": [
         "收件人 : "
@@ -8511,6 +8634,12 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "若要匯入行程，須先在 ${ CALENDAR_APP_NAME } 創建新的行事曆。匯入後的行程，都會在此顯示。"
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "若要遷移此使用者，於您的 ${ provider.adminConsoleName } 啟用它們的帳號。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "若要遷移此使用者，他們需要接受邀請以加入 ${ BRAND_NAME }。"
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一位聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
       ],
@@ -8783,6 +8912,9 @@
       ],
       "Yearly": [
         "每年"
+      ],
+      "You": [
+        "您"
       ],
       "You already have a free account": [
         "您已有一個免費帳號"
@@ -9608,6 +9740,9 @@
       "Did not follow instructions": [
         "未遵循指示"
       ],
+      "Document ID": [
+        "文件 ID"
+      ],
       "Don't ask again": [
         "不要再次詢問"
       ],
@@ -10180,6 +10315,9 @@
       ],
       "v1": [
         "v1"
+      ],
+      "v2": [
+        "版本 2"
       ],
       "Verification code": [
         "驗證碼"
@@ -13041,6 +13179,17 @@
         "進度：${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "属性"
+      ],
+      "content key": [
+        "內容金鑰"
+      ],
+      "key": [
+        "金鑰"
+      ]
+    },
     "Property type": {
       "Address": [
         "位址"
@@ -14931,6 +15080,9 @@
       "Actions": [
         "操作"
       ],
+      "Activated": [
+        "已啟用"
+      ],
       "Address": [
         "電郵位址"
       ],
@@ -14954,6 +15106,9 @@
       ],
       "Type": [
         "類型"
+      ],
+      "User": [
+        "使用者"
       ]
     },
     "TableHeader": {
@@ -15226,6 +15381,9 @@
       "Collaborate on documents": [
         "於文件上合作"
       ],
+      "Configure migration": [
+        "設置遷移"
+      ],
       "Confirm downgrade": [
         "確認降級"
       ],
@@ -15364,6 +15522,9 @@
       "Distraction-free emailing": [
         "無干擾的信件"
       ],
+      "Domain names": [
+        "網域名稱"
+      ],
       "Don't give spam a chance": [
         "垃圾郵件別拜託、拜拜就好"
       ],
@@ -15477,6 +15638,9 @@
       ],
       "Groups": [
         "群組"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "注意: 此 Gmail 已於其他 ${ BRAND_NAME } 帳號連結"
       ],
       "Help and feedback": [
         "尋求協助與反映意見"
@@ -15873,6 +16037,9 @@
       ],
       "Select data to import": [
         "選擇匯入資料"
+      ],
+      "Select users to migrate": [
+        "選取使用者以遷移"
       ],
       "Self-destruct message": [
         "自我銷毀郵件"
@@ -16303,6 +16470,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "升級到支援使用管理員角色的方案。"
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "一旦使用者接受邀請，您便能分配角色。"
       ]

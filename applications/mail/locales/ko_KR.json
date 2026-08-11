@@ -871,7 +871,7 @@
         "이메일을 다음으로 표시"
       ],
       "Mark for deletion": [
-        "삭제를 표시합니다."
+        "삭제 표시"
       ],
       "Mark legitimate": [
         "스팸이 아님"
@@ -896,6 +896,9 @@
       ],
       "Messages to this recipient": [
         "이 수신자에게 보내는 메시지"
+      ],
+      "Migrate": [
+        "이전"
       ],
       "Minimize composer": [
         "최소화"
@@ -1552,7 +1555,7 @@
         "데이터 잠금 해제"
       ],
       "Unmark for deletion": [
-        "삭제를 표시 해제합니다."
+        "삭제 표시 해제"
       ],
       "Unordered list": [
         "번호가 없는 목록"
@@ -2317,10 +2320,10 @@
         "닫기"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
-        "${ MAIL_APP_NAME }을 계속 사용하세요."
+        "${ MAIL_APP_NAME }을 계속 사용하기"
       ],
       "Continue using ${ planTitle }": [
-        "${ planTitle }을 계속 사용하세요"
+        "${ planTitle }을(를) 계속 사용하세요."
       ],
       "Continue your subscription": [
         "내 구독 유지하기"
@@ -2335,7 +2338,7 @@
         "50% 할인 받기"
       ],
       "Got it": [
-        "확인했습니다"
+        "확인"
       ],
       "Maybe later": [
         "나중에"
@@ -4682,6 +4685,9 @@
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "저작권 침해나 데이터 유실에 대한 리포트 제출 시 메시지가 필요합니다."
+      ],
       "A problem occurred, please try again.": [
         "문제가 발생했습니다. 다시 시도해 주세요."
       ],
@@ -4696,6 +4702,9 @@
       ],
       "Address is already added to your account": [
         "이미 추가된 주소입니다."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "조직 외부의 사용자에 의해 주소가 이미 사용 중입니다. 해당 문제를 해결하기 위해 고객 지원 팀으로 문의 바랍니다."
       ],
       "Address primary private key not found": [
         "기본 주소 키 찾을 수 없음"
@@ -4736,14 +4745,35 @@
       "Authentication error.": [
         "인증 오류"
       ],
+      "Bookmark password is not available": [
+        "북마크 비밀번호를 사용할 수 없습니다"
+      ],
       "Calendar limit reached": [
         "캘린더 개수 제한에 도달했습니다"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "유효한 이름 없이는 앨범에 사진을 추가할 수 없습니다"
+      ],
+      "Cannot download a folder": [
+        "폴더를 다운로드할 수 없음"
       ],
       "Cannot export this contact": [
         "이 연락처를 불러올 수 없음"
       ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "유효한 이름 없이는 항목을 이동할 수 없습니다. 항목 이동 전 이름을 변경하세요."
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "보존 정책이 허용하는 것보다 유효기간을 더 길게 설정할 수 없습니다."
+      ],
+      "Cannot share root folder": [
+        "상위 폴더를 공유할 수 없습니다"
+      ],
+      "Cannot verify the author of this file": [
+        "이 파일의 소유자를 확인할 수 없습니다"
+      ],
+      "Cannot verify who uploaded this file": [
+        "이 파일을 업로드한 사용자의 진위를 파악할 수 없음"
       ],
       "Checkout expired, please try again": [
         "체크아웃 만료됨, 다시 시도하십시오"
@@ -4772,6 +4802,9 @@
       "Contact signature not verified": [
         "연락처 서명이 인증되지 않았습니다."
       ],
+      "Contact your administrator to start a migration.": [
+        "이전 작업을 시작하려면 조직 관리자에게 문의하세요."
+      ],
       "Contact your organization’s administrator to resolve this": [
         "이 문제를 해결하려면 조직의 관리자에게 문의해주세요"
       ],
@@ -4781,11 +4814,41 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "내용 검색을 활성화 할 수 없습니다. 어플리케이션을 재시작하거나 데이터를 제거하십시오."
       ],
+      "Copying item to a non-folder is not allowed": [
+        "폴더가 없는 곳에 항목을 복사하는 것이 허용되지 않습니다"
+      ],
+      "Could not find an available name": [
+        "사용 가능한 이름을 찾을 수 없음"
+      ],
+      "Could not load sharing details": [
+        "공유 상세 정보를 불러올 수 없음"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "이미지 미리보기를 불러올 수 없음: ${ message }"
+      ],
       "Could not open created vault": [
         "생성된 금고를 열 수 없습니다."
       ],
       "Could not open updated vault": [
         "업데이트된 금고를 열 수 없습니다."
+      ],
+      "Could not read part of this file: ${ message }": [
+        "해당 파일의 일부를 읽을 수 없음: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "상위 폴더를 잠금할 수 없습니다"
+      ],
+      "Could not unlock this item": [
+        "이 항목을 잠금 해제할 수 없음"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "폴더가 없는 곳에 문서를 생성하는 것이 허용되지 않습니다."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "폴더가 없는 곳에 파일을 생성하는 것이 허용되지 않습니다."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "폴더가 없는 곳에 폴더를 생성하는 것이 허용되지 않습니다."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "복호화 오류: 이 메시지의 암호화된 내용을 복호화할 수 없습니다."
@@ -4795,6 +4858,9 @@
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "최소 ${ calendarsToFixCount }개의 캘린더를 선택 해제하거나"
+      ],
+      "Device not found": [
+        "기기를 찾을 수 없음"
       ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
@@ -4847,8 +4913,29 @@
       "Failed loading group members": [
         "그룹 구성원을 로드하는 데 실패했습니다"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "북마크 키 복호화 불가: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "북마크 이름 복호화 불가: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "북마크 비밀번호 복호화 실패: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "콘텐츠 키를 복호화할 수 없습니다: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "항목 이름을 복호화할 수 없음: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "노드 키 복호화 실패: ${ message }"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "첨부 파일을 암호화하지 못했습니다. 다시 시도해주세요."
+      ],
+      "Failed to get inviter keys": [
+        "초대한 사람의 키를 받을 수 없음"
       ],
       "Failed to load subscription data. Please try again later.": [
         "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
@@ -4858,6 +4945,12 @@
       ],
       "Failed to open to contact": [
         "연락처 열기 실패"
+      ],
+      "Failed to verify invitation": [
+        "초대장 확인 실패"
+      ],
+      "File download failed due to empty response": [
+        "응답이 비어있어 파일을 다운로드할 수 없습니다."
       ],
       "Filter with this name already exists": [
         "이 이름의 필터가 이미 있습니다"
@@ -4870,6 +4963,9 @@
       ],
       "Forward address is required": [
         "전달 주소가 필요합니다."
+      ],
+      "Image preview not found": [
+        "이미지 미리보기를 사용할 수 없음"
       ],
       "Image upload failed": [
         "이미지 업로드 실패"
@@ -4913,8 +5009,14 @@
       "Invalid verification code": [
         "잘못된 검증 코드"
       ],
+      "Invitation not found": [
+        "초대를 찾을 수 없음"
+      ],
       "Item content cannot exceed 40KB": [
         "항목 콘텐츠가 40KB를 초과할 수 없습니다."
+      ],
+      "Item not found": [
+        "항목을 찾을 수 없습니다"
       ],
       "Label name cannot be empty.": [
         "라벨 이름은 비워둘 수 없습니다."
@@ -4922,11 +5024,17 @@
       "Last name is too long": [
         "성(이름)이 너무 깁니다."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "기존 공개 링크는 업데이트되지 않습니다. 새로운 공개 링크로 다시 생성해야 합니다."
+      ],
       "Maximum expiration time reached.": [
         "최대 유효 기간에 도달했습니다."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "최대 첨부 파일 (${ attachmentsCountLimit }개) 도달"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "구성원 주소를 찾을 수 없습니다. 해당 문제를 해결하기 위해 고객 지원 팀에 문의해 주시기 바랍니다."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "기존 ${ BRAND_NAME } 캘린더에 최소 ${ calendarsToFixCount }개의 캘린더를 병합하세요."
@@ -4937,14 +5045,38 @@
       "Message processing error.": [
         "메시지 처리 실패."
       ],
+      "Missing inviter email": [
+        "초대한 사람의 이메일 누락"
+      ],
       "Missing key packet": [
         "키 패킷 없음"
+      ],
+      "Missing organization private key": [
+        "조직 비공개 키 유실"
+      ],
+      "Missing organization public key": [
+        "조직 공개 키 유실"
       ],
       "Missing signature": [
         "서명 없음"
       ],
+      "Missing signature for ${ signatureType }": [
+        "${ signatureType }에 대한 서명 유실"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "폴더가 없는 곳에 항목을 이동하는 것이 허용되지 않습니다"
+      ],
+      "Moving root item is not allowed": [
+        "상위 항목에 대한 이동은 허용되지 않습니다."
+      ],
       "Name is required": [
         "이름은 필수입니다"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "이름은 최대 ${ MAX_NODE_NAME_LENGTH }글자까지입니다."
+      ],
+      "Name must not be empty": [
+        "이름은 필수 입력 항목입니다"
       ],
       "Network error": [
         "네트워크 오류"
@@ -4973,6 +5105,9 @@
       "No external key retrieved for user is valid for sending": [
         "사용자를 위해 검색된 외부 키가 전송에 유효하지 않습니다."
       ],
+      "No file data was received. Please try again.": [
+        "수신된 데이터가 없습니다. 다시 시도하세요."
+      ],
       "No valid address found": [
         "유효한 주소를 찾을 수 없습니다"
       ],
@@ -4985,6 +5120,21 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "그룹 중 하나에 연락처가 없어요 : ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "관리자만 외부 초대로 변경할 수 있습니다"
+      ],
+      "Operation aborted": [
+        "작업이 중단됨"
+      ],
+      "Operation failed, try again later": [
+        "작업에 실패했습니다. 나중에 다시 시도하세요."
+      ],
+      "Organization does not have enough seats available": [
+        "조직의 사용 권한이 충분하지 않습니다."
+      ],
+      "Organization does not have enough storage available": [
+        "조직에 충분한 저장공간이 남아있지 않습니다."
+      ],
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
       ],
@@ -4993,6 +5143,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "개인이 아닌 사용자를 생성하려면 조직 키는 활성화 상태여야 합니다."
+      ],
+      "Part of the file appears to be corrupted": [
+        "파일 일부가 손상되었을 가능성이 있습니다"
       ],
       "Password is required": [
         "비밀번호가 필요함"
@@ -5014,6 +5167,12 @@
       ],
       "Permissions request failed.": [
         "권한 요청을 실패했습니다."
+      ],
+      "Photo is already in the target album": [
+        "해당 앨범에 같은 사진이 이미 존재합니다."
+      ],
+      "Photo not found": [
+        "사진을 찾을 수 없음"
       ],
       "Please activate your search again": [
         "다시 검색을 활성화 해주세요"
@@ -5117,6 +5276,9 @@
       "Removed duplicate recipient: ${ recipents }": [
         "중복된 수신자를 삭제했습니다: ${ recipents }"
       ],
+      "Renaming root item is not allowed": [
+        "상위 항목에 대한 이름 변경은 허용되지 않습니다."
+      ],
       "Request timed out": [
         "요청 시간이 초과되었습니다."
       ],
@@ -5129,6 +5291,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "파일 첨부가 플랜의 상한을 초과한 상태에선 플랜을 업그레이드하기 전까지 제한됩니다."
       ],
+      "Signature is missing": [
+        "서명이 유실되었습니다"
+      ],
       "Signature not verified": [
         "인증되지 않은 서명입니다."
       ],
@@ -5138,11 +5303,29 @@
       "Signature verification failed": [
         "서명 검증 실패"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "서명 인증 실패: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType }에 대한 서명 인증 실패"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType }에 대한 서명 인증 실패:${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "일부 연락처를 삭제할 수 없습니다"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "일부 파일의 데이터 업로드가 실패했습니다. 다시 시도하세요."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "일부 파일의 부분을 업로드할 수 없습니다. 다시 시도하세요."
+      ],
       "Some groups could not be deleted": [
         "일부 그룹은 삭제할 수 없었습니다."
+      ],
+      "Some items could not be loaded": [
+        "일부 항목을 불러올 수 없습니다."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "가능하지 않은 폴더 이름들이 존재합니다. 해당 폴더의 이름들을 수정하기 위해 불러온 내역을 설정해 주세요."
@@ -5234,6 +5417,9 @@
       "The system is busy at the moment. Please try again in a few minutes.": [
         "시스템이 현재 과부하 상태입니다. 몇 분 뒤 다시 시도하세요."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "업로드된 파일과 원본 파일이 일치하지 않습니다. 다시 시도해 주세요."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "글쓰기 도우미가 요청을 처리할 수 없습니다. 다른 프롬포트를 시도해 주세요."
       ],
@@ -5264,8 +5450,23 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
       ],
+      "This file has no version available to download": [
+        "이 파일에 다운로드할 수 있는 사용 가능한 버전이 없습니다."
+      ],
+      "This file version could not be uploaded": [
+        "해당 파일 버전은 업로드할 수 없습니다."
+      ],
       "This folder name is not available. Please choose a different name.": [
         "이 폴더 이름을 사용할 수 없어요. 다른 이름을 선택하세요."
+      ],
+      "This item has no image preview": [
+        "해당 항목의 이미지 미리보기가 없습니다."
+      ],
+      "This item is no longer shared": [
+        "더 이상 공유되지 않는 항목입니다."
+      ],
+      "This item is not shared": [
+        "더 이상 공유되지 않는 항목입니다."
       ],
       "This label name is not available. Please choose a different name.": [
         "이 라벨 이름은 사용할 수 없어요. 다른 이름을 선택하세요."
@@ -5278,6 +5479,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "이 메시지는 현재 브라우저에서 제대로 열 수 없는 URL 링크있을 수 있습니다."
+      ],
+      "Too many server errors, please try again later": [
+        "서버 오류가 너무 많습니다. 나중에 다시 시도하십시오."
+      ],
+      "Too many server requests, please try again later": [
+        "서버 요청이 너무 많습니다. 나중에 다시 시도하십시오."
       ],
       "Trusted keys are not valid for sending": [
         "인증된 키가 전송하기에 유효하지 않음"
@@ -5312,6 +5519,12 @@
       "VAT number must start with ${ prefixes }": [
         "부가가치세(VAT)번호는 ${ prefixes }(으)로 시작해야 합니다."
       ],
+      "Verification keys are not available": [
+        "인증 키를 사용할 수 없습니다"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType }용 인증 키가 사용할 수 없습니다"
+      ],
       "We couldn’t send a verification code using this method.": [
         "해당 방법으로 인증 코드를 전송할 수 없습니다."
       ],
@@ -5321,6 +5534,15 @@
       "Wrong password": [
         "잘못된 비밀번호입니다"
       ],
+      "You can create public links for your own files only": [
+        "내가 소유한 파일만 공개 링크를 생성할 수 있습니다."
+      ],
+      "You can only upload a new version to a file": [
+        "새로운 버전의 파일만 업로드할 수 있습니다."
+      ],
+      "You can update a public link for your own files only": [
+        "내가 소유한 파일만 공개 링크를 업데이트할 수 있습니다."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
       ],
@@ -5329,6 +5551,12 @@
       ],
       "You did not provide a file.": [
         "파일을 제공하지 않았습니다."
+      ],
+      "You do not have access to this item": [
+        "이 항목에 접근할 권한이 없습니디"
+      ],
+      "You do not have access to this shared item": [
+        "해당 항목에 대한 접근 권한이 없습니다."
       ],
       "You have reached the maximum number of calendars.": [
         "캘린더 갯수의 한도에 도달했습니다."
@@ -5644,7 +5872,7 @@
         "초대 거절"
       ],
       "Got it": [
-        "확인했습니다"
+        "확인"
       ],
       "Switch plans": [
         "플랜 변경"
@@ -5864,6 +6092,15 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "활성화됨"
+      ],
+      "All": [
+        "전체"
+      ],
+      "Errors": [
+        "오류"
+      ],
       "Filter": [
         "필터"
       ],
@@ -5875,6 +6112,18 @@
       ],
       "Has attachments": [
         "첨부 파일 포함"
+      ],
+      "In progress": [
+        "진행 중"
+      ],
+      "Migrated": [
+        "이전됨"
+      ],
+      "Not activated": [
+        "비활성화됨"
+      ],
+      "Pending": [
+        "대기 중"
       ],
       "Read": [
         "읽음"
@@ -6572,11 +6821,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "오류 있음"
+      ],
       "In progress": [
         "진행 중"
       ],
       "Migrated": [
         "이전됨"
+      ],
+      "Pending": [
+        "대기 중"
       ]
     },
     "Import warning": {
@@ -7488,6 +7743,9 @@
       "finance": [
         "금융정보"
       ],
+      "Find out what can be migrated.": [
+        "이전되는 항목을 살펴보세요."
+      ],
       "Folder": [
         "폴더"
       ],
@@ -7836,6 +8094,9 @@
       "Move here": [
         "여기로 이동"
       ],
+      "Move to Primary": [
+        "중요로 이동"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "새 폴더의 이름을 지정하고 넣고 싶은 상위 폴더를 선택하세요. 상위 폴더를 선택하지 않으면, 이 새 폴더는 최상위 폴더로 생성됩니다."
       ],
@@ -7854,8 +8115,14 @@
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
       ],
+      "No conversation to read": [
+        "읽을 대화가 없습니다"
+      ],
       "No email address": [
         "이메일 주소 없음"
+      ],
+      "No email open": [
+        "열린 이메일이 없음"
       ],
       "No folder found": [
         "폴더 발견되지 않음"
@@ -7889,6 +8156,9 @@
       ],
       "No trackers found": [
         "트래커를 찾을 수 없음"
+      ],
+      "No users to display": [
+        "표시할 사용자 없음"
       ],
       "non-${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }이 아닌"
@@ -8103,8 +8373,14 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME }에 대한 도움이 필요하면 저희에게 연락하세요."
       ],
+      "Read ${ count } email": [
+        "${ count }개 이메일 읽기"
+      ],
       "Read ${ count } email on screen": [
         "화면에서 ${ count }개 이메일 읽기"
+      ],
+      "Read ${ count } message in this thread": [
+        "이 스레드에서 ${ count }개 메시지 읽기"
       ],
       "Read your ${ count } filter": [
         "${ count }개 필터 읽기"
@@ -8195,6 +8471,9 @@
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "${ location }(에)서 모두 ${ elementsCount } 선택"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "이전하고자 하는 항목을 선택하세요. 모든 조직 구성원들에게 적용됩니다."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "이 이메일 주소로 이메일을 보낼 때 기본적으로 사용할 이메일 형식을 선택하세요."
@@ -8556,6 +8835,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "이 고유 코드는 웹사이트와 ISP(인터넷 서비스 제공업체)에서 위치와 검색 기록을 기기에 연결하는 데 사용할 수 있습니다."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "해당 이메일 주소는 ${ BRAND_NAME }에서 지원되지 않음으로 사용자를 이전할 수 없습니다."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "플랫폼이 호환되지 않으므로 해당 사용자를 이전할 수 없습니다."
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "이메일 제목에 암호 재설정 키워드가 포함되어 있기 때문에 표시되었습니다."
       ],
@@ -8582,6 +8867,27 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "해당 사용자를 이전하려면 ${ domainNamesLink } 아래로 이메일 도메인을 추가 및 인증해야 합니다."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "해당 사용자를 이전하려면 ${ provider.adminConsoleName } 아래로 계정을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 계정을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 주소를 활성화해야 합니다."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "해당 사용자를 이전하려면 ${ BRAND_NAME }으로의 초대장 수락을 해야합니다."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "이 사용자를 이전하려면 ${ provider.adminConsoleName }(에)서 해당 사용자를 보관 해제헤야 합니다."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "이 사용자를 이전하려면 ${ provider.adminConsoleName }(에)서 해당 사용자를 정지 취소해야 합니다."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "연락처를 재서명하려면, 계정에서 사용할 수 있는 암호화 키 목록에 대한 모든 연락처를 확인해야 합니다. 일치하는 것을 찾을 수 없다면, 연락처는 기본 암호화 키로 다시 서명될 것입니다."
@@ -8855,6 +9161,9 @@
       ],
       "Yearly": [
         "연간"
+      ],
+      "You": [
+        "나"
       ],
       "You already have a free account": [
         "이미 무료 계정을 가지고 있습니다."
@@ -12624,7 +12933,7 @@
         "청구 주소 수정"
       ],
       "Got it": [
-        "확인했습니다"
+        "확인"
       ],
       "I'm purchasing as a business": [
         "사업체 용도로 구매합니다"
@@ -13132,6 +13441,20 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "진행률: ${ combinedProgress }%"
+      ]
+    },
+    "Property": {
+      "hash key": [
+        "해시 키"
+      ],
+      "key": [
+        "키"
+      ],
+      "membership": [
+        "멤버쉽"
+      ],
+      "name": [
+        "이름"
       ]
     },
     "Property type": {
@@ -13714,7 +14037,7 @@
         "요청 취소"
       ],
       "Got it": [
-        "확인했습니다"
+        "확인"
       ],
       "Learn more": [
         "더 알아보기"
@@ -14898,7 +15221,7 @@
       "Move ${ selectionCount } message": [
         "메시지 ${ selectionCount }개 이동"
       ],
-      "Moved to ${ label }. Similar message will be categorized there in the future.": [
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "${ label }(으)로 이동되었습니다. 추후 비슷한 메시지는 이곳으로 분류됩니다."
       ],
       "Password copied to clipboard": [
@@ -15027,17 +15350,26 @@
       "Actions": [
         "동작"
       ],
+      "Activated": [
+        "활성화됨"
+      ],
       "Address": [
         "주소"
       ],
       "Created": [
         "생성됨"
       ],
+      "Estimated size": [
+        "예상 용량"
+      ],
       "Expires": [
         "만료"
       ],
       "Fingerprint": [
         "지문"
+      ],
+      "Migration status": [
+        "이전 상태"
       ],
       "Name": [
         "이름"
@@ -15050,6 +15382,9 @@
       ],
       "Type": [
         "유형"
+      ],
+      "User": [
+        "사용자"
       ]
     },
     "TableHeader": {
@@ -15322,6 +15657,9 @@
       "Collaborate on documents": [
         "문서에서 협업하기"
       ],
+      "Configure migration": [
+        "이전 작업 구성"
+      ],
       "Confirm downgrade": [
         "다운그레이드 확인"
       ],
@@ -15459,6 +15797,9 @@
       ],
       "Distraction-free emailing": [
         "방해 없는 이메일"
+      ],
+      "Domain names": [
+        "도메인 이름"
       ],
       "Don't give spam a chance": [
         "스팸 메일에 기회를 주지 마세요"
@@ -15979,6 +16320,9 @@
       "Select data to import": [
         "불러올 데이터 선택"
       ],
+      "Select users to migrate": [
+        "이전할 사용자를 선택하세요"
+      ],
       "Self-destruct message": [
         "메시지 자동 폭파"
       ],
@@ -16192,6 +16536,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business에 오신 것을 환영합니다"
       ],
+      "What are you migrating?": [
+        "무엇을 이전하시나요?"
+      ],
       "What can a VPN protect you from?": [
         "VPN은 무엇으로부터 나를 보호할 수 있나요?"
       ],
@@ -16279,6 +16626,9 @@
       "Customize import to reduce the number of labels": [
         "라벨 수를 줄이기 위해 가져오기를 사용자 정의하세요"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "${ providerName }(에)서 ${ BRAND_NAME }으로 데이터 이전 상태"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "디지털 방식의 서명 이메일은 당신으로 부터 보내졌다는 것을 인증하는데 도움을 줍니다"
       ],
@@ -16356,6 +16706,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "개인의 ${ BRAND_NAME } 계정에 접근한 사용자"
       ],
       "Version 6 OpenPGP key": [
         "버전 6 OpenPGP 키"
@@ -16574,7 +16927,7 @@
         "지금까지 만든 커스터마이징을 모두 잃게 됩니다."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "무료 체험이 ${ textDate } 에 종료됩니다. ${ action }"
+        "무료 체험이 ${ textDate }에 종료됩니다. ${ action }"
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate }에 종료됩니다. ${ textDate } 이전에 취소시 요금이 청구되지 않습니다. ${ action }"
