@@ -376,10 +376,8 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
             return;
         }
 
-        this.disposed = true;
         this.unavailableReason = reason;
         this.rejectAllPending(reason);
-        this.terminateWorker();
     }
 
     private readonly handleWorkerError = (event: ErrorEvent) => {
