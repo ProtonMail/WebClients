@@ -6,19 +6,41 @@
 
 $tab-dot-ease: easing(ease-out-quint);
 
-// Inline space the icon needs once it is out of flow: tab inset + icon + gap
-$tab-icon-inset: rem(38);
-
-@mixin reveal-tab-labels($tab-max-width) {
-	.tab-wrapper {
-		flex: 1 1 0; // grow evenly, capped at the spec's max width
-		max-inline-size: rem($tab-max-width);
-	}
-
+// Icon-only tabs. The active tab keeps its label and its counter so the user can still tell where
+// they are, and the tab being dragged over keeps its label so they can tell where they are dropping.
+@mixin hide-tab-labels() {
 	.tab-container {
-		.tab-label,
-		.tag-count {
-			display: block;
+		padding-inline-end: rem(14);
+
+		.tab-dragging-help {
+			display: none;
+		}
+
+		&:not([aria-selected='true']) {
+			.tab-badge {
+				display: none;
+			}
+		}
+
+		// Nothing is left but the icon, so it gets even padding on both sides and the empty label
+		// column stops holding the gap that used to separate it from the counter.
+		&:not([aria-selected='true'], .tab-drop-over) {
+			padding-inline-end: rem(16);
+
+			.tab-label {
+				display: none;
+			}
+
+			.tab-text,
+			.tab-label-ghost {
+				margin-inline-start: 0;
+			}
+
+			// Stays laid out at zero width so its `scrollWidth` keeps reporting the width the
+			// label would need, see `useCategoriesTabsDensity`.
+			.tab-label-ghost {
+				inline-size: 0;
+			}
 		}
 	}
 }
@@ -27,12 +49,31 @@ $tab-icon-inset: rem(38);
 	background-color: var(--toolbar-background-color);
 	border-block-start: 1px solid var(--border-weak);
 
+	// Hug the content but stay squeezable: never grow, shrink before the bar overflows.
+	.tab-wrapper {
+		flex: 0 1 auto;
+		min-inline-size: 0;
+	}
+
+	// The error fallbacks borrow the bar's height and inset, not the tab layout: they are not
+	// tabs, so they must not pick up the grid or the icon-only rules.
+	.tab-error {
+		block-size: rem(44);
+		padding-inline: rem(16);
+	}
+
 	.tab-container {
 		position: relative;
+
+		// Three tracks: icon | label + drop helper | counter. A grid (rather than a flex row)
+		// lets the label span into the counter track while dragging, see `.tab-drop-target`.
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr) auto;
+		align-items: center;
 		block-size: rem(44);
 
 		// Only the block borders are drawn, they reserve the space the active tab needs.
-		// States that need a border on the whole tab use an overlay, see `.dashed`.
+		// States that need a border on the whole tab use an overlay, see `.tab-drop-target`.
 		border-width: rem(3) 0;
 		padding-block: 0;
 		padding-inline: rem(16) 0;
@@ -49,15 +90,10 @@ $tab-icon-inset: rem(38);
 			}
 		}
 
-		// The top border reserves space but should be transparent when the tab is active
-		&.active {
-			border-block-start: rem(3) solid transparent !important;
-		}
-
 		// Border drawn while the user drags an element: dashed on the tabs that can receive
 		// the drop, solid and colored on the tab currently dragged over.
-		&.dashed::after,
-		&.hovered::after {
+		&.tab-drop-target::after,
+		&.tab-drop-over::after {
 			content: '';
 			position: absolute;
 			inset-block: 0 rem(-3);
@@ -67,7 +103,7 @@ $tab-icon-inset: rem(38);
 			pointer-events: none;
 		}
 
-		&.hovered::after {
+		&.tab-drop-over::after {
 			border: rem(2) solid var(--cat-border);
 
 			[data-theme-mode='dark'] & {
@@ -75,46 +111,74 @@ $tab-icon-inset: rem(38);
 			}
 		}
 
-		// Default (< 820px): icon-only — label and count hidden. Shown again at ≥ 820px
-		// and, for the label, on the active tab or when dragging over it.
-		.tab-label,
-		.tag-count,
-		.tab-dragging-help {
-			display: none;
+		// The top border reserves space but should be transparent on the active tab, which is
+		// the one drawing the colored bottom border. `!important` beats `.border-top`.
+		&[aria-selected='true'] {
+			border-block-start: rem(3) solid transparent !important;
 		}
 
-		&[aria-selected='true'],
-		&.hovered {
-			.tab-label,
-			.tag-count {
-				display: block;
+		// While dragging, the counter gives its room to the label and the drop helper. It keeps
+		// its grid track (`visibility` rather than `display`) so the tab does not resize, and
+		// the text spans both tracks to claim the freed space.
+		&.tab-drop-target,
+		&.tab-drop-over {
+			.tab-badge {
+				visibility: hidden;
+			}
+
+			.tab-text {
+				grid-column: 2 / span 2;
 			}
 		}
 
 		// Pin to the parent width so text-ellipsis clips the text instead of letting its
 		// min-content width overflow into the counter badge and past the tab
-		.tab-label,
-		.tab-dragging-help {
-			inline-size: 100%;
-		}
-
 		.tab-label {
+			inline-size: 100%;
 			transition: color 0.2s ease;
-
-			// Reserves width to avoid layout shift when label gets semibold weight
-			&::before {
-				display: block;
-				content: attr(title);
-				font-weight: 600;
-				block-size: 0;
-				overflow: hidden;
-				visibility: hidden;
-			}
 		}
 
-		.tag-count {
+		// Sized by the label column but contributing nothing to it, so the drop helper can be
+		// wider than the label without stretching the tab. It ellipsis instead.
+		.tab-dragging-help {
+			inline-size: 0;
+			min-inline-size: 100%;
+		}
+
+		// The ghost is the only thing measuring the label column, see the markup. `nowrap` matters
+		// twice over: it keeps the reserved width honest, and it keeps `scrollWidth` reporting the
+		// full label rather than the longest word.
+		.tab-label-ghost {
+			grid-area: 1 / 2;
+			block-size: 0;
+			overflow: hidden;
+			white-space: nowrap;
+			visibility: hidden;
+			pointer-events: none;
+		}
+
+		// Placement is explicit: auto-placement pushes the counter onto a second row as soon as
+		// the text is told to span two tracks while dragging.
+		.tab-icon {
+			grid-area: 1 / 1;
+		}
+
+		.tab-text {
+			grid-area: 1 / 2;
+		}
+
+		.tab-badge {
+			grid-area: 1 / 3;
 			border-radius: rem(6);
 			margin-block: rem(-2);
+		}
+
+		// Spacing lives on the items rather than on a grid `column-gap` so a tab without a
+		// counter (counters disabled) does not keep a trailing gap.
+		.tab-text,
+		.tab-label-ghost,
+		.tab-badge {
+			margin-inline-start: rem(8);
 		}
 
 		.tab-new-dot {
@@ -143,42 +207,27 @@ $tab-icon-inset: rem(38);
 		}
 	}
 
-	// Medium (820–1023px): reveal labels, tabs fill the bar capped at 136px each.
-	@include media('>=#{em(820, 16)}') {
-		@include reveal-tab-labels(136);
-
-		.tab-container {
-			.tab-dragging-help {
-				display: block;
-			}
-		}
+	// No viewport fallback on purpose: a rule pinning icon-only below a fixed width would beat the
+	// measured density in the cascade and put the two back out of step.
+	&.tabs-compact {
+		@include hide-tab-labels;
 	}
 
-	// Large (≥ 1024px): tabs fill the bar capped at 200px each, with a larger centered label.
-	@include media('>=#{em(1024, 16)}') {
-		@include reveal-tab-labels(200);
-
+	// Roomier spacing, applied only once the bar measures wide enough for it. On a `>=1024px` media
+	// query this dropped every label, costing more spacing than the wider viewport gave the bar.
+	&.tabs-roomy {
 		.tab-container {
-			justify-content: center;
-			padding-inline: $tab-icon-inset;
-			text-align: center;
+			padding-inline-end: rem(14);
 
-			.tab-icon {
-				position: absolute;
-				inset-inline-start: rem(16);
+			.tab-text,
+			.tab-label-ghost,
+			.tab-badge {
+				margin-inline-start: rem(18);
 			}
 
-			.tag-count {
-				position: absolute;
-				inset-inline-end: rem(14);
-			}
-
-			.tab-label {
+			.tab-label,
+			.tab-label-ghost {
 				font-size: rem(13);
-			}
-
-			.tab-dragging-help {
-				display: block;
 			}
 		}
 	}
