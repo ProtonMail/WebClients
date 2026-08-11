@@ -32,6 +32,7 @@ The extension supports different browser targets:
 yarn start # Development build without hot reloading
 yarn start:reload # Development build with hot reloading
 yarn start:prod # Development build using production config (no hot reloading)
+yarn start:prod:reload # Development build using production config with hot reloading
 ```
 
 If you want to target the production api, add set this env var `API_ENV=proton.me`

@@ -291,6 +291,7 @@ const SubUserEditModal = ({
         <>
             <InputFieldTwo
                 id="name"
+                data-protonpass-ignore={true}
                 value={model.name}
                 error={validator([requiredValidator(model.name)])}
                 onValue={(value: string) => updatePartialModel({ name: value })}
