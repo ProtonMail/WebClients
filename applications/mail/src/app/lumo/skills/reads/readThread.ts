@@ -46,7 +46,7 @@ export const readThreadDefinition: ToolDefinition<ReadThreadParams, ReadThreadRe
     name: 'read_thread',
     kind: 'read',
     toolDescription:
-        'Read EVERY message in a whole conversation (thread), decrypting each one, so you can summarise it or catch the user up. Use this — NOT read_email or read_open_email — whenever the user asks about a whole thread or conversation ("summarise this thread", "catch me up on this conversation", "what\'s the latest here"): those other tools read only a SINGLE message, whereas a conversation usually has several. Pass the email-… reference of any message in the thread as `target` to read that conversation; pass null to read the conversation the user currently has OPEN in the reading pane. Reading a thread opens it on screen and may mark its unread messages as read. Returns each message\'s sender, date and body, oldest first.',
+        'Read EVERY message in a whole conversation (thread), decrypting each one, so you can summarise it or catch the user up. Use this — NOT read_email or read_open_email — whenever the user asks about a whole thread or conversation ("summarise this thread", "catch me up on this conversation", "what\'s the latest here"): those other tools read only a SINGLE message, whereas a conversation usually has several. Pass the email-… reference of any message in the thread as `target` to read that conversation; pass null to read the conversation the user currently has OPEN in the reading pane. Reading a thread opens it on screen and may mark its unread messages as read. Returns each message\'s sender, date and body, oldest first. Returns nothing if no conversation is open, in which case find the thread yourself with search or view_emails and pass a `target`; ask the user to open one only if that fails. If it reports the messages could not be read yet, retry once before doing anything else.',
     paramsSchema: {
         type: 'object',
         additionalProperties: false,
@@ -67,10 +67,10 @@ export const readThreadDefinition: ToolDefinition<ReadThreadParams, ReadThreadRe
     ],
     serializeForLumo: (result) => {
         if (!result.found) {
-            return 'No conversation is open to read. Ask the user to open one, or use search / view_emails and then read_email.';
+            return 'No conversation is open to read.';
         }
         if (!result.messages.length) {
-            return 'The conversation is open but its messages could not be read yet — ask the user to try again in a moment.';
+            return 'The conversation is open but its messages could not be read yet.';
         }
         const shown = result.messages.length;
         const subject = result.subject ?? '';

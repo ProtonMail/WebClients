@@ -45,7 +45,7 @@ export const readEmailDefinition: ToolDefinition<ReadEmailParams, ReadEmailsResu
     name: 'read_email',
     kind: 'read',
     toolDescription:
-        'Read the decrypted plain-text body of a specific email, identified by an email-… reference that view_emails, open_folder or search returned earlier. Use once you have a candidate row and need its contents — to answer a question about it, summarise it, or decide an action. Reading an email OPENS it in the reading pane, so to answer about or act on ONE email, read just the SINGLE best-matching row — that email is then what the user sees. Pass MULTIPLE references ONLY when the user explicitly wants several emails summarised or compared together; in that case also set best_match to the one reference to leave open on screen (the row that best answers the user). Each reference must be a real email-… you were given: never call this with empty, missing, or invented references. If you have already identified which email to read, pass its exact reference now rather than deferring. To read the email the user currently has OPEN in the reading pane, use read_open_email instead. To read every message in a conversation, use read_thread. Example: after search returns `email-a1b2c3 | … | Fw: Votre séjour`, call with { "references": ["email-a1b2c3"], "best_match": null }.',
+        'Read the decrypted plain-text body of a specific email, identified by an email-… reference that view_emails, open_folder or search returned earlier. Use once you have a candidate row and need its contents — to answer a question about it, summarise it, or decide an action. Reading an email OPENS it in the reading pane, so to answer about or act on ONE email, read just the SINGLE best-matching row — that email is then what the user sees. Pass MULTIPLE references ONLY when the user explicitly wants several emails summarised or compared together; in that case also set best_match to the one reference to leave open on screen (the row that best answers the user). Each reference must be a real email-… you were given: never call this with empty, missing, or invented references. A reference can also go stale once the rows leave the screen; if the result says one is no longer loaded, find it again with search or view_emails rather than asking the user. If you have already identified which email to read, pass its exact reference now rather than deferring. To read the email the user currently has OPEN in the reading pane, use read_open_email instead. To read every message in a conversation, use read_thread. Example: after search returns `email-a1b2c3 | … | Fw: Votre séjour`, call with { "references": ["email-a1b2c3"], "best_match": null }.',
     paramsSchema: {
         type: 'object',
         additionalProperties: false,
@@ -81,11 +81,7 @@ export const readEmailDefinition: ToolDefinition<ReadEmailParams, ReadEmailsResu
             ),
         ];
         if (result.notLoaded?.length) {
-            parts.push(
-                `No longer loaded on screen: ${result.notLoaded.join(
-                    ', '
-                )}. Use view_emails or search to find them again.`
-            );
+            parts.push(`No longer loaded on screen: ${result.notLoaded.join(', ')}.`);
         }
         if (result.notDecrypted?.length) {
             parts.push(`Could not read (didn't open in time): ${result.notDecrypted.join(', ')}.`);
