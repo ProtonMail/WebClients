@@ -16,6 +16,7 @@ import SettingsDescription, {
 } from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
+import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import RecoveryPhone from '@proton/components/containers/recovery/phone/RecoveryPhone';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
@@ -292,6 +293,11 @@ const RecoveryPhoneSubpage = () => {
                         )}
                     </DashboardCardContent>
                 </DashboardCard>
+                <LastChanged
+                    className="block mt-2"
+                    date={phoneRecovery.updateTime}
+                    data-testid="account:recovery:recovery-phone:last-changed-date"
+                />
             </DashboardGrid>
         </>
     );

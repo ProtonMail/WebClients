@@ -4,7 +4,9 @@ import { selectAddresses } from '@proton/account/addresses';
 import { getIsOutgoingDelegatedAccessAvailable } from '@proton/account/delegatedAccess/available';
 import { maxOutgoingEmergencyContacts, maxOutgoingRecoveryContacts } from '@proton/account/delegatedAccess/constants';
 import { selectProtonDomains } from '@proton/account/protonDomains';
+import { getLastModifiedDate } from '@proton/account/recovery/lastModifiedTime';
 import { selectUser } from '@proton/account/user';
+import { selectUserSettings } from '@proton/account/userSettings';
 import { selectContactEmails } from '@proton/mail/store/contactEmails';
 import { selectContactEmailsMap } from '@proton/mail/store/contactEmails/selector';
 import { getContactEmailKey } from '@proton/shared/lib/contacts/getContactEmailsMap';
@@ -27,19 +29,26 @@ export interface EnrichedOutgoingDelegatedAccessReturnValue {
         items: EnrichedOutgoingDelegatedAccess[];
         hasReachedLimit: boolean;
         limit: number;
+        lastModifiedTime: Date | null;
     };
     recoveryContacts: {
         hasAccess: boolean;
         items: EnrichedOutgoingDelegatedAccess[];
         hasReachedLimit: boolean;
         limit: number;
+        lastModifiedTime: Date | null;
     };
     loading: boolean;
 }
 
 export const selectEnrichedOutgoingDelegatedAccess = createSelector(
-    [selectUser, selectOutgoingDelegatedAccess, selectContactEmailsMap],
-    ({ value: user }, delegatedAccess, contactEmailsMap): EnrichedOutgoingDelegatedAccessReturnValue => {
+    [selectUser, selectOutgoingDelegatedAccess, selectContactEmailsMap, selectUserSettings],
+    (
+        { value: user },
+        delegatedAccess,
+        contactEmailsMap,
+        { value: userSettings }
+    ): EnrichedOutgoingDelegatedAccessReturnValue => {
         const items = delegatedAccess.value ?? [];
         const ephemeral = delegatedAccess.ephemeral ?? {};
 
@@ -81,12 +90,14 @@ export const selectEnrichedOutgoingDelegatedAccess = createSelector(
                 items: emergencyContacts,
                 hasReachedLimit: emergencyContacts.length === maxOutgoingEmergencyContacts,
                 limit: maxOutgoingEmergencyContacts,
+                lastModifiedTime: getLastModifiedDate(userSettings?.EmergencyContactsLastModifiedTime),
             },
             recoveryContacts: {
                 hasAccess: true,
                 items: recoveryContacts,
                 hasReachedLimit: recoveryContacts.length === maxOutgoingRecoveryContacts,
                 limit: maxOutgoingRecoveryContacts,
+                lastModifiedTime: getLastModifiedDate(userSettings?.RecoveryContactsLastModifiedTime),
             },
             loading: delegatedAccess.value === undefined,
         };

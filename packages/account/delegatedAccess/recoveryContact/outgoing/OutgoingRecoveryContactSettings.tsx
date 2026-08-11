@@ -15,6 +15,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { DelegatedAccessStateEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import isTruthy from '@proton/utils/isTruthy';
@@ -234,6 +235,11 @@ export const OutgoingRecoveryContactSettings = ({
                     </DashboardCardContent>
                 )}
             </DashboardCard>
+            <LastChanged
+                className="block mt-2"
+                date={controller.outgoingDelegatedAccess.recoveryContacts.lastModifiedTime}
+                data-testid="account:recovery:recovery-contacts:last-changed-date"
+            />
         </>
     );
 };
