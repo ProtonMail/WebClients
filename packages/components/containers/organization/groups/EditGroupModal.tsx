@@ -116,6 +116,7 @@ const EditGroupModal = () => {
                     <InputFieldStackedGroup>
                         <InputFieldStacked isGroupElement icon="user">
                             <InputFieldTwo
+                                data-protonpass-ignore={true}
                                 label={c('Label').t`Group name`}
                                 type="text"
                                 unstyled
@@ -140,6 +141,7 @@ const EditGroupModal = () => {
                         </InputFieldStacked>
                         <InputFieldStacked isGroupElement icon="text-align-left">
                             <InputFieldTwo
+                                data-protonpass-ignore={true}
                                 className="rounded-none p-0 resize-none"
                                 as={TextAreaTwo}
                                 label={c('Label').t`Purpose`}
@@ -158,6 +160,7 @@ const EditGroupModal = () => {
                         <InputFieldStackedGroup>
                             <InputFieldStacked isGroupElement icon="earth">
                                 <InputFieldTwo
+                                    data-protonpass-ignore={true}
                                     label={c('Label').t`Group address`}
                                     unstyled
                                     inputClassName="rounded-none"
