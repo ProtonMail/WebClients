@@ -17,7 +17,9 @@ import {
     useToggle,
 } from '@proton/components';
 import DrawerApp from '@proton/components/components/drawer/DrawerApp';
+import LumoDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/LumoDrawerAppButton';
 import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
+import { useFlagsDriveLumo } from '@proton/drive/modules/flags';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
@@ -25,6 +27,7 @@ import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useIsActiveLinkReadOnly } from '../../../legacy/store/_views/utils';
+import LumoDriveProvider from '../../../lumo/provider/LumoDriveProvider';
 import { DriveSidebar } from '../../../sections/sidebar/DriveSidebar';
 import AppErrorBoundary from '../AppErrorBoundary';
 import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
@@ -40,6 +43,7 @@ const DriveWindow = ({ children }: { children: ReactNode }) => {
     const { isReadOnly } = useIsActiveLinkReadOnly();
     useOpenDrawerOnLoad();
     const { appInView, showDrawerSidebar } = useDrawer();
+    const { isDriveLumoEnabled } = useFlagsDriveLumo();
 
     const [allowedProducts, loadingAllowedProducts] = useAllowedProducts();
 
@@ -76,6 +80,9 @@ const DriveWindow = ({ children }: { children: ReactNode }) => {
                 disabled={loadingAllowedProducts}
             />
         ),
+        isDriveLumoEnabled ? (
+            <LumoDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.LUMO, appInView)} />
+        ) : undefined,
         <ReferralAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.REFERRAL, appInView)} />,
     ].filter(isTruthy);
 
@@ -91,7 +98,7 @@ const DriveWindow = ({ children }: { children: ReactNode }) => {
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
 
-    return (
+    const content = (
         <PrivateAppContainer
             top={top}
             header={header}
@@ -109,6 +116,9 @@ const DriveWindow = ({ children }: { children: ReactNode }) => {
             </PrivateMainArea>
         </PrivateAppContainer>
     );
+
+    // Mounted above the drawer so the Lumo conversation survives drawer tab switches and open/close.
+    return isDriveLumoEnabled ? <LumoDriveProvider>{content}</LumoDriveProvider> : content;
 };
 
 export default DriveWindow;
