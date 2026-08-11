@@ -1,4 +1,5 @@
 import { type AesGcmCryptoKey, generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import 'fake-indexeddb/auto';
 
 import { LOGGER_DB_PREFIX } from './constants';
 import { Logger } from './logger';
@@ -23,7 +24,7 @@ const inspect = async <T>(name: string, id: string, fn: (storage: IndexedDBStora
     }
 };
 
-describe.skip('Logger', () => {
+describe('Logger', () => {
     let key: AesGcmCryptoKey;
 
     /** Loggers and databases to tear down, so tests never share state. */
