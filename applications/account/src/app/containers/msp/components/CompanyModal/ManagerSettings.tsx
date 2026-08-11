@@ -3,7 +3,6 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useMembers } from '@proton/account/members/hooks';
-import { Loader } from '@proton/components';
 import Autocomplete from '@proton/components/components/autocomplete/Autocomplete';
 import { MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import type { Member } from '@proton/shared/lib/interfaces';
@@ -15,7 +14,7 @@ const getMemberLabel = (member: Member) => `${member.Name} ${member.Addresses?.[
 
 const ManagerSettings = () => {
     const [members = [], loadingMembers] = useMembers();
-    const { managers, managersLoading, pendingManagerIds, addManager, removeManager } = useCompanyModalContext();
+    const { managers, pendingManagerIds, addManager, removeManager } = useCompanyModalContext();
     const [query, setQuery] = useState('');
 
     // Managers are member rows in the subsidiary org, so their ID never matches the
@@ -63,21 +62,17 @@ const ManagerSettings = () => {
                     disabled={pendingManagerIds.size > 0 || loadingMembers}
                 />
             </div>
-            {managersLoading ? (
-                <Loader />
-            ) : (
-                <div className="flex flex-column">
-                    {managers.map((manager) => (
-                        <ManagerRow
-                            key={manager.ID}
-                            name={manager.Name}
-                            email={emailByPublicKey.get(manager.PublicKey)}
-                            loading={pendingManagerIds.has(manager.ID)}
-                            onRemove={() => removeManager(manager.ID)}
-                        />
-                    ))}
-                </div>
-            )}
+            <div className="flex flex-column">
+                {managers.map((manager) => (
+                    <ManagerRow
+                        key={manager.ID}
+                        name={manager.Name}
+                        email={emailByPublicKey.get(manager.PublicKey)}
+                        loading={pendingManagerIds.has(manager.ID)}
+                        onRemove={() => removeManager(manager.ID)}
+                    />
+                ))}
+            </div>
         </div>
     );
 };

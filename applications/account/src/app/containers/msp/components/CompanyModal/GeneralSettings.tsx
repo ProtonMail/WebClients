@@ -25,7 +25,7 @@ const GeneralSettings = () => {
 
             <div className="flex flex-column gap-2">
                 <div className="flex flex-column gap-1">
-                    <label className="text-semibold">{c('Label').t`Assigned seats`}</label>
+                    <label className="text-semibold">{c('Label').t`Allocated licenses`}</label>
                     <div className="flex items-center gap-4">
                         <div
                             className="flex items-center gap-1 p-1 rounded-lg border border-norm w-custom"
@@ -37,7 +37,7 @@ const GeneralSettings = () => {
                                 size="small"
                                 disabled={assignedSeats <= minSeats}
                                 onClick={() => setSeatsText(String(assignedSeats - 1))}
-                                aria-label={c('Action').t`Decrease`}
+                                aria-label={c('Action').t`Decrease licenses`}
                             >
                                 <IcMinus size={4} />
                             </Button>
@@ -56,7 +56,7 @@ const GeneralSettings = () => {
                                 icon
                                 size="small"
                                 onClick={() => setSeatsText(String(assignedSeats + 1))}
-                                aria-label={c('Action').t`Increase`}
+                                aria-label={c('Action').t`Increase licenses`}
                             >
                                 <IcPlus size={4} />
                             </Button>
@@ -65,7 +65,8 @@ const GeneralSettings = () => {
                     </div>
                 </div>
                 <p className="m-0 color-weak msp-helper-text">
-                    {c('Info').t`You'll be billed monthly based on the average number of assigned seats.`}
+                    {c('Info')
+                        .t`We bill you monthly by averaging the peak allocated licenses from each day over the month.`}
                 </p>
             </div>
         </>

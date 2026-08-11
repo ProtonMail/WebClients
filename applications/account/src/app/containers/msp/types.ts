@@ -1,3 +1,4 @@
+import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
 import type { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 
 export interface SeatDay {
@@ -19,6 +20,7 @@ export interface MspCompany {
     assignedSeats: number;
     usedSeats: number;
     status: ORGANIZATION_STATE;
+    managers: MspDelegatedManager[];
 }
 
 export interface CompanyFormData {

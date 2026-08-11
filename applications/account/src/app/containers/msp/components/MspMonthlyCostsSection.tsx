@@ -31,7 +31,7 @@ import clsx from '@proton/utils/clsx';
 
 import { MOCK_MONTHLY_DATA, MOCK_SEATS_HISTORY } from '../mock/monthlyCosts';
 import type { MonthlyRow } from '../types';
-import SeatsUsageChart from './SeatsUsageChart';
+import LicensesUsageChart from './LicensesUsageChart';
 
 import './MspMonthlyCostsSection.scss';
 
@@ -76,14 +76,14 @@ const MspMonthlyCostsSection = () => {
     const rowActions = [
         {
             key: 'export-overview-as-csv',
-            text: c('Action').t`Export overview as CSV`,
+            text: c('Action').t`Download monthly summary (CSV)`,
             className: 'text-left text-nowrap',
             // @todo: implement export overview as CSV
             onClick: () => {},
         },
         {
             key: 'export-breakdown-by-company-as-zip',
-            text: c('Action').t`Export breakdown by company as ZIP`,
+            text: c('Action').t`Download daily breakdown (CSV)`,
             className: 'text-left text-nowrap',
             // @todo: implement export breakdown by company as ZIP
             onClick: () => {},
@@ -136,8 +136,8 @@ const MspMonthlyCostsSection = () => {
                 </div>
             </div>
 
-            {/* ── Seats usage chart ── */}
-            {isMspCostsTableEnabled && <SeatsUsageChart data={MOCK_SEATS_HISTORY} />}
+            {/* ── Licenses usage chart ── */}
+            {isMspCostsTableEnabled && <LicensesUsageChart data={MOCK_SEATS_HISTORY} />}
 
             {/* ── Previous billing periods ── */}
             {isMspCostsTableEnabled && (
@@ -167,7 +167,7 @@ const MspMonthlyCostsSection = () => {
                                         <TableHeaderCell className="text-right">{c('Column header')
                                             .t`Managed companies`}</TableHeaderCell>
                                         <TableHeaderCell className="text-right">{c('Column header')
-                                            .t`Total billed seats`}</TableHeaderCell>
+                                            .t`Billable licenses`}</TableHeaderCell>
                                         <TableHeaderCell className="text-right">{c('Column header')
                                             .t`Total cost`}</TableHeaderCell>
                                         <TableHeaderCell className="w-1/10" />
@@ -187,7 +187,7 @@ const MspMonthlyCostsSection = () => {
                                             </TableCell>
                                             <TableCell
                                                 className="text-right"
-                                                label={c('Column header').t`Total billed seats`}
+                                                label={c('Column header').t`Billable licenses`}
                                             >
                                                 {row.seats}
                                             </TableCell>

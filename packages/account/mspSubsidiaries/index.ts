@@ -5,9 +5,13 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
-import { getAllMspSubsidiaries } from '@proton/shared/lib/api/msp';
+import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
+import { getAllMspSubsidiaries, getAllMspSubsidiaryManagers } from '@proton/shared/lib/api/msp';
+import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
 import type { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
+import { removeById } from '@proton/utils/removeById';
+import { upsertById } from '@proton/utils/upsertById';
 
 import { isOwnerRole } from '../organizationRoles/helpers';
 import { userThunk } from '../user';
@@ -38,7 +42,19 @@ const modelThunk = createAsyncModelThunk<Model, MspSubsidiariesState, ProtonThun
         if (!isOwner) {
             return [];
         }
-        return getAllMspSubsidiaries(extraArgument.api);
+        const subsidiaries = await getAllMspSubsidiaries(extraArgument.api);
+        // The list needs delegated managers immediately (rendered as a table column), and there's
+        // no bulk endpoint, so fetch them per-subsidiary and merge before returning the model.
+        // Requests are throttled to avoid getting API-jailed when an MSP has many companies.
+        const managersBySubsidiary = await processApiRequestsSafe(
+            subsidiaries.map(
+                (subsidiary) => () => getAllMspSubsidiaryManagers(extraArgument.api, subsidiary.ID).catch(() => [])
+            )
+        );
+        return subsidiaries.map((subsidiary, index) => ({
+            ...subsidiary,
+            DelegatedManagers: managersBySubsidiary[index],
+        }));
     },
     previous: previousSelector(selectMspSubsidiaries),
 });
@@ -81,6 +97,24 @@ const slice = createSlice({
             const item = state.value.find((s) => s.ID === action.payload.id);
             if (item) {
                 item.Status = action.payload.status;
+            }
+        },
+        addDelegatedManager: (state, action: PayloadAction<{ id: string; manager: MspDelegatedManager }>) => {
+            if (!state.value) {
+                return;
+            }
+            const item = state.value.find((s) => s.ID === action.payload.id);
+            if (item) {
+                item.DelegatedManagers = upsertById(item.DelegatedManagers, action.payload.manager, 'ID');
+            }
+        },
+        removeDelegatedManager: (state, action: PayloadAction<{ id: string; managerId: string }>) => {
+            if (!state.value) {
+                return;
+            }
+            const item = state.value.find((s) => s.ID === action.payload.id);
+            if (item) {
+                item.DelegatedManagers = removeById(item.DelegatedManagers, { ID: action.payload.managerId }, 'ID');
             }
         },
     },
