@@ -82,6 +82,7 @@ export function useRecents(drive: ProtonDriveClient) {
         if (error instanceof Error && error.name === 'AbortError') {
           throw error
         }
+        // Any other error does not cause rejection of fetchRecents - we need to return whatever we were able to load
 
         logger.debug('[LoadRecentsWithDriveSDK] Error while iterating nodes', { error })
         const data: any = { error }
@@ -94,30 +95,29 @@ export function useRecents(drive: ProtonDriveClient) {
           message: 'Node iterator error',
           data,
         })
-
+        // Split in two, otherwise it won't fully log
+        addSentryBreadcrumb({
+          category: 'docs',
+          level: 'info',
+          message: 'Node iterator error - debug info 1/2',
+          data: {
+            documents,
+          },
+        })
+        addSentryBreadcrumb({
+          category: 'docs',
+          level: 'info',
+          message: 'Node iterator error - debug info 2/2',
+          data: {
+            loadedNodes: [...nodesByUid.keys()],
+            missingNodes: [...uidsToLoad].filter((nodeUid) => !nodesByUid.has(nodeUid)),
+          },
+        })
         // Creating new error to capture current stack
         const errorWithCurrentStack = new Error('fetchRecents failed at iterateNodes')
         errorWithCurrentStack.cause = error
-        throw errorWithCurrentStack
+        traceRecentsError(errorWithCurrentStack)
       }
-      // Split in two, otherwise it won't fully log
-      addSentryBreadcrumb({
-        category: 'docs',
-        level: 'info',
-        message: 'Finished loading nodes - debug info 1/2',
-        data: {
-          documents,
-        },
-      })
-      addSentryBreadcrumb({
-        category: 'docs',
-        level: 'info',
-        message: 'Finished loading nodes - debug info 2/2',
-        data: {
-          loadedNodes: [...nodesByUid.keys()],
-          missingNodes: [...uidsToLoad].filter((nodeUid) => !nodesByUid.has(nodeUid)),
-        },
-      })
 
       return { documents, nodesByUid }
     },
