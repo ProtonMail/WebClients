@@ -40,21 +40,57 @@ Two matching system-prompt nudges (`ARTIFACT_TOOL_CREATE_NUDGE` / `ARTIFACT_TOOL
 
 **Finding:** the loading chip (`ArtifactChipLoading`) is gated on the tool call's `arguments` field still being a raw, not-yet-fully-parsed JSON string. Verified live with temporary instrumentation (logging chunk count/timing per call) across multiple real calls, including ones with a few thousand characters of content, not just trivial edits: every one arrived with **zero** observed streaming chunks — the block was already fully parsed the first time the frontend ever saw it. No client-side throttling/batching suppresses this (a smoothing/pacing transform exists for plain text tokens but explicitly passes `tool_call` messages through unaffected) — this is delivery granularity from the backend/model, and for `create_artifact` specifically it appears to be atomic rather than token-streamed, at least across everything tested so far (not proven for arbitrarily large content).
 
-**Implication:** a UI built around watching JSON parse incrementally is watching a signal that essentially doesn't occur in practice for this tool. It should not be the basis for "is this artifact ready to interact with," and the old red-bordered `ArtifactChipLoading` skeleton is effectively dead code under normal usage.
+**Implication:** a UI built around watching JSON parse incrementally is watching a signal that essentially doesn't occur in practice for this tool. It should not be the basis for "is this artifact ready to interact with." `ArtifactChipLoading` and any partial-JSON preview path are dead code under normal usage and were removed.
 
-**Decision (implemented):** redefine "loading"/"pending" around message-completion state instead of JSON-parse-completeness:
+**Decision (superseded — see next section):** redefine "loading"/"pending" around message-completion state instead of JSON-parse-completeness:
 
 - The artifact's _content_ is available almost immediately once its tool_call block parses (via `completeArtifacts`, derived straight from `message.blocks` — same timing/pattern as how `extractSearchResults` surfaces web-search results mid-generation, with no gate on message status).
 - What's actually still pending until the message finishes (`message.status` gets set) is only the **registry** entry — `buildArtifactRegistry` deliberately excludes any message with `status === undefined`, i.e. the in-flight message, because the registry needs to track ordered versions/ids across the whole conversation and shouldn't bake in a version from a message that could still change.
 - This was also the root cause of a distinct bug: the chip could look fully "done" and clickable as soon as its JSON parsed, before the registry caught up — clicking it opened whatever the registry fell back to (the previous version), not the new content already sitting in `completeArtifacts`.
 
-**Shipped (correctness only — no visual "finalizing" indicator yet):**
+**What shipped from that decision (later removed):**
 
-- `ArtifactContext` gained `pendingArtifact`/`setPendingArtifact`/`openPendingArtifact` — a fully-parsed artifact whose message hasn't finished (so it isn't in `registry` yet). `AssistantMessage.tsx` pushes it alongside the existing `streamingArtifact` handling.
-- `ArtifactPanel` renders `pendingArtifact` through the real `ArtifactContent` renderer (proper markdown/code highlighting, since the content is already valid) instead of an empty skeleton or a stale frozen view, for both fresh creation and revision of something already open.
-- `ArtifactChip`'s click handler opens from `pendingArtifact` via `openPendingArtifact()` when the registry doesn't have a version index yet, instead of the old stale-fallback `openArtifact(id)`.
+- `ArtifactContext` gained `pendingArtifact`/`setPendingArtifact`/`openPendingArtifact` — a fully-parsed artifact whose message hasn't finished (so it isn't in `registry` yet). `AssistantMessage.tsx` pushed it on every prose chunk while the message was still generating.
+- `ArtifactPanel` rendered `pendingArtifact` through the real `ArtifactContent` renderer (proper markdown/code highlighting, since the content is already valid) instead of an empty skeleton or a stale frozen view, for both fresh creation and revision of something already open.
+- `ArtifactChip`'s click handler opened from `pendingArtifact` via `openPendingArtifact()` when the registry doesn't have a version index yet, instead of the old stale-fallback `openArtifact(id)`.
 
-**Explicitly reverted:** a first attempt also added a visible "Finalizing…" + `CircleLoader` treatment on both the chip and panel header for this pending state. Removed after a follow-up conversation revealed it was solving a different problem than the one being asked about (a per-message "this call revised vs. created the artifact" indicator, not a generation-in-progress indicator) — see next entry once that's resolved. The underlying `pendingArtifact` correctness fix above stays; only the visual treatment was pulled.
+**Explicitly reverted:** a first attempt also added a visible "Finalizing…" + `CircleLoader` treatment on both the chip and panel header for this pending state. Removed after a follow-up conversation revealed it was solving a different problem than the one being asked about (a per-message "this call revised vs. created the artifact" indicator, not a generation-in-progress indicator). The underlying `pendingArtifact` correctness fix above was shipped briefly but then removed entirely — see next section.
+
+## No early panel preview: chip in chat, panel only after finalize
+
+**Decision:** remove `pendingArtifact` entirely. The chip appears in the chat as soon as the tool call parses, but the side panel only opens once the message is finalized and the version is in the registry. Open on the chip is disabled until then.
+
+**Why:** live testing with temporary instrumentation confirmed that `create_artifact` tool-call arguments arrive atomically (zero observed partial-JSON chunks), so a loading skeleton or incremental preview UI was dead code. The `pendingArtifact` approach that replaced it introduced worse problems:
+
+- **Panel opened too early** — as soon as the tool call landed, before the assistant message finished, stealing focus from the chat and making the close button feel broken.
+- **Close re-opened after generation** — the finish effect depended on `selectedId`; closing set `selectedId = null`, which re-triggered auto-open because the condition included `selectedId === null`.
+- **Close fought during generation** — `setPendingArtifact` re-ran on every prose chunk, undoing a user dismiss mid-stream.
+- **Text selection broken** — the panel re-rendered on every prose token while `pendingArtifact` was active, resetting selection and scroll.
+
+The gap before the chip appears (while the model is still writing its intro / thinking) is covered by the normal message-level loading state (avatar/thinking skeleton). No separate artifact loading chip is needed.
+
+**Mechanism:**
+
+- **`completeArtifacts`** — parsed from `message.blocks` via `extractCompleteArtifactsFromBlocks` / `getCompleteArtifactBlocksKey` in `createArtifactTool.ts`. Parsing is keyed on a stable fingerprint of tool-call arguments (id + title + content length), not the full `blocks` array, so it does not re-run on every prose token.
+- **`ArtifactChip`** — renders as soon as `completeArtifacts` has an entry. Open is **disabled** while `getArtifactVersionIndexForMessage` returns `null` (message not finalized → not in registry). Active/superseded states only apply once a version exists in the registry and the panel is open.
+- **`ArtifactPanel`** — reads only from `selectedArtifact` (registry-backed). No pre-registry preview branch.
+- **Auto-open on finish** — `AssistantMessage` opens the panel once on the `generating → finished` transition (`justFinished` ref), not whenever `selectedId` changes. Only fires if:
+    - this is the last message,
+    - the artifact has a registry version index,
+    - the user has not explicitly closed the panel (`panelUserClosed`),
+    - nothing unrelated is already open (`selectedId === null || selectedId === artifact.id`).
+- **User dismiss respected** — `closePanel()` sets `panelUserClosed = true`. `openArtifact()` clears it. `panelUserClosed` resets only when a **new** generation starts (`isGenerating` false → true on the last message), not on every prose chunk during an in-flight message.
+- **Dead code removed** — `ArtifactChipLoading`, `streamingArtifact`, `parsePartialArtifactToolCall`, and all `pendingArtifact` context fields.
+
+**UX summary:**
+
+| Phase | Chat | Panel |
+| --- | --- | --- |
+| Message generating, no tool call yet | Avatar/thinking (message loading) | Closed |
+| Tool call lands (message still generating) | Chip visible, Open disabled | Closed |
+| Message finishes | Chip visible, Open enabled | Auto-opens once (unless user closed) |
+| User closes panel | Chip shows default state | Closed, stays closed |
+| Revision (newer version open) | Older chips show "View vN" (superseded) | Shows selected version |
 
 ## Versioning stays entirely client-side — the LLM should not own it
 
@@ -66,7 +102,7 @@ Two matching system-prompt nudges (`ARTIFACT_TOOL_CREATE_NUDGE` / `ARTIFACT_TOOL
 - Context compaction (`llm/compaction`) can summarize/drop older messages from what the model sees; a client-derived registry rebuilt from the full stored message chain can't drift this way, because it's a deterministic function of data that's never lost.
 - Versioning/multi-artifact switching is a UI concern about presenting history the client already has — not something content generation needs to know about to do its job.
 
-The registry isn't extra/duplicated mutable state in the problematic sense — it's a pure projection over the message chain (the single source of truth), recomputed fresh each time, the same pattern as a memoized selector. The in-flight-message gap described above is a narrow bug in that derivation, not a reason to reconsider the architecture.
+The registry isn't extra/duplicated mutable state in the problematic sense — it's a pure projection over the message chain (the single source of truth), recomputed fresh each time, the same pattern as a memoized selector. The in-flight-message gap (chip visible but not yet in registry) is handled at the UI layer by disabling Open until finalize — not by opening a pre-registry panel preview.
 
 ## Selection UI differs by artifact type (code vs document)
 
