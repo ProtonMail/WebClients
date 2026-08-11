@@ -8639,6 +8639,9 @@
       "This service is not available to users signing in with single sign-on.": [
         "このサービスは、シングル サインオンでサインインするユーザーはご利用になれません。"
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "このユーザーはメールアドレスが ${ BRAND_NAME } に登録されていないため、移行することができません。"
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "このユーザーは組織の経理責任を負っています。このユーザーを降格させた場合、あなたが経理責任を負います。"
       ],
@@ -8749,6 +8752,9 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } 製品の最新の開発状況を把握するために、さまざまなメールや ${ blogLink } を随時購読していただけます。"
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "このユーザーを移行するには、${ domainNamesLink } にメールドメインを追加して確認してください"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "アカウント復旧方法を選択し、リクエストを確認してください。"

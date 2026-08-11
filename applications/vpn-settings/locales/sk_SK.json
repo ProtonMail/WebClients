@@ -422,6 +422,9 @@
       "Download CSV sample": [
         "Stiahnuť ukážku CSV"
       ],
+      "Download latest": [
+        "Stiahnuť najnovšie"
+      ],
       "Download logs": [
         "Záznamy sťahovania"
       ],
@@ -662,9 +665,6 @@
       "Invite user": [
         "Pozvať používateľa"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "Zachovať"
       ],
@@ -737,8 +737,8 @@
       "Mark as resolved": [
         "Označiť ako vyriešené"
       ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
+      "Migrate": [
+        "Migrovať"
       ],
       "More benefits": [
         "Viac výhod"
@@ -1297,6 +1297,9 @@
       ],
       "View all reports": [
         "Zobraziť všetky hlásenia"
+      ],
+      "View guide": [
+        "Zobraziť príručku"
       ],
       "View invoice": [
         "Zobraziť faktúru"
@@ -3854,6 +3857,9 @@
       "Are you sure you want to disable this address?": [
         "Naozaj chcete deaktivovať túto adresu?"
       ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Deaktiváciou tejto adresy ${ address } členovia už nebudetú môcť odosielať ani prijímať emaily z tejto adresy a všetky prepojené produkty z ${ BRAND_NAME } budú deaktivované."
+      ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Deaktiváciou tejto adresy ${ address } už nebudete môcť odosielať ani prijímať emaily z tejto adresy a všetky prepojené ${ BRAND_NAME } produkty budú deaktivované."
       ],
@@ -4746,6 +4752,9 @@
       "A group with this name already exists": [
         "Skupina s týmto názvom už existuje"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Pri nahlásení porušenia autorských práv alebo odcudzenia údajov je potrebné zanechať správu"
+      ],
       "Address cannot be yours": [
         "Adresa nemôže byť vaša"
       ],
@@ -4754,6 +4763,9 @@
       ],
       "Address is already added to your account": [
         "Adresa už bola pridaná do vášho účtu"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresu už používa používateľ mimo vašej organizácie. Kontaktujte zákaznícku podporu, aby ste to vyriešili."
       ],
       "Address primary private key not found": [
         "Primárny súkromný kľúč adresy nenájdený"
@@ -4773,8 +4785,29 @@
       "Authentication error.": [
         "Chyba prihlásenia."
       ],
+      "Bookmark password is not available": [
+        "Heslo záložky nie je k dispozícii"
+      ],
       "Calendar limit reached": [
         "Dosiahnutý limit kalendára"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Fotografiu bez platného názvu nie je možné pridať do albumu"
+      ],
+      "Cannot download a folder": [
+        "Priečinok nie je možné stiahnuť"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Položku bez platného názvu nie je možné presunúť, najskôr ju premenujte, prosím"
+      ],
+      "Cannot share root folder": [
+        "Koreňový priečinok nie je možné zdieľať"
+      ],
+      "Cannot verify the author of this file": [
+        "Nie je možné overiť autora tohto súboru"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Nie je možné overiť, kto tento súbor nahral"
       ],
       "Checkout expired, please try again": [
         "Objednávka vypršala, skúste to prosím znova"
@@ -4785,14 +4818,47 @@
       "Company name or personal name is required": [
         "Názov spoločnosti alebo meno je povinné"
       ],
+      "Copy operation aborted": [
+        "Operácia kopírovania bola prerušená"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopírovanie položky do miesta, ktoré nie je priečinkom, nie je povolené"
+      ],
+      "Could not find an available name": [
+        "Nepodarilo sa nájsť voľné meno"
+      ],
       "Could not generate the device profile. Please try again.": [
         "Nepodarilo sa vygenerovať profil zariadenia. Skúste to znova, prosím."
+      ],
+      "Could not load sharing details": [
+        "Nepodarilo sa načítať podrobnosti o zdieľaní"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Nepodarilo sa načítať náhľad obrázku: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Nepodarilo sa prečítať časť tohto súboru: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Nepodarilo sa odomknúť nadradený priečinok"
+      ],
+      "Could not unlock this item": [
+        "Túto položku sa nepodarilo odomknúť"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Nie je možné načítať faktúry. Skúste to neskôr, prosím."
       ],
       "Couldn't load transactions. Please try again later.": [
         "Nie je možné načítať transakcie. Skúste to neskôr, prosím."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Vytváranie dokumentov mimo zložiek nie je povolené"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Vytváranie súborov mimo priečinkov nie je povolené"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Vytváranie priečinkov mimo priečinkov nie je povolené"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendára",
@@ -4805,6 +4871,9 @@
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov alebo",
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov alebo",
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov alebo"
+      ],
+      "Device not found": [
+        "Zariadenie nebolo nájdené"
       ],
       "Domain not available, try again later": [
         "Doména nie je dostupná, skúste to znova neskôr"
@@ -4836,8 +4905,35 @@
       "Error publishing changes": [
         "Chyba pri publikovaní zmien"
       ],
+      "Expiration date cannot be in the past": [
+        "Dátum ukončenia platnosti nemôže byť v minulosti"
+      ],
       "Failed to add group member": [
         "Nepodarilo sa pridať člena skupiny"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Nepodarilo sa dešifrovať kľúč záložky: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Nepodarilo sa dešifrovať názov záložky: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Nepodarilo sa dešifrovať heslo záložky: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Nepodarilo sa dešifrovať kľúč obsahu: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Nepodarilo sa dešifrovať názov položky: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Nepodarilo sa dešifrovať kľúč uzla: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Nepodarilo sa dešifrovať metadáta revízie"
+      ],
+      "Failed to get inviter keys": [
+        "Nepodarilo sa získať kľúče pozývajúceho"
       ],
       "Failed to load OAuth modal.": [
         "Nepodarilo sa načítať OAuth modal."
@@ -4860,6 +4956,15 @@
       "Failed to update detailed monitoring.": [
         "Aktualizácia podrobného monitorovania zlyhala."
       ],
+      "Failed to verify invitation": [
+        "Overenie pozvánky zlyhalo"
+      ],
+      "File download failed due to empty response": [
+        "Sťahovanie súboru sa nepodarilo kvôli prázdnej odpovedi"
+      ],
+      "File has no revision": [
+        "Súbor nemá žiadnu revíziu"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Súbor je príliš veľký. Vaše logo musí mať 30 KB alebo menej."
       ],
@@ -4868,6 +4973,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Ak čas v TV vypršal, kliknite na Obnoviť na vašej TV a znovu zadajte váš kód."
+      ],
+      "Image preview not found": [
+        "Náhľad obrázka nebol nájdený"
       ],
       "IMAP server is required": [
         "IMAP server je požadovaný"
@@ -4941,11 +5049,23 @@
       "Invalid verification code": [
         "Nesprávny overovací kód"
       ],
+      "Invitation not found": [
+        "Pozvánka nenájdená"
+      ],
+      "Item not found": [
+        "Položka nebola nájdená"
+      ],
       "Label name cannot be empty.": [
         "Názov štítku nesmie byť prázdny."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Starý verejný odkaz nie je možné aktualizovať. Vytvorte nový verejný odkaz, prosím."
+      ],
       "Maximum ${ displayMaxValue } allowed": [
         "Maximálne povolené ${ displayMaxValue }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa člena nebola nájdená. Na vyriešenie tohto problému kontaktujte zákaznícku podporu."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Zlúčte aspoň ${ calendarsToFixCount } kalendár s existujúcim ${ BRAND_NAME } kalendárom",
@@ -4953,17 +5073,47 @@
         "Zlúčte aspoň ${ calendarsToFixCount } kalendárov s existujúcimi ${ BRAND_NAME } kalendármi",
         "Zlúčte aspoň ${ calendarsToFixCount } kalendárov s existujúcimi ${ BRAND_NAME } kalendármi"
       ],
+      "Missing inviter email": [
+        "Chýba emailová adresa pozývajúceho"
+      ],
       "Missing key packet": [
         "Chýbajúci kľúčový balík"
       ],
+      "Missing organization private key": [
+        "Chýba súkromný kľúč organizácie"
+      ],
+      "Missing organization public key": [
+        "Chýba verejný kľúč organizácie"
+      ],
       "Missing signature": [
         "Chýbajúci podpis"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Chýba podpis pre ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Operácia presunu bola prerušená"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Presun položky do miesta, ktoré nie je priečinkom, nie je povolené"
+      ],
+      "Moving root item is not allowed": [
+        "Presun koreňovej položky nie je povolený"
       ],
       "Name already exists": [
         "Názov už existuje"
       ],
       "Name does not match": [
         "Meno sa nezhoduje"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znak",
+        "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znaky",
+        "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znakov",
+        "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znakov"
+      ],
+      "Name must not be empty": [
+        "Názov nesmie byť prázdny"
       ],
       "No calendars found to import": [
         "Neboli nájdené žiadne kalendáre na import"
@@ -4977,6 +5127,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Neboli nájdené žiadne emaily na import - účet nemá priečinok Doručená pošta"
       ],
+      "No file data was received. Please try again.": [
+        "Neboli prijaté žiadne údaje zo súboru. Skúste to znova, prosím."
+      ],
       "No image selected": [
         "Nebol vybraný žiaden obrázok"
       ],
@@ -4986,8 +5139,23 @@
       "Not a valid number": [
         "Neplatné číslo"
       ],
+      "Only admins can convert external invitations": [
+        "Externé pozvánky môžu konvertovať len správcovia"
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Na tejto adrese možno meniť len veľké písmená a interpunkciu (bodky, pomlčky a podčiarkovníky)."
+      ],
+      "Operation aborted": [
+        "Operácia bola prerušená"
+      ],
+      "Operation failed, try again later": [
+        "Operácia sa nepodarila, skúste to neskôr"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizaícia nemá dostatok voľných licencií"
+      ],
+      "Organization does not have enough storage available": [
+        "Organzácia nemá dostatok úložného priestoru"
       ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
@@ -4997,6 +5165,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Na vytvorenie nesúkromných používateľov musí byť aktivovaný kľúč organizácie"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Zdá sa, že časť súboru je poškodená"
       ],
       "Password is required": [
         "Heslo je požadované"
@@ -5021,6 +5192,12 @@
       ],
       "Permissions request failed.": [
         "Žiadosť o oprávnenia zlyhala."
+      ],
+      "Photo is already in the target album": [
+        "Fotografia sa už v cieľovom albume nachádza"
+      ],
+      "Photo not found": [
+        "Fotografia nebola nájdená"
       ],
       "Please add a payment method before reactivating your subscription": [
         "Pred opätovnou aktiváciou predplatného pridajte spôsob platby."
@@ -5115,6 +5292,12 @@
       "Process aborted": [
         "Proces prerušený"
       ],
+      "Renaming root item is not allowed": [
+        "Pomenovanie koreňovej položky nie je povolené"
+      ],
+      "Request aborted": [
+        "Dopyt prerušený"
+      ],
       "Request timed out": [
         "Požiadavka časovo omeškaná"
       ],
@@ -5136,8 +5319,29 @@
       "Server not found": [
         "Server nebol nájdený"
       ],
+      "Signature is missing": [
+        "Chýba podpis"
+      ],
       "Signature verification failed": [
         "Overenie podpisu zlyhalo"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Overenie podpisu zlyhalo: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Overenie podpisu ${ signatureType } zlyhalo"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Overenie podpisu ${ signatureType } zlyhalo: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Niektoré súbory sa nepodarilo nahrať. Skúste to znova, prosím."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Niektoré časti súboru sa nepodarilo nahrať. Skúste to znova, prosím."
+      ],
+      "Some items could not be loaded": [
+        "Niektoré položky sa nepodarilo načítať"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Niektoré z názvov vašich priečinkov nie sú k dispozícii. Prispôsobte import a upravte tieto názvy, prosím."
@@ -5217,6 +5421,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "Názov politiky musí mať 3 až 40 znakov."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Nahratý súbor nezodpovedá originálu. Skúste to znova, prosím."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašom externom účte je príliš veľa priečinkov. Upravte import na zmazanie niektorých priečinkov, prosím."
       ],
@@ -5235,8 +5442,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Toto pole musí obsahovať minimálne ${ minimumLength } znakov."
       ],
+      "This file has missing crypto material": [
+        "V tomto súbore chýba šifrovací materiál"
+      ],
+      "This file has no version available to download": [
+        "Tento súbor nie je k dispozícii na stiahnutie v žiadnej verzii"
+      ],
+      "This file version could not be uploaded": [
+        "Túto verziu súboru nebolo možné nahrať"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Tento názov priečinka nie je k dispozícii. Zvoľte prosím iný názov."
+      ],
+      "This item has no image preview": [
+        "Tento produkt nemá obrazovú ukážku"
+      ],
+      "This item is no longer shared": [
+        "Táto položka už nie je zdieľaná"
+      ],
+      "This item is not shared": [
+        "Táto položka nie je zdieľaná"
       ],
       "This label name is not available. Please choose a different name.": [
         "Tento názov štítku nie je k dispozícii. Zvoľte prosím iný názov."
@@ -5252,6 +5477,12 @@
       ],
       "Too many requests. Please try again later": [
         "Príliš veľa požiadaviek. Skúste to neskôr znova, prosím."
+      ],
+      "Too many server errors, please try again later": [
+        "Vyskytlo sa príliš veľa chýb servera, skúste to neskôr, prosím"
+      ],
+      "Too many server requests, please try again later": [
+        "Príliš veľa požiadaviek na server, skúste to neskôr, prosím"
       ],
       "Try again later": [
         "Skúste to znova neskôr"
@@ -5292,6 +5523,12 @@
       "Verification did not succeed, please try again in an hour.": [
         "Overenie sa nepodarilo, skúste to prosím za hodinu znovu."
       ],
+      "Verification keys are not available": [
+        "Overovacie kľúče nie sú k dispozícii"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Overovacie kľúče pre ${ signatureType } nie sú k dispozícii"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Touto metódou sa nám nepodarilo odoslať overovací kód."
       ],
@@ -5306,6 +5543,24 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Nesprávny overovací kód. Uistite sa prosím, že ste skopírovali overovací kód správne a akciu zopakujte. Než sa zmeny prejavia, môže to trvať až 24 hodín."
+      ],
+      "You can create public links for your own files only": [
+        "Verejné odkazy môžete vytvárať iba na svoje vlastné súbory"
+      ],
+      "You can only leave items that are shared with you": [
+        "Môžete opustiť len položky, ktoré sú s vami zdieľané"
+      ],
+      "You can only upload a new version to a file": [
+        "Do súboru môžete nahrať iba novú verziu"
+      ],
+      "You can update a public link for your own files only": [
+        "Verejný odkaz môžete aktualizovať iba pre svoje vlastné súbory"
+      ],
+      "You do not have access to this item": [
+        "K tejto položke nemáte prístup"
+      ],
+      "You do not have access to this shared item": [
+        "K tejto zdieľanej položke nemáte prístup"
       ],
       "You have reached the maximum number of calendars.": [
         "Dosiahli ste maximálny počet kalendárov."
@@ -6195,6 +6450,29 @@
         "terabajtov"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Aktivované"
+      ],
+      "All": [
+        "Všetci"
+      ],
+      "Errors": [
+        "Chyby"
+      ],
+      "In progress": [
+        "Prebieha"
+      ],
+      "Migrated": [
+        "Presunuté"
+      ],
+      "Not activated": [
+        "Neaktivovaný"
+      ],
+      "Pending": [
+        "Čaká"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "Štítok ${ Label.Name } bol aktualizovaný"
@@ -6257,6 +6535,35 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Pokročilé bezpečnostné opatrenia"
+      ],
+      "Dedicated server - ${ serverPrice }": [
+        "Dedikovaný server - ${ serverPrice }"
+      ],
+      "Enforce identity-based access controls": [
+        "Vynúťte kontrolu prístupu na základe identity"
+      ],
+      "Get real-time connection insights, monitor suspicious activity and export data to SIEM tools for your private gateways": [
+        "Získajte prehľad o pripojeniach v reálnom čase, sledujte podozrivú aktivitu a exportujte údaje do nástrojov SIEM pre vaše súkromné brány"
+      ],
+      "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
+        "Okrem monitorovania pripojení vám súkromné brány umožňujú udeľovať prístup jednotlivým používateľom alebo skupinám – a to všetko na vyhradených serveroch so statickými IP adresami."
+      ],
+      "Monitor gateway connections with VPN Professional": [
+        "Monitorujte pripojenia brány pomocou VPN Professional"
+      ],
+      "Real-time connection insights": [
+        "Prehľad o pripojení v reálnom čase"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Získajte prístup k funkcii jednotného prihlásenia (SSO), správcovským pravidlám, monitorovaniu, povinnému dvojfaktorovému overovaniu a ďalším funkciám."
+      ],
+      "User - ${ userPrice }": [
+        "Používateľ - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -6808,11 +7115,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Má chyby"
+      ],
       "In progress": [
         "Prebieha"
       ],
       "Migrated": [
         "Presunuté"
+      ],
+      "Pending": [
+        "Čaká"
       ]
     },
     "Import warning": {
@@ -6925,6 +7238,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie."
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } značka"
       ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } používateľ musí prijať pozvánku, aby mohol začať dostávať skupinové emaily.",
@@ -7358,6 +7674,9 @@
       "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
         "Ak v nastaveniach povolíte obnovenie hesla, budete si môcť zmeniť heslo v prípade, že ste ho zabudli, ale stále ste prihlásení do služby ${ BRAND_NAME }."
       ],
+      "Allows IPv6 traffic to pass through the VPN tunnel. This improves compatibility with IPv6 websites and services.": [
+        "Umožňuje priechod IPv6 prevádzky cez VPN tunel. Tým sa zlepšuje kompatibilita s webovými stránkami a službami využívajúcimi protokol IPv6."
+      ],
       "Already allocated": [
         "Už pridelené"
       ],
@@ -7436,11 +7755,20 @@
       "Authenticator app 2FA enabled": [
         "Autentifikačná 2FA aplikácia povolená"
       ],
+      "Author is not provided on public link": [
+        "Vo verejnom odkaze nie je uvedený autor"
+      ],
       "Available on VPN Professional": [
         "K dispozícii vo verzii VPN Professional"
       ],
       "Awaiting transaction": [
         "Čakanie na transakciu"
+      ],
+      "Backup password disabled": [
+        "Záložné heslo deaktivované"
+      ],
+      "Backup password enabled": [
+        "Záložné heslo povolené"
       ],
       "Balance from your previous subscription": [
         "Zostatok z vášho predchádzajúceho predplatného"
@@ -7961,6 +8289,9 @@
       "Example: ${ spfExample }": [
         "Príklad: ${ spfExample }"
       ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Pri nasadzovaní profilu zariadenia ich vynechajte. Podpora bude čoskoro k dispozícii."
+      ],
       "Expired": [
         "Platnosť vypršala"
       ],
@@ -7984,6 +8315,9 @@
       ],
       "finance": [
         "financie"
+      ],
+      "Find out what can be migrated.": [
+        "Zistite, čo je možné preniesť."
       ],
       "for ${ price }": [
         "za ${ price }"
@@ -8399,6 +8733,9 @@
       "Manage groups in your identity provider": [
         "Skupiny spravujte vo vašom poskytovateľovi identít"
       ],
+      "Manage how users can access your ${ BRAND_NAME } organization with single sign-on.": [
+        "Nastavte, ako môžu používatelia pristupovať k vašej organizácii ${ BRAND_NAME } pomocou jednotného prihlásenia."
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Spravujte, ku ktorým ${ BRAND_NAME } aplikáciám majú členovia vašej organizácie prístup. Ak je táto možnosť vypnutá, prístup budú mať len správcovia."
       ],
@@ -8500,6 +8837,9 @@
       ],
       "No single sign-on": [
         "Žiadne jednotné prihlásenie"
+      ],
+      "No users to display": [
+        "Nie sú žiadni používatelia na zobrazenie"
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
@@ -8656,6 +8996,9 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Skontrolujte svoj súbor alebo skúste použiť náš ${ csvTemplateButton }."
+      ],
+      "Please ensure you're running ${ VPN_APP_NAME } desktop version ${ version } or later. ${ downloadLatest }": [
+        "Uistite sa, že používate desktopovú verziu ${ VPN_APP_NAME } vo verzii ${ version } alebo novšej. ${ downloadLatest }"
       ],
       "Please fill in all required fields.": [
         "Vyplňte všetky povinné polia, prosím."
@@ -8849,6 +9192,9 @@
       "Select a group to view its members and settings.": [
         "Vyberte skupinu, aby ste si mohli prezrieť jej členov a nastavenia."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vyberte presne to, čo chcete preniesť. Zmena sa uplatní na všetkých používateľov v organizácii."
+      ],
       "Select one or multiple user affiliations": [
         "Vyberte jednu alebo viacero používateľských príslušností"
       ],
@@ -8933,6 +9279,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
       ],
+      "Smart Routed through a different country.": [
+        "Inteligentné smerovanie cez inú krajinu."
+      ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Inteligentne smerované cez: ${ joinedCountries }."
       ],
@@ -8950,6 +9299,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF upresňuje, kto smie odosielať emaily pre vašu doménu. Uistite sa, že ste do DNS konzoly (umiestnenej na platforme, kde ste zakúpili vlastnú doménu) pridali nasledujúci TXT záznam."
+      ],
+      "SSO users can't sign in on devices with always-on enforced.": [
+        "Používatelia SSO sa nemôžu prihlásiť na zariadeniach, na ktorých je vynútené vždy zapnuté pripojenie."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
@@ -9134,6 +9486,9 @@
       "This file is too large to preview": [
         "Tento súbor je príliš veľký na zobrazenie náhľadu"
       ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Táto Gmail adresa je zaregistrovaná v inom ${ BRAND_NAME } účte (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI a ďalšie). Pracujeme na tom, aby toto prepojenie fungovalo bez problémov, ale zatiaľ budete musieť vykonať niekoľko krokov."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Toto je 12-slovná fráza, ktorú musíte nastaviť."
       ],
@@ -9160,6 +9515,12 @@
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Táto služba nie je k dispozícii pre používateľov, ktorí sa prihlasujú pomocou jednotného prihlásenia."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Tento používateľ nemôže byť prenesený, pretože jeho emailová adresa nie je k dispozícii na ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tento používateľ nemôže byť prenesený z dôvodu nekompatibility platforiem."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento užívateľ je aktuálne zodpovedný za platby vo vašej organizácii. Znížením úrovne tohto užívateľa sa stanete zodpovedným za platby vo vašej organizácii práve vy."
@@ -9254,8 +9615,8 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Na aktiváciu funkcie vždy zapnutej VPN je potrebné nainštalovať konfiguračný profil na každý Mac — klient ${ VPN_APP_NAME } automaticky vynúti použitie profilu zariadenia, akonáhle je nainštalovaný."
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "Na povolenie vždy zapnutej VPN musí byť profil zariadenia umiestnený na každom zariadení v priečinku ${ policiesPath } – klient ${ VPN_APP_NAME } ho tam rozpozná a profil automaticky uplatní."
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
+        "Na povolenie vždy zapnutej VPN musí byť profil zariadenia umiestnený na každom zariadení v priečinku ${ policiesPath } – klient ${ VPN_APP_NAME } ho tam rozpozná a profil automaticky uplatní. ${ learnMore }"
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom emailu na obnovenie**."
@@ -9277,6 +9638,27 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Ak chcete mať prehľad o najnovšom vývoji produktov ${ BRAND_NAME }, môžete sa prihlásiť na odber rôznych emailov a z času na čas ${ blogLink }."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Ak chcete tohto používateľa presunúť, pridajte a overte emailovú doménu na stránke ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Ak chcete tohto používateľa presunúť, aktivujte jeho účet vo vašom ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Ak chcete tohto používateľa presunúť, aktivujte jeho účet na ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Ak chcete tohto používateľa presunúť, aktivujte jeho adresu na ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Na presun tohto používateľa je potrebné, aby prijal pozvánku na pripojenie sa k ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Ak chcete tohto používateľa presunúť, odarchivujte ho vo vašej ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Ak chcete tohto používateľa presunúť, zrušte jeho pozastavenie vo vašom ${ provider.adminConsoleName }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Ak chcete pokračovať, z dôvodu kontroly požiadavky vyberte metódu obnovenia účtu."
@@ -9428,11 +9810,11 @@
       "Users": [
         "Používatelia"
       ],
+      "Users create a backup password the first time they sign in with single sign-on. When they later sign in on a new device, they can enter this password to complete the sign-in themselves, without needing an already signed-in device or an administrator to assist.": [
+        "Pri prvom prihlásení prostredníctvom jednotného prihlásenia si používatelia vytvoria záložné heslo. Keď sa neskôr prihlásia na novom zariadení, môžu toto heslo zadať a prihlásenie dokončiť sami, bez toho, aby potrebovali zariadenie, na ktorom sú už prihlásení, alebo pomoc správcu."
+      ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Používate iný MDM? Fungovať bude akýkoľvek MDM, ktorý podporuje nasadenie konfiguračného profilu. Informácie o tom, ako profil nahrať a priradiť k vašej skupine zariadení, nájdete v dokumentácii k vášmu MDM."
-      ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "Používate iný nástroj MDM? Fungovať bude akýkoľvek MDM, ktorý podporuje nasadzovanie súborov alebo spúšťanie PowerShell skriptov. Ďalšie informácie nájdete v dokumentácii k vášmu MDM."
       ],
       "Vault created": [
         "Trezor bol vytvorený"
@@ -9536,6 +9918,9 @@
       "We use 3-D Secure to protect your payments": [
         "Na ochranu vašich platieb používame 3-D Secure"
       ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Na dokončenie tejto transakcie vás presmerujeme do ${ IDEAL_BRAND_NAME } v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme na PayPal v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ],
@@ -9625,6 +10010,9 @@
       ],
       "X": [
         "X"
+      ],
+      "You": [
+        "Vy"
       ],
       "You already have a free account": [
         "Už máte bezplatný účet"
@@ -10242,6 +10630,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Povoliť obnovenie pomocou dôveryhodného zariadenia"
+      ],
+      "Allow users to set a backup password": [
+        "Umožniť používateľom nastaviť záložné heslo"
       ],
       "Allowed Domain": [
         "Povolená doména"
@@ -11836,6 +12227,32 @@
       ],
       "Sign in": [
         "Prihlásiť sa"
+      ]
+    },
+    "Members table usage": {
+      "Gateway Monitor is off": [
+        "Monitorovanie brány je vypnuté"
+      ],
+      "Monitor gateways connections": [
+        "Monitorovať pripojenia brán"
+      ],
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Nastavte si vlastné súkromné brány na monitorovanie aktivity VPN pripojení vo vašej organizácii."
+      ],
+      "Today": [
+        "Dnes"
+      ],
+      "Today, ${ time }": [
+        "Dnes o ${ time }"
+      ],
+      "Turn it on to track when and where users connect.": [
+        "Zapnite túto funkciu, aby ste mohli sledovať, kedy a kde sa používatelia pripájajú."
+      ],
+      "Yesterday": [
+        "Včera"
+      ],
+      "Yesterday, ${ time }": [
+        "Včera o ${ time }"
       ]
     },
     "Message": {
@@ -13944,6 +14361,9 @@
       "More plans are available in other currencies": [
         "Ďalšie plány sú k dispozícii v iných menách"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Platba cez ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Spôsob platby potrebný na aktiváciu predplatného po skončení skúšobnej doby."
       ],
@@ -14049,6 +14469,9 @@
       "You will soon be redirected to verify your payment.": [
         "Za účelom overenia platby dôjde o chvíľu k presmerovaniu."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_BRAND_NAME } podporuje platby len v eurách."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
@@ -14060,6 +14483,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Inicializácia ${ IDEAL_BRAND_NAME } zlyhala. Skúste to neskôr znova, prosím."
+      ],
       "Invalid card number": [
         "Neplatné číslo karty"
       ],
@@ -14082,6 +14508,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Niečo sa pokazilo. Overenie Google Pay zlyhalo."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potvrdením tejto platby oprávňujete ${ BRAND_NAME } a spoločnosť Stripe, nášho poskytovateľa platobných služieb, aby dali vašej banke pokyn na odpísanie prostriedkov z vášho účtu. Peniaze vám môžu byť vrátené do 8 týždňov od dátumu odpísania z účtu za podmienok stanovených v zmluve s vašou bankou."
       ]
     },
     "Payments.info": {
@@ -14423,6 +14854,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Navýšiť na ${ upsellPlanTitle }"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribúty"
+      ],
+      "content key": [
+        "kľúč obsahu"
+      ],
+      "hash key": [
+        "hash kľúč"
+      ],
+      "key": [
+        "kľúč"
+      ],
+      "membership": [
+        "členstvo"
+      ],
+      "name": [
+        "názov"
       ]
     },
     "Property type": {
@@ -15289,11 +15740,17 @@
       ]
     },
     "scim: Info": {
+      "**Groups:** All groups convert to local ${ BRAND_NAME } groups. Syncing with your identity provider stops, and you'll manage membership in ${ BRAND_NAME } settings instead.": [
+        "**Skupiny:** Všetky skupiny sa prevedú na lokálne skupiny ${ BRAND_NAME }. Synchronizácia s vaším poskytovateľom identít sa zastaví a členstvo budete namiesto toho spravovať v nastaveniach ${ BRAND_NAME }."
+      ],
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Predpoklad:** Na umožnenie poskytovania SCIM musí byť nakonfigurované overovanie SAML."
       ],
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
         "**Predpoklad:** Ak chcete povoliť poskytovanie SCIM, musíte overiť vlastníctvo domény **${ domainName }**. Toto overenie môže trvať až jednu hodinu."
+      ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**Používatelia:** Všetci používatelia SCIM, ktorých automaticky poskytuje váš poskytovateľ identít, budú prevedení na používateľov SSO a vy ich budete môcť spravovať priamo v nastaveniach ${ BRAND_NAME }."
       ],
       "Enter the token into your identity provider": [
         "Zadajte token do vášho poskytovateľa identity"
@@ -15319,14 +15776,23 @@
       "Make sure you copy the above SCIM token now.": [
         "Uistite sa, že ste skopírovali vyššie uvedený SCIM token."
       ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Opätovné povolenie synchronizácie spôsobí zdvojenie existujúcich skupín. Tieto skupiny nebude možné opäť zlúčiť do SCIM."
+      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Zjednodušuje správu používateľov v rôznych službách. Pridávajte, upravujte a odstraňujte používateľov vo svojom poskytovateľovi identity a tieto zmeny sa automaticky aplikujú na vašu organizáciu ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Automatické poskytovanie SCIM bude vypnuté, až kým nezadáte nový SCIM token do nastavení poskytovateľa identity."
       ],
+      "This will delete your SCIM base URL and token.": [
+        "Týmto sa vymaže vaša základná URL adresa SCIM a token."
+      ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Ak chcete znovu povoliť synchronizáciu s poskytovateľom identity, musíte znovu dokončiť integráciu SCIM."
+      ],
+      "When you disable SCIM:": [
+        "Pri deaktivácii SCIM:"
       ]
     },
     "scim: Label": {
@@ -16183,6 +16649,9 @@
       "Contact your administrator if the problem persists.": [
         "Ak problém pretrváva, obráťte sa na správcu."
       ],
+      "Continue to join as **${ username }**": [
+        "Pokračujte v prihlásení sa ako **${ username }**"
+      ],
       "Current device": [
         "Aktuálne zariadenie"
       ],
@@ -16221,6 +16690,9 @@
       ],
       "Enter your backup password": [
         "Zadajte vaše záložné heslo"
+      ],
+      "For your security, you have been signed out of all your other active devices.": [
+        "Z bezpečnostných dôvodov sme vás odhlásili zo všetkých vašich ostatných aktívnych zariadení."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "V záujme vašej bezpečnosti sme vás odhlásili zo všetkých ostatných aktívnych zariadení. Pred prístupom k svojmu kontu budete musieť zadať nové záložné heslo."
@@ -16329,6 +16801,9 @@
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Tým sa odhlásite z ostatných zariadení a budete musieť vytvoriť nové záložné heslo."
+      ],
+      "This will sign you out of your other devices.": [
+        "Týmto sa odhlásite z ostatných svojich zariadení."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "Ak sa chcete uistiť, že sa do **${ email }** pokúšate prihlásiť naozaj vy, skontrolujte potvrdzovací kód a potvrďte žiadosť z iného zariadenia."
@@ -17457,11 +17932,23 @@
       ]
     },
     "Table header": {
+      "Activated": [
+        "Aktivovaný"
+      ],
+      "Estimated size": [
+        "Odhadovaná veľkosť"
+      ],
+      "Migration status": [
+        "Stav migrácie"
+      ],
       "Size": [
         "Veľkosť"
       ],
       "Status": [
         "Stav"
+      ],
+      "User": [
+        "Používateľ"
       ]
     },
     "TableHeader": {
@@ -17754,6 +18241,9 @@
       "Add users to \"${ policyName }\"": [
         "Pridať používateľov do \"${ policyName }\""
       ],
+      "Advanced configuration": [
+        "Rozšírená konfigurácia"
+      ],
       "Advanced recovery options": [
         "Rozšírené možnosti obnovy"
       ],
@@ -17897,6 +18387,9 @@
       ],
       "Configure Always-on VPN device profile": [
         "Nastaviť profil zariadenia s vždy zapnutou VPN"
+      ],
+      "Configure migration": [
+        "Nastaviť migráciu"
       ],
       "Confirm": [
         "Potvrdiť"
@@ -18309,6 +18802,9 @@
       "Groups": [
         "Skupiny"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Upozornenie: Tento Gmail účet je prepojený s iným ${ BRAND_NAME } účtom"
+      ],
       "Help and feedback": [
         "Pomoc a spätná väzba"
       ],
@@ -18669,6 +19165,9 @@
       "Select data to import": [
         "Vyberte dáta na import"
       ],
+      "Select users to migrate": [
+        "Vyberte používateľov na presun"
+      ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Odosielajte a prijímajte Gmailovú poštu pomocou ${ MAIL_APP_NAME }"
       ],
@@ -18963,6 +19462,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vitajte v službe ${ BRAND_NAME } pre Business"
       ],
+      "What are you migrating?": [
+        "Čo migrujete?"
+      ],
       "What changes if you switch to the Free plan": [
         "Čo sa zmení, keď prejdete na plán Free"
       ],
@@ -19070,6 +19572,12 @@
       "Features": [
         "Funkcie"
       ],
+      "Last app activity": [
+        "Posledná aktivita aplikácie"
+      ],
+      "Last connection": [
+        "Posledné pripojenie"
+      ],
       "Name": [
         "Meno"
       ],
@@ -19138,6 +19646,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Prispôsobiť import na zníženie počtu štítkov"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Stav migrácie dát z ${ providerName } do ${ BRAND_NAME }"
       ],
       "Device name and app version": [
         "Názov zariadenia a verzia aplikácie"
@@ -19262,6 +19773,9 @@
       "User's approximate location (based on their IP address)": [
         "Približná poloha používateľa (založená na IP adrese)"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Používatelia, ktorí sa prihlásili do svojho ${ BRAND_NAME } účtu"
+      ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Používatelia uvidia vaše logo namiesto ikony ${ BRAND_NAME }, keď sa prihlásia do našich webových aplikácií."
       ],
@@ -19323,6 +19837,14 @@
       ],
       "Waiting for user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"
+      ]
+    },
+    "Tooltip for members table": {
+      "Last time this user connected to one of your organization's Gateways.": [
+        "Kedy sa tento používateľ naposledy pripojil k jednej z brán vašej organizácie."
+      ],
+      "Last time this user signed in or used the ${ VPN_APP_NAME } app on their device.": [
+        "Kedy sa tento používateľ naposledy prihlásil alebo použil aplikáciu ${ VPN_APP_NAME } na svojom zariadení."
       ]
     },
     "Tor out of date": {
@@ -19653,6 +20175,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Týmto sa vytvorí nová ${ MAIL_APP_NAME } adresa."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Navýšte úroveň na podporovaný plán, aby ste mohli využívať pozície správcov."
       ],
       "User created": [
         "Používateľ vytvorený"

@@ -422,6 +422,9 @@
       "Download CSV sample": [
         "Λήψη δείγματος CSV"
       ],
+      "Download latest": [
+        "Λήψη τελευταίας έκδοσης"
+      ],
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
       ],
@@ -662,9 +665,6 @@
       "Invite user": [
         "Πρόσκληση χρήστη"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "Διατήρηση"
       ],
@@ -736,9 +736,6 @@
       ],
       "Mark as resolved": [
         "Σήμανση ως επιλυμένου"
-      ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
       ],
       "Migrate": [
         "Μετεγκατάσταση"
@@ -3800,6 +3797,9 @@
       "Are you sure you want to disable this address?": [
         "Θέλετε σίγουρα να απενεργοποιήσετε αυτή τη διεύθυνση;"
       ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Απενεργοποιώντας αυτήν τη διεύθυνση ${ address }, το μέλος δε θα μπορεί πλέον να στείλει ή να λαμβάνει ηλεκτρονικά μηνύματα χρησιμοποιώντας αυτήν τη διεύθυνση και όλα τα συνδεδεμένα προϊόντα ${ BRAND_NAME } θα απενεργοποιηθούν."
+      ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Απενεργοποιώντας αυτήν τη διεύθυνση ${ address }, δε θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε email χρησιμοποιώντας αυτήν τη διεύθυνση και όλα τα συνδεδεμένα προϊόντα ${ BRAND_NAME } θα απενεργοποιηθούν."
       ],
@@ -4676,6 +4676,9 @@
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Απαιτείται μήνυμα κατά την αναφορά παραβίασης πνευματικών δικαιωμάτων ή κλοπής δεδομένων"
+      ],
       "Address cannot be yours": [
         "Η διεύθυνση δεν μπορεί να είναι δική σας"
       ],
@@ -4706,14 +4709,29 @@
       "Authentication error.": [
         "Σφάλμα ταυτοποίησης."
       ],
+      "Bookmark password is not available": [
+        "Ο κωδικός πρόσβασης σελιδοδείκτη δεν είναι διαθέσιμος"
+      ],
       "Calendar limit reached": [
         "Φτάσατε το μέγιστο όριο ημερολογίων"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Δεν είναι δυνατή η προσθήκη φωτογραφίας στο άλμπουμ χωρίς έγκυρο όνομα"
+      ],
+      "Cannot download a folder": [
+        "Δεν είναι δυνατή η λήψη ενός φακέλου"
       ],
       "Cannot move item without a valid name, please rename the item first": [
         "Δεν είναι δυνατή η μετακίνηση στοιχείου χωρίς έγκυρο όνομα. Παρακαλούμε μετονομάστε το στοιχείο πρώτα."
       ],
+      "Cannot share root folder": [
+        "Δεν είναι δυνατή η κοινοποίηση του ριζικού φακέλου"
+      ],
       "Cannot verify the author of this file": [
         "Δεν είναι δυνατή η επαλήθευση του δημιουργού αυτού του αρχείου"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Δεν είναι δυνατή η επαλήθευση ποιος ανέβασε αυτό το αρχείο"
       ],
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
@@ -4724,8 +4742,23 @@
       "Company name or personal name is required": [
         "Απαιτείται το όνομα της εταιρείας ή το προσωπικό όνομα"
       ],
+      "Copy operation aborted": [
+        "Η λειτουργία αντιγραφής διακόπηκε"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Η αντιγραφή στοιχείου σε μη φάκελο δεν επιτρέπεται"
+      ],
+      "Could not find an available name": [
+        "Δεν ήταν δυνατή η εύρεση ενός διαθέσιμου ονόματος"
+      ],
       "Could not generate the device profile. Please try again.": [
         "Δεν ήταν δυνατή η δημιουργία του προφίλ συσκευής. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Could not load sharing details": [
+        "Δεν ήταν δυνατή η φόρτωση των λεπτομερειών κοινής χρήσης"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Δεν ήταν δυνατή η φόρτωση της προεπισκόπησης εικόνας: ${ message }"
       ],
       "Could not read part of this file: ${ message }": [
         "Δεν ήταν δυνατή η ανάγνωση μέρους αυτού του αρχείου: ${ message }"
@@ -4741,6 +4774,15 @@
       ],
       "Couldn't load transactions. Please try again later.": [
         "Δεν ήταν δυνατή η φόρτωση των συναλλαγών. Παρακαλούμε προσπαθήστε ξανά αργότερα."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Η δημιουργία εγγράφων σε μη φακέλους δεν επιτρέπεται"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Δεν επιτρέπεται η δημιουργία αρχείων σε μη φακέλους"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Δεν επιτρέπεται η δημιουργία φακέλων σε μη φακέλους"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
@@ -4789,8 +4831,29 @@
       "Failed to add group member": [
         "Αποτυχία προσθήκης μέλους ομάδας"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης κλειδιού σελιδοδείκτη: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης ονόματος σελιδοδείκτη: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης κωδικού πρόσβασης σελιδοδείκτη: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης κλειδιού περιεχομένου: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης ονόματος στοιχείου: ${ message }"
+      ],
       "Failed to decrypt node key: ${ message }": [
         "Αποτυχία αποκρυπτογράφησης του κλειδιού κόμβου: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Απέτυχε η αποκρυπτογράφηση των μεταδεδομένων αναθεώρησης"
+      ],
+      "Failed to get inviter keys": [
+        "Αποτυχία λήψης κλειδιών προσκλητού"
       ],
       "Failed to load OAuth modal.": [
         "Αποτυχία φόρτωσης του παράθυρου OAuth."
@@ -4816,6 +4879,12 @@
       "Failed to verify invitation": [
         "Αποτυχία επαλήθευσης πρόσκλησης"
       ],
+      "File download failed due to empty response": [
+        "Δεν είναι δυνατή η επαλήθευση ποιος ανέβασε αυτό το αρχείο"
+      ],
+      "File has no revision": [
+        "Το αρχείο δεν έχει αναθεώρηση"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Το αρχείο είναι πολύ μεγάλο. Το λογότυπό σας πρέπει να είναι 30 KB ή μικρότερο."
       ],
@@ -4824,6 +4893,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Εάν ο χρόνος στην τηλεόρασή σας έχει λήξει, κάντε κλικ στο Ανανέωση στην τηλεόρασή σας και εισαγάγετε ξανά τον κωδικό σας."
+      ],
+      "Image preview not found": [
+        "Δεν βρέθηκε προεπισκόπηση εικόνας"
       ],
       "IMAP server is required": [
         "Απαιτείται διακομιστής IMAP"
@@ -4900,6 +4972,9 @@
       "Invitation not found": [
         "Η πρόσκληση δεν βρέθηκε"
       ],
+      "Item not found": [
+        "Το στοιχείο δεν βρέθηκε"
+      ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
       ],
@@ -4916,6 +4991,9 @@
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
       ],
+      "Missing inviter email": [
+        "Λείπει η διεύθυνση ηλεκτρονικού ταχυδρομείου προσκλητή"
+      ],
       "Missing key packet": [
         "Λείπει πακέτο κλειδιού"
       ],
@@ -4928,8 +5006,17 @@
       "Missing signature": [
         "Λείπει η υπογραφή"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Λείπει η υπογραφή για ${ signatureType }"
+      ],
       "Move operation aborted": [
         "Η λειτουργία μετακίνησης ματαιώθηκε"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Η μετακίνηση στοιχείου σε μη φάκελο δεν επιτρέπεται"
+      ],
+      "Moving root item is not allowed": [
+        "Δεν επιτρέπεται η μετακίνηση ριζικού στοιχείου"
       ],
       "Name already exists": [
         "Το όνομα υπάρχει ήδη"
@@ -4968,11 +5055,17 @@
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
       ],
+      "Only admins can convert external invitations": [
+        "Μόνο οι διαχειριστές μπορούν να μετατρέψουν εξωτερικές προσκλήσεις"
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Μόνο τα κεφαλαία και τα σημεία στίξης (τελείες, παύλες και παύλες υπογράμμισης) μπορούν να αλλάξουν για αυτήν τη διεύθυνση"
       ],
       "Operation aborted": [
         "Η λειτουργία ακυρώθηκε"
+      ],
+      "Operation failed, try again later": [
+        "Η λειτουργία απέτυχε, δοκιμάστε ξανά αργότερα"
       ],
       "Organization does not have enough seats available": [
         "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
@@ -4988,6 +5081,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία μη ιδιωτικών χρηστών"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Μέρος του αρχείου φαίνεται να είναι κατεστραμμένο"
       ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
@@ -5012,6 +5108,12 @@
       ],
       "Permissions request failed.": [
         "Το αίτημα αδειών απέτυχε."
+      ],
+      "Photo is already in the target album": [
+        "Η φωτογραφία είναι ήδη στο άλμπουμ προορισμού"
+      ],
+      "Photo not found": [
+        "Η Φωτογραφία δε βρέθηκε"
       ],
       "Please add a payment method before reactivating your subscription": [
         "Παρακαλούμε προσθέστε μια μέθοδο πληρωμής πριν ενεργοποιήσετε ξανά τη συνδρομή σας"
@@ -5104,6 +5206,9 @@
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
       ],
+      "Renaming root item is not allowed": [
+        "Δεν επιτρέπεται η μετονομασία ριζικού στοιχείου"
+      ],
       "Request aborted": [
         "Το αίτημα ακυρώθηκε"
       ],
@@ -5124,11 +5229,29 @@
       "Server not found": [
         "Δε βρέθηκε ο διακομιστής"
       ],
+      "Signature is missing": [
+        "Λείπει η υπογραφή"
+      ],
       "Signature verification failed": [
         "Η επαλήθευση υπογραφής απέτυχε"
       ],
       "Signature verification failed: ${ errorMessage }": [
         "Αποτυχία επαλήθευσης υπογραφής: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Η επαλήθευση υπογραφής για το ${ signatureType } απέτυχε"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Η επαλήθευση υπογραφής για το ${ signatureType } απέτυχε: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Η μεταφόρτωση ορισμένων δεδομένων αρχείου απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Η μεταφόρτωση ορισμένων τμημάτων αρχείου απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Some items could not be loaded": [
+        "Δεν ήταν δυνατή η φόρτωση ορισμένων στοιχείων"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Ορισμένα από τα ονόματα φακέλων σας δεν είναι διαθέσιμα. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
@@ -5208,6 +5331,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "Το όνομα πολιτικής πρέπει να αποτελείται από 3 έως 40 χαρακτήρες."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Το μεταφορτωμένο αρχείο δεν ταιριάζει με το πρωτότυπο. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Υπερβολικός αριθμός φακέλων στον εξωτερικό λογαριασμό σας. Παρακαλούμε προσαρμόστε την εισαγωγή, προς διαγραφή μερικών φακέλων."
       ],
@@ -5226,11 +5352,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
+      "This file has missing crypto material": [
+        "Σε αυτό το αρχείο λείπει υλικό κρυπτογράφησης"
+      ],
+      "This file has no version available to download": [
+        "Αυτό το αρχείο δεν έχει διαθέσιμη έκδοση για λήψη"
+      ],
+      "This file version could not be uploaded": [
+        "Δεν ήταν δυνατή η μεταφόρτωση αυτής της έκδοσης αρχείου"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
+      "This item has no image preview": [
+        "Αυτό το στοιχείο δεν έχει προεπισκόπηση εικόνας"
+      ],
       "This item is no longer shared": [
         "Αυτό το στοιχείο δεν είναι πλέον κοινόχρηστο"
+      ],
+      "This item is not shared": [
+        "Αυτό το στοιχείο δεν είναι κοινόχρηστο"
       ],
       "This label name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
@@ -5246,6 +5387,12 @@
       ],
       "Too many requests. Please try again later": [
         "Πάρα πολλά αιτήματα. Παρακαλούμε προσπαθήστε ξανά αργότερα"
+      ],
+      "Too many server errors, please try again later": [
+        "Πάρα πολλά σφάλματα διακομιστή, παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "Too many server requests, please try again later": [
+        "Πάρα πολλά αιτήματα διακομιστή, παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Try again later": [
         "Δοκιμάστε ξανά αργότερα"
@@ -5289,6 +5436,9 @@
       "Verification keys are not available": [
         "Τα κλειδιά επαλήθευσης δεν είναι διαθέσιμα"
       ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Τα κλειδιά επαλήθευσης για ${ signatureType } δεν είναι διαθέσιμα"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Δεν μπορέσαμε να αποστείλουμε κωδικό επιβεβαίωσης με αυτήν τη μέθοδο."
       ],
@@ -5304,11 +5454,23 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Λανθασμένος κωδικός επαλήθευσης. Παρακαλούμε βεβαιωθείτε ότι αντιγράψατε σωστά τον κωδικό επαλήθευσης και δοκιμάστε ξανά. Μπορεί να πάρει έως και 24 ώρες για να εφαρμοστούν οι αλλαγές."
       ],
+      "You can create public links for your own files only": [
+        "Μπορείτε να δημιουργήσετε δημόσιους συνδέσμους μόνο για τα δικά σας αρχεία"
+      ],
       "You can only leave items that are shared with you": [
         "Μπορείτε να αφήσετε μόνο στοιχεία που έχουν κοινοποιηθεί σε εσάς"
       ],
+      "You can only upload a new version to a file": [
+        "Μπορείτε να ανεβάσετε μόνο μια νέα έκδοση σε ένα αρχείο"
+      ],
+      "You can update a public link for your own files only": [
+        "Μπορείτε να ενημερώσετε έναν δημόσιο σύνδεσμο μόνο για τα δικά σας αρχεία"
+      ],
       "You do not have access to this item": [
         "Δεν έχετε πρόσβαση σε αυτό το στοιχείο"
+      ],
+      "You do not have access to this shared item": [
+        "Δεν έχετε πρόσβαση σε αυτό το κοινόχρηστο στοιχείο"
       ],
       "You have reached the maximum number of calendars.": [
         "Έχετε φτάσει τον μέγιστο αριθμό ημερολογίων."
@@ -6253,6 +6415,35 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Προηγμένοι έλεγχοι ασφάλειας"
+      ],
+      "Dedicated server - ${ serverPrice }": [
+        "Αφοσιωμένος διακομιστής - ${ serverPrice }"
+      ],
+      "Enforce identity-based access controls": [
+        "Επιβολή ελέγχων πρόσβασης βάσει ταυτότητας"
+      ],
+      "Get real-time connection insights, monitor suspicious activity and export data to SIEM tools for your private gateways": [
+        "Λάβετε πληροφορίες σύνδεσης σε πραγματικό χρόνο, παρακολουθήστε ύποπτη δραστηριότητα και εξαγάγετε δεδομένα σε εργαλεία SIEM για τις ιδιωτικές σας πύλες"
+      ],
+      "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
+        "Εκτός από την παρακολούθηση συνδέσεων, οι ιδιωτικές πύλες σάς επιτρέπουν να παραχωρείτε πρόσβαση ανά χρήστη ή ομάδα - όλες εκτελούνται σε αποκλειστικούς διακομιστές με στατικές διευθύνσεις IP."
+      ],
+      "Monitor gateway connections with VPN Professional": [
+        "Παρακολουθήστε τις συνδέσεις πύλης με το VPN Professional"
+      ],
+      "Real-time connection insights": [
+        "Πληροφορίες σύνδεσης σε πραγματικό χρόνο"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Ξεκλειδώστε την Ενιαία Σύνδεση (SSO), τις πολιτικές διαχείρισης, την παρακολούθηση, τον επιβαλλόμενο έλεγχο ταυτότητας δύο παραγόντων και πολλά άλλα."
+      ],
+      "User - ${ userPrice }": [
+        "Χρήστης - ${ userPrice }"
+      ]
+    },
     "Get help": {
       "Continue cancelling": [
         "Συνέχεια ακύρωσης"
@@ -6892,6 +7083,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μη SSO μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων για να πραγματοποιήσουν είσοδο στον οργανισμό σας.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μη SSO μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων για να πραγματοποιήσουν είσοδο στον οργανισμό σας."
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } σήμα"
+      ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } χρήστης πρέπει να αποδεχτεί την πρόσκλησή του για να αρχίσει να λαμβάνει ομαδικά μηνύματα ηλεκτρονικού ταχυδρομείου.",
         "${ invitedMemberCount } χρήστες πρέπει να αποδεχτούν την πρόσκλησή τους για να αρχίσουν να λαμβάνουν ομαδικά μηνύματα ηλεκτρονικού ταχυδρομείου."
@@ -7266,6 +7460,9 @@
       "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
         "Η δυνατότητα επαναφοράς του κωδικού πρόσβασης από τις ρυθμίσεις σας επιτρέπει να αλλάξετε τον κωδικό σας εάν τον έχετε χάσει, αλλά εξακολουθείτε να είστε συνδεδεμένοι στο ${ BRAND_NAME }."
       ],
+      "Allows IPv6 traffic to pass through the VPN tunnel. This improves compatibility with IPv6 websites and services.": [
+        "Επιτρέπει στην κίνηση IPv6 να διέρχεται από τη σήραγγα VPN. Αυτό βελτιώνει τη συμβατότητα με ιστότοπους και υπηρεσίες IPv6."
+      ],
       "Already allocated": [
         "Ήδη κατανεμημένος"
       ],
@@ -7344,11 +7541,20 @@
       "Authenticator app 2FA enabled": [
         "Η ταυτοποίηση δύο παραγόντων (2FA) της εφαρμογής επαλήθευσης είναι ενεργοποιημένη"
       ],
+      "Author is not provided on public link": [
+        "Ο συγγραφέας δεν παρέχεται σε δημόσιο σύνδεσμο"
+      ],
       "Available on VPN Professional": [
         "Διαθέσιμο στο VPN Professional"
       ],
       "Awaiting transaction": [
         "Εν αναμονή συναλλαγής"
+      ],
+      "Backup password disabled": [
+        "Ο εφεδρικός κωδικός πρόσβασης απενεργοποιήθηκε"
+      ],
+      "Backup password enabled": [
+        "Ο εφεδρικός κωδικός πρόσβασης ενεργοποιήθηκε"
       ],
       "Balance from your previous subscription": [
         "Υπόλοιπο από την προηγούμενη συνδρομή σας"
@@ -7857,6 +8063,9 @@
       "Example: ${ spfExample }": [
         "Παράδειγμα: ${ spfExample }"
       ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Εξαιρέστε τα κατά την ανάπτυξη του προφίλ συσκευής. Η υποστήριξη θα είναι σύντομα διαθέσιμη."
+      ],
       "Expired": [
         "Ληγμένο"
       ],
@@ -8294,6 +8503,9 @@
       "Manage groups in your identity provider": [
         "Διαχείριση ομάδων στον πάροχο ταυτοτήτων σας"
       ],
+      "Manage how users can access your ${ BRAND_NAME } organization with single sign-on.": [
+        "Διαχειριστείτε τον τρόπο με τον οποίο οι χρήστες μπορούν να έχουν πρόσβαση στον οργανισμό σας ${ BRAND_NAME } με ενιαία σύνδεση."
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Ελέγξτε ποιες εφαρμογές ${ BRAND_NAME } είναι προσβάσιμες από τα μέλη του οργανισμού σας. Αν απενεργοποιηθεί, μόνο οι διαχειριστές θα έχουν πρόσβαση."
       ],
@@ -8546,6 +8758,9 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Παρακαλούμε ελέγξτε το αρχείο σας ή δοκιμάστε να χρησιμοποιήσετε το ${ csvTemplateButton } μας."
+      ],
+      "Please ensure you're running ${ VPN_APP_NAME } desktop version ${ version } or later. ${ downloadLatest }": [
+        "Παρακαλούμε βεβαιωθείτε ότι χρησιμοποιείτε την έκδοση ${ VPN_APP_NAME } για υπολογιστές ${ version } ή νεότερη. ${ downloadLatest }"
       ],
       "Please fill in all required fields.": [
         "Παρακαλούμε συμπληρώστε όλα τα απαιτούμενα πεδία."
@@ -8845,6 +9060,9 @@
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "Το SPF διευκρινίζει ποιος επιτρέπεται να στέλνει μηνύματα ηλεκτρονικού ταχυδρομείου για τον τομέα σας. Βεβαιωθείτε ότι έχετε προσθέσει την ακόλουθη εγγραφή TXT στην κονσόλα DNS (που βρίσκεται στην πλατφόρμα από την οποία αγοράσατε τον προσαρμοσμένο τομέα)."
       ],
+      "SSO users can't sign in on devices with always-on enforced.": [
+        "Οι χρήστες SSO δεν μπορούν να συνδεθούν σε συσκευές στις οποίες έχει επιβληθεί η επιλογή \"Πάντα ενεργό\"."
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
       ],
@@ -9048,6 +9266,9 @@
       "This service is not available to users signing in with single sign-on.": [
         "Αυτή η υπηρεσία δεν είναι διαθέσιμη στους χρήστες που συνδέονται με καθολική σύνδεση."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Δεν είναι δυνατή η μετεγκατάσταση αυτού του χρήστη επειδή η διεύθυνση ηλεκτρονικού ταχυδρομείου του δεν είναι διαθέσιμη στο ${ BRAND_NAME }."
+      ],
       "This user can not be migrated due to platform incompatibilities.": [
         "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
       ],
@@ -9144,8 +9365,8 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Για να ενεργοποιήσετε τη λειτουργία Always-on VPN, το προφίλ διαμόρφωσης πρέπει να είναι εγκατεστημένο σε κάθε Mac — ο υπολογιστής-πελάτης ${ VPN_APP_NAME } επιβάλλει αυτόματα το προφίλ συσκευής μόλις αυτό εγκατασταθεί."
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "Για να ενεργοποιηθεί το Always-on VPN, το προφίλ της συσκευής πρέπει να φτάσει στο ${ policiesPath } σε κάθε συσκευή — ο υπολογιστής-πελάτης ${ VPN_APP_NAME } το εντοπίζει εκεί και επιβάλλει αυτόματα το προφίλ."
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
+        "Για να ενεργοποιηθεί το Always-on VPN, το προφίλ της συσκευής πρέπει να φτάσει στο ${ policiesPath } σε κάθε συσκευή — ο υπολογιστής-πελάτης ${ VPN_APP_NAME } το εντοπίζει εκεί και επιβάλλει αυτόματα το προφίλ. ${ learnMore }."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Ανάκτηση μέσω ηλεκτρονικής διεύθυνσης ανάκτησης**."
@@ -9168,8 +9389,11 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Για να ακολουθείτε την τελευταία εξέλιξη στα προϊόντα ${ BRAND_NAME }, μπορείτε να εγγραφείτε στα διάφορα email μας και ${ blogLink } κατά διαστήματα."
       ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην Κονσόλα διαχειριστή του Google Workspace."
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, προσθέστε και επαληθεύστε τον τομέα ηλεκτρονικού ταχυδρομείου στο ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στο ${ provider.adminConsoleName }."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην ενότητα ${ usersAddressesLink }."
@@ -9180,11 +9404,11 @@
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
       ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αρχειοθέτησή του στην Κονσόλα διαχειριστή Google Workspace."
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αρχειοθέτησή του από το ${ provider.adminConsoleName }."
       ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αναστολή του στην Κονσόλα διαχειριστή του Google Workspace."
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αναστολή του στον φάκελο ${ provider.adminConsoleName }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Για να συνεχίσετε, επιλέξτε μια μέθοδο ανάκτησης λογαριασμού, ώστε να επαληθεύσουμε το αίτημα."
@@ -9336,11 +9560,11 @@
       "Users": [
         "Χρήστες"
       ],
+      "Users create a backup password the first time they sign in with single sign-on. When they later sign in on a new device, they can enter this password to complete the sign-in themselves, without needing an already signed-in device or an administrator to assist.": [
+        "Οι χρήστες δημιουργούν έναν εφεδρικό κωδικό πρόσβασης την πρώτη φορά που συνδέονται με τη λειτουργία ενιαίας σύνδεσης. Όταν αργότερα συνδεθούν σε μια νέα συσκευή, μπορούν να εισαγάγουν αυτόν τον κωδικό πρόσβασης για να ολοκληρώσουν οι ίδιοι τη σύνδεση, χωρίς να χρειάζονται μια ήδη συνδεδεμένη συσκευή ή βοήθεια από διαχειριστή."
+      ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Χρησιμοποιείτε διαφορετικό MDM; Οποιοδήποτε MDM που υποστηρίζει την ανάπτυξη ενός προφίλ διαμόρφωσης θα λειτουργήσει. Ανατρέξτε στην τεκμηρίωση του MDM σας σχετικά με τον τρόπο μεταφόρτωσης και αντιστοίχισής του στο στόλο συσκευών σας."
-      ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "Χρησιμοποιείτε διαφορετικό MDM; Οποιοδήποτε MDM που υποστηρίζει την ανάπτυξη αρχείων ή την εκτέλεση σεναρίων PowerShell θα λειτουργήσει. Ανατρέξτε στην τεκμηρίωση του MDM σας για περισσότερες πληροφορίες."
       ],
       "Vault created": [
         "Η κρύπτη δημιουργήθηκε"
@@ -9443,6 +9667,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Θα σας ανακατευθύνουμε στο ${ IDEAL_BRAND_NAME }, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Θα σας ανακατευθύνουμε στο PayPal, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
@@ -10117,6 +10344,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Να επιτρέπεται η ανάκτηση με χρήση αξιόπιστης συσκευής"
+      ],
+      "Allow users to set a backup password": [
+        "Επιτρέψτε στους χρήστες να ορίσουν έναν εφεδρικό κωδικό πρόσβασης"
       ],
       "Allowed Domain": [
         "Επιτρεπόμενος Τομέας"
@@ -11679,6 +11909,32 @@
       ],
       "Sign in": [
         "Είσοδος"
+      ]
+    },
+    "Members table usage": {
+      "Gateway Monitor is off": [
+        "Η Παρακολούθηση Πυλών είναι απενεργοποιημένη"
+      ],
+      "Monitor gateways connections": [
+        "Παρακολούθηση συνδέσεων πυλών"
+      ],
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Ρυθμίστε τις δικές σας ιδιωτικές πύλες για να παρακολουθείτε τη δραστηριότητα σύνδεσης VPN εντός του οργανισμού σας."
+      ],
+      "Today": [
+        "Σήμερα"
+      ],
+      "Today, ${ time }": [
+        "Σήμερα, ${ time }"
+      ],
+      "Turn it on to track when and where users connect.": [
+        "Ενεργοποιήστε το για να παρακολουθείτε πότε και πού συνδέονται οι χρήστες."
+      ],
+      "Yesterday": [
+        "Χθες"
+      ],
+      "Yesterday, ${ time }": [
+        "Χθες, ${ time }"
       ]
     },
     "Message": {
@@ -13719,6 +13975,9 @@
       "More plans are available in other currencies": [
         "Περισσότερα πλάνα είναι διαθέσιμα σε άλλα νομίσματα"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Πληρωμή με ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Η μέθοδος πληρωμής απαιτείται για την ενεργοποίηση της συνδρομής μετά τη λήξη της δοκιμαστικής περιόδου."
       ],
@@ -13812,6 +14071,9 @@
       "You will soon be redirected to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα, για να επαληθεύσετε την πληρωμή σας."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Το νόμισμά σας έχει αλλάξει σε ευρώ (€) επειδή το ${ IDEAL_BRAND_NAME } υποστηρίζει μόνο πληρωμές σε ευρώ."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
       ],
@@ -13823,6 +14085,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Αποτυχία αρχικοποίησης του ${ IDEAL_BRAND_NAME }. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
       "Invalid card number": [
         "Μη έγκυρος αριθμός κάρτας"
       ],
@@ -13845,6 +14110,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Κάτι πήγε στραβά. Η επαλήθευση του Google Pay απέτυχε."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Επιβεβαιώνοντας αυτήν την πληρωμή, εξουσιοδοτείτε το ${ BRAND_NAME } και τη Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να δώσουν εντολή στην τράπεζά σας να χρεώσει ανάλογα τον λογαριασμό σας. Μπορείτε να λάβετε επιστροφή χρημάτων εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας."
       ]
     },
     "Payments.info": {
@@ -14187,6 +14457,9 @@
     "Property": {
       "attributes": [
         "χαρακτηριστικά"
+      ],
+      "content key": [
+        "κλειδί περιεχομένου"
       ],
       "hash key": [
         "κλειδί hash"
@@ -15039,11 +15312,17 @@
       ]
     },
     "scim: Info": {
+      "**Groups:** All groups convert to local ${ BRAND_NAME } groups. Syncing with your identity provider stops, and you'll manage membership in ${ BRAND_NAME } settings instead.": [
+        "**Ομάδες:** Όλες οι ομάδες μετατρέπονται σε τοπικές ομάδες ${ BRAND_NAME }. Ο συγχρονισμός με τον πάροχο ταυτότητάς σας διακόπτεται και θα διαχειρίζεστε την ιδιότητα μέλους στις ρυθμίσεις του ${ BRAND_NAME }."
+      ],
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Προαπαιτούμενα:** Ο έλεγχος ταυτότητας SAML πρέπει να ρυθμιστεί ώστε να ενεργοποιεί την παροχή SCIM."
       ],
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
         "**Προαπαιτούμενο:** Για να ενεργοποιήσετε την παροχή SCIM, πρέπει να επαληθεύσετε την ιδιοκτησία του τομέα **${ domainName }**. Αυτή η επαλήθευση μπορεί να διαρκέσει έως και μία ώρα."
+      ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**Χρήστες:** Όλοι οι χρήστες SCIM που παρέχονται αυτόματα από τον πάροχο ταυτότητάς σας θα μετατραπούν σε χρήστες SSO και θα μπορείτε να τους διαχειριστείτε απευθείας μέσα από τις ρυθμίσεις του ${ BRAND_NAME }."
       ],
       "Enter the token into your identity provider": [
         "Εισαγάγετε το διακριτικό στον πάροχο ταυτότητάς σας"
@@ -15069,14 +15348,23 @@
       "Make sure you copy the above SCIM token now.": [
         "Βεβαιωθείτε ότι έχετε αντιγράψει το παραπάνω διακριτικό SCIM τώρα."
       ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Η επανενεργοποίηση του συγχρονισμού θα δημιουργήσει διπλότυπα των υπαρχουσών ομάδων. Δεν είναι δυνατή η συγχώνευσή τους ξανά στο SCIM."
+      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Απλοποιεί τη διαχείριση χρηστών σε διάφορες υπηρεσίες. Προσθέστε, επεξεργαστείτε και καταργήστε χρήστες στην υπηρεσία παροχής ταυτότητάς σας και αυτές οι αλλαγές θα εφαρμοστούν αυτόματα στον οργανισμό σας ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Η αυτόματη παροχή SCIM θα απενεργοποιηθεί μέχρι να εισαγάγετε το νέο διακριτικό SCIM στις ρυθμίσεις της υπηρεσίας παροχής ταυτότητάς σας."
       ],
+      "This will delete your SCIM base URL and token.": [
+        "Αυτό θα διαγράψει τη βασική διεύθυνση URL και το διακριτικό σας SCIM."
+      ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Για να ενεργοποιήσετε ξανά τον συγχρονισμό με την υπηρεσία παροχής ταυτότητάς σας, πρέπει να ολοκληρώσετε ξανά την ενοποίηση SCIM."
+      ],
+      "When you disable SCIM:": [
+        "Όταν απενεργοποιείτε το SCIM:"
       ]
     },
     "scim: Label": {
@@ -15885,6 +16173,9 @@
       "Contact your administrator if the problem persists.": [
         "Επικοινωνήστε με το διαχειριστή σας εάν το πρόβλημα παραμένει."
       ],
+      "Continue to join as **${ username }**": [
+        "Συνέχεια εγγραφής ως **${ username }**"
+      ],
       "Current device": [
         "Τρέχουσα συσκευή"
       ],
@@ -15919,6 +16210,9 @@
       ],
       "Enter your backup password": [
         "Εισαγάγετε τον εφεδρικό κωδικό πρόσβασης σας"
+      ],
+      "For your security, you have been signed out of all your other active devices.": [
+        "Για την ασφάλειά σας, έχετε αποσυνδεθεί από όλες τις άλλες ενεργές συσκευές σας."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Για την ασφάλειά σας, έχετε αποσυνδεθεί από όλες τις άλλες ενεργές συσκευές σας. Προτού αποκτήσετε πρόσβαση στον λογαριασμό σας, θα πρέπει να εισαγάγετε έναν νέο εφεδρικό κωδικό πρόσβασης σας."
@@ -16027,6 +16321,9 @@
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Αυτό θα σας αποσυνδέσει από τις άλλες συσκευές σας και θα πρέπει να δημιουργήσετε έναν νέο εφεδρικό κωδικό πρόσβασης."
+      ],
+      "This will sign you out of your other devices.": [
+        "Αυτό θα σας αποσυνδέσει από τις άλλες συσκευές σας."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "Για να βεβαιωθείτε ότι προσπαθείτε πραγματικά να συνδεθείτε στον **${ email }**, ελέγξτε τον κωδικό επιβεβαίωσης και εγκρίνετε το αίτημα από άλλη συσκευή."
@@ -17398,6 +17695,9 @@
       "Add users to \"${ policyName }\"": [
         "Προσθήκη χρηστών στο \"${ policyName }\""
       ],
+      "Advanced configuration": [
+        "Προηγμένη διαμόρφωση"
+      ],
       "Advanced recovery options": [
         "Προηγμένες επιλογές ανάκτησης"
       ],
@@ -18716,6 +19016,12 @@
       "Features": [
         "Χαρακτηριστικά"
       ],
+      "Last app activity": [
+        "Τελευταία δραστηριότητα εφαρμογής"
+      ],
+      "Last connection": [
+        "Τελευταία σύνδεση"
+      ],
       "Name": [
         "Όνομα"
       ],
@@ -18785,8 +19091,8 @@
       "Customize import to reduce the number of labels": [
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των ετικετών"
       ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Κατάσταση μετεγκατάστασης δεδομένων από το Google Workspace στο ${ BRAND_NAME }"
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Κατάσταση μετεγκατάστασης δεδομένων από το ${ providerName } στο ${ BRAND_NAME }"
       ],
       "Device name and app version": [
         "Όνομα συσκευής και έκδοση εφαρμογής"
@@ -18975,6 +19281,14 @@
       ],
       "Waiting for user to accept the invitation": [
         "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"
+      ]
+    },
+    "Tooltip for members table": {
+      "Last time this user connected to one of your organization's Gateways.": [
+        "Την τελευταία φορά που αυτός ο χρήστης συνδέθηκε σε μία από τις Πύλες του οργανισμού σας."
+      ],
+      "Last time this user signed in or used the ${ VPN_APP_NAME } app on their device.": [
+        "Τελευταία φορά που αυτός ο χρήστης συνδέθηκε ή χρησιμοποίησε την εφαρμογή ${ VPN_APP_NAME } στη συσκευή του."
       ]
     },
     "Tor out of date": {
