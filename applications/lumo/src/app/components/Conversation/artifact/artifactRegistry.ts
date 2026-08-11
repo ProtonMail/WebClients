@@ -1,7 +1,11 @@
 import { getMessageBlocks } from '../../../messageHelpers';
 import type { Message, MessageId } from '../../../types';
 import { Role } from '../../../types-api';
-import { CREATE_ARTIFACT_TOOL_NAME, parseCompleteArtifactToolCall } from './createArtifactTool';
+import {
+    CREATE_ARTIFACT_TOOL_NAME,
+    getCompleteArtifactBlocksKey,
+    parseCompleteArtifactToolCall,
+} from './createArtifactTool';
 import { type ParsedArtifact, parseArtifacts } from './parseArtifacts';
 
 export interface ArtifactVersion {
@@ -9,6 +13,8 @@ export interface ArtifactVersion {
     content: string;
     language?: string;
     createdAt: string;
+    /** True while the source message is still generating — promoted to finalized on message finish. */
+    provisional?: boolean;
 }
 
 export interface ArtifactRegistryEntry {
@@ -21,9 +27,19 @@ export interface ArtifactRegistryEntry {
 
 export type ArtifactRegistry = Record<string, ArtifactRegistryEntry>;
 
-// Finalized (non-streaming) message content is immutable, so each message only ever needs
-// to be parsed once regardless of how many times the registry is rebuilt.
-const parseCache = new Map<MessageId, ParsedArtifact[]>();
+interface ParsedArtifactCacheEntry {
+    fingerprint: string;
+    artifacts: ParsedArtifact[];
+}
+
+// Finalized message content is immutable, so each message only needs to be parsed once
+// after it settles — but in-flight messages must never be cached because tool-call blocks
+// can appear mid-stream after an earlier parse returned nothing.
+const parseCache = new Map<MessageId, ParsedArtifactCacheEntry>();
+
+function getArtifactParseFingerprint(message: Message): string {
+    return `${getCompleteArtifactBlocksKey(getMessageBlocks(message))}\0${message.content ?? ''}`;
+}
 
 // Legacy path: artifacts embedded as `<artifact>` tags in message.content (text-based protocol).
 function getTagArtifacts(message: Message): ParsedArtifact[] {
@@ -54,12 +70,19 @@ function getToolCallArtifacts(message: Message): ParsedArtifact[] {
 }
 
 function getParsedArtifacts(message: Message): ParsedArtifact[] {
-    const cached = parseCache.get(message.id);
-    if (cached) {
-        return cached;
-    }
     const artifacts = [...getTagArtifacts(message), ...getToolCallArtifacts(message)];
-    parseCache.set(message.id, artifacts);
+
+    if (message.status === undefined) {
+        return artifacts;
+    }
+
+    const fingerprint = getArtifactParseFingerprint(message);
+    const cached = parseCache.get(message.id);
+    if (cached?.fingerprint === fingerprint) {
+        return cached.artifacts;
+    }
+
+    parseCache.set(message.id, { fingerprint, artifacts });
     return artifacts;
 }
 
@@ -123,4 +146,104 @@ export function getArtifactVersionIndexForMessage(
         return null;
     }
     return index;
+}
+
+function cloneRegistry(registry: ArtifactRegistry): ArtifactRegistry {
+    const cloned: ArtifactRegistry = {};
+
+    for (const [id, entry] of Object.entries(registry)) {
+        cloned[id] = {
+            ...entry,
+            versions: entry.versions.map((version) => {
+                return { ...version };
+            }),
+        };
+    }
+
+    return cloned;
+}
+
+/**
+ * Stable fingerprint of complete create_artifact tool calls on in-flight assistant messages.
+ * Used to recompute the provisional overlay only when a tool call lands or changes — not on every prose token.
+ */
+export function getInFlightArtifactFingerprint(linearChain: Message[]): string {
+    const parts: string[] = [];
+
+    for (const message of linearChain) {
+        if (message.role !== Role.Assistant || message.status !== undefined) {
+            continue;
+        }
+        const fingerprint = getCompleteArtifactBlocksKey(getMessageBlocks(message));
+        if (fingerprint) {
+            parts.push(`${message.id}:${fingerprint}`);
+        }
+    }
+
+    return parts.join('|');
+}
+
+/**
+ * Overlays provisional versions from in-flight assistant messages onto a finalized registry.
+ * Provisional versions are replaced in-place when the same messageId is seen again; they
+ * drop automatically once the message finalizes (and is picked up by `buildArtifactRegistry`).
+ */
+export function mergeProvisionalArtifactRegistry(
+    finalizedRegistry: ArtifactRegistry,
+    linearChain: Message[]
+): ArtifactRegistry {
+    const merged = cloneRegistry(finalizedRegistry);
+
+    for (const message of linearChain) {
+        if (message.role !== Role.Assistant || message.status !== undefined) {
+            continue;
+        }
+
+        for (const artifact of getParsedArtifacts(message)) {
+            const version: ArtifactVersion = {
+                messageId: message.id,
+                content: artifact.content,
+                language: artifact.language,
+                createdAt: message.createdAt,
+                provisional: true,
+            };
+
+            const existingEntry = merged[artifact.id];
+            if (existingEntry) {
+                const existingIndex = existingEntry.versions.findIndex((entry) => {
+                    return entry.messageId === message.id;
+                });
+                existingEntry.title = artifact.title;
+                existingEntry.type = artifact.type;
+                existingEntry.language = artifact.language;
+                if (existingIndex === -1) {
+                    existingEntry.versions.push(version);
+                } else {
+                    existingEntry.versions[existingIndex] = version;
+                }
+            } else {
+                merged[artifact.id] = {
+                    id: artifact.id,
+                    type: artifact.type,
+                    title: artifact.title,
+                    language: artifact.language,
+                    versions: [version],
+                };
+            }
+        }
+    }
+
+    return merged;
+}
+
+export function isArtifactVersionProvisional(
+    registry: ArtifactRegistry,
+    artifactId: string,
+    versionIndex: number
+): boolean {
+    const version = registry[artifactId]?.versions[versionIndex];
+    if (!version) {
+        return false;
+    }
+    return version.provisional === true;
 }
