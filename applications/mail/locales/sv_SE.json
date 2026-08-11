@@ -1520,8 +1520,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -5505,6 +5504,21 @@
       ],
       "You can only upload a new version to a file": [
         "Du kan bara ladda upp en ny version till en fil"
+      ],
+      "Could not load sharing details": [
+        "Kunde inte ladda delningsdetaljer"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
+      ],
+      "Operation aborted": [
+        "Åtgärd avbröts"
+      ],
+      "Operation failed, try again later": [
+        "Åtgärd misslyckades, försök igen senare"
+      ],
+      "This item is no longer shared": [
+        "Detta objekt är inte delat längre"
       ]
     },
     "error": {
@@ -6763,6 +6777,9 @@
       ],
       "Has errors": [
         "Har fel"
+      ],
+      "Pending": [
+        "Väntar"
       ]
     },
     "Import warning": {
@@ -7897,7 +7914,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9405,6 +9423,18 @@
       ],
       "You": [
         "Du"
+      ],
+      "Author is not provided on public link": [
+        "Författare är inte angiven på offentlig länk"
+      ],
+      "Move to Primary": [
+        "Flytta till primär"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -16699,6 +16729,9 @@
       ],
       "What are you migrating?": [
         "Vad migrerar du?"
+      ],
+      "Domain names": [
+        "Domännamn"
       ]
     },
     "Title header for keys table": {

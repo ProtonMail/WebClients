@@ -1523,8 +1523,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -8072,7 +8071,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -9631,6 +9631,24 @@
       ],
       "You": [
         "Dig"
+      ],
+      "Move to Primary": [
+        "Flyt til primær"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Denne bruger kan ikke migreres da brugerens e-mailadresse ikke er tilgængelig på ${ BRAND_NAME }."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "For at migrere denne bruger skal du tilføje og bekræfte e-mail-domænet under ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Aktivér kontoen for denne bruger i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Fjern denne bruger fra arkivet i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Ophæv suspenderingen af denne bruger i ${ provider.adminConsoleName } for at migrere dem."
       ]
     },
     "info": {
@@ -15595,6 +15613,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Flyttet til ${ label }. Lignende beskeder vil blive kategoriseret her fremover."
       ]
     },
     "Success notification": {
@@ -16918,6 +16939,9 @@
       ],
       "What are you migrating?": [
         "Hvad migrerer du?"
+      ],
+      "Domain names": [
+        "Domænenavne"
       ]
     },
     "Title header for keys table": {
@@ -17041,6 +17065,9 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status for datamigration fra ${ providerName } til ${ BRAND_NAME }"
       ]
     },
     "tooltip": {

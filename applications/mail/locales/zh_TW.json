@@ -1703,6 +1703,12 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Open debug menu": [
+        "開啟偵錯選單"
+      ],
+      "Yes, organize it": [
+        "是，整理它。"
       ]
     },
     "action": {
@@ -5326,6 +5332,96 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "郵件位址已被組織外的使用者使用了。請聯絡客服"
+      ],
+      "Cannot download a folder": [
+        "無法下載個資料夾"
+      ],
+      "Cannot verify who uploaded this file": [
+        "無法驗證上傳此檔案的人"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "不允許將項目複製到非資料夾"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "無法載入照片預覽: ${ message }"
+      ],
+      "Could not unlock this item": [
+        "無法解鎖此項目"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "允許於非資料夾內創建檔案"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "不允許於非資料夾內創建資料夾"
+      ],
+      "Device not found": [
+        "找不到裝置"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "解密書籤金鑰失敗: ${ message }"
+      ],
+      "Item not found": [
+        "找不到項目"
+      ],
+      "Missing organization public key": [
+        "缺少組織公用密鑰"
+      ],
+      "Move operation aborted": [
+        "以終止移動操作"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "不允許將項目移動到非資料夾"
+      ],
+      "Name must not be empty": [
+        "名稱不得留空"
+      ],
+      "Operation aborted": [
+        "操作取消"
+      ],
+      "Operation failed, try again later": [
+        "作業失敗。稍後再試。"
+      ],
+      "Signature is missing": [
+        "缺少簽名"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "部分檔案上載失敗。請稍後再試。"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "檔案部分上傳失敗。請稍後再試。"
+      ],
+      "Some items could not be loaded": [
+        "無法載入部分項目"
+      ],
+      "This file has missing crypto material": [
+        "此檔案缺乏密鑰元件"
+      ],
+      "This file has no version available to download": [
+        "此檔案無可下載版本"
+      ],
+      "This file version could not be uploaded": [
+        "此檔案的版本紀錄無法被上傳"
+      ],
+      "This item has no image preview": [
+        "此項目無可預覽的項目"
+      ],
+      "This item is not shared": [
+        "此項目未被共享"
+      ],
+      "Too many server errors, please try again later": [
+        "太多伺服器錯誤，請稍後再試"
+      ],
+      "Too many server requests, please try again later": [
+        "太多伺服器查詢，請稍後再試"
+      ],
+      "You do not have access to this item": [
+        "您沒有權限訪問此項目"
+      ],
+      "You do not have access to this shared item": [
+        "您沒有權限訪問此共享的項目"
       ]
     },
     "error": {
@@ -5848,6 +5944,18 @@
       ],
       "Unread": [
         "未讀"
+      ],
+      "All": [
+        "全部"
+      ],
+      "In progress": [
+        "進行中"
+      ],
+      "Migrated": [
+        "遷移"
+      ],
+      "Pending": [
+        "等待中"
       ]
     },
     "Filter Actions": {
@@ -6541,6 +6649,9 @@
       ],
       "Migrated": [
         "已移轉"
+      ],
+      "Pending": [
+        "等待中"
       ]
     },
     "Import warning": {
@@ -9059,6 +9170,27 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "Move to Primary": [
+        "移動到主要"
+      ],
+      "No conversation to read": [
+        "無對話內容為未讀"
+      ],
+      "Opened ${ location }": [
+        "開啟 ${ location }"
+      ],
+      "Read ${ count } email": [
+        "已讀 ${ count } 封電子郵件"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "若要遷移此使用者，於您的 ${ provider.adminConsoleName } 啟用它們的帳號。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "若要遷移此使用者，他們需要接受邀請以加入 ${ BRAND_NAME }。"
+      ],
+      "You": [
+        "您"
       ]
     },
     "info": {
@@ -10237,6 +10369,12 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Document ID": [
+        "文件 ID"
+      ],
+      "v2": [
+        "版本 2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14954,6 +15092,12 @@
       ],
       "Type": [
         "類型"
+      ],
+      "Activated": [
+        "已啟用"
+      ],
+      "User": [
+        "使用者"
       ]
     },
     "TableHeader": {
@@ -16131,6 +16275,18 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Configure migration": [
+        "設置遷移"
+      ],
+      "Domain names": [
+        "網域名稱"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "注意: 此 Gmail 已於其他 ${ BRAND_NAME } 帳號連結"
+      ],
+      "Select users to migrate": [
+        "選取使用者以遷移"
       ]
     },
     "Title header for keys table": {
@@ -16305,6 +16461,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "一旦使用者接受邀請，您便能分配角色。"
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "升級到支援使用管理員角色的方案。"
       ]
     },
     "Validation": {
@@ -16706,6 +16865,17 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "属性"
+      ],
+      "content key": [
+        "內容金鑰"
+      ],
+      "key": [
+        "金鑰"
       ]
     }
   }
