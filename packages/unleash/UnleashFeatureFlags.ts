@@ -179,6 +179,9 @@ enum DriveFeatureFlag {
     DriveSmallFileUpload = 'DriveSmallFileUpload',
     // Spotlight
     DriveWebSharingAdminTooltip = 'DriveWebSharingAdminTooltip',
+    // Lumo in Drive
+    DriveWebLumo = 'DriveWebLumo',
+    DriveWebLumoDestructiveActionsDisabled = 'DriveWebLumoDestructiveActionsDisabled',
 }
 
 enum DocsFeatureFlag {
