@@ -708,3 +708,15 @@ describe('read_thread', () => {
         expect(readThreadDefinition.summarizeChip({ target: null }, result).label).toBe('No conversation to read');
     });
 });
+
+describe('recovery from a read that came back with nothing', () => {
+    it.each([
+        ['read_open_email', readOpenEmailDefinition, 'find the email yourself with view_emails or search'],
+        ['read_open_email', readOpenEmailDefinition, 'body could not be read yet, retry once'],
+        ['read_thread', readThreadDefinition, 'find the thread yourself with search or view_emails'],
+        ['read_thread', readThreadDefinition, 'messages could not be read yet, retry once'],
+        ['read_email', readEmailDefinition, 'no longer loaded, find it again with search or view_emails'],
+    ])('tells %s how to recover for itself', (_tool, definition, clause) => {
+        expect(definition.toolDescription).toContain(clause);
+    });
+});

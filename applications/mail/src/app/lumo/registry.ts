@@ -11,6 +11,7 @@ import { openFolderModule } from './skills/reads/openFolder';
 import { readEmailModule } from './skills/reads/readEmail';
 import { readOpenEmailModule } from './skills/reads/readOpenEmail';
 import { readThreadModule } from './skills/reads/readThread';
+import { searchModule } from './skills/reads/search';
 import { viewEmailsModule } from './skills/reads/viewEmails';
 import type { MailToolDeps, MailToolModule } from './toolModule';
 
@@ -24,6 +25,7 @@ const MODULES: MailToolModule[] = [
     // Reads
     viewEmailsModule,
     openFolderModule,
+    searchModule,
     readEmailModule,
     readOpenEmailModule,
     readThreadModule,
