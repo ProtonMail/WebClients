@@ -1,6 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { selectAddresses } from '@proton/account/addresses';
+import { getLastModifiedDate } from '@proton/account/recovery/lastModifiedTime';
 import type { SessionRecoverySliceReducerState } from '@proton/account/recovery/sessionRecovery';
 import { selectUser } from '@proton/account/user';
 import { selectUserSettings } from '@proton/account/userSettings';
@@ -52,6 +53,7 @@ export const selectSessionRecoveryData = createSelector(
             isSessionRecoveryAvailable && sessionRecoveryState === SessionRecoveryState.INSECURE;
 
         return {
+            updateTime: getLastModifiedDate(userSettings?.SignedInResetLastModifiedTime),
             isSessionRecoveryEnabled,
             isSessionRecoveryAvailable,
             sessionRecoveryState,

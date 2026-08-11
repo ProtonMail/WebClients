@@ -1,11 +1,13 @@
 import { c, msgid } from 'ttag';
 
-import { getFormattedCreateTime } from '@proton/account/delegatedAccess/emergencyContact/date';
 import { useOutgoingItems } from '@proton/account/delegatedAccess/shared/outgoing/useOutgoingItems';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcEmergencyAccess } from '@proton/icons/icons/IcEmergencyAccess';
+
+import { LastChanged } from '../LastChanged';
+import { NavItemStatus } from './NavItemStatus';
 
 interface Props {
     to: string;
@@ -13,7 +15,7 @@ interface Props {
 
 const EmergencyContactsStatus = () => {
     const {
-        emergencyContacts: { items: contacts, hasUpsell },
+        emergencyContacts: { items: contacts, hasUpsell, lastModifiedTime },
         loading,
     } = useOutgoingItems();
 
@@ -22,31 +24,22 @@ const EmergencyContactsStatus = () => {
     }
 
     const count = contacts.length;
-    if (count === 0) {
-        if (hasUpsell) {
-            return (
-                <StatusBadge status={StatusBadgeStatus.Upsell} text={c('emergency_access').t`Add emergency contact`} />
-            );
-        }
-        return <StatusBadge status={StatusBadgeStatus.Warning} text={c('Title').t`Add an emergency contact`} />;
+
+    if (count === 0 && hasUpsell) {
+        return <StatusBadge status={StatusBadgeStatus.Upsell} text={c('emergency_access').t`Add emergency contact`} />;
     }
 
-    const latestDate = contacts.reduce<Date | null>((latest, contact) => {
-        const date = contact.parsedOutgoingDelegatedAccess.createdAtDate;
-        return latest === null || date > latest ? date : latest;
-    }, null);
-    const formattedDate = getFormattedCreateTime(latestDate);
-
     return (
-        <span className="color-weak text-sm">
-            <span>{c('Status').ngettext(msgid`${count} person`, `${count} people`, count)}</span>
-            {formattedDate && (
-                <span data-testid="account:emergency-contacts:last-changed-date">
-                    {' '}
-                    • {c('Status').t`Last changed ${formattedDate}`}
+        <>
+            {count === 0 ? (
+                <StatusBadge status={StatusBadgeStatus.Warning} text={c('Title').t`Add an emergency contact`} />
+            ) : (
+                <span className="color-weak">
+                    {c('Status').ngettext(msgid`${count} person`, `${count} people`, count)}
                 </span>
             )}
-        </span>
+            <LastChanged date={lastModifiedTime} data-testid="account:emergency-contacts:last-changed-date" />
+        </>
     );
 };
 
@@ -58,7 +51,9 @@ const EmergencyContacts = ({ to }: Props) => {
             title={c('Title').t`Emergency access`}
             tooltip={c('Tooltip').t`Allow trusted contacts to request access to your account`}
         >
-            <EmergencyContactsStatus />
+            <NavItemStatus>
+                <EmergencyContactsStatus />
+            </NavItemStatus>
         </SettingsNavItem>
     );
 };

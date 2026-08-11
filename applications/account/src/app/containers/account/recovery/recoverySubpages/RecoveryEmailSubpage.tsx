@@ -16,6 +16,7 @@ import SettingsDescription, {
 } from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
+import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import RecoveryEmail from '@proton/components/containers/recovery/email/RecoveryEmail';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
@@ -290,6 +291,11 @@ const RecoveryEmailSubpage = () => {
                         )}
                     </DashboardCardContent>
                 </DashboardCard>
+                <LastChanged
+                    className="block mt-2"
+                    date={emailRecovery.updateTime}
+                    data-testid="account:recovery:recovery-email:last-changed-date"
+                />
             </DashboardGrid>
         </>
     );
