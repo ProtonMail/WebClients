@@ -98,9 +98,14 @@ export const downloadLogFile = (contents: string, filename: string): void => {
  *
  * Lines emitted before `initialize()` are buffered and written once it resolves,
  * keeping their original timestamps.
+ *
+ * One instance per application: every area logging to the same database is what keeps the
+ * lines in one chronological order. Use the exported `logger` rather than constructing this,
+ * outside of tests.
  */
 export class Logger {
-    private readonly name: string;
+    /** Prefixes log lines and names the database. Replaced by `initialize`. */
+    private name: string = DEFAULT_LOGGER_NAME;
 
     private readonly now: () => number;
 
@@ -136,8 +141,7 @@ export class Logger {
     private sequence = 0;
 
     /** `now` is injectable so retention behaviour can be tested without timer mocks. */
-    constructor(name: string = DEFAULT_LOGGER_NAME, now: () => number = Date.now) {
-        this.name = name;
+    constructor(now: () => number = Date.now) {
         this.now = now;
     }
 
@@ -151,7 +155,8 @@ export class Logger {
         this.retentionDays = options.retentionDays ?? DEFAULT_RETENTION_DAYS;
         this.consoleLevels = options.consoleLevels ?? DEFAULT_CONSOLE_LEVELS;
         this.encryptionKey = options.encryptionKey;
-        this.encryptionContext = utf8StringToUint8Array(`${options.appName}#${options.loggerName || this.name}`);
+        this.name = options.loggerName ?? options.appName;
+        this.encryptionContext = utf8StringToUint8Array(`${options.appName}#${this.name}`);
         this.storage = new IndexedDBStorage(this.name, options.loggerID);
         this.initialized = true;
 
@@ -226,8 +231,9 @@ export class Logger {
         const payload = JSON.stringify({ message, args: args.map(serializeArg) });
         const data = await encryptData(this.encryptionKey, utf8StringToUint8Array(payload), this.encryptionContext);
 
-        // Fixed-width sequence so the key compares in insertion order, plus a random
-        // suffix so two loggers writing to one database cannot overwrite each other.
+        // Fixed-width sequence so the key compares in insertion order. The sequence restarts
+        // at zero on every page load, so the random suffix keeps a new session from overwriting
+        // an entry a previous one wrote in the same millisecond.
         const sequence = String(this.sequence++).padStart(12, '0');
 
         await this.storage.store({
@@ -354,3 +360,11 @@ export class Logger {
         this.writes = Promise.resolve();
     }
 }
+
+/**
+ * The application's logger.
+ *
+ * Created uninitialized so module-level code can hold a reference to it, and initialized from
+ * bootstrap once the session key is available. Lines logged in between are buffered.
+ */
+export const logger = new Logger();

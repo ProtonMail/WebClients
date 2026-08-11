@@ -29,7 +29,7 @@ import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafa
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 // eslint-disable-next-line no-restricted-imports
-import { type LogLevel, loggerManager } from '@proton/shared/lib/logger';
+import { type LogLevel, logger } from '@proton/shared/lib/logger';
 import { ALL_CONSOLE_LEVELS } from '@proton/shared/lib/logger/constants';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
@@ -174,7 +174,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             const consoleLevels: LogLevel[] | undefined = isProduction(window.location.host)
                 ? undefined
                 : ALL_CONSOLE_LEVELS;
-            void loggerManager.createLogger('mail', {
+            void logger.initialize({
                 encryptionKey: loggerKey,
                 appName,
                 loggerID,

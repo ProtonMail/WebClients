@@ -1,7 +1,7 @@
 import { type AesGcmCryptoKey, generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
+import { LOGGER_DB_PREFIX } from '../../lib/logger/constants';
 import { Logger } from '../../lib/logger/logger';
-import { loggerManager } from '../../lib/logger/manager';
 import { IndexedDBStorage } from '../../lib/logger/storage';
 import type { LoggerOptions } from '../../lib/logger/types';
 
@@ -49,10 +49,10 @@ describe('Logger', () => {
         now,
         ...rest
     }: Partial<LoggerOptions> & { name?: string; id?: string; now?: () => number } = {}) => {
-        const logger = new Logger(name, now);
+        const logger = new Logger(now);
         loggers.push(logger);
         databases.push({ name, id });
-        await logger.initialize(options({ ...rest, loggerID: id }));
+        await logger.initialize(options({ ...rest, loggerName: name, loggerID: id }));
         return logger;
     };
 
@@ -61,7 +61,6 @@ describe('Logger', () => {
         await Promise.all(
             databases.splice(0).map(({ name, id }) => new IndexedDBStorage(name, id).deleteDatabase().catch(() => {}))
         );
-        await loggerManager.destroyAll();
     });
 
     describe('persistence', () => {
@@ -99,14 +98,14 @@ describe('Logger', () => {
         it('buffers lines emitted before initialize and keeps their timestamps', async () => {
             const at = Date.UTC(2026, 0, 1);
             const id = uniqueId();
-            const logger = new Logger('test', () => at);
+            const logger = new Logger(() => at);
             loggers.push(logger);
             databases.push({ name: 'test', id });
 
             logger.info('before init');
             expect(await logger.getLogs()).toBe('');
 
-            await logger.initialize(options({ loggerID: id }));
+            await logger.initialize(options({ loggerName: 'test', loggerID: id }));
 
             const logs = await logger.getLogs();
             expect(logs).toContain('before init');
@@ -180,18 +179,18 @@ describe('Logger', () => {
 
         it('echoes lines emitted before initialize', async () => {
             const error = vi.spyOn(console, 'error').mockImplementation(() => {});
-            const logger = new Logger('early');
+            const logger = new Logger();
             loggers.push(logger);
 
             logger.error('pre-init failure');
 
-            expect(error).toHaveBeenCalledWith('[early]', 'pre-init failure');
+            expect(error).toHaveBeenCalledWith('[default]', 'pre-init failure');
         });
     });
 
     describe('reading', () => {
         it('returns an empty string before initialize', async () => {
-            const logger = new Logger('uninitialized');
+            const logger = new Logger();
             loggers.push(logger);
 
             expect(await logger.getLogs()).toBe('');
@@ -229,9 +228,11 @@ describe('Logger', () => {
             await first.destroy();
 
             // A new session key cannot read the previous session's entries.
-            const second = new Logger('test');
+            const second = new Logger();
             loggers.push(second);
-            await second.initialize(options({ loggerID: id, encryptionKey: await generateAndImportKey() }));
+            await second.initialize(
+                options({ loggerName: 'test', loggerID: id, encryptionKey: await generateAndImportKey() })
+            );
 
             expect(await second.getLogs()).toBe('');
             expect(warn).toHaveBeenCalled();
@@ -250,9 +251,9 @@ describe('Logger', () => {
             await first.destroy();
 
             // Same database, eight days later: the entry is past the 7-day default.
-            const second = new Logger('test', () => start + 8 * DAY_MS);
+            const second = new Logger(() => start + 8 * DAY_MS);
             loggers.push(second);
-            await second.initialize(options({ loggerID: id }));
+            await second.initialize(options({ loggerName: 'test', loggerID: id }));
 
             expect(await second.getLogs()).toBe('');
         });
@@ -266,9 +267,9 @@ describe('Logger', () => {
             await first.flush();
             await first.destroy();
 
-            const second = new Logger('test', () => start + 2 * DAY_MS);
+            const second = new Logger(() => start + 2 * DAY_MS);
             loggers.push(second);
-            await second.initialize(options({ loggerID: id }));
+            await second.initialize(options({ loggerName: 'test', loggerID: id }));
 
             expect(await second.getLogs()).toContain('recent line');
         });
@@ -286,9 +287,9 @@ describe('Logger', () => {
             await first.flush();
             await first.destroy();
 
-            const second = new Logger('test', () => clock);
+            const second = new Logger(() => clock);
             loggers.push(second);
-            await second.initialize(options({ loggerID: id, maxEntries: 2 }));
+            await second.initialize(options({ loggerName: 'test', loggerID: id, maxEntries: 2 }));
 
             const logs = await second.getLogs();
             expect(logs).not.toContain('one');
@@ -300,15 +301,31 @@ describe('Logger', () => {
 
     describe('lifecycle', () => {
         it('reports initialization state', async () => {
-            const logger = new Logger('lifecycle');
+            const logger = new Logger();
             loggers.push(logger);
             expect(logger.isInitialized()).toBe(false);
 
             const id = uniqueId();
             databases.push({ name: 'lifecycle', id });
-            await logger.initialize(options({ loggerID: id }));
+            await logger.initialize(options({ loggerName: 'lifecycle', loggerID: id }));
 
             expect(logger.isInitialized()).toBe(true);
+        });
+
+        it('names itself after the app when no logger name is given', async () => {
+            const id = uniqueId();
+            const logger = new Logger();
+            loggers.push(logger);
+            databases.push({ name: 'test-app', id });
+
+            await logger.initialize(options({ loggerID: id }));
+            logger.info('named by app');
+
+            expect(await logger.getLogs()).toContain('[test-app]');
+            // One logger per app, so the app name is enough to find its database.
+            expect((await indexedDB.databases()).map(({ name }) => name)).toContain(
+                `${LOGGER_DB_PREFIX}test-app-${id}`
+            );
         });
 
         it('ignores a second initialize', async () => {
@@ -385,85 +402,5 @@ describe('Logger', () => {
         // The browser reports the dispatched event to the console itself, so only the
         // logger's own prefixed output would indicate it had listened in.
         expect(error.mock.calls.filter(([first]) => first === '[test]')).toHaveLength(0);
-    });
-});
-
-describe('LoggerManager', () => {
-    let key: AesGcmCryptoKey;
-    const databases: { name: string; id: string }[] = [];
-
-    beforeAll(async () => {
-        key = await generateAndImportKey();
-    });
-
-    const create = async (name: string) => {
-        const id = uniqueId();
-        databases.push({ name, id });
-        return loggerManager.createLogger(name, {
-            encryptionKey: key,
-            appName: 'test-app',
-            loggerID: id,
-        });
-    };
-
-    afterEach(async () => {
-        // Destroy first so no connection is left blocking deletion.
-        await loggerManager.destroyAll();
-        await Promise.all(
-            databases.splice(0).map(({ name, id }) => new IndexedDBStorage(name, id).deleteDatabase().catch(() => {}))
-        );
-    });
-
-    it('returns the same instance for a name', () => {
-        expect(loggerManager.getLogger('reused')).toBe(loggerManager.getLogger('reused'));
-    });
-
-    it('creates and initializes a logger in one step', async () => {
-        const logger = await create('created');
-        expect(logger.isInitialized()).toBe(true);
-    });
-
-    it('combines logs from every initialized logger', async () => {
-        const first = await create('alpha');
-        const second = await create('beta');
-
-        first.info('from alpha');
-        second.info('from beta');
-
-        const logs = await loggerManager.getAllLogs();
-        expect(logs).toContain('from alpha');
-        expect(logs).toContain('from beta');
-    });
-
-    it('skips uninitialized loggers', async () => {
-        const logger = await create('initialized');
-        logger.info('present');
-        loggerManager.getLogger('never-initialized');
-
-        expect(await loggerManager.getAllLogs()).toContain('present');
-    });
-
-    it('clears every logger', async () => {
-        const first = await create('alpha');
-        const second = await create('beta');
-        first.info('a');
-        second.info('b');
-
-        await loggerManager.clearAllLogs();
-
-        expect(await loggerManager.getAllLogs()).toBe('');
-    });
-
-    it('removes a logger', async () => {
-        const logger = await create('removable');
-
-        await loggerManager.removeLogger('removable');
-
-        expect(logger.isInitialized()).toBe(false);
-        expect(loggerManager.getLogger('removable')).not.toBe(logger);
-    });
-
-    it('ignores removing an unknown logger', async () => {
-        await expect(loggerManager.removeLogger('missing')).resolves.toBeUndefined();
     });
 });
