@@ -1950,9 +1950,6 @@
       "Expires tomorrow": [
         "Verloopt morgen"
       ],
-      "Extract, analyse, and summarise documents, PDFs, and images.": [
-        "Documenten, pdf's en afbeeldingen extraheren, analyseren en samenvatten."
-      ],
       "File too large for preview (>150k tokens)": [
         "Bestand te groot voor voorbeeld (>150k tokens)"
       ],
@@ -2257,7 +2254,7 @@
         "U staat op het punt een externe website te bezoeken:"
       ],
       "You have many saved memories. Use Optimize in the menu to merge duplicates and keep the list focused.": [
-        "Je hebt veel opgeslagen herinneringen. Gebruik Optimaliseren in het menu om duplicaten samen te voegen en de lijst overzichtelijk te houden."
+        "U heeft veel opgeslagen herinneringen. Gebruik Optimaliseren in het menu om duplicaten samen te voegen en de lijst overzichtelijk te houden."
       ],
       "You've reached your image limit for this period.": [
         "U heeft uw afbeeldingenlimiet voor deze periode bereikt."
@@ -2806,7 +2803,7 @@
         "Gegenereerde code"
       ],
       "Got a minute?": [
-        "Hebt u een momentje?"
+        "Heeft u een momentje?"
       ],
       "Guest": [
         "Gast"
@@ -3192,9 +3189,6 @@
       ],
       "Add to favorites": [
         "Toevoegen aan favorieten"
-      ],
-      "Analyse another export": [
-        "Analyseer een andere export"
       ],
       "Ask the model to be more careful and thorough": [
         "Vraag het model om voorzichtiger en grondiger te zijn."
@@ -3730,9 +3724,6 @@
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Blader naar de map \"${ DRIVE_SHORT_APP_NAME }\" die u aan dit project wilt koppelen en klik vervolgens op \"Deze map koppelen\"."
       ],
-      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100M people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
-        "Gebouwd door ${ BRAND_NAME }, het privacymerk dat wordt vertrouwd door meer dan 100 miljoen mensen en het team achter ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } en ${ PASS_APP_NAME }."
-      ],
       "Built-in ${ BRAND_NAME } agent": [
         "Ingebouwde ${ BRAND_NAME } agent"
       ],
@@ -3899,7 +3890,7 @@
         "Meld u aan bij uw Claude-account op claude.ai"
       ],
       "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
-        "Een deel van wat u hebt geplakt, kan de grenzen op het gebied van de werkplek, de wet of de gegevensbescherming overschrijden. Dit is hier om u te helpen het te herkennen, niet om te oordelen."
+        "Een deel van wat u heeft geplakt, kan de grenzen op het gebied van de werkplek, de wet of de gegevensbescherming overschrijden. Dit is hier om u te helpen het te herkennen, niet om te oordelen."
       ],
       "Something went wrong analysing this export. Please try again.": [
         "Er is iets misgegaan bij het analyseren van deze export. Probeer het opnieuw."
@@ -3923,7 +3914,7 @@
         "Dit zijn de meest gevoelige categorieën die Big Tech AI over u kan afleiden uit uw chats, zelfs als u ze nooit expliciet heeft getypt."
       ],
       "This is why it matters: once inferred, these details can power targeting, profiling, and decisions about you — often without transparency or consent.": [
-        "Dit is waarom het belangrijk is: als deze details eenmaal zijn afgeleid, kunnen ze targeting, profilering en beslissingen over u aansturen – vaak zonder transparantie of toestemming."
+        "Dit is waarom het belangrijk is: als deze details eenmaal zijn afgeleid, kunnen ze targeting, profilering en beslissingen over u aansturen, vaak zonder transparantie of toestemming."
       ],
       "This message is empty. Sorry about that.": [
         "Dit bericht is leeg. Onze excuses hiervoor."
@@ -3997,7 +3988,7 @@
         "Een dromerige close-up van bloemen die door een draaiende camerabeweging in zachte radiale sporen worden getrokken, waarbij het centrum in scherp detail bloeit terwijl de bloemblaadjes naar buiten toe oplossen in een romige bokeh onder zacht natuurlijk licht."
       ],
       "A striking monochromatic study in yellow — just a fragment of contemporary architecture emerging from its equally golden surroundings, with tonal shifts alone carving out the geometric surfaces and lending the scene its quiet sense of depth and form.": [
-        "Een opvallende monochromatische studie in het geel — slechts een fragment van hedendaagse architectuur dat oprijst uit de eveneens gouden omgeving, waarbij louter toonverschuivingen de geometrische oppervlakken vormgeven en de scène een ingetogen gevoel van diepte en vorm geven."
+        "Een opvallende monochromatische studie in het geel, slechts een fragment van hedendaagse architectuur dat oprijst uit de eveneens gouden omgeving, waarbij louter toonverschuivingen de geometrische oppervlakken vormgeven en de scène een ingetogen gevoel van diepte en vorm geven."
       ],
       "A warm and cozy Japandi-style living room, minimalist aesthetic, cream sectional sofa, neutral and mustard throw pillows, woven pouf, large textured area rug with fringe, minimalist botanical wall art, large indoor palm plant, soft ambient golden lighting, candles, serene and peaceful atmosphere, photorealistic, interior design photography.": [
         "Een warme en gezellige woonkamer in Japandi-stijl, minimalistische esthetiek, crèmekleurige hoekbank, neutrale en mosterdgele sierkussens, geweven poef, groot getextureerd vloerkleed met franjes, minimalistische botanische muurkunst, grote kamerpalm, zachte gouden sfeerverlichting, kaarsen, serene en vredige sfeer, fotorealistisch, interieurfotografie."
@@ -4913,7 +4904,7 @@
         "Mogelijk krijgt u een hogere prijs te zien"
       ],
       "You saw the profile? Now protect the person behind it.": [
-        "Hebt u het profiel gezien? Bescherm nu de persoon erachter."
+        "Heeft u het profiel gezien? Bescherm nu de persoon erachter."
       ],
       "Your image gallery is empty": [
         "Uw afbeeldingengalerij is leeg"
@@ -6042,11 +6033,47 @@
       "An error occurred": [
         "Er is een fout opgetreden"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Kan geen foto aan album toevoegen zonder een geldige naam"
+      ],
+      "Cannot share root folder": [
+        "Kan hoofdmap niet delen"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan de auteur van dit bestand niet verifiëren"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan niet verifiëren wie dit bestand heeft geüpload"
+      ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
       ],
       "Company name or personal name is required": [
         "Bedrijfsnaam of persoonsnaam is vereist"
+      ],
+      "Copy operation aborted": [
+        "Kopieerbewerking afgebroken"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Het kopiëren van een item naar een niet-map is niet toegestaan"
+      ],
+      "Could not load sharing details": [
+        "Kan de deelgegevens niet laden"
+      ],
+      "Could not unlock the parent folder": [
+        "Kan de bovenliggende map niet ontgrendelen"
+      ],
+      "Could not unlock this item": [
+        "Kan dit item niet ontgrendelen"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Het aanmaken van bestanden in niet-mappen is niet toegestaan"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Het aanmaken van mappen in niet-mappen is niet toegestaan"
+      ],
+      "Device not found": [
+        "Apparaat niet gevonden"
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
@@ -6066,8 +6093,32 @@
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Kan de bladwijzersleutel niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Kan bladwijzerwachtwoord niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Kan inhoudssleutel niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kan itemnaam niet ontsleutelen: ${ message }"
+      ],
+      "Failed to get inviter keys": [
+        "Kan uitnodigingssleutels niet ophalen"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
+      ],
+      "File download failed due to empty response": [
+        "Het downloaden van bestanden is mislukt vanwege een leeg antwoord"
+      ],
+      "File has no revision": [
+        "Bestand heeft geen revisie"
+      ],
+      "Image preview not found": [
+        "Afbeeldingsvoorbeeld niet gevonden"
       ],
       "Incorrect username": [
         "Onjuiste gebruikersnaam"
@@ -6093,11 +6144,45 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
+      "Invitation not found": [
+        "Uitnodiging niet gevonden"
+      ],
+      "Item not found": [
+        "Item niet gevonden"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Verouderde openbare link kan niet worden bijgewerkt. Maak opnieuw een nieuwe openbare link."
+      ],
+      "Missing inviter email": [
+        "Ontbrekende e-mail uitnodiger"
+      ],
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
+      "Moving item to a non-folder is not allowed": [
+        "Het is niet toegestaan ​​om een ​​item naar een niet-map te verplaatsen"
+      ],
+      "Moving root item is not allowed": [
+        "Het verplaatsen van het hoofditem is niet toegestaan"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "De naam mag maximaal ${ MAX_NODE_NAME_LENGTH } tekens lang zijn",
+        "De naam mag maximaal ${ MAX_NODE_NAME_LENGTH } tekens lang zijn"
+      ],
+      "Name must not be empty": [
+        "Naam mag niet leeg zijn"
+      ],
+      "No file data was received. Please try again.": [
+        "Geen bestandsgegevens ontvangen. Probeer het opnieuw."
+      ],
       "Not a valid number": [
         "Geen geldig getal"
+      ],
+      "Operation aborted": [
+        "Bewerking afgebroken"
+      ],
+      "Operation failed, try again later": [
+        "Bewerking mislukt. Probeer het later opnieuw"
       ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
@@ -6107,6 +6192,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Een deel van het bestand lijkt beschadigd te zijn"
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
@@ -6122,6 +6210,12 @@
       ],
       "Payment process not supported": [
         "Betalingsproces niet ondersteund"
+      ],
+      "Photo is already in the target album": [
+        "De foto staat al in het doelalbum"
+      ],
+      "Photo not found": [
+        "Foto niet gevonden"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Controleer of uw ABN geregistreerd is voor grensoverschrijdende BTW"
@@ -6156,14 +6250,35 @@
       "Process aborted": [
         "Proces afgebroken"
       ],
+      "Renaming root item is not allowed": [
+        "Het hernoemen van het rootitem is niet toegestaan"
+      ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Omgekeerde btw-regeling wordt niet ondersteund voor dit abonnement"
       ],
+      "Signature is missing": [
+        "Handtekening ontbreekt"
+      ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Handtekeningverificatie voor ${ signatureType } mislukt"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Handtekeningverificatie voor ${ signatureType } mislukt: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Sommige bestandsgegevens konden niet worden geüpload. Probeer het opnieuw."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Sommige bestandsdelen konden niet worden geüpload. Probeer het opnieuw."
+      ],
+      "Some items could not be loaded": [
+        "Sommige items konden niet worden geladen"
       ],
       "Something went wrong": [
         "Er is iets fout gegaan."
@@ -6186,6 +6301,9 @@
       "The minimum donation amount is ${ price }": [
         "Het minimale donatiebedrag is ${ price }"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Het geüploade bestand komt niet overeen met het origineel. Probeer het opnieuw."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
       ],
@@ -6197,6 +6315,27 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "This file has missing crypto material": [
+        "Dit bestand bevat ontbrekend cryptomateriaal"
+      ],
+      "This file has no version available to download": [
+        "Er is geen versie beschikbaar om te downloaden van dit bestand"
+      ],
+      "This file version could not be uploaded": [
+        "Deze bestandsversie kan niet worden geüpload"
+      ],
+      "This item has no image preview": [
+        "Dit item heeft geen afbeeldingsvoorbeeld"
+      ],
+      "This item is no longer shared": [
+        "Dit item wordt niet langer gedeeld"
+      ],
+      "This item is not shared": [
+        "Dit item is niet gedeeld"
+      ],
+      "Too many server requests, please try again later": [
+        "Te veel serververzoeken. Probeer het later opnieuw"
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
@@ -6216,11 +6355,29 @@
       "VAT number must start with ${ prefixes }": [
         "BTW-nummer moet beginnen met ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "Verificatiesleutels zijn niet beschikbaar"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verificatiesleutels voor ${ signatureType } zijn niet beschikbaar"
+      ],
       "We couldn’t send a verification code using this method.": [
         "We konden via deze methode geen verificatiecode verzenden."
       ],
       "Wrong billing address": [
         "Verkeerd factuuradres"
+      ],
+      "You can create public links for your own files only": [
+        "U kunt alleen openbare links voor uw eigen bestanden maken"
+      ],
+      "You can update a public link for your own files only": [
+        "U kunt een openbare link alleen voor uw eigen bestanden bijwerken"
+      ],
+      "You do not have access to this item": [
+        "U heeft geen toegang tot dit item"
+      ],
+      "You do not have access to this shared item": [
+        "U heeft geen toegang tot dit gedeelde item"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Onversleutelbare naam"
@@ -6459,6 +6616,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME }-markering"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
       ],
@@ -6549,6 +6709,9 @@
       ],
       "Attention required": [
         "Aandacht vereist"
+      ],
+      "Author is not provided on public link": [
+        "De auteur wordt niet vermeld op de openbare link"
       ],
       "Awaiting transaction": [
         "Transactie wordt afgewacht"
@@ -6959,6 +7122,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "We gebruiken 3-D Secure om uw betalingen te beschermen"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "We sturen u door naar ${ IDEAL_BRAND_NAME } in een nieuw browsertabblad om deze transactie te voltooien. Als u pop-upblokkering gebruikt, schakel deze dan uit om door te gaan."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
@@ -8904,6 +9070,9 @@
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betaal met ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betaalmethode vereist voor de activering van het abonnement nadat de proefversie is afgelopen."
       ],
@@ -8985,6 +9154,9 @@
       "You will soon be redirected to verify your payment.": [
         "Binnenkort wordt u doorgestuurd om uw betaling te verifiëren."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Uw valuta is gewijzigd naar euro's (€), omdat ${ IDEAL_BRAND_NAME } alleen betalingen in euro's ondersteunt."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
@@ -8996,6 +9168,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Kan ${ IDEAL_BRAND_NAME } niet initialiseren. Probeer het later opnieuw."
+      ],
       "Invalid card number": [
         "Ongeldig kaartnummer"
       ],
@@ -9018,6 +9193,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Er ging iets mis. Google Pay verificatie mislukt."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, om uw bank opdracht te geven het bedrag van uw rekening af te schrijven. U kunt binnen 8 weken na de incassodatum een ​​terugbetaling krijgen, onder de voorwaarden van uw overeenkomst met uw bank."
       ]
     },
     "Payments.info": {
@@ -9218,6 +9398,20 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Upgraden naar ${ upsellPlanTitle }"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attributen"
+      ],
+      "hash key": [
+        "hash sleutel"
+      ],
+      "key": [
+        "sleutel"
+      ],
+      "membership": [
+        "lidmaatschap"
       ]
     },
     "Provider option": {
