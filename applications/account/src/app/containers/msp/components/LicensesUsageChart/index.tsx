@@ -17,7 +17,7 @@ import { c } from 'ttag';
 import type { SeatDay } from '../../types';
 import { computeChartData } from './chartData';
 
-import './SeatsUsageChart.scss';
+import './LicensesUsageChart.scss';
 
 interface TooltipContentProps {
     active?: boolean;
@@ -35,12 +35,12 @@ const TooltipContent = ({ active, payload, label }: TooltipContentProps) => {
         <div className="msp-chart-tooltip-inner flex flex-column gap-1">
             <p className="m-0 text-semibold text-sm">{label}</p>
             <div className="flex justify-space-between gap-4">
-                <span className="text-sm color-weak">{c('Label').t`Seats`}</span>
+                <span className="text-sm color-weak">{c('Label').t`Peak allocated licenses`}</span>
                 <span className="text-sm text-semibold">{seats}</span>
             </div>
             {avg != null && (
                 <div className="flex justify-space-between gap-4">
-                    <span className="text-sm color-weak">{c('Label').t`Average`}</span>
+                    <span className="text-sm color-weak">{c('Label').t`Monthly average`}</span>
                     <span className="text-sm text-semibold">{avg.toPrecision(2)}</span>
                 </div>
             )}
@@ -48,7 +48,7 @@ const TooltipContent = ({ active, payload, label }: TooltipContentProps) => {
     );
 };
 
-const SeatsUsageChart = ({ data }: { data: SeatDay[] }) => {
+const LicensesUsageChart = ({ data }: { data: SeatDay[] }) => {
     const [activeBarIndex, setActiveBarIndex] = useState<number | null>(null);
 
     const { chartData, yDomain, yTicks, lastDot } = useMemo(() => computeChartData(data), [data]);
@@ -56,15 +56,15 @@ const SeatsUsageChart = ({ data }: { data: SeatDay[] }) => {
     return (
         <div className="flex flex-column gap-10">
             <div className="flex items-center justify-space-between">
-                <p className="m-0 text-semibold">{c('Label').t`Seats usage`}</p>
+                <p className="m-0 text-semibold">{c('Label').t`Licenses usage`}</p>
                 <div className="flex gap-4 items-center">
                     <div className="flex gap-2 items-center">
                         <div className="msp-chart-legend-bar" />
-                        <span className="text-sm">{c('Label').t`Assigned seats`}</span>
+                        <span className="text-sm">{c('Label').t`Peak allocated licenses`}</span>
                     </div>
                     <div className="flex gap-2 items-center">
                         <div className="msp-chart-legend-line" />
-                        <span className="text-sm">{c('Label').t`Billed average`}</span>
+                        <span className="text-sm">{c('Label').t`Monthly average`}</span>
                     </div>
                 </div>
             </div>
@@ -134,4 +134,4 @@ const SeatsUsageChart = ({ data }: { data: SeatDay[] }) => {
     );
 };
 
-export default SeatsUsageChart;
+export default LicensesUsageChart;

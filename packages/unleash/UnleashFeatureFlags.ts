@@ -110,6 +110,7 @@ enum AccountFlag {
     VpnB2bUserActivity = 'VpnB2bUserActivity',
     MspEnabled = 'MspEnabled',
     MspCostsTableEnabled = 'MspCostsTableEnabled',
+    MSPStorageOptionEnabled = 'MSPStorageOptionEnabled',
     PurchaseAttributionSurveyEnabled = 'PurchaseAttributionSurveyEnabled',
     CancellationFlowFeedbackFirst = 'CancellationFlowFeedbackFirst',
     B2BSidebarRefreshEnabled = 'B2BSidebarRefreshEnabled',
