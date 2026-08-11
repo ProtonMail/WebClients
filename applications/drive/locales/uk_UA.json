@@ -48,12 +48,6 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Додати ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
-      "Add ${ photoCount } photo to a new album": [
-        "Додати ${ photoCount } фотографію до нового альбому",
-        "Додати ${ photoCount } фотографії до нового альбому",
-        "Додати ${ photoCount } фотографій до нового альбому",
-        "Додати ${ photoCount } фотографії до нового альбому"
-      ],
       "Add account": [
         "Додати обліковий запис"
       ],
@@ -90,26 +84,11 @@
       "Add phone number": [
         "Додати номер телефону"
       ],
-      "Add photos": [
-        "Додати фотографії"
-      ],
       "Add storage": [
         "Збільшити сховище"
       ],
-      "Add to \"${ name }\" (${ photoCount } photo)": [
-        "Додати до «${ name }» (${ photoCount } фотографію)",
-        "Додати до «${ name }» (${ photoCount } фотографії)",
-        "Додати до «${ name }» (${ photoCount } фотографій)",
-        "Додати до «${ name }» (${ photoCount } фотографій)"
-      ],
-      "Add to album": [
-        "Додати до альбому"
-      ],
       "Add to group": [
         "Додати до групи"
-      ],
-      "Album name": [
-        "Назва альбому"
       ],
       "Apply": [
         "Застосувати"
@@ -222,9 +201,6 @@
       "Collaborate on documents": [
         "Сумісна робота на документах"
       ],
-      "Collapse folder": [
-        "Згорнути теку"
-      ],
       "Collapse navigation bar": [
         "Згорнути панель навігації"
       ],
@@ -297,14 +273,8 @@
       "Create a new contact group": [
         "Створити нову групу контактів"
       ],
-      "Create album": [
-        "Створити альбом"
-      ],
       "Create and copy alias": [
         "Створити й копіювати псевдонім"
-      ],
-      "Create business account": [
-        "Створити бізнес-акаунт"
       ],
       "Create folder": [
         "Створити теку"
@@ -314,9 +284,6 @@
       ],
       "Create new password": [
         "Створити новий пароль"
-      ],
-      "Create new text file": [
-        "Створити новий текстовий файл"
       ],
       "Current plan": [
         "Поточний тарифний план"
@@ -351,9 +318,6 @@
         "Видалити ${ selectedCount } груп контактів",
         "Видалити ${ selectedCount } груп контактів"
       ],
-      "Delete album": [
-        "Видалити альбом"
-      ],
       "Delete contact": [
         "Видалити контакт"
       ],
@@ -363,23 +327,11 @@
       "Delete permanently": [
         "Видалити остаточно"
       ],
-      "Delete this version": [
-        "Видалити цю версію"
-      ],
-      "Delete version": [
-        "Видалити версію"
-      ],
-      "Delete without saving": [
-        "Видалити без збереження"
-      ],
       "Deselect all": [
         "Скасувати вибір"
       ],
       "Details": [
         "Подробиці"
-      ],
-      "Diagnostics": [
-        "Діагностика"
       ],
       "Discard": [
         "Відхилити"
@@ -389,12 +341,6 @@
       ],
       "Display navigation bar": [
         "Показувати панель навігації"
-      ],
-      "Display next": [
-        "Показати наступний"
-      ],
-      "Display previous": [
-        "Показати попередній"
       ],
       "Done": [
         "Готово"
@@ -414,26 +360,14 @@
       "Download anyway": [
         "Усе одно завантажити"
       ],
-      "Download for Mac": [
-        "Завантажити для Mac"
-      ],
       "Download for macOS": [
         "Завантажити для macOS"
       ],
       "Download for Windows": [
         "Завантажити для Windows"
       ],
-      "Download info": [
-        "Завантажити інформацію"
-      ],
       "Download logs": [
         "Завантажити журнали"
-      ],
-      "Download results": [
-        "Завантажити результати"
-      ],
-      "Drive Locked": [
-        "Сховище заблоковано"
       ],
       "Edit": [
         "Змінити"
@@ -465,17 +399,8 @@
       "enable desktop notifications": [
         "увімкнути сповіщення на робочому столі"
       ],
-      "Enable drive search": [
-        "Увімкнути пошук на диску"
-      ],
       "Encrypted": [
         "Зашифровано"
-      ],
-      "Expand folder": [
-        "Розгорнути теку"
-      ],
-      "Explore more": [
-        "Дізнатися більше"
       ],
       "Explore other plans": [
         "Ознайомитися з іншими тарифними планами"
@@ -488,9 +413,6 @@
       ],
       "Export selection as .vcf": [
         "Експортувати вибране як .vcf"
-      ],
-      "Export system log": [
-        "Експорт системного журналу"
       ],
       "Fit to window": [
         "Припасувати до вікна"
@@ -537,20 +459,11 @@
       "Go back": [
         "Назад"
       ],
-      "Go back to album \"${ ellipsedAlbumName }\"": [
-        "Повернутися до альбому «${ ellipsedAlbumName }»"
-      ],
       "Go to ${ planOrAppName }": [
         "Відкрийте ${ planOrAppName }"
       ],
       "Go to label": [
         "Перейти до мітки"
-      ],
-      "Go to my files": [
-        "Перейти до моїх файлів"
-      ],
-      "Go to parent": [
-        "Перейти до вищого рівня"
       ],
       "Go to settings": [
         "Перейти до налаштувань"
@@ -606,9 +519,6 @@
       "Increase": [
         "Збільшити"
       ],
-      "Join album": [
-        "Приєднатися до альбому"
-      ],
       "Keep my subscription": [
         "Зберегти передплату"
       ],
@@ -623,9 +533,6 @@
       ],
       "Leave": [
         "Залишити"
-      ],
-      "Leave album": [
-        "Залишити альбом"
       ],
       "Let's talk": [
         "Поговорімо"
@@ -656,9 +563,6 @@
       ],
       "Manage labels": [
         "Керувати мітками"
-      ],
-      "Manage share": [
-        "Керувати поширенням"
       ],
       "Manage users/addresses": [
         "Керуйте користувачами та адресами"
@@ -711,15 +615,6 @@
       "Move to trash": [
         "Перемістити до смітника"
       ],
-      "Name your album": [
-        "Назвіть свій альбом"
-      ],
-      "New": [
-        "Додати"
-      ],
-      "New album": [
-        "Новий альбом"
-      ],
       "New document": [
         "Новий документ"
       ],
@@ -728,9 +623,6 @@
       ],
       "New message": [
         "Нове повідомлення"
-      ],
-      "New shared album": [
-        "Новий спільний альбом"
       ],
       "New spreadsheet": [
         "Нова електронна таблиця"
@@ -786,17 +678,8 @@
       "Quit": [
         "Вийти"
       ],
-      "Re-index": [
-        "Повторно індексувати"
-      ],
-      "Re-indexing in progress": [
-        "Повторне індексування триває"
-      ],
       "Re-sign": [
         "Перепідписати"
-      ],
-      "Rebuild index": [
-        "Перебудувати індекс"
       ],
       "Reconnect": [
         "Відновити з'єднання"
@@ -809,9 +692,6 @@
       ],
       "Refer a friend": [
         "Запросити друга"
-      ],
-      "Refetch index": [
-        "Повторно завантажити індекс"
       ],
       "Refresh the page": [
         "Оновити сторінку"
@@ -834,32 +714,17 @@
       "Remove button": [
         "Вилучити кнопку"
       ],
-      "Remove device": [
-        "Вилучити пристрій"
-      ],
-      "Remove from album": [
-        "Вилучити з альбому"
-      ],
       "Remove from favorites": [
         "Вилучити з улюблених"
       ],
       "Remove gift code": [
         "Вилучити подарунковий код"
       ],
-      "Remove me": [
-        "Вилучити мене"
-      ],
       "Remove my access": [
         "Вилучити мій доступ"
       ],
-      "Remove without saving": [
-        "Вилучити без збереження"
-      ],
       "Rename": [
         "Перейменувати"
-      ],
-      "Rename album": [
-        "Перейменувати альбом"
       ],
       "Replace file": [
         "Замінити файл"
@@ -869,9 +734,6 @@
       ],
       "Report a problem": [
         "Повідомити про проблему"
-      ],
-      "Report abuse": [
-        "Повідомити про порушення"
       ],
       "Report an issue": [
         "Повідомити про проблему"
@@ -903,32 +765,17 @@
       "Restore this version": [
         "Відновити цю версію"
       ],
-      "Restore version": [
-        "Відновити версію"
-      ],
       "Retry": [
         "Повторити спробу"
       ],
       "Retry failed items": [
         "Повторити спробу для елементів із помилками"
       ],
-      "Run diagnostics": [
-        "Запустити діагностику"
-      ],
       "Save": [
         "Зберегти"
       ],
-      "Save and remove": [
-        "Зберегти та вилучити"
-      ],
       "Save changes": [
         "Зберегти зміни"
-      ],
-      "Save photo to your gallery": [
-        "Зберегти фотографію у галерею"
-      ],
-      "Save photos and remove": [
-        "Зберегти фотографії та вилучити"
       ],
       "Scan & Download": [
         "Сканувати й завантажити"
@@ -944,12 +791,6 @@
       ],
       "Search countries": [
         "Пошук країн"
-      ],
-      "Search drive": [
-        "Пошук диска"
-      ],
-      "Search is unavailable": [
-        "Пошук недоступний"
       ],
       "See how": [
         "Дізнатися"
@@ -984,9 +825,6 @@
       "Set as album cover": [
         "Встановити як обкладинку альбому"
       ],
-      "Set as cover": [
-        "Встановити як обкладинку"
-      ],
       "Set password or expiration date": [
         "Встановити пароль або термін дії"
       ],
@@ -1010,12 +848,6 @@
       ],
       "Share": [
         "Поділитися"
-      ],
-      "Share album": [
-        "Поділитись альбомом"
-      ],
-      "Share file": [
-        "Спільний доступ до файлу"
       ],
       "Share item": [
         "Спільний доступ до елемента"
@@ -1068,14 +900,8 @@
       "Skip verification": [
         "Пропустити перевірку"
       ],
-      "Start": [
-        "Почати"
-      ],
       "Start import": [
         "Розпочати імпорт"
-      ],
-      "Start recovering": [
-        "Почати відновлення"
       ],
       "Stay": [
         "Залишитися"
@@ -1101,9 +927,6 @@
       "Take a tour": [
         "Показати знайомство"
       ],
-      "This album is empty": [
-        "Цей альбом порожній"
-      ],
       "Toggle Calendar app": [
         "Відкрити календар"
       ],
@@ -1118,9 +941,6 @@
       ],
       "Trust": [
         "Довіряти"
-      ],
-      "Try ${ BRAND_NAME } Workspace": [
-        "Спробувати ${ BRAND_NAME } Workspace"
       ],
       "Try again": [
         "Спробувати знову"
@@ -1176,12 +996,6 @@
       "Upload folder": [
         "Вивантажити теку"
       ],
-      "Upload from computer": [
-        "Вивантажити з комп'ютера"
-      ],
-      "Upload photos": [
-        "Вивантажити фото"
-      ],
       "Upload picture": [
         "Вивантажити зображення"
       ],
@@ -1230,20 +1044,11 @@
       "What do I get?": [
         "Що я отримую?"
       ],
-      "Windows 11 (ARM64)": [
-        "Windows 11 (ARM64)"
-      ],
-      "Windows 11/10 (x64)": [
-        "Windows 11/10 (x64)"
-      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контакти",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів"
-      ],
-      "Your 3 GB bonus": [
-        "Ваш бонус 3 ГБ"
       ],
       "Zoom in": [
         "Збільшити"
@@ -1260,11 +1065,6 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Відкрити в ${ SHEETS_APP_NAME }"
-      ]
-    },
-    "Actions": {
-      "Upload": [
-        "Вивантажити"
       ]
     },
     "Actions message": {
@@ -1468,11 +1268,6 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "Ваш безплатний пробний період закінчується через ${ timeRemaining }"
-      ]
-    },
-    "Badge": {
-      "Invited": [
-        "Запрошено"
       ]
     },
     "bf2023: Deal details": {
@@ -3168,14 +2963,6 @@
         "Ми виявили такі поля в завантаженому вами файлі CSV. Перевірте, які ви хочете імпортувати."
       ]
     },
-    "Docs Info": {
-      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
-        "Співпрацювати стало простіше. Тепер будь-хто може запропонувати правки, не змінюючи документ."
-      ],
-      "Suggestion mode is here": [
-        "Режим пропозиції тут"
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Помилки чи проблеми з якістю"
@@ -3467,12 +3254,6 @@
       "Calendar limit reached": [
         "Досягнуто ліміту календарів"
       ],
-      "Can't find any secure link": [
-        "Не вдається знайти жодного безпечного посилання"
-      ],
-      "Can't retrieve device name": [
-        "Не вдається отримати назву пристрою"
-      ],
       "Cannot export this contact": [
         "Неможливо експортувати цей контакт"
       ],
@@ -3500,17 +3281,11 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Неможливо ввімкнути пошук вмісту. Перезапустіть програму або очистьте дані."
       ],
-      "Could not add to favorites": [
-        "Не вдалося додати до улюблених"
-      ],
       "Could not open created vault": [
         "Не вдалося відкрити створене сховище"
       ],
       "Could not open updated vault": [
         "Не вдалося відкрити оновлене сховище"
-      ],
-      "Could not remove from favorites": [
-        "Не вдалося вилучити з улюблених"
       ],
       "Data integrity check failed": [
         "Помилка перевірки цілісності даних"
@@ -3527,17 +3302,8 @@
         "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
         "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або"
       ],
-      "Device name does not match": [
-        "Назва пристрою відрізняється"
-      ],
-      "Diagnostics failed": [
-        "Помилка діагностики"
-      ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
-      ],
-      "Downloads of desktop apps are currently unavailable": [
-        "Завантаження настільних програм зараз недоступне"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Наразі редагування платіжної адреси недоступне. Спробуйте пізніше."
@@ -3559,12 +3325,6 @@
       ],
       "Error decrypting a computer": [
         "Помилка розшифрування комп'ютера"
-      ],
-      "Error reading file": [
-        "Помилка читання файлу"
-      ],
-      "Expected structure attached": [
-        "Долучено очікувану структуру"
       ],
       "External accounts are not supported yet": [
         "Сторонні облікові записи ще не підтримуються"
@@ -3632,9 +3392,6 @@
       "Folder name cannot be empty.": [
         "Тека не може бути без назви."
       ],
-      "Folder not found": [
-        "Папку не знайдено"
-      ],
       "Forward address is required": [
         "Необхідно вказати адресу пересилання"
       ],
@@ -3661,9 +3418,6 @@
       ],
       "Invalid IBAN": [
         "Невірний IBAN"
-      ],
-      "Invalid JSON file": [
-        "Недійсний файл JSON"
       ],
       "Invalid name": [
         "Неприпустиме ім'я"
@@ -3851,9 +3605,6 @@
       "Reverse charge scheme is not supported for this plan": [
         "Схема зворотного нарахування податку не підтримується для цього тарифного плану"
       ],
-      "Search failed": [
-        "Не вдалося знайти"
-      ],
       "Signature not verified": [
         "Підпис не перевірено"
       ],
@@ -3884,17 +3635,8 @@
       "Something went wrong": [
         "Щось пішло не так"
       ],
-      "Something went wrong during folder listing": [
-        "Щось пішло не так під час отримання списку папок"
-      ],
       "Something went wrong while fetching available domains": [
         "Під час отримання доступних доменів сталася помилка"
-      ],
-      "Something went wrong with search. Please try again later.": [
-        "Щось пішло не так під час пошуку. Будь ласка, спробуйте пізніше."
-      ],
-      "Something went wrong with search: Not enough storage space.": [
-        "Щось пішло не так під час пошуку: недостатньо простору сховища."
       ],
       "Something went wrong. Please try again.": [
         "Сталася помилка. Повторіть спробу пізніше."
@@ -4013,41 +3755,14 @@
       "VAT number must start with ${ prefixes }": [
         "Ідентифікаційний номер платника ПДВ має починатися з ${ prefixes }"
       ],
-      "We cannot retrieve this item": [
-        "Не вдалося отримати цей елемент"
-      ],
       "We couldn’t send a verification code using this method.": [
         "Не вдалося надіслати код підтвердження за допомогою цього способу."
-      ],
-      "We were not able to load some invitations": [
-        "Нам не вдалося завантажити деякі запрошення"
       ],
       "We were not able to load some items": [
         "Нам не вдалося завантажити деякі елементи"
       ],
-      "We were not able to load some items shared with you": [
-        "Нам не вдалося завантажити деякі елементи, якими з вами поділилися"
-      ],
-      "We were not able to load some of your invitation to shared items": [
-        "Нам не вдалося завантажити деякі з ваших запрошень до спільних елементів"
-      ],
-      "We were not able to load some of your saved shared links": [
-        "Нам не вдалося завантажити деякі з ваших збережених спільних посилань"
-      ],
-      "We were not able to load some of your shared items": [
-        "Нам не вдалося завантажити деякі з ваших спільних елементів"
-      ],
-      "We were not able to load some search results": [
-        "Нам не вдалося завантажити деякі результати пошуку"
-      ],
-      "We were not able to load the file history": [
-        "Нам не вдалося завантажити історію файлу"
-      ],
       "We were not able to load the folder contents": [
         "Нам не вдалося завантажити вміст папки"
-      ],
-      "We're sorry, but free upload is not available right now.": [
-        "На жаль, безплатне вивантаження наразі недоступне."
       ],
       "Wrong billing address": [
         "Неправильна платіжна адреса"
@@ -4220,23 +3935,11 @@
       ]
     },
     "Error message": {
-      "Access denied": [
-        "Доступ заборонений"
-      ],
       "App currently unavailable": [
         "Програма наразі недоступна"
       ],
-      "Brace yourself till we get the error fixed.": [
-        "Дочекайтеся, доки ми виправимо помилку."
-      ],
       "Error: ${ errorMessage }": [
         "Помилка: ${ errorMessage }"
-      ],
-      "Internal server error": [
-        "Внутрішня помилка сервера"
-      ],
-      "Not found": [
-        "Не знайдено"
       ],
       "Oops, something went wrong": [
         "Ой, щось пішло не так"
@@ -4258,9 +3961,6 @@
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "Коли увімкнено додатковий пароль, керування псевдонімами може бути здійснено лише в ${ PASS_APP_NAME }."
-      ],
-      "You may also refresh the page or try again later.": [
-        "Ви також можете оновити сторінку або спробувати знову пізніше."
       ]
     },
     "Error notification": {
@@ -4322,14 +4022,6 @@
     "Event title": {
       "(no title)": [
         "(без назви)"
-      ]
-    },
-    "Failed": {
-      "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } не вдалося",
-        "${ countOfFailedLinks } не вдалося",
-        "${ countOfFailedLinks } не вдалося",
-        "${ countOfFailedLinks } не вдалося"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4624,12 +4316,6 @@
       "Contacts": [
         "Контакти"
       ],
-      "Create new album": [
-        "Створити новий альбом"
-      ],
-      "Create new shared album": [
-        "Створити новий спільний альбом"
-      ],
       "Domain": [
         "Домен"
       ],
@@ -4639,37 +4325,11 @@
       "Password ends with": [
         "Пароль закінчується на"
       ],
-      "Rename album": [
-        "Перейменувати альбом"
-      ],
       "Security Center": [
         "Центр безпеки"
       ],
       "Username": [
         "Ім'я користувача"
-      ]
-    },
-    "Heading": {
-      "Add ${ photoCount } photo to": [
-        "Додати ${ photoCount } фотографію до",
-        "Додати ${ photoCount } фотографії до",
-        "Додати ${ photoCount } фотографій до",
-        "Додати ${ photoCount } фотографії до"
-      ],
-      "Add to shared album": [
-        "Додати до спільного альбому"
-      ],
-      "All albums": [
-        "Усі альбоми"
-      ],
-      "Recent": [
-        "Найновіші"
-      ],
-      "Share ${ photoCount } photo via": [
-        "Поділитись ${ photoCount } фотографією через",
-        "Поділитись ${ photoCount } фотографіями через",
-        "Поділитись ${ photoCount } фотографіями через",
-        "Поділитись ${ photoCount } фотографіями через"
       ]
     },
     "Hint": {
@@ -5033,23 +4693,11 @@
         "${ addressCount } адрес е-пошти",
         "${ addressCount } адрес е-пошти"
       ],
-      "${ albumName } has been successfully deleted": [
-        "Альбом ${ albumName } успішно видалено"
-      ],
-      "${ albums } album": [
-        "${ albums } альбом",
-        "${ albums } альбоми",
-        "${ albums } альбомів",
-        "${ albums } альбомів"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Помічник у написанні ${ BRAND_NAME } Scribe"
-      ],
-      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
-        "${ BRAND_NAME } Workspace дає змогу вашій команді ефективно співпрацювати, ніколи не піддаючи ризику дані вашої компанії."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технологія шифрування ${ BRAND_NAME } гарантує неможливість доступу до вашого пароля, навіть для нас."
@@ -5105,47 +4753,17 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Файли ${ DOCS_APP_NAME } та ${ SHEETS_APP_NAME } не можна завантажити безпосередньо, і вони не будуть включені в це завантаження. Ви можете завантажити інші файли, натиснувши «Продовжити завантаження»."
       ],
-      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } виявив, що локальний пошуковий індекс пошкоджено і його більше не можна використовувати. Перебудуйте індекс, щоб відновити пошук."
-      ],
-      "${ DRIVE_APP_NAME } on App Store": [
-        "${ DRIVE_APP_NAME } в App Store"
-      ],
-      "${ DRIVE_APP_NAME } on Play Store": [
-        "${ DRIVE_APP_NAME } у Play Маркеті"
-      ],
-      "${ email } invited you to join ${ albumName }": [
-        "Користувач ${ email } запросив вас приєднатися до альбому ${ albumName }"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: повнорозмірне зображення"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: попередній перегляд низької роздільності"
       ],
-      "${ files } file": [
-        "${ files } файл",
-        "${ files } файли",
-        "${ files } файлів",
-        "${ files } файлів"
-      ],
-      "${ folders } folder": [
-        "${ folders } папка",
-        "${ folders } папки",
-        "${ folders } папок",
-        "${ folders } папок"
-      ],
       "${ groupCounts } group found": [
         "Знайдено ${ groupCounts } групу",
         "Знайдено ${ groupCounts } групи",
         "Знайдено ${ groupCounts } груп",
         "Знайдено ${ groupCounts } груп"
-      ],
-      "${ invitationsCount } pending invitation": [
-        "${ invitationsCount } запрошення на розгляді",
-        "${ invitationsCount } запрошення на розгляді",
-        "${ invitationsCount } запрошень на розгляді",
-        "${ invitationsCount } запрошень на розгляді"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } містить асистента для письма ${ BRAND_NAME } Scribe"
@@ -5164,18 +4782,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Довічна угода ${ PASS_SHORT_APP_NAME } не має ціни поновлення, це одноразовий платіж за довічний доступ до ${ PASS_SHORT_APP_NAME }. Ціна та дата поновлення підписки ${ planTitle } залишаються незмінними."
-      ],
-      "${ photoCount } item": [
-        "${ photoCount } елемент",
-        "Елементів: ${ photoCount }",
-        "Елементів: ${ photoCount }",
-        "Елементів: ${ photoCount }"
-      ],
-      "${ photos } photo": [
-        "${ photos } фотографія",
-        "${ photos } фотографії",
-        "${ photos } фотографій",
-        "${ photos } фотографій"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } вимагає щонайменше 1 виділений сервер вартістю ${ serverPricePerMonth }"
@@ -5233,9 +4839,6 @@
         "${ selectedFoldersCountLocalized } вибрані мітки",
         "${ selectedFoldersCountLocalized } вибраних міток",
         "${ selectedFoldersCountLocalized } вибраних міток"
-      ],
-      "${ state.result.entries.length } entries": [
-        "${ state.result.entries.length } записів"
       ],
       "${ storage } storage": [
         "${ storage } сховища"
@@ -5296,9 +4899,6 @@
       ],
       "30-day money-back guarantee.": [
         "Гарантія повернення грошей протягом 30 днів."
-      ],
-      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
-        "Доступна нова версія ${ DRIVE_APP_NAME }. Будь ласка, перезавантажте сторінку, щоб продовжити пошук."
       ],
       "A number will be added to the filename": [
         "Число буде додано до назви файлу"
@@ -5378,9 +4978,6 @@
       "Already in your library": [
         "Уже у вашій бібліотеці"
       ],
-      "Also try looking in Trash.": [
-        "Також пошукайте у смітнику."
-      ],
       "American Express SafeKey logo": [
         "Логотип American Express SafeKey"
       ],
@@ -5390,23 +4987,11 @@
       "Amount below minimum (${ amount }).": [
         "Сума нижче найменшої (${ amount })."
       ],
-      "An active recovery file": [
-        "Активний файл відновлення"
-      ],
-      "An issue occurred during the restore process.": [
-        "Під час процесу відновлення сталася помилка."
-      ],
       "and": [
         "та"
       ],
-      "And access it from anywhere": [
-        "Та отримайте до нього доступ де завгодно"
-      ],
       "Anonymous": [
         "Анонім"
-      ],
-      "Apr": [
-        "квіт"
       ],
       "Are you sure you want to discard your changes?": [
         "Ви справді хочете відхилити зміни?"
@@ -5417,17 +5002,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Ви впевнені, що хочете спорожнити смітник та остаточно видалити всі елементи?"
       ],
-      "Are you sure you want to permanently delete": [
-        "Ви дійсно хочете остаточно видалити"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Ви дійсно хочете остаточно видалити ${ itemName } зі смітника?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Ви дійсно бажаєте остаточно видалити вибрані елементи зі смітника?"
-      ],
-      "Are you sure you want to proceed?": [
-        "Ви справді хочете продовжити?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Принаймні ${ BETTER_PASSWORD_LENGTH } символів"
@@ -5438,23 +5017,14 @@
       "Attention required": [
         "Потребує уваги"
       ],
-      "Aug": [
-        "серп"
-      ],
       "Awaiting transaction": [
         "Очікування транзакції"
       ],
       "Balance from your previous subscription": [
         "Баланс після вашої попередньої передплати"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Оскільки ${ DRIVE_APP_NAME } наскрізно зашифровано, ми не можемо отримати доступ до ваших файлів або розшифрувати їх для вас. Щоб розблокувати своє сховище після скидання пароля, вам потрібно мати щось із наведеного нижче:"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
-      ],
-      "Better in the app": [
-        "Краще у програмі"
       ],
       "Billing cycle: ${ text }": [
         "Платіжний цикл: ${ text }"
@@ -5483,17 +5053,11 @@
       "Can't move a folder into itself": [
         "Неможливо перемістити папку саму в себе"
       ],
-      "Can't rename to same name": [
-        "Не вдається перейменувати на ту саму назву"
-      ],
       "Can't write into folder": [
         "Не вдається записати в папку"
       ],
       "Canceled": [
         "Скасовано"
-      ],
-      "Cannot load links": [
-        "Не вдалося завантажити посилання"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можете згадати свій пароль? Ми можемо допомогти вам стерти зашифровані дані в усіх контактах, які були зашифровані цим ключем, а також в процесі відхилити попередження."
@@ -5507,23 +5071,14 @@
       "Choose a plan that works best for you.": [
         "Виберіть тарифний план, який підходить вам найкраще."
       ],
-      "Clear all search data": [
-        "Очистити всі дані пошуку"
-      ],
       "Clear data": [
         "Очистити дані"
       ],
       "Clear encrypted search data": [
         "Очистити зашифровані дані пошуку"
       ],
-      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Очищення даних браузера очистить пошуковий індекс на цьому пристрої. Всі файли потрібно буде знову проіндексувати під час користування функцією пошуку."
-      ],
       "Clears browser data related to the encrypted search.": [
         "Очищає дані браузера, пов'язані з зашифрованим пошуком."
-      ],
-      "Clears browser data related to the search.": [
-        "Очищає дані браузера, пов'язані з пошуком."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
@@ -5542,9 +5097,6 @@
       ],
       "Continue": [
         "Продовжити"
-      ],
-      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "Продовжити користуватися ${ DRIVE_APP_NAME } та розблокувати сховище згодом"
       ],
       "Copy the link to clipboard": [
         "Копіювати посилання в буфер обміну"
@@ -5582,9 +5134,6 @@
       "Create in": [
         "Створити у"
       ],
-      "Create links and share your files with others.": [
-        "Створіть посилання та діліться файлами з іншими."
-      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Кредит на невикористану частину попередньої передплати тарифного плану"
       ],
@@ -5597,9 +5146,6 @@
       "Custom email domains": [
         "Власні домени електронної пошти"
       ],
-      "Dec": [
-        "груд"
-      ],
       "Decrypting files": [
         "Розшифрування файлів"
       ],
@@ -5611,12 +5157,6 @@
       ],
       "default email address": [
         "типова поштова адреса"
-      ],
-      "Delete locked drive": [
-        "Видалити заблокований диск",
-        "Видалити заблоковані диски",
-        "Видалити заблоковані диски",
-        "Видалити заблоковані диски"
       ],
       "Details": [
         "Деталі"
@@ -5651,9 +5191,6 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Перехід на тарифний план нижчого рівня розірве всі з'єднання з платними серверами ${ VPN_APP_NAME }."
       ],
-      "Download ${ name } app": [
-        "Завантажити програму ${ name }"
-      ],
       "Download current logs": [
         "Завантажити поточні журнали"
       ],
@@ -5674,9 +5211,6 @@
       ],
       "Drop file here to upload": [
         "Перетягніть файл сюди, щоб вивантажити"
-      ],
-      "Drop files here": [
-        "Перетягніть файли сюди"
       ],
       "Drop files here to upload or click on the upload button": [
         "Перетягніть файли сюди, щоб вивантажити їх, або натисніть кнопку вивантаження"
@@ -5705,17 +5239,8 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Електронні листи, переміщені до Смітника та Спаму понад 30 днів тому, очищатимуться автоматично."
       ],
-      "Empty folder": [
-        "Порожня тека"
-      ],
       "Enabling auto-deletion…": [
         "Увімкнення автоматичного видалення…"
-      ],
-      "Enabling drive search": [
-        "Увімкнення пошуку на диску"
-      ],
-      "Encrypted search is here": [
-        "Зашифрований пошук уже тут"
       ],
       "End-to-end encrypted": [
         "Наскрізно зашифровано"
@@ -5768,12 +5293,6 @@
       "Expired": [
         "Протерміновано"
       ],
-      "Export diagnostic logs for technical support and troubleshooting": [
-        "Експорт діагностичних журналів для технічної підтримки та усунення проблем"
-      ],
-      "Feb": [
-        "лют"
-      ],
       "File could not be scanned": [
         "Не вдалося просканувати файл"
       ],
@@ -5783,9 +5302,6 @@
       "File will not be updated": [
         "Файл не буде оновлено"
       ],
-      "Files and folders that others shared with you will appear here": [
-        "Тут з'являтимуться файли й теки, якими поділилися з вами інші користувачі"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Лише файли (без фотографій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }) — загалом до 100 ГБ, 100 000 файлів та 50 ГБ на файл"
       ],
@@ -5794,9 +5310,6 @@
       ],
       "Folder will not be uploaded": [
         "Теку не буде вивантажено"
-      ],
-      "Folders you sync from your computer will appear here.": [
-        "Тут з'являться теки, які ви синхронізуєте з комп'ютера."
       ],
       "for ${ price }": [
         "за ${ price }"
@@ -5810,23 +5323,8 @@
       "Free 5GB encrypted storage to get started": [
         "Безплатно 5Гб зашифрованого сховища для початку"
       ],
-      "from the version history?": [
-        "з історії версій?"
-      ],
       "Geoblocking": [
         "Геоблокування"
-      ],
-      "Get logs and other information for technical support and troubleshooting": [
-        "Отримання журналів та іншої інформації для технічної підтримки та усунення проблем"
-      ],
-      "Get the app to backup photos from your phone or upload them here.": [
-        "Отримайте програму, щоб створювати резервні копії фотографій зі свого телефона, або вивантажте їх сюди."
-      ],
-      "Get the desktop app to sync files from your computer.": [
-        "Отримайте програму для синхронізації файлів на вашому комп'ютері."
-      ],
-      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
-        "Ознайомтеся з ${ DRIVE_APP_NAME } та отримайте винагороду – 3 ГБ обсягу сховища! Не зволікайте."
       ],
       "Google Pay mark": [
         "Знак Google Pay"
@@ -5840,14 +5338,8 @@
       "High Priority": [
         "Високий пріоритет"
       ],
-      "How does encrypted search work?": [
-        "Як працює зашифрований пошук?"
-      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Цим я добросовісно підтверджую, що інформація та твердження, містяться в цьому звіті, є правильними та повними."
-      ],
-      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
-        "Якщо ці файли не завантажено повністю локально на пристрій ${ deviceName }, ви втратите доступ до них."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
@@ -5860,9 +5352,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
-      ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "Якщо у вас є щось із вказаного, перейдіть до налаштувань облікового запису ${ BRAND_NAME }, щоб почати процес розблокування."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "Якщо ви втратили доступ до своєї програми-автентифікатора, ви можете скористатися 1 із 16 резервних кодів відновлення, наданих під час налаштування двоетапної перевірки. ${ learnMoreLink }"
@@ -5912,38 +5401,8 @@
       "Included": [
         "Включено"
       ],
-      "Index is empty.": [
-        "Індекс порожній."
-      ],
-      "Indexed ${ first }": [
-        "Індексовано ${ first }"
-      ],
-      "Indexed ${ first } and ${ second }": [
-        "Індексовано ${ first } та ${ second }"
-      ],
-      "Indexed ${ first }, ${ second } and ${ third }": [
-        "Індексовано ${ first }, ${ second } та ${ third }"
-      ],
-      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
-        "Індексовано ${ first }, ${ second }, ${ third } та ${ fourth }"
-      ],
-      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "Індексування перейшло в неочікуваний стан і не може продовжуватися. Перебудуйте індекс для відновлення."
-      ],
-      "Indexing in progress": [
-        "Індексування триває"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Індексування елементів ${ esProgress } з ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Індексування результатів пошуку…"
-      ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
-      ],
-      "Integrity issues found": [
-        "Виявлено проблеми з цілісністю"
       ],
       "Internet connection lost": [
         "Втрачено інтернет-з'єднання"
@@ -5954,17 +5413,8 @@
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
       ],
-      "Invitation confirmed": [
-        "Запрошення підтверджено"
-      ],
       "Invite link copied": [
         "Посилання на запрошення скопійовано"
-      ],
-      "iOS and Android Apps": [
-        "iOS and Android Apps"
-      ],
-      "Issues found": [
-        "Виявлено проблеми"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Схоже, що ви нещодавно намагалися завантажити ${ uploadName }. Якщо не вдалося завантажити, ${ replaceFile }. Якщо завантаження досі триває, заміна файлу скасує поточне завантаження."
@@ -5972,29 +5422,11 @@
       "It's better to have:": [
         "Бажано мати:"
       ],
-      "Items in the trash will stay here until you delete them permanently": [
-        "Елементи залишатимуться у смітнику, доки ви не видалите їх остаточно"
-      ],
-      "Items moved to the trash will stay here until deleted": [
-        "Елементи, переміщені до смітника, залишатимуться в ньому, доки ви їх не видалите"
-      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Найкраще використовувати VPN постійно. Але ось випадки, коли загрози кібербезпеці можуть бути найвищими:"
       ],
-      "It’s easy and secure": [
-        "Це легко та безпечно"
-      ],
-      "Jan": [
-        "січ"
-      ],
       "JCB logo": [
         "Логотип JCB"
-      ],
-      "Jul": [
-        "лип"
-      ],
-      "Jun": [
-        "черв"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
@@ -6013,9 +5445,6 @@
       ],
       "Large imports can take several days.": [
         "Великий обсяг імпортування може тривати кілька днів."
-      ],
-      "Last week": [
-        "Минулого тижня"
       ],
       "Learn more": [
         "Докладніше"
@@ -6041,9 +5470,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Будь ласка, зачекайте доки завантажується календар. Вас буде переспрямовано на нашу платформу планування Calendly в новій вкладці."
       ],
-      "Loading links": [
-        "Завантаження посилань"
-      ],
       "Loading preview": [
         "Завантаження попереднього перегляду"
       ],
@@ -6053,14 +5479,8 @@
       "Low Priority": [
         "Низький пріоритет"
       ],
-      "Makes your account safer": [
-        "Робить ваш обліковий запис надійнішим"
-      ],
       "Malware detected": [
         "Виявлено зловмисні програми"
-      ],
-      "Mar": [
-        "бер"
       ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
@@ -6070,9 +5490,6 @@
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символи",
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символів",
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символів"
-      ],
-      "May": [
-        "трав"
       ],
       "Medium Priority": [
         "Середній пріоритет"
@@ -6089,35 +5506,8 @@
       "Monitor accounts": [
         "Моніторинг облікових записів"
       ],
-      "More": [
-        "Докладніше"
-      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Більшість публічних мереж WiFi є безпечними, але деяким бракує безпеки, що наражає вас на кіберзагрози. VPN шифрує ваш трафік, забезпечуючи ваш захист."
-      ],
-      "Move ${ dragCount } item": [
-        "Перемістити ${ dragCount } елемент",
-        "Перемістити ${ dragCount } елементи",
-        "Перемістити ${ dragCount } елементів",
-        "Перемістити ${ dragCount } елементів"
-      ],
-      "Move ${ fileCount } file": [
-        "Перемістити ${ fileCount } файл",
-        "Перемістити ${ fileCount } файли",
-        "Перемістити ${ fileCount } файлів",
-        "Перемістити ${ fileCount } файлів"
-      ],
-      "Move ${ folderCount } folder": [
-        "Перемістити ${ folderCount } папку",
-        "Перемістити ${ folderCount } папки",
-        "Перемістити ${ folderCount } папок",
-        "Перемістити ${ folderCount } папок"
-      ],
-      "Moving files": [
-        "Переміщення файлів"
-      ],
-      "My Links": [
-        "Мої посилання"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
@@ -6128,9 +5518,6 @@
       "No": [
         "Ні"
       ],
-      "No Albums": [
-        "Немає альбомів"
-      ],
       "No contacts added yet": [
         "Контактів ще не додано"
       ],
@@ -6140,20 +5527,11 @@
       "No group found": [
         "Групу не знайдено"
       ],
-      "No issue found": [
-        "Проблем не виявлено"
-      ],
       "No payment is required at this time.": [
         "Наразі платіж не вимагається."
       ],
-      "No populator states found.": [
-        "Не знайдено жодного стану наповнювача."
-      ],
       "No results found": [
         "Результатів не знайдено"
-      ],
-      "No synced folders": [
-        "Немає синхронізованих тек"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Жоден із завантажених ключів не є дійсним для шифрування. Щоб мати можливість надсилати повідомлення на цю адресу, завантажте дійсний ключ або вимкніть функцію \"Шифрувати листи\"."
@@ -6164,15 +5542,6 @@
       "Not connected": [
         "Не під’єднано"
       ],
-      "Not enough storage space": [
-        "Недостатньо простору сховища"
-      ],
-      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Примітка: дані можуть бути досі доступними локально на пристроях, де встановлено ${ DRIVE_APP_NAME }."
-      ],
-      "Nov": [
-        "лист"
-      ],
       "Number of dedicated servers in the organization": [
         "Кількість виділених серверів у організації"
       ],
@@ -6182,20 +5551,11 @@
       "Numbers": [
         "Числа"
       ],
-      "Oct": [
-        "жовт"
-      ],
       "of": [
         "з"
       ],
       "On public WiFi networks": [
         "У публічних мережах WiFi"
-      ],
-      "One encrypted suite. Full business protection.": [
-        "Один зашифрований пакет програм. Повний бізнес-захист."
-      ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "Один з ваших зашифрованих пристроїв заблоковано. Швидше за все це пов'язано з недавнім скиданням пароля."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Власник одного або кількох ваших довірених ключів позначив їх \"скомпрометованими\". Ми радимо вам \"скасувати довіру\" для цих ключів."
@@ -6205,9 +5565,6 @@
       ],
       "or discover other features:": [
         "або ознайомтеся з іншими функціями:"
-      ],
-      "Or use the \"+ New\" button": [
-        "Або скористайтеся кнопкою \"+ Додати\""
       ],
       "Organization size": [
         "Розмір організації"
@@ -6239,32 +5596,11 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежі та приватність захищені TLS-шифруванням та швейцарським законодавством."
       ],
-      "Permanently delete all files in your locked drive": [
-        "Остаточно видаліть усі файли у своєму заблокованому сховищі"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline сумісний лише з форматом звичайного тексту."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME автоматично надсилає повідомлення, використовуючи поточний режим написання."
-      ],
-      "Photo is not saved to your library": [
-        "Фото не збережено у вашій бібліотеці"
-      ],
-      "Photo is set as album cover": [
-        "Фотографію встановлено як обкладинку альбому"
-      ],
-      "Photo saved to your Drive": [
-        "Фотографію збережено на ваш Диск",
-        "Фотографії збережено на ваш Диск",
-        "Фотографії збережено на ваш Диск",
-        "Фотографії збережено на ваш Диск"
-      ],
-      "Photo was copied to stream and marked favorite there.": [
-        "Фото було скопійовано в потік і позначено там як улюблене."
-      ],
-      "Photos have been successfully recovered.": [
-        "Фотографії успішно відновлено."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Попросіть власника безпосередньо надати вам доступ до документа."
@@ -6347,12 +5683,6 @@
       "Preview of documents is not yet supported.": [
         "Попередній перегляд документів наразі не підтримується."
       ],
-      "Previous versions are kept for ${ retentionLabel }": [
-        "Попередні версії зберігаються ${ retentionLabel }"
-      ],
-      "Previous versions are not saved": [
-        "Попередні версії не збережено"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
       ],
@@ -6362,29 +5692,14 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Приватний перегляд (або режим «інкогніто») корисний лише для приховування ваших дій на вашому пристрої. Він не дозволяє вашому браузеру зберігати історію та файли cookie, але не робить вас невидимими. Ваш ISP, адміністратор мережі та вебсайти, які ви відвідуєте, усе одно можуть бачити, що ви робите онлайн."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Приватний пошук увімкнено. Тепер ви можете закрити це діалогове вікно та здійснити пошук файлів і тек."
-      ],
-      "Public link": [
-        "Публічне посилання"
-      ],
       "Public sharing of documents is not yet supported.": [
         "Загальнодоступний обмін документами наразі не підтримується."
-      ],
-      "Re-indexing in progress": [
-        "Повторне індексування триває"
-      ],
-      "Ready to add some photos?": [
-        "Готові додати фотографії?"
       ],
       "RECOMMENDED": [
         "РЕКОМЕНДОВАНО"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інформація про відновлення залишиться на цьому пристрої, якщо ви не вирішите її видалити."
-      ],
-      "Recovery process might take some time.": [
-        "Процес відновлення може тривати деякий час."
       ],
       "Referral link copied to your clipboard": [
         "Реферальне посилання успішно скопійовано до буферу обміну"
@@ -6398,26 +5713,14 @@
       "Report has been sent": [
         "Звіт надіслано"
       ],
-      "Request access, or switch to an account with access.": [
-        "Попросіть доступ або перемкніться на обліковий запис із доступом."
-      ],
       "Requested item doesn't exist anymore": [
         "Запитуваний елемент більше не існує"
       ],
       "Restore": [
         "Відновити"
       ],
-      "Restore Photos": [
-        "Відновити фотографії"
-      ],
       "Restored files ${ formattedDate }": [
         "Відновлені файли ${ formattedDate }"
-      ],
-      "Restoring Photos... Please keep the tab open": [
-        "Відновлення фотографій... Залиште вкладку відкритою"
-      ],
-      "Running diagnostics...": [
-        "Запуск діагностики..."
       ],
       "Saving...": [
         "Збереження..."
@@ -6425,65 +5728,17 @@
       "Scan the QR code with your mobile device": [
         "Відскануйте QR-код за допомогою мобільного пристрою"
       ],
-      "Scan to download": [
-        "Відскануйте, щоб завантажити"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Неможливо увімкнути пошук у цьому браузері"
-      ],
-      "Search data is corrupted": [
-        "Дані пошуку пошкоджено"
-      ],
-      "Search Enabled": [
-        "Пошук увімкнено"
-      ],
-      "Search enabled. You may now close this dialogue and search for files and folders.": [
-        "Пошук увімкнено. Тепер ви можете закрити це діалогове вікно та шукати файли й папки."
-      ],
-      "Search encountered an internal error. Rebuild the index to recover.": [
-        "Під час пошуку виникла внутрішня помилка. Перебудуйте індекс для відновлення."
-      ],
-      "Search engine error": [
-        "Помилка пошукового рушія"
-      ],
-      "Search error": [
-        "Помилка пошуку"
-      ],
-      "Search is in an invalid state": [
-        "Пошук знаходиться в недійсному стані"
-      ],
-      "Search is ready. Your files have been indexed.": [
-        "Пошук готовий. Ваші файли проіндексовано."
-      ],
-      "Search module is not available.": [
-        "Модуль пошуку недоступний."
-      ],
       "Select a destination folder": [
         "Виберіть папку призначення"
       ],
-      "Select a folder to make the copy in": [
-        "Виберіть папку для створення копії"
-      ],
       "Select a folder to move to.": [
         "Виберіть теку для переміщення."
-      ],
-      "Select all items for": [
-        "Виберіть усі елементи для"
-      ],
-      "Select an uploaded file or folder and create a link to it.": [
-        "Виберіть вивантажений файл або теку та створіть посилання на них."
-      ],
-      "Select item": [
-        "Виберіть елемент"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
-      ],
-      "Sep": [
-        "верес"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Платежі SEPA наразі недоступні. Спробуйте пізніше."
@@ -6506,23 +5761,8 @@
       "Setting up your new address…": [
         "Налаштування вашої нової адреси…"
       ],
-      "Share files with links": [
-        "Поділіться файлами за допомогою посилань"
-      ],
-      "Shared": [
-        "Спільний доступ"
-      ],
-      "Shared by ": [
-        "Поширено користувачем "
-      ],
       "Shared link not found": [
         "Спільне посилання не знайдено"
-      ],
-      "Shared with me": [
-        "Поширено для мене"
-      ],
-      "Shared with you": [
-        "Поділилися з вами"
       ],
       "Signature check will be ignored": [
         "Перевіркою підпису буде знехтувано"
@@ -6535,12 +5775,6 @@
       ],
       "Some items failed": [
         "Помилка передавання деяких елементів"
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Деякі з ваших файлів більше недоступні. Відновіть доступ до файлів. ${ StartRecoveryButton }"
-      ],
-      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Деякі фотографії в цьому альбомі не збережено у вашій стрічці. Видалення цього альбому назавжди видалить ці фотографії."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Деякі вебсайти та служби потокової трансляції блокують вміст за регіоном. VPN дає змогу обходити ці обмеження та вільно користуватися інтернетом."
@@ -6590,9 +5824,6 @@
       "that": [
         "що"
       ],
-      "The albums you create are shown here.": [
-        "Створені вами альбоми відображатимуться тут."
-      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Кількість завантажень включає як фактичні завантаження, так і випадки попереднього перегляду файлів."
       ],
@@ -6605,17 +5836,11 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Власник цієї адреси вимкнув наскрізне шифрування. Щоб мати можливість надсилати зашифровані листи на цю адресу, він повинен повторно ввімкнути шифрування."
       ],
-      "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "Пошуковий рушій зіткнувся з внутрішньою помилкою. Перебудуйте індекс для відновлення."
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Під час підтвердження відкриється нова вкладка браузера. Будь ласка, вимкніть будь-які активні засоби блокування спливних вікон."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Є файли, які ще потрібно передати. Закриття менеджера передачі завершить усі операції."
-      ],
-      "There is nothing to see here": [
-        "Тут нічого немає"
       ],
       "This action will delete the link and revoke access for all users.": [
         "Ця дія видалить посилання і відкличе доступ для всіх користувачів."
@@ -6625,9 +5850,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Цей браузер не підтримує перегляд PDF документів. Будь ласка, завантажте файл."
-      ],
-      "This can NOT be undone. Please enter the device name to confirm removal.": [
-        "Це НЕ можна скасувати. Будь ласка, введіть назву пристрою, щоб підтвердити вилучення."
       ],
       "This file appears to be empty:": [
         "Цей файл здається порожнім:",
@@ -6650,12 +5872,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Тепер це ваша ${ defaultEmailAddress } для надсилання нових повідомлень."
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "Цей елемент не збережено у вашій бібліотеці Фото. Якщо ви вилучите його з цього альбому, ви назавжди втратите доступ до нього.",
-        "Деякі з вибраних елементів не збережено у вашій бібліотеці Фото. Якщо ви вилучите їх із цього альбому, ви назавжди втратите доступ до них.",
-        "Деякі з вибраних елементів не збережено у вашій бібліотеці Фото. Якщо ви вилучите їх із цього альбому, ви назавжди втратите доступ до них.",
-        "Деякі з вибраних елементів не збережено у вашій бібліотеці Фото. Якщо ви вилучите їх із цього альбому, ви назавжди втратите доступ до них."
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
       ],
@@ -6664,9 +5880,6 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Це означає, що ваш ISP та вебсайти, які ви відвідуєте, не можуть пов'язати ваші особисті дані з вашими діями онлайн."
-      ],
-      "This month": [
-        "Цього місяця"
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Цей унікальний код може використовуватися вебсайтами та ISP (інтернет-провайдерами), щоб пов'язати ваше розташування та історію переглядів із вашим пристроєм"
@@ -6679,9 +5892,6 @@
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Це скасує всі решту вивантажень. Скасовані файли не збережуться в ${ DRIVE_APP_NAME }."
-      ],
-      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "Це призведе лише до видалення альбому. Ваші фотографії залишаться у вашій стрічці. Цю дію неможливо скасувати."
       ],
       "This will permanently delete the file you uploaded.": [
         "Це назавжди видалить вивантажений вами файл."
@@ -6701,20 +5911,11 @@
       "This will sign you out of all accounts currently logged in.": [
         "Ви вийдете з усіх облікових записів, до яких наразі увійшли."
       ],
-      "Time": [
-        "Час"
-      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Щоб завершити платіж, надішліть ${ btcAmountBold } на вказану нижче адресу."
       ],
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "Щоб завантажити ці файли, відкрийте їх у ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME } та експортуйте їх."
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Щоб увімкнути повноцінний приватний пошук, ${ DRIVE_APP_NAME } повинен індексувати ваші файли локально."
-      ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Для забезпечення дійсно приватного пошуку нам необхідно індексувати ваші локальні файли. Ви й надалі можете користуватися ${ DRIVE_APP_NAME } як зазвичай – ми повідомимо, коли індексування завершиться."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
@@ -6737,9 +5938,6 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для використання перевірки адреси ви повинні зробити довіреним один чи декілька доступних відкритих ключів, включаючи той, який ви хочете використовувати для надсилання. Це запобігає підроблюванню ключів шифрування."
       ],
-      "Today": [
-        "Сьогодні"
-      ],
       "Total email addresses": [
         "Усього адрес електронної пошти"
       ],
@@ -6758,29 +5956,17 @@
       "Trash": [
         "Смітник"
       ],
-      "Trash is empty": [
-        "Смітник порожній"
-      ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Довіряти ключу «${ activeSignerText }» для перевірки нових повідомлень від цього контакту."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
       ],
-      "Try searching by file name, date, or type.": [
-        "Спробуйте пошук за назвою, датою або типом файлу."
-      ],
       "Unexpected download error": [
         "Неочікувана помилка завантаження"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "На жаль, схоже що неможливо розшифрувати файл або його вміст."
-      ],
-      "Unknown date": [
-        "Невідома дата"
-      ],
-      "Unlock drive to recover files": [
-        "Розблокувати сховище, щоб відновити файли"
       ],
       "Unsaved changes": [
         "Незбережені зміни"
@@ -6790,12 +5976,6 @@
       ],
       "Unsupported file type for Photos": [
         "Непідтримуваний тип файлу для Фото"
-      ],
-      "Update required": [
-        "Необхідне оновлення"
-      ],
-      "Updating drive search...": [
-        "Оновлення пошуку на диску..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Покращте тарифний план у будь-який час, щоб перенести решту"
@@ -6811,9 +5991,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Покращте тарифний план, щоб зберегти переваги ${ planTitle }."
-      ],
-      "upgrade your storage": [
-        "покращте своє сховище"
       ],
       "Upload Failed": [
         "Помилка вивантаження"
@@ -6845,12 +6022,6 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Під час перевірки відкриється нова вкладка. Будь ласка, вимкніть всі блокувальники вмісту. З вас не стягуватиметься плата. Невелика сума, що зніметься з вашої картки під час перевірки, негайно повернеться."
       ],
-      "Version is deleted": [
-        "Версію видалено"
-      ],
-      "Version is restored": [
-        "Версію відновлено"
-      ],
       "Version number successfully copied to clipboard": [
         "Номер версії успішно скопійовано до буфера обміну"
       ],
@@ -6863,20 +6034,8 @@
       "Waiting": [
         "Очікування"
       ],
-      "Want to sync files faster?": [
-        "Хочете синхронізувати файли швидше?"
-      ],
       "Warning": [
         "Попередження"
-      ],
-      "Way to go, you've just increased your storage to 5 GB!": [
-        "Так тримати! Ви щойно збільшили своє сховище до 5 ГБ!"
-      ],
-      "We couldn't save this photo to your Drive": [
-        "Нам не вдалося зберегти цю фотографію на ваш Диск",
-        "Нам не вдалося зберегти кілька фотографій на ваш Диск",
-        "Нам не вдалося зберегти кілька фотографій на ваш Диск",
-        "Нам не вдалося зберегти кілька фотографій на ваш Диск"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Ми не змогли перевірити, що ${ nameAuthor } вивантажив ${ nodeName }. Можливо, було порушено такий елемент: порядок даних файлу. Відкривайте лише в тому випадку, якщо ви довіряєте йому."
@@ -6892,12 +6051,6 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Ми використовуємо 3-D Secure для захисту ваших платежів"
-      ],
-      "We were not able to add this photo to your album": [
-        "Нам не вдалося додати цю фотографію до вашого альбому",
-        "Нам не вдалося додати деякі фотографії до вашого альбому",
-        "Нам не вдалося додати деякі фотографії до вашого альбому",
-        "Нам не вдалося додати деякі фотографії до вашого альбому"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ми перенаправимо вас на PayPal на новій вкладці браузера для завершення цієї транзакції. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
@@ -6917,13 +6070,7 @@
       "Week": [
         "Тиждень"
       ],
-      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
-        "Ласкаво просимо до ${ DRIVE_APP_NAME }! Протягом перших 10 хвилин будь-які вивантажені файли не зараховуються до ліміту вашого сховища."
-      ],
       "What do you want to do?": [
-        "Що ви бажаєте зробити?"
-      ],
-      "What would you like to do?": [
         "Що ви бажаєте зробити?"
       ],
       "When working remotely": [
@@ -6932,17 +6079,11 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Коли ви підключаєтеся до VPN, використовується технологія шифрування, щоб сховати вашу IP-адресу (унікальний код, призначений вашому пристрою)."
       ],
-      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
-        "Якщо ви вилучите пристрій ${ deviceName } як синхронізований, усі папки, додані до розділу «Мої комп’ютери» з цього пристрою, будуть остаточно видалені з ${ DRIVE_APP_NAME }."
-      ],
       "who": [
         "хто"
       ],
       "Who has access": [
         "Хто має доступ"
-      ],
-      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
-        "буде відновлено до версії від ${ formattedRevisionDate }. Усі інші версії буде збережено."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
@@ -6950,35 +6091,17 @@
       "Would you like to receive a new verification code?": [
         "Бажаєте отримати новий код підтвердження?"
       ],
-      "Would you like to restore your files?": [
-        "Відновити ваші файли?"
-      ],
-      "Would you like to save it before removing?": [
-        "Бажаєте зберегти його перед вилученням?",
-        "Бажаєте зберегти їх перед вилученням?",
-        "Бажаєте зберегти їх перед вилученням?",
-        "Бажаєте зберегти їх перед вилученням?"
-      ],
-      "Would you like to save them before removing?": [
-        "Бажаєте зберегти їх перед вилученням?"
-      ],
       "Writing assistant": [
         "Помічник з написання"
       ],
       "Yes": [
         "Так"
       ],
-      "Yesterday": [
-        "Учора"
-      ],
       "you": [
         "ви"
       ],
       "You already have a free account": [
         "У мене вже є безплатний обліковий запис"
-      ],
-      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Ви збираєтеся покинути спільний об'єкт. Ви не зможете отримати до нього доступ знову, доки власник не поділиться ним з вами."
       ],
       "You are about to open another browser tab and visit:": [
         "Ви збираєтесь відкрити іншу вкладку браузера й відвідати:"
@@ -7028,17 +6151,8 @@
       "You cannot undo this action.": [
         "Цю дію не можна скасувати."
       ],
-      "You don't have permission to copy files to this folder.": [
-        "У вас немає дозволу на копіювання файлів у цю папку."
-      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Ви отримуватимете сповіщення, якщо ваш пароль або інші дані потраплять у витік зі стороннього сервісу."
-      ],
-      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "У вас залишився ${ expiresInDays } день, щоб отримати привітальний бонус у розмірі 3 ГБ та ",
-        "У вас залишилося ${ expiresInDays } дні, щоб отримати привітальний бонус у розмірі 3 ГБ та ",
-        "У вас залишилося ${ expiresInDays } днів, щоб отримати привітальний бонус у розмірі 3 ГБ та ",
-        "У вас залишилося ${ expiresInDays } днів, щоб отримати привітальний бонус у розмірі 3 ГБ та "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас є пробний період передплати ${ planTitle }. Якщо ви бажаєте продовжити передплату після пробного періоду, будь ласка, додайте спосіб оплати."
@@ -7052,20 +6166,11 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Для можливості переходу на тарифний план нижчого рівня ви повинні вилучити будь-яких додаткових користувачів ${ MAIL_APP_NAME }, адреси та власні домени."
       ],
-      "You need access": [
-        "Вам потрібен доступ"
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Ви втратите доступ до ${ planTitle } функцій після цієї дати."
       ],
       "You will lose all unsaved changes.": [
         "Ви втратите всі незбережені зміни."
-      ],
-      "You will need to save it again from the public link page.": [
-        "Вам необхідно буде знову зберегти його зі сторінки з публічним посиланням.",
-        "Вам необхідно буде знову зберегти їх зі сторінки з публічним посиланням.",
-        "Вам необхідно буде знову зберегти їх зі сторінки з публічним посиланням.",
-        "Вам необхідно буде знову зберегти їх зі сторінки з публічним посиланням."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не буде стягнуто плату, якщо ви скасуєте передплату до ${ trialEndsOnFormatted }."
@@ -7106,9 +6211,6 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ваш обліковий запис наразі налаштовано на застосування схеми зворотного нарахування податку. Це не підтримується для вибраного тарифного плану. Щоб продовжити, вилучіть податковий номер ПДВ із платіжної адреси або виберіть інший тарифний план."
       ],
-      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "У вашому браузері закінчилося місце під час індексування файлів для пошуку. Звільніть місце у сховищі, а потім перебудуйте індекс."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."
       ],
@@ -7120,12 +6222,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
-      ],
-      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
-        "Ваші файли повторно індексуються. Ви можете продовжувати пошук — результати можуть бути неповними до завершення. Ми повідомимо вас, коли все буде готово."
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "У зв'язку зі скиданням пароля, ваші файли більше недоступні. Для відновлення доступу повторно вивантажте старий ключ шифрування. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Ваші файли буде зашифровано, а потім збережено"
@@ -7174,12 +6270,6 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Ваш тарифний план обмежений 10 версіями на термін до 7 днів"
-      ],
-      "Your previous password": [
-        "Ваш попередній пароль"
-      ],
-      "Your previous recovery phrase": [
-        "Ваша попередня фраза відновлення"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ваш запланований тарифний план почне діяти ${ renewalTime } й автоматично подовжуватиметься кожен ${ cycle } місяць.",
@@ -7279,17 +6369,8 @@
       ]
     },
     "Label": {
-      "# of downloads": [
-        "# завантажень"
-      ],
-      "${ albumProgress.added } of ${ albumProgress.total }": [
-        "${ albumProgress.added } з ${ albumProgress.total }"
-      ],
       "${ BRAND_NAME } username": [
         "Ім'я користувача ${ BRAND_NAME }"
-      ],
-      "${ downloads } downloads": [
-        "${ downloads } завантажень"
       ],
       "${ n } month": [
         "${ n } місяць",
@@ -7311,9 +6392,6 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "Символів: ${ value.length }/${ maxLength }"
-      ],
-      "(Expired)": [
-        "(Термін дії завершився)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
@@ -7366,9 +6444,6 @@
       "App password": [
         "Пароль програми"
       ],
-      "Applications in a business setting": [
-        "Програми в бізнес-середовищі"
-      ],
       "Apply to all duplicated files": [
         "Застосувати до всіх дублікатів файлів"
       ],
@@ -7377,9 +6452,6 @@
       ],
       "Apply to all unverified items": [
         "Застосувати до всіх неперевірених елементів"
-      ],
-      "Asset": [
-        "Ресурс"
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
@@ -7486,14 +6558,8 @@
       "Country": [
         "Країна"
       ],
-      "Create ${ BRAND_NAME } account": [
-        "Створіть обліковий запис ${ BRAND_NAME }"
-      ],
       "Created": [
         "Створено"
-      ],
-      "Created ${ created }": [
-        "Створено ${ created }"
       ],
       "Credits": [
         "Кредити"
@@ -7501,35 +6567,14 @@
       "Delete": [
         "Видалити"
       ],
-      "Delete drive?": [
-        "Видалити сховище?",
-        "Видалити сховища?",
-        "Видалити сховища?",
-        "Видалити сховища?"
-      ],
       "Delete link and remove access for everyone": [
         "Видалити посилання та вилучити доступ для всіх"
       ],
       "Delete recovery-related information.": [
         "Видалити інформацію повʼязану з відновленням."
       ],
-      "Deleted": [
-        "Видалено"
-      ],
-      "Deleted ${ deleted }": [
-        "Видалено ${ deleted }"
-      ],
       "Device": [
         "Пристрій"
-      ],
-      "Device #${ position }": [
-        "Пристрій №${ position }"
-      ],
-      "Device name": [
-        "Назва пристрою"
-      ],
-      "Device: ${ name }": [
-        "Пристрій: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Вимкнути це посилання у визначену дату"
@@ -7585,12 +6630,6 @@
       "Encrypt emails": [
         "Шифрувати листи"
       ],
-      "Enter device name": [
-        "Уведіть назву пристрою"
-      ],
-      "Environment compatible": [
-        "Сумісне середовище"
-      ],
       "Exact host matching": [
         "Точна відповідність хоста"
       ],
@@ -7600,14 +6639,8 @@
       "Expired": [
         "Термін дії завершився"
       ],
-      "Expired on ${ formatted }": [
-        "Термін дії закінчився ${ formatted }"
-      ],
       "Expires": [
         "Термін дії"
-      ],
-      "Expires ${ formatted }": [
-        "Завершується ${ formatted }"
       ],
       "Expiry": [
         "Термін дії"
@@ -7675,12 +6708,6 @@
       "Include message and file name in invite email": [
         "Додайте повідомлення та ім'я файлу до листа-запрошення"
       ],
-      "Index kinds": [
-        "Типи індексів"
-      ],
-      "Indexing": [
-        "Індексування"
-      ],
       "Integrated 2FA authenticator": [
         "Інтегрований автентифікатор 2FA"
       ],
@@ -7711,9 +6738,6 @@
       "Location": [
         "Розташування"
       ],
-      "Location: ${ item.location }": [
-        "Розташування: ${ item.location }"
-      ],
       "Log in or sign up ": [
         "Увійти або зареєструватися "
       ],
@@ -7735,9 +6759,6 @@
       "Modified": [
         "Змінено"
       ],
-      "Modified ${ modified }": [
-        "Змінено ${ modified }"
-      ],
       "Move to Archive": [
         "Перемістити до архіву"
       ],
@@ -7747,9 +6768,6 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Має містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
       ],
-      "My Albums": [
-        "Мої альбоми"
-      ],
       "Name": [
         "Назва"
       ],
@@ -7758,9 +6776,6 @@
       ],
       "Never": [
         "Ніколи"
-      ],
-      "Never expires": [
-        "Термін дії не обмежений"
       ],
       "Never fill on this exact URL": [
         "Ніколи не заповнювати на цій точній URL-адресі"
@@ -7795,9 +6810,6 @@
       "Other": [
         "Інше"
       ],
-      "Outdated version": [
-        "Застаріла версія"
-      ],
       "Parent domain and subdomains (default)": [
         "Основний домен і піддомени (типовий)"
       ],
@@ -7816,17 +6828,11 @@
       "Payment method": [
         "Спосіб оплати"
       ],
-      "Pending invitation": [
-        "Запрошення в черзі"
-      ],
       "PGP scheme": [
         "PGP-схема"
       ],
       "Phone number": [
         "Номер телефону"
-      ],
-      "Photo": [
-        "Фото"
       ],
       "Please provide full details to help us take appropriate action": [
         "Будь ласка, надайте повну інформацію, щоб допомогти нам виконати відповідні дії"
@@ -7870,9 +6876,6 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
-      "Searchable": [
-        "Доступно для пошуку"
-      ],
       "Select type of abuse": [
         "Виберіть тип порушення"
       ],
@@ -7882,35 +6885,11 @@
       "Set a password to limit access via link": [
         "Встановіть пароль, щоб обмежити доступ за посиланням"
       ],
-      "Set recovery method": [
-        "Налаштуйте спосіб відновлення"
-      ],
-      "Share a file, folder, or album": [
-        "Поділитись файлом, папкою або альбомом"
-      ],
       "Shared": [
         "Спільний доступ"
       ],
-      "Shared by": [
-        "Поширено користувачем"
-      ],
-      "Shared by ${ sharedBy }": [
-        "Спільний доступ надано користувачем ${ sharedBy }"
-      ],
-      "Shared by Public link": [
-        "Надано спільний доступ за публічним посиланням"
-      ],
-      "Shared on": [
-        "Поширено"
-      ],
-      "Shared on ${ sharedOn }": [
-        "Спільний доступ надано ${ sharedOn }"
-      ],
       "Shared with me": [
         "Поширено для мене"
-      ],
-      "Show indexing progress of Encrypted Search": [
-        "Показувати хід індексування зашифрованого пошуку"
       ],
       "Sign emails": [
         "Підписувати листи"
@@ -7969,9 +6948,6 @@
       "Theme": [
         "Тема"
       ],
-      "This will permanently delete all files in your locked drive.": [
-        "Це остаточно видалить усі файли у вашому сховищі."
-      ],
       "Thomas": [
         "Томас"
       ],
@@ -7984,29 +6960,14 @@
       "Type": [
         "Тип"
       ],
-      "Unlock drive": [
-        "Розблокувати сховище"
-      ],
-      "Unlock drive (recommended)": [
-        "Розблокувати сховище (рекомендується)"
-      ],
-      "Unlock later": [
-        "Розблокувати пізніше"
-      ],
       "Upload picture": [
         "Завантажити зображення"
-      ],
-      "Upload your first file": [
-        "Вивантажте свій перший файл"
       ],
       "Uploaded by": [
         "Вивантажено"
       ],
       "URL wildcard pattern": [
         "Шаблон URL-адреси із символом підставлення"
-      ],
-      "User opted in": [
-        "Користувач погодився"
       ],
       "Username": [
         "Ім'я користувача"
@@ -8019,9 +6980,6 @@
       ],
       "Viewer": [
         "Користувач"
-      ],
-      "Visible columns:": [
-        "Видимі стовпці:"
       ],
       "Vulnerable": [
         "Вразливий"
@@ -8037,9 +6995,6 @@
       ],
       "What happened?": [
         "Що сталося?"
-      ],
-      "Yes, I want to permanently delete my old files": [
-        "Так, я хочу остаточно видалити свої старі файли"
       ],
       "Your alias": [
         "Ваш псевдонім"
@@ -8131,9 +7086,6 @@
       "Add a gift code": [
         "Додати подарунковий код"
       ],
-      "Albums": [
-        "Альбоми"
-      ],
       "clearing your browser cache": [
         "очищення кешу браузера"
       ],
@@ -8194,9 +7146,6 @@
       "Pay invoice": [
         "Сплатити рахунок"
       ],
-      "Photos": [
-        "Фото"
-      ],
       "Reactivate now": [
         "Повторно активувати"
       ],
@@ -8211,12 +7160,6 @@
       ],
       "settings": [
         "налаштування"
-      ],
-      "Shared": [
-        "Спільний доступ"
-      ],
-      "Shared with me": [
-        "Поширено для мене"
       ],
       "Terms and conditions": [
         "Умови та положення"
@@ -9692,41 +8635,14 @@
       ]
     },
     "Notification": {
-      "\"${ ellipsedName }\" copied": [
-        "«${ ellipsedName }» скопійовано"
-      ],
       "\"${ ellipsedName }\" created successfully": [
         "«${ ellipsedName }» успішно створено"
-      ],
-      "\"${ ellipsedName }\" deleted": [
-        "«${ ellipsedName }» видалено"
-      ],
-      "\"${ ellipsedName }\" deleted permanently from trash": [
-        "«${ ellipsedName }» остаточно видалено зі Смітника"
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "Не вдалося створити «${ ellipsedName }»"
       ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "«${ ellipsedName }» не вдалося видалити"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "«${ ellipsedName }» не вдалося остаточно видалити зі Смітника"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "«${ ellipsedName }» не вдалося перемістити"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "«${ ellipsedName }» не вдалося відновити зі Смітника"
-      ],
       "\"${ ellipsedName }\" moved": [
         "«${ ellipsedName }» переміщено"
-      ],
-      "\"${ ellipsedName }\" restored from trash": [
-        "«${ ellipsedName }» відновлено зі Смітника"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "«${ ellipsedName }» успішно переміщено"
       ],
       "\"${ fileName }\" shared": [
         "Надано спільний доступ до «${ fileName }»"
@@ -9746,47 +8662,17 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" успішно перейменовано"
       ],
-      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
-        "${ addedUids.length } фотографію додано до альбому «${ albumName }»",
-        "${ addedUids.length } фотографії додано до альбому «${ albumName }»",
-        "${ addedUids.length } фотографій додано до альбому «${ albumName }»",
-        "${ addedUids.length } фотографій додано до альбому «${ albumName }»"
-      ],
       "${ count } item failed to be decrypted": [
         "Не вдалося розшифрувати ${ count } елемент",
         "Не вдалося розшифрувати ${ count } елементи",
         "Не вдалося розшифрувати ${ count } елементів",
         "Не вдалося розшифрувати ${ count } елемента"
       ],
-      "${ errors.length } item failed to be copied": [
-        "Не вдалося скопіювати ${ errors.length } елемент",
-        "Не вдалося скопіювати ${ errors.length } елементи",
-        "Не вдалося скопіювати ${ errors.length } елементів",
-        "Не вдалося скопіювати ${ errors.length } елементи"
-      ],
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } елемент не вдалося видалити",
         "${ errors.length } елементи не вдалося видалити",
         "${ errors.length } елементів не вдалося видалити",
         "${ errors.length } елементів не вдалося видалити"
-      ],
-      "${ errors.length } item failed to be trashed": [
-        "${ errors.length } елемент не вдалося перемістити в Смітник",
-        "${ errors.length } елементи не вдалося перемістити в Смітник",
-        "${ errors.length } елементів не вдалося перемістити в Смітник",
-        "${ errors.length } елементи не вдалося перемістити в Смітник"
-      ],
-      "${ numberOfItems } copied item moved to trash": [
-        "${ numberOfItems } скопійований елемент переміщено в Смітник",
-        "${ numberOfItems } скопійованих елементи переміщено в Смітник",
-        "${ numberOfItems } скопійованих елементів переміщено в Смітник",
-        "${ numberOfItems } скопійованих елементи переміщено в Смітник"
-      ],
-      "${ numberOfItems } item copied": [
-        "Скопійовано ${ numberOfItems } елемент",
-        "Скопійовано ${ numberOfItems } елементи",
-        "Скопійовано ${ numberOfItems } елементів",
-        "Скопійовано ${ numberOfItems } елементів"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } елемент видалено",
@@ -9848,35 +8734,17 @@
         "${ numberOfItems } елементів відновлено зі смітника",
         "${ numberOfItems } елементів відновлено зі смітника"
       ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } елемент успішно переміщено",
-        "${ numberOfItems } елементи успішно переміщено",
-        "${ numberOfItems } елементів успішно переміщено",
-        "${ numberOfItems } елементів успішно переміщено"
-      ],
       "${ reason } has been disabled": [
         "${ reason } вимкнено"
       ],
       "${ reason } has been enabled": [
         "${ reason } увімкнено"
       ],
-      "${ removed } photo have been removed from \"${ albumName }\"": [
-        "${ removed } фотографію вилучено з альбому «${ albumName }»",
-        "${ removed } фотографії вилучено з альбому «${ albumName }»",
-        "${ removed } фотографій вилучено з альбому «${ albumName }»",
-        "${ removed } фотографій вилучено з альбому «${ albumName }»"
-      ],
       "Access for the member removed": [
         "Доступ для учасника вилучено"
       ],
       "Access updated": [
         "Доступ оновлено"
-      ],
-      "Album renamed successfully": [
-        "Альбом успішно перейменовано"
-      ],
-      "All items deleted permanently from trash": [
-        "Усі елементи назавжди видалено зі смітника"
       ],
       "Cannot load link": [
         "Не вдалося завантажити посилання"
@@ -9890,9 +8758,6 @@
       "Contact group updated": [
         "Групу контактів оновлено"
       ],
-      "Copy of \"${ ellipsedName }\" moved to trash": [
-        "Копію «${ ellipsedName }» переміщено до Смітника"
-      ],
       "Device failed to be removed": [
         "Не вдалося вилучити пристрій"
       ],
@@ -9905,12 +8770,6 @@
       "Device renamed": [
         "Пристрій перейменовано"
       ],
-      "Encrypted search activated": [
-        "Зашифрований пошук активовано"
-      ],
-      "Error while listing devices": [
-        "Помилка під час отримання списку пристроїв"
-      ],
       "Failed to accept share invitation": [
         "Не вдалося прийняти запрошення на спільний доступ"
       ],
@@ -9922,18 +8781,6 @@
       ],
       "Failed to reject share invitation": [
         "Не вдалося відхилити запрошення, яким поділилися"
-      ],
-      "Failed to remove device": [
-        "Не вдалося вилучити пристрій"
-      ],
-      "Failed to remove the file": [
-        "Не вдалося вилучити файл"
-      ],
-      "Failed to rename device": [
-        "Не вдалося перейменувати пристрій"
-      ],
-      "File removed": [
-        "Файл вилучено"
       ],
       "Invitation's email was sent again": [
         "Лист із запрошенням надіслано знову"
@@ -9962,18 +8809,6 @@
       "Public link access updated": [
         "Доступ до публічного посилання оновлено"
       ],
-      "Selected item was not removed from your list": [
-        "Вибраний елемент не вдалося вилучити з вашого списку",
-        "Вибрані елементи не вдалося вилучити з вашого списку",
-        "Вибрані елементи не вдалося вилучити з вашого списку",
-        "Вибрані елементи не вдалося вилучити з вашого списку"
-      ],
-      "Selected item was successfully removed from your list": [
-        "Вибраний елемент успішно вилучено з вашого списку",
-        "Вибрані елементи успішно вилучено з вашого списку",
-        "Вибрані елементи успішно вилучено з вашого списку",
-        "Вибрані елементи успішно вилучено з вашого списку"
-      ],
       "Setting updated. Editors can change permissions and share.": [
         "Налаштування оновлено. Редактори можуть змінювати дозволи та ділитись."
       ],
@@ -9989,17 +8824,8 @@
       "Stopping the sharing of this item has failed": [
         "Не вдалося зупинити поширення елемента"
       ],
-      "The item was not added to your drive": [
-        "Елемент не було додано до вашого диску"
-      ],
-      "The item was successfully added to your drive": [
-        "Елемент було успішно додано до вашого диску"
-      ],
       "The link to your item was deleted": [
         "Посилання на ваш елемент було видалено"
-      ],
-      "This secure link expired, please change expire date in sharing settings": [
-        "Термін дії цього безпечного посилання закінчився, змініть дату завершення терміну дії в налаштуваннях спільного доступу"
       ],
       "Trash failed to be emptied": [
         "Не вдалося спорожнити смітник"
@@ -10010,9 +8836,6 @@
       "Your ${ BRAND_NAME } address is ready to use": [
         "Ваша адреса ${ BRAND_NAME } готова до використання"
       ],
-      "Your old files will be deleted in 72 hours": [
-        "Ваші старі файли будуть видалені протягом 72 годин"
-      ],
       "Your settings have been changed successfully": [
         "Ваші налаштування успішно змінено"
       ]
@@ -10020,11 +8843,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Деякі зображення не вивантажено через дублікати назв."
-      ]
-    },
-    "Notitication": {
-      "Album renamed successfully": [
-        "Альбом успішно перейменовано"
       ]
     },
     "Oauth instructions": {
@@ -10170,169 +8988,6 @@
         "Вітаємо у ${ appName }"
       ]
     },
-    "Onboarding Action": {
-      "Continue": [
-        "Продовжити"
-      ],
-      "Create a document": [
-        "Створити документ"
-      ],
-      "Get started": [
-        "Початок роботи"
-      ],
-      "Install and continue": [
-        "Встановити й продовжити"
-      ],
-      "Install later": [
-        "Встановити пізніше"
-      ],
-      "Invite members": [
-        "Запросити учасників"
-      ],
-      "Maybe Later": [
-        "Можливо пізніше"
-      ],
-      "Maybe later": [
-        "Можливо пізніше"
-      ],
-      "Select theme": [
-        "Вибрати тему"
-      ],
-      "Skip": [
-        "Пропустити"
-      ],
-      "Skip for now": [
-        "Поки що пропустити"
-      ],
-      "Try the app": [
-        "Спробувати додаток"
-      ],
-      "Upload file": [
-        "Вивантажити файл"
-      ],
-      "Upload folder": [
-        "Вивантажити теку"
-      ],
-      "Upload more files": [
-        "Вивантажити більше файлів"
-      ]
-    },
-    "Onboarding Info": {
-      "10 minutes": [
-        "10 хвилин"
-      ],
-      "Access your files on the go": [
-        "Отримуйте доступ до файлів на ходу"
-      ],
-      "Back up your photos and memories": [
-        "Створіть резервну копію фотографій і пам'яті"
-      ],
-      "Backup your photos and memories": [
-        "Створіть резервну копію ваших фотографій і пам'яті"
-      ],
-      "Choose your favorite theme": [
-        "Виберіть вашу улюблену тему"
-      ],
-      "Collaborate on documents": [
-        "Сумісна робота на документах"
-      ],
-      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "Ви віддаєте перевагу ${ DRIVE_APP_NAME } у світлому чи темному режимі? Виберіть колір, який надихає вас найбільше."
-      ],
-      "Drag and drop your files here": [
-        "Перетягніть ваші файли сюди"
-      ],
-      "Edit documents online": [
-        "Редагуйте документи онлайн"
-      ],
-      "End-to-end encrypted storage for your files": [
-        "Наскрізне зашифроване сховище для ваших файлів"
-      ],
-      "Faster uploads for large or multiple files": [
-        "Швидше вивантаження великих або кількох файлів"
-      ],
-      "Files uploaded during this time won’t count towards your storage limit.": [
-        "Файли, вивантажені протягом цього часу, не зараховуватимуться до ліміту вашого сховища."
-      ],
-      "Files uploaded now will not count towards your storage limit": [
-        "Вивантажені зараз файли не зараховуватимуться до ліміту вашого сховища"
-      ],
-      "Final approval in progress": [
-        "Остаточне затвердження в процесі"
-      ],
-      "Final approval pending": [
-        "Фінальне затвердження в очікуванні"
-      ],
-      "Free up hard drive space on your computer": [
-        "Звільніть місце жорсткого диска на вашому комп'ютері"
-      ],
-      "Get the desktop app": [
-        "Отримати настільний застосунок"
-      ],
-      "Get the mobile app": [
-        "Отримати мобільний застосунок"
-      ],
-      "Got an Android? We've got you covered.": [
-        "Маєш Андроїд? У нас все під контролем."
-      ],
-      "Got an iPhone? We've got you covered.": [
-        "Є айфон? У нас все під контролем."
-      ],
-      "Hang tight": [
-        "Тримайтеся"
-      ],
-      "Invitation accepted": [
-        "Запрошення прийнято"
-      ],
-      "Invitation received": [
-        "Запрошення отримано"
-      ],
-      "Invite team members": [
-        "Запросити учасників команди"
-      ],
-      "Keep the momentum going by uploading more files using the storage included with your plan.": [
-        "Не збавляйте темп, вивантажуючи більше файлів за допомогою сховища, включеного у ваш тарифний план."
-      ],
-      "Manage access": [
-        "Керувати доступом"
-      ],
-      "Organize files right from your desktop": [
-        "Впорядковуйте файли прямо з вашого комп'ютера"
-      ],
-      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
-        "Захистіть свої фінансові документи, посвідчення особи, файли проєктів, фотографії та багато іншого за допомогою наскрізного шифрування."
-      ],
-      "Scan the QR code to install the mobile app": [
-        "Проскануйте QR-код, щоб встановити мобільний додаток"
-      ],
-      "Secure your files": [
-        "Захистіть свої файли"
-      ],
-      "Securely share files and folders": [
-        "Безпечно діліться файлами й теками"
-      ],
-      "Share files & folders": [
-        "Обмін файлами й теками"
-      ],
-      "Sync and access your files from anywhere": [
-        "Синхронізуйте й отримуйте доступ до своїх файлів з будь-якого місця"
-      ],
-      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
-        "Власник повинен підтвердити спільний доступ. Ви отримаєте повідомлення на електронну пошту, коли це буде зроблено."
-      ],
-      "Upload your first file": [
-        "Вивантажте свій перший файл"
-      ],
-      "Work faster, smarter": [
-        "Працювати швидше, розумніше"
-      ],
-      "Work together": [
-        "Працювати разом"
-      ],
-      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "Ви щойно отримали безкоштовні дані та захистили свої файли за допомогою наскрізного шифрування — у рекордні терміни!"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " відвідайте наш ${ helpCenterLink } або ${ contactSupportLink }."
@@ -10390,29 +9045,11 @@
       "Create new group": [
         "Створити нову групу"
       ],
-      "Expected structure": [
-        "Очікувана структура"
-      ],
       "Ignore group": [
         "Ігнорувати групу"
       ],
       "No parent folder": [
         "Немає теки вищого рівня"
-      ],
-      "Only current location": [
-        "Тільки поточне розташування"
-      ],
-      "Only current location: ${ name }": [
-        "Тільки поточне розташування: ${ name }"
-      ],
-      "Select JSON file": [
-        "Вибрати файл JSON"
-      ],
-      "Verify content": [
-        "Перевірити вміст"
-      ],
-      "Verify thumbnails": [
-        "Перевірити мініатюри"
       ]
     },
     "Option group label": {
@@ -10883,14 +9520,8 @@
       "Enter a name": [
         "Введіть ім'я"
       ],
-      "Enter a new file name": [
-        "Введіть нову назву файлу"
-      ],
       "Enter a new folder name": [
         "Уведіть нову назву теки"
-      ],
-      "Enter device name": [
-        "Уведіть назву пристрою"
       ],
       "Enter your email address": [
         "Введіть адресу своєї е-пошти"
@@ -11846,12 +10477,6 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Посилання на цей елемент було збережено у вашому диску. Ви зможете отримати доступ до нього пізніше в розділі 'Поділитися зі мною'."
-      ],
-      "Encrypted search is here": [
-        "Зашифрований пошук уже тут"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Тепер ви можете легко шукати файли на Drive, зберігаючи безпеку даних."
       ]
     },
     "sso": {
@@ -12418,44 +11043,8 @@
       ]
     },
     "Subtitle": {
-      "Albums shared with you will appear here": [
-        "Альбоми, якими поділилися з вами, з'являться тут"
-      ],
-      "Albums you've shared will appear here": [
-        "Альбоми, якими ви поділилися, з'являться тут"
-      ],
       "Shared by ${ sharedBy }": [
         "Спільний доступ надано користувачем ${ sharedBy }"
-      ],
-      "Your favorited photos will appear here": [
-        "Ваші улюблені фотографії з'являться тут"
-      ],
-      "Your Live Photos will appear here": [
-        "Ваші живі фото з'являться тут"
-      ],
-      "Your panorama photos will appear here": [
-        "Ваші панорамні фотографії з'являться тут"
-      ],
-      "Your photo bursts will appear here": [
-        "Ваші серійні знімки з'являться тут"
-      ],
-      "Your portraits photos will appear here": [
-        "Ваші портретні фотографії з'являться тут"
-      ],
-      "Your RAW photos will appear here": [
-        "Ваші фотографії RAW з'являться тут"
-      ],
-      "Your screenshots will appear here": [
-        "Ваші знімки екрана з'являться тут"
-      ],
-      "Your selfies photos will appear here": [
-        "Ваші селфі з'являться тут"
-      ],
-      "Your tagged photos will appear here": [
-        "Ваші фотографії з тегами з'являться тут"
-      ],
-      "Your videos will appear here": [
-        "Ваші відео з'являться тут"
       ]
     },
     "Success": {
@@ -12464,12 +11053,6 @@
         "${ countMergeableContacts } контакти мають ідентичний вигляд.",
         "${ countMergeableContacts } контактів мають ідентичний вигляд.",
         "${ countMergeableContacts } контакти мають ідентичний вигляд."
-      ],
-      "${ countOfUnrecoveredLinksLeft } left": [
-        "Залишилося ${ countOfUnrecoveredLinksLeft }",
-        "Залишилося ${ countOfUnrecoveredLinksLeft }",
-        "Залишилося ${ countOfUnrecoveredLinksLeft }",
-        "Залишилося ${ countOfUnrecoveredLinksLeft }"
       ],
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"
@@ -12542,9 +11125,6 @@
       ],
       "Problem reported": [
         "Про проблему повідомлено"
-      ],
-      "Recovery has started": [
-        "Відновлення почалося"
       ],
       "Secure link copied": [
         "Захищене посилання скопійовано"
@@ -12664,35 +11244,6 @@
         "Поле vCard"
       ]
     },
-    "Tag": {
-      "Bursts": [
-        "Серійна зйомка"
-      ],
-      "Favorites": [
-        "Улюблені"
-      ],
-      "Live Photos": [
-        "Живі фото"
-      ],
-      "Panoramas": [
-        "Панорами"
-      ],
-      "Portraits": [
-        "Портрети"
-      ],
-      "RAW": [
-        "RAW"
-      ],
-      "Screenshots": [
-        "Знімки екрана"
-      ],
-      "Selfies": [
-        "Селфі"
-      ],
-      "Videos": [
-        "Відео"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } день",
@@ -12731,9 +11282,6 @@
       ],
       "${ feature } is now active": [
         "Функція ${ feature } тепер активна"
-      ],
-      "${ freeUploadLength } of free uploads.": [
-        "${ freeUploadLength } безплатного вивантаження."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Помічник з написання ${ LUMO_SHORT_APP_NAME }"
@@ -12786,9 +11334,6 @@
       "Album details": [
         "Подробиці альбому"
       ],
-      "Albums": [
-        "Альбоми"
-      ],
       "All settings": [
         "Усі налаштування"
       ],
@@ -12806,12 +11351,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Ви впевнені, що хочете закрити попередній перегляд?"
-      ],
-      "Are you sure you want to remove this item from your list?": [
-        "Ви дійсно хочете видалити цей елемент зі свого списку?",
-        "Ви дійсно хочете видалити ці елементи зі свого списку?",
-        "Ви дійсно хочете видалити ці елементи зі свого списку?",
-        "Ви дійсно хочете видалити ці елементи зі свого списку?"
       ],
       "Are you sure?": [
         "Ви впевнені?"
@@ -12879,9 +11418,6 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Підтвердьте втрату бонусів ${ BRAND_NAME }"
       ],
-      "Confirmation required": [
-        "Потрібне підтвердження"
-      ],
       "Connect apps and devices": [
         "Підключіть програми та пристрої"
       ],
@@ -12908,9 +11444,6 @@
       ],
       "Coupon": [
         "Купон"
-      ],
-      "Create a new file": [
-        "Створити новий файл"
       ],
       "Create a new folder": [
         "Створити нову теку"
@@ -12993,9 +11526,6 @@
       "Devices": [
         "Пристроїв"
       ],
-      "Diagnostics": [
-        "Діагностика"
-      ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Цифровий підпис частково підтверджено. Цей файл було створено за допомогою загальнодоступного посилання користувачем без облікового запису ${ BRAND_NAME }, тому його особисті дані неможливо перевірити."
       ],
@@ -13029,6 +11559,9 @@
       "Disconnected from Gmail": [
         "Від'єднано від Gmail"
       ],
+      "Domain names": [
+        "Домени"
+      ],
       "Downgrade account": [
         "Понизити тарифний план"
       ],
@@ -13049,9 +11582,6 @@
       ],
       "Download unverified folder?": [
         "Завантажити неперевірену теку?"
-      ],
-      "Drive": [
-        "Диск"
       ],
       "Drop to upload": [
         "Перетягніть для вивантаження"
@@ -13089,9 +11619,6 @@
       "Enable advanced account protection": [
         "Увімкніть розширений захист облікового запису"
       ],
-      "Enable drive search": [
-        "Увімкнути пошук на диску"
-      ],
       "Enhance security with 2FA": [
         "Посильте безпеку за допомогою 2FA"
       ],
@@ -13107,23 +11634,11 @@
       "File details": [
         "Подробиці про файл"
       ],
-      "File recovery process": [
-        "Процес відновлення файлів"
-      ],
       "Folder": [
         "Тека"
       ],
       "Folder details": [
         "Подробиці теки"
-      ],
-      "Found ${ resultCount } result": [
-        "Знайдено ${ resultCount } результат",
-        "Знайдено ${ resultCount } результати",
-        "Знайдено ${ resultCount } результатів",
-        "Знайдено ${ resultCount } результатів"
-      ],
-      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
-        "Отримайте ${ DRIVE_SHORT_APP_NAME } на свій телефон"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Отримайте **${ referralInfo.uiData.refereeRewardAmount }** кредитами з ${ planTitle }"
@@ -13131,26 +11646,17 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Отримати повний доступ до ${ CALENDAR_APP_NAME }"
       ],
-      "Get mobile and desktop apps": [
-        "Отримайте мобільні та настільні програми"
-      ],
       "Get more from your VPN": [
         "Отримайте більше від вашого VPN"
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Отримайте більше місця у сховищі з ${ MAIL_APP_NAME } Plus"
       ],
-      "Get started with 10 minutes of free uploads, on the house.": [
-        "Почніть із 10 хвилин безкоштовних вивантажень за наш рахунок."
-      ],
       "Get the apps": [
         "Отримати програми"
       ],
       "Gift": [
         "Подарунок"
-      ],
-      "Global": [
-        "Глобальний"
       ],
       "Groups": [
         "Групи"
@@ -13200,9 +11706,6 @@
       "Import your data to ${ BRAND_NAME }": [
         "Імпортувати дані до ${ BRAND_NAME }"
       ],
-      "Index populators": [
-        "Наповнювачі індексів"
-      ],
       "Information exposed in breach": [
         "Інформація, розкрита під час витоку"
       ],
@@ -13215,23 +11718,11 @@
       "Last uploaded by": [
         "Востаннє вивантажено користувачем"
       ],
-      "Level": [
-        "Рівень"
-      ],
       "Link confirmation": [
         "Підтвердження посилання"
       ],
       "Location": [
         "Розташування"
-      ],
-      "Logger": [
-        "Реєстратор"
-      ],
-      "Logs": [
-        "Журнали"
-      ],
-      "Make a copy": [
-        "Зробити копію"
       ],
       "Make a secure connection your default": [
         "Зробіть безпечне з'єднання типовим"
@@ -13244,9 +11735,6 @@
       ],
       "Merging contacts": [
         "Об'єднання контактів"
-      ],
-      "Message": [
-        "Повідомлення"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Перенесіть свою організацію до ${ BRAND_NAME }"
@@ -13281,56 +11769,17 @@
       "Night theme": [
         "Темна тема"
       ],
-      "No albums shared with me": [
-        "Немає альбомів, якими поділилися зі мною"
-      ],
       "No breaches detected": [
         "Порушень не виявлено"
       ],
-      "No bursts": [
-        "Немає серійних знімків"
-      ],
-      "No favorites": [
-        "Немає улюблених"
-      ],
-      "No Live Photos": [
-        "Немає живих фото"
-      ],
-      "No panorama": [
-        "Немає панорам"
-      ],
-      "No photos": [
-        "Немає фотографій"
-      ],
-      "No portraits": [
-        "Немає портретів"
-      ],
-      "No RAW": [
-        "Немає RAW"
-      ],
       "No results found": [
         "Результатів не знайдено"
-      ],
-      "No screenshots": [
-        "Немає знімків екрана"
-      ],
-      "No selfies": [
-        "Немає селфі"
-      ],
-      "No shared albums": [
-        "Немає спільних альбомів"
-      ],
-      "No videos": [
-        "Немає відео"
       ],
       "Notes": [
         "Нотатки"
       ],
       "Number of downloads": [
         "Кількість завантажень"
-      ],
-      "Number of items": [
-        "Кількість елементів"
       ],
       "One email, many recipients": [
         "Один лист електронної пошти, багато одержувачів"
@@ -13398,9 +11847,6 @@
       "Re-signing contacts": [
         "Повторне підписання контактів"
       ],
-      "Ready, set, upload.": [
-        "Увага, старт, вивантаження."
-      ],
       "Recommended": [
         "Рекомендовано"
       ],
@@ -13419,12 +11865,6 @@
       "Remove device?": [
         "Вилучити пристрій?"
       ],
-      "Remove item?": [
-        "Вилучити елемент?",
-        "Вилучити елементи?",
-        "Вилучити елементи?",
-        "Вилучити елементи?"
-      ],
       "Remove your access?": [
         "Вилучити ваш доступ?"
       ],
@@ -13434,32 +11874,17 @@
       "Rename a folder": [
         "Перейменувати теку"
       ],
-      "Rename device": [
-        "Перейменувати пристрій"
-      ],
       "Report a problem": [
         "Повідомити про проблему"
       ],
       "Request new code": [
         "Запитати новий код"
       ],
-      "Restore your files": [
-        "Відновити файли"
-      ],
       "Reverse charge not supported": [
         "Зворотне нарахування податку не підтримується"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Зберегти це на пізніше в ${ DRIVE_APP_NAME }"
-      ],
-      "Search": [
-        "Шукати"
-      ],
-      "Search results": [
-        "Результати пошуку"
-      ],
-      "Searching…": [
-        "Пошук…"
       ],
       "Security center": [
         "Центр безпеки"
@@ -13514,9 +11939,6 @@
       ],
       "Shared with me": [
         "Поширено для мене"
-      ],
-      "Show actions": [
-        "Показати дії"
       ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"
@@ -13580,12 +12002,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Для попереднього перегляду цієї електронної таблиці відкрийте її в ${ SHEETS_APP_NAME } або завантажте її."
-      ],
-      "Total size": [
-        "Загальний розмір"
-      ],
-      "Trash": [
-        "Смітник"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Увімкніть ${ DARK_WEB_MONITORING_NAME }"
@@ -13695,9 +12111,6 @@
       "We'd love to hear from you!": [
         "Ми будемо раді почути вас!"
       ],
-      "Welcome offer": [
-        "Вітальна пропозиція"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Ласкаво просимо до ${ BRAND_NAME } для бізнесу"
       ],
@@ -13716,17 +12129,11 @@
       "You can now create unlimited folders and labels": [
         "Тепер ви можете створювати необмежену кількість папок і міток"
       ],
-      "You have inaccessible files": [
-        "Ви маєте недоступні файли"
-      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш безплатний пробний період ${ planName } завершується ${ textDate }"
       ],
       "Your ${ planTitle } subscription has started": [
         "Ваша передплата на ${ planTitle } розпочалася"
-      ],
-      "Your 3 GB bonus": [
-        "Ваш бонус 3 ГБ"
       ],
       "Your account is protected": [
         "Ваш обліковий запис захищено"
@@ -13745,15 +12152,6 @@
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
-      ],
-      "Your welcome actions": [
-        "Ваші дії"
-      ],
-      "You’re off to a great start!": [
-        "Чудовий початок!"
-      ],
-      "You’ve got 5 GB of storage": [
-        "Відтепер обсяг вашого сховища – 5 ГБ"
       ]
     },
     "Title header for keys table": {
@@ -13912,11 +12310,6 @@
       ],
       "The user must have an address to request data access": [
         "Користувач повинен мати адресу для запиту доступу до даних"
-      ]
-    },
-    "Upsell": {
-      "Get Drive for Business": [
-        "Отримати Drive for Business"
       ]
     },
     "user_modal": {

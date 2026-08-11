@@ -48,10 +48,6 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
       ],
-      "Add ${ photoCount } photo to a new album": [
-        "Legg til ${ photoCount } bilde i et nytt album",
-        "Legg til ${ photoCount } bilder i et nytt album"
-      ],
       "Add account": [
         "Legg til konto"
       ],
@@ -88,24 +84,11 @@
       "Add phone number": [
         "Legg til telefonnummer"
       ],
-      "Add photos": [
-        "Legg til bilder"
-      ],
       "Add storage": [
         "Legg til lagring"
       ],
-      "Add to \"${ name }\" (${ photoCount } photo)": [
-        "Legg til i \"${ name }\" (${ photoCount } bilde)",
-        "Legg til i \"${ name }\" (${ photoCount } bilder)"
-      ],
-      "Add to album": [
-        "Legg til i album"
-      ],
       "Add to group": [
         "Legg til gruppe"
-      ],
-      "Album name": [
-        "Albumnavn"
       ],
       "Apply": [
         "Anvend"
@@ -219,9 +202,6 @@
       "Collaborate on documents": [
         "Samarbeid på dokumenter"
       ],
-      "Collapse folder": [
-        "Skjul mappe"
-      ],
       "Collapse navigation bar": [
         "Skjul navigasjonslinjen"
       ],
@@ -294,14 +274,8 @@
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
       ],
-      "Create album": [
-        "Opprett album"
-      ],
       "Create and copy alias": [
         "Opprett og kopier alias"
-      ],
-      "Create business account": [
-        "Opprett bedriftskonto"
       ],
       "Create folder": [
         "Opprett mappe"
@@ -311,9 +285,6 @@
       ],
       "Create new password": [
         "Opprett nytt passord"
-      ],
-      "Create new text file": [
-        "Opprett ny tekstfil"
       ],
       "Current plan": [
         "Gjeldende plan"
@@ -344,9 +315,6 @@
         "Slett ${ selectedCount } kontaktgruppe",
         "Slett ${ selectedCount } kontaktgrupper"
       ],
-      "Delete album": [
-        "Slett album"
-      ],
       "Delete contact": [
         "Slett kontakt"
       ],
@@ -356,23 +324,11 @@
       "Delete permanently": [
         "Slett permanent"
       ],
-      "Delete this version": [
-        "Slett denne versjonen"
-      ],
-      "Delete version": [
-        "Slett versjon"
-      ],
-      "Delete without saving": [
-        "Slett uten å lagre"
-      ],
       "Deselect all": [
         "Fjern merket for alle"
       ],
       "Details": [
         "Detaljer"
-      ],
-      "Diagnostics": [
-        "Diagnostikk"
       ],
       "Discard": [
         "Forkast"
@@ -382,12 +338,6 @@
       ],
       "Display navigation bar": [
         "Vis navigasjonslinjen"
-      ],
-      "Display next": [
-        "Vis neste"
-      ],
-      "Display previous": [
-        "Vis forrige"
       ],
       "Done": [
         "Utført"
@@ -407,26 +357,14 @@
       "Download anyway": [
         "Last ned uansett"
       ],
-      "Download for Mac": [
-        "Last ned for Mac"
-      ],
       "Download for macOS": [
         "Last ned for macOS"
       ],
       "Download for Windows": [
         "Last ned for Windows"
       ],
-      "Download info": [
-        "Last ned info"
-      ],
       "Download logs": [
         "Last ned logger"
-      ],
-      "Download results": [
-        "Last ned resultater"
-      ],
-      "Drive Locked": [
-        "Stasjon låst"
       ],
       "Edit": [
         "Rediger"
@@ -458,17 +396,8 @@
       "enable desktop notifications": [
         "aktivere skrivebordsvarsler"
       ],
-      "Enable drive search": [
-        "Aktiver søk i Drive"
-      ],
       "Encrypted": [
         "Kryptert"
-      ],
-      "Expand folder": [
-        "Utvid mappe"
-      ],
-      "Explore more": [
-        "Utforsk mer"
       ],
       "Explore other plans": [
         "Utforsk andre planer"
@@ -481,9 +410,6 @@
       ],
       "Export selection as .vcf": [
         "Eksporter utvalg som .vcf"
-      ],
-      "Export system log": [
-        "Eksporter systemlogg"
       ],
       "Fit to window": [
         "Tilpass til vindu"
@@ -530,20 +456,11 @@
       "Go back": [
         "Gå tilbake"
       ],
-      "Go back to album \"${ ellipsedAlbumName }\"": [
-        "Gå tilbake til albumet \"${ ellipsedAlbumName }\""
-      ],
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
       ],
       "Go to label": [
         "Gå til etikett"
-      ],
-      "Go to my files": [
-        "Gå til mine filer"
-      ],
-      "Go to parent": [
-        "Gå til overordnet"
       ],
       "Go to settings": [
         "Gå til innstillinger"
@@ -599,9 +516,6 @@
       "Increase": [
         "Øk"
       ],
-      "Join album": [
-        "Bli med i albumet"
-      ],
       "Keep my subscription": [
         "Behold mitt abonnement"
       ],
@@ -616,9 +530,6 @@
       ],
       "Leave": [
         "Forlat"
-      ],
-      "Leave album": [
-        "Forlat album"
       ],
       "Let's talk": [
         "La oss snakke"
@@ -650,9 +561,6 @@
       "Manage labels": [
         "Behandle etiketter"
       ],
-      "Manage share": [
-        "Administrer deling"
-      ],
       "Manage users/addresses": [
         "Administrer brukere/adresser"
       ],
@@ -673,6 +581,9 @@
       ],
       "Merge contacts": [
         "Slå sammen kontakter"
+      ],
+      "Migrate": [
+        "Migrer"
       ],
       "Minimize transfers": [
         "Minimer overføringer"
@@ -704,15 +615,6 @@
       "Move to trash": [
         "Flytt til papirkurven"
       ],
-      "Name your album": [
-        "Navngi ditt album"
-      ],
-      "New": [
-        "Ny"
-      ],
-      "New album": [
-        "Nytt album"
-      ],
       "New document": [
         "Nytt dokument"
       ],
@@ -721,9 +623,6 @@
       ],
       "New message": [
         "Ny melding"
-      ],
-      "New shared album": [
-        "Nytt delt album"
       ],
       "New spreadsheet": [
         "Nytt regneark"
@@ -779,17 +678,8 @@
       "Quit": [
         "Avslutt"
       ],
-      "Re-index": [
-        "Indekser på nytt"
-      ],
-      "Re-indexing in progress": [
-        "Gjenindeksering pågår"
-      ],
       "Re-sign": [
         "Signér på nytt"
-      ],
-      "Rebuild index": [
-        "Gjenoppbygg indeks"
       ],
       "Reconnect": [
         "Koble til på nytt"
@@ -802,9 +692,6 @@
       ],
       "Refer a friend": [
         "Verv en venn"
-      ],
-      "Refetch index": [
-        "Hent indeks på nytt"
       ],
       "Refresh the page": [
         "Oppdater siden"
@@ -827,32 +714,17 @@
       "Remove button": [
         "Fjern knapp"
       ],
-      "Remove device": [
-        "Fjern enhet"
-      ],
-      "Remove from album": [
-        "Fjern fra album"
-      ],
       "Remove from favorites": [
         "Fjern fra favoritter"
       ],
       "Remove gift code": [
         "Fjern gavekode"
       ],
-      "Remove me": [
-        "Fjern meg"
-      ],
       "Remove my access": [
         "Fjern tilgangen min"
       ],
-      "Remove without saving": [
-        "Fjern uten å lagre"
-      ],
       "Rename": [
         "Gi nytt navn"
-      ],
-      "Rename album": [
-        "Gi album nytt navn"
       ],
       "Replace file": [
         "Erstatt fil"
@@ -862,9 +734,6 @@
       ],
       "Report a problem": [
         "Rapporter et problem"
-      ],
-      "Report abuse": [
-        "Rapporter misbruk"
       ],
       "Report an issue": [
         "Rapporter et problem"
@@ -896,32 +765,17 @@
       "Restore this version": [
         "Gjenopprett denne versjonen"
       ],
-      "Restore version": [
-        "Gjenopprett versjon"
-      ],
       "Retry": [
         "Prøv på nytt"
       ],
       "Retry failed items": [
         "Prøv mislykkede elementer på nytt"
       ],
-      "Run diagnostics": [
-        "Kjør diagnostikk"
-      ],
       "Save": [
         "Lagre"
       ],
-      "Save and remove": [
-        "Lagre og fjern"
-      ],
       "Save changes": [
         "Lagre endringer"
-      ],
-      "Save photo to your gallery": [
-        "Lagre bildet til galleriet ditt"
-      ],
-      "Save photos and remove": [
-        "Lagre bildene og fjern"
       ],
       "Scan & Download": [
         "Skann og last ned"
@@ -937,12 +791,6 @@
       ],
       "Search countries": [
         "Søk etter land"
-      ],
-      "Search drive": [
-        "Søk i Drive"
-      ],
-      "Search is unavailable": [
-        "Søk er ikke tilgjengelig"
       ],
       "See how": [
         "Se hvordan"
@@ -977,9 +825,6 @@
       "Set as album cover": [
         "Angi som albumomslag"
       ],
-      "Set as cover": [
-        "Angi som omslag"
-      ],
       "Set password or expiration date": [
         "Angi passord eller utløpsdato"
       ],
@@ -1003,12 +848,6 @@
       ],
       "Share": [
         "Del"
-      ],
-      "Share album": [
-        "Del album"
-      ],
-      "Share file": [
-        "Del fil"
       ],
       "Share item": [
         "Del element"
@@ -1061,14 +900,8 @@
       "Skip verification": [
         "Hopp over bekreftelse"
       ],
-      "Start": [
-        "Start"
-      ],
       "Start import": [
         "Start importen"
-      ],
-      "Start recovering": [
-        "Begynn å gjenopprette"
       ],
       "Stay": [
         "Bli"
@@ -1097,9 +930,6 @@
       "Take a tour": [
         "Få en omvisning"
       ],
-      "This album is empty": [
-        "Dette albumet er tomt"
-      ],
       "Toggle Calendar app": [
         "Åpne/lukke kalender-app"
       ],
@@ -1114,9 +944,6 @@
       ],
       "Trust": [
         "Klarér"
-      ],
-      "Try ${ BRAND_NAME } Workspace": [
-        "Prøv ${ BRAND_NAME } Workspace"
       ],
       "Try again": [
         "Prøv igjen"
@@ -1172,12 +999,6 @@
       "Upload folder": [
         "Last opp mappe"
       ],
-      "Upload from computer": [
-        "Last opp fra datamaskin"
-      ],
-      "Upload photos": [
-        "Last opp bilder"
-      ],
       "Upload picture": [
         "Last opp bilde"
       ],
@@ -1226,18 +1047,9 @@
       "What do I get?": [
         "Hva får jeg?"
       ],
-      "Windows 11 (ARM64)": [
-        "Windows 11 (ARM64)"
-      ],
-      "Windows 11/10 (x64)": [
-        "Windows 11/10 (x64)"
-      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
-      ],
-      "Your 3 GB bonus": [
-        "Dine bonus 3 GB"
       ],
       "Zoom in": [
         "Zoom inn"
@@ -1254,11 +1066,6 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Åpne i ${ SHEETS_APP_NAME }"
-      ]
-    },
-    "Actions": {
-      "Upload": [
-        "Last opp"
       ]
     },
     "Actions message": {
@@ -1305,8 +1112,8 @@
         "${ LUMO_APP_NAME } seter"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
-        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } bruker)",
-        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } brukere)"
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (for ${ quantity } bruker)",
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (for ${ quantity } brukere)"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
@@ -1450,11 +1257,6 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "Prøveperioden avsluttes om ${ timeRemaining }"
-      ]
-    },
-    "Badge": {
-      "Invited": [
-        "Invitert"
       ]
     },
     "bf2023: Deal details": {
@@ -3144,14 +2946,6 @@
         "Vi har oppdaget følgende felt i CSV-filen du lastet opp. Merk av for de du ønsker å importere."
       ]
     },
-    "Docs Info": {
-      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
-        "Å samarbeide ble akkurat enklere. Nå kan hvem som helst foreslå endringer uten å endre dokumentet."
-      ],
-      "Suggestion mode is here": [
-        "Forslagsmodus er her"
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Feil eller kvalitetsproblem"
@@ -3387,6 +3181,9 @@
       "A group with this name already exists": [
         "En gruppe med dette navnet eksisterer allerede."
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "En melding er nødvendig når du rapporterer brudd på opphavsrett eller stjålne data"
+      ],
       "A problem occurred, please try again.": [
         "En feil oppstod. Forsøk igjen."
       ],
@@ -3395,6 +3192,9 @@
       ],
       "Address could not be added.": [
         "Adressen kunne ikke legges til."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
       ],
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
@@ -3438,20 +3238,35 @@
       "Authentication error.": [
         "Autentiseringsfeil"
       ],
+      "Bookmark password is not available": [
+        "Bokmerkepassordet er ikke tilgjengelig"
+      ],
       "Calendar limit reached": [
         "Kalendergrensen nådd"
       ],
-      "Can't find any secure link": [
-        "Kan ikke finne noen sikker kobling"
+      "Cannot add photo to album without a valid name": [
+        "Kan ikke legge til bilde i albumet uten et gyldig navn"
       ],
-      "Can't retrieve device name": [
-        "Kan ikke hente enhetsnavn"
+      "Cannot download a folder": [
+        "Kan ikke laste ned en mappe"
       ],
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakten"
       ],
       "Cannot find move target": [
         "Finner ikke flyttemålet"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan ikke flytte elementet uten et gyldig navn. Gi elementet nytt navn først."
+      ],
+      "Cannot share root folder": [
+        "Kan ikke dele rotmappe"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan ikke bekrefte forfatteren av denne filen"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan ikke bekrefte opplasteren av denne filen"
       ],
       "Checkout expired, please try again": [
         "Utsjekkingen utløpt. Prøv igjen."
@@ -3474,8 +3289,20 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Innholdssøk kan ikke aktiveres. Start programmet på nytt eller tøm data."
       ],
-      "Could not add to favorites": [
-        "Kunne ikke legge til i favoritter"
+      "Copy operation aborted": [
+        "Kopieringsoperasjonen ble avbrutt"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiering av element til en ikke-mappe er ikke tillatt"
+      ],
+      "Could not find an available name": [
+        "Finner ikke et tilgjengelig navn"
+      ],
+      "Could not load sharing details": [
+        "Kunne ikke laste inn delingsdetaljene"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Kunne ikke laste inn forhåndsvisningen av bildet: ${ message }"
       ],
       "Could not open created vault": [
         "Kunne ikke åpne opprettet hvelv"
@@ -3483,8 +3310,23 @@
       "Could not open updated vault": [
         "Kunne ikke åpne oppdatert hvelv"
       ],
-      "Could not remove from favorites": [
-        "Kunne ikke fjerne fra favoritter"
+      "Could not read part of this file: ${ message }": [
+        "Kunne ikke lese deler av denne filen: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Kunne ikke låse opp overordnet mappe"
+      ],
+      "Could not unlock this item": [
+        "Kunne ikke låse opp dette elementet"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Det er ikke tillatt å opprette dokumenter i elementer som ikke er mapper."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Det er ikke tillatt å opprette filer i elementer som ikke er mapper."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Det er ikke tillatt å opprette mapper i elementer som ikke er mapper."
       ],
       "Data integrity check failed": [
         "Kontroll av dataintegritet mislyktes"
@@ -3497,17 +3339,11 @@
         "Fjern valget fra minst ${ calendarsToFixCount } kalender eller",
         "Fjern valgene fra minst ${ calendarsToFixCount } kalendere eller"
       ],
-      "Device name does not match": [
-        "Enhetsnavnet samsvarer ikke"
-      ],
-      "Diagnostics failed": [
-        "Diagnostikk mislyktes"
+      "Device not found": [
+        "Enhet ikke funnet"
       ],
       "Domain not available, try again later": [
         "Domenet er ikke tilgjengelig. Prøv igjen senere."
-      ],
-      "Downloads of desktop apps are currently unavailable": [
-        "Nedlastinger av skrivebordsapper er for øyeblikket utilgjengelig"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Redigering av faktureringsadresse er ikke tilgjengelig for øyeblikket. Prøv igjen senere."
@@ -3530,11 +3366,8 @@
       "Error decrypting a computer": [
         "Feil ved dekryptering av datamaskin"
       ],
-      "Error reading file": [
-        "Feil ved lesing av fil"
-      ],
-      "Expected structure attached": [
-        "Forventet struktur vedlagt"
+      "Expiration date cannot be in the past": [
+        "Utløpsdatoen kan ikke være i fortiden"
       ],
       "External accounts are not supported yet": [
         "Eksterne kontoer støttes ikke enda."
@@ -3560,6 +3393,27 @@
       "Failed to create public share node": [
         "Kunne ikke opprette offentlig delingsnode"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Kunne ikke dekryptere bokmerkenøkkelen: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Kunne ikke dekryptere bokmerkenavnet: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Klarte ikke å dekryptere bokmerkepassordet: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Kunne ikke dekryptere innholdsnøkkelen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kunne ikke dekryptere elementnavnet: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Klarte ikke å dekryptere nodenøkkelen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Kunne ikke dekryptere revisjonsmetadata"
+      ],
       "Failed to expand folder": [
         "Kunne ikke utvide mappen"
       ],
@@ -3571,6 +3425,9 @@
       ],
       "Failed to get details, please try again later": [
         "Kunne ikke hente detaljer. Prøv igjen senere."
+      ],
+      "Failed to get inviter keys": [
+        "Kunne ikke hente invitasjonsnøkler"
       ],
       "Failed to load signature details, please try again later": [
         "Kunne ikke laste inn signaturdetaljer, prøv igjen senere"
@@ -3596,17 +3453,26 @@
       "Failed to update public share node": [
         "Kunne ikke oppdatere offentlig delingsnode"
       ],
+      "Failed to verify invitation": [
+        "Kunne ikke bekrefte invitasjonen"
+      ],
+      "File download failed due to empty response": [
+        "Filnedlasting mislyktes på grunn av tomt svar"
+      ],
+      "File has no revision": [
+        "Filen har ingen revisjon"
+      ],
       "First name is too long": [
         "Fornavnet er for langt"
       ],
       "Folder name cannot be empty.": [
         "Mappenavn kan ikke være tomt."
       ],
-      "Folder not found": [
-        "Mappe ikke funnet"
-      ],
       "Forward address is required": [
         "Videresendingsadresse kreves"
+      ],
+      "Image preview not found": [
+        "Forhåndsvisning av bilde ikke funnet"
       ],
       "Image upload failed": [
         "Bildeopplasting mislyktes"
@@ -3632,9 +3498,6 @@
       "Invalid IBAN": [
         "Ugyldig IBAN"
       ],
-      "Invalid JSON file": [
-        "Ugyldig JSON-fil"
-      ],
       "Invalid name": [
         "Ugyldig navn"
       ],
@@ -3653,8 +3516,14 @@
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
       ],
+      "Invitation not found": [
+        "Invitasjon ikke funnet"
+      ],
       "Item content cannot exceed 40KB": [
         "Elementinnhold kan ikke overskride 40KB"
+      ],
+      "Item not found": [
+        "Element ikke funnet"
       ],
       "Label name cannot be empty.": [
         "Etikettnavn kan ikke være tomt."
@@ -3662,18 +3531,48 @@
       "Last name is too long": [
         "Etternavnet er for langt"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Eldre offentlig kobling kan ikke oppdateres. Opprett en ny offentlig kobling på nytt."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå sammen minst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender.",
         "Slå sammen minst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere."
       ],
+      "Missing inviter email": [
+        "Mangler e-postadresse for invitator"
+      ],
       "Missing key packet": [
         "Mangler nøkkelpakke"
+      ],
+      "Missing organization private key": [
+        "Mangler privat nøkkel for organisasjonen"
+      ],
+      "Missing organization public key": [
+        "Mangler offentlig nøkkel for organisasjonen"
       ],
       "Missing signature": [
         "Mangler signatur"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Mangler signatur for ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Flytteoperasjonen ble avbrutt"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Flytting av element til en ikke-mappe er ikke tillatt"
+      ],
+      "Moving root item is not allowed": [
+        "Det er ikke tillatt å flytte rotelement"
+      ],
       "Name is required": [
         "Navn kreves"
+      ],
+      "Name must not be empty": [
+        "Navn kan ikke være tomt"
       ],
       "Network error": [
         "Nettverksfeil"
@@ -3689,6 +3588,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Fant ingen e-poster å importere - kontoen har ikke en innboks"
+      ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata ble mottatt. Prøv på nytt."
       ],
       "No file to upload": [
         "Ingen fil å laste opp"
@@ -3707,6 +3609,21 @@
         "En av gruppene har ingen kontakter: ${ noContactGroupList }",
         "Noen av gruppene har ingen kontakter: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Bare administratorer kan konvertere eksterne invitasjoner"
+      ],
+      "Operation aborted": [
+        "Operasjon avbrutt"
+      ],
+      "Operation failed, try again later": [
+        "Operasjon mislyktes, prøv igjen senere"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisasjonen har ikke nok ledige seter"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisasjonen har ikke nok lagringsplass tilgjengelig"
+      ],
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
       ],
@@ -3715,6 +3632,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
+      ],
+      "Part of the file appears to be corrupted": [
+        "En del av filen ser ut til å være ødelagt"
       ],
       "Password is required": [
         "Passord kreves"
@@ -3733,6 +3653,12 @@
       ],
       "Payment process not supported": [
         "Betalingsprosess støttes ikke"
+      ],
+      "Photo is already in the target album": [
+        "Bildet er allerede i målalbumet"
+      ],
+      "Photo not found": [
+        "Bilde ikke funnet"
       ],
       "Please activate your search again": [
         "Aktiver søket ditt på nytt"
@@ -3802,8 +3728,14 @@
         "Fjernet duplikat av invitert: ${ joinedInvitee }",
         "Fjernet dupliserte inviterte: ${ joinedInvitee }"
       ],
+      "Renaming root item is not allowed": [
+        "Det er ikke tillatt å gi nytt navn til rotelement"
+      ],
       "Report failed to be sent": [
         "Rapporten kunne ikke sendes"
+      ],
+      "Request aborted": [
+        "Forespørsel avbrutt"
       ],
       "Request timed out": [
         "Forespørselen ble tidsavbrutt"
@@ -3811,8 +3743,8 @@
       "Reverse charge scheme is not supported for this plan": [
         "Omvendt avgiftsplikt støttes ikke for denne planen"
       ],
-      "Search failed": [
-        "Søket mislyktes"
+      "Signature is missing": [
+        "Signatur mangler"
       ],
       "Signature not verified": [
         "Signatur ikke bekreftet"
@@ -3820,11 +3752,29 @@
       "Signature verification failed": [
         "Signaturbekreftelse mislyktes"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Bekreftelse av signatur mislyktes: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturverifisering for ${ signatureType } mislyktes"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturverifisering for ${ signatureType } mislyktes: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Noen kontakter kunne ikke slettes"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Deler av filen kunne ikke lastes opp. Prøv igjen."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Deler av filen kunne ikke lastes opp. Prøv igjen."
+      ],
       "Some groups could not be deleted": [
         "Noen grupper kunne ikke slettes"
+      ],
+      "Some items could not be loaded": [
+        "Kunne ikke laste inn enkelte dokumenter"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Noen av dine mappenavn er utilgjengelige. Tilpass importen for å redigere disse navnene."
@@ -3844,17 +3794,8 @@
       "Something went wrong": [
         "Noe gikk galt"
       ],
-      "Something went wrong during folder listing": [
-        "Noe gikk galt under mappeopplisting"
-      ],
       "Something went wrong while fetching available domains": [
         "Noe gikk galt under henting av tilgjengelige domener"
-      ],
-      "Something went wrong with search. Please try again later.": [
-        "Noe gikk galt. Prøv på nytt senere."
-      ],
-      "Something went wrong with search: Not enough storage space.": [
-        "Noe gikk galt med søket: Ikke nok lagringsplass."
       ],
       "Something went wrong. Please try again.": [
         "Noe gikk galt. Forsøk igjen."
@@ -3904,6 +3845,9 @@
       "The minimum donation amount is ${ price }": [
         "Minimumbeløpet for donasjon er ${ price }"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den opplastede filen samsvarer ikke med originalen. Prøv på nytt."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det er for mange mapper i din eksterne konto. Tilpass importen for å slette noen mapper."
       ],
@@ -3922,14 +3866,38 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette feltet krever minimum ${ minimumLength } tegn."
       ],
+      "This file has missing crypto material": [
+        "Denne filen mangler kryptomateriale"
+      ],
+      "This file has no version available to download": [
+        "Denne filen har ingen versjon tilgjengelig for nedlasting"
+      ],
+      "This file version could not be uploaded": [
+        "Denne filversjonen kunne ikke lastes opp"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Dette mappenavnet er ikke tilgjengelig. Velg et annet navn."
+      ],
+      "This item has no image preview": [
+        "Dette elementet har ingen forhåndsvisning av bilde"
+      ],
+      "This item is no longer shared": [
+        "Dette elementet deles ikke lenger"
+      ],
+      "This item is not shared": [
+        "Dette elementet er ikke delt"
       ],
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavnet er ikke tilgjengelig. Velg et annet navn."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne meldingen kan inneholde noen koblinger til nettadresser som ikke kan åpnes riktig av din nåværende nettleser."
+      ],
+      "Too many server errors, please try again later": [
+        "For mange serverfeil. Prøv igjen senere."
+      ],
+      "Too many server requests, please try again later": [
+        "For mange serverforespørsler. Prøv igjen senere."
       ],
       "Try using only letters, numerals, and _.-": [
         "Prøv å bruke bare bokstaver, tall og _.-"
@@ -3973,48 +3941,45 @@
       "VAT number must start with ${ prefixes }": [
         "MVA-nummeret må starte med ${ prefixes }"
       ],
-      "We cannot retrieve this item": [
-        "Vi kan ikke hente dette elementet"
+      "Verification keys are not available": [
+        "Verifiseringsnøkler er ikke tilgjengelige"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifiseringsnøkler for ${ signatureType } er ikke tilgjengelige"
       ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunne ikke sende en bekreftelseskode med denne metoden."
       ],
-      "We were not able to load some invitations": [
-        "Vi kunne ikke laste inn enkelte invitasjoner"
-      ],
       "We were not able to load some items": [
         "Vi kunne ikke laste inn enkelte elementer"
-      ],
-      "We were not able to load some items shared with you": [
-        "Enkelte elementer delt med deg kunne ikke lastes inn"
-      ],
-      "We were not able to load some of your invitation to shared items": [
-        "Vi kunne ikke laste inn enkelte av invitasjonene dine til delte elementer."
-      ],
-      "We were not able to load some of your saved shared links": [
-        "Enkelte av dine lagrede delte koblinger kunne ikke lastes inn"
-      ],
-      "We were not able to load some of your shared items": [
-        "Noen av dine delte elementer kunne ikke lastes inn"
-      ],
-      "We were not able to load some search results": [
-        "Vi kunne ikke laste inn enkelte søkeresultater"
-      ],
-      "We were not able to load the file history": [
-        "Vi klarte ikke å laste inn filhistorikken"
       ],
       "We were not able to load the folder contents": [
         "Vi klarte ikke å laste innholdet i mappen"
       ],
-      "We're sorry, but free upload is not available right now.": [
-        "Vi beklager, men gratis opplasting er ikke tilgjengelig akkurat nå."
-      ],
       "Wrong billing address": [
         "Feil faktureringsadresse"
+      ],
+      "You can create public links for your own files only": [
+        "Du kan bare opprette offentlige koblinger for dine egne filer"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan bare forlate elementer som er delt med deg"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan bare laste opp en ny versjon av en fil"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kan bare oppdatere en offentlig kobling for dine egne filer"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottakere."
+      ],
+      "You do not have access to this item": [
+        "Du har ikke tilgang til dette elementet"
+      ],
+      "You do not have access to this shared item": [
+        "Du har ikke tilgang til dette delte elementet"
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nådd maksimalt antall kalendere."
@@ -4176,23 +4141,11 @@
       ]
     },
     "Error message": {
-      "Access denied": [
-        "Tilgang nektet"
-      ],
       "App currently unavailable": [
         "App er for øyeblikket utilgjengelig"
       ],
-      "Brace yourself till we get the error fixed.": [
-        "Behold tålmodigheten til vi får fikset feilen."
-      ],
       "Error: ${ errorMessage }": [
         "Feil: ${ errorMessage }"
-      ],
-      "Internal server error": [
-        "Intern serverfeil"
-      ],
-      "Not found": [
-        "Ikke funnet"
       ],
       "Oops, something went wrong": [
         "Oops, noe gikk galt"
@@ -4214,9 +4167,6 @@
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "Når ekstra passord er aktivert, kan aliasadministrasjon bare gjøres i ${ PASS_APP_NAME }."
-      ],
-      "You may also refresh the page or try again later.": [
-        "Du kan også oppdatere siden eller prøve igjen senere."
       ]
     },
     "Error notification": {
@@ -4278,12 +4228,6 @@
     "Event title": {
       "(no title)": [
         "(ingen tittel)"
-      ]
-    },
-    "Failed": {
-      "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } mislyktes",
-        "${ countOfFailedLinks } mislyktes"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4513,6 +4457,29 @@
         "Terabytes"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Aktivert"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Feil"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrert"
+      ],
+      "Not activated": [
+        "Ikke aktivert"
+      ],
+      "Pending": [
+        "Venter"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } oppdatert"
@@ -4564,12 +4531,6 @@
       "Contacts": [
         "Kontakter"
       ],
-      "Create new album": [
-        "Opprett nytt album"
-      ],
-      "Create new shared album": [
-        "Opprett nytt delt album"
-      ],
       "Domain": [
         "Domene"
       ],
@@ -4579,33 +4540,11 @@
       "Password ends with": [
         "Passordet slutter med"
       ],
-      "Rename album": [
-        "Gi album nytt navn"
-      ],
       "Security Center": [
         "Sikkerhetssenter"
       ],
       "Username": [
         "Brukernavn"
-      ]
-    },
-    "Heading": {
-      "Add ${ photoCount } photo to": [
-        "Legg til ${ photoCount } bilde til",
-        "Legg til ${ photoCount } bilder til"
-      ],
-      "Add to shared album": [
-        "Legg til i delt album"
-      ],
-      "All albums": [
-        "Alle album"
-      ],
-      "Recent": [
-        "Nylige"
-      ],
-      "Share ${ photoCount } photo via": [
-        "Del ${ photoCount } bilde via",
-        "Del ${ photoCount } bilder via"
       ]
     },
     "Hint": {
@@ -4921,11 +4860,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Inneholder feil"
+      ],
       "In progress": [
         "Pågår"
       ],
       "Migrated": [
         "Migrert"
+      ],
+      "Pending": [
+        "Venter"
       ]
     },
     "Import warning": {
@@ -4951,21 +4896,11 @@
         "${ addressCount } e-postadresse",
         "${ addressCount } e-postadresser"
       ],
-      "${ albumName } has been successfully deleted": [
-        "${ albumName } har blitt slettet"
-      ],
-      "${ albums } album": [
-        "${ albums } album",
-        "${ albums } album"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
-      ],
-      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
-        "${ BRAND_NAME } Workspace gir teamet ditt mulighet til å samarbeide effektivt uten å sette bedriftens data i fare."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi betyr at ingen kan få tilgang til ditt passord - ikke engang vi."
@@ -5009,39 +4944,15 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } og ${ SHEETS_APP_NAME }-filer kan ikke lastes ned direkte og vil ikke bli inkludert i denne nedlastingen. Du kan laste ned de andre filene ved å klikke på 'Fortsett å laste ned'."
       ],
-      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } oppdaget at den lokale søkeindeksen er ødelagt og ikke lenger kan brukes. Gjenoppbygg indeksen for å gjenopprette søket."
-      ],
-      "${ DRIVE_APP_NAME } on App Store": [
-        "${ DRIVE_APP_NAME } på App Store"
-      ],
-      "${ DRIVE_APP_NAME } on Play Store": [
-        "${ DRIVE_APP_NAME } på Play Store"
-      ],
-      "${ email } invited you to join ${ albumName }": [
-        "${ email } har invitert deg til å bli med i ${ albumName }"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: bilde i full størrelse"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: forhåndsvisning i lav oppløsning"
       ],
-      "${ files } file": [
-        "${ files } fil",
-        "${ files } filer"
-      ],
-      "${ folders } folder": [
-        "${ folders } mappe",
-        "${ folders } mapper"
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe funnet",
         "${ groupCounts } grupper funnet"
-      ],
-      "${ invitationsCount } pending invitation": [
-        "${ invitationsCount } ventende invitasjon",
-        "${ invitationsCount } ventende invitasjoner"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe-skriveassistenten."
@@ -5066,14 +4977,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Livstidsavtale for ${ PASS_SHORT_APP_NAME } har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }. Fornyelsesprisen og datoen for ${ planTitle }-abonnementet forblir uendret."
-      ],
-      "${ photoCount } item": [
-        "${ photoCount } element",
-        "${ photoCount } elementer"
-      ],
-      "${ photos } photo": [
-        "${ photos } bilde",
-        "${ photos } bilder"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
@@ -5115,9 +5018,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etikett valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
-      ],
-      "${ state.result.entries.length } entries": [
-        "${ state.result.entries.length } oppføringer"
       ],
       "${ storage } storage": [
         "${ storage } lagringsplass"
@@ -5170,9 +5070,6 @@
       ],
       "30-day money-back guarantee.": [
         "30 dagers tilbakebetalingsgaranti."
-      ],
-      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
-        "En ny versjon av ${ DRIVE_APP_NAME } er tilgjengelig. Last inn på nytt for å fortsette å søke."
       ],
       "A number will be added to the filename": [
         "Et nummer vil bli lagt til filnavnet"
@@ -5249,9 +5146,6 @@
       "Already in your library": [
         "Allerede i biblioteket ditt"
       ],
-      "Also try looking in Trash.": [
-        "Prøv også å se i papirkurven."
-      ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
       ],
@@ -5261,23 +5155,11 @@
       "Amount below minimum (${ amount }).": [
         "Beløp under minimum (${ amount })."
       ],
-      "An active recovery file": [
-        "En aktiv gjenopprettingsfil"
-      ],
-      "An issue occurred during the restore process.": [
-        "Det oppstod et problem under gjenopprettingsprosessen."
-      ],
       "and": [
         "og"
       ],
-      "And access it from anywhere": [
-        "Og få tilgang til den fra hvor som helst"
-      ],
       "Anonymous": [
         "Anonym"
-      ],
-      "Apr": [
-        "Apr"
       ],
       "Are you sure you want to discard your changes?": [
         "Er du sikker på at du vil forkaste de ulagrede endringene dine?"
@@ -5288,17 +5170,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Er du sikker på at du vil tømme papirkurven og slette alle elementene permanent?"
       ],
-      "Are you sure you want to permanently delete": [
-        "Er du sikker på at du vil slette permanent"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Er du sikker på at du vil slette \"${ itemName }\" fra papirkurven permanent?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Er du sikker på at du vil slette valgte elementer fra papirkurven permanent?"
-      ],
-      "Are you sure you want to proceed?": [
-        "Er du sikker på at du vil fortsette?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tegn"
@@ -5309,8 +5185,8 @@
       "Attention required": [
         "Oppmerksomhet kreves"
       ],
-      "Aug": [
-        "Aug"
+      "Author is not provided on public link": [
+        "Forfatter er ikke oppgitt på offentlig kobling"
       ],
       "Awaiting transaction": [
         "Avventer transaksjon"
@@ -5318,14 +5194,8 @@
       "Balance from your previous subscription": [
         "Balanse fra ditt forrige abonnement"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Fordi ${ DRIVE_APP_NAME } er ende-til-ende-kryptert, kan vi ikke få tilgang til eller dekryptere filene dine for deg. Hvis du vil låse opp stasjonen etter tilbakestilling av passord, må du ha ett av følgende:"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
-      ],
-      "Better in the app": [
-        "Bedre i appen"
       ],
       "Billing cycle: ${ text }": [
         "Faktureringssyklus: ${ text }"
@@ -5354,17 +5224,11 @@
       "Can't move a folder into itself": [
         "Kan ikke flytte en mappe inn i seg selv"
       ],
-      "Can't rename to same name": [
-        "Kan ikke gi nytt navn til samme navn"
-      ],
       "Can't write into folder": [
         "Kan ikke skrive inn i mappen"
       ],
       "Canceled": [
         "Avbrutt"
-      ],
-      "Cannot load links": [
-        "Kan ikke laste koblinger"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Husker du ikke passordet ditt? Vi kan hjelpe deg slette den krypterte informasjonen til alle kontakter kryptert med denne nøkkelen, og i prosessen avvise advarselen."
@@ -5378,23 +5242,14 @@
       "Choose a plan that works best for you.": [
         "Velg en plan som fungerer best for deg."
       ],
-      "Clear all search data": [
-        "Tøm alle søkedata"
-      ],
       "Clear data": [
         "Tøm data"
       ],
       "Clear encrypted search data": [
         "Tøm kryptert søkedata"
       ],
-      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Tømming av nettleserdata vil slette søkeindeksen på denne enheten. Alle filer må indekseres på nytt mens du bruker søkefunksjonaliteten."
-      ],
       "Clears browser data related to the encrypted search.": [
         "Tømmer nettleserdata relatert til det krypterte søket."
-      ],
-      "Clears browser data related to the search.": [
-        "Tømmer nettleserdata relatert til søket."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
@@ -5413,9 +5268,6 @@
       ],
       "Continue": [
         "Fortsett"
-      ],
-      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "Fortsett å bruke ${ DRIVE_APP_NAME } og lås opp stasjonen senere."
       ],
       "Copy the link to clipboard": [
         "Kopier koblingen til utklippstavlen"
@@ -5449,9 +5301,6 @@
       "Create in": [
         "Opprett i"
       ],
-      "Create links and share your files with others.": [
-        "Opprett koblinger og del filene dine med andre."
-      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kreditt for den ubrukte delen av ditt forrige planabonnement"
       ],
@@ -5467,9 +5316,6 @@
       "Data integrity check failed": [
         "Kontroll av dataintegritet mislyktes"
       ],
-      "Dec": [
-        "Des"
-      ],
       "Decrypting files": [
         "Dekrypterer filer"
       ],
@@ -5481,10 +5327,6 @@
       ],
       "default email address": [
         "standard e-postadresse"
-      ],
-      "Delete locked drive": [
-        "Slett låst stasjon",
-        "Slett låste stasjoner"
       ],
       "Details": [
         "Detaljer"
@@ -5517,9 +5359,6 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
       ],
-      "Download ${ name } app": [
-        "Last ned ${ name }-appen"
-      ],
       "Download current logs": [
         "Last ned gjeldende logger"
       ],
@@ -5540,9 +5379,6 @@
       ],
       "Drop file here to upload": [
         "Slipp fil her for å laste opp"
-      ],
-      "Drop files here": [
-        "Slipp filer her"
       ],
       "Drop files here to upload or click on the upload button": [
         "Slipp filer her for å laste opp, eller klikk på opplastingsknappen"
@@ -5571,17 +5407,8 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "E-poster flyttet til papirkurv og søppelpost for mer enn 30 dager siden, blir slettet automatisk."
       ],
-      "Empty folder": [
-        "Tom mappe"
-      ],
       "Enabling auto-deletion…": [
         "Aktiverer automatisk sletting…"
-      ],
-      "Enabling drive search": [
-        "Aktiverer søk i Drive"
-      ],
-      "Encrypted search is here": [
-        "Kryptert søk er her"
       ],
       "End-to-end encrypted": [
         "Ende-til-ende-kryptert"
@@ -5632,14 +5459,8 @@
       "Expired": [
         "Utløpt"
       ],
-      "Export diagnostic logs for technical support and troubleshooting": [
-        "Eksporter diagnoselogger for teknisk støtte og feilsøking"
-      ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Raskeste VPN-hastigheter på opptil 10 Gbps"
-      ],
-      "Feb": [
-        "Feb"
       ],
       "File could not be scanned": [
         "Fil kunne ikke skannes"
@@ -5650,20 +5471,17 @@
       "File will not be updated": [
         "Filen blir ikke oppdatert"
       ],
-      "Files and folders that others shared with you will appear here": [
-        "Filer og mapper som andre har delt med deg, vises her."
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Bare filer (ingen bilder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – opptil 100 GB totalt, 100 000 filer og 50 GB per fil"
       ],
       "finance": [
         "finans"
       ],
+      "Find out what can be migrated.": [
+        "Finn ut hva som kan migreres."
+      ],
       "Folder will not be uploaded": [
         "Mappen blir ikke lastet opp"
-      ],
-      "Folders you sync from your computer will appear here.": [
-        "Mapper du synkroniserer fra datamaskinen din vil vises her."
       ],
       "for ${ price }": [
         "for ${ price }"
@@ -5677,23 +5495,8 @@
       "Free 5GB encrypted storage to get started": [
         "Gratis 5 GB kryptert lagring for å komme i gang"
       ],
-      "from the version history?": [
-        "fra versjonshistorikken?"
-      ],
       "Geoblocking": [
         "Geoblokkering"
-      ],
-      "Get logs and other information for technical support and troubleshooting": [
-        "Hent logger og annen informasjon for teknisk støtte og feilsøking"
-      ],
-      "Get the app to backup photos from your phone or upload them here.": [
-        "Skaff deg appen til å sikkerhetskopiere bilder fra telefonen din eller last dem opp her."
-      ],
-      "Get the desktop app to sync files from your computer.": [
-        "Skaff deg skrivebordsappen til å synkronisere filer fra datamaskinen."
-      ],
-      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
-        "Bli kjent med ${ DRIVE_APP_NAME } og få 3 GB lagringsbonus! Ta grep i dag."
       ],
       "Google Pay mark": [
         "Merk Google Pay"
@@ -5710,14 +5513,8 @@
       "High Priority": [
         "Høy prioritet"
       ],
-      "How does encrypted search work?": [
-        "Hvordan fungerer kryptert søk?"
-      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Jeg bekrefter herved i god tro at informasjonen og uttalelsene i rapporten er korrekte og fullstendige."
-      ],
-      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
-        "Hvis disse filene ikke er fullstendig lastet ned lokalt på ${ deviceName }, vil du miste tilgang til dem."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
@@ -5733,9 +5530,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke finner e-posten i innboksen, sjekk søppelpostmappen din."
-      ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "Hvis du har en av disse, fortsett til ${ BRAND_NAME }-kontoinnstilling for å starte prosessen med å fjerne blokkeringen."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "Hvis du mistet tilgangen til autentiseringsappen din, kan du bruke én av de 16 sikkerhetskopi-gjenopprettingskodene du fikk da du konfigurerte tofaktorautentisering. ${ learnMoreLink }"
@@ -5783,38 +5577,8 @@
       "Included": [
         "Inkludert"
       ],
-      "Index is empty.": [
-        "Indeks er tom."
-      ],
-      "Indexed ${ first }": [
-        "Indekserte ${ first }"
-      ],
-      "Indexed ${ first } and ${ second }": [
-        "Indekserte ${ first } og ${ second }"
-      ],
-      "Indexed ${ first }, ${ second } and ${ third }": [
-        "Indekserte ${ first }, ${ second } og ${ third }"
-      ],
-      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
-        "Indekserte ${ first }, ${ second }, ${ third } og ${ fourth }"
-      ],
-      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "Indekseringen har nådd en uventet tilstand og kan ikke fortsette. Bygg opp indeksen på nytt for å gjenopprette."
-      ],
-      "Indexing in progress": [
-        "Indeksering pågår"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Indekserer elementer ${ esProgress } av ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Indekserer søkeresultater..."
-      ],
       "Inherited from parent folder": [
         "Arvet fra overordnet mappe"
-      ],
-      "Integrity issues found": [
-        "Integritetsproblemer funnet"
       ],
       "Internet connection lost": [
         "Mistet internettilkobling"
@@ -5825,17 +5589,8 @@
       "Internet connection restored.": [
         "Internettilkobling gjenopprettet."
       ],
-      "Invitation confirmed": [
-        "Invitasjon bekreftet"
-      ],
       "Invite link copied": [
         "Invitasjonskobling kopiert"
-      ],
-      "iOS and Android Apps": [
-        "iOS- og Android-apper"
-      ],
-      "Issues found": [
-        "Problemer funnet"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Det virker som du nylig prøvde å laste opp ${ uploadName }. Hvis opplastingen mislyktes, ${ replaceFile }. Hvis opplastingen fremdeles pågår, avbrytes den pågående opplastingen hvis du erstatter den."
@@ -5843,29 +5598,11 @@
       "It's better to have:": [
         "Det er bedre å ha:"
       ],
-      "Items in the trash will stay here until you delete them permanently": [
-        "Elementer i papirkurven vil forbli der inntil du sletter dem permanent."
-      ],
-      "Items moved to the trash will stay here until deleted": [
-        "Elementer som flyttes til papirkurven, blir værende her til de slettes."
-      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Det er best å bruke et VPN til enhver tid. Men her er når cybersikkerhetstrusler kan være høyest:"
       ],
-      "It’s easy and secure": [
-        "Det er enkelt og sikkert"
-      ],
-      "Jan": [
-        "Jan"
-      ],
       "JCB logo": [
         "JCB-logo"
-      ],
-      "Jul": [
-        "Jul"
-      ],
-      "Jun": [
-        "Jun"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bare bekreft valget ditt og vi vil gjøre resten."
@@ -5884,9 +5621,6 @@
       ],
       "Large imports can take several days.": [
         "Store importer kan ta flere dager."
-      ],
-      "Last week": [
-        "Forrige uke"
       ],
       "Learn more": [
         "Lær mer"
@@ -5912,9 +5646,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laster inn kalender, vent litt. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
       ],
-      "Loading links": [
-        "Laster koblinger"
-      ],
       "Loading preview": [
         "Laster forhåndsvisning"
       ],
@@ -5924,14 +5655,8 @@
       "Low Priority": [
         "Lav prioritet"
       ],
-      "Makes your account safer": [
-        "Gjør kontoen din sikrere"
-      ],
       "Malware detected": [
         "Skadelig programvare oppdaget"
-      ],
-      "Mar": [
-        "Mar"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -5939,9 +5664,6 @@
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn"
-      ],
-      "May": [
-        "Mai"
       ],
       "Medium Priority": [
         "Middels prioritet"
@@ -5958,29 +5680,8 @@
       "Monitor accounts": [
         "Overvåk kontoer"
       ],
-      "More": [
-        "Mer"
-      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De fleste offentlige WiFi-nettverk er trygge, men noen mangler sikkerhet, noe som utsetter deg for cybertrusler. Et VPN krypterer trafikken din og holder deg beskyttet."
-      ],
-      "Move ${ dragCount } item": [
-        "Flytt ${ dragCount } element",
-        "Flytt ${ dragCount } elementer"
-      ],
-      "Move ${ fileCount } file": [
-        "Flytt ${ fileCount } fil",
-        "Flytt ${ fileCount } filer"
-      ],
-      "Move ${ folderCount } folder": [
-        "Flytt ${ folderCount } mappe",
-        "Flytt ${ folderCount } mapper"
-      ],
-      "Moving files": [
-        "Flytter filer"
-      ],
-      "My Links": [
-        "Mine koblinger"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
@@ -5991,9 +5692,6 @@
       "No": [
         "Nei"
       ],
-      "No Albums": [
-        "Ingen album"
-      ],
       "No contacts added yet": [
         "Ingen kontakter er lagt til enda"
       ],
@@ -6003,20 +5701,14 @@
       "No group found": [
         "Ingen gruppe funnet"
       ],
-      "No issue found": [
-        "Ingen problemer funnet"
-      ],
       "No payment is required at this time.": [
         "Ingen betaling kreves på dette tidspunktet."
-      ],
-      "No populator states found.": [
-        "Fant ingen status for indekseringsprosesser"
       ],
       "No results found": [
         "Ingen resultater funnet"
       ],
-      "No synced folders": [
-        "Ingen synkroniserte mapper"
+      "No users to display": [
+        "Ingen brukere å vise"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ingen av de opplastede nøklene er gyldige for kryptering. For å kunne sende meldinger til denne adressen, last opp en gyldig nøkkel eller deaktiver \"krypter e-poster\"."
@@ -6027,15 +5719,6 @@
       "Not connected": [
         "Ikke tilkoblet"
       ],
-      "Not enough storage space": [
-        "Ikke nok lagringsplass"
-      ],
-      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Merk: data kan fortsatt være tilgjengelig lokalt på enheter der du har installert ${ DRIVE_APP_NAME }."
-      ],
-      "Nov": [
-        "Nov"
-      ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
       ],
@@ -6045,20 +5728,11 @@
       "Numbers": [
         "Tall"
       ],
-      "Oct": [
-        "Okt"
-      ],
       "of": [
         "av"
       ],
       "On public WiFi networks": [
         "På offentlige Wi-Fi-nettverk"
-      ],
-      "One encrypted suite. Full business protection.": [
-        "Én kryptert pakke. Fullstendig bedriftsbeskyttelse."
-      ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "En av de krypterte stasjonene dine er låst. Dette skyldes mest sannsynlig en nylig tilbakestilling av passord."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere av de betrodde nøklene dine ble merket \"kompromittert\" av eieren. Vi anbefaler at du \"ikke stoler på\" disse nøklene."
@@ -6068,9 +5742,6 @@
       ],
       "or discover other features:": [
         "eller oppdag andre funksjoner:"
-      ],
-      "Or use the \"+ New\" button": [
-        "Eller bruk \"+ Ny\"-knappen"
       ],
       "Organization size": [
         "Organisasjonsstørrelse"
@@ -6102,30 +5773,11 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
       ],
-      "Permanently delete all files in your locked drive": [
-        "Slett alle filer permanent i den låste stasjonen"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline er kun kompatibel med klartekst-format."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME sender automatisk meldingen ved hjelp av gjeldende skrivemodus."
-      ],
-      "Photo is not saved to your library": [
-        "Bildet lagres ikke i biblioteket ditt"
-      ],
-      "Photo is set as album cover": [
-        "Bildet er angitt som albumomslag"
-      ],
-      "Photo saved to your Drive": [
-        "Bilde lagret på din Drive",
-        "Bilder lagret på din Drive"
-      ],
-      "Photo was copied to stream and marked favorite there.": [
-        "Bildet er kopiert til nyhetsstrømmen og merket som favoritt."
-      ],
-      "Photos have been successfully recovered.": [
-        "Bildene er gjenopprettet."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Be eieren om å invitere deg direkte til dokumentet."
@@ -6209,12 +5861,6 @@
       "Preview of documents is not yet supported.": [
         "Forhåndsvisning av dokumenter støttes ikke enda."
       ],
-      "Previous versions are kept for ${ retentionLabel }": [
-        "Tidligere versjoner beholdes for ${ retentionLabel }"
-      ],
-      "Previous versions are not saved": [
-        "Tidligere versjoner lagres ikke"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gjeldende syklus-baserte rabatter og ikke-utløpte kuponger lagret på kontoen din."
       ],
@@ -6224,29 +5870,14 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfing (eller \"inkognitomodus\") er bare nyttig for å holde aktiviteten din skjult på enheten din. Det hindrer nettleseren din i å lagre historikk og informasjonskapsler, men det gjør deg ikke usynlig. Internett-leverandøren, nettverksadministratoren og nettstedene du besøker, kan fortsatt se hva du gjør på nettet."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Privat søk aktivert. Du kan nå lukke denne dialogen og søke etter filer og mapper."
-      ],
-      "Public link": [
-        "Offentlig kobling"
-      ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling av dokumenter støttes enda ikke."
-      ],
-      "Re-indexing in progress": [
-        "Gjenindeksering pågår"
-      ],
-      "Ready to add some photos?": [
-        "Klar til å legge til noen bilder?"
       ],
       "RECOMMENDED": [
         "ANBEFALT"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gjennopprettelsesopplysninger vil forbli på denne enheten, med mindre du velger å slette dem."
-      ],
-      "Recovery process might take some time.": [
-        "Gjenopprettingsprosessen kan ta litt tid."
       ],
       "Referral link copied to your clipboard": [
         "Vervekobling kopiert til utklippstavlen din"
@@ -6260,26 +5891,14 @@
       "Report has been sent": [
         "Rapporten er sendt"
       ],
-      "Request access, or switch to an account with access.": [
-        "Be om tilgang, eller bytt til en konto med tilgang."
-      ],
       "Requested item doesn't exist anymore": [
         "Forespurt element eksisterer ikke lenger"
       ],
       "Restore": [
         "Gjenopprett"
       ],
-      "Restore Photos": [
-        "Gjenopprett bilder"
-      ],
       "Restored files ${ formattedDate }": [
         "Gjenopprettede filer ${ formattedDate }"
-      ],
-      "Restoring Photos... Please keep the tab open": [
-        "Gjenoppretter bilder...Hold fanen åpen"
-      ],
-      "Running diagnostics...": [
-        "Kjører diagnostikk..."
       ],
       "Saving...": [
         "Lagrer..."
@@ -6287,65 +5906,20 @@
       "Scan the QR code with your mobile device": [
         "Skann QR-koden med mobilenheten din"
       ],
-      "Scan to download": [
-        "Skann for å laste ned"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Søk kan ikke aktiveres i denne nettleseren"
-      ],
-      "Search data is corrupted": [
-        "Søkedataene er ødelagt"
-      ],
-      "Search Enabled": [
-        "Søk aktivert"
-      ],
-      "Search enabled. You may now close this dialogue and search for files and folders.": [
-        "Søk aktivert. Du kan nå lukke denne dialogen og søke etter filer og mapper."
-      ],
-      "Search encountered an internal error. Rebuild the index to recover.": [
-        "Søket opplevde en intern feil. Bygg indeksen på nytt for å gjenopprette."
-      ],
-      "Search engine error": [
-        "Søkemotorfeil"
-      ],
-      "Search error": [
-        "Søkefeil"
-      ],
-      "Search is in an invalid state": [
-        "Søk er i en ugyldig tilstand"
-      ],
-      "Search is ready. Your files have been indexed.": [
-        "Søket er klart. Filene dine er indeksert."
-      ],
-      "Search module is not available.": [
-        "Søkemodul er ikke tilgjengelig."
-      ],
       "Select a destination folder": [
         "Velg en målmappe"
-      ],
-      "Select a folder to make the copy in": [
-        "Velg en målmappe for kopien"
       ],
       "Select a folder to move to.": [
         "Velg en mappe du vil flytte til."
       ],
-      "Select all items for": [
-        "Velg alle elementer for"
-      ],
-      "Select an uploaded file or folder and create a link to it.": [
-        "Velg en opplastet fil eller mappe og opprett en kobling til den."
-      ],
-      "Select item": [
-        "Velg element"
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Velg nøyaktig hva du vil migrere. Det vil gjelde for alle brukere i organisasjonen."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Velg det e-postformatet du vil bruke som standard når du sender en e-post til denne adressen."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Velg hvilke kalendere du vil importere. En ny kalender opprettes for hver importerte kalender i henhold til antall kalendere som er tilgjengelige i planen din."
-      ],
-      "Sep": [
-        "Sep"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalinger er ikke tilgjengelige for øyeblikket. Prøv igjen senere."
@@ -6368,23 +5942,8 @@
       "Setting up your new address…": [
         "Konfigurerer den nye adressen din…"
       ],
-      "Share files with links": [
-        "Del filer med koblinger"
-      ],
-      "Shared": [
-        "Delt"
-      ],
-      "Shared by ": [
-        "Delt av "
-      ],
       "Shared link not found": [
         "Delt kobling ikke funnet"
-      ],
-      "Shared with me": [
-        "Delt med meg"
-      ],
-      "Shared with you": [
-        "Delt med deg"
       ],
       "Signature check will be ignored": [
         "Signaturkontrollen ignoreres"
@@ -6397,12 +5956,6 @@
       ],
       "Some items failed": [
         "Noen elementer mislyktes"
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Noen av filene dine er ikke lenger tilgjengelige. Gjenopprett tilgangen til filene dine. ${ StartRecoveryButton }"
-      ],
-      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Noen bilder i dette albumet er ikke lagret på tidslinjen din. Hvis du sletter dette albumet, slettes disse bildene permanent."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Noen nettsteder og strømmetjenester blokkerer innhold etter region. Et VPN lar deg omgå disse begrensningene og gir fri tilgang til internett."
@@ -6453,9 +6006,6 @@
       "that": [
         "den"
       ],
-      "The albums you create are shown here.": [
-        "Albumene du oppretter vises her."
-      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Nedlastingsantallet inkluderer både faktiske nedlastinger og forekomster der filer forhåndsvises."
       ],
@@ -6468,17 +6018,11 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
       ],
-      "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "Søket opplevde en intern feil. Bygg indeksen opp på nytt for å gjenopprette."
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifiseringsprosessen vil åpne en ny nettleserfane. Deaktiver alle aktive blokkeringer av sprettoppvinduer."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Det er filer som fortsatt må overføres. Å stenge overføringsbehandleren vil avslutte alle operasjoner."
-      ],
-      "There is nothing to see here": [
-        "Det er ingenting å se her"
       ],
       "Thinking about this": [
         "Tenker på dette"
@@ -6491,9 +6035,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne nettleseren støtter ikke forhåndsvisning av PDF-dokumenter. Last ned filen."
-      ],
-      "This can NOT be undone. Please enter the device name to confirm removal.": [
-        "Dette kan IKKE angres. Skriv inn enhetens navn for å bekrefte fjerningen."
       ],
       "This file appears to be empty:": [
         "Denne filen ser ut til å være tom:",
@@ -6514,10 +6055,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nå din ${ defaultEmailAddress } for å sende nye meldinger."
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "Dette elementet lagres ikke i Bilder-biblioteket. Hvis du fjerner det fra dette albumet, mister du tilgangen til det permanent.",
-        "Noen av de markerte elementene arkiveres ikke i Bilder-biblioteket. Hvis du fjerner dem fra dette albumet, mister du tilgangen til dem permanent."
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denne koblingen fører til et nettsted som kanskje prøver å stjele informasjonen din, for eksempel passord og kredittkortdetaljer."
       ],
@@ -6527,11 +6064,14 @@
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Dette betyr at Internett-leverandøren din og nettstedene du besøker, ikke kan koble personopplysningene dine til nettaktiviteten din."
       ],
-      "This month": [
-        "Denne måneden"
-      ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denne unike koden kan brukes av nettsteder og Internett-leverandører for å koble posisjonen og nettleserloggen din til enheten din."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Denne brukeren kan ikke migreres fordi e-postadressen deres ikke er tilgjengelig på ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne brukeren kan ikke migreres på grunn av plattformuforenlighet."
       ],
       "This will cancel any remaining downloads.": [
         "Dette vil avbryte eventuelle gjenværende nedlastinger."
@@ -6541,9 +6081,6 @@
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Dette vil avbryte eventuelle gjenværende opplastinger. Avbrutte filer vil ikke bli lagret i ${ DRIVE_APP_NAME }."
-      ],
-      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "Dette vil bare slette albumet. Bildene dine forblir på tidslinjen din. Denne handlingen kan ikke angres."
       ],
       "This will permanently delete the file you uploaded.": [
         "Dette vil slette filen du lastet opp permanent."
@@ -6563,23 +6100,11 @@
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge deg ut av alle kontoer som for øyeblikket er logget på."
       ],
-      "Time": [
-        "Tid"
-      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For å fullføre betalingen, send ${ btcAmountBold } til adressen nedenfor."
       ],
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "For å laste ned disse filene, åpne dem i ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME } og eksporter dem."
-      ],
-      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
-        "For å aktivere søk, må vi indeksere filene dine lokalt. Du kan fortsatt bruke ${ DRIVE_APP_NAME } normalt – vi gir deg beskjed når indekseringen er ferdig. Hvis du forlater denne siden, vil indekseringen settes på pause og fortsette når du kommer tilbake."
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "For å muliggjøre virkelig privat søk, må ${ DRIVE_APP_NAME } indeksere filene dine lokalt."
-      ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "For å muliggjøre virkelig privat søk, må vi indeksere filene dine lokalt. Du kan fremdeles bruke ${ DRIVE_APP_NAME } som normalt - vi gir deg beskjed når indekseringen er ferdig."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
@@ -6593,6 +6118,27 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For å importere hendelser, først opprett en kalender i ${ CALENDAR_APP_NAME }. Dette er hvor hendelsene vil vises etter importen."
       ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "For å migrere denne brukeren, legg til og bekreft e-postdomenet under ${ domainNamesLink }."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "For å migrere denne brukeren må du aktivere kontoen deres i ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For å migrere denne brukeren må du aktivere kontoen deres under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For å migrere denne brukeren må du aktivere adressen deres under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "For å migrere denne brukeren må de godta invitasjonen sin til å bli med i ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "For å migrere denne brukeren må du oppheve arkiveringen i ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "For å migrere denne brukeren må du oppheve suspensjonen deres i ${ provider.adminConsoleName }."
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "For å gjensignere kontaktene dine trenger vi å sjekke hver kontakt med alle krypteringsnøklene tilgjengelige på kontoen din. Hvis ingen nøkler passer, vil kontakten din bli gjensignert med den primære krypteringsnøkkelen."
       ],
@@ -6601,9 +6147,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Hvis du vil bruke adressebekreftelse, må du klarere én eller flere tilgjengelige fellesnøkler, inkludert den du vil bruke til sending. Dette forhindrer at krypteringsnøklene forfalskes."
-      ],
-      "Today": [
-        "I dag"
       ],
       "Total email addresses": [
         "Totalt antall e-postadresser"
@@ -6623,29 +6166,17 @@
       "Trash": [
         "Papirkurv"
       ],
-      "Trash is empty": [
-        "Papirkurven er tom"
-      ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Stol på \"${ activeSignerText }\"-nøkkelen for å bekrefte nye meldinger fra denne kontakten."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME }-funksjoner, oppdateringer og produkter før de er utgitt til offentligheten. Dette vil laste inn applikasjonen på nytt."
       ],
-      "Try searching by file name, date, or type.": [
-        "Prøv å søke etter filnavn, dato eller type."
-      ],
       "Unexpected download error": [
         "Uventet nedlastingsfeil"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Dessverre ser det ut til at filen eller noen av dens data ikke kan dekrypteres."
-      ],
-      "Unknown date": [
-        "Ukjent dato"
-      ],
-      "Unlock drive to recover files": [
-        "Lås opp stasjonen for å gjenopprette filer"
       ],
       "Unsaved changes": [
         "Endringer som ikke er lagret"
@@ -6655,12 +6186,6 @@
       ],
       "Unsupported file type for Photos": [
         "Filtypen støttes ikke for bilder"
-      ],
-      "Update required": [
-        "Oppdatering kreves"
-      ],
-      "Updating drive search...": [
-        "Oppdaterer Drive-søk..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Oppgrader når som helst for å få med deg resten"
@@ -6676,9 +6201,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Oppgrader for å beholde ${ planTitle } fordelene dine."
-      ],
-      "upgrade your storage": [
-        "oppgrader lagringsplassen din"
       ],
       "Upload Failed": [
         "Opplasting mislyktes"
@@ -6710,12 +6232,6 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verifisering vil åpne en ny fane, deaktiver eventuell blokkering av sprettoppvinduer. Du vil ikke bli belastet. Alle beløp som benyttes for å bekrefte kortet vil bli tilbakebetalt umiddelbart."
       ],
-      "Version is deleted": [
-        "Versjon er slettet"
-      ],
-      "Version is restored": [
-        "Versjon er gjenopprettet"
-      ],
       "Version number successfully copied to clipboard": [
         "Versjonsnummeret ble kopiert til utklippstavlen"
       ],
@@ -6728,18 +6244,8 @@
       "Waiting": [
         "Venter"
       ],
-      "Want to sync files faster?": [
-        "Ønsker du å synkronisere filer raskere?"
-      ],
       "Warning": [
         "Advarsel"
-      ],
-      "Way to go, you've just increased your storage to 5 GB!": [
-        "Flott levert, du har nettopp økt lagringsplassen til 5 GB!"
-      ],
-      "We couldn't save this photo to your Drive": [
-        "Vi kunne ikke lagre dette bildet på din Drive",
-        "Vi kunne ikke lagre flere bilder på din Drive"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Vi kunne ikke bekrefte at ${ nameAuthor } lastet opp ${ nodeName }. Følgende kan ha blitt tuklet med: fildatarekkefølge. Åpne bare hvis du stoler på den."
@@ -6755,10 +6261,6 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruker 3-D Secure for å beskytte dine betalinger"
-      ],
-      "We were not able to add this photo to your album": [
-        "Vi kunne ikke legge til dette bildet i albumet ditt",
-        "Vi kunne ikke legge til enkelte bilder i albumet ditt"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
@@ -6778,13 +6280,7 @@
       "Week": [
         "Uke"
       ],
-      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
-        "Velkommen til ${ DRIVE_APP_NAME }. De første 10 minuttene teller ikke filer du laster opp mot lagringskvoten din."
-      ],
       "What do you want to do?": [
-        "Hva ønsker du å gjøre?"
-      ],
-      "What would you like to do?": [
         "Hva ønsker du å gjøre?"
       ],
       "When working remotely": [
@@ -6793,17 +6289,11 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Når du kobler til VPN, bruker det krypteringsteknologi for å skjule IP-adressen din (en unik kode som er tildelt enheten din)."
       ],
-      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
-        "Når du fjerner ${ deviceName } som en synkronisert enhet, vil alle mapper lagt til Mine Datamaskiner fra denne enheten bli permanent slettet fra ${ DRIVE_APP_NAME }."
-      ],
       "who": [
         "hvem"
       ],
       "Who has access": [
         "Hvem har tilgang"
-      ],
-      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
-        "vil bli gjenopprettet til versjonen fra ${ formattedRevisionDate }. Alle andre versjoner lagres fortsatt."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
@@ -6811,33 +6301,20 @@
       "Would you like to receive a new verification code?": [
         "Ønsker du å motta en ny verifiseringskode?"
       ],
-      "Would you like to restore your files?": [
-        "Vil du gjenopprette filene dine?"
-      ],
-      "Would you like to save it before removing?": [
-        "Vil du lagre det før du fjerner det?",
-        "Vil du lagre dem før du fjerner dem?"
-      ],
-      "Would you like to save them before removing?": [
-        "Vil du lagre dem før du fjerner dem?"
-      ],
       "Writing assistant": [
         "Skriveassistent"
       ],
       "Yes": [
         "Ja"
       ],
-      "Yesterday": [
-        "I går"
+      "You": [
+        "Du"
       ],
       "you": [
         "du"
       ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
-      ],
-      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Du er i ferd med å forlate det delte elementet. Du vil ikke få tilgang til det igjen før eieren deler det med deg."
       ],
       "You are about to open another browser tab and visit:": [
         "Du åpner nå en ny nettleserfane for å besøke:"
@@ -6883,15 +6360,8 @@
       "You cannot undo this action.": [
         "Du kan ikke angre denne handlingen."
       ],
-      "You don't have permission to copy files to this folder.": [
-        "Du har ikke tillatelse til å kopiere filer til denne mappen."
-      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
-      ],
-      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "Du har ${ expiresInDays } dag igjen til å kreve din 3 GB velkomstbonus og ",
-        "Du har ${ expiresInDays } dager igjen til å kreve din 3 GB velkomstbonus og "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et prøveabonnement på ${ planTitle }. Hvis du vil fortsette abonnementet etter prøveperioden, må du legge til en betalingsmåte."
@@ -6905,21 +6375,17 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du må deaktivere og fjerne alle eventuelle ${ MAIL_APP_NAME }-brukere, adresser og egendefinerte domener før du kan nedgradere."
       ],
-      "You need access": [
-        "Du må ha tilgang"
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du vil miste tilgang til ${ planTitle }-funksjoner på denne datoen."
       ],
       "You will lose all unsaved changes.": [
         "Du vil miste alle endringer som ikke er lagret."
       ],
-      "You will need to save it again from the public link page.": [
-        "Du må lagre det på nytt fra den offentlige koblingssiden.",
-        "Du må lagre dem på nytt fra den offentlige koblingssiden."
-      ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Du vil ikke kunne dele \"${ fileName }\" etter at du har endret tilgangen din til leser. Eieren eller en redigerer med delingstilgang kan gjenopprette redigeringstilgangen din. Du kan ikke angre denne endringen selv."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du mottar kredittbelønningen én måned etter at vennen din abonnerer på en årsplan, og to måneder etter at de abonnerer på en månedlig plan."
@@ -6955,9 +6421,6 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Kontoen din er for øyeblikket konfigurert til å bruke ordningen for omvendt avgiftsplikt. Dette støttes ikke for den valgte planen. For å fortsette, fjern enten MVA-nummeret fra faktureringsadressen eller velg en annen plan."
       ],
-      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "Nettleseren gikk tom for plass mens den indekserte filer for søk. Frigjør lagringsplass, og bygg deretter opp indeksen på nytt."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
@@ -6969,12 +6432,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
-      ],
-      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
-        "Filene dine blir indeksert på nytt. Du kan fortsette å søke – resultatene kan være ufullstendige før det er ferdig. Vi gir deg beskjed når det er ferdig."
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Filene dine er ikke lenger tilgjengelige på grunn av en tilbakestilling av passord. Last opp den gamle krypteringsnøkkelen på nytt for å få tilgang igjen. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
@@ -7023,12 +6480,6 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Planen din er begrenset til 10 versjoner i opptil 7 dager"
-      ],
-      "Your previous password": [
-        "Det forrige passordet ditt"
-      ],
-      "Your previous recovery phrase": [
-        "Den forrige gjenopprettingsfrasen din"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
@@ -7122,17 +6573,8 @@
       ]
     },
     "Label": {
-      "# of downloads": [
-        "# nedlastinger"
-      ],
-      "${ albumProgress.added } of ${ albumProgress.total }": [
-        "${ albumProgress.added } av ${ albumProgress.total }"
-      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-brukernavn"
-      ],
-      "${ downloads } downloads": [
-        "${ downloads } nedlastinger"
       ],
       "${ n } month": [
         "${ n } måned",
@@ -7148,9 +6590,6 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } tegn"
-      ],
-      "(Expired)": [
-        "(Utløpt)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
@@ -7206,9 +6645,6 @@
       "App password": [
         "App-passord"
       ],
-      "Applications in a business setting": [
-        "Applikasjoner for bedrifter"
-      ],
       "Apply to all duplicated files": [
         "Bruk på alle dupliserte filer"
       ],
@@ -7217,9 +6653,6 @@
       ],
       "Apply to all unverified items": [
         "Bruk på alle ubekreftede elementer"
-      ],
-      "Asset": [
-        "Ressurs"
       ],
       "Attach screenshot(s)": [
         "Legg ved skjermbilde(r)"
@@ -7332,14 +6765,8 @@
       "Country": [
         "Land"
       ],
-      "Create ${ BRAND_NAME } account": [
-        "Opprett ${ BRAND_NAME }-konto"
-      ],
       "Created": [
         "Opprettet"
-      ],
-      "Created ${ created }": [
-        "Opprettet ${ created }"
       ],
       "Credits": [
         "Kreditter"
@@ -7347,33 +6774,14 @@
       "Delete": [
         "Slett"
       ],
-      "Delete drive?": [
-        "Slette stasjon?",
-        "Slette stasjoner?"
-      ],
       "Delete link and remove access for everyone": [
         "Slett kobling og fjern tilgang for alle"
       ],
       "Delete recovery-related information.": [
         "Slett gjenopprettingsrelatert informasjon."
       ],
-      "Deleted": [
-        "Slettet"
-      ],
-      "Deleted ${ deleted }": [
-        "Slettet ${ deleted }"
-      ],
       "Device": [
         "Enhet"
-      ],
-      "Device #${ position }": [
-        "Enhet #${ position }"
-      ],
-      "Device name": [
-        "Enhetsnavn"
-      ],
-      "Device: ${ name }": [
-        "Enhet: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Deaktiver denne koblingen på en bestemt dato"
@@ -7429,12 +6837,6 @@
       "Encrypt emails": [
         "Krypter e-poster"
       ],
-      "Enter device name": [
-        "Skriv enhetsnavn"
-      ],
-      "Environment compatible": [
-        "Miljøkompatibel"
-      ],
       "Exact host matching": [
         "Nøyaktig vertsmatching"
       ],
@@ -7444,14 +6846,8 @@
       "Expired": [
         "Utløpt"
       ],
-      "Expired on ${ formatted }": [
-        "Utløpt ${ formatted }"
-      ],
       "Expires": [
         "Utløper"
-      ],
-      "Expires ${ formatted }": [
-        "Utløper ${ formatted }"
       ],
       "Expiry": [
         "Utløp"
@@ -7519,12 +6915,6 @@
       "Include message and file name in invite email": [
         "Inkluder melding og filnavn i invitasjons-e-post"
       ],
-      "Index kinds": [
-        "Indekstyper"
-      ],
-      "Indexing": [
-        "Indekserer"
-      ],
       "Integrated 2FA authenticator": [
         "Integrert 2FA-autentisering"
       ],
@@ -7555,9 +6945,6 @@
       "Location": [
         "Plassering"
       ],
-      "Location: ${ item.location }": [
-        "Plassering: ${ item.location }"
-      ],
       "Log in or sign up ": [
         "Logg på eller registrer deg "
       ],
@@ -7579,9 +6966,6 @@
       "Modified": [
         "Endret"
       ],
-      "Modified ${ modified }": [
-        "Endret ${ modified }"
-      ],
       "Move to Archive": [
         "Flytt til arkiv"
       ],
@@ -7591,9 +6975,6 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Må minst ha ${ MIN_PASSWORD_LENGTH } tegn"
       ],
-      "My Albums": [
-        "Mine album"
-      ],
       "Name": [
         "Navn"
       ],
@@ -7602,9 +6983,6 @@
       ],
       "Never": [
         "Aldri"
-      ],
-      "Never expires": [
-        "Utløper aldri"
       ],
       "Never fill on this exact URL": [
         "Fyll aldri på denne nøyaktige nettadressen"
@@ -7639,9 +7017,6 @@
       "Other": [
         "Annet"
       ],
-      "Outdated version": [
-        "Utdatert versjon"
-      ],
       "Parent domain and subdomains (default)": [
         "Overordnet domene og underdomener (standard)"
       ],
@@ -7660,17 +7035,11 @@
       "Payment method": [
         "Betalingsmåte"
       ],
-      "Pending invitation": [
-        "Ventende invitasjon"
-      ],
       "PGP scheme": [
         "PGP-skjema"
       ],
       "Phone number": [
         "Telefonnummer"
-      ],
-      "Photo": [
-        "Bilde"
       ],
       "Please provide full details to help us take appropriate action": [
         "Oppgi alle detaljer for å hjelpe oss med å iverksette nødvendige tiltak."
@@ -7714,9 +7083,6 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
-      "Searchable": [
-        "Søkbar"
-      ],
       "Select type of abuse": [
         "Velg type misbruk"
       ],
@@ -7726,35 +7092,11 @@
       "Set a password to limit access via link": [
         "Angi et passord for å begrense tilgang via kobling"
       ],
-      "Set recovery method": [
-        "Angi gjenopprettingsmetode"
-      ],
-      "Share a file, folder, or album": [
-        "Del en fil, mappe eller et album"
-      ],
       "Shared": [
         "Delt"
       ],
-      "Shared by": [
-        "Delt av"
-      ],
-      "Shared by ${ sharedBy }": [
-        "Delt av ${ sharedBy }"
-      ],
-      "Shared by Public link": [
-        "Delt via offentlig kobling"
-      ],
-      "Shared on": [
-        "Delt den"
-      ],
-      "Shared on ${ sharedOn }": [
-        "Delt på ${ sharedOn }"
-      ],
       "Shared with me": [
         "Delt med meg"
-      ],
-      "Show indexing progress of Encrypted Search": [
-        "Vis indekseringsfremdrift for kryptert søk"
       ],
       "Sign emails": [
         "Signer e-poster"
@@ -7813,9 +7155,6 @@
       "Theme": [
         "Tema"
       ],
-      "This will permanently delete all files in your locked drive.": [
-        "Dette vil permanent slette alle filer i din låste stasjon."
-      ],
       "Thomas": [
         "Thomas"
       ],
@@ -7828,29 +7167,14 @@
       "Type": [
         "Type"
       ],
-      "Unlock drive": [
-        "Lås opp stasjon"
-      ],
-      "Unlock drive (recommended)": [
-        "Lås opp stasjon (anbefalt)"
-      ],
-      "Unlock later": [
-        "Lås opp senere"
-      ],
       "Upload picture": [
         "Last opp bilde"
-      ],
-      "Upload your first file": [
-        "Last opp din første fil"
       ],
       "Uploaded by": [
         "Lastet opp av"
       ],
       "URL wildcard pattern": [
         "URL-jokertegnmønster"
-      ],
-      "User opted in": [
-        "Brukeren samtykket"
       ],
       "Username": [
         "Brukernavn"
@@ -7863,9 +7187,6 @@
       ],
       "Viewer": [
         "Leser"
-      ],
-      "Visible columns:": [
-        "Synlige kolonner:"
       ],
       "Vulnerable": [
         "Sårbar"
@@ -7881,9 +7202,6 @@
       ],
       "What happened?": [
         "Hva skjedde?"
-      ],
-      "Yes, I want to permanently delete my old files": [
-        "Ja, jeg ønsker å slette alle mine gamle filer permanent."
       ],
       "Your alias": [
         "Aliaset ditt"
@@ -7975,9 +7293,6 @@
       "Add a gift code": [
         "Legg til gavekode"
       ],
-      "Albums": [
-        "Album"
-      ],
       "clearing your browser cache": [
         "tømmer hurtigbufferen til nettleseren"
       ],
@@ -8038,9 +7353,6 @@
       "Pay invoice": [
         "Betal faktura"
       ],
-      "Photos": [
-        "Bilder"
-      ],
       "Reactivate now": [
         "Aktiver på nytt nå"
       ],
@@ -8055,12 +7367,6 @@
       ],
       "settings": [
         "innstillinger"
-      ],
-      "Shared": [
-        "Delt"
-      ],
-      "Shared with me": [
-        "Delt med meg"
       ],
       "Terms and conditions": [
         "Vilkår og betingelser"
@@ -9521,40 +8827,13 @@
       ]
     },
     "Notification": {
-      "\"${ ellipsedName }\" copied": [
-        "\"${ ellipsedName }\" kopiert"
-      ],
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" opprettet"
-      ],
-      "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\" slettet"
-      ],
-      "\"${ ellipsedName }\" deleted permanently from trash": [
-        "\"${ ellipsedName }\" slettet permanent fra papirkurven"
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "\"${ ellipsedName }\" kunne ikke opprettes"
       ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "\"${ ellipsedName } ble ikke slettet"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "\"${ ellipsedName }\" kunne ikke slettes permanent fra papirkurven"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "\"${ ellipsedName }\" kunne ikke flyttes"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "\"${ ellipsedName }\" kunne ikke gjenopprettes fra papirkurven"
-      ],
       "\"${ ellipsedName }\" moved": [
-        "\"${ ellipsedName }\" flyttet"
-      ],
-      "\"${ ellipsedName }\" restored from trash": [
-        "\"${ ellipsedName }\" gjenopprettet fra papirkurven"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
         "\"${ ellipsedName }\" flyttet"
       ],
       "\"${ fileName }\" shared": [
@@ -9575,33 +8854,13 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" har fått nytt navn"
       ],
-      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
-        "${ addedUids.length } bilde har blitt lagt til i \"${ albumName }\"",
-        "${ addedUids.length } bilder har blitt lagt til i \"${ albumName }\""
-      ],
       "${ count } item failed to be decrypted": [
         "${ count } element ble ikke dekryptert",
         "${ count } elementer ble ikke dekryptert"
       ],
-      "${ errors.length } item failed to be copied": [
-        "${ errors.length } element kunne ikke kopieres",
-        "${ errors.length } elementer kunne ikke kopieres"
-      ],
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } element ble ikke slettet",
         "${ errors.length } elementer ble ikke slettet"
-      ],
-      "${ errors.length } item failed to be trashed": [
-        "${ errors.length } element kunne ikke legges i papirkurven",
-        "${ errors.length } elementer kunne ikke legges i papirkurven"
-      ],
-      "${ numberOfItems } copied item moved to trash": [
-        "${ numberOfItems } kopiert element flyttet til papirkurven",
-        "${ numberOfItems } kopierte elementer flyttet til papirkurven"
-      ],
-      "${ numberOfItems } item copied": [
-        "${ numberOfItems } element kopiert",
-        "${ numberOfItems } elementer kopiert"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } element slettet",
@@ -9643,31 +8902,17 @@
         "${ numberOfItems } element gjenopprettet fra papirkurven",
         "${ numberOfItems } elementer gjenopprettet fra papirkurven"
       ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } element flyttet",
-        "${ numberOfItems } elementer flyttet"
-      ],
       "${ reason } has been disabled": [
         "${ reason } er deaktivert"
       ],
       "${ reason } has been enabled": [
         "${ reason } er aktivert"
       ],
-      "${ removed } photo have been removed from \"${ albumName }\"": [
-        "${ removed } bilde er fjernet fra ${ albumName }\"",
-        "${ removed } bilder er fjernet fra ${ albumName }\""
-      ],
       "Access for the member removed": [
         "Tilgang for medlemmet fjernet"
       ],
       "Access updated": [
         "Tilgang oppdatert"
-      ],
-      "Album renamed successfully": [
-        "Album har fått nytt navn"
-      ],
-      "All items deleted permanently from trash": [
-        "Alle elementer slettet permanent fra papirkurven"
       ],
       "Cannot load link": [
         "Kan ikke laste kobling"
@@ -9681,9 +8926,6 @@
       "Contact group updated": [
         "Kontaktgruppe oppdatert"
       ],
-      "Copy of \"${ ellipsedName }\" moved to trash": [
-        "Kopi av \"${ ellipsedName }\" flyttet til papirkurven"
-      ],
       "Device failed to be removed": [
         "Enhet kunne ikke fjernes"
       ],
@@ -9696,12 +8938,6 @@
       "Device renamed": [
         "Enhet byttet navn"
       ],
-      "Encrypted search activated": [
-        "Kryptert søk aktivert"
-      ],
-      "Error while listing devices": [
-        "Feil ved opplisting av enheter"
-      ],
       "Failed to accept share invitation": [
         "Kunne ikke godta delingsinvitasjonen"
       ],
@@ -9713,18 +8949,6 @@
       ],
       "Failed to reject share invitation": [
         "Kunne ikke avvise delingsinvitasjon"
-      ],
-      "Failed to remove device": [
-        "Fjerning av enhet mislyktes"
-      ],
-      "Failed to remove the file": [
-        "Fjerning av filen mislyktes"
-      ],
-      "Failed to rename device": [
-        "Kan ikke gi nytt navn til enhet"
-      ],
-      "File removed": [
-        "Fil fjernet"
       ],
       "Invitation's email was sent again": [
         "E-posten til invitasjonen ble sendt på nytt"
@@ -9747,14 +8971,6 @@
       "Public link access updated": [
         "Offentlig koblingstilgang oppdatert"
       ],
-      "Selected item was not removed from your list": [
-        "Valgt element ble ikke fjernet fra listen din",
-        "Valgte elementer kunne ikke fjernes fra listen din"
-      ],
-      "Selected item was successfully removed from your list": [
-        "Valgt element ble fjernet fra listen din",
-        "Valgte elementer ble fjernet fra listen din"
-      ],
       "Setting updated. Editors can change permissions and share.": [
         "Innstilling oppdatert. Redaktører kan endre tillatelser og dele."
       ],
@@ -9770,17 +8986,8 @@
       "Stopping the sharing of this item has failed": [
         "Det mislyktes å stoppe delingen av dette elementet"
       ],
-      "The item was not added to your drive": [
-        "Elementet ble ikke lagt til i din Drive"
-      ],
-      "The item was successfully added to your drive": [
-        "Elementet ble lagt til i din Drive"
-      ],
       "The link to your item was deleted": [
         "Koblingen til elementet ditt ble slettet"
-      ],
-      "This secure link expired, please change expire date in sharing settings": [
-        "Denne sikre koblingen er utløpt, endre utløpsdatoen i delingsinnstillingene"
       ],
       "Trash failed to be emptied": [
         "Papirkurven kunne ikke tømmes"
@@ -9791,9 +8998,6 @@
       "Your ${ BRAND_NAME } address is ready to use": [
         "Din ${ BRAND_NAME }-adresse er klar til bruk"
       ],
-      "Your old files will be deleted in 72 hours": [
-        "Dine gamle filer blir slettet om 72 timer"
-      ],
       "Your settings have been changed successfully": [
         "Innstillingene dine ble endret"
       ]
@@ -9801,11 +9005,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Noen bilder ble ikke lastet opp på grunn av dupliserte filnavn i gjeldende utvalg."
-      ]
-    },
-    "Notitication": {
-      "Album renamed successfully": [
-        "Albumet er omdøpt"
       ]
     },
     "Oauth instructions": {
@@ -9951,169 +9150,6 @@
         "Velkommen til ${ appName }"
       ]
     },
-    "Onboarding Action": {
-      "Continue": [
-        "Fortsett"
-      ],
-      "Create a document": [
-        "Opprett et dokument"
-      ],
-      "Get started": [
-        "Kom i gang"
-      ],
-      "Install and continue": [
-        "Installer og fortsett"
-      ],
-      "Install later": [
-        "Installer senere"
-      ],
-      "Invite members": [
-        "Inviter medlemmer"
-      ],
-      "Maybe Later": [
-        "Kanskje senere"
-      ],
-      "Maybe later": [
-        "Kanskje senere"
-      ],
-      "Select theme": [
-        "Velg tema"
-      ],
-      "Skip": [
-        "Hopp over"
-      ],
-      "Skip for now": [
-        "Hopp over for nå"
-      ],
-      "Try the app": [
-        "Prøv appen"
-      ],
-      "Upload file": [
-        "Last opp fil"
-      ],
-      "Upload folder": [
-        "Last opp mappe"
-      ],
-      "Upload more files": [
-        "Last opp flere filer"
-      ]
-    },
-    "Onboarding Info": {
-      "10 minutes": [
-        "10 minutter"
-      ],
-      "Access your files on the go": [
-        "Få tilgang til filene dine på farten"
-      ],
-      "Back up your photos and memories": [
-        "Sikkerhetskopier fotoene og minnene dine"
-      ],
-      "Backup your photos and memories": [
-        "Sikkerhetskopier fotoene og minnene dine"
-      ],
-      "Choose your favorite theme": [
-        "Velg ditt favoritttema"
-      ],
-      "Collaborate on documents": [
-        "Samarbeid på dokumenter"
-      ],
-      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "Foretrekker du ${ DRIVE_APP_NAME } i lys eller mørk modus? Velg fargen som inspirerer deg mest."
-      ],
-      "Drag and drop your files here": [
-        "Dra og slipp filer her"
-      ],
-      "Edit documents online": [
-        "Rediger dokumenter på nettet"
-      ],
-      "End-to-end encrypted storage for your files": [
-        "Ende-til-ende-kryptert lagring for filene dine"
-      ],
-      "Faster uploads for large or multiple files": [
-        "Raskere opplastinger for store eller flere filer"
-      ],
-      "Files uploaded during this time won’t count towards your storage limit.": [
-        "Filer som lastes opp i denne perioden vil ikke telle med i lagringsgrensen din."
-      ],
-      "Files uploaded now will not count towards your storage limit": [
-        "Filer som lastes opp nå teller ikke med i lagringsgrensen din"
-      ],
-      "Final approval in progress": [
-        "Endelig godkjenning pågår"
-      ],
-      "Final approval pending": [
-        "Endelig godkjenning venter"
-      ],
-      "Free up hard drive space on your computer": [
-        "Frigjør plass på harddisken på datamaskinen"
-      ],
-      "Get the desktop app": [
-        "Skaff deg skrivebordsappen"
-      ],
-      "Get the mobile app": [
-        "Skaff deg mobilappen"
-      ],
-      "Got an Android? We've got you covered.": [
-        "Har du en Android? Du er dekket."
-      ],
-      "Got an iPhone? We've got you covered.": [
-        "Har du en iPhone? Du er dekket."
-      ],
-      "Hang tight": [
-        "Vent litt"
-      ],
-      "Invitation accepted": [
-        "Invitasjon godtatt"
-      ],
-      "Invitation received": [
-        "Invitasjon mottatt"
-      ],
-      "Invite team members": [
-        "Inviter medlemmer av teamet"
-      ],
-      "Keep the momentum going by uploading more files using the storage included with your plan.": [
-        "Hold fremdriften oppe ved å laste opp flere filer ved å bruke lagringsplassen som er inkludert i abonnementet ditt."
-      ],
-      "Manage access": [
-        "Administrer tilgang"
-      ],
-      "Organize files right from your desktop": [
-        "Organiser filer direkte fra skrivebordet"
-      ],
-      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
-        "Beskytt dine økonomiske dokumenter, ID-kort, prosjektfiler, bilder og mer med ende-til-ende-kryptering."
-      ],
-      "Scan the QR code to install the mobile app": [
-        "Skann QR-koden for å installere mobilappen"
-      ],
-      "Secure your files": [
-        "Sikre filene dine"
-      ],
-      "Securely share files and folders": [
-        "Del filer og mapper på en sikker måte"
-      ],
-      "Share files & folders": [
-        "Del filer og mapper"
-      ],
-      "Sync and access your files from anywhere": [
-        "Synkroniser og få tilgang til filene dine fra hvor som helst"
-      ],
-      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
-        "Eieren må bekrefte delingstilgang. Du får en e-post når det er gjort."
-      ],
-      "Upload your first file": [
-        "Last opp din første fil"
-      ],
-      "Work faster, smarter": [
-        "Arbeid raskere, smartere"
-      ],
-      "Work together": [
-        "Arbeid sammen"
-      ],
-      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "Du har nettopp sikret deg litt gratis data og sikret filene dine med ende-til-ende-kryptering – på rekordtid!"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besøk vårt ${ helpCenterLink } eller ${ contactSupportLink }."
@@ -10171,29 +9207,11 @@
       "Create new group": [
         "Opprett ny gruppe"
       ],
-      "Expected structure": [
-        "Forventet struktur"
-      ],
       "Ignore group": [
         "Ignorer gruppe"
       ],
       "No parent folder": [
         "Ingen overordnet mappe"
-      ],
-      "Only current location": [
-        "Kun nåværende plassering"
-      ],
-      "Only current location: ${ name }": [
-        "Kun nåværende plassering: ${ name }"
-      ],
-      "Select JSON file": [
-        "Velg JSON-fil"
-      ],
-      "Verify content": [
-        "Verifiser innhold"
-      ],
-      "Verify thumbnails": [
-        "Verifiser miniatyrer"
       ]
     },
     "Option group label": {
@@ -10653,14 +9671,8 @@
       "Enter a name": [
         "Skriv inn et navn"
       ],
-      "Enter a new file name": [
-        "Angi et nytt filnavn"
-      ],
       "Enter a new folder name": [
         "Angi et nytt mappenavn"
-      ],
-      "Enter device name": [
-        "Skriv enhetsnavn"
       ],
       "Enter your email address": [
         "Skriv inn din e-postadresse"
@@ -10813,6 +9825,26 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Fremdrift: ${ combinedProgress }%"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attributter"
+      ],
+      "content key": [
+        "innholdsnøkkel"
+      ],
+      "hash key": [
+        "hashnøkkel"
+      ],
+      "key": [
+        "nøkkel"
+      ],
+      "membership": [
+        "medlemskap"
+      ],
+      "name": [
+        "navn"
       ]
     },
     "Property type": {
@@ -11576,12 +10608,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "Redaktører kan nå administrere deling og invitere andre. Du kan slå det av når som helst i delingsinnstillingene."
-      ],
-      "Encrypted search is here": [
-        "Kryptert søk er her"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Nå kan du enkelt søke i Drive-filer samtidig som du holder dataene dine sikre."
       ]
     },
     "sso": {
@@ -12120,54 +11146,14 @@
       ]
     },
     "Subtitle": {
-      "Albums shared with you will appear here": [
-        "Album som er delt med deg, vises her"
-      ],
-      "Albums you've shared will appear here": [
-        "Albumene du har delt, vises her"
-      ],
       "Shared by ${ sharedBy }": [
         "Delt av ${ sharedBy }"
-      ],
-      "Your favorited photos will appear here": [
-        "Dine favorittbilder vises her"
-      ],
-      "Your Live Photos will appear here": [
-        "Dine Live-bilder vises her"
-      ],
-      "Your panorama photos will appear here": [
-        "Panoramabildene dine vises her"
-      ],
-      "Your photo bursts will appear here": [
-        "Fotoseriene dine vises her"
-      ],
-      "Your portraits photos will appear here": [
-        "Portrettbildene dine vises her"
-      ],
-      "Your RAW photos will appear here": [
-        "RAW-bildene dine vises her"
-      ],
-      "Your screenshots will appear here": [
-        "Skjermbildene dine vises her"
-      ],
-      "Your selfies photos will appear here": [
-        "Dine selfier vises her"
-      ],
-      "Your tagged photos will appear here": [
-        "Dine taggede bilder vises her"
-      ],
-      "Your videos will appear here": [
-        "Videoene dine vises her"
       ]
     },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt ser identisk ut.",
         "${ countMergeableContacts } kontakter ser identiske ut."
-      ],
-      "${ countOfUnrecoveredLinksLeft } left": [
-        "${ countOfUnrecoveredLinksLeft } gjenstår",
-        "${ countOfUnrecoveredLinksLeft } gjenstår"
       ],
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
@@ -12237,9 +11223,6 @@
       "Problem reported": [
         "Problem rapportert"
       ],
-      "Recovery has started": [
-        "Gjenopprettingen har startet"
-      ],
       "Secure link copied": [
         "Sikker kobling kopiert"
       ],
@@ -12304,17 +11287,26 @@
       "Actions": [
         "Handlinger"
       ],
+      "Activated": [
+        "Aktivert"
+      ],
       "Address": [
         "Adresse"
       ],
       "Created": [
         "Opprettet"
       ],
+      "Estimated size": [
+        "Estimert størrelse"
+      ],
       "Expires": [
         "Utløper"
       ],
       "Fingerprint": [
         "Fingeravtrykk"
+      ],
+      "Migration status": [
+        "Migrasjonsstatus"
       ],
       "Name": [
         "Navn"
@@ -12327,6 +11319,9 @@
       ],
       "Type": [
         "Type"
+      ],
+      "User": [
+        "Bruker"
       ]
     },
     "TableHeader": {
@@ -12358,35 +11353,6 @@
         "vCard-felt"
       ]
     },
-    "Tag": {
-      "Bursts": [
-        "Serier"
-      ],
-      "Favorites": [
-        "Favoritter"
-      ],
-      "Live Photos": [
-        "Live-bilder"
-      ],
-      "Panoramas": [
-        "Panoramaer"
-      ],
-      "Portraits": [
-        "Portretter"
-      ],
-      "RAW": [
-        "RAW"
-      ],
-      "Screenshots": [
-        "Skjermbilder"
-      ],
-      "Selfies": [
-        "Selfier"
-      ],
-      "Videos": [
-        "Videoer"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dag",
@@ -12415,9 +11381,6 @@
       ],
       "${ feature } is now active": [
         "${ feature } er nå aktiv"
-      ],
-      "${ freeUploadLength } of free uploads.": [
-        "${ freeUploadLength } med gratis opplastinger."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
@@ -12468,9 +11431,6 @@
       "Album details": [
         "Albumdetaljer"
       ],
-      "Albums": [
-        "Album"
-      ],
       "All settings": [
         "Alle innstillinger"
       ],
@@ -12488,10 +11448,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Er du sikker på at du vil lukke forhåndsvisningen?"
-      ],
-      "Are you sure you want to remove this item from your list?": [
-        "Er du sikker på at du vil fjerne dette elementet fra listen din?",
-        "Er du sikker på at du vil fjerne disse elementene fra listen din?"
       ],
       "Are you sure?": [
         "Er du sikker?"
@@ -12553,14 +11509,14 @@
       "Computers": [
         "Datamaskiner"
       ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
       "Confirm downgrade": [
         "Bekreft nedgradering"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Bekreft tap av ${ BRAND_NAME }-bonuser"
-      ],
-      "Confirmation required": [
-        "Bekreftelse kreves"
       ],
       "Connect apps and devices": [
         "Koble til apper og enheter"
@@ -12588,9 +11544,6 @@
       ],
       "Coupon": [
         "Kupong"
-      ],
-      "Create a new file": [
-        "Opprett en ny fil"
       ],
       "Create a new folder": [
         "Opprett en ny mappe"
@@ -12667,9 +11620,6 @@
       "Devices": [
         "Enheter"
       ],
-      "Diagnostics": [
-        "Diagnostikk"
-      ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Digital signatur delvis verifisert. Denne filen ble opprettet ved hjelp av en offentlig tilgjengelig delingskobling av en bruker uten en ${ BRAND_NAME }-konto, dermed kan identiteten deres ikke bekreftes."
       ],
@@ -12703,6 +11653,9 @@
       "Disconnected from Gmail": [
         "Frakoblet fra Gmail"
       ],
+      "Domain names": [
+        "Domenenavn"
+      ],
       "Downgrade account": [
         "Nedgrader kontoen"
       ],
@@ -12723,9 +11676,6 @@
       ],
       "Download unverified folder?": [
         "Laste ned ubekreftet mappe?"
-      ],
-      "Drive": [
-        "Drive"
       ],
       "Drop to upload": [
         "Slipp for å laste opp"
@@ -12763,9 +11713,6 @@
       "Enable advanced account protection": [
         "Aktiver avansert kontobeskyttelse"
       ],
-      "Enable drive search": [
-        "Aktiver søk i Drive"
-      ],
       "Enhance security with 2FA": [
         "Forbedre sikkerheten med 2FA"
       ],
@@ -12781,21 +11728,11 @@
       "File details": [
         "Fildetaljer"
       ],
-      "File recovery process": [
-        "Filgjenopprettingsprosess"
-      ],
       "Folder": [
         "Mappe"
       ],
       "Folder details": [
         "Mappedetaljer"
-      ],
-      "Found ${ resultCount } result": [
-        "Fant ${ resultCount } resultat",
-        "Fant ${ resultCount } resultater"
-      ],
-      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
-        "Få ${ DRIVE_SHORT_APP_NAME } på telefonen din"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Få **${ referralInfo.uiData.refereeRewardAmount }** i kreditter med ${ planTitle }"
@@ -12803,26 +11740,17 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Få full tilgang til ${ CALENDAR_APP_NAME }"
       ],
-      "Get mobile and desktop apps": [
-        "Skaff deg mobil- og skrivebordsapper"
-      ],
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Skaff deg mer lagringsplass med ${ MAIL_APP_NAME } Plus"
       ],
-      "Get started with 10 minutes of free uploads, on the house.": [
-        "Kom i gang med 10 minutter med gratis opplastinger, på husets bekostning."
-      ],
       "Get the apps": [
         "Skaff deg appene"
       ],
       "Gift": [
         "Gave"
-      ],
-      "Global": [
-        "Global"
       ],
       "Groups": [
         "Grupper"
@@ -12873,9 +11801,6 @@
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importert av ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Index populators": [
-        "Indekseringsprosesser"
-      ],
       "Information exposed in breach": [
         "Informasjon avslørt i brudd"
       ],
@@ -12888,23 +11813,11 @@
       "Last uploaded by": [
         "Sist lastet opp av"
       ],
-      "Level": [
-        "Nivå"
-      ],
       "Link confirmation": [
         "Bekreftelse av kobling"
       ],
       "Location": [
         "Plassering"
-      ],
-      "Logger": [
-        "Logger"
-      ],
-      "Logs": [
-        "Logger"
-      ],
-      "Make a copy": [
-        "Lag en kopi"
       ],
       "Make a secure connection your default": [
         "Gjør en sikker tilkobling til standard"
@@ -12917,9 +11830,6 @@
       ],
       "Merging contacts": [
         "Slår sammen kontakter"
-      ],
-      "Message": [
-        "Melding"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migrer organisasjonen din til ${ BRAND_NAME }"
@@ -12954,56 +11864,17 @@
       "Night theme": [
         "Natt-tema"
       ],
-      "No albums shared with me": [
-        "Ingen album delt med meg"
-      ],
       "No breaches detected": [
         "Ingen brudd oppdaget"
       ],
-      "No bursts": [
-        "Ingen fotoserier"
-      ],
-      "No favorites": [
-        "Ingen favoritter"
-      ],
-      "No Live Photos": [
-        "Ingen Live-bilder"
-      ],
-      "No panorama": [
-        "Ingen panorama"
-      ],
-      "No photos": [
-        "Ingen bilder"
-      ],
-      "No portraits": [
-        "Ingen portretter"
-      ],
-      "No RAW": [
-        "Ingen RAW"
-      ],
       "No results found": [
         "Ingen resultater funnet"
-      ],
-      "No screenshots": [
-        "Ingen skjermbilder"
-      ],
-      "No selfies": [
-        "Ingen selfier"
-      ],
-      "No shared albums": [
-        "Ingen delte album"
-      ],
-      "No videos": [
-        "Ingen videoer"
       ],
       "Notes": [
         "Notater"
       ],
       "Number of downloads": [
         "Antall nedlastinger"
-      ],
-      "Number of items": [
-        "Antall elementer"
       ],
       "One email, many recipients": [
         "Én e-post, mange mottakere"
@@ -13071,9 +11942,6 @@
       "Re-signing contacts": [
         "Signerer kontakter på nytt"
       ],
-      "Ready, set, upload.": [
-        "Klar, ferdig, last opp."
-      ],
       "Recommended": [
         "Anbefalt"
       ],
@@ -13092,10 +11960,6 @@
       "Remove device?": [
         "Fjern enhet?"
       ],
-      "Remove item?": [
-        "Fjerne elementet?",
-        "Fjerne elementene?"
-      ],
       "Remove your access?": [
         "Fjerne tilgangen din?"
       ],
@@ -13105,32 +11969,17 @@
       "Rename a folder": [
         "Gi nytt navn til mappe"
       ],
-      "Rename device": [
-        "Gi enheten nytt navn"
-      ],
       "Report a problem": [
         "Rapporter et problem"
       ],
       "Request new code": [
         "Be om en ny kode"
       ],
-      "Restore your files": [
-        "Gjenopprett filene dine"
-      ],
       "Reverse charge not supported": [
         "Omvendt avgiftsplikt støttes ikke"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Lagre den til senere i ${ DRIVE_APP_NAME }"
-      ],
-      "Search": [
-        "Søk"
-      ],
-      "Search results": [
-        "Søkeresultater"
-      ],
-      "Searching…": [
-        "Søker..."
       ],
       "Security center": [
         "Sikkerhetssenter"
@@ -13149,6 +11998,9 @@
       ],
       "Select link expiration date": [
         "Velg utløpsdato for kobling"
+      ],
+      "Select users to migrate": [
+        "Velg brukere som skal migreres"
       ],
       "Set recovery methods": [
         "Angi gjenopprettingsmetoder"
@@ -13185,9 +12037,6 @@
       ],
       "Shared with me": [
         "Delt med meg"
-      ],
-      "Show actions": [
-        "Vis handlinger"
       ],
       "Sign in and grant access": [
         "Logg på og gi tilgang"
@@ -13254,12 +12103,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "For å forhåndsvise dette regnearket, åpne det i ${ SHEETS_APP_NAME } eller last det ned."
-      ],
-      "Total size": [
-        "Total størrelse"
-      ],
-      "Trash": [
-        "Papirkurv"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
@@ -13360,6 +12203,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Vi kunne ikke bekrefte at en anonym bruker lastet opp denne mappen."
       ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
+        "Vi klarte ikke å bekrefte at filinnholdet ble lastet opp av ${ claimedContentAuthor }. Årsaken er: ${ node.activeRevision.contentAuthor.error.error }"
+      ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "Vi klarte ikke å bekrefte at navnet ble opprettet eller endret av ${ claimedNameAuthor }. Årsaken er: ${ node.nameAuthor.error.error }"
       ],
@@ -13369,11 +12215,11 @@
       "We'd love to hear from you!": [
         "Vi vil gjerne høre fra deg!"
       ],
-      "Welcome offer": [
-        "Velkomsttilbud"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
+      ],
+      "What are you migrating?": [
+        "Hva migrerer du?"
       ],
       "What can a VPN protect you from?": [
         "Hva kan et VPN beskytte deg mot?"
@@ -13390,17 +12236,11 @@
       "You can now create unlimited folders and labels": [
         "Du kan nå opprette ubegrenset antall mapper og etiketter"
       ],
-      "You have inaccessible files": [
-        "Du har utilgjengelige filer"
-      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode av ${ planName } slutter på ${ textDate }."
       ],
       "Your ${ planTitle } subscription has started": [
         "Abonnementet ditt på ${ planTitle } har startet"
-      ],
-      "Your 3 GB bonus": [
-        "Dine bonus 3 GB"
       ],
       "Your account is protected": [
         "Kontoen din er beskyttet"
@@ -13419,15 +12259,6 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
-      ],
-      "Your welcome actions": [
-        "Dine velkomne handlinger"
-      ],
-      "You’re off to a great start!": [
-        "Du er godt i gang!"
-      ],
-      "You’ve got 5 GB of storage": [
-        "Du har fått 5 GB lagringsplass"
       ]
     },
     "Title header for keys table": {
@@ -13473,6 +12304,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Tilpass import for å redusere antall etiketter"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status for dataoverføring fra ${ providerName } til ${ BRAND_NAME }"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitalt signering av e-postmeldinger bidrar til å autentisere at meldinger sendes av deg."
@@ -13546,6 +12380,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende-krypterte e-postmeldinger til denne e-posten."
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brukere som har aktivert ${ BRAND_NAME }-kontoen sin"
+      ],
       "Version 6 OpenPGP key": [
         "Versjon 6 OpenPGP-nøkkel"
       ],
@@ -13586,11 +12423,6 @@
       ],
       "The user must have an address to request data access": [
         "Brukeren må ha en adresse for å be om datatilgang"
-      ]
-    },
-    "Upsell": {
-      "Get Drive for Business": [
-        "Skaff deg Drive for Business"
       ]
     },
     "user_modal": {
