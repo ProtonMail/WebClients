@@ -11,8 +11,6 @@ import type { SerializedEditorState } from 'lexical'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
 import { downloadExport } from '../UseCase/ExportAndDownload'
-import type { DecryptedNode } from '@proton/drive-store'
-import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 
 jest.mock('@proton/metrics', () => ({
   docs_readonly_mode_documents_total: {
@@ -356,8 +354,6 @@ describe('EditorController', () => {
 
     it('should send base commit to editor when baseCommit changes', async () => {
       const mockContent = new Uint8Array([1, 2, 3])
-      editorInvoker.receiveMessage.mockResolvedValue(undefined)
-      sharedState.setProperty('decryptedNode', { mimeType: PROTON_DOCS_DOCUMENT_MIMETYPE } as DecryptedNode)
       sharedState.setProperty('baseCommit', {
         messages: [{ content: mockContent }, { content: mockContent }],
       } as unknown as DecryptedCommit)
