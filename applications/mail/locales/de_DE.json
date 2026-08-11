@@ -5775,6 +5775,27 @@
       ],
       "You do not have access to this shared item": [
         "Du hast keinen Zugriff auf diesen geteilten Eintrag"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Die Adresse wird bereits von einem Benutzer außerhalb deiner Organisation verwendet. Bitte wende dich an den Kundensupport, um dies zu lösen."
+      ],
+      "Contact your administrator to start a migration.": [
+        "Kontaktiere deinen Administrator um, eine Übernahme zu starten."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
+      ],
+      "Missing organization private key": [
+        "Privater Schlüssel der Organisation fehlt"
+      ],
+      "Missing organization public key": [
+        "Öffentlicher Schlüssel der Organisation fehlt"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisation hat nicht genügend Lizenzen verfügbar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation hat nicht genügend Speicherplatz verfügbar"
       ]
     },
     "error": {
@@ -9728,6 +9749,45 @@
       ],
       "You": [
         "Du"
+      ],
+      "Find out what can be migrated.": [
+        "Herausfinden, was übernommen werden kann."
+      ],
+      "Move to Primary": [
+        "Zu Primär verschieben"
+      ],
+      "Read open email “${ subject }”": [
+        "Geöffnete E-Mail \"${ subject }\" lesen"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Wähle genau aus, was du übernehmen möchtest. Dies gilt für alle Benutzer der Organisation."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Dieser Benutzer kann nicht übernommen werden, da seine E-Mail-Adresse bei ${ BRAND_NAME } nicht verfügbar ist."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Dieser Benutzer kann aufgrund von Plattforminkompatibilitäten nicht übernommen werden."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Um diesen Benutzer zu übernehmen, füge die E-Mail-Domain unter ${ domainNamesLink } hinzu und überprüfe sie."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übernehmen, aktiviere sein Konto in deiner ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu übernehmen, aktiviere sein Konto unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu übernehmen, aktiviere seine Adresse unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Um diesen Benutzer zu übernehmen, muss er die Einladung zur Teilnahme an ${ BRAND_NAME } annehmen."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übernehmen, entpacke ihn in deiner ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übernehmen, hebe die Sperrung in deiner ${ provider.adminConsoleName } auf."
       ]
     },
     "info": {
@@ -15701,6 +15761,9 @@
       "Moved to ${ label }. Similar message will be categorized there in the future.": [
         "Zu ${ label } verschoben. Eine ähnliche Nachricht wird künftig hierunter kategorisiert.",
         "Zu ${ label } verschoben. Ähnliche Nachrichten werden künftig hierunter kategorisiert."
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Zu ${ label } verschoben. Ähnliche Nachrichten werden künftig hierunter kategorisiert."
       ]
     },
     "Success notification": {
@@ -17030,6 +17093,9 @@
       ],
       "What are you migrating?": [
         "Was übernimmst du?"
+      ],
+      "Domain names": [
+        "Domainnamen"
       ]
     },
     "Title header for keys table": {
@@ -17150,6 +17216,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Version 6 OpenPGP Schlüssel"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status der Datenmigration von ${ providerName } zu ${ BRAND_NAME }"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
       ]
     },
     "tooltip": {

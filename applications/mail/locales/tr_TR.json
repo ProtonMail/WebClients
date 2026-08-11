@@ -9776,6 +9776,30 @@
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } markası"
+      ],
+      "Move to Primary": [
+        "Birincil e-postalara taşı"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Bu kullanıcı, ${ BRAND_NAME } üzerinde e-posta adresi bulunmadığı için aktarılamaz."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Bu kullanıcıyı aktarabilmek için ${ domainNamesLink } altındaki e-posta etki alanını ekleyin ve doğrulayın."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını etkinleştirin."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için onu ${ provider.adminConsoleName } üzerindeki arşivden çıkarın."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden kullanıcının askıya alınma durumunu kaldırın."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ]
     },
     "info": {
@@ -13444,6 +13468,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "${ IDEAL_BRAND_NAME } ile öde"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ]
     },
     "Payments.Error": {
@@ -13464,6 +13494,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_BRAND_NAME } hazırlanamadı. Lütfen bir süre sonra yeniden deneyin."
       ]
     },
     "Payments.error": {
@@ -15749,6 +15782,9 @@
       "Moved to ${ label }. Similar message will be categorized there in the future.": [
         "${ label } içine taşındı. Benzer ileti bundan sonra bu kategoriye taşınacak.",
         "${ label } içine taşındı. Benzer iletiler bundan sonra bu kategoriye taşınacak."
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "${ label } içine taşındı. Benzer iletiler bundan sonra bu kategoriye taşınacak."
       ]
     },
     "Success notification": {
@@ -17078,6 +17114,9 @@
       ],
       "What are you migrating?": [
         "Neyi aktarıyorsunuz?"
+      ],
+      "Domain names": [
+        "Etki alanları"
       ]
     },
     "Title header for keys table": {
@@ -17204,6 +17243,9 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "${ BRAND_NAME } hesaplarına erişen kullanıcılar"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "${ providerName } üzerinden ${ BRAND_NAME } üzerine veri aktarma durumu"
       ]
     },
     "tooltip": {
@@ -17741,6 +17783,11 @@
       ],
       "Pending": [
         "Bekliyor"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Bu ödemeyi onayladığınızda, bankanıza ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine hesabınızdan ödeme alma yetkisi verirsiniz. Bankanızla yaptığınız anlaşmanın koşullarına bağlı olarak, ödemenin yapıldığı tarihten başlayan 8 hafta içinde iade isteğinde bulunabilirsiniz."
       ]
     }
   }

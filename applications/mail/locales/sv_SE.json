@@ -5587,6 +5587,60 @@
       ],
       "This file version could not be uploaded": [
         "Denna filversion kunde inte laddas upp"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Kan inte lägga till foto i album utan ett giltigt namn"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan inte verifiera vem som laddade upp denna fil"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Kontakta din administratör för att starta en migrering."
+      ],
+      "Could not load sharing details": [
+        "Kunde inte ladda delningsdetaljer"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunde inte läsa del av denna fil: ${ message }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta"
+      ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Saknar signatur för ${ signatureType }"
+      ],
+      "Only admins can convert external invitations": [
+        "Endast administratörer kan konvertera externa inbjudningar"
+      ],
+      "Operation aborted": [
+        "Åtgärd avbröts"
+      ],
+      "Operation failed, try again later": [
+        "Åtgärd misslyckades, försök igen senare"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturverifiering misslyckades: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturverifiering för ${ signatureType } misslyckades: ${ errorMessage }"
+      ],
+      "This item is no longer shared": [
+        "Detta objekt är inte delat längre"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan bara ladda upp en ny version till en fil"
       ]
     },
     "error": {
@@ -6136,6 +6190,9 @@
       ],
       "Not activated": [
         "Inte aktiverad"
+      ],
+      "Pending": [
+        "Väntande"
       ]
     },
     "Filter Actions": {
@@ -9487,6 +9544,27 @@
       ],
       "You": [
         "Du"
+      ],
+      "Author is not provided on public link": [
+        "Författare är inte angiven på offentlig länk"
+      ],
+      "Find out what can be migrated.": [
+        "Ta reda på vad som kan migreras."
+      ],
+      "Move to Primary": [
+        "Flytta till primär"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -16779,6 +16857,9 @@
       ],
       "What are you migrating?": [
         "Vad migrerar du?"
+      ],
+      "Domain names": [
+        "Domännamn"
       ]
     },
     "Title header for keys table": {
@@ -17419,6 +17500,9 @@
       ],
       "Has errors": [
         "Har fel"
+      ],
+      "Pending": [
+        "Väntar"
       ]
     },
     "Property": {

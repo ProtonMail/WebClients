@@ -1715,6 +1715,30 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Clear conversation": [
+        "Ачысціць размову"
+      ],
+      "Lookup document": [
+        "Шукаць дакумент"
+      ],
+      "Migrate": [
+        "Перанесці"
+      ],
+      "Open debug menu": [
+        "Адкрыць меню адладкі"
+      ],
+      "Stop": [
+        "Спыніць"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Перайсці да ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "View guide": [
+        "Паглядзець дапаможнік"
+      ],
+      "Yes, organize it": [
+        "Так. Арганізаваць яго"
       ]
     },
     "action": {
@@ -1742,6 +1766,9 @@
       ],
       "Skip": [
         "Прапусціць"
+      ],
+      "Set up categories": [
+        "Наладзіць катэгорыі"
       ]
     },
     "Actions message": {
@@ -4593,6 +4620,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Націсніце правай кнопкай мышы па лісту і выберыце \"Перамясціць у\" або перацягніце яго ў іншую катэгорыю. Аналагічныя лісты будуць сартавацца там у будучыні."
       ]
     },
     "description": {
@@ -5602,6 +5632,243 @@
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Пры справаздачы аб парушэнні аўтарскіх правоў або крадзяжы даных вы павінны пакінуць паведамленне"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Адрас ужо выкарыстоўваецца карыстальнікам з іншай арганізацыі. Звярніцеся ў службу падтрымкі кліентаў для вырашэння гэтай праблемы"
+      ],
+      "Bookmark password is not available": [
+        "Пароль закладкі недаступны"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Немагчыма дадаць фатаграфію ў альбом без сапраўднай назвы"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Немагчыма перанесці элемент без сапраўднай назвы. Спачатку дайце яму іншую назву."
+      ],
+      "Cannot share root folder": [
+        "Немагчыма абагуліць каранёвую папку"
+      ],
+      "Cannot verify the author of this file": [
+        "Немагчыма спраўдзіць аўтара гэтага файла"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Немагчыма спраўдзіць хто запампаваў гэты файл"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Звяжыцеся са сваім адміністратарам, каб пачаць перанос."
+      ],
+      "Copy operation aborted": [
+        "Аперацыя капіявання перарвана"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Капіяванне элементаў па-за межы папкі забаронена"
+      ],
+      "Could not find an available name": [
+        "Немагчыма знайсці даступную назву"
+      ],
+      "Could not load sharing details": [
+        "Немагчыма загрузіць абагуленыя падрабязнасці"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Немагчыма прачытаць частку гэтага файла: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Немагчыма разблакіраваць бацькоўскую папку"
+      ],
+      "Could not unlock this item": [
+        "Немагчыма разблакіраваць гэты элемент"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Стварэнне файлаў па-за іх межамі забаронена"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Стварэнне папак па-за іх межамі забаронена"
+      ],
+      "Device not found": [
+        "Прылада не знойдзена"
+      ],
+      "Expiration date cannot be in the past": [
+        "Дата завяршэння не можа быць у мінулым"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ закладкі: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Не ўдалося расшыфраваць назву закладкі: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Не ўдалося расшыфраваць пароль закладкі: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ змесціва: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Не ўдалося расшыфраваць назву элемента: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ вузла: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Не ўдалося расшыфраваць метаданыя рэдакцыі"
+      ],
+      "Failed to get inviter keys": [
+        "Не ўдалося атрымаць ключы запрашэння"
+      ],
+      "Failed to verify invitation": [
+        "Не ўдалося спраўдзіць запрашэнне"
+      ],
+      "File download failed due to empty response": [
+        "Збой спампоўвання файла. Прычына: пусты адказ"
+      ],
+      "File has no revision": [
+        "У файла адсутнічае рэдакцыя"
+      ],
+      "Image preview not found": [
+        "Папярэдні прагляд відарыса не знойдзены"
+      ],
+      "Invitation not found": [
+        "Запрашэнне не знойдзена"
+      ],
+      "Item not found": [
+        "Элемент не знойдзены"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Састарэлая публічная спасылка не можа быць абноўлена. Паўторна стварыце новую публічную спасылку."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адрас удзельніка не знойдзены. Звяжыцеся з нашай службай падтрымкі кліентаў, каб вырашыць гэта"
+      ],
+      "Missing inviter email": [
+        "Электронная пошта запрошанай асобы адсутнічае"
+      ],
+      "Missing organization private key": [
+        "Адсутнічае закрыты ключ арганізацыі"
+      ],
+      "Missing organization public key": [
+        "Адсутнічае адкрыты ключ арганізацыі"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Адсутнічае паведамленне для ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Аперацыя перамяшчэння перарвана"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Перамяшчэнне элементаў па-за межы папкі забаронена"
+      ],
+      "Moving root item is not allowed": [
+        "Перамяшчэнне элемента суперкарыстальніка забаронена"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвала",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў"
+      ],
+      "No file data was received. Please try again.": [
+        "Ніякія даныя файла не былі атрыманы. Паўтарыце спробу."
+      ],
+      "Only admins can convert external invitations": [
+        "Толькі ў адміністратараў ёсць правы для пераўтварэння знешніх запрашэнняў"
+      ],
+      "Operation aborted": [
+        "Аперацыя перарвана"
+      ],
+      "Operation failed, try again later": [
+        "Збой выканання аперацыі. Паўтарыце спробу пазней"
+      ],
+      "Organization does not have enough seats available": [
+        "У арганізацыі недастаткова даступных ліцэнзій"
+      ],
+      "Organization does not have enough storage available": [
+        "У арганізацыі недастаткова даступнага месца для захоўвання"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Здаецца, што частка файла пашкоджана"
+      ],
+      "Photo is already in the target album": [
+        "Фатаграфія ўжо знаходзіцца ў мэтавым альбоме"
+      ],
+      "Photo not found": [
+        "Фатаграфія не знойдзена"
+      ],
+      "Renaming root item is not allowed": [
+        "Перайменаванне элемента суперкарыстальніка забаронена"
+      ],
+      "Request aborted": [
+        "Запыт перарваны"
+      ],
+      "Signature is missing": [
+        "Подпіс адсутнічае"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Збой спраўджання подпісу: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Збой спраўджання подпісу для ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Збой спраўджання подпісу для ${ signatureType }: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Некаторыя даныя файла не ўдалося запампаваць. Паўтарыце спробу."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Некаторыя часткі файла не ўдалося запампаваць. Паўтарыце спробу."
+      ],
+      "Some items could not be loaded": [
+        "Некаторыя элементы немагчыма загрузіць"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Запампаваны файл не адпавядае арыгіналу. Паўтарыце спробу."
+      ],
+      "This file has missing crypto material": [
+        "У гэтага файла адсутнічае крыптаграфічны матэрыял"
+      ],
+      "This file has no version available to download": [
+        "У гэтага файла адсутнічае даступная версія для спампоўвання"
+      ],
+      "This file version could not be uploaded": [
+        "Не ўдалося запампаваць гэтую версію файла"
+      ],
+      "This item has no image preview": [
+        "У гэтага элемента адсутнічае папярэдні прагляд відарыса"
+      ],
+      "This item is no longer shared": [
+        "Гэты элемент больш не абагульваецца"
+      ],
+      "This item is not shared": [
+        "Гэты элемент не абагульваецца"
+      ],
+      "Too many server requests, please try again later": [
+        "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
+      ],
+      "Verification keys are not available": [
+        "Ключы спраўджання недаступны"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Ключы спраўджання для ${ signatureType } недаступны"
+      ],
+      "You can create public links for your own files only": [
+        "Вы можаце ствараць публічныя спасылкі толькі для сваіх уласных файлаў"
+      ],
+      "You can only leave items that are shared with you": [
+        "У вас ёсць магчымасць толькі выйсці з элементаў, якія абагульваюцца з вамі"
+      ],
+      "You can only upload a new version to a file": [
+        "Вы можаце толькі запампаваць новую версію ў файл"
+      ],
+      "You can update a public link for your own files only": [
+        "Вы можаце абнавіць публічную спасылку толькі для вашых уласных файлаў"
+      ],
+      "You do not have access to this item": [
+        "У вас няма доступу да гэтага элемента"
+      ],
+      "You do not have access to this shared item": [
+        "У вас няма доступу да гэтага абагуленага элемента"
       ]
     },
     "error": {
@@ -6151,6 +6418,24 @@
       ],
       "Unread": [
         "Непрачытаныя"
+      ],
+      "Activated": [
+        "Актывавана"
+      ],
+      "All": [
+        "Усе"
+      ],
+      "Errors": [
+        "Памылкі"
+      ],
+      "In progress": [
+        "Выконваецца"
+      ],
+      "Not activated": [
+        "Не актывавана"
+      ],
+      "Pending": [
+        "У чаканні"
       ]
     },
     "Filter Actions": {
@@ -9669,6 +9954,162 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } ліст→ ${ dest }",
+        "${ count } лісты → ${ dest }",
+        "${ count } лістоў → ${ dest }",
+        "${ count } лістоў → ${ dest }"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Пазначыць ${ IDEAL_BRAND_NAME }"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } праблема падчас імпартавання:",
+        "${ issues.length } праблемы падчас імпартавання:",
+        "${ issues.length } праблем падчас імпартавання:",
+        "${ issues.length } праблем падчас імпартавання:"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "Засталося хвілін: ${ remainingMinutes }"
+      ],
+      "Author is not provided on public link": [
+        "Аўтар не пазначаны ў публічнай спасылцы"
+      ],
+      "Find out what can be migrated.": [
+        "Даведайцеся, што перанесена."
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Знойдзены бягучы зашыфраваны індэкс пошуку з ${ oldIndexSize } паведамленнем.",
+        "Знойдзены бягучы зашыфраваны індэкс пошуку з ${ oldIndexSize } паведамленнямі.",
+        "Знойдзены бягучы зашыфраваны індэкс пошуку з ${ oldIndexSize } паведамленнямі.",
+        "Знойдзены бягучы зашыфраваны індэкс пошуку з ${ oldIndexSize } паведамленнямі."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Адбываецца імпартаванне. Вы можаце закрыць гэта дыялогавае акно пакуль яно выконваецца і вярнуцца да яго пазней. Звярніце ўвагу, што закладка павінна заставацца адкрытай."
+      ],
+      "Move emails": [
+        "Перамясціць лісты"
+      ],
+      "Move here": [
+        "Перамясціць сюды"
+      ],
+      "Move to Primary": [
+        "Перамяшчэнне ў асноўныя"
+      ],
+      "No conversation to read": [
+        "Няма размоў для чытання"
+      ],
+      "No email open": [
+        "Ніводны ліст не адкрыты"
+      ],
+      "No users to display": [
+        "Няма карыстальнікаў для адлюстравання"
+      ],
+      "Read ${ count } email": [
+        "Прачытайце ${ count } ліст",
+        "Прачытайце ${ count } лісты",
+        "Прачытайце ${ count } лістоў",
+        "Прачытайце ${ count } лістоў"
+      ],
+      "Read ${ count } email on screen": [
+        "Прачытаць ${ count } ліст на экране",
+        "Прачытаць ${ count } лісты на экране",
+        "Прачытаць ${ count } лістоў на экране",
+        "Прачытаць ${ count } лістоў на экране"
+      ],
+      "Read ${ count } message in this thread": [
+        "Прачытаць ${ count } паведамленне ў гэтай гутарцы",
+        "Прачытаць ${ count } паведамленні ў гэтай гутарцы",
+        "Прачытаць ${ count } паведамленняў у гэтай гутарцы",
+        "Прачытаць ${ count } паведамленняў у гэтай гутарцы"
+      ],
+      "Read open email “${ subject }”": [
+        "Прачытаць адкрыты ліст “${ subject }”"
+      ],
+      "Read your ${ count } filter": [
+        "Прачытайце свой ${ count } фільтр",
+        "Прачытайце свае ${ count } фільтры",
+        "Прачытайце сваіх ${ count } фільтраў",
+        "Прачытайце сваіх ${ count } фільтраў"
+      ],
+      "Read your ${ count } folder": [
+        "Прачытайце сваю ${ count } папку",
+        "Прачытайце свае ${ count } папкі",
+        "Прачытайце свае ${ count } папак",
+        "Прачытайце свае ${ count } папак"
+      ],
+      "Read your ${ count } label": [
+        "Прачытайце сваю ${ count } метку",
+        "Прачытайце свае ${ count } меткі",
+        "Прачытайце свае ${ count } метак",
+        "Прачытайце свае ${ count } метак"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Выберыце толькі тое, што хочаце перанесці. Гэта будзе прыменена да ўсіх карыстальнікаў арганізацыі."
+      ],
+      "Thinking about this": [
+        "Падумайце аб гэтым"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Гэты адрас Gmail зарэгістраваны з іншым уліковым запісам ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ШІ ${ LUMO_SHORT_APP_NAME } і іншыя сэрвісы). Наша каманда працуе над тым, каб гэта падключэнне было бясшвовым. У цяперашні час вам неабходна выканаць некалькі крокаў."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Гэтага карыстальніка немагчыма перанесці, бо яго адрас электроннай пошты недаступны ў ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Гэтага карыстальніка немагчыма перанесці з-за несумяшчальнасці платформ."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Дадайце і праверце дамен электроннай пошты ў ${ domainNamesLink } для пераносу гэтага карыстальніка"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Уключыце ўліковы запіс карыстальніка ў свой ${ provider.adminConsoleName } для яго пераносу."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Уключыце ўліковы запіс карыстальніка ў ${ usersAddressesLink } для яго пераносу."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Уключыце адрас карыстальніка ў ${ usersAddressesLink } для яго пераносу."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Карыстальніку неабходна праняць запрашэнне на далучэнне да ${ BRAND_NAME } для яго пераносу."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Распакуйце карыстальніка ў сваёй ${ provider.adminConsoleName } для яго пераносу."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Аднавіць карыстальніка ў вашай ${ provider.adminConsoleName } для яго пераносу."
+      ],
+      "You": [
+        "Вы"
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "Вы можаце імпартаваць яго як новы фундаментальны пошукавы індэкс для мэтаў распрацоўкі."
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "У вас ёсць **${ count } размова** ў вашай катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } размовы** ў вашай катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } размоў** у вашай катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } размоў** у вашай катэгорыі ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "У вас ёсць **${ count } паведамленне** ў вашай катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } паведамленні** ў вашай катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } паведамленняў** у вашай катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } паведамленняў** у вашай катэгорыі ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Вы выбралі **${ checked } размову** ў вашай катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } размовы** ў вашай катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } размоў** у вашай катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } размоў** у вашай катэгорыі ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Вы выбралі **${ checked } паведамленне** ў вашай катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } паведамленні** ў вашай катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } паведамленняў** у вашай катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } паведамленняў** у вашай катэгорыі ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10877,6 +11318,27 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Усё, што патрабуе вашай увагі, а таксама лісты з адключаных катэгорый"
+      ],
+      "Archive": [
+        "Архіў"
+      ],
+      "Content search version to use": [
+        "Версія пошуку па змесціве для выкарыстання"
+      ],
+      "Document ID": [
+        "Ідэнтыфікатар дакумента"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Асноўныя - Усё, што патрабуе вашай увагі, а таксама лісты з адключаных катэгорый"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11374,6 +11836,9 @@
         "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
         "${ seats } ліцэнзій ${ MEET_APP_NAME }",
         "${ seats } ліцэнзій ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } за ліцэнзію"
       ]
     },
     "meet_2025: Feature": {
@@ -13433,6 +13898,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Ваша валюта была зменена на еўра (€), таму што ${ IDEAL_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
       ]
     },
     "Payments.Error": {
@@ -13453,6 +13921,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Не ўдалося ініцыялізаваць ${ IDEAL_BRAND_NAME }. Паўтарыце спробу пазней."
       ]
     },
     "Payments.error": {
@@ -13780,6 +14251,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Ask anything…": [
+        "Спытайце што-небудзь…"
       ]
     },
     "Placeholder for contact group name": {
@@ -15870,6 +16344,9 @@
       ],
       "You have successfully unsubscribed": [
         "Вы паспяхова скасавалі падпіску"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Перамешчана ў ${ label }. Аналагічныя паведамленні будуць тут раздзяляцца па катэгорыях у будучыні."
       ]
     },
     "Success notification": {
@@ -15960,6 +16437,18 @@
       ],
       "Size": [
         "Памер"
+      ],
+      "Activated": [
+        "Актывавана"
+      ],
+      "Estimated size": [
+        "Прыблізны памер"
+      ],
+      "Migration status": [
+        "Статус пераносу"
+      ],
+      "User": [
+        "Карыстальнік"
       ]
     },
     "TableHeader": {
@@ -17212,6 +17701,27 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Configure migration": [
+        "Сканфігурыраваць перанос"
+      ],
+      "Domain names": [
+        "Даменныя імёны"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Увага! Гэты Gmail звязаны з іншым уліковым запісам ${ BRAND_NAME }"
+      ],
+      "Move emails": [
+        "Перамясціць лісты"
+      ],
+      "Refine your Categories": [
+        "Удасканаленне вашай катэгорыі"
+      ],
+      "Select users to migrate": [
+        "Выберыце карыстальнікаў для пераносу"
+      ],
+      "What are you migrating?": [
+        "Што вы плануеце перанесці?"
       ]
     },
     "Title header for keys table": {
@@ -17332,6 +17842,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Ключ OpenPGP версіі 6"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Статус пераносу даных з ${ providerName } у ${ BRAND_NAME }"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Карыстальнікі, якія маюць доступ да сваіх уліковых запісаў ${ BRAND_NAME }"
       ]
     },
     "tooltip": {
@@ -17386,6 +17902,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Палепшыце да сумяшчальнага тарыфнага плана, каб выкарыстоўваць ролі адміністратараў."
       ]
     },
     "Validation": {
@@ -17930,6 +18449,42 @@
       ],
       "Migrated": [
         "Перанесена"
+      ],
+      "Has errors": [
+        "З памылкамі"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } новае паведамленне",
+        "${ messageCount } новыя паведамленні",
+        "${ messageCount } новых паведамленняў",
+        "${ messageCount } новых паведамленняў"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "Ад: ${ sender } - ${ message.Subject }"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Пацвярджаючы гэты плацеж, вы надзяляеце паўнамоцтвамі ${ BRAND_NAME } і Stripe, нашага пастаўшчыка плацежных паслуг, даць указанне вашаму банку спісаць з вашага рахунку адпаведныя сродкі. Вы можаце вярнуць спісаныя сродкі на працягу 8 тыдняў з даты спісання ў адпаведнасці з умовамі дагавора з вашым банкам."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "атрыбуты"
+      ],
+      "hash key": [
+        "хэш-ключ"
+      ],
+      "key": [
+        "ключ"
+      ],
+      "membership": [
+        "удзельніцтва"
+      ],
+      "name": [
+        "назва"
       ]
     }
   }

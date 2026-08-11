@@ -9779,6 +9779,30 @@
       ],
       "You": [
         "Vós"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_BRAND_NAME }"
+      ],
+      "Move to Primary": [
+        "Moure a Primari"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Aquest usuari no es pot migrar perquè la seva adreça de correu electrònic no està disponible a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Per migrar aquest usuari, afegiu i verifiqueu-ne el domini de correu electrònic a ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra ${ provider.adminConsoleName }."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Us redirigirem a ${ IDEAL_BRAND_NAME } en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu algun bloquejador de finestres emergents, desactiveu-lo per continuar."
       ]
     },
     "info": {
@@ -10992,6 +11016,12 @@
       ],
       "Primary - Anything that needs your attention, plus emails from disabled categories": [
         "Primari: tot allò que necessiti la vostra atenció, a més dels correus electrònics de les categories desactivades"
+      ],
+      "No unread conversations": [
+        "No hi ha converses no llegides"
+      ],
+      "No unread messages": [
+        "No hi ha missatges no llegits"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13447,6 +13477,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagueu amb ${ IDEAL_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "S'ha canviat la vostra moneda a euros (€) perquè ${ IDEAL_BRAND_NAME } només admet pagaments en euros."
       ]
     },
     "Payments.Error": {
@@ -13467,6 +13503,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "No s'ha pogut inicialitzar ${ IDEAL_BRAND_NAME }. Torneu-ho a provar més tard."
       ]
     },
     "Payments.error": {
@@ -15752,6 +15791,9 @@
       "Moved to ${ label }. Similar message will be categorized there in the future.": [
         "S'ha mogut a ${ label }. Els missatges similars es classificaran aquí en el futur.",
         "S'han mogut a ${ label }. Els missatges similars es classificaran aquí en el futur."
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "S'han mogut a ${ label }. Els missatges similars es classificaran aquí en el futur."
       ]
     },
     "Success notification": {
@@ -17081,6 +17123,9 @@
       ],
       "What are you migrating?": [
         "Què esteu migrant?"
+      ],
+      "Domain names": [
+        "Noms de domini"
       ]
     },
     "Title header for keys table": {
@@ -17207,6 +17252,9 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Usuaris que han accedit al seu compte de ${ BRAND_NAME }"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de ${ providerName } a ${ BRAND_NAME }"
       ]
     },
     "tooltip": {
@@ -17744,6 +17792,11 @@
       ],
       "Pending": [
         "Està pendent"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "En confirmar aquest pagament autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a donar instruccions al vostre banc perquè el carregui al vostre compte. Podreu obtenir un reemborsament en un termini de 8 setmanes des de la data del càrrec, d'acord amb les condicions del vostre acord amb el banc."
       ]
     }
   }
