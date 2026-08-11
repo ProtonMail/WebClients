@@ -90,9 +90,6 @@
       "Apply": [
         "Appliquer"
       ],
-      "Ask me next time": [
-        "Me demander la prochaine fois"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "${ maxContacts } contact est autorisé par groupe de contacts.",
         "Un maximum de ${ maxContacts } contacts est autorisé par groupe de contacts."
@@ -713,9 +710,6 @@
       ],
       "Save changes": [
         "Enregistrer les modifications"
-      ],
-      "Save preferences": [
-        "Enregistrer les préférences"
       ],
       "Search": [
         "Rechercher"
@@ -3028,6 +3022,12 @@
       "Cannot find move target": [
         "Impossible de trouver la cible du déplacement"
       ],
+      "Cannot share root folder": [
+        "Le dossier racine ne peut pas être partagé."
+      ],
+      "Cannot verify the author of this file": [
+        "L'auteur de ce fichier n'a pas pu être vérifié."
+      ],
       "Contact could not be saved": [
         "Le contact n’a pas pu être enregistré."
       ],
@@ -3037,11 +3037,32 @@
       "Contact signature not verified": [
         "La signature du contact n'a pas été vérifiée."
       ],
+      "Copy operation aborted": [
+        "L'opération de copie a été annulée."
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Vous ne pouvez pas copier d'élément dans un élément qui n'est pas un dossier."
+      ],
+      "Could not load sharing details": [
+        "Les informations du partage n'ont pas pu être chargées."
+      ],
       "Could not open created vault": [
         "Le coffre-fort créé n'a pas pu être ouvert."
       ],
       "Could not open updated vault": [
         "Le coffre-fort mis à jour n'a pas pu être ouvert."
+      ],
+      "Could not unlock the parent folder": [
+        "Le dossier parent n'a pas pu être déverrouillé."
+      ],
+      "Could not unlock this item": [
+        "Cet élément n'a pas pu être déverrouillé."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Vous ne pouvez pas créer de fichier dans un élément qui n'est pas un dossier."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Vous ne pouvez pas créer de dossier dans un élément qui n'est pas un dossier."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Désélectionnez au moins ${ calendarsToFixCount } calendrier.",
@@ -3096,6 +3117,18 @@
       "Failed to create public share node": [
         "La création du nœud de partage public n'a pas abouti."
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "La clé de signet n'a pas pu être déchiffrée : ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Le mot de passe du signet n'a pas pu être déchiffré : ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "La clé de contenu n'a pas pu être déchiffrée : ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Le nom de l'élément n'a pas pu être déchiffré : ${ message }"
+      ],
       "Failed to expand folder": [
         "Impossible de développer le dossier"
       ],
@@ -3141,6 +3174,9 @@
       "Failed to update public share node": [
         "La mise à jour du nœud de partage public n'a pas abouti."
       ],
+      "File has no revision": [
+        "Le fichier n'a aucune révision."
+      ],
       "First name is too long": [
         "Le prénom est trop long."
       ],
@@ -3149,6 +3185,9 @@
       ],
       "Forward address is required": [
         "L'adresse de transfert est nécessaire."
+      ],
+      "Image preview not found": [
+        "L'aperçu de l'image n'a pas été trouvé."
       ],
       "Image upload failed": [
         "L'image n'a pas pu être chargée."
@@ -3192,12 +3231,18 @@
       "Last name is too long": [
         "Le nom de famille est trop long."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Ce lien public obsolète ne peut pas être mis à jour. Veuillez en recréer un nouveau."
+      ],
       "Member address not found. Please contact customer support to resolve this": [
         "L'adresse du membre n'a pas été trouvée. Veuillez contacter le service client pour résoudre ce problème."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Fusionnez au moins ${ calendarsToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
         "Fusionnez au moins ${ calendarsToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants."
+      ],
+      "Missing inviter email": [
+        "L'e-mail de l'inviteur est manquant."
       ],
       "Missing key packet": [
         "Le paquet de clés est manquant."
@@ -3210,6 +3255,9 @@
       ],
       "Missing signature": [
         "Il manque la signature."
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Vous ne pouvez pas déplacer d'élément dans un élément qui n'est pas un dossier."
       ],
       "Name is required": [
         "Veuillez indiquer un nom."
@@ -3232,6 +3280,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
+      ],
+      "No file data was received. Please try again.": [
+        "Aucune donnée de fichier n'a été reçue. Veuillez réessayer."
       ],
       "No valid address found": [
         "Aucune adresse valide n'a été trouvée."
@@ -3262,11 +3313,17 @@
       "Organization key must be activated to create non-private users": [
         "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
       ],
+      "Part of the file appears to be corrupted": [
+        "Une partie du fichier semble corrompue."
+      ],
       "Password is required": [
         "Le mot de passe est nécessaire."
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
+      ],
+      "Photo is already in the target album": [
+        "La photo se trouve déjà dans l'album indiqué."
       ],
       "Photo not found": [
         "La photo est introuvable"
@@ -3342,11 +3399,23 @@
       "Signature verification failed": [
         "La signature n'a pas pu être vérifiée."
       ],
+      "Signature verification for ${ signatureType } failed": [
+        "La vérification de signature pour ${ signatureType } n'a pas abouti."
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "La vérification de signature pour ${ signatureType } n'a pas abouti : ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Certains contacts n’ont pas pu être supprimés."
       ],
       "Some documents could not be loaded": [
         "Certains documents n'ont pas pu être chargés"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Des données de fichier n'ont pas pu être importées. Veuillez réessayer."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Des parties de fichier n'ont pas pu être importées. Veuillez réessayer."
       ],
       "Some groups could not be deleted": [
         "Certains groupes n'ont pas pu être supprimés."
@@ -3432,6 +3501,9 @@
       "The original file is not uploaded yet, please try again later": [
         "Le fichier d'origine n'est pas encore chargé, nous vous invitons à réessayer plus tard."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Le fichier importé ne correspond pas à l'original. Veuillez réessayer."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Il y a trop de dossiers dans votre compte externe. Nous vous invitons à personnaliser l'importation pour supprimer certains dossiers."
       ],
@@ -3453,6 +3525,15 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
+      "This file has missing crypto material": [
+        "Des éléments de chiffrement manquent dans ce fichier."
+      ],
+      "This file has no version available to download": [
+        "Ce fichier n'a aucune version disponible au téléchargement."
+      ],
+      "This file version could not be uploaded": [
+        "Cette version de fichier n'a pas pu être importée."
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Ce nom de dossier n'est pas disponible, veuillez en choisir un autre."
       ],
@@ -3467,6 +3548,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
+      ],
+      "Too many server requests, please try again later": [
+        "Le nombre de requêtes serveur est trop important. Veuillez réessayer plus tard."
       ],
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
@@ -3504,6 +3588,12 @@
       "Validation error": [
         "Une erreur de validation s'est produite."
       ],
+      "Verification keys are not available": [
+        "Les clés de vérification ne sont pas disponibles."
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Les clés de vérification pour ${ signatureType } ne sont pas disponibles."
+      ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Un problème est survenu en tentant d'enregistrer les dernières modifications. Veuillez actualiser la page."
       ],
@@ -3519,9 +3609,15 @@
       "Wrong billing address": [
         "L'adresse de facturation n'est pas correct."
       ],
+      "You can update a public link for your own files only": [
+        "Vous pouvez uniquement mettre à jour les liens publics pour vos propres fichiers."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataire.",
         "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataires."
+      ],
+      "You do not have access to this item": [
+        "Vous n'avez pas accès à cet élément."
       ],
       "You have reached the maximum number of calendars.": [
         "Vous avez atteint le nombre maximum de calendriers."
@@ -4633,6 +4729,9 @@
       "Attention required": [
         "Attention requise"
       ],
+      "Author is not provided on public link": [
+        "L'auteur n'est pas fourni pour le lien public."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
@@ -4696,9 +4795,6 @@
       "Continue": [
         "Continuer"
       ],
-      "Converting document...": [
-        "Conversion du document en cours..."
-      ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
@@ -4751,9 +4847,6 @@
       ],
       "Creating link to folder": [
         "Création du lien vers le dossier"
-      ],
-      "Creating new document...": [
-        "Création d'un document en cours..."
       ],
       "Current plan": [
         "Abonnement actuel"
@@ -4854,12 +4947,6 @@
       "Enter your own password (as trusted contact).": [
         "Saisissez votre propre mot de passe (en tant que contacts de confiance)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Erreur lors de la conversion du document : ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Erreur lors du chargement du document : ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Erreur de synchronisation"
       ],
@@ -4910,12 +4997,6 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Avec ${ BRAND_NAME } Workspace, bénéficiez d'une adresse e-mail professionnelle @votre-entreprise.com, 1 To d'espace de stockage sécurisé par utilisateur, d'appels vidéo plus longs et bien plus encore."
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Recevez des mises à jour par e-mail pour les commentaires et suggestions ajoutés à vos documents."
-      ],
-      "Get Notified About Comments": [
-        "Recevoir des notifications concernant les commentaires"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Les gouvernements et les FAI peuvent surveiller vos activités en ligne. En masquant votre véritable IP et en chiffrant vos activités, votre navigation devient privée."
@@ -5077,9 +5158,6 @@
       "Low Priority": [
         "Priorité basse"
       ],
-      "Making a copy...": [
-        "Création d'une copie en cours..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "${ MAX_SHARED_URL_PASSWORD_LENGTH } caractère maximum",
         "${ MAX_SHARED_URL_PASSWORD_LENGTH } caractères maximum"
@@ -5110,9 +5188,6 @@
       ],
       "No contacts added yet": [
         "Aucun contact n'a encore été ajouté."
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Aucun document n'est indiqué dans l'URL. Retournez dans ${ DRIVE_APP_NAME } et sélectionnez un document."
       ],
       "No email address": [
         "Aucune adresse e-mail"
@@ -5404,9 +5479,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Le propriétaire de cette adresse a désactivé le chiffrement de bout en bout. Il doit réactiver le chiffrement de bout en bout pour pouvoir envoyer des messages chiffrés à cette adresse."
       ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "L'URL que vous avez saisie semble avoir été mal copiée depuis Slack. Lorsque vous copiez des liens longs depuis Slack, faites un clic droit sur le lien, puis choisissez « Copier le lien » plutôt que de copier directement le texte tronqué de l’URL."
-      ],
       "There are no documents in the trash.": [
         "Il n'y a aucun document dans la corbeille."
       ],
@@ -5461,6 +5533,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Ce code unique peut être utilisé par les sites web et les FAI (Fournisseurs d'accès internet) pour lier votre emplacement et votre historique de navigation à votre appareil."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Cet utilisateur ne peut pas être migré car son adresse e-mail n'est pas disponible sur ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Cet utilisateur ne peut pas être migré en raison d'incompatibilités de plateforme."
+      ],
       "This will permanently delete the file you uploaded.": [
         "Ceci supprimera définitivement le fichier importé."
       ],
@@ -5482,11 +5560,11 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pour importer des événements, créez d'abord un calendrier dans ${ CALENDAR_APP_NAME }. Ce calendrier contiendra les événements après leur importation."
       ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Pour migrer cet utilisateur, ajoutez et vérifiez le domaine de messagerie sous ${ domainNamesLink }"
       ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l’aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n’est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
@@ -6034,9 +6112,6 @@
       "Emails (last month)": [
         "Messages (mois dernier)"
       ],
-      "Enable email notifications": [
-        "Activer les notifications par e-mail"
-      ],
       "Encrypt emails": [
         "Chiffrer les messages"
       ],
@@ -6093,9 +6168,6 @@
       ],
       "Include application logs in bug report": [
         "Inclure les journaux d'application dans le rapport de bug"
-      ],
-      "Include document name in notification": [
-        "Inclure le nom du document dans les notifications"
       ],
       "Include message and file name in invite email": [
         "Inclure le message et le nom du fichier dans l'e-mail d'invitation"
@@ -9253,9 +9325,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Création d'une feuille de calcul en cours..."
-      ],
       "Detect automatically": [
         "Détecter automatiquement"
       ],
@@ -10215,6 +10284,9 @@
       "Document verification failed": [
         "La vérification du document n'a pas abouti."
       ],
+      "Domain names": [
+        "Noms de domaine"
+      ],
       "Downgrade account": [
         "Passer à un abonnement inférieur"
       ],
@@ -10770,6 +10842,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Passez à une formule prise en charge pour pouvoir utiliser les rôles d'administrateur."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
       ]

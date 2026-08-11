@@ -880,8 +880,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de e-mail funcționează ca o adresă de e-mail, dar reduce mesajele nedorite și vă păstrează adresa de e-mail și identitatea reală ascunse."
       ],
+      "Change these passwords immediately": [
+        "Modificați imediat aceste parole"
+      ],
       "Change your passwords": [
         "Schimbați-vă parolele"
+      ],
+      "Check if your passwords have been exposed": [
+        "Verificați dacă parolele v-au fost expuse"
       ],
       "Create unique passwords": [
         "Creați parole unice"
@@ -939,6 +945,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Acest cont este vulnerabil, accesați serviciul și schimbați-vă parola."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Această parolă de conectare apare într-o breșă de date. Vizitați serviciul utilizat și modificați parola."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Acest serviciu oferă A2A. Activați-l pentru o securitate suplimentară a contului."
@@ -1395,6 +1404,9 @@
       "This domain is already managed by your organization": [
         "Acest domeniu este deja gestionat de către organizație."
       ],
+      "This invite is no longer available": [
+        "Această invitație nu mai este disponibilă."
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Acest lucru se poate întâmpla după o perioadă lungă de timp în care nu ați folosit ${ PASS_SHORT_APP_NAME } sau dacă nu ați șters istoricul din Safari."
       ],
@@ -1415,9 +1427,6 @@
       ],
       "Unknown error.": [
         "Eroare necunoscută."
-      ],
-      "Unknown invite": [
-        "Invitație necunoscută."
       ],
       "Unknown item": [
         "Element necunoscut"
@@ -2262,9 +2271,7 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -4873,6 +4880,12 @@
       "Clear clipboard": [
         "Golire memorie"
       ],
+      "Compromised password": [
+        "Parolă compromisă"
+      ],
+      "Compromised passwords": [
+        "Parole compromise"
+      ],
       "Confirm extra password": [
         "Confirmare parolă suplimentară"
       ],
@@ -5107,6 +5120,9 @@
       "No access tokens yet": [
         "Încă nu există coduri de acces"
       ],
+      "No compromised passwords": [
+        "Parole necompromise"
+      ],
       "No excluded items": [
         "Nu sunt articole excluse"
       ],
@@ -5287,6 +5303,9 @@
       ],
       "Update available": [
         "Actualizare disponibilă"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Modificați contul pentru a putea verifica parolele compromise"
       ],
       "URL matching": [
         "Potrivire URL"

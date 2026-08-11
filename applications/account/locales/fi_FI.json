@@ -168,6 +168,9 @@
       "Add user": [
         "Lisää käyttäjä"
       ],
+      "Add users": [
+        "Lisää käyttäjiä"
+      ],
       "Added ${ memberName } as group owner": [
         "${ memberName } lisättiin ryhmän omistajaksi"
       ],
@@ -498,6 +501,9 @@
       "Delete account": [
         "Poista tili"
       ],
+      "Delete device profile": [
+        "Poista laiteprofiili"
+      ],
       "Delete filter “${ Name }”": [
         "Poista suodatin \"${ Name }\""
       ],
@@ -638,6 +644,9 @@
       ],
       "Download ICS": [
         "Lataa ICS"
+      ],
+      "Download latest": [
+        "Lataa viimeisin"
       ],
       "Download logs": [
         "Lataa lokitiedot"
@@ -1002,6 +1011,9 @@
       "Insert link": [
         "Lisää linkki"
       ],
+      "Instructions": [
+        "Ohjeet"
+      ],
       "Invite": [
         "Kutsu"
       ],
@@ -1080,9 +1092,6 @@
       "Manage communication preferences": [
         "Hallitse viestintäasetuksia"
       ],
-      "Manage company": [
-        "Hallinnoi yritystä"
-      ],
       "Manage folders": [
         "Hallitse kansioita"
       ],
@@ -1124,6 +1133,9 @@
       ],
       "More benefits": [
         "Lisää etuja"
+      ],
+      "More details": [
+        "Lisätietoja"
       ],
       "More info: ${ safeTitle }": [
         "Lisätietoja: ${ safeTitle }"
@@ -6956,8 +6968,14 @@
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
       ],
+      "Invitation not found": [
+        "Kutsua ei löytynyt"
+      ],
       "Item content cannot exceed 40KB": [
         "Kohteen sisällön koko ei saa ylittää 40 kt"
+      ],
+      "Item not found": [
+        "Kohdetta ei löytynyt"
       ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
@@ -6980,6 +6998,9 @@
       ],
       "Name does not match": [
         "Nimi ei täsmää"
+      ],
+      "Name must not be empty": [
+        "Nimi ei voi olla tyhjä"
       ],
       "Name required": [
         "Nimi vaaditaan"
@@ -7052,6 +7073,9 @@
       ],
       "Permissions request failed.": [
         "Käyttöoikeuspyyntö epäonnistui."
+      ],
+      "Photo not found": [
+        "Kuvaa ei löytynyt"
       ],
       "Please add a payment method before reactivating your subscription": [
         "Lisätkää maksutapa ennen kuin aktivoitte tilauksenne uudelleen"
@@ -7179,6 +7203,9 @@
       ],
       "Session expired. Please refresh the page.": [
         "Istunto on vanhentunut. Päivitä sivu."
+      ],
+      "Signature is missing": [
+        "Allekirjoitus puuttuu"
       ],
       "Signature not verified": [
         "Allekirjoitusta ei vahvistettu"
@@ -8386,6 +8413,14 @@
         "Teratavua"
       ]
     },
+    "Filter": {
+      "All": [
+        "Kaikki"
+      ],
+      "Errors": [
+        "Virheet"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Pakattu"
@@ -8585,6 +8620,11 @@
       ],
       "Your desktop app free trial has ended": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi on päättynyt"
+      ]
+    },
+    "Gateway monitor upsell": {
+      "User - ${ userPrice }": [
+        "Käyttäjä - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -11256,6 +11296,9 @@
       "Low Priority": [
         "Alhainen tärkeys"
       ],
+      "macOS": [
+        "macOS"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Monet sähköpostipalvelut saattavat hylätä tai suodattaa sähköpostisi roskapostiksi, jos SPF/DKIM/DMARC puuttuvat tai niitä ei ole määritetty oikein."
       ],
@@ -12623,6 +12666,9 @@
       "Version ${ version }": [
         "Versio ${ version }"
       ],
+      "Version history": [
+        "Versiohistoria"
+      ],
       "Version number successfully copied to clipboard": [
         "Versionumero kopioitiin leikepöydälle"
       ],
@@ -12827,6 +12873,9 @@
       "Yearly": [
         "Vuosittain"
       ],
+      "You": [
+        "Sinä"
+      ],
       "You already have a free account": [
         "Sinulla on jo ilmainen tili"
       ],
@@ -12910,9 +12959,6 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Voit nyt käyttää ja hallita tiliä ylläptäjänä."
-      ],
-      "You can now access and manage the company as an administrator.": [
-        "Voit nyt käyttää ja hallita yritystä järjestelmänvalvojana."
       ],
       "You can now close this tab.": [
         "Voit nyt sulkea tämän välilehden."
@@ -14408,6 +14454,9 @@
       "Don't ask again": [
         "Älä kysy uudelleen"
       ],
+      "Don't keep versions": [
+        "Älä säilytä versioita"
+      ],
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
       ],
@@ -14671,6 +14720,9 @@
       ],
       "Interval": [
         "Aikaväli"
+      ],
+      "Invitation link": [
+        "Kutsulinkki"
       ],
       "Invite people": [
         "Kutsu ihmisiä"
@@ -16435,6 +16487,14 @@
       ],
       "Sign in": [
         "Kirjaudu sisään"
+      ]
+    },
+    "Members table usage": {
+      "Today": [
+        "Tänään"
+      ],
+      "Yesterday": [
+        "Eilen"
       ]
     },
     "Message": {
@@ -20038,6 +20098,14 @@
       ],
       "Secondary time zone": [
         "Toissijainen aikavyöhyke"
+      ]
+    },
+    "Property": {
+      "key": [
+        "avain"
+      ],
+      "name": [
+        "nimi"
       ]
     },
     "Property type": {
@@ -24084,11 +24152,17 @@
       ]
     },
     "Table header": {
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
       "Size": [
         "Koko"
       ],
       "Status": [
         "Tila"
+      ],
+      "User": [
+        "Käyttäjä"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -24611,6 +24685,9 @@
       "Choose a provider": [
         "Valitse tarjoaja"
       ],
+      "Choose a removal method": [
+        "Valitse poistotapa"
+      ],
       "Choose an account": [
         "Valitse tili"
       ],
@@ -24741,6 +24818,9 @@
       "Created": [
         "Luotu"
       ],
+      "Created!": [
+        "Luotu!"
+      ],
       "Creating user accounts": [
         "Käyttäjätilien luonti"
       ],
@@ -24864,6 +24944,9 @@
       ],
       "Delete user?": [
         "Poistetaanko käyttäjä?"
+      ],
+      "Delete version history?": [
+        "Poistetaanko versiohistoria?"
       ],
       "Deny access to user?": [
         "Kielletäänkö käyttäjän käyttöoikeus?"
@@ -25302,6 +25385,9 @@
       "Information exposed in breach": [
         "Tietomurrossa paljastuneet tiedot"
       ],
+      "Install it manually": [
+        "Asenna se manuaalisesti"
+      ],
       "Integrations": [
         "Integraatiot"
       ],
@@ -25359,14 +25445,14 @@
       "Lower your cost without losing features": [
         "Alenna kustannuksiasi menettämättä ominaisuuksia"
       ],
+      "macOS": [
+        "macOS"
+      ],
       "Main password": [
         "Pääsalasana"
       ],
       "Make your business stand out": [
         "Saa yrityksesi erottumaan joukosta"
-      ],
-      "Manage company": [
-        "Hallinnoi yritystä"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Hallitkaa tiedostoja laitteiden välillä Windowsilla, Macilla, Androidilla ja iOS:llä."
@@ -25384,7 +25470,7 @@
         "Siirtäkää organisaationne palveluun ${ BRAND_NAME }"
       ],
       "Migration assistant": [
-        "Migraatio-avustaja"
+        "Siirtoavustaja"
       ],
       "Minicalendar": [
         "Pienoiskalenteri"
@@ -26131,6 +26217,9 @@
       "What is the dark web?": [
         "Mikä on pimeä verkko?"
       ],
+      "Windows": [
+        "Windows"
+      ],
       "Wipe all logs?": [
         "Pyyhitäänkö kaikki lokitiedot?"
       ],
@@ -26755,7 +26844,7 @@
         "Lahjakortti"
       ],
       "Migration": [
-        "Migraatio"
+        "Siirto"
       ],
       "Payment": [
         "Maksu"

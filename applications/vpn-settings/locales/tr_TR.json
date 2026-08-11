@@ -422,6 +422,9 @@
       "Download CSV sample": [
         "Örnek CSV dosyasını indir"
       ],
+      "Download latest": [
+        "Güncel sürümü indir"
+      ],
       "Download logs": [
         "Günlüğü indir"
       ],
@@ -662,9 +665,6 @@
       "Invite user": [
         "Kullanıcı davet et"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "Tut"
       ],
@@ -736,9 +736,6 @@
       ],
       "Mark as resolved": [
         "Çözümlenmiş olarak işaretle"
-      ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
       ],
       "Migrate": [
         "Aktar"
@@ -3800,6 +3797,9 @@
       "Are you sure you want to disable this address?": [
         "Bu adresi kullanımdan kaldırmak istediğinize emin misiniz?"
       ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "${ address } adresini kullanımdan kaldırdığınızda, üye artık bu adresi kullanarak e-posta gönderip alamayacak ve ilişkili tüm ${ BRAND_NAME } ürünleri kullanımdan kaldırılacak."
+      ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "${ address } adresini kullanımdan kaldırdığınızda, bu adresi kullanarak e-posta gönderip alamayacaksınız ve ilişkili tüm ${ BRAND_NAME } ürünleri kullanımdan kaldırılacak."
       ],
@@ -4689,7 +4689,7 @@
         "Adres hesabınıza zaten eklenmiş"
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından halihazırda kullanılıyor. Bu sorunu çözmek için lütfen müşteri desteğiyle iletişime geçin"
+        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından kullanılıyor. Bu sorunu çözmek için lütfen müşteri destek ekibimiz ile görüşün"
       ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
@@ -4985,7 +4985,7 @@
         "En fazla ${ displayMaxValue } olabilir"
       ],
       "Member address not found. Please contact customer support to resolve this": [
-        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimizle görüşün"
+        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimiz ile görüşün"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
@@ -4998,7 +4998,7 @@
         "Anahtar paketi eksik"
       ],
       "Missing organization private key": [
-        "Kuruluşun özel anahtarı eksik"
+        "Kuruluşun kişisel anahtarı eksik"
       ],
       "Missing organization public key": [
         "Kuruluşun herkese açık anahtarı bulunamadı"
@@ -5068,7 +5068,7 @@
         "İşlem tamamlanamadı. Bir süre sonra yeniden deneyin"
       ],
       "Organization does not have enough seats available": [
-        "Kuruluşta yeterli sayıda boş koltuk yok"
+        "Kuruluşun yeterli koltuk sayısı yok"
       ],
       "Organization does not have enough storage available": [
         "Kuruluşun yeterli depolama alanı yok"
@@ -6339,7 +6339,7 @@
         "Hatalar"
       ],
       "In progress": [
-        "Devam ediyor"
+        "İşleniyor"
       ],
       "Migrated": [
         "Aktarıldı"
@@ -6413,6 +6413,35 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Gizlilik odaklı."
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Gelişmiş güvenlik özellikleri"
+      ],
+      "Dedicated server - ${ serverPrice }": [
+        "Size ayrılmış sunucu - ${ serverPrice }"
+      ],
+      "Enforce identity-based access controls": [
+        "Kimlik temelli erişim denetimi uygulayın"
+      ],
+      "Get real-time connection insights, monitor suspicious activity and export data to SIEM tools for your private gateways": [
+        "Gerçek zamanlı bağlantı içgörüleri alın, şüpheli etkinlikleri izleyin ve size özel ağ geçitleriniz için verileri SIEM araçlarına aktarın"
+      ],
+      "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
+        "Bağlantı izlemeye ek olarak, size özel ağ geçitleri ile tümü sabit IP adresleri kullanan özel sunucularda çalışan kullanıcılara veya gruplara göre erişme izni verebilirsiniz."
+      ],
+      "Monitor gateway connections with VPN Professional": [
+        "VPN Professional ile ağ geçidi bağlantılarını izleyin"
+      ],
+      "Real-time connection insights": [
+        "Gerçek zamanlı bağlantı içgörüleri"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Tek oturum açma (SSO), yönetici ilkeleri, izleme, zorunlu iki adımlı doğrulama ve diğer özelliklere erişin."
+      ],
+      "User - ${ userPrice }": [
+        "Kullanıcı - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -6949,7 +6978,7 @@
     },
     "Import status": {
       "Has errors": [
-        "Hatalar var"
+        "Sorunlar çıktı"
       ],
       "In progress": [
         "İşlem sürüyor"
@@ -6958,7 +6987,7 @@
         "Aktarıldı"
       ],
       "Pending": [
-        "Beklemede"
+        "Bekliyor"
       ]
     },
     "Import warning": {
@@ -7053,6 +7082,9 @@
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor.",
         "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor."
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } markası"
       ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } kullanıcının grup e-postalarını almaya başlaması için daveti kabul etmesi gerekiyor.",
@@ -7428,6 +7460,9 @@
       "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
         "Ayarlar bölümünden parola sıfırlama seçeneğini açtığınızda, parolanızı unutursanız ve ${ BRAND_NAME } hesabınızda oturumunuz açıksa parolanızı değiştirebilirsiniz."
       ],
+      "Allows IPv6 traffic to pass through the VPN tunnel. This improves compatibility with IPv6 websites and services.": [
+        "IPv6 trafiğinin VPN tünelinden geçmesine izin verir. Böylece, IPv6 siteleri ve hizmetleriyle uyumluluk artar."
+      ],
       "Already allocated": [
         "Zaten ayrılmış"
       ],
@@ -7514,6 +7549,12 @@
       ],
       "Awaiting transaction": [
         "Ödemenin tamamlanması bekleniyor"
+      ],
+      "Backup password disabled": [
+        "Yedek parola devre dışı bırakıldı"
+      ],
+      "Backup password enabled": [
+        "Yedek parola etkinleştirildi"
       ],
       "Balance from your previous subscription": [
         "Önceki aboneliğinizden kalan tutar"
@@ -7736,7 +7777,7 @@
         "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
-        "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
+        "Daha iyi erişim denetimi sağlamak için size özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
       ],
       "Dedicated VPN servers": [
         "Size ayrılmış VPN sunucuları"
@@ -8022,6 +8063,9 @@
       "Example: ${ spfExample }": [
         "Örnek: ${ spfExample }"
       ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Aygıt profilini dağıtırken bunları katmayın. Destek yakında geliyor."
+      ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
@@ -8047,7 +8091,7 @@
         "finans"
       ],
       "Find out what can be migrated.": [
-        "Nelerin taşınabileceğini öğrenin."
+        "Nelerin aktarılabileceğini öğrenin."
       ],
       "for ${ price }": [
         "${ price } karşılığında"
@@ -8459,6 +8503,9 @@
       "Manage groups in your identity provider": [
         "Kimlik hizmeti sağlayıcınızdaki grupları yönetin"
       ],
+      "Manage how users can access your ${ BRAND_NAME } organization with single sign-on.": [
+        "Tek oturum açma özelliği ile kullanıcıların ${ BRAND_NAME } kuruluşunuza nasıl erişebileceğini yönetin."
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kuruluşunuzun üyelerinin hangi ${ BRAND_NAME } uygulamalarına erişebileceğini yönetin. Kullanımdan kaldırılırsa, uygulamalara yalnızca yöneticiler erişebilir."
       ],
@@ -8562,7 +8609,7 @@
         "Tek oturum açma kullanılmıyor"
       ],
       "No users to display": [
-        "Görüntülenecek kullanıcı yok"
+        "Görüntülenebilecek bir kullanıcı yok"
       ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
@@ -8711,6 +8758,9 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Lütfen dosyanızı denetleyin ya da hazır ${ csvTemplateButton }nı kullanmayı deneyin."
+      ],
+      "Please ensure you're running ${ VPN_APP_NAME } desktop version ${ version } or later. ${ downloadLatest }": [
+        "Lütfen ${ VPN_APP_NAME } bilgisayar sürümünün ${ version } veya daha yeni bir sürüm olduğundan emin olun. ${ downloadLatest }"
       ],
       "Please fill in all required fields.": [
         "Lütfen tüm zorunlu alanları doldurun."
@@ -9010,6 +9060,9 @@
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF, etki alanınız için kimlerin e-posta göndermesine izin verildiğini belirtir. Aşağıdaki TXT kaydını DNS panonuza (özel etki alanınızı kiraladığınız yerde bulunur) eklediğinizden emin olun."
       ],
+      "SSO users can't sign in on devices with always-on enforced.": [
+        "Tek oturum açma kullanıcıları, her zaman açık olarak dayatılmış aygıtlarda oturum açamaz."
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
       ],
@@ -9213,8 +9266,11 @@
       "This service is not available to users signing in with single sign-on.": [
         "Bu hizmet, tek oturum açma ile oturum açan kullanıcılar tarafından kullanılamaz."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Bu kullanıcı, ${ BRAND_NAME } üzerinde e-posta adresi bulunmadığı için aktarılamaz."
+      ],
       "This user can not be migrated due to platform incompatibilities.": [
-        "Platform uyumsuzlukları nedeniyle bu kullanıcı taşınamaz."
+        "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Şu anda kuruluşunuzun ödemelerinden bu kullanıcı sorumludur. Bu kullanıcının yetki düzeyini düşürürseniz kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
@@ -9309,8 +9365,8 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Her zaman açık VPN özelliğini açmak için yapılandırma profilinin her Mac üzerine kurulması gerekir. ${ VPN_APP_NAME } istemcisi, aygıt profili yerini aldığında onu otomatik olarak uygular."
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "Her zaman açık VPN özelliğini açmak için aygıt profilinin her aygıtta ${ policiesPath } konumuna ulaşması gerekir — ${ VPN_APP_NAME } istemcisi bu konumu algılar ve profili otomatik olarak uygular."
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
+        "Her zaman açık VPN özelliğini açmak için aygıt profilinin her aygıtta ${ policiesPath } konumuna ulaşması gerekir — ${ VPN_APP_NAME } istemcisi bu konumu algılar ve profili otomatik olarak uygular. ${ learnMore }"
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Hesabınızda olabilecek en yüksek güvenliği sağlamak için **E-posta adresi ile kurtarma** seçeneğini kapatın."
@@ -9333,17 +9389,26 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } ürünlerindeki son gelişmeleri izlemek için çeşitli e-posta gruplarımıza abone olabilir ve zaman zaman ${ blogLink } sayfamıza bakabilirsiniz."
       ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının hesabını etkinleştirin."
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Bu kullanıcıyı aktarabilmek için ${ domainNamesLink } altındaki e-posta etki alanını ekleyin ve doğrulayın."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı taşıyabilmek için ${ usersAddressesLink } altındaki adresi etkinleştirin."
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Bu kullanıcının geçiş işleminin gerçekleştirilebilmesi için ${ BRAND_NAME } üzerinden katılma davetini kabul etmesi gerekmektedir."
+        "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
       ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcıyı arşivden çıkarın."
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için onu ${ provider.adminConsoleName } üzerindeki arşivden çıkarın."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden kullanıcının askıya alınma durumunu kaldırın."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "İlerlemek için, isteği doğrulayabileceğimiz bir hesap kurtarma yöntemi seçin."
@@ -9495,11 +9560,11 @@
       "Users": [
         "Kullanıcılar"
       ],
+      "Users create a backup password the first time they sign in with single sign-on. When they later sign in on a new device, they can enter this password to complete the sign-in themselves, without needing an already signed-in device or an administrator to assist.": [
+        "Kullanıcılar tek oturum açma özelliği ile ilk kez oturum açtıklarında yedek parola oluştururlar. Daha sonra yeni bir aygıtta oturum açtıklarında bu parolayı girerek oturum açma işlemini kendileri tamamlayabilirler. Bunun için önceden oturum açılmış bir aygıta veya bir yöneticinin yardımına ihtiyaç duymazlar."
+      ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Farklı bir MDM uygulaması mı kullanıyorsunuz? Yapılandırma profili dağıtma özelliği olan bir MDM iş görür. Aygıtınızı envanterinize yüklemek ve atamak için MDM uygulamanızın belgelerine bakın."
-      ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "Farklı bir MDM uygulaması mı kullanıyorsunuz? Dosya dağıtımını veya PowerShell betiğinin çalıştırılmasını destekleyen herhangi bir MDM bu iş için uygundur. Ayrıntılı bilgi almak için MDM uygulamanızın belgelerine bakın."
       ],
       "Vault created": [
         "Kasa oluşturuldu"
@@ -9603,6 +9668,9 @@
       "We use 3-D Secure to protect your payments": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
       ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
@@ -9676,7 +9744,7 @@
         "Grupları kullanarak, belirli bir gruptaki kullanıcılara kolayca e-postalar gönderebilirsiniz."
       ],
       "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
-        "VPN Professional ile yöneticiler, özel ağ geçitleri, erişim ilkeleri ve izlemenin yanında tüm kuruluş üyeleri için her zaman açık VPN özelliklerini uygulayabilir."
+        "VPN Professional ile yöneticiler, size özel ağ geçitleri, erişim ilkeleri ve izlemenin yanında tüm kuruluş üyeleri için her zaman açık VPN özelliklerini uygulayabilir."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Kullanıma almadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
@@ -10276,6 +10344,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Kurtarma için güvenilen bir aygıt kullanın"
+      ],
+      "Allow users to set a backup password": [
+        "Kullanıcıların yedek parola belirlemelerine izin ver"
       ],
       "Allowed Domain": [
         "İzin verilen etki alanı"
@@ -11840,6 +11911,32 @@
         "Oturum aç"
       ]
     },
+    "Members table usage": {
+      "Gateway Monitor is off": [
+        "Ağ geçidi izlemesi kapalı"
+      ],
+      "Monitor gateways connections": [
+        "Ağ geçitleri bağlantılarını izleyin"
+      ],
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Kuruluşunuzdaki VPN bağlantı etkinliğini izlemek için size özel ağ geçitlerinizi kurun."
+      ],
+      "Today": [
+        "Bugün"
+      ],
+      "Today, ${ time }": [
+        "Bugün, ${ time }"
+      ],
+      "Turn it on to track when and where users connect.": [
+        "Kullanıcıların ne zaman ve nerede bağlandığını izlemek için açın."
+      ],
+      "Yesterday": [
+        "Dün"
+      ],
+      "Yesterday, ${ time }": [
+        "Dün, ${ time }"
+      ]
+    },
     "Message": {
       "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
         "Diğer kişilere e-posta adresleri oluşturmak, bir kuruluş, okul veya grup için ${ MAIL_APP_NAME } uygulamasını yönetmek üzere özel etki alanınızı (örn. kurulus.com) bağlayın."
@@ -12851,7 +12948,7 @@
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca size özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -13028,7 +13125,7 @@
         "Çeşitli platformları destekler"
       ],
       "Private gateways": [
-        "Özel ağ geçitleri"
+        "Size özel ağ geçitleri"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } özel e-posta etki alanı desteği",
@@ -13878,6 +13975,9 @@
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "${ IDEAL_BRAND_NAME } ile öde"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Deneme süresi sona erdikten sonra aboneliğin etkinleştirilmesi için bir ödeme yöntemi gereklidir."
       ],
@@ -13971,6 +14071,9 @@
       "You will soon be redirected to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
@@ -13982,6 +14085,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_BRAND_NAME } hazırlanamadı. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "Invalid card number": [
         "Kart numarası geçersiz"
       ],
@@ -14004,6 +14110,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Bir sorun çıktı. Google Pay doğrulaması tamamlanamadı."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Bu ödemeyi onayladığınızda, bankanıza ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine hesabınızdan ödeme alma yetkisi verirsiniz. Bankanızla yaptığınız anlaşmanın koşullarına bağlı olarak, ödemenin yapıldığı tarihten başlayan 8 hafta içinde iade isteğinde bulunabilirsiniz."
       ]
     },
     "Payments.info": {
@@ -15202,7 +15313,7 @@
     },
     "scim: Info": {
       "**Groups:** All groups convert to local ${ BRAND_NAME } groups. Syncing with your identity provider stops, and you'll manage membership in ${ BRAND_NAME } settings instead.": [
-        "**Gruplar:** Tüm gruplar yerel ${ BRAND_NAME } gruplarına dönüştürülür. Kimlik sağlayıcınızla eşitleme durdurulur ve üyelik yönetimini bundan sonra ${ BRAND_NAME } ayarlarından gerçekleştireceksiniz."
+        "**Gruplar:** Tüm gruplar yerel ${ BRAND_NAME } gruplarına dönüştürülecek. Kimlik hizmeti sağlayıcınız ile eşitlenmeleri durdurulacak ve bundan sonra üyelik yönetimini ${ BRAND_NAME } ayarlarından yapacaksınız."
       ],
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Ön koşul:** SCIM veri sağlamasını kullanıma almak için SAML kimlik doğrulamasının yapılandırılması gerekir."
@@ -15211,7 +15322,7 @@
         "**Ön koşul:** SCIM veri sağlamasını açmak için **${ domainName }** etki alanının sahibi olduğunuzu doğrulamanız gerekir. Bu doğrulama bir saat kadar sürebilir."
       ],
       "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "**Kullanıcılar:** Kimlik sağlayıcınız tarafından otomatik olarak sağlanan tüm SCIM kullanıcıları SSO kullanıcılarına dönüştürülecek ve bunları doğrudan ${ BRAND_NAME } ayarları içinden yönetebileceksiniz."
+        "**Kullanıcılar** Kimlik hizmeti sağlayıcınız tarafından otomatik olarak sunulan tüm SCIM kullanıcıları tek oturum açma kullanıcılarına dönüştürülecek ve bunları doğrudan ${ BRAND_NAME } ayarlarından yönetebileceksiniz."
       ],
       "Enter the token into your identity provider": [
         "Kodu kimlik hizmeti sağlayıcınıza yazın"
@@ -15237,14 +15348,23 @@
       "Make sure you copy the above SCIM token now.": [
         "Yukarıdaki SCIM kodunu şimdi kopyaladığınızdan emin olun."
       ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Eşitlemeyi yeniden açmak var olan grupları çoğaltacak. SCIM üzerine geri aktarılamazlar."
+      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Farklı hizmetler arasında kullanıcıların yönetimini kolaylaştırır. Kimlik hizmeti sağlayıcınıza kullanıcı ekleyebilir, düzenleyebilir ve kaldırabilirsiniz. Bu değişiklikler otomatik olarak ${ appName } kuruluşunuza uygulanır."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Yeni SCIM kodunu kimlik hizmeti sağlayıcınızın ayarlarına yazıncaya kadar SCIM otomatik veri sağlama özelliği kullanım dışı kalır."
       ],
+      "This will delete your SCIM base URL and token.": [
+        "Bu işlem, SCIM temel adresinizi ve kodunuzu silecek."
+      ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Kimlik hizmeti sağlayıcınızla eşitlemeyi yeniden kullanıma almak için SCIM bütünleştirmesini yeniden tamamlamanız gerekir."
+      ],
+      "When you disable SCIM:": [
+        "SCIM kapatıldığında:"
       ]
     },
     "scim: Label": {
@@ -16053,6 +16173,9 @@
       "Contact your administrator if the problem persists.": [
         "Sorun sürerse yöneticiniz ile görüşün."
       ],
+      "Continue to join as **${ username }**": [
+        "**${ username }** olarak oturum açmaya devam et"
+      ],
       "Current device": [
         "Bu aygıt"
       ],
@@ -16087,6 +16210,9 @@
       ],
       "Enter your backup password": [
         "Yedek parolanızı yazın"
+      ],
+      "For your security, you have been signed out of all your other active devices.": [
+        "Güvenliğiniz için diğer tüm aktif aygıtlarınızdan oturumunuz kapatılmıştır."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Güvenliğiniz için, diğer tüm etkin aygıtlarınızdaki oturumlar kapatıldı. Hesabınıza erişmeden önce, yeni bir yedek parola yazmanız gerekecek."
@@ -16195,6 +16321,9 @@
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Bu işlem diğer aygıtlardaki oturumlarınızı kapatacak ve yeni bir yedek parola oluşturmanız gerekecek."
+      ],
+      "This will sign you out of your other devices.": [
+        "Bu işlem diğer aygıtlarınızdaki oturumlarınızı kapatılacak."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "**${ email }** hesabınızda oturum açmaya çalışan kişinin gerçekten siz olduğunuzdan emin olmak için doğrulama kodunu inceleyin ve başka bir aygıttan isteği onaylayın."
@@ -17566,6 +17695,9 @@
       "Add users to \"${ policyName }\"": [
         "\"${ policyName }\" ilkesine kullanıcılar ekleyin"
       ],
+      "Advanced configuration": [
+        "Gelişmiş yapılandırma"
+      ],
       "Advanced recovery options": [
         "Gelişmiş kurtarma seçenekleri"
       ],
@@ -18884,6 +19016,12 @@
       "Features": [
         "Özellikler"
       ],
+      "Last app activity": [
+        "Son uygulama etkinliği"
+      ],
+      "Last connection": [
+        "Son bağlantı"
+      ],
       "Name": [
         "Ad"
       ],
@@ -18953,8 +19091,8 @@
       "Customize import to reduce the number of labels": [
         "Etiket sayısını azaltmak için içe aktarmayı özelleştirin"
       ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Google Workspace'ten ${ BRAND_NAME } üzerine veri aktarım durumu"
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "${ providerName } üzerinden ${ BRAND_NAME } üzerine veri aktarma durumu"
       ],
       "Device name and app version": [
         "Aygıt adı ve uygulama sürümü"
@@ -19080,7 +19218,7 @@
         "Kullanıcının yaklaşık konumu (IP adresine dayalı)"
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } hesaplarında oturum açmış kullanıcılar"
+        "${ BRAND_NAME } hesaplarına erişen kullanıcılar"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Kullanıcılar internet uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
@@ -19143,6 +19281,14 @@
       ],
       "Waiting for user to accept the invitation": [
         "Kullanıcının daveti kabul etmesi bekleniyor"
+      ]
+    },
+    "Tooltip for members table": {
+      "Last time this user connected to one of your organization's Gateways.": [
+        "Bu kullanıcının kuruluşunuzun ağ geçitlerinden birine bağlandığı son zaman."
+      ],
+      "Last time this user signed in or used the ${ VPN_APP_NAME } app on their device.": [
+        "Bu kullanıcının aygıtında ${ VPN_APP_NAME } uygulamasında oturum açtığı veya kullandığı son zaman."
       ]
     },
     "Tor out of date": {

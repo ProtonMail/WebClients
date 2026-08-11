@@ -422,6 +422,9 @@
       "Download CSV sample": [
         "Ladda ner CSV-exempel"
       ],
+      "Download latest": [
+        "Ladda ner senaste"
+      ],
       "Download logs": [
         "Ladda ner loggar"
       ],
@@ -662,9 +665,6 @@
       "Invite user": [
         "Bjud in användare"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "Behåll"
       ],
@@ -737,8 +737,8 @@
       "Mark as resolved": [
         "Markera som löst"
       ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
+      "Migrate": [
+        "Migrera"
       ],
       "More benefits": [
         "Fler fördelar"
@@ -4672,6 +4672,9 @@
       "Address is already added to your account": [
         "Adress är redan tillagd till ditt konto"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
       "Address primary private key not found": [
         "Adressens privata nyckel hittades inte"
       ],
@@ -4693,11 +4696,17 @@
       "Calendar limit reached": [
         "Kalendergräns nådd"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Kan inte lägga till foto i album utan ett giltigt namn"
+      ],
       "Cannot download a folder": [
         "Kan inte ladda ner en mapp"
       ],
       "Cannot share root folder": [
         "Kan inte dela rotmapp"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan inte verifiera vem som laddade upp denna fil"
       ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
@@ -4713,6 +4722,12 @@
       ],
       "Could not generate the device profile. Please try again.": [
         "Kunde inte generera enhetsprofilen. Försök igen."
+      ],
+      "Could not load sharing details": [
+        "Kunde inte ladda delningsdetaljer"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunde inte läsa del av denna fil: ${ message }"
       ],
       "Could not unlock the parent folder": [
         "Kunde inte låsa upp den överordnade mappen"
@@ -4890,6 +4905,9 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Maximalt ${ displayMaxValue } tillåtet"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
         "Slå samman minst ${ calendarsToFixCount } kalendrar med befintliga ${ BRAND_NAME }-kalendrar"
@@ -4897,8 +4915,17 @@
       "Missing key packet": [
         "Saknar nyckelpaket"
       ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
+      ],
       "Missing signature": [
         "Signatur saknas"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Saknar signatur för ${ signatureType }"
       ],
       "Name already exists": [
         "Namn finns redan"
@@ -4930,8 +4957,20 @@
       "Not a valid number": [
         "Inte ett giltigt nummer"
       ],
+      "Only admins can convert external invitations": [
+        "Endast administratörer kan konvertera externa inbjudningar"
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Endast skiftläge och skiljetecken (punkter, bindestreck och understreck) kan ändras för den här adressen"
+      ],
+      "Operation aborted": [
+        "Åtgärd avbröts"
+      ],
+      "Operation failed, try again later": [
+        "Åtgärd misslyckades, försök igen senare"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
       ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
@@ -5086,8 +5125,14 @@
       "Signature verification failed": [
         "Signaturverifiering misslyckades"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturverifiering misslyckades: ${ errorMessage }"
+      ],
       "Signature verification for ${ signatureType } failed": [
         "Signaturverifiering för ${ signatureType } misslyckades"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturverifiering för ${ signatureType } misslyckades: ${ errorMessage }"
       ],
       "Some items could not be loaded": [
         "Några objekt kunde inte laddas"
@@ -5188,8 +5233,14 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
       ],
+      "This file version could not be uploaded": [
+        "Denna filversion kunde inte laddas upp"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Detta mappnamn är inte tillgängligt. Välj ett annat namn."
+      ],
+      "This item is no longer shared": [
+        "Detta objekt är inte delat längre"
       ],
       "This item is not shared": [
         "Detta objekt är inte delat"
@@ -5265,6 +5316,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Fel verifieringskod. Se till att du kopierade verifieringskoden korrekt och försök igen. Det kan ta upp till 24 timmar innan ändringarna träder i kraft."
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan bara ladda upp en ny version till en fil"
       ],
       "You do not have access to this item": [
         "Du har inte åtkomst till detta objekt"
@@ -6128,6 +6182,29 @@
         "Terabyte"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Aktiverat"
+      ],
+      "All": [
+        "Alla"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Not activated": [
+        "Inte aktiverad"
+      ],
+      "Pending": [
+        "Väntande"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } uppdaterad"
@@ -6190,6 +6267,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Avancerade säkerhetskontroller"
+      ],
+      "Dedicated server - ${ serverPrice }": [
+        "Dedikerad server - ${ serverPrice }"
+      ],
+      "User - ${ userPrice }": [
+        "Användare - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -6725,11 +6813,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Har fel"
+      ],
       "In progress": [
         "Pågår"
       ],
       "Migrated": [
         "Migrerad"
+      ],
+      "Pending": [
+        "Väntar"
       ]
     },
     "Import warning": {
@@ -7277,6 +7371,9 @@
       "Authenticator app 2FA enabled": [
         "Autentiseringsapp 2FA aktiverad"
       ],
+      "Author is not provided on public link": [
+        "Författare är inte angiven på offentlig länk"
+      ],
       "Available on VPN Professional": [
         "Tillgänglig på VPN Professional"
       ],
@@ -7799,6 +7896,9 @@
       "finance": [
         "finans"
       ],
+      "Find out what can be migrated.": [
+        "Ta reda på vad som kan migreras."
+      ],
       "for ${ price }": [
         "för ${ price }"
       ],
@@ -8308,6 +8408,9 @@
       "No single sign-on": [
         "Ingen enkel inloggning"
       ],
+      "No users to display": [
+        "Inga användare att visa"
+      ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
       ],
@@ -8635,6 +8738,9 @@
       ],
       "Select a group to view its members and settings.": [
         "Välj en grupp för att visa dess medlemmar och inställningar."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
       ],
       "Select one or multiple user affiliations": [
         "Välj en eller flera användartillhörigheter"
@@ -9047,6 +9153,15 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "För att hänga med i den senaste utvecklingen av ${ BRAND_NAME }-produkter kan du prenumerera på våra olika e-postmeddelanden och ${ blogLink } då och då."
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "För att fortsätta, välj en metod för kontoåterställning så att vi kan verifiera begäran."
       ],
@@ -9379,6 +9494,9 @@
       ],
       "X": [
         "X"
+      ],
+      "You": [
+        "Du"
       ],
       "You already have a free account": [
         "Du har redan ett gratis konto"
@@ -11513,6 +11631,20 @@
       ],
       "Sign in": [
         "Logga in"
+      ]
+    },
+    "Members table usage": {
+      "Today": [
+        "Idag"
+      ],
+      "Today, ${ time }": [
+        "Idag ${ time }"
+      ],
+      "Yesterday": [
+        "Igår"
+      ],
+      "Yesterday, ${ time }": [
+        "Igår ${ time }"
       ]
     },
     "Message": {
@@ -14914,6 +15046,9 @@
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "För att återaktivera synkronisering med din identitetsleverantör måste du slutföra SCIM-integreringen igen."
+      ],
+      "When you disable SCIM:": [
+        "När du inaktiverar SCIM:"
       ]
     },
     "scim: Label": {
@@ -16940,11 +17075,23 @@
       ]
     },
     "Table header": {
+      "Activated": [
+        "Aktiverad"
+      ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
       "Size": [
         "Storlek"
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Användare"
       ]
     },
     "TableHeader": {
@@ -17360,6 +17507,9 @@
       ],
       "Compare plans": [
         "Jämför paket"
+      ],
+      "Configure migration": [
+        "Konfigurera migrering"
       ],
       "Confirm": [
         "Bekräfta"
@@ -18121,6 +18271,9 @@
       "Select data to import": [
         "Välj data att importera"
       ],
+      "Select users to migrate": [
+        "Välj användare att migrera"
+      ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Skicka och ta emot Gmail med ${ MAIL_APP_NAME }"
       ],
@@ -18410,6 +18563,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
       ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
+      ],
       "What changes if you switch to the Free plan": [
         "Vad som ändras om du byter till Free plan"
       ],
@@ -18519,6 +18675,9 @@
       ],
       "Features": [
         "Funktioner"
+      ],
+      "Last connection": [
+        "Senaste anslutning"
       ],
       "Name": [
         "Namn"
@@ -18743,6 +18902,9 @@
       ],
       "Group membership paused": [
         "Gruppmedlemskap pausad"
+      ],
+      "Pending user activation": [
+        "Väntande användaraktivering"
       ],
       "Resuming role assignment": [
         "Återuppta rolltilldelning"

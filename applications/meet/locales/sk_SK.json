@@ -150,9 +150,6 @@
       "Add another account": [
         "Pridať ďalší účet"
       ],
-      "Admit": [
-        "Pustiť"
-      ],
       "Admit ${ participantName }": [
         "Pustiť ${ participantName }"
       ],
@@ -1869,6 +1866,9 @@
       "Failed to download recording": [
         "Nepodarilo sa stiahnuť nahrávku"
       ],
+      "Failed to edit meeting": [
+        "Úprava schôdzky zlyhala"
+      ],
       "Failed to edit room name": [
         "Nepodarilo sa upraviť názov miestnosti"
       ],
@@ -2220,6 +2220,12 @@
         "${ totalParticipantCount } účastníkov",
         "${ totalParticipantCount } účastníkov"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "${ waitingRoomParticipantsCount } čakajúca osoba",
+        "${ waitingRoomParticipantsCount } čakajúce osoby",
+        "${ waitingRoomParticipantsCount } čakajúcich osôb",
+        "${ waitingRoomParticipantsCount } čakajúcich osôb"
+      ],
       "(You)": [
         "(Vy)"
       ],
@@ -2231,6 +2237,12 @@
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefónne číslo možno použiť iba na overenie jedného účtu ${ BRAND_NAME }"
+      ],
+      "Admit": [
+        "Povoliť"
+      ],
+      "Admitting": [
+        "Povoľovanie"
       ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Pokročilý režim: nastavte všetky konštanty rozostrenia pre nasledujúcu verziu a potom kliknite na „Použiť“, aby sa znovu vygeneroval náhľad. Tieto nastavenia majú prednosť pred hodnotami v súbore a v nástroji Unleash."
@@ -2508,6 +2520,9 @@
       "Meeting is decrypting...": [
         "Šifrovanie schôdze..."
       ],
+      "Meeting is full": [
+        "Schôdza je plná"
+      ],
       "Meeting link": [
         "Odkaz na schôdzku"
       ],
@@ -2685,6 +2700,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky alebo ${ link } sa automaticky vyrieši väčšina problémov."
       ],
+      "Rejecting": [
+        "Zamietanie"
+      ],
       "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
         "Spustite svoju živú kameru cez procesor na úpravu pozadia. Vyberte si jednoliatu farbu alebo nahrajte obrázok, ktorý chcete použiť ako pozadie."
       ],
@@ -2756,6 +2774,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Toto je end-to-end šifrovaný chat s dočasnými správami, ktoré zmiznú po ukončení hovoru."
+      ],
+      "This meeting has a waiting room": [
+        "Táto schôdza má čakáreň"
       ],
       "This meeting is being recorded": [
         "Toto stretnutie sa nahráva"
@@ -2837,6 +2858,9 @@
       ],
       "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
         "Čaká sa na spustenie schôdze hostiteľom. Pripojíte sa, keď hostiteľ spustí stretnutie a prijme vás."
+      ],
+      "Waiting since ${ receivedTime }": [
+        "Čaká od ${ receivedTime }"
       ],
       "Warning": [
         "Varovanie"
@@ -3175,6 +3199,9 @@
       ],
       "Use simple selfie segmentation": [
         "Použite jednoduchú segmentáciu selfie"
+      ],
+      "Use waiting room with a paid plan": [
+        "V rámci plateného balíka môžete využívať čakáreň"
       ],
       "Verification code": [
         "Overovací kód"

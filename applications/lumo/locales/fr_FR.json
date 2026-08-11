@@ -1950,7 +1950,7 @@
       "Expires tomorrow": [
         "Expire demain"
       ],
-      "Extract, analyse, and summarise documents, PDFs, and images.": [
+      "Extract, analyze, and summarise documents, PDFs, and images.": [
         "Extraire, analyser et résumer des documents, des PDF et des images."
       ],
       "File too large for preview (>150k tokens)": [
@@ -3172,7 +3172,7 @@
       "Add more information to improve the response": [
         "Ajoutez plus d'informations pour améliorer la réponse"
       ],
-      "Analyse another export": [
+      "Analyze another export": [
         "Analyser une autre exportation"
       ],
       "Ask the model to be more careful and thorough": [
@@ -3663,6 +3663,9 @@
       ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Naviguez vers le dossier ${ DRIVE_SHORT_APP_NAME } que vous souhaitez associer à ce projet, puis cliquez sur « Associer ce dossier »."
+      ],
+      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100 million people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
+        "Conçu par ${ BRAND_NAME }, la marque spécialisée dans la protection de la vie privée à laquelle font confiance plus de 100 millions de personnes, et par l'équipe à l'origine de ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } et ${ PASS_APP_NAME }."
       ],
       "Built-in ${ BRAND_NAME } agent": [
         "Agent ${ BRAND_NAME } intégré"
@@ -5755,11 +5758,38 @@
       "An error occurred": [
         "Une erreur s’est produite."
       ],
+      "Cannot share root folder": [
+        "Le dossier racine ne peut pas être partagé."
+      ],
+      "Cannot verify the author of this file": [
+        "L'auteur de ce fichier n'a pas pu être vérifié."
+      ],
       "Checkout expired, please try again": [
         "La commande a expiré, nous vous invitons à réessayer."
       ],
       "Company name or personal name is required": [
         "Le nom de l'entreprise ou le nom personnel est requis."
+      ],
+      "Copy operation aborted": [
+        "L'opération de copie a été annulée."
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Vous ne pouvez pas copier d'élément dans un élément qui n'est pas un dossier."
+      ],
+      "Could not load sharing details": [
+        "Les informations du partage n'ont pas pu être chargées."
+      ],
+      "Could not unlock the parent folder": [
+        "Le dossier parent n'a pas pu être déverrouillé."
+      ],
+      "Could not unlock this item": [
+        "Cet élément n'a pas pu être déverrouillé."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Vous ne pouvez pas créer de fichier dans un élément qui n'est pas un dossier."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Vous ne pouvez pas créer de dossier dans un élément qui n'est pas un dossier."
       ],
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
@@ -5779,8 +5809,26 @@
       "Error connecting to the Bitcoin API.": [
         "Une erreur s'est produite lors de la connexion à l'API Bitcoin."
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "La clé de signet n'a pas pu être déchiffrée : ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Le mot de passe du signet n'a pas pu être déchiffré : ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "La clé de contenu n'a pas pu être déchiffrée : ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Le nom de l'élément n'a pas pu être déchiffré : ${ message }"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Les données d'abonnement n'ont pas pu être chargées. Veuillez réessayer plus tard."
+      ],
+      "File has no revision": [
+        "Le fichier n'a aucune révision."
+      ],
+      "Image preview not found": [
+        "L'aperçu de l'image n'a pas été trouvé."
       ],
       "Incorrect username": [
         "Le nom d'utilisateur n'est pas correct."
@@ -5809,12 +5857,24 @@
       "Invitation not found": [
         "L'invitation est introuvable"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Ce lien public obsolète ne peut pas être mis à jour. Veuillez en recréer un nouveau."
+      ],
+      "Missing inviter email": [
+        "L'e-mail de l'inviteur est manquant."
+      ],
       "Missing signature": [
         "Il manque la signature."
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Vous ne pouvez pas déplacer d'élément dans un élément qui n'est pas un dossier."
       ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "Le nom doit être composé d'${ MAX_NODE_NAME_LENGTH } caractère au maximum.",
         "Le nom doit être composé de ${ MAX_NODE_NAME_LENGTH } caractères au maximum."
+      ],
+      "No file data was received. Please try again.": [
+        "Aucune donnée de fichier n'a été reçue. Veuillez réessayer."
       ],
       "Not a valid number": [
         "Le numéro n'est pas valide."
@@ -5834,6 +5894,9 @@
       "Organization key must be activated to create non-private users": [
         "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
       ],
+      "Part of the file appears to be corrupted": [
+        "Une partie du fichier semble corrompue."
+      ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
       ],
@@ -5848,6 +5911,9 @@
       ],
       "Payment process not supported": [
         "Le traitement du paiement n'est pas pris en charge."
+      ],
+      "Photo is already in the target album": [
+        "La photo se trouve déjà dans l'album indiqué."
       ],
       "Photo not found": [
         "La photo est introuvable"
@@ -5900,6 +5966,18 @@
       "Signature verification failed": [
         "La signature n'a pas pu être vérifiée."
       ],
+      "Signature verification for ${ signatureType } failed": [
+        "La vérification de signature pour ${ signatureType } n'a pas abouti."
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "La vérification de signature pour ${ signatureType } n'a pas abouti : ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Des données de fichier n'ont pas pu être importées. Veuillez réessayer."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Des parties de fichier n'ont pas pu être importées. Veuillez réessayer."
+      ],
       "Something went wrong": [
         "Une erreur s'est produite."
       ],
@@ -5921,6 +5999,9 @@
       "The minimum donation amount is ${ price }": [
         "Le montant minimum du don est de ${ price }."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Le fichier importé ne correspond pas à l'original. Veuillez réessayer."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Ce champ dépasse le maximum de ${ maximumLength } caractères."
       ],
@@ -5933,11 +6014,23 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
+      "This file has missing crypto material": [
+        "Des éléments de chiffrement manquent dans ce fichier."
+      ],
+      "This file has no version available to download": [
+        "Ce fichier n'a aucune version disponible au téléchargement."
+      ],
+      "This file version could not be uploaded": [
+        "Cette version de fichier n'a pas pu être importée."
+      ],
       "This item is no longer shared": [
         "Cet élément n’est plus partagé"
       ],
       "This item is not shared": [
         "Cet élément n’est pas partagé"
+      ],
+      "Too many server requests, please try again later": [
+        "Le nombre de requêtes serveur est trop important. Veuillez réessayer plus tard."
       ],
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
@@ -5957,11 +6050,23 @@
       "VAT number must start with ${ prefixes }": [
         "Le numéro de TVA doit commencer par ${ prefixes }."
       ],
+      "Verification keys are not available": [
+        "Les clés de vérification ne sont pas disponibles."
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Les clés de vérification pour ${ signatureType } ne sont pas disponibles."
+      ],
       "We couldn’t send a verification code using this method.": [
         "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
       ],
       "Wrong billing address": [
         "L'adresse de facturation n'est pas correct."
+      ],
+      "You can update a public link for your own files only": [
+        "Vous pouvez uniquement mettre à jour les liens publics pour vos propres fichiers."
+      ],
+      "You do not have access to this item": [
+        "Vous n'avez pas accès à cet élément."
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nom indéchiffrable"
@@ -6290,6 +6395,9 @@
       ],
       "Attention required": [
         "Attention requise"
+      ],
+      "Author is not provided on public link": [
+        "L'auteur n'est pas fourni pour le lien public."
       ],
       "Awaiting transaction": [
         "Transaction en attente"
@@ -8601,7 +8709,7 @@
         "Montant dû après la version d'essai le ${ formattedDate }"
       ],
       "Billing Country": [
-        "Pays de facturation "
+        "Pays de facturation"
       ],
       "Card number": [
         "Numéro de la carte"
@@ -9911,6 +10019,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Passez à une formule prise en charge pour pouvoir utiliser les rôles d'administrateur."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
       ]

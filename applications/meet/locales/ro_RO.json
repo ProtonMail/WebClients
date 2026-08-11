@@ -149,9 +149,6 @@
       "Add another account": [
         "Adăugare alt cont"
       ],
-      "Admit": [
-        "Admitere"
-      ],
       "Admit ${ participantName }": [
         "Admitere pe ${ participantName }"
       ],
@@ -1866,6 +1863,9 @@
       "Failed to download recording": [
         "Descărcarea înregistrării a eșuat."
       ],
+      "Failed to edit meeting": [
+        "Editarea conferinței a eșuat."
+      ],
       "Failed to edit room name": [
         "Eroare la editarea numelui camerei."
       ],
@@ -2226,6 +2226,12 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
       ],
+      "Admit": [
+        "Admitere"
+      ],
+      "Admitting": [
+        "Se admite"
+      ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Mod avansat: ajustați fiecare constantă de estompare pentru următoarea versiune, apoi aplicați pentru a reconstrui examinarea. Suprascrierile au prioritate față de valorile fișierului și Unleash."
       ],
@@ -2502,6 +2508,9 @@
       "Meeting is decrypting...": [
         "Conferința se decriptează..."
       ],
+      "Meeting is full": [
+        "Conferința este plină"
+      ],
       "Meeting link": [
         "Legătură web întâlnire"
       ],
@@ -2679,6 +2688,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
+      "Rejecting": [
+        "Se respinge"
+      ],
       "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
         "Rulați camera live prin procesorul de fundal personalizat. Alegeți o culoare simplă sau încărcați o imagine pentru a o folosi ca fundal."
       ],
@@ -2750,6 +2762,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Aceasta este o conversație criptată bilateral cu mesaje efemere, care dispar la sfârșitul apelului."
+      ],
+      "This meeting has a waiting room": [
+        "Această conferință are o sală de așteptare."
       ],
       "This meeting is being recorded": [
         "Această întâlnire este înregistrată."
@@ -2831,6 +2846,9 @@
       ],
       "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
         "Se așteaptă ca gazda să înceapă conferința. Vă veți alătura când gazda începe conferința și vă acceptă."
+      ],
+      "Waiting since ${ receivedTime }": [
+        "Se așteaptă de la ${ receivedTime }"
       ],
       "Warning": [
         "Avertizare"

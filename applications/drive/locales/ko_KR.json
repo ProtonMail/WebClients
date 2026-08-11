@@ -48,9 +48,6 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
       ],
-      "Add ${ photoCount } photo to a new album": [
-        "새로운 앨범으로 ${ photoCount }개 사진 추가"
-      ],
       "Add account": [
         "계정 추가"
       ],
@@ -87,23 +84,11 @@
       "Add phone number": [
         "휴대전화 번호 추가"
       ],
-      "Add photos": [
-        "사진 추가"
-      ],
       "Add storage": [
         "스토리지 추가"
       ],
-      "Add to \"${ name }\" (${ photoCount } photo)": [
-        "\"${ name }\"에 추가 (${ photoCount }개 사진)"
-      ],
-      "Add to album": [
-        "앨범에 추가하기"
-      ],
       "Add to group": [
         "그룹에 추가"
-      ],
-      "Album name": [
-        "앨범 이름"
       ],
       "Apply": [
         "적용"
@@ -216,9 +201,6 @@
       "Collaborate on documents": [
         "문서에서 협업하기"
       ],
-      "Collapse folder": [
-        "폴더 닫기"
-      ],
       "Collapse navigation bar": [
         "네비게이션 바 접기"
       ],
@@ -291,14 +273,8 @@
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
       ],
-      "Create album": [
-        "앨범 생성"
-      ],
       "Create and copy alias": [
         "별칭 생성 및 복사"
-      ],
-      "Create business account": [
-        "비즈니스 계정 생성"
       ],
       "Create folder": [
         "폴더 생성"
@@ -308,9 +284,6 @@
       ],
       "Create new password": [
         "새로운 비밀번호 생성"
-      ],
-      "Create new text file": [
-        "새 텍스트 파일 만들기"
       ],
       "Current plan": [
         "현재 플랜"
@@ -339,9 +312,6 @@
       "Delete ${ selectedCount } contact group": [
         "${ selectedCount } 개의 그룹 삭제"
       ],
-      "Delete album": [
-        "앨범 삭제"
-      ],
       "Delete contact": [
         "연락처 삭제"
       ],
@@ -351,23 +321,11 @@
       "Delete permanently": [
         "영구적으로 삭제"
       ],
-      "Delete this version": [
-        "이 버전 삭제"
-      ],
-      "Delete version": [
-        "버전 삭제"
-      ],
-      "Delete without saving": [
-        "저장하지 않고 삭제하기"
-      ],
       "Deselect all": [
         "선택 해제"
       ],
       "Details": [
         "세부사항"
-      ],
-      "Diagnostics": [
-        "진단"
       ],
       "Discard": [
         "저장 안함"
@@ -377,12 +335,6 @@
       ],
       "Display navigation bar": [
         "네비게이션 바 보이기"
-      ],
-      "Display next": [
-        "다음 항목 표시"
-      ],
-      "Display previous": [
-        "이전 항목 표시"
       ],
       "Done": [
         "완료"
@@ -402,26 +354,14 @@
       "Download anyway": [
         "무시하고 다운로드"
       ],
-      "Download for Mac": [
-        "Mac용 다운로드"
-      ],
       "Download for macOS": [
         "macOS용 다운로드"
       ],
       "Download for Windows": [
         "Windows용 다운로드"
       ],
-      "Download info": [
-        "정보 다운로드"
-      ],
       "Download logs": [
         "다운로드 로그"
-      ],
-      "Download results": [
-        "결과 다운로드"
-      ],
-      "Drive Locked": [
-        "Drive 잠김"
       ],
       "Edit": [
         "편집"
@@ -453,17 +393,8 @@
       "enable desktop notifications": [
         "데스크톱 알림을 활성화"
       ],
-      "Enable drive search": [
-        "드라이브 검색 활성화하기"
-      ],
       "Encrypted": [
         "암호화됨"
-      ],
-      "Expand folder": [
-        "폴더 확장"
-      ],
-      "Explore more": [
-        "더 둘러보기"
       ],
       "Explore other plans": [
         "다른 플랜 알아보기"
@@ -476,9 +407,6 @@
       ],
       "Export selection as .vcf": [
         "선택한 항목을 .vcf로 내보내기"
-      ],
-      "Export system log": [
-        "시스템 로그 내보내기"
       ],
       "Fit to window": [
         "창에 맞게"
@@ -525,20 +453,11 @@
       "Go back": [
         "뒤로 가기"
       ],
-      "Go back to album \"${ ellipsedAlbumName }\"": [
-        "앨범 \"${ ellipsedAlbumName }\"(으)로 돌아가기"
-      ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName }(으)로 이동"
       ],
       "Go to label": [
         "라벨로 이동"
-      ],
-      "Go to my files": [
-        "내 파일로 가기"
-      ],
-      "Go to parent": [
-        "상위 이동"
       ],
       "Go to settings": [
         "설정으로 이동하기"
@@ -594,9 +513,6 @@
       "Increase": [
         "증가"
       ],
-      "Join album": [
-        "앨범 참여"
-      ],
       "Keep my subscription": [
         "내 구독 유지하기"
       ],
@@ -611,9 +527,6 @@
       ],
       "Leave": [
         "나가기"
-      ],
-      "Leave album": [
-        "앨범에서 나가기"
       ],
       "Let's talk": [
         "상담 및 계약 필요"
@@ -645,9 +558,6 @@
       "Manage labels": [
         "라벨 관리"
       ],
-      "Manage share": [
-        "공유 관리"
-      ],
       "Manage users/addresses": [
         "사용자 및 주소 관리"
       ],
@@ -658,7 +568,7 @@
         "해결됨으로 표시"
       ],
       "Mark for deletion": [
-        "삭제를 표시합니다."
+        "삭제 표시"
       ],
       "Maximize transfers": [
         "최대 이동"
@@ -668,6 +578,9 @@
       ],
       "Merge contacts": [
         "연락처 통합"
+      ],
+      "Migrate": [
+        "이전"
       ],
       "Minimize transfers": [
         "최소 이동"
@@ -699,26 +612,14 @@
       "Move to trash": [
         "휴지통으로 이동"
       ],
-      "Name your album": [
-        "앨범 이름 지정"
-      ],
-      "New": [
-        "신규"
-      ],
-      "New album": [
-        "새로운 앨범"
-      ],
       "New document": [
-        "새 문서"
+        "새로운 문서"
       ],
       "New folder": [
         "새 폴더"
       ],
       "New message": [
         "새 메시지"
-      ],
-      "New shared album": [
-        "새로운 공유된 앨범"
       ],
       "New spreadsheet": [
         "새로운 스프레드시트"
@@ -774,17 +675,8 @@
       "Quit": [
         "나가기"
       ],
-      "Re-index": [
-        "재색인"
-      ],
-      "Re-indexing in progress": [
-        "재색인 진행 중"
-      ],
       "Re-sign": [
         "재서명"
-      ],
-      "Rebuild index": [
-        "색인 재구축"
       ],
       "Reconnect": [
         "다시 연결"
@@ -797,9 +689,6 @@
       ],
       "Refer a friend": [
         "친구 초대"
-      ],
-      "Refetch index": [
-        "색인 다시 가져오기"
       ],
       "Refresh the page": [
         "페이지 새로 고침"
@@ -822,32 +711,17 @@
       "Remove button": [
         "버튼 삭제"
       ],
-      "Remove device": [
-        "기기 삭제"
-      ],
-      "Remove from album": [
-        "앨범에서 제거"
-      ],
       "Remove from favorites": [
         "즐겨찾기에서 삭제"
       ],
       "Remove gift code": [
         "기프트 코드 삭제"
       ],
-      "Remove me": [
-        "나 제거하기"
-      ],
       "Remove my access": [
         "내 접근 권한 제거"
       ],
-      "Remove without saving": [
-        "저장 없이 삭제"
-      ],
       "Rename": [
         "이름 바꾸기"
-      ],
-      "Rename album": [
-        "앨범 이름 변경"
       ],
       "Replace file": [
         "파일 대체"
@@ -857,9 +731,6 @@
       ],
       "Report a problem": [
         "문제 신고"
-      ],
-      "Report abuse": [
-        "악용 사례 신고"
       ],
       "Report an issue": [
         "문제 보고하기"
@@ -891,32 +762,17 @@
       "Restore this version": [
         "이 버전으로 복구"
       ],
-      "Restore version": [
-        "버전 복원"
-      ],
       "Retry": [
         "재시도"
       ],
       "Retry failed items": [
         "실패된 항목 다시 시도"
       ],
-      "Run diagnostics": [
-        "진단 실행"
-      ],
       "Save": [
         "저장"
       ],
-      "Save and remove": [
-        "저장 및 삭제"
-      ],
       "Save changes": [
         "변경 사항 저장"
-      ],
-      "Save photo to your gallery": [
-        "내 갤러리에 사진 저장"
-      ],
-      "Save photos and remove": [
-        "사진 저장 및 삭제"
       ],
       "Scan & Download": [
         "스캔 및 다운로드"
@@ -932,12 +788,6 @@
       ],
       "Search countries": [
         "국가 검색"
-      ],
-      "Search drive": [
-        "드라이브에서 검색"
-      ],
-      "Search is unavailable": [
-        "검색을 사용할 수 없음"
       ],
       "See how": [
         "방법 보기"
@@ -972,9 +822,6 @@
       "Set as album cover": [
         "앨범 커버로 사용하기"
       ],
-      "Set as cover": [
-        "커버로 설정"
-      ],
       "Set password or expiration date": [
         "비밀번호 또는 만료 시간 설정"
       ],
@@ -998,12 +845,6 @@
       ],
       "Share": [
         "공유"
-      ],
-      "Share album": [
-        "앨범 공유"
-      ],
-      "Share file": [
-        "파일 공유"
       ],
       "Share item": [
         "항목 공유"
@@ -1056,14 +897,8 @@
       "Skip verification": [
         "인증 건너뛰기"
       ],
-      "Start": [
-        "시작"
-      ],
       "Start import": [
         "가져오기 시작"
-      ],
-      "Start recovering": [
-        "복구 시작"
       ],
       "Stay": [
         "기다리기"
@@ -1092,9 +927,6 @@
       "Take a tour": [
         "둘러보기"
       ],
-      "This album is empty": [
-        "이 앨범은 비어 있습니다"
-      ],
       "Toggle Calendar app": [
         "캘린더 앱 열기/닫기"
       ],
@@ -1109,9 +941,6 @@
       ],
       "Trust": [
         "신뢰"
-      ],
-      "Try ${ BRAND_NAME } Workspace": [
-        "${ BRAND_NAME } Workspace 체험하기"
       ],
       "Try again": [
         "다시 시도"
@@ -1132,7 +961,7 @@
         "데이터 잠금 해제"
       ],
       "Unmark for deletion": [
-        "삭제를 표시 해제합니다."
+        "삭제 표시 해제"
       ],
       "Untrust": [
         "신뢰하지 않음"
@@ -1166,12 +995,6 @@
       ],
       "Upload folder": [
         "폴더 업로드"
-      ],
-      "Upload from computer": [
-        "컴퓨터에서 업로드"
-      ],
-      "Upload photos": [
-        "사진 업로드"
       ],
       "Upload picture": [
         "사진 업로드"
@@ -1221,17 +1044,8 @@
       "What do I get?": [
         "무엇을 받게 되나요?"
       ],
-      "Windows 11 (ARM64)": [
-        "Windows 11 (ARM64)"
-      ],
-      "Windows 11/10 (x64)": [
-        "Windows 11/10 (x64)"
-      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
-      ],
-      "Your 3 GB bonus": [
-        "나의 3 GB 보너스"
       ],
       "Zoom in": [
         "확대"
@@ -1248,11 +1062,6 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "${ SHEETS_APP_NAME }에서 열기"
-      ]
-    },
-    "Actions": {
-      "Upload": [
-        "업로드"
       ]
     },
     "Actions message": {
@@ -1432,11 +1241,6 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "무료 체험이 ${ timeRemaining } 에 종료됩니다"
-      ]
-    },
-    "Badge": {
-      "Invited": [
-        "초대됨"
       ]
     },
     "bf2023: Deal details": {
@@ -1724,10 +1528,10 @@
         "닫기"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
-        "${ MAIL_APP_NAME }을 계속 사용하세요."
+        "${ MAIL_APP_NAME }을 계속 사용하기"
       ],
       "Continue using ${ planTitle }": [
-        "${ planTitle }을 계속 사용하세요"
+        "${ planTitle }을(를) 계속 사용하세요."
       ],
       "Continue your subscription": [
         "내 구독 유지하기"
@@ -3117,14 +2921,6 @@
         "업로드한 CSV 파일에서 다음 필드를 감지했습니다. 가져오고자 하는 것을 확인하세요"
       ]
     },
-    "Docs Info": {
-      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
-        "협업이 더 간편해졌어요. 이제 누구나 문서를 변경할 필요 없이 편집을 제안할 수 있답니다."
-      ],
-      "Suggestion mode is here": [
-        "제안 모드를 소개합니다"
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "버그 또는 품질 문제"
@@ -3359,6 +3155,9 @@
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "저작권 침해나 데이터 유실에 대한 리포트 제출 시 메시지가 필요합니다."
+      ],
       "A problem occurred, please try again.": [
         "문제가 발생했습니다. 다시 시도해 주세요."
       ],
@@ -3367,6 +3166,9 @@
       ],
       "Address could not be added.": [
         "주소를 추가할 수 없습니다."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "조직 외부의 사용자에 의해 주소가 이미 사용 중입니다. 해당 문제를 해결하기 위해 고객 지원 팀으로 문의 바랍니다."
       ],
       "Address primary private key not found": [
         "기본 주소 키 찾을 수 없음"
@@ -3410,20 +3212,35 @@
       "Authentication error.": [
         "인증 오류"
       ],
+      "Bookmark password is not available": [
+        "북마크 비밀번호를 사용할 수 없습니다"
+      ],
       "Calendar limit reached": [
         "캘린더 개수 제한에 도달했습니다"
       ],
-      "Can't find any secure link": [
-        "보안 링크를 찾을 수 없습니다."
+      "Cannot add photo to album without a valid name": [
+        "유효한 이름 없이는 앨범에 사진을 추가할 수 없습니다"
       ],
-      "Can't retrieve device name": [
-        "기기 이름을 가져올 수 없습니다."
+      "Cannot download a folder": [
+        "폴더를 다운로드할 수 없음"
       ],
       "Cannot export this contact": [
         "이 연락처를 불러올 수 없음"
       ],
       "Cannot find move target": [
         "이동 대상을 찾을 수 없음"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "유효한 이름 없이는 항목을 이동할 수 없습니다. 항목 이동 전 이름을 변경하세요."
+      ],
+      "Cannot share root folder": [
+        "상위 폴더를 공유할 수 없습니다"
+      ],
+      "Cannot verify the author of this file": [
+        "이 파일의 소유자를 확인할 수 없습니다"
+      ],
+      "Cannot verify who uploaded this file": [
+        "이 파일을 업로드한 사용자의 진위를 파악할 수 없음"
       ],
       "Checkout expired, please try again": [
         "체크아웃 만료됨, 다시 시도하십시오"
@@ -3446,8 +3263,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "내용 검색을 활성화 할 수 없습니다. 어플리케이션을 재시작하거나 데이터를 제거하십시오."
       ],
-      "Could not add to favorites": [
-        "즐겨찾기 추가 실패"
+      "Copying item to a non-folder is not allowed": [
+        "폴더가 없는 곳에 항목을 복사하는 것이 허용되지 않습니다"
+      ],
+      "Could not find an available name": [
+        "사용 가능한 이름을 찾을 수 없음"
+      ],
+      "Could not load sharing details": [
+        "공유 상세 정보를 불러올 수 없음"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "이미지 미리보기를 불러올 수 없음: ${ message }"
       ],
       "Could not open created vault": [
         "생성된 금고를 열 수 없습니다."
@@ -3455,8 +3281,23 @@
       "Could not open updated vault": [
         "업데이트된 금고를 열 수 없습니다."
       ],
-      "Could not remove from favorites": [
-        "즐겨찾기에서 제거할 수 없습니다"
+      "Could not read part of this file: ${ message }": [
+        "해당 파일의 일부를 읽을 수 없음: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "상위 폴더를 잠금할 수 없습니다"
+      ],
+      "Could not unlock this item": [
+        "이 항목을 잠금 해제할 수 없음"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "폴더가 없는 곳에 문서를 생성하는 것이 허용되지 않습니다."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "폴더가 없는 곳에 파일을 생성하는 것이 허용되지 않습니다."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "폴더가 없는 곳에 폴더를 생성하는 것이 허용되지 않습니다."
       ],
       "Data integrity check failed": [
         "데이터 무결성 검사 실패"
@@ -3467,17 +3308,11 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "최소 ${ calendarsToFixCount }개의 캘린더를 선택 해제하거나"
       ],
-      "Device name does not match": [
-        "디바이스 이름이 맞지 않습니다"
-      ],
-      "Diagnostics failed": [
-        "진단 실패"
+      "Device not found": [
+        "기기를 찾을 수 없음"
       ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
-      ],
-      "Downloads of desktop apps are currently unavailable": [
-        "현재 데스크톱 앱을 다운로드할 수 없습니다."
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "청구서 주소 수정이 현재 사용할 수 없습니다.\n나중에 다시 시도하시기 바랍니다."
@@ -3499,12 +3334,6 @@
       ],
       "Error decrypting a computer": [
         "컴퓨터 복호화 중 오류"
-      ],
-      "Error reading file": [
-        "파일 읽기 오류"
-      ],
-      "Expected structure attached": [
-        "예상 구조 첨부됨"
       ],
       "External accounts are not supported yet": [
         "외부 계정은 아직 지원하지 않습니다"
@@ -3530,6 +3359,24 @@
       "Failed to create public share node": [
         "공개 공유 노드 생성 실패"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "북마크 키 복호화 불가: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "북마크 이름 복호화 불가: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "북마크 비밀번호 복호화 실패: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "콘텐츠 키를 복호화할 수 없습니다: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "항목 이름을 복호화할 수 없음: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "노드 키 복호화 실패: ${ message }"
+      ],
       "Failed to expand folder": [
         "폴더 확장 실패"
       ],
@@ -3541,6 +3388,9 @@
       ],
       "Failed to get details, please try again later": [
         "세부사항을 가져오지 못했습니다. 나중에 다시 시도하십시오."
+      ],
+      "Failed to get inviter keys": [
+        "초대한 사람의 키를 받을 수 없음"
       ],
       "Failed to load signature details, please try again later": [
         "서명 상세 정보를 불러올 수 없습니다. 나중에 다시 시도해 주세요."
@@ -3566,17 +3416,23 @@
       "Failed to update public share node": [
         "공개 공유 노드 업데이트 실패"
       ],
+      "Failed to verify invitation": [
+        "초대장 확인 실패"
+      ],
+      "File download failed due to empty response": [
+        "응답이 비어있어 파일을 다운로드할 수 없습니다."
+      ],
       "First name is too long": [
         "이름이 너무 깁니다."
       ],
       "Folder name cannot be empty.": [
         "폴더 이름은 비워둘 수 없습니다."
       ],
-      "Folder not found": [
-        "폴더를 찾을 수 없습니다"
-      ],
       "Forward address is required": [
         "전달 주소가 필요합니다."
+      ],
+      "Image preview not found": [
+        "이미지 미리보기를 사용할 수 없음"
       ],
       "Image upload failed": [
         "이미지 업로드 실패"
@@ -3602,9 +3458,6 @@
       "Invalid IBAN": [
         "유효하지 않은 IBAN"
       ],
-      "Invalid JSON file": [
-        "유효하지 않은 JSON 파일"
-      ],
       "Invalid name": [
         "유효하지 않은 이름"
       ],
@@ -3623,8 +3476,14 @@
       "Invalid verification code": [
         "잘못된 검증 코드"
       ],
+      "Invitation not found": [
+        "초대를 찾을 수 없음"
+      ],
       "Item content cannot exceed 40KB": [
         "항목 콘텐츠가 40KB를 초과할 수 없습니다."
+      ],
+      "Item not found": [
+        "항목을 찾을 수 없습니다"
       ],
       "Label name cannot be empty.": [
         "라벨 이름은 비워둘 수 없습니다."
@@ -3632,17 +3491,47 @@
       "Last name is too long": [
         "성(이름)이 너무 깁니다."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "기존 공개 링크는 업데이트되지 않습니다. 새로운 공개 링크로 다시 생성해야 합니다."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "구성원 주소를 찾을 수 없습니다. 해당 문제를 해결하기 위해 고객 지원 팀에 문의해 주시기 바랍니다."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "기존 ${ BRAND_NAME } 캘린더에 최소 ${ calendarsToFixCount }개의 캘린더를 병합하세요."
+      ],
+      "Missing inviter email": [
+        "초대한 사람의 이메일 누락"
       ],
       "Missing key packet": [
         "키 패킷 없음"
       ],
+      "Missing organization private key": [
+        "조직 비공개 키 유실"
+      ],
+      "Missing organization public key": [
+        "조직 공개 키 유실"
+      ],
       "Missing signature": [
         "서명 없음"
       ],
+      "Missing signature for ${ signatureType }": [
+        "${ signatureType }에 대한 서명 유실"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "폴더가 없는 곳에 항목을 이동하는 것이 허용되지 않습니다"
+      ],
+      "Moving root item is not allowed": [
+        "상위 항목에 대한 이동은 허용되지 않습니다."
+      ],
       "Name is required": [
         "이름은 필수입니다"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "이름은 최대 ${ MAX_NODE_NAME_LENGTH }글자까지입니다."
+      ],
+      "Name must not be empty": [
+        "이름은 필수 입력 항목입니다"
       ],
       "Network error": [
         "네트워크 오류"
@@ -3659,6 +3548,9 @@
       "No emails found to import - the account does not have an inbox": [
         "불러올 이메일을 찾을 수 없음 - 계정에 받은 편지가 없습니다"
       ],
+      "No file data was received. Please try again.": [
+        "수신된 데이터가 없습니다. 다시 시도하세요."
+      ],
       "No file to upload": [
         "업로드할 파일 없음"
       ],
@@ -3674,6 +3566,21 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "그룹 중 하나에 연락처가 없어요 : ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "관리자만 외부 초대로 변경할 수 있습니다"
+      ],
+      "Operation aborted": [
+        "작업이 중단됨"
+      ],
+      "Operation failed, try again later": [
+        "작업에 실패했습니다. 나중에 다시 시도하세요."
+      ],
+      "Organization does not have enough seats available": [
+        "조직의 사용 권한이 충분하지 않습니다."
+      ],
+      "Organization does not have enough storage available": [
+        "조직에 충분한 저장공간이 남아있지 않습니다."
+      ],
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
       ],
@@ -3682,6 +3589,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "개인이 아닌 사용자를 생성하려면 조직 키는 활성화 상태여야 합니다."
+      ],
+      "Part of the file appears to be corrupted": [
+        "파일 일부가 손상되었을 가능성이 있습니다"
       ],
       "Password is required": [
         "비밀번호가 필요함"
@@ -3700,6 +3610,12 @@
       ],
       "Payment process not supported": [
         "지원하지 않는 결제수단"
+      ],
+      "Photo is already in the target album": [
+        "해당 앨범에 같은 사진이 이미 존재합니다."
+      ],
+      "Photo not found": [
+        "사진을 찾을 수 없음"
       ],
       "Please activate your search again": [
         "다시 검색을 활성화 해주세요"
@@ -3767,6 +3683,9 @@
       "Removed duplicate invitee: ${ joinedInvitee }": [
         "중복된 수신자 ${ joinedInvitee }명을 삭제했습니다."
       ],
+      "Renaming root item is not allowed": [
+        "상위 항목에 대한 이름 변경은 허용되지 않습니다."
+      ],
       "Report failed to be sent": [
         "보고서 보내기 실패"
       ],
@@ -3776,8 +3695,8 @@
       "Reverse charge scheme is not supported for this plan": [
         "이 플랜에서는 매입자 납부제도(Reverse charge)가 지원되지 않습니다."
       ],
-      "Search failed": [
-        "검색 실패"
+      "Signature is missing": [
+        "서명이 유실되었습니다"
       ],
       "Signature not verified": [
         "인증되지 않은 서명입니다."
@@ -3785,11 +3704,29 @@
       "Signature verification failed": [
         "서명 검증 실패"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "서명 인증 실패: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType }에 대한 서명 인증 실패"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType }에 대한 서명 인증 실패:${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "일부 연락처를 삭제할 수 없습니다"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "일부 파일의 데이터 업로드가 실패했습니다. 다시 시도하세요."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "일부 파일의 부분을 업로드할 수 없습니다. 다시 시도하세요."
+      ],
       "Some groups could not be deleted": [
         "일부 그룹은 삭제할 수 없었습니다."
+      ],
+      "Some items could not be loaded": [
+        "일부 항목을 불러올 수 없습니다."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "가능하지 않은 폴더 이름들이 존재합니다. 해당 폴더의 이름들을 수정하기 위해 불러온 내역을 설정해 주세요."
@@ -3809,17 +3746,8 @@
       "Something went wrong": [
         "문제가 발생했습니다"
       ],
-      "Something went wrong during folder listing": [
-        "폴더 목록을 불러오는 동안 오류가 발생했습니다."
-      ],
       "Something went wrong while fetching available domains": [
         "사용가능한 도메인을 가져오는 동안 문제가 발생했습니다."
-      ],
-      "Something went wrong with search. Please try again later.": [
-        "검색에 문제가 발생했습니다. 나중에 다시 시도하세요."
-      ],
-      "Something went wrong with search: Not enough storage space.": [
-        "검색에 문제가 발생했습니다: 저장공간이 부족합니다."
       ],
       "Something went wrong. Please try again.": [
         "문제가 발생했습니다. 다시 시도해주세요."
@@ -3869,6 +3797,9 @@
       "The minimum donation amount is ${ price }": [
         "최소 기부 금액은 ${ price }입니다."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "업로드된 파일과 원본 파일이 일치하지 않습니다. 다시 시도해 주세요."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "외부 계정에 너무 많은 폴더가 있습니다. 일부 폴더를 삭제하려면 사용자 지정 가져오기를 설정하세요."
       ],
@@ -3887,14 +3818,35 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
       ],
+      "This file has no version available to download": [
+        "이 파일에 다운로드할 수 있는 사용 가능한 버전이 없습니다."
+      ],
+      "This file version could not be uploaded": [
+        "해당 파일 버전은 업로드할 수 없습니다."
+      ],
       "This folder name is not available. Please choose a different name.": [
         "이 폴더 이름을 사용할 수 없어요. 다른 이름을 선택하세요."
+      ],
+      "This item has no image preview": [
+        "해당 항목의 이미지 미리보기가 없습니다."
+      ],
+      "This item is no longer shared": [
+        "더 이상 공유되지 않는 항목입니다."
+      ],
+      "This item is not shared": [
+        "더 이상 공유되지 않는 항목입니다."
       ],
       "This label name is not available. Please choose a different name.": [
         "이 라벨 이름은 사용할 수 없어요. 다른 이름을 선택하세요."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "이 메시지는 현재 브라우저에서 제대로 열 수 없는 URL 링크있을 수 있습니다."
+      ],
+      "Too many server errors, please try again later": [
+        "서버 오류가 너무 많습니다. 나중에 다시 시도하십시오."
+      ],
+      "Too many server requests, please try again later": [
+        "서버 요청이 너무 많습니다. 나중에 다시 시도하십시오."
       ],
       "Try using only letters, numerals, and _.-": [
         "문자, 숫자 및 _.- 만 사용하십시오"
@@ -3938,47 +3890,41 @@
       "VAT number must start with ${ prefixes }": [
         "부가가치세(VAT)번호는 ${ prefixes }(으)로 시작해야 합니다."
       ],
-      "We cannot retrieve this item": [
-        "해당 항목을 가져올 수 없습니다"
+      "Verification keys are not available": [
+        "인증 키를 사용할 수 없습니다"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType }용 인증 키가 사용할 수 없습니다"
       ],
       "We couldn’t send a verification code using this method.": [
         "해당 방법으로 인증 코드를 전송할 수 없습니다."
       ],
-      "We were not able to load some invitations": [
-        "초대 중 일부를 불러올 수 없었습니다"
-      ],
       "We were not able to load some items": [
         "일부 항목을 불러올 수 없습니다"
-      ],
-      "We were not able to load some items shared with you": [
-        "사용자와 공유된 항목 중 일부를 가져올 수 없습니다"
-      ],
-      "We were not able to load some of your invitation to shared items": [
-        "공유된 항목에 대한 초대 일부를 가져올 수 없습니다"
-      ],
-      "We were not able to load some of your saved shared links": [
-        "저장된 링크 일부를 불러올 수 없었습니다"
-      ],
-      "We were not able to load some of your shared items": [
-        "공유된 항목 중 일부를 가져올 수 없습니다"
-      ],
-      "We were not able to load some search results": [
-        "일부 검색 결과를 불러올 수 없습니다."
-      ],
-      "We were not able to load the file history": [
-        "파일 기록을 불러올 수 없습니다."
       ],
       "We were not able to load the folder contents": [
         "폴더의 내용을 불러올 수 없습니다"
       ],
-      "We're sorry, but free upload is not available right now.": [
-        "죄송합니다. 현재 무료 업로드를 사용할 수 없습니다."
-      ],
       "Wrong billing address": [
         "청구 주소가 잘못되었습니다"
       ],
+      "You can create public links for your own files only": [
+        "내가 소유한 파일만 공개 링크를 생성할 수 있습니다."
+      ],
+      "You can only upload a new version to a file": [
+        "새로운 버전의 파일만 업로드할 수 있습니다."
+      ],
+      "You can update a public link for your own files only": [
+        "내가 소유한 파일만 공개 링크를 업데이트할 수 있습니다."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
+      ],
+      "You do not have access to this item": [
+        "이 항목에 접근할 권한이 없습니디"
+      ],
+      "You do not have access to this shared item": [
+        "해당 항목에 대한 접근 권한이 없습니다."
       ],
       "You have reached the maximum number of calendars.": [
         "캘린더 갯수의 한도에 도달했습니다."
@@ -4139,23 +4085,11 @@
       ]
     },
     "Error message": {
-      "Access denied": [
-        "액세스 거부됨"
-      ],
       "App currently unavailable": [
         "앱에서는 현재 사용 불가합니다."
       ],
-      "Brace yourself till we get the error fixed.": [
-        "오류가 해결될때 까지 조심해 주세요."
-      ],
       "Error: ${ errorMessage }": [
         "오류: ${ errorMessage }"
-      ],
-      "Internal server error": [
-        "내부 서버 오류"
-      ],
-      "Not found": [
-        "발견되지 않음"
       ],
       "Oops, something went wrong": [
         "이런, 문제가 발생했습니다"
@@ -4177,9 +4111,6 @@
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "추가 비밀번호 설정 시, 별칭 관리는 ${ PASS_APP_NAME } 에서만 가능합니다."
-      ],
-      "You may also refresh the page or try again later.": [
-        "페이지를 새로 고치거나 나중에 다시 시도할 수도 있습니다."
       ]
     },
     "Error notification": {
@@ -4243,11 +4174,6 @@
         "(제목 없음)"
       ]
     },
-    "Failed": {
-      "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks }개 실패"
-      ]
-    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "총 3TB 저장공간"
@@ -4263,7 +4189,7 @@
         "초대 거절"
       ],
       "Got it": [
-        "확인했습니다"
+        "확인"
       ],
       "Switch plans": [
         "플랜 변경"
@@ -4468,6 +4394,29 @@
         "테라바이트"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "활성화됨"
+      ],
+      "All": [
+        "전체"
+      ],
+      "Errors": [
+        "오류"
+      ],
+      "In progress": [
+        "진행 중"
+      ],
+      "Migrated": [
+        "이전됨"
+      ],
+      "Not activated": [
+        "비활성화됨"
+      ],
+      "Pending": [
+        "대기 중"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 업데이트됨"
@@ -4519,12 +4468,6 @@
       "Contacts": [
         "연락처"
       ],
-      "Create new album": [
-        "새로운 앨범 생성"
-      ],
-      "Create new shared album": [
-        "새 공유 앨범 만들기"
-      ],
       "Domain": [
         "도메인"
       ],
@@ -4534,31 +4477,11 @@
       "Password ends with": [
         "비밀번호 마지막 글자"
       ],
-      "Rename album": [
-        "앨범 이름 변경"
-      ],
       "Security Center": [
         "보안 센터"
       ],
       "Username": [
         "사용자 이름"
-      ]
-    },
-    "Heading": {
-      "Add ${ photoCount } photo to": [
-        "다음 앨범으로 ${ photoCount }개 사진 추가:"
-      ],
-      "Add to shared album": [
-        "공유된 앨범으로 추가"
-      ],
-      "All albums": [
-        "전체 앨범"
-      ],
-      "Recent": [
-        "최근"
-      ],
-      "Share ${ photoCount } photo via": [
-        "다음을 통해 ${ photoCount }개 사진 공유:"
       ]
     },
     "Hint": {
@@ -4867,11 +4790,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "오류 있음"
+      ],
       "In progress": [
         "진행 중"
       ],
       "Migrated": [
         "이전됨"
+      ],
+      "Pending": [
+        "대기 중"
       ]
     },
     "Import warning": {
@@ -4895,20 +4824,11 @@
       "${ addressCount } email address": [
         "이메일 주소 ${ addressCount }개"
       ],
-      "${ albumName } has been successfully deleted": [
-        "${ albumName }이(가) 성공적으로 삭제되었습니다"
-      ],
-      "${ albums } album": [
-        "${ albums }개 앨범"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
-      ],
-      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
-        "${ BRAND_NAME } Workspace가 데이터 누출 위험 없아 효율적으로 팀 간에 협업할 수 있도록 도와드립니다."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 당사를 포함한 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다."
@@ -4946,35 +4866,14 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } 및 ${ SHEETS_APP_NAME } 파일은 직접 다운로드할 수 없으며 해당 다운로드에 포함되어 있지 않습니다. '계속 다운로드'를 클릭하여 다른 파일들을 계속 다운로드할 수 있습니다."
       ],
-      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME }에서 로컬 검색 인덱스가 손상되어 더 이상 사용할 수 없음을 감지했습니다. 검색을 복원하려면 인덱스를 재구축하십시오."
-      ],
-      "${ DRIVE_APP_NAME } on App Store": [
-        "App Store에서 ${ DRIVE_APP_NAME } 받기"
-      ],
-      "${ DRIVE_APP_NAME } on Play Store": [
-        "Play Store에서 ${ DRIVE_APP_NAME } 받기"
-      ],
-      "${ email } invited you to join ${ albumName }": [
-        "${ email }님이 ${ albumName }에 참가하도록 초대했습니다."
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: 최대 크기 이미지"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 저화질 미리보기"
       ],
-      "${ files } file": [
-        "${ files }개 파일"
-      ],
-      "${ folders } folder": [
-        "${ folders }개 폴더"
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } 그룹 찾음"
-      ],
-      "${ invitationsCount } pending invitation": [
-        "${ invitationsCount }개 대기 중인 초대"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME }에는 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다."
@@ -4999,12 +4898,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
-      ],
-      "${ photoCount } item": [
-        "${ photoCount }개 항목"
-      ],
-      "${ photos } photo": [
-        "${ photos }개 사진"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }은 최소 1개 이상 전용 서버가 필요합니다 ${ serverPricePerMonth }"
@@ -5038,9 +4931,6 @@
       ],
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized }개 라벨 선택함"
-      ],
-      "${ state.result.entries.length } entries": [
-        "${ state.result.entries.length }개 항목"
       ],
       "${ storage } storage": [
         "저장공간 ${ storage }"
@@ -5089,9 +4979,6 @@
       ],
       "30-day money-back guarantee.": [
         "30일 환불 보장"
-      ],
-      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
-        "${ DRIVE_APP_NAME }의 새로운 버전을 사용할 수 있습니다. 계속 검색하려면 새로고침하세요."
       ],
       "A number will be added to the filename": [
         "숫자가 파일 이름에 추가됩니다"
@@ -5165,9 +5052,6 @@
       "Already in your library": [
         "라이브러리에 이미 존재함"
       ],
-      "Also try looking in Trash.": [
-        "또한 휴지통을 확인해 보세요."
-      ],
       "American Express SafeKey logo": [
         "American Express SafeKey 로고"
       ],
@@ -5177,23 +5061,11 @@
       "Amount below minimum (${ amount }).": [
         "최소 금액 (${ amount })보다 적습니다."
       ],
-      "An active recovery file": [
-        "활성 복구 파일"
-      ],
-      "An issue occurred during the restore process.": [
-        "복구 과정에서 문제가 발생했습니다."
-      ],
       "and": [
         "그리고"
       ],
-      "And access it from anywhere": [
-        "그리고 어디에서나 접근할 수 있습니다"
-      ],
       "Anonymous": [
         "익명"
-      ],
-      "Apr": [
-        "4월"
       ],
       "Are you sure you want to discard your changes?": [
         "사용자의 변경사항을 취소하시겠습니까?"
@@ -5204,17 +5076,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "정말 휴지통을 비워 모든 항목을 삭제하시겠습니까?"
       ],
-      "Are you sure you want to permanently delete": [
-        "이"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "정말 \"${ itemName }\"을(를) 휴지통에서 영구적으로 삭제하시겠습니까?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "정말 선택한 항목을 휴지통에서 영구적으로 삭제하시겠습니까?"
-      ],
-      "Are you sure you want to proceed?": [
-        "계속 진행하겠습니까?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "최소 ${ BETTER_PASSWORD_LENGTH }글자"
@@ -5225,23 +5091,14 @@
       "Attention required": [
         "주의 필요"
       ],
-      "Aug": [
-        "8월"
-      ],
       "Awaiting transaction": [
         "거래 대기 중"
       ],
       "Balance from your previous subscription": [
         "이전 구독에서의 잔고"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "${ DRIVE_APP_NAME }가 종단간 암호화되어, 파일에 접근하거나 복호화할 수 없습니다. 비밀번호 재설정 후 드라이브 잠금을 해제하기 위해서, 다음 중 하나가 필요합니다:"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "새 인증 코드를 요청하기 전에 스팸 폴더를 확인하고 ${ strong } 이(가) 올바른 주소인지 확인하세요."
-      ],
-      "Better in the app": [
-        "앱에서 더 나은 경험"
       ],
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
@@ -5270,17 +5127,11 @@
       "Can't move a folder into itself": [
         "폴더를 자기자신 안으로 옮길 수 없습니다."
       ],
-      "Can't rename to same name": [
-        "동일한 이름으로 변경할 수 없습니다."
-      ],
       "Can't write into folder": [
         "폴더에 쓸 수 없습니다."
       ],
       "Canceled": [
         "취소됨"
-      ],
-      "Cannot load links": [
-        "링크를 불러오는 중 문제 발생"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "비밀번호를 잊어버리셨나요? 이 키로 암호화된 모든 연락처의 암호화된 데이터를 지우고 그 과정에서 경고를 해제하는 데 도움을 줄 수 있습니다."
@@ -5294,23 +5145,14 @@
       "Choose a plan that works best for you.": [
         "당신에게 가장 적합한 플랜을 선택하세요."
       ],
-      "Clear all search data": [
-        "모든 검색 데이터 지우기"
-      ],
       "Clear data": [
         "데이터 지우기"
       ],
       "Clear encrypted search data": [
         "암호화된 검색 데이터 지우기"
       ],
-      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "브라우저 데이터를 지우면 이 기기의 검색 색인이 삭제됩니다. 검색 기능을 사용하는 동안 모든 파일을 다시 인덱싱해야 합니다."
-      ],
       "Clears browser data related to the encrypted search.": [
         "암호화된 검색과 관련한 브라우저 데이터를 삭제합니다."
-      ],
-      "Clears browser data related to the search.": [
-        "검색과 관련된 브라우저 데이터를 삭제합니다."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
@@ -5329,9 +5171,6 @@
       ],
       "Continue": [
         "계속"
-      ],
-      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "${ DRIVE_APP_NAME }를 계속 사용하고 다음에 드라이브 잠금을 해제하세요"
       ],
       "Copy the link to clipboard": [
         "복사한 링크 붙이기"
@@ -5363,9 +5202,6 @@
       "Create in": [
         "만들기"
       ],
-      "Create links and share your files with others.": [
-        "링크를 생성하여 내 파일을 다른 사람에게 공유해보세요."
-      ],
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
       ],
@@ -5381,9 +5217,6 @@
       "Data integrity check failed": [
         "데이터 무결성 검사 실패"
       ],
-      "Dec": [
-        "12월"
-      ],
       "Decrypting files": [
         "파일 복호화 중"
       ],
@@ -5395,9 +5228,6 @@
       ],
       "default email address": [
         "기본 이메일 주소"
-      ],
-      "Delete locked drive": [
-        "잠긴 드라이브 삭제"
       ],
       "Details": [
         "세부 사항"
@@ -5429,9 +5259,6 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "다운그레이드하면 유료 ${ VPN_APP_NAME } 서버에 대한 모든 연결이 종료됩니다."
       ],
-      "Download ${ name } app": [
-        "${ name }앱 설치"
-      ],
       "Download current logs": [
         "현재 로그 다운로드"
       ],
@@ -5452,9 +5279,6 @@
       ],
       "Drop file here to upload": [
         "업로드할 파일을 여기에 놓습니다"
-      ],
-      "Drop files here": [
-        "파일을 드래그하여 업로드"
       ],
       "Drop files here to upload or click on the upload button": [
         "파일을 끌어 업로드하거나 업로드 버튼을 클릭하세요"
@@ -5483,17 +5307,8 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "휴지통 및 스팸함으로 이동된지 30일이 경과한 이메일이 자동으로 삭제됩니다."
       ],
-      "Empty folder": [
-        "비어 있는 폴더"
-      ],
       "Enabling auto-deletion…": [
         "자동 삭제 활성화 중…"
-      ],
-      "Enabling drive search": [
-        "드라이브 검색을 활성화하는 중"
-      ],
-      "Encrypted search is here": [
-        "암호화된 검색이 여기 있습니다"
       ],
       "End-to-end encrypted": [
         "종단간 암호화됨"
@@ -5543,14 +5358,8 @@
       "Expired": [
         "만료됨"
       ],
-      "Export diagnostic logs for technical support and troubleshooting": [
-        "기술 지원 문제 로그를 내보내기"
-      ],
       "Fastest VPN speeds of up to 10Gbps": [
         "최대 10 Gbps의 빠른 VPN 속도"
-      ],
-      "Feb": [
-        "2월"
       ],
       "File could not be scanned": [
         "파일을 스캔할 수 없음."
@@ -5561,20 +5370,17 @@
       "File will not be updated": [
         "파일이 업로드되지 않습니다"
       ],
-      "Files and folders that others shared with you will appear here": [
-        "타인이 나와 공유한 폴더 및 파일이 여기에 나타납니다."
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "파일 전용 (사진 불가, ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME }) - 최대 총 100 GB, 100,000개 파일 및 파일 당 50 GB)"
       ],
       "finance": [
         "금융정보"
       ],
+      "Find out what can be migrated.": [
+        "이전되는 항목을 살펴보세요."
+      ],
       "Folder will not be uploaded": [
         "폴더가 업로드되지 않습니다"
-      ],
-      "Folders you sync from your computer will appear here.": [
-        "컴퓨터와 동기화한 폴더가 여기에 표시됩니다."
       ],
       "for ${ price }": [
         "${ price }으로"
@@ -5588,23 +5394,8 @@
       "Free 5GB encrypted storage to get started": [
         "시작하기 위한 5GB 무료 암호화 스토리지"
       ],
-      "from the version history?": [
-        "을(를) 버전 기록에서 영구적으로 삭제하시겠습니까?"
-      ],
       "Geoblocking": [
         "차단된 콘텐츠"
-      ],
-      "Get logs and other information for technical support and troubleshooting": [
-        "기술 지원 및 문제 해결을 위한 로그 및 기타 정보 가져오기"
-      ],
-      "Get the app to backup photos from your phone or upload them here.": [
-        "사진 백업을 위해 회원님의 휴대폰에서 앱을 다운로드하거나 여기서 직접 업로드하세요."
-      ],
-      "Get the desktop app to sync files from your computer.": [
-        "회원님의 컴퓨터에 있는 파일을 동기화 하려면 데스크탑 앱을 설치하세요."
-      ],
-      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
-        "${ DRIVE_APP_NAME }에 대하여 알아보면 저장공간 3GB를 드립니다! 오늘 해봅시다."
       ],
       "Google Pay mark": [
         "Google Pay 표시"
@@ -5621,14 +5412,8 @@
       "High Priority": [
         "중요도 높음"
       ],
-      "How does encrypted search work?": [
-        "암호화된 검색은 어떻게 작동하나요?"
-      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "본인은 본 리포트에 기재된 정보 및 내용이 정확하고 완전함을 성실하게 확인합니다."
-      ],
-      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
-        "만약 해당 파일들이 ${ deviceName }(에)서 로컬 드라이브로 완전히 다운로드되지 않았다면, 해당 파일에 대한 접근 권한을 잃게 됩니다."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
@@ -5644,9 +5429,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에서 이메일을 찾지 못하셨다면 스팸 폴더를 확인하세요."
-      ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "만약 이들 중 하나를 가지고 있다면, ${ BRAND_NAME } 계정 설정에서 차단 해제 절차를 계속하세요."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
@@ -5693,38 +5475,8 @@
       "Included": [
         "포함됨"
       ],
-      "Index is empty.": [
-        "색인이 비어있습니다."
-      ],
-      "Indexed ${ first }": [
-        "${ first } 색인됨"
-      ],
-      "Indexed ${ first } and ${ second }": [
-        "${ first } 및 ${ second } 색인됨"
-      ],
-      "Indexed ${ first }, ${ second } and ${ third }": [
-        "${ first }, ${ second }, ${ third }이(가) 색인됨"
-      ],
-      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
-        "${ first }, ${ second }, ${ third } 및 ${ fourth }이(가) 색인됨"
-      ],
-      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "색인 중 오류가 발생했으며 계속 진행할 수 없습니다. 복원하려면 재색인을 진행하십시오."
-      ],
-      "Indexing in progress": [
-        "색인 진행 중"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "항목 인덱싱 ${ totalProgressToShow }개 중 ${ esProgress }개"
-      ],
-      "Indexing search results…": [
-        "검색 결과를 인덱싱하는 중..."
-      ],
       "Inherited from parent folder": [
         "상위폴더에 상속되어 있습니다"
-      ],
-      "Integrity issues found": [
-        "무결성 문제 발견"
       ],
       "Internet connection lost": [
         "인터넷 연결 없음"
@@ -5735,17 +5487,8 @@
       "Internet connection restored.": [
         "인터넷 연결이 복원되었습니다."
       ],
-      "Invitation confirmed": [
-        "초대 확인됨"
-      ],
       "Invite link copied": [
         "초대 링크를 복사했습니다"
-      ],
-      "iOS and Android Apps": [
-        "iOS 및 Android 앱"
-      ],
-      "Issues found": [
-        "문제점 발견"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "최근에 ${ uploadName } 을(를) 업로드하려고 시도한 것 같습니다. 업로드가 실패하면, ${ replaceFile } 주세요. 업로드가 아직 진행 중이라면, 교체하면 진행 중인 업로드가 취소됩니다."
@@ -5753,29 +5496,11 @@
       "It's better to have:": [
         "포함되면 더 좋습니다:"
       ],
-      "Items in the trash will stay here until you delete them permanently": [
-        "휴지통의 항목은 영구적으로 삭제하기 전까지 여기에 보관됩니다."
-      ],
-      "Items moved to the trash will stay here until deleted": [
-        "휴지통으로 이동된 항목들이 삭제될 때 까지 계속 여기에 유지됩니다."
-      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "대부분의 상황에서 VPN을 사용하는 것이 권장됩니다. 그러나 사이버 보안 위협이 가장 높을 수 있는 경우는 다음과 같습니다:"
       ],
-      "It’s easy and secure": [
-        "쉽고 안전합니다"
-      ],
-      "Jan": [
-        "1월"
-      ],
       "JCB logo": [
         "JCB 로고"
-      ],
-      "Jul": [
-        "7월"
-      ],
-      "Jun": [
-        "6월"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "선택만 확인하시면 나머지는 저희가 하겠습니다."
@@ -5794,9 +5519,6 @@
       ],
       "Large imports can take several days.": [
         "가져올 내용이 많은 경우 며칠 정도 걸릴 수 있습니다."
-      ],
-      "Last week": [
-        "지난 주"
       ],
       "Learn more": [
         "더 알아보기"
@@ -5822,9 +5544,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "캘린더를 불러오는 중, 새로운 탭에서 일정 플랫폼 Calendly로 리디렉션됩니다."
       ],
-      "Loading links": [
-        "링크를 불러오는 중"
-      ],
       "Loading preview": [
         "미리보기 불러오는 중"
       ],
@@ -5834,23 +5553,14 @@
       "Low Priority": [
         "중요도 낮음"
       ],
-      "Makes your account safer": [
-        "내 계정을 더 안전하게 만드세요"
-      ],
       "Malware detected": [
         "멀웨어 감지됨"
-      ],
-      "Mar": [
-        "3월"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "최대 ${ MAX_SHARED_URL_PASSWORD_LENGTH }자"
-      ],
-      "May": [
-        "5월"
       ],
       "Medium Priority": [
         "중요도 보통"
@@ -5867,26 +5577,8 @@
       "Monitor accounts": [
         "계정 모니터링"
       ],
-      "More": [
-        "더보기"
-      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "대다수의 공용 WiFi 네트워크는 안전하지만 일부 네트워크는 보안이 취약하여 사이버 위협에 노출됩니다. VPN이 트래픽을 암호화하여 사용자를 보호합니다."
-      ],
-      "Move ${ dragCount } item": [
-        "항목 ${ dragCount }개 이동"
-      ],
-      "Move ${ fileCount } file": [
-        "파일 ${ fileCount }개 이동"
-      ],
-      "Move ${ folderCount } folder": [
-        "폴더 ${ folderCount }개 이동"
-      ],
-      "Moving files": [
-        "파일 이동"
-      ],
-      "My Links": [
-        "내 링크"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "새 폴더의 이름을 지정하고 넣고 싶은 상위 폴더를 선택하세요. 상위 폴더를 선택하지 않으면, 이 새 폴더는 최상위 폴더로 생성됩니다."
@@ -5897,9 +5589,6 @@
       "No": [
         "아니오"
       ],
-      "No Albums": [
-        "앨범 없음"
-      ],
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
       ],
@@ -5909,20 +5598,14 @@
       "No group found": [
         "찾은 그룹 없음"
       ],
-      "No issue found": [
-        "발견된 문제 없음"
-      ],
       "No payment is required at this time.": [
         "현재는 결제가 필요없습니다."
-      ],
-      "No populator states found.": [
-        "인구 통계 상태를 찾을 수 없습니다."
       ],
       "No results found": [
         "결과를 찾을 수 없음"
       ],
-      "No synced folders": [
-        "연동된 폴더 없음"
+      "No users to display": [
+        "표시할 사용자 없음"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "암호화를 위한 유효한 업로드된 키가 존재하지 않습니다. 이 주소로 메시지를 전송하려면, 유호한 키를 업로드 하거나 \"이메일 암호화\"를 비활성화 하세요."
@@ -5933,15 +5616,6 @@
       "Not connected": [
         "연결되지 않음"
       ],
-      "Not enough storage space": [
-        "저장공간이 충분하지 않습니다"
-      ],
-      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "참고: ${ DRIVE_APP_NAME }를 설치한 기기에서는 데이터가 로컬에 저장됩니다."
-      ],
-      "Nov": [
-        "11월"
-      ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
       ],
@@ -5951,20 +5625,11 @@
       "Numbers": [
         "숫자"
       ],
-      "Oct": [
-        "10월"
-      ],
       "of": [
         "/"
       ],
       "On public WiFi networks": [
         "공공 WiFi 네트워크에서 사용시"
-      ],
-      "One encrypted suite. Full business protection.": [
-        "하나의 암호화된 스위트. 완벽한 비즈니스 보안."
-      ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "암호화된 드라이브 중 하나가 잠겼습니다. 이는 최근의 비밀번호 재설정 때문일 가능성이 높습니다."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
@@ -5974,9 +5639,6 @@
       ],
       "or discover other features:": [
         "혹은 다른 기능 살펴보기:"
-      ],
-      "Or use the \"+ New\" button": [
-        "또는 \"+ 신규\" 버튼을 사용하세요."
       ],
       "Organization size": [
         "조직 크기"
@@ -6008,29 +5670,11 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
       ],
-      "Permanently delete all files in your locked drive": [
-        "잠긴 드라이브의 모든 파일을 영구적으로 삭제합니다"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGM/Inline은 오직 일반 텍스트 포맷에만 호환됩니다."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME이 현재 작성 모드를 사용하여 자동으로 메시지를 보냅니다."
-      ],
-      "Photo is not saved to your library": [
-        "사진이 라이브러리에 저장되지 않았습니다"
-      ],
-      "Photo is set as album cover": [
-        "해당 사진이 앨범 커버로서 설정되었습니다."
-      ],
-      "Photo saved to your Drive": [
-        "Drive에 사진이 저장되었습니다"
-      ],
-      "Photo was copied to stream and marked favorite there.": [
-        "사진은 스트림에 복사 및 즐겨찾기로 표시되었습니다."
-      ],
-      "Photos have been successfully recovered.": [
-        "사진이 성공적으로 복구되었습니다."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "해당 문서에 초대하려면 소유자에게 연락하세요."
@@ -6113,12 +5757,6 @@
       "Preview of documents is not yet supported.": [
         "문서의 미리 보기가 지원되지 않습니다."
       ],
-      "Previous versions are kept for ${ retentionLabel }": [
-        "이전 버전이 ${ retentionLabel } 으로 유지됩니다"
-      ],
-      "Previous versions are not saved": [
-        "이전 버전이 저장되지 않았습니다"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "가격에는 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
       ],
@@ -6128,29 +5766,14 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "비공개 브라우징 모드(일명 \"시크릿\" 모드)는 기기에서의 온라인 활동을 숨기는 것에 한해 유용합니다. 이 모드로 브라우저가 기록과 쿠키를 저장하는 것을 방지할 수 있지만, 사용자의 온라인 상 노출을 방지할 수는 없습니다. ISP, 네트워크 관리자 및 방문하는 웹 사이트는 여전히 사용자가 온라인에서 수행하는 작업을 확인할 수 있습니다."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "비공개 검색이 활성화되었습니다. 이제 이 대화 상자를 닫고 파일과 폴더를 검색할 수 있습니다."
-      ],
-      "Public link": [
-        "공개 링크"
-      ],
       "Public sharing of documents is not yet supported.": [
         "문서의 공개 공유가 아직 지원되지 않습니다."
-      ],
-      "Re-indexing in progress": [
-        "재색인 진행 중"
-      ],
-      "Ready to add some photos?": [
-        "사진 좀 올려 볼까요?"
       ],
       "RECOMMENDED": [
         "권장됨"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "복구 정보는 삭제하도록 설정하지 않는 한 이 기기에 유지됩니다."
-      ],
-      "Recovery process might take some time.": [
-        "복구 절차에는 약간의 시간이 소요될 수 있습니다."
       ],
       "Referral link copied to your clipboard": [
         "클립보드에 추천인 코드가 복사되었습니다"
@@ -6164,26 +5787,14 @@
       "Report has been sent": [
         "신고를 제출했습니다"
       ],
-      "Request access, or switch to an account with access.": [
-        "접근 권한을 요청하거나, 권한이 있는 다른 계정으로 전환하세요."
-      ],
       "Requested item doesn't exist anymore": [
         "요청한 항목이 더 이상 존재하지 않습니다."
       ],
       "Restore": [
         "복원"
       ],
-      "Restore Photos": [
-        "사진 복구"
-      ],
       "Restored files ${ formattedDate }": [
         "복구된 파일 ${ formattedDate }"
-      ],
-      "Restoring Photos... Please keep the tab open": [
-        "사진 복구 중... 탭을 닫지 마십시오"
-      ],
-      "Running diagnostics...": [
-        "진단 중..."
       ],
       "Saving...": [
         "저장 중..."
@@ -6191,65 +5802,20 @@
       "Scan the QR code with your mobile device": [
         "모바일 기기로 QR 코드를 스캔해보세요"
       ],
-      "Scan to download": [
-        "다운로드하려면 스캔"
-      ],
-      "Search cannot be enabled in this browser": [
-        "이 브라우저에서 검색을 활성화할 수 없습니다"
-      ],
-      "Search data is corrupted": [
-        "검색 데이터가 손상됨"
-      ],
-      "Search Enabled": [
-        "검색 활성화됨"
-      ],
-      "Search enabled. You may now close this dialogue and search for files and folders.": [
-        "검색이 활성화되었습니다. 이제 이 대화 상자를 닫고 파일과 폴더를 검색할 수 있습니다."
-      ],
-      "Search encountered an internal error. Rebuild the index to recover.": [
-        "검색에 내부 오류가 발생했습니다. 복구하려면 다시 색인을 진행하십시오."
-      ],
-      "Search engine error": [
-        "검색 앤진 오류"
-      ],
-      "Search error": [
-        "검색 오류"
-      ],
-      "Search is in an invalid state": [
-        "검색이 잘못된 상태입니다"
-      ],
-      "Search is ready. Your files have been indexed.": [
-        "검색이 준비되었습니다. 사용자의 파일이 색인 완료되었습니다."
-      ],
-      "Search module is not available.": [
-        "검색 모듈 사용 불가합니다."
-      ],
       "Select a destination folder": [
         "대상 폴더 선택"
-      ],
-      "Select a folder to make the copy in": [
-        "복사할 폴더를 선택하세요."
       ],
       "Select a folder to move to.": [
         "이동할 폴더 선택"
       ],
-      "Select all items for": [
-        "해당 달에 찍은 항목 선택:"
-      ],
-      "Select an uploaded file or folder and create a link to it.": [
-        "업로드된 파일이나 폴더를 선택하고 링크를 생성하세요."
-      ],
-      "Select item": [
-        "항목 선택"
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "이전하고자 하는 항목을 선택하세요. 모든 조직 구성원들에게 적용됩니다."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "이 이메일 주소로 이메일을 보낼 때 기본적으로 사용할 이메일 형식을 선택하세요."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "불러올 캘린더를 선택하세요. 새 캘린더가 사용자 플랜의 가능한 한도 내에서 각각 생성됩니다."
-      ],
-      "Sep": [
-        "9월"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA 결제 수단이 현재 지원되지 않습니다. 나중에 다시 시도해 주세요."
@@ -6272,23 +5838,8 @@
       "Setting up your new address…": [
         "새 주소를 설정하는 중…"
       ],
-      "Share files with links": [
-        "링크로 파일 공유"
-      ],
-      "Shared": [
-        "공유됨"
-      ],
-      "Shared by ": [
-        "다음에 의해 공유됨: "
-      ],
       "Shared link not found": [
         "공유 링크 찾을 수 없음"
-      ],
-      "Shared with me": [
-        "나와 공유됨"
-      ],
-      "Shared with you": [
-        "나와 공유됨"
       ],
       "Signature check will be ignored": [
         "서명 확인이 무시됩니다"
@@ -6301,12 +5852,6 @@
       ],
       "Some items failed": [
         "일부 항목의 작업에 실패했습니다"
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "일부 파일들에 더 이상 접근할 수 없습니다. 파일 액세스를 복구하세요. ${ StartRecoveryButton }"
-      ],
-      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "이 앨범 내의 일부 사진이 타임라인에 저장되지 않았습니다. 앨범에서 사진을 삭제하면 해당 사진 또한 영구적으로 삭제됩니다."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "일부 웹사이트와 스트리밍 서비스는 지역별로 콘텐츠를 차단합니다. VPN을 사용하면 이러한 제한을 우회하고 인터넷에 자유롭게 접속할 수 있습니다."
@@ -6356,9 +5901,6 @@
       "that": [
         "그"
       ],
-      "The albums you create are shown here.": [
-        "생성한 앨범이 여기에 나타납니다."
-      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "다운로드 횟수에는 실제 다운로드와 파일을 미리보는 경우도 포함됩니다."
       ],
@@ -6371,17 +5913,11 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
       ],
-      "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "검색 엔진 내부 오류가 발생했습니다. 복구하려면 다시 색인을 진행하십시오."
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "아직 이동이 필요한 파일이 있습니다. 이동 관리자를 닫으면 모든 작업이 종료됩니다."
-      ],
-      "There is nothing to see here": [
-        "이곳엔 아무것도 없습니다."
       ],
       "This action will delete the link and revoke access for all users.": [
         "이 작업은 링크를 삭제하고 모든 사용자의 접근을 취소합니다."
@@ -6391,9 +5927,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "이 브라우저는 PDF 미리보기를 지원하지 않습니다. 파일을 다운로드하세요."
-      ],
-      "This can NOT be undone. Please enter the device name to confirm removal.": [
-        "이 작업은 되돌릴 수 없습니다. 그래도 삭제하시려면 기기 이름을 입력하여 확인해주세요."
       ],
       "This file appears to be empty:": [
         "해당 파일은 비어있는 것으로 보입니다:"
@@ -6413,9 +5946,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "이제 ${ defaultEmailAddress }가 메시지를 보내는 주소입니다."
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "일부 항목이 사진 라이브러리에 저장되지 않았습니다. 앨범에서 삭제하면 해당 항목에 영구적으로 접근할 수 없게 됩니다."
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "이 링크는 암호 및 신용 카드 등 세부 정보와 같은 정보를 도용하려는 웹사이트로 연결되요."
       ],
@@ -6425,11 +5955,14 @@
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "즉 ISP와 방문한 웹사이트가 사용자의 개인 정보를 온라인 활동과 연관지을 수 없다는 것이죠."
       ],
-      "This month": [
-        "이번 달"
-      ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "이 고유 코드는 웹사이트와 ISP(인터넷 서비스 제공업체)에서 위치와 검색 기록을 기기에 연결하는 데 사용할 수 있습니다."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "해당 이메일 주소는 ${ BRAND_NAME }에서 지원되지 않음으로 사용자를 이전할 수 없습니다."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "플랫폼이 호환되지 않으므로 해당 사용자를 이전할 수 없습니다."
       ],
       "This will cancel any remaining downloads.": [
         "이 작업은 남은 모든 다운로드를 취소합니다."
@@ -6439,9 +5972,6 @@
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "남은 업로드가 취소됩니다. 취소된 파일은 ${ DRIVE_APP_NAME }에 저장되지 않습니다."
-      ],
-      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "사진이 앨범에 한하여 삭제됩니다. 사진이 여전히 타임라인에 유지됩니다. 이 작업을 실행 취소할 수 없습니다."
       ],
       "This will permanently delete the file you uploaded.": [
         "이 작업은 업로드한 파일을 영구적으로 삭제합니다."
@@ -6461,23 +5991,11 @@
       "This will sign you out of all accounts currently logged in.": [
         "현재 로그인된 모든 계정에서 로그아웃하게 됩니다."
       ],
-      "Time": [
-        "시간"
-      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "결제를 완료하기 위해서, 아래 주소로 ${ btcAmountBold } 를 송금해 주시기 바랍니다."
       ],
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "이 파일을 다운로드하려면, ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME }에서 열고 내보내세요."
-      ],
-      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
-        "정확한 검색 활성화를 위해 로컬 기기에 파일을 색인해야 합니다. 색인 중에도 계속 ${ DRIVE_APP_NAME }를 사용할 수 있습니다. 색인이 완료되면 알려드립니다. 페이지를 닫으면 색인은 중단되며, 다시 페이지를 열었을 때 다시 재개됩니다."
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "비공개 검색을 활성화하려면, ${ DRIVE_APP_NAME }가 로컬에서 파일 인덱싱을 해야합니다."
-      ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "비공개 검색을 진정으로 활성화하려면, 로컬에서 사용자의 파일을 인덱싱해야 합니다. 계속 ${ DRIVE_APP_NAME }를 사용할 수 있습니다 - 인덱싱이 완료되면 알려 드리겠습니다."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
@@ -6491,6 +6009,27 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
       ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "해당 사용자를 이전하려면 ${ domainNamesLink } 아래로 이메일 도메인을 추가 및 인증해야 합니다."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "해당 사용자를 이전하려면 ${ provider.adminConsoleName } 아래로 계정을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 계정을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 주소를 활성화해야 합니다."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "해당 사용자를 이전하려면 ${ BRAND_NAME }으로의 초대장 수락을 해야합니다."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "이 사용자를 이전하려면 ${ provider.adminConsoleName }(에)서 해당 사용자를 보관 해제헤야 합니다."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "이 사용자를 이전하려면 ${ provider.adminConsoleName }(에)서 해당 사용자를 정지 취소해야 합니다."
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "연락처를 재서명하려면, 계정에서 사용할 수 있는 암호화 키 목록에 대한 모든 연락처를 확인해야 합니다. 일치하는 것을 찾을 수 없다면, 연락처는 기본 암호화 키로 다시 서명될 것입니다."
       ],
@@ -6499,9 +6038,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "주소 검증을 사용하려면 신뢰할 수 있는 키를 활성화하고 이 주소의 기본 키를 포함하여 사용 가능한 하나 이상의 공개 키를 신뢰해야 합니다. 이 작업을 통해 암호화 키가 위조되지 않습니다."
-      ],
-      "Today": [
-        "오늘"
       ],
       "Total email addresses": [
         "총 이메일 주소"
@@ -6521,29 +6057,17 @@
       "Trash": [
         "휴지통"
       ],
-      "Trash is empty": [
-        "휴지통이 비어있음"
-      ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "이 연락처로부터 오는 새 메시지를 인증하려면 \"${ activeSignerText }\" 키를 신뢰하세요."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 설정시 애플리케이션이 새로고침됩니다"
       ],
-      "Try searching by file name, date, or type.": [
-        "파일 이름, 날짜, 유형으로 검색을 시도하세요."
-      ],
       "Unexpected download error": [
         "예기치 않은 다운로드 오류"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "안타깝지만 파일이나 일부 데이터를 복호화할 수 없는 것으로 보입니다."
-      ],
-      "Unknown date": [
-        "알 수 없는 날짜"
-      ],
-      "Unlock drive to recover files": [
-        "복구 파일로 드라이브 잠금 해제"
       ],
       "Unsaved changes": [
         "저장되지 않은 변경 사항"
@@ -6553,12 +6077,6 @@
       ],
       "Unsupported file type for Photos": [
         "사진에서 사용할 수 없는 지원되지 않는 파일 형식"
-      ],
-      "Update required": [
-        "업데이트 필요"
-      ],
-      "Updating drive search...": [
-        "드라이브 검색을 업데이트하는 중..."
       ],
       "Upgrade anytime to bring over the rest": [
         "언제든지 업그레이드하여 남은 메일을 모두 가져오세요"
@@ -6574,9 +6092,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
-      ],
-      "upgrade your storage": [
-        "일 남았습니다"
       ],
       "Upload Failed": [
         "업로드 실패"
@@ -6608,12 +6123,6 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "인증은 새 탭에서 열리기 때문에 팝업 차단기를 비활성화해주세요. 요금은 청구되지 않습니다. 카드 확인에 사용한 금액은 즉시 환불됩니다."
       ],
-      "Version is deleted": [
-        "버전이 삭제되었습니다"
-      ],
-      "Version is restored": [
-        "버전이 복구되었습니다"
-      ],
       "Version number successfully copied to clipboard": [
         "버전 넘버를 클립보드에 복사했습니다"
       ],
@@ -6626,17 +6135,8 @@
       "Waiting": [
         "대기 중"
       ],
-      "Want to sync files faster?": [
-        "더 빠른 동기화를 원하세요?"
-      ],
       "Warning": [
         "경고"
-      ],
-      "Way to go, you've just increased your storage to 5 GB!": [
-        "잘 하셨습니다. 이제 저장공간이 5GB로 확장되었습니다!"
-      ],
-      "We couldn't save this photo to your Drive": [
-        "다수의 사진을 드라이브에 저장하지 못했습니다"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "${ nameAuthor }님이 ${ nodeName } 파일을 업로드했는지 확인할 수 없습니다. 다음 항목이 손상되었을 수 있습니다: 파일 데이터 순서. 신뢰할 수 있는 경우에만 여세요."
@@ -6652,9 +6152,6 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "결제 정보를 보호하기 위해 3D 보안을 이용합니다"
-      ],
-      "We were not able to add this photo to your album": [
-        "이 사진을 앨범에 추가하지 못했습니다"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 PayPal로 보내집니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
@@ -6674,14 +6171,8 @@
       "Week": [
         "주"
       ],
-      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
-        "${ DRIVE_APP_NAME }에 오신 것을 환영해요! 처음 10분 동안 업로드하는 파일은 저장공간 할당량에 포함되지 않아요."
-      ],
       "What do you want to do?": [
         "무엇을 시도하시겠습니까?"
-      ],
-      "What would you like to do?": [
-        "무엇을 하시겠습니까?"
       ],
       "When working remotely": [
         "재택 근무시"
@@ -6689,17 +6180,11 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPN에 연결하여 암호화 기술을 사용하여 IP 주소(기기에 할당된 고유 코드)를 숨길 수 있습니다."
       ],
-      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
-        "동기화된 기기인 ${ deviceName }을(를) 제거시 이 기기에서 내 컴퓨터에 추가된 모든 폴더는 ${ DRIVE_APP_NAME }에서 영구적으로 삭제됩니다."
-      ],
       "who": [
         "누가"
       ],
       "Who has access": [
         "접근 가능한 사용자"
-      ],
-      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
-        "이(가) ${ formattedRevisionDate }의 버전으로 복구됩니다. 타 버전들이 여전히 저장됩니다."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "새 인증 코드를 받거나 다른 인증 방법을 사용하시겠습니까?"
@@ -6707,32 +6192,20 @@
       "Would you like to receive a new verification code?": [
         "새 인증 코드를 받으실래요?"
       ],
-      "Would you like to restore your files?": [
-        "파일을 복원하시겠습니까?"
-      ],
-      "Would you like to save it before removing?": [
-        "삭제 전 항목을 저장하시겠어요?"
-      ],
-      "Would you like to save them before removing?": [
-        "삭제 전 항목을 저장하시겠어요?"
-      ],
       "Writing assistant": [
         "글쓰기 도우미"
       ],
       "Yes": [
         "예"
       ],
-      "Yesterday": [
-        "어제"
+      "You": [
+        "나"
       ],
       "you": [
         "나"
       ],
       "You already have a free account": [
         "이미 무료 계정을 가지고 있습니다."
-      ],
-      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "공유된 항목에서 떠나려고 합니다. 소유자가 나와 공유하지 않는 한 다시 해당 항목에 접근할 수 없습니다."
       ],
       "You are about to open another browser tab and visit:": [
         "다른 브라우저 탭을 열고 다음을 방문합니다:"
@@ -6776,14 +6249,8 @@
       "You cannot undo this action.": [
         "이 동작은 실행취소할 수 없습니다."
       ],
-      "You don't have permission to copy files to this folder.": [
-        "이 폴더에 파일을 복사할 권한이 없습니다."
-      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제3자 서비스에서 유출되면 알림받으세요."
-      ],
-      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "웰컴 보너스로 저장공간 3 GB 확장을 받을 수 있는 시간이 ${ expiresInDays } "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "체험판 ${ planTitle } 구독이 있습니다. 체험 기간 이후로도 계속 구독을 사용하려면, 결제 수단을 추가해 주세요."
@@ -6797,20 +6264,17 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "다운그레이드하기 전에 모든 ${ MAIL_APP_NAME } 사용자와 주소, 그리고 사용자 지정 도메인을 비활성화해야 합니다."
       ],
-      "You need access": [
-        "접근 권한이 필요합니다"
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "해당 날짜부터 ${ planTitle }용 기능에 접근할 수 없게 됩니다."
       ],
       "You will lose all unsaved changes.": [
         "저장되지 않은 사항을 잃게 됩니다."
       ],
-      "You will need to save it again from the public link page.": [
-        "공개 링크 페이지에서 다시 저장해야할 수 있습니다."
-      ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } 전까지 취소하는 경우 결제되지 않습니다."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "뷰어에 대한 접근 권한을 변경한 후에는 \"${ fileName }\"(을)를 공유할 수 없습니다. 소유자 또는 공유 권한이 있는 편집자는 나의 편집 권한을 복원할 수 있습니다. 이 변경을 직접 되돌릴 수 없습니다."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
@@ -6845,9 +6309,6 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "사용자의 계정에 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 현재 선택한 플랜에서는 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 플랜을 선택하십시오."
       ],
-      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "파일 검색 색인 도중 브라우저의 사용 가능 공간이 가득 찼습니다. 공간을 충분히 확보한 후 재색인을 진행하십시오."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong }(에)서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 완료되었습니다."
       ],
@@ -6859,12 +6320,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
-      ],
-      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
-        "파일이 재색인 중입니다. 계속 검색할 수 있으나 색인 완료 전까지는 검색 결과가 완전하지 않을 수 있습니다. 색인 완료 후 알려드립니다."
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "비밀번호 재설정으로 인해 파일에 더 이상 접근할 수 없습니다. 다시 접근하기 위해 이전 암호화 키를 다시 업로드하세요. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
@@ -6913,12 +6368,6 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "사용자의 요금제가 최대 7일의 10개 버전 제한이 있습니다"
-      ],
-      "Your previous password": [
-        "내 이전 비밀번호"
-      ],
-      "Your previous recovery phrase": [
-        "내 이전 복구 구문"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "예약된 플랜이 ${ renewalTime }에 시작하여 ${ cycle }개월마다 자동 갱신됩니다."
@@ -7009,17 +6458,8 @@
       ]
     },
     "Label": {
-      "# of downloads": [
-        "다운로드 횟수"
-      ],
-      "${ albumProgress.added } of ${ albumProgress.total }": [
-        "${ albumProgress.total }개 중 ${ albumProgress.added }개"
-      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
-      ],
-      "${ downloads } downloads": [
-        "${ downloads }개 다운로드"
       ],
       "${ n } month": [
         "${ n }개월"
@@ -7032,9 +6472,6 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength }자"
-      ],
-      "(Expired)": [
-        "(만료됨)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
@@ -7090,9 +6527,6 @@
       "App password": [
         "앱 비밀번호"
       ],
-      "Applications in a business setting": [
-        "비즈니스 환경내의 어플리케이션"
-      ],
       "Apply to all duplicated files": [
         "모든 복제된 파일에 적용"
       ],
@@ -7101,9 +6535,6 @@
       ],
       "Apply to all unverified items": [
         "인증되지 않은 모든 항목에 적용"
-      ],
-      "Asset": [
-        "에셋"
       ],
       "Attach screenshot(s)": [
         "스크린샷 첨부"
@@ -7216,14 +6647,8 @@
       "Country": [
         "국가"
       ],
-      "Create ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } 계정 생성하기"
-      ],
       "Created": [
         "생성됨"
-      ],
-      "Created ${ created }": [
-        "${ created } 생성됨"
       ],
       "Credits": [
         "크레딧"
@@ -7231,32 +6656,14 @@
       "Delete": [
         "삭제"
       ],
-      "Delete drive?": [
-        "드라이브를 삭제할까요?"
-      ],
       "Delete link and remove access for everyone": [
         "링크를 삭제하고 모두의 접근 권한을 삭제합니다"
       ],
       "Delete recovery-related information.": [
         "복구 관련 정보 삭제하기"
       ],
-      "Deleted": [
-        "삭제됨"
-      ],
-      "Deleted ${ deleted }": [
-        "${ deleted }이(가) 삭제됨"
-      ],
       "Device": [
         "기기"
-      ],
-      "Device #${ position }": [
-        "기기 #${ position }"
-      ],
-      "Device name": [
-        "기기 이름"
-      ],
-      "Device: ${ name }": [
-        "기기: ${ name }"
       ],
       "Disable this link on a specific date": [
         "특정 날짜에 이 링크 비활성화"
@@ -7312,12 +6719,6 @@
       "Encrypt emails": [
         "이메일 암호화"
       ],
-      "Enter device name": [
-        "기기 이름 입력"
-      ],
-      "Environment compatible": [
-        "호환되는 환경"
-      ],
       "Exact host matching": [
         "정확한 호스트 일치"
       ],
@@ -7327,14 +6728,8 @@
       "Expired": [
         "만료됨"
       ],
-      "Expired on ${ formatted }": [
-        "${ formatted }에 만료됨"
-      ],
       "Expires": [
         "만료"
-      ],
-      "Expires ${ formatted }": [
-        "${ formatted }뒤에 만료됨"
       ],
       "Expiry": [
         "만료"
@@ -7402,12 +6797,6 @@
       "Include message and file name in invite email": [
         "초대 이메일에 메시지 및 파일 이름을 포함하기"
       ],
-      "Index kinds": [
-        "색인 종류"
-      ],
-      "Indexing": [
-        "색인 중"
-      ],
       "Integrated 2FA authenticator": [
         "2단계 인증기 내장"
       ],
@@ -7438,9 +6827,6 @@
       "Location": [
         "위치"
       ],
-      "Location: ${ item.location }": [
-        "위치: ${ item.location }"
-      ],
       "Log in or sign up ": [
         "로그인하거나 회원 가입하세요 "
       ],
@@ -7462,9 +6848,6 @@
       "Modified": [
         "수정됨"
       ],
-      "Modified ${ modified }": [
-        "${ modified }에 수정됨"
-      ],
       "Move to Archive": [
         "보관 편지함으로 이동"
       ],
@@ -7474,9 +6857,6 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "최소한 ${ MIN_PASSWORD_LENGTH }글자여야 합니다."
       ],
-      "My Albums": [
-        "나의 앨범"
-      ],
       "Name": [
         "이름"
       ],
@@ -7485,9 +6865,6 @@
       ],
       "Never": [
         "안 함"
-      ],
-      "Never expires": [
-        "만료되지 않음"
       ],
       "Never fill on this exact URL": [
         "이 정확한 URL에서 자동완성 사용 안 함"
@@ -7522,9 +6899,6 @@
       "Other": [
         "기타"
       ],
-      "Outdated version": [
-        "이전 버전"
-      ],
       "Parent domain and subdomains (default)": [
         "상위 도메인 및 하위 도메인(기본값)"
       ],
@@ -7543,17 +6917,11 @@
       "Payment method": [
         "결제 수단"
       ],
-      "Pending invitation": [
-        "대기 중인 초대장"
-      ],
       "PGP scheme": [
         "PGP 방식"
       ],
       "Phone number": [
         "전화번호"
-      ],
-      "Photo": [
-        "사진"
       ],
       "Please provide full details to help us take appropriate action": [
         "적절한 조치를 취할 수 있도록 전체 세부사항을 제공해 주세요"
@@ -7597,9 +6965,6 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "서울 종로구 청와대로 1"
       ],
-      "Searchable": [
-        "검색 가능"
-      ],
       "Select type of abuse": [
         "악용 유형 선택"
       ],
@@ -7609,35 +6974,11 @@
       "Set a password to limit access via link": [
         "비밀번호를 설정하여 링크를 통한 접근 제한"
       ],
-      "Set recovery method": [
-        "복구 방법 설정"
-      ],
-      "Share a file, folder, or album": [
-        "파일, 폴더 및 앨범 공유"
-      ],
       "Shared": [
         "공유됨"
       ],
-      "Shared by": [
-        "다음에 의해 공유됨:"
-      ],
-      "Shared by ${ sharedBy }": [
-        "${ sharedBy }님에 의해 공유됨"
-      ],
-      "Shared by Public link": [
-        "공개 링크로 공유됨"
-      ],
-      "Shared on": [
-        "다음에서 공유됨:"
-      ],
-      "Shared on ${ sharedOn }": [
-        "${ sharedOn }에 공유됨"
-      ],
       "Shared with me": [
         "나와 공유됨"
-      ],
-      "Show indexing progress of Encrypted Search": [
-        "암호화 검색 인덱싱 진행 사항 보기"
       ],
       "Sign emails": [
         "이메일 서명"
@@ -7696,9 +7037,6 @@
       "Theme": [
         "테마"
       ],
-      "This will permanently delete all files in your locked drive.": [
-        "잠긴 드라이브의 모든 파일이 영구적으로 삭제됩니다."
-      ],
       "Thomas": [
         "홍"
       ],
@@ -7711,29 +7049,14 @@
       "Type": [
         "유형"
       ],
-      "Unlock drive": [
-        "드라이브 잠금 해제"
-      ],
-      "Unlock drive (recommended)": [
-        "드라이브 잠금 해제 (권장)"
-      ],
-      "Unlock later": [
-        "나중에 잠금 해제"
-      ],
       "Upload picture": [
         "사진 업로드"
-      ],
-      "Upload your first file": [
-        "첫 파일을 업로드하세요"
       ],
       "Uploaded by": [
         "업로드한 사용자:"
       ],
       "URL wildcard pattern": [
         "URL 와일드카드 패턴"
-      ],
-      "User opted in": [
-        "사용자가 수신 동의함"
       ],
       "Username": [
         "사용자 이름"
@@ -7746,9 +7069,6 @@
       ],
       "Viewer": [
         "뷰어"
-      ],
-      "Visible columns:": [
-        "보이는 열:"
       ],
       "Vulnerable": [
         "취약함"
@@ -7764,9 +7084,6 @@
       ],
       "What happened?": [
         "무슨 일인가요?"
-      ],
-      "Yes, I want to permanently delete my old files": [
-        "네, 저는 이전 파일을 완전히 삭제하고 싶습니다"
       ],
       "Your alias": [
         "내 별칭"
@@ -7858,9 +7175,6 @@
       "Add a gift code": [
         "기프트 코드 추가"
       ],
-      "Albums": [
-        "앨범"
-      ],
       "clearing your browser cache": [
         "브라우저 캐시를 삭제하면"
       ],
@@ -7921,9 +7235,6 @@
       "Pay invoice": [
         "청구서 지불"
       ],
-      "Photos": [
-        "사진"
-      ],
       "Reactivate now": [
         "지금 재활성화"
       ],
@@ -7938,12 +7249,6 @@
       ],
       "settings": [
         "설정"
-      ],
-      "Shared": [
-        "공유"
-      ],
-      "Shared with me": [
-        "나와 공유됨"
       ],
       "Terms and conditions": [
         "이용 약관"
@@ -9305,41 +8610,14 @@
       ]
     },
     "Notification": {
-      "\"${ ellipsedName }\" copied": [
-        "\"${ ellipsedName }\"이(가) 복사됨"
-      ],
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\"이(가) 성공적으로 생성되었습니다"
-      ],
-      "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\"이(가) 삭제됨"
-      ],
-      "\"${ ellipsedName }\" deleted permanently from trash": [
-        "\"${ ellipsedName }\" 항목이 휴지통에서 영구적으로 삭제되었습니다"
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "\"${ ellipsedName }\"을(를) 생성할 수 없습니다"
       ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "\"${ ellipsedName }\" 삭제 실패"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "\"${ ellipsedName }\"의 휴지통에서 삭제를 실패했습니다"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "\"${ ellipsedName }\"(을)를 이동할 수 없습니다"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "\"${ ellipsedName }\"을(를) 휴지통에서 복구하는 데 실패했습니다"
-      ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" 항목이 이동되었습니다"
-      ],
-      "\"${ ellipsedName }\" restored from trash": [
-        "\"${ ellipsedName }\" 이(가) 휴지통에서 복구되었습니다"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "\"${ ellipsedName }\"이(가) 성공적으로 이동되었습니다"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\"이(가) 공유됨"
@@ -9359,26 +8637,11 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\"의 이름을 성공적으로 변경하였습니다"
       ],
-      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
-        "${ addedUids.length }개 사진이 \"${ albumName }\"에 추가되었습니다."
-      ],
       "${ count } item failed to be decrypted": [
         "${ count }개 암호화 해독 실패"
       ],
-      "${ errors.length } item failed to be copied": [
-        "${ errors.length }개 항목을 복사할 수 없습니다"
-      ],
       "${ errors.length } item failed to be deleted": [
         "${ errors.length }개 항목 삭제 실패"
-      ],
-      "${ errors.length } item failed to be trashed": [
-        "${ errors.length }개 항목을 휴지통으로 이동할 수 없습니다"
-      ],
-      "${ numberOfItems } copied item moved to trash": [
-        "${ numberOfItems }개의 복사된 항목이 휴지통으로 이동되었습니다"
-      ],
-      "${ numberOfItems } item copied": [
-        "${ numberOfItems }개 항목 복사됨"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems }개 항목 삭제됨"
@@ -9410,29 +8673,17 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems }개가 휴지통에서 복구되었습니다"
       ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems }개가 성공적으로 삭제되었습니다"
-      ],
       "${ reason } has been disabled": [
         "${ reason }이(가) 비활성화 되었습니다."
       ],
       "${ reason } has been enabled": [
         "${ reason }이(가) 활성화 되었습니다."
       ],
-      "${ removed } photo have been removed from \"${ albumName }\"": [
-        "${ removed }개 사진이 \"${ albumName }\" 앨범에서 제거되었습니다."
-      ],
       "Access for the member removed": [
         "이 구성원의 접근이 삭제되었습니다."
       ],
       "Access updated": [
         "접근 권한이 업데이트되었습니다"
-      ],
-      "Album renamed successfully": [
-        "앨범의 이름이 성공적으로 변경되었습니다"
-      ],
-      "All items deleted permanently from trash": [
-        "모든 항목이 휴지통에서 영구적으로 삭제되었습니다"
       ],
       "Cannot load link": [
         "링크를 불러오는 중 문제 발생"
@@ -9446,9 +8697,6 @@
       "Contact group updated": [
         "연락처 그룹 업데이트됨"
       ],
-      "Copy of \"${ ellipsedName }\" moved to trash": [
-        "\"${ ellipsedName }\"의 사본이 휴지통으로 이동됨"
-      ],
       "Device failed to be removed": [
         "기기 삭제 실패"
       ],
@@ -9461,12 +8709,6 @@
       "Device renamed": [
         "기기 이름 변경됨"
       ],
-      "Encrypted search activated": [
-        "암호화된 검색 활성화됨"
-      ],
-      "Error while listing devices": [
-        "기기 목록 가져오기 오류"
-      ],
       "Failed to accept share invitation": [
         "초대장 공유 수락 실패"
       ],
@@ -9478,18 +8720,6 @@
       ],
       "Failed to reject share invitation": [
         "초대장 공유 거절 실패"
-      ],
-      "Failed to remove device": [
-        "기기 제거 실패"
-      ],
-      "Failed to remove the file": [
-        "이 파일을 지우는데 실패했습니다."
-      ],
-      "Failed to rename device": [
-        "기기 이름 변경 실패"
-      ],
-      "File removed": [
-        "파일 삭제됨"
       ],
       "Invitation's email was sent again": [
         "초대 이메일을 다시 전송했습니다."
@@ -9509,12 +8739,6 @@
       "Public link access updated": [
         "공개 링크 접근이 업데이트되었습니다."
       ],
-      "Selected item was not removed from your list": [
-        "선택된 항목이 목록에서 삭제되지 않았습니다."
-      ],
-      "Selected item was successfully removed from your list": [
-        "선택한 항목이 목록에서 성공적으로 삭제되었습니다."
-      ],
       "Setting updated. Editors can change permissions and share.": [
         "설정이 업데이트되었습니다. 편집자가 권한이나 공유 사항을 변경할 수 있습니다."
       ],
@@ -9530,17 +8754,8 @@
       "Stopping the sharing of this item has failed": [
         "이 항목에 대한 공유 중단 작업을 수행할 수 없습니다."
       ],
-      "The item was not added to your drive": [
-        "항목이 Drive에 추가되지 않았습니다."
-      ],
-      "The item was successfully added to your drive": [
-        "항목이 Drive로 성공적으로 추가되었습니다."
-      ],
       "The link to your item was deleted": [
         "항목의 링크가 삭제되었습니다"
-      ],
-      "This secure link expired, please change expire date in sharing settings": [
-        "이 보안 링크는 만료되었습니다. 공유 설정에서 만료일을 변경해 주세요."
       ],
       "Trash failed to be emptied": [
         "휴지통 비우기 실패"
@@ -9551,9 +8766,6 @@
       "Your ${ BRAND_NAME } address is ready to use": [
         "${ BRAND_NAME } 주소를 사용할 수 있습니다."
       ],
-      "Your old files will be deleted in 72 hours": [
-        "사용자의 오래된 파일이 72시간 내에 삭제됩니다"
-      ],
       "Your settings have been changed successfully": [
         "설정을 저장했습니다"
       ]
@@ -9561,11 +8773,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "선택한 이미지 중 일부가 중복된 파일명으로 인해 업로드되지 않았습니다."
-      ]
-    },
-    "Notitication": {
-      "Album renamed successfully": [
-        "앨범의 이름이 성공적으로 변경되었습니다"
       ]
     },
     "Oauth instructions": {
@@ -9711,169 +8918,6 @@
         "${ appName }에 오신 것을 환영합니다"
       ]
     },
-    "Onboarding Action": {
-      "Continue": [
-        "계속"
-      ],
-      "Create a document": [
-        "문서 생성하기"
-      ],
-      "Get started": [
-        "시작하기"
-      ],
-      "Install and continue": [
-        "설치 및 계속"
-      ],
-      "Install later": [
-        "나중에 설치"
-      ],
-      "Invite members": [
-        "구성원 초대"
-      ],
-      "Maybe Later": [
-        "나중에 시도하기"
-      ],
-      "Maybe later": [
-        "나중에"
-      ],
-      "Select theme": [
-        "테마 선택"
-      ],
-      "Skip": [
-        "건너뛰기"
-      ],
-      "Skip for now": [
-        "지금은 건너뛰기"
-      ],
-      "Try the app": [
-        "앱 체험하기"
-      ],
-      "Upload file": [
-        "파일 업로드"
-      ],
-      "Upload folder": [
-        "폴더 업로드"
-      ],
-      "Upload more files": [
-        "더 많은 파일 업로드"
-      ]
-    },
-    "Onboarding Info": {
-      "10 minutes": [
-        "10분"
-      ],
-      "Access your files on the go": [
-        "이동 중에도 내 파일에 접근"
-      ],
-      "Back up your photos and memories": [
-        "내 사진 및 추억 백업"
-      ],
-      "Backup your photos and memories": [
-        "내 사진과 추억 백업하기"
-      ],
-      "Choose your favorite theme": [
-        "선호하는 테마를 선택하세요"
-      ],
-      "Collaborate on documents": [
-        "문서에서 협동하기"
-      ],
-      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "라이트 혹은 다크 모드 중 어떤 ${ DRIVE_APP_NAME }을 선호하세요? 가장 영감을 주는 색상을 선택하세요."
-      ],
-      "Drag and drop your files here": [
-        "파일을 드래그하여 이곳에 놓으세요"
-      ],
-      "Edit documents online": [
-        "온라인 문서 편집"
-      ],
-      "End-to-end encrypted storage for your files": [
-        "내 파일을 위한 종단간 암호화 스토리지"
-      ],
-      "Faster uploads for large or multiple files": [
-        "크거나 다양한 파일을 위한 더 빠른 업로드"
-      ],
-      "Files uploaded during this time won’t count towards your storage limit.": [
-        "지금 업로드되는 파일은 저장공간 제한에 포함되지 않습니다."
-      ],
-      "Files uploaded now will not count towards your storage limit": [
-        "지금 업로드되는 파일은 저장공간 제한에 포함되지 않습니다."
-      ],
-      "Final approval in progress": [
-        "최종 승인 진행 중"
-      ],
-      "Final approval pending": [
-        "최종 승인 대기 중"
-      ],
-      "Free up hard drive space on your computer": [
-        "내 컴퓨터의 하드 드라이브 공간 비우기"
-      ],
-      "Get the desktop app": [
-        "데스크톱 앱 다운로드"
-      ],
-      "Get the mobile app": [
-        "모바일 앱 다운로드"
-      ],
-      "Got an Android? We've got you covered.": [
-        "Android 폰을 가지고 계신가요? 저희가 도와드릴게요."
-      ],
-      "Got an iPhone? We've got you covered.": [
-        "iPhone을 가지고 계신가요? 저희가 도와드릴게요."
-      ],
-      "Hang tight": [
-        "금방 완료됩니다"
-      ],
-      "Invitation accepted": [
-        "초대 수락됨"
-      ],
-      "Invitation received": [
-        "초대장 수신됨"
-      ],
-      "Invite team members": [
-        "팀 구성원 초대"
-      ],
-      "Keep the momentum going by uploading more files using the storage included with your plan.": [
-        "플랜에 포함된 저장공간을 사용하여 더 많은 파일을 업로드하고, 지속적으로 이용하세요."
-      ],
-      "Manage access": [
-        "접근 관리"
-      ],
-      "Organize files right from your desktop": [
-        "데스크톱에서 바로 파일 정리하기"
-      ],
-      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
-        "내 문서, 신분증, 프로젝트 파일, 사진 등을 종단간 암호화로 보호하세요."
-      ],
-      "Scan the QR code to install the mobile app": [
-        "모바일 앱을 다운로드하려면 QR 코드를 스캔하세요"
-      ],
-      "Secure your files": [
-        "파일을 안전하게 보호하기"
-      ],
-      "Securely share files and folders": [
-        "파일 및 폴더 안전하게 공유"
-      ],
-      "Share files & folders": [
-        "파일 및 폴더 공유"
-      ],
-      "Sync and access your files from anywhere": [
-        "어디서든 내 파일 동기화 및 접근"
-      ],
-      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
-        "소유자가 접근 공유를 수락해야 합니다. 수락시 이메일을 받게 됩니다."
-      ],
-      "Upload your first file": [
-        "첫 파일을 업로드하세요"
-      ],
-      "Work faster, smarter": [
-        "빠르고 스마트하게 일하기"
-      ],
-      "Work together": [
-        "함께 일하기"
-      ],
-      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "방금 전 무료 데이터를 확보했으며, 종단 간 암호화로 파일을 기록적인 시간 내에 안전하게 보호했습니다!"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " ${ helpCenterLink } 또는 ${ contactSupportLink }에 방문하세요."
@@ -9931,29 +8975,11 @@
       "Create new group": [
         "새 그룹 만들기"
       ],
-      "Expected structure": [
-        "예상 구조"
-      ],
       "Ignore group": [
         "그룹 무시"
       ],
       "No parent folder": [
         "상위 폴더 없음"
-      ],
-      "Only current location": [
-        "현재 위치만"
-      ],
-      "Only current location: ${ name }": [
-        "현재 위치만: ${ name }"
-      ],
-      "Select JSON file": [
-        "JSON 파일 선택"
-      ],
-      "Verify content": [
-        "내용 확인"
-      ],
-      "Verify thumbnails": [
-        "섬네일 확인"
       ]
     },
     "Option group label": {
@@ -10111,7 +9137,7 @@
         "청구 주소 수정"
       ],
       "Got it": [
-        "확인했습니다"
+        "확인"
       ],
       "I'm purchasing as a business": [
         "사업체 용도로 구매합니다"
@@ -10406,14 +9432,8 @@
       "Enter a name": [
         "이름 입력"
       ],
-      "Enter a new file name": [
-        "새 파일 이름을 입력하세요"
-      ],
       "Enter a new folder name": [
         "새 폴더 이름을 입력하세요"
-      ],
-      "Enter device name": [
-        "기기 이름을 입력하세요"
       ],
       "Enter your email address": [
         "사용자의 이메일 주소를 입력해주세요"
@@ -10562,6 +9582,20 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "진행률: ${ combinedProgress }%"
+      ]
+    },
+    "Property": {
+      "hash key": [
+        "해시 키"
+      ],
+      "key": [
+        "키"
+      ],
+      "membership": [
+        "멤버쉽"
+      ],
+      "name": [
+        "이름"
       ]
     },
     "Property type": {
@@ -10980,7 +10014,7 @@
         "요청 취소"
       ],
       "Got it": [
-        "확인했습니다"
+        "확인"
       ],
       "Learn more": [
         "더 알아보기"
@@ -11306,12 +10340,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "이제 편집자가 공유 권한을 관리하고 타인을 초대할 수 있습니다. 언제든지 공유 설정에서 해제할 수 있습니다."
-      ],
-      "Encrypted search is here": [
-        "암호화된 검색이 여기 있습니다"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "이제 데이터를 안전하게 지키면서 쉽게 드라이브 파일을 검색할 수 있습니다."
       ]
     },
     "sso": {
@@ -11836,52 +10864,13 @@
       ]
     },
     "Subtitle": {
-      "Albums shared with you will appear here": [
-        "나와 공유된 앨범이 여기에 표시됩니다"
-      ],
-      "Albums you've shared will appear here": [
-        "내가 공유한 앨범이 여기에 표시됩니다"
-      ],
       "Shared by ${ sharedBy }": [
         "${ sharedBy }님에 의해 공유됨"
-      ],
-      "Your favorited photos will appear here": [
-        "즐겨찾는 사진이 여기에 표시됩니다"
-      ],
-      "Your Live Photos will appear here": [
-        "Live Photo가 여기에 표시됩니다"
-      ],
-      "Your panorama photos will appear here": [
-        "파노라마 사진이 여기에 표시됩니다"
-      ],
-      "Your photo bursts will appear here": [
-        "연사 사진이 여기에 표시됩니다"
-      ],
-      "Your portraits photos will appear here": [
-        "인물 사진이 여기에 표시됩니다"
-      ],
-      "Your RAW photos will appear here": [
-        "RAW 사진이 여기에 표시됩니다"
-      ],
-      "Your screenshots will appear here": [
-        "스크린 샷이 여기에 표시됩니다"
-      ],
-      "Your selfies photos will appear here": [
-        "셀카 사진이 여기에 표시됩니다"
-      ],
-      "Your tagged photos will appear here": [
-        "태그된 사진이 여기에 표시됩니다"
-      ],
-      "Your videos will appear here": [
-        "동영상이 여기에 표시됩니다"
       ]
     },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts }개 연락처가 동일한 것 같습니다."
-      ],
-      "${ countOfUnrecoveredLinksLeft } left": [
-        "${ countOfUnrecoveredLinksLeft }개 남음"
       ],
       "Address copied to clipboard": [
         "주소가 클립보드에 복사되었습니다"
@@ -11949,9 +10938,6 @@
       "Problem reported": [
         "문제 제보됨"
       ],
-      "Recovery has started": [
-        "복구가 시작되었습니다"
-      ],
       "Secure link copied": [
         "보안 링크 복사함"
       ],
@@ -12016,17 +11002,26 @@
       "Actions": [
         "동작"
       ],
+      "Activated": [
+        "활성화됨"
+      ],
       "Address": [
         "주소"
       ],
       "Created": [
         "생성됨"
       ],
+      "Estimated size": [
+        "예상 용량"
+      ],
       "Expires": [
         "만료"
       ],
       "Fingerprint": [
         "지문"
+      ],
+      "Migration status": [
+        "이전 상태"
       ],
       "Name": [
         "이름"
@@ -12039,6 +11034,9 @@
       ],
       "Type": [
         "유형"
+      ],
+      "User": [
+        "사용자"
       ]
     },
     "TableHeader": {
@@ -12070,35 +11068,6 @@
         "vCard 란"
       ]
     },
-    "Tag": {
-      "Bursts": [
-        "연사 사진"
-      ],
-      "Favorites": [
-        "즐겨찾기"
-      ],
-      "Live Photos": [
-        "Live Photo 사진"
-      ],
-      "Panoramas": [
-        "파노라마"
-      ],
-      "Portraits": [
-        "인물 사진"
-      ],
-      "RAW": [
-        "RAW"
-      ],
-      "Screenshots": [
-        "스크린샷"
-      ],
-      "Selfies": [
-        "셀카"
-      ],
-      "Videos": [
-        "동영상"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays }일"
@@ -12122,9 +11091,6 @@
       ],
       "${ feature } is now active": [
         "${ feature }이(가) 이제 활성 상태입니다"
-      ],
-      "${ freeUploadLength } of free uploads.": [
-        "${ freeUploadLength }간의 무료 업로드 시간."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
@@ -12174,9 +11140,6 @@
       "Album details": [
         "앨범 상세 정보"
       ],
-      "Albums": [
-        "앨범"
-      ],
       "All settings": [
         "전체 설정"
       ],
@@ -12194,9 +11157,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "정말로 미리보기를 닫으시겠습니까?"
-      ],
-      "Are you sure you want to remove this item from your list?": [
-        "이 목록에서 해당 항목을 정말 삭제하시겠어요?"
       ],
       "Are you sure?": [
         "확실하신가요?"
@@ -12258,14 +11218,14 @@
       "Computers": [
         "컴퓨터"
       ],
+      "Configure migration": [
+        "이전 작업 구성"
+      ],
       "Confirm downgrade": [
         "다운그레이드 확인"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "${ BRAND_NAME } 의 보너스를 잃는 것을 확인합니다"
-      ],
-      "Confirmation required": [
-        "확인이 필요함"
       ],
       "Connect apps and devices": [
         "앱 및 장치 연결하기"
@@ -12293,9 +11253,6 @@
       ],
       "Coupon": [
         "쿠폰"
-      ],
-      "Create a new file": [
-        "새 파일 만들기"
       ],
       "Create a new folder": [
         "새 폴더 만들기"
@@ -12369,9 +11326,6 @@
       "Devices": [
         "기기"
       ],
-      "Diagnostics": [
-        "진단"
-      ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "디지털 서명이 부분적으로 인증되었습니다. 이 폴더는 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 생성했기 때문에 신원을 확인할 수 없습니다."
       ],
@@ -12405,6 +11359,9 @@
       "Disconnected from Gmail": [
         "Gmail 연결 해제됨"
       ],
+      "Domain names": [
+        "도메인 이름"
+      ],
       "Downgrade account": [
         "계정 다운그레이드"
       ],
@@ -12425,9 +11382,6 @@
       ],
       "Download unverified folder?": [
         "인증되지 않은 폴더를 다운로드할까요?"
-      ],
-      "Drive": [
-        "Drive"
       ],
       "Drop to upload": [
         "여기로 끌어서 업로드"
@@ -12465,9 +11419,6 @@
       "Enable advanced account protection": [
         "향상된 계정 보호 활성화하기"
       ],
-      "Enable drive search": [
-        "드라이브 검색 활성화"
-      ],
       "Enhance security with 2FA": [
         "2단계 인증으로 보안 강화시키기"
       ],
@@ -12483,20 +11434,11 @@
       "File details": [
         "파일 세부 정보"
       ],
-      "File recovery process": [
-        "파일 복구 진행도"
-      ],
       "Folder": [
         "폴더"
       ],
       "Folder details": [
         "폴더 세부 정보"
-      ],
-      "Found ${ resultCount } result": [
-        "${ resultCount }개의 결과 찾음"
-      ],
-      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
-        "회원님의 휴대전화에 ${ DRIVE_SHORT_APP_NAME }를 설치하세요"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "${ planTitle }(으)로 크레딧으로 **${ referralInfo.uiData.refereeRewardAmount }** 받기"
@@ -12504,26 +11446,17 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME }의 모든 기능 이용하기"
       ],
-      "Get mobile and desktop apps": [
-        "모바일 및 데스크톱 앱 다운로드"
-      ],
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "${ MAIL_APP_NAME } Plus로 더 많은 저장공간을 확보하세요"
       ],
-      "Get started with 10 minutes of free uploads, on the house.": [
-        "무료로 제공하는 10분 업로드로 시작해 보세요."
-      ],
       "Get the apps": [
         "앱 다운로드"
       ],
       "Gift": [
         "선물"
-      ],
-      "Global": [
-        "글로벌"
       ],
       "Groups": [
         "그룹"
@@ -12573,9 +11506,6 @@
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH }로 불러온 항목"
       ],
-      "Index populators": [
-        "인덱스 구성기"
-      ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"
       ],
@@ -12588,23 +11518,11 @@
       "Last uploaded by": [
         "마지막으로 업로드한 사람"
       ],
-      "Level": [
-        "레벨"
-      ],
       "Link confirmation": [
         "링크 확인"
       ],
       "Location": [
         "위치"
-      ],
-      "Logger": [
-        "로거"
-      ],
-      "Logs": [
-        "로그"
-      ],
-      "Make a copy": [
-        "복사본 생성"
       ],
       "Make a secure connection your default": [
         "보안 연결을 기본값으로 설정하세요"
@@ -12617,9 +11535,6 @@
       ],
       "Merging contacts": [
         "연락처 병합"
-      ],
-      "Message": [
-        "메시지"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "당신의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
@@ -12654,56 +11569,17 @@
       "Night theme": [
         "야간 테마"
       ],
-      "No albums shared with me": [
-        "나와 공유된 앨범 없음"
-      ],
       "No breaches detected": [
         "감지된 침해사례 없음"
       ],
-      "No bursts": [
-        "연사 사진 없음"
-      ],
-      "No favorites": [
-        "즐겨찾기 없음"
-      ],
-      "No Live Photos": [
-        "Live Photo 사진 없음"
-      ],
-      "No panorama": [
-        "파노라마 사진 없음"
-      ],
-      "No photos": [
-        "사진 없음"
-      ],
-      "No portraits": [
-        "인물 사진 없음"
-      ],
-      "No RAW": [
-        "RAW 사진 없음"
-      ],
       "No results found": [
         "결과를 찾을 수 없음"
-      ],
-      "No screenshots": [
-        "스크린샷 없음"
-      ],
-      "No selfies": [
-        "셀카 없음"
-      ],
-      "No shared albums": [
-        "공유된 앨범 없음"
-      ],
-      "No videos": [
-        "비디오 없음"
       ],
       "Notes": [
         "메모"
       ],
       "Number of downloads": [
         "다운로드 횟수"
-      ],
-      "Number of items": [
-        "항목 수"
       ],
       "One email, many recipients": [
         "하나의 이메일, 다수의 수신자"
@@ -12771,9 +11647,6 @@
       "Re-signing contacts": [
         "연락처 다시 서명"
       ],
-      "Ready, set, upload.": [
-        "준비, 시작, 업로드."
-      ],
       "Recommended": [
         "추천됨"
       ],
@@ -12792,9 +11665,6 @@
       "Remove device?": [
         "기기를 삭제할까요?"
       ],
-      "Remove item?": [
-        "항목을 제거하시겠어요?"
-      ],
       "Remove your access?": [
         "내 접근 권한을 제거하시겠습니까?"
       ],
@@ -12804,32 +11674,17 @@
       "Rename a folder": [
         "파일 이름 변경"
       ],
-      "Rename device": [
-        "기기 이름 변경"
-      ],
       "Report a problem": [
         "문제 보고"
       ],
       "Request new code": [
         "새 코드 요청"
       ],
-      "Restore your files": [
-        "내 파일 복구"
-      ],
       "Reverse charge not supported": [
         "매입자 납부제도(Reverse charge)가 지원되지 않습니다."
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "나중에 ${ DRIVE_APP_NAME }에 저장하기"
-      ],
-      "Search": [
-        "검색"
-      ],
-      "Search results": [
-        "검색 결과"
-      ],
-      "Searching…": [
-        "검색 중..."
       ],
       "Security center": [
         "보안 센터"
@@ -12848,6 +11703,9 @@
       ],
       "Select link expiration date": [
         "링크 만료 날짜 선택"
+      ],
+      "Select users to migrate": [
+        "이전할 사용자를 선택하세요"
       ],
       "Set recovery methods": [
         "복구 방법 마련하기"
@@ -12884,9 +11742,6 @@
       ],
       "Shared with me": [
         "나와 공유됨"
-      ],
-      "Show actions": [
-        "동작 표시"
       ],
       "Sign in and grant access": [
         "로그인 및 엑세스 권한 부여"
@@ -12953,12 +11808,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "이 스프레드시트를 미리보려면, ${ SHEETS_APP_NAME }에서 열거나 다운로드하세요."
-      ],
-      "Total size": [
-        "총 크기"
-      ],
-      "Trash": [
-        "휴지통"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 켜기"
@@ -13059,6 +11908,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "익명의 사용자가 이 폴더를 업로드했는지 확인할 수 없습니다."
       ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
+        "${ claimedContentAuthor }님이 파일을 업로드했는지 확인할 수 없었습니다. 원인: ${ node.activeRevision.contentAuthor.error.error }"
+      ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "${ claimedNameAuthor }님이 해당 이름이 생성되거나 수정되었는지 확인할 수 없습니다. 원인: ${ node.nameAuthor.error.error }"
       ],
@@ -13068,11 +11920,11 @@
       "We'd love to hear from you!": [
         "회원님의 의견을 기다리고 있어요!"
       ],
-      "Welcome offer": [
-        "환영 혜택"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business에 오신 것을 환영합니다"
+      ],
+      "What are you migrating?": [
+        "무엇을 이전하시나요?"
       ],
       "What can a VPN protect you from?": [
         "VPN은 무엇으로부터 나를 보호할 수 있나요?"
@@ -13089,17 +11941,11 @@
       "You can now create unlimited folders and labels": [
         "무제한 폴더 및 라벨을 생성할 수 있습니다."
       ],
-      "You have inaccessible files": [
-        "접근이 불가능한 파일이 있습니다"
-      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
       ],
       "Your ${ planTitle } subscription has started": [
         "${ planTitle } 구독이 시작되었습니다"
-      ],
-      "Your 3 GB bonus": [
-        "나의 3 GB 보너스"
       ],
       "Your account is protected": [
         "계정이 보호됩니다."
@@ -13118,15 +11964,6 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
-      ],
-      "Your welcome actions": [
-        "환영 보너스"
-      ],
-      "You’re off to a great start!": [
-        "완벽하게 시작하셨군요!"
-      ],
-      "You’ve got 5 GB of storage": [
-        "5GB의 저장공간을 얻으셨습니다"
       ]
     },
     "Title header for keys table": {
@@ -13172,6 +12009,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "라벨 수를 줄이기 위해 가져오기를 사용자 정의하세요"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "${ providerName }(에)서 ${ BRAND_NAME }으로 데이터 이전 상태"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "디지털 방식의 서명 이메일은 당신으로 부터 보내졌다는 것을 인증하는데 도움을 줍니다"
@@ -13245,6 +12085,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "개인의 ${ BRAND_NAME } 계정에 접근한 사용자"
+      ],
       "Version 6 OpenPGP key": [
         "버전 6 OpenPGP 키"
       ],
@@ -13285,11 +12128,6 @@
       ],
       "The user must have an address to request data access": [
         "데이터 접근을 요청하려면 사용자가 주소를 소유해야 합니다."
-      ]
-    },
-    "Upsell": {
-      "Get Drive for Business": [
-        "Drive for Business 구매"
       ]
     },
     "user_modal": {
@@ -13464,7 +12302,7 @@
         "지금까지 만든 커스터마이징을 모두 잃게 됩니다."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "무료 체험이 ${ textDate } 에 종료됩니다. ${ action }"
+        "무료 체험이 ${ textDate }에 종료됩니다. ${ action }"
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate }에 종료됩니다. ${ textDate } 이전에 취소시 요금이 청구되지 않습니다. ${ action }"

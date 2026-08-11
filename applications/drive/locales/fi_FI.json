@@ -48,10 +48,6 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Lisää ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
-      "Add ${ photoCount } photo to a new album": [
-        "Lisää ${ photoCount } kuva albumiin",
-        "Lisää ${ photoCount } kuvaa albumiin"
-      ],
       "Add account": [
         "Lisää tili"
       ],
@@ -88,24 +84,11 @@
       "Add phone number": [
         "Lisää puhelinnumero"
       ],
-      "Add photos": [
-        "Lisää kuvia"
-      ],
       "Add storage": [
         "Lisää tallennustilaa"
       ],
-      "Add to \"${ name }\" (${ photoCount } photo)": [
-        "Lisää albumiin \"${ name }\" (${ photoCount } kuva)",
-        "Lisää albumiin \"${ name }\" (${ photoCount } kuvaa)"
-      ],
-      "Add to album": [
-        "Lisää albumiin"
-      ],
       "Add to group": [
         "Lisää ryhmään"
-      ],
-      "Album name": [
-        "Albumin nimi"
       ],
       "Apply": [
         "Toteuta"
@@ -219,9 +202,6 @@
       "Collaborate on documents": [
         "Yhteiskäytä dokumentteja"
       ],
-      "Collapse folder": [
-        "Pienennä kansio"
-      ],
       "Collapse navigation bar": [
         "Supista navigointipalkki"
       ],
@@ -294,14 +274,8 @@
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
-      "Create album": [
-        "Luo albumi"
-      ],
       "Create and copy alias": [
         "Tallenna ja kopioi alias"
-      ],
-      "Create business account": [
-        "Luo yritystili"
       ],
       "Create folder": [
         "Luo kansio"
@@ -311,9 +285,6 @@
       ],
       "Create new password": [
         "Luo uusi salasana"
-      ],
-      "Create new text file": [
-        "Luo uusi tekstitiedosto"
       ],
       "Current plan": [
         "Nykyinen tilaus"
@@ -344,9 +315,6 @@
         "Poista ${ selectedCount } yhteystietoryhmä",
         "Poista ${ selectedCount } yhteystietoryhmää"
       ],
-      "Delete album": [
-        "Poista albumi"
-      ],
       "Delete contact": [
         "Poista yhteystieto"
       ],
@@ -356,23 +324,11 @@
       "Delete permanently": [
         "Poista pysyvästi"
       ],
-      "Delete this version": [
-        "Poista tämä versio"
-      ],
-      "Delete version": [
-        "Poista versio"
-      ],
-      "Delete without saving": [
-        "Poista tallentamatta"
-      ],
       "Deselect all": [
         "Tyhjennä valinnat"
       ],
       "Details": [
         "Lisätiedot"
-      ],
-      "Diagnostics": [
-        "Diagnostiikka"
       ],
       "Discard": [
         "Hylkää"
@@ -382,12 +338,6 @@
       ],
       "Display navigation bar": [
         "Näytä navigointipalkki"
-      ],
-      "Display next": [
-        "Näytä seuraava"
-      ],
-      "Display previous": [
-        "Näytä edellinen"
       ],
       "Done": [
         "Valmis"
@@ -407,26 +357,14 @@
       "Download anyway": [
         "Lataa silti"
       ],
-      "Download for Mac": [
-        "Lataa Macille"
-      ],
       "Download for macOS": [
         "Lataa macOS:lle"
       ],
       "Download for Windows": [
         "Lataa Windowsille"
       ],
-      "Download info": [
-        "Lataa tiedot"
-      ],
       "Download logs": [
         "Lataa lokitiedot"
-      ],
-      "Download results": [
-        "Lataa tulokset"
-      ],
-      "Drive Locked": [
-        "Drive on lukittu"
       ],
       "Edit": [
         "Muokkaa"
@@ -458,17 +396,8 @@
       "enable desktop notifications": [
         "näyttääkseen työpöytäilmoituksia"
       ],
-      "Enable drive search": [
-        "Käytä levyhakua"
-      ],
       "Encrypted": [
         "Salattu"
-      ],
-      "Expand folder": [
-        "Laajenna kansio"
-      ],
-      "Explore more": [
-        "Tutustu lisää"
       ],
       "Explore other plans": [
         "Tutustu muihin tilauksiin"
@@ -481,9 +410,6 @@
       ],
       "Export selection as .vcf": [
         "Vie valinta .vcf-tiedostona"
-      ],
-      "Export system log": [
-        "Vie järjestelmäloki"
       ],
       "Fit to window": [
         "Sovita ikkunaan"
@@ -530,20 +456,11 @@
       "Go back": [
         "Takaisin"
       ],
-      "Go back to album \"${ ellipsedAlbumName }\"": [
-        "Palaa albumiin \"${ ellipsedAlbumName }\""
-      ],
       "Go to ${ planOrAppName }": [
         "Avaa ${ planOrAppName }"
       ],
       "Go to label": [
         "Siirry tunnisteeseen"
-      ],
-      "Go to my files": [
-        "Avaa omat tiedostot"
-      ],
-      "Go to parent": [
-        "Avaa yläkansio"
       ],
       "Go to settings": [
         "Avaa asetukset"
@@ -599,9 +516,6 @@
       "Increase": [
         "Lisää"
       ],
-      "Join album": [
-        "Liity albumiin"
-      ],
       "Keep my subscription": [
         "Pidä tilaukseni"
       ],
@@ -616,9 +530,6 @@
       ],
       "Leave": [
         "Poistu"
-      ],
-      "Leave album": [
-        "Jätä albumi"
       ],
       "Let's talk": [
         "Keskustellaan"
@@ -649,9 +560,6 @@
       ],
       "Manage labels": [
         "Hallitse tunnisteita"
-      ],
-      "Manage share": [
-        "Hallitse jakoa"
       ],
       "Manage users/addresses": [
         "Hallitse käyttäjiä/osoitteita"
@@ -704,15 +612,6 @@
       "Move to trash": [
         "Siirrä roskakoriin"
       ],
-      "Name your album": [
-        "Nimeä albumisi"
-      ],
-      "New": [
-        "Uusi"
-      ],
-      "New album": [
-        "Uusi albumi"
-      ],
       "New document": [
         "Uusi dokumentti"
       ],
@@ -721,9 +620,6 @@
       ],
       "New message": [
         "Uusi viesti"
-      ],
-      "New shared album": [
-        "Uusi jaettu albumi"
       ],
       "New spreadsheet": [
         "Uusi laskentataulukko"
@@ -779,17 +675,8 @@
       "Quit": [
         "Sulje"
       ],
-      "Re-index": [
-        "Indeksoi uudelleen"
-      ],
-      "Re-indexing in progress": [
-        "Uudelleenindeksointi käynnissä"
-      ],
       "Re-sign": [
         "Allekirjoita uudelleen"
-      ],
-      "Rebuild index": [
-        "Rakenna indeksi uudelleen"
       ],
       "Reconnect": [
         "Yhdistä uudelleen"
@@ -802,9 +689,6 @@
       ],
       "Refer a friend": [
         "Kerro kaverille"
-      ],
-      "Refetch index": [
-        "Hae indeksi uudelleen"
       ],
       "Refresh the page": [
         "Päivitä sivu"
@@ -827,32 +711,17 @@
       "Remove button": [
         "Poista-painike"
       ],
-      "Remove device": [
-        "Poista laite"
-      ],
-      "Remove from album": [
-        "Poista albumista"
-      ],
       "Remove from favorites": [
         "Poista suosikeista"
       ],
       "Remove gift code": [
         "Poista lahjakoodi"
       ],
-      "Remove me": [
-        "Poista minut"
-      ],
       "Remove my access": [
         "Poista käyttöoikeuteni"
       ],
-      "Remove without saving": [
-        "Poistu tallentamatta"
-      ],
       "Rename": [
         "Nimeä uudelleen"
-      ],
-      "Rename album": [
-        "Nimeä albumi uudelleen"
       ],
       "Replace file": [
         "Korvaa tiedosto"
@@ -862,9 +731,6 @@
       ],
       "Report a problem": [
         "Ilmoita ongelmasta"
-      ],
-      "Report abuse": [
-        "Ilmoita väärinkäytöstä"
       ],
       "Report an issue": [
         "Ilmoita ongelmasta"
@@ -896,32 +762,17 @@
       "Restore this version": [
         "Palauta tämä versio"
       ],
-      "Restore version": [
-        "Palauta versio"
-      ],
       "Retry": [
         "Yritä uudelleen"
       ],
       "Retry failed items": [
         "Yritä epäonnistuneita kohteita uudelleen"
       ],
-      "Run diagnostics": [
-        "Suorita diagnostiikka"
-      ],
       "Save": [
         "Tallenna"
       ],
-      "Save and remove": [
-        "Tallenna ja poista"
-      ],
       "Save changes": [
         "Tallenna muutokset"
-      ],
-      "Save photo to your gallery": [
-        "Tallenna kuva galleriaasi"
-      ],
-      "Save photos and remove": [
-        "Tallenna kuvat ja poista"
       ],
       "Scan & Download": [
         "Skannaa ja lataa"
@@ -937,12 +788,6 @@
       ],
       "Search countries": [
         "Etsi maata"
-      ],
-      "Search drive": [
-        "Etsi Drivesta"
-      ],
-      "Search is unavailable": [
-        "Haku ei ole käytettävissä"
       ],
       "See how": [
         "Katso miten"
@@ -977,9 +822,6 @@
       "Set as album cover": [
         "Aseta albumin kansikuvaksi"
       ],
-      "Set as cover": [
-        "Aseta kansikuvaksi"
-      ],
       "Set password or expiration date": [
         "Aseta salasana tai erääntymispäivä"
       ],
@@ -1003,12 +845,6 @@
       ],
       "Share": [
         "Jaa"
-      ],
-      "Share album": [
-        "Jaa albumi"
-      ],
-      "Share file": [
-        "Jaa tiedosto"
       ],
       "Share item": [
         "Jaa kohde"
@@ -1061,14 +897,8 @@
       "Skip verification": [
         "Ohita vahvistus"
       ],
-      "Start": [
-        "Aloita"
-      ],
       "Start import": [
         "Aloita tuonti"
-      ],
-      "Start recovering": [
-        "Aloita palautus"
       ],
       "Stay": [
         "Pysy"
@@ -1097,9 +927,6 @@
       "Take a tour": [
         "Katso esittely"
       ],
-      "This album is empty": [
-        "Albumi on tyhjä"
-      ],
       "Toggle Calendar app": [
         "Kalenteri-sovellus päälle/pois"
       ],
@@ -1114,9 +941,6 @@
       ],
       "Trust": [
         "Luota"
-      ],
-      "Try ${ BRAND_NAME } Workspace": [
-        "Kokeile ${ BRAND_NAME } Workspacea"
       ],
       "Try again": [
         "Yritä uudelleen"
@@ -1172,12 +996,6 @@
       "Upload folder": [
         "Tallenna kansio"
       ],
-      "Upload from computer": [
-        "Lähetä tietokoneestasi"
-      ],
-      "Upload photos": [
-        "Tallenna kuvia"
-      ],
       "Upload picture": [
         "Lataa kuva"
       ],
@@ -1226,18 +1044,9 @@
       "What do I get?": [
         "Mitä saan?"
       ],
-      "Windows 11 (ARM64)": [
-        "Windows 11 (ARM64)"
-      ],
-      "Windows 11/10 (x64)": [
-        "Windows 11/10 (x64)"
-      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston"
-      ],
-      "Your 3 GB bonus": [
-        "3 Gt bonuksesi"
       ],
       "Zoom in": [
         "Lähennä"
@@ -1254,11 +1063,6 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
-      ]
-    },
-    "Actions": {
-      "Upload": [
-        "Lähetä"
       ]
     },
     "Actions message": {
@@ -1440,11 +1244,6 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "Ilmainen kokeilusi päättyy ${ timeRemaining }"
-      ]
-    },
-    "Badge": {
-      "Invited": [
-        "Kutsuttu"
       ]
     },
     "bf2023: Deal details": {
@@ -3124,14 +2923,6 @@
         "Lataamassasi CSV-tiedostossa havaittiin seuraavat kentät. Valitse ne, jotka haluat tuoda."
       ]
     },
-    "Docs Info": {
-      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
-        "Yhteiskäytöstä tuli juuri helpompaa. Nyt kuka tahansa voi ehdottaa muutoksia muuttamatta dokumenttia."
-      ],
-      "Suggestion mode is here": [
-        "Ehdotustila on täällä"
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Vikoja tai laatuongelmia"
@@ -3421,12 +3212,6 @@
       "Calendar limit reached": [
         "Kalenterien enimmäismäärä on saavutettu"
       ],
-      "Can't find any secure link": [
-        "Suojattua linkkiä ei löydy"
-      ],
-      "Can't retrieve device name": [
-        "Laitteen nimeä ei voida hakea"
-      ],
       "Cannot export this contact": [
         "Tätä yhteystietoa ei voida viedä"
       ],
@@ -3454,17 +3239,11 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Sisältöhakua ei voida ottaa käyttöön. Käynnistä sovellus uudelleen tai tyhjennä sen tiedot."
       ],
-      "Could not add to favorites": [
-        "Suosikkeihin lisääminen epäonnistui"
-      ],
       "Could not open created vault": [
         "Luotua holvia ei voitu avata"
       ],
       "Could not open updated vault": [
         "Muuttunutta holvia ei voitu avata"
-      ],
-      "Could not remove from favorites": [
-        "Suosikeista poistaminen epäonnistui"
       ],
       "Data integrity check failed": [
         "Tietojen eheyden tarkistus epäonnistui"
@@ -3477,17 +3256,8 @@
         "Poista ainakin ${ calendarsToFixCount } kalenterivalinta tai",
         "Poista ainakin ${ calendarsToFixCount } kalenterivalintaa tai"
       ],
-      "Device name does not match": [
-        "Laitteen nimi ei täsmää"
-      ],
-      "Diagnostics failed": [
-        "Diagnostiikka epäonnistui"
-      ],
       "Domain not available, try again later": [
         "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
-      ],
-      "Downloads of desktop apps are currently unavailable": [
-        "Työpöytäsovellusten lataaminen ei ole tällä hetkellä mahdollista."
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Laskutusosoitteen muokkaus ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
@@ -3509,12 +3279,6 @@
       ],
       "Error decrypting a computer": [
         "Virhe purettaessa tietokoneen salausta"
-      ],
-      "Error reading file": [
-        "Virhe tiedostoa luettaessa"
-      ],
-      "Expected structure attached": [
-        "Odotettu rakenne liitetty"
       ],
       "External accounts are not supported yet": [
         "Ulkoisia tilejä ei vielä tueta"
@@ -3582,9 +3346,6 @@
       "Folder name cannot be empty.": [
         "Kansion nimi ei voi olla tyhjä."
       ],
-      "Folder not found": [
-        "Kansiota ei löytynyt"
-      ],
       "Forward address is required": [
         "Välitysosoite vaaditaan"
       ],
@@ -3612,9 +3373,6 @@
       "Invalid IBAN": [
         "Virheellinen IBAN"
       ],
-      "Invalid JSON file": [
-        "Virheellinen JSON-tiedosto"
-      ],
       "Invalid name": [
         "Virheellinen nimi"
       ],
@@ -3633,8 +3391,14 @@
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
       ],
+      "Invitation not found": [
+        "Kutsua ei löytynyt"
+      ],
       "Item content cannot exceed 40KB": [
         "Kohteen sisällön koko ei saa ylittää 40 kt"
+      ],
+      "Item not found": [
+        "Kohdetta ei löytynyt"
       ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
@@ -3654,6 +3418,9 @@
       ],
       "Name is required": [
         "Nimi vaaditaan"
+      ],
+      "Name must not be empty": [
+        "Nimi ei voi olla tyhjä"
       ],
       "Network error": [
         "Verkkovirhe"
@@ -3713,6 +3480,9 @@
       ],
       "Payment process not supported": [
         "Maksutapahtumaa ei tueta"
+      ],
+      "Photo not found": [
+        "Kuvaa ei löytynyt"
       ],
       "Please activate your search again": [
         "Aktivoi hakusi uudelleen"
@@ -3791,8 +3561,8 @@
       "Reverse charge scheme is not supported for this plan": [
         "Tämä tilaus ei tue käännettyä verovelvollisuutta."
       ],
-      "Search failed": [
-        "Haku epäonnistui"
+      "Signature is missing": [
+        "Allekirjoitus puuttuu"
       ],
       "Signature not verified": [
         "Allekirjoitusta ei vahvistettu"
@@ -3824,17 +3594,8 @@
       "Something went wrong": [
         "Jotain meni pieleen"
       ],
-      "Something went wrong during folder listing": [
-        "Jotain meni vikaan kansiolistauksen aikana"
-      ],
       "Something went wrong while fetching available domains": [
         "Jotain meni vikaan haettaessa käytettävissä olevia verkkotunnuksia"
-      ],
-      "Something went wrong with search. Please try again later.": [
-        "Jotain meni vikaan haussa. Yritä myöhemmin uudelleen."
-      ],
-      "Something went wrong with search: Not enough storage space.": [
-        "Jotain meni vikaan haussa: Ei tarpeeksi tallennustilaa."
       ],
       "Something went wrong. Please try again.": [
         "Jotain meni pieleen. Yritä uudelleen."
@@ -3953,41 +3714,14 @@
       "VAT number must start with ${ prefixes }": [
         "ALV-tunnuksen on alettava etuliitteillä ${ prefixes }"
       ],
-      "We cannot retrieve this item": [
-        "Emme voi noutaa tätä kohdetta"
-      ],
       "We couldn’t send a verification code using this method.": [
         "Emme pystyneet lähettämään vahvistuskoodia tällä menetelmällä."
-      ],
-      "We were not able to load some invitations": [
-        "Joitain kutsuja ei voitu ladata"
       ],
       "We were not able to load some items": [
         "Emme voineet ladata joitakin kohteita"
       ],
-      "We were not able to load some items shared with you": [
-        "Emme voineet ladata joitain kanssasi jaettuja kohteita"
-      ],
-      "We were not able to load some of your invitation to shared items": [
-        "Emme voineet ladata joitakin kutsujanne jaettuihin kohteisiin"
-      ],
-      "We were not able to load some of your saved shared links": [
-        "Joitakin tallennettuja jaettuja linkkejäsi ei voitu ladata."
-      ],
-      "We were not able to load some of your shared items": [
-        "Emme voineet ladata joitain jaettuja kohteitasi."
-      ],
-      "We were not able to load some search results": [
-        "Emme voineet ladata joitain hakutuloksia"
-      ],
-      "We were not able to load the file history": [
-        "Emme voineet ladata tiedostohistoriaa"
-      ],
       "We were not able to load the folder contents": [
         "Emme voineet ladata kansion sisältöä"
-      ],
-      "We're sorry, but free upload is not available right now.": [
-        "Valitettavasti ilmainen lataus ei ole tällä hetkellä saatavilla."
       ],
       "Wrong billing address": [
         "Virheellinen laskutusosoite"
@@ -4156,23 +3890,11 @@
       ]
     },
     "Error message": {
-      "Access denied": [
-        "Käyttöoikeutta ei ole"
-      ],
       "App currently unavailable": [
         "Sovellus ei ole tällä hetkellä käytettävissä"
       ],
-      "Brace yourself till we get the error fixed.": [
-        "Varaudu odottaamaan virheen korjausta."
-      ],
       "Error: ${ errorMessage }": [
         "Virhe: ${ errorMessage }"
-      ],
-      "Internal server error": [
-        "Sisäinen palvelinvirhe"
-      ],
-      "Not found": [
-        "Ei löytynyt"
       ],
       "Oops, something went wrong": [
         "Hups, jotain meni pieleen"
@@ -4194,9 +3916,6 @@
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "Lisäsalasanan ollessa käytössä, voidaan aliaksia hallita vain ${ PASS_APP_NAME }issa."
-      ],
-      "You may also refresh the page or try again later.": [
-        "Voit myös päivittää sivun tai yrittää myöhemmin uudelleen."
       ]
     },
     "Error notification": {
@@ -4258,12 +3977,6 @@
     "Event title": {
       "(no title)": [
         "(ei nimeä)"
-      ]
-    },
-    "Failed": {
-      "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } epäonnistui",
-        "${ countOfFailedLinks } epäonnistui"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4493,6 +4206,14 @@
         "Teratavua"
       ]
     },
+    "Filter": {
+      "All": [
+        "Kaikki"
+      ],
+      "Errors": [
+        "Virheet"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } päivitettiin"
@@ -4544,12 +4265,6 @@
       "Contacts": [
         "Yhteystiedot"
       ],
-      "Create new album": [
-        "Luo uusi albumi"
-      ],
-      "Create new shared album": [
-        "Luo uusi jaettu albumi"
-      ],
       "Domain": [
         "Verkkotunnus"
       ],
@@ -4559,33 +4274,11 @@
       "Password ends with": [
         "Salasana päättyy"
       ],
-      "Rename album": [
-        "Nimeä albumi uudelleen"
-      ],
       "Security Center": [
         "Suojauskeskus"
       ],
       "Username": [
         "Käyttäjätunnus"
-      ]
-    },
-    "Heading": {
-      "Add ${ photoCount } photo to": [
-        "Lisää ${ photoCount } kuva albumiin",
-        "Lisää ${ photoCount } kuvaa albumiin"
-      ],
-      "Add to shared album": [
-        "Lisää jaettuun albumiin"
-      ],
-      "All albums": [
-        "Kaikki albumit"
-      ],
-      "Recent": [
-        "Viimeisin"
-      ],
-      "Share ${ photoCount } photo via": [
-        "Jaa ${ photoCount } kuva käyttäen",
-        "Jaa ${ photoCount } kuvaa käyttäen"
       ]
     },
     "Hint": {
@@ -4931,21 +4624,11 @@
         "${ addressCount } sähköpostiosoite",
         "${ addressCount } sähköpostiosoitetta"
       ],
-      "${ albumName } has been successfully deleted": [
-        "${ albumName } on poistettu"
-      ],
-      "${ albums } album": [
-        "${ albums } albumi",
-        "${ albums } albumia"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe kirjoitusavustaja"
-      ],
-      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
-        "${ BRAND_NAME } Workspace antaa tiimillesi mahdollisuuden tehdä tehokasta yhteistyötä vaarantamatta yrityksesi tietoja."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
@@ -4989,39 +4672,15 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME }- ja ${ SHEETS_APP_NAME } -tiedostoja ei voida ladata suoraan, eikä niitä sisällytetä tähän lataukseen. Voit ladata muut tiedostot napsauttamalla 'Jatka lataamista'."
       ],
-      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } havaitsi, että paikallinen hakuindeksi on vioittunut eikä sitä voida enää käyttää. Rakentakaa indeksi uudelleen haun palauttamiseksi."
-      ],
-      "${ DRIVE_APP_NAME } on App Store": [
-        "${ DRIVE_APP_NAME } App Storessa"
-      ],
-      "${ DRIVE_APP_NAME } on Play Store": [
-        "${ DRIVE_APP_NAME } Play Kaupassa"
-      ],
-      "${ email } invited you to join ${ albumName }": [
-        "${ email } kutsui sinut liittymään albumiin ${ albumName }"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: täysikokoinen kuva"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: matalatarkkuuksinen esikatselu"
       ],
-      "${ files } file": [
-        "${ files } tiedosto",
-        "${ files } tiedostoa"
-      ],
-      "${ folders } folder": [
-        "${ folders } kansio",
-        "${ folders } kansiota"
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } ryhmä löytyi",
         "${ groupCounts } ryhmää löytyi"
-      ],
-      "${ invitationsCount } pending invitation": [
-        "${ invitationsCount } odottava kutsu",
-        "${ invitationsCount } odottavaa kutsua"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe-kirjoitusavustajan"
@@ -5040,14 +4699,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uudistushinta ja -päivä pysyvät ennallaan."
-      ],
-      "${ photoCount } item": [
-        "${ photoCount } kohde",
-        "${ photoCount } kohdetta"
-      ],
-      "${ photos } photo": [
-        "${ photos } kuva",
-        "${ photos } kuvaa"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
@@ -5089,9 +4740,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } tunniste valittu",
         "${ selectedFoldersCountLocalized } tunnistetta valittu"
-      ],
-      "${ state.result.entries.length } entries": [
-        "${ state.result.entries.length } kohdetta"
       ],
       "${ storage } storage": [
         "${ storage } tallennustilaa"
@@ -5144,9 +4792,6 @@
       ],
       "30-day money-back guarantee.": [
         "30 päivän rahat takaisin -takuu."
-      ],
-      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
-        "${ DRIVE_APP_NAME }:n uusi versio on saatavilla. Päivitä sivu jatkaaksesi hakua."
       ],
       "A number will be added to the filename": [
         "Lisää tiedoston nimeen numeron"
@@ -5220,9 +4865,6 @@
       "Already in your library": [
         "On jo kirjastossasi"
       ],
-      "Also try looking in Trash.": [
-        "Yritä etsiä myös roskakorista."
-      ],
       "American Express SafeKey logo": [
         "American Express SafeKey -logo"
       ],
@@ -5232,23 +4874,11 @@
       "Amount below minimum (${ amount }).": [
         "Summa on vähimmäismäärää pienempi (${ amount })."
       ],
-      "An active recovery file": [
-        "Aktiivinen palautustiedosto"
-      ],
-      "An issue occurred during the restore process.": [
-        "Ongelma palautusprosessissa."
-      ],
       "and": [
         "ja"
       ],
-      "And access it from anywhere": [
-        "Ja käytä sitä mistä tahansa"
-      ],
       "Anonymous": [
         "Anonyymi"
-      ],
-      "Apr": [
-        "huhti"
       ],
       "Are you sure you want to discard your changes?": [
         "Haluatko varmasti hylätä muutokset?"
@@ -5259,17 +4889,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Haluatko varmasti tyhjentää roskakorin ja poistaa kaikki kohteet pysyvästi?"
       ],
-      "Are you sure you want to permanently delete": [
-        "Haluatko varmasti poistaa pysyvästi kohteen"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Haluatko varmasti poistaa kohteen \"${ itemName }\" roskakorista pysyvästi?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Haluatko varmasti poistaa valitut kohteet roskakorista pysyvästi?"
-      ],
-      "Are you sure you want to proceed?": [
-        "Haluatko varmasti jatkaa?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Ainakin ${ BETTER_PASSWORD_LENGTH } merkkiä"
@@ -5280,23 +4904,14 @@
       "Attention required": [
         "Huomiota vaaditaan"
       ],
-      "Aug": [
-        "elo"
-      ],
       "Awaiting transaction": [
         "Odotetaan siirtoa"
       ],
       "Balance from your previous subscription": [
         "Saldoa edellisestä tilauksestasi"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Koska ${ DRIVE_APP_NAME } on päästä päähän -salattu, emme voi käsitellä tai purkaa tiedostojesi salausta puolestasi. Avataksesi aseman lukituksen salasanan nollauksen jälkeen sinulla on oltava jokin seuraavista:"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Ennen kuin pyydät uuden vahvistuskoodin, tarkista roskapostikansiosi ja varmista, että osoite ${ strong } on oikea."
-      ],
-      "Better in the app": [
-        "Parempi sovelluksessa"
       ],
       "Billing cycle: ${ text }": [
         "Laskutusjakso: ${ text }"
@@ -5325,17 +4940,11 @@
       "Can't move a folder into itself": [
         "Kansiota ei voi siirtää itseensä"
       ],
-      "Can't rename to same name": [
-        "Ei voi nimetä uudelleen samaksi nimeksi"
-      ],
       "Can't write into folder": [
         "Kansioon ei voida kirjoittaa"
       ],
       "Canceled": [
         "Peruttu"
-      ],
-      "Cannot load links": [
-        "Linkkien lataus epäonnistui"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
@@ -5349,23 +4958,14 @@
       "Choose a plan that works best for you.": [
         "Valitse tilaus, joka sopii sinulle parhaiten."
       ],
-      "Clear all search data": [
-        "Tyhjennä kaikki hakutiedot"
-      ],
       "Clear data": [
         "Tyhjennä tiedot"
       ],
       "Clear encrypted search data": [
         "Tyhjennä salatun haun tiedot"
       ],
-      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Selaimen välimuistin tyhjennys poistaa hakutietokannan laitteelta ja kaikki tiedostot on indeksoitava haun käytön aikana uudelleen."
-      ],
       "Clears browser data related to the encrypted search.": [
         "Tyhjentää salattuun hakuun liittyvät tiedot selaimen välimuistista."
-      ],
-      "Clears browser data related to the search.": [
-        "Tyhjentää selaimen hakuun liittyvät tiedot."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
@@ -5384,9 +4984,6 @@
       ],
       "Continue": [
         "Jatka"
-      ],
-      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "Jatka ${ DRIVE_APP_NAME }n käyttämistä ja avaa levy myöhemmin"
       ],
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
@@ -5420,9 +5017,6 @@
       "Create in": [
         "Luo kalenteriin"
       ],
-      "Create links and share your files with others.": [
-        "Luo linkkejä ja jaa tiedostojasi muille."
-      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Hyvitys edellisen tilausjaksosi käyttämättömästä osuudesta"
       ],
@@ -5438,9 +5032,6 @@
       "Data integrity check failed": [
         "Tietojen eheystarkistus epäonnistui"
       ],
-      "Dec": [
-        "Joulu"
-      ],
       "Decrypting files": [
         "Puretaan tiedostojen salausta"
       ],
@@ -5452,10 +5043,6 @@
       ],
       "default email address": [
         "oletussähköpostiosoite"
-      ],
-      "Delete locked drive": [
-        "Poista lukittu levy",
-        "Poista lukitut levyt"
       ],
       "Details": [
         "Lisätiedot"
@@ -5488,9 +5075,6 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tilin alennus katkaisee kaikki yhteydet maksullisiin ${ VPN_APP_NAME } -palvelimiin."
       ],
-      "Download ${ name } app": [
-        "Lataa ${ name }-sovellus"
-      ],
       "Download current logs": [
         "Lataa nykyiset lokitiedot"
       ],
@@ -5511,9 +5095,6 @@
       ],
       "Drop file here to upload": [
         "Pudota ladattava tiedosto tähän"
-      ],
-      "Drop files here": [
-        "Pudota tiedostoja tähän"
       ],
       "Drop files here to upload or click on the upload button": [
         "Lähetä tiedostoja vetämällä ne tähän tai klikkaamalla lähetyspainiketta"
@@ -5542,17 +5123,8 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Roskakoriin ja roskapostiin yli 30 päivää sitten siirretyt viestit poistetaan automaattisesti."
       ],
-      "Empty folder": [
-        "Tyhjä kansio"
-      ],
       "Enabling auto-deletion…": [
         "Otetaan automaattista poistoa käyttöön…"
-      ],
-      "Enabling drive search": [
-        "Levyhakua otetaan käyttöön"
-      ],
-      "Encrypted search is here": [
-        "Salattu haku on tässä"
       ],
       "End-to-end encrypted": [
         "Päästä päähän -salattu"
@@ -5603,12 +5175,6 @@
       "Expired": [
         "Voimassaolo päättynyt"
       ],
-      "Export diagnostic logs for technical support and troubleshooting": [
-        "Vie diagnostiikkalokit teknistä tukea ja vianetsintää varten"
-      ],
-      "Feb": [
-        "helmi"
-      ],
       "File could not be scanned": [
         "Tiedostoa ei voitu skannata"
       ],
@@ -5618,9 +5184,6 @@
       "File will not be updated": [
         "Tiedostoa ei tallenneta"
       ],
-      "Files and folders that others shared with you will appear here": [
-        "Muiden sinulle jakamat tiedostot ja kansiot näkyvät tässä"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Vain tiedostot (ei valokuvia, ${ DOCS_APP_NAME }- tai ${ SHEETS_APP_NAME }-tiedostoja) – yhteensä enintään 100 Gt, 100 000 tiedostoa ja 50 Gt tiedostoa kohden"
       ],
@@ -5629,9 +5192,6 @@
       ],
       "Folder will not be uploaded": [
         "Kansiota ei tallenneta"
-      ],
-      "Folders you sync from your computer will appear here.": [
-        "Tietokoneeltasi synkronoidut kansiot näkyvät tässä."
       ],
       "for ${ price }": [
         "hintaan ${ price }"
@@ -5645,23 +5205,8 @@
       "Free 5GB encrypted storage to get started": [
         "5 Gt ilmaista salattua tallennustilaa päästäksesi alkuun"
       ],
-      "from the version history?": [
-        "versiohistoriasta?"
-      ],
       "Geoblocking": [
         "Geoblokkaus"
-      ],
-      "Get logs and other information for technical support and troubleshooting": [
-        "Hakekaa lokit ja muut tiedot teknistä tukea ja vianetsintää varten"
-      ],
-      "Get the app to backup photos from your phone or upload them here.": [
-        "Hanki sovellus varmuuskopioidaksesi laitteesi kuvat tai tallentaaksesi niitä tänne."
-      ],
-      "Get the desktop app to sync files from your computer.": [
-        "Hanki työpöytäsovellus synkronoidaksesi tietokoneesi tiedostoja."
-      ],
-      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
-        "Tutustu ${ DRIVE_APP_NAME }en ja ansaitse 3 Gt tallennustilakorotuksesi! Toimi tänään."
       ],
       "Google Pay mark": [
         "Google Payn merkki"
@@ -5675,14 +5220,8 @@
       "High Priority": [
         "Korkea tärkeys"
       ],
-      "How does encrypted search work?": [
-        "Miten salattu haku toimii?"
-      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Vahvistan täten vilpittömästi, että raportissa annetut tiedot ja lausunnot ovat oikeita ja täydellisiä."
-      ],
-      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
-        "Jos näitä tiedostoja ei ole ladattu kokonaan paikallisesti laitteelle ${ deviceName }, menetät pääsyn niihin."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu niin vastaamme yhden työpäivän kuluessa."
@@ -5695,9 +5234,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
-      ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "Jos sinulla on jokin näistä, aloita eston poistaminen avaamalla ${ BRAND_NAME }-tilisi asetukset."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varmuuspalautuskoodistasi, jotka sait lisätessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
@@ -5745,38 +5281,8 @@
       "Included": [
         "Sisältyy"
       ],
-      "Index is empty.": [
-        "Indeksi on tyhjä."
-      ],
-      "Indexed ${ first }": [
-        "Indeksoitu ${ first }"
-      ],
-      "Indexed ${ first } and ${ second }": [
-        "Indeksoitu ${ first } ja ${ second }"
-      ],
-      "Indexed ${ first }, ${ second } and ${ third }": [
-        "Indeksoitu ${ first }, ${ second } ja ${ third }"
-      ],
-      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
-        "Indeksoitu ${ first }, ${ second }, ${ third } ja ${ fourth }"
-      ],
-      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "Indeksointi osui odottamattomaan tilaan eikä voi jatkua. Palauttakaa toiminta rakentamalla indeksi uudelleen."
-      ],
-      "Indexing in progress": [
-        "Indeksointi käynnissä"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Indeksoidaan kohdetta ${ esProgress }/${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Indeksoidaan hakutuloksia…"
-      ],
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
-      ],
-      "Integrity issues found": [
-        "Eheysongelmia löytynyt"
       ],
       "Internet connection lost": [
         "Internet-yhteyttä ei ole"
@@ -5787,17 +5293,8 @@
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
       ],
-      "Invitation confirmed": [
-        "Kutsu vahvistettu"
-      ],
       "Invite link copied": [
         "Kutsulinkki kopioitiin"
-      ],
-      "iOS and Android Apps": [
-        "iOS- ja Android-sovellukset"
-      ],
-      "Issues found": [
-        "Löytyi ongelmia"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Näyttää siltä, että yritit hiljattain tallentaa kohteen ${ uploadName }. Jos siirto epäonnistui, ${ replaceFile }. Jos siirto on edelleen käynnissä, sen korvaaminen peruu käynnissä olevan siirron."
@@ -5805,29 +5302,11 @@
       "It's better to have:": [
         "On parempi olla:"
       ],
-      "Items in the trash will stay here until you delete them permanently": [
-        "Roskakorissa olevat kohteet säilyvät siellä kunnes poistat ne pysyvästi"
-      ],
-      "Items moved to the trash will stay here until deleted": [
-        "Roskakoriin siirretyt kohteet pysyvät täällä, kunnes ne poistetaan"
-      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "VPN:ää kannattaa käyttää aina. Mutta näissä tilanteissa kyberturvauhat voivat olla suurimmat:"
       ],
-      "It’s easy and secure": [
-        "Se on helppoa ja turvallista"
-      ],
-      "Jan": [
-        "tammi"
-      ],
       "JCB logo": [
         "JCB-logo"
-      ],
-      "Jul": [
-        "heinä"
-      ],
-      "Jun": [
-        "kesä"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."
@@ -5846,9 +5325,6 @@
       ],
       "Large imports can take several days.": [
         "Suuret tuonnit saattavat kestää useita päiviä."
-      ],
-      "Last week": [
-        "Viime viikolla"
       ],
       "Learn more": [
         "Lue lisää"
@@ -5874,9 +5350,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Kalenteria ladataan, odota. Sinut ohjataan uudelle välilehdelle aikataulualustallemme Calendlyyn."
       ],
-      "Loading links": [
-        "Ladataan linkkejä"
-      ],
       "Loading preview": [
         "Ladataan esikatselua"
       ],
@@ -5886,14 +5359,8 @@
       "Low Priority": [
         "Alhainen tärkeys"
       ],
-      "Makes your account safer": [
-        "Tekee tilistäsi turvallisemman"
-      ],
       "Malware detected": [
         "Haittaohjelma havaittu"
-      ],
-      "Mar": [
-        "maalis"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
@@ -5901,9 +5368,6 @@
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkki",
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkkiä"
-      ],
-      "May": [
-        "tuoko"
       ],
       "Medium Priority": [
         "Keskitason tärkeys"
@@ -5920,29 +5384,8 @@
       "Monitor accounts": [
         "Valvo tilejä"
       ],
-      "More": [
-        "Lisää"
-      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Useimmat julkiset Wi-Fi-verkot ovat turvallisia, mutta joskus puutteellisesti suojattuja, jolloin voit altistua kyberuhkille. VPN salaa tietoliikenteesi ja pitää sinut suojattuna."
-      ],
-      "Move ${ dragCount } item": [
-        "Siirrä ${ dragCount } kohde",
-        "Siirrä ${ dragCount } kohdetta"
-      ],
-      "Move ${ fileCount } file": [
-        "Siirrä ${ fileCount } tiedosto",
-        "Siirrä ${ fileCount } tiedostoa"
-      ],
-      "Move ${ folderCount } folder": [
-        "Siirrä ${ folderCount } kansio",
-        "Siirrä ${ folderCount } kansiota"
-      ],
-      "Moving files": [
-        "Tiedostoja siirretään"
-      ],
-      "My Links": [
-        "Omat linkit"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
@@ -5953,9 +5396,6 @@
       "No": [
         "Ei"
       ],
-      "No Albums": [
-        "Albumeita ei ole"
-      ],
       "No contacts added yet": [
         "Yhteystietoja ei ole vielä lisätty"
       ],
@@ -5965,20 +5405,11 @@
       "No group found": [
         "Ryhmää ei löytynyt"
       ],
-      "No issue found": [
-        "Ongelmia ei löytynyt"
-      ],
       "No payment is required at this time.": [
         "Maksua ei nyt vaadita."
       ],
-      "No populator states found.": [
-        "Populaattorimääritteitä ei löytynyt."
-      ],
       "No results found": [
         "Tuloksia ei löytynyt"
-      ],
-      "No synced folders": [
-        "Synkronoituja kansioita ei ole"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Mikään tallennetuista avaimista ei kelpaa salaukseen. Viestien lähettämiseksi tähän osoitteeseen, lataa kelvollinen avain tai poista \"Salaa viestit\" käytöstä."
@@ -5989,15 +5420,6 @@
       "Not connected": [
         "Ei yhdistetty"
       ],
-      "Not enough storage space": [
-        "Ei tarpeeksi tallennustilaa"
-      ],
-      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Huomioi: Tiedot saattavat edelleen löytyä paikallisesti niiltä laitteilta, joille ${ DRIVE_APP_NAME } on asennettu."
-      ],
-      "Nov": [
-        "Nyt"
-      ],
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
       ],
@@ -6007,20 +5429,11 @@
       "Numbers": [
         "Numerot"
       ],
-      "Oct": [
-        "loka"
-      ],
       "of": [
         "/"
       ],
       "On public WiFi networks": [
         "Julkisissa Wi-Fi-verkoissa"
-      ],
-      "One encrypted suite. Full business protection.": [
-        "Yksi salattu ohjelmistopaketti. Täysi yrityssuojaus."
-      ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "Yksi salatuista levyistäsi on lukittu. Tämä johtuu todennäköisesti taannoisesta salasanan nollauksesta."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
@@ -6030,9 +5443,6 @@
       ],
       "or discover other features:": [
         "tai tutustu muihin ominaisuuksiin:"
-      ],
-      "Or use the \"+ New\" button": [
-        "Tai käytä \"+ Uusi\" -painiketta"
       ],
       "Organization size": [
         "Organisaation koko"
@@ -6064,30 +5474,11 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
       ],
-      "Permanently delete all files in your locked drive": [
-        "Poista kaikki lukitun levysi tiedostot"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline on yhteensopiva vain pelkkä teksti -muodon kanssa."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME lähettää viestin automaattisesti käyttäen nykyistä kirjoitustilaa."
-      ],
-      "Photo is not saved to your library": [
-        "Kuvaa ei ole tallennettu kirjastoosi"
-      ],
-      "Photo is set as album cover": [
-        "Kuva on asetettu albumin kansikuvaksi"
-      ],
-      "Photo saved to your Drive": [
-        "Kuva tallennettu Driveesi",
-        "Kuvat tallennettiin Driveesi"
-      ],
-      "Photo was copied to stream and marked favorite there.": [
-        "Kuva kopioitiin suoratoistoon ja merkittiin suosikiksi siellä."
-      ],
-      "Photos have been successfully recovered.": [
-        "Kuvat on palautettu."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Pyydä omistajaa kutsumaan sinut suoraan dokumenttiin."
@@ -6168,12 +5559,6 @@
       "Preview of documents is not yet supported.": [
         "Dokumenttien esikatselua ei vielä tueta."
       ],
-      "Previous versions are kept for ${ retentionLabel }": [
-        "Aiemmat versiot säilytetään ${ retentionLabel }"
-      ],
-      "Previous versions are not saved": [
-        "Edellisiä versioita ei säilytetä"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Hinta sisältää kaikki tilillesi tallennetut soveltuvat tilausjaksopohjaiset alennukset sekä etukoodit."
       ],
@@ -6183,29 +5568,14 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Yksityinen selaus (tai \"incognito\"-tila) on hyödyllinen pitämään toimintasi piilotettuna vain laitteellasi. Se estää selainta tallentamasta selaushistoriaa ja evästeitä, mutta se ei tee sinusta näkymätöntä. Internet-palveluntarjoajasi, verkon ylläpitäjäsi ja vierailemasi verkkosivustot näkevät edelleen, mitä teet verkossa."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Yksityinen haku otettiin käyttöön. Voit nyt sulkea tämän ilmoituksen ja aloittaa tiedostojen ja kansioiden etsinnän."
-      ],
-      "Public link": [
-        "Julkinen linkki"
-      ],
       "Public sharing of documents is not yet supported.": [
         "Dokumenttien julkista jakamista ei vielä tueta."
-      ],
-      "Re-indexing in progress": [
-        "Uudelleenindeksointi käynnissä"
-      ],
-      "Ready to add some photos?": [
-        "Oletko valmis lisäämään kuvia?"
       ],
       "RECOMMENDED": [
         "SUOSITELTU"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
-      ],
-      "Recovery process might take some time.": [
-        "Palautusprosessi saattaa kestää jonkin aikaa."
       ],
       "Referral link copied to your clipboard": [
         "Suosittelulinkki kopioitiin leikepöydälle"
@@ -6219,26 +5589,14 @@
       "Report has been sent": [
         "Ilmoitus lähetettiin"
       ],
-      "Request access, or switch to an account with access.": [
-        "Pyydä käyttöoikeutta tai vaihda tiliin, jolla on käyttöoikeus."
-      ],
       "Requested item doesn't exist anymore": [
         "Pyydettyä kohdetta ei ole enää olemassa"
       ],
       "Restore": [
         "Palauta"
       ],
-      "Restore Photos": [
-        "Palauta kuvia"
-      ],
       "Restored files ${ formattedDate }": [
         "${ formattedDate } palautetut tiedostot"
-      ],
-      "Restoring Photos... Please keep the tab open": [
-        "Kuvia palautetaan... Älä sulje välilehteä"
-      ],
-      "Running diagnostics...": [
-        "Diagnostiikkaa suoritetaan..."
       ],
       "Saving...": [
         "Tallennetaan..."
@@ -6246,65 +5604,17 @@
       "Scan the QR code with your mobile device": [
         "Skannaa QR-koodi mobiililaitteellasi"
       ],
-      "Scan to download": [
-        "Skannaa ladataksesi"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Hakua ei voida käyttää tässä selaimessa"
-      ],
-      "Search data is corrupted": [
-        "Hakutiedot ovat vioittuneet"
-      ],
-      "Search Enabled": [
-        "Haku otettiin käyttöön"
-      ],
-      "Search enabled. You may now close this dialogue and search for files and folders.": [
-        "Haku otettu käyttöön. Voit nyt sulkea tämän ikkunan ja etsiä tiedostoja ja kansioita."
-      ],
-      "Search encountered an internal error. Rebuild the index to recover.": [
-        "Haussa tapahtui sisäinen virhe. Palauttakaa toiminta rakentamalla indeksi uudelleen."
-      ],
-      "Search engine error": [
-        "Hakukonevirhe"
-      ],
-      "Search error": [
-        "Hakuvirhe"
-      ],
-      "Search is in an invalid state": [
-        "Haku on virheellisessä tilassa"
-      ],
-      "Search is ready. Your files have been indexed.": [
-        "Haku on valmis. Tiedostonne on indeksoitu."
-      ],
-      "Search module is not available.": [
-        "Hakumoduulia ei ole saatavilla."
-      ],
       "Select a destination folder": [
         "Valitse kohdekansio"
       ],
-      "Select a folder to make the copy in": [
-        "Valitkaa kansio, johon kopio tehdään"
-      ],
       "Select a folder to move to.": [
         "Valitse kohdekansio."
-      ],
-      "Select all items for": [
-        "Valitse kaikki kohteet ryhmästä"
-      ],
-      "Select an uploaded file or folder and create a link to it.": [
-        "Valitse tallennettu tiedosto tai kansio ja luo linkki siihen."
-      ],
-      "Select item": [
-        "Valitse kohde"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Valitse tähän osoitteeseen lähetettäville viesteille oletusarvoisesti käytettävä muoto."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Valitse tuotavat kalenterit. Jokaista tuotua kalenteria kohden luodaan uusi kalenteri tilaukseesi sisältyvän kalentereimäärän puitteissa."
-      ],
-      "Sep": [
-        "syys"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-maksut eivät ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
@@ -6327,23 +5637,8 @@
       "Setting up your new address…": [
         "Määritetään uutta osoitettasi…"
       ],
-      "Share files with links": [
-        "Jaa tiedostoja linkeillä"
-      ],
-      "Shared": [
-        "Jaettu"
-      ],
-      "Shared by ": [
-        "Jakanut "
-      ],
       "Shared link not found": [
         "Jakolinkkiä ei löytynyt"
-      ],
-      "Shared with me": [
-        "Jaettu minulle"
-      ],
-      "Shared with you": [
-        "Jaettu kanssasi"
       ],
       "Signature check will be ignored": [
         "Allekirjoitustarkistus ohitetaan"
@@ -6356,12 +5651,6 @@
       ],
       "Some items failed": [
         "Jotkin kohteet epäonnistuivat"
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Jotkin tiedostot eivät ole enää käytettävissä. Palauta ne käyttöösi. ${ StartRecoveryButton }"
-      ],
-      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Joitakin tämän albumin kuvia ei tallenneta aikajanallesi. Tämän albumin poistaminen poistaa nämä kuvat pysyvästi."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Jotkin verkkosivustot ja suoratoistopalvelut estävät sisältöä aluekohtaisesti. VPN:n avulla voit kiertää nämä rajoitukset ja käyttää Internetiä vapaasti."
@@ -6409,9 +5698,6 @@
       "that": [
         "että"
       ],
-      "The albums you create are shown here.": [
-        "Luomasi albumit löytyvät täältä."
-      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Latausmäärään sisältyy varsinaisten latausten lisäksi myös tiedostojen esikatselukerrat."
       ],
@@ -6424,17 +5710,11 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Jotta osoitteeseen voidaan lähettää salattuja viestejä, on omistajan palautettava päähän -salaus käyttöön."
       ],
-      "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "Hakukoneessa tapahtui sisäinen virhe. Palauttakaa toiminta rakentamalla indeksi uudelleen."
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Vahvistusprosessi avaa uuden selaimen välilehden. Poista käytöstä kaikki aktiiviset ponnahdusikkunoiden estotoiminnot."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Siirrettäviä tiedostoja on vielä jäljellä. Siirtojen hallinnan sulkeminen peruu kaikki siirrot."
-      ],
-      "There is nothing to see here": [
-        "Täällä ei ole mitään nähtävää"
       ],
       "Thinking about this": [
         "Mietitään tätä"
@@ -6447,9 +5727,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Tämä selain ei tue PDF-tiedostojen esikatselua. Lataa tiedosto."
-      ],
-      "This can NOT be undone. Please enter the device name to confirm removal.": [
-        "Tätä EI voi perua. Vahvista poisto syöttämällä laitteen nimi."
       ],
       "This file appears to be empty:": [
         "Tämä tiedosto näyttää olevan tyhjä:",
@@ -6470,10 +5747,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Tämä on nyt ${ defaultEmailAddress } uusien viestien lähettämistä varten."
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "Tätä kohdetta ei ole tallennettu valokuvakirjastoosi. Jos poistat sen tästä albumista, menetät pääsyn siihen pysyvästi.",
-        "Osaa valituista kohteista ei ole tallennettu Kuvat-kirjastoosi. Jos poistat ne tästä albumista, menetät pääsyn niihin pysyvästi."
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tämä linkki johtaa sivustolle, joka voi pyrkiä varastamaan salasanojesi ja maksukorttiesi tietojen kaltaisia tietoja."
       ],
@@ -6482,9 +5755,6 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Tämä tarkoittaa, että Internet-palveluntarjoajasi ja vierailemasi verkkosivustot eivät voi yhdistää henkilötietojasi verkkotoimintaasi."
-      ],
-      "This month": [
-        "Tässä kuussa"
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Verkkosivustot ja Internet-palveluntarjoajat (ISP) voivat käyttää tätä yksilöllistä koodia yhdistääkseen sijaintisi ja selaushistoriasi laitteeseesi"
@@ -6497,9 +5767,6 @@
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Tämä peruuttaa kaikki jäljellä olevat lähetykset. Peruutettuja tiedostoja ei tallenneta palveluun ${ DRIVE_APP_NAME }."
-      ],
-      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "Tämä poistaa vain albumin. Kuvasi säilyvät aikajanallasi. Tätä toimintoa ei voi kumota."
       ],
       "This will permanently delete the file you uploaded.": [
         "Tämä poistaa lähettämäsi tiedoston pysyvästi."
@@ -6519,20 +5786,11 @@
       "This will sign you out of all accounts currently logged in.": [
         "Tämä kirjaa sinut ulos kaikilta tileiltä, jolle olet tällä hetkellä kirjautunut."
       ],
-      "Time": [
-        "Aika"
-      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Suorita maksu lähettämällä ${ btcAmountBold } alla olevaan osoitteeseen."
       ],
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "Voit ladata nämä tiedostot avaamalla ne ${ DOCS_APP_NAME }- tai ${ SHEETS_APP_NAME }-sovelluksessa ja viemällä ne."
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Aidosti yksityistä hakua varten, ${ DRIVE_APP_NAME }n on indeksoitava tiedostosi paikallisesti."
-      ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Aidosti yksityistä hakua varten tiedostoistasi täytyy luoda paikallinen hakemisto. Voit edelleen käyttää ${ DRIVE_APP_NAME }a normaalisti – saat ilmoituksen kun indeksointi on valmis."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
@@ -6555,9 +5813,6 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Käyttääksesi osoitteen vahvistusta, sinun on luotettava yhteen tai useampaan käytettävissä olevaan julkiseen avaimeen, mukaan lukien se, jota haluat käyttää lähetykseen. Tämä estää salausavainten väärennyksen."
       ],
-      "Today": [
-        "Tänään"
-      ],
       "Total email addresses": [
         "Sähköpostiosoitteita yhteensä"
       ],
@@ -6576,29 +5831,17 @@
       "Trash": [
         "Roskakori"
       ],
-      "Trash is empty": [
-        "Roskakori on tyhjä"
-      ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Luota \"${ activeSignerText }\" -avaimeen tämän yhteyshenkilön uusien viestien todentamiseksi."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen."
       ],
-      "Try searching by file name, date, or type.": [
-        "Yritä etsiä tiedoston nimellä, päiväyksellä tai tyypillä."
-      ],
       "Unexpected download error": [
         "Odottamaton latausvirhe"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Valitettavasti näyttää siltä, että tiedoston tai joidenkin sen tietojen salausta ei voida purkaa."
-      ],
-      "Unknown date": [
-        "Tuntematon päivämäärä"
-      ],
-      "Unlock drive to recover files": [
-        "Avaa levy palauttaaksesi tiedostoja"
       ],
       "Unsaved changes": [
         "Tallentamattomia muutoksia"
@@ -6608,12 +5851,6 @@
       ],
       "Unsupported file type for Photos": [
         "Tiedostotyyppiä ei tueta Photos-palvelussa"
-      ],
-      "Update required": [
-        "Päivitys vaaditaan"
-      ],
-      "Updating drive search...": [
-        "Päivitetään levyhakua..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Päivitä milloin tahansa tuodaksesi loputkin"
@@ -6629,9 +5866,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Päivitä säilyttääksesi ${ planTitle } tilauksesi edut."
-      ],
-      "upgrade your storage": [
-        "päivitä tallennustilasi"
       ],
       "Upload Failed": [
         "Lähetys epäonnistui"
@@ -6663,12 +5897,6 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Vahvistus avaa uuden välilehden, joten poista kaikki ponnahdusestot käytöstä. Sinua ei veloiteta ja kortin vahvistukseen käytetty summa palautetaan välittömästi."
       ],
-      "Version is deleted": [
-        "Versio on poistettu"
-      ],
-      "Version is restored": [
-        "Versio on palautettu"
-      ],
       "Version number successfully copied to clipboard": [
         "Versionumero kopioitiin leikepöydälle"
       ],
@@ -6681,18 +5909,8 @@
       "Waiting": [
         "Odotetaan"
       ],
-      "Want to sync files faster?": [
-        "Haluatko synkronoida tiedostot nopeammin?"
-      ],
       "Warning": [
         "Varoitus"
-      ],
-      "Way to go, you've just increased your storage to 5 GB!": [
-        "Hienoa! Olet juuri kasvattanut tallennustilasi 5 gigatavuun."
-      ],
-      "We couldn't save this photo to your Drive": [
-        "Emme voineet tallentaa tätä kuvaa Driveesi",
-        "Emme voineet tallentaa näitä kuvia Driveesi"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Emme voineet varmistaa, että ${ nameAuthor } on ladannut ${ nodeName }. Seuraavaa on mahdollisesti muutettu: tiedostojen tietojen järjestys. Avaa vain, jos luotat siihen."
@@ -6708,10 +5926,6 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Käytämme 3-D Securea maksujesi suojaukseen"
-      ],
-      "We were not able to add this photo to your album": [
-        "Emme voineet lisätä tätä kuvaa albumiisi",
-        "Emme voineet lisätä joitain kuviasi albumiisi"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ohjaamme sinut uudessa välilehdessä PayPaliin suorittamaan maksun. Jos käytät ponnahdusikkunoiden estäjiä, poista ne käytöstä jatkaaksesi."
@@ -6731,13 +5945,7 @@
       "Week": [
         "Viikko"
       ],
-      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
-        "Tervetuloa ${ DRIVE_APP_NAME } -palveluun. Ensimmäisten 10 minuutin aikana lataamasi tiedostot eivät vaikuta tallennustilan kiintiöön."
-      ],
       "What do you want to do?": [
-        "Mitä haluat tehdä?"
-      ],
-      "What would you like to do?": [
         "Mitä haluat tehdä?"
       ],
       "When working remotely": [
@@ -6746,17 +5954,11 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Kun yhdistät VPN:ään, se käyttää salaustekniikkaa IP-osoitteesi (laitteellesi annettu yksilöllinen koodi) salaamiseen."
       ],
-      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
-        "Kun poistat laitteen ${ deviceName } synkronoinnista, kaikki tältä laitteelta Omiin tietokoneisiini lisätyt kansiot poistetaan pysyvästi ${ DRIVE_APP_NAME } -palvelusta."
-      ],
       "who": [
         "kuka"
       ],
       "Who has access": [
         "Kenellä on pääsy"
-      ],
-      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
-        "palautetaan ${ formattedRevisionDate } tallennettuun versioon. Kaikki muut versiot säilytetään."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista tunnistautumistapaa?"
@@ -6764,33 +5966,20 @@
       "Would you like to receive a new verification code?": [
         "Haluatko uuden vahvistuskoodin?"
       ],
-      "Would you like to restore your files?": [
-        "Haluatko palauttaa tiedostot?"
-      ],
-      "Would you like to save it before removing?": [
-        "Haluatko tallentaa sen ennen poistamista?",
-        "Haluatko tallentaa ne ennen poistamista?"
-      ],
-      "Would you like to save them before removing?": [
-        "Haluatko tallentaa ne ennen poistamista?"
-      ],
       "Writing assistant": [
         "Kirjoitusavustaja"
       ],
       "Yes": [
         "Kyllä"
       ],
-      "Yesterday": [
-        "Eilen"
+      "You": [
+        "Sinä"
       ],
       "you": [
         "sinä"
       ],
       "You already have a free account": [
         "Sinulla on jo ilmainen tili"
-      ],
-      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Olet poistumassa jaosta. Et voi käyttää sen sisältöä, ennen kuin sen omistaja jakaa sen sinulle uudelleen."
       ],
       "You are about to open another browser tab and visit:": [
         "Olet avaamassa uutta selaimen välilehteä sivustolle:"
@@ -6836,15 +6025,8 @@
       "You cannot undo this action.": [
         "Et voi kumota toimintoa."
       ],
-      "You don't have permission to copy files to this folder.": [
-        "Sinulla ei ole lupaa kopioida tiedostoja tähän kansioon."
-      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut muista palveluista."
-      ],
-      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "Sinulla on ${ expiresInDays } päivää aikaa lunastaa 3 Gt tervetuliaisetusi ja ",
-        "Sinulla on ${ expiresInDays } päivää aikaa lunastaa 3 Gt tervetuliaisetusi ja "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Sinulla on ${ planTitle } -kokeilutilaus. Jos haluat jatkaa tilausta kokeilujakson jälkeen, lisää maksutapa."
@@ -6858,18 +6040,11 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Kaikki laajemmat ${ MAIL_APP_NAME } -määritykset, kuten käyttäjät, osoitteet ja omat verkkotunnukset on poistettava käytöstä tai poistettava ennen tilauksen alennusta."
       ],
-      "You need access": [
-        "Tarvitset käyttöoikeuden"
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Menetät pääsyn ${ planTitle } -ominaisuuksiin tänä päivänä."
       ],
       "You will lose all unsaved changes.": [
         "Menetät kaikki tallentamattomat muutokset."
-      ],
-      "You will need to save it again from the public link page.": [
-        "Sinun on tallennettava se uudestaan julkisen linkin sivulta.",
-        "Sinun on tallennettava ne uudestaan julkisen linkin sivulta."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Sinua ei laskuteta, jos peruutat ennen päivää ${ trialEndsOnFormatted }"
@@ -6908,9 +6083,6 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Tilisi asetuksissa on käytössä käännetty verovelvollisuus, jota valittu tilaus ei tue. Jatkaaksesi joko poista ALV-numero laskutustiedoista tai valitse toinen tilaus."
       ],
-      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "Selaimestanne loppui tila, kun tiedostoja indeksoitiin hakua varten. Vapauttakaa tallennustilaa ja rakentakaa sitten indeksi uudelleen."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
       ],
@@ -6922,12 +6094,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
-      ],
-      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
-        "Tiedostojasi indeksoidaan parhaillaan uudelleen. Voit jatkaa hakua – tulokset saattavat olla puutteellisia, kunnes indeksointi on valmis. Ilmoitamme sinulle, kun se on valmis."
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Tiedostosi eivät ole enää salasanan uudelleenasetuksen vuoksi käytettävissä. Palauta käyttöoikeus lataamalla vanha salausavaimesi uudelleen. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
@@ -6976,12 +6142,6 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Tilauksesi on rajoitettu 10 versioon, joita säilytetään enintään 7 päivää"
-      ],
-      "Your previous password": [
-        "Edellinen salasanasi"
-      ],
-      "Your previous recovery phrase": [
-        "Edellinen palautuslauseesi"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein.",
@@ -7075,17 +6235,8 @@
       ]
     },
     "Label": {
-      "# of downloads": [
-        "Latausmäärä"
-      ],
-      "${ albumProgress.added } of ${ albumProgress.total }": [
-        "${ albumProgress.added }/${ albumProgress.total }"
-      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
-      ],
-      "${ downloads } downloads": [
-        "${ downloads } latausta"
       ],
       "${ n } month": [
         "${ n } kuukausi",
@@ -7101,9 +6252,6 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } merkkiä"
-      ],
-      "(Expired)": [
-        "(erääntynyt)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
@@ -7159,9 +6307,6 @@
       "App password": [
         "Sovellussalasana"
       ],
-      "Applications in a business setting": [
-        "Sovellukset yritysympäristössä"
-      ],
       "Apply to all duplicated files": [
         "Toteuta kaikille tiedostojen kaksoiskappaleille"
       ],
@@ -7170,9 +6315,6 @@
       ],
       "Apply to all unverified items": [
         "Käytä kaikille vahvistamattomille kohteille"
-      ],
-      "Asset": [
-        "Tiedosto"
       ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
@@ -7285,14 +6427,8 @@
       "Country": [
         "Maa"
       ],
-      "Create ${ BRAND_NAME } account": [
-        "Luo ${ BRAND_NAME }-tili"
-      ],
       "Created": [
         "Luotu"
-      ],
-      "Created ${ created }": [
-        "Luotu ${ created }"
       ],
       "Credits": [
         "Krediitit"
@@ -7300,33 +6436,14 @@
       "Delete": [
         "Poista"
       ],
-      "Delete drive?": [
-        "Poistetaanko levy?",
-        "Poistetaanko levyt?"
-      ],
       "Delete link and remove access for everyone": [
         "Poista linkki ja käyttöoikeudet kaikilta"
       ],
       "Delete recovery-related information.": [
         "Poista palautukseen liittyvät tiedot."
       ],
-      "Deleted": [
-        "Poistettu"
-      ],
-      "Deleted ${ deleted }": [
-        "Poistettu ${ deleted }"
-      ],
       "Device": [
         "Laite"
-      ],
-      "Device #${ position }": [
-        "Laite #${ position }"
-      ],
-      "Device name": [
-        "Laitteen nimi"
-      ],
-      "Device: ${ name }": [
-        "Laite: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Poista tämä linkki käytöstä tiettynä päivänä"
@@ -7382,12 +6499,6 @@
       "Encrypt emails": [
         "Salaa viestit"
       ],
-      "Enter device name": [
-        "Syötä laitteen nimi"
-      ],
-      "Environment compatible": [
-        "Yhteensopiva ympäristö"
-      ],
       "Exact host matching": [
         "Tarkka isäntänimien vastaavuus"
       ],
@@ -7397,14 +6508,8 @@
       "Expired": [
         "Erääntynyt"
       ],
-      "Expired on ${ formatted }": [
-        "Vanhentui ${ formatted }"
-      ],
       "Expires": [
         "Erääntyy"
-      ],
-      "Expires ${ formatted }": [
-        "Vanhentuu ${ formatted }"
       ],
       "Expiry": [
         "Erääntyminen"
@@ -7472,12 +6577,6 @@
       "Include message and file name in invite email": [
         "Sisällytä viestin teksti ja tiedoston nimi kutsuviestiin"
       ],
-      "Index kinds": [
-        "Indeksilajit"
-      ],
-      "Indexing": [
-        "Indeksoidaan"
-      ],
       "Integrated 2FA authenticator": [
         "Sisäänrakennettu kaksivaiheinen todentaja"
       ],
@@ -7508,9 +6607,6 @@
       "Location": [
         "Sijainti"
       ],
-      "Location: ${ item.location }": [
-        "Sijainti: ${ item.location }"
-      ],
       "Log in or sign up ": [
         "Kirjaudu tai rekisteröidy "
       ],
@@ -7532,9 +6628,6 @@
       "Modified": [
         "Muokattu"
       ],
-      "Modified ${ modified }": [
-        "Muokattu ${ modified }"
-      ],
       "Move to Archive": [
         "Siirrä arkistoon"
       ],
@@ -7544,9 +6637,6 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Oltava vähintään ${ MIN_PASSWORD_LENGTH } merkkiä"
       ],
-      "My Albums": [
-        "Omat albumit"
-      ],
       "Name": [
         "Nimi"
       ],
@@ -7555,9 +6645,6 @@
       ],
       "Never": [
         "Ei koskaan"
-      ],
-      "Never expires": [
-        "Ei vanhene koskaan"
       ],
       "Never fill on this exact URL": [
         "Älä koskaan täytä juuri tätä URL-osoitetta"
@@ -7592,9 +6679,6 @@
       "Other": [
         "Muu"
       ],
-      "Outdated version": [
-        "Vanhentunut versio"
-      ],
       "Parent domain and subdomains (default)": [
         "Pääverkkotunnus ja aliverkkotunnukset (oletus)"
       ],
@@ -7613,17 +6697,11 @@
       "Payment method": [
         "Maksutapa"
       ],
-      "Pending invitation": [
-        "Odottava kutsu"
-      ],
       "PGP scheme": [
         "PGP-malli"
       ],
       "Phone number": [
         "Puhelinnumero"
-      ],
-      "Photo": [
-        "Kuva"
       ],
       "Please provide full details to help us take appropriate action": [
         "Kerro yksityiskohtaiset tiedot, jotta voimme tehdä oikean ratkaisun"
@@ -7667,9 +6745,6 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
-      "Searchable": [
-        "Haettavissa"
-      ],
       "Select type of abuse": [
         "Valitse väärinkäytön tyyppi"
       ],
@@ -7679,35 +6754,11 @@
       "Set a password to limit access via link": [
         "Aseta salasana rajoittaaksesi pääsyä linkin kautta"
       ],
-      "Set recovery method": [
-        "Määritä palautustapa"
-      ],
-      "Share a file, folder, or album": [
-        "Jaa tiedosto, kansio tai albumi"
-      ],
       "Shared": [
         "Jaettu"
       ],
-      "Shared by": [
-        "Jakanut"
-      ],
-      "Shared by ${ sharedBy }": [
-        "Jakanut ${ sharedBy }"
-      ],
-      "Shared by Public link": [
-        "Jaettu julkisella linkillä"
-      ],
-      "Shared on": [
-        "Jaettu"
-      ],
-      "Shared on ${ sharedOn }": [
-        "Jaettu ${ sharedOn }"
-      ],
       "Shared with me": [
         "Jaettu minulle"
-      ],
-      "Show indexing progress of Encrypted Search": [
-        "Näytä salatun haun indeksoinnin edistyminen"
       ],
       "Sign emails": [
         "Allekirjoita viestit"
@@ -7766,9 +6817,6 @@
       "Theme": [
         "Teema"
       ],
-      "This will permanently delete all files in your locked drive.": [
-        "Tämä poistaa kaikki lukitun levysi tiedostot pysyvästi."
-      ],
       "Thomas": [
         "Tuomas"
       ],
@@ -7781,29 +6829,14 @@
       "Type": [
         "Tyyppi"
       ],
-      "Unlock drive": [
-        "Avaa levy"
-      ],
-      "Unlock drive (recommended)": [
-        "Avaa levy (suositus)"
-      ],
-      "Unlock later": [
-        "Avaa myöhemmin"
-      ],
       "Upload picture": [
         "Lataa kuva"
-      ],
-      "Upload your first file": [
-        "Tallenna ensimmäinen tiedostosi"
       ],
       "Uploaded by": [
         "Lähettänyt"
       ],
       "URL wildcard pattern": [
         "URL-jokerimerkkimalli"
-      ],
-      "User opted in": [
-        "Suostumus annettu"
       ],
       "Username": [
         "Käyttäjätunnus"
@@ -7816,9 +6849,6 @@
       ],
       "Viewer": [
         "Tarkastelu"
-      ],
-      "Visible columns:": [
-        "Näkyvät sarakkeet:"
       ],
       "Vulnerable": [
         "Haavoittuvainen"
@@ -7834,9 +6864,6 @@
       ],
       "What happened?": [
         "Mitä tapahtui?"
-      ],
-      "Yes, I want to permanently delete my old files": [
-        "Kyllä, haluan poistaa vanhat tiedostoni pysyvästi"
       ],
       "Your alias": [
         "Sinun aliaksesi"
@@ -7928,9 +6955,6 @@
       "Add a gift code": [
         "Lisää lahjakoodi"
       ],
-      "Albums": [
-        "Albumit"
-      ],
       "clearing your browser cache": [
         "selaimen välimuistin tyhjennys"
       ],
@@ -7991,9 +7015,6 @@
       "Pay invoice": [
         "Maksa lasku"
       ],
-      "Photos": [
-        "Kuvat"
-      ],
       "Reactivate now": [
         "Uudelleenaktivoi nyt"
       ],
@@ -8008,12 +7029,6 @@
       ],
       "settings": [
         "asetuksissa"
-      ],
-      "Shared": [
-        "Jaetut"
-      ],
-      "Shared with me": [
-        "Jaettu minulle"
       ],
       "Terms and conditions": [
         "Käyttöehdot"
@@ -9408,41 +8423,14 @@
       ]
     },
     "Notification": {
-      "\"${ ellipsedName }\" copied": [
-        "\"${ ellipsedName }\" kopioitu"
-      ],
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" luotiin"
-      ],
-      "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\" poistettiin"
-      ],
-      "\"${ ellipsedName }\" deleted permanently from trash": [
-        "\"${ ellipsedName }\" poistettiin roskakorista pysyvästi"
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "Kohteen \"${ ellipsedName }\" luonti epäonnistui"
       ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "Kohteen \"${ ellipsedName }\" poisto epäonnistui"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "Kohteen \"${ ellipsedName }\" pysyvä poisto roskakorista epäonnistui"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "Kohteen \"${ ellipsedName }\" siirto epäonnistui"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "Kohteen \"${ ellipsedName }\" palautus roskakorista epäonnistui"
-      ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" siirretty"
-      ],
-      "\"${ ellipsedName }\" restored from trash": [
-        "\"${ ellipsedName }\" palautettiin roskakorista"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "\"${ ellipsedName }\" siirrettiin"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" jaettiin"
@@ -9462,33 +8450,13 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" nimettiin uudelleen"
       ],
-      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
-        "${ addedUids.length } valokuva on lisätty albumiin \"${ albumName }\"",
-        "${ addedUids.length } valokuvaa on lisätty albumiin \"${ albumName }\""
-      ],
       "${ count } item failed to be decrypted": [
         "${ count } kohteen salauksen purku epäonnistui",
         "${ count } kohteen salauksen purku epäonnistui"
       ],
-      "${ errors.length } item failed to be copied": [
-        "${ errors.length } kohteen kopiointi epäonnistui",
-        "${ errors.length } kohteiden kopiointi epäonnistui"
-      ],
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } kohteen poisto epäonnistui",
         "${ errors.length } kohteen poisto epäonnistui"
-      ],
-      "${ errors.length } item failed to be trashed": [
-        "${ errors.length } kohteen siirto roskakoriin epäonnistui",
-        "${ errors.length } kohteen siirto roskakoriin epäonnistui"
-      ],
-      "${ numberOfItems } copied item moved to trash": [
-        "${ numberOfItems } kopioitu kohde siirrettiin roskakoriin",
-        "${ numberOfItems } kopioidut kohteet siirrettiin roskakoriin"
-      ],
-      "${ numberOfItems } item copied": [
-        "${ numberOfItems } kohde kopioitu",
-        "${ numberOfItems } kohdetta kopioitu"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } kohde poistettu",
@@ -9530,31 +8498,17 @@
         "${ numberOfItems } kohde palautettiin roskakorista",
         "${ numberOfItems } kohdetta palautettiin roskakorista"
       ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } kohde siirrettiin",
-        "${ numberOfItems } kohdetta siirrettiin"
-      ],
       "${ reason } has been disabled": [
         "${ reason } poistettiin käytöstä"
       ],
       "${ reason } has been enabled": [
         "${ reason } otettiin käyttöön"
       ],
-      "${ removed } photo have been removed from \"${ albumName }\"": [
-        "${ removed } valokuva poistettiin albumista \"${ albumName }\"",
-        "${ removed } valokuvaa poistettiin albumista \"${ albumName }\""
-      ],
       "Access for the member removed": [
         "Jäsenen käyttöoikeus mitätöitiin"
       ],
       "Access updated": [
         "Käyttöoikeus päivitettiin"
-      ],
-      "Album renamed successfully": [
-        "Albumi nimettiin uudelleen"
-      ],
-      "All items deleted permanently from trash": [
-        "Kaikki kohteet poistettu pysyvästi roskakorista"
       ],
       "Cannot load link": [
         "Linkin lataus epäonnistui"
@@ -9568,9 +8522,6 @@
       "Contact group updated": [
         "Yhteystietoryhmä päivitettiin"
       ],
-      "Copy of \"${ ellipsedName }\" moved to trash": [
-        "Kopio tiedostosta \"${ ellipsedName }\" siirrettiin roskakoriin"
-      ],
       "Device failed to be removed": [
         "Laitteen poisto epäonnistui"
       ],
@@ -9583,12 +8534,6 @@
       "Device renamed": [
         "Laite nimettiin uudelleen"
       ],
-      "Encrypted search activated": [
-        "Salattu haku on käytössä"
-      ],
-      "Error while listing devices": [
-        "Virhe listattaessa laitteita"
-      ],
       "Failed to accept share invitation": [
         "Jakokutsun hyväksyntä epäonnistui"
       ],
@@ -9600,18 +8545,6 @@
       ],
       "Failed to reject share invitation": [
         "Jakokutsusta kieltäytyminen epäonnistui"
-      ],
-      "Failed to remove device": [
-        "Laitteen poistaminen epäonnistui"
-      ],
-      "Failed to remove the file": [
-        "Tiedoston poisto epäonnistui"
-      ],
-      "Failed to rename device": [
-        "Laitteen nimeäminen uudelleen epäonnistui"
-      ],
-      "File removed": [
-        "Tiedosto poistettiin"
       ],
       "Invitation's email was sent again": [
         "Kutsusähköposti lähetettiin uudelleen"
@@ -9634,14 +8567,6 @@
       "Public link access updated": [
         "Julkisen linkin käyttöoikeus päivitetty"
       ],
-      "Selected item was not removed from your list": [
-        "Valittua kohdetta ei poistettu listaltasi",
-        "Valittuja kohteita ei poistettu listaltasi"
-      ],
-      "Selected item was successfully removed from your list": [
-        "Valittu kohde on poistettu listastasi onnistuneesti",
-        "Valitut kohteet poistettiin listastasi onnistuneesti"
-      ],
       "Setting updated. Editors can change permissions and share.": [
         "Asetus päivitetty. Muokkaajat voivat muuttaa käyttöoikeuksia ja jakaa sisältöä"
       ],
@@ -9657,17 +8582,8 @@
       "Stopping the sharing of this item has failed": [
         "Kohteen jakamisen lopetus epäonnistui"
       ],
-      "The item was not added to your drive": [
-        "Kohdetta ei lisätty Driveesi"
-      ],
-      "The item was successfully added to your drive": [
-        "Kohde lisättiin tallennustilaasi"
-      ],
       "The link to your item was deleted": [
         "Kohteen linkki poistettiin"
-      ],
-      "This secure link expired, please change expire date in sharing settings": [
-        "Tämä suojattu linkki on vanhentunut, muuttakaa vanhentumispäivää jakoasetuksista"
       ],
       "Trash failed to be emptied": [
         "Roskakorin tyhjennys epäonnistui"
@@ -9678,9 +8594,6 @@
       "Your ${ BRAND_NAME } address is ready to use": [
         "${ BRAND_NAME } -osoitteesi on valmis käytettäväksi"
       ],
-      "Your old files will be deleted in 72 hours": [
-        "Vanhat tiedostosi poistetaan 72 tunnin kuluessa"
-      ],
       "Your settings have been changed successfully": [
         "Tekemäsi asetusmuutokset on tallennettu"
       ]
@@ -9688,11 +8601,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Joitain kuvia ei lähetetty, koska nykyinen valinta sisältää päällekkäisiä tiedostonimiä."
-      ]
-    },
-    "Notitication": {
-      "Album renamed successfully": [
-        "Albumi nimettiin uudelleen"
       ]
     },
     "Oauth instructions": {
@@ -9838,169 +8746,6 @@
         "Tervetuloa ${ appName } -sovellukseen"
       ]
     },
-    "Onboarding Action": {
-      "Continue": [
-        "Jatka"
-      ],
-      "Create a document": [
-        "Luo dokumentti"
-      ],
-      "Get started": [
-        "Aloita"
-      ],
-      "Install and continue": [
-        "Asenna ja jatka"
-      ],
-      "Install later": [
-        "Asenna myöhemmin"
-      ],
-      "Invite members": [
-        "Kutsu jäseniä"
-      ],
-      "Maybe Later": [
-        "Ehkä myöhemmin"
-      ],
-      "Maybe later": [
-        "Ehkä myöhemmin"
-      ],
-      "Select theme": [
-        "Valitse teema"
-      ],
-      "Skip": [
-        "Ohita"
-      ],
-      "Skip for now": [
-        "Ohita tällä kertaa"
-      ],
-      "Try the app": [
-        "Kokeile sovellusta"
-      ],
-      "Upload file": [
-        "Lähetä tiedosto"
-      ],
-      "Upload folder": [
-        "Lähetä kansio"
-      ],
-      "Upload more files": [
-        "Lähetä enemmän tiedostoja"
-      ]
-    },
-    "Onboarding Info": {
-      "10 minutes": [
-        "10 minuuttia"
-      ],
-      "Access your files on the go": [
-        "Käytä tiedostojasi liikkeellä"
-      ],
-      "Back up your photos and memories": [
-        "Varmuuskopioi kuvasi ja muistosi"
-      ],
-      "Backup your photos and memories": [
-        "Varmuuskopioi kuvasi ja muistosi"
-      ],
-      "Choose your favorite theme": [
-        "Valitse suosikkiteemasi"
-      ],
-      "Collaborate on documents": [
-        "Yhteiskäytä dokumentteja"
-      ],
-      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "Pidätkö ${ DRIVE_APP_NAME }stä vaaleassa vai tummassa tilassa? Valitse väri, joka inspiroi sinua eniten."
-      ],
-      "Drag and drop your files here": [
-        "Vedä ja pudota tiedostosi tähän"
-      ],
-      "Edit documents online": [
-        "Muokkaa dokumentteja verkossa"
-      ],
-      "End-to-end encrypted storage for your files": [
-        "Päästä päähän -salattu tallennustila tiedostoillesi"
-      ],
-      "Faster uploads for large or multiple files": [
-        "Nopeampi lähetys suurille tai useammille tiedostoille"
-      ],
-      "Files uploaded during this time won’t count towards your storage limit.": [
-        "Tänä aikana lähetettyjä tiedostoja ei lasketa mukaan tallennustilarajaanne."
-      ],
-      "Files uploaded now will not count towards your storage limit": [
-        "Nyt lähetettyjä tiedostoja ei lasketa mukaan tallennustilarajaanne"
-      ],
-      "Final approval in progress": [
-        "Lopullinen hyväksyntä käynnissä"
-      ],
-      "Final approval pending": [
-        "Lopullista hyväksyntää odotetaan"
-      ],
-      "Free up hard drive space on your computer": [
-        "Vapauta tietokoneesi levytilaa"
-      ],
-      "Get the desktop app": [
-        "Hanki työpöytäsovellus"
-      ],
-      "Get the mobile app": [
-        "Hanki mobiilisovellus"
-      ],
-      "Got an Android? We've got you covered.": [
-        "Onko sinulla Android? Homma hoituu."
-      ],
-      "Got an iPhone? We've got you covered.": [
-        "Onko sinulla iPhone? Se onnistuu."
-      ],
-      "Hang tight": [
-        "Malta hetki"
-      ],
-      "Invitation accepted": [
-        "Kutsu hyväksyttiin"
-      ],
-      "Invitation received": [
-        "Kutsu vastaanotettiin"
-      ],
-      "Invite team members": [
-        "Kutsu ryhmän jäseniä"
-      ],
-      "Keep the momentum going by uploading more files using the storage included with your plan.": [
-        "Pitäkää vauhtia yllä lähettämällä lisää tiedostoja käyttämällä tilaukseenne sisältyvää tallennustilaa."
-      ],
-      "Manage access": [
-        "Hallitse käyttöoikeuksia"
-      ],
-      "Organize files right from your desktop": [
-        "Järjestele tiedostoja suoraan työpöydältäsi"
-      ],
-      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
-        "Suojaa talousdokumentit, henkilöllisyystodistukset, projektitiedostot, valokuvat ja paljon muuta päästä päähän -salauksella."
-      ],
-      "Scan the QR code to install the mobile app": [
-        "Skannaa QR-koodi asentaaksesi mobiilisovelluksen"
-      ],
-      "Secure your files": [
-        "Varmista tiedostosi"
-      ],
-      "Securely share files and folders": [
-        "Jaa tiedostoja ja kansioita turvallisesti"
-      ],
-      "Share files & folders": [
-        "Jaa tiedostoja ja kansioita"
-      ],
-      "Sync and access your files from anywhere": [
-        "Synkronoi ja käytä tiedostojasi missä tahansa"
-      ],
-      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
-        "Omistajan on vahvistettava jaon käyttöoikeus. Saat sähköilmoituksen kun se on tehty."
-      ],
-      "Upload your first file": [
-        "Lähetä ensimmäinen tiedostosi"
-      ],
-      "Work faster, smarter": [
-        "Työskentele nopeammin ja älykkäämmin"
-      ],
-      "Work together": [
-        "Työskentele yhdessä"
-      ],
-      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "Saitte juuri vähän ilmaista tallennustilaa ja suojasitte tiedostonne päästä päähän -salauksella – ennätysajassa!"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " vierailkaa ${ helpCenterLink }-tukikeskuksessamme tai ${ contactSupportLink }."
@@ -10058,29 +8803,11 @@
       "Create new group": [
         "Luo uusi ryhmä"
       ],
-      "Expected structure": [
-        "Odotettu rakenne"
-      ],
       "Ignore group": [
         "Ohita ryhmä"
       ],
       "No parent folder": [
         "Ei yläkansiota"
-      ],
-      "Only current location": [
-        "Vain nykyinen sijainti"
-      ],
-      "Only current location: ${ name }": [
-        "Vain nykyinen sijainti: ${ name }"
-      ],
-      "Select JSON file": [
-        "Valitse JSON-tiedosto"
-      ],
-      "Verify content": [
-        "Vahvista sisältö"
-      ],
-      "Verify thumbnails": [
-        "Vahvista pienoiskuvat"
       ]
     },
     "Option group label": {
@@ -10540,14 +9267,8 @@
       "Enter a name": [
         "Syötä nimi"
       ],
-      "Enter a new file name": [
-        "Syötä tiedoston uusi nimi"
-      ],
       "Enter a new folder name": [
         "Syötä kansion uusi nimi"
-      ],
-      "Enter device name": [
-        "Syötä laitteen nimi"
       ],
       "Enter your email address": [
         "Syötä sähköpostiosoitteesi"
@@ -10700,6 +9421,14 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Edistyminen: ${ combinedProgress } %"
+      ]
+    },
+    "Property": {
+      "key": [
+        "avain"
+      ],
+      "name": [
+        "nimi"
       ]
     },
     "Property type": {
@@ -11463,12 +10192,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "Muokkaajat voivat nyt hallita jakamista ja kutsua muita. Voit poistaa tämän käytöstä milloin tahansa jakamisasetuksissa."
-      ],
-      "Encrypted search is here": [
-        "Salattu haku löytyy tästä"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Nyt voit etsiä Driven tiedostoja helposti pitäen tietosi samalla turvassa."
       ]
     },
     "sso": {
@@ -12007,54 +10730,14 @@
       ]
     },
     "Subtitle": {
-      "Albums shared with you will appear here": [
-        "Sinulle jaetut albumit näkyvät tässä"
-      ],
-      "Albums you've shared will appear here": [
-        "Jakamasi albumit näkyvät tässä"
-      ],
       "Shared by ${ sharedBy }": [
         "Jakanut ${ sharedBy }"
-      ],
-      "Your favorited photos will appear here": [
-        "Suosikkikuvasi näkyvät tässä"
-      ],
-      "Your Live Photos will appear here": [
-        "Live Photo -kuvasi näkyvät tässä"
-      ],
-      "Your panorama photos will appear here": [
-        "Panoraamakuvasi näkyvät tässä"
-      ],
-      "Your photo bursts will appear here": [
-        "Sarjakuvauksesi näkyvät tässä"
-      ],
-      "Your portraits photos will appear here": [
-        "Muotokuvasi näkyvät tässä"
-      ],
-      "Your RAW photos will appear here": [
-        "RAW-kuvasi näkyvät tässä"
-      ],
-      "Your screenshots will appear here": [
-        "Kuvankaappauksesi näkyvät tässä"
-      ],
-      "Your selfies photos will appear here": [
-        "Selfie-kuvasi näkyvät tässä"
-      ],
-      "Your tagged photos will appear here": [
-        "Tunnistein merkityt kuvasi näkyvät tässä."
-      ],
-      "Your videos will appear here": [
-        "Videosi näkyvät tässä"
       ]
     },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } yhteystieto näyttää identtiseltä.",
         "${ countMergeableContacts } yhteystietoa näyttää identtiseltä."
-      ],
-      "${ countOfUnrecoveredLinksLeft } left": [
-        "${ countOfUnrecoveredLinksLeft } jäljellä",
-        "${ countOfUnrecoveredLinksLeft } jäljellä"
       ],
       "Address copied to clipboard": [
         "Osoite kopioitiin leikepöydälle"
@@ -12123,9 +10806,6 @@
       ],
       "Problem reported": [
         "Ongelma raportoitu"
-      ],
-      "Recovery has started": [
-        "Palautus on aloitettu"
       ],
       "Secure link copied": [
         "Suojattu linkki kopioitiin"
@@ -12197,6 +10877,9 @@
       "Created": [
         "Luotu"
       ],
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
       "Expires": [
         "Erääntyy"
       ],
@@ -12214,6 +10897,9 @@
       ],
       "Type": [
         "Tyyppi"
+      ],
+      "User": [
+        "Käyttäjä"
       ]
     },
     "TableHeader": {
@@ -12245,35 +10931,6 @@
         "vCard-kenttä"
       ]
     },
-    "Tag": {
-      "Bursts": [
-        "Sarjakuvaukset"
-      ],
-      "Favorites": [
-        "Suosikit"
-      ],
-      "Live Photos": [
-        "Live Photo -kuvat"
-      ],
-      "Panoramas": [
-        "Panoraamat"
-      ],
-      "Portraits": [
-        "Muotokuvat"
-      ],
-      "RAW": [
-        "RAW-kuvat"
-      ],
-      "Screenshots": [
-        "Kuvakaappaukset"
-      ],
-      "Selfies": [
-        "Selfiet"
-      ],
-      "Videos": [
-        "Videot"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } vuorokausi",
@@ -12302,9 +10959,6 @@
       ],
       "${ feature } is now active": [
         "${ feature } on nyt käytössä"
-      ],
-      "${ freeUploadLength } of free uploads.": [
-        "${ freeUploadLength } ilmaisia latauksia."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Kirjoitusavustaja ${ LUMO_SHORT_APP_NAME }"
@@ -12355,9 +11009,6 @@
       "Album details": [
         "Albumin tiedot"
       ],
-      "Albums": [
-        "Albumit"
-      ],
       "All settings": [
         "Kaikki asetukset"
       ],
@@ -12375,10 +11026,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Haluatko varmasti sulkea esikatselun?"
-      ],
-      "Are you sure you want to remove this item from your list?": [
-        "Haluatko varmasti poistaa tämän kohteen luettelostasi?",
-        "Haluatko varmasti poistaa nämä kohteet listaltasi?"
       ],
       "Are you sure?": [
         "Oletko varma?"
@@ -12446,9 +11093,6 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Vahvista ${ BRAND_NAME }-bonusten menetys"
       ],
-      "Confirmation required": [
-        "Vahvistus vaaditaan"
-      ],
       "Connect apps and devices": [
         "Yhdistä sovelluksia ja laitteita"
       ],
@@ -12475,9 +11119,6 @@
       ],
       "Coupon": [
         "Etukoodi"
-      ],
-      "Create a new file": [
-        "Luo uusi tiedosto"
       ],
       "Create a new folder": [
         "Luo uusi kansio"
@@ -12554,9 +11195,6 @@
       "Devices": [
         "Laitteet"
       ],
-      "Diagnostics": [
-        "Diagnostiikka"
-      ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Sähköinen allekirjoitus vahvistettu osittain. Tämä tiedosto on luotu julkisella jakolinkillä sellaisen käyttäjän toimesta, jolla ei ole ${ BRAND_NAME } -tiliä, joten hänen henkilöllisyyttään ei voida vahvistaa."
       ],
@@ -12590,6 +11228,9 @@
       "Disconnected from Gmail": [
         "Yhteys Gmailiin katkaistu"
       ],
+      "Domain names": [
+        "Verkkotunnukset"
+      ],
       "Downgrade account": [
         "Alenna tili"
       ],
@@ -12610,9 +11251,6 @@
       ],
       "Download unverified folder?": [
         "Ladataanko vahvistamaton kansio?"
-      ],
-      "Drive": [
-        "Drive"
       ],
       "Drop to upload": [
         "Lataa pudottamalla"
@@ -12650,9 +11288,6 @@
       "Enable advanced account protection": [
         "Ota edistynyt tilisuojaus käyttöön"
       ],
-      "Enable drive search": [
-        "Käytä levyhakua"
-      ],
       "Enhance security with 2FA": [
         "Paranna tietoturvaa 2FA:lla"
       ],
@@ -12668,21 +11303,11 @@
       "File details": [
         "Tiedoston tiedot"
       ],
-      "File recovery process": [
-        "Tiedoston palautusprosessi"
-      ],
       "Folder": [
         "Kansio"
       ],
       "Folder details": [
         "Kansion tiedot"
-      ],
-      "Found ${ resultCount } result": [
-        "Löytyi ${ resultCount } tulos",
-        "Löytyi ${ resultCount } tulosta"
-      ],
-      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
-        "Hanki ${ DRIVE_SHORT_APP_NAME } puhelimeesi"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Ansaitset **${ referralInfo.uiData.refereeRewardAmount }** krediitteinä ${ planTitle } -tilauksella"
@@ -12690,26 +11315,17 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Hanki kaikki ${ CALENDAR_APP_NAME } ominaisuudet käyttöösi"
       ],
-      "Get mobile and desktop apps": [
-        "Hanki mobiili- ja työpöytäsovellukset"
-      ],
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Hanki lisää tallennustilaa ${ MAIL_APP_NAME } Plus -tilauksella"
       ],
-      "Get started with 10 minutes of free uploads, on the house.": [
-        "Aloittakaa 10 minuutilla ilmaisia lähetyksiä, talon tarjoamana."
-      ],
       "Get the apps": [
         "Hanki sovellukset"
       ],
       "Gift": [
         "Lahja"
-      ],
-      "Global": [
-        "Globaali"
       ],
       "Groups": [
         "Ryhmät"
@@ -12760,9 +11376,6 @@
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Tuoja: ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Index populators": [
-        "Indeksin täyttäjät"
-      ],
       "Information exposed in breach": [
         "Tietomurrossa paljastuneet tiedot"
       ],
@@ -12775,23 +11388,11 @@
       "Last uploaded by": [
         "Viimeksi ladannut"
       ],
-      "Level": [
-        "Taso"
-      ],
       "Link confirmation": [
         "Linkin vahvistus"
       ],
       "Location": [
         "Sijainti"
-      ],
-      "Logger": [
-        "Kirjaaja"
-      ],
-      "Logs": [
-        "Lokitiedot"
-      ],
-      "Make a copy": [
-        "Luo kopio"
       ],
       "Make a secure connection your default": [
         "Aseta suojattu yhteys oletukseksesi"
@@ -12804,9 +11405,6 @@
       ],
       "Merging contacts": [
         "Yhdistetään yhteystietoja"
-      ],
-      "Message": [
-        "Viesti"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Siirtäkää organisaationne palveluun ${ BRAND_NAME }"
@@ -12841,56 +11439,17 @@
       "Night theme": [
         "Yöteema"
       ],
-      "No albums shared with me": [
-        "Ei minulle jaettuja albumeita"
-      ],
       "No breaches detected": [
         "Tietomurtoja ei ole havaittu"
       ],
-      "No bursts": [
-        "Ei sarjakuvia"
-      ],
-      "No favorites": [
-        "Ei suosikkeja"
-      ],
-      "No Live Photos": [
-        "Ei Live Photo -kuvia"
-      ],
-      "No panorama": [
-        "Ei panoraamoja"
-      ],
-      "No photos": [
-        "Ei kuvia"
-      ],
-      "No portraits": [
-        "Ei muotokuvia"
-      ],
-      "No RAW": [
-        "Ei RAW-tiedostoja"
-      ],
       "No results found": [
         "Tuloksia ei löytynyt"
-      ],
-      "No screenshots": [
-        "Ei kuvakaappauksia"
-      ],
-      "No selfies": [
-        "Ei selfieitä"
-      ],
-      "No shared albums": [
-        "Ei jaettuja albumeja"
-      ],
-      "No videos": [
-        "Ei videoita"
       ],
       "Notes": [
         "Muistiinpanot"
       ],
       "Number of downloads": [
         "Latausten määrä"
-      ],
-      "Number of items": [
-        "Kohdemäärä"
       ],
       "One email, many recipients": [
         "Yksi sähköposti, monta vastaanottajaa"
@@ -12958,9 +11517,6 @@
       "Re-signing contacts": [
         "Yhteystietojen allekirjoitus uudelleen"
       ],
-      "Ready, set, upload.": [
-        "Paikoillanne, valmiina, lähetä."
-      ],
       "Recommended": [
         "Suositus"
       ],
@@ -12979,10 +11535,6 @@
       "Remove device?": [
         "Poistetaanko laite?"
       ],
-      "Remove item?": [
-        "Poistetaanko kohde?",
-        "Poistetaanko kohteet?"
-      ],
       "Remove your access?": [
         "Poista käyttöoikeus?"
       ],
@@ -12992,32 +11544,17 @@
       "Rename a folder": [
         "Nimeä kansio uudelleen"
       ],
-      "Rename device": [
-        "Nimeä laite uudelleen"
-      ],
       "Report a problem": [
         "Ilmoita ongelmasta"
       ],
       "Request new code": [
         "Pyydä uusi koodi"
       ],
-      "Restore your files": [
-        "Palauta tiedostoja"
-      ],
       "Reverse charge not supported": [
         "Käännettyä verovelvollisuutta ei tueta."
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Tallenna myöhemmäksi ${ DRIVE_APP_NAME }en"
-      ],
-      "Search": [
-        "Hae"
-      ],
-      "Search results": [
-        "Hakutulokset"
-      ],
-      "Searching…": [
-        "Haetaan…"
       ],
       "Security center": [
         "Suojauskeskus"
@@ -13072,9 +11609,6 @@
       ],
       "Shared with me": [
         "Jaettu minulle"
-      ],
-      "Show actions": [
-        "Näytä toiminnot"
       ],
       "Sign in and grant access": [
         "Kirjaudu ja myönnä käyttöoikeus"
@@ -13138,12 +11672,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Esikatsellaksesi tätä laskentataulukkoa, avaa se ${ SHEETS_APP_NAME } -sovelluksessa tai lataa se."
-      ],
-      "Total size": [
-        "Kokonaiskoko"
-      ],
-      "Trash": [
-        "Roskakori"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
@@ -13253,9 +11781,6 @@
       "We'd love to hear from you!": [
         "Haluaisimme kuulla palautettasi!"
       ],
-      "Welcome offer": [
-        "Tervetuliaistarjous"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Tervetuloa ${ BRAND_NAME } for Businessiin"
       ],
@@ -13274,17 +11799,11 @@
       "You can now create unlimited folders and labels": [
         "Voit nyt luoda rajattomasti kansioita ja tunnisteita"
       ],
-      "You have inaccessible files": [
-        "Sinulla on tiedostoja, joita ei voida käyttää"
-      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } -kokeilusi päättyy ${ textDate }"
       ],
       "Your ${ planTitle } subscription has started": [
         "${ planTitle }-tilauksesi on alkanut"
-      ],
-      "Your 3 GB bonus": [
-        "3 Gt bonuksesi"
       ],
       "Your account is protected": [
         "Tilisi on suojattu"
@@ -13303,15 +11822,6 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
-      ],
-      "Your welcome actions": [
-        "Tervetuliaistehtäväsi"
-      ],
-      "You’re off to a great start!": [
-        "Olette päässeet loistavaan alkuun!"
-      ],
-      "You’ve got 5 GB of storage": [
-        "Sinulla on 5 Gt tallennustilaa"
       ]
     },
     "Title header for keys table": {
@@ -13470,11 +11980,6 @@
       ],
       "The user must have an address to request data access": [
         "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
-      ]
-    },
-    "Upsell": {
-      "Get Drive for Business": [
-        "Hanki Drive for Business"
       ]
     },
     "user_modal": {

@@ -148,9 +148,6 @@
       "Add another account": [
         "Tilføj en anden konto"
       ],
-      "Admit": [
-        "Luk ind"
-      ],
       "Admit ${ participantName }": [
         "Luk ${ participantName } ind"
       ],
@@ -1863,6 +1860,9 @@
       "Failed to download recording": [
         "Kunne ikke downloade optagelse"
       ],
+      "Failed to edit meeting": [
+        "Kunne ikke redigere mødet"
+      ],
       "Failed to edit room name": [
         "Kunne ikke redigere rumnavn"
       ],
@@ -2214,6 +2214,12 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan kun bruges til at bekræfte én ${ BRAND_NAME }-konto"
       ],
+      "Admit": [
+        "Tillad"
+      ],
+      "Admitting": [
+        "Lukker ind"
+      ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Avanceret tilstand: Indstil hver sløringskonstant til den næste version, og tryk derefter på Anvend for at oprette forhåndsvisningen igen. Overrides prioriteres højere end fil- og Unleash-værdier."
       ],
@@ -2490,6 +2496,9 @@
       "Meeting is decrypting...": [
         "Mødet dekrypteres..."
       ],
+      "Meeting is full": [
+        "Mødet er fuldt"
+      ],
       "Meeting link": [
         "Mødelink"
       ],
@@ -2667,6 +2676,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
+      "Rejecting": [
+        "Afviser"
+      ],
       "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
         "Kør dit live kamera igennem den brugerdefinerede baggrundsprocessor. Vælg en farve eller upload et billede, som skal bruges som baggrund."
       ],
@@ -2738,6 +2750,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Denne chat er end-to-end krypteret, og beskeder forsvinder når opkaldet afsluttes."
+      ],
+      "This meeting has a waiting room": [
+        "Dette møde har et venteværelse"
       ],
       "This meeting is being recorded": [
         "Dette møde optages"
@@ -2819,6 +2834,9 @@
       ],
       "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
         "Venter på at værten starter. Du bliver tilsluttet når værten starter mødet, og giver dig adgang."
+      ],
+      "Waiting since ${ receivedTime }": [
+        "Ventet siden ${ receivedTime }"
       ],
       "Warning": [
         "Advarsel"

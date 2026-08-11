@@ -909,8 +909,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Een e-mailadres alias werkt als een e-mailadres, maar vermindert spam en houdt uw werkelijke e-mailadres en identiteit verborgen."
       ],
+      "Change these passwords immediately": [
+        "Wijzig deze wachtwoorden onmiddellijk"
+      ],
       "Change your passwords": [
         "Uw wachtwoorden wijzigen"
+      ],
+      "Check if your passwords have been exposed": [
+        "Controleer of uw wachtwoorden openbaar zijn gemaakt"
       ],
       "Create unique passwords": [
         "Maak unieke wachtwoorden"
@@ -965,6 +971,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Dit account is kwetsbaar, bezoek de service en wijzig uw wachtwoord."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Dit aanmeldwachtwoord komt voor bij een datalek. Bezoek de service en wijzig het wachtwoord."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Deze service biedt 2FA aan. Schakel het in voor extra accountveiligheid."
@@ -1418,9 +1427,6 @@
       ],
       "Unknown error.": [
         "Onbekende fout."
-      ],
-      "Unknown invite": [
-        "Onbekende uitnodiging"
       ],
       "Unknown item": [
         "Onbekend object"
@@ -4849,6 +4855,12 @@
       "Clear clipboard": [
         "Klembord wissen"
       ],
+      "Compromised password": [
+        "Gecompromitteerd wachtwoord"
+      ],
+      "Compromised passwords": [
+        "Gecompromitteerde wachtwoorden"
+      ],
       "Confirm extra password": [
         "Bevestig extra wachtwoord"
       ],
@@ -5065,6 +5077,9 @@
       "No access tokens yet": [
         "Nog geen toegangstokens"
       ],
+      "No compromised passwords": [
+        "Geen gecompromitteerde wachtwoorden"
+      ],
       "No excluded items": [
         "Geen uitgesloten onderdelen"
       ],
@@ -5252,6 +5267,9 @@
       ],
       "Update available": [
         "Update beschikbaar"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Upgrade om te controleren op gecompromitteerde wachtwoorden"
       ],
       "URL matching": [
         "URL-overeenkomst"

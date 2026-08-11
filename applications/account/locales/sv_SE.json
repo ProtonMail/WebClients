@@ -168,6 +168,9 @@
       "Add user": [
         "Lägg till användare"
       ],
+      "Add users": [
+        "Lägg till användare"
+      ],
       "Added ${ memberName } as group owner": [
         "Lade till ${ memberName } som gruppägare"
       ],
@@ -311,6 +314,9 @@
       ],
       "Collaborate on documents": [
         "Samarbeta på dokument"
+      ],
+      "Collapse step": [
+        "Minimera steg"
       ],
       "Color": [
         "Färg"
@@ -651,6 +657,9 @@
       "Download ICS": [
         "Ladda ner ICS"
       ],
+      "Download latest": [
+        "Ladda ner senaste"
+      ],
       "Download logs": [
         "Ladda ner loggar"
       ],
@@ -767,6 +776,9 @@
       ],
       "Enter code": [
         "Ange kod"
+      ],
+      "Expand step": [
+        "Expandera steg"
       ],
       "Explore ${ target }": [
         "Utforska ${ target }"
@@ -1017,6 +1029,9 @@
       "Insert link": [
         "Infoga länk"
       ],
+      "Install app": [
+        "Installera app"
+      ],
       "Instructions": [
         "Instruktioner"
       ],
@@ -1031,9 +1046,6 @@
       ],
       "Italic": [
         "Kursiv"
-      ],
-      "JumpCloud": [
-        "JumpCloud"
       ],
       "Keep": [
         "Behåll"
@@ -1101,9 +1113,6 @@
       "Manage communication preferences": [
         "Hantera kommunikationspreferenser"
       ],
-      "Manage company": [
-        "Hantera företag"
-      ],
       "Manage folders": [
         "Hantera mappar"
       ],
@@ -1140,14 +1149,17 @@
       "Maybe later": [
         "Kanske senare"
       ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
+      "Migrate": [
+        "Migrera"
       ],
       "More": [
         "Mer"
       ],
       "More benefits": [
         "Fler fördelar"
+      ],
+      "More details": [
+        "Mer detaljer"
       ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
@@ -1617,6 +1629,9 @@
       "Sign in": [
         "Logga in"
       ],
+      "Sign in to ${ providerName }": [
+        "Loggar in på ${ providerName }"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Logga in med ${ BRAND_NAME }"
       ],
@@ -1850,6 +1865,9 @@
       ],
       "Verify domain": [
         "Verifiera domän"
+      ],
+      "Verify installation": [
+        "Verifiera installation"
       ],
       "Verify now": [
         "Verifiera nu"
@@ -2218,6 +2236,14 @@
       ],
       "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
         "Med ${ PASS_APP_NAME } kan du generera unika alias för att dölja din identitet och vidarebefordra e-post till din primära inkorg."
+      ]
+    },
+    "Alt": {
+      "Collapse invitation message": [
+        "Minimera inbjudningsmeddelande"
+      ],
+      "Expand invitation message": [
+        "Expandera inbjudningsmeddelande"
       ]
     },
     "Alter": {
@@ -3777,6 +3803,9 @@
       ],
       "Remove from the list?": [
         "Ta bort från listan?"
+      ],
+      "Some members weren't migrated": [
+        "Några medlemmar migrerades inte"
       ],
       "Undo this import?": [
         "Ångra denna import?"
@@ -6745,6 +6774,9 @@
       "Address is already added to your account": [
         "Adress är redan tillagd till ditt konto"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
       "Address primary private key not found": [
         "Adressens privata nyckel hittades inte"
       ],
@@ -6781,11 +6813,17 @@
       "Calendar limit reached": [
         "Kalendergräns nådd"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Kan inte lägga till foto i album utan ett giltigt namn"
+      ],
       "Cannot download a folder": [
         "Kan inte ladda ner en mapp"
       ],
       "Cannot share root folder": [
         "Kan inte dela rotmapp"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan inte verifiera vem som laddade upp denna fil"
       ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
@@ -6805,17 +6843,26 @@
       "Contact signature not verified": [
         "Kontaktsignatur inte verifierad"
       ],
+      "Contact your administrator to start a migration.": [
+        "Kontakta din administratör för att starta en migrering."
+      ],
       "Could not find an available name": [
         "Kunde inte hitta ett tillgängligt namn"
       ],
       "Could not generate the device profile. Please try again.": [
         "Kunde inte generera enhetsprofilen. Försök igen."
       ],
+      "Could not load sharing details": [
+        "Kunde inte ladda delningsdetaljer"
+      ],
       "Could not open created vault": [
         "Kunde inte öppna skapat valv"
       ],
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunde inte läsa del av denna fil: ${ message }"
       ],
       "Could not save preference": [
         "Kunde inte spara preferens"
@@ -6896,6 +6943,9 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Misslyckades att hämta aktiva sessioner. ${ refresh } eller försök igen senare."
+      ],
+      "Failed to load OAuth": [
+        "Misslyckades med att ladda OAuth"
       ],
       "Failed to load OAuth modal.": [
         "Misslyckades att ladda OAuth-modal."
@@ -7032,6 +7082,9 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Maximalt ${ displayMaxValue } tillåtet"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
         "Slå samman minst ${ calendarsToFixCount } kalendrar med befintliga ${ BRAND_NAME }-kalendrar"
@@ -7039,8 +7092,17 @@
       "Missing key packet": [
         "Saknar nyckelpaket"
       ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
+      ],
       "Missing signature": [
         "Signatur saknas"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Saknar signatur för ${ signatureType }"
       ],
       "Name already exists": [
         "Namn finns redan"
@@ -7087,8 +7149,20 @@
       "Not a valid number": [
         "Inte ett giltigt nummer"
       ],
+      "Only admins can convert external invitations": [
+        "Endast administratörer kan konvertera externa inbjudningar"
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Endast skiftläge och skiljetecken (punkter, bindestreck och understreck) kan ändras för den här adressen"
+      ],
+      "Operation aborted": [
+        "Åtgärd avbröts"
+      ],
+      "Operation failed, try again later": [
+        "Åtgärd misslyckades, försök igen senare"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
       ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
@@ -7265,8 +7339,14 @@
       "Signature verification failed": [
         "Signaturverifiering misslyckades"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturverifiering misslyckades: ${ errorMessage }"
+      ],
       "Signature verification for ${ signatureType } failed": [
         "Signaturverifiering för ${ signatureType } misslyckades"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturverifiering för ${ signatureType } misslyckades: ${ errorMessage }"
       ],
       "Some items could not be loaded": [
         "Några objekt kunde inte laddas"
@@ -7379,8 +7459,14 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
       ],
+      "This file version could not be uploaded": [
+        "Denna filversion kunde inte laddas upp"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Detta mappnamn är inte tillgängligt. Välj ett annat namn."
+      ],
+      "This item is no longer shared": [
+        "Detta objekt är inte delat längre"
       ],
       "This item is not shared": [
         "Detta objekt är inte delat"
@@ -7471,6 +7557,9 @@
       ],
       "You already added this holidays calendar": [
         "Du har redan lagt till denna helgdagskalender"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan bara ladda upp en ny version till en fil"
       ],
       "You do not have access to this item": [
         "Du har inte åtkomst till detta objekt"
@@ -8483,6 +8572,29 @@
         "Terabyte"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Aktiverat"
+      ],
+      "All": [
+        "Alla"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Not activated": [
+        "Inte aktiverad"
+      ],
+      "Pending": [
+        "Väntande"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arkiv"
@@ -8682,6 +8794,17 @@
       ],
       "Your desktop app free trial has ended": [
         "Din gratis provperiod av din app för stationär dator har upphört"
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Avancerade säkerhetskontroller"
+      ],
+      "Dedicated server - ${ serverPrice }": [
+        "Dedikerad server - ${ serverPrice }"
+      ],
+      "User - ${ userPrice }": [
+        "Användare - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -9242,6 +9365,9 @@
       "IMAP access is enabled in your Yahoo account.": [
         "IMAP-åtkomst är aktiverat i ditt Yahoo-konto."
       ],
+      "No error details available. Please contact customer support for more information": [
+        "Inga feldetaljer tillgängliga. Kontakta kundsupport för mer information"
+      ],
       "Too many recent requests. Please try again in a few moments.": [
         "För många förfrågningar. Försök igen lite senare."
       ],
@@ -9399,6 +9525,12 @@
       "Failed": [
         "Misslyckades"
       ],
+      "Has errors": [
+        "Har fel"
+      ],
+      "Import completed successfully": [
+        "Import slutförd"
+      ],
       "Imported": [
         "Importerad"
       ],
@@ -9413,6 +9545,9 @@
       ],
       "Paused": [
         "Pausad"
+      ],
+      "Pending": [
+        "Väntar"
       ],
       "Undo finished": [
         "Ångra klar"
@@ -9676,6 +9811,9 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: ber mottagarplattformarna att avvisa de oauktoriserade e-postmeddelandena."
       ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } av ${ totalCount }"
+      ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } till",
         "${ remainingAddresses.length } till"
@@ -9928,6 +10066,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Lägg till ditt namn och din logga för att skapa en mer personifierad upplevelse för din organisation."
       ],
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Lägg till din organisations e-postdomän till ${ BRAND_NAME }."
+      ],
       "Adding ${ total } gateway server": [
         "Lägger till ${ total } gatewayserver",
         "Lägger till ${ total } gatewayservrar"
@@ -9989,6 +10130,9 @@
       ],
       "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
         "Alla meddelanden kommer att visas i inkorgen, och kategoriflikarna och etiketterna kommer inte längre att vara synliga. "
+      ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Alla migrerade användarkonton är redo att bjudas in till din ${ BRAND_NAME }-organisation."
       ],
       "All users": [
         "Alla användare"
@@ -10072,6 +10216,9 @@
       "Are you sure you want to cancel editing the group?": [
         "Är du säker på att du vill avbryta redigeringen av gruppen?"
       ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Är du säker på att du vill fortsätta utan ${ withoutString }?"
+      ],
       "Are you sure you want to delete this calendar?": [
         "Är du säker på att du vill ta bort denna kalender?"
       ],
@@ -10152,6 +10299,9 @@
       ],
       "Authenticator app 2FA enabled": [
         "Autentiseringsapp 2FA aktiverad"
+      ],
+      "Author is not provided on public link": [
+        "Författare är inte angiven på offentlig länk"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Automatiskt svar är aktivt varje månad mellan vald start- och sluttid."
@@ -10566,6 +10716,9 @@
       "Do you want to revoke all other sessions than the current one?": [
         "Vill du återkalla alla andra sessioner än den nuvarande?"
       ],
+      "Domain added": [
+        "Domän tillagd"
+      ],
       "Domain ownership failed verification.": [
         "Verifiering av domänens äganderätt misslyckades."
       ],
@@ -10584,6 +10737,9 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Förlora inte åtkomst till dina premiumfunktioner. Aktivera automatisk förnyelse idag."
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "Vet du inte var du ska börja? Se hur du uppdaterar din DNS på ${ registrarLink }"
       ],
       "Don’t know your recovery phrase?": [
         "Kan du inte din återställningsfras?"
@@ -10876,6 +11032,9 @@
       "finance": [
         "finans"
       ],
+      "Find out what can be migrated.": [
+        "Ta reda på vad som kan migreras."
+      ],
       "for ${ price }": [
         "för ${ price }"
       ],
@@ -10938,6 +11097,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få åtkomst genom att skapa ett ${ BRAND_NAME }-konto och acceptera inbjudan."
+      ],
+      "Get help and useful tips for other domain providers ${ here }": [
+        "Få hjälp och användbara tips för andra domänleverantörer ${ here }"
       ],
       "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
         "Kontakta dina nödkontakter för att se om de kan hjälpa till. Efter att ha begärt nödåtkomst till ditt konto kommer de att kunna ändra ditt lösenord åt dig **efter att väntetiden för åtkomst har passerat**."
@@ -11566,8 +11728,17 @@
       "No single sign-on": [
         "Ingen enkel inloggning"
       ],
+      "No users to display": [
+        "Inga användare att visa"
+      ],
       "Not a valid URL": [
         "Ogiltig URL"
+      ],
+      "Not confirmed": [
+        "Inte bekräftat"
+      ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "Inte identifierad korrekt? Välj din leverantör från listan."
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
@@ -11990,11 +12161,17 @@
       "Select a group to view its members and settings.": [
         "Välj en grupp för att visa dess medlemmar och inställningar."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
+      ],
       "Select one or multiple user affiliations": [
         "Välj en eller flera användartillhörigheter"
       ],
       "Select recently used servers": [
         "Välj nyligen använda servrar"
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Välj de konton du vill flytta till ${ BRAND_NAME }. Du kan migrera hela din organisationen idag eller börja i liten skala och flytta över resten när du är redo."
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Välj användaraffilieringarna från ${ getFormattedOrganization } som du vill släppa in i din ${ BRAND_NAME }-organisation."
@@ -12561,6 +12738,15 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "För att hänga med i den senaste utvecklingen av ${ BRAND_NAME }-produkter kan du prenumerera på våra olika e-postmeddelanden och ${ blogLink } då och då."
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "För att förhindra missbruk eller bedrägerier ber vi om en donation på minst ${ minimumDonation }. Detta stöder ${ protonFoundationLink } arbete med att försvara digital integritet globalt och hjälper till att skydda nästa generation."
       ],
@@ -12773,6 +12959,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verifiering kommer öppna en ny flik. Inaktivera alla popup-blockerare. Du kommer inte att debiteras. Eventuellt belopp som används för att verifiera kortet kommer att återbetalas omedelbart."
+      ],
+      "Verified": [
+        "Verified"
       ],
       "Verify domain": [
         "Verifiera domän"
@@ -12993,6 +13182,9 @@
       "Yearly": [
         "Årligen"
       ],
+      "You": [
+        "Du"
+      ],
       "You already have a free account": [
         "Du har redan ett gratis konto"
       ],
@@ -13076,9 +13268,6 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Du kan nu komma åt och hantera kontot som en administratör."
-      ],
-      "You can now access and manage the company as an administrator.": [
-        "Du kan nu komma åt och hantera företaget som administratör."
       ],
       "You can now close this tab.": [
         "Du kan stänga denna flik."
@@ -13972,6 +14161,9 @@
       "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }-app för stationär dator"
       ],
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
+      ],
       "${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } för företag"
       ],
@@ -14077,6 +14269,9 @@
       ],
       "Account storage": [
         "Kontolagring"
+      ],
+      "Accounts migrated": [
+        "Konton migrerade"
       ],
       "Action": [
         "Åtgärd"
@@ -14853,6 +15048,12 @@
       "Interval": [
         "Intervall"
       ],
+      "Invitation link": [
+        "Inbjudningslänk"
+      ],
+      "Invitation message": [
+        "Inbjudningsmeddelande"
+      ],
       "Invite people": [
         "Bjud in personer"
       ],
@@ -14922,6 +15123,9 @@
       "Logo": [
         "Logga"
       ],
+      "Mail": [
+        "E-post"
+      ],
       "Mail Server (IMAP)": [
         "E-postserver (IMAP)"
       ],
@@ -14972,6 +15176,9 @@
       ],
       "Method for importing metadata": [
         "Metod för att importera metadata"
+      ],
+      "Migration includes": [
+        "Migrering inkluderar"
       ],
       "Minimum ${ MIN_CHARS } characters": [
         "Minimum ${ MIN_CHARS } tecken"
@@ -15595,6 +15802,12 @@
       "Users": [
         "Användare"
       ],
+      "Users activated": [
+        "Användare aktiverade"
+      ],
+      "Users migrated": [
+        "Användare migrerade"
+      ],
       "Value": [
         "Värde"
       ],
@@ -16045,6 +16258,9 @@
       "Import/export": [
         "Importera/exportera"
       ],
+      "invite link": [
+        "inbjudningslänk"
+      ],
       "Learn how": [
         "Lär dig hur"
       ],
@@ -16173,6 +16389,9 @@
       ],
       "Gathering your data": [
         "Samlar in din data"
+      ],
+      "Loading your organization data": [
+        "Laddar din organisationsdata"
       ],
       "We're gathering your data from your provider": [
         "Vi samlar in din data från din leverantör"
@@ -16628,6 +16847,20 @@
       ],
       "Sign in": [
         "Logga in"
+      ]
+    },
+    "Members table usage": {
+      "Today": [
+        "Idag"
+      ],
+      "Today, ${ time }": [
+        "Idag ${ time }"
+      ],
+      "Yesterday": [
+        "Igår"
+      ],
+      "Yesterday, ${ time }": [
+        "Igår ${ time }"
       ]
     },
     "Message": {
@@ -21414,6 +21647,9 @@
       "New": [
         "Nytt"
       ],
+      "New: Manage groups via your identity provider": [
+        "Nytt: Hantera grupper via din identitetsleverantör"
+      ],
       "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
         "När de har godkänts kan de använda alla ${ BRAND_NAME }-tjänster och dela säkert."
       ],
@@ -21486,6 +21722,9 @@
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "För att återaktivera synkronisering med din identitetsleverantör måste du slutföra SCIM-integreringen igen."
+      ],
+      "When you disable SCIM:": [
+        "När du inaktiverar SCIM:"
       ]
     },
     "scim: Label": {
@@ -23127,6 +23366,9 @@
       "... waiting": [
         "… väntar"
       ],
+      "Activated": [
+        "Aktiverad"
+      ],
       "Active": [
         "Aktiv"
       ],
@@ -23163,6 +23405,9 @@
       "Last updated ${ formattedUpdateDate }": [
         "Senast uppdaterad ${ formattedUpdateDate }"
       ],
+      "Not activated": [
+        "Inte aktiverad"
+      ],
       "Not saved": [
         "Inte sparat"
       ],
@@ -23186,6 +23431,41 @@
       ],
       "Verify ${ value }": [
         "Verifiera ${ value }"
+      ],
+      "Waiting for MX...": [
+        "Väntar på MX …"
+      ]
+    },
+    "Step": {
+      "Authenticate": [
+        "Autentisera"
+      ],
+      "Configure domain": [
+        "Konfigurera domän"
+      ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
+      "Configure users": [
+        "Konfigurera användare"
+      ],
+      "Final step": [
+        "Sista steget"
+      ],
+      "Migrate accounts": [
+        "Migrera konton"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Ställ in säker sändning (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Ställ in säker sändning (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Ställ in säker sändning (SPF)"
+      ],
+      "Verify your domain": [
+        "Verifiera din domän"
       ]
     },
     "Step in filter modal": {
@@ -23941,8 +24221,14 @@
       "${ data.name } updated": [
         "${ data.name } uppdaterad"
       ],
+      "Account connected": [
+        "Konto anslutet"
+      ],
       "Account deleted. Signing out...": [
         "Konto borttaget. Loggar ut..."
+      ],
+      "Account disconnected": [
+        "Konto frånkopplat"
       ],
       "Address added": [
         "Adress tillagd"
@@ -24010,6 +24296,9 @@
       "DMARC value copied to clipboard": [
         "DMARC-värde kopierat till urklipp"
       ],
+      "Domain added": [
+        "Domän tillagd"
+      ],
       "Domain verified": [
         "Domän verifierad"
       ],
@@ -24054,6 +24343,10 @@
       ],
       "Locale updated": [
         "Språk uppdaterat"
+      ],
+      "Migration started for ${ n } user": [
+        "Migrering startad för ${ n } användare",
+        "Migrering startad för ${ n } användare"
       ],
       "New policy created. It will take effect only after you publish the changes.": [
         "En ny policy har skapats. Den träder i kraft först när du publicerar ändringarna."
@@ -24319,11 +24612,23 @@
       ]
     },
     "Table header": {
+      "Activated": [
+        "Aktiverad"
+      ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
       "Size": [
         "Storlek"
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Användare"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -24885,6 +25190,12 @@
       "Composing": [
         "Komponera"
       ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
+      "Configure your domain": [
+        "Konfigurera din domän"
+      ],
       "Confirm": [
         "Bekräfta"
       ],
@@ -24990,6 +25301,9 @@
       ],
       "Created!": [
         "Skapad!"
+      ],
+      "Creating accounts": [
+        "Skapar konton"
       ],
       "Creating user accounts": [
         "Skapar användarkonton"
@@ -25187,6 +25501,9 @@
       "Domain names": [
         "Domännamn"
       ],
+      "Domain provider": [
+        "Domänleverantör"
+      ],
       "Don't show again?": [
         "Visa inte igen?"
       ],
@@ -25377,6 +25694,9 @@
       "Filters": [
         "Filter"
       ],
+      "Final step": [
+        "Sista steget"
+      ],
       "Find email or username": [
         "Hitta e-post eller användarnamn"
       ],
@@ -25482,6 +25802,9 @@
       "Gift code": [
         "Presentkod"
       ],
+      "Going private": [
+        "Blir privat"
+      ],
       "Group": [
         "Grupp"
       ],
@@ -25539,6 +25862,9 @@
       ],
       "Import contacts": [
         "Importera kontakter"
+      ],
+      "Import details": [
+        "Importera detaljer"
       ],
       "Import emails, calendars, contacts": [
         "Importera e-post, kalendrar, kontakter"
@@ -25639,9 +25965,6 @@
       "Make your business stand out": [
         "Få ditt företag att sticka ut"
       ],
-      "Manage company": [
-        "Hantera företag"
-      ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Hantera filer över enheter på Windows, Mac, Android och iOS."
       ],
@@ -25651,11 +25974,23 @@
       "Messages and composing": [
         "Meddelanden och skrivning"
       ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Migrera konton till ${ BRAND_NAME }"
+      ],
+      "Migrate from ${ providerName }": [
+        "Migrera från ${ providerName }"
+      ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migrera din organisation till ${ BRAND_NAME }"
       ],
+      "Migrated accounts": [
+        "Migrerade konton"
+      ],
       "Migration assistant": [
         "Migreringsassistent"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
       ],
       "Minicalendar": [
         "Minikalender"
@@ -25692,6 +26027,9 @@
       ],
       "Name": [
         "Namn"
+      ],
+      "Need help?": [
+        "Behöver du hjälp?"
       ],
       "Need more labels or folders?": [
         "Behöver du fler etiketter eller mappar?"
@@ -26017,6 +26355,9 @@
       "Select the way to send this notification": [
         "Välj hur du vill skicka denna avisering"
       ],
+      "Select users to migrate": [
+        "Välj användare att migrera"
+      ],
       "Select when you want this notification to be sent": [
         "Välj när du vill att denna avisering ska skickas"
       ],
@@ -26058,6 +26399,15 @@
       ],
       "Set up email forwarding": [
         "Ställ in vidarebefordran av e-post"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Ställ in säker sändning (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Ställ in säker sändning (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Ställ in säker sändning (SPF)"
       ],
       "Set up your family account": [
         "Ställ in ditt familjekonto"
@@ -26345,6 +26695,9 @@
       "Verify it’s you": [
         "Verifiera att det är du"
       ],
+      "Verify your domain": [
+        "Verifiera din domän"
+      ],
       "Verify your email": [
         "Verifiera din e-post"
       ],
@@ -26396,6 +26749,9 @@
       "Welcome to your new password manager!": [
         "Välkommen till din nya lösenordshanterare!"
       ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
+      ],
       "What changes if you switch to the Free plan": [
         "Vad som ändras om du byter till Free plan"
       ],
@@ -26431,6 +26787,9 @@
       ],
       "You have no resolved alerts": [
         "Du har inga lösta varningar"
+      ],
+      "You're all set!": [
+        "Du är klar!"
       ],
       "You've successfully signed in!": [
         "Du är inloggad!"
@@ -26566,6 +26925,9 @@
       "Features": [
         "Funktioner"
       ],
+      "Last connection": [
+        "Senaste anslutning"
+      ],
       "Name": [
         "Namn"
       ],
@@ -26642,6 +27004,9 @@
       "Click here to learn how to create a customized signature with HTML.": [
         "Klicka här för att lära dig hur man skapar en anpassad signatur med HTML."
       ],
+      "Collapse invitation message": [
+        "Minimera inbjudningsmeddelande"
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
       ],
@@ -26692,6 +27057,9 @@
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
         "Exkludera användare med enkel inloggning vars 2FA hanteras av din identitetsprovider"
+      ],
+      "Expand invitation message": [
+        "Expandera inbjudningsmeddelande"
       ],
       "Feature in early access": [
         "Funktion i förhandstillgång"
@@ -26758,6 +27126,9 @@
       ],
       "See number of unread messages in the tab icon": [
         "Se antalet olästa meddelanden i flikikonen"
+      ],
+      "Select at least one user to start a migration": [
+        "Välj minst en användare för att starta en migrering"
       ],
       "Set how your list of messages looks like by default.": [
         "Ställ in hur din lista med meddelanden ser ut som standard."
@@ -26864,6 +27235,9 @@
       "Verified email address": [
         "Verifierad e-postadress"
       ],
+      "Verify your domain to start a migration": [
+        "Verifiera din domän för att starta en migrering"
+      ],
       "Version 6 OpenPGP key": [
         "OpenPGP-nyckel version 6"
       ],
@@ -26910,6 +27284,9 @@
       ],
       "Group membership paused": [
         "Gruppmedlemskap pausad"
+      ],
+      "Pending user activation": [
+        "Väntande användaraktivering"
       ],
       "Resuming role assignment": [
         "Återuppta rolltilldelning"

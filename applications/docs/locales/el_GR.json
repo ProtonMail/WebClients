@@ -2959,6 +2959,9 @@
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Απαιτείται μήνυμα κατά την αναφορά παραβίασης πνευματικών δικαιωμάτων ή κλοπής δεδομένων"
+      ],
       "Account does not exist": [
         "Ο λογαριασμός δεν υπάρχει"
       ],
@@ -3019,8 +3022,17 @@
       "Authentication error.": [
         "Σφάλμα ταυτοποίησης."
       ],
+      "Bookmark password is not available": [
+        "Ο κωδικός πρόσβασης σελιδοδείκτη δεν είναι διαθέσιμος"
+      ],
       "Calendar limit reached": [
         "Φτάσατε το μέγιστο όριο ημερολογίων"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Δεν είναι δυνατή η προσθήκη φωτογραφίας στο άλμπουμ χωρίς έγκυρο όνομα"
+      ],
+      "Cannot download a folder": [
+        "Δεν είναι δυνατή η λήψη ενός φακέλου"
       ],
       "Cannot export this contact": [
         "Δεν είναι δυνατή η εξαγωγή αυτής της επαφής"
@@ -3031,8 +3043,14 @@
       "Cannot move item without a valid name, please rename the item first": [
         "Δεν είναι δυνατή η μετακίνηση στοιχείου χωρίς έγκυρο όνομα. Παρακαλούμε μετονομάστε το στοιχείο πρώτα."
       ],
+      "Cannot share root folder": [
+        "Δεν είναι δυνατή η κοινοποίηση του ριζικού φακέλου"
+      ],
       "Cannot verify the author of this file": [
         "Δεν είναι δυνατή η επαλήθευση του δημιουργού αυτού του αρχείου"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Δεν είναι δυνατή η επαλήθευση ποιος ανέβασε αυτό το αρχείο"
       ],
       "Contact could not be saved": [
         "Η αποθήκευση της επαφής απέτυχε"
@@ -3042,6 +3060,21 @@
       ],
       "Contact signature not verified": [
         "Η υπογραφή επαφής δεν πιστοποιήθηκε"
+      ],
+      "Copy operation aborted": [
+        "Η λειτουργία αντιγραφής διακόπηκε"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Η αντιγραφή στοιχείου σε μη φάκελο δεν επιτρέπεται"
+      ],
+      "Could not find an available name": [
+        "Δεν ήταν δυνατή η εύρεση ενός διαθέσιμου ονόματος"
+      ],
+      "Could not load sharing details": [
+        "Δεν ήταν δυνατή η φόρτωση των λεπτομερειών κοινής χρήσης"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Δεν ήταν δυνατή η φόρτωση της προεπισκόπησης εικόνας: ${ message }"
       ],
       "Could not open created vault": [
         "Δεν ήταν δυνατό το άνοιγμα της δημιουργημένης κρύπτης"
@@ -3057,6 +3090,15 @@
       ],
       "Could not unlock this item": [
         "Αδυναμία ξεκλείδωσης αυτού του στοιχείου"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Η δημιουργία εγγράφων σε μη φακέλους δεν επιτρέπεται"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Δεν επιτρέπεται η δημιουργία αρχείων σε μη φακέλους"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Δεν επιτρέπεται η δημιουργία φακέλων σε μη φακέλους"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
@@ -3117,8 +3159,26 @@
       "Failed to create public share node": [
         "Αποτυχία δημιουργίας δημόσιου κόμβου κοινοποίησης"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης κλειδιού σελιδοδείκτη: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης ονόματος σελιδοδείκτη: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης κωδικού πρόσβασης σελιδοδείκτη: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης κλειδιού περιεχομένου: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης ονόματος στοιχείου: ${ message }"
+      ],
       "Failed to decrypt node key: ${ message }": [
         "Αποτυχία αποκρυπτογράφησης του κλειδιού κόμβου: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Απέτυχε η αποκρυπτογράφηση των μεταδεδομένων αναθεώρησης"
       ],
       "Failed to expand folder": [
         "Αποτυχία ανάπτυξης φακέλου"
@@ -3128,6 +3188,9 @@
       ],
       "Failed to fetch sharing info": [
         "Αποτυχία ανάκτησης πληροφοριών κοινοποίησης"
+      ],
+      "Failed to get inviter keys": [
+        "Αποτυχία λήψης κλειδιών προσκλητού"
       ],
       "Failed to load 'My files' folder": [
         "Αποτυχία φόρτωσης του φακέλου \"Τα αρχεία μου\""
@@ -3168,6 +3231,12 @@
       "Failed to verify invitation": [
         "Αποτυχία επαλήθευσης πρόσκλησης"
       ],
+      "File download failed due to empty response": [
+        "Δεν είναι δυνατή η επαλήθευση ποιος ανέβασε αυτό το αρχείο"
+      ],
+      "File has no revision": [
+        "Το αρχείο δεν έχει αναθεώρηση"
+      ],
       "First name is too long": [
         "Το όνομα είναι πολύ μεγάλο"
       ],
@@ -3176,6 +3245,9 @@
       ],
       "Forward address is required": [
         "Απαιτείται η διεύθυνση προώθησης"
+      ],
+      "Image preview not found": [
+        "Δεν βρέθηκε προεπισκόπηση εικόνας"
       ],
       "Image upload failed": [
         "Αποτυχία ανεβάσματος εικόνας"
@@ -3213,6 +3285,9 @@
       "Item content cannot exceed 40KB": [
         "Το περιεχόμενο του στοιχείου δεν μπορεί να υπερβαίνει τα 40KB"
       ],
+      "Item not found": [
+        "Το στοιχείο δεν βρέθηκε"
+      ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
       ],
@@ -3229,6 +3304,9 @@
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
       ],
+      "Missing inviter email": [
+        "Λείπει η διεύθυνση ηλεκτρονικού ταχυδρομείου προσκλητή"
+      ],
       "Missing key packet": [
         "Λείπει πακέτο κλειδιού"
       ],
@@ -3241,8 +3319,17 @@
       "Missing signature": [
         "Λείπει η υπογραφή"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Λείπει η υπογραφή για ${ signatureType }"
+      ],
       "Move operation aborted": [
         "Η λειτουργία μετακίνησης ματαιώθηκε"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Η μετακίνηση στοιχείου σε μη φάκελο δεν επιτρέπεται"
+      ],
+      "Moving root item is not allowed": [
+        "Δεν επιτρέπεται η μετακίνηση ριζικού στοιχείου"
       ],
       "Name is required": [
         "Απαιτείται όνομα"
@@ -3286,8 +3373,14 @@
         "Μία από τις ομάδες δεν έχει επαφές: : ${ noContactGroupList }",
         "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Μόνο οι διαχειριστές μπορούν να μετατρέψουν εξωτερικές προσκλήσεις"
+      ],
       "Operation aborted": [
         "Η λειτουργία ακυρώθηκε"
+      ],
+      "Operation failed, try again later": [
+        "Η λειτουργία απέτυχε, δοκιμάστε ξανά αργότερα"
       ],
       "Organization does not have enough seats available": [
         "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
@@ -3304,11 +3397,20 @@
       "Organization key must be activated to create non-private users": [
         "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία μη ιδιωτικών χρηστών"
       ],
+      "Part of the file appears to be corrupted": [
+        "Μέρος του αρχείου φαίνεται να είναι κατεστραμμένο"
+      ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
       ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
+      ],
+      "Photo is already in the target album": [
+        "Η φωτογραφία είναι ήδη στο άλμπουμ προορισμού"
+      ],
+      "Photo not found": [
+        "Η Φωτογραφία δε βρέθηκε"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Η μεταφόρτωση φωτογραφιών είναι προσωρινά απενεργοποιημένη. Προσπαθήστε ξανά αργότερα"
@@ -3363,6 +3465,9 @@
         "Αφαιρέθηκε διπλότυπος προσκεκλημένος: ${ joinedInvitee }",
         "Αφαιρέθηκαν διπλότυποι προσκεκλημένοι: ${ joinedInvitee }"
       ],
+      "Renaming root item is not allowed": [
+        "Δεν επιτρέπεται η μετονομασία ριζικού στοιχείου"
+      ],
       "Request aborted": [
         "Το αίτημα ακυρώθηκε"
       ],
@@ -3371,6 +3476,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Το σύστημα αντιστροφής χρέωσης δεν υποστηρίζεται για αυτό το πλάνο"
+      ],
+      "Signature is missing": [
+        "Λείπει η υπογραφή"
       ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
@@ -3381,14 +3489,29 @@
       "Signature verification failed: ${ errorMessage }": [
         "Αποτυχία επαλήθευσης υπογραφής: ${ errorMessage }"
       ],
+      "Signature verification for ${ signatureType } failed": [
+        "Η επαλήθευση υπογραφής για το ${ signatureType } απέτυχε"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Η επαλήθευση υπογραφής για το ${ signatureType } απέτυχε: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Ορισμένες επαφές δεν μπόρεσαν να διαγραφούν"
       ],
       "Some documents could not be loaded": [
         "Δεν ήταν δυνατή η φόρτωση ορισμένων εγγράφων"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Η μεταφόρτωση ορισμένων δεδομένων αρχείου απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Η μεταφόρτωση ορισμένων τμημάτων αρχείου απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "Some groups could not be deleted": [
         "Αδυναμία διαγραφής κάποιων ομάδων"
+      ],
+      "Some items could not be loaded": [
+        "Δεν ήταν δυνατή η φόρτωση ορισμένων στοιχείων"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Ορισμένα από τα ονόματα φακέλων σας δεν είναι διαθέσιμα. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
@@ -3471,6 +3594,9 @@
       "The original file is not uploaded yet, please try again later": [
         "Το πρωτότυπο αρχείο δεν έχει ανέβει ακόμα, παρακαλούμε δοκιμάστε ξανά αργότερα"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Το μεταφορτωμένο αρχείο δεν ταιριάζει με το πρωτότυπο. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Υπερβολικός αριθμός φακέλων στον εξωτερικό λογαριασμό σας. Παρακαλούμε προσαρμόστε την εισαγωγή, προς διαγραφή μερικών φακέλων."
       ],
@@ -3492,17 +3618,38 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
+      "This file has missing crypto material": [
+        "Σε αυτό το αρχείο λείπει υλικό κρυπτογράφησης"
+      ],
+      "This file has no version available to download": [
+        "Αυτό το αρχείο δεν έχει διαθέσιμη έκδοση για λήψη"
+      ],
+      "This file version could not be uploaded": [
+        "Δεν ήταν δυνατή η μεταφόρτωση αυτής της έκδοσης αρχείου"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
+      "This item has no image preview": [
+        "Αυτό το στοιχείο δεν έχει προεπισκόπηση εικόνας"
+      ],
       "This item is no longer shared": [
         "Αυτό το στοιχείο δεν είναι πλέον κοινόχρηστο"
+      ],
+      "This item is not shared": [
+        "Αυτό το στοιχείο δεν είναι κοινόχρηστο"
       ],
       "This label name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιους συνδέσμους URL που δεν μπορούν να ανοίξουν σωστά από το τρέχον πρόγραμμα περιήγησης."
+      ],
+      "Too many server errors, please try again later": [
+        "Πάρα πολλά σφάλματα διακομιστή, παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "Too many server requests, please try again later": [
+        "Πάρα πολλά αιτήματα διακομιστή, παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Try using only letters, numerals, and _.-": [
         "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
@@ -3543,6 +3690,9 @@
       "Verification keys are not available": [
         "Τα κλειδιά επαλήθευσης δεν είναι διαθέσιμα"
       ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Τα κλειδιά επαλήθευσης για ${ signatureType } δεν είναι διαθέσιμα"
+      ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Αντιμετωπίζουμε προβλήματα με την αποθήκευση πρόσφατων τροποποιήσεων. Ανανεώστε τη σελίδα."
       ],
@@ -3558,8 +3708,17 @@
       "Wrong billing address": [
         "Λανθασμένη διεύθυνσης χρέωσης"
       ],
+      "You can create public links for your own files only": [
+        "Μπορείτε να δημιουργήσετε δημόσιους συνδέσμους μόνο για τα δικά σας αρχεία"
+      ],
       "You can only leave items that are shared with you": [
         "Μπορείτε να αφήσετε μόνο στοιχεία που έχουν κοινοποιηθεί σε εσάς"
+      ],
+      "You can only upload a new version to a file": [
+        "Μπορείτε να ανεβάσετε μόνο μια νέα έκδοση σε ένα αρχείο"
+      ],
+      "You can update a public link for your own files only": [
+        "Μπορείτε να ενημερώσετε έναν δημόσιο σύνδεσμο μόνο για τα δικά σας αρχεία"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
@@ -3567,6 +3726,9 @@
       ],
       "You do not have access to this item": [
         "Δεν έχετε πρόσβαση σε αυτό το στοιχείο"
+      ],
+      "You do not have access to this shared item": [
+        "Δεν έχετε πρόσβαση σε αυτό το κοινόχρηστο στοιχείο"
       ],
       "You have reached the maximum number of calendars.": [
         "Έχετε φτάσει τον μέγιστο αριθμό ημερολογίων."
@@ -4690,6 +4852,9 @@
       "Attention required": [
         "Απαιτείται προσοχή"
       ],
+      "Author is not provided on public link": [
+        "Ο συγγραφέας δεν παρέχεται σε δημόσιο σύνδεσμο"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
@@ -5524,6 +5689,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Αυτός ο μοναδικός κωδικός μπορεί να χρησιμοποιηθεί από ιστότοπους και ISP (internet service providers) για τη σύνδεση της τοποθεσίας και του ιστορικού περιήγησής σας με τη συσκευή σας."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Δεν είναι δυνατή η μετεγκατάσταση αυτού του χρήστη επειδή η διεύθυνση ηλεκτρονικού ταχυδρομείου του δεν είναι διαθέσιμη στο ${ BRAND_NAME }."
+      ],
       "This user can not be migrated due to platform incompatibilities.": [
         "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
       ],
@@ -5548,8 +5716,11 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Για να εισάγετε εκδηλώσεις, θα πρέπει πρώτα να δημιουργήσετε ένα ημερολόγιο στο ${ CALENDAR_APP_NAME }. Εδώ θα εμφανιστούν οι εκδηλώσεις μετά την εισαγωγή."
       ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην Κονσόλα διαχειριστή του Google Workspace."
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, προσθέστε και επαληθεύστε τον τομέα ηλεκτρονικού ταχυδρομείου στο ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στο ${ provider.adminConsoleName }."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην ενότητα ${ usersAddressesLink }."
@@ -5560,11 +5731,11 @@
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
       ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αρχειοθέτησή του στην Κονσόλα διαχειριστή Google Workspace."
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αρχειοθέτησή του από το ${ provider.adminConsoleName }."
       ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αναστολή του στην Κονσόλα διαχειριστή του Google Workspace."
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αναστολή του στον φάκελο ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Για να υπογράψουμε εκ νέου τις επαφές σας, πρέπει να ελέγξουμε κάθε επαφή με τη λίστα των κλειδιών κρυπτογράφησης που είναι διαθέσιμα στο λογαριασμό σας. Αν δεν βρεθεί αντιστοιχία, η επαφή σας θα επανσυνδεθεί με το πρωτεύον κλειδί κρυπτογράφησης."
@@ -5753,6 +5924,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Δε θα μπορείτε να κοινοποιήστε το \"${ fileName }\" μετά την αλλαγή της πρόσβασής σας σε πρόγραμμα προβολής. Ο κάτοχος ή ένας συντάκτης με πρόσβαση κοινοποίησης μπορεί να επαναφέρει την πρόσβαση επεξεργασίας σας. Δεν μπορείτε να αναιρέσετε αυτήν την αλλαγή μόνοι σας."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Θα λάβετε την ανταμοιβή πίστωσης 1 μήνα αφότου ο φίλος σας εγγραφεί σε ετήσιο πλάνο και 2 μήνες αφότου εγγραφεί σε μηνιαίο πλάνο."
@@ -8702,6 +8876,9 @@
       "attributes": [
         "χαρακτηριστικά"
       ],
+      "content key": [
+        "κλειδί περιεχομένου"
+      ],
       "hash key": [
         "κλειδί hash"
       ],
@@ -10242,6 +10419,9 @@
       "Document verification failed": [
         "Η επαλήθευση εγγράφου απέτυχε"
       ],
+      "Domain names": [
+        "Ονόματα τομέων"
+      ],
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
       ],
@@ -10705,8 +10885,8 @@
       "Customize import to reduce the number of labels": [
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των ετικετών"
       ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Κατάσταση μετεγκατάστασης δεδομένων από το Google Workspace στο ${ BRAND_NAME }"
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Κατάσταση μετεγκατάστασης δεδομένων από το ${ providerName } στο ${ BRAND_NAME }"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Η ψηφιακή υπογραφή μηνυμάτων e-mail βοηθά στην εξακρίβωση ταυτότητας, ότι τα μηνύματα αποστέλλονται από εσάς"

@@ -2797,6 +2797,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe, asistent písania"
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } značka"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
       ],
@@ -3231,6 +3234,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Na ochranu vašich platieb používame 3-D Secure"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Na dokončenie tejto transakcie vás presmerujeme do ${ IDEAL_BRAND_NAME } v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme na PayPal v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
@@ -4976,6 +4982,9 @@
       "More plans are available in other currencies": [
         "Ďalšie plány sú k dispozícii v iných menách"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Platba cez ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Spôsob platby potrebný na aktiváciu predplatného po skončení skúšobnej doby."
       ],
@@ -5069,6 +5078,9 @@
       "You will soon be redirected to verify your payment.": [
         "Za účelom overenia platby dôjde o chvíľu k presmerovaniu."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_BRAND_NAME } podporuje platby len v eurách."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
@@ -5080,6 +5092,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Inicializácia ${ IDEAL_BRAND_NAME } zlyhala. Skúste to neskôr znova, prosím."
+      ],
       "Invalid card number": [
         "Neplatné číslo karty"
       ],
@@ -5102,6 +5117,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Niečo sa pokazilo. Overenie Google Pay zlyhalo."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potvrdením tejto platby oprávňujete ${ BRAND_NAME } a spoločnosť Stripe, nášho poskytovateľa platobných služieb, aby dali vašej banke pokyn na odpísanie prostriedkov z vášho účtu. Peniaze vám môžu byť vrátené do 8 týždňov od dátumu odpísania z účtu za podmienok stanovených v zmluve s vašou bankou."
       ]
     },
     "Payments.info": {
@@ -6133,6 +6153,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Navýšte úroveň na podporovaný plán, aby ste mohli využívať pozície správcov."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Akonáhle používateľ prijme pozvánku, budete môcť priradiť pozície."
       ]

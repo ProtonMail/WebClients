@@ -4921,8 +4921,14 @@
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
       ],
+      "Invitation not found": [
+        "Kutsua ei löytynyt"
+      ],
       "Item content cannot exceed 40KB": [
         "Kohteen sisällön koko ei saa ylittää 40 kt"
+      ],
+      "Item not found": [
+        "Kohdetta ei löytynyt"
       ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
@@ -4954,6 +4960,9 @@
       ],
       "Name is required": [
         "Nimi vaaditaan"
+      ],
+      "Name must not be empty": [
+        "Nimi ei voi olla tyhjä"
       ],
       "Network error": [
         "Verkkovirhe"
@@ -5025,6 +5034,9 @@
       ],
       "Permissions request failed.": [
         "Käyttöoikeuspyyntö epäonnistui."
+      ],
+      "Photo not found": [
+        "Kuvaa ei löytynyt"
       ],
       "Please activate your search again": [
         "Aktivoi hakusi uudelleen"
@@ -5141,6 +5153,9 @@
       ],
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "Liitteiden lähettämistä rajoitetaan, koska olet ylittänyt nykyisen tilauksesi rajoitukset tai kunnes päivität laajempaan tilaukseen."
+      ],
+      "Signature is missing": [
+        "Allekirjoitus puuttuu"
       ],
       "Signature not verified": [
         "Allekirjoitusta ei vahvistettu"
@@ -5886,6 +5901,12 @@
       ]
     },
     "Filter": {
+      "All": [
+        "Kaikki"
+      ],
+      "Errors": [
+        "Virheet"
+      ],
       "Filter": [
         "Suodatin"
       ],
@@ -7901,6 +7922,9 @@
       "Move emails": [
         "Siirrä sähköpostit"
       ],
+      "Move here": [
+        "Siirrä tänne"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
       ],
@@ -8912,6 +8936,9 @@
       ],
       "Yearly": [
         "Vuosittain"
+      ],
+      "You": [
+        "Sinä"
       ],
       "You already have a free account": [
         "Sinulla on jo ilmainen tili"
@@ -10326,6 +10353,12 @@
       ],
       "Username": [
         "Käyttäjätunnus"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ],
       "Verification code": [
         "Vahvistuskoodi"
@@ -13237,6 +13270,14 @@
         "Edistyminen: ${ combinedProgress } %"
       ]
     },
+    "Property": {
+      "key": [
+        "avain"
+      ],
+      "name": [
+        "nimi"
+      ]
+    },
     "Property type": {
       "Address": [
         "Osoite"
@@ -15200,6 +15241,9 @@
       "Created": [
         "Luotu"
       ],
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
       "Expires": [
         "Erääntyy"
       ],
@@ -15217,6 +15261,9 @@
       ],
       "Type": [
         "Tyyppi"
+      ],
+      "User": [
+        "Käyttäjä"
       ]
     },
     "TableHeader": {
@@ -15645,6 +15692,9 @@
       ],
       "Distraction-free emailing": [
         "Häiriötön sähköpostittelu"
+      ],
+      "Domain names": [
+        "Verkkotunnukset"
       ],
       "Don't give spam a chance": [
         "Älä anna roskapostille mahdollisuutta"

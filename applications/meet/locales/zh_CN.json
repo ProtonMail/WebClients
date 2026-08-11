@@ -147,9 +147,6 @@
       "Add another account": [
         "添加其他账户"
       ],
-      "Admit": [
-        "批准"
-      ],
       "Admit ${ participantName }": [
         "批准 ${ participantName }"
       ],
@@ -1860,6 +1857,9 @@
       "Failed to download recording": [
         "下载录制失败"
       ],
+      "Failed to edit meeting": [
+        "编辑会议失败"
+      ],
       "Failed to edit room name": [
         "编辑会议室名称失败"
       ],
@@ -2201,6 +2201,9 @@
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
+      ],
+      "Admitting": [
+        "正在批准"
       ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "高级模式：调整下一版本中的每个模糊常量，然后点击“应用”以重建预览。覆盖优先级高于文件和 Unleash 值。"
@@ -2655,6 +2658,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或${ link }来解决。"
       ],
+      "Rejecting": [
+        "正在拒绝"
+      ],
       "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
         "将实时摄像头画面通过自定义背景处理器处理，选择纯色或上传图像作为背景。"
       ],
@@ -2726,6 +2732,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "这是一个端到端加密的聊天，消息为临时性质，通话结束后将自动消失。"
+      ],
+      "This meeting has a waiting room": [
+        "会议设有等候室"
       ],
       "This meeting is being recorded": [
         "此会议正在被录制"
@@ -2807,6 +2816,9 @@
       ],
       "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
         "等待主持人开始会议。主持人开始会议并批准您加入后，您将进入会议。"
+      ],
+      "Waiting since ${ receivedTime }": [
+        "自 ${ receivedTime } 起正在等候"
       ],
       "Warning": [
         "注意"
@@ -3142,6 +3154,9 @@
       ],
       "Use simple selfie segmentation": [
         "使用简单自拍分割"
+      ],
+      "Use waiting room with a paid plan": [
+        "使用付费套餐的等候室"
       ],
       "Verification code": [
         "验证码"
