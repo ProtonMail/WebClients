@@ -1,6 +1,10 @@
 import type { Message } from '../../../types';
 import { Role } from '../../../types-api';
-import { buildArtifactRegistry, getArtifactVersionIndexForMessage } from './artifactRegistry';
+import {
+    buildArtifactRegistry,
+    getArtifactVersionIndexForMessage,
+    mergeProvisionalArtifactRegistry,
+} from './artifactRegistry';
 import { CREATE_ARTIFACT_TOOL_NAME } from './createArtifactTool';
 
 let counter = 0;
@@ -193,5 +197,84 @@ describe('buildArtifactRegistry', () => {
         const registry = buildArtifactRegistry(chain);
 
         expect(Object.keys(registry)).toHaveLength(0);
+    });
+});
+
+describe('mergeProvisionalArtifactRegistry', () => {
+    const makeArgs = (content: string) => ({
+        id: 'letter-1',
+        type: 'document' as const,
+        title: 'Landlord Letter',
+        content,
+    });
+    const toolCallBlock = (args: ReturnType<typeof makeArgs>, callId: string) => ({
+        type: 'tool_call' as const,
+        content: JSON.stringify({ id: callId, name: CREATE_ARTIFACT_TOOL_NAME, arguments: args }),
+        toolCall: { id: callId, name: CREATE_ARTIFACT_TOOL_NAME, arguments: args },
+    });
+
+    it('adds a provisional version for an in-flight assistant message', () => {
+        const streaming = makeMessage({
+            status: undefined,
+            content: '',
+            blocks: [toolCallBlock(makeArgs('Dear landlord,'), 'call_1')],
+        });
+        const finalized = buildArtifactRegistry([]);
+        const merged = mergeProvisionalArtifactRegistry(finalized, [streaming]);
+
+        expect(Object.keys(merged)).toEqual(['letter-1']);
+        expect(merged['letter-1']!.versions).toHaveLength(1);
+        expect(merged['letter-1']!.versions[0]!.provisional).toBe(true);
+        expect(merged['letter-1']!.versions[0]!.content).toBe('Dear landlord,');
+        expect(getArtifactVersionIndexForMessage(merged, 'letter-1', streaming.id)).toBe(0);
+    });
+
+    it('appends a provisional revision to an existing finalized artifact', () => {
+        const first = makeMessage({
+            content: '',
+            blocks: [toolCallBlock(makeArgs('Dear landlord,'), 'call_1')],
+        });
+        const streaming = makeMessage({
+            status: undefined,
+            content: '',
+            blocks: [toolCallBlock(makeArgs('Dear landlord, revised.'), 'call_2')],
+        });
+        const finalized = buildArtifactRegistry([first]);
+        const merged = mergeProvisionalArtifactRegistry(finalized, [first, streaming]);
+
+        expect(merged['letter-1']!.versions).toHaveLength(2);
+        expect(merged['letter-1']!.versions[0]!.provisional).toBeUndefined();
+        expect(merged['letter-1']!.versions[1]!.provisional).toBe(true);
+        expect(getArtifactVersionIndexForMessage(merged, 'letter-1', streaming.id)).toBe(1);
+    });
+
+    it('does not duplicate once the message finalizes', () => {
+        const finalizedMessage = makeMessage({
+            content: '',
+            blocks: [toolCallBlock(makeArgs('Dear landlord,'), 'call_1')],
+        });
+        const finalized = buildArtifactRegistry([finalizedMessage]);
+        const merged = mergeProvisionalArtifactRegistry(finalized, [finalizedMessage]);
+
+        expect(merged['letter-1']!.versions).toHaveLength(1);
+        expect(merged['letter-1']!.versions[0]!.provisional).toBeUndefined();
+    });
+
+    it('does not stick to an empty parse cached before the tool call landed', () => {
+        const streaming = makeMessage({
+            status: undefined,
+            content: '',
+            blocks: [],
+        });
+        mergeProvisionalArtifactRegistry(buildArtifactRegistry([]), [streaming]);
+
+        streaming.blocks = [toolCallBlock(makeArgs('Dear landlord,'), 'call_1')];
+        const mergedWhileStreaming = mergeProvisionalArtifactRegistry(buildArtifactRegistry([]), [streaming]);
+        expect(mergedWhileStreaming['letter-1']!.versions[0]!.provisional).toBe(true);
+
+        streaming.status = 'succeeded';
+        const finalized = buildArtifactRegistry([streaming]);
+        expect(finalized['letter-1']!.versions).toHaveLength(1);
+        expect(finalized['letter-1']!.versions[0]!.provisional).toBeUndefined();
     });
 });
