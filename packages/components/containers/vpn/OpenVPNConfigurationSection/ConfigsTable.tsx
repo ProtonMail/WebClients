@@ -192,7 +192,7 @@ const ConfigsTable = ({
                                     {server.City}
                                 </div>
                             ) : null,
-                            <div className="inline-flex *:self-center" key="status">
+                            <div className="inline-flex *:self-center flex-nowrap" key="status">
                                 <LoadIndicator server={server} />
                                 {server.Tier === 2 && <PlusBadge />}
                                 {server.Servers?.every(({ Status }) => !Status) && <ServerDown />}
