@@ -724,7 +724,7 @@
         "Перамясціць у сметніцу"
       ],
       "Name your album": [
-        "Назва вашага альбома"
+        "Назавіце свой альбом"
       ],
       "New": [
         "Новая"
@@ -1346,6 +1346,9 @@
       ],
       "Stop": [
         "Спыніць"
+      ],
+      "Migrate": [
+        "Перанесці"
       ]
     },
     "Action: Docs": {
@@ -4158,7 +4161,7 @@
         "Не ўдалося загрузіць некаторыя вашы запрашэнні для абагуленых элементаў"
       ],
       "We were not able to load some of your saved shared links": [
-        "Не ўдалося загрузіць некаторыя вашы захаваныя абагуленыя спасылкі"
+        "Не ўдалося загрузіць некаторыя вашы захаваныя спасылкі з абагульваннем"
       ],
       "We were not able to load some of your shared items": [
         "Не ўдалося загрузіць некаторыя вашы абагуленыя элементы"
@@ -4215,7 +4218,7 @@
         "Немагчыма пачаць пошук: недастаткова месца ў сховішчы"
       ],
       "Something went wrong with search. Please try again later.": [
-        "Нешта пайшло не так з пошукам. Паспрабуйце яшчэ раз пазней."
+        "Нешта пайшло не так з пошукам. Паўтарыце спробу пазней."
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Нешта пайшло не так з пошукам: недастаткова месца на дыску."
@@ -4459,6 +4462,72 @@
       ],
       "You do not have access to this shared item": [
         "У вас няма доступу да гэтага абагуленага элемента"
+      ],
+      "Cannot share root folder": [
+        "Немагчыма абагуліць каранёвую папку"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Немагчыма спраўдзіць хто запампаваў гэты файл"
+      ],
+      "Copy operation aborted": [
+        "Аперацыя капіявання перарвана"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Стварэнне файлаў па-за іх межамі забаронена"
+      ],
+      "Device not found": [
+        "Прылада не знойдзена"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Не ўдалося расшыфраваць назву элемента: ${ message }"
+      ],
+      "File download failed due to empty response": [
+        "Збой спампоўвання файла. Прычына: пусты адказ"
+      ],
+      "Invitation not found": [
+        "Запрашэнне не знойдзена"
+      ],
+      "Item not found": [
+        "Элемент не знойдзены"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адрас удзельніка не знойдзены. Звяжыцеся з нашай службай падтрымкі кліентаў, каб вырашыць гэта"
+      ],
+      "Moving root item is not allowed": [
+        "Перамяшчэнне элемента суперкарыстальніка забаронена"
+      ],
+      "Operation failed, try again later": [
+        "Збой выканання аперацыі. Паўтарыце спробу пазней"
+      ],
+      "Photo is already in the target album": [
+        "Фатаграфія ўжо знаходзіцца ў мэтавым альбоме"
+      ],
+      "Photo not found": [
+        "Фатаграфія не знойдзена"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Збой спраўджання подпісу для ${ signatureType }"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Некаторыя часткі файла не ўдалося запампаваць. Паўтарыце спробу."
+      ],
+      "Something went wrong, please try again later": [
+        "Нешта пайшло не так. Паўтарыце спробу пазней"
+      ],
+      "This file has missing crypto material": [
+        "У гэтага файла адсутнічае крыптаграфічны матэрыял"
+      ],
+      "This file version could not be uploaded": [
+        "Не ўдалося запампаваць гэтую версію файла"
+      ],
+      "Too many server requests, please try again later": [
+        "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
+      ],
+      "You can create public links for your own files only": [
+        "Вы можаце ствараць публічныя спасылкі толькі для сваіх уласных файлаў"
+      ],
+      "You can update a public link for your own files only": [
+        "Вы можаце абнавіць публічную спасылку толькі для вашых уласных файлаў"
       ]
     },
     "error": {
@@ -4605,7 +4674,7 @@
         "Праграма часова недаступна"
       ],
       "Brace yourself till we get the error fixed.": [
-        "Пачакайце, пакуль мы выправім памылку."
+        "Дачакайцеся, пакуль мы выправім памылку."
       ],
       "Error: ${ errorMessage }": [
         "Памылка: ${ errorMessage }"
@@ -5775,7 +5844,7 @@
         "Ужо ў вашай бібліятэцы"
       ],
       "Also try looking in Trash.": [
-        "Таксама паспрабуйце пашукаць у Сметніцы."
+        "Таксама паспрабуйце пашукаць у сметніцы."
       ],
       "American Express SafeKey logo": [
         "Лагатып American Express SafeKey"
@@ -6213,7 +6282,7 @@
         "Файл не будзе абноўлены"
       ],
       "Files and folders that others shared with you will appear here": [
-        "Тут будуць з'яўляцца папкі і файлы, якія з вамі абагулілі іншыя карыстальнікі."
+        "Тут будуць з'яўляцца папкі і файлы, якія з вамі абагулілі іншыя карыстальнікі"
       ],
       "Finalizing": [
         "Завяршэнне"
@@ -6252,7 +6321,7 @@
         "Атрымаць журналы і іншую інфармацыю для тэхнічнай падтрымкі і выпраўлення непаладак"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
-        "Атрымайце праграму для рэзервовага капіявання фатаграфій з вашай прылады або запампоўвання іх сюды."
+        "Атрымайце праграму для рэзервовага капіявання фатаграфій з вашай прылады або запампоўвайце іх сюды."
       ],
       "Get the desktop app to sync files from your computer.": [
         "Атрымайце праграму для камп'ютара, каб мець магчымасць сінхранізаваць файлы."
@@ -6420,7 +6489,7 @@
         "Вялікае імпартаванне можа заняць некалькі дзён."
       ],
       "Last week": [
-        "На мінулым тыдні"
+        "Мінулы тыдзень"
       ],
       "Learn more": [
         "Даведацца больш"
@@ -7737,7 +7806,7 @@
         "Адбыўся нечаканы стан пры індэксацыі і працэс немагчыма працягнуць далей. Паспрабуйце аднавіць індэкс."
       ],
       "Not enough storage space": [
-        "Недастаткова месца на дыску"
+        "Недастаткова месца для захоўвання"
       ],
       "Search data is corrupted": [
         "Пошук даных пашкоджаны"
@@ -7951,6 +8020,27 @@
       ],
       "You": [
         "Вы"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Пазначыць ${ IDEAL_BRAND_NAME }"
+      ],
+      "Author is not provided on public link": [
+        "Аўтар не пазначаны ў публічнай спасылцы"
+      ],
+      "Find out what can be migrated.": [
+        "Даведайцеся, што перанесена."
+      ],
+      "No users to display": [
+        "Няма карыстальнікаў для адлюстравання"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Гэтага карыстальніка немагчыма перанесці, бо яго адрас электроннай пошты недаступны ў ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Гэтага карыстальніка немагчыма перанесці з-за несумяшчальнасці платформ."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Уключыце ўліковы запіс карыстальніка ў ${ usersAddressesLink } для яго пераносу."
       ]
     },
     "info": {
@@ -8749,7 +8839,7 @@
         "Састарэлая версія"
       ],
       "Searchable": [
-        "Даступны да пошуку"
+        "Даступна для пошуку"
       ],
       "User opted in": [
         "Карыстальнік, які выбраў"
@@ -8864,6 +8954,9 @@
       ],
       "Client version": [
         "Версія кліента"
+      ],
+      "Allow editors to change permissions and share.": [
+        "Дазволіць рэдактарам змяняць дазволы і абагульваць."
       ]
     },
     "Label for contact group color": {
@@ -11675,6 +11768,9 @@
       ],
       "Edit billing address": [
         "Рэдагаваць адрас аплаты"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Ваша валюта была зменена на еўра (€), таму што ${ IDEAL_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
       ]
     },
     "Payments.Error": {
@@ -11695,6 +11791,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Не ўдалося ініцыялізаваць ${ IDEAL_BRAND_NAME }. Паўтарыце спробу пазней."
       ]
     },
     "Payments.error": {
@@ -11968,6 +12067,9 @@
       ],
       "Optional feedback": [
         "Неабавязковы водгук"
+      ],
+      "Ask anything…": [
+        "Спытайце што-небудзь…"
       ]
     },
     "Placeholder for contact group name": {
@@ -13529,6 +13631,9 @@
       ],
       "User": [
         "Карыстальнік"
+      ],
+      "Estimated size": [
+        "Прыблізны памер"
       ]
     },
     "TableHeader": {
@@ -13800,7 +13905,7 @@
         "Пацвердзіць страту бонусаў ${ BRAND_NAME }"
       ],
       "Confirmation required": [
-        "Патрабуецца пацвярджэнне"
+        "Патрабуецца пацверджанне"
       ],
       "Connect apps and devices": [
         "Падключэнне праграм і прылад"
@@ -15441,6 +15546,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Палепшыце да сумяшчальнага тарыфнага плана, каб выкарыстоўваць ролі адміністратараў."
       ]
     },
     "Role": {
@@ -15485,6 +15593,15 @@
       ],
       "Pending": [
         "У чаканні"
+      ],
+      "Activated": [
+        "Актывавана"
+      ],
+      "All": [
+        "Усе"
+      ],
+      "In progress": [
+        "Выконваецца"
       ]
     },
     "Property": {
@@ -15496,6 +15613,17 @@
       ],
       "name": [
         "назва"
+      ],
+      "hash key": [
+        "хэш-ключ"
+      ],
+      "membership": [
+        "удзельніцтва"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Пацвярджаючы гэты плацеж, вы надзяляеце паўнамоцтвамі ${ BRAND_NAME } і Stripe, нашага пастаўшчыка плацежных паслуг, даць указанне вашаму банку спісаць з вашага рахунку адпаведныя сродкі. Вы можаце вярнуць спісаныя сродкі на працягу 8 тыдняў з даты спісання ў адпаведнасці з умовамі дагавора з вашым банкам."
       ]
     }
   }

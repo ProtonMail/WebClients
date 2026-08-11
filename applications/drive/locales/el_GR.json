@@ -93,7 +93,7 @@
         "Προσθήκη στο \"${ album.name }\" (${ album.photoCount } φωτογραφίες)"
       ],
       "Add to album": [
-        "Προσθήκη στο άλμπουμ"
+        "Πρσθήκη σε άλμπουμ"
       ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
@@ -549,7 +549,7 @@
         "Μετάβαση στα αρχεία μου"
       ],
       "Go to parent": [
-        "Μετάβαση στον γονέα"
+        "Επιστροφή στο ανώτερο επίπεδο"
       ],
       "Go to settings": [
         "Μετάβαση στις ρυθμίσεις"
@@ -3899,7 +3899,7 @@
         "Το σύστημα αντιστροφής χρέωσης δεν υποστηρίζεται για αυτό το πλάνο"
       ],
       "Search failed": [
-        "Αποτυχία αναζήτησης"
+        "Η αναζήτηση απέτυχε"
       ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
@@ -4383,6 +4383,90 @@
       ],
       "You can only upload a new version to a file": [
         "Μπορείτε να ανεβάσετε μόνο μια νέα έκδοση σε ένα αρχείο"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Δεν είναι δυνατή η προσθήκη φωτογραφίας στο άλμπουμ χωρίς έγκυρο όνομα"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Δεν είναι δυνατή η επαλήθευση ποιος ανέβασε αυτό το αρχείο"
+      ],
+      "Could not find an available name": [
+        "Δεν ήταν δυνατή η εύρεση ενός διαθέσιμου ονόματος"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Δεν επιτρέπεται η δημιουργία αρχείων σε μη φακέλους"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης κλειδιού σελιδοδείκτη: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης ονόματος στοιχείου: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Απέτυχε η αποκρυπτογράφηση των μεταδεδομένων αναθεώρησης"
+      ],
+      "Failed to get inviter keys": [
+        "Αποτυχία λήψης κλειδιών προσκλητού"
+      ],
+      "File download failed due to empty response": [
+        "Δεν είναι δυνατή η επαλήθευση ποιος ανέβασε αυτό το αρχείο"
+      ],
+      "Item not found": [
+        "Το στοιχείο δεν βρέθηκε"
+      ],
+      "Missing inviter email": [
+        "Λείπει η διεύθυνση ηλεκτρονικού ταχυδρομείου προσκλητή"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Η μετακίνηση στοιχείου σε μη φάκελο δεν επιτρέπεται"
+      ],
+      "Moving root item is not allowed": [
+        "Δεν επιτρέπεται η μετακίνηση ριζικού στοιχείου"
+      ],
+      "Only admins can convert external invitations": [
+        "Μόνο οι διαχειριστές μπορούν να μετατρέψουν εξωτερικές προσκλήσεις"
+      ],
+      "Operation failed, try again later": [
+        "Η λειτουργία απέτυχε, δοκιμάστε ξανά αργότερα"
+      ],
+      "Photo is already in the target album": [
+        "Η φωτογραφία είναι ήδη στο άλμπουμ προορισμού"
+      ],
+      "Photo not found": [
+        "Η Φωτογραφία δε βρέθηκε"
+      ],
+      "Renaming root item is not allowed": [
+        "Δεν επιτρέπεται η μετονομασία ριζικού στοιχείου"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Η επαλήθευση υπογραφής για το ${ signatureType } απέτυχε"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Η μεταφόρτωση ορισμένων τμημάτων αρχείου απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Some items could not be loaded": [
+        "Δεν ήταν δυνατή η φόρτωση ορισμένων στοιχείων"
+      ],
+      "This file has missing crypto material": [
+        "Σε αυτό το αρχείο λείπει υλικό κρυπτογράφησης"
+      ],
+      "This file version could not be uploaded": [
+        "Δεν ήταν δυνατή η μεταφόρτωση αυτής της έκδοσης αρχείου"
+      ],
+      "This item has no image preview": [
+        "Αυτό το στοιχείο δεν έχει προεπισκόπηση εικόνας"
+      ],
+      "Too many server requests, please try again later": [
+        "Πάρα πολλά αιτήματα διακομιστή, παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "You can create public links for your own files only": [
+        "Μπορείτε να δημιουργήσετε δημόσιους συνδέσμους μόνο για τα δικά σας αρχεία"
+      ],
+      "You can update a public link for your own files only": [
+        "Μπορείτε να ενημερώσετε έναν δημόσιο σύνδεσμο μόνο για τα δικά σας αρχεία"
+      ],
+      "You do not have access to this shared item": [
+        "Δεν έχετε πρόσβαση σε αυτό το κοινόχρηστο στοιχείο"
       ]
     },
     "error": {
@@ -4626,7 +4710,7 @@
     },
     "Failed": {
       "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } απέτυχε",
+        "${ countOfFailedLinks } απέτυχαν",
         "${ countOfFailedLinks } απέτυχαν"
       ]
     },
@@ -5642,7 +5726,7 @@
         "Θέλετε σίγουρα να διαγράψετε οριστικά τα επιλεγμένα στοιχεία από τα Διαγραμμένα;"
       ],
       "Are you sure you want to proceed?": [
-        "Θέλετε σίγουρα να συνεχίσετε;"
+        "Είστε βέβαιοι ότι θέλετε να συνεχίσετε;"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Τουλάχιστον ${ BETTER_PASSWORD_LENGTH } χαρακτήρες"
@@ -5818,7 +5902,7 @@
         "Δημιουργία σε"
       ],
       "Create links and share your files with others.": [
-        "Δημιουργήστε συνδέσμους και μοιραστείτε τα αρχεία σας με άλλους."
+        "Δημιουργήστε συνδέσμους και κοινοποιήστε τα αρχεία σας με άλλους."
       ],
       "Creating": [
         "Δημιουργία"
@@ -6063,7 +6147,7 @@
         "Αποκτήστε την εφαρμογή για να δημιουργήσετε αντίγραφα ασφαλείας φωτογραφιών από το τηλέφωνό σας ή να τις ανεβάσετε εδώ."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Αποκτήστε την εφαρμογή για υπολογιστές για συγχρονισμό αρχείων από τον υπολογιστή σας."
+        "Αποκτήστε την εφαρμογή επιφάνειας εργασίας για συγχρονισμό αρχείων από τον υπολογιστή σας."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Γνωρίστε το ${ DRIVE_APP_NAME } και κερδίστε 3 GB μπόνους αποθήκευσης! Κάντε το σήμερα."
@@ -6205,7 +6289,7 @@
         "Ιουλ"
       ],
       "Jun": [
-        "Ιούν"
+        "Ιουν"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
@@ -6229,7 +6313,7 @@
         "Οι μεγάλες εισαγωγές μπορεί να πάρουν αρκετές ημέρες."
       ],
       "Last week": [
-        "Προηγούμενη εβδομάδα"
+        "Περασμένη εβδομάδα"
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -6311,7 +6395,7 @@
         "Τα περισσότερα δημόσια δίκτυα WiFi είναι ασφαλή, αλλά ορισμένα στερούνται ασφάλειας, εκθέτοντάς σας σε απειλές στον κυβερνοχώρο. Ένα VPN κρυπτογραφεί την κίνησή σας, διατηρώντας σας προστατευμένους."
       ],
       "Moving files": [
-        "Πραγματοποιείται μετακίνηση αρχείων"
+        "Μετακίνηση αρχείων"
       ],
       "My Links": [
         "Οι Σύνδεσμοί μου"
@@ -6350,7 +6434,7 @@
         "Δεν βρέθηκαν αποτελέσματα"
       ],
       "No synced folders": [
-        "Δεν υπάρχουν φάκελοι σε συγχρονισμό"
+        "Δεν υπάρχουν συγχρονισμένοι φάκελοι"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Κανένα από τα κλειδιά που ανεβάσατε δεν είναι έγκυρα για κρυπτογράφηση. Για να μπορείτε να στέλνετε μηνύματα σε αυτήν τη διεύθυνση, παρακαλούμε να ανεβάσετε ένα έγκυρο κλειδί ή να απενεργοποιήσετε την \"Κρυπτογράφηση μηνυμάτων\"."
@@ -6567,7 +6651,7 @@
         "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
       ],
       "Recovery process might take some time.": [
-        "Η διαδικασία ανάκτησης ίσως διαρκέσει λίγη ώρα."
+        "Η διαδικασία ανάκτησης μπορεί να διαρκέσει κάποιο χρονικό διάστημα."
       ],
       "Referral link copied to your clipboard": [
         "Ο σύνδεσμος παραπομπής αντιγράφηκε στο πρόχειρό σας"
@@ -6612,10 +6696,10 @@
         "Σαρώστε τον κωδικό QR με την κινητή συσκευή σας"
       ],
       "Scan to download": [
-        "Κάντε σάρωση για να κατεβάσετε"
+        "Σαρώστε για λήψη"
       ],
       "Search cannot be enabled in this browser": [
-        "Η αναζήτηση δεν είναι δυνατό να ενεργοποιηθεί σε αυτόν τον περιηγητή"
+        "Η αναζήτηση δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή"
       ],
       "Search Enabled": [
         "Αναζήτηση Ενεργοποιημένη"
@@ -6675,7 +6759,7 @@
         "Κοινή χρήση αρχείων με συνδέσμους"
       ],
       "Shared": [
-        "Κοινόχρηστα"
+        "Κοινοποιημένα"
       ],
       "Shared by ": [
         "Κοινοποιήθηκε από "
@@ -6690,10 +6774,10 @@
         "Ο κοινόχρηστος σύνδεσμος δεν βρέθηκε"
       ],
       "Shared with me": [
-        "Κοινοποιημένο με εμένα"
+        "Σε κοινή χρήση με εμένα"
       ],
       "Shared with you": [
-        "Κοινοποιημένα με εσάς"
+        "Κοινοποιημένο σε εσάς"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Η υπογραφή δεν μπορεί να επικυρωθεί λόγω σφάλματος δικτύου, δοκιμάστε ξανά αργότερα."
@@ -6917,7 +7001,7 @@
         "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, το ${ DRIVE_APP_NAME } χρειάζεται να δεικτοδοτήσει τα αρχεία σας τοπικά."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, χρειάζεται να ευρετηριοποιήσουμε τα αρχεία σας τοπικά. Μπορείτε να συνεχίσετε τη χρήση του ${ DRIVE_APP_NAME } κανονικά - θα σας ενημερώσουμε όταν η ευρετηριοποίηση ολοκληρωθεί."
+        "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, χρειάζεται να δεικτοδοτήσουμε τα αρχεία σας τοπικά. Μπορείτε να συνεχίσετε τη χρήση του ${ DRIVE_APP_NAME } κανονικά - θα σας ενημερώσουμε όταν η δεικτοδότηση ολοκληρωθεί."
       ],
       "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
         "Για την ενεργοποίηση πραγματικής αναζήτησης, χρειάζεται να ευρετηριοποιήσουμε τα αρχεία σας τοπικά. Μπορείτε να συνεχίσετε τη χρήση του ${ DRIVE_APP_NAME } κανονικά - θα σας ενημερώσουμε όταν η ευρετηριοποίηση ολοκληρωθεί."
@@ -6977,7 +7061,7 @@
         "Διαγραμμένα"
       ],
       "Trash is empty": [
-        "Τα Διαγραμμένα είναι άδεια"
+        "Ο κάδος απορριμμάτων είναι άδειος"
       ],
       "Try ${ DRIVE_APP_NAME }: Free forever": [
         "Δοκιμάστε το ${ DRIVE_APP_NAME }: Δωρεάν για πάντα"
@@ -7001,7 +7085,7 @@
         "Άγνωστο σφάλμα"
       ],
       "Unlock drive to recover files": [
-        "Ξεκλειδώστε τον δίσκο για να ανακτήσετε αρχεία"
+        "Ξεκλείδωμα αρχειοθήκης προς ανάκτηση αρχείων"
       ],
       "Unsaved changes": [
         "Μη αποθηκευμένες αλλαγές"
@@ -7166,7 +7250,7 @@
         "Θα θέλατε να λάβετε νέο κωδικό επαλήθευσης;"
       ],
       "Would you like to restore your files?": [
-        "Θα θέλατε να επαναφέρετε τα αρχεία σας;"
+        "Θέλετε να επαναφέρετε τα αρχεία σας;"
       ],
       "Would you like to save it before removing?": [
         "Θα θέλατε να το αποθηκεύσετε πριν το αφαιρέσετε;",
@@ -7328,7 +7412,7 @@
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Τα αρχεία σας δεν είναι πλέον προσβάσιμα, λόγω επαναφοράς κωδικού πρόσβασης. Για να αποκτήσετε ξανά πρόσβαση, ανεβάστε ξανά το παλιό κλειδί κρυπτογράφησης. ${ KeyReactivationButton }"
+        "Τα αρχεία σας δεν είναι πλέον προσβάσιμα, λόγω επαναφοράς κωδικού πρόσβασης. Για επαναπόκτηση πρόσβασης, ανεβάστε ξανά το παλιό κλειδί κρυπτογράφησης. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
@@ -7743,6 +7827,15 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
         "Δε θα μπορείτε να κοινοποιήστε το \"${ fileName }\" μετά την αλλαγή της πρόσβασής σας σε πρόγραμμα προβολής. Ο κάτοχος ή ένας συντάκτης με πρόσβαση κοινοποίησης μπορεί να επαναφέρει την πρόσβαση επεξεργασίας σας. Δεν μπορείτε να αναιρέσετε αυτήν την αλλαγή μόνοι σας."
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } σήμα"
+      ],
+      "Author is not provided on public link": [
+        "Ο συγγραφέας δεν παρέχεται σε δημόσιο σύνδεσμο"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Θα σας ανακατευθύνουμε στο ${ IDEAL_BRAND_NAME }, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ]
     },
     "info": {
@@ -7862,7 +7955,7 @@
         "${ nbYear } έτη"
       ],
       "(Expired)": [
-        "(Ληγμένο)"
+        "(Ληγμένα)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
@@ -8024,7 +8117,7 @@
         "Χώρα"
       ],
       "Create ${ BRAND_NAME } account": [
-        "Δημιουργία λογαριασμού ${ BRAND_NAME }"
+        "Δημιουργία ενός ${ BRAND_NAME } λογαριασμού"
       ],
       "Created": [
         "Δημιουργήθηκε"
@@ -8046,7 +8139,7 @@
         "Διαγράψτε πληροφορίες που σχετίζονται με την ανάκτηση."
       ],
       "Deleted": [
-        "Διαγράφηκαν"
+        "Διαγραμμένα"
       ],
       "Device": [
         "Συσκευή"
@@ -8478,7 +8571,7 @@
         "Ποιος είναι ο κύριος λόγος ακύρωσης ή υποβάθμισης;"
       ],
       "Yes, I want to permanently delete my old files": [
-        "Ναι, επιθυμώ την οριστική διαγραφή των παλαιών αρχείων μου"
+        "Ναι, επιθυμώ την οριστική διαγραφή των παλιών αρχείων μου"
       ],
       "Your alias": [
         "Το ψευδώνυμο σας"
@@ -8556,7 +8649,7 @@
         "Έληξε στις ${ formatted }"
       ],
       "Expires ${ formatted }": [
-        "Λήγει ${ formatted }"
+        "Λήγει στις ${ formatted }"
       ],
       "Item #${ position }": [
         "Στοιχείο #${ position }"
@@ -8799,7 +8892,7 @@
         "Κοινοποιημένα"
       ],
       "Shared with me": [
-        "Κοινοποιημένα σε εμένα"
+        "Σε κοινή χρήση με εμένα"
       ],
       "Terms and conditions": [
         "Όροι & Προϋποθέσεις"
@@ -10496,7 +10589,7 @@
         "Απέτυχε η δημιουργία του εγγράφου"
       ],
       "The item was not added to your drive": [
-        "Το στοιχείο δεν προστέθηκε στο δίσκο σας"
+        "Το στοιχείο δεν προστέθηκε στη μονάδα δίσκου σας"
       ],
       "The item was successfully added to your drive": [
         "Το στοιχείο προστέθηκε με επιτυχία στο δίσκο σας"
@@ -10517,7 +10610,7 @@
         "Διακόψατε την κοινή χρήση αυτού του στοιχείου"
       ],
       "Your old files will be deleted in 72 hours": [
-        "Τα παλιά αρχεία σας θα διαγραφούν σε 72 ώρες"
+        "Τα παλιά αρχεία σας θα διαγραφούν εντός 72 ωρών"
       ],
       "Your settings have been changed successfully": [
         "Οι ρυθμίσεις σας άλλαξαν επιτυχώς"
@@ -10753,7 +10846,7 @@
         "Εγκατάσταση αργότερα"
       ],
       "Invite members": [
-        "Προσκαλέστε μέλη"
+        "Πρόσκληση μελών"
       ],
       "Maybe Later": [
         "Ίσως Αργότερα"
@@ -10768,16 +10861,16 @@
         "Παράλειψη"
       ],
       "Skip for now": [
-        "Παράλειψη προς το παρόν"
+        "Αγνοήστε για τώρα"
       ],
       "Try the app": [
         "Δοκιμάστε την εφαρμογή"
       ],
       "Upload file": [
-        "Ανέβασμα αρχείου"
+        "Μεταφόρτωση αρχείου"
       ],
       "Upload folder": [
-        "Ανέβασμα φακέλου"
+        "Μεταφόρτωση φακέλου"
       ],
       "Upload more files": [
         "Μεταφόρτωση περισσότερων αρχείων"
@@ -10851,7 +10944,7 @@
         "Η πρόσκληση έγινε αποδεκτή"
       ],
       "Invitation received": [
-        "Πρόσκληση ληφθείσα"
+        "Η πρόσκληση ελήφθη"
       ],
       "Invite team members": [
         "Πρόσκληση μελών ομάδας"
@@ -10884,7 +10977,7 @@
         "Συγχρονίστε και αποκτήστε πρόσβαση στα αρχεία σας από οπουδήποτε"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
-        "Ο κάτοχος πρέπει να επιβεβαιώσει την πρόσβαση κοινής χρήσης. Θα λάβετε μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί."
+        "Ο κάτοχος πρέπει να επιβεβαιώσει την πρόσβαση κοινής χρήσης. Θα λάβετε ένα μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί."
       ],
       "Upload your first file": [
         "Ανεβάστε το πρώτο σας αρχείο"
@@ -11249,6 +11342,12 @@
       ],
       "Edit billing address": [
         "Επεξεργασία διεύθυνσης χρέωσης"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Πληρωμή με ${ IDEAL_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Το νόμισμά σας έχει αλλάξει σε ευρώ (€) επειδή το ${ IDEAL_BRAND_NAME } υποστηρίζει μόνο πληρωμές σε ευρώ."
       ]
     },
     "Payments.Error": {
@@ -11269,6 +11368,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Η κάρτα σας απορρίφθηκε. Παρακαλούμε δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Αποτυχία αρχικοποίησης του ${ IDEAL_BRAND_NAME }. Παρακαλούμε δοκιμάστε ξανά αργότερα."
       ]
     },
     "Payments.error": {
@@ -12257,7 +12359,7 @@
         "Η κρυπτογραφημένη αναζήτηση είναι εδώ"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
-        "Τώρα είναι δυνατή η αναζήτηση στο δίσκο εύκολα και διατηρώντας τη διασφάλιση των δεδομένων σας."
+        "Τώρα είναι δυνατή η αναζήτηση στο Drive, εύκολα και διατηρώντας τη διασφάλιση των δεδομένων σας."
       ],
       "Editor permissions": [
         "Δικαιώματα επεξεργαστή"
@@ -12857,7 +12959,7 @@
         "${ countMergeableContacts } επαφές φαίνονται πανομοιότυπες."
       ],
       "${ countOfUnrecoveredLinksLeft } left": [
-        "${ countOfUnrecoveredLinksLeft } απομένει",
+        "${ countOfUnrecoveredLinksLeft } απομένουν",
         "${ countOfUnrecoveredLinksLeft } απομένουν"
       ],
       "Address copied to clipboard": [
@@ -13287,7 +13389,7 @@
         "Επιβεβαιώστε την απώλεια μπόνους ${ BRAND_NAME }"
       ],
       "Confirmation required": [
-        "Απαιτείται Επιβεβαίωση"
+        "Απαιτείται επιβεβαίωση"
       ],
       "Connect apps and devices": [
         "Σύνδεση εφαρμογών και συσκευών"
@@ -14384,6 +14486,9 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Χρήστες που έχουν κάνει πρόσβαση στον λογαριασμό τους ${ BRAND_NAME }"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Κατάσταση μετεγκατάστασης δεδομένων από το ${ providerName } στο ${ BRAND_NAME }"
       ]
     },
     "tooltip": {
@@ -14423,7 +14528,7 @@
     },
     "Upsell": {
       "Get Drive for Business": [
-        "Αποκτήστε το Drive για Επιχειρήσεις"
+        "Αποκτήστε το Drive για Business"
       ]
     },
     "Validation": {
@@ -14965,6 +15070,11 @@
       ],
       "content key": [
         "κλειδί περιεχομένου"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Επιβεβαιώνοντας αυτήν την πληρωμή, εξουσιοδοτείτε το ${ BRAND_NAME } και τη Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να δώσουν εντολή στην τράπεζά σας να χρεώσει ανάλογα τον λογαριασμό σας. Μπορείτε να λάβετε επιστροφή χρημάτων εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας."
       ]
     }
   }

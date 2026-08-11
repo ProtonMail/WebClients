@@ -4347,6 +4347,30 @@
       ],
       "You do not have access to this item": [
         "Você não tem acesso a esse item"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Não é possível verificar quem é autor enviou este arquivo"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Não é permitido criar arquivos dentro de itens que não sejam pastas"
+      ],
+      "Device not found": [
+        "Dispositivo não encontrado"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Falha ao descriptografar a chave de marcador: ${ message }"
+      ],
+      "Operation failed, try again later": [
+        "Erro na operação, tente novamente mais tarde"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "O envio de algumas partes de arquivo falhou. Tente novamente."
+      ],
+      "Too many server requests, please try again later": [
+        "Muitas solicitações ao servidor, tente novamente mais tarde"
+      ],
+      "You can create public links for your own files only": [
+        "Você pode criar links públicos apenas para seus próprios arquivos"
       ]
     },
     "error": {
@@ -7665,6 +7689,18 @@
       ],
       "You": [
         "Você"
+      ],
+      "Author is not provided on public link": [
+        "O autor não forneceu um link público"
+      ],
+      "Find out what can be migrated.": [
+        "Descubra o que pode ser migrado."
+      ],
+      "No users to display": [
+        "Nenhum usuário para exibir"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Para migrar este usuário, ative a conta dele em ${ usersAddressesLink }."
       ]
     },
     "info": {
@@ -14952,6 +14988,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Você poderá atribuir funções assim que o usuário aceitar o convite."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Faça upgrade para um plano suportado para usar funções de administrador."
       ]
     },
     "Role": {
@@ -15008,6 +15047,9 @@
       ],
       "Pending": [
         "Pendente"
+      ],
+      "All": [
+        "Todos"
       ]
     },
     "Property": {

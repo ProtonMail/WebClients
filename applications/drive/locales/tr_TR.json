@@ -402,7 +402,7 @@
         "Uygulamayı indir"
       ],
       "Download for Mac": [
-        "Mac için indir"
+        "Mac için indirin"
       ],
       "Download for MacOS": [
         "macOS için indir"
@@ -417,7 +417,7 @@
         "Günlüğü indir"
       ],
       "Download results": [
-        "Sonuçları indir"
+        "İndirme sonuçları"
       ],
       "Drive Locked": [
         "Drive kilitlendi"
@@ -843,7 +843,7 @@
         "Hediye kodunu kaldır"
       ],
       "Remove me": [
-        "Beni çıkar"
+        "Beni kaldır"
       ],
       "Remove without saving": [
         "Kaydetmeden kaldır"
@@ -1008,7 +1008,7 @@
         "Albümü paylaş"
       ],
       "Share file": [
-        "Dosya paylaş"
+        "Dosyayı paylaş"
       ],
       "Share item": [
         "Ögeyi paylaş"
@@ -1062,7 +1062,7 @@
         "Doğrulamayı atla"
       ],
       "Start": [
-        "Başlangıç"
+        "Başlat"
       ],
       "Start import": [
         "İçe aktarmayı başlat"
@@ -1313,7 +1313,7 @@
         "Geri bildirim gönder"
       ],
       "Report abuse": [
-        "Kötüye kullanımı bildir"
+        "Kötüye kullanım bildir"
       ],
       "Re-indexing in progress": [
         "Dizini yeniden oluşturma işlemi sürüyor"
@@ -3240,7 +3240,7 @@
     },
     "Docs Info": {
       "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
-        "İşbirliği yapmak daha kolay. Artık herkes belgeyi değiştirmeden düzenleme önerebilir."
+        "İş birliği yapmak daha kolay. Artık herkes belgeyi değiştirmeden düzenleme önerebilir."
       ],
       "Suggestion mode is here": [
         "Öneri kipi burada bulunur"
@@ -3899,7 +3899,7 @@
         "Bu tarifede tersine KDV uygulaması desteklenmiyor"
       ],
       "Search failed": [
-        "Arama yapılamadı"
+        "Arama başarısız oldu"
       ],
       "Signature not verified": [
         "İmza doğrulanamadı"
@@ -4088,13 +4088,13 @@
         "Yer işaretlerinizden bazıları yüklenemedi"
       ],
       "We were not able to load some of your invitation to shared items": [
-        "Paylaşılan ögelere yaptığınız davetleriden bazıları yüklenemedi"
+        "Paylaşılan ögelere yaptığınız davetlerden bazıları yüklenemedi"
       ],
       "We were not able to load some of your saved shared links": [
         "Kaydedilmiş paylaşılan bağlantılarınızdan bazıları yüklenemedi"
       ],
       "We were not able to load some of your shared items": [
-        "Paylaşılan ögelerinizden bazıları yüklenemedi"
+        "Paylaşılan ögelerinizin bazıları yüklenemedi"
       ],
       "We were not able to load some search results": [
         "Bazı arama sonuçları yüklenemedi"
@@ -4644,7 +4644,7 @@
         "Ek parola kullanıldığında, takma ad yönetimi yalnızca ${ PASS_APP_NAME } içinden yapılabilir."
       ],
       "You may also refresh the page or try again later.": [
-        "Ayrıca sayfayı yenileyebilir ya da bir süre sonra yeniden deneyebilirsiniz."
+        "Ayrıca sayfayı yenileyebilir ya da daha sonra tekrar deneyebilirsiniz."
       ]
     },
     "Error notification": {
@@ -5687,7 +5687,7 @@
         "Tutar en az miktarın altında (${ amount })."
       ],
       "An active recovery file": [
-        "Etkn bir kurtarma dosyası"
+        "Etkin bir kurtarma dosyası"
       ],
       "an anonymous user": [
         "isimsiz bir kullanıcı"
@@ -6756,7 +6756,7 @@
         "Dosyaları bağlantı ile paylaş"
       ],
       "Shared": [
-        "Paylaşılanlar"
+        "Paylaşılmış"
       ],
       "Shared by ": [
         "Paylaşan "
@@ -6774,7 +6774,7 @@
         "Benimle paylaşılan"
       ],
       "Shared with you": [
-        "Sizinle paylaşılan"
+        "Sizinle paylaşılanlar"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
@@ -6807,7 +6807,7 @@
         "Bazı dosyalarınıza artık erişilemiyor. Dosyalara yeniden erişim kazanın. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Bu albümdeki bazı fotoğraflar zaman akışınıza kaydedilmez. Bu albümün silinmesi bu fotoğrafları kalıcı olarak siler."
+        "Bu albümdeki bazı fotoğraflar zaman akışınıza kaydedilmez. Bu albümü silindiğinde bu fotoğraflar kalıcı olarak silinir."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Bazı siteler ve yayın akışı hizmetleri, içeriklerini bölgelere göre engeller. Bir VPN, bu kısıtlamaları aşmanızı ve internete özgürce erişmenizi sağlar."
@@ -7214,7 +7214,7 @@
         "Ne yapmak istersiniz?"
       ],
       "What would you like to do?": [
-        "Ne yapmak istersiniz?"
+        "Ne yapmak istiyorsunuz?"
       ],
       "When working remotely": [
         "Uzaktan çalışırken"
@@ -7830,6 +7830,12 @@
       ],
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "Bu kullanıcıyı aktarabilmek için ${ domainNamesLink } altındaki e-posta etki alanını ekleyin ve doğrulayın."
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } markası"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ]
     },
     "info": {
@@ -8133,7 +8139,7 @@
         "Kurtarma ile ilgili bilgileri sil."
       ],
       "Deleted": [
-        "Silindi"
+        "Silinmiş"
       ],
       "Device": [
         "Aygıt"
@@ -8436,7 +8442,7 @@
         "Bağlantı üzerinden erişimi sınırlamak için bir parola belirleyin"
       ],
       "Set recovery method": [
-        "Kurtarma yöntemini ayarlayın"
+        "Kurtarma yöntemini ayarla"
       ],
       "Share a file, folder, or album": [
         "Bir dosya, klasör veya albüm paylaşın"
@@ -8640,7 +8646,7 @@
         "Aygıt: ${ name }"
       ],
       "Expired on ${ formatted }": [
-        "${ formatted } zamanında geçersiz oldu"
+        "${ formatted } zamanında geçerlilik süresi doldu"
       ],
       "Expires ${ formatted }": [
         "Geçerlilik sonu: ${ formatted }"
@@ -8655,7 +8661,7 @@
         "Değiştirilme: ${ modified }"
       ],
       "Never expires": [
-        "Asla geçersiz olmaz"
+        "Asla süresi dolmaz"
       ],
       "Not selected": [
         "Seçilmemiş"
@@ -8673,7 +8679,7 @@
         "Herkese açık bağlantı ile paylaşıldı"
       ],
       "Shared on ${ sharedOn }": [
-        "${ sharedOn } zamanında paylaşıldı"
+        "${ sharedOn } ile paylaşıldı"
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } karakter"
@@ -8703,7 +8709,7 @@
         "Hiç memnun değilim"
       ],
       "Indexing": [
-        "Dizin oluşturma"
+        "Dizine ekleniyor"
       ],
       "Exact host matching": [
         "Tam sunucu eşleşmesi"
@@ -8883,7 +8889,7 @@
         "ayarlar"
       ],
       "Shared": [
-        "Paylaşılanlar"
+        "Paylaşılmış"
       ],
       "Shared with me": [
         "Benimle paylaşılan"
@@ -10828,7 +10834,7 @@
         "İlerle"
       ],
       "Create a document": [
-        "Bir belge oluşturun"
+        "Bir belge oluştur"
       ],
       "Get started": [
         "Başlayalım"
@@ -10843,7 +10849,7 @@
         "Üyeleri davet et"
       ],
       "Maybe Later": [
-        "Belki daha sonra"
+        "Belki sonra"
       ],
       "Maybe later": [
         "Belki daha sonra"
@@ -10855,10 +10861,10 @@
         "Atla"
       ],
       "Skip for now": [
-        "Şimdi atla"
+        "Şimdilik atla"
       ],
       "Try the app": [
-        "Uygulamayı deneyin"
+        "Uygulamayı dene"
       ],
       "Upload file": [
         "Dosya yükle"
@@ -10878,7 +10884,7 @@
         "Yolculuk yaparken dosyalarınıza erişin"
       ],
       "Back up your photos and memories": [
-        "Fotoğrflarınızı ve anılarınızı yedekleyin"
+        "Fotoğraflarınızı ve anılarınızı yedekleyin"
       ],
       "Backup your photos and memories": [
         "Fotoğraflarınızı ve anılarınızı yedekleyin"
@@ -10935,7 +10941,7 @@
         "Sıkı durun"
       ],
       "Invitation accepted": [
-        "Davet onaylandı"
+        "Davet kabul edildi"
       ],
       "Invitation received": [
         "Davet alındı"
@@ -10947,7 +10953,7 @@
         "Tarifenizdeki depolama alanını kullanarak daha fazla dosya yükleyerek geçişinizi sürdürün."
       ],
       "Manage access": [
-        "Erişim izinlerini yönetin"
+        "Erişim yönetimi"
       ],
       "Organize files right from your desktop": [
         "Dosyalarınızı doğrudan bilgisayarınızdan düzenleyin"
@@ -11336,6 +11342,12 @@
       ],
       "Edit billing address": [
         "Fatura adresini düzenle"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "${ IDEAL_BRAND_NAME } ile öde"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ]
     },
     "Payments.Error": {
@@ -11356,6 +11368,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_BRAND_NAME } hazırlanamadı. Lütfen bir süre sonra yeniden deneyin."
       ]
     },
     "Payments.error": {
@@ -13004,13 +13019,13 @@
         "${ sharedBy } tarafından paylaşıldı"
       ],
       "Your favorited photos will appear here": [
-        "Favori fotoğraflarınız burada görünecek"
+        "Beğendiğiniz fotoğraflar burada görünecek"
       ],
       "Your Live Photos will appear here": [
         "Live Photo çekimleriniz burada görünecek"
       ],
       "Your panorama photos will appear here": [
-        "Panorama fotoğraflarınız burada görünecek"
+        "Manzara fotoğraflarınız burada görünecek"
       ],
       "Your photo bursts will appear here": [
         "Seri fotoğraf çekimleriniz burada görünecek"
@@ -13028,7 +13043,7 @@
         "Özçekim fotoğraflarınız burada görünecek"
       ],
       "Your tagged photos will appear here": [
-        "Etiketlenen fotoğraflarınız burada görünecek"
+        "Etiketlenmiş fotoğraflarınız burada görünecek"
       ],
       "Your videos will appear here": [
         "Videolarınız burada görünecek"
@@ -13249,10 +13264,10 @@
     },
     "Tag": {
       "Bursts": [
-        "Ardışık çekimler"
+        "Seri çekimler"
       ],
       "Favorites": [
-        "Beğenilenler"
+        "Sık kullanılanlar"
       ],
       "Live Photos": [
         "Live Photo çekimleri"
@@ -13264,7 +13279,7 @@
         "Portreler"
       ],
       "RAW": [
-        "Ham kayıt (RAW)"
+        "RAW"
       ],
       "Screenshots": [
         "Ekran görüntüleri"
@@ -13808,10 +13823,10 @@
         "Günlük kaydı oluşturucu"
       ],
       "Logs": [
-        "Günlük kayıtları"
+        "Kayıtlar"
       ],
       "Make a copy": [
-        "Kopya oluştur"
+        "Kopyasını oluştur"
       ],
       "Make a secure connection your default": [
         "Bağlantınızın her zaman güvenli olmasını sağlayın"
@@ -13865,7 +13880,7 @@
         "Gece teması"
       ],
       "No albums shared with me": [
-        "Benimle paylaşılan albüm yok"
+        "Benimle paylaşılan bir albüm yok"
       ],
       "No breaches detected": [
         "Herhangi bir veri sızıntısı yok"
@@ -13874,13 +13889,13 @@
         "Seri çekim yok"
       ],
       "No favorites": [
-        "Beğenilen öğe yok"
+        "Herhangi bir sık kullanılan yok"
       ],
       "No Live Photos": [
-        "Live Photo Yok"
+        "Herhangi bir Live Photo çekimi yok"
       ],
       "No panorama": [
-        "Panorama yok"
+        "Herhangi bir manzara yok"
       ],
       "No photos": [
         "Herhangi bir fotoğraf yok"
@@ -13895,7 +13910,7 @@
         "Herhangi bir sonuç bulunamadı"
       ],
       "No screenshots": [
-        "Ekran görüntüsü yok"
+        "Herhangi bir ekran görüntüsü yok"
       ],
       "No selfies": [
         "Özçekim yok"
@@ -13904,7 +13919,7 @@
         "Paylaşılan albüm yok"
       ],
       "No videos": [
-        "Video yok"
+        "Herhangi bir video yok"
       ],
       "Notes": [
         "Notlar"
@@ -14175,7 +14190,7 @@
         "Toplam boyut"
       ],
       "Trash": [
-        "Çöpe at"
+        "Çöp"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
@@ -15151,6 +15166,11 @@
       ],
       "Pending": [
         "Bekliyor"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Bu ödemeyi onayladığınızda, bankanıza ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine hesabınızdan ödeme alma yetkisi verirsiniz. Bankanızla yaptığınız anlaşmanın koşullarına bağlı olarak, ödemenin yapıldığı tarihten başlayan 8 hafta içinde iade isteğinde bulunabilirsiniz."
       ]
     }
   }
