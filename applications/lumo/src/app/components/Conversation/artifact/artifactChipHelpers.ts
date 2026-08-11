@@ -27,14 +27,6 @@ export function getArtifactLineCount(content: string): number {
     return content.split('\n').length;
 }
 
-export function isArtifactChipAwaitingRegistry(
-    registry: ArtifactRegistry,
-    artifactId: string,
-    messageId: MessageId
-): boolean {
-    return getArtifactVersionIndexForMessage(registry, artifactId, messageId) === null;
-}
-
 export function getArtifactChipVersionNumber(
     registry: ArtifactRegistry,
     artifactId: string,
@@ -51,17 +43,17 @@ export function getArtifactChipVisualState(input: ArtifactChipStateInput): Artif
     const { artifactId, messageId, selectedId, selectedVersionIndex, registry } = input;
     const versionIndex = getArtifactVersionIndexForMessage(registry, artifactId, messageId);
 
+    if (versionIndex === null) {
+        return 'default';
+    }
+
     if (selectedId !== artifactId) {
         return 'default';
     }
 
-    if (versionIndex !== null && versionIndex === selectedVersionIndex) {
+    if (versionIndex === selectedVersionIndex) {
         return 'active';
     }
 
-    if (versionIndex !== null && versionIndex !== selectedVersionIndex) {
-        return 'superseded';
-    }
-
-    return 'default';
+    return 'superseded';
 }
