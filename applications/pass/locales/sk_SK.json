@@ -862,8 +862,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Emailový alias funguje ako emailová adresa, ale znižuje množstvo spamu a udržuje vašu skutočnú emailovú adresu a identitu skrytú."
       ],
+      "Change these passwords immediately": [
+        "Tieto heslá okamžite zmeňte"
+      ],
       "Change your passwords": [
         "Zmeňte vaše heslá"
+      ],
+      "Check if your passwords have been exposed": [
+        "Skontrolujte, či vaše heslá neboli zverejnené"
       ],
       "Create unique passwords": [
         "Vytvorte jedinečné heslá"
@@ -918,6 +924,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Tento účet je zraniteľný. Navštívte službu a zmeňte si heslo."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Toto prihlasovacie heslo sa objavilo v súvislosti s únikom údajov. Navštívte danú službu a zmeňte si heslo, prosím."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Táto služba ponúka 2FA. Aktiváciou tejto funkcie zvýšite bezpečnosť účtu."
@@ -1355,6 +1364,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Pri odstraňovaní bezpečného odkazu došlo k chybe. Skúste to o niekoľko minút znova, prosím."
       ],
+      "This invite is no longer available": [
+        "Táto pozvánka už nie je k dispozícii"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Priveľa neúspešných pokusov. Prihláste sa, prosím znova."
       ],
@@ -1375,9 +1387,6 @@
       ],
       "Unknown error.": [
         "Neznámá chyba."
-      ],
-      "Unknown invite": [
-        "Neznáma pozvánka"
       ],
       "Unknown item": [
         "Neznáma položka"
@@ -2172,10 +2181,7 @@
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -4769,6 +4775,12 @@
       "Clear clipboard": [
         "Vymazať schránku"
       ],
+      "Compromised password": [
+        "Prelomené heslá"
+      ],
+      "Compromised passwords": [
+        "Prelomené heslá"
+      ],
       "Confirm extra password": [
         "Potvrďte dodatočné heslo"
       ],
@@ -4991,6 +5003,9 @@
       "No access tokens yet": [
         "Zatiaľ žiadne prístupové tokeny"
       ],
+      "No compromised passwords": [
+        "Žiadne prelomené heslá"
+      ],
       "No excluded items": [
         "Žiadne vylúčené položky"
       ],
@@ -5176,6 +5191,9 @@
       ],
       "Update available": [
         "K dispozícii je aktualizácia"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Aktualizujte, aby ste skontrolovali, či nie sú vaše heslá ohrozené"
       ],
       "URL matching": [
         "Zhoda URL"

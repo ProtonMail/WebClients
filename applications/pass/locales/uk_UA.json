@@ -1352,9 +1352,6 @@
       "Unknown error.": [
         "Невідома помилка."
       ],
-      "Unknown invite": [
-        "Невідоме запрошення"
-      ],
       "Unknown item": [
         "Невідомий елемент"
       ],
@@ -2143,6 +2140,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Переміщення всіх елементів із ${ payload.content.name }"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Переміщення елемента до іншого сховища призведе до стирання його безпечних посилань."
       ],
       "Moving items": [
         "Переміщення елементів"
