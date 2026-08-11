@@ -605,6 +605,9 @@
       "Merge contacts": [
         "合并联系人"
       ],
+      "Migrate": [
+        "迁移"
+      ],
       "More actions": [
         "更多操作"
       ],
@@ -3825,6 +3828,9 @@
       "Name is required": [
         "名称为必填项"
       ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
+      ],
       "Name required": [
         "名称（必填）"
       ],
@@ -6442,6 +6448,9 @@
       ],
       "Yearly": [
         "每年"
+      ],
+      "You": [
+        "您"
       ],
       "You already have a free account": [
         "您的账户已经是免费版了"
@@ -10057,6 +10066,11 @@
         "进度：${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "key": [
+        "密钥"
+      ]
+    },
     "Property type": {
       "Address": [
         "地址"
@@ -11975,6 +11989,9 @@
       ],
       "Does not repeat": [
         "不重复"
+      ],
+      "Domain names": [
+        "域名"
       ],
       "Downgrade account": [
         "降级账户"

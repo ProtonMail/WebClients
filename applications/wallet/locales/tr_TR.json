@@ -2751,6 +2751,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } markası"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
@@ -3177,6 +3180,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
@@ -4469,7 +4475,7 @@
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca size özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -4638,7 +4644,7 @@
         "Çeşitli platformları destekler"
       ],
       "Private gateways": [
-        "Özel ağ geçitleri"
+        "Size özel ağ geçitleri"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } özel e-posta etki alanı desteği",
@@ -4836,6 +4842,9 @@
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "${ IDEAL_BRAND_NAME } ile öde"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Deneme süresi sona erdikten sonra aboneliğin etkinleştirilmesi için bir ödeme yöntemi gereklidir."
       ],
@@ -4917,6 +4926,9 @@
       "You will soon be redirected to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
@@ -4928,6 +4940,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_BRAND_NAME } hazırlanamadı. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "Invalid card number": [
         "Kart numarası geçersiz"
       ],
@@ -4950,6 +4965,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Bir sorun çıktı. Google Pay doğrulaması tamamlanamadı."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Bu ödemeyi onayladığınızda, bankanıza ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine hesabınızdan ödeme alma yetkisi verirsiniz. Bankanızla yaptığınız anlaşmanın koşullarına bağlı olarak, ödemenin yapıldığı tarihten başlayan 8 hafta içinde iade isteğinde bulunabilirsiniz."
       ]
     },
     "Payments.info": {

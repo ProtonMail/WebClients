@@ -90,9 +90,6 @@
       "Apply": [
         "Aplicar"
       ],
-      "Ask me next time": [
-        "Preguntarme la próxima vez"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Se permite como máximo ${ maxContacts } contacto por grupo de contactos.",
         "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
@@ -707,9 +704,6 @@
       ],
       "Save changes": [
         "Guardar los cambios"
-      ],
-      "Save preferences": [
-        "Guardar preferencias"
       ],
       "Search": [
         "Buscar"
@@ -4607,9 +4601,6 @@
       "Continue": [
         "Continuar"
       ],
-      "Converting document...": [
-        "Convirtiendo el documento..."
-      ],
       "Copied to clipboard": [
         "Copiada al portapapeles"
       ],
@@ -4662,9 +4653,6 @@
       ],
       "Creating link to folder": [
         "Creando enlace a la carpeta"
-      ],
-      "Creating new document...": [
-        "Creando nuevo documento..."
       ],
       "Current plan": [
         "Plan actual"
@@ -4765,12 +4753,6 @@
       "Enter your own password (as trusted contact).": [
         "Introduce tu propia contraseña (como contacto de confianza)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Error al convertir el documento: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Error al cargar el documento: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Error al sincronizar"
       ],
@@ -4821,12 +4803,6 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Consigue un correo profesional @tu-empresa.es, 1 TB de almacenamiento seguro por usuario, videollamadas más largas y más con ${ BRAND_NAME } Workspace."
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Recibe actualizaciones por correo electrónico sobre comentarios y sugerencias añadidos a tus documentos."
-      ],
-      "Get Notified About Comments": [
-        "Recibir notificaciones sobre los comentarios"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Los gobiernos y los proveedores de servicios de internet pueden monitorear tu actividad en línea. Ocultando tu IP real y cifrando tu actividad de navegación se vuelve privada."
@@ -4985,9 +4961,6 @@
       "Low Priority": [
         "Prioridad baja"
       ],
-      "Making a copy...": [
-        "Haciendo una copia..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carácter",
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracteres"
@@ -5018,9 +4991,6 @@
       ],
       "No contacts added yet": [
         "Todavía no se han añadido contactos."
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "No se ha especificado ningún documento en la URL. Vuelve a ${ DRIVE_APP_NAME } y selecciona un documento."
       ],
       "No email address": [
         "No hay dirección de correo electrónico."
@@ -5308,9 +5278,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario deberá volver a activar el cifrado de extremo a extremo."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Parece que la URL que has ingresado se ha copiado de Slack de forma incorrecta. Al copiar enlaces largos de Slack, haz clic derecho en el enlace y elige \"Copiar enlace\" en lugar de copiar directamente el texto truncado de la URL."
       ],
       "There are no documents in the trash.": [
         "No hay documentos en la papelera."
@@ -5915,9 +5882,6 @@
       "Emails (last month)": [
         "Correos electrónicos (último mes)"
       ],
-      "Enable email notifications": [
-        "Activar las notificaciones de correo electrónico"
-      ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
       ],
@@ -5974,9 +5938,6 @@
       ],
       "Include application logs in bug report": [
         "Incluir los registros de la aplicación en el informe de errores"
-      ],
-      "Include document name in notification": [
-        "Incluir el nombre del documento en las notificaciones"
       ],
       "Include message and file name in invite email": [
         "Incluir el mensaje y nombre del archivo en el correo de invitación"
@@ -9084,9 +9045,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Creando una nueva hoja de cálculo..."
-      ],
       "Detect automatically": [
         "Detectar automáticamente"
       ],
@@ -10033,6 +9991,9 @@
       ],
       "Document verification failed": [
         "Error de verificación de documento"
+      ],
+      "Domain names": [
+        "Nombres de dominio"
       ],
       "Downgrade account": [
         "Pasar a un plan inferior"

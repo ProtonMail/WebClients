@@ -315,6 +315,9 @@
       "Collaborate on documents": [
         "Gemeinsam an Dokumenten arbeiten"
       ],
+      "Collapse step": [
+        "Schritt einklappen"
+      ],
       "Color": [
         "Farbe"
       ],
@@ -654,6 +657,9 @@
       "Download ICS": [
         "ICS herunterladen"
       ],
+      "Download latest": [
+        "Neueste Version herunterladen"
+      ],
       "Download logs": [
         "Protokolle herunterladen"
       ],
@@ -770,6 +776,9 @@
       ],
       "Enter code": [
         "Code eingeben"
+      ],
+      "Expand step": [
+        "Schritt erweitern"
       ],
       "Explore ${ target }": [
         "Entdecke ${ target }"
@@ -1038,9 +1047,6 @@
       "Italic": [
         "Kursiv"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "Behalten"
       ],
@@ -1107,9 +1113,6 @@
       "Manage communication preferences": [
         "Kommunikationseinstellungen verwalten"
       ],
-      "Manage company": [
-        "Unternehmen verwalten"
-      ],
       "Manage folders": [
         "Ordner verwalten"
       ],
@@ -1145,9 +1148,6 @@
       ],
       "Maybe later": [
         "Vielleicht später"
-      ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
       ],
       "Migrate": [
         "Übernehmen"
@@ -1632,8 +1632,8 @@
       "Sign in": [
         "Anmelden"
       ],
-      "Sign in to Google Workspace": [
-        "Bei Google Workspace anmelden"
+      "Sign in to ${ providerName }": [
+        "Bei ${ providerName } anmelden"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Mit ${ BRAND_NAME } anmelden"
@@ -2239,6 +2239,14 @@
       ],
       "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
         "Mit ${ PASS_APP_NAME } können eindeutige Aliase generiert werden, um die eigene Identität zu verbergen und E-Mails an den Haupt-Posteingang weiterzuleiten."
+      ]
+    },
+    "Alt": {
+      "Collapse invitation message": [
+        "Einladungsnachricht einklappen"
+      ],
+      "Expand invitation message": [
+        "Einladungsnachricht erweitern"
       ]
     },
     "Alter": {
@@ -3809,6 +3817,9 @@
       "Remove from the list?": [
         "Aus der Liste entfernen?"
       ],
+      "Some members weren't migrated": [
+        "Einige Mitglieder wurden nicht übernommen"
+      ],
       "Undo this import?": [
         "Diesen Importvorgang widerrufen?"
       ]
@@ -5320,6 +5331,9 @@
       "Are you sure you want to disable this address?": [
         "Möchtest du diese Adresse wirklich deaktivieren?"
       ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Wenn du diese E-Mail-Adresse ${ address } deaktivierst, kannst das Mitglied keine E-Mails mehr über diese Adresse senden oder empfangen. Gleichzeitig werden dabei auch alle verknüpften ${ BRAND_NAME }-Produkte deaktiviert."
+      ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Wenn du die E-Mail-Adresse ${ address } deaktivierst, kannst du keine E-Mails mehr über diese Adresse senden oder empfangen. Gleichzeitig werden dabei auch alle verknüpften ${ BRAND_NAME }-Produkte deaktiviert."
       ],
@@ -6779,6 +6793,9 @@
       "Address is already added to your account": [
         "E-Mail-Adresse wurde bereits zu deinem Konto hinzugefügt"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Die Adresse wird bereits von einem Benutzer außerhalb deiner Organisation verwendet. Bitte wende dich an den Kundensupport, um dies zu lösen."
+      ],
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
       ],
@@ -6796,6 +6813,9 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Mindestbetrag unterschritten (${ minimumAmount })."
+      ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "Ein unbekannter Fehler ist aufgetreten. Lade die Seite neu und versuche es erneut."
       ],
       "Authentication canceled.": [
         "Authentifizierung abgebrochen."
@@ -6853,6 +6873,9 @@
       ],
       "Contact signature not verified": [
         "Kontaktsignatur nicht bestätigt"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Kontaktiere deinen Administrator um, eine Übernahme zu starten."
       ],
       "Copy operation aborted": [
         "Kopiervorgang abgebrochen"
@@ -7144,6 +7167,9 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Maximal ${ displayMaxValue } erlaubt"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Mindestens ${ calendarsToFixCount } Kalender mit einem bestehenden ${ BRAND_NAME }-Kalender zusammenführen",
         "Mindestens ${ calendarsToFixCount } Kalender mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen"
@@ -7153,6 +7179,12 @@
       ],
       "Missing key packet": [
         "Fehlendes Schlüsselpaket"
+      ],
+      "Missing organization private key": [
+        "Privater Schlüssel der Organisation fehlt"
+      ],
+      "Missing organization public key": [
+        "Öffentlicher Schlüssel der Organisation fehlt"
       ],
       "Missing signature": [
         "Fehlende Signatur"
@@ -7232,6 +7264,12 @@
       ],
       "Operation failed, try again later": [
         "Vorgang fehlgeschlagen, versuche es später erneut"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisation hat nicht genügend Lizenzen verfügbar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation hat nicht genügend Speicherplatz verfügbar"
       ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
@@ -9497,6 +9535,9 @@
       "IMAP access is enabled in your Yahoo account.": [
         "Der IMAP-Zugang in deinem Yahoo-Konto aktiviert ist."
       ],
+      "No error details available. Please contact customer support for more information": [
+        "Es liegen keine Fehlerdetails vor. Bitte wende dich für weitere Informationen an den Kundensupport."
+      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Zu viele kürzliche Anfragen. Bitte versuche es in wenigen Augenblicken erneut."
       ],
@@ -9657,6 +9698,9 @@
       "Has errors": [
         "Hat Fehler"
       ],
+      "Import completed successfully": [
+        "Import erfolgreich abgeschlossen"
+      ],
       "Imported": [
         "Importiert"
       ],
@@ -9674,6 +9718,18 @@
       ],
       "Pending": [
         "Ausstehend"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "${ count } Kontakt aufgrund von Inkompatibilitäten übersprungen",
+        "${ count } Kontakte aufgrund von Inkompatibilitäten übersprungen"
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "${ count } E-Mail aufgrund von Inkompatibilitäten übersprungen",
+        "${ count } E-Mails aufgrund von Inkompatibilitäten übersprungen"
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "${ count } Termin aufgrund von Inkompatibilitäten übersprungen",
+        "${ count } Termine aufgrund von Inkompatibilitäten übersprungen"
       ],
       "Undo finished": [
         "Rückgängig machen abgeschlossen"
@@ -9927,6 +9983,9 @@
         "${ providerFoldersNumLocalized } Kategorie in Gmail gefunden",
         "${ providerFoldersNumLocalized } Kategorien in Gmail gefunden"
       ],
+      "${ providerName } account": [
+        "${ providerName }-Konto"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } Server wird noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }.",
         "${ provisioningCounter } Server werden noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }."
@@ -9936,6 +9995,9 @@
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: Fordert die Empfängerplattformen dazu auf, nicht autorisierte E-Mails abzulehnen."
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } von ${ totalCount }"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } weitere",
@@ -9967,6 +10029,9 @@
       ],
       "${ storage } storage": [
         "${ storage } Speicherplatz"
+      ],
+      "${ storeName } app to copy data to ${ BRAND_NAME }": [
+        "${ storeName }-App um Daten nach ${ BRAND_NAME } zu kopieren"
       ],
       "${ total } user found": [
         "${ total } Benutzer gefunden",
@@ -10189,6 +10254,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Füge deinen Namen und dein Logo hinzu, um deiner Organisation eine persönliche Note zu geben."
       ],
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "E-Mail-Domain deiner Organisation zu ${ BRAND_NAME } hinzufügen."
+      ],
       "Adding ${ total } gateway server": [
         "${ total } Gateway-Server wird hinzugefügt",
         "${ total } Gateway-Server werden hinzugefügt"
@@ -10250,6 +10318,9 @@
       ],
       "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
         "Alle Nachrichten werden im Posteingang angezeigt, und die Tabs der Kategorie und die Tags sind nicht mehr sichtbar. "
+      ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Alle migrierten Benutzerkonten können nun in deine ${ BRAND_NAME }-Organisation eingeladen werden."
       ],
       "All users": [
         "Alle Benutzer"
@@ -10333,6 +10404,13 @@
       "Are you sure you want to cancel editing the group?": [
         "Bist du sicher, dass du die Bearbeitung dieser Gruppe abbrechen willst?"
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Möchtest du wirklich ohne ${ withoutString } und ${ notMigratedOthers } weiteren fortfahren?",
+        "Möchtest du wirklich ohne ${ withoutString } und ${ notMigratedOthers } weiteren fortfahren?"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Möchtest du wirklich ohne ${ withoutString } fortfahren?"
+      ],
       "Are you sure you want to delete this calendar?": [
         "Möchtest du diesen Kalender wirklich löschen?"
       ],
@@ -10368,6 +10446,9 @@
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Möchtest du wirklich alle deine Protokolle unwiderruflich löschen?"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Möchtest du wirklich fortfahren? Benutzer, die ihr Konto nicht vor Abschluss der Übernahme beansprucht haben, müssen beim Administrator ihrer ${ BRAND_NAME }-Organisation eine Passwortzurücksetzung beantragen."
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Möchtest du diesem Benutzer wirklich die Administratorrechte entziehen?"
@@ -10654,6 +10735,9 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
       ],
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Kopiere den folgenden Code und füge ihn im DNS-Bereich deiner Domain-Organisation ein."
+      ],
       "Copy the link to clipboard": [
         "Link in die Zwischenablage kopieren"
       ],
@@ -10772,6 +10856,9 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Lösche alle anderen MX-Einträge oder stelle sicher, dass ${ MAIL_APP_NAME } die geringste Priorität hat."
       ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Lösche allen bereits vorhandenen MX-Code, kopiere dann den unten stehenden Code und füge ihn im DNS-Bereich deiner Domain-Organisation ein."
+      ],
       "Delete link?": [
         "Link löschen?"
       ],
@@ -10824,8 +10911,14 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
       ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM fügt jeder E-Mail eine digitale Signatur hinzu, sodass Empfänger überprüfen können, ob die Nachricht tatsächlich von deiner Domain stammt und während der Übertragung nicht verändert wurde. Ohne diese Signatur werden Nachrichten möglicherweise als weniger vertrauenswürdig eingestuft."
+      ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
         "DKIM ermöglicht es ${ BRAND_NAME } deine Mails kryptografisch zu signieren und schützt vor Manipulation durch Angreifer. Stelle sicher, dass du die folgenden drei CNAME-Einträge in deiner DNS-Konsole hinzufügst (findet sich auf der Plattform, wo du die individuelle Domain gekauft hast)."
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC baut auf SPF und DKIM auf und gibt den empfangenden Servern Anweisungen, wie sie mit Nachrichten umgehen sollen, die diese Prüfungen nicht bestehen. Es trägt dazu bei, deine Domain vor Identitätsbetrug zu schützen, und verbessert die allgemeine Zustellzuverlässigkeit."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC prüft, ob die SPF- und DKIM-Einträge des Absenders von deiner Domain stammen. Dadurch wird verhindert, dass Angreifer eine andere Domain für SPF und DKIM verwenden, um sich als deine Domain auszugeben. Das \"p=\" (Richtlinie) in diesem Eintrag gibt an, wie die Empfängerplattformen mit nicht autorisierten E-Mails umgehen sollen. Wir empfehlen die Verwendung der \"p=quarantine\"-Richtlinie für die meisten Domains. Stelle sicher, dass du den folgenden TXT-Eintrag in deiner DNS-Konsole hinzufügst (befindet sich auf der Plattform, wo du die individuelle Domain erworben hast)."
@@ -10863,6 +10956,9 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Verliere nicht den Zugang auf Premium-Funktionen. Aktiviere automatische Verlängerung heute."
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "Du weißt nicht, wo du anfangen sollst? Sieh dir an, wie du deine DNS-Einstellungen auf ${ registrarLink } aktualisieren kannst."
       ],
       "Don’t know your recovery phrase?": [
         "Du kennst deine Wiederherstellungsphrase nicht?"
@@ -11026,6 +11122,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sorge für vollständig private und verschlüsselte Kommunikation. Sichere dir jetzt deine kostenlose ${ BRAND_NAME }-E-Mail-Adresse."
       ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and ${ providerBrand } simultaneously for the duration of the migration.": [
+        "Stelle sicher, dass deine E-Mails im Posteingang und nicht im Spam-Ordner landen. Durch das Aktualisieren von SPF können Benutzer während der Übernahme gleichzeitig E-Mails von ${ BRAND_NAME } und ${ providerBrand } versenden."
+      ],
       "Ensure your organization is always protected": [
         "Sorge dafür, dass dein Unternehmen stets geschützt ist"
       ],
@@ -11095,6 +11194,9 @@
       "Event invitations and responses will be sent in this language.": [
         "Termin-Einladungen und Antworten werden in dieser Sprache versendet."
       ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their ${ mailAppName } inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Jeder erhält denselben Einladungslink. Sie rufen die Seite auf, geben ihre E-Mail-Adresse ein und erhalten einen Bestätigungscode in ihrem ${ mailAppName }-Posteingang. Dort legen sie dann ihr Passwort für ${ BRAND_NAME } fest."
+      ],
       "Everything in ${ planOrAppName }": [
         "Alles in ${ planOrAppName }"
       ],
@@ -11158,6 +11260,9 @@
       "finance": [
         "Finanzen"
       ],
+      "Find out what can be migrated.": [
+        "Herausfinden, was übernommen werden kann."
+      ],
       "for ${ price }": [
         "für ${ price }"
       ],
@@ -11220,6 +11325,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Erhalte Zugang, indem du ein Konto bei ${ BRAND_NAME } erstellst und die Einladung annimmst."
+      ],
+      "Get help and useful tips for other domain providers ${ here }": [
+        "${ here } findest du Hilfe und nützliche Tipps zu anderen Domain-Anbietern"
       ],
       "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
         "Kontaktiere deine Notfallkontakte, um zu sehen, ob sie helfen können. Nachdem der Notfallzugriff auf dein Konto angefordert wurde, können sie dein Passwort für dich ändern, **nachdem die Wartezeit für den Zugriff abgelaufen ist**."
@@ -11526,6 +11634,9 @@
       ],
       "Invited": [
         "Eingeladen"
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Es kann bis zu 24 Stunden dauern, bis diese Änderungen wirksam werden."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Es dauert 10 Tage, um das Land eines Servers zu ändern, stelle also sicher, dass deine Auswahl korrekt ist."
@@ -11863,6 +11974,9 @@
       "Not confirmed": [
         "Nicht bestätigt"
       ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "Nicht richtig erkannt? Wähle deinen Anbieter aus der Liste aus."
+      ],
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
       ],
@@ -11895,6 +12009,9 @@
       ],
       "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
         "Nach der erfolgreichen Bereitstellung kann es bis zu einigen Stunden dauern, bis die Geräte die Richtlinie erkannt und umgesetzt haben."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Sobald wir bestätigt haben, dass E-Mails an ${ BRAND_NAME } weitergeleitet werden, ist die Übernehme abgeschlossen. Du erhältst eine Bestätigungs-E-Mail, sobald dies geschehen ist. Dieser Vorgang kann bis zu 24 Stunden dauern."
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Hier können nur Groß- und Kleinschreibung sowie Zeichensetzung (Punkte, Bindestriche und Unterstriche) geändert werden. Um eine andere E-Mail-Adresse zu verwenden, füge eine neue hinzu."
@@ -12055,6 +12172,9 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Bitte überprüfe deine Datei auf Fehler oder versuche es mit unserer ${ csvTemplateButton }."
+      ],
+      "Please ensure you're running ${ VPN_APP_NAME } desktop version ${ version } or later. ${ downloadLatest }": [
+        "Bitte stelle sicher, dass du die Desktop-Version ${ VPN_APP_NAME } ${ version } oder höher verwendest. ${ downloadLatest }"
       ],
       "Please fill in all required fields.": [
         "Bitte fülle alle Pflichtfelder aus."
@@ -12296,11 +12416,17 @@
       "Select a group to view its members and settings.": [
         "Eine Gruppe auswählen, um deren Mitglieder und Einstellungen anzuzeigen."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Wähle genau aus, was du übernehmen möchtest. Dies gilt für alle Benutzer der Organisation."
+      ],
       "Select one or multiple user affiliations": [
         "Wähle eine oder mehrere Benutzerzugehörigkeiten"
       ],
       "Select recently used servers": [
         "Zuletzt verwendete Server auswählen"
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Konten auswählen, die du zu ${ BRAND_NAME } übertragen möchtest. Du kannst entweder gleich deine gesamte Organisation übernehmen oder klein anfangen und den Rest später hinzufügen, wenn du bereit bist."
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Wähle die Benutzerzugehörigkeiten aus ${ getFormattedOrganization }, die du in deiner ${ BRAND_NAME }-Organisation zulassen möchtest:"
@@ -12407,6 +12533,9 @@
       ],
       "Sign-in complete": [
         "Anmeldung abgeschlossen"
+      ],
+      "Sign-in with a ${ providerName } administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Melde dich mit einem ${ providerName }-Administratorkonto für ${ BRAND_NAME } an, um die Übernahme einzurichten."
       ],
       "Signed up": [
         "Registriert"
@@ -12741,6 +12870,12 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Der Abmeldelink ist abgelaufen. Bitte öffne eine aktuellere E-Mail von dieser Verteilerliste."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Dieser Benutzer kann nicht übernommen werden, da seine E-Mail-Adresse bei ${ BRAND_NAME } nicht verfügbar ist."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Dieser Benutzer kann aufgrund von Plattforminkompatibilitäten nicht übernommen werden."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Dieser Benutzer ist zurzeit für Zahlungen für deine Organisation zuständig. Wenn du den Benutzer zurückstufst, wirst du für die Zahlungen deiner Organisation zuständig."
       ],
@@ -12825,6 +12960,9 @@
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Um Datenverluste zu vermeiden, lösche ihn nur, wenn du dir sicher bist, was du tust oder eine Kopie exportiert hast."
       ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the ${ storeName }. After installing it, come back here to continue.": [
+        "Um die Daten deines Unternehmens auf ${ BRAND_NAME } zu übertragen, installiere „${ BRAND_NAME } Easy Switch“ aus dem ${ storeName }. Kehren nach der Installation hierher zurück, um fortzufahren."
+      ],
       "To cancel your subscription, please reach out to us.": [
         "Setze dich bitte mit uns in Verbindung, um dein Abonnement zu kündigen."
       ],
@@ -12849,8 +12987,8 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Um Always-on-VPN zu aktivieren, muss das Konfigurationsprofil auf jedem Mac installiert werden – der ${ VPN_APP_NAME }-Client wendet das Geräteprofil automatisch an, sobald es vorhanden ist."
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "Um „Always-on-VPN“ zu aktivieren, muss das Geräteprofil auf jedem Gerät unter ${ policiesPath } abgelegt sein – der ${ VPN_APP_NAME }-Client erkennt es dort und übernimmt das Profil automatisch."
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
+        "Um Always-on-VPN zu aktivieren, muss das Geräteprofil auf jedem Gerät unter ${ policiesPath } abgelegt werden – der ${ VPN_APP_NAME }-Client erkennt es dort und wendet das Profil automatisch an. ${ learnMore }."
       ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Um den Post-Quantum-Schutz zu aktivieren, musst du die Generierung deiner neuen Post-Quantum-Verschlüsselungsschlüssel abschließen."
@@ -12878,6 +13016,27 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Um über die neuesten Entwicklungen bei ${ BRAND_NAME }-Produkten auf dem Laufenden zu bleiben, kannst du unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren ${ blogLink }."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Um diesen Benutzer zu übernehmen, füge die E-Mail-Domain unter ${ domainNamesLink } hinzu und überprüfe sie."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übernehmen, aktiviere sein Konto in deiner ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu übernehmen, aktiviere sein Konto unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu übernehmen, aktiviere seine Adresse unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Um diesen Benutzer zu übernehmen, muss er die Einladung zur Teilnahme an ${ BRAND_NAME } annehmen."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übernehmen, entpacke ihn in deiner ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übernehmen, hebe die Sperrung in deiner ${ provider.adminConsoleName } auf."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Um Missbrauch oder Betrug zu verhindern, bitten wir um eine Mindestspende von ${ minimumDonation }. Dies unterstützt die Arbeit der ${ protonFoundationLink } zur Verteidigung der digitalen Privatsphäre weltweit und hilft, die nächste Generation zu schützen."
@@ -13074,9 +13233,6 @@
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Ein anderes MDM verwenden? Jedes MDM, das die Bereitstellung eines Konfigurationsprofils unterstützt, ist geeignet. Informationen zum Hochladen und Zuweisen des Profils zu deinem Gerätepark findest du in der Dokumentation deines MDM."
       ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "Wird eine andere MDM-Lösung (Mobilgeräteverwaltung) verwendet? Jede MDM-Lösung, die das Bereitstellen von Dateien oder das Ausführen von PowerShell-Skripten unterstützt, ist geeignet. Weitere Informationen werden in der Dokumentation deiner MDM-Lösung bereitgestellt."
-      ],
       "Vault created": [
         "Tresor erstellt"
       ],
@@ -13103,6 +13259,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Die Verifizierung öffnet einen neuen Tab — bitte deaktiviere daher alle Pop-up-Blocker. Dein Konto wird nicht belastet. Jeder Betrag, der zur Verifizierung der Karte verwendet wird, wird sofort zurückerstattet."
+      ],
+      "Verified": [
+        "Verifiziert"
       ],
       "Verify domain": [
         "Domain verifizieren"
@@ -13218,6 +13377,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
       ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Uns ist aufgefallen, dass einige Benutzer ihre ${ BRAND_NAME }-Konten noch nicht beansprucht haben."
+      ],
       "Web sessions detected:": [
         "Web-Sitzungen erkannt:"
       ],
@@ -13235,6 +13397,12 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Wir senden einen Reset-Code an ${ boldValue }."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Wir richten gerade deine Konten ein und importieren deine Daten, damit dein Team über alles verfügt, was es benötigt, wenn es mit der Nutzung seines sicheren ${ BRAND_NAME }-Kontos beginnt."
+      ],
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Wir schalten die End-to-End-Verschlüsselung für alle ein. Jede E-Mail, jeder Termin gehört nun ganz allein dir. Nur dein Team kann sie einsehen. Weder wir noch sonst jemand."
       ],
       "What happens:": [
         "Was passiert:"
@@ -13413,9 +13581,6 @@
       "You can now access and manage the account as an administrator.": [
         "Du kannst nun als Administrator auf das Konto zugreifen und es verwalten."
       ],
-      "You can now access and manage the company as an administrator.": [
-        "Du kannst nun als Administrator auf das Unternehmen zugreifen und es verwalten."
-      ],
       "You can now close this tab.": [
         "Du kannst diesen Tab nun schließen."
       ],
@@ -13548,6 +13713,9 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du benötigst eine ${ BRAND_NAME }-Adresse um ${ MAIL_APP_NAME } und ${ CALENDAR_APP_NAME } zu nutzen"
       ],
+      "You will not be able to copy these users' data later.": [
+        "Du kannst die Daten dieser Benutzer später nicht mehr kopieren."
+      ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "Du wirst NICHT in der Lage sein, Nachrichten, Dateien und andere mit diesem Schlüssel verschlüsselte Daten zu entschlüsseln. Alle mit diesem Schlüssel signierten Daten werden von den ${ BRAND_NAME }-Anwendungen nicht mehr verifiziert."
       ],
@@ -13584,6 +13752,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Du erhältst dann aller ${ renewCycle } Monat eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich.",
         "Du erhältst dann aller ${ renewCycle } Monate eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich."
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on ${ mailAppName } and the migration will be completed.": [
+        "Du bist fast fertig. Du musst deine Domain so konfigurieren, dass du deine E-Mails direkt in ${ BRAND_NAME } erhältst. Sobald dies bestätigt ist, wird dein Team keine neuen E-Mails mehr in${ mailAppName } erhalten und die Übernahme ist abgeschlossen."
       ],
       "You're now signed in on your TV.": [
         "Du bist jetzt auf deinem TV angemeldet."
@@ -13848,6 +14019,11 @@
     "Input placeholder": {
       "Add label": [
         "Kategorie hinzuf."
+      ]
+    },
+    "Invitation message": {
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your ${ mailAppName }.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and ${ mailAppName }.\nThen, when everyone has made the move, we will retire ${ mailAppName }. We'll remind you before it does.": [
+        "Wir wechseln zu ${ BRAND_NAME }, dem sicheren E-Mail-Dienst.\nUnd dein ${ BRAND_NAME }-Konto steht bereit.\nKlicke auf ${ inviteLink }.\nGib deine E-Mail-Adresse ein, wir senden dir einen Code an deine ${ mailAppName }-Adresse.\nVerwende diesen, um dein Passwort festzulegen – und schon gehört dein ${ BRAND_NAME }-Konto dir.\nFür eine kurze Zeit werden beide Dienste parallel funktionieren: ${ BRAND_NAME } und ${ mailAppName }.\nSobald alle den Wechsel vollzogen haben, werden wir ${ mailAppName } einstellen. Wir werden dich rechtzeitig daran erinnern."
       ]
     },
     "invitation status": {
@@ -14310,6 +14486,9 @@
       ],
       "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
         "${ BRAND_NAME }${ MAIL_SHORT_APP_NAME } Desktop-App"
+      ],
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
       ],
       "${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } für Unternehmen"
@@ -15200,6 +15379,9 @@
       ],
       "Interval": [
         "Intervall"
+      ],
+      "Invitation link": [
+        "Einladungslink"
       ],
       "Invitation message": [
         "Einladungsnachricht"
@@ -16407,6 +16589,9 @@
       ],
       "Import/export": [
         "Import/Export"
+      ],
+      "invite link": [
+        "Einladungslink"
       ],
       "Learn how": [
         "Erfahre, wie"
@@ -21794,9 +21979,6 @@
       "${ usersText } and ${ groupsText } synced.": [
         "${ usersText } und ${ groupsText } synchronisiert."
       ],
-      "**Existing groups** synced to ${ BRAND_NAME } before may now appear when you first access the console": [
-        "**Vorhandene Gruppen**, die zuvor mit ${ BRAND_NAME } synchronisiert wurden, erscheinen jetzt möglicherweise, wenn du zum ersten Mal auf die Konsole zugreifst."
-      ],
       "**You'll be able to review** group changes before they take effect to confirm they're intentional": [
         "Änderungen an Gruppen **kannst du überprüfen**, bevor sie in Kraft treten, um sicherzustellen, dass sie beabsichtigt sind"
       ],
@@ -21835,9 +22017,6 @@
       ],
       "What to expect now that group sync is enabled": [
         "Was du nun erwarten kannst, nachdem die Gruppensynchronisierung aktiviert wurde"
-      ],
-      "You can now sync groups from your identity provider alongside users. Changes push **automatically** when you update your groups.": [
-        "Du kannst nun neben Benutzern auch Gruppen von deinem Identitätsanbieter synchronisieren. Änderungen werden **automatisch** übernommen, sobald du deine Gruppen aktualisierst."
       ]
     },
     "scim: Action": {
@@ -21858,11 +22037,17 @@
       ]
     },
     "scim: Info": {
+      "**Groups:** All groups convert to local ${ BRAND_NAME } groups. Syncing with your identity provider stops, and you'll manage membership in ${ BRAND_NAME } settings instead.": [
+        "**Gruppen:** Alle Gruppen werden in lokale ${ BRAND_NAME }-Gruppen umgewandelt. Die Synchronisierung mit deinem Identitätsanbieter wird beendet, und du verwaltest die Mitgliedschaft fortan in den ${ BRAND_NAME }-Einstellungen."
+      ],
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Voraussetzung:** Die SAML-Authentifizierung muss konfiguriert sein, um das SCIM-Provisioning zu ermöglichen."
       ],
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
         "**Voraussetzung:** Um die SCIM-Bereitstellung zu aktivieren, musst du die Eigentümerschaft der Domain **${ domainName }** verifizieren. Diese Verifizierung kann bis zu einer Stunde dauern."
+      ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**Benutzer:** Alle SCIM-Benutzer, die automatisch von deinem Identitätsanbieter bereitgestellt sind, werden in SSO-Benutzer umgewandelt und du kannst sie direkt in den Einstellungen von ${ BRAND_NAME } verwalten."
       ],
       "Enter the token into your identity provider": [
         "Gib den Token bei deinem Identitätsanbieter ein"
@@ -21888,14 +22073,23 @@
       "Make sure you copy the above SCIM token now.": [
         "Stelle sicher, dass du den obigen SCIM-Token jetzt kopierst."
       ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Wenn du die Synchronisierung wieder aktivierst, werden vorhandene Gruppen dupliziert. Diese können nicht wieder in SCIM zusammengeführt werden."
+      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Vereinfacht die Benutzerverwaltung über verschiedene Dienste hinweg. Füge Benutzer in deinem Identitätsanbieter hinzu, bearbeite und entferne sie, und diese Änderungen werden automatisch auf deine ${ appName } Organisation angewendet."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Das automatische SCIM-Provisioning wird deaktiviert, bis du den neuen SCIM-Token in die Einstellungen deines Identitätsanbieters eingibst."
       ],
+      "This will delete your SCIM base URL and token.": [
+        "Dadurch werden deine SCIM-basierende URL und Token gelöscht."
+      ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Um die Synchronisierung mit deinem Identitätsanbieter wieder zu aktivieren, musst du die SCIM-Integration erneut abschließen."
+      ],
+      "When you disable SCIM:": [
+        "Wenn du SCIM deaktivierst:"
       ]
     },
     "scim: Label": {
@@ -23620,6 +23814,9 @@
       "Configure users": [
         "Benutzer konfigurieren"
       ],
+      "Final step": [
+        "Letzter Schritt"
+      ],
       "Install migration app": [
         "Übernahme-App installieren"
       ],
@@ -23628,6 +23825,18 @@
       ],
       "Onboard your team": [
         "Dein Team einführen"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Sicheren E-Mail-Versand einrichten (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Sicheren E-Mail-Versand einrichten (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Sicheren E-Mail-Versand einrichten (SPF)"
+      ],
+      "Verify your domain": [
+        "Deine Domain verifizieren"
       ]
     },
     "Step in filter modal": {
@@ -24506,6 +24715,10 @@
       "Locale updated": [
         "Gebietsschema aktualisiert"
       ],
+      "Migration started for ${ n } user": [
+        "Übernahme für ${ n } Benutzer gestartet",
+        "Übernahme für ${ n } Benutzer gestartet"
+      ],
       "New policy created. It will take effect only after you publish the changes.": [
         "Neue Richtlinie erstellt. Sie wird erst wirksam, nachdem du die Änderungen veröffentlicht hast."
       ],
@@ -25231,6 +25444,9 @@
       "Ask your emergency contacts for help": [
         "Bitte deine Notfallkontakte um Hilfe"
       ],
+      "Authenticate your ${ providerName } account": [
+        "Dein ${ providerName }-Konto authentisieren"
+      ],
       "Auto-deletion is active": [
         "Automatisches Löschen ist aktiv"
       ],
@@ -25855,6 +26071,9 @@
       "Filters": [
         "Filter"
       ],
+      "Final step": [
+        "Letzter Schritt"
+      ],
       "Find email or username": [
         "E-Mail-Adresse oder Benutzername suchen"
       ],
@@ -25960,6 +26179,9 @@
       "Gift code": [
         "Gutscheincode"
       ],
+      "Going private": [
+        "Wird privat"
+      ],
       "Group": [
         "Gruppe"
       ],
@@ -26017,6 +26239,9 @@
       ],
       "Import contacts": [
         "Kontakte importieren"
+      ],
+      "Import details": [
+        "Einzelheiten zum Import"
       ],
       "Import emails, calendars, contacts": [
         "E-Mails, Kalender und Kontakte importieren"
@@ -26120,9 +26345,6 @@
       "Make your business stand out": [
         "Dein Unternehmen hervorheben"
       ],
-      "Manage company": [
-        "Unternehmen verwalten"
-      ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Dateien geräteübergreifend auf Windows, Mac, Android und iOS verwalten."
       ],
@@ -26135,8 +26357,11 @@
       "Messages and composing": [
         "Nachrichten und verfassen"
       ],
-      "Migrate from Google Workspace": [
-        "Von Google Workspace übernehmen"
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Konten nach ${ BRAND_NAME } übernehmen"
+      ],
+      "Migrate from ${ providerName }": [
+        "Von ${ providerName } übernehmen"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Deine Organisation nach ${ BRAND_NAME } migrieren"
@@ -26567,6 +26792,15 @@
       "Set up email forwarding": [
         "E-Mail-Weiterleitung einrichten"
       ],
+      "Set up secure sending (DKIM)": [
+        "Sicheren E-Mail-Versand einrichten (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Sicheren E-Mail-Versand einrichten (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Sicheren E-Mail-Versand einrichten (SPF)"
+      ],
       "Set up your family account": [
         "Richte dein Family-Konto ein"
       ],
@@ -26641,6 +26875,9 @@
       ],
       "Snooze:": [
         "Aufgeschoben:"
+      ],
+      "Some accounts are not claimed": [
+        "Einige Konten wurden nicht beansprucht"
       ],
       "Some of your encrypted data is locked": [
         "Ein Teil deiner verschlüsselten Daten ist gesperrt."
@@ -26784,6 +27021,9 @@
       "Unlock your data": [
         "Entsperre deine Daten"
       ],
+      "Update records for receiving": [
+        "Datensätze für den Empfang aktualisieren"
+      ],
       "Upgrade complete!": [
         "Upgrade abgeschlossen!"
       ],
@@ -26855,6 +27095,9 @@
       ],
       "Verify it’s you": [
         "Überprüfe, ob du es bist"
+      ],
+      "Verify your domain": [
+        "Deine Domain verifizieren"
       ],
       "Verify your email": [
         "Deine E-Mail-Adresse bestätigen"
@@ -26942,6 +27185,9 @@
       ],
       "You have no resolved alerts": [
         "Du hast keine gelösten Warnungen"
+      ],
+      "You're all set!": [
+        "Alles erledigt."
       ],
       "You've successfully signed in!": [
         "Du hast dich erfolgreich angemeldet."
@@ -27159,6 +27405,9 @@
       "Click here to learn how to create a customized signature with HTML.": [
         "Hier klicken, um zu erfahren, wie du eine individuelle Signatur mit HTML erstellen kannst."
       ],
+      "Collapse invitation message": [
+        "Einladungsnachricht einklappen"
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiere diese URL und füge sie in das ACS (Assertion Consumer Service) URL-Feld deines Identitätsanbieters ein."
       ],
@@ -27170,6 +27419,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Import anpassen, um die Anzahl der Kategorien zu reduzieren"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status der Datenmigration von ${ providerName } zu ${ BRAND_NAME }"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Nachrichten im Papierkorb und Spam- Nachrichten nach 30 Tagen löschen. Durch Aktivieren des automatischen Löschens wird für Nachrichten, die sich bereits im Papierkorb/Spam befinden, ein Löschdatum festgelegt, das sich nach dem Datum richtet, an dem sie dorthin verschoben wurden."
@@ -27267,6 +27519,9 @@
       "Origin IP address and Internet Service Provider (ISP)": [
         "Ursprüngliche IP-Adresse und Internetdienstanbieter (ISP)"
       ],
+      "Reauthenticate your ${ providerName } account to start a migration": [
+        "Melde dich erneut bei deinem ${ providerName }-Konto an, um die Übernahme zu starten"
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Metadaten aus Bildern entfernen, um deine Privatsphäre zu schützen."
       ],
@@ -27281,6 +27536,9 @@
       ],
       "See number of unread messages in the tab icon": [
         "Anzahl ungelesener Nachrichten im Tab-Symbol anzeigen"
+      ],
+      "Select at least one user to start a migration": [
+        "Wähle mindestens einen Benutzer aus, um eine Übernahme zu starten"
       ],
       "Set how your list of messages looks like by default.": [
         "Festlegen, wie deine Nachrichtenliste standardmäßig aussehen soll."
@@ -27378,6 +27636,9 @@
       "User's approximate location (based on their IP address)": [
         "Ungefährer Standort des Nutzers (basierend auf dessen IP-Adresse)"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
+      ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Die Benutzer sehen dein Logo anstelle des ${ BRAND_NAME }-Symbols, wenn sie sich bei unseren Webanwendungen anmelden."
       ],
@@ -27386,6 +27647,9 @@
       ],
       "Verified email address": [
         "E-Mail-Adresse bestätigt"
+      ],
+      "Verify your domain to start a migration": [
+        "Überprüfe deine Domain, um eine Übernahme zu starten"
       ],
       "Version 6 OpenPGP key": [
         "Version 6 OpenPGP Schlüssel"
@@ -28259,6 +28523,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Bitte überprüfe, ob die Erweiterung richtig installiert und aktiviert ist"
       ],
+      "Please don’t close or refresh this window.": [
+        "Bitte schließe dieses Fenster nicht und aktualisiere es nicht."
+      ],
       "Please update the extension to its latest version": [
         "Bitte update die Erweiterung auf die aktuelle Version"
       ],
@@ -28283,14 +28550,26 @@
       "This will remove all messages, folders, and labels created during the import.": [
         "Dadurch werden alle während des Imports erstellten Nachrichten, Ordner und Kategorien entfernt."
       ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Um die Übernahme abzuschließen, stelle sicher, dass du ausschließlich den MX-Code von ${ BRAND_NAME } beibehältst."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Benutzer, die ihr Konto nicht vor Abschluss der Übernahme beansprucht haben, müssen beim Administrator ihrer ${ BRAND_NAME }-Organisation eine Passwortzurücksetzung beantragen."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Wir konnten den Mailserver nicht verifizieren. Wenn du ihm vertraust, kann diese Überprüfung übersprungen werden."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Es wurde ein Problem mit deiner DNS-Konfiguration festgestellt. Bitte stelle sicher, dass deine Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Signatur abgeschaltet."
+      ],
+      "We were unable to verify the installation, please check that you have installed it in your ${ providerName } account and try again.": [
+        "Wir konnten die Installation nicht überprüfen. Bitte stelle sicher, dass du sie in deinem ${ providerName }-Konto installiert hast, und versuche es erneut."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Uns ist aufgefallen, dass einige Benutzer ihre ${ BRAND_NAME }-Konten noch nicht beansprucht haben."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Du musst den Organisationsschlüssel ${ activateLink } bevor du einem nicht-privaten Mitglied eine E-Mail-Adresse hinzufügst."
@@ -28300,6 +28579,13 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Du wirst diesen Import-Eintrag in der Liste nicht mehr sehen."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Dein aktuelles Abonnement umfasst bis zu ${ maxMembers } Benutzer. Um weitere Benutzer zu übernehmen, füge deinem Abonnement weitere Lizenzen hinzu.",
+        "Dein aktuelles Abonnement umfasst bis zu ${ maxMembers } Benutzern. Um weitere Benutzer zu übernehmen, füge deinem Abonnement weitere Lizenzen hinzu."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "Deine Domain-Konfiguration enthält noch immer den MX-Code eines anderen Anbieters."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Deine kostenlose Testversion endet am ${ textDate }. ${ action }"

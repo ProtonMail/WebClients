@@ -909,8 +909,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ένα ψευδώνυμο ηλεκτρονικού ταχυδρομείου λειτουργεί όπως μια διεύθυνση ηλεκτρονικού ταχυδρομείου, αλλά μειώνει τα ανεπιθύμητα μηνύματα και διατηρεί κρυφή την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου και την ταυτότητά σας."
       ],
+      "Change these passwords immediately": [
+        "Αλλάξτε αμέσως αυτούς τους κωδικούς πρόσβασης"
+      ],
       "Change your passwords": [
         "Αλλάξτε τους κωδικούς πρόσβασής σας"
+      ],
+      "Check if your passwords have been exposed": [
+        "Ελέγξτε αν οι κωδικοί πρόσβασής σας έχουν αποκαλυφθεί"
       ],
       "Create unique passwords": [
         "Δημιουργήστε μοναδικούς κωδικούς πρόσβασης"
@@ -965,6 +971,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Αυτός ο λογαριασμός είναι ευάλωτος, επισκεφθείτε την υπηρεσία και αλλάξτε τον κωδικό πρόσβασής σας."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Αυτός ο κωδικός πρόσβασης σύνδεσης εμφανίζεται σε μια παραβίαση δεδομένων. Επισκεφθείτε την υπηρεσία και αλλάξτε τον κωδικό πρόσβασης."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Αυτή η υπηρεσία προσφέρει 2FA. Ενεργοποιήστε το για πρόσθετη ασφάλεια λογαριασμού."
@@ -1398,6 +1407,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Παρουσιάστηκε σφάλμα κατά την κατάργηση του ασφαλούς συνδέσμου. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά."
       ],
+      "This invite is no longer available": [
+        "Αυτή η πρόσκληση δεν είναι πλέον διαθέσιμη"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Πάρα πολλές αποτυχημένες προσπάθειες. Παρακαλούμε συνδεθείτε ξανά."
       ],
@@ -1418,9 +1430,6 @@
       ],
       "Unknown error.": [
         "Άγνωστο σφάλμα."
-      ],
-      "Unknown invite": [
-        "Άγνωστη πρόσκληση"
       ],
       "Unknown item": [
         "Άγνωστο αντικείμενο"
@@ -4849,6 +4858,12 @@
       "Clear clipboard": [
         "Εκκαθάριση πρόχειρου"
       ],
+      "Compromised password": [
+        "Παραβιασμένος κωδικός πρόσβασης"
+      ],
+      "Compromised passwords": [
+        "Παραβιασμένοι κωδικοί πρόσβασης"
+      ],
       "Confirm extra password": [
         "Επιβεβαίωση επιπλέον κωδικού πρόσβασης"
       ],
@@ -5065,6 +5080,9 @@
       "No access tokens yet": [
         "Δεν υπάρχουν ακόμη διακριτικά πρόσβασης"
       ],
+      "No compromised passwords": [
+        "Μη παραβιασμένοι κωδικοί πρόσβασης"
+      ],
       "No excluded items": [
         "Δεν υπάρχουν εξαιρούμενα στοιχεία"
       ],
@@ -5252,6 +5270,9 @@
       ],
       "Update available": [
         "Υπάρχει διαθέσιμη ενημέρωση"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Αναβάθμιση για έλεγχο για παραβιασμένους κωδικούς πρόσβασης"
       ],
       "URL matching": [
         "Αντιστοίχιση URL"

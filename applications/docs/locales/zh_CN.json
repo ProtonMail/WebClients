@@ -90,9 +90,6 @@
       "Apply": [
         "应用"
       ],
-      "Ask me next time": [
-        "稍后提醒"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "每个群组最多只能有 ${ maxContacts } 位联系人"
       ],
@@ -522,6 +519,9 @@
       "Merge contacts": [
         "合并联系人"
       ],
+      "Migrate": [
+        "迁移"
+      ],
       "More actions": [
         "更多操作"
       ],
@@ -704,9 +704,6 @@
       ],
       "Save changes": [
         "保存更改"
-      ],
-      "Save preferences": [
-        "保存偏好"
       ],
       "Search": [
         "搜索"
@@ -3170,6 +3167,9 @@
       "Name is required": [
         "名称为必填项"
       ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
+      ],
       "Network error": [
         "网络错误"
       ],
@@ -4567,9 +4567,6 @@
       "Continue": [
         "继续"
       ],
-      "Converting document...": [
-        "正在转换文档..."
-      ],
       "Copied to clipboard": [
         "已复制到剪贴板"
       ],
@@ -4620,9 +4617,6 @@
       ],
       "Creating link to folder": [
         "正在创建文件夹链接"
-      ],
-      "Creating new document...": [
-        "正在创建新文档..."
       ],
       "Current plan": [
         "当前等级"
@@ -4723,12 +4717,6 @@
       "Enter your own password (as trusted contact).": [
         "输入您自己的密码（作为可信联系人）"
       ],
-      "Error converting document: ${ errorMessage }": [
-        "转换文档失败：${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "加载文档失败：${ errorDetail }"
-      ],
       "Error Syncing": [
         "同步出错"
       ],
@@ -4779,12 +4767,6 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "获取专业的 @your-company.com 邮箱、每位用户 1 TB 的安全存储空间、更长视频通话时长等更多权益，尽在 ${ BRAND_NAME } Workspace。"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "接收文档评论和建议的邮件通知"
-      ],
-      "Get Notified About Comments": [
-        "接收评论通知"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府和网络供应商可以监视您的在线活动。Proton 通过隐藏您的真实 IP 地址并加密网络活动，让您的浏览私密无忧。"
@@ -4945,9 +4927,6 @@
       "Low Priority": [
         "较低优先顺序"
       ],
-      "Making a copy...": [
-        "正在创建副本..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "最多 ${ MAX_SHARED_URL_PASSWORD_LENGTH } 个字符"
       ],
@@ -4977,9 +4956,6 @@
       ],
       "No contacts added yet": [
         "尚未添加联系人"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "链接中未提供文档，请返回 ${ DRIVE_APP_NAME } 并选择一个文档。"
       ],
       "No email address": [
         "无邮箱地址"
@@ -5266,9 +5242,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "此收件人已停用端到端加密。要能够向此收件人发送加密电子邮件，该收件人必须重新启用端到端加密。"
       ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "您输入的链接似乎未正确从 Slack 复制。从 Slack 复制长链接时，请右键点击链接，然后选择“复制链接”，而不是直接复制被截断的链接文本。"
-      ],
       "There are no documents in the trash.": [
         "回收站中没有文档。"
       ],
@@ -5461,6 +5434,9 @@
       "Writing assistant": [
         "写作助手"
       ],
+      "You": [
+        "您"
+      ],
       "you": [
         "您"
       ],
@@ -5526,6 +5502,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "将您的访问权限更改为查看者后，您将无法再共享“${ fileName }”。所有者或具有共享权限的编辑者可以恢复您的编辑权限，您无法自行撤消此更改！"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "您将在好友订阅年度套餐 1 个月后获得积分奖励，订阅月度套餐则在 2 个月后获得。"
@@ -5881,9 +5860,6 @@
       "Emails (last month)": [
         "邮件（上个月）"
       ],
-      "Enable email notifications": [
-        "启用邮件通知"
-      ],
       "Encrypt emails": [
         "加密电子邮件"
       ],
@@ -5940,9 +5916,6 @@
       ],
       "Include application logs in bug report": [
         "在问题反馈中包含应用日志"
-      ],
-      "Include document name in notification": [
-        "在通知中包含文档名称"
       ],
       "Include message and file name in invite email": [
         "在邀请电子邮件中包含邮件和文件名"
@@ -8400,6 +8373,11 @@
         "进度：${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "key": [
+        "密钥"
+      ]
+    },
     "Property type": {
       "Address": [
         "地址"
@@ -8942,9 +8920,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "正在创建新表格..."
-      ],
       "Detect automatically": [
         "自动检测"
       ],
@@ -9866,6 +9841,9 @@
       ],
       "Document verification failed": [
         "文档验证失败"
+      ],
+      "Domain names": [
+        "域名"
       ],
       "Downgrade account": [
         "降级账户"

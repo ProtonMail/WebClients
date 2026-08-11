@@ -909,8 +909,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un àlies de correu electrònic funciona com una adreça de correu electrònic, però redueix el correu brossa i manté ocultes la vostra adreça de correu electrònic real i la vostra identitat."
       ],
+      "Change these passwords immediately": [
+        "Canvieu aquestes contrasenyes immediatament"
+      ],
       "Change your passwords": [
         "Canvieu les vostres contrasenyes"
+      ],
+      "Check if your passwords have been exposed": [
+        "Comproveu si les vostres contrasenyes s'han exposat"
       ],
       "Create unique passwords": [
         "Creeu contrasenyes úniques"
@@ -965,6 +971,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Aquest compte és vulnerable, visiteu el servei i canvieu la contrasenya."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "S'ha trobat aquesta contrasenya d'inici de sessió en una infracció de dades. Aneu al servei i canvieu-la."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Aquest servei ofereix A2F. Habiliteu-lo per a augmentar la seguretat del compte."
@@ -1398,6 +1407,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "S'ha produït un error en eliminar l'enllaç segur. Torneu a provar-ho en uns minuts."
       ],
+      "This invite is no longer available": [
+        "Aquesta invitació ja no està disponible"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "S'han fet massa intents fallits. Torneu a iniciar la sessió."
       ],
@@ -1418,9 +1430,6 @@
       ],
       "Unknown error.": [
         "Hi ha hagut un error desconegut."
-      ],
-      "Unknown invite": [
-        "Invitació desconeguda"
       ],
       "Unknown item": [
         "Element desconegut"
@@ -4849,6 +4858,12 @@
       "Clear clipboard": [
         "Netegeu el porta-retalls"
       ],
+      "Compromised password": [
+        "Contrasenya en risc"
+      ],
+      "Compromised passwords": [
+        "Contrasenyes en risc"
+      ],
       "Confirm extra password": [
         "Confirmeu la contrasenya addicional"
       ],
@@ -5065,6 +5080,9 @@
       "No access tokens yet": [
         "Encara no hi ha cap identificador d'accés"
       ],
+      "No compromised passwords": [
+        "No hi ha cap contrasenya en risc"
+      ],
       "No excluded items": [
         "No hi ha elements exclosos"
       ],
@@ -5252,6 +5270,9 @@
       ],
       "Update available": [
         "Hi ha una actualització disponible"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Milloreu el pla per comprovar les contrasenyes en risc"
       ],
       "URL matching": [
         "Coincidència d'URL"

@@ -70,6 +70,9 @@
       "Force Reload": [
         "Forzar recarga"
       ],
+      "Help and feedback": [
+        "Ayuda y comentarios"
+      ],
       "Hide ${ MAIL_APP_NAME }": [
         "Ocultar ${ MAIL_APP_NAME }"
       ],
@@ -78,6 +81,9 @@
       ],
       "Minimize": [
         "Minimizar"
+      ],
+      "OK": [
+        "Aceptar"
       ],
       "Paste": [
         "Pegar"
@@ -147,6 +153,9 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Desinstalar ${ MAIL_APP_NAME }"
+      ],
+      "Version ${ version } (${ buildInfo })\n${ pkg.config.copyright }": [
+        "Versión ${ version } (${ buildInfo })\n${ pkg.config.copyright }"
       ],
       "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
         "Cuando se habilita la aceleración por hardware, la aplicación usa el hardware gráfico dedicado de su dispositivo para el renderizado. Esto puede causar problemas de compatibilidad en algunos sistemas."
@@ -255,11 +264,19 @@
       "File": [
         "Archivo"
       ],
+      "Help": [
+        "Ayuda"
+      ],
       "View": [
         "Vista"
       ],
       "Window": [
         "Ventana"
+      ]
+    },
+    "Title": {
+      "About ${ MAIL_APP_NAME }": [
+        "Acerca de ${ MAIL_APP_NAME }"
       ]
     },
     "Unload warning": {

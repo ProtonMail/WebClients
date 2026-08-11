@@ -121,6 +121,9 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Cancel bulk selection": [
+        "Cancelar seleção em massa"
+      ],
       "Cancel email change": [
         "Cancelar a alteração da caixa de correio"
       ],
@@ -142,8 +145,14 @@
       "Clear": [
         "Limpar"
       ],
+      "Clear item type filter": [
+        "Limpar filtro de tipo de item"
+      ],
       "Clear search": [
         "Limpar pesquisa"
+      ],
+      "Clear sort filter": [
+        "Limpar ordem de filtro"
       ],
       "Close": [
         "Fechar"
@@ -1381,6 +1390,9 @@
       "This domain is already managed by your organization": [
         "Esse domínio já é gerenciada pela sua organização"
       ],
+      "This invite is no longer available": [
+        "Este convite não está mais disponível"
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Isso pode ocorrer após um longo período sem usar o ${ PASS_SHORT_APP_NAME } ou após você limpar o histórico do Safari."
       ],
@@ -1401,9 +1413,6 @@
       ],
       "Unknown error.": [
         "Erro desconhecido."
-      ],
-      "Unknown invite": [
-        "Convite desconhecido"
       ],
       "Unknown item": [
         "Item desconhecido"
@@ -2226,8 +2235,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro."
       ],
       "Moving items": [
         "Movendo itens"
@@ -4810,6 +4818,12 @@
       ],
       "Clear clipboard": [
         "Limpar área de transferência"
+      ],
+      "Compromised password": [
+        "Senha comprometida"
+      ],
+      "Compromised passwords": [
+        "Senhas comprometidas"
       ],
       "Confirm extra password": [
         "Confirmar senha adicional"

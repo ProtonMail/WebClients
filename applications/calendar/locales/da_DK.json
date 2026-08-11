@@ -608,6 +608,9 @@
       "Merge contacts": [
         "Flet kontakter"
       ],
+      "Migrate": [
+        "Migrer"
+      ],
       "More actions": [
         "Flere handlinger"
       ],
@@ -3598,6 +3601,9 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Det kræver en besked for at oprette en rapport om krænkelse af ophavsretten eller stjålet data"
+      ],
       "A problem occurred, please try again.": [
         "Der opstod et problem. Prøv igen."
       ],
@@ -3606,6 +3612,9 @@
       ],
       "Address could not be added.": [
         "Adressen kunne ikke tilføjes."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
       ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
@@ -3649,17 +3658,38 @@
       "Authentication error.": [
         "Godkendelsesfejl."
       ],
+      "Bookmark password is not available": [
+        "Adgangskoden for bogmærket er ikke tilgængeligt"
+      ],
       "Calendar limit reached": [
         "Kalendergrænse nået"
       ],
       "Cancellation failed to be sent": [
         "Aflysning kunne ikke sendes"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Kan ikke tilføj et foto til et album uden et gyldigt navn"
+      ],
       "Cannot create a booking with a disabled address": [
         "Kan ikke oprette en reservation med en deaktiveret adresse"
       ],
+      "Cannot download a folder": [
+        "Kan ikke downloade en mappe"
+      ],
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakt"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan ikke flytte et element uden et gyldigt navn – omdøb det først"
+      ],
+      "Cannot share root folder": [
+        "Kan ikke dele rodmappen"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan ikke bekræfte forfatteren af filen"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan ikke bekræfte hvem, der uploadede filen"
       ],
       "Checkout expired, please try again": [
         "Betalingen er udløbet, prøv venligst igen"
@@ -3685,11 +3715,44 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Indholdssøgning kan ikke aktiveres. Genstart applikationen, eller ryd data."
       ],
+      "Copy operation aborted": [
+        "Kopiering afbrudt"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiering af et element til udenfor en mappe er ikke tilladt"
+      ],
+      "Could not find an available name": [
+        "Kunne ikke finde et tilgængeligt navn"
+      ],
+      "Could not load sharing details": [
+        "Kunne ikke indlæse oplysninger om deling"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Kunne ikke indlæse forhåndsvisningen: ${ message }"
+      ],
       "Could not open created vault": [
         "Kunne ikke åbne den oprettede boks"
       ],
       "Could not open updated vault": [
         "Kunne ikke åbne den opdaterede boks"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunne ikke læse en del af denne fil: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Kunne ikke låse op for den overordnede mappe"
+      ],
+      "Could not unlock this item": [
+        "Kunne ikke låse op for dette element"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Oprettelse af dokumenter udenfor mapper er ikke tilladt"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Oprettelse af filer udenfor mapper er ikke tilladt"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Oprettelse af mapper udenfor mapper er ikke tilladt"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne begivenheds indhold mislykkedes."
@@ -3701,6 +3764,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Fravælg mindst ${ calendarsToFixCount } kalender eller",
         "Fravælg mindst ${ calendarsToFixCount } kalendere eller"
+      ],
+      "Device not found": [
+        "Enheden blev ikke fundet"
       ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
@@ -3741,6 +3807,9 @@
       "Event not found": [
         "Begivenhed ikke fundet"
       ],
+      "Expiration date cannot be in the past": [
+        "Udløbsdatoen kan ikke være i fortiden"
+      ],
       "Failed loading group members": [
         "Kunne ikke indlæse gruppemedlemmer"
       ],
@@ -3753,11 +3822,35 @@
       "Failed to create meeting": [
         "Kunne ikke oprette møde"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Kunne ikke dekryptere bogmærkets nøgle: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Kunne ikke dekryptere bogmærkets navn: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Kunne ikke dekryptere adgangskoden til bogmærket: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Kunne ikke dekryptere indholdsnøglen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kunne ikke dekryptere navnet på elementet: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Kunne ikke dekryptere knudens nøgle: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Kunne ikke dekryptere revision metadata"
+      ],
       "Failed to decrypt session key": [
         "Kunne ikke dekryptere sessionsnøgle"
       ],
       "Failed to get event": [
         "Kunne ikke hente begivenhed"
+      ],
+      "Failed to get inviter keys": [
+        "Kunne ikke hente invitationsnøgler"
       ],
       "Failed to get original occurrence in series": [
         "Kunne ikke hente original forekomst i serie"
@@ -3774,6 +3867,15 @@
       "Failed to update settings": [
         "Kunne ikke opdatere indstillinger"
       ],
+      "Failed to verify invitation": [
+        "Kunne ikke bekræfte invitationen"
+      ],
+      "File download failed due to empty response": [
+        "Kunne ikke downloade på grund af tomt svar"
+      ],
+      "File has no revision": [
+        "Filen har ingen revisioner"
+      ],
       "First name is too long": [
         "Fornavn er for langt"
       ],
@@ -3782,6 +3884,9 @@
       ],
       "Forward address is required": [
         "Adresse til videresendelse er påkrævet."
+      ],
+      "Image preview not found": [
+        "Forhåndsvisning ikke fundet"
       ],
       "Image upload failed": [
         "Billed-upload mislykkedes"
@@ -3834,6 +3939,9 @@
       "Invitation failed to be sent": [
         "Invitation kunne ikke sendes"
       ],
+      "Invitation not found": [
+        "Invitation ikke fundet"
+      ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
         "Det er kun muligt at oprette begivenheder mellem ${ minDateString } - ${ maxDateString }"
       ],
@@ -3843,27 +3951,64 @@
       "Item content cannot exceed 40KB": [
         "Element-indhold må ikke overstige 40 kB"
       ],
+      "Item not found": [
+        "Element ikke fundet"
+      ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
       ],
       "Last name is too long": [
         "Efternavn er for langt"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Legacy offentlige links kan ikke opdateres. Opret et nyt offentligt link."
+      ],
       "Location is required": [
         "Placering er påkrævet"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adressen for medlemmet blev ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Flet mindst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
         "Flet mindst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
       ],
+      "Missing inviter email": [
+        "Mangler invitations-e-mail"
+      ],
       "Missing key packet": [
         "Manglende nøglepakke"
+      ],
+      "Missing organization private key": [
+        "Mangler organisationens private nøgle"
+      ],
+      "Missing organization public key": [
+        "Mangler organisationens offentlige nøgle"
       ],
       "Missing signature": [
         "Manglende signatur"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Mangler signatur for ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Flytning afbrudt"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Flytning af et element til udenfor en mappe er ikke tilladt"
+      ],
+      "Moving root item is not allowed": [
+        "Flytning af rodelementet er ikke tilladt"
+      ],
       "Name is required": [
         "Navn er påkrævet"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Navnet må højst være på ${ MAX_NODE_NAME_LENGTH } tegn",
+        "Navnet må højst være på ${ MAX_NODE_NAME_LENGTH } tegn"
+      ],
+      "Name must not be empty": [
+        "Navnet må ikke være tomt"
       ],
       "Name required": [
         "Navn påkrævet"
@@ -3889,6 +4034,9 @@
       "No external key retrieved for user is valid for sending": [
         "Ingen ekstern nøgle hentet for brugeren er gyldig til afsendelse"
       ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata blev modtaget. Prøv igen."
+      ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
       ],
@@ -3909,6 +4057,21 @@
         "En af grupperne har ingen kontakter: ${ noContactGroupList }",
         "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Kun admins kan konvertere eksterne invitationer"
+      ],
+      "Operation aborted": [
+        "Handling afbrudt"
+      ],
+      "Operation failed, try again later": [
+        "Handlingen mislykkedes, prøv igen sere"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisationen har ikke nok ledige pladser"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisationen har ikke tilstrækkelig ledig lagerplads"
+      ],
       "Organization key is not decrypted": [
         "Organisationsnøgle er ikke dekrypteret"
       ],
@@ -3917,6 +4080,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsnøgle skal være aktiveret for at oprette ikke private brugere"
+      ],
+      "Part of the file appears to be corrupted": [
+        "En del af filen er tilsyneladende beskadiget"
       ],
       "Password is required": [
         "Adgangskode er påkrævet."
@@ -3935,6 +4101,12 @@
       ],
       "Payment process not supported": [
         "Betalingsprocessen understøttes ikke"
+      ],
+      "Photo is already in the target album": [
+        "Fotoet er allerede i destinationsalbummet"
+      ],
+      "Photo not found": [
+        "Foto ikke fundet"
       ],
       "Please activate your search again": [
         "Aktiver venligst din søgning igen"
@@ -4013,6 +4185,12 @@
         "Fjernede dublet af modtager: ${ joinedRecipients }",
         "Fjernede dubletter af modtagere: ${ joinedRecipients }"
       ],
+      "Renaming root item is not allowed": [
+        "Omdøbning af rodelementet er ikke tilladt"
+      ],
+      "Request aborted": [
+        "Forespørgsel afbrudt"
+      ],
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
@@ -4022,17 +4200,38 @@
       "Self invitation not allowed": [
         "Selvinvitation er ikke tilladt"
       ],
+      "Signature is missing": [
+        "Signaturen mangler"
+      ],
       "Signature not verified": [
         "Signatur ikke bekræftet"
       ],
       "Signature verification failed": [
         "Bekræftelse af signatur mislykkedes"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturbekræftelse mislykkedes: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturbekræftelse for ${ signatureType } mislykkedes"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturbekræftelse for ${ signatureType } mislykkedes: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Nogle kontakter kunne ikke slettes"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Noget fildata kunne ikke uploades. Prøv igen."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Nogle fildele kunne ikke uploades. Prøv igen."
+      ],
       "Some groups could not be deleted": [
         "Nogle grupper kunne ikke slettes"
+      ],
+      "Some items could not be loaded": [
+        "Nogle elementer kunne ikke indlæses"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
@@ -4097,6 +4296,9 @@
       "The sending key is not valid": [
         "Afsendelsesnøgle er ikke gyldig"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den uploadede fil matcher ikke den originale. Prøv igen."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Der er for mange mapper i din eksterne konto. Rediger venligst importen for at slette nogle mapper."
       ],
@@ -4115,14 +4317,38 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
+      "This file has missing crypto material": [
+        "Denne fil mangler krypto-materiale"
+      ],
+      "This file has no version available to download": [
+        "Filen har ingen versioner, der kan downloades"
+      ],
+      "This file version could not be uploaded": [
+        "Denne filversion kunne ikke uploades"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Dette mappenavn er ikke tilgængeligt. Vælg venligst et andet navn."
+      ],
+      "This item has no image preview": [
+        "Dette element har ingen forhåndsvisning"
+      ],
+      "This item is no longer shared": [
+        "Dette element er ikke længere delt"
+      ],
+      "This item is not shared": [
+        "Dette element er ikke delt"
       ],
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
+      ],
+      "Too many server errors, please try again later": [
+        "For mange serverfejl, prøv igen senere"
+      ],
+      "Too many server requests, please try again later": [
+        "For mange serverforespørgsler, prøv igen senere"
       ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
@@ -4157,6 +4383,12 @@
       "VAT number must start with ${ prefixes }": [
         "Momsnummer skal starte med ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "Bekræftelsesnøgler er ikke tilgængelige"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Bekræftelsesnøgler til ${ signatureType } er ikke tilgængelige"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunne ikke sende en bekræftelseskode ved hjælp af denne metode."
       ],
@@ -4169,12 +4401,30 @@
       "You are reconnected to Zoom. You can save your event now.": [
         "Du har fået forbindelse til Zoom igen. Du kan gemme din begivenhed nu."
       ],
+      "You can create public links for your own files only": [
+        "Du kan kun oprette et offentligt link for dine egne filer"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan kun forlade elementer, som er delt med dig"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan kun uploade en ny version af en fil"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kan kun opdatere et offentligt link for dine egne filer"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtagere"
       ],
       "You cannot enter the organizer's email": [
         "Du kan ikke indtaste arrangørens e-mail"
+      ],
+      "You do not have access to this item": [
+        "Du har ikke adgang til dette element"
+      ],
+      "You do not have access to this shared item": [
+        "Du har ikke adgang til dette delte element"
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nået det maksimale antal kalendere."
@@ -4728,6 +4978,29 @@
         "Terabyte"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Aktiveret"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Fejl"
+      ],
+      "In progress": [
+        "I gang"
+      ],
+      "Migrated": [
+        "Migreret"
+      ],
+      "Not activated": [
+        "Ikke aktiveret"
+      ],
+      "Pending": [
+        "Afventer"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } opdateret"
@@ -5142,11 +5415,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Har fejl"
+      ],
       "In progress": [
         "I gang"
       ],
       "Migrated": [
         "Migreret"
+      ],
+      "Pending": [
+        "Afventer"
       ]
     },
     "Import warning": {
@@ -5454,6 +5733,9 @@
       "Attention required": [
         "Opmærksomhed påkrævet"
       ],
+      "Author is not provided on public link": [
+        "Forfatter er ikke angivet på offentligt link"
+      ],
       "Awaiting transaction": [
         "Afventer transaktion"
       ],
@@ -5749,6 +6031,9 @@
       "finance": [
         "finans"
       ],
+      "Find out what can be migrated.": [
+        "Find ud af hvad der kan migreres."
+      ],
       "for ${ price }": [
         "til ${ price }"
       ],
@@ -5996,6 +6281,9 @@
       "No results found": [
         "Ingen resultater fundet"
       ],
+      "No users to display": [
+        "Ingen brugere"
+      ],
       "None of the participants can be notified about your changes:": [
         "Ingen af deltagerne kan få besked om dine ændringer:"
       ],
@@ -6184,6 +6472,9 @@
       "Scan the QR code with your mobile device": [
         "Scan QR-koden med din mobilenhed"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vælg præcis det du gerne vil migrere. Det vil gælde for alle brugere i organisationen."
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
@@ -6350,6 +6641,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denne unikke kode kan bruges af websteder og ISPs (internetudbydere) til at forbinde din placering og browserhistorik til din enhed."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Denne bruger kan ikke migreres da brugerens e-mailadresse ikke er tilgængelig på ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
       ],
@@ -6373,6 +6670,18 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "For at migrere denne bruger skal du tilføje og bekræfte e-mail-domænet under ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere vedkommendes adresse under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "For at migrere denne bruger skal de acceptere deres invitation til at tilslutte sig ${ BRAND_NAME }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
@@ -6535,6 +6844,9 @@
       ],
       "Yearly": [
         "Årlig"
+      ],
+      "You": [
+        "Dig"
       ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
@@ -10241,6 +10553,26 @@
         "Fremskridt: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "attributter"
+      ],
+      "content key": [
+        "indholdsnøgle"
+      ],
+      "hash key": [
+        "hash-nøgle"
+      ],
+      "key": [
+        "nøgle"
+      ],
+      "membership": [
+        "medlemsskab"
+      ],
+      "name": [
+        "navn"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adresse"
@@ -11848,17 +12180,26 @@
       "Actions": [
         "Handlinger"
       ],
+      "Activated": [
+        "Aktiveret"
+      ],
       "Address": [
         "Adresse"
       ],
       "Created": [
         "Oprettet"
       ],
+      "Estimated size": [
+        "Anslået størrelse"
+      ],
       "Expires": [
         "Udløber"
       ],
       "Fingerprint": [
         "Fingeraftryk"
+      ],
+      "Migration status": [
+        "Migrationsstatus"
       ],
       "Name": [
         "Navn"
@@ -11871,6 +12212,9 @@
       ],
       "Type": [
         "Type"
+      ],
+      "User": [
+        "Bruger"
       ]
     },
     "TableHeader": {
@@ -12110,6 +12454,9 @@
       "Collaborate on documents": [
         "Arbejd sammen om dokumenter"
       ],
+      "Configure migration": [
+        "Konfigurer migration"
+      ],
       "Confirm downgrade": [
         "Bekræft nedgradering"
       ],
@@ -12210,6 +12557,9 @@
       ],
       "Does not repeat": [
         "Gentages ikke"
+      ],
+      "Domain names": [
+        "Domænenavne"
       ],
       "Downgrade account": [
         "Nedgradér konto"
@@ -12554,6 +12904,9 @@
       "Select the way to send this notification": [
         "Vælg måden at sende denne notifikation på"
       ],
+      "Select users to migrate": [
+        "Vælg brugere at migrere"
+      ],
       "Select when you want this notification to be sent": [
         "Vælg når du ønsker, at denne notifikation skal sendes"
       ],
@@ -12700,6 +13053,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
+      ],
+      "What are you migrating?": [
+        "Hvad migrerer du?"
       ],
       "What can a VPN protect you from?": [
         "Hvad kan en VPN beskytte dig imod?"
@@ -12871,6 +13227,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
       ],
       "Version 6 OpenPGP key": [
         "OpenPGP-nøgle version 6"

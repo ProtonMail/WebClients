@@ -70,6 +70,9 @@
       "Force Reload": [
         "Reîncărcare forțată"
       ],
+      "Help and feedback": [
+        "Ajutor și feedback"
+      ],
       "Hide ${ MAIL_APP_NAME }": [
         "Ascundere ${ MAIL_APP_NAME }"
       ],
@@ -78,6 +81,9 @@
       ],
       "Minimize": [
         "Micșorare"
+      ],
+      "OK": [
+        "OK"
       ],
       "Paste": [
         "Lipire"
@@ -147,6 +153,9 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Dezinstalare ${ MAIL_APP_NAME }"
+      ],
+      "Version ${ version } (${ buildInfo })\n${ pkg.config.copyright }": [
+        "Versiunea ${ version } (${ buildInfo })\n${ pkg.config.copyright }"
       ],
       "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
         "Când accelerarea hardware este activată, aplicația folosește hardware-ul grafic dedicat al dispozitivului pentru randare. Acest lucru poate cauza probleme de compatibilitate pe unele sisteme."
@@ -255,11 +264,19 @@
       "File": [
         "Fișier"
       ],
+      "Help": [
+        "Ajutor"
+      ],
       "View": [
         "Afișare"
       ],
       "Window": [
         "Fereastra"
+      ]
+    },
+    "Title": {
+      "About ${ MAIL_APP_NAME }": [
+        "Despre ${ MAIL_APP_NAME }"
       ]
     },
     "Unload warning": {

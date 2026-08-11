@@ -2699,6 +2699,9 @@
       "Data never used for AI training": [
         "Podatki se ne bodo nikoli uporabljali za urjenje UI"
       ],
+      "Full chat history with search": [
+        "Celotna zgodovina klepeta z možnostjo iskanja"
+      ],
       "Large file upload support": [
         "Podpora za nalaganje velikih datotek"
       ],
@@ -4176,6 +4179,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Berite, odgovarjajte in bodite na tekočem z Gmailom neposredno v ${ MAIL_APP_NAME }"
       ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Z desno miškino tipko kliknite na sporočilo in izberite »Premakni v« ali pa ga povlecite in spustite v drugo kategorijo. Podobna e-poštna sporočila se bodo v prihodnje samodejno razvrstila v to kategorijo."
+      ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Pošiljajte in prejemajte sporočila Gmail neposredno v ${ MAIL_APP_NAME }. Povežite svoj naslov v ${ addressesSettingsLink }."
       ],
@@ -4302,6 +4308,11 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "V datoteki CSV, ki ste jo naložili, smo zaznali naslednja polja. Označite tista, ki jih želite uvoziti."
+      ]
+    },
+    "Desktop notification body": {
+      "From: ${ sender } - ${ message.Subject }": [
+        "Od: ${ sender } – ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -4572,6 +4583,9 @@
       "A group with this name already exists": [
         "Skupina z enakim imenom že obstaja"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Pri prijavi kršitve avtorskih pravic ali kraje podatkov je obvezno sporočilo"
+      ],
       "A problem occurred, please try again.": [
         "Prišlo je do težave, poskusite znova."
       ],
@@ -4626,14 +4640,29 @@
       "Authentication error.": [
         "Napaka pri preverjanju pristnosti."
       ],
+      "Bookmark password is not available": [
+        "Geslo zaznamka ni na voljo"
+      ],
       "Calendar limit reached": [
         "Dosežena omejitev števila koledarjev."
+      ],
+      "Cannot download a folder": [
+        "Mape ni mogoče prenesti"
       ],
       "Cannot export this contact": [
         "Tega stika ni mogoče izvoziti"
       ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Predmeta ni mogoče premakniti brez veljavnega imena. Najprej preimenujte predmet"
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "Ne morete nastaviti poteka veljavnosti, ki je daljši od dovoljenega pravilnika o hrambi."
+      ],
+      "Cannot share root folder": [
+        "Korenske mape ni mogoče deliti"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Ni mogoče preveriti, kdo je naložil to datoteko"
       ],
       "Checkout expired, please try again": [
         "Seja je potekla, poskusite znova."
@@ -4665,6 +4694,9 @@
       "Contact signature not verified": [
         "Podpis stika ni potrjen"
       ],
+      "Contact your administrator to start a migration.": [
+        "Za začetek selitve se obrnite na skrbnika."
+      ],
       "Contact your organization’s administrator to resolve this": [
         "Za rešitev te težave se obrnite na skrbnika organizacije"
       ],
@@ -4674,11 +4706,35 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Iskanje po vsebini ni mogoče omogočiti. Znova zaženite aplikacijo ali počistite podatke."
       ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiranje predmetov v mapo, ki to ni, ni dovoljeno"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Predogleda slike ni mogoče naložiti: ${ message }"
+      ],
       "Could not open created vault": [
         "Ni bilo mogoče odpreti ustvarjenega trezorja"
       ],
       "Could not open updated vault": [
         "Ni bilo mogoče odpreti posodobljenega trezorja"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Dela naslednje datoteke ni bilo mogoče prebrati: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Nadrejene mape ni bilo mogoče odkleniti"
+      ],
+      "Could not unlock this item": [
+        "Predmeta ni bilo mogoče odkleniti"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Ustvarjanje dokumentov v mapah, ki to niso, ni dovoljeno"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Ustvarjanje datotek v mapah, ki to niso, ni dovoljeno"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Ustvarjanje map v mapah, ki to niso, ni dovoljeno"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Napaka pri dešifriranju: dešifriranje šifrirane vsebine tega sporočila ni uspelo."
@@ -4694,6 +4750,9 @@
         "Izberite vsaj ${ calendarsToFixCount } koledarja manj ali",
         "Izberite vsaj ${ calendarsToFixCount } koledarje manj ali",
         "Izberite vsaj ${ calendarsToFixCount } koledarjev manj ali"
+      ],
+      "Device not found": [
+        "Naprave ni bilo mogoče najti"
       ],
       "Domain not available, try again later": [
         "Domena ni na voljo, poskusite znova pozneje"
@@ -4743,8 +4802,26 @@
       "Error while uploading attachments. Message is not sent.": [
         "Pri nalaganju priponk je prišlo do napake. Sporočilo ni bilo poslano."
       ],
+      "Expiration date cannot be in the past": [
+        "Datum poteka ne more biti v preteklosti"
+      ],
       "Failed loading group members": [
         "Napaka pri nalaganju članov skupine"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Ključa zaznamka ni bilo mogoče dešifrirati: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Imena zaznamka ni bilo mogoče dešifrirati: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Imena predmeta ni bilo mogoče dešifrirati: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Ključa vozlišča ni bilo mogoče dešifrirati: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Metapodatkov revizije ni bilo mogoče dešifrirati"
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Neuspešno šifriranje priponke. Prosimo, poskusite znova."
@@ -4758,6 +4835,12 @@
       "Failed to open to contact": [
         "Ni mogoče odpreti stika."
       ],
+      "Failed to verify invitation": [
+        "Povabila ni bilo mogoče preveriti"
+      ],
+      "File download failed due to empty response": [
+        "Prenos datoteke ni uspel zaradi praznega odziva"
+      ],
       "Filter with this name already exists": [
         "Filter s tem imenom že obstaja"
       ],
@@ -4769,6 +4852,9 @@
       ],
       "Forward address is required": [
         "Zahtevan je naslov za posredovanje"
+      ],
+      "Image preview not found": [
+        "Predogleda slike ni bilo mogoče najti"
       ],
       "Image upload failed": [
         "Nalaganje slike ni uspelo"
@@ -4812,8 +4898,14 @@
       "Invalid verification code": [
         "Neveljavna koda za preverjanje"
       ],
+      "Invitation not found": [
+        "Povabila ni bilo mogoče najti"
+      ],
       "Item content cannot exceed 40KB": [
         "Vsebina predmeta ne sme presegati 40 KB"
+      ],
+      "Item not found": [
+        "Predmeta ni bilo mogoče najti"
       ],
       "Label name cannot be empty.": [
         "Ime oznake ne sme biti prazno."
@@ -4845,8 +4937,17 @@
       "Missing signature": [
         "Manjka podpis"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Za ${ signatureType } manjka podpis"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Premikanje predmetov v mapo, ki to ni, ni dovoljeno"
+      ],
       "Name is required": [
         "Zahtevano je ime"
+      ],
+      "Name must not be empty": [
+        "Ime ne sme biti prazno"
       ],
       "Network error": [
         "Omrežna napaka"
@@ -4893,6 +4994,15 @@
         "V nekaterih skupinah ni stikov: ${ noContactGroupList } ",
         "V nekaterih skupinah ni stikov: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Zunanja povabila lahko pretvorijo samo skrbniki"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizacija nima na voljo dovolj sedežev"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizacija nima na voljo dovolj shrambe"
+      ],
       "Organization key is not decrypted": [
         "Ključ organizacije ni dešifriran."
       ],
@@ -4919,6 +5029,12 @@
       ],
       "Payment process not supported": [
         "Postopek plačila ni podprt"
+      ],
+      "Photo is already in the target album": [
+        "Fotografija je že v ciljnem albumu"
+      ],
+      "Photo not found": [
+        "Fotografije ni bilo mogoče najti"
       ],
       "Please activate your search again": [
         "Prosimo, ponovno aktivirajte iskanje."
@@ -5040,11 +5156,26 @@
       "Signature verification failed": [
         "Preverjanje podpisa ni uspelo"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Preverjanje podpisa ni uspelo: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Preverjanje podpisa za ${ signatureType } ni uspelo"
+      ],
       "Some contacts could not be deleted": [
         "Nekaterih stikov ni bilo mogoče izbrisati"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Podatki nekaterih datotek se niso uspeli naložiti. Poskusite znova."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Deli nekaterih datotek se niso uspeli naložiti. Poskusite znova."
+      ],
       "Some groups could not be deleted": [
         "Nekaterih skupin ni bilo mogoče izbrisati"
+      ],
+      "Some items could not be loaded": [
+        "Nekaterih predmetov ni bilo mogoče naložiti"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nekatera imena map niso na voljo. Prosimo prilagodite uvoz tako, da uredite takšna imena."
@@ -5169,6 +5300,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "To polje zahteva vsaj ${ minimumLength } znakov."
       ],
+      "This file version could not be uploaded": [
+        "Te različice datoteke ni bilo mogoče naložiti"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "To ime mape ni na voljo. Izberite drugačno ime."
       ],
@@ -5183,6 +5317,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "To sporočilo morda vsebuje povezave, ki jih vaš trenutni brskalnik ne more pravilno odpreti."
+      ],
+      "Too many server errors, please try again later": [
+        "Preveč napak strežnika, poskusite znova pozneje"
+      ],
+      "Too many server requests, please try again later": [
+        "Preveč zahtev strežniku, poskusite znova pozneje"
       ],
       "Trusted keys are not valid for sending": [
         "Zaupanja vredni ključi niso veljavni za pošiljanje"
@@ -5226,6 +5366,18 @@
       "Wrong password": [
         "Napačno geslo"
       ],
+      "You can create public links for your own files only": [
+        "Javne povezave lahko ustvarjate samo do lastnih datotek"
+      ],
+      "You can only leave items that are shared with you": [
+        "Zapustite lahko le predmete, ki so v skupni rabi z vami"
+      ],
+      "You can only upload a new version to a file": [
+        "Naložite lahko samo novo različico datoteke"
+      ],
+      "You can update a public link for your own files only": [
+        "Javno povezavo lahko posodobite samo za lastne datoteke"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Sporočilo lahko pošljete največ ${ maxContacts } prejemniku.",
         "Sporočilo lahko pošljete največ ${ maxContacts } prejemnikoma.",
@@ -5240,6 +5392,9 @@
       ],
       "You did not provide a file.": [
         "Manjka datoteka."
+      ],
+      "You do not have access to this shared item": [
+        "Nimate dostopa do tega predmeta v skupni rabi"
       ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste največje število koledarjev."
@@ -5264,6 +5419,9 @@
       ],
       "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
         "Vašega sporočila ni mogoče dešifrirati. Če ste izbrisali katerega od svojih naslovnih ključev, jih poskusite ponovno uvoziti prek povezave ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Sporočila ni mogoče dešifrirati. Ključ, s katerim je bilo sporočilo šifrirano, se ne ujema z nobenim izmed ključev, povezanih z vašim naslovom. Če ste katerega izmed njih izbrisali, ga poskusite ${ reimportKeyLink }. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vašemu iskanju ustreza preveč rezultatov. Omejite iskanje in poskusite znova."
@@ -5787,6 +5945,9 @@
       ]
     },
     "Filter": {
+      "Errors": [
+        "Napake"
+      ],
       "Filter": [
         "Filter"
       ],
@@ -5795,6 +5956,9 @@
       ],
       "Has attachments": [
         "S priponkami"
+      ],
+      "In progress": [
+        "V teku"
       ],
       "Read": [
         "Prebrano"
@@ -6521,6 +6685,11 @@
         "Več možnosti uvoza"
       ]
     },
+    "Import status": {
+      "Has errors": [
+        "Z napakami"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } stikov ne bo uvoženih. Kliknite za podrobnosti"
@@ -6721,6 +6890,9 @@
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } lahko ščiti tudi vaše podjetje."
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } sedaj samodejno razvršča vašo pošto v kategorije, kot so Glavno, Družabno, Promocije in druge, za boljši pregled nad sporočili."
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } uporabniška mesta"
@@ -7350,7 +7522,7 @@
         "Discover ProtectBuy logotip"
       ],
       "Do you remember your password? ${ verifyButton }": [
-        "Se spomnite vašega gesla? ${ verifyButton }"
+        "Se spomnite svojega gesla? ${ verifyButton }"
       ],
       "Do you want to download this attachment anyway?": [
         "Ali želite vseeno prenesti to priponko?",
@@ -7558,6 +7730,9 @@
       ],
       "finance": [
         "finance"
+      ],
+      "Find out what can be migrated.": [
+        "Ugotovite, kaj je mogoče preseliti."
       ],
       "Folder": [
         "Mapa"
@@ -7910,6 +8085,15 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Večina javnih omrežij WiFi je varnih, vendar nekatera nimajo ustrezne varnosti, zato ste izpostavljeni kibernetskim grožnjam. VPN šifrira vaš promet in vas ohranja zaščitene."
       ],
+      "Move emails": [
+        "Premakni sporočila"
+      ],
+      "Move here": [
+        "Premakni sem"
+      ],
+      "Move to Primary": [
+        "Premakni v Glavno"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poimenujte novo mapo in izberite, v kateri mapi naj se ustvari. Če ne izberete nadrejene mape, bo ta mapa ustvarjena kot mapa najvišje ravni."
       ],
@@ -8149,6 +8333,9 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Zasebno brskanje (ali »način brez beleženja zgodovine«) je uporabno samo za ohranjanje zasebnosti vaše dejavnosti znotraj vaše naprave. Preprečuje, da bi vaš brskalnik shranjeval zgodovino in piškotke, vendar vas ne naredi nevidne. Vaš internetni ponudnik, skrbnik omrežja in spletne strani, ki jih obiskujete, lahko še vedno vidijo, kaj počnete v spletu."
+      ],
+      "Private by design.": [
+        "Zaseben po zasnovi."
       ],
       "Proofread selection": [
         "Preveri izbrano besedilo"
@@ -8477,6 +8664,9 @@
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Ne morejo vam pošiljati neželene pošte, če ne poznajo vašega e-poštnega naslova. Zaščitite svoj nabiralnik z uporabo hide-my-email."
       ],
+      "Thinking about this": [
+        "Razmišljanje"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ta naslov je onemogočen. Za pošiljanje na ta naslov ga mora lastnik najprej omogočiti."
       ],
@@ -8612,6 +8802,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "To edinstveno kodo lahko spletne strani in ponudniki internetnih storitev (ISP) uporabijo za povezavo vaše lokacije in zgodovine brskanja z vašo napravo"
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Tega uporabnika ni mogoče prenesti, ker njegov e-poštni naslov ni na voljo v storitvi ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tega uporabnika ni mogoče preseliti zaradi nezdružljivosti platform."
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "To vam je bilo prikazano, ker zadeva vaše e-pošte vsebuje ključne besede za ponastavitev gesla."
       ],
@@ -8635,6 +8831,12 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Za uvoz dogodkov najprej ustvarite koledar v aplikaciji ${ CALENDAR_APP_NAME }. Tam se bodo dogodki po uvozu prikazali."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Če želite prenesti tega uporabnika, dodajte in potrdite e-poštno domeno na povezavi ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Če želite preseliti tega uporabnika, omogočite njegov račun v ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Če želite ponovno podpisati stike, moramo vsak stik preveriti na seznamu šifrirnih ključev, ki so na voljo v vašem računu. Če ujemanja ne bomo našli, bo stik ponovno podpisan s primarnim šifrirnim ključem."
@@ -8905,6 +9107,9 @@
       ],
       "Yearly": [
         "Letno"
+      ],
+      "You": [
+        "Vi"
       ],
       "You already have a free account": [
         "Brezplačen račun že imate"
@@ -9940,6 +10145,9 @@
       "Label as": [
         "Označi kot"
       ],
+      "Label ID": [
+        "ID oznake"
+      ],
       "Label messages as": [
         "Dodaj sporočilom oznako"
       ],
@@ -9966,6 +10174,9 @@
       ],
       "Mail debugging information": [
         "Informacije o odpravljanju napak"
+      ],
+      "Mail logs": [
+        "Dnevniki pošte"
       ],
       "Mail Server (IMAP)": [
         "Poštni strežnik (IMAP)"
@@ -10233,6 +10444,9 @@
       ],
       "System information": [
         "Podatki o sistemu"
+      ],
+      "Tab age": [
+        "Starost zavihka"
       ],
       "Tell us more about your experience": [
         "Povejte nam več o vaši izkušnji"
@@ -12046,6 +12260,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } država",
+        "${ n } državi",
+        "${ n } države",
+        "${ n } držav"
+      ],
       "Access advanced VPN features": [
         "Dostop do naprednih funkcij VPN"
       ],
@@ -12748,6 +12968,9 @@
       "You already have a subscription to this plan.": [
         "Na ta paket ste že naročeni."
       ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Na ta paket ste že naročeni. Naročnino lahko spremenite na ${ subscriptionPlatform }."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za preverjanje plačila boste kmalu preusmerjeni na spletno mesto PayPal."
       ],
@@ -12905,6 +13128,9 @@
       ],
       "Anytown": [
         "Mesto"
+      ],
+      "Ask anything…": [
+        "Vprašajte karkoli …"
       ],
       "Company name": [
         "Ime podjetja"
@@ -14967,6 +15193,9 @@
         "Premakni ${ selectionCount } sporočila",
         "Premakni ${ selectionCount } sporočil"
       ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Premaknjeno v ${ label }. Podobna sporočila bodo v prihodnje razvrščena v to kategorijo."
+      ],
       "Password copied to clipboard": [
         "Geslo je kopirano v odložišče."
       ],
@@ -15099,11 +15328,17 @@
       "Created": [
         "Ustvarjeno"
       ],
+      "Estimated size": [
+        "Ocenjena velikost"
+      ],
       "Expires": [
         "Poteče"
       ],
       "Fingerprint": [
         "Prstni odtis"
+      ],
+      "Migration status": [
+        "Stanje selitve"
       ],
       "Name": [
         "Ime"
@@ -15113,6 +15348,9 @@
       ],
       "Type": [
         "Vrsta"
+      ],
+      "User": [
+        "Uporabnik"
       ]
     },
     "TableHeader": {
@@ -15577,6 +15815,9 @@
       "Distraction-free emailing": [
         "Pošiljanje e-pošte brez motenj"
       ],
+      "Domain names": [
+        "Imena domen"
+      ],
       "Don't give spam a chance": [
         "Ne dajmo priložnosti neželeni pošti."
       ],
@@ -15687,6 +15928,9 @@
       ],
       "Groups": [
         "Skupine"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Pozor: ta Gmail je povezan z drugim računom ${ BRAND_NAME }"
       ],
       "Help and feedback": [
         "Pomoč in povratne informacije"
@@ -15855,6 +16099,9 @@
       ],
       "Move all messages to trash": [
         "Premakni vsa sporočila v smetnjak"
+      ],
+      "Move emails": [
+        "Premakni sporočila"
       ],
       "Move to": [
         "Premakni v"
@@ -16290,6 +16537,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Dobrodošli v ${ BRAND_NAME } for Business"
+      ],
+      "What are you migrating?": [
+        "Kaj selite?"
       ],
       "What can a VPN protect you from?": [
         "Pred čim vas lahko VPN zaščiti?"

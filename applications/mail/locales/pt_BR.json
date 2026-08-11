@@ -901,6 +901,9 @@
       "Messages to this recipient": [
         "Mensagens para esse destinatário"
       ],
+      "Migrate": [
+        "Migrar"
+      ],
       "Minimize composer": [
         "Minimizar compositor"
       ],
@@ -4779,11 +4782,23 @@
       "Calendar limit reached": [
         "Limite de calendários atingido"
       ],
+      "Cannot download a folder": [
+        "Não é possível baixar uma pasta"
+      ],
       "Cannot export this contact": [
         "Não é possível exportar este contato."
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "Não é possível definir uma expiração maior do que a política de retenção permite."
+      ],
+      "Cannot share root folder": [
+        "Não é possível compartilhar a pasta raiz"
+      ],
+      "Cannot verify the author of this file": [
+        "Não é possível verificar o autor deste arquivo"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Não é possível verificar quem é autor enviou este arquivo"
       ],
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
@@ -4813,6 +4828,9 @@
       "Contact signature not verified": [
         "Assinatura do contato não foi verificada"
       ],
+      "Contact your administrator to start a migration.": [
+        "Contate seu administrador para iniciar a migração."
+      ],
       "Contact your organization’s administrator to resolve this": [
         "Entre em contato com o administrador da sua organização para resolver isso"
       ],
@@ -4822,11 +4840,32 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "A pesquisa de conteúdo não pode ser ativada. Reinicie o aplicativo ou limpe os dados."
       ],
+      "Copy operation aborted": [
+        "Operação de cópia interrompida"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Não é permitido copiar o item para um local que não seja uma pasta"
+      ],
+      "Could not load sharing details": [
+        "Não foi possível carregar os detalhes do compartilhamento"
+      ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
       ],
       "Could not open updated vault": [
         "Não foi possível abrir o cofre atualizado"
+      ],
+      "Could not unlock the parent folder": [
+        "Não foi possível desbloquear a pasta pai"
+      ],
+      "Could not unlock this item": [
+        "Não foi possível desbloquear este item"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Não é permitido criar arquivos dentro de itens que não sejam pastas"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Não é permitido criar pastas dentro de itens que não sejam pastas"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Erro de descriptografia: a descriptografia do conteúdo criptografado desta mensagem falhou."
@@ -4838,6 +4877,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Desmarque ao menos ${ calendarsToFixCount } calendário ou",
         "Desmarque ao menos ${ calendarsToFixCount } calendários ou"
+      ],
+      "Device not found": [
+        "Dispositivo não encontrado"
       ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
@@ -4890,6 +4932,18 @@
       "Failed loading group members": [
         "Falha ao carregar membros do grupo"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Falha ao descriptografar a chave de marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Falha ao descriptografar a senha dos favoritos: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Falha ao descriptografar a chave de conteúdo: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Falha ao descriptografar o nome do item: ${ message }"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Erro na criptografia do anexo. Tente novamente."
       ],
@@ -4902,6 +4956,12 @@
       "Failed to open to contact": [
         "Não foi possível abrir o contato"
       ],
+      "Failed to verify invitation": [
+        "Erro ao verificar o convite"
+      ],
+      "File has no revision": [
+        "O arquivo não possui revisão"
+      ],
       "Filter with this name already exists": [
         "Já existe um filtro com este nome."
       ],
@@ -4913,6 +4973,9 @@
       ],
       "Forward address is required": [
         "O endereço de encaminhamento é obrigatório"
+      ],
+      "Image preview not found": [
+        "Pré-visualização da imagem não encontrada"
       ],
       "Image upload failed": [
         "Erro no carregamento da imagem"
@@ -4956,8 +5019,14 @@
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
+      "Invitation not found": [
+        "Convite não encontrado"
+      ],
       "Item content cannot exceed 40KB": [
         "O conteúdo do item não pode exceder 40KB"
+      ],
+      "Item not found": [
+        "Item não encontrado"
       ],
       "Label name cannot be empty.": [
         "O nome do marcador não pode ser vazio."
@@ -4965,11 +5034,17 @@
       "Last name is too long": [
         "Sobrenome é muito longo"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "O link público antigo não pode ser atualizado. Crie um novo link público."
+      ],
       "Maximum expiration time reached.": [
         "Tempo máximo de expiração atingido."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Número máximo de anexos (${ attachmentsCountLimit }) excedido"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Endereço do membro não encontrado. Entre em contato com o suporte ao cliente para resolver isso"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Mescle pelo menos ${ calendarsToFixCount } calendário com um calendário existente da ${ BRAND_NAME }",
@@ -4981,14 +5056,33 @@
       "Message processing error.": [
         "Erro ao processar a mensagem"
       ],
+      "Missing inviter email": [
+        "E-mail de quem fez o convite ausente"
+      ],
       "Missing key packet": [
         "Pacote de chave ausente"
+      ],
+      "Missing organization private key": [
+        "Chave privada da organização ausente"
+      ],
+      "Missing organization public key": [
+        "Chave pública da organização ausente"
       ],
       "Missing signature": [
         "Assinatura ausente"
       ],
+      "Moving item to a non-folder is not allowed": [
+        "Não é permitido mover o item para um local que não seja uma pasta"
+      ],
       "Name is required": [
         "O nome é obrigatório."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caractere",
+        "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caracteres"
+      ],
+      "Name must not be empty": [
+        "O nome não pode estar vazio"
       ],
       "Network error": [
         "Erro de rede"
@@ -5017,6 +5111,9 @@
       "No external key retrieved for user is valid for sending": [
         "Nenhuma chave externa recuperada para o usuário é válida para envio"
       ],
+      "No file data was received. Please try again.": [
+        "Nenhum dado de arquivo foi recebido. Tente novamente."
+      ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
       ],
@@ -5031,6 +5128,15 @@
         "Um dos grupos não tem contatos: ${ noContactGroupList }",
         "Alguns dos grupos não tem contatos: ${ noContactGroupList } "
       ],
+      "Operation aborted": [
+        "Operação abortada"
+      ],
+      "Operation failed, try again later": [
+        "Erro na operação, tente novamente mais tarde"
+      ],
+      "Organization does not have enough storage available": [
+        "A organização não tem armazenamento suficientes disponíveis"
+      ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
       ],
@@ -5039,6 +5145,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "A chave da organização deve ser ativada para criar usuários não privados"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte do arquivo parece estar corrompida"
       ],
       "Password is required": [
         "A senha é obrigatória"
@@ -5060,6 +5169,9 @@
       ],
       "Permissions request failed.": [
         "Falha na solicitação de permissões."
+      ],
+      "Photo not found": [
+        "Foto não encontrada"
       ],
       "Please activate your search again": [
         "Ative a pesquisa novamente."
@@ -5165,6 +5277,9 @@
         "Destinatário duplicado removido: ${ recipents }",
         "Destinatários duplicados removidos: ${ recipents }"
       ],
+      "Request aborted": [
+        "Solicitação abortada"
+      ],
       "Request timed out": [
         "A solicitação expirou"
       ],
@@ -5177,6 +5292,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "O envio de anexos será restrito enquanto você exceder os limites do seu plano ou até que você faça um upgrade do seu plano."
       ],
+      "Signature is missing": [
+        "Assinatura ausente"
+      ],
       "Signature not verified": [
         "Assinatura não verificada"
       ],
@@ -5186,11 +5304,26 @@
       "Signature verification failed": [
         "Erro na verificação da assinatura"
       ],
+      "Signature verification for ${ signatureType } failed": [
+        "A verificação de assinatura para ${ signatureType } falhou"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "A verificação de assinatura para ${ signatureType } falhou: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Não foi possível excluir alguns contatos."
       ],
+      "Some file data failed to upload. Please try again.": [
+        "O envio de alguns dados de arquivo falhou. Tente novamente."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "O envio de algumas partes de arquivo falhou. Tente novamente."
+      ],
       "Some groups could not be deleted": [
         "Não foi possível excluir alguns grupos."
+      ],
+      "Some items could not be loaded": [
+        "Não foi possível carregar alguns itens"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de pastas estão indisponíveis. Personalize a importação para editar esses nomes."
@@ -5280,6 +5413,9 @@
       "The system is busy at the moment. Please try again in a few minutes.": [
         "O sistema está ocupado no momento. Tente novamente em alguns minutos."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "O arquivo enviado não corresponde ao original. Por favor, tente novamente."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "O assistente de escrita não pode continuar com a sua solicitação. Tente um prompt diferente."
       ],
@@ -5310,8 +5446,20 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
+      "This file has no version available to download": [
+        "O arquivo não possui uma versão para download"
+      ],
+      "This file version could not be uploaded": [
+        "Não foi possível fazer o envio desta versão do arquivo"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Este nome para a pasta não está disponível. Escolha outro nome."
+      ],
+      "This item is no longer shared": [
+        "Este item não está mais sendo compartilhado"
+      ],
+      "This item is not shared": [
+        "Este item não está compartilhado"
       ],
       "This label name is not available. Please choose a different name.": [
         "Este nome de marcador não está disponível. Escolha outro nome."
@@ -5324,6 +5472,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
+      ],
+      "Too many server requests, please try again later": [
+        "Muitas solicitações ao servidor, tente novamente mais tarde"
       ],
       "Trusted keys are not valid for sending": [
         "As chaves de confiança não são válidas para o envio"
@@ -5358,6 +5509,12 @@
       "VAT number must start with ${ prefixes }": [
         "O número de IVA deve começar com ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "As chaves de verificação não estão disponíveis"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "As chaves de verificação para ${ signatureType } não estão disponíveis"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Não conseguimos enviar um código de verificação usando este método."
       ],
@@ -5366,6 +5523,12 @@
       ],
       "Wrong password": [
         "Senha incorreta"
+      ],
+      "You can create public links for your own files only": [
+        "Você pode criar links públicos apenas para seus próprios arquivos"
+      ],
+      "You can update a public link for your own files only": [
+        "Você pode atualizar um link público apenas para seus próprios arquivos"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Você não pode enviar um e-mail para mais de ${ maxContacts } destinatário",
@@ -5377,6 +5540,9 @@
       ],
       "You did not provide a file.": [
         "Você não escolheu um arquivo."
+      ],
+      "You do not have access to this item": [
+        "Você não tem acesso a esse item"
       ],
       "You have reached the maximum number of calendars.": [
         "Você atingiu o número máximo de calendários."
@@ -5921,6 +6087,15 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "Ativado"
+      ],
+      "All": [
+        "Todos"
+      ],
+      "Errors": [
+        "Errors"
+      ],
       "Filter": [
         "Filtro"
       ],
@@ -5932,6 +6107,18 @@
       ],
       "Has attachments": [
         "Tem anexos"
+      ],
+      "In progress": [
+        "Em progresso"
+      ],
+      "Migrated": [
+        "Migrado"
+      ],
+      "Not activated": [
+        "Não ativado"
+      ],
+      "Pending": [
+        "Pendente"
       ],
       "Read": [
         "Lido"
@@ -6639,11 +6826,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Tem erros"
+      ],
       "In progress": [
         "Em processo"
       ],
       "Migrated": [
         "Migrado"
+      ],
+      "Pending": [
+        "Pendente"
       ]
     },
     "Import warning": {
@@ -7188,6 +7381,9 @@
       "Attention required": [
         "Atenção necessária"
       ],
+      "Author is not provided on public link": [
+        "O autor não forneceu um link público"
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Limpe automaticamente os e-mails movidos para a Lixeira e Spam há mais de 30 dias."
       ],
@@ -7619,6 +7815,9 @@
       "finance": [
         "finança"
       ],
+      "Find out what can be migrated.": [
+        "Descubra o que pode ser migrado."
+      ],
       "Folder": [
         "Pasta"
       ],
@@ -7642,6 +7841,10 @@
       ],
       "Forgot password?": [
         "Esqueceu sua senha?"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Encontrado um índice de pesquisa criptografado atual com ${ oldIndexSize } mensagem.",
+        "Encontrado um índice de pesquisa criptografado atual com ${ oldIndexSize } mensagens."
       ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Teste grátis por ${ ASSISTANT_TRIAL_TIME_DAYS } dia",
@@ -7747,6 +7950,9 @@
       ],
       "Import in progress": [
         "Importação em andamento"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importação em andamento; você pode fechar esta caixa de diálogo enquanto o processo ocorre e retornar a ela mais tarde. No entanto, não feche a aba."
       ],
       "Import mailbox": [
         "Importar Caixa de Entrada"
@@ -7964,6 +8170,9 @@
       "Move here": [
         "Mover aqui"
       ],
+      "Move to Primary": [
+        "Mover para Principal"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
       ],
@@ -8017,6 +8226,9 @@
       ],
       "No trackers found": [
         "Nenhum rastreador encontrado"
+      ],
+      "No users to display": [
+        "Nenhum usuário para exibir"
       ],
       "non-${ MAIL_APP_NAME }": [
         "que não usam o ${ MAIL_APP_NAME }"
@@ -8232,6 +8444,30 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Entre em contato conosco para obter ajuda sobre qualquer coisa relacionada a ${ BRAND_NAME }."
       ],
+      "Read ${ count } email": [
+        "Ler ${ count } e-mail",
+        "Ler ${ count } e-mails"
+      ],
+      "Read ${ count } email on screen": [
+        "Ler ${ count } e-mail na tela",
+        "Ler ${ count } e-mails na tela"
+      ],
+      "Read ${ count } message in this thread": [
+        "Ler ${ count } mensagem nessa conversa",
+        "Ler ${ count } mensagens nessa conversa"
+      ],
+      "Read your ${ count } filter": [
+        "Ler e-mails de ${ count } filtro",
+        "Ler e-mails de ${ count } filtros"
+      ],
+      "Read your ${ count } folder": [
+        "Ler e-mails de ${ count } pasta",
+        "Ler e-mails de ${ count } pastas"
+      ],
+      "Read your ${ count } label": [
+        "Ler e-mails de ${ count } marcador",
+        "Ler e-mails de ${ count } marcadores"
+      ],
       "Recipient: ": [
         "Destinatário: "
       ],
@@ -8313,6 +8549,9 @@
       "Select all ${ elementsCount } in ${ location }": [
         "Selecione ${ elementsCount } item em ${ location }",
         "Selecione ${ elementsCount } itens em ${ location }"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecione exatamente o que deseja migrar. Isso se aplicará a todos os usuários da organização."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecione o formato de e-mail que você deseja que seja usado por padrão ao enviar um e-mail para este endereço."
@@ -8705,6 +8944,21 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primeiro crie um calendário em ${ CALENDAR_APP_NAME }. Aqui que os eventos aparecerão após a importação."
       ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Para migrar este usuário, adicione e verifique o domínio de e-mail em ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Para migrar este usuário, ative a conta dele em ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Para migrar este usuário, ative o endereço dele em ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, remova-o do arquivo no seu ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, remova a suspensão no seu ${ provider.adminConsoleName }."
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para assinar novamente seus contatos, precisamos comparar todos os contatos com a lista de chaves criptográficas disponíveis em sua conta. Se nenhuma correspondência for encontrada, seu contato será assinado novamente com a chave de criptografia principal."
       ],
@@ -8977,6 +9231,9 @@
       ],
       "Yearly": [
         "Anualmente"
+      ],
+      "You": [
+        "Você"
       ],
       "You already have a free account": [
         "Você já possui uma conta gratuita"
@@ -13351,6 +13608,26 @@
         "Progresso: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "atributos"
+      ],
+      "content key": [
+        "chave de conteúdo"
+      ],
+      "hash key": [
+        "chave hash"
+      ],
+      "key": [
+        "chave"
+      ],
+      "membership": [
+        "subscrição"
+      ],
+      "name": [
+        "nome"
+      ]
+    },
     "Property type": {
       "Address": [
         "Endereço"
@@ -15182,9 +15459,8 @@
         "Mover ${ selectionCount } mensagem",
         "Mover ${ selectionCount } mensagens"
       ],
-      "Moved to ${ label }. Similar message will be categorized there in the future.": [
-        "Movida para ${ label }. Mensagem semelhante será categorizada lá no futuro.",
-        "Movidas para ${ label }. Mensagens semelhantes serão categorizadas lá no futuro."
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Movido para ${ label }. Mensagens semelhantes serão categorizadas lá no futuro."
       ],
       "Password copied to clipboard": [
         "A senha foi copiada para a área de transferências."
@@ -15312,17 +15588,26 @@
       "Actions": [
         "Ações"
       ],
+      "Activated": [
+        "Ativado"
+      ],
       "Address": [
         "Endereço"
       ],
       "Created": [
         "Criada"
       ],
+      "Estimated size": [
+        "Tempo estimado"
+      ],
       "Expires": [
         "Expira"
       ],
       "Fingerprint": [
         "Impressão digital"
+      ],
+      "Migration status": [
+        "Status da migração"
       ],
       "Name": [
         "Nome"
@@ -15335,6 +15620,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "User": [
+        "Usuário"
       ]
     },
     "TableHeader": {
@@ -15621,6 +15909,9 @@
       "Collaborate on documents": [
         "Colaborar em documentos"
       ],
+      "Configure migration": [
+        "Configurar migração"
+      ],
       "Confirm downgrade": [
         "Confirmar downgrade"
       ],
@@ -15763,6 +16054,9 @@
       ],
       "Distraction-free emailing": [
         "E-mail sem distrações"
+      ],
+      "Domain names": [
+        "Nome do domínio"
       ],
       "Don't give spam a chance": [
         "Não dê chance ao spam"
@@ -16497,6 +16791,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Boas-vindas ao ${ BRAND_NAME } for Business"
       ],
+      "What are you migrating?": [
+        "O que você está migrando?"
+      ],
       "What can a VPN protect you from?": [
         "Do que uma VPN pode proteger você?"
       ],
@@ -16584,6 +16881,9 @@
       "Customize import to reduce the number of labels": [
         "Personalize a importação para reduzir a quantidade de marcadores"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status de migração de dados do ${ providerName } para a ${ BRAND_NAME }"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Assinar e-mails digitalmente permite autenticar as mensagens que são enviadas por você"
       ],
@@ -16662,6 +16962,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carregue uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Usuários que acessaram sua conta da ${ BRAND_NAME }"
+      ],
       "Version 6 OpenPGP key": [
         "Chave OpenPGP versão 6"
       ]
@@ -16716,6 +17019,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Faça upgrade para um plano suportado para usar funções de administrador."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Você poderá atribuir funções assim que o usuário aceitar o convite."
       ]

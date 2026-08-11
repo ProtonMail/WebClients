@@ -657,6 +657,9 @@
       "Download ICS": [
         "Descarregueu el fitxer ICS"
       ],
+      "Download latest": [
+        "Descarregar la darrera versió"
+      ],
       "Download logs": [
         "Descarrega els registres"
       ],
@@ -1044,9 +1047,6 @@
       "Italic": [
         "Cursiva"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "Mantenir"
       ],
@@ -1113,9 +1113,6 @@
       "Manage communication preferences": [
         "Gestiona les preferències de comunicació"
       ],
-      "Manage company": [
-        "Gestionar l'empresa"
-      ],
       "Manage folders": [
         "Gestiona les carpetes"
       ],
@@ -1151,9 +1148,6 @@
       ],
       "Maybe later": [
         "Potser més endavant"
-      ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
       ],
       "Migrate": [
         "Migrar"
@@ -1217,6 +1211,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ company.name } manually": [
+        "Obrir ${ company.name } manualment"
       ],
       "Open ${ PASS_APP_NAME } in your browser": [
         "Obriu ${ PASS_APP_NAME } al vostre navegador"
@@ -1638,8 +1635,8 @@
       "Sign in": [
         "Inicia la sessió"
       ],
-      "Sign in to Google Workspace": [
-        "Inicieu la sessió a Google Workspace"
+      "Sign in to ${ providerName }": [
+        "Inicieu sessió a ${ providerName }"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Inicia sessió amb ${ BRAND_NAME }"
@@ -5336,6 +5333,9 @@
     "Disable address prompt": {
       "Are you sure you want to disable this address?": [
         "Segur que voleu desactivar aquesta adreça?"
+      ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "En desactivar l'adreça ${ address }, el membre ja no podrà enviar ni rebre correus electrònics amb aquesta adreça i tots els productes vinculats de ${ BRAND_NAME } es desactivaran."
       ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Si desactiveu aquesta adreça ${ address }, ja no podreu fer-la servir per a enviar ni rebre correus electrònics i es desactivaran tots els productes de ${ BRAND_NAME } enllaçats."
@@ -9871,6 +9871,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres que no utilitzen l'inici de sessió únic (SSO) inicien la sessió a la vostra organització amb l'autenticació de doble factor.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres que no utilitzen l'inici de sessió únic (SSO) inicien la sessió a la vostra organització amb l'autenticació de doble factor."
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_BRAND_NAME }"
+      ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } usuari ha d'acceptar la invitació per començar a rebre els correus electrònics del grup.",
         "${ invitedMemberCount } usuaris han d'acceptar la invitació per començar a rebre els correus electrònics del grup."
@@ -9986,6 +9989,9 @@
         "${ providerFoldersNumLocalized } etiqueta trobada a Gmail",
         "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
       ],
+      "${ providerName } account": [
+        "Compte de ${ providerName }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Encara s'està configurant ${ provisioningCounter } servidor. Això triga normalment al voltant de ${ provisioningDuration }.",
         "Encara s'estan configurant ${ provisioningCounter } servidors. Això triga normalment al voltant de ${ provisioningDuration }."
@@ -10029,6 +10035,9 @@
       ],
       "${ storage } storage": [
         "${ storage } d'emmagatzematge"
+      ],
+      "${ storeName } app to copy data to ${ BRAND_NAME }": [
+        "Aplicació ${ storeName } per copiar dades a ${ BRAND_NAME }"
       ],
       "${ total } user found": [
         "S'ha trobat ${ total } usuari",
@@ -10344,6 +10353,9 @@
       "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
         "Permetre el restabliment de contrasenya des de les preferències us facilita canviar-la si l'heu perdut, mentre tingueu la sessió iniciada a ${ BRAND_NAME }."
       ],
+      "Allows IPv6 traffic to pass through the VPN tunnel. This improves compatibility with IPv6 websites and services.": [
+        "Permet el pas del trànsit IPv6 pel túnel VPN. Això millora la compatibilitat amb els llocs web i serveis IPv6."
+      ],
       "Already allocated": [
         "Ja assignat"
       ],
@@ -10530,6 +10542,12 @@
       ],
       "Background color": [
         "Color de fons"
+      ],
+      "Backup password disabled": [
+        "Contrasenya de seguretat deshabilitada"
+      ],
+      "Backup password enabled": [
+        "S'ha activat la contrasenya de la còpia de seguretat"
       ],
       "Balance from your previous subscription": [
         "Saldo de la vostra subscripció anterior"
@@ -11116,8 +11134,8 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu electrònic de ${ BRAND_NAME }."
       ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Assegureu-vos que els vostres correus electrònics arribin a la bústia d'entrada i no a la carpeta de correu brossa. L'actualització de l'SPF permetrà als usuaris enviar correus des de ${ BRAND_NAME } i Google simultàniament mentre duri la migració."
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and ${ providerBrand } simultaneously for the duration of the migration.": [
+        "Assegureu-vos que els vostres correus electrònics arribin a la safata d'entrada, no a la carpeta de correu brossa. L'actualització de l'SPF permetrà als usuaris enviar des de ${ BRAND_NAME } i ${ providerBrand } simultàniament durant la migració."
       ],
       "Ensure your organization is always protected": [
         "Assegureu-vos que la vostra organització estigui sempre protegida"
@@ -11188,8 +11206,8 @@
       "Event invitations and responses will be sent in this language.": [
         "Les invitacions i respostes als esdeveniments s'enviaran en aquest idioma."
       ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Tothom rep el mateix enllaç d'invitació. Visitaran la pàgina, introduiran el seu correu electrònic i rebran un codi de verificació a la seva bústia d'entrada de Gmail. Des d'allà, establiran la seva contrasenya de ${ BRAND_NAME }."
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their ${ mailAppName } inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Tothom rep el mateix enllaç d'invitació. Visitaran la pàgina, introduiran el seu correu electrònic i rebran un codi de verificació a la safata d'entrada de ${ mailAppName }. A partir d'aquí, establiran la seva contrasenya de ${ BRAND_NAME }."
       ],
       "Everything in ${ planOrAppName }": [
         "Tot a ${ planOrAppName }"
@@ -11199,6 +11217,9 @@
       ],
       "Example: ${ spfExample }": [
         "Exemple: ${ spfExample }"
+      ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Excloeu-los quan desplegueu el perfil de dispositiu. Pròximament hi haurà suport."
       ],
       "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
         "Els reenviaments de correus electrònics existents xifrats d'extrem a extrem s'hauran de tornar a activar manualment a les preferències a **${ autoReplySettingsTitle }**."
@@ -11353,17 +11374,11 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Aneu al vostre proveïdor d'identitat, obteniu les metadades SAML per a ${ appName } i importeu-les aquí."
       ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Aplicació de Google Marketplace per copiar dades a ${ BRAND_NAME }"
-      ],
       "Google or other search engine": [
         "Google o un altre motor de cerca"
       ],
       "Google Pay mark": [
         "Marca de Google Pay"
-      ],
-      "Google Workspace account": [
-        "Compte de Google Workspace"
       ],
       "Got it": [
         "D'acord"
@@ -11821,6 +11836,9 @@
       "Manage groups in your identity provider": [
         "Gestioneu els grups al vostre proveïdor d'identitat"
       ],
+      "Manage how users can access your ${ BRAND_NAME } organization with single sign-on.": [
+        "Gestioneu com els usuaris poden accedir a la vostra organització ${ BRAND_NAME } amb l'inici de sessió únic."
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestioneu a quines aplicacions de ${ BRAND_NAME } poden accedir els membres de la vostra organització. Si està desactivat, només els administradors hi tindran accés."
       ],
@@ -12173,6 +12191,9 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Comproveu el vostre fitxer o proveu d'utilitzar el nostre ${ csvTemplateButton }."
       ],
+      "Please ensure you're running ${ VPN_APP_NAME } desktop version ${ version } or later. ${ downloadLatest }": [
+        "Assegureu-vos que esteu executant la versió per ordinador ${ version } o posterior de ${ VPN_APP_NAME }. ${ downloadLatest }"
+      ],
       "Please fill in all required fields.": [
         "Empleneu tots els camps obligatoris."
       ],
@@ -12476,6 +12497,9 @@
       "Setting up ${ feature }…": [
         "S'està configurant ${ feature }…"
       ],
+      "Setting up your access…": [
+        "S'està configurant el vostre accés…"
+      ],
       "Setting up your new address…": [
         "S'està configurant la vostra nova adreça…"
       ],
@@ -12531,8 +12555,8 @@
       "Sign-in complete": [
         "S’ha completat l'inici de sessió"
       ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Inicieu sessió amb un compte d'administrador de Google Workspace per a ${ BRAND_NAME } per configurar la migració."
+      "Sign-in with a ${ providerName } administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Inicieu sessió amb un compte d'administrador de ${ providerName } per a ${ BRAND_NAME } per configurar la migració."
       ],
       "Signed up": [
         "Registat"
@@ -12572,6 +12596,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF aclareix qui està autoritzat a enviar correus electrònics per al vostre domini. Assegureu-vos d'afegir el registre TXT següent a la consola DNS (ubicada a la plataforma on heu comprat el domini personalitzat)."
+      ],
+      "SSO users can't sign in on devices with always-on enforced.": [
+        "Els usuaris de SSO no poden iniciar la sessió en dispositius amb la connexió permanent forçada."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
@@ -12867,6 +12894,9 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Aquest enllaç d'anul·lació de la subscripció ha caducat. Obriu un correu electrònic més recent des d'aquesta llista de correu."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Aquest usuari no es pot migrar perquè la seva adreça de correu electrònic no està disponible a ${ BRAND_NAME }."
+      ],
       "This user can not be migrated due to platform incompatibilities.": [
         "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
       ],
@@ -12954,8 +12984,8 @@
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Per evitar la pèrdua de dades, elimineu-lo només si sabeu el que esteu fent o n'heu exportat una còpia."
       ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Per portar les dades de la vostra organització a ${ BRAND_NAME }, instal·leu ${ BRAND_NAME } Easy Switch des del Marketplace de Google Workspace. Després d'instal·lar-lo, torneu aquí per continuar."
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the ${ storeName }. After installing it, come back here to continue.": [
+        "Per portar les dades de la vostra organització a ${ BRAND_NAME }, instal·leu ${ BRAND_NAME } Easy Switch des de la ${ storeName }. Un cop instal·lat, torneu aquí per continuar."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Per a cancel·lar la vostra subscripció, contacteu amb nosaltres."
@@ -12981,8 +13011,8 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Per habilitar la VPN sempre activa, cal instal·lar el perfil de configuració a cada Mac. El client de ${ VPN_APP_NAME } aplicarà el perfil del dispositiu automàticament un cop estigui instal·lat."
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "Per habilitar la VPN sempre activa, cal que el perfil de dispositiu arribi a ${ policiesPath } a cada dispositiu; el client de ${ VPN_APP_NAME } el detectarà allà i aplicarà el perfil de manera forçosa automàticament."
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
+        "Per habilitar la VPN sempre activa, el perfil del dispositiu ha d'arribar a ${ policiesPath } a tots els dispositius — el client de ${ VPN_APP_NAME } el detecta allà i n'aplica el perfil automàticament. ${ learnMore }."
       ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Per habilitar la protecció postquàntica haureu d'acabar de generar les noves claus de xifratge postquàntic."
@@ -13011,8 +13041,11 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Per a mantenir-vos al dia amb els darrers desenvolupaments dels productes de ${ BRAND_NAME }, podeu subscriure-us als nostres diversos correus electrònics i ${ blogLink } de tant en tant."
       ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Per migrar aquest usuari, afegiu i verifiqueu-ne el domini de correu electrònic a ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra ${ provider.adminConsoleName }."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
@@ -13023,11 +13056,11 @@
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
       ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra ${ provider.adminConsoleName }."
       ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Per prevenir abusos o fraus, sol·licitem una donació mínima de ${ minimumDonation }. Això donarà suport a la tasca de ${ protonFoundationLink } en defensa de la privacitat digital a escala mundial i ajudarà a protegir la propera generació."
@@ -13221,11 +13254,11 @@
       "Users": [
         "Usuaris"
       ],
+      "Users create a backup password the first time they sign in with single sign-on. When they later sign in on a new device, they can enter this password to complete the sign-in themselves, without needing an already signed-in device or an administrator to assist.": [
+        "Els usuaris defineixen una contrasenya de seguretat la primera vegada que inicien sessió amb l'inici de sessió únic. Quan més endavant inicien la sessió en un dispositiu nou, poden introduir aquesta contrasenya per completar l'inici de sessió ells mateixos, sense necessitar un dispositiu on ja hagueren iniciat la sessió ni l'assistència d'un administrador."
+      ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Feu servir un MDM diferent? Qualsevol MDM que admeti el desplegament d'un perfil de configuració funcionarà. Consulteu la documentació del vostre MDM sobre com carregar-lo i assignar-lo a la vostra flota de dispositius."
-      ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "Utilitzeu un MDM diferent? Qualsevol MDM que admeti el desplegament de fitxers o l'execució de seqüències de PowerShell funcionarà. Consulteu la documentació del vostre MDM per obtenir més informació."
       ],
       "Vault created": [
         "S'ha creat la caixa forta."
@@ -13352,6 +13385,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Utilitzem 3-D Secure per protegir els vostres pagaments."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Us redirigirem a ${ IDEAL_BRAND_NAME } en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu algun bloquejador de finestres emergents, desactiveu-lo per continuar."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
@@ -13575,9 +13611,6 @@
       "You can now access and manage the account as an administrator.": [
         "Ara podeu accedir i gestionar el compte com a administrador."
       ],
-      "You can now access and manage the company as an administrator.": [
-        "Ara podeu accedir a l'empresa i gestionar-la com a administrador."
-      ],
       "You can now close this tab.": [
         "Ara podeu tancar aquesta pestanya."
       ],
@@ -13750,8 +13783,8 @@
         "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
         "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
       ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Gairebé heu acabat, cal que configureu el vostre domini per rebre els vostres correus electrònics directament a ${ BRAND_NAME }. Un cop confirmat, el vostre equip deixarà de rebre correus electrònics nous a Gmail i es completarà la migració."
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on ${ mailAppName } and the migration will be completed.": [
+        "Gairebé heu acabat, heu de configurar el vostre domini per rebre els correus electrònics directament a ${ BRAND_NAME }. Un cop confirmat, el vostre equip deixarà de rebre correus electrònics nous a ${ mailAppName } i la migració s'haurà completat."
       ],
       "You're now signed in on your TV.": [
         "Ja heu iniciat la sessió al vostre televisor."
@@ -13798,6 +13831,9 @@
       ],
       "Your Always-on VPN device profile is ready to deploy.": [
         "El vostre perfil de dispositiu de la VPN sempre activa ja està a punt per desplegar-se."
+      ],
+      "Your browser blocked the new tab.": [
+        "El navegador us ha bloquejat la nova pestanya."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
@@ -14019,8 +14055,8 @@
       ]
     },
     "Invitation message": {
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Ens traslladem a ${ BRAND_NAME }, el servei de correu electrònic segur.\nI el vostre compte de ${ BRAND_NAME } ja està a punt per reclamar-lo.\nFeu clic a ${ inviteLink }.\nIntroduïu la vostra adreça de correu electrònic i us enviarem un codi al vostre Gmail.\nUtilitzeu-lo per establir la contrasenya i el compte de ${ BRAND_NAME } serà vostre.\nDurant una estona, tots dos funcionaran alhora: ${ BRAND_NAME } i Gmail.\nDesprés, quan tothom s'hagi traslladat, retirarem Gmail. Us ho recordarem abans que passi."
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your ${ mailAppName }.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and ${ mailAppName }.\nThen, when everyone has made the move, we will retire ${ mailAppName }. We'll remind you before it does.": [
+        "Ens traslladem a ${ BRAND_NAME }, el servei de correu electrònic segur.\nI el vostre compte de ${ BRAND_NAME } ja està a punt per ser demanatat.\nFeu clic a ${ inviteLink }. \nIntroduïu la vostra adreça de correu electrònic, us enviarem un codi a la vostra ${ mailAppName }.\nFeu-lo servir per establir la vostra contrasenya i el compte de ${ BRAND_NAME } serà vostre.\nDurant un temps, tots dos funcionaran conjuntament, ${ BRAND_NAME } i ${ mailAppName }.\nDesprés, quan tothom s'hi hagi traslladat, retirarem ${ mailAppName }. Us ho recordarem abans que passi."
       ]
     },
     "invitation status": {
@@ -14685,6 +14721,9 @@
       ],
       "Allow sharing outside the organization": [
         "Permeteu la compartició fora de l'organització"
+      ],
+      "Allow users to set a backup password": [
+        "Permeteu als usuaris definir una contrasenya de seguretat"
       ],
       "Allowed Domain": [
         "Domini permès"
@@ -20182,6 +20221,9 @@
       "Offer unavailable": [
         "L'oferta no està disponible"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagueu amb ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Es requereix un mètode de pagament perquè la subscripció s'activi un cop finalitzi la prova."
       ],
@@ -20275,6 +20317,9 @@
       "You will soon be redirected to verify your payment.": [
         "Aviat se us redirigirà per verificar el vostre pagament."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "S'ha canviat la vostra moneda a euros (€) perquè ${ IDEAL_BRAND_NAME } només admet pagaments en euros."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
@@ -20286,6 +20331,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "No s'ha pogut inicialitzar ${ IDEAL_BRAND_NAME }. Torneu-ho a provar més tard."
+      ],
       "Invalid card number": [
         "El número de la targeta no es vàlid."
       ],
@@ -20308,6 +20356,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Alguna cosa ha anat malament. La verificació de Google Pay ha fallat."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "En confirmar aquest pagament autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a donar instruccions al vostre banc perquè el carregui al vostre compte. Podreu obtenir un reemborsament en un termini de 8 setmanes des de la data del càrrec, d'acord amb les condicions del vostre acord amb el banc."
       ]
     },
     "Payments.info": {
@@ -21976,8 +22029,8 @@
       "${ usersText } and ${ groupsText } synced.": [
         "${ usersText } i ${ groupsText } s'han sincronitzat."
       ],
-      "**Existing groups** synced to ${ BRAND_NAME } before may now appear when you first access the console": [
-        "És possible que els **grups existents** sincronitzats anteriorment a ${ BRAND_NAME } apareguin ara quan accediu per primer cop a la consola"
+      "**Groups you already set up** in your identity provider are imported automatically.": [
+        "Els **grups que ja hàgiu creat** al vostre proveïdor d'identitat s'importaran automàticament."
       ],
       "**You'll be able to review** group changes before they take effect to confirm they're intentional": [
         "**Podreu revisar** els canvis de grup abans que s'apliquin per confirmar que són intencionats"
@@ -22018,8 +22071,8 @@
       "What to expect now that group sync is enabled": [
         "Què podeu esperar ara que la sincronització de grups està activada"
       ],
-      "You can now sync groups from your identity provider alongside users. Changes push **automatically** when you update your groups.": [
-        "Ara podeu sincronitzar grups des del vostre proveïdor d'identitat juntament amb els usuaris. Els canvis s'aplicaran **automàticament** quan actualitzeu els vostres grups."
+      "You can now sync groups alongside users. Changes push **automatically** when you update your groups on your identity provider.": [
+        "Ara podeu sincronitzar grups juntament amb usuaris. Els canvis s'envien **automàticament** quan actualitzeu els grups al proveïdor d'identitat."
       ]
     },
     "scim: Action": {
@@ -23512,6 +23565,9 @@
       "Contact your administrator if the problem persists.": [
         "Contacteu amb l'administrador si el problema persisteix."
       ],
+      "Continue to join as **${ username }**": [
+        "Continueu per unir-vos com a **${ username }**"
+      ],
       "Current device": [
         "Dispositiu actual"
       ],
@@ -23546,6 +23602,9 @@
       ],
       "Enter your backup password": [
         "Introduïu la vostra contrasenya de recuperació"
+      ],
+      "For your security, you have been signed out of all your other active devices.": [
+        "Per a la vostra seguretat, s'ha tancat la sessió a tots els vostres altres dispositius actius."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Per la vostra seguretat, se us ha tancat la sessió de tots els vostres dispositius actius. Abans d'accedir al vostre compte, haureu d'introduir una nova contrasenya de recuperació."
@@ -23657,6 +23716,9 @@
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Això us tancarà la sessió dels altres dispositius i haureu de crear una nova contrasenya de seguretat."
+      ],
+      "This will sign you out of your other devices.": [
+        "Això us tancarà la sessió als altres dispositius."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "Per a assegurar-nos que l'intent d'inici de sessió en **${ email }** és realment vostre, reviseu el codi de confirmació i aproveu la sol·licitud des d'un altre dispositiu."
@@ -25378,6 +25440,9 @@
       "Address and key verification": [
         "Verificació de l'adreça i de la clau"
       ],
+      "Advanced configuration": [
+        "Configuració avançada"
+      ],
       "Advanced recovery options": [
         "Opcions de recuperació avançades"
       ],
@@ -25450,8 +25515,8 @@
       "Ask your emergency contacts for help": [
         "Demaneu ajuda als vostres contactes d'emergència"
       ],
-      "Authenticate your Google Workspace account": [
-        "Autentiqueu el vostre compte de Google Workspace"
+      "Authenticate your ${ providerName } account": [
+        "Autentiqueu el vostre compte de ${ providerName }"
       ],
       "Auto-deletion is active": [
         "La supressió automàtica està activada."
@@ -26351,9 +26416,6 @@
       "Make your business stand out": [
         "Feu que el vostre negoci destaqui"
       ],
-      "Manage company": [
-        "Gestionar l'empresa"
-      ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gestioneu fitxers entre dispositius Windows, Mac, Android i iOS."
       ],
@@ -26369,8 +26431,8 @@
       "Migrate accounts to ${ BRAND_NAME }": [
         "Migreu els comptes a ${ BRAND_NAME }"
       ],
-      "Migrate from Google Workspace": [
-        "Migreu des de Google Workspace"
+      "Migrate from ${ providerName }": [
+        "Migreu des de ${ providerName }"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migreu la vostra organització a ${ BRAND_NAME }"
@@ -27429,8 +27491,8 @@
       "Customize import to reduce the number of labels": [
         "Personalitzeu la importació per reduir el nombre d'etiquetes"
       ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de ${ providerName } a ${ BRAND_NAME }"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Elimina els missatges de la paperera i el correu brossa passats 30 dies. Activant l'eliminació automàtica, es donarà als missatges que ja estan a la paperera o al correu brossa una data d'eliminació basada en la data en què s'hi hagin mogut."
@@ -27528,8 +27590,8 @@
       "Origin IP address and Internet Service Provider (ISP)": [
         "Adreça IP d'origen i proveïdor de serveis d'internet (ISP)"
       ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Torneu a autenticar el vostre compte de Google Workspace per iniciar una migració"
+      "Reauthenticate your ${ providerName } account to start a migration": [
+        "Torneu a autenticar el vostre compte de ${ providerName } per iniciar una migració"
       ],
       "Remove metadata from images to protect your privacy.": [
         "Elimineu les metadades de les imatges per protegir la vostra privadesa."
@@ -28574,8 +28636,8 @@
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Hem detectat un problema amb la vostra configuració DNS. Assegureu-vos que els vostres registres coincideixin amb les instruccions següents. Si el problema continua, haurem de desactivar la signatura de DKIM."
       ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "No s'ha pogut verificar la instal·lació; comproveu que estigui instal·lada al vostre compte de Google Workspace i torneu-ho a provar."
+      "We were unable to verify the installation, please check that you have installed it in your ${ providerName } account and try again.": [
+        "No hem pogut verificar la instal·lació, comproveu que l'hàgiu instal·lat al vostre compte de ${ providerName } i torneu-ho a provar."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Hem observat que alguns usuaris no han demanat els seus comptes de ${ BRAND_NAME }."

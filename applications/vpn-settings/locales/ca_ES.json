@@ -422,6 +422,9 @@
       "Download CSV sample": [
         "Descarrega una mostra de CSV"
       ],
+      "Download latest": [
+        "Descarregar la darrera versió"
+      ],
       "Download logs": [
         "Descarrega els registres"
       ],
@@ -662,9 +665,6 @@
       "Invite user": [
         "Convida l'usuari"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "Mantenir"
       ],
@@ -736,9 +736,6 @@
       ],
       "Mark as resolved": [
         "Marca com a resolt"
-      ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
       ],
       "Migrate": [
         "Migrar"
@@ -3799,6 +3796,9 @@
     "Disable address prompt": {
       "Are you sure you want to disable this address?": [
         "Segur que voleu desactivar aquesta adreça?"
+      ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "En desactivar l'adreça ${ address }, el membre ja no podrà enviar ni rebre correus electrònics amb aquesta adreça i tots els productes vinculats de ${ BRAND_NAME } es desactivaran."
       ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Si desactiveu aquesta adreça ${ address }, ja no podreu fer-la servir per a enviar ni rebre correus electrònics i es desactivaran tots els productes de ${ BRAND_NAME } enllaçats."
@@ -7083,6 +7083,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres que no utilitzen l'inici de sessió únic (SSO) inicien la sessió a la vostra organització amb l'autenticació de doble factor.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres que no utilitzen l'inici de sessió únic (SSO) inicien la sessió a la vostra organització amb l'autenticació de doble factor."
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_BRAND_NAME }"
+      ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } usuari ha d'acceptar la invitació per començar a rebre els correus electrònics del grup.",
         "${ invitedMemberCount } usuaris han d'acceptar la invitació per començar a rebre els correus electrònics del grup."
@@ -7457,6 +7460,9 @@
       "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
         "Permetre el restabliment de contrasenya des de les preferències us facilita canviar-la si l'heu perdut, mentre tingueu la sessió iniciada a ${ BRAND_NAME }."
       ],
+      "Allows IPv6 traffic to pass through the VPN tunnel. This improves compatibility with IPv6 websites and services.": [
+        "Permet el pas del trànsit IPv6 pel túnel VPN. Això millora la compatibilitat amb els llocs web i serveis IPv6."
+      ],
       "Already allocated": [
         "Ja assignat"
       ],
@@ -7543,6 +7549,12 @@
       ],
       "Awaiting transaction": [
         "S'està esperant la transacció"
+      ],
+      "Backup password disabled": [
+        "Contrasenya de seguretat deshabilitada"
+      ],
+      "Backup password enabled": [
+        "S'ha activat la contrasenya de la còpia de seguretat"
       ],
       "Balance from your previous subscription": [
         "Saldo de la vostra subscripció anterior"
@@ -8048,6 +8060,9 @@
       "Example: ${ spfExample }": [
         "Exemple: ${ spfExample }"
       ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Excloeu-los quan desplegueu el perfil de dispositiu. Pròximament hi haurà suport."
+      ],
       "Expired": [
         "Caducat"
       ],
@@ -8485,6 +8500,9 @@
       "Manage groups in your identity provider": [
         "Gestioneu els grups al vostre proveïdor d'identitat"
       ],
+      "Manage how users can access your ${ BRAND_NAME } organization with single sign-on.": [
+        "Gestioneu com els usuaris poden accedir a la vostra organització ${ BRAND_NAME } amb l'inici de sessió únic."
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestioneu a quines aplicacions de ${ BRAND_NAME } poden accedir els membres de la vostra organització. Si està desactivat, només els administradors hi tindran accés."
       ],
@@ -8737,6 +8755,9 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Comproveu el vostre fitxer o proveu d'utilitzar el nostre ${ csvTemplateButton }."
+      ],
+      "Please ensure you're running ${ VPN_APP_NAME } desktop version ${ version } or later. ${ downloadLatest }": [
+        "Assegureu-vos que esteu executant la versió per ordinador ${ version } o posterior de ${ VPN_APP_NAME }. ${ downloadLatest }"
       ],
       "Please fill in all required fields.": [
         "Empleneu tots els camps obligatoris."
@@ -9036,6 +9057,9 @@
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF aclareix qui està autoritzat a enviar correus electrònics per al vostre domini. Assegureu-vos d'afegir el registre TXT següent a la consola DNS (ubicada a la plataforma on heu comprat el domini personalitzat)."
       ],
+      "SSO users can't sign in on devices with always-on enforced.": [
+        "Els usuaris de SSO no poden iniciar la sessió en dispositius amb la connexió permanent forçada."
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
       ],
@@ -9239,6 +9263,9 @@
       "This service is not available to users signing in with single sign-on.": [
         "Aquest servei no està disponible per als usuaris que inicien la sessió amb l’inici de sessió únic."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Aquest usuari no es pot migrar perquè la seva adreça de correu electrònic no està disponible a ${ BRAND_NAME }."
+      ],
       "This user can not be migrated due to platform incompatibilities.": [
         "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
       ],
@@ -9335,8 +9362,8 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Per habilitar la VPN sempre activa, cal instal·lar el perfil de configuració a cada Mac. El client de ${ VPN_APP_NAME } aplicarà el perfil del dispositiu automàticament un cop estigui instal·lat."
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "Per habilitar la VPN sempre activa, cal que el perfil de dispositiu arribi a ${ policiesPath } a cada dispositiu; el client de ${ VPN_APP_NAME } el detectarà allà i aplicarà el perfil de manera forçosa automàticament."
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
+        "Per habilitar la VPN sempre activa, el perfil del dispositiu ha d'arribar a ${ policiesPath } a tots els dispositius — el client de ${ VPN_APP_NAME } el detecta allà i n'aplica el perfil automàticament. ${ learnMore }."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Per garantir la màxima seguretat possible del vostre compte, desactiveu **Recuperació mitjançant correu electrònic de recuperació**."
@@ -9359,8 +9386,11 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Per a mantenir-vos al dia amb els darrers desenvolupaments dels productes de ${ BRAND_NAME }, podeu subscriure-us als nostres diversos correus electrònics i ${ blogLink } de tant en tant."
       ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Per migrar aquest usuari, afegiu i verifiqueu-ne el domini de correu electrònic a ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra ${ provider.adminConsoleName }."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
@@ -9371,11 +9401,11 @@
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
       ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra ${ provider.adminConsoleName }."
       ],
-      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
-        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra ${ provider.adminConsoleName }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Per a continuar, seleccioneu un mètode de recuperació del compte perquè puguem verificar la sol·licitud."
@@ -9527,11 +9557,11 @@
       "Users": [
         "Usuaris"
       ],
+      "Users create a backup password the first time they sign in with single sign-on. When they later sign in on a new device, they can enter this password to complete the sign-in themselves, without needing an already signed-in device or an administrator to assist.": [
+        "Els usuaris defineixen una contrasenya de seguretat la primera vegada que inicien sessió amb l'inici de sessió únic. Quan més endavant inicien la sessió en un dispositiu nou, poden introduir aquesta contrasenya per completar l'inici de sessió ells mateixos, sense necessitar un dispositiu on ja hagueren iniciat la sessió ni l'assistència d'un administrador."
+      ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Feu servir un MDM diferent? Qualsevol MDM que admeti el desplegament d'un perfil de configuració funcionarà. Consulteu la documentació del vostre MDM sobre com carregar-lo i assignar-lo a la vostra flota de dispositius."
-      ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "Utilitzeu un MDM diferent? Qualsevol MDM que admeti el desplegament de fitxers o l'execució de seqüències de PowerShell funcionarà. Consulteu la documentació del vostre MDM per obtenir més informació."
       ],
       "Vault created": [
         "S'ha creat la caixa forta."
@@ -9634,6 +9664,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Utilitzem 3-D Secure per protegir els vostres pagaments."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Us redirigirem a ${ IDEAL_BRAND_NAME } en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu algun bloquejador de finestres emergents, desactiveu-lo per continuar."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
@@ -10308,6 +10341,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Permet la recuperació amb un dispositiu de confiança"
+      ],
+      "Allow users to set a backup password": [
+        "Permeteu als usuaris definir una contrasenya de seguretat"
       ],
       "Allowed Domain": [
         "Domini permès"
@@ -13936,6 +13972,9 @@
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagueu amb ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Es requereix un mètode de pagament perquè la subscripció s'activi un cop finalitzi la prova."
       ],
@@ -14029,6 +14068,9 @@
       "You will soon be redirected to verify your payment.": [
         "Aviat se us redirigirà per verificar el vostre pagament."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "S'ha canviat la vostra moneda a euros (€) perquè ${ IDEAL_BRAND_NAME } només admet pagaments en euros."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
@@ -14040,6 +14082,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "No s'ha pogut inicialitzar ${ IDEAL_BRAND_NAME }. Torneu-ho a provar més tard."
+      ],
       "Invalid card number": [
         "El número de la targeta no es vàlid."
       ],
@@ -14062,6 +14107,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Alguna cosa ha anat malament. La verificació de Google Pay ha fallat."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "En confirmar aquest pagament autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a donar instruccions al vostre banc perquè el carregui al vostre compte. Podreu obtenir un reemborsament en un termini de 8 setmanes des de la data del càrrec, d'acord amb les condicions del vostre acord amb el banc."
       ]
     },
     "Payments.info": {
@@ -16123,6 +16173,9 @@
       "Contact your administrator if the problem persists.": [
         "Contacteu amb l'administrador si el problema persisteix."
       ],
+      "Continue to join as **${ username }**": [
+        "Continueu per unir-vos com a **${ username }**"
+      ],
       "Current device": [
         "Dispositiu actual"
       ],
@@ -16157,6 +16210,9 @@
       ],
       "Enter your backup password": [
         "Introduïu la vostra contrasenya de recuperació"
+      ],
+      "For your security, you have been signed out of all your other active devices.": [
+        "Per a la vostra seguretat, s'ha tancat la sessió a tots els vostres altres dispositius actius."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Per la vostra seguretat, se us ha tancat la sessió de tots els vostres dispositius actius. Abans d'accedir al vostre compte, haureu d'introduir una nova contrasenya de recuperació."
@@ -16265,6 +16321,9 @@
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Això us tancarà la sessió dels altres dispositius i haureu de crear una nova contrasenya de seguretat."
+      ],
+      "This will sign you out of your other devices.": [
+        "Això us tancarà la sessió als altres dispositius."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "Per a assegurar-nos que l'intent d'inici de sessió en **${ email }** és realment vostre, reviseu el codi de confirmació i aproveu la sol·licitud des d'un altre dispositiu."
@@ -17635,6 +17694,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "Afegeix usuaris a «${ policyName }»"
+      ],
+      "Advanced configuration": [
+        "Configuració avançada"
       ],
       "Advanced recovery options": [
         "Opcions de recuperació avançades"
@@ -19029,8 +19091,8 @@
       "Customize import to reduce the number of labels": [
         "Personalitzeu la importació per reduir el nombre d'etiquetes"
       ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de ${ providerName } a ${ BRAND_NAME }"
       ],
       "Device name and app version": [
         "Nom del dispositiu i versió de l'aplicació"

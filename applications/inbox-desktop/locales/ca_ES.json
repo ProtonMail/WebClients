@@ -70,6 +70,9 @@
       "Force Reload": [
         "Força la recàrrega"
       ],
+      "Help and feedback": [
+        "Ajuda i comentaris"
+      ],
       "Hide ${ MAIL_APP_NAME }": [
         "Amaga ${ MAIL_APP_NAME }"
       ],
@@ -78,6 +81,9 @@
       ],
       "Minimize": [
         "Minimitza"
+      ],
+      "OK": [
+        "D'acord"
       ],
       "Paste": [
         "Enganxa"
@@ -147,6 +153,9 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Desinstal·la ${ MAIL_APP_NAME }"
+      ],
+      "Version ${ version } (${ buildInfo })\n${ pkg.config.copyright }": [
+        "Versió ${ version } (${ buildInfo })\n${ pkg.config.copyright }"
       ],
       "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
         "Quan l'acceleració de maquinari està habilitada, l'aplicació utilitza el maquinari gràfic dedicat del vostre dispositiu per a la renderització. Això pot causar problemes de compatibilitat en alguns sistemes."
@@ -255,11 +264,19 @@
       "File": [
         "Fitxer"
       ],
+      "Help": [
+        "Ajuda"
+      ],
       "View": [
         "Mostra"
       ],
       "Window": [
         "Finestra"
+      ]
+    },
+    "Title": {
+      "About ${ MAIL_APP_NAME }": [
+        "Quant a ${ MAIL_APP_NAME }"
       ]
     },
     "Unload warning": {

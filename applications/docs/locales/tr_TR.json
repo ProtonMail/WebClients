@@ -2969,7 +2969,7 @@
         "Adres eklenemedi."
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından halihazırda kullanılıyor. Bu sorunu çözmek için lütfen müşteri desteğiyle iletişime geçin"
+        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından kullanılıyor. Bu sorunu çözmek için lütfen müşteri destek ekibimiz ile görüşün"
       ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
@@ -3298,7 +3298,7 @@
         "Eski herkese açık bağlantı güncellenemedi. Lütfen yeni bir herkese açık bağlantı oluşturun."
       ],
       "Member address not found. Please contact customer support to resolve this": [
-        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimizle görüşün"
+        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimiz ile görüşün"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
@@ -3311,7 +3311,7 @@
         "Anahtar paketi eksik"
       ],
       "Missing organization private key": [
-        "Kuruluşun özel anahtarı eksik"
+        "Kuruluşun kişisel anahtarı eksik"
       ],
       "Missing organization public key": [
         "Kuruluşun herkese açık anahtarı bulunamadı"
@@ -3383,7 +3383,7 @@
         "İşlem tamamlanamadı. Bir süre sonra yeniden deneyin"
       ],
       "Organization does not have enough seats available": [
-        "Kuruluşta yeterli sayıda boş koltuk yok"
+        "Kuruluşun yeterli koltuk sayısı yok"
       ],
       "Organization does not have enough storage available": [
         "Kuruluşun yeterli depolama alanı yok"
@@ -4217,7 +4217,7 @@
         "Hatalar"
       ],
       "In progress": [
-        "Devam ediyor"
+        "İşleniyor"
       ],
       "Migrated": [
         "Aktarıldı"
@@ -4604,7 +4604,7 @@
     },
     "Import status": {
       "Has errors": [
-        "Hatalar var"
+        "Sorunlar çıktı"
       ],
       "In progress": [
         "İşlem sürüyor"
@@ -4613,7 +4613,7 @@
         "Aktarıldı"
       ],
       "Pending": [
-        "Beklemede"
+        "Bekliyor"
       ]
     },
     "Import warning": {
@@ -5119,7 +5119,7 @@
         "finans"
       ],
       "Find out what can be migrated.": [
-        "Nelerin taşınabileceğini öğrenin."
+        "Nelerin aktarılabileceğini öğrenin."
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "\"${ link.name }\" klasörü indirme sırasında silindi"
@@ -5303,7 +5303,7 @@
         "Düşük Öncelik"
       ],
       "Making a copy...": [
-        "Kopya oluşturuluyor..."
+        "Bir kopya oluşturuluyor..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
@@ -5352,7 +5352,7 @@
         "Herhangi bir sonuç bulunamadı"
       ],
       "No users to display": [
-        "Görüntülenecek kullanıcı yok"
+        "Görüntülenebilecek bir kullanıcı yok"
       ],
       "No version history available": [
         "Herhangi bir sürüm geçmişi kaydı yok"
@@ -5689,8 +5689,11 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Bu benzersiz kod, siteler ve internet hizmeti sağlayıcıları tarafından konumunuzu ve tarama geçmişinizi aygıtınızla ilişkilendirmek için kullanılabilir."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Bu kullanıcı, ${ BRAND_NAME } üzerinde e-posta adresi bulunmadığı için aktarılamaz."
+      ],
       "This user can not be migrated due to platform incompatibilities.": [
-        "Platform uyumsuzlukları nedeniyle bu kullanıcı taşınamaz."
+        "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
       ],
       "This will permanently delete the file you uploaded.": [
         "Bu işlem yüklediğiniz dosyayı kalıcı olarak silecek."
@@ -5713,17 +5716,26 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Etkinlikleri içe aktarmak için önce ${ CALENDAR_APP_NAME } içinde bir takvim oluşturun. Etkinlikleriniz içe aktarma işleminden sonra bu takvimde görüntülenir."
       ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının hesabını etkinleştirin."
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Bu kullanıcıyı aktarabilmek için ${ domainNamesLink } altındaki e-posta etki alanını ekleyin ve doğrulayın."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı taşıyabilmek için ${ usersAddressesLink } altındaki adresi etkinleştirin."
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Bu kullanıcının geçiş işleminin gerçekleştirilebilmesi için ${ BRAND_NAME } üzerinden katılma davetini kabul etmesi gerekmektedir."
+        "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
       ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcıyı arşivden çıkarın."
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için onu ${ provider.adminConsoleName } üzerindeki arşivden çıkarın."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden kullanıcının askıya alınma durumunu kaldırın."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle karşılaştırarak denetlememiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
@@ -5912,6 +5924,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Görüntüleyiciye erişme izninizi değiştirdikten sonra \"${ fileName }\" dosyasını paylaşamazsınız. Sahibi veya paylaşma izni olan bir düzenleyici, düzenleme izninizi yeniden verebilir. Bu değişikliği siz geri alamazsınız."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Arkadaşınızın yıllık bir tarifeye abone olmasından 1 ay sonra, aylık bir tarifeye abone oldmasından 2 ay sonra kredi ödülünü alacaksınız."
@@ -7885,7 +7900,7 @@
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+        "Kuruluş kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca size özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -8054,7 +8069,7 @@
         "Çeşitli platformları destekler"
       ],
       "Private gateways": [
-        "Özel ağ geçitleri"
+        "Size özel ağ geçitleri"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } özel e-posta etki alanı desteği",
@@ -10404,6 +10419,9 @@
       "Document verification failed": [
         "Belge doğrulanamadı"
       ],
+      "Domain names": [
+        "Etki alanları"
+      ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
       ],
@@ -10867,8 +10885,8 @@
       "Customize import to reduce the number of labels": [
         "Etiket sayısını azaltmak için içe aktarmayı özelleştirin"
       ],
-      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
-        "Google Workspace'ten ${ BRAND_NAME } üzerine veri aktarım durumu"
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "${ providerName } üzerinden ${ BRAND_NAME } üzerine veri aktarma durumu"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "E-postaları dijital olarak imzalamak, iletilerin sizin tarafınızdan gönderildiğinin doğrulanmasını sağlar"
@@ -10931,7 +10949,7 @@
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } hesaplarında oturum açmış kullanıcılar"
+        "${ BRAND_NAME } hesaplarına erişen kullanıcılar"
       ],
       "Version 6 OpenPGP key": [
         "6. sürüm OpenPGP anahtarı"

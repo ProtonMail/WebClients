@@ -722,6 +722,9 @@
       "Mark as resolved": [
         "تحديد كـ (تم الحل)"
       ],
+      "Migrate": [
+        "نقل"
+      ],
       "More benefits": [
         "مزايا إضافية"
       ],
@@ -4773,6 +4776,9 @@
       "Address is already added to your account": [
         "العنوان مضاف بالفعل إلى حسابك"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "العنوان مستخدم بالفعل من قِبل مستخدم خارج مؤسستك. يُرجى التواصل مع دعم العملاء لحل هذه المشكلة."
+      ],
       "Address primary private key not found": [
         "لم يتم العثور على المفتاح الخاص الرئيسي للعنوان"
       ],
@@ -4966,6 +4972,9 @@
       "Maximum ${ displayMaxValue } allowed": [
         "الحد الأقصى المسموح به هو ${ displayMaxValue }"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "لم يتم العثور على عنوان العضو. يُرجى التواصل مع دعم العملاء لحل هذه المشكلة."
+      ],
       "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
         "دمج ما لا يقل عن ${ calendarsToFixCount } من التقاويم مع تقاويم ${ BRAND_NAME } الحالية",
         "دمج تقويم واحد (${ calendarsToFixCount }) على الأقل مع تقويم ${ BRAND_NAME } حالي",
@@ -4976,6 +4985,12 @@
       ],
       "Missing key packet": [
         "حزمة المفتاح مفقودة"
+      ],
+      "Missing organization private key": [
+        "المفتاح الخاص بالمؤسسة مفقود"
+      ],
+      "Missing organization public key": [
+        "مفتاح المؤسسة العام مفقود"
       ],
       "Missing signature": [
         "التوقيع مفقود"
@@ -5009,6 +5024,12 @@
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "يمكن تغيير حالة الأحرف وعلامات الترقيم (النقاط، والواصلات، والشرطات السفلية) فقط لهذا العنوان"
+      ],
+      "Organization does not have enough seats available": [
+        "لا تتوفر لدى المؤسسة مقاعد كافية"
+      ],
+      "Organization does not have enough storage available": [
+        "لا تتوفر لدى المؤسسة مساحة تخزين كافية"
       ],
       "Organization key is not decrypted": [
         "لم يتم فك تشفير مفتاح المنظمة"
@@ -6239,6 +6260,29 @@
         "تيرابايت"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "مُفعّل"
+      ],
+      "All": [
+        "الكل"
+      ],
+      "Errors": [
+        "أخطاء"
+      ],
+      "In progress": [
+        "قيد التنفيذ"
+      ],
+      "Migrated": [
+        "تم النقل"
+      ],
+      "Not activated": [
+        "غير مُفعّل"
+      ],
+      "Pending": [
+        "قيد الانتظار"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "تم تحديث ${ Label.Name }"
@@ -6868,11 +6912,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "به أخطاء"
+      ],
       "In progress": [
         "قيد التنفيذ"
       ],
       "Migrated": [
         "تم ترحيله"
+      ],
+      "Pending": [
+        "معلق"
       ]
     },
     "Import warning": {
@@ -8067,6 +8117,9 @@
       "finance": [
         "مالية"
       ],
+      "Find out what can be migrated.": [
+        "تعرّف على ما يمكن نقله."
+      ],
       "for ${ price }": [
         "مقابل ${ price }"
       ],
@@ -8569,6 +8622,9 @@
       "No single sign-on": [
         "لا يوجد تسجيل دخول فردي"
       ],
+      "No users to display": [
+        "لا يوجد مستخدمون للعرض"
+      ],
       "Number of dedicated servers in the organization": [
         "عدد الخوادم المخصصة في المؤسسة"
       ],
@@ -8910,6 +8966,9 @@
       "Select a group to view its members and settings.": [
         "تحديد مجموعة لعرض أعضائها وإعداداتها."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "حدّد بالضبط ما ترغب في نقله. وسيُطبَّق ذلك على جميع مستخدمي المؤسسة."
+      ],
       "Select one or multiple user affiliations": [
         "حدد انتماء مستخدم واحد أو أكثر"
       ],
@@ -9228,6 +9287,9 @@
       "This service is not available to users signing in with single sign-on.": [
         "هذه الخدمة غير متاحة للمستخدمين الذين يسجلون الدخول باستخدام تسجيل الدخول الفردي."
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "لا يمكن نقل هذا المستخدم بسبب عدم توافق المنصات."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "هذا المستخدم مسؤول حالياً عن مدفوعات مؤسستك. بتخفيض صلاحيات هذا العضو، ستصبح أنت المسؤول عن مدفوعات مؤسستك."
       ],
@@ -9338,6 +9400,15 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "لمواكبة آخر التطورات في منتجات ${ BRAND_NAME }، يمكنك الاشتراك في رسائل البريد الإلكتروني المختلفة لدينا و ${ blogLink } من وقت لآخر."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "لنقل هذا المستخدم، فعِّل حسابه ضمن ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "لنقل هذا المستخدم، فعِّل عنوانه ضمن ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "لنقل هذا المستخدم، يجب عليه قبول دعوته للانضمام إلى ${ BRAND_NAME }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "للمتابعة، حدد طريقة استرداد الحساب حتى نتمكن من التحقق من الطلب."
@@ -9665,6 +9736,9 @@
       ],
       "X": [
         "X"
+      ],
+      "You": [
+        "أنت"
       ],
       "You already have a free account": [
         "لديك حساب مجاني بالفعل"
@@ -15474,11 +15548,17 @@
       ]
     },
     "scim: Info": {
+      "**Groups:** All groups convert to local ${ BRAND_NAME } groups. Syncing with your identity provider stops, and you'll manage membership in ${ BRAND_NAME } settings instead.": [
+        "**المجموعات:** سيتم تحويل جميع المجموعات إلى مجموعات محلية في ${ BRAND_NAME }. وستتوقف المزامنة مع موفّر الهوية، وستدير عضوية المجموعات من إعدادات ${ BRAND_NAME } بدلًا من ذلك."
+      ],
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**شرط أساسي:** يجب تكوين مصادقة SAML لتمكين توفير SCIM."
       ],
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
         "**شرط أساسي:** لتمكين توفير SCIM، يجب عليك التحقق من ملكية النطاق **${ domainName }**. قد يستغرق هذا التحقق ما يصل إلى ساعة واحدة."
+      ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**المستخدمون:** سيتم تحويل جميع مستخدمي SCIM الذين يوفرهم موفّر الهوية تلقائيًا إلى مستخدمي SSO، وستتمكن من إدارتهم مباشرةً من إعدادات ${ BRAND_NAME }."
       ],
       "Enter the token into your identity provider": [
         "أدخل الرمز في موفر الهوية الخاص بك"
@@ -15512,6 +15592,9 @@
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "لإعادة تفعيل المزامنة مع موفر الهوية، تحتاج إلى إكمال تكامل SCIM مرة أخرى."
+      ],
+      "When you disable SCIM:": [
+        "عند تعطيل SCIM:"
       ]
     },
     "scim: Label": {
@@ -17723,11 +17806,23 @@
       ]
     },
     "Table header": {
+      "Activated": [
+        "مفعل"
+      ],
+      "Estimated size": [
+        "الحجم المقدر"
+      ],
+      "Migration status": [
+        "حالة النقل"
+      ],
       "Size": [
         "الحجم"
       ],
       "Status": [
         "الحالة"
+      ],
+      "User": [
+        "المستخدم"
       ]
     },
     "TableHeader": {
@@ -18162,6 +18257,9 @@
       ],
       "Compare plans": [
         "مقارنة الخطط"
+      ],
+      "Configure migration": [
+        "إعداد عملية النقل"
       ],
       "Confirm": [
         "تأكيد"
@@ -18915,6 +19013,9 @@
       "Select data to import": [
         "حدّد البيانات المراد استيرادها"
       ],
+      "Select users to migrate": [
+        "تحديد المستخدمين المراد نقلهم"
+      ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "أرسل واستقبل بريد Gmail من خلال ${ MAIL_APP_NAME }"
       ],
@@ -19201,6 +19302,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "مرحبًا بك في ${ BRAND_NAME } للأعمال"
+      ],
+      "What are you migrating?": [
+        "ما الذي تريد نقله؟"
       ],
       "What changes if you switch to the Free plan": [
         "التغييرات عند الانتقال إلى Free plan"
@@ -19494,6 +19598,9 @@
       ],
       "User's approximate location (based on their IP address)": [
         "الموقع التقريبي للمستخدم (بناءً على عنوان IP الخاص به)"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "المستخدمون الذين سبق لهم الوصول إلى حسابهم في ${ BRAND_NAME }"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "سيرى المستخدمون شعارك بدلاً من أيقونة ${ BRAND_NAME } عند تسجيل الدخول إلى تطبيقات الويب الخاصة بنا."

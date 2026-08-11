@@ -48,10 +48,6 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "დაამატეთ ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
-      "Add ${ photoCount } photo to a new album": [
-        "${ photoCount } სურათის დამატება ახალ ალბომში",
-        "${ photoCount } სურათის დამატება ახალ ალბომში"
-      ],
       "Add account": [
         "ანგარიშის დამატება"
       ],
@@ -88,24 +84,11 @@
       "Add phone number": [
         "ტელეფონის ნომრის დამატება"
       ],
-      "Add photos": [
-        "დაამატეთ სურათები"
-      ],
       "Add storage": [
         "საცავის დამატება"
       ],
-      "Add to \"${ name }\" (${ photoCount } photo)": [
-        "დამატება ალბომში „${ name }“ (${ photoCount } ფოტო)",
-        "დამატება ალბომში „${ name }“ (${ photoCount } ფოტო)"
-      ],
-      "Add to album": [
-        "ალბომში დამატება"
-      ],
       "Add to group": [
         "ჯგუფში ჩამატება"
-      ],
-      "Album name": [
-        "ალბომის სახელი"
       ],
       "Apply": [
         "გადატარება"
@@ -216,9 +199,6 @@
       "Collaborate on documents": [
         "იმუშავეთ ერთად დოკუმენტებზე"
       ],
-      "Collapse folder": [
-        "საქაღალდის ჩაკეცვა"
-      ],
       "Collapse navigation bar": [
         "ნავიგაციის პანელის აკეცვა"
       ],
@@ -291,14 +271,8 @@
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
-      "Create album": [
-        "ალბომის შექმნა"
-      ],
       "Create and copy alias": [
         "ფსევდონიმის შექმნა და კოპირება"
-      ],
-      "Create business account": [
-        "ბიზნესანგარიშის შექმნა"
       ],
       "Create folder": [
         "საქაღალდის შექმნა"
@@ -308,9 +282,6 @@
       ],
       "Create new password": [
         "ახალი პაროლის შექმნა"
-      ],
-      "Create new text file": [
-        "ახალი ტექსტური ფაილის შექმნა"
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
@@ -341,9 +312,6 @@
         "${ selectedCount } კონტაქტების ჯგუფის წაშლა",
         "${ selectedCount } კონტაქტების ჯგუფის წაშლა"
       ],
-      "Delete album": [
-        "ალბომის წაშლა"
-      ],
       "Delete contact": [
         "კონტაქტის წაშლა"
       ],
@@ -353,23 +321,11 @@
       "Delete permanently": [
         "სამუდამოდ წაშლა"
       ],
-      "Delete this version": [
-        "ამ ვერსიის წაშლა"
-      ],
-      "Delete version": [
-        "ვერსიის წაშლა"
-      ],
-      "Delete without saving": [
-        "წაშლა შენახვის გარეშე"
-      ],
       "Deselect all": [
         "მონიშვნის მოხსნა"
       ],
       "Details": [
         "დეტალები"
-      ],
-      "Diagnostics": [
-        "დიაგნოსტიკა"
       ],
       "Discard": [
         "მოცილება"
@@ -379,12 +335,6 @@
       ],
       "Display navigation bar": [
         "ნავიგაციის პანელის ჩვენება"
-      ],
-      "Display next": [
-        "შემდეგის ჩვენება"
-      ],
-      "Display previous": [
-        "წინას ჩვენება"
       ],
       "Done": [
         "მზადაა"
@@ -404,26 +354,14 @@
       "Download anyway": [
         "მაინც გადმოწერა"
       ],
-      "Download for Mac": [
-        "გადმოწერა Mac-ისთვის"
-      ],
       "Download for macOS": [
         "გადმოწერა macOS-სთვის"
       ],
       "Download for Windows": [
         "გადმოწერა Windows-სთვის"
       ],
-      "Download info": [
-        "ინფორმაციის გაფდმოწერა"
-      ],
       "Download logs": [
         "ჟურნალის გადმოწერა"
-      ],
-      "Download results": [
-        "შედეგების გადმოწერა"
-      ],
-      "Drive Locked": [
-        "საცავი ჩაკეტილია"
       ],
       "Edit": [
         "ჩასწორება"
@@ -455,17 +393,8 @@
       "enable desktop notifications": [
         "სამუშაო მაგიდის გაფრთხილებების ჩართვა"
       ],
-      "Enable drive search": [
-        "Drive-ზე ძებნის ჩართვა"
-      ],
       "Encrypted": [
         "დაშიფრული"
-      ],
-      "Expand folder": [
-        "საქაღალდის ჩამოშლა"
-      ],
-      "Explore more": [
-        "დაათვალიერეთ მეტი"
       ],
       "Explore other plans": [
         "სხვა სატარიფო გეგმების დათვალიერება"
@@ -478,9 +407,6 @@
       ],
       "Export selection as .vcf": [
         "მონიშნულის გატანა .vcf ფაილში"
-      ],
-      "Export system log": [
-        "სისტემური ჟურნალის გატანა"
       ],
       "Fit to window": [
         "ფანჯარაში ჩატევა"
@@ -527,20 +453,11 @@
       "Go back": [
         "უკან დაბრუნება"
       ],
-      "Go back to album \"${ ellipsedAlbumName }\"": [
-        "უკან დაბრუნება ალბომში „${ ellipsedAlbumName }“"
-      ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName }-ზე გადასვლა"
       ],
       "Go to label": [
         "ჭდეზე გადასვლა"
-      ],
-      "Go to my files": [
-        "ჩემს ფაილებზე გადასვლა"
-      ],
-      "Go to parent": [
-        "მშობელზე გადასვლა"
       ],
       "Go to settings": [
         "მორგებაზე გადასვლა"
@@ -596,9 +513,6 @@
       "Increase": [
         "გაგრძელება"
       ],
-      "Join album": [
-        "ალბომში გაწევრება"
-      ],
       "Keep my subscription": [
         "ჩემი გამოწერის შენარჩუნება"
       ],
@@ -613,9 +527,6 @@
       ],
       "Leave": [
         "გასვლა"
-      ],
-      "Leave album": [
-        "ალბომიდან გასვლა"
       ],
       "Let's talk": [
         "ვიბაზროთ"
@@ -646,9 +557,6 @@
       ],
       "Manage labels": [
         "ჭდეების მართვა"
-      ],
-      "Manage share": [
-        "ზიარის მართვა"
       ],
       "Manage users/addresses": [
         "მომხმარებლების/ფსევდონიმების მართვა"
@@ -701,15 +609,6 @@
       "Move to trash": [
         "ნაგვის ყუთში გადატანა"
       ],
-      "Name your album": [
-        "სახელი თქვენი ალბომისთვის"
-      ],
-      "New": [
-        "ახალი"
-      ],
-      "New album": [
-        "ახალი ალბომი"
-      ],
       "New document": [
         "ახალი დოკუმენტი"
       ],
@@ -718,9 +617,6 @@
       ],
       "New message": [
         "ახალი შეტყობინება"
-      ],
-      "New shared album": [
-        "ახალი გაზიარებული ალბომი"
       ],
       "New spreadsheet": [
         "ახალი ელცხრილი"
@@ -776,17 +672,8 @@
       "Quit": [
         "გასვლა"
       ],
-      "Re-index": [
-        "რეინდექსაცია"
-      ],
-      "Re-indexing in progress": [
-        "მიმდინარეობს ხელახალი ინდექსირება"
-      ],
       "Re-sign": [
         "ხელახლა ხელმოწერა"
-      ],
-      "Rebuild index": [
-        "ინდექსის ხელახლა შექმნა"
       ],
       "Reconnect": [
         "თავიდან დაკავშირება"
@@ -799,9 +686,6 @@
       ],
       "Refer a friend": [
         "მიმართეთ მეგობარს"
-      ],
-      "Refetch index": [
-        "ინდექსის თავიდან გამოთხოვა"
       ],
       "Refresh the page": [
         "გვერდის განახლება"
@@ -824,32 +708,17 @@
       "Remove button": [
         "ღილაკის მოცილება"
       ],
-      "Remove device": [
-        "მოწყობილობის წაშლა"
-      ],
-      "Remove from album": [
-        "ალბომიდან წაშლა"
-      ],
       "Remove from favorites": [
         "წაშლა რჩეულებიდან"
       ],
       "Remove gift code": [
         "სასაჩუქრე კოდის წაშლა"
       ],
-      "Remove me": [
-        "წამშალე"
-      ],
       "Remove my access": [
         "ჩემი წვდომის გაუქმება"
       ],
-      "Remove without saving": [
-        "წაშლა შენახვის გარეშე"
-      ],
       "Rename": [
         "სახელის გადარქმევა"
-      ],
-      "Rename album": [
-        "ალბომის სახელის გადარქმევა"
       ],
       "Replace file": [
         "ფაილის ჩანაცვლება"
@@ -859,9 +728,6 @@
       ],
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
-      ],
-      "Report abuse": [
-        "კანონდარღვევის შეტყობინება"
       ],
       "Report an issue": [
         "პრობლემის ანგარიშის გადაგზავნა"
@@ -893,32 +759,17 @@
       "Restore this version": [
         "ამ ვერსიის აღდგენა"
       ],
-      "Restore version": [
-        "ვერსიის აღდგენა"
-      ],
       "Retry": [
         "თავიდან"
       ],
       "Retry failed items": [
         "ჩავარდნილი ელემენტების თავიდან ცდა"
       ],
-      "Run diagnostics": [
-        "დიაგნოსტიკის გაშვება"
-      ],
       "Save": [
         "შენახვა"
       ],
-      "Save and remove": [
-        "შენახვა და წაშლა"
-      ],
       "Save changes": [
         "ცვლილებების შენახვა"
-      ],
-      "Save photo to your gallery": [
-        "შეინახეთ ფოტო თქვენს გალერეაში"
-      ],
-      "Save photos and remove": [
-        "სურათების შენახვა და წაშლა"
       ],
       "Scan & Download": [
         "სკანირება & გადმოწერა"
@@ -934,12 +785,6 @@
       ],
       "Search countries": [
         "ქვეყნების ძებნა"
-      ],
-      "Search drive": [
-        "Drive-ზე ძებნა"
-      ],
-      "Search is unavailable": [
-        "ძიება მიუწვდომელია"
       ],
       "See how": [
         "იხილეთ, როგორ"
@@ -974,9 +819,6 @@
       "Set as album cover": [
         "ალბომის ყდად დაყენება"
       ],
-      "Set as cover": [
-        "ყდად დაყენება"
-      ],
       "Set password or expiration date": [
         "პაროლის, ან ვადის ამოწურვის თარიღის დაყენება"
       ],
@@ -1000,12 +842,6 @@
       ],
       "Share": [
         "გაზიარება"
-      ],
-      "Share album": [
-        "ალბომის გაზიარება"
-      ],
-      "Share file": [
-        "ფაილის გაზიარება"
       ],
       "Share item": [
         "ელემენტის გაზიარება"
@@ -1058,14 +894,8 @@
       "Skip verification": [
         "შემოწმების გამოტოვება"
       ],
-      "Start": [
-        "დაწყება"
-      ],
       "Start import": [
         "შემოტანის დაწყება"
-      ],
-      "Start recovering": [
-        "აღდგენის დაწყება"
       ],
       "Stay": [
         "დარჩენა"
@@ -1091,9 +921,6 @@
       "Take a tour": [
         "გასაცნობი ტური"
       ],
-      "This album is empty": [
-        "ეს ალბომი ცარიელია"
-      ],
       "Toggle Calendar app": [
         "კალენდრის აპის გადართვა"
       ],
@@ -1108,9 +935,6 @@
       ],
       "Trust": [
         "ნდობა"
-      ],
-      "Try ${ BRAND_NAME } Workspace": [
-        "სცადეთ ${ BRAND_NAME } Workspace"
       ],
       "Try again": [
         "კიდევ ცდა"
@@ -1166,12 +990,6 @@
       "Upload folder": [
         "საქაღალდის ატვირთვა"
       ],
-      "Upload from computer": [
-        "ატვირთვა კომპიუტერიდან"
-      ],
-      "Upload photos": [
-        "ატვირთეთ ფოტოსურათი"
-      ],
       "Upload picture": [
         "სურათის ატვრთვა"
       ],
@@ -1220,18 +1038,9 @@
       "What do I get?": [
         "რას მივიღებ?"
       ],
-      "Windows 11 (ARM64)": [
-        "Windows 11 (ARM64)"
-      ],
-      "Windows 11/10 (x64)": [
-        "Windows 11/10 (x64)"
-      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
-      ],
-      "Your 3 GB bonus": [
-        "თქვენი 3 გბ ბონუსი"
       ],
       "Zoom in": [
         "გადიდება"
@@ -1248,11 +1057,6 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "${ SHEETS_APP_NAME }-ში გახსნა"
-      ]
-    },
-    "Actions": {
-      "Upload": [
-        "ატვირთვა"
       ]
     },
     "Actions message": {
@@ -1434,11 +1238,6 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ timeRemaining }"
-      ]
-    },
-    "Badge": {
-      "Invited": [
-        "მოწვეულია"
       ]
     },
     "bf2023: Deal details": {
@@ -3121,14 +2920,6 @@
         "თქვენს მიერ ატვირთულ CSV ფაილში ამოჩენილია შემდეგი ველები. მონიშნეთ ისინი, რომლების შემოტანაც გსურთ."
       ]
     },
-    "Docs Info": {
-      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
-        "კოლაბორაცია უფრო ადვილია. ახლა ყველას შეუძლია, შემოგთავაზოთ ჩასწორების ვარიანტები თვით დოკუმენტის შეუცვლელად."
-      ],
-      "Suggestion mode is here": [
-        "მინიშნებების რეჟიმი აქაა"
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "შეცდომები ან ხარისხის პრობლემები"
@@ -3418,12 +3209,6 @@
       "Calendar limit reached": [
         "კალენდრის ლიმიტი"
       ],
-      "Can't find any secure link": [
-        "დაცული ბმულები ვერ ვიპოვე"
-      ],
-      "Can't retrieve device name": [
-        "მოწყობილობის სახელის მიღება შეუძლებელია"
-      ],
       "Cannot export this contact": [
         "ამ კონტაქტის გატანა შეუძლებელია"
       ],
@@ -3451,17 +3236,11 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "შემცველობაში ძებნის ჩართვა შეუძლებელია. მონაცემების გასასუფთავებლად, გთხოვთ, გადატვირთეთ აპლიკაცია."
       ],
-      "Could not add to favorites": [
-        "რჩეულებში დამატება შეუძლებელია"
-      ],
       "Could not open created vault": [
         "შექმნილი საცავის გახსნა შეუძლებელია"
       ],
       "Could not open updated vault": [
         "განახლებული საცავის გახსნა შეუძლებელია"
-      ],
-      "Could not remove from favorites": [
-        "რჩეულებიდან წაშლა სეუძლებელია"
       ],
       "Data integrity check failed": [
         "მონაცემთა მთლიანობის შემოწმება ჩავარდა"
@@ -3474,17 +3253,8 @@
         "მოხსენით მონიშვნა სულ ცოტა ${ calendarsToFixCount } კალენდარზე, ან",
         "მოხსენით მონიშვნა სულ ცოტა ${ calendarsToFixCount } კალენდარზე, ან"
       ],
-      "Device name does not match": [
-        "მოწყობილობის სახელი არ ემთხვევა"
-      ],
-      "Diagnostics failed": [
-        "დიაგნოსტიკა ჩავარდა"
-      ],
       "Domain not available, try again later": [
         "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
-      ],
-      "Downloads of desktop apps are currently unavailable": [
-        "კომპიუტერის პროგრამების გადმოწერა ამჟამად ხელმისაწვდომი არაა"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "გადახდის მისამართის ჩასწორება, ამჟამად, ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
@@ -3506,12 +3276,6 @@
       ],
       "Error decrypting a computer": [
         "კომპიუტერის გაშიფვრის შეცდომა"
-      ],
-      "Error reading file": [
-        "ფაილის წაკითხვის შეცდომა"
-      ],
-      "Expected structure attached": [
-        "მოსალოდნელი სტრუქტურა მიმაგრებულია"
       ],
       "External accounts are not supported yet": [
         "გარე ანგარიშები ჯერ მხარდაჭერილი არაა"
@@ -3579,9 +3343,6 @@
       "Folder name cannot be empty.": [
         "საქაღალდის სახელი ცარიელი არ შეიძლება იყოს."
       ],
-      "Folder not found": [
-        "საქაღალდე ვერ მოიძებნა"
-      ],
       "Forward address is required": [
         "გადამისამართების მისამართი აუცილებელია"
       ],
@@ -3608,9 +3369,6 @@
       ],
       "Invalid IBAN": [
         "არასწორი IBAN"
-      ],
-      "Invalid JSON file": [
-        "არასწორი JSON ფაილი"
       ],
       "Invalid name": [
         "არასწორი სახელი"
@@ -3788,9 +3546,6 @@
       "Reverse charge scheme is not supported for this plan": [
         "უკუდაბეგვრის სქემა არ არის მხარდაჭერილი ამ პაკეტისთვის"
       ],
-      "Search failed": [
-        "ძებნის შეცდომა"
-      ],
       "Signature not verified": [
         "ხელმოწერა არ შემოწმებულა"
       ],
@@ -3821,17 +3576,8 @@
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
       ],
-      "Something went wrong during folder listing": [
-        "საქაღალდეების ჩამოთვლისას რაღაც არასწორად წავიდა"
-      ],
       "Something went wrong while fetching available domains": [
         "ხელმისაწვდომი დომენების მიღებისას შეცდომა მოხდა"
-      ],
-      "Something went wrong with search. Please try again later.": [
-        "ძიებისას რაღაც შეცდომა მოხდა. გთხოვთ, სცადოთ მოგვიანებით."
-      ],
-      "Something went wrong with search: Not enough storage space.": [
-        "ძიებისას რაღაც შეცდომა მოხდა: არ არის საკმარისი საცავის ადგილი."
       ],
       "Something went wrong. Please try again.": [
         "რაღაც არასწორად წავიდა. თავიდან სცადეთ."
@@ -3950,41 +3696,14 @@
       "VAT number must start with ${ prefixes }": [
         "დღგ-ის ნომერი უნდა იწყებოდეს ${ prefixes }-ით"
       ],
-      "We cannot retrieve this item": [
-        "ამ ელემენტის მიღება შეუძლებელია"
-      ],
       "We couldn’t send a verification code using this method.": [
         "ამ მეთოდით დამოწმების კოდი ვერ გავაგზავნეთ."
-      ],
-      "We were not able to load some invitations": [
-        "ჩვენ ვერ ჩავტვირთეთ ზოგიერთი მოწვევა"
       ],
       "We were not able to load some items": [
         "ჩვენ ვერ ჩავტვირთეთ ზოგიერთი ელემენტი"
       ],
-      "We were not able to load some items shared with you": [
-        "ჩვენ ვერ ჩავტვირთეთ რამდენიმე თქვენი გაზიარებული ელემენტებიდან"
-      ],
-      "We were not able to load some of your invitation to shared items": [
-        "ჩვენ ვერ ჩავტვირთეთ რამდენიმე თქვენი მოწვევა გაზიარებულ ელემენტებზე"
-      ],
-      "We were not able to load some of your saved shared links": [
-        "ჩვენ ვერ ჩავტვირთეთ რამდენიმე თქვენი შენახული გაზიარებული ბმულიდან"
-      ],
-      "We were not able to load some of your shared items": [
-        "ჩვენ ვერ ჩავტვირთეთ რამდენიმე თქვენი გაზიარებული ელემენტებიდან"
-      ],
-      "We were not able to load some search results": [
-        "ზოგიერთი ძებნის შედეგის ჩატვირთვა ვერ მოხერხდა"
-      ],
-      "We were not able to load the file history": [
-        "ჩვენ ვერ შევძელით ფაილის ისტორიის ჩატვირთვა"
-      ],
       "We were not able to load the folder contents": [
         "ჩვენ ვერ ჩავტვირთეთ საქაღალდის შემცველობა"
-      ],
-      "We're sorry, but free upload is not available right now.": [
-        "ბოდიშს ვიხდით, მაგრამ უფასო ატვირთვა ამჟამად ხელმისაწვდომი არაა."
       ],
       "Wrong billing address": [
         "არასწორი გადახდის მისამართი"
@@ -4153,23 +3872,11 @@
       ]
     },
     "Error message": {
-      "Access denied": [
-        "წვდომა აკრძალულია"
-      ],
       "App currently unavailable": [
         "აპი ამჟამად ხელმიუწვდომელია"
       ],
-      "Brace yourself till we get the error fixed.": [
-        "გამხნევდით, სანამ შეცდომას არ გამოვასწორებთ."
-      ],
       "Error: ${ errorMessage }": [
         "შეცდომა: ${ errorMessage }"
-      ],
-      "Internal server error": [
-        "შიდა სერვერის შეცდომა"
-      ],
-      "Not found": [
-        "ვერ ვიპოვე"
       ],
       "Oops, something went wrong": [
         "უფს, რაღაც არასწორად წავიდა"
@@ -4191,9 +3898,6 @@
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "როცა დამატებითი პაროლი ჩართულია, ფსევდონიმების მართვა, მხოლოდ, ${ PASS_APP_NAME }-ში შეგიძლიათ."
-      ],
-      "You may also refresh the page or try again later.": [
-        "განაახლეთ გვერდი ან მოგვიანებთ სცადეთ."
       ]
     },
     "Error notification": {
@@ -4255,12 +3959,6 @@
     "Event title": {
       "(no title)": [
         "(უსათაურო)"
-      ]
-    },
-    "Failed": {
-      "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } ჩავარდა",
-        "${ countOfFailedLinks } ჩავარდა"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4541,12 +4239,6 @@
       "Contacts": [
         "კონტაქტები"
       ],
-      "Create new album": [
-        "ახალი ალბომის შექმნა"
-      ],
-      "Create new shared album": [
-        "ახალი გაზიარებული ალბომის შექმნა"
-      ],
       "Domain": [
         "დომენი"
       ],
@@ -4556,33 +4248,11 @@
       "Password ends with": [
         "პაროლი მთავრდება"
       ],
-      "Rename album": [
-        "ალბომის სახელის გადარქმევა"
-      ],
       "Security Center": [
         "უსაფრთხოების ცენტრი"
       ],
       "Username": [
         "მომხმარებლის სახელი"
-      ]
-    },
-    "Heading": {
-      "Add ${ photoCount } photo to": [
-        "${ photoCount } სურათის დამატება",
-        "${ photoCount } სურათის დამატება"
-      ],
-      "Add to shared album": [
-        "დამატება გაზიარებულ ალბომში"
-      ],
-      "All albums": [
-        "ყველა ალბომი"
-      ],
-      "Recent": [
-        "უახლესი"
-      ],
-      "Share ${ photoCount } photo via": [
-        "${ photoCount } სურათის გაზიარება სერვისით",
-        "${ photoCount } სურათის გაზიარება სერვისით"
       ]
     },
     "Hint": {
@@ -4928,21 +4598,11 @@
         "${ addressCount } ელ-ფოსტის მისამართი",
         "${ addressCount } ელ-ფოსტის მისამართი"
       ],
-      "${ albumName } has been successfully deleted": [
-        "${ albumName } წარმატებით წაიშალა"
-      ],
-      "${ albums } album": [
-        "${ albums } ალბომი",
-        "${ albums } ალბომი"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe წერის დამხმარე"
-      ],
-      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
-        "${ BRAND_NAME } Workspace აძლიერებს თქვენს გუნდს, რათა ითანამშრომლოთ ეფექტურად თქვენი კომპანიის მონაცემების საფრთხის წინაშე დაყენების გარეშე."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
@@ -4986,39 +4646,15 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME }-ის და ${ SHEETS_APP_NAME }-ის ფაილების პირდაპირ ჩამოტვირთვა შეუძლებელია და ისინი არ ჩაირთვება ამ ჩამოტვირთვაში. სხვა ფაილების ჩამოტვირთვა შეგიძლიათ ღილაკზე „ჩამოტვირთვის გაგრძელება“ დაწკაპუნებით."
       ],
-      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME }-მა აღმოაჩინა, რომ ლოკალური ძიების ინდექსი დაზიანებულია და მისი გამოყენება ვეღარ ხერხდება. ძიების აღსადგენად თავიდან შექმენით ინდექსი."
-      ],
-      "${ DRIVE_APP_NAME } on App Store": [
-        "${ DRIVE_APP_NAME }-ი App Store-ში"
-      ],
-      "${ DRIVE_APP_NAME } on Play Store": [
-        "${ DRIVE_APP_NAME }-ი Play Store-ში"
-      ],
-      "${ email } invited you to join ${ albumName }": [
-        "${ email }-მა მოგიწვიათ, შეუერთდეთ ${ albumName }-ს"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: სრული ზომის გამოსახულება"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: დაბალი გაფართოების მინიატურა"
       ],
-      "${ files } file": [
-        "${ files } ფაილი",
-        "${ files } ფაილი"
-      ],
-      "${ folders } folder": [
-        "${ folders } საქაღალდე",
-        "${ folders } საქაღალდე"
-      ],
       "${ groupCounts } group found": [
         "ნაპოვნია ${ groupCounts } ჯგუფი",
         "ნაპოვნია ${ groupCounts } ჯგუფი"
-      ],
-      "${ invitationsCount } pending invitation": [
-        "${ invitationsCount } დარჩენილი მოსაწვევი",
-        "${ invitationsCount } დარჩენილი მოსაწვევი"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } შეიცავს ${ BRAND_NAME } Scribe წერის დამხმარეს"
@@ -5037,14 +4673,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME }-ის უვადო შემოთავაზებას არ აქვს განახლების ფასი, ეს არის ერთჯერადი გადახდა ${ PASS_SHORT_APP_NAME }-ზე უვადო წვდომისთვის. თქვენი ${ planTitle } გამოწერის განახლების ფასი და თარიღი უცვლელი რჩება."
-      ],
-      "${ photoCount } item": [
-        "${ photoCount } ელემენტი",
-        "${ photoCount } ელემენტი"
-      ],
-      "${ photos } photo": [
-        "${ photos } ფოტო",
-        "${ photos } ფოტო"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }-ს სულ ცოტა 1 გამოყოფილი სერვერი ესაჭიროება ${ serverPricePerMonth }"
@@ -5086,9 +4714,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე",
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე"
-      ],
-      "${ state.result.entries.length } entries": [
-        "${ state.result.entries.length } ჩანაწერი"
       ],
       "${ storage } storage": [
         "${ storage } საცავი"
@@ -5141,9 +4766,6 @@
       ],
       "30-day money-back guarantee.": [
         "30 დღიანი გარანტირებული ფულის დაბრუნება."
-      ],
-      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
-        "ხელმისაწვდომია ${ DRIVE_APP_NAME }-ის ახალი ვერსია. გთხოვთ, გადატვირთოთ გვერდი, რათა განაგრძოთ ძიების გამოყენება."
       ],
       "A number will be added to the filename": [
         "ფაილის სახელს რიცხვი მიემატება"
@@ -5217,9 +4839,6 @@
       "Already in your library": [
         "უკვე თქვენს ბიბლიოთეკაშია"
       ],
-      "Also try looking in Trash.": [
-        "სცადეთ, ნაგვის ყუთშიც ჩაიხედოთ."
-      ],
       "American Express SafeKey logo": [
         "American Express SafeKey-ის ლოგო"
       ],
@@ -5229,23 +4848,11 @@
       "Amount below minimum (${ amount }).": [
         "თანხა მინიმუმზე ნაკლებია (${ amount })."
       ],
-      "An active recovery file": [
-        "აღდგენის აქტიური ფაილი"
-      ],
-      "An issue occurred during the restore process.": [
-        "აღდგენის პროცესში აღმოჩენილია პრობლემა."
-      ],
       "and": [
         "და"
       ],
-      "And access it from anywhere": [
-        "და იქონიეთ წვდომა ნებისმიერი ადგილიდან"
-      ],
       "Anonymous": [
         "ანონიმური"
-      ],
-      "Apr": [
-        "აპრ"
       ],
       "Are you sure you want to discard your changes?": [
         "გნებავთ თქვენი ცვლილებების გაუქმება?"
@@ -5256,17 +4863,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ ნაგვის გასუფთავება და იქ მდებარე ყველა ფაილის სამუდამოდ წაშლა?"
       ],
-      "Are you sure you want to permanently delete": [
-        "დარწმუნებული ბრძანდებთ, რომ გნებავთ, სამუდამოდ წაშალოთ"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, სამუდამოდ წაშალოთ \"${ itemName }\" ნაგვის ყუთიდან?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, სამუდამოდ წაშალოთ ელემენტები სანაგვე ყუთიდან?"
-      ],
-      "Are you sure you want to proceed?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "სულ ცოტა ${ BETTER_PASSWORD_LENGTH } სიმბოლო"
@@ -5277,23 +4878,14 @@
       "Attention required": [
         "საჭიროა ყურადღება"
       ],
-      "Aug": [
-        "აგვ"
-      ],
       "Awaiting transaction": [
         "ტრანზაქციის მოლოდინი"
       ],
       "Balance from your previous subscription": [
         "ბალანსი წინა გამოწერიდან"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "იმის გამო, რომ ${ DRIVE_APP_NAME } გამჭოლადაა დაშიფრული, ჩვენ არ გვაქვს წვდომა თქვენს ელფოსტასთან და არც მისი გაშიფვრის საშუალება. პაროლის შეცვლის შემდეგ თქვენი დისკის განბლოკვისთვის\nუნდა ქნათ ერთ-ერთი:"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "შემოწმების ახალი კოდის მოთხოვნამდე შეამოწმეთ თქვენი სპამის საქაღალდე და რომ ${ strong } სწორი მისამართია."
-      ],
-      "Better in the app": [
-        "უკეთესი აპლიკაციაში"
       ],
       "Billing cycle: ${ text }": [
         "გადახდის ციკლი: ${ text }"
@@ -5322,17 +4914,11 @@
       "Can't move a folder into itself": [
         "საქაღალდეს თავის თავში ვერ გადაიტანთ"
       ],
-      "Can't rename to same name": [
-        "სახელის გადარქმევა იგივე სახელზე შეუძლებელია"
-      ],
       "Can't write into folder": [
         "საქაღალდეში ჩაწერა შეუძლებელია"
       ],
       "Canceled": [
         "გაუქმებულია"
-      ],
-      "Cannot load links": [
-        "ბმულის ჩატვირთვის შეცდომა"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "ვერ იხსენებთ პაროლს? ჩვენ შეგვიძლია, მოგაშოროთ ამ გასაღებით დაშიფრული ყველა მონაცემი და, ამავე დროს, გაფრთხილებაც მოგაშოროთ."
@@ -5346,23 +4932,14 @@
       "Choose a plan that works best for you.": [
         "აირჩიეთ სატარიფო გეგმა, რომელიც საუკეთესოდ შეგესაბამებათ."
       ],
-      "Clear all search data": [
-        "ყველა ძებნის მონაცემების გასუფთავება"
-      ],
       "Clear data": [
         "მონაცემების გასუფთავება"
       ],
       "Clear encrypted search data": [
         "დაშიფრული ძებნის შედეგების გასუფთავება"
       ],
-      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "ბრაუზერის მონაცემების წაშლა ამ მოწყობილობაზე ასევე წაშლის ძებნის ინდექსსაც. ძებნის გამოსაყენებლად საჭიროა ყველა ფაილის ხელახალი ინდექსირება."
-      ],
       "Clears browser data related to the encrypted search.": [
         "ბრაუზერის დაშიფრულ ძებნასთან დაკავშირებული მონაცემების გასუფთავება."
-      ],
-      "Clears browser data related to the search.": [
-        "ასუფთავებს ბრაუზერის მონაცემებს, რომლებიც დაკავშირებულია ძიებასთან."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
@@ -5381,9 +4958,6 @@
       ],
       "Continue": [
         "გაგრძელება"
-      ],
-      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "გააგრძელეთ ${ DRIVE_APP_NAME }-ით სარგებლობა და მიიღეთ დისკი მოგვიანებით"
       ],
       "Copy the link to clipboard": [
         "ბმულის ბაფერში კოპირება"
@@ -5417,9 +4991,6 @@
       "Create in": [
         "რაში შევქმნა"
       ],
-      "Create links and share your files with others.": [
-        "შექმენით ბმულები და გააზიარეთ თქვენი ფაილები."
-      ],
       "Credit for the unused portion of your previous plan subscription": [
         "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
       ],
@@ -5432,9 +5003,6 @@
       "Custom email domains": [
         "ელფოსტის თქვენი დომენები"
       ],
-      "Dec": [
-        "დეკ"
-      ],
       "Decrypting files": [
         "ფაილების დაშიფვრა"
       ],
@@ -5446,10 +5014,6 @@
       ],
       "default email address": [
         "ნაგულისხმევი ელფოსტის მისამართი"
-      ],
-      "Delete locked drive": [
-        "დაბლოკილი დისკის წაშლა",
-        "დაბლოკილი დისკების წაშლა"
       ],
       "Details": [
         "დეტალები"
@@ -5482,9 +5046,6 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "გეგმის ჩამოწევა შეწყვეტს შეერთებას ფასიან ${ VPN_APP_NAME } სერვერებთან."
       ],
-      "Download ${ name } app": [
-        "გადმოწერეთ აპი ${ name }"
-      ],
       "Download current logs": [
         "მიმდინარე ჟურნალის გადმოწერა"
       ],
@@ -5505,9 +5066,6 @@
       ],
       "Drop file here to upload": [
         "ასატვირთად გადმოათრიეთ ფაილები აქ"
-      ],
-      "Drop files here": [
-        "ფაილები აქ დაყარეთ"
       ],
       "Drop files here to upload or click on the upload button": [
         "დაყარეთ ფაილები აქ, ასატვირთადნ, ან დააწკაპუნეთ ატვირთვის ღილაკზე"
@@ -5536,17 +5094,8 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "ელფოსტები, რომლებიც ნაგვის ყუთში ან სპამში 30 ან მეტი დღის წინ მოხვდნენ, ავტომატურად წაიშლება."
       ],
-      "Empty folder": [
-        "ცარიელი საქაღალდე"
-      ],
       "Enabling auto-deletion…": [
         "ავტოამოცნობის ჩართვა…"
-      ],
-      "Enabling drive search": [
-        "Drive-ზე ძებნის ჩართვა"
-      ],
-      "Encrypted search is here": [
-        "დაშიფრული ძებნა აქაა"
       ],
       "End-to-end encrypted": [
         "გამჭოლი შიფრაცია"
@@ -5597,12 +5146,6 @@
       "Expired": [
         "ვადაგასულია"
       ],
-      "Export diagnostic logs for technical support and troubleshooting": [
-        "დიაგნოსტიკის ჟურნალის გატანა ტექნიკური მხარდაჭერისა და პრობლემების გადაჭრისთვის"
-      ],
-      "Feb": [
-        "თებ"
-      ],
       "File could not be scanned": [
         "ფაილის სკანირება ვერ მოხერხდა"
       ],
@@ -5612,9 +5155,6 @@
       "File will not be updated": [
         "ფაილი არ განახლდება"
       ],
-      "Files and folders that others shared with you will appear here": [
-        "ფაილები და საქარალდეები, რომლებსაც სხვებს გაუზიარებთ, აქ გამოჩნდება"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "მხოლოდ ფაილები (ფოტოების, ${ DOCS_APP_NAME }-ის ან ${ SHEETS_APP_NAME }-ის გარეშე) — ჯამში 100 გბ-მდე, 100 000 ფაილი, და 50 გბ თითოეულ ფაილზე"
       ],
@@ -5623,9 +5163,6 @@
       ],
       "Folder will not be uploaded": [
         "საქაღალდე არ აიტვირთება"
-      ],
-      "Folders you sync from your computer will appear here.": [
-        "საქაღალდეები, რომლებსაც კომპიუტერიდან უკეთებთ სინქრონიზაციას, აქ გამოჩნდება"
       ],
       "for ${ price }": [
         "${ price }-ისთვის"
@@ -5639,23 +5176,8 @@
       "Free 5GB encrypted storage to get started": [
         "უფასო 5გბ დაშიფრული საცავი დასაწყისისთვის"
       ],
-      "from the version history?": [
-        "ვერსიის ისტორიიდან?"
-      ],
       "Geoblocking": [
         "გეოდაბლოკვა"
-      ],
-      "Get logs and other information for technical support and troubleshooting": [
-        "მიიღეთ ჟურნალი და სხვა ინფორმაცია ტექნიკური მხარდაჭერისთვის და პრობლემების აღმოსაფხვრელად"
-      ],
-      "Get the app to backup photos from your phone or upload them here.": [
-        "გადმოწერეთ აპი, რომ დაამარქაფოთ სურათები თქვენი ტელეფონიდან, ან აქ ატვირთოთ."
-      ],
-      "Get the desktop app to sync files from your computer.": [
-        "გადმოწერეთ აპი კომპიუტერისთვის, რათა ფაილები იქიდანაც დაასინქრონოთ."
-      ],
-      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
-        "გაიცანით ${ DRIVE_APP_NAME } და მიიღეთ 3გბ საცავი დამატებით! იმოქმედეთ დღესვე."
       ],
       "Google Pay mark": [
         "Google Pay-ის ნიშანი"
@@ -5669,14 +5191,8 @@
       "High Priority": [
         "მაღალი პრიორიტეტი"
       ],
-      "How does encrypted search work?": [
-        "როგორ მუშაობს დაშიფრული ძებნა?"
-      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "მე ამით კეთილსინდისიერად ვადასტურებ, რომ ანგარიშში მოცემული ინფორმაცია და განცხადებები სწორი და სრულია."
-      ],
-      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
-        "თუ ეს ფაილები სრულად არ არის გადმოწერილი ლოკალურად ${ deviceName }-ზე, მათზე წვდომას დაკარგავთ."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
@@ -5689,9 +5205,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
-      ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "თუ გაქვთ ამათგან ერთ-ერთი, განბლოკვის პროცესის დასაწყებად \nგააგრძელეთ ${ BRAND_NAME }-ის ანგარიშის დაყენება."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "თუ დაკარგეთ წვდომა თქვენს აუტენტიფიკატორ აპლიკაციაზე, შეგიძლიათ გამოიყენოთ ორფაქტორიანი აუტენტიფიკაციის აწყობისას მოწოდებული 16 სარეზერვო აღდგენის კოდიდან 1. ${ learnMoreLink }"
@@ -5739,38 +5252,8 @@
       "Included": [
         "შეიცავს"
       ],
-      "Index is empty.": [
-        "ინდექსი ცარიელია."
-      ],
-      "Indexed ${ first }": [
-        "დაინდექსებულია ${ first }"
-      ],
-      "Indexed ${ first } and ${ second }": [
-        "დაინდექსებულია ${ first } და ${ second }"
-      ],
-      "Indexed ${ first }, ${ second } and ${ third }": [
-        "დაინდექსებულია ${ first }, ${ second } და ${ third }"
-      ],
-      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
-        "დაინდექსებულია ${ first }, ${ second }, ${ third } და ${ fourth }"
-      ],
-      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "ინდექსირება მოულოდნელ მდგომარეობას წააწყდა და ვერ გაგრძელდება. აღსადგენად თავიდან შექმენით ინდექსი."
-      ],
-      "Indexing in progress": [
-        "მიმდინარეობს ინდექსირება"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "მიმდინარეობს ${ esProgress }-ე ჩანაწერის ინდექსირება (${ totalProgressToShow }-დან)"
-      ],
-      "Indexing search results…": [
-        "ძებნის შედეგების დაინდექსებაა…"
-      ],
       "Inherited from parent folder": [
         "მემკვიდრეობით მშობელი საქაღალდისგან"
-      ],
-      "Integrity issues found": [
-        "აღმოჩენილია მთლიანობის შეცდომები"
       ],
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
@@ -5781,17 +5264,8 @@
       "Internet connection restored.": [
         "ინტერნეტთან კავშირი აღდგენილია."
       ],
-      "Invitation confirmed": [
-        "მოწვევა დადასტურებულია"
-      ],
       "Invite link copied": [
         "მოსაწვევის ბმული დაკოპირდა"
-      ],
-      "iOS and Android Apps": [
-        "iOS-ის და Android-ის აპები"
-      ],
-      "Issues found": [
-        "აღმოჩენილი პრობლემები"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "როგორ ჩანს, ახლახან ${ uploadName }-ის ატვირთვა სცადეთ. თუ ატვირთვა წარუმატებლად დასრულდა, გთხოვთ ${ replaceFile }. თუ ატვირთვა ჯერ კიდევ მიმდინარეობს, მისი ჩანაცვლება პროცესს გააუქმებს."
@@ -5799,29 +5273,11 @@
       "It's better to have:": [
         "უკეთესია, გქონდეთ:"
       ],
-      "Items in the trash will stay here until you delete them permanently": [
-        "ჩანაწერები სანაგვე ყუთში მანამდე დარჩება, სანამ ხელით არ წაშლით"
-      ],
-      "Items moved to the trash will stay here until deleted": [
-        "ელემენტები, რომლებიც ნაგვის ყუთში გადაიტანეთ, იქ წაშლამდე დარჩება"
-      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "საუკეთესო გზაა, VPN ყოველთვის გამოიყენოთ. მაგრამ ეს ადგილებია, სადაც კიბერუსაფრთხოების საფრთხეები ყველაზე დიდია:"
       ],
-      "It’s easy and secure": [
-        "ეს ადვილია და დაცულია"
-      ],
-      "Jan": [
-        "იან"
-      ],
       "JCB logo": [
         "JCB ლოგო"
-      ],
-      "Jul": [
-        "ივლ"
-      ],
-      "Jun": [
-        "ივნ"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
@@ -5840,9 +5296,6 @@
       ],
       "Large imports can take several days.": [
         "დიდი მოცულობით ინფორმაციის შემოტანას შეიძლება რამდენიმე დღე დასჭირდეს."
-      ],
-      "Last week": [
-        "გასულ კვირას"
       ],
       "Learn more": [
         "მეტის ნახვა"
@@ -5868,9 +5321,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "მიმდინარეობს კალენდრის ჩატვირთვა. მოითმინეთ. გადაგამისამართებთ ჩვენს დაგეგმვის პლატფორმაზე Calendly ახალ ჩანართში."
       ],
-      "Loading links": [
-        "ბმულების ჩატვირთვა"
-      ],
       "Loading preview": [
         "გადახედვის ჩატვირთვა"
       ],
@@ -5880,14 +5330,8 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
-      "Makes your account safer": [
-        "თქვენს ანგარიშს უფრო უსაფრთხოს გახდის"
-      ],
       "Malware detected": [
         "აღმოჩენილია მავნე პროგრამა"
-      ],
-      "Mar": [
-        "მარ"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-ის ლოგო"
@@ -5895,9 +5339,6 @@
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო",
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო"
-      ],
-      "May": [
-        "მაისს"
       ],
       "Medium Priority": [
         "საშუალო პრიორიტეტი"
@@ -5914,29 +5355,8 @@
       "Monitor accounts": [
         "ანგარიშების მონიტორი"
       ],
-      "More": [
-        "მეტი"
-      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "საჯარო WiFi ქსელების უმეტესობა უსაფრთხოა, მაგრამ ზოგიერთს აკლია დაცვა, რაც კიბერსაფრთხეების წინაშე გაყენებთ. VPN შიფრავს თქვენს ტრაფიკს და გიცავთ თქვენ."
-      ],
-      "Move ${ dragCount } item": [
-        "${ dragCount } ელემენტის გადატანა",
-        "${ dragCount } ელემენტის გადატანა"
-      ],
-      "Move ${ fileCount } file": [
-        "${ fileCount } ფაილის გადატანა",
-        "${ fileCount } ფაილის გადატანა"
-      ],
-      "Move ${ folderCount } folder": [
-        "${ folderCount } საქაღალდის გადატანა",
-        "${ folderCount } საქაღალდის გადატანა"
-      ],
-      "Moving files": [
-        "ფაილების გადატანა"
-      ],
-      "My Links": [
-        "ჩემი ბმულები"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
@@ -5947,9 +5367,6 @@
       "No": [
         "არა"
       ],
-      "No Albums": [
-        "ალბომების გარეშე"
-      ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
       ],
@@ -5959,20 +5376,11 @@
       "No group found": [
         "ჯგუფი ნაპოვნი არაა"
       ],
-      "No issue found": [
-        "პრობლემების გარეშე"
-      ],
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
       ],
-      "No populator states found.": [
-        "შემვსები მდგომარეობები ვერ მოიძებნა."
-      ],
       "No results found": [
         "შედეგების გარეშე"
-      ],
-      "No synced folders": [
-        "სინქრონიზებული საქაღალდეების გარეშე"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "ატვირთული გასაღებებიდან დასაშიფრად ვერც ერთს ვერ გამოვიყენებთ. ამ მისამართზე შეტყობინებების გასაგზავნად ატვირთეთ სწორი გასაღები ან გამორთეთ \"ელფოსტების დაშიფვრა\"."
@@ -5983,15 +5391,6 @@
       "Not connected": [
         "მიერთებული არაა"
       ],
-      "Not enough storage space": [
-        "არ არის საკმარისი საცავის ადგილი"
-      ],
-      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "გაფრთხილება: მონაცემები ჯერ კიდევ შეიძლება ხელმისაწვდომი იყო იმ მოწყობილობებზე, სადაც ${ DRIVE_APP_NAME } დააყენეთ."
-      ],
-      "Nov": [
-        "ნოე"
-      ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
       ],
@@ -6001,20 +5400,11 @@
       "Numbers": [
         "რიცხვები"
       ],
-      "Oct": [
-        "ოქტ"
-      ],
       "of": [
         "-დან"
       ],
       "On public WiFi networks": [
         "ან საჯარო WiFi ქსელები"
-      ],
-      "One encrypted suite. Full business protection.": [
-        "ერთი დაშიფრული ნაკრები. სრული ბიზნეს-დაცვა."
-      ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "ერთ-ერთი თქვენი დაშიფრული დისკი დაბლოკილია. ალბათ, ახლახანს პაროლი შეცვალეთ."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "ერთი ან მეტი თქვენს მიერ სანდოდ მიჩნეული გასაღები მონიშნულ იქნა, როგორც \"გატეხილი\", მათი მფლობელების მიერ. გირჩევთ, ეს გასაღებები \"არასანდოდ\" მონიშნოთ."
@@ -6024,9 +5414,6 @@
       ],
       "or discover other features:": [
         "ან აღმოაჩინეთ სხვა ფუნქციები:"
-      ],
-      "Or use the \"+ New\" button": [
-        "ან გამოიყენეთ ღილაკი '+ ახალი'"
       ],
       "Organization size": [
         "ორგანიზაციის ზომა"
@@ -6058,30 +5445,11 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდები TLS-ით და შვეიცარიული კანონებითაა დაცული."
       ],
-      "Permanently delete all files in your locked drive": [
-        "თქვენს დაბლოკილ დისკზე ყველა ფაილის სამუდამოდ წაშლა"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline, მხოლოდ, უბრალო ტექსტის ფორმატთანაა თავსებადი."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME ავტომატურად აგზავნის შეტყობინებას, რედაქტორის მიმდინარე რეჟიმის გამოყენებით."
-      ],
-      "Photo is not saved to your library": [
-        "ფოტო თქვენს ბიბლიოთეკაში შენახული არაა"
-      ],
-      "Photo is set as album cover": [
-        "სურათი დაყენებულია ალბომის ყდად"
-      ],
-      "Photo saved to your Drive": [
-        "ფოტო შენახულია თქვენს დისკზე",
-        "ფოტოები შენახულია თქვენს დისკზე"
-      ],
-      "Photo was copied to stream and marked favorite there.": [
-        "სურათი დაკოპირდა ნაკადში და იქ მოინიშნა რჩეულად."
-      ],
-      "Photos have been successfully recovered.": [
-        "ფოტოების აღდგენა წარმატებით დასრულდა."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "სთხოვეთ მფლობელს, პირდაპირ მოგიწვიოთ დოკუმენტზე."
@@ -6162,12 +5530,6 @@
       "Preview of documents is not yet supported.": [
         "დოკუმენტების მინიატურა ჯერ მხარდაჭერილი არაა."
       ],
-      "Previous versions are kept for ${ retentionLabel }": [
-        "წინა ვერსიები ინახება ${ retentionLabel }"
-      ],
-      "Previous versions are not saved": [
-        "წინა ვერსიები შენხული არაა"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "ფასი შეიცავს ყველა შესაბამის ციკლზე-ბაზირებულ ფასდაკლებებს და ვადაგაუსვლელ კუპონებს, რომლებიც თქვენს ანგარიშზე გაქვთ შენახული."
       ],
@@ -6177,29 +5539,14 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "პირადი დათვალიერება (ან „ინკოგნიტო“ რეჟიმი) სასარგებლოა, მხოლოდ, თქვენი აქტივობის თქვენს მოწყობილობაზე დამალვისთვის. ის ხელს უშლის თქვენს ბრაუზერს ისტორიისა და ქუქი-ფაილების შენახვაში, მაგრამ არ გხდით უხილავს. თქვენს ინტერნეტ პროვაიდერს, ქსელის ადმინისტრატორს და ვებსაიტებს, რომლებსაც სტუმრობთ, კვლავ შეუძლიათ ნახონ, რას აკეთებთ ონლაინ."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "პირადი ძებნა ჩართულია. ახლა შეგიძლიათ, დახუროთ ეს ფანჯარა და მოძებნოთ ფაილები და საქაღალდეები."
-      ],
-      "Public link": [
-        "საჯარო ბმული"
-      ],
       "Public sharing of documents is not yet supported.": [
         "დოკუმენტების საჯაროდ გაზიარება ჯერ მხარდაჭერილი არაა."
-      ],
-      "Re-indexing in progress": [
-        "მიმდინარეობს ხელახალი ინდექსირება"
-      ],
-      "Ready to add some photos?": [
-        "მზად ბრძანდებით, სურათები დაამატოთ?"
       ],
       "RECOMMENDED": [
         "რეკომენდებულია"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "აღდგენის ინფორმაცია დარჩება ამ მოწყობილობაზე, თუ მას ხელით არ წაშლით."
-      ],
-      "Recovery process might take some time.": [
-        "აღდგენის პროცესს საკმაო დრო შეიძლება, დასჭირდეს."
       ],
       "Referral link copied to your clipboard": [
         "ბმის ბმული დაკოპირდა ბაფერში"
@@ -6213,26 +5560,14 @@
       "Report has been sent": [
         "ანგარიში გაგზავნილია"
       ],
-      "Request access, or switch to an account with access.": [
-        "მოითხოვეთ წვდომა, ან გადაერთეთ ანგარიშზე, რომელსაც წვდომა უკვე აქვს."
-      ],
       "Requested item doesn't exist anymore": [
         "მოთხოვნილი ელემენტი აღარ არსებობს"
       ],
       "Restore": [
         "აღდგენა"
       ],
-      "Restore Photos": [
-        "ფოტოების აღდგენა"
-      ],
       "Restored files ${ formattedDate }": [
         "აღდგენილია ფაილები ${ formattedDate }"
-      ],
-      "Restoring Photos... Please keep the tab open": [
-        "ფოტოების აღდგენა.. ნუ დახურავთ ამ ჩანართს"
-      ],
-      "Running diagnostics...": [
-        "მიმდინარეობს დიაგნოსტიკა..."
       ],
       "Saving...": [
         "შენახვა..."
@@ -6240,65 +5575,17 @@
       "Scan the QR code with your mobile device": [
         "დაასკანერეთ QR კოდი თქვენი მობილური მოწყობილობით"
       ],
-      "Scan to download": [
-        "დაასკანერეთ გადმოსაწერად"
-      ],
-      "Search cannot be enabled in this browser": [
-        "ამ ბრაუზერში ძებნის ჩართვა შეუძლებელია"
-      ],
-      "Search data is corrupted": [
-        "ძიების მონაცემები დაზიანებულია"
-      ],
-      "Search Enabled": [
-        "ძებნა ჩართულია"
-      ],
-      "Search enabled. You may now close this dialogue and search for files and folders.": [
-        "ძიება ჩართულია. ახლა შეგიძლიათ დახუროთ ეს დიალოგური ფანჯარა და მოძებნოთ ფაილები და საქაღალდეები."
-      ],
-      "Search encountered an internal error. Rebuild the index to recover.": [
-        "ძიებისას დაფიქსირდა შიდა შეცდომა. აღსადგენად თავიდან შექმენით ინდექსი."
-      ],
-      "Search engine error": [
-        "საძიებო სისტემის შეცდომა"
-      ],
-      "Search error": [
-        "ძებნის შეცდომა"
-      ],
-      "Search is in an invalid state": [
-        "ძიება არასწორ მდგომარეობაშია"
-      ],
-      "Search is ready. Your files have been indexed.": [
-        "ძიება მზადაა. თქვენი ფაილები დაინდექსებულია."
-      ],
-      "Search module is not available.": [
-        "ძიების მოდული მიუწვდომელია."
-      ],
       "Select a destination folder": [
         "აირჩიეთ სამიზნე საქაღალდე"
       ],
-      "Select a folder to make the copy in": [
-        "აირჩეთ საქაღალდე, სადაც ასლი შეიქმნება"
-      ],
       "Select a folder to move to.": [
         "აირჩიეთ საქაღალდე, სადაც გადაიტანთ."
-      ],
-      "Select all items for": [
-        "ყველა ელემენტის მონიშვნა ვისთვის"
-      ],
-      "Select an uploaded file or folder and create a link to it.": [
-        "აირჩიეთ ატვირთული ფაილი ან საქაღალდე და შექმენით მასზე ბმული."
-      ],
-      "Select item": [
-        "აირჩიეთ ელემენტი"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "აირჩიეთ მითითებულ მისამართზე ელფოსტის გაგზავნისას გამოყენებული ფორმატი."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "აირჩიეთ რომელი კალენდრები შემოტანა. ყოველი შემოტანილი კალენდრისთვის შეიქმნება ახალი კალენდარი თქვენს გეგმაში არსებული კალენდრების რაოდენობის მიხედვით."
-      ],
-      "Sep": [
-        "სექ"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA გადახდები ამჟამად ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
@@ -6321,23 +5608,8 @@
       "Setting up your new address…": [
         "თქვენი ახალი მისამართის მორგება…"
       ],
-      "Share files with links": [
-        "ფაილების ბმულით გაზიარება"
-      ],
-      "Shared": [
-        "გაზიარებული"
-      ],
-      "Shared by ": [
-        "გამზიარებელი "
-      ],
       "Shared link not found": [
         "გაზიარებული ბმული ვერ ვიპოვე"
-      ],
-      "Shared with me": [
-        "ჩემთვის გაზიარებული"
-      ],
-      "Shared with you": [
-        "თქვენთან გაზიარებული"
       ],
       "Signature check will be ignored": [
         "ხელმოწერის შემოწმების გამოტოვება"
@@ -6350,12 +5622,6 @@
       ],
       "Some items failed": [
         "ზოგიერთი ელემენტი ჩავარდა"
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "თქვენი ზოგიერთი ფაილი მიუწვდომელია. აღიდგინეთ წვდომა თქვენს ფაილებთან. ${ StartRecoveryButton }"
-      ],
-      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "ამ ალბომის ზოგიერთი ფოტო არ არის შენახული თქვენს ქრონიკაში. ამ ალბომის წაშლა სამუდამოდ წაშლის ამ ფოტოებს."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "ზოგიერთი ვებსაიტი და სტრიმინგის სერვისი ბლოკავს კონტენტს რეგიონის მიხედვით. VPN საშუალებას გაძლევთ გვერდი აუაროთ ამ შეზღუდვებს და თავისუფლად მიიღოთ წვდომა ინტერნეტთან."
@@ -6403,9 +5669,6 @@
       "that": [
         "ის"
       ],
-      "The albums you create are shown here.": [
-        "ალბომები, რომლებსაც შექმნით, აქ გამოჩნდება."
-      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "გადმოწერების რიცხვი მოიცავს როგორც მიმდინარე გადმოწერებს, ასევე ფაილების წინასწარ გადახედვის შემთხვევებს."
       ],
@@ -6418,17 +5681,11 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "ამ მისამართის მფლობელმა გამჭოლი დაშიფვრა გამორთო. იმისათვის, რომ შეგეძლოთ, ამ მისამართზე დაშიფრული შეტყობინებები გააგზავნოთ, მფლობელმა გამჭოლი დაშიფვრა თავიდან უნდა ჩართოს."
       ],
-      "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "საძიებო სისტემაში დაფიქსირდა შიდა შეცდომა. აღსადგენად თავიდან შექმენით ინდექსი."
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "გადამოწმების პროცესი ბრაუზერის ახალ ჩანართს გახსნის. გთხოვთ, გამორთოთ მხტუნარა ფანჯრებს მბლოკავები."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "გადასატანი ფაილები ჯერ კიდევ დარჩენილია. გადაწერების მმართველის დახურვა დაასრულებს ამ ოპერაციებს."
-      ],
-      "There is nothing to see here": [
-        "აქ არაფერია სანახავი"
       ],
       "This action will delete the link and revoke access for all users.": [
         "ეს ქმედება წაშლის ბმულს და გააუქმებს წვდომას ყველა მომხმარებლისთვის."
@@ -6438,9 +5695,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "ამ ბრაუზერს PDF-ის გადახედვის მხარდაჭერა არ გააჩნია. გადმოწერეთ ფაილი."
-      ],
-      "This can NOT be undone. Please enter the device name to confirm removal.": [
-        "ეს ქმედება შეუქცევადია. შეიყვანეთ მოწყბილობის სახელი წაშლის დასადასტურებლად."
       ],
       "This file appears to be empty:": [
         "ეს ფაილი ცარიელი ჩანს:",
@@ -6461,10 +5715,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "ეს ახლა თქვენი ${ defaultEmailAddress }-ია ახალი შეტყობინებების გასაგზავნად."
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "ეს ელემენტი არ არის შენახული თქვენს ფოტოების ბიბლიოთეკაში. თუ მას ამ ალბომიდან ამოშლით, მასზე წვდომას სამუდამოდ დაკარგავთ.",
-        "ზოგიერთი არჩეული ელემენტი არ არის შენახული თქვენს ფოტოების ბიბლიოთეკაში. თუ მათ ამ ალბომიდან ამოშლით, მათზე წვდომას სამუდამოდ დაკარგავთ."
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "ბმული მიდის ვებგვერდამდე, რომელმაც შეიძლება მოიპაროს თქვენი ისეთი ინფორმაცია, როგორიცაა პაროლები და საკრედიტო ბარათის დეტალები."
       ],
@@ -6473,9 +5723,6 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "ეს ნიშნავს, რომ თქვენი ISP და ვებსაიტები, რომლებსაც სტუმრობთ, ვერ დააკავშირებენ თქვენს პერსონალურ ინფორმაციას თქვენს ონლაინ აქტივობასთან."
-      ],
-      "This month": [
-        "ამ თვეში"
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "ეს უნიკალური კოდი შეიძლება გამოყენებულ იქნას ვებსაიტებისა და ISP-ების (ინტერნეტ პროვაიდერების) მიერ თქვენი მდებარეობისა და ბრაუზინგის ისტორიის თქვენს მოწყობილობასთან დასაკავშირებლად"
@@ -6488,9 +5735,6 @@
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "ეს ყველა დარჩენილ ატვირთვას გააუქმებს. გაუქმებული ფაილები ${ DRIVE_APP_NAME }-ში შენახული არ იქნება."
-      ],
-      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "ეს, მხოლოდ, ალბომს წაშლის. თქვენი ფოტოები დარჩება სადაც იყვნენ. ეს ქმედება შეუქცევადია."
       ],
       "This will permanently delete the file you uploaded.": [
         "ეს თქვენს ატვირთულ ფაილს სამუდამოდ წაშლის."
@@ -6510,20 +5754,11 @@
       "This will sign you out of all accounts currently logged in.": [
         "ეს გამოგიყვანთ ყველა ანგარიშიდან, სადაც შესული ბრძანდებით."
       ],
-      "Time": [
-        "დრო"
-      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "გადახდის დასასრულებლად, გამოაგზავნეთ ${ btcAmountBold } ქვემორე მისამართზე."
       ],
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "ამ ფაილების ჩამოსატვირთად, გახსენით ისინი ${ DOCS_APP_NAME }-ში ან ${ SHEETS_APP_NAME }-ში და მოახდინეთ მათი ექსპორტი."
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "ნამდვილად პირადი ძებნის ჩასართავად ${ DRIVE_APP_NAME }-ს თქვენი ფაილების ლოკალური ინდექსირება სჭირდება."
-      ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "ნამდვილი პირადი ძებნისთვის ჩვენ თქვენი ფაილების ლოკალური დაინდექსება გვჭირდება. თქვენ შეგიძლიათ ${ DRIVE_APP_NAME } ჩვეულებრივ გამოიყენოთ. როცა პროცესი დასრულდება, შეგატყობინებთ."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "სპამისაგან თავდასაცავად გთხოვთ, დაამტკიცოთ, რომ ადამიანი ხართ."
@@ -6546,9 +5781,6 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "მისამართის დადასტურების გამოსაყენებლად უნდა ენდოთ ერთ ან მეტ საჯარო გასაღებს, მათ შორის, რომლის გამოყენებაც გსურთ გასაგზავნად. ეს ხელს უშლის დაშიფვრის გასაღებების გაყალბებას."
       ],
-      "Today": [
-        "დღეს"
-      ],
       "Total email addresses": [
         "ელფოსტები სულ"
       ],
@@ -6567,29 +5799,17 @@
       "Trash": [
         "ნაგვის ყუთი"
       ],
-      "Trash is empty": [
-        "სანაგვე ყუთი ცარიელია"
-      ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "ენდეთ \"${ activeSignerText }\" გასაღებს ამ კონტაქტიდან მიღებული ახალი შეტყობინებების ვერიფიკაციისთვის."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
       ],
-      "Try searching by file name, date, or type.": [
-        "სცადეთ, ფაილი სახელით, თარიღით ან ტიპით მოძებნოთ."
-      ],
       "Unexpected download error": [
         "გადმოწერის მოულოდნელი შეცდომა"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "სამწუხაროდ, როგორც ჩანს, ფაილის ან მისი მონაცემების ნაწილის გაშიფვრა შეუძლებელია."
-      ],
-      "Unknown date": [
-        "უცნობი თარიღი"
-      ],
-      "Unlock drive to recover files": [
-        "ფაილების აღსადგენად განბლოკეთ დისკი"
       ],
       "Unsaved changes": [
         "შეუნახავი ცვლილებები"
@@ -6599,12 +5819,6 @@
       ],
       "Unsupported file type for Photos": [
         "ფაილის მხარდაუჭერელი ტიპი ფოტოებისთვის"
-      ],
-      "Update required": [
-        "საჭიროა განახლება"
-      ],
-      "Updating drive search...": [
-        "Drive-ზე ძებნის განახლება..."
       ],
       "Upgrade anytime to bring over the rest": [
         "განაახლეთ ნებისმიერ დროს, რათა გადმოიტანოთ დანარჩენი"
@@ -6620,9 +5834,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "ასწიეთ სატარიფო გეგმა ${ planTitle }-ის ფუნქციების შესანარჩუნებლად."
-      ],
-      "upgrade your storage": [
-        "ასწიეთ თქვენი საცავი"
       ],
       "Upload Failed": [
         "ატვირთვა ჩავარდა"
@@ -6654,12 +5865,6 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "შემოწმებისთვის ახალი ჩანართი გაიხსნება. გთხოვთ გამორთოთ მხტუნარების მბლოკავები. თანხა, რომელიც ბარათის შესამოწმებლად ჩამოგეჭრებათ, მომენტალურად დაგიბრუნდებათ."
       ],
-      "Version is deleted": [
-        "ვერსია წაიშალა"
-      ],
-      "Version is restored": [
-        "ვერსია აღდგენლია"
-      ],
       "Version number successfully copied to clipboard": [
         "ვერსიის ნომერი წარმატებით დაკოპირდა ბუფერში"
       ],
@@ -6672,18 +5877,8 @@
       "Waiting": [
         "ველოდები"
       ],
-      "Want to sync files faster?": [
-        "გნებავთ უფრო სწრაფი სინქრონიზაცია?"
-      ],
       "Warning": [
         "გაფრთხილება"
-      ],
-      "Way to go, you've just increased your storage to 5 GB!": [
-        "სწორად იქცევით. თქვენ ახლახან გაზარდეთ თქვენი საცავი 5 გბ-ით!"
-      ],
-      "We couldn't save this photo to your Drive": [
-        "ჩვენ ვერ შევძელით ამ ფოტოს შენახვა თქვენს დისკზე",
-        "ჩვენ ვერ შევძელით რამდენიმე ფოტოს შენახვა თქვენს დისკზე"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "ჩვენ ვერ შევძელით იმის შემოწმება, რომ ${ nameAuthor }-მა ატვირთა ${ nodeName }. შესაძლოა შემდეგი იყოს შეცვლილი: ფაილის მონაცემთა რიგი. გახსენით მხოლოდ იმ შემთხვევაში, თუ ენდობით მას."
@@ -6699,10 +5894,6 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "თქვენი გადახდების დასაცავად ჩვენ ვიყენებთ 3-D Secure-ს"
-      ],
-      "We were not able to add this photo to your album": [
-        "ჩვენ ვერ შევძელით ამ ფოტოს დამატება თქვენს ალბომში",
-        "ჩვენ ვერ შევძელით ზოგიერთი ფოტოს დამატება თქვენს ალბომში"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "ამ ტრანზაქციის დასასრულებლად გადამისამართებული იქნებით PayPal-ზე ბრაუზერის ახალ ჩანართში. თუ იყენებთ მხტუნარების მბლოკავებს, გთხოვთ, გამორთოთ ისინი."
@@ -6722,14 +5913,8 @@
       "Week": [
         "კვირა"
       ],
-      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
-        "კეთილი იყოს თქვენი მობრძანება ${ DRIVE_APP_NAME }-ში. პირველი 10 წუთის განმავლობაში ნებისმიერი ფაილი, რომელსაც ატვირთავთ, არ ჩაითვლება თქვენი საცავის ლიმიტში."
-      ],
       "What do you want to do?": [
         "რისი გაკეთება გნებავთ?"
-      ],
-      "What would you like to do?": [
-        "რას იზამდით?"
       ],
       "When working remotely": [
         "დისტანციურად მუშაობისას"
@@ -6737,17 +5922,11 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "როცა მიუერთდებით VPN-ს, ის იყენებს დაშიფვრის ტექნოლოგიებს, რომ თქვენი IP მისამართი (თქვენი მოწყობილობისთვის მინიჭებული ნიკალური კოდი) დამალოს."
       ],
-      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
-        "როდესაც ამოშლით მოწყობილობას „${ deviceName }“ სინქრონიზებული მოწყობილობებიდან, ამ მოწყობილობიდან „ჩემს კომპიუტერებში“ დამატებული ყველა საქაღალდე სამუდამოდ წაიშლება ${ DRIVE_APP_NAME }-დან."
-      ],
       "who": [
         "ვინ"
       ],
       "Who has access": [
         "ვის აქვს წვდომა"
-      ],
-      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
-        "${ formattedRevisionDate }-დან ამ ვერსიამდე აღდგება. ყველა დანარჩენი ვერსია ჯერ კიდევ დაგრჩებათ."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "გნებავთ შემოწმების ახალი კოდის მიღება, თუ შემოწმების ალტერნატიულ მეთოდს გამოიყენებთ?"
@@ -6755,33 +5934,17 @@
       "Would you like to receive a new verification code?": [
         "გნებავთ შემოწმების ახალი კოდის მიღება?"
       ],
-      "Would you like to restore your files?": [
-        "გნებავთ თქვენი ფაილების აღდგენა?"
-      ],
-      "Would you like to save it before removing?": [
-        "გნებავთ მისი შენახვა წაშლამდე?",
-        "გნებავთ მათი შენახვა წაშლამდე?"
-      ],
-      "Would you like to save them before removing?": [
-        "გნებავთ მათი შენახვა წაშლამდე?"
-      ],
       "Writing assistant": [
         "წერაში დამხმარე"
       ],
       "Yes": [
         "დიახ"
       ],
-      "Yesterday": [
-        "გუშინ"
-      ],
       "you": [
         "თქვენ"
       ],
       "You already have a free account": [
         "თქვენ უკვე გაქვთ უფასო ანგარიში"
-      ],
-      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "აპირებთ, გახვიდეთ გაზიარებული ელემენტიდან. მასთან წვდომა აღარ გექნებათ, თუ მფლობელი თავიდან არ გაგიზიარებთ მას."
       ],
       "You are about to open another browser tab and visit:": [
         "თქვენ ახლა ბრაუზერის ახალ ჩანართს გახსნით და ეწვევით:"
@@ -6827,15 +5990,8 @@
       "You cannot undo this action.": [
         "თქვენ არ შეგიძლიათ ამ ქმედების დაბრუნება."
       ],
-      "You don't have permission to copy files to this folder.": [
-        "ამ საქაღალდეში ფაილების დასაკოპირებლად ნებართვა არ გაქვთ."
-      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "თქვენ მიიღებთ გაფრთხილებას, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
-      ],
-      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "დაგრჩათ ${ expiresInDays } დღე, რათა გამოითხოვოთ თქვენი 3გბ ბონუსი და ",
-        "დაგრჩათ ${ expiresInDays } დღე, რათა გამოითხოვოთ თქვენი 3გბ ბონუსი და "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "გაქვთ საცდელი ${ planTitle }-ის გამოწერა. თუ გნებავთ, გააგრძელოთ თქვენი გამოწერა მას შემდეგ, რაც სატესტო პერიოდი ამოიწურება, დაამატეთ გადახდის მეთოდი."
@@ -6849,18 +6005,11 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "სატარიფო გეგმის ჩამოწევამდე საჭიროა ${ MAIL_APP_NAME }-ის მომხმარებლების, მისამართების და ხელით მითითებული დომენების წაშლა."
       ],
-      "You need access": [
-        "გჭირდებათ წვდომა"
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "ამ თარიღის მოსვლისას ${ planTitle }-სთან და მის ფუნქციებთან წვდომას დაკარგავთ."
       ],
       "You will lose all unsaved changes.": [
         "დაკარგავთ ყველა შეუნახავ ცვლილებას."
-      ],
-      "You will need to save it again from the public link page.": [
-        "საჭიროა, ის თავიდან შეინახოთ საჯარო ბმულის გვერდიდან.",
-        "საჭიროა, ისინი თავიდან შეინახოთ საჯარო ბმულის გვერდიდან."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "თქვენ არ გადაიხდით, თუ გააუქმებთ თარიღამდე ${ trialEndsOnFormatted }."
@@ -6899,9 +6048,6 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "თქვენი ანგარიში ამჟამად კონფიგურირებულია დღგ-ს უკუდაბეგვრის სქემის გამოსაყენებლად. ეს არ არის მხარდაჭერილი არჩეული პაკეტისთვის. გასაგრძელებლად, ან ამოშალეთ დღგ-ს ნომერი ბილინგის მისამართიდან, ან აირჩიეთ სხვა პაკეტი."
       ],
-      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "თქვენს ბრაუზერში ადგილი ამოიწურა ძიებისთვის ფაილების ინდექსირებისას. გაათავისუფლეთ საცავი, შემდეგ კი თავიდან შექმენით ინდექსი."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "მონაცემების შემოტანა ${ importedEmailAddressStrong }-დან ${ BRAND_NAME }-ის თქვენს ანგარიშზე მზადაა დასაწყებად."
       ],
@@ -6913,12 +6059,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "თქვენი ელფოსტა, მხოლოდ, ერთხელ შესამოწმებლად იქნება გამოყენებული."
-      ],
-      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
-        "მიმდინარეობს თქვენი ფაილების ხელახალი ინდექსირება. შეგიძლიათ გააგრძელოთ ძებნა — შედეგები შესაძლოა არასრული იყოს დასრულებამდე. ჩვენ შეგატყობინებთ, როდესაც ეს დასრულდება."
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "თქვენი ფაილები მიუწვდომელია პაროლის თავიდან დაყენების გამო. წვდომის დასაბრუნელად ატვირთეთ დაშიფვრის ძველი გასაღები. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება"
@@ -6967,12 +6107,6 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "თქვენი გეგმა 7 დღეში 10 ვერსიითაა შეზღუდული"
-      ],
-      "Your previous password": [
-        "თქვენი წინა პაროლი"
-      ],
-      "Your previous recovery phrase": [
-        "თქვენი წინა აღდგენის ფრაზა"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება ${ cycle } თვეში ერთხელ.",
@@ -7066,17 +6200,8 @@
       ]
     },
     "Label": {
-      "# of downloads": [
-        "გადმოწერების #"
-      ],
-      "${ albumProgress.added } of ${ albumProgress.total }": [
-        "${ albumProgress.added } ${ albumProgress.total }-დან"
-      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-ის მომხმარებელი"
-      ],
-      "${ downloads } downloads": [
-        "${ downloads } ჩამოტვირთვა"
       ],
       "${ n } month": [
         "${ n } თვე",
@@ -7092,9 +6217,6 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } სიმბოლო"
-      ],
-      "(Expired)": [
-        "(ვადაგასულია)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
@@ -7147,9 +6269,6 @@
       "App password": [
         "აპის პაროლი"
       ],
-      "Applications in a business setting": [
-        "აპლიკაციები ბიზნეს გარემოში"
-      ],
       "Apply to all duplicated files": [
         "ყველა დუბლირებულ ფაილზე გადატარება"
       ],
@@ -7158,9 +6277,6 @@
       ],
       "Apply to all unverified items": [
         "ყველა შეუმოწმებელ ელემენტზე გადატარება"
-      ],
-      "Asset": [
-        "აქტივი"
       ],
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
@@ -7267,14 +6383,8 @@
       "Country": [
         "ქვეყანა"
       ],
-      "Create ${ BRAND_NAME } account": [
-        "შექმენით ${ BRAND_NAME }-ის ანგარიში"
-      ],
       "Created": [
         "შექმნილია"
-      ],
-      "Created ${ created }": [
-        "შექმნილია ${ created }"
       ],
       "Credits": [
         "კრედიტები"
@@ -7282,33 +6392,14 @@
       "Delete": [
         "წაშლა"
       ],
-      "Delete drive?": [
-        "წავშალო დისკი?",
-        "წავშალო დისკები?"
-      ],
       "Delete link and remove access for everyone": [
         "ბმულის წაშლა და ყველასთვის წვდომის შეწყვეტა"
       ],
       "Delete recovery-related information.": [
         "აღდგენის ინფორმაციის წაშლა."
       ],
-      "Deleted": [
-        "წაშლილია"
-      ],
-      "Deleted ${ deleted }": [
-        "წაშლილია ${ deleted }"
-      ],
       "Device": [
         "მოწყობილობა"
-      ],
-      "Device #${ position }": [
-        "მოწყობილობა #${ position }"
-      ],
-      "Device name": [
-        "მოწყობილობის სახელი"
-      ],
-      "Device: ${ name }": [
-        "მოწყობილობა: ${ name }"
       ],
       "Disable this link on a specific date": [
         "ამ ბმულის გამორთვა მითითებულ თარიღზე"
@@ -7364,12 +6455,6 @@
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
-      "Enter device name": [
-        "შეიყვანეთ მოწყობილობის სახელი"
-      ],
-      "Environment compatible": [
-        "გარემო თავსებადია"
-      ],
       "Exact host matching": [
         "ზუსტი ჰოსტის შესაბამისობა"
       ],
@@ -7379,14 +6464,8 @@
       "Expired": [
         "ვადაგასულია"
       ],
-      "Expired on ${ formatted }": [
-        "ვადა ამოიწურა ${ formatted }"
-      ],
       "Expires": [
         "ვადა"
-      ],
-      "Expires ${ formatted }": [
-        "ვადა იწურება ${ formatted }"
       ],
       "Expiry": [
         "ვადა"
@@ -7454,12 +6533,6 @@
       "Include message and file name in invite email": [
         "მოსაწვევის ფაილში შეტყობინებისა და ფაილის სახელის დართვა"
       ],
-      "Index kinds": [
-        "ინდექსის ტიპები"
-      ],
-      "Indexing": [
-        "მიმდინარეობს ინდექსირება"
-      ],
       "Integrated 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
       ],
@@ -7490,9 +6563,6 @@
       "Location": [
         "მდებარეობა"
       ],
-      "Location: ${ item.location }": [
-        "მდებარეობა: ${ item.location }"
-      ],
       "Log in or sign up ": [
         "შედით, ან დარეგისტრირდით "
       ],
@@ -7514,9 +6584,6 @@
       "Modified": [
         "შეცვლილია"
       ],
-      "Modified ${ modified }": [
-        "შეცვლილია ${ modified }"
-      ],
       "Move to Archive": [
         "არქივში გადატანა"
       ],
@@ -7526,9 +6593,6 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
       ],
-      "My Albums": [
-        "ჩემი ალბომები"
-      ],
       "Name": [
         "სახელი"
       ],
@@ -7537,9 +6601,6 @@
       ],
       "Never": [
         "არასოდეს"
-      ],
-      "Never expires": [
-        "ვადა არასდროს ეწურება"
       ],
       "Never fill on this exact URL": [
         "არასოდეს შეავსო ამ ზუსტ URL-ზე"
@@ -7574,9 +6635,6 @@
       "Other": [
         "სხვა"
       ],
-      "Outdated version": [
-        "მოძველებული ვერსია"
-      ],
       "Parent domain and subdomains (default)": [
         "მშობელი დომენი და ქვედომენები (ნაგულისხმევი)"
       ],
@@ -7595,17 +6653,11 @@
       "Payment method": [
         "გადახდის მეთოდები"
       ],
-      "Pending invitation": [
-        "მომლოდინე მოწვევა"
-      ],
       "PGP scheme": [
         "PGP-ის სქემა"
       ],
       "Phone number": [
         "ტელეფონის ნომერი"
-      ],
-      "Photo": [
-        "ფოტო"
       ],
       "Please provide full details to help us take appropriate action": [
         "გამოგვიგზავნეთ, რაც შეიძლება, მეტი დეტალი, რათა შესაბამისი ზომები მივიღოთ"
@@ -7649,9 +6701,6 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, ჟენევა"
       ],
-      "Searchable": [
-        "ძებნადი"
-      ],
       "Select type of abuse": [
         "აირჩიეთ კანონის დარღვევის ტიპი"
       ],
@@ -7661,35 +6710,11 @@
       "Set a password to limit access via link": [
         "დააყენეთ პაროლი ბმულით წვდომის შესაზღუდად"
       ],
-      "Set recovery method": [
-        "აღდგენის მეთოდის დაყენება"
-      ],
-      "Share a file, folder, or album": [
-        "გააზიარეთ ფაილი, საქაღალდე, ან ალბომი"
-      ],
       "Shared": [
         "გაზიარებული"
       ],
-      "Shared by": [
-        "გამზიარებელი"
-      ],
-      "Shared by ${ sharedBy }": [
-        "გაზიარებულია ${ sharedBy }-ის მიერ"
-      ],
-      "Shared by Public link": [
-        "გაზიარებულია საჯარო ბმულით"
-      ],
-      "Shared on": [
-        "გაზიარებულია"
-      ],
-      "Shared on ${ sharedOn }": [
-        "გააზიარეს ${ sharedOn }"
-      ],
       "Shared with me": [
         "ჩემთვის გაზიარებული"
-      ],
-      "Show indexing progress of Encrypted Search": [
-        "დაშიფრული ძებნის ინდექსირების მიმდინარეობის ჩვენება"
       ],
       "Sign emails": [
         "ელფოსტის ხელმოწერა"
@@ -7748,9 +6773,6 @@
       "Theme": [
         "თემა"
       ],
-      "This will permanently delete all files in your locked drive.": [
-        "თქვენს ჩაკეტილ დისკზე ყველა ფაილი სამუდამოდ წაიშლება."
-      ],
       "Thomas": [
         "მზევინარ"
       ],
@@ -7763,29 +6785,14 @@
       "Type": [
         "ტიპი"
       ],
-      "Unlock drive": [
-        "საცავის განბლოკვა"
-      ],
-      "Unlock drive (recommended)": [
-        "საცავის განბლოკვა (რეკომენდებულია)"
-      ],
-      "Unlock later": [
-        "ბლოკის მოგვიანებით მოხსნა"
-      ],
       "Upload picture": [
         "სურათის ატვრთვა"
-      ],
-      "Upload your first file": [
-        "ატვირთეთ თქვენი პირველი ფაილი"
       ],
       "Uploaded by": [
         "ატვირთული ფაილის მფლობელი"
       ],
       "URL wildcard pattern": [
         "URL wildcard შაბლონი"
-      ],
-      "User opted in": [
-        "მომხმარებელმა მოიწონა"
       ],
       "Username": [
         "მომხმარებლის სახელი"
@@ -7798,9 +6805,6 @@
       ],
       "Viewer": [
         "მთვალიერებელი"
-      ],
-      "Visible columns:": [
-        "ხილული სვეტები:"
       ],
       "Vulnerable": [
         "მოწყვლადი"
@@ -7816,9 +6820,6 @@
       ],
       "What happened?": [
         "რა მოხდა?"
-      ],
-      "Yes, I want to permanently delete my old files": [
-        "დიახ, მე მინდა ჩემი ფაილების სამუდამოდ წაშლა"
       ],
       "Your alias": [
         "თქვენი ფსევდონიმი"
@@ -7910,9 +6911,6 @@
       "Add a gift code": [
         "ჩასვით სასაჩუქრე კოდი"
       ],
-      "Albums": [
-        "ალბომები"
-      ],
       "clearing your browser cache": [
         "ბრაუზერის ქეშის გასუფთავება"
       ],
@@ -7973,9 +6971,6 @@
       "Pay invoice": [
         "ინვოისის გადახდა"
       ],
-      "Photos": [
-        "ფოტოები"
-      ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
       ],
@@ -7990,12 +6985,6 @@
       ],
       "settings": [
         "მორგება"
-      ],
-      "Shared": [
-        "გაზიარებული"
-      ],
-      "Shared with me": [
-        "ჩემთვის გაზიარებული"
       ],
       "Terms and conditions": [
         "წესები და პირობები"
@@ -9387,41 +8376,14 @@
       ]
     },
     "Notification": {
-      "\"${ ellipsedName }\" copied": [
-        "„${ ellipsedName }“ კოპირებულია"
-      ],
       "\"${ ellipsedName }\" created successfully": [
         "„${ ellipsedName }“ წარმატებით შეიქმნა"
-      ],
-      "\"${ ellipsedName }\" deleted": [
-        "„${ ellipsedName }“ წაშლილია"
-      ],
-      "\"${ ellipsedName }\" deleted permanently from trash": [
-        "„${ ellipsedName }“ სამუდამოდ წაიშალა ნაგვიდან"
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "„${ ellipsedName }“-ის შექმნა ჩავარდა"
       ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "„${ ellipsedName }“-ის წაშლა ჩავარდა"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "„${ ellipsedName }“-ის ნაგვიდან სამუდამოდ წაშლა ჩავარდა"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "„${ ellipsedName }“-ის გადატანა ჩავარდა"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "„${ ellipsedName }“-ის ნაგვიდან აღდგენა ჩავარდა"
-      ],
       "\"${ ellipsedName }\" moved": [
         "„${ ellipsedName }“ გადატანილია"
-      ],
-      "\"${ ellipsedName }\" restored from trash": [
-        "„${ ellipsedName }“ აღდგენილია ნაგვიდან"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "„${ ellipsedName }“ წარმატებით გადატანილ იქნა"
       ],
       "\"${ fileName }\" shared": [
         "„${ fileName }“ გაზიარებულია"
@@ -9441,33 +8403,13 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }-ს სახელი წარმატებით გადაერქვა"
       ],
-      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
-        "${ addedUids.length } ფოტო დაემატა ალბომში „${ albumName }“",
-        "${ addedUids.length } ფოტო დაემატა ალბომში „${ albumName }“"
-      ],
       "${ count } item failed to be decrypted": [
         "${ count } ელემენტის გაშიფვრის შეცდომა",
         "${ count } ელემენტის გაშიფვრის შეცდომა"
       ],
-      "${ errors.length } item failed to be copied": [
-        "${ errors.length } ელემენტის კოპირება ჩავარდა",
-        "${ errors.length } ელემენტის კოპირება ჩავარდა"
-      ],
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } ელემენტის წაშლა ჩავარდა",
         "${ errors.length } ელემენტის წაშლა ჩავარდა"
-      ],
-      "${ errors.length } item failed to be trashed": [
-        "${ errors.length } ელემენტის ნაგვის ყუთში გადატანა ჩავარდა",
-        "${ errors.length } ელემენტის ნაგვის ყუთში გადატანა ჩავარდა"
-      ],
-      "${ numberOfItems } copied item moved to trash": [
-        "${ numberOfItems } დაკოპირებული ელემენტი გადატანილია ნაგვის ყუთში",
-        "${ numberOfItems } დაკოპირებული ელემენტი გადატანილია ნაგვის ყუთში"
-      ],
-      "${ numberOfItems } item copied": [
-        "კოპირებულია ${ numberOfItems } ელემენტი",
-        "კოპირებულია ${ numberOfItems } ელემენტი"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } ელემენტის წაიშალა",
@@ -9509,31 +8451,17 @@
         "${ numberOfItems } ელემენტი აღდგენილია ნაგვის ყუთიდან",
         "${ numberOfItems } ელემენტი აღდგენილია ნაგვის ყუთიდან"
       ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } ელემენტის გადატანა წარმატებულია",
-        "${ numberOfItems } ელემენტის გადატანა წარმატებულია"
-      ],
       "${ reason } has been disabled": [
         "${ reason } გაითიშა"
       ],
       "${ reason } has been enabled": [
         "${ reason } ჩაირთო"
       ],
-      "${ removed } photo have been removed from \"${ albumName }\"": [
-        "${ removed } ფოტო ამოიშალა ალბომიდან „${ albumName }“",
-        "${ removed } ფოტო ამოიშალა ალბომიდან „${ albumName }“"
-      ],
       "Access for the member removed": [
         "წვდომა ამ წევრისთვის წაიშალა"
       ],
       "Access updated": [
         "წვდომა განახლდა"
-      ],
-      "Album renamed successfully": [
-        "ალბომის სახელი წარმატებით შეიცვალა"
-      ],
-      "All items deleted permanently from trash": [
-        "ყველა ელემენტი სამუდამოდ წაიშალა ნაგვის ყუთიდან"
       ],
       "Cannot load link": [
         "ბმულის ჩატვირთვის შეცდომა"
@@ -9547,9 +8475,6 @@
       "Contact group updated": [
         "კონტაქტების ჯგუფი განახლდა"
       ],
-      "Copy of \"${ ellipsedName }\" moved to trash": [
-        "„${ ellipsedName }“-ის ასლი გადატანილია ნაგავში"
-      ],
       "Device failed to be removed": [
         "მოწყობილობის წაშლის შეცდომა"
       ],
@@ -9562,12 +8487,6 @@
       "Device renamed": [
         "მოწყობილობის სახელი შეიცვალა"
       ],
-      "Encrypted search activated": [
-        "დაშიფრული ძებნა გააქტიურებულია"
-      ],
-      "Error while listing devices": [
-        "შეცდომა მოწყობილობების სიის შექმნისას"
-      ],
       "Failed to accept share invitation": [
         "ზიარის მოსაწვევზე დათანხმება ჩავარდა"
       ],
@@ -9579,18 +8498,6 @@
       ],
       "Failed to reject share invitation": [
         "ზიარის მოსაწვეის უარყოფა ჩავარდა"
-      ],
-      "Failed to remove device": [
-        "მოწყობილობის წაშლა ჩავარდა"
-      ],
-      "Failed to remove the file": [
-        "ფაილის წაშლა ჩავარდა"
-      ],
-      "Failed to rename device": [
-        "მოწყობილობის სახელის გადარქმევა ჩავარდა"
-      ],
-      "File removed": [
-        "ფაილი წაიშალა"
       ],
       "Invitation's email was sent again": [
         "მოსაწვევის ელფოსტა კიდევ გაიგზავნა"
@@ -9613,14 +8520,6 @@
       "Public link access updated": [
         "საჯარო ბმულის წვდომა განახლდა"
       ],
-      "Selected item was not removed from your list": [
-        "მონიშნული ელემენტი თქვენი სიიდან არ წაშლილა",
-        "მონიშნული ელემენტები თქვენი სიიდან არ წაშლილა"
-      ],
-      "Selected item was successfully removed from your list": [
-        "არჩეული ელემენტი წარმატებით ამოიშალა თქვენი სიიდან",
-        "არჩეული ელემენტები წარმატებით ამოიშალა თქვენი სიიდან"
-      ],
       "Setting updated. Editors can change permissions and share.": [
         "პარამეტრი განახლდა. რედაქტორებს შეუძლიათ ნებართვების შეცვლა და გაზიარება."
       ],
@@ -9636,17 +8535,8 @@
       "Stopping the sharing of this item has failed": [
         "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
       ],
-      "The item was not added to your drive": [
-        "ელემენტი არ დამატებულა თქვენს Drive-ზე"
-      ],
-      "The item was successfully added to your drive": [
-        "ელემენტი წარმატებით დაემატა თქვენს Drive-ზე"
-      ],
       "The link to your item was deleted": [
         "ბმული თქვენს ელემენტამდე წაიშალა"
-      ],
-      "This secure link expired, please change expire date in sharing settings": [
-        "ამ უსაფრთხო ბმულის ვადა ამოიწურა. შეცვალეთ ვადა გაზიარების პარამეტრებში"
       ],
       "Trash failed to be emptied": [
         "ნაგვის ყუთის გასუფთავების შეცდომა"
@@ -9657,9 +8547,6 @@
       "Your ${ BRAND_NAME } address is ready to use": [
         "თქვენი ${ BRAND_NAME } მისამართი მზადაა გამოსაყენებლად"
       ],
-      "Your old files will be deleted in 72 hours": [
-        "თქვენი ძველი ფაილები 72 საათში წაიშლება"
-      ],
       "Your settings have been changed successfully": [
         "პარამეტრები წარმატებით შეიცვალა"
       ]
@@ -9667,11 +8554,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "ზოგიერთი გამოსახულება არ აიტვირთა, რადგან მიმდინარე მონიშნულებში ფაილის სახელები მეორდება."
-      ]
-    },
-    "Notitication": {
-      "Album renamed successfully": [
-        "ალბომს სახელი წარმატებით გადაერქვა"
       ]
     },
     "Oauth instructions": {
@@ -9817,169 +8699,6 @@
         "კეთილი იყოს თქვენი მობრძანება ${ appName }-ში"
       ]
     },
-    "Onboarding Action": {
-      "Continue": [
-        "გაგრძელება"
-      ],
-      "Create a document": [
-        "დოკუმენტის შექმნა"
-      ],
-      "Get started": [
-        "დაიწყეთ"
-      ],
-      "Install and continue": [
-        "დაყენება და გაგრძელება"
-      ],
-      "Install later": [
-        "მოგვიანებით დაყენება"
-      ],
-      "Invite members": [
-        "წევრების მოწვევა"
-      ],
-      "Maybe Later": [
-        "მოგვიანებით"
-      ],
-      "Maybe later": [
-        "მოგვიანებით"
-      ],
-      "Select theme": [
-        "აირჩიეთ თემა"
-      ],
-      "Skip": [
-        "გამოტოვება"
-      ],
-      "Skip for now": [
-        "გამოტოვება"
-      ],
-      "Try the app": [
-        "აპის ცდა"
-      ],
-      "Upload file": [
-        "ფაილის ატვირთვა"
-      ],
-      "Upload folder": [
-        "საქაღალდის ატვირთვა"
-      ],
-      "Upload more files": [
-        "მეტი ფაილის ატვირთვა"
-      ]
-    },
-    "Onboarding Info": {
-      "10 minutes": [
-        "10 წუთი"
-      ],
-      "Access your files on the go": [
-        "წვდომა თქვენს ფაილებთან ნებისმიერი ადგილიდან"
-      ],
-      "Back up your photos and memories": [
-        "დაამარქაფეთ თქვენის სურათები და მოგონებები"
-      ],
-      "Backup your photos and memories": [
-        "დაამარქაფეთ თქვენის სურათები და მოგონებები"
-      ],
-      "Choose your favorite theme": [
-        "აირჩიეთ სასურველი თემა"
-      ],
-      "Collaborate on documents": [
-        "იმუშავეთ ერთად დოკუმენტებზე"
-      ],
-      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "${ DRIVE_APP_NAME } ღია რეჟიმში გირჩევნიათ, თუ მუქში? აირჩიეთ ფერი, რომელიც ყველაზე მეტად მოგწონთ."
-      ],
-      "Drag and drop your files here": [
-        "გადაიტანეთ ფაილები აქ"
-      ],
-      "Edit documents online": [
-        "ჩაასწორეთ დოკუმენტები ინტერნეტში"
-      ],
-      "End-to-end encrypted storage for your files": [
-        "გამჭოლად დაშიფრული საცავი თქვენი ფაილებისთვის"
-      ],
-      "Faster uploads for large or multiple files": [
-        "უფრო სწრაფი ატვირთვა დიდი ან ბევრი ფაილებისთვის"
-      ],
-      "Files uploaded during this time won’t count towards your storage limit.": [
-        "ამ დროს ატვირთული ფაილები არ ჩაითვლება თქვენი საცავის ლიმიტის გამოთვლისას."
-      ],
-      "Files uploaded now will not count towards your storage limit": [
-        "ახლა ატვირთული ფაილების ზომა არ გამოაკლდება თქვენი საცავის ლიმიტს"
-      ],
-      "Final approval in progress": [
-        "საბოლოო დასტურის მოლოდინი"
-      ],
-      "Final approval pending": [
-        "საბოლოო დასტურის მოლოდინი"
-      ],
-      "Free up hard drive space on your computer": [
-        "გაათავისუფლეთ ადგილი თქვენს კომპიუტერში"
-      ],
-      "Get the desktop app": [
-        "მიიღეთ კომპიუტერის აპი"
-      ],
-      "Get the mobile app": [
-        "მობილური აპის დაყენება"
-      ],
-      "Got an Android? We've got you covered.": [
-        "Android გაქვთ? თქვენი პლატფორმა მხარდაჭერილია."
-      ],
-      "Got an iPhone? We've got you covered.": [
-        "საცოდავო, iPhone გაქვს? შენთვისაც მოვიცალეთ."
-      ],
-      "Hang tight": [
-        "კარგად მოეჭიდე"
-      ],
-      "Invitation accepted": [
-        "მოწვევა დადასტურებულია"
-      ],
-      "Invitation received": [
-        "მოსაწვევი მიღებულია"
-      ],
-      "Invite team members": [
-        "მოიწვიეთ გუნდის წევრები"
-      ],
-      "Keep the momentum going by uploading more files using the storage included with your plan.": [
-        "შეინარჩუნეთ ტემპი მეტი ფაილის ატვირთვით, თქვენი გეგმით გათვალისწინებული მეხსიერების გამოყენებით."
-      ],
-      "Manage access": [
-        "წვდომის მართვა"
-      ],
-      "Organize files right from your desktop": [
-        "დაალაგეთ თქვენი ფაილები სამუშაო მაგიდიდან"
-      ],
-      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
-        "დაიცავით თქვენი ფინანსური დოკუმენტები, ID ბარათები, პროექტის ფაილები, სურათები და ა.შ. გამჭოლი დაშიფვრით."
-      ],
-      "Scan the QR code to install the mobile app": [
-        "დაასკანერეთ QR კოდი მობილური აპის დასაყენებლად"
-      ],
-      "Secure your files": [
-        "დაიცავით თქვენი ფაილები"
-      ],
-      "Securely share files and folders": [
-        "ფაილებისა და საქაღალდეების უსაფრთხო გაზიარება"
-      ],
-      "Share files & folders": [
-        "გააზიარეთ ფაილები და საქაღალდეები"
-      ],
-      "Sync and access your files from anywhere": [
-        "სინქრონიზაცია და წვდომა თქვენს ფაილებთან ნებისმიერი ადგილიდან"
-      ],
-      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
-        "საჭიროა, მფლობელმა დაადასტუროს გაზიარებულზე წვდომა. როცა ეს მოხდება, ელფოსტას მიიღებთ."
-      ],
-      "Upload your first file": [
-        "ატვირთეთ თქვენი პირველი ფაილი"
-      ],
-      "Work faster, smarter": [
-        "იმუშავედ უფრო სწრაფად და ჭკვიანურად"
-      ],
-      "Work together": [
-        "იმუშავეთ ერთად"
-      ],
-      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "თქვენ ახლახან მიიღეთ უფასო მონაცემები და დაიცავით თქვენი ფაილები ბოლოდან ბოლომდე დაშიფვრით — რეკორდულ დროში!"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " დაუკავშირდით ჩვენს ${ helpCenterLink }-ს, ან ${ contactSupportLink }-ს."
@@ -10037,29 +8756,11 @@
       "Create new group": [
         "ახალი ჯგუფის შექმნა"
       ],
-      "Expected structure": [
-        "მოსალოდნელი სტრუქტურა"
-      ],
       "Ignore group": [
         "ჯგუფის იგნორი"
       ],
       "No parent folder": [
         "მშობელი საქაღალდის გარეშე"
-      ],
-      "Only current location": [
-        "მხოლოდ მიმდინარე მდებარეობა"
-      ],
-      "Only current location: ${ name }": [
-        "მხოლოდ მიმდინარე მდებარეობა: ${ name }"
-      ],
-      "Select JSON file": [
-        "აირჩიეთ JSON ფაილი"
-      ],
-      "Verify content": [
-        "შემცველობის გადამოწმება"
-      ],
-      "Verify thumbnails": [
-        "მინიატურების გადამოწმება"
       ]
     },
     "Option group label": {
@@ -10516,14 +9217,8 @@
       "Enter a name": [
         "შეიყვანეთ სახელი"
       ],
-      "Enter a new file name": [
-        "შეიყვანეთ ახალი ფაილის სახელი"
-      ],
       "Enter a new folder name": [
         "შეიყვანეთ ახალი საქაღალდის სახელი"
-      ],
-      "Enter device name": [
-        "შეიყვანეთ მოწყობილობის სახელი"
       ],
       "Enter your email address": [
         "შეიყვანეთ თქვენი ელფოსტის მისამართი"
@@ -11433,12 +10128,6 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "ბმული ამ ელემენტამდე შენახულია თქვენს Drive-ზე. მასზე წვდომა მოგვიანებით, 'ჩემთან გაზიარებულების' სექციაში შეგეძლებათ."
-      ],
-      "Encrypted search is here": [
-        "დაშიფრული ძებნა აქაა"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "შეგიძლიათ იოლად და უსაფრთხოდ მოძებნოთ ფაილები დრაივზე."
       ]
     },
     "sso": {
@@ -11977,54 +10666,14 @@
       ]
     },
     "Subtitle": {
-      "Albums shared with you will appear here": [
-        "თქვენთან გაზიარებული სურათბი აქ გამოჩნდება"
-      ],
-      "Albums you've shared will appear here": [
-        "ალბომები, რომლებიც გააზიარეთ, აქ გამოჩნდება"
-      ],
       "Shared by ${ sharedBy }": [
         "გაზიარებულია ${ sharedBy }-ის მიერ"
-      ],
-      "Your favorited photos will appear here": [
-        "თქვენი რჩეული სურათები აქ გამოჩნდება"
-      ],
-      "Your Live Photos will appear here": [
-        "თქვენი ცოცხალი ფოტოები აქ გამოჩნდება"
-      ],
-      "Your panorama photos will appear here": [
-        "თქვენი პანორამის სურათები აქ გამოჩნდება"
-      ],
-      "Your photo bursts will appear here": [
-        "თქვენი სერიული სურათები აქ გამოჩნდება"
-      ],
-      "Your portraits photos will appear here": [
-        "თქვენი პორტრეტები აქ გამოჩნდება"
-      ],
-      "Your RAW photos will appear here": [
-        "თქვენი დაუმუშავებელი სურათები აქ გამოჩნდება"
-      ],
-      "Your screenshots will appear here": [
-        "თქვენი ეკრანის ანაბეჭდები აქ გამოჩნდება"
-      ],
-      "Your selfies photos will appear here": [
-        "თქვენი სელფის სურათები აქ გამოჩნდება"
-      ],
-      "Your tagged photos will appear here": [
-        "თქვენი ჭდის მქონე სურათები აქ გამოჩნდება"
-      ],
-      "Your videos will appear here": [
-        "თქვენი ვიდეოები აქ გამოჩნდება"
       ]
     },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } ერთნაირია.",
         "${ countMergeableContacts } ერთნაირია."
-      ],
-      "${ countOfUnrecoveredLinksLeft } left": [
-        "დარჩენილია ${ countOfUnrecoveredLinksLeft }",
-        "დარჩენილია ${ countOfUnrecoveredLinksLeft }"
       ],
       "Address copied to clipboard": [
         "მისამართი დაკოპირდა გაცვლის ბაფერში"
@@ -12093,9 +10742,6 @@
       ],
       "Problem reported": [
         "პრობლემა შეტყობინებულია"
-      ],
-      "Recovery has started": [
-        "აღდგენა დაიწყო"
       ],
       "Secure link copied": [
         "დაცული ბმული დაკოპირდა"
@@ -12215,35 +10861,6 @@
         "vCard-ის ველი"
       ]
     },
-    "Tag": {
-      "Bursts": [
-        "მიმდევრობები"
-      ],
-      "Favorites": [
-        "რჩეულები"
-      ],
-      "Live Photos": [
-        "ცოცხალი სურათები"
-      ],
-      "Panoramas": [
-        "პანორამა"
-      ],
-      "Portraits": [
-        "პორტრეტები"
-      ],
-      "RAW": [
-        "RAW"
-      ],
-      "Screenshots": [
-        "ეკრანის ანაბეჭდები"
-      ],
-      "Selfies": [
-        "სელფები"
-      ],
-      "Videos": [
-        "ვიდეოები"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } დღე",
@@ -12272,9 +10889,6 @@
       ],
       "${ feature } is now active": [
         "${ feature } ახლა აქტიურია"
-      ],
-      "${ freeUploadLength } of free uploads.": [
-        "${ freeUploadLength } უფასო ატვირთვა."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } წერის დამხმარე"
@@ -12325,9 +10939,6 @@
       "Album details": [
         "ალბომის დეტალები"
       ],
-      "Albums": [
-        "ალბომები"
-      ],
       "All settings": [
         "ყველა პარამეტრი"
       ],
@@ -12345,10 +10956,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, დახუროთ მინიატურა?"
-      ],
-      "Are you sure you want to remove this item from your list?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ეს ელემენტი თქვენი სიიდან?",
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ეს ელემენტები თქვენი სიიდან?"
       ],
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
@@ -12416,9 +11023,6 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "დაადასტურეთ ${ BRAND_NAME } -ის დამატებითი ჯილდოების დაკარგვა"
       ],
-      "Confirmation required": [
-        "დადასტურება აუცილებელია"
-      ],
       "Connect apps and devices": [
         "აპებისა და მოწყობილობების დაკავშირება"
       ],
@@ -12445,9 +11049,6 @@
       ],
       "Coupon": [
         "კუპონი"
-      ],
-      "Create a new file": [
-        "ახალი ფაილის შექმნა"
       ],
       "Create a new folder": [
         "ახალი საქაღალდის შექმნა"
@@ -12524,9 +11125,6 @@
       "Devices": [
         "მოწყობილობები"
       ],
-      "Diagnostics": [
-        "დიაგნოსტიკა"
-      ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "ციფრული ხელმოწერა ნაწილობრივ დადასტურებულია. ეს ფაილი შეიქმნა საჯაროდ ხელმისაწვდომი გაზიარების ბმულის გამოყენებით იმ მომხმარებლის მიერ, რომელსაც არ აქვს ${ BRAND_NAME }-ის ანგარიში, ამიტომ მისი იდენტობის დადასტურება ვერ ხერხდება."
       ],
@@ -12560,6 +11158,9 @@
       "Disconnected from Gmail": [
         "გათიშულია Gmail-დან"
       ],
+      "Domain names": [
+        "დომენის სახელი"
+      ],
       "Downgrade account": [
         "ანგარიშის ტარიფის ჩამოწევა"
       ],
@@ -12580,9 +11181,6 @@
       ],
       "Download unverified folder?": [
         "გადმოვწერო შეუმოწმებელი საქაღალდე?"
-      ],
-      "Drive": [
-        "Drive"
       ],
       "Drop to upload": [
         "ასატვირთად გადმოათრიეთ ზედ"
@@ -12620,9 +11218,6 @@
       "Enable advanced account protection": [
         "ანგარიშის დამატებითი დაცვის ჩართვა"
       ],
-      "Enable drive search": [
-        "Drive-ზე ძებნის ჩართვა"
-      ],
       "Enhance security with 2FA": [
         "გააფართოვეთ უსაფრთხოება 2FA-ით"
       ],
@@ -12638,21 +11233,11 @@
       "File details": [
         "ფაილის დეტალები"
       ],
-      "File recovery process": [
-        "ფაილის აღდგენის პროცესი"
-      ],
       "Folder": [
         "საქაღალდე"
       ],
       "Folder details": [
         "საქაღალდის დეტალები"
-      ],
-      "Found ${ resultCount } result": [
-        "ნაპოვნია ${ resultCount } შედეგი",
-        "ნაპოვნია ${ resultCount } შედეგი"
-      ],
-      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
-        "გადმოწერე ${ DRIVE_SHORT_APP_NAME } ტელეფონზე"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "მიიღეთ **${ referralInfo.uiData.refereeRewardAmount }** კრედიტებში ${ planTitle }-ისთან ერთად"
@@ -12660,26 +11245,17 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "მიიღეთ სრული წვდომა ${ CALENDAR_APP_NAME }-ზე"
       ],
-      "Get mobile and desktop apps": [
-        "მიიღეთ აპები მობილურისთვის და კომპიუტერისთვის"
-      ],
       "Get more from your VPN": [
         "მიიღეთ მეტი თქვენი VPN-სგან"
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "მიიღეთ მეტი საცავი ${ MAIL_APP_NAME } Plus-ით"
       ],
-      "Get started with 10 minutes of free uploads, on the house.": [
-        "დაიწყეთ 10 წუთიანი უფასო ატვირთვით, სახლზე."
-      ],
       "Get the apps": [
         "აპების გადმოწერა"
       ],
       "Gift": [
         "საჩუქარი"
-      ],
-      "Global": [
-        "გლობალური"
       ],
       "Groups": [
         "ჯგუფები"
@@ -12727,9 +11303,6 @@
       "Import your data to ${ BRAND_NAME }": [
         "თქვენი მონაცემების იმპორტი ${ BRAND_NAME }-ში"
       ],
-      "Index populators": [
-        "ინდექსის შემვსებები"
-      ],
       "Information exposed in breach": [
         "გაჟონილი ინფორმაცია"
       ],
@@ -12742,23 +11315,11 @@
       "Last uploaded by": [
         "ბოლო ატვირთვის ავტორი"
       ],
-      "Level": [
-        "დონე"
-      ],
       "Link confirmation": [
         "ბმულის დადასტურება"
       ],
       "Location": [
         "მდებარეობა"
-      ],
-      "Logger": [
-        "რეგისტრატორი"
-      ],
-      "Logs": [
-        "ჟურნალი"
-      ],
-      "Make a copy": [
-        "ასლის შექმნა"
       ],
       "Make a secure connection your default": [
         "დაცული კავშირის გამოყენება ნაგულისხმევად"
@@ -12771,9 +11332,6 @@
       ],
       "Merging contacts": [
         "კონტაქტების შერწყმა"
-      ],
-      "Message": [
-        "შეტყობინება"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "თქვენი ორგანიზაციის მიგრაცია ${ BRAND_NAME }-ში"
@@ -12808,56 +11366,17 @@
       "Night theme": [
         "ღამის თემა"
       ],
-      "No albums shared with me": [
-        "ჩემთან გაზიარებული ალბომების გარეშე"
-      ],
       "No breaches detected": [
         "გაჟონვები აღმოჩენილი არაა"
       ],
-      "No bursts": [
-        "სერიული სურათების გარეშე"
-      ],
-      "No favorites": [
-        "რჩეულების გარეშე"
-      ],
-      "No Live Photos": [
-        "ცოცხალი სურათების გარეშე"
-      ],
-      "No panorama": [
-        "პანორამების გარეშე"
-      ],
-      "No photos": [
-        "სურათების გარეშე"
-      ],
-      "No portraits": [
-        "პორტრეტების გარეშე"
-      ],
-      "No RAW": [
-        "RAW-ის გარეშე"
-      ],
       "No results found": [
         "შედეგების გარეშე"
-      ],
-      "No screenshots": [
-        "ეკრანის ანაბეჭდების გარეშე"
-      ],
-      "No selfies": [
-        "სელფების გარეშე"
-      ],
-      "No shared albums": [
-        "გაზიარებული ალბომების გარეშე"
-      ],
-      "No videos": [
-        "ვიდეოების გარეშე"
       ],
       "Notes": [
         "შენიშვნები"
       ],
       "Number of downloads": [
         "გადმოწერების რაოდენობა"
-      ],
-      "Number of items": [
-        "ელემენტების რაოდენობა"
       ],
       "One email, many recipients": [
         "ერთი ელფოსტა, ბევრი მიმღები"
@@ -12925,9 +11444,6 @@
       "Re-signing contacts": [
         "კონტაქტის თავიდან ხელმოწერა"
       ],
-      "Ready, set, upload.": [
-        "ყურადღება, მომზადება, ატვირთვა."
-      ],
       "Recommended": [
         "რეკომენდებულია"
       ],
@@ -12946,10 +11462,6 @@
       "Remove device?": [
         "წავშალო მოწყობილობა?"
       ],
-      "Remove item?": [
-        "წავშალო ელემენტი?",
-        "წავშალო ელემენტები?"
-      ],
       "Remove your access?": [
         "გავაუქმოთ თქვენი წვდომა?"
       ],
@@ -12959,32 +11471,17 @@
       "Rename a folder": [
         "საქაღალდის სახელის გადარქმევა"
       ],
-      "Rename device": [
-        "მოწყობილობის სახელის გადარქმევა"
-      ],
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
       ],
       "Request new code": [
         "ახალი კოდის გამოთხოვა"
       ],
-      "Restore your files": [
-        "თქვენი ფაილების აღდგენა"
-      ],
       "Reverse charge not supported": [
         "უკუდაბეგვრა მხარდაუჭერელია"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "შეინახეთ ის მოგვიანებით სამუშაოდ ${ DRIVE_APP_NAME }-ზე"
-      ],
-      "Search": [
-        "ძებნა"
-      ],
-      "Search results": [
-        "ძებნის შედეგები"
-      ],
-      "Searching…": [
-        "ძებნა…"
       ],
       "Security center": [
         "უსაფრთხოების ცენტრი"
@@ -13039,9 +11536,6 @@
       ],
       "Shared with me": [
         "ჩემთვის გაზიარებული"
-      ],
-      "Show actions": [
-        "მოქმედებების ჩვენება"
       ],
       "Sign in and grant access": [
         "შესვლა და წვდომის მინიჭება"
@@ -13105,12 +11599,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "ამ ელცხრილის გადასახედად გახსენით ${ SHEETS_APP_NAME }-ში, ან გადმოწერეთ ის."
-      ],
-      "Total size": [
-        "ჯამური ზომა"
-      ],
-      "Trash": [
-        "ნაგვის ყუთი"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
@@ -13220,9 +11708,6 @@
       "We'd love to hear from you!": [
         "სიამოვნებით მოვისმენდით თქვენს აზრს!"
       ],
-      "Welcome offer": [
-        "შეთავაზება ახალი მომხმარებლისთვის"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "მოგესალმებათ ${ BRAND_NAME } for Business"
       ],
@@ -13241,17 +11726,11 @@
       "You can now create unlimited folders and labels": [
         "ახლა, შეგიძლიათ, განუსაზღვრელი რაოდენობის საქაღალდეები და ჭდეები შექმნათ"
       ],
-      "You have inaccessible files": [
-        "თქვენ გაქვთ ხელმიუწვდომელი ფაილები"
-      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
       ],
       "Your ${ planTitle } subscription has started": [
         "თქვვენი ${ planTitle } გამოწერა დაიწყო"
-      ],
-      "Your 3 GB bonus": [
-        "თქვენი 3 გბ ბონუსი"
       ],
       "Your account is protected": [
         "თქვენი ანგარიში დაცულია"
@@ -13270,15 +11749,6 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
-      ],
-      "Your welcome actions": [
-        "თქვენი პირველად შემოსვლის ქმედებები"
-      ],
-      "You’re off to a great start!": [
-        "კარგად დაიწყეთ!"
-      ],
-      "You’ve got 5 GB of storage": [
-        "გაქვთ 5გბ საცავი"
       ]
     },
     "Title header for keys table": {
@@ -13437,11 +11907,6 @@
       ],
       "The user must have an address to request data access": [
         "მომხმარებელს მონაცემებზე წვდომის მოსათხოვად მისამართი უნდა გააჩნდეს"
-      ]
-    },
-    "Upsell": {
-      "Get Drive for Business": [
-        "მიიღეთ Drive for Business"
       ]
     },
     "user_modal": {

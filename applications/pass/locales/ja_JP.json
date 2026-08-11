@@ -1337,9 +1337,6 @@
       "Unknown error.": [
         "不明なエラーが発生しました。"
       ],
-      "Unknown invite": [
-        "不明な招待"
-      ],
       "Unknown item": [
         "不明なアイテム"
       ],
@@ -2067,7 +2064,7 @@
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
+        "アイテムを別の保管庫に移動すると、そのセキュアリンクは消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"

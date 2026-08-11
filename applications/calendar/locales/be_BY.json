@@ -158,6 +158,9 @@
       "Clear browser data": [
         "Ачысціць даныя браўзера"
       ],
+      "Clear conversation": [
+        "Ачысціць размову"
+      ],
       "Clear data": [
         "Ачысціць даныя"
       ],
@@ -611,6 +614,9 @@
       "Merge contacts": [
         "Аб'яднаць кантакты"
       ],
+      "Migrate": [
+        "Перанесці"
+      ],
       "More actions": [
         "Больш дзеянняў"
       ],
@@ -895,6 +901,9 @@
       ],
       "Stay": [
         "Застацца"
+      ],
+      "Stop": [
+        "Спыніць"
       ],
       "Submit": [
         "Адправіць"
@@ -3666,6 +3675,9 @@
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Пры справаздачы аб парушэнні аўтарскіх правоў або крадзяжы даных вы павінны пакінуць паведамленне"
+      ],
       "A problem occurred, please try again.": [
         "Узнікла праблема. Паспрабуйце яшчэ раз."
       ],
@@ -3674,6 +3686,9 @@
       ],
       "Address could not be added.": [
         "Немагчыма дадаць адрас."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Адрас ужо выкарыстоўваецца карыстальнікам з іншай арганізацыі. Звярніцеся ў службу падтрымкі кліентаў для вырашэння гэтай праблемы"
       ],
       "Address primary private key not found": [
         "Асноўны закрыты ключ адраса не знойдзены"
@@ -3717,17 +3732,35 @@
       "Authentication error.": [
         "Памылка аўтэнтыфікацыі."
       ],
+      "Bookmark password is not available": [
+        "Пароль закладкі недаступны"
+      ],
       "Calendar limit reached": [
         "Дасягнута абмежаванне па календары"
       ],
       "Cancellation failed to be sent": [
         "Не ўдалося адправіць скасаванне"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Немагчыма дадаць фатаграфію ў альбом без сапраўднай назвы"
+      ],
       "Cannot create a booking with a disabled address": [
         "Нельга стварыць браніраванне з адключаным адрасам"
       ],
       "Cannot export this contact": [
         "Немагчыма экспартаваць гэты кантакт"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Немагчыма перанесці элемент без сапраўднай назвы. Спачатку дайце яму іншую назву."
+      ],
+      "Cannot share root folder": [
+        "Немагчыма абагуліць каранёвую папку"
+      ],
+      "Cannot verify the author of this file": [
+        "Немагчыма спраўдзіць аўтара гэтага файла"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Немагчыма спраўдзіць хто запампаваў гэты файл"
       ],
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
@@ -3753,11 +3786,38 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Пошук па кантэксце не можа быць уключаны. Перазапусціце праграму або ачысціце яе даныя."
       ],
+      "Copy operation aborted": [
+        "Аперацыя капіявання перарвана"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Капіяванне элементаў па-за межы папкі забаронена"
+      ],
+      "Could not find an available name": [
+        "Немагчыма знайсці даступную назву"
+      ],
+      "Could not load sharing details": [
+        "Немагчыма загрузіць абагуленыя падрабязнасці"
+      ],
       "Could not open created vault": [
         "Не ўдалося адкрыць створанае сховішча"
       ],
       "Could not open updated vault": [
         "Не ўдалося адкрыць абноўленае сховішча"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Немагчыма прачытаць частку гэтага файла: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Немагчыма разблакіраваць бацькоўскую папку"
+      ],
+      "Could not unlock this item": [
+        "Немагчыма разблакіраваць гэты элемент"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Стварэнне файлаў па-за іх межамі забаронена"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Стварэнне папак па-за іх межамі забаронена"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Памылка расшыфроўкі: не ўдалося расшыфраваць змесціва гэтай падзеі."
@@ -3773,6 +3833,9 @@
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або"
+      ],
+      "Device not found": [
+        "Прылада не знойдзена"
       ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
@@ -3813,6 +3876,9 @@
       "Event not found": [
         "Падзея не знойдзена"
       ],
+      "Expiration date cannot be in the past": [
+        "Дата завяршэння не можа быць у мінулым"
+      ],
       "Failed loading group members": [
         "Збой загрузкі ўдзельнікаў групы"
       ],
@@ -3825,11 +3891,35 @@
       "Failed to create meeting": [
         "Не ўдалося стварыць сустрэчу"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ закладкі: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Не ўдалося расшыфраваць назву закладкі: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Не ўдалося расшыфраваць пароль закладкі: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ змесціва: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Не ўдалося расшыфраваць назву элемента: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ вузла: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Не ўдалося расшыфраваць метаданыя рэдакцыі"
+      ],
       "Failed to decrypt session key": [
         "Не ўдалося расшыфраваць ключ сеанса"
       ],
       "Failed to get event": [
         "Не ўдалося атрымаць падзею"
+      ],
+      "Failed to get inviter keys": [
+        "Не ўдалося атрымаць ключы запрашэння"
       ],
       "Failed to get original occurrence in series": [
         "Не ўдалося атрымаць арыгінальнае паўтарэнне ў серыі"
@@ -3846,6 +3936,15 @@
       "Failed to update settings": [
         "Не ўдалося абнавіць налады"
       ],
+      "Failed to verify invitation": [
+        "Не ўдалося спраўдзіць запрашэнне"
+      ],
+      "File download failed due to empty response": [
+        "Збой спампоўвання файла. Прычына: пусты адказ"
+      ],
+      "File has no revision": [
+        "У файла адсутнічае рэдакцыя"
+      ],
       "First name is too long": [
         "Занадта доўгае імя"
       ],
@@ -3854,6 +3953,9 @@
       ],
       "Forward address is required": [
         "Патрабуецца адрас перасылкі"
+      ],
+      "Image preview not found": [
+        "Папярэдні прагляд відарыса не знойдзены"
       ],
       "Image upload failed": [
         "Не ўдалося запампаваць відарыс"
@@ -3906,6 +4008,9 @@
       "Invitation failed to be sent": [
         "Не ўдалося адправіць запрашэнне"
       ],
+      "Invitation not found": [
+        "Запрашэнне не знойдзена"
+      ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
         "Ствараць падзеі можна толькі ў інтэрвале паміж ${ minDateString } і ${ maxDateString }"
       ],
@@ -3915,14 +4020,23 @@
       "Item content cannot exceed 40KB": [
         "Змесціва элемента не можа перавышаць 40 КБ"
       ],
+      "Item not found": [
+        "Элемент не знойдзены"
+      ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
       ],
       "Last name is too long": [
         "Занадта доўгае прозвішча"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Састарэлая публічная спасылка не можа быць абноўлена. Паўторна стварыце новую публічную спасылку."
+      ],
       "Location is required": [
         "Уключыце службы геалакацыі"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адрас удзельніка не знойдзены. Звяжыцеся з нашай службай падтрымкі кліентаў, каб вырашыць гэта"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Аб'яднайце прынамсі ${ calendarsToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
@@ -3930,14 +4044,41 @@
         "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }",
         "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }"
       ],
+      "Missing inviter email": [
+        "Электронная пошта запрошанай асобы адсутнічае"
+      ],
       "Missing key packet": [
         "Адсутнічае пакет ключоў"
+      ],
+      "Missing organization private key": [
+        "Адсутнічае закрыты ключ арганізацыі"
+      ],
+      "Missing organization public key": [
+        "Адсутнічае адкрыты ключ арганізацыі"
       ],
       "Missing signature": [
         "Адсутнічае подпіс"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Адсутнічае паведамленне для ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Аперацыя перамяшчэння перарвана"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Перамяшчэнне элементаў па-за межы папкі забаронена"
+      ],
+      "Moving root item is not allowed": [
+        "Перамяшчэнне элемента суперкарыстальніка забаронена"
+      ],
       "Name is required": [
         "Патрабуецца назва"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвала",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў"
       ],
       "Name required": [
         "Патрабуецца назва"
@@ -3963,6 +4104,9 @@
       "No external key retrieved for user is valid for sending": [
         "Ніводны са знешніх ключоў, які атрыманы для карыстальніка, не падыходзіць для адпраўкі"
       ],
+      "No file data was received. Please try again.": [
+        "Ніякія даныя файла не былі атрыманы. Паўтарыце спробу."
+      ],
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
       ],
@@ -3987,6 +4131,21 @@
         "У некаторых групах няма кантактаў: ${ noContactGroupList } ",
         "У некаторых групах няма кантактаў: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Толькі ў адміністратараў ёсць правы для пераўтварэння знешніх запрашэнняў"
+      ],
+      "Operation aborted": [
+        "Аперацыя перарвана"
+      ],
+      "Operation failed, try again later": [
+        "Збой выканання аперацыі. Паўтарыце спробу пазней"
+      ],
+      "Organization does not have enough seats available": [
+        "У арганізацыі недастаткова даступных ліцэнзій"
+      ],
+      "Organization does not have enough storage available": [
+        "У арганізацыі недастаткова даступнага месца для захоўвання"
+      ],
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
       ],
@@ -3995,6 +4154,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Ключ арганізацыі павінен быць актываваны, каб ствараць непрыватных карыстальнікаў"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Здаецца, што частка файла пашкоджана"
       ],
       "Password is required": [
         "Патрабуецца ўвесці пароль"
@@ -4013,6 +4175,12 @@
       ],
       "Payment process not supported": [
         "Апрацоўка плацяжу не падтрымліваецца"
+      ],
+      "Photo is already in the target album": [
+        "Фатаграфія ўжо знаходзіцца ў мэтавым альбоме"
+      ],
+      "Photo not found": [
+        "Фатаграфія не знойдзена"
       ],
       "Please activate your search again": [
         "Актывуйце пошук яшчэ раз"
@@ -4095,6 +4263,12 @@
         "Выдалены дублікаты атрымальнікаў: ${ joinedRecipients }",
         "Выдалены дублікаты атрымальнікаў: ${ joinedRecipients }"
       ],
+      "Renaming root item is not allowed": [
+        "Перайменаванне элемента суперкарыстальніка забаронена"
+      ],
+      "Request aborted": [
+        "Запыт перарваны"
+      ],
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
       ],
@@ -4104,17 +4278,38 @@
       "Self invitation not allowed": [
         "Забаронена запрашаць самога сябе"
       ],
+      "Signature is missing": [
+        "Подпіс адсутнічае"
+      ],
       "Signature not verified": [
         "Подпіс не спраўджаны"
       ],
       "Signature verification failed": [
         "Не ўдалося спраўдзіць подпіс"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Збой спраўджання подпісу: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Збой спраўджання подпісу для ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Збой спраўджання подпісу для ${ signatureType }: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Не ўдалося выдаліць некаторыя кантакты"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Некаторыя даныя файла не ўдалося запампаваць. Паўтарыце спробу."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Некаторыя часткі файла не ўдалося запампаваць. Паўтарыце спробу."
+      ],
       "Some groups could not be deleted": [
         "Не ўдалося выдаліць некаторыя групы"
+      ],
+      "Some items could not be loaded": [
+        "Некаторыя элементы немагчыма загрузіць"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Назвы некаторых вашых папак недаступны. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
@@ -4179,6 +4374,9 @@
       "The sending key is not valid": [
         "Несапраўдны ключ адпраўкі"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Запампаваны файл не адпавядае арыгіналу. Паўтарыце спробу."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
       ],
@@ -4197,14 +4395,35 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Поле павінна змяшчаць як мінімум ${ minimumLength } сімвалаў."
       ],
+      "This file has missing crypto material": [
+        "У гэтага файла адсутнічае крыптаграфічны матэрыял"
+      ],
+      "This file has no version available to download": [
+        "У гэтага файла адсутнічае даступная версія для спампоўвання"
+      ],
+      "This file version could not be uploaded": [
+        "Не ўдалося запампаваць гэтую версію файла"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Гэта назва для папкі недаступна. Выберыце іншую назву."
+      ],
+      "This item has no image preview": [
+        "У гэтага элемента адсутнічае папярэдні прагляд відарыса"
+      ],
+      "This item is no longer shared": [
+        "Гэты элемент больш не абагульваецца"
+      ],
+      "This item is not shared": [
+        "Гэты элемент не абагульваецца"
       ],
       "This label name is not available. Please choose a different name.": [
         "Гэта назва для меткі недаступна. Выберыце іншую назву."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Гэта паведамленне можа змяшчаць некаторыя спасылкі на URL-адрасы, якія ваш бягучы браўзер не зможа правільна адкрыць."
+      ],
+      "Too many server requests, please try again later": [
+        "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
       ],
       "Trusted keys are not valid for sending": [
         "Давераныя ключы несапраўдныя для адпраўкі"
@@ -4239,6 +4458,12 @@
       "VAT number must start with ${ prefixes }": [
         "Нумар ПДВ павінен пачынацца з ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "Ключы спраўджання недаступны"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Ключы спраўджання для ${ signatureType } недаступны"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
       ],
@@ -4251,6 +4476,18 @@
       "You are reconnected to Zoom. You can save your event now.": [
         "Вы зноў падключаны да Zoom. Цяпер вы можаце захаваць сваю падзею."
       ],
+      "You can create public links for your own files only": [
+        "Вы можаце ствараць публічныя спасылкі толькі для сваіх уласных файлаў"
+      ],
+      "You can only leave items that are shared with you": [
+        "У вас ёсць магчымасць толькі выйсці з элементаў, якія абагульваюцца з вамі"
+      ],
+      "You can only upload a new version to a file": [
+        "Вы можаце толькі запампаваць новую версію ў файл"
+      ],
+      "You can update a public link for your own files only": [
+        "Вы можаце абнавіць публічную спасылку толькі для вашых уласных файлаў"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальніку",
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
@@ -4259,6 +4496,12 @@
       ],
       "You cannot enter the organizer's email": [
         "Вы не можаце ўвесці электронную пошту арганізатара"
+      ],
+      "You do not have access to this item": [
+        "У вас няма доступу да гэтага элемента"
+      ],
+      "You do not have access to this shared item": [
+        "У вас няма доступу да гэтага абагуленага элемента"
       ],
       "You have reached the maximum number of calendars.": [
         "Вы дасягнулі максімальнай колькасці календароў."
@@ -4832,6 +5075,26 @@
         "тэрабайтаў"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Актывавана"
+      ],
+      "All": [
+        "Усе"
+      ],
+      "Errors": [
+        "Памылкі"
+      ],
+      "In progress": [
+        "Выконваецца"
+      ],
+      "Not activated": [
+        "Не актывавана"
+      ],
+      "Pending": [
+        "У чаканні"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } абноўлена"
@@ -5260,6 +5523,9 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "З памылкамі"
+      ],
       "In progress": [
         "Выконваецца"
       ],
@@ -5356,6 +5622,9 @@
         "Знойдзена ${ groupCounts } групы",
         "Знойдзена ${ groupCounts } груп",
         "Знойдзена ${ groupCounts } груп"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Пазначыць ${ IDEAL_BRAND_NAME }"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
@@ -5617,6 +5886,9 @@
       ],
       "Attention required": [
         "Патрабуецца ўвага"
+      ],
+      "Author is not provided on public link": [
+        "Аўтар не пазначаны ў публічнай спасылцы"
       ],
       "Awaiting transaction": [
         "Чаканне трансакцыі"
@@ -5921,6 +6193,9 @@
       "finance": [
         "фінансы"
       ],
+      "Find out what can be migrated.": [
+        "Даведайцеся, што перанесена."
+      ],
       "for ${ price }": [
         "за ${ price }"
       ],
@@ -6170,6 +6445,9 @@
       "No results found": [
         "Нічога не знойдзена"
       ],
+      "No users to display": [
+        "Няма карыстальнікаў для адлюстравання"
+      ],
       "None of the participants can be notified about your changes:": [
         "Ніхто з удзельнікаў не можа атрымаць апавяшчэнне аб вашых зменах:"
       ],
@@ -6362,6 +6640,9 @@
       "Scan the QR code with your mobile device": [
         "Адсканіруйце QR-код з дапамогай мабільнай прылады"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Выберыце толькі тое, што хочаце перанесці. Гэта будзе прыменена да ўсіх карыстальнікаў арганізацыі."
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць прадвызначана пры адпраўцы лістоў на гэты адрас электроннай пошты."
       ],
@@ -6488,6 +6769,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
+      "Thinking about this": [
+        "Падумайце аб гэтым"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
       ],
@@ -6527,6 +6811,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Гэты ўнікальны код можа быць выкарыстаны вэб-сайтамі і пастаўшчыком паслуг інтэрнэту (ISP), каб звязаць ваша месцазнаходжанне і гісторыю прагляду старонак на вашай прыладзе."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Гэтага карыстальніка немагчыма перанесці, бо яго адрас электроннай пошты недаступны ў ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Гэтага карыстальніка немагчыма перанесці з-за несумяшчальнасці платформ."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
@@ -6550,6 +6840,27 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Спачатку стварыце каляндар у ${ CALENDAR_APP_NAME } для імпартавання падзей. Менавіта тут з'явяцца падзеі пасля імпартавання."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Дадайце і праверце дамен электроннай пошты ў ${ domainNamesLink } для пераносу гэтага карыстальніка"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Уключыце ўліковы запіс карыстальніка ў свой ${ provider.adminConsoleName } для яго пераносу."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Уключыце ўліковы запіс карыстальніка ў ${ usersAddressesLink } для яго пераносу."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Уключыце адрас карыстальніка ў ${ usersAddressesLink } для яго пераносу."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Карыстальніку неабходна праняць запрашэнне на далучэнне да ${ BRAND_NAME } для яго пераносу."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Распакуйце карыстальніка ў сваёй ${ provider.adminConsoleName } для яго пераносу."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Аднавіць карыстальніка ў вашай ${ provider.adminConsoleName } для яго пераносу."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Для таго, каб паўторна падпісаць кантакты, нам неабходна праверыць кожны кантакт з дапамогай спіса ключоў шыфравання, якія даступны ў вашым уліковым запісе. Калі супадзенне не будзе знойдзена, то ваш кантакт будзе паўторна падпісаны асноўным ключом шыфравання."
@@ -6712,6 +7023,9 @@
       ],
       "Yearly": [
         "Штогод"
+      ],
+      "You": [
+        "Вы"
       ],
       "You already have a free account": [
         "У вас ужо ёсць бясплатны ўліковы запіс"
@@ -8054,6 +8368,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Ліцэнзіі ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } за ліцэнзію"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ліцэнзія ${ MEET_APP_NAME }",
@@ -10207,6 +10524,9 @@
       "You will soon be redirected to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Ваша валюта была зменена на еўра (€), таму што ${ IDEAL_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
@@ -10218,6 +10538,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Не ўдалося ініцыялізаваць ${ IDEAL_BRAND_NAME }. Паўтарыце спробу пазней."
+      ],
       "Invalid card number": [
         "Памылковы нумар карткі"
       ],
@@ -10240,6 +10563,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Нешта пайшло не так. Збой спраўджання Google Pay."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Пацвярджаючы гэты плацеж, вы надзяляеце паўнамоцтвамі ${ BRAND_NAME } і Stripe, нашага пастаўшчыка плацежных паслуг, даць указанне вашаму банку спісаць з вашага рахунку адпаведныя сродкі. Вы можаце вярнуць спісаныя сродкі на працягу 8 тыдняў з даты спісання ў адпаведнасці з умовамі дагавора з вашым банкам."
       ]
     },
     "Payments.info": {
@@ -10400,6 +10728,9 @@
       ],
       "Anytown": [
         "Полацк"
+      ],
+      "Ask anything…": [
+        "Спытайце што-небудзь…"
       ],
       "Company name": [
         "Назва кампаніі"
@@ -10592,6 +10923,23 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Ход выканання: ${ combinedProgress }%"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "атрыбуты"
+      ],
+      "hash key": [
+        "хэш-ключ"
+      ],
+      "key": [
+        "ключ"
+      ],
+      "membership": [
+        "удзельніцтва"
+      ],
+      "name": [
+        "назва"
       ]
     },
     "Property type": {
@@ -12275,17 +12623,26 @@
       "Actions": [
         "Дзеянні"
       ],
+      "Activated": [
+        "Актывавана"
+      ],
       "Address": [
         "Адрас"
       ],
       "Created": [
         "Створана"
       ],
+      "Estimated size": [
+        "Прыблізны памер"
+      ],
       "Expires": [
         "Дзейнічае да"
       ],
       "Fingerprint": [
         "Адбітак"
+      ],
+      "Migration status": [
+        "Статус пераносу"
       ],
       "Name": [
         "Назва"
@@ -12298,6 +12655,9 @@
       ],
       "Type": [
         "Тып"
+      ],
+      "User": [
+        "Карыстальнік"
       ]
     },
     "TableHeader": {
@@ -12561,6 +12921,9 @@
       "Collaborate on documents": [
         "Сумесная праца над дакументамі"
       ],
+      "Configure migration": [
+        "Сканфігурыраваць перанос"
+      ],
       "Confirm downgrade": [
         "Пацвердзіць паніжэнне тарыфнага плана"
       ],
@@ -12665,6 +13028,9 @@
       ],
       "Does not repeat": [
         "Не паўтараць"
+      ],
+      "Domain names": [
+        "Даменныя імёны"
       ],
       "Downgrade account": [
         "Панізіць уліковы запіс"
@@ -13011,6 +13377,9 @@
       "Select the way to send this notification": [
         "Выберыце спосаб адпраўкі гэтага апавяшчэння"
       ],
+      "Select users to migrate": [
+        "Выберыце карыстальнікаў для пераносу"
+      ],
       "Select when you want this notification to be sent": [
         "Выберыце, калі гэта апавяшчэнне павінна быць адпраўлена"
       ],
@@ -13158,6 +13527,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Вітаем у ${ BRAND_NAME } for Business"
       ],
+      "What are you migrating?": [
+        "Што вы плануеце перанесці?"
+      ],
       "What can a VPN protect you from?": [
         "Ад чаго можа абараніць VPN?"
       ],
@@ -13263,6 +13635,9 @@
       "Customize import to reduce the number of labels": [
         "Наладзьце імпартаванне, каб паменшыць колькасць метак"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Статус пераносу даных з ${ providerName } у ${ BRAND_NAME }"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Лічбавы подпіс лістоў дапамагае пацвердзіць, што менавіта вы іх адправілі"
       ],
@@ -13329,6 +13704,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Запампуйце адкрыты ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Карыстальнікі, якія маюць доступ да сваіх уліковых запісаў ${ BRAND_NAME }"
+      ],
       "Version 6 OpenPGP key": [
         "Ключ OpenPGP версіі 6"
       ]
@@ -13372,6 +13750,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Палепшыце да сумяшчальнага тарыфнага плана, каб выкарыстоўваць ролі адміністратараў."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
       ]

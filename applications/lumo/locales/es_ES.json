@@ -144,6 +144,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descargar las aplicaciones de ${ DRIVE_APP_NAME }"
       ],
+      "Download chart": [
+        "Descargar gráfico"
+      ],
       "Download logs": [
         "Descargar los registros"
       ],
@@ -194,6 +197,9 @@
       ],
       "Hide": [
         "Ocultar"
+      ],
+      "Hide chart spec": [
+        "Ocultar especificación del gráfico"
       ],
       "Hide more benefits": [
         "Ocultar más ventajas"
@@ -425,6 +431,9 @@
       ],
       "Verify account": [
         "Verificar cuenta"
+      ],
+      "View chart spec": [
+        "Ver especificación del gráfico"
       ],
       "View invoice": [
         "Ver la factura"
@@ -1388,6 +1397,9 @@
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Más información sobre cómo usar ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Let ${ LUMO_SHORT_APP_NAME } visualize data with charts": [
+        "Permite que ${ LUMO_SHORT_APP_NAME } visualice datos con gráficos"
+      ],
       "Lightweight model for everyday tasks": [
         "Modelo ligero para tareas cotidianas"
       ],
@@ -1892,9 +1904,6 @@
       ],
       "Expires tomorrow": [
         "Caduca mañana"
-      ],
-      "Extract, analyse, and summarise documents, PDFs, and images.": [
-        "Extrae, analiza y resume documentos, archivos PDF e imágenes."
       ],
       "File too large for preview (>150k tokens)": [
         "Archivo demasiado grande para vista previa (>150k tokens)"
@@ -2793,6 +2802,9 @@
       "Visionary": [
         "Visionary"
       ],
+      "Visualization mode": [
+        "Modo de visualización"
+      ],
       "What you can build": [
         "Qué puedes crear"
       ],
@@ -3058,9 +3070,6 @@
       ],
       "Add more information to improve the response": [
         "Añade más información para mejorar la respuesta"
-      ],
-      "Analyse another export": [
-        "Analizar otra exportación"
       ],
       "Ask the model to be more careful and thorough": [
         "Pide al modelo que sea más cuidadoso y exhaustivo."
@@ -5975,6 +5984,9 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderás permanentemente estos beneficios, incluso si mejoras de nuevo tu plan en el futuro."
       ],
+      "Chart spec view": [
+        "Vista de la especificación del gráfico"
+      ],
       "Chunk": [
         "Segmento"
       ],
@@ -6171,6 +6183,9 @@
       "MIME:": [
         "MIME:"
       ],
+      "Model output": [
+        "Salida del modelo"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
       ],
@@ -6236,6 +6251,9 @@
       ],
       "Registering your subscription…": [
         "Registrando tu suscripción…"
+      ],
+      "Rendered spec": [
+        "Especificación renderizada"
       ],
       "Searchable chunks": [
         "Segmentos buscables"
