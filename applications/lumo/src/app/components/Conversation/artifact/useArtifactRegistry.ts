@@ -2,26 +2,41 @@ import { useMemo } from 'react';
 
 import type { Message } from '../../../types';
 import { Role } from '../../../types-api';
-import { type ArtifactRegistry, buildArtifactRegistry } from './artifactRegistry';
+import {
+    type ArtifactRegistry,
+    buildArtifactRegistry,
+    getInFlightArtifactFingerprint,
+    mergeProvisionalArtifactRegistry,
+} from './artifactRegistry';
 
 /**
  * Derives the conversation-wide artifact registry from the active linear message chain.
- * Recomputes only when the set of finalized assistant messages changes — never on
- * intra-token streaming re-renders, since a streaming message has no `status` yet.
+ * Finalized versions come from completed assistant messages; provisional versions are
+ * overlaid from in-flight messages that already have a complete create_artifact tool call.
+ *
+ * Recomputes when finalized message ids change or when an in-flight artifact fingerprint
+ * changes — never on intra-token prose streaming alone.
  */
 export function useArtifactRegistry(linearChain: Message[]): ArtifactRegistry {
     const finalizedAssistantMessageIds = useMemo(
         () =>
             linearChain
-                .filter((message) => message.role === Role.Assistant && message.status !== undefined)
-                .map((message) => message.id)
+                .filter((message) => {
+                    return message.role === Role.Assistant && message.status !== undefined;
+                })
+                .map((message) => {
+                    return message.id;
+                })
                 .join(','),
         [linearChain]
     );
 
-    return useMemo(
-        () => buildArtifactRegistry(linearChain),
+    const inFlightArtifactFingerprint = useMemo(() => {
+        return getInFlightArtifactFingerprint(linearChain);
+    }, [linearChain]);
 
-        [finalizedAssistantMessageIds]
-    );
+    return useMemo(() => {
+        const finalizedRegistry = buildArtifactRegistry(linearChain);
+        return mergeProvisionalArtifactRegistry(finalizedRegistry, linearChain);
+    }, [finalizedAssistantMessageIds, inFlightArtifactFingerprint]);
 }
