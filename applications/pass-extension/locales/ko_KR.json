@@ -1382,6 +1382,9 @@
       "This domain is already managed by your organization": [
         "이 도메인은 사용자의 조직에 의해 이미 관리되고 있습니다"
       ],
+      "This invite is no longer available": [
+        "이 초대는 더 이상 유효하지 않습니다"
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "이는 오랜 시간 ${ PASS_SHORT_APP_NAME }를 사용하지 않았거나 Safari 내역을 삭제하면 발생할 수 있습니다."
       ],
@@ -1402,9 +1405,6 @@
       ],
       "Unknown error.": [
         "알 수 없는 오류."
-      ],
-      "Unknown invite": [
-        "알 수 없는 초대"
       ],
       "Unknown item": [
         "알 수 없는 항목"
@@ -2205,7 +2205,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
