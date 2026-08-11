@@ -901,6 +901,9 @@
       "Messages to this recipient": [
         "Berichten aan deze ontvanger"
       ],
+      "Migrate": [
+        "Migreer"
+      ],
       "Minimize composer": [
         "Opstelvenster minimaliseren"
       ],
@@ -4737,6 +4740,9 @@
       "Address is already added to your account": [
         "Het adres is al aan uw account toegevoegd"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adres wordt al gebruikt door een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
+      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -4779,11 +4785,23 @@
       "Calendar limit reached": [
         "Agendalimiet bereikt"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Kan geen foto aan album toevoegen zonder een geldige naam"
+      ],
       "Cannot export this contact": [
         "Kan dit contact niet exporteren"
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "U mag de verloopdatum niet later instellen dan het retentiebeleid toestaat."
+      ],
+      "Cannot share root folder": [
+        "Kan hoofdmap niet delen"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan de auteur van dit bestand niet verifiëren"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan niet verifiëren wie dit bestand heeft geüpload"
       ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
@@ -4813,6 +4831,9 @@
       "Contact signature not verified": [
         "Handtekening van contact niet geverifieerd"
       ],
+      "Contact your administrator to start a migration.": [
+        "Neem contact op met uw beheerder om een ​​migratie te starten."
+      ],
       "Contact your organization’s administrator to resolve this": [
         "Neem contact op met de beheerder van uw bedrijf om dit probleem op te lossen"
       ],
@@ -4822,11 +4843,32 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Zoeken naar inhoud kan niet worden ingeschakeld. Herstart de applicatie of wis de gegevens."
       ],
+      "Copy operation aborted": [
+        "Kopieerbewerking afgebroken"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Het kopiëren van een item naar een niet-map is niet toegestaan"
+      ],
+      "Could not load sharing details": [
+        "Kan de deelgegevens niet laden"
+      ],
       "Could not open created vault": [
         "Kon aangemaakte kluis niet openen"
       ],
       "Could not open updated vault": [
         "Kon bijgewerkte kluis niet openen"
+      ],
+      "Could not unlock the parent folder": [
+        "Kan de bovenliggende map niet ontgrendelen"
+      ],
+      "Could not unlock this item": [
+        "Kan dit item niet ontgrendelen"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Het aanmaken van bestanden in niet-mappen is niet toegestaan"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Het aanmaken van mappen in niet-mappen is niet toegestaan"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Ontsleutelingsfout: decodering van de gecodeerde inhoud van dit bericht is mislukt."
@@ -4838,6 +4880,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Deselecteer tenminste ${ calendarsToFixCount } agenda of",
         "Deselecteer tenminste ${ calendarsToFixCount } agenda's of"
+      ],
+      "Device not found": [
+        "Apparaat niet gevonden"
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
@@ -4890,8 +4935,23 @@
       "Failed loading group members": [
         "Kon geen groepslid toevoegen."
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Kan de bladwijzersleutel niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Kan bladwijzerwachtwoord niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Kan inhoudssleutel niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kan itemnaam niet ontsleutelen: ${ message }"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Fout tijdens het versleutelen van de bijlage. Probeer opnieuw."
+      ],
+      "Failed to get inviter keys": [
+        "Kan uitnodigingssleutels niet ophalen"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
@@ -4901,6 +4961,12 @@
       ],
       "Failed to open to contact": [
         "Contact maken mislukt"
+      ],
+      "File download failed due to empty response": [
+        "Het downloaden van bestanden is mislukt vanwege een leeg antwoord"
+      ],
+      "File has no revision": [
+        "Bestand heeft geen revisie"
       ],
       "Filter with this name already exists": [
         "Filter met deze naam bestaat reeds"
@@ -4913,6 +4979,9 @@
       ],
       "Forward address is required": [
         "Doorstuuradres is vereist"
+      ],
+      "Image preview not found": [
+        "Afbeeldingsvoorbeeld niet gevonden"
       ],
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
@@ -4956,8 +5025,14 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
+      "Invitation not found": [
+        "Uitnodiging niet gevonden"
+      ],
       "Item content cannot exceed 40KB": [
         "Item mag niet groter zijn dan 40KB"
+      ],
+      "Item not found": [
+        "Item niet gevonden"
       ],
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
@@ -4965,11 +5040,17 @@
       "Last name is too long": [
         "Achternaam is te lang"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Verouderde openbare link kan niet worden bijgewerkt. Maak opnieuw een nieuwe openbare link."
+      ],
       "Maximum expiration time reached.": [
         "Maximale vervaltijd bereikt."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maximum aantal bijlagen (${ attachmentsCountLimit }) overschreden"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
@@ -4981,14 +5062,36 @@
       "Message processing error.": [
         "Verwerkingsfout in bericht."
       ],
+      "Missing inviter email": [
+        "Ontbrekende e-mail uitnodiger"
+      ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
+      ],
+      "Missing organization private key": [
+        "Ontbrekende privésleutel van de organisatie"
+      ],
+      "Missing organization public key": [
+        "Ontbrekende openbare sleutel van de organisatie"
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
+      "Moving item to a non-folder is not allowed": [
+        "Het is niet toegestaan ​​om een ​​item naar een niet-map te verplaatsen"
+      ],
+      "Moving root item is not allowed": [
+        "Het verplaatsen van het hoofditem is niet toegestaan"
+      ],
       "Name is required": [
         "Naam is verplicht"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "De naam mag maximaal ${ MAX_NODE_NAME_LENGTH } tekens lang zijn",
+        "De naam mag maximaal ${ MAX_NODE_NAME_LENGTH } tekens lang zijn"
+      ],
+      "Name must not be empty": [
+        "Naam mag niet leeg zijn"
       ],
       "Network error": [
         "Netwerkfout"
@@ -5017,6 +5120,9 @@
       "No external key retrieved for user is valid for sending": [
         "Geen externe sleutel opgehaald voor gebruiker is geldig voor verzenden"
       ],
+      "No file data was received. Please try again.": [
+        "Geen bestandsgegevens ontvangen. Probeer het opnieuw."
+      ],
       "No valid address found": [
         "Geen geldig adres gevonden"
       ],
@@ -5031,6 +5137,12 @@
         "Eén van de groepen heeft geen contacten: ${ noContactGroupList }",
         "Sommige groepen hebben geen contacten: ${ noContactGroupList } "
       ],
+      "Operation aborted": [
+        "Bewerking afgebroken"
+      ],
+      "Operation failed, try again later": [
+        "Bewerking mislukt. Probeer het later opnieuw"
+      ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
@@ -5039,6 +5151,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Een deel van het bestand lijkt beschadigd te zijn"
       ],
       "Password is required": [
         "Wachtwoord is vereist"
@@ -5060,6 +5175,12 @@
       ],
       "Permissions request failed.": [
         "Verzoek om toestemming mislukt."
+      ],
+      "Photo is already in the target album": [
+        "De foto staat al in het doelalbum"
+      ],
+      "Photo not found": [
+        "Foto niet gevonden"
       ],
       "Please activate your search again": [
         "Activeer het zoeken opnieuw"
@@ -5165,6 +5286,9 @@
         "Dubbele ontvanger verwijderd: ${ recipents }",
         "Dubbele ontvangers verwijderd: ${ recipents }"
       ],
+      "Renaming root item is not allowed": [
+        "Het hernoemen van het rootitem is niet toegestaan"
+      ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
@@ -5177,6 +5301,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "Het verzenden van bijlagen is beperkt terwijl u de limieten van uw abonnement overschrijdt of tot u uw abonnement upgrade."
       ],
+      "Signature is missing": [
+        "Handtekening ontbreekt"
+      ],
       "Signature not verified": [
         "Handtekening niet geverifieerd"
       ],
@@ -5186,11 +5313,26 @@
       "Signature verification failed": [
         "Controle van handtekening mislukt"
       ],
+      "Signature verification for ${ signatureType } failed": [
+        "Handtekeningverificatie voor ${ signatureType } mislukt"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Handtekeningverificatie voor ${ signatureType } mislukt: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Enkele contacten konden niet verwijderd worden"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Sommige bestandsgegevens konden niet worden geüpload. Probeer het opnieuw."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Sommige bestandsdelen konden niet worden geüpload. Probeer het opnieuw."
+      ],
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
+      ],
+      "Some items could not be loaded": [
+        "Sommige items konden niet worden geladen"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sommige namen van mappen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
@@ -5283,6 +5425,9 @@
       "The system is busy at the moment. Please try again in a few minutes.": [
         "Het systeem is momenteel drukbezet. Probeer het over enkele minuten opnieuw."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Het geüploade bestand komt niet overeen met het origineel. Probeer het opnieuw."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "De schrijfassistent kan niet verder gaan met uw verzoek. Probeer een ander verzoek."
       ],
@@ -5313,8 +5458,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
+      "This file has missing crypto material": [
+        "Dit bestand bevat ontbrekend cryptomateriaal"
+      ],
+      "This file has no version available to download": [
+        "Er is geen versie beschikbaar om te downloaden van dit bestand"
+      ],
+      "This file version could not be uploaded": [
+        "Deze bestandsversie kan niet worden geüpload"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Deze mapnaam is niet beschikbaar. Kies een andere naam."
+      ],
+      "This item has no image preview": [
+        "Dit item heeft geen afbeeldingsvoorbeeld"
+      ],
+      "This item is no longer shared": [
+        "Dit item wordt niet langer gedeeld"
+      ],
+      "This item is not shared": [
+        "Dit item is niet gedeeld"
       ],
       "This label name is not available. Please choose a different name.": [
         "Deze labelnaam is niet beschikbaar. Kies een andere naam."
@@ -5327,6 +5490,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
+      ],
+      "Too many server requests, please try again later": [
+        "Te veel serververzoeken. Probeer het later opnieuw"
       ],
       "Trusted keys are not valid for sending": [
         "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
@@ -5361,6 +5527,12 @@
       "VAT number must start with ${ prefixes }": [
         "BTW-nummer moet beginnen met ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "Verificatiesleutels zijn niet beschikbaar"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verificatiesleutels voor ${ signatureType } zijn niet beschikbaar"
+      ],
       "We couldn’t send a verification code using this method.": [
         "We konden via deze methode geen verificatiecode verzenden."
       ],
@@ -5369,6 +5541,12 @@
       ],
       "Wrong password": [
         "Fout wachtwoord"
+      ],
+      "You can create public links for your own files only": [
+        "U kunt alleen openbare links voor uw eigen bestanden maken"
+      ],
+      "You can update a public link for your own files only": [
+        "U kunt een openbare link alleen voor uw eigen bestanden bijwerken"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
@@ -5380,6 +5558,12 @@
       ],
       "You did not provide a file.": [
         "U heeft geen bestand geselecteerd."
+      ],
+      "You do not have access to this item": [
+        "U heeft geen toegang tot dit item"
+      ],
+      "You do not have access to this shared item": [
+        "U heeft geen toegang tot dit gedeelde item"
       ],
       "You have reached the maximum number of calendars.": [
         "U hebt het maximum aantal agenda's bereikt."
@@ -5924,6 +6108,15 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "Geactiveerd"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Fouten"
+      ],
       "Filter": [
         "Filter"
       ],
@@ -5935,6 +6128,18 @@
       ],
       "Has attachments": [
         "Heeft bijlagen"
+      ],
+      "In progress": [
+        "In uitvoering"
+      ],
+      "Migrated": [
+        "Gemigreerd"
+      ],
+      "Not activated": [
+        "Niet geactiveerd"
+      ],
+      "Pending": [
+        "In behandeling"
       ],
       "Read": [
         "Gelezen"
@@ -6795,6 +7000,9 @@
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME }-markering"
+      ],
       "${ issues.length } issue during import:": [
         "${ issues.length } probleem tijdens importeren:",
         "${ issues.length } problemen tijdens importeren:"
@@ -7190,6 +7398,9 @@
       ],
       "Attention required": [
         "Aandacht vereist"
+      ],
+      "Author is not provided on public link": [
+        "De auteur wordt niet vermeld op de openbare link"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Wis automatisch e-mails die meer dan 30 dagen geleden naar Prullenbak en Spam zijn verplaatst."
@@ -7622,6 +7833,9 @@
       "finance": [
         "financiën"
       ],
+      "Find out what can be migrated.": [
+        "Ontdek wat er gemigreerd kan worden."
+      ],
       "Folder": [
         "Map"
       ],
@@ -7974,6 +8188,9 @@
       "Move here": [
         "Hierheen verplaatsen"
       ],
+      "Move to Primary": [
+        "Ga naar Primair"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
@@ -7991,6 +8208,9 @@
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
+      ],
+      "No conversation to read": [
+        "Geen gesprek om te lezen"
       ],
       "No email address": [
         "Geen e-mailadres"
@@ -8027,6 +8247,9 @@
       ],
       "No trackers found": [
         "Geen trackers gevonden"
+      ],
+      "No users to display": [
+        "Er zijn geen gebruikers om weer te geven."
       ],
       "non-${ MAIL_APP_NAME }": [
         "niet-${ MAIL_APP_NAME }"
@@ -8242,9 +8465,17 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contacteer ons voor hulp met ${ BRAND_NAME }."
       ],
+      "Read ${ count } email": [
+        "Lees ${ count } e-mail",
+        "Lees ${ count } e-mail"
+      ],
       "Read ${ count } email on screen": [
         "Lees ${ count } e-mail op het scherm",
         "Lees ${ count } e-mails op het scherm"
+      ],
+      "Read ${ count } message in this thread": [
+        "Lees ${ count } bericht in deze thread",
+        "Lees ${ count } berichten in deze thread"
       ],
       "Read your ${ count } filter": [
         "Lees uw ${ count } filter",
@@ -8339,6 +8570,9 @@
       "Select all ${ elementsCount } in ${ location }": [
         "Selecteer alle ${ elementsCount } in ${ location }",
         "Selecteer alle ${ elementsCount } in ${ location }"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wil gebruiken wanneer u een e-mail stuurt aan deze geadresseerde."
@@ -8707,6 +8941,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Deze unieke code kan worden gebruikt door websites en ISP's (internet service providers) om uw locatie en browsegeschiedenis te koppelen aan uw apparaat"
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Deze gebruiker kan niet worden gemigreerd omdat zijn e-mailadres niet beschikbaar is op ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit met het platform."
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Dit werd u getoond omdat uw e-mailonderwerp trefwoorden met wachtwoord reset bevat."
       ],
@@ -8733,6 +8973,21 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Maak eerst een agenda aan in ${ CALENDAR_APP_NAME } om afspraken te importeren. Dit is waar de afspraken tevoorschijn komen na het importeren."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Om deze gebruiker te migreren, voegt u het e-maildomein toe en verifieert u het onder ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Als u deze gebruiker wilt migreren, schakelt u het account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Om deze gebruiker te migreren, moet hij/zij de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Om deze gebruiker te migreren, haalt u hem uit het archief in uw ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Als u deze gebruiker wilt migreren, heft u de opschorting op in uw ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Om uw contacten opnieuw te ondertekenen, moeten we elk contactpersoon controleren op de lijst met versleutelingssleuteld die beschikbaar zijn in uw account. Als er geen overeenkomst is gevonden, zal uw contactpersoon opnieuw worden ondertekend met de primaire versleutelingssleutel."
@@ -8944,6 +9199,9 @@
       "We use 3-D Secure to protect your payments": [
         "We gebruiken 3-D Secure om uw betalingen te beschermen"
       ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "We sturen u door naar ${ IDEAL_BRAND_NAME } in een nieuw browsertabblad om deze transactie te voltooien. Als u pop-upblokkering gebruikt, schakel deze dan uit om door te gaan."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
@@ -9006,6 +9264,9 @@
       ],
       "Yearly": [
         "Jaarlijks"
+      ],
+      "You": [
+        "U"
       ],
       "You already have a free account": [
         "U heeft al een gratis account"
@@ -12880,6 +13141,9 @@
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betaal met ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betaalmethode vereist voor de activering van het abonnement nadat de proefversie is afgelopen."
       ],
@@ -12961,6 +13225,9 @@
       "You will soon be redirected to verify your payment.": [
         "Binnenkort wordt u doorgestuurd om uw betaling te verifiëren."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Uw valuta is gewijzigd naar euro's (€), omdat ${ IDEAL_BRAND_NAME } alleen betalingen in euro's ondersteunt."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
@@ -12972,6 +13239,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Kan ${ IDEAL_BRAND_NAME } niet initialiseren. Probeer het later opnieuw."
+      ],
       "Invalid card number": [
         "Ongeldig kaartnummer"
       ],
@@ -12994,6 +13264,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Er ging iets mis. Google Pay verificatie mislukt."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, om uw bank opdracht te geven het bedrag van uw rekening af te schrijven. U kunt binnen 8 weken na de incassodatum een ​​terugbetaling krijgen, onder de voorwaarden van uw overeenkomst met uw bank."
       ]
     },
     "Payments.info": {
@@ -13375,6 +13650,20 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Voortgang: ${ combinedProgress }%"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attributen"
+      ],
+      "hash key": [
+        "hash sleutel"
+      ],
+      "key": [
+        "sleutel"
+      ],
+      "membership": [
+        "lidmaatschap"
       ]
     },
     "Property type": {
@@ -15208,9 +15497,8 @@
         "Verplaats ${ selectionCount } bericht",
         "Verplaats ${ selectionCount } berichten"
       ],
-      "Moved to ${ label }. Similar message will be categorized there in the future.": [
-        "Verplaatst naar ${ label }. Vergelijkbaar bericht wordt in de toekomst daar ondergebracht.",
-        "Verplaatst naar ${ label }. Vergelijkbare berichten worden in de toekomst daar ondergebracht."
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Verplaatst naar ${ label }. Soortgelijke berichten zullen daar in de toekomst worden gecategoriseerd."
       ],
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
@@ -15338,11 +15626,17 @@
       "Actions": [
         "Acties"
       ],
+      "Activated": [
+        "Geactiveerd"
+      ],
       "Address": [
         "Adres"
       ],
       "Created": [
         "Aangemaakt"
+      ],
+      "Estimated size": [
+        "Geschatte grootte"
       ],
       "Expires": [
         "Verloopt"
@@ -15361,6 +15655,9 @@
       ],
       "Type": [
         "Soort"
+      ],
+      "User": [
+        "Gebruiker"
       ]
     },
     "TableHeader": {
@@ -15647,6 +15944,9 @@
       "Collaborate on documents": [
         "Samenwerken aan documenten"
       ],
+      "Configure migration": [
+        "Migratie configureren"
+      ],
       "Confirm downgrade": [
         "Downgrade bevestigen"
       ],
@@ -15789,6 +16089,9 @@
       ],
       "Distraction-free emailing": [
         "E-mailen zonder afleiding"
+      ],
+      "Domain names": [
+        "Domeinnamen"
       ],
       "Don't give spam a chance": [
         "Geef spam geen kans"
@@ -16310,6 +16613,9 @@
       ],
       "Select data to import": [
         "Selecteer gegevens om te importeren"
+      ],
+      "Select users to migrate": [
+        "Selecteer gebruikers om te migreren"
       ],
       "Self-destruct message": [
         "Zelfvernietigend bericht"

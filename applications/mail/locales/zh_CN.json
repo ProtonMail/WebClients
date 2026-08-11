@@ -897,6 +897,9 @@
       "Messages to this recipient": [
         "发往此收件人的邮件"
       ],
+      "Migrate": [
+        "迁移"
+      ],
       "Minimize composer": [
         "最小化编辑器"
       ],
@@ -4943,6 +4946,9 @@
       "Name is required": [
         "名称为必填项"
       ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
+      ],
       "Network error": [
         "网络错误"
       ],
@@ -8100,8 +8106,23 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "如有任何关于 ${ BRAND_NAME } 的问题，欢迎随时联系我们。"
       ],
+      "Read ${ count } email": [
+        "读取 ${ count } 封邮件"
+      ],
       "Read ${ count } email on screen": [
         "已读 ${ count } 封屏幕上的邮件"
+      ],
+      "Read ${ count } message in this thread": [
+        "读取话题中的 ${ count } 条消息"
+      ],
+      "Read your ${ count } filter": [
+        "读取您的 ${ count } 筛选"
+      ],
+      "Read your ${ count } folder": [
+        "读取您的 ${ count } 文件夹"
+      ],
+      "Read your ${ count } label": [
+        "读取您的 ${ count } 标签"
       ],
       "Recipient: ": [
         "收件人："
@@ -8843,6 +8864,9 @@
       ],
       "Yearly": [
         "每年"
+      ],
+      "You": [
+        "您"
       ],
       "You already have a free account": [
         "您的账户已经是免费版了"
@@ -13128,6 +13152,11 @@
         "进度：${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "key": [
+        "密钥"
+      ]
+    },
     "Property type": {
       "Address": [
         "地址"
@@ -14892,9 +14921,6 @@
       "Move ${ selectionCount } message": [
         "移动 ${ selectionCount } 封邮件"
       ],
-      "Moved to ${ label }. Similar message will be categorized there in the future.": [
-        "已移至 ${ label }，未来类似邮件将自动归类。"
-      ],
       "Password copied to clipboard": [
         "密码已复制到剪贴板"
       ],
@@ -15453,6 +15479,9 @@
       ],
       "Distraction-free emailing": [
         "专注邮件，拒绝干扰"
+      ],
+      "Domain names": [
+        "域名"
       ],
       "Don't give spam a chance": [
         "不给垃圾邮件可乘之机"
