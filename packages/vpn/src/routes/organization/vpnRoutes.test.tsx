@@ -54,6 +54,11 @@ vi.mock('../../definitions/routes', () => ({
     findNavItem: vi.fn(),
 }));
 
+const samlSSOMock = vi.fn<() => [{ configs: { Enabled: boolean }[] } | undefined, boolean]>();
+vi.mock('@proton/account/samlSSO/hooks', () => ({
+    useSamlSSO: () => samlSSOMock(),
+}));
+
 const config = { id: 'route', text: 'Route title', to: '/route' } as unknown as SectionConfig;
 
 const navSectionsRoutes = [
@@ -119,6 +124,7 @@ describe('AlwaysOnVpnRoute', () => {
 
     beforeEach(() => {
         vi.clearAllMocks();
+        samlSSOMock.mockReturnValue([{ configs: [{ Enabled: true }] }, false]);
     });
 
     it('renders a loader while the navigation feature is loading', () => {
@@ -163,11 +169,34 @@ describe('AlwaysOnVpnRoute', () => {
         expect(routes.findNavItem).not.toHaveBeenCalled();
     });
 
-    it('warns that SSO users cannot sign in on devices with always-on enforced', () => {
+    it('warns SSO organizations that their users cannot sign in on devices with always-on enforced', () => {
         (navigation.useB2BAdminNavigation as Mock).mockReturnValue({ loading: false, enabled: false });
 
         render(<AlwaysOnVpnRoute config={config} />);
 
         expect(screen.getByText(ssoWarning)).toBeInTheDocument();
+    });
+
+    it.each([
+        { name: 'the organization has no SAML config', samlSSO: { configs: [] } },
+        { name: 'every SAML config is disabled', samlSSO: { configs: [{ Enabled: false }] } },
+        { name: 'the SAML configs are unavailable', samlSSO: undefined },
+    ])('hides the SSO warning when $name', ({ samlSSO }) => {
+        (navigation.useB2BAdminNavigation as Mock).mockReturnValue({ loading: false, enabled: false });
+        samlSSOMock.mockReturnValue([samlSSO, false]);
+
+        render(<AlwaysOnVpnRoute config={config} />);
+
+        expect(screen.queryByText(ssoWarning)).not.toBeInTheDocument();
+    });
+
+    it('renders a loader while the SAML configs are loading', () => {
+        (navigation.useB2BAdminNavigation as Mock).mockReturnValue({ loading: false, enabled: false });
+        samlSSOMock.mockReturnValue([undefined, true]);
+
+        render(<AlwaysOnVpnRoute config={config} />);
+
+        expect(screen.getByTestId('loader')).toBeInTheDocument();
+        expect(screen.queryByTestId('nav-area')).not.toBeInTheDocument();
     });
 });
