@@ -877,8 +877,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ένα ψευδώνυμο ηλεκτρονικού ταχυδρομείου λειτουργεί όπως μια διεύθυνση ηλεκτρονικού ταχυδρομείου, αλλά μειώνει τα ανεπιθύμητα μηνύματα και διατηρεί κρυφή την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου και την ταυτότητά σας."
       ],
+      "Change these passwords immediately": [
+        "Αλλάξτε αμέσως αυτούς τους κωδικούς πρόσβασης"
+      ],
       "Change your passwords": [
         "Αλλάξτε τους κωδικούς πρόσβασής σας"
+      ],
+      "Check if your passwords have been exposed": [
+        "Ελέγξτε αν οι κωδικοί πρόσβασής σας έχουν αποκαλυφθεί"
       ],
       "Create unique passwords": [
         "Δημιουργήστε μοναδικούς κωδικούς πρόσβασης"
@@ -936,6 +942,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Αυτός ο λογαριασμός είναι ευάλωτος, επισκεφθείτε την υπηρεσία και αλλάξτε τον κωδικό πρόσβασής σας."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Αυτός ο κωδικός πρόσβασης σύνδεσης εμφανίζεται σε μια παραβίαση δεδομένων. Επισκεφθείτε την υπηρεσία και αλλάξτε τον κωδικό πρόσβασης."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Αυτή η υπηρεσία προσφέρει 2FA. Ενεργοποιήστε το για πρόσθετη ασφάλεια λογαριασμού."
@@ -1390,6 +1399,9 @@
       "This domain is already managed by your organization": [
         "Αυτός ο τομέας διαχειρίζεται ήδη από τον οργανισμό σας"
       ],
+      "This invite is no longer available": [
+        "Αυτή η πρόσκληση δεν είναι πλέον διαθέσιμη"
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Αυτό μπορεί να συμβεί μετά από μεγάλο χρονικό διάστημα μη χρήσης ${ PASS_SHORT_APP_NAME } ή εκκαθάρισης του ιστορικού Safari."
       ],
@@ -1410,9 +1422,6 @@
       ],
       "Unknown error.": [
         "Άγνωστο σφάλμα."
-      ],
-      "Unknown invite": [
-        "Άγνωστη πρόσκληση"
       ],
       "Unknown item": [
         "Άγνωστο αντικείμενο"
@@ -2235,8 +2244,7 @@
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -4820,6 +4828,12 @@
       "Clear clipboard": [
         "Εκκαθάριση πρόχειρου"
       ],
+      "Compromised password": [
+        "Παραβιασμένος κωδικός πρόσβασης"
+      ],
+      "Compromised passwords": [
+        "Παραβιασμένοι κωδικοί πρόσβασης"
+      ],
       "Confirm extra password": [
         "Επιβεβαίωση επιπλέον κωδικού πρόσβασης"
       ],
@@ -5051,6 +5065,9 @@
       "No access tokens yet": [
         "Δεν υπάρχουν ακόμη διακριτικά πρόσβασης"
       ],
+      "No compromised passwords": [
+        "Μη παραβιασμένοι κωδικοί πρόσβασης"
+      ],
       "No excluded items": [
         "Δεν υπάρχουν εξαιρούμενα στοιχεία"
       ],
@@ -5229,6 +5246,9 @@
       ],
       "Update available": [
         "Υπάρχει διαθέσιμη ενημέρωση"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Αναβάθμιση για έλεγχο για παραβιασμένους κωδικούς πρόσβασης"
       ],
       "URL matching": [
         "Αντιστοίχιση URL"
