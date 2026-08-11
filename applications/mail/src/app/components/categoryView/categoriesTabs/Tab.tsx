@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -32,8 +32,8 @@ interface Props {
 }
 
 const navClasses: Record<TabState, string> = {
-    [TabState.ACTIVE]: 'active color-norm border-bottom border-top text-semibold mail-category-border',
-    [TabState.DRAGGING_OVER]: 'hovered border border-transparent z-up',
+    [TabState.ACTIVE]: 'color-norm border-bottom border-top text-semibold mail-category-border',
+    [TabState.DRAGGING_OVER]: 'tab-drop-over border border-transparent z-up',
     [TabState.INACTIVE]: 'border border-transparent',
 };
 
@@ -74,19 +74,20 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
 
     const navigateTo = setCategoryInUrl(category.id);
     const shouldShowDragHelper = userIsDragging && tabState !== TabState.ACTIVE;
+    const label = getLabelFromCategoryId(category.id);
 
     return (
-        <NavLink
+        <Link
             to={navigateTo}
             className={clsx(
-                'tab-container gap-1.5 h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
+                'tab-container h-full text-no-decoration color-hint hover:mail-category-color',
                 navClasses[tabState],
-                shouldShowDragHelper && 'dashed'
+                shouldShowDragHelper && 'tab-drop-target'
             )}
             role="tab"
             aria-selected={tabState === TabState.ACTIVE}
             title={getTitleFromCategoryId(category.id)}
-            aria-label={getLabelFromCategoryId(category.id)}
+            aria-label={label}
             data-testid={`category-tab-${category.id}`}
             data-color={tabState === TabState.INACTIVE ? undefined : category.colorShade}
             onClick={handleClick}
@@ -100,14 +101,22 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
                 />
                 {showNewBadge && <span className="tab-new-dot color-blue-500" aria-hidden="true" />}
             </span>
-            <span className="flex flex-column justify-center min-w-0">
+            {/*
+                Copy of the label with the active font weight.
+                Ensures there is no jump when a tab goes from inactive to active.
+            */}
+            <span className="tab-label-ghost text-sm text-semibold" aria-hidden="true">
+                {label}
+            </span>
+
+            <span className="tab-text flex flex-column justify-center min-w-0">
                 <span
                     className={clsx(
                         'tab-label text-sm text-ellipsis min-w-0',
                         tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak'
                     )}
                 >
-                    {getLabelFromCategoryId(category.id)}
+                    {label}
                 </span>
                 {shouldShowDragHelper ? (
                     // translator: As concise as possible, under 20 characters if possible
@@ -116,6 +125,6 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
             </span>
 
             <TabBadge count={count} tabState={tabState} shouldShowCounter={shouldShowCounter} />
-        </NavLink>
+        </Link>
     );
 };
