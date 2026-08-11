@@ -1,6 +1,6 @@
-import { DAY } from '@proton/shared/lib/constants';
-
 import type { LogLevel } from './types';
+
+export const DAY = 24 * 60 * 60 * 1000;
 
 /** Prefix for every logger IndexedDB database. */
 export const LOGGER_DB_PREFIX = 'proton-logs-';
