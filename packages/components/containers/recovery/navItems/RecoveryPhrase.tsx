@@ -1,4 +1,3 @@
-import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
@@ -6,7 +5,9 @@ import SettingsNavItem from '@proton/components/containers/layout/SettingsNavIte
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcRecoveryPhrase } from '@proton/icons/icons/IcRecoveryPhrase';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
-import { dateLocale } from '@proton/shared/lib/i18n';
+
+import { LastChanged } from '../LastChanged';
+import { NavItemStatus } from './NavItemStatus';
 
 interface Props {
     to: string;
@@ -28,7 +29,6 @@ const RecoveryPhraseBadge = () => {
 
 const RecoveryPhrase = ({ to }: Props) => {
     const { updateTime } = useSelector(selectMnemonicData);
-    const formattedUpdateDate = updateTime !== null ? format(updateTime, 'PP', { locale: dateLocale }) : null;
 
     return (
         <SettingsNavItem
@@ -38,14 +38,10 @@ const RecoveryPhrase = ({ to }: Props) => {
             tooltip={c('Tooltip')
                 .t`Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password`}
         >
-            <span className="flex items-center gap-2">
+            <NavItemStatus>
                 <RecoveryPhraseBadge />
-                {formattedUpdateDate && (
-                    <span className="text-sm color-weak" data-testid="account:recovery-phrase:last-changed-date">{c(
-                        'Status'
-                    ).t`Last updated ${formattedUpdateDate}`}</span>
-                )}
-            </span>
+                <LastChanged date={updateTime} data-testid="account:recovery-phrase:last-changed-date" />
+            </NavItemStatus>
         </SettingsNavItem>
     );
 };

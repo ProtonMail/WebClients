@@ -1,10 +1,14 @@
 import { c } from 'ttag';
 
+import { getLastModifiedDate } from '@proton/account/recovery/lastModifiedTime';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+import { LastChanged } from '../LastChanged';
+import { NavItemStatus } from './NavItemStatus';
 
 interface Props {
     to: string;
@@ -25,6 +29,8 @@ const RecoveryQrCodeBadge = () => {
 };
 
 const RecoveryQrCode = ({ to }: Props) => {
+    const [userSettings] = useUserSettings();
+
     return (
         <SettingsNavItem
             to={to}
@@ -32,7 +38,13 @@ const RecoveryQrCode = ({ to }: Props) => {
             title={c('Title').t`QR code sign-in`}
             tooltip={c('Tooltip').t`Allow scanning a QR code from a ${BRAND_NAME} mobile app to sign in`}
         >
-            <RecoveryQrCodeBadge />
+            <NavItemStatus>
+                <RecoveryQrCodeBadge />
+                <LastChanged
+                    date={getLastModifiedDate(userSettings?.QrCodeSignInLastModifiedTime)}
+                    data-testid="account:qr-code-sign-in:last-changed-date"
+                />
+            </NavItemStatus>
         </SettingsNavItem>
     );
 };

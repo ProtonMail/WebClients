@@ -20,6 +20,7 @@ import SettingsDescription, {
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import InitiateSessionRecoveryModal from '@proton/components/containers/account/sessionRecovery/InitiateSessionRecoveryModal';
 import ConfirmDisableSessionRecoveryModal from '@proton/components/containers/recovery/ConfirmDisableSessionRecoveryModal';
+import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -61,6 +62,7 @@ export const SessionRecoverySubpage = () => {
     const {
         isSessionRecoveryEnabled,
         isSessionRecoveryInitiationAvailable,
+        updateTime,
         loading: loadingSessionRecoveryData,
     } = useSelector(selectSessionRecoveryData);
 
@@ -201,6 +203,11 @@ export const SessionRecoverySubpage = () => {
                         {!isSessionRecoveryEnabled && !isSentinelUser && <RecoveryWarning />}
                     </DashboardCardContent>
                 </DashboardCard>
+                <LastChanged
+                    className="block mt-2"
+                    date={updateTime}
+                    data-testid="account:recovery:signed-in-reset:last-changed-date"
+                />
             </DashboardGrid>
         </>
     );
