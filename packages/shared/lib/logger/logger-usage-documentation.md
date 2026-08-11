@@ -20,32 +20,32 @@ const authentication = createAuthentication();
 const { key: loggerKey, ID: loggerID } = await generateLoggerKey(authentication);
 ```
 
-### Step 2 — create the logger
+### Step 2 — initialize the logger
 
 ```typescript
-import { loggerManager } from '@proton/shared/lib/logger';
+import { logger } from '@proton/shared/lib/logger';
 
-const logger = await loggerManager.createLogger('mail', {
+await logger.initialize({
     encryptionKey: loggerKey, // required: AES-GCM key
-    appName: 'mail', // required: part of the encryption context
+    appName: 'mail', // required: encryption context, and the name unless overridden
     loggerID, // required: part of the database name
-    loggerName: 'mail', // optional: encryption context, defaults to the logger name
+    loggerName: 'mail', // optional: prefixes lines and names the database, defaults to appName
     maxEntries: 10_000, // optional, default 10 000
     retentionDays: 7, // optional, default 7
     consoleLevels: ['error'], // optional, default ['error'] outside development
 });
 ```
 
-Read the same instance back anywhere with `loggerManager.getLogger('mail')`.
+There is **one logger per application**, exported as a singleton and initialized once in bootstrap. Every area of the app writing to the same database is what keeps its lines in a single chronological order, so import `logger` anywhere rather than creating another instance.
 
 ### Pre-initialization logging
 
 Lines emitted before `initialize()` resolves are buffered (up to 1 000) and written once it does, **keeping their original timestamps**. They are echoed to the console immediately.
 
 ```typescript
-const logger = loggerManager.getLogger('api');
+import { logger } from '@proton/shared/lib/logger';
+
 logger.info('buffered until initialize() resolves');
-await logger.initialize(options);
 ```
 
 ## 2. Writing logs
@@ -66,19 +66,13 @@ In development every level goes to the console. Otherwise only the levels in `co
 ## 3. Reading, downloading, clearing
 
 ```typescript
-// One logger
 const logs = await logger.getLogs();
 // 2026-01-02T03:04:05.000Z INFO [mail]: User logged in {"sessionId":"abc123"}
 
-// Every initialized logger, separated by a blank line
-const allLogs = await loggerManager.getAllLogs();
-
 await logger.downloadLogs(); // mail-logs-2026-01-02T03-04-05-000Z.log
 await logger.downloadLogs('custom.log');
-await loggerManager.downloadAllLogs();
 
 await logger.clearLogs();
-await loggerManager.clearAllLogs();
 ```
 
 `getLogs()` awaits any pending writes first, so a line is always visible to the read that follows it. Concurrent calls share one read.
@@ -94,8 +88,6 @@ logger.isInitialized();
 await logger.flush();
 
 await logger.destroy(); // stops cleanup, closes storage
-await loggerManager.removeLogger('mail'); // destroy and forget
-await loggerManager.destroyAll();
 ```
 
 The logger records only what you pass it. It attaches no `window` listeners, so uncaught errors and unhandled rejections are not captured — log them explicitly from your own handler if you want them.
@@ -106,11 +98,11 @@ A cleanup pass runs at initialization and then daily. It removes entries older t
 
 ## Testing
 
-`packages/shared` runs vitest in real Chromium, so tests exercise genuine IndexedDB — there is no memory or localStorage backend to substitute.
+Construct `Logger` directly rather than using the singleton, so tests never share state. `packages/shared` runs vitest in real Chromium, so tests exercise genuine IndexedDB — there is no memory or localStorage backend to substitute.
 
 ```typescript
 // Inject a clock to test retention without timer mocks
-const logger = new Logger('test', () => fixedTimestamp);
+const logger = new Logger(() => fixedTimestamp);
 await logger.initialize({ encryptionKey, appName: 'test-app', loggerID: uniqueId });
 
 logger.info('a line');

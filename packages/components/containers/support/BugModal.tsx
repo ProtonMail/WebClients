@@ -34,7 +34,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { loggerManager } from '@proton/shared/lib/logger';
+import { logger } from '@proton/shared/lib/logger';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -290,7 +290,7 @@ const BugModal = ({
             // Read at submit rather than at open, so lines logged while the form was
             // being filled in — often the very error being reported — are included.
             if (collectLogs && includeLogs) {
-                const logs = await loggerManager.getAllLogs();
+                const logs = await logger.getLogs();
                 if (logs && logs.trim()) {
                     const filename = `logs-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
                     attachments[filename] = new Blob([logs], { type: 'text/plain' });
@@ -468,7 +468,7 @@ const BugModal = ({
                                 <Button
                                     className="ml-2"
                                     shape="underline"
-                                    onClick={() => loggerManager.downloadAllLogs()}
+                                    onClick={() => logger.downloadLogs()}
                                     title={c('Info').t`Download current logs`}
                                 >
                                     {c('Action').t`Download logs`}

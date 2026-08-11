@@ -1,4 +1,3 @@
-export { Logger } from './logger';
-export { logger, loggerManager } from './manager';
-export { logger as default } from './manager';
+export { Logger, logger, downloadLogFile } from './logger';
+export { logger as default } from './logger';
 export type { LogEntry, LogLevel, LoggerOptions } from './types';
