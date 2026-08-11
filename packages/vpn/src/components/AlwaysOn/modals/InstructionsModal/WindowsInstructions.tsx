@@ -30,7 +30,7 @@ interface Props {
 
 export const WindowsInstructions = ({ windows, rego }: Props) => {
     const minimumVersion = useAlwaysOnWindowsRelease();
-    const downloadLinks = useWindowsDownloadLinks();
+    const downloadLinks = useWindowsDownloadLinks(minimumVersion);
     const { sendLearnMoreClickedReport } = useAlwaysOnPolicyTelemetry();
 
     const learnMore = (
