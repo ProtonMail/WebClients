@@ -6,3 +6,4 @@ export { useFlagsDriveDirectSharing } from './internal/sharingModal/useFlagsDriv
 export { useFlagsDrivePublicSharing } from './internal/sharingModal/useFlagsDrivePublicSharing';
 export { useFlagsDriveDocsPublicSharing } from './internal/sharingModal/useFlagsDriveDocsPublicSharing';
 export { useFlagsDriveSharingAdminPermissions } from './internal/sharingModal/useFlagsDriveSharingAdminPermissions';
+export { useFlagsDriveLumo } from './internal/useFlagsDriveLumo';
