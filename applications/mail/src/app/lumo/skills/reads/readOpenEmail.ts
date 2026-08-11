@@ -18,16 +18,14 @@ export const readOpenEmailDefinition: ToolDefinition<Record<string, never>, Read
     name: 'read_open_email',
     kind: 'read',
     toolDescription:
-        'Read the decrypted body of the email the user currently has OPEN in the reading pane — no reference needed. This is the right tool whenever the user refers to "this email" / "the email I have open" / "tell me about this" / "should I reply?" without having listed or searched emails first. Prefer it over read_email when the reference is to the currently-open message. Returns nothing if no email is open, in which case ask the user to open one or use view_emails / search to find it.',
+        'Read the decrypted body of the email the user currently has OPEN in the reading pane — no reference needed. This is the right tool whenever the user refers to "this email" / "the email I have open" / "tell me about this" / "should I reply?" without having listed or searched emails first. Prefer it over read_email when the reference is to the currently-open message. Returns nothing if no email is open, in which case find the email yourself with view_emails or search; ask the user to open one only if that fails. If it reports the body could not be read yet, retry once before doing anything else.',
     paramsSchema: { type: 'object', additionalProperties: false, required: [], properties: {} },
     serializeForLumo: (result) => {
         if (!result.isOpen) {
-            return 'No email is currently open on screen. Ask the user to open one, or use view_emails / search to find it.';
+            return 'No email is currently open on screen.';
         }
-        // On `email`, not on `email.body`: an email really can have no text body, and telling the model to
-        // retry would have it wait for something that is never going to arrive.
         if (!result.email) {
-            return 'An email is open but its body could not be read yet — ask the user to try again in a moment.';
+            return 'An email is open but its body could not be read yet.';
         }
         const { reference, subject, from, date, body } = result.email;
         return `Open email ${reference} — "${subject}" from ${from} (${date}):\n${truncateBody(body)}`;

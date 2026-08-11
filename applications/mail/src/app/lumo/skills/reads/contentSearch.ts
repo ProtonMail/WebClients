@@ -30,9 +30,9 @@ export const resolveContentSearchCoverage = ({
 export const CONTENT_SEARCH_NOTES: Record<ContentSearchCoverage, string> = {
     full: 'Message bodies were searched, across the whole mailbox.',
     partial:
-        'Message bodies were searched, but this device holds a capped index that omits the oldest mail, so a keyword matching only an old email can be missed. Do NOT tell the user no such email exists — say the oldest mail was not searched, and offer to narrow by sender or date instead.',
+        'Message bodies were searched, but this device holds a capped index that omits the oldest mail, so a keyword matching only an old email can be missed.',
     metadata_only:
-        'Message bodies were NOT searched — only subjects, senders, recipients and dates. A keyword appearing solely inside a body cannot match. Do NOT tell the user no such email exists — say bodies were not searched, and offer to narrow by sender or date instead.',
+        'Message bodies were NOT searched — only subjects, senders, recipients and dates. A keyword appearing solely inside a body cannot match.',
     unfinished:
-        'The search had NOT finished when these results were read, so this list is incomplete however many rows it holds. Do NOT tell the user no such email exists — say the search timed out, and offer to narrow it by sender or date so it completes.',
+        'The search had NOT finished when these results were read, so this list is incomplete however many rows it holds.',
 };
