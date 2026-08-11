@@ -14,7 +14,6 @@ import {
     getArtifactChipVisualState,
     getArtifactLineCount,
     getArtifactWordCount,
-    isArtifactChipAwaitingRegistry,
 } from './artifactChipHelpers';
 import { getArtifactVersionIndexForMessage } from './artifactRegistry';
 import type { ParsedArtifact } from './parseArtifacts';
@@ -80,7 +79,6 @@ const ArtifactChipSubtitle = ({ artifact, visualState, versionNumber }: Artifact
 export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
     const { openArtifact, closePanel, selectedId, selectedVersionIndex, registry } = useArtifactContext();
     const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, messageId);
-    const isAwaitingRegistry = isArtifactChipAwaitingRegistry(registry, artifact.id, messageId);
     const visualState = getArtifactChipVisualState({
         artifactId: artifact.id,
         messageId,
@@ -119,7 +117,7 @@ export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
             return { color: 'norm' as const, shape: 'outline' as const };
         }
         if (visualState === 'superseded') {
-            return { color: 'weak' as const, shape: 'outline' as const };
+            return { color: 'norm' as const, shape: 'outline' as const };
         }
         return { color: 'norm' as const, shape: 'solid' as const };
     })();
@@ -150,7 +148,7 @@ export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
                 size="small"
                 pill
                 className="shrink-0"
-                disabled={visualState === 'default' && isAwaitingRegistry}
+                disabled={versionIndex === null}
                 onClick={handleAction}
                 title={actionLabel}
             >
