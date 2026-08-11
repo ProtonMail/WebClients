@@ -6,6 +6,9 @@ import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/la
 import { IcSignedInReset } from '@proton/icons/icons/IcSignedInReset';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
+import { LastChanged } from '../LastChanged';
+import { NavItemStatus } from './NavItemStatus';
+
 interface Props {
     to: string;
 }
@@ -24,6 +27,8 @@ const SignedInResetBadge = () => {
 };
 
 const SignedInReset = ({ to }: Props) => {
+    const { updateTime } = useSelector(selectSessionRecoveryData);
+
     return (
         <SettingsNavItem
             to={to}
@@ -31,7 +36,10 @@ const SignedInReset = ({ to }: Props) => {
             title={c('Title').t`Signed-in reset`}
             tooltip={c('Tooltip').t`Allow resetting your password from the account settings`}
         >
-            <SignedInResetBadge />
+            <NavItemStatus>
+                <SignedInResetBadge />
+                <LastChanged date={updateTime} data-testid="account:signed-in-reset:last-changed-date" />
+            </NavItemStatus>
         </SettingsNavItem>
     );
 };

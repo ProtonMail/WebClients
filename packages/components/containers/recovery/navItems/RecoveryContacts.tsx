@@ -1,11 +1,13 @@
 import { c, msgid } from 'ttag';
 
-import { getFormattedCreateTime } from '@proton/account/delegatedAccess/emergencyContact/date';
 import { useOutgoingItems } from '@proton/account/delegatedAccess/shared/outgoing/useOutgoingItems';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcContactAssistedRecovery } from '@proton/icons/icons/IcContactAssistedRecovery';
+
+import { LastChanged } from '../LastChanged';
+import { NavItemStatus } from './NavItemStatus';
 
 interface Props {
     to: string;
@@ -13,7 +15,7 @@ interface Props {
 
 const RecoveryContactsStatus = () => {
     const {
-        recoveryContacts: { items: contacts },
+        recoveryContacts: { items: contacts, lastModifiedTime },
         loading,
     } = useOutgoingItems();
 
@@ -22,26 +24,18 @@ const RecoveryContactsStatus = () => {
     }
 
     const count = contacts.length;
-    if (count === 0) {
-        return <StatusBadge status={StatusBadgeStatus.Warning} text={c('Title').t`Add a recovery contact`} />;
-    }
-
-    const latestDate = contacts.reduce<Date | null>((latest, contact) => {
-        const date = contact.parsedOutgoingDelegatedAccess.createdAtDate;
-        return latest === null || date > latest ? date : latest;
-    }, null);
-    const formattedDate = getFormattedCreateTime(latestDate);
 
     return (
-        <span className="color-weak text-sm">
-            <span>{c('Status').ngettext(msgid`${count} person`, `${count} people`, count)}</span>
-            {formattedDate && (
-                <span data-testid="account:recovery-contacts:last-changed-date">
-                    {' '}
-                    • {c('Status').t`Last changed ${formattedDate}`}
+        <>
+            {count === 0 ? (
+                <StatusBadge status={StatusBadgeStatus.Warning} text={c('Title').t`Add a recovery contact`} />
+            ) : (
+                <span className="color-weak">
+                    {c('Status').ngettext(msgid`${count} person`, `${count} people`, count)}
                 </span>
             )}
-        </span>
+            <LastChanged date={lastModifiedTime} data-testid="account:recovery-contacts:last-changed-date" />
+        </>
     );
 };
 
@@ -53,7 +47,9 @@ const RecoveryContacts = ({ to }: Props) => {
             title={c('Title').t`Data recovery contacts`}
             tooltip={c('Tooltip').t`Allow trusted contacts to unlock your encrypted data after a password reset`}
         >
-            <RecoveryContactsStatus />
+            <NavItemStatus>
+                <RecoveryContactsStatus />
+            </NavItemStatus>
         </SettingsNavItem>
     );
 };
