@@ -1,8 +1,8 @@
-import { type ReactNode, createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { type ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { Message } from '../../../types';
 import type { ArtifactRegistry } from './artifactRegistry';
-import type { ParsedArtifact, StreamingArtifact } from './parseArtifacts';
+import type { ParsedArtifact } from './parseArtifacts';
 import { useArtifactRegistry } from './useArtifactRegistry';
 
 interface ArtifactContextValue {
@@ -17,20 +17,12 @@ interface ArtifactContextValue {
     openArtifact: (id: string, versionIndex?: number) => void;
     goToVersion: (index: number) => void;
     hasUnseenRevision: (id: string) => boolean;
-    // In-progress artifact being streamed — renders as plain text preview
-    streamingArtifact: StreamingArtifact | null;
-    setStreamingArtifact: (artifact: StreamingArtifact | null) => void;
-    // A create_artifact tool call that has fully parsed (real title/type/content available)
-    // but whose message hasn't finished generating yet, so it isn't in `registry` yet either.
-    // Lets the panel/chip show and open real content immediately instead of waiting for the
-    // message to finish, without needing a version index from the (not-yet-updated) registry.
-    pendingArtifact: ParsedArtifact | null;
-    setPendingArtifact: (artifact: ParsedArtifact | null) => void;
-    // Focuses the panel on `pendingArtifact` even if a different artifact is currently selected.
-    openPendingArtifact: () => void;
     // True when any artifact is present (controls panel visibility)
     isPanelOpen: boolean;
     closePanel: () => void;
+    // Set when the user explicitly closes the panel; suppresses auto-open for the current generation.
+    panelUserClosed: boolean;
+    resetPanelUserClosed: () => void;
 }
 
 const ArtifactContext = createContext<ArtifactContextValue | null>(null);
@@ -45,14 +37,9 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
     const registry = useArtifactRegistry(linearChain);
     const [selectedId, setSelectedId] = useState<string | null>(null);
     const [selectedVersionIndex, setSelectedVersionIndex] = useState(0);
-    const [streamingArtifact, setStreamingArtifact] = useState<StreamingArtifact | null>(null);
-    const [pendingArtifact, setPendingArtifact] = useState<ParsedArtifact | null>(null);
+    const [panelUserClosed, setPanelUserClosed] = useState(false);
     const [seenVersionKeys, setSeenVersionKeys] = useState<Set<string>>(new Set());
     const prevVersionCountsRef = useRef<Record<string, number>>({});
-
-    const openPendingArtifact = useCallback(() => {
-        setSelectedId(null);
-    }, []);
 
     const markSeen = useCallback((id: string, versionIndex: number) => {
         const key = `${id}:${versionIndex}`;
@@ -69,16 +56,21 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
     const closePanel = useCallback(() => {
         setSelectedId(null);
         setSelectedVersionIndex(0);
-        setStreamingArtifact(null);
-        setPendingArtifact(null);
+        setPanelUserClosed(true);
+    }, []);
+
+    const resetPanelUserClosed = useCallback(() => {
+        setPanelUserClosed(false);
     }, []);
 
     // Reset all state when navigating to a different conversation
     useEffect(() => {
-        closePanel();
+        setSelectedId(null);
+        setSelectedVersionIndex(0);
+        setPanelUserClosed(false);
         setSeenVersionKeys(new Set());
         prevVersionCountsRef.current = {};
-    }, [conversationId, closePanel]);
+    }, [conversationId]);
 
     const openArtifact = useCallback(
         (id: string, versionIndex?: number) => {
@@ -90,6 +82,7 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
             const index = versionIndex === undefined ? latestIndex : Math.min(Math.max(versionIndex, 0), latestIndex);
             setSelectedId(id);
             setSelectedVersionIndex(index);
+            setPanelUserClosed(false);
             markSeen(id, index);
         },
         [registry, markSeen]
@@ -164,28 +157,35 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
               }
             : null;
 
-    return (
-        <ArtifactContext.Provider
-            value={{
-                registry,
-                selectedArtifact,
-                selectedId,
-                selectedVersionIndex,
-                openArtifact,
-                goToVersion,
-                hasUnseenRevision,
-                streamingArtifact,
-                setStreamingArtifact,
-                pendingArtifact,
-                setPendingArtifact,
-                openPendingArtifact,
-                isPanelOpen: selectedArtifact !== null || streamingArtifact !== null || pendingArtifact !== null,
-                closePanel,
-            }}
-        >
-            {children}
-        </ArtifactContext.Provider>
+    const value = useMemo(
+        () => ({
+            registry,
+            selectedArtifact,
+            selectedId,
+            selectedVersionIndex,
+            openArtifact,
+            goToVersion,
+            hasUnseenRevision,
+            isPanelOpen: selectedArtifact !== null,
+            closePanel,
+            panelUserClosed,
+            resetPanelUserClosed,
+        }),
+        [
+            registry,
+            selectedArtifact,
+            selectedId,
+            selectedVersionIndex,
+            openArtifact,
+            goToVersion,
+            hasUnseenRevision,
+            closePanel,
+            panelUserClosed,
+            resetPanelUserClosed,
+        ]
     );
+
+    return <ArtifactContext.Provider value={value}>{children}</ArtifactContext.Provider>;
 };
 
 export const useArtifactContext = (): ArtifactContextValue => {
