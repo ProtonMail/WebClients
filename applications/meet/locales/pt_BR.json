@@ -148,9 +148,6 @@
       "Add another account": [
         "Adicionar outra conta"
       ],
-      "Admit": [
-        "Admitir"
-      ],
       "Admit ${ participantName }": [
         "Admitir ${ participantName }"
       ],
@@ -1863,6 +1860,9 @@
       "Failed to download recording": [
         "Erro ao baixar a gravação"
       ],
+      "Failed to edit meeting": [
+        "Falha ao editar reunião"
+      ],
       "Failed to edit room name": [
         "Falha ao editar nome da sala"
       ],
@@ -2214,6 +2214,12 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Um número de telefone apenas pode ser usado para verificar uma conta da ${ BRAND_NAME }"
       ],
+      "Admit": [
+        "Admitir"
+      ],
+      "Admitting": [
+        "Admitindo"
+      ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Modo avançado: ajuste cada constante de desfoque para a próxima versão e depois clique em Aplicar para recriar a pré-visualização. As substituições têm precedência sobre os valores de arquivos e do Unleash."
       ],
@@ -2490,6 +2496,9 @@
       "Meeting is decrypting...": [
         "A reunião está sendo descriptografada..."
       ],
+      "Meeting is full": [
+        "A reunião está cheia"
+      ],
       "Meeting link": [
         "Link da reunião"
       ],
@@ -2667,6 +2676,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
       ],
+      "Rejecting": [
+        "Rejeitando"
+      ],
       "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
         "Passe a imagem da sua câmera ao vivo pelo processador de fundo personalizado. Escolha uma cor sólida ou carregue uma imagem para usar como fundo."
       ],
@@ -2738,6 +2750,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Este é um bate-papo com criptografia de ponta a ponta e mensagens efêmeras, que desaparecem ao final da chamada."
+      ],
+      "This meeting has a waiting room": [
+        "Essa reunião tem uma sala de espera"
       ],
       "This meeting is being recorded": [
         "Esta reunião está sendo gravada"
@@ -2819,6 +2834,9 @@
       ],
       "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
         "Aguardando o organizador iniciar. Você entrará na reunião assim que o organizador iniciar e permitir a sua entrada."
+      ],
+      "Waiting since ${ receivedTime }": [
+        "Esperando desde ${ receivedTime }"
       ],
       "Warning": [
         "Alerta"
@@ -3155,6 +3173,9 @@
       ],
       "Use simple selfie segmentation": [
         "Usar segmentação simples para selfie"
+      ],
+      "Use waiting room with a paid plan": [
+        "Use a sala de espera com um plano pago"
       ],
       "Verification code": [
         "Código de verificação"
