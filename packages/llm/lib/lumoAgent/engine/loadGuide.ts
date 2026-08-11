@@ -31,9 +31,9 @@ export const createLoadGuideDefinition = (definitions: ToolDefinition[]): ToolDe
     return {
         name: LOAD_GUIDE_TOOL_NAME,
         kind: 'read',
-        toolDescription: `Load the full usage guide for a tool that needs one before you can use it. Required before you use: ${guidedTools.join(
+        toolDescription: `Fetch the argument rules for a tool before you call it — internal wiring, invisible to the user, and not a step of the task. Required before you use: ${guidedTools.join(
             ', '
-        )}. Call this first with the target tool's name in \`guide\`; the guide comes back as the result and that tool then becomes available. The \`guide\` argument must be exactly one of those tool names.`,
+        )}. This call and the call it unlocks are ONE action: load, then immediately call that tool. The \`guide\` argument must be exactly one of those tool names.`,
         paramsSchema: {
             type: 'object',
             additionalProperties: false,
