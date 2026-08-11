@@ -2774,6 +2774,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Marca ${ IDEAL_BRAND_NAME }"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
       ],
@@ -3204,6 +3207,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Folosim 3-D Secure pentru a proteja plățile"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Pentru finalizarea tranzacției prin ${ IDEAL_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
@@ -4906,6 +4912,9 @@
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Plata cu ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de evaluare."
       ],
@@ -4993,6 +5002,9 @@
       "You will soon be redirected to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă nouă."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Moneda a fost schimbată în euro (€) deoarece ${ IDEAL_BRAND_NAME } acceptă doar plăți în euro."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
       ],
@@ -5004,6 +5016,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Eșuare inițializare ${ IDEAL_BRAND_NAME }. Reîncercați."
+      ],
       "Invalid card number": [
         "Număr de card nevalid."
       ],
@@ -5026,6 +5041,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "A apărut o problemă. Verificarea Google Pay a eșuat."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Prin confirmarea acestei plăți, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să vă instruiască banca să vă debiteze contul în mod corespunzător. Puteți primi o rambursare în termen de 8 săptămâni de la data debitării, în condițiile acordului dvs. cu banca."
       ]
     },
     "Payments.info": {
