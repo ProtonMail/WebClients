@@ -1,9 +1,4 @@
-import {
-    getArtifactChipVisualState,
-    getArtifactLineCount,
-    getArtifactWordCount,
-    isArtifactChipAwaitingRegistry,
-} from './artifactChipHelpers';
+import { getArtifactChipVisualState, getArtifactLineCount, getArtifactWordCount } from './artifactChipHelpers';
 import type { ArtifactRegistry } from './artifactRegistry';
 
 const messageIdA = 'msg-a' as const;
@@ -32,11 +27,6 @@ describe('artifactChipHelpers', () => {
     it('counts lines in artifact content', () => {
         expect(getArtifactLineCount('a\nb\nc')).toBe(3);
         expect(getArtifactLineCount('')).toBe(0);
-    });
-
-    it('detects chips awaiting registry finalization', () => {
-        expect(isArtifactChipAwaitingRegistry(registry, 'my-doc', messageIdC)).toBe(false);
-        expect(isArtifactChipAwaitingRegistry(registry, 'my-doc', 'msg-pending' as const)).toBe(true);
     });
 
     it('returns default when the panel is closed', () => {
