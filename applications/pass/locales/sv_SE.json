@@ -1342,6 +1342,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Det uppstod ett fel när den säkra länken skulle tas bort. Försök igen om några minuter."
       ],
+      "This invite is no longer available": [
+        "Denna inbjudan är inte längre tillgänglig"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "För många misslyckade försök. Logga in igen."
       ],
@@ -1362,9 +1365,6 @@
       ],
       "Unknown error.": [
         "Okänt fel."
-      ],
-      "Unknown invite": [
-        "Okänd inbjudan"
       ],
       "Unknown item": [
         "Okänt objekt"
@@ -2117,8 +2117,7 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"

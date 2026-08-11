@@ -856,8 +856,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "E-posta takma adı e-posta adresi gibi çalışır. Ancak istenmeyen e-postaları azaltır ve gerçek e-posta adresiniz ile kimliğinizi gizli tutar."
       ],
+      "Change these passwords immediately": [
+        "Bu parolaları hemen değiştirin"
+      ],
       "Change your passwords": [
         "Parolalarınızı değiştirin"
+      ],
+      "Check if your passwords have been exposed": [
+        "Parolalarınızın açığa çıkıp çıkmadığını kontrol edin"
       ],
       "Create unique passwords": [
         "Benzersiz parolalar oluşturun"
@@ -912,6 +918,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Bu hesapta güvenlik açığı var. Hizmeti ziyaret edin ve parolanızı değiştirin."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Bu oturum açma parolası bir veri ihlalinde görüldü. Lütfen hizmete giderek parolanızı değiştirin."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Bu hizmet iki adımlı doğrulama sağlıyor. Hesap güvenliğini artırmak için bunu kullanın."
@@ -1345,6 +1354,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Güvenli bağlantı kaldırılırken bir hata oluştu. Lütfen birkaç dakika içinde tekrar deneyin."
       ],
+      "This invite is no longer available": [
+        "Bu davet artık kullanılamıyor"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Çok fazla sayıda başarısız deneme yapıldı. Lütfen yeniden oturum açın."
       ],
@@ -1365,9 +1377,6 @@
       ],
       "Unknown error.": [
         "Bilinmeyen bir sorun çıktı."
-      ],
-      "Unknown invite": [
-        "Davet bilinmiyor"
       ],
       "Unknown item": [
         "Öge bilinmiyor"
@@ -2120,8 +2129,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Bir ögeyi başka bir kasaya taşımak güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -4665,6 +4673,12 @@
       "Clear clipboard": [
         "Panoyu temizle"
       ],
+      "Compromised password": [
+        "Açığa çıkmış parola"
+      ],
+      "Compromised passwords": [
+        "Açığa çıkmış parolalar"
+      ],
       "Confirm extra password": [
         "Ek parolayı onayla"
       ],
@@ -4881,6 +4895,9 @@
       "No access tokens yet": [
         "Henüz bir erişim kodu yok"
       ],
+      "No compromised passwords": [
+        "Açığa çıkmış bir parola yok"
+      ],
       "No excluded items": [
         "Katılmayan bir öge yok"
       ],
@@ -5062,6 +5079,9 @@
       ],
       "Update available": [
         "Güncelleme yayınlanmış"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Açığa çıkmış parolaları kontrol etmek için tarifenizi yükseltin"
       ],
       "URL matching": [
         "Adres eşleştirme"
