@@ -243,7 +243,7 @@ const ConversationLayout = ({
                                 onMouseDown={handleDividerMouseDown}
                             />
                             <div
-                                className="artifact-panel-container hidden md:flex flex-column overflow-hidden bg-norm rounded-xl"
+                                className="artifact-panel-container hidden md:flex flex-column overflow-hidden rounded-xl px-4 py-0"
                                 style={{ flex: `0 0 ${panelWidthPct}%` }}
                             >
                                 <ArtifactPanel isGenerating={isGenerating} />
