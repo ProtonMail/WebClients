@@ -422,6 +422,9 @@
       "Download CSV sample": [
         "CSV 샘플 다운로드받기"
       ],
+      "Download latest": [
+        "최신 버전 다운로드"
+      ],
       "Download logs": [
         "다운로드 로그"
       ],
@@ -662,9 +665,6 @@
       "Invite user": [
         "사용자 초대"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "보관"
       ],
@@ -737,8 +737,8 @@
       "Mark as resolved": [
         "해결됨으로 표시"
       ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
+      "Migrate": [
+        "이전"
       ],
       "More benefits": [
         "더 많은 혜택"
@@ -2146,10 +2146,10 @@
         "닫기"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
-        "${ MAIL_APP_NAME }을 계속 사용하세요."
+        "${ MAIL_APP_NAME }을 계속 사용하기"
       ],
       "Continue using ${ planTitle }": [
-        "${ planTitle }을 계속 사용하세요"
+        "${ planTitle }을(를) 계속 사용하세요."
       ],
       "Continue your subscription": [
         "내 구독 유지하기"
@@ -3767,6 +3767,9 @@
       "Are you sure you want to disable this address?": [
         "이 주소를 정말 비활성화할까요?"
       ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "이 ${ address } 주소를 비활성화하는 것으로 더 이상 이 주소를 통해 이메일을 보내거나 받을 수 없게 되고, 연결된 모든 ${ BRAND_NAME } 제품이 비활성화됩니다."
+      ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "이 ${ address } 주소를 비활성화하는 것으로 더 이상 이 주소를 통해 이메일을 보내거나 받을 수 없게 되고, 연결된 모든 ${ BRAND_NAME } 제품이 비활성화됩니다."
       ],
@@ -4635,6 +4638,9 @@
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "저작권 침해나 데이터 유실에 대한 리포트 제출 시 메시지가 필요합니다."
+      ],
       "Address cannot be yours": [
         "주소를 내 소유로 할 수 없습니다"
       ],
@@ -4643,6 +4649,9 @@
       ],
       "Address is already added to your account": [
         "이미 추가된 주소입니다."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "조직 외부의 사용자에 의해 주소가 이미 사용 중입니다. 해당 문제를 해결하기 위해 고객 지원 팀으로 문의 바랍니다."
       ],
       "Address primary private key not found": [
         "기본 주소 키 찾을 수 없음"
@@ -4662,8 +4671,29 @@
       "Authentication error.": [
         "인증 오류"
       ],
+      "Bookmark password is not available": [
+        "북마크 비밀번호를 사용할 수 없습니다"
+      ],
       "Calendar limit reached": [
         "캘린더 개수 제한에 도달했습니다"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "유효한 이름 없이는 앨범에 사진을 추가할 수 없습니다"
+      ],
+      "Cannot download a folder": [
+        "폴더를 다운로드할 수 없음"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "유효한 이름 없이는 항목을 이동할 수 없습니다. 항목 이동 전 이름을 변경하세요."
+      ],
+      "Cannot share root folder": [
+        "상위 폴더를 공유할 수 없습니다"
+      ],
+      "Cannot verify the author of this file": [
+        "이 파일의 소유자를 확인할 수 없습니다"
+      ],
+      "Cannot verify who uploaded this file": [
+        "이 파일을 업로드한 사용자의 진위를 파악할 수 없음"
       ],
       "Checkout expired, please try again": [
         "체크아웃 만료됨, 다시 시도하십시오"
@@ -4674,8 +4704,29 @@
       "Company name or personal name is required": [
         "법인명 또는 개인 성명을 입력해야 합니다."
       ],
+      "Copying item to a non-folder is not allowed": [
+        "폴더가 없는 곳에 항목을 복사하는 것이 허용되지 않습니다"
+      ],
+      "Could not find an available name": [
+        "사용 가능한 이름을 찾을 수 없음"
+      ],
       "Could not generate the device profile. Please try again.": [
         "기기 프로파일 생성에 실패했습니다. 다시 시도하세요."
+      ],
+      "Could not load sharing details": [
+        "공유 상세 정보를 불러올 수 없음"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "이미지 미리보기를 불러올 수 없음: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "해당 파일의 일부를 읽을 수 없음: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "상위 폴더를 잠금할 수 없습니다"
+      ],
+      "Could not unlock this item": [
+        "이 항목을 잠금 해제할 수 없음"
       ],
       "Couldn't load invoices. Please try again later.": [
         "청구서 불러오기를 실패했습니다. 다시 시도해 주세요."
@@ -4683,11 +4734,23 @@
       "Couldn't load transactions. Please try again later.": [
         "거래내역을 불러올 수 없습니다. 나중에 다시 시도해 주세요."
       ],
+      "Creating documents in non-folders is not allowed": [
+        "폴더가 없는 곳에 문서를 생성하는 것이 허용되지 않습니다."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "폴더가 없는 곳에 파일을 생성하는 것이 허용되지 않습니다."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "폴더가 없는 곳에 폴더를 생성하는 것이 허용되지 않습니다."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "최소${ calendarsToFixCount } 개 캘린더를 선택 해제하세요"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "최소 ${ calendarsToFixCount }개의 캘린더를 선택 해제하거나"
+      ],
+      "Device not found": [
+        "기기를 찾을 수 없음"
       ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
@@ -4722,6 +4785,27 @@
       "Failed to add group member": [
         "그룹 구성원 추가 실패"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "북마크 키 복호화 불가: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "북마크 이름 복호화 불가: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "북마크 비밀번호 복호화 실패: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "콘텐츠 키를 복호화할 수 없습니다: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "항목 이름을 복호화할 수 없음: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "노드 키 복호화 실패: ${ message }"
+      ],
+      "Failed to get inviter keys": [
+        "초대한 사람의 키를 받을 수 없음"
+      ],
       "Failed to load OAuth modal.": [
         "OAuth 창을 불러오지 못했습니다."
       ],
@@ -4743,6 +4827,12 @@
       "Failed to update detailed monitoring.": [
         "자세한 모니터링 업데이트에 오류가 발생했습니다."
       ],
+      "Failed to verify invitation": [
+        "초대장 확인 실패"
+      ],
+      "File download failed due to empty response": [
+        "응답이 비어있어 파일을 다운로드할 수 없습니다."
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "파일이 너무 큽니다. 로고는 30KB 이하여야 합니다."
       ],
@@ -4751,6 +4841,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "TV의 인증 시간이 만료된 경우 TV에서 새로 고침을 클릭하고 코드를 다시 입력하십시오."
+      ],
+      "Image preview not found": [
+        "이미지 미리보기를 사용할 수 없음"
       ],
       "IMAP server is required": [
         "IMAP 서버가 필요함"
@@ -4824,26 +4917,62 @@
       "Invalid verification code": [
         "잘못된 검증 코드"
       ],
+      "Invitation not found": [
+        "초대를 찾을 수 없음"
+      ],
+      "Item not found": [
+        "항목을 찾을 수 없습니다"
+      ],
       "Label name cannot be empty.": [
         "라벨 이름은 비워둘 수 없습니다."
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "기존 공개 링크는 업데이트되지 않습니다. 새로운 공개 링크로 다시 생성해야 합니다."
       ],
       "Maximum ${ displayMaxValue } allowed": [
         "최대 ${ displayMaxValue }까지 허용됨"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "구성원 주소를 찾을 수 없습니다. 해당 문제를 해결하기 위해 고객 지원 팀에 문의해 주시기 바랍니다."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "기존 ${ BRAND_NAME } 캘린더에 최소 ${ calendarsToFixCount }개의 캘린더를 병합하세요."
+      ],
+      "Missing inviter email": [
+        "초대한 사람의 이메일 누락"
       ],
       "Missing key packet": [
         "키 패킷 없음"
       ],
+      "Missing organization private key": [
+        "조직 비공개 키 유실"
+      ],
+      "Missing organization public key": [
+        "조직 공개 키 유실"
+      ],
       "Missing signature": [
         "서명 없음"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "${ signatureType }에 대한 서명 유실"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "폴더가 없는 곳에 항목을 이동하는 것이 허용되지 않습니다"
+      ],
+      "Moving root item is not allowed": [
+        "상위 항목에 대한 이동은 허용되지 않습니다."
       ],
       "Name already exists": [
         "이름이 이미 존재합니다."
       ],
       "Name does not match": [
         "이름이 일치하기 않습니다"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "이름은 최대 ${ MAX_NODE_NAME_LENGTH }글자까지입니다."
+      ],
+      "Name must not be empty": [
+        "이름은 필수 입력 항목입니다"
       ],
       "No calendars found to import": [
         "불러올 캘린더를 찾을 수 없음"
@@ -4857,6 +4986,9 @@
       "No emails found to import - the account does not have an inbox": [
         "불러올 이메일을 찾을 수 없음 - 계정에 받은 편지가 없습니다"
       ],
+      "No file data was received. Please try again.": [
+        "수신된 데이터가 없습니다. 다시 시도하세요."
+      ],
       "No image selected": [
         "선택된 이미지가 없습니다"
       ],
@@ -4866,8 +4998,23 @@
       "Not a valid number": [
         "유효하지 않은 번호"
       ],
+      "Only admins can convert external invitations": [
+        "관리자만 외부 초대로 변경할 수 있습니다"
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "이 주소는 대문자와 구두점(마침표, 하이픈 및 밑줄)만 변경할 수 있습니다."
+      ],
+      "Operation aborted": [
+        "작업이 중단됨"
+      ],
+      "Operation failed, try again later": [
+        "작업에 실패했습니다. 나중에 다시 시도하세요."
+      ],
+      "Organization does not have enough seats available": [
+        "조직의 사용 권한이 충분하지 않습니다."
+      ],
+      "Organization does not have enough storage available": [
+        "조직에 충분한 저장공간이 남아있지 않습니다."
       ],
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
@@ -4877,6 +5024,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "개인이 아닌 사용자를 생성하려면 조직 키는 활성화 상태여야 합니다."
+      ],
+      "Part of the file appears to be corrupted": [
+        "파일 일부가 손상되었을 가능성이 있습니다"
       ],
       "Password is required": [
         "비밀번호가 필요함"
@@ -4901,6 +5051,12 @@
       ],
       "Permissions request failed.": [
         "권한 요청을 실패했습니다."
+      ],
+      "Photo is already in the target album": [
+        "해당 앨범에 같은 사진이 이미 존재합니다."
+      ],
+      "Photo not found": [
+        "사진을 찾을 수 없음"
       ],
       "Please add a payment method before reactivating your subscription": [
         "구독을 다시 활성화하기 전 결제 수단을 추가해 주세요."
@@ -4992,6 +5148,9 @@
       "Process aborted": [
         "과정 중단됨"
       ],
+      "Renaming root item is not allowed": [
+        "상위 항목에 대한 이름 변경은 허용되지 않습니다."
+      ],
       "Request timed out": [
         "요청 시간이 초과되었습니다."
       ],
@@ -5007,8 +5166,29 @@
       "Server not found": [
         "서버를 찾을 수 없습니다"
       ],
+      "Signature is missing": [
+        "서명이 유실되었습니다"
+      ],
       "Signature verification failed": [
         "서명 검증 실패"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "서명 인증 실패: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType }에 대한 서명 인증 실패"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType }에 대한 서명 인증 실패:${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "일부 파일의 데이터 업로드가 실패했습니다. 다시 시도하세요."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "일부 파일의 부분을 업로드할 수 없습니다. 다시 시도하세요."
+      ],
+      "Some items could not be loaded": [
+        "일부 항목을 불러올 수 없습니다."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "가능하지 않은 폴더 이름들이 존재합니다. 해당 폴더의 이름들을 수정하기 위해 불러온 내역을 설정해 주세요."
@@ -5088,6 +5268,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "정책 이름은 3자에서 40자 사이여야 합니다."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "업로드된 파일과 원본 파일이 일치하지 않습니다. 다시 시도해 주세요."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "외부 계정에 너무 많은 폴더가 있습니다. 일부 폴더를 삭제하려면 사용자 지정 가져오기를 설정하세요."
       ],
@@ -5106,8 +5289,23 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
       ],
+      "This file has no version available to download": [
+        "이 파일에 다운로드할 수 있는 사용 가능한 버전이 없습니다."
+      ],
+      "This file version could not be uploaded": [
+        "해당 파일 버전은 업로드할 수 없습니다."
+      ],
       "This folder name is not available. Please choose a different name.": [
         "이 폴더 이름을 사용할 수 없어요. 다른 이름을 선택하세요."
+      ],
+      "This item has no image preview": [
+        "해당 항목의 이미지 미리보기가 없습니다."
+      ],
+      "This item is no longer shared": [
+        "더 이상 공유되지 않는 항목입니다."
+      ],
+      "This item is not shared": [
+        "더 이상 공유되지 않는 항목입니다."
       ],
       "This label name is not available. Please choose a different name.": [
         "이 라벨 이름은 사용할 수 없어요. 다른 이름을 선택하세요."
@@ -5123,6 +5321,12 @@
       ],
       "Too many requests. Please try again later": [
         "요청이 너무 많습니다. 나중에 다시 시도하십시오."
+      ],
+      "Too many server errors, please try again later": [
+        "서버 오류가 너무 많습니다. 나중에 다시 시도하십시오."
+      ],
+      "Too many server requests, please try again later": [
+        "서버 요청이 너무 많습니다. 나중에 다시 시도하십시오."
       ],
       "Try again later": [
         "나중에 다시 시도하세요"
@@ -5163,6 +5367,12 @@
       "Verification did not succeed, please try again in an hour.": [
         "인증에 성공하지 못했습니다. 한 시간 후에 다시 시도해주십시오."
       ],
+      "Verification keys are not available": [
+        "인증 키를 사용할 수 없습니다"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType }용 인증 키가 사용할 수 없습니다"
+      ],
       "We couldn’t send a verification code using this method.": [
         "해당 방법으로 인증 코드를 전송할 수 없습니다."
       ],
@@ -5177,6 +5387,21 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "잘못된 인증 코드입니다. 제대로 인증 코드를 복사했는지 확인하고 다시 시도해보세요. 변경할 때까지 24시간이 걸릴 수도 있습니다."
+      ],
+      "You can create public links for your own files only": [
+        "내가 소유한 파일만 공개 링크를 생성할 수 있습니다."
+      ],
+      "You can only upload a new version to a file": [
+        "새로운 버전의 파일만 업로드할 수 있습니다."
+      ],
+      "You can update a public link for your own files only": [
+        "내가 소유한 파일만 공개 링크를 업데이트할 수 있습니다."
+      ],
+      "You do not have access to this item": [
+        "이 항목에 접근할 권한이 없습니디"
+      ],
+      "You do not have access to this shared item": [
+        "해당 항목에 대한 접근 권한이 없습니다."
       ],
       "You have reached the maximum number of calendars.": [
         "캘린더 갯수의 한도에 도달했습니다."
@@ -5475,7 +5700,7 @@
         "초대 거절"
       ],
       "Got it": [
-        "확인했습니다"
+        "확인"
       ],
       "Invite a user": [
         "사용자 초대"
@@ -6018,6 +6243,29 @@
         "테라바이트"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "활성화됨"
+      ],
+      "All": [
+        "전체"
+      ],
+      "Errors": [
+        "오류"
+      ],
+      "In progress": [
+        "진행 중"
+      ],
+      "Migrated": [
+        "이전됨"
+      ],
+      "Not activated": [
+        "비활성화됨"
+      ],
+      "Pending": [
+        "대기 중"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 업데이트됨"
@@ -6080,6 +6328,32 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "고급 보안 제어"
+      ],
+      "Dedicated server - ${ serverPrice }": [
+        "전용 서버 - ${ serverPrice }"
+      ],
+      "Enforce identity-based access controls": [
+        "신원 기반 접근 제어 강제화"
+      ],
+      "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
+        "연결 모니터링 외에도, 비공개 게이트웨이를 통해 사용자 또는 그룹별로 접근 권한을 부여할 수 있으며, 모두 정적 IP를 가진 전용 서버에서 실행됩니다."
+      ],
+      "Monitor gateway connections with VPN Professional": [
+        "VPN Professional로 게이트웨이 연결 모니터링하기"
+      ],
+      "Real-time connection insights": [
+        "실시간 연결 인사이트"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "싱글 사인 온 (SSO), 관리자 정책, 모니터링, 2단계 인증 강제화 등을 잠금 해제하세요."
+      ],
+      "User - ${ userPrice }": [
+        "사용자 - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -6607,11 +6881,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "오류 있음"
+      ],
       "In progress": [
         "진행 중"
       ],
       "Migrated": [
         "이전됨"
+      ],
+      "Pending": [
+        "대기 중"
       ]
     },
     "Import warning": {
@@ -7428,7 +7708,7 @@
         "사용된 도메인"
       ],
       "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
-        "프리미엄 ${ appName } 기능을 놓치지 마세요. 오늘 자동 갱신을 활성화 하세요."
+        "프리미엄 ${ appName } 기능을 놓치지 마세요. 오늘 자동 갱신을 활성화하세요."
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "프리미엄 기능을 놓치지 마세요. 오늘 자동 갱신을 활성화 하세요."
@@ -7648,6 +7928,9 @@
       ],
       "finance": [
         "금융정보"
+      ],
+      "Find out what can be migrated.": [
+        "이전되는 항목을 살펴보세요."
       ],
       "for ${ price }": [
         "${ price }으로"
@@ -8159,6 +8442,9 @@
       "No single sign-on": [
         "싱글 사인 온 없음"
       ],
+      "No users to display": [
+        "표시할 사용자 없음"
+      ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
       ],
@@ -8302,6 +8588,9 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "파일을 확인하거나 ${ csvTemplateButton } 를 사용해 보세요."
+      ],
+      "Please ensure you're running ${ VPN_APP_NAME } desktop version ${ version } or later. ${ downloadLatest }": [
+        "${ VPN_APP_NAME } 데스크톱 앱 버전이 ${ version } 이상인지 확인하세요. ${ downloadLatest }"
       ],
       "Please fill in all required fields.": [
         "필수 입력란을 모두 입력해주세요."
@@ -8494,6 +8783,9 @@
       ],
       "Select a group to view its members and settings.": [
         "구성원과 설정을 보려면 그룹을 선택하세요."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "이전하고자 하는 항목을 선택하세요. 모든 조직 구성원들에게 적용됩니다."
       ],
       "Select one or multiple user affiliations": [
         "한 명 또는 여러명 사용자의 소속을 선택하세요"
@@ -8795,6 +9087,12 @@
       "This service is not available to users signing in with single sign-on.": [
         "이 서비스는 싱글 사인온(SSO) 사용자에게 제공되지 않습니다"
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "해당 이메일 주소는 ${ BRAND_NAME }에서 지원되지 않음으로 사용자를 이전할 수 없습니다."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "플랫폼이 호환되지 않으므로 해당 사용자를 이전할 수 없습니다."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "이 사용자는 현재 조직의 지불에 대한 책임이 있습니다. 이 멤버를 강등하면 귀하가 조직에 대한 지불 책임을 지게 됩니다."
       ],
@@ -8888,8 +9186,8 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "VPN 항상 켜기를 활성화하려면 모든 Mac에 구성 프로파일이 설치되어 있어야 합니다. ${ VPN_APP_NAME } 클라이언트가 기기에 제자리로 설치되면 자동으로 기기의 프로파일을 강제화합니다."
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "VPN 항상 켜기를 활성화하려면 모든 기기에서 ${ policiesPath }에 접근하도록 기기 프로파일이 필요합니다. ${ VPN_APP_NAME } 클라이언트가 감지 후 프로파일을 자동으로 설치합니다."
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
+        "VPN 항상 켜기를 활성화하려면 모든 기기에서 ${ policiesPath }에 접근하도록 기기 프로파일이 필요합니다. ${ VPN_APP_NAME } 클라이언트가 감지 후 프로파일을 자동으로 설치합니다. ${ learnMore }"
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "최상의 계정 보안 상태를 유지하기 위해, **복구 이메일로 복구**를 비활성화하세요."
@@ -8911,6 +9209,27 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } 제품의 최신 개발 소식을 알고 싶으시다면 다양한 이메일을 구독해보거나 가끔씩 ${ blogLink } 해보세요."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "해당 사용자를 이전하려면 ${ domainNamesLink } 아래로 이메일 도메인을 추가 및 인증해야 합니다."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "해당 사용자를 이전하려면 ${ provider.adminConsoleName } 아래로 계정을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 계정을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 주소를 활성화해야 합니다."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "해당 사용자를 이전하려면 ${ BRAND_NAME }으로의 초대장 수락을 해야합니다."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "이 사용자를 이전하려면 ${ provider.adminConsoleName }(에)서 해당 사용자를 보관 해제헤야 합니다."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "이 사용자를 이전하려면 ${ provider.adminConsoleName }(에)서 해당 사용자를 정지 취소해야 합니다."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "진행하려면, 요청을 확인할 수 있도록 계정 복구 방법을 선택하세요."
@@ -9061,9 +9380,6 @@
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "다른 MDM을 사용하시나요? 구성 프로파일 배포를 지원한다면 어느 MDM애서나 사용 가능합니다. 조직 보유 기기에 프로파일을 업로드 및 적용하는 방법을 확인하려면 사용 중인 MDM의 지원 문서를 참조하십시오."
-      ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "다른 MDM을 사용하시나요? 파일 배포를 지원하거나 PowerShell 스크립트 구성을 지원하는 MDM에서는 모두 작동합니다. 자세한 정보는 사용자의 MDM 사용 백서를 참조하십시오."
       ],
       "Vault created": [
         "금고를 생성했습니다"
@@ -9256,6 +9572,9 @@
       ],
       "X": [
         "X"
+      ],
+      "You": [
+        "나"
       ],
       "You already have a free account": [
         "이미 무료 계정을 가지고 있습니다."
@@ -11367,6 +11686,29 @@
         "로그인"
       ]
     },
+    "Members table usage": {
+      "Gateway Monitor is off": [
+        "게이트웨이 모니터링이 비활성화됨"
+      ],
+      "Monitor gateways connections": [
+        "게이트웨이 연결 모니터링"
+      ],
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "조직 내에서 VPN 연결을 모니터링하려면 각각의 개인 게이트웨이를 설정하세요."
+      ],
+      "Today": [
+        "오늘"
+      ],
+      "Today, ${ time }": [
+        "오늘 ${ time }"
+      ],
+      "Yesterday": [
+        "어제"
+      ],
+      "Yesterday, ${ time }": [
+        "어제 ${ time }"
+      ]
+    },
     "Message": {
       "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
         "사용자 지정 도메인(예를 들면, yourcompany.com)을 연결해 외부인들을 위한 이메일 주소를 만들고, 사업체, 학교 혹은 단체의 ${ MAIL_APP_NAME }을 관리하세요."
@@ -13348,7 +13690,7 @@
         "청구 주소 수정"
       ],
       "Got it": [
-        "확인했습니다"
+        "확인"
       ],
       "I'm purchasing as a business": [
         "사업체 용도로 구매합니다"
@@ -13828,6 +14170,20 @@
         "${ upsellPlanTitle }(으)로 업그레이드"
       ]
     },
+    "Property": {
+      "hash key": [
+        "해시 키"
+      ],
+      "key": [
+        "키"
+      ],
+      "membership": [
+        "멤버쉽"
+      ],
+      "name": [
+        "이름"
+      ]
+    },
     "Property type": {
       "Address": [
         "주소"
@@ -14177,7 +14533,7 @@
         "복구 키 저장"
       ],
       "Sign-in with QR code allowed": [
-        "QR코드로 로그인이 허용됨."
+        "QR코드로 로그인이 허용됨"
       ],
       "Verify password": [
         "비밀번호 확인"
@@ -14214,7 +14570,7 @@
         "또는 텍스트로 ${ copyRecoverySwitchButton }할 수 있습니다."
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
-        "또는 대신 ${ downloadRecoveryKitSwitchButton }."
+        "또는 대신 ${ downloadRecoveryKitSwitchButton }할 수 있습니다."
       ]
     },
     "Referral": {
@@ -14659,6 +15015,9 @@
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
         "**설정 필요:** SCIM 프로비저닝을 활성화하시려면, 도메인 **${ domainName }**에 대한 소유권 인증이 필요합니다. 이 인증은 최대 한 시간까지 걸릴 수 있습니다."
       ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**사용자:**사용자의 신원 인증 제공자에 의한 모든 SCIM 사용자들이 SSO 사용자로 전환됩니다. ${ BRAND_NAME } 설정 내에서 즉시 관리 또한 가능하게 됩니다."
+      ],
       "Enter the token into your identity provider": [
         "사용자의 신원 제공자로 이 토큰을 입력하십시오"
       ],
@@ -14683,14 +15042,23 @@
       "Make sure you copy the above SCIM token now.": [
         "위에 있는 SCIM 토큰이 복사되어야 합니다."
       ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "동기화를 다시 활성화하면 기존 그룹이 중복됩니다. SCIM에 다시 병합할 수 없습니다."
+      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "여러 서비스 간에 사용자 관리를 간소화합니다. ID 공급자에서 사용자를 추가, 편집, 제거하면 해당 변경 사항이 ${ appName } 조직에 자동으로 적용됩니다."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM 자동 프로비저닝은 신원 제공자의 설정에 새 SCIM 토큰을 입력할 때까지 비활성화됩니다."
       ],
+      "This will delete your SCIM base URL and token.": [
+        "URL 및 토큰 기반 SCIM이 삭제됩니다."
+      ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "신원 제공자와의 동기화를 다시 활성화하려면, SCIM 통합을 다시 완료해야 합니다."
+      ],
+      "When you disable SCIM:": [
+        "SCIM을 비활성화하는 경우:"
       ]
     },
     "scim: Label": {
@@ -14950,7 +15318,7 @@
         "요청 취소"
       ],
       "Got it": [
-        "확인했습니다"
+        "확인"
       ],
       "Learn more": [
         "더 알아보기"
@@ -16665,11 +17033,23 @@
       ]
     },
     "Table header": {
+      "Activated": [
+        "활성화됨"
+      ],
+      "Estimated size": [
+        "예상 용량"
+      ],
+      "Migration status": [
+        "이전 상태"
+      ],
       "Size": [
         "크기"
       ],
       "Status": [
         "상태"
+      ],
+      "User": [
+        "사용자"
       ]
     },
     "TableHeader": {
@@ -17084,6 +17464,9 @@
       ],
       "Configure Always-on VPN device profile": [
         "VPN 항상 켜기 기기 프로파일 구성"
+      ],
+      "Configure migration": [
+        "이전 작업 구성"
       ],
       "Confirm": [
         "확인"
@@ -17847,6 +18230,9 @@
       "Select data to import": [
         "불러올 데이터 선택"
       ],
+      "Select users to migrate": [
+        "이전할 사용자를 선택하세요"
+      ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }로 Gmail을 주고 받기"
       ],
@@ -18135,6 +18521,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business에 오신 것을 환영합니다"
       ],
+      "What are you migrating?": [
+        "무엇을 이전하시나요?"
+      ],
       "What changes if you switch to the Free plan": [
         "Free 요금제로 전환하는 경우 변경되는 사항"
       ],
@@ -18242,6 +18631,12 @@
       "Features": [
         "기능"
       ],
+      "Last app activity": [
+        "마지막 앱 활동"
+      ],
+      "Last connection": [
+        "마지막 연결"
+      ],
       "Name": [
         "이름"
       ],
@@ -18310,6 +18705,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "라벨 수를 줄이기 위해 가져오기를 사용자 정의하세요"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "${ providerName }(에)서 ${ BRAND_NAME }으로 데이터 이전 상태"
       ],
       "Device name and app version": [
         "기기 이름 및 앱 버전"
@@ -18434,6 +18832,9 @@
       "User's approximate location (based on their IP address)": [
         "사용자의 대략적인 위치 (IP 주소 기반)"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "개인의 ${ BRAND_NAME } 계정에 접근한 사용자"
+      ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "다른 사용자가 웹 앱에 로그인했을 때 사용자의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
       ],
@@ -18495,6 +18896,11 @@
       ],
       "Waiting for user to accept the invitation": [
         "사용자의 초대 수락 대기 중"
+      ]
+    },
+    "Tooltip for members table": {
+      "Last time this user connected to one of your organization's Gateways.": [
+        "해당 사용자는 조직 게이트웨이에 마지막으로 접근했습니다."
       ]
     },
     "Tor out of date": {
@@ -19128,7 +19534,7 @@
         "지금까지 만든 커스터마이징을 모두 잃게 됩니다."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "무료 체험이 ${ textDate } 에 종료됩니다. ${ action }"
+        "무료 체험이 ${ textDate }에 종료됩니다. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your password again.": [
         "복구 파일이 오래되었습니다. 다시 비밀번호를 재설정하면 새 데이터를 복구할 수 없습니다."

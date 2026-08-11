@@ -651,6 +651,9 @@
       "Download ICS": [
         "Last ned ICS"
       ],
+      "Download latest": [
+        "Last ned nyeste"
+      ],
       "Download logs": [
         "Last ned logger"
       ],
@@ -1032,9 +1035,6 @@
       "Italic": [
         "Kursiv"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "Behold"
       ],
@@ -1101,9 +1101,6 @@
       "Manage communication preferences": [
         "Administrer kommunikasjonsinnstillinger"
       ],
-      "Manage company": [
-        "Administrer foretak"
-      ],
       "Manage folders": [
         "Behandle mapper"
       ],
@@ -1140,8 +1137,8 @@
       "Maybe later": [
         "Kanskje senere"
       ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
+      "Migrate": [
+        "Migrer"
       ],
       "More": [
         "Mer"
@@ -1872,6 +1869,9 @@
       "View all reports": [
         "Vis alle rapporter"
       ],
+      "View guide": [
+        "Vis veiledning"
+      ],
       "View invoice": [
         "Vis faktura"
       ],
@@ -1985,8 +1985,8 @@
         "${ LUMO_APP_NAME } seter"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
-        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } bruker)",
-        "${ LUMO_SHORT_APP_NAME } skriveassistent (for ${ quantity } brukere)"
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (for ${ quantity } bruker)",
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent (for ${ quantity } brukere)"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
@@ -6734,6 +6734,9 @@
       "A group with this name already exists": [
         "En gruppe med dette navnet eksisterer allerede."
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "En melding er nødvendig når du rapporterer brudd på opphavsrett eller stjålne data"
+      ],
       "Account does not exist": [
         "Kontoen finnes ikke"
       ],
@@ -6755,6 +6758,9 @@
       "Address is already added to your account": [
         "Adressen er allerede lagt til i kontoen din"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
+      ],
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
       ],
@@ -6773,6 +6779,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Beløp under minimum (${ minimumAmount })."
       ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "En ukjent feil oppstod. Oppdater siden og prøv igjen."
+      ],
       "Authentication canceled.": [
         "Autentisering avbrutt"
       ],
@@ -6785,11 +6794,32 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Automatiske svar er en betalt funksjon. Oppgrader til en betalt konto for å bruke denne funksjonen."
       ],
+      "Bookmark password is not available": [
+        "Bokmerkepassordet er ikke tilgjengelig"
+      ],
       "Calendar cannot be found": [
         "Kalender ikke funnet"
       ],
       "Calendar limit reached": [
         "Kalendergrensen nådd"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Kan ikke legge til bilde i albumet uten et gyldig navn"
+      ],
+      "Cannot download a folder": [
+        "Kan ikke laste ned en mappe"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan ikke flytte elementet uten et gyldig navn. Gi elementet nytt navn først."
+      ],
+      "Cannot share root folder": [
+        "Kan ikke dele rotmappe"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan ikke bekrefte forfatteren av denne filen"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan ikke bekrefte opplasteren av denne filen"
       ],
       "Checkout expired, please try again": [
         "Utsjekkingen utløpt. Prøv igjen."
@@ -6809,8 +6839,26 @@
       "Contact signature not verified": [
         "Kontaktsignaturen er ikke bekreftet"
       ],
+      "Contact your administrator to start a migration.": [
+        "Kontakt administratoren din for å starte en migrering."
+      ],
+      "Copy operation aborted": [
+        "Kopieringsoperasjonen ble avbrutt"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiering av element til en ikke-mappe er ikke tillatt"
+      ],
+      "Could not find an available name": [
+        "Finner ikke et tilgjengelig navn"
+      ],
       "Could not generate the device profile. Please try again.": [
         "Kunne ikke generere enhetsprofilen. Prøv på nytt."
+      ],
+      "Could not load sharing details": [
+        "Kunne ikke laste inn delingsdetaljene"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Kunne ikke laste inn forhåndsvisningen av bildet: ${ message }"
       ],
       "Could not open created vault": [
         "Kunne ikke åpne opprettet hvelv"
@@ -6818,14 +6866,32 @@
       "Could not open updated vault": [
         "Kunne ikke åpne oppdatert hvelv"
       ],
+      "Could not read part of this file: ${ message }": [
+        "Kunne ikke lese deler av denne filen: ${ message }"
+      ],
       "Could not save preference": [
         "Kunne ikke lagre preferanse"
+      ],
+      "Could not unlock the parent folder": [
+        "Kunne ikke låse opp overordnet mappe"
+      ],
+      "Could not unlock this item": [
+        "Kunne ikke låse opp dette elementet"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Kunne ikke laste inn fakturaer. Prøv igjen senere."
       ],
       "Couldn't load transactions. Please try again later.": [
         "Kunne ikke laste inn transaksjoner. Prøv igjen senere."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Det er ikke tillatt å opprette dokumenter i elementer som ikke er mapper."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Det er ikke tillatt å opprette filer i elementer som ikke er mapper."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Det er ikke tillatt å opprette mapper i elementer som ikke er mapper."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Fjern valget fra minst ${ calendarsToFixCount } kalender",
@@ -6834,6 +6900,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Fjern valget fra minst ${ calendarsToFixCount } kalender eller",
         "Fjern valgene fra minst ${ calendarsToFixCount } kalendere eller"
+      ],
+      "Device not found": [
+        "Enhet ikke funnet"
       ],
       "Domain not available, try again later": [
         "Domenet er ikke tilgjengelig. Prøv igjen senere."
@@ -6874,6 +6943,9 @@
       "Error publishing changes": [
         "Feil ved publisering av endringer"
       ],
+      "Expiration date cannot be in the past": [
+        "Utløpsdatoen kan ikke være i fortiden"
+      ],
       "Expired": [
         "Utløpt"
       ],
@@ -6886,8 +6958,35 @@
       "Failed to add group member": [
         "Kunne ikke legge til gruppemedlem"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Kunne ikke dekryptere bokmerkenøkkelen: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Kunne ikke dekryptere bokmerkenavnet: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Klarte ikke å dekryptere bokmerkepassordet: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Kunne ikke dekryptere innholdsnøkkelen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kunne ikke dekryptere elementnavnet: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Klarte ikke å dekryptere nodenøkkelen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Kunne ikke dekryptere revisjonsmetadata"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Kunne ikke finne aktive økter. ${ refresh } eller prøv igjen senere."
+      ],
+      "Failed to get inviter keys": [
+        "Kunne ikke hente invitasjonsnøkler"
+      ],
+      "Failed to load OAuth": [
+        "Kunne ikke laste inn OAuth"
       ],
       "Failed to load OAuth modal.": [
         "Kunne ikke laste inn oauth-modal."
@@ -6910,6 +7009,15 @@
       "Failed to update detailed monitoring.": [
         "Kunne ikke oppdatere detaljert overvåking."
       ],
+      "Failed to verify invitation": [
+        "Kunne ikke bekrefte invitasjonen"
+      ],
+      "File download failed due to empty response": [
+        "Filnedlasting mislyktes på grunn av tomt svar"
+      ],
+      "File has no revision": [
+        "Filen har ingen revisjon"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Filen er for stor. Logoen må være 30 kB eller mindre."
       ],
@@ -6921,6 +7029,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Dersom tiden på TV-en har utløpt, trykk på 'oppdater' og tast inn koden på nytt."
+      ],
+      "Image preview not found": [
+        "Forhåndsvisning av bilde ikke funnet"
       ],
       "IMAP server is required": [
         "IMAP-server kreves"
@@ -7003,30 +7114,66 @@
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
       ],
+      "Invitation not found": [
+        "Invitasjon ikke funnet"
+      ],
       "Item content cannot exceed 40KB": [
         "Elementinnhold kan ikke overskride 40KB"
+      ],
+      "Item not found": [
+        "Element ikke funnet"
       ],
       "Label name cannot be empty.": [
         "Etikettnavn kan ikke være tomt."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Eldre offentlig kobling kan ikke oppdateres. Opprett en ny offentlig kobling på nytt."
+      ],
       "Maximum ${ displayMaxValue } allowed": [
         "Maksimalt ${ displayMaxValue } tillatt"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå sammen minst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender.",
         "Slå sammen minst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere."
       ],
+      "Missing inviter email": [
+        "Mangler e-postadresse for invitator"
+      ],
       "Missing key packet": [
         "Mangler nøkkelpakke"
       ],
+      "Missing organization private key": [
+        "Mangler privat nøkkel for organisasjonen"
+      ],
+      "Missing organization public key": [
+        "Mangler offentlig nøkkel for organisasjonen"
+      ],
       "Missing signature": [
         "Mangler signatur"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Mangler signatur for ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Flytteoperasjonen ble avbrutt"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Flytting av element til en ikke-mappe er ikke tillatt"
+      ],
+      "Moving root item is not allowed": [
+        "Det er ikke tillatt å flytte rotelement"
       ],
       "Name already exists": [
         "Navnet finnes allerede"
       ],
       "Name does not match": [
         "Navn samsvarer ikke"
+      ],
+      "Name must not be empty": [
+        "Navn kan ikke være tomt"
       ],
       "Name required": [
         "Navn kreves"
@@ -7052,6 +7199,9 @@
       "No external key retrieved for user is valid for sending": [
         "Ingen ekstern nøkkel hentet for bruker er gyldig for sending"
       ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata ble mottatt. Prøv på nytt."
+      ],
       "No image selected": [
         "Ingen bilde valgt"
       ],
@@ -7064,8 +7214,23 @@
       "Not a valid number": [
         "Ikke et gyldig tall"
       ],
+      "Only admins can convert external invitations": [
+        "Bare administratorer kan konvertere eksterne invitasjoner"
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Kun store bokstaver og tegnsetting (punktum, bindestreker og understrekingstegn) kan endres for denne adressen."
+      ],
+      "Operation aborted": [
+        "Operasjon avbrutt"
+      ],
+      "Operation failed, try again later": [
+        "Operasjon mislyktes, prøv igjen senere"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisasjonen har ikke nok ledige seter"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisasjonen har ikke nok lagringsplass tilgjengelig"
       ],
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
@@ -7075,6 +7240,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
+      ],
+      "Part of the file appears to be corrupted": [
+        "En del av filen ser ut til å være ødelagt"
       ],
       "Password is required": [
         "Passord kreves"
@@ -7099,6 +7267,12 @@
       ],
       "Permissions request failed.": [
         "Forespørsel om tillatelser mislyktes."
+      ],
+      "Photo is already in the target album": [
+        "Bildet er allerede i målalbumet"
+      ],
+      "Photo not found": [
+        "Bilde ikke funnet"
       ],
       "Please add a payment method before reactivating your subscription": [
         "Legg til en betalingsmåte før du reaktiverer abonnementet ditt"
@@ -7207,6 +7381,12 @@
         "Fjernet duplisert mottaker: ${ joinedRecipients }",
         "Fjernet dupliserte mottakere: ${ joinedRecipients }"
       ],
+      "Renaming root item is not allowed": [
+        "Det er ikke tillatt å gi nytt navn til rotelement"
+      ],
+      "Request aborted": [
+        "Forespørsel avbrutt"
+      ],
       "Request timed out": [
         "Forespørselen ble tidsavbrutt"
       ],
@@ -7227,11 +7407,32 @@
       "Session expired. Please refresh the page.": [
         "Økten er utløpt. Last inn siden på nytt."
       ],
+      "Signature is missing": [
+        "Signatur mangler"
+      ],
       "Signature not verified": [
         "Signatur ikke bekreftet"
       ],
       "Signature verification failed": [
         "Signaturbekreftelse mislyktes"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Bekreftelse av signatur mislyktes: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturverifisering for ${ signatureType } mislyktes"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturverifisering for ${ signatureType } mislyktes: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Deler av filen kunne ikke lastes opp. Prøv igjen."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Deler av filen kunne ikke lastes opp. Prøv igjen."
+      ],
+      "Some items could not be loaded": [
+        "Kunne ikke laste inn enkelte dokumenter"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Noen av dine mappenavn er utilgjengelige. Tilpass importen for å redigere disse navnene."
@@ -7323,6 +7524,9 @@
       "The session has expired. Please sign in again.": [
         "Økten er utløpt. Logg på nytt."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den opplastede filen samsvarer ikke med originalen. Prøv på nytt."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det er for mange mapper i din eksterne konto. Tilpass importen for å slette noen mapper."
       ],
@@ -7341,8 +7545,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette feltet krever minimum ${ minimumLength } tegn."
       ],
+      "This file has missing crypto material": [
+        "Denne filen mangler kryptomateriale"
+      ],
+      "This file has no version available to download": [
+        "Denne filen har ingen versjon tilgjengelig for nedlasting"
+      ],
+      "This file version could not be uploaded": [
+        "Denne filversjonen kunne ikke lastes opp"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Dette mappenavnet er ikke tilgjengelig. Velg et annet navn."
+      ],
+      "This item has no image preview": [
+        "Dette elementet har ingen forhåndsvisning av bilde"
+      ],
+      "This item is no longer shared": [
+        "Dette elementet deles ikke lenger"
+      ],
+      "This item is not shared": [
+        "Dette elementet er ikke delt"
       ],
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavnet er ikke tilgjengelig. Velg et annet navn."
@@ -7351,7 +7573,7 @@
         "Denne meldingen kan inneholde noen koblinger til nettadresser som ikke kan åpnes riktig av din nåværende nettleser."
       ],
       "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
-        "Denne frasen kan ikke gjenopprette kontoen din. Du kan generere en ny for å sikre at kontoen din kan gjenopprettes i fremtiden."
+        "Denne frasen kan ikke gjenopprette kontoen din. Du kan generere en ny for å sikre at kontoen kan gjenopprettes i fremtiden."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "For å opprette ikke-private brukerkontoer og få tilgang til kontoene deres, må du gjenopprette administratorrettighetene dine."
@@ -7361,6 +7583,12 @@
       ],
       "Too many requests. Please try again later": [
         "For mange forespørsler. Forsøk igjen senere."
+      ],
+      "Too many server errors, please try again later": [
+        "For mange serverfeil. Prøv igjen senere."
+      ],
+      "Too many server requests, please try again later": [
+        "For mange serverforespørsler. Prøv igjen senere."
       ],
       "Trusted keys are not valid for sending": [
         "Klarerte nøkler er ikke gyldige for sending."
@@ -7407,6 +7635,12 @@
       "Verification did not succeed, please try again in an hour.": [
         "Verifisering lyktes ikke, prøv igjen om en time."
       ],
+      "Verification keys are not available": [
+        "Verifiseringsnøkler er ikke tilgjengelige"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifiseringsnøkler for ${ signatureType } er ikke tilgjengelige"
+      ],
       "We couldn't sign you in": [
         "Vi kunne ikke logge deg på"
       ],
@@ -7427,6 +7661,24 @@
       ],
       "You already added this holidays calendar": [
         "Du har allerede lagt til denne helligdagskalenderen"
+      ],
+      "You can create public links for your own files only": [
+        "Du kan bare opprette offentlige koblinger for dine egne filer"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan bare forlate elementer som er delt med deg"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan bare laste opp en ny versjon av en fil"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kan bare oppdatere en offentlig kobling for dine egne filer"
+      ],
+      "You do not have access to this item": [
+        "Du har ikke tilgang til dette elementet"
+      ],
+      "You do not have access to this shared item": [
+        "Du har ikke tilgang til dette delte elementet"
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nådd maksimalt antall kalendere."
@@ -8433,6 +8685,29 @@
         "Terabytes"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Aktivert"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Feil"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrert"
+      ],
+      "Not activated": [
+        "Ikke aktivert"
+      ],
+      "Pending": [
+        "Venter"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arkiver"
@@ -8632,6 +8907,20 @@
       ],
       "Your desktop app free trial has ended": [
         "Den gratis prøveperioden for skrivebordsappen er avsluttet"
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Avanserte sikkerhetskontroller"
+      ],
+      "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
+        "I tillegg til tilkoblingsovervåking lar private gatewayer deg gi tilgang per bruker eller gruppe – alt kjører på dedikerte servere med statiske IP-adresser."
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Lås opp enkel pålogging (SSO), administratorretningslinjer, overvåking, håndhevet tofaktorautentisering og mer."
+      ],
+      "User - ${ userPrice }": [
+        "Bruker - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -9349,6 +9638,9 @@
       "Failed": [
         "Mislyktes"
       ],
+      "Has errors": [
+        "Inneholder feil"
+      ],
       "Imported": [
         "Importert"
       ],
@@ -9363,6 +9655,21 @@
       ],
       "Paused": [
         "Satt på pause"
+      ],
+      "Pending": [
+        "Venter"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "Hoppet over ${ count } kontakt på grunn av inkompatibiliteter",
+        "Hoppet over ${ count } kontakter på grunn av inkompatibiliteter"
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "Hoppet over ${ count } e-post på grunn av inkompatibiliteter",
+        "Hoppet over ${ count } e-poster på grunn av inkompatibiliteter"
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "Hoppet over ${ count } hendelse på grunn av inkompatibiliteter",
+        "Hoppet over ${ count } hendelser på grunn av inkompatibiliteter"
       ],
       "Undo finished": [
         "Angre fullført"
@@ -9878,6 +10185,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Legg til navn og logo for å opprette en mer personlig opplevelse for organisasjonen."
       ],
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Legg til organisasjonens e-postdomene til ${ BRAND_NAME }."
+      ],
       "Adding ${ total } gateway server": [
         "Legger til ${ total } gateway-server",
         "Legger til ${ total } gateway-servere"
@@ -10022,6 +10332,10 @@
       "Are you sure you want to cancel editing the group?": [
         "Er du sikker å at du vil avbryte redigeringen av gruppen?"
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Er du sikker på at du ønsker å fortsette uten ${ withoutString } og ${ notMigratedOthers } annen?",
+        "Er du sikker på at du ønsker å fortsette uten ${ withoutString } og ${ notMigratedOthers } andre?"
+      ],
       "Are you sure you want to delete this calendar?": [
         "Er du sikker på at du vil slette denne kalenderen?"
       ],
@@ -10102,6 +10416,9 @@
       ],
       "Authenticator app 2FA enabled": [
         "Autentiseringsapp 2FA aktivert"
+      ],
+      "Author is not provided on public link": [
+        "Forfatter er ikke oppgitt på offentlig kobling"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Autosvar er aktiv hver måned mellom valgt starttidspunkt og sluttidspunkt."
@@ -10458,6 +10775,9 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slett andre MX-poster, eller kontroller at ${ MAIL_APP_NAME }s prioritet har det laveste tallet."
       ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Slett eventuelle eksisterende MX-koder, kopier deretter kodene nedenfor og lim dem inn i DNS-delen av domeneverten din."
+      ],
       "Delete link?": [
         "Slette kobling?"
       ],
@@ -10527,6 +10847,9 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Ønsker du å oppheve alle andre økter utenom den gjeldende?"
+      ],
+      "Domain added": [
+        "Domene lagt til"
       ],
       "Domain ownership failed verification.": [
         "Domeneeierskap mislyktes verifisering."
@@ -10840,6 +11163,9 @@
       ],
       "finance": [
         "finans"
+      ],
+      "Find out what can be migrated.": [
+        "Finn ut hva som kan migreres."
       ],
       "for ${ price }": [
         "for ${ price }"
@@ -11210,6 +11536,9 @@
       "Invited": [
         "Invitert"
       ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Det kan ta opptil 24 timer før disse endringene trer i kraft."
+      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Det tar 10 dager å endre en tjeners land, så sørg for at valget ditt er riktig."
       ],
@@ -11537,6 +11866,9 @@
       "No single sign-on": [
         "Ingen enkel pålogging"
       ],
+      "No users to display": [
+        "Ingen brukere å vise"
+      ],
       "Not a valid URL": [
         "Ikke en gyldig nettadresse"
       ],
@@ -11572,6 +11904,9 @@
       ],
       "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
         "Når den er distribuert, kan det ta opptil noen timer før enhetene oppdager og håndhever retningslinjen."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Når vi har bekreftet at e-postene er sendt til ${ BRAND_NAME }, vil overføringen være fullført. Du vil motta en bekreftelses-e-post som gir deg beskjed når dette skjer. Denne prosessen kan ta opptil 24 timer."
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Bare store bokstaver og tegnsetting (punktum, bindestreker og understrek) kan endres her. Hvis du vil bruke en annen adresse, må du legge til en ny."
@@ -11973,6 +12308,9 @@
       "Select a group to view its members and settings.": [
         "Velg en gruppe for å se medlemmene og innstillingene."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Velg nøyaktig hva du vil migrere. Det vil gjelde for alle brukere i organisasjonen."
+      ],
       "Select one or multiple user affiliations": [
         "Velg én eller flere brukertilknytninger"
       ],
@@ -12090,6 +12428,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
+      ],
+      "Smart Routed through a different country.": [
+        "Smart-rutet gjennom et annet land."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Smart-rutet gjennom: ${ joinedCountries }."
@@ -12364,6 +12705,9 @@
       "This file is too large to preview": [
         "Denne filen er for stor til å forhåndsvises"
       ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Denne Gmail-adressen er registrert med en annen ${ BRAND_NAME }-konto (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } KI og andre). Vi jobber med å gjøre denne tilkoblingen sømløs, men foreløpig må du utføre noen få steg."
+      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Denne invitasjonskoblingen er utløpt. Kontakt administratoren for å be om tilgang."
       ],
@@ -12411,6 +12755,12 @@
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Denne koblingen til å avslutte abonnementet er utløpt. Åpne en mer nylig e-post fra denne e-postlisten."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Denne brukeren kan ikke migreres fordi e-postadressen deres ikke er tilgjengelig på ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne brukeren kan ikke migreres på grunn av plattformuforenlighet."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne brukeren er for øyeblikket ansvarlig for betalinger i organisasjonen din. Ved å degradere dette medlemmet, vil du bli ansvarlig for betalinger i organisasjonen din."
@@ -12520,9 +12870,6 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "For å aktivere Alltid-på-VPN må konfigurasjonsprofilen installeres på alle Mac-maskiner – ${ VPN_APP_NAME }-klienten håndhever enhetsprofilen automatisk når den er på plass."
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "For å aktivere Alltid-på-VPN må enhetsprofilen nå ${ policiesPath } på alle enheter – ${ VPN_APP_NAME }-klienten oppdager den der og håndhever profilen automatisk."
-      ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "For å aktivere post-kvantebeskyttelse må du fullføre genereringen av de nye post-kvantekrypteringsnøklene dine."
       ],
@@ -12549,6 +12896,27 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "For å holde tritt med den siste utviklingen på ${ BRAND_NAME }s produkter, kan du abonnere på våre forskjellige e-poster og ${ blogLink } i ny og ne."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "For å migrere denne brukeren, legg til og bekreft e-postdomenet under ${ domainNamesLink }."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "For å migrere denne brukeren må du aktivere kontoen deres i ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For å migrere denne brukeren må du aktivere kontoen deres under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For å migrere denne brukeren må du aktivere adressen deres under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "For å migrere denne brukeren må de godta invitasjonen sin til å bli med i ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "For å migrere denne brukeren må du oppheve arkiveringen i ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "For å migrere denne brukeren må du oppheve suspensjonen deres i ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "For å forhindre misbruk eller svindel, ber vi om en donasjon på minst ${ minimumDonation }. Dette støtter arbeidet til ${ protonFoundationLink } med å forsvare digitalt personvern globalt og bidrar til å beskytte neste generasjon."
@@ -12745,9 +13113,6 @@
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Bruker du en annen MDM? Enhver MDM som støtter utrulling av en konfigurasjonsprofil vil fungere. Se dokumentasjonen for MDM-en din for hvordan du laster den opp og tilordner den til enhetsparken din."
       ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "Bruker du en annen MDM? Enhver MDM som støtter distribusjon av filer eller kjøring av PowerShell-skript vil fungere. Se dokumentasjonen for MDM-en din for mer informasjon."
-      ],
       "Vault created": [
         "Hvelv opprettet"
       ],
@@ -12907,6 +13272,9 @@
       "We’ll send a reset code to ${ boldValue }.": [
         "Vi sender en tilbakestillingskode til ${ boldValue }."
       ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Vi oppretter kontoene og importerer dataene nå, slik at teamet har alt de trenger når de begynner å bruke den sikre ${ BRAND_NAME }-kontoen sin."
+      ],
       "What happens:": [
         "Hva skjer:"
       ],
@@ -12997,6 +13365,9 @@
       "Yearly": [
         "Årlig"
       ],
+      "You": [
+        "Du"
+      ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
       ],
@@ -13080,9 +13451,6 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Du kan nå få tilgang til og behandle kontoen som en administrator."
-      ],
-      "You can now access and manage the company as an administrator.": [
-        "Du kan nå få tilgang til og behandle foretaket som en administrator."
       ],
       "You can now close this tab.": [
         "Du kan lukke denne fanen nå."
@@ -14866,6 +15234,12 @@
       "Interval": [
         "Intervall"
       ],
+      "Invitation link": [
+        "Invitasjonskobling"
+      ],
+      "Invitation message": [
+        "Melding i invitasjon"
+      ],
       "Invite people": [
         "Inviter folk"
       ],
@@ -14934,6 +15308,9 @@
       ],
       "Logo": [
         "Logo"
+      ],
+      "Mail": [
+        "E-post"
       ],
       "Mail Server (IMAP)": [
         "E-postserver (IMAP)"
@@ -15608,6 +15985,9 @@
       "Users": [
         "Brukere"
       ],
+      "Users activated": [
+        "Brukere aktivert"
+      ],
       "Value": [
         "Verdi"
       ],
@@ -16187,6 +16567,9 @@
       "Gathering your data": [
         "Samler dataene dine"
       ],
+      "Loading your organization data": [
+        "Laster inn organisasjonsdataene dine"
+      ],
       "We're gathering your data from your provider": [
         "Vi samler inn dataene dine fra leverandøren din"
       ],
@@ -16644,6 +17027,14 @@
       ],
       "Sign in": [
         "Logg på"
+      ]
+    },
+    "Members table usage": {
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Sett opp dine egne private gatewayer for å overvåke VPN-tilkoblingsaktivitet i organisasjonen."
+      ],
+      "Yesterday": [
+        "I går"
       ]
     },
     "Message": {
@@ -20252,6 +20643,26 @@
         "Sekundærtidssone"
       ]
     },
+    "Property": {
+      "attributes": [
+        "attributter"
+      ],
+      "content key": [
+        "innholdsnøkkel"
+      ],
+      "hash key": [
+        "hashnøkkel"
+      ],
+      "key": [
+        "nøkkel"
+      ],
+      "membership": [
+        "medlemskap"
+      ],
+      "name": [
+        "navn"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adresse"
@@ -21395,6 +21806,9 @@
       "${ usersText } and ${ groupsText } synced.": [
         "${ usersText } og ${ groupsText } synkronisert."
       ],
+      "**You'll be able to review** group changes before they take effect to confirm they're intentional": [
+        "**Du vil kunne se gjennom** gruppendringer før de trer i kraft for å bekrefte at de er tilsiktet"
+      ],
       "Approve changes from your identity provider": [
         "Godkjenn endringer fra identitetsleverandøren din"
       ],
@@ -21407,6 +21821,9 @@
       "New": [
         "Ny"
       ],
+      "New: Manage groups via your identity provider": [
+        "Nytt: Administrer grupper via identitetsleverandøren din"
+      ],
       "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
         "Når de er godkjent, kan de få tilgang til alle ${ BRAND_NAME }-tjenestene og dele sikkert."
       ],
@@ -21416,11 +21833,17 @@
       "Review users and groups before finishing setup": [
         "Se gjennom brukere og grupper før du fullfører oppsettet"
       ],
+      "This approval prompt will **appear every time you update** groups through your identity provider": [
+        "Denne godkjenningsmeldingen vil **vises hver gang du oppdaterer** grupper gjennom identitetsleverandøren din"
+      ],
       "Updated": [
         "Oppdatert"
       ],
       "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Brukere som er satt til privat må godta invitasjonen for å fullføre oppsettet. Vi sender dem en invitasjon når du har godkjent."
+      ],
+      "What to expect now that group sync is enabled": [
+        "Hva du kan forvente nå som gruppesynkronisering er aktivert"
       ]
     },
     "scim: Action": {
@@ -21447,6 +21870,9 @@
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
         "**Forutsetning:** for å aktivere SCIM-klargjøring, må du bekrefte eierskapet til domenet **${ domainName }**. Denne verifiseringen kan ta opptil én time."
       ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**Brukere:** Alle SCIM-brukere som oppgis automatisk av identitetsleverandøren din, blir konvertert til SSO-brukere, og du vil kunne administrere dem direkte i ${ BRAND_NAME }-innstillingene."
+      ],
       "Enter the token into your identity provider": [
         "Skriv inn tokenet i identitetsleverandøren din"
       ],
@@ -21471,11 +21897,17 @@
       "Make sure you copy the above SCIM token now.": [
         "Pass på at du kopierer SCIM-tokenet ovenfor nå."
       ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Hvis du aktiverer synkronisering på nytt, dupliseres eksisterende grupper. De kan ikke slås sammen igjen med SCIM."
+      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Forenkler brukeradministrasjon på tvers av ulike tjenester. Legg til, rediger og fjern brukere i identitetsleverandøren, så brukes disse endringene automatisk på ${ appName }-organisasjonen."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Den automatiske klargjøringen av SCIM deaktiveres til du angir det nye SCIM-tokenet i identitetsleverandørens innstillinger."
+      ],
+      "This will delete your SCIM base URL and token.": [
+        "Dette vil slette SCIM-basis-URL-en og -tokenet ditt."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "For å aktivere synkronisering med identitetsleverandøren på nytt, må du fullføre SCIM-integreringen på nytt."
@@ -23156,6 +23588,9 @@
       "Last updated ${ formattedUpdateDate }": [
         "Sist oppdatert ${ formattedUpdateDate }"
       ],
+      "Not activated": [
+        "Ikke aktivert"
+      ],
       "Not saved": [
         "Ikke lagret"
       ],
@@ -23179,6 +23614,23 @@
       ],
       "Verify ${ value }": [
         "Verifiser ${ value }"
+      ],
+      "Waiting for MX...": [
+        "Venter på MX..."
+      ]
+    },
+    "Step": {
+      "Authenticate": [
+        "Autentiser"
+      ],
+      "Install migration app": [
+        "Installer migreringsappen"
+      ],
+      "Onboard your team": [
+        "Inviter teamet ditt"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Konfigurer sikker sending (DMARC)"
       ]
     },
     "Step in filter modal": {
@@ -23372,8 +23824,8 @@
         "${ ipAddresses } dedikerte servere"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant for ${ maxAi } user": [
-        "${ LUMO_SHORT_APP_NAME } skriveassistent for ${ maxAi } bruker",
-        "${ LUMO_SHORT_APP_NAME } skriveassistent for ${ maxAi } brukere"
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent for ${ maxAi } bruker",
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent for ${ maxAi } brukere"
       ],
       "${ n } calendar per user": [
         "${ n } kalender per bruker",
@@ -24003,6 +24455,9 @@
       "DMARC value copied to clipboard": [
         "DMARC-verdi kopiert til utklippstavlen"
       ],
+      "Domain added": [
+        "Domene lagt til"
+      ],
       "Domain verified": [
         "Domene bekreftet"
       ],
@@ -24047,6 +24502,10 @@
       ],
       "Locale updated": [
         "Nasjonal innstilling oppdatert"
+      ],
+      "Migration started for ${ n } user": [
+        "Migrering startet for ${ n } bruker",
+        "Migrering startet for ${ n } brukere"
       ],
       "New policy created. It will take effect only after you publish the changes.": [
         "Ny retningslinje opprettet. Den trer i kraft først etter at du publiserer endringene."
@@ -24312,11 +24771,23 @@
       ]
     },
     "Table header": {
+      "Activated": [
+        "Aktivert"
+      ],
+      "Estimated size": [
+        "Estimert størrelse"
+      ],
+      "Migration status": [
+        "Migrasjonsstatus"
+      ],
       "Size": [
         "Størrelse"
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Bruker"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -24880,6 +25351,9 @@
       ],
       "Configure Always-on VPN device profile": [
         "Konfigurer Alltid-på-VPN-enhetsprofil"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
       ],
       "Confirm": [
         "Bekreft"
@@ -25490,6 +25964,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Merk: Denne Gmail-kontoen er koblet til en annen ${ BRAND_NAME }-konto"
+      ],
       "Help and feedback": [
         "Hjelp og tilbakemelding"
       ],
@@ -25532,6 +26009,9 @@
       ],
       "Import contacts": [
         "Importer kontakter"
+      ],
+      "Import details": [
+        "Importdetaljer"
       ],
       "Import emails, calendars, contacts": [
         "Importer e-poster, kalendere, kontakter"
@@ -25632,9 +26112,6 @@
       "Make your business stand out": [
         "Få bedriften din til å skille seg ut"
       ],
-      "Manage company": [
-        "Administrer foretak"
-      ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Administrer filer på tvers av enheter på Windows, Mac, Android og iOS."
       ],
@@ -25647,11 +26124,17 @@
       "Messages and composing": [
         "Meldinger og skriving"
       ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Migrer kontoer til ${ BRAND_NAME }"
+      ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migrer organisasjonen din til ${ BRAND_NAME }"
       ],
       "Migration assistant": [
         "Migreringsassistent"
+      ],
+      "Migration summary": [
+        "Migreringssammendrag"
       ],
       "Minicalendar": [
         "Minikalender"
@@ -26016,6 +26499,9 @@
       "Select the way to send this notification": [
         "Velg hvordan du vil sende dette varselet"
       ],
+      "Select users to migrate": [
+        "Velg brukere som skal migreres"
+      ],
       "Select when you want this notification to be sent": [
         "Velg når du vil at dette varselet skal sendes"
       ],
@@ -26057,6 +26543,12 @@
       ],
       "Set up email forwarding": [
         "Konfigurer videresending av e-post"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Konfigurer sikker sending (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Konfigurer sikker sending (DMARC)"
       ],
       "Set up your family account": [
         "Konfigurer familiekontoen din"
@@ -26398,6 +26890,9 @@
       "Welcome to your new password manager!": [
         "Velkommen til din nye passordbehandler!"
       ],
+      "What are you migrating?": [
+        "Hva migrerer du?"
+      ],
       "What changes if you switch to the Free plan": [
         "Hva endres hvis du bytter til Free-planen"
       ],
@@ -26430,6 +26925,9 @@
       ],
       "You have no resolved alerts": [
         "Du har ingen løste varsler"
+      ],
+      "You're all set!": [
+        "Alt er klart!"
       ],
       "You've successfully signed in!": [
         "Du har logget inn!"
@@ -26565,6 +27063,9 @@
       "Features": [
         "Funksjoner"
       ],
+      "Last app activity": [
+        "Siste appaktivitet"
+      ],
       "Name": [
         "Navn"
       ],
@@ -26653,6 +27154,9 @@
       "Customize import to reduce the number of labels": [
         "Tilpass import for å redusere antall etiketter"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status for dataoverføring fra ${ providerName } til ${ BRAND_NAME }"
+      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Sletter papirkurvinnhold og søppelpostmeldinger etter 30 dager. Hvis du slår på automatisk sletting, får meldinger som allerede er i papirkurven/søppelposten, en slettedato basert på datoen de ble flyttet dit."
       ],
@@ -26691,6 +27195,9 @@
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
         "Ekskluderer brukere med enkel pålogging med 2FA som håndteres av identitetsleverandøren din"
+      ],
+      "Expand invitation message": [
+        "Vis invitasjonsmelding"
       ],
       "Feature in early access": [
         "Funksjon i tidlig tilgang"
@@ -26745,6 +27252,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Opprinnelse IP-adresse og Internett-leverandør (ISP)"
+      ],
+      "Reauthenticate your ${ providerName } account to start a migration": [
+        "Autentiser ${ providerName }-kontoen din på nytt for å starte en migrering"
       ],
       "Remove metadata from images to protect your privacy.": [
         "Fjern metadata fra bilder for å beskytte personvernet ditt."
@@ -26857,6 +27367,9 @@
       "User's approximate location (based on their IP address)": [
         "Brukerens omtrentlige plassering (basert på deres IP-adresse)"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brukere som har aktivert ${ BRAND_NAME }-kontoen sin"
+      ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Brukere vil se logoen din i stedet for ${ BRAND_NAME }-ikonet når de er logget på nettappene våre."
       ],
@@ -26865,6 +27378,9 @@
       ],
       "Verified email address": [
         "Bekreftet e-postadresse"
+      ],
+      "Verify your domain to start a migration": [
+        "Verifiser domenet ditt for å starte en migrering"
       ],
       "Version 6 OpenPGP key": [
         "Versjon 6 OpenPGP-nøkkel"
@@ -27754,8 +28270,14 @@
       "This will remove all messages, folders, and labels created during the import.": [
         "Dette vil fjerne alle meldinger, mapper og etiketter som ble opprettet ved importen."
       ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "For å fullføre migreringen, sørg for at du bare beholder ${ BRAND_NAME } MX-koder."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Dessverre er vi ikke på nett for øyeblikket. Fyll ut skjemaet nedenfor for å beskrive problemet ditt, så ser vi nærmere på det og tar kontakt når vi er tilbake på nettet."
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Brukere som ikke har gjort krav på kontoen sin før overføringen er fullført, må be om en tilbakestilling av passordet fra administratoren for ${ BRAND_NAME }-organisasjonen."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Vi kan ikke bekrefte e-postserveren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
@@ -27771,6 +28293,10 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Du vil ikke lenger se denne importposten i listen."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Din nåværende plan tillater opptil ${ maxMembers } bruker. For å migrere flere brukere, legg til flere seter i abonnementet ditt.",
+        "Din nåværende plan tillater opptil ${ maxMembers } brukere. For å migrere flere brukere, legg til flere seter i abonnementet ditt."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. ${ action }"

@@ -651,6 +651,9 @@
       "Download ICS": [
         "Télécharger le fichier ICS"
       ],
+      "Download latest": [
+        "Téléchargez la dernière version"
+      ],
       "Download logs": [
         "Télécharger les journaux"
       ],
@@ -1032,9 +1035,6 @@
       "Italic": [
         "Italique"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "Conserver"
       ],
@@ -1101,9 +1101,6 @@
       "Manage communication preferences": [
         "Gérer les préférences de communication"
       ],
-      "Manage company": [
-        "Gérer l'entreprise"
-      ],
       "Manage folders": [
         "Gérer les dossiers"
       ],
@@ -1139,9 +1136,6 @@
       ],
       "Maybe later": [
         "Peut-être plus tard"
-      ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
       ],
       "Migrate": [
         "Migrer"
@@ -6797,6 +6791,12 @@
       "Calendar limit reached": [
         "Le nombre maximum de calendriers a été atteint."
       ],
+      "Cannot share root folder": [
+        "Le dossier racine ne peut pas être partagé."
+      ],
+      "Cannot verify the author of this file": [
+        "L'auteur de ce fichier n'a pas pu être vérifié."
+      ],
       "Checkout expired, please try again": [
         "La commande a expiré, nous vous invitons à réessayer."
       ],
@@ -6818,8 +6818,17 @@
       "Contact your administrator to start a migration.": [
         "Contactez votre administrateur pour commencer une migration."
       ],
+      "Copy operation aborted": [
+        "L'opération de copie a été annulée."
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Vous ne pouvez pas copier d'élément dans un élément qui n'est pas un dossier."
+      ],
       "Could not generate the device profile. Please try again.": [
         "Impossible de générer le profil de l'appareil. Veuillez réessayer."
+      ],
+      "Could not load sharing details": [
+        "Les informations du partage n'ont pas pu être chargées."
       ],
       "Could not open created vault": [
         "Le coffre-fort créé n'a pas pu être ouvert."
@@ -6830,11 +6839,23 @@
       "Could not save preference": [
         "La préférence n'a pas pu être sauvegardée"
       ],
+      "Could not unlock the parent folder": [
+        "Le dossier parent n'a pas pu être déverrouillé."
+      ],
+      "Could not unlock this item": [
+        "Cet élément n'a pas pu être déverrouillé."
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Les factures n'ont pas pu être chargées. Veuillez réessayer plus tard."
       ],
       "Couldn't load transactions. Please try again later.": [
         "Les transactions n'ont pas pu être chargées. Veuillez réessayer plus tard."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Vous ne pouvez pas créer de fichier dans un élément qui n'est pas un dossier."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Vous ne pouvez pas créer de dossier dans un élément qui n'est pas un dossier."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Désélectionnez au moins ${ calendarsToFixCount } calendrier.",
@@ -6895,6 +6916,18 @@
       "Failed to add group member": [
         "L'ajout d'un membre au groupe n'a pas abouti."
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "La clé de signet n'a pas pu être déchiffrée : ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Le mot de passe du signet n'a pas pu être déchiffré : ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "La clé de contenu n'a pas pu être déchiffrée : ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Le nom de l'élément n'a pas pu être déchiffré : ${ message }"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Les sessions actives n'ont pas pu être obtenues. Nous vous invitons à ${ refresh } ou à réessayer plus tard."
       ],
@@ -6919,6 +6952,9 @@
       "Failed to update detailed monitoring.": [
         "La mise à jour de la surveillance détaillée n'a pas abouti."
       ],
+      "File has no revision": [
+        "Le fichier n'a aucune révision."
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Le fichier est trop grand. Votre logo doit être inférieur ou égal 30 Ko."
       ],
@@ -6930,6 +6966,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si le temps sur votre téléviseur est dépassé, cliquez sur Rafraîchir sur votre téléviseur et saisissez à nouveau votre code."
+      ],
+      "Image preview not found": [
+        "L'aperçu de l'image n'a pas été trouvé."
       ],
       "IMAP server is required": [
         "Le serveur IMAP est nécessaire."
@@ -7021,6 +7060,9 @@
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Ce lien public obsolète ne peut pas être mis à jour. Veuillez en recréer un nouveau."
+      ],
       "Maximum ${ displayMaxValue } allowed": [
         "Maximum ${ displayMaxValue } autorisé"
       ],
@@ -7030,6 +7072,9 @@
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Fusionnez au moins ${ calendarsToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
         "Fusionnez au moins ${ calendarsToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants."
+      ],
+      "Missing inviter email": [
+        "L'e-mail de l'inviteur est manquant."
       ],
       "Missing key packet": [
         "Le paquet de clés est manquant."
@@ -7042,6 +7087,9 @@
       ],
       "Missing signature": [
         "Il manque la signature."
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Vous ne pouvez pas déplacer d'élément dans un élément qui n'est pas un dossier."
       ],
       "Name already exists": [
         "Le nom existe déjà"
@@ -7077,6 +7125,9 @@
       "No external key retrieved for user is valid for sending": [
         "Aucune clé externe récupérée pour l’utilisateur n’est valide pour l’envoi."
       ],
+      "No file data was received. Please try again.": [
+        "Aucune donnée de fichier n'a été reçue. Veuillez réessayer."
+      ],
       "No image selected": [
         "Aucune image n'est sélectionnée."
       ],
@@ -7107,6 +7158,9 @@
       "Organization key must be activated to create non-private users": [
         "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
       ],
+      "Part of the file appears to be corrupted": [
+        "Une partie du fichier semble corrompue."
+      ],
       "Password is required": [
         "Le mot de passe est nécessaire."
       ],
@@ -7130,6 +7184,9 @@
       ],
       "Permissions request failed.": [
         "La demande d'autorisations n'a pas abouti."
+      ],
+      "Photo is already in the target album": [
+        "La photo se trouve déjà dans l'album indiqué."
       ],
       "Photo not found": [
         "La photo est introuvable"
@@ -7273,6 +7330,18 @@
       "Signature verification failed": [
         "La signature n'a pas pu être vérifiée."
       ],
+      "Signature verification for ${ signatureType } failed": [
+        "La vérification de signature pour ${ signatureType } n'a pas abouti."
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "La vérification de signature pour ${ signatureType } n'a pas abouti : ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Des données de fichier n'ont pas pu être importées. Veuillez réessayer."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Des parties de fichier n'ont pas pu être importées. Veuillez réessayer."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de dossiers ne sont pas disponibles. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
@@ -7363,6 +7432,9 @@
       "The session has expired. Please sign in again.": [
         "La session a expiré. Nous vous invitons à vous reconnecter."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Le fichier importé ne correspond pas à l'original. Veuillez réessayer."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Il y a trop de dossiers dans votre compte externe. Nous vous invitons à personnaliser l'importation pour supprimer certains dossiers."
       ],
@@ -7380,6 +7452,15 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
+      ],
+      "This file has missing crypto material": [
+        "Des éléments de chiffrement manquent dans ce fichier."
+      ],
+      "This file has no version available to download": [
+        "Ce fichier n'a aucune version disponible au téléchargement."
+      ],
+      "This file version could not be uploaded": [
+        "Cette version de fichier n'a pas pu être importée."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Ce nom de dossier n'est pas disponible, veuillez en choisir un autre."
@@ -7407,6 +7488,9 @@
       ],
       "Too many requests. Please try again later": [
         "Le nombre de requêtes est trop important. Veuillez réessayer plus tard."
+      ],
+      "Too many server requests, please try again later": [
+        "Le nombre de requêtes serveur est trop important. Veuillez réessayer plus tard."
       ],
       "Trusted keys are not valid for sending": [
         "Les clés approuvées ne sont pas valides pour l'envoi."
@@ -7453,6 +7537,12 @@
       "Verification did not succeed, please try again in an hour.": [
         "La vérification n'a pas réussi, nous vous invitons à réessayer dans une heure."
       ],
+      "Verification keys are not available": [
+        "Les clés de vérification ne sont pas disponibles."
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Les clés de vérification pour ${ signatureType } ne sont pas disponibles."
+      ],
       "We couldn't sign you in": [
         "Nous n’avons pas pu vous connecter."
       ],
@@ -7473,6 +7563,12 @@
       ],
       "You already added this holidays calendar": [
         "Vous avez déjà ajouté ce calendrier de jours fériés."
+      ],
+      "You can update a public link for your own files only": [
+        "Vous pouvez uniquement mettre à jour les liens publics pour vos propres fichiers."
+      ],
+      "You do not have access to this item": [
+        "Vous n'avez pas accès à cet élément."
       ],
       "You have reached the maximum number of calendars.": [
         "Vous avez atteint le nombre maximum de calendriers."
@@ -10166,6 +10262,9 @@
       "Authenticator app 2FA enabled": [
         "Application d'authentification A2F activée"
       ],
+      "Author is not provided on public link": [
+        "L'auteur n'est pas fourni pour le lien public."
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "La réponse automatique est active chaque mois entre l'heure de début et de fin sélectionnée."
       ],
@@ -11793,6 +11892,9 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Vérifier votre fichier ou essayez d'utiliser notre ${ csvTemplateButton }."
       ],
+      "Please ensure you're running ${ VPN_APP_NAME } desktop version ${ version } or later. ${ downloadLatest }": [
+        "Veuillez vous assurer d'utiliser la version de bureau ${ version } ou une version ultérieure de ${ VPN_APP_NAME }. ${ downloadLatest }"
+      ],
       "Please fill in all required fields.": [
         "Veuillez remplir tous les champs obligatoires."
       ],
@@ -12475,6 +12577,12 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Ce lien de désinscription a expiré. Nous vous invitons à ouvrir un message plus récent provenant de cette liste de diffusion."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Cet utilisateur ne peut pas être migré car son adresse e-mail n'est pas disponible sur ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Cet utilisateur ne peut pas être migré en raison d'incompatibilités de plateforme."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Cet utilisateur est actuellement responsable des paiements pour votre organisation. Si vous lui attribuez un abonnement inférieur, vous deviendrez responsable des paiements pour votre organisation."
       ],
@@ -12583,8 +12691,8 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Pour activer le VPN permanent, le profil de configuration doit être installé sur chaque Mac, le client ${ VPN_APP_NAME } applique automatiquement le profil de l'appareil une fois celui-ci en place."
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "Pour activer le VPN permanent, le profil d’appareil doit atteindre ${ policiesPath } sur chaque appareil, le client ${ VPN_APP_NAME } le détecte à cet emplacement et applique automatiquement le profil."
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
+        "Pour activer le VPN permanent, le profil d’appareil doit atteindre ${ policiesPath } sur chaque appareil, le client ${ VPN_APP_NAME } le détecte à cet emplacement et applique automatiquement le profil. ${ learnMore }."
       ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Pour activer la protection post-quantique, vous devez terminer la génération de vos nouvelles clés de chiffrement post-quantiques."
@@ -12613,11 +12721,11 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Pour vous tenir au courant des dernières évolutions des produits ${ BRAND_NAME }, vous pouvez vous abonner à nos différentes newsletters et ${ blogLink } de temps en temps."
       ],
-      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
-        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Pour migrer cet utilisateur, ajoutez et vérifiez le domaine de messagerie sous ${ domainNamesLink }"
       ],
-      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
-        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Pour prévenir les abus ou la fraude, nous demandons un don minimum de ${ minimumDonation }. Ceci soutient le travail de la ${ protonFoundationLink } pour défendre la confidentialité numérique à l'échelle mondiale et aide à protéger les générations futures."
@@ -12813,9 +12921,6 @@
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Vous utilisez une autre solution MDM ? Toute solution MDM prenant en charge le déploiement d'un profil de configuration fera l'affaire. Reportez-vous à la documentation de votre solution MDM pour savoir comment le télécharger et l'attribuer à votre parc d'appareils."
-      ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "Vous utilisez un autre MDM ? Toute solution MDM prenant en charge le déploiement de fichiers ou l’exécution de scripts PowerShell fonctionnera. Consultez la documentation de votre MDM pour plus d’informations."
       ],
       "Vault created": [
         "Le coffre-fort a été créé."
@@ -13152,9 +13257,6 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Vous pouvez maintenant accéder au compte et le gérer en tant qu'administrateur."
-      ],
-      "You can now access and manage the company as an administrator.": [
-        "Vous pouvez désormais accéder à l'entreprise et la gérer en tant qu'administrateur."
       ],
       "You can now close this tab.": [
         "Vous pouvez maintenant fermer cet onglet."
@@ -13964,7 +14066,7 @@
         "Navigation basique"
       ],
       "Composer shortcuts": [
-        "Raccourcis de l'éditeur "
+        "Raccourcis de l'éditeur"
       ],
       "Desktop app navigation": [
         "Navigation de l'application de bureau"
@@ -16713,6 +16815,20 @@
       ],
       "Sign in": [
         "Se connecter"
+      ]
+    },
+    "Members table usage": {
+      "Today": [
+        "Aujourd'hui"
+      ],
+      "Today, ${ time }": [
+        "Aujourd'hui, ${ time }"
+      ],
+      "Yesterday": [
+        "Hier"
+      ],
+      "Yesterday, ${ time }": [
+        "Hier, ${ time }"
       ]
     },
     "Message": {
@@ -19640,7 +19756,7 @@
         "Montant dû après la version d'essai le ${ formattedDate }"
       ],
       "Billing Country": [
-        "Pays de facturation "
+        "Pays de facturation"
       ],
       "Card number": [
         "Numéro de la carte"
@@ -25588,6 +25704,9 @@
       "Groups": [
         "Groupes"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Attention : ce compte Gmail est associé à un autre compte ${ BRAND_NAME }."
+      ],
       "Help and feedback": [
         "Aide et commentaires"
       ],
@@ -25729,9 +25848,6 @@
       ],
       "Make your business stand out": [
         "Faites en sorte que votre entreprise se démarque !"
-      ],
-      "Manage company": [
-        "Gérer l'entreprise"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gérer vos fichiers sur l'ensemble de vos appareils sur Windows, Mac, Android et iOS."
@@ -26660,6 +26776,12 @@
       "Features": [
         "Fonctionnalités"
       ],
+      "Last app activity": [
+        "Dernière activité de l'application"
+      ],
+      "Last connection": [
+        "Dernière connexion"
+      ],
       "Name": [
         "Nom"
       ],
@@ -27449,6 +27571,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Une nouvelle adresse ${ MAIL_APP_NAME } sera créée."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Passez à une formule prise en charge pour pouvoir utiliser les rôles d'administrateur."
       ],
       "User created": [
         "L'utilisateur a été créé."

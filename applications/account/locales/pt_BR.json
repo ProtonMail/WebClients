@@ -168,6 +168,9 @@
       "Add user": [
         "Adicionar usuário"
       ],
+      "Add users": [
+        "Adicionar usuários"
+      ],
       "Added ${ memberName } as group owner": [
         "${ memberName } adicionamo como proprietário do grupo"
       ],
@@ -311,6 +314,9 @@
       ],
       "Collaborate on documents": [
         "Colaborar em documentos"
+      ],
+      "Collapse step": [
+        "Ocultar etapa"
       ],
       "Color": [
         "Cor"
@@ -651,6 +657,9 @@
       "Download ICS": [
         "Baixar ICS"
       ],
+      "Download latest": [
+        "Download mais recente"
+      ],
       "Download logs": [
         "Registros de downloads"
       ],
@@ -767,6 +776,9 @@
       ],
       "Enter code": [
         "Inserir código"
+      ],
+      "Expand step": [
+        "Expandir etapa"
       ],
       "Explore ${ target }": [
         "Explore ${ target }"
@@ -1017,6 +1029,9 @@
       "Insert link": [
         "Inserir link"
       ],
+      "Install app": [
+        "Instalar aplicativo"
+      ],
       "Instructions": [
         "Instruções"
       ],
@@ -1031,9 +1046,6 @@
       ],
       "Italic": [
         "Itálico"
-      ],
-      "JumpCloud": [
-        "JumpCloud"
       ],
       "Keep": [
         "Manter"
@@ -1101,9 +1113,6 @@
       "Manage communication preferences": [
         "Gerenciar preferências de comunicação"
       ],
-      "Manage company": [
-        "Gerenciar empresa"
-      ],
       "Manage folders": [
         "Gerenciar pastas"
       ],
@@ -1140,14 +1149,17 @@
       "Maybe later": [
         "Talvez mais tarde"
       ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
+      "Migrate": [
+        "Migrar"
       ],
       "More": [
         "Mais"
       ],
       "More benefits": [
         "Mais benefícios"
+      ],
+      "More details": [
+        "Mais detalhes"
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
@@ -1620,6 +1632,9 @@
       "Sign in": [
         "Iniciar sessão"
       ],
+      "Sign in to ${ providerName }": [
+        "Iniciar sessão em ${ providerName }"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sessão com ${ BRAND_NAME }"
       ],
@@ -1853,6 +1868,9 @@
       ],
       "Verify domain": [
         "Verificar domínio"
+      ],
+      "Verify installation": [
+        "Verificar instalação"
       ],
       "Verify now": [
         "Verificar agora"
@@ -2221,6 +2239,14 @@
       ],
       "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
         "Com o ${ PASS_APP_NAME }, você pode gerar aliases únicos para ocultar sua identidade e encaminhar e-mails para sua caixa de entrada principal."
+      ]
+    },
+    "Alt": {
+      "Collapse invitation message": [
+        "Recolher mensagem de convite"
+      ],
+      "Expand invitation message": [
+        "Expandir mensagem de convite"
       ]
     },
     "Alter": {
@@ -3790,6 +3816,9 @@
       ],
       "Remove from the list?": [
         "Remover da lista?"
+      ],
+      "Some members weren't migrated": [
+        "Alguns membros não foram migrados"
       ],
       "Undo this import?": [
         "Desfazer esta importação?"
@@ -6776,6 +6805,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Valor abaixo do mínimo (${ minimumAmount })."
       ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "Ocorreu um erro desconhecido. Por favor, atualize a página e tente novamente"
+      ],
       "Authentication canceled.": [
         "Autenticação cancelada."
       ],
@@ -6793,6 +6825,18 @@
       ],
       "Calendar limit reached": [
         "Limite de calendários atingido"
+      ],
+      "Cannot download a folder": [
+        "Não é possível baixar uma pasta"
+      ],
+      "Cannot share root folder": [
+        "Não é possível compartilhar a pasta raiz"
+      ],
+      "Cannot verify the author of this file": [
+        "Não é possível verificar o autor deste arquivo"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Não é possível verificar quem é autor enviou este arquivo"
       ],
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
@@ -6812,8 +6856,20 @@
       "Contact signature not verified": [
         "Assinatura do contato não foi verificada"
       ],
+      "Contact your administrator to start a migration.": [
+        "Contate seu administrador para iniciar a migração."
+      ],
+      "Copy operation aborted": [
+        "Operação de cópia interrompida"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Não é permitido copiar o item para um local que não seja uma pasta"
+      ],
       "Could not generate the device profile. Please try again.": [
         "Não foi possível gerar o perfil do dispositivo. Tente novamente."
+      ],
+      "Could not load sharing details": [
+        "Não foi possível carregar os detalhes do compartilhamento"
       ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
@@ -6824,11 +6880,23 @@
       "Could not save preference": [
         "Não foi possível salvar as preferências"
       ],
+      "Could not unlock the parent folder": [
+        "Não foi possível desbloquear a pasta pai"
+      ],
+      "Could not unlock this item": [
+        "Não foi possível desbloquear este item"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Não foi possível carregar faturas. Tente novamente mais tarde."
       ],
       "Couldn't load transactions. Please try again later.": [
         "Não foi possível carregar transações. Tente novamente mais tarde."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Não é permitido criar arquivos dentro de itens que não sejam pastas"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Não é permitido criar pastas dentro de itens que não sejam pastas"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarque pelo menos ${ calendarsToFixCount } calendário",
@@ -6837,6 +6905,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Desmarque ao menos ${ calendarsToFixCount } calendário ou",
         "Desmarque ao menos ${ calendarsToFixCount } calendários ou"
+      ],
+      "Device not found": [
+        "Dispositivo não encontrado"
       ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
@@ -6889,8 +6960,23 @@
       "Failed to add group member": [
         "Falha ao adicionar membro do grupo"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Falha ao descriptografar a chave de marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Falha ao descriptografar a senha dos favoritos: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Falha ao descriptografar a chave de conteúdo: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Falha ao descriptografar o nome do item: ${ message }"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Erro ao obter sessões ativas. ${ refresh } ou tente novamente mais tarde."
+      ],
+      "Failed to load OAuth": [
+        "Falha ao carregar o OAuth"
       ],
       "Failed to load OAuth modal.": [
         "Falha ao carregar o modal OAuth."
@@ -6913,6 +6999,12 @@
       "Failed to update detailed monitoring.": [
         "Não foi possível atualizar o monitoramento detalhado."
       ],
+      "Failed to verify invitation": [
+        "Erro ao verificar o convite"
+      ],
+      "File has no revision": [
+        "O arquivo não possui revisão"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Arquivo muito grande. Seu logotipo deve ter 30 KB ou menos."
       ],
@@ -6924,6 +7016,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Se o tempo na sua TV expirou, clique em Atualizar na sua TV e digite o seu código novamente."
+      ],
+      "Image preview not found": [
+        "Pré-visualização da imagem não encontrada"
       ],
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
@@ -7006,30 +7101,61 @@
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
+      "Invitation not found": [
+        "Convite não encontrado"
+      ],
       "Item content cannot exceed 40KB": [
         "O conteúdo do item não pode exceder 40KB"
+      ],
+      "Item not found": [
+        "Item não encontrado"
       ],
       "Label name cannot be empty.": [
         "O nome do marcador não pode ser vazio."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "O link público antigo não pode ser atualizado. Crie um novo link público."
+      ],
       "Maximum ${ displayMaxValue } allowed": [
         "Máximo de ${ displayMaxValue } permitido"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Endereço do membro não encontrado. Entre em contato com o suporte ao cliente para resolver isso"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Mescle pelo menos ${ calendarsToFixCount } calendário com um calendário existente da ${ BRAND_NAME }",
         "Mescle pelo menos ${ calendarsToFixCount } calendários com calendários existente da ${ BRAND_NAME }"
       ],
+      "Missing inviter email": [
+        "E-mail de quem fez o convite ausente"
+      ],
       "Missing key packet": [
         "Pacote de chave ausente"
       ],
+      "Missing organization private key": [
+        "Chave privada da organização ausente"
+      ],
+      "Missing organization public key": [
+        "Chave pública da organização ausente"
+      ],
       "Missing signature": [
         "Assinatura ausente"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Não é permitido mover o item para um local que não seja uma pasta"
       ],
       "Name already exists": [
         "Nome já existe"
       ],
       "Name does not match": [
         "Nome não corresponde"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caractere",
+        "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caracteres"
+      ],
+      "Name must not be empty": [
+        "O nome não pode estar vazio"
       ],
       "Name required": [
         "Nome obrigatório"
@@ -7055,6 +7181,9 @@
       "No external key retrieved for user is valid for sending": [
         "Nenhuma chave externa recuperada para o usuário é válida para envio"
       ],
+      "No file data was received. Please try again.": [
+        "Nenhum dado de arquivo foi recebido. Tente novamente."
+      ],
       "No image selected": [
         "Nenhuma imagem selecionada"
       ],
@@ -7070,6 +7199,15 @@
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Apenas as maiúsculas e pontuação (pontos, hífenes, e sublinhados) podem ser mudados para este endereço"
       ],
+      "Operation aborted": [
+        "Operação abortada"
+      ],
+      "Operation failed, try again later": [
+        "Erro na operação, tente novamente mais tarde"
+      ],
+      "Organization does not have enough storage available": [
+        "A organização não tem armazenamento suficientes disponíveis"
+      ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
       ],
@@ -7078,6 +7216,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "A chave da organização deve ser ativada para criar usuários não privados"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte do arquivo parece estar corrompida"
       ],
       "Password is required": [
         "A senha é obrigatória"
@@ -7102,6 +7243,9 @@
       ],
       "Permissions request failed.": [
         "Falha na solicitação de permissões."
+      ],
+      "Photo not found": [
+        "Foto não encontrada"
       ],
       "Please add a payment method before reactivating your subscription": [
         "Adicione um método de pagamento antes de reativar sua assinatura."
@@ -7210,6 +7354,9 @@
         "Destinatário duplicado removido: ${ joinedRecipients }",
         "Destinatários duplicados removidos: ${ joinedRecipients }"
       ],
+      "Request aborted": [
+        "Solicitação abortada"
+      ],
       "Request timed out": [
         "A solicitação expirou"
       ],
@@ -7230,11 +7377,29 @@
       "Session expired. Please refresh the page.": [
         "A sessão expirou. Atualize a página."
       ],
+      "Signature is missing": [
+        "Assinatura ausente"
+      ],
       "Signature not verified": [
         "Assinatura não verificada"
       ],
       "Signature verification failed": [
         "Erro na verificação da assinatura"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "A verificação de assinatura para ${ signatureType } falhou"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "A verificação de assinatura para ${ signatureType } falhou: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "O envio de alguns dados de arquivo falhou. Tente novamente."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "O envio de algumas partes de arquivo falhou. Tente novamente."
+      ],
+      "Some items could not be loaded": [
+        "Não foi possível carregar alguns itens"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de pastas estão indisponíveis. Personalize a importação para editar esses nomes."
@@ -7326,6 +7491,9 @@
       "The session has expired. Please sign in again.": [
         "Sua sessão expirou. Inicie a sessão novamente."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "O arquivo enviado não corresponde ao original. Por favor, tente novamente."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Existem muitas pastas em sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
@@ -7344,8 +7512,20 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
+      "This file has no version available to download": [
+        "O arquivo não possui uma versão para download"
+      ],
+      "This file version could not be uploaded": [
+        "Não foi possível fazer o envio desta versão do arquivo"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Este nome para a pasta não está disponível. Escolha outro nome."
+      ],
+      "This item is no longer shared": [
+        "Este item não está mais sendo compartilhado"
+      ],
+      "This item is not shared": [
+        "Este item não está compartilhado"
       ],
       "This label name is not available. Please choose a different name.": [
         "Este nome de marcador não está disponível. Escolha outro nome."
@@ -7364,6 +7544,9 @@
       ],
       "Too many requests. Please try again later": [
         "Muitas solicitações. Tente novamente mais tarde"
+      ],
+      "Too many server requests, please try again later": [
+        "Muitas solicitações ao servidor, tente novamente mais tarde"
       ],
       "Trusted keys are not valid for sending": [
         "As chaves de confiança não são válidas para o envio"
@@ -7410,6 +7593,12 @@
       "Verification did not succeed, please try again in an hour.": [
         "A verificação não obteve êxito. Tente novamente dentro de uma hora."
       ],
+      "Verification keys are not available": [
+        "As chaves de verificação não estão disponíveis"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "As chaves de verificação para ${ signatureType } não estão disponíveis"
+      ],
       "We couldn't sign you in": [
         "Não foi possível conectar você"
       ],
@@ -7430,6 +7619,15 @@
       ],
       "You already added this holidays calendar": [
         "Você já adicionou feriados"
+      ],
+      "You can create public links for your own files only": [
+        "Você pode criar links públicos apenas para seus próprios arquivos"
+      ],
+      "You can update a public link for your own files only": [
+        "Você pode atualizar um link público apenas para seus próprios arquivos"
+      ],
+      "You do not have access to this item": [
+        "Você não tem acesso a esse item"
       ],
       "You have reached the maximum number of calendars.": [
         "Você atingiu o número máximo de calendários."
@@ -8430,6 +8628,29 @@
         "Terabytes"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Ativado"
+      ],
+      "All": [
+        "Todos"
+      ],
+      "Errors": [
+        "Errors"
+      ],
+      "In progress": [
+        "Em progresso"
+      ],
+      "Migrated": [
+        "Migrado"
+      ],
+      "Not activated": [
+        "Não ativado"
+      ],
+      "Pending": [
+        "Pendente"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arquivo"
@@ -8629,6 +8850,17 @@
       ],
       "Your desktop app free trial has ended": [
         "Sua avaliação gratuita do aplicativo para computador terminou"
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Controles avançados de segurança"
+      ],
+      "Dedicated server - ${ serverPrice }": [
+        "Servidor dedicado - ${ serverPrice }"
+      ],
+      "User - ${ userPrice }": [
+        "Usuário - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -9189,6 +9421,9 @@
       "IMAP access is enabled in your Yahoo account.": [
         "Acesso IMAP está ativado na sua conta do Yahoo."
       ],
+      "No error details available. Please contact customer support for more information": [
+        "Nenhum detalhe do erro disponível. Entre em contato com o suporte ao cliente para obter mais informações"
+      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Muitos pedidos recentes. Tente novamente em alguns instantes."
       ],
@@ -9346,6 +9581,12 @@
       "Failed": [
         "Erro"
       ],
+      "Has errors": [
+        "Tem erros"
+      ],
+      "Import completed successfully": [
+        "Importação concluída com sucesso"
+      ],
       "Imported": [
         "Importado"
       ],
@@ -9360,6 +9601,21 @@
       ],
       "Paused": [
         "Em pausa"
+      ],
+      "Pending": [
+        "Pendente"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "Ignorado ${ count } contato devido a incompatibilidades",
+        "Ignorados ${ count } contatos devido a incompatibilidades"
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "Ignorado ${ count } e-mail devido a incompatibilidades",
+        "Ignorados ${ count } e-mails devido a incompatibilidades"
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "Ignorado ${ count } evento devido a incompatibilidades",
+        "Ignorados ${ count } eventos devido a incompatibilidades"
       ],
       "Undo finished": [
         "Cancelamento concluído"
@@ -9613,6 +9869,9 @@
         "${ providerFoldersNumLocalized } marcador encontrado no Gmail",
         "${ providerFoldersNumLocalized } marcadores encontrados no Gmail"
       ],
+      "${ providerName } account": [
+        "Conta de ${ providerName }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } servidor ainda está sendo configurado. Isso geralmente leva cerca de ${ provisioningDuration }.",
         "${ provisioningCounter } servidores ainda estão sendo configurados. Isso geralmente leva cerca de ${ provisioningDuration }."
@@ -9622,6 +9881,9 @@
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: solicitando às plataformas destinatárias que rejeitem os e-mails não autorizados."
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } de ${ totalCount }"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } a mais",
@@ -9872,6 +10134,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Adicione o nome e logotipo para criar uma experiência mais personalizada para sua organização."
       ],
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Adicione o domínio de e-mail da sua organização para a ${ BRAND_NAME }."
+      ],
       "Adding ${ total } gateway server": [
         "Adicionando ${ total } servidor gateway",
         "Adicionando ${ total } servidores gateway"
@@ -9933,6 +10198,9 @@
       ],
       "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
         "Todas as mensagens serão mostradas na Inbox, e as abas e tags de categorias não serão mais visíveis. "
+      ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Todas as contas de usuário migradas estão prontas para serem convidadas para a sua organização da ${ BRAND_NAME }."
       ],
       "All users": [
         "Todos os usuários"
@@ -10016,6 +10284,13 @@
       "Are you sure you want to cancel editing the group?": [
         "Tem certeza de que deseja cancelar a edição do grupo?"
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Tem certeza de que deseja continuar sem ${ withoutString } e ${ notMigratedOthers } outro?",
+        "Tem certeza de que deseja continuar sem ${ withoutString } e ${ notMigratedOthers } outros?"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Tem certeza de que deseja continuar sem ${ withoutString }?"
+      ],
       "Are you sure you want to delete this calendar?": [
         "Você tem certeza de que deseja excluir este calendário?"
       ],
@@ -10096,6 +10371,9 @@
       ],
       "Authenticator app 2FA enabled": [
         "Autenticação de dois fatores via app ativada"
+      ],
+      "Author is not provided on public link": [
+        "O autor não forneceu um link público"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "A resposta automática está ativa a cada mês entre o horário de início e término selecionado."
@@ -10331,6 +10609,9 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copie e cole este URL no campo ID de Entidade do seu provedor de identidade"
       ],
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Copie o código abaixo e cole-o na seção de DNS do host do seu domínio."
+      ],
       "Copy the link to clipboard": [
         "Copiar link para a área de transferência"
       ],
@@ -10449,6 +10730,9 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Exclua quaisquer outros registros MX ou certifique-se de que a prioridade do ${ MAIL_APP_NAME } é o menor número."
       ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Exclua quaisquer códigos MX pré-existentes, depois copie os códigos abaixo e cole-os na seção de DNS do host do seu domínio."
+      ],
       "Delete link?": [
         "Excluir link?"
       ],
@@ -10501,8 +10785,14 @@
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
       ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "O DKIM adiciona uma assinatura digital a cada e-mail para que os destinatários possam verificar se a mensagem veio realmente do seu domínio e não foi alterada em trânsito. Sem ele, as mensagens podem ser tratadas como menos confiáveis."
+      ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
         "O DKIM permite que ${ BRAND_NAME } assine criptograficamente seus e-mails e evite que invasores adulterem seu e-mail. Certifique-se de adicionar os três registros CNAME a seguir em seu console DNS (localizado na plataforma onde você adquiriu o domínio personalizado)."
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "O DMARC se baseia no SPF e no DKIM, informando aos servidores de recebimento como lidar com mensagens que falham nessas verificações. Ele ajuda a proteger seu domínio contra falsificação de identidade e melhora a confiabilidade geral da entrega."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "O DMARC verifica se os registros SPF e DKIM do remetente são originários do seu domínio. Isso pode impedir que invasores usem SPF e DKIM de outro domínio para se passar por seu domínio. O \"p=\" (política) neste registro indica como você deseja que as plataformas de destinatários lidem com e-mails não autorizados. Recomendamos usar a política \"p=quarentena\" para a maioria dos domínios. Certifique-se de adicionar o seguinte registro TXT em seu console DNS (localizado na plataforma onde você adquiriu o domínio personalizado)."
@@ -10518,6 +10808,9 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Você deseja revogar todas as outras sessões deixando apenas a atual?"
+      ],
+      "Domain added": [
+        "Domínio adicionado"
       ],
       "Domain ownership failed verification.": [
         "Falha na verificação da propriedade do domínio."
@@ -10537,6 +10830,9 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Não perca o acesso aos seus recursos premium. Ative a renovação automática hoje mesmo."
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "Não sabe por onde começar? Assista como atualizar seu DNS em ${ registrarLink }"
       ],
       "Don’t know your recovery phrase?": [
         "Não sabe sua frase de recuperação?"
@@ -10643,6 +10939,9 @@
       "Enable email notifications": [
         "Ativar notificações por e-mail"
       ],
+      "Enable groups to streamline access control": [
+        "Ative os grupos para otimizar o controle de acesso"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Ative o início de sessão único para manter a sua organização segura"
       ],
@@ -10696,6 +10995,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Garanta uma comunicação totalmente privada e criptografada. Crie seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and ${ providerBrand } simultaneously for the duration of the migration.": [
+        "Garanta que seus e-mails cheguem à caixa de entrada, não à pasta de spam. Atualizar o SPF permitirá que os usuários enviem mensagens da ${ BRAND_NAME } e do ${ providerBrand } simultaneamente durante a migração."
       ],
       "Ensure your organization is always protected": [
         "Garanta que sua organização esteja sempre protegida"
@@ -10766,6 +11068,9 @@
       "Event invitations and responses will be sent in this language.": [
         "Os convites para eventos e as confirmações de presença serão enviados nesse idioma."
       ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their ${ mailAppName } inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Todos recebem o mesmo link de convite. Eles visitarão a página, inserirão seu e-mail e um código de verificação chegará à caixa de entrada do ${ mailAppName }. A partir daí, definirão a senha da ${ BRAND_NAME }."
+      ],
       "Everything in ${ planOrAppName }": [
         "Tudo que está incluso no ${ planOrAppName }"
       ],
@@ -10829,6 +11134,9 @@
       "finance": [
         "finança"
       ],
+      "Find out what can be migrated.": [
+        "Descubra o que pode ser migrado."
+      ],
       "for ${ price }": [
         "por ${ price }"
       ],
@@ -10891,6 +11199,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Obtenha acesso criando uma conta da ${ BRAND_NAME } e aceitando o convite."
+      ],
+      "Get help and useful tips for other domain providers ${ here }": [
+        "Obtenha ajuda e dicas úteis para outros provedores de domínio ${ here }"
       ],
       "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
         "Entre em contato com seus contatos de emergência para ver se eles podem ajudar. Depois de solicitar o acesso de emergência à sua conta, eles poderão alterar sua senha para você **depois que o tempo de espera pelo acesso tiver passado**."
@@ -11197,6 +11508,9 @@
       ],
       "Invited": [
         "Convidado"
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Pode levar até 24 horas para que essas alterações se propaguem."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "São necessários 10 dias para alterar o país de um servidor, portanto, certifique-se de que sua seleção esteja correta."
@@ -11522,8 +11836,17 @@
       "No single sign-on": [
         "Sem autenticação única (SSO)"
       ],
+      "No users to display": [
+        "Nenhum usuário para exibir"
+      ],
       "Not a valid URL": [
         "Não é uma URL válida"
+      ],
+      "Not confirmed": [
+        "Não confirmado"
+      ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "Não detectado corretamente? Escolha seu provedor na lista."
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
@@ -11557,6 +11880,9 @@
       ],
       "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
         "Após a implementação bem-sucedida, pode levar algumas horas para que os dispositivos detectem e apliquem a política."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Assim que confirmarmos que os e-mails estão sendo roteados para a ${ BRAND_NAME }, a migração será finalizada. Você receberá um e-mail de confirmação para informar quando isso acontecer. Esse processo pode levar até 24 horas."
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Apenas letras maiúsculas e minúsculas e pontuação (pontos, hifens e sublinhados) podem ser alterados aqui. Para usar um endereço diferente, adicione um novo."
@@ -11958,11 +12284,17 @@
       "Select a group to view its members and settings.": [
         "Selecione um grupo para ver seus membros e configurações."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecione exatamente o que deseja migrar. Isso se aplicará a todos os usuários da organização."
+      ],
       "Select one or multiple user affiliations": [
         "Selecione uma ou várias afiliações de usuário"
       ],
       "Select recently used servers": [
         "Selecionar servidores usados recentemente"
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Selecione as contas que gostaria de trazer para a ${ BRAND_NAME }. Você pode migrar toda a sua organização hoje ou começar aos poucos e trazer o restante quando estiver pronto."
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Selecione as afiliações de usuário de ${ getFormattedOrganization } que você deseja permitir na sua organização ${ BRAND_NAME }:"
@@ -12014,6 +12346,9 @@
       ],
       "Setting up ${ feature }…": [
         "Configurando ${ feature }…"
+      ],
+      "Setting up your access…": [
+        "Configurando seu acesso…"
       ],
       "Setting up your new address…": [
         "Configurando seu novo endereço…"
@@ -12070,11 +12405,17 @@
       "Sign-in complete": [
         "Início de sessão concluída"
       ],
+      "Sign-in with a ${ providerName } administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Inicie sessão com uma conta de administrador do ${ providerName } da ${ BRAND_NAME } para configurar a migração."
+      ],
       "Signed up": [
         "Criar conta"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
+      ],
+      "Smart Routed through a different country.": [
+        "O Smart Routed foi feito por um país diferente."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Roteamento inteligente via: ${ joinedCountries }."
@@ -12481,6 +12822,9 @@
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Para evitar perda de dados, apenas delete se você sabe o que está fazendo ou se exportou uma cópia."
       ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the ${ storeName }. After installing it, come back here to continue.": [
+        "Para migrar os dados da sua organização para a ${ BRAND_NAME }, instale o ${ BRAND_NAME } Easy Switch no ${ storeName }. Após a instalação, volte aqui para continuar."
+      ],
       "To cancel your subscription, please reach out to us.": [
         "Para cancelar sua assinatura, entre em contato conosco."
       ],
@@ -12502,8 +12846,8 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Para descriptografar e ver seus dados bloqueados depois de uma redefinição de senha, selecione um método de recuperação."
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "Para habilitar a VPN Sempre Ativa (Always-on VPN), o perfil do dispositivo precisa chegar a ${ policiesPath } em cada dispositivo — o cliente ${ VPN_APP_NAME } o detecta nesse local e aplica o perfil automaticamente."
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
+        "Para habilitar a VPN Sempre Ativa (Always-on VPN), o perfil do dispositivo precisa chegar a ${ policiesPath } em cada dispositivo — o cliente ${ VPN_APP_NAME } o detecta nesse local e aplica o perfil automaticamente. ${ learnMore }."
       ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Para ativar a proteção pós-quântica, você precisará concluir a geração de suas novas chaves de criptografia pós-quântica."
@@ -12531,6 +12875,21 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Para acompanhar as novidades sobre desenvolvimento de produtos da ${ BRAND_NAME }, de tempos em tempos, você pode se inscrever em um dos nossos vários e-mails e no ${ blogLink }."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Para migrar este usuário, adicione e verifique o domínio de e-mail em ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Para migrar este usuário, ative a conta dele em ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Para migrar este usuário, ative o endereço dele em ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, remova-o do arquivo no seu ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, remova a suspensão no seu ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Para evitar abusos ou fraudes, pedimos uma doação mínima de ${ minimumDonation }. Isso apoia o trabalho da ${ protonFoundationLink } na defesa da privacidade digital globalmente e ajuda a proteger a próxima geração."
@@ -12646,6 +13005,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Faça o upgrade do seu plano para adicionar um endereço curto @pm.me para a sua conta para compartilhá-la facilmente. Ele significa \"${ MAIL_APP_NAME } me\" ou \"Private Message me\"."
       ],
+      "Upgrade to define policies for your organization.": [
+        "Faça upgrade para definir as políticas da sua organização"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Faça upgrade para manter seus benefícios ${ planTitle }."
       ],
@@ -12715,9 +13077,6 @@
       "Users": [
         "Usuários"
       ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "Está usando um MDM diferente? Qualquer MDM que ofereça suporte à implantação de arquivos ou à execução de scripts PowerShell funcionará. Consulte a documentação do seu MDM para obter mais informações."
-      ],
       "Vault created": [
         "Cofre criado"
       ],
@@ -12744,6 +13103,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "O processo de verificação abrirá uma nova guia. Desative os bloqueadores de pop-ups. Você não será cobrado. Qualquer quantia usada para verificar seu cartão será reembolsada imediatamente."
+      ],
+      "Verified": [
+        "Verificado"
       ],
       "Verify domain": [
         "Verificar domínio"
@@ -12859,6 +13221,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Percebemos que alguns usuários não resgataram suas contas da ${ BRAND_NAME }."
+      ],
       "Web sessions detected:": [
         "Sessões web detectadas:"
       ],
@@ -12876,6 +13241,12 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Enviaremos um código de redefinição para ${ boldValue }."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Estamos criando suas contas e importando seus dados agora para que sua equipe tenha tudo o que precisa quando começar a usar a nova conta segura da ${ BRAND_NAME }."
+      ],
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Estamos ativando a criptografia de ponta a ponta para todos. Cada e-mail, cada evento agora pertence somente a você. Visível apenas para a sua equipe. Nem para nós, nem para mais ninguém."
       ],
       "What happens:": [
         "O que acontece:"
@@ -12964,6 +13335,9 @@
       "Yearly": [
         "Anualmente"
       ],
+      "You": [
+        "Você"
+      ],
       "You already have a free account": [
         "Você já possui uma conta gratuita"
       ],
@@ -13047,9 +13421,6 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Você agora pode acessar e gerenciar a conta como um administrador."
-      ],
-      "You can now access and manage the company as an administrator.": [
-        "Você agora pode acessar e gerenciar a empresa como um administrador."
       ],
       "You can now close this tab.": [
         "Agora você pode fechar esta guia."
@@ -13180,6 +13551,9 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Você precisará de um endereço da ${ BRAND_NAME } para usar o ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
+      "You will not be able to copy these users' data later.": [
+        "Não será possível copiar os dados desses usuários mais tarde."
+      ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "Você NÃO poderá descriptografar quaisquer mensagens, arquivos e outros dados criptografados com esta chave. Todos os dados assinados com esta chave não serão mais verificados pelos aplicativos da ${ BRAND_NAME }."
       ],
@@ -13216,6 +13590,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }. Você pode cancelar a qualquer momento.",
         "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }.Você pode cancelar a qualquer momento."
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on ${ mailAppName } and the migration will be completed.": [
+        "Você está quase lá, precisa configurar seu domínio para receber seus e-mails diretamente no ${ BRAND_NAME }. Uma vez confirmado, sua equipe deixará de receber novos e-mails no ${ mailAppName } e a migração estará concluída."
       ],
       "You're now signed in on your TV.": [
         "Você já iniciou sessão na sua TV."
@@ -13480,6 +13857,11 @@
     "Input placeholder": {
       "Add label": [
         "Adicionar marcador"
+      ]
+    },
+    "Invitation message": {
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your ${ mailAppName }.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and ${ mailAppName }.\nThen, when everyone has made the move, we will retire ${ mailAppName }. We'll remind you before it does.": [
+        "Estamos mudando para a ${ BRAND_NAME }, o serviço de e-mail seguro.\nE sua conta da ${ BRAND_NAME } está pronta para ser reivindicada.\nClique em ${ inviteLink }.\nInsira seu endereço de e-mail, enviaremos um código para o seu ${ mailAppName }.\nUse-o para definir sua senha — e sua conta da ${ BRAND_NAME } será sua.\nPor um tempo, ambos funcionarão lado a lado: ${ BRAND_NAME } e ${ mailAppName }.\nDepois, quando todos tiverem feito a transição, desativaremos o ${ mailAppName }. Avisaremos você antes que isso aconteça."
       ]
     },
     "invitation status": {
@@ -13943,6 +14325,9 @@
       "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
         "Aplicativo para computador do ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
       ],
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
+      ],
       "${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business"
       ],
@@ -14048,6 +14433,9 @@
       ],
       "Account storage": [
         "Armazenamento da conta"
+      ],
+      "Accounts migrated": [
+        "Contas migradas"
       ],
       "Action": [
         "Ação"
@@ -14830,6 +15218,12 @@
       "Interval": [
         "Intervalo"
       ],
+      "Invitation link": [
+        "Link do convite"
+      ],
+      "Invitation message": [
+        "Mensagem de convite"
+      ],
       "Invite people": [
         "Convidar pessoas"
       ],
@@ -14899,6 +15293,9 @@
       "Logo": [
         "Logotipo"
       ],
+      "Mail": [
+        "Mail"
+      ],
       "Mail Server (IMAP)": [
         "Servidor de e-mail (IMAP)"
       ],
@@ -14949,6 +15346,9 @@
       ],
       "Method for importing metadata": [
         "Método para importar metadados"
+      ],
+      "Migration includes": [
+        "A migração foi concluída"
       ],
       "Minimum ${ MIN_CHARS } characters": [
         "Mínimo de ${ MIN_CHARS } caracteres"
@@ -15572,6 +15972,12 @@
       "Users": [
         "Usuários"
       ],
+      "Users activated": [
+        "Usuários ativados"
+      ],
+      "Users migrated": [
+        "Usuários migrados"
+      ],
       "Value": [
         "Valor"
       ],
@@ -16022,6 +16428,9 @@
       "Import/export": [
         "Importar/exportar"
       ],
+      "invite link": [
+        "link de convite"
+      ],
       "Learn how": [
         "Saiba como"
       ],
@@ -16150,6 +16559,9 @@
       ],
       "Gathering your data": [
         "Coletando seus dados"
+      ],
+      "Loading your organization data": [
+        "Carregando os dados da sua organização"
       ],
       "We're gathering your data from your provider": [
         "Estamos coletando seus dados com o seu provedor"
@@ -16608,6 +17020,26 @@
       ],
       "Sign in": [
         "Iniciar sessão"
+      ]
+    },
+    "Members table usage": {
+      "Gateway Monitor is off": [
+        "Monitoramento de gateway está desligado"
+      ],
+      "Monitor gateways connections": [
+        "Monitorar conexões de gateways"
+      ],
+      "Today": [
+        "Hoje"
+      ],
+      "Today, ${ time }": [
+        "Hoje, ${ time }"
+      ],
+      "Yesterday": [
+        "Ontem"
+      ],
+      "Yesterday, ${ time }": [
+        "Ontem, ${ time }"
       ]
     },
     "Message": {
@@ -20225,6 +20657,26 @@
         "Fuso horário secundário"
       ]
     },
+    "Property": {
+      "attributes": [
+        "atributos"
+      ],
+      "content key": [
+        "chave de conteúdo"
+      ],
+      "hash key": [
+        "chave hash"
+      ],
+      "key": [
+        "chave"
+      ],
+      "membership": [
+        "subscrição"
+      ],
+      "name": [
+        "nome"
+      ]
+    },
     "Property type": {
       "Address": [
         "Endereço"
@@ -21380,6 +21832,9 @@
       "New": [
         "Novo"
       ],
+      "New: Manage groups via your identity provider": [
+        "Novo: Gerencie grupos por meio do seu provedor de identidade"
+      ],
       "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
         "Após a aprovação, eles poderão acessar todos os serviços do ${ BRAND_NAME } e compartilhar com segurança."
       ],
@@ -21452,6 +21907,9 @@
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Para reabilitar a sincronização com seu provedor de identidade, é necessário completar a integração com o SCIM novamente."
+      ],
+      "When you disable SCIM:": [
+        "Quando desativa SCIM:"
       ]
     },
     "scim: Label": {
@@ -23093,6 +23551,9 @@
       "... waiting": [
         "... aguarde"
       ],
+      "Activated": [
+        "Ativado"
+      ],
       "Active": [
         "Ativo"
       ],
@@ -23129,6 +23590,9 @@
       "Last updated ${ formattedUpdateDate }": [
         "Última atualização em ${ formattedUpdateDate }"
       ],
+      "Not activated": [
+        "Não ativado"
+      ],
       "Not saved": [
         "Não salvo"
       ],
@@ -23152,6 +23616,47 @@
       ],
       "Verify ${ value }": [
         "Verificar ${ value }"
+      ],
+      "Waiting for MX...": [
+        "Aguardando por MX..."
+      ]
+    },
+    "Step": {
+      "Authenticate": [
+        "Autenticar"
+      ],
+      "Configure domain": [
+        "Configurar domínio"
+      ],
+      "Configure migration": [
+        "Configurar migração"
+      ],
+      "Configure users": [
+        "Configurar usuários"
+      ],
+      "Final step": [
+        "Etapa final"
+      ],
+      "Install migration app": [
+        "Instalar aplicativo de migração"
+      ],
+      "Migrate accounts": [
+        "Migrar contas"
+      ],
+      "Onboard your team": [
+        "Integre-se à sua equipe"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Configurar envio seguro (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Configurar envio seguro (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Configurar envio seguro (SPF)"
+      ],
+      "Verify your domain": [
+        "Verifique seu domínio"
       ]
     },
     "Step in filter modal": {
@@ -23907,8 +24412,14 @@
       "${ data.name } updated": [
         "${ data.name } atualizado"
       ],
+      "Account connected": [
+        "Conta conectada"
+      ],
       "Account deleted. Signing out...": [
         "Conta excluída. Encerando sessão..."
+      ],
+      "Account disconnected": [
+        "Conta desconectada"
       ],
       "Address added": [
         "Endereço adicionado"
@@ -23976,6 +24487,9 @@
       "DMARC value copied to clipboard": [
         "Valor DMARC copiado para a área de transferência"
       ],
+      "Domain added": [
+        "Domínio adicionado"
+      ],
       "Domain verified": [
         "Domínio verificado"
       ],
@@ -24020,6 +24534,10 @@
       ],
       "Locale updated": [
         "Idioma atualizado"
+      ],
+      "Migration started for ${ n } user": [
+        "Migração iniciada para ${ n } usuário",
+        "Migração iniciada para ${ n } usuários"
       ],
       "New policy created. It will take effect only after you publish the changes.": [
         "Una política foi criada. Isso só entrará em vigor depois que você publicar as mudanças."
@@ -24285,11 +24803,23 @@
       ]
     },
     "Table header": {
+      "Activated": [
+        "Ativado"
+      ],
+      "Estimated size": [
+        "Tempo estimado"
+      ],
+      "Migration status": [
+        "Status da migração"
+      ],
       "Size": [
         "Tamanho"
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Usuário"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -24737,6 +25267,9 @@
       "Ask your emergency contacts for help": [
         "Peça ajuda aos seus contatos de emergência"
       ],
+      "Authenticate your ${ providerName } account": [
+        "Autentique sua conta de ${ providerName }"
+      ],
       "Auto-deletion is active": [
         "A exclusão automática está ativa."
       ],
@@ -24857,6 +25390,12 @@
       "Configure Always-on VPN device profile": [
         "Configurar o perfil de dispositivo VPN sempre ativa"
       ],
+      "Configure migration": [
+        "Configurar migração"
+      ],
+      "Configure your domain": [
+        "Configure seu domínio"
+      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -24962,6 +25501,9 @@
       ],
       "Created!": [
         "Criado!"
+      ],
+      "Creating accounts": [
+        "Criando contas"
       ],
       "Creating user accounts": [
         "Criação das contas de usuário"
@@ -25159,6 +25701,9 @@
       "Domain names": [
         "Nome do domínio"
       ],
+      "Domain provider": [
+        "Fornecedor de domínio"
+      ],
       "Don't show again?": [
         "Não mostrar novamente?"
       ],
@@ -25349,6 +25894,9 @@
       "Filters": [
         "Filtros"
       ],
+      "Final step": [
+        "Etapa final"
+      ],
       "Find email or username": [
         "Encontrar e-mail ou nome de usuário"
       ],
@@ -25454,6 +26002,9 @@
       "Gift code": [
         "Código de vale-presente"
       ],
+      "Going private": [
+        "Tornando-se privado"
+      ],
       "Group": [
         "Grupo"
       ],
@@ -25512,6 +26063,9 @@
       "Import contacts": [
         "Importar contatos"
       ],
+      "Import details": [
+        "Detalhes da importação"
+      ],
       "Import emails, calendars, contacts": [
         "Importar e-mails, calendários e contatos"
       ],
@@ -25544,6 +26098,9 @@
       ],
       "Install it manually": [
         "Estalar manualmente"
+      ],
+      "Install migration app": [
+        "Instalar aplicativo de migração"
       ],
       "Integrations": [
         "Integrações"
@@ -25611,9 +26168,6 @@
       "Make your business stand out": [
         "Faça sua empresa se destacar"
       ],
-      "Manage company": [
-        "Gerenciar empresa"
-      ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gerencie arquivos em dispositivos Windows, Mac, Android e iOS."
       ],
@@ -25626,11 +26180,26 @@
       "Messages and composing": [
         "Mensagens e composição"
       ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Migrar contas para ${ BRAND_NAME }"
+      ],
+      "Migrate from ${ providerName }": [
+        "Migrar de ${ providerName }"
+      ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migre sua organização para a ${ BRAND_NAME }"
       ],
+      "Migrated accounts": [
+        "Contas migradas"
+      ],
       "Migration assistant": [
         "Assistente de migração"
+      ],
+      "Migration status": [
+        "Status da migração"
+      ],
+      "Migration summary": [
+        "Resumo da migração"
       ],
       "Minicalendar": [
         "Mini calendário"
@@ -25668,6 +26237,9 @@
       "Name": [
         "Nome"
       ],
+      "Need help?": [
+        "Precisa de ajuda?"
+      ],
       "Need more labels or folders?": [
         "Precisa de mais marcadores ou pastas?"
       ],
@@ -25694,6 +26266,9 @@
       ],
       "Notifications": [
         "Notificações"
+      ],
+      "Onboard your team": [
+        "Integre-se à sua equipe"
       ],
       "Open": [
         "Aberto"
@@ -26037,6 +26612,15 @@
       "Set up email forwarding": [
         "Configurar encaminhamento de e-mail"
       ],
+      "Set up secure sending (DKIM)": [
+        "Configurar envio seguro (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Configurar envio seguro (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Configurar envio seguro (SPF)"
+      ],
       "Set up your family account": [
         "Configure sua conta familiar"
       ],
@@ -26111,6 +26695,9 @@
       ],
       "Snooze:": [
         "Adiar:"
+      ],
+      "Some accounts are not claimed": [
+        "Algumas contas não foram reivindicadas"
       ],
       "Some of your encrypted data is locked": [
         "Alguns de seus dados criptografado estão bloqueados"
@@ -26254,6 +26841,9 @@
       "Unlock your data": [
         "Desbloqueie seus dados"
       ],
+      "Update records for receiving": [
+        "Atualize os registros para recener"
+      ],
       "Upgrade complete!": [
         "Upgrade concluído!"
       ],
@@ -26326,6 +26916,9 @@
       "Verify it’s you": [
         "Verifique se é você"
       ],
+      "Verify your domain": [
+        "Verifique seu domínio"
+      ],
       "Verify your email": [
         "Verificar seu e-mail"
       ],
@@ -26377,6 +26970,9 @@
       "Welcome to your new password manager!": [
         "Bem-vindo ao seu novo gerenciador de senhas!"
       ],
+      "What are you migrating?": [
+        "O que você está migrando?"
+      ],
       "What changes if you switch to the Free plan": [
         "O que muda se você mudar para o plano Free"
       ],
@@ -26412,6 +27008,9 @@
       ],
       "You have no resolved alerts": [
         "Você não tem alertas resolvidos"
+      ],
+      "You're all set!": [
+        "Tudo pronto!"
       ],
       "You've successfully signed in!": [
         "Sessão iniciada com sucesso!"
@@ -26547,6 +27146,12 @@
       "Features": [
         "Recursos"
       ],
+      "Last app activity": [
+        "Última atividade do aplicativo"
+      ],
+      "Last connection": [
+        "Último acesso"
+      ],
       "Name": [
         "Nome"
       ],
@@ -26623,6 +27228,9 @@
       "Click here to learn how to create a customized signature with HTML.": [
         "Clique aqui para aprender como criar uma assinatura personalizada com HTML."
       ],
+      "Collapse invitation message": [
+        "Recolher mensagem de convite"
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copie e cole este URL no campo URL ACS (Assertion Consumer Service) do seu provedor de identidade"
       ],
@@ -26634,6 +27242,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Personalize a importação para reduzir a quantidade de marcadores"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status de migração de dados do ${ providerName } para a ${ BRAND_NAME }"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Exclua as mensagens da lixeira e spam após 30 dias. Ativar a exclusão automática dá às mensagens que já estão na lixeira/spam uma data de exclusão com base na data em que foram movidas para lá."
@@ -26673,6 +27284,9 @@
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
         "Excluindo usuários de logon único cujo A2F é gerenciado pelo seu provedor de identidade"
+      ],
+      "Expand invitation message": [
+        "Expandir mensagem de convite"
       ],
       "Feature in early access": [
         "Recurso em acesso antecipado"
@@ -26728,6 +27342,9 @@
       "Origin IP address and Internet Service Provider (ISP)": [
         "Endereço IP de origem e provedor de serviços de internet (ISP)"
       ],
+      "Reauthenticate your ${ providerName } account to start a migration": [
+        "Reautentique sua conta do ${ providerName } para iniciar uma migração"
+      ],
       "Remove metadata from images to protect your privacy.": [
         "Remova metadados das imagens para proteger sua privacidade."
       ],
@@ -26742,6 +27359,9 @@
       ],
       "See number of unread messages in the tab icon": [
         "Ver o número de mensagens não lidas no ícone da guia"
+      ],
+      "Select at least one user to start a migration": [
+        "Selecione pelo menos um usuário para iniciar uma migração"
       ],
       "Set how your list of messages looks like by default.": [
         "Defina a aparência da sua lista de mensagens por padrão."
@@ -26839,6 +27459,9 @@
       "User's approximate location (based on their IP address)": [
         "Localização aproximada do usuário (com base no endereço de IP dele)"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Usuários que acessaram sua conta da ${ BRAND_NAME }"
+      ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Os usuários verão o seu logotipo em vez do ícone da ${ BRAND_NAME } quando conectados nos nossos aplicativos web."
       ],
@@ -26847,6 +27470,9 @@
       ],
       "Verified email address": [
         "Endereço de e-mail verificado"
+      ],
+      "Verify your domain to start a migration": [
+        "Verifique seu domínio para iniciar uma migração"
       ],
       "Version 6 OpenPGP key": [
         "Chave OpenPGP versão 6"
@@ -27337,6 +27963,9 @@
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Isso criará um endereço do ${ MAIL_APP_NAME }."
       ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Faça upgrade para um plano suportado para usar funções de administrador."
+      ],
       "User created": [
         "Usuário criado"
       ],
@@ -27709,6 +28338,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Verifique se a extensão está instalada e ativada corretamente"
       ],
+      "Please don’t close or refresh this window.": [
+        "Não feche ou atualize essa janela."
+      ],
       "Please update the extension to its latest version": [
         "Atualize a extensão para a versão mais recente"
       ],
@@ -27733,14 +28365,26 @@
       "This will remove all messages, folders, and labels created during the import.": [
         "Isso removerá todas as mensagens, pastas e marcadores criados durante a importação."
       ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Para concluir a migração, certifique-se de manter apenas códigos MX da ${ BRAND_NAME }."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Infelizmente, não estamos on-line no momento. Preencha o formulário abaixo para descrever seu problema. Nós investigaremos e entraremos em contato quando estivermos de volta."
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Os usuários que não reivindicarem sua conta antes da finalização da migração precisarão solicitar uma redefinição de senha ao administrador da organização da ${ BRAND_NAME }."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Não conseguimos verificar o servidor de e-mail. Se você confia no mesmo, você pode pular essa verificação."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detectamos um problema com a configuração do seu DNS. Certifique-se de que seus registros concordem com as instruções abaixo. Se o problema persistir, teremos que desativar o DKIM."
+      ],
+      "We were unable to verify the installation, please check that you have installed it in your ${ providerName } account and try again.": [
+        "Não foi possível verificar a instalação. Verifique se você a instalou na sua conta do ${ providerName } e tente novamente."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Percebemos que alguns usuários não resgataram suas contas da ${ BRAND_NAME }."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Você deve ter ${ activateLink } a chave da organização antes de adicionar um endereço de e-mail a um membro não privado."
@@ -27750,6 +28394,13 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Você não verá mais este registro de importação na lista."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Seu plano atual permite até ${ maxMembers } usuário. Para migrar usuários adicionais, adicione mais licenças à sua assinatura.",
+        "Seu plano atual permite até ${ maxMembers } usuários. Para migrar usuários adicionais, adicione mais licenças à sua assinatura."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "A configuração do seu domínio ainda inclui códigos MX de outro provedor."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Sua avaliação gratuita termina em ${ textDate }. ${ action }"

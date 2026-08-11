@@ -300,9 +300,6 @@
       "Create and copy alias": [
         "Skapa och kopiera alias"
       ],
-      "Create business account": [
-        "Skapa företagskonto"
-      ],
       "Create folder": [
         "Skapa mapp"
       ],
@@ -417,16 +414,10 @@
         "Ladda ner för Windows"
       ],
       "Download info": [
-        "Ladda ner info"
+        "Nedladdningsinfo"
       ],
       "Download logs": [
         "Ladda ner loggar"
-      ],
-      "Download results": [
-        "Ladda ner resultat"
-      ],
-      "Drive Locked": [
-        "Drive låst"
       ],
       "Edit": [
         "Redigera"
@@ -457,9 +448,6 @@
       ],
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
-      ],
-      "Enable drive search": [
-        "Aktivera enhets-sökning"
       ],
       "Encrypted": [
         "Krypterad"
@@ -674,6 +662,9 @@
       "Merge contacts": [
         "Slå ihop kontakter"
       ],
+      "Migrate": [
+        "Migrera"
+      ],
       "Minimize transfers": [
         "Minimera överföringar"
       ],
@@ -708,7 +699,7 @@
         "Namnge ditt album"
       ],
       "New": [
-        "Ny"
+        "Nytt"
       ],
       "New album": [
         "Nytt album"
@@ -782,9 +773,6 @@
       "Re-index": [
         "Indexera igen"
       ],
-      "Re-indexing in progress": [
-        "Omindexering pågår"
-      ],
       "Re-sign": [
         "Återsignera"
       ],
@@ -802,9 +790,6 @@
       ],
       "Refer a friend": [
         "Hänvisa en vän"
-      ],
-      "Refetch index": [
-        "Hämta index igen"
       ],
       "Refresh the page": [
         "Uppdatera sidan"
@@ -918,7 +903,7 @@
         "Spara ändringar"
       ],
       "Save photo to your gallery": [
-        "Spara foto ditt galleri"
+        "Spara foto till ditt galleri"
       ],
       "Save photos and remove": [
         "Spara foton och ta bort"
@@ -937,9 +922,6 @@
       ],
       "Search countries": [
         "Sök länder"
-      ],
-      "Search drive": [
-        "Sök Drive"
       ],
       "Search is unavailable": [
         "Sök är inte tillgänglig"
@@ -1227,7 +1209,7 @@
         "Vad får jag?"
       ],
       "Windows 11 (ARM64)": [
-        "Windows 11/ (ARM64)"
+        "Windows 11 (ARM64)"
       ],
       "Windows 11/10 (x64)": [
         "Windows 11/10 (x64)"
@@ -1235,9 +1217,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
-      ],
-      "Your 3 GB bonus": [
-        "Dina 3 GB bonus"
       ],
       "Zoom in": [
         "Zooma in"
@@ -3386,6 +3365,9 @@
       "Address could not be added.": [
         "Adress kunde inte läggas till."
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
       "Address primary private key not found": [
         "Adressens privata nyckel hittades inte"
       ],
@@ -3437,6 +3419,9 @@
       "Can't retrieve device name": [
         "Kan inte hämta enhetsnamn"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Kan inte lägga till foto i album utan ett giltigt namn"
+      ],
       "Cannot download a folder": [
         "Kan inte ladda ner en mapp"
       ],
@@ -3448,6 +3433,9 @@
       ],
       "Cannot share root folder": [
         "Kan inte dela rotmapp"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan inte verifiera vem som laddade upp denna fil"
       ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
@@ -3476,11 +3464,17 @@
       "Could not find an available name": [
         "Kunde inte hitta ett tillgängligt namn"
       ],
+      "Could not load sharing details": [
+        "Kunde inte ladda delningsdetaljer"
+      ],
       "Could not open created vault": [
         "Kunde inte öppna skapat valv"
       ],
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunde inte läsa del av denna fil: ${ message }"
       ],
       "Could not remove from favorites": [
         "Kunde inte ta bort från favoriter"
@@ -3537,9 +3531,6 @@
       ],
       "Error decrypting a computer": [
         "Fel vid dekryptering av dator"
-      ],
-      "Error reading file": [
-        "Fel vid läsning av fil"
       ],
       "Expected structure attached": [
         "Förväntad struktur bifogad"
@@ -3682,6 +3673,9 @@
       "Last name is too long": [
         "Efternamn är för långt"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
         "Slå samman minst ${ calendarsToFixCount } kalendrar med befintliga ${ BRAND_NAME }-kalendrar"
@@ -3689,8 +3683,17 @@
       "Missing key packet": [
         "Saknar nyckelpaket"
       ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
+      ],
       "Missing signature": [
         "Signatur saknas"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Saknar signatur för ${ signatureType }"
       ],
       "Name is required": [
         "Namn är obligatoriskt"
@@ -3729,6 +3732,18 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "En av grupperna har inga kontakter: ${ noContactGroupList }",
         "Vissa grupper har inga kontakter: ${ noContactGroupList } "
+      ],
+      "Only admins can convert external invitations": [
+        "Endast administratörer kan konvertera externa inbjudningar"
+      ],
+      "Operation aborted": [
+        "Åtgärd avbröts"
+      ],
+      "Operation failed, try again later": [
+        "Åtgärd misslyckades, försök igen senare"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
       ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
@@ -3841,7 +3856,7 @@
         "System för omvänd skattskyldighet stöds inte för detta paket"
       ],
       "Search failed": [
-        "Sökning misslyckades"
+        "Sökningen misslyckades"
       ],
       "Signature is missing": [
         "Signatur saknas"
@@ -3852,8 +3867,14 @@
       "Signature verification failed": [
         "Signaturverifiering misslyckades"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturverifiering misslyckades: ${ errorMessage }"
+      ],
       "Signature verification for ${ signatureType } failed": [
         "Signaturverifiering för ${ signatureType } misslyckades"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturverifiering för ${ signatureType } misslyckades: ${ errorMessage }"
       ],
       "Some contacts could not be deleted": [
         "Några kontakter kunde inte tas bort"
@@ -3882,17 +3903,14 @@
       "Something went wrong": [
         "Något gick fel"
       ],
-      "Something went wrong during folder listing": [
-        "Något gick fel när mappen skulle listas"
-      ],
       "Something went wrong while fetching available domains": [
         "Något gick fel vid hämtning av tillgängliga domäner"
       ],
       "Something went wrong with search. Please try again later.": [
         "Något gick fel med sökning. Försök igen senare."
       ],
-      "Something went wrong with search: Not enough storage space.": [
-        "Något gick fel med sök: Inte tillräckligt lagringsutrymme."
+      "Something went wrong, please try again later": [
+        "Något gick fel, försök igen senare"
       ],
       "Something went wrong. Please try again.": [
         "Något gick fel. Försök igen."
@@ -3960,8 +3978,14 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
       ],
+      "This file version could not be uploaded": [
+        "Denna filversion kunde inte laddas upp"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Detta mappnamn är inte tillgängligt. Välj ett annat namn."
+      ],
+      "This item is no longer shared": [
+        "Detta objekt är inte delat längre"
       ],
       "This item is not shared": [
         "Detta objekt är inte delat"
@@ -4035,26 +4059,20 @@
       "We were not able to load some of your invitation to shared items": [
         "Vi kunde inte ladda några av dina inbjudningar till delade objekt"
       ],
-      "We were not able to load some of your saved shared links": [
-        "Vi kunde inte ladda några av dina sparade delade länkar"
-      ],
       "We were not able to load some of your shared items": [
         "Vi kunde inte ladda några av dina delade objekt"
       ],
       "We were not able to load some search results": [
         "Vi kunde inte ladda några sökresultat"
       ],
-      "We were not able to load the file history": [
-        "Vi kunde inte ladda filhistoriken"
-      ],
       "We were not able to load the folder contents": [
         "Vi kunde inte ladda mappens innehåll"
       ],
-      "We're sorry, but free upload is not available right now.": [
-        "Vi beklagar, men gratis uppladdning är inte tillgänglig just nu."
-      ],
       "Wrong billing address": [
         "Fel faktureringsadress"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan bara ladda upp en ny version till en fil"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
@@ -4231,9 +4249,6 @@
       ],
       "App currently unavailable": [
         "App är för närvarande inte tillgänglig"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Ha tålamod medans vi åtgärdar felet."
       ],
       "Error: ${ errorMessage }": [
         "Fel: ${ errorMessage }"
@@ -4561,6 +4576,29 @@
       "Terabyte": [
         "Terabyte",
         "Terabyte"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Aktiverat"
+      ],
+      "All": [
+        "Alla"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Not activated": [
+        "Inte aktiverad"
+      ],
+      "Pending": [
+        "Väntande"
       ]
     },
     "Filter notification": {
@@ -4971,11 +5009,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Har fel"
+      ],
       "In progress": [
         "Pågår"
       ],
       "Migrated": [
         "Migrerad"
+      ],
+      "Pending": [
+        "Väntar"
       ]
     },
     "Import warning": {
@@ -5013,9 +5057,6 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
-      ],
-      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
-        "${ BRAND_NAME } Workspace ger ditt team möjlighet att samarbeta effektivt utan att någonsin riskera ditt företags data."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
@@ -5058,9 +5099,6 @@
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } och ${ SHEETS_APP_NAME }-filer kan inte laddas ner direkt och kommer inte att inkluderas i denna nedladdning. Du kan ladda ner de andra filerna genom att klicka på 'Fortsätt nedladdning'."
-      ],
-      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } upptäckte att det lokala sökindexet är skadat och inte längre kan användas. Bygg om indexet för att återställa sökfunktionen."
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } på App Store"
@@ -5165,9 +5203,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
-      ],
-      "${ state.result.entries.length } entries": [
-        "${ state.result.entries.length } poster"
       ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
@@ -5299,9 +5334,6 @@
       "Already in your library": [
         "Redan i ditt bibliotek"
       ],
-      "Also try looking in Trash.": [
-        "Prova också att titta i papperskorgen."
-      ],
       "American Express SafeKey logo": [
         "Logga för American Express SafeKey"
       ],
@@ -5362,14 +5394,14 @@
       "Aug": [
         "Aug"
       ],
+      "Author is not provided on public link": [
+        "Författare är inte angiven på offentlig länk"
+      ],
       "Awaiting transaction": [
         "Väntar på transaktion"
       ],
       "Balance from your previous subscription": [
         "Saldo från din tidigare prenumeration"
-      ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Eftersom ${ DRIVE_APP_NAME } är end-to-end-krypterad kan vi inte komma åt eller dekryptera dina filer åt dig. För att låsa upp din Drive efter en lösenordsåterställning måste du ha något av följande:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Innan du begär en ny verifieringskod, kontrollera din skräppostmapp och kontrollera att ${ strong } är rätt adress."
@@ -5437,9 +5469,6 @@
       "Clear encrypted search data": [
         "Rensa krypterad sökdata"
       ],
-      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Rensning av webbläsardata kommer att rensa sökindex på den här enheten. Alla filer behöver då indexeras igen för att kunna använda sökfunktionen."
-      ],
       "Clears browser data related to the encrypted search.": [
         "Rensar webbläsardata relaterad till krypterade sökningar."
       ],
@@ -5463,9 +5492,6 @@
       ],
       "Continue": [
         "Fortsätt"
-      ],
-      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "Fortsätt använda ${ DRIVE_APP_NAME } och lås upp Drive senare"
       ],
       "Copy the link to clipboard": [
         "Kopiera länken till urklipp"
@@ -5531,10 +5557,6 @@
       ],
       "default email address": [
         "standard e-postadress"
-      ],
-      "Delete locked drive": [
-        "Ta bort låst lagringsenhet",
-        "Ta bort låsta lagringsenheter"
       ],
       "Details": [
         "Detaljer"
@@ -5627,9 +5649,6 @@
       "Enabling auto-deletion…": [
         "Aktiverar automatisk borttagning…"
       ],
-      "Enabling drive search": [
-        "Aktiverar sökning på lagringsenhet"
-      ],
       "Encrypted search is here": [
         "Krypterad sökning är här"
       ],
@@ -5709,6 +5728,9 @@
       "finance": [
         "finans"
       ],
+      "Find out what can be migrated.": [
+        "Ta reda på vad som kan migreras."
+      ],
       "Folder will not be uploaded": [
         "Mappen kommer inte laddas upp"
       ],
@@ -5740,10 +5762,7 @@
         "Skaffa appen för att säkerhetskopiera foton från din telefon eller ladda upp dem här."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Skaffa skrivbordsappen för att synkronisera filer från din dator."
-      ],
-      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
-        "Lär känna ${ DRIVE_APP_NAME } och tjäna din bonus på 3 GB lagringsutrymme! Passa på idag."
+        "Skaffa appen för stationär dator för att synkronisera filer från din dator."
       ],
       "Google Pay mark": [
         "Google Pay-märke"
@@ -5780,9 +5799,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
-      ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "Om du har en av dessa, fortsätt till ${ BRAND_NAME }-kontoinställning för att starta avblockeringsprocessen."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "Om du har förlorat åtkomsten till din autentiseringsapp kan du använda 1 av de 16 återställningskoderna för säkerhetskopiering som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
@@ -5845,17 +5861,11 @@
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indexerade ${ first }, ${ second }, ${ third } och ${ fourth }"
       ],
-      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "Indexeringen stötte på ett oväntat tillstånd och kan inte fortsätta. Bygg om indexet för att återställa."
-      ],
       "Indexing in progress": [
         "Indexering pågår"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexerar objekt ${ esProgress } av ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Indexerar sökresultat…"
       ],
       "Inherited from parent folder": [
         "Ärvd från överordnad mapp"
@@ -5893,9 +5903,6 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Objekt i papperskorgen blir kvar här tills du tar bort dem permanent"
       ],
-      "Items moved to the trash will stay here until deleted": [
-        "Objekt som flyttats till papperskorgen stannar här tills de tas bort"
-      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Det är bäst att alltid använda ett VPN. Men här är när cybersäkerhetshoten kan vara som störst:"
       ],
@@ -5909,7 +5916,7 @@
         "JCB-logga"
       ],
       "Jul": [
-        "Juli"
+        "Jul"
       ],
       "Jun": [
         "Jun"
@@ -6056,14 +6063,14 @@
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
       ],
-      "No populator states found.": [
-        "Inga populator-tillstånd hittades."
-      ],
       "No results found": [
         "Inga resultat hittades"
       ],
       "No synced folders": [
         "Inga synkroniserade mappar"
+      ],
+      "No users to display": [
+        "Inga användare att visa"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ingen av de uppladdade nycklarna är giltiga för kryptering. För att kunna skicka meddelanden till denna adress, ladda upp en giltig nyckel eller inaktivera “Kryptera e-post“."
@@ -6075,7 +6082,7 @@
         "Inte ansluten"
       ],
       "Not enough storage space": [
-        "Inte tillräckligt ledigt lagringsutrymme"
+        "Inte tillräckligt med lagringsutrymme"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Obs! Data kan fortfarande vara tillgänglig lokalt på enheter där du har installerat ${ DRIVE_APP_NAME }."
@@ -6101,12 +6108,6 @@
       "On public WiFi networks": [
         "På offentliga WiFi-nätverk"
       ],
-      "One encrypted suite. Full business protection.": [
-        "En krypterad svit. Fullt företagsskydd."
-      ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "En av dina krypterade diskar är låst. Det mest sannolika är att det beror på att lösenordet nyligen återställts."
-      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flera av dina betrodda nycklar markerades som \"läckta\" av dess ägare. Vi rekommenderar att du återkallar \"lita\" på dessa nycklar."
       ],
@@ -6115,9 +6116,6 @@
       ],
       "or discover other features:": [
         "eller upptäck andra funktioner:"
-      ],
-      "Or use the \"+ New\" button": [
-        "Eller använd knappen “+ Ny“"
       ],
       "Organization size": [
         "Organisationens storlek"
@@ -6149,9 +6147,6 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
       ],
-      "Permanently delete all files in your locked drive": [
-        "Ta permanent bort alla filer på din låsta lagringsenhet"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline är endast kompatibelt med oformaterat textformat."
       ],
@@ -6163,13 +6158,6 @@
       ],
       "Photo is set as album cover": [
         "Foto är inställt som albumomslag"
-      ],
-      "Photo saved to your Drive": [
-        "Foto sparat till din Drive",
-        "Foton sparade till din Drive"
-      ],
-      "Photo was copied to stream and marked favorite there.": [
-        "Fotot kopierades till streamen och markerades som favorit där."
       ],
       "Photos have been successfully recovered.": [
         "Foton har återställts."
@@ -6268,17 +6256,11 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfning (eller ”inkognitoläge”) är endast användbart för att hålla din aktivitet dold på din enhet. Det hindrar din webbläsare från att spara historik och cookies, men det gör dig inte osynlig. Din internetleverantör, nätverksadministratör och de webbplatser du besöker kan fortfarande se vad du gör på nätet."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Privat sökning aktiverad. Du kan nu stänga denna dialogruta och söka efter filer och mappar."
-      ],
       "Public link": [
         "Offentlig länk"
       ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig delning av dokument stöds ännu inte."
-      ],
-      "Re-indexing in progress": [
-        "Omindexering pågår"
       ],
       "Ready to add some photos?": [
         "Redo att lägga till några foton?"
@@ -6288,9 +6270,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
-      ],
-      "Recovery process might take some time.": [
-        "Återställningsprocessen kan ta tid."
       ],
       "Referral link copied to your clipboard": [
         "Hänvisningslänk kopierats till ditt urklipp"
@@ -6304,9 +6283,6 @@
       "Report has been sent": [
         "Rapport har skickats"
       ],
-      "Request access, or switch to an account with access.": [
-        "Begär åtkomst eller byt till ett konto med åtkomst."
-      ],
       "Requested item doesn't exist anymore": [
         "Begärt objekt finns inte längre"
       ],
@@ -6318,9 +6294,6 @@
       ],
       "Restored files ${ formattedDate }": [
         "Återställde filer ${ formattedDate }"
-      ],
-      "Restoring Photos... Please keep the tab open": [
-        "Återställer foton... Håll fliken öppen"
       ],
       "Running diagnostics...": [
         "Kör diagnostik …"
@@ -6337,38 +6310,23 @@
       "Search cannot be enabled in this browser": [
         "Sökning kan inte aktiveras i denna webbläsare"
       ],
-      "Search data is corrupted": [
-        "Sökdata är skadad"
-      ],
       "Search Enabled": [
         "Sökning aktiverad"
-      ],
-      "Search enabled. You may now close this dialogue and search for files and folders.": [
-        "Sökning aktiverad. Du kan nu stänga denna dialogruta och söka efter filer och mappar."
       ],
       "Search encountered an internal error. Rebuild the index to recover.": [
         "Sök stötte på ett internt fel. Återskapa indexet för att återställa."
       ],
-      "Search engine error": [
-        "Sökmotorfel"
-      ],
       "Search error": [
         "Sökfel"
       ],
-      "Search is in an invalid state": [
-        "Sök är i ett ogiltigt tillstånd"
-      ],
       "Search is ready. Your files have been indexed.": [
         "Sök är redo. Dina filer har indexerats."
-      ],
-      "Search module is not available.": [
-        "Sökmodul inte tillgänglig."
       ],
       "Select a destination folder": [
         "Välj en målmapp"
       ],
       "Select a folder to make the copy in": [
-        "Välj en mapp att göra en kopia i"
+        "Välj en mapp att göra kopian i"
       ],
       "Select a folder to move to.": [
         "Välj en mapp att flytta till."
@@ -6378,6 +6336,9 @@
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Välj en uppladdad fil eller mapp och skapa en länk till den."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
       ],
       "Select item": [
         "Välj objekt"
@@ -6416,7 +6377,7 @@
         "Dela filer med länkar"
       ],
       "Shared": [
-        "Delat"
+        "Delad"
       ],
       "Shared by ": [
         "Delat av "
@@ -6444,9 +6405,6 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Vissa av dina filer är inte längre åtkomliga. Återställ åtkomsten till dina filer. ${ StartRecoveryButton }"
-      ],
-      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Några foton i detta album sparas inte på din tidslinje. Att ta bort detta album kommer ta bort dessa foton permanent."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Vissa webbplatser och streamingtjänster blockerar innehåll efter region. Med ett VPN kan du kringgå dessa begränsningar och få fri tillgång till internet."
@@ -6497,9 +6455,6 @@
       "that": [
         "vem"
       ],
-      "The albums you create are shown here.": [
-        "De album du skapar visas här."
-      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Antalet nedladdningar inkluderar både faktiska nedladdningar och tillfällen när filer förhandsgranskas."
       ],
@@ -6536,9 +6491,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denna webbläsare stöder inte förhandsgranskning av PDF-dokument. Ladda ner filen."
       ],
-      "This can NOT be undone. Please enter the device name to confirm removal.": [
-        "Detta kan INTE ångras. Ange enhetens namn för att bekräfta borttagning."
-      ],
       "This file appears to be empty:": [
         "Denna fil verkar vara tom:",
         "Dessa filer verkar vara tomma:"
@@ -6557,10 +6509,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Detta är nu din ${ defaultEmailAddress } för att skicka nya meddelanden."
-      ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "Detta objekt är inte sparat i ditt fotobibliotek. Om du tar bort det från detta album förlorar du åtkomst till det permanent.",
-        "Några av de valda objekten sparas inte i ditt fotobibliotek. Om du tar bort dem från detta album förlorar du åtkomsten till dem permanent."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denna länk leder till en webbplats som kanske försöker stjäla din information, såsom lösenord och kreditkortsuppgifter."
@@ -6585,9 +6533,6 @@
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Detta kommer avbryta alla återstående uppladdningar. Avbrutna filer kommer inte att sparas i ${ DRIVE_APP_NAME }."
-      ],
-      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "Detta kommer endast ta bort albumet. Dina foton kommer finnas kvar på din tidslinje. Denna åtgärd kan inte ångras."
       ],
       "This will permanently delete the file you uploaded.": [
         "Detta kommer ta bort filen du laddade upp permanent."
@@ -6616,12 +6561,6 @@
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "För att ladda ner dessa filer, öppna dem i ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME } och exportera dem."
       ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "För att aktivera verkligt privat sökning måste ${ DRIVE_APP_NAME } indexera dina filer lokalt."
-      ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "För att möjliggöra en verkligt privat sökfunktion så behöver vi indexera dina filer lokalt. Du kan fortfarande använda ${ DRIVE_APP_NAME } som vanligt - vi informerar dig när indexeringen är färdig."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
@@ -6633,6 +6572,15 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "För att signera om dina kontakter måste vi kontrollera varje kontakt mot listan över tillgängliga krypteringsnycklar på ditt konto. Om ingen matchning hittas kommer din kontakt att signeras om med den primära krypteringsnyckeln."
@@ -6685,9 +6633,6 @@
       "Unknown date": [
         "Okänt datum"
       ],
-      "Unlock drive to recover files": [
-        "Lås upp Drive för att återställa filer"
-      ],
       "Unsaved changes": [
         "Osparade ändringar"
       ],
@@ -6698,10 +6643,7 @@
         "Filtyp för foton stöds inte"
       ],
       "Update required": [
-        "Uppgradering krävs"
-      ],
-      "Updating drive search...": [
-        "Uppdaterar Drive-sök…"
+        "Uppdatering krävs"
       ],
       "Upgrade anytime to bring over the rest": [
         "Uppgradera när som helst för att flytta över resten"
@@ -6778,10 +6720,6 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Du har just ökat ditt lagringsutrymme till 5 GB!"
       ],
-      "We couldn't save this photo to your Drive": [
-        "Vi kunde inte spara detta foto till din Drive",
-        "Vi kunde inte spara flera foton till din Drive"
-      ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Vi kunde inte verifiera att ${ nameAuthor } laddade upp ${ nodeName }. Följande kan ha blivit manipulerat: filernas ordning. Öppna endast om du litar på det."
       ],
@@ -6796,10 +6734,6 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi använder 3-D Secure för att skydda dina betalningar"
-      ],
-      "We were not able to add this photo to your album": [
-        "Vi kunde inte lägga till detta foto till ditt album",
-        "Vi kunde inte lägga till några foton till ditt album"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi kommer att omdirigera dig till PayPal i en ny webbläsarflik för att slutföra denna transaktion. Om du använder några popup-blockerare, inaktivera dem för att fortsätta."
@@ -6819,9 +6753,6 @@
       "Week": [
         "Vecka"
       ],
-      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
-        "Välkommen till ${ DRIVE_APP_NAME }, under de första 10 minuterna räknas inte filer som du laddar upp mot din kvot för lagringsutrymme."
-      ],
       "What do you want to do?": [
         "Vad vill du göra?"
       ],
@@ -6833,9 +6764,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "När du ansluter till VPN används krypteringsteknik för att dölja din IP-adress (en unik kod som tilldelas din enhet)."
-      ],
-      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
-        "När du tar bort ${ deviceName } som en synkroniserad enhet kommer alla mappar som lagts till i \"Mina datorer\" från denna enhet att tas bort permanent från ${ DRIVE_APP_NAME }."
       ],
       "who": [
         "vem"
@@ -6855,13 +6783,6 @@
       "Would you like to restore your files?": [
         "Vill du återställa dina filer?"
       ],
-      "Would you like to save it before removing?": [
-        "Vill du spara det innan du tar bort det?",
-        "Vill du spara dem innan du tar bort dem?"
-      ],
-      "Would you like to save them before removing?": [
-        "Vill du spara dem innan du tar bort dem?"
-      ],
       "Writing assistant": [
         "Skrivassistent"
       ],
@@ -6871,14 +6792,14 @@
       "Yesterday": [
         "Igår"
       ],
+      "You": [
+        "Du"
+      ],
       "you": [
         "du"
       ],
       "You already have a free account": [
         "Du har redan ett gratis konto"
-      ],
-      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Du är på väg att lämna det delade objektet. Du kommer inte att kunna komma åt den igen förrän ägaren delar det med dig."
       ],
       "You are about to open another browser tab and visit:": [
         "Du är på väg att öppna en annan webbläsarflik och besöka:"
@@ -6930,10 +6851,6 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
       ],
-      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "Du har ${ expiresInDays } dag kvar att göra anspråk på din 3 GB välkomstbonus och ",
-        "Du har ${ expiresInDays } dagar kvar att göra anspråk på din 3 GB välkomstbonus och "
-      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har en provperiod på ${ planTitle }-prenumeration. Om du vill fortsätta med din prenumeration efter provperioden, lägg till en betalningsmetod."
       ],
@@ -6954,10 +6871,6 @@
       ],
       "You will lose all unsaved changes.": [
         "Du kommer att förlora alla osparade ändringar."
-      ],
-      "You will need to save it again from the public link page.": [
-        "Du måste spara det igen från den offentliga länksidan.",
-        "Du måste spara dem igen från den offentliga länksidan"
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
@@ -6996,9 +6909,6 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ditt konto är för närvarande konfigurerat för att tillämpa systemet för omvänd skattskyldighet. Detta stöds inte för det valda paketet. För att fortsätta, ta antingen bort momsregistreringsnumret från faktureringsadressen eller välj ett annat paket."
       ],
-      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "Din webbläsare fick slut på utrymme vid indexering av filer för sökning. Frigör lagringsutrymme och bygg sedan om indexet."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
       ],
@@ -7010,12 +6920,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
-      ],
-      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
-        "Dina filer håller på att omindexeras. Du kan fortsätta söka - resultaten kan dock vara ofullständiga tills det är klart. Vi meddelar dig när det är färdigt."
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Dina filer är inte längre åtkomliga på grund av en lösenordsåterställning. Ladda upp den gamla krypteringsnyckeln igen för att återfå åtkomsten. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
@@ -7163,9 +7067,6 @@
       ]
     },
     "Label": {
-      "# of downloads": [
-        "# nedladdningar"
-      ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } av ${ albumProgress.total }"
       ],
@@ -7247,9 +7148,6 @@
       "App password": [
         "Applösenord"
       ],
-      "Applications in a business setting": [
-        "Applikationer i en affärsmiljö"
-      ],
       "Apply to all duplicated files": [
         "Tillämpa till alla duplicerade filer"
       ],
@@ -7258,9 +7156,6 @@
       ],
       "Apply to all unverified items": [
         "Tillämpa på alla overifierade objekt"
-      ],
-      "Asset": [
-        "Tillgångar"
       ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
@@ -7388,10 +7283,6 @@
       "Delete": [
         "Ta bort"
       ],
-      "Delete drive?": [
-        "Ta bort hårddisk?",
-        "Ta bort hårddiskar?"
-      ],
       "Delete link and remove access for everyone": [
         "Ta bort länk och ta bort åtkomst för alla"
       ],
@@ -7401,14 +7292,8 @@
       "Deleted": [
         "Borttagen"
       ],
-      "Deleted ${ deleted }": [
-        "Ta bort ${ deleted }"
-      ],
       "Device": [
         "Enhet"
-      ],
-      "Device #${ position }": [
-        "Enhet #${ position }"
       ],
       "Device name": [
         "Enhetsnamn"
@@ -7777,10 +7662,10 @@
         "Delat"
       ],
       "Shared by": [
-        "Delat av"
+        "Delad av"
       ],
       "Shared by ${ sharedBy }": [
-        "Delad av ${ sharedBy }"
+        "Delat av ${ sharedBy }"
       ],
       "Shared by Public link": [
         "Delad av offentlig länk"
@@ -7854,9 +7739,6 @@
       "Theme": [
         "Tema"
       ],
-      "This will permanently delete all files in your locked drive.": [
-        "Detta tar permanent bort alla filer på din låsta Drive."
-      ],
       "Thomas": [
         "Tomas"
       ],
@@ -7868,12 +7750,6 @@
       ],
       "Type": [
         "Typ"
-      ],
-      "Unlock drive": [
-        "Lås upp Drive"
-      ],
-      "Unlock drive (recommended)": [
-        "Lås upp drive (rekommenderas)"
       ],
       "Unlock later": [
         "Lås upp senare"
@@ -8098,7 +7974,7 @@
         "inställningar"
       ],
       "Shared": [
-        "Delade"
+        "Delat"
       ],
       "Shared with me": [
         "Delat med mig"
@@ -9568,9 +9444,6 @@
       "\"${ ellipsedName }\" deleted": [
         "”${ ellipsedName }” borttaget"
       ],
-      "\"${ ellipsedName }\" deleted permanently from trash": [
-        "”${ ellipsedName }” togs bort permanent från papperskorg"
-      ],
       "\"${ ellipsedName }\" failed to be created": [
         "“${ ellipsedName }“ misslyckades att skapas"
       ],
@@ -9583,17 +9456,11 @@
       "\"${ ellipsedName }\" failed to be moved": [
         "”${ ellipsedName }” misslyckades att flyttas"
       ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "”${ ellipsedName }” misslyckades att återställas från papperskorg"
-      ],
       "\"${ ellipsedName }\" moved": [
         "”${ ellipsedName }” flyttad"
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "”${ ellipsedName }” återställd från papperskorg"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "”${ ellipsedName }” flyttades utan problem"
       ],
       "\"${ fileName }\" shared": [
         "”${ fileName }” delad"
@@ -9628,10 +9495,6 @@
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } objekt misslyckades att tas bort",
         "${ errors.length } objekt misslyckades att tas bort"
-      ],
-      "${ errors.length } item failed to be trashed": [
-        "${ errors.length } objekt misslyckades att flyttas till papperskorg",
-        "${ errors.length } objekt misslyckades att flyttas till papperskorg"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } kopierat objekt flyttades till papperskorg",
@@ -9719,9 +9582,6 @@
       "Contact group updated": [
         "Kontaktgrupp uppdaterad"
       ],
-      "Copy of \"${ ellipsedName }\" moved to trash": [
-        "Kopia av “${ ellipsedName }“ flyttades till papperskorg"
-      ],
       "Device failed to be removed": [
         "Enhet kunde inte tas bort"
       ],
@@ -9733,12 +9593,6 @@
       ],
       "Device renamed": [
         "Enhet omdöpt"
-      ],
-      "Encrypted search activated": [
-        "Krypterad sökning aktiverad"
-      ],
-      "Error while listing devices": [
-        "Fel vid listning av enheter"
       ],
       "Failed to accept share invitation": [
         "Misslyckades att acceptera delningsinbjudan"
@@ -9808,17 +9662,8 @@
       "Stopping the sharing of this item has failed": [
         "Misslyckades att stoppa delning av detta objekt"
       ],
-      "The item was not added to your drive": [
-        "Objektet lades inte till på din Drive"
-      ],
-      "The item was successfully added to your drive": [
-        "Objektet lades till på din Drive"
-      ],
       "The link to your item was deleted": [
         "Länken till ditt objekt togs bort"
-      ],
-      "This secure link expired, please change expire date in sharing settings": [
-        "Denna säkra länk har löpt ut, ändra utgångsdatum i delningsinställningar"
       ],
       "Trash failed to be emptied": [
         "Misslyckades att tömma papperskorg"
@@ -9839,11 +9684,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Några bilder laddades inte upp på grund av dubbla filnamn i det nuvarande valet."
-      ]
-    },
-    "Notitication": {
-      "Album renamed successfully": [
-        "Album har bytt namn"
       ]
     },
     "Oauth instructions": {
@@ -10055,26 +9895,14 @@
       "Collaborate on documents": [
         "Samarbeta på dokument"
       ],
-      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "Föredrar du ${ DRIVE_APP_NAME } i ljust eller mörkt läge? Välj den färg som inspirerar dig mest."
-      ],
       "Drag and drop your files here": [
         "Dra och släpp dina filer här"
       ],
       "Edit documents online": [
         "Redigera dokument online"
       ],
-      "End-to-end encrypted storage for your files": [
-        "End-to-end krypterat lagringsutrymme för dina filer"
-      ],
       "Faster uploads for large or multiple files": [
         "Snabbare uppladdningar för stora eller flera filer"
-      ],
-      "Files uploaded during this time won’t count towards your storage limit.": [
-        "Filer som laddas upp under denna tid kommer inte att räknas av mot din gräns för lagringsutrymme."
-      ],
-      "Files uploaded now will not count towards your storage limit": [
-        "Filer som laddas upp nu räknas inte av mot din gräns för lagringsutrymme"
       ],
       "Final approval in progress": [
         "Slutligt godkännande pågår"
@@ -10086,7 +9914,7 @@
         "Frigör hårddiskutrymme på din dator"
       ],
       "Get the desktop app": [
-        "Skaffa skrivbordsappen"
+        "Skaffa appen för stationär dator"
       ],
       "Get the mobile app": [
         "Skaffa mobilappen"
@@ -10114,9 +9942,6 @@
       ],
       "Manage access": [
         "Hantera åtkomst"
-      ],
-      "Organize files right from your desktop": [
-        "Organisera filer direkt från ditt skrivbord"
       ],
       "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
         "Skydda dina finansiella dokument, ID-kort, projektfiler, foton och mer med end-to-end-kryptering."
@@ -10147,9 +9972,6 @@
       ],
       "Work together": [
         "Arbeta tillsammans"
-      ],
-      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "Du har precis fått lite gratis data och säkrat dina filer med end-to-end-kryptering – på rekordtid!"
       ]
     },
     "Onboarding Trial": {
@@ -11637,9 +11459,6 @@
       ],
       "Encrypted search is here": [
         "Krypterad sökning är här"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Nu kan du enkelt söka bland filer på Drive medan du håller din data säker."
       ]
     },
     "sso": {
@@ -12190,26 +12009,11 @@
       "Your favorited photos will appear here": [
         "Dina favoritfoton kommer visas här"
       ],
-      "Your Live Photos will appear here": [
-        "Dina livefoton kommer att visas här"
-      ],
-      "Your panorama photos will appear here": [
-        "Dina panoramafoton kommer visas här"
-      ],
-      "Your photo bursts will appear here": [
-        "Dina fotoserier kommer visas här"
-      ],
-      "Your portraits photos will appear here": [
-        "Dina porträttfoton kommer visas här"
-      ],
       "Your RAW photos will appear here": [
         "Dina RAW-foton kommer visas här"
       ],
       "Your screenshots will appear here": [
         "Dina skärmdumpar kommer visas här"
-      ],
-      "Your selfies photos will appear here": [
-        "Dina selfie-foton kommer visas här"
       ],
       "Your tagged photos will appear here": [
         "Dina märkta foton kommer visas här"
@@ -12362,17 +12166,26 @@
       "Actions": [
         "Åtgärder"
       ],
+      "Activated": [
+        "Aktiverad"
+      ],
       "Address": [
         "Adress"
       ],
       "Created": [
         "Skapad"
       ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
       "Expires": [
         "Löper ut"
       ],
       "Fingerprint": [
         "Fingeravtryck"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
       ],
       "Name": [
         "Namn"
@@ -12385,6 +12198,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "User": [
+        "Användare"
       ]
     },
     "TableHeader": {
@@ -12417,14 +12233,8 @@
       ]
     },
     "Tag": {
-      "Bursts": [
-        "Serie"
-      ],
       "Favorites": [
         "Favoriter"
-      ],
-      "Live Photos": [
-        "Livefoton"
       ],
       "Panoramas": [
         "Panorama"
@@ -12611,6 +12421,9 @@
       "Computers": [
         "Datorer"
       ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
       "Confirm downgrade": [
         "Bekräfta nedgradering"
       ],
@@ -12761,6 +12574,9 @@
       "Disconnected from Gmail": [
         "Koppla från Gmail"
       ],
+      "Domain names": [
+        "Domännamn"
+      ],
       "Downgrade account": [
         "Nedgradera konto"
       ],
@@ -12781,9 +12597,6 @@
       ],
       "Download unverified folder?": [
         "Ladda ner overifierad mapp?"
-      ],
-      "Drive": [
-        "Drive"
       ],
       "Drop to upload": [
         "Släpp för att ladda upp"
@@ -12821,9 +12634,6 @@
       "Enable advanced account protection": [
         "Aktivera avancerat kontoskydd"
       ],
-      "Enable drive search": [
-        "Aktivera enhets-sökning"
-      ],
       "Enhance security with 2FA": [
         "Förbättra säkerhet med 2FA"
       ],
@@ -12838,9 +12648,6 @@
       ],
       "File details": [
         "Fildetaljer"
-      ],
-      "File recovery process": [
-        "Filåterställningsprocess"
       ],
       "Folder": [
         "Mapp"
@@ -12869,9 +12676,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Skaffa mer lagringsutrymme med ${ MAIL_APP_NAME } Plus"
-      ],
-      "Get started with 10 minutes of free uploads, on the house.": [
-        "Kom igång med 10 minuters gratis uppladdningar, som vi bjuder på."
       ],
       "Get the apps": [
         "Skaffa appen"
@@ -12931,9 +12735,6 @@
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importerad av ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Index populators": [
-        "Index-populatorer"
-      ],
       "Information exposed in breach": [
         "Information exponerad vid intrång"
       ],
@@ -12954,9 +12755,6 @@
       ],
       "Location": [
         "Plats"
-      ],
-      "Logger": [
-        "Loggare"
       ],
       "Logs": [
         "Loggar"
@@ -13018,14 +12816,8 @@
       "No breaches detected": [
         "Inga intrång upptäckta"
       ],
-      "No bursts": [
-        "Inga serier"
-      ],
       "No favorites": [
         "Inga favoriter"
-      ],
-      "No Live Photos": [
-        "Inga livefoton"
       ],
       "No panorama": [
         "Ingen panorama"
@@ -13164,7 +12956,7 @@
         "Byt namn på en mapp"
       ],
       "Rename device": [
-        "Döp om enhet"
+        "Byt namn på enhet"
       ],
       "Report a problem": [
         "Rapportera ett problem"
@@ -13188,7 +12980,7 @@
         "Sökresultat"
       ],
       "Searching…": [
-        "Söker…"
+        "Söker …"
       ],
       "Security center": [
         "Säkerhetscenter"
@@ -13207,6 +12999,9 @@
       ],
       "Select link expiration date": [
         "Välj länkens utgångsdatum"
+      ],
+      "Select users to migrate": [
+        "Välj användare att migrera"
       ],
       "Set recovery methods": [
         "Ställ in återställningsmetoder"
@@ -13243,9 +13038,6 @@
       ],
       "Shared with me": [
         "Delat med mig"
-      ],
-      "Show actions": [
-        "Visa åtgärder"
       ],
       "Sign in and grant access": [
         "Logga in och bevilja åtkomst"
@@ -13315,9 +13107,6 @@
       ],
       "Total size": [
         "Total storlek"
-      ],
-      "Trash": [
-        "Papperskorg"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
@@ -13433,6 +13222,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
       ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
+      ],
       "What can a VPN protect you from?": [
         "Vad kan en VPN skydda dig från?"
       ],
@@ -13480,9 +13272,6 @@
       ],
       "Your welcome actions": [
         "Din välkomståtgärd"
-      ],
-      "You’re off to a great start!": [
-        "Du har fått en bra start!"
       ],
       "You’ve got 5 GB of storage": [
         "Du har fått 5 GB lagringsutrymme"
@@ -13644,11 +13433,6 @@
       ],
       "The user must have an address to request data access": [
         "Användaren måste ha en adress för att begära dataåtkomst"
-      ]
-    },
-    "Upsell": {
-      "Get Drive for Business": [
-        "Skaffa Drive for Business"
       ]
     },
     "user_modal": {

@@ -2751,6 +2751,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_BRAND_NAME }"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME } Scribe."
       ],
@@ -3177,6 +3180,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Utilitzem 3-D Secure per protegir els vostres pagaments."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Us redirigirem a ${ IDEAL_BRAND_NAME } en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu algun bloquejador de finestres emergents, desactiveu-lo per continuar."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
@@ -4836,6 +4842,9 @@
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagueu amb ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Es requereix un mètode de pagament perquè la subscripció s'activi un cop finalitzi la prova."
       ],
@@ -4917,6 +4926,9 @@
       "You will soon be redirected to verify your payment.": [
         "Aviat se us redirigirà per verificar el vostre pagament."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "S'ha canviat la vostra moneda a euros (€) perquè ${ IDEAL_BRAND_NAME } només admet pagaments en euros."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
@@ -4928,6 +4940,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "No s'ha pogut inicialitzar ${ IDEAL_BRAND_NAME }. Torneu-ho a provar més tard."
+      ],
       "Invalid card number": [
         "El número de la targeta no es vàlid."
       ],
@@ -4950,6 +4965,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Alguna cosa ha anat malament. La verificació de Google Pay ha fallat."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "En confirmar aquest pagament autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a donar instruccions al vostre banc perquè el carregui al vostre compte. Podreu obtenir un reemborsament en un termini de 8 setmanes des de la data del càrrec, d'acord amb les condicions del vostre acord amb el banc."
       ]
     },
     "Payments.info": {

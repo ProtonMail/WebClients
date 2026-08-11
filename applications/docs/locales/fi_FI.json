@@ -90,9 +90,6 @@
       "Apply": [
         "Toteuta"
       ],
-      "Ask me next time": [
-        "Kysy seuraavalla kerralla"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
@@ -3151,8 +3148,14 @@
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
       ],
+      "Invitation not found": [
+        "Kutsua ei löytynyt"
+      ],
       "Item content cannot exceed 40KB": [
         "Kohteen sisällön koko ei saa ylittää 40 kt"
+      ],
+      "Item not found": [
+        "Kohdetta ei löytynyt"
       ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
@@ -3172,6 +3175,9 @@
       ],
       "Name is required": [
         "Nimi vaaditaan"
+      ],
+      "Name must not be empty": [
+        "Nimi ei voi olla tyhjä"
       ],
       "Network error": [
         "Verkkovirhe"
@@ -3216,6 +3222,9 @@
       ],
       "Passwords do not match": [
         "Salasanat eivät täsmää"
+      ],
+      "Photo not found": [
+        "Kuvaa ei löytynyt"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Kuvien lähetys on väliaikaisesti pois käytöstä. Yritä myöhemmin uudelleen"
@@ -3275,6 +3284,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Tämä tilaus ei tue käännettyä verovelvollisuutta."
+      ],
+      "Signature is missing": [
+        "Allekirjoitus puuttuu"
       ],
       "Signature not verified": [
         "Allekirjoitusta ei vahvistettu"
@@ -3931,6 +3943,14 @@
       "Terabyte": [
         "Teratavu",
         "Teratavua"
+      ]
+    },
+    "Filter": {
+      "All": [
+        "Kaikki"
+      ],
+      "Errors": [
+        "Virheet"
       ]
     },
     "Filter notification": {
@@ -4663,9 +4683,6 @@
       "Creating link to folder": [
         "Luodaan linkkiä kansioon"
       ],
-      "Creating new document...": [
-        "Luodaan uutta dokumenttia..."
-      ],
       "Current plan": [
         "Nykyinen tilaus"
       ],
@@ -4765,12 +4782,6 @@
       "Enter your own password (as trusted contact).": [
         "Syöttäkää oma salasananne (luotettuna yhteystietona)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Virhe muunnettaessa dokumenttia: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Virhe ladattaessa dokumenttia: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Synkronointivirhe"
       ],
@@ -4818,12 +4829,6 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Hanki ammattimainen @yrityksesi.com-sähköposti, 1 Tt suojattua tallennustilaa käyttäjää kohden, pidemmät videopuhelut ja paljon muuta ${ BRAND_NAME } Workspace -palvelun avulla."
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Saakaa sähköpostipäivityksiä dokumentteihinne lisätyistä kommenteista ja ehdotuksista."
-      ],
-      "Get Notified About Comments": [
-        "Saa ilmoituksia kommenteista"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hallitukset ja Internet-palveluntarjoajat voivat valvoa verkkotoimintaasi. Piilottamalla oikean IP-osoitteensi ja salaamalla toimintasi, selaamisesi muuttuu yksityiseksi."
@@ -4979,9 +4984,6 @@
       "Low Priority": [
         "Alhainen tärkeys"
       ],
-      "Making a copy...": [
-        "Luodaan kopiota..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkki",
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkkiä"
@@ -5012,9 +5014,6 @@
       ],
       "No contacts added yet": [
         "Yhteystietoja ei ole vielä lisätty"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "URL-osoitteessa ei annettu dokumenttia. Palatkaa sovellukseen ${ DRIVE_APP_NAME } ja valitkaa dokumentti."
       ],
       "No email address": [
         "Ei sähköpostiosoitetta"
@@ -5297,9 +5296,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Jotta osoitteeseen voidaan lähettää salattuja viestejä, on omistajan palautettava päähän -salaus käyttöön."
       ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Syöttämänne URL-osoite vaikuttaa olevan kopioitu Slackista virheellisesti. Kun kopioitte pitkiä linkkejä Slackista, napsauttakaa linkkiä hiiren kakkospainikkeella ja valitkaa sitten \"Kopioi linkki\" sen sijaan, että kopioisitte typistetyn URL-tekstin suoraan."
-      ],
       "There are no documents in the trash.": [
         "Roskakorissa ei ole dokumentteja."
       ],
@@ -5491,6 +5487,9 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
+      ],
+      "You": [
+        "Sinä"
       ],
       "you": [
         "sinä"
@@ -5918,9 +5917,6 @@
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
       ],
-      "Enable email notifications": [
-        "Ota sähköposti-ilmoitukset käyttöön"
-      ],
       "Encrypt emails": [
         "Salaa viestit"
       ],
@@ -5977,9 +5973,6 @@
       ],
       "Include application logs in bug report": [
         "Sisällytä sovelluslokit vikailmoitukseen"
-      ],
-      "Include document name in notification": [
-        "Sisällytä dokumentin nimi ilmoitukseen"
       ],
       "Include message and file name in invite email": [
         "Sisällytä viestin teksti ja tiedoston nimi kutsuviestiin"
@@ -8486,6 +8479,14 @@
         "Edistyminen: ${ combinedProgress } %"
       ]
     },
+    "Property": {
+      "key": [
+        "avain"
+      ],
+      "name": [
+        "nimi"
+      ]
+    },
     "Property type": {
       "Address": [
         "Osoite"
@@ -9042,9 +9043,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Luodaan uutta laskentataulukkoa..."
-      ],
       "Detect automatically": [
         "Tunnista automaattisesti"
       ],
@@ -9704,6 +9702,9 @@
       "Created": [
         "Luotu"
       ],
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
       "Expires": [
         "Erääntyy"
       ],
@@ -9721,6 +9722,9 @@
       ],
       "Type": [
         "Tyyppi"
+      ],
+      "User": [
+        "Käyttäjä"
       ]
     },
     "TableHeader": {
@@ -9997,6 +10001,9 @@
       ],
       "Document verification failed": [
         "Dokumentin vahvistus epäonnistui"
+      ],
+      "Domain names": [
+        "Verkkotunnukset"
       ],
       "Downgrade account": [
         "Alenna tili"

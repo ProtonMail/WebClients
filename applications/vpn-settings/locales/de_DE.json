@@ -422,6 +422,9 @@
       "Download CSV sample": [
         "CSV-Beispiel herunterladen"
       ],
+      "Download latest": [
+        "Neueste Version herunterladen"
+      ],
       "Download logs": [
         "Protokolle herunterladen"
       ],
@@ -662,9 +665,6 @@
       "Invite user": [
         "Benutzer einladen"
       ],
-      "JumpCloud": [
-        "JumpCloud"
-      ],
       "Keep": [
         "Behalten"
       ],
@@ -736,9 +736,6 @@
       ],
       "Mark as resolved": [
         "Als gelöst markieren"
-      ],
-      "Microsoft Intune": [
-        "Microsoft Intune"
       ],
       "Migrate": [
         "Übernehmen"
@@ -3800,6 +3797,9 @@
       "Are you sure you want to disable this address?": [
         "Möchtest du diese Adresse wirklich deaktivieren?"
       ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Wenn du diese E-Mail-Adresse ${ address } deaktivierst, kannst das Mitglied keine E-Mails mehr über diese Adresse senden oder empfangen. Gleichzeitig werden dabei auch alle verknüpften ${ BRAND_NAME }-Produkte deaktiviert."
+      ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Wenn du die E-Mail-Adresse ${ address } deaktivierst, kannst du keine E-Mails mehr über diese Adresse senden oder empfangen. Gleichzeitig werden dabei auch alle verknüpften ${ BRAND_NAME }-Produkte deaktiviert."
       ],
@@ -4688,6 +4688,9 @@
       "Address is already added to your account": [
         "E-Mail-Adresse wurde bereits zu deinem Konto hinzugefügt"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Die Adresse wird bereits von einem Benutzer außerhalb deiner Organisation verwendet. Bitte wende dich an den Kundensupport, um dies zu lösen."
+      ],
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
       ],
@@ -4981,6 +4984,9 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Maximal ${ displayMaxValue } erlaubt"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Mindestens ${ calendarsToFixCount } Kalender mit einem bestehenden ${ BRAND_NAME }-Kalender zusammenführen",
         "Mindestens ${ calendarsToFixCount } Kalender mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen"
@@ -4990,6 +4996,12 @@
       ],
       "Missing key packet": [
         "Fehlendes Schlüsselpaket"
+      ],
+      "Missing organization private key": [
+        "Privater Schlüssel der Organisation fehlt"
+      ],
+      "Missing organization public key": [
+        "Öffentlicher Schlüssel der Organisation fehlt"
       ],
       "Missing signature": [
         "Fehlende Signatur"
@@ -5054,6 +5066,12 @@
       ],
       "Operation failed, try again later": [
         "Vorgang fehlgeschlagen, versuche es später erneut"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisation hat nicht genügend Lizenzen verfügbar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation hat nicht genügend Speicherplatz verfügbar"
       ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
@@ -8057,6 +8075,9 @@
       "finance": [
         "Finanzen"
       ],
+      "Find out what can be migrated.": [
+        "Herausfinden, was übernommen werden kann."
+      ],
       "for ${ price }": [
         "für ${ price }"
       ],
@@ -8720,6 +8741,9 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Bitte überprüfe deine Datei auf Fehler oder versuche es mit unserer ${ csvTemplateButton }."
       ],
+      "Please ensure you're running ${ VPN_APP_NAME } desktop version ${ version } or later. ${ downloadLatest }": [
+        "Bitte stelle sicher, dass du die Desktop-Version ${ VPN_APP_NAME } ${ version } oder höher verwendest. ${ downloadLatest }"
+      ],
       "Please fill in all required fields.": [
         "Bitte fülle alle Pflichtfelder aus."
       ],
@@ -8911,6 +8935,9 @@
       ],
       "Select a group to view its members and settings.": [
         "Eine Gruppe auswählen, um deren Mitglieder und Einstellungen anzuzeigen."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Wähle genau aus, was du übernehmen möchtest. Dies gilt für alle Benutzer der Organisation."
       ],
       "Select one or multiple user affiliations": [
         "Wähle eine oder mehrere Benutzerzugehörigkeiten"
@@ -9218,6 +9245,12 @@
       "This service is not available to users signing in with single sign-on.": [
         "Dieser Dienst steht Benutzern, die sich mit Single Sign-On anmelden, nicht zur Verfügung."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Dieser Benutzer kann nicht übernommen werden, da seine E-Mail-Adresse bei ${ BRAND_NAME } nicht verfügbar ist."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Dieser Benutzer kann aufgrund von Plattforminkompatibilitäten nicht übernommen werden."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Dieser Benutzer ist zurzeit für Zahlungen für deine Organisation zuständig. Wenn du den Benutzer zurückstufst, wirst du für die Zahlungen deiner Organisation zuständig."
       ],
@@ -9311,8 +9344,8 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Um Always-on-VPN zu aktivieren, muss das Konfigurationsprofil auf jedem Mac installiert werden – der ${ VPN_APP_NAME }-Client wendet das Geräteprofil automatisch an, sobald es vorhanden ist."
       ],
-      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
-        "Um „Always-on-VPN“ zu aktivieren, muss das Geräteprofil auf jedem Gerät unter ${ policiesPath } abgelegt sein – der ${ VPN_APP_NAME }-Client erkennt es dort und übernimmt das Profil automatisch."
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
+        "Um Always-on-VPN zu aktivieren, muss das Geräteprofil auf jedem Gerät unter ${ policiesPath } abgelegt werden – der ${ VPN_APP_NAME }-Client erkennt es dort und wendet das Profil automatisch an. ${ learnMore }."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Um die größtmögliche Sicherheit deines Kontos zu gewährleisten, deaktiviere die **Wiederherstellung per Wiederherstellungs-E-Mail-Adresse**."
@@ -9334,6 +9367,27 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Um über die neuesten Entwicklungen bei ${ BRAND_NAME }-Produkten auf dem Laufenden zu bleiben, kannst du unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren ${ blogLink }."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Um diesen Benutzer zu übernehmen, füge die E-Mail-Domain unter ${ domainNamesLink } hinzu und überprüfe sie."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übernehmen, aktiviere sein Konto in deiner ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu übernehmen, aktiviere sein Konto unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu übernehmen, aktiviere seine Adresse unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Um diesen Benutzer zu übernehmen, muss er die Einladung zur Teilnahme an ${ BRAND_NAME } annehmen."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übernehmen, entpacke ihn in deiner ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übernehmen, hebe die Sperrung in deiner ${ provider.adminConsoleName } auf."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Wähle um fortzufahren eine Kontowiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
@@ -9487,9 +9541,6 @@
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Ein anderes MDM verwenden? Jedes MDM, das die Bereitstellung eines Konfigurationsprofils unterstützt, ist geeignet. Informationen zum Hochladen und Zuweisen des Profils zu deinem Gerätepark findest du in der Dokumentation deines MDM."
-      ],
-      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
-        "Wird eine andere MDM-Lösung (Mobilgeräteverwaltung) verwendet? Jede MDM-Lösung, die das Bereitstellen von Dateien oder das Ausführen von PowerShell-Skripten unterstützt, ist geeignet. Weitere Informationen werden in der Dokumentation deiner MDM-Lösung bereitgestellt."
       ],
       "Vault created": [
         "Tresor erstellt"
@@ -15217,11 +15268,17 @@
       ]
     },
     "scim: Info": {
+      "**Groups:** All groups convert to local ${ BRAND_NAME } groups. Syncing with your identity provider stops, and you'll manage membership in ${ BRAND_NAME } settings instead.": [
+        "**Gruppen:** Alle Gruppen werden in lokale ${ BRAND_NAME }-Gruppen umgewandelt. Die Synchronisierung mit deinem Identitätsanbieter wird beendet, und du verwaltest die Mitgliedschaft fortan in den ${ BRAND_NAME }-Einstellungen."
+      ],
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Voraussetzung:** Die SAML-Authentifizierung muss konfiguriert sein, um das SCIM-Provisioning zu ermöglichen."
       ],
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
         "**Voraussetzung:** Um die SCIM-Bereitstellung zu aktivieren, musst du die Eigentümerschaft der Domain **${ domainName }** verifizieren. Diese Verifizierung kann bis zu einer Stunde dauern."
+      ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**Benutzer:** Alle SCIM-Benutzer, die automatisch von deinem Identitätsanbieter bereitgestellt sind, werden in SSO-Benutzer umgewandelt und du kannst sie direkt in den Einstellungen von ${ BRAND_NAME } verwalten."
       ],
       "Enter the token into your identity provider": [
         "Gib den Token bei deinem Identitätsanbieter ein"
@@ -15247,14 +15304,23 @@
       "Make sure you copy the above SCIM token now.": [
         "Stelle sicher, dass du den obigen SCIM-Token jetzt kopierst."
       ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Wenn du die Synchronisierung wieder aktivierst, werden vorhandene Gruppen dupliziert. Diese können nicht wieder in SCIM zusammengeführt werden."
+      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Vereinfacht die Benutzerverwaltung über verschiedene Dienste hinweg. Füge Benutzer in deinem Identitätsanbieter hinzu, bearbeite und entferne sie, und diese Änderungen werden automatisch auf deine ${ appName } Organisation angewendet."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Das automatische SCIM-Provisioning wird deaktiviert, bis du den neuen SCIM-Token in die Einstellungen deines Identitätsanbieters eingibst."
       ],
+      "This will delete your SCIM base URL and token.": [
+        "Dadurch werden deine SCIM-basierende URL und Token gelöscht."
+      ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Um die Synchronisierung mit deinem Identitätsanbieter wieder zu aktivieren, musst du die SCIM-Integration erneut abschließen."
+      ],
+      "When you disable SCIM:": [
+        "Wenn du SCIM deaktivierst:"
       ]
     },
     "scim: Label": {
@@ -18969,6 +19035,9 @@
       "Customize import to reduce the number of labels": [
         "Import anpassen, um die Anzahl der Kategorien zu reduzieren"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status der Datenmigration von ${ providerName } zu ${ BRAND_NAME }"
+      ],
       "Device name and app version": [
         "Gerätename und App-Version"
       ],
@@ -19091,6 +19160,9 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Ungefährer Standort des Nutzers (basierend auf dessen IP-Adresse)"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Die Benutzer sehen dein Logo anstelle des ${ BRAND_NAME }-Symbols, wenn sie sich bei unseren Webanwendungen anmelden."

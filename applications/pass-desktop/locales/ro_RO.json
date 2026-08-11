@@ -912,8 +912,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de e-mail funcționează ca o adresă de e-mail, dar reduce mesajele nedorite și vă păstrează adresa de e-mail și identitatea reală ascunse."
       ],
+      "Change these passwords immediately": [
+        "Modificați imediat aceste parole"
+      ],
       "Change your passwords": [
         "Schimbați-vă parolele"
+      ],
+      "Check if your passwords have been exposed": [
+        "Verificați dacă parolele v-au fost expuse"
       ],
       "Create unique passwords": [
         "Creați parole unice"
@@ -968,6 +974,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Acest cont este vulnerabil, accesați serviciul și schimbați-vă parola."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Această parolă de conectare apare într-o breșă de date. Vizitați serviciul utilizat și modificați parola."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Acest serviciu oferă A2A. Activați-l pentru o securitate suplimentară a contului."
@@ -1403,6 +1412,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "A existat o eroare în timpul eliminării legăturii web securizate. Reîncercați peste câteva minute."
       ],
+      "This invite is no longer available": [
+        "Această invitație nu mai este disponibilă."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Prea multe încercări eșuate. Reconectați-vă."
       ],
@@ -1423,9 +1435,6 @@
       ],
       "Unknown error.": [
         "Eroare necunoscută."
-      ],
-      "Unknown invite": [
-        "Invitație necunoscută."
       ],
       "Unknown item": [
         "Element necunoscut"
@@ -4900,6 +4909,12 @@
       "Clear clipboard": [
         "Golire memorie"
       ],
+      "Compromised password": [
+        "Parolă compromisă"
+      ],
+      "Compromised passwords": [
+        "Parole compromise"
+      ],
       "Confirm extra password": [
         "Confirmare parolă suplimentară"
       ],
@@ -5119,6 +5134,9 @@
       "No access tokens yet": [
         "Încă nu există coduri de acces"
       ],
+      "No compromised passwords": [
+        "Parole necompromise"
+      ],
       "No excluded items": [
         "Nu sunt articole excluse"
       ],
@@ -5308,6 +5326,9 @@
       ],
       "Update available": [
         "Actualizare disponibilă"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Modificați contul pentru a putea verifica parolele compromise"
       ],
       "URL matching": [
         "Potrivire URL"

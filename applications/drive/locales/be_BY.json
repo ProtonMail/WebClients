@@ -48,12 +48,6 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Дадаць ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
-      "Add ${ photoCount } photo to a new album": [
-        "Дадаць ${ photoCount } фатаграфію ў новы альбом",
-        "Дадаць ${ photoCount } фатаграфіі ў новы альбом",
-        "Дадаць ${ photoCount } фатаграфій у новы альбом",
-        "Дадаць ${ photoCount } фатаграфій у новы альбом"
-      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -90,26 +84,11 @@
       "Add phone number": [
         "Дадаць нумар тэлефона"
       ],
-      "Add photos": [
-        "Дадаць фатаграфіі"
-      ],
       "Add storage": [
         "Павялічыць сховішча"
       ],
-      "Add to \"${ name }\" (${ photoCount } photo)": [
-        "Дадаць у \"${ name }\" (${ photoCount } фатаграфія)",
-        "Дадаць у \"${ name }\" (${ photoCount } фатаграфіі)",
-        "Дадаць у \"${ name }\" (${ photoCount } фатаграфій)",
-        "Дадаць у \"${ name }\" (${ photoCount } фатаграфій)"
-      ],
-      "Add to album": [
-        "Дадаць у альбом"
-      ],
       "Add to group": [
         "Дадаць у групу"
-      ],
-      "Album name": [
-        "Назва альбома"
       ],
       "Apply": [
         "Прымяніць"
@@ -195,6 +174,9 @@
       "Clear browser data": [
         "Ачысціць даныя браўзера"
       ],
+      "Clear conversation": [
+        "Ачысціць размову"
+      ],
       "Clear data": [
         "Ачысціць даныя"
       ],
@@ -221,9 +203,6 @@
       ],
       "Collaborate on documents": [
         "Сумесна працуйце над дакументамі"
-      ],
-      "Collapse folder": [
-        "Згарнуць папку"
       ],
       "Collapse navigation bar": [
         "Згарнуць панэль навігацыі"
@@ -297,14 +276,8 @@
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
       ],
-      "Create album": [
-        "Стварыць альбом"
-      ],
       "Create and copy alias": [
         "Стварыць і скапіяваць псеўданім"
-      ],
-      "Create business account": [
-        "Стварыць уліковы запіс для бізнесу"
       ],
       "Create folder": [
         "Стварыць папку"
@@ -314,9 +287,6 @@
       ],
       "Create new password": [
         "Стварыць новы пароль"
-      ],
-      "Create new text file": [
-        "Стварыць новы тэкставы файл"
       ],
       "Current plan": [
         "Бягучы тарыфны план"
@@ -351,9 +321,6 @@
         "Выдаліць ${ selectedCount } груп кантактаў",
         "Выдаліць ${ selectedCount } груп кантактаў"
       ],
-      "Delete album": [
-        "Выдаліць альбом"
-      ],
       "Delete contact": [
         "Выдаліць кантакт"
       ],
@@ -378,9 +345,6 @@
       "Details": [
         "Падрабязнасці"
       ],
-      "Diagnostics": [
-        "Дыягностыка"
-      ],
       "Discard": [
         "Адхіліць"
       ],
@@ -389,12 +353,6 @@
       ],
       "Display navigation bar": [
         "Паказваць панэль навігацыі"
-      ],
-      "Display next": [
-        "Паказваць наступны"
-      ],
-      "Display previous": [
-        "Паказваць папярэдні"
       ],
       "Done": [
         "Гатова"
@@ -414,9 +372,6 @@
       "Download anyway": [
         "Усё роўна спампаваць"
       ],
-      "Download for Mac": [
-        "Спампаваць для Mac"
-      ],
       "Download for macOS": [
         "Спампаваць для macOS"
       ],
@@ -428,12 +383,6 @@
       ],
       "Download logs": [
         "Спампаваць журналы"
-      ],
-      "Download results": [
-        "Спампаваць вынікі"
-      ],
-      "Drive Locked": [
-        "Дыск заблакіраваны"
       ],
       "Edit": [
         "Рэдагаваць"
@@ -465,17 +414,8 @@
       "enable desktop notifications": [
         "ўключэнне апавяшчэнняў на працоўным стале"
       ],
-      "Enable drive search": [
-        "Уключыць пошук на дыску"
-      ],
       "Encrypted": [
         "Зашыфравана"
-      ],
-      "Expand folder": [
-        "Разгарнуць папку"
-      ],
-      "Explore more": [
-        "Даследуйце больш"
       ],
       "Explore other plans": [
         "Даследаваць іншыя тарыфныя планы"
@@ -488,9 +428,6 @@
       ],
       "Export selection as .vcf": [
         "Экспарт вылучэння ў фармат .vcf"
-      ],
-      "Export system log": [
-        "Экспартаванне сістэмнага журнала"
       ],
       "Fit to window": [
         "Па памеры акна"
@@ -537,20 +474,11 @@
       "Go back": [
         "Вярнуцца"
       ],
-      "Go back to album \"${ ellipsedAlbumName }\"": [
-        "Вярнуцца ў альбом “${ ellipsedAlbumName }\""
-      ],
       "Go to ${ planOrAppName }": [
         "Перайсці ў ${ planOrAppName }"
       ],
       "Go to label": [
         "Перайсці ў меткі"
-      ],
-      "Go to my files": [
-        "Перайсці ў мае файлы"
-      ],
-      "Go to parent": [
-        "Перайсці ў бацькоўскую"
       ],
       "Go to settings": [
         "Перайсці ў налады"
@@ -624,9 +552,6 @@
       "Leave": [
         "Выйсці"
       ],
-      "Leave album": [
-        "Выйсці з альбома"
-      ],
       "Let's talk": [
         "Звяжыцеся з намі"
       ],
@@ -657,9 +582,6 @@
       "Manage labels": [
         "Кіраванне меткамі"
       ],
-      "Manage share": [
-        "Кіраваць абагульваннем"
-      ],
       "Manage users/addresses": [
         "Кіраваць карыстальнікамі/адрасамі"
       ],
@@ -680,6 +602,9 @@
       ],
       "Merge contacts": [
         "Аб'яднаць кантакты"
+      ],
+      "Migrate": [
+        "Перанесці"
       ],
       "Minimize transfers": [
         "Згарнуць перадачы"
@@ -712,13 +637,7 @@
         "Перамясціць у сметніцу"
       ],
       "Name your album": [
-        "Назва вашага альбома"
-      ],
-      "New": [
-        "Новая"
-      ],
-      "New album": [
-        "Новы альбом"
+        "Назавіце свой альбом"
       ],
       "New document": [
         "Новы дакумент"
@@ -728,9 +647,6 @@
       ],
       "New message": [
         "Новае паведамленне"
-      ],
-      "New shared album": [
-        "Новы абагулены альбом"
       ],
       "New spreadsheet": [
         "Новая эл. табліца"
@@ -786,17 +702,11 @@
       "Quit": [
         "Выйсці"
       ],
-      "Re-index": [
-        "Пераіндэксаваць"
-      ],
       "Re-indexing in progress": [
         "Адбываецца паўторнае індэксаванне"
       ],
       "Re-sign": [
         "Паўторна падпісаць"
-      ],
-      "Rebuild index": [
-        "Аднавіць індэкс"
       ],
       "Reconnect": [
         "Перападключыцца"
@@ -809,9 +719,6 @@
       ],
       "Refer a friend": [
         "Запрасіць сябра"
-      ],
-      "Refetch index": [
-        "Абнавіць індэкс"
       ],
       "Refresh the page": [
         "Абнавіць старонку"
@@ -834,20 +741,11 @@
       "Remove button": [
         "Выдаліць кнопку"
       ],
-      "Remove device": [
-        "Выдаліць прыладу"
-      ],
-      "Remove from album": [
-        "Выдаліць з альбома"
-      ],
       "Remove from favorites": [
         "Выдаліць з абранага"
       ],
       "Remove gift code": [
         "Выдаліць падарункавы код"
-      ],
-      "Remove me": [
-        "Выдаліць мяне"
       ],
       "Remove my access": [
         "Выдаліць мой доступ"
@@ -857,9 +755,6 @@
       ],
       "Rename": [
         "Перайменаваць"
-      ],
-      "Rename album": [
-        "Перайменаваць альбом"
       ],
       "Replace file": [
         "Замяніць файл"
@@ -903,9 +798,6 @@
       "Restore this version": [
         "Аднавіць гэту версію"
       ],
-      "Restore version": [
-        "Аднавіць версію"
-      ],
       "Retry": [
         "Паўтарыць"
       ],
@@ -918,17 +810,8 @@
       "Save": [
         "Захаваць"
       ],
-      "Save and remove": [
-        "Захаваць і выдаліць"
-      ],
       "Save changes": [
         "Захаваць змены"
-      ],
-      "Save photo to your gallery": [
-        "Захаваць фатаграфіі ў вашай галерэі"
-      ],
-      "Save photos and remove": [
-        "Захаваць фатаграфіі і выдаліць"
       ],
       "Scan & Download": [
         "Сканіраваць і спампаваць"
@@ -944,12 +827,6 @@
       ],
       "Search countries": [
         "Пошук краін"
-      ],
-      "Search drive": [
-        "Пошук на дыску"
-      ],
-      "Search is unavailable": [
-        "Пошук недаступны"
       ],
       "See how": [
         "Паглядзець як"
@@ -984,9 +861,6 @@
       "Set as album cover": [
         "Задаць у якасці вокладкі альбома"
       ],
-      "Set as cover": [
-        "Задаць у якасці вокладкі"
-      ],
       "Set password or expiration date": [
         "Задаць пароль або тэрмін дзеяння"
       ],
@@ -1010,12 +884,6 @@
       ],
       "Share": [
         "Абагуліць"
-      ],
-      "Share album": [
-        "Абагуліць альбом"
-      ],
-      "Share file": [
-        "Абагуліць файл"
       ],
       "Share item": [
         "Абагуліць элемент"
@@ -1074,11 +942,11 @@
       "Start import": [
         "Пачаць імпартаванне"
       ],
-      "Start recovering": [
-        "Пачаць аднаўленне"
-      ],
       "Stay": [
         "Застацца"
+      ],
+      "Stop": [
+        "Спыніць"
       ],
       "Stop sharing": [
         "Спыніць абагульванне"
@@ -1101,9 +969,6 @@
       "Take a tour": [
         "Пачаць знаёмства"
       ],
-      "This album is empty": [
-        "Гэты альбом пусты"
-      ],
       "Toggle Calendar app": [
         "Пераключыць на праграму Каляндар"
       ],
@@ -1118,9 +983,6 @@
       ],
       "Trust": [
         "Давяраць"
-      ],
-      "Try ${ BRAND_NAME } Workspace": [
-        "Паспрабуйце ${ BRAND_NAME } Workspace"
       ],
       "Try again": [
         "Паспрабуйце яшчэ раз"
@@ -1176,12 +1038,6 @@
       "Upload folder": [
         "Запампаваць папку"
       ],
-      "Upload from computer": [
-        "Запампаваць з камп'ютара"
-      ],
-      "Upload photos": [
-        "Запампаваць фатаграфіі"
-      ],
       "Upload picture": [
         "Запампаваць малюнак"
       ],
@@ -1230,20 +1086,11 @@
       "What do I get?": [
         "Што я атрымаю?"
       ],
-      "Windows 11 (ARM64)": [
-        "Windows 11 (ARM64)"
-      ],
-      "Windows 11/10 (x64)": [
-        "Windows 11/10 (x64)"
-      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантакту",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
-      ],
-      "Your 3 GB bonus": [
-        "Ваш бонус у 3 ГБ"
       ],
       "Zoom in": [
         "Павялічыць"
@@ -1260,11 +1107,6 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Адкрыць у ${ SHEETS_APP_NAME }"
-      ]
-    },
-    "Actions": {
-      "Upload": [
-        "Запампаваць"
       ]
     },
     "Actions message": {
@@ -1480,11 +1322,6 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "Ваш бясплатны пробны перыяд завершыцца ${ timeRemaining }"
-      ]
-    },
-    "Badge": {
-      "Invited": [
-        "Запрошаны"
       ]
     },
     "bf2023: Deal details": {
@@ -3193,9 +3030,6 @@
       ]
     },
     "Docs Info": {
-      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
-        "Супрацоўнічаць стала яшчэ прасцей. Цяпер кожны можа прапанаваць рэдагаванні без змянення дакумента."
-      ],
       "Suggestion mode is here": [
         "Цяпер даступны рэжым прапановы"
       ]
@@ -3437,6 +3271,9 @@
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Пры справаздачы аб парушэнні аўтарскіх правоў або крадзяжы даных вы павінны пакінуць паведамленне"
+      ],
       "A problem occurred, please try again.": [
         "Узнікла праблема. Паспрабуйце яшчэ раз."
       ],
@@ -3445,6 +3282,9 @@
       ],
       "Address could not be added.": [
         "Немагчыма дадаць адрас."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Адрас ужо выкарыстоўваецца карыстальнікам з іншай арганізацыі. Звярніцеся ў службу падтрымкі кліентаў для вырашэння гэтай праблемы"
       ],
       "Address primary private key not found": [
         "Асноўны закрыты ключ адраса не знойдзены"
@@ -3488,20 +3328,32 @@
       "Authentication error.": [
         "Памылка аўтэнтыфікацыі."
       ],
+      "Bookmark password is not available": [
+        "Пароль закладкі недаступны"
+      ],
       "Calendar limit reached": [
         "Дасягнута абмежаванне па календары"
       ],
-      "Can't find any secure link": [
-        "Немагчыма знайсці бяспечную спасылку"
-      ],
-      "Can't retrieve device name": [
-        "Немагчыма атрымаць назву прылады"
+      "Cannot add photo to album without a valid name": [
+        "Немагчыма дадаць фатаграфію ў альбом без сапраўднай назвы"
       ],
       "Cannot export this contact": [
         "Немагчыма экспартаваць гэты кантакт"
       ],
       "Cannot find move target": [
         "Немагчыма знайсці мэтавую папку для перамяшчэння"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Немагчыма перанесці элемент без сапраўднай назвы. Спачатку дайце яму іншую назву."
+      ],
+      "Cannot share root folder": [
+        "Немагчыма абагуліць каранёвую папку"
+      ],
+      "Cannot verify the author of this file": [
+        "Немагчыма спраўдзіць аўтара гэтага файла"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Немагчыма спраўдзіць хто запампаваў гэты файл"
       ],
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
@@ -3524,8 +3376,20 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Пошук па кантэксце не можа быць уключаны. Перазапусціце праграму або ачысціце яе даныя."
       ],
+      "Copy operation aborted": [
+        "Аперацыя капіявання перарвана"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Капіяванне элементаў па-за межы папкі забаронена"
+      ],
       "Could not add to favorites": [
         "Не ўдалося дадаць у абранае"
+      ],
+      "Could not find an available name": [
+        "Немагчыма знайсці даступную назву"
+      ],
+      "Could not load sharing details": [
+        "Немагчыма загрузіць абагуленыя падрабязнасці"
       ],
       "Could not open created vault": [
         "Не ўдалося адкрыць створанае сховішча"
@@ -3533,8 +3397,20 @@
       "Could not open updated vault": [
         "Не ўдалося адкрыць абноўленае сховішча"
       ],
-      "Could not remove from favorites": [
-        "Не ўдалося выдаліць з абранага"
+      "Could not read part of this file: ${ message }": [
+        "Немагчыма прачытаць частку гэтага файла: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Немагчыма разблакіраваць бацькоўскую папку"
+      ],
+      "Could not unlock this item": [
+        "Немагчыма разблакіраваць гэты элемент"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Стварэнне файлаў па-за іх межамі забаронена"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Стварэнне папак па-за іх межамі забаронена"
       ],
       "Data integrity check failed": [
         "Збой праверкі цэласнасці звестак"
@@ -3551,17 +3427,11 @@
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або"
       ],
-      "Device name does not match": [
-        "Назва прылады не супадае"
-      ],
-      "Diagnostics failed": [
-        "Збой дыягностыкі"
+      "Device not found": [
+        "Прылада не знойдзена"
       ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
-      ],
-      "Downloads of desktop apps are currently unavailable": [
-        "Спампоўванне праграм для камп'ютара ў цяперашні час недаступна"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "У дадзены момант недаступна рэдагаванне адраса аплаты. Паспрабуйце яшчэ раз пазней."
@@ -3584,11 +3454,8 @@
       "Error decrypting a computer": [
         "Памылка пры расшыфроўцы прылады"
       ],
-      "Error reading file": [
-        "Памылка пры чытанні файла"
-      ],
-      "Expected structure attached": [
-        "Чаканая структура далучана"
+      "Expiration date cannot be in the past": [
+        "Дата завяршэння не можа быць у мінулым"
       ],
       "External accounts are not supported yet": [
         "Знешнія ўліковыя запісы пакуль не падтрымліваюцца"
@@ -3614,6 +3481,27 @@
       "Failed to create public share node": [
         "Не ўдалося стварыць публічны вузел абагульвання"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ закладкі: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Не ўдалося расшыфраваць назву закладкі: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Не ўдалося расшыфраваць пароль закладкі: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ змесціва: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Не ўдалося расшыфраваць назву элемента: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ вузла: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Не ўдалося расшыфраваць метаданыя рэдакцыі"
+      ],
       "Failed to expand folder": [
         "Не ўдалося разгарнуць папку"
       ],
@@ -3625,6 +3513,9 @@
       ],
       "Failed to get details, please try again later": [
         "Не ўдалося атрымаць падрабязнасці. Паспрабуйце яшчэ раз пазней"
+      ],
+      "Failed to get inviter keys": [
+        "Не ўдалося атрымаць ключы запрашэння"
       ],
       "Failed to load signature details, please try again later": [
         "Не ўдалося загрузіць падрабязнасці подпісу. Паспрабуйце яшчэ раз пазней"
@@ -3650,17 +3541,26 @@
       "Failed to update public share node": [
         "Не ўдалося абнавіць публічны вузел абагульвання"
       ],
+      "Failed to verify invitation": [
+        "Не ўдалося спраўдзіць запрашэнне"
+      ],
+      "File download failed due to empty response": [
+        "Збой спампоўвання файла. Прычына: пусты адказ"
+      ],
+      "File has no revision": [
+        "У файла адсутнічае рэдакцыя"
+      ],
       "First name is too long": [
         "Занадта доўгае імя"
       ],
       "Folder name cannot be empty.": [
         "Назва папкі не можа быць пустой."
       ],
-      "Folder not found": [
-        "Папка не знойдзена"
-      ],
       "Forward address is required": [
         "Патрабуецца адрас перасылкі"
+      ],
+      "Image preview not found": [
+        "Папярэдні прагляд відарыса не знойдзены"
       ],
       "Image upload failed": [
         "Не ўдалося запампаваць відарыс"
@@ -3686,9 +3586,6 @@
       "Invalid IBAN": [
         "Памылковы IBAN"
       ],
-      "Invalid JSON file": [
-        "Памылковы файл JSON"
-      ],
       "Invalid name": [
         "Памылковая назва"
       ],
@@ -3707,8 +3604,14 @@
       "Invalid verification code": [
         "Памылковы код спраўджання"
       ],
+      "Invitation not found": [
+        "Запрашэнне не знойдзена"
+      ],
       "Item content cannot exceed 40KB": [
         "Змесціва элемента не можа перавышаць 40 КБ"
+      ],
+      "Item not found": [
+        "Элемент не знойдзены"
       ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
@@ -3716,20 +3619,53 @@
       "Last name is too long": [
         "Занадта доўгае прозвішча"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Састарэлая публічная спасылка не можа быць абноўлена. Паўторна стварыце новую публічную спасылку."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адрас удзельніка не знойдзены. Звяжыцеся з нашай службай падтрымкі кліентаў, каб вырашыць гэта"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Аб'яднайце прынамсі ${ calendarsToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
         "Аб'яднайце прынамсі ${ calendarsToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }",
         "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }",
         "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }"
       ],
+      "Missing inviter email": [
+        "Электронная пошта запрошанай асобы адсутнічае"
+      ],
       "Missing key packet": [
         "Адсутнічае пакет ключоў"
+      ],
+      "Missing organization private key": [
+        "Адсутнічае закрыты ключ арганізацыі"
+      ],
+      "Missing organization public key": [
+        "Адсутнічае адкрыты ключ арганізацыі"
       ],
       "Missing signature": [
         "Адсутнічае подпіс"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Адсутнічае паведамленне для ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Аперацыя перамяшчэння перарвана"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Перамяшчэнне элементаў па-за межы папкі забаронена"
+      ],
+      "Moving root item is not allowed": [
+        "Перамяшчэнне элемента суперкарыстальніка забаронена"
+      ],
       "Name is required": [
         "Патрабуецца назва"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвала",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў"
       ],
       "Network error": [
         "Памылка сеткі"
@@ -3745,6 +3681,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
+      ],
+      "No file data was received. Please try again.": [
+        "Ніякія даныя файла не былі атрыманы. Паўтарыце спробу."
       ],
       "No file to upload": [
         "Няма файла для запампоўкі"
@@ -3767,6 +3706,21 @@
         "У некаторых групах няма кантактаў: ${ noContactGroupList } ",
         "У некаторых групах няма кантактаў: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Толькі ў адміністратараў ёсць правы для пераўтварэння знешніх запрашэнняў"
+      ],
+      "Operation aborted": [
+        "Аперацыя перарвана"
+      ],
+      "Operation failed, try again later": [
+        "Збой выканання аперацыі. Паўтарыце спробу пазней"
+      ],
+      "Organization does not have enough seats available": [
+        "У арганізацыі недастаткова даступных ліцэнзій"
+      ],
+      "Organization does not have enough storage available": [
+        "У арганізацыі недастаткова даступнага месца для захоўвання"
+      ],
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
       ],
@@ -3775,6 +3729,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Ключ арганізацыі павінен быць актываваны, каб ствараць непрыватных карыстальнікаў"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Здаецца, што частка файла пашкоджана"
       ],
       "Password is required": [
         "Патрабуецца ўвесці пароль"
@@ -3793,6 +3750,12 @@
       ],
       "Payment process not supported": [
         "Апрацоўка плацяжу не падтрымліваецца"
+      ],
+      "Photo is already in the target album": [
+        "Фатаграфія ўжо знаходзіцца ў мэтавым альбоме"
+      ],
+      "Photo not found": [
+        "Фатаграфія не знойдзена"
       ],
       "Please activate your search again": [
         "Актывуйце пошук яшчэ раз"
@@ -3866,8 +3829,14 @@
         "Выдаленыя дублікаты запрошаных: ${ joinedInvitee }",
         "Выдаленыя дублікаты запрошаных: ${ joinedInvitee }"
       ],
+      "Renaming root item is not allowed": [
+        "Перайменаванне элемента суперкарыстальніка забаронена"
+      ],
       "Report failed to be sent": [
         "Не ўдалося адправіць справаздачу"
+      ],
+      "Request aborted": [
+        "Запыт перарваны"
       ],
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
@@ -3878,17 +3847,38 @@
       "Search failed": [
         "Не ўдалося знайсці"
       ],
+      "Signature is missing": [
+        "Подпіс адсутнічае"
+      ],
       "Signature not verified": [
         "Подпіс не спраўджаны"
       ],
       "Signature verification failed": [
         "Не ўдалося спраўдзіць подпіс"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Збой спраўджання подпісу: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Збой спраўджання подпісу для ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Збой спраўджання подпісу для ${ signatureType }: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Не ўдалося выдаліць некаторыя кантакты"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Некаторыя даныя файла не ўдалося запампаваць. Паўтарыце спробу."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Некаторыя часткі файла не ўдалося запампаваць. Паўтарыце спробу."
+      ],
       "Some groups could not be deleted": [
         "Не ўдалося выдаліць некаторыя групы"
+      ],
+      "Some items could not be loaded": [
+        "Некаторыя элементы немагчыма загрузіць"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Назвы некаторых вашых папак недаступны. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
@@ -3908,17 +3898,14 @@
       "Something went wrong": [
         "Нешта пайшло не так"
       ],
-      "Something went wrong during folder listing": [
-        "Нешта пайшло не так падчас пераліку папак."
-      ],
       "Something went wrong while fetching available domains": [
         "Нешта пайшло не так пры атрыманні даступных даменаў"
       ],
       "Something went wrong with search. Please try again later.": [
-        "Нешта пайшло не так з пошукам. Паспрабуйце яшчэ раз пазней."
+        "Нешта пайшло не так з пошукам. Паўтарыце спробу пазней."
       ],
-      "Something went wrong with search: Not enough storage space.": [
-        "Нешта пайшло не так з пошукам: недастаткова месца на дыску."
+      "Something went wrong, please try again later": [
+        "Нешта пайшло не так. Паўтарыце спробу пазней"
       ],
       "Something went wrong. Please try again.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз."
@@ -3968,6 +3955,9 @@
       "The minimum donation amount is ${ price }": [
         "Мінімальная сума ахвяравання складае ${ price }"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Запампаваны файл не адпавядае арыгіналу. Паўтарыце спробу."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
       ],
@@ -3986,14 +3976,35 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Поле павінна змяшчаць як мінімум ${ minimumLength } сімвалаў."
       ],
+      "This file has missing crypto material": [
+        "У гэтага файла адсутнічае крыптаграфічны матэрыял"
+      ],
+      "This file has no version available to download": [
+        "У гэтага файла адсутнічае даступная версія для спампоўвання"
+      ],
+      "This file version could not be uploaded": [
+        "Не ўдалося запампаваць гэтую версію файла"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Гэта назва для папкі недаступна. Выберыце іншую назву."
+      ],
+      "This item has no image preview": [
+        "У гэтага элемента адсутнічае папярэдні прагляд відарыса"
+      ],
+      "This item is no longer shared": [
+        "Гэты элемент больш не абагульваецца"
+      ],
+      "This item is not shared": [
+        "Гэты элемент не абагульваецца"
       ],
       "This label name is not available. Please choose a different name.": [
         "Гэта назва для меткі недаступна. Выберыце іншую назву."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Гэта паведамленне можа змяшчаць некаторыя спасылкі на URL-адрасы, якія ваш бягучы браўзер не зможа правільна адкрыць."
+      ],
+      "Too many server requests, please try again later": [
+        "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
       ],
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
@@ -4037,26 +4048,23 @@
       "VAT number must start with ${ prefixes }": [
         "Нумар ПДВ павінен пачынацца з ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "Ключы спраўджання недаступны"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Ключы спраўджання для ${ signatureType } недаступны"
+      ],
       "We cannot retrieve this item": [
         "Немагчыма атрымаць гэты элемент"
       ],
       "We couldn’t send a verification code using this method.": [
         "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
       ],
-      "We were not able to load some invitations": [
-        "Не ўдалося загрузіць некаторыя запрашэнні"
-      ],
       "We were not able to load some items": [
         "Не ўдалося загрузіць некаторыя элементы"
       ],
-      "We were not able to load some items shared with you": [
-        "Не ўдалося загрузіць некаторыя элементы абагуленыя з вамі"
-      ],
-      "We were not able to load some of your invitation to shared items": [
-        "Не ўдалося загрузіць некаторыя вашы запрашэнні для абагуленых элементаў"
-      ],
       "We were not able to load some of your saved shared links": [
-        "Не ўдалося загрузіць некаторыя вашы захаваныя абагуленыя спасылкі"
+        "Не ўдалося загрузіць некаторыя вашы захаваныя спасылкі з абагульваннем"
       ],
       "We were not able to load some of your shared items": [
         "Не ўдалося загрузіць некаторыя вашы абагуленыя элементы"
@@ -4064,23 +4072,35 @@
       "We were not able to load some search results": [
         "Не ўдалося загрузіць некаторыя вынікі пошуку"
       ],
-      "We were not able to load the file history": [
-        "Не ўдалося загрузіць гісторыю файла"
-      ],
       "We were not able to load the folder contents": [
         "Не ўдалося загрузіць змесціва папкі"
       ],
-      "We're sorry, but free upload is not available right now.": [
-        "Прабачце, але бясплатная запампоўка ў цяперашні час недаступна."
-      ],
       "Wrong billing address": [
         "Няправільны плацежны адрас"
+      ],
+      "You can create public links for your own files only": [
+        "Вы можаце ствараць публічныя спасылкі толькі для сваіх уласных файлаў"
+      ],
+      "You can only leave items that are shared with you": [
+        "У вас ёсць магчымасць толькі выйсці з элементаў, якія абагульваюцца з вамі"
+      ],
+      "You can only upload a new version to a file": [
+        "Вы можаце толькі запампаваць новую версію ў файл"
+      ],
+      "You can update a public link for your own files only": [
+        "Вы можаце абнавіць публічную спасылку толькі для вашых уласных файлаў"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальніку",
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам"
+      ],
+      "You do not have access to this item": [
+        "У вас няма доступу да гэтага элемента"
+      ],
+      "You do not have access to this shared item": [
+        "У вас няма доступу да гэтага абагуленага элемента"
       ],
       "You have reached the maximum number of calendars.": [
         "Вы дасягнулі максімальнай колькасці календароў."
@@ -4244,20 +4264,14 @@
       ]
     },
     "Error message": {
-      "Access denied": [
-        "У доступе адмоўлена"
-      ],
       "App currently unavailable": [
         "Праграма часова недаступна"
       ],
       "Brace yourself till we get the error fixed.": [
-        "Пачакайце, пакуль мы выправім памылку."
+        "Дачакайцеся, пакуль мы выправім памылку."
       ],
       "Error: ${ errorMessage }": [
         "Памылка: ${ errorMessage }"
-      ],
-      "Internal server error": [
-        "Унутраная памылка сервера"
       ],
       "Not found": [
         "Не знойдзена"
@@ -4346,14 +4360,6 @@
     "Event title": {
       "(no title)": [
         "(без загалоўка)"
-      ]
-    },
-    "Failed": {
-      "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } са збоем",
-        "${ countOfFailedLinks } са збоем",
-        "${ countOfFailedLinks } са збоем",
-        "${ countOfFailedLinks } са збоем"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4597,6 +4603,26 @@
         "тэрабайтаў"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Актывавана"
+      ],
+      "All": [
+        "Усе"
+      ],
+      "Errors": [
+        "Памылкі"
+      ],
+      "In progress": [
+        "Выконваецца"
+      ],
+      "Not activated": [
+        "Не актывавана"
+      ],
+      "Pending": [
+        "У чаканні"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } абноўлена"
@@ -4648,12 +4674,6 @@
       "Contacts": [
         "Кантакты"
       ],
-      "Create new album": [
-        "Стварэнне новага альбома"
-      ],
-      "Create new shared album": [
-        "Стварэнне новага абагуленага альбома"
-      ],
       "Domain": [
         "Дамен"
       ],
@@ -4663,37 +4683,11 @@
       "Password ends with": [
         "Пароль заканчваецца на"
       ],
-      "Rename album": [
-        "Перайменаваць альбом"
-      ],
       "Security Center": [
         "Цэнтр бяспекі"
       ],
       "Username": [
         "Імя карыстальніка"
-      ]
-    },
-    "Heading": {
-      "Add ${ photoCount } photo to": [
-        "Дадаць ${ photoCount } фатаграфію ў",
-        "Дадаць ${ photoCount } фатаграфіі ў",
-        "Дадаць ${ photoCount } фатаграфій у",
-        "Дадаць ${ photoCount } фатаграфій у"
-      ],
-      "Add to shared album": [
-        "Дадаць у абагулены альбом"
-      ],
-      "All albums": [
-        "Усе альбомы"
-      ],
-      "Recent": [
-        "Нядаўнія"
-      ],
-      "Share ${ photoCount } photo via": [
-        "Абагуліць ${ photoCount } фатаграфію праз",
-        "Абагуліць ${ photoCount } фатаграфіі праз",
-        "Абагуліць ${ photoCount } фатаграфій праз",
-        "Абагуліць ${ photoCount } фатаграфій праз"
       ]
     },
     "Hint": {
@@ -5023,6 +5017,9 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "З памылкамі"
+      ],
       "In progress": [
         "Выконваецца"
       ],
@@ -5057,23 +5054,11 @@
         "${ addressCount } адрасоў электроннай пошты",
         "${ addressCount } адрасоў электроннай пошты"
       ],
-      "${ albumName } has been successfully deleted": [
-        "${ albumName } быў паспяхова выдалены"
-      ],
-      "${ albums } album": [
-        "${ albums } альбом",
-        "${ albums } альбомы",
-        "${ albums } альбомаў",
-        "${ albums } альбомаў"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe памочнік у напісанні"
-      ],
-      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
-        "${ BRAND_NAME } Workspace дазваляе вашай камандзе эфектыўна супрацоўнічаць і не падвяргаць рызыцы даныя вашай кампаніі."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
@@ -5129,17 +5114,8 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Файлы ${ DOCS_APP_NAME } і ${ SHEETS_APP_NAME } не могуць быць спампаваны наўпрост і яны не будуць уключаны ў гэта спампоўванне. Вы можаце спампаваць іншыя файлы націснуўшы \"Працягнуць спампоўванне\"."
       ],
-      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } выявіў, што лакальны індэкс пошуку пашкоджаны і яго больш нельга выкарыстоўваць. Паспрабуйце аднавіць індэкс, каб мець магчымасць карыстацца пошукам далей."
-      ],
-      "${ DRIVE_APP_NAME } on App Store": [
-        "${ DRIVE_APP_NAME } у App Store"
-      ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } у Play Store"
-      ],
-      "${ email } invited you to join ${ albumName }": [
-        "${ email } запрасіў(ла) вас далучыцца да ${ albumName }"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: відарыс у поўным памеры"
@@ -5147,29 +5123,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
       ],
-      "${ files } file": [
-        "${ files } файл",
-        "${ files } файлы",
-        "${ files } файлаў",
-        "${ files } файлаў"
-      ],
-      "${ folders } folder": [
-        "${ folders } папка",
-        "${ folders } папкі",
-        "${ folders } папак",
-        "${ folders } папак"
-      ],
       "${ groupCounts } group found": [
         "Знойдзена ${ groupCounts } група",
         "Знойдзена ${ groupCounts } групы",
         "Знойдзена ${ groupCounts } груп",
         "Знойдзена ${ groupCounts } груп"
       ],
-      "${ invitationsCount } pending invitation": [
-        "${ invitationsCount } у чаканні запрашэння",
-        "${ invitationsCount } у чаканні запрашэння",
-        "${ invitationsCount } у чаканні запрашэння",
-        "${ invitationsCount } у чаканні запрашэння"
+      "${ IDEAL_BRAND_NAME } mark": [
+        "Пазначыць ${ IDEAL_BRAND_NAME }"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
@@ -5194,18 +5155,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }. Кошт і дата падаўжэння вашай падпіскі ${ planTitle } застануцца нязменнымі."
-      ],
-      "${ photoCount } item": [
-        "${ photoCount } элемент",
-        "${ photoCount } элементы",
-        "${ photoCount } элементаў",
-        "${ photoCount } элементаў"
-      ],
-      "${ photos } photo": [
-        "${ photos } фатаграфія",
-        "${ photos } фатаграфіі",
-        "${ photos } фатаграфій",
-        "${ photos } фатаграфій"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
@@ -5327,9 +5276,6 @@
       "30-day money-back guarantee.": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
       ],
-      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
-        "Даступна новая версія ${ DRIVE_APP_NAME }. Перазагрузіце старонку, каб скарыстацца пошукам."
-      ],
       "A number will be added to the filename": [
         "Да назвы файла будзе дададзены нумар"
       ],
@@ -5412,7 +5358,7 @@
         "Ужо ў вашай бібліятэцы"
       ],
       "Also try looking in Trash.": [
-        "Таксама паспрабуйце пашукаць у Сметніцы."
+        "Таксама паспрабуйце пашукаць у сметніцы."
       ],
       "American Express SafeKey logo": [
         "Лагатып American Express SafeKey"
@@ -5423,23 +5369,11 @@
       "Amount below minimum (${ amount }).": [
         "Сума ніжэй за мінімум (${ amount })."
       ],
-      "An active recovery file": [
-        "Актыўны файл аднаўлення"
-      ],
-      "An issue occurred during the restore process.": [
-        "Падчас працэсу аднаўлення адбылася памылка."
-      ],
       "and": [
         "і"
       ],
-      "And access it from anywhere": [
-        "І атрымлівайце доступ да яго з любой краіны ў свеце"
-      ],
       "Anonymous": [
         "Ананімны"
-      ],
-      "Apr": [
-        "Кра"
       ],
       "Are you sure you want to discard your changes?": [
         "Вы сапраўды хочаце адхіліць змены?"
@@ -5450,17 +5384,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Вы сапраўды хочаце ачысціць сметніцу і незваротна выдаліць усе элементы?"
       ],
-      "Are you sure you want to permanently delete": [
-        "Вы сапраўды хочаце незваротна выдаліць"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Вы сапраўды хочаце незваротна выдаліць \"${ itemName }\" са сметніцы?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Вы сапраўды хочаце незваротна выдаліць выбраныя элементы са сметніцы?"
-      ],
-      "Are you sure you want to proceed?": [
-        "Вы сапраўды хочаце працягнуць?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
@@ -5471,17 +5399,14 @@
       "Attention required": [
         "Патрабуецца ўвага"
       ],
-      "Aug": [
-        "Жні"
+      "Author is not provided on public link": [
+        "Аўтар не пазначаны ў публічнай спасылцы"
       ],
       "Awaiting transaction": [
         "Чаканне трансакцыі"
       ],
       "Balance from your previous subscription": [
         "Баланс з вашай папярэдняй падпіскі"
-      ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Немагчыма атрымаць доступ або расшыфраваць вашы файлы, паколькі праграма ${ DRIVE_APP_NAME } зашыфравана скразным метадам. У вас павінна быць што-небудзь з прыведзенага для разблакіроўкі вашага дыска пасля скідання пароля:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага кода спраўджання праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
@@ -5525,9 +5450,6 @@
       "Canceled": [
         "Скасавана"
       ],
-      "Cannot load links": [
-        "Немагчыма загрузіць спасылкі"
-      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам адхіліць гэту абвестку."
       ],
@@ -5540,23 +5462,14 @@
       "Choose a plan that works best for you.": [
         "Выберыце тарыфны план, які найлепш вам пасуе."
       ],
-      "Clear all search data": [
-        "Ачысціць усе даныя пошуку"
-      ],
       "Clear data": [
         "Ачысціць даныя"
       ],
       "Clear encrypted search data": [
         "Ачысціць зашыфраваныя даныя пошуку"
       ],
-      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Ачыстка даных браўзера таксама ачысціць індэкс пошуку на гэтай прыладзе. Неабходна будзе зрабіць паўторную індэксацыю ўсіх файлаў выкарыстоўваючы функцыянальнасць пошуку."
-      ],
       "Clears browser data related to the encrypted search.": [
         "Ачышчае даныя браўзера, якія звязаны з зашыфраваным пошукам."
-      ],
-      "Clears browser data related to the search.": [
-        "Ачышчае даныя браўзера, якія звязаны з пошукам."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
@@ -5615,9 +5528,6 @@
       "Create in": [
         "Стварыць у"
       ],
-      "Create links and share your files with others.": [
-        "Стварайце спасылкі і абагульвайце свае файлы з іншымі."
-      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Крэдыты для нявыкарыстанай часткі вашага папярэдняга плана падпіскі"
       ],
@@ -5633,9 +5543,6 @@
       "Data integrity check failed": [
         "Збой праверкі цэласнасці звестак"
       ],
-      "Dec": [
-        "Сне"
-      ],
       "Decrypting files": [
         "Расшыфроўка файлаў"
       ],
@@ -5647,12 +5554,6 @@
       ],
       "default email address": [
         "прадвызначаны адрас электроннай пошты"
-      ],
-      "Delete locked drive": [
-        "Выдаліць заблакіраваны дыск",
-        "Выдаліць заблакіраваныя дыскі",
-        "Выдаліць заблакіраваныя дыскі",
-        "Выдаліць заблакіраваныя дыскі"
       ],
       "Details": [
         "Падрабязнасці"
@@ -5687,9 +5588,6 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
       ],
-      "Download ${ name } app": [
-        "Спампаваць праграму для ${ name }"
-      ],
       "Download current logs": [
         "Спампоўванне бягучых журналаў"
       ],
@@ -5710,9 +5608,6 @@
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
-      ],
-      "Drop files here": [
-        "Перацягніце файлы сюды"
       ],
       "Drop files here to upload or click on the upload button": [
         "Перацягніце файлы сюды, каб запампаваць або націсніце адпаведную кнопку"
@@ -5741,17 +5636,8 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Лісты, якія перамешчаны ў папку Сметніца і Спам больш за 30 дзён таму, будуць выдаляцца аўтаматычна."
       ],
-      "Empty folder": [
-        "Пустая папка"
-      ],
       "Enabling auto-deletion…": [
         "Уключэнне аўтавыдалення…"
-      ],
-      "Enabling drive search": [
-        "Уключэнне пошуку на дыску"
-      ],
-      "Encrypted search is here": [
-        "Зашыфраваны пошук тут"
       ],
       "End-to-end encrypted": [
         "Зашыфравана скразным метадам"
@@ -5804,14 +5690,8 @@
       "Expired": [
         "Пратэрмінавана"
       ],
-      "Export diagnostic logs for technical support and troubleshooting": [
-        "Экспартаваць дыягнастычныя журналы для тэхнічнай падтрымкі і выпраўлення непаладак"
-      ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Найвышэйшая хуткасць VPN, якая дасягае 10 Гбіт/с"
-      ],
-      "Feb": [
-        "Лют"
       ],
       "File could not be scanned": [
         "Не ўдалося сканіраваць файл"
@@ -5823,13 +5703,16 @@
         "Файл не будзе абноўлены"
       ],
       "Files and folders that others shared with you will appear here": [
-        "Тут будуць з'яўляцца папкі і файлы, якія з вамі абагулілі іншыя карыстальнікі."
+        "Тут будуць з'яўляцца папкі і файлы, якія з вамі абагулілі іншыя карыстальнікі"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
       ],
       "finance": [
         "фінансы"
+      ],
+      "Find out what can be migrated.": [
+        "Даведайцеся, што перанесена."
       ],
       "Folder will not be uploaded": [
         "Папка не будзе запампавана"
@@ -5849,23 +5732,11 @@
       "Free 5GB encrypted storage to get started": [
         "Бясплатнае зашыфраванае сховішча аб'ёмам 5 ГБ, каб пачаць працу"
       ],
-      "from the version history?": [
-        "з гісторыі версій?"
-      ],
       "Geoblocking": [
         "Геаблакіроўка"
       ],
-      "Get logs and other information for technical support and troubleshooting": [
-        "Атрымаць журналы і іншую інфармацыю для тэхнічнай падтрымкі і выпраўлення непаладак"
-      ],
       "Get the app to backup photos from your phone or upload them here.": [
-        "Атрымайце праграму для рэзервовага капіявання фатаграфій з вашай прылады або запампоўвання іх сюды."
-      ],
-      "Get the desktop app to sync files from your computer.": [
-        "Атрымайце праграму для камп'ютара, каб мець магчымасць сінхранізаваць файлы."
-      ],
-      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
-        "Пазнаёмцеся з ${ DRIVE_APP_NAME } і атрымайце бонус у 3 ГБ! Гэта можна зрабіць ужо сёння."
+        "Атрымайце праграму для рэзервовага капіявання фатаграфій з вашай прылады або запампоўвайце іх сюды."
       ],
       "Google Pay mark": [
         "Пазнака Google Pay"
@@ -5882,14 +5753,8 @@
       "High Priority": [
         "Высокі прыярытэт"
       ],
-      "How does encrypted search work?": [
-        "Як працуе зашыфраваны пошук?"
-      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Я пацвярджаю і ўсведамляю, што інфармацыя і заявы, якія змяшчаюцца ў справаздачы, з'яўляюцца правільнымі і поўнымі."
-      ],
-      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
-        "Вы страціце доступ да файлаў, калі яны не будуць цалкам спампаваны на прыладу ${ deviceName }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
@@ -5905,9 +5770,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
-      ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "Калі ў вас ёсць што-небудзь з гэтага, перайдзіце ў налады ўліковага запісу ${ BRAND_NAME }, каб працягнуць працэс разблакіроўкі."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
@@ -5957,20 +5819,8 @@
       "Included": [
         "Уключае"
       ],
-      "Index is empty.": [
-        "Індэкс адсутнічае."
-      ],
-      "Indexed ${ first }": [
-        "Індэксавана ${ first }"
-      ],
-      "Indexed ${ first } and ${ second }": [
-        "Індэксавана ${ first }, ${ second }"
-      ],
       "Indexed ${ first }, ${ second } and ${ third }": [
         "Індэксавана ${ first }, ${ second } і ${ third }"
-      ],
-      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
-        "Праіндэксавана ${ first }, ${ second }, ${ third } і ${ fourth }"
       ],
       "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
         "Адбыўся нечаканы стан пры індэксацыі і працэс немагчыма працягнуць далей. Паспрабуйце аднавіць індэкс."
@@ -5978,17 +5828,8 @@
       "Indexing in progress": [
         "Выконваецца індэксацыя"
       ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Індэксаванне элементаў. Праіндэксавана: ${ esProgress } з ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Індэксаванне вынікаў пошуку…"
-      ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
-      ],
-      "Integrity issues found": [
-        "Знойдзены праблемы з цэласнасцю"
       ],
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
@@ -5999,17 +5840,8 @@
       "Internet connection restored.": [
         "Падключэнне да інтэрнэту адноўлена."
       ],
-      "Invitation confirmed": [
-        "Запрашэнне пацверджана"
-      ],
       "Invite link copied": [
         "Запрашальная спасылка скапіявана"
-      ],
-      "iOS and Android Apps": [
-        "Праграмы для iOS і Android"
-      ],
-      "Issues found": [
-        "Знойдзены праблемы"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Здаецца, што вы нядаўна спрабавалі запампаваць ${ uploadName }. Калі гэта спроба была няўдалай, ${ replaceFile }. Калі ўсё яшчэ выконваецца запампоўванне, замена файла скасуе бягучае запампоўванне."
@@ -6017,29 +5849,11 @@
       "It's better to have:": [
         "Лепш за ўсё, каб у вас было:"
       ],
-      "Items in the trash will stay here until you delete them permanently": [
-        "Элементы будуць заставацца ў сметніцы, пакуль вы не выдаліце іх незваротна"
-      ],
-      "Items moved to the trash will stay here until deleted": [
-        "Элементы перамешчаны ў сметніцу будуць заставацца там да выдалення"
-      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Лепш за ўсё выкарыстоўваць VPN пастаянна, але тут прыведзены выпадкі калі пагрозы кібербяспекі могуць быць самымі высокімі:"
       ],
-      "It’s easy and secure": [
-        "Гэта лёгка і бяспечна"
-      ],
-      "Jan": [
-        "Сту"
-      ],
       "JCB logo": [
         "Лагатып JCB"
-      ],
-      "Jul": [
-        "Ліп"
-      ],
-      "Jun": [
-        "Чэр"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Проста пацвердзіце свой выбар, а астатнія дзеянні будуць зроблены праграмай."
@@ -6060,7 +5874,7 @@
         "Вялікае імпартаванне можа заняць некалькі дзён."
       ],
       "Last week": [
-        "На мінулым тыдні"
+        "Мінулы тыдзень"
       ],
       "Learn more": [
         "Даведацца больш"
@@ -6086,9 +5900,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
       ],
-      "Loading links": [
-        "Загрузка спасылак"
-      ],
       "Loading preview": [
         "Загрузка папярэдняга прагляду"
       ],
@@ -6098,14 +5909,8 @@
       "Low Priority": [
         "Нізкі прыярытэт"
       ],
-      "Makes your account safer": [
-        "Зрабіце свой уліковы запіс больш бяспечным"
-      ],
       "Malware detected": [
         "Выяўлена шкодная праграма"
-      ],
-      "Mar": [
-        "Сак"
       ],
       "Mastercard SecureCode logo": [
         "Лагатып Mastercard SecureCode"
@@ -6115,9 +5920,6 @@
         "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвалы",
         "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвалаў",
         "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвалаў"
-      ],
-      "May": [
-        "Тра"
       ],
       "Medium Priority": [
         "Сярэдні прыярытэт"
@@ -6134,32 +5936,8 @@
       "Monitor accounts": [
         "Назіранне за ўліковымі запісамі"
       ],
-      "More": [
-        "Больш"
-      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Большасць агульнадаступных сетак Wi-Fi з'яўляюцца бяспечнымі, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
-      ],
-      "Move ${ dragCount } item": [
-        "Перамясціць ${ dragCount } элемент",
-        "Перамясціць ${ dragCount } элементы",
-        "Перамясціць ${ dragCount } элементаў",
-        "Перамясціць ${ dragCount } элементаў"
-      ],
-      "Move ${ fileCount } file": [
-        "Перамясціць ${ fileCount } файл",
-        "Перамясціць ${ fileCount } файлы",
-        "Перамясціць ${ fileCount } файлаў",
-        "Перамясціць ${ fileCount } файлаў"
-      ],
-      "Move ${ folderCount } folder": [
-        "Перамясціць ${ folderCount } папку",
-        "Перамясціць ${ folderCount } папкі",
-        "Перамясціць ${ folderCount } папак",
-        "Перамясціць ${ folderCount } папак"
-      ],
-      "Moving files": [
-        "Перамяшчэнне файлаў"
       ],
       "My Links": [
         "Мае спасылкі"
@@ -6185,20 +5963,14 @@
       "No group found": [
         "Група не знойдзена"
       ],
-      "No issue found": [
-        "Праблем не знойдзена"
-      ],
       "No payment is required at this time.": [
         "У дадзены момант аплата не патрабуецца."
-      ],
-      "No populator states found.": [
-        "Станы папулятара не знойдзены."
       ],
       "No results found": [
         "Нічога не знойдзена"
       ],
-      "No synced folders": [
-        "Няма сінхранізаваных папак"
+      "No users to display": [
+        "Няма карыстальнікаў для адлюстравання"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ніводны з запампаваных ключоў несапраўдны для шыфравання. Для адпраўкі паведамленняў на гэты адрас, запампуйце сапраўдны ключ або адключыце функцыю \"Шыфраваць лісты\"."
@@ -6210,13 +5982,10 @@
         "Не падключана"
       ],
       "Not enough storage space": [
-        "Недастаткова месца на дыску"
+        "Недастаткова месца для захоўвання"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Нататка: даныя ўсё яшчэ могуць заставацца даступнымі лакальна на прыладзе, дзе ўсталяваны ${ DRIVE_APP_NAME }."
-      ],
-      "Nov": [
-        "Ліс"
       ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
@@ -6227,17 +5996,11 @@
       "Numbers": [
         "Лічбы"
       ],
-      "Oct": [
-        "Кас"
-      ],
       "of": [
         "з"
       ],
       "On public WiFi networks": [
         "У грамадскіх сетках Wi-Fi"
-      ],
-      "One encrypted suite. Full business protection.": [
-        "Адзін зашыфраваны набор. Поўная абарона бізнесу."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Адзін з вашых зашыфраваных дыскаў заблакіраваны. Верагодна з прычыны таго, што нядаўна было скіданне пароля."
@@ -6284,9 +6047,6 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
-      "Permanently delete all files in your locked drive": [
-        "Незваротна выдаліць усе файлы на вашым заблакіраваным дыску"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline сумяшчальны толькі з фарматам звычайнага тэксту."
       ],
@@ -6295,18 +6055,6 @@
       ],
       "Photo is not saved to your library": [
         "Фатаграфія не захавана ў вашай бібліятэцы"
-      ],
-      "Photo is set as album cover": [
-        "Фатаграфія зададзена ў якасці вокладкі альбома"
-      ],
-      "Photo saved to your Drive": [
-        "Фатаграфія захавана ў ваш Drive",
-        "Фатаграфіі захаваны ў ваш Drive",
-        "Фатаграфіі захаваны ў ваш Drive",
-        "Фатаграфіі захаваны ў ваш Drive"
-      ],
-      "Photo was copied to stream and marked favorite there.": [
-        "Фатаграфія была скапіявана ў плынь і пазначана ў якасці абранай."
       ],
       "Photos have been successfully recovered.": [
         "Фатаграфіі былі паспяхова адноўлены."
@@ -6395,12 +6143,6 @@
       "Preview of documents is not yet supported.": [
         "Папярэдні прагляд дакументаў пакуль не падтрымліваецца."
       ],
-      "Previous versions are kept for ${ retentionLabel }": [
-        "Папярэднія версіі пакідаюцца для ${ retentionLabel }"
-      ],
-      "Previous versions are not saved": [
-        "Папярэднія версіі не захоўваюцца"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Кошт уключае ўсе падыходзячыя (не пратэрмінаваныя) купоны, якія захаваны ў вашым уліковым запісе."
       ],
@@ -6410,29 +6152,17 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Прыватны прагляд вэб-старонак (або рэжым \"інкогніта\") карысны толькі для хавання актыўнасці на вашай прыладзе. Браўзер не будзе захоўваць гісторыю і файлы cookie, але гэта не робіць вас нябачным. Ваш пастаўшчык паслуг інтэрнэту, сеткавы адміністратар і вэб-сайты ўсё яшчэ могуць бачыць, што вы робіце ў інтэрнэце."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Прыватны пошук уключаны. Цяпер вы можаце закрыць гэта дыялогавае акно і шукаць у файлах і папках."
-      ],
-      "Public link": [
-        "Публічная спасылка"
-      ],
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
       ],
       "Re-indexing in progress": [
         "Адбываецца паўторнае індэксаванне"
       ],
-      "Ready to add some photos?": [
-        "Гатовыя дадаць некаторыя фатаграфіі?"
-      ],
       "RECOMMENDED": [
         "РЭКАМЕНДАВАНЫ"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інфармацыя аб аднаўленні застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
-      ],
-      "Recovery process might take some time.": [
-        "Працэс аднаўлення зойме некаторы час."
       ],
       "Referral link copied to your clipboard": [
         "Рэферальная спасылка скапіявана ў буфер абмену"
@@ -6446,9 +6176,6 @@
       "Report has been sent": [
         "Скарга была адпраўлена"
       ],
-      "Request access, or switch to an account with access.": [
-        "Запытайце доступ або пераключыцеся на ўліковы запіс, які мае яго."
-      ],
       "Requested item doesn't exist anymore": [
         "Запытаны элемент больш не існуе"
       ],
@@ -6461,9 +6188,6 @@
       "Restored files ${ formattedDate }": [
         "Файлы адноўлены ${ formattedDate }"
       ],
-      "Restoring Photos... Please keep the tab open": [
-        "Аднаўленне фатаграфій... Не закрывайце ўкладку браўзера"
-      ],
       "Running diagnostics...": [
         "Выконваецца дыягностыка..."
       ],
@@ -6473,65 +6197,26 @@
       "Scan the QR code with your mobile device": [
         "Адсканіруйце QR-код з дапамогай мабільнай прылады"
       ],
-      "Scan to download": [
-        "Сканіраваць і спампаваць"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Немагчыма ўключыць пошук у гэтым браўзеры"
-      ],
-      "Search data is corrupted": [
-        "Пошук даных пашкоджаны"
-      ],
-      "Search Enabled": [
-        "Пошук уключаны"
-      ],
-      "Search enabled. You may now close this dialogue and search for files and folders.": [
-        "Пошук уключаны. Цяпер вы можаце закрыць гэта акно і шукаць у файлах і папках."
-      ],
-      "Search encountered an internal error. Rebuild the index to recover.": [
-        "У пошуку адбылася ўнутраная памылка. Паспрабуйце аднавіць індэкс."
-      ],
-      "Search engine error": [
-        "Памылка рухавіка пошуку"
-      ],
       "Search error": [
         "Памылка пошуку"
-      ],
-      "Search is in an invalid state": [
-        "Пошук мае памылковы стан"
-      ],
-      "Search is ready. Your files have been indexed.": [
-        "Усё гатова для пошуку. Вашы фалы праіндэксаваны."
-      ],
-      "Search module is not available.": [
-        "Модуль пошуку недаступны."
       ],
       "Select a destination folder": [
         "Выберыце папку прызначэння"
       ],
-      "Select a folder to make the copy in": [
-        "Выберыце папку для капіявання"
-      ],
       "Select a folder to move to.": [
         "Выберыце папку, у якую хочаце перамясціць."
-      ],
-      "Select all items for": [
-        "Выбраць усе элементы для"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Выберыце запампаваны файл або папку і стварыце спасылку на іх."
       ],
-      "Select item": [
-        "Выбар элемента"
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Выберыце толькі тое, што хочаце перанесці. Гэта будзе прыменена да ўсіх карыстальнікаў арганізацыі."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць прадвызначана пры адпраўцы лістоў на гэты адрас электроннай пошты."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
-      ],
-      "Sep": [
-        "Вер"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "У дадзены момант плацяжы SEPA недаступны. Паспрабуйце яшчэ раз пазней."
@@ -6554,23 +6239,11 @@
       "Setting up your new address…": [
         "Наладжванне вашага новага адраса…"
       ],
-      "Share files with links": [
-        "Абагуліць файлы з дапамогай спасылак"
-      ],
-      "Shared": [
-        "Абагулена"
-      ],
       "Shared by ": [
         "Абагулена "
       ],
       "Shared link not found": [
         "Абагуленая спасылка не знойдзена"
-      ],
-      "Shared with me": [
-        "Абагулена са мной"
-      ],
-      "Shared with you": [
-        "Абагулена з вамі"
       ],
       "Signature check will be ignored": [
         "Праверка подпісу была праігнаравана"
@@ -6583,12 +6256,6 @@
       ],
       "Some items failed": [
         "Збой некаторых элементаў"
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Некаторыя з вашых файлаў больш недаступны. Аднавіце доступ да сваіх файлаў. ${ StartRecoveryButton }"
-      ],
-      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Некаторыя фатаграфіі ў гэтым альбоме не захаваны ў вашай шкале часу. Выдаленне гэтага альбома прывядзе да незваротнага выдалення фатаграфій, якія знаходзяцца ў ім."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Некаторыя вэб-сайты і сэрвісы з трансляцыямі блакіруюць змесціва па рэгіёнах. VPN дазваляе абысці гэтыя абмежаванні і атрымаць свабодны доступ у інтэрнэт."
@@ -6656,17 +6323,14 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць яго, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
       ],
-      "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "У пошукавым рухавіку адбылася ўнутраная памылка. Паспрабуйце аднавіць індэкс."
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Яшчэ ёсць файлы, якія неабходна перадаць. Закрыццё менеджара перадачы завершыць усе аперацыі."
       ],
-      "There is nothing to see here": [
-        "Няма даных для адлюстравання"
+      "Thinking about this": [
+        "Падумайце аб гэтым"
       ],
       "This action will delete the link and revoke access for all users.": [
         "Гэта дзеянне выдаліць спасылку і адклікае доступ для ўсіх карыстальнікаў."
@@ -6676,9 +6340,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Дадзены браўзер не падтрымлівае папярэдні прагляд дакументаў PDF. Спампуйце файл."
-      ],
-      "This can NOT be undone. Please enter the device name to confirm removal.": [
-        "Гэта дзеянне НЕМАГЧЫМА адрабіць. Увядзіце назву прылады, каб пацвердзіць выдаленне."
       ],
       "This file appears to be empty:": [
         "Здаецца, што гэты файл пусты:",
@@ -6701,12 +6362,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "Гэты элемент не захаваны ў вашай бібліятэцы фатаграфій. Вы незваротна згубіце доступ да яго, калі выдаліце з гэтага альбома.",
-        "Некаторыя выбарныя элементы не захаваны ў вашай бібліятэцы фатаграфій. Вы незваротна згубіце доступ да іх, калі выдаліце з гэтага альбома.",
-        "Некаторыя выбарныя элементы не захаваны ў вашай бібліятэцы фатаграфій. Вы незваротна згубіце доступ да іх, калі выдаліце з гэтага альбома.",
-        "Некаторыя выбарныя элементы не захаваны ў вашай бібліятэцы фатаграфій. Вы незваротна згубіце доступ да іх, калі выдаліце з гэтага альбома."
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
       ],
@@ -6722,6 +6377,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Гэты ўнікальны код можа быць выкарыстаны вэб-сайтамі і пастаўшчыком паслуг інтэрнэту (ISP), каб звязаць ваша месцазнаходжанне і гісторыю прагляду старонак на вашай прыладзе."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Гэтага карыстальніка немагчыма перанесці, бо яго адрас электроннай пошты недаступны ў ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Гэтага карыстальніка немагчыма перанесці з-за несумяшчальнасці платформ."
+      ],
       "This will cancel any remaining downloads.": [
         "Гэта скасуе ўсе спампоўкі, якія засталіся."
       ],
@@ -6730,9 +6391,6 @@
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Гэта скасуе ўсе астатнія запампоўкі. Скасаваныя файлы не будуць захаваны ў ${ DRIVE_APP_NAME }."
-      ],
-      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "Будзе выдалены толькі альбом. Вашы фатаграфіі застануцца ў вашай шкале часу. Гэта дзеянне нельга будзе адрабіць."
       ],
       "This will permanently delete the file you uploaded.": [
         "Гэта незваротна выдаліць файл, які вы запампавалі."
@@ -6752,17 +6410,11 @@
       "This will sign you out of all accounts currently logged in.": [
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
-      "Time": [
-        "Час"
-      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Адпраўце ${ btcAmountBold } на ўказаны ніжэй адрас, каб завяршыць плацеж."
       ],
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "Адкрыйце гэтыя файлы ў ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME } і выканайце экспартаванне. Гэта неабходна для спампоўванння файлаў."
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "${ DRIVE_APP_NAME } неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук. Вы можаце выкарыстоўваць ${ DRIVE_APP_NAME } у звычайным рэжыме. Вам будзе адпраўлена апавяшчэнне, калі індэксацыя будзе завершана."
@@ -6778,6 +6430,27 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Спачатку стварыце каляндар у ${ CALENDAR_APP_NAME } для імпартавання падзей. Менавіта тут з'явяцца падзеі пасля імпартавання."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Дадайце і праверце дамен электроннай пошты ў ${ domainNamesLink } для пераносу гэтага карыстальніка"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Уключыце ўліковы запіс карыстальніка ў свой ${ provider.adminConsoleName } для яго пераносу."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Уключыце ўліковы запіс карыстальніка ў ${ usersAddressesLink } для яго пераносу."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Уключыце адрас карыстальніка ў ${ usersAddressesLink } для яго пераносу."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Карыстальніку неабходна праняць запрашэнне на далучэнне да ${ BRAND_NAME } для яго пераносу."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Распакуйце карыстальніка ў сваёй ${ provider.adminConsoleName } для яго пераносу."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Аднавіць карыстальніка ў вашай ${ provider.adminConsoleName } для яго пераносу."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Для таго, каб паўторна падпісаць кантакты, нам неабходна праверыць кожны кантакт з дапамогай спіса ключоў шыфравання, якія даступны ў вашым уліковым запісе. Калі супадзенне не будзе знойдзена, то ваш кантакт будзе паўторна падпісаны асноўным ключом шыфравання."
@@ -6818,20 +6491,11 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
       ],
-      "Try searching by file name, date, or type.": [
-        "Паспрабуйце пошук па назве файла, даце або тыпу."
-      ],
       "Unexpected download error": [
         "Нечаканая памылка спампоўкі"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Збой расшыфроўкі файла або некаторых яго даных."
-      ],
-      "Unknown date": [
-        "Невядомая дата"
-      ],
-      "Unlock drive to recover files": [
-        "Разблакіраваць дыск для аднаўлення файлаў"
       ],
       "Unsaved changes": [
         "Незахаваныя змены"
@@ -6841,9 +6505,6 @@
       ],
       "Unsupported file type for Photos": [
         "Тып файла для фатаграфій не падтрымліваецца"
-      ],
-      "Update required": [
-        "Патрабуецца абнаўленне"
       ],
       "Updating drive search...": [
         "Абнаўленне пошуку на дыску..."
@@ -6862,9 +6523,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Палепшыць тарыфны план, каб захаваць перавагі ${ planTitle }."
-      ],
-      "upgrade your storage": [
-        "палепшыце сваё сховішча"
       ],
       "Upload Failed": [
         "Збой запампоўвання"
@@ -6896,12 +6554,6 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Спраўджанне адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для спраўджання вашай карткі, будзе неадкладна вернута."
       ],
-      "Version is deleted": [
-        "Версія выдалена"
-      ],
-      "Version is restored": [
-        "Версія адноўлена"
-      ],
       "Version number successfully copied to clipboard": [
         "Нумар версіі паспяхова скапіяваны ў буферу абмену"
       ],
@@ -6914,20 +6566,8 @@
       "Waiting": [
         "Чакайце"
       ],
-      "Want to sync files faster?": [
-        "Хочаце сінхранізаваць файлы хутчэй?"
-      ],
       "Warning": [
         "Папярэджанне"
-      ],
-      "Way to go, you've just increased your storage to 5 GB!": [
-        "Так трымаць! Мы толькі што павялічылі ваша сховішча да 5 ГБ!"
-      ],
-      "We couldn't save this photo to your Drive": [
-        "Немагчыма захаваць гэту фатаграфію на вашым Drive",
-        "Немагчыма захаваць некалькі фатаграфій на вашым Drive",
-        "Немагчыма захаваць некалькі фатаграфій на вашым Drive",
-        "Немагчыма захаваць некалькі фатаграфій на вашым Drive"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Немагчыма спраўдзіць, што ${ nameAuthor } запампаваў ${ nodeName }. Наступныя элементы могуць быць падробленымі: парадак даных файла. Адкрывайце іх толькі тады, калі давяраеце гэтаму змесціву."
@@ -6943,12 +6583,6 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
-      ],
-      "We were not able to add this photo to your album": [
-        "Не ўдалося дадаць гэту фатаграфію ў ваш альбом",
-        "Не ўдалося дадаць некаторыя фатаграфіі ў ваш альбом",
-        "Не ўдалося дадаць некаторыя фатаграфіі ў ваш альбом",
-        "Не ўдалося дадаць некаторыя фатаграфіі ў ваш альбом"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -6968,13 +6602,7 @@
       "Week": [
         "Тыдзень"
       ],
-      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
-        "Запрашаем у ${ DRIVE_APP_NAME }. На працягу першых 10 хвілін любыя файлы, якія вы запампуеце, не будуць улічвацца пры падліку вашай квоты сховішча."
-      ],
       "What do you want to do?": [
-        "Што вы хочаце зрабіць?"
-      ],
-      "What would you like to do?": [
         "Што вы хочаце зрабіць?"
       ],
       "When working remotely": [
@@ -7001,18 +6629,6 @@
       "Would you like to receive a new verification code?": [
         "Ці хочаце вы атрымаць новы код спраўджання?"
       ],
-      "Would you like to restore your files?": [
-        "Ці хочаце вы аднавіць свае файлы?"
-      ],
-      "Would you like to save it before removing?": [
-        "Ці хочаце вы захаваць яго/іх перад выдаленнем?",
-        "Ці хочаце вы захаваць іх перад выдаленнем?",
-        "Ці хочаце вы захаваць іх перад выдаленнем?",
-        "Ці хочаце вы захаваць іх перад выдаленнем?"
-      ],
-      "Would you like to save them before removing?": [
-        "Ці хочаце вы захаваць іх перад выдаленнем?"
-      ],
       "Writing assistant": [
         "Памочнік у напісанні"
       ],
@@ -7022,14 +6638,14 @@
       "Yesterday": [
         "Учора"
       ],
+      "You": [
+        "Вы"
+      ],
       "you": [
         "вы"
       ],
       "You already have a free account": [
         "У вас ужо ёсць бясплатны ўліковы запіс"
-      ],
-      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Вы збіраецеся пакінуць абагулены элемент. Вы не зможаце атрымаць доступ да яго, пакуль уладальнік паўторна не абагуліць яго з вамі."
       ],
       "You are about to open another browser tab and visit:": [
         "Вы збіраецеся адкрыць іншую ўкладку браўзера і наведаць:"
@@ -7079,17 +6695,8 @@
       "You cannot undo this action.": [
         "Гэта дзеянне немагчыма адрабіць."
       ],
-      "You don't have permission to copy files to this folder.": [
-        "У вас няма правоў, каб капіяваць файлы ў гэту папку."
-      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
-      ],
-      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "У вас яшчэ ёсць ${ expiresInDays } дзень, каб атрымаць прывітальны бонус у 3 ГБ і ",
-        "У вас яшчэ ёсць ${ expiresInDays } дні, каб атрымаць прывітальны бонус у 3 ГБ і ",
-        "У вас яшчэ ёсць ${ expiresInDays } дзён, каб атрымаць прывітальны бонус у 3 ГБ і ",
-        "У вас яшчэ ёсць ${ expiresInDays } дзён, каб атрымаць прывітальны бонус у 3 ГБ і "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас ёсць падпіска ${ planTitle } з пробным перыядам. Дадайце спосаб аплаты, калі вы хочаце працягнуць карыстацца ёй пасля завяршэння пробнага перыяду."
@@ -7103,20 +6710,11 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Перад тым, як панізіць свой тарыфны план, вам неабходна адключыць або выдаліць для ${ MAIL_APP_NAME } дадатковых карыстальнікаў, паштовыя адрасы і карыстальніцкія дамены."
       ],
-      "You need access": [
-        "Вам неабходны доступ"
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Вы страціце доступ да функцый тарыфнага плана ${ planTitle } пасля гэтай даты."
       ],
       "You will lose all unsaved changes.": [
         "Вы страціце ўсе незахаваныя змены."
-      ],
-      "You will need to save it again from the public link page.": [
-        "Вам неабходна захаваць яго паўторна са старонкі, якая змяшчае публічную спасылку.",
-        "Вам неабходна захаваць іх паўторна са старонкі, якая змяшчае публічную спасылку.",
-        "Вам неабходна захаваць іх паўторна са старонкі, якая змяшчае публічную спасылку.",
-        "Вам неабходна захаваць іх паўторна са старонкі, якая змяшчае публічную спасылку."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
@@ -7157,9 +6755,6 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб прымяняць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
       ],
-      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "У вашым браўзеры скончылася месца пры індэксацыі файлаў для пошуку. Паспрабуйце аднавіць індэкс."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
       ],
@@ -7171,12 +6766,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
-      ],
-      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
-        "Вашы файлы будуць паўторна індэксаваныя. Вы можаце працягваць пошук, але вынікі могуць быць няпоўнымі, пакуль пошук не завершыцца. Сістэма паведаміць вам, калі працэс будзе завершаны."
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Вашы файлы больш недаступны з прычыны скідання пароля. Для аднаўлення доступу, паўторна запампуйце стары ключ шыфравання. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
@@ -7225,12 +6814,6 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Ваш тарыфны план абмежаваны 10 версіямі на тэрмін да 7 дзён"
-      ],
-      "Your previous password": [
-        "Ваш папярэдні пароль"
-      ],
-      "Your previous recovery phrase": [
-        "Ваша папярэдняя фраза аднаўлення"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны ${ cycle } месяц.",
@@ -7330,17 +6913,11 @@
       ]
     },
     "Label": {
-      "# of downloads": [
-        "Колькасць спампоўванняў"
-      ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } з ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
-      ],
-      "${ downloads } downloads": [
-        "${ downloads } спампавана"
       ],
       "${ n } month": [
         "${ n } месяц",
@@ -7362,9 +6939,6 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "Сімвалаў: ${ value.length }/${ maxLength }"
-      ],
-      "(Expired)": [
-        "(Пратэрмінавана)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
@@ -7405,6 +6979,9 @@
       "Allow editors to change permissions and share": [
         "Дазволіць рэдактарам змяняць дазволы і абагульваць"
       ],
+      "Allow editors to change permissions and share.": [
+        "Дазволіць рэдактарам змяняць дазволы і абагульваць."
+      ],
       "Anderson": [
         "Маўр"
       ],
@@ -7416,9 +6993,6 @@
       ],
       "App password": [
         "Пароль праграмы"
-      ],
-      "Applications in a business setting": [
-        "Праграмы ў бізнес абстаноўцы"
       ],
       "Apply to all duplicated files": [
         "Прымяніць да ўсіх дублікатаў файлаў"
@@ -7543,14 +7117,8 @@
       "Country": [
         "Краіна"
       ],
-      "Create ${ BRAND_NAME } account": [
-        "Стварыць уліковы запіс ${ BRAND_NAME }"
-      ],
       "Created": [
         "Створана"
-      ],
-      "Created ${ created }": [
-        "Створана ${ created }"
       ],
       "Credits": [
         "Крэдыты"
@@ -7558,32 +7126,14 @@
       "Delete": [
         "Выдаліць"
       ],
-      "Delete drive?": [
-        "Выдаліць дыск?",
-        "Выдаліць дыскі?",
-        "Выдаліць дыскі?",
-        "Выдаліць дыскі?"
-      ],
       "Delete link and remove access for everyone": [
         "Выдаліць спасылку і доступ для кожнага ўдзельніка"
       ],
       "Delete recovery-related information.": [
         "Выдаліць інфармацыю звязаную з аднаўленнем."
       ],
-      "Deleted": [
-        "Выдалена"
-      ],
-      "Deleted ${ deleted }": [
-        "Выдалена ${ deleted }"
-      ],
       "Device": [
         "Прылада"
-      ],
-      "Device #${ position }": [
-        "Прылада #${ position }"
-      ],
-      "Device name": [
-        "Назва прылады"
       ],
       "Device: ${ name }": [
         "Прылада: ${ name }"
@@ -7642,12 +7192,6 @@
       "Encrypt emails": [
         "Шыфраваць лісты"
       ],
-      "Enter device name": [
-        "Увядзіце назву прылады"
-      ],
-      "Environment compatible": [
-        "Сумяшчальнасць з асяроддзем"
-      ],
       "Exact host matching": [
         "Дакладнае супадзенне з вузлом"
       ],
@@ -7657,14 +7201,8 @@
       "Expired": [
         "Пратэрмінавана"
       ],
-      "Expired on ${ formatted }": [
-        "Мінуў ${ formatted }"
-      ],
       "Expires": [
         "Дзейнічае да"
-      ],
-      "Expires ${ formatted }": [
-        "Міне праз ${ formatted }"
       ],
       "Expiry": [
         "Тэрмін дзеяння"
@@ -7732,12 +7270,6 @@
       "Include message and file name in invite email": [
         "Уключаць паведамленне і назву файла ў запрашальны ліст"
       ],
-      "Index kinds": [
-        "Тыпы індэксаў"
-      ],
-      "Indexing": [
-        "Індэксаванне"
-      ],
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
       ],
@@ -7792,9 +7324,6 @@
       "Modified": [
         "Зменена"
       ],
-      "Modified ${ modified }": [
-        "Зменена: ${ modified }"
-      ],
       "Move to Archive": [
         "Перамясціць у Архіў"
       ],
@@ -7804,9 +7333,6 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Пароль павінен мець прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы(аў)"
       ],
-      "My Albums": [
-        "Мае альбомы"
-      ],
       "Name": [
         "Назва"
       ],
@@ -7815,9 +7341,6 @@
       ],
       "Never": [
         "Ніколі"
-      ],
-      "Never expires": [
-        "Неабмежаваны тэрмін дзеяння"
       ],
       "Never fill on this exact URL": [
         "Ніколі не запаўняць на гэтым дакладным URL-адрасе"
@@ -7852,9 +7375,6 @@
       "Other": [
         "Іншае"
       ],
-      "Outdated version": [
-        "Састарэлая версія"
-      ],
       "Parent domain and subdomains (default)": [
         "Бацькоўскі дамен і паддамены (прадвызначана)"
       ],
@@ -7881,9 +7401,6 @@
       ],
       "Phone number": [
         "Нумар тэлефона"
-      ],
-      "Photo": [
-        "Фатаграфія"
       ],
       "Please provide full details to help us take appropriate action": [
         "Забяспечце нас падрабязнымі звесткамі, каб мы змаглі прыняць адпаведныя меры"
@@ -7928,7 +7445,7 @@
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Жэнева"
       ],
       "Searchable": [
-        "Даступны да пошуку"
+        "Даступна для пошуку"
       ],
       "Select type of abuse": [
         "Выберыце тып парушэння"
@@ -7942,32 +7459,14 @@
       "Set recovery method": [
         "Задаць спосаб аднаўлення"
       ],
-      "Share a file, folder, or album": [
-        "Абагуліць файл, папку або альбом"
-      ],
       "Shared": [
         "Абагулена"
       ],
       "Shared by": [
         "Абагулена"
       ],
-      "Shared by ${ sharedBy }": [
-        "Абагулена ${ sharedBy }"
-      ],
-      "Shared by Public link": [
-        "Абагулена публічнай спасылкай"
-      ],
-      "Shared on": [
-        "Абагулена"
-      ],
-      "Shared on ${ sharedOn }": [
-        "Абагулена ${ sharedOn }"
-      ],
       "Shared with me": [
         "Абагулена са мной"
-      ],
-      "Show indexing progress of Encrypted Search": [
-        "Паказаць ход выканання індэксацыі зашыфраванага пошуку"
       ],
       "Sign emails": [
         "Падпісваць лісты"
@@ -8026,9 +7525,6 @@
       "Theme": [
         "Тэма"
       ],
-      "This will permanently delete all files in your locked drive.": [
-        "Гэта незваротна выдаліць усе файлы на вашым заблакіраваным дыску."
-      ],
       "Thomas": [
         "Янка"
       ],
@@ -8040,15 +7536,6 @@
       ],
       "Type": [
         "Тып"
-      ],
-      "Unlock drive": [
-        "Разблакіраваць дыск"
-      ],
-      "Unlock drive (recommended)": [
-        "Разблакіраваць дыск (рэкамендавана)"
-      ],
-      "Unlock later": [
-        "Разблакіраваць пазней"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -8094,9 +7581,6 @@
       ],
       "What happened?": [
         "Што здарылася?"
-      ],
-      "Yes, I want to permanently delete my old files": [
-        "Так, я хачу незваротна выдаліць мае старыя файлы"
       ],
       "Your alias": [
         "Ваш псеўданім"
@@ -8188,9 +7672,6 @@
       "Add a gift code": [
         "Дадаць падарункавы код"
       ],
-      "Albums": [
-        "Альбомы"
-      ],
       "clearing your browser cache": [
         "ачыстка кэшу вашага браўзера"
       ],
@@ -8251,9 +7732,6 @@
       "Pay invoice": [
         "Аплаціць рахунак"
       ],
-      "Photos": [
-        "Фотаграфіі"
-      ],
       "Reactivate now": [
         "Актываваць паўторна"
       ],
@@ -8268,12 +7746,6 @@
       ],
       "settings": [
         "налады"
-      ],
-      "Shared": [
-        "Абагуленыя"
-      ],
-      "Shared with me": [
-        "Абагулена са мной"
       ],
       "Terms and conditions": [
         "Умовы выкарыстання"
@@ -8411,6 +7883,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Ліцэнзіі ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } за ліцэнзію"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ліцэнзія ${ MEET_APP_NAME }",
@@ -9809,38 +9284,14 @@
       ]
     },
     "Notification": {
-      "\"${ ellipsedName }\" copied": [
-        "\"${ ellipsedName }\" скапіяваны"
-      ],
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" паспяхова створаны"
-      ],
-      "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\" выдалены"
-      ],
-      "\"${ ellipsedName }\" deleted permanently from trash": [
-        "\"${ ellipsedName }\" незваротна выдалены са сметніцы"
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "Не ўдалося стварыць \"${ ellipsedName }\""
       ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "Не ўдалося выдаліць \"${ ellipsedName }\""
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "Не ўдалося незваротна выдаліць са сметніцы \"${ ellipsedName }\""
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "Не ўдалося перамясціць \"${ ellipsedName }\""
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "Не ўдалося аднавіць са сметніцы \"${ ellipsedName }\""
-      ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" перамешчаны"
-      ],
-      "\"${ ellipsedName }\" restored from trash": [
-        "\"${ ellipsedName }\" адноўлены са сметніцы"
       ],
       "\"${ ellipsedName }\" successfully moved": [
         "\"${ ellipsedName }\" паспяхова перамешчаны"
@@ -9863,47 +9314,17 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" паспяхова перайменаваны"
       ],
-      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
-        "${ addedUids.length } фатаграфія была дададзена ў \"${ albumName }\"",
-        "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\"",
-        "${ addedUids.length } фатаграфій былі дададзены ў \"${ albumName }\"",
-        "${ addedUids.length } фатаграфій былі дададзены ў \"${ albumName }\""
-      ],
       "${ count } item failed to be decrypted": [
         "Не ўдалося расшыфраваць ${ count } элемент",
         "Не ўдалося расшыфраваць ${ count } элементы",
         "Не ўдалося расшыфраваць ${ count } элементаў",
         "Не ўдалося расшыфраваць ${ count } элементаў"
       ],
-      "${ errors.length } item failed to be copied": [
-        "Не ўдалося скапіяваць ${ errors.length } элемент",
-        "Не ўдалося скапіяваць ${ errors.length } элементы",
-        "Не ўдалося скапіяваць ${ errors.length } элементаў",
-        "Не ўдалося скапіяваць ${ errors.length } элементаў"
-      ],
       "${ errors.length } item failed to be deleted": [
         "Не ўдалося выдаліць ${ errors.length } элемент",
         "Не ўдалося выдаліць ${ errors.length } элементы",
         "Не ўдалося выдаліць ${ errors.length } элементаў",
         "Не ўдалося выдаліць ${ errors.length } элементаў"
-      ],
-      "${ errors.length } item failed to be trashed": [
-        "Не ўдалося выдаліць ${ errors.length } элемент",
-        "Не ўдалося выдаліць ${ errors.length } элементы",
-        "Не ўдалося выдаліць ${ errors.length } элементаў",
-        "Не ўдалося выдаліць ${ errors.length } элементаў"
-      ],
-      "${ numberOfItems } copied item moved to trash": [
-        "${ numberOfItems } скапіяваны элемент перанесены ў сметніцу",
-        "${ numberOfItems } скапіяваныя элементы перанесены ў сметніцу",
-        "${ numberOfItems } скапіяваных элементаў перанесены ў сметніцу",
-        "${ numberOfItems } скапіяваных элементаў перанесены ў сметніцу"
-      ],
-      "${ numberOfItems } item copied": [
-        "${ numberOfItems } элемент скапіяваны",
-        "${ numberOfItems } элементы скапіяваны",
-        "${ numberOfItems } элементаў скапіяваны",
-        "${ numberOfItems } элементаў скапіяваны"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } элемент выдалены",
@@ -9965,35 +9386,17 @@
         "${ numberOfItems } элементаў адноўлены са сметніцы",
         "${ numberOfItems } элементы адноўлены са сметніцы"
       ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } элемент паспяхова перамешчаны",
-        "${ numberOfItems } элементы паспяхова перамешчаны",
-        "${ numberOfItems } элементаў паспяхова перамешчаны",
-        "${ numberOfItems } элементы паспяхова перамешчаны"
-      ],
       "${ reason } has been disabled": [
         "${ reason } быў адключаны"
       ],
       "${ reason } has been enabled": [
         "${ reason } было ўключана"
       ],
-      "${ removed } photo have been removed from \"${ albumName }\"": [
-        "${ removed } фатаграфія была выдалена з \"${ albumName }\"",
-        "${ removed } фатаграфіі было выдалена з \"${ albumName }\"",
-        "${ removed } фатаграфій было выдалена з \"${ albumName }\"",
-        "${ removed } фатаграфій было выдалена з \"${ albumName }\""
-      ],
       "Access for the member removed": [
         "Доступ для ўдзельніка выдалены"
       ],
       "Access updated": [
         "Доступ абноўлены"
-      ],
-      "Album renamed successfully": [
-        "Альбом паспяхова перайменаваны"
-      ],
-      "All items deleted permanently from trash": [
-        "Усе элементы незваротна выдалены са сметніцы"
       ],
       "Cannot load link": [
         "Немагчыма загрузіць спасылку"
@@ -10007,9 +9410,6 @@
       "Contact group updated": [
         "Група кантактаў абноўлена"
       ],
-      "Copy of \"${ ellipsedName }\" moved to trash": [
-        "Копія \"${ ellipsedName }\" перамешчана ў сметніцу"
-      ],
       "Device failed to be removed": [
         "Не ўдалося выдаліць прыладу"
       ],
@@ -10021,12 +9421,6 @@
       ],
       "Device renamed": [
         "Прылада перайменавана"
-      ],
-      "Encrypted search activated": [
-        "Актываваны зашыфраваны пошук"
-      ],
-      "Error while listing devices": [
-        "Памылка пры пераліку прылад"
       ],
       "Failed to accept share invitation": [
         "Не ўдалося прыняць абагуленае запрашэнне"
@@ -10043,14 +9437,8 @@
       "Failed to remove device": [
         "Не ўдалося выдаліць прыладу"
       ],
-      "Failed to remove the file": [
-        "Не ўдалося выдаліць файл"
-      ],
       "Failed to rename device": [
         "Не ўдалося перайменаваць прыладу"
-      ],
-      "File removed": [
-        "Файл выдалены"
       ],
       "Invitation's email was sent again": [
         "Запрашальны ліст быў адпраўлены паўторна"
@@ -10079,18 +9467,6 @@
       "Public link access updated": [
         "Доступ да публічнай спасылкі абноўлены"
       ],
-      "Selected item was not removed from your list": [
-        "Выбраны элемент не быў выдалены з вашага спіса",
-        "Выбраныя элементы не былі выдалены з вашага спіса",
-        "Выбраныя элементы не былі выдалены з вашага спіса",
-        "Выбраныя элементы не былі выдалены з вашага спіса"
-      ],
-      "Selected item was successfully removed from your list": [
-        "Выбраны элемент паспяхова выдалены з вашага спіса",
-        "Выбраныя элементы паспяхова выдалены з вашага спіса",
-        "Выбраныя элементы паспяхова выдалены з вашага спіса",
-        "Выбраныя элементы паспяхова выдалены з вашага спіса"
-      ],
       "Setting updated. Editors can change permissions and share.": [
         "Налады абноўлены. Рэдактары могуць змяняць дазволы і абагульваць."
       ],
@@ -10105,12 +9481,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Збой спынення абагульвання гэтага элемента"
-      ],
-      "The item was not added to your drive": [
-        "Элемент не быў дадзены ў ваш дыск"
-      ],
-      "The item was successfully added to your drive": [
-        "Элемент паспяхова дадзены ў ваш дыск"
       ],
       "The link to your item was deleted": [
         "Спасылка на ваш элемент была выдалена"
@@ -10127,9 +9497,6 @@
       "Your ${ BRAND_NAME } address is ready to use": [
         "Ваш адрас ${ BRAND_NAME } гатовы да выкарыстання"
       ],
-      "Your old files will be deleted in 72 hours": [
-        "Вашы старыя файлы будуць выдалены на працягу 72 гадзін"
-      ],
       "Your settings have been changed successfully": [
         "Вашы налады былі паспяхова зменены"
       ]
@@ -10137,11 +9504,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Некаторыя відарысы не былі запампаваны з прычыны дубліравання імён файлаў у бягучым выбары."
-      ]
-    },
-    "Notitication": {
-      "Album renamed successfully": [
-        "Альбом паспяхова перайменаваны"
       ]
     },
     "Oauth instructions": {
@@ -10288,163 +9650,40 @@
       ]
     },
     "Onboarding Action": {
-      "Continue": [
-        "Працягнуць"
-      ],
-      "Create a document": [
-        "Стварыць дакумент"
-      ],
-      "Get started": [
-        "Пачаць працу"
-      ],
       "Install and continue": [
         "Усталяваць і працягнуць"
-      ],
-      "Install later": [
-        "Усталяваць пазней"
-      ],
-      "Invite members": [
-        "Запрасіць удзельнікаў"
       ],
       "Maybe Later": [
         "Магчыма пазней"
       ],
-      "Maybe later": [
-        "Магчыма пазней"
-      ],
-      "Select theme": [
-        "Выбар тэмы"
-      ],
-      "Skip": [
-        "Прапусціць"
-      ],
       "Skip for now": [
         "Прапусціць"
-      ],
-      "Try the app": [
-        "Паспрабаваць праграму"
-      ],
-      "Upload file": [
-        "Запампаваць файл"
-      ],
-      "Upload folder": [
-        "Запампаваць папку"
-      ],
-      "Upload more files": [
-        "Запампаваць больш файлаў"
       ]
     },
     "Onboarding Info": {
-      "10 minutes": [
-        "10 хвілін"
-      ],
-      "Access your files on the go": [
-        "Атрымлівайце доступ да сваіх файлаў у любым месцы"
-      ],
-      "Back up your photos and memories": [
-        "Зарэзервуйце свае фатаграфіі і ўспаміны"
-      ],
-      "Backup your photos and memories": [
-        "Зарэзервуйце свае фатаграфіі і ўспаміны"
-      ],
-      "Choose your favorite theme": [
-        "Выберыце сваю абраную тэму"
-      ],
       "Collaborate on documents": [
         "Сумесная праца над дакументамі"
-      ],
-      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "Вы аддаяце перавагу светламу або цёмнаму рэжыму ў ${ DRIVE_APP_NAME }? Выберыце колер, які найбольш вас натхняе."
-      ],
-      "Drag and drop your files here": [
-        "Перацягніце свае файлы сюды"
       ],
       "Edit documents online": [
         "Рэдагуйце дакументы ў інтэрнэце"
       ],
-      "End-to-end encrypted storage for your files": [
-        "Зашыфраванае скразным метадам сховішча для вашых файлаў"
-      ],
-      "Faster uploads for large or multiple files": [
-        "Хутчэйшае запампоўванне для вялікіх або састаўных файлаў"
-      ],
-      "Files uploaded during this time won’t count towards your storage limit.": [
-        "Файлы, якія вы цяпер запампавалі, не будуць улічвацца ў агульным памеры вашага сховішча."
-      ],
       "Files uploaded now will not count towards your storage limit": [
         "Файлы, якія вы цяпер запампавалі, не будуць улічвацца ў агульным памеры вашага сховішча."
-      ],
-      "Final approval in progress": [
-        "Адбываецца канчатковае зацвярджэнне"
       ],
       "Final approval pending": [
         "Чакаецца фінальнае зацвярджэнне"
       ],
-      "Free up hard drive space on your computer": [
-        "Вызваліце прастору цвёрдага дыска на сваім камп'ютары"
-      ],
-      "Get the desktop app": [
-        "Атрымаць праграму для камп'ютара"
-      ],
       "Get the mobile app": [
         "Атрымаць мабільную праграму"
-      ],
-      "Got an Android? We've got you covered.": [
-        "У вас Android? У нас нешта для вас ёсць."
-      ],
-      "Got an iPhone? We've got you covered.": [
-        "У вас iPhone? У нас нешта для вас ёсць."
-      ],
-      "Hang tight": [
-        "Адну хвіліну"
       ],
       "Invitation accepted": [
         "Запрашэнне прынята"
       ],
-      "Invitation received": [
-        "Запрашэнне атрымана"
-      ],
-      "Invite team members": [
-        "Запрасіць удзельнікаў каманды"
-      ],
-      "Keep the momentum going by uploading more files using the storage included with your plan.": [
-        "Захоўвайце дынаміку, запампоўваючы больш файлаў пры дапамозе сховішча, якое ўключана ў ваш тарыфны план."
-      ],
-      "Manage access": [
-        "Кіруйце доступам"
-      ],
-      "Organize files right from your desktop": [
-        "Арганізоўвайце файлы непасрэдна на сваім працоўным стале"
-      ],
-      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
-        "Абараніце свае фінансавыя дакументы, ідэнтыфікацыйныя карткі, файлы праекта, фатаграфіі і іншыя звесткі з дапамогай скразнога шыфравання."
-      ],
-      "Scan the QR code to install the mobile app": [
-        "Адсканіруйце QR-код, каб усталяваць мабільную праграму"
-      ],
       "Secure your files": [
         "Абараніце свае файлы"
       ],
-      "Securely share files and folders": [
-        "Бяспечна абагульвайце файлы і папкі"
-      ],
-      "Share files & folders": [
-        "Абагульвайце файлы і папкі"
-      ],
-      "Sync and access your files from anywhere": [
-        "Сінхранізуйце і атрымлівайце доступ да сваіх файлаў з любога месца"
-      ],
-      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
-        "Уладальніку неабходна пацвердзіць абагульванне доступу. Вы атрымаеце ліст, як толькі гэта будзе зроблена."
-      ],
-      "Upload your first file": [
-        "Запампуйце свой першы файл"
-      ],
       "Work faster, smarter": [
         "Працуйце хутчэй і разумней"
-      ],
-      "Work together": [
-        "Працуйце разам"
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Вы толькі што атрымалі бясплатныя даныя і абаранілі свае файлы з дапамогай скразнога шыфравання. І ўсё гэта зроблена за рэкордны час!"
@@ -10507,29 +9746,11 @@
       "Create new group": [
         "Стварыць новую групу"
       ],
-      "Expected structure": [
-        "Структура, якая чакаецца"
-      ],
       "Ignore group": [
         "Ігнараваць групу"
       ],
       "No parent folder": [
         "Адсутнічае бацькоўская папка"
-      ],
-      "Only current location": [
-        "Толькі бягучае размяшчэнне"
-      ],
-      "Only current location: ${ name }": [
-        "Толькі бягучае размяшчэнне: ${ name }"
-      ],
-      "Select JSON file": [
-        "Выбраць файл JSON"
-      ],
-      "Verify content": [
-        "Спраўдзіць змеcціва"
-      ],
-      "Verify thumbnails": [
-        "Спраўдзіць мініяцюры"
       ]
     },
     "Option group label": {
@@ -10806,6 +10027,9 @@
       "You will soon be redirected to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Ваша валюта была зменена на еўра (€), таму што ${ IDEAL_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
@@ -10817,6 +10041,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Не ўдалося ініцыялізаваць ${ IDEAL_BRAND_NAME }. Паўтарыце спробу пазней."
+      ],
       "Invalid card number": [
         "Памылковы нумар карткі"
       ],
@@ -10839,6 +10066,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Нешта пайшло не так. Збой спраўджання Google Pay."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Пацвярджаючы гэты плацеж, вы надзяляеце паўнамоцтвамі ${ BRAND_NAME } і Stripe, нашага пастаўшчыка плацежных паслуг, даць указанне вашаму банку спісаць з вашага рахунку адпаведныя сродкі. Вы можаце вярнуць спісаныя сродкі на працягу 8 тыдняў з даты спісання ў адпаведнасці з умовамі дагавора з вашым банкам."
       ]
     },
     "Payments.info": {
@@ -10982,6 +10214,9 @@
       "Anytown": [
         "Полацк"
       ],
+      "Ask anything…": [
+        "Спытайце што-небудзь…"
+      ],
       "Choose password": [
         "Выберыце пароль"
       ],
@@ -11000,14 +10235,8 @@
       "Enter a name": [
         "Увядзіце назву"
       ],
-      "Enter a new file name": [
-        "Увядзіце новую назву файла"
-      ],
       "Enter a new folder name": [
         "Увядзіце новую назву папкі"
-      ],
-      "Enter device name": [
-        "Увядзіце назву прылады"
       ],
       "Enter your email address": [
         "Увядзіце свой адрас электроннай пошты"
@@ -11168,6 +10397,23 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Ход выканання: ${ combinedProgress }%"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "атрыбуты"
+      ],
+      "hash key": [
+        "хэш-ключ"
+      ],
+      "key": [
+        "ключ"
+      ],
+      "membership": [
+        "удзельніцтва"
+      ],
+      "name": [
+        "назва"
       ]
     },
     "Property type": {
@@ -11963,12 +11209,6 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Спасылка на гэты элемент захавана ў вашым дыску. Вы зможаце атрымаць доступ да яе ў раздзеле \"Абагуленыя са мной\"."
-      ],
-      "Encrypted search is here": [
-        "Зашыфраваны пошук тут"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Зараз вы можаце лёгка шукаць файлы ў Drive, захоўваючы бяспеку даных."
       ]
     },
     "sso": {
@@ -12535,44 +11775,11 @@
       ]
     },
     "Subtitle": {
-      "Albums shared with you will appear here": [
-        "Абагуленыя альбомы ад іншых людзей з'явяцца тут"
-      ],
-      "Albums you've shared will appear here": [
-        "Абагуленыя вамі альбомы з'явяцца тут"
-      ],
       "Shared by ${ sharedBy }": [
         "Абагулена ${ sharedBy }"
       ],
-      "Your favorited photos will appear here": [
-        "Вашы абраныя фатаграфіі з'явяцца тут"
-      ],
-      "Your Live Photos will appear here": [
-        "Вашы Live Photos з'явяцца тут"
-      ],
-      "Your panorama photos will appear here": [
-        "Вашы панарамныя фатаграфіі з'явяцца тут"
-      ],
-      "Your photo bursts will appear here": [
-        "Вашы серыйныя фатаграфіі з'явяцца тут"
-      ],
-      "Your portraits photos will appear here": [
-        "Вашыя партрэтныя фатаграфіі з'явяцца тут"
-      ],
       "Your RAW photos will appear here": [
         "Вашы фатаграфіі RAW з'явяцца тут"
-      ],
-      "Your screenshots will appear here": [
-        "Вашы здымкі экрана з'явяцца тут"
-      ],
-      "Your selfies photos will appear here": [
-        "Вашы сэлфі з'явяцца тут"
-      ],
-      "Your tagged photos will appear here": [
-        "Вашы пазначаныя фатаграфіі з'явяцца тут"
-      ],
-      "Your videos will appear here": [
-        "Вашы відэа з'явяцца тут"
       ]
     },
     "Success": {
@@ -12581,12 +11788,6 @@
         "${ countMergeableContacts } кантакты выглядаюць ідэнтычна.",
         "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна.",
         "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна."
-      ],
-      "${ countOfUnrecoveredLinksLeft } left": [
-        "Застаўся ${ countOfUnrecoveredLinksLeft }",
-        "Засталося ${ countOfUnrecoveredLinksLeft }",
-        "Засталося ${ countOfUnrecoveredLinksLeft }",
-        "Засталося ${ countOfUnrecoveredLinksLeft }"
       ],
       "Address copied to clipboard": [
         "Адрас скапіяваны ў буфер абмену"
@@ -12660,9 +11861,6 @@
       "Problem reported": [
         "Паведамлена аб праблеме"
       ],
-      "Recovery has started": [
-        "Пачалося аднаўленне"
-      ],
       "Secure link copied": [
         "Бяспечная спасылка скапіявана"
       ],
@@ -12727,17 +11925,26 @@
       "Actions": [
         "Дзеянні"
       ],
+      "Activated": [
+        "Актывавана"
+      ],
       "Address": [
         "Адрас"
       ],
       "Created": [
         "Створана"
       ],
+      "Estimated size": [
+        "Прыблізны памер"
+      ],
       "Expires": [
         "Дзейнічае да"
       ],
       "Fingerprint": [
         "Адбітак"
+      ],
+      "Migration status": [
+        "Статус пераносу"
       ],
       "Name": [
         "Назва"
@@ -12750,6 +11957,9 @@
       ],
       "Type": [
         "Тып"
+      ],
+      "User": [
+        "Карыстальнік"
       ]
     },
     "TableHeader": {
@@ -12779,35 +11989,6 @@
       ],
       "vCard field": [
         "Поле vCard"
-      ]
-    },
-    "Tag": {
-      "Bursts": [
-        "Серыі"
-      ],
-      "Favorites": [
-        "Абраныя"
-      ],
-      "Live Photos": [
-        "Live Photos"
-      ],
-      "Panoramas": [
-        "Панарамы"
-      ],
-      "Portraits": [
-        "Партрэты"
-      ],
-      "RAW": [
-        "RAW"
-      ],
-      "Screenshots": [
-        "Здымкі экрана"
-      ],
-      "Selfies": [
-        "Сэлфi"
-      ],
-      "Videos": [
-        "Відэа"
       ]
     },
     "Time unit": {
@@ -12848,9 +12029,6 @@
       ],
       "${ feature } is now active": [
         "${ feature } цяпер у актыўным стане"
-      ],
-      "${ freeUploadLength } of free uploads.": [
-        "${ freeUploadLength } бясплатных запамповак."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
@@ -12924,12 +12102,6 @@
       "Are you sure you want to close the preview?": [
         "Вы сапраўды хочаце закрыць папярэдні прагляд?"
       ],
-      "Are you sure you want to remove this item from your list?": [
-        "Вы сапраўды хочаце выдаліць гэты элемент са свайго спіса?",
-        "Вы сапраўды хочаце выдаліць гэтыя элементы са свайго спіса?",
-        "Вы сапраўды хочаце выдаліць гэтыя элементы са свайго спіса?",
-        "Вы сапраўды хочаце выдаліць гэтыя элементы са свайго спіса?"
-      ],
       "Are you sure?": [
         "Вы ўпэўнены?"
       ],
@@ -12990,6 +12162,9 @@
       "Computers": [
         "Камп'ютары"
       ],
+      "Configure migration": [
+        "Сканфігурыраваць перанос"
+      ],
       "Confirm downgrade": [
         "Пацвердзіць паніжэнне тарыфнага плана"
       ],
@@ -12997,7 +12172,7 @@
         "Пацвердзіць страту бонусаў ${ BRAND_NAME }"
       ],
       "Confirmation required": [
-        "Патрабуецца пацвярджэнне"
+        "Патрабуецца пацверджанне"
       ],
       "Connect apps and devices": [
         "Падключэнне праграм і прылад"
@@ -13025,9 +12200,6 @@
       ],
       "Coupon": [
         "Купон"
-      ],
-      "Create a new file": [
-        "Стварэнне новага файла"
       ],
       "Create a new folder": [
         "Стварэнне новай папкі"
@@ -13146,6 +12318,9 @@
       "Disconnected from Gmail": [
         "Адключана ад Gmail"
       ],
+      "Domain names": [
+        "Даменныя імёны"
+      ],
       "Downgrade account": [
         "Панізіць уліковы запіс"
       ],
@@ -13166,9 +12341,6 @@
       ],
       "Download unverified folder?": [
         "Спампаваць неправераную папку?"
-      ],
-      "Drive": [
-        "Drive"
       ],
       "Drop to upload": [
         "Перацягніце, каб запампаваць"
@@ -13224,23 +12396,11 @@
       "File details": [
         "Падрабязнасці файла"
       ],
-      "File recovery process": [
-        "Працэс аднаўлення файлаў"
-      ],
       "Folder": [
         "Папка"
       ],
       "Folder details": [
         "Падрабязнасці папкі"
-      ],
-      "Found ${ resultCount } result": [
-        "Знойдзены ${ resultCount } вынік",
-        "Знойдзены ${ resultCount } вынікі",
-        "Знойдзены ${ resultCount } вынікаў",
-        "Знойдзены ${ resultCount } вынікаў"
-      ],
-      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
-        "Атрымайце ${ DRIVE_SHORT_APP_NAME } на свой тэлефон"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Атрымайце **${ referralInfo.uiData.refereeRewardAmount }** у крэдытах з ${ planTitle }"
@@ -13248,26 +12408,17 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Атрыманне поўнага доступу да ${ CALENDAR_APP_NAME }"
       ],
-      "Get mobile and desktop apps": [
-        "Атрымаць мабільныя праграмы і праграмы для камп'ютара"
-      ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Атрымайце больш сховішча з ${ MAIL_APP_NAME } Plus"
       ],
-      "Get started with 10 minutes of free uploads, on the house.": [
-        "Пачніце з 10 хвілін бясплатнага запампоўвання за наш кошт."
-      ],
       "Get the apps": [
         "Атрымаць праграмы"
       ],
       "Gift": [
         "Падарунак"
-      ],
-      "Global": [
-        "Глабальныя"
       ],
       "Groups": [
         "Групы"
@@ -13320,9 +12471,6 @@
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Імпартавана ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Index populators": [
-        "Індэкс папулятараў"
-      ],
       "Information exposed in breach": [
         "Звесткі, якія былі скампраметаваныя ў выніку парушэння"
       ],
@@ -13335,23 +12483,11 @@
       "Last uploaded by": [
         "Апошняе запампоўванне"
       ],
-      "Level": [
-        "Узровень"
-      ],
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
       ],
       "Location": [
         "Размяшчэнне"
-      ],
-      "Logger": [
-        "Рэгістратар"
-      ],
-      "Logs": [
-        "Журналы"
-      ],
-      "Make a copy": [
-        "Зрабіць копію"
       ],
       "Make a secure connection your default": [
         "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
@@ -13364,9 +12500,6 @@
       ],
       "Merging contacts": [
         "Аб'яднанне кантактаў"
-      ],
-      "Message": [
-        "Паведамленне"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Перанесці вашу арганізацыю ў ${ BRAND_NAME }"
@@ -13401,47 +12534,20 @@
       "Night theme": [
         "Начная тэма"
       ],
-      "No albums shared with me": [
-        "Няма альбомаў, якія абагулены са мной"
-      ],
       "No breaches detected": [
         "Парушэнні не выяўлены"
-      ],
-      "No bursts": [
-        "Няма серыйных здымкаў"
-      ],
-      "No favorites": [
-        "Няма абраных"
-      ],
-      "No Live Photos": [
-        "Няма Live Photos"
-      ],
-      "No panorama": [
-        "Няма панарамы"
-      ],
-      "No photos": [
-        "Няма фатаграфій"
       ],
       "No portraits": [
         "Няма партрэтаў"
       ],
-      "No RAW": [
-        "Няма відарысаў RAW"
-      ],
       "No results found": [
         "Нічога не знойдзена"
-      ],
-      "No screenshots": [
-        "Няма здымкаў экрана"
       ],
       "No selfies": [
         "Няма сэлфi"
       ],
       "No shared albums": [
         "Няма абагуленых альбомаў"
-      ],
-      "No videos": [
-        "Няма відэа"
       ],
       "Notes": [
         "Нататкі"
@@ -13518,9 +12624,6 @@
       "Re-signing contacts": [
         "Паўторна падпісаць кантакты"
       ],
-      "Ready, set, upload.": [
-        "На старт, увага, запампаваць!"
-      ],
       "Recommended": [
         "Рэкамендаваны"
       ],
@@ -13539,12 +12642,6 @@
       "Remove device?": [
         "Выдаліць прыладу?"
       ],
-      "Remove item?": [
-        "Выдаліць элемент?",
-        "Выдаліць элементы?",
-        "Выдаліць элементы?",
-        "Выдаліць элементы?"
-      ],
       "Remove your access?": [
         "Выдаліць ваш доступ?"
       ],
@@ -13553,9 +12650,6 @@
       ],
       "Rename a folder": [
         "Перайменаваць папку"
-      ],
-      "Rename device": [
-        "Перайменаваць прыладу"
       ],
       "Report a problem": [
         "Паведаміць аб праблеме"
@@ -13571,12 +12665,6 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Захаваць пазней у ${ DRIVE_APP_NAME }"
-      ],
-      "Search": [
-        "Пошук"
-      ],
-      "Search results": [
-        "Пошук вынікаў"
       ],
       "Searching…": [
         "Пошук…"
@@ -13598,6 +12686,9 @@
       ],
       "Select link expiration date": [
         "Выберыце дату завяршэння тэрміну дзеяння спасылкі"
+      ],
+      "Select users to migrate": [
+        "Выберыце карыстальнікаў для пераносу"
       ],
       "Set recovery methods": [
         "Прызначэнне спосабаў аднаўлення"
@@ -13634,9 +12725,6 @@
       ],
       "Shared with me": [
         "Абагулена са мной"
-      ],
-      "Show actions": [
-        "Паказаць дзеянні"
       ],
       "Sign in and grant access": [
         "Увайсці і даць доступ"
@@ -13818,11 +12906,11 @@
       "We'd love to hear from you!": [
         "Нам было б прыемна пачуць гэта!"
       ],
-      "Welcome offer": [
-        "Прывітальная прапанова"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Вітаем у ${ BRAND_NAME } for Business"
+      ],
+      "What are you migrating?": [
+        "Што вы плануеце перанесці?"
       ],
       "What can a VPN protect you from?": [
         "Ад чаго можа абараніць VPN?"
@@ -13839,17 +12927,11 @@
       "You can now create unlimited folders and labels": [
         "Цяпер вы можаце ствараць неабмежаваную колькасць папак і метак"
       ],
-      "You have inaccessible files": [
-        "Вы маеце недаступныя файлы"
-      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны пробны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
       ],
       "Your ${ planTitle } subscription has started": [
         "Ваша падпіска з тарыфным планам ${ planTitle } пачалася"
-      ],
-      "Your 3 GB bonus": [
-        "Ваш бонус у 3 ГБ"
       ],
       "Your account is protected": [
         "Ваш уліковы запіс абаронены"
@@ -13868,15 +12950,6 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
-      ],
-      "Your welcome actions": [
-        "Вашы прывітальныя дзеянні"
-      ],
-      "You’re off to a great start!": [
-        "Выдатны пачатак!"
-      ],
-      "You’ve got 5 GB of storage": [
-        "Вы атрымалі 5 ГБ сховішча"
       ]
     },
     "Title header for keys table": {
@@ -13922,6 +12995,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Наладзьце імпартаванне, каб паменшыць колькасць метак"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Статус пераносу даных з ${ providerName } у ${ BRAND_NAME }"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Лічбавы подпіс лістоў дапамагае пацвердзіць, што менавіта вы іх адправілі"
@@ -13995,6 +13071,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Запампуйце адкрыты ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Карыстальнікі, якія маюць доступ да сваіх уліковых запісаў ${ BRAND_NAME }"
+      ],
       "Version 6 OpenPGP key": [
         "Ключ OpenPGP версіі 6"
       ],
@@ -14037,12 +13116,10 @@
         "Карыстальнік павінен мець адрас, каб запытаць доступ да даных"
       ]
     },
-    "Upsell": {
-      "Get Drive for Business": [
-        "Атрымаць Drive for Business"
-      ]
-    },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Палепшыце да сумяшчальнага тарыфнага плана, каб выкарыстоўваць ролі адміністратараў."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
       ]
