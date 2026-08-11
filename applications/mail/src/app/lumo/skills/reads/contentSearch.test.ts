@@ -53,10 +53,17 @@ describe('resolveContentSearchCoverage', () => {
 });
 
 describe('CONTENT_SEARCH_NOTES', () => {
-    it('tells the model to trust an empty result only under full coverage', () => {
-        expect(CONTENT_SEARCH_NOTES.full).not.toContain('Do NOT');
-        expect(CONTENT_SEARCH_NOTES.partial).toContain('Do NOT tell the user no such email exists');
-        expect(CONTENT_SEARCH_NOTES.metadata_only).toContain('Do NOT tell the user no such email exists');
-        expect(CONTENT_SEARCH_NOTES.unfinished).toContain('Do NOT tell the user no such email exists');
+    it.each([
+        ['full', 'across the whole mailbox'],
+        ['partial', 'capped index'],
+        ['metadata_only', 'were NOT searched'],
+        ['unfinished', 'had NOT finished'],
+    ] as const)('states what %s coverage did and did not search', (coverage, fact) => {
+        expect(CONTENT_SEARCH_NOTES[coverage]).toContain(fact);
+    });
+
+    it.each(Object.entries(CONTENT_SEARCH_NOTES))('leaves the recovery policy to the guide (%s)', (_case, note) => {
+        expect(note).not.toContain('Do NOT');
+        expect(note).not.toContain('offer to');
     });
 });
