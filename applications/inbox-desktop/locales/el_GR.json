@@ -70,6 +70,9 @@
       "Force Reload": [
         "Αναγκαστική Επαναφόρτωση"
       ],
+      "Help and feedback": [
+        "Βοήθεια και σχόλια"
+      ],
       "Hide ${ MAIL_APP_NAME }": [
         "Απόκρυψη ${ MAIL_APP_NAME }"
       ],
@@ -78,6 +81,9 @@
       ],
       "Minimize": [
         "Ελαχιστοποίηση"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Paste": [
         "Επικόλληση"
@@ -147,6 +153,9 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Απεγκατάσταση ${ MAIL_APP_NAME }"
+      ],
+      "Version ${ version } (${ buildInfo })\n${ pkg.config.copyright }": [
+        "Έκδοση ${ version } (${ buildInfo })\n${ pkg.config.copyright }"
       ],
       "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
         "Όταν είναι ενεργοποιημένη η επιτάχυνση υλικού, η εφαρμογή χρησιμοποιεί το αποκλειστικό υλικό γραφικών της συσκευής σας για απόδοση. Αυτό μπορεί να προκαλέσει προβλήματα συμβατότητας σε ορισμένα συστήματα."
@@ -255,11 +264,19 @@
       "File": [
         "Αρχείο"
       ],
+      "Help": [
+        "Βοήθεια"
+      ],
       "View": [
         "Προβολή"
       ],
       "Window": [
         "Παράθυρο"
+      ]
+    },
+    "Title": {
+      "About ${ MAIL_APP_NAME }": [
+        "Σχετικά με το ${ MAIL_APP_NAME }"
       ]
     },
     "Unload warning": {
