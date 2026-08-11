@@ -612,6 +612,7 @@ export interface SubsidiaryOrganizationKeysPayload {
     PrivateKey: string;
     ParentOrgToken: string;
     ParentOrgSignature: string;
+    OrganizationIdentitySignature: string;
 }
 
 /**
@@ -621,12 +622,16 @@ export interface SubsidiaryOrganizationKeysPayload {
  *   - ParentOrgToken: the token encrypted to the MSP admin's org key (armored PGP message)
  *   - ParentOrgSignature: detached signature over the token by the admin's org key
  *   - PrivateKey: the subsidiary's org private key, exported encrypted with the raw token
+ *   - OrganizationIdentitySignature: signature over the subsidiary key's fingerprint, made with the
+ *     MSP's own organization identity address, so the subsidiary inherits the MSP's identity
  */
 export const generateSubsidiaryOrganizationKeys = async ({
     adminOrgKey,
+    signingAddressKey,
     keyGenConfig,
 }: {
     adminOrgKey: PrivateKeyReference;
+    signingAddressKey: PrivateKeyReference;
     keyGenConfig: KeyGenConfig;
 }): Promise<SubsidiaryOrganizationKeysPayload> => {
     const tokenBytes = crypto.getRandomValues(new Uint8Array(32));
@@ -647,11 +652,16 @@ export const generateSubsidiaryOrganizationKeys = async ({
         privateKey: subsidiaryPrivateKey,
         passphrase: token,
     });
+    const organizationIdentitySignature = await generateOrganizationKeySignature({
+        signingKeys: signingAddressKey,
+        organizationKey: subsidiaryPrivateKey,
+    });
     await CryptoProxy.clearKey({ key: subsidiaryPrivateKey });
 
     return {
         PrivateKey: privateKeyArmored,
         ParentOrgToken: encryptedToken,
         ParentOrgSignature: signature,
+        OrganizationIdentitySignature: organizationIdentitySignature,
     };
 };
