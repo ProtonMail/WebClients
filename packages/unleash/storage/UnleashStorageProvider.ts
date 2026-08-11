@@ -3,7 +3,7 @@ import type { IStorageProvider } from '@unleash/proxy-client-react';
 import { deleteCookie } from '@proton/shared/lib/helpers/cookies';
 
 import { FLAGS_WITH_VARIANT } from '../UnleashFeatureFlagsVariants';
-import saveWhitelistedFlagInCookies, { UNLEASH_FLAG_COOKIE_NAME } from './UnleashCookiesProvider';
+import saveAllowlistedFlagInCookies, { UNLEASH_FLAG_COOKIE_NAME } from './UnleashCookiesProvider';
 
 export const featureFlagStorageKey = 'repo';
 
@@ -18,7 +18,7 @@ export default class ProtonUnleashStorageProvider implements IStorageProvider {
         try {
             this.storage.setItem(key, serializedValue);
             if (name === featureFlagStorageKey) {
-                saveWhitelistedFlagInCookies(data, FLAGS_WITH_VARIANT);
+                saveAllowlistedFlagInCookies(data, FLAGS_WITH_VARIANT);
             }
         } catch (e) {}
     }

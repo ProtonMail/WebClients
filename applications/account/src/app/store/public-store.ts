@@ -7,6 +7,7 @@ import { plansReducer } from '@proton/account/plans';
 import { referralInfoReducer } from '@proton/account/referralInfo';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
+import { staticExperimentsReducer } from '../staticExperiments/slice';
 import { type AccountThunkPublicArguments, extraThunkArguments } from './public-thunk';
 
 export const setupStore = () => {
@@ -17,6 +18,7 @@ export const setupStore = () => {
             ...apiStatusReducer,
             ...referralInfoReducer,
             ...eligibleTrialsReducer,
+            ...staticExperimentsReducer,
         },
         devTools: process.env.NODE_ENV !== 'production',
         middleware: (getDefaultMiddleware) =>

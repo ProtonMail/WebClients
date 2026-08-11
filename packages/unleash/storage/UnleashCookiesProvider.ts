@@ -1,10 +1,13 @@
 import { addDays, endOfDay } from 'date-fns';
 
-import { deleteCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
+import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 
 import type { FeatureFlagToggle } from '../interface';
 
 export const UNLEASH_FLAG_COOKIE_NAME = 'Features';
+
+const ENTRY_SEPARATOR = ',';
+const NAME_VARIANT_SEPARATOR = ':';
 
 /**
  * Invalid characters list
@@ -14,51 +17,90 @@ export const UNLEASH_FLAG_COOKIE_NAME = 'Features';
  */
 const UNLEASH_FLAG_INVALID_CHARS = [',', ':', ' '];
 
-const isValidString = (value: string) => UNLEASH_FLAG_INVALID_CHARS.every((char) => !value.includes(char));
+export const isValidFeatureFlagCookieString = (value: string) =>
+    UNLEASH_FLAG_INVALID_CHARS.every((char) => !value.includes(char));
+
+const parseFeatureFlagCookieEntries = (rawValue: string | undefined): Map<string, string> => {
+    const entries = new Map<string, string>();
+
+    for (const pair of rawValue ? rawValue.split(ENTRY_SEPARATOR) : []) {
+        const [name, variant] = pair.split(NAME_VARIANT_SEPARATOR);
+        if (name && variant) {
+            entries.set(name, variant);
+        }
+    }
+
+    return entries;
+};
+
+const serializeFeatureFlagCookieEntries = (entries: Map<string, string>): string => {
+    return [...entries].map(([name, variant]) => `${name}${NAME_VARIANT_SEPARATOR}${variant}`).join(ENTRY_SEPARATOR);
+};
 
 /**
- * @description Stores whitelisted feature flags in a cookie for the data team.
- * Data is stored in a comma-separated list with the following format: `flagName:variantName`
+ * @description Reads the current entries of the shared `Features` cookie, regardless of which
+ * consumer wrote them (Unleash allowlisted flags, or anything else merging into this cookie).
+ */
+export const readFeatureFlagCookieEntries = (): Map<string, string> => {
+    return parseFeatureFlagCookieEntries(getCookie(UNLEASH_FLAG_COOKIE_NAME));
+};
+
+/**
+ * @description Writes the given entries back to the shared `Features` cookie in full -
+ * callers are responsible for merging with `readFeatureFlagCookieEntries()` first if they
+ * only want to touch a subset of entries.
+ */
+export const writeFeatureFlagCookieEntries = (entries: Map<string, string>) => {
+    if (entries.size === 0) {
+        deleteCookie(UNLEASH_FLAG_COOKIE_NAME);
+        return;
+    }
+
+    setCookie({
+        // @ts-expect-error - Invalid prop name. Will be fixed in different MR
+        domain: window.location.hostname,
+        cookieName: UNLEASH_FLAG_COOKIE_NAME,
+        cookieValue: serializeFeatureFlagCookieEntries(entries),
+        path: '/',
+        secure: true,
+        expirationDate: endOfDay(addDays(new Date(), 30)).toUTCString(),
+    });
+};
+
+/**
+ * @description Stores allowlisted feature flags in a cookie for the data team.
+ * Only entries whose name is in `allowlistedFlags` are touched; anything else already present
+ * in the cookie (e.g. other consumers merging into the same cookie) is left untouched.
  *
  * @param data - List of flags fetched by the Unleash client
- * @param whitelistedFlags - List of whitelisted flags defined in the app
+ * @param allowlistedFlags - List of allowlisted flags defined in the app
  */
-const saveWhitelistedFlagInCookies = (data: FeatureFlagToggle[], whitelistedFlags: string[]) => {
-    const enabledFlags = [];
+const saveAllowlistedFlagInCookies = (data: FeatureFlagToggle[], allowlistedFlags: string[]) => {
+    // There are cases where data is not an array, better prevent it
+    if (!Array.isArray(data)) {
+        return;
+    }
 
-    for (const flagName of whitelistedFlags) {
-        // There are cases where data is not an array, better prevent it
-        if (!Array.isArray(data)) {
-            return;
-        }
+    const entries = readFeatureFlagCookieEntries();
 
-        // Map whitelisted flags to valid cookie entries
+    for (const flagName of allowlistedFlags) {
+        entries.delete(flagName);
+
+        // Map allowlisted flags to valid cookie entries
         const flagData = data.find((flag) => flag.name === flagName);
 
         // If variant is enabled, save flag name + variant
         if (
             flagData?.enabled &&
             flagData?.variant?.enabled &&
-            isValidString(flagData.name) &&
-            isValidString(flagData.variant.name)
+            isValidFeatureFlagCookieString(flagData.name) &&
+            isValidFeatureFlagCookieString(flagData.variant.name)
         ) {
-            enabledFlags.push(`${flagData.name}:${flagData.variant.name}`);
+            entries.set(flagData.name, flagData.variant.name);
         }
     }
 
-    if (enabledFlags.length > 0) {
-        const cookie = {
-            domain: window.location.hostname,
-            cookieName: UNLEASH_FLAG_COOKIE_NAME,
-            cookieValue: enabledFlags.join(','),
-            path: '/',
-            secure: true,
-            expirationDate: endOfDay(addDays(new Date(), 30)).toUTCString(),
-        };
-        setCookie(cookie);
-    } else {
-        deleteCookie(UNLEASH_FLAG_COOKIE_NAME);
-    }
+    writeFeatureFlagCookieEntries(entries);
 };
 
-export default saveWhitelistedFlagInCookies;
+export default saveAllowlistedFlagInCookies;
