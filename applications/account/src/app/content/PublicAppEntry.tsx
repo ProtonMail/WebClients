@@ -23,6 +23,9 @@ import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthent
 
 import config from '../config';
 import locales from '../locales';
+import { staticExperimentsConfig } from '../staticExperiments/config';
+import { resolveStaticExperiments } from '../staticExperiments/resolve';
+import { staticExperimentsActions } from '../staticExperiments/slice';
 import { extendStore, setupStore } from '../store/public-store';
 import { PublicAppInitial } from './PublicAppInitial';
 import { LocationThemeSync } from './theme/LocationThemeSync';
@@ -56,6 +59,7 @@ const bootstrapApp = () => {
     const unleashClient = createUnleash({ api: unauthenticatedApi.apiCallback });
     extendStore({ config, api, authentication, unleashClient, unauthenticatedApi });
     const store = setupStore();
+    store.dispatch(staticExperimentsActions.set(resolveStaticExperiments(staticExperimentsConfig)));
     return {
         authentication,
         store,

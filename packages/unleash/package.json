@@ -13,7 +13,8 @@
         "./UnleashFlagProvider": "./UnleashFlagProvider.tsx",
         "./UnleashFeatureFlagsVariants": "./UnleashFeatureFlagsVariants.ts",
         "./Flags": "./UnleashFeatureFlags.ts",
-        "./proxy": "./proxy.ts"
+        "./proxy": "./proxy.ts",
+        "./UnleashCookiesProvider": "./storage/UnleashCookiesProvider.ts"
     },
     "scripts": {
         "check-types": "tsc",
