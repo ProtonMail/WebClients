@@ -9872,6 +9872,33 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "marque ${ IDEAL_BRAND_NAME }"
+      ],
+      "Allows IPv6 traffic to pass through the VPN tunnel. This improves compatibility with IPv6 websites and services.": [
+        "Permet au trafic IPv6 de transiter par le tunnel VPN. Cela améliore la compatibilité avec les sites internet et les services IPv6."
+      ],
+      "Backup password disabled": [
+        "Le mot de passe de secours est désactivé."
+      ],
+      "Backup password enabled": [
+        "Le mot de passe de secours est activé."
+      ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Excluez-les lors du déploiement du profil d'appareil. Cette fonctionnalité sera bientôt disponible."
+      ],
+      "Manage how users can access your ${ BRAND_NAME } organization with single sign-on.": [
+        "Gérez les modalités d'accès des utilisateurs à votre organisation ${ BRAND_NAME } grâce à l'authentification unique."
+      ],
+      "SSO users can't sign in on devices with always-on enforced.": [
+        "Les utilisateurs SSO ne peuvent pas se connecter sur les appareils pour lesquels le fonctionnement permanent est imposé."
+      ],
+      "Users create a backup password the first time they sign in with single sign-on. When they later sign in on a new device, they can enter this password to complete the sign-in themselves, without needing an already signed-in device or an administrator to assist.": [
+        "Les utilisateurs créent un mot de passe de secours lors de leur première connexion via l'authentification unique. Lorsqu'ils se connectent par la suite sur un nouvel appareil, ils peuvent saisir ce mot de passe pour finaliser eux-mêmes la connexion, sans avoir besoin d'un appareil déjà connecté ni de l'aide d'un administrateur."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Nous vous redirigerons vers ${ IDEAL_BRAND_NAME } dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ]
     },
     "info": {
@@ -11031,6 +11058,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Allow users to set a backup password": [
+        "Permettre aux utilisateurs de définir un mot de passe de secours"
       ]
     },
     "label": {
@@ -13855,6 +13885,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Payer avec ${ IDEAL_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Votre devise a été changée en euros (€) car ${ IDEAL_BRAND_NAME } prennent uniquement en charge les paiements en euros."
       ]
     },
     "Payments.Error": {
@@ -13875,6 +13911,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "L'initialisation de ${ IDEAL_BRAND_NAME } n'a pas abouti. Veuillez réessayer plus tard."
       ]
     },
     "Payments.error": {
@@ -16101,6 +16140,15 @@
       ],
       "Your SSO configuration will be deleted.": [
         "La configuration de votre authentification unique (SSO) sera supprimée."
+      ],
+      "Continue to join as **${ username }**": [
+        "Continuez à vous connecter en tant que **${ username }**"
+      ],
+      "For your security, you have been signed out of all your other active devices.": [
+        "Pour votre sécurité, vous avez été déconnecté de tous vos autres appareils actifs."
+      ],
+      "This will sign you out of your other devices.": [
+        "Cette action vous déconnectera de vos autres appareils."
       ]
     },
     "sso: auth device state": {
@@ -18697,6 +18745,9 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Advanced configuration": [
+        "Configuration avancée"
       ]
     },
     "Title for payment methods table": {
@@ -19662,6 +19713,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Une fois la vérification réussie, ne retirez pas cet enregistrement TXT : il est nécessaire pour confirmer que vous restez propriétaire du domaine."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8 semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
       ]
     }
   }
