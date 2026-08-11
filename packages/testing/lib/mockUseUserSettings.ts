@@ -15,7 +15,7 @@ const defaultUserSettings: UserSettings = {
     DeviceRecovery: 0,
     Density: 0,
     EarlyAccess: 0,
-    Email: { Value: '', Status: 0, Notify: 0, Reset: 0 },
+    Email: { Value: '', Status: 0, Notify: 0, Reset: 0, UpdateTime: null },
     Flags: {
         Welcomed: 0,
         SupportPgpV6Keys: 0,
@@ -31,7 +31,7 @@ const defaultUserSettings: UserSettings = {
     News: 0,
     Password: { Mode: 1, ExpirationTime: 0 },
     Mnemonic: { UpdateTime: null },
-    Phone: { Value: '', Status: 0, Notify: 0, Reset: 0 },
+    Phone: { Value: '', Status: 0, Notify: 0, Reset: 0, UpdateTime: null },
     HighSecurity: { Eligible: 0, Value: 0, SummaryEmail: 0 },
     Referral: { Eligible: true, Link: 'https://referral-link' },
     SessionAccountRecovery: 0,
@@ -48,6 +48,10 @@ const defaultUserSettings: UserSettings = {
         Enforced: 0,
     },
     NextPasswordReminderTime: 0,
+    EmergencyContactsLastModifiedTime: null,
+    QrCodeSignInLastModifiedTime: null,
+    RecoveryContactsLastModifiedTime: null,
+    SignedInResetLastModifiedTime: null,
     UsedClients: [],
 };
 

@@ -12,6 +12,7 @@ import SettingsDescription, {
     SettingsDescriptionItem,
 } from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
+import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
@@ -75,62 +76,72 @@ const RecoveryPhraseSubpage = () => {
                 )}
 
                 {updateRecoveryKit.showExistingRecoveryPhraseCard ? (
-                    <DashboardCard className="fade-in">
-                        <DashboardCardContent>
-                            <h3 className="mb-0 text-rg text-semibold mb-2">{c('Title').t`Your recovery phrase`}</h3>
+                    <>
+                        <DashboardCard className="fade-in">
+                            <DashboardCardContent>
+                                <h3 className="mb-0 text-rg text-semibold mb-2">{c('Title')
+                                    .t`Your recovery phrase`}</h3>
 
-                            {mnemonicData.hasOutdatedMnemonic && (
-                                <div>
-                                    <Button
-                                        color="norm"
-                                        className="inline-flex gap-2 items-center"
-                                        onClick={updateRecoveryKit.updatePhrase}
-                                    >
-                                        <IcArrowRotateRight className="shrink-0" />
-                                        {c('Action').t`Generate new phrase`}
-                                    </Button>
-                                </div>
-                            )}
-                            {!mnemonicData.hasOutdatedMnemonic && mnemonicData.mnemonicCanBeRegenerated && (
-                                <div className="flex gap-2">
-                                    <Button
-                                        shape="outline"
-                                        className="color-primary inline-flex gap-2 items-center justify-center"
-                                        onClick={updateRecoveryKit.updatePhrase}
-                                    >
-                                        <IcArrowRotateRight className="shrink-0" />
-                                        {c('Action').t`Generate new recovery phrase`}
-                                    </Button>
-                                    <Button shape="outline" onClick={() => setValidateModalOpen(true)}>
-                                        {c('Action').t`Verify recovery phrase`}
-                                    </Button>
-                                </div>
-                            )}
+                                {mnemonicData.hasOutdatedMnemonic && (
+                                    <div>
+                                        <Button
+                                            color="norm"
+                                            className="inline-flex gap-2 items-center"
+                                            onClick={updateRecoveryKit.updatePhrase}
+                                        >
+                                            <IcArrowRotateRight className="shrink-0" />
+                                            {c('Action').t`Generate new phrase`}
+                                        </Button>
+                                    </div>
+                                )}
+                                {!mnemonicData.hasOutdatedMnemonic && mnemonicData.mnemonicCanBeRegenerated && (
+                                    <div className="flex gap-2">
+                                        <Button
+                                            shape="outline"
+                                            className="color-primary inline-flex gap-2 items-center justify-center"
+                                            onClick={updateRecoveryKit.updatePhrase}
+                                        >
+                                            <IcArrowRotateRight className="shrink-0" />
+                                            {c('Action').t`Generate new recovery phrase`}
+                                        </Button>
+                                        <Button shape="outline" onClick={() => setValidateModalOpen(true)}>
+                                            {c('Action').t`Verify recovery phrase`}
+                                        </Button>
+                                    </div>
+                                )}
 
-                            <DashboardCardDivider />
-                            <SettingsToggleRow
-                                id="mnemonicToggle"
-                                label={
-                                    <>
-                                        <SettingsToggleRow.Label data-testid="account:recovery:mnemonicToggle">
-                                            {c('Label').t`Allow recovery by recovery phrase`}
-                                        </SettingsToggleRow.Label>
-                                        <SettingsToggleRow.Description>
-                                            {c('Info')
-                                                .t`We strongly recommend that everyone enable recovery by recovery phrase.`}
-                                        </SettingsToggleRow.Description>
-                                    </>
-                                }
-                                toggle={
-                                    <SettingsToggleRow.Toggle
-                                        loading={updateRecoveryKit.toggleLoading}
-                                        checked={mnemonicData.isMnemonicSet}
-                                        onChange={({ target: { checked } }) => updateRecoveryKit.updateToggle(checked)}
-                                    />
-                                }
-                            />
-                        </DashboardCardContent>
-                    </DashboardCard>
+                                <DashboardCardDivider />
+                                <SettingsToggleRow
+                                    id="mnemonicToggle"
+                                    label={
+                                        <>
+                                            <SettingsToggleRow.Label data-testid="account:recovery:mnemonicToggle">
+                                                {c('Label').t`Allow recovery by recovery phrase`}
+                                            </SettingsToggleRow.Label>
+                                            <SettingsToggleRow.Description>
+                                                {c('Info')
+                                                    .t`We strongly recommend that everyone enable recovery by recovery phrase.`}
+                                            </SettingsToggleRow.Description>
+                                        </>
+                                    }
+                                    toggle={
+                                        <SettingsToggleRow.Toggle
+                                            loading={updateRecoveryKit.toggleLoading}
+                                            checked={mnemonicData.isMnemonicSet}
+                                            onChange={({ target: { checked } }) =>
+                                                updateRecoveryKit.updateToggle(checked)
+                                            }
+                                        />
+                                    }
+                                />
+                            </DashboardCardContent>
+                        </DashboardCard>
+                        <LastChanged
+                            className="block mt-2"
+                            date={mnemonicData.updateTime}
+                            data-testid="account:recovery:recovery-phrase:last-changed-date"
+                        />
+                    </>
                 ) : (
                     <div>
                         <Button

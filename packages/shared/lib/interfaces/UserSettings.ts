@@ -199,6 +199,8 @@ export interface UserSettings {
         Status: SETTINGS_STATUS;
         Notify: number;
         Reset: number;
+        /** ISO 8601 date string, unlike the unix timestamps used elsewhere in these settings */
+        UpdateTime: string | null;
     };
     Flags: Flags;
     HideSidePanel: DRAWER_VISIBILITY;
@@ -211,6 +213,8 @@ export interface UserSettings {
         Status: SETTINGS_STATUS;
         Notify: number;
         Reset: number;
+        /** ISO 8601 date string, unlike the unix timestamps used elsewhere in these settings */
+        UpdateTime: string | null;
     };
     Password: {
         Mode: SETTINGS_PASSWORD_MODE;
@@ -266,5 +270,9 @@ export interface UserSettings {
         Enforced: ORGANIZATION_POLICY_ENFORCED;
     };
     NextPasswordReminderTime: number | null;
+    EmergencyContactsLastModifiedTime: number | null;
+    QrCodeSignInLastModifiedTime: number | null;
+    RecoveryContactsLastModifiedTime: number | null;
+    SignedInResetLastModifiedTime: number | null;
     UsedClients: string[];
 }
