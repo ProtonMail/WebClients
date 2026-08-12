@@ -367,7 +367,7 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
     };
 
     return (
-        <div className="artifact-panel flex flex-column h-full overflow-hidden w-full rounded-xl">
+        <div className="artifact-panel flex flex-column h-full overflow-hidden w-full rounded-xl mb-6">
             <PanelHeader
                 type={artifact.type}
                 language={artifact.language}
