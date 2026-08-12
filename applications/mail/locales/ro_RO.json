@@ -1527,7 +1527,9 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie"
+        "Aprobare cheie",
+        "Aprobare chei",
+        "Aprobare chei"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -8209,9 +8211,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -9831,6 +9831,21 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin ${ IDEAL_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
+      ],
+      "Searched ${ targetName }": [
+        "S-a căutat ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "S-a căutat mesaj de la ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "S-a căutat mesaj către ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "S-a căutat „${ keyword }”"
+      ],
+      "Searched your mail": [
+        "Vi s-a căutat corespondența."
       ]
     },
     "info": {
@@ -11046,6 +11061,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "No unread conversations": [
+        "Nu sunt conversații necitite"
+      ],
+      "No unread messages": [
+        "Nu sunt mesaje necitite"
       ]
     },
     "Label (begin date/advanced search)": {

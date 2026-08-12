@@ -1531,7 +1531,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -8347,10 +8350,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10001,6 +10001,21 @@
       ],
       "You": [
         "Vy"
+      ],
+      "Searched ${ targetName }": [
+        "Vyhľadávané: ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Hľadal sa email od ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Hľadal sa email pre ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Hľadalo sa slovo \"${ keyword }\""
+      ],
+      "Searched your mail": [
+        "Prehľadal som váš mail"
       ]
     },
     "info": {
