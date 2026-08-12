@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import type { RetentionRuleProduct, RetentionRuleScopeType } from '@proton/shared/lib/interfaces/RetentionRule';
@@ -36,7 +36,7 @@ const getInitialScope = (productOptions: RetentionRuleScopeType[]) => {
 };
 
 const RetentionScopes = ({ products, value, onChange }: Props) => {
-    const [permissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
     const [scopeOption, setScopeOption] = useState(
         value.length > 0 ? RetentionScopeOption.Specific : RetentionScopeOption.All
     );

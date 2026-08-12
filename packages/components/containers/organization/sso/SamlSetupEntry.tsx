@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
@@ -93,7 +93,7 @@ const SelectIDPSection = ({ onClick, disabled }: { onClick: (IDPType: IDP_TYPE) 
 
 const SamlSetupEntry = ({ onBeginSamlSetup }: { onBeginSamlSetup: (idpType: IDP_TYPE) => void }) => {
     const isEduGainSSOEnabled = useFlag('EduGainSSO');
-    const [permissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
 
     const canCreate = !!permissions?.['account.sso_config.create'];
 

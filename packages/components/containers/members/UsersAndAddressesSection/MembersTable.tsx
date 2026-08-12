@@ -5,12 +5,7 @@ import { c } from 'ttag';
 import { selectUnprivatizationState } from '@proton/account/members/unprivatizeMembers';
 import type { UseMembersUsageResult } from '@proton/account/members/useMembersUsage';
 import { isOwnerRole } from '@proton/account/organizationRoles/helpers';
-import {
-    AdminRolesUIState,
-    useAdminRolesUI,
-    useOrgPermissions,
-    useUserPermissions,
-} from '@proton/account/userPermissions/hooks';
+import { AdminRolesUIState, useAdminRolesUI, useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { Pill } from '@proton/atoms/Pill/Pill';
@@ -79,12 +74,11 @@ export const MembersTable = ({
     } = membersUsage ?? {};
 
     const { APP_NAME } = useConfig();
-    const [permissions] = useOrgPermissions();
     const [adminRolesUIState] = useAdminRolesUI();
-    const [userPermissions] = useUserPermissions();
+    const [{ permissions, Roles }] = useUserPermissions();
     const isOwner =
         adminRolesUIState !== AdminRolesUIState.Hidden
-            ? (userPermissions?.Roles?.some(isOwnerRole) ?? false)
+            ? (Roles?.some(isOwnerRole) ?? false)
             : Boolean(models.user.isAdmin);
 
     const unprivatizationMemberState = baseUseSelector(selectUnprivatizationState);
