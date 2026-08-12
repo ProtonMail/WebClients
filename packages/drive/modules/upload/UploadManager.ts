@@ -239,7 +239,7 @@ export class UploadManager {
                 const rootFolders = this.groupFilesByRootFolder(filesWithStructure);
                 for (const rootFiles of rootFolders.values()) {
                     const structure = buildFolderStructure(rootFiles);
-                    this.addFolderStructureToQueue(structure, parentUid, batchId);
+                    this.addFolderStructureToQueue(structure, parentUid, batchId, confirmedEmptyFiles);
                 }
             }
         }
@@ -373,7 +373,12 @@ export class UploadManager {
      * Add folder structure to queue
      * Creates root folder and recursively adds subfolders and files
      */
-    private addFolderStructureToQueue(structure: FolderNode, parentUid: string, batchId: string): void {
+    private addFolderStructureToQueue(
+        structure: FolderNode,
+        parentUid: string,
+        batchId: string,
+        confirmedEmptyFiles: Set<File>
+    ): void {
         const folderMap = new Map<string, string>();
         const items: UploadItemInput[] = [];
         const fileQueue: FileQueueEntry[] = [];
@@ -390,7 +395,17 @@ export class UploadManager {
 
         folderMap.set('', rootFolderId);
 
-        this.flattenFolderStructure(structure, parentUid, rootFolderId, '', batchId, folderMap, items, fileQueue);
+        this.flattenFolderStructure(
+            structure,
+            parentUid,
+            rootFolderId,
+            '',
+            batchId,
+            folderMap,
+            items,
+            fileQueue,
+            confirmedEmptyFiles
+        );
 
         this.commitFileQueue(items, fileQueue, false);
     }
@@ -426,7 +441,8 @@ export class UploadManager {
         batchId: string,
         folderMap: Map<string, string>,
         items: UploadItemInput[],
-        fileQueue: FileQueueEntry[]
+        fileQueue: FileQueueEntry[],
+        confirmedEmptyFiles: Set<File>
     ): void {
         for (const [folderName, subfolder] of node.subfolders) {
             const folderPath = currentPath ? `${currentPath}/${folderName}` : folderName;
@@ -452,7 +468,8 @@ export class UploadManager {
                 batchId,
                 folderMap,
                 items,
-                fileQueue
+                fileQueue,
+                confirmedEmptyFiles
             );
         }
 
@@ -470,6 +487,7 @@ export class UploadManager {
                 clearTextExpectedSize: file.size,
                 status: UploadStatus.Pending,
                 batchId,
+                allowEmptyFile: confirmedEmptyFiles.has(file),
             });
             fileQueue.push({ uploadId, abortController });
         }
