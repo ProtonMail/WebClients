@@ -47,7 +47,7 @@ import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { PrivateDocumentInviteGate } from './PrivateDocumentInviteGate'
 import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
-import { useAuthentication, useConfig, MimeIcon, useModalState, AuthenticatedBugModal } from '@proton/components'
+import { useAuthentication, useConfig, MimeIcon } from '@proton/components'
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
 import { useApplication } from '~/utils/application-context'
 import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
@@ -79,7 +79,6 @@ import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import TracerAlert from '../../../tracer/TracerAlert'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 import { getLogsAsJSON } from '~/utils/downloadLogs'
-import { getDocsReportContextLines } from '~/utils/report-context'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -109,7 +108,7 @@ export function DocumentViewer({
   const { getLocalID } = useAuthentication()
   const getUserSettings = useGetUserSettings()
   const { isDebugMode } = useDebugMode()
-  const { APP_VERSION, CLIENT_TYPE } = useConfig()
+  const { APP_VERSION } = useConfig()
 
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
   const [docController, setDocController] = useState<AuthenticatedDocControllerInterface | undefined>(undefined)
@@ -436,7 +435,6 @@ export function DocumentViewer({
     )
   }, [application, application.eventBus, showGenericAlertModal])
 
-  const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState()
   useEffect(
     () =>
       application.eventBus.addEventCallback((driftLogDetails: Record<string, unknown>) => {
@@ -808,7 +806,7 @@ export function DocumentViewer({
             logger={application.logger}
             documentType={tmpConvertNewDocTypeToOld(openAction.type)}
           />
-          {isOpenTracerEnabled && <TracerAlert openBugReportModal={() => setBugReportModal(true)} />}
+          {isOpenTracerEnabled && <TracerAlert documentType={tmpConvertNewDocTypeToOld(openAction.type)} />}
         </>
       )}
 
@@ -817,16 +815,6 @@ export function DocumentViewer({
       {genericAlertModal}
       {genericInfoModal}
       {driftDetectionErrorModal}
-      {renderBugReportModal && (
-        <AuthenticatedBugModal
-          {...bugReportModal}
-          app={APPS.PROTONDOCS}
-          reportDescriptionContext={getDocsReportContextLines({
-            appVersion: APP_VERSION,
-            clientType: CLIENT_TYPE,
-          })}
-        />
-      )}
     </div>
   )
 }
