@@ -6,10 +6,11 @@ import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../../shared/Logger';
 import type { RepairNodeEntry, RepairOperation, SearchDB } from '../../../shared/SearchDB';
-import { SearchLibraryError, isRepairableError } from '../../../shared/errors';
+import { isRepairableError } from '../../../shared/errors';
 import type { TreeEventScopeId } from '../../../shared/types';
 import type { IndexReader } from '../../index/IndexReader';
 import type { IndexKind } from '../../index/IndexRegistry';
+import { toEngineError } from '../../index/engineCall';
 import type { IndexEntry } from '../indexEntry';
 import { createIndexEntry, toCoreNodeFields } from '../indexEntry';
 import { removeTreeEventScope } from '../removeTreeEventScope';
@@ -422,7 +423,7 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
             await session.commit();
         } catch (e) {
             session.dispose();
-            throw new SearchLibraryError('Unable to remove node and descendant tree', e);
+            throw toEngineError('remove node and descendant tree', e);
         }
 
         Logger.info(`${this.getUid()}: removed node ${nodeUid} and ${descendantCount} descendants`);
@@ -439,7 +440,7 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
             await session.commit();
         } catch (e) {
             session.dispose();
-            throw new SearchLibraryError('Unable to upsert node', e);
+            throw toEngineError('upsert node', e);
         }
     }
 
@@ -531,12 +532,13 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
 
         const quarantinedUids = await ctx.db.getQuarantinedNodeUids(this.indexKind, this.treeEventScopeId);
 
-        const staleExpr = this.descendantsPathExpr(nodeUid).and(
-            Expression.attr('reindexEpoch', Func.LessThan, TermValue.int(BigInt(epoch)))
-        );
+        const staleExpr = () =>
+            this.descendantsPathExpr(nodeUid).and(
+                Expression.attr('reindexEpoch', Func.LessThan, TermValue.int(BigInt(epoch)))
+            );
 
         const staleIds: string[] = [];
-        for await (const result of indexReader.execute((q) => q.withStructuredExpression(staleExpr))) {
+        for await (const result of indexReader.execute((q) => q.withStructuredExpression(staleExpr()))) {
             if (quarantinedUids.has(result.identifier)) {
                 continue;
             }
@@ -556,7 +558,7 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
             await session.commit();
         } catch (e) {
             session.dispose();
-            throw new SearchLibraryError('Unable to sweep obsolete descendants', e);
+            throw toEngineError('sweep obsolete descendants', e);
         }
 
         Logger.info(`${this.getUid()}: swept ${staleIds.length} obsolete descendants under ${nodeUid}`);
@@ -631,8 +633,9 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
      * Find all descendant document IDs whose path contains /{nodeUid}.
      */
     private async *findIndexedDescendants(nodeUid: string, indexReader: IndexReader): AsyncIterableIterator<string> {
-        const descendantExpr = this.descendantsPathExpr(nodeUid);
-        for await (const result of indexReader.execute((q) => q.withStructuredExpression(descendantExpr))) {
+        for await (const result of indexReader.execute((q) =>
+            q.withStructuredExpression(this.descendantsPathExpr(nodeUid))
+        )) {
             yield result.identifier;
         }
     }

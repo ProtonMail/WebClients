@@ -3,6 +3,7 @@ import 'fake-indexeddb/auto';
 
 import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
 import { SearchDB } from '../shared/SearchDB';
+import { MissingUserKeyEncryptionError, classifyError } from '../shared/errors';
 import { SearchIndexKeyManager } from './SearchIndexKeyManager';
 
 const identityBuffer = async (d: ArrayBuffer) => d;
@@ -102,4 +103,37 @@ describe('SearchIndexKeyManager', () => {
         const blob = await db.getDecryptedIndexBlob(['test', 'blob1'], identityBuffer);
         expect(blob).toBeUndefined();
     });
+
+    describe('when the key cannot be wrapped', () => {
+        it('classifies as a permanent search_crypto_error', async () => {
+            // What actually arrives from CryptoProxyBridge: the real MissingUserKeyEncryptionError is
+            // thrown on the main thread, and structured clone strips it to a bare Error.
+            bridge = clonedThrowOnEncrypt(new Error('User encryption keys unavailable for search index'));
+
+            const error = await SearchIndexKeyManager.getOrCreateKey(db, bridge).catch((e: unknown) => e);
+
+            expect(error).toBeInstanceOf(MissingUserKeyEncryptionError);
+            // Unclassified it would be transient-`unknown`, hence "repairable", and every node
+            // would be quarantined against keys that are never coming back.
+            expect(classifyError(error)).toEqual({ kind: 'permanent', reason: 'search_crypto_error' });
+        });
+
+        it('leaves an error that already classifies alone', async () => {
+            const quota = new DOMException('', 'QuotaExceededError');
+            bridge = clonedThrowOnEncrypt(quota);
+
+            const error = await SearchIndexKeyManager.getOrCreateKey(db, bridge).catch((e: unknown) => e);
+
+            expect(error).toBe(quota);
+            expect(classifyError(error)).toEqual({ kind: 'permanent', reason: 'quota_exceeded' });
+        });
+    });
 });
+
+function clonedThrowOnEncrypt(error: unknown): MainThreadBridge {
+    const bridge = fakeBridge();
+    bridge.cryptoProxyBridge.openpgpEncryptIndexKey = async () => {
+        throw error;
+    };
+    return bridge;
+}
