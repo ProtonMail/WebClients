@@ -35,6 +35,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import type { IconName } from '@proton/icons/types';
 import { useAssistant } from '@proton/llm/lib';
+import { logger } from '@proton/logger';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -53,8 +54,6 @@ import {
     type MailSettings,
     type UserSettings,
 } from '@proton/shared/lib/interfaces';
-// eslint-disable-next-line no-restricted-imports
-import { logger } from '@proton/shared/lib/logger';
 import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';

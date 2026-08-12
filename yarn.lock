@@ -9999,6 +9999,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/logger": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/react-polymorphic-types": "workspace:^"
@@ -10489,7 +10490,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/logger@workspace:packages/logger":
+"@proton/logger@workspace:^, @proton/logger@workspace:packages/logger":
   version: 0.0.0-use.local
   resolution: "@proton/logger@workspace:packages/logger"
   dependencies:
@@ -10997,6 +10998,7 @@ __metadata:
     "@proton/colors": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
+    "@proton/logger": "workspace:^"
     "@proton/sanitize": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/types": "workspace:^"
@@ -41468,6 +41470,7 @@ __metadata:
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
     "@proton/llm": "workspace:^"
+    "@proton/logger": "workspace:^"
     "@proton/lumo-ui": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/mail-renderer": "workspace:^"

@@ -3,10 +3,9 @@ import type { AesGcmCryptoKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import { DAY } from '@proton/shared/lib/constants';
-
 import {
     CLEANUP_INTERVAL_MS,
+    DAY,
     DEFAULT_CONSOLE_LEVELS,
     DEFAULT_LOGGER_NAME,
     DEFAULT_MAX_ENTRIES,
