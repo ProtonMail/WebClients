@@ -8055,6 +8055,9 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavitve so bile uspešno spremenjene"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Ker je bil ta dokument shranjen v mapi v skupni rabi, ga lahko obnovi le lastnik mape"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9760,7 +9763,7 @@
         "${ ceilDays } dan",
         "${ ceilDays } dni",
         "${ ceilDays } dni",
-        "${ ceilDays } dnevi"
+        "${ ceilDays } dni"
       ],
       "${ ceilHours } hour": [
         "${ ceilHours } ura",

@@ -6046,6 +6046,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Per ajudar a resoldre el problema, es carregarà informació de depuració al vostre Drive i es compartirà de manera segura amb l'equip de suport de ${ BRAND_NAME }. Pot incloure el contingut de fitxers. Podeu deixar de compartir-la en qualsevol moment, i les dades compartides s'eliminaran quan s'hagi completat la revisió."
       ]
     },
     "info": {
@@ -6588,6 +6591,9 @@
       ],
       "Your password (trusted contact)": [
         "La vostra contrasenya (contacte de confiança)"
+      ],
+      "Include debug information": [
+        "Incloeu informació de depuració"
       ]
     },
     "Label for contact group color": {
@@ -8404,6 +8410,15 @@
       ],
       "Your settings have been changed successfully": [
         "La configuració s'ha modificat."
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Aquest document es trobava en una carpeta compartida i només el propietari de la carpeta el pot restaurar"
+      ],
+      "Failed to submit report": [
+        "No s'ha pogut enviar l'informe"
+      ],
+      "Report submitted successfully": [
+        "L'informe s'ha enviat correctament"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10899,6 +10914,9 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
+      ],
+      "Report issue": [
+        "Informeu d'un problema"
       ]
     },
     "Title header for keys table": {

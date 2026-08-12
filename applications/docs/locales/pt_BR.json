@@ -3669,6 +3669,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrável"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Não é permitido criar documentos dentro de itens que não sejam pastas"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Falha ao descriptografar o nome de marcador: ${ message }"
       ]
     },
     "error": {
@@ -10788,6 +10794,9 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
+      ],
+      "Select users to migrate": [
+        "Selecione os usuários a serem migrados"
       ]
     },
     "Title header for keys table": {
