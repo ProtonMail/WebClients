@@ -12,10 +12,13 @@ import {
     SEARCH_ENGINE_MAX_SEARCHABLE_FILENAME_LENGTH,
     SEARCH_ENGINE_MAX_TOKEN_BUCKET_SIZE,
 } from '../../shared/config';
+import { sendErrorReportForSearch } from '../../shared/errors';
+import { searchMetrics } from '../../shared/searchMetrics';
 import type { IndexKind } from '../../shared/types';
 import { IndexBlobStore } from './IndexBlobStore';
 import { IndexReader } from './IndexReader';
 import { IndexWriter } from './IndexWriter';
+import { engineCall, toEngineError } from './engineCall';
 
 export { IndexKind } from '../../shared/types';
 
@@ -28,6 +31,20 @@ export interface IndexInstance {
 }
 
 let wasmInit: Promise<InitOutput> | undefined;
+
+/**
+ * Loads the WASM module, once per worker.
+ */
+async function initWasm(): Promise<InitOutput> {
+    if (!wasmInit) {
+        wasmInit = init().catch((error: unknown) => {
+            wasmInit = undefined;
+            searchMetrics.markSearchOtherError({ error });
+            throw error;
+        });
+    }
+    return wasmInit;
+}
 
 /**
  * Creates and stores WASM search engine instances paired with their blob store.
@@ -46,25 +63,29 @@ export class IndexRegistry {
         if (existing) {
             return existing;
         }
-        await (wasmInit ??= init());
+        await initWasm();
 
-        const config = new ProcessorConfig()
-            .withMaxLength(SEARCH_ENGINE_MAX_SEARCHABLE_FILENAME_LENGTH)
-            .withCaseInsensitive(SEARCH_ENGINE_CASE_INSENSITIVE);
-        const textIndex = new TextIndex()
-            .withMaximumTokenBucketSize(SEARCH_ENGINE_MAX_TOKEN_BUCKET_SIZE)
-            // Avoid perf issues on search library 2.0.0-rc1 version.
-            // TODO: re-check whether this workaround is still needed after upgrading past 2.0.0-rc1.
-            .withTrigramCache(TrigramCache.Disabled);
+        const engine = engineCall('engine build', () => {
+            const config = new ProcessorConfig()
+                .withMaxLength(SEARCH_ENGINE_MAX_SEARCHABLE_FILENAME_LENGTH)
+                .withCaseInsensitive(SEARCH_ENGINE_CASE_INSENSITIVE);
+            const textIndex = new TextIndex()
+                .withMaximumTokenBucketSize(SEARCH_ENGINE_MAX_TOKEN_BUCKET_SIZE)
+                // Avoid perf issues on search library 2.0.0-rc1 version.
+                // TODO: re-check whether this workaround is still needed after upgrading past 2.0.0-rc1.
+                .withTrigramCache(TrigramCache.Disabled);
 
-        const engine = SearchLibraryWasmEngine.builder()
-            .withBuiltinProcessor(config)
-            // with_default_indices() registers all four built-in index types in one call, so a
-            // future library version adding a fifth default index type is included automatically,
-            // no risk of silently omitting one.
-            .withDefaultIndices()
-            .withTextIndex(textIndex)
-            .build();
+            return (
+                SearchLibraryWasmEngine.builder()
+                    .withBuiltinProcessor(config)
+                    // with_default_indices() registers all four built-in index types in one call, so a
+                    // future library version adding a fifth default index type is included automatically,
+                    // no risk of silently omitting one.
+                    .withDefaultIndices()
+                    .withTextIndex(textIndex)
+                    .build()
+            );
+        });
         const blobStore = new IndexBlobStore(kind, db, this.cryptoKey);
         const indexWriter = new IndexWriter(engine, blobStore);
         const indexReader = new IndexReader(engine, blobStore);
@@ -79,9 +100,18 @@ export class IndexRegistry {
 
     dispose(kind: IndexKind): void {
         const instance = this.instances.get(kind);
-        if (instance) {
+        if (!instance) {
+            return;
+        }
+        this.instances.delete(kind);
+        // Swallowed rather than thrown: disposeAll() runs at the top of `rebuild()` and `reset()`,
+        // before the index is cleared, and as the first step of re-initialising the worker for a
+        // new client. A throwing free() there would break the very recovery path the user is told
+        // to take when the engine is already wedged.
+        try {
             instance.engine.free();
-            this.instances.delete(kind);
+        } catch (e) {
+            sendErrorReportForSearch(`IndexRegistry: failed to free engine <${kind}>`, toEngineError('engine free', e));
         }
     }
 

@@ -2,6 +2,7 @@ import type { Entry } from '@proton/proton-foundation-search';
 import { ExportEventKind } from '@proton/proton-foundation-search';
 
 import type { IndexInstance } from './IndexRegistry';
+import { engineStream } from './engineCall';
 
 /**
  * Default number of ids processed per write session in `removeDocumentIds`.
@@ -14,7 +15,11 @@ export const DEFAULT_BATCH_SIZE = 50;
  * freed automatically when the consumer's `for await` loop moves on, so
  * callers must NOT hold an Entry reference across yields.
  */
-export async function* exportEntries(instance: IndexInstance, signal: AbortSignal): AsyncGenerator<Entry> {
+export function exportEntries(instance: IndexInstance, signal: AbortSignal): AsyncGenerator<Entry> {
+    return engineStream('export entries', () => exportEntriesUnguarded(instance, signal));
+}
+
+async function* exportEntriesUnguarded(instance: IndexInstance, signal: AbortSignal): AsyncGenerator<Entry> {
     signal.throwIfAborted();
     instance.blobStore.beginRead();
     try {

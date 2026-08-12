@@ -1,11 +1,11 @@
+import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { Engine, Execution, Write, WriteEvent } from '@proton/proton-foundation-search';
 
 import { SearchDB } from '../../shared/SearchDB';
-import { InvalidIndexerState, SearchLibraryError } from '../../shared/errors';
+import { InvalidIndexerState, SearchLibraryError, isRepairableError } from '../../shared/errors';
 import { findTestIndexEntries, makeTestIndexEntry } from '../../testing/indexHelpers';
 import { setupRealSearchLibraryWasm } from '../../testing/setupRealSearchLibraryWasm';
 import { IndexBlobStore } from './IndexBlobStore';
@@ -325,4 +325,29 @@ describe('IndexWriter integration', () => {
             expect(executionFreeSpy).not.toHaveBeenCalled();
         });
     });
+
+    describe('engine faults classify as permanent, never as repairable', () => {
+        it('a raw throw from engine.write() surfaces as a SearchLibraryError', () => {
+            jest.spyOn(Engine.prototype, 'write').mockImplementationOnce(() => {
+                throw new Error('null pointer passed to rust');
+            });
+
+            const caught = catchThrown(() => writer.startWriteSession());
+
+            expect(caught).toBeInstanceOf(SearchLibraryError);
+            // Unwrapped, this bare Error buckets as transient-`unknown`, which quarantines the
+            // node into the repair table and replays it forever.
+            expect(isRepairableError(caught)).toBe(false);
+        });
+    });
 });
+
+/** Run `fn` and return whatever it threw, so the thrown value itself can be asserted on. */
+function catchThrown(fn: () => unknown): unknown {
+    try {
+        fn();
+    } catch (e) {
+        return e;
+    }
+    throw new Error('expected the call to throw');
+}
