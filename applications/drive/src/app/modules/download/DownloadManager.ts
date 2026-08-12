@@ -23,6 +23,7 @@ import type { DownloadOptions } from './downloadTypes';
 import { MalwareDetection } from './malwareDetection/malwareDetection';
 import { createFileDownloadStream } from './utils/createFileDownloadStream';
 import { downloadLogDebug } from './utils/downloadLogger';
+import { formatDownloadArchiveFilename } from './utils/formatDownloadArchiveFilename';
 import { validateDownloadSignatures } from './utils/handleDownloadCompletion';
 import { handleDownloadError } from './utils/handleError';
 import { hydrateAndCheckNodes, hydratePhotos } from './utils/hydrateAndCheckNodes';
@@ -254,7 +255,7 @@ export class DownloadManager {
             requestedDownloads: this.requestedDownloads,
             scheduleSingleFile: (id, node) => this.scheduleSingleFileDownload(id, node),
             scheduleArchive: (id, queuedNodes) => this.scheduleArchiveDownload(id, queuedNodes),
-            getArchiveName: (items) => this.getArchiveName(items),
+            getArchiveName: (items) => formatDownloadArchiveFilename(items),
             ...options,
         });
         if (!downloadId) {
@@ -419,7 +420,7 @@ export class DownloadManager {
     ): Promise<void> {
         const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
         const queueItem = getQueueItem(downloadId);
-        const archiveName = queueItem?.name ?? this.getArchiveName(nodes);
+        const archiveName = queueItem?.name ?? formatDownloadArchiveFilename(nodes);
         let currentDownloadedBytes = 0;
         let totalEncryptedSize = 0;
         const abortController = new AbortController();
@@ -592,14 +593,6 @@ export class DownloadManager {
 
         activeDownload.completionPromise = completionPromise;
         return completionPromise;
-    }
-
-    private getArchiveName(nodes: NodeEntity[]): string {
-        if (nodes.length === 1) {
-            return `${getNodeName(nodes[0])}.zip`;
-        }
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        return `Download ${timestamp}.zip`;
     }
 
     resolveMalwareDetection(downloadId: string, resolution: MalwareDownloadResolution) {
