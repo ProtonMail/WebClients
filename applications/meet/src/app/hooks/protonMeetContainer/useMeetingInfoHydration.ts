@@ -9,6 +9,7 @@ import { hydrateMeetingPolicies, setWaitingRoomSetting } from '@proton/meet/stor
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import type { JoinLocationState } from '../../types';
+import { isExpectedApiFailure } from '../../utils/isExpectedApiFailure';
 
 /**
  * Resolves the meeting info for the prejoin.
@@ -61,8 +62,8 @@ export const useMeetingInfoHydration = ({
                 const { meetingInfo } = await dispatch(meetingInfoThunk({ meetingLinkName, meetingPassword }));
 
                 dispatch(hydrateMeetingPolicies(meetingInfo));
-            } catch (error: any) {
-                if (!error?.userNotified) {
+            } catch (error) {
+                if (!isExpectedApiFailure(error)) {
                     const { code, message } = getApiError(error);
 
                     reportMeetError(`Failed to resolve meeting info: ${code} - ${message}`, {
