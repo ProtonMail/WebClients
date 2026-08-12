@@ -17,6 +17,7 @@ import AdminRolesOnboardingModal from '../rolesAndPermissions/AdminRolesOnboardi
 import { MembersLocal } from './MembersLocal';
 import { MembersRemote } from './MembersRemote';
 import UserAndAddressesSectionIntro from './UserAndAddressesSectionIntro';
+import { planHasUsageColumns } from './planHasUsageColumns';
 
 const paginatedMemberThreshold = 250;
 
@@ -31,7 +32,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     // otherwise a large org on the non-paginated path would send >250 IDs and the request would be rejected.
     const withinUsageBounds =
         hasRemoteMembers || (organization?.UsedMembers ?? Number.POSITIVE_INFINITY) <= paginatedMemberThreshold;
-    const showUsage = app === APPS.PROTONVPN_SETTINGS && hasVpnUserActivity && withinUsageBounds;
+    const showUsage =
+        app === APPS.PROTONVPN_SETTINGS &&
+        hasVpnUserActivity &&
+        planHasUsageColumns(organization?.PlanName) &&
+        withinUsageBounds;
     const [adminRolesUIState] = useAdminRolesUI();
     const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
     const {
