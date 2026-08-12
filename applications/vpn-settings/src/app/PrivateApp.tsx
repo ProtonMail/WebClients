@@ -1,20 +1,17 @@
 import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 
-import { FlagProvider } from '@unleash/proxy-client-react';
-
-import {
-    AccountSpotlightsProvider,
-    ErrorBoundary,
-    EventManagerProvider,
-    LoaderPage,
-    StandardErrorPage,
-    StandardLoadErrorPage,
-    StandardPrivateApp,
-} from '@proton/components';
+import { AccountSpotlightsProvider } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
+import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import { FlagProvider } from '@proton/unleash/proxy';
 
 import { bootstrapApp } from './bootstrap';
 import type { AccountStore } from './store/store';

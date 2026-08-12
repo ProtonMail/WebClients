@@ -9,7 +9,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import TotpInput from '@proton/components/components/v2/input/TotpInput';
 import useApi from '@proton/components/hooks/useApi';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 
 import { TvSignInCompleted } from '../components/TvSignInCompleted';
 import { forkSession } from '../utils/forkSession';

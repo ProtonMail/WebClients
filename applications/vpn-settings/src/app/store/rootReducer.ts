@@ -1,15 +1,13 @@
 import { combineReducers } from 'redux';
 
-import {
-    allowAddressDeletionReducer,
-    authDevicesReducer,
-    domainsAddressesReducer,
-    memberAuthDevicesReducer,
-    mspSubsidiariesReducer,
-    passwordPoliciesReducer,
-    paymentMethodsReducer,
-    samlReducer,
-} from '@proton/account';
+import { allowAddressDeletionReducer } from '@proton/account/allowAddressDeletion';
+import { domainsAddressesReducer } from '@proton/account/domainsAddresses';
+import { mspSubsidiariesReducer } from '@proton/account/mspSubsidiaries';
+import { passwordPoliciesReducer } from '@proton/account/passwordPolicies';
+import { paymentMethodsReducer } from '@proton/account/paymentMethods';
+import { samlReducer } from '@proton/account/samlSSO';
+import { authDevicesReducer } from '@proton/account/sso/authDevices';
+import { memberAuthDevicesReducer } from '@proton/account/sso/memberAuthDevices';
 import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
 import { calendarsReducer } from '@proton/calendar/calendars';
 import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';

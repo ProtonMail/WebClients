@@ -1,11 +1,10 @@
-import type { SectionConfig } from '@proton/components';
-import {
-    Loader,
-    OpenVPNConfigurationSection,
-    PrivateMainSettingsArea,
+import Loader from '@proton/components/components/loader/Loader';
+import PrivateMainSettingsArea, {
     PrivateMainSettingsAreaBase,
-    WireGuardConfigurationSection,
-} from '@proton/components';
+} from '@proton/components/containers/layout/PrivateMainSettingsArea';
+import type { SectionConfig } from '@proton/components/containers/layout/interface';
+import OpenVPNConfigurationSection from '@proton/components/containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
+import WireGuardConfigurationSection from '@proton/components/containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
 import { NavSections } from '@proton/vpn/components/NavSections';
 import { VPNClientsSection } from '@proton/vpn/components/VPNClientsSection';
 import { useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';

@@ -1,23 +1,35 @@
 import { render, screen } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
-import type { SectionConfig } from '@proton/components';
+import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import * as navigation from '@proton/vpn/contexts/navigation';
 import * as routes from '@proton/vpn/definitions/routes';
 
 import { DownloadsRoute } from './downloads';
 
-vi.mock('@proton/components', () => ({
+vi.mock('@proton/components/components/loader/Loader', () => ({
     __esModule: true,
-    Loader: () => <div data-testid="loader" />,
-    PrivateMainSettingsArea: ({ children }: any) => <div data-testid="legacy-area">{children}</div>,
+    default: () => <div data-testid="loader" />,
+}));
+
+vi.mock('@proton/components/containers/layout/PrivateMainSettingsArea', () => ({
+    __esModule: true,
+    default: ({ children }: any) => <div data-testid="legacy-area">{children}</div>,
     PrivateMainSettingsAreaBase: ({ title, children }: any) => (
         <div data-testid="nav-area" data-title={title}>
             {children}
         </div>
     ),
-    OpenVPNConfigurationSection: () => <div data-testid="openvpn-section" />,
-    WireGuardConfigurationSection: () => <div data-testid="wireguard-section" />,
+}));
+
+vi.mock('@proton/components/containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection', () => ({
+    __esModule: true,
+    default: () => <div data-testid="openvpn-section" />,
+}));
+
+vi.mock('@proton/components/containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection', () => ({
+    __esModule: true,
+    default: () => <div data-testid="wireguard-section" />,
 }));
 
 vi.mock('@proton/vpn/components/NavSections', () => ({

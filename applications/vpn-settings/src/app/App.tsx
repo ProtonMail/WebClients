@@ -6,7 +6,11 @@ import { PublicAppThemeProvider } from 'proton-account/src/app/content/theme/Pub
 
 import * as bootstrap from '@proton/account/bootstrap';
 import { initStandaloneSession } from '@proton/account/bootstrap/standaloneSession';
-import { ApiProvider, AuthenticationProvider, ErrorBoundary, ProtonApp, StandardErrorPage } from '@proton/components';
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import useInstance from '@proton/hooks/useInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
