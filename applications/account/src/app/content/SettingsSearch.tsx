@@ -153,7 +153,15 @@ export const getSearchableItems = (routes: Routes, app: APP_NAMES): SearchOption
 
 const getData = ({ value }: SearchOption) => value;
 
-export const AutocompleteSettingsSearch = ({ options }: { options: SearchOption[] }) => {
+export const AutocompleteSettingsSearch = ({
+    options,
+    onFocus,
+    onBlur,
+}: {
+    options: SearchOption[];
+    onFocus?: () => void;
+    onBlur?: () => void;
+}) => {
     const [value, setValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -181,6 +189,14 @@ export const AutocompleteSettingsSearch = ({ options }: { options: SearchOption[
             <div className="searchbox self-center my-auto">
                 <Input
                     {...inputProps}
+                    onFocus={() => {
+                        onFocus?.();
+                        inputProps.onFocus();
+                    }}
+                    onBlur={() => {
+                        onBlur?.();
+                        inputProps.onBlur();
+                    }}
                     placeholder={
                         /** Translator: Translate as the action to search in the settings */
                         c('Action').t`Search settings`
@@ -231,10 +247,21 @@ export const AutocompleteSettingsSearch = ({ options }: { options: SearchOption[
     );
 };
 
-const SettingsSearch = ({ routes, app }: Props) => {
-    const options = getSearchableItems(routes, app);
+const emptyOptions: SearchOption[] = [];
 
-    return <AutocompleteSettingsSearch options={options} />;
+const SettingsSearch = ({ routes, app }: Props) => {
+    const [isFocused, setIsFocused] = useState(false);
+
+    // Building the searchable items is relatively expensive, so it's deferred until the search input is focused.
+    const options = isFocused ? getSearchableItems(routes, app) : emptyOptions;
+
+    return (
+        <AutocompleteSettingsSearch
+            options={options}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+        />
+    );
 };
 
 export default SettingsSearch;
