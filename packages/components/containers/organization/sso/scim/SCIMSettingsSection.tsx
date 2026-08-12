@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import type { SamlState } from '@proton/account';
 import { disableSCIMAction, setupSCIMAction } from '@proton/account/samlSSO/actions';
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
@@ -67,7 +67,7 @@ const SCIMSettingsSection = ({ domain, onShowVerifyDomain, hasSsoConfig, scimInf
     const dispatch = baseUseDispatch<ThunkDispatch<SamlState, ProtonThunkArguments, Action>>();
     const { createNotification } = useNotifications();
 
-    const [permissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
     const canCreate = !!permissions?.['account.sso_config.create'];
     const canUpdate = !!permissions?.['account.sso_config.update'];
     const canDelete = !!permissions?.['account.sso_config.delete'];

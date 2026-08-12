@@ -24,7 +24,7 @@ import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesT
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { EMPTY_ORG_PERMISSIONS } from '@proton/account/userPermissions';
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import {
     AutomaticSubscriptionModal,
     CancelSubscriptionSection,
@@ -117,7 +117,7 @@ const MainContainer: FunctionComponent = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
-    const [permissions, loadingOrgPermissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();
     const location = useLocation();
@@ -256,7 +256,7 @@ const MainContainer: FunctionComponent = () => {
             loadingSubscription ||
             loadingOrganization ||
             loadingGroups ||
-            loadingOrgPermissions ||
+            permissions === null ||
             loadingDataRecovery ||
             loadingIsSessionRecoveryAvailable ||
             loadingIsGroupOwner

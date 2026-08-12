@@ -77,7 +77,7 @@ export const canFetchMembers = async (
         return true;
     }
     const { permissions } = await dispatch(userPermissionsThunk());
-    return permissions['account.user.read'];
+    return !!permissions?.['account.user.read'];
 };
 
 const getMemberFromState = (state: ModelState<EnhancedMember[]>, target: Member) => {

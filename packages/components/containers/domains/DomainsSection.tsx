@@ -8,7 +8,7 @@ import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useDomainsAddresses } from '@proton/account/domainsAddresses/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Loader from '@proton/components/components/loader/Loader';
@@ -66,7 +66,7 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
     const [organization, loadingOrganization] = useOrganization();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
     const organizationModals = useOrganizationModals(onceRef);
-    const [permissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
     const canUpdateDomain = !!permissions?.['account.domain.update'];
     const canDeleteDomain = !!permissions?.['account.domain.delete'];
     const canManageDomain = canUpdateDomain || canDeleteDomain;
@@ -265,9 +265,9 @@ const DomainsSectionUpgrade = () => {
 const DomainsSection = ({ onceRef }: { onceRef: MutableRefObject<boolean> }) => {
     const [customDomains] = useCustomDomains();
     const [user] = useUser();
-    const [permissions, loadingPermissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
 
-    if (loadingPermissions) {
+    if (permissions === null) {
         return (
             <SettingsSectionWide>
                 <Loader />

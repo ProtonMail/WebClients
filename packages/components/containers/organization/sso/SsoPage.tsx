@@ -6,7 +6,7 @@ import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -94,7 +94,7 @@ const ConfigureSamlContent = ({
     const [testSamlConfigurationProps, setTestSamlConfigurationOpen, renderTestSamlConfiguration] = useModalState();
 
     const ssoConfigForDomain = getSsoConfigForDomain(ssoConfigs, domain);
-    const [permissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
 
     return (
         <>
@@ -295,7 +295,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
     const [organization] = useOrganization();
     const [user] = useUser();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const [permissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isDisableSsoBackupPasswordEnabled = useFlag('DisableSsoBackupPassword');
 
