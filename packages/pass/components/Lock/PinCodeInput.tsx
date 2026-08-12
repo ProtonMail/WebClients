@@ -24,9 +24,21 @@ const PinCodeInputRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
     const combinedRef = useCombinedRefs(focusRef, ref);
 
     useEffect(() => {
-        if (autoFocus) focusRef.current?.focus();
+        if (!autoFocus) return;
+
+        const attempt = () => focusRef.current?.focus();
+        attempt();
+
+        if (document.hasFocus()) return;
+
+        window.addEventListener('focus', attempt, { once: true });
+        return () => window.removeEventListener('focus', attempt);
+    }, [autoFocus]);
+
+    useEffect(() => {
         if (loading || disabled) focusRef.current?.blur();
-    }, [autoFocus, loading]);
+        else if (autoFocus) focusRef.current?.focus();
+    }, [autoFocus, loading, disabled]);
 
     return (
         <div className={clsx('pass-pin--input', className, (loading || disabled) && 'opacity-30 pointer-events-none')}>
