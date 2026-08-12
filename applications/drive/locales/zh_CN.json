@@ -4180,6 +4180,249 @@
       ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "举报版权侵权或数据被盗时必须填写消息"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "该地址已被您组织外的用户使用，请联系客服以解决此问题。"
+      ],
+      "Bookmark password is not available": [
+        "书签密码不可用"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "无法将照片添加到没有有效名称的相册"
+      ],
+      "Cannot download a folder": [
+        "无法下载文件夹"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "无法移动没有有效名称的项目，请先重命名该项目"
+      ],
+      "Cannot share root folder": [
+        "无法共享根文件夹"
+      ],
+      "Cannot verify the author of this file": [
+        "无法验证此文件的作者"
+      ],
+      "Cannot verify who uploaded this file": [
+        "无法验证谁上传了此文件"
+      ],
+      "Copy operation aborted": [
+        "复制操作已中止"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "不允许将项目复制到非文件夹中"
+      ],
+      "Could not find an available name": [
+        "找不到可用的名称"
+      ],
+      "Could not load sharing details": [
+        "无法加载共享详情"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "无法加载图片预览：${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "无法读取此文件的部分内容：${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "无法解锁父文件夹"
+      ],
+      "Could not unlock this item": [
+        "无法解锁此项目"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "不允许在非文件夹中创建文档"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "不允许在非文件夹中创建文件"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "不允许在非文件夹中创建文件夹"
+      ],
+      "Device not found": [
+        "未找到设备"
+      ],
+      "Expiration date cannot be in the past": [
+        "过期日期不能是过去的时间"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "解密书签密钥失败：${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "解密书签名称失败：${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "解密书签密码失败：${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "解密内容密钥失败：${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "解密项目名称失败：${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "解密节点密钥失败：${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "解密版本元数据失败"
+      ],
+      "Failed to get inviter keys": [
+        "获取邀请人密钥失败"
+      ],
+      "Failed to verify invitation": [
+        "验证邀请失败"
+      ],
+      "File download failed due to empty response": [
+        "文件下载失败，因响应为空"
+      ],
+      "File has no revision": [
+        "文件没有历史版本"
+      ],
+      "Image preview not found": [
+        "未找到图片预览"
+      ],
+      "Invitation not found": [
+        "未找到邀请"
+      ],
+      "Item not found": [
+        "未找到项目"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "旧版公开链接无法更新，请重新创建新的公开链接！"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "未找到成员地址，请联系客服解决此问题。"
+      ],
+      "Missing inviter email": [
+        "缺少邀请人邮箱"
+      ],
+      "Missing organization private key": [
+        "缺少组织私钥"
+      ],
+      "Missing organization public key": [
+        "缺少组织公钥"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "缺少 ${ signatureType } 的签名"
+      ],
+      "Move operation aborted": [
+        "移动操作已中止"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "不允许将项目移动到非文件夹中"
+      ],
+      "Moving root item is not allowed": [
+        "不允许移动根项目"
+      ],
+      "Name must not be empty": [
+        "名称不能为空"
+      ],
+      "No file data was received. Please try again.": [
+        "未收到任何文件数据，请重试！"
+      ],
+      "Only admins can convert external invitations": [
+        "只有管理员可以转换外部邀请"
+      ],
+      "Operation aborted": [
+        "操作中止"
+      ],
+      "Operation failed, try again later": [
+        "操作失败，请稍后重试"
+      ],
+      "Organization does not have enough seats available": [
+        "组织可用席位不足"
+      ],
+      "Organization does not have enough storage available": [
+        "组织可用存储空间不足"
+      ],
+      "Part of the file appears to be corrupted": [
+        "文件部分内容似乎已损坏"
+      ],
+      "Photo is already in the target album": [
+        "照片已存在于目标相册中"
+      ],
+      "Photo not found": [
+        "未找到照片"
+      ],
+      "Renaming root item is not allowed": [
+        "不允许重命名根项目"
+      ],
+      "Request aborted": [
+        "请求中止"
+      ],
+      "Signature is missing": [
+        "缺少签名"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "签名验证失败：${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } 签名验证失败"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } 签名验证失败：${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "部分文件数据上传失败，请重试。"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "部分文件片段上传失败，请重试。"
+      ],
+      "Some items could not be loaded": [
+        "部分项目无法加载"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "上传的文件与原始文件不匹配，请重试。"
+      ],
+      "This file has missing crypto material": [
+        "此文件缺少加密材料"
+      ],
+      "This file has no version available to download": [
+        "此文件没有可下载的版本"
+      ],
+      "This file version could not be uploaded": [
+        "此文件版本无法上传"
+      ],
+      "This item has no image preview": [
+        "此项目没有图片预览"
+      ],
+      "This item is no longer shared": [
+        "此项目已不再共享"
+      ],
+      "This item is not shared": [
+        "此项目未共享"
+      ],
+      "Too many server errors, please try again later": [
+        "服务器错误过多，请稍后重试"
+      ],
+      "Too many server requests, please try again later": [
+        "服务器请求过多，请稍后重试"
+      ],
+      "Verification keys are not available": [
+        "验证密钥不可用"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } 的验证密钥不可用"
+      ],
+      "You can create public links for your own files only": [
+        "您只能为自己拥有的文件创建公开链接"
+      ],
+      "You can only leave items that are shared with you": [
+        "您只能离开已共享给您的项目"
+      ],
+      "You can only upload a new version to a file": [
+        "您只能上传新版本到文件中"
+      ],
+      "You can update a public link for your own files only": [
+        "您只能更新自己文件的公开链接"
+      ],
+      "You do not have access to this item": [
+        "您无权访问此项目"
+      ],
+      "You do not have access to this shared item": [
+        "您无权访问此共享项目"
       ]
     },
     "error": {
@@ -7405,6 +7648,51 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
         "将您的访问权限更改为查看者后，您将无法再共享“${ fileName }”。所有者或具有共享权限的编辑者可以恢复您的编辑权限，您无法自行撤消此更改！"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } 标记"
+      ],
+      "Author is not provided on public link": [
+        "公开链接未提供作者信息"
+      ],
+      "Find out what can be migrated.": [
+        "了解可以迁移哪些内容"
+      ],
+      "No users to display": [
+        "无可显示的用户"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "精确选择您要迁移的内容，这将适用于所有组织用户。"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "此用户无法迁移，因为其在 ${ BRAND_NAME } 上没有可用的邮箱地址。"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "由于平台不兼容，此用户无法迁移。"
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "要迁移此用户，请添加并验证 ${ domainNamesLink } 下的邮箱域名"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "要迁移此用户，请在 ${ provider.adminConsoleName } 中启用其账户。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 中启用其账户。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 中启用其地址。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "要迁移此用户，该用户需要接受加入 ${ BRAND_NAME } 的邀请。"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "要迁移此用户，请在 ${ provider.adminConsoleName } 中取消归档该用户。"
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "要迁移此用户，请在 ${ provider.adminConsoleName } 中取消暂停该用户。"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "我们将在新的浏览器标签页中重定向至 ${ IDEAL_BRAND_NAME } 以完成此交易。如果您使用了任何弹窗拦截器，请将其禁用后继续。"
       ]
     },
     "info": {
@@ -10826,6 +11114,12 @@
       ],
       "Edit billing address": [
         "编辑账单地址"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "使用 ${ IDEAL_BRAND_NAME } 付款"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "您的货币已更改为欧元 (€)，因为 ${ IDEAL_BRAND_NAME } 仅支持欧元支付。"
       ]
     },
     "Payments.Error": {
@@ -10846,6 +11140,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的卡已被拒绝。请尝试其他卡或与您的银行联系以授权收费."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_BRAND_NAME } 初始化失败，请稍后重试。"
       ]
     },
     "Payments.error": {
@@ -12557,6 +12854,18 @@
       ],
       "Size": [
         "大小"
+      ],
+      "Activated": [
+        "已激活"
+      ],
+      "Estimated size": [
+        "预计大小"
+      ],
+      "Migration status": [
+        "迁移状态"
+      ],
+      "User": [
+        "用户"
       ]
     },
     "TableHeader": {
@@ -13768,6 +14077,15 @@
       ],
       "Domain names": [
         "域名"
+      ],
+      "Configure migration": [
+        "配置迁移"
+      ],
+      "Select users to migrate": [
+        "请选择要迁移的用户"
+      ],
+      "What are you migrating?": [
+        "您需要迁移什么？"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13877,6 +14195,12 @@
       ],
       "Version 6 OpenPGP key": [
         "第 6 版 OpenPGP 密钥"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "从 ${ providerName } 到 ${ BRAND_NAME } 的数据迁移状态"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "已访问过其 ${ BRAND_NAME } 账户的用户"
       ]
     },
     "tooltip": {
@@ -14391,11 +14715,60 @@
       ],
       "Migrated": [
         "已迁移"
+      ],
+      "Has errors": [
+        "出错啦"
+      ],
+      "Pending": [
+        "待处理"
       ]
     },
     "Property": {
       "key": [
         "密钥"
+      ],
+      "attributes": [
+        "属性"
+      ],
+      "content key": [
+        "内容密钥"
+      ],
+      "hash key": [
+        "哈希密钥"
+      ],
+      "membership": [
+        "成员资格"
+      ],
+      "name": [
+        "名称"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "已激活"
+      ],
+      "All": [
+        "全部"
+      ],
+      "Errors": [
+        "错误"
+      ],
+      "In progress": [
+        "正在处理"
+      ],
+      "Migrated": [
+        "已迁移"
+      ],
+      "Not activated": [
+        "未激活"
+      ],
+      "Pending": [
+        "待处理"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "确认付款即表示您授权 ${ BRAND_NAME } 及我们的支付服务提供商 Stripe 指示您的银行从您的账户中扣除相应款项。根据您与银行的协议条款，您可在扣款日起 8 周内申请退款。"
       ]
     }
   }

@@ -4374,6 +4374,12 @@
       ],
       "You can create public links for your own files only": [
         "Você pode criar links públicos apenas para seus próprios arquivos"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Não é permitido criar documentos dentro de itens que não sejam pastas"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Falha ao descriptografar o nome de marcador: ${ message }"
       ]
     },
     "error": {
@@ -11270,6 +11276,9 @@
       ],
       "VAT reverse charge mechanism applies.": [
         "O mecanismo de reverse charge de IVA se aplica."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
@@ -14380,6 +14389,9 @@
       ],
       "What are you migrating?": [
         "O que você está migrando?"
+      ],
+      "Select users to migrate": [
+        "Selecione os usuários a serem migrados"
       ]
     },
     "Today icon tooltip in mini calendar": {

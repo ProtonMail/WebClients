@@ -904,7 +904,7 @@
         "Iskanje držav"
       ],
       "Search drive": [
-        "Išči pogon"
+        "Iskanje v Drive"
       ],
       "See how": [
         "Poglejte, kako"
@@ -1253,6 +1253,15 @@
       ],
       "Windows 11 (ARM64)": [
         "Windows 11 (ARM64)"
+      ],
+      "Download results": [
+        "Rezultati prenosov"
+      ],
+      "Re-index": [
+        "Ponovno indeksiraj"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Preizkusite ${ BRAND_NAME } Workspace"
       ]
     },
     "Actions": {
@@ -3754,7 +3763,7 @@
         "Nekatera imena vaših oznak presegajo največje dovoljeno število znakov za ${ MAIL_APP_NAME }. Prilagodite uvoz za urejanje teh imen."
       ],
       "Something went wrong during folder listing": [
-        "Nekaj je šlo narobe med seznamom map"
+        "Med pridobivanjem seznama map je prišlo do napake"
       ],
       "Something went wrong. Please try again.": [
         "Nekaj je šlo narobe. Poskusite znova."
@@ -4154,6 +4163,12 @@
       ],
       "We're sorry, but free upload is not available right now.": [
         "Žal nam je, vendar brezplačno nalaganje trenutno ni na voljo."
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Med iskanjem je nekaj ​šlo narobe. Poskusite kasneje."
+      ],
+      "We were not able to load some items shared with you": [
+        "Nekaterih elementov, ki so bili dani v skupno rabo z vami, ni bilo mogoče naložiti"
       ]
     },
     "error": {
@@ -5974,7 +5989,7 @@
         "Povezava do vabila je bila kopirana."
       ],
       "iOS and Android Apps": [
-        "aplikacija za iOS, Android"
+        "Aplikacije za iOS in Android"
       ],
       "Issues found": [
         "Najdene težave"
@@ -6004,7 +6019,7 @@
         "Logotip JCB"
       ],
       "Jul": [
-        "Julij"
+        "Jul"
       ],
       "Jun": [
         "Jun"
@@ -6583,7 +6598,7 @@
         "Nekatere datoteke je treba še prenesti. Če zaprete upravitelja prenosov, se končajo vse operacije."
       ],
       "There is nothing to see here": [
-        "Tukaj ni ničesar za videti"
+        "Tukaj ni ničesar videti"
       ],
       "This action will delete the link and revoke access for all users.": [
         "To dejanje bo odstranilo povezavo in preklicalo dostop za vse uporabnike."
@@ -6913,7 +6928,7 @@
         "Kdo ima dostop"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
-        "bo obnovljen na različico iz ${ formattedRevisionDate }. Vse druge različice bodo še vedno shranjene."
+        "bo obnovljen na različico z dne ${ formattedRevisionDate }. Vse druge različice bodo še vedno shranjene."
       ],
       "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
         "Z aplikacijo ${ DRIVE_APP_NAME } so vaši podatki zaščiteni s šifriranjem od konca do konca."
@@ -7084,7 +7099,7 @@
         "Vaš e-poštni naslov bo uporabljen le za to enkratno preverjanje."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Vaše datoteke niso več dostopne zaradi ponastavitve gesla. Znova naložite stari šifrirni ključ, da znova pridobite dostop. ${ KeyReactivationButton }"
+        "Vaše datoteke niso več dostopne zaradi ponastavitve gesla. Za ponovno pridobitev dostopa naložite stari šifrirni ključ. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke bodo šifrirane in nato shranjene."
@@ -7135,7 +7150,7 @@
         "Vaše prejšnje geslo"
       ],
       "Your previous recovery phrase": [
-        "Vaše prejšnje obnovitvene fraze"
+        "Vaša prejšnja obnovitvena fraza"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsak ${ cycle } mesec.",
@@ -7409,6 +7424,60 @@
         "Nekaterih fotografij ni bilo mogoče dodati v vaš album",
         "Nekaterih fotografij ni bilo mogoče dodati v vaš album",
         "Nekaterih fotografij ni bilo mogoče dodati v vaš album"
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace omogoča vaši ekipi učinkovito sodelovanje, ne da bi pri tem kdaj koli ogrožali podatke vaše organizacije."
+      ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "Aplikacija ${ DRIVE_APP_NAME } ni uspela dešifrirati lokalnega indeksa za iskanje. Ponovno zgradite indeks, da ponovno vzpostavite iskanje."
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Na voljo je nova različica aplikacije ${ DRIVE_APP_NAME }. Za nadaljevanje uporabe iskanja znova naložite stran."
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Pridobite dnevnike in druge informacije za tehnično podporo ter odpravljanje težav"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indeksirano: ${ first }, ${ second } in ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indeksirano: ${ first }, ${ second }, ${ third } in ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Indeksiranje je naletelo na nepričakovano stanje in se ne more nadaljevati. Indeks je potrebno obnoviti."
+      ],
+      "One encrypted suite. Full business protection.": [
+        "En šifriran paket. Celovita zaščita za podjetja."
+      ],
+      "Search data can't be read": [
+        "Podatkov za iskanje ni mogoče prebrati"
+      ],
+      "Search data is corrupted": [
+        "Podatki za iskanje so poškodovani"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Med iskanjem je prišlo do notranje napake. Indeks je potrebno obnoviti."
+      ],
+      "Search engine error": [
+        "Napaka iskalnika"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Iskanje je pripravljeno. Vaše datoteke so bile indeksirane."
+      ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Nekatere fotografije v tem albumu niso shranjene na vaši časovnici. Če izbrišete ta album, bodo te fotografije trajno izbrisane."
+      ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Da bi lahko v celoti omogočili funkcijo iskanja, je potrebno vaše datoteke indeksirati lokalno. V tem času lahko aplikacijo ${ DRIVE_APP_NAME } uporabljate kot običajno. Ko se indeksiranje zaključi, vas bomo o tem obvestili. Če zapustite to stran, se indeksiranje začasno ustavi in se bo nadaljevalo, ko se vrnete."
+      ],
+      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
+        "Ko odstranite ${ deviceName } kot sinhronizirano napravo, bodo vse mape, ki so bile iz te naprave dodane v \"Ta računalnik\", trajno odstranjene iz ${ DRIVE_APP_NAME }."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "V vašem brskalniku je med indeksiranjem datotek za iskanje zmanjkalo prostora. Sprostite prostor za shranjevanje in nato obnovite indeks."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Indeks vaših datotek se ponovno ustvarja. Z iskanjem lahko nadaljujete. a so rezultati lahko nepopolni. Ko bo postopek zaključen, vas bomo obvestili."
       ]
     },
     "info": {
@@ -8259,6 +8328,24 @@
       ],
       "Never expires": [
         "Nikoli ne poteče"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads } prenesenih"
+      ],
+      "Expired on ${ formatted }": [
+        "Poteklo dne ${ formatted }"
+      ],
+      "Indexing": [
+        "Indeksiranje"
+      ],
+      "Pending invitation": [
+        "Povabilo na čakanju"
+      ],
+      "Shared by ${ sharedBy }": [
+        "V skupni rabi z ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Deljeno z javno povezavo"
       ]
     },
     "Label for contact group color": {
@@ -10116,10 +10203,10 @@
         "Dokumenta ni bilo mogoče ustvariti"
       ],
       "The item was not added to your drive": [
-        "Predmet ni bil dodan v vaš Drive."
+        "Predmet ni bil dodan v vaš Drive"
       ],
       "The item was successfully added to your drive": [
-        "Predmet je bil dodan v vaš Drive."
+        "Predmet je bil uspešno dodan v vaš Drive"
       ],
       "The link to your item was deleted": [
         "Povezava do vašega predmeta je bila izbrisana"
@@ -10198,6 +10285,21 @@
         "Izbrana predmeta nista bila odstranjena z vašega seznama",
         "Izbrani predmeti nisto bili odstranjeni z vašega seznama",
         "Izbrani predmeti nisto bili odstranjeni z vašega seznama"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" kopiran"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "${ ellipsedName } ni bilo mogoče izbrisati"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName } ni bilo mogoče obnoviti iz smetnjaka"
+      ],
+      "All items deleted permanently from trash": [
+        "Vsi predmeti so trajno izbrisani iz smetnjaka"
+      ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "Ta varna povezava je potekla. Prosimo, spremenite datum poteka veljavnosti v nastavitvah deljenja."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10335,7 +10437,7 @@
         "Ustvari dokument"
       ],
       "Get started": [
-        "Začnite"
+        "Pa začnimo"
       ],
       "Install and continue": [
         "Namesti in nadaljuj"
@@ -10344,7 +10446,7 @@
         "Namesti kasneje"
       ],
       "Invite members": [
-        "Povabi člane"
+        "Povabite člane"
       ],
       "Maybe Later": [
         "Morda kasneje"
@@ -10379,7 +10481,7 @@
         "Dostopajte do svojih datotek na poti"
       ],
       "Back up your photos and memories": [
-        "S varnostno kopirajte svoje fotografije in spomine"
+        "Varnostno kopirajte svoje fotografije in spomine"
       ],
       "Choose your favorite theme": [
         "Izberite svojo najljubšo temo"
@@ -10388,7 +10490,7 @@
         "Sodelujte pri dokumentih"
       ],
       "Edit documents online": [
-        "Uredite dokumente v spletu"
+        "Urejajte dokumente v spletu"
       ],
       "Faster uploads for large or multiple files": [
         "Hitrejše nalaganje velikih ali več datotek"
@@ -10452,6 +10554,21 @@
       ],
       "Hang tight": [
         "Počakajte trenutek"
+      ],
+      "Final approval pending": [
+        "Čakanje na končno odobritev"
+      ],
+      "Free up hard drive space on your computer": [
+        "Sprostite prostor na trdem disku svojega računalnika"
+      ],
+      "Got an Android? We've got you covered.": [
+        "Imate Android? Imamo rešitev za vas."
+      ],
+      "Sync and access your files from anywhere": [
+        "Sinhronizirajte datoteke in dostopajte do njih kjerkoli"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Pravkar ste pridobili nekaj brezplačnega prostora za podatke in v rekordnem času zaščitili svoje datoteke s šifriranjem od konca do konca!"
       ]
     },
     "Onboarding Trial": {
@@ -10521,13 +10638,16 @@
         "Samo trenutna lokacija: ${ name }"
       ],
       "Select JSON file": [
-        "Izberite JSON datoteko"
+        "Izberi datoteko JSON"
       ],
       "Verify thumbnails": [
         "Preveri sličice"
       ],
       "Only current location": [
         "Samo trenutna lokacija"
+      ],
+      "Verify content": [
+        "Preveri vsebino"
       ]
     },
     "Option group label": {

@@ -1338,6 +1338,12 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Schakel ${ LUMO_SHORT_APP_NAME } in/uit"
+      ],
+      "Keep going": [
+        "Blijf doorgaan"
+      ],
+      "Stop here": [
+        "Hier stoppen"
       ]
     },
     "Action: Docs": {
@@ -4395,6 +4401,78 @@
       ],
       "You do not have access to this shared item": [
         "U heeft geen toegang tot dit gedeelde item"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Bij het melden van inbreuk op auteursrechten of gestolen gegevens is een bericht vereist"
+      ],
+      "Bookmark password is not available": [
+        "Wachtwoord voor bladwijzer is niet beschikbaar"
+      ],
+      "Cannot download a folder": [
+        "Kan een map niet downloaden"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan het item niet verplaatsen zonder een geldige naam. Hernoem het item eerst"
+      ],
+      "Could not find an available name": [
+        "Kon geen beschikbare naam vinden"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Kan het afbeeldingsvoorbeeld niet laden: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kon een deel van dit bestand niet lezen: ${ message }"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Het aanmaken van documenten in niet-mappen is niet toegestaan"
+      ],
+      "Expiration date cannot be in the past": [
+        "De vervaldatum mag niet in het verleden liggen"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Kan bladwijzernaam niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Kan sleutel knooppunt niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Kan de metagegevens van de revisie niet ontsleutelen"
+      ],
+      "Failed to verify invitation": [
+        "Kan de uitnodiging niet verifiëren"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Ontbrekende handtekening voor ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Verplaatsingsbewerking afgebroken"
+      ],
+      "Only admins can convert external invitations": [
+        "Alleen beheerders kunnen externe uitnodigingen converteren"
+      ],
+      "Organization does not have enough seats available": [
+        "De organisatie heeft niet voldoende zitplaatsen beschikbaar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisatie heeft niet voldoende opslagruimte beschikbaar"
+      ],
+      "Request aborted": [
+        "Verzoek afgebroken"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verificatie handtekening mislukt: ${ errorMessage }"
+      ],
+      "Something went wrong, please try again later": [
+        "Er ging iets mis, probeer het later nog eens"
+      ],
+      "Too many server errors, please try again later": [
+        "Te veel serverfouten. Probeer het later opnieuw"
+      ],
+      "You can only leave items that are shared with you": [
+        "U kunt alleen items achterlaten die met u gedeeld zijn"
+      ],
+      "You can only upload a new version to a file": [
+        "U kunt alleen een nieuwe versie naar een bestand uploaden"
       ]
     },
     "error": {
@@ -4539,7 +4617,7 @@
         "App momenteel niet beschikbaar"
       ],
       "Brace yourself till we get the error fixed.": [
-        "Wacht rustig af terwijl wij de fout herstellen."
+        "Zet u schrap tot we de fout hebben verholpen."
       ],
       "Error: ${ errorMessage }": [
         "Fout: ${ errorMessage }"
@@ -7532,7 +7610,7 @@
         "Fout in zoekmachine"
       ],
       "Search error": [
-        "Zoekopdracht fout"
+        "Zoekfout"
       ],
       "Search is in an invalid state": [
         "De zoekopdracht heeft een ongeldige status"
@@ -7729,6 +7807,18 @@
       ],
       "You": [
         "U"
+      ],
+      "I have not finished this one yet.": [
+        "Deze heb ik nog niet afgemaakt."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Dit vergt veel stappen. Moet het doorgaan?"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Om deze gebruiker te migreren, schakelt u zijn/haar account in uw ${ provider.adminConsoleName } in."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u het adres in onder ${ usersAddressesLink }."
       ]
     },
     "info": {
@@ -9744,6 +9834,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent met uitgebreide toegang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent met beperkte toegang"
       ]
     },
     "new_plans: feature highlight": {
@@ -10387,13 +10483,13 @@
         "Weigeren van deel-uitnodiging mislukt"
       ],
       "Failed to remove device": [
-        "Verwijderen van apparaat is mislukt"
+        "Verwijderen van apparaat mislukt"
       ],
       "Failed to remove the file": [
         "Verwijderen van bestand is mislukt"
       ],
       "Failed to rename device": [
-        "Hernoemen van apparaat is mislukt"
+        "Apparaat hernoemen mislukt"
       ],
       "Failed to upload files: ${ err }": [
         "Het uploaden van bestanden is mislukt: ${ err }"
@@ -11425,7 +11521,7 @@
         "E-mail"
       ],
       "Enter a new file name": [
-        "Voer een nieuwe bestandsnaam in"
+        "Geef een nieuwe bestandsnaam op"
       ],
       "Enter a new folder name": [
         "Voer een nieuwe naam in"
@@ -13121,6 +13217,9 @@
       ],
       "User": [
         "Gebruiker"
+      ],
+      "Migration status": [
+        "Migratiestatus"
       ]
     },
     "TableHeader": {
@@ -13713,7 +13812,7 @@
         "Logger"
       ],
       "Logs": [
-        "Logboeken"
+        "Logs"
       ],
       "Make a copy": [
         "Een kopie maken"
@@ -14351,6 +14450,12 @@
       ],
       "Select users to migrate": [
         "Selecteer gebruikers om te migreren"
+      ],
+      "Still working on it": [
+        "Er wordt nog steeds aan gewerkt"
+      ],
+      "What are you migrating?": [
+        "Wat migreert u?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14457,6 +14562,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Versie 6 OpenPGP-sleutel"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status gegevensmigratie van ${ providerName } naar ${ BRAND_NAME }"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
       ]
     },
     "tooltip": {
@@ -14994,6 +15105,12 @@
       ],
       "Migrated": [
         "Gemigreerd"
+      ],
+      "Has errors": [
+        "Bevat fouten"
+      ],
+      "Pending": [
+        "In behandeling"
       ]
     },
     "Filter": {
@@ -15036,6 +15153,12 @@
       ],
       "membership": [
         "lidmaatschap"
+      ],
+      "content key": [
+        "inhoud sleutel"
+      ],
+      "name": [
+        "naam"
       ]
     }
   }
