@@ -12,7 +12,7 @@ import {
     verifySCT,
 } from '../lib/verification/verifyCertificates';
 import { epoch } from './epoch.data';
-import { letsEncryptCertificateChain, newCertificateChain, zeroSSLCertificateChain } from './verifyCertificate.data';
+import { letsEncryptCertificateChain, zeroSSLCertificateChain } from './verifyCertificate.data';
 
 describe('certificate transparency', () => {
     it('should fail to parse with corrupt certificate', async () => {
@@ -87,7 +87,7 @@ describe('certificate transparency', () => {
     });
 
     it('verifySCT should ignore SCT from unknown log', async () => {
-        const certChain = await parseCertChain(newCertificateChain);
+        const certChain = await parseCertChain(letsEncryptCertificateChain);
         const epochCert = certChain[0];
         const issuerCert = certChain[1];
 
@@ -116,7 +116,7 @@ describe('certificate transparency', () => {
 
 describe('certificate chain verification', () => {
     it('Should verify 0SSL certificate', async () => {
-        const now = new Date(1743648000 * SECOND + 24 * HOUR); // 24h after epoch was published.
+        const now = new Date(1786453876 * SECOND + 24 * HOUR); // 24h after epoch was published.
         let error;
         try {
             await verifyCertChain(await parseCertChain(zeroSSLCertificateChain), KT_CERTIFICATE_ISSUER.ZEROSSL, now);
@@ -126,7 +126,7 @@ describe('certificate chain verification', () => {
         expect(error).toBeUndefined();
     });
     it('Should verify LE certificate', async () => {
-        const now = new Date(1743684323 * SECOND + 24 * HOUR); // 24h after epoch was published.
+        const now = new Date(1785143442 * SECOND + 24 * HOUR); // 24h after epoch was published.
         let error;
         try {
             await verifyCertChain(
@@ -140,10 +140,10 @@ describe('certificate chain verification', () => {
         expect(error).toBeUndefined();
     });
     it('Should verify new certificate chain', async () => {
-        const now = new Date(1764658905 * SECOND + 24 * HOUR); // 24h after epoch was published.
+        const now = new Date(1785143442 * SECOND + 24 * HOUR); // 24h after epoch was published.
         let error;
         try {
-            const certChain = await parseCertChain(newCertificateChain);
+            const certChain = await parseCertChain(letsEncryptCertificateChain);
             const epochCert = certChain[0];
             const issuerCert = certChain[1];
             await verifyCertChain(certChain, KT_CERTIFICATE_ISSUER.LETSENCRYPT, now);
@@ -154,7 +154,7 @@ describe('certificate chain verification', () => {
         expect(error).toBeUndefined();
     });
     it('Should fail on expiry', async () => {
-        const now = new Date(1709529634 * SECOND + 1 * YEAR); // 1year after epoch was published.
+        const now = new Date(1785143442 * SECOND + 1 * YEAR); // 1year after epoch was published.
         let error: unknown;
         try {
             await verifyCertChain(
@@ -172,7 +172,7 @@ describe('certificate chain verification', () => {
         );
     });
     it('Should fail if the certificate is in the future', async () => {
-        const now = new Date(1709529634 * SECOND - 1 * YEAR); // 1year before epoch was published.
+        const now = new Date(1785143442 * SECOND - 1 * YEAR); // 1year before epoch was published.
         let error: unknown;
         try {
             await verifyCertChain(
@@ -190,7 +190,7 @@ describe('certificate chain verification', () => {
         );
     });
     it('Should fail if the certificate chain is broken', async () => {
-        const now = new Date(1709529634 * SECOND + 24 * HOUR); // 24h after epoch was published.
+        const now = new Date(1785143442 * SECOND + 24 * HOUR); // 24h after epoch was published.
         let error: unknown;
         try {
             const zeroSSLChain = await parseCertChain(zeroSSLCertificateChain);
