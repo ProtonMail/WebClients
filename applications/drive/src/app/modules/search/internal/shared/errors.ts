@@ -165,6 +165,16 @@ export class SearchLibraryError extends Error {
 }
 
 /**
+ * Thrown when an index blob fails to encrypt or decrypt.
+ */
+export class SearchBlobCryptoError extends Error {
+    constructor(readonly cause: unknown) {
+        super('Failed to encrypt or decrypt search index blob', { cause });
+        this.name = 'SearchBlobCryptoError';
+    }
+}
+
+/**
  * Thrown when a tree scope is removed (tree_remove signal).
  * Handled gracefully — entries are cleaned up, scope unregistered, processor continues.
  */
@@ -222,7 +232,8 @@ export function isCorruptedDBError(e: unknown): boolean {
     );
 }
 
-export type PermanentErrorKind = 'quota_exceeded' | 'corrupted_db' | 'invalid_indexer_state' | 'search_library_error';
+export type PermanentErrorKind =
+    'quota_exceeded' | 'corrupted_db' | 'invalid_indexer_state' | 'search_library_error' | 'search_crypto_error';
 
 /**
  * Thrown when the user's OpenPGP keys are unavailable or cannot decrypt the stored
@@ -246,6 +257,10 @@ export function classifyPermanentError(e: unknown): PermanentErrorKind | null {
     }
     if (isCorruptedDBError(e)) {
         return 'corrupted_db';
+    }
+
+    if (e instanceof SearchBlobCryptoError || e instanceof MissingUserKeyEncryptionError) {
+        return 'search_crypto_error';
     }
     if (e instanceof InvalidIndexerState) {
         return 'invalid_indexer_state';

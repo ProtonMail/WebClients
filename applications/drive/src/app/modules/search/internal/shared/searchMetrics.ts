@@ -1,4 +1,5 @@
 import metrics from '@proton/metrics';
+import type { HttpsProtonMeWebDriveSearchPermanentErrorsTotalV1SchemaJson } from '@proton/metrics/types/web_drive_search_permanent_errors_total_v1.schema';
 
 import { Logger } from './Logger';
 import {
@@ -25,6 +26,18 @@ const SEARCH_VERSION_V1 = 'v1';
 const SEARCH_VERSION_LEGACY = 'legacy';
 
 export type SearchPermanentErrorKind = PermanentErrorKind;
+
+const PERMANENT_ERROR_METRIC_KIND: Record<
+    PermanentErrorKind,
+    HttpsProtonMeWebDriveSearchPermanentErrorsTotalV1SchemaJson['Labels']['errorKind']
+> = {
+    quota_exceeded: 'quota_exceeded',
+    corrupted_db: 'corrupted_db',
+    invalid_indexer_state: 'invalid_indexer_state',
+    search_library_error: 'search_library_error',
+    // TODO: Consider adding a crypto enum value in grafana.
+    search_crypto_error: 'unknown',
+};
 
 export type SearchTransientErrorKind = TransientErrorKind;
 
@@ -101,7 +114,9 @@ export const searchMetrics = {
         }
 
         if (decision.kind === 'permanent') {
-            metrics.drive_search_permanent_errors_total.increment({ errorKind: decision.reason });
+            metrics.drive_search_permanent_errors_total.increment({
+                errorKind: PERMANENT_ERROR_METRIC_KIND[decision.reason],
+            });
             sendErrorReportForSearch(`Search permanent error (${decision.reason})`, error, {
                 tags: { label: 'search-permanent-error', taskKind, errorKind: decision.reason },
             });

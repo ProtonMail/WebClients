@@ -4,7 +4,7 @@ import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
 import { Logger } from '../shared/Logger';
 import { SearchDB } from '../shared/SearchDB';
 import { SEARCH_LIBRARY_BLOB_VERSION } from '../shared/config';
-import { SearchDBUserMismatchError } from '../shared/errors';
+import { SearchDBUserMismatchError, classifyPermanentError } from '../shared/errors';
 import { type SearchMetrics, searchMetrics, startSearchTimer } from '../shared/searchMetrics';
 import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
@@ -22,6 +22,7 @@ import type { ClientContext } from './ClientCoordinator';
 import { ClientCoordinator } from './ClientCoordinator';
 import { SearchIndexKeyManager } from './SearchIndexKeyManager';
 import { IndexRegistry } from './index/IndexRegistry';
+import { engineCall } from './index/engineCall';
 import { exportEntries, removeDocumentIds } from './index/indexEntriesUtils';
 import type { IndexerState } from './indexer/IndexerTaskQueue';
 import { DEFAULT_INDEXER_STATE, IndexerTaskQueue } from './indexer/IndexerTaskQueue';
@@ -240,6 +241,10 @@ export class SharedWorkerAPI {
     private async onClientAvailable(clientContext: ClientContext): Promise<void> {
         this.disposeInternals();
 
+        // Opened before any of the work below so a startup failure still has a channel to report
+        // itself on (resolving the search key is the first thing that can fail permanently).
+        this.stateChannel = createSearchModuleStateUpdateChannel(clientContext.userId);
+
         try {
             const db = await this.getDb(clientContext.userId);
             const indexRegistry = await this.getRegistry(db, clientContext.bridge);
@@ -260,8 +265,6 @@ export class SharedWorkerAPI {
                 this.searchMetrics
             );
 
-            this.stateChannel = createSearchModuleStateUpdateChannel(clientContext.userId);
-
             // Broadcast initial indexer state so late-joining tabs don't stay at defaults.
             this.stateChannel.postMessage(this.indexer.getState());
             this.indexer.onStateChange((state) => {
@@ -276,22 +279,31 @@ export class SharedWorkerAPI {
             await this.indexer.start();
         } catch (error) {
             Logger.error('SharedWorkerAPI: failed to start indexer', error);
+            // Startup runs outside the task queue, so nothing else would ever set permanentError:
+            // without this the indexer just silently never starts and the user gets no explanation
+            // and no recovery action.
+            const permanentError = classifyPermanentError(error);
+            if (permanentError) {
+                this.stateChannel?.postMessage({ isIndexing: false, isSearchable: false, permanentError });
+            }
             throw error;
         }
     }
 }
 
 function serializeEntry(entry: Entry): SerializedIndexEntry {
-    const attributes: Record<string, SerializedAttributeValue[]> = {};
-    for (const name of entry.attributes()) {
-        const values = entry.attribute(name);
-        attributes[name] = values.map((v) => {
-            const raw = v.value();
-            v.free();
-            return toSerializedAttributeValue(raw, name);
-        });
-    }
-    return { identifier: entry.identifier(), attributes };
+    return engineCall('serialize entry', () => {
+        const attributes: Record<string, SerializedAttributeValue[]> = {};
+        for (const name of entry.attributes()) {
+            const values = entry.attribute(name);
+            attributes[name] = values.map((v) => {
+                const raw = v.value();
+                v.free();
+                return toSerializedAttributeValue(raw, name);
+            });
+        }
+        return { identifier: entry.identifier(), attributes };
+    });
 }
 
 function toSerializedAttributeValue(raw: unknown, attributeName: string): SerializedAttributeValue {

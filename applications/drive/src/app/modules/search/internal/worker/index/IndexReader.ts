@@ -3,6 +3,7 @@ import { QueryEventKind } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../shared/Logger';
 import type { IndexBlobStore } from './IndexBlobStore';
+import { engineStream } from './engineCall';
 
 export type ReadResult = {
     identifier: string;
@@ -24,7 +25,11 @@ export class IndexReader {
     /**
      * Execute a query built by the caller and yield matching results.
      */
-    async *execute(configureQuery: (query: Query) => Query): AsyncGenerator<ReadResult> {
+    execute(configureQuery: (query: Query) => Query): AsyncGenerator<ReadResult> {
+        return engineStream('query', () => this.executeUnguarded(configureQuery));
+    }
+
+    private async *executeUnguarded(configureQuery: (query: Query) => Query): AsyncGenerator<ReadResult> {
         // Signal the beginning of reading to avoid operations that could interrupt/corrupt this read.
         this.blobStore.beginRead();
         try {

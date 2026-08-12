@@ -1,9 +1,10 @@
-import type { Engine, Execution, Write } from '@proton/proton-foundation-search';
+import type { Engine, Execution, Write, WriteEvent } from '@proton/proton-foundation-search';
 import { Document, Value, WriteEventKind } from '@proton/proton-foundation-search';
 
-import { InvalidIndexerState, SearchLibraryError, sendErrorReportForSearch } from '../../shared/errors';
+import { InvalidIndexerState, sendErrorReportForSearch } from '../../shared/errors';
 import type { AttributeValue, IndexEntry } from '../indexer/indexEntry';
 import type { IndexBlobStore } from './IndexBlobStore';
+import { engineCall, toEngineError } from './engineCall';
 
 /**
  * An exclusive write session acquired from IndexWriter.startWriteSession().
@@ -34,10 +35,10 @@ export class WriteSession {
             this.writer.insert(doc);
             return this;
         } catch (e) {
-            this.writer.free();
-            this.writer = null;
-            this.release();
-            throw new SearchLibraryError('Search library WASM failed during insert', e);
+            // dispose() releases the lock before freeing and swallows a throwing free(), so the
+            // error reported here is always the one that actually broke the insert.
+            this.dispose();
+            throw toEngineError('insert', e);
         }
     }
 
@@ -49,10 +50,8 @@ export class WriteSession {
             this.writer.remove(documentId);
             return this;
         } catch (e) {
-            this.writer.free();
-            this.writer = null;
-            this.release();
-            throw new SearchLibraryError('Search library WASM failed during remove', e);
+            this.dispose();
+            throw toEngineError('remove', e);
         }
     }
 
@@ -60,9 +59,17 @@ export class WriteSession {
         if (this.writer === null) {
             return;
         }
-        this.writer.free();
+        const writer = this.writer;
+        // Clear state and release the lock before free(): dispose() is called from `finally`
+        // blocks, so a throwing free() would otherwise leave the session half-released and hold
+        // the write lock for the rest of the session.
         this.writer = null;
         this.release();
+        try {
+            writer.free();
+        } catch (e) {
+            sendErrorReportForSearch('WriteSession: failed to free writer handle', toEngineError('free', e));
+        }
     }
 
     async commit(): Promise<void> {
@@ -75,16 +82,20 @@ export class WriteSession {
             // Commit consumer the writer, no need to free.
             this.writer = null;
         } catch (e) {
-            this.writer?.free();
-            this.writer = null;
-            this.release();
-            throw new SearchLibraryError('Search library WASM failed to commit', e);
+            this.dispose();
+            throw toEngineError('commit', e);
         }
 
         try {
-            let event;
-            while ((event = execution.next()) !== undefined) {
-                switch (event.kind()) {
+            // `execution.next()`, `event.kind()` and `event.free()` are all WASM calls: they used
+            // to throw raw (the "unreachable" panic surfaces here, from the Save branch), so this
+            // block had a `finally` but no `catch`.
+            let next: WriteEvent | undefined;
+            while ((next = engineCall('commit: next event', () => execution.next())) !== undefined) {
+                // Bound to a const so the closures below keep the non-undefined narrowing.
+                const event = next;
+                const kind = engineCall('commit: event kind', () => event.kind());
+                switch (kind) {
                     case WriteEventKind.Load:
                         await this.blobStore.loadEvent(event);
                         break;
@@ -92,19 +103,26 @@ export class WriteSession {
                         await this.blobStore.saveEvent(event);
                         break;
                     case WriteEventKind.Stats:
-                        event.free();
+                        engineCall('commit: free event', () => event.free());
                         break;
                     default:
-                        const error = new Error(`WriteSession: unexpected Write event kind <${event.kind()}>`);
+                        const error = new Error(`WriteSession: unexpected Write event kind <${kind}>`);
                         sendErrorReportForSearch(error.message, error);
 
-                        event.free();
+                        engineCall('commit: free event', () => event.free());
                         break;
                 }
             }
         } finally {
-            execution?.free();
+            // Release the write lock first, and never let a throwing free() escape: raised from a
+            // `finally` it would both mask the in-flight error and skip the release, wedging the
+            // writer for the rest of the session.
             this.release();
+            try {
+                execution?.free();
+            } catch (e) {
+                sendErrorReportForSearch('WriteSession: failed to free execution handle', toEngineError('free', e));
+            }
         }
     }
 }
@@ -125,7 +143,10 @@ export class IndexWriter {
         if (this.active) {
             throw new InvalidIndexerState('IndexWriter: a write session is already in progress');
         }
-        const writer = this.searchFoundationEngine.write();
+        // Guarded: a raw throw here would be a bare Error, which classifies as transient-`unknown`
+        // and therefore as repairable - quarantining every node against a broken engine. Returning
+        // `undefined` is the distinct, expected "write lock busy" case handled just below.
+        const writer = engineCall('write', () => this.searchFoundationEngine.write());
         if (!writer) {
             throw new InvalidIndexerState('IndexWriter: Unable to get a write handle from an unactive write session');
         }
