@@ -1,3 +1,4 @@
+import 'fake-indexeddb/auto';
 import { deleteDB, openDB } from 'idb';
 
 import { LOGGER_DB_PREFIX } from './constants';
@@ -14,7 +15,7 @@ const entry = (timestamp: number, data = `payload-${timestamp}`): LogEntry => ({
     data,
 });
 
-describe.skip('IndexedDBStorage', () => {
+describe('IndexedDBStorage', () => {
     const created: IndexedDBStorage[] = [];
 
     const createStorage = () => {
