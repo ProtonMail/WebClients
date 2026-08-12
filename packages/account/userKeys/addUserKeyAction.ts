@@ -1,4 +1,5 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
+import { c } from 'ttag';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -11,6 +12,7 @@ import { getIsRecoveryFileAvailable } from '@proton/shared/lib/recoveryFile/reco
 
 import { type AddressesState, addressesThunk } from '../addresses';
 import type { DelegatedAccessState } from '../delegatedAccess';
+import { getHasAccountKeyChangeBlockingDelegatedAccess } from '../delegatedAccess/accountKeyChangeBlocking';
 import { listOutgoingDelegatedAccess, updateDelegatedAccess } from '../delegatedAccess/outgoingActions';
 import type { KtState } from '../kt';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
@@ -46,6 +48,12 @@ export const addUserKeyAction = ({
                 userKeys,
             });
             const isDeviceRecoveryEnabled = getIsDeviceRecoveryEnabled(userSettings, extra.authentication);
+            if (await dispatch(getHasAccountKeyChangeBlockingDelegatedAccess())) {
+                throw new Error(
+                    c('Error')
+                        .t`A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it`
+                );
+            }
             const previouslyEnabledDelegatedAccesses = (await dispatch(listOutgoingDelegatedAccess())).filter(
                 (delegatedAccess) => delegatedAccess.State === DelegatedAccessStateEnum.Enabled
             );
