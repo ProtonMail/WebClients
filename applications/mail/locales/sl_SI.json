@@ -1501,7 +1501,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -7946,10 +7949,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -9456,6 +9456,21 @@
       ],
       "You": [
         "Vi"
+      ],
+      "Searched ${ targetName }": [
+        "Iskalo se je po ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Iskalo se je sporočila od ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Iskalo se je sporočila, naslovljena na ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Iskalo se je po \"${ keyword }\""
+      ],
+      "Searched your mail": [
+        "Vaša pošta je bila preiskana"
       ]
     },
     "info": {
@@ -15452,7 +15467,7 @@
         "${ ceilDays } dan",
         "${ ceilDays } dni",
         "${ ceilDays } dni",
-        "${ ceilDays } dnevi"
+        "${ ceilDays } dni"
       ],
       "${ ceilHours } hour": [
         "${ ceilHours } ura",
