@@ -2,9 +2,10 @@ import type { Cleanup } from '@proton/proton-foundation-search';
 import { CleanupEventKind } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../../../shared/Logger';
-import { sendErrorReportForSearch } from '../../../../shared/errors';
+import { classifyError, isAbortError, sendErrorReportForSearch } from '../../../../shared/errors';
 import type { IndexBlobStore } from '../../../index/IndexBlobStore';
 import type { IndexInstance, IndexKind } from '../../../index/IndexRegistry';
+import { engineCall, toEngineError } from '../../../index/engineCall';
 import type { IndexerTaskKind, TaskContext } from '../BaseTask';
 import { BaseTask } from '../BaseTask';
 
@@ -50,11 +51,13 @@ export class CleanUpStaleBlobsTask extends BaseTask {
             try {
                 await this.cleanUpInstance(instance, ctx);
             } catch (e) {
+                if (isAbortError(e) || classifyError(e).kind === 'permanent') {
+                    throw e;
+                }
                 // Non-critical: log and continue to the next engine.
                 sendErrorReportForSearch(`CleanUpStaleBlobsTask: failed for engine <${instance.indexKind}>`, e, {
                     tags: { indexKind: instance.indexKind },
                 });
-                continue;
             }
         }
     }
@@ -62,7 +65,7 @@ export class CleanUpStaleBlobsTask extends BaseTask {
     private async cleanUpInstance(instance: IndexInstance, ctx: TaskContext): Promise<void> {
         const { engine, blobStore, indexKind } = instance;
 
-        const cleanup = engine.cleanup();
+        const cleanup = engineCall('cleanup: acquire', () => engine.cleanup());
         if (!cleanup) {
             const error = new Error(`CleanUpStaleBlobsTask: skipping engine <${indexKind}> (write lock busy)`);
             sendErrorReportForSearch(error.message, error);
@@ -76,7 +79,16 @@ export class CleanUpStaleBlobsTask extends BaseTask {
             releasedCount = result.releasedCount;
             orphanCount = await this.deleteOrphanBlobs(indexKind, result.trackedBlobNames, ctx);
         } finally {
-            cleanup.free();
+            // Swallowed rather than wrapped: raised from a `finally` a throwing free() would mask
+            // whatever error is already in flight, which is the one worth diagnosing.
+            try {
+                cleanup.free();
+            } catch (e) {
+                sendErrorReportForSearch(
+                    `CleanUpStaleBlobsTask: failed to free cleanup handle <${indexKind}>`,
+                    toEngineError('cleanup: free', e)
+                );
+            }
         }
 
         ctx.searchMetrics.markBlobsCleanup({ removedBlobsCount: releasedCount + orphanCount });
@@ -89,22 +101,25 @@ export class CleanUpStaleBlobsTask extends BaseTask {
         const trackedBlobNames = new Set<string>();
         let releasedCount = 0;
 
-        for (let event = cleanup.next(); event !== undefined; event = cleanup.next()) {
-            switch (event.kind()) {
+        const nextEvent = () => engineCall('cleanup: next event', () => cleanup.next());
+
+        for (let event = nextEvent(); event !== undefined; event = nextEvent()) {
+            const current = event;
+            switch (engineCall('cleanup: event kind', () => current.kind())) {
                 case CleanupEventKind.Load:
-                    await blobStore.loadEvent(event);
+                    await blobStore.loadEvent(current);
                     break;
                 case CleanupEventKind.Save:
-                    await blobStore.saveEvent(event);
+                    await blobStore.saveEvent(current);
                     break;
                 case CleanupEventKind.Release:
                     // Clean-up obsolete blob
-                    await blobStore.releaseEvent(event);
+                    await blobStore.releaseEvent(current);
                     releasedCount++;
                     break;
                 case CleanupEventKind.Tracked:
                     // Track active blobs (to allow deleting non-active/orphan ones later)
-                    trackedBlobNames.add(event.id().toString());
+                    trackedBlobNames.add(engineCall('cleanup: event id', () => current.id()).toString());
                     break;
             }
         }

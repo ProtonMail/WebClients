@@ -2,9 +2,10 @@ import type { Entry } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../../../shared/Logger';
 import type { IndexPopulatorState } from '../../../../shared/SearchDB';
-import { sendErrorReportForSearch } from '../../../../shared/errors';
+import { classifyError, isAbortError, sendErrorReportForSearch } from '../../../../shared/errors';
 import { yieldToEventLoop } from '../../../../shared/yieldToEventLoop';
 import type { IndexInstance } from '../../../index/IndexRegistry';
+import { engineCall } from '../../../index/engineCall';
 import { DEFAULT_BATCH_SIZE, exportEntries, removeDocumentIds } from '../../../index/indexEntriesUtils';
 import type { IndexerTaskKind, TaskContext } from '../BaseTask';
 import { BaseTask } from '../BaseTask';
@@ -53,10 +54,12 @@ export class CleanUpStaleIndexEntryTask extends BaseTask {
                     ctx.signal
                 );
             } catch (e) {
+                if (isAbortError(e) || classifyError(e).kind === 'permanent') {
+                    throw e;
+                }
                 sendErrorReportForSearch(`${this.getUid()}: failed for engine <${instance.indexKind}>`, e, {
                     tags: { indexKind: instance.indexKind },
                 });
-                continue;
             }
         }
     }
@@ -88,7 +91,7 @@ export class CleanUpStaleIndexEntryTask extends BaseTask {
         let processedSinceYield = 0;
         for await (const entry of exportEntries(instance, signal)) {
             if (isEntryStale(entry, stateByUid, activePopulatorKinds, activeTreeEventScopeIds)) {
-                pending.push(entry.identifier());
+                pending.push(engineCall('read entry identifier', () => entry.identifier()));
             }
             if (pending.length >= DEFAULT_BATCH_SIZE) {
                 await removePendingStaleIndexEntries();
@@ -127,7 +130,7 @@ function isEntryStale(
     ) {
         // Malformed index entry: we can't classify it, so we mark it as stale.
         Logger.warn(
-            `Malformed index entry ${entry.identifier()}: ` +
+            `Malformed index entry ${engineCall('read entry identifier', () => entry.identifier())}: ` +
                 `indexPopulatorKind=${populatorKind}, treeEventScopeId=${treeEventScopeId}, ` +
                 `indexPopulatorVersion=${version}, indexPopulatorGeneration=${generation}`
         );
@@ -152,37 +155,41 @@ function isEntryStale(
 }
 
 function readSearchLibraryTagAttribute(entry: Entry, name: string): string | undefined {
-    const values = entry.attribute(name);
-    let found: string | undefined;
-    for (const ev of values) {
-        if (found === undefined) {
-            const raw = ev.value();
-            if (typeof raw === 'string') {
-                found = raw;
+    return engineCall(`read tag attribute <${name}>`, () => {
+        const values = entry.attribute(name);
+        let found: string | undefined;
+        for (const ev of values) {
+            if (found === undefined) {
+                const raw = ev.value();
+                if (typeof raw === 'string') {
+                    found = raw;
+                }
             }
+            ev.free();
         }
-        ev.free();
-    }
-    return found;
+        return found;
+    });
 }
 
 function readSearchLibraryIntegerAttribute(entry: Entry, name: string): number | undefined {
-    const values = entry.attribute(name);
-    let found: number | undefined;
-    for (const ev of values) {
-        if (found === undefined) {
-            const raw = ev.value();
-            // WASM returns integer attributes as plain `number` on export, even though
-            // they were written via `Value.int(bigint)`. Values always originate from
-            // `BigInt(…)` wrapping a `number` in `createIndexEntry`, so the round-trip
-            // to a plain `number` is lossless for our use.
-            if (typeof raw === 'number') {
-                found = raw;
-            } else if (typeof raw === 'bigint') {
-                found = Number(raw);
+    return engineCall(`read integer attribute <${name}>`, () => {
+        const values = entry.attribute(name);
+        let found: number | undefined;
+        for (const ev of values) {
+            if (found === undefined) {
+                const raw = ev.value();
+                // WASM returns integer attributes as plain `number` on export, even though
+                // they were written via `Value.int(bigint)`. Values always originate from
+                // `BigInt(…)` wrapping a `number` in `createIndexEntry`, so the round-trip
+                // to a plain `number` is lossless for our use.
+                if (typeof raw === 'number') {
+                    found = raw;
+                } else if (typeof raw === 'bigint') {
+                    found = Number(raw);
+                }
             }
+            ev.free();
         }
-        ev.free();
-    }
-    return found;
+        return found;
+    });
 }

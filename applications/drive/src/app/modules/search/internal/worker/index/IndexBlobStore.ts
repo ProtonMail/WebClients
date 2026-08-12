@@ -4,8 +4,9 @@ import { SerDes } from '@proton/proton-foundation-search';
 import { Logger } from '../../shared/Logger';
 import { decryptBlob, encryptBlob } from '../../shared/SearchCrypto';
 import type { SearchDB } from '../../shared/SearchDB';
-import { SearchLibraryError, createQuotaExceededErrorMessage, isQuotaExceededError } from '../../shared/errors';
+import { SearchBlobCryptoError, createQuotaExceededErrorMessage, isQuotaExceededError } from '../../shared/errors';
 import type { IndexKind } from './IndexRegistry';
+import { toEngineError } from './engineCall';
 
 /**
  * Blob store backed by IndexedDB with a cache for WASM Cached objects.
@@ -55,10 +56,13 @@ export class IndexBlobStore {
                 return;
             }
 
-            // TODO: Instrument and exception handling hardening for failed decryptions.
             const decrypted = await this.db.getDecryptedIndexBlob(this.dbKey(blobName), async (ciphertext) => {
-                const result = await decryptBlob(this.cryptoKey, ciphertext, this.indexKind, blobName);
-                return result.buffer;
+                try {
+                    const result = await decryptBlob(this.cryptoKey, ciphertext, this.indexKind, blobName);
+                    return result.buffer;
+                } catch (e) {
+                    throw new SearchBlobCryptoError(e);
+                }
             });
             if (decrypted !== undefined) {
                 event.send(SerDes.Cbor, new Uint8Array(decrypted));
@@ -66,7 +70,7 @@ export class IndexBlobStore {
                 event.sendEmpty();
             }
         } catch (e) {
-            throw new SearchLibraryError('Failed to load blob', e);
+            throw toEngineError('load blob', e);
         }
     }
 
@@ -75,25 +79,36 @@ export class IndexBlobStore {
             const blobName = event.id().toString();
             const cached = event.recv();
             const serialized = cached.serialize(SerDes.Cbor);
-            // TODO: Instrument and exception handling hardening for failed encryptions.
-            await this.db.putEncryptedIndexBlob(this.dbKey(blobName), new Uint8Array(serialized).buffer, (plaintext) =>
-                encryptBlob(this.cryptoKey, new Uint8Array(plaintext), this.indexKind, blobName)
+
+            await this.db.putEncryptedIndexBlob(
+                this.dbKey(blobName),
+                new Uint8Array(serialized).buffer,
+                async (plaintext) => {
+                    try {
+                        return await encryptBlob(this.cryptoKey, new Uint8Array(plaintext), this.indexKind, blobName);
+                    } catch (e) {
+                        throw new SearchBlobCryptoError(e);
+                    }
+                }
             );
             this.cache.set(blobName, cached);
         } catch (e) {
             if (isQuotaExceededError(e)) {
                 const msg = await createQuotaExceededErrorMessage();
                 Logger.error(`IndexBlobStore: Quota exceeded error <${msg}>`);
-                throw e;
             }
-            throw new SearchLibraryError('Failed to save blob', e);
+            throw toEngineError('save blob', e);
         }
     }
 
     async releaseEvent(event: CleanupEvent): Promise<void> {
-        const blobName = event.id().toString();
-        this.cache.delete(blobName);
-        await this.db.deleteIndexBlob(this.dbKey(blobName));
+        try {
+            const blobName = event.id().toString();
+            this.cache.delete(blobName);
+            await this.db.deleteIndexBlob(this.dbKey(blobName));
+        } catch (e) {
+            throw toEngineError('release blob', e);
+        }
     }
 
     async flushToStorage(): Promise<void> {

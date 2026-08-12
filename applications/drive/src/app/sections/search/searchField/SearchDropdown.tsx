@@ -6,8 +6,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, DropdownSizeUnit } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
-import { tryCatchWithNotification } from '../../../modules/search';
 import type { IndexingProgress } from '../../../modules/search';
+import { tryCatchWithNotification } from '../../../modules/search';
 import type { PermanentErrorKind } from '../../../modules/search/internal/shared/errors';
 import { formatIndexingProgress } from '../formatIndexingProgress';
 
@@ -196,6 +196,12 @@ function getPermanentErrorCopy(kind: PermanentErrorKind): { title: string; messa
             return {
                 title: c('Info').t`Search engine error`,
                 message: c('Info').t`The search engine encountered an internal error. Rebuild the index to recover.`,
+            };
+        case 'search_crypto_error':
+            return {
+                title: c('Info').t`Search data can't be read`,
+                message: c('Info')
+                    .t`${DRIVE_APP_NAME} could not decrypt the local search index. Rebuild the index to restore search.`,
             };
         default:
             return {
