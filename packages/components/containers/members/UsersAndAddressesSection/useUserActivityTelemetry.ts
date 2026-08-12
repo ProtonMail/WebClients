@@ -71,11 +71,6 @@ const useUserActivityTelemetry = () => {
         [report]
     );
 
-    const trackConnectionUpsellDismissed = useCallback(
-        () => report(TelemetryVpnB2bUserActivityEvents.upsell_dismissed),
-        [report]
-    );
-
     const trackGatewayMonitorEnableClicked = useCallback(
         () => report(TelemetryVpnB2bUserActivityEvents.enable_clicked),
         [report]
@@ -86,7 +81,6 @@ const useUserActivityTelemetry = () => {
         trackConnectionUpsellLearnMoreClicked,
         trackConnectionUpsellUpgradeStarted,
         trackConnectionUpsellUpgradeSuccess,
-        trackConnectionUpsellDismissed,
         trackGatewayMonitorEnableClicked,
     };
 };
