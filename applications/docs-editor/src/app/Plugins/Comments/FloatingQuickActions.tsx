@@ -32,7 +32,7 @@ export function FloatingQuickActions({
   const updatePosition = useCallback(() => {
     const boxElem = boxRef.current
     const rootElement = editor.getRootElement()
-    const positionContainer = rootElement?.closest('.docs-layout-right-panel')
+    const positionContainer = boxElem?.parentElement
     const anchorElement = editor.getElementByKey(anchorKey)
 
     if (
@@ -51,7 +51,7 @@ export function FloatingQuickActions({
         boxElem.style.left = `${rootRect.right - containerRect.left + 10}px`
         boxElem.style.right = ''
       }
-      boxElem.style.top = `${anchorTop - containerRect.top + positionContainer.scrollTop}px`
+      boxElem.style.top = `${anchorTop - containerRect.top}px`
     }
   }, [anchorKey, editor, viewportWidth])
 
@@ -73,7 +73,7 @@ export function FloatingQuickActions({
 
   return (
     <div
-      className="shadow-raised border-weak bg-norm absolute z-10 flex flex-col gap-1 rounded-lg border p-1"
+      className="shadow-raised border-weak bg-norm pointer-events-auto absolute z-10 flex flex-col gap-1 rounded-lg border p-1"
       ref={boxRef}
     >
       <ToolbarTooltip

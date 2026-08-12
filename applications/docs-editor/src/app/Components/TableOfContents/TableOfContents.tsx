@@ -4,7 +4,7 @@ import { TableOfContentsPlugin } from '@lexical/react/LexicalTableOfContentsPlug
 import type { TableOfContentsEntry } from '@lexical/react/LexicalTableOfContentsPlugin'
 import type { NodeKey } from 'lexical'
 import { c } from 'ttag'
-import { useDocsLayoutContext, DOCS_EDITOR_MAX_WIDTH } from '../../Containers/DocsLayout'
+import { DOCS_EDITOR_MAX_WIDTH, useLeftPanelContext } from '../../Containers/DocsLayout'
 import clsx from '@proton/utils/clsx'
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components'
@@ -12,6 +12,7 @@ import { useStore } from 'zustand'
 import { useEditorState } from '../../Containers/EditorStateProvider'
 import { IcLink } from '@proton/icons/icons/IcLink'
 import { TocHeader } from './TocHeader'
+import { getDocsLayoutScrollContainer } from '../../Containers/docsLayoutUtils'
 import './TableOfContents.scss'
 
 // distance from top of scroll root to make heading active
@@ -131,7 +132,7 @@ function ActiveHeadingListener({ tableOfContents }: TableOfContentsRendererProps
   const { setActiveHeadingKey } = useTableOfContentsContext()
 
   React.useEffect(() => {
-    const scrollRoot = editor.getRootElement()?.closest('.docs-layout-right-panel')
+    const scrollRoot = getDocsLayoutScrollContainer(editor.getRootElement())
     if (!scrollRoot) {
       return
     }
@@ -206,8 +207,8 @@ function HeadingParamListener({ scrollToNode }: HeadingParamListenerProps) {
 
 function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererProps) {
   const [editor] = useLexicalComposerContext()
-  const { setLeftPanelVisibility, leftPanelVisibility } = useDocsLayoutContext()
-  const isExpanded = leftPanelVisibility === 'expanded'
+  const { visibility, setVisibility } = useLeftPanelContext()
+  const isExpanded = visibility === 'expanded'
 
   const scrollToNode = React.useCallback(
     (key: NodeKey) => {
@@ -230,10 +231,10 @@ function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererPro
     (key: NodeKey) => {
       scrollToNode(key)
       if (window.innerWidth < DOCS_EDITOR_MAX_WIDTH) {
-        setLeftPanelVisibility('collapsed')
+        setVisibility('collapsed')
       }
     },
-    [scrollToNode, setLeftPanelVisibility],
+    [scrollToNode, setVisibility],
   )
 
   return (
@@ -248,10 +249,7 @@ function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererPro
         )}
         data-testid="table-of-contents"
       >
-        <TocHeader
-          isActive={isExpanded}
-          onToggle={() => setLeftPanelVisibility(isExpanded ? 'collapsed' : 'expanded')}
-        />
+        <TocHeader isActive={isExpanded} onToggle={() => setVisibility(isExpanded ? 'collapsed' : 'expanded')} />
 
         <ul className="toc-list flex min-w-0 flex-1 flex-col overflow-y-auto">
           {tableOfContents.map(([key, text, tag]) => (

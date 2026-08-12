@@ -9,6 +9,8 @@ import { $addNewColumnAtEndOfTable } from './TableUtils/addNewColumnToTable'
 import { $addNewRowAtEndOfTable } from './TableUtils/addNewRowToTable'
 import { isHTMLElement } from '../../Utils/guard'
 
+const OVERFLOWING_COLUMN_BUTTON_OFFSET = 11
+
 export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
   const [editor] = useLexicalComposerContext()
 
@@ -141,9 +143,13 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
 
       const containerOffsetY = rootParent.scrollTop - containerRect.top
       const containerOffsetX = rootParent.scrollLeft - containerRect.left
+      const columnAddButtonX =
+        tableRect.width > containerRect.width
+          ? tableWrapperRect.right + containerOffsetX - columnAddButtonRect.width / 2 + OVERFLOWING_COLUMN_BUTTON_OFFSET
+          : tableRect.right + containerOffsetX
 
       rowAddButton.style.transform = `translate(${Math.max(containerPaddingLeft, tableRect.left + containerOffsetX)}px, ${tableWrapperRect.bottom + containerOffsetY}px)`
-      columnAddButton.style.transform = `translate(${tableRect.width > containerRect.width ? tableWrapperRect.right + containerOffsetX - columnAddButtonRect.width / 2 : tableRect.right + containerOffsetX + 1}px, ${tableRect.top + containerOffsetY}px)`
+      columnAddButton.style.transform = `translate(${columnAddButtonX}px, ${tableRect.top + containerOffsetY}px)`
     }, 10)
 
     setSizeAndPosition()
@@ -158,7 +164,7 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
       <button
         ref={rowAddButtonRef}
         className={clsx(
-          'bg-weak absolute left-0 top-0 flex select-none items-center justify-center px-2.5 py-1 opacity-0 hover:pointer-events-auto hover:opacity-100',
+          'bg-weak absolute left-0 top-0 z-0 flex select-none items-center justify-center px-2.5 py-1 opacity-0 hover:pointer-events-auto hover:opacity-100',
           isHoveringOnLastRow && 'pointer-events-auto opacity-100',
         )}
         onClick={() => {
@@ -185,7 +191,7 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
       <button
         ref={columnAddButtonRef}
         className={clsx(
-          'bg-weak absolute left-0 top-0 flex select-none items-center justify-center p-1 opacity-0 hover:pointer-events-auto hover:opacity-100',
+          'bg-weak absolute left-0 top-0 z-0 flex select-none items-center justify-center p-1 opacity-0 hover:pointer-events-auto hover:opacity-100',
           isHoveringOnLastColumn && 'pointer-events-auto opacity-100',
         )}
         onClick={() => {

@@ -14,14 +14,8 @@ import { CommentInputBox } from './CommentInputBox'
 import type { RangeSelection } from 'lexical'
 import { $getNodeByKey, type LexicalNode } from 'lexical'
 import { getRangeSelectionRect } from '../../Utils/getSelectionRect'
-import { useDocsLayoutContext } from '../../Containers/DocsLayout'
-import { getContextualCommentsWidth } from '../../Containers/docsLayoutUtils'
-
-const RECALCULATE_THREAD_POSITIONS_EVENT = 'RecalculateThreadPositions'
-const dispatchRecalculateEvent = () => {
-  document.dispatchEvent(new CustomEvent(RECALCULATE_THREAD_POSITIONS_EVENT))
-}
-const SIXTY_FPS_TO_MS = 1000 / 60
+import { useRightPanelContext, useViewportWidth } from '../../Containers/DocsLayout'
+import { getContextualCommentsWidth, getDocsLayoutScrollContainer } from '../../Containers/docsLayoutUtils'
 
 const COMMENT_INPUT_ID = 'comment-input'
 const COMMENTS_WIDTH = 'max(20.5vw, 300px)'
@@ -99,10 +93,9 @@ function ThreadComponent({
 
 export function ContextualComments({ activeThreads }: { activeThreads: CommentThreadInterface[] }) {
   const [editor] = useLexicalComposerContext()
-  const { leftPanelWidth } = useDocsLayoutContext()
+  const { setWidth: setRightPanelWidth } = useRightPanelContext()
+  const viewportWidth = useViewportWidth()
   const { markNodeMap, activeIDs, commentInputSelection, cancelAddComment } = useCommentsContext()
-  const [container, setContainer] = useState<HTMLDivElement | null>(null)
-  const [viewportWidth, setViewportWidth] = useState(() => window.innerWidth)
 
   const [items, setItems] = useState<PositionedItem[]>([])
 
@@ -116,11 +109,16 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
     return activeThreads.find((thread) => thread.markID === activeMarkID)
   }, [activeMarkID, activeThreads])
 
-  const contextualCommentsWidth = useMemo(
-    () => getContextualCommentsWidth(viewportWidth, leftPanelWidth),
-    [leftPanelWidth, viewportWidth],
-  )
+  const contextualCommentsWidth = getContextualCommentsWidth(viewportWidth)
   const showContextualPanels = contextualCommentsWidth !== null
+
+  useEffect(() => {
+    setRightPanelWidth(contextualCommentsWidth ?? 0)
+  }, [contextualCommentsWidth, setRightPanelWidth])
+
+  useEffect(() => {
+    return () => setRightPanelWidth(0)
+  }, [setRightPanelWidth])
 
   const shouldShowCommentInputBox = commentInputSelection !== undefined
 
@@ -189,7 +187,7 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
                 style: {
                   left: showContextualPanels ? 0 : undefined,
                   right: showContextualPanels ? undefined : '0.5rem',
-                  width: showContextualPanels ? 'calc(100% - 2rem)' : 'auto',
+                  width: showContextualPanels ? 'calc(100% - 1rem)' : 'auto',
                 },
               },
               position: markRect.y,
@@ -235,20 +233,19 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
 
   useEffect(() => {
     debouncedGetThreadPositions()
-  }, [debouncedGetThreadPositions, leftPanelWidth, showContextualPanels])
+  }, [debouncedGetThreadPositions])
 
   useEffect(() => {
-    const listener = debounce(() => {
-      setViewportWidth(window.innerWidth)
-      debouncedGetThreadPositions()
-    }, SIXTY_FPS_TO_MS)
-
-    window.addEventListener('resize', listener)
-
-    return () => {
-      window.removeEventListener('resize', listener)
+    const rootElement = editor.getRootElement()
+    if (!rootElement) {
+      return
     }
-  }, [debouncedGetThreadPositions])
+
+    const observer = new ResizeObserver(() => debouncedGetThreadPositions())
+    observer.observe(rootElement)
+
+    return () => observer.disconnect()
+  }, [debouncedGetThreadPositions, editor])
 
   useEffect(() => {
     return editor.registerUpdateListener(() => {
@@ -256,38 +253,20 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
     })
   }, [debouncedGetThreadPositions, editor])
 
-  const debouncedDispatchRecalculateEvent = useMemo(() => debounce(dispatchRecalculateEvent, SIXTY_FPS_TO_MS), [])
-  useEffect(() => {
-    const containerParent = container?.parentElement
-
-    if (!containerParent) {
-      return
-    }
-
-    containerParent.addEventListener('scroll', debouncedDispatchRecalculateEvent)
-
-    return () => {
-      containerParent.removeEventListener('scroll', debouncedDispatchRecalculateEvent)
-    }
-  }, [container, debouncedDispatchRecalculateEvent])
-
   return (
     <>
       <Positioner
-        ref={setContainer}
         activeItemID={shouldShowCommentInputBox ? COMMENT_INPUT_ID : activeThread?.localID}
         items={items}
         className="pointer-events-none relative *:pointer-events-auto print:hidden"
         style={{
-          gridRow: 1,
-          gridColumn: 1,
           justifySelf: 'end',
-          width: contextualCommentsWidth !== null ? `${contextualCommentsWidth}px` : 'max-content',
+          width: showContextualPanels ? '100%' : 'max-content',
         }}
-        scrollContainer={editor.getRootElement()?.closest('.docs-layout-right-panel')}
+        scrollContainer={getDocsLayoutScrollContainer(editor.getRootElement())}
       />
       {shouldShowCommentInputBoxAsSticky && (
-        <div className="fixed bottom-2 left-0 w-full px-2">
+        <div className="pointer-events-auto fixed bottom-2 left-0 w-full px-2">
           <CommentInputBox editor={editor} cancelAddComment={cancelAddComment} />
         </div>
       )}
