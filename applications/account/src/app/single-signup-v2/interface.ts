@@ -178,7 +178,7 @@ export interface SignupDefaults {
 }
 
 export interface SignupCustomStepProps {
-    product: APP_NAMES;
+    product: APP_NAMES | undefined;
     signupParameters: SignupParameters2;
     audience?: Audience;
     logo: ReactNode;
@@ -206,7 +206,7 @@ export interface SignupConfiguration {
     audiences?: { value: Audience; locationDescriptor: LocationDescriptor; title: string; defaultPlan: PLANS }[];
     generateMnemonic: boolean;
     defaults: SignupDefaults;
-    product: APP_NAMES;
+    product: APP_NAMES | undefined;
     shortProductAppName: string;
     productAppName: string;
     setupImg: ReactNode;
