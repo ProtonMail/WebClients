@@ -38,15 +38,15 @@ export const useB2BAdminSidebarFeature = ({
     const [subscription, isSubscriptionLoading] = useSubscription();
     const [organization, isOrganizationLoading] = useOrganization();
 
+    const [permissions, isPermissionsLoading] = useOrgPermissions();
+
+    const skip = isUserLoading || isSubscriptionLoading || isOrganizationLoading || isPermissionsLoading;
     const isEnabled = useFlag('B2BSidebarRefreshEnabled');
     const { APP_NAME } = useConfig();
     const isAdmin = isB2BAdmin({ user, organization, subscription });
     const recoveryNotification = useRecoveryNotification(false, false);
     const [{ isDataRecoveryAvailable }] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
-    const [permissions, isPermissionsLoading] = useOrgPermissions();
-
-    const skip = isUserLoading || isSubscriptionLoading || isOrganizationLoading || isPermissionsLoading;
 
     const SsoForPbs = useFlag('SsoForPbs');
 
@@ -63,7 +63,7 @@ export const useB2BAdminSidebarFeature = ({
 
     const disabled = (loading: boolean) => ({ enabled: false as const, routes: undefined, loading });
 
-    if (skip || !subscription || !organization) {
+    if (skip || !subscription || !organization || !permissions) {
         return disabled(true);
     }
     if (!isEnabled || !isAdmin) {
@@ -83,7 +83,7 @@ export const useB2BAdminSidebarFeature = ({
             SharedServerFeature,
         },
         context: { isDataRecoveryAvailable, isSessionRecoveryAvailable, appName: APP_NAME, isAdmin },
-        permissions: permissions ?? {},
+        permissions,
     });
 
     const prefixedNavigation = prefix ? applyPrefix(resolvedNavigation, prefix) : resolvedNavigation;

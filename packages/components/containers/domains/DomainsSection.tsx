@@ -8,10 +8,13 @@ import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useDomainsAddresses } from '@proton/account/domainsAddresses/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import PermissionTooltip from '@proton/components/components/orgPermissions/PermissionTooltip';
+import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
@@ -44,6 +47,9 @@ import DomainModal from './DomainModal';
 import DomainName from './DomainName';
 import DomainStatus from './DomainStatus';
 
+const GuardedAddDomainButton = withPermissionGuard('account.domain.create')(Button);
+const GuardedDarkWebMonitoringToggle = withPermissionGuard('account.domain.update')(DomainDarkWebMonitoringToggle);
+
 const DomainsSectionText = () => {
     return (
         <SettingsParagraph className="text-cut" learnMoreUrl={getDomainsSupportURL()}>
@@ -60,6 +66,10 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
     const [organization, loadingOrganization] = useOrganization();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
     const organizationModals = useOrganizationModals(onceRef);
+    const [permissions] = useOrgPermissions();
+    const canUpdateDomain = !!permissions?.['account.domain.update'];
+    const canDeleteDomain = !!permissions?.['account.domain.delete'];
+    const canManageDomain = canUpdateDomain || canDeleteDomain;
 
     const [tmpDomainProps, setTmpDomainProps] = useState<{ domain: Domain; domainAddresses: DomainAddress[] } | null>(
         null
@@ -129,14 +139,14 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                     <DomainsSectionText />
 
                     <div className="mb-4">
-                        <Button
+                        <GuardedAddDomainButton
                             color="norm"
                             onClick={() => setNewDomainModalOpen(true)}
                             className="mr-4 mb-2"
                             disabled={hasReachedDomainsLimit || !isOrgActive}
                         >
                             {c('Action').t`Add domain`}
-                        </Button>
+                        </GuardedAddDomainButton>
                         <Button
                             className="mb-2"
                             loading={loadingRefresh || loadingDomainsAddressesMap}
@@ -164,48 +174,54 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                                                 <DomainName domain={domain} />,
                                                 <DomainStatus domain={domain} domainAddresses={domainAddresses} />,
                                                 isB2bDarkWebMonitoringEnable && (
-                                                    <DomainDarkWebMonitoringToggle
+                                                    <GuardedDarkWebMonitoringToggle
                                                         domain={domain}
                                                         disabled={!isOrgActive}
                                                     />
                                                 ),
-                                                <DropdownActions
-                                                    size="small"
-                                                    list={[
-                                                        isOrgActive &&
-                                                            ({
-                                                                text: reviewText,
-                                                                'aria-label': `${reviewText} ${domain.DomainName}`,
+                                                <PermissionTooltip hasPermission={canManageDomain}>
+                                                    <DropdownActions
+                                                        size="small"
+                                                        disabled={!canManageDomain}
+                                                        list={[
+                                                            isOrgActive &&
+                                                                ({
+                                                                    text: reviewText,
+                                                                    'aria-label': `${reviewText} ${domain.DomainName}`,
+                                                                    disabled: !canUpdateDomain,
+                                                                    onClick: () => {
+                                                                        setTmpDomainProps({ domain, domainAddresses });
+                                                                        setEditDomainModalOpen(true);
+                                                                    },
+                                                                    key: 'review',
+                                                                } as const),
+                                                            isOrgActive &&
+                                                                Array.isArray(domainAddresses) &&
+                                                                domainAddresses.length &&
+                                                                ({
+                                                                    text: setCatchAllText,
+                                                                    'aria-label': `${setCatchAllText} (${domain.DomainName})`,
+                                                                    disabled: !canUpdateDomain,
+                                                                    onClick: () => {
+                                                                        setTmpDomainProps({ domain, domainAddresses });
+                                                                        setCatchAllDomainModalOpen(true);
+                                                                    },
+                                                                    key: 'catch-all',
+                                                                } as const),
+                                                            {
+                                                                text: deleteText,
+                                                                'aria-label': `${deleteText} ${domain.DomainName}`,
+                                                                actionType: 'delete',
+                                                                disabled: !canDeleteDomain,
                                                                 onClick: () => {
                                                                     setTmpDomainProps({ domain, domainAddresses });
-                                                                    setEditDomainModalOpen(true);
+                                                                    setDeleteDomainModalOpen(true);
                                                                 },
-                                                                key: 'review',
-                                                            } as const),
-                                                        isOrgActive &&
-                                                            Array.isArray(domainAddresses) &&
-                                                            domainAddresses.length &&
-                                                            ({
-                                                                text: setCatchAllText,
-                                                                'aria-label': `${setCatchAllText} (${domain.DomainName})`,
-                                                                onClick: () => {
-                                                                    setTmpDomainProps({ domain, domainAddresses });
-                                                                    setCatchAllDomainModalOpen(true);
-                                                                },
-                                                                key: 'catch-all',
-                                                            } as const),
-                                                        {
-                                                            text: deleteText,
-                                                            'aria-label': `${deleteText} ${domain.DomainName}`,
-                                                            actionType: 'delete',
-                                                            onClick: () => {
-                                                                setTmpDomainProps({ domain, domainAddresses });
-                                                                setDeleteDomainModalOpen(true);
-                                                            },
-                                                            key: 'delete',
-                                                        } as const,
-                                                    ].filter(isTruthy)}
-                                                />,
+                                                                key: 'delete',
+                                                            } as const,
+                                                        ].filter(isTruthy)}
+                                                    />
+                                                </PermissionTooltip>,
                                             ].filter(isTruthy)}
                                         />
                                     );
@@ -249,7 +265,17 @@ const DomainsSectionUpgrade = () => {
 const DomainsSection = ({ onceRef }: { onceRef: MutableRefObject<boolean> }) => {
     const [customDomains] = useCustomDomains();
     const [user] = useUser();
-    const hasPermission = user.isAdmin && (user.hasPaidMail || user.hasPaidMeet);
+    const [permissions, loadingPermissions] = useOrgPermissions();
+
+    if (loadingPermissions) {
+        return (
+            <SettingsSectionWide>
+                <Loader />
+            </SettingsSectionWide>
+        );
+    }
+
+    const hasPermission = !!permissions?.['account.domain.read'] && (user.hasPaidMail || user.hasPaidMeet);
 
     return hasPermission || (!hasPermission && customDomains?.length) ? (
         <DomainsSectionInternal onceRef={onceRef} />

@@ -12,9 +12,9 @@ import type {
     CachedOrganizationKey,
     EnhancedMember,
     Member,
+    OrgPermissions,
     Organization,
     PartialMemberAddress,
-    Permission,
     UserModel,
 } from '@proton/shared/lib/interfaces';
 import { MEMBER_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
@@ -80,7 +80,7 @@ export const getMemberPermissions = ({
     ssoDomainsSet,
     isOwner,
 }: {
-    permissions: Record<Permission, boolean> | null;
+    permissions: OrgPermissions | null;
     appName: APP_NAMES;
     user: UserModel;
     member: Member;
