@@ -4333,6 +4333,9 @@
       ],
       "You can create public links for your own files only": [
         "Du kan endast skapa offentliga länkar för dina egna filer"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan inte verifiera författaren för denna fil"
       ]
     },
     "error": {
@@ -6511,7 +6514,7 @@
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
       ],
       "Recovery process might take some time.": [
-        "Återställningsprocessen kan ta tid."
+        "Återställningsprocess kan ta lite tid."
       ],
       "Referral link copied to your clipboard": [
         "Hänvisningslänk kopierats till ditt urklipp"
@@ -7642,6 +7645,9 @@
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "Search data can't be read": [
+        "Sökdata kan inte läsas"
       ]
     },
     "info": {
