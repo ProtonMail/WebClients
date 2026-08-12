@@ -17,7 +17,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { setScrollableTablesActive } from '@lexical/table'
 import { isHTMLElement } from '../Utils/guard'
 import { TableOfContents } from '../Components/TableOfContents/TableOfContents'
-import DocsLayout, { useDocsLayoutContext } from './DocsLayout'
+import DocsLayout from './DocsLayout'
 import { getDocsLayoutScrollContainer } from './docsLayoutUtils'
 
 interface PreviewModeEditorProps {
@@ -56,13 +56,6 @@ export function PreviewModeEditor({
 
   const getDocumentUrl = useMemo(() => clientInvoker.getDocumentUrl.bind(clientInvoker), [clientInvoker])
   const replaceDocumentUrl = useMemo(() => clientInvoker.replaceDocumentUrl.bind(clientInvoker), [clientInvoker])
-  const { setLeftPanelVisibility } = useDocsLayoutContext()
-
-  useEffect(() => {
-    if (!tableOfContentsVisible) {
-      setLeftPanelVisibility('collapsed')
-    }
-  }, [tableOfContentsVisible, setLeftPanelVisibility])
 
   return (
     <SafeLexicalComposer
@@ -86,15 +79,15 @@ export function PreviewModeEditor({
         isPreviewModeToolbar
         systemMode={EditorSystemMode.PublicView}
       />
-      <DocsLayout.Grid>
+      <DocsLayout.Grid leftPanelEnabled={tableOfContentsVisible}>
         <DocsLayout.LeftPanel>
           {tableOfContentsVisible && (
             <TableOfContents getDocumentUrl={getDocumentUrl} replaceDocumentUrl={replaceDocumentUrl} />
           )}
         </DocsLayout.LeftPanel>
-        <RichTextPlugin
-          contentEditable={
-            <DocsLayout.RightPanel>
+        <DocsLayout.CenterPanel>
+          <RichTextPlugin
+            contentEditable={
               <ProtonContentEditable
                 className="DocumentEditor w-full max-w-full print:w-full print:max-w-full"
                 style={{
@@ -106,11 +99,12 @@ export function PreviewModeEditor({
                 data-testid="preview-mode-editor"
                 onClick={handlePreviewModeLinkClick}
               />
-            </DocsLayout.RightPanel>
-          }
-          placeholder={null}
-          ErrorBoundary={LexicalErrorBoundary}
-        />
+            }
+            placeholder={null}
+            ErrorBoundary={LexicalErrorBoundary}
+          />
+        </DocsLayout.CenterPanel>
+        <DocsLayout.RightPanel />
       </DocsLayout.Grid>
 
       <PreviewStateSyncPlugin clonedEditorState={clonedEditorState} />

@@ -36,6 +36,7 @@ import { useCustomCollaborationContext } from '../Collaboration/CustomCollaborat
 import { useSyncedState } from '../../Hooks/useSyncedState'
 import { useContactEmails } from '../../Hooks/useContactEmails'
 import { TYPING_STATUS_CHANGE_EVENT_COMMAND } from './CommentsPanelListThread'
+import { useRightPanelContext } from '../../Containers/DocsLayout'
 
 export default function CommentPlugin({
   controller,
@@ -46,6 +47,7 @@ export default function CommentPlugin({
 }): JSX.Element {
   const { application } = useApplication()
   const [editor] = useLexicalComposerContext()
+  const { element: rightPanelElement } = useRightPanelContext()
   const isEditorEditable = useLexicalEditable()
 
   const collabContext = useCustomCollaborationContext()
@@ -363,7 +365,6 @@ export default function CommentPlugin({
     editor,
   ])
 
-  const commentsOverlayElement = editor.getRootElement()?.closest('.docs-layout-editor-stack')
   const layoutContainerElement = editor.getRootElement()?.closest('.docs-layout-container')
 
   const [confirmModal, showConfirmModal] = useConfirmActionModal()
@@ -421,9 +422,10 @@ export default function CommentPlugin({
         activeAnchorKey !== undefined &&
         commentInputSelection === undefined &&
         isEditorEditable &&
+        rightPanelElement &&
         createPortal(
           <FloatingQuickActions anchorKey={activeAnchorKey} editor={editor} onAddComment={onAddComment} />,
-          commentsOverlayElement || document.body,
+          rightPanelElement,
         )}
       {showCommentsPanel &&
         createPortal(
@@ -432,7 +434,8 @@ export default function CommentPlugin({
         )}
       {(activeThreads.length > 0 || commentInputSelection !== undefined) &&
         !showCommentsPanel &&
-        createPortal(<ContextualComments activeThreads={activeThreads} />, commentsOverlayElement || document.body)}
+        rightPanelElement &&
+        createPortal(<ContextualComments activeThreads={activeThreads} />, rightPanelElement)}
     </CommentsProvider>
   )
 }
