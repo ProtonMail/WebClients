@@ -13,8 +13,13 @@ import { type UserState, userFulfilled, userThunk } from '../user';
 
 const name = 'userPermissions';
 
+interface ExtendedUserPermission extends UserPermission {
+    permissions: OrgPermissions | null;
+    role: number;
+}
+
 export interface UserPermissionsState extends UserState {
-    [name]: ModelState<UserPermission & { permissions: OrgPermissions; role: number }>;
+    [name]: ModelState<ExtendedUserPermission>;
 }
 
 type SliceState = UserPermissionsState[typeof name];
@@ -40,19 +45,36 @@ const modelThunk = createAsyncModelThunk<Model, UserPermissionsState, ProtonThun
         // A runtime unleash toggle won't reflect until the next refetch, but that's fine in practice.
         const flag = extraArgument.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
         const isLegacyAdmin = user.isAdmin && user.isSelf;
+        const permissions = getOrgPermissions([], isLegacyAdmin);
+        const defaultValue = { Roles: [], Permissions: [], ShowAdminRolesUI: false, permissions, role: user.Role };
         if (!flag) {
-            const permissions = getOrgPermissions([], isLegacyAdmin);
-            return { Roles: [], Permissions: [], ShowAdminRolesUI: false, permissions, role: user.Role };
+            return defaultValue;
         }
-        const Permission = await extraArgument.api<UserPermission>(getUserPermissions());
-        const isOwner = Permission.Roles.some(isOwnerRole);
-        const permissions = getOrgPermissions(Permission.Permissions, isOwner);
-        return { ...Permission, permissions, role: user.Role };
+        try {
+            const Permission = await extraArgument.api<UserPermission>(getUserPermissions());
+            const isOwner = Permission.Roles.some(isOwnerRole);
+            const permissions = getOrgPermissions(Permission.Permissions, isOwner);
+            return { ...Permission, permissions, role: user.Role };
+        } catch {
+            // If the endpoint fails, fall back to the safe legacy-admin default rather than leaving
+            // `permissions` at null forever, which would make every `permissions === null` loading
+            // guard spin indefinitely.
+            return defaultValue;
+        }
     },
     previous: previousSelector(selectUserPermissions),
 });
 
-const initialState = getInitialModelState<Model>();
+const defaultUserPermissions: Model = {
+    permissions: null,
+    role: 0,
+    Roles: [],
+    Permissions: [],
+    ShowAdminRolesUI: false,
+};
+
+const initialState = getInitialModelState<Model>(defaultUserPermissions);
+
 const slice = createSlice({
     name,
     initialState,
@@ -67,8 +89,11 @@ const slice = createSlice({
             }
             // This will cause a refetch to happen the next time this thunk or hook is requested.
             // This is cleared when the user's role is changed to make sure that permissions are kept up-to-date.
+            // fetchedAt is also reset so cacheHelper treats the cache as expired and fetches synchronously,
+            // instead of serving this stale default while refetching in the background.
             state.meta.fetchedEphemeral = undefined;
-            state.value = undefined;
+            state.meta.fetchedAt = 0;
+            state.value = defaultUserPermissions;
         };
 
         // NOTE: Since there's no event loop updates for self permissions, we currently rely on the user role to know when to refetch.

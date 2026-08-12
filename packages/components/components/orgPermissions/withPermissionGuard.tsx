@@ -1,6 +1,6 @@
 import { type ComponentType, forwardRef } from 'react';
 
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import type { ButtonLikeOwnProps } from '@proton/atoms/Button/ButtonLike';
 import type { Permission } from '@proton/shared/lib/interfaces/UserPermission';
 
@@ -26,10 +26,9 @@ const withPermissionGuard =
     (constraints: Permission | Permission[]) =>
     <P extends ButtonLikeOwnProps>(Component: ComponentType<P>) => {
         const WithPermissionGuard = forwardRef<HTMLElement, P & { tooltip?: ExtendedTooltipProps }>((props, ref) => {
-            const [permissions] = useOrgPermissions();
-            const hasPermission = Array.isArray(constraints)
-                ? permissions !== null && constraints.every((permission) => permissions[permission])
-                : (permissions?.[constraints] ?? false);
+            const [{ permissions }] = useUserPermissions();
+            const requiredPermissions = Array.isArray(constraints) ? constraints : [constraints];
+            const hasPermission = !!permissions && requiredPermissions.every((permission) => permissions[permission]);
 
             const { tooltip, ...rest } = props;
             const overrideProps = {
