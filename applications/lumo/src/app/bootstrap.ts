@@ -41,7 +41,11 @@ import { setStoreRef } from './redux/storeRef';
 import { extraThunkArguments } from './redux/thunk';
 import { LumoApi } from './remote/api';
 import { LUMO_ELIGIBILITY } from './types';
-import { maybeMigrateLegacySessionToNative } from './util/legacySessionMigration';
+import {
+    consumeNativeSwitchLocalID,
+    maybeMigrateLegacySessionToNative,
+    registerNativeMigrationOutcomeHandler,
+} from './util/legacySessionMigration';
 import { initializeConsoleOverride } from './util/logging';
 import { type UserAndAddressKeys, initializeLumoBackground, initializeLumoCritical } from './util/lumoBootstrap';
 import { setLumoTelemetryEnabled } from './util/telemetry';
@@ -141,6 +145,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             api,
             pathname,
             searchParams,
+            // A native account switch reloads with the target userId in the fragment. Must be
+            // consumed here, as an argument: it strips the param, and that has to happen before
+            // loadSession reads window.location.
+            localID: consumeNativeSwitchLocalID(pathname),
             unauthenticatedReturnUrl: '/guest',
         });
 
@@ -151,6 +159,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, unleashClient, history });
 
+        registerNativeMigrationOutcomeHandler({ api, authentication });
         void maybeMigrateLegacySessionToNative({ api, authentication, pathname });
 
         const persistedSession = sessionResult.session?.persistedSession || getPersistedSession(authentication.localID);
