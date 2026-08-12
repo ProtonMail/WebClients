@@ -73,14 +73,13 @@ import { isLocalEnvironment } from '@proton/utils/env'
 import { useChangeAddressWhenPubliclyShared } from '../useChangeAddressWhenPubliclyShared'
 import { generateNodeUid, getDrive, type DriveEvent, type NodeEntity } from '@proton/drive'
 import { getNodeName } from '~/drive-sdk'
-import { getDocsReportContextLines } from '~/utils/report-context'
 import { useDriftDetectionErrorModal } from './DriftDetectionErrorModal'
-import downloadFile from '@proton/shared/lib/helpers/downloadFile'
 import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import TracerAlert from '../../../tracer/TracerAlert'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 import { getLogsAsJSON } from '~/utils/downloadLogs'
+import { getDocsReportContextLines } from '~/utils/report-context'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -329,7 +328,7 @@ export function DocumentViewer({
     }, ApplicationEvent.GenericInfo)
   }, [application.eventBus, showGenericInfoModal])
 
-  const downloadDebugInfo = useCallback(
+  const getDebugInfoZipFile = useCallback(
     async (driftLogDetails?: Record<string, unknown>) => {
       if (!editorController) {
         return
@@ -405,7 +404,7 @@ export function DocumentViewer({
       try {
         const zipBlob = await zip.generateAsync({ type: 'blob' })
         const filename = `debug-info-${Date.now()}.zip`
-        downloadFile(zipBlob, filename)
+        return new File([zipBlob], filename, { type: 'application/zip' })
       } catch (error) {
         console.error('Could not generate zip file', error)
       }
@@ -442,11 +441,11 @@ export function DocumentViewer({
     () =>
       application.eventBus.addEventCallback((driftLogDetails: Record<string, unknown>) => {
         openDriftDetectionErrorModal({
-          openBugReportModal: () => setBugReportModal(true),
-          downloadDebugInfo: () => downloadDebugInfo(driftLogDetails),
+          getDebugInfoFile: () => getDebugInfoZipFile(driftLogDetails),
+          documentType: tmpConvertNewDocTypeToOld(documentType),
         })
       }, ApplicationEvent.SheetsYjsDriftDetected),
-    [application.eventBus, downloadDebugInfo, setBugReportModal, openDriftDetectionErrorModal],
+    [application.eventBus, getDebugInfoZipFile, openDriftDetectionErrorModal, documentType],
   )
 
   useEffect(() => {
