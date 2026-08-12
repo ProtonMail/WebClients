@@ -1605,7 +1605,7 @@ const SingleSignupContainerV2 = ({
                                             await handleFinalizeSignup(
                                                 handleDone({
                                                     cache: result,
-                                                    appIntent: { app: product },
+                                                    appIntent: product ? { app: product } : undefined,
                                                 })
                                             );
                                         }

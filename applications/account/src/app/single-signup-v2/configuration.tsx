@@ -66,7 +66,7 @@ export const getSummaryPlan = ({
     freePlan,
     existingUser,
 }: {
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
     plan: Plan | undefined;
     freePlan: FreePlanDefault;
     existingUser: boolean;
