@@ -194,14 +194,25 @@ export const getOrganizationAppRoutes = ({
                 {
                     id: 'schedule-call',
                     available: app === APPS.PROTONVPN_SETTINGS && canSchedulePhoneCalls,
+                    keywords: [
+                        c('Headline').t`Contact us`,
+                        c('Action').t`Request a call`,
+                        c('Action').t`Start live chat`,
+                    ],
                 },
                 {
                     id: 'members',
+                    keywords: [c('Action').t`Add user`, c('Action').t`Invite user`, c('Action').t`Add address`],
                 },
                 {
                     text: c('Title').t`Create multiple user accounts`,
                     id: 'multi-user-creation',
                     available: organization && !!organization.RequiresKey && !hasExternalMemberCapableB2BPlan,
+                    keywords: [
+                        c('Select file').t`Upload CSV file`,
+                        c('Action').t`Download CSV sample`,
+                        c('account_search_index').t`Bulk user import`,
+                    ],
                 },
             ],
         },
@@ -216,6 +227,11 @@ export const getOrganizationAppRoutes = ({
             subsections: [
                 {
                     id: 'groups-management',
+                    keywords: [
+                        c('Action').t`New group`,
+                        c('Placeholder').t`Group name`,
+                        c('account_search_index').t`Group members`,
+                    ],
                 },
             ],
         },
@@ -226,10 +242,18 @@ export const getOrganizationAppRoutes = ({
             icon: 'globe',
             available: canHaveOrganization && canShowDomainNamesSection,
             subsections: [
-                { id: 'domains' },
+                {
+                    id: 'domains',
+                    keywords: [
+                        c('Action').t`Add domain`,
+                        c('account_search_index').t`Custom domain`,
+                        c('account_search_index').t`Verify domain`,
+                    ],
+                },
                 {
                     text: c('Title').t`Catch-all address`,
                     id: 'catch-all',
+                    keywords: [c('account_search_index').t`Receive misaddressed emails`],
                 },
             ],
         },
@@ -249,15 +273,30 @@ export const getOrganizationAppRoutes = ({
                 {
                     id: 'schedule-call',
                     available: canSchedulePhoneCalls,
+                    keywords: [
+                        c('Headline').t`Contact us`,
+                        c('Action').t`Request a call`,
+                        c('Action').t`Start live chat`,
+                    ],
                 },
                 {
                     text: subSectionTitleAppearance,
                     id: 'organization',
+                    keywords: [
+                        isPartOfFamily ? c('familyOffer_2023:Label').t`Family name` : c('Label').t`Organization name`,
+                        c('orgidentity').t`Organization identity`,
+                        c('Label').t`Logo`,
+                    ],
                 },
                 {
                     text: c('Title').t`Organization key`,
                     id: 'password-keys',
                     available: hasMemberCapablePlan && hasActiveOrganizationKey,
+                    keywords: [
+                        c('Header').t`Organization key fingerprint`,
+                        c('passwordless').t`Change organization key`,
+                        c('Action').t`Change password`,
+                    ],
                 },
             ],
         },
@@ -273,6 +312,11 @@ export const getOrganizationAppRoutes = ({
             subsections: [
                 {
                     id: 'servers',
+                    keywords: [
+                        c('Action').t`Create Gateway`,
+                        c('Action').t`Get more servers`,
+                        c('Info').t`dedicated servers`,
+                    ],
                 },
             ],
         },
@@ -289,6 +333,11 @@ export const getOrganizationAppRoutes = ({
             subsections: [
                 {
                     id: 'servers',
+                    keywords: [
+                        c('Action').t`Publish changes`,
+                        c('account_search_index').t`Shared server access`,
+                        c('account_search_index').t`Server access policy`,
+                    ],
                 },
             ],
         },
@@ -315,6 +364,11 @@ export const getOrganizationAppRoutes = ({
             subsections: [
                 {
                     id: 'vpn-connection-events',
+                    keywords: [
+                        c('account_search_index').t`VPN session details`,
+                        c('account_search_index').t`Connection events`,
+                        c('account_search_index').t`Gateway logs`,
+                    ],
                 },
             ],
         },
@@ -328,6 +382,11 @@ export const getOrganizationAppRoutes = ({
             subsections: [
                 {
                     id: 'activity-monitor-dashboard',
+                    keywords: [
+                        c('account_search_index').t`Audit log`,
+                        c('account_search_index').t`Account events`,
+                        c('VPN Gateways').t`VPN Gateways`,
+                    ],
                 },
             ],
         },
@@ -343,10 +402,21 @@ export const getOrganizationAppRoutes = ({
                 {
                     id: 'schedule-call',
                     available: canSchedulePhoneCalls,
+                    keywords: [
+                        c('Headline').t`Contact us`,
+                        c('Action').t`Request a call`,
+                        c('Action').t`Start live chat`,
+                    ],
                 },
                 {
                     text: subSectionTitle,
                     id: 'name',
+                    keywords: isPartOfFamily
+                        ? [
+                              c('familyOffer_2023:Action').t`Set up family group`,
+                              c('familyOffer_2023:Info').t`Create and manage family members.`,
+                          ]
+                        : [c('Action').t`Enable multi-user support`, c('account_search_index').t`Create organization`],
                 },
             ],
         },
@@ -366,6 +436,11 @@ export const getOrganizationAppRoutes = ({
                 {
                     text: c('Title').t`Spam, block, and allow lists`,
                     id: 'spam',
+                    keywords: [
+                        c('Action').t`Add address or domain`,
+                        c('account_search_index').t`Block sender for the organization`,
+                        c('account_search_index').t`Allow list`,
+                    ],
                 },
             ],
         },
@@ -375,7 +450,16 @@ export const getOrganizationAppRoutes = ({
             to: '/retention-policies',
             icon: 'archive-box',
             available: canShowRetentionPolicies,
-            subsections: [{ id: 'retention-policies' }],
+            subsections: [
+                {
+                    id: 'retention-policies',
+                    keywords: [
+                        c('retention_policy_2025_Action').t`Create retention rule`,
+                        c('retention_policy_2025_TableHeader').t`Retention period`,
+                        c('account_search_index').t`Automatically delete data`,
+                    ],
+                },
+            ],
         },
         security: {
             id: 'security',
@@ -388,18 +472,33 @@ export const getOrganizationAppRoutes = ({
                     text: c('Title').t`${PROTON_SENTINEL_NAME} for organizations`,
                     id: 'sentinel',
                     available: canShowB2BActivityMonitorEvents,
+                    keywords: [
+                        c('account_search_index').t`Advanced account protection`,
+                        c('account_search_index').t`Protection from cyber attacks`,
+                    ],
                 },
                 {
                     text: c('Title').t`${BRAND_NAME} Account password rules`,
                     id: 'proton-account-password-rules',
+                    keywords: [
+                        c('Label').t`Minimum number of characters`,
+                        c('Label').t`Special characters`,
+                        c('Label').t`Common passwords`,
+                    ],
                 },
                 {
                     text: c('Title').t`Two-factor authentication reminders`,
                     id: 'two-factor-authentication-reminders',
+                    keywords: [
+                        c('Label').t`Members without 2FA`,
+                        c('Label').t`Ask members to set up 2FA`,
+                        c('Action').t`Send email reminder`,
+                    ],
                 },
                 {
                     text: c('Title').t`Two-factor authentication enforcement`,
                     id: 'two-factor-authentication-enforcement',
+                    keywords: [c('Label').t`Require 2FA for administrators`, c('Label').t`Require 2FA for everyone`],
                 },
             ],
         },
@@ -422,11 +521,20 @@ export const getOrganizationAppRoutes = ({
                 {
                     id: 'application-access',
                     text: c('Title').t`Application access`,
+                    keywords: [
+                        c('account_search_index').t`Enable or disable apps for members`,
+                        c('account_search_index').t`Restrict app access`,
+                    ],
                 },
                 {
                     id: 'feature-access',
                     text: c('Title').t`Feature access`,
                     available: canShowVideoConferenceSection || canShowScribeSection,
+                    keywords: [
+                        c('Title').t`${BRAND_NAME} Scribe writing assistant`,
+                        c('Title').t`Video conferencing with Zoom`,
+                        c('Title').t`Email categories`,
+                    ],
                 },
             ],
         },
