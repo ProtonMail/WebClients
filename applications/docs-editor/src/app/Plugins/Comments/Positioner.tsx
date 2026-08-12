@@ -152,23 +152,12 @@ export const Positioner = forwardRef(function Positioner(
 
     const activeIndex = positionsMap.findIndex((child) => child.id === activeItemID)
 
-    const activeItem = positionsMap[activeIndex]
-    const itemBeforeActiveItem = positionsMap[activeIndex - 1]
+    // Check whether processing the items above the active item from top to bottom
+    // would eventually move the last one into the active item.
+    const needToAdjustItemsAboveActiveSeparately = willItemsAboveCollideWithActiveItem(positionsMap, activeIndex, gap)
 
-    // If the item above the active item will collide with the active item,
-    // we need to process the items above the active item in reverse order in a separate loop
-    let needToAdjustItemsAboveActiveSeparately = false
-    if (activeItem && itemBeforeActiveItem) {
-      const currentBottomPosition = itemBeforeActiveItem.position + itemBeforeActiveItem.height
-      const activeItemPosition = activeItem.position
-      const willCollideWithNextItem = currentBottomPosition > activeItemPosition
-      if (willCollideWithNextItem) {
-        needToAdjustItemsAboveActiveSeparately = true
-      }
-    }
-
-    // If there is an active index, we process all the items after it, otherwise
-    // we start from the beginning.
+    // If the adjusted items above would collide with the active item, process
+    // only the items below it in this pass so the active item stays anchored.
     const startingIndex = needToAdjustItemsAboveActiveSeparately ? activeIndex + 1 : 0
     for (let i = startingIndex; i < children.length; i++) {
       const item = positionsMap[i]
@@ -234,3 +223,27 @@ export const Positioner = forwardRef(function Positioner(
     </div>
   )
 })
+
+function willItemsAboveCollideWithActiveItem(
+  items: { position: number; height: number }[],
+  activeIndex: number,
+  gap: number,
+) {
+  const activeItem = items[activeIndex]
+  const firstItem = items[0]
+  if (!activeItem || !firstItem || activeIndex === 0) {
+    return false
+  }
+
+  let previousItem = firstItem
+  for (let i = 1; i < activeIndex; i++) {
+    const item = items[i]
+    const previousBottom = previousItem.position + previousItem.height
+    previousItem = {
+      ...item,
+      position: previousBottom > item.position ? previousBottom + gap : item.position,
+    }
+  }
+
+  return previousItem.position + previousItem.height > activeItem.position
+}
