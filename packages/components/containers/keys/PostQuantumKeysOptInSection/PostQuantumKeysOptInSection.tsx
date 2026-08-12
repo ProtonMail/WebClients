@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
+import { getHasAccountKeyChangeBlockingDelegatedAccess } from '@proton/account/delegatedAccess/accountKeyChangeBlocking';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
@@ -15,6 +16,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import useLoading from '@proton/hooks/useLoading';
 import { IcLink } from '@proton/icons/icons/IcLink';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { querySessions } from '@proton/shared/lib/api/auth';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
@@ -26,7 +28,7 @@ import PostQuantumOptInModal, { PostQuantumSetupStep } from './PostQuantumOptInM
 
 const PostQuantumKeysOptInSection = () => {
     const isMounted = useIsMounted();
-    const [state, setState] = useState<{ pqcIncompatibleSessions: boolean }>({ pqcIncompatibleSessions: true });
+    const [state, setState] = useState<{ pqcIncompatibleState: boolean }>({ pqcIncompatibleState: true });
     const [loading, withLoading] = useLoading();
     const api = useApi();
     const [userSettings] = useUserSettings(); // loading state not needed since settings are prefetched in bootstrap
@@ -35,17 +37,26 @@ const PostQuantumKeysOptInSection = () => {
     const [userKeys = [], loadingUserKeys] = useUserKeys();
     const [addresses = [], loadingAddressesKeys] = useAddressesKeys();
     const [loadingWhileOptin, withLoadingWhileOptin] = useLoading();
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        const fetchSessions = async () => {
-            const { Sessions } = await api<{ Sessions: Session[] }>(querySessions());
+        if (userSettings.Flags.SupportPgpV6Keys) {
+            return;
+        }
+        const checkSessionsAndDelegatedAccesses = async () => {
+            const [{ Sessions }, hasAccountKeyChangeBlockingDelegatedAccess] = await Promise.all([
+                api<{ Sessions: Session[] }>(querySessions()),
+                dispatch(getHasAccountKeyChangeBlockingDelegatedAccess()),
+            ]);
             if (isMounted()) {
                 setState({
-                    pqcIncompatibleSessions: Sessions.some(({ PgpV6Capable }) => PgpV6Capable === false),
+                    pqcIncompatibleState:
+                        hasAccountKeyChangeBlockingDelegatedAccess ||
+                        Sessions.some(({ PgpV6Capable }) => PgpV6Capable === false),
                 });
             }
         };
-        void withLoading(fetchSessions()).catch(noop);
+        void withLoading(checkSessionsAndDelegatedAccesses()).catch(noop);
     }, []);
 
     if (loading || loadingUserKeys || loadingAddressesKeys) {
@@ -161,7 +172,7 @@ const PostQuantumKeysOptInSection = () => {
                     )}
                 </>
             ) : (
-                !state.pqcIncompatibleSessions && (
+                !state.pqcIncompatibleState && (
                     <>
                         {sectionTitleElement}
                         <SettingsSectionWide>
