@@ -1,14 +1,14 @@
 import { useLocation } from 'react-router-dom';
 
-import type { SectionConfig, SidebarConfig } from '@proton/components';
-import { MainLogo } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
+import MainLogo from '@proton/components/components/logo/MainLogo';
 import SettingsListItem from '@proton/components/components/sidebar/SettingsListItem';
 import Sidebar from '@proton/components/components/sidebar/Sidebar';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SidebarNav from '@proton/components/components/sidebar/SidebarNav';
 import { Tree } from '@proton/components/components/sidebar/nav/Tree';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import type { SectionConfig, SidebarConfig } from '@proton/components/containers/layout/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import { useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
 

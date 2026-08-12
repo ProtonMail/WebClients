@@ -7,7 +7,7 @@ import AccountLoginContainer, {
 } from 'proton-account/src/app/login/LoginContainer';
 import type { MetaTags } from 'proton-account/src/app/useMetaTags';
 
-import type { OnLoginCallback } from '@proton/components';
+import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import { APPS, VPN_TV_PATHS_MAP } from '@proton/shared/lib/constants';
 
 export type LoginContainerState = AccountLoginContainerState;

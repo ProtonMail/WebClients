@@ -1,11 +1,9 @@
-import {
-    convertAddressesListener,
-    membersListener,
-    organizationKeysManagementListener,
-    startListeningToPlanNameChange,
-    unprivatizeMembersListener,
-} from '@proton/account';
 import { groupKeysListener } from '@proton/account/groups/groupKeysListener';
+import { membersListener } from '@proton/account/members/membersListener';
+import { unprivatizeMembersListener } from '@proton/account/members/unprivatizeMembersListener';
+import { convertAddressesListener } from '@proton/account/organizationKey/convertAddressesListener';
+import { organizationKeysManagementListener } from '@proton/account/organizationKey/listener';
+import { startListeningToPlanNameChange } from '@proton/account/subscription/startListeningToPlanNameChange';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
 import type { AppStartListening } from './store';

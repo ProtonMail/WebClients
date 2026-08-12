@@ -25,68 +25,67 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { EMPTY_ORG_PERMISSIONS } from '@proton/account/userPermissions';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
-import {
-    AutomaticSubscriptionModal,
-    CancelSubscriptionSection,
-    CancelSubscriptionViaSupportSection,
-    CancellationReminderSection,
-    CredentialLeakSection,
-    CreditsSection,
-    DashboardTelemetry,
-    DeleteSection,
-    DowngradeSubscriptionSection,
-    EmailSubscriptionSection,
-    GiftCodeSection,
-    InviteSection,
-    InvoicesSection,
-    LanguageSection,
-    LogsSection,
-    OpenVPNCredentialsSection,
-    PasswordsSection,
-    PaymentMethodsSection,
-    PlansSection,
-    PrivacySection,
-    PrivateAppContainer,
-    PrivateHeader,
-    PrivateMainAreaLoading,
-    PrivateMainSettingsArea,
-    ReferralInvitesContextProvider,
-    SentinelSection,
-    SessionsSection,
-    SubscriptionModalProvider,
-    SubscriptionsSection,
-    ThemesSection,
-    ThirdPartySection,
-    TopBanners,
-    TopNavbarUpsell,
-    TwoFactorSection,
-    UnAuthenticated,
-    UpgradeVpnSection,
-    UpsellModalTelemetryProvider,
-    UserDropdown,
-    UsernameSection,
-    VpnAlsoInYourPlanSection,
-    VpnBlogSection,
-    YourPlanSection,
-    YourPlanSectionV2,
-    YourPlanUpsellsSectionV2,
-    useActiveBreakpoint,
-    useRecoveryNotification,
-    useToggle,
-} from '@proton/components';
+import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
+import DeleteSection from '@proton/components/containers/account/DeleteSection';
+import EmailSubscriptionSection from '@proton/components/containers/account/EmailSubscriptionSection';
+import PasswordsSection from '@proton/components/containers/account/PasswordsSection';
+import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
+import UsernameSection from '@proton/components/containers/account/UsernameSection';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
+import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
+import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
+import CredentialLeakSection from '@proton/components/containers/credentialLeak/CredentialLeakSection';
+import LanguageSection from '@proton/components/containers/general/LanguageSection';
+import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
+import UserDropdown from '@proton/components/containers/heading/UserDropdown';
+import InvoicesSection from '@proton/components/containers/invoices/InvoicesSection';
+import PrivateMainAreaLoading from '@proton/components/containers/layout/PrivateMainAreaLoading';
+import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import { SettingsCardMaxWidth } from '@proton/components/containers/layout/interface';
+import LogsSection from '@proton/components/containers/logs/LogsSection';
+import CreditsSection from '@proton/components/containers/payments/CreditsSection';
+import GiftCodeSection from '@proton/components/containers/payments/GiftCodeSection';
+import PlansSection from '@proton/components/containers/payments/PlansSection';
+import SubscriptionsSection from '@proton/components/containers/payments/SubscriptionsSection';
+import PaymentMethodsSection from '@proton/components/containers/payments/methods/PaymentMethodsSection';
+import AutomaticSubscriptionModal from '@proton/components/containers/payments/subscription/AutomaticSubscriptionModal';
+import DashboardTelemetry from '@proton/components/containers/payments/subscription/DashboardTelemetry';
+import DowngradeSubscriptionSection from '@proton/components/containers/payments/subscription/DowngradeSubscriptionSection';
+import SubscriptionModalProvider, {
+    UpsellModalTelemetryProvider,
+} from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import UpgradeVpnSection from '@proton/components/containers/payments/subscription/UpgradeVpnSection';
+import YourPlanSection from '@proton/components/containers/payments/subscription/YourPlanSection';
 import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
+import YourPlanSectionV2 from '@proton/components/containers/payments/subscription/YourPlanSectionV2/YourPlanSectionV2';
+import { YourPlanUpsellsSectionV2 } from '@proton/components/containers/payments/subscription/YourPlanSectionV2/YourPlanUpsellsSectionV2';
+import { CancelSubscriptionSection } from '@proton/components/containers/payments/subscription/cancelSubscription';
+import CancelSubscriptionViaSupportSection from '@proton/components/containers/payments/subscription/cancelSubscriptionViaSupport/CancelSubscriptionViaSupportSection';
+import { CancellationReminderSection } from '@proton/components/containers/payments/subscription/cancellationFlow/CancellationReminderSection';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
+import PrivacySection from '@proton/components/containers/privacy/PrivacySection';
+import { ReferralInvitesContextProvider } from '@proton/components/containers/referral/ReferralInvitesContext';
 import ReferralPageTelemetry from '@proton/components/containers/referral/components/ReferralPageTelemetry';
 import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
+import { InviteSection } from '@proton/components/containers/referral/invite/InviteSection';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
+import { SentinelSection } from '@proton/components/containers/sentinel/SentinelSection';
+import SessionsSection from '@proton/components/containers/sessions/SessionsSection';
+import ThemesSection from '@proton/components/containers/themes/ThemesSection';
+import { ThirdPartySection } from '@proton/components/containers/thirdParty/ThirdPartySection';
+import TopBanners from '@proton/components/containers/topBanners/TopBanners';
+import OpenVPNCredentialsSection from '@proton/components/containers/vpn/OpenVPNCredentialsSection';
+import { VpnAlsoInYourPlanSection } from '@proton/components/containers/vpn/VpnAlsoInYourPlanSection/VpnAlsoInYourPlanSection';
+import { VpnBlogSection } from '@proton/components/containers/vpn/VpnBlogSection/VpnBlogSection';
 import LiveChatZendesk from '@proton/components/containers/zendesk/LiveChatZendesk';
 import { getZendeskTags } from '@proton/components/containers/zendesk/helper';
 import { useZendeskChat } from '@proton/components/containers/zendesk/useZendeskChat';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
+import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
+import useToggle from '@proton/components/hooks/useToggle';
 import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
