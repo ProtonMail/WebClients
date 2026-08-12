@@ -2,6 +2,8 @@ import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
+import { Engine } from '@proton/proton-foundation-search';
+
 import { SearchDB } from '../../shared/SearchDB';
 import { findDocuments, indexDocuments, makeTestIndexEntry } from '../../testing/indexHelpers';
 import { setupRealSearchLibraryWasm } from '../../testing/setupRealSearchLibraryWasm';
@@ -18,6 +20,10 @@ describe('IndexRegistry integration', () => {
         db = await SearchDB.open('test-user');
         const cryptoKey = await generateAndImportKey();
         registry = new IndexRegistry(cryptoKey);
+    });
+
+    afterEach(() => {
+        jest.restoreAllMocks();
     });
 
     it('get() creates an instance for a kind', async () => {
@@ -48,6 +54,22 @@ describe('IndexRegistry integration', () => {
         // Should create a fresh instance
         const second = await registry.get(IndexKind.MAIN, db);
         expect(second).not.toBe(first);
+    });
+
+    it('disposeAll() survives a throwing engine.free() and still drops the instance', async () => {
+        await registry.get(IndexKind.MAIN, db);
+        // Free for real and then throw, mirroring a free-during-live-iterator panic.
+        const realFree = Engine.prototype.free;
+        jest.spyOn(Engine.prototype, 'free').mockImplementationOnce(function (this: Engine) {
+            realFree.call(this);
+            throw new Error('null pointer passed to rust');
+        });
+
+        // rebuild() and reset() call disposeAll() *before* clearing the index, and
+        // disposeInternals() calls it while re-initialising the worker for a new client. A throw
+        // here would break the very recovery path the user is told to take on a wedged engine.
+        expect(() => registry.disposeAll()).not.toThrow();
+        expect([...registry.getAll()]).toHaveLength(0);
     });
 
     it('get() builds an engine where all four built-in index types are queryable', async () => {

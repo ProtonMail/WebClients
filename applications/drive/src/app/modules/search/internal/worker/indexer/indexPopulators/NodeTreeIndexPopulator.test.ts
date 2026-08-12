@@ -6,7 +6,7 @@ import 'fake-indexeddb/auto';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import { SearchDB } from '../../../shared/SearchDB';
-import { SearchLibraryError } from '../../../shared/errors';
+import { SearchLibraryError, classifyError } from '../../../shared/errors';
 import type { TreeEventScopeId } from '../../../shared/types';
 import { FakeMainThreadBridge } from '../../../testing/FakeMainThreadBridge';
 import { findDocumentsByTag } from '../../../testing/indexHelpers';
@@ -455,5 +455,22 @@ describe('NodeTreeIndexPopulator descendant removal', () => {
 
         const remaining = await allIndexedIds();
         expect(remaining).not.toContain(fileUid);
+    });
+
+    it('a quota failure during removal keeps its quota_exceeded classification', async () => {
+        const folderUid = 'vol1~FolderD1';
+        bridge.setChildren('root', [makeMaybeNode({ uid: folderUid, name: 'FolderD', type: 'folder' as any })]);
+
+        const { populator, ctx } = await indexTree('root');
+
+        const { blobStore } = await indexRegistry.get(IndexKind.MAIN, db);
+        jest.spyOn(blobStore, 'saveEvent').mockRejectedValue(new DOMException('', 'QuotaExceededError'));
+
+        const error = await populator.processNodeMutation(nodeDeleted(folderUid, 'e1'), ctx).catch((e: unknown) => e);
+
+        // Deliberately NOT search_library_error: the engine is fine, the disk is full. Only the
+        // quota bucket gives the user the "free up storage" copy, and search_library_error must
+        // stay the signal for real WASM faults.
+        expect(classifyError(error)).toEqual({ kind: 'permanent', reason: 'quota_exceeded' });
     });
 });
