@@ -4,6 +4,8 @@ import useApi from '@proton/components/hooks/useApi';
 import { useMeetErrorReporting } from '@proton/meet';
 import { requestAccessToken, requestHandshakeInfo } from '@proton/meet/api/meetSrpRequests';
 
+import { isExpectedApiFailure } from '../../utils/isExpectedApiFailure';
+
 export const useMeetingAuthentication = () => {
     const api = useApi();
 
@@ -14,10 +16,12 @@ export const useMeetingAuthentication = () => {
             try {
                 return await requestHandshakeInfo(api, token);
             } catch (error) {
-                reportMeetError('Error initializing handshake', {
-                    context: { error },
-                    tags: { meetingLinkName: token },
-                });
+                if (!isExpectedApiFailure(error)) {
+                    reportMeetError('Error initializing handshake', {
+                        context: { error },
+                        tags: { meetingLinkName: token },
+                    });
+                }
                 throw error;
             }
         },
@@ -45,11 +49,13 @@ export const useMeetingAuthentication = () => {
                     accessToken: AccessToken,
                     websocketUrl: WebsocketUrl.replace('/rtc', ''),
                 };
-            } catch (error: any) {
-                reportMeetError('Failed to get access details', {
-                    context: { error },
-                    tags: { meetingLinkName: token },
-                });
+            } catch (error) {
+                if (!isExpectedApiFailure(error)) {
+                    reportMeetError('Failed to get access details', {
+                        context: { error },
+                        tags: { meetingLinkName: token },
+                    });
+                }
                 throw error;
             }
         },
