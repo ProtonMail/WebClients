@@ -39,7 +39,7 @@ export default defineConfig([
                         },
                         {
                             name: '@proton/shared/lib/logger',
-                            importNames: ['logger', 'loggerManager'],
+                            importNames: ['logger'],
                             message:
                                 'Use mailLogger from proton-mail/mailLogger instead of the shared logger directly.',
                         },

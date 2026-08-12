@@ -54,7 +54,7 @@ import {
     type UserSettings,
 } from '@proton/shared/lib/interfaces';
 // eslint-disable-next-line no-restricted-imports
-import { loggerManager } from '@proton/shared/lib/logger';
+import { logger } from '@proton/shared/lib/logger';
 import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
@@ -106,7 +106,7 @@ const MailQuickSettings = () => {
 
     const handleClearBrowserData = async () => {
         if (collectLogs) {
-            await loggerManager.clearAllLogs();
+            await logger.clearLogs();
         }
 
         if (isElectronMail && hasInboxDesktopFeature('ClearAppModal')) {
@@ -453,7 +453,7 @@ const MailQuickSettings = () => {
                 {collectLogs && (
                     <Tooltip title={c('Info').t`Download application logs for troubleshooting`}>
                         <QuickSettingsButton
-                            onClick={() => withLoadingDownloadLogs(loggerManager.downloadAllLogs())}
+                            onClick={() => withLoadingDownloadLogs(logger.downloadLogs())}
                             data-testid="mail-quick-settings:download-logs-button"
                             loading={loadingDownloadLogs}
                         >

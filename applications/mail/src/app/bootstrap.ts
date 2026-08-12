@@ -26,9 +26,11 @@ import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
+import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 // eslint-disable-next-line no-restricted-imports
-import { loggerManager } from '@proton/shared/lib/logger';
+import { type LogLevel, logger } from '@proton/shared/lib/logger';
+import { ALL_CONSOLE_LEVELS } from '@proton/shared/lib/logger/constants';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import noop from '@proton/utils/noop';
@@ -168,11 +170,16 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         // Initialize logger if the feature flag is enabled
         if (unleashClient.isEnabled('CollectLogs')) {
             const { key: loggerKey, ID: loggerID } = await generateLoggerKey(authentication);
-            void loggerManager.createLogger('mail', {
+
+            const consoleLevels: LogLevel[] | undefined = isProduction(window.location.host)
+                ? undefined
+                : ALL_CONSOLE_LEVELS;
+            void logger.initialize({
                 encryptionKey: loggerKey,
                 appName,
                 loggerID,
                 loggerName: 'mail',
+                consoleLevels,
             });
 
             api.addEventListener((event) => {
