@@ -12,15 +12,16 @@ import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
 export interface LumoAgentDrawerValue {
     items: LumoAgentItem[];
     isBusy: boolean;
+    isAtToolLimit: boolean;
     hasConversation: boolean;
     send: (text: string) => void;
+    resume: () => void;
+    dismissToolLimit: () => void;
     confirm: (params: Record<string, any>) => void;
     cancel: () => void;
     stop: () => void;
     clear: () => void;
-    /** Per-mutation confirm card + result tile renderers, supplied by the product (empty until MR7). */
     cardRenderers?: CardRenderers;
-    /** Chip label + icon for each server tool, supplied by the product (wired in MR14). */
     serverToolMeta?: Partial<Record<ServerToolName, ServerToolMeta>>;
 }
 
