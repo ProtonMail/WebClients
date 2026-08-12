@@ -1,6 +1,5 @@
 import { CREATE_ARTIFACT_TOOL_NAME } from '../components/Conversation/artifact/createArtifactTool';
-import type { ArtifactToolMode } from '../components/Conversation/helper';
-import { type ConversationContext, formatPersonalization } from '../components/Conversation/helper';
+import type { ArtifactToolMode, ConversationContext } from '../components/Conversation/helper';
 import { decryptString } from '../crypto';
 import type { AesGcmCryptoKey } from '../crypto/types';
 import {
