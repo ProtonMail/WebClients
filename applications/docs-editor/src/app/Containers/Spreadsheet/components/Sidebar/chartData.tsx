@@ -59,6 +59,7 @@ const line: ChartType = {
   spec: {
     chartType: 'line',
     smooth: false,
+    stackedType: 'UNSTACKED',
   },
 }
 
@@ -107,6 +108,7 @@ const smoothLine: ChartType = {
   spec: {
     chartType: 'line',
     smooth: true,
+    stackedType: 'UNSTACKED',
   },
 }
 
