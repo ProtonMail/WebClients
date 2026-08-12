@@ -6625,6 +6625,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "このユーザーはメールアドレスが ${ BRAND_NAME } に登録されていないため、移行することができません。"
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "このユーザーを移行するには、${ domainNamesLink } にメールドメインを追加して確認してください"
       ]
     },
     "info": {
@@ -12461,6 +12467,9 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Domain names": [
+        "ドメイン名"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -4220,6 +4220,145 @@
       ],
       "Some items could not be loaded": [
         "Não foi possível carregar alguns itens"
+      ],
+      "Cannot download a folder": [
+        "Não é possível baixar uma pasta"
+      ],
+      "Cannot share root folder": [
+        "Não é possível compartilhar a pasta raiz"
+      ],
+      "Cannot verify the author of this file": [
+        "Não é possível verificar o autor deste arquivo"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Não é possível verificar quem é autor enviou este arquivo"
+      ],
+      "Copy operation aborted": [
+        "Operação de cópia interrompida"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Não é permitido copiar o item para um local que não seja uma pasta"
+      ],
+      "Could not load sharing details": [
+        "Não foi possível carregar os detalhes do compartilhamento"
+      ],
+      "Could not unlock the parent folder": [
+        "Não foi possível desbloquear a pasta pai"
+      ],
+      "Could not unlock this item": [
+        "Não foi possível desbloquear este item"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Não é permitido criar arquivos dentro de itens que não sejam pastas"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Não é permitido criar pastas dentro de itens que não sejam pastas"
+      ],
+      "Device not found": [
+        "Dispositivo não encontrado"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Falha ao descriptografar a chave de marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Falha ao descriptografar a senha dos favoritos: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Falha ao descriptografar a chave de conteúdo: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Falha ao descriptografar o nome do item: ${ message }"
+      ],
+      "File has no revision": [
+        "O arquivo não possui revisão"
+      ],
+      "Image preview not found": [
+        "Pré-visualização da imagem não encontrada"
+      ],
+      "Invitation not found": [
+        "Convite não encontrado"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "O link público antigo não pode ser atualizado. Crie um novo link público."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Endereço do membro não encontrado. Entre em contato com o suporte ao cliente para resolver isso"
+      ],
+      "Missing inviter email": [
+        "E-mail de quem fez o convite ausente"
+      ],
+      "Missing organization private key": [
+        "Chave privada da organização ausente"
+      ],
+      "Missing organization public key": [
+        "Chave pública da organização ausente"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Não é permitido mover o item para um local que não seja uma pasta"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caractere",
+        "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caracteres"
+      ],
+      "No file data was received. Please try again.": [
+        "Nenhum dado de arquivo foi recebido. Tente novamente."
+      ],
+      "Operation failed, try again later": [
+        "Erro na operação, tente novamente mais tarde"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte do arquivo parece estar corrompida"
+      ],
+      "Photo not found": [
+        "Foto não encontrada"
+      ],
+      "Signature is missing": [
+        "Assinatura ausente"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "A verificação de assinatura para ${ signatureType } falhou"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "A verificação de assinatura para ${ signatureType } falhou: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "O envio de alguns dados de arquivo falhou. Tente novamente."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "O envio de algumas partes de arquivo falhou. Tente novamente."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "O arquivo enviado não corresponde ao original. Por favor, tente novamente."
+      ],
+      "This file has no version available to download": [
+        "O arquivo não possui uma versão para download"
+      ],
+      "This file version could not be uploaded": [
+        "Não foi possível fazer o envio desta versão do arquivo"
+      ],
+      "This item is no longer shared": [
+        "Este item não está mais sendo compartilhado"
+      ],
+      "This item is not shared": [
+        "Este item não está compartilhado"
+      ],
+      "Too many server requests, please try again later": [
+        "Muitas solicitações ao servidor, tente novamente mais tarde"
+      ],
+      "Verification keys are not available": [
+        "As chaves de verificação não estão disponíveis"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "As chaves de verificação para ${ signatureType } não estão disponíveis"
+      ],
+      "You can create public links for your own files only": [
+        "Você pode criar links públicos apenas para seus próprios arquivos"
+      ],
+      "You can update a public link for your own files only": [
+        "Você pode atualizar um link público apenas para seus próprios arquivos"
+      ],
+      "You do not have access to this item": [
+        "Você não tem acesso a esse item"
       ]
     },
     "error": {
@@ -6788,6 +6927,30 @@
       ],
       "You": [
         "Você"
+      ],
+      "Author is not provided on public link": [
+        "O autor não forneceu um link público"
+      ],
+      "Find out what can be migrated.": [
+        "Descubra o que pode ser migrado."
+      ],
+      "No users to display": [
+        "Nenhum usuário para exibir"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecione exatamente o que deseja migrar. Isso se aplicará a todos os usuários da organização."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Para migrar este usuário, adicione e verifique o domínio de e-mail em ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Para migrar este usuário, ative a conta dele em ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, remova-o do arquivo no seu ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, remova a suspensão no seu ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -12808,6 +12971,9 @@
       ],
       "What are you migrating?": [
         "O que você está migrando?"
+      ],
+      "Domain names": [
+        "Nome do domínio"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12983,6 +13149,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Você poderá atribuir funções assim que o usuário aceitar o convite."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Faça upgrade para um plano suportado para usar funções de administrador."
       ]
     },
     "Validation": {
@@ -13447,6 +13616,12 @@
       ],
       "Pending": [
         "Pendente"
+      ],
+      "Activated": [
+        "Ativado"
+      ],
+      "All": [
+        "Todos"
       ]
     },
     "Property": {
@@ -13461,6 +13636,12 @@
       ],
       "name": [
         "nome"
+      ],
+      "attributes": [
+        "atributos"
+      ],
+      "content key": [
+        "chave de conteúdo"
       ]
     }
   }
