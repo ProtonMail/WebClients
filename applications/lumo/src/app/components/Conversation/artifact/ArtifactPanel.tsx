@@ -148,6 +148,10 @@ interface PanelHeaderProps {
     onSelectArtifact?: (id: string) => void;
 }
 
+const getVersionLabel = (versionNumber: number, totalVersions: number) => {
+    return c('collider_2025:Info').t`v${versionNumber} of ${totalVersions}`;
+};
+
 const PanelHeader = ({
     type,
     language,
@@ -204,7 +208,7 @@ const PanelHeader = ({
                     <IcChevronLeft size={4} className="color-hint" />
                 </Button>
                 <span className="text-xs color-hint shrink-0 text-nowrap">
-                    {c('collider_2025:Info').t`v${versionIndex + 1} of ${versionCount}`}
+                    {getVersionLabel(versionIndex + 1, versionCount)}
                 </span>
                 <Button
                     icon
