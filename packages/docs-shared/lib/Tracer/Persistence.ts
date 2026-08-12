@@ -90,11 +90,10 @@ async function flushAttempt(attemptId: string) {
   await db.delete('attempts', attemptId)
 }
 
-async function flushAllAttempts() {
-  const attempts = await getAllAttempts()
-  for (const attempt of attempts) {
-    await flushAttempt(attempt.id)
-  }
+async function flush() {
+  const db = await connectDb()
+  await db.clear('attempts')
+  await db.clear('events')
 }
 
 export default {
@@ -106,5 +105,5 @@ export default {
   getAttempt,
   getEvents,
   flushAttempt,
-  flushAllAttempts,
+  flush,
 }

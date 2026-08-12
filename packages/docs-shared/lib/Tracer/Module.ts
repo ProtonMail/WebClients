@@ -3,7 +3,7 @@ import metrics from '@proton/metrics'
 
 import Persistence from './Persistence'
 
-const REPORT_FILE_NAME = 'tracer-report.json'
+const REPORT_FILE_NAME = 'tracer-report'
 const SESSION_KEY = 'docs-open-tracer-session-id'
 const LOOP_DETECT_THRESHOLD = 2
 const IGNORE_PATHS = ['/recents', '/trash']
@@ -141,10 +141,7 @@ async function resolveAttempt() {
   log('resolve', `loop detected with attempt, marking resolution time: ${truncate(attempt.id)}`)
 }
 
-/**
- * Downloads a JSON report of all detected attempts and all events associated with them.
- */
-async function downloadReport() {
+async function getReportFile() {
   if (shouldIgnore()) {
     return
   }
@@ -162,11 +159,28 @@ async function downloadReport() {
     reports[attempt.id] = { events, attempt }
   }
 
-  const file = new File([JSON.stringify(reports)], REPORT_FILE_NAME, { type: 'application/json' })
+  const filename = `${REPORT_FILE_NAME}-${Date.now()}.json`
+  const file = new File([JSON.stringify(reports)], filename, { type: 'application/json' })
+  return {
+    file,
+    filename,
+  }
+}
+
+/**
+ * Downloads a JSON report of all detected attempts and all events associated with them.
+ */
+async function downloadReport() {
+  const result = await getReportFile()
+  if (!result) {
+    return
+  }
+
+  const { file, filename } = result
   const url = URL.createObjectURL(file)
   const a = document.createElement('a')
   a.href = url
-  a.download = REPORT_FILE_NAME
+  a.download = filename
   a.click()
   URL.revokeObjectURL(url)
 
@@ -174,14 +188,15 @@ async function downloadReport() {
 }
 
 /**
- * Flushes all attempts from the database
+ * Flushes the database and removes the session key
  */
-async function flushAttempts() {
+async function flush() {
   if (shouldIgnore()) {
     return
   }
-  await Persistence.flushAllAttempts()
-  log('flush', 'attempts flushed')
+  await Persistence.flush()
+  sessionStorage.removeItem(SESSION_KEY)
+  log('flush', 'db flushed')
 }
 
 /**
@@ -291,7 +306,8 @@ export default {
   resolveAttempt,
   setEnabled,
   downloadReport,
-  flushAttempts,
+  getReportFile,
+  flush,
   dismissAttempts,
   getUnreportedAttemptsCount,
 }
