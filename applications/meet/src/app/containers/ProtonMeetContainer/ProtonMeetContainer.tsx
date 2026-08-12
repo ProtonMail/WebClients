@@ -38,6 +38,7 @@ import { selectIsGuest, selectSubscriptionStatus, selectUserId } from '@proton/m
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
@@ -49,7 +50,6 @@ import { MeetingLockedModal } from '../../components/MeetingLockedModal/MeetingL
 import { MeetingOpenedInDesktopApp } from '../../components/MeetingOpenedInDesktopApp/MeetingOpenedInDesktopApp';
 import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVideo';
 import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/WebRtcUnsupportedModal';
-import { MEETING_NOT_FOUND_ERROR_CODE } from '../../constants';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { MeetingRecorderProvider } from '../../contexts/MeetingRecorderContext';
@@ -378,7 +378,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
             const { code } = getApiError(error);
 
             // Only a meeting that no longer exists justifies sending the user away
-            if (code === MEETING_NOT_FOUND_ERROR_CODE) {
+            if (code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
                 handleInvalidMeetingLink();
 
                 return;
