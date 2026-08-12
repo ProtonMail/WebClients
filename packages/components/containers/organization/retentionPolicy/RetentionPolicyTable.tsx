@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
@@ -32,7 +32,7 @@ interface RetentionPolicyTableProps {
 const RetentionPolicyTable = ({ rules, loading, onEdit, onDelete, onCreateNew }: RetentionPolicyTableProps) => {
     const [searchKeyword, setSearchKeyword] = useState('');
     const { getFullScopeLabel } = useRetentionRuleScopeSuggestion();
-    const [permissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
     const canUpdate = !!permissions?.['account.data_retention.update'];
     const canDelete = !!permissions?.['account.data_retention.delete'];
 

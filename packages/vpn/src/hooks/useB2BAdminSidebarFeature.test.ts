@@ -4,7 +4,7 @@ import type { MockedFunction } from 'vitest';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { defineSidebar } from '@proton/nav/api/defineSidebar';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -14,7 +14,7 @@ import { useB2BAdminSidebarFeature } from './useB2BAdminSidebarFeature';
 vi.mock('@proton/account/user/hooks', () => ({ useUser: vi.fn() }));
 vi.mock('@proton/account/subscription/hooks', () => ({ useSubscription: vi.fn() }));
 vi.mock('@proton/account/organization/hooks', () => ({ useOrganization: vi.fn() }));
-vi.mock('@proton/account/userPermissions/hooks', () => ({ useOrgPermissions: vi.fn() }));
+vi.mock('@proton/account/userPermissions/hooks', () => ({ useUserPermissions: vi.fn() }));
 vi.mock('@proton/account/recovery/dataRecovery', () => ({
     useIsDataRecoveryAvailable: () => [{ isDataRecoveryAvailable: true }, false],
 }));
@@ -33,7 +33,7 @@ vi.mock('../functions/isB2BAdmin', () => ({ isB2BAdmin: vi.fn() }));
 const mockUseUser = useUser as MockedFunction<any>;
 const mockUseSubscription = useSubscription as MockedFunction<any>;
 const mockUseOrganization = useOrganization as MockedFunction<any>;
-const mockUseOrgPermissions = useOrgPermissions as MockedFunction<any>;
+const mockUseUserPermissions = useUserPermissions as MockedFunction<any>;
 const mockUseFlag = useFlag as MockedFunction<typeof useFlag>;
 const mockIsB2BAdmin = isB2BAdmin as MockedFunction<typeof isB2BAdmin>;
 const mockDefineSidebar = defineSidebar as MockedFunction<any>;
@@ -49,7 +49,7 @@ describe('useB2BAdminSidebarFeature', () => {
         mockUseUser.mockReturnValue([user, false]);
         mockUseSubscription.mockReturnValue([subscription, false]);
         mockUseOrganization.mockReturnValue([organization, false]);
-        mockUseOrgPermissions.mockReturnValue([permissions, false]);
+        mockUseUserPermissions.mockReturnValue([{ permissions }, false]);
         mockUseFlag.mockReturnValue(true);
         mockIsB2BAdmin.mockReturnValue(true);
         mockDefineSidebar.mockReturnValue('sidebar-tree');
@@ -71,7 +71,7 @@ describe('useB2BAdminSidebarFeature', () => {
         ['user', () => mockUseUser.mockReturnValue([undefined, true])],
         ['subscription', () => mockUseSubscription.mockReturnValue([undefined, true])],
         ['organization', () => mockUseOrganization.mockReturnValue([undefined, true])],
-        ['permissions', () => mockUseOrgPermissions.mockReturnValue([null, true])],
+        ['permissions', () => mockUseUserPermissions.mockReturnValue([{ permissions: null }, true])],
     ])('while %s is loading', (_name, arrange) => {
         it('reports loading instead of disabled', () => {
             arrange();

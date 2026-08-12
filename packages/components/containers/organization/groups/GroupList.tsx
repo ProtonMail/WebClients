@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
@@ -33,7 +33,7 @@ const getSortedGroups = (input: string, groups: EnhancedGroup[]) => {
 const GroupList = () => {
     const { restrictedBy, uiState, groups, selectedGroup, actions, getSerializedGroup } = useGroupsManagement();
     const { hasUsableDomain } = useGroupAvailableAddressDomains();
-    const [permissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
     const canCreateGroup =
         !!permissions?.['account.group.create'] &&
         hasUsableDomain &&

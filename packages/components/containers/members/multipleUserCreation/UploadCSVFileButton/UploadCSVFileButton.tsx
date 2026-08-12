@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -38,7 +38,7 @@ const UploadCSVFileButton = ({
     const { createNotification } = useNotifications();
     const [errorModalProps, setErrorModalOpen, renderErrorModal] = useModalState();
     const [errors, setErrors] = useState<ReactNode[]>([]);
-    const [permissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
     const canCreate = !!permissions?.['account.user.create'];
 
     const csvTemplateButton = (

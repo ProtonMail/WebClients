@@ -44,7 +44,7 @@ const modelThunk = createAsyncModelThunk<Model, RetentionPoliciesState, ProtonTh
             dispatch(userPermissionsThunk()),
         ]);
         const flag = extraArgument.unleashClient?.isEnabled('DataRetentionPolicy') ?? false;
-        const canReadRetention = permissions['account.data_retention.read'];
+        const canReadRetention = !!permissions?.['account.data_retention.read'];
         if (!flag || !canFetch(user, organization, canReadRetention)) {
             return [];
         }
