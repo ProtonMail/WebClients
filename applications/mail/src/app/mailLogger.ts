@@ -1,7 +1,5 @@
 // eslint-disable-next-line no-restricted-imports
-import { loggerManager } from '@proton/shared/lib/logger';
-
-const logger = loggerManager.getLogger('mail');
+import { logger } from '@proton/shared/lib/logger';
 
 export const MAIL_LOG_COMPONENT = {
     MAILBOX_ACTIONS: 'mailbox-actions',
