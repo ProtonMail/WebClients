@@ -72,7 +72,7 @@ interface Props {
     terms?: ReactNode;
     signupParameters: SignupParameters2;
     showRenewalNotice: boolean;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
     setCurrencySelectorDisabled: (disabled: boolean) => void;
     paymentsApi: PaymentsApi;
     onVatNumberChange: (vatNumber: string) => void;

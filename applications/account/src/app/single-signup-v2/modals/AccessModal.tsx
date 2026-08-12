@@ -30,11 +30,11 @@ import walletAccess from '../wallet/access.svg';
 interface Props extends ModalProps {
     onContinue: () => void;
     onSignOut: () => Promise<void>;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
     user?: User;
 }
 
-const AccessModal = ({ app, onClose, onContinue, onSignOut, user, ...rest }: Props) => {
+const AccessModal = ({ app = APPS.PROTONMAIL, onClose, onContinue, onSignOut, user, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const { svg, appName, shortName } = (() => {
         if (app === APPS.PROTONPASS) {

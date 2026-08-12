@@ -11,7 +11,7 @@ import type { User } from '@proton/shared/lib/interfaces';
 interface Props extends ModalProps {
     onContinue: () => void;
     onSignOut: () => Promise<void>;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
     user?: User;
 }
 
