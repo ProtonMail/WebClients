@@ -1,4 +1,5 @@
-import logger from '../../logger';
+import { logger } from '@proton/logger';
+
 import type { SerializedUrlRule } from './builder';
 
 /**

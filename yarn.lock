@@ -10189,6 +10189,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/logger": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/react-polymorphic-types": "workspace:^"
@@ -10679,7 +10680,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/logger@workspace:packages/logger":
+"@proton/logger@workspace:^, @proton/logger@workspace:packages/logger":
   version: 0.0.0-use.local
   resolution: "@proton/logger@workspace:packages/logger"
   dependencies:
@@ -11187,6 +11188,7 @@ __metadata:
     "@proton/colors": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
+    "@proton/logger": "workspace:^"
     "@proton/sanitize": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/types": "workspace:^"
@@ -40613,6 +40615,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:^3.9.6":
+  version: 3.9.6
+  resolution: "prettier@npm:3.9.6"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10/1dd1a1e0e40ec3b91cda9d294c4a95022aef61880ca3f441aad99b1252279f58a766c4cece81132c01550dcff1fd445efbd8812ea4a2374313e7fc6c8136f11f
+  languageName: node
+  linkType: hard
+
 "pretty-error@npm:^4.0.0":
   version: 4.0.0
   resolution: "pretty-error@npm:4.0.0"
@@ -41705,6 +41716,7 @@ __metadata:
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
     "@proton/llm": "workspace:^"
+    "@proton/logger": "workspace:^"
     "@proton/lumo-ui": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/mail-renderer": "workspace:^"
