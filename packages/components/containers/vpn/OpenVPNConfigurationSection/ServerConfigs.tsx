@@ -1,7 +1,11 @@
 import { useMemo, useState } from 'react';
 
 import groupBy from 'lodash/groupBy';
+import { c } from 'ttag';
 
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Href } from '@proton/atoms/Href/Href';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 import clsx from '@proton/utils/clsx';
@@ -74,6 +78,8 @@ const ServerConfigs = ({ servers, category, onSelect, selecting, countryOptions,
                 const server = group[0];
                 const id = server.country || '';
                 const open = !!openMap[id] !== defaultOpen;
+                const smartRoutingCountries = generateSmartRoutingCountries(group);
+                const joinedSmartRoutingCountries = smartRoutingCountries.filter((country) => country).join(', ');
                 return (
                     <Details
                         key={id}
@@ -98,7 +104,7 @@ const ServerConfigs = ({ servers, category, onSelect, selecting, countryOptions,
                                                 {group.some(({ Features }) => isTorEnabled(Features)) ? (
                                                     <TorIcon />
                                                 ) : null}
-                                                <SmartRoutingIcon countries={generateSmartRoutingCountries(group)} />
+                                                <SmartRoutingIcon countries={smartRoutingCountries} />
                                             </div>
                                         </div>
                                     </>
@@ -107,6 +113,26 @@ const ServerConfigs = ({ servers, category, onSelect, selecting, countryOptions,
                         </Summary>
                         {open && (
                             <div className="p-4">
+                                {smartRoutingCountries.length ? (
+                                    <Banner
+                                        borderless
+                                        icon={<IcGlobe />}
+                                        link={
+                                            <Href href="https://protonvpn.com/support/how-smart-routing-works">
+                                                {c('Link').t`Learn more`}
+                                            </Href>
+                                        }
+                                    >
+                                        <span style={{ fontWeight: 'bold' }}>{c('Info').t`Smart Routing`}</span>
+                                        <br />
+                                        {joinedSmartRoutingCountries
+                                            ? // translator: joinedSmartRoutingCountries can be a list of 2 or 3 countries such as "France, United Kingdom", but most of the time it's always only 1 country, for example "Singapour"
+                                              c('Info')
+                                                  .t`Connects you to your destination country through servers physically located elsewhere: ${joinedSmartRoutingCountries}.`
+                                            : c('Info')
+                                                  .t`Connects you to your destination country through servers physically located elsewhere.`}
+                                    </Banner>
+                                ) : null}
                                 <ConfigsTable
                                     {...rest}
                                     category={category}
