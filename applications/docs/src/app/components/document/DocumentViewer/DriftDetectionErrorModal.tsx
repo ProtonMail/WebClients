@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button'
 import { useNotifications } from '@proton/components'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { useQuickReportModal } from '~/components/QuickReportModal'
+
 interface DriftDetectionErrorModalProps extends ModalStateProps {
   getDebugInfoFile: () => Promise<File | undefined>
   documentType: DocumentType
@@ -22,7 +23,6 @@ export function DriftDetectionErrorModal({
   const [isOpen, setIsOpen] = useState(open)
 
   const { createNotification } = useNotifications()
-
   const [quickReportModal, openQuickReportModal] = useQuickReportModal()
 
   const handleClose = () => {
