@@ -10,6 +10,7 @@ import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Pagination from '@proton/components/components/pagination/Pagination';
+import { Tabs } from '@proton/components/components/tabs/Tabs';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useEventManagerV6 } from '@proton/components/containers/eventManager/EventManagerV6Provider';
@@ -59,13 +60,16 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
         [DocumentType.Transactions]: transactionsHook,
     }[document];
 
-    const handleOwner =
-        (own = InvoiceOwner.User) =>
-        () => {
-            setOwner(own);
-            invoicesHook.onSelect(1);
-            setDocument(DocumentType.Invoice);
-        };
+    const handleOwner = (own = InvoiceOwner.User) => {
+        setOwner(own);
+        invoicesHook.onSelect(1);
+        setDocument(DocumentType.Invoice);
+    };
+
+    const ownerTabs = [
+        { owner: InvoiceOwner.User, title: c('Action').t`User` },
+        user.isAdmin && { owner: InvoiceOwner.Organization, title: c('Action').t`Organization` },
+    ].filter(isTruthy);
 
     const hasUnpaid = invoicesHook.invoices.find(({ State }) => State === InvoiceState.Unpaid);
 
@@ -137,26 +141,16 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
                     </Alert>
                 ) : null}
                 {user.isPaid ? (
-                    <ButtonGroup className="mr-4 mb-2">
-                        <Button
-                            className={owner === InvoiceOwner.User ? 'is-selected' : ''}
-                            onClick={handleOwner(InvoiceOwner.User)}
-                        >
-                            {c('Action').t`User`}
-                        </Button>
-                        {user.isAdmin && (
-                            <Button
-                                className={owner === InvoiceOwner.Organization ? 'is-selected' : ''}
-                                onClick={handleOwner(InvoiceOwner.Organization)}
-                            >
-                                {c('Action').t`Organization`}
-                            </Button>
-                        )}
-                    </ButtonGroup>
+                    <Tabs
+                        className="mb-4"
+                        tabs={ownerTabs}
+                        value={ownerTabs.findIndex(({ owner: tabOwner }) => tabOwner === owner)}
+                        onChange={(index) => handleOwner(ownerTabs[index].owner)}
+                    />
                 ) : null}
                 <div className="mb-4 flex justify-space-between">
                     <div>
-                        <div className="flex items-start">
+                        <div className="flex items-start justify-space-between">
                             <ButtonGroup className="mr-4 mb-2">
                                 <Button
                                     className={document === DocumentType.Invoice ? 'is-selected' : ''}
