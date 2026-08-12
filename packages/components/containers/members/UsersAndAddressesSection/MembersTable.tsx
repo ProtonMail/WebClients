@@ -18,8 +18,6 @@ import TableRow from '@proton/components/components/table/TableRow';
 import { getUser2FATagProps } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import type { UseUserMemberActions } from '@proton/components/containers/members/UsersAndAddressesSection/useMemberActions';
 import useConfig from '@proton/components/hooks/useConfig';
-import useLocalState from '@proton/components/hooks/useLocalState';
-import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcMinusCircle } from '@proton/icons/icons/IcMinusCircle';
@@ -50,7 +48,6 @@ import UserRowSkeleton from './UserRowSkeleton';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 import UserTableBadge from './UsersTableBadge';
 import UserTableIcon from './UsersTableIcon';
-import useUserActivityTelemetry from './useUserActivityTelemetry';
 
 import './MembersTable.scss';
 
@@ -83,21 +80,7 @@ export const MembersTable = ({
 
     const unprivatizationMemberState = baseUseSelector(selectUnprivatizationState);
 
-    const { trackConnectionUpsellDismissed: reportConnectionUpsellDismissed } = useUserActivityTelemetry();
-
     const usageRowCount = members.length;
-
-    // The connection column can be permanently dismissed (per browser) while it's just an upsell.
-    // If the org later gains gateways (state becomes "data"/"enable") the column returns regardless.
-    const [connectionUpsellDismissed, setConnectionUpsellDismissed] = useLocalState(
-        false,
-        `members-usage:last-connection-upsell-dismissed:${models.organization?.ID ?? ''}`
-    );
-    // While dismissed, keep the column hidden for the upsell state and during loading (state not yet known),
-    // so it never flashes in before the response arrives.
-    const connectionState = columnDisplay?.Connection;
-    const showConnectionColumn =
-        showUsage && !(connectionUpsellDismissed && (connectionState === undefined || connectionState === 'upsell'));
 
     const tableLabel = [
         '',
@@ -165,8 +148,7 @@ export const MembersTable = ({
             state: MemberUsageColumnState,
             value: ReactNode,
             label: string,
-            testId: string,
-            onDismiss?: () => void
+            testId: string
         ): ReactNode => {
             if (state !== 'data' && !usageLoading) {
                 if (index !== 0) {
@@ -175,22 +157,9 @@ export const MembersTable = ({
                 return (
                     <TableCell
                         rowSpan={usageRowCount}
-                        className="bg-weak align-middle text-center relative"
+                        className="bg-weak align-middle text-center"
                         data-testid={testId}
                     >
-                        {onDismiss && state === 'upsell' && (
-                            <Tooltip title={c('Action').t`Dismiss`}>
-                                <Button
-                                    icon
-                                    shape="ghost"
-                                    size="small"
-                                    className="absolute top-0 right-0 mt-1 mr-1"
-                                    onClick={onDismiss}
-                                >
-                                    <IcCross alt={c('Action').t`Dismiss`} />
-                                </Button>
-                            </Tooltip>
-                        )}
                         <MemberUsageColumnPrompt state={state} onEnabled={refetchUsage} />
                     </TableCell>
                 );
@@ -397,16 +366,12 @@ export const MembersTable = ({
                         c('Title header for members table').t`Last app activity`,
                         'users-and-addresses-table:lastActivity'
                     )}
-                {showConnectionColumn &&
+                {showUsage &&
                     renderUsageColumn(
                         columnDisplay?.Connection ?? 'data',
                         <LastConnectionValue lastConnection={usageByMemberID[member.ID]?.LastConnection ?? null} />,
                         c('Title header for members table').t`Last connection`,
-                        'users-and-addresses-table:lastConnection',
-                        () => {
-                            reportConnectionUpsellDismissed();
-                            setConnectionUpsellDismissed(true);
-                        }
+                        'users-and-addresses-table:lastConnection'
                     )}
                 <TableCell className="align-middle action-cell">
                     <div>
@@ -456,12 +421,11 @@ export const MembersTable = ({
                         showFeaturesColumn={meta.showFeaturesColumn}
                         useEmail={meta.useEmail}
                         showUsage={showUsage}
-                        showConnectionColumn={showConnectionColumn}
                         columnDisplay={columnDisplay}
                     />
                 </tr>
             </thead>
-            <TableBody colSpan={4 + (showConnectionColumn ? 1 : 0) + (meta.showFeaturesColumn ? 1 : 0)}>
+            <TableBody colSpan={4 + (showUsage ? 1 : 0) + (meta.showFeaturesColumn ? 1 : 0)}>
                 {skeleton || list}
             </TableBody>
         </Table>
