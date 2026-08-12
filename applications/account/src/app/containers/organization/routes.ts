@@ -72,6 +72,7 @@ export const getOrganizationAppRoutes = ({
     const hasSubUsers = (organization?.UsedMembers || 0) > 1;
 
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
+    const canManageOrganization = canHaveOrganization && permissions['account.organization_identity.read'];
     const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user });
 
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
@@ -122,13 +123,14 @@ export const getOrganizationAppRoutes = ({
 
     const hasUsedDomains = (organization?.UsedDomains ?? 0) > 0;
     const canShowDomainNamesSection =
+        permissions['account.domain.read'] &&
         // user.hasPaidMail is needed, because for example VPN B2B doesn't need domains by design
         // NOTE: This configuration is tied with the mail/routes.tsx domains availability
-        (hasOrganizationKey && user.hasPaidMail) ||
-        // Don't use user.hasPaidMeet otherwise we will show domain names section to every user with Meet addon
-        (hasOrganizationKey && hasMeetPlan) ||
-        // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete domains
-        (isOrgDelinquent && hasUsedDomains);
+        ((hasOrganizationKey && user.hasPaidMail) ||
+            // Don't use user.hasPaidMeet otherwise we will show domain names section to every user with Meet addon
+            (hasOrganizationKey && hasMeetPlan) ||
+            // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete domains
+            (isOrgDelinquent && hasUsedDomains));
 
     const canShowScribeSection = Boolean(
         isScribeEnabled &&
@@ -146,7 +148,7 @@ export const getOrganizationAppRoutes = ({
         user.hasPaidMail &&
         videoConferenceValidApplications.has(app);
 
-    const canShowAccessControl = hasSubUsers || isOrgConfigured;
+    const canShowAccessControl = permissions['account.access_control.read'] && (hasSubUsers || isOrgConfigured);
 
     const canShowRetentionPolicies =
         isRetentionPoliciesEnabled &&
@@ -237,7 +239,7 @@ export const getOrganizationAppRoutes = ({
             to: '/organization-keys',
             icon: 'buildings',
             available:
-                canHaveOrganization &&
+                canManageOrganization &&
                 (isPartOfFamily
                     ? hasActiveOrganization //Show this section once the family is setup (only requires a name)
                     : (hasActiveOrganizationKey || hasActiveOrganization) &&
@@ -264,7 +266,10 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Gateways`,
             to: '/gateways',
             icon: 'servers',
-            available: canHaveOrganization && (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
+            available:
+                canHaveOrganization &&
+                permissions['account.gateway.read'] &&
+                (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
             subsections: [
                 {
                     id: 'servers',
@@ -277,7 +282,10 @@ export const getOrganizationAppRoutes = ({
             to: '/shared-servers',
             icon: 'earth',
             available:
-                canHaveOrganization && isSharedServerFeatureEnabled && (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
+                canHaveOrganization &&
+                isSharedServerFeatureEnabled &&
+                permissions['account.shared_server.read'] &&
+                (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
             subsections: [
                 {
                     id: 'servers',
@@ -291,7 +299,11 @@ export const getOrganizationAppRoutes = ({
                 .t`Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.`,
             to: '/always-on-vpn',
             icon: 'vault',
-            available: isAlwaysOnVpnEnabled && canHaveOrganization && (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
+            available:
+                isAlwaysOnVpnEnabled &&
+                canHaveOrganization &&
+                permissions['account.always_on.read'] &&
+                (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
         },
         connectionEvents: {
             id: 'connectionEvents',
@@ -324,7 +336,9 @@ export const getOrganizationAppRoutes = ({
             text: subMenuTitle,
             to: '/multi-user-support',
             icon: 'users',
-            available: !!(canHaveOrganization && (isPartOfFamily ? !hasActiveOrganization : !hasActiveOrganizationKey)),
+            available: !!(
+                canManageOrganization && (isPartOfFamily ? !hasActiveOrganization : !hasActiveOrganizationKey)
+            ),
             subsections: [
                 {
                     id: 'schedule-call',
@@ -343,6 +357,7 @@ export const getOrganizationAppRoutes = ({
             icon: 'filter',
             available:
                 canHaveOrganization &&
+                permissions['account.organization_filter.read'] &&
                 app !== APPS.PROTONVPN_SETTINGS &&
                 !hasExternalMemberCapableB2BPlan &&
                 !isPassFamilyPlan &&

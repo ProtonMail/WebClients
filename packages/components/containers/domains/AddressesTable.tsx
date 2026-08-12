@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
@@ -12,6 +13,8 @@ import clsx from '@proton/utils/clsx';
 
 import AddressCatchAll from './AddressCatchAll';
 import DomainAddressStatus from './DomainAddressStatus';
+
+const GuardedAddressCatchAll = withPermissionGuard('account.domain.update')(AddressCatchAll);
 
 interface Props {
     domain: Domain;
@@ -40,7 +43,7 @@ const AddressesTable = ({ domain, domainAddresses }: Props) => {
                         <TableRow
                             key={key}
                             cells={[
-                                <AddressCatchAll
+                                <GuardedAddressCatchAll
                                     key={key}
                                     disabled={!isAddressActive}
                                     address={address}
