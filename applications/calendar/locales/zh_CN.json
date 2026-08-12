@@ -1033,6 +1033,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Migrate": [
+        "迁移"
       ]
     },
     "action": {
@@ -4270,6 +4273,9 @@
       ],
       "Something went wrong": [
         "出了些问题"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
       ]
     },
     "error": {
@@ -6775,6 +6781,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已达到预约时段数量上限 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You": [
+        "您"
       ]
     },
     "info": {
@@ -11767,6 +11776,9 @@
       ],
       "Type": [
         "类型"
+      ],
+      "Size": [
+        "大小"
       ]
     },
     "TableHeader": {
@@ -12629,6 +12641,9 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Domain names": [
+        "域名"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13204,6 +13219,19 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "正在处理"
+      ],
+      "Migrated": [
+        "已迁移"
+      ]
+    },
+    "Property": {
+      "key": [
+        "密钥"
       ]
     }
   }

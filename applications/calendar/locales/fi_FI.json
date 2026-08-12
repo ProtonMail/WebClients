@@ -4295,6 +4295,21 @@
       ],
       "Something went wrong": [
         "Jotain meni pieleen"
+      ],
+      "Invitation not found": [
+        "Kutsua ei löytynyt"
+      ],
+      "Item not found": [
+        "Kohdetta ei löytynyt"
+      ],
+      "Name must not be empty": [
+        "Nimi ei voi olla tyhjä"
+      ],
+      "Photo not found": [
+        "Kuvaa ei löytynyt"
+      ],
+      "Signature is missing": [
+        "Allekirjoitus puuttuu"
       ]
     },
     "error": {
@@ -6828,6 +6843,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "You": [
+        "Sinä"
       ]
     },
     "info": {
@@ -11935,6 +11953,15 @@
       ],
       "Type": [
         "Tyyppi"
+      ],
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
+      "Size": [
+        "Koko"
+      ],
+      "User": [
+        "Käyttäjä"
       ]
     },
     "TableHeader": {
@@ -12809,6 +12836,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Domain names": [
+        "Verkkotunnukset"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13428,6 +13458,30 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Filter": {
+      "All": [
+        "Kaikki"
+      ],
+      "Errors": [
+        "Virheet"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Käynnissä"
+      ],
+      "Migrated": [
+        "Siirretty"
+      ]
+    },
+    "Property": {
+      "key": [
+        "avain"
+      ],
+      "name": [
+        "nimi"
       ]
     }
   }

@@ -1037,6 +1037,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Migrate": [
+        "Übernehmen"
       ]
     },
     "action": {
@@ -4397,6 +4400,171 @@
       ],
       "You do not have access to this item": [
         "Du hast keinen Zugriff auf diesen Eintrag"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Die Adresse wird bereits von einem Benutzer außerhalb deiner Organisation verwendet. Bitte wende dich an den Kundensupport, um dies zu lösen."
+      ],
+      "Bookmark password is not available": [
+        "Lesezeichen-Passwort nicht verfügbar"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Ohne einen gültigen Namen kann kein Foto zum Album hinzugefügt werden"
+      ],
+      "Cannot verify the author of this file": [
+        "Der Urheber dieser Datei kann nicht überprüft werden"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Es lässt sich nicht feststellen, wer diese Datei hochgeladen hat"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Das Kopieren eines Eintrags nach außerhalb eines Ordners ist nicht zulässig"
+      ],
+      "Could not find an available name": [
+        "Es konnte kein verfügbarer Name gefunden werden"
+      ],
+      "Could not load sharing details": [
+        "Freigabeinformationen konnten nicht geladen werden"
+      ],
+      "Could not unlock the parent folder": [
+        "Der übergeordnete Ordner konnte nicht entsperrt werden"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Das Erstellen von Dokumenten außerhalb von Ordnern ist nicht zulässig"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Das Erstellen von Ordnern außerhalb von Ordnern ist nicht zulässig."
+      ],
+      "Expiration date cannot be in the past": [
+        "Ablaufdatum darf nicht in der Vergangenheit liegen"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Lesezeichenschlüssel konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Das Lesezeichen-Passwort konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Entschlüsselung des Inhaltsschlüssels fehlgeschlagen: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Entschlüsselung des Knotenschlüssels fehlgeschlagen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Die Entschlüsselung der Versionsmetadaten ist fehlgeschlagen"
+      ],
+      "Failed to get inviter keys": [
+        "Schlüssel des Einladers konnten nicht abgerufen werden"
+      ],
+      "Failed to verify invitation": [
+        "Einladung konnte nicht verifiziert werden"
+      ],
+      "File download failed due to empty response": [
+        "Das Herunterladen der Datei ist aufgrund einer leeren Antwort fehlgeschlagen"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Der alte öffentliche Link kann nicht aktualisiert werden. Bitte erstelle einen neuen öffentlichen Link."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
+      ],
+      "Missing inviter email": [
+        "E-Mail-Adresse des Einladers fehlt"
+      ],
+      "Missing organization private key": [
+        "Privater Schlüssel der Organisation fehlt"
+      ],
+      "Missing organization public key": [
+        "Öffentlicher Schlüssel der Organisation fehlt"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Signatur für ${ signatureType } fehlt"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Das Verschieben eines Eintrags nach außerhalb eines Ordners ist nicht zulässig"
+      ],
+      "Moving root item is not allowed": [
+        "Das Verschieben des Stammeintrags ist nicht zulässig"
+      ],
+      "No file data was received. Please try again.": [
+        "Es wurden keine Dateidaten empfangen. Bitte versuche es erneut."
+      ],
+      "Only admins can convert external invitations": [
+        "Nur Administratoren können externe Einladungen umwandeln"
+      ],
+      "Operation failed, try again later": [
+        "Vorgang fehlgeschlagen, versuche es später erneut"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisation hat nicht genügend Lizenzen verfügbar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation hat nicht genügend Speicherplatz verfügbar"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Ein Teil der Datei scheint beschädigt zu sein"
+      ],
+      "Photo is already in the target album": [
+        "Foto befindet sich bereits im Zielalbum"
+      ],
+      "Renaming root item is not allowed": [
+        "Das Umbenennen des Stammeintrags ist nicht zulässig"
+      ],
+      "Signature is missing": [
+        "Signatur fehlt"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturprüfung ist fehlgeschlagen: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturprüfung für ${ signatureType } ist fehlgeschlagen"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturprüfung für ${ signatureType } ist fehlgeschlagen: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Einige Dateidaten konnten nicht hochgeladen werden. Bitte versuche es erneut."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Einige Dateiteile konnten nicht hochgeladen werden. Bitte versuche es erneut."
+      ],
+      "Some items could not be loaded": [
+        "Einige Einträge konnten nicht geladen werden"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Die hochgeladene Datei stimmt nicht mit dem Original überein. Bitte versuche es erneut."
+      ],
+      "This file has missing crypto material": [
+        "In dieser Datei fehlt Kryptomaterial"
+      ],
+      "This file has no version available to download": [
+        "Für diese Datei steht keine Version zum Herunterladen zur Verfügung"
+      ],
+      "This file version could not be uploaded": [
+        "Diese Dateiversion konnte nicht hochgeladen werden"
+      ],
+      "This item has no image preview": [
+        "Dieser Eintrag hat keine Bildvorschau"
+      ],
+      "Too many server requests, please try again later": [
+        "Zu viele Server-Anfragen bitte versuche es später erneut"
+      ],
+      "Verification keys are not available": [
+        "Verifizierungsschlüssel sind nicht verfügbar"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifizierungsschlüssel für ${ signatureType } sind nicht verfügbar"
+      ],
+      "You can create public links for your own files only": [
+        "Du kannst öffentliche Links nur für deine eigenen Dateien erstellen"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kannst nur Einträge verlassen, die für dich freigegeben sind"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kannst einen öffentlichen Link nur für deine eigenen Dateien aktualisieren"
+      ],
+      "You do not have access to this shared item": [
+        "Du hast keinen Zugriff auf diesen geteilten Eintrag"
       ]
     },
     "error": {
@@ -6954,6 +7122,48 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Author is not provided on public link": [
+        "Urheber wird unter dem öffentlichen Link nicht angegeben"
+      ],
+      "Find out what can be migrated.": [
+        "Herausfinden, was übernommen werden kann."
+      ],
+      "No users to display": [
+        "Keine Benutzer vorhanden"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Wähle genau aus, was du übernehmen möchtest. Dies gilt für alle Benutzer der Organisation."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Dieser Benutzer kann nicht übernommen werden, da seine E-Mail-Adresse bei ${ BRAND_NAME } nicht verfügbar ist."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Dieser Benutzer kann aufgrund von Plattforminkompatibilitäten nicht übernommen werden."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Um diesen Benutzer zu übernehmen, füge die E-Mail-Domain unter ${ domainNamesLink } hinzu und überprüfe sie."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übernehmen, aktiviere sein Konto in deiner ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu übernehmen, aktiviere sein Konto unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu übernehmen, aktiviere seine Adresse unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Um diesen Benutzer zu übernehmen, muss er die Einladung zur Teilnahme an ${ BRAND_NAME } annehmen."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übernehmen, entpacke ihn in deiner ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übernehmen, hebe die Sperrung in deiner ${ provider.adminConsoleName } auf."
+      ],
+      "You": [
+        "Du"
       ]
     },
     "info": {
@@ -12070,6 +12280,21 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Activated": [
+        "Aktiviert"
+      ],
+      "Estimated size": [
+        "Geschätzte Größe"
+      ],
+      "Migration status": [
+        "Übernahmestatus"
+      ],
+      "Size": [
+        "Größe"
+      ],
+      "User": [
+        "Benutzer"
       ]
     },
     "TableHeader": {
@@ -12947,6 +13172,18 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Configure migration": [
+        "Übernahme konfigurieren"
+      ],
+      "Domain names": [
+        "Domainnamen"
+      ],
+      "Select users to migrate": [
+        "Benutzer für die Übernahme auswählen"
+      ],
+      "What are you migrating?": [
+        "Was übernimmst du?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13073,6 +13310,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Version 6 OpenPGP Schlüssel"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status der Datenmigration von ${ providerName } zu ${ BRAND_NAME }"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
       ]
     },
     "tooltip": {
@@ -13580,6 +13823,49 @@
       ],
       "name": [
         "Name"
+      ],
+      "content key": [
+        "Inhaltsschlüssel"
+      ],
+      "hash key": [
+        "Hash-Schlüssel"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Aktiviert"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Fehler"
+      ],
+      "In progress": [
+        "In Bearbeitung"
+      ],
+      "Migrated": [
+        "Übernommen"
+      ],
+      "Not activated": [
+        "Nicht aktiviert"
+      ],
+      "Pending": [
+        "Ausstehend"
+      ]
+    },
+    "Import status": {
+      "Has errors": [
+        "Hat Fehler"
+      ],
+      "In progress": [
+        "In Bearbeitung"
+      ],
+      "Migrated": [
+        "Migriert"
+      ],
+      "Pending": [
+        "Ausstehend"
       ]
     }
   }

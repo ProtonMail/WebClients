@@ -1885,6 +1885,9 @@
       ],
       "Web search access": [
         "Dostop do spletnega iskanja"
+      ],
+      "Full chat history with search": [
+        "Celotna zgodovina klepeta z možnostjo iskanja"
       ]
     },
     "collider_2025: Info": {
@@ -4097,6 +4100,147 @@
       ],
       "Something went wrong": [
         "Nekaj je šlo narobe"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Pri prijavi kršitve avtorskih pravic ali kraje podatkov je obvezno sporočilo"
+      ],
+      "Bookmark password is not available": [
+        "Geslo zaznamka ni na voljo"
+      ],
+      "Cannot download a folder": [
+        "Mape ni mogoče prenesti"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Predmeta ni mogoče premakniti brez veljavnega imena. Najprej preimenujte predmet"
+      ],
+      "Cannot share root folder": [
+        "Korenske mape ni mogoče deliti"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Ni mogoče preveriti, kdo je naložil to datoteko"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiranje predmetov v mapo, ki to ni, ni dovoljeno"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Predogleda slike ni mogoče naložiti: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Dela naslednje datoteke ni bilo mogoče prebrati: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Nadrejene mape ni bilo mogoče odkleniti"
+      ],
+      "Could not unlock this item": [
+        "Predmeta ni bilo mogoče odkleniti"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Ustvarjanje dokumentov v mapah, ki to niso, ni dovoljeno"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Ustvarjanje datotek v mapah, ki to niso, ni dovoljeno"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Ustvarjanje map v mapah, ki to niso, ni dovoljeno"
+      ],
+      "Device not found": [
+        "Naprave ni bilo mogoče najti"
+      ],
+      "Expiration date cannot be in the past": [
+        "Datum poteka ne more biti v preteklosti"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Ključa zaznamka ni bilo mogoče dešifrirati: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Imena zaznamka ni bilo mogoče dešifrirati: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Imena predmeta ni bilo mogoče dešifrirati: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Ključa vozlišča ni bilo mogoče dešifrirati: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Metapodatkov revizije ni bilo mogoče dešifrirati"
+      ],
+      "Failed to verify invitation": [
+        "Povabila ni bilo mogoče preveriti"
+      ],
+      "File download failed due to empty response": [
+        "Prenos datoteke ni uspel zaradi praznega odziva"
+      ],
+      "Image preview not found": [
+        "Predogleda slike ni bilo mogoče najti"
+      ],
+      "Invitation not found": [
+        "Povabila ni bilo mogoče najti"
+      ],
+      "Item not found": [
+        "Predmeta ni bilo mogoče najti"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Za ${ signatureType } manjka podpis"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Premikanje predmetov v mapo, ki to ni, ni dovoljeno"
+      ],
+      "Name must not be empty": [
+        "Ime ne sme biti prazno"
+      ],
+      "Only admins can convert external invitations": [
+        "Zunanja povabila lahko pretvorijo samo skrbniki"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizacija nima na voljo dovolj sedežev"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizacija nima na voljo dovolj shrambe"
+      ],
+      "Photo is already in the target album": [
+        "Fotografija je že v ciljnem albumu"
+      ],
+      "Photo not found": [
+        "Fotografije ni bilo mogoče najti"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Preverjanje podpisa ni uspelo: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Preverjanje podpisa za ${ signatureType } ni uspelo"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Podatki nekaterih datotek se niso uspeli naložiti. Poskusite znova."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Deli nekaterih datotek se niso uspeli naložiti. Poskusite znova."
+      ],
+      "Some items could not be loaded": [
+        "Nekaterih predmetov ni bilo mogoče naložiti"
+      ],
+      "This file version could not be uploaded": [
+        "Te različice datoteke ni bilo mogoče naložiti"
+      ],
+      "Too many server errors, please try again later": [
+        "Preveč napak strežnika, poskusite znova pozneje"
+      ],
+      "Too many server requests, please try again later": [
+        "Preveč zahtev strežniku, poskusite znova pozneje"
+      ],
+      "You can create public links for your own files only": [
+        "Javne povezave lahko ustvarjate samo do lastnih datotek"
+      ],
+      "You can only leave items that are shared with you": [
+        "Zapustite lahko le predmete, ki so v skupni rabi z vami"
+      ],
+      "You can only upload a new version to a file": [
+        "Naložite lahko samo novo različico datoteke"
+      ],
+      "You can update a public link for your own files only": [
+        "Javno povezavo lahko posodobite samo za lastne datoteke"
+      ],
+      "You do not have access to this shared item": [
+        "Nimate dostopa do tega predmeta v skupni rabi"
       ]
     },
     "error": {
@@ -5552,7 +5696,7 @@
         "Prikaži dogodke za koledar ${ Name }"
       ],
       "Do you remember your password? ${ verifyButton }": [
-        "Se spomnite vašega gesla? ${ verifyButton }"
+        "Se spomnite svojega gesla? ${ verifyButton }"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ne vidite ničesar? Ne pozabite izklopiti prepovedi pojavnih oken."
@@ -6588,6 +6732,27 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
+      ],
+      "Find out what can be migrated.": [
+        "Ugotovite, kaj je mogoče preseliti."
+      ],
+      "Thinking about this": [
+        "Razmišljanje"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Tega uporabnika ni mogoče prenesti, ker njegov e-poštni naslov ni na voljo v storitvi ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tega uporabnika ni mogoče preseliti zaradi nezdružljivosti platform."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Če želite prenesti tega uporabnika, dodajte in potrdite e-poštno domeno na povezavi ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Če želite preseliti tega uporabnika, omogočite njegov račun v ${ provider.adminConsoleName }."
+      ],
+      "You": [
+        "Vi"
       ]
     },
     "info": {
@@ -9701,6 +9866,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Na ta paket ste že naročeni. Naročnino lahko spremenite na ${ subscriptionPlatform }."
       ]
     },
     "Payments.Error": {
@@ -9979,6 +10147,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Ask anything…": [
+        "Vprašajte karkoli …"
       ]
     },
     "Placeholder for contact group name": {
@@ -11596,6 +11767,15 @@
       ],
       "Type": [
         "Vrsta"
+      ],
+      "Estimated size": [
+        "Ocenjena velikost"
+      ],
+      "Migration status": [
+        "Stanje selitve"
+      ],
+      "User": [
+        "Uporabnik"
       ]
     },
     "TableHeader": {
@@ -11637,7 +11817,7 @@
         "${ ceilDays } dan",
         "${ ceilDays } dni",
         "${ ceilDays } dni",
-        "${ ceilDays } dnevi"
+        "${ ceilDays } dni"
       ],
       "${ ceilHours } hour": [
         "${ ceilHours } ura",
@@ -12447,6 +12627,12 @@
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"
+      ],
+      "Domain names": [
+        "Imena domen"
+      ],
+      "What are you migrating?": [
+        "Kaj selite?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13117,6 +13303,19 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "Filter": {
+      "Errors": [
+        "Napake"
+      ],
+      "In progress": [
+        "V teku"
+      ]
+    },
+    "Import status": {
+      "Has errors": [
+        "Z napakami"
       ]
     }
   }

@@ -1037,6 +1037,9 @@
       ],
       "Stop": [
         "Stop"
+      ],
+      "Migrate": [
+        "Migreer"
       ]
     },
     "action": {
@@ -4315,6 +4318,184 @@
       ],
       "Something went wrong": [
         "Er is iets fout gegaan."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adres wordt al gebruikt door een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Kan geen foto aan album toevoegen zonder een geldige naam"
+      ],
+      "Cannot share root folder": [
+        "Kan hoofdmap niet delen"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan de auteur van dit bestand niet verifiëren"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan niet verifiëren wie dit bestand heeft geüpload"
+      ],
+      "Copy operation aborted": [
+        "Kopieerbewerking afgebroken"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Het kopiëren van een item naar een niet-map is niet toegestaan"
+      ],
+      "Could not load sharing details": [
+        "Kan de deelgegevens niet laden"
+      ],
+      "Could not unlock the parent folder": [
+        "Kan de bovenliggende map niet ontgrendelen"
+      ],
+      "Could not unlock this item": [
+        "Kan dit item niet ontgrendelen"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Het aanmaken van bestanden in niet-mappen is niet toegestaan"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Het aanmaken van mappen in niet-mappen is niet toegestaan"
+      ],
+      "Device not found": [
+        "Apparaat niet gevonden"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Kan de bladwijzersleutel niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Kan bladwijzerwachtwoord niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Kan inhoudssleutel niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kan itemnaam niet ontsleutelen: ${ message }"
+      ],
+      "Failed to get inviter keys": [
+        "Kan uitnodigingssleutels niet ophalen"
+      ],
+      "File download failed due to empty response": [
+        "Het downloaden van bestanden is mislukt vanwege een leeg antwoord"
+      ],
+      "File has no revision": [
+        "Bestand heeft geen revisie"
+      ],
+      "Image preview not found": [
+        "Afbeeldingsvoorbeeld niet gevonden"
+      ],
+      "Invitation not found": [
+        "Uitnodiging niet gevonden"
+      ],
+      "Item not found": [
+        "Item niet gevonden"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Verouderde openbare link kan niet worden bijgewerkt. Maak opnieuw een nieuwe openbare link."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
+      ],
+      "Missing inviter email": [
+        "Ontbrekende e-mail uitnodiger"
+      ],
+      "Missing organization private key": [
+        "Ontbrekende privésleutel van de organisatie"
+      ],
+      "Missing organization public key": [
+        "Ontbrekende openbare sleutel van de organisatie"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Het is niet toegestaan ​​om een ​​item naar een niet-map te verplaatsen"
+      ],
+      "Moving root item is not allowed": [
+        "Het verplaatsen van het hoofditem is niet toegestaan"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "De naam mag maximaal ${ MAX_NODE_NAME_LENGTH } tekens lang zijn",
+        "De naam mag maximaal ${ MAX_NODE_NAME_LENGTH } tekens lang zijn"
+      ],
+      "Name must not be empty": [
+        "Naam mag niet leeg zijn"
+      ],
+      "No file data was received. Please try again.": [
+        "Geen bestandsgegevens ontvangen. Probeer het opnieuw."
+      ],
+      "Operation aborted": [
+        "Bewerking afgebroken"
+      ],
+      "Operation failed, try again later": [
+        "Bewerking mislukt. Probeer het later opnieuw"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Een deel van het bestand lijkt beschadigd te zijn"
+      ],
+      "Photo is already in the target album": [
+        "De foto staat al in het doelalbum"
+      ],
+      "Photo not found": [
+        "Foto niet gevonden"
+      ],
+      "Renaming root item is not allowed": [
+        "Het hernoemen van het rootitem is niet toegestaan"
+      ],
+      "Signature is missing": [
+        "Handtekening ontbreekt"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Handtekeningverificatie voor ${ signatureType } mislukt"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Handtekeningverificatie voor ${ signatureType } mislukt: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Sommige bestandsgegevens konden niet worden geüpload. Probeer het opnieuw."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Sommige bestandsdelen konden niet worden geüpload. Probeer het opnieuw."
+      ],
+      "Some items could not be loaded": [
+        "Sommige items konden niet worden geladen"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Het geüploade bestand komt niet overeen met het origineel. Probeer het opnieuw."
+      ],
+      "This file has missing crypto material": [
+        "Dit bestand bevat ontbrekend cryptomateriaal"
+      ],
+      "This file has no version available to download": [
+        "Er is geen versie beschikbaar om te downloaden van dit bestand"
+      ],
+      "This file version could not be uploaded": [
+        "Deze bestandsversie kan niet worden geüpload"
+      ],
+      "This item has no image preview": [
+        "Dit item heeft geen afbeeldingsvoorbeeld"
+      ],
+      "This item is no longer shared": [
+        "Dit item wordt niet langer gedeeld"
+      ],
+      "This item is not shared": [
+        "Dit item is niet gedeeld"
+      ],
+      "Too many server requests, please try again later": [
+        "Te veel serververzoeken. Probeer het later opnieuw"
+      ],
+      "Verification keys are not available": [
+        "Verificatiesleutels zijn niet beschikbaar"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verificatiesleutels voor ${ signatureType } zijn niet beschikbaar"
+      ],
+      "You can create public links for your own files only": [
+        "U kunt alleen openbare links voor uw eigen bestanden maken"
+      ],
+      "You can update a public link for your own files only": [
+        "U kunt een openbare link alleen voor uw eigen bestanden bijwerken"
+      ],
+      "You do not have access to this item": [
+        "U heeft geen toegang tot dit item"
+      ],
+      "You do not have access to this shared item": [
+        "U heeft geen toegang tot dit gedeelde item"
       ]
     },
     "error": {
@@ -6872,6 +7053,48 @@
       ],
       "Thinking about this": [
         "Hierover aan het nadenken"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME }-markering"
+      ],
+      "Author is not provided on public link": [
+        "De auteur wordt niet vermeld op de openbare link"
+      ],
+      "Find out what can be migrated.": [
+        "Ontdek wat er gemigreerd kan worden."
+      ],
+      "No users to display": [
+        "Er zijn geen gebruikers om weer te geven."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Deze gebruiker kan niet worden gemigreerd omdat zijn e-mailadres niet beschikbaar is op ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit met het platform."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Om deze gebruiker te migreren, voegt u het e-maildomein toe en verifieert u het onder ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Als u deze gebruiker wilt migreren, schakelt u het account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Om deze gebruiker te migreren, moet hij/zij de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Om deze gebruiker te migreren, haalt u hem uit het archief in uw ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Als u deze gebruiker wilt migreren, heft u de opschorting op in uw ${ provider.adminConsoleName }."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "We sturen u door naar ${ IDEAL_BRAND_NAME } in een nieuw browsertabblad om deze transactie te voltooien. Als u pop-upblokkering gebruikt, schakel deze dan uit om door te gaan."
+      ],
+      "You": [
+        "U"
       ]
     },
     "info": {
@@ -9987,6 +10210,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betaal met ${ IDEAL_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Uw valuta is gewijzigd naar euro's (€), omdat ${ IDEAL_BRAND_NAME } alleen betalingen in euro's ondersteunt."
       ]
     },
     "Payments.Error": {
@@ -10007,6 +10236,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Kan ${ IDEAL_BRAND_NAME } niet initialiseren. Probeer het later opnieuw."
       ]
     },
     "Payments.error": {
@@ -11988,6 +12220,18 @@
       ],
       "Type": [
         "Soort"
+      ],
+      "Activated": [
+        "Geactiveerd"
+      ],
+      "Estimated size": [
+        "Geschatte grootte"
+      ],
+      "Size": [
+        "Grootte"
+      ],
+      "User": [
+        "Gebruiker"
       ]
     },
     "TableHeader": {
@@ -12865,6 +13109,15 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Configure migration": [
+        "Migratie configureren"
+      ],
+      "Domain names": [
+        "Domeinnamen"
+      ],
+      "Select users to migrate": [
+        "Selecteer gebruikers om te migreren"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13484,6 +13737,56 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Geactiveerd"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Fouten"
+      ],
+      "In progress": [
+        "In uitvoering"
+      ],
+      "Migrated": [
+        "Gemigreerd"
+      ],
+      "Not activated": [
+        "Niet geactiveerd"
+      ],
+      "Pending": [
+        "In behandeling"
+      ]
+    },
+    "Import status": {
+      "In progress": [
+        "Bezig"
+      ],
+      "Migrated": [
+        "Gemigreerd"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, om uw bank opdracht te geven het bedrag van uw rekening af te schrijven. U kunt binnen 8 weken na de incassodatum een ​​terugbetaling krijgen, onder de voorwaarden van uw overeenkomst met uw bank."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attributen"
+      ],
+      "hash key": [
+        "hash sleutel"
+      ],
+      "key": [
+        "sleutel"
+      ],
+      "membership": [
+        "lidmaatschap"
       ]
     }
   }
