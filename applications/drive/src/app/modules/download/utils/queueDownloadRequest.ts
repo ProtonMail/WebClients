@@ -1,11 +1,10 @@
-import { c } from 'ttag';
-
 import { type NodeEntity, NodeType } from '@proton/drive';
 import { getNodeName } from '@proton/drive/modules/nodes';
 
 import { getNodeStorageSize } from '../../../utils/sdk/getNodeStorageSize';
 import { DownloadStatus, IssueStatus, useDownloadManagerStore } from '../downloadManager.store';
 import type { DownloadOptions } from '../downloadTypes';
+import { formatAlbumArchiveFilename } from './formatDownloadArchiveFilename';
 
 export type RequestedDownload = NodeEntity[] | { albumUid: string; albumName: string };
 
@@ -87,7 +86,7 @@ export function queueDownloadRequest({
         return downloadId;
     }
 
-    const archiveName = isPhoto && albumName ? `${albumName}.zip` : getArchiveName(nodes);
+    const archiveName = isPhoto && albumName ? formatAlbumArchiveFilename(albumName) : getArchiveName(nodes);
     const downloadId = addDownloadItem({
         name: archiveName,
         storageSize: undefined,
@@ -118,7 +117,7 @@ export function queueAlbumDownloadRequest({
     scheduleArchive,
 }: QueueAlbumDownloadRequestParams): string {
     const { addDownloadItem } = useDownloadManagerStore.getState();
-    const archiveName = `${albumName.trim() || c('Info').t`Album`}.zip`;
+    const archiveName = formatAlbumArchiveFilename(albumName);
 
     const downloadId = addDownloadItem({
         name: archiveName,
