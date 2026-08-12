@@ -181,6 +181,26 @@ describe('UploadManager', () => {
             expect(emptyItem?.allowEmptyFile).toBe(true);
         });
 
+        it('should allow a confirmed 0-byte file nested in a folder structure', async () => {
+            const emptyFileResolver = jest.fn().mockResolvedValue(EmptyFileDecision.Allow);
+            uploadManager.setEmptyFileResolver(emptyFileResolver);
+
+            const files = [
+                createFileWithPath('file.txt', 'MyFolder/file.txt'),
+                createEmptyFileWithPath('empty.txt', 'MyFolder/subfolder/empty.txt', 'text/plain'),
+            ];
+
+            await uploadManager.upload(files, 'parent-uid-123');
+
+            expect(emptyFileResolver).toHaveBeenCalledWith(['empty.txt']);
+
+            const queueItems = Array.from(useUploadQueueStore.getState().queue.values());
+            const emptyItem = queueItems.find((item) => item.name === 'empty.txt') as FileUploadItem;
+            // Without allowEmptyFile the executor blocks the file, so "Upload anyway"
+            // would silently do nothing for files inside a folder.
+            expect(emptyItem?.allowEmptyFile).toBe(true);
+        });
+
         it('should not queue a genuine 0-byte file when the user cancels', async () => {
             const emptyFileResolver = jest.fn().mockResolvedValue(EmptyFileDecision.Cancel);
             uploadManager.setEmptyFileResolver(emptyFileResolver);
