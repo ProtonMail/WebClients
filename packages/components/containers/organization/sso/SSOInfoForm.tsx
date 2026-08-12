@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useGetSamlSSO } from '@proton/account/samlSSO/hooks';
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import Info from '@proton/components/components/link/Info';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
@@ -46,7 +46,7 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
     const getSamlSSO = useGetSamlSSO();
     const { createNotification } = useNotifications();
     const api = useApi();
-    const [permissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
     const canUpdate = !!permissions?.['account.sso_config.update'];
 
     const ssoInfo: SSOInfo = {

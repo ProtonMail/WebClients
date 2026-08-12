@@ -1,18 +1,12 @@
 import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import { createHooks } from '@proton/redux-utilities/hooks';
-import type { OrgPermissions } from '@proton/shared/lib/interfaces/UserPermission';
 
 import { selectUserPermissions, userPermissionsThunk } from './index';
 
 const hooks = createHooks(userPermissionsThunk, selectUserPermissions);
 
-export const useUserPermissions = hooks.useValue;
+export const useUserPermissions = hooks.useValueWithDefault;
 export const useGetUserPermissions = hooks.useGet;
-
-export const useOrgPermissions = (): [OrgPermissions | null, boolean] => {
-    const [result, loading] = useUserPermissions();
-    return [result?.permissions ?? null, loading];
-};
 
 export enum AdminRolesUIState {
     Hidden = 'hidden',

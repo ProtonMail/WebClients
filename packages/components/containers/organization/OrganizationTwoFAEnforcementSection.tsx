@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import Info from '@proton/components/components/link/Info';
-import { PermissionBanner, PermissionTooltip } from '@proton/components/components/orgPermissions';
 import Loader from '@proton/components/components/loader/Loader';
+import { PermissionBanner, PermissionTooltip } from '@proton/components/components/orgPermissions';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
@@ -28,7 +28,7 @@ interface Props {
 const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
     const api = useApi();
     const { APP_NAME } = useConfig();
-    const [permissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
     const hasFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
 
     const canSavePolicy =
@@ -83,7 +83,11 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
                           .t`We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.`}
             </SettingsParagraph>
 
-            <PermissionBanner hasPermission={!!canSavePolicy} className="mb-4 max-w-custom" style={{ '--max-w-custom': '43em' }} />
+            <PermissionBanner
+                hasPermission={!!canSavePolicy}
+                className="mb-4 max-w-custom"
+                style={{ '--max-w-custom': '43em' }}
+            />
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="two-fa-admin" className="text-semibold flex items-center">

@@ -56,8 +56,8 @@ describe('userPermissionsThunk', () => {
         });
         const { permissions } = await store.dispatch(userPermissionsThunk());
         // Only the API-granted permission is present, not blanket admin access.
-        expect(permissions['account.user.read']).toBe(true);
-        expect(permissions['account.user.create']).toBe(false);
+        expect(permissions?.['account.user.read']).toBe(true);
+        expect(permissions?.['account.user.create']).toBe(false);
     });
 
     it('resets the cached permissions when the user role changes', async () => {
@@ -70,11 +70,40 @@ describe('userPermissionsThunk', () => {
         // A role change arriving via the event loop must invalidate the cached permissions
         // so the next request refetches them.
         store.dispatch(getServerEvent({ User: { ...user, Role: USER_ROLES.ADMIN_ROLE } }));
-        expect(selectUserPermissions(store.getState()).value).toBeUndefined();
+        expect(selectUserPermissions(store.getState()).value).toEqual({
+            permissions: null,
+            role: 0,
+            Roles: [],
+            Permissions: [],
+            ShowAdminRolesUI: false,
+        });
 
         // Refetching picks up the new role.
         await store.dispatch(userPermissionsThunk());
         expect(selectUserPermissions(store.getState()).value?.role).toBe(USER_ROLES.ADMIN_ROLE);
+    });
+
+    it('falls back to the safe legacy-admin default when the endpoint call fails', async () => {
+        const extraThunkArguments = {
+            api: async () => {
+                throw new Error('network error');
+            },
+            unleashClient: { isEnabled: () => true },
+        } as unknown as ProtonThunkArguments;
+        const { store } = getTestStore({
+            reducer: { ...userReducer, ...userPermissionsReducer },
+            preloadedState: {
+                user: getModelState({ isAdmin: true, isSelf: true, Role: USER_ROLES.ADMIN_ROLE } as UserModel),
+            },
+            extraThunkArguments,
+        });
+
+        const result = await store.dispatch(userPermissionsThunk());
+
+        // `permissions` must never stay null forever: UI guards use `permissions === null` as the
+        // loading signal, so a failed fetch that leaves it null would spin an infinite loader.
+        expect(result.permissions).not.toBeNull();
+        PERMISSIONS.forEach((p) => expect(result.permissions?.[p]).toBe(true));
     });
 
     it('keeps the cached permissions when the user role is unchanged', async () => {
