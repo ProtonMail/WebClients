@@ -1338,6 +1338,12 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Tocar per alternar ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Keep going": [
+        "Continua"
+      ],
+      "Stop here": [
+        "Parar aquí"
       ]
     },
     "Action: Docs": {
@@ -7839,6 +7845,15 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redirigirem a ${ IDEAL_BRAND_NAME } en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu algun bloquejador de finestres emergents, desactiveu-lo per continuar."
+      ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } no ha pogut desxifrar l'índex de cerca local. Reconstruïu-lo per restaurar la cerca."
+      ],
+      "I have not finished this one yet.": [
+        "Encara no he acabat aquesta."
+      ],
+      "Search data can't be read": [
+        "No es poden llegir les dades de cerca"
       ]
     },
     "info": {
@@ -9914,6 +9929,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés ampliat"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés limitat"
       ]
     },
     "new_plans: feature highlight": {
@@ -14434,6 +14455,9 @@
       ],
       "Domain names": [
         "Noms de domini"
+      ],
+      "Still working on it": [
+        "S'hi està treballant encara"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1338,6 +1338,12 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } uygulamasına geç"
+      ],
+      "Keep going": [
+        "İlerle"
+      ],
+      "Stop here": [
+        "Burada dur"
       ]
     },
     "Action: Docs": {
@@ -7839,6 +7845,18 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
+      ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } yerel arama dizininin şifresini çözemedi. Aramayı kullanabilmek için dizini yeniden oluşturun."
+      ],
+      "I have not finished this one yet.": [
+        "Bunu henüz bitirmedim."
+      ],
+      "Search data can't be read": [
+        "Arama verileri okunamadı"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Bu işlem için birçok adım atılıyor. İlerlensin mi?"
       ]
     },
     "info": {
@@ -9854,6 +9872,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Genişletilmiş erişim ile ${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Sınırlı erişim ile ${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ]
     },
     "new_plans: feature highlight": {
@@ -14470,6 +14494,9 @@
       ],
       "Domain names": [
         "Etki alanları"
+      ],
+      "Still working on it": [
+        "Üzerinde çalışılıyor"
       ]
     },
     "Today icon tooltip in mini calendar": {
