@@ -3,6 +3,7 @@ import { LOAD_GUIDE_TOOL_NAME } from '@proton/llm/lib/lumoAgent/engine/loadGuide
 
 import { buildLumoMailConfig } from './registry';
 import { moveEmailsDefinition } from './skills/organise/moveEmails';
+import { setStarredDefinition } from './skills/organise/setStarred';
 import { listFiltersDefinition } from './skills/reads/listFilters';
 import { listFoldersDefinition } from './skills/reads/listFolders';
 import { listLabelsDefinition } from './skills/reads/listLabels';
@@ -88,6 +89,7 @@ const TOOL_PAYLOADS = [
         { filters: [{ reference: 'filter-q1w2e3', name: 'Newsletters', enabled: true }] },
     ]),
     payloads(moveEmailsDefinition, [undefined]),
+    payloads(setStarredDefinition, [undefined]),
 ];
 
 const DIRECTIVES = [
