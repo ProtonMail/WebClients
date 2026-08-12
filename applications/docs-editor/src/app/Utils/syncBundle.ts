@@ -5,7 +5,7 @@ import {
 } from '@proton/components/helpers/versionCookie'
 
 const ENABLED = true // feature killswitch
-const TAG_SYNC_RELOAD_ATTEMPTS = 2
+const TAG_SYNC_RELOAD_ATTEMPTS = 3
 const TAG_SYNC_RELOAD_ATTEMPTS_KEY = 'docs-editor-tag-sync'
 
 export enum SyncBundleResult {
@@ -29,8 +29,10 @@ export function syncBundle(): SyncBundleResult {
 
   const isEarlyAccessEnvironment = passedTag === 'alpha' || passedTag === 'beta'
   const intendedEnvironment = isEarlyAccessEnvironment ? passedTag : undefined
+  const normalizedEditorCookie =
+    versionCookieAtLoad === 'alpha' || versionCookieAtLoad === 'beta' ? versionCookieAtLoad : undefined
 
-  if (intendedEnvironment === versionCookieAtLoad) {
+  if (intendedEnvironment === normalizedEditorCookie) {
     sessionStorage.removeItem(TAG_SYNC_RELOAD_ATTEMPTS_KEY)
     return SyncBundleResult.READY
   }
