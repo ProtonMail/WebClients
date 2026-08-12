@@ -6,6 +6,21 @@
 .artifact-inline-edit {
 	border: 1px solid var(--border-norm);
 	z-index: var(--z-up, 10);
+
+	// The inner textarea owns focus; suppress the default Proton/field focus ring on the popup shell.
+	&:focus-within {
+		border-color: var(--border-norm);
+		box-shadow: var(--shadow-lifted);
+		outline: none;
+	}
+}
+
+.artifact-inline-edit-input {
+	&:focus,
+	&:focus-visible {
+		outline: none;
+		box-shadow: none;
+	}
 }
 
 .artifact-inline-edit-input::placeholder {
