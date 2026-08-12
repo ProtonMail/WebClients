@@ -18,8 +18,14 @@ export interface ExternalSessionPayload {
     refreshToken: string;
     keySecret: string | null;
     eventId: string | null;
+    /**
+     * Not read by native — account correlation is done via {@link userId}. Kept present and
+     * nullable for wire-format stability only: this payload is deserialized by native clients
+     * across versions that a single web deploy reaches at once, and removing an established field
+     * is riskier than keeping an ignored one. (iOS treats it as optional today; Android is the
+     * first native-auth release.)
+     */
     localId: number | null;
-    canMigrate: boolean;
 }
 
 /**
@@ -27,8 +33,13 @@ export interface ExternalSessionPayload {
  * it can adopt them via `migrateExternalSessions`. Native registers an
  * `onSessionMigration` JS interface (Android) / `nativeAuthHandler` message
  * handler (iOS, not yet wired) that receives the JSON-encoded session list.
+ *
+ * Returns `true` when the payload was handed to a native bridge, `false` when no
+ * bridge was detected or posting threw. Callers must only treat the sessions as
+ * migrated (and skip future re-pushes) when this returns `true` — otherwise the
+ * accounts would be marked migrated while native never received them.
  */
-export const sendSessionMigrationToNative = (sessions: ExternalSessionPayload[]): void => {
+export const sendSessionMigrationToNative = (sessions: ExternalSessionPayload[]): boolean => {
     const payload = JSON.stringify(sessions);
     console.log('Native Auth Bridge: Sending session migration to native', { count: sessions.length });
     try {
@@ -37,13 +48,17 @@ export const sendSessionMigrationToNative = (sessions: ExternalSessionPayload[])
                 action: 'MigrateSession',
                 sessions,
             });
-        } else if ((window as any).Android?.onSessionMigration) {
-            (window as any).Android.onSessionMigration(payload);
-        } else {
-            console.warn('Native Auth Bridge: Native bridge not detected for session migration.');
+            return true;
         }
+        if ((window as any).Android?.onSessionMigration) {
+            (window as any).Android.onSessionMigration(payload);
+            return true;
+        }
+        console.warn('Native Auth Bridge: Native bridge not detected for session migration.');
+        return false;
     } catch (e) {
         console.error('Native Auth Bridge: Error sending session migration to native:', e);
+        return false;
     }
 };
 
