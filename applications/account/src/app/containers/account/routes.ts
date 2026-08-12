@@ -301,6 +301,7 @@ export const getAccountAppRoutes = ({
     showDriveDashboard,
     showGenericDashboard,
     hasPendingInvitations,
+    permissions,
     flags,
     accountRecoveryRouterFlags,
 }: AccountRouterParams) => {
@@ -366,7 +367,13 @@ export const getAccountAppRoutes = ({
         // because they should have them on the dashboard or subscription pages
         (isVisionaryPlan && isMemberProton && isMember);
 
-    const shouldShowDashboard = isFree || canPay || !isMember || (isPaid && canPay);
+    const canAccessBilling = isFree || canPay || !isMember;
+    // There are two paths where the dashboard is shown:
+    // 1. (!isAdmin && canAccessBilling): if user can access billing, they can see the dashboard. "!isAdmin" is added because
+    //  admin without `account.dashboard.read` permission should not see the dashboard (e.g. User Admin has isAdmin = true 
+    //  but their responsiblity are CRUD members and groups only)
+    // 2. permissions['account.dashboard.read']: this path grants the dashboard to any org member who holds the permission
+    const shouldShowDashboard = (!isAdmin && canAccessBilling) || permissions['account.dashboard.read'];
     // We do not have to check app names here as the hook responsible to populate these values will do it for us.
     const shouldShowV2Dashboard = showGenericDashboard || showVPNDashboard || showDashboard || showDriveDashboard;
 

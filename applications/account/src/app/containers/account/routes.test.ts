@@ -1,9 +1,9 @@
+import { getOrgPermissions } from '@proton/account/userPermissions';
 import { createEntitlementResolver } from '@proton/payments/core/entitlements/resolver';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import { hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
-import { PERMISSIONS } from '@proton/shared/lib/interfaces/UserPermission';
 import { buildUser } from '@proton/testing/builders/user';
 
 import type { AccountRecoveryRouterFlags, AccountRouterParams, Flags } from '../../content/router-params';
@@ -76,10 +76,7 @@ function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): 
         showDriveDashboardVariant: 'disabled',
         showGenericDashboard: false,
         hasPendingInvitations: false,
-        permissions: Object.fromEntries(PERMISSIONS.map((p) => [p, false])) as Record<
-            (typeof PERMISSIONS)[number],
-            boolean
-        >,
+        permissions: getOrgPermissions([], true),
         flags: { ...defaultFlags, ...flagOverrides },
         groups: undefined,
         ...rest,
@@ -88,6 +85,10 @@ function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): 
 
 function getCancelSubscriptionSubsection(result: ReturnType<typeof getAccountAppRoutes>) {
     return result.routes.subscription.subsections.find((s) => s.id === 'cancel-subscription');
+}
+
+function getDashboardAvailability(overrides: Overrides) {
+    return getAccountAppRoutes(buildDefaultParams(overrides)).routes.dashboard.available;
 }
 
 describe('getAccountAppRoutes', () => {
@@ -153,6 +154,57 @@ describe('getAccountAppRoutes', () => {
 
             const result = getAccountAppRoutes(buildDefaultParams(overrides));
             expect(getCancelSubscriptionSubsection(result)?.available).toBeFalsy();
+        });
+    });
+
+    describe('dashboard available property', () => {
+        const orgAdmin = buildUser({ isAdmin: true, isMember: false, canPay: true, isFree: false, isPaid: true });
+        const subscribedOrgMember = buildUser({
+            isAdmin: false,
+            isMember: true,
+            canPay: false,
+            isFree: false,
+            isPaid: true,
+        });
+        const freeOrgMember = buildUser({
+            isAdmin: false,
+            isMember: true,
+            canPay: false,
+            isFree: true,
+            isPaid: false,
+        });
+        const individual = buildUser({ isAdmin: false, isMember: false, canPay: true, isFree: true, isPaid: false });
+
+        it('is available for an admin with the dashboard permission', () => {
+            const permissions = getOrgPermissions(['account.dashboard.read'], false);
+            expect(getDashboardAvailability({ user: orgAdmin, permissions })).toBe(true);
+        });
+
+        it('is not available for an admin without the dashboard permission', () => {
+            const permissions = getOrgPermissions([], false);
+            expect(getDashboardAvailability({ user: orgAdmin, permissions })).toBe(false);
+            expect(getDashboardAvailability({ user: orgAdmin, permissions, showDashboard: false })).toBe(false);
+        });
+
+        it('is available for a member of a free organization without any permission', () => {
+            const permissions = getOrgPermissions([], false);
+            expect(getDashboardAvailability({ user: freeOrgMember, permissions })).toBe(true);
+            expect(getDashboardAvailability({ user: freeOrgMember, permissions, showDashboard: false })).toBe(true);
+        });
+
+        it('is available for a user outside an organization without any permission', () => {
+            const permissions = getOrgPermissions([], false);
+            expect(getDashboardAvailability({ user: individual, permissions })).toBe(true);
+        });
+
+        it('is available for a member of a subscribed organization with the dashboard permission', () => {
+            const permissions = getOrgPermissions(['account.dashboard.read'], false);
+            expect(getDashboardAvailability({ user: subscribedOrgMember, permissions })).toBe(true);
+        });
+
+        it('is not available for a member of a subscribed organization without the dashboard permission', () => {
+            const permissions = getOrgPermissions([], false);
+            expect(getDashboardAvailability({ user: subscribedOrgMember, permissions })).toBe(false);
         });
     });
 });

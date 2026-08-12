@@ -6,8 +6,8 @@ import type {
     Address,
     Group,
     GroupMembershipReturn,
+    OrgPermissions,
     OrganizationExtended,
-    Permission,
     UserModel,
 } from '@proton/shared/lib/interfaces';
 import type { DriveDashboardVariant, VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
@@ -68,7 +68,7 @@ export type OrganizationSettingsRouterParams = {
     isGroupOwner: boolean | null;
     memberships: GroupMembershipReturn[] | undefined;
     groups: Group[] | undefined;
-    permissions: Record<Permission, boolean>;
+    permissions: OrgPermissions;
 };
 
 export type GeneralRouterParams = {
