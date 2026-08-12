@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
@@ -17,7 +18,8 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 const CatchAllSection = () => {
     const [user] = useUser();
-    const hasPermission = user.isAdmin && user.hasPaidMail;
+    const [permissions, loadingPermissions] = useOrgPermissions();
+    const hasPermission = !!permissions?.['account.domain.read'] && user.hasPaidMail;
 
     const plus = PLAN_NAMES[PLANS.MAIL];
     const bundle = PLAN_NAMES[PLANS.BUNDLE];
@@ -35,7 +37,7 @@ const CatchAllSection = () => {
                 {c('Info')
                     .t`If you have a custom domain with ${MAIL_APP_NAME}, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).`}
             </SettingsParagraph>
-            {!hasPermission && (
+            {!loadingPermissions && !hasPermission && (
                 <UpgradeBanner upsellPath={upsellRef}>
                     {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
