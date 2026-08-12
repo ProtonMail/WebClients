@@ -1,7 +1,7 @@
 import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
 import { generateKey, importKey } from '../shared/SearchCrypto';
 import type { SearchDB } from '../shared/SearchDB';
-import { sendErrorReportForSearch } from '../shared/errors';
+import { MissingUserKeyEncryptionError, classifyPermanentError, sendErrorReportForSearch } from '../shared/errors';
 
 export interface ResolvedKey {
     cryptoKey: CryptoKey;
@@ -46,8 +46,11 @@ export class SearchIndexKeyManager {
         // Encode as base64 because the bridge is a Comlink proxy (string-only serialization).
         const base64Key = rawKeyBytes.toBase64();
 
-        // TODO: Exception handling hardening
-        await db.putSearchCryptoKey(base64Key, encrypt);
+        try {
+            await db.putSearchCryptoKey(base64Key, encrypt);
+        } catch (e) {
+            throw classifyPermanentError(e) !== null ? e : new MissingUserKeyEncryptionError(e);
+        }
         // A new key means old blobs are undecryptable — clear stale index data.
         await db.clearIndex();
 

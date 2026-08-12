@@ -3,6 +3,7 @@ import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
 import { SearchDB } from '../../../../shared/SearchDB';
+import { SearchLibraryError } from '../../../../shared/errors';
 import type { TreeEventScopeId } from '../../../../shared/types';
 import { findTestIndexEntries, indexDocuments, makeTestIndexEntry } from '../../../../testing/indexHelpers';
 import { makeTaskContext } from '../../../../testing/makeTaskContext';
@@ -262,15 +263,11 @@ describe('CleanUpStaleIndexEntryTask', () => {
         expect(await getRemainingIds(instance.indexReader)).toEqual(['a-current', 'b-current']);
     });
 
-    it('continues cleaning other engines when one fails', async () => {
+    it('surfaces a wedged engine instead of absorbing it', async () => {
         const p = { populatorKind: 'myfiles', scopeId: 'vol-1', version: 1, generation: 1 };
-        const PHOTOS = 'photos' as IndexKind;
 
-        const main = await indexRegistry.get(IndexKind.MAIN, db);
-        await indexDocuments(main.indexWriter, [entryWith('main-stale', { ...p, generation: 99 })]);
-
-        const photos = await indexRegistry.get(PHOTOS, db);
-        await indexDocuments(photos.indexWriter, [entryWith('photos-stale', { ...p, generation: 99 })]);
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        await indexDocuments(instance.indexWriter, [entryWith('main-stale', { ...p, generation: 99 })]);
 
         await db.putPopulatorState({
             uid: `${p.populatorKind}:${p.scopeId}`,
@@ -283,9 +280,9 @@ describe('CleanUpStaleIndexEntryTask', () => {
             progress: { files: 0, folders: 0, albums: 0, photos: 0 },
         });
 
-        // Break the MAIN engine's export iterator.
-        jest.spyOn(main.engine, 'export').mockImplementation(() => {
-            throw new Error('simulated main failure');
+        // Break the engine's export iterator.
+        jest.spyOn(instance.engine, 'export').mockImplementation(() => {
+            throw new Error('simulated engine failure');
         });
 
         const ctx = makeTaskContext({
@@ -293,10 +290,9 @@ describe('CleanUpStaleIndexEntryTask', () => {
             db,
             activeIndexPopulators: [{ indexPopulatorKind: 'myfiles', treeEventScopeId: 'vol-1' as TreeEventScopeId }],
         });
-        await new CleanUpStaleIndexEntryTask().execute(ctx);
-
-        // Photos engine still processed despite MAIN failing.
-        expect(await getRemainingIds(photos.indexReader)).toEqual([]);
+        // Absorbed here, the index would rot with no permanentError set and no recovery offered to
+        // the user.
+        await expect(new CleanUpStaleIndexEntryTask().execute(ctx)).rejects.toBeInstanceOf(SearchLibraryError);
     });
 
     it('flushes write commits every 50 stale entries during the export pass', async () => {

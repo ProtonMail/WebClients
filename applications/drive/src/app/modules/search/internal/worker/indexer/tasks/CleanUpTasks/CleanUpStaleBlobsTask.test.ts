@@ -6,6 +6,7 @@ import type { Engine } from '@proton/proton-foundation-search';
 import { CleanupEventKind } from '@proton/proton-foundation-search';
 
 import { SearchDB } from '../../../../shared/SearchDB';
+import { SearchLibraryError } from '../../../../shared/errors';
 import { indexDocuments, makeTestIndexEntry } from '../../../../testing/indexHelpers';
 import { makeTaskContext } from '../../../../testing/makeTaskContext';
 import { setupRealSearchLibraryWasm } from '../../../../testing/setupRealSearchLibraryWasm';
@@ -132,30 +133,32 @@ describe('CleanUpStaleBlobsTask', () => {
         expect(photosBlobs).toContainEqual([OTHER_KIND, 'photos-orphan']);
     });
 
-    it('continues cleaning other engines when one fails', async () => {
-        const PHOTOS = 'photos' as IndexKind;
+    it('surfaces a wedged engine instead of absorbing it', async () => {
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        await indexDocuments(instance.indexWriter, [makeTestIndexEntry('main-doc')]);
 
-        const main = await indexRegistry.get(IndexKind.MAIN, db);
-        await indexDocuments(main.indexWriter, [makeTestIndexEntry('main-doc')]);
-
-        const photos = await indexRegistry.get(PHOTOS, db);
-        await indexDocuments(photos.indexWriter, [makeTestIndexEntry('photos-doc')]);
-
-        // Insert orphan under photos kind.
-        await db.putEncryptedIndexBlob([PHOTOS, 'photos-orphan'], new ArrayBuffer(8), identity);
-
-        // Break the MAIN engine's cleanup by making it throw.
-        jest.spyOn(main.engine, 'cleanup').mockImplementation(() => {
+        jest.spyOn(instance.engine, 'cleanup').mockImplementation(() => {
             throw new Error('simulated engine failure');
         });
 
         const ctx = makeTaskContext({ indexRegistry, db });
-        await new CleanUpStaleBlobsTask().execute(ctx);
+        // Absorbed here, the index would rot with no permanentError set and no recovery offered to
+        // the user.
+        await expect(new CleanUpStaleBlobsTask().execute(ctx)).rejects.toBeInstanceOf(SearchLibraryError);
+    });
 
-        // Photos orphan should still be cleaned up despite MAIN failing.
-        const keysAfter = await db.getAllIndexBlobKeys();
-        const photosOrphans = keysAfter.filter(([kind, name]) => kind === PHOTOS && name === 'photos-orphan');
-        expect(photosOrphans).toHaveLength(0);
+    it('keeps absorbing a non-systemic failure', async () => {
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        await indexDocuments(instance.indexWriter, [makeTestIndexEntry('main-doc')]);
+
+        // A transient IndexedDB hiccup while listing blobs: worth reporting, not worth stopping
+        // the queue over.
+        jest.spyOn(db, 'getAllIndexBlobKeys').mockRejectedValueOnce(
+            new DOMException('tx timed out', 'TransactionInactiveError')
+        );
+
+        const ctx = makeTaskContext({ indexRegistry, db });
+        await expect(new CleanUpStaleBlobsTask().execute(ctx)).resolves.toBeUndefined();
     });
 
     it('removes stale blob left after deleting an entry', async () => {

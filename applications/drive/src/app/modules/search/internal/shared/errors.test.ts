@@ -5,7 +5,14 @@ import {
     ServerError as SdkServerError,
 } from '@proton/drive';
 
-import { InvalidIndexerState, SearchLibraryError, classifyError, isRepairableError } from './errors';
+import {
+    InvalidIndexerState,
+    MissingUserKeyEncryptionError,
+    SearchBlobCryptoError,
+    SearchLibraryError,
+    classifyError,
+    isRepairableError,
+} from './errors';
 
 describe('classifyError', () => {
     describe('permanent beats transient', () => {
@@ -35,6 +42,20 @@ describe('classifyError', () => {
             expect(classifyError(new SearchLibraryError('wasm crash', null))).toEqual({
                 kind: 'permanent',
                 reason: 'search_library_error',
+            });
+        });
+
+        it('SearchBlobCryptoError → permanent search_crypto_error', () => {
+            expect(classifyError(new SearchBlobCryptoError(new DOMException('', 'OperationError')))).toEqual({
+                kind: 'permanent',
+                reason: 'search_crypto_error',
+            });
+        });
+
+        it('MissingUserKeyEncryptionError → permanent search_crypto_error', () => {
+            expect(classifyError(new MissingUserKeyEncryptionError())).toEqual({
+                kind: 'permanent',
+                reason: 'search_crypto_error',
             });
         });
     });
@@ -142,6 +163,8 @@ describe('isRepairableError', () => {
         expect(isRepairableError(new DOMException('', 'VersionError'))).toBe(false);
         expect(isRepairableError(new InvalidIndexerState('bad'))).toBe(false);
         expect(isRepairableError(new SearchLibraryError('wasm crash', null))).toBe(false);
+        expect(isRepairableError(new SearchBlobCryptoError(new DOMException('', 'OperationError')))).toBe(false);
+        expect(isRepairableError(new MissingUserKeyEncryptionError())).toBe(false);
     });
 
     it('treats known transient network-family errors as not repairable', () => {
