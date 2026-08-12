@@ -1526,7 +1526,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -8077,8 +8078,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9661,6 +9661,21 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
+      ],
+      "Searched ${ targetName }": [
+        "${ targetName } arandı"
+      ],
+      "Searched for mail from ${ sender }": [
+        "${ sender } adresinden gelen postalar arandı"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "${ recipient } adresine gelen postalar arandı"
+      ],
+      "Searched for “${ keyword }”": [
+        "“${ keyword }” arandı"
+      ],
+      "Searched your mail": [
+        "E-postalarınız arandı"
       ]
     },
     "info": {
@@ -10868,6 +10883,12 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "No unread conversations": [
+        "Okunmamış yazışma yok"
+      ],
+      "No unread messages": [
+        "Okunmamış ileti yok"
       ]
     },
     "Label (begin date/advanced search)": {
