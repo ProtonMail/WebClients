@@ -175,7 +175,7 @@ export const ArtifactInlineEdit = ({
                         minRows={1}
                         maxRows={4}
                         placeholder={c('collider_2025:Placeholder').t`Describe what you would like to update...`}
-                        className="artifact-inline-edit-input flex-1 text-sm color-norm bg-transparent border-none outline-none resize-none p-2"
+                        className="artifact-inline-edit-input flex-1 text-sm color-norm bg-transparent border-none outline-none--at-all resize-none p-2"
                     />
                     <Button
                         icon
