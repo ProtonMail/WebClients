@@ -37,12 +37,6 @@ export default defineConfig([
                             message:
                                 'To get location count, use useMailboxCounter from proton-mail/hooks/mailboxCounter/useMailboxCounter instead.',
                         },
-                        {
-                            name: '@proton/shared/lib/logger',
-                            importNames: ['logger'],
-                            message:
-                                'Use mailLogger from proton-mail/mailLogger instead of the shared logger directly.',
-                        },
                     ],
                 },
             ],

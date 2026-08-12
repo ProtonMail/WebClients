@@ -5,10 +5,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { logger } from '@proton/logger';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-// eslint-disable-next-line no-restricted-imports
-import { logger } from '@proton/shared/lib/logger';
 
 export const DebugModalLogs = () => {
     const [logs, setLogs] = useState<string>();

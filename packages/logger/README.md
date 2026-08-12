@@ -1,3 +1,120 @@
 # `@proton/logger`
 
-Encrypted, persistent client-side logging. Lines are echoed to the console and written to IndexedDB in encrypted batches, using a session-bound AES-GCM key.
+Encrypted, persistent client-side logging. Lines are echoed to the console and written to IndexedDB, each line stored as a single AES-GCM ciphertext under a session-bound key.
+
+Persistence is **best-effort**: where IndexedDB is unavailable (private browsing, blocked storage, some webviews) writes are dropped silently and console output is unaffected.
+
+> **Never log private or sensitive data.** Logs are attached to bug reports at the user's choice, and the encryption key is session-bound, not a guarantee of confidentiality against anyone with access to the device.
+
+```typescript
+import { Logger, downloadLogFile, logger } from '@proton/logger';
+import { ALL_CONSOLE_LEVELS } from '@proton/logger/constants';
+import type { LogEntry, LogLevel, LoggerOptions } from '@proton/logger/types';
+```
+
+## 1. Initialization
+
+### Step 1 — generate a session-bound key
+
+```typescript
+import { createAuthentication } from '@proton/account/bootstrap';
+import { generateLoggerKey } from '@proton/shared/lib/authentication/loggerKey';
+
+const authentication = createAuthentication();
+const { key: loggerKey, ID: loggerID } = await generateLoggerKey(authentication);
+```
+
+### Step 2 — initialize the logger
+
+```typescript
+import { logger } from '@proton/logger';
+
+await logger.initialize({
+    encryptionKey: loggerKey, // required: AES-GCM key
+    appName: 'mail', // required: encryption context, and the name unless overridden
+    loggerID, // required: part of the database name
+    loggerName: 'mail', // optional: prefixes lines and names the database, defaults to appName
+    maxEntries: 10_000, // optional, default 10 000
+    retentionDays: 7, // optional, default 7
+    consoleLevels: ['error'], // optional, default ['error'] outside development
+});
+```
+
+There is **one logger per application**, exported as a singleton and initialized once in bootstrap. Every area of the app writing to the same database is what keeps its lines in a single chronological order, so import `logger` anywhere rather than creating another instance.
+
+### Pre-initialization logging
+
+Lines emitted before `initialize()` resolves are buffered (up to 1 000) and written once it does, **keeping their original timestamps**. They are echoed to the console immediately.
+
+```typescript
+import { logger } from '@proton/logger';
+
+logger.info('buffered until initialize() resolves');
+```
+
+## 2. Writing logs
+
+```typescript
+logger.trace('Function entry', { fn: 'processMessage' });
+logger.debug('Processing request', { userId: 123 });
+logger.info('User logged in', { sessionId: 'abc123' });
+logger.warn('Rate limit approaching', { remaining: 10 });
+logger.error('Failed to save', error, { messageId: 'msg_456' });
+logger.log('Equivalent to info');
+```
+
+Arguments are serialized before encryption: `Error`s keep their stack, strings pass through, everything else is JSON-stringified. Circular structures fall back to `String(value)` rather than discarding the line.
+
+In development every level goes to the console. Otherwise only the levels in `consoleLevels` do — errors by default, or `ALL_CONSOLE_LEVELS` to echo everything. Persistence is unaffected by console filtering.
+
+## 3. Reading, downloading, clearing
+
+```typescript
+const logs = await logger.getLogs();
+// 2026-01-02T03:04:05.000Z INFO [mail]: User logged in {"sessionId":"abc123"}
+
+await logger.downloadLogs(); // mail-logs-2026-01-02T03-04-05-000Z.log
+await logger.downloadLogs('custom.log');
+
+await logger.clearLogs();
+```
+
+`getLogs()` awaits any pending writes first, so a line is always visible to the read that follows it. Concurrent calls share one read.
+
+If entries cannot be decrypted — typically a database left by a previous session — they are cleared and an empty string is returned.
+
+## 4. Lifecycle
+
+```typescript
+logger.isInitialized();
+
+// Resolves once every line emitted so far has been written. Mainly useful in tests.
+await logger.flush();
+
+await logger.destroy(); // stops cleanup, closes storage
+```
+
+The logger records only what you pass it. It attaches no `window` listeners, so uncaught errors and unhandled rejections are not captured — log them explicitly from your own handler if you want them.
+
+## 5. Storage and retention
+
+Entries live in an IndexedDB database named `proton-logs-<loggerName>-<loggerID>`, which is where to look when inspecting them by hand. Since `loggerID` is derived from the session, signing in again starts a new database.
+
+A cleanup pass runs at initialization and then daily. It removes entries older than `retentionDays`, then trims the oldest until at most `maxEntries` remain. Cleanup never runs on the per-line write path.
+
+## Testing
+
+Tests run under jest against `fake-indexeddb`, so there is no memory or localStorage backend to substitute. Construct `Logger` directly rather than using the exported singleton, so tests never share state.
+
+```typescript
+import { Logger } from '@proton/logger';
+
+// Inject a clock to test retention without timer mocks
+const logger = new Logger(() => fixedTimestamp);
+await logger.initialize({ encryptionKey, appName: 'test-app', loggerID: uniqueId });
+
+logger.info('a line');
+await logger.flush(); // or just await getLogs(), which flushes first
+
+// Use a unique loggerID per test so databases never collide
+```
