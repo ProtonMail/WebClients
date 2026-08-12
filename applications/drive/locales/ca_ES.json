@@ -663,7 +663,7 @@
         "Gestiona l'enllaç"
       ],
       "Manage share": [
-        "Gestiona la compartició"
+        "Gestionar la compartició"
       ],
       "Manage users/addresses": [
         "Gestiona usuaris/adreces"
@@ -939,7 +939,7 @@
         "Desa els canvis"
       ],
       "Save photos and remove": [
-        "Desa les fotos i esborra"
+        "Desar les fotos i esborrar-les"
       ],
       "Scan & Download": [
         "Escaneja i descarrega"
@@ -1074,7 +1074,7 @@
         "Comença la importació"
       ],
       "Start recovering": [
-        "Començar a recuperar"
+        "Començar a recuperar-ho"
       ],
       "Stay": [
         "Mantenir"
@@ -1335,6 +1335,9 @@
       ],
       "Migrate": [
         "Migrar"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Tocar per alternar ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Action: Docs": {
@@ -3621,7 +3624,7 @@
         "Hi ha hagut un error en llegir el fitxer"
       ],
       "Expected structure attached": [
-        "Estructura esperada adjunta"
+        "S'adjunta l'estructura esperada"
       ],
       "External accounts are not supported yet": [
         "Els comptes externs encara no estan suportats"
@@ -5392,7 +5395,7 @@
         "${ addressCount } adreces de correu electrònic"
       ],
       "${ albumName } has been successfully deleted": [
-        "S'ha eliminat ${ albumName }"
+        "S'ha eliminat ${ albumName } correctament"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -5726,7 +5729,7 @@
         "Segur que voleu eliminar completament de la paperera els elements seleccionats?"
       ],
       "Are you sure you want to proceed?": [
-        "Estàs segur que vols procedir?"
+        "Segur que voleu procedir?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Almenys ${ BETTER_PASSWORD_LENGTH } caràcters"
@@ -6530,7 +6533,7 @@
         "La foto s'ha establert com a portada de l'àlbum."
       ],
       "Photo was copied to stream and marked favorite there.": [
-        "La foto s’ha copiat al flux i s’hi ha marcat com a preferida."
+        "La foto s’ha copiat al flux i s’ha marcat com a preferida."
       ],
       "Photo(s) saved to your Drive": [
         "S'han desat les fotos al vostre Drive"
@@ -6645,7 +6648,7 @@
         "En cua"
       ],
       "Ready to add some photos?": [
-        "Preparat per a afegir algunes fotos?"
+        "Preparat per afegir algunes fotos?"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
@@ -7070,7 +7073,7 @@
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Es tornarà a carregar l'aplicació."
       ],
       "Try searching by file name, date, or type.": [
-        "Intenteu cercar pel nom, data o tipus del fitxer."
+        "Intenteu cercar per nom, data o tipus del fitxer."
       ],
       "Unexpected download error": [
         "Hi ha hagut un error de descàrrega inesperat"
@@ -7109,7 +7112,7 @@
         "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
       ],
       "upgrade your storage": [
-        "millora el vostre emmagatzematge"
+        "millorar el vostre emmagatzematge"
       ],
       "Upload Failed": [
         "La càrrega ha fallat"
@@ -7567,7 +7570,7 @@
         "Indexat ${ first }"
       ],
       "Indexed ${ first } and ${ second }": [
-        "Indexat ${ first } i ${ second }"
+        "Indexats ${ first } i ${ second }"
       ],
       "Indexed ${ first }, ${ second } and ${ third }": [
         "Indexats ${ first }, ${ second } i ${ third }"
@@ -8574,7 +8577,7 @@
         "Quin és el vostre principal motiu per cancel·lar o reduir la subscripció?"
       ],
       "Yes, I want to permanently delete my old files": [
-        "Sí, vull eliminar permanentment els meus fitxers antics"
+        "Sí, vull eliminar permanentment els fitxers antics"
       ],
       "Your alias": [
         "El vostre àlies"
@@ -10692,7 +10695,7 @@
         "S'ha eliminat \"${ ellipsedName }\""
       ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
-        "S'ha eliminat \"${ ellipsedName }\" de manera permanent de la paperera"
+        "S'ha eliminat \"${ ellipsedName }\" de la paperera de manera permanent"
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "No s'ha pogut crear \"${ ellipsedName }\""
@@ -10959,7 +10962,7 @@
         "Preferiu ${ DRIVE_APP_NAME } en mode clar o fosc? Seleccioneu el color que més us inspiri."
       ],
       "Drag and drop your files here": [
-        "Arrossegar i deixar anar els fitxers aquí"
+        "Arrossegueu i deixeu anar els fitxers aquí"
       ],
       "Edit documents online": [
         "Editeu documents en línia"
@@ -10986,7 +10989,7 @@
         "Allibereu espai al disc dur del vostre ordinador"
       ],
       "Get the desktop app": [
-        "Obteniu l'aplicació d'escriptori"
+        "Obtingueu l'aplicació d'escriptori"
       ],
       "Get the mobile app": [
         "Obtingueu l'aplicació mòbil"
@@ -11004,7 +11007,7 @@
         "S'ha acceptat la invitació"
       ],
       "Invitation received": [
-        "Invitació rebuda"
+        "S'ha rebut la invitació"
       ],
       "Invite team members": [
         "Convidar membres de l'equip"
@@ -11031,7 +11034,7 @@
         "Compartiu de manera segura els vostres fitxers i carpetes"
       ],
       "Share files & folders": [
-        "Comparteix fitxers i carpetes"
+        "Compartiu fitxers i carpetes"
       ],
       "Sync and access your files from anywhere": [
         "Sincronitzeu i accediu als vostres fitxers des de qualsevol lloc"
@@ -12416,7 +12419,7 @@
         "S'ha desat un enllaç a aquest element a la vostra unitat. Podeu accedir-hi més endavant a la secció «Compartit amb mi»."
       ],
       "Encrypted search is here": [
-        "Ha arribat la cerca xifrada"
+        "Ja tenim aquí la cerca xifrada"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ara podeu cercar fàcilment fitxers de Drive mentre manteniu les dades segures."
@@ -12971,7 +12974,7 @@
     },
     "Subtitle": {
       "Albums shared with you will appear here": [
-        "Els àlbums compartits amb vós apareixeran aquí."
+        "Els àlbums compartits us apareixeran aquí."
       ],
       "Albums you've shared will appear here": [
         "Els àlbums que heu compartit apareixeran aquí"
@@ -13249,7 +13252,7 @@
         "Captures de pantalla"
       ],
       "Selfies": [
-        "Autofotos"
+        "Autoretrats"
       ],
       "Videos": [
         "Vídeos"
@@ -13705,7 +13708,7 @@
         "Obteniu més de la vostra VPN"
       ],
       "Get started with 10 minutes of free uploads, on the house.": [
-        "Comenceu amb 10 minuts de càrregues gratuïtes, de franc."
+        "Comenceu amb 10 minuts de càrregues gratuïtes, convida la casa."
       ],
       "Get the apps": [
         "Aconseguiu les aplicacions"
@@ -13847,7 +13850,7 @@
         "Tema de nit"
       ],
       "No albums shared with me": [
-        "Sense àlbums compartits amb mi"
+        "No hi ha cap àlbum compartit amb mi"
       ],
       "No breaches detected": [
         "No s'ha detectat cap infracció"
@@ -13856,10 +13859,10 @@
         "Sense ràfegues"
       ],
       "No favorites": [
-        "No hi ha favorits"
+        "No hi ha cap preferit"
       ],
       "No Live Photos": [
-        "Sense fotos en directe"
+        "No hi ha cap foto en directe"
       ],
       "No panorama": [
         "Sense fotos panoràmiques"

@@ -46,10 +46,10 @@
         "Dodaj"
       ],
       "Add ${ photoCount } photo to a new album": [
-        "Dodaj ${ photoCount } sliko v nov album",
-        "Dodaj ${ photoCount } sliki v nov album",
-        "Dodaj ${ photoCount } slike v nov album",
-        "Dodaj ${ photoCount } slik v nov album"
+        "Dodaj ${ photoCount } fotografijo v nov album",
+        "Dodaj ${ photoCount } fotografiji v nov album",
+        "Dodaj ${ photoCount } fotografije v nov album",
+        "Dodaj ${ photoCount } fotografij v nov album"
       ],
       "Add account": [
         "Dodaj račun"
@@ -565,7 +565,7 @@
         "Povečaj"
       ],
       "Join album": [
-        "Pridruži album"
+        "Pridružite se albumu"
       ],
       "Keep my subscription": [
         "Ohrani mojo naročnino"
@@ -1232,6 +1232,27 @@
       ],
       "Send": [
         "Pošlji"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Dodaj v \"${ name }\" (${ photoCount } fotografija)",
+        "Dodaj v \"${ name }\" (${ photoCount } fotografiji)",
+        "Dodaj v \"${ name }\" (${ photoCount } fotografije)",
+        "Dodaj v \"${ name }\" (${ photoCount } fotografij)"
+      ],
+      "Explore more": [
+        "Raziščite več"
+      ],
+      "Re-indexing in progress": [
+        "Ponovno indeksiranje je v teku"
+      ],
+      "Report abuse": [
+        "Prijavi zlorabo"
+      ],
+      "Search is unavailable": [
+        "Iskanje ni na voljo"
+      ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
       ]
     },
     "Actions": {
@@ -3355,7 +3376,7 @@
         "Dosežena omejitev števila koledarjev."
       ],
       "Can't find any secure link": [
-        "Ni mogoče najti varne povezave"
+        "Ni mogoče najti nobene varne povezave"
       ],
       "Can't retrieve device name": [
         "Ne morem pridobiti imena naprave"
@@ -3700,7 +3721,7 @@
         "Shema obrnjene davčne obveznosti ni podprta za ta paket"
       ],
       "Search failed": [
-        "Iskanje je spodletelo"
+        "Search failed"
       ],
       "Signature not verified": [
         "Podpis ni potrjen"
@@ -3883,7 +3904,7 @@
         "Nismo mogli naložiti nekaterih vaših povabil k souporabi predmetov"
       ],
       "We were not able to load some of your saved shared links": [
-        "Nekaj vaših povezav v souporabi ni bilo mogoče naložiti"
+        "Nekaterih vaših shranjenih povezav v souporabi ni bilo mogoče naložiti"
       ],
       "We were not able to load some of your shared items": [
         "Nekaterih vaših predmetov v skupni rabi nismo mogli naložiti"
@@ -4096,7 +4117,7 @@
         "Nekaterih predmetov ni bilo mogoče naložiti"
       ],
       "Something went wrong, please try again later": [
-        "Nekaj ​​je šlo narobe. Prosim poskusite kasneje"
+        "Nekaj ​​je šlo narobe. Prosim, poskusite kasneje"
       ],
       "This file version could not be uploaded": [
         "Te različice datoteke ni bilo mogoče naložiti"
@@ -4121,6 +4142,18 @@
       ],
       "You do not have access to this shared item": [
         "Nimate dostopa do tega predmeta v skupni rabi"
+      ],
+      "Could not remove from favorites": [
+        "Ni ga bilo mogoče odstraniti iz priljubljenih"
+      ],
+      "Downloads of desktop apps are currently unavailable": [
+        "Prenosi namiznih aplikacij trenutno niso na voljo"
+      ],
+      "Folder not found": [
+        "Mape ni mogoče najti"
+      ],
+      "We're sorry, but free upload is not available right now.": [
+        "Žal nam je, vendar brezplačno nalaganje trenutno ni na voljo."
       ]
     },
     "error": {
@@ -4294,7 +4327,7 @@
         "Ko je omogočeno dodatno geslo, je upravljanje vzdevkov mogoče samo v ${ PASS_APP_NAME }."
       ],
       "You may also refresh the page or try again later.": [
-        "Stran lahko osvežite ali poskusite znova pozneje."
+        "Lahko tudi osvežite stran ali poskusite znova pozneje."
       ]
     },
     "Error notification": {
@@ -4360,9 +4393,9 @@
     },
     "Failed": {
       "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } ni uspelo",
-        "${ countOfFailedLinks } ni uspelo",
-        "${ countOfFailedLinks } ni uspelo",
+        "${ countOfFailedLinks } ni uspel",
+        "${ countOfFailedLinks } nista uspela",
+        "${ countOfFailedLinks } niso uspeli",
         "${ countOfFailedLinks } ni uspelo"
       ]
     },
@@ -4682,10 +4715,10 @@
     },
     "Heading": {
       "Add ${ photoCount } photo to": [
-        "Dodaj ${ photoCount } sliko v",
-        "Dodaj ${ photoCount } sliki v",
-        "Dodaj ${ photoCount } slike v",
-        "Dodaj ${ photoCount } slik v"
+        "Dodaj ${ photoCount } fotografijo v",
+        "Dodaj ${ photoCount } fotografiji v",
+        "Dodaj ${ photoCount } fotografije v",
+        "Dodaj ${ photoCount } fotografij v"
       ],
       "Add to shared album": [
         "Dodaj v album v skupni rabi"
@@ -4695,6 +4728,12 @@
       ],
       "Recent": [
         "Nedavno"
+      ],
+      "Share ${ photoCount } photo via": [
+        "Deli ${ photoCount } fotografiijo preko",
+        "Deli ${ photoCount } fotografiiji preko",
+        "Deli ${ photoCount } fotografiije preko",
+        "Deli ${ photoCount } fotografiij preko"
       ]
     },
     "Hint": {
@@ -5199,7 +5238,7 @@
       "${ photoCount } item": [
         "${ photoCount } predmet",
         "${ photoCount } predmeta",
-        "${ photoCount } predmetov",
+        "${ photoCount } predmeti",
         "${ photoCount } predmetov"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
@@ -6034,7 +6073,7 @@
         "Nizka pomembnost"
       ],
       "Makes your account safer": [
-        "Varuje vaš račun"
+        "Zagotavlja večjo varnost vašega računa"
       ],
       "Malware detected": [
         "Odkrito je zlonamerno programje"
@@ -6154,7 +6193,7 @@
         "ali odkrijte druge funkcije:"
       ],
       "Or use the \"+ New\" button": [
-        "Ali pa uporabite gumb \"+ Novo\"."
+        "Ali pa uporabite gumb \"+ Novo\""
       ],
       "Organization size": [
         "Velikost organizacije"
@@ -6577,10 +6616,10 @@
         "Ta predmet že obstaja v vaši knjižnici"
       ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "Ta predmet ni shranjen v vaši knjižnici s fotografijami. Če jo odstranite iz tega albuma, boste izgubili dostop do nje.",
-        "Nekateri izbrani predmeti niso shranjeni v vaši knjižnici s fotografijami. Če jih odstranite iz tega albuma, boste izgubili dostop do njih.",
-        "Nekateri izbrani predmeti niso shranjeni v vaši knjižnici s fotografijami. Če jih odstranite iz tega albuma, boste izgubili dostop do njih.",
-        "Nekateri izbrani predmeti niso shranjeni v vaši knjižnici s fotografijami. Če jih odstranite iz tega albuma, boste izgubili dostop do njih."
+        "Ta predmet ni shranjen v vaši knjižnici s fotografijami. Če ga odstranite iz tega albuma, boste izgubili dostop do njega.",
+        "Ta predmeta nista shranjena v vaši knjižnici s fotografijami. Če ju odstranite iz tega albuma, boste izgubili dostop do njih.",
+        "Ti predmeti niso shranjeni v vaši knjižnici s fotografijami. Če jih odstranite iz tega albuma, boste izgubili dostop do njih.",
+        "Ti predmeti niso shranjeni v vaši knjižnici s fotografijami. Če jih odstranite iz tega albuma, boste izgubili dostop do njih."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ta povezava vodi na spletno mesto, ki bi lahko poskušalo ukrasti vaše podatke, kot so gesla in podatki o plačilnih karticah."
@@ -6706,7 +6745,7 @@
         "Smetnjak"
       ],
       "Trash is empty": [
-        "Smetnjak je prazen"
+        "Koš je prazen"
       ],
       "Try ${ DRIVE_APP_NAME }: Free forever": [
         "Preizkusite ${ DRIVE_APP_NAME }: brezplačno za vedno"
@@ -7126,19 +7165,19 @@
         "Premakni ${ dragCount } predmet",
         "Premakni ${ dragCount } predmeta",
         "Premakni ${ dragCount } predmete",
-        "Premakni ${ dragCount } predmete"
+        "Premakni ${ dragCount } predmetov"
       ],
       "Move ${ fileCount } file": [
-        "Premakni datoteko ${ fileCount }",
-        "Premakni datoteki ${ fileCount }",
-        "Premakni datoteke ${ fileCount }",
-        "Premakni datoteke ${ fileCount }"
+        "Premakni ${ fileCount } datoteko",
+        "Premakni ${ fileCount } datoteki",
+        "Premakni ${ fileCount } datoteke",
+        "Premakni ${ fileCount } datotek"
       ],
       "Move ${ folderCount } folder": [
-        "Premakni mapo ${ folderCount }",
-        "Premakni mapi ${ folderCount }",
-        "Premakni mape ${ folderCount }",
-        "Premakni mape ${ folderCount }"
+        "Premakni ${ folderCount } mapo",
+        "Premakni ${ folderCount } mapi",
+        "Premakni ${ folderCount } mape",
+        "Premakni ${ folderCount } map"
       ],
       "Search module is not available.": [
         "Iskalni modul ni na voljo."
@@ -7307,6 +7346,69 @@
       ],
       "You": [
         "Vi"
+      ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } albuma",
+        "${ albums } albumi",
+        "${ albums } albumov"
+      ],
+      "${ files } file": [
+        "${ files } datoteka",
+        "${ files } datoteki",
+        "${ files } datoteke",
+        "${ files } datotek"
+      ],
+      "${ folders } folder": [
+        "${ folders } mapa",
+        "${ folders } mapi",
+        "${ folders } mape",
+        "${ folders } map"
+      ],
+      "${ photos } photo": [
+        "${ photos } fotografija",
+        "${ photos } fotografiji",
+        "${ photos } fotografije",
+        "${ photos } fotografij"
+      ],
+      "Feb": [
+        "Feb"
+      ],
+      "Not enough storage space": [
+        "Ni dovolj prostora za shranjevanje"
+      ],
+      "Photo is set as album cover": [
+        "Fotografija je nastavljena kot naslovnica albuma"
+      ],
+      "Photo saved to your Drive": [
+        "Fotografija je shranjena v vaš Drive",
+        "Fotografiji sta shranjeni v vaš Drive",
+        "Fotografije so shranjene v vaš Drive",
+        "Fotografije so shranjene v vaš Drive"
+      ],
+      "Re-indexing in progress": [
+        "Ponovno indeksiranje je v teku"
+      ],
+      "Running diagnostics...": [
+        "Diagnostika v teku ..."
+      ],
+      "Search error": [
+        "Napaka pri iskanju"
+      ],
+      "Shared with you": [
+        "Deljeno z mano"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Te fotografije nismo uspeli shraniti v Drive",
+        "Teh fotografij nismo uspeli shraniti v Drive",
+        "Teh fotografij nismo uspeli shraniti v Drive",
+        "Teh fotografij nismo uspeli shraniti v Drive"
+      ],
+      "We were not able to add this photo to your album": [
+        "Te fotografije ni bilo mogoče dodati v vaš album",
+        "Nekaterih fotografij ni bilo mogoče dodati v vaš album",
+        "Nekaterih fotografij ni bilo mogoče dodati v vaš album",
+        "Nekaterih fotografij ni bilo mogoče dodati v vaš album"
       ]
     },
     "info": {
@@ -7406,7 +7508,7 @@
         "Število prenosov"
       ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
-        "${ albumProgress.added } od ${ albumProgress.total }."
+        "${ albumProgress.added } od ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "Uporabniško ime za ${ BRAND_NAME }"
@@ -7472,7 +7574,7 @@
         "Geslo aplikacije"
       ],
       "Applications in a business setting": [
-        "Aplikacije v poslovnem okolju"
+        "Uporaba v poslovnem okolju"
       ],
       "Apply to all duplicated files": [
         "Uporabi za vse podvojene datoteke"
@@ -8066,7 +8168,7 @@
         "Zastarela različica"
       ],
       "Searchable": [
-        "Iskano"
+        "Omogoča iskanje"
       ],
       "User opted in": [
         "Uporabnik se je prijavil"
@@ -8130,6 +8232,33 @@
       ],
       "Skip feedback": [
         "Preskoči povratno informacijo"
+      ],
+      "Asset": [
+        "Sredstvo"
+      ],
+      "Created ${ created }": [
+        "Ustvarjeno ${ created }"
+      ],
+      "Deleted ${ deleted }": [
+        "izbrisano: ${ deleted }"
+      ],
+      "Device #${ position }": [
+        "Naprava: #${ position }"
+      ],
+      "Device: ${ name }": [
+        "Naprava: ${ name }"
+      ],
+      "Expires ${ formatted }": [
+        "Poteče ${ formatted }"
+      ],
+      "Location: ${ item.location }": [
+        "Lokacija: ${ item.location }"
+      ],
+      "Modified ${ modified }": [
+        "Spremenjeno ${ modified }"
+      ],
+      "Never expires": [
+        "Nikoli ne poteče"
       ]
     },
     "Label for contact group color": {
@@ -9891,13 +10020,13 @@
         "Povabila k skupni rabi ni bilo mogoče zavrniti."
       ],
       "Failed to remove device": [
-        "Naprave ni bilo mogoče odstraniti."
+        "Odstranitev naprave ni uspela"
       ],
       "Failed to remove the file": [
         "Datoteke ni bilo mogoče odstraniti."
       ],
       "Failed to rename device": [
-        "Naprave ni bilo mogoče preimenovati."
+        "Preimenovanje naprave ni uspelo"
       ],
       "Failed to upload files: ${ err }": [
         "Datotek ni bilo mogoče naložiti: ${ err }"
@@ -9951,10 +10080,10 @@
         "Korenske mape ni bilo mogoče naložiti"
       ],
       "Selected item was successfully removed from your list": [
-        "Izbrani predmet je bil uspešno odstranjen s seznama.",
-        "Izbrana predmeta sta bila uspešno odstranjena s seznama.",
-        "Izbrani predmeti so bili uspešno odstranjeni s seznama",
-        "Izbrani predmeti so bili uspešno odstranjeni s seznama"
+        "Izbrani predmet je bil uspešno odstranjen z vašega seznama.",
+        "Izbrana predmeta sta bila uspešno odstranjena z vašega seznama.",
+        "Izbrani predmeti so bili uspešno odstranjeni z vašega seznama",
+        "Izbrani predmeti so bili uspešno odstranjeni z vašega seznama"
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Izbrana fotografija(e) je(so) že v \"${ albumName }\""
@@ -10012,6 +10141,63 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Vaš naslov ${ BRAND_NAME } je pripravljen za uporabo"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" izbrisan"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" ni bilo mogoče premakniti"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" je bil uspešno premaknjen"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } fotografija je bila dodana v ${ albumName }\"",
+        "${ addedUids.length } fotografiji sta bili dodani v ${ albumName }\"",
+        "${ addedUids.length } fotografije so bile dodane v ${ albumName }\"",
+        "${ addedUids.length } fotografij je bilo dodanih v ${ albumName }\""
+      ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } predmeta ni bilo mogoče kopirati",
+        "${ errors.length } predmetov ni bilo mogoče kopirati",
+        "${ errors.length } predmetov ni bilo mogoče kopirati",
+        "${ errors.length } predmetov ni bilo mogoče kopirati"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } predmeta ni bilo mogoče premakniti v koš",
+        "${ errors.length } predmetov ni bilo mogoče premakniti v koš",
+        "${ errors.length } predmetov ni bilo mogoče premakniti v koš",
+        "${ errors.length } predmetov ni bilo mogoče premakniti v koš"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } kopiran predmet premaknjen v smetnjak",
+        "${ numberOfItems } kopirana predmeta premaknjena v smetnjak",
+        "${ numberOfItems } kopirani predmeti premaknjeni v smetnjak",
+        "${ numberOfItems } kopiranih predmetov premaknjenih v smetnjak"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } predmet kopiran",
+        "${ numberOfItems } predmeta kopirana",
+        "${ numberOfItems } predmeti kopirani",
+        "${ numberOfItems } predmetov kopiranih"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } fotografija je bila odstranjena iz ${ albumName }\"",
+        "${ removed } fotografiji sta bili odstranjeni iz ${ albumName }\"",
+        "${ removed } fotografije so bile odstranjene iz ${ albumName }\"",
+        "${ removed } fotografij je bilo odstranjenih iz ${ albumName }\""
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopija \"${ ellipsedName }\" je bila premaknjena v smetnjak"
+      ],
+      "Error while listing devices": [
+        "Napaka pri prikazovanju seznama naprav"
+      ],
+      "Selected item was not removed from your list": [
+        "Izbrani predmet ni bil odstranjen z vašega seznama",
+        "Izbrana predmeta nista bila odstranjena z vašega seznama",
+        "Izbrani predmeti nisto bili odstranjeni z vašega seznama",
+        "Izbrani predmeti nisto bili odstranjeni z vašega seznama"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10167,7 +10353,7 @@
         "Morda kasneje"
       ],
       "Select theme": [
-        "Izberite temo"
+        "Izberi temo"
       ],
       "Skip": [
         "Preskoči"
@@ -10183,6 +10369,9 @@
       ],
       "Upload folder": [
         "Naloži mapo"
+      ],
+      "Upload more files": [
+        "Naloži več datotek"
       ]
     },
     "Onboarding Info": {
@@ -10220,7 +10409,7 @@
         "Imaš iPhone? Imamo rešitev za vas."
       ],
       "Invitation accepted": [
-        "Vabilo sprejeto."
+        "Vabilo sprejeto"
       ],
       "Invitation received": [
         "Prejeli ste povabilo"
@@ -10235,7 +10424,7 @@
         "Organizirajte datoteke neposredno s svoje namizne aplikacije"
       ],
       "Scan the QR code to install the mobile app": [
-        "Odčitajte kodo QR, da namestite mobilno aplikacijo"
+        "Za namestitev mobilne aplikacije odčitajte QR kodo"
       ],
       "Secure your files": [
         "Zavarujte vaše datoteke"
@@ -10254,6 +10443,15 @@
       ],
       "Work faster, smarter": [
         "Delajte hitreje, pametneje"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "Shramba za vaše datoteke s šifriranjem od konca do konca"
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Datoteke, naložene zdaj, ne bodo prištete k vaši omejitvi prostora za shranjevanje"
+      ],
+      "Hang tight": [
+        "Počakajte trenutek"
       ]
     },
     "Onboarding Trial": {
@@ -10327,6 +10525,9 @@
       ],
       "Verify thumbnails": [
         "Preveri sličice"
+      ],
+      "Only current location": [
+        "Samo trenutna lokacija"
       ]
     },
     "Option group label": {
@@ -12105,6 +12306,9 @@
       ],
       "Your videos will appear here": [
         "Vaši videoposnetki bodo prikazani tukaj"
+      ],
+      "Your portraits photos will appear here": [
+        "Tukaj bodo prikazane vaše portretne fotografije"
       ]
     },
     "Success": {
@@ -12353,7 +12557,7 @@
         "${ ceilDays } dan",
         "${ ceilDays } dni",
         "${ ceilDays } dni",
-        "${ ceilDays } dnevi"
+        "${ ceilDays } dni"
       ],
       "${ ceilHours } hour": [
         "${ ceilHours } ura",
@@ -12553,7 +12757,7 @@
         "Potrdite izgubo bonusov za ${ BRAND_NAME }"
       ],
       "Confirmation required": [
-        "Je potrebna potrditev"
+        "Potrebna je potrditev"
       ],
       "Connect apps and devices": [
         "Povežite aplikacije in naprave"
@@ -12748,7 +12952,7 @@
         "Omogoči napredno zaščito računa"
       ],
       "Enable drive search": [
-        "Omogoči iskanje po disku"
+        "Vklopi funkcijo iskanja v Drive"
       ],
       "Enter your password": [
         "Vnesite svoje geslo"
@@ -12958,7 +13162,7 @@
         "Ni albumov v skupni rabi"
       ],
       "No videos": [
-        "Ni videov"
+        "Ni videoposnetkov"
       ],
       "Notes": [
         "Opombe"
@@ -13081,7 +13285,7 @@
         "Zahtevaj novo kodo"
       ],
       "Restore your files": [
-        "Obnovi vaše datoteke"
+        "Obnovite vaše datoteke"
       ],
       "Reverse charge not supported": [
         "Shema obrnjene davčne obveznosti"
@@ -13436,6 +13640,18 @@
       ],
       "What are you migrating?": [
         "Kaj selite?"
+      ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } brezplačnih prenosov."
+      ],
+      "Found ${ resultCount } result": [
+        "Najden ${ resultCount } rezultat",
+        "Najdena ${ resultCount } rezultata",
+        "Najdeni ${ resultCount } rezultati",
+        "Najdenih ${ resultCount } rezultatov"
+      ],
+      "No bursts": [
+        "Brez rafalnih posnetkov"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13558,7 +13774,7 @@
     },
     "Upsell": {
       "Get Drive for Business": [
-        "Pridobite Drive za podjetja"
+        "Pridobite Drive for Business"
       ]
     },
     "Validation": {
@@ -13979,6 +14195,11 @@
     "Import status": {
       "Has errors": [
         "Z napakami"
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album je bil uspešno preimenovan"
       ]
     }
   }
