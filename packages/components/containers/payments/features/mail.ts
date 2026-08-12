@@ -412,6 +412,81 @@ export const getProtonScribe = (included: boolean): PlanCardFeatureDefinition =>
     };
 };
 
+const getScribePlans = (): PlanCardFeature['plans'] => {
+    return {
+        [PLANS.FREE]: null,
+        [PLANS.BUNDLE]: null,
+        [PLANS.MAIL]: null,
+        [PLANS.VPN2024]: null,
+        [PLANS.DRIVE]: null,
+        [PLANS.DRIVE_1TB]: null,
+        [PLANS.DRIVE_BUSINESS]: null,
+        [PLANS.PASS]: null,
+        [PLANS.PASS_LIFETIME]: null,
+        [PLANS.PASS_FAMILY]: null,
+        [PLANS.FAMILY]: getProtonScribe(true),
+        [PLANS.DUO]: getProtonScribe(true),
+        [PLANS.MAIL_PRO]: null,
+        [PLANS.MAIL_BUSINESS]: null,
+        [PLANS.BUNDLE_PRO]: null,
+        [PLANS.BUNDLE_PRO_2024]: null,
+        [PLANS.BUNDLE_BIZ_2025]: getProtonScribe(true),
+        [PLANS.PASS_PRO]: null,
+        [PLANS.PASS_BUSINESS]: null,
+        [PLANS.VPN_PRO]: null,
+        [PLANS.VPN_BUSINESS]: null,
+        [PLANS.LUMO]: null,
+        [PLANS.LUMO_BUSINESS]: null,
+        [PLANS.MEET_BUSINESS]: null,
+        [PLANS.MEET]: null,
+        [PLANS.VISIONARY]: getProtonScribe(true),
+        [PLANS.VPN_PASS_BUNDLE_BUSINESS]: null,
+    };
+};
+
+const getWritingAssistantAccess = (access: 'limited' | 'expanded'): PlanCardFeatureDefinition => {
+    return {
+        text:
+            access === 'limited'
+                ? c('new_plans: feature').t`${LUMO_SHORT_APP_NAME} writing assistant with limited access`
+                : c('new_plans: feature').t`${LUMO_SHORT_APP_NAME} writing assistant with expanded access`,
+        icon: 'magic-wand',
+        included: true,
+    };
+};
+
+const getWritingAssistantPlans = (): PlanCardFeature['plans'] => {
+    return {
+        [PLANS.FREE]: getWritingAssistantAccess('limited'),
+        [PLANS.BUNDLE]: getWritingAssistantAccess('limited'),
+        [PLANS.MAIL]: getWritingAssistantAccess('limited'),
+        [PLANS.VPN2024]: getWritingAssistantAccess('limited'),
+        [PLANS.DRIVE]: getWritingAssistantAccess('limited'),
+        [PLANS.DRIVE_1TB]: getWritingAssistantAccess('limited'),
+        [PLANS.DRIVE_BUSINESS]: getWritingAssistantAccess('limited'),
+        [PLANS.PASS]: getWritingAssistantAccess('limited'),
+        [PLANS.PASS_LIFETIME]: getWritingAssistantAccess('limited'),
+        [PLANS.PASS_FAMILY]: getWritingAssistantAccess('limited'),
+        [PLANS.FAMILY]: getWritingAssistantAccess('limited'),
+        [PLANS.DUO]: getWritingAssistantAccess('limited'),
+        [PLANS.MAIL_PRO]: getWritingAssistantAccess('limited'),
+        [PLANS.MAIL_BUSINESS]: getWritingAssistantAccess('limited'),
+        [PLANS.BUNDLE_PRO]: getWritingAssistantAccess('limited'),
+        [PLANS.BUNDLE_PRO_2024]: getWritingAssistantAccess('limited'),
+        [PLANS.BUNDLE_BIZ_2025]: getWritingAssistantAccess('expanded'),
+        [PLANS.PASS_PRO]: getWritingAssistantAccess('limited'),
+        [PLANS.PASS_BUSINESS]: getWritingAssistantAccess('limited'),
+        [PLANS.VPN_PRO]: getWritingAssistantAccess('limited'),
+        [PLANS.VPN_BUSINESS]: getWritingAssistantAccess('limited'),
+        [PLANS.LUMO]: getWritingAssistantAccess('expanded'),
+        [PLANS.LUMO_BUSINESS]: getWritingAssistantAccess('expanded'),
+        [PLANS.MEET_BUSINESS]: getWritingAssistantAccess('limited'),
+        [PLANS.MEET]: getWritingAssistantAccess('limited'),
+        [PLANS.VISIONARY]: getWritingAssistantAccess('expanded'),
+        [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getWritingAssistantAccess('limited'),
+    };
+};
+
 export const getDataRetentionPoliciesFeature = (included: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Data retention policies`,
@@ -1131,35 +1206,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
         },
         {
             name: 'scribe',
-            plans: {
-                [PLANS.FREE]: null,
-                [PLANS.BUNDLE]: null,
-                [PLANS.MAIL]: null,
-                [PLANS.VPN2024]: null,
-                [PLANS.DRIVE]: null,
-                [PLANS.DRIVE_1TB]: null,
-                [PLANS.DRIVE_BUSINESS]: null,
-                [PLANS.PASS]: null,
-                [PLANS.PASS_LIFETIME]: null,
-                [PLANS.PASS_FAMILY]: null,
-                [PLANS.FAMILY]: scribeToLumo ? null : getProtonScribe(true),
-                [PLANS.DUO]: scribeToLumo ? null : getProtonScribe(true),
-                [PLANS.MAIL_PRO]: null,
-                [PLANS.MAIL_BUSINESS]: null,
-                [PLANS.BUNDLE_PRO]: null,
-                [PLANS.BUNDLE_PRO_2024]: null,
-                [PLANS.BUNDLE_BIZ_2025]: getProtonScribe(true),
-                [PLANS.PASS_PRO]: null,
-                [PLANS.PASS_BUSINESS]: null,
-                [PLANS.VPN_PRO]: null,
-                [PLANS.VPN_BUSINESS]: null,
-                [PLANS.LUMO]: null,
-                [PLANS.LUMO_BUSINESS]: null,
-                [PLANS.MEET_BUSINESS]: null,
-                [PLANS.MEET]: null,
-                [PLANS.VISIONARY]: getProtonScribe(true),
-                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: null,
-            },
+            plans: scribeToLumo ? getWritingAssistantPlans() : getScribePlans(),
         },
         {
             name: 'easy-switch',
