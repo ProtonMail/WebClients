@@ -181,7 +181,7 @@ const hasSelectedPlan = (plan: Plan | undefined, plans: (PLANS | ADDON_NAMES)[])
     return plans.some((planName) => plan?.Name === planName);
 };
 
-const getUnlockPlanName = (toApp: APP_NAMES) => {
+const getUnlockPlanName = (toApp: APP_NAMES | undefined) => {
     if (toApp === APPS.PROTONPASS) {
         return PLANS.PASS;
     }
@@ -209,7 +209,7 @@ const getDefaultUpsellData = ({
 }: {
     plansMap: PlansMap;
     currentPlan?: SubscriptionPlan | undefined;
-    toApp: APP_NAMES;
+    toApp: APP_NAMES | undefined;
 }) => {
     return {
         plan: undefined,
@@ -254,7 +254,7 @@ const getUpsell = ({
     plansMap: PlansMap;
     options: Options;
     planParameters: PlanParameters;
-    toApp: APP_NAMES;
+    toApp: APP_NAMES | undefined;
     user: User | undefined;
 }): Upsell => {
     const noUpsell = getDefaultUpsellData({ plansMap, currentPlan, toApp });
@@ -413,12 +413,12 @@ export const getRelativeUpsellPrice = (
 };
 
 const hasAccess = ({
-    toApp,
+    toApp = APPS.PROTONMAIL,
     user,
     audience,
     currentPlan,
 }: {
-    toApp: APP_NAMES;
+    toApp: APP_NAMES | undefined;
     user: User;
     audience: Audience;
     currentPlan?: SubscriptionPlan;
@@ -437,7 +437,7 @@ const hasAccess = ({
         return hasPaidPass(user);
     }
 
-    if ([APPS.PROTONMAIL, APPS.PROTONCALENDAR].includes(toApp as any)) {
+    if (toApp && ([APPS.PROTONMAIL, APPS.PROTONCALENDAR] as APP_NAMES[]).includes(toApp)) {
         return hasPaidMail(user);
     }
 
@@ -471,7 +471,7 @@ export const getUpdatedPlanIDs = ({
     };
     plansMap: PlansMap;
     plans: Plan[];
-    toApp: APP_NAMES;
+    toApp: APP_NAMES | undefined;
     subscription: Subscription | FreeSubscription;
     currentPlan: SubscriptionPlan | undefined;
     organization: Organization | undefined;
@@ -598,7 +598,7 @@ export const getUserInfo = async ({
     upsellPlanCard?: PlanCard;
     planParameters: PlanParameters;
     signupParameters: SignupParameters2;
-    toApp: APP_NAMES;
+    toApp: APP_NAMES | undefined;
     availableCycles: CYCLE[];
 }): Promise<{
     paymentMethods: SavedPaymentMethod[];

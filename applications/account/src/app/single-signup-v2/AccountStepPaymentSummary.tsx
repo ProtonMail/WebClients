@@ -40,7 +40,7 @@ const TrialSummary = ({
     loading: boolean;
     options: OptimisticOptions;
     model: SignupModelV2;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
     subscriptionData: SubscriptionData;
 }) => {
     const loaderNode = <SkeletonLoader width="4em" index={0} />;
@@ -81,7 +81,7 @@ interface Props {
     selectedPlan: Plan;
     loadingPaymentDetails: boolean;
     showRenewalNotice: boolean;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
     couponConfig: CouponConfigRendered | undefined;
 }
 

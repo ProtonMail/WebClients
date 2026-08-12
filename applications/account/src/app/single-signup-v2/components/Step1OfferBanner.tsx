@@ -30,7 +30,7 @@ interface Step1OfferBannerProps {
     planIDs: PlanIDs;
     checkResult: SubscriptionEstimation;
     options: OptimisticOptions;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
     hasPlanSelector: boolean;
     audience: Audience;
     isSignupTrial: boolean;
