@@ -15,13 +15,21 @@
 	--margin-from-sides-in-rem: 3rem;
 
 	// Fallback when @container is unsupported (Safari <16, Chrome <105): approximate scroll width via panel width.
-	max-inline-size: calc(100vw - var(--left-panel-layout-width, 0px) - var(--margin-from-sides-in-rem));
+	max-inline-size: calc(
+		100vw - var(--docs-layout-editor-bleed-inline-start-inset, 0px) - var(
+				--docs-layout-editor-bleed-inline-end-inset,
+				0px
+			) - var(--margin-from-sides-in-rem)
+	);
 	position: relative;
 	inset-block-start: 0;
 	inset-inline-start: 50%;
 	transform: translateX(-50%);
 	overflow: auto;
 	scrollbar-width: auto !important;
+	transition:
+		inset-inline-start 250ms cubic-bezier(0.4, 0, 0.2, 1),
+		max-inline-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 	[contenteditable='true'] & {
 		margin-block-end: 1.65rem;
@@ -30,8 +38,25 @@
 
 @container docs-scroll (min-width: 0) {
 	.Lexical__tableWrapper {
-		max-inline-size: calc(100cqw - var(--margin-from-sides-in-rem));
+		max-inline-size: calc(
+			100cqw - var(--docs-layout-editor-bleed-inline-start-inset, 0px) - var(
+					--docs-layout-editor-bleed-inline-end-inset,
+					0px
+				) - var(--margin-from-sides-in-rem)
+		);
 	}
+}
+
+@media (width >= 816px) {
+	@container docs-scroll (min-width: 0) {
+		.Lexical__tableWrapper {
+			inset-inline-start: calc(50cqw + var(--docs-layout-editor-bleed-center-offset, 0px));
+		}
+	}
+}
+
+.docs-layout-grid:has(.is-dragging) .Lexical__tableWrapper {
+	transition: none;
 }
 
 .Lexical__tableSelection *::selection {
