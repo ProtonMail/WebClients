@@ -16,8 +16,21 @@ import '../../lumoAgent/lumoAgent.scss';
 import './DrawerLumoView.scss';
 
 const DrawerLumoView = () => {
-    const { items, isBusy, cardRenderers, serverToolMeta, hasConversation, send, stop, confirm, cancel, clear } =
-        useLumoAgentDrawer();
+    const {
+        items,
+        isBusy,
+        isAtToolLimit,
+        cardRenderers,
+        serverToolMeta,
+        hasConversation,
+        send,
+        stop,
+        resume,
+        dismissToolLimit,
+        confirm,
+        cancel,
+        clear,
+    } = useLumoAgentDrawer();
 
     const tab: SelectedDrawerOption = {
         text: LUMO_SHORT_APP_NAME,
@@ -43,12 +56,15 @@ const DrawerLumoView = () => {
             <LumoAgentPanel
                 items={items}
                 isBusy={isBusy}
+                isAtToolLimit={isAtToolLimit}
                 cardRenderers={cardRenderers}
                 serverToolMeta={serverToolMeta}
                 onSend={send}
                 onStop={stop}
                 onConfirm={confirm}
                 onCancel={cancel}
+                onResume={resume}
+                onDismissToolLimit={dismissToolLimit}
             />
         </DrawerView>
     );

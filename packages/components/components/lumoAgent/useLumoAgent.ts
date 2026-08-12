@@ -69,15 +69,18 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     const [items, setItems] = useState<LumoAgentItem[]>([]);
     const [isBusy, setIsBusy] = useState(false);
     const [sessionKey, setSessionKey] = useState(0);
+    const [isAtToolLimit, setIsAtToolLimit] = useState(false);
 
     const idRef = useRef(0);
     const controllerRef = useRef<AbortController | null>(null);
     const confirmResolveRef = useRef<((decision: ConfirmDecision) => void) | null>(null);
     const historyRef = useRef<Turn[]>([]);
-    // The id of the reply item currently being streamed, and its accumulated text. `null` means the
-    // next prose delta starts a fresh reply bubble (used to split lead-ins from the final answer).
+    const pendingResumeRef = useRef<{ turns: Turn[]; userText: string; reply: string } | null>(null);
     const replyIdRef = useRef<number | null>(null);
     const replyTextRef = useRef('');
+    // Every bubble of prose the current chain has written, carried across a resume so history keeps the
+    // half of the answer the user already read. `replyTextRef` only ever holds the live bubble.
+    const chainReplyRef = useRef('');
 
     const nextId = useCallback(() => (idRef.current += 1), []);
     const pushItem = useCallback((item: LumoAgentItem) => setItems((prev) => [...prev, item]), []);
@@ -89,16 +92,45 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         pushItem({ id: nextId(), kind: 'error', message: c('Error').t`Something went wrong. Please try again.` });
     }, [finalizeReply, nextId, pushItem]);
 
+    const commitHistory = useCallback((userText: string, reply: string) => {
+        // A chain that ended without prose has nothing worth remembering, and an empty assistant turn is
+        // a shape the transport strips anyway — bank neither side rather than an unanswered question.
+        if (!reply) {
+            return;
+        }
+        historyRef.current = [
+            ...historyRef.current,
+            { role: USER, content: userText },
+            { role: ASSISTANT, content: reply },
+        ];
+    }, []);
+
+    const clearPendingResume = useCallback(() => {
+        pendingResumeRef.current = null;
+        setIsAtToolLimit(false);
+    }, []);
+
+    const discardPendingResume = useCallback(() => {
+        const pending = pendingResumeRef.current;
+        if (!pending) {
+            return;
+        }
+        clearPendingResume();
+        commitHistory(pending.userText, pending.reply);
+    }, [clearPendingResume, commitHistory]);
+
     const appendReplyDelta = useCallback(
         (delta: string) => {
             if (replyIdRef.current === null) {
                 const id = nextId();
                 replyIdRef.current = id;
                 replyTextRef.current = delta;
+                chainReplyRef.current = chainReplyRef.current ? `${chainReplyRef.current}\n\n${delta}` : delta;
                 pushItem({ id, kind: 'reply', text: delta });
                 return;
             }
             replyTextRef.current += delta;
+            chainReplyRef.current += delta;
             const id = replyIdRef.current;
             const text = replyTextRef.current;
             setItems((prev) => prev.map((item) => (item.id === id ? { ...item, text } : item)));
@@ -152,31 +184,13 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         });
     }, [config, sessionKey, nextId, pushItem, finalizeReply]);
 
-    const send = useCallback(
-        async (message: string) => {
-            const text = message.trim();
-            if (!text || isBusy || controllerRef.current) {
-                return;
-            }
-
-            finalizeReply();
-            pushItem({ id: nextId(), kind: 'user', text });
+    const runChain = useCallback(
+        async (turns: Turn[], userText: string, carriedReply = '') => {
             setIsBusy(true);
+            chainReplyRef.current = carriedReply;
 
             const controller = new AbortController();
             controllerRef.current = controller;
-
-            // Guides loaded in earlier messages must ride in the prompt: mid-loop, a guide only reaches
-            // the model as tool content, which is not replayed into history.
-            const systemTurn: Turn = {
-                role: SYSTEM,
-                content: buildSystemPrompt({
-                    definitions: config.definitions,
-                    loadedGuides: executor.getLoadedGuides(),
-                    productRules: config.productRules,
-                }),
-            };
-            const turns: Turn[] = [systemTurn, ...historyRef.current, { role: USER, content: text }];
 
             const serverSources = new Map<string, number>();
 
@@ -217,29 +231,90 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             try {
                 const client = await getLumoClient();
                 const clientTools: ChatCompletionsFunctionTool[] = (await executor.getClientTools?.()) ?? [];
-                await client.callAssistant(api, turns, {
+                const { stoppedOnBudget, turns: chainTurns } = await client.callAssistant(api, turns, {
                     clientToolExecutor: executor,
                     clientTools,
                     serverTools: config.serverTools,
                     signal: controller.signal,
                     chunkCallback,
                 });
-                historyRef.current = [
-                    ...historyRef.current,
-                    { role: USER, content: text },
-                    { role: ASSISTANT, content: replyTextRef.current },
-                ];
+                if (stoppedOnBudget) {
+                    finalizeReply();
+                    if (!chainReplyRef.current) {
+                        // The budget can run out on a tool-only round, leaving the user nothing to read
+                        // and nothing to bank if they decline. Say so instead of stopping in silence.
+                        appendReplyDelta(c('Info').t`I have not finished this one yet.`);
+                        finalizeReply();
+                    }
+                    pendingResumeRef.current = { turns: chainTurns, userText, reply: chainReplyRef.current };
+                    setIsAtToolLimit(true);
+                    return;
+                }
+                clearPendingResume();
+                commitHistory(userText, chainReplyRef.current);
             } catch (error: any) {
                 if (error?.name !== 'AbortError') {
                     pushError();
                 }
+                // The stash outlives a failed resume, so the offer to carry on comes back rather than
+                // taking the whole exchange down with it.
+                setIsAtToolLimit(pendingResumeRef.current !== null);
             } finally {
                 controllerRef.current = null;
                 setIsBusy(false);
             }
         },
-        [api, config, executor, isBusy, appendReplyDelta, finalizeReply, nextId, pushItem, pushError]
+        [
+            api,
+            config,
+            executor,
+            appendReplyDelta,
+            clearPendingResume,
+            commitHistory,
+            finalizeReply,
+            nextId,
+            pushItem,
+            pushError,
+        ]
     );
+
+    const send = useCallback(
+        async (message: string) => {
+            const text = message.trim();
+            if (!text || isBusy || controllerRef.current) {
+                return;
+            }
+
+            discardPendingResume();
+            finalizeReply();
+            pushItem({ id: nextId(), kind: 'user', text });
+
+            const systemTurn: Turn = {
+                role: SYSTEM,
+                content: buildSystemPrompt({
+                    definitions: config.definitions,
+                    loadedGuides: executor.getLoadedGuides(),
+                    productRules: config.productRules,
+                }),
+            };
+
+            await runChain([systemTurn, ...historyRef.current, { role: USER, content: text }], text);
+        },
+        [config, executor, isBusy, discardPendingResume, finalizeReply, nextId, pushItem, runChain]
+    );
+
+    const resume = useCallback(async () => {
+        const pending = pendingResumeRef.current;
+        if (!pending || isBusy || controllerRef.current) {
+            return;
+        }
+        // The stash stays put until `runChain` has banked the exchange: if the resume aborts or throws,
+        // the partial answer and the offer to carry on are both still there.
+        setIsAtToolLimit(false);
+        finalizeReply();
+
+        await runChain(pending.turns, pending.userText, pending.reply);
+    }, [isBusy, finalizeReply, runChain]);
 
     const confirm = useCallback(
         (params: Record<string, any>) => {
@@ -277,12 +352,26 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         historyRef.current = [];
         replyIdRef.current = null;
         replyTextRef.current = '';
+        chainReplyRef.current = '';
+        clearPendingResume();
         setItems([]);
         setIsBusy(false);
         setSessionKey((key) => key + 1);
-    }, []);
+    }, [clearPendingResume]);
 
-    return { items, isBusy, hasConversation: items.length > 0, send, confirm, cancel, stop, clear };
+    return {
+        items,
+        isBusy,
+        isAtToolLimit,
+        hasConversation: items.length > 0,
+        send,
+        resume,
+        dismissToolLimit: discardPendingResume,
+        confirm,
+        cancel,
+        stop,
+        clear,
+    };
 };
 
 export default useLumoAgent;
