@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { PermissionTooltip } from '@proton/components/components/orgPermissions';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
@@ -29,7 +29,7 @@ const AdvancedSsoSettingsSection = () => {
     const handleError = useErrorHandler();
     const [loading, withLoading] = useLoading();
 
-    const [permissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
     const canUpdate = !!permissions?.['account.sso_config.update'];
 
     const backupPasswordDisabled = !!organization?.Settings.SSOBackupPasswordDisabled;

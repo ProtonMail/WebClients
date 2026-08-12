@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { useMemberAddresses } from '@proton/account';
 import { useMembers } from '@proton/account/members/hooks';
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
@@ -29,7 +29,7 @@ const OrganizationTwoFARemindersSection = ({ organization }: Props) => {
     const { APP_NAME } = useConfig();
     const [modalProps, setModal, renderModal] = useModalState();
     const [members] = useMembers();
-    const [permissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
     const canSendReminder =
         permissions?.['account.security_policy.create'] || permissions?.['account.security_policy.update'];
 

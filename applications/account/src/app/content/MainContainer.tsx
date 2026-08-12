@@ -24,7 +24,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { EMPTY_ORG_PERMISSIONS } from '@proton/account/userPermissions';
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import {
     AppLink,
@@ -203,7 +203,7 @@ const MainContainer = () => {
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
     const [entitlements] = useEntitlementChecks();
-    const [permissions, loadingOrgPermissions] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();
@@ -442,7 +442,7 @@ const MainContainer = () => {
         if (
             loadingOrganization ||
             loadingSubscription ||
-            loadingOrgPermissions ||
+            permissions === null ||
             loadingDataRecovery ||
             loadingIsSessionRecoveryAvailable ||
             loadingGroupMembership ||

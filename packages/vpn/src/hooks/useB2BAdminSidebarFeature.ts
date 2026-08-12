@@ -3,7 +3,7 @@ import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecover
 import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
 import { useConfig } from '@proton/components/index';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
@@ -38,9 +38,9 @@ export const useB2BAdminSidebarFeature = ({
     const [subscription, isSubscriptionLoading] = useSubscription();
     const [organization, isOrganizationLoading] = useOrganization();
 
-    const [permissions, isPermissionsLoading] = useOrgPermissions();
+    const [{ permissions }] = useUserPermissions();
 
-    const skip = isUserLoading || isSubscriptionLoading || isOrganizationLoading || isPermissionsLoading;
+    const skip = isUserLoading || isSubscriptionLoading || isOrganizationLoading || permissions === null;
     const isEnabled = useFlag('B2BSidebarRefreshEnabled');
     const { APP_NAME } = useConfig();
     const isAdmin = isB2BAdmin({ user, organization, subscription });
