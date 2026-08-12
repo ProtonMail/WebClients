@@ -451,57 +451,62 @@ const ComposerComponentInner = ({
                             />
                         )}
 
-                    <div className="composer-input-glow-wrapper w-full">
-                        <div className={clsx('lumo-input-container bg-norm w-full', isGhostChatMode && 'ghost-mode')}>
-                            {canUseAgents && <ComposerAgentBar conversationId={messageChain?.[0]?.conversationId} />}
-                            {hasAttachments && (
-                                <ComposerAttachmentArea
-                                    provisionalAttachments={provisionalAttachments}
-                                    allRelevantAttachments={allRelevantAttachments}
+                        <div className="composer-input-glow-wrapper w-full">
+                            <div
+                                className={clsx('lumo-input-container bg-norm w-full', isGhostChatMode && 'ghost-mode')}
+                            >
+                                {canUseAgents && (
+                                    <ComposerAgentBar conversationId={messageChain?.[0]?.conversationId} />
+                                )}
+                                {hasAttachments && (
+                                    <ComposerAttachmentArea
+                                        provisionalAttachments={provisionalAttachments}
+                                        allRelevantAttachments={allRelevantAttachments}
+                                        messageChain={messageChain}
+                                        onDeleteAttachment={handleDeleteAttachment}
+                                        onViewFile={onOpenFilePreview ?? (() => {})}
+                                        onOpenFiles={handleOpenFiles}
+                                    />
+                                )}
+                                <ComposerEditorArea
+                                    composerInput={composerInput}
+                                    canShowSendButton={canShowSendButton}
+                                    sendIsDisabled={sendIsDisabled}
+                                    isGenerating={isGenerating ?? false}
+                                    isProcessingAttachment={isProcessingAttachment}
+                                    onAbort={onAbort}
+                                    onSubmit={handleSubmit}
+                                    spaceId={spaceId}
                                     messageChain={messageChain}
-                                    onDeleteAttachment={handleDeleteAttachment}
-                                    onViewFile={onOpenFilePreview ?? (() => {})}
-                                    onOpenFiles={handleOpenFiles}
+                                    isAutocompleteActiveRef={isAutocompleteActiveRef}
+                                    browseFolderChildren={driveContext?.browseFolderChildren}
+                                    downloadFile={driveContext?.downloadFile}
+                                    userId={driveContext?.userId}
+                                    placeholder={placeholder}
                                 />
-                            )}
-                            <ComposerEditorArea
-                                composerInput={composerInput}
-                                canShowSendButton={canShowSendButton}
-                                sendIsDisabled={sendIsDisabled}
-                                isGenerating={isGenerating ?? false}
-                                isProcessingAttachment={isProcessingAttachment}
-                                onAbort={onAbort}
-                                onSubmit={handleSubmit}
-                                spaceId={spaceId}
-                                messageChain={messageChain}
-                                isAutocompleteActiveRef={isAutocompleteActiveRef}
-                                browseFolderChildren={driveContext?.browseFolderChildren}
-                                downloadFile={driveContext?.downloadFile}
-                                userId={driveContext?.userId}
-                                placeholder={placeholder}
-                            />
-                            <ComposerToolbar
-                                composerMode={composerMode}
-                                onFilesSelected={handleFilesSelected}
-                                onBrowseDrive={handleBrowseDrive}
-                                onDrawSketch={handleDrawSketch}
-                                fileUploadMode={fileUploadMode}
-                                selectedAspectRatio={selectedAspectRatio}
-                                onAspectRatioChange={handleAspectRatioChange}
-                                isCreateImageMode={isCreateImageMode}
-                                onCreateImageModeChange={handleCreateImageModeChange}
-                                isArtifactMode={isArtifactMode}
-                                onArtifactModeChange={handleArtifactModeChange}
-                                canUseAgents={canUseAgents}
-                                isAgent={isAgent}
-                            />
+                                <ComposerToolbar
+                                    composerMode={composerMode}
+                                    onFilesSelected={handleFilesSelected}
+                                    onBrowseDrive={handleBrowseDrive}
+                                    onDrawSketch={handleDrawSketch}
+                                    fileUploadMode={fileUploadMode}
+                                    selectedAspectRatio={selectedAspectRatio}
+                                    onAspectRatioChange={handleAspectRatioChange}
+                                    isCreateImageMode={isCreateImageMode}
+                                    onCreateImageModeChange={handleCreateImageModeChange}
+                                    isArtifactMode={isArtifactMode}
+                                    onArtifactModeChange={handleArtifactModeChange}
+                                    canUseAgents={canUseAgents}
+                                    isAgent={isAgent}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    {optionalElementBelowComposer && <div className="mt-1.5">{optionalElementBelowComposer}</div>}
-                    {/* {isGuest && (
+                        {optionalElementBelowComposer && <div className="mt-1.5">{optionalElementBelowComposer}</div>}
+                        {/* {isGuest && (
                         <TermsAndConditions className={clsx('m-0', isAgent ? 'text-center' : 'hidden md:block')} />
                     )} */}
-                </section>
+                    </section>
+                </div>
             </div>
 
             <SketchOverlay
