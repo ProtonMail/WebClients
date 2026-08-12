@@ -4362,6 +4362,12 @@
       ],
       "You do not have access to this item": [
         "Vous n'avez pas accès à cet élément."
+      ],
+      "Device not found": [
+        "L'appareil est introuvable."
+      ],
+      "Moving root item is not allowed": [
+        "Le déplacement de l'élément racine n'est pas autorisé."
       ]
     },
     "error": {
@@ -7696,6 +7702,18 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Nous vous redirigerons vers ${ IDEAL_BRAND_NAME } dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
+      ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "L'application ${ DRIVE_APP_NAME } n'a pas pu déchiffrer l'index de recherche local. Veuillez reconstruire l'index pour rétablir la recherche."
+      ],
+      "Find out what can be migrated.": [
+        "Découvrez ce qui peut être migré."
+      ],
+      "No users to display": [
+        "Il n'y a aucun utilisateur à afficher."
+      ],
+      "Search data can't be read": [
+        "Les données de recherche sont illisibles"
       ]
     },
     "info": {
