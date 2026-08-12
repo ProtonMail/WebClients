@@ -1,15 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
-import { KrispNoiseFilter, isKrispNoiseFilterSupported } from '@livekit/krisp-noise-filter';
-import type { KrispNoiseFilterProcessor } from '@livekit/krisp-noise-filter';
-import type { AudioProcessorOptions, LocalTrack, Room, TrackProcessor } from 'livekit-client';
+import type { LocalTrack } from 'livekit-client';
 import { Track } from 'livekit-client';
 
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
-import { selectKrispDebug } from '@proton/meet/store/slices/devToolsSlice';
 import {
     selectActiveMicrophoneId,
     selectInitialAudioState,
@@ -21,16 +18,14 @@ import { isAudioSessionAvailable, setAudioSessionType } from '@proton/meet/utils
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { useStableCallback } from '../../../hooks/useStableCallback';
+import type { AudioTrackProcessor } from '../../../processors/noise-cancellation/types';
+import { useNoiseCancellationModel } from '../../../processors/noise-cancellation/useNoiseCancellationModel';
 import { audioQuality } from '../../../qualityConstants';
 import type { AudioToggleParams, SwitchActiveDevice, ToggleAudioType } from '../../../types';
-import { DTLNFilter, DTLN_AUDIO_CONTEXT_SAMPLE_RATE, isDTLNFilterSupported } from '../../../utils/dtlnProcessor';
 import { getPersistedNoiseFilter, persistNoiseFilter } from '../../../utils/noiseFilterPersistence';
 
-const isKrispNoiseFilterBrowserSupported = isKrispNoiseFilterSupported();
-const isDTLNFilterBrowserSupported = isDTLNFilterSupported();
 const TOGGLE_TIMEOUT_MS = 8000;
 const NOISE_FILTER_ATTACH_TIMEOUT_MS = 3000;
 /** Delay before attaching noise filter after a mute/unmute toggle */
@@ -54,20 +49,10 @@ const getErrorReason = (error: unknown) => {
 };
 
 /**
- * Whether the connected LiveKit server is LiveKit Cloud.
- */
-const isRoomInLivekitCloud = (room: Room) => {
-    const CLOUD_EDITION = 1;
-    return room.serverInfo?.edition === CLOUD_EDITION;
-};
-
-/**
  * Manages microphone toggle (mute/unmute), device switching, and noise filter lifecycle.
  *
- * Noise filter hierarchy:
- * - Krisp: used when the room is LiveKit Cloud and the browser supports it.
- * - DTLN (LiteRT.js): fallback when Krisp is unavailable but AudioWorklet is supported.
- * - Native noiseSuppression constraint: last resort for very old browsers.
+ * Which denoiser runs is decided by useNoiseCancellationModel. A model that returns no processor
+ * means the browser's native noiseSuppression constraint is the fallback.
  *
  * Shared architecture:
  * - The AudioContext is created once and reused across device switches (needed for AudioWorkletNode).
@@ -78,15 +63,14 @@ const isRoomInLivekitCloud = (room: Room) => {
  * - On track ended (device unplug), we abandon the processor refs and auto-recover to the system
  */
 export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
-    const isDtlnPerfMonitorEnabled = useFlag('MeetDtlnPerfMonitor');
-
     const { reportMeetError: reportError } = useMeetErrorReporting();
+
+    const noiseCancellationModel = useNoiseCancellationModel();
 
     const activeMicrophoneDeviceId = useMeetSelector(selectActiveMicrophoneId);
     const initialAudioState = useMeetSelector(selectInitialAudioState);
     const microphones = useMeetSelector(selectMicrophones);
     const microphoneState = useMeetSelector(selectMicrophoneState);
-    const isKrispDebugEnabled = useMeetSelector(selectKrispDebug);
     const store = useMeetStore();
 
     const [noiseFilter, setNoiseFilter] = useState(() => {
@@ -95,7 +79,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     });
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
-    const noiseFilterProcessor = useRef<TrackProcessor<Track.Kind.Audio, AudioProcessorOptions> | null>(null);
+    const noiseFilterProcessor = useRef<AudioTrackProcessor | null>(null);
     /** Persistent AudioContext reused across device switches — only closed on unmount */
     const audioContext = useRef<AudioContext | null>(null);
     /** Track ID the processor is currently attached to, used to detect track replacement */
@@ -112,8 +96,6 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const pendingRecovery = useRef<AudioToggleParams | null>(null);
 
     const room = useRoomContext();
-
-    const isAdvancedNoiseFilterSupported = isKrispNoiseFilterBrowserSupported && isRoomInLivekitCloud(room);
 
     const getCurrentPublication = () => {
         return [...room.localParticipant.audioTrackPublications.values()].find(
@@ -138,19 +120,16 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         if (audioContext.current && audioContext.current.state !== 'closed') {
             return audioContext.current;
         }
-        // DTLN is trained on 16 kHz audio — pin the rate when it's the active denoiser. Krisp accepts
-        // whatever rate the browser hands us, so let it pick its default in that case.
         // Some browsers (older iOS Safari, some Android configs) silently ignore the requested rate,
         // hence the readback in attachNoiseFilter below.
         // @ts-ignore - webkitAudioContext is not available in all browsers
         const Ctor = (window.AudioContext || window.webkitAudioContext) as typeof AudioContext;
-        const ctx = isAdvancedNoiseFilterSupported
-            ? new Ctor()
-            : new Ctor({ sampleRate: DTLN_AUDIO_CONTEXT_SAMPLE_RATE });
+        const requiredSampleRate = noiseCancellationModel.audioContextSampleRate;
+        const ctx = requiredSampleRate ? new Ctor({ sampleRate: requiredSampleRate }) : new Ctor();
         audioContext.current = ctx;
         debugLog('noiseFilter:audio-context-created', {
             sampleRate: ctx.sampleRate,
-            filter: isAdvancedNoiseFilterSupported ? 'krisp' : 'dtln',
+            filter: noiseCancellationModel.id,
         });
         return ctx;
     };
@@ -286,12 +265,10 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         const publication = getCurrentPublication();
         const currentAudioTrack = publication?.audioTrack;
 
-        const isAnyProcessorSupported = isAdvancedNoiseFilterSupported || isDTLNFilterBrowserSupported;
-        if (!currentAudioTrack || !isAnyProcessorSupported) {
+        if (!currentAudioTrack || noiseCancellationModel.isNative) {
             debugLog('noiseFilter:attach-skip', {
                 hasTrack: !!currentAudioTrack,
-                krisp: isAdvancedNoiseFilterSupported,
-                dtln: isDTLNFilterBrowserSupported,
+                model: noiseCancellationModel.id,
             });
             return;
         }
@@ -304,10 +281,10 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         }
 
         if (attachedTrackId.current === currentAudioTrack.id && noiseFilterProcessor.current) {
-            const proc = noiseFilterProcessor.current as KrispNoiseFilterProcessor;
-            if (typeof proc.isEnabled === 'function' && !proc.isEnabled()) {
+            const processor = noiseFilterProcessor.current;
+            if (processor.isEnabled && !processor.isEnabled() && processor.setEnabled) {
                 debugLog('noiseFilter:re-enable-existing');
-                await withTimeout(proc.setEnabled(true), 'Re-enable noise filter', NOISE_FILTER_ATTACH_TIMEOUT_MS);
+                await withTimeout(processor.setEnabled(true), 'Re-enable noise filter', NOISE_FILTER_ATTACH_TIMEOUT_MS);
             }
             return;
         }
@@ -320,11 +297,15 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
         debugLog('noiseFilter:attach-start', { trackId: currentAudioTrack.id, generation: gen });
 
-        // DTLN requires 16 kHz; if the browser ignored our sampleRate request, skip it
-        // (the model would produce garbage at any other rate).
-        const wouldUseDTLN = !isAdvancedNoiseFilterSupported && isDTLNFilterBrowserSupported;
-        if (wouldUseDTLN && ctx.sampleRate !== DTLN_AUDIO_CONTEXT_SAMPLE_RATE) {
-            debugLog('noiseFilter:attach-skip-non-16k', { sampleRate: ctx.sampleRate });
+        // A model trained on a fixed rate produces garbage at any other rate, so skip it when the
+        // browser ignored our sampleRate request.
+        const requiredSampleRate = noiseCancellationModel.audioContextSampleRate;
+        if (requiredSampleRate && ctx.sampleRate !== requiredSampleRate) {
+            debugLog('noiseFilter:attach-skip-sample-rate-mismatch', {
+                model: noiseCancellationModel.id,
+                sampleRate: ctx.sampleRate,
+                requiredSampleRate,
+            });
             return;
         }
 
@@ -333,9 +314,12 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
             return;
         }
 
-        const processor = isAdvancedNoiseFilterSupported
-            ? KrispNoiseFilter({ debugLogs: isKrispDebugEnabled })
-            : DTLNFilter({ isDtlnPerfMonitorEnabled, reportError });
+        const processor = noiseCancellationModel.createProcessor();
+
+        if (!processor) {
+            debugLog('noiseFilter:attach-skip-no-processor', { model: noiseCancellationModel.id });
+            return;
+        }
 
         try {
             currentAudioTrack.setAudioContext(ctx);
@@ -510,7 +494,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
             ...(useIOSWorkaround ? {} : { deviceId: { exact: deviceId as string } }),
             echoCancellation: { ideal: true },
             autoGainControl: { ideal: true },
-            noiseSuppression: isAdvancedNoiseFilterSupported || isDTLNFilterBrowserSupported ? false : noiseFilter,
+            noiseSuppression: noiseCancellationModel.isNative ? noiseFilter : false,
             channelCount: { ideal: 1 },
             dtx: false,
         };
@@ -625,12 +609,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
             // After toggle success, determine noise filter state:
             // - If the track ID matches our ref, LiveKit restarted the processor internally → nothing to do.
             // - If the track changed (new ID), the old processor is on a dead track → abandon and re-attach.
-            if (
-                isEnabled &&
-                (isAdvancedNoiseFilterSupported || isDTLNFilterBrowserSupported) &&
-                noiseFilter &&
-                !skipNoiseFilter
-            ) {
+            if (isEnabled && !noiseCancellationModel.isNative && noiseFilter && !skipNoiseFilter) {
                 const currentTrack = getCurrentPublication()?.audioTrack;
                 const processorStillAttached =
                     noiseFilterProcessor.current &&
@@ -723,17 +702,15 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
         if (isMicrophoneEnabled) {
             try {
-                if (isAdvancedNoiseFilterSupported || isDTLNFilterBrowserSupported) {
-                    if (newValue) {
-                        await attachNoiseFilter();
-                    } else {
-                        await detachNoiseFilter();
-                    }
-                } else {
-                    // Neither Krisp nor DTLN available — recreate the mic track with the native
-                    // `noiseSuppression` constraint as a last resort. `applyConstraints` is a no-op
-                    // for this constraint once the track is published in an RTCPeerConnection.
+                if (noiseCancellationModel.isNative) {
+                    // Recreate the mic track with the native `noiseSuppression` constraint, since
+                    // `applyConstraints` is a no-op for it once the track is published in an
+                    // RTCPeerConnection.
                     await recreateMicrophoneWithNoiseSuppression(newValue);
+                } else if (newValue) {
+                    await attachNoiseFilter();
+                } else {
+                    await detachNoiseFilter();
                 }
                 debugLog('toggleNoiseFilter:applied', { newValue });
             } catch (error) {
