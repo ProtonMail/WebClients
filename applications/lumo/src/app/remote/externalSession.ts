@@ -4,7 +4,6 @@ import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { PullForkResponse, PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { getNativeAppInfo } from '../util/userAgent';
@@ -15,13 +14,11 @@ export type { ExternalSessionPayload };
 const buildExternalSessionPayloadForLocalID = async ({
     api,
     localID,
-    pathname,
     appVersion,
     childClientId,
 }: {
     api: Api;
     localID: number;
-    pathname: string;
     appVersion: string;
     childClientId: string;
 }): Promise<ExternalSessionPayload> => {
@@ -52,7 +49,6 @@ const buildExternalSessionPayloadForLocalID = async ({
         keySecret: session.keyPassword || null,
         eventId: EventID ?? null,
         localId: localID,
-        canMigrate: !pathname.startsWith(SSO_PATHS.FORK),
     };
 };
 
@@ -63,13 +59,16 @@ const buildExternalSessionPayloadForLocalID = async ({
  * Each session is forked independently and in parallel; a session that fails to
  * resume or fork (e.g. invalid/expired blob) is logged and skipped rather than
  * failing the whole batch. The returned array is what gets pushed to native.
+ *
+ * When [localIDs] is provided, only those persisted sessions are forked (used to
+ * push just the not-yet-migrated accounts); otherwise every persisted session is.
  */
 export const buildExternalSessionsViaFork = async ({
     api,
-    pathname,
+    localIDs,
 }: {
     api: Api;
-    pathname: string;
+    localIDs?: number[];
 }): Promise<ExternalSessionPayload[]> => {
     const appInfo = getNativeAppInfo();
     if (!appInfo || appInfo.platform === 'unknown') {
@@ -83,14 +82,15 @@ export const buildExternalSessionsViaFork = async ({
     const appVersion = `${platform}-lumo@${semverVersion}`;
     const childClientId = `${platform}-lumo`;
 
-    const persistedSessions = getPersistedSessions();
+    const persistedSessions = localIDs
+        ? getPersistedSessions().filter((session) => localIDs.includes(session.localID))
+        : getPersistedSessions();
 
     const results = await Promise.all(
         persistedSessions.map((persistedSession) =>
             buildExternalSessionPayloadForLocalID({
                 api,
                 localID: persistedSession.localID,
-                pathname,
                 appVersion,
                 childClientId,
             }).catch((e) => {
