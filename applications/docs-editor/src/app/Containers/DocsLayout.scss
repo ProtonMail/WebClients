@@ -1,16 +1,31 @@
 $docs-editor-max-width: 816px;
+$docs-editor-inline-padding: 8px;
+$docs-editor-column-max-width: $docs-editor-max-width + 2 * $docs-editor-inline-padding;
 $docs-editor-toolbar-height: 3rem;
+$docs-layout-transition-duration: 250ms;
+$docs-layout-transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
 
 .docs-layout-grid {
 	display: grid;
 	grid-row: 2;
 	grid-template-rows: 1fr;
 	grid-template-columns: 1fr;
+	container-name: docs-scroll;
+	container-type: inline-size;
 	min-block-size: 0;
-	overflow: hidden;
+	overflow: clip auto;
+	scroll-padding-top: 20px;
 
 	@media (width >= $docs-editor-max-width) {
-		grid-template-columns: var(--left-panel-layout-width) minmax(0, 1fr);
+		grid-template-columns:
+			var(--docs-layout-left-column-width)
+			var(--docs-layout-editor-column-width)
+			var(--docs-layout-right-column-width);
+		transition: grid-template-columns $docs-layout-transition-duration $docs-layout-transition-easing;
+
+		&:has(.is-dragging) {
+			transition: none;
+		}
 	}
 }
 
@@ -32,15 +47,18 @@ $docs-editor-toolbar-height: 3rem;
 	}
 
 	@media (width >= $docs-editor-max-width) {
-		position: relative;
-		inset: unset;
+		position: sticky;
+		inset-block-start: 0;
+		inset-inline: unset;
+		align-self: start;
 		grid-column: 1 / 2;
+		block-size: 100%;
 		inline-size: 0;
 
 		&.panel-open {
-			inset: unset;
-			z-index: auto;
-			inline-size: var(--left-panel-layout-width);
+			inset-block-start: 0;
+			inset-inline: unset;
+			inline-size: min(var(--docs-layout-left-panel-width), var(--docs-layout-left-column-width));
 			transition: inline-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 			&.is-dragging {
@@ -50,83 +68,60 @@ $docs-editor-toolbar-height: 3rem;
 	}
 }
 
-.docs-layout-right-panel {
-	/* Positioning context for portaled floating quick actions. */
+.docs-layout-center-panel {
 	position: relative;
 	grid-row: 1;
 	grid-column: 1;
+	inline-size: 80%;
 	min-block-size: 0;
-	min-inline-size: 0;
-	overflow: clip auto;
-
-	// Contextual comment panels sit in the right gutter; do not clip them here.
-	scroll-padding-top: 20px;
-
-	@media (width >= $docs-editor-max-width) {
-		grid-column: 2 / 3;
-	}
-}
-
-// Full-width zone inside the scroll container so wide tables can bleed into side gutters.
-// Container for table max-width (`100cqw` in _table.scss).
-.docs-layout-scroll-bleed {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr);
-	container-name: docs-scroll;
-	container-type: inline-size;
-	inline-size: 100%;
-	min-inline-size: 0;
-	min-block-size: 100%;
-}
-
-// Portal target for contextual comments (CommentPluginContainer). Shares grid cell
-// (1, 1) with the editor so thread panels align to mark positions while scrolling.
-.docs-layout-editor-stack {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr);
-	grid-template-rows: minmax(0, 1fr);
-}
-
-.docs-layout-editor-column {
-	grid-row: 1;
-	grid-column: 1;
-	position: relative;
-	inline-size: 100%;
 	min-inline-size: 0;
 	max-inline-size: $docs-editor-max-width;
 	margin-inline: auto;
 
-	@container docs-scroll (max-width: #{$docs-editor-max-width + 100px}) {
-		inline-size: 80%;
+	@media (width >= $docs-editor-max-width) {
+		grid-column: 2;
+		inline-size: 100%;
+		max-inline-size: $docs-editor-column-max-width;
+		margin-inline: 0;
+		padding-inline: $docs-editor-inline-padding;
+	}
+}
+
+.docs-layout-right-panel {
+	display: grid;
+	position: relative;
+	grid-row: 1;
+	grid-column: 1;
+	grid-template-columns: minmax(0, 1fr);
+	grid-template-rows: minmax(0, 1fr);
+	justify-self: stretch;
+	min-block-size: 0;
+	min-inline-size: 0;
+	pointer-events: none;
+
+	@media (width >= $docs-editor-max-width) {
+		grid-column: 3;
+		justify-self: end;
+		inline-size: min(100%, var(--docs-layout-right-panel-width));
 	}
 }
 
 @media print {
 	.docs-layout-container,
-	.docs-layout-grid,
-	.docs-layout-editor-stack {
+	.docs-layout-grid {
 		display: contents !important;
 	}
 
-	.docs-layout-left-panel {
-		display: none !important;
-	}
-
-	.docs-layout-right-panel {
+	.docs-layout-center-panel {
 		display: block !important;
-		min-block-size: auto !important;
-		overflow: clip visible !important;
-	}
-
-	.docs-layout-scroll-bleed {
-		display: block !important;
-		inline-size: 100%;
-		max-inline-size: 100%;
-	}
-
-	.docs-layout-editor-column {
 		inline-size: auto;
 		max-inline-size: 100%;
 		margin-inline: 10%;
+		padding-inline: 0;
+	}
+
+	.docs-layout-left-panel,
+	.docs-layout-right-panel {
+		display: none !important;
 	}
 }
