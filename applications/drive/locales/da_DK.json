@@ -1335,6 +1335,9 @@
       ],
       "Migrate": [
         "Migrer"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Vis/skjul ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Action: Docs": {
@@ -7799,6 +7802,15 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
         "Du vil ikke kunne dele \"${ fileName }\" efter at have ændret din adgang til seer. Ejeren eller en redaktør med adgang til at dele kan give dig adgang til at redigere igen. Du kan ikke selv fortryde det."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Aktivér kontoen for denne bruger i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Fjern denne bruger fra arkivet i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Ophæv suspenderingen af denne bruger i ${ provider.adminConsoleName } for at migrere dem."
       ]
     },
     "info": {
@@ -14530,6 +14542,9 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status for datamigration fra ${ providerName } til ${ BRAND_NAME }"
       ]
     },
     "tooltip": {

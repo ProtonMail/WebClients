@@ -1335,6 +1335,9 @@
       ],
       "Migrate": [
         "Migrera"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Slå på/av ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Action: Docs": {
@@ -4321,6 +4324,15 @@
       ],
       "Something went wrong, please try again later": [
         "Något gick fel, försök igen senare"
+      ],
+      "Failed to get inviter keys": [
+        "Misslyckades med att hämta inbjudningsnycklar"
+      ],
+      "File download failed due to empty response": [
+        "Filnedladdning misslyckades på grund av tomt svar"
+      ],
+      "You can create public links for your own files only": [
+        "Du kan endast skapa offentliga länkar för dina egna filer"
       ]
     },
     "error": {
@@ -6080,7 +6092,7 @@
         "Indexerar objekt ${ esProgress } av ${ totalProgressToShow }"
       ],
       "Indexing search results…": [
-        "Indexerar sökresultat…"
+        "Indexerar sökresultat …"
       ],
       "Inherited from parent folder": [
         "Ärvd från överordnad mapp"
@@ -6529,7 +6541,7 @@
         "Återställde filer ${ formattedDate }"
       ],
       "Restoring Photos... Please keep the tab open": [
-        "Återställer foton... Håll fliken öppen"
+        "Återställer foton ... Håll fliken öppen"
       ],
       "Running diagnostics...": [
         "Kör diagnostik …"
@@ -7190,7 +7202,7 @@
       ],
       "You will need to save it again from the public link page.": [
         "Du måste spara det igen från den offentliga länksidan.",
-        "Du måste spara dem igen från den offentliga länksidan"
+        "Du måste spara dem igen från den offentliga länksidan."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
@@ -10753,7 +10765,7 @@
         "Redigera dokument online"
       ],
       "End-to-end encrypted storage for your files": [
-        "End-to-end krypterat lagringsutrymme för dina filer"
+        "End-to-end-krypterat lagringsutrymme för dina filer"
       ],
       "Faster uploads for large or multiple files": [
         "Snabbare uppladdningar för stora eller flera filer"
@@ -10798,7 +10810,7 @@
         "Hantera åtkomst"
       ],
       "Organize files right from your desktop": [
-        "Organisera filer direkt från ditt skrivbord"
+        "Organisera filer direkt från din stationära dator"
       ],
       "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
         "Skydda dina finansiella dokument, ID-kort, projektfiler, foton och mer med end-to-end-kryptering."
@@ -11196,6 +11208,9 @@
       ],
       "VAT reverse charge mechanism applies.": [
         "Mekanism för omvänd moms-skattskyldighet tillämpas."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betala med ${ IDEAL_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
