@@ -13,6 +13,7 @@ import { when } from '../util/collections';
 import { toChatCompletionsBody } from './chat-completions';
 import {
     type ClientToolExecutor,
+    type ClientToolResult,
     type PendingClientToolCall,
     filterClientToolCalls,
     mergePendingClientToolCalls,
@@ -34,6 +35,7 @@ import { makeSmoothingTransformStream } from './transforms/smoothing';
 import { makeUtf8DecodingTransformStream } from './transforms/utf8';
 import {
     type AssistantCallOptions,
+    type AssistantCallResult,
     type ChunkCallback,
     type FinishCallback,
     type GenerationResponseMessage,
@@ -64,7 +66,20 @@ const DEFAULT_CONFIG: LumoApiClientConfig = {
     },
 };
 
-const MAX_CLIENT_TOOL_ROUNDS = 5;
+/**
+ * Rounds of billable client-tool work one turn may spend
+ */
+export const CLIENT_TOOL_ROUND_BUDGET = 10;
+
+/**
+ * Backstop on total rounds, billable or not
+ */
+export const MAX_CLIENT_TOOL_ROUNDS = CLIENT_TOOL_ROUND_BUDGET * 2;
+
+const missingResultFor = (call: PendingClientToolCall): ClientToolResult => ({
+    content: JSON.stringify({ error: `The ${call.name} tool returned no result. Try again.` }),
+    is_error: true,
+});
 
 /**
  * Main LLM API Client class
@@ -85,7 +100,7 @@ export class LumoApiClient {
      * @param options - Request options
      * @returns Promise that resolves when the generation is complete
      */
-    async callAssistant(api: Api, turns: Turn[], options: AssistantCallOptions = {}): Promise<void> {
+    async callAssistant(api: Api, turns: Turn[], options: AssistantCallOptions = {}): Promise<AssistantCallResult> {
         const {
             chunkCallback,
             finishCallback,
@@ -172,10 +187,27 @@ export class LumoApiClient {
             );
         }
 
+        // The model's prose reaches us only as chunks, but it has to go back into the chain or a
+        // resumed turn replays a history in which the assistant never spoke.
+        let roundReply = '';
+        const roundChunkCallback: ChunkCallback = async (message) => {
+            if (message.type === 'token_data' && message.target === 'message') {
+                roundReply += message.content;
+            }
+            // Suppress intermediate `done` events while client tool rounds may continue.
+            if (message.type === 'done') {
+                return;
+            }
+            return chunkCallback?.(message);
+        };
+
         let currentTurns = turns;
         let finalStatus: Status = 'failed';
+        let stoppedOnBudget = false;
         try {
-            for (let round = 0; round < MAX_CLIENT_TOOL_ROUNDS; round++) {
+            let rounds = 0;
+            let billableRounds = 0;
+            while (true) {
                 let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(
                     currentTurns,
                     encryption,
@@ -191,16 +223,6 @@ export class LumoApiClient {
                 request = await this.notifyRequestInterceptors(request, requestContext);
 
                 const responseContext: ResponseContext = this.initializeResponseContext(requestContext);
-
-                // Suppress intermediate `done` events while client tool rounds may continue.
-                const roundChunkCallback: ChunkCallback | undefined = chunkCallback
-                    ? async (message) => {
-                          if (message.type === 'done') {
-                              return;
-                          }
-                          return chunkCallback(message);
-                      }
-                    : undefined;
 
                 const { pendingClientToolCalls, status } = await this.runSseReceiveLoop(
                     api,
@@ -224,12 +246,27 @@ export class LumoApiClient {
                     break;
                 }
 
-                currentTurns = await this.appendClientToolResults(
-                    this.stripTrailingEmptyAssistant(currentTurns),
+                const executed = await this.appendClientToolResults(
+                    this.withAssistantReply(currentTurns, roundReply),
                     executableCalls,
                     resolvedClientToolExecutor,
                     chunkCallback
                 );
+                currentTurns = executed.turns;
+                roundReply = '';
+                rounds++;
+                if (executed.billable) {
+                    billableRounds++;
+                }
+
+                if (billableRounds >= CLIENT_TOOL_ROUND_BUDGET || rounds >= MAX_CLIENT_TOOL_ROUNDS) {
+                    stoppedOnBudget = true;
+                    break;
+                }
+            }
+
+            if (signal?.aborted) {
+                stoppedOnBudget = false;
             }
 
             if (chunkCallback) {
@@ -245,6 +282,8 @@ export class LumoApiClient {
                 await finishCallback(finalStatus);
             }
         }
+
+        return { status: finalStatus, stoppedOnBudget, turns: currentTurns };
     }
 
     private async runSseReceiveLoop(
@@ -406,19 +445,28 @@ export class LumoApiClient {
         return turns;
     }
 
+    private withAssistantReply(turns: Turn[], reply: string): Turn[] {
+        const stripped = this.stripTrailingEmptyAssistant(turns);
+        if (!reply.trim()) {
+            return stripped;
+        }
+
+        return [...stripped, { role: Role.Assistant, content: reply }];
+    }
+
     private async appendClientToolResults(
         turns: Turn[],
         calls: PendingClientToolCall[],
         executor: ClientToolExecutor,
         chunkCallback: ChunkCallback | undefined
-    ): Promise<Turn[]> {
+    ): Promise<{ turns: Turn[]; billable: boolean }> {
         const results = await executor.execute(calls);
+        // An executor that answers fewer calls than it was given must not take the whole turn down
+        // with it; the model can recover from a per-call error.
+        const executed = calls.map((call, index) => ({ call, result: results[index] ?? missingResultFor(call) }));
         const nextTurns = [...turns];
 
-        for (let i = 0; i < calls.length; i++) {
-            const call = calls[i]!;
-            const result = results[i]!;
-
+        for (const { call, result } of executed) {
             let parsedArguments: unknown = {};
             try {
                 parsedArguments = JSON.parse(call.arguments || '{}');
@@ -465,7 +513,7 @@ export class LumoApiClient {
             content: '',
         });
 
-        return nextTurns;
+        return { turns: nextTurns, billable: executed.some(({ result }) => result.billable !== false) };
     }
 
     private async runTargetedGeneration(
