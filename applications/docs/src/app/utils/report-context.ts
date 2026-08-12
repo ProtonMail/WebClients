@@ -46,8 +46,7 @@ export const getDocsReportContextLines = (context: DocsReportContext) => {
       Browser: [reportInfo.Browser, reportInfo.BrowserVersion].filter(Boolean).join(' '),
       Resolution: reportInfo.Resolution,
       Device: [reportInfo.DeviceName, reportInfo.DeviceModel].filter(Boolean).join(' '),
-    }),
-    ...formatReportInfo({
+
       'Document type': context.documentType,
       'Document relation': getDocumentRelation(context.role),
       Role: roleType,
