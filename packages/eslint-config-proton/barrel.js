@@ -2,8 +2,10 @@ import { defineConfig } from 'eslint/config';
 
 import { allGlobs } from './globs.js';
 
+export const accountPackage = '@proton/account';
 export const atomsPackage = '@proton/atoms';
 export const componentsPackage = '@proton/components';
+export const hooksPackage = '@proton/hooks';
 export const iconsPackage = '@proton/icons';
 
 const defaultPackages = [atomsPackage, componentsPackage, iconsPackage];
