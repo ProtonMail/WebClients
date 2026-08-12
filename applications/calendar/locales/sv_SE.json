@@ -1037,6 +1037,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Migrate": [
+        "Migrera"
       ]
     },
     "action": {
@@ -4305,6 +4308,129 @@
       ],
       "Something went wrong": [
         "Något gick fel"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Kan inte lägga till foto i album utan ett giltigt namn"
+      ],
+      "Cannot download a folder": [
+        "Kan inte ladda ner en mapp"
+      ],
+      "Cannot share root folder": [
+        "Kan inte dela rotmapp"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan inte verifiera vem som laddade upp denna fil"
+      ],
+      "Could not find an available name": [
+        "Kunde inte hitta ett tillgängligt namn"
+      ],
+      "Could not load sharing details": [
+        "Kunde inte ladda delningsdetaljer"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunde inte läsa del av denna fil: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Kunde inte låsa upp den överordnade mappen"
+      ],
+      "Could not unlock this item": [
+        "Kunde inte låsa upp detta objekt"
+      ],
+      "Device not found": [
+        "Enhet hittades inte"
+      ],
+      "Failed to get inviter keys": [
+        "Misslyckades med att hämta inbjudningsnycklar"
+      ],
+      "Failed to verify invitation": [
+        "Misslyckades med att verifiera inbjudan"
+      ],
+      "File download failed due to empty response": [
+        "Filnedladdning misslyckades på grund av tomt svar"
+      ],
+      "File has no revision": [
+        "Fil har ingen version"
+      ],
+      "Invitation not found": [
+        "Inbjudan hittades inte"
+      ],
+      "Item not found": [
+        "Objekt hittades inte"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta"
+      ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Saknar signatur för ${ signatureType }"
+      ],
+      "Name must not be empty": [
+        "Namn får inte vara tomt"
+      ],
+      "Only admins can convert external invitations": [
+        "Endast administratörer kan konvertera externa inbjudningar"
+      ],
+      "Operation aborted": [
+        "Åtgärd avbröts"
+      ],
+      "Operation failed, try again later": [
+        "Åtgärd misslyckades, försök igen senare"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
+      ],
+      "Photo is already in the target album": [
+        "Foto är redan i målalbum"
+      ],
+      "Photo not found": [
+        "Foto hittades inte"
+      ],
+      "Signature is missing": [
+        "Signatur saknas"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturverifiering misslyckades: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturverifiering för ${ signatureType } misslyckades"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturverifiering för ${ signatureType } misslyckades: ${ errorMessage }"
+      ],
+      "Some items could not be loaded": [
+        "Några objekt kunde inte laddas"
+      ],
+      "This file version could not be uploaded": [
+        "Denna filversion kunde inte laddas upp"
+      ],
+      "This item is no longer shared": [
+        "Detta objekt är inte delat längre"
+      ],
+      "This item is not shared": [
+        "Detta objekt är inte delat"
+      ],
+      "Verification keys are not available": [
+        "Verifieringsnycklar är inte tillgängliga"
+      ],
+      "You can create public links for your own files only": [
+        "Du kan endast skapa offentliga länkar för dina egna filer"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan bara ladda upp en ny version till en fil"
+      ],
+      "You do not have access to this item": [
+        "Du har inte åtkomst till detta objekt"
+      ],
+      "You do not have access to this shared item": [
+        "Du har inte åtkomst till detta delade objekt"
       ]
     },
     "error": {
@@ -6856,6 +6982,30 @@
       ],
       "Stay on your plan and get 50% off your next month": [
         "Stanna kvar på ditt paket och få 50 % rabatt för din nästa månad"
+      ],
+      "Author is not provided on public link": [
+        "Författare är inte angiven på offentlig länk"
+      ],
+      "Find out what can be migrated.": [
+        "Ta reda på vad som kan migreras."
+      ],
+      "No users to display": [
+        "Inga användare att visa"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "You": [
+        "Du"
       ]
     },
     "info": {
@@ -9974,6 +10124,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betala med ${ IDEAL_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
@@ -11975,6 +12128,21 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Activated": [
+        "Aktiverad"
+      ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "Size": [
+        "Storlek"
+      ],
+      "User": [
+        "Användare"
       ]
     },
     "TableHeader": {
@@ -12852,6 +13020,18 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
+      "Domain names": [
+        "Domännamn"
+      ],
+      "Select users to migrate": [
+        "Välj användare att migrera"
+      ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13468,6 +13648,57 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Aktiverat"
+      ],
+      "All": [
+        "Alla"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Not activated": [
+        "Inte aktiverad"
+      ],
+      "Pending": [
+        "Väntande"
+      ]
+    },
+    "Import status": {
+      "Has errors": [
+        "Har fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Pending": [
+        "Väntar"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attribut"
+      ],
+      "key": [
+        "nyckel"
+      ],
+      "membership": [
+        "medlemskap"
+      ],
+      "name": [
+        "namn"
       ]
     }
   }
