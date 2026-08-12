@@ -215,6 +215,17 @@ export interface AssistantCallOptions {
     clientToolExecutor?: ClientToolExecutor;
 }
 
+export interface AssistantCallResult {
+    status: Status;
+    /** The chain ran out of client-tool rounds mid-task, so the model never got to close it off. */
+    stoppedOnBudget: boolean;
+    /**
+     * The chain as it stands, ending on an empty assistant turn — pass it back to carry on from a
+     * `stoppedOnBudget` stop. Only meaningful then: on a normal finish the closing answer is not in it.
+     */
+    turns: Turn[];
+}
+
 /**
  * Request interceptor function type
  */

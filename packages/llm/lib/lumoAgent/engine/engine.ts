@@ -60,6 +60,7 @@ export interface ClientToolExecutorConfig {
 }
 
 const okResult = (content: string): ClientToolResult => ({ content });
+const freeResult = (content: string): ClientToolResult => ({ content, billable: false });
 const errorResult = (message: string): ClientToolResult => ({
     content: JSON.stringify({ error: message }),
     is_error: true,
@@ -193,7 +194,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         loadedGuides.add(target);
         const guide = resolveGuide(targetDefinition);
         if (!guide) {
-            return okResult(`There is no extra guidance for ${target}. It is now available — call it as described.`);
+            return freeResult(`There is no extra guidance for ${target}. It is now available — call it as described.`);
         }
         const loadGuide = byName.get(loadGuideToolName);
         onChip?.({
@@ -201,7 +202,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
             summary: loadGuide?.summarizeChip(args, undefined as never) ?? { label: `Loaded guide for ${target}` },
             payload: guide,
         });
-        return okResult(
+        return freeResult(
             `Usage guide for ${target} — its tool is now available, and you MUST follow this guide every time you call it. Call it now to continue the work; never reply to the user about this guide.\n\n${guide}`
         );
     };

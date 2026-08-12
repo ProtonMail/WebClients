@@ -26,6 +26,7 @@ export {
     type ChunkCallback,
     type FinishCallback,
     type AssistantCallOptions,
+    type AssistantCallResult,
     type RequestInterceptor,
     type ResponseInterceptor,
     type RequestContext,

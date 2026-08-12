@@ -175,6 +175,16 @@ describe('createClientToolExecutor', () => {
             expect(second.content).not.toContain('BODY');
         });
 
+        it('bills a repeat load but not a first one, so a stuck model burns budget instead of spinning', async () => {
+            const { executor } = setup();
+
+            const [first] = await executor.execute([call('load_guide', { guide: 'make_filter' })]);
+            const [second] = await executor.execute([call('load_guide', { guide: 'make_filter' })]);
+
+            expect(first.billable).toBe(false);
+            expect(second.billable).toBeUndefined();
+        });
+
         it('reports an unknown guide as an error without loading anything', async () => {
             const { executor } = setup();
 
