@@ -23,6 +23,8 @@ export interface SubSectionConfig {
     available?: boolean;
     beta?: boolean;
     variant?: SettingsLayoutVariant;
+    /** Translated terms a user might search for to land on this subsection. */
+    keywords?: string[];
 }
 
 export interface SettingsAreaConfig {
@@ -40,6 +42,8 @@ export interface SubrouteConfig {
     icon?: IconName;
     available?: boolean;
     variant?: SettingsLayoutVariant;
+    /** Translated terms a user might search for to land on this subroute. */
+    keywords?: string[];
 }
 
 export interface SubrouteGroup {

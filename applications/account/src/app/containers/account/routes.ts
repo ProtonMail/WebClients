@@ -48,34 +48,60 @@ function getV2DashboardSections(
             id: 'PendingInvitations',
             available: hasPendingInvitations,
             invisibleTitle: true,
+            keywords: [
+                c('familyOffer_2023:Action').t`View invitation`,
+                c('account_search_index').t`Join organization`,
+                c('account_search_index').t`Group plan invitation`,
+            ],
         },
         {
             text: c('Title').t`Your plan`,
             invisibleTitle: true,
             id: 'YourPlan',
+            keywords: [
+                c('Action').t`Manage subscription`,
+                c('Action').t`Edit billing cycle`,
+                c('Action').t`Explore other plans`,
+            ],
         },
         {
             text: c('Title').t`Compare plans`,
             invisibleTitle: true,
             id: 'YourPlanUpsell',
             available: canPay && !planIsManagedExternally,
+            keywords: [
+                c('Title').t`Get complete privacy coverage`,
+                c('account_search_index').t`Upgrade plan`,
+                c('account_search_index').t`Compare plans`,
+            ],
         },
         {
             text: c('Title').t`Downloads`,
             invisibleTitle: true,
             available: app !== APPS.PROTONACCOUNT,
             id: 'DownloadAndInfo',
+            keywords: [
+                c('account_search_index').t`Download apps`,
+                c('Download').t`Installation guide`,
+                c('account_search_index').t`Desktop and mobile apps`,
+            ],
         },
         {
             text: c('Title').t`Also in your plan`,
             invisibleTitle: true,
             id: 'AlsoInYourPlan',
+            keywords: [
+                c('Title').t`Get more from your privacy suite`,
+                c('account_search_index').t`Included apps`,
+                c('account_search_index').t`Privacy services`,
+            ],
         },
         {
             text: c('Title').t`Deep dive into email blog posts`,
             invisibleTitle: true,
             id: 'Blog',
             available: app !== APPS.PROTONACCOUNT && app !== APPS.PROTONMEET,
+            keywords: [c('account_search_index').t`Blog articles`, c('account_search_index').t`Privacy guides`],
         },
     ];
 }
@@ -98,45 +124,82 @@ function getV1DashboardSections(
             text: hasSplitStorage ? c('Title').t`Your storage` : undefined,
             id: 'your-storage',
             available: hasSplitStorage && showStorageSection,
+            keywords: [
+                c('storage_split: info').t`Get more storage`,
+                c('account_search_index').t`Storage usage`,
+                c('account_search_index').t`Storage space`,
+            ],
         },
         {
             text: hasSplitStorage && showStorageSection ? c('Title').t`Your plan` : undefined,
             id: 'your-plan',
             available: canPay,
+            keywords: [
+                c('Action').t`Customize plan`,
+                c('Action').t`Edit billing cycle`,
+                c('new_plans: Title').t`Your account's usage`,
+            ],
         },
         {
             id: 'assistant-toggle',
             available: !assistantKillSwitch,
+            keywords: [
+                c('Info').t`${BRAND_NAME} Scribe writing assistant`,
+                c('account_search_index').t`Writing assistant`,
+                c('account_search_index').t`AI assistant`,
+            ],
         },
         {
             text: c('Title').t`Your subscriptions`,
             id: 'your-subscriptions',
             available: isPaid && canPay,
+            keywords: [
+                c('Action subscription').t`Reactivate`,
+                c('account_search_index').t`Subscription status`,
+                c('account_search_index').t`Subscription end date`,
+            ],
         },
         {
             text: c('Title').t`Payment methods`,
             id: 'payment-methods',
             available: canPay,
+            keywords: [
+                c('Action').t`Add credit / debit card`,
+                c('Action').t`Add PayPal`,
+                c('account_search_index').t`Automatic renewal`,
+            ],
         },
         {
             text: c('Title').t`Credits`,
             id: 'credits',
             available: canPay,
+            keywords: [c('Action').t`Add credits`, c('Credits').t`Available credits`],
         },
         {
             text: c('Title').t`Gift code`,
             id: 'gift-code',
             available: canPay,
+            keywords: [c('Placeholder').t`Add gift code`, c('account_search_index').t`Redeem discount code`],
         },
         {
             text: c('Title').t`Invoices`,
             id: 'invoices',
             available: canPay,
+            keywords: [
+                c('Action').t`Edit billing address`,
+                c('Select invoice document').t`Credit note`,
+                c('Select invoice document').t`Transactions`,
+            ],
         },
         {
             text: c('Title').t`Notifications`,
             id: 'email-subscription',
             available: !isMember,
+            keywords: [
+                c('news').t`${BRAND_NAME} newsletter`,
+                c('news').t`${BRAND_NAME} offers and promotions`,
+                c('news').t`Daily email notifications`,
+            ],
         },
         {
             text: c('Title').t`Cancel subscription`,
@@ -147,17 +210,32 @@ function getV1DashboardSections(
                 cancellablePlan &&
                 isSubscriptionRenewEnabled(subscription) &&
                 !cancellableOnlyViaSupport,
+            keywords: [
+                c('account_search_index').t`Cancel plan`,
+                c('account_search_index').t`Stop subscription renewal`,
+                c('account_search_index').t`Downgrade to Free`,
+            ],
         },
         {
             text: c('Title').t`Cancel subscription`,
             id: 'cancel-via-support',
             available: isPaid && canPay && cancellableOnlyViaSupport,
+            keywords: [
+                c('Action').t`Contact us`,
+                c('account_search_index').t`Cancel plan`,
+                c('account_search_index').t`Customer support`,
+            ],
         },
         {
             text: c('Title').t`Cancel subscription`,
             id: 'downgrade-account',
             available:
                 isPaid && canPay && !cancellablePlan && !hasExternalMemberCapableB2BPlan && !cancellableOnlyViaSupport,
+            keywords: [
+                c('account_search_index').t`Downgrade plan`,
+                c('account_search_index').t`Downgrade to Free`,
+                c('account_search_index').t`Cancel plan`,
+            ],
         },
     ];
 }
@@ -188,12 +266,22 @@ export const getRecoverySettings = ({
                     text: c('Title').t`Email verification`,
                     to: '/email',
                     variant: SettingsLayoutVariant.Card,
+                    keywords: [
+                        c('Status').t`Add an email address`,
+                        c('account_search_index').t`Recovery email address`,
+                        c('account_search_index').t`One-time code`,
+                    ],
                 },
                 phone: {
                     id: 'phone',
                     text: c('Title').t`SMS verification`,
                     to: '/phone',
                     variant: SettingsLayoutVariant.Card,
+                    keywords: [
+                        c('Status').t`Add a phone number`,
+                        c('account_search_index').t`Recovery phone number`,
+                        c('account_search_index').t`One-time code`,
+                    ],
                 },
             },
         },
@@ -208,6 +296,10 @@ export const getRecoverySettings = ({
                     to: '/device-backup',
                     available: isRecoveryFileAvailable,
                     variant: SettingsLayoutVariant.Card,
+                    keywords: [
+                        c('Status').t`Available on this device`,
+                        c('account_search_index').t`Encryption backup in this browser`,
+                    ],
                 },
                 backupFile: {
                     id: 'backup-file',
@@ -215,6 +307,10 @@ export const getRecoverySettings = ({
                     to: '/backup-file',
                     available: isRecoveryFileAvailable,
                     variant: SettingsLayoutVariant.Card,
+                    keywords: [
+                        c('account_search_index').t`Encryption backup file`,
+                        c('account_search_index').t`Download recovery file`,
+                    ],
                 },
                 recoveryContacts: {
                     id: 'recovery-contacts',
@@ -222,6 +318,11 @@ export const getRecoverySettings = ({
                     to: '/recovery-contacts',
                     available: isDelegatedAccessAvailable,
                     variant: SettingsLayoutVariant.Card,
+                    keywords: [
+                        c('emergency_access').t`Add recovery contact`,
+                        c('emergency_access').t`Send recovery request`,
+                        c('account_search_index').t`Trusted contact`,
+                    ],
                 },
             },
         },
@@ -236,6 +337,11 @@ export const getRecoverySettings = ({
                     to: '/phrase',
                     available: isMnemonicAvailable,
                     variant: SettingsLayoutVariant.Card,
+                    keywords: [
+                        c('Status').t`Generate a recovery phrase`,
+                        c('account_search_index').t`12-word phrase`,
+                        c('account_search_index').t`Mnemonic`,
+                    ],
                 },
                 signedInReset: {
                     id: 'signed-in-reset',
@@ -243,12 +349,17 @@ export const getRecoverySettings = ({
                     to: '/signed-in-reset',
                     available: isSessionRecoveryAvailable,
                     variant: SettingsLayoutVariant.Card,
+                    keywords: [
+                        c('Tooltip').t`Allow resetting your password from the account settings`,
+                        c('account_search_index').t`Password reset request`,
+                    ],
                 },
                 qrCode: {
                     id: 'qr-code',
                     text: c('Title').t`QR code sign-in`,
                     to: '/qr-code',
                     variant: SettingsLayoutVariant.Card,
+                    keywords: [c('edm').t`Sign in with QR code`, c('account_search_index').t`Scan QR code`],
                 },
                 emergencyContacts: {
                     id: 'emergency-contacts',
@@ -256,6 +367,11 @@ export const getRecoverySettings = ({
                     to: '/emergency-contacts',
                     available: isDelegatedAccessAvailable,
                     variant: SettingsLayoutVariant.Card,
+                    keywords: [
+                        c('emergency_access').t`Add emergency contact`,
+                        c('emergency_access').t`People who trust me`,
+                        c('emergency_access').t`Wait time for access`,
+                    ],
                 },
             },
         },
@@ -275,10 +391,19 @@ export const getRecoverySettings = ({
                 text: '',
                 id: 'checklist',
                 available: isRecoveryScoreBannerAvailable,
+                keywords: [
+                    c('Recovery score').t`Recoverability`,
+                    c('Action').t`View recovery setup details`,
+                    c('account_search_index').t`Recovery score`,
+                ],
             },
             {
                 text: '',
                 id: 'password-reminder',
+                keywords: [
+                    c('Password reminder').t`Do you remember your ${BRAND_NAME} password?`,
+                    c('account_search_index').t`Password reminder`,
+                ],
             },
         ],
         subrouteGroups: recoverySubrouteGroups,
@@ -397,27 +522,50 @@ export const getAccountAppRoutes = ({
                         invisibleTitle: true,
                         id: 'YourPlanV2',
                         available: !((isFree || hasLumo(subscription)) && showVPNDashboardVariant === 'B'),
+                        keywords: [
+                            c('Action').t`Manage subscription`,
+                            c('Action').t`Edit billing cycle`,
+                            c('Action').t`Explore other plans`,
+                        ],
                     },
                     {
                         text: c('Title').t`Upgrade your privacy`,
                         invisibleTitle: true,
                         id: 'YourPlanUpsellsSectionV2',
                         available: canPay && !planIsManagedExternally,
+                        keywords: [
+                            c('Title').t`Get complete privacy coverage`,
+                            c('account_search_index').t`Upgrade plan`,
+                            c('account_search_index').t`Compare plans`,
+                        ],
                     },
                     {
                         text: c('Title').t`Downloads`,
                         invisibleTitle: true,
                         id: 'VpnDownloadAndInfoSection',
+                        keywords: [
+                            c('Title').t`Get more from your VPN`,
+                            c('Download').t`Download for Windows`,
+                            c('Download').t`Installation guide`,
+                        ],
                     },
                     {
                         text: c('Title').t`Also in your plan`,
                         invisibleTitle: true,
                         id: 'VpnAlsoInYourPlanSection',
+                        keywords: [
+                            c('account_search_index').t`Included apps`,
+                            c('account_search_index').t`Privacy services`,
+                        ],
                     },
                     {
                         text: c('Title').t`Deep dive into VPN blog posts`,
                         invisibleTitle: true,
                         id: 'VpnBlogSection',
+                        keywords: [
+                            c('account_search_index').t`Blog articles`,
+                            c('account_search_index').t`Privacy guides`,
+                        ],
                     },
                 ],
             },
@@ -455,47 +603,82 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Your plan`,
                         invisibleTitle: true,
                         id: 'YourPlanV2',
+                        keywords: [
+                            c('Action').t`Manage subscription`,
+                            c('Action').t`Edit billing cycle`,
+                            c('Action').t`Explore other plans`,
+                        ],
                     },
                     {
                         id: 'assistant-toggle',
                         available: !assistantKillSwitch,
                         variant: SettingsLayoutVariant.Card,
+                        keywords: [
+                            c('Info').t`${BRAND_NAME} Scribe writing assistant`,
+                            c('account_search_index').t`Writing assistant`,
+                            c('account_search_index').t`AI assistant`,
+                        ],
                     },
                     {
                         text: c('Title').t`Your subscriptions`,
                         id: 'your-subscriptions',
                         available: isPaid && canPay,
                         variant: SettingsLayoutVariant.Card,
+                        keywords: [
+                            c('Action subscription').t`Reactivate`,
+                            c('account_search_index').t`Subscription status`,
+                            c('account_search_index').t`Subscription end date`,
+                        ],
                     },
                     {
                         text: c('Title').t`Payment methods`,
                         id: 'payment-methods',
                         available: canPay,
                         variant: SettingsLayoutVariant.Card,
+                        keywords: [
+                            c('Action').t`Add credit / debit card`,
+                            c('Action').t`Add PayPal`,
+                            c('account_search_index').t`Automatic renewal`,
+                        ],
                     },
                     {
                         text: c('Title').t`Credits`,
                         id: 'credits',
                         available: canPay,
                         variant: SettingsLayoutVariant.Card,
+                        keywords: [c('Action').t`Add credits`, c('Credits').t`Available credits`],
                     },
                     {
                         text: c('Title').t`Gift code`,
                         id: 'gift-code',
                         available: canPay,
                         variant: SettingsLayoutVariant.Card,
+                        keywords: [
+                            c('Placeholder').t`Add gift code`,
+                            c('account_search_index').t`Redeem discount code`,
+                        ],
                     },
                     {
                         text: c('Title').t`Invoices`,
                         id: 'invoices',
                         available: canPay,
                         variant: SettingsLayoutVariant.Card,
+                        keywords: [
+                            c('Action').t`Edit billing address`,
+                            c('Select invoice document').t`Credit note`,
+                            c('Select invoice document').t`Transactions`,
+                        ],
                     },
                     {
                         text: c('Title').t`Notifications`,
                         id: 'email-subscription',
                         available: !isMember,
                         variant: SettingsLayoutVariant.Card,
+                        keywords: [
+                            c('news').t`${BRAND_NAME} newsletter`,
+                            c('news').t`${BRAND_NAME} offers and promotions`,
+                            c('news').t`Daily email notifications`,
+                        ],
                     },
                     {
                         text: c('Title').t`Cancel subscription`,
@@ -507,12 +690,22 @@ export const getAccountAppRoutes = ({
                             isSubscriptionRenewEnabled(subscription) &&
                             !cancellableOnlyViaSupport,
                         variant: SettingsLayoutVariant.Card,
+                        keywords: [
+                            c('account_search_index').t`Cancel plan`,
+                            c('account_search_index').t`Stop subscription renewal`,
+                            c('account_search_index').t`Downgrade to Free`,
+                        ],
                     },
                     {
                         text: c('Title').t`Cancel subscription`,
                         id: 'cancel-via-support',
                         available: isPaid && canPay && cancellableOnlyViaSupport,
                         variant: SettingsLayoutVariant.Card,
+                        keywords: [
+                            c('Action').t`Contact us`,
+                            c('account_search_index').t`Cancel plan`,
+                            c('account_search_index').t`Customer support`,
+                        ],
                     },
                     {
                         text: c('Title').t`Cancel subscription`,
@@ -524,6 +717,11 @@ export const getAccountAppRoutes = ({
                             !hasExternalMemberCapableB2BPlan &&
                             !cancellableOnlyViaSupport,
                         variant: SettingsLayoutVariant.Card,
+                        keywords: [
+                            c('account_search_index').t`Downgrade plan`,
+                            c('account_search_index').t`Downgrade to Free`,
+                            c('account_search_index').t`Cancel plan`,
+                        ],
                     },
                 ],
             },
@@ -537,6 +735,11 @@ export const getAccountAppRoutes = ({
                     {
                         text: '',
                         id: 'upgrade',
+                        keywords: [
+                            c('new_plans: title').t`Unlock premium features by upgrading`,
+                            c('Action').t`View plans details`,
+                            c('account_search_index').t`Compare plans`,
+                        ],
                     },
                 ],
             },
@@ -551,11 +754,17 @@ export const getAccountAppRoutes = ({
                     {
                         text: '',
                         id: 'account',
+                        keywords: [
+                            c('Label').t`Username`,
+                            c('Title').t`Change password`,
+                            c('Label').t`Two-password mode`,
+                        ],
                     },
                     {
                         text: c('Title').t`Two-factor authentication`,
                         id: 'two-fa',
                         available: !user.Flags.sso,
+                        keywords: [c('Label').t`Authenticator app`, c('fido2: Info').t`Security key`],
                     },
                     {
                         text: c('Title').t`Notifications`,
@@ -564,23 +773,35 @@ export const getAccountAppRoutes = ({
                             !user.isPrivate &&
                             !accountRecoveryRouterFlags.isAccountRecoveryAvailable &&
                             flags.canDisplayNonPrivateEmailPhone,
+                        keywords: [c('Label').t`Notification email address`, c('label').t`Notification phone number`],
                     },
                     {
                         text: c('Title').t`Account recovery`,
                         id: 'account-recovery',
                         // This is a special section for non-private users that only contains the QR code sign in
                         available: !user.isPrivate && !accountRecoveryRouterFlags.isAccountRecoveryAvailable,
+                        keywords: [c('edm').t`Sign in with QR code`, c('account_search_index').t`Scan QR code`],
                     },
                     {
                         text: c('Title').t`Emergency access`,
                         id: 'emergency-access',
                         // This is a special section for non-private users that only contains incoming delegated access
                         available: accountRecoveryRouterFlags.isNonPrivateDelegatedAccessAvailable,
+                        keywords: [
+                            c('emergency_access').t`People who trust me`,
+                            c('emergency_access').t`Request access`,
+                            c('account_search_index').t`Trusted contact`,
+                        ],
                     },
                     {
                         text: c('emergency_access').t`Data recovery contacts`,
                         id: recoveryIds.recoveryContacts,
                         available: accountRecoveryRouterFlags.isNonPrivateDelegatedAccessAvailable,
+                        keywords: [
+                            c('emergency_access').t`Add recovery contact`,
+                            c('emergency_access').t`Send recovery request`,
+                            c('account_search_index').t`Trusted contact`,
+                        ],
                     },
                     {
                         text: isFamilyOrg
@@ -589,29 +810,49 @@ export const getAccountAppRoutes = ({
                         id: 'family-plan',
                         // We don't want admin to leave the organization, they need first to be demoted
                         available: !isAdmin && (isFamilyOrg || (isVisionaryPlan && isMemberProton)),
+                        keywords: [
+                            c('familyOffer_2023:Family plan').t`Leave Family plan`,
+                            c('account_search_index').t`Leave organization`,
+                        ],
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the payment methods for them here
                     {
                         text: c('Title').t`Payment methods`,
                         id: 'payment-methods',
                         available: paymentsSectionAvailable,
+                        keywords: [
+                            c('Action').t`Add credit / debit card`,
+                            c('Action').t`Add PayPal`,
+                            c('account_search_index').t`Automatic renewal`,
+                        ],
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the credits for them here
                     {
                         text: c('Title').t`Credits`,
                         id: 'credits',
                         available: paymentsSectionAvailable,
+                        keywords: [c('Action').t`Add credits`, c('Credits').t`Available credits`],
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the invoices for them here
                     {
                         text: c('Title').t`Invoices`,
                         id: 'invoices',
                         available: paymentsSectionAvailable,
+                        keywords: [
+                            c('Action').t`Edit billing address`,
+                            c('Select invoice document').t`Credit note`,
+                            c('Select invoice document').t`Transactions`,
+                        ],
                     },
                     {
                         text: c('Title').t`Delete account`,
                         id: 'delete',
                         available: user.isSelf && (user.Type === UserType.PROTON || user.Type === UserType.EXTERNAL),
+                        keywords: [
+                            c('Action').t`Delete your account`,
+                            c('account_search_index').t`Close account`,
+                            c('account_search_index').t`Permanently delete data`,
+                        ],
                     },
                 ],
             },
@@ -623,6 +864,7 @@ export const getAccountAppRoutes = ({
                 subsections: [
                     {
                         id: 'language-time',
+                        keywords: [c('Label').t`Default language`, c('Label').t`Time format`, c('Label').t`Week start`],
                     },
                 ],
             },
@@ -637,10 +879,20 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Theme`,
                         id: 'theme',
                         available: showThemeSelection,
+                        keywords: [
+                            c('Label').t`Sync with system`,
+                            c('account_search_index').t`Dark mode`,
+                            c('account_search_index').t`Light mode`,
+                        ],
                     },
                     {
                         text: c('Title').t`Accessibility`,
                         id: 'accessibility',
+                        keywords: [
+                            c('Label').t`Font size`,
+                            c('Label').t`Font family`,
+                            c('Label').t`Disable animations`,
+                        ],
                     },
                 ],
             },
@@ -654,35 +906,65 @@ export const getAccountAppRoutes = ({
                         text: PROTON_SENTINEL_NAME,
                         id: 'sentinel',
                         available: !isSSOUser,
+                        keywords: [
+                            c('account_search_index').t`Advanced account protection`,
+                            c('account_search_index').t`High-security mode`,
+                        ],
                     },
                     {
                         text: DARK_WEB_MONITORING_NAME,
                         id: 'breaches',
                         available: !isSSOUser,
+                        keywords: [
+                            c('Link').t`How does monitoring work?`,
+                            c('account_search_index').t`Data breach alerts`,
+                            c('account_search_index').t`Leaked password`,
+                        ],
                     },
                     {
                         text: c('sso').t`Devices management`,
                         id: 'devices',
                         available: getIsGlobalSSOAccount(user),
+                        keywords: [c('Action').t`Remove all other devices`, c('sso').t`Current device`],
                     },
                     {
                         text: c('Title').t`Session management`,
                         id: 'sessions',
                         available: !isSSOUser,
+                        keywords: [
+                            c('Action').t`Revoke all other sessions`,
+                            c('account_search_index').t`Active sessions`,
+                            c('account_search_index').t`Sign out other devices`,
+                        ],
                     },
                     {
                         text: c('Title').t`Account monitor`,
                         id: 'logs',
                         available: !isSSOUser,
+                        keywords: [
+                            c('Log preference').t`Enable detailed events`,
+                            c('account_search_index').t`Authentication logs`,
+                            c('account_search_index').t`Sign-in history`,
+                        ],
                     },
                     {
                         text: c('Title').t`Third-party apps and services`,
                         id: 'third-party',
                         available: showVideoConferenceSection,
+                        keywords: [
+                            c('Service provider').t`Zoom`,
+                            c('Title').t`Connection status`,
+                            c('account_search_index').t`Video conferencing`,
+                        ],
                     },
                     {
                         text: c('Title').t`Privacy and data collection`,
                         id: 'privacy',
+                        keywords: [
+                            c('Label').t`Collect usage diagnostics`,
+                            c('Label').t`Send crash reports`,
+                            c('account_search_index').t`Telemetry`,
+                        ],
                     },
                 ],
             },
@@ -697,10 +979,19 @@ export const getAccountAppRoutes = ({
                 subsections: [
                     {
                         id: 'referral-invite-section',
+                        keywords: [
+                            c('Label').t`Share your referral link`,
+                            c('Label').t`Invite via email`,
+                            c('account_search_index').t`Referral link`,
+                        ],
                     },
                     {
                         text: c('Title').t`Your referrals`,
                         id: 'referral-reward-section',
+                        keywords: [
+                            c('account_search_index').t`Referral rewards`,
+                            c('account_search_index').t`Referral credits`,
+                        ],
                     },
                 ],
             },
@@ -715,14 +1006,27 @@ export const getAccountAppRoutes = ({
                 subsections: [
                     {
                         id: 'easy-switch',
+                        keywords: [
+                            c('Info').t`Choose your service to connect with`,
+                            c('Action').t`Google`,
+                            c('Import provider').t`More import options`,
+                        ],
                     },
                     {
                         text: c('Title').t`Imports`,
                         id: 'import-list',
+                        keywords: [
+                            c('Title header').t`Organization migrations`,
+                            c('account_search_index').t`Import history`,
+                        ],
                     },
                     {
                         text: c('Title').t`Connected emails`,
                         id: 'forwarding-list',
+                        keywords: [
+                            c('account_search_index').t`External mailbox`,
+                            c('account_search_index').t`Connected addresses`,
+                        ],
                     },
                 ],
             },
@@ -732,7 +1036,15 @@ export const getAccountAppRoutes = ({
                 to: '/group-membership',
                 icon: 'pass-group',
                 available: (memberships?.length ?? 0) > 0,
-                subsections: [{ id: 'group-membership' }],
+                subsections: [
+                    {
+                        id: 'group-membership',
+                        keywords: [
+                            c('account_search_index').t`Group invitations`,
+                            c('account_search_index').t`Leave group`,
+                        ],
+                    },
+                ],
             },
         } satisfies Record<string, SectionConfig>,
     };
