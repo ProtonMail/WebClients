@@ -15,8 +15,10 @@ export function buildArtifactActionLlmPrompt(meta: ArtifactActionMeta): string {
             .t`Improve this selected part of the "${artifactTitle}" code artifact (id: ${artifactId}). Update the artifact, replacing:\n\n"${selection}"\n\nwith improved code.`;
     }
 
+    const instruction = userInstruction ?? '';
+
     return c('collider_2025:Prefill')
-        .t`Edit the "${artifactTitle}" artifact (id: ${artifactId}). Replace this part:\n\n"${selection}"\n\nwith: ${userInstruction ?? ''}`;
+        .t`Edit the "${artifactTitle}" artifact (id: ${artifactId}). Replace this part:\n\n"${selection}"\n\nwith: ${instruction}`;
 }
 
 export function getArtifactActionLabel(kind: ArtifactActionMeta['kind']): string {
