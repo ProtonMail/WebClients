@@ -1,8 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
-import { Chip, LumoLogo, LumoThinking, PromptInput, ServerToolChip, renderReplyMarkdown } from '@proton/lumo-ui';
+import {
+    Chip,
+    ConfirmCardShell,
+    LumoLogo,
+    LumoThinking,
+    PromptInput,
+    ServerToolChip,
+    renderReplyMarkdown,
+} from '@proton/lumo-ui';
 
 import ResultTile from './ResultTile';
 import ConfirmCard, { defaultCardRenderer } from './cardRenderers';
@@ -11,6 +22,8 @@ import type { CardRenderers, LumoAgentItem, ServerToolMeta } from './types';
 interface Props {
     items: LumoAgentItem[];
     isBusy: boolean;
+    /** The chain ran out of tool rounds and is waiting on the user to say whether it should carry on. */
+    isAtToolLimit: boolean;
     cardRenderers?: CardRenderers;
     serverToolMeta?: Partial<Record<ServerToolName, ServerToolMeta>>;
     thinkingLabel?: string;
@@ -19,6 +32,8 @@ interface Props {
     onStop: () => void;
     onConfirm: (params: Record<string, any>) => void;
     onCancel: () => void;
+    onResume: () => void;
+    onDismissToolLimit: () => void;
 }
 
 /**
@@ -29,6 +44,7 @@ interface Props {
 const LumoAgentPanel = ({
     items,
     isBusy,
+    isAtToolLimit,
     cardRenderers,
     serverToolMeta,
     thinkingLabel,
@@ -37,6 +53,8 @@ const LumoAgentPanel = ({
     onStop,
     onConfirm,
     onCancel,
+    onResume,
+    onDismissToolLimit,
 }: Props) => {
     const [draft, setDraft] = useState('');
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -126,6 +144,18 @@ const LumoAgentPanel = ({
                     labels={pending.labels}
                     onApply={onConfirm}
                     onCancel={onCancel}
+                />
+            ) : null}
+
+            {isAtToolLimit ? (
+                <ConfirmCardShell
+                    icon={IcHourglass}
+                    title={c('Title').t`Still working on it`}
+                    subtitle={c('Info').t`This is taking a lot of steps. Should it carry on?`}
+                    applyLabel={c('Action').t`Keep going`}
+                    cancelLabel={c('Action').t`Stop here`}
+                    onApply={onResume}
+                    onCancel={onDismissToolLimit}
                 />
             ) : null}
 
