@@ -27,17 +27,10 @@ interface Props {
     useEmail?: boolean;
     showFeaturesColumn?: boolean;
     showUsage?: boolean;
-    showConnectionColumn?: boolean;
     columnDisplay?: MemberUsageColumnDisplay;
 }
 
-const UsersAndAddressesSectionHeader = ({
-    useEmail,
-    showFeaturesColumn,
-    showUsage,
-    showConnectionColumn,
-    columnDisplay,
-}: Props) => {
+const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn, showUsage, columnDisplay }: Props) => {
     const [adminRolesUIState] = useAdminRolesUI();
     const { feature: adminRolesModalFeature, loading: adminRolesModalLoading } = useFeature(
         FeatureCode.AdminRolesOnboardingModal
@@ -142,7 +135,7 @@ const UsersAndAddressesSectionHeader = ({
                     .t`Last time this user signed in or used the ${VPN_APP_NAME} app on their device.`,
                 'w-1/6'
             ),
-        showConnectionColumn &&
+        showUsage &&
             usageHeaderCell(
                 'lastConnection',
                 c('Title header for members table').t`Last connection`,
