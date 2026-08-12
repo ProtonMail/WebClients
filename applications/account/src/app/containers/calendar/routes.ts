@@ -39,8 +39,24 @@ export const getCalendarAppRoutes = ({ app, user, organization, flags }: Organiz
                 to: CALENDAR_SETTINGS_ROUTE.GET_APPS,
                 icon: 'arrow-down-line',
                 subsections: [
-                    { id: CALENDAR_SETTINGS_SECTION_ID.MOBILE_APP, text: c('Title').t`Download the mobile apps` },
-                    { id: CALENDAR_SETTINGS_SECTION_ID.DESKTOP_APP, text: c('Title').t`Download the desktop app` },
+                    {
+                        id: CALENDAR_SETTINGS_SECTION_ID.MOBILE_APP,
+                        text: c('Title').t`Download the mobile apps`,
+                        keywords: [
+                            c('account_search_index').t`App Store`,
+                            c('account_search_index').t`Play Store`,
+                            c('account_search_index').t`iOS and Android apps`,
+                        ],
+                    },
+                    {
+                        id: CALENDAR_SETTINGS_SECTION_ID.DESKTOP_APP,
+                        text: c('Title').t`Download the desktop app`,
+                        keywords: [
+                            c('Action').t`Download for Windows`,
+                            c('Action').t`Download for macOS`,
+                            c('account_search_index').t`Linux desktop app`,
+                        ],
+                    },
                 ],
             },
             general: {
@@ -52,24 +68,44 @@ export const getCalendarAppRoutes = ({ app, user, organization, flags }: Organiz
                     {
                         text: c('Title').t`Time zone`,
                         id: CALENDAR_SETTINGS_SECTION_ID.TIME_ZONE,
+                        keywords: [
+                            c('Primary timezone').t`Primary time zone`,
+                            c('Primary timezone').t`Secondary time zone`,
+                            c('Label').t`Auto-detect primary time zone`,
+                        ],
                     },
                     {
                         text: c('Title').t`Layout`,
                         id: CALENDAR_SETTINGS_SECTION_ID.LAYOUT,
+                        keywords: [
+                            c('Label').t`Default view`,
+                            c('Label').t`Week start`,
+                            c('Label').t`Show week numbers`,
+                        ],
                     },
                     {
                         text: c('Title').t`Invitations`,
                         id: CALENDAR_SETTINGS_SECTION_ID.INVITATIONS,
+                        keywords: [
+                            c('account_search_index').t`Invitation language`,
+                            c('account_search_index').t`Auto-add invitations to calendar`,
+                            c('Label').t`Auto-add Meet links`,
+                        ],
                     },
                     {
                         text: c('Title').t`Integrations`,
                         id: CALENDAR_SETTINGS_SECTION_ID.INTEGRATIONS,
                         available:
                             (isZoomIntegrationEnabled || isProtonMeetIntegrationEnabled) && canDisableIntegrations,
+                        keywords: [
+                            c('Label').t`Video conferencing with Zoom`,
+                            c('account_search_index').t`Zoom meeting links`,
+                        ],
                     },
                     {
                         text: c('Title').t`Other preferences`,
                         id: CALENDAR_SETTINGS_SECTION_ID.OTHER_PREFERENCES,
+                        keywords: [c('Label').t`Keyboard shortcuts`],
                     },
                 ],
             },
@@ -82,10 +118,20 @@ export const getCalendarAppRoutes = ({ app, user, organization, flags }: Organiz
                     {
                         text: c('Title').t`My calendars`,
                         id: CALENDAR_SETTINGS_SECTION_ID.PERSONAL_CALENDARS,
+                        keywords: [
+                            c('Action').t`Create calendar`,
+                            c('Action').t`Set as default`,
+                            c('Title').t`Delete calendar`,
+                        ],
                     },
                     {
                         text: c('Title').t`Other calendars`,
                         id: CALENDAR_SETTINGS_SECTION_ID.OTHER_CALENDARS,
+                        keywords: [
+                            c('Action').t`Add calendar from URL`,
+                            c('Action').t`Add public holidays`,
+                            c('Header; Table with list of calendars arranged by type').t`Subscribed`,
+                        ],
                     },
                 ],
             },
@@ -99,10 +145,12 @@ export const getCalendarAppRoutes = ({ app, user, organization, flags }: Organiz
                     {
                         text: c('Title').t`Import`,
                         id: CALENDAR_SETTINGS_SECTION_ID.IMPORT,
+                        keywords: [c('Action').t`Import from ICS`, c('account_search_index').t`Import events`],
                     },
                     {
                         text: c('Title').t`Export`,
                         id: CALENDAR_SETTINGS_SECTION_ID.EXPORT,
+                        keywords: [c('Action').t`Download ICS`, c('Action').t`Select a calendar to export`],
                     },
                 ],
             },
