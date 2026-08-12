@@ -5,7 +5,7 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getUserPermissions } from '@proton/shared/lib/api/userPermissions';
-import { PERMISSIONS, type Permission, type User, type UserPermission } from '@proton/shared/lib/interfaces';
+import { type OrgPermissions, PERMISSIONS, type User, type UserPermission } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
 import { isOwnerRole } from '../organizationRoles/helpers';
@@ -14,7 +14,7 @@ import { type UserState, userFulfilled, userThunk } from '../user';
 const name = 'userPermissions';
 
 export interface UserPermissionsState extends UserState {
-    [name]: ModelState<UserPermission & { permissions: Record<Permission, boolean>; role: number }>;
+    [name]: ModelState<UserPermission & { permissions: OrgPermissions; role: number }>;
 }
 
 type SliceState = UserPermissionsState[typeof name];
@@ -25,12 +25,14 @@ export const selectUserPermissions = (state: UserPermissionsState) => state[name
 export const getOrgPermissions = (
     permissions: UserPermission['Permissions'],
     grantAllPermissions: boolean
-): Record<Permission, boolean> => {
+): OrgPermissions => {
     const permissionsSet = new Set(permissions);
     // @todo: remove the dependency of user state when legacy permission system is retired
     const entries = PERMISSIONS.map((p) => [p, grantAllPermissions || permissionsSet.has(p)] as const);
-    return Object.fromEntries(entries) as Record<Permission, boolean>;
+    return Object.fromEntries(entries) as OrgPermissions;
 };
+
+export const EMPTY_ORG_PERMISSIONS: OrgPermissions = getOrgPermissions([], false);
 
 const modelThunk = createAsyncModelThunk<Model, UserPermissionsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {

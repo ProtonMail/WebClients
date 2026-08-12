@@ -23,6 +23,7 @@ import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { EMPTY_ORG_PERMISSIONS } from '@proton/account/userPermissions';
 import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import {
     AutomaticSubscriptionModal,
@@ -91,7 +92,6 @@ import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import type { Permission } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
@@ -152,7 +152,7 @@ const MainContainer: FunctionComponent = () => {
         organization,
         isB2BDrive: false,
         isGroupOwner,
-        permissions: permissions ?? ({} as Record<Permission, boolean>),
+        permissions: permissions ?? EMPTY_ORG_PERMISSIONS,
         memberships: [],
     };
 

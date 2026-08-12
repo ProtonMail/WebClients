@@ -31,7 +31,7 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import type { Permission } from '@proton/shared/lib/interfaces/UserPermission';
+import type { OrgPermissions } from '@proton/shared/lib/interfaces/UserPermission';
 import {
     getIsBYOEAccount,
     getIsExternalAccount,
@@ -59,7 +59,7 @@ type VpnNavContext = {
     hasOrganizationAccess: boolean;
     organizationHasSecurityFeatures: boolean;
     flags: Partial<Record<FeatureFlag, boolean>>;
-    permissions: Partial<Record<Permission, boolean>>;
+    permissions: OrgPermissions;
 } & NavContext &
     PropContext;
 
@@ -139,7 +139,7 @@ const routesDefinition = {
                             label: () => c('Title').t`Users`,
                             to: '/users-addresses',
                             isVisible: ({ context }) =>
-                                !context.needsOrgSetup && !!context.permissions['account.user.read'],
+                                !context.needsOrgSetup && context.permissions['account.user.read'],
                             sections: [
                                 {
                                     id: 'organization.org-and-people.users.multi-user-creation',
@@ -156,13 +156,14 @@ const routesDefinition = {
                             label: () => c('Title').t`Groups`,
                             to: '/user-groups',
                             isVisible: ({ context }) =>
-                                !context.needsOrgSetup && !!context.permissions['account.group.read'],
+                                !context.needsOrgSetup && context.permissions['account.group.read'],
                         },
                         {
                             id: 'organization.org-and-people.access-control',
                             label: () => c('Title').t`Access control`,
                             to: '/access-control',
-                            isVisible: ({ context }) => !context.needsOrgSetup,
+                            isVisible: ({ context }) =>
+                                !context.needsOrgSetup && context.permissions['account.access_control.read'],
                             sections: [
                                 {
                                     id: 'organization.org-and-people.access-control.feature-access',
@@ -233,6 +234,7 @@ const routesDefinition = {
                             to: '/gateways',
                             isVisible: ({ context }) =>
                                 context.canHaveOrganization &&
+                                context.permissions['account.gateway.read'] &&
                                 (getHasVpnB2BPlan(context.subscription) || hasAnyB2bBundle(context.subscription)),
                             sections: [{ id: 'organization.vpn.gateways.servers', to: 'servers' }],
                         },
@@ -243,6 +245,7 @@ const routesDefinition = {
                             isVisible: ({ context }) =>
                                 context.canHaveOrganization &&
                                 !!context.flags.SharedServerFeature &&
+                                context.permissions['account.shared_server.read'] &&
                                 (getHasVpnB2BPlan(context.subscription) || hasAnyB2bBundle(context.subscription)),
                             sections: [{ id: 'organization.vpn.shared-servers.servers', to: 'servers' }],
                         },
@@ -251,7 +254,7 @@ const routesDefinition = {
                             label: () => c('Title').t`Always-on VPN`,
                             to: '/always-on-vpn',
                             meta: { beta: true },
-                            isVisible: ({ context }) => !!context.flags.B2BAlwaysOnEnabled,
+                            isVisible: ({ context }) => !!context.flags.B2BAlwaysOnEnabled && context.permissions['account.always_on.read'],
                         },
                         {
                             id: 'organization.vpn.gateway-monitor',
@@ -284,7 +287,7 @@ const routesDefinition = {
                     icon: 'shield',
                     to: '/authentication-security',
                     isVisible: ({ context }) =>
-                        !!context.permissions['account.security_policy.read'] &&
+                        context.permissions['account.security_policy.read'] &&
                         context.hasOrganizationAccess &&
                         context.organizationHasSecurityFeatures,
                     sections: [
@@ -340,7 +343,7 @@ const routesDefinition = {
                             id: 'organization.monitoring.org-monitor',
                             label: () => c('Title').t`Activity monitor`,
                             to: '/activity-monitor',
-                            isVisible: ({ context }) => !!context.permissions['account.activity_log.read'],
+                            isVisible: ({ context }) => context.permissions['account.activity_log.read'],
                         },
                     ],
                 },
@@ -574,7 +577,7 @@ type Args = {
     subscription: MaybeFreeSubscription;
     context: PropContext;
     flags?: Partial<Record<FeatureFlag, boolean>>;
-    permissions?: Partial<Record<Permission, boolean>>;
+    permissions: OrgPermissions;
 };
 
 export const resolveNavigation = ({
@@ -616,7 +619,7 @@ export const resolveNavigation = ({
             organizationHasSecurityFeatures,
             ...context,
             flags: flags ?? {},
-            permissions: permissions ?? {},
+            permissions,
         },
     });
 
