@@ -1,15 +1,13 @@
-import {
-    initEvent,
-    serverEvent,
-    userPermissionsThunk,
-    userSettingsThunk,
-    userThunk,
-    welcomeFlagsActions,
-} from '@proton/account';
 import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { serverEvent } from '@proton/account/eventLoop';
+import { initEvent } from '@proton/account/init';
+import { userThunk } from '@proton/account/user';
 import { userKeysThunk } from '@proton/account/userKeys';
+import { userPermissionsThunk } from '@proton/account/userPermissions';
+import { userSettingsThunk } from '@proton/account/userSettings';
+import { welcomeFlagsActions } from '@proton/account/welcomeFlags';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces';
 import { telemetry } from '@proton/shared/lib/telemetry';
