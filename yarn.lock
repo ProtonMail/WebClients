@@ -10685,9 +10685,11 @@ __metadata:
   resolution: "@proton/logger@workspace:packages/logger"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/jest-env": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@swc/jest": "npm:^0.2.39"
     "@types/jest": "npm:^30.0.0"
+    core-js: "npm:^3.49.0"
     eslint: "npm:^9.39.5"
     fake-indexeddb: "npm:^6.2.5"
     idb: "npm:^8.0.3"
