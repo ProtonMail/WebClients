@@ -189,7 +189,7 @@ const SettingsSearchArea = ({ app, routes }: { app: APP_NAMES; routes: ReturnTyp
         return null;
     }
 
-    if (adminSidebar.enabled) {
+    if (app === APPS.PROTONVPN_SETTINGS && adminSidebar.enabled) {
         return <AutocompleteSettingsSearch options={adminSidebar.settings} />;
     }
 
