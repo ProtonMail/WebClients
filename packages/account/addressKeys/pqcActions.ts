@@ -1,4 +1,5 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
+import { c } from 'ttag';
 
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import { resignSKLWithPrimaryKey } from '@proton/key-transparency/shared';
@@ -15,6 +16,7 @@ import { getIsRecoveryFileAvailable } from '@proton/shared/lib/recoveryFile/reco
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys/index';
 import { addressesThunk } from '../addresses';
 import type { DelegatedAccessState } from '../delegatedAccess';
+import { getHasAccountKeyChangeBlockingDelegatedAccess } from '../delegatedAccess/accountKeyChangeBlocking';
 import { listOutgoingDelegatedAccess, updateDelegatedAccess } from '../delegatedAccess/outgoingActions';
 import type { KtState } from '../kt';
 import { getKTActivation } from '../kt/actions';
@@ -101,6 +103,17 @@ export const generatePqcUserKey = (): ThunkAction<
             userKeys,
         });
         const isDeviceRecoveryEnabled = getIsDeviceRecoveryEnabled(userSettings, extra.authentication);
+        // `PostQuantumKeysOptInSection` does not allow opt-ins if any in-progress delegated access is detected,
+        // but the user can still reach this stage if they they were originally allowed to opt-in, but the account
+        // key generation failed, and in the meantime a delegated access state changed to a blocking one.
+        // We still need prevent account key generation in this case: the user can still manually generate PQC
+        // address keys instead (if they do not wish to manually cut-off the delegated access)
+        if (await dispatch(getHasAccountKeyChangeBlockingDelegatedAccess())) {
+            throw new Error(
+                c('Error')
+                    .t`A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it`
+            );
+        }
         const previouslyEnabledDelegatedAccesses = (await dispatch(listOutgoingDelegatedAccess())).filter(
             (delegatedAccess) => delegatedAccess.State === DelegatedAccessStateEnum.Enabled
         );
