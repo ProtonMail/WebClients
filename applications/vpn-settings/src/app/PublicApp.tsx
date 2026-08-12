@@ -12,17 +12,17 @@ import { ResetPasswordPage } from 'proton-account/src/app/unauthed-forgot-passwo
 import useLocationWithoutLocale, { getLocalePathPrefix } from 'proton-account/src/app/useLocationWithoutLocale';
 
 import { createUnleash, loadCrypto } from '@proton/account/bootstrap';
-import {
-    ModalsChildren,
-    NotificationsChildren,
-    type OnLoginCallbackArguments,
-    type OnLoginCallbackResult,
-    type ProtonLoginCallback,
-    UnAuthenticated,
-    UnauthenticatedApiProvider,
-} from '@proton/components';
+import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
+import type {
+    OnLoginCallbackArguments,
+    OnLoginCallbackResult,
+    ProtonLoginCallback,
+} from '@proton/components/containers/app/interface';
+import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { AuthType } from '@proton/components/containers/login/interface';
+import ModalsChildren from '@proton/components/containers/modals/Children';
+import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import useInstance from '@proton/hooks/useInstance';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';

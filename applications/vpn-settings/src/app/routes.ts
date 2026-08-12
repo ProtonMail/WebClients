@@ -7,7 +7,7 @@ import type {
 import { c } from 'ttag';
 
 import type { ThemeColor } from '@proton/colors/types';
-import type { SectionConfig } from '@proton/components';
+import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import {
     type MaybeFreeSubscription,
