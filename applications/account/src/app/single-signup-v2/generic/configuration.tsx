@@ -5,9 +5,9 @@ import type { Audience } from '@proton/shared/lib/interfaces';
 
 import { SignupType } from '../../signup/interfaces';
 import type { SignupV2Theme } from '../SignupV2ThemeProvider';
+import CustomStep from '../defaultCustomStep/CustomStep';
 import type { PlanParameters, SignupConfiguration, SignupParameters2 } from '../interface';
 import { getMailConfiguration } from '../mail/configuration';
-import { getCustomStep } from './CustomStep';
 
 export const getGenericConfiguration = ({
     toApp,
@@ -48,9 +48,9 @@ export const getGenericConfiguration = ({
 
     return {
         ...mailConfiguration,
-        product: toApp ?? mailConfiguration.product,
+        product: toApp,
         signupTypes: [SignupType.Proton, SignupType.External],
         logo,
-        CustomStep: getCustomStep({ hasExploreStep: !toApp }),
+        CustomStep,
     };
 };

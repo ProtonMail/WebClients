@@ -20,7 +20,6 @@ import Layout from '../Layout';
 import Step2 from '../Step2';
 import type { SignupCustomStepProps, SignupModelV2 } from '../interface';
 import CongratulationsStep from './CongratulationsStep';
-import ExploreStep from './ExploreStep';
 import OrgSetupStep from './OrgSetupStep';
 import RecoveryStep from './RecoveryStep';
 import MnemonicRecoveryStep from './recovery/MnemonicRecoveryStep';
@@ -30,7 +29,6 @@ enum Step {
     Congratulations,
     SaveRecovery,
     OrgSetup,
-    Explore,
     RedirectAdmin,
 }
 
@@ -57,10 +55,7 @@ const CustomStep = ({
     measure,
     product,
     signupParameters,
-    hasExploreStep,
-}: SignupCustomStepProps & {
-    hasExploreStep?: boolean;
-}) => {
+}: SignupCustomStepProps) => {
     const createFlow = useFlowRef();
     const mnemonicData = model.cache?.setupData?.mnemonicData;
 
@@ -76,7 +71,6 @@ const CustomStep = ({
         !isBYOEAccount && !mnemonicData && Step.SaveRecovery,
         isB2BAudienceFromPlan && Step.OrgSetup,
         isB2BAudienceFromPlan && Step.RedirectAdmin,
-        !!hasExploreStep && Step.Explore,
     ].filter((step) => step !== false);
 
     const [step, setStep] = useState<Step>(steps[0]);
@@ -92,7 +86,7 @@ const CustomStep = ({
     const handleError = useErrorHandler();
     const verificationModel = cache.humanVerificationResult?.verificationModel;
 
-    const handleNextStep = (targetApp: APP_NAMES = product) => {
+    const handleNextStep = () => {
         const stepIndex = steps.indexOf(step);
         if (stepIndex === -1) {
             return;
@@ -103,7 +97,7 @@ const CustomStep = ({
         if (nextStep === undefined) {
             const signupActionResponse = handleDone({
                 cache,
-                appIntent: { app: targetApp, ref: hasExploreStep ? 'product-switch' : undefined },
+                appIntent: undefined,
             });
             return onSetup({ type: 'signup', payload: signupActionResponse });
         }
@@ -132,7 +126,11 @@ const CustomStep = ({
         if (step === undefined) {
             const signupActionResponse = handleDone({
                 cache,
-                appIntent: { app: product, ref: hasExploreStep ? 'product-switch' : undefined },
+                appIntent: product
+                    ? {
+                          app: product,
+                      }
+                    : undefined,
             });
             void onSetup({ type: 'signup', payload: signupActionResponse });
         }
@@ -259,41 +257,17 @@ const CustomStep = ({
                             return handleNextStep();
                         }
 
-                        const b2bSettingsApp = [APPS.PROTONMAIL, APPS.PROTONVPN_SETTINGS, APPS.PROTONLUMO].includes(
-                            product as any
-                        )
-                            ? product
-                            : APPS.PROTONMAIL;
+                        const b2bSettingsApp =
+                            product &&
+                            ([APPS.PROTONMAIL, APPS.PROTONVPN_SETTINGS, APPS.PROTONLUMO] as APP_NAMES[]).includes(
+                                product
+                            )
+                                ? product
+                                : APPS.PROTONMAIL;
 
                         document.location.assign(
                             getAppHref(`/${getSlugFromApp(b2bSettingsApp)}${pathname}`, APPS.PROTONACCOUNT, localID)
                         );
-                    }}
-                />
-            )}
-            {step === Step.Explore && (
-                <ExploreStep
-                    user={cache.setupData?.user}
-                    localID={getLocalIdAndPathInfo(model).localID}
-                    plan={plan?.Name}
-                    onExplore={async (app) => {
-                        try {
-                            if (!cache || cache.type !== 'signup') {
-                                throw new Error('Missing cache');
-                            }
-                            const validateFlow = createFlow();
-
-                            await measure({
-                                event: TelemetryAccountSignupEvents.onboardFinish,
-                                dimensions: {},
-                            });
-
-                            if (validateFlow()) {
-                                void handleNextStep(app);
-                            }
-                        } catch (error) {
-                            handleError(error);
-                        }
                     }}
                 />
             )}

@@ -20,7 +20,7 @@ import { getPlanName, getPlanTitle, getTaxMode } from '../../core/subscription/h
 import type { Coupon, Subscription, SubscriptionEstimation } from '../../core/subscription/interface';
 import { isFreeSubscription } from '../../core/type-guards';
 
-const getRenewalPricingSubjectToChangeText = (app: APP_NAMES): string | string[] | null => {
+const getRenewalPricingSubjectToChangeText = (app: APP_NAMES | undefined): string | string[] | null => {
     const termsAndConditionsUrl = getTermsURL(app);
     // translator: Full sentence is: Renewal pricing subject to change according to <terms and conditions>.
     const termsAndConditionsLink = (
@@ -37,7 +37,7 @@ type Translation = string | (string | string[])[];
 
 const appendTermsAndConditionsLink = (
     text: Translation,
-    app: APP_NAMES,
+    app: APP_NAMES | undefined,
     options?: { short?: boolean }
 ): Translation => {
     const short = options?.short ?? false;
@@ -105,7 +105,7 @@ const getRegularRenewalNoticeText = ({
 }: RenewalNoticeProps & {
     checkout: PaymentsCheckoutUI;
     currency: Currency;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
 }) => {
     const renewalTime = calculateRenewalTimeDuringCheckout(
         subscription,
@@ -180,7 +180,7 @@ const getRenewNoticeTextForLimitedCoupons = ({
     coupon: Coupon;
     checkout: PaymentsCheckoutUI;
     short?: boolean;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
 }) => {
     if (!coupon || !coupon.MaximumRedemptionsPerUser) {
         return;
@@ -305,7 +305,7 @@ const getPassLifetimeRenewNoticeText = ({
     app,
 }: {
     subscription?: Subscription | FreeSubscription;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
 }) => {
     const planName = getPlanName(subscription);
     if (!planName || planName === PLANS.FREE) {
@@ -334,7 +334,7 @@ const getLifetimeRenewNoticeText = ({
 }: {
     planIDs: PlanIDs;
     subscription?: Subscription | FreeSubscription;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
 }) => {
     const planName = getPlanNameFromIDs(planIDs);
     if (planName === PLANS.PASS_LIFETIME) {
@@ -360,7 +360,7 @@ export const getCheckoutRenewNoticeText = ({
     currency: Currency;
     checkout: PaymentsCheckoutUI;
     short?: boolean;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
 } & RenewalNoticeProps): ReactNode => {
     if (isLifetimePlanSelected(planIDs)) {
         return getLifetimeRenewNoticeText({ ...renewalNoticeProps, planIDs, app });
@@ -416,7 +416,7 @@ export const getTrialRenewalNoticeTextWithTermsAndConditions = ({
     app,
 }: {
     renewCycle: Cycle | null;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
 }) => {
     if (renewCycle === null) {
         return '';
@@ -438,7 +438,7 @@ export const getCheckoutRenewNoticeTextFromCheckResult = ({
     planIDs: PlanIDs;
     short?: boolean;
     subscription?: Subscription | FreeSubscription;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
 }) => {
     const isTrial = checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
