@@ -6,6 +6,7 @@ describe('MAIL_RULES', () => {
         ['a tool returning does not end the turn', 'A tool returning is not a reason to reply'],
         ['reads need no permission', 'Reads need no permission'],
         ['only the last read persists on screen', 'Only your LAST one persists'],
+        ['starring and unstarring are one tool, not two', 'there is no separate unstar tool'],
     ])('pins %s', (_case, claim) => {
         expect(MAIL_RULES).toContain(claim);
     });
