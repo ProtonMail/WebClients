@@ -943,6 +943,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
+      ],
+      "Ask me next time": [
+        "Spørg mig næste gang"
+      ],
+      "Save preferences": [
+        "Gem præferencer"
       ]
     },
     "Actions message": {
@@ -6004,6 +6010,42 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Converting document...": [
+        "Konverterer dokument..."
+      ],
+      "Creating new document...": [
+        "Opretter nyt dokument..."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Fejl ved konvertering af dokument: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Fejl ved indlæsning af dokument: ${ errorDetail }"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Få e-mailopdateringer om kommentarer og forslag, der tilføjes til dine dokumenter."
+      ],
+      "Get Notified About Comments": [
+        "Få besked om kommentarer"
+      ],
+      "Making a copy...": [
+        "Kopierer..."
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Intet dokument angivet i URL. Gå tilbage til ${ DRIVE_APP_NAME } og vælg et dokument."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Den URL, du indtastede, ser ud til at være blevet kopieret forkert fra Slack. Når du kopierer lange links fra Slack, højreklik på linket, vælg så \"Kopiér link\" i stedet for at kopiere den afkortede URL-tekst direkte."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Aktivér kontoen for denne bruger i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Fjern denne bruger fra arkivet i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Ophæv suspenderingen af denne bruger i ${ provider.adminConsoleName } for at migrere dem."
       ]
     },
     "info": {
@@ -6540,6 +6582,12 @@
       ],
       "Your password (trusted contact)": [
         "Din adgangskode (betroet kontakt)"
+      ],
+      "Enable email notifications": [
+        "Aktivér e-mailnotifikationer"
+      ],
+      "Include document name in notification": [
+        "Inkludér dokumentnavn i notifikationen"
       ]
     },
     "Label for contact group color": {
@@ -8299,6 +8347,9 @@
       ],
       "Your settings have been changed successfully": [
         "Dine indstillinger er blevet ændret"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Da dette dokument befandt sig i en delt mappe, er det kun mappens ejer, der kan gendanne det"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9423,6 +9474,9 @@
       ],
       "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
         "Dit aktuelle regneark, inklusiv alle ark inde i, vil blive erstattet med denne version."
+      ],
+      "Creating new spreadsheet...": [
+        "Opretter nyt regneark..."
       ]
     },
     "sheets_2025:Label": {
@@ -10905,6 +10959,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitation til at tilgå emnet."
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status for datamigration fra ${ providerName } til ${ BRAND_NAME }"
       ]
     },
     "tooltip": {
