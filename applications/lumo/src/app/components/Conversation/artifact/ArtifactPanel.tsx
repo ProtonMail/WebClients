@@ -1,4 +1,4 @@
-import { Suspense, lazy, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,106 +6,40 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 
-import { useLumoTheme } from '../../../providers';
 import DropdownMenu from '../../DropdownMenu';
 import { useArtifactContext } from './ArtifactContext';
 import { ArtifactInlineEdit } from './ArtifactInlineEdit';
 import type { ArtifactRegistry } from './artifactRegistry';
-import type { ParsedArtifact } from './parseArtifacts';
-import { getFileExtension } from './parseArtifacts';
+import { CodeRenderer } from './artifactRenderers';
+import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
+import type { ArtifactType, ParsedArtifact } from './parseArtifacts';
 
 import './ArtifactPanel.scss';
 
-// Lazy-load the syntax highlighter to keep the initial bundle small
-const LumoMarkdownCodeBlockHighlighter = lazy(() => import('../../LumoMarkdown/LumoMarkdownCodeBlockHighlighter'));
-
-// Lazy-load react-markdown for document rendering
-const MarkdownRenderer = lazy(() =>
-    import('react-markdown').then((mod) => ({
-        default: (props: { children: string }) => {
-            const Markdown = mod.default;
-            return <Markdown>{props.children}</Markdown>;
-        },
-    }))
-);
-
 // ---------------------------------------------------------------------------
-// Full renderers — used once generation is complete
+// Content — dispatches to the type's registered renderer
 // ---------------------------------------------------------------------------
 
-interface CodeRendererProps {
-    artifact: ParsedArtifact;
-    showLineNumbers: boolean;
-}
-
-const CodeRenderer = ({ artifact, showLineNumbers }: CodeRendererProps) => {
-    const { theme } = useLumoTheme();
-
-    if (!artifact.content) {
-        return <p className="color-hint text-sm p-4">{c('collider_2025:Info').t`No content generated`}</p>;
-    }
-
-    return (
-        <div className="artifact-code-content overflow-auto flex-1 w-full">
-            <Suspense
-                fallback={
-                    <pre className="text-monospace text-sm m-0 p-4 overflow-auto color-norm">{artifact.content}</pre>
-                }
-            >
-                <div className={showLineNumbers ? 'artifact-code--line-numbers' : undefined}>
-                    <LumoMarkdownCodeBlockHighlighter
-                        code={artifact.content}
-                        language={artifact.language ?? 'text'}
-                        theme={theme}
-                    />
-                </div>
-            </Suspense>
-        </div>
-    );
-};
-
-interface DocumentRendererProps {
-    artifact: ParsedArtifact;
-}
-
-const DocumentRenderer = ({ artifact }: DocumentRendererProps) => {
-    if (!artifact.content) {
-        return <p className="color-hint text-sm p-4">{c('collider_2025:Info').t`No content generated`}</p>;
-    }
-
-    return (
-        <div className="artifact-document-content overflow-auto flex-1 p-4">
-            <Suspense
-                fallback={
-                    <pre className="text-monospace text-sm m-0 overflow-auto color-norm whitespace-pre-wrap">
-                        {artifact.content}
-                    </pre>
-                }
-            >
-                <div className="artifact-markdown prose">
-                    <MarkdownRenderer>{artifact.content}</MarkdownRenderer>
-                </div>
-            </Suspense>
-        </div>
-    );
-};
+export type WebpageViewMode = 'preview' | 'code';
 
 interface ArtifactContentProps {
     artifact: ParsedArtifact;
     showLineNumbers: boolean;
+    // Only meaningful for 'webpage' artifacts — lets the user inspect the generated source
+    // instead of the live sandboxed render. Ignored for code/document, which have only one view.
+    webpageViewMode?: WebpageViewMode;
 }
 
-const ArtifactContent = ({ artifact, showLineNumbers }: ArtifactContentProps) => {
+const ArtifactContent = ({ artifact, showLineNumbers, webpageViewMode }: ArtifactContentProps) => {
     try {
-        if (artifact.type === 'code') {
-            return <CodeRenderer artifact={artifact} showLineNumbers={showLineNumbers} />;
+        if (artifact.type === 'webpage' && webpageViewMode === 'code') {
+            return <CodeRenderer artifact={{ ...artifact, language: 'html' }} showLineNumbers={showLineNumbers} />;
         }
-        return <DocumentRenderer artifact={artifact} />;
+        const { Renderer } = ARTIFACT_TYPE_CONFIG[artifact.type];
+        return <Renderer artifact={artifact} showLineNumbers={showLineNumbers} />;
     } catch {
         return (
             <div className="artifact-fallback p-4 flex-1 overflow-auto">
@@ -125,12 +59,12 @@ const ArtifactContent = ({ artifact, showLineNumbers }: ArtifactContentProps) =>
 interface ArtifactSwitcherEntry {
     id: string;
     title: string;
-    type: 'code' | 'document';
+    type: ArtifactType;
     hasUnseenRevision: boolean;
 }
 
 interface PanelHeaderProps {
-    type?: 'code' | 'document';
+    type?: ArtifactType;
     language?: string;
     title?: string;
     isStreaming: boolean;
@@ -146,6 +80,8 @@ interface PanelHeaderProps {
     onNextVersion?: () => void;
     switcherEntries?: ArtifactSwitcherEntry[];
     onSelectArtifact?: (id: string) => void;
+    webpageViewMode?: WebpageViewMode;
+    onWebpageViewModeChange?: (mode: WebpageViewMode) => void;
 }
 
 const getVersionLabel = (versionNumber: number, totalVersions: number) => {
@@ -169,12 +105,21 @@ const PanelHeader = ({
     onNextVersion,
     switcherEntries,
     onSelectArtifact,
+    webpageViewMode,
+    onWebpageViewModeChange,
 }: PanelHeaderProps) => (
     <div className="artifact-panel-header flex flex-row items-center gap-2 px-3 py-2 border-bottom border-weak shrink-0 w-full">
         {type ? (
             <span className="artifact-type-badge flex flex-row items-center gap-1 shrink-0 bg-strong">
-                {type === 'code' ? <IcCode size={3} /> : <IcFileLines size={3} />}
-                <span className="text-xs font-bold">{type === 'code' ? 'CODE' : 'DOC'}</span>
+                {(() => {
+                    const { icon: Icon, badgeLabel } = ARTIFACT_TYPE_CONFIG[type];
+                    return (
+                        <>
+                            <Icon size={3} />
+                            <span className="text-xs font-bold">{badgeLabel}</span>
+                        </>
+                    );
+                })()}
             </span>
         ) : (
             // Type not yet known (partial open tag)
@@ -186,6 +131,7 @@ const PanelHeader = ({
             </span>
         )}
         {type === 'code' && language && <span className="text-xs color-hint shrink-0">{language}</span>}
+        {type === 'webpage' && webpageViewMode === 'code' && <span className="text-xs color-hint shrink-0">html</span>}
         <span className="flex-1 text-sm font-medium text-ellipsis overflow-hidden whitespace-nowrap color-norm">
             {title ?? (
                 <span
@@ -245,7 +191,10 @@ const PanelHeader = ({
                         value: entry.id,
                         icon: (
                             <span className="relative flex">
-                                {entry.type === 'code' ? <IcCode size={4} /> : <IcFileLines size={4} />}
+                                {(() => {
+                                    const EntryIcon = ARTIFACT_TYPE_CONFIG[entry.type].icon;
+                                    return <EntryIcon size={4} />;
+                                })()}
                                 {entry.hasUnseenRevision && (
                                     <span className="artifact-unseen-dot absolute rounded-full bg-danger" />
                                 )}
@@ -256,6 +205,30 @@ const PanelHeader = ({
                         },
                     }))}
                 />
+            )}
+            {!isStreaming && type === 'webpage' && webpageViewMode && onWebpageViewModeChange && (
+                <div className="artifact-view-toggle flex flex-row items-center rounded-full bg-weak p-0.5 shrink-0">
+                    <Button
+                        shape={webpageViewMode === 'code' ? 'solid' : 'ghost'}
+                        color={webpageViewMode === 'code' ? 'norm' : 'weak'}
+                        size="small"
+                        pill
+                        className="artifact-view-toggle-btn"
+                        onClick={() => onWebpageViewModeChange('code')}
+                    >
+                        {c('collider_2025:Action').t`Code`}
+                    </Button>
+                    <Button
+                        shape={webpageViewMode === 'preview' ? 'solid' : 'ghost'}
+                        color={webpageViewMode === 'preview' ? 'norm' : 'weak'}
+                        size="small"
+                        pill
+                        className="artifact-view-toggle-btn"
+                        onClick={() => onWebpageViewModeChange('preview')}
+                    >
+                        {c('collider_2025:Action').t`Preview`}
+                    </Button>
+                </div>
             )}
             {!isStreaming && (
                 <>
@@ -339,7 +312,15 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
     } = useArtifactContext();
     const [showLineNumbers, setShowLineNumbers] = useState(false);
     const [copySuccess, setCopySuccess] = useState(false);
+    const [webpageViewMode, setWebpageViewMode] = useState<WebpageViewMode>('preview');
     const contentRef = useRef<HTMLDivElement>(null);
+
+    // Reset to the live preview whenever the user switches to a different artifact (or version) —
+    // a user manually inspecting the source of one webpage shouldn't land back on the source of
+    // the next one they open.
+    useEffect(() => {
+        setWebpageViewMode('preview');
+    }, [selectedArtifact?.id, selectedVersionIndex]);
 
     if (!selectedArtifact) {
         return null;
@@ -359,7 +340,7 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
     };
 
     const handleDownload = () => {
-        const ext = artifact.type === 'document' ? 'md' : getFileExtension(artifact.language ?? 'txt');
+        const ext = ARTIFACT_TYPE_CONFIG[artifact.type].downloadExt(artifact);
         const filename = `${artifact.title.toLowerCase().replace(/\s+/g, '-')}.${ext}`;
         const blob = new Blob([artifact.content], { type: 'text/plain' });
         const url = URL.createObjectURL(blob);
@@ -395,12 +376,18 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
                 }}
                 switcherEntries={switcherEntries}
                 onSelectArtifact={openArtifact}
+                webpageViewMode={webpageViewMode}
+                onWebpageViewModeChange={setWebpageViewMode}
             />
             <div
                 ref={contentRef}
                 className="artifact-content-area relative flex flex-column flex-1 overflow-hidden w-full"
             >
-                <ArtifactContent artifact={artifact} showLineNumbers={showLineNumbers} />
+                <ArtifactContent
+                    artifact={artifact}
+                    showLineNumbers={showLineNumbers}
+                    webpageViewMode={webpageViewMode}
+                />
                 <ArtifactInlineEdit
                     containerRef={contentRef}
                     artifactId={artifact.id}

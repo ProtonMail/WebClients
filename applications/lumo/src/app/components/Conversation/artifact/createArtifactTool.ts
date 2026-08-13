@@ -1,7 +1,7 @@
 import type { ClientToolExecutor } from '@proton/lumo-api-client';
 
 import type { ContentBlock } from '../../../types';
-import { type ParsedArtifact, hashArtifactIdentity } from './parseArtifacts';
+import { type ArtifactType, type ParsedArtifact, hashArtifactIdentity, isArtifactType } from './parseArtifacts';
 
 export const CREATE_ARTIFACT_TOOL_NAME = 'create_artifact';
 
@@ -12,13 +12,19 @@ export const createArtifactToolExecutor: ClientToolExecutor = {
             function: {
                 name: CREATE_ARTIFACT_TOOL_NAME,
                 description:
-                    'Show a code snippet or document to the user in a dedicated side panel, instead of ' +
-                    'inline in the chat. This does not change what you write, only where it is shown — it ' +
-                    'applies to ordinary writing tasks too, not just code: a drafted email, letter, cover ' +
-                    'letter, essay, or report is a "document" for this tool just as much as a script is. Do ' +
-                    'NOT use it for short code snippets (1-2 lines) used to illustrate a point, brief ' +
-                    'structured answers (a small table, a short list), or content that only makes sense as ' +
-                    'part of your explanation — write those inline instead. To revise something you ' +
+                    'Show a code snippet, document, or web page to the user in a dedicated side panel, ' +
+                    'instead of inline in the chat. This does not change what you write, only where it is ' +
+                    'shown — it applies to ordinary writing tasks too, not just code: a drafted email, ' +
+                    'letter, cover letter, essay, or report is a "document" for this tool just as much as ' +
+                    'a script is. Do NOT use it for short code snippets (1-2 lines) used to illustrate a ' +
+                    'point, brief structured answers (a small table, a short list), or content that only ' +
+                    'makes sense as part of your explanation — write those inline instead. Use `type: ' +
+                    '"code"` (with `language: "html"`) when HTML is meant to be read as source, and ' +
+                    '`type: "webpage"` when it is a complete, self-contained HTML document meant to be ' +
+                    'rendered live in a sandboxed preview (interactive demos, small games, visualizations, ' +
+                    'styled pages) — webpage content must be fully self-contained (inline all CSS in ' +
+                    '`<style>` and all JS in `<script>`; images as `data:` URIs) since it cannot load ' +
+                    'external resources or make network requests when rendered. To revise something you ' +
                     'already created earlier in this conversation, call this again with the exact same ' +
                     '`id` and the full updated content (never a diff or partial update); use a new `id` ' +
                     "only for a genuinely new, unrelated artifact. If the user's message references an " +
@@ -34,7 +40,7 @@ export const createArtifactToolExecutor: ClientToolExecutor = {
                                 'stably identifies this artifact. Reuse the exact same value across turns ' +
                                 'when revising it.',
                         },
-                        type: { type: 'string', enum: ['code', 'document'] },
+                        type: { type: 'string', enum: ['code', 'document', 'webpage'] },
                         title: {
                             type: 'string',
                             description: 'Title case, 2-5 words, describing the content.',
@@ -68,15 +74,18 @@ export const createArtifactToolExecutor: ClientToolExecutor = {
     },
 };
 
-function normalizeType(value: unknown): 'code' | 'document' | undefined {
-    return value === 'code' || value === 'document' ? value : undefined;
+function normalizeType(value: unknown): ArtifactType | undefined {
+    return isArtifactType(value) ? value : undefined;
 }
 
 // This backend doesn't enforce strict JSON-schema conformance on tool arguments — a model can
 // (and in practice does) omit a field marked `required` in the schema, e.g. dropping `type`
 // while still supplying `language`. Rather than treat that as invalid and drop otherwise-good
 // content, infer `type` from whether a `language` was given: present → code, absent → document.
-function resolveType(rawType: unknown, language: string | undefined): 'code' | 'document' {
+// 'webpage' is deliberately never inferred — it has no `language` field to key off, and it's the
+// highest-blast-radius render path (a live sandboxed iframe), so it's only ever reached when the
+// model sends `type: "webpage"` explicitly.
+function resolveType(rawType: unknown, language: string | undefined): ArtifactType {
     const normalized = normalizeType(rawType);
     if (normalized) {
         return normalized;
