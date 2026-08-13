@@ -943,6 +943,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts.",
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
+      ],
+      "Keep going": [
+        "Continuer"
+      ],
+      "Stop here": [
+        "S'arrêter ici"
       ]
     },
     "Actions message": {
@@ -5881,6 +5887,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Cela demande beaucoup d'étapes. Faut-il continuer ?"
       ]
     },
     "info": {
@@ -7557,6 +7566,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès étendu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès limité"
       ]
     },
     "new_plans: feature highlight": {
@@ -9028,6 +9043,9 @@
       ],
       "User Admin": [
         "Administrateur des utilisateurs"
+      ],
+      "Organization Admin": [
+        "Administrateur de l'organisation"
       ]
     },
     "Role description": {
@@ -10713,6 +10731,9 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
+      ],
+      "Still working on it": [
+        "Je suis encore en train d'y travailler"
       ]
     },
     "Title header for keys table": {

@@ -956,6 +956,12 @@
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov"
+      ],
+      "Keep going": [
+        "Pokračujte"
+      ],
+      "Stop here": [
+        "Tu zastav"
       ]
     },
     "Actions message": {
@@ -6203,6 +6209,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Je to dosť zdĺhavé. Mám v tom pokračovať?"
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Na účely riešenia tohto problému budú informácie potrebné na odstraňovanie chýb nahrané na váš Drive a bezpečne zdieľané s tímom podpory spoločnosti ${ BRAND_NAME }. Môžu obsahovať aj obsah súborov. Zdieľanie môžete kedykoľvek zrušiť a zdieľané údaje budú po dokončení kontroly vymazané."
       ]
     },
     "info": {
@@ -6749,6 +6761,9 @@
       ],
       "Your password (trusted contact)": [
         "Vaše heslo (dôveryhodný kontakt)"
+      ],
+      "Include debug information": [
+        "Zahrnúť ladiace informácie"
       ]
     },
     "Label for contact group color": {
@@ -7902,6 +7917,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s rozšíreným prístupom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s obmedzeným prístupom"
       ]
     },
     "new_plans: feature highlight": {
@@ -8625,6 +8646,12 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavenia boli úspešne zmenené"
+      ],
+      "Failed to submit report": [
+        "Odosielanie hlásenia zlyhalo"
+      ],
+      "Report submitted successfully": [
+        "Hlásenie bolo úspešne odoslané"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11232,6 +11259,12 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
+      ],
+      "Report issue": [
+        "Nahlásiť problém"
+      ],
+      "Still working on it": [
+        "Stále na tom pracujem"
       ]
     },
     "Title header for keys table": {
