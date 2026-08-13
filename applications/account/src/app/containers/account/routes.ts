@@ -495,7 +495,7 @@ export const getAccountAppRoutes = ({
     const canAccessBilling = isFree || canPay || !isMember;
     // There are two paths where the dashboard is shown:
     // 1. (!isAdmin && canAccessBilling): if user can access billing, they can see the dashboard. "!isAdmin" is added because
-    //  admin without `account.dashboard.read` permission should not see the dashboard (e.g. User Admin has isAdmin = true 
+    //  admin without `account.dashboard.read` permission should not see the dashboard (e.g. User Admin has isAdmin = true
     //  but their responsiblity are CRUD members and groups only)
     // 2. permissions['account.dashboard.read']: this path grants the dashboard to any org member who holds the permission
     const shouldShowDashboard = (!isAdmin && canAccessBilling) || permissions['account.dashboard.read'];
@@ -758,6 +758,7 @@ export const getAccountAppRoutes = ({
                             c('Label').t`Username`,
                             c('Title').t`Change password`,
                             c('Label').t`Two-password mode`,
+                            c('Label').t`Password check-ins`,
                         ],
                     },
                     {
