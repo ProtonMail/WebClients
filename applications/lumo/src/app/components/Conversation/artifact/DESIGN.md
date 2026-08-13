@@ -133,16 +133,39 @@ The gap before the chip appears (while the model is still writing its intro / th
 
 The registry isn't extra/duplicated mutable state in the problematic sense — it's a pure projection over the message chain (the single source of truth), recomputed fresh each time, the same pattern as a memoized selector. The in-flight-message gap (chip visible but not yet in registry) is handled at the UI layer by disabling Open until finalize — not by opening a pre-registry panel preview.
 
-## Selection UI differs by artifact type (code vs document)
+## Selection UI differs by artifact type (code vs document vs webpage)
 
 **Decision:** when the user selects text in the artifact panel, the inline UI is type-specific:
 
 - **Code** — one-click **Explain** or **Improve** buttons (no freeform input). Explain asks for a chat explanation; Improve asks the model to revise the selected snippet in the artifact.
 - **Document** — freeform inline input ("Describe what you would like to update…") + send, same as a Canvas-style targeted edit.
+- **Webpage** — no selection-based inline edit at all. Content renders inside a sandboxed, cross-origin `srcDoc` iframe (see next section); the panel has no way to read a text selection out of it the way it can for DOM-rendered code/document content. Follow-up changes go through the normal composer message flow instead.
 
-**Why:** code and prose have different interaction patterns. Code benefits from quick, well-scoped actions; documents need open-ended edit instructions ("make it shorter", "change the tone"). A single doc-style textarea for both (introduced with the first inline editor) exposed the wrong affordance on code and regressed an intended Explain/Improve flow that never landed in git but was the product target.
+**Why:** code and prose have different interaction patterns. Code benefits from quick, well-scoped actions; documents need open-ended edit instructions ("make it shorter", "change the tone"). A single doc-style textarea for both (introduced with the first inline editor) exposed the wrong affordance on code and regressed an intended Explain/Improve flow that never landed in git but was the product target. Webpage inherited neither pattern since the rendering surface itself doesn't support selection.
 
-**Mechanism:** `ArtifactInlineEdit` branches on `artifactType`; prompt wording lives in `artifactActionPrompts.ts`.
+**Mechanism:** `ArtifactInlineEdit` branches on `inlineEditMode` (`'selection' | 'freeform' | 'none'`), looked up per-type from `artifactTypeConfig.ts` rather than switching on `artifactType` directly at each call site (see "Per-type config registry" below). Prompt wording lives in `artifactActionPrompts.ts`.
+
+## Per-type config registry, not scattered ternaries
+
+**Decision:** a single lookup, `ARTIFACT_TYPE_CONFIG` in `artifactTypeConfig.ts`, holds each type's icon, badge label, download extension, inline-edit mode, and renderer component. Call sites (`ArtifactPanel`, `ArtifactChip`, `ArtifactActionUserMessage`, `ArtifactInlineEdit`) look up `ARTIFACT_TYPE_CONFIG[type]` instead of branching on the type string directly.
+
+**Why:** before this, every one of those call sites independently wrote `type === 'code' ? A : B` — icon/label badge logic alone was duplicated in three separate files. A 2-way ternary doesn't extend to a third value without touching every site by hand, which is exactly the failure mode that surfaced when the `webpage` type was added. Consolidating first made adding the third type a one-entry addition to the config instead of a 9-file sweep.
+
+**Mechanism:** `ArtifactType` (`'code' | 'document' | 'webpage'`) and `isArtifactType` live in `parseArtifacts.ts` alongside `ParsedArtifact`; `artifactTypeConfig.ts` re-exports them so most consumers only need one import. `CodeRenderer`/`DocumentRenderer` were extracted out of `ArtifactPanel.tsx` into `artifactRenderers.tsx` specifically so the config object could reference them without a circular import back into `ArtifactPanel.tsx`.
+
+## Webpage artifacts: sandboxed rendering with network egress blocked
+
+**Decision:** the `webpage` type renders a complete, self-contained HTML document live inside a sandboxed `<iframe sandbox="allow-scripts" srcDoc={...}>` (no `allow-same-origin`, `allow-forms`, `allow-popups`, or `allow-top-navigation`) — the same "Gemini Canvas"-style live preview as code/document artifacts get static rendering. Network egress from the rendered page is blocked entirely via a `Content-Security-Policy` `<meta>` tag injected into the `srcDoc`'s `<head>` (`default-src 'none'`, `connect-src 'none'`, `frame-src 'none'`, `form-action 'none'`, with `script-src`/`style-src 'unsafe-inline'` and `img-src`/`font-src`/`media-src` limited to `data:`/`blob:`).
+
+**Why:** `sandbox="allow-scripts"` alone blocks DOM/storage access to the parent page but does **not** restrict outbound network requests — LLM-authored script could otherwise `fetch`/beacon arbitrary data to an external origin, a real risk if the model is ever prompt-injected via untrusted content elsewhere in the conversation (a web-search result, a pasted document). A page-level CSP doesn't apply to an opaque-origin `srcDoc` iframe, so the restriction has to be injected into the document itself. Blocking network entirely (rather than allowlisting specific origins) closes the exfiltration path completely while still covering the target use cases (interactive demos, small games, visualizations, styled pages) — nothing in that use-case list needs to phone home.
+
+**Mechanism:** `WebpageRenderer.tsx`. A `postMessage`-based resize bridge (parent → iframe, "recalculate on container resize") is validated via `event.source === iframeRef.current?.contentWindow` rather than any `event.origin` string check — the sandboxed `srcDoc` gives an opaque origin, so `event.origin` is the unhelpful literal `"null"` and isn't meaningfully comparable; tying trust to the specific window reference instead means no other script on the page can forge a message into this bridge.
+
+**Type resolution:** unlike `code`/`document` (inferred from whether `language` is present when the model omits `type`), `webpage` is never inferred — it's the highest-blast-radius render path, so it's only ever reached when the model sends `type: "webpage"` explicitly (`resolveType` in `createArtifactTool.ts`). The tool description explicitly disambiguates `type: "code"` + `language: "html"` (HTML meant to be read as source) from `type: "webpage"` (HTML meant to be rendered live), since a model could otherwise reasonably reach for either on an "HTML" request.
+
+**Download:** the downloaded `.html` file contains the raw model-generated content only — not the injected CSP meta tag or resize/error bridge script, since those are internal rendering-sandbox plumbing, not part of the artifact's actual content.
+
+**Superseded scaffolding:** an earlier, disconnected attempt at HTML preview (`components/HtmlPreview/HtmlPreviewPanel.tsx` + `HtmlPreviewContext`) rendered arbitrary HTML the same sandboxed way but was never wired into any render tree (no CSP, and its `postMessage` listener never validated the sender — any source could forge a fabricated "runtime error" back into the conversation via its retry flow). Deleted in favor of `WebpageRenderer`, which fixes both gaps and integrates with the existing registry/versioning/chip system instead of being a separate panel.
 
 ## User messages from selection actions: separate LLM payload from chat display
 

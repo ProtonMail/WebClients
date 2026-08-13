@@ -1,6 +1,16 @@
+// The legacy `<artifact>` tag parser below only ever produces 'code'/'document' — it predates
+// the 'webpage' type and is not being extended to support it (see hashArtifactIdentity callers).
+export const ARTIFACT_TYPES = ['code', 'document', 'webpage'] as const;
+
+export type ArtifactType = (typeof ARTIFACT_TYPES)[number];
+
+export function isArtifactType(value: unknown): value is ArtifactType {
+    return typeof value === 'string' && (ARTIFACT_TYPES as readonly string[]).includes(value);
+}
+
 export interface ParsedArtifact {
     id: string;
-    type: 'code' | 'document';
+    type: ArtifactType;
     language?: string;
     title: string;
     content: string;
