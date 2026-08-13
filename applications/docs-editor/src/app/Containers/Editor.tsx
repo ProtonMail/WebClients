@@ -1,4 +1,4 @@
-import useNotifications from '@proton/components/hooks/useNotifications';
+import useNotifications from '@proton/components/hooks/useNotifications'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin'

@@ -1,4 +1,4 @@
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
 import type { LexicalEditor, ElementFormatType } from 'lexical'
 import { FORMAT_ELEMENT_COMMAND } from 'lexical'
 import { c } from 'ttag'

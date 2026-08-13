@@ -1,4 +1,4 @@
-import LabelStack from '@proton/components/components/labelStack/LabelStack';
+import LabelStack from '@proton/components/components/labelStack/LabelStack'
 import { c } from 'ttag'
 import clsx from '@proton/utils/clsx'
 import { IcCross } from '@proton/icons/icons/IcCross'

@@ -1,4 +1,4 @@
-import useLocalState from '@proton/components/hooks/useLocalState';
+import useLocalState from '@proton/components/hooks/useLocalState'
 import { c } from 'ttag'
 import { TocCloseButton, TocOpenButton } from './TocToggleButton'
 import clsx from '@proton/utils/clsx'

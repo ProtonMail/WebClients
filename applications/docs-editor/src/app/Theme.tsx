@@ -1,4 +1,4 @@
-import { getThemeStyle } from '@proton/components/containers/themes/ThemeProvider';
+import { getThemeStyle } from '@proton/components/containers/themes/ThemeProvider'
 
 export const THEME_ID = 'theme-root'
 

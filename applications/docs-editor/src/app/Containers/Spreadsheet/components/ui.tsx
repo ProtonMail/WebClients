@@ -1,4 +1,4 @@
-import LegacyIcon from '@proton/components/components/icon/Icon';
+import LegacyIcon from '@proton/components/components/icon/Icon'
 import * as Ariakit from '@ariakit/react'
 import type { IconName } from '@proton/icons/types'
 import type { ReactElement } from 'react'

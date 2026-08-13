@@ -1,4 +1,4 @@
-import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import type { NodeKey, RangeSelection } from 'lexical'
 import {
   $createCommentThreadMarkNode,

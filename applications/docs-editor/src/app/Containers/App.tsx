@@ -1,4 +1,4 @@
-import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary'
 import type {
   ClientRequiresEditorMethods,
   CommentMarkNodeChangeData,

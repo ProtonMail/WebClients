@@ -1,4 +1,4 @@
-import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton'
 import type { LexicalEditor, RangeSelection } from 'lexical'
 import { createDOMRange } from '@lexical/selection'
 import { $getSelection, $isRangeSelection } from 'lexical'
