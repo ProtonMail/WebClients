@@ -48,6 +48,12 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Дадаць ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "Дадаць ${ photoCount } фатаграфію ў новы альбом",
+        "Дадаць ${ photoCount } фатаграфіі ў новы альбом",
+        "Дадаць ${ photoCount } фатаграфій у новы альбом",
+        "Дадаць ${ photoCount } фатаграфій у новы альбом"
+      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -537,6 +543,9 @@
       "Join album": [
         "Далучыцца да альбома"
       ],
+      "Keep going": [
+        "Працягваць"
+      ],
       "Keep my subscription": [
         "Пакінуць падпіску"
       ],
@@ -719,6 +728,9 @@
       ],
       "Refer a friend": [
         "Запрасіць сябра"
+      ],
+      "Refetch index": [
+        "Абнавіць індэкс"
       ],
       "Refresh the page": [
         "Абнавіць старонку"
@@ -948,6 +960,9 @@
       "Stop": [
         "Спыніць"
       ],
+      "Stop here": [
+        "Спыніцца тут"
+      ],
       "Stop sharing": [
         "Спыніць абагульванне"
       ],
@@ -968,6 +983,9 @@
       ],
       "Take a tour": [
         "Пачаць знаёмства"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Перайсці да ${ LUMO_SHORT_APP_NAME }"
       ],
       "Toggle Calendar app": [
         "Пераключыць на праграму Каляндар"
@@ -3337,6 +3355,9 @@
       "Cannot add photo to album without a valid name": [
         "Немагчыма дадаць фатаграфію ў альбом без сапраўднай назвы"
       ],
+      "Cannot download a folder": [
+        "Немагчыма спампаваць папку"
+      ],
       "Cannot export this contact": [
         "Немагчыма экспартаваць гэты кантакт"
       ],
@@ -3391,6 +3412,9 @@
       "Could not load sharing details": [
         "Немагчыма загрузіць абагуленыя падрабязнасці"
       ],
+      "Could not load the image preview: ${ message }": [
+        "Немагчыма загрузіць папярэдні прагляд відарыса: ${ message }"
+      ],
       "Could not open created vault": [
         "Не ўдалося адкрыць створанае сховішча"
       ],
@@ -3405,6 +3429,9 @@
       ],
       "Could not unlock this item": [
         "Немагчыма разблакіраваць гэты элемент"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Стварэнне дакументаў па-за іх межамі забаронена"
       ],
       "Creating files in non-folders is not allowed": [
         "Стварэнне файлаў па-за іх межамі забаронена"
@@ -3453,6 +3480,9 @@
       ],
       "Error decrypting a computer": [
         "Памылка пры расшыфроўцы прылады"
+      ],
+      "Error reading file": [
+        "Памылка пры чытанні файла"
       ],
       "Expiration date cannot be in the past": [
         "Дата завяршэння не можа быць у мінулым"
@@ -3666,6 +3696,9 @@
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў"
+      ],
+      "Name must not be empty": [
+        "Назва не можа быць пустой"
       ],
       "Network error": [
         "Памылка сеткі"
@@ -4002,6 +4035,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Гэта паведамленне можа змяшчаць некаторыя спасылкі на URL-адрасы, якія ваш бягучы браўзер не зможа правільна адкрыць."
+      ],
+      "Too many server errors, please try again later": [
+        "Занадта шмат памылак сервера. Паўтарыце спробу пазней"
       ],
       "Too many server requests, please try again later": [
         "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
@@ -4616,6 +4652,9 @@
       "In progress": [
         "Выконваецца"
       ],
+      "Migrated": [
+        "Перанесена"
+      ],
       "Not activated": [
         "Не актывавана"
       ],
@@ -4688,6 +4727,14 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ]
+    },
+    "Heading": {
+      "Share ${ photoCount } photo via": [
+        "Абагуліць ${ photoCount } фатаграфію праз",
+        "Абагуліць ${ photoCount } фатаграфіі праз",
+        "Абагуліць ${ photoCount } фатаграфій праз",
+        "Абагуліць ${ photoCount } фатаграфій праз"
       ]
     },
     "Hint": {
@@ -5025,6 +5072,9 @@
       ],
       "Migrated": [
         "Перанесена"
+      ],
+      "Pending": [
+        "У чаканні"
       ]
     },
     "Import warning": {
@@ -5053,6 +5103,12 @@
         "${ addressCount } адрасы электроннай пошты",
         "${ addressCount } адрасоў электроннай пошты",
         "${ addressCount } адрасоў электроннай пошты"
+      ],
+      "${ albums } album": [
+        "${ albums } альбом",
+        "${ albums } альбомы",
+        "${ albums } альбомаў",
+        "${ albums } альбомаў"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
@@ -5123,6 +5179,12 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
       ],
+      "${ folders } folder": [
+        "${ folders } папка",
+        "${ folders } папкі",
+        "${ folders } папак",
+        "${ folders } папак"
+      ],
       "${ groupCounts } group found": [
         "Знойдзена ${ groupCounts } група",
         "Знойдзена ${ groupCounts } групы",
@@ -5131,6 +5193,12 @@
       ],
       "${ IDEAL_BRAND_NAME } mark": [
         "Пазначыць ${ IDEAL_BRAND_NAME }"
+      ],
+      "${ invitationsCount } pending invitation": [
+        "${ invitationsCount } чакае запрашэння",
+        "${ invitationsCount } чакаюць запрашэння",
+        "${ invitationsCount } чакаюць запрашэння",
+        "${ invitationsCount } чакаюць запрашэння"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
@@ -5155,6 +5223,18 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }. Кошт і дата падаўжэння вашай падпіскі ${ planTitle } застануцца нязменнымі."
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } элемент",
+        "${ photoCount } элементы",
+        "${ photoCount } элементаў",
+        "${ photoCount } элементаў"
+      ],
+      "${ photos } photo": [
+        "${ photos } фатаграфія",
+        "${ photos } фатаграфіі",
+        "${ photos } фатаграфій",
+        "${ photos } фатаграфій"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
@@ -5555,6 +5635,12 @@
       "default email address": [
         "прадвызначаны адрас электроннай пошты"
       ],
+      "Delete locked drive": [
+        "Выдаліць заблакіраваны дыск",
+        "Выдаліць заблакіраваныя дыскі",
+        "Выдаліць заблакіраваныя дыскі",
+        "Выдаліць заблакіраваныя дыскі"
+      ],
       "Details": [
         "Падрабязнасці"
       ],
@@ -5753,6 +5839,9 @@
       "High Priority": [
         "Высокі прыярытэт"
       ],
+      "I have not finished this one yet.": [
+        "Я яшчэ не завяршыў гэта."
+      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Я пацвярджаю і ўсведамляю, што інфармацыя і заявы, якія змяшчаюцца ў справаздачы, з'яўляюцца правільнымі і поўнымі."
       ],
@@ -5821,6 +5910,9 @@
       ],
       "Indexed ${ first }, ${ second } and ${ third }": [
         "Індэксавана ${ first }, ${ second } і ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Праіндэксавана ${ first }, ${ second }, ${ third } і ${ fourth }"
       ],
       "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
         "Адбыўся нечаканы стан пры індэксацыі і працэс немагчыма працягнуць далей. Паспрабуйце аднавіць індэкс."
@@ -5938,6 +6030,12 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Большасць агульнадаступных сетак Wi-Fi з'яўляюцца бяспечнымі, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
+      ],
+      "Move ${ dragCount } item": [
+        "Перамясціць ${ dragCount } элемент",
+        "Перамясціць ${ dragCount } элементы",
+        "Перамясціць ${ dragCount } элементаў",
+        "Перамясціць ${ dragCount } элементаў"
       ],
       "My Links": [
         "Мае спасылкі"
@@ -6197,8 +6295,17 @@
       "Scan the QR code with your mobile device": [
         "Адсканіруйце QR-код з дапамогай мабільнай прылады"
       ],
+      "Search data is corrupted": [
+        "Пошук даных пашкоджаны"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Пошук уключаны. Цяпер вы можаце закрыць гэта акно і шукаць у файлах і папках."
+      ],
       "Search error": [
         "Памылка пошуку"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Усё гатова для пошуку. Вашы фалы праіндэксаваны."
       ],
       "Select a destination folder": [
         "Выберыце папку прызначэння"
@@ -6361,6 +6468,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "На гэта спатрэбіцца шмат крокаў. Працягваць?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
@@ -6584,6 +6694,9 @@
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
       ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт ${ IDEAL_BRAND_NAME }. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
@@ -6697,6 +6810,12 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "У вас яшчэ ёсць ${ expiresInDays } дзень, каб атрымаць прывітальны бонус у 3 ГБ і ",
+        "У вас яшчэ ёсць ${ expiresInDays } дні, каб атрымаць прывітальны бонус у 3 ГБ і ",
+        "У вас яшчэ ёсць ${ expiresInDays } дзён, каб атрымаць прывітальны бонус у 3 ГБ і ",
+        "У вас яшчэ ёсць ${ expiresInDays } дзён, каб атрымаць прывітальны бонус у 3 ГБ і "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас ёсць падпіска ${ planTitle } з пробным перыядам. Дадайце спосаб аплаты, калі вы хочаце працягнуць карыстацца ёй пасля завяршэння пробнага перыяду."
@@ -6939,6 +7058,9 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "Сімвалаў: ${ value.length }/${ maxLength }"
+      ],
+      "(Expired)": [
+        "(Пратэрмінавана)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
@@ -7269,6 +7391,9 @@
       ],
       "Include message and file name in invite email": [
         "Уключаць паведамленне і назву файла ў запрашальны ліст"
+      ],
+      "Indexing": [
+        "Індэксацыя"
       ],
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
@@ -7671,6 +7796,9 @@
     "Link": {
       "Add a gift code": [
         "Дадаць падарункавы код"
+      ],
+      "Albums": [
+        "Альбомы"
       ],
       "clearing your browser cache": [
         "ачыстка кэшу вашага браўзера"
@@ -8336,6 +8464,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з пашыраным доступам"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з абмежаваным доступам"
       ],
       "${ n } calendar": [
         "${ n } каляндар",
@@ -9314,17 +9448,41 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" паспяхова перайменаваны"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } фатаграфія была дададзена ў \"${ albumName }\"",
+        "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\"",
+        "${ addedUids.length } фатаграфій былі дададзены ў \"${ albumName }\"",
+        "${ addedUids.length } фатаграфій былі дададзены ў \"${ albumName }\""
+      ],
       "${ count } item failed to be decrypted": [
         "Не ўдалося расшыфраваць ${ count } элемент",
         "Не ўдалося расшыфраваць ${ count } элементы",
         "Не ўдалося расшыфраваць ${ count } элементаў",
         "Не ўдалося расшыфраваць ${ count } элементаў"
       ],
+      "${ errors.length } item failed to be copied": [
+        "Не ўдалося скапіяваць ${ errors.length } элемент",
+        "Не ўдалося скапіяваць ${ errors.length } элементы",
+        "Не ўдалося скапіяваць ${ errors.length } элементаў",
+        "Не ўдалося скапіяваць ${ errors.length } элементаў"
+      ],
       "${ errors.length } item failed to be deleted": [
         "Не ўдалося выдаліць ${ errors.length } элемент",
         "Не ўдалося выдаліць ${ errors.length } элементы",
         "Не ўдалося выдаліць ${ errors.length } элементаў",
         "Не ўдалося выдаліць ${ errors.length } элементаў"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } скапіяваны элемент перанесены ў сметніцу",
+        "${ numberOfItems } скапіяваныя элементы перанесены ў сметніцу",
+        "${ numberOfItems } скапіяваных элементаў перанесены ў сметніцу",
+        "${ numberOfItems } скапіяваных элементаў перанесены ў сметніцу"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } элемент скапіяваны",
+        "${ numberOfItems } элементы скапіяваны",
+        "${ numberOfItems } элементаў скапіяваны",
+        "${ numberOfItems } элементаў скапіяваны"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } элемент выдалены",
@@ -9385,6 +9543,12 @@
         "${ numberOfItems } элементы адноўлены са сметніцы",
         "${ numberOfItems } элементаў адноўлены са сметніцы",
         "${ numberOfItems } элементы адноўлены са сметніцы"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } элемент паспяхова перамешчаны",
+        "${ numberOfItems } элементы паспяхова перамешчаны",
+        "${ numberOfItems } элементаў паспяхова перамешчаны",
+        "${ numberOfItems } элементаў паспяхова перамешчаны"
       ],
       "${ reason } has been disabled": [
         "${ reason } быў адключаны"
@@ -9466,6 +9630,18 @@
       ],
       "Public link access updated": [
         "Доступ да публічнай спасылкі абноўлены"
+      ],
+      "Selected item was not removed from your list": [
+        "Выбраны элемент не быў выдалены з вашага спіса",
+        "Выбраныя элементы не былі выдалены з вашага спіса",
+        "Выбраныя элементы не былі выдалены з вашага спіса",
+        "Выбраныя элементы не былі выдалены з вашага спіса"
+      ],
+      "Selected item was successfully removed from your list": [
+        "Выбраны элемент паспяхова выдалены з вашага спіса",
+        "Выбраныя элементы паспяхова выдалены з вашага спіса",
+        "Выбраныя элементы паспяхова выдалены з вашага спіса",
+        "Выбраныя элементы паспяхова выдалены з вашага спіса"
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Налады абноўлены. Рэдактары могуць змяняць дазволы і абагульваць."
@@ -9653,6 +9829,9 @@
       "Install and continue": [
         "Усталяваць і працягнуць"
       ],
+      "Install later": [
+        "Усталяваць пазней"
+      ],
       "Maybe Later": [
         "Магчыма пазней"
       ],
@@ -9751,6 +9930,12 @@
       ],
       "No parent folder": [
         "Адсутнічае бацькоўская папка"
+      ],
+      "Select JSON file": [
+        "Выбраць файл JSON"
+      ],
+      "Verify thumbnails": [
+        "Спраўдзіць мініяцюры"
       ]
     },
     "Option group label": {
@@ -9933,6 +10118,9 @@
       ],
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Заплаціць з дапамогай ${ IDEAL_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосаб аплаты патрабуецца для актывацыі падпіскі пасля завяршэння пробнага перыяду."
@@ -10402,6 +10590,9 @@
     "Property": {
       "attributes": [
         "атрыбуты"
+      ],
+      "content key": [
+        "ключ змесціва"
       ],
       "hash key": [
         "хэш-ключ"
@@ -12102,6 +12293,12 @@
       "Are you sure you want to close the preview?": [
         "Вы сапраўды хочаце закрыць папярэдні прагляд?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Вы сапраўды хочаце выдаліць гэты элемент са свайго спіса?",
+        "Вы сапраўды хочаце выдаліць гэтыя элементы са свайго спіса?",
+        "Вы сапраўды хочаце выдаліць гэтыя элементы са свайго спіса?",
+        "Вы сапраўды хочаце выдаліць гэтыя элементы са свайго спіса?"
+      ],
       "Are you sure?": [
         "Вы ўпэўнены?"
       ],
@@ -12401,6 +12598,12 @@
       ],
       "Folder details": [
         "Падрабязнасці папкі"
+      ],
+      "Found ${ resultCount } result": [
+        "Знойдзены ${ resultCount } вынік",
+        "Знойдзены ${ resultCount } вынікі",
+        "Знойдзены ${ resultCount } вынікаў",
+        "Знойдзены ${ resultCount } вынікаў"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Атрымайце **${ referralInfo.uiData.refereeRewardAmount }** у крэдытах з ${ planTitle }"
@@ -12756,6 +12959,9 @@
       "Stay for 50% off your next month": [
         "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
       ],
+      "Still working on it": [
+        "Усё яшчэ працуем над гэтым"
+      ],
       "Stop sharing": [
         "Спыніць абагульванне"
       ],
@@ -12950,6 +13156,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "You’re off to a great start!": [
+        "Выдатны пачатак!"
       ]
     },
     "Title header for keys table": {

@@ -1103,6 +1103,9 @@
       "This album is empty": [
         "Αυτό το άλμπουμ είναι κενό"
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Εναλλαγή ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Toggle Calendar app": [
         "Εναλλαγή εφαρμογής Ημερολόγιο"
       ],
@@ -5291,6 +5294,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Τα αρχεία ${ DOCS_APP_NAME } και ${ SHEETS_APP_NAME } δεν μπορούν να ληφθούν απευθείας και δε θα συμπεριληφθούν σε αυτή τη λήψη. Μπορείτε να κατεβάσετε τα άλλα αρχεία κάνοντας κλικ στο \"Συνέχεια λήψης\"."
       ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "Το ${ DRIVE_APP_NAME } δεν μπόρεσε να αποκρυπτογραφήσει το τοπικό ευρετήριο αναζήτησης. Αναδημιουργήστε το ευρετήριο για να επαναφέρετε την αναζήτηση."
+      ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
         "Το ${ DRIVE_APP_NAME } εντόπισε ότι το τοπικό ευρετήριο αναζήτησης είναι κατεστραμμένο και δεν μπορεί πλέον να χρησιμοποιηθεί. Αναδημιουργήστε το ευρετήριο για να επαναφέρετε την αναζήτηση."
       ],
@@ -6586,6 +6592,9 @@
       ],
       "Search cannot be enabled in this browser": [
         "Η αναζήτηση δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή"
+      ],
+      "Search data can't be read": [
+        "Δεν είναι δυνατή η ανάγνωση των δεδομένων αναζήτησης"
       ],
       "Search data is corrupted": [
         "Τα δεδομένα αναζήτησης είναι κατεστραμμένα"

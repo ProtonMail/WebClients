@@ -927,6 +927,9 @@
       "Take a tour": [
         "开始导览"
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "切换 ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Toggle Calendar app": [
         "切换至 Calendar 应用"
       ],
@@ -3155,6 +3158,9 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "举报版权侵权或数据被盗时必须填写消息"
+      ],
       "A problem occurred, please try again.": [
         "出现了问题，请重试。"
       ],
@@ -3163,6 +3169,9 @@
       ],
       "Address could not be added.": [
         "无法添加地址！"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "该地址已被您组织外的用户使用，请联系客服以解决此问题。"
       ],
       "Address primary private key not found": [
         "找不到地址主私钥"
@@ -3206,14 +3215,35 @@
       "Authentication error.": [
         "验证出错。"
       ],
+      "Bookmark password is not available": [
+        "书签密码不可用"
+      ],
       "Calendar limit reached": [
         "日历数量达到上限"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "无法将照片添加到没有有效名称的相册"
+      ],
+      "Cannot download a folder": [
+        "无法下载文件夹"
       ],
       "Cannot export this contact": [
         "无法导出此联系人"
       ],
       "Cannot find move target": [
         "找不到移动目标"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "无法移动没有有效名称的项目，请先重命名该项目"
+      ],
+      "Cannot share root folder": [
+        "无法共享根文件夹"
+      ],
+      "Cannot verify the author of this file": [
+        "无法验证此文件的作者"
+      ],
+      "Cannot verify who uploaded this file": [
+        "无法验证谁上传了此文件"
       ],
       "Checkout expired, please try again": [
         "支付超时，请重试"
@@ -3236,11 +3266,44 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "无法启用内容搜索。请重新启动应用或清除数据。"
       ],
+      "Copy operation aborted": [
+        "复制操作已中止"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "不允许将项目复制到非文件夹中"
+      ],
+      "Could not find an available name": [
+        "找不到可用的名称"
+      ],
+      "Could not load sharing details": [
+        "无法加载共享详情"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "无法加载图片预览：${ message }"
+      ],
       "Could not open created vault": [
         "无法打开创建的保险库"
       ],
       "Could not open updated vault": [
         "无法打开已更新的保险库"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "无法读取此文件的部分内容：${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "无法解锁父文件夹"
+      ],
+      "Could not unlock this item": [
+        "无法解锁此项目"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "不允许在非文件夹中创建文档"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "不允许在非文件夹中创建文件"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "不允许在非文件夹中创建文件夹"
       ],
       "Data integrity check failed": [
         "数据完整性检查失败"
@@ -3250,6 +3313,9 @@
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "至少取消选择 ${ calendarsToFixCount } 份日历或"
+      ],
+      "Device not found": [
+        "未找到设备"
       ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
@@ -3275,6 +3341,9 @@
       "Error decrypting a computer": [
         "解密计算机时出错"
       ],
+      "Expiration date cannot be in the past": [
+        "过期日期不能是过去的时间"
+      ],
       "External accounts are not supported yet": [
         "尚不支持外部账户"
       ],
@@ -3299,6 +3368,27 @@
       "Failed to create public share node": [
         "未能创建公开共享节点"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "解密书签密钥失败：${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "解密书签名称失败：${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "解密书签密码失败：${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "解密内容密钥失败：${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "解密项目名称失败：${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "解密节点密钥失败：${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "解密版本元数据失败"
+      ],
       "Failed to expand folder": [
         "展开文件夹失败"
       ],
@@ -3310,6 +3400,9 @@
       ],
       "Failed to get details, please try again later": [
         "获取详情失败，请稍后重试"
+      ],
+      "Failed to get inviter keys": [
+        "获取邀请人密钥失败"
       ],
       "Failed to load signature details, please try again later": [
         "加载签名详情失败，请稍后重试"
@@ -3335,6 +3428,15 @@
       "Failed to update public share node": [
         "更新公开共享节点失败"
       ],
+      "Failed to verify invitation": [
+        "验证邀请失败"
+      ],
+      "File download failed due to empty response": [
+        "文件下载失败，因响应为空"
+      ],
+      "File has no revision": [
+        "文件没有历史版本"
+      ],
       "First name is too long": [
         "名字太长。"
       ],
@@ -3343,6 +3445,9 @@
       ],
       "Forward address is required": [
         "转发邮箱为必填项"
+      ],
+      "Image preview not found": [
+        "未找到图片预览"
       ],
       "Image upload failed": [
         "图像上传失败"
@@ -3386,8 +3491,14 @@
       "Invalid verification code": [
         "验证码无效"
       ],
+      "Invitation not found": [
+        "未找到邀请"
+      ],
       "Item content cannot exceed 40KB": [
         "项目内容不能超过 40KB"
+      ],
+      "Item not found": [
+        "未找到项目"
       ],
       "Label name cannot be empty.": [
         "标签名称不能为空。"
@@ -3395,20 +3506,50 @@
       "Last name is too long": [
         "姓氏太长。"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "旧版公开链接无法更新，请重新创建新的公开链接！"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "未找到成员地址，请联系客服解决此问题。"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "至少将 ${ calendarsToFixCount } 份日历与现有的 ${ BRAND_NAME } 日历合并"
+      ],
+      "Missing inviter email": [
+        "缺少邀请人邮箱"
       ],
       "Missing key packet": [
         "缺少密钥数据包"
       ],
+      "Missing organization private key": [
+        "缺少组织私钥"
+      ],
+      "Missing organization public key": [
+        "缺少组织公钥"
+      ],
       "Missing signature": [
         "缺少签名"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "缺少 ${ signatureType } 的签名"
+      ],
+      "Move operation aborted": [
+        "移动操作已中止"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "不允许将项目移动到非文件夹中"
+      ],
+      "Moving root item is not allowed": [
+        "不允许移动根项目"
       ],
       "Name is required": [
         "名称为必填项"
       ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
+      ],
+      "Name must not be empty": [
+        "名称不能为空"
       ],
       "Network error": [
         "网络错误"
@@ -3425,6 +3566,9 @@
       "No emails found to import - the account does not have an inbox": [
         "未找到可导入的邮件——账户无收件箱"
       ],
+      "No file data was received. Please try again.": [
+        "未收到任何文件数据，请重试！"
+      ],
       "No file to upload": [
         "没有要上传的文件"
       ],
@@ -3440,6 +3584,21 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "某个/些群组没有联系人：${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "只有管理员可以转换外部邀请"
+      ],
+      "Operation aborted": [
+        "操作中止"
+      ],
+      "Operation failed, try again later": [
+        "操作失败，请稍后重试"
+      ],
+      "Organization does not have enough seats available": [
+        "组织可用席位不足"
+      ],
+      "Organization does not have enough storage available": [
+        "组织可用存储空间不足"
+      ],
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
       ],
@@ -3448,6 +3607,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "组织密钥必须激活才能创建非私人用户"
+      ],
+      "Part of the file appears to be corrupted": [
+        "文件部分内容似乎已损坏"
       ],
       "Password is required": [
         "密码必须填写"
@@ -3466,6 +3628,12 @@
       ],
       "Payment process not supported": [
         "不支持此支付流程"
+      ],
+      "Photo is already in the target album": [
+        "照片已存在于目标相册中"
+      ],
+      "Photo not found": [
+        "未找到照片"
       ],
       "Please activate your search again": [
         "请重新开启全文搜索"
@@ -3533,8 +3701,14 @@
       "Removed duplicate invitee: ${ joinedInvitee }": [
         "已删除重复的受邀者：${ joinedInvitee }"
       ],
+      "Renaming root item is not allowed": [
+        "不允许重命名根项目"
+      ],
       "Report failed to be sent": [
         "报告发送失败"
+      ],
+      "Request aborted": [
+        "请求中止"
       ],
       "Request timed out": [
         "请求超时"
@@ -3542,17 +3716,38 @@
       "Reverse charge scheme is not supported for this plan": [
         "此套餐不支持反向收费机制"
       ],
+      "Signature is missing": [
+        "缺少签名"
+      ],
       "Signature not verified": [
         "签名未验证"
       ],
       "Signature verification failed": [
         "签名验证失败"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "签名验证失败：${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } 签名验证失败"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } 签名验证失败：${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "无法删除部分联系人"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "部分文件数据上传失败，请重试。"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "部分文件片段上传失败，请重试。"
+      ],
       "Some groups could not be deleted": [
         "无法删除部分群组"
+      ],
+      "Some items could not be loaded": [
+        "部分项目无法加载"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "部分文件夹名称不可用，请自定导入内容并予以更改。"
@@ -3623,6 +3818,9 @@
       "The minimum donation amount is ${ price }": [
         "最低捐赠金额为 ${ price }"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "上传的文件与原始文件不匹配，请重试。"
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待导入账户的文件夹过多，请自定义导入内容并删除部分文件夹。"
       ],
@@ -3641,14 +3839,38 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "该字段至少需要 ${ minimumLength } 个字符。"
       ],
+      "This file has missing crypto material": [
+        "此文件缺少加密材料"
+      ],
+      "This file has no version available to download": [
+        "此文件没有可下载的版本"
+      ],
+      "This file version could not be uploaded": [
+        "此文件版本无法上传"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "文件夹名称不可用，请重新填写。"
+      ],
+      "This item has no image preview": [
+        "此项目没有图片预览"
+      ],
+      "This item is no longer shared": [
+        "此项目已不再共享"
+      ],
+      "This item is not shared": [
+        "此项目未共享"
       ],
       "This label name is not available. Please choose a different name.": [
         "标签名称不可用，请重新填写。"
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "此邮件含有浏览器不能打开的链接."
+      ],
+      "Too many server errors, please try again later": [
+        "服务器错误过多，请稍后重试"
+      ],
+      "Too many server requests, please try again later": [
+        "服务器请求过多，请稍后重试"
       ],
       "Try using only letters, numerals, and _.-": [
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
@@ -3692,6 +3914,12 @@
       "VAT number must start with ${ prefixes }": [
         "增值税号必须以 ${ prefixes } 开头"
       ],
+      "Verification keys are not available": [
+        "验证密钥不可用"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } 的验证密钥不可用"
+      ],
       "We couldn’t send a verification code using this method.": [
         "我们无法通过此类方式发送验证码。"
       ],
@@ -3704,8 +3932,26 @@
       "Wrong billing address": [
         "错误的账单地址"
       ],
+      "You can create public links for your own files only": [
+        "您只能为自己拥有的文件创建公开链接"
+      ],
+      "You can only leave items that are shared with you": [
+        "您只能离开已共享给您的项目"
+      ],
+      "You can only upload a new version to a file": [
+        "您只能上传新版本到文件中"
+      ],
+      "You can update a public link for your own files only": [
+        "您只能更新自己文件的公开链接"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "邮件收件人不能超过 ${ maxContacts } 位"
+      ],
+      "You do not have access to this item": [
+        "您无权访问此项目"
+      ],
+      "You do not have access to this shared item": [
+        "您无权访问此共享项目"
       ],
       "You have reached the maximum number of calendars.": [
         "您已达到日历创建数量的上限。"
@@ -4175,6 +4421,29 @@
         "TB"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "已激活"
+      ],
+      "All": [
+        "全部"
+      ],
+      "Errors": [
+        "错误"
+      ],
+      "In progress": [
+        "正在处理"
+      ],
+      "Migrated": [
+        "已迁移"
+      ],
+      "Not activated": [
+        "未激活"
+      ],
+      "Pending": [
+        "待处理"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 标签已更改"
@@ -4548,11 +4817,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "出错啦"
+      ],
       "In progress": [
         "正在处理"
       ],
       "Migrated": [
         "已迁移"
+      ],
+      "Pending": [
+        "待处理"
       ]
     },
     "Import warning": {
@@ -4626,6 +4901,9 @@
       ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } 标记"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
@@ -4842,6 +5120,9 @@
       ],
       "Attention required": [
         "需要关注"
+      ],
+      "Author is not provided on public link": [
+        "公开链接未提供作者信息"
       ],
       "Awaiting transaction": [
         "等待交易"
@@ -5128,6 +5409,9 @@
       "finance": [
         "金融"
       ],
+      "Find out what can be migrated.": [
+        "了解可以迁移哪些内容"
+      ],
       "Folder will not be uploaded": [
         "文件夹将不会上传"
       ],
@@ -5353,6 +5637,9 @@
       "No results found": [
         "未找到结果"
       ],
+      "No users to display": [
+        "无可显示的用户"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "已上传的所有密钥都不能用于加密，如需向此地址发送邮件，请上传一份有效密钥或关闭邮件加密。"
       ],
@@ -5554,6 +5841,9 @@
       "Select a folder to move to.": [
         "选择要移动到的文件夹。"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "精确选择您要迁移的内容，这将适用于所有组织用户。"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式。"
       ],
@@ -5704,6 +5994,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "这段独特的识别码可能会被网站和互联网服务提供商（ISP）利用，将您的地理位置和浏览历史记录与您的设备相关联，从而导致您的隐私信息被追踪。"
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "此用户无法迁移，因为其在 ${ BRAND_NAME } 上没有可用的邮箱地址。"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "由于平台不兼容，此用户无法迁移。"
+      ],
       "This will cancel any remaining downloads.": [
         "此操作将取消所有剩余的下载"
       ],
@@ -5748,6 +6044,27 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "导入日程需要先在 ${ CALENDAR_APP_NAME } 中创建日历，作为日程导入后的存放位置。"
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "要迁移此用户，请添加并验证 ${ domainNamesLink } 下的邮箱域名"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "要迁移此用户，请在 ${ provider.adminConsoleName } 中启用其账户。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 中启用其账户。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 中启用其地址。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "要迁移此用户，该用户需要接受加入 ${ BRAND_NAME } 的邀请。"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "要迁移此用户，请在 ${ provider.adminConsoleName } 中取消归档该用户。"
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "要迁移此用户，请在 ${ provider.adminConsoleName } 中取消暂停该用户。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "要给联系人重新签名，我们需要对照您账户中可用的密钥列表来检查每一位联系人。如果找不到匹配项，您的联系人将使用主密钥重新签名。"
@@ -5871,6 +6188,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "我们使用 3-D Secure 来保护您的付款"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "我们将在新的浏览器标签页中重定向至 ${ IDEAL_BRAND_NAME } 以完成此交易。如果您使用了任何弹窗拦截器，请将其禁用后继续。"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我们将在新标签页中为您打开 PayPal 完成支付，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
@@ -8879,6 +9199,9 @@
       "More plans are available in other currencies": [
         "更多计划以及其他货币提供"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "使用 ${ IDEAL_BRAND_NAME } 付款"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "您需要提供付款方式，以便试用期结束后激活订阅。"
       ],
@@ -8954,6 +9277,9 @@
       "You will soon be redirected to verify your payment.": [
         "您即将被重定向以验证付款"
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "您的货币已更改为欧元 (€)，因为 ${ IDEAL_BRAND_NAME } 仅支持欧元支付。"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "您的货币已更改为欧元 (€)，因为 SEPA 银行转账只支持欧元支付。"
       ],
@@ -8965,6 +9291,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_BRAND_NAME } 初始化失败，请稍后重试。"
+      ],
       "Invalid card number": [
         "卡号无效"
       ],
@@ -8987,6 +9316,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "出错了，Google Pay 验证失败。"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "确认付款即表示您授权 ${ BRAND_NAME } 及我们的支付服务提供商 Stripe 指示您的银行从您的账户中扣除相应款项。根据您与银行的协议条款，您可在扣款日起 8 周内申请退款。"
       ]
     },
     "Payments.info": {
@@ -9304,8 +9638,23 @@
       ]
     },
     "Property": {
+      "attributes": [
+        "属性"
+      ],
+      "content key": [
+        "内容密钥"
+      ],
+      "hash key": [
+        "哈希密钥"
+      ],
       "key": [
         "密钥"
+      ],
+      "membership": [
+        "成员资格"
+      ],
+      "name": [
+        "名称"
       ]
     },
     "Property type": {
@@ -10712,17 +11061,26 @@
       "Actions": [
         "操作"
       ],
+      "Activated": [
+        "已激活"
+      ],
       "Address": [
         "地址"
       ],
       "Created": [
         "创建时间"
       ],
+      "Estimated size": [
+        "预计大小"
+      ],
       "Expires": [
         "有效期至"
       ],
       "Fingerprint": [
         "指纹"
+      ],
+      "Migration status": [
+        "迁移状态"
       ],
       "Name": [
         "名称"
@@ -10735,6 +11093,9 @@
       ],
       "Type": [
         "类型"
+      ],
+      "User": [
+        "用户"
       ]
     },
     "TableHeader": {
@@ -10915,6 +11276,9 @@
       ],
       "Computers": [
         "电脑"
+      ],
+      "Configure migration": [
+        "配置迁移"
       ],
       "Confirm downgrade": [
         "确认降级"
@@ -11399,6 +11763,9 @@
       "Select link expiration date": [
         "选择链接失效日期"
       ],
+      "Select users to migrate": [
+        "请选择要迁移的用户"
+      ],
       "Set recovery methods": [
         "设置恢复方式"
       ],
@@ -11615,6 +11982,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "欢迎使用 ${ BRAND_NAME } 商业版"
       ],
+      "What are you migrating?": [
+        "您需要迁移什么？"
+      ],
       "What can a VPN protect you from?": [
         "VPN 能为您防护哪些威胁？"
       ],
@@ -11699,6 +12069,9 @@
       "Customize import to reduce the number of labels": [
         "自定义导入以减少标签数量"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "从 ${ providerName } 到 ${ BRAND_NAME } 的数据迁移状态"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "数字签名电子邮件有助于验证您发送的消息"
       ],
@@ -11770,6 +12143,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "已访问过其 ${ BRAND_NAME } 账户的用户"
       ],
       "Version 6 OpenPGP key": [
         "第 6 版 OpenPGP 密钥"

@@ -1113,6 +1113,9 @@
       "This album is empty": [
         "Tento album je prázdny"
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Prepnúť ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Toggle Calendar app": [
         "Prepnúť na Kalendár"
       ],
@@ -5419,6 +5422,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Súbory v ${ DOCS_APP_NAME } a ${ SHEETS_APP_NAME } nie je možné stiahnuť priamo a nebudú zahrnuté do tohto sťahovania. Ostatné súbory si môžete stiahnuť kliknutím na tlačidlo 'Pokračovať v sťahovaní'."
       ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } nedokázal dešifrovať lokálny vyhľadávací index. Pre obnovenie vyhľadávania je potrebné index znovu vygenerovať."
+      ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
         "Aplikácia ${ DRIVE_APP_NAME } zistila, že index lokálneho vyhľadávania je poškodený a už nie je možné ho používať. Obnovte index, aby ste obnovili vyhľadávanie."
       ],
@@ -6780,6 +6786,9 @@
       ],
       "Search cannot be enabled in this browser": [
         "V tomto prehliadači nie je možné povoliť vyhľadávanie"
+      ],
+      "Search data can't be read": [
+        "Údaje vyhľadávania nie je možné prečítať"
       ],
       "Search data is corrupted": [
         "Údaje vyhľadávania sú poškodené"
