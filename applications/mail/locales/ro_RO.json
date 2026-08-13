@@ -8788,6 +8788,21 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Căutarea durează prea mult? ${ dropdownButton } sau ${ toggleOffButton } din această sesiune de căutare."
       ],
+      "Searched ${ targetName }": [
+        "S-a căutat ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "S-a căutat mesaj de la ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "S-a căutat mesaj către ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "S-a căutat „${ keyword }”"
+      ],
+      "Searched your mail": [
+        "Vi s-a căutat corespondența."
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Securizați-vă gratuit fișierele cu stocare criptată, astăzi."
       ],
@@ -10704,6 +10719,12 @@
       ],
       "No label found": [
         "Nu există etichete"
+      ],
+      "No unread conversations": [
+        "Nu sunt conversații necitite"
+      ],
+      "No unread messages": [
+        "Nu sunt mesaje necitite"
       ],
       "Non-promotional content and news": [
         "Conținut și știri non-promoționale"
