@@ -1,5 +1,6 @@
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
+@use '~@proton/styles/scss/specifics/arizona' as *;
 
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
@@ -14,11 +15,11 @@ im.$media-expressions: $media-expressions;
 
 .q3SaleHeaderSection {
 	position: relative;
-	min-block-size: 15rem;
+	min-block-size: 19rem;
 	overflow: hidden;
 
 	@include im.media('<=small') {
-		min-block-size: 12rem;
+		min-block-size: 15rem;
 	}
 }
 
@@ -29,9 +30,12 @@ im.$media-expressions: $media-expressions;
 	inline-size: 100%;
 
 	// Taller than container so the image scales wider, giving more horizontal range
-	// to pan the subject to the right away from the SEPTEMBER SALE text
+	// to pan the subject to the right away from the headline
 	block-size: 140%;
 	object-fit: cover;
+
+	// Lower first value anchors a further-left slice of the source, which pushes
+	// the person toward the right edge of the modal
 	object-position: 20% 50%;
 }
 
@@ -64,34 +68,25 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.q3SaleDiscountBadge {
-	display: inline-block;
-	background-color: #ff4c81;
-	color: white;
-	font-weight: bold;
-	font-size: 1.1rem;
-	line-height: 1;
-	padding-block: 0.25rem;
-	padding-inline: 0.5rem;
-	border-radius: 4px;
-	text-transform: uppercase;
-	letter-spacing: -0.01em;
-	margin-block-end: 0.25rem;
-}
-
 .q3SaleTitle {
-	// width: min-content collapses to widest word, forcing SEPTEMBER / SALE to wrap
-	inline-size: min-content;
-	font-size: 3rem;
+	font-family: Arizona, system-ui, sans-serif;
+	font-size: 2.8125rem; // 45px
 	color: white;
-	line-height: 0.95;
-	font-weight: bold;
-	text-transform: uppercase;
-	letter-spacing: -0.04em;
+	line-height: 1.1;
+	font-style: normal;
+	font-weight: 500;
+	font-synthesis: none;
+	letter-spacing: -0.04em; // -1.8px at 45px
 	margin: 0;
 	text-shadow:
 		0 1px 2px rgb(55 37 128 / 0.1),
 		0 2px 4px rgb(55 37 128 / 0.1);
+
+	// Each half of the title is its own translatable line, so the break after the
+	// comma survives translation instead of being a hardcoded <br />
+	span {
+		display: block;
+	}
 
 	@include im.media('<=small') {
 		font-size: 2.5rem;
@@ -117,13 +112,18 @@ html:is([lang^='ja'], [lang^='ko'], [lang^='th'], [lang^='fil'], [lang^='hi']) .
 	inline-size: auto;
 }
 
+.q3SalePlanLockup {
+	.logo {
+		margin-inline-end: -0.25rem;
+	}
+}
+
 .q3SalePlanName {
-	font-size: 1.1rem;
+	font-size: 1.5rem;
 }
 
 .q3SaleForMonths {
-	font-size: 0.9rem;
-	opacity: 0.9;
+	font-size: 1rem;
 }
 
 .q3SaleContent {
@@ -147,7 +147,7 @@ html:is([lang^='ja'], [lang^='ko'], [lang^='th'], [lang^='fil'], [lang^='hi']) .
 }
 
 .q3SalePrice {
-	font-size: 2rem;
+	font-size: 3rem;
 	line-height: 1;
 	color: #372580;
 }
