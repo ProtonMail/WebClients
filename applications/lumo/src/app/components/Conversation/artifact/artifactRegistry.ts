@@ -6,7 +6,7 @@ import {
     getCompleteArtifactBlocksKey,
     parseCompleteArtifactToolCall,
 } from './createArtifactTool';
-import { type ParsedArtifact, parseArtifacts } from './parseArtifacts';
+import { type ArtifactType, type ParsedArtifact, parseArtifacts } from './parseArtifacts';
 
 export interface ArtifactVersion {
     messageId: MessageId;
@@ -19,7 +19,7 @@ export interface ArtifactVersion {
 
 export interface ArtifactRegistryEntry {
     id: string;
-    type: 'code' | 'document';
+    type: ArtifactType;
     title: string;
     language?: string;
     versions: ArtifactVersion[];

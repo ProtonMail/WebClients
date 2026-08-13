@@ -9,13 +9,15 @@ import { IcArrowUp } from '@proton/icons/icons/IcArrowUp';
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import { useWebSearch } from '../../../providers/WebSearchProvider';
 import type { ArtifactActionMeta } from '../../../types';
+import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
+import type { ArtifactType } from './parseArtifacts';
 import { useArtifactSelection } from './useArtifactSelection';
 
 interface ArtifactInlineEditProps {
     containerRef: RefObject<HTMLDivElement>;
     artifactId: string;
     title: string;
-    artifactType: 'code' | 'document';
+    artifactType: ArtifactType;
     isGenerating: boolean;
 }
 
@@ -28,6 +30,7 @@ export const ArtifactInlineEdit = ({
 }: ArtifactInlineEditProps) => {
     const { handleSendArtifactAction } = useConversationActions();
     const { isWebSearchButtonToggled } = useWebSearch();
+    const inlineEditMode = ARTIFACT_TYPE_CONFIG[artifactType].inlineEditMode;
     const { selection, clearSelection } = useArtifactSelection(containerRef);
     const [editPrompt, setEditPrompt] = useState('');
     const [containerRect, setContainerRect] = useState<DOMRect | null>(null);
@@ -39,12 +42,12 @@ export const ArtifactInlineEdit = ({
         setEditPrompt('');
     }, [selection?.text]);
 
-    // Focus the inline input when a new selection appears (document artifacts only)
+    // Focus the inline input when a new selection appears (freeform artifacts only)
     useEffect(() => {
-        if (selection && !isGenerating && artifactType === 'document') {
+        if (selection && !isGenerating && inlineEditMode === 'freeform') {
             inputRef.current?.focus();
         }
-    }, [selection, isGenerating, artifactType]);
+    }, [selection, isGenerating, inlineEditMode]);
 
     // Track container width/position so the input spans the panel content area
     useEffect(() => {
@@ -92,7 +95,10 @@ export const ArtifactInlineEdit = ({
         };
     }, [selection, clearSelection]);
 
-    if (!selection || !containerRect || isGenerating) {
+    // Selection-based inline edit isn't viable for content rendered inside a sandboxed,
+    // cross-origin iframe (webpage) — the panel can't read a text selection out of it the way
+    // it can for DOM-rendered code/document content. Follow-ups go through the normal composer.
+    if (inlineEditMode === 'none' || !selection || !containerRect || isGenerating) {
         return null;
     }
 
@@ -122,7 +128,7 @@ export const ArtifactInlineEdit = ({
             kind: 'explain',
             artifactId,
             artifactTitle: title,
-            artifactType: 'code',
+            artifactType,
             selection: selection.text,
         });
     };
@@ -132,7 +138,7 @@ export const ArtifactInlineEdit = ({
             kind: 'improve',
             artifactId,
             artifactTitle: title,
-            artifactType: 'code',
+            artifactType,
             selection: selection.text,
         });
     };
@@ -154,7 +160,7 @@ export const ArtifactInlineEdit = ({
 
     return (
         <div ref={wrapperRef} className="artifact-inline-edit shadow-lifted rounded-lg p-2 bg-norm" style={style}>
-            {artifactType === 'code' ? (
+            {inlineEditMode === 'selection' ? (
                 <div className="flex flex-row items-center gap-2 p-1">
                     <Button size="small" shape="outline" color="weak" onClick={handleExplain}>
                         {c('collider_2025:Action').t`Explain`}

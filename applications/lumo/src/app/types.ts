@@ -1,3 +1,4 @@
+import { type ArtifactType, isArtifactType } from './components/Conversation/artifact/parseArtifacts';
 import { deriveDataEncryptionKey } from './crypto';
 import type { Base64, EncryptedData } from './crypto/encryptedData';
 import type { AesGcmCryptoKey } from './crypto/types';
@@ -401,7 +402,7 @@ export type ArtifactActionMeta = {
     kind: ArtifactActionKind;
     artifactId: string;
     artifactTitle: string;
-    artifactType: 'code' | 'document';
+    artifactType: ArtifactType;
     selection: string;
     /** Present for document edits — the user's freeform change instruction. */
     userInstruction?: string;
@@ -416,7 +417,7 @@ export function isArtifactActionMeta(value: unknown): value is ArtifactActionMet
         (meta.kind === 'explain' || meta.kind === 'improve' || meta.kind === 'edit') &&
         typeof meta.artifactId === 'string' &&
         typeof meta.artifactTitle === 'string' &&
-        (meta.artifactType === 'code' || meta.artifactType === 'document') &&
+        isArtifactType(meta.artifactType) &&
         typeof meta.selection === 'string' &&
         (meta.userInstruction === undefined || typeof meta.userInstruction === 'string')
     );
