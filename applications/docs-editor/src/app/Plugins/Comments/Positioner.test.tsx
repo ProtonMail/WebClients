@@ -163,6 +163,80 @@ describe('Positioner', () => {
     expect(item3).toHaveStyle({ '--position': '60px' })
   })
 
+  it('keeps the active item anchored when earlier collision adjustments would reach it', async () => {
+    const items = [
+      {
+        id: '1',
+        item: <div>Item 1</div>,
+        position: 0,
+      },
+      {
+        id: '2',
+        item: <div>Item 2</div>,
+        position: 20,
+      },
+      {
+        id: '3',
+        item: <div>Item 3</div>,
+        position: 100,
+      },
+    ]
+
+    const { container } = render(
+      <Positioner items={items} activeItemID="3" gap={10} positionUpdateDebounceTimeout={0} />,
+    )
+
+    const item1 = container.querySelector('[data-id="1"]')
+    Object.defineProperty(item1, 'clientHeight', { value: 50 })
+    const item2 = container.querySelector('[data-id="2"]')
+    Object.defineProperty(item2, 'clientHeight', { value: 50 })
+    const item3 = container.querySelector('[data-id="3"]')
+    Object.defineProperty(item3, 'clientHeight', { value: 50 })
+
+    await waitForPositionUpdates()
+
+    expect(item1).toHaveStyle({ '--position': '-40px' })
+    expect(item2).toHaveStyle({ '--position': '20px' })
+    expect(item3).toHaveStyle({ '--position': '100px' })
+  })
+
+  it('keeps unrelated collisions positioned downward', async () => {
+    const items = [
+      {
+        id: '1',
+        item: <div>Item 1</div>,
+        position: 0,
+      },
+      {
+        id: '2',
+        item: <div>Item 2</div>,
+        position: 20,
+      },
+      {
+        id: '3',
+        item: <div>Item 3</div>,
+        position: 200,
+      },
+    ]
+
+    const { container } = render(
+      <Positioner items={items} activeItemID="3" gap={10} positionUpdateDebounceTimeout={0} />,
+    )
+
+    const item1 = container.querySelector('[data-id="1"]')
+    Object.defineProperty(item1, 'clientHeight', { value: 50 })
+    const item2 = container.querySelector('[data-id="2"]')
+    Object.defineProperty(item2, 'clientHeight', { value: 50 })
+    const item3 = container.querySelector('[data-id="3"]')
+    Object.defineProperty(item3, 'clientHeight', { value: 50 })
+
+    await waitForPositionUpdates()
+
+    expect(item1).toHaveStyle({ '--position': '0px' })
+    expect(item2).toHaveStyle({ '--position': '60px' })
+    expect(item3).toHaveStyle({ '--position': '200px' })
+  })
+
   it('updates positions when items resize', async () => {
     const items = createMockItems(2)
     const { container } = render(
