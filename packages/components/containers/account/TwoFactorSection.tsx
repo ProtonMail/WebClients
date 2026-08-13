@@ -32,7 +32,6 @@ import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/sha
 import { getHasWebAuthnSupport } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
 import { Fido2CredentialFlags } from '@proton/shared/lib/webauthn/interface';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import LostTwoFAModal from './LostTwoFAModal';
 import SettingsLayout from './SettingsLayout';
@@ -53,7 +52,6 @@ const defaultTmpRemove = { keys: [], type: 'all' as const };
 
 const TwoFactorSection = () => {
     const dispatch = useDispatch();
-    const isShowFido2CredentialsPinOptInToggleEnabled = useFlag('ShowFido2CredentialsPinOptInToggle');
     const { APP_NAME } = useConfig();
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
@@ -198,7 +196,7 @@ const TwoFactorSection = () => {
                             <Toggle checked={hasFIDO2Enabled} id="twoFactorKeyToggle" onChange={handleChangeKey} />
                         </SettingsLayoutRight>
                     </SettingsLayout>
-                    {isShowFido2CredentialsPinOptInToggleEnabled && registeredKeys.length > 0 && (
+                    {registeredKeys.length > 0 && (
                         <SettingsLayout>
                             <SettingsLayoutLeft>
                                 <label htmlFor="requireSecurityKey" className="text-semibold">
