@@ -19,6 +19,7 @@ import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
 import { isActionWithSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import { sagaEvents } from '@proton/pass/store/events';
+import { itemEditMiddleware } from '@proton/pass/store/middleware/item-edit.middleware';
 import { cacheGuard } from '@proton/pass/store/migrate';
 import reducer from '@proton/pass/store/reducers';
 import { requestMiddlewareFactory } from '@proton/pass/store/request/middleware';
@@ -46,6 +47,7 @@ const store = configureStore({
         middlewares({ serializableCheck: false, immutableCheck: false, thunk: false }).concat(
             requestMiddlewareFactory({ acceptAsync: not(isActionWithSender) }),
             broadcastMiddleware,
+            itemEditMiddleware,
             sagaMiddleware
         ),
     enhancers: (enhancers) =>

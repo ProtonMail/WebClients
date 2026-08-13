@@ -3,10 +3,11 @@ import { CompressionStream, DecompressionStream } from 'node:stream/web';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 
 import {
+    checkPasswordCompromised,
     fetchCompromisedBucket,
     getBucketUrl,
+    getLastChangeTimestamp,
     hashPassword,
-    isPasswordCompromised,
 } from './compromised-password.request';
 
 /* jsdom test env (`@proton/jest-env`) forwards `fetch`/`ReadableStream`/etc but not
@@ -60,19 +61,57 @@ describe('compromised-password.request', () => {
         });
     });
 
-    describe('fetchCompromisedBucket', () => {
-        test('parses `SUFFIX:COUNT` lines into a set of suffixes', async () => {
-            const body = await gzipText('AAAA1111:2\nBBBB2222:5\n');
-            fetchMock.mockResolvedValue(new Response(body, { status: 200 }));
+    describe('getLastChangeTimestamp', () => {
+        test('parses the bare timestamp response body', async () => {
+            fetchMock.mockResolvedValue(new Response('1785243616', { status: 200 }));
+            expect(await getLastChangeTimestamp()).toEqual(1785243616);
+        });
 
-            const suffixes = await fetchCompromisedBucket(KNOWN_SHA1);
-            expect(suffixes).toEqual(new Set(['AAAA1111', 'BBBB2222']));
+        test('throws on a non-ok response', async () => {
+            fetchMock.mockResolvedValue(new Response('error', { status: 500 }));
+            await expect(getLastChangeTimestamp()).rejects.toThrow();
+        });
+
+        test('throws on a non-numeric response body', async () => {
+            fetchMock.mockResolvedValue(new Response('<html>not found</html>', { status: 200 }));
+            await expect(getLastChangeTimestamp()).rejects.toThrow();
+        });
+
+        test('throws on an empty response body', async () => {
+            fetchMock.mockResolvedValue(new Response('', { status: 200 }));
+            await expect(getLastChangeTimestamp()).rejects.toThrow();
+        });
+    });
+
+    describe('fetchCompromisedBucket', () => {
+        test('parses `SUFFIX:COUNT` lines and returns the ETag', async () => {
+            const body = await gzipText('AAAA1111:2\nBBBB2222:5\n');
+            fetchMock.mockResolvedValue(new Response(body, { status: 200, headers: { ETag: '"v1"' } }));
+
+            const result = await fetchCompromisedBucket(KNOWN_SHA1);
+            expect(result).toEqual({ status: 'ok', etag: '"v1"', suffixes: new Set(['AAAA1111', 'BBBB2222']) });
+        });
+
+        test('sends If-None-Match and Add-Padding when a prior ETag is given', async () => {
+            fetchMock.mockResolvedValue(new Response(null, { status: 304 }));
+            await fetchCompromisedBucket(KNOWN_SHA1, '"v1"');
+
+            const [, init] = fetchMock.mock.calls[0];
+            const headers = new Headers(init?.headers);
+            expect(headers.get('If-None-Match')).toEqual('"v1"');
+            expect(headers.get('Add-Padding')).toEqual('true');
+        });
+
+        test('returns `not-modified` on 304, without touching the body', async () => {
+            fetchMock.mockResolvedValue(new Response(null, { status: 304 }));
+            const result = await fetchCompromisedBucket(KNOWN_SHA1, '"v1"');
+            expect(result).toEqual({ status: 'not-modified' });
         });
 
         test('returns an empty set on 404, instead of throwing', async () => {
             fetchMock.mockResolvedValue(new Response('not found', { status: 404 }));
-            const suffixes = await fetchCompromisedBucket(KNOWN_SHA1);
-            expect(suffixes).toEqual(new Set());
+            const result = await fetchCompromisedBucket(KNOWN_SHA1);
+            expect(result).toEqual({ status: 'ok', etag: '', suffixes: new Set() });
         });
 
         test('throws on other non-2xx responses', async () => {
@@ -81,22 +120,35 @@ describe('compromised-password.request', () => {
         });
     });
 
-    describe('isPasswordCompromised', () => {
+    describe('checkPasswordCompromised', () => {
         beforeAll(async () => setupCryptoProxyForTesting());
         afterAll(async () => releaseCryptoProxy());
 
-        test('returns true when the suffix is present in the bucket', async () => {
+        test('returns compromised: true when the suffix is present in the bucket', async () => {
             const body = await gzipText(`${KNOWN_SUFFIX}:5\n`);
-            fetchMock.mockResolvedValue(new Response(body, { status: 200 }));
+            fetchMock.mockResolvedValue(new Response(body, { status: 200, headers: { ETag: '"v1"' } }));
 
-            expect(await isPasswordCompromised(KNOWN_PASSWORD)).toBe(true);
+            expect(await checkPasswordCompromised(KNOWN_PASSWORD)).toEqual({
+                status: 'checked',
+                compromised: true,
+                etag: '"v1"',
+            });
         });
 
-        test('returns false when the suffix is absent from the bucket', async () => {
+        test('returns compromised: false when the suffix is absent from the bucket', async () => {
             const body = await gzipText('FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:1\n');
-            fetchMock.mockResolvedValue(new Response(body, { status: 200 }));
+            fetchMock.mockResolvedValue(new Response(body, { status: 200, headers: { ETag: '"v1"' } }));
 
-            expect(await isPasswordCompromised(KNOWN_PASSWORD)).toBe(false);
+            expect(await checkPasswordCompromised(KNOWN_PASSWORD)).toEqual({
+                status: 'checked',
+                compromised: false,
+                etag: '"v1"',
+            });
+        });
+
+        test('returns not-modified when the server confirms the prior ETag is still current', async () => {
+            fetchMock.mockResolvedValue(new Response(null, { status: 304 }));
+            expect(await checkPasswordCompromised(KNOWN_PASSWORD, '"v1"')).toEqual({ status: 'not-modified' });
         });
     });
 });

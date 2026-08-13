@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 
+import { itemEditMiddleware } from '@proton/pass/store/middleware/item-edit.middleware';
 import reducer from '@proton/pass/store/reducers';
 import { requestMiddleware } from '@proton/pass/store/request/middleware';
 
@@ -18,6 +19,6 @@ export const store = configureStore({
             serializableCheck: false,
             thunk: false,
             immutableCheck: false,
-        }).concat(broadcastMiddleware, ...desktopMiddleware, requestMiddleware, sagaMiddleware),
+        }).concat(broadcastMiddleware, ...desktopMiddleware, requestMiddleware, itemEditMiddleware, sagaMiddleware),
     devTools: ENV !== 'production',
 });

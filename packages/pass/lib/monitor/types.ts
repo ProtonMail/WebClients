@@ -43,3 +43,5 @@ export type MonitorAddress<T extends AddressType = AddressType> = MonitorAddress
         };
         [AddressType.PROTON]: { type: AddressType.PROTON; addressId: CustomAddressID };
     }[T];
+
+export type CompromisedPasswordEntry = { compromised: boolean; etag: string; checkedAt: number; revision: number };
