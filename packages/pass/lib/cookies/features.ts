@@ -38,14 +38,11 @@ export const updateFeatureVariantCookie = (flagName: PassFeature, variantName: s
 
     const featureArray = Object.entries(features).map(([flag, variant]) => `${flag}:${variant}`);
 
-    const cookie = {
-        domain: window.location.hostname,
+    setPassCookie({
         cookieName: UNLEASH_FLAG_COOKIE_NAME,
         cookieValue: featureArray.join(','),
         path: '/',
         secure: true,
         expirationDate: endOfDay(addDays(new Date(), 30)).toUTCString(),
-    };
-
-    setPassCookie(cookie);
+    });
 };
