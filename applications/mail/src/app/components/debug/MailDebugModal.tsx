@@ -33,6 +33,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { DebugContentSearchView } from './DebugContentSearchView';
 import { DebugModalLogs } from './DebugModalLogs';
+import { DebugModalLogPerformance } from './logPerformances/DebugModalLogPerformance';
 
 interface Props extends ModalProps {}
 
@@ -105,6 +106,7 @@ export const MailDebugModal = ({ ...rest }: Props) => {
             ),
         },
         { title: c('Label').t`Mail logs`, content: <DebugModalLogs /> },
+        { title: c('Label').t`Log performance`, content: <DebugModalLogPerformance /> },
         {
             title: c('Label').t`Store state`,
             content: (
