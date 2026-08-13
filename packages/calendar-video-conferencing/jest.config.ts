@@ -34,8 +34,8 @@ const jestConfig: JestConfigWithTsJest = {
     testEnvironment: '@proton/jest-env',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     moduleNameMapper: {
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '<rootDir>/__mocks__/fileMock.js',
-        '\\.(css|scss|less)$': '<rootDir>/__mocks__/styleMock.js',
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
+        '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
     },
 };
 
