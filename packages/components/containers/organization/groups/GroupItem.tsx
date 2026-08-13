@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { getTranslatedRoleName } from '@proton/account/organizationRoles/helpers';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
@@ -30,7 +31,9 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
     const showMailFeatures = shouldShowMail(organization?.PlanName);
 
     const groupOrganizationRoles = group ? groupRolesMap[group.ID] : undefined;
-    const roleNames = groupOrganizationRoles?.map((assignment) => assignment.Role.Name).join(', ');
+    const roleNames = groupOrganizationRoles
+        ?.map((assignment) => getTranslatedRoleName(assignment.Role.Name))
+        .join(', ');
     const isResumingRoleAssignment =
         restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT &&
         restrictedBy.groupId === group?.ID;
