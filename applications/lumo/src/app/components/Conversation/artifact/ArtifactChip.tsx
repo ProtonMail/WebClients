@@ -3,8 +3,6 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
-import { IcCode } from '@proton/icons/icons/IcCode';
-import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 
 import type { MessageId } from '../../../types';
 import { useArtifactContext } from './ArtifactContext';
@@ -16,6 +14,7 @@ import {
     getArtifactWordCount,
 } from './artifactChipHelpers';
 import { getArtifactVersionIndexForMessage } from './artifactRegistry';
+import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
 import type { ParsedArtifact } from './parseArtifacts';
 
 interface CompleteChipProps {
@@ -30,7 +29,7 @@ const ArtifactChipIcon = ({
     type: ParsedArtifact['type'];
     visualState: ArtifactChipVisualState;
 }) => {
-    const icon = type === 'code' ? <IcCode size={4} /> : <IcFileLines size={4} />;
+    const Icon = ARTIFACT_TYPE_CONFIG[type].icon;
 
     return (
         <span
@@ -41,7 +40,7 @@ const ArtifactChipIcon = ({
                 visualState === 'superseded' && 'artifact-chip-icon--superseded'
             )}
         >
-            {icon}
+            <Icon size={4} />
         </span>
     );
 };
@@ -64,6 +63,9 @@ const ArtifactChipSubtitle = ({ artifact, visualState, versionNumber }: Artifact
 
     const lineCount = getArtifactLineCount(artifact.content);
     const wordCount = getArtifactWordCount(artifact.content);
+    // Line count only makes sense for code; document and webpage (source is markup, not prose,
+    // but there's no more meaningful count available without executing it) both fall back to
+    // word count.
     const countLabel =
         artifact.type === 'code'
             ? c('collider_2025:Info').ngettext(msgid`${lineCount} line`, `${lineCount} lines`, lineCount)
