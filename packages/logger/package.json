@@ -8,7 +8,8 @@
     "exports": {
         ".": "./src/logger.ts",
         "./types": "./src/types.ts",
-        "./constants": "./src/constants.ts"
+        "./constants": "./src/constants.ts",
+        "./fixtures": "./src/fixtures.ts"
     },
     "scripts": {
         "check-types": "tsc",

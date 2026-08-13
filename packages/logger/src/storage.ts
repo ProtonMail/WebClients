@@ -52,13 +52,18 @@ export class IndexedDBStorage {
 
     async store(entry: LogEntry): Promise<void> {
         const db = await this.getDB();
+        performance.mark(`logger-storage:store:start`);
         await db.put('logs', entry);
+        performance.measure(`logger-storage:store`, `logger-storage:store:start`);
     }
 
     /** Entries in ascending timestamp order. */
     async retrieve(): Promise<LogEntry[]> {
+        performance.mark(`logger-storage:retrieve:start`);
         const db = await this.getDB();
-        return db.getAllFromIndex('logs', 'by-timestamp');
+        const entries = await db.getAllFromIndex('logs', 'by-timestamp');
+        performance.measure(`logger-storage:retrieve`, `logger-storage:retrieve:start`);
+        return entries;
     }
 
     async count(): Promise<number> {
