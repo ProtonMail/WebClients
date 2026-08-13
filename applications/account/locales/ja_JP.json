@@ -777,17 +777,11 @@
       "Export as CSV": [
         "CSV 形式でエクスポート"
       ],
-      "Export breakdown by company as ZIP": [
-        "会社ごとの内訳をZIPとしてエクスポート"
-      ],
       "Export key": [
         "鍵をエクスポート"
       ],
       "Export key before deleting": [
         "削除する前にキーをエクスポート"
-      ],
-      "Export overview as CSV": [
-        "概要をCSVとしてエクスポート"
       ],
       "Extend": [
         "延長"
@@ -3616,14 +3610,8 @@
       "Status": [
         "ステータス"
       ],
-      "Total billed seats": [
-        "請求対象の総シート数"
-      ],
       "Total cost": [
         "合計コスト"
-      ],
-      "Used / assigned seats": [
-        "使用中 / 割り当て済みのシート"
       ]
     },
     "Condition for custom filter": {
@@ -9868,9 +9856,6 @@
       "Ask your organization admin to setup Gateways.": [
         "ゲートウェイをセットアップするよう、組織の管理者に依頼してください。"
       ],
-      "Assigned seats won't be billed while disabled": [
-        "割り当てられたシートは、無効化されている間は請求されません"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "少なくとも ${ BETTER_PASSWORD_LENGTH } 文字以上"
       ],
@@ -12616,9 +12601,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "グループでは、指定されたグループの全ての人に迅速かつ簡単にメールを送ることができます。"
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "管理対象会社を使用すると、監督する組織のアクセス権の追加、編集、削除を行うことができます。"
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "現在のプランでは、@pm.meアドレスでメッセージを受信することしかできません。@pm.meでメッセージを送信・アドレスを作成したい場合は、アップグレードしましょう。"
       ],
@@ -12864,9 +12846,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "ダウンロードした回復ファイルを使って、ロックされたデータを復元することができません。デバイスベースの回復も無効です。"
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "割り当てられたシートの平均数に基づいて毎月請求されます。"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "クレジット報酬は、ご友人が年額プランにご登録いただいてから1か月後、月額プランにご加入いただいてから2か月後に受け取れます。"
@@ -13832,9 +13811,6 @@
       "Assertion Consumer Service URL": [
         "アサーション コンシューマ サービス URL"
       ],
-      "Assigned seats": [
-        "割り当て済みシート"
-      ],
       "Attach public key": [
         "公開鍵を添付"
       ],
@@ -13889,9 +13865,6 @@
       "Autosuggest": [
         "自動提案"
       ],
-      "Average": [
-        "平均"
-      ],
       "Awarded": [
         "進呈"
       ],
@@ -13903,9 +13876,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "12 ヶ月ごとに ${ priceYearly } で請求されます。"
-      ],
-      "Billed average": [
-        "請求平均"
       ],
       "Billed monthly.": [
         "毎月請求"
@@ -14881,12 +14851,6 @@
       ],
       "Search for a name or email": [
         "名前またはメールアドレスで検索"
-      ],
-      "Seats": [
-        "シート"
-      ],
-      "Seats usage": [
-        "シートの使用状況"
       ],
       "Second password": [
         "セカンドパスワード"
@@ -22569,9 +22533,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "最終変更：${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "最終更新：${ formattedUpdateDate }"
       ],
       "Not saved": [
         "未保存"

@@ -801,17 +801,11 @@
       "Export as CSV": [
         "Als CSV exportieren"
       ],
-      "Export breakdown by company as ZIP": [
-        "Aufschlüsselung nach Unternehmen als ZIP exportieren"
-      ],
       "Export key": [
         "Schlüssel exportieren"
       ],
       "Export key before deleting": [
         "Schlüssel vor dem Löschen exportieren"
-      ],
-      "Export overview as CSV": [
-        "Übersicht als CSV exportieren"
       ],
       "Extend": [
         "Erweitern"
@@ -3722,14 +3716,8 @@
       "Status": [
         "Status"
       ],
-      "Total billed seats": [
-        "Abgerechnete Lizenzen insgesamt"
-      ],
       "Total cost": [
         "Gesamtkosten"
-      ],
-      "Used / assigned seats": [
-        "Genutzte / zugewiesene Lizenzen"
       ]
     },
     "Condition for custom filter": {
@@ -10474,9 +10462,6 @@
       "Ask your organization admin to setup Gateways.": [
         "Bitte den Administrator deiner Organisation um die Einrichtung von Gateways."
       ],
-      "Assigned seats won't be billed while disabled": [
-        "Zugewiesene Lizenzen werden während der Deaktivierung nicht in Rechnung gestellt"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindestens ${ BETTER_PASSWORD_LENGTH } Zeichen"
       ],
@@ -10677,9 +10662,6 @@
       ],
       "Coming soon": [
         "Demnächst verfügbar"
-      ],
-      "Companies you've been given access to manage.": [
-        "Unternehmen, für deren Verwaltung dir Zugriff gewährt wurde."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Schließe die Anmeldung auf diesem Gerät ab, um ${ VPN_APP_NAME } auf deinem TV zu verwenden."
@@ -13467,9 +13449,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Mit Gruppen kannst Du schnell und einfach E-Mails an alle Mitglieder einer bestimmten Gruppe senden."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Mit verwalteten Unternehmen kannst du Zugriffsrechte für von dir betreute Organisationen hinzufügen, bearbeiten und entfernen."
-      ],
       "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
         "Mit VPN Professional können Administratoren für alle Mitglieder der Organisation ein stets aktives VPN sowie private Gateways, Zugriffsrichtlinien und Überwachungsfunktionen durchsetzen."
       ],
@@ -13736,9 +13715,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Verschlüsselte Daten können mit den heruntergeladenen Wiederherstellungsdateien nicht wiederhergestellt werden. Dadurch wird auch die gerätebasierte Wiederherstellung deaktiviert."
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "Die Abrechnung erfolgt monatlich auf Basis der durchschnittlichen Anzahl der zugewiesenen Lizenzen."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du erhältst eine Gutschrift von einem Monat, nachdem die von dir geworbene Person ein Jahresabo abgeschlossen hat, und von zwei Monaten, nachdem sie ein Monatsabo abgeschlossen hat."
@@ -14740,9 +14716,6 @@
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service URL"
       ],
-      "Assigned seats": [
-        "Zugewiesene Lizenzen"
-      ],
       "Attach public key": [
         "Öffentlichen Schlüssel anhängen"
       ],
@@ -14797,9 +14770,6 @@
       "Autosuggest": [
         "Auto-Vorschlagen"
       ],
-      "Average": [
-        "Durchschnitt"
-      ],
       "Awarded": [
         "Gutgeschrieben"
       ],
@@ -14814,9 +14784,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Abgerechnet werden ${ priceYearly } alle 12 Monate."
-      ],
-      "Billed average": [
-        "Abgerechneter Durchschnitt"
       ],
       "Billed monthly.": [
         "Wird monatlich abgerechnet."
@@ -15832,12 +15799,6 @@
       ],
       "Search for a name or email": [
         "Nach Namen oder E-Mail-Adresse suchen"
-      ],
-      "Seats": [
-        "Lizenzen"
-      ],
-      "Seats usage": [
-        "Lizenznutzung"
       ],
       "Second password": [
         "Zusätzliches Passwort"
@@ -23766,9 +23727,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "Zuletzt geändert am ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Letzte Aktualisierung ${ formattedUpdateDate }"
       ],
       "Not activated": [
         "Nicht aktiviert"

@@ -777,17 +777,11 @@
       "Export as CSV": [
         "CSV के रूप में निर्यात करें"
       ],
-      "Export breakdown by company as ZIP": [
-        "कंपनी के अनुसार विवरण ZIP के रूप में निर्यात करें"
-      ],
       "Export key": [
         "चाबी निर्यात करें"
       ],
       "Export key before deleting": [
         "मिटाने से पहले चाबी निर्यात करें"
-      ],
-      "Export overview as CSV": [
-        "अवलोकन को CSV के रूप में निर्यात करें"
       ],
       "Extend": [
         "फैलाएं"
@@ -3637,14 +3631,8 @@
       "Status": [
         "स्थिति"
       ],
-      "Total billed seats": [
-        "कुल बिल की गई सीटें"
-      ],
       "Total cost": [
         "कुल लागत"
-      ],
-      "Used / assigned seats": [
-        "प्रयुक्त / आवंटित सीटें"
       ]
     },
     "Condition for custom filter": {
@@ -9972,9 +9960,6 @@
       "Ask your organization admin to setup Gateways.": [
         "संगठन एडमिन से गेटवे सेटअप करने के लिए कहें।"
       ],
-      "Assigned seats won't be billed while disabled": [
-        "अक्षम होने के दौरान असाइन की गई सीटों के लिए बिल नहीं लिया जाएगा"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "कम से कम ${ BETTER_PASSWORD_LENGTH } अक्षर"
       ],
@@ -12719,9 +12704,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "ग्रुप्स की मदद से, आप निर्दिष्ट ग्रुप के सभी लोगों को जल्दी और आसानी से ईमेल भेज सकते हैं।"
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "संभाले जाने वाली कंपनियों के साथ, आप उन संगठनों के लिए एक्सेस को जोड़ सकते हैं, बदल सकते हैं और हटा सकते हैं जिनकी आप देखरेख करते हैं।"
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "अपनी वर्तमान योजना के साथ, आप केवल अपने @pm.me पते पर संदेश प्राप्त कर सकते हैं। संदेश भेजने और @pm.me का उपयोग करके अतिरिक्त पते बनाने के लिए अपग्रेड करें।"
       ],
@@ -12976,9 +12958,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "आप डाउनलोड किए गए रिकवरी फ़ाइलों का उपयोग करके लॉक किए गए डाटा को रिकवर नहीं कर पाएंगे। इससे डिवाइस-आधारित पुनर्प्राप्ति भी अक्षम हो जाएगी।"
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "आपको असाइन की गई सीटों की औसत संख्या के आधार पर मासिक बिल भेजा जाएगा।"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "आपके मित्र द्वारा वार्षिक प्लैन की सदस्यता लेने के 1 महीने बाद, और उनके द्वारा मासिक प्लैन की सदस्यता लेने के 2 महीने बाद आपको क्रेडिट पुरस्कार प्राप्त होगा।"
@@ -13954,9 +13933,6 @@
       "Assertion Consumer Service URL": [
         "अभिकथन उपभोक्ता सेवा URL"
       ],
-      "Assigned seats": [
-        "असाइन की गई सीटें"
-      ],
       "Attach public key": [
         "सार्वजनिक चाबी संलग्न करें"
       ],
@@ -14011,9 +13987,6 @@
       "Autosuggest": [
         "ऑटोसलाह"
       ],
-      "Average": [
-        "औसत"
-      ],
       "Awarded": [
         "इनाम"
       ],
@@ -14025,9 +13998,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "हर 12 महीने में ${ priceYearly } का बिल भेजा जाएगा।"
-      ],
-      "Billed average": [
-        "बिल किया गया औसत"
       ],
       "Billed monthly.": [
         "मासिक बिल भेजा जाएगा।"
@@ -15004,12 +14974,6 @@
       ],
       "Search for a name or email": [
         "नाम या ईमेल खोजें"
-      ],
-      "Seats": [
-        "सीटें"
-      ],
-      "Seats usage": [
-        "सीटों का उपयोग"
       ],
       "Second password": [
         "दूसरा पासवर्ड"
@@ -22815,9 +22779,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "पिछली बार बदला गया ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "आखिरी बार ${ formattedUpdateDate } को अपडेट हुआ"
       ],
       "Not saved": [
         "सेव नहीं किया गया"

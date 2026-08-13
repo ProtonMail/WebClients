@@ -777,17 +777,11 @@
       "Export as CSV": [
         "I-export bilang CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "I-export ang breakdown ayon sa kumpanya bilang ZIP"
-      ],
       "Export key": [
         "I-export ang key"
       ],
       "Export key before deleting": [
         "I-export ang key bago i-delete"
-      ],
-      "Export overview as CSV": [
-        "I-export ang pangkalahatang-ideya bilang CSV"
       ],
       "Extend": [
         "I-extend"
@@ -3637,14 +3631,8 @@
       "Status": [
         "Status"
       ],
-      "Total billed seats": [
-        "Kabuuang sinisingil na mga seat"
-      ],
       "Total cost": [
         "Kabuuang halaga"
-      ],
-      "Used / assigned seats": [
-        "Nagamit / naitatalagang mga seat"
       ]
     },
     "Condition for custom filter": {
@@ -9972,9 +9960,6 @@
       "Ask your organization admin to setup Gateways.": [
         "Hilingin sa admin ng organisasyon na i-set up ang mga Gateway."
       ],
-      "Assigned seats won't be billed while disabled": [
-        "Hindi sisingilin ang mga nakatalagang seat habang naka-disable"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Hindi bababa sa ${ BETTER_PASSWORD_LENGTH } na character"
       ],
@@ -12719,9 +12704,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Sa mga pangkat, mabilis at madaling makakapagpadala ng mga email sa lahat ng tao sa isang partikular na pangkat."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Sa pamamagitan ng mga pinamamahalaang kumpanya, maaari kang magdagdag, mag-edit, at mag-alis ng access para sa mga organisasyong pinamamahalaan mo."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Sa iyong kasalukuyang plano, makakatanggap ka lang ng mga mensahe gamit ang iyong @pm.me address. Mag-upgrade upang magpadala ng mga mensahe at gumawa ng mga karagdagang address gamit ang @pm.me."
       ],
@@ -12976,9 +12958,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Hindi mo mai-recover ang naka-lock na data gamit ang na-download na mga recovery file. Hindi rin nito pagaganahin ang device-based na recovery."
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "Sisingilin ka buwan-buwan batay sa average na bilang ng mga nakatalagang seat."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Matatanggap ang credit reward 1 buwan matapos mag-subscribe ang kaibigan sa taunang plano, at 2 buwan matapos mag-subscribe sa buwanang plano."
@@ -13954,9 +13933,6 @@
       "Assertion Consumer Service URL": [
         "URL ng Assertion Consumer Service"
       ],
-      "Assigned seats": [
-        "Mga nakatalagang seat"
-      ],
       "Attach public key": [
         "I-attach ang pampublikong key"
       ],
@@ -14011,9 +13987,6 @@
       "Autosuggest": [
         "Awtomatikong mungkahi"
       ],
-      "Average": [
-        "Average"
-      ],
       "Awarded": [
         "Iginawad"
       ],
@@ -14025,9 +13998,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Sisingilin ng ${ priceYearly } bawat 12 buwan."
-      ],
-      "Billed average": [
-        "Siningil na average"
       ],
       "Billed monthly.": [
         "Buwanang singil."
@@ -15004,12 +14974,6 @@
       ],
       "Search for a name or email": [
         "Maghanap ng pangalan o email"
-      ],
-      "Seats": [
-        "Mga seat"
-      ],
-      "Seats usage": [
-        "Paggamit ng mga seat"
       ],
       "Second password": [
         "Pangalawang password"
@@ -22815,9 +22779,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "Huling binago noong ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Huling na-update noong ${ formattedUpdateDate }"
       ],
       "Not saved": [
         "Hindi naka-save"
