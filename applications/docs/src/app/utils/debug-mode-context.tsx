@@ -1,4 +1,4 @@
-import { useLocalState } from '@proton/components'
+import useLocalState from '@proton/components/hooks/useLocalState'
 import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
 import type { ReactNode } from 'react'
 import { createContext, useCallback, useContext, useState } from 'react'

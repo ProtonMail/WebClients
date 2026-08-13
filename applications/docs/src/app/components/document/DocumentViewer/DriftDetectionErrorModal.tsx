@@ -1,10 +1,10 @@
+import useNotifications from '@proton/components/hooks/useNotifications'
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
 import BasicModal from '@proton/components/components/modalTwo/BasicModal'
 import { useState } from 'react'
 import { c } from 'ttag'
 import { Button } from '@proton/atoms/Button/Button'
-import { useNotifications } from '@proton/components'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { useQuickReportModal } from '~/components/QuickReportModal'
 

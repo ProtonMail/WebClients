@@ -1,6 +1,8 @@
+import ContextMenu from '@proton/components/components/contextMenu/ContextMenu'
+import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator'
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils'
 import { useEffect } from 'react'
 
-import { ContextMenu, ContextSeparator, DropdownSizeUnit } from '@proton/components'
 import { OpenButton } from './buttons/OpenButton'
 import type { RecentDocumentsItem } from '@proton/docs-core'
 import { rawPermissionToRole } from '@proton/docs-core'

@@ -1,16 +1,14 @@
+import Dropdown from '@proton/components/components/dropdown/Dropdown'
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
+import Icon from '@proton/components/components/icon/Icon'
+import useAuthentication from '@proton/components/hooks/useAuthentication'
+import useNotifications from '@proton/components/hooks/useNotifications'
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor'
 import { Avatar } from '@proton/atoms/Avatar/Avatar'
 import { Button } from '@proton/atoms/Button/Button'
 import { Input } from '@proton/atoms/Input/Input'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
-import {
-  Dropdown,
-  DropdownMenu,
-  DropdownMenuButton,
-  Icon,
-  useAuthentication,
-  useNotifications,
-  usePopperAnchor,
-} from '@proton/components'
 import { DateFormatter, type RecentDocumentsItem } from '@proton/docs-core'
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown'
 import { IcArrowDownArrowUp } from '@proton/icons/icons/IcArrowDownArrowUp'
@@ -45,13 +43,7 @@ import { useRenameWithSDK } from '~/utils/flags'
 // -----
 
 export type TableVariant =
-  | 'recents-name'
-  | 'recents-viewed'
-  | 'recents-modified'
-  | 'recents-owner'
-  | 'recents-location'
-  | 'trash'
-  | 'search'
+  'recents-name' | 'recents-viewed' | 'recents-modified' | 'recents-owner' | 'recents-location' | 'trash' | 'search'
 export type DocumentsTableProps = { itemsSections: ItemsSection[]; variant: TableVariant }
 
 export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) {

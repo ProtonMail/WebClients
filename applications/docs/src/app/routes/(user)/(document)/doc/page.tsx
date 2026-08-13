@@ -198,12 +198,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
 }
 
 type ContentPhase =
-  | 'creating_new_document'
-  | 'copy_public'
-  | 'open_url_reauth'
-  | 'invalid_open_action'
-  | 'convert'
-  | 'document_viewer'
+  'creating_new_document' | 'copy_public' | 'open_url_reauth' | 'invalid_open_action' | 'convert' | 'document_viewer'
 
 function Content({
   isCreatingNewDocument,

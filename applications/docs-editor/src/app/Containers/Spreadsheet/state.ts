@@ -1,3 +1,4 @@
+import useNotifications from '@proton/components/hooks/useNotifications'
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { flushSync } from 'react-dom'
 
@@ -32,7 +33,6 @@ import { DocProvider } from '@proton/docs-shared'
 import { useSyncedState } from '../../Hooks/useSyncedState'
 import { create, useStore } from 'zustand'
 import { useEvent } from './components/utils'
-import { useNotifications } from '@proton/components'
 import { c } from 'ttag'
 import { LoadedFontFamilies, loadFont } from './font-state'
 import debounce from 'lodash/debounce'

@@ -17,54 +17,52 @@ interface RecentsStore {
   setAddresses: (addresses: Address[]) => void
 }
 
-export const useRecentsStore = create(
-  (set): RecentsStore => ({
-    recentDocuments: {},
+export const useRecentsStore = create((set): RecentsStore => ({
+  recentDocuments: {},
 
-    setRecentDocuments: (documents) =>
-      set(() => {
-        const recentDocuments: { [nodeUid: string]: RecentDocumentsItemValue } = {}
-        for (const document of documents) {
-          recentDocuments[generateNodeUid(document.volumeId, document.linkId)] = document
+  setRecentDocuments: (documents) =>
+    set(() => {
+      const recentDocuments: { [nodeUid: string]: RecentDocumentsItemValue } = {}
+      for (const document of documents) {
+        recentDocuments[generateNodeUid(document.volumeId, document.linkId)] = document
+      }
+      return { recentDocuments }
+    }),
+
+  setDocument: (updatedDocument) =>
+    set((state) => ({
+      recentDocuments: {
+        ...state.recentDocuments,
+        [generateNodeUid(updatedDocument.volumeId, updatedDocument.linkId)]: updatedDocument,
+      },
+    })),
+
+  removeDocument: (nodeUid) =>
+    set((state) => {
+      const { [nodeUid]: _, ...rest } = state.recentDocuments
+      return { recentDocuments: rest }
+    }),
+
+  removeChildrenOf: (parentFolderUid) =>
+    set((state) => {
+      const filteredDocuments: { [nodeUid: string]: RecentDocumentsItemValue } = {}
+
+      for (const documentNodeUid in state.recentDocuments) {
+        const document = state.recentDocuments[documentNodeUid]
+        if (document.ancestorsNodeUids?.includes(parentFolderUid)) {
+          continue
         }
-        return { recentDocuments }
-      }),
+        filteredDocuments[documentNodeUid] = document
+      }
 
-    setDocument: (updatedDocument) =>
-      set((state) => ({
-        recentDocuments: {
-          ...state.recentDocuments,
-          [generateNodeUid(updatedDocument.volumeId, updatedDocument.linkId)]: updatedDocument,
-        },
-      })),
+      return { recentDocuments: filteredDocuments }
+    }),
 
-    removeDocument: (nodeUid) =>
-      set((state) => {
-        const { [nodeUid]: _, ...rest } = state.recentDocuments
-        return { recentDocuments: rest }
-      }),
+  recentDocumentsInitialized: false,
 
-    removeChildrenOf: (parentFolderUid) =>
-      set((state) => {
-        const filteredDocuments: { [nodeUid: string]: RecentDocumentsItemValue } = {}
+  setInitialized: () => set(() => ({ recentDocumentsInitialized: true })),
 
-        for (const documentNodeUid in state.recentDocuments) {
-          const document = state.recentDocuments[documentNodeUid]
-          if (document.ancestorsNodeUids?.includes(parentFolderUid)) {
-            continue
-          }
-          filteredDocuments[documentNodeUid] = document
-        }
+  addresses: [],
 
-        return { recentDocuments: filteredDocuments }
-      }),
-
-    recentDocumentsInitialized: false,
-
-    setInitialized: () => set(() => ({ recentDocumentsInitialized: true })),
-
-    addresses: [],
-
-    setAddresses: (addresses) => set(() => ({ addresses })),
-  }),
-)
+  setAddresses: (addresses) => set(() => ({ addresses })),
+}))
