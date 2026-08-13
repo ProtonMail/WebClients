@@ -1526,8 +1526,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1727,6 +1726,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Keep going": [
+        "Continuer"
+      ],
+      "Stop here": [
+        "S'arrêter ici"
       ]
     },
     "action": {
@@ -5558,6 +5563,12 @@
       ],
       "You do not have access to this item": [
         "Vous n'avez pas accès à cet élément."
+      ],
+      "Device not found": [
+        "L'appareil est introuvable."
+      ],
+      "Moving root item is not allowed": [
+        "Le déplacement de l'élément racine n'est pas autorisé."
       ]
     },
     "error": {
@@ -7952,7 +7963,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9485,6 +9497,39 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Nous vous redirigerons vers ${ IDEAL_BRAND_NAME } dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
+      ],
+      "Find out what can be migrated.": [
+        "Découvrez ce qui peut être migré."
+      ],
+      "I have not finished this one yet.": [
+        "Je n'ai pas encore fini celui-là."
+      ],
+      "No users to display": [
+        "Il n'y a aucun utilisateur à afficher."
+      ],
+      "Searched ${ targetName }": [
+        "Recherche effectuée sur ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Recherche d'e-mails provenant de ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Recherche d'e-mails destinés à ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Recherche effectuée pour « ${ keyword } »"
+      ],
+      "Searched your mail": [
+        "J'ai parcouru tes e-mails"
+      ],
+      "Star emails": [
+        "Mettre les e-mails en favoris"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Cela demande beaucoup d'étapes. Faut-il continuer ?"
+      ],
+      "Unstar emails": [
+        "Retirer les e-mails des favoris"
       ]
     },
     "info": {
@@ -10689,6 +10734,15 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "No unread conversations": [
+        "Aucune conversation non lue"
+      ],
+      "No unread messages": [
+        "Aucun message non lu"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principal - Tout ce qui nécessite votre attention ainsi que les emails des catégories désactivées"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12000,6 +12054,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès étendu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès limité"
       ]
     },
     "new_plans: feature highlight": {
@@ -13851,6 +13911,9 @@
       ],
       "User Admin": [
         "Administrateur des utilisateurs"
+      ],
+      "Organization Admin": [
+        "Administrateur de l'organisation"
       ]
     },
     "Role description": {
@@ -16789,6 +16852,15 @@
       ],
       "Domain names": [
         "Noms de domaine"
+      ],
+      "Star emails": [
+        "Mettre les e-mails en favoris"
+      ],
+      "Still working on it": [
+        "Je suis encore en train d'y travailler"
+      ],
+      "Unstar emails": [
+        "Retirer les e-mails des favoris"
       ]
     },
     "Title header for keys table": {

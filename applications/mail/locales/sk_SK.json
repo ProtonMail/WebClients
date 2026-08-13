@@ -1531,10 +1531,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1739,6 +1736,12 @@
       ],
       "View guide": [
         "Zobraziť príručku"
+      ],
+      "Keep going": [
+        "Pokračujte"
+      ],
+      "Stop here": [
+        "Tu zastav"
       ]
     },
     "action": {
@@ -8350,7 +8353,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10016,6 +10022,18 @@
       ],
       "Searched your mail": [
         "Prehľadal som váš mail"
+      ],
+      "I have not finished this one yet.": [
+        "Ešte som to nedokončil."
+      ],
+      "Star emails": [
+        "Označiť emaily hviezdičkou"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Je to dosť zdĺhavé. Mám v tom pokračovať?"
+      ],
+      "Unstar emails": [
+        "Odobrať hviezdičku z emailov"
       ]
     },
     "info": {
@@ -12634,6 +12652,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s rozšíreným prístupom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s obmedzeným prístupom"
       ]
     },
     "new_plans: feature highlight": {
@@ -17634,6 +17658,15 @@
       ],
       "What are you migrating?": [
         "Čo migrujete?"
+      ],
+      "Star emails": [
+        "Označiť emaily hviezdičkou"
+      ],
+      "Still working on it": [
+        "Stále na tom pracujem"
+      ],
+      "Unstar emails": [
+        "Odobrať hviezdičku z emailov"
       ]
     },
     "Title header for keys table": {

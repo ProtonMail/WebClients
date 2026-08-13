@@ -1526,8 +1526,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1727,6 +1726,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Keep going": [
+        "Continua"
+      ],
+      "Stop here": [
+        "Parar aquí"
       ]
     },
     "action": {
@@ -8078,7 +8083,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9679,6 +9685,18 @@
       ],
       "Searched your mail": [
         "S'ha buscat al vostre correu"
+      ],
+      "I have not finished this one yet.": [
+        "Encara no he acabat aquesta."
+      ],
+      "Star emails": [
+        "Destaca correus electrònics"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Això està prenent molts passos. Hauria de continuar?"
+      ],
+      "Unstar emails": [
+        "Deixa de destacar correus electrònics"
       ]
     },
     "info": {
@@ -12203,6 +12221,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés ampliat"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés limitat"
       ]
     },
     "new_plans: feature highlight": {
@@ -14054,6 +14078,9 @@
       ],
       "User Admin": [
         "Administrador/a d'usuaris"
+      ],
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ]
     },
     "Role description": {
@@ -17007,6 +17034,15 @@
       ],
       "Domain names": [
         "Noms de domini"
+      ],
+      "Star emails": [
+        "Destaca correus electrònics"
+      ],
+      "Still working on it": [
+        "Encara hi estem treballant"
+      ],
+      "Unstar emails": [
+        "Deixa de destacar correus electrònics"
       ]
     },
     "Title header for keys table": {
