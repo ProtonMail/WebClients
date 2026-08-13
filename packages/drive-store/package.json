@@ -11,7 +11,7 @@
         "test:watch": "jest --watch"
     },
     "resolutions": {
-        "@xmldom/xmldom": "0.9.10"
+        "@xmldom/xmldom": "0.9.11"
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
@@ -36,7 +36,7 @@
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "*",
-        "@xmldom/xmldom": "^0.9.10",
+        "@xmldom/xmldom": "^0.9.11",
         "client-zip": "^2.5.0",
         "comlink": "^4.4.2",
         "exifreader": "^4.41.3",
