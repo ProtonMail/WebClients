@@ -1,5 +1,6 @@
 import { serverTime } from '@protontech/crypto';
 import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
+
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { type ReturnUrlResult, getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { isSelf } from '@proton/shared/lib/user/helpers';
@@ -180,7 +181,7 @@ export interface ProduceForkParameters {
     payloadVersion: ForkPayloadVersion;
     unauthenticatedReturnUrl: string;
     returnUrl: ReturnUrlResult | undefined;
-    redirectUrl: string;
+    redirectUrl: URL | null;
     email?: string;
     partnerId?: string;
 }
@@ -214,7 +215,10 @@ export const getProduceForkParameters = (
         return '';
     })();
     const returnUrl = getReturnUrl(searchParams);
-    const redirectUrl = searchParams.get('redirectUrl') || '';
+    const redirectUrl = (() => {
+        const value = searchParams.get('redirectUrl') || '';
+        return value && URL.canParse(value) ? new URL(value) : null;
+    })();
     const payloadType = (() => {
         const value = searchParams.get(ForkSearchParameters.PayloadType) || '';
         if (value === 'offline') {
