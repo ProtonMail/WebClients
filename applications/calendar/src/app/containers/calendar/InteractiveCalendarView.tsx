@@ -10,12 +10,15 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { VIDEO_CONF_API_ERROR_CODES } from '@proton/calendar-video-conferencing/videoConferencing/constants';
+import {
+    VideoConferenceZoomIntegration,
+    useVideoConfTelemetry,
+} from '@proton/calendar-video-conferencing/videoConferencing/telemetry';
 import { useGetCalendarBootstrap, useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import { validateDeepLinkParams } from '@proton/calendar/utils';
-import { VIDEO_CONF_API_ERROR_CODES } from '@proton/calendar/videoConferencing/constants';
-import { VideoConferenceZoomIntegration, useVideoConfTelemetry } from '@proton/calendar/videoConferencing/telemetry';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import ImportModal from '@proton/components/containers/calendar/importModal/ImportModal';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';

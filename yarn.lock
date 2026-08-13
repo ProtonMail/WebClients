@@ -9803,24 +9803,70 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/calendar-video-conferencing@workspace:^, @proton/calendar-video-conferencing@workspace:packages/calendar-video-conferencing":
+  version: 0.0.0-use.local
+  resolution: "@proton/calendar-video-conferencing@workspace:packages/calendar-video-conferencing"
+  dependencies:
+    "@proton/account": "workspace:^"
+    "@proton/activation": "workspace:^"
+    "@proton/atoms": "workspace:^"
+    "@proton/calendar": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/icons": "workspace:^"
+    "@proton/meet": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/unleash": "workspace:^"
+    "@proton/utils": "workspace:^"
+    "@protontech/crypto": "npm:*"
+    "@testing-library/jest-dom": "npm:^6.9.1"
+    "@testing-library/react": "npm:^15.0.7"
+    "@testing-library/react-hooks": "npm:^8.0.1"
+    "@testing-library/user-event": "npm:^14.6.1"
+    eslint: "npm:^9.39.5"
+    history: "npm:^4.10.1"
+    jest: "npm:^30.4.2"
+    jest-environment-jsdom: "npm:^30.4.1"
+    lodash: "npm:^4.18.1"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    react-router-dom: "npm:^5.3.4"
+    ts-jest: "npm:^29.4.11"
+    ttag: "npm:^1.8.12"
+    typescript: "npm:^6.0.3"
+  languageName: unknown
+  linkType: soft
+
 "@proton/calendar@workspace:^, @proton/calendar@workspace:packages/calendar":
   version: 0.0.0-use.local
   resolution: "@proton/calendar@workspace:packages/calendar"
   dependencies:
     "@proton/account": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/jest-env": "workspace:^"
     "@proton/meet": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/redux-utilities": "workspace:^"
+    "@proton/sanitize": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@reduxjs/toolkit": "npm:^2.12.0"
+    "@swc/jest": "npm:^0.2.39"
     "@testing-library/jest-dom": "npm:^6.9.1"
-    "@testing-library/react": "npm:^15.0.7"
+    core-js: "npm:^3.49.0"
     eslint: "npm:^9.39.5"
     jest: "npm:^30.4.2"
     jest-environment-jsdom: "npm:^30.4.1"
+    lodash: "npm:^4.18.1"
     react: "npm:^18.3.1"
-    react-dom: "npm:^18.3.1"
-    react-redux: "npm:^9.3.0"
     ts-jest: "npm:^29.4.12"
-    ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
   languageName: unknown
   linkType: soft
@@ -40742,6 +40788,7 @@ __metadata:
     "@proton/activation": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
+    "@proton/calendar-video-conferencing": "workspace:^"
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/cross-storage": "workspace:^"
@@ -40923,6 +40970,7 @@ __metadata:
     "@proton/activation": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
+    "@proton/calendar-video-conferencing": "workspace:^"
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/cross-storage": "workspace:^"
@@ -41459,6 +41507,7 @@ __metadata:
     "@proton/activation": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
+    "@proton/calendar-video-conferencing": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/cross-storage": "workspace:^"
     "@proton/encrypted-search": "workspace:^"
@@ -41854,6 +41903,7 @@ __metadata:
     "@proton/activation": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
+    "@proton/calendar-video-conferencing": "workspace:^"
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
@@ -48788,7 +48838,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:^29.4.12":
+"ts-jest@npm:^29.4.11, ts-jest@npm:^29.4.12":
   version: 29.4.12
   resolution: "ts-jest@npm:29.4.12"
   dependencies:

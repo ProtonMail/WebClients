@@ -25,6 +25,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { EMPTY_ORG_PERMISSIONS } from '@proton/account/userPermissions';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { ThirdPartySection } from '@proton/calendar-video-conferencing/thirdParty/ThirdPartySection';
 import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
 import DeleteSection from '@proton/components/containers/account/DeleteSection';
 import EmailSubscriptionSection from '@proton/components/containers/account/EmailSubscriptionSection';
@@ -73,7 +74,6 @@ import { RewardSection } from '@proton/components/containers/referral/rewards/Re
 import { SentinelSection } from '@proton/components/containers/sentinel/SentinelSection';
 import SessionsSection from '@proton/components/containers/sessions/SessionsSection';
 import ThemesSection from '@proton/components/containers/themes/ThemesSection';
-import { ThirdPartySection } from '@proton/components/containers/thirdParty/ThirdPartySection';
 import TopBanners from '@proton/components/containers/topBanners/TopBanners';
 import OpenVPNCredentialsSection from '@proton/components/containers/vpn/OpenVPNCredentialsSection';
 import { VpnAlsoInYourPlanSection } from '@proton/components/containers/vpn/VpnAlsoInYourPlanSection/VpnAlsoInYourPlanSection';

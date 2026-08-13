@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useUserSettings, useWelcomeFlags } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { useMeetFunnelTelemetry } from '@proton/calendar/protonMeetIntegration/meetFunnelTelemetry';
+import { useMeetFunnelTelemetry } from '@proton/calendar-video-conferencing/protonMeetIntegration/meetFunnelTelemetry';
 import useAppLink from '@proton/components/components/link/useAppLink';
 import Logo from '@proton/components/components/logo/Logo';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';

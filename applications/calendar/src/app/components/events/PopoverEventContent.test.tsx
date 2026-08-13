@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react';
 
-import { SEPARATOR_PROTON_EVENTS } from '@proton/calendar/videoConferencing/constants';
-import { useVideoConferencingWidget } from '@proton/calendar/videoConferencing/widget';
+import { SEPARATOR_PROTON_EVENTS } from '@proton/calendar-video-conferencing/videoConferencing/constants';
+import { useVideoConferencingWidget } from '@proton/calendar-video-conferencing/videoConferencing/widget';
 import type { EventModelReadView, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { calendarBuilder } from '@proton/testing/lib/builders';
 
 import PopoverEventContent from './PopoverEventContent';
 
-jest.mock('@proton/calendar/videoConferencing/widget', () => ({
+jest.mock('@proton/calendar-video-conferencing/videoConferencing/widget', () => ({
     useVideoConferencingWidget: jest.fn(),
 }));
 
