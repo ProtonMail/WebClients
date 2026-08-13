@@ -178,6 +178,7 @@ Donut chart (single arc layer — no text labels, no root mark + layer):
 \`\`\`
 
 Invalid patterns (never emit):
+- \`mark: "image"\`, \`mark: "geoshape"\`, or any \`encoding.url\` channel — Lumo blocks these mark types because they load remote URLs.
 - Root \`mark\`/\`encoding\` **and** a \`layer\` array in the same spec.
 - Empty \`layer\` entries like \`{}\`, or \`layer\` marks missing \`encoding\`.
 - \`encoding.x.type: "temporal"\` or \`timeUnit\` on integer \`year\` values (1994, 2024).
