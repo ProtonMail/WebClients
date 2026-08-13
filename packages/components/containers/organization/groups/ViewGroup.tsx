@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { getIsScimGroup, getIsScimGroupPendingKeys } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { getTranslatedRoleName } from '@proton/account/organizationRoles/helpers';
 import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -88,7 +89,9 @@ const ViewGroup = () => {
     const primaryGroupAddressKey = Address.Keys[0];
     const isE2eeEnabled = !hasBit(primaryGroupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
 
-    const roleNames = groupRolesMap[group.ID]?.map((assignment) => assignment.Role.Name).join(', ');
+    const roleNames = groupRolesMap[group.ID]
+        ?.map((assignment) => getTranslatedRoleName(assignment.Role.Name))
+        .join(', ');
 
     const isScimGroup = getIsScimGroup(group);
     const isScimGroupPendingKeys = getIsScimGroupPendingKeys(group);
