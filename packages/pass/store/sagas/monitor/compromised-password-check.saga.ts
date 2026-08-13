@@ -7,19 +7,25 @@ import type { CompromisedPasswordEntry } from '@proton/pass/lib/monitor/types';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { compromisedPasswordUpdate, importItemsProgress, itemCreate, itemEdit } from '@proton/pass/store/actions';
 import type { ItemEditIntentAction } from '@proton/pass/store/middleware/item-edit.middleware';
-import { selectCompromisedPasswordsCache, selectPassPlan } from '@proton/pass/store/selectors';
+import { selectCompromisedPasswordsCache, selectFeatureFlag, selectPassPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
+function* isEnabled(): Generator<any, boolean, any> {
+    const enabled: boolean = yield select(selectFeatureFlag(PassFeature.Pass__V1_40__CompromisedPasswords));
+    if (!enabled) return false;
+
+    const plan: UserPassPlan = yield select(selectPassPlan);
+    return isPaidPlan(plan);
+}
+
 function* checkItem(item: ItemRevision): Generator<any, void, any> {
     try {
         if (item.data.type !== 'login') return;
-
-        const plan: UserPassPlan = yield select(selectPassPlan);
-        if (!isPaidPlan(plan)) return;
 
         const password = deobfuscate(item.data.content.password);
         if (!password) return;
@@ -39,12 +45,14 @@ function* checkItem(item: ItemRevision): Generator<any, void, any> {
     }
 }
 
-function* onItemCreateSuccess({ payload }: ReturnType<typeof itemCreate.success>) {
+function* onItemCreateSuccess({ payload }: ReturnType<typeof itemCreate.success>): Generator<any, void, any> {
+    if (!(yield call(isEnabled))) return;
     yield fork(checkItem, payload.item);
 }
 
 function* onItemEditIntent({ payload: editIntent, meta }: ItemEditIntentAction): Generator<any, void, any> {
     if (editIntent.type !== 'login') return;
+    if (!(yield call(isEnabled))) return;
 
     const { itemId } = editIntent;
 
@@ -76,7 +84,8 @@ function* onItemEditIntent({ payload: editIntent, meta }: ItemEditIntentAction):
     }
 }
 
-function* onImportProgress({ payload }: ReturnType<typeof importItemsProgress>) {
+function* onImportProgress({ payload }: ReturnType<typeof importItemsProgress>): Generator<any, void, any> {
+    if (!(yield call(isEnabled))) return;
     for (const item of payload.items) yield fork(checkItem, item);
 }
 
