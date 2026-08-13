@@ -7,8 +7,10 @@ import { type AuthReminderResponse, authReminder, deleteAuthReminder } from '@pr
 import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import type { OrganizationState } from '../organization';
 import type { UserState } from '../user';
 import type { UserSettingsState } from '../userSettings';
+import type { PasswordReminderAccountType } from './helpers/getPasswordReminderAccountType';
 
 const name = 'passwordReminder' as const;
 
@@ -17,6 +19,20 @@ interface PasswordReminderState {
      * Whether the password reminders feature is available to this user.
      */
     isAvailable: boolean;
+
+    /**
+     * Which segment this user belongs to. Computed alongside `isAvailable` from the same
+     * inputs, so telemetry reports the segment that actually decided the feature gate.
+     *
+     * `undefined` until the listener has run at least once.
+     */
+    accountType: PasswordReminderAccountType | undefined;
+
+    /**
+     * Whether the user's organization enforces password check-ins, which prevents them
+     * from opting out. Always false for individual users.
+     */
+    isEnforced: boolean;
 
     /**
      * Whether password reminders isAvailable and the setting is enabled.
@@ -34,7 +50,7 @@ interface PasswordReminderState {
     showReminders: boolean;
 }
 
-export interface PasswordReminderReduxState extends UserState, UserSettingsState {
+export interface PasswordReminderReduxState extends UserState, UserSettingsState, OrganizationState {
     [name]: PasswordReminderState;
 }
 
@@ -42,6 +58,8 @@ export const selectPasswordReminder = (state: PasswordReminderReduxState) => sta
 
 const initialState: PasswordReminderState = {
     isAvailable: false,
+    accountType: undefined,
+    isEnforced: false,
     isEnabled: false,
     messageCadenceHasExpired: false,
     showReminders: false,
@@ -52,6 +70,12 @@ const slice = createSlice({
     reducers: {
         setIsAvailable: (state, action: PayloadAction<{ isAvailable: boolean }>) => {
             state.isAvailable = action.payload.isAvailable;
+        },
+        setAccountType: (state, action: PayloadAction<{ accountType: PasswordReminderAccountType }>) => {
+            state.accountType = action.payload.accountType;
+        },
+        setIsEnforced: (state, action: PayloadAction<{ isEnforced: boolean }>) => {
+            state.isEnforced = action.payload.isEnforced;
         },
         setIsEnabled: (state, action: PayloadAction<{ isEnabled: boolean }>) => {
             state.isEnabled = action.payload.isEnabled;

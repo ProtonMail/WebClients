@@ -8,6 +8,7 @@ import {
     MultiUserCreationSection,
     OrganizationGroupsManagementSection,
     OrganizationPasswordPoliciesSection,
+    OrganizationPasswordRemindersSection,
     OrganizationPasswordSection,
     OrganizationRetentionPoliciesSection,
     OrganizationScheduleCallSection,
@@ -161,6 +162,7 @@ const OrganizationSettingsRouter = ({
                     <PrivateMainSettingsArea config={security}>
                         <SentinelSection app={app} variant="organization" />
                         <OrganizationPasswordPoliciesSection organization={organization} />
+                        <OrganizationPasswordRemindersSection organization={organization} />
                         <OrganizationTwoFARemindersSection organization={organization} />
                         <OrganizationTwoFAEnforcementSection organization={organization} />
                     </PrivateMainSettingsArea>

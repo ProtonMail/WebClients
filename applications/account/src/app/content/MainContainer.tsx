@@ -224,6 +224,10 @@ const MainContainer = () => {
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
+    const isPasswordRemindersEnabled = useFlag('PasswordReminders');
+    const isPasswordRemindersOrgFlagEnabled = useFlag('PasswordRemindersOrg');
+    // Password check-ins for org members are behind the overall feature flag plus the org one.
+    const isPasswordRemindersOrgEnabled = isPasswordRemindersEnabled && isPasswordRemindersOrgFlagEnabled;
     const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isMspEnabled = useFlag('MspEnabled');
@@ -318,6 +322,7 @@ const MainContainer = () => {
         isCryptoPostQuantumOptInEnabled,
         isSsoForPbsEnabled,
         isRetentionPoliciesEnabled,
+        isPasswordRemindersOrgEnabled,
         isAuthenticatorAvailable,
         isCategoryViewEnabled: canUseCategoryView,
         isMspEnabled,

@@ -49,6 +49,7 @@ export const updateOrganizationSettings = (data: {
     VideoConferencingEnabled?: boolean;
     MailCategoryViewEnabled?: boolean;
     SSOBackupPasswordDisabled?: boolean;
+    PasswordReminderEnforced?: boolean;
     AllowedProducts?: OrganizationSettings['AllowedProducts'];
     PasswordPolicies?: OrganizationSettings['PasswordPolicies'];
 }) => ({

@@ -263,6 +263,8 @@ export enum TelemetryPasswordReminderEvents {
     forgot_password_exit = 'forgot_password_exit',
     enable = 'enable',
     disable = 'disable',
+    enforcement_enable = 'enforcement_enable',
+    enforcement_disable = 'enforcement_disable',
 }
 
 export enum TelemetryResetPasswordEvents {

@@ -18,6 +18,7 @@ export const getDefaultOrganizationSettings = (): OrganizationSettings => {
         VideoConferencingEnabled: false,
         MailCategoryViewEnabled: false,
         SSOBackupPasswordDisabled: false,
+        PasswordReminderEnforced: false,
         AllowedProducts: ['All'],
         PasswordPolicies: [],
         LogAuth: 0,
