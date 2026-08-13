@@ -15,7 +15,7 @@ const mockedWriteEntries = writeFeatureFlagCookieEntries as jest.Mock;
 
 const buildConfig = (overrides: Partial<StaticExperimentConfig> = {}): StaticExperimentConfig => ({
     enabled: true,
-    schedule: [{ startAt: '1970-01-01T00:00:00Z', weights: { A: 50, B: 50 } }],
+    schedule: [{ startsAt: '1970-01-01T00:00:00Z', weights: { A: 50, B: 50 } }],
     ...overrides,
 });
 
@@ -54,7 +54,7 @@ describe('resolveStaticExperiments', () => {
 
         const result = resolveStaticExperiments({
             MyExperiment: buildConfig({
-                schedule: [{ startAt: '2999-01-01T00:00:00Z', weights: { A: 100 } }],
+                schedule: [{ startsAt: '2999-01-01T00:00:00Z', weights: { A: 100 } }],
             }),
         });
 
@@ -88,7 +88,7 @@ describe('resolveStaticExperiments', () => {
 
         const result = resolveStaticExperiments({
             MyExperiment: buildConfig({
-                schedule: [{ startAt: '1970-01-01T00:00:00Z', weights: { A: 20, B: 30, C: 4 } }],
+                schedule: [{ startsAt: '1970-01-01T00:00:00Z', weights: { A: 20, B: 30, C: 4 } }],
             }),
         });
 
@@ -102,9 +102,9 @@ describe('resolveStaticExperiments', () => {
         const result = resolveStaticExperiments({
             MyExperiment: buildConfig({
                 schedule: [
-                    { startAt: '1970-01-01T00:00:00Z', weights: { A: 100 } },
-                    { startAt: '2020-01-01T00:00:00Z', weights: { B: 100 } },
-                    { startAt: '2999-01-01T00:00:00Z', weights: { C: 100 } },
+                    { startsAt: '1970-01-01T00:00:00Z', weights: { A: 100 } },
+                    { startsAt: '2020-01-01T00:00:00Z', weights: { B: 100 } },
+                    { startsAt: '2999-01-01T00:00:00Z', weights: { C: 100 } },
                 ],
             }),
         });
@@ -112,12 +112,52 @@ describe('resolveStaticExperiments', () => {
         expect(result).toEqual({ MyExperiment: 'B' });
     });
 
+    it('returns disabled once the only schedule entry has ended', () => {
+        jest.spyOn(Date, 'now').mockReturnValue(new Date('2020-06-01T00:00:00Z').getTime());
+
+        const result = resolveStaticExperiments({
+            MyExperiment: buildConfig({
+                schedule: [{ startsAt: '1970-01-01T00:00:00Z', endsAt: '2020-01-01T00:00:00Z', weights: { A: 100 } }],
+            }),
+        });
+
+        expect(result).toEqual({ MyExperiment: 'disabled' });
+    });
+
+    it('falls back to an earlier still-active entry once a later entry has ended', () => {
+        jest.spyOn(Date, 'now').mockReturnValue(new Date('2020-06-01T00:00:00Z').getTime());
+
+        const result = resolveStaticExperiments({
+            MyExperiment: buildConfig({
+                schedule: [
+                    { startsAt: '1970-01-01T00:00:00Z', weights: { A: 100 } },
+                    { startsAt: '2020-01-01T00:00:00Z', endsAt: '2020-02-01T00:00:00Z', weights: { B: 100 } },
+                ],
+            }),
+        });
+
+        expect(result).toEqual({ MyExperiment: 'A' });
+    });
+
+    it('treats an entry as active up to but not including its endsAt', () => {
+        const endsAt = '2020-01-01T00:00:00Z';
+        jest.spyOn(Date, 'now').mockReturnValue(new Date(endsAt).getTime());
+
+        const result = resolveStaticExperiments({
+            MyExperiment: buildConfig({
+                schedule: [{ startsAt: '1970-01-01T00:00:00Z', endsAt, weights: { A: 100 } }],
+            }),
+        });
+
+        expect(result).toEqual({ MyExperiment: 'disabled' });
+    });
+
     it('preserves unrelated cookie entries when writing back', () => {
         mockedReadEntries.mockReturnValue(new Map([['OtherFlag', 'X']]));
         jest.spyOn(Date, 'now').mockReturnValue(0);
 
         resolveStaticExperiments({
-            MyExperiment: buildConfig({ schedule: [{ startAt: '1970-01-01T00:00:00Z', weights: { A: 100 } }] }),
+            MyExperiment: buildConfig({ schedule: [{ startsAt: '1970-01-01T00:00:00Z', weights: { A: 100 } }] }),
         });
 
         expect(mockedWriteEntries).toHaveBeenCalledWith(
@@ -133,7 +173,7 @@ describe('resolveStaticExperiments', () => {
         jest.spyOn(Date, 'now').mockReturnValue(0);
 
         const result = resolveStaticExperiments({
-            ExperimentA: buildConfig({ schedule: [{ startAt: '1970-01-01T00:00:00Z', weights: { A: 100 } }] }),
+            ExperimentA: buildConfig({ schedule: [{ startsAt: '1970-01-01T00:00:00Z', weights: { A: 100 } }] }),
             ExperimentB: buildConfig({ enabled: false }),
         });
 

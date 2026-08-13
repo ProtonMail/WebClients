@@ -1,7 +1,8 @@
 import type { staticExperimentsConfig } from './config';
 
 export interface StaticExperimentScheduleEntry {
-    startAt: string;
+    startsAt: string;
+    endsAt?: string;
     weights: Record<string, number>;
 }
 
