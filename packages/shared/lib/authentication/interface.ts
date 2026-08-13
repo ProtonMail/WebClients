@@ -25,6 +25,7 @@ export interface AuthResponse {
     TemporaryPassword: 0 | 1;
     PasswordMode: number;
     SSOBackupPasswordDisabled?: boolean;
+    FirstLoginAfterConversion?: boolean;
     LocalID: number;
     TwoFactor: number;
     '2FA': TwoFaResponse;
