@@ -1,6 +1,7 @@
 import { contextBridge, ipcRenderer, IpcRendererEvent } from "electron";
 import {
     type IPCInboxMessageBroker,
+    type IPCInboxClientUpdateMessageType,
     type IPCInboxHostUpdateMessageType,
     type IPCInboxHostUpdateListener,
     IPCInboxHostUpdateMessageSchema,
@@ -9,6 +10,17 @@ import Logger from "electron-log";
 import { disableMouseNavigation } from "@proton/shared/lib/desktop/disableMouseNavigation";
 
 const preloadLogger = Logger.scope("preload");
+
+// Some IPC messages are fired too often and pollute the logs, filter them here.
+const SEND_LOG_MUTED_TYPES = new Set<IPCInboxClientUpdateMessageType>(["authStatusResult"]);
+
+function logSend(type: IPCInboxClientUpdateMessageType) {
+    if (SEND_LOG_MUTED_TYPES.has(type)) {
+        return;
+    }
+
+    preloadLogger.info(`Sending message: ${type}`);
+}
 
 contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
     hasFeature: (feature) => {
@@ -29,7 +41,7 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
 
     on: addHostUpdateListener,
     send: (type, payload) => {
-        preloadLogger.info(`Sending message: ${type}`);
+        logSend(type);
         ipcRenderer.send("clientUpdate", { type, payload });
     },
 } satisfies IPCInboxMessageBroker);

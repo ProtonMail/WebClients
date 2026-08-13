@@ -10,7 +10,7 @@ import { urlHasOpenMailParams, readAndClearOpenMailArgs, readAndClearOpenCalenda
 import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";
 import { registerWindowEventLog } from "../log/appEventLog";
-import { enableNotInAccountMenuItems, setApplicationMenu } from "../menus/menuApplication";
+import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
 import {
     getLocalID,
@@ -41,6 +41,7 @@ import { profiler } from "../profiler/profiler";
 import { sentryReport } from "../sentryReport";
 import { isUserNetworkErrorCode, NET_ERROR_CODE } from "../netErrors";
 import { getFileResourcePath } from "../../constants/resources";
+import { authStatusPoller } from "../auth/authPoller";
 
 type ViewID = keyof URLConfig;
 
@@ -122,6 +123,8 @@ export const viewCreationAppStartup = async () => {
     mainWindow.on("unmaximize", debouncedUpdateViewsBounds);
     mainWindow.on("enter-full-screen", debouncedUpdateViewsBounds);
     mainWindow.on("leave-full-screen", debouncedUpdateViewsBounds);
+
+    authStatusPoller.attachToWindow(mainWindow);
 
     registerWindowEventLog(mainWindow);
 
@@ -358,6 +361,7 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
     view.webContents.setZoomFactor(getWindowBounds().zoom);
 
     if (viewID === currentViewID) {
+        authStatusPoller.performPoll();
         if (!url) {
             viewLogger(viewID).silly("already in current view");
             return;
@@ -373,11 +377,7 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
 
     mainWindow!.title = viewTitleMap[viewID];
 
-    // If we're switching to account we should disable the app switcher shortcuts.
-    // We cannot cleanly differentiate whether the app is running in an auth state / forcibly logged out / switching accounts.
-    // Depending on the case switching between the apps may present the user with an unexpected view, thus we disable it whenever we
-    // display any account page or view.
-    enableNotInAccountMenuItems(viewID !== "account");
+    authStatusPoller.performPoll();
 
     telemetry.showView(viewID);
 

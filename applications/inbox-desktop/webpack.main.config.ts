@@ -32,5 +32,6 @@ export const mainConfig: Configuration = {
     ],
     resolve: {
         extensions: [".js", ".ts", ".jsx", ".tsx", ".css", ".json"],
+        conditionNames: ["require", "node", "default"],
     },
 };

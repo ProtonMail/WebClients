@@ -55,7 +55,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         listenFreeTrialSessionExpiration(appName, authentication, api);
 
         void import('@proton/shared/lib/desktop/bootstrapAccountInboxDesktop').then((module) => {
-            void module.bootstrapAccountInboxDesktop();
+            void module.bootstrapAccountInboxDesktop(authentication);
         });
     }
 
