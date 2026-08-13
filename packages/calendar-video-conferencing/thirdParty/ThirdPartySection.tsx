@@ -8,8 +8,8 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 
-import SettingsSectionWide from '../account/SettingsSectionWide';
 import { ProviderAction, ProviderIcon, ProviderReason } from './ThirdPartyComponents';
 import { SupportedProviders } from './interface';
 

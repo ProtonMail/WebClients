@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
@@ -10,8 +11,6 @@ import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/cale
 import { AutoAddVideoConferenceLinkProvider } from '@proton/shared/lib/calendar/constants';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { MILLISECONDS_IN_MINUTE } from '@proton/shared/lib/date-fns-utc';
-
-import { useCalendarUserSettings } from '../../calendarUserSettings/hooks';
 
 // Type guard helper to check if auto-add is enabled
 const isAutoAddMeetEnabled = (

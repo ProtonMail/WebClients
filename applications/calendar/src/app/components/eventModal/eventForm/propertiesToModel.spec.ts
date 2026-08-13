@@ -1,4 +1,4 @@
-import { SEPARATOR_PROTON_EVENTS } from '@proton/calendar/videoConferencing/constants';
+import { SEPARATOR_PROTON_EVENTS } from '@proton/calendar-video-conferencing/videoConferencing/constants';
 import type { VcalDateTimeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
 

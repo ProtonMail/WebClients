@@ -5,13 +5,13 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createBrowserHistory } from 'history';
 
+import { calendarUrlQueryParams } from '@proton/calendar/constants';
 import { NotificationsProvider } from '@proton/components';
 import { useGetMeetingByLinkName } from '@proton/meet';
 import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { type EventModel, VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
 
-import { calendarUrlQueryParams } from '../../constants';
 import {
     VideoConferenceProtonMeetIntegration,
     useVideoConfTelemetry,

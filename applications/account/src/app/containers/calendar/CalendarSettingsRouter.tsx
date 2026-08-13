@@ -3,11 +3,10 @@ import { useEffect, useMemo } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { VideoConferenceToggle } from '@proton/calendar-video-conferencing/zoomIntegration/VideoConferenceToggle';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
-import { useLoadAllowedTimeZones } from '@proton/calendar/timezones';
-import { VideoConferenceToggle } from '@proton/calendar/zoomIntegration/VideoConferenceToggle';
 import {
     CalendarExportSection,
     CalendarImportSection,
@@ -26,6 +25,7 @@ import {
     useSubscribedCalendars,
 } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
+import { useLoadAllowedTimeZones } from '@proton/components/hooks/useLoadAllowedTimeZones';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
