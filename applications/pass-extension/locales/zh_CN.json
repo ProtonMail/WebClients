@@ -874,8 +874,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "邮箱别名的作用与邮箱地址类似，但可以减少垃圾邮件，并隐藏您的真实邮箱地址和身份。"
       ],
+      "Change these passwords immediately": [
+        "立即更改这些密码"
+      ],
       "Change your passwords": [
         "更改密码"
+      ],
+      "Check if your passwords have been exposed": [
+        "检查您的密码是否已泄漏"
       ],
       "Create unique passwords": [
         "创建唯一密码"
@@ -933,6 +939,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "该账户存在漏洞，请访问该服务并更改密码。"
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "此登录密码出现在数据泄露事件中，请访问该服务并更改密码。"
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "该服务提供 2FA。启用它可提高账户安全性。"
@@ -1384,6 +1393,9 @@
       ],
       "This domain is already managed by your organization": [
         "此域名已由您的组织管理"
+      ],
+      "This invite is no longer available": [
+        "此邀请已不可用"
       ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "长时间不使用 ${ PASS_SHORT_APP_NAME } 或清除 Safari 历史记录后，可能会出现这种情况。"
@@ -2205,7 +2217,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接。"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -4761,6 +4773,12 @@
       "Clear clipboard": [
         "清除剪贴板"
       ],
+      "Compromised password": [
+        "泄漏的密码"
+      ],
+      "Compromised passwords": [
+        "泄漏的密码"
+      ],
       "Confirm extra password": [
         "确认额外密码"
       ],
@@ -4989,6 +5007,9 @@
       "No access tokens yet": [
         "暂无访问令牌"
       ],
+      "No compromised passwords": [
+        "没有泄漏的密码"
+      ],
       "No excluded items": [
         "无除外项目"
       ],
@@ -5165,6 +5186,9 @@
       ],
       "Update available": [
         "有可用更新"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "升级以检查是否存在泄露的密码"
       ],
       "URL matching": [
         "URL 匹配"
