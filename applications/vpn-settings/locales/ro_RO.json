@@ -608,6 +608,9 @@
       "Go to panel ${ index }": [
         "Salt la panoul ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -5869,6 +5872,9 @@
       "Invited by: ${ inviteEmail }": [
         "Invitație de la: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "Părăsire plan Family"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "Conturile pe viață nu se pot alătura unui plan de familie."
       ],
@@ -7045,6 +7051,11 @@
         "Selectați ${ boldExport } pentru a exporta calendarul ca fișier ICS."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Mai multe opțiuni de importare"
+      ]
+    },
     "Import status": {
       "Has errors": [
         "Are erori"
@@ -7746,6 +7757,9 @@
       ],
       "Choose one:": [
         "Alegeți una:"
+      ],
+      "Choose your service to connect with": [
+        "Alegeți serviciul cu care doriți să vă conectați"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
@@ -10712,6 +10726,9 @@
       "Digits": [
         "Cifre"
       ],
+      "Disable animations": [
+        "Dezactivare animații"
+      ],
       "Disabled": [
         "Dezactivat"
       ],
@@ -10825,6 +10842,12 @@
       ],
       "Folders, labels, and filters": [
         "Foldere, etichete și filtre"
+      ],
+      "Font family": [
+        "Familie font"
+      ],
+      "Font size": [
+        "Mărime font"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Pentru ${ DRIVE_SHORT_APP_NAME } și ${ DOCS_SHORT_APP_NAME }."
@@ -11029,6 +11052,9 @@
       ],
       "Notification": [
         "Notificare"
+      ],
+      "Notification email address": [
+        "Adresă de e-mail pentru notificări"
       ],
       "Numbers": [
         "Cifre"
@@ -11269,6 +11295,9 @@
       "Thomas": [
         "Toma"
       ],
+      "Time format": [
+        "Format oră"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Pentru a ne ajuta să îmbunătățim serviciul, vă rugăm să ne explicați de ce închideți contul."
       ],
@@ -11341,6 +11370,9 @@
       "Weak password": [
         "Parolă slabă"
       ],
+      "Week start": [
+        "Început săptămână"
+      ],
       "What happened?": [
         "Ce s-a întâmplat?"
       ],
@@ -11388,6 +11420,9 @@
       ]
     },
     "label": {
+      "Notification phone number": [
+        "Număr de telefon pentru notificări"
+      ],
       "Recovery phone number": [
         "Număr de telefon de recuperare"
       ]
@@ -13027,6 +13062,9 @@
       ],
       "Switch plans?": [
         "Schimbare planuri?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Deblocați funcțiile premium modificând contul"
       ]
     },
     "new_plans: Title": {
@@ -16672,9 +16710,6 @@
       "Last changed ${ formattedDate }": [
         "Ultima modificare ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Ultima actualizare ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Nesalvat"
       ],
@@ -16742,6 +16777,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pentru toate serviciile ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Obțineți mai mult spațiu de stocare"
       ],
       "Storage used": [
         "Spațiu utilizat"
@@ -18502,6 +18540,9 @@
       "Get help with an issue": [
         "Obțineți ajutor cu o problemă"
       ],
+      "Get more from your privacy suite": [
+        "Obțineți mai mult de la suita de confidențialitate"
+      ],
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
       ],
@@ -19271,6 +19312,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "Tranzacție ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Migrări organizație"
       ]
     },
     "Title header for addresses domain table": {

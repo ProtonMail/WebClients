@@ -596,6 +596,9 @@
       "Go to panel ${ index }": [
         "Przejdź do panelu ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Ok"
       ],
@@ -5603,6 +5606,9 @@
       "Invited by: ${ inviteEmail }": [
         "Zaproszenie wysłane przez: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "Opuść plan Family"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "Konta dożywotnie nie mogę dołączyć do planu rodzinnego."
       ],
@@ -6738,6 +6744,11 @@
         "Kliknij ${ boldExport }, aby wyeksportować plik ICS."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Więcej opcji importu"
+      ]
+    },
     "Import status": {
       "In progress": [
         "W toku"
@@ -7432,6 +7443,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Wybierz Identyfikator jednostki, aby kontynuować."
+      ],
+      "Choose your service to connect with": [
+        "Wybierz usługę, z którą chcesz się połączyć"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
@@ -9948,6 +9962,14 @@
         "Subskrypcja"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "Numer telefonu do powiadomień"
+      ],
+      "Recovery phone number": [
+        "Numer pomocniczy"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "Dostępny ${ addressesAvailable } z ${ maxAddresses } adresu e-mail",
@@ -10270,6 +10292,9 @@
       "Digits": [
         "Cyfry"
       ],
+      "Disable animations": [
+        "Wyłącz animacje"
+      ],
       "Disabled": [
         "Wyłączono"
       ],
@@ -10380,6 +10405,12 @@
       ],
       "Folders, labels, and filters": [
         "Foldery, etykiety i filtry"
+      ],
+      "Font family": [
+        "Czcionka"
+      ],
+      "Font size": [
+        "Rozmiar czcionki"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Dla ${ DRIVE_SHORT_APP_NAME } i ${ DOCS_SHORT_APP_NAME }."
@@ -10581,6 +10612,9 @@
       ],
       "Notification": [
         "Powiadomienie"
+      ],
+      "Notification email address": [
+        "Adres e-mail do powiadomień"
       ],
       "Numbers": [
         "Cyfry"
@@ -10822,6 +10856,9 @@
       "Thomas": [
         "Jan"
       ],
+      "Time format": [
+        "Format czasu"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Wyjaśnij, dlaczego odchodzisz."
       ],
@@ -10891,6 +10928,9 @@
       "Weak password": [
         "Słabe hasło"
       ],
+      "Week start": [
+        "Początek tygodnia"
+      ],
       "What happened?": [
         "Co się stało?"
       ],
@@ -10935,11 +10975,6 @@
       ],
       "ZIP code": [
         "Kod pocztowy"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "Numer pomocniczy"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12579,6 +12614,9 @@
       ],
       "Switch plans?": [
         "Zmienić plany?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Odblokuj funkcje premium poprzez ulepszenie"
       ]
     },
     "new_plans: Title": {
@@ -16213,9 +16251,6 @@
       "Last changed ${ formattedDate }": [
         "Ostatnia zmiana: ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Ostatnia aktualizacja: ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Niezapisane"
       ],
@@ -16283,6 +16318,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Do wykorzystania we wszystkich usługach ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Uzyskaj więcej przestrzeni dyskowej"
       ],
       "Storage used": [
         "Wykorzystana przestrzeń"
@@ -18024,6 +18062,9 @@
       "Get help with an issue": [
         "Uzyskaj pomoc w rozwiązaniu problemu"
       ],
+      "Get more from your privacy suite": [
+        "Zyskaj więcej dzięki swojemu pakietowi prywatności"
+      ],
       "Get more from your VPN": [
         "Uzyskaj więcej z VPN"
       ],
@@ -18762,6 +18803,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "Transakcja ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Migracje organizacji"
       ]
     },
     "Title header for addresses domain table": {

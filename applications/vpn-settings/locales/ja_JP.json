@@ -596,6 +596,9 @@
       "Go to panel ${ index }": [
         "パネル ${ index } に移動"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "はい"
       ],
@@ -5474,6 +5477,9 @@
       "Invited by: ${ inviteEmail }": [
         "招待者: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "ファミリープランを離れる"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "Lifetime アカウントはファミリープランに参加できません。"
       ],
@@ -6540,6 +6546,11 @@
         "${ boldExport } を選択して ICS ファイルとしてカレンダーをエクスポートします。"
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "その他のインポートオプション"
+      ]
+    },
     "Import status": {
       "In progress": [
         "進行中"
@@ -7120,6 +7131,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "続行するにはエンティティIDを選択してください。"
+      ],
+      "Choose your service to connect with": [
+        "接続するサービスを選択してください"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
@@ -9546,6 +9560,14 @@
         "サブスクリプション"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "通知電話番号"
+      ],
+      "Recovery phone number": [
+        "回復用電話番号"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "利用可能なメールアドレスは ${ maxAddresses } 件中 ${ addressesAvailable } 件です"
@@ -9853,6 +9875,9 @@
       "Digits": [
         "桁"
       ],
+      "Disable animations": [
+        "アニメーションを無効にする"
+      ],
       "Disabled": [
         "無効"
       ],
@@ -9963,6 +9988,12 @@
       ],
       "Folders, labels, and filters": [
         "フォルダー、ラベル、フィルター"
+      ],
+      "Font family": [
+        "フォントファミリー"
+      ],
+      "Font size": [
+        "フォントサイズ"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME } と ${ DOCS_SHORT_APP_NAME } 向けです。"
@@ -10164,6 +10195,9 @@
       ],
       "Notification": [
         "通知"
+      ],
+      "Notification email address": [
+        "通知メールアドレス"
       ],
       "Numbers": [
         "数字"
@@ -10402,6 +10436,9 @@
       "Thomas": [
         "トーマス"
       ],
+      "Time format": [
+        "時刻の表示形式"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "今後の改善のために、なぜあなたが去ろうとしているのかを教えてください。"
       ],
@@ -10471,6 +10508,9 @@
       "Weak password": [
         "弱いパスワード"
       ],
+      "Week start": [
+        "週の開始曜日"
+      ],
       "What happened?": [
         "どのような問題が発生しましたか?"
       ],
@@ -10515,11 +10555,6 @@
       ],
       "ZIP code": [
         "郵便番号"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "回復用電話番号"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12039,6 +12074,9 @@
       ],
       "Switch plans?": [
         "プランを変更しますか?"
+      ],
+      "Unlock premium features by upgrading": [
+        "アップグレードしてプレミアム機能の制限を解除"
       ]
     },
     "new_plans: Title": {
@@ -15505,9 +15543,6 @@
       "Last changed ${ formattedDate }": [
         "最終変更：${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "最終更新：${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "未保存"
       ],
@@ -15575,6 +15610,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービス向け"
+      ],
+      "Get more storage": [
+        "ストレージを増やす"
       ],
       "Storage used": [
         "使用中のストレージ"
@@ -17214,6 +17252,9 @@
       "Get help with an issue": [
         "問題に関するサポートを受ける"
       ],
+      "Get more from your privacy suite": [
+        "プライバシースイートをさらに活用しましょう"
+      ],
       "Get more from your VPN": [
         "VPNからさらに入手する"
       ],
@@ -17946,6 +17987,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "${ MAIL_APP_NAME }取引"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "組織の移行"
       ]
     },
     "Title header for addresses domain table": {

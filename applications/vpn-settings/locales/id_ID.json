@@ -596,6 +596,9 @@
       "Go to panel ${ index }": [
         "Ke panel ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -5471,6 +5474,9 @@
       "Invited by: ${ inviteEmail }": [
         "Diundang oleh: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "Keluar dari paket Family"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "Akun Lifetime tidak dapat bergabung ke paket keluarga."
       ],
@@ -6537,6 +6543,11 @@
         "Pilih ${ boldExport } untuk mengekspor kalender sebagai file ICS."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Opsi impor lainnya"
+      ]
+    },
     "Import status": {
       "In progress": [
         "Sedang berlangsung"
@@ -7114,6 +7125,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Pilih ID Entitas untuk melanjutkan."
+      ],
+      "Choose your service to connect with": [
+        "Pilih layanan untuk dihubungkan"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Edit\" untuk mengubahnya."
@@ -9519,6 +9533,14 @@
         "Langganan"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "Nomor telepon notifikasi"
+      ],
+      "Recovery phone number": [
+        "Nomor telepon pemulihan"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "${ addressesAvailable } dari ${ maxAddresses } alamat email tersedia"
@@ -9826,6 +9848,9 @@
       "Digits": [
         "Digit"
       ],
+      "Disable animations": [
+        "Nonaktifkan animasi"
+      ],
       "Disabled": [
         "Dinonaktifkan"
       ],
@@ -9936,6 +9961,12 @@
       ],
       "Folders, labels, and filters": [
         "Folder, label, dan filter"
+      ],
+      "Font family": [
+        "Jenis fon"
+      ],
+      "Font size": [
+        "Ukuran fon"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Untuk ${ DRIVE_SHORT_APP_NAME } dan ${ DOCS_SHORT_APP_NAME }."
@@ -10137,6 +10168,9 @@
       ],
       "Notification": [
         "Notifikasi"
+      ],
+      "Notification email address": [
+        "Alamat email notifikasi"
       ],
       "Numbers": [
         "Angka"
@@ -10375,6 +10409,9 @@
       "Thomas": [
         "Thomas"
       ],
+      "Time format": [
+        "Format waktu"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Untuk membantu kami meningkatkan, silakan menjelaskan mengapa Anda keluar."
       ],
@@ -10444,6 +10481,9 @@
       "Weak password": [
         "Kata sandi lemah"
       ],
+      "Week start": [
+        "Awal pekan"
+      ],
       "What happened?": [
         "Apa yang terjadi?"
       ],
@@ -10488,11 +10528,6 @@
       ],
       "ZIP code": [
         "Kode pos"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "Nomor telepon pemulihan"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12012,6 +12047,9 @@
       ],
       "Switch plans?": [
         "Ganti paket?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
       ]
     },
     "new_plans: Title": {
@@ -15478,9 +15516,6 @@
       "Last changed ${ formattedDate }": [
         "Terakhir diubah ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Terakhir diperbarui ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Tidak disimpan"
       ],
@@ -15548,6 +15583,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Untuk seluruh layanan ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Dapatkan penyimpanan tambahan"
       ],
       "Storage used": [
         "Ruang penyimpanan yang digunakan"
@@ -17187,6 +17225,9 @@
       "Get help with an issue": [
         "Dapatkan bantuan untuk mengatasi isu"
       ],
+      "Get more from your privacy suite": [
+        "Dapatkan lebih banyak manfaat dari rangkaian privasi Anda"
+      ],
       "Get more from your VPN": [
         "Dapatkan lebih banyak dari VPN Anda"
       ],
@@ -17916,6 +17957,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "transaksi ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Migrasi organisasi"
       ]
     },
     "Title header for addresses domain table": {

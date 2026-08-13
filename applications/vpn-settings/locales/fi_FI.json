@@ -602,6 +602,9 @@
       "Go to panel ${ index }": [
         "Siirry paneeliin ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Selvä"
       ],
@@ -5553,6 +5556,9 @@
       "Invited by: ${ inviteEmail }": [
         "Kutsunut: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "Poistu Family-tilauksesta"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "Elinikäiset tilit eivät voi liittyä perhetilaukseen."
       ],
@@ -6667,6 +6673,11 @@
         "Valitse ${ boldExport } viedäksesi kalenterin ICS-tiedostona."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Lisää tuontiasetuksia"
+      ]
+    },
     "Import status": {
       "In progress": [
         "Käynnissä"
@@ -7288,6 +7299,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Valitse entiteetti-ID jatkaaksesi."
+      ],
+      "Choose your service to connect with": [
+        "Valitse palvelu, johon haluat yhdistää"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
@@ -9752,6 +9766,14 @@
         "Tilaus"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "Ilmoituspuhelinnumero"
+      ],
+      "Recovery phone number": [
+        "Palautusnumero"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "${ addressesAvailable } / ${ maxAddresses } käytettävissä oleva sähköpostiosoite",
@@ -10070,6 +10092,9 @@
       "Digits": [
         "Numerot"
       ],
+      "Disable animations": [
+        "Poista animaatiot käytöstä"
+      ],
       "Disabled": [
         "Pois käytöstä"
       ],
@@ -10180,6 +10205,12 @@
       ],
       "Folders, labels, and filters": [
         "Kansiot, tunnisteet ja suodattimet"
+      ],
+      "Font family": [
+        "Tekstin fontti"
+      ],
+      "Font size": [
+        "Tekstin koko"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Palveluille ${ DRIVE_SHORT_APP_NAME } ja ${ DOCS_SHORT_APP_NAME }."
@@ -10381,6 +10412,9 @@
       ],
       "Notification": [
         "Ilmoitus"
+      ],
+      "Notification email address": [
+        "Ilmoitussähköpostiosoite"
       ],
       "Numbers": [
         "Numerot"
@@ -10620,6 +10654,9 @@
       "Thomas": [
         "Tuomas"
       ],
+      "Time format": [
+        "Ajan muoto"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Auttaaksesi meitä kehittymään, kertoisitko miksi olet lähdössä."
       ],
@@ -10692,6 +10729,9 @@
       "Weak password": [
         "Heikko salasana"
       ],
+      "Week start": [
+        "Viikon aloituspäivä"
+      ],
       "What happened?": [
         "Mitä tapahtui?"
       ],
@@ -10736,11 +10776,6 @@
       ],
       "ZIP code": [
         "Postinumero"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "Palautusnumero"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12311,6 +12346,9 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Avaa premium-ominaisuudet päivittämällä tilauksesi"
       ]
     },
     "new_plans: Title": {
@@ -15841,9 +15879,6 @@
       "Last changed ${ formattedDate }": [
         "Viimeksi muutettu ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Viimeksi päivitetty ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Ei tallennettu"
       ],
@@ -15911,6 +15946,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Kaikille ${ BRAND_NAME }-palveluille"
+      ],
+      "Get more storage": [
+        "Hanki lisää tallennustilaa"
       ],
       "Storage used": [
         "Tallennustilaa käytetty"
@@ -17596,6 +17634,9 @@
       "Get help with an issue": [
         "Saakaa apua ongelmaan"
       ],
+      "Get more from your privacy suite": [
+        "Ota kaikki irti tietosuojapaketistasi"
+      ],
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
       ],
@@ -18345,6 +18386,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "${ MAIL_APP_NAME } -siirto"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Organisaation siirrot"
       ]
     },
     "Title header for addresses domain table": {

@@ -596,6 +596,9 @@
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "了解"
       ],
@@ -5570,6 +5573,9 @@
       "Invited by: ${ inviteEmail }": [
         "邀請人：${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "離開家庭方案"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "終身帳號無法加入群組方案。"
       ],
@@ -6650,6 +6656,11 @@
         "選取 ${ boldExport } 以將行事曆匯出為 ICS 檔案。"
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "更多匯入選項"
+      ]
+    },
     "Import status": {
       "In progress": [
         "進行中"
@@ -7239,6 +7250,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "選擇實體識別碼以繼續。"
+      ],
+      "Choose your service to connect with": [
+        "選擇您的服務以連線"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
@@ -9984,6 +9998,9 @@
       "Digits": [
         "位數"
       ],
+      "Disable animations": [
+        "停用動畫"
+      ],
       "Disabled": [
         "停用"
       ],
@@ -10097,6 +10114,12 @@
       ],
       "Folders, labels, and filters": [
         "資料夾、標籤和篩選器"
+      ],
+      "Font family": [
+        "字型系列"
+      ],
+      "Font size": [
+        "字體大小"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "適用於 ${ DRIVE_SHORT_APP_NAME } 和 ${ DOCS_SHORT_APP_NAME }。"
@@ -10301,6 +10324,9 @@
       ],
       "Notification": [
         "通知"
+      ],
+      "Notification email address": [
+        "通知電子郵件地址"
       ],
       "Numbers": [
         "數字"
@@ -10539,6 +10565,9 @@
       "Thomas": [
         "湯姆斯"
       ],
+      "Time format": [
+        "時間格式"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "為了幫助我們改進，請說明您離開的原因。"
       ],
@@ -10608,6 +10637,9 @@
       "Weak password": [
         "脆弱密碼"
       ],
+      "Week start": [
+        "一週的起始日"
+      ],
       "What happened?": [
         "發生了甚麼問題？"
       ],
@@ -10655,6 +10687,9 @@
       ]
     },
     "label": {
+      "Notification phone number": [
+        "通知電話號碼"
+      ],
       "Recovery phone number": [
         "復原手機號碼"
       ]
@@ -12185,6 +12220,9 @@
       ],
       "Switch plans?": [
         "切換方案？"
+      ],
+      "Unlock premium features by upgrading": [
+        "透過升級來解鎖高級功能"
       ]
     },
     "new_plans: Title": {
@@ -15665,9 +15703,6 @@
       "Last changed ${ formattedDate }": [
         "上次變更時間為 ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "上次更新時間為 ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "尚未儲存"
       ],
@@ -15735,6 +15770,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "所有 ${ BRAND_NAME } 服務"
+      ],
+      "Get more storage": [
+        "取得更多儲存空間"
       ],
       "Storage used": [
         "已使用的儲存空間"
@@ -17386,6 +17424,9 @@
       "Get help with an issue": [
         "獲取問題協助"
       ],
+      "Get more from your privacy suite": [
+        "充分利用您的隱私套件"
+      ],
       "Get more from your VPN": [
         "從您的VPN取得更多"
       ],
@@ -18124,6 +18165,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "${ MAIL_APP_NAME } 交易"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "組織移轉"
       ]
     },
     "Title header for addresses domain table": {

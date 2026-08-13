@@ -596,6 +596,9 @@
       "Go to panel ${ index }": [
         "ไปที่หน้า ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "รับทราบ"
       ],
@@ -5471,6 +5474,9 @@
       "Invited by: ${ inviteEmail }": [
         "เชิญโดย: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "ออกจากแผน Family plan"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "บัญชี Lifetime ไม่สามารถเข้าร่วม Family plan ได้"
       ],
@@ -6537,6 +6543,11 @@
         "เลือก ${ boldExport } เพื่อส่งออกปฏิทินเป็นไฟล์ ICS"
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "ตัวเลือกการนำเข้าเพิ่มเติม"
+      ]
+    },
     "Import status": {
       "In progress": [
         "อยู่ระหว่างดำเนินการ"
@@ -7114,6 +7125,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "เลือก Entity ID เพื่อดำเนินการต่อ"
+      ],
+      "Choose your service to connect with": [
+        "เลือกบริการเพื่อเชื่อมต่อ"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "โปรดคลิก \"ส่งคำร้องขอรหัสใหม่\" เพื่อรับรหัสยืนยันตัวตนใหม่ที่ได้ส่งไปที่ ${ strong } หากหมายเลขโทรศัพท์นี้ไม่ถูกต้อง สามารถเปลี่ยนได้โดยคลิกที่ \"แก้ไข\""
@@ -9519,6 +9533,14 @@
         "สมัครสมาชิก"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "หมายเลขโทรศัพท์สำหรับการแจ้งเตือน"
+      ],
+      "Recovery phone number": [
+        "หมายเลขโทรศัพท์สำรอง"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "มีที่อยู่อีเมล ${ addressesAvailable } จาก ${ maxAddresses } ที่อยู่"
@@ -9826,6 +9848,9 @@
       "Digits": [
         "ตัวเลข"
       ],
+      "Disable animations": [
+        "ปิดใช้งานภาพเคลื่อนไหว"
+      ],
       "Disabled": [
         "ปิดใช้งานแล้ว"
       ],
@@ -9936,6 +9961,12 @@
       ],
       "Folders, labels, and filters": [
         "โฟลเดอร์ ป้ายกำกับ และตัวกรอง"
+      ],
+      "Font family": [
+        "ตระกูลแบบอักษร"
+      ],
+      "Font size": [
+        "ขนาดแบบอักษร"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "สำหรับ ${ DRIVE_SHORT_APP_NAME } และ ${ DOCS_SHORT_APP_NAME }"
@@ -10137,6 +10168,9 @@
       ],
       "Notification": [
         "การแจ้งเตือน"
+      ],
+      "Notification email address": [
+        "ที่อยู่อีเมลสำหรับการแจ้งเตือน"
       ],
       "Numbers": [
         "ตัวเลข"
@@ -10375,6 +10409,9 @@
       "Thomas": [
         "Thomas"
       ],
+      "Time format": [
+        "รูปแบบเวลา"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "เพื่อช่วยเราปรับปรุง โปรดอธิบายเหตุผลที่คุณกำลังจะไป"
       ],
@@ -10444,6 +10481,9 @@
       "Weak password": [
         "รหัสผ่านที่ไม่รัดกุม"
       ],
+      "Week start": [
+        "สัปดาห์เริ่มต้นที่"
+      ],
       "What happened?": [
         "เกิดอะไรขึ้น?"
       ],
@@ -10488,11 +10528,6 @@
       ],
       "ZIP code": [
         "รหัสไปรษณีย์"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "หมายเลขโทรศัพท์สำรอง"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12012,6 +12047,9 @@
       ],
       "Switch plans?": [
         "เปลี่ยนแผน?"
+      ],
+      "Unlock premium features by upgrading": [
+        "ปลดล็อกคุณสมบัติพรีเมียมด้วยการอัปเกรด"
       ]
     },
     "new_plans: Title": {
@@ -15478,9 +15516,6 @@
       "Last changed ${ formattedDate }": [
         "เปลี่ยนล่าสุดเมื่อ ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "อัปเดตล่าสุดเมื่อ ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "ไม่ได้บันทึก"
       ],
@@ -15548,6 +15583,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "สำหรับบริการ ${ BRAND_NAME } ทั้งหมด"
+      ],
+      "Get more storage": [
+        "เพิ่มพื้นที่จัดเก็บ"
       ],
       "Storage used": [
         "พื้นที่จัดเก็บที่ใช้ไป"
@@ -17187,6 +17225,9 @@
       "Get help with an issue": [
         "รับความช่วยเหลือเกี่ยวกับปัญหา"
       ],
+      "Get more from your privacy suite": [
+        "รับประโยชน์เพิ่มขึ้นจากชุดความเป็นส่วนตัว"
+      ],
       "Get more from your VPN": [
         "รับประโยชน์มากขึ้นจาก VPN ของคุณ"
       ],
@@ -17916,6 +17957,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "ธุรกรรม ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "การย้ายข้อมูลองค์กร"
       ]
     },
     "Title header for addresses domain table": {
