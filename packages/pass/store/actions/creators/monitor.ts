@@ -7,6 +7,7 @@ import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
 import type {
     AddressBreachDTO,
     AddressType,
+    CompromisedPasswordEntry,
     CustomAddressID,
     MonitorAddress,
     MonitorToggleDTO,
@@ -221,10 +222,15 @@ export const setItemFlags = requestActionsFactory<SelectedItem & { SkipHealthChe
     },
 });
 
-/** `compromisedPasswordsSync` replaces the whole known set
- * `compromisedPasswordUpdate` adds/removes a single item's entry **/
-export const compromisedPasswordsSync = createAction<UniqueItem[]>('monitor::compromised-passwords::sync');
-export const compromisedPasswordUpdate = createAction<{ item: UniqueItem; compromised: boolean }>('monitor::compromised-password::update');
+export const compromisedPasswordsSync = createAction(
+    'monitor::compromised-passwords::sync',
+    (payload: { lastSyncedChange: number; results: { item: UniqueItem; entry: CompromisedPasswordEntry }[] }) => withCache({ payload })
+);
+
+export const compromisedPasswordUpdate = createAction(
+    'monitor::compromised-password::update',
+    (payload: { item: UniqueItem; entry: CompromisedPasswordEntry }) => withCache({ payload })
+);
 
 export const resendVerificationCode = requestActionsFactory<CustomAddressID, boolean>('monitor::breaches::custom::resend::verification')({
     key: identity,
