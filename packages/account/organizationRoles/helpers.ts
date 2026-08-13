@@ -26,7 +26,7 @@ export const isLegacyOrgAdminState = (isLegacyOrgAdmin: boolean, adminRolesIds: 
 export const getTranslatedRoleName = (name: string): string => {
     switch (name) {
         case PREDEFINED_ROLE_NAME.OWNER:
-            return c('Role').t`Owner`;
+            return c('Role').t`Organization Admin`;
         case PREDEFINED_ROLE_NAME.USER_ADMIN:
             return c('Role').t`User Admin`;
         case PREDEFINED_ROLE_NAME.SECURITY_ADMIN:
