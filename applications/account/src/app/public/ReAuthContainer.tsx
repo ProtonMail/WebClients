@@ -40,6 +40,7 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import type { Paths } from '../content/helper';
+import { withInterruption } from '../content/interruptions';
 import UnlockForm from '../login/UnlockForm';
 import SSOBackupPasswordForm from '../login/sso/SSOBackupPasswordForm';
 import Content from './Content';
@@ -134,7 +135,7 @@ const ReAuthContainer = ({
     }, []);
 
     const handleFinalizeLogin = (session: OnLoginCallbackArguments) => {
-        return onLogin({ ...session, prompt: null, flow: 'reauth' });
+        return onLogin(withInterruption(session, 'reauth'));
     };
 
     const handleSubmitKeyPassword = async (password: string, salts: tsKeySalt[]) => {
