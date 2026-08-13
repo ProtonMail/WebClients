@@ -18,7 +18,7 @@ export enum OfferUserFeatureCodeValue {
     Default = 0,
     Visited = 1,
     Hide = 2,
-    VisitedAgain = 4,
+    ReplayConsumed = 4,
 }
 
 export interface OfferProps {
