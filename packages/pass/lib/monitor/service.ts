@@ -14,12 +14,14 @@ import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { compromisedPasswordsSync } from '@proton/pass/store/actions';
 import {
     selectCompromisedPasswordsCache,
+    selectFeatureFlag,
     selectLastSyncedChange,
     selectMonitoredLogins,
     selectPassPlan,
 } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { ItemRevision, ShareId, UniqueItem } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { and, not, or } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -39,6 +41,7 @@ export const createMonitorService = (core: PassCoreProxy, store: Store<State>): 
 
     const service: MonitorService = {
         checkCompromisedPasswords: async (options) => {
+            if (!selectFeatureFlag(PassFeature.Pass__V1_40__CompromisedPasswords)(store.getState())) return [];
             if (!isPaidPlan(selectPassPlan(store.getState()))) return [];
 
             const logins = getLoginItems(options?.shareIds);

@@ -36,6 +36,9 @@ export const selectUserType = ({ user }: State) => user.user?.Type;
 export const selectLatestEventId = ({ user: { eventId } }: State) => eventId;
 export const selectLatestUserEventId = ({ user: { userEventId } }: State) => userEventId;
 export const selectFeatureFlags = ({ user: { features } }: State) => features;
+
+/** `features` is `null` until the first successful fetch. */
+export const selectFeatureFlagsReady = ({ user: { features } }: State): boolean => Boolean(features);
 export const selectAddresses = ({ user }: State) => user.addresses;
 export const selectAuthDevices = (state: State) => state.user.devices;
 export const selectUserStorageUsed = ({ user }: State) => user.plan?.StorageUsed ?? 0;
