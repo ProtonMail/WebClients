@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 
-import type { Action, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
-import type { ThunkAction } from 'redux-thunk';
+import type { Action, ThunkAction, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 
 import { addressKeysThunk } from '@proton/account/addressKeys';
 import { addressesThunk } from '@proton/account/addresses';

@@ -4,13 +4,13 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import { ButtonLikeSizeEnum } from '@proton/atoms/Button/ButtonLike';
-import { useZoomOAuth } from '@proton/calendar/zoomIntegration/useZoomOAuth';
 import { Badge } from '@proton/components/components/badge/Badge';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import ZoomUpsellModal from '@proton/components/components/upsell/modals/ZoomUpsellModal';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import ZoomLogo from '@proton/styles/assets/img/brand/zoom.svg';
 
+import { useZoomOAuth } from '../zoomIntegration/useZoomOAuth';
 import { SupportedProviders } from './interface';
 
 export const ProviderIcon = ({ provider }: { provider: SupportedProviders }) => {

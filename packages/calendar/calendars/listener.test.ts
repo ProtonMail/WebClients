@@ -1,4 +1,5 @@
-import { combineReducers } from '@reduxjs/toolkit';
+import type { Action, Reducer, ReducersMapObject, TypedStartListening } from '@reduxjs/toolkit';
+import { combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import { addressKeysReducer } from '@proton/account/addressKeys';
 import { addressesReducer } from '@proton/account/addresses';
@@ -6,7 +7,6 @@ import { getModelState } from '@proton/account/test';
 import { getServerEvent } from '@proton/account/test/getServerEvent';
 import { userReducer } from '@proton/account/user';
 import { userKeysReducer } from '@proton/account/userKeys';
-import { getTestStore } from '@proton/redux-shared-store/test';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
@@ -29,6 +29,42 @@ import { startCalendarEventListener } from './listener';
 
 const getCalendarModelState = (bootstrap: CalendarBootstrap) => {
     return { ...getModelState(bootstrap), loading: false };
+};
+
+/**
+ * Local copy of `@proton/redux-shared-store/test`'s `getTestStore`. `@proton/redux-shared-store` already
+ * depends on `@proton/calendar`, so importing it back here would create a circular workspace dependency.
+ * This helper only depends on `@reduxjs/toolkit`, so it's safe to duplicate.
+ */
+const getTestStore = <T, A extends Action, S = any, P = S>({
+    preloadedState,
+    reducer,
+    extraThunkArguments,
+}: {
+    reducer: Reducer<S, A, P> | ReducersMapObject<S, A, P>;
+    preloadedState?: P;
+    extraThunkArguments: T;
+}) => {
+    const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
+    const store = configureStore({
+        preloadedState,
+        reducer,
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware({
+                thunk: { extraArgument: extraThunkArguments },
+            }).prepend(listenerMiddleware.middleware),
+    });
+
+    type State = ReturnType<typeof store.getState>;
+    type Dispatch = typeof store.dispatch;
+    type ExtraArgument = typeof extraThunkArguments;
+
+    type AppStartListening = TypedStartListening<State, Dispatch, ExtraArgument>;
+    const startListening = listenerMiddleware.startListening as AppStartListening;
+    return {
+        store,
+        startListening,
+    };
 };
 
 jest.mock('@protontech/crypto', () => {

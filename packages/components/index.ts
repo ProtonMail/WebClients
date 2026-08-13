@@ -729,7 +729,6 @@ export { default as ThemesSection } from './containers/themes/ThemesSection';
 export { default as ThemeSvg } from './containers/themes/ThemeSvg';
 export { default as useSyncIframeStyles } from './containers/themes/useSyncIframeStyles';
 export { default as useThemeQueryParameter } from './containers/themes/useThemeQueryParameter';
-export { ThirdPartySection } from './containers/thirdParty/ThirdPartySection';
 export { default as BadAppVersionBanner } from './containers/topBanners/BadAppVersionBanner';
 export { default as UnpaidInvoiceTopBanner } from './containers/topBanners/UnpaidInvoiceTopBanner';
 export { default as OnlineTopBanner } from './containers/topBanners/OnlineTopBanner';

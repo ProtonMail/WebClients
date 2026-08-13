@@ -7,6 +7,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { calendarUrlQueryParams } from '@proton/calendar/constants';
+import { validateDeepLinkParams } from '@proton/calendar/utils';
 import { useNotifications } from '@proton/components';
 import { getMeetingLink, useProtonMeet } from '@proton/meet';
 import { decryptSessionKey, encryptMeetingName } from '@proton/meet/utils/cryptoUtils';
@@ -19,8 +21,6 @@ import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calenda
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { calendarUrlQueryParams } from '../../constants';
-import { validateDeepLinkParams } from '../../utils';
 import {
     VideoConferenceProtonMeetIntegration,
     useVideoConfTelemetry,
