@@ -5,6 +5,7 @@ import type {
     BreachAddressGetResponse,
     BreachCustomEmailGetResponse,
     BreachDomainPeekResponse,
+    Item,
     ItemRevision,
     UniqueItem,
 } from '@proton/pass/types';
@@ -12,6 +13,11 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import type { AddressBreachDTO, MonitorAddress, MonitorDomain } from './types';
 import { AddressType, BreachFlag } from './types';
+
+export const hasPasswordChanged = (prev: Item, next: Item): boolean => {
+    if (prev.type !== 'login' || next.type !== 'login') return false;
+    return deobfuscate(next.content.password) !== deobfuscate(prev.content.password);
+};
 
 export const getDuplicatePasswords = (logins: ItemRevision<'login'>[]): UniqueItem[][] => {
     const duplicatesMap = new Map<string, UniqueItem[]>();
