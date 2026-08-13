@@ -777,6 +777,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "Pridruži se z ${ MEET_APP_NAME }"
       ],
+      "Keep going": [
+        "Nadaljuj …"
+      ],
       "Keep inbox as before": [
         "Ohrani predal pošte kot prej"
       ],
@@ -1436,6 +1439,9 @@
       ],
       "Stop generating result": [
         "Ustavi ustvarjanje"
+      ],
+      "Stop here": [
+        "Tukaj se ustavi"
       ],
       "Stop marking as read": [
         "Prekini označevati kot prebrano"
@@ -7815,6 +7821,9 @@
       "How hide-my-email aliases works": [
         "Kako delujejo vzdevki hide-my-email"
       ],
+      "I have not finished this one yet.": [
+        "Tega še nisem dokončal."
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "To sporočilo pošiljam osebi, ki ne uporablja ${ MAIL_APP_NAME }a."
       ],
@@ -8427,6 +8436,21 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Ali vam iskanje traja predolgo? ${ dropdownButton } ali ${ toggleOffButton } za to iskanje."
       ],
+      "Searched ${ targetName }": [
+        "Iskalo se je po ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Iskalo se je sporočila od ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Iskalo se je sporočila, naslovljena na ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Iskalo se je po \"${ keyword }\""
+      ],
+      "Searched your mail": [
+        "Vaša pošta je bila preiskana"
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Danes zaščitite svoje datoteke z brezplačnim šifriranim shranjevanjem v oblaku."
       ],
@@ -8528,6 +8552,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Žal to sporočilo ne obstaja ali je že poteklo."
+      ],
+      "Star emails": [
+        "Označi sporočila z zvezdico"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ga deliti s stiki in ga uporabljajte za spletne storitve."
@@ -8708,6 +8735,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "To je zdaj vaš naslov ${ defaultEmailAddress } za pošiljanje novih sporočil."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Za ta postopek je potrebnih več korakov. Nadaljujemo?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ta povezava vodi na spletno mesto, ki bi lahko poskušalo ukrasti vaše podatke, kot so gesla in podatki o plačilnih karticah."
@@ -8906,6 +8936,9 @@
       ],
       "Unsaved changes": [
         "Neshranjene spremembe"
+      ],
+      "Unstar emails": [
+        "Sporočilom odstrani zvezdico"
       ],
       "Unsubscribe": [
         "Odjavi se"
@@ -11393,6 +11426,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z razširjenim dostopom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z omejenim dostopom"
+      ],
       "${ n } calendar": [
         "${ n } koledar",
         "${ n } koledarja",
@@ -12030,6 +12069,9 @@
       ],
       "Downgrade account?": [
         "Zmanjšaj račun?"
+      ],
+      "Review subscription": [
+        "Pregled naročnine"
       ],
       "Review subscription and pay": [
         "Pregled naročnine in plačila"
@@ -15397,7 +15439,7 @@
         "${ ceilDays } dan",
         "${ ceilDays } dni",
         "${ ceilDays } dni",
-        "${ ceilDays } dnevi"
+        "${ ceilDays } dni"
       ],
       "${ ceilHours } hour": [
         "${ ceilHours } ura",
@@ -16403,6 +16445,9 @@
       "Snooze:": [
         "Dremež:"
       ],
+      "Star emails": [
+        "Označi sporočila z zvezdico"
+      ],
       "Start a new import": [
         "Začni z novim uvozom"
       ],
@@ -16411,6 +16456,9 @@
       ],
       "Stay for 50% off your next month": [
         "V naslednjem mesecu izkoristite 50 % popust"
+      ],
+      "Still working on it": [
+        "Še vedno delam na tem"
       ],
       "Storage capacity warning": [
         "Opozorilo o zmogljivosti shranjevanja"
@@ -16459,6 +16507,9 @@
       ],
       "Two-factor authentication": [
         "Dvojno preverjanja pristnosti"
+      ],
+      "Unstar emails": [
+        "Sporočilom odstrani zvezdico"
       ],
       "Unsubscribe": [
         "Odjavi se"
