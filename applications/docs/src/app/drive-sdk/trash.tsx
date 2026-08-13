@@ -1,6 +1,7 @@
+import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
+import type { NotificationType } from '@proton/components/containers/notifications/interfaces';
 import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 import type { ProtonDriveClient } from '@proton/drive'
-import { NotificationButton, type NotificationType } from '@proton/components'
 import { c } from 'ttag'
 import type { ReactNode } from 'react'
 

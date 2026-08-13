@@ -1,3 +1,4 @@
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import type {
   ClientRequiresEditorMethods,
   CommentMarkNodeChangeData,
@@ -52,7 +53,6 @@ import { Spreadsheet } from './Spreadsheet/Spreadsheet'
 import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
 import { getEditorStateFromSerializedNodes } from '../Conversion/get-editor-state-from-nodes'
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
-import { ErrorBoundary } from '@proton/components'
 import type { OpenLinkEventData } from './Spreadsheet/constants'
 import { OPEN_LINK_EVENT } from './Spreadsheet/constants'
 import { useStore } from 'zustand'

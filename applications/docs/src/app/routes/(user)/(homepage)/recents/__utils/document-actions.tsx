@@ -1,4 +1,6 @@
-import { useAuthentication, useConfirmActionModal, useNotifications } from '@proton/components'
+import useAuthentication from '@proton/components/hooks/useAuthentication';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { RecentDocumentsItem } from '@proton/docs-core'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { getAppHref } from '@proton/shared/lib/apps/helper'

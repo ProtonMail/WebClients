@@ -1,3 +1,4 @@
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import type { MouseEventHandler } from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import clsx from '@proton/utils/clsx'
@@ -5,7 +6,6 @@ import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { CommentsComposer } from './CommentsComposer'
 import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
 import { CommentThreadState, CommentThreadType, CommentType } from '@proton/docs-shared'
-import { ToolbarButton } from '@proton/components'
 import { IcArrowUp } from '@proton/icons/icons/IcArrowUp'
 import { c, msgid } from 'ttag'
 import { reportErrorToSentry } from '../../Utils/errorMessage'

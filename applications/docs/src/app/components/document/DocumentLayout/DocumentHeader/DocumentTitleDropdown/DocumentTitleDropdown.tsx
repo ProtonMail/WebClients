@@ -1,24 +1,22 @@
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import useAppTitle from '@proton/components/hooks/useAppTitle';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import useConfig from '@proton/components/hooks/useConfig';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { getAppVersion } from '@proton/components/helpers/appVersion';
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { mergeRegister } from '@lexical/utils'
 import { c } from 'ttag'
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
-import {
-  Dropdown,
-  DropdownButton,
-  DropdownMenu,
-  DropdownMenuButton,
-  DropdownSizeUnit,
-  SimpleDropdown,
-  Toggle,
-  useAppTitle,
-  useAuthentication,
-  usePopperAnchor,
-  useConfig,
-  useNotifications,
-  getAppVersion,
-} from '@proton/components'
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare'
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross'
 import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'

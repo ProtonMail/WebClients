@@ -1,9 +1,13 @@
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { AuthenticatedDocControllerInterface, DocumentState } from '@proton/docs-core'
 import { c } from 'ttag'
 
 import { Button } from '@proton/atoms/Button/Button'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useNotifications } from '@proton/components'
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag'
 import { useTrashWithSDK } from '~/utils/flags'

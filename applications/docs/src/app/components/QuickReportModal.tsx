@@ -1,15 +1,13 @@
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import BasicModal from '@proton/components/components/modalTwo/BasicModal';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Progress from '@proton/components/components/progress/Progress';
 import { Button } from '@proton/atoms/Button/Button'
-import type { ModalStateProps } from '@proton/components'
-import {
-  BasicModal,
-  useModalTwoStatic,
-  useApi,
-  useConfig,
-  TextAreaTwo,
-  InputFieldTwo,
-  Checkbox,
-  Progress,
-} from '@proton/components'
 import { useEffect, useState } from 'react'
 import { c } from 'ttag'
 import type { DocumentType } from '@proton/drive-store/store/_documents'

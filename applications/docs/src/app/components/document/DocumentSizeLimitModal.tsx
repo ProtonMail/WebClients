@@ -1,4 +1,8 @@
-import { ModalTwo, ModalTwoHeader, ModalTwoContent, ModalTwoFooter, useNotifications } from '@proton/components'
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useEffect, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
 import type {

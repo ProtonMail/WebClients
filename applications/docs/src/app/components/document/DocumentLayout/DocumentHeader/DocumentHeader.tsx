@@ -1,4 +1,9 @@
-import { AppsDropdown, Logo, MimeIcon, useActiveBreakpoint, useConfig, UserDropdown } from '@proton/components'
+import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
+import Logo from '@proton/components/components/logo/Logo';
+import MimeIcon from '@proton/components/components/icon/MimeIcon';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useConfig from '@proton/components/hooks/useConfig';
+import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import { IcEye } from '@proton/icons/icons/IcEye'
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
 import { APPS } from '@proton/shared/lib/constants'
