@@ -19,6 +19,78 @@ export class VegaSpecParseError extends Error {
 
 const DANGEROUS_USERMETA_KEYS = ['embedOptions', 'vegaEmbed'] as const;
 
+/** Mark types that can trigger outbound network requests (image loads, geo tiles, etc.). */
+const BLOCKED_MARK_TYPES = new Set(['image', 'geoshape']);
+
+/**
+ * Mark types Lumo charts are expected to emit. Anything else is rejected so new
+ * upstream mark types cannot silently open exfil channels before we review them.
+ */
+const ALLOWED_MARK_TYPES = new Set([
+    'arc',
+    'area',
+    'bar',
+    'boxplot',
+    'circle',
+    'errorband',
+    'errorbar',
+    'line',
+    'point',
+    'rect',
+    'rule',
+    'square',
+    'text',
+    'tick',
+    'trail',
+]);
+
+const NESTED_VEGA_LITE_SPEC_KEYS = ['layer', 'vconcat', 'hconcat', 'concat'] as const;
+
+function extractMarkType(mark: unknown): string | null {
+    if (typeof mark === 'string') {
+        return mark;
+    }
+
+    if (!mark || typeof mark !== 'object' || Array.isArray(mark)) {
+        return null;
+    }
+
+    const type = (mark as Record<string, unknown>).type;
+    return typeof type === 'string' ? type : null;
+}
+
+function assertAllowedMarkTypesInSpec(spec: Record<string, unknown>, path: string[]): void {
+    const markType = extractMarkType(spec.mark);
+    if (markType) {
+        if (BLOCKED_MARK_TYPES.has(markType) || !ALLOWED_MARK_TYPES.has(markType)) {
+            throw new VegaSpecSecurityError(`Mark type "${markType}" is not allowed`);
+        }
+    }
+
+    const encoding = spec.encoding;
+    if (encoding && typeof encoding === 'object' && !Array.isArray(encoding) && 'url' in encoding) {
+        throw new VegaSpecSecurityError('encoding.url is not allowed');
+    }
+
+    for (const key of NESTED_VEGA_LITE_SPEC_KEYS) {
+        const nestedSpecs = spec[key];
+        if (!Array.isArray(nestedSpecs)) {
+            continue;
+        }
+
+        nestedSpecs.forEach((nestedSpec, index) => {
+            if (nestedSpec && typeof nestedSpec === 'object' && !Array.isArray(nestedSpec)) {
+                assertAllowedMarkTypesInSpec(nestedSpec as Record<string, unknown>, [...path, key, String(index)]);
+            }
+        });
+    }
+
+    const nestedSpec = spec.spec;
+    if (nestedSpec && typeof nestedSpec === 'object' && !Array.isArray(nestedSpec)) {
+        assertAllowedMarkTypesInSpec(nestedSpec as Record<string, unknown>, [...path, 'spec']);
+    }
+}
+
 function stripDangerousUsermeta(spec: Record<string, unknown>): void {
     const usermeta = spec.usermeta;
     if (!usermeta || typeof usermeta !== 'object' || Array.isArray(usermeta)) {
@@ -153,6 +225,7 @@ export function sanitizeVegaSpec(raw: string): VisualizationSpec {
     const spec = parseVegaSpecJson(raw);
     stripDangerousUsermeta(spec);
     assertNoExternalDataSources(spec, []);
+    assertAllowedMarkTypesInSpec(spec, []);
     const normalized = normalizeVegaLiteSpec(spec);
     stripHardcodedChartColors(normalized);
     applyProtonMarkColors(normalized);
