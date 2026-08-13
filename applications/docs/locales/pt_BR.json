@@ -3070,6 +3070,9 @@
       "Could not unlock this item": [
         "Não foi possível desbloquear este item"
       ],
+      "Creating documents in non-folders is not allowed": [
+        "Não é permitido criar documentos dentro de itens que não sejam pastas"
+      ],
       "Creating files in non-folders is not allowed": [
         "Não é permitido criar arquivos dentro de itens que não sejam pastas"
       ],
@@ -3134,6 +3137,9 @@
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Falha ao descriptografar a chave de marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Falha ao descriptografar o nome de marcador: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Falha ao descriptografar a senha dos favoritos: ${ message }"
@@ -10635,6 +10641,9 @@
       ],
       "Select link expiration time": [
         "Selecionar hora de expiração do link"
+      ],
+      "Select users to migrate": [
+        "Selecione os usuários a serem migrados"
       ],
       "Set recovery methods": [
         "Definir um métodos de recuperação"

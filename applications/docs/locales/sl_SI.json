@@ -456,6 +456,9 @@
       "Import from Outlook": [
         "Uvoz iz Outlooka"
       ],
+      "Keep going": [
+        "Nadaljuj …"
+      ],
       "Keep my subscription": [
         "Ohrani mojo naročnino"
       ],
@@ -788,6 +791,9 @@
       ],
       "Stay": [
         "Ostani"
+      ],
+      "Stop here": [
+        "Tukaj se ustavi"
       ],
       "Stop sharing": [
         "Ustavi skupno rabo"
@@ -3533,6 +3539,9 @@
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
       ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Naprava, katere ni možno dešifrirati"
+      ],
       "⚠️ Undecryptable name": [
         "⚠️ Ne-dešifrirano ime"
       ]
@@ -5427,6 +5436,9 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "To je ime ali vzdevek vaše organizacije, ki ga bodo videli vaši uporabniki. Spremenite ga lahko kadarkoli."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Za ta postopek je potrebnih več korakov. Nadaljujemo?"
+      ],
       "This item already exists in your library": [
         "Ta predmet že obstaja v vaši knjižnici"
       ],
@@ -5468,6 +5480,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Zaradi boja proti neželeni vsebini in zlorabam najprej potrdite, da ste človek."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Da bi pomagali rešiti težavo, bodo podatki za odpravljanje napak naloženi na vaš Drive in varno posredovani podporni ekipi ${ BRAND_NAME }. Ti podatki lahko vključujejo tudi vsebino datotek. Deljenje lahko kadarkoli prekinete, posredovani podatki pa bodo izbrisani takoj po zaključku pregleda."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Da si boste lažje zapomnili geslo, vas bomo občasno prosili, da ga vnesete. Sčasoma vas bomo za to prosili vse redkeje."
@@ -6050,6 +6065,9 @@
       ],
       "Import to:": [
         "Uvozi v:"
+      ],
+      "Include debug information": [
+        "Vključi podatke za odpravljanje napak"
       ],
       "Include message and file name in invite email": [
         "Vključi sporočilo in ime datoteke v vabilo"
@@ -6870,6 +6888,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z razširjenim dostopom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z omejenim dostopom"
       ],
       "${ n } calendar": [
         "${ n } koledar",
@@ -7903,6 +7927,9 @@
       "All items will soon be permanently deleted from trash": [
         "Vsi predmeti bodo kmalu trajno izbrisani iz smeti."
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Ker je bil ta dokument shranjen v mapi v skupni rabi, ga lahko obnovi le lastnik mape"
+      ],
       "Cannot load link": [
         "Povezave ni bilo mogoče naložiti"
       ],
@@ -7957,6 +7984,9 @@
       "Failed to restore document": [
         "Dokumenta ni bilo mogoče obnoviti."
       ],
+      "Failed to submit report": [
+        "Pošiljanje poročila ni uspelo"
+      ],
       "Failed to trash document": [
         "Prestavljanje dokumenta v smetnjak je spodletelo."
       ],
@@ -8001,6 +8031,9 @@
       ],
       "Recent documents updated": [
         "Nedavni dokumenti so bili posodobljeni"
+      ],
+      "Report submitted successfully": [
+        "Poročilo je bilo uspešno poslano"
       ],
       "Root folder failed to be loaded": [
         "Korenske mape ni bilo mogoče naložiti"
@@ -9760,7 +9793,7 @@
         "${ ceilDays } dan",
         "${ ceilDays } dni",
         "${ ceilDays } dni",
-        "${ ceilDays } dnevi"
+        "${ ceilDays } dni"
       ],
       "${ ceilHours } hour": [
         "${ ceilHours } ura",
@@ -10263,6 +10296,9 @@
       "Report a problem": [
         "Poročanje o težavi"
       ],
+      "Report issue": [
+        "Prijavi težavo"
+      ],
       "Request new code": [
         "Zahtevaj novo kodo"
       ],
@@ -10340,6 +10376,9 @@
       ],
       "Stay for 50% off your next month": [
         "V naslednjem mesecu izkoristite 50 % popust"
+      ],
+      "Still working on it": [
+        "Še vedno delam na tem"
       ],
       "Stop sharing": [
         "Ustavi skupno rabo"

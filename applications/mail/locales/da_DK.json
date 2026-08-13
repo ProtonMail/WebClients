@@ -784,6 +784,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "Deltag med ${ MEET_APP_NAME }"
       ],
+      "Keep going": [
+        "Fortsæt …"
+      ],
       "Keep inbox as before": [
         "Behold indbakken som før"
       ],
@@ -1458,6 +1461,9 @@
       ],
       "Stop generating result": [
         "Stop generering af resultat"
+      ],
+      "Stop here": [
+        "Stop her"
       ],
       "Stop marking as read": [
         "Stop markering som læst"
@@ -7983,6 +7989,9 @@
       "How hide-my-email aliases works": [
         "Sådan virker hide-my-email-aliasser"
       ],
+      "I have not finished this one yet.": [
+        "Denne er endnu ikke afsluttet"
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Jeg sender denne besked til en, som ikke bruger ${ MAIL_APP_NAME }."
       ],
@@ -8928,6 +8937,9 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nu din ${ defaultEmailAddress } til afsendelse af nye beskeder."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Det her kræver meget... Skal det fortsætte?"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."
       ],
@@ -9055,6 +9067,9 @@
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "For at migrere denne bruger skal du tilføje og bekræfte e-mail-domænet under ${ domainNamesLink }"
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Aktivér kontoen for denne bruger i ${ provider.adminConsoleName } for at migrere dem."
+      ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
       ],
@@ -9063,6 +9078,12 @@
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "For at migrere denne bruger skal de acceptere deres invitation til at tilslutte sig ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Fjern denne bruger fra arkivet i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Ophæv suspenderingen af denne bruger i ${ provider.adminConsoleName } for at migrere dem."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
@@ -10509,6 +10530,12 @@
       "No label found": [
         "Ingen etikette fundet"
       ],
+      "No unread conversations": [
+        "Ingen ulæste samtaler"
+      ],
+      "No unread messages": [
+        "Ingen ulæste beskeder"
+      ],
       "Non-promotional content and news": [
         "Ikke-salgsfremmende indhold og nyheder"
       ],
@@ -11691,6 +11718,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med udvidet adgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrænset adgang"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -13294,6 +13327,9 @@
       "You will soon be redirected to verify your payment.": [
         "Du omdirigeres snart for at bekræfte din betaling."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta er blevet ændret til euro (€), fordi ${ IDEAL_BRAND_NAME } kun understøtter betalinger i euro."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta er blevet ændret til euro (€), fordi SEPA-bankoverførsler kun understøtter betalinger i euro."
       ],
@@ -13305,6 +13341,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Kunne ikke initialisere ${ IDEAL_BRAND_NAME }. Prøv igen senere."
+      ],
       "Invalid card number": [
         "Ugyldigt kortnummer"
       ],
@@ -13327,6 +13366,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Noget gik galt. Google Pay-bekræftelse mislykkedes."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ved at bekræfte denne betaling autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at instruere din bank om at debitere din konto tilsvarende. Du kan få en tilbagebetaling inden for 8 uger fra debiteringsdatoen, under betingelserne i din aftale med din bank."
       ]
     },
     "Payments.info": {
@@ -15562,7 +15606,7 @@
         "Flyt ${ selectionCount } beskeder"
       ],
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
-        "Flyttet til ${ label }, hvor lignende beskeder også vil blive kategoriseret fremover."
+        "Flyttet til ${ label }. Lignende beskeder vil blive kategoriseret her fremover."
       ],
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
@@ -16774,6 +16818,9 @@
       "Stay for 50% off your next month": [
         "Bliv hængende for 50% rabat i den næste måned"
       ],
+      "Still working on it": [
+        "Arbejder stadig på det"
+      ],
       "Storage capacity warning": [
         "Advarsel om lagerkapacitet"
       ],
@@ -16988,6 +17035,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Tilpas import for at reducere antallet af etiketter"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status for datamigration fra ${ providerName } til ${ BRAND_NAME }"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digital signering af e-mails hjælper med at bekræfte, at beskeder er sendt af dig"

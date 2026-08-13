@@ -90,6 +90,9 @@
       "Apply": [
         "Anvend"
       ],
+      "Ask me next time": [
+        "Spørg mig næste gang"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Højst ${ maxContacts } kontakt er tilladt pr. kontaktgruppe",
         "Højst ${ maxContacts } kontakter er tilladt pr. kontaktgruppe"
@@ -468,6 +471,9 @@
       "Import from Outlook": [
         "Importér fra Outlook"
       ],
+      "Keep going": [
+        "Fortsæt …"
+      ],
       "Keep my subscription": [
         "Bevar mit abonnement"
       ],
@@ -711,6 +717,9 @@
       "Save changes": [
         "Gem ændringer"
       ],
+      "Save preferences": [
+        "Gem præferencer"
+      ],
       "Search": [
         "Søg"
       ],
@@ -812,6 +821,9 @@
       ],
       "Stop": [
         "Stop"
+      ],
+      "Stop here": [
+        "Stop her"
       ],
       "Stop sharing": [
         "Stop deling"
@@ -4915,6 +4927,9 @@
       "Continue": [
         "Fortsæt"
       ],
+      "Converting document...": [
+        "Konverterer dokument..."
+      ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
       ],
@@ -4967,6 +4982,9 @@
       ],
       "Creating link to folder": [
         "Opretter link til mappe"
+      ],
+      "Creating new document...": [
+        "Opretter nyt dokument..."
       ],
       "Current plan": [
         "Nuværende abonnement"
@@ -5067,6 +5085,12 @@
       "Enter your own password (as trusted contact).": [
         "Indtast din egen adgangskode (som betroet kontakt)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Fejl ved konvertering af dokument: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Fejl ved indlæsning af dokument: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Fejlsynkronisering"
       ],
@@ -5120,6 +5144,12 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Få en professionel @din-virksomhed.com e-mail, 1 TB sikker lagerplads per bruger, længere videoopkald, og mere med ${ BRAND_NAME } Workspace."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Få e-mailopdateringer om kommentarer og forslag, der tilføjes til dine dokumenter."
+      ],
+      "Get Notified About Comments": [
+        "Få besked om kommentarer"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringer og internetudbydere kan overvåge din online aktivitet. Ved at skjule din rigtige IP og kryptere din aktivitet bliver din browsing privat."
@@ -5281,6 +5311,9 @@
       "Low Priority": [
         "Lav prioritet"
       ],
+      "Making a copy...": [
+        "Kopierer..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maks. ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
         "Maks. ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn"
@@ -5311,6 +5344,9 @@
       ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Intet dokument angivet i URL. Gå tilbage til ${ DRIVE_APP_NAME } og vælg et dokument."
       ],
       "No email address": [
         "Ingen e-mailadresse"
@@ -5605,6 +5641,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ejeren af denne adresse har deaktiveret end-to-end-kryptering. For at kunne sende krypterede e-mails til denne adresse, skal ejeren genaktivere end-to-end-kryptering."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Den URL, du indtastede, ser ud til at være blevet kopieret forkert fra Slack. Når du kopierer lange links fra Slack, højreklik på linket, vælg så \"Kopiér link\" i stedet for at kopiere den afkortede URL-tekst direkte."
+      ],
       "There are no documents in the trash.": [
         "Der er ingen dokumenter i papirkurven."
       ],
@@ -5637,6 +5676,9 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Dette er et navn eller kaldenavn for din organisation, som dine brugere vil se. Du kan ændre det når som helst."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Det her kræver meget... Skal det fortsætte?"
       ],
       "This item already exists in your library": [
         "Dette element findes allerede i dit bibliotek"
@@ -5689,6 +5731,9 @@
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "For at migrere denne bruger skal du tilføje og bekræfte e-mail-domænet under ${ domainNamesLink }"
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Aktivér kontoen for denne bruger i ${ provider.adminConsoleName } for at migrere dem."
+      ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
       ],
@@ -5697,6 +5742,12 @@
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "For at migrere denne bruger skal de acceptere deres invitation til at tilslutte sig ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Fjern denne bruger fra arkivet i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Ophæv suspenderingen af denne bruger i ${ provider.adminConsoleName } for at migrere dem."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
@@ -6247,6 +6298,9 @@
       "Emails (last month)": [
         "E-mails (seneste måned)"
       ],
+      "Enable email notifications": [
+        "Aktivér e-mailnotifikationer"
+      ],
       "Encrypt emails": [
         "Kryptér e-mails"
       ],
@@ -6303,6 +6357,9 @@
       ],
       "Include application logs in bug report": [
         "Inkluder applikationslogfiler i fejlrapporten"
+      ],
+      "Include document name in notification": [
+        "Inkludér dokumentnavn i notifikationen"
       ],
       "Include message and file name in invite email": [
         "Medtag besked og filnavn i invitationsmail"
@@ -7156,6 +7213,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med udvidet adgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrænset adgang"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -8147,6 +8210,9 @@
       ],
       "All items will soon be permanently deleted from trash": [
         "Alle elementer slettes snart permanent fra papirkurven"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Da dette dokument befandt sig i en delt mappe, er det kun mappens ejer, der kan gendanne det"
       ],
       "Cannot load link": [
         "Link kan ikke indlæses"
@@ -9403,6 +9469,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Opretter nyt regneark..."
+      ],
       "Detect automatically": [
         "Registrer automatisk"
       ],
@@ -10696,6 +10765,9 @@
       "Stay for 50% off your next month": [
         "Bliv hængende for 50% rabat i den næste måned"
       ],
+      "Still working on it": [
+        "Arbejder stadig på det"
+      ],
       "Stop sharing": [
         "Stop deling"
       ],
@@ -10836,6 +10908,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Tilpas import for at reducere antallet af etiketter"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status for datamigration fra ${ providerName } til ${ BRAND_NAME }"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digital signering af e-mails hjælper med at bekræfte, at beskeder er sendt af dig"

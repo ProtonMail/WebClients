@@ -777,17 +777,11 @@
       "Export as CSV": [
         "匯出為 CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "將各公司的明細匯出為 ZIP 檔"
-      ],
       "Export key": [
         "匯出金鑰"
       ],
       "Export key before deleting": [
         "刪除前匯出金鑰"
-      ],
-      "Export overview as CSV": [
-        "將總覽匯出為 CSV 檔"
       ],
       "Extend": [
         "延展"
@@ -3622,14 +3616,8 @@
       "Status": [
         "狀態"
       ],
-      "Total billed seats": [
-        "計費座席總數"
-      ],
       "Total cost": [
         "總費用"
-      ],
-      "Used / assigned seats": [
-        "已使用/已分配座席"
       ]
     },
     "Condition for custom filter": {
@@ -9984,9 +9972,6 @@
       "Ask your organization admin to setup Gateways.": [
         "請聯絡貴組織的的管理員以設定閘道。"
       ],
-      "Assigned seats won't be billed while disabled": [
-        "在停用期間，不會對已分配的座席進行計費"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "至少 ${ BETTER_PASSWORD_LENGTH } 個字元"
       ],
@@ -12738,9 +12723,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "使用群組，您可快速及方便傳送電子郵件給於特定群組的成員。"
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "透過託管公司，您可以為您監管的組織新增、編輯和移除存取權。"
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "使用您目前的方案，您只能以 @pm.me 位址接收訊息。升級以傳送訊息並使用 @pm.me 建立更多位址。"
       ],
@@ -12989,9 +12971,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "您將再也不能使用您先前下載的帳號救援檔案恢復被鎖定的資料。此操作將一併停用基於裝置的復原方法。"
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "您將根據已分配座席的平均數量按月計費。"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "若您的朋友訂閱年費方案，您將在 1 個月後獲得點數獎勵；若他們訂閱月費方案，則會在 2 個月後獲得。"
@@ -13960,9 +13939,6 @@
       "Assertion Consumer Service URL": [
         "消費者服務聲明網址"
       ],
-      "Assigned seats": [
-        "已分配座席"
-      ],
       "Attach public key": [
         "附加公開金鑰"
       ],
@@ -14017,9 +13993,6 @@
       "Autosuggest": [
         "自動建議"
       ],
-      "Average": [
-        "平均"
-      ],
       "Awarded": [
         "獲得獎勵"
       ],
@@ -14031,9 +14004,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "每 12 個月收取 ${ priceYearly }。"
-      ],
-      "Billed average": [
-        "計費平均值"
       ],
       "Billed monthly.": [
         "按月付款。"
@@ -15015,12 +14985,6 @@
       ],
       "Search for a name or email": [
         "搜尋名稱或電子郵件"
-      ],
-      "Seats": [
-        "座席"
-      ],
-      "Seats usage": [
-        "座席使用情況"
       ],
       "Second password": [
         "第二密碼"
@@ -22726,9 +22690,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "上次變更時間為 ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "上次更新時間為 ${ formattedUpdateDate }"
       ],
       "Not saved": [
         "尚未儲存"

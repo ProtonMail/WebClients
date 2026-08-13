@@ -602,6 +602,9 @@
       "Join album": [
         "Albüme katıl"
       ],
+      "Keep going": [
+        "İlerle"
+      ],
       "Keep my subscription": [
         "Aboneliğimi sürdür"
       ],
@@ -1079,6 +1082,9 @@
       "Stop": [
         "Durdur"
       ],
+      "Stop here": [
+        "Burada dur"
+      ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
       ],
@@ -1102,6 +1108,9 @@
       ],
       "This album is empty": [
         "Bu albüm boş"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasına geç"
       ],
       "Toggle Calendar app": [
         "Takvim uygulamasına geç"
@@ -5291,6 +5300,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } ve ${ SHEETS_APP_NAME } dosyaları doğrudan indirilemez ve bu indirme işlemine katılmayacaklar. Diğer dosyaları 'İndirmeyi sürdür' seçeneğine tıklayarak indirebilirsiniz."
       ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } yerel arama dizininin şifresini çözemedi. Aramayı kullanabilmek için dizini yeniden oluşturun."
+      ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
         "${ DRIVE_APP_NAME } yerel arama dizininde bozulma olduğunu ve artık kullanılamayacağını buldu. Arama özelliğini kurtarmak için dizini yeniden oluşturun."
       ],
@@ -6004,6 +6016,9 @@
       "How does encrypted search work?": [
         "Şifrelenmiş arama nasıl çalışır?"
       ],
+      "I have not finished this one yet.": [
+        "Bunu henüz bitirmedim."
+      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Bu açıklamay ile, bildirimde yer alan bilgi ve beyanların doğru ve eksiksiz olduğunu iyi niyetle teyit ederim."
       ],
@@ -6587,6 +6602,9 @@
       "Search cannot be enabled in this browser": [
         "Bu tarayıcıda arama özelliği açılamaz"
       ],
+      "Search data can't be read": [
+        "Arama verileri okunamadı"
+      ],
       "Search data is corrupted": [
         "Arama verileri bozulmuş"
       ],
@@ -6810,6 +6828,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Bu işlem için birçok adım atılıyor. İlerlensin mi?"
       ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Bu öge Fotoğraflar kitaplığınızda kayıtlı değil. Ögeyi bu albümden kaldırırsanız, ögeye erişiminizi kalıcı olarak kaybedersiniz.",
@@ -8907,6 +8928,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Genişletilmiş erişim ile ${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Sınırlı erişim ile ${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "${ n } calendar": [
         "${ n } takvim",
@@ -13549,6 +13576,9 @@
       ],
       "Stay for 50% off your next month": [
         "Sonraki ay %50 indirimden yararlanın"
+      ],
+      "Still working on it": [
+        "Üzerinde çalışılıyor"
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"

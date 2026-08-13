@@ -2728,6 +2728,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "写作助理 ${ BRAND_NAME } Scribe"
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } 标记"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
       ],
@@ -3150,6 +3153,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "我们使用 3-D Secure 来保护您的付款"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "我们将在新的浏览器标签页中重定向至 ${ IDEAL_BRAND_NAME } 以完成此交易。如果您使用了任何弹窗拦截器，请将其禁用后继续。"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我们将在新标签页中为您打开 PayPal 完成支付，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
@@ -4766,6 +4772,9 @@
       "More plans are available in other currencies": [
         "更多计划以及其他货币提供"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "使用 ${ IDEAL_BRAND_NAME } 付款"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "您需要提供付款方式，以便试用期结束后激活订阅。"
       ],
@@ -4841,6 +4850,9 @@
       "You will soon be redirected to verify your payment.": [
         "您即将被重定向以验证付款"
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "您的货币已更改为欧元 (€)，因为 ${ IDEAL_BRAND_NAME } 仅支持欧元支付。"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "您的货币已更改为欧元 (€)，因为 SEPA 银行转账只支持欧元支付。"
       ],
@@ -4852,6 +4864,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_BRAND_NAME } 初始化失败，请稍后重试。"
+      ],
       "Invalid card number": [
         "卡号无效"
       ],
@@ -4874,6 +4889,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "出错了，Google Pay 验证失败。"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "确认付款即表示您授权 ${ BRAND_NAME } 及我们的支付服务提供商 Stripe 指示您的银行从您的账户中扣除相应款项。根据您与银行的协议条款，您可在扣款日起 8 周内申请退款。"
       ]
     },
     "Payments.info": {

@@ -596,6 +596,9 @@
       "Go to panel ${ index }": [
         "${ index } पैनल पे जाएं"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "समझ गए"
       ],
@@ -5514,6 +5517,9 @@
       "Invited by: ${ inviteEmail }": [
         "इन्होने न्योता भेजा: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "परिवार प्लान छोड़ें"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "लाइफटाइम खाते Family plan में शामिल नहीं हो सकते।"
       ],
@@ -6603,6 +6609,11 @@
         "कैलेंडर एक ICS फाइल की तरह निर्यात करने के लिए ${ boldExport } चुनें।"
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "अधिक आयात विकल्प"
+      ]
+    },
     "Import status": {
       "In progress": [
         "प्रगति पर है"
@@ -7218,6 +7229,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "जारी रखने के लिए एक Entity ID चुनें।"
+      ],
+      "Choose your service to connect with": [
+        "कनेक्ट करने के लिए अपनी सेवा चुनें"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong } पर एक नया सत्यापन कोड भेजने के लिए \"नए कोड का अनुरोध करें\" पर क्लिक करें। यदि यह फ़ोन नंबर गलत है, तो इसे ठीक करने के लिए \"संपादित करें\" पर क्लिक करें।"
@@ -9655,6 +9669,14 @@
         "सदस्यता"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "सूचना फोन नंबर"
+      ],
+      "Recovery phone number": [
+        "पुनर्प्राप्ति फ़ोन नंबर"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "${ maxAddresses } ईमेल पते में से ${ addressesAvailable } उपलब्ध है",
@@ -9967,6 +9989,9 @@
       "Digits": [
         "अंक"
       ],
+      "Disable animations": [
+        "एनीमेशन अक्षम करें"
+      ],
       "Disabled": [
         "अक्षम किया"
       ],
@@ -10077,6 +10102,12 @@
       ],
       "Folders, labels, and filters": [
         "फोल्डर, लेबल और फिल्टर"
+      ],
+      "Font family": [
+        "फ़ॉन्ट परिवार"
+      ],
+      "Font size": [
+        "फ़ॉन्ट साइज़"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME } और ${ DOCS_SHORT_APP_NAME } के लिए।"
@@ -10278,6 +10309,9 @@
       ],
       "Notification": [
         "सूचना"
+      ],
+      "Notification email address": [
+        "सूचना ईमेल पता"
       ],
       "Numbers": [
         "नंबर"
@@ -10517,6 +10551,9 @@
       "Thomas": [
         "थॉमस"
       ],
+      "Time format": [
+        "समय प्रारूप"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "हमें सुधार करने में मदद करने के लिए, कृपया बताएं कि आप क्यों जा रहे हैं।"
       ],
@@ -10586,6 +10623,9 @@
       "Weak password": [
         "कमज़ोर पासवर्ड"
       ],
+      "Week start": [
+        "सप्ताह की शुरुआत"
+      ],
       "What happened?": [
         "क्या हुआ?"
       ],
@@ -10630,11 +10670,6 @@
       ],
       "ZIP code": [
         "ज़िप कोड"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "पुनर्प्राप्ति फ़ोन नंबर"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12194,6 +12229,9 @@
       ],
       "Switch plans?": [
         "प्लान बदले?"
+      ],
+      "Unlock premium features by upgrading": [
+        "अपग्रेड करके प्रीमियम सुविधाओं का लाभ उठाएँ"
       ]
     },
     "new_plans: Title": {
@@ -15716,9 +15754,6 @@
       "Last changed ${ formattedDate }": [
         "पिछली बार बदला गया ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "आखिरी बार ${ formattedUpdateDate } को अपडेट हुआ"
-      ],
       "Not saved": [
         "सेव नहीं किया गया"
       ],
@@ -15786,6 +15821,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "सभी ${ BRAND_NAME } सेवाओं के लिए"
+      ],
+      "Get more storage": [
+        "अधिक स्टोरेज प्राप्त करें"
       ],
       "Storage used": [
         "इस्तेमाल किया गया स्टोरेज"
@@ -17459,6 +17497,9 @@
       "Get help with an issue": [
         "किसी समस्या के लिए सहायता प्राप्त करें"
       ],
+      "Get more from your privacy suite": [
+        "अपनी निजता सुइट से अधिक लाभ उठाएं"
+      ],
       "Get more from your VPN": [
         "अपने VPN से और पाएं"
       ],
@@ -18190,6 +18231,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "${ MAIL_APP_NAME } लेन-देन"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "संगठन माइग्रेशन"
       ]
     },
     "Title header for addresses domain table": {

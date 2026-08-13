@@ -783,17 +783,11 @@
       "Export as CSV": [
         "Экспартаваць як CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "Размеркаванне экспарту па кампаніях у выглядзе паштовага індэкса"
-      ],
       "Export key": [
         "Экспартаваць ключ"
       ],
       "Export key before deleting": [
         "Экспартаваць ключ перад выдаленнем"
-      ],
-      "Export overview as CSV": [
-        "Экспартаваць агляд як CSV"
       ],
       "Extend": [
         "Падоўжыць"
@@ -3727,14 +3721,8 @@
       "Status": [
         "Статус"
       ],
-      "Total billed seats": [
-        "Усяго аплачана ліцэнзій"
-      ],
       "Total cost": [
         "Поўны кошт"
-      ],
-      "Used / assigned seats": [
-        "Выкарыстаныя або прызначаныя ліцэнзіі"
       ]
     },
     "Condition for custom filter": {
@@ -6869,6 +6857,9 @@
       "Cannot add photo to album without a valid name": [
         "Немагчыма дадаць фатаграфію ў альбом без сапраўднай назвы"
       ],
+      "Cannot download a folder": [
+        "Немагчыма спампаваць папку"
+      ],
       "Cannot move item without a valid name, please rename the item first": [
         "Немагчыма перанесці элемент без сапраўднай назвы. Спачатку дайце яму іншую назву."
       ],
@@ -6917,6 +6908,9 @@
       "Could not load sharing details": [
         "Немагчыма загрузіць абагуленыя падрабязнасці"
       ],
+      "Could not load the image preview: ${ message }": [
+        "Немагчыма загрузіць папярэдні прагляд відарыса: ${ message }"
+      ],
       "Could not open created vault": [
         "Не ўдалося адкрыць створанае сховішча"
       ],
@@ -6940,6 +6934,9 @@
       ],
       "Couldn't load transactions. Please try again later.": [
         "Немагчыма загрузіць трансакцыі. Паспрабуйце яшчэ раз пазней."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Стварэнне дакументаў па-за іх межамі забаронена"
       ],
       "Creating files in non-folders is not allowed": [
         "Стварэнне файлаў па-за іх межамі забаронена"
@@ -7234,6 +7231,9 @@
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў"
+      ],
+      "Name must not be empty": [
+        "Назва не можа быць пустой"
       ],
       "Name required": [
         "Патрабуецца назва"
@@ -7648,6 +7648,9 @@
       ],
       "Too many requests. Please try again later": [
         "Занадта шмат запытаў. Паспрабуйце яшчэ раз пазней"
+      ],
+      "Too many server errors, please try again later": [
+        "Занадта шмат памылак сервера. Паўтарыце спробу пазней"
       ],
       "Too many server requests, please try again later": [
         "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
@@ -8782,6 +8785,9 @@
       "In progress": [
         "Выконваецца"
       ],
+      "Migrated": [
+        "Перанесена"
+      ],
       "Not activated": [
         "Не актывавана"
       ],
@@ -9736,6 +9742,9 @@
       "Paused": [
         "Прыпынена"
       ],
+      "Pending": [
+        "У чаканні"
+      ],
       "Undo finished": [
         "Адрабленне завершана"
       ],
@@ -10526,9 +10535,6 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Папрасіце адміністратара сваёй арганізацыі наладзіць шлюзы."
-      ],
-      "Assigned seats won't be billed while disabled": [
-        "Прызначаныя ліцэнзіі не буду аплачвацца, пакуль яны адключаныя"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
@@ -13347,6 +13353,9 @@
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
       ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт ${ IDEAL_BRAND_NAME }. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
@@ -13445,9 +13454,6 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Пры дапамозе груп, вы можаце хутка і лёгка адпраўляць лісты ўсім людзям у канкрэтнай групе."
-      ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "З кіруемымі кампаніямі, вы можаце дадаваць, рэдагаваць і выдаляць доступ для арганізацый за якімі вы назіраеце."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "На вашым бягучым тарыфным плане даступна толькі атрыманне лістоў з адраса @pm.me. Палепшыце яго, каб адпраўляць лісты і ствараць дадатковыя адрасы з выкарыстаннем @pm.me."
@@ -13724,9 +13730,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "У вас не будзе магчымасці аднавіць заблакіраваныя даныя з дапамогай спампаваных файлаў аднаўлення. Гэта таксама адключыць аднаўленне з дапамогай даверанай прылады."
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "З вас будзе штомесяц спаганяцца плата на падставе сярэдняй колькасці прызначаных ліцэнзій."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Вы атрымаеце ўзнагароду ў крэдытах праз 1 месяц пасля таго, як ваш сябар падпішацца на гадавы тарыфны план. Праз 2 месяцы можна разлічваць на ўзнагароду, калі ваш сябар падпішацца на месячны тарыфны план."
@@ -14731,9 +14734,6 @@
       "Assertion Consumer Service URL": [
         "URL-адрас сэрвісу ACS (Assertion Consumer Service)"
       ],
-      "Assigned seats": [
-        "Прызначаныя ліцэнзіі"
-      ],
       "Attach public key": [
         "Далучыць адкрыты ключ"
       ],
@@ -14788,9 +14788,6 @@
       "Autosuggest": [
         "Аўтапрапанова"
       ],
-      "Average": [
-        "Сярэдняе значэнне"
-      ],
       "Awarded": [
         "Узнагароджаны"
       ],
@@ -14802,9 +14799,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Аплачваецца ${ priceYearly } кожныя 12 месяцаў."
-      ],
-      "Billed average": [
-        "Сярэдняя аплата"
       ],
       "Billed monthly.": [
         "Аплачваецца штомесяц."
@@ -15798,12 +15792,6 @@
       ],
       "Search for a name or email": [
         "Шукаць імя або электронную пошту"
-      ],
-      "Seats": [
-        "Ліцэнзіі"
-      ],
-      "Seats usage": [
-        "Выкарыстана ліцэнзій"
       ],
       "Second password": [
         "Другі пароль"
@@ -17642,6 +17630,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з пашыраным доступам"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з абмежаваным доступам"
       ],
       "${ n } calendar": [
         "${ n } каляндар",
@@ -20230,6 +20224,9 @@
       "Offer unavailable": [
         "Прапанова недаступна"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Заплаціць з дапамогай ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосаб аплаты патрабуецца для актывацыі падпіскі пасля завяршэння пробнага перыяду."
       ],
@@ -20888,6 +20885,9 @@
     "Property": {
       "attributes": [
         "атрыбуты"
+      ],
+      "content key": [
+        "ключ змесціва"
       ],
       "hash key": [
         "хэш-ключ"
@@ -23904,9 +23904,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "Апошняя змена ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Апошняе абнаўленне ${ formattedUpdateDate }"
       ],
       "Not saved": [
         "Не захавана"

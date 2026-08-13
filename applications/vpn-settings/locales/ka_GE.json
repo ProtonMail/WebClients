@@ -596,6 +596,9 @@
       "Go to panel ${ index }": [
         "${ index }-ე პანელზე გადასვლა"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "გავიგე"
       ],
@@ -5520,6 +5523,9 @@
       "Invited by: ${ inviteEmail }": [
         "მომწვევი: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "საოჯახო ტარიფიდან გასვლა"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "სამუდამო ანგარიშები ოჯახის გეგმაში ვერ შევლენ."
       ],
@@ -6609,6 +6615,11 @@
         "კალენდრის ICS ფაილად გასატანად აირჩიეთ ${ boldExport }."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "მეტი შემოტანის პარამეტრები"
+      ]
+    },
     "Import status": {
       "In progress": [
         "მიმდინარეობს"
@@ -7227,6 +7238,9 @@
       ],
       "Choose one:": [
         "აირჩიეთ ერთი:"
+      ],
+      "Choose your service to connect with": [
+        "აირჩიეთ სერვისი დასაკავშირებლად"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
@@ -9664,6 +9678,14 @@
         "გამოწერა"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "გაფრთხილების ტელეფონის ნომერი"
+      ],
+      "Recovery phone number": [
+        "აღდგენის ტელეფონის ნომერი"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "ხელმისაწვდომია ${ addressesAvailable } ელფოსტის მისამართი ${ maxAddresses }-დან",
@@ -9979,6 +10001,9 @@
       "Digits": [
         "ციფრები"
       ],
+      "Disable animations": [
+        "ანიმაციების გამორთვა"
+      ],
       "Disabled": [
         "გათიშული"
       ],
@@ -10089,6 +10114,12 @@
       ],
       "Folders, labels, and filters": [
         "საქაღალდეები, იარლიყები და ფილტრები"
+      ],
+      "Font family": [
+        "ფონტის ოჯახი"
+      ],
+      "Font size": [
+        "ფონტის ზომა:"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME }-ისთვის და ${ DOCS_SHORT_APP_NAME }-ისთვის."
@@ -10290,6 +10321,9 @@
       ],
       "Notification": [
         "შეტყობინება"
+      ],
+      "Notification email address": [
+        "გაფრთხილების ელფოსტის მისამართი"
       ],
       "Numbers": [
         "რიცხვები"
@@ -10529,6 +10563,9 @@
       "Thomas": [
         "მზევინარ"
       ],
+      "Time format": [
+        "დროის ფორმატი"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "იმისათვის, რომ უკეთესები გავხდეთ, აგვიხსენთ, რატომ გვტოვებთ."
       ],
@@ -10598,6 +10635,9 @@
       "Weak password": [
         "სუსტი პაროლი"
       ],
+      "Week start": [
+        "კვირის დასაწყისი"
+      ],
       "What happened?": [
         "რა მოხდა?"
       ],
@@ -10642,11 +10682,6 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "აღდგენის ტელეფონის ნომერი"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12206,6 +12241,9 @@
       ],
       "Switch plans?": [
         "გადავრთო სატარიფო გეგმა?"
+      ],
+      "Unlock premium features by upgrading": [
+        "განბლოკეთ პრემიუმ თვისებები ტარიფის აწევით"
       ]
     },
     "new_plans: Title": {
@@ -15734,9 +15772,6 @@
       "Last changed ${ formattedDate }": [
         "ბოლოს შეიცვალა ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "ბოლოს განახლდა ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "შენახული არაა"
       ],
@@ -15804,6 +15839,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "ყველა ${ BRAND_NAME }-ის სერვისისთვის"
+      ],
+      "Get more storage": [
+        "მიიღეთ მეტი საცავი"
       ],
       "Storage used": [
         "გამოყენებული საცავი"
@@ -17483,6 +17521,9 @@
       "Get help with an issue": [
         "მიიღეთ დახმარება პრობლემის გადასაჭრელად"
       ],
+      "Get more from your privacy suite": [
+        "მიიღეთ მეტი თქვენი კონფიდენციალურობის პაკეტიდან"
+      ],
       "Get more from your VPN": [
         "მიიღეთ მეტი თქვენი VPN-სგან"
       ],
@@ -18214,6 +18255,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "${ MAIL_APP_NAME }-ის ტრანზაქცია"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "ორგანიზაციის მიგრაციები"
       ]
     },
     "Title header for addresses domain table": {

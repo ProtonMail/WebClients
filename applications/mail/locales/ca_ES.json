@@ -784,6 +784,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "Afegiu-vos-hi amb ${ MEET_APP_NAME }"
       ],
+      "Keep going": [
+        "Continua"
+      ],
       "Keep inbox as before": [
         "Manteniu la bústia d'entrada com abans"
       ],
@@ -1458,6 +1461,9 @@
       ],
       "Stop generating result": [
         "Atura la generació del resultat"
+      ],
+      "Stop here": [
+        "Parar aquí"
       ],
       "Stop marking as read": [
         "Deixa de marcar com a llegit"
@@ -7986,6 +7992,9 @@
       "How hide-my-email aliases works": [
         "Funcionament dels àlies hide-my-email"
       ],
+      "I have not finished this one yet.": [
+        "Encara no he acabat aquesta."
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "S'està enviant aquest missatge a un usuari que no és de ${ MAIL_APP_NAME }."
       ],
@@ -8642,6 +8651,21 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La cerca està trigant massa? ${ dropdownButton } o ${ toggleOffButton } d'aquesta sessió de cerca."
       ],
+      "Searched ${ targetName }": [
+        "S'ha cercat ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "S'ha cercat el correu de ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "S'ha buscat el correu per a ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "S'ha cercat «${ keyword }»"
+      ],
+      "Searched your mail": [
+        "S'ha buscat al vostre correu"
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Protegiu avui els vostres fitxers de manera gratuïta amb emmagatzematge xifrat al núvol."
       ],
@@ -8747,6 +8771,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Aquest missatge no existeix o ja ha caducat."
+      ],
+      "Star emails": [
+        "Destaca els correus electrònics"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
@@ -9147,6 +9174,9 @@
       ],
       "Unsaved changes": [
         "Canvis no desats"
+      ],
+      "Unstar emails": [
+        "Treu de destacats els correus electrònics"
       ],
       "Unsubscribe": [
         "Anul·leu la subscripció"
@@ -10524,6 +10554,12 @@
       "No label found": [
         "No s'ha trobat cap etiqueta"
       ],
+      "No unread conversations": [
+        "No hi ha converses no llegides"
+      ],
+      "No unread messages": [
+        "No hi ha missatges no llegits"
+      ],
       "Non-promotional content and news": [
         "Contingut i notícies no promocionals"
       ],
@@ -11706,6 +11742,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés ampliat"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés limitat"
       ],
       "${ n } calendar": [
         "${ n } calendari",
@@ -16794,6 +16836,9 @@
       "Snooze:": [
         "Ajorna:"
       ],
+      "Star emails": [
+        "Destaca els correus electrònics"
+      ],
       "Start a new import": [
         "Inicia una nova importació"
       ],
@@ -16802,6 +16847,9 @@
       ],
       "Stay for 50% off your next month": [
         "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
+      ],
+      "Still working on it": [
+        "S'hi està treballant encara"
       ],
       "Storage capacity warning": [
         "Advertència de capacitat d'emmagatzematge"
@@ -16848,6 +16896,9 @@
       ],
       "Two-factor authentication": [
         "Autenticació de doble factor"
+      ],
+      "Unstar emails": [
+        "Treu de destacats els correus electrònics"
       ],
       "Unsubscribe": [
         "Anul·leu-ne la subscripció"

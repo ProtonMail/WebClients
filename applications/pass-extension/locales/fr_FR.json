@@ -874,8 +874,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias d'adresse e-mail fonctionne comme une adresse e-mail. Il réduit toutefois le nombre de spams et permet de ne pas divulguer votre véritable adresse e-mail et votre identité."
       ],
+      "Change these passwords immediately": [
+        "Modifiez ces mots de passe immédiatement"
+      ],
       "Change your passwords": [
         "Modifiez vos mots de passe"
+      ],
+      "Check if your passwords have been exposed": [
+        "Vérifiez si vos mots de passe ont été compromis"
       ],
       "Create unique passwords": [
         "Créez des mots de passe uniques"
@@ -933,6 +939,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Ce compte est vulnérable. Rendez-vous sur le service et changez votre mot de passe."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Ce mot de passe de connexion a été compromis lors d'une fuite de données. Veuillez vous rendre sur le site du service et modifier votre mot de passe."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Ce service propose l'A2F. Activez-la pour améliorer votre sécurité."
@@ -2232,7 +2241,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -4816,6 +4826,12 @@
       "Clear clipboard": [
         "Effacer le presse-papiers"
       ],
+      "Compromised password": [
+        "Mots de passe compromis"
+      ],
+      "Compromised passwords": [
+        "Mots de passe compromis"
+      ],
       "Confirm extra password": [
         "Confirmer le mot de passe supplémentaire"
       ],
@@ -5047,6 +5063,9 @@
       "No access tokens yet": [
         "Il n'y a aucun jeton d'accès pour le moment."
       ],
+      "No compromised passwords": [
+        "Aucun mot de passe compromis"
+      ],
       "No excluded items": [
         "Aucun élément exclu"
       ],
@@ -5225,6 +5244,9 @@
       ],
       "Update available": [
         "Mise à jour disponible"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Changer d'abonnement pour vérifier si certains mots de passe ont été compromis"
       ],
       "URL matching": [
         "Correspondance d'URL"
