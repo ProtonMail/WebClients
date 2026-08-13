@@ -1,5 +1,5 @@
-import Icon from '@proton/components/components/icon/Icon';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
+import Icon from '@proton/components/components/icon/Icon'
+import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import type { TableVariant } from './DocumentsTable'
 import { DocumentsTable } from './DocumentsTable'

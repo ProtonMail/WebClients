@@ -1,6 +1,6 @@
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown'
 import { useEffect, useMemo, useState } from 'react'
 import clsx from '@proton/utils/clsx'
 import { useApplication } from '~/utils/application-context'

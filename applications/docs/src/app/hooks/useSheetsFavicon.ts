@@ -1,4 +1,4 @@
-import { useDynamicFavicon } from '@proton/components/hooks/useDynamicFavicon';
+import { useDynamicFavicon } from '@proton/components/hooks/useDynamicFavicon'
 import { useLocation } from 'react-router-dom'
 import sheetsFavicon from './sheets-favicon.svg'
 

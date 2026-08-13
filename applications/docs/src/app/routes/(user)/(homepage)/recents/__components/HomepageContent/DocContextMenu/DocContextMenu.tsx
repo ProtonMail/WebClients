@@ -1,6 +1,6 @@
-import ContextMenu from '@proton/components/components/contextMenu/ContextMenu';
-import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import ContextMenu from '@proton/components/components/contextMenu/ContextMenu'
+import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator'
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils'
 import { useEffect } from 'react'
 
 import { OpenButton } from './buttons/OpenButton'
