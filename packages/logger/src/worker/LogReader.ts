@@ -3,8 +3,8 @@ import type { AesGcmCryptoKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { decryptData } from '@protontech/crypto/subtle/aesGcm.ts';
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 
-import { IndexedDBStorage } from './storage';
-import type { LogEntry } from './types';
+import { IndexedDBStorage } from '../storage';
+import type { LogEntry } from '../types';
 
 /**
  * Everything the reader needs to turn stored bytes back into log lines.
