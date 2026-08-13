@@ -1,4 +1,4 @@
-import useNotifications from '@proton/components/hooks/useNotifications';
+import useNotifications from '@proton/components/hooks/useNotifications'
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { flushSync } from 'react-dom'
 

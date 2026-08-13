@@ -1,5 +1,5 @@
-import NotificationsChildren from '@proton/components/containers/notifications/Children';
-import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+import NotificationsChildren from '@proton/components/containers/notifications/Children'
+import NotificationsProvider from '@proton/components/containers/notifications/Provider'
 import { App } from './App'
 import { ApplicationProvider } from './ApplicationProvider'
 import { ThemeStyles } from '../Theme'

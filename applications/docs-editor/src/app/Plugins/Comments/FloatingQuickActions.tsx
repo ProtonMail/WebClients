@@ -1,4 +1,4 @@
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint'
 import type { LexicalEditor, NodeKey } from 'lexical'
 import { useCallback, useEffect, useLayoutEffect, useRef } from 'react'
 import { c } from 'ttag'
