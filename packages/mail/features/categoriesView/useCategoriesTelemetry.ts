@@ -155,6 +155,14 @@ export const useCategoriesTelemetry = () => {
             });
         };
 
+        const sendReportUnreadCount = (readPercentage: number, hasCategoryView: boolean) => {
+            void sendReport(
+                TelemetryCategoriesOnboardingEvents.report_unread_count,
+                { hasCategoryView: hasCategoryView ? 'true' : 'false' },
+                { readPercentage }
+            );
+        };
+
         return {
             sendEventOnboardingAccept,
             sendEventOnboardingDismiss,
@@ -164,6 +172,7 @@ export const useCategoriesTelemetry = () => {
             sendReportChangeCategorySettings,
             sendReportCategoriesNav,
             sendReportRecategorizeExperiment,
+            sendReportUnreadCount,
         };
     }, []);
 };

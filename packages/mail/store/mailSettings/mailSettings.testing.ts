@@ -11,3 +11,10 @@ import type { MailSettingState } from './index';
 export const mailSettingsState = (mailSettings?: Partial<MailSettings>): MailSettingState => ({
     mailSettings: getInitialModelState<MailSettings>({ ...DEFAULT_MAIL_SETTINGS, ...mailSettings }),
 });
+
+/**
+ * The mail settings have not been fetched yet.
+ */
+export const unloadedMailSettingsState = (): MailSettingState => ({
+    mailSettings: getInitialModelState<MailSettings>(),
+});
