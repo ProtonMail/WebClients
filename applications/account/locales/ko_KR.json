@@ -795,17 +795,11 @@
       "Export as CSV": [
         "CSV로 내보내기"
       ],
-      "Export breakdown by company as ZIP": [
-        "회사별 상세 내역을 ZIP 파일로 내보내기"
-      ],
       "Export key": [
         "키 내보내기"
       ],
       "Export key before deleting": [
         "삭제 전 키 내보내기"
-      ],
-      "Export overview as CSV": [
-        "개요를 CSV 파일로 내보내기"
       ],
       "Extend": [
         "연장"
@@ -3690,14 +3684,8 @@
       "Status": [
         "상태"
       ],
-      "Total billed seats": [
-        "최종 결제된 사용 권한(시트)"
-      ],
       "Total cost": [
         "총 비용"
-      ],
-      "Used / assigned seats": [
-        "사용 중 / 배정된 시트"
       ]
     },
     "Condition for custom filter": {
@@ -10321,9 +10309,6 @@
       "Ask your organization admin to setup Gateways.": [
         "게이트웨이를 설정하려면 조직 관리자에 문의하십시오."
       ],
-      "Assigned seats won't be billed while disabled": [
-        "비활성화 상태인 동안에는 배정된 시트에 비용이 청구되지 않습니다"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "최소 ${ BETTER_PASSWORD_LENGTH }글자"
       ],
@@ -10521,9 +10506,6 @@
       ],
       "Coming soon": [
         "곧 찾아옵니다"
-      ],
-      "Companies you've been given access to manage.": [
-        "나에게 관리 권한이 주어진 회사입니다."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "TV에서 ${ VPN_APP_NAME }을 사용하려면 이 기기에서 로그인을 완료하세요."
@@ -13285,9 +13267,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "그룹으로, 빠르고 쉽게 특정 그룹 내의 사용자에게 이메일 전송이 가능합니다."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "관리 중인 회사를 통해 사용자가 감독하는 조직의 접근 권한을 추가, 편집 및 삭제할 수 있습니다."
-      ],
       "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
         "VPN Professional로 모든 조직 구성원들이 VPN 항상 켜기나 비공개 게이트웨이를 사용하도록 강제할 수 있고, 조직 정책 및 모니터링에 접근할 수도 있습니다."
       ],
@@ -13545,9 +13524,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "다운로드한 복구 파일을 사용하여 잠긴 데이터를 복구할 수 없게 됩니다. 또한 장치 기반 복구도 비활성화됩니다."
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "배정된 시트 수의 평균을 기준으로 매월 요금이 청구됩니다."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
@@ -14531,9 +14507,6 @@
       "Assertion Consumer Service URL": [
         "문제 알림 소비자 서비스 (ACS, 약칭;Assertion Consumer Service) URL"
       ],
-      "Assigned seats": [
-        "배정된 시트"
-      ],
       "Attach public key": [
         "공개 키 첨부"
       ],
@@ -14588,9 +14561,6 @@
       "Autosuggest": [
         "자동 제안"
       ],
-      "Average": [
-        "평균"
-      ],
       "Awarded": [
         "지급 완료"
       ],
@@ -14605,9 +14575,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "매 12개월마다 ${ priceYearly }으(로) 청구됩니다."
-      ],
-      "Billed average": [
-        "청구 평균"
       ],
       "Billed monthly.": [
         "매달 청구."
@@ -15619,12 +15586,6 @@
       ],
       "Search for a name or email": [
         "이름 및 이메일 검색"
-      ],
-      "Seats": [
-        "시트"
-      ],
-      "Seats usage": [
-        "사용 권한 사용량"
       ],
       "Second password": [
         "2차 비밀번호"
@@ -23409,9 +23370,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "${ formattedDate }에 마지막으로 변경됨"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "${ formattedUpdateDate }에 마지막으로 업데이트됨"
       ],
       "Not activated": [
         "비활성화됨"

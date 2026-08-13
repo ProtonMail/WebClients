@@ -777,17 +777,11 @@
       "Export as CSV": [
         "გატანა CSV ფაილში"
       ],
-      "Export breakdown by company as ZIP": [
-        "კომპანიების მიხედვით დეტალური ანგარიშის ექსპორტი ZIP-ად"
-      ],
       "Export key": [
         "გასაღების გატანა"
       ],
       "Export key before deleting": [
         "გასაღების წაშლამდე გატანა"
-      ],
-      "Export overview as CSV": [
-        "მიმოხილვის ექსპორტი CSV-ად"
       ],
       "Extend": [
         "გაგრძელება"
@@ -3643,14 +3637,8 @@
       "Status": [
         "სტატუსი"
       ],
-      "Total billed seats": [
-        "ჯამური ფასიანი ადგილები"
-      ],
       "Total cost": [
         "ჯამური ღირებულება"
-      ],
-      "Used / assigned seats": [
-        "გამოყენებული / მინიჭებული ადგილები"
       ]
     },
     "Condition for custom filter": {
@@ -9978,9 +9966,6 @@
       "Ask your organization admin to setup Gateways.": [
         "სთხოვეთ ორგანიზაციის ადმინისტრატორს, რაუტერები დააყენოს."
       ],
-      "Assigned seats won't be billed while disabled": [
-        "გამორთვის შემთხვევაში მინიჭებული ადგილებისთვის საფასური არ დაირიცხება"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "სულ ცოტა ${ BETTER_PASSWORD_LENGTH } სიმბოლო"
       ],
@@ -12728,9 +12713,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "ჯგუფებით ელფოსტების გაგზავნა ამ ჯგუფის წევრებისთვის უფრო ადვილია."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "მართული კომპანიების საშუალებით, თქვენ შეგიძლიათ დაამატოთ, დაარედაქტიროთ და წაშალოთ წვდომა იმ ორგანიზაციებისთვის, რომლებსაც ზედამხედველობას უწევთ."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "თქვენი მიმდინარე პაკეტით შეგიძლიათ მხოლოდ მიიღოთ შეტყობინებები თქვენს @pm.me მისამართზე. განაახლეთ პაკეტი შეტყობინებების გასაგზავნად და @pm.me-ის გამოყენებით დამატებითი მისამართების შესაქმნელად."
       ],
@@ -12985,9 +12967,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "თქვენ არ გექნებათ შესაძლებლობა აღადგინოთ დაბლოკილი მონაცემები აღდგენის გადმოწერილი ფაილებით. ეს ასევე გათიშავს მოწყობილობებით აღდგენასაც"
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "თქვენ ყოველთვიურად გადაიხდით თანხას მინიჭებული ადგილების საშუალო რაოდენობაზე დაყრდნობით."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "თქვენ მიიღებთ კრედიტს 1 თვის შემდეგ, რაც თქვენი მეგობარი გამოიწერს წლიურ პაკეტს, ხოლო 2 თვის შემდეგ, რაც ისინი გამოიწერენ ყოველთვიურ პაკეტს."
@@ -13966,9 +13945,6 @@
       "Assertion Consumer Service URL": [
         "ACS სამსახურის ბმული"
       ],
-      "Assigned seats": [
-        "მინიჭებული ადგილები"
-      ],
       "Attach public key": [
         "საჯარო გასაღების მიმაგრება"
       ],
@@ -14023,9 +13999,6 @@
       "Autosuggest": [
         "ავტომატური რჩევა"
       ],
-      "Average": [
-        "საშუალო"
-      ],
       "Awarded": [
         "მინიჭებულია"
       ],
@@ -14037,9 +14010,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "გადაიხდით ${ priceYearly } ყოველ 12 თვეში."
-      ],
-      "Billed average": [
-        "საშუალო დარიცხული"
       ],
       "Billed monthly.": [
         "თვიური გადახდა."
@@ -15016,12 +14986,6 @@
       ],
       "Search for a name or email": [
         "სახელის ან ელფოსტის ძებნა"
-      ],
-      "Seats": [
-        "ადგილები"
-      ],
-      "Seats usage": [
-        "გამოყენებული ადგილები"
       ],
       "Second password": [
         "მეორე პაროლი"
@@ -22833,9 +22797,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "ბოლოს შეიცვალა ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "ბოლოს განახლდა ${ formattedUpdateDate }"
       ],
       "Not saved": [
         "შენახული არაა"

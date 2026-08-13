@@ -777,17 +777,11 @@
       "Export as CSV": [
         "Экспортировать как CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "Экспортировать разбивку по компаниям в формате ZIP"
-      ],
       "Export key": [
         "Экспортировать ключ"
       ],
       "Export key before deleting": [
         "Экспортировать ключ перед удалением"
-      ],
-      "Export overview as CSV": [
-        "Экспортировать обзор в формате CSV"
       ],
       "Extend": [
         "Продлить"
@@ -3685,14 +3679,8 @@
       "Status": [
         "Статус"
       ],
-      "Total billed seats": [
-        "Всего оплаченных лицензий"
-      ],
       "Total cost": [
         "Общая стоимость"
-      ],
-      "Used / assigned seats": [
-        "Использованные / назначенные лицензии"
       ]
     },
     "Condition for custom filter": {
@@ -10201,9 +10189,6 @@
       "Ask your organization admin to setup Gateways.": [
         "Попросите администратора вашей организации настроить Шлюзы."
       ],
-      "Assigned seats won't be billed while disabled": [
-        "Назначенные лицензии не будут оплачиваться, пока они отключены"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "По крайней мере ${ BETTER_PASSWORD_LENGTH } символов"
       ],
@@ -12997,9 +12982,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "С помощью групп вы можете быстро и легко отправлять электронные письма всем людям, входящим в определенную группу."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Используя управляемые компании, вы можете добавлять, изменять и удалять доступ для курируемых вами организаций."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "С вашим текущим тарифом вы можете только получать сообщения на свой адрес @pm.me. Перейдите на другой тариф, чтобы отправлять сообщения и создавать дополнительные адреса с использованием @pm.me."
       ],
@@ -13272,9 +13254,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Вы не сможете восстановить заблокированные данные с помощью загруженных файлов восстановления. При этом также будет отключено восстановление на основе устройства."
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "Оплата будет списываться ежемесячно на основе среднего количества назначенных лицензий."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Вы получите вознаграждение на остаток на счете через 1 месяц после того, как ваш друг подпишется на годовой тариф, и через 2 месяца после того, как он подпишется на месячный тариф."
@@ -14267,9 +14246,6 @@
       "Assertion Consumer Service URL": [
         "URL службы подтверждения потребителя"
       ],
-      "Assigned seats": [
-        "Назначенные лицензии"
-      ],
       "Attach public key": [
         "Прикрепить открытый ключ"
       ],
@@ -14324,9 +14300,6 @@
       "Autosuggest": [
         "Автоподсказка"
       ],
-      "Average": [
-        "Среднее"
-      ],
       "Awarded": [
         "Присуждено"
       ],
@@ -14338,9 +14311,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Плата составляет ${ priceYearly } каждые 12 месяцев."
-      ],
-      "Billed average": [
-        "Среднее оплаченное"
       ],
       "Billed monthly.": [
         "Оплата ежемесячно."
@@ -15319,12 +15289,6 @@
       ],
       "Search for a name or email": [
         "Поиск имени или электронной почты"
-      ],
-      "Seats": [
-        "Лицензии"
-      ],
-      "Seats usage": [
-        "Использование лицензий"
       ],
       "Second password": [
         "Второй пароль"
@@ -23367,9 +23331,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "Последнее изменение: ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Последнее обновление: ${ formattedUpdateDate }"
       ],
       "Not saved": [
         "Не сохранено"
