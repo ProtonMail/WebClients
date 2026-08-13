@@ -1,8 +1,11 @@
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
+import ModalTwo from '@proton/components/components/modalTwo/Modal'
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent'
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter'
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
 import { c } from 'ttag'
 
 import { Button } from '@proton/atoms/Button/Button'
-import type { ModalStateProps } from '@proton/components'
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, useModalTwoStatic } from '@proton/components'
 import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { DOCS_APP_NAME, DOCS_SHORT_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants'

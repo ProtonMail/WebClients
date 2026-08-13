@@ -1,3 +1,10 @@
+import Dropdown from '@proton/components/components/dropdown/Dropdown'
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton'
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown'
+import Spotlight from '@proton/components/components/spotlight/Spotlight'
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor'
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { $isCodeNode } from '@lexical/code'
@@ -36,15 +43,6 @@ import {
 import { $isLinkNode } from '@lexical/link'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { Button } from '@proton/atoms/Button/Button'
-import {
-  Dropdown,
-  DropdownButton,
-  DropdownMenu,
-  DropdownMenuButton,
-  SimpleDropdown,
-  Spotlight,
-  usePopperAnchor,
-} from '@proton/components'
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/components/components/editor/helpers/fontFace'
 import { IcChevronRightFilled } from '@proton/icons/icons/IcChevronRightFilled'
 import { IcCode } from '@proton/icons/icons/IcCode'

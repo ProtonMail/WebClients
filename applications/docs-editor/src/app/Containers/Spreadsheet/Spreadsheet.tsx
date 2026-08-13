@@ -238,16 +238,13 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     return patches
   }, [generateStatePatches])
 
-  useImperativeHandle(
-    ref,
-    (): SpreadsheetRef => ({
-      exportData,
-      replaceLocalSpreadsheetState,
-      focusSheet,
-      generatePatches: getInitialSpreadsheetPatches,
-      applyPatches: state.applyPatches,
-    }),
-  )
+  useImperativeHandle(ref, (): SpreadsheetRef => ({
+    exportData,
+    replaceLocalSpreadsheetState,
+    focusSheet,
+    generatePatches: getInitialSpreadsheetPatches,
+    applyPatches: state.applyPatches,
+  }))
 
   useEffect(() => {
     onEditorLoadResult(TranslatedResult.ok())

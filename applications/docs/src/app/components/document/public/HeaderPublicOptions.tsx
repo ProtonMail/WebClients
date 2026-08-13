@@ -1,51 +1,49 @@
-import { useCallback, useEffect, useState } from 'react'
 import { Button } from '@proton/atoms/Button/Button'
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
-import { c } from 'ttag'
-import { useDocsContext } from '../context'
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup'
+import Dropdown from '@proton/components/components/dropdown/Dropdown'
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton'
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown'
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils'
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor'
+import Spotlight from '@proton/components/components/spotlight/Spotlight'
+import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
+import { TooltipKey, useTooltipOnce } from '@proton/docs-shared'
+import { useDocsUrlPublicToken } from '@proton/drive-store'
 import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
-import { useDocsUrlBar } from '~/utils/docs-url-bar'
+import { usePublicSessionUser } from '@proton/drive-store/store'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { RedirectAction } from '@proton/drive-store/store/_documents'
-import { useApplication } from '~/utils/application-context'
-import useEffectOnce from '@proton/hooks/useEffectOnce'
-import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
-import {
-  Spotlight,
-  DropdownButton,
-  usePopperAnchor,
-  Dropdown,
-  DropdownSizeUnit,
-  DropdownMenu,
-  DropdownMenuButton,
-  ButtonGroup,
-  SimpleDropdown,
-} from '@proton/components'
-import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled'
-import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn'
-import { IcSquares } from '@proton/icons/icons/IcSquares'
-import { IcUser } from '@proton/icons/icons/IcUser'
-import { APPS, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
-import { useSignupFlowModal } from './SignupFlowModal'
-import { TooltipKey, useTooltipOnce } from '@proton/docs-shared'
-import { DocumentActiveUsers } from '../DocumentLayout/DocumentHeader/DocumentActiveUsers'
-import { CommentsButton } from '../DocumentLayout/DocumentHeader/CommentsButton'
-import { redirectToAccountSwitcher, redirectToSignUp, usePublicDocumentCopying } from './utils'
-import type { UserModel } from '@proton/shared/lib/interfaces'
-import { getInitials } from '@proton/shared/lib/helpers/string'
-import { useDocsUrlPublicToken } from '@proton/drive-store'
-import useLoading from '@proton/hooks/useLoading'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
-import { openNewTab } from '@proton/shared/lib/helpers/browser'
-import { usePublicSessionUser } from '@proton/drive-store/store'
 import {
   needPublicRedirectSpotlight,
   publicRedirectSpotlightWasShown,
   setPublicRedirectSpotlightToShown,
 } from '@proton/drive-store/utils/publicRedirectSpotlight'
-import './HeaderPublicOptions.scss'
+import useEffectOnce from '@proton/hooks/useEffectOnce'
+import useLoading from '@proton/hooks/useLoading'
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled'
+import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn'
+import { IcSquares } from '@proton/icons/icons/IcSquares'
+import { IcUser } from '@proton/icons/icons/IcUser'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
+import { APPS, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
+import { openNewTab } from '@proton/shared/lib/helpers/browser'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import { getInitials } from '@proton/shared/lib/helpers/string'
+import type { UserModel } from '@proton/shared/lib/interfaces'
+import { useCallback, useEffect, useState } from 'react'
+import { c } from 'ttag'
+import { useApplication } from '~/utils/application-context'
+import { useDocsUrlBar } from '~/utils/docs-url-bar'
+import { useDocsContext } from '../context'
+import { CommentsButton } from '../DocumentLayout/DocumentHeader/CommentsButton'
+import { DocumentActiveUsers } from '../DocumentLayout/DocumentHeader/DocumentActiveUsers'
+import './HeaderPublicOptions.scss'
+import { useSignupFlowModal } from './SignupFlowModal'
+import { redirectToAccountSwitcher, redirectToSignUp, usePublicDocumentCopying } from './utils'
 
 type UserInfoProps = {
   user: UserModel

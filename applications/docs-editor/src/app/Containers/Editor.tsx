@@ -1,3 +1,4 @@
+import useNotifications from '@proton/components/hooks/useNotifications'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin'
@@ -60,7 +61,6 @@ import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentCol
 import { PageBreakPlugin } from '../Plugins/PageBreak/PageBreakPlugin'
 import { useApplication } from './ApplicationProvider'
 import { SCROLL_TO_USER_CURSOR_COMMAND } from '../Plugins/Collaboration/ScrollToUserCursorPlugin'
-import { useNotifications } from '@proton/components'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 import { TableOfContents } from '../Components/TableOfContents/TableOfContents'
 import DocsLayout from './DocsLayout'

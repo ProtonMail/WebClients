@@ -1,20 +1,18 @@
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
+import DriveLogo from '@proton/components/components/logo/DriveLogo'
+import Form from '@proton/components/components/form/Form'
+import InputFieldTwo from '@proton/components/components/v2/field/InputField'
+import ModalTwo from '@proton/components/components/modalTwo/Modal'
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent'
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter'
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader'
+import useApi from '@proton/components/hooks/useApi'
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
 import { useEffect, useState } from 'react'
 
 import { c } from 'ttag'
 
 import { Button } from '@proton/atoms/Button/Button'
-import type { ModalStateProps } from '@proton/components'
-import {
-  DriveLogo,
-  Form,
-  InputFieldTwo,
-  ModalTwo,
-  ModalTwoContent,
-  ModalTwoFooter,
-  ModalTwoHeader,
-  useApi,
-  useModalTwoStatic,
-} from '@proton/components'
 import { IcGift } from '@proton/icons/icons/IcGift'
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper'
 import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user'

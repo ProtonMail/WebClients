@@ -1,7 +1,7 @@
+import useApi from '@proton/components/hooks/useApi'
 import { useEffect, useMemo, useState } from 'react'
 import { Application } from '@proton/docs-core'
 
-import { useApi } from '@proton/components'
 import { ApplicationProvider } from '~/utils/application-context'
 import { DocumentViewer } from '~/components/document/DocumentViewer/DocumentViewer'
 import {

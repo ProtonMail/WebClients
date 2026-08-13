@@ -17,5 +17,4 @@ export type KeyboardShortcutMatcher = {
 )
 
 export type KeyboardShortcutID =
-  | (typeof CustomKeyboardShortcuts)[number]['id']
-  | (typeof DefaultKeyboardShortcuts)[number]['id']
+  (typeof CustomKeyboardShortcuts)[number]['id'] | (typeof DefaultKeyboardShortcuts)[number]['id']

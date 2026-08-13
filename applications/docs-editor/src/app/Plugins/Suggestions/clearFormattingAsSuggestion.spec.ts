@@ -1,18 +1,16 @@
 import { createHeadlessEditor } from '@lexical/headless'
-import type {
-  ParagraphNode,
-  TextNode} from 'lexical';
+import type { ParagraphNode, TextNode } from 'lexical'
 import {
   $createParagraphNode,
   $createRangeSelection,
   $createTextNode,
   $getRoot,
   $isTextNode,
-  $setSelection
+  $setSelection,
 } from 'lexical'
 import { AllNodes } from '../../AllNodes'
 import { $clearFormattingAsSuggestion } from './clearFormattingAsSuggestion'
-import type { ProtonNode } from './ProtonNode';
+import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode } from './ProtonNode'
 import { $patchStyleText } from '@lexical/selection'
 

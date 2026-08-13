@@ -1,5 +1,5 @@
+import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { createContext, useCallback, useContext, useMemo, useState, useEffect } from 'react'
-import { useAuthentication } from '@proton/components'
 import type { DocumentAction } from '@proton/drive-store'
 import { APPS } from '@proton/shared/lib/constants'
 import useEffectOnce from '@proton/hooks/useEffectOnce'

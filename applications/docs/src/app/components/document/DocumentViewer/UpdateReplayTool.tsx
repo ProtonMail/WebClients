@@ -1,6 +1,6 @@
+import Icon from '@proton/components/components/icon/Icon'
 import { Button } from '@proton/atoms/Button/Button'
 import { Slider, SliderSizeEnum } from '@proton/atoms/Slider/Slider'
-import { Icon } from '@proton/components/index'
 import { IcCross } from '@proton/icons/icons/IcCross'
 import type { EditorControllerInterface } from '@proton/docs-core/lib/EditorController/EditorController'
 import { getBufferHash } from '@proton/docs-core/lib/utils/hash'

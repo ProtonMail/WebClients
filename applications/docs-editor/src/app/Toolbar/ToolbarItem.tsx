@@ -1,9 +1,9 @@
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown'
 import { Button } from '@proton/atoms/Button/Button'
 import { ShortcutLabel } from '../Plugins/KeyboardShortcuts/ShortcutLabel'
 import type { ToolbarItemInterface } from './ToolbarItemInterface'
 import ToolbarTooltip from './ToolbarTooltip'
 import { ToolbarButton } from './ToolbarButton'
-import { SimpleDropdown } from '@proton/components'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { fixEmptyRoot } from '../Utils/fixEmptyRoot'
 
