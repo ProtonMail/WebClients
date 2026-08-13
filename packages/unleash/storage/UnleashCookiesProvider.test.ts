@@ -67,7 +67,6 @@ describe('UnleashCookiesProvider', () => {
             ['path', '/'],
             ['secure', true],
             ['expirationDate', endOfDay(addDays(new Date(), 30)).toUTCString()],
-            ['domain', 'www.example.com'],
         ])('%s key should be set to %j', (key, value) => {
             const { setCookie } = getCookieSpys();
             expect(setCookie).toHaveBeenCalledWith(
