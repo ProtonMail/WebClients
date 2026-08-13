@@ -3,14 +3,23 @@ import type { Store } from 'redux';
 import { WASM_PROCEDURE_BATCH_SIZE } from '@proton/pass/lib/core/constants';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { hasDomain, hasOTP, hasPasskeys } from '@proton/pass/lib/items/item.predicates';
-import { intoSelectedItem } from '@proton/pass/lib/items/item.utils';
-import { isPasswordCompromised } from '@proton/pass/lib/monitor/compromised-password.request';
+import { getItemKey, intoSelectedItem } from '@proton/pass/lib/items/item.utils';
+import {
+    checkPasswordCompromised,
+    getLastChangeTimestamp,
+} from '@proton/pass/lib/monitor/compromised-password.request';
+import type { CompromisedPasswordEntry } from '@proton/pass/lib/monitor/types';
 import { getAutofillUrls } from '@proton/pass/lib/urls/utils/autofill';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { compromisedPasswordsSync } from '@proton/pass/store/actions';
-import { selectMonitoredLogins, selectPassPlan } from '@proton/pass/store/selectors';
+import {
+    selectCompromisedPasswordsCache,
+    selectLastSyncedChange,
+    selectMonitoredLogins,
+    selectPassPlan,
+} from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import type { ShareId, UniqueItem } from '@proton/pass/types';
+import type { ItemRevision, ShareId, UniqueItem } from '@proton/pass/types';
 import { and, not, or } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -34,15 +43,50 @@ export const createMonitorService = (core: PassCoreProxy, store: Store<State>): 
 
             const logins = getLoginItems(options?.shareIds);
             const candidates = logins.filter((item) => item.data.content.password.v.length);
-            const passwords = candidates.map((item) => deobfuscate(item.data.content.password));
-            const results = await seq(passwords, isPasswordCompromised);
-            const compromised = candidates.filter((_, idx) => results[idx]).map(intoSelectedItem);
+
+            const cache = selectCompromisedPasswordsCache(store.getState());
+            const lastSyncedChange = selectLastSyncedChange(store.getState());
+            const currentChange = await getLastChangeTimestamp().catch(() => undefined);
+
+            const isFresh = (item: ItemRevision) => cache[getItemKey(item)]?.revision === item.revision;
+
+            if (currentChange !== undefined && currentChange === lastSyncedChange && candidates.every(isFresh)) {
+                return candidates.filter((item) => cache[getItemKey(item)]?.compromised).map(intoSelectedItem);
+            }
+
+            const groups = new Map<string, ItemRevision[]>();
+            for (const item of candidates) {
+                const password = deobfuscate(item.data.content.password);
+                const group = groups.get(password) ?? [];
+                group.push(item);
+                groups.set(password, group);
+            }
+
+            const entries = Array.from(groups.entries());
+
+            const groupResults = await seq(entries, async ([password, [primary]]) => {
+                const prior = isFresh(primary) ? cache[getItemKey(primary)] : undefined;
+
+                if (prior?.compromised) return prior;
+
+                const check = await checkPasswordCompromised(password, prior?.etag);
+                if (check.status === 'not-modified' && prior) return prior;
+                return {
+                    compromised: check.status === 'checked' ? check.compromised : false,
+                    etag: check.status === 'checked' ? check.etag : '',
+                    checkedAt: Date.now(),
+                } satisfies Omit<CompromisedPasswordEntry, 'revision'>;
+            });
+
+            const results = entries.flatMap(([, items], idx) =>
+                items.map((item) => ({ item, entry: { ...groupResults[idx], revision: item.revision } }))
+            );
 
             /** Full re-check, so this is authoritative
-             * replaces the whole local cache */
-            store.dispatch(compromisedPasswordsSync(compromised));
+             *  replaces the whole local cache rather */
+            store.dispatch(compromisedPasswordsSync({ lastSyncedChange: currentChange ?? lastSyncedChange, results }));
 
-            return compromised;
+            return results.filter(({ entry }) => entry.compromised).map(({ item }) => intoSelectedItem(item));
         },
 
         checkMissing2FAs: async (options) => {

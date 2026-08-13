@@ -25,11 +25,12 @@ export const selectMonitoredLogins = (shareIds?: ShareId[]) =>
 
 export const selectDuplicatePasswords = (shareIds?: ShareId[]) => createSelector(selectMonitoredLogins(shareIds), getDuplicatePasswords);
 
-export const selectCompromisedPasswordsCache = (state: State) => state.compromisedPasswords;
+export const selectCompromisedPasswordsCache = (state: State) => state.compromisedPasswords.items;
+export const selectLastSyncedChange = (state: State) => state.compromisedPasswords.lastSyncedChange;
 
 export const selectCompromisedPasswords = (shareIds?: ShareId[]) =>
     createSelector([selectMonitoredLogins(shareIds), selectCompromisedPasswordsCache], (items, cache) =>
-        items.filter((item) => cache[getItemKey(item)]).map(intoSelectedItem)
+        items.filter((item) => item.data.content.password.v.length && cache[getItemKey(item)]?.compromised).map(intoSelectedItem)
     );
 
 export const selectExcludedItems = (shareIds?: ShareId[]) =>
