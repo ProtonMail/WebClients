@@ -48,6 +48,7 @@ const defaultFlags: Flags = {
     isCryptoPostQuantumOptInEnabled: false,
     isSsoForPbsEnabled: false,
     isRetentionPoliciesEnabled: false,
+    isPasswordRemindersOrgEnabled: false,
     isAuthenticatorAvailable: false,
     isCategoryViewEnabled: false,
 };

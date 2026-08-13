@@ -58,6 +58,7 @@ export const getOrganizationAppRoutes = ({
         isAlwaysOnVpnEnabled = false,
         isSsoForPbsEnabled = false,
         isRetentionPoliciesEnabled = false,
+        isPasswordRemindersOrgEnabled = false,
     } = flags;
     const isAdmin = user.isAdmin && user.isSelf;
 
@@ -484,6 +485,16 @@ export const getOrganizationAppRoutes = ({
                         c('Label').t`Minimum number of characters`,
                         c('Label').t`Special characters`,
                         c('Label').t`Common passwords`,
+                    ],
+                },
+                {
+                    text: c('Title').t`Password check-ins`,
+                    id: 'password-check-ins',
+                    available: isPasswordRemindersOrgEnabled,
+                    keywords: [
+                        c('Label').t`Require password check-ins`,
+                        c('account_search_index').t`Password reminders`,
+                        c('account_search_index').t`Verify password`,
                     ],
                 },
                 {

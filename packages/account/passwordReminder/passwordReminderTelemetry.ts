@@ -9,6 +9,8 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
 
+import { usePasswordReminder } from './hooks';
+
 export type PasswordReminderSource = 'top_banner' | 'recovery_settings' | 'password_settings';
 
 export const usePasswordReminderTelemetry = () => {
@@ -18,13 +20,22 @@ export const usePasswordReminderTelemetry = () => {
     const appName = getAppFromPathnameSafe(location.pathname) ?? APP_NAME;
     const hostAppName = getAppVersionStr(getClientID(APP_NAME), APP_VERSION);
 
+    // Both are computed by the password reminder listener from the same user/organization
+    // state that decides whether the feature is available at all.
+    const { accountType, isEnforced } = usePasswordReminder();
+
     const commonProps = {
         api,
         measurementGroup: TelemetryMeasurementGroups.accountPasswordReminder,
         delay: false,
     };
 
-    const commonDimensions = { app_name: appName, host_app_name: hostAppName };
+    const commonDimensions = {
+        app_name: appName,
+        host_app_name: hostAppName,
+        account_type: accountType ?? 'unknown',
+        enforced: isEnforced ? 'true' : 'false',
+    };
 
     const sendReport = useCallback(
         (event: TelemetryPasswordReminderEvents, dimensions: Record<string, string | undefined>) => {
@@ -85,6 +96,18 @@ export const usePasswordReminderTelemetry = () => {
         sendReport(TelemetryPasswordReminderEvents.disable, commonDimensions);
     }, [sendReport, commonDimensions]);
 
+    const sendEnforcementChange = useCallback(
+        (enforced: boolean) => {
+            sendReport(
+                enforced
+                    ? TelemetryPasswordReminderEvents.enforcement_enable
+                    : TelemetryPasswordReminderEvents.enforcement_disable,
+                commonDimensions
+            );
+        },
+        [sendReport, commonDimensions]
+    );
+
     return {
         sendBannerDisplay,
         sendOpen,
@@ -96,5 +119,6 @@ export const usePasswordReminderTelemetry = () => {
         sendForgotPasswordExit,
         sendEnable,
         sendDisable,
+        sendEnforcementChange,
     };
 };

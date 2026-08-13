@@ -6,9 +6,9 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import { EnforcedByOrganization } from '@proton/components/containers/organization/EnforcedByOrganization';
 
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
-import { EnforcedByOrganization } from "@proton/components/containers/sentinel/EnforcedByOrganization";
 
 interface Props {
     checked: boolean;
@@ -23,20 +23,17 @@ const SentinelEmailNotificationsToggle = ({ checked, isInherited, loading, onCha
     const onChangeRef = useRef(onChange);
     onChangeRef.current = onChange;
 
-    useSearchParamsEffect(
-        (params) => {
-            const unsubscribeParam = 'sentinel-unsubscribe';
-            const unsubscribe = params.get(unsubscribeParam) === 'true';
-            params.delete(unsubscribeParam);
+    useSearchParamsEffect((params) => {
+        const unsubscribeParam = 'sentinel-unsubscribe';
+        const unsubscribe = params.get(unsubscribeParam) === 'true';
+        params.delete(unsubscribeParam);
 
-            if (unsubscribe) {
-                onChangeRef.current(false);
-            }
+        if (unsubscribe) {
+            onChangeRef.current(false);
+        }
 
-            return params;
-        },
-        []
-    );
+        return params;
+    }, []);
 
     return (
         <SettingsLayout>

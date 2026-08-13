@@ -183,6 +183,7 @@ const MainContainer: FunctionComponent = () => {
         isSharedServerFeatureEnabled,
         isSsoForPbsEnabled,
         isRetentionPoliciesEnabled,
+        isPasswordRemindersOrgEnabled: false,
         isAlwaysOnVpnEnabled,
         isReferralProgramEnabled,
     };
