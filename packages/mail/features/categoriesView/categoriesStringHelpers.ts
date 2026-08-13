@@ -28,7 +28,7 @@ const CATEGORIES_DESCRIPTION_MAPPING: Record<CategoryLabelID, () => string> = {
     [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]: () =>
         c('Label').t`Anything that needs your attention, plus emails from disabled categories`,
     [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]: () => c('Label').t`Social media updates and activity`,
-    [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]: () => c('Label').t`Deals, offers, marketing emails`,
+    [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]: () => c('Label').t`Deals, offers, and marketing emails`,
     [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]: () => c('Label').t`Non-promotional content and news`,
     [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS]: () => c('Label').t`Bookings, billings, and orders`,
     [MAILBOX_LABEL_IDS.CATEGORY_UPDATES]: () => c('Label').t`Automated confirmations and alerts`,
