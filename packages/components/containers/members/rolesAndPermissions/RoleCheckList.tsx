@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getTranslatedRoleName } from '@proton/account/organizationRoles/helpers';
 import { Href } from '@proton/atoms/Href/Href';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -66,7 +67,7 @@ const RoleCheckList = ({ rows, onToggle, isGroupContext = false }: Props) => {
                         />
                         <div className={clsx('flex-1', isDisabled && 'color-disabled')}>
                             <label htmlFor={`role-${id}`} className={clsx(!isDisabled && 'cursor-pointer')}>
-                                {name}
+                                {getTranslatedRoleName(name)}
                                 {badge && <span className="ml-1">{badge}</span>}
                             </label>
                             <div className={clsx('text-sm', !isDisabled && 'color-weak')}>
