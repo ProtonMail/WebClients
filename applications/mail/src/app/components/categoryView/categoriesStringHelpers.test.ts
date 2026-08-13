@@ -86,7 +86,7 @@ describe('categoriesStringHelpers', () => {
 
         it('should getDescriptionFromCategoryId for promotions', () => {
             expect(getDescriptionFromCategoryId(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS)).toBe(
-                'Deals, offers, marketing emails'
+                'Deals, offers, and marketing emails'
             );
         });
 
