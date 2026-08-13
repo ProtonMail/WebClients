@@ -3666,6 +3666,9 @@
       "Cannot share root folder": [
         "Kan inte dela rotmapp"
       ],
+      "Cannot verify the author of this file": [
+        "Kan inte verifiera författaren för denna fil"
+      ],
       "Cannot verify who uploaded this file": [
         "Kan inte verifiera vem som laddade upp denna fil"
       ],
@@ -3785,6 +3788,9 @@
       "Failed to get event": [
         "Misslyckades att hämta händelse"
       ],
+      "Failed to get inviter keys": [
+        "Misslyckades med att hämta inbjudningsnycklar"
+      ],
       "Failed to get original occurrence in series": [
         "Misslyckades att hämta den ursprungliga förekomsten i serien"
       ],
@@ -3802,6 +3808,9 @@
       ],
       "Failed to verify invitation": [
         "Misslyckades med att verifiera inbjudan"
+      ],
+      "File download failed due to empty response": [
+        "Filnedladdning misslyckades på grund av tomt svar"
       ],
       "File has no revision": [
         "Fil har ingen version"
@@ -4266,6 +4275,9 @@
       ],
       "You are reconnected to Zoom. You can save your event now.": [
         "Du är återansluten till Zoom. Du kan spara din händelse nu."
+      ],
+      "You can create public links for your own files only": [
+        "Du kan endast skapa offentliga länkar för dina egna filer"
       ],
       "You can only upload a new version to a file": [
         "Du kan bara ladda upp en ny version till en fil"
@@ -8381,6 +8393,9 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent med begränsad åtkomst"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendrar"
@@ -9934,6 +9949,9 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betala med ${ IDEAL_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalningsmetod krävs för att prenumerationen ska aktiveras efter provperioden är slut."
