@@ -16,12 +16,12 @@ import { DbApi } from '../../indexedDb/db';
 import { createLumoListenerMiddleware } from '../../redux/listeners';
 import { rootSaga } from '../../redux/sagas';
 import type { LumoSelector } from '../../redux/selectors';
-import { setStoreRef } from '../../redux/storeRef';
 import { addConversation, newConversationId, pushConversationRequest } from '../../redux/slices/core/conversations';
 import { addMasterKey } from '../../redux/slices/core/credentials';
 import { addMessage, finishMessage, newMessageId, pushMessageRequest } from '../../redux/slices/core/messages';
 import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/spaces';
 import type { LumoDispatch, LumoSaga, LumoSagaContext } from '../../redux/store';
+import { setStoreRef } from '../../redux/storeRef';
 import { LumoApi } from '../../remote/api';
 import type { RemoteId } from '../../remote/types';
 import { serializeSpace } from '../../serialization';
@@ -492,7 +492,11 @@ export const expectConversationEqual = (
     conversation2: Conversation,
     opts: { ignoreFields?: (keyof Conversation)[] } = {}
 ) => {
-    const ignoreFields = opts.ignoreFields ?? [];
+    // `status` and `ghost` are local-only (`ConversationExtra`) and absent from
+    // `SerializedConversation`, so they never survive a serialize/deserialize round trip.
+    // Comparing them would only ever assert which side came straight from memory.
+    const localOnlyFields: (keyof Conversation)[] = ['status', 'ghost'];
+    const ignoreFields = [...localOnlyFields, ...(opts.ignoreFields ?? [])];
     const clean1 = cleanConversation(conversation1);
     const clean2 = cleanConversation(conversation2);
     for (const f of ignoreFields) {
