@@ -17,6 +17,7 @@ import {
     handleSetupSSOUserKeys,
     handleUnlockSSO,
 } from '@proton/components/containers/login/ssoLoginHelper';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { askAdminConfig } from '@proton/shared/lib/api/authDevice';
 import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { AuthDeviceInvalidError, type DeviceSecretUser } from '@proton/shared/lib/keys/device';
@@ -26,6 +27,7 @@ import type { Render } from '../LoginRender';
 import SetBackupPasswordForm from '../SetBackupPasswordForm';
 import SetPasswordWithPolicyForm from '../SetPasswordWithPolicyForm';
 import SetupWithoutBackupPasswordForm from '../SetupWithoutBackupPasswordForm';
+import { getJoinOrganizationData } from '../joinOrganizationHelper';
 import SSOAdminDeviceConfirmation1 from './SSOAdminDeviceConfirmation1';
 import SSOAdminDeviceConfirmation2 from './SSOAdminDeviceConfirmation2';
 import SSOBackupPasswordForm from './SSOBackupPasswordForm';
@@ -33,6 +35,7 @@ import SSODeviceAccessGranted from './SSODeviceAccessGranted';
 import SSODeviceAdminGranted from './SSODeviceAdminGranted';
 import SSODeviceConfirmation from './SSODeviceConfirmation';
 import SSODeviceRejected from './SSODeviceRejected';
+import SSOFirstLoginAfterConversion from './SSOFirstLoginAfterConversion';
 
 const getKeyPasswordForChange = (ssoData: SSODataTypes, sessionData: AuthSession | null) => {
     if (ssoData.type === 'set-password') {
@@ -97,6 +100,23 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
         }
     };
 
+    const isFirstLoginAfterConversion = ssoData.intent.capabilities.has(
+        SSOLoginCapabilites.FIRST_LOGIN_AFTER_CONVERSION
+    );
+    const { username } = getJoinOrganizationData(ssoData, cache.data.user);
+
+    // The device screen is the natural parent when the member has another device, otherwise the
+    // conversion intro for a member signing in for the first time after being converted
+    const handleBackToParentStep = () => {
+        const back =
+            maybeStepSetter(SSOLoginCapabilites.OTHER_DEVICES) ??
+            maybeStepSetter(SSOLoginCapabilites.FIRST_LOGIN_AFTER_CONVERSION);
+        if (back) {
+            return back();
+        }
+        return handleBackStep();
+    };
+
     const backupPasswordDisabled = getBackupPasswordDisabled(cache);
 
     const handleResult = async (result: AuthActionResponse) => {
@@ -107,6 +127,25 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
             setStep(backupPasswordDisabled ? SSOLoginCapabilites.NEW_BACKUP_PASSWORD_DISABLED : 'AdminGranted');
         } else {
             return onResult(result);
+        }
+    };
+
+    const handleUnlockWithBackupPassword = async (clearKeyPassword: string) => {
+        try {
+            const validateFlow = createFlow();
+            const result = await handleUnlockSSO({
+                cache,
+                clearKeyPassword,
+            });
+            if (validateFlow()) {
+                return await handleResult(result);
+            }
+        } catch (e: any) {
+            handleError(e);
+            // Cancel on any error except retry
+            if (e.name !== 'PasswordError') {
+                handleCancel();
+            }
         }
     };
 
@@ -252,13 +291,7 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
                 render({
                     ...sharedProps,
                     title: c('sso').t`Ask your administrator for access?`,
-                    onBack: () => {
-                        const back = maybeStepSetter(SSOLoginCapabilites.OTHER_DEVICES);
-                        if (back) {
-                            return back();
-                        }
-                        return handleBackStep();
-                    },
+                    onBack: handleBackToParentStep,
                     content: (
                         <SSOAdminDeviceConfirmation1
                             ssoData={ssoData}
@@ -283,13 +316,7 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
                     {render({
                         ...sharedProps,
                         title: c('sso').t`Share the confirmation code with your administrator`,
-                        onBack: () => {
-                            const back = maybeStepSetter(SSOLoginCapabilites.OTHER_DEVICES);
-                            if (back) {
-                                return back();
-                            }
-                            return handleBackStep();
-                        },
+                        onBack: handleBackToParentStep,
                         content: (
                             <SSOAdminDeviceConfirmation2
                                 ssoData={ssoData}
@@ -304,44 +331,46 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
                 render({
                     ...sharedProps,
                     title: c('sso').t`Enter your backup password`,
-                    onBack: () => {
-                        const back = maybeStepSetter(SSOLoginCapabilites.OTHER_DEVICES);
-                        if (back) {
-                            return back();
-                        }
-                        return handleBackStep();
-                    },
-                    content: (() => {
-                        return (
-                            <>
+                    subTitle: isFirstLoginAfterConversion ? username : undefined,
+                    onBack: handleBackToParentStep,
+                    content: (
+                        <>
+                            {isFirstLoginAfterConversion ? (
+                                <>
+                                    <Text margin="small">
+                                        {getBoldFormattedText(
+                                            c('sso')
+                                                .t`Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.`
+                                        )}
+                                    </Text>
+                                    <Text>{c('sso').t`Enter it to sign in. It is the same as your old password.`}</Text>
+                                </>
+                            ) : (
                                 <Text>
                                     {c('sso')
                                         .t`To make sure it's really you trying to sign-in, please enter your backup password.`}
                                 </Text>
-                                <SSOBackupPasswordForm
-                                    onAskAdminHelp={maybeStepSetter(SSOLoginCapabilites.ASK_ADMIN)}
-                                    onSubmit={async (clearKeyPassword) => {
-                                        try {
-                                            const validateFlow = createFlow();
-                                            const result = await handleUnlockSSO({
-                                                cache,
-                                                clearKeyPassword,
-                                            });
-                                            if (validateFlow()) {
-                                                return await handleResult(result);
-                                            }
-                                        } catch (e: any) {
-                                            handleError(e);
-                                            // Cancel on any error except retry
-                                            if (e.name !== 'PasswordError') {
-                                                handleCancel();
-                                            }
-                                        }
-                                    }}
-                                />
-                            </>
-                        );
-                    })(),
+                            )}
+                            <SSOBackupPasswordForm
+                                onAskAdminHelp={maybeStepSetter(SSOLoginCapabilites.ASK_ADMIN)}
+                                onSubmit={handleUnlockWithBackupPassword}
+                            />
+                        </>
+                    ),
+                })}
+            {step === SSOLoginCapabilites.FIRST_LOGIN_AFTER_CONVERSION &&
+                cache &&
+                render({
+                    ...sharedProps,
+                    title: '',
+                    onBack: handleBackStep,
+                    content: (
+                        <SSOFirstLoginAfterConversion
+                            ssoData={ssoData}
+                            userData={cache.data.user}
+                            onContinue={() => setStep(SSOLoginCapabilites.ENTER_BACKUP_PASSWORD)}
+                        />
+                    ),
                 })}
             {step === 'Rejected' &&
                 render({
