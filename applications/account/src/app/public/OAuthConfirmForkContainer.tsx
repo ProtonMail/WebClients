@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { continueToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
@@ -20,6 +21,7 @@ interface Props {
 
 const OAuthConfirmForkContainer = ({ name = '', image, onConfirm, onCancel }: Props) => {
     const [loading, withLoading] = useLoading();
+    const handleError = useErrorHandler();
 
     const children = (
         <Main>
@@ -42,7 +44,7 @@ const OAuthConfirmForkContainer = ({ name = '', image, onConfirm, onCancel }: Pr
                     color="norm"
                     fullWidth
                     size="large"
-                    onClick={() => withLoading(onConfirm())}
+                    onClick={() => withLoading(onConfirm().catch(handleError))}
                     loading={loading}
                 >
                     {continueToPlanOrAppNameText(name)}
