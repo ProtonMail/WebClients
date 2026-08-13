@@ -1,31 +1,29 @@
+import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
+import AppVersion from '@proton/components/components/version/AppVersion';
+import DrawerApp from '@proton/components/components/drawer/DrawerApp';
+import { getAppVersion } from '@proton/components/helpers/appVersion';
+import Icon from '@proton/components/components/icon/Icon';
+import Logo from '@proton/components/components/logo/Logo';
+import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers/notifications/constants';
+import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
+import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
+import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
+import ProtonSidebar from '@proton/components/components/sidebar/Sidebar';
+import SidebarList from '@proton/components/components/sidebar/SidebarList';
+import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
+import SidebarListItemDiv from '@proton/components/components/sidebar/SidebarListItemDiv';
+import SidebarListItemLink from '@proton/components/components/sidebar/SidebarListItemLink';
+import SidebarNav from '@proton/components/components/sidebar/SidebarNav';
+import TopBanners from '@proton/components/containers/topBanners/TopBanners';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useAppTitle from '@proton/components/hooks/useAppTitle';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useConfig from '@proton/components/hooks/useConfig';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import UserDropdown from '@proton/components/containers/heading/UserDropdown';
+import useToggle from '@proton/components/hooks/useToggle';
 import { useMemo, useState, type ReactNode } from 'react'
 
-import {
-  AppsDropdown,
-  AppVersion,
-  DrawerApp,
-  getAppVersion,
-  Icon,
-  Logo,
-  NOTIFICATION_DEFAULT_EXPIRATION_TIME,
-  PrivateAppContainer,
-  PrivateHeader,
-  PrivateMainArea,
-  Sidebar as ProtonSidebar,
-  SidebarList,
-  SidebarListItem,
-  SidebarListItemDiv,
-  SidebarListItemLink,
-  SidebarNav,
-  TopBanners,
-  useActiveBreakpoint,
-  useAppTitle,
-  useAuthentication,
-  useConfig,
-  useNotifications,
-  UserDropdown,
-  useToggle,
-} from '@proton/components'
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight'
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive'
 import { IcHouse } from '@proton/icons/icons/IcHouse'

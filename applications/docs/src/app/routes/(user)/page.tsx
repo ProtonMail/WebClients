@@ -1,3 +1,17 @@
+import type { CreateNotificationOptions } from '@proton/components/containers/notifications/interfaces';
+import type { NotificationsContextValue } from '@proton/components/containers/notifications/notificationsContext';
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
+import { getThemeStyle } from '@proton/components/containers/themes/ThemeProvider';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
+import NotificationsContext from '@proton/components/containers/notifications/notificationsContext';
+import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import type { FunctionComponent, ReactNode } from 'react'
 import { useContext, useState } from 'react'
 import { Router } from 'react-router-dom'
@@ -5,22 +19,6 @@ import { CompatRouter } from 'react-router-dom-v5-compat'
 
 import { FlagProvider } from '@proton/unleash/proxy'
 
-import {
-  type CreateNotificationOptions,
-  type NotificationsContextValue,
-  ApiProvider,
-  AuthenticationProvider,
-  DrawerProvider,
-  ErrorBoundary,
-  EventManagerProvider,
-  getThemeStyle,
-  LoaderPage,
-  NotificationsContext,
-  ProtonApp,
-  StandardErrorPage,
-  StandardLoadErrorPage,
-  StandardPrivateApp,
-} from '@proton/components'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import metrics from '@proton/metrics'
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider'

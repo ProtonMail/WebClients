@@ -1,3 +1,4 @@
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useState, useEffect } from 'react'
 import { Button } from '@proton/atoms/Button/Button'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
@@ -5,7 +6,6 @@ import BasicModal from '@proton/components/components/modalTwo/BasicModal'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
 import { useQuickReportModal } from '~/components/QuickReportModal'
-import { useNotifications } from '@proton/components'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 interface TracerAlertProps {
