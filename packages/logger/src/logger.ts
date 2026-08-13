@@ -1,9 +1,7 @@
 /* eslint-disable no-console */
 import { encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
-import * as Comlink from 'comlink';
 
-import type LogReader from './LogReader';
 import {
     CLEANUP_INTERVAL_MS,
     DAY,
@@ -15,6 +13,7 @@ import {
 } from './constants';
 import { IndexedDBStorage } from './storage';
 import type { LogLevel, LoggerOptions } from './types';
+import type { LogReaderOptions } from './worker/LogReader';
 
 /** A line that has been emitted but not yet written to storage. */
 interface PendingLog {
@@ -118,8 +117,16 @@ export class Logger {
      */
     private sequence = 0;
 
-    /** `now` is injectable so retention behaviour can be tested without timer mocks. */
-    constructor(now: () => number = Date.now) {
+    /**
+     * `now` is injectable so retention behaviour can be tested without timer mocks.
+     * `readLogsInWorker` is injectable so tests can read through an in-process `LogReader`
+     * instead of a real worker. Left undefined by default and imported lazily in `readLogs`,
+     * so importing `Logger` doesn't pull in the worker module.
+     */
+    constructor(
+        now: () => number = Date.now,
+        private readLogsInWorker?: (options: LogReaderOptions) => Promise<string>
+    ) {
         this.now = now;
     }
 
@@ -237,7 +244,7 @@ export class Logger {
      */
     async getLogs(): Promise<string> {
         if (!this.initialized) {
-            return Promise.resolve('');
+            return '';
         }
 
         if (!this.read) {
@@ -264,33 +271,18 @@ export class Logger {
             `logger-${this.name}:readLogs:waitForWrites:start`
         );
 
-        const worker = new Worker(
-            /* webpackChunkName: "logger-read-worker" */ new URL('./logger.worker.ts', import.meta.url)
-        );
-
-        // Comlink has no timeout: a worker that dies never replies, so the read would hang forever.
-        const died = new Promise<never>((_, reject) => {
-            worker.addEventListener('error', (event) => reject(event.error ?? new Error(event.message)));
-        });
-
         try {
-            const reader = Comlink.wrap<LogReader>(worker);
-            return await Promise.race([
-                reader
-                    .init({
-                        name: this.name,
-                        loggerID: this.loggerID,
-                        encryptionKey: this.encryptionKey,
-                        encryptionContext: this.encryptionContext.toBase64(),
-                    })
-                    .then(() => reader.getLogs()),
-                died,
-            ]);
+            const readLogsInWorker =
+                this.readLogsInWorker ?? (await import('./worker/readLogsInWorker')).readLogsInWorker;
+            return await readLogsInWorker({
+                name: this.name,
+                loggerID: this.loggerID,
+                encryptionKey: this.encryptionKey,
+                encryptionContext: this.encryptionContext.toBase64(),
+            });
         } catch (error) {
             console.error(`[${this.name}] failed to read logs in worker:`, error);
             return '';
-        } finally {
-            worker.terminate();
         }
     }
 
