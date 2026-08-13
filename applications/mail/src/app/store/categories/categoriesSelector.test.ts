@@ -1,4 +1,4 @@
-import { mailSettingsState } from '@proton/mail/store/mailSettings/mailSettings.testing';
+import { mailSettingsState, unloadedMailSettingsState } from '@proton/mail/store/mailSettings/mailSettings.testing';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -6,7 +6,11 @@ import type { MailStateSlice } from '../buildMailState.testing';
 import { buildMailState } from '../buildMailState.testing';
 import { elementsState } from '../elements/elementsSlice.testing';
 import { organizationState, unloadedOrganizationState } from '../sharedSlices.testing';
-import { selectShouldShowCategoryViewTabs, selectShouldShowMoveToPrimaryBadge } from './categoriesSelector';
+import {
+    selectShouldReportUnreadCount,
+    selectShouldShowCategoryViewTabs,
+    selectShouldShowMoveToPrimaryBadge,
+} from './categoriesSelector';
 
 const CATEGORIES: CategoryLabelID[] = [
     MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
@@ -85,5 +89,61 @@ describe('selectShouldShowMoveToPrimaryBadge', () => {
     it('returns false when the organization is not loaded yet', () => {
         const state = badgeState(unloadedOrganizationState());
         expect(selectShouldShowMoveToPrimaryBadge(state)).toBe(false);
+    });
+});
+
+describe('selectShouldReportUnreadCount', () => {
+    /**
+     * Inbox, on the Primary category, with category view enabled, viewing the first page.
+     * Append a slice to override one of them.
+     */
+    const reportState = (categoryIDs: CategoryLabelID[], page = 0, ...slices: MailStateSlice[]) =>
+        buildMailState(
+            elementsState({ params: { labelID: MAILBOX_LABEL_IDS.INBOX, categoryIDs }, page }),
+            mailSettingsState({ MailCategoryView: true }),
+            ...slices
+        );
+
+    it('returns true in Inbox on Primary on the first page', () => {
+        const state = reportState([MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]);
+        expect(selectShouldReportUnreadCount(state)).toBe(true);
+    });
+
+    it('returns true in Inbox on Primary alongside other categories', () => {
+        const state = reportState(CATEGORIES);
+        expect(selectShouldReportUnreadCount(state)).toBe(true);
+    });
+
+    it('returns false in Inbox on a non-primary category', () => {
+        const state = reportState([MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]);
+        expect(selectShouldReportUnreadCount(state)).toBe(false);
+    });
+
+    it('returns true in Inbox when category view is disabled for the user', () => {
+        // Category view disabled: useElements never populates categoryIDs, so it falls back to plain Inbox.
+        const state = reportState([], 0, mailSettingsState({ MailCategoryView: false }));
+        expect(selectShouldReportUnreadCount(state)).toBe(true);
+    });
+
+    it('returns true in Inbox when mail settings are still loading', () => {
+        // Optional chaining on an unloaded `value` must default to the plain Inbox check, not throw.
+        const state = buildMailState(
+            elementsState({ params: { labelID: MAILBOX_LABEL_IDS.INBOX, categoryIDs: [] } }),
+            unloadedMailSettingsState()
+        );
+        expect(selectShouldReportUnreadCount(state)).toBe(true);
+    });
+
+    it('returns false outside of Inbox', () => {
+        const state = buildMailState(
+            elementsState({ params: { labelID: MAILBOX_LABEL_IDS.DRAFTS } }),
+            mailSettingsState({ MailCategoryView: true })
+        );
+        expect(selectShouldReportUnreadCount(state)).toBe(false);
+    });
+
+    it('returns false past the first page, even on Inbox/Primary', () => {
+        const state = reportState([MAILBOX_LABEL_IDS.CATEGORY_DEFAULT], 1);
+        expect(selectShouldReportUnreadCount(state)).toBe(false);
     });
 });

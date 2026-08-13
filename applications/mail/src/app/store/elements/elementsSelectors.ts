@@ -52,7 +52,7 @@ export const selectCategoryIDs = createSelector([selectParams], (params): Catego
     return EMPTY_ARRAY;
 });
 
-/** Unlike {@link loading}, stays true across ES's intermediate result batches. */
+/** Unlike {@link selectLoading}, stays true across ES's intermediate result batches. */
 export const esSearching = (state: MailState) => state.elements.pendingESSearches > 0;
 
 /** Whether the elements on screen came from Encrypted Search — i.e. whether bodies were searched. */
@@ -424,7 +424,7 @@ export const placeholderCount = createSelector(
     }
 );
 
-export const loading = createSelector(
+export const selectLoading = createSelector(
     [beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated],
     (beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated) =>
         (beforeFirstLoad || pendingRequest || shouldLoadElements) && !invalidated
