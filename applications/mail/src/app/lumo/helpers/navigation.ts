@@ -7,7 +7,7 @@ import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { getStandardFolders } from 'proton-mail/helpers/labels';
 import {
     contextTotal as contextTotalSelector,
-    loading as loadingSelector,
+    selectLoading,
     selectPage,
     selectParams,
 } from 'proton-mail/store/elements/elementsSelectors';
@@ -105,7 +105,7 @@ export const waitForListSettled = (store: ToolStore, expected: { labelID: string
             const state = store.getState();
             const { labelID, search } = selectParams(state);
             const paramsMatch = labelID === expected.labelID && !search.keyword && !search.from && !search.to;
-            const isLoading = loadingSelector(state, { page: selectPage(state) });
+            const isLoading = selectLoading(state, { page: selectPage(state) });
             return paramsMatch && !isLoading && contextTotalSelector(state) !== undefined;
         };
 

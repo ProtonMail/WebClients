@@ -418,7 +418,7 @@ export const placeholderCount = createSelector(
     }
 );
 
-export const loading = createSelector(
+export const selectLoading = createSelector(
     [beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated],
     (beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated) =>
         (beforeFirstLoad || pendingRequest || shouldLoadElements) && !invalidated

@@ -339,6 +339,7 @@ export enum TelemetryCategoriesOnboardingEvents {
     settings_toggle_category_view = 'settings_toggle_category_view',
     settings_toggle_category = 'settings_toggle_category',
     settings_toggle_notification = 'settings_toggle_notification',
+    report_unread_count = 'report_unread_count',
 }
 
 export enum TelemetryHeartbeatEvents {
