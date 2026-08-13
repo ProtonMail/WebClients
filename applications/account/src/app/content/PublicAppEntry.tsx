@@ -16,6 +16,7 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { telemetry } from '@proton/shared/lib/telemetry';
@@ -60,6 +61,13 @@ const bootstrapApp = () => {
     extendStore({ config, api, authentication, unleashClient, unauthenticatedApi });
     const store = setupStore();
     store.dispatch(staticExperimentsActions.set(resolveStaticExperiments(staticExperimentsConfig)));
+
+    if (isElectronMail) {
+        void import('@proton/shared/lib/desktop/bootstrapPublicAccountInboxDesktop').then((module) => {
+            void module.bootstrapPublicAccountInboxDesktop(authentication);
+        });
+    }
+
     return {
         authentication,
         store,
