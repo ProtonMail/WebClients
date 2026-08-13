@@ -35,6 +35,7 @@ import { RouterElementContainer } from './RouterElementContainer';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 import { MailboxToolbar } from './components/MailboxToolbar';
 import type { MailboxActions, RouterNavigation } from './interface';
+import { useUnreadCategoryCount } from './useUnreadCategoryCount';
 
 interface Props {
     navigation: RouterNavigation;
@@ -51,6 +52,8 @@ export const RouterLabelContainer = ({
     hasRowMode = false,
     onResizingChange,
 }: Props) => {
+    useUnreadCategoryCount(elementsData);
+
     const elementID = useMailSelector(selectElementID);
     const labelID = useMailSelector(selectLabelID);
     const messageID = useMailSelector(selectMessageID);

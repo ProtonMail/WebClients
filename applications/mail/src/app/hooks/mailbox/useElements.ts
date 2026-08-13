@@ -49,7 +49,6 @@ import {
     elements as elementsSelector,
     expectingEmpty as expectingEmptySelector,
     loadedEmpty as loadedEmptySelector,
-    loading as loadingSelector,
     messagesToLoadMoreES as messagesToLoadMoreESSelector,
     pageIsConsecutive as pageIsConsecutiveSelector,
     partialESSearch as partialESSearchSelector,
@@ -57,6 +56,7 @@ import {
     placeholderCount as placeholderCountSelector,
     selectCurrentContextIdentifier,
     selectElementIDs,
+    selectLoading,
     selectParams,
     shouldLoadElements as shouldLoadElementsSelector,
     shouldUpdatePage as shouldUpdatePageSelector,
@@ -181,7 +181,7 @@ export const useElements: UseElements = ({
     const shouldUpdatePage = useMailSelector((state: MailState) => shouldUpdatePageSelector(state, { page }));
     const dynamicTotal = useMailSelector((state: MailState) => dynamicTotalSelector(state, { counts }));
     const placeholderCount = useMailSelector((state: MailState) => placeholderCountSelector(state, { counts }));
-    const loading = useMailSelector((state: MailState) => loadingSelector(state, { page }));
+    const loading = useMailSelector((state: MailState) => selectLoading(state, { page }));
     const totalReturned = useMailSelector((state: MailState) => totalReturnedSelector(state, { counts }));
     const expectingEmpty = useMailSelector((state: MailState) => expectingEmptySelector(state, { counts }));
     const loadedEmpty = useMailSelector(loadedEmptySelector);
