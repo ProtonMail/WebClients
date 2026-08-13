@@ -89,14 +89,19 @@ export default class LogReader {
         const options = this.options;
         const { name } = options;
 
+        let ok = false;
         performance.mark(`logger-${name}:readLogs:start`);
         try {
             const entries = await this.storage.retrieve();
 
             performance.mark(`logger-${name}:readLogs:decode:start`);
             const lines = await Promise.all(entries.map((entry) => formatEntry(entry, options)));
-            performance.measure(`logger-${name}:readLogs:decode`, `logger-${name}:readLogs:decode:start`);
+            performance.measure(`logger-${name}:readLogs:decode`, {
+                start: `logger-${name}:readLogs:decode:start`,
+                detail: { ok },
+            });
 
+            ok = true;
             return lines.join('\n');
         } catch (error) {
             if (error instanceof UnreadableEntryError) {
@@ -109,6 +114,10 @@ export default class LogReader {
             return '';
         } finally {
             performance.measure(`logger-${name}:readLogs`, `logger-${name}:readLogs:start`);
+            performance.measure(`logger-${name}:readLogs:decode`, {
+                start: `logger-${name}:readLogs:decode:start`,
+                detail: { ok },
+            });
         }
     }
 }

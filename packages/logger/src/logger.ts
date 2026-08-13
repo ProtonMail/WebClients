@@ -313,12 +313,10 @@ export class Logger {
     }
 
     private startCleanup(): void {
-        performance.mark(`logger-${this.name}:cleanup:start`);
         this.enqueue(() => this.cleanup());
         this.cleanupInterval = setInterval(() => this.enqueue(() => this.cleanup()), CLEANUP_INTERVAL_MS);
         // Keeps Node test runners from hanging on the interval.
         (this.cleanupInterval as unknown as { unref?: () => void }).unref?.();
-        performance.measure(`logger-${this.name}:cleanup`, `logger-${this.name}:cleanup:start`);
     }
 
     /** Trims by age first, then by count. Runs on the write chain, never per line. */
