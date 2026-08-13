@@ -38,7 +38,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
     const [subscription, loadingSubscription] = useSubscription();
     const history = useHistory();
     const location = useLocation();
-    const { isVisited, loading: loadingOfferFlags } = useOfferFlags(offerConfig);
+    const { isVisited, isVisitedAgain, loading: loadingOfferFlags } = useOfferFlags(offerConfig);
     const {
         offer,
         loadingOffer,
@@ -91,8 +91,12 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
             return;
         }
 
+        // Offers can opt into replaying their one-time popup once more, for users who saw it but didn't opt out.
+        // Users who hid the offer never reach this point: the Hide bit clears isActive, so the offer isn't valid.
+        const isReplayingAutoPopUp = !!offerConfig.replayAutoPopUp && !isVisitedAgain;
+
         // We want to always auto-show the offer modal for the VPN application
-        const combinedIgnoreVisited = ignoreVisited || autoOffer || isVPNApp;
+        const combinedIgnoreVisited = ignoreVisited || isReplayingAutoPopUp || autoOffer || isVPNApp;
         if (
             (isVisited && !combinedIgnoreVisited) ||
             onceRef.current ||
@@ -112,7 +116,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
         onceRef.current = true;
         setFetchOffer(true);
         setOfferModalOpen(true);
-    }, [loadingOfferFlags, loadingSubscription, user.hasPaidMail, subscription, welcomeFlags.isDone]);
+    }, [loadingOfferFlags, loadingSubscription, user.hasPaidMail, subscription, welcomeFlags.isDone, isVisitedAgain]);
 
     if (hasEstimationError || (shouldPrefetch && !initialized)) {
         return null;
