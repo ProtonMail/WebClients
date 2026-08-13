@@ -16,7 +16,7 @@ import type { Paths } from '../helper';
 
 type OAuthForkResult =
     | { type: 'invalid' }
-    | { type: 'login'; payload: LoginResult }
+    | { type: 'login'; payload: LoginResult; fork: OAuthForkData }
     | { type: 'switch'; payload: { fork: OAuthForkData; activeSessionsResult: GetActiveSessionsResult } };
 
 const getProduceOAuthForkParameters = () => {
@@ -55,13 +55,14 @@ export const handleOAuthFork = async ({ api, paths }: { api: Api; paths: Paths }
 
     if (type === GetActiveSessionType.AutoPick) {
         const authSession: AuthSession = { data: session };
+        const fork: OAuthForkData = { type: SSOType.OAuth, payload: { oauthData } };
         const loginResult = await getProduceForkLoginResult({
             api,
             session: authSession,
-            data: { type: SSOType.OAuth, payload: { oauthData } },
+            data: fork,
             paths,
         });
-        return { type: 'login', payload: loginResult };
+        return { type: 'login', payload: loginResult, fork };
     }
 
     return {

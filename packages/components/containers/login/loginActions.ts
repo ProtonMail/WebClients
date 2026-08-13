@@ -178,8 +178,9 @@ export const handleReAuthKeyPassword = async ({
         api,
     });
     return {
+        // Carried over so that interruptions already cleared before this one are not asked for again
+        interruptions: authSession.interruptions,
         data: sessionResult,
-        prompt: null,
     };
 };
 

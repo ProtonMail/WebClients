@@ -11,11 +11,8 @@ import UnAuthenticated from '@proton/components/containers/authentication/UnAuth
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { AuthType } from '@proton/components/containers/login/interface';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
-import useApi from '@proton/components/hooks/useApi';
-import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getIsPassApp, getIsVPNApp, getToAppName } from '@proton/shared/lib/authentication/apps';
-import { produceOAuthFork } from '@proton/shared/lib/authentication/fork';
 import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     APPS,
@@ -25,7 +22,6 @@ import {
     VPN_TV_PATH_WITH_CODE,
     VPN_TV_SIGNUP_REDIRECT,
 } from '@proton/shared/lib/constants';
-import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
@@ -41,6 +37,7 @@ import AuthDesktop from '../public/AuthDesktop';
 import AuthExtension from '../public/AuthExtension';
 import CallScheduledPage from '../public/CallScheduledPage';
 import CloseTicketContainer from '../public/CloseTicketContainer';
+import ConfirmForkRedirectContainer from '../public/ConfirmForkRedirectContainer';
 import DisableAccountContainer from '../public/DisableAccountContainer';
 import EmailForwardingContainer, { EmailForwardingRequest } from '../public/EmailForwardingContainer';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
@@ -78,6 +75,7 @@ import { type ProduceForkData, SSOType } from './actions/forkInterface';
 import { getSanitizedLocationDescriptorObject } from './actions/getSanitizedLocationDescriptorObject';
 import type { LoginLocationState, LoginResult } from './actions/interface';
 import { type Paths, UNAUTHENTICATED_ROUTES } from './helper';
+import { withInterruption } from './interruptions';
 
 let cryptoWorkerPromise: Promise<void> | undefined;
 
@@ -171,7 +169,6 @@ const PublicAppInteractive = ({
     initialSessionsLength,
     loginPaths,
 }: PublicAppInteractiveProps) => {
-    const normalApi = useApi();
     const history = useHistory();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
@@ -184,7 +181,7 @@ const PublicAppInteractive = ({
         if (forkState?.type === SSOType.OAuth) {
             return forkState.payload.oauthData.clientInfo.Name;
         }
-        if (locationState?.type === 'confirm-oauth') {
+        if (locationState?.type === 'oauth-consent') {
             return locationState.payload.data.payload.oauthData.clientInfo.Name;
         }
     })();
@@ -580,8 +577,8 @@ const PublicAppInteractive = ({
                                                 />
                                             </UnAuthenticated>
                                         </Route>
-                                        {locationState?.type === 'confirm-oauth' && (
-                                            <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
+                                        {locationState?.type === 'oauth-consent' && (
+                                            <Route path={SSO_PATHS.OAUTH_AUTHORIZE_CONSENT}>
                                                 <UnAuthenticated>
                                                     <OAuthConfirmForkContainer
                                                         name={toAppName}
@@ -589,21 +586,38 @@ const PublicAppInteractive = ({
                                                             locationState.payload.data.payload.oauthData.clientInfo.Logo
                                                         }
                                                         onConfirm={async () => {
-                                                            if (locationState?.type !== 'confirm-oauth') {
+                                                            if (locationState?.type !== 'oauth-consent') {
                                                                 throw new Error('Missing state');
                                                             }
-                                                            const uidApi = getUIDApi(
-                                                                locationState.payload.session.data.UID,
-                                                                normalApi
+                                                            const { session } = locationState.payload;
+                                                            await handleLogin(
+                                                                withInterruption(session, 'oauth-consent')
                                                             );
-                                                            const url = await produceOAuthFork({
-                                                                api: uidApi,
-                                                                oauthData: locationState.payload.data.payload.oauthData,
-                                                            });
-                                                            replaceUrl(url);
                                                         }}
                                                         onCancel={() => {
                                                             // Force a hard refresh to get active sessions to refresh when signing up
+                                                            window.location.pathname = SSO_PATHS.SWITCH;
+                                                        }}
+                                                    />
+                                                </UnAuthenticated>
+                                            </Route>
+                                        )}
+                                        {locationState?.type === 'fork-redirect-consent' && (
+                                            <Route path={SSO_PATHS.AUTHORIZE_REDIRECT_CONSENT}>
+                                                <UnAuthenticated>
+                                                    <ConfirmForkRedirectContainer
+                                                        toApp={maybePreAppIntent}
+                                                        redirectUrl={locationState.payload.redirectUrl}
+                                                        onConfirm={async () => {
+                                                            if (locationState?.type !== 'fork-redirect-consent') {
+                                                                throw new Error('Missing state');
+                                                            }
+                                                            const { session } = locationState.payload;
+                                                            await handleLogin(
+                                                                withInterruption(session, 'fork-redirect-consent')
+                                                            );
+                                                        }}
+                                                        onCancel={() => {
                                                             window.location.pathname = SSO_PATHS.SWITCH;
                                                         }}
                                                     />

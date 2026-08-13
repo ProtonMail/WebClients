@@ -17,10 +17,17 @@ type LoginLocationStateData<Type, State> = {
 
 export type LoginLocationState =
     | LoginLocationStateData<
-          'confirm-oauth',
+          'oauth-consent',
           {
               data: Extract<ProduceForkData, { type: SSOType.OAuth }>;
               session: AuthSession;
+          }
+      >
+    | LoginLocationStateData<
+          'fork-redirect-consent',
+          {
+              session: AuthSession;
+              redirectUrl: string;
           }
       >
     | LoginLocationStateData<'login', null>
