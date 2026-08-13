@@ -4,7 +4,7 @@ import { hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import type { OfferConfig, OfferGlobalFeatureCodeValue } from '../interface';
 import { OfferUserFeatureCodeValue } from '../interface';
 
-const { Default, Visited, Hide } = OfferUserFeatureCodeValue;
+const { Default, Visited, Hide, VisitedAgain } = OfferUserFeatureCodeValue;
 
 const useOfferFlags = (config: OfferConfig) => {
     const { feature: globalFlag, loading: globalFlagLoading } = useFeature<OfferGlobalFeatureCodeValue>(
@@ -22,6 +22,7 @@ const useOfferFlags = (config: OfferConfig) => {
         loading: globalFlagLoading || userFlagLoading,
         isActive: globalFlag?.Value?.[config.ID] === true && !hasBit(userFlagValue, Hide),
         isVisited: hasBit(userFlagValue, Visited),
+        isVisitedAgain: hasBit(userFlagValue, VisitedAgain),
         handleHide: () => {
             const nextValue = setBit(userFlagValue, Hide);
             if (nextValue === userFlagValue) {
@@ -32,6 +33,14 @@ const useOfferFlags = (config: OfferConfig) => {
         },
         handleVisit: () => {
             const nextValue = setBit(userFlagValue, Visited);
+            if (nextValue === userFlagValue) {
+                return;
+            }
+
+            return userFlagUpdate(nextValue);
+        },
+        handleVisitAgain: () => {
+            const nextValue = setBit(userFlagValue, VisitedAgain);
             if (nextValue === userFlagValue) {
                 return;
             }

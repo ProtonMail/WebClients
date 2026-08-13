@@ -18,6 +18,7 @@ export enum OfferUserFeatureCodeValue {
     Default = 0,
     Visited = 1,
     Hide = 2,
+    VisitedAgain = 4,
 }
 
 export interface OfferProps {
@@ -53,6 +54,7 @@ export interface OfferConfig {
     ID: OfferId;
     featureCode: FeatureCode;
     autoPopUp?: 'each-time' | 'one-time';
+    replayAutoPopUp?: boolean;
     title?: () => string;
     subTitle?: () => string;
     canBeDisabled?: boolean;
