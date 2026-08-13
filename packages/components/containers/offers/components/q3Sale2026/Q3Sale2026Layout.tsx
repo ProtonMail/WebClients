@@ -3,13 +3,15 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { CYCLE } from '@proton/payments/core/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { OfferLayoutProps } from '../../interface';
 import OfferDisableButton from '../shared/OfferDisableButton';
-import kvImage from './q3-sale-2026-kv.webp';
+import kvImage from './q3-sale-2026-kv-unlimited.webp';
 
 import './Q3Sale2026Layout.scss';
 
@@ -31,11 +33,18 @@ export function Q3Sale2026Layout({ offer, currency, onSelectDeal, onCloseModal, 
     const promoPricePerMonth = getSimplePriceString(currency, rawPromoPricePerMonth);
     const normalPricePerMonth = getSimplePriceString(currency, deal.prices.withoutCouponMonthly);
 
-    const discountPercent = Math.round(100 - (rawPromoPricePerMonth / deal.prices.withoutCouponMonthly) * 100);
-
     const acceptDeal = () => {
         onSelectDeal(offer, deal, currency);
     };
+
+    const planNameWithoutBrand = deal.dealName.replace(`${BRAND_NAME} `, '');
+
+    const protonLogoWithDeal = (
+        <span className="q3SalePlanLockup flex flex-row items-center gap-3">
+            <ProtonLogo color="invert" scale={0.75} />
+            <span className="text-bold q3SalePlanName">{planNameWithoutBrand}</span>
+        </span>
+    );
 
     return (
         <div>
@@ -44,12 +53,23 @@ export function Q3Sale2026Layout({ offer, currency, onSelectDeal, onCloseModal, 
                 <div className="q3SaleHeaderOverlay" />
                 <div className="q3SaleHeaderContent">
                     <div>
-                        {/* translator: discount percentage badge, e.g. "-20%" */}
-                        <span className="q3SaleDiscountBadge">{`${discountPercent}% OFF`}</span>
-                        <h1 className="q3SaleTitle">{c('q3campaign2026: Title').t`SEPTEMBER SALE`}</h1>
+                        <h1 className="q3SaleTitle">
+                            <span>
+                                {
+                                    // translator: first line of the headline, with "full power" on the line below
+                                    c('q3campaign2026: Title').t`One plan,`
+                                }
+                            </span>
+                            <span>
+                                {
+                                    // translator: second line of the headline, with "One plan," on the line above
+                                    c('q3campaign2026: Title').t`full power`
+                                }
+                            </span>
+                        </h1>
                     </div>
                     <div className="flex flex-column">
-                        <span className="text-bold q3SalePlanName">{deal.dealName}</span>
+                        {protonLogoWithDeal}
                         <span className="q3SaleForMonths">
                             {
                                 // translator: full sentence is e.g. "for 12 months"
@@ -79,7 +99,7 @@ export function Q3Sale2026Layout({ offer, currency, onSelectDeal, onCloseModal, 
 
                 {subText && <p className="q3SaleText text-bold mb-4">{subText}</p>}
 
-                <Button size="large" onClick={acceptDeal} color="norm" fullWidth>
+                <Button size="large" onClick={acceptDeal} color="norm" className="text-bold" fullWidth>
                     {c('q3campaign2026: Action').t`Get the deal`}
                 </Button>
 
