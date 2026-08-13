@@ -723,7 +723,9 @@ export function cleanConversation(conversation: Conversation): Conversation {
         title,
         ...(agentId && { agentId }),
         ...(starred && { starred: true }),
-        status: status ?? ConversationStatus.COMPLETED,
+        // `status` is local-only, so a conversation coming back from the server never carries one.
+        // Defaulting it to COMPLETED invented a "generation finished" that never happened.
+        ...(status && { status }),
         ...(ghost && { ghost: true }),
     };
 }
