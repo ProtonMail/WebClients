@@ -56,7 +56,7 @@ const extractWebSources = (content: string): ServerToolSource[] => {
 
 /**
  * The generic controller hook for a Lumo agent. It owns the chat transcript, drives the transport's
- * tool loop once per message via `callAssistant` + the MR4 {@link createClientToolExecutor}, and maps
+ * tool loop once per message via `callAssistant` + {@link createClientToolExecutor}, and maps
  * the streamed chunks + the executor's chips/confirmations into {@link LumoAgentItem}s. It holds no
  * product knowledge — `config` supplies the tools, handlers, rules, and card renderers.
  *
@@ -149,6 +149,36 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         });
     }, []);
 
+    const confirm = useCallback(
+        (params: Record<string, any>) => {
+            const resolve = confirmResolveRef.current;
+            if (!resolve) {
+                return;
+            }
+            confirmResolveRef.current = null;
+            settleLastPendingConfirm('applied');
+            resolve({ action: 'apply', params });
+        },
+        [settleLastPendingConfirm]
+    );
+
+    const cancel = useCallback(() => {
+        const resolve = confirmResolveRef.current;
+        if (!resolve) {
+            return;
+        }
+        confirmResolveRef.current = null;
+        settleLastPendingConfirm('cancelled');
+        resolve({ action: 'cancel' });
+    }, [settleLastPendingConfirm]);
+
+    const stop = useCallback(() => {
+        controllerRef.current?.abort();
+        controllerRef.current = null;
+        cancel();
+        setIsBusy(false);
+    }, [cancel]);
+
     // Built once per session (per `sessionKey`); holds the reference registry + loaded-guide set so
     // they persist across messages. Confirmations resolve the executor's `ConfirmController` promise.
     const executor = useMemo(() => {
@@ -231,8 +261,13 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             try {
                 const client = await getLumoClient();
                 const clientTools: ChatCompletionsFunctionTool[] = (await executor.getClientTools?.()) ?? [];
+                // The executor is shared across chains, so bind this one's signal to its batches: an
+                // abandoned chain must not confirm and run the tail of its batch on the turn that replaced it.
                 const { stoppedOnBudget, turns: chainTurns } = await client.callAssistant(api, turns, {
-                    clientToolExecutor: executor,
+                    clientToolExecutor: {
+                        ...executor,
+                        execute: (calls) => executor.execute(calls, { signal: controller.signal }),
+                    },
                     clientTools,
                     serverTools: config.serverTools,
                     signal: controller.signal,
@@ -260,8 +295,11 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 // taking the whole exchange down with it.
                 setIsAtToolLimit(pendingResumeRef.current !== null);
             } finally {
-                controllerRef.current = null;
-                setIsBusy(false);
+                // An abandoned chain must not clear state its successor already owns.
+                if (controllerRef.current === controller) {
+                    controllerRef.current = null;
+                    setIsBusy(false);
+                }
             }
         },
         [
@@ -281,7 +319,14 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     const send = useCallback(
         async (message: string) => {
             const text = message.trim();
-            if (!text || isBusy || controllerRef.current) {
+            if (!text) {
+                return;
+            }
+            // Typing instead of answering the card rejects it; its chain is parked inside `execute()` and
+            // cannot take another message, so it is abandoned.
+            if (confirmResolveRef.current) {
+                stop();
+            } else if (isBusy || controllerRef.current) {
                 return;
             }
 
@@ -300,7 +345,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
 
             await runChain([systemTurn, ...historyRef.current, { role: USER, content: text }], text);
         },
-        [config, executor, isBusy, discardPendingResume, finalizeReply, nextId, pushItem, runChain]
+        [config, executor, isBusy, discardPendingResume, finalizeReply, nextId, pushItem, runChain, stop]
     );
 
     const resume = useCallback(async () => {
@@ -315,35 +360,6 @@ const useLumoAgent = (config: LumoAgentConfig) => {
 
         await runChain(pending.turns, pending.userText, pending.reply);
     }, [isBusy, finalizeReply, runChain]);
-
-    const confirm = useCallback(
-        (params: Record<string, any>) => {
-            const resolve = confirmResolveRef.current;
-            if (!resolve) {
-                return;
-            }
-            confirmResolveRef.current = null;
-            settleLastPendingConfirm('applied');
-            resolve({ action: 'apply', params });
-        },
-        [settleLastPendingConfirm]
-    );
-
-    const cancel = useCallback(() => {
-        const resolve = confirmResolveRef.current;
-        if (!resolve) {
-            return;
-        }
-        confirmResolveRef.current = null;
-        settleLastPendingConfirm('cancelled');
-        resolve({ action: 'cancel' });
-    }, [settleLastPendingConfirm]);
-
-    const stop = useCallback(() => {
-        controllerRef.current?.abort();
-        controllerRef.current = null;
-        setIsBusy(false);
-    }, []);
 
     const clear = useCallback(() => {
         controllerRef.current?.abort();
