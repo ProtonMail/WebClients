@@ -1,13 +1,13 @@
 import { useRef } from 'react';
+
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
-
-import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
 import { getEnableString } from '@proton/components/containers/credentialLeak/helpers';
-import { EnforcedByOrganization } from "@proton/components/containers/sentinel/EnforcedByOrganization";
+import { EnforcedByOrganization } from '@proton/components/containers/organization/EnforcedByOrganization';
+import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
+import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
     checked: boolean;
@@ -22,28 +22,25 @@ const SentinelToggle = ({ checked, isInherited, loading, onChange }: Props) => {
     const checkedRef = useRef(checked);
     checkedRef.current = checked;
 
-    useSearchParamsEffect(
-        (params) => {
-            if (!sentinelToggleRef.current) {
-                return;
-            }
+    useSearchParamsEffect((params) => {
+        if (!sentinelToggleRef.current) {
+            return;
+        }
 
-            const enableSentinelParam = params.get('enable-sentinel');
-            params.delete('enable-sentinel');
-            if (!enableSentinelParam) {
-                return params;
-            }
-
-            if (checkedRef.current) {
-                return params;
-            }
-
-            sentinelToggleRef.current.click();
-
+        const enableSentinelParam = params.get('enable-sentinel');
+        params.delete('enable-sentinel');
+        if (!enableSentinelParam) {
             return params;
-        },
-        []
-    );
+        }
+
+        if (checkedRef.current) {
+            return params;
+        }
+
+        sentinelToggleRef.current.click();
+
+        return params;
+    }, []);
 
     return (
         <SettingsLayout>

@@ -1,4 +1,10 @@
-import { PASSWORD_REMINDERS_VALUE, type UserModel, type UserSettings } from '@proton/shared/lib/interfaces';
+import { PLANS } from '@proton/payments/core/constants';
+import {
+    type OrganizationExtended,
+    PASSWORD_REMINDERS_VALUE,
+    type UserModel,
+    type UserSettings,
+} from '@proton/shared/lib/interfaces';
 import type { UnleashClient } from '@proton/unleash/UnleashClient';
 
 import { getShowPasswordReminders } from './getShowPasswordReminders';
@@ -11,6 +17,30 @@ const makeUnleash = (flags: Record<string, boolean> = { PasswordReminders: true 
 
 const makeUser = (overrides: Partial<UserModel> = {}): UserModel =>
     ({ isPrivate: true, Flags: { sso: false }, ...overrides }) as UserModel;
+
+// A keyful B2B organization that has finished setup.
+const configuredOrganization = {
+    Name: 'Org',
+    PlanName: PLANS.MAIL_PRO,
+    RequiresKey: 1,
+    HasKeys: 1,
+} as OrganizationExtended;
+
+// What a paying individual gets: an organization object that was never set up.
+const unconfiguredOrganization = {
+    Name: '',
+    PlanName: PLANS.MAIL,
+    RequiresKey: 0,
+    HasKeys: 0,
+} as OrganizationExtended;
+
+// Family groups are keyless — `Name` alone marks them as set up.
+const familyOrganization = {
+    Name: 'Family',
+    PlanName: PLANS.FAMILY,
+    RequiresKey: 0,
+    HasKeys: 0,
+} as OrganizationExtended;
 
 const secondsFromNow = (offsetSeconds: number) => Math.floor(now.getTime() / 1000) + offsetSeconds;
 
@@ -115,5 +145,106 @@ describe('getShowPasswordReminders', () => {
         });
 
         expect(result).toBe(false);
+    });
+
+    describe('organization members', () => {
+        const bothFlags = { PasswordReminders: true, PasswordRemindersOrg: true };
+
+        it('returns false when the PasswordRemindersOrg flag is disabled', () => {
+            const result = getShowPasswordReminders({
+                unleashClient: makeUnleash(),
+                user: makeUser({ isMember: true, isSelf: true }),
+                userSettings: makeUserSettings(),
+                organization: configuredOrganization,
+            });
+
+            expect(result).toBe(false);
+        });
+
+        it('returns true when the PasswordRemindersOrg flag is enabled', () => {
+            const result = getShowPasswordReminders({
+                unleashClient: makeUnleash(bothFlags),
+                user: makeUser({ isMember: true, isSelf: true }),
+                userSettings: makeUserSettings(),
+                organization: configuredOrganization,
+            });
+
+            expect(result).toBe(true);
+        });
+
+        it('treats a non-private member the same as a private one', () => {
+            const result = getShowPasswordReminders({
+                unleashClient: makeUnleash(bothFlags),
+                user: makeUser({ isMember: true, isSelf: true, isPrivate: false }),
+                userSettings: makeUserSettings(),
+                organization: configuredOrganization,
+            });
+
+            expect(result).toBe(true);
+        });
+
+        it('returns false when an admin is signed in to the account via the organization key', () => {
+            const result = getShowPasswordReminders({
+                unleashClient: makeUnleash(bothFlags),
+                user: makeUser({ isMember: true, isSelf: false, isPrivate: false }),
+                userSettings: makeUserSettings(),
+                organization: configuredOrganization,
+            });
+
+            expect(result).toBe(false);
+        });
+    });
+
+    describe('organization admins', () => {
+        it('returns false when the PasswordRemindersOrg flag is disabled', () => {
+            const result = getShowPasswordReminders({
+                unleashClient: makeUnleash(),
+                user: makeUser({ isAdmin: true, isSelf: true }),
+                userSettings: makeUserSettings(),
+                organization: configuredOrganization,
+            });
+
+            expect(result).toBe(false);
+        });
+
+        it('returns true when the PasswordRemindersOrg flag is enabled', () => {
+            const result = getShowPasswordReminders({
+                unleashClient: makeUnleash({ PasswordReminders: true, PasswordRemindersOrg: true }),
+                user: makeUser({ isAdmin: true, isSelf: true }),
+                userSettings: makeUserSettings(),
+                organization: configuredOrganization,
+            });
+
+            expect(result).toBe(true);
+        });
+
+        // `isAdmin` is true for any paying account, so this guards against gating
+        // individuals on a paid plan behind the organization flag.
+        it('returns true for a paying individual whose organization was never set up', () => {
+            const result = getShowPasswordReminders({
+                unleashClient: makeUnleash(),
+                user: makeUser({ isAdmin: true, isSelf: true }),
+                userSettings: makeUserSettings(),
+                organization: unconfiguredOrganization,
+            });
+
+            expect(result).toBe(true);
+        });
+    });
+
+    describe('family groups', () => {
+        it.each([
+            ['member', { isMember: true }],
+            ['admin', { isAdmin: true }],
+        ])('returns true for a family %s without the organization flag', (_label, role) => {
+            const result = getShowPasswordReminders({
+                unleashClient: makeUnleash(),
+                user: makeUser({ ...role, isSelf: true }),
+                userSettings: makeUserSettings(),
+                organization: familyOrganization,
+            });
+
+            expect(result).toBe(true);
+        });
     });
 });

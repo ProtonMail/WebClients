@@ -56,6 +56,7 @@ export type Flags = {
     isCryptoPostQuantumOptInEnabled: boolean;
     isSsoForPbsEnabled: boolean;
     isRetentionPoliciesEnabled: boolean;
+    isPasswordRemindersOrgEnabled: boolean;
     isAuthenticatorAvailable: boolean;
     isCategoryViewEnabled: boolean;
     isMspEnabled: boolean;
