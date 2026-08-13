@@ -17,10 +17,12 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useUpsellPlanFeatures } from '@proton/pass/hooks/usePlanFeatures';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectMonitorPreview } from '@proton/pass/store/selectors';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { DARK_WEB_MONITORING_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -34,6 +36,7 @@ export const MonitorSummary: FC = () => {
     const navigate = useNavigate();
     const { duplicates, insecure, compromised, missing2FAs, excluded } = useMonitor();
     const { plan, features, upsellType, upgradePath } = useUpsellPlanFeatures();
+    const compromisedPasswordsEnabled = useFeatureFlag(PassFeature.Pass__V1_40__CompromisedPasswords);
 
     const paid = isPaidPlan(plan);
     const preview = useSelector(selectMonitorPreview);
@@ -108,37 +111,38 @@ export const MonitorSummary: FC = () => {
                                     type={duplicates.count > 0 ? 'warning' : 'success'}
                                 />
 
-                                {paid ? (
-                                    <ButtonCard
-                                        actions={compromisedReady && <PillBadge label={compromised.count} />}
-                                        disabled={compromised.loading}
-                                        onClick={() => navigate(getLocalPath('monitor/compromised'))}
-                                        subtitle={c('Description').t`Change these passwords immediately`}
-                                        title={c('Title').t`Compromised passwords`}
-                                        type={
-                                            compromised.count > 0
-                                                ? 'danger'
-                                                : compromised.loading
-                                                  ? 'primary'
-                                                  : 'success'
-                                        }
-                                        icon={
-                                            compromisedReady
-                                                ? compromised.count > 0
-                                                    ? 'exclamation-filled'
-                                                    : 'checkmark'
-                                                : () => <CircleLoader size="small" />
-                                        }
-                                    />
-                                ) : (
-                                    <ButtonCard
-                                        actions={<PassPlusPromotionButton onClick={onUpsell} />}
-                                        onClick={onUpsell}
-                                        subtitle={c('Description').t`Check if your passwords have been exposed`}
-                                        title={c('Title').t`Compromised passwords`}
-                                        type="primary"
-                                    />
-                                )}
+                                {compromisedPasswordsEnabled &&
+                                    (paid ? (
+                                        <ButtonCard
+                                            actions={compromisedReady && <PillBadge label={compromised.count} />}
+                                            disabled={!compromisedReady}
+                                            onClick={() => navigate(getLocalPath('monitor/compromised'))}
+                                            subtitle={c('Description').t`Change these passwords immediately`}
+                                            title={c('Title').t`Compromised passwords`}
+                                            type={
+                                                compromised.count > 0
+                                                    ? 'danger'
+                                                    : compromised.loading
+                                                      ? 'primary'
+                                                      : 'success'
+                                            }
+                                            icon={
+                                                compromisedReady
+                                                    ? compromised.count > 0
+                                                        ? 'exclamation-filled'
+                                                        : 'checkmark'
+                                                    : () => <CircleLoader size="small" />
+                                            }
+                                        />
+                                    ) : (
+                                        <ButtonCard
+                                            actions={<PassPlusPromotionButton onClick={onUpsell} />}
+                                            onClick={onUpsell}
+                                            subtitle={c('Description').t`Check if your passwords have been exposed`}
+                                            title={c('Title').t`Compromised passwords`}
+                                            type="primary"
+                                        />
+                                    ))}
 
                                 <ButtonCard
                                     actions={twofasReady && <PillBadge label={missing2FAs.count} />}
