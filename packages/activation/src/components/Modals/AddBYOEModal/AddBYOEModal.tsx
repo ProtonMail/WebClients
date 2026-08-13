@@ -81,7 +81,7 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
                     </div>
                     <div className="flex flex-row flex-nowrap items-center gap-4 border rounded-xl p-4 mb-2 modal-two-addbyoe-feature relative">
                         <img src={stopHandSign} alt="" className="shrink-0" />
-                        <div>{c('Description').t`No ads. No trackers.`}</div>
+                        <div>{c('Description').t`No ads. No trackers`}</div>
                     </div>
                     <div className="flex flex-row flex-nowrap items-center gap-4 border rounded-xl p-4 mb-2 modal-two-addbyoe-feature relative">
                         <img src={byoeProfiling} alt="" className="shrink-0" />
