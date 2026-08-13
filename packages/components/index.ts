@@ -655,6 +655,7 @@ export { default as OrganizationGroupsManagementSection } from './containers/org
 export { default as LightLabellingFeatureModal } from './containers/organization/logoUpload/LightLabellingFeatureModal';
 export { useOrganizationTheme } from './containers/organization/logoUpload/useOrganizationTheme';
 export { default as OrganizationPasswordPoliciesSection } from './containers/organization/OrganizationPasswordPoliciesSection';
+export { default as OrganizationPasswordRemindersSection } from './containers/organization/OrganizationPasswordRemindersSection';
 export { default as OrganizationPasswordSection } from './containers/organization/OrganizationPasswordSection';
 export { default as OrganizationScheduleCallSection } from './containers/organization/OrganizationScheduleCallSection';
 export { default as OrganizationSection } from './containers/organization/OrganizationSection';

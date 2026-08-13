@@ -71,6 +71,7 @@ export enum CommonFeatureFlag {
     DesktopDownloadApiEnabled = 'DesktopDownloadApiEnabled',
     LogWasmLoadingDisabled = 'LogWasmLoadingDisabled',
     PasswordReminders = 'PasswordReminders',
+    PasswordRemindersOrg = 'PasswordRemindersOrg',
     MeetSpotlightType = 'MeetSpotlightType',
     DisablePostSubscriptionB2BOnboarding = 'DisablePostSubscriptionB2BOnboarding',
     EasySwitchB2CForDriveWeb = 'EasySwitchB2CForDriveWeb',
