@@ -6,7 +6,12 @@ export interface ParticipantQualityStats extends Record<string, unknown> {
     type: Track.Source;
     trackSid: string;
     isLocal: boolean;
+    // Which peer connection the candidate-pair fields describe. Both legs terminate at the SFU.
+    pcRole?: 'publisher' | 'subscriber';
     participantCount?: number;
+    // Whether this row tripped a quality threshold. Local rows are reported either way, so this is
+    // what separates a degraded uplink from a healthy baseline sample.
+    flagged?: boolean;
 
     websocketUrl?: string;
 
@@ -50,6 +55,29 @@ export interface ParticipantQualityStats extends Record<string, unknown> {
     qualityLimitationDurationCpu?: number;
     qualityLimitationDurationBandwidth?: number;
     encoderImplementation?: string;
+
+    // Send side, summed across simulcast layers (local participant only)
+    packetsSent?: number;
+    retransmittedPacketsSent?: number;
+    framesEncoded?: number;
+    targetBitrate?: number;
+
+    // The SFU's RTCP receiver report on our uplink — measures the user -> SFU leg
+    remotePacketsLost?: number;
+    remoteFractionLost?: number;
+    remoteJitter?: number;
+    remoteRoundTripTime?: number;
+
+    // Capture side, separates a degraded camera/mic from a degraded uplink (local participant only)
+    sourceFramesPerSecond?: number;
+    sourceWidth?: number;
+    sourceHeight?: number;
+    sourceAudioLevel?: number;
+
+    // ICE candidate info from the winning candidate-pair of this track's peer connection
+    localCandidateType?: string;
+    remoteCandidateType?: string;
+    localCandidateProtocol?: string;
 }
 
 export interface JoinStats extends Record<string, unknown> {
