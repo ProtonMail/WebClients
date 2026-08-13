@@ -608,6 +608,9 @@
       "Go to panel ${ index }": [
         "패널로 가기 ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "확인"
       ],
@@ -5753,6 +5756,9 @@
       "Invited by: ${ inviteEmail }": [
         "이 사용자에게 의해 초대됨: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "가족 플랜 취소"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "평생 계정은 가족 플랜에 합류할 수 없습니다."
       ],
@@ -6880,6 +6886,11 @@
         "캘린더를 ICS 파일로 내보내기 위해 ${ boldExport }를 선택하세요."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "추가 불러오기 옵션"
+      ]
+    },
     "Import status": {
       "Has errors": [
         "오류 있음"
@@ -7490,6 +7501,9 @@
       ],
       "Choose one:": [
         "하나 선택:"
+      ],
+      "Choose your service to connect with": [
+        "연결하고자 하는 서비스 선택"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
@@ -10358,6 +10372,9 @@
       "Digits": [
         "자리"
       ],
+      "Disable animations": [
+        "애니메이션 비활성화"
+      ],
       "Disabled": [
         "비활성화됨"
       ],
@@ -10471,6 +10488,12 @@
       ],
       "Folders, labels, and filters": [
         "폴더, 라벨 및 필터"
+      ],
+      "Font family": [
+        "글꼴 모음"
+      ],
+      "Font size": [
+        "글자 크기"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME } 및 ${ DOCS_SHORT_APP_NAME }용."
@@ -10675,6 +10698,9 @@
       ],
       "Notification": [
         "알림"
+      ],
+      "Notification email address": [
+        "이메일 주소 알림"
       ],
       "Numbers": [
         "숫자"
@@ -10913,6 +10939,9 @@
       "Thomas": [
         "홍"
       ],
+      "Time format": [
+        "시간 형식"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "저희가 한 층 발전할 수 있도록 왜 떠나시는지 알려주세요."
       ],
@@ -10985,6 +11014,9 @@
       "Weak password": [
         "약한 비밀번호"
       ],
+      "Week start": [
+        "한 주의 시작"
+      ],
       "What happened?": [
         "무슨 일인가요?"
       ],
@@ -11032,6 +11064,9 @@
       ]
     },
     "label": {
+      "Notification phone number": [
+        "휴대전화 번호 알림"
+      ],
       "Recovery phone number": [
         "복구 전화번호"
       ]
@@ -12588,6 +12623,9 @@
       ],
       "Switch plans?": [
         "플랜을 변경하시겠어요?"
+      ],
+      "Unlock premium features by upgrading": [
+        "업그레이드로 프리미엄 기능 해제"
       ]
     },
     "new_plans: Title": {
@@ -16089,9 +16127,6 @@
       "Last changed ${ formattedDate }": [
         "${ formattedDate }에 마지막으로 변경됨"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "${ formattedUpdateDate }에 마지막으로 업데이트됨"
-      ],
       "Not saved": [
         "저장되지 않음"
       ],
@@ -16159,6 +16194,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "모든 ${ BRAND_NAME } 서비스에서 사용"
+      ],
+      "Get more storage": [
+        "더 많은 스토리지 얻기"
       ],
       "Storage used": [
         "저장공간 사용됨"
@@ -17846,6 +17884,9 @@
       "Get help with an issue": [
         "문제에 대한 도움 받기"
       ],
+      "Get more from your privacy suite": [
+        "개인정보 보호 제품군을 더 효율적으로 사용해 보세요"
+      ],
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"
       ],
@@ -18608,6 +18649,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "${ MAIL_APP_NAME } 거래"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "조직 이전"
       ]
     },
     "Title header for addresses domain table": {

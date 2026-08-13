@@ -596,6 +596,9 @@
       "Go to panel ${ index }": [
         "Chuyển đến bảng điều khiển ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Đã hiểu"
       ],
@@ -5471,6 +5474,9 @@
       "Invited by: ${ inviteEmail }": [
         "Người mời: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "Rời gói Family"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "Tài khoản trọn đời không thể tham gia gói family."
       ],
@@ -6537,6 +6543,11 @@
         "Chọn ${ boldExport } để xuất lịch dưới dạng tệp ICS."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Thêm tùy chọn nhập"
+      ]
+    },
     "Import status": {
       "In progress": [
         "Đang tiến hành"
@@ -7114,6 +7125,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Chọn ID pháp nhân để tiếp tục."
+      ],
+      "Choose your service to connect with": [
+        "Chọn dịch vụ để kết nối"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Nhấn \"Yêu cầu mã mới\" để lấy mã xác thực mới được gửi tới ${ strong }. Nếu số điện thoại này chưa đúng, nhấn \"Chỉnh sửa\" để sửa cho đúng."
@@ -9519,6 +9533,14 @@
         "Gói đăng ký"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "Số điện thoại thông báo"
+      ],
+      "Recovery phone number": [
+        "Số điện thoại khôi phục"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "${ addressesAvailable } trong số ${ maxAddresses } địa chỉ email có sẵn"
@@ -9826,6 +9848,9 @@
       "Digits": [
         "Chữ số"
       ],
+      "Disable animations": [
+        "Vô hiệu hóa hoạt ảnh"
+      ],
       "Disabled": [
         "Đã vô hiệu hóa"
       ],
@@ -9936,6 +9961,12 @@
       ],
       "Folders, labels, and filters": [
         "Thư mục, nhãn và bộ lọc"
+      ],
+      "Font family": [
+        "Họ phông chữ"
+      ],
+      "Font size": [
+        "Cỡ chữ"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Dành cho ${ DRIVE_SHORT_APP_NAME } và ${ DOCS_SHORT_APP_NAME }."
@@ -10137,6 +10168,9 @@
       ],
       "Notification": [
         "Thông báo"
+      ],
+      "Notification email address": [
+        "Địa chỉ email thông báo"
       ],
       "Numbers": [
         "Số"
@@ -10375,6 +10409,9 @@
       "Thomas": [
         "Thomas"
       ],
+      "Time format": [
+        "Định dạng thời gian"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Để giúp chúng tôi cải thiện, vui lòng giải thích lý do bạn rời đi."
       ],
@@ -10444,6 +10481,9 @@
       "Weak password": [
         "Mật khẩu yếu"
       ],
+      "Week start": [
+        "Ngày đầu tuần"
+      ],
       "What happened?": [
         "Chuyện gì đã xảy ra?"
       ],
@@ -10488,11 +10528,6 @@
       ],
       "ZIP code": [
         "Mã bưu chính"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "Số điện thoại khôi phục"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12012,6 +12047,9 @@
       ],
       "Switch plans?": [
         "Chuyển đổi gói?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Mở khóa các tính năng cao cấp bằng cách nâng cấp"
       ]
     },
     "new_plans: Title": {
@@ -15478,9 +15516,6 @@
       "Last changed ${ formattedDate }": [
         "Thay đổi lần cuối lúc ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Cập nhật lần cuối ngày ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Chưa lưu"
       ],
@@ -15548,6 +15583,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Đối với tất cả dịch vụ ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Nhận thêm dung lượng lưu trữ"
       ],
       "Storage used": [
         "Lưu trữ đã dùng"
@@ -17187,6 +17225,9 @@
       "Get help with an issue": [
         "Nhận trợ giúp về sự cố"
       ],
+      "Get more from your privacy suite": [
+        "Trải nghiệm nhiều hơn từ bộ ứng dụng quyền riêng tư"
+      ],
       "Get more from your VPN": [
         "Nhận thêm lợi ích từ VPN"
       ],
@@ -17916,6 +17957,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "Giao dịch ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Chuyển dữ liệu của tổ chức"
       ]
     },
     "Title header for addresses domain table": {

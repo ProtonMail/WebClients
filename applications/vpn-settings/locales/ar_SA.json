@@ -596,6 +596,9 @@
       "Go to panel ${ index }": [
         "انتقل إلى لوحة ${ index }"
       ],
+      "Google": [
+        "جوجل"
+      ],
       "Got it": [
         "حصلت عليها"
       ],
@@ -5707,6 +5710,9 @@
       "Invited by: ${ inviteEmail }": [
         "الدعوة من: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "مغادرة خطة Family plan"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "لا يمكن للحسابات مدى الحياة الانضمام إلى خطة عائلية."
       ],
@@ -6911,6 +6917,11 @@
         "حدد ${ boldExport } لتصدير التقويم كملف ICS."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "المزيد من خيارات الاستيراد"
+      ]
+    },
     "Import status": {
       "Has errors": [
         "به أخطاء"
@@ -7684,6 +7695,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "اختر معرّف المؤسسة للمتابعة."
+      ],
+      "Choose your service to connect with": [
+        "اختر الخدمة التي تريد الاتصال بها"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "انقر فوق \"طلب رمز جديد\" للحصول على رمز تحقق جديد أرسل إلى ${ strong }. إذا كان رقم الهاتف هذا غير صحيح، انقر فوق \"تعديل\" لتصحيحه."
@@ -10273,6 +10287,14 @@
         "الإشتراك"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "رقم هاتف الإشعارات"
+      ],
+      "Recovery phone number": [
+        "رقم الهاتف الخاص بالاسترداد"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email addresses available": [
         "${ addressesAvailable } من ${ maxAddresses } عنوان بريد إلكتروني متاح",
@@ -10605,6 +10627,9 @@
       "Digits": [
         "أرقام"
       ],
+      "Disable animations": [
+        "تعطيل الرسوم المتحركة"
+      ],
       "Disabled": [
         "معطل"
       ],
@@ -10715,6 +10740,12 @@
       ],
       "Folders, labels, and filters": [
         "المجلدات والتسميات والفلاتر"
+      ],
+      "Font family": [
+        "عائلة الخط"
+      ],
+      "Font size": [
+        "حجم الخط"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "لـ ${ DRIVE_SHORT_APP_NAME } و ${ DOCS_SHORT_APP_NAME }."
@@ -10916,6 +10947,9 @@
       ],
       "Notification": [
         "إشعار"
+      ],
+      "Notification email address": [
+        "عنوان البريد الإلكتروني للإشعارات"
       ],
       "Numbers": [
         "الأرقام"
@@ -11159,6 +11193,9 @@
       "Thomas": [
         "توماس"
       ],
+      "Time format": [
+        "تنسيق الوقت"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "لمساعدتنا على التحسين، يُرجى توضيح سبب مغادرتك."
       ],
@@ -11228,6 +11265,9 @@
       "Weak password": [
         "كلمة مرور ضعيفة"
       ],
+      "Week start": [
+        "بداية الأسبوع"
+      ],
       "What happened?": [
         "ماذا حدث؟"
       ],
@@ -11272,11 +11312,6 @@
       ],
       "ZIP code": [
         "الرمز البريدي"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "رقم الهاتف الخاص بالاسترداد"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12996,6 +13031,9 @@
       ],
       "Switch plans?": [
         "هل تريد تبديل الخطط؟"
+      ],
+      "Unlock premium features by upgrading": [
+        "احصل على الميزات المميزة عن طريق الترقية"
       ]
     },
     "new_plans: Title": {
@@ -16748,9 +16786,6 @@
       "Last changed ${ formattedDate }": [
         "آخر تغيير ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "آخر تحديث ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "غير محفوظ"
       ],
@@ -16818,6 +16853,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "لجميع خدمات ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "الحصول على مساحة اضافية"
       ],
       "Storage used": [
         "مساحة التخزين المستخدمة"
@@ -18642,6 +18680,9 @@
       "Get help with an issue": [
         "الحصول على مساعدة بشأن مشكلة"
       ],
+      "Get more from your privacy suite": [
+        "الحصول على المزيد من مجموعة الخصوصية"
+      ],
       "Get more from your VPN": [
         "احصل على المزيد من VPN الخاص بك"
       ],
@@ -19387,6 +19428,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "معاملة ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "عمليات هجرة المؤسسات"
       ]
     },
     "Title header for addresses domain table": {
