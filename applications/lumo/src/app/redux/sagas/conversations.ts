@@ -29,6 +29,7 @@ import {
     cleanSerializedConversation,
     getSpaceDek,
 } from '../../types';
+import { mergeConversationFromRemote } from '../../util/conversationTitle';
 import {
     selectConversationById,
     selectConversationsBySpaceId,
@@ -398,6 +399,10 @@ export function* refreshConversationFromRemote({
     }
 
     const localConversation: Conversation | undefined = yield select(selectConversationById(localId));
+    const { conversation: mergedConversation, preserveLocalTitle } = mergeConversationFromRemote(
+        localConversation,
+        cleanRemote
+    );
 
     // Always persist the local->remote id mapping, even when the conversation object itself is
     // unchanged (equal in Redux/IDB) or dirty. Otherwise the mapping can be missing from IDB after
@@ -406,7 +411,7 @@ export function* refreshConversationFromRemote({
 
     if (localConversation) {
         const cleanLocal = cleanConversation(localConversation);
-        if (isEqual(cleanRemote, cleanLocal)) {
+        if (isEqual(mergedConversation, cleanLocal)) {
             console.log('refreshConversationFromRemote: received conv is the same as the one in Redux, noop');
             return;
         }
@@ -421,6 +426,17 @@ export function* refreshConversationFromRemote({
             );
             return;
         }
+    }
+
+    if (preserveLocalTitle) {
+        console.log(
+            `refreshConversationFromRemote: preserving local title for conversation ${localId} over stale remote metadata`
+        );
+        yield put(addConversation(mergedConversation));
+        return;
+    }
+
+    if (idbConversation) {
         const cleanSerializedRemote = cleanSerializedConversation(remoteConversation);
         const cleanSerializedLocal = cleanSerializedConversation(idbConversation);
         if (isEqual(cleanSerializedRemote, cleanSerializedLocal)) {
@@ -430,7 +446,7 @@ export function* refreshConversationFromRemote({
     }
 
     // Update locally
-    yield put(addConversation(cleanRemote)); // Redux
+    yield put(addConversation(mergedConversation)); // Redux
     yield call([dbApi, dbApi.updateConversation], remoteConversation, { dirty: false }); // IDB
 }
 

@@ -1,9 +1,8 @@
-import { c } from 'ttag';
-
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { findAgentById } from '../../features/agents/registry';
+import { getDefaultNewConversationTitle } from '../../util/conversationTitle';
 import {
     collectContextAttachmentIds,
     planRagAttachmentStorage,
@@ -900,7 +899,7 @@ export function initializeNewSpaceAndConversation(createdAt: string, isGhostMode
             addConversation({
                 id: conversationId,
                 spaceId,
-                title: c('collider_2025: Placeholder').t`New chat`,
+                title: getDefaultNewConversationTitle(),
                 createdAt,
                 updatedAt: createdAt,
                 status: ConversationStatus.GENERATING,
