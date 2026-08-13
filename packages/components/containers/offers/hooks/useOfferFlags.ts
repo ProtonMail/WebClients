@@ -4,7 +4,7 @@ import { hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import type { OfferConfig, OfferGlobalFeatureCodeValue } from '../interface';
 import { OfferUserFeatureCodeValue } from '../interface';
 
-const { Default, Visited, Hide, VisitedAgain } = OfferUserFeatureCodeValue;
+const { Default, Visited, Hide, ReplayConsumed } = OfferUserFeatureCodeValue;
 
 const useOfferFlags = (config: OfferConfig) => {
     const { feature: globalFlag, loading: globalFlagLoading } = useFeature<OfferGlobalFeatureCodeValue>(
@@ -18,34 +18,32 @@ const useOfferFlags = (config: OfferConfig) => {
 
     const userFlagValue = userFlag?.Value || Default;
 
+    const setBits = (mask: number) => {
+        const nextValue = setBit(userFlagValue, mask);
+        if (nextValue === userFlagValue) {
+            return;
+        }
+
+        return userFlagUpdate(nextValue);
+    };
+
     return {
         loading: globalFlagLoading || userFlagLoading,
         isActive: globalFlag?.Value?.[config.ID] === true && !hasBit(userFlagValue, Hide),
         isVisited: hasBit(userFlagValue, Visited),
-        isVisitedAgain: hasBit(userFlagValue, VisitedAgain),
+        isReplayConsumed: hasBit(userFlagValue, ReplayConsumed),
         handleHide: () => {
-            const nextValue = setBit(userFlagValue, Hide);
-            if (nextValue === userFlagValue) {
-                return;
-            }
-
-            return userFlagUpdate(nextValue);
+            return setBits(Hide);
         },
         handleVisit: () => {
-            const nextValue = setBit(userFlagValue, Visited);
-            if (nextValue === userFlagValue) {
-                return;
-            }
-
-            return userFlagUpdate(nextValue);
+            return setBits(Visited);
         },
-        handleVisitAgain: () => {
-            const nextValue = setBit(userFlagValue, VisitedAgain);
-            if (nextValue === userFlagValue) {
-                return;
-            }
-
-            return userFlagUpdate(nextValue);
+        /**
+         * Both bits have to be written together: two separate calls would each derive the next value from
+         * the same stale flag value.
+         */
+        handleVisitAndConsumeReplay: () => {
+            return setBits(Visited | ReplayConsumed);
         },
     };
 };
