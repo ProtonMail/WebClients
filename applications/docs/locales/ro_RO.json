@@ -951,6 +951,12 @@
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }"
+      ],
+      "Keep going": [
+        "Continuă"
+      ],
+      "Stop here": [
+        "Oprește aici"
       ]
     },
     "Actions message": {
@@ -6123,6 +6129,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Asta necesită mulți pași. Ar trebui să continui?"
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Pentru a ajuta la depanarea problemei, informațiile de depanare vor fi încărcate în Drive și partajate în siguranță cu echipa de asistență ${ BRAND_NAME }. Acestea pot include conținutul fișierelor. Puteți opri partajarea în orice moment, iar datele partajate sunt șterse după finalizarea revizuirii."
       ]
     },
     "info": {
@@ -6667,6 +6679,9 @@
       ],
       "Your password (trusted contact)": [
         "Parola dvs. (contact aprobat)"
+      ],
+      "Include debug information": [
+        "Includere informații depanare"
       ]
     },
     "Label for contact group color": {
@@ -7785,6 +7800,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces extins"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces limitat"
       ]
     },
     "new_plans: feature highlight": {
@@ -8486,6 +8507,12 @@
       ],
       "Your settings have been changed successfully": [
         "Setările au fost modificate cu succes."
+      ],
+      "Failed to submit report": [
+        "Trimiterea raportului a eșuat."
+      ],
+      "Report submitted successfully": [
+        "Raportul a fost trimis."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9291,6 +9318,9 @@
       ],
       "User Admin": [
         "Administrare utilizatori"
+      ],
+      "Organization Admin": [
+        "Administrator organizație"
       ]
     },
     "Role description": {
@@ -11037,6 +11067,12 @@
       ],
       "Your exposed information": [
         "Informații expuse"
+      ],
+      "Report issue": [
+        "Raportare problemă"
+      ],
+      "Still working on it": [
+        "Încă lucrez la asta"
       ]
     },
     "Title header for keys table": {
