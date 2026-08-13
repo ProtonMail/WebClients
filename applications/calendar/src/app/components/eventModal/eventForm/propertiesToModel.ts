@@ -1,6 +1,9 @@
-import { getVideoConferencingData } from '@proton/calendar/videoConferencing/helpers';
-import { PROTON_MEET_REGEX_LOCATION, getProtonMeetData } from '@proton/calendar/videoConferencing/protonMeetHelpers';
-import { removeVideoConfInfoFromDescription } from '@proton/calendar/videoConferencing/videoConfHelpers';
+import { getVideoConferencingData } from '@proton/calendar-video-conferencing/videoConferencing/helpers';
+import {
+    PROTON_MEET_REGEX_LOCATION,
+    getProtonMeetData,
+} from '@proton/calendar-video-conferencing/videoConferencing/protonMeetHelpers';
+import { removeVideoConfInfoFromDescription } from '@proton/calendar-video-conferencing/videoConferencing/videoConfHelpers';
 import { EVENT_VERIFICATION_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getVeventStatus } from '@proton/shared/lib/calendar/vcalHelper';

@@ -8,6 +8,7 @@ import { EmergencyContactSection } from '@proton/account/delegatedAccess/emergen
 import { RecoveryContactSection } from '@proton/account/delegatedAccess/recoveryContact/RecoveryContactSection';
 import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import { EasySwitchSettingsArea } from '@proton/activation';
+import { ThirdPartySection } from '@proton/calendar-video-conferencing/thirdParty/ThirdPartySection';
 import type { SectionConfig } from '@proton/components';
 import {
     AccessibilitySection,
@@ -43,7 +44,6 @@ import {
     SettingsSectionWide,
     SubscriptionsSection,
     ThemesSection,
-    ThirdPartySection,
     TwoFactorSection,
     UpsellModalTelemetryProvider,
     UsernameSection,

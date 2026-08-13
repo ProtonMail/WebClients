@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { useOAuthToken } from '@proton/activation/src/logic/oauthToken/hooks';
 import { ButtonLikeSizeEnum } from '@proton/atoms/Button/ButtonLike';
+import { ProviderAction } from '@proton/calendar-video-conferencing/thirdParty/ThirdPartyComponents';
+import { SupportedProviders } from '@proton/calendar-video-conferencing/thirdParty/interface';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { ProviderAction } from '@proton/components/containers/thirdParty/ThirdPartyComponents';
-import { SupportedProviders } from '@proton/components/containers/thirdParty/interface';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import ZoomLogo from '@proton/styles/assets/img/brand/zoom.svg';
 
