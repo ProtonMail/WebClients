@@ -22,6 +22,6 @@ export default {
             },
         ],
     },
-    collectCoverageFrom: ['**/*.ts'],
+    collectCoverageFrom: ['src/**/*.ts'],
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
 };
