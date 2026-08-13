@@ -516,6 +516,9 @@
       "Increase": [
         "Forøg"
       ],
+      "Keep going": [
+        "Fortsæt …"
+      ],
       "Keep my subscription": [
         "Bevar mit abonnement"
       ],
@@ -909,6 +912,9 @@
       "Stop": [
         "Stop"
       ],
+      "Stop here": [
+        "Stop her"
+      ],
       "Stop sharing": [
         "Stop deling"
       ],
@@ -929,6 +935,9 @@
       ],
       "Take a tour": [
         "Tag en tour"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Vis/skjul ${ LUMO_SHORT_APP_NAME }"
       ],
       "Toggle Calendar app": [
         "Skift Kalender-app"
@@ -4948,6 +4957,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } og ${ SHEETS_APP_NAME }-filer kan ikke downloades direkte og vil ikke blive inkluderet i dette download. Du kan downloade de andre filer ved at klikke på 'Fortsæt med at downloade'."
       ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } kunne ikke dekryptere det lokale søgeindeks. Genopbyg indekset for at gendanne søgningen."
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: billede i fuld størrelse"
       ],
@@ -5517,6 +5529,9 @@
       "High Priority": [
         "Høj prioritet"
       ],
+      "I have not finished this one yet.": [
+        "Denne er endnu ikke afsluttet"
+      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Jeg bekræfter hermed - i god tro - at informationer og udtalelser i rapporten er korrekte og fuldstændige."
       ],
@@ -5910,6 +5925,9 @@
       "Scan the QR code with your mobile device": [
         "Scan QR-koden med din mobilenhed"
       ],
+      "Search data can't be read": [
+        "Søge-data kan ikke læses"
+      ],
       "Select a destination folder": [
         "Vælg en destinationsmappe"
       ],
@@ -6059,6 +6077,9 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nu din ${ defaultEmailAddress } til afsendelse af nye beskeder."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Det her kræver meget... Skal det fortsætte?"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."
       ],
@@ -6125,6 +6146,9 @@
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "For at migrere denne bruger skal du tilføje og bekræfte e-mail-domænet under ${ domainNamesLink }"
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Aktivér kontoen for denne bruger i ${ provider.adminConsoleName } for at migrere dem."
+      ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
       ],
@@ -6133,6 +6157,12 @@
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "For at migrere denne bruger skal de acceptere deres invitation til at tilslutte sig ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Fjern denne bruger fra arkivet i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Ophæv suspenderingen af denne bruger i ${ provider.adminConsoleName } for at migrere dem."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
@@ -7876,6 +7906,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med udvidet adgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrænset adgang"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendere"
@@ -9412,6 +9448,9 @@
       "You will soon be redirected to verify your payment.": [
         "Du omdirigeres snart for at bekræfte din betaling."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta er blevet ændret til euro (€), fordi ${ IDEAL_BRAND_NAME } kun understøtter betalinger i euro."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta er blevet ændret til euro (€), fordi SEPA-bankoverførsler kun understøtter betalinger i euro."
       ],
@@ -9423,6 +9462,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Kunne ikke initialisere ${ IDEAL_BRAND_NAME }. Prøv igen senere."
+      ],
       "Invalid card number": [
         "Ugyldigt kortnummer"
       ],
@@ -9445,6 +9487,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Noget gik galt. Google Pay-bekræftelse mislykkedes."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ved at bekræfte denne betaling autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at instruere din bank om at debitere din konto tilsvarende. Du kan få en tilbagebetaling inden for 8 uger fra debiteringsdatoen, under betingelserne i din aftale med din bank."
       ]
     },
     "Payments.info": {
@@ -12006,6 +12053,9 @@
       "Stay for 50% off your next month": [
         "Bliv hængende for 50% rabat i den næste måned"
       ],
+      "Still working on it": [
+        "Arbejder stadig på det"
+      ],
       "Stop sharing": [
         "Stop deling"
       ],
@@ -12242,6 +12292,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Tilpas import for at reducere antallet af etiketter"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status for datamigration fra ${ providerName } til ${ BRAND_NAME }"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digital signering af e-mails hjælper med at bekræfte, at beskeder er sendt af dig"

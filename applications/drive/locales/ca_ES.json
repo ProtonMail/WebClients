@@ -602,6 +602,9 @@
       "Join album": [
         "Afegiu-me a l'àlbum"
       ],
+      "Keep going": [
+        "Continua"
+      ],
       "Keep my subscription": [
         "Mantén la subscripció"
       ],
@@ -651,7 +654,7 @@
         "Gestiona les etiquetes"
       ],
       "Manage share": [
-        "Gestiona la compartició"
+        "Gestionar la compartició"
       ],
       "Manage users/addresses": [
         "Gestiona usuaris/adreces"
@@ -924,7 +927,7 @@
         "Deseu la foto a la galeria"
       ],
       "Save photos and remove": [
-        "Desa les fotos i esborra"
+        "Desar les fotos i esborrar-les"
       ],
       "Scan & Download": [
         "Escaneja i descarrega"
@@ -1071,13 +1074,16 @@
         "Comença la importació"
       ],
       "Start recovering": [
-        "Començar a recuperar"
+        "Començar a recuperar-ho"
       ],
       "Stay": [
         "Mantenir"
       ],
       "Stop": [
         "Atura"
+      ],
+      "Stop here": [
+        "Parar aquí"
       ],
       "Stop sharing": [
         "Deixa de compartir"
@@ -1102,6 +1108,9 @@
       ],
       "This album is empty": [
         "Aquest àlbum està buit"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Tocar per alternar ${ LUMO_SHORT_APP_NAME }"
       ],
       "Toggle Calendar app": [
         "Canvia a l'aplicació Calendari"
@@ -3600,7 +3609,7 @@
         "Hi ha hagut un error en llegir el fitxer"
       ],
       "Expected structure attached": [
-        "Estructura esperada adjunta"
+        "S'adjunta l'estructura esperada"
       ],
       "Expiration date cannot be in the past": [
         "La data de caducitat no pot ser en el passat"
@@ -5234,7 +5243,7 @@
         "${ addressCount } adreces de correu electrònic"
       ],
       "${ albumName } has been successfully deleted": [
-        "S'ha eliminat ${ albumName }"
+        "S'ha eliminat ${ albumName } correctament"
       ],
       "${ albums } album": [
         "${ albums } àlbum",
@@ -5290,6 +5299,9 @@
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Els fitxers de ${ DOCS_APP_NAME } i ${ SHEETS_APP_NAME } no es poden descarregar directament i no s'inclouran en aquesta baixada. Podeu descarregar els altres fitxers fent clic a \"Continua la descàrrega\"."
+      ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } no ha pogut desxifrar l'índex de cerca local. Reconstruïu-lo per restaurar la cerca."
       ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
         "${ DRIVE_APP_NAME } ha detectat que l'índex de cerca local està malmès i ja no es pot utilitzar. Reconstruïu-lo per restaurar la cerca."
@@ -5583,7 +5595,7 @@
         "Segur que voleu eliminar completament de la paperera els elements seleccionats?"
       ],
       "Are you sure you want to proceed?": [
-        "Estàs segur que vols procedir?"
+        "Segur que voleu procedir?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Almenys ${ BETTER_PASSWORD_LENGTH } caràcters"
@@ -6004,6 +6016,9 @@
       "How does encrypted search work?": [
         "Com funciona la cerca xifrada?"
       ],
+      "I have not finished this one yet.": [
+        "Encara no he acabat aquesta."
+      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Per la present, confirmo de bona fe que la informació i les declaracions contingudes en l'informe són correctes i completes."
       ],
@@ -6081,7 +6096,7 @@
         "Indexat ${ first }"
       ],
       "Indexed ${ first } and ${ second }": [
-        "Indexat ${ first } i ${ second }"
+        "Indexats ${ first } i ${ second }"
       ],
       "Indexed ${ first }, ${ second } and ${ third }": [
         "Indexats ${ first }, ${ second } i ${ third }"
@@ -6416,7 +6431,7 @@
         "S'han desat les foto al Drive"
       ],
       "Photo was copied to stream and marked favorite there.": [
-        "La foto s’ha copiat al flux i s’hi ha marcat com a preferida."
+        "La foto s’ha copiat al flux i s’ha marcat com a preferida."
       ],
       "Photos have been successfully recovered.": [
         "S'han recuperat les fotos correctament."
@@ -6531,7 +6546,7 @@
         "La reindexació està en curs"
       ],
       "Ready to add some photos?": [
-        "Preparat per a afegir algunes fotos?"
+        "Preparat per afegir algunes fotos?"
       ],
       "RECOMMENDED": [
         "RECOMANAT"
@@ -6586,6 +6601,9 @@
       ],
       "Search cannot be enabled in this browser": [
         "No es pot activar la cerca en aquest navegador"
+      ],
+      "Search data can't be read": [
+        "No es poden llegir les dades de cerca"
       ],
       "Search data is corrupted": [
         "Les dades de cerca estan malmeses"
@@ -6957,7 +6975,7 @@
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Es tornarà a carregar l'aplicació."
       ],
       "Try searching by file name, date, or type.": [
-        "Intenteu cercar pel nom, data o tipus del fitxer."
+        "Intenteu cercar per nom, data o tipus del fitxer."
       ],
       "Unexpected download error": [
         "Hi ha hagut un error de descàrrega inesperat"
@@ -7002,7 +7020,7 @@
         "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
       ],
       "upgrade your storage": [
-        "millora el vostre emmagatzematge"
+        "millorar el vostre emmagatzematge"
       ],
       "Upload Failed": [
         "La càrrega ha fallat"
@@ -8219,7 +8237,7 @@
         "Què ha passat?"
       ],
       "Yes, I want to permanently delete my old files": [
-        "Sí, vull eliminar permanentment els meus fitxers antics"
+        "Sí, vull eliminar permanentment els fitxers antics"
       ],
       "Your alias": [
         "El vostre àlies"
@@ -8967,6 +8985,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés ampliat"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés limitat"
       ],
       "${ n } calendar": [
         "${ n } calendari",
@@ -9867,7 +9891,7 @@
         "S'ha eliminat \"${ ellipsedName }\""
       ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
-        "S'ha eliminat \"${ ellipsedName }\" de manera permanent de la paperera"
+        "S'ha eliminat \"${ ellipsedName }\" de la paperera de manera permanent"
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "No s'ha pogut crear \"${ ellipsedName }\""
@@ -10357,7 +10381,7 @@
         "Preferiu ${ DRIVE_APP_NAME } en mode clar o fosc? Seleccioneu el color que més us inspiri."
       ],
       "Drag and drop your files here": [
-        "Arrossegar i deixar anar els fitxers aquí"
+        "Arrossegueu i deixeu anar els fitxers aquí"
       ],
       "Edit documents online": [
         "Editeu documents en línia"
@@ -10384,7 +10408,7 @@
         "Allibereu espai al disc dur del vostre ordinador"
       ],
       "Get the desktop app": [
-        "Obteniu l'aplicació d'escriptori"
+        "Obtingueu l'aplicació d'escriptori"
       ],
       "Get the mobile app": [
         "Obtingueu l'aplicació mòbil"
@@ -10402,7 +10426,7 @@
         "S'ha acceptat la invitació"
       ],
       "Invitation received": [
-        "Invitació rebuda"
+        "S'ha rebut la invitació"
       ],
       "Invite team members": [
         "Convidar membres de l'equip"
@@ -10429,7 +10453,7 @@
         "Compartiu de manera segura els vostres fitxers i carpetes"
       ],
       "Share files & folders": [
-        "Comparteix fitxers i carpetes"
+        "Compartiu fitxers i carpetes"
       ],
       "Sync and access your files from anywhere": [
         "Sincronitzeu i accediu als vostres fitxers des de qualsevol lloc"
@@ -11948,7 +11972,7 @@
         "Ara els editors podran gestionar les comparticions i convidar altres persones. Podreu desactivar-ho quan vulgueu a les preferències de compartició."
       ],
       "Encrypted search is here": [
-        "Ha arribat la cerca xifrada"
+        "Ja tenim aquí la cerca xifrada"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ara podeu cercar fàcilment fitxers de Drive mentre manteniu les dades segures."
@@ -12491,7 +12515,7 @@
     },
     "Subtitle": {
       "Albums shared with you will appear here": [
-        "Els àlbums compartits amb vós apareixeran aquí."
+        "Els àlbums compartits us apareixeran aquí."
       ],
       "Albums you've shared will appear here": [
         "Els àlbums que heu compartit apareixeran aquí"
@@ -12763,7 +12787,7 @@
         "Captures de pantalla"
       ],
       "Selfies": [
-        "Autofotos"
+        "Autoretrats"
       ],
       "Videos": [
         "Vídeos"
@@ -13201,7 +13225,7 @@
         "Aconseguiu més emmagatzematge amb ${ MAIL_APP_NAME } Plus"
       ],
       "Get started with 10 minutes of free uploads, on the house.": [
-        "Comenceu amb 10 minuts de càrregues gratuïtes, de franc."
+        "Comenceu amb 10 minuts de càrregues gratuïtes, convida la casa."
       ],
       "Get the apps": [
         "Aconseguiu les aplicacions"
@@ -13343,7 +13367,7 @@
         "Tema de nit"
       ],
       "No albums shared with me": [
-        "Sense àlbums compartits amb mi"
+        "No hi ha cap àlbum compartit amb mi"
       ],
       "No breaches detected": [
         "No s'ha detectat cap infracció"
@@ -13352,10 +13376,10 @@
         "Sense ràfegues"
       ],
       "No favorites": [
-        "No hi ha favorits"
+        "No hi ha cap preferit"
       ],
       "No Live Photos": [
-        "Sense fotos en directe"
+        "No hi ha cap foto en directe"
       ],
       "No panorama": [
         "Sense fotos panoràmiques"
@@ -13609,6 +13633,9 @@
       ],
       "Stay for 50% off your next month": [
         "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
+      ],
+      "Still working on it": [
+        "S'hi està treballant encara"
       ],
       "Stop sharing": [
         "Deixa de compartir"
