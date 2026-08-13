@@ -930,6 +930,9 @@
       "Take a tour": [
         "Laissez-vous guider"
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Afficher ou masquer ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Toggle Calendar app": [
         "Basculer vers l'application Calendar"
       ],
@@ -3306,6 +3309,9 @@
         "Désélectionnez au moins ${ calendarsToFixCount } calendrier ou",
         "Désélectionnez au moins ${ calendarsToFixCount } calendriers ou"
       ],
+      "Device not found": [
+        "L'appareil est introuvable."
+      ],
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
       ],
@@ -3498,6 +3504,9 @@
       ],
       "Moving item to a non-folder is not allowed": [
         "Vous ne pouvez pas déplacer d'élément dans un élément qui n'est pas un dossier."
+      ],
+      "Moving root item is not allowed": [
+        "Le déplacement de l'élément racine n'est pas autorisé."
       ],
       "Name is required": [
         "Veuillez indiquer un nom."
@@ -4828,6 +4837,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Les fichiers ${ DOCS_APP_NAME } et ${ SHEETS_APP_NAME } ne peuvent pas être téléchargés directement et ne seront pas inclus dans ce téléchargement. Vous pouvez télécharger les autres fichiers en cliquant sur « Continuer le téléchargement »."
       ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "L'application ${ DRIVE_APP_NAME } n'a pas pu déchiffrer l'index de recherche local. Veuillez reconstruire l'index pour rétablir la recherche."
+      ],
       "${ fileName }: full-size image": [
         "${ fileName } : image en taille réelle"
       ],
@@ -4837,6 +4849,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "marque ${ IDEAL_BRAND_NAME }"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
@@ -5361,6 +5376,9 @@
       "finance": [
         "finance"
       ],
+      "Find out what can be migrated.": [
+        "Découvrez ce qui peut être migré."
+      ],
       "Folder will not be uploaded": [
         "Le dossier ne sera pas importé."
       ],
@@ -5588,6 +5606,9 @@
       "No results found": [
         "Aucun résultat n'a été trouvé."
       ],
+      "No users to display": [
+        "Il n'y a aucun utilisateur à afficher."
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Aucune des clés téléchargées n'est valide pour le chiffrement. Pour pouvoir envoyer des messages à cette adresse, veuillez télécharger une clé valide ou désactiver l'option Chiffrer les messages."
       ],
@@ -5783,6 +5804,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Scannez le QR code avec votre appareil mobile."
+      ],
+      "Search data can't be read": [
+        "Les données de recherche sont illisibles"
       ],
       "Select a destination folder": [
         "Sélectionner un dossier de destination"
@@ -6124,6 +6148,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Nous vous redirigerons vers ${ IDEAL_BRAND_NAME } dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
@@ -9256,6 +9283,9 @@
       "More plans are available in other currencies": [
         "D'autres abonnements sont disponibles dans d'autres devises."
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Payer avec ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Un moyen de paiement est requis pour que l'abonnement soit activé après la fin de la version d'essai."
       ],
@@ -9337,6 +9367,9 @@
       "You will soon be redirected to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Votre devise a été changée en euros (€) car ${ IDEAL_BRAND_NAME } prennent uniquement en charge les paiements en euros."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."
       ],
@@ -9348,6 +9381,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "L'initialisation de ${ IDEAL_BRAND_NAME } n'a pas abouti. Veuillez réessayer plus tard."
+      ],
       "Invalid card number": [
         "Le numéro de carte n’est pas valide."
       ],
@@ -9370,6 +9406,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Une erreur s'est produite. La vérification Google Pay n'a pas abouti."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8 semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
       ]
     },
     "Payments.info": {

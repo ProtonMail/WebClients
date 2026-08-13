@@ -3027,6 +3027,9 @@
       "Cannot share root folder": [
         "Kan inte dela rotmapp"
       ],
+      "Cannot verify the author of this file": [
+        "Kan inte verifiera författaren för denna fil"
+      ],
       "Cannot verify who uploaded this file": [
         "Kan inte verifiera vem som laddade upp denna fil"
       ],
@@ -3125,6 +3128,9 @@
       "Failed to fetch sharing info": [
         "Misslyckades att hämta delningsinformation"
       ],
+      "Failed to get inviter keys": [
+        "Misslyckades med att hämta inbjudningsnycklar"
+      ],
       "Failed to load 'My files' folder": [
         "Misslyckades att ladda mappen 'Mina filer'"
       ],
@@ -3163,6 +3169,9 @@
       ],
       "Failed to verify invitation": [
         "Misslyckades med att verifiera inbjudan"
+      ],
+      "File download failed due to empty response": [
+        "Filnedladdning misslyckades på grund av tomt svar"
       ],
       "File has no revision": [
         "Fil har ingen version"
@@ -3573,6 +3582,9 @@
       ],
       "Wrong billing address": [
         "Fel faktureringsadress"
+      ],
+      "You can create public links for your own files only": [
+        "Du kan endast skapa offentliga länkar för dina egna filer"
       ],
       "You can only upload a new version to a file": [
         "Du kan bara ladda upp en ny version till en fil"
@@ -6176,6 +6188,9 @@
       "Include application logs in bug report": [
         "Inkludera applikationsloggar i felrapport"
       ],
+      "Include debug information": [
+        "Inkludera felsökningsinformation"
+      ],
       "Include document name in notification": [
         "Inkludera dokumentnamn i avisering"
       ],
@@ -7085,6 +7100,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent med begränsad åtkomst"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -8077,6 +8095,9 @@
       "All items will soon be permanently deleted from trash": [
         "Alla objekt kommer snart att tas bort permanent från papperskorgen"
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Eftersom detta dokument var i en delad mapp kan endast mappens ägaren återställa det"
+      ],
       "Cannot load link": [
         "Kan inte ladda länk"
       ],
@@ -8140,6 +8161,9 @@
       "Failed to restore document": [
         "Misslyckades att återställa dokument"
       ],
+      "Failed to submit report": [
+        "Misslyckades med att skicka rapport"
+      ],
       "Failed to trash document": [
         "Misslyckades att slänga dokument"
       ],
@@ -8176,6 +8200,9 @@
       ],
       "Recent documents updated": [
         "Nya dokument har uppdaterats"
+      ],
+      "Report submitted successfully": [
+        "Rapport skickad"
       ],
       "Root folder failed to be loaded": [
         "Misslyckades att ladda rotmapp"
@@ -10537,6 +10564,9 @@
       ],
       "Report a problem": [
         "Rapportera ett problem"
+      ],
+      "Report issue": [
+        "Rapportera problem"
       ],
       "Request new code": [
         "Begär ny kod"

@@ -54,6 +54,59 @@
         "Vaše informácie sa našli v najmenej jednom úniku údajov. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
       ]
     },
+    "account_search_index": {
+      "12-word phrase": [
+        "12-slovná fráza"
+      ],
+      "Add address": [
+        "Pridať adresu"
+      ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
+      ],
+      "AI assistant": [
+        "AI asistent"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Downgrade to Free": [
+        "Znížiť na Free"
+      ],
+      "High-security mode": [
+        "Režim vysokej bezpečnosti"
+      ],
+      "Import events": [
+        "Importovať udalosti"
+      ],
+      "iOS and Android apps": [
+        "iOS a Android aplikácie"
+      ],
+      "Join organization": [
+        "Pripojiť sa k organizácii"
+      ],
+      "Leave group": [
+        "Opustiť skupinu"
+      ],
+      "Out of office": [
+        "Mimo pracoviska"
+      ],
+      "Password reset request": [
+        "Žiadosť o obnovenie hesla"
+      ],
+      "Recovery phone number": [
+        "Telefónne číslo pre obnovenie"
+      ],
+      "Referral link": [
+        "Odporúčací odkaz"
+      ],
+      "Telemetry": [
+        "Telemetria"
+      ],
+      "Trusted contact": [
+        "Dôveryhodný kontakt"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Účty"
@@ -62,6 +115,9 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
+      ],
+      "+${ remaining } more": [
+        "+${ remaining } ďalšie"
       ],
       "Accept": [
         "Prijať"
@@ -501,6 +557,9 @@
       "Decrease": [
         "Znížiť"
       ],
+      "Decrease licenses": [
+        "Znížiť počet licencií"
+      ],
       "Decrypt": [
         "Dešifrovať"
       ],
@@ -648,6 +707,9 @@
       "Download CSV sample": [
         "Stiahnuť ukážku CSV"
       ],
+      "Download daily breakdown (CSV)": [
+        "Stiahnuť denný prehľad (CSV)"
+      ],
       "Download for macOS": [
         "Stiahnuť pre macOS"
       ],
@@ -662,6 +724,9 @@
       ],
       "Download logs": [
         "Záznamy sťahovania"
+      ],
+      "Download monthly summary (CSV)": [
+        "Stiahnuť mesačný prehľad (CSV)"
       ],
       "Download our CSV template": [
         "Stiahnuť šablónu CSV"
@@ -801,17 +866,11 @@
       "Export as CSV": [
         "Exportovať ako CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "Exportovať vyúčtovanie podľa spoločností vo formáte ZIP"
-      ],
       "Export key": [
         "Export kľúča"
       ],
       "Export key before deleting": [
         "Pred zmazaním exportovať kľúč"
-      ],
-      "Export overview as CSV": [
-        "Exportovať prehľad ako CSV"
       ],
       "Extend": [
         "Rozšíriť"
@@ -1019,6 +1078,9 @@
       ],
       "Increase": [
         "Zvýšiť"
+      ],
+      "Increase licenses": [
+        "Zvýšiť počet licencií"
       ],
       "Insert": [
         "Vložit"
@@ -3765,6 +3827,9 @@
       ]
     },
     "Column header": {
+      "Billable licenses": [
+        "Licencie, za ktoré sa účtuje poplatok"
+      ],
       "Billing period": [
         "Fakturačné obdobie"
       ],
@@ -3774,17 +3839,17 @@
       "Managed companies": [
         "Spravované spoločnosti"
       ],
+      "Managers": [
+        "Správcovia"
+      ],
       "Status": [
         "Stav"
-      ],
-      "Total billed seats": [
-        "Celkom účtovaných licencií"
       ],
       "Total cost": [
         "Celkové náklady"
       ],
-      "Used / assigned seats": [
-        "Využité / priradené licencie"
+      "Used / allocated licenses": [
+        "Použité / pridelené licencie"
       ]
     },
     "Condition for custom filter": {
@@ -7483,6 +7548,9 @@
       "Please set up your organization before adding a company.": [
         "Pred pridaním spoločnosti si prosím najskôr nastavte svoju organizáciu."
       ],
+      "Please set up your organization identity before adding a company.": [
+        "Pred pridaním spoločnosti si nastavte identitu vašej organizácie, prosím."
+      ],
       "Please try again in a few moments.": [
         "Skúste to znova o chvíľu, prosím."
       ],
@@ -10579,6 +10647,9 @@
       "Allocated": [
         "Pridelené"
       ],
+      "Allocated licenses won't be billed while disabled": [
+        "Za pridelené licencie sa počas ich deaktivácie nebude účtovať žiadna suma"
+      ],
       "Allow logging of location and connection details": [
         "Povoliť zaznamenávanie polohy a podrobností o pripojení"
       ],
@@ -10722,9 +10793,6 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Požiadajte správcu organizácie o nastavenie brány."
-      ],
-      "Assigned seats won't be billed while disabled": [
-        "Za pridelené licencie sa nebude účtovať poplatok, pokiaľ sú deaktivované"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Najmenej ${ BETTER_PASSWORD_LENGTH } znakov"
@@ -10932,9 +11000,6 @@
       ],
       "Coming soon": [
         "Už čoskoro"
-      ],
-      "Companies you've been given access to manage.": [
-        "Spoločnosti, ku ktorým máte pridelené oprávnenie na správu."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Dokončite prihlásenie na tomto zariadení, aby ste mohli začať používať aplikáciu ${ VPN_APP_NAME } na vašej TV."
@@ -12099,6 +12164,9 @@
       ],
       "Manage how users can access your ${ BRAND_NAME } organization with single sign-on.": [
         "Nastavte, ako môžu používatelia pristupovať k vašej organizácii ${ BRAND_NAME } pomocou jednotného prihlásenia."
+      ],
+      "Manage the companies you're responsible for.": [
+        "Spravujte spoločnosti, za ktoré zodpovedáte."
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Spravujte, ku ktorým ${ BRAND_NAME } aplikáciám majú členovia vašej organizácie prístup. Ak je táto možnosť vypnutá, prístup budú mať len správcovia."
@@ -13621,6 +13689,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Ak je to možné, odporúčame vám používať oficiálne aplikácie ${ VPN_APP_NAME }."
       ],
+      "We bill you monthly by averaging the peak allocated licenses from each day over the month.": [
+        "Faktúry pre vás vystavujeme mesačne na základe priemeru maximálneho počtu pridelených licencií za každý deň v danom mesiaci."
+      ],
       "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Na váš email pre obnovenie vám môžeme poslať overovací kód na obnovenie hesla a kontaktovať vás, ak zaznamenáme podozrivú aktivitu."
       ],
@@ -13779,9 +13850,6 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Pomocou skupín môžete rýchlo a jednoducho posielať emaily všetkým ľuďom v určitej skupine."
-      ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "V prípade spravovaných spoločností môžete pridávať, upravovať a odoberať prístupové práva organizáciám, ktoré spravujete."
       ],
       "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
         "Pomocou VPN Professional môžu správcovia nastaviť pre všetkých členov organizácie režim vždy zapnutej VPN, spolu so súkromnými bránami, pravidlami prístupu a monitorovaním."
@@ -14067,9 +14135,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Pomocou stiahnutých súborov na obnovu nebudete môcť obnoviť uzamknuté údaje. Tým sa zakáže aj obnovenie na základe zariadenia."
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "Účtovanie bude prebiehať mesačne na základe priemerného počtu pridelených licencií."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
@@ -14998,6 +15063,9 @@
       "All-day event notifications": [
         "Notifikácie celodenných udalostí"
       ],
+      "Allocated licenses": [
+        "Pridelené licencie"
+      ],
       "Allow": [
         "Povoliť"
       ],
@@ -15097,9 +15165,6 @@
       "Assertion Consumer Service URL": [
         "URL adresa zákazníckej služby"
       ],
-      "Assigned seats": [
-        "Pridelené licencie"
-      ],
       "Attach public key": [
         "Pripojiť verejný kľúč"
       ],
@@ -15154,9 +15219,6 @@
       "Autosuggest": [
         "Automatické navrhovanie"
       ],
-      "Average": [
-        "Priemerne"
-      ],
       "Awarded": [
         "Ocenený"
       ],
@@ -15171,9 +15233,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Účtované ${ priceYearly } každých 12 mesiacov."
-      ],
-      "Billed average": [
-        "Priemerne fakturované"
       ],
       "Billed monthly.": [
         "Účtované mesačne."
@@ -15802,6 +15861,9 @@
       "Level for NetShield blocker filtering": [
         "Úroveň pre filtrovanie blokovania NetShield"
       ],
+      "Licenses usage": [
+        "Využitie licencií"
+      ],
       "Link label (optional)": [
         "Štítok odkazu (voliteľné)"
       ],
@@ -15888,6 +15950,9 @@
       ],
       "Monthly": [
         "Mesačne"
+      ],
+      "Monthly average": [
+        "Mesačný priemer"
       ],
       "More payment methods": [
         "Ďalšie možnosti platby"
@@ -16054,6 +16119,9 @@
       "Payment method": [
         "Spôsob platby"
       ],
+      "Peak allocated licenses": [
+        "Maximálny počet pridelených licencií"
+      ],
       "Pending": [
         "Čaká na spracovanie"
       ],
@@ -16191,12 +16259,6 @@
       ],
       "Search for a name or email": [
         "Vyhľadať meno alebo emailovú adresu"
-      ],
-      "Seats": [
-        "Licencie"
-      ],
-      "Seats usage": [
-        "Využitie licencií"
       ],
       "Second password": [
         "Druhé heslo"
@@ -24400,9 +24462,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "Posledná zmena ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Posledná aktualizácia ${ formattedUpdateDate }"
       ],
       "Not activated": [
         "Neaktivované"

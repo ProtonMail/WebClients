@@ -202,6 +202,9 @@
       "Collaborate on documents": [
         "Samenwerken aan documenten"
       ],
+      "Collapse folder": [
+        "Map samenvouwen"
+      ],
       "Collapse navigation bar": [
         "Navigatiebalk inklappen"
       ],
@@ -363,6 +366,9 @@
       "Download for Windows": [
         "Download voor Windows"
       ],
+      "Download info": [
+        "Info downloaden"
+      ],
       "Download logs": [
         "Logboeken downloaden"
       ],
@@ -515,6 +521,9 @@
       ],
       "Increase": [
         "Verhogen"
+      ],
+      "Keep going": [
+        "Blijf doorgaan"
       ],
       "Keep my subscription": [
         "Mijn abonnement behouden"
@@ -909,6 +918,9 @@
       "Stop": [
         "Stop"
       ],
+      "Stop here": [
+        "Hier stoppen"
+      ],
       "Stop sharing": [
         "Delen stoppen"
       ],
@@ -929,6 +941,9 @@
       ],
       "Take a tour": [
         "Volg een rondleiding"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Schakel ${ LUMO_SHORT_APP_NAME } in/uit"
       ],
       "Toggle Calendar app": [
         "Agenda app kiezen"
@@ -3181,6 +3196,9 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Bij het melden van inbreuk op auteursrechten of gestolen gegevens is een bericht vereist"
+      ],
       "A problem occurred, please try again.": [
         "Er is een probleem opgetreden, probeer het opnieuw."
       ],
@@ -3235,17 +3253,26 @@
       "Authentication error.": [
         "Verificatiefout."
       ],
+      "Bookmark password is not available": [
+        "Wachtwoord voor bladwijzer is niet beschikbaar"
+      ],
       "Calendar limit reached": [
         "Agendalimiet bereikt"
       ],
       "Cannot add photo to album without a valid name": [
         "Kan geen foto aan album toevoegen zonder een geldige naam"
       ],
+      "Cannot download a folder": [
+        "Kan een map niet downloaden"
+      ],
       "Cannot export this contact": [
         "Kan dit contact niet exporteren"
       ],
       "Cannot find move target": [
         "Kan geen doel voor verplaatsings vinden"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan het item niet verplaatsen zonder een geldige naam. Hernoem het item eerst"
       ],
       "Cannot share root folder": [
         "Kan hoofdmap niet delen"
@@ -3283,8 +3310,17 @@
       "Copying item to a non-folder is not allowed": [
         "Het kopiëren van een item naar een niet-map is niet toegestaan"
       ],
+      "Could not add to favorites": [
+        "Kon niet aan favorieten toevoegen"
+      ],
+      "Could not find an available name": [
+        "Kon geen beschikbare naam vinden"
+      ],
       "Could not load sharing details": [
         "Kan de deelgegevens niet laden"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Kan het afbeeldingsvoorbeeld niet laden: ${ message }"
       ],
       "Could not open created vault": [
         "Kon aangemaakte kluis niet openen"
@@ -3292,11 +3328,17 @@
       "Could not open updated vault": [
         "Kon bijgewerkte kluis niet openen"
       ],
+      "Could not read part of this file: ${ message }": [
+        "Kon een deel van dit bestand niet lezen: ${ message }"
+      ],
       "Could not unlock the parent folder": [
         "Kan de bovenliggende map niet ontgrendelen"
       ],
       "Could not unlock this item": [
         "Kan dit item niet ontgrendelen"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Het aanmaken van documenten in niet-mappen is niet toegestaan"
       ],
       "Creating files in non-folders is not allowed": [
         "Het aanmaken van bestanden in niet-mappen is niet toegestaan"
@@ -3342,6 +3384,9 @@
       "Error decrypting a computer": [
         "Fout bij het ontsleutelen van een computer"
       ],
+      "Expiration date cannot be in the past": [
+        "De vervaldatum mag niet in het verleden liggen"
+      ],
       "External accounts are not supported yet": [
         "Externe accounts worden nog niet ondersteund"
       ],
@@ -3369,6 +3414,9 @@
       "Failed to decrypt bookmark key: ${ message }": [
         "Kan de bladwijzersleutel niet decoderen: ${ message }"
       ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Kan bladwijzernaam niet decoderen: ${ message }"
+      ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Kan bladwijzerwachtwoord niet decoderen: ${ message }"
       ],
@@ -3377,6 +3425,12 @@
       ],
       "Failed to decrypt item name: ${ message }": [
         "Kan itemnaam niet ontsleutelen: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Kan sleutel knooppunt niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Kan de metagegevens van de revisie niet ontsleutelen"
       ],
       "Failed to expand folder": [
         "Map uitvouwen mislukt"
@@ -3416,6 +3470,9 @@
       ],
       "Failed to update public share node": [
         "Bijwerken van openbaar gedeeld knooppunt is mislukt"
+      ],
+      "Failed to verify invitation": [
+        "Kan de uitnodiging niet verifiëren"
       ],
       "File download failed due to empty response": [
         "Het downloaden van bestanden is mislukt vanwege een leeg antwoord"
@@ -3517,6 +3574,12 @@
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Ontbrekende handtekening voor ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Verplaatsingsbewerking afgebroken"
+      ],
       "Moving item to a non-folder is not allowed": [
         "Het is niet toegestaan ​​om een ​​item naar een niet-map te verplaatsen"
       ],
@@ -3568,11 +3631,20 @@
         "Eén van de groepen heeft geen contacten: ${ noContactGroupList }",
         "Sommige groepen hebben geen contacten: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Alleen beheerders kunnen externe uitnodigingen converteren"
+      ],
       "Operation aborted": [
         "Bewerking afgebroken"
       ],
       "Operation failed, try again later": [
         "Bewerking mislukt. Probeer het later opnieuw"
+      ],
+      "Organization does not have enough seats available": [
+        "De organisatie heeft niet voldoende zitplaatsen beschikbaar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisatie heeft niet voldoende opslagruimte beschikbaar"
       ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
@@ -3684,6 +3756,9 @@
       "Report failed to be sent": [
         "Rapport kon niet verzonden worden"
       ],
+      "Request aborted": [
+        "Verzoek afgebroken"
+      ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
@@ -3698,6 +3773,9 @@
       ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verificatie handtekening mislukt: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
         "Handtekeningverificatie voor ${ signatureType } mislukt"
@@ -3740,6 +3818,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Er is een fout opgetreden bij het ophalen van beschikbare domeinnamen"
+      ],
+      "Something went wrong, please try again later": [
+        "Er ging iets mis, probeer het later nog eens"
       ],
       "Something went wrong. Please try again.": [
         "Er is iets fout gegaan. Probeer het later nog eens."
@@ -3837,6 +3918,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
       ],
+      "Too many server errors, please try again later": [
+        "Te veel serverfouten. Probeer het later opnieuw"
+      ],
       "Too many server requests, please try again later": [
         "Te veel serververzoeken. Probeer het later opnieuw"
       ],
@@ -3888,11 +3972,17 @@
       "Verification keys for ${ signatureType } are not available": [
         "Verificatiesleutels voor ${ signatureType } zijn niet beschikbaar"
       ],
+      "We cannot retrieve this item": [
+        "We kunnen dit item niet raadplegen"
+      ],
       "We couldn’t send a verification code using this method.": [
         "We konden via deze methode geen verificatiecode verzenden."
       ],
       "We were not able to load some items": [
         "Enkele items konden niet geladen worden."
+      ],
+      "We were not able to load some search results": [
+        "Sommige zoekresultaten konden niet geladen worden."
       ],
       "We were not able to load the folder contents": [
         "De mapinhoud kon niet worden geladen"
@@ -3902,6 +3992,12 @@
       ],
       "You can create public links for your own files only": [
         "U kunt alleen openbare links voor uw eigen bestanden maken"
+      ],
+      "You can only leave items that are shared with you": [
+        "U kunt alleen items achterlaten die met u gedeeld zijn"
+      ],
+      "You can only upload a new version to a file": [
+        "U kunt alleen een nieuwe versie naar een bestand uploaden"
       ],
       "You can update a public link for your own files only": [
         "U kunt een openbare link alleen voor uw eigen bestanden bijwerken"
@@ -4078,6 +4174,9 @@
     "Error message": {
       "App currently unavailable": [
         "App momenteel niet beschikbaar"
+      ],
+      "Brace yourself till we get the error fixed.": [
+        "Zet u schrap tot we de fout hebben verholpen."
       ],
       "Error: ${ errorMessage }": [
         "Fout: ${ errorMessage }"
@@ -4795,11 +4894,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Bevat fouten"
+      ],
       "In progress": [
         "Bezig"
       ],
       "Migrated": [
         "Gemigreerd"
+      ],
+      "Pending": [
+        "In behandeling"
       ]
     },
     "Import warning": {
@@ -4824,6 +4929,10 @@
       "${ addressCount } email address": [
         "${ addressCount } e-mailadres",
         "${ addressCount } e-mailadressen"
+      ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } albums"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -4873,11 +4982,18 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } en ${ SHEETS_APP_NAME } bestanden kunnen niet direct worden gedownload en zullen niet worden opgenomen in deze download. U kunt de andere bestanden downloaden door te klikken op 'Doorgaan met downloaden'."
       ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } in de Play Store"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: afbeelding op volledige grootte"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: voorbeeld in lage resolutie"
+      ],
+      "${ folders } folder": [
+        "${ folders } map",
+        "${ folders } mappen"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } groep gevonden",
@@ -4885,6 +5001,10 @@
       ],
       "${ IDEAL_BRAND_NAME } mark": [
         "${ IDEAL_BRAND_NAME }-markering"
+      ],
+      "${ invitationsCount } pending invitation": [
+        "${ invitationsCount } uitnodiging in behandeling",
+        "${ invitationsCount } uitnodigingen in behandeling"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
@@ -4909,6 +5029,14 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }. De verlengingsprijs en de datum van uw ${ planTitle } abonnement blijven ongewijzigd."
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } item",
+        "${ photoCount } items"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } foto's"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
@@ -4950,6 +5078,9 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } vermeldingen"
       ],
       "${ storage } storage": [
         "${ storage } opslag"
@@ -5078,6 +5209,9 @@
       "Already in your library": [
         "Al aanwezig in uw bibliotheek"
       ],
+      "Also try looking in Trash.": [
+        "Probeer ook te zoeken in de Prullenbak."
+      ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
       ],
@@ -5101,6 +5235,9 @@
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Weet u zeker dat u de prullenbak wilt leegmaken en alle items permanent wilt verwijderen?"
+      ],
+      "Are you sure you want to permanently delete": [
+        "Weet u zeker dat u definitief wilt verwijderen"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Weet u zeker dat u \"${ itemName }\" permanent wilt verwijderen uit prullenbak?"
@@ -5156,6 +5293,9 @@
       "Can't move a folder into itself": [
         "Een map kan niet naar zichzelf worden verplaatst"
       ],
+      "Can't rename to same name": [
+        "Kan niet hernoemen naar dezelfde naam"
+      ],
       "Can't write into folder": [
         "Kan niet naar map schrijven"
       ],
@@ -5200,6 +5340,9 @@
       ],
       "Continue": [
         "Ga verder"
+      ],
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "Blijf ${ DRIVE_APP_NAME } gebruiken en ontgrendel de schijf later"
       ],
       "Copy the link to clipboard": [
         "Link kopiëren naar klembord"
@@ -5415,6 +5558,9 @@
       "Folder will not be uploaded": [
         "Folder zal niet worden ge-upload"
       ],
+      "Folders you sync from your computer will appear here.": [
+        "Mappen die u synchroniseert vanaf uw computer zullen hier verschijnen."
+      ],
       "for ${ price }": [
         "voor ${ price }"
       ],
@@ -5430,6 +5576,9 @@
       "Geoblocking": [
         "Geoblocking"
       ],
+      "Get the desktop app to sync files from your computer.": [
+        "Download de desktopapp om bestanden van uw computer te synchroniseren."
+      ],
       "Google Pay mark": [
         "Google Pay merk"
       ],
@@ -5444,6 +5593,9 @@
       ],
       "High Priority": [
         "Hoge Prioriteit"
+      ],
+      "I have not finished this one yet.": [
+        "Deze heb ik nog niet afgemaakt."
       ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Ik bevestig hierbij, te goeder trouw, dat de informatie en verklaringen in dit rapport juist en volledig zijn."
@@ -5615,6 +5767,13 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De meeste openbare wifi-netwerken zijn veilig, maar sommige zijn onveilig, waardoor u wordt blootgesteld aan cyberbedreigingen. Een VPN versleutelt uw verkeer en houdt u beschermd."
       ],
+      "Move ${ dragCount } item": [
+        "Verplaats ${ dragCount } item",
+        "Verplaats ${ dragCount } items"
+      ],
+      "My Links": [
+        "Mijn linken"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
@@ -5665,6 +5824,9 @@
       ],
       "On public WiFi networks": [
         "Op openbare wifinetwerken"
+      ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "Eén van uw versleutelde drives is vergrendeld. Dit is waarschijnlijk het gevolg van een recente wachtwoordwijziging."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
@@ -5805,6 +5967,9 @@
       "Public sharing of documents is not yet supported.": [
         "Publiek delen van documenten is nog niet ondersteund."
       ],
+      "Re-indexing in progress": [
+        "Bezig met opnieuw indexeren"
+      ],
       "RECOMMENDED": [
         "AANBEVOLEN"
       ],
@@ -5837,6 +6002,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Scan de QR-code met uw mobiele apparaat"
+      ],
+      "Search error": [
+        "Zoekfout"
       ],
       "Select a destination folder": [
         "Selecteer een doelmap"
@@ -5888,6 +6056,9 @@
       ],
       "Some items failed": [
         "Sommige items zijn mislukt"
+      ],
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Sommige bestanden zijn niet meer toegankelijk. Herstel de toegang tot uw bestanden. ${ StartRecoveryButton }"
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Sommige websites en streaming services blokkeren de inhoud per regio. Een VPN stelt u in staat om deze beperkingen te omzeilen en toegang tot het internet te krijgen."
@@ -5987,6 +6158,9 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Dit vergt veel stappen. Moet het doorgaan?"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
@@ -6053,8 +6227,14 @@
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "Om deze gebruiker te migreren, voegt u het e-maildomein toe en verifieert u het onder ${ domainNamesLink }"
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Om deze gebruiker te migreren, schakelt u zijn/haar account in uw ${ provider.adminConsoleName } in."
+      ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Als u deze gebruiker wilt migreren, schakelt u het account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u het adres in onder ${ usersAddressesLink }."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Om deze gebruiker te migreren, moet hij/zij de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
@@ -6073,6 +6253,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "U moet een of meerdere beschikbare openbare sleutels vertrouwen, als u adresverificatie wil gebruiken. Dit betreft ook de sleutels die u wil gebruiken voor het versturen. Het voorkomt dat er misbruik gemaakt wordt van de sleutels."
+      ],
+      "Today": [
+        "Vandaag"
       ],
       "Total email addresses": [
         "Totaal e-mailadressen"
@@ -6235,6 +6418,9 @@
       ],
       "Yes": [
         "Ja"
+      ],
+      "Yesterday": [
+        "Gisteren"
       ],
       "You": [
         "U"
@@ -6571,6 +6757,9 @@
       "App password": [
         "App-wachtwoord"
       ],
+      "Applications in a business setting": [
+        "Toepassingen in een zakelijke omgeving"
+      ],
       "Apply to all duplicated files": [
         "Toepassen op alle gedupliceerde bestanden"
       ],
@@ -6694,6 +6883,9 @@
       "Created": [
         "Aangemaakt"
       ],
+      "Created ${ created }": [
+        "Gemaakt op ${ created }"
+      ],
       "Credits": [
         "Tegoed"
       ],
@@ -6774,6 +6966,9 @@
       ],
       "Expires": [
         "Verloopt"
+      ],
+      "Expires ${ formatted }": [
+        "Verloopt op ${ formatted }"
       ],
       "Expiry": [
         "Vervaldatum"
@@ -6871,6 +7066,9 @@
       "Location": [
         "Locatie"
       ],
+      "Location: ${ item.location }": [
+        "Locatie: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Inloggen of registreren "
       ],
@@ -6891,6 +7089,9 @@
       ],
       "Modified": [
         "Gewijzigd"
+      ],
+      "Modified ${ modified }": [
+        "Gewijzigd op ${ modified }"
       ],
       "Move to Archive": [
         "Verplaats naar Archief"
@@ -7009,6 +7210,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
       ],
+      "Searchable": [
+        "Doorzoekbaar"
+      ],
       "Select type of abuse": [
         "Selecteer soort misbruik"
       ],
@@ -7095,6 +7299,9 @@
       ],
       "Upload picture": [
         "Afbeelding uploaden"
+      ],
+      "Upload your first file": [
+        "Upload uw eerste bestand"
       ],
       "Uploaded by": [
         "Geüpload door"
@@ -7806,6 +8013,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent met uitgebreide toegang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent met beperkte toegang"
       ],
       "${ n } calendar": [
         "${ n } agenda",
@@ -8731,6 +8944,10 @@
         "${ errors.length } item kon niet worden verwijderd",
         "${ errors.length } items konden niet verwijderd worden"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } item gekopieerd",
+        "${ numberOfItems } items gekopieerd"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item verwijderd",
         "${ numberOfItems } items verwijderd"
@@ -8795,6 +9012,9 @@
       "Contact group updated": [
         "Contactgroep bijgewerkt"
       ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopie van \"${ ellipsedName }\" verplaatst naar de prullenbak"
+      ],
       "Device failed to be removed": [
         "Apparaat kon niet worden verwijderd"
       ],
@@ -8818,6 +9038,12 @@
       ],
       "Failed to reject share invitation": [
         "Weigeren van deel-uitnodiging mislukt"
+      ],
+      "Failed to remove device": [
+        "Verwijderen van apparaat mislukt"
+      ],
+      "Failed to rename device": [
+        "Apparaat hernoemen mislukt"
       ],
       "Invitation's email was sent again": [
         "Uitnodigingsmail is opnieuw verzonden"
@@ -9017,6 +9243,19 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Welkom bij ${ appName }"
+      ]
+    },
+    "Onboarding Action": {
+      "Upload file": [
+        "Bestand uploaden"
+      ]
+    },
+    "Onboarding Info": {
+      "Scan the QR code to install the mobile app": [
+        "Scan de QR-code om de mobiele app te installeren"
+      ],
+      "Secure your files": [
+        "Beveilig uw bestanden"
       ]
     },
     "Onboarding Trial": {
@@ -9554,6 +9793,9 @@
       "Enter a name": [
         "Voer een naam in"
       ],
+      "Enter a new file name": [
+        "Geef een nieuwe bestandsnaam op"
+      ],
       "Enter a new folder name": [
         "Voer een nieuwe naam in"
       ],
@@ -9714,6 +9956,9 @@
       "attributes": [
         "attributen"
       ],
+      "content key": [
+        "inhoud sleutel"
+      ],
       "hash key": [
         "hash sleutel"
       ],
@@ -9722,6 +9967,9 @@
       ],
       "membership": [
         "lidmaatschap"
+      ],
+      "name": [
+        "naam"
       ]
     },
     "Property type": {
@@ -11025,6 +11273,9 @@
     "Subtitle": {
       "Shared by ${ sharedBy }": [
         "Gedeeld door ${ sharedBy }"
+      ],
+      "Your RAW photos will appear here": [
+        "Uw RAW foto's zullen hier weergegeven worden"
       ]
     },
     "Success": {
@@ -11182,6 +11433,9 @@
       "Fingerprint": [
         "Vingerafdruk"
       ],
+      "Migration status": [
+        "Migratiestatus"
+      ],
       "Name": [
         "Naam"
       ],
@@ -11225,6 +11479,11 @@
       ],
       "vCard field": [
         "vCard-veld"
+      ]
+    },
+    "Tag": {
+      "Portraits": [
+        "Portretfoto's"
       ]
     },
     "Time unit": {
@@ -11304,6 +11563,9 @@
       ],
       "Album details": [
         "Album gegevens"
+      ],
+      "Albums": [
+        "Albums"
       ],
       "All settings": [
         "Alle instellingen"
@@ -11391,6 +11653,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Bevestig verlies van ${ BRAND_NAME }-bonussen"
+      ],
+      "Confirmation required": [
+        "Bevestiging vereist"
       ],
       "Connect apps and devices": [
         "Apps en apparaten verbinden"
@@ -11608,6 +11873,10 @@
       "Folder details": [
         "Map details"
       ],
+      "Found ${ resultCount } result": [
+        "${ resultCount } zoekresultaat",
+        "${ resultCount } zoekresultaten"
+      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Krijg **${ referralInfo.uiData.refereeRewardAmount }** in tegoed met ${ planTitle }"
       ],
@@ -11693,6 +11962,9 @@
       "Location": [
         "Locatie"
       ],
+      "Logs": [
+        "Logs"
+      ],
       "Make a secure connection your default": [
         "Maak een beveiligde verbinding uw standaard"
       ],
@@ -11749,6 +12021,9 @@
       ],
       "Number of downloads": [
         "Aantal downloads"
+      ],
+      "Number of items": [
+        "Aantal items"
       ],
       "One email, many recipients": [
         "Één e-mail, veel ontvangers"
@@ -11942,6 +12217,9 @@
       "Stay for 50% off your next month": [
         "Blijf en ontvang 50% korting op uw volgende maand"
       ],
+      "Still working on it": [
+        "Er wordt nog steeds aan gewerkt"
+      ],
       "Stop sharing": [
         "Delen stoppen"
       ],
@@ -12089,6 +12367,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
       ],
+      "What are you migrating?": [
+        "Wat migreert u?"
+      ],
       "What can a VPN protect you from?": [
         "Waartegen kan een VPN u beschermen?"
       ],
@@ -12173,6 +12454,9 @@
       "Customize import to reduce the number of labels": [
         "Import aanpassen om het aantal labels te verminderen"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status gegevensmigratie van ${ providerName } naar ${ BRAND_NAME }"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitaal ondertekenen van e-mails helpt bij het verifiëren van berichten die door u zijn verzonden"
       ],
@@ -12244,6 +12528,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
       ],
       "Version 6 OpenPGP key": [
         "Versie 6 OpenPGP-sleutel"

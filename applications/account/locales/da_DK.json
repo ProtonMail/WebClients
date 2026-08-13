@@ -801,17 +801,11 @@
       "Export as CSV": [
         "Eksportér som CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "Eksportér opsummering efter virksomhed som ZIP"
-      ],
       "Export key": [
         "Eksportér nøgle"
       ],
       "Export key before deleting": [
         "Eksportér nøgle før sletning"
-      ],
-      "Export overview as CSV": [
-        "Eksportér oversigt som CSV"
       ],
       "Extend": [
         "Forlæng"
@@ -1211,6 +1205,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
+      ],
+      "Open ${ company.name } manually": [
+        "Åbn ${ company.name } manuelt"
       ],
       "Open ${ PASS_APP_NAME } in your browser": [
         "Åbn ${ PASS_APP_NAME } i din browser"
@@ -1631,6 +1628,9 @@
       ],
       "Sign in": [
         "Log ind"
+      ],
+      "Sign in to ${ providerName }": [
+        "Log ind på ${ providerName }"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Log ind på ${ BRAND_NAME }"
@@ -3719,14 +3719,8 @@
       "Status": [
         "Status"
       ],
-      "Total billed seats": [
-        "Antal fakturerede pladser"
-      ],
       "Total cost": [
         "Pris i alt"
-      ],
-      "Used / assigned seats": [
-        "Anvendte / tildelte pladser"
       ]
     },
     "Condition for custom filter": {
@@ -5327,6 +5321,9 @@
     "Disable address prompt": {
       "Are you sure you want to disable this address?": [
         "Er du sikker på, at du vil deaktivere denne adresse?"
+      ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Ved at deaktivere denne adresse ${ address }, vil det ikke længere være muligt for medlemmet at sende eller modtage e-mails via denne adresse, og alle tilknyttede ${ BRAND_NAME }-produkter deaktiveres."
       ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Ved at deaktivere denne adresse ${ address } vil det ikke længere være muligt at sende eller modtage e-mails via denne adresse, og alle tilknyttede ${ BRAND_NAME }-produkter deaktiveres."
@@ -9980,6 +9977,9 @@
         "${ providerFoldersNumLocalized } etiket fundet i Gmail",
         "${ providerFoldersNumLocalized } etiketter fundet i Gmail"
       ],
+      "${ providerName } account": [
+        "${ providerName }-konto"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server er stadig ved at blive sat op. Det tager normalt omkring ${ provisioningDuration }.",
         "${ provisioningCounter } servere er stadig ved at blive sat op. Det tager normalt omkring ${ provisioningDuration }."
@@ -10023,6 +10023,9 @@
       ],
       "${ storage } storage": [
         "${ storage } lagerplads"
+      ],
+      "${ storeName } app to copy data to ${ BRAND_NAME }": [
+        "${ storeName } app for at kopiere data til ${ BRAND_NAME }"
       ],
       "${ total } user found": [
         "${ total } bruger fundet",
@@ -10465,9 +10468,6 @@
       "Ask your organization admin to setup Gateways.": [
         "Bed din organisationsadministrator om at indstille gateways."
       ],
-      "Assigned seats won't be billed while disabled": [
-        "Tildelte pladser bliver ikke faktureret når de er deaktiverede"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindst ${ BETTER_PASSWORD_LENGTH } tegn"
       ],
@@ -10668,9 +10668,6 @@
       ],
       "Coming soon": [
         "Kommer snart"
-      ],
-      "Companies you've been given access to manage.": [
-        "Virksomheder som du har adgang til at administrere."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Fuldfør login på denne enhed for at begynde at bruge ${ VPN_APP_NAME } på dit TV."
@@ -11113,6 +11110,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sørg for privat og krypteret kommunikation. Gør krav på din gratis ${ BRAND_NAME } e-mailadresse nu."
       ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and ${ providerBrand } simultaneously for the duration of the migration.": [
+        "Sørg for at dine e-mails når indbakken, og ikke spammappen. Ved at opdatere SPF kan brugere sende e-mails fra ${ BRAND_NAME } og ${ providerBrand } på samme tid under hele migrationen."
+      ],
       "Ensure your organization is always protected": [
         "Sørg for at din organisation altid er beskyttet"
       ],
@@ -11181,6 +11181,9 @@
       ],
       "Event invitations and responses will be sent in this language.": [
         "Invitationer til begivenheder og svar vil blive afsendt på dette sprog."
+      ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their ${ mailAppName } inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Alle får det samme invitationslink. De besøger siden, indtaster deres e-mail, og får en bekræftelseskode i deres ${ mailAppName }-indbakke. Derfra angiver de deres adgangskode til ${ BRAND_NAME }."
       ],
       "Everything in ${ planOrAppName }": [
         "Alt i ${ planOrAppName }"
@@ -12464,6 +12467,9 @@
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
       ],
+      "Setting up your access…": [
+        "Konfigurerer adgangen…"
+      ],
       "Setting up your new address…": [
         "Konfigurerer din nye adresse…"
       ],
@@ -12518,6 +12524,9 @@
       ],
       "Sign-in complete": [
         "Login fuldført"
+      ],
+      "Sign-in with a ${ providerName } administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Log ind med en ${ providerName }-administratorkonto til ${ BRAND_NAME } for at konfigurere migrationen."
       ],
       "Signed up": [
         "Tilmelde sig"
@@ -12942,6 +12951,9 @@
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "For at undgå tab af data skal du kun slette den, hvis du ved, hvad du gør, eller hvis du har eksporteret en kopi."
       ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the ${ storeName }. After installing it, come back here to continue.": [
+        "Installer ${ BRAND_NAME } Easy Switch fra ${ storeName } for at overføre din organisations data til ${ BRAND_NAME }. Kom tilbage her efter det er installeret for at fortsætte."
+      ],
       "To cancel your subscription, please reach out to us.": [
         "Kontakt os for at opsige dit abonnement."
       ],
@@ -12999,6 +13011,9 @@
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "For at migrere denne bruger skal du tilføje og bekræfte e-mail-domænet under ${ domainNamesLink }"
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Aktivér kontoen for denne bruger i ${ provider.adminConsoleName } for at migrere dem."
+      ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
       ],
@@ -13007,6 +13022,12 @@
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "For at migrere denne bruger skal de acceptere deres invitation til at tilslutte sig ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Fjern denne bruger fra arkivet i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Ophæv suspenderingen af denne bruger i ${ provider.adminConsoleName } for at migrere dem."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "For at forhindre misbrug eller svindel beder vi om en minimumsdonation på ${ minimumDonation }. Dette støtter ${ protonFoundationLink } arbejde for at forsvare digitalt privatliv globalt og hjælper med at beskytte den næste generation."
@@ -13437,9 +13458,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Med grupper kan du hurtigt og nemt sende mails til alle personer i en bestemt gruppe."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Med administrerede virksomheder kan du tilføje, redigere og fjerne adgang for organisationer, du fører tilsyn med."
-      ],
       "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
         "Med VPN Professional kan administratorer håndhæve always-on VPN for alle organisationsmedlemmer, sammen med private gateways, adgangspolitikker og overvågning."
       ],
@@ -13707,9 +13725,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Det er ikke muligt at gendanne låste data ved hjælp af dine downloadede gendannelsesfiler. Dette deaktiverer også enhedsbaseret gendannelse."
       ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "Du bliver faktureret månedligt baseret på det gennemsnitlige antal tildelte pladser."
-      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du vil modtage kreditten 1 måned efter at din ven abonnerer på et årligt abonnement, og 2 måneder efter de abonnerer på et månedligt abonnement."
       ],
@@ -13722,6 +13737,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Du vil derefter blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }. Du kan til enhver tid annullere.",
         "Du vil derefter blive faktureret hver ${ renewCycle } måned til ${ renewAmountStr }. Du kan annullere når som helst."
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on ${ mailAppName } and the migration will be completed.": [
+        "Du er næsten færdig. Du skal bare konfigurere dit domæne til at modtage e-mails direkte på ${ BRAND_NAME }. Når det er blevet bekræftet vil dit team ikke længere modtage nye e-mails på ${ mailAppName }, og dermed er migrationen slut."
       ],
       "You're now signed in on your TV.": [
         "Du er nu logget ind på dit TV."
@@ -13768,6 +13786,9 @@
       ],
       "Your Always-on VPN device profile is ready to deploy.": [
         "Din konstante VPN enhedsprofil er klar til at blive aktiveret."
+      ],
+      "Your browser blocked the new tab.": [
+        "Din browser blokerede den nye fane."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
@@ -13986,6 +14007,11 @@
     "Input placeholder": {
       "Add label": [
         "Tilføj etiket"
+      ]
+    },
+    "Invitation message": {
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your ${ mailAppName }.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and ${ mailAppName }.\nThen, when everyone has made the move, we will retire ${ mailAppName }. We'll remind you before it does.": [
+        "Vi flytter til ${ BRAND_NAME }, en sikker e-mailtjeneste.\nOg din ${ BRAND_NAME }-konto er klar til at blive indløst.\nKlik på ${ inviteLink }.\nIndtast din e-mailadresse, og så sender vi dig en kode til din ${ mailAppName }.\nBrug koden til at angive dit kodeord – og derefter har du din egen ${ BRAND_NAME }-konto.\nI en kort periode, vil begge kunne bruges samtidig. ${ BRAND_NAME } og ${ mailAppName }.\nDerefter, når alle er flyttet, udfases ${ mailAppName }. Vi giver dig besked før det sker."
       ]
     },
     "invitation status": {
@@ -14702,9 +14728,6 @@
       "Assertion Consumer Service URL": [
         "URL-adresse til forbrugertjeneste"
       ],
-      "Assigned seats": [
-        "Tildelte pladser"
-      ],
       "Attach public key": [
         "Vedhæft offentlig nøgle"
       ],
@@ -14759,9 +14782,6 @@
       "Autosuggest": [
         "Auto-forslag"
       ],
-      "Average": [
-        "Gennemsnitlig"
-      ],
       "Awarded": [
         "Belønnet"
       ],
@@ -14776,9 +14796,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Faktureres med ${ priceYearly } hver 12. måned."
-      ],
-      "Billed average": [
-        "Faktureret gennemsnit"
       ],
       "Billed monthly.": [
         "Faktureres månedligt."
@@ -15794,12 +15811,6 @@
       ],
       "Search for a name or email": [
         "Søg efter navn eller e-mail"
-      ],
-      "Seats": [
-        "Pladser"
-      ],
-      "Seats usage": [
-        "Forbrug af pladser"
       ],
       "Second password": [
         "Anden adgangskode"
@@ -17639,6 +17650,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med udvidet adgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrænset adgang"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -20240,6 +20257,9 @@
       "You will soon be redirected to verify your payment.": [
         "Du omdirigeres snart for at bekræfte din betaling."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta er blevet ændret til euro (€), fordi ${ IDEAL_BRAND_NAME } kun understøtter betalinger i euro."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta er blevet ændret til euro (€), fordi SEPA-bankoverførsler kun understøtter betalinger i euro."
       ],
@@ -20251,6 +20271,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Kunne ikke initialisere ${ IDEAL_BRAND_NAME }. Prøv igen senere."
+      ],
       "Invalid card number": [
         "Ugyldigt kortnummer"
       ],
@@ -20273,6 +20296,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Noget gik galt. Google Pay-bekræftelse mislykkedes."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ved at bekræfte denne betaling autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at instruere din bank om at debitere din konto tilsvarende. Du kan få en tilbagebetaling inden for 8 uger fra debiteringsdatoen, under betingelserne i din aftale med din bank."
       ]
     },
     "Payments.info": {
@@ -21941,6 +21969,9 @@
       "${ usersText } and ${ groupsText } synced.": [
         "${ usersText } og ${ groupsText } synkroniseret."
       ],
+      "**Groups you already set up** in your identity provider are imported automatically.": [
+        "**Grupper der allerede er konfigureret** i din identitetsudbyder bliver importeret automatisk."
+      ],
       "**You'll be able to review** group changes before they take effect to confirm they're intentional": [
         "**Du kan gennemgå** ændringer til grupper før de træder i kraft for at bekræfte at ændringerne er bevidste"
       ],
@@ -21979,6 +22010,9 @@
       ],
       "What to expect now that group sync is enabled": [
         "Her er hvad du kan forvente nu når gruppesynkronisering er aktiveret"
+      ],
+      "You can now sync groups alongside users. Changes push **automatically** when you update your groups on your identity provider.": [
+        "Du kan nu synkronisere grupper sideløbende med brugere. Ændringerne bliver synkroniseret **automatisk** når du opdaterer dine grupper hos din identitetsudbyder."
       ]
     },
     "scim: Action": {
@@ -23729,9 +23763,6 @@
       "Last changed ${ formattedDate }": [
         "Sidst ændret ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Sidst opdateret ${ formattedUpdateDate }"
-      ],
       "Not activated": [
         "Ikke aktiveret"
       ],
@@ -25406,6 +25437,9 @@
       "Ask your emergency contacts for help": [
         "Spørg dine nødkontakter om hjælp"
       ],
+      "Authenticate your ${ providerName } account": [
+        "Godkend din ${ providerName }-konto"
+      ],
       "Auto-deletion is active": [
         "Automatisk sletning er aktiv"
       ],
@@ -26318,6 +26352,9 @@
       ],
       "Migrate accounts to ${ BRAND_NAME }": [
         "Migrer konti til ${ BRAND_NAME }"
+      ],
+      "Migrate from ${ providerName }": [
+        "Migrer fra ${ providerName }"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Flyt din organisation til ${ BRAND_NAME }"
@@ -27376,6 +27413,9 @@
       "Customize import to reduce the number of labels": [
         "Tilpas import for at reducere antallet af etiketter"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status for datamigration fra ${ providerName } til ${ BRAND_NAME }"
+      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Slet beskeder i papirkurven og spam efter 30 dage. Hvis du slår automatisk sletning til, får beskeder, der allerede er i papirkurven/spam, en sletningsdato baseret på den dato de blev flyttet dertil."
       ],
@@ -27471,6 +27511,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Original IP-adresse og Internetudbyder (ISP)"
+      ],
+      "Reauthenticate your ${ providerName } account to start a migration": [
+        "Log ind igen på din ${ providerName }-konto igen for at starte en migration"
       ],
       "Remove metadata from images to protect your privacy.": [
         "Fjern metadata fra billeder for at beskytte dit privatliv."
@@ -28514,6 +28557,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi fandt et problem med din DNS-konfiguration. Sørg for, at dine poster matcher instruktionerne nedenfor. Hvis problemet fortsætter, er vi nødt til at slå DKIM-signering fra."
+      ],
+      "We were unable to verify the installation, please check that you have installed it in your ${ providerName } account and try again.": [
+        "Vi kunne ikke verificere installationen. Kontrollér, at du har installeret den i din ${ providerName }-konto, og prøv igen."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Vi har bemærket at nogle brugere ikke har oprettet deres ${ BRAND_NAME }-konti."

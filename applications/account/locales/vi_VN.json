@@ -777,17 +777,11 @@
       "Export as CSV": [
         "Xuất dưới dạng CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "Xuất bảng phân tích chi tiết theo công ty dưới dạng ZIP"
-      ],
       "Export key": [
         "Xuất khóa"
       ],
       "Export key before deleting": [
         "Xuất khóa trước khi xóa"
-      ],
-      "Export overview as CSV": [
-        "Xuất bảng tổng quan dưới dạng CSV"
       ],
       "Extend": [
         "Gia hạn"
@@ -3613,14 +3607,8 @@
       "Status": [
         "Trạng thái"
       ],
-      "Total billed seats": [
-        "Tổng số chỗ được tính phí"
-      ],
       "Total cost": [
         "Tổng chi phí"
-      ],
-      "Used / assigned seats": [
-        "Chỗ đã sử dụng / được chỉ định"
       ]
     },
     "Condition for custom filter": {
@@ -9859,9 +9847,6 @@
       "Ask your organization admin to setup Gateways.": [
         "Yêu cầu quản trị viên tổ chức thiết lập Cổng."
       ],
-      "Assigned seats won't be billed while disabled": [
-        "Các chỗ đã chỉ định sẽ không bị tính phí khi bị vô hiệu hóa"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Ít nhất ${ BETTER_PASSWORD_LENGTH } ký tự"
       ],
@@ -12586,9 +12571,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Với nhóm, có thể gửi email nhanh chóng và dễ dàng cho tất cả mọi người trong một nhóm cụ thể."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Với các công ty được quản lý, có thể thêm, chỉnh sửa và hủy quyền truy cập của các tổ chức được giám sát."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Với gói hiện tại, chỉ có thể nhận thư bằng địa chỉ @pm.me. Nâng cấp để gửi thư và tạo thêm địa chỉ dùng @pm.me."
       ],
@@ -12834,9 +12816,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Sẽ không thể khôi phục dữ liệu bị khóa bằng các tệp khôi phục đã tải xuống. Việc này cũng sẽ vô hiệu hóa khôi phục dựa trên thiết bị."
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "Chi phí sẽ được tính hàng tháng dựa trên số lượng chỗ được chỉ định trung bình."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Phần thưởng tín dụng sẽ nhận được sau 1 tháng kể từ khi bạn bè đăng ký gói năm và sau 2 tháng kể từ khi họ đăng ký gói tháng."
@@ -13802,9 +13781,6 @@
       "Assertion Consumer Service URL": [
         "URL Dịch vụ khách hàng xác nhận"
       ],
-      "Assigned seats": [
-        "Chỗ được chỉ định"
-      ],
       "Attach public key": [
         "Đính kèm khóa công khai"
       ],
@@ -13859,9 +13835,6 @@
       "Autosuggest": [
         "Tự động đề xuất"
       ],
-      "Average": [
-        "Trung bình"
-      ],
       "Awarded": [
         "Đã thưởng"
       ],
@@ -13873,9 +13846,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Được tính phí ${ priceYearly } mỗi 12 tháng."
-      ],
-      "Billed average": [
-        "Mức trung bình được tính phí"
       ],
       "Billed monthly.": [
         "Thanh toán hàng tháng."
@@ -14851,12 +14821,6 @@
       ],
       "Search for a name or email": [
         "Tìm kiếm tên hoặc email"
-      ],
-      "Seats": [
-        "Chỗ"
-      ],
-      "Seats usage": [
-        "Mức sử dụng chỗ"
       ],
       "Second password": [
         "Mật khẩu thứ hai"
@@ -22539,9 +22503,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "Thay đổi lần cuối lúc ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Cập nhật lần cuối ngày ${ formattedUpdateDate }"
       ],
       "Not saved": [
         "Chưa lưu"

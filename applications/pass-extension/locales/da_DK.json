@@ -877,8 +877,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Et e-mailalias fungerer som en e-mailadresse, men reducerer spam og holder din faktiske e-mailadresse og identitet skjult."
       ],
+      "Change these passwords immediately": [
+        "Skift disse adgangskoder med det samme"
+      ],
       "Change your passwords": [
         "Skift dine adgangskoder"
+      ],
+      "Check if your passwords have been exposed": [
+        "Tjek om dine adgangskoder er blevet afsløret"
       ],
       "Create unique passwords": [
         "Opret unikke adgangskoder"
@@ -936,6 +942,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Denne konto er sårbar, besøg tjenesten og skift din adgangskode."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Denne adgangskode optræder i et databrud. Besøg tjenesten og skift adgangskoden."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denne tjeneste tilbyder 2FA. Aktivér det for at få ekstra kontosikkerhed."
@@ -2235,7 +2244,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -4819,6 +4829,12 @@
       "Clear clipboard": [
         "Ryd udklipsholder"
       ],
+      "Compromised password": [
+        "Kompromitteret adgangskode"
+      ],
+      "Compromised passwords": [
+        "Kompromitteret adgangskoder"
+      ],
       "Confirm extra password": [
         "Bekræft ekstra adgangskode"
       ],
@@ -5050,6 +5066,9 @@
       "No access tokens yet": [
         "Ingen adgangstokens endnu"
       ],
+      "No compromised passwords": [
+        "Ingen kompromitterede adgangskoder"
+      ],
       "No excluded items": [
         "Ingen ekskluderede elementer"
       ],
@@ -5228,6 +5247,9 @@
       ],
       "Update available": [
         "Opdatering tilgængelig"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Opgrader for at tjekke for kompromitterede adgangskoder"
       ],
       "URL matching": [
         "URL-matching"

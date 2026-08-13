@@ -32,6 +32,44 @@
         "Vaše informácie sa našli v najmenej jednom úniku údajov. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
       ]
     },
+    "account_search_index": {
+      "12-word phrase": [
+        "12-slovná fráza"
+      ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
+      ],
+      "AI assistant": [
+        "AI asistent"
+      ],
+      "Downgrade to Free": [
+        "Znížiť na Free"
+      ],
+      "High-security mode": [
+        "Režim vysokej bezpečnosti"
+      ],
+      "Join organization": [
+        "Pripojiť sa k organizácii"
+      ],
+      "Leave group": [
+        "Opustiť skupinu"
+      ],
+      "Password reset request": [
+        "Žiadosť o obnovenie hesla"
+      ],
+      "Recovery phone number": [
+        "Telefónne číslo pre obnovenie"
+      ],
+      "Referral link": [
+        "Odporúčací odkaz"
+      ],
+      "Telemetry": [
+        "Telemetria"
+      ],
+      "Trusted contact": [
+        "Dôveryhodný kontakt"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Účty"
@@ -607,6 +645,9 @@
       ],
       "Go to panel ${ index }": [
         "Prejsť na panel ${ index }"
+      ],
+      "Google": [
+        "Google"
       ],
       "Got it": [
         "Rozumiem"
@@ -5915,6 +5956,9 @@
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "Opustiť rodinný plán"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "Doživotné účty nemôžu byť pripojené k rodinnému plánu."
       ],
@@ -7114,6 +7158,11 @@
         "Ak chcete kalendár exportovať ako ICS súbor, vyberte ${ boldExport }."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Ďalšie možnosti importu"
+      ]
+    },
     "Import status": {
       "Has errors": [
         "Má chyby"
@@ -7853,6 +7902,9 @@
       ],
       "Choose one:": [
         "Vyberte si:"
+      ],
+      "Choose your service to connect with": [
+        "Vyberte si službu na pripojenie"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
@@ -10856,6 +10908,9 @@
       "Digits": [
         "Číslice"
       ],
+      "Disable animations": [
+        "Vypnúť animácie"
+      ],
       "Disabled": [
         "Vypnutý"
       ],
@@ -10969,6 +11024,12 @@
       ],
       "Folders, labels, and filters": [
         "Priečinky, štítky a filtre"
+      ],
+      "Font family": [
+        "Typ písma"
+      ],
+      "Font size": [
+        "Veľkosť písma"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Pre ${ DRIVE_SHORT_APP_NAME } a ${ DOCS_SHORT_APP_NAME }."
@@ -11173,6 +11234,9 @@
       ],
       "Notification": [
         "Notifikácia"
+      ],
+      "Notification email address": [
+        "Notifikačná emailová adresa"
       ],
       "Numbers": [
         "Čísla"
@@ -11414,6 +11478,9 @@
       "Thomas": [
         "Tomáš"
       ],
+      "Time format": [
+        "Formát času"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Aby ste nám pomohli zlepšiť sa, vysvetlite, prosím, prečo odchádzate"
       ],
@@ -11486,6 +11553,9 @@
       "Weak password": [
         "Slabé heslo"
       ],
+      "Week start": [
+        "Týždeň začína v"
+      ],
       "What happened?": [
         "Čo sa stalo?"
       ],
@@ -11533,6 +11603,9 @@
       ]
     },
     "label": {
+      "Notification phone number": [
+        "Telefónne číslo pre notifikácie"
+      ],
       "Recovery phone number": [
         "Telefónne číslo pre obnovenie"
       ]
@@ -13212,6 +13285,9 @@
       ],
       "Switch plans?": [
         "Zmeniť plán?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Odomknite prémiové funkcie navýšením účtu"
       ]
     },
     "new_plans: Title": {
@@ -16913,9 +16989,6 @@
       "Last changed ${ formattedDate }": [
         "Posledná zmena ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Posledná aktualizácia ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Neuložené"
       ],
@@ -16983,6 +17056,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pre všetky ${ BRAND_NAME } služby"
+      ],
+      "Get more storage": [
+        "Získať viac úložného priestoru"
       ],
       "Storage used": [
         "Využité úložisko"
@@ -18778,6 +18854,9 @@
       "Get help with an issue": [
         "Získajte pomoc s problémom"
       ],
+      "Get more from your privacy suite": [
+        "Využite svoj balík nástrojov na ochranu súkromia naplno"
+      ],
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
       ],
@@ -19549,6 +19628,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "Transakcie ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Presuny organizácií"
       ]
     },
     "Title header for addresses domain table": {

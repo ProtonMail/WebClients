@@ -784,6 +784,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME } ile katıl"
       ],
+      "Keep going": [
+        "İlerle"
+      ],
       "Keep inbox as before": [
         "Gelen kutusu eskisi gibi kalsın"
       ],
@@ -1458,6 +1461,9 @@
       ],
       "Stop generating result": [
         "Sonuç oluşturmayı bırak"
+      ],
+      "Stop here": [
+        "Burada dur"
       ],
       "Stop marking as read": [
         "Okunmuş olarak işaretlemeyi durdur"
@@ -7986,6 +7992,9 @@
       "How hide-my-email aliases works": [
         "Hide-my-email adları nasıl çalışır"
       ],
+      "I have not finished this one yet.": [
+        "Bunu henüz bitirmedim."
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Bu iletiyi ${ MAIL_APP_NAME } kullanmayan bir alıcıya gönderiyorum."
       ],
@@ -8642,6 +8651,21 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Arama çok uzun mu sürüyor? Bu arama oturumunu ${ dropdownButton } ya da ${ toggleOffButton }."
       ],
+      "Searched ${ targetName }": [
+        "${ targetName } arandı"
+      ],
+      "Searched for mail from ${ sender }": [
+        "${ sender } adresinden gelen postalar arandı"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "${ recipient } adresine gelen postalar arandı"
+      ],
+      "Searched for “${ keyword }”": [
+        "“${ keyword }” arandı"
+      ],
+      "Searched your mail": [
+        "E-postalarınız arandı"
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Şifrelenmiş bulut depolama alanı ile bugün dosyalarınızın güvenliğini sağlayın."
       ],
@@ -8747,6 +8771,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ne yazık ki, bu ileti bulunamadı ya da geçerlilik süresi dolmuş."
+      ],
+      "Star emails": [
+        "E-postalara yıldız koy"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
@@ -8930,6 +8957,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Bu işlem için birçok adım atılıyor. İlerlensin mi?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
@@ -9147,6 +9177,9 @@
       ],
       "Unsaved changes": [
         "Kaydedilmemiş değişiklikler"
+      ],
+      "Unstar emails": [
+        "E-postalardan yıldızı kaldır"
       ],
       "Unsubscribe": [
         "Aboneliği sonlandır"
@@ -10524,6 +10557,12 @@
       "No label found": [
         "Herhangi bir etiket bulunamadı"
       ],
+      "No unread conversations": [
+        "Okunmamış yazışma yok"
+      ],
+      "No unread messages": [
+        "Okunmamış ileti yok"
+      ],
       "Non-promotional content and news": [
         "Fırsatlar dışındaki içerikler ve haberler"
       ],
@@ -11706,6 +11745,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Genişletilmiş erişim ile ${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Sınırlı erişim ile ${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "${ n } calendar": [
         "${ n } takvim",
@@ -16794,6 +16839,9 @@
       "Snooze:": [
         "Ertele:"
       ],
+      "Star emails": [
+        "E-postalara yıldız koy"
+      ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"
       ],
@@ -16802,6 +16850,9 @@
       ],
       "Stay for 50% off your next month": [
         "Sonraki ay %50 indirimden yararlanın"
+      ],
+      "Still working on it": [
+        "Üzerinde çalışılıyor"
       ],
       "Storage capacity warning": [
         "Depolama alanı uyarısı"
@@ -16848,6 +16899,9 @@
       ],
       "Two-factor authentication": [
         "İki adımlı doğrulama"
+      ],
+      "Unstar emails": [
+        "E-postalardan yıldızı kaldır"
       ],
       "Unsubscribe": [
         "Aboneliği sonlandır"

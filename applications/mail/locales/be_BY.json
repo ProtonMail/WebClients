@@ -792,6 +792,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "Далучыцца пры дапамозе ${ MEET_APP_NAME }"
       ],
+      "Keep going": [
+        "Працягваць"
+      ],
       "Keep inbox as before": [
         "Пакінуць папярэдні выгляд паштовай скрыні"
       ],
@@ -1466,6 +1469,9 @@
       ],
       "Stop generating result": [
         "Спыніць генерацыю выніку"
+      ],
+      "Stop here": [
+        "Спыніцца тут"
       ],
       "Stop marking as read": [
         "Не пазначаць як прачытанае"
@@ -4874,6 +4880,9 @@
       "Cannot add photo to album without a valid name": [
         "Немагчыма дадаць фатаграфію ў альбом без сапраўднай назвы"
       ],
+      "Cannot download a folder": [
+        "Немагчыма спампаваць папку"
+      ],
       "Cannot export this contact": [
         "Немагчыма экспартаваць гэты кантакт"
       ],
@@ -4946,6 +4955,9 @@
       "Could not load sharing details": [
         "Немагчыма загрузіць абагуленыя падрабязнасці"
       ],
+      "Could not load the image preview: ${ message }": [
+        "Немагчыма загрузіць папярэдні прагляд відарыса: ${ message }"
+      ],
       "Could not open created vault": [
         "Не ўдалося адкрыць створанае сховішча"
       ],
@@ -4960,6 +4972,9 @@
       ],
       "Could not unlock this item": [
         "Немагчыма разблакіраваць гэты элемент"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Стварэнне дакументаў па-за іх межамі забаронена"
       ],
       "Creating files in non-folders is not allowed": [
         "Стварэнне файлаў па-за іх межамі забаронена"
@@ -5215,6 +5230,9 @@
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў"
+      ],
+      "Name must not be empty": [
+        "Назва не можа быць пустой"
       ],
       "Network error": [
         "Памылка сеткі"
@@ -5507,6 +5525,9 @@
       "Something went wrong while fetching available domains": [
         "Нешта пайшло не так пры атрыманні даступных даменаў"
       ],
+      "Something went wrong, close the modal and try again.": [
+        "Нешта пайшло не так. Закрыйце дыялогавае акно і паўтарыце спробу."
+      ],
       "Something went wrong. Please try again.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз."
       ],
@@ -5635,6 +5656,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Гэта паведамленне можа змяшчаць некаторыя спасылкі на URL-адрасы, якія ваш бягучы браўзер не зможа правільна адкрыць."
+      ],
+      "Too many server errors, please try again later": [
+        "Занадта шмат памылак сервера. Паўтарыце спробу пазней"
       ],
       "Too many server requests, please try again later": [
         "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
@@ -6304,6 +6328,9 @@
       ],
       "In progress": [
         "Выконваецца"
+      ],
+      "Migrated": [
+        "Перанесена"
       ],
       "Not activated": [
         "Не актывавана"
@@ -7045,6 +7072,9 @@
       ],
       "Migrated": [
         "Перанесена"
+      ],
+      "Pending": [
+        "У чаканні"
       ]
     },
     "Import warning": {
@@ -8238,6 +8268,9 @@
       "How hide-my-email aliases works": [
         "Як працуюць псеўданімы Hide-my-email"
       ],
+      "I have not finished this one yet.": [
+        "Я яшчэ не завяршыў гэта."
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Я адпраўляю гэта паведамленне карыстальніку па-за сэрвісам ${ MAIL_APP_NAME }."
       ],
@@ -8622,6 +8655,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Адкрыйце дапаможнік, дзе можна даведацца пра рэкамендаваныя дзеянні і карысныя спасылкі."
       ],
+      "Opened ${ location }": [
+        "Адкрыта ${ location }"
+      ],
       "Optional": [
         "Неабавязкова"
       ],
@@ -8907,6 +8943,21 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Пошук займае занадта шмат часу? ${ dropdownButton } або ${ toggleOffButton } з гэтага пошукавага сеанса."
       ],
+      "Searched ${ targetName }": [
+        "Пошук ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Пошук пошты ад ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Пошук пошты ў ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Пошук \"${ keyword }\""
+      ],
+      "Searched your mail": [
+        "Пошук у вашай пошце завяршыўся"
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Бясплатна абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча."
       ],
@@ -9014,6 +9065,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Прабачце, але гэтага паведамлення не існуе або яно ўжо пратэрмінавана."
+      ],
+      "Star emails": [
+        "Пазначаныя зорачкай лісты"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Пачніце абагульваць яго са сваімі кантактамі і выкарыстоўваць для сэрвісаў у інтэрнэце."
@@ -9203,6 +9257,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "На гэта спатрэбіцца шмат крокаў. Працягваць?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
@@ -9423,6 +9480,9 @@
       "Unsaved changes": [
         "Незахаваныя змены"
       ],
+      "Unstar emails": [
+        "Не пазначаныя зорачкай лісты"
+      ],
       "Unsubscribe": [
         "Скасаваць падпіску"
       ],
@@ -9560,6 +9620,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт ${ IDEAL_BRAND_NAME }. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -10856,6 +10919,12 @@
       "No label found": [
         "Метка не знойдзена"
       ],
+      "No unread conversations": [
+        "Няма непрачытаных размоў"
+      ],
+      "No unread messages": [
+        "Няма непрачытаных паведамленняў"
+      ],
       "Non-promotional content and news": [
         "Нерэкламны змесціва і навіны"
       ],
@@ -12070,6 +12139,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з пашыраным доступам"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з абмежаваным доступам"
       ],
       "${ n } calendar": [
         "${ n } каляндар",
@@ -13652,6 +13727,9 @@
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Заплаціць з дапамогай ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосаб аплаты патрабуецца для актывацыі падпіскі пасля завяршэння пробнага перыяду."
       ],
@@ -14183,6 +14261,9 @@
     "Property": {
       "attributes": [
         "атрыбуты"
+      ],
+      "content key": [
+        "ключ змесціва"
       ],
       "hash key": [
         "хэш-ключ"
@@ -17018,6 +17099,9 @@
       "Make a secure connection your default": [
         "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
       ],
+      "Make your inbox your own": [
+        "Зрабіце паштовую скрыню сваёй уласнасцю"
+      ],
       "Mark all messages as read": [
         "Пазначыць усе паведамленні як прачытаныя"
       ],
@@ -17405,6 +17489,9 @@
       "Snooze:": [
         "Адкладанне:"
       ],
+      "Star emails": [
+        "Пазначаныя зорачкай лісты"
+      ],
       "Start a new import": [
         "Пачаць новае імпартаванне"
       ],
@@ -17413,6 +17500,9 @@
       ],
       "Stay for 50% off your next month": [
         "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
+      ],
+      "Still working on it": [
+        "Усё яшчэ працуем над гэтым"
       ],
       "Storage capacity warning": [
         "Папярэджанне пра ёмістасць сховішча"
@@ -17461,6 +17551,9 @@
       ],
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
+      ],
+      "Unstar emails": [
+        "Не пазначаныя зорачкай лісты"
       ],
       "Unsubscribe": [
         "Адпісацца"

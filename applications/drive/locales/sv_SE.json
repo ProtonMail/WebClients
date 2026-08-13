@@ -300,6 +300,9 @@
       "Create and copy alias": [
         "Skapa och kopiera alias"
       ],
+      "Create business account": [
+        "Skapa företagskonto"
+      ],
       "Create folder": [
         "Skapa mapp"
       ],
@@ -773,6 +776,9 @@
       "Re-index": [
         "Indexera igen"
       ],
+      "Re-indexing in progress": [
+        "Omindexering pågår"
+      ],
       "Re-sign": [
         "Återsignera"
       ],
@@ -790,6 +796,9 @@
       ],
       "Refer a friend": [
         "Hänvisa en vän"
+      ],
+      "Refetch index": [
+        "Hämta index igen"
       ],
       "Refresh the page": [
         "Uppdatera sidan"
@@ -1082,6 +1091,9 @@
       "This album is empty": [
         "Detta album är tomt"
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Slå på/av ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Toggle Calendar app": [
         "Växla Calendar-app"
       ],
@@ -1217,6 +1229,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
+      ],
+      "Your 3 GB bonus": [
+        "Dina 3 GB bonus"
       ],
       "Zoom in": [
         "Zooma in"
@@ -3434,6 +3449,9 @@
       "Cannot share root folder": [
         "Kan inte dela rotmapp"
       ],
+      "Cannot verify the author of this file": [
+        "Kan inte verifiera författaren för denna fil"
+      ],
       "Cannot verify who uploaded this file": [
         "Kan inte verifiera vem som laddade upp denna fil"
       ],
@@ -3532,6 +3550,9 @@
       "Error decrypting a computer": [
         "Fel vid dekryptering av dator"
       ],
+      "Error reading file": [
+        "Fel vid läsning av fil"
+      ],
       "Expected structure attached": [
         "Förväntad struktur bifogad"
       ],
@@ -3571,6 +3592,9 @@
       "Failed to get details, please try again later": [
         "Misslyckades att hämta detaljer, försök igen senare"
       ],
+      "Failed to get inviter keys": [
+        "Misslyckades med att hämta inbjudningsnycklar"
+      ],
       "Failed to load signature details, please try again later": [
         "Misslyckades att ladda signaturdetaljer, försök igen senare"
       ],
@@ -3597,6 +3621,9 @@
       ],
       "Failed to verify invitation": [
         "Misslyckades med att verifiera inbjudan"
+      ],
+      "File download failed due to empty response": [
+        "Filnedladdning misslyckades på grund av tomt svar"
       ],
       "File has no revision": [
         "Fil har ingen version"
@@ -3909,6 +3936,9 @@
       "Something went wrong with search. Please try again later.": [
         "Något gick fel med sökning. Försök igen senare."
       ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Något gick fel med sök: Inte tillräckligt lagringsutrymme."
+      ],
       "Something went wrong, please try again later": [
         "Något gick fel, försök igen senare"
       ],
@@ -4059,17 +4089,29 @@
       "We were not able to load some of your invitation to shared items": [
         "Vi kunde inte ladda några av dina inbjudningar till delade objekt"
       ],
+      "We were not able to load some of your saved shared links": [
+        "Vi kunde inte ladda några av dina sparade delade länkar"
+      ],
       "We were not able to load some of your shared items": [
         "Vi kunde inte ladda några av dina delade objekt"
       ],
       "We were not able to load some search results": [
         "Vi kunde inte ladda några sökresultat"
       ],
+      "We were not able to load the file history": [
+        "Vi kunde inte ladda filhistoriken"
+      ],
       "We were not able to load the folder contents": [
         "Vi kunde inte ladda mappens innehåll"
       ],
+      "We're sorry, but free upload is not available right now.": [
+        "Vi beklagar, men gratis uppladdning är inte tillgänglig just nu."
+      ],
       "Wrong billing address": [
         "Fel faktureringsadress"
+      ],
+      "You can create public links for your own files only": [
+        "Du kan endast skapa offentliga länkar för dina egna filer"
       ],
       "You can only upload a new version to a file": [
         "Du kan bara ladda upp en ny version till en fil"
@@ -5764,6 +5806,9 @@
       "Get the desktop app to sync files from your computer.": [
         "Skaffa appen för stationär dator för att synkronisera filer från din dator."
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "Lär känna ${ DRIVE_APP_NAME } och tjäna din bonus på 3 GB lagringsutrymme! Passa på idag."
+      ],
       "Google Pay mark": [
         "Google Pay-märke"
       ],
@@ -5799,6 +5844,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Om du har en av dessa, fortsätt till ${ BRAND_NAME }-kontoinställning för att starta avblockeringsprocessen."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "Om du har förlorat åtkomsten till din autentiseringsapp kan du använda 1 av de 16 återställningskoderna för säkerhetskopiering som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
@@ -5866,6 +5914,9 @@
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexerar objekt ${ esProgress } av ${ totalProgressToShow }"
+      ],
+      "Indexing search results…": [
+        "Indexerar sökresultat …"
       ],
       "Inherited from parent folder": [
         "Ärvd från överordnad mapp"
@@ -6271,6 +6322,9 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
       ],
+      "Recovery process might take some time.": [
+        "Återställningsprocess kan ta lite tid."
+      ],
       "Referral link copied to your clipboard": [
         "Hänvisningslänk kopierats till ditt urklipp"
       ],
@@ -6283,6 +6337,9 @@
       "Report has been sent": [
         "Rapport har skickats"
       ],
+      "Request access, or switch to an account with access.": [
+        "Begär åtkomst eller byt till ett konto med åtkomst."
+      ],
       "Requested item doesn't exist anymore": [
         "Begärt objekt finns inte längre"
       ],
@@ -6294,6 +6351,9 @@
       ],
       "Restored files ${ formattedDate }": [
         "Återställde filer ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Återställer foton ... Håll fliken öppen"
       ],
       "Running diagnostics...": [
         "Kör diagnostik …"
@@ -6310,17 +6370,32 @@
       "Search cannot be enabled in this browser": [
         "Sökning kan inte aktiveras i denna webbläsare"
       ],
+      "Search data can't be read": [
+        "Sökdata kan inte läsas"
+      ],
+      "Search data is corrupted": [
+        "Sökdata är skadad"
+      ],
       "Search Enabled": [
         "Sökning aktiverad"
       ],
       "Search encountered an internal error. Rebuild the index to recover.": [
         "Sök stötte på ett internt fel. Återskapa indexet för att återställa."
       ],
+      "Search engine error": [
+        "Sökmotorfel"
+      ],
       "Search error": [
         "Sökfel"
       ],
+      "Search is in an invalid state": [
+        "Sök är i ett ogiltigt tillstånd"
+      ],
       "Search is ready. Your files have been indexed.": [
         "Sök är redo. Dina filer har indexerats."
+      ],
+      "Search module is not available.": [
+        "Sökmodul inte tillgänglig."
       ],
       "Select a destination folder": [
         "Välj en målmapp"
@@ -6406,6 +6481,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Vissa av dina filer är inte längre åtkomliga. Återställ åtkomsten till dina filer. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Några foton i detta album sparas inte på din tidslinje. Att ta bort detta album kommer ta bort dessa foton permanent."
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Vissa webbplatser och streamingtjänster blockerar innehåll efter region. Med ett VPN kan du kringgå dessa begränsningar och få fri tillgång till internet."
       ],
@@ -6455,6 +6533,9 @@
       "that": [
         "vem"
       ],
+      "The albums you create are shown here.": [
+        "De album du skapar visas här."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Antalet nedladdningar inkluderar både faktiska nedladdningar och tillfällen när filer förhandsgranskas."
       ],
@@ -6491,6 +6572,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denna webbläsare stöder inte förhandsgranskning av PDF-dokument. Ladda ner filen."
       ],
+      "This can NOT be undone. Please enter the device name to confirm removal.": [
+        "Detta kan INTE ångras. Ange enhetens namn för att bekräfta borttagning."
+      ],
       "This file appears to be empty:": [
         "Denna fil verkar vara tom:",
         "Dessa filer verkar vara tomma:"
@@ -6509,6 +6593,10 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Detta är nu din ${ defaultEmailAddress } för att skicka nya meddelanden."
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Detta objekt är inte sparat i ditt fotobibliotek. Om du tar bort det från detta album förlorar du åtkomst till det permanent.",
+        "Några av de valda objekten sparas inte i ditt fotobibliotek. Om du tar bort dem från detta album förlorar du åtkomsten till dem permanent."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denna länk leder till en webbplats som kanske försöker stjäla din information, såsom lösenord och kreditkortsuppgifter."
@@ -6560,6 +6648,9 @@
       ],
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "För att ladda ner dessa filer, öppna dem i ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME } och exportera dem."
+      ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "För att aktivera verkligt privat sökning måste ${ DRIVE_APP_NAME } indexera dina filer lokalt."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
@@ -6735,6 +6826,10 @@
       "We use 3-D Secure to protect your payments": [
         "Vi använder 3-D Secure för att skydda dina betalningar"
       ],
+      "We were not able to add this photo to your album": [
+        "Vi kunde inte lägga till detta foto till ditt album",
+        "Vi kunde inte lägga till några foton till ditt album"
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi kommer att omdirigera dig till PayPal i en ny webbläsarflik för att slutföra denna transaktion. Om du använder några popup-blockerare, inaktivera dem för att fortsätta."
       ],
@@ -6783,6 +6878,10 @@
       "Would you like to restore your files?": [
         "Vill du återställa dina filer?"
       ],
+      "Would you like to save it before removing?": [
+        "Vill du spara det innan du tar bort det?",
+        "Vill du spara dem innan du tar bort dem?"
+      ],
       "Writing assistant": [
         "Skrivassistent"
       ],
@@ -6800,6 +6899,9 @@
       ],
       "You already have a free account": [
         "Du har redan ett gratis konto"
+      ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Du är på väg att lämna det delade objektet. Du kommer inte att kunna komma åt den igen förrän ägaren delar det med dig."
       ],
       "You are about to open another browser tab and visit:": [
         "Du är på väg att öppna en annan webbläsarflik och besöka:"
@@ -6851,6 +6953,10 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
       ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Du har ${ expiresInDays } dag kvar att göra anspråk på din 3 GB välkomstbonus och ",
+        "Du har ${ expiresInDays } dagar kvar att göra anspråk på din 3 GB välkomstbonus och "
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har en provperiod på ${ planTitle }-prenumeration. Om du vill fortsätta med din prenumeration efter provperioden, lägg till en betalningsmetod."
       ],
@@ -6871,6 +6977,10 @@
       ],
       "You will lose all unsaved changes.": [
         "Du kommer att förlora alla osparade ändringar."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Du måste spara det igen från den offentliga länksidan.",
+        "Du måste spara dem igen från den offentliga länksidan."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
@@ -8546,6 +8656,9 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent med begränsad åtkomst"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendrar"
@@ -9462,6 +9575,9 @@
       "\"${ ellipsedName }\" restored from trash": [
         "”${ ellipsedName }” återställd från papperskorg"
       ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "”${ ellipsedName }” flyttades utan problem"
+      ],
       "\"${ fileName }\" shared": [
         "”${ fileName }” delad"
       ],
@@ -9594,6 +9710,12 @@
       "Device renamed": [
         "Enhet omdöpt"
       ],
+      "Encrypted search activated": [
+        "Krypterad sökning aktiverad"
+      ],
+      "Error while listing devices": [
+        "Fel vid listning av enheter"
+      ],
       "Failed to accept share invitation": [
         "Misslyckades att acceptera delningsinbjudan"
       ],
@@ -9665,6 +9787,9 @@
       "The link to your item was deleted": [
         "Länken till ditt objekt togs bort"
       ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "Denna säkra länk har löpt ut, ändra utgångsdatum i delningsinställningar"
+      ],
       "Trash failed to be emptied": [
         "Misslyckades att tömma papperskorg"
       ],
@@ -9684,6 +9809,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Några bilder laddades inte upp på grund av dubbla filnamn i det nuvarande valet."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album har bytt namn"
       ]
     },
     "Oauth instructions": {
@@ -9895,11 +10025,17 @@
       "Collaborate on documents": [
         "Samarbeta på dokument"
       ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "Föredrar du ${ DRIVE_APP_NAME } i ljust eller mörkt läge? Välj den färg som inspirerar dig mest."
+      ],
       "Drag and drop your files here": [
         "Dra och släpp dina filer här"
       ],
       "Edit documents online": [
         "Redigera dokument online"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "End-to-end-krypterat lagringsutrymme för dina filer"
       ],
       "Faster uploads for large or multiple files": [
         "Snabbare uppladdningar för stora eller flera filer"
@@ -9942,6 +10078,9 @@
       ],
       "Manage access": [
         "Hantera åtkomst"
+      ],
+      "Organize files right from your desktop": [
+        "Organisera filer direkt från din stationära dator"
       ],
       "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
         "Skydda dina finansiella dokument, ID-kort, projektfiler, foton och mer med end-to-end-kryptering."
@@ -10240,6 +10379,9 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betala med ${ IDEAL_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalningsmetod krävs för att prenumerationen ska aktiveras efter provperioden är slut."
@@ -12009,6 +12151,15 @@
       "Your favorited photos will appear here": [
         "Dina favoritfoton kommer visas här"
       ],
+      "Your panorama photos will appear here": [
+        "Dina panoramafoton kommer visas här"
+      ],
+      "Your photo bursts will appear here": [
+        "Dina fotoserier kommer visas här"
+      ],
+      "Your portraits photos will appear here": [
+        "Dina porträttfoton kommer visas här"
+      ],
       "Your RAW photos will appear here": [
         "Dina RAW-foton kommer visas här"
       ],
@@ -12233,8 +12384,14 @@
       ]
     },
     "Tag": {
+      "Bursts": [
+        "Serie"
+      ],
       "Favorites": [
         "Favoriter"
+      ],
+      "Live Photos": [
+        "Livefoton"
       ],
       "Panoramas": [
         "Panorama"
@@ -12819,6 +12976,9 @@
       "No favorites": [
         "Inga favoriter"
       ],
+      "No Live Photos": [
+        "Inga livefoton"
+      ],
       "No panorama": [
         "Ingen panorama"
       ],
@@ -13038,6 +13198,9 @@
       ],
       "Shared with me": [
         "Delat med mig"
+      ],
+      "Show actions": [
+        "Visa åtgärder"
       ],
       "Sign in and grant access": [
         "Logga in och bevilja åtkomst"

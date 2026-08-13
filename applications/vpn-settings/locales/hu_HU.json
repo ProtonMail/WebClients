@@ -504,6 +504,9 @@
       "Go to panel ${ index }": [
         "Váltás: ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Rendben!"
       ],
@@ -4384,6 +4387,9 @@
       "Invited by: ${ inviteEmail }": [
         "Meghívó küldője: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "Kilépés a Family csomagból"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "A Lifetime-fiókok nem csatlakozhatnak családi csomaghoz."
       ],
@@ -7688,6 +7694,14 @@
         "Előfizetés"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "Értesítési telefonszám"
+      ],
+      "Recovery phone number": [
+        "Helyreállítási telefonszám"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } felhasználónév"
@@ -7935,6 +7949,9 @@
       "Digits": [
         "Számjegy"
       ],
+      "Disable animations": [
+        "Animációk letiltása"
+      ],
       "Disabled": [
         "Kikapcsolva"
       ],
@@ -8012,6 +8029,12 @@
       ],
       "Folder location": [
         "Mappa helye"
+      ],
+      "Font family": [
+        "Betűkészlet család"
+      ],
+      "Font size": [
+        "Betűméret"
       ],
       "Free": [
         "Ingyenes"
@@ -8368,6 +8391,9 @@
       "Thomas": [
         "Tamás"
       ],
+      "Time format": [
+        "Időformátum"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Kérjük, segítsen nekünk a fejlődésben, mondja el, miért távozik."
       ],
@@ -8425,6 +8451,9 @@
       "Weak password": [
         "Gyenge jelszó"
       ],
+      "Week start": [
+        "Hét kezdőnapja"
+      ],
       "What happened?": [
         "Mi történt?"
       ],
@@ -8445,11 +8474,6 @@
       ],
       "ZIP code": [
         "Irányítószám"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "Helyreállítási telefonszám"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9731,6 +9755,9 @@
       ],
       "Switch plans?": [
         "Csomag váltása?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Váltson nagyobb csomagra a prémium funkciók eléréshez"
       ]
     },
     "new_plans: Title": {
@@ -12469,6 +12496,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Minden ${ BRAND_NAME } szolgáltatáshoz"
+      ],
+      "Get more storage": [
+        "További tárhely igénylése"
       ],
       "Storage used": [
         "Felhasznált tárhely"

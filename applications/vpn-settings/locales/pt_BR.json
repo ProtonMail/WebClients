@@ -32,6 +32,173 @@
         "Suas informações foram encontradas em pelo menos um vazamento. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
       ]
     },
+    "account_search_index": {
+      "12-word phrase": [
+        "Frase de 12 palavras"
+      ],
+      "Account events": [
+        "Eventos da conta"
+      ],
+      "Active sessions": [
+        "Sessões ativas"
+      ],
+      "Advanced account protection": [
+        "Proteção avançada de conta"
+      ],
+      "AI assistant": [
+        "Assistente de IA"
+      ],
+      "Allow list": [
+        "Lista de permitidos"
+      ],
+      "Audit log": [
+        "Registro de auditoria"
+      ],
+      "Authentication logs": [
+        "Registros de autenticação"
+      ],
+      "Automatic renewal": [
+        "Renovação automática"
+      ],
+      "Cancel plan": [
+        "Cancelar plano"
+      ],
+      "Close account": [
+        "Fechar conta"
+      ],
+      "Compare plans": [
+        "Comparar planos"
+      ],
+      "Connected addresses": [
+        "Endereços conectados"
+      ],
+      "Connection events": [
+        "Eventos de conexão"
+      ],
+      "Create organization": [
+        "Criar organização"
+      ],
+      "Custom domain": [
+        "Domínio personalizado"
+      ],
+      "Customer support": [
+        "Suporte ao cliente"
+      ],
+      "Dark mode": [
+        "Modo escuro"
+      ],
+      "Desktop and mobile apps": [
+        "Aplicativos para computador e móveis"
+      ],
+      "Downgrade plan": [
+        "Fazer downgrade do plano"
+      ],
+      "Downgrade to Free": [
+        "Fazer downgrade para Free"
+      ],
+      "Download apps": [
+        "Baixar aplicativos"
+      ],
+      "Download recovery file": [
+        "Baixar o arquivo de recuperação"
+      ],
+      "External mailbox": [
+        "Caixa de correio externa"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "High-security mode": [
+        "Modo de alta segurança"
+      ],
+      "Import history": [
+        "Histórico de importações"
+      ],
+      "Included apps": [
+        "Aplicativos incluídos"
+      ],
+      "Join organization": [
+        "Entrar na organização"
+      ],
+      "Leaked password": [
+        "Senha fraca"
+      ],
+      "Leave group": [
+        "Sair do grupo"
+      ],
+      "Leave organization": [
+        "Sair da organização"
+      ],
+      "Light mode": [
+        "Modo claro"
+      ],
+      "Mnemonic": [
+        "Mnemônica"
+      ],
+      "One-time code": [
+        "Código de uso único"
+      ],
+      "Password reminder": [
+        "Lembrete de senha"
+      ],
+      "Password reset request": [
+        "Solicitar redefinição de senha"
+      ],
+      "Recovery email address": [
+        "Endereço de e-mail de recuperação"
+      ],
+      "Recovery phone number": [
+        "Número de telefone de recuperação"
+      ],
+      "Recovery score": [
+        "Pontuação de recuperação"
+      ],
+      "Referral link": [
+        "Link de indicação"
+      ],
+      "Restrict app access": [
+        "Restringir o acesso aos aplicativos"
+      ],
+      "Scan QR code": [
+        "Escanear código QR"
+      ],
+      "Sign out other devices": [
+        "Encerrar sessão em outros dispositivos"
+      ],
+      "Stop subscription renewal": [
+        "Parar renovação automática"
+      ],
+      "Storage space": [
+        "Espaço de armazenamento"
+      ],
+      "Storage usage": [
+        "Uso de armazenamento"
+      ],
+      "Subscription end date": [
+        "Data de término da assinatura"
+      ],
+      "Subscription status": [
+        "Status da assinatura"
+      ],
+      "Telemetry": [
+        "Telemetria"
+      ],
+      "Trusted contact": [
+        "Contato confiável"
+      ],
+      "Upgrade plan": [
+        "Fazer upgrade de plano"
+      ],
+      "Verify domain": [
+        "Verificar domínio"
+      ],
+      "Video conferencing": [
+        "Videoconferência"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Contas"
@@ -607,6 +774,9 @@
       ],
       "Go to panel ${ index }": [
         "Ir para o painel ${ index }"
+      ],
+      "Google": [
+        "Google"
       ],
       "Got it": [
         "Entendi"
@@ -4748,6 +4918,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Não foi possível carregar transações. Tente novamente mais tarde."
       ],
+      "Creating documents in non-folders is not allowed": [
+        "Não é permitido criar documentos dentro de itens que não sejam pastas"
+      ],
       "Creating files in non-folders is not allowed": [
         "Não é permitido criar arquivos dentro de itens que não sejam pastas"
       ],
@@ -4800,6 +4973,9 @@
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Falha ao descriptografar a chave de marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Falha ao descriptografar o nome de marcador: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Falha ao descriptografar a senha dos favoritos: ${ message }"
@@ -5732,6 +5908,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
+      ],
+      "Leave Family plan": [
+        "Sair do plano Family"
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Contas vitalícias não podem ingressar em um plano de família."
@@ -6862,6 +7041,11 @@
         "Selecione ${ boldExport } para exportar o calendário como um arquivo ICS."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Mais opções de importação"
+      ]
+    },
     "Import status": {
       "Has errors": [
         "Tem erros"
@@ -7430,6 +7614,12 @@
       "Awaiting transaction": [
         "Esperando transação"
       ],
+      "Backup password disabled": [
+        "Senha de backup desativada"
+      ],
+      "Backup password enabled": [
+        "Senha de backup ativada"
+      ],
       "Balance from your previous subscription": [
         "Saldo da sua assinatura anterior"
       ],
@@ -7513,6 +7703,9 @@
       ],
       "Choose one:": [
         "Escolha um:"
+      ],
+      "Choose your service to connect with": [
+        "Escolha seu serviço para conectar"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
@@ -10394,6 +10587,9 @@
       "Digits": [
         "Dígitos"
       ],
+      "Disable animations": [
+        "Desativar animações"
+      ],
       "Disabled": [
         "Desativado"
       ],
@@ -10507,6 +10703,12 @@
       ],
       "Folders, labels, and filters": [
         "Pastas, marcadores e filtros"
+      ],
+      "Font family": [
+        "Família de fontes"
+      ],
+      "Font size": [
+        "Tamanho da fonte"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Para ${ DRIVE_SHORT_APP_NAME } e ${ DOCS_SHORT_APP_NAME }."
@@ -10711,6 +10913,9 @@
       ],
       "Notification": [
         "Notificação"
+      ],
+      "Notification email address": [
+        "Endereço de email de notificação"
       ],
       "Numbers": [
         "Números"
@@ -10950,6 +11155,9 @@
       "Thomas": [
         "Andrea"
       ],
+      "Time format": [
+        "Formato de hora"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Para nos ajudar a melhorar, explique por que você está saindo."
       ],
@@ -11022,6 +11230,9 @@
       "Weak password": [
         "Senha fraca"
       ],
+      "Week start": [
+        "Início da semana"
+      ],
       "What happened?": [
         "O que aconteceu?"
       ],
@@ -11069,6 +11280,9 @@
       ]
     },
     "label": {
+      "Notification phone number": [
+        "Número de telefone para notificação"
+      ],
       "Recovery phone number": [
         "Telefone de recuperação"
       ]
@@ -12662,6 +12876,9 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Faça o upgrade para desbloquear recursos premium"
       ]
     },
     "new_plans: Title": {
@@ -13800,6 +14017,9 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
@@ -16222,9 +16442,6 @@
       "Last changed ${ formattedDate }": [
         "Última alteração há ${ formattedDate } atrás"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Última atualização em ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Não salvo"
       ],
@@ -16292,6 +16509,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Para todos os serviços da ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Obter mais armazenamento"
       ],
       "Storage used": [
         "Armazenamento usado"
@@ -17486,6 +17706,9 @@
       "Add users to \"${ policyName }\"": [
         "Adicionar usuários a «${ policyName }»"
       ],
+      "Advanced configuration": [
+        "Configuração avançada"
+      ],
       "Advanced recovery options": [
         "Opções avançadas de recuperação"
       ],
@@ -18014,6 +18237,9 @@
       "Get help with an issue": [
         "Obter ajuda com um problema"
       ],
+      "Get more from your privacy suite": [
+        "Aproveite melhor sua suíte de privacidade"
+      ],
       "Get more from your VPN": [
         "Obter mais da sua VPN"
       ],
@@ -18395,6 +18621,9 @@
       ],
       "Select data to import": [
         "Selecionar dados para importar"
+      ],
+      "Select users to migrate": [
+        "Selecione os usuários a serem migrados"
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Enviar e receber e-mails do Gmail usando o ${ MAIL_APP_NAME }"
@@ -18778,6 +19007,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "Transação do ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Migrações da organização"
       ]
     },
     "Title header for addresses domain table": {

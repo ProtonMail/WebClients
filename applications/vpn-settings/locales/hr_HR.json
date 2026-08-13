@@ -596,6 +596,9 @@
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Shvaćam"
       ],
@@ -5557,6 +5560,9 @@
       "Invited by: ${ inviteEmail }": [
         "Pozivatelj: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "Napustite Family plan"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "Korisnički računi s Lifetime planom ne mogu se pridružiti obiteljskom planu."
       ],
@@ -6669,6 +6675,11 @@
         "Odaberite ${ boldExport } za izvoz kalendara kao ICS datoteke."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Više opcija uvoza"
+      ]
+    },
     "Import status": {
       "In progress": [
         "U tijeku"
@@ -7322,6 +7333,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Odaberite ID entiteta za nastavak."
+      ],
+      "Choose your service to connect with": [
+        "Odaberite svoju uslugu s kojom se želite povezati"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
@@ -9791,6 +9805,14 @@
         "Pretplata"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "Telefonski broj za obavijesti"
+      ],
+      "Recovery phone number": [
+        "Broj mobitela za oporavak"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "Dostupna je ${ addressesAvailable } od ${ maxAddresses } adrese e-pošte",
@@ -10108,6 +10130,9 @@
       "Digits": [
         "Znamenke"
       ],
+      "Disable animations": [
+        "Onemogući animacije"
+      ],
       "Disabled": [
         "Onemogućeno"
       ],
@@ -10218,6 +10243,12 @@
       ],
       "Folders, labels, and filters": [
         "Mape, oznake i filtri"
+      ],
+      "Font family": [
+        "Obitelj fontova"
+      ],
+      "Font size": [
+        "Veličina fonta"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Za ${ DRIVE_SHORT_APP_NAME } i ${ DOCS_SHORT_APP_NAME }."
@@ -10419,6 +10450,9 @@
       ],
       "Notification": [
         "Obavijest"
+      ],
+      "Notification email address": [
+        "Adresa e-pošte za obavijesti"
       ],
       "Numbers": [
         "Brojke"
@@ -10659,6 +10693,9 @@
       "Thomas": [
         "Toma"
       ],
+      "Time format": [
+        "Format vremena"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Kako biste nam pomogli da se poboljšamo, objasnite zašto odlazite."
       ],
@@ -10728,6 +10765,9 @@
       "Weak password": [
         "Slaba lozinka"
       ],
+      "Week start": [
+        "Početak tjedna"
+      ],
       "What happened?": [
         "Što se dogodilo?"
       ],
@@ -10772,11 +10812,6 @@
       ],
       "ZIP code": [
         "Poštanski broj"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "Broj mobitela za oporavak"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12376,6 +12411,9 @@
       ],
       "Switch plans?": [
         "Promijeniti pretplatu?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Otključajte vrhunske značajke nadogradnjom"
       ]
     },
     "new_plans: Title": {
@@ -15954,9 +15992,6 @@
       "Last changed ${ formattedDate }": [
         "Zadnji put promijenjeno ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Zadnji put ažurirano ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Nije spremljeno"
       ],
@@ -16024,6 +16059,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Za sve ${ BRAND_NAME } usluge"
+      ],
+      "Get more storage": [
+        "Nabavite više pohrane"
       ],
       "Storage used": [
         "Iskorištena pohrana"
@@ -17731,6 +17769,9 @@
       "Get help with an issue": [
         "Dobijte pomoć s problemom"
       ],
+      "Get more from your privacy suite": [
+        "Dobijte više od svog paketa za privatnost"
+      ],
       "Get more from your VPN": [
         "Dobijte više od svog VPN-a"
       ],
@@ -18464,6 +18505,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "${ MAIL_APP_NAME } transakcija"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Migracije organizacije"
       ]
     },
     "Title header for addresses domain table": {

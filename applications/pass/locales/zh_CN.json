@@ -853,8 +853,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "邮箱别名的作用与邮箱地址类似，但可以减少垃圾邮件，并隐藏您的真实邮箱地址和身份。"
       ],
+      "Change these passwords immediately": [
+        "立即更改这些密码"
+      ],
       "Change your passwords": [
         "更改密码"
+      ],
+      "Check if your passwords have been exposed": [
+        "检查您的密码是否已泄漏"
       ],
       "Create unique passwords": [
         "创建唯一密码"
@@ -909,6 +915,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "该账户存在漏洞，请访问该服务并更改密码。"
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "此登录密码出现在数据泄露事件中，请访问该服务并更改密码。"
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "该服务提供 2FA。启用它可提高账户安全性。"
@@ -1339,6 +1348,9 @@
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "删除安全链接时出现错误。请几分钟后再试。"
+      ],
+      "This invite is no longer available": [
+        "此邀请已不可用"
       ],
       "Too many failed attempts. Please sign in again.": [
         "失败次数过多，请重新登录。"
@@ -4607,6 +4619,12 @@
       "Clear clipboard": [
         "清除剪贴板"
       ],
+      "Compromised password": [
+        "泄漏的密码"
+      ],
+      "Compromised passwords": [
+        "泄漏的密码"
+      ],
       "Confirm extra password": [
         "确认额外密码"
       ],
@@ -4820,6 +4838,9 @@
       "No access tokens yet": [
         "暂无访问令牌"
       ],
+      "No compromised passwords": [
+        "没有泄漏的密码"
+      ],
       "No excluded items": [
         "无除外项目"
       ],
@@ -4999,6 +5020,9 @@
       ],
       "Update available": [
         "有可用更新"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "升级以检查是否存在泄露的密码"
       ],
       "URL matching": [
         "URL 匹配"

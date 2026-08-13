@@ -789,17 +789,11 @@
       "Export as CSV": [
         "Exporteren als CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "Exporteer specificatie per bedrijf als ZIP"
-      ],
       "Export key": [
         "Sleutel exporteren"
       ],
       "Export key before deleting": [
         "Exporteer sleutel voor het verwijderen"
-      ],
-      "Export overview as CSV": [
-        "Exporteer overzicht als CSV"
       ],
       "Extend": [
         "Verlengen"
@@ -3690,14 +3684,8 @@
       "Status": [
         "Status"
       ],
-      "Total billed seats": [
-        "Totaal gefactureerde licenties"
-      ],
       "Total cost": [
         "Totale kosten"
-      ],
-      "Used / assigned seats": [
-        "Gebruikte / toegewezen licenties"
       ]
     },
     "Condition for custom filter": {
@@ -6731,6 +6719,9 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Bij het melden van inbreuk op auteursrechten of gestolen gegevens is een bericht vereist"
+      ],
       "Account does not exist": [
         "Account bestaat niet"
       ],
@@ -6785,6 +6776,9 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Automatische antwoorden is een betalende functie. Upgrade naar een betaald account om deze functie te gebruiken."
       ],
+      "Bookmark password is not available": [
+        "Wachtwoord voor bladwijzer is niet beschikbaar"
+      ],
       "Calendar cannot be found": [
         "Agenda kan niet gevonden worden"
       ],
@@ -6793,6 +6787,12 @@
       ],
       "Cannot add photo to album without a valid name": [
         "Kan geen foto aan album toevoegen zonder een geldige naam"
+      ],
+      "Cannot download a folder": [
+        "Kan een map niet downloaden"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan het item niet verplaatsen zonder een geldige naam. Hernoem het item eerst"
       ],
       "Cannot share root folder": [
         "Kan hoofdmap niet delen"
@@ -6830,17 +6830,26 @@
       "Copying item to a non-folder is not allowed": [
         "Het kopiëren van een item naar een niet-map is niet toegestaan"
       ],
+      "Could not find an available name": [
+        "Kon geen beschikbare naam vinden"
+      ],
       "Could not generate the device profile. Please try again.": [
         "Kan het apparaatprofiel niet genereren. Probeer het opnieuw."
       ],
       "Could not load sharing details": [
         "Kan de deelgegevens niet laden"
       ],
+      "Could not load the image preview: ${ message }": [
+        "Kan het afbeeldingsvoorbeeld niet laden: ${ message }"
+      ],
       "Could not open created vault": [
         "Kon aangemaakte kluis niet openen"
       ],
       "Could not open updated vault": [
         "Kon bijgewerkte kluis niet openen"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kon een deel van dit bestand niet lezen: ${ message }"
       ],
       "Could not save preference": [
         "Kon voorkeuren niet opslaan"
@@ -6856,6 +6865,9 @@
       ],
       "Couldn't load transactions. Please try again later.": [
         "Kon transacties niet laden. Probeer het later nog eens."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Het aanmaken van documenten in niet-mappen is niet toegestaan"
       ],
       "Creating files in non-folders is not allowed": [
         "Het aanmaken van bestanden in niet-mappen is niet toegestaan"
@@ -6913,6 +6925,9 @@
       "Error publishing changes": [
         "Fout bij publiceren wijzigingen"
       ],
+      "Expiration date cannot be in the past": [
+        "De vervaldatum mag niet in het verleden liggen"
+      ],
       "Expired": [
         "Verlopen"
       ],
@@ -6928,6 +6943,9 @@
       "Failed to decrypt bookmark key: ${ message }": [
         "Kan de bladwijzersleutel niet decoderen: ${ message }"
       ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Kan bladwijzernaam niet decoderen: ${ message }"
+      ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Kan bladwijzerwachtwoord niet decoderen: ${ message }"
       ],
@@ -6936,6 +6954,12 @@
       ],
       "Failed to decrypt item name: ${ message }": [
         "Kan itemnaam niet ontsleutelen: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Kan sleutel knooppunt niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Kan de metagegevens van de revisie niet ontsleutelen"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Het is niet gelukt om uw actieve sessies op te halen. Gelieve te ${ refresh } of later opnieuw te proberen."
@@ -6963,6 +6987,9 @@
       ],
       "Failed to update detailed monitoring.": [
         "Gedetailleerde monitoring kon niet worden bijgewerkt."
+      ],
+      "Failed to verify invitation": [
+        "Kan de uitnodiging niet verifiëren"
       ],
       "File download failed due to empty response": [
         "Het downloaden van bestanden is mislukt vanwege een leeg antwoord"
@@ -7106,6 +7133,12 @@
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Ontbrekende handtekening voor ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Verplaatsingsbewerking afgebroken"
+      ],
       "Moving item to a non-folder is not allowed": [
         "Het is niet toegestaan ​​om een ​​item naar een niet-map te verplaatsen"
       ],
@@ -7164,6 +7197,9 @@
       "Not a valid number": [
         "Geen geldig getal"
       ],
+      "Only admins can convert external invitations": [
+        "Alleen beheerders kunnen externe uitnodigingen converteren"
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Voor dit adres kunnen alleen hoofdlettergebruik en interpunctie (punten, koppeltekens en underscores) worden gewijzigd"
       ],
@@ -7172,6 +7208,12 @@
       ],
       "Operation failed, try again later": [
         "Bewerking mislukt. Probeer het later opnieuw"
+      ],
+      "Organization does not have enough seats available": [
+        "De organisatie heeft niet voldoende zitplaatsen beschikbaar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisatie heeft niet voldoende opslagruimte beschikbaar"
       ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
@@ -7325,6 +7367,9 @@
       "Renaming root item is not allowed": [
         "Het hernoemen van het rootitem is niet toegestaan"
       ],
+      "Request aborted": [
+        "Verzoek afgebroken"
+      ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
@@ -7353,6 +7398,9 @@
       ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verificatie handtekening mislukt: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
         "Handtekeningverificatie voor ${ signatureType } mislukt"
@@ -7519,6 +7567,9 @@
       "Too many requests. Please try again later": [
         "Te veel aanvragen. Probeer het later nog eens"
       ],
+      "Too many server errors, please try again later": [
+        "Te veel serverfouten. Probeer het later opnieuw"
+      ],
       "Too many server requests, please try again later": [
         "Te veel serververzoeken. Probeer het later opnieuw"
       ],
@@ -7596,6 +7647,12 @@
       ],
       "You can create public links for your own files only": [
         "U kunt alleen openbare links voor uw eigen bestanden maken"
+      ],
+      "You can only leave items that are shared with you": [
+        "U kunt alleen items achterlaten die met u gedeeld zijn"
+      ],
+      "You can only upload a new version to a file": [
+        "U kunt alleen een nieuwe versie naar een bestand uploaden"
       ],
       "You can update a public link for your own files only": [
         "U kunt een openbare link alleen voor uw eigen bestanden bijwerken"
@@ -9550,6 +9607,9 @@
       "Failed": [
         "Mislukt"
       ],
+      "Has errors": [
+        "Bevat fouten"
+      ],
       "Imported": [
         "Geïmporteerd"
       ],
@@ -9564,6 +9624,9 @@
       ],
       "Paused": [
         "Gepauzeerd"
+      ],
+      "Pending": [
+        "In behandeling"
       ],
       "Undo finished": [
         "Ongedaan maken voltooid"
@@ -10286,9 +10349,6 @@
       "Ask your organization admin to setup Gateways.": [
         "Vraag de beheerder van uw organisatie om Gateways in te stellen."
       ],
-      "Assigned seats won't be billed while disabled": [
-        "Toegewezen licenties worden niet gefactureerd zolang ze zijn uitgeschakeld"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Voer minstens ${ BETTER_PASSWORD_LENGTH } tekens in"
       ],
@@ -10495,9 +10555,6 @@
       ],
       "Coming soon": [
         "Binnenkort beschikbaar"
-      ],
-      "Companies you've been given access to manage.": [
-        "Bedrijven waarvoor u toegang heeft gekregen om ze te beheren."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Voltooi het aanmelden op dit apparaat om ${ VPN_APP_NAME } op uw tv te gebruiken."
@@ -12787,8 +12844,14 @@
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "Om deze gebruiker te migreren, voegt u het e-maildomein toe en verifieert u het onder ${ domainNamesLink }"
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Om deze gebruiker te migreren, schakelt u zijn/haar account in uw ${ provider.adminConsoleName } in."
+      ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Als u deze gebruiker wilt migreren, schakelt u het account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u het adres in onder ${ usersAddressesLink }."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Om deze gebruiker te migreren, moet hij/zij de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
@@ -13222,9 +13285,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Met groepen kunt u snel en gemakkelijk e-mails versturen naar alle mensen in een specifieke groep."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Met beheerde bedrijven kunt u toegang toevoegen, bewerken en verwijderen voor organisaties waarop u toezicht houdt."
-      ],
       "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
         "Met VPN Professional kunnen beheerders een altijd ingeschakelde VPN afdwingen voor alle leden van de organisatie, naast privé gateways, toegangsbeleid en monitoring."
       ],
@@ -13488,9 +13548,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "U zult niet in staat zijn om vergrendelde gegevens te herstellen met behulp van uw gedownloade herstelbestanden. Hiermee schakelt u ook de op toestel-gebaseerde herstelfunctie uit."
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "U wordt maandelijks gefactureerd op basis van het gemiddelde aantal toegewezen licenties."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "U ontvangt het tegoed 1 maand nadat uw vriend(in) zich abonneert op een jaarlijks abonnement, en 2 maanden nadat zij zich abonneren op een maandelijks abonnement."
@@ -14481,9 +14538,6 @@
       "Assertion Consumer Service URL": [
         "URL van Assertion Consumer Service"
       ],
-      "Assigned seats": [
-        "Toegewezen licenties"
-      ],
       "Attach public key": [
         "Publieke sleutel bijvoegen"
       ],
@@ -14538,9 +14592,6 @@
       "Autosuggest": [
         "Automatische suggestie"
       ],
-      "Average": [
-        "Gemiddelde"
-      ],
       "Awarded": [
         "Toegekend"
       ],
@@ -14555,9 +14606,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "U betaalt ${ priceYearly } per 12 maanden."
-      ],
-      "Billed average": [
-        "Gefactureerd gemiddelde"
       ],
       "Billed monthly.": [
         "Maandelijks gefactureerd."
@@ -15561,12 +15609,6 @@
       ],
       "Search for a name or email": [
         "Naam of e-mailadres zoeken"
-      ],
-      "Seats": [
-        "Licenties"
-      ],
-      "Seats usage": [
-        "Licentiegebruik"
       ],
       "Second password": [
         "Tweede wachtwoord"
@@ -17368,6 +17410,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent met uitgebreide toegang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent met beperkte toegang"
       ],
       "${ n } calendar": [
         "${ n } agenda",
@@ -20525,6 +20573,9 @@
       "attributes": [
         "attributen"
       ],
+      "content key": [
+        "inhoud sleutel"
+      ],
       "hash key": [
         "hash sleutel"
       ],
@@ -20533,6 +20584,9 @@
       ],
       "membership": [
         "lidmaatschap"
+      ],
+      "name": [
+        "naam"
       ]
     },
     "Property type": {
@@ -23457,9 +23511,6 @@
       "Last changed ${ formattedDate }": [
         "Laatst gewijzigd op ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Laatst bijgewerkt op ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Niet opgeslagen"
       ],
@@ -24621,6 +24672,9 @@
       ],
       "Estimated size": [
         "Geschatte grootte"
+      ],
+      "Migration status": [
+        "Migratiestatus"
       ],
       "Size": [
         "Grootte"
@@ -26720,6 +26774,9 @@
       "Welcome to your new password manager!": [
         "Welkom bij uw nieuwe wachtwoordbeheerder!"
       ],
+      "What are you migrating?": [
+        "Wat migreert u?"
+      ],
       "What changes if you switch to the Free plan": [
         "Wat verandert er als u overstapt naar het gratis abonnement"
       ],
@@ -26975,6 +27032,9 @@
       "Customize import to reduce the number of labels": [
         "Import aanpassen om het aantal labels te verminderen"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status gegevensmigratie van ${ providerName } naar ${ BRAND_NAME }"
+      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Verwijder prullenbak- en spamberichten na 30 dagen. Door automatisch verwijderen in te schakelen, krijgen berichten die al in de prullenbak/spam staan een verwijderingsdatum op basis van de datum waarop ze daarheen zijn verplaatst."
       ],
@@ -27178,6 +27238,9 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Geschatte locatie van de gebruiker (gebaseerd op hun IP-adres)"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME }-pictogram wanneer ze inlogt zijn op onze webapps."

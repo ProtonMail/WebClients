@@ -605,6 +605,9 @@
       "Go to panel ${ index }": [
         "Перайсці ў панэль ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -4776,6 +4779,9 @@
       "Cannot add photo to album without a valid name": [
         "Немагчыма дадаць фатаграфію ў альбом без сапраўднай назвы"
       ],
+      "Cannot download a folder": [
+        "Немагчыма спампаваць папку"
+      ],
       "Cannot move item without a valid name, please rename the item first": [
         "Немагчыма перанесці элемент без сапраўднай назвы. Спачатку дайце яму іншую назву."
       ],
@@ -4812,6 +4818,9 @@
       "Could not load sharing details": [
         "Немагчыма загрузіць абагуленыя падрабязнасці"
       ],
+      "Could not load the image preview: ${ message }": [
+        "Немагчыма загрузіць папярэдні прагляд відарыса: ${ message }"
+      ],
       "Could not read part of this file: ${ message }": [
         "Немагчыма прачытаць частку гэтага файла: ${ message }"
       ],
@@ -4826,6 +4835,9 @@
       ],
       "Couldn't load transactions. Please try again later.": [
         "Немагчыма загрузіць трансакцыі. Паспрабуйце яшчэ раз пазней."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Стварэнне дакументаў па-за іх межамі забаронена"
       ],
       "Creating files in non-folders is not allowed": [
         "Стварэнне файлаў па-за іх межамі забаронена"
@@ -5084,6 +5096,9 @@
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў"
+      ],
+      "Name must not be empty": [
+        "Назва не можа быць пустой"
       ],
       "No calendars found to import": [
         "Не знойдзены календары для імпартавання"
@@ -5444,6 +5459,9 @@
       ],
       "Too many requests. Please try again later": [
         "Занадта шмат запытаў. Паспрабуйце яшчэ раз пазней"
+      ],
+      "Too many server errors, please try again later": [
+        "Занадта шмат памылак сервера. Паўтарыце спробу пазней"
       ],
       "Too many server requests, please try again later": [
         "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
@@ -5878,6 +5896,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Запрашэнне ад: ${ inviteEmail }"
+      ],
+      "Leave Family plan": [
+        "Адмовіцца ад тарыфнага плана Family"
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Пажыццёвыя ўліковыя запісы нельга далучыць да сямейнага тарыфнага плана."
@@ -6414,6 +6435,9 @@
       ],
       "In progress": [
         "Выконваецца"
+      ],
+      "Migrated": [
+        "Перанесена"
       ],
       "Not activated": [
         "Не актывавана"
@@ -7034,6 +7058,11 @@
         "Выберыце ${ boldExport }, каб экспартаваць каляндар як файл ICS."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Больш параметраў імпартавання"
+      ]
+    },
     "Import status": {
       "Has errors": [
         "З памылкамі"
@@ -7043,6 +7072,9 @@
       ],
       "Migrated": [
         "Перанесена"
+      ],
+      "Pending": [
+        "У чаканні"
       ]
     },
     "Import warning": {
@@ -7755,6 +7787,9 @@
       ],
       "Choose one:": [
         "Выберыце які-небудзь:"
+      ],
+      "Choose your service to connect with": [
+        "Выберыце сэрвіс для падключэння"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
@@ -9784,6 +9819,9 @@
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
       ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт ${ IDEAL_BRAND_NAME }. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
@@ -10713,6 +10751,9 @@
       "Digits": [
         "Лічбы"
       ],
+      "Disable animations": [
+        "Адключыць анімацыю"
+      ],
       "Disabled": [
         "Адключана"
       ],
@@ -10826,6 +10867,12 @@
       ],
       "Folders, labels, and filters": [
         "Папкі, меткі і фільтры"
+      ],
+      "Font family": [
+        "Сямейства шрыфтоў"
+      ],
+      "Font size": [
+        "Памер шрыфту"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Для ${ DRIVE_SHORT_APP_NAME } і ${ DOCS_SHORT_APP_NAME }."
@@ -11030,6 +11077,9 @@
       ],
       "Notification": [
         "Апавяшчэнне"
+      ],
+      "Notification email address": [
+        "Адрас электроннай пошты для апавяшчэнняў"
       ],
       "Numbers": [
         "Лічбы"
@@ -11271,6 +11321,9 @@
       "Thomas": [
         "Янка"
       ],
+      "Time format": [
+        "Фармат часу"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Растлумачце, чаму вы пакідаеце нас. Гэта дапаможа палепшыць наш сэрвіс."
       ],
@@ -11340,6 +11393,9 @@
       "Weak password": [
         "Ненадзейны пароль"
       ],
+      "Week start": [
+        "Пачатак тыдня"
+      ],
       "What happened?": [
         "Што здарылася?"
       ],
@@ -11387,6 +11443,9 @@
       ]
     },
     "label": {
+      "Notification phone number": [
+        "Нумар тэлефона для апавяшчэнняў"
+      ],
       "Recovery phone number": [
         "Нумар тэлефона для аднаўлення"
       ]
@@ -12310,6 +12369,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з пашыраным доступам"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з абмежаваным доступам"
+      ],
       "${ n } calendar": [
         "${ n } каляндар",
         "${ n } календары",
@@ -13040,6 +13105,9 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
       ]
     },
     "new_plans: Title": {
@@ -14189,6 +14257,9 @@
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Заплаціць з дапамогай ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосаб аплаты патрабуецца для актывацыі падпіскі пасля завяршэння пробнага перыяду."
       ],
@@ -14684,6 +14755,9 @@
     "Property": {
       "attributes": [
         "атрыбуты"
+      ],
+      "content key": [
+        "ключ змесціва"
       ],
       "hash key": [
         "хэш-ключ"
@@ -16711,9 +16785,6 @@
       "Last changed ${ formattedDate }": [
         "Апошняя змена ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Апошняе абнаўленне ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Не захавана"
       ],
@@ -16781,6 +16852,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Для ўсіх сэрвісаў ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Атрымаць больш месца ў сховішчы"
       ],
       "Storage used": [
         "Выкарыстана сховішча"
@@ -18573,6 +18647,9 @@
       "Get help with an issue": [
         "Атрымаць дапамогу па праблеме"
       ],
+      "Get more from your privacy suite": [
+        "Атрымлівайце больш ад вашага набору прыватнасці"
+      ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
       ],
@@ -19335,6 +19412,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "Трансакцыі ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Пераносы арганізацый"
       ]
     },
     "Title header for addresses domain table": {

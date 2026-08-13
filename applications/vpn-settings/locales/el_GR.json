@@ -32,6 +32,167 @@
         "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία διαρροή δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
       ]
     },
+    "account_search_index": {
+      "12-word phrase": [
+        "φράση 12 λέξεων"
+      ],
+      "Account events": [
+        "Συμβάντα λογαριασμού"
+      ],
+      "Active sessions": [
+        "Ενεργές συνεδρίες"
+      ],
+      "Advanced account protection": [
+        "Προηγμένη προστασία λογαριασμού"
+      ],
+      "AI assistant": [
+        "Βοηθός Τεχνητής Νοημοσύνης"
+      ],
+      "Allow list": [
+        "Λίστα επιτρεπόμενων"
+      ],
+      "Audit log": [
+        "Αρχείο ελέγχου"
+      ],
+      "Authentication logs": [
+        "Αρχεία καταγραφής ταυτοποίησης"
+      ],
+      "Automatic renewal": [
+        "Αυτόματη ανανέωση"
+      ],
+      "Block sender for the organization": [
+        "Αποκλεισμός αποστολέα για τον οργανισμό"
+      ],
+      "Bulk user import": [
+        "Μαζική εισαγωγή χρηστών"
+      ],
+      "Cancel plan": [
+        "Ακύρωση πλάνου"
+      ],
+      "Close account": [
+        "Κλείσιμο λογαριασμού"
+      ],
+      "Compare plans": [
+        "Συγκριση πακετων"
+      ],
+      "Connection events": [
+        "Συμβάντα σύνδεσης"
+      ],
+      "Create organization": [
+        "Δημιουργία οργανισμού"
+      ],
+      "Custom domain": [
+        "Προσαρμοσμένος τομέας"
+      ],
+      "Customer support": [
+        "Εξυπηρέτηση πελατών"
+      ],
+      "Dark mode": [
+        "Σκοτεινή λειτουργία"
+      ],
+      "Desktop and mobile apps": [
+        "Εφαρμογές για υπολογιστές και κινητά"
+      ],
+      "Downgrade to Free": [
+        "Υποβάθμιση σε Free"
+      ],
+      "Download apps": [
+        "Λήψη εφαρμογών"
+      ],
+      "Download recovery file": [
+        "Κατέβασμα αρχείου ανάκτησης"
+      ],
+      "Encryption backup in this browser": [
+        "Δημιουργία αντιγράφων ασφαλείας κρυπτογράφησης σε αυτό το πρόγραμμα περιήγησης"
+      ],
+      "Group members": [
+        "Μέλη ομάδας"
+      ],
+      "High-security mode": [
+        "Λειτουργία υψηλής ασφάλειας"
+      ],
+      "Import history": [
+        "Ιστορικό εισαγωγών"
+      ],
+      "Included apps": [
+        "Συμπεριλαμβανόμενες εφαρμογές"
+      ],
+      "Join organization": [
+        "Συμμετοχή σε οργανισμό"
+      ],
+      "Leaked password": [
+        "Διαρροή κωδικού πρόσβασης"
+      ],
+      "Leave group": [
+        "Αποχώρηση από την ομάδα"
+      ],
+      "Leave organization": [
+        "Αποχώρηση από τον οργανισμό"
+      ],
+      "Light mode": [
+        "Φωτεινή λειτουργία"
+      ],
+      "Mnemonic": [
+        "Μνημονικό"
+      ],
+      "One-time code": [
+        "Κωδικός μίας χρήσης"
+      ],
+      "Password reset request": [
+        "Αίτηση Επαναφοράς Κωδικού Πρόσβασης"
+      ],
+      "Privacy services": [
+        "Υπηρεσίες απορρήτου"
+      ],
+      "Recovery email address": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης"
+      ],
+      "Recovery phone number": [
+        "Αριθμός τηλεφώνου ανάκτησης"
+      ],
+      "Recovery score": [
+        "Βαθμολογία ανάκτησης"
+      ],
+      "Referral link": [
+        "Σύνδεσμος παραπομπής"
+      ],
+      "Scan QR code": [
+        "Σάρωση κωδικού QR"
+      ],
+      "Sign-in history": [
+        "Ιστορικό σύνδεσης"
+      ],
+      "Storage space": [
+        "Χώρος αποθήκευσης"
+      ],
+      "Storage usage": [
+        "Χρήση αποθηκευτικού χώρου"
+      ],
+      "Subscription end date": [
+        "Ημερομηνία λήξης συνδρομής"
+      ],
+      "Subscription status": [
+        "Κατάσταση συνδρομής"
+      ],
+      "Telemetry": [
+        "Τηλεμετρία"
+      ],
+      "Trusted contact": [
+        "Αξιόπιστη επαφή"
+      ],
+      "Upgrade plan": [
+        "Πρόγραμμα αναβάθμισης"
+      ],
+      "Verify domain": [
+        "Επαλήθευση τομέα"
+      ],
+      "Video conferencing": [
+        "Τηλεδιάσκεψη"
+      ],
+      "Writing assistant": [
+        "Βοηθός γραφής"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Λογαριασμοί"
@@ -607,6 +768,9 @@
       ],
       "Go to panel ${ index }": [
         "Μετάβαση στο πλαίσιο ${ index }"
+      ],
+      "Google": [
+        "Google"
       ],
       "Got it": [
         "Το κατάλαβα"
@@ -5823,6 +5987,9 @@
       "Invited by: ${ inviteEmail }": [
         "Πρόσκληση από: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "Αποχώρηση από το πλάνο Family"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "Οι λογαριασμοί εφ' όρου ζωής δεν μπορούν να συμμετάσχουν σε οικογενειακό πλάνο."
       ],
@@ -6976,6 +7143,11 @@
         "Για εξαγωγή του ημερολογίου ως αρχείου ICS, επιλέξτε ${ boldExport }."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Περισσότερες επιλογές εισαγωγής"
+      ]
+    },
     "Import status": {
       "Has errors": [
         "Έχει σφάλματα"
@@ -7639,6 +7811,9 @@
       ],
       "Choose one:": [
         "Επιλέξτε ένα:"
+      ],
+      "Choose your service to connect with": [
+        "Επιλέξτε την υπηρεσία σας για να συνδεθείτε"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
@@ -10568,6 +10743,9 @@
       "Digits": [
         "Ψηφία"
       ],
+      "Disable animations": [
+        "Απενεργοποιήστε τα εφέ"
+      ],
       "Disabled": [
         "Απενεργοποιημένο"
       ],
@@ -10681,6 +10859,12 @@
       ],
       "Folders, labels, and filters": [
         "Φάκελοι, ετικέτες, και φίλτρα"
+      ],
+      "Font family": [
+        "Οικογένεια γραμματοσειρών"
+      ],
+      "Font size": [
+        "Μέγεθος γραμματοσειράς"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Για ${ DRIVE_SHORT_APP_NAME } και ${ DOCS_SHORT_APP_NAME }."
@@ -10885,6 +11069,9 @@
       ],
       "Notification": [
         "Ειδοποίηση"
+      ],
+      "Notification email address": [
+        "Ηλεκτρονική διεύθυνση ειδοποίησης"
       ],
       "Numbers": [
         "Αριθμοί"
@@ -11124,6 +11311,9 @@
       "Thomas": [
         "Thomas"
       ],
+      "Time format": [
+        "Μορφή ώρας"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Για να μας βοηθήσετε να βελτιωθούμε, παρακαλούμε εξηγήστε γιατί φεύγετε."
       ],
@@ -11196,6 +11386,9 @@
       "Weak password": [
         "Αδύναμος κωδικός πρόσβασης"
       ],
+      "Week start": [
+        "Έναρξη εβδομάδας"
+      ],
       "What happened?": [
         "Τι συνέβη;"
       ],
@@ -11243,6 +11436,9 @@
       ]
     },
     "label": {
+      "Notification phone number": [
+        "Αριθμός τηλεφώνου ειδοποίησης"
+      ],
       "Recovery phone number": [
         "Τηλεφωνικός αριθμός ανάκτησης"
       ]
@@ -12842,6 +13038,9 @@
       ],
       "Switch plans?": [
         "Αλλαγή προγράμματος;"
+      ],
+      "Unlock premium features by upgrading": [
+        "Ξεκλειδώστε premium δυνατότητες με αναβάθμιση"
       ]
     },
     "new_plans: Title": {
@@ -16431,9 +16630,6 @@
       "Last changed ${ formattedDate }": [
         "Τελευταία αλλαγή ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Τελευταία ενημέρωση ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Μη αποθηκευμένο"
       ],
@@ -16501,6 +16697,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Για όλες τις υπηρεσίες ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Αποκτήστε περισσότερο χώρο αποθήκευσης"
       ],
       "Storage used": [
         "Αποθηκευτικός χώρος σε χρήση"
@@ -18226,6 +18425,9 @@
       "Get help with an issue": [
         "Λάβετε βοήθεια για ένα πρόβλημα"
       ],
+      "Get more from your privacy suite": [
+        "Αξιοποιήστε στο έπακρο τη σουίτα απορρήτου σας"
+      ],
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."
       ],
@@ -18993,6 +19195,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "${ MAIL_APP_NAME } συναλλαγή"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Μεταναστεύσεις οργανισμών"
       ]
     },
     "Title header for addresses domain table": {

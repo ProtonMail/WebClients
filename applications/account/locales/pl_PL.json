@@ -777,17 +777,11 @@
       "Export as CSV": [
         "Eksportuj jako CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "Eksportuj rozbicie na firmy jako ZIP"
-      ],
       "Export key": [
         "Eksportuj klucz"
       ],
       "Export key before deleting": [
         "Eksportuj klucz przed usunięciem"
-      ],
-      "Export overview as CSV": [
-        "Eksportuj podsumowanie jako CSV"
       ],
       "Extend": [
         "Rozszerz"
@@ -3688,14 +3682,8 @@
       "Status": [
         "Status"
       ],
-      "Total billed seats": [
-        "Łączna liczba rozliczanych licencji"
-      ],
       "Total cost": [
         "Całkowity koszt"
-      ],
-      "Used / assigned seats": [
-        "Użyte / przypisane licencje"
       ]
     },
     "Condition for custom filter": {
@@ -10204,9 +10192,6 @@
       "Ask your organization admin to setup Gateways.": [
         "Poproś administratora organizacji o skonfigurowanie bram."
       ],
-      "Assigned seats won't be billed while disabled": [
-        "Przypisane licencje nie będą rozliczane, gdy firma jest wyłączona"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minimum ${ BETTER_PASSWORD_LENGTH } znaków"
       ],
@@ -13006,9 +12991,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Za pomocą grup możesz szybko i łatwo wysyłać wiadomości do wszystkich użytkowników w konkretnej grupie."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Dzięki zarządzanym firmom możesz dodawać, edytować i usuwać dostęp dla organizacji, które nadzorujesz."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "W Twoim obecnym planie możesz jedynie odbierać wiadomości na adres @pm.me. Ulepsz plan, aby móc wysyłać wiadomości i tworzyć dodatkowe adresy z domeną @pm.me."
       ],
@@ -13281,9 +13263,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Odzyskiwanie zablokowanych danych za pomocą pobranych plików odzyskiwania nie będzie możliwe. Spowoduje to również wyłączenie odzyskiwania za pomocą zaufanego urządzenia."
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "Rozliczenia będą odbywać się co miesiąc na podstawie średniej liczby przypisanych licencji."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Środki otrzymasz 1 miesiąc po zasubskrybowaniu przez Twojego znajomego planu rocznego lub 2 miesiące po zasubskrybowaniu planu miesięcznego."
@@ -14279,9 +14258,6 @@
       "Assertion Consumer Service URL": [
         "Adres URL usługi ACS"
       ],
-      "Assigned seats": [
-        "Przypisane licencje"
-      ],
       "Attach public key": [
         "Dołącz klucz publiczny"
       ],
@@ -14336,9 +14312,6 @@
       "Autosuggest": [
         "Automatyczne sugestie"
       ],
-      "Average": [
-        "Średnia"
-      ],
       "Awarded": [
         "Przyznano"
       ],
@@ -14350,9 +14323,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Rozliczane jako ${ priceYearly } co 12 miesięcy."
-      ],
-      "Billed average": [
-        "Średnia rozliczana"
       ],
       "Billed monthly.": [
         "Rozliczane miesięcznie."
@@ -15331,12 +15301,6 @@
       ],
       "Search for a name or email": [
         "Szukaj nazwy lub adresu e-mail"
-      ],
-      "Seats": [
-        "Licencje"
-      ],
-      "Seats usage": [
-        "Użycie licencji"
       ],
       "Second password": [
         "Drugie hasło"
@@ -23388,9 +23352,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "Ostatnia zmiana: ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Ostatnia aktualizacja: ${ formattedUpdateDate }"
       ],
       "Not saved": [
         "Niezapisane"

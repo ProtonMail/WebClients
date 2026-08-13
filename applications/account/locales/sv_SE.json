@@ -54,6 +54,233 @@
         "Din information hittades i minst en dataläcka. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ]
     },
+    "account_search_index": {
+      "Account events": [
+        "Kontohändelser"
+      ],
+      "Active sessions": [
+        "Aktiva sessioner"
+      ],
+      "Add address": [
+        "Lägg till adress"
+      ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
+      ],
+      "AI assistant": [
+        "AI-assistent"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Authentication logs": [
+        "Autentiseringsloggar"
+      ],
+      "Auto-add invitations to calendar": [
+        "Lägg till inbjudningar automatiskt i kalender"
+      ],
+      "Automatic renewal": [
+        "Automatisk förnyelse"
+      ],
+      "Automatically delete data": [
+        "Ta bort data automatiskt"
+      ],
+      "Block sender": [
+        "Blockera avsändare"
+      ],
+      "Block sender for the organization": [
+        "Blockera avsändare för organisationen"
+      ],
+      "Blog articles": [
+        "Bloggartiklar"
+      ],
+      "Close account": [
+        "Stäng konto"
+      ],
+      "Compare plans": [
+        "Jämför paket"
+      ],
+      "Connected addresses": [
+        "Anslutna adresser"
+      ],
+      "Connection events": [
+        "Anslutningshändelser"
+      ],
+      "Create organization": [
+        "Skapa organisation"
+      ],
+      "Custom domain": [
+        "Anpassad domän"
+      ],
+      "Customer support": [
+        "Kundsupport"
+      ],
+      "Dark mode": [
+        "Mörkt läge"
+      ],
+      "Desktop and mobile apps": [
+        "Appar för stationär dator och mobil"
+      ],
+      "Downgrade plan": [
+        "Nedgradera paket"
+      ],
+      "Download apps": [
+        "Ladda ner appar"
+      ],
+      "Download recovery file": [
+        "Ladda ner återställningsfil"
+      ],
+      "Email aliases": [
+        "E-postalias"
+      ],
+      "Enable or disable apps for members": [
+        "Aktivera eller inaktivera appar för medlemmar"
+      ],
+      "Export messages": [
+        "Exportera meddelanden"
+      ],
+      "External mailbox": [
+        "Extern brevlåda"
+      ],
+      "Group invitations": [
+        "Gruppinbjudningar"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "IMAP and SMTP": [
+        "IMAP och SMTP"
+      ],
+      "Import events": [
+        "Importera händelser"
+      ],
+      "Import history": [
+        "Importhistorik"
+      ],
+      "Included apps": [
+        "Inkluderade appar"
+      ],
+      "Invitation language": [
+        "Inbjudningsspråk"
+      ],
+      "iOS and Android apps": [
+        "Appar för iOS och Android"
+      ],
+      "Join organization": [
+        "Gå med i organisation"
+      ],
+      "Leaked password": [
+        "Läckt lösenord"
+      ],
+      "Leave group": [
+        "Lämna grupp"
+      ],
+      "Leave organization": [
+        "Lämna organisation"
+      ],
+      "Light mode": [
+        "Ljust läge"
+      ],
+      "Linux desktop app": [
+        "Linus-app för stationär dator"
+      ],
+      "Mnemonic": [
+        "Mnemonic"
+      ],
+      "One-time code": [
+        "Engångskod"
+      ],
+      "Outlook, Apple Mail, and Thunderbird": [
+        "Outlook, Apple Mail och Thunderbird"
+      ],
+      "Password reminder": [
+        "Lösenordspåminnelse"
+      ],
+      "Permanently delete data": [
+        "Ta bort data permanent"
+      ],
+      "Play Store": [
+        "Play Butik"
+      ],
+      "Privacy guides": [
+        "Integritetsguider"
+      ],
+      "Privacy services": [
+        "Integritetstjänster"
+      ],
+      "Protection from cyber attacks": [
+        "Skydd mot cyberattacker"
+      ],
+      "Recovery email address": [
+        "E-postadress för återställning"
+      ],
+      "Recovery phone number": [
+        "Telefonnummer för återställning"
+      ],
+      "Redeem discount code": [
+        "Lös in rabattkod"
+      ],
+      "Redirect incoming emails": [
+        "Omdirigera inkommande e-post"
+      ],
+      "Referral credits": [
+        "Hänvisningskrediter"
+      ],
+      "Referral link": [
+        "Hänvisningslänk"
+      ],
+      "Referral rewards": [
+        "Hänvisningsbelöningar"
+      ],
+      "Scan QR code": [
+        "Skanna QR-kod"
+      ],
+      "Shared server access": [
+        "Delad serveråtkomst"
+      ],
+      "Sign out other devices": [
+        "Logga ut andra enheter"
+      ],
+      "Sign-in history": [
+        "Inloggningshistorik"
+      ],
+      "Stop subscription renewal": [
+        "Stoppa prenumerationsförnyelse"
+      ],
+      "Storage space": [
+        "Lagringsutrymme"
+      ],
+      "Storage usage": [
+        "Lagringsanvändning"
+      ],
+      "Subscription end date": [
+        "Prenumerationens slutdatum"
+      ],
+      "Subscription status": [
+        "Prenumerationsstatus"
+      ],
+      "Telemetry": [
+        "Telemetri"
+      ],
+      "Trusted contact": [
+        "Betrodd kontakt"
+      ],
+      "Upgrade plan": [
+        "Uppgradera paket"
+      ],
+      "Verify domain": [
+        "Verifiera domän"
+      ],
+      "Video conferencing": [
+        "Videokonferenser"
+      ],
+      "VPN session details": [
+        "VPN-sessionsdetaljer"
+      ],
+      "Writing assistant": [
+        "Skrivassistent"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Konton"
@@ -62,6 +289,9 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
+      ],
+      "+${ remaining } more": [
+        "+${ remaining } till"
       ],
       "Accept": [
         "Acceptera"
@@ -501,6 +731,9 @@
       "Decrease": [
         "Minska"
       ],
+      "Decrease licenses": [
+        "Minska licenser"
+      ],
       "Decrypt": [
         "Avkryptera"
       ],
@@ -663,6 +896,9 @@
       "Download logs": [
         "Ladda ner loggar"
       ],
+      "Download monthly summary (CSV)": [
+        "Ladda ner månadssammanfattning (CSV)"
+      ],
       "Download our CSV template": [
         "Ladda ner vår CSV-mall"
       ],
@@ -801,17 +1037,11 @@
       "Export as CSV": [
         "Exportera som CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "Exportera specifikation per företag som ZIP"
-      ],
       "Export key": [
         "Exportera nyckel"
       ],
       "Export key before deleting": [
         "Exportera nyckel innan borttagning"
-      ],
-      "Export overview as CSV": [
-        "Exportera översikt som CSV"
       ],
       "Extend": [
         "Utöka"
@@ -1020,6 +1250,9 @@
       "Increase": [
         "Öka"
       ],
+      "Increase licenses": [
+        "Öka licenser"
+      ],
       "Insert": [
         "Infoga"
       ],
@@ -1211,6 +1444,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ company.name } manually": [
+        "Öppna ${ company.name } manuellt"
       ],
       "Open ${ PASS_APP_NAME } in your browser": [
         "Öppna ${ PASS_APP_NAME } i din webbläsare"
@@ -3697,6 +3933,9 @@
       ]
     },
     "Column header": {
+      "Billable licenses": [
+        "Fakturerbara licenser"
+      ],
       "Billing period": [
         "Faktureringsperiod"
       ],
@@ -3709,14 +3948,8 @@
       "Status": [
         "Status"
       ],
-      "Total billed seats": [
-        "Totalt fakturerade användarplatser"
-      ],
       "Total cost": [
         "Total kostnad"
-      ],
-      "Used / assigned seats": [
-        "Använda/tilldelade användarplatser"
       ]
     },
     "Condition for custom filter": {
@@ -6795,6 +7028,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Belopp under minimum (${ minimumAmount })."
       ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "Ett okänt fel uppstod. Uppdatera sidan och försök igen"
+      ],
       "Authentication canceled.": [
         "Autentiseringen avbröts."
       ],
@@ -6821,6 +7057,9 @@
       ],
       "Cannot share root folder": [
         "Kan inte dela rotmapp"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan inte verifiera författaren för denna fil"
       ],
       "Cannot verify who uploaded this file": [
         "Kan inte verifiera vem som laddade upp denna fil"
@@ -6944,6 +7183,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Misslyckades att hämta aktiva sessioner. ${ refresh } eller försök igen senare."
       ],
+      "Failed to get inviter keys": [
+        "Misslyckades med att hämta inbjudningsnycklar"
+      ],
       "Failed to load OAuth": [
         "Misslyckades med att ladda OAuth"
       ],
@@ -6970,6 +7212,9 @@
       ],
       "Failed to verify invitation": [
         "Misslyckades med att verifiera inbjudan"
+      ],
+      "File download failed due to empty response": [
+        "Filnedladdning misslyckades på grund av tomt svar"
       ],
       "File has no revision": [
         "Fil har ingen version"
@@ -7270,6 +7515,9 @@
       "Please set up your organization before adding a company.": [
         "Ställ in din organisation innan du lägger till ett företag."
       ],
+      "Please set up your organization identity before adding a company.": [
+        "Ställ in din organisationsidentitet innan du lägger till ett företag."
+      ],
       "Please try again in a few moments.": [
         "Försök igen om en stund."
       ],
@@ -7557,6 +7805,9 @@
       ],
       "You already added this holidays calendar": [
         "Du har redan lagt till denna helgdagskalender"
+      ],
+      "You can create public links for your own files only": [
+        "Du kan endast skapa offentliga länkar för dina egna filer"
       ],
       "You can only upload a new version to a file": [
         "Du kan bara ladda upp en ny version till en fil"
@@ -8803,6 +9054,9 @@
       "Dedicated server - ${ serverPrice }": [
         "Dedikerad server - ${ serverPrice }"
       ],
+      "Enforce identity-based access controls": [
+        "Framtvinga identitetsbaserade åtkomstkontroller"
+      ],
       "User - ${ userPrice }": [
         "Användare - ${ userPrice }"
       ]
@@ -9801,6 +10055,9 @@
         "${ providerFoldersNumLocalized } etikett hittades i Gmail",
         "${ providerFoldersNumLocalized } etiketter hittades i Gmail"
       ],
+      "${ providerName } account": [
+        "${ providerName }-konto"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server håller fortfarande på att konfigureras. Detta tar vanligtvis cirka ${ provisioningDuration }.",
         "${ provisioningCounter } servrar håller fortfarande på att konfigureras. Detta tar vanligtvis cirka ${ provisioningDuration }."
@@ -9844,6 +10101,9 @@
       ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
+      ],
+      "${ storeName } app to copy data to ${ BRAND_NAME }": [
+        "${ storeName }-app för att kopiera data till ${ BRAND_NAME }"
       ],
       "${ total } user found": [
         "${ total } användare hittades",
@@ -10279,9 +10539,6 @@
       "Ask your organization admin to setup Gateways.": [
         "Be din organisationsadministratör att ställa in gateways."
       ],
-      "Assigned seats won't be billed while disabled": [
-        "Tilldelade användarplatser debiteras inte när de är inaktiverade"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
       ],
@@ -10482,9 +10739,6 @@
       ],
       "Coming soon": [
         "Kommer snart"
-      ],
-      "Companies you've been given access to manage.": [
-        "Företag som du har fått åtkomst att hantera."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Slutför inloggningen på denna enhet för att börja använda ${ VPN_APP_NAME } på din TV."
@@ -11587,6 +11841,9 @@
       "Manage groups in your identity provider": [
         "Hantera grupper i din identitetsleverantör"
       ],
+      "Manage the companies you're responsible for.": [
+        "Hantera de företag du ansvarar för."
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Hantera vilka ${ BRAND_NAME }-applikationer som medlemmarna i din organisation har åtkomst till. Om funktionen är inaktiverad har endast administratörer åtkomst."
       ],
@@ -12223,6 +12480,9 @@
       ],
       "Setting up ${ feature }…": [
         "Ställer in ${ feature }…"
+      ],
+      "Setting up your access…": [
+        "Ställer in din åtkomst …"
       ],
       "Setting up your new address…": [
         "Ställer in din nya adress…"
@@ -13158,9 +13418,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Med grupper kan du snabbt och enkelt skicka e-post till alla personer i en specificerad grupp."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Med hanterade företag kan du lägga till, redigera och ta bort åtkomst för organisationer du övervakar."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Med ditt nuvarande paket kan du endast ta emot meddelanden med din adress @pm.me. Uppgradera för att skicka meddelanden och skapa ytterligare adresser med @pm.me."
       ],
@@ -13422,9 +13679,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Du kommer inte att kunna återställa låsta data med dina nedladdade återställningsfiler. Detta kommer också att inaktivera enhetsbaserad återställning."
       ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "Du faktureras månadsvis baserat på det genomsnittliga antalet tilldelade användarplatser."
-      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du får kreditbelöningen 1 månad efter att din vän har börjat prenumerera på ett årspaket, och 2 månader efter att de har börjat prenumerera på ett månadspaket."
       ],
@@ -13480,6 +13734,9 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Ditt konto har uppdaterats med denna kampanj"
+      ],
+      "Your browser blocked the new tab.": [
+        "Din webbläsare blockerade den nya fliken."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
@@ -14411,9 +14668,6 @@
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service-URL"
       ],
-      "Assigned seats": [
-        "Tilldelade användarplatser"
-      ],
       "Attach public key": [
         "Bifoga offentlig nyckel"
       ],
@@ -14468,9 +14722,6 @@
       "Autosuggest": [
         "Föreslå automatiskt"
       ],
-      "Average": [
-        "Genomsnittlig"
-      ],
       "Awarded": [
         "Belönades"
       ],
@@ -14485,9 +14736,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Faktureras med ${ priceYearly } var 12:e månad."
-      ],
-      "Billed average": [
-        "Fakturerat genomsnitt"
       ],
       "Billed monthly.": [
         "Faktureras månadsvis."
@@ -15111,6 +15359,9 @@
       "Level for NetShield blocker filtering": [
         "Nivå på blockeringsfiltrering för NetShield"
       ],
+      "Licenses usage": [
+        "Licensanvändning"
+      ],
       "Link label (optional)": [
         "Länketikett (valfritt)"
       ],
@@ -15197,6 +15448,9 @@
       ],
       "Monthly": [
         "Månadsvis"
+      ],
+      "Monthly average": [
+        "Månadsgenomsnitt"
       ],
       "More payment methods": [
         "Fler betalningsmetoder"
@@ -15500,12 +15754,6 @@
       ],
       "Search for a name or email": [
         "Sök efter ett namn eller e-post"
-      ],
-      "Seats": [
-        "Användarplatser"
-      ],
-      "Seats usage": [
-        "Användning av användarplatser"
       ],
       "Second password": [
         "Andra lösenord"
@@ -17333,6 +17581,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent med begränsad åtkomst"
       ],
       "${ n } calendar": [
         "${ n } kalender",
@@ -19846,6 +20097,9 @@
       ],
       "Offer unavailable": [
         "Erbjudande otillgängligt"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betala med ${ IDEAL_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalningsmetod krävs för att prenumerationen ska aktiveras efter provperioden är slut."
@@ -23141,6 +23395,9 @@
       "Contact your administrator if the problem persists.": [
         "Kontakta din administratör om problemet kvarstår."
       ],
+      "Continue to join as **${ username }**": [
+        "Fortsätt att gå med som **${ username }**"
+      ],
       "Current device": [
         "Nuvarande enhet"
       ],
@@ -23175,6 +23432,9 @@
       ],
       "Enter your backup password": [
         "Ange ditt reservlösenord"
+      ],
+      "For your security, you have been signed out of all your other active devices.": [
+        "För din säkerhet har du loggats ut från alla dina andra aktiva enheter."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "För din säkerhet har du blivit utloggad från alla dina andra aktiva enheter. Innan du kommer åt ditt konto måste du ange ett nytt reservlösenord."
@@ -23286,6 +23546,9 @@
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Detta kommer att logga ut dig från dina andra enheter och du måste skapa ett nytt reservlösenord."
+      ],
+      "This will sign you out of your other devices.": [
+        "Detta kommer att logga ut dig från dina andra enheter."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "För att vara säker på att det verkligen är du som försöker logga in på **${ email }**, granska bekräftelsekoden och godkänn begäran från annan enhet."
@@ -23401,9 +23664,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "Senast ändrad ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Senast uppdaterad ${ formattedUpdateDate }"
       ],
       "Not activated": [
         "Inte aktiverad"
@@ -25004,6 +25264,9 @@
       "Address and key verification": [
         "Adress- och nyckelverifiering"
       ],
+      "Advanced configuration": [
+        "Avancerad konfiguration"
+      ],
       "Advanced recovery options": [
         "Avancerade återställningsalternativ"
       ],
@@ -25072,6 +25335,9 @@
       ],
       "Ask your emergency contacts for help": [
         "Be dina nödkontakter om hjälp"
+      ],
+      "Authenticate your ${ providerName } account": [
+        "Autentisera ditt ${ providerName }-konto"
       ],
       "Auto-deletion is active": [
         "Automatisk borttagning är aktivt"
@@ -25992,6 +26258,9 @@
       "Migration status": [
         "Migreringsstatus"
       ],
+      "Migration summary": [
+        "Migreringssammanfattning"
+      ],
       "Minicalendar": [
         "Minikalender"
       ],
@@ -26626,6 +26895,9 @@
       "Unlock your data": [
         "Lås upp din data"
       ],
+      "Update records for receiving": [
+        "Uppdatera poster för mottagning"
+      ],
       "Upgrade complete!": [
         "Uppgradering slutförd!"
       ],
@@ -27111,6 +27383,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Ursprunglig IP-adress och Internetleverantör (ISP)"
+      ],
+      "Reauthenticate your ${ providerName } account to start a migration": [
+        "Autentisera ditt ${ providerName }-konto igen för att starta en migrering."
       ],
       "Remove metadata from images to protect your privacy.": [
         "Ta bort metadata från bilder för att skydda din integritet."
@@ -28096,6 +28371,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Kontrollera att utökningen är korrekt installerat och aktiverat"
       ],
+      "Please don’t close or refresh this window.": [
+        "Stäng inte eller uppdatera detta fönster."
+      ],
       "Please update the extension to its latest version": [
         "Uppdatera utökningen till den senaste versionen"
       ],
@@ -28129,6 +28407,9 @@
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi upptäckte ett problem med din DNS-konfiguration. Se till att dina poster matchar instruktionerna nedan. Om problemet kvarstår måste vi stänga av DKIM-signering."
       ],
+      "We were unable to verify the installation, please check that you have installed it in your ${ providerName } account and try again.": [
+        "Vi kunde inte verifiera installationen. Kontrollera att du har installerat den i ditt ${ providerName }-konto och försök igen."
+      ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Du måste ${ activateLink } organisationsnyckeln innan du lägger till en e-postadress till en icke-privat medlem."
       ],
@@ -28137,6 +28418,9 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Du kommer inte längre se denna importpost i listan."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "Din domänkonfiguration inkluderar fortfarande en annan leverantörs MX-koder."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis provperiod slutar den ${ textDate }. ${ action }"
