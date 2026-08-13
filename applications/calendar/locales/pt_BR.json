@@ -3721,6 +3721,9 @@
       "Could not unlock this item": [
         "Não foi possível desbloquear este item"
       ],
+      "Creating documents in non-folders is not allowed": [
+        "Não é permitido criar documentos dentro de itens que não sejam pastas"
+      ],
       "Creating files in non-folders is not allowed": [
         "Não é permitido criar arquivos dentro de itens que não sejam pastas"
       ],
@@ -3794,6 +3797,9 @@
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Falha ao descriptografar a chave de marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Falha ao descriptografar o nome de marcador: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Falha ao descriptografar a senha dos favoritos: ${ message }"
@@ -10006,6 +10012,9 @@
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
@@ -12819,6 +12828,9 @@
       ],
       "Select the way to send this notification": [
         "Selecione a forma de enviar esta notificação"
+      ],
+      "Select users to migrate": [
+        "Selecione os usuários a serem migrados"
       ],
       "Select when you want this notification to be sent": [
         "Selecione quando você deseja que esta notificação seja enviada"

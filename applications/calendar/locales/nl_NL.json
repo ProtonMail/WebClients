@@ -545,6 +545,9 @@
       "Keep current time zone": [
         "Behoudt huidige tijdzone"
       ],
+      "Keep going": [
+        "Blijf doorgaan"
+      ],
       "Keep my subscription": [
         "Mijn abonnement behouden"
       ],
@@ -898,6 +901,9 @@
       ],
       "Stop": [
         "Stop"
+      ],
+      "Stop here": [
+        "Hier stoppen"
       ],
       "Submit": [
         "Versturen"
@@ -3601,6 +3607,9 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Bij het melden van inbreuk op auteursrechten of gestolen gegevens is een bericht vereist"
+      ],
       "A problem occurred, please try again.": [
         "Er is een probleem opgetreden, probeer het opnieuw."
       ],
@@ -3655,6 +3664,9 @@
       "Authentication error.": [
         "Verificatiefout."
       ],
+      "Bookmark password is not available": [
+        "Wachtwoord voor bladwijzer is niet beschikbaar"
+      ],
       "Calendar limit reached": [
         "Agendalimiet bereikt"
       ],
@@ -3667,8 +3679,14 @@
       "Cannot create a booking with a disabled address": [
         "U kunt geen boeking aanmaken met een uitgeschakeld adres"
       ],
+      "Cannot download a folder": [
+        "Kan een map niet downloaden"
+      ],
       "Cannot export this contact": [
         "Kan dit contact niet exporteren"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan het item niet verplaatsen zonder een geldige naam. Hernoem het item eerst"
       ],
       "Cannot share root folder": [
         "Kan hoofdmap niet delen"
@@ -3709,8 +3727,14 @@
       "Copying item to a non-folder is not allowed": [
         "Het kopiëren van een item naar een niet-map is niet toegestaan"
       ],
+      "Could not find an available name": [
+        "Kon geen beschikbare naam vinden"
+      ],
       "Could not load sharing details": [
         "Kan de deelgegevens niet laden"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Kan het afbeeldingsvoorbeeld niet laden: ${ message }"
       ],
       "Could not open created vault": [
         "Kon aangemaakte kluis niet openen"
@@ -3718,11 +3742,17 @@
       "Could not open updated vault": [
         "Kon bijgewerkte kluis niet openen"
       ],
+      "Could not read part of this file: ${ message }": [
+        "Kon een deel van dit bestand niet lezen: ${ message }"
+      ],
       "Could not unlock the parent folder": [
         "Kan de bovenliggende map niet ontgrendelen"
       ],
       "Could not unlock this item": [
         "Kan dit item niet ontgrendelen"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Het aanmaken van documenten in niet-mappen is niet toegestaan"
       ],
       "Creating files in non-folders is not allowed": [
         "Het aanmaken van bestanden in niet-mappen is niet toegestaan"
@@ -3783,6 +3813,9 @@
       "Event not found": [
         "Afspraak niet gevonden"
       ],
+      "Expiration date cannot be in the past": [
+        "De vervaldatum mag niet in het verleden liggen"
+      ],
       "Failed loading group members": [
         "Kon geen groepslid toevoegen."
       ],
@@ -3798,6 +3831,9 @@
       "Failed to decrypt bookmark key: ${ message }": [
         "Kan de bladwijzersleutel niet decoderen: ${ message }"
       ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Kan bladwijzernaam niet decoderen: ${ message }"
+      ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Kan bladwijzerwachtwoord niet decoderen: ${ message }"
       ],
@@ -3806,6 +3842,12 @@
       ],
       "Failed to decrypt item name: ${ message }": [
         "Kan itemnaam niet ontsleutelen: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Kan sleutel knooppunt niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Kan de metagegevens van de revisie niet ontsleutelen"
       ],
       "Failed to decrypt session key": [
         "Decoderen van de sessiesleutel mislukt."
@@ -3830,6 +3872,9 @@
       ],
       "Failed to update settings": [
         "Het is niet gelukt om de instellingen bij te werken"
+      ],
+      "Failed to verify invitation": [
+        "Kan de uitnodiging niet verifiëren"
       ],
       "File download failed due to empty response": [
         "Het downloaden van bestanden is mislukt vanwege een leeg antwoord"
@@ -3949,6 +3994,12 @@
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Ontbrekende handtekening voor ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Verplaatsingsbewerking afgebroken"
+      ],
       "Moving item to a non-folder is not allowed": [
         "Het is niet toegestaan ​​om een ​​item naar een niet-map te verplaatsen"
       ],
@@ -4012,11 +4063,20 @@
         "Eén van de groepen heeft geen contacten: ${ noContactGroupList }",
         "Sommige groepen hebben geen contacten: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Alleen beheerders kunnen externe uitnodigingen converteren"
+      ],
       "Operation aborted": [
         "Bewerking afgebroken"
       ],
       "Operation failed, try again later": [
         "Bewerking mislukt. Probeer het later opnieuw"
+      ],
+      "Organization does not have enough seats available": [
+        "De organisatie heeft niet voldoende zitplaatsen beschikbaar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisatie heeft niet voldoende opslagruimte beschikbaar"
       ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
@@ -4134,6 +4194,9 @@
       "Renaming root item is not allowed": [
         "Het hernoemen van het rootitem is niet toegestaan"
       ],
+      "Request aborted": [
+        "Verzoek afgebroken"
+      ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
@@ -4151,6 +4214,9 @@
       ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verificatie handtekening mislukt: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
         "Handtekeningverificatie voor ${ signatureType } mislukt"
@@ -4284,6 +4350,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
       ],
+      "Too many server errors, please try again later": [
+        "Te veel serverfouten. Probeer het later opnieuw"
+      ],
       "Too many server requests, please try again later": [
         "Te veel serververzoeken. Probeer het later opnieuw"
       ],
@@ -4340,6 +4409,12 @@
       ],
       "You can create public links for your own files only": [
         "U kunt alleen openbare links voor uw eigen bestanden maken"
+      ],
+      "You can only leave items that are shared with you": [
+        "U kunt alleen items achterlaten die met u gedeeld zijn"
+      ],
+      "You can only upload a new version to a file": [
+        "U kunt alleen een nieuwe versie naar een bestand uploaden"
       ],
       "You can update a public link for your own files only": [
         "U kunt een openbare link alleen voor uw eigen bestanden bijwerken"
@@ -5346,11 +5421,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Bevat fouten"
+      ],
       "In progress": [
         "Bezig"
       ],
       "Migrated": [
         "Gemigreerd"
+      ],
+      "Pending": [
+        "In behandeling"
       ]
     },
     "Import warning": {
@@ -6557,6 +6638,9 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Dit vergt veel stappen. Moet het doorgaan?"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
@@ -6602,8 +6686,14 @@
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "Om deze gebruiker te migreren, voegt u het e-maildomein toe en verifieert u het onder ${ domainNamesLink }"
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Om deze gebruiker te migreren, schakelt u zijn/haar account in uw ${ provider.adminConsoleName } in."
+      ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Als u deze gebruiker wilt migreren, schakelt u het account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u het adres in onder ${ usersAddressesLink }."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Om deze gebruiker te migreren, moet hij/zij de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
@@ -8475,6 +8565,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent met uitgebreide toegang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent met beperkte toegang"
       ],
       "${ n } calendar": [
         "${ n } agenda",
@@ -10505,6 +10601,9 @@
       "attributes": [
         "attributen"
       ],
+      "content key": [
+        "inhoud sleutel"
+      ],
       "hash key": [
         "hash sleutel"
       ],
@@ -10513,6 +10612,9 @@
       ],
       "membership": [
         "lidmaatschap"
+      ],
+      "name": [
+        "naam"
       ]
     },
     "Property type": {
@@ -12140,6 +12242,9 @@
       "Fingerprint": [
         "Vingerafdruk"
       ],
+      "Migration status": [
+        "Migratiestatus"
+      ],
       "Name": [
         "Naam"
       ],
@@ -12900,6 +13005,9 @@
       "Stay for 50% off your next month": [
         "Blijf en ontvang 50% korting op uw volgende maand"
       ],
+      "Still working on it": [
+        "Er wordt nog steeds aan gewerkt"
+      ],
       "Subscription canceled": [
         "Abonnement opgezegd"
       ],
@@ -12992,6 +13100,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
+      ],
+      "What are you migrating?": [
+        "Wat migreert u?"
       ],
       "What can a VPN protect you from?": [
         "Waartegen kan een VPN u beschermen?"
@@ -13098,6 +13209,9 @@
       "Customize import to reduce the number of labels": [
         "Import aanpassen om het aantal labels te verminderen"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status gegevensmigratie van ${ providerName } naar ${ BRAND_NAME }"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitaal ondertekenen van e-mails helpt bij het verifiëren van berichten die door u zijn verzonden"
       ],
@@ -13163,6 +13277,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
       ],
       "Version 6 OpenPGP key": [
         "Versie 6 OpenPGP-sleutel"

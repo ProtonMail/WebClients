@@ -551,6 +551,9 @@
       "Keep current time zone": [
         "Пакінуць бягучы часавы пояс"
       ],
+      "Keep going": [
+        "Працягваць"
+      ],
       "Keep my subscription": [
         "Пакінуць падпіску"
       ],
@@ -904,6 +907,9 @@
       ],
       "Stop": [
         "Спыніць"
+      ],
+      "Stop here": [
+        "Спыніцца тут"
       ],
       "Submit": [
         "Адправіць"
@@ -3747,6 +3753,9 @@
       "Cannot create a booking with a disabled address": [
         "Нельга стварыць браніраванне з адключаным адрасам"
       ],
+      "Cannot download a folder": [
+        "Немагчыма спампаваць папку"
+      ],
       "Cannot export this contact": [
         "Немагчыма экспартаваць гэты кантакт"
       ],
@@ -3798,6 +3807,9 @@
       "Could not load sharing details": [
         "Немагчыма загрузіць абагуленыя падрабязнасці"
       ],
+      "Could not load the image preview: ${ message }": [
+        "Немагчыма загрузіць папярэдні прагляд відарыса: ${ message }"
+      ],
       "Could not open created vault": [
         "Не ўдалося адкрыць створанае сховішча"
       ],
@@ -3812,6 +3824,9 @@
       ],
       "Could not unlock this item": [
         "Немагчыма разблакіраваць гэты элемент"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Стварэнне дакументаў па-за іх межамі забаронена"
       ],
       "Creating files in non-folders is not allowed": [
         "Стварэнне файлаў па-за іх межамі забаронена"
@@ -4079,6 +4094,9 @@
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў"
+      ],
+      "Name must not be empty": [
+        "Назва не можа быць пустой"
       ],
       "Name required": [
         "Патрабуецца назва"
@@ -4421,6 +4439,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Гэта паведамленне можа змяшчаць некаторыя спасылкі на URL-адрасы, якія ваш бягучы браўзер не зможа правільна адкрыць."
+      ],
+      "Too many server errors, please try again later": [
+        "Занадта шмат памылак сервера. Паўтарыце спробу пазней"
       ],
       "Too many server requests, please try again later": [
         "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
@@ -5088,6 +5109,9 @@
       "In progress": [
         "Выконваецца"
       ],
+      "Migrated": [
+        "Перанесена"
+      ],
       "Not activated": [
         "Не актывавана"
       ],
@@ -5531,6 +5555,9 @@
       ],
       "Migrated": [
         "Перанесена"
+      ],
+      "Pending": [
+        "У чаканні"
       ]
     },
     "Import warning": {
@@ -6799,6 +6826,9 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "На гэта спатрэбіцца шмат крокаў. Працягваць?"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
       ],
@@ -6945,6 +6975,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт ${ IDEAL_BRAND_NAME }. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -8773,6 +8806,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з пашыраным доступам"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з абмежаваным доступам"
+      ],
       "${ n } calendar": [
         "${ n } каляндар",
         "${ n } календары",
@@ -10431,6 +10470,9 @@
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Заплаціць з дапамогай ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосаб аплаты патрабуецца для актывацыі падпіскі пасля завяршэння пробнага перыяду."
       ],
@@ -10928,6 +10970,9 @@
     "Property": {
       "attributes": [
         "атрыбуты"
+      ],
+      "content key": [
+        "ключ змесціва"
       ],
       "hash key": [
         "хэш-ключ"
@@ -13433,6 +13478,9 @@
       ],
       "Stay for 50% off your next month": [
         "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
+      ],
+      "Still working on it": [
+        "Усё яшчэ працуем над гэтым"
       ],
       "Subscription canceled": [
         "Падпіска скасавана"
