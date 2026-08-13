@@ -1,8 +1,8 @@
-import {createAction, createReducer} from '@reduxjs/toolkit';
-import {v4 as uuidv4} from 'uuid';
+import { createAction, createReducer } from '@reduxjs/toolkit';
+import { v4 as uuidv4 } from 'uuid';
 
-import type {Priority} from '../../../remote/scheduler';
-import type {GetConversationRemote, IdMapEntry, RemoteConversation} from '../../../remote/types';
+import type { Priority } from '../../../remote/scheduler';
+import type { GetConversationRemote, IdMapEntry, RemoteConversation } from '../../../remote/types';
 import type {
     Conversation,
     ConversationId,
@@ -69,7 +69,21 @@ const conversationsReducer = createReducer<ConversationMap>(EMPTY_CONVERSATION_M
         .addCase(addConversation, (state, action) => {
             console.log('Action triggered: addConversation', action.payload);
             const conversation = action.payload;
-            state[conversation.id] = conversation;
+            const existing = state[conversation.id];
+
+            // `status` and `ghost` are local-only (`ConversationExtra`) and never round-trip through
+            // the server, so a remotely-sourced conversation cannot carry them. Replacing wholesale
+            // would drop an in-flight `generating` and mark the generation finished while the answer
+            // is still streaming, hiding the stop button and leaving no way to cancel.
+            const merged = { ...conversation };
+            if (merged.status === undefined && existing?.status !== undefined) {
+                merged.status = existing.status;
+            }
+            if (merged.ghost === undefined && existing?.ghost !== undefined) {
+                merged.ghost = existing.ghost;
+            }
+
+            state[conversation.id] = merged;
         })
         .addCase(changeConversationTitle, (state, action) => {
             console.log('Action triggered: changeConversationTitle', action.payload);
