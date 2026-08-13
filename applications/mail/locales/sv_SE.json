@@ -1520,8 +1520,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -5529,6 +5528,9 @@
       ],
       "You can create public links for your own files only": [
         "Du kan endast skapa offentliga länkar för dina egna filer"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan inte verifiera författaren för denna fil"
       ]
     },
     "error": {
@@ -7924,7 +7926,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9453,6 +9456,9 @@
       ],
       "Searched for “${ keyword }”": [
         "Sökte efter “${ keyword }“"
+      ],
+      "Star emails": [
+        "Stjärnmärk e-post"
       ]
     },
     "info": {
@@ -11971,6 +11977,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent med begränsad åtkomst"
       ]
     },
     "new_plans: feature highlight": {
@@ -16759,6 +16768,9 @@
       ],
       "Domain names": [
         "Domännamn"
+      ],
+      "Star emails": [
+        "Stjärnmärk e-post"
       ]
     },
     "Title header for keys table": {

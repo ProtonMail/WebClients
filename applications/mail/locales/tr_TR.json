@@ -1526,8 +1526,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1727,6 +1726,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Keep going": [
+        "İlerle"
+      ],
+      "Stop here": [
+        "Burada dur"
       ]
     },
     "action": {
@@ -8078,7 +8083,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9676,6 +9682,18 @@
       ],
       "Searched your mail": [
         "E-postalarınız arandı"
+      ],
+      "I have not finished this one yet.": [
+        "Bunu henüz bitirmedim."
+      ],
+      "Star emails": [
+        "E-postalara yıldız koy"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Bu işlem için birçok adım atılıyor. İlerlensin mi?"
+      ],
+      "Unstar emails": [
+        "E-postalardan yıldızı kaldır"
       ]
     },
     "info": {
@@ -12200,6 +12218,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Genişletilmiş erişim ile ${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Sınırlı erişim ile ${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ]
     },
     "new_plans: feature highlight": {
@@ -17004,6 +17028,15 @@
       ],
       "Domain names": [
         "Etki alanları"
+      ],
+      "Star emails": [
+        "E-postalara yıldız koy"
+      ],
+      "Still working on it": [
+        "Üzerinde çalışılıyor"
+      ],
+      "Unstar emails": [
+        "E-postalardan yıldızı kaldır"
       ]
     },
     "Title header for keys table": {
