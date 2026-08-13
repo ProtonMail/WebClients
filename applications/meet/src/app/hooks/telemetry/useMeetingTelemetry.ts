@@ -8,6 +8,7 @@ import { ParticipantQualityTelemetryProcessor } from './ParticipantQualityTeleme
 
 export const useMeetingTelemetry = (websocketUrl?: string) => {
     const meetQualityTelemetryEnabled = useFlag('MeetQualityTelemetry');
+    const killSwitchEnabled = useFlag('MeetQualityTelemetryKillSwitch');
     const room = useRoomContext();
 
     useEffect(() => {
@@ -15,12 +16,16 @@ export const useMeetingTelemetry = (websocketUrl?: string) => {
             return;
         }
 
-        const participantQualityTelemetryProcessor = new ParticipantQualityTelemetryProcessor(room, websocketUrl);
+        const participantQualityTelemetryProcessor = new ParticipantQualityTelemetryProcessor(
+            room,
+            websocketUrl,
+            killSwitchEnabled
+        );
 
         participantQualityTelemetryProcessor.listen();
 
         return () => {
             participantQualityTelemetryProcessor.stopListening();
         };
-    }, [meetQualityTelemetryEnabled, room, websocketUrl]);
+    }, [meetQualityTelemetryEnabled, killSwitchEnabled, room, websocketUrl]);
 };

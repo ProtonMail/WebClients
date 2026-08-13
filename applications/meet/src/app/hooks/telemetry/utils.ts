@@ -4,6 +4,25 @@ import type { ParticipantQualityStats } from './types';
 
 export const getUrlWithoutProtocol = (url: string) => url.replace(/^[a-z]+:\/\//i, '');
 
+// identity, roomId, type, trackSid, isLocal, pcRole
+const BASE_STAT_KEY_COUNT = 6;
+
+// Simulcast emits one outbound-rtp / remote-inbound-rtp pair per layer. The pre-existing fields keep
+// last-layer-wins so previously collected data stays comparable, but the uplink fields are aggregated:
+// a loss ratio built from two different layers would be meaningless.
+const sumStat = (accumulator: number | undefined, value: number | undefined) =>
+    value === undefined ? accumulator : (accumulator ?? 0) + value;
+
+const maxStat = (accumulator: number | undefined, value: number | undefined) =>
+    value === undefined ? accumulator : Math.max(accumulator ?? value, value);
+
+// Avoids inflating the key count checked at the end of getWebRTCStats
+const assignIfDefined = (target: Record<string, unknown>, key: string, value: unknown) => {
+    if (value !== undefined) {
+        target[key] = value;
+    }
+};
+
 export const getWebRTCStats = async (
     pub: RemoteTrackPublication,
     identity: string,
@@ -20,11 +39,26 @@ export const getWebRTCStats = async (
         type: pub.track.source,
         trackSid: pub.trackSid,
         isLocal,
+        // Local tracks report on the publisher peer connection, remote ones on the subscriber peer
+        // connection. Both legs terminate at the SFU, so roundTripTime below means different hops.
+        pcRole: isLocal ? 'publisher' : 'subscriber',
     };
 
     try {
         const rtcStats = await pub.track.getRTCStatsReport();
         if (rtcStats) {
+            const candidatesById = new Map<string, any>();
+            let activeCandidatePair: any = null;
+
+            let packetsSent: number | undefined;
+            let retransmittedPacketsSent: number | undefined;
+            let framesEncoded: number | undefined;
+            let targetBitrate: number | undefined;
+            let remotePacketsLost: number | undefined;
+            let remoteFractionLost: number | undefined;
+            let remoteJitter: number | undefined;
+            let remoteRoundTripTime: number | undefined;
+
             rtcStats.forEach((report) => {
                 if (report.type === 'inbound-rtp') {
                     stats.packetsReceived = report.packetsReceived;
@@ -55,6 +89,27 @@ export const getWebRTCStats = async (
                     stats.qualityLimitationDurationCpu = report.qualityLimitationDurations?.cpu;
                     stats.qualityLimitationDurationBandwidth = report.qualityLimitationDurations?.bandwidth;
                     stats.encoderImplementation = report.encoderImplementation;
+
+                    packetsSent = sumStat(packetsSent, report.packetsSent);
+                    retransmittedPacketsSent = sumStat(retransmittedPacketsSent, report.retransmittedPacketsSent);
+                    framesEncoded = sumStat(framesEncoded, report.framesEncoded);
+                    targetBitrate = sumStat(targetBitrate, report.targetBitrate);
+                }
+
+                // The SFU's own RTCP receiver report — the only measurement of the user -> SFU leg
+                if (report.type === 'remote-inbound-rtp' && isLocal) {
+                    remotePacketsLost = sumStat(remotePacketsLost, report.packetsLost);
+                    remoteFractionLost = maxStat(remoteFractionLost, report.fractionLost);
+                    remoteJitter = maxStat(remoteJitter, report.jitter);
+                    remoteRoundTripTime = maxStat(remoteRoundTripTime, report.roundTripTime);
+                }
+
+                // Capture side, to tell a degraded camera/mic apart from a degraded uplink
+                if (report.type === 'media-source' && isLocal) {
+                    assignIfDefined(stats, 'sourceFramesPerSecond', report.framesPerSecond);
+                    assignIfDefined(stats, 'sourceWidth', report.width);
+                    assignIfDefined(stats, 'sourceHeight', report.height);
+                    assignIfDefined(stats, 'sourceAudioLevel', report.audioLevel);
                 }
 
                 if (report.type === 'candidate-pair' && report.state === 'succeeded') {
@@ -63,14 +118,37 @@ export const getWebRTCStats = async (
                     stats.roundTripTime = report.currentRoundTripTime;
                     stats.totalRoundTripTime = report.totalRoundTripTime;
                     stats.responsesReceived = report.responsesReceived;
+                    activeCandidatePair = report;
+                }
+
+                if (report.type === 'local-candidate' || report.type === 'remote-candidate') {
+                    candidatesById.set(report.id, report);
                 }
             });
+
+            assignIfDefined(stats, 'packetsSent', packetsSent);
+            assignIfDefined(stats, 'retransmittedPacketsSent', retransmittedPacketsSent);
+            assignIfDefined(stats, 'framesEncoded', framesEncoded);
+            assignIfDefined(stats, 'targetBitrate', targetBitrate);
+            assignIfDefined(stats, 'remotePacketsLost', remotePacketsLost);
+            assignIfDefined(stats, 'remoteFractionLost', remoteFractionLost);
+            assignIfDefined(stats, 'remoteJitter', remoteJitter);
+            assignIfDefined(stats, 'remoteRoundTripTime', remoteRoundTripTime);
+
+            if (activeCandidatePair) {
+                // Candidate types and protocol only — never addresses, ports or URLs
+                const localCandidate = candidatesById.get(activeCandidatePair.localCandidateId);
+                const remoteCandidate = candidatesById.get(activeCandidatePair.remoteCandidateId);
+                assignIfDefined(stats, 'localCandidateType', localCandidate?.candidateType);
+                assignIfDefined(stats, 'remoteCandidateType', remoteCandidate?.candidateType);
+                assignIfDefined(stats, 'localCandidateProtocol', localCandidate?.protocol);
+            }
         }
     } catch {
         return null;
     }
 
-    return Object.keys(stats).length > 5 ? (stats as ParticipantQualityStats) : null;
+    return Object.keys(stats).length > BASE_STAT_KEY_COUNT ? (stats as ParticipantQualityStats) : null;
 };
 
 const toDelta = (current: number | undefined, previous: number | undefined) => {
@@ -99,6 +177,7 @@ export const calculateStatsDelta = (
         type: current.type,
         trackSid: current.trackSid,
         isLocal: current.isLocal,
+        pcRole: current.pcRole,
         participantCount: current.participantCount,
 
         packetsReceived: toDelta(current.packetsReceived, previous?.packetsReceived),
@@ -133,6 +212,12 @@ export const calculateStatsDelta = (
             previous?.qualityLimitationDurationBandwidth
         ),
 
+        // Send side (local participant only)
+        packetsSent: toDelta(current.packetsSent, previous?.packetsSent),
+        retransmittedPacketsSent: toDelta(current.retransmittedPacketsSent, previous?.retransmittedPacketsSent),
+        framesEncoded: toDelta(current.framesEncoded, previous?.framesEncoded),
+        remotePacketsLost: toDelta(current.remotePacketsLost, previous?.remotePacketsLost),
+
         // Non-cumulative estimates
         jitter: current.jitter,
         availableIncomingBitrate: current.availableIncomingBitrate,
@@ -144,6 +229,18 @@ export const calculateStatsDelta = (
         decoderImplementation: current.decoderImplementation,
         encoderImplementation: current.encoderImplementation,
         qualityLimitationReason: current.qualityLimitationReason,
+        targetBitrate: current.targetBitrate,
+        remoteFractionLost: current.remoteFractionLost,
+        remoteJitter: current.remoteJitter,
+        remoteRoundTripTime: current.remoteRoundTripTime,
+        sourceFramesPerSecond: current.sourceFramesPerSecond,
+        sourceWidth: current.sourceWidth,
+        sourceHeight: current.sourceHeight,
+        sourceAudioLevel: current.sourceAudioLevel,
+
+        localCandidateType: current.localCandidateType,
+        remoteCandidateType: current.remoteCandidateType,
+        localCandidateProtocol: current.localCandidateProtocol,
     };
 };
 
@@ -209,7 +306,37 @@ export const shouldReportStats = (stats: ParticipantQualityStats): boolean => {
     }
 
     // Encoder CPU-limited for more than 5s in the reporting interval
-    if (stats.qualityLimitationDurationCpu !== undefined && stats.qualityLimitationDurationCpu > 5000) {
+    if (stats.qualityLimitationDurationCpu !== undefined && stats.qualityLimitationDurationCpu > 5) {
+        return true;
+    }
+
+    // Send-side triggers. Without these the local participant is almost never reported, since every
+    // check above reads inbound-rtp fields that only exist on the subscriber peer connection.
+    // packetsSent already counts the packets the SFU reports as lost, so it is the whole denominator
+    if (stats.packetsSent !== undefined && stats.remotePacketsLost !== undefined) {
+        if (stats.packetsSent > 0 && stats.remotePacketsLost / stats.packetsSent > 0.025) {
+            return true;
+        }
+    }
+
+    if (stats.remoteFractionLost !== undefined && stats.remoteFractionLost > 0.025) {
+        return true;
+    }
+
+    if (stats.remoteJitter !== undefined && stats.remoteJitter > 0.1) {
+        return true;
+    }
+
+    if (stats.remoteRoundTripTime !== undefined && stats.remoteRoundTripTime > 0.3) {
+        return true;
+    }
+
+    if (
+        stats.packetsSent !== undefined &&
+        stats.packetsSent > 0 &&
+        stats.retransmittedPacketsSent !== undefined &&
+        stats.retransmittedPacketsSent / stats.packetsSent > 0.1
+    ) {
         return true;
     }
 

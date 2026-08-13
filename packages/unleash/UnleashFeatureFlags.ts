@@ -310,6 +310,7 @@ enum MeetFeatureFlag {
     MeetOpenLinksInDesktopApp = 'MeetOpenLinksInDesktopApp',
     MeetDebugMode = 'MeetDebugMode',
     MeetQualityTelemetry = 'MeetQualityTelemetry',
+    MeetQualityTelemetryKillSwitch = 'MeetQualityTelemetryKillSwitch',
     MeetWebClientDebug = 'MeetWebClientDebug',
     MeetE2eeDebugStats = 'MeetE2eeDebugStats',
     MeetE2eeRecoveryAggressive = 'MeetE2eeRecoveryAggressive',
