@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
+import { getIsPasswordReminderEnforced } from '@proton/account/passwordReminder/helpers/getIsPasswordReminderEnforced';
 import { usePasswordReminder } from '@proton/account/passwordReminder/hooks';
 import { usePasswordReminderTelemetry } from '@proton/account/passwordReminder/passwordReminderTelemetry';
 import { setPasswordReminderFlag } from '@proton/account/passwordReminder/setPasswordReminderFlag';
@@ -10,6 +12,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import { EnforcedByOrganization } from '@proton/components/containers/organization/EnforcedByOrganization';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -31,6 +34,10 @@ const PasswordRemindersSettings = () => {
 
     const { isAvailable } = usePasswordReminder();
     const { sendEnable } = usePasswordReminderTelemetry();
+    const [organization] = useOrganization();
+
+    const isEnforcedByOrganization = getIsPasswordReminderEnforced({ organization });
+
     if (!isAvailable) {
         return null;
     }
@@ -59,19 +66,24 @@ const PasswordRemindersSettings = () => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight isToggleContainer>
-                    <Toggle
-                        loading={loadingPasswordReminders}
-                        checked={hasPasswordRemindersEnabled}
-                        id="passwordRemindersToggle"
-                        onChange={({ target: { checked } }) => {
-                            if (!checked) {
-                                setConfirmDisablePasswordRemindersModalOpen(true);
-                                return;
-                            }
+                    <EnforcedByOrganization enforced={isEnforcedByOrganization}>
+                        <Toggle
+                            loading={loadingPasswordReminders}
+                            // When the org enforces check-ins, the member's opt-out is ignored
+                            // server-side, so reminders are on regardless of their own flag.
+                            checked={hasPasswordRemindersEnabled || isEnforcedByOrganization}
+                            disabled={isEnforcedByOrganization}
+                            id="passwordRemindersToggle"
+                            onChange={({ target: { checked } }) => {
+                                if (!checked) {
+                                    setConfirmDisablePasswordRemindersModalOpen(true);
+                                    return;
+                                }
 
-                            void withLoadingPasswordReminders(enablePasswordReminders());
-                        }}
-                    />
+                                void withLoadingPasswordReminders(enablePasswordReminders());
+                            }}
+                        />
+                    </EnforcedByOrganization>
                 </SettingsLayoutRight>
             </SettingsLayout>
         </>

@@ -90,6 +90,7 @@ export interface OrganizationSettings {
     VideoConferencingEnabled: boolean;
     MailCategoryViewEnabled: boolean;
     SSOBackupPasswordDisabled: boolean;
+    PasswordReminderEnforced: boolean;
     AllowedProducts: SerializedOrganizationSettingsAllowedProduct[];
     // Settings for admin
     PasswordPolicies: PasswordPolicySettings;
