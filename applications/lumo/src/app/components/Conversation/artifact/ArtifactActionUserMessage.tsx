@@ -1,10 +1,8 @@
 import { clsx } from 'clsx';
 
-import { IcCode } from '@proton/icons/icons/IcCode';
-import { IcFileLines } from '@proton/icons/icons/IcFileLines';
-
 import type { ArtifactActionMeta } from '../../../types';
 import { getArtifactActionLabel } from './artifactActionPrompts';
+import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
 
 interface ArtifactActionUserMessageProps {
     artifactAction: ArtifactActionMeta;
@@ -18,15 +16,15 @@ export const ArtifactActionUserMessage = ({
     contentRef,
 }: ArtifactActionUserMessageProps) => {
     const { kind, artifactTitle, artifactType, selection, userInstruction } = artifactAction;
-    const typeLabel = artifactType === 'code' ? 'CODE' : 'DOC';
+    const { icon: Icon, badgeLabel } = ARTIFACT_TYPE_CONFIG[artifactType];
 
     return (
         <div className="flex flex-column gap-3 w-full">
             <div className="flex flex-row flex-wrap items-center gap-2">
                 <span className="text-sm font-semibold color-norm">{getArtifactActionLabel(kind)}</span>
                 <span className="artifact-type-badge flex flex-row items-center gap-1 shrink-0 bg-strong">
-                    {artifactType === 'code' ? <IcCode size={3} /> : <IcFileLines size={3} />}
-                    <span className="text-xs font-bold">{typeLabel}</span>
+                    <Icon size={3} />
+                    <span className="text-xs font-bold">{badgeLabel}</span>
                 </span>
                 <span className="text-sm color-weak text-ellipsis overflow-hidden whitespace-nowrap">
                     {artifactTitle}
