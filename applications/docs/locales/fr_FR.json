@@ -3072,6 +3072,9 @@
         "Désélectionnez au moins ${ calendarsToFixCount } calendrier ou",
         "Désélectionnez au moins ${ calendarsToFixCount } calendriers ou"
       ],
+      "Device not found": [
+        "L'appareil est introuvable."
+      ],
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
       ],
@@ -3258,6 +3261,9 @@
       ],
       "Moving item to a non-folder is not allowed": [
         "Vous ne pouvez pas déplacer d'élément dans un élément qui n'est pas un dossier."
+      ],
+      "Moving root item is not allowed": [
+        "Le déplacement de l'élément racine n'est pas autorisé."
       ],
       "Name is required": [
         "Veuillez indiquer un nom."
@@ -4983,6 +4989,9 @@
       "finance": [
         "finance"
       ],
+      "Find out what can be migrated.": [
+        "Découvrez ce qui peut être migré."
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Le dossier « ${ link.name } » a été supprimé pendant le téléchargement."
       ],
@@ -5200,6 +5209,9 @@
       ],
       "No results found": [
         "Aucun résultat n'a été trouvé."
+      ],
+      "No users to display": [
+        "Il n'y a aucun utilisateur à afficher."
       ],
       "No version history available": [
         "Aucun historique de version n'est disponible."
@@ -8069,6 +8081,9 @@
       ],
       "All items will soon be permanently deleted from trash": [
         "Tous les éléments seront bientôt supprimés définitivement du dossier Corbeille."
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Ce document se trouvant dans un dossier partagé, seul le propriétaire du dossier peut le restaurer."
       ],
       "Cannot load link": [
         "Impossible de charger le lien"

@@ -474,6 +474,9 @@
       "Import from Outlook": [
         "Імпартаваць з Outlook"
       ],
+      "Keep going": [
+        "Працягваць"
+      ],
       "Keep my subscription": [
         "Пакінуць падпіску"
       ],
@@ -818,6 +821,9 @@
       ],
       "Stop": [
         "Спыніць"
+      ],
+      "Stop here": [
+        "Спыніцца тут"
       ],
       "Stop sharing": [
         "Спыніць абагульванне"
@@ -3074,6 +3080,9 @@
       "Cannot add photo to album without a valid name": [
         "Немагчыма дадаць фатаграфію ў альбом без сапраўднай назвы"
       ],
+      "Cannot download a folder": [
+        "Немагчыма спампаваць папку"
+      ],
       "Cannot export this contact": [
         "Немагчыма экспартаваць гэты кантакт"
       ],
@@ -3113,6 +3122,9 @@
       "Could not load sharing details": [
         "Немагчыма загрузіць абагуленыя падрабязнасці"
       ],
+      "Could not load the image preview: ${ message }": [
+        "Немагчыма загрузіць папярэдні прагляд відарыса: ${ message }"
+      ],
       "Could not open created vault": [
         "Не ўдалося адкрыць створанае сховішча"
       ],
@@ -3127,6 +3139,9 @@
       ],
       "Could not unlock this item": [
         "Немагчыма разблакіраваць гэты элемент"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Стварэнне дакументаў па-за іх межамі забаронена"
       ],
       "Creating files in non-folders is not allowed": [
         "Стварэнне файлаў па-за іх межамі забаронена"
@@ -3379,6 +3394,9 @@
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
         "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў"
+      ],
+      "Name must not be empty": [
+        "Назва не можа быць пустой"
       ],
       "Network error": [
         "Памылка сеткі"
@@ -3691,6 +3709,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Гэта паведамленне можа змяшчаць некаторыя спасылкі на URL-адрасы, якія ваш бягучы браўзер не зможа правільна адкрыць."
+      ],
+      "Too many server errors, please try again later": [
+        "Занадта шмат памылак сервера. Паўтарыце спробу пазней"
       ],
       "Too many server requests, please try again later": [
         "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
@@ -4281,6 +4302,9 @@
       "In progress": [
         "Выконваецца"
       ],
+      "Migrated": [
+        "Перанесена"
+      ],
       "Not activated": [
         "Не актывавана"
       ],
@@ -4684,6 +4708,9 @@
       ],
       "Migrated": [
         "Перанесена"
+      ],
+      "Pending": [
+        "У чаканні"
       ]
     },
     "Import warning": {
@@ -5768,6 +5795,9 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Гэта імя або псеўданім для вашай арганізацыі, якое будзе бачнае вашым карыстальнікам. Яго можна змяніць у любы час."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "На гэта спатрэбіцца шмат крокаў. Працягваць?"
       ],
       "This item already exists in your library": [
         "Гэты элемент ужо існуе ў вашай бібліятэцы"
@@ -7380,6 +7410,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з пашыраным доступам"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з абмежаваным доступам"
       ],
       "${ n } calendar": [
         "${ n } каляндар",
@@ -9158,6 +9194,9 @@
     "Property": {
       "attributes": [
         "атрыбуты"
+      ],
+      "content key": [
+        "ключ змесціва"
       ],
       "hash key": [
         "хэш-ключ"
@@ -11106,6 +11145,9 @@
       ],
       "Stay for 50% off your next month": [
         "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
+      ],
+      "Still working on it": [
+        "Усё яшчэ працуем над гэтым"
       ],
       "Stop sharing": [
         "Спыніць абагульванне"
