@@ -1,7 +1,7 @@
-import DrawerApp from '@proton/components/components/drawer/DrawerApp';
-import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
-import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
-import TopBanners from '@proton/components/containers/topBanners/TopBanners';
+import DrawerApp from '@proton/components/components/drawer/DrawerApp'
+import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer'
+import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea'
+import TopBanners from '@proton/components/containers/topBanners/TopBanners'
 import React from 'react'
 import type { ReactNode } from 'react'
 

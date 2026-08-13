@@ -1,10 +1,10 @@
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import Option from '@proton/components/components/option/Option';
-import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
+import Checkbox from '@proton/components/components/input/Checkbox'
+import ModalTwo from '@proton/components/components/modalTwo/Modal'
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent'
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo'
+import Option from '@proton/components/components/option/Option'
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
 import { Button } from '@proton/atoms/Button/Button'
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle'
 import { IcTrash } from '@proton/icons/icons/IcTrash'

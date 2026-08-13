@@ -1,4 +1,4 @@
-import { getAppVersion } from '@proton/components/helpers/appVersion';
+import { getAppVersion } from '@proton/components/helpers/appVersion'
 import type { DocumentRole } from '@proton/docs-shared'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { getClientName, getReportInfo } from '@proton/components/helpers/report'

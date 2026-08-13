@@ -1,4 +1,4 @@
-import useConfig from '@proton/components/hooks/useConfig';
+import useConfig from '@proton/components/hooks/useConfig'
 import type { EditorInvoker, EditorOrchestratorInterface } from '@proton/docs-core'
 import type { YjsState } from '@proton/docs-shared'
 import { EditorSystemMode, InternalEventBus, SyncedEditorState } from '@proton/docs-shared'

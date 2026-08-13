@@ -1,4 +1,4 @@
-import useApi from '@proton/components/hooks/useApi';
+import useApi from '@proton/components/hooks/useApi'
 import { useEffect, useMemo, useState } from 'react'
 import { Application } from '@proton/docs-core'
 

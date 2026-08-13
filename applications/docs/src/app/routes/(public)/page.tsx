@@ -1,13 +1,13 @@
-import ApiProvider from '@proton/components/containers/api/ApiProvider';
-import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
-import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
-import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
-import LoaderPage from '@proton/components/containers/app/LoaderPage';
-import ModalsChildren from '@proton/components/containers/modals/Children';
-import NotificationsChildren from '@proton/components/containers/notifications/Children';
-import ProtonApp from '@proton/components/containers/app/ProtonApp';
-import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
-import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import ApiProvider from '@proton/components/containers/api/ApiProvider'
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider'
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary'
+import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider'
+import LoaderPage from '@proton/components/containers/app/LoaderPage'
+import ModalsChildren from '@proton/components/containers/modals/Children'
+import NotificationsChildren from '@proton/components/containers/notifications/Children'
+import ProtonApp from '@proton/components/containers/app/ProtonApp'
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage'
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage'
 import { useState } from 'react'
 import { Router } from 'react-router-dom'
 import { CompatRouter } from 'react-router-dom-v5-compat'

@@ -1,5 +1,5 @@
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useNotifications from '@proton/components/hooks/useNotifications';
+import useAuthentication from '@proton/components/hooks/useAuthentication'
+import useNotifications from '@proton/components/hooks/useNotifications'
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import { getDrive, type ProtonDriveClient, type ProtonInvitationWithNode } from '@proton/drive'
 import type { ExtendedInvitationDetails } from '@proton/drive-store/store'

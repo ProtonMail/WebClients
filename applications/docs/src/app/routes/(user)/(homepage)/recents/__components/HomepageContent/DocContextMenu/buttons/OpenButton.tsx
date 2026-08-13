@@ -1,4 +1,4 @@
-import MimeIcon from '@proton/components/components/icon/MimeIcon';
+import MimeIcon from '@proton/components/components/icon/MimeIcon'
 
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../../__utils/document-actions'

@@ -1,4 +1,4 @@
-import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { Button } from '@proton/atoms/Button/Button'
 import type { AuthenticatedDocControllerInterface } from '@proton/docs-core'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
