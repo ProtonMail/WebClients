@@ -65,7 +65,7 @@
         "Sessions actives"
       ],
       "Add address": [
-        "Afegeix una adreça"
+        "Afegir una adreça"
       ],
       "Advanced account protection": [
         "Protecció avançada del compte"
@@ -92,10 +92,10 @@
         "Renovació automàtica"
       ],
       "Automatically delete data": [
-        "Elimineu automàticament les dades"
+        "Elimina automàticament les dades"
       ],
       "Back up emails": [
-        "Feu una còpia de seguretat dels correus electrònics"
+        "Còpies de seguretat de correus electrònics"
       ],
       "Block sender": [
         "Bloqueja el remitent"
@@ -104,19 +104,19 @@
         "Bloquegeu el remitent per a l'organització"
       ],
       "Blog articles": [
-        "Articles del bloc"
+        "Articles del blog"
       ],
       "Bulk user import": [
         "Importació massiva d'usuaris"
       ],
       "Cancel plan": [
-        "Cancel·la el pla"
+        "Cancel·lar el pla"
       ],
       "Catch-all": [
         "Capturar-ho tot"
       ],
       "Close account": [
-        "Tanqueu el compte"
+        "Tancar el compte"
       ],
       "Compare plans": [
         "Compara els plans"
@@ -140,13 +140,13 @@
         "Mode fosc"
       ],
       "Data breach alerts": [
-        "Alertes d'infraccions de dades"
+        "Alertes de filtració de dades"
       ],
       "Desktop and mobile apps": [
         "Aplicacions per a escriptori i mòbil"
       ],
       "Downgrade plan": [
-        "Baixar la categoria del pla"
+        "Baixar a un pla inferior"
       ],
       "Downgrade to Free": [
         "Canvieu al pla gratuït"
@@ -161,13 +161,13 @@
         "Àlies de correu electrònic"
       ],
       "Enable or disable apps for members": [
-        "Habiliteu o desactiveu aplicacions per als membres"
+        "Habiliteu o desactiveu aplicacions per a membres"
       ],
       "Encryption backup file": [
-        "Fitxer de còpia de seguretat de xifratge"
+        "Fitxer de la còpia de seguretat xifrada"
       ],
       "Encryption backup in this browser": [
-        "Còpia de seguretat de xifratge en aquest navegador"
+        "Còpia de seguretat xifrada en aquest navegadorxifratge"
       ],
       "Export messages": [
         "Exporteu els missatges"
@@ -188,7 +188,7 @@
         "Invitació al pla de grup"
       ],
       "Hide my email": [
-        "Amaga el correu electrònic"
+        "Amaga la meva adreça de correu electrònic"
       ],
       "High-security mode": [
         "Mode d'alta seguretat"
@@ -218,22 +218,22 @@
         "Aplicacions per a iOS i Android"
       ],
       "Join organization": [
-        "Uneix-te a l'organització"
+        "Uniu-vos a l'organització"
       ],
       "Leaked password": [
         "Contrasenya filtrada"
       ],
       "Leave group": [
-        "Abandona el grup"
+        "Sortir del grup"
       ],
       "Leave organization": [
-        "Abandona l'organització"
+        "Abandonar l'organització"
       ],
       "Light mode": [
         "Mode clar"
       ],
       "Linux desktop app": [
-        "Aplicació d'escriptori per a Linux"
+        "Aplicació d'escriptori per Linux"
       ],
       "Mnemonic": [
         "Mnemotècnic"
@@ -254,7 +254,7 @@
         "Sol·licitud de restabliment de la contrasenya"
       ],
       "Permanently delete data": [
-        "Elimina les dades permanentment"
+        "Eliminar les dades de manera permanent"
       ],
       "Play Store": [
         "Play Store"
@@ -269,7 +269,7 @@
         "Protecció contra ciberatacs"
       ],
       "Receive misaddressed emails": [
-        "Rebeu correus electrònics enviats per error"
+        "Rebeu els correus electrònics enviats per error"
       ],
       "Recovery email address": [
         "Adreça de correu electrònic de recuperació"
@@ -287,13 +287,13 @@
         "Redireccioneu els correus electrònics entrants"
       ],
       "Referral credits": [
-        "Crèdits de recomanació"
+        "Crèdits per recomanacions"
       ],
       "Referral link": [
         "Enllaç de recomanació"
       ],
       "Referral rewards": [
-        "Recompenses per recomanació"
+        "Recompenses per recomanacions"
       ],
       "Restrict app access": [
         "Restringiu l'accés a l'aplicació"
@@ -308,13 +308,13 @@
         "Accés compartit al servidor"
       ],
       "Sign out other devices": [
-        "Tancar sessió en altres dispositius"
+        "Tanqueu la sessió en altres dispositius"
       ],
       "Sign-in history": [
         "Historial d'inicis de sessió"
       ],
       "Stop subscription renewal": [
-        "Atureu la renovació de la subscripció"
+        "Aturar la renovació de la subscripció"
       ],
       "Storage space": [
         "Espai d'emmagatzematge"
@@ -338,10 +338,10 @@
         "Milloreu el pla"
       ],
       "Vacation responder": [
-        "Resposta de vacances"
+        "Resposta automàtica"
       ],
       "Verify domain": [
-        "Verifica domini"
+        "Verifiqueu el domini"
       ],
       "Video conferencing": [
         "Videoconferència"
@@ -14263,6 +14263,12 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "Qui controli aquesta adreça obtindrà accés complet al vostre compte i a les vostres dades. Continueu només si la reconeixeu i l'heu iniciat vós mateix."
+      ],
+      "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
+        "Esteu a punt d'iniciar la sessió al vostre compte de ${ BRAND_NAME } a aquesta adreça:"
       ]
     },
     "info": {
@@ -21963,6 +21969,9 @@
       ],
       "User Admin": [
         "Administrador/a d'usuaris"
+      ],
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ]
     },
     "Role description": {
@@ -22582,7 +22591,7 @@
     },
     "Service provider": {
       "Add to ${ CALENDAR_APP_NAME }": [
-        "Afegir a ${ CALENDAR_APP_NAME }"
+        "Afegir-ho a ${ CALENDAR_APP_NAME }"
       ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Us permet afegir una videoconferència de Zoom a qualsevol esdeveniment del vostre calendari."
@@ -27627,6 +27636,9 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Confirm where to sign in": [
+        "Confirmeu on iniciar sessió"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
