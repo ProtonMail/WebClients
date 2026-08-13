@@ -22,7 +22,7 @@ import type { Paths } from '../helper';
 
 type ProtonForkResult =
     | { type: 'invalid' }
-    | { type: 'login'; payload: LoginResult }
+    | { type: 'login'; payload: LoginResult; fork: ProtonForkData }
     | { type: 'switch'; payload: { fork: ProtonForkData; activeSessionsResult: GetActiveSessionsResult } };
 
 const handleActiveSessions = async (
@@ -64,14 +64,15 @@ export const handleProtonFork = async ({ api, paths }: { api: Api; paths: Paths 
             return await handleActiveSessions(activeSessionsResult, forkParameters);
         }
 
+        const fork: ProtonForkData = { type: SSOType.Proton, payload: { forkParameters } };
         const loginResult = await getProduceForkLoginResult({
             api,
             session,
-            data: { type: SSOType.Proton, payload: { forkParameters } },
+            data: fork,
             paths,
         });
 
-        return { type: 'login', payload: loginResult };
+        return { type: 'login', payload: loginResult, fork };
     } catch (e: any) {
         if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
             const activeSessionsResult = await getActiveSessions({

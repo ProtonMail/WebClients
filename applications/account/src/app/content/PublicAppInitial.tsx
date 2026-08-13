@@ -225,7 +225,7 @@ export const PublicAppInitial = ({ sessions }: { sessions: { initialSessionsLeng
 
     return (
         <Switch>
-            <Route path={SSO_PATHS.OAUTH_AUTHORIZE}>
+            <Route path={SSO_PATHS.OAUTH_AUTHORIZE} exact>
                 <AccountEffect
                     onEffect={async () => {
                         const result = await handleOAuthFork({ api: silentApi, paths });
@@ -237,6 +237,7 @@ export const PublicAppInitial = ({ sessions }: { sessions: { initialSessionsLeng
                             await handleActiveSessions(result.payload.activeSessionsResult, result.payload.fork);
                             return;
                         }
+                        setForkState(result.fork);
                         handleLoginResult(result.payload);
                         return;
                     }}
@@ -244,7 +245,7 @@ export const PublicAppInitial = ({ sessions }: { sessions: { initialSessionsLeng
                     {loader}
                 </AccountEffect>
             </Route>
-            <Route path={SSO_PATHS.AUTHORIZE}>
+            <Route path={SSO_PATHS.AUTHORIZE} exact>
                 <AccountEffect
                     onEffect={async () => {
                         const result = await handleProtonFork({ api: silentApi, paths });
@@ -256,6 +257,7 @@ export const PublicAppInitial = ({ sessions }: { sessions: { initialSessionsLeng
                             await handleActiveSessions(result.payload.activeSessionsResult, result.payload.fork);
                             return;
                         }
+                        setForkState(result.fork);
                         handleLoginResult(result.payload);
                         return;
                     }}
@@ -263,7 +265,7 @@ export const PublicAppInitial = ({ sessions }: { sessions: { initialSessionsLeng
                     {loader}
                 </AccountEffect>
             </Route>
-            <Route path={SSO_PATHS.DESKTOP_SIGN_IN}>
+            <Route path={SSO_PATHS.DESKTOP_SIGN_IN} exact>
                 <AccountEffect
                     onEffect={async () => {
                         const result = await handleDesktopFork({ api: silentApi, paths });
