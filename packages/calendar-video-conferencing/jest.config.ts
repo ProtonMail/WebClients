@@ -1,0 +1,42 @@
+import { createRequire } from 'module';
+import type { JestConfigWithTsJest } from 'ts-jest';
+
+const jestConfig: JestConfigWithTsJest = {
+    preset: 'ts-jest',
+    transformIgnorePatterns: [
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|mutex-browser|@protontech/crypto|bip39|@preact/signals-core|@scure/base)/)',
+    ],
+    transform: {
+        '^.+\\.(ts|js|mjs)x?$': [
+            '@swc/jest',
+            {
+                jsc: {
+                    transform: {
+                        react: {
+                            runtime: 'automatic',
+                        },
+                    },
+                    parser: {
+                        jsx: true,
+                        syntax: 'typescript',
+                        tsx: true,
+                    },
+                },
+                env: {
+                    /* polyfill typed-array base64 and hex functions */ mode: 'usage',
+                    shippedProposals: true,
+                    coreJs: createRequire(import.meta.url)('core-js/package.json').version,
+                },
+            },
+        ],
+    },
+    setupFilesAfterEnv: ['./jest.setup.ts'],
+    testEnvironment: '@proton/jest-env',
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+    moduleNameMapper: {
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
+        '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
+    },
+};
+
+export default jestConfig;

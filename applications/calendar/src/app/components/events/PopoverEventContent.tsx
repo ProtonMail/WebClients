@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { removeVideoConfInfoFromDescription } from '@proton/calendar/videoConferencing/videoConfHelpers';
-import { useVideoConferencingWidget } from '@proton/calendar/videoConferencing/widget';
+import { removeVideoConfInfoFromDescription } from '@proton/calendar-video-conferencing/videoConferencing/videoConfHelpers';
+import { useVideoConferencingWidget } from '@proton/calendar-video-conferencing/videoConferencing/widget';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
