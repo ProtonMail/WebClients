@@ -12,6 +12,7 @@ import {
 } from '../../../redux/slices/core/spaces';
 import type { SpaceId } from '../../../types';
 import { ConversationStatus } from '../../../types';
+import { getDefaultNewConversationTitle } from '../../../util/conversationTitle';
 import { sendProjectCreateEvent, sendProjectDeleteEvent } from '../../../util/telemetry';
 
 export const useProjectActions = () => {
@@ -56,7 +57,7 @@ export const useProjectActions = () => {
                 addConversation({
                     id: conversationId,
                     spaceId,
-                    title: 'New chat',
+                    title: getDefaultNewConversationTitle(),
                     createdAt: now,
                     updatedAt: now,
                     status: ConversationStatus.COMPLETED,
