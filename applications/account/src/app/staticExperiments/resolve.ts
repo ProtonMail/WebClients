@@ -7,13 +7,17 @@ import {
 import type { StaticExperimentConfig, StaticExperimentsState } from './types';
 
 const getActiveWeights = (config: StaticExperimentConfig, now: number): Record<string, number> | undefined => {
-    const due = config.schedule.filter((entry) => new Date(entry.startAt).getTime() <= now);
+    const due = config.schedule.filter((entry) => {
+        const startedAt = new Date(entry.startsAt).getTime();
+        const endsAt = entry.endsAt ? new Date(entry.endsAt).getTime() : undefined;
+        return startedAt <= now && (endsAt === undefined || now < endsAt);
+    });
     if (due.length === 0) {
         return undefined;
     }
 
     return due.reduce((latest, entry) =>
-        new Date(entry.startAt).getTime() > new Date(latest.startAt).getTime() ? entry : latest
+        new Date(entry.startsAt).getTime() > new Date(latest.startsAt).getTime() ? entry : latest
     ).weights;
 };
 
