@@ -5,6 +5,7 @@ import { initElectronClassnames } from '../helpers/initElectronClassnames';
 import type { ProtonConfig } from '../interfaces';
 import { listenFreeTrialSessionExpiration } from './endOfTrialHelpers';
 import { BASELINE_ALLOWED_CONTENT_PROTOCOLS, BASELINE_ALLOWED_PROTOCOLS } from './externalProtocols';
+import { registerInboxDesktopAuthListener } from './registerInboxDesktopAuthListener';
 import {
     registerInboxDesktopIpcProtocols,
     registerInboxDesktopRedirectProtocols,
@@ -23,6 +24,8 @@ export function bootstrapCalendarInboxDesktop({
 }) {
     initElectronClassnames();
     listenFreeTrialSessionExpiration(config.APP_NAME, authentication, api);
+
+    registerInboxDesktopAuthListener(authentication);
 
     registerInboxDesktopIpcProtocols(BASELINE_ALLOWED_PROTOCOLS);
     registerInboxDesktopRedirectProtocols(BASELINE_ALLOWED_CONTENT_PROTOCOLS);
