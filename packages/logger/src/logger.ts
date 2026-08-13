@@ -72,6 +72,7 @@ const serializeArg = (arg: unknown): string => {
 const timestampedFilename = (prefix: string) => `${prefix}-${new Date().toISOString().replace(/[:.]/g, '-')}.log`;
 
 export const downloadLogFile = (contents: string, filename: string): void => {
+    performance.mark(`logger:downloadLogFile:start`);
     const url = URL.createObjectURL(new Blob([contents], { type: 'text/plain' }));
 
     try {
@@ -84,6 +85,7 @@ export const downloadLogFile = (contents: string, filename: string): void => {
         document.body.removeChild(anchor);
     } finally {
         URL.revokeObjectURL(url);
+        performance.measure(`logger:downloadLogFile`, `logger:downloadLogFile:start`);
     }
 };
 
@@ -228,7 +230,11 @@ export class Logger {
         }
 
         const payload = JSON.stringify({ message, args: args.map(serializeArg) });
+
+        // Kept apart from `storage.store`'s own mark so crypto cost can be told apart from IndexedDB.
+        performance.mark(`logger-${this.name}:persist:encrypt:start`);
         const data = await encryptData(this.encryptionKey, utf8StringToUint8Array(payload), this.encryptionContext);
+        performance.measure(`logger-${this.name}:persist:encrypt`, `logger-${this.name}:persist:encrypt:start`);
 
         // Fixed-width sequence so the key compares in insertion order. The sequence restarts
         // at zero on every page load, so the random suffix keeps a new session from overwriting
@@ -253,25 +259,37 @@ export class Logger {
             return '';
         }
 
+        // TODO probably not needed, time is spent inside callback
+        performance.mark(`logger-${this.name}:getLogs:start`);
         if (!this.read) {
             this.read = this.readLogs().finally(() => {
                 this.read = null;
             });
         }
 
+        performance.measure(`logger-${this.name}:getLogs`, `logger-${this.name}:getLogs:start`);
         return this.read;
     }
 
     private async readLogs(): Promise<string> {
+        performance.mark(`logger-${this.name}:readLogs:waitForWrites:start`);
         await this.writes;
+        performance.measure(
+            `logger-${this.name}:readLogs:waitForWrites`,
+            `logger-${this.name}:readLogs:waitForWrites:start`
+        );
 
         if (!this.storage) {
             return '';
         }
 
+        performance.mark(`logger-${this.name}:readLogs:start`);
         try {
             const entries = await this.storage.retrieve();
+
+            performance.mark(`logger-${this.name}:readLogs:decode:start`);
             const lines = await Promise.all(entries.map((entry) => this.format(entry)));
+            performance.measure(`logger-${this.name}:readLogs:decode`, `logger-${this.name}:readLogs:decode:start`);
             return lines.join('\n');
         } catch (error) {
             if (error instanceof UnreadableEntryError) {
@@ -282,6 +300,8 @@ export class Logger {
             }
             console.error(`[${this.name}] failed to read logs:`, error);
             return '';
+        } finally {
+            performance.measure(`logger-${this.name}:readLogs`, `logger-${this.name}:readLogs:start`);
         }
     }
 
@@ -312,10 +332,12 @@ export class Logger {
     }
 
     private startCleanup(): void {
+        performance.mark(`logger-${this.name}:cleanup:start`);
         this.enqueue(() => this.cleanup());
         this.cleanupInterval = setInterval(() => this.enqueue(() => this.cleanup()), CLEANUP_INTERVAL_MS);
         // Keeps Node test runners from hanging on the interval.
         (this.cleanupInterval as unknown as { unref?: () => void }).unref?.();
+        performance.measure(`logger-${this.name}:cleanup`, `logger-${this.name}:cleanup:start`);
     }
 
     /** Trims by age first, then by count. Runs on the write chain, never per line. */
@@ -324,12 +346,14 @@ export class Logger {
             return;
         }
 
+        performance.mark(`logger-${this.name}:cleanup:start`);
         await this.storage.removeOlderThan(this.now() - this.retentionDays * DAY);
 
         const count = await this.storage.count();
         if (count > this.maxEntries) {
             await this.storage.removeOldest(count - this.maxEntries);
         }
+        performance.measure(`logger-${this.name}:cleanup`, `logger-${this.name}:cleanup:start`);
     }
 
     isInitialized(): boolean {
