@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useLoading } from '@proton/hooks';
 import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 
@@ -19,6 +20,7 @@ interface Props {
 
 const ConfirmForkRedirectContainer = ({ toApp, redirectUrl, onConfirm, onCancel }: Props) => {
     const [loading, withLoading] = useLoading();
+    const handleError = useErrorHandler();
 
     return (
         <Layout hasDecoration={false} toApp={toApp}>
@@ -38,7 +40,7 @@ const ConfirmForkRedirectContainer = ({ toApp, redirectUrl, onConfirm, onCancel 
                         color="danger"
                         fullWidth
                         size="large"
-                        onClick={() => withLoading(onConfirm())}
+                        onClick={() => withLoading(onConfirm().catch(handleError))}
                         loading={loading}
                     >
                         {c('Action').t`Continue`}
