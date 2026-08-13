@@ -596,6 +596,9 @@
       "Go to panel ${ index }": [
         "Перейти до панелі ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Зрозуміло"
       ],
@@ -721,6 +724,9 @@
       ],
       "Mark as resolved": [
         "Позначити як вирішене"
+      ],
+      "Migrate": [
+        "Мігрувати"
       ],
       "More benefits": [
         "Більше переваг"
@@ -1631,6 +1637,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Вдоскональте рівень продуктивності електронної пошти. Дозвольте ${ BRAND_NAME } Scribe допомогти вам писати, відповідати й рецензувати ваші листи."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Підніміть ефективність роботи з електронною поштою на новий рівень. Дозвольте ${ LUMO_SHORT_APP_NAME } допомогти вам писати, відповідати та вичитувати ваші електронні листи."
       ]
     },
     "Attached ics file error": {
@@ -2171,6 +2180,9 @@
       ],
       "Discover and set up features": [
         "Ознайомитися з функціями та налаштувати їх"
+      ],
+      "Get 50% offer": [
+        "Отримайте знижку 50%"
       ],
       "Maybe later": [
         "Можливо пізніше"
@@ -4692,6 +4704,9 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Для звітування про порушення авторських прав або викрадення даних необхідно залишити повідомлення"
+      ],
       "Address cannot be yours": [
         "Адреса не може бути вашою"
       ],
@@ -4719,8 +4734,23 @@
       "Authentication error.": [
         "Помилка автентифікації."
       ],
+      "Bookmark password is not available": [
+        "Пароль для закладки недоступний"
+      ],
       "Calendar limit reached": [
         "Досягнуто ліміту календарів"
+      ],
+      "Cannot download a folder": [
+        "Не вдається завантажити теку"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Неможливо перемістити елемент без дійсної назви. Спочатку перейменуйте елемент."
+      ],
+      "Cannot verify the author of this file": [
+        "Неможливо перевірити автора цього файлу"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Неможливо перевірити, хто вивантажив цей файл"
       ],
       "Checkout expired, please try again": [
         "Час оформлення минув, повторіть спробу"
@@ -4731,11 +4761,38 @@
       "Company name or personal name is required": [
         "Необхідно вказати назву компанії або особисте ім'я"
       ],
+      "Copying item to a non-folder is not allowed": [
+        "Копіювання елемента в місце, яке не є текою, заборонено"
+      ],
+      "Could not load sharing details": [
+        "Не вдалося завантажити дані про спільний доступ"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Не вдалося завантажити попередній перегляд зображення: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Не вдалося прочитати частину цього файлу: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Не вдалося розблокувати батьківську теку"
+      ],
+      "Could not unlock this item": [
+        "Не вдалося розблокувати цей елемент"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Не вдалося завантажити рахунки-фактури. Будь ласка, спробуйте ще раз пізніше."
       ],
       "Couldn't load transactions. Please try again later.": [
         "Не вдалося завантажити транзакції. Будь ласка, спробуйте пізніше."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Створення документів поза теками заборонено"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Створення файлів поза теками заборонено"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Створення тек в елементах, що не є теками, заборонено"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря",
@@ -4748,6 +4805,9 @@
         "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
         "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
         "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або"
+      ],
+      "Device not found": [
+        "Пристрій не знайдено"
       ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
@@ -4782,6 +4842,18 @@
       "Failed to add group member": [
         "Не вдалося додати члена групи"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Не вдалося розшифрувати ключ закладки: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Не вдалося розшифрувати назву закладки: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Не вдалося розшифрувати пароль закладки: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Не вдалося розшифрувати ключ вузла: ${ message }"
+      ],
       "Failed to load OAuth modal.": [
         "Не вдалося завантажити діалогове вікно OAuth."
       ],
@@ -4802,6 +4874,12 @@
       ],
       "Failed to update detailed monitoring.": [
         "Не вдалося оновити детальний моніторинг."
+      ],
+      "File download failed due to empty response": [
+        "Завантаження файлу не вдалося через порожню відповідь"
+      ],
+      "File has no revision": [
+        "Файл не має редакції"
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Файл завеликий. Розмір файлу логотипа має становити 30 кБ або менше."
@@ -4884,11 +4962,20 @@
       "Invalid verification code": [
         "Недійсний код підтвердження"
       ],
+      "Item not found": [
+        "Елемент не знайдено"
+      ],
       "Label name cannot be empty.": [
         "Мітка не може бути без назви."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Старе публічне посилання неможливо оновити. Будь ласка, повторно створіть нове публічне посилання."
+      ],
       "Maximum ${ displayMaxValue } allowed": [
         "Дозволено максимум ${ displayMaxValue }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адресу учасника не знайдено. Для розв'язання цієї проблеми, будь ласка, зверніться до служби підтримки клієнтів"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Об'єднайте принаймні ${ calendarsToFixCount } календар з наявним календарем ${ BRAND_NAME }",
@@ -4899,8 +4986,20 @@
       "Missing key packet": [
         "Відсутній пакунок ключів"
       ],
+      "Missing organization public key": [
+        "Відсутній відкритий ключ організації"
+      ],
       "Missing signature": [
         "Відсутній підпис"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Відсутній підпис для ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Операція переміщення перервана"
+      ],
+      "Moving root item is not allowed": [
+        "Переміщення кореневого елемента заборонено"
       ],
       "Name already exists": [
         "Назва вже існує"
@@ -4920,6 +5019,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
       ],
+      "No file data was received. Please try again.": [
+        "Дані файлу не отримано. Будь ласка, спробуйте ще раз."
+      ],
       "No image selected": [
         "Жодного зображення не вибрано"
       ],
@@ -4931,6 +5033,12 @@
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Для цієї адреси можна змінити лише великі/малі літери та знаки пунктуації (крапки, дефіси та символи підкреслення)"
+      ],
+      "Operation aborted": [
+        "Операцію перервано"
+      ],
+      "Operation failed, try again later": [
+        "Операція не вдалася, спробуйте пізніше"
       ],
       "Organization key is not decrypted": [
         "Ключ організації не розшифровано"
@@ -4964,6 +5072,12 @@
       ],
       "Permissions request failed.": [
         "Помилка запиту дозволів."
+      ],
+      "Photo is already in the target album": [
+        "Фотографія вже знаходиться в цільовому альбомі"
+      ],
+      "Photo not found": [
+        "Фотографію не знайдено"
       ],
       "Please add a payment method before reactivating your subscription": [
         "Будь ласка, додайте спосіб оплати перед повторною активацією вашої передплати"
@@ -5058,6 +5172,9 @@
       "Process aborted": [
         "Процес перервано"
       ],
+      "Request aborted": [
+        "Запит перервано"
+      ],
       "Request timed out": [
         "Час очікування запиту завершився"
       ],
@@ -5081,6 +5198,9 @@
       ],
       "Signature verification failed": [
         "Неможливо перевірити підпис"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Деякі частини файлу не вдалося вивантажити. Будь ласка, спробуйте ще раз."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Назви деяких ваших тек недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
@@ -5178,8 +5298,23 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "В цьому полі повинно бути не менше ${ minimumLength } символів."
       ],
+      "This file has missing crypto material": [
+        "У цьому файлі відсутні криптографічні дані"
+      ],
+      "This file has no version available to download": [
+        "Цей файл не має версій, доступних для завантаження"
+      ],
+      "This file version could not be uploaded": [
+        "Цю версію файлу не вдалося вивантажити"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Назва теки недоступна. Оберіть іншу назву."
+      ],
+      "This item is no longer shared": [
+        "Цей елемент більше не доступний для спільного використання"
+      ],
+      "This item is not shared": [
+        "Цей елемент не доступний для спільного використання"
       ],
       "This label name is not available. Please choose a different name.": [
         "Назва мітки недоступна. Оберіть іншу назву."
@@ -5192,6 +5327,12 @@
       ],
       "Too many requests. Please try again later": [
         "Забагато запитів. Будь ласка, спробуйте ще раз пізніше."
+      ],
+      "Too many server errors, please try again later": [
+        "Занадто багато помилок сервера. Будь ласка, спробуйте ще раз пізніше."
+      ],
+      "Too many server requests, please try again later": [
+        "Занадто багато запитів до сервера. Будь ласка, спробуйте ще раз пізніше."
       ],
       "Try again later": [
         "Повторіть спробу пізніше"
@@ -5232,6 +5373,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Перевірка пройшла невдало. Будь ласка, повторіть спробу за годину."
       ],
+      "Verification keys are not available": [
+        "Ключі для перевірки недоступні"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Не вдалося надіслати код підтвердження за допомогою цього способу."
       ],
@@ -5246,6 +5390,18 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Неправильний код перевірки. Переконайтеся, що ви правильно скопіювали код і спробуйте знову. Застосування змін може тривати до 24 годин."
+      ],
+      "You can create public links for your own files only": [
+        "Ви можете створювати загальнодоступні посилання лише на свої власні файли"
+      ],
+      "You can only upload a new version to a file": [
+        "Ви можете вивантажити нову версію лише для одного файлу"
+      ],
+      "You can update a public link for your own files only": [
+        "Ви можете оновлювати публічне посилання лише для своїх власних файлів"
+      ],
+      "You do not have access to this item": [
+        "У вас немає доступу до цього елемента"
       ],
       "You have reached the maximum number of calendars.": [
         "Ви досягли максимальної кількості календарів."
@@ -5599,6 +5755,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Запрошення від: ${ inviteEmail }"
+      ],
+      "Leave Family plan": [
+        "Покинути Сімейний план"
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Довічні облікові записи не можуть бути приєднані до сімейного плану."
@@ -6121,6 +6280,17 @@
         "Терабайти",
         "Терабайтів",
         "Терабайтів"
+      ]
+    },
+    "Filter": {
+      "All": [
+        "Все"
+      ],
+      "In progress": [
+        "В процесі"
+      ],
+      "Pending": [
+        "Очікування"
       ]
     },
     "Filter notification": {
@@ -6735,12 +6905,23 @@
         "Виберіть ${ boldExport }, щоб експортувати календар як файл ICS."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Інші варіанти імпортування"
+      ]
+    },
     "Import status": {
+      "Has errors": [
+        "Містить помилки"
+      ],
       "In progress": [
         "У процесі"
       ],
       "Migrated": [
         "Мігровано"
+      ],
+      "Pending": [
+        "Очікування"
       ]
     },
     "Import warning": {
@@ -7133,6 +7314,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Користувач — це обліковий запис, пов'язаний з певним іменем користувача, поштовою скринькою та людиною"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "Доступ до понад 20 000 серверів у 145 країнах"
+      ],
       "Account monitor": [
         "Моніторинг облікового запису"
       ],
@@ -7346,6 +7530,9 @@
       "Authenticator app 2FA enabled": [
         "2FA за допомогою програми-автентифікатора увімкнено"
       ],
+      "Author is not provided on public link": [
+        "У публічному посиланні не вказано автора"
+      ],
       "Awaiting transaction": [
         "Очікування транзакції"
       ],
@@ -7426,6 +7613,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Виберіть ідентифікатор сутності для продовження."
+      ],
+      "Choose your service to connect with": [
+        "Виберіть службу для з'єднання"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
@@ -7838,6 +8028,9 @@
       "Failed to fetch logs.": [
         "Помилка отримання журналів."
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "Найвища швидкість VPN — до 10 Гбіт/с"
+      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Лише файли (без фотографій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }) — загалом до 100 ГБ, 100 000 файлів та 50 ГБ на файл"
       ],
@@ -7846,6 +8039,9 @@
       ],
       "finance": [
         "фінанси"
+      ],
+      "Find out what can be migrated.": [
+        "Дізнайтеся, що можна перенести."
       ],
       "for ${ price }": [
         "за ${ price }"
@@ -7924,6 +8120,9 @@
       ],
       "Groups": [
         "Групи"
+      ],
+      "Have some more time to decide without interruption.": [
+        "Майте ще трохи часу, щоб прийняти рішення без перешкод."
       ],
       "here": [
         "тут"
@@ -8345,6 +8544,9 @@
       "No single sign-on": [
         "Без єдиного входу"
       ],
+      "No users to display": [
+        "Немає користувачів для показу"
+      ],
       "Number of dedicated servers in the organization": [
         "Кількість виділених серверів у організації"
       ],
@@ -8534,6 +8736,9 @@
       "Preference saved": [
         "Параметри збережено"
       ],
+      "Premium privacy protection across all your devices": [
+        "Високоякісний захист приватності на всіх ваших пристроях"
+      ],
       "Preview": [
         "Попередній перегляд"
       ],
@@ -8677,6 +8882,9 @@
       ],
       "Select a group to view its members and settings.": [
         "Виберіть групу, щоб переглянути її учасників та налаштування."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Виберіть саме те, що ви хочете перенести. Це буде застосовано до всіх користувачів організації."
       ],
       "Select one or multiple user affiliations": [
         "Виберіть одну або кілька приналежностей користувачів"
@@ -8984,6 +9192,12 @@
       "This service is not available to users signing in with single sign-on.": [
         "Ця послуга недоступна для користувачів, які входять за допомогою єдиного входу."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Цього користувача неможливо перенести, оскільки його адреса електронної пошти відсутня в системі ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Цього користувача неможливо перенести через несумісність платформ."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Цей користувач зараз уповноважений здійснювати платежі для вашої організації. Понизивши його роль, повноваження для платежів перейдуть до вас."
       ],
@@ -9094,6 +9308,15 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Щоб бути в курсі найновіших розробок продуктів ${ BRAND_NAME }, підпишіться на наші розсилки електронною поштою та час від часу відвідуйте ${ blogLink }."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Щоб перенести цього користувача, активуйте його обліковий запис у вашій ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Щоб перенести цього користувача, увімкніть його обліковий запис за посиланням ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Щоб перенести цього користувача, увімкніть його адресу за посиланням ${ usersAddressesLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для продовження виберіть спосіб відновлення облікового запису, щоб ми могли засвідчити запит."
@@ -9927,6 +10150,14 @@
         "Передплата"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "Номер телефону для сповіщень"
+      ],
+      "Recovery phone number": [
+        "Номер телефону для відновлення"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "Доступна ${ addressesAvailable } з ${ maxAddresses } адреси електронної пошти",
@@ -10249,6 +10480,9 @@
       "Digits": [
         "Цифри"
       ],
+      "Disable animations": [
+        "Вимкнути анімацію"
+      ],
       "Disabled": [
         "Вимкнено"
       ],
@@ -10359,6 +10593,12 @@
       ],
       "Folders, labels, and filters": [
         "Папки, мітки та фільтри"
+      ],
+      "Font family": [
+        "Сімейство шрифтів"
+      ],
+      "Font size": [
+        "Розмір шрифту"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Для ${ DRIVE_SHORT_APP_NAME } та ${ DOCS_SHORT_APP_NAME }."
@@ -10560,6 +10800,9 @@
       ],
       "Notification": [
         "Сповіщення"
+      ],
+      "Notification email address": [
+        "Адреса електронної пошти для сповіщень"
       ],
       "Numbers": [
         "Числа"
@@ -10801,6 +11044,9 @@
       "Thomas": [
         "Томас"
       ],
+      "Time format": [
+        "Формат часу"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Щоб допомогти нам покращити сервіс, поясніть, чому ви йдете."
       ],
@@ -10870,6 +11116,9 @@
       "Weak password": [
         "Слабкий пароль"
       ],
+      "Week start": [
+        "Початок тижня"
+      ],
       "What happened?": [
         "Що сталося?"
       ],
@@ -10914,11 +11163,6 @@
       ],
       "ZIP code": [
         "Поштовий індекс"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "Номер телефону для відновлення"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12558,6 +12802,9 @@
       ],
       "Switch plans?": [
         "Змінити тарифний план?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Передплатіть тарифний план та розблокуйте преміумфункції"
       ]
     },
     "new_plans: Title": {
@@ -13823,6 +14070,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Не вдалося ініціалізувати ${ IDEAL_BRAND_NAME }. Будь ласка, спробуйте ще раз пізніше."
+      ],
       "Invalid card number": [
         "Недійсний номер картки"
       ],
@@ -13845,6 +14095,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Щось пішло не так. Перевірка Google Pay не вдалася."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Підтверджуючи цей платіж, ви надаєте дозвіл компанії ${ BRAND_NAME } та Stripe, нашому постачальнику платіжних послуг, дати вказівку вашому банку списати відповідну суму з вашого рахунку. Ви можете отримати повернення коштів протягом 8 тижнів з дати списання відповідно до умов вашої угоди з банком."
       ]
     },
     "Payments.info": {
@@ -14186,6 +14441,20 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Покращити до ${ upsellPlanTitle }"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "атрибути"
+      ],
+      "content key": [
+        "ключ вмісту"
+      ],
+      "hash key": [
+        "хеш-ключ"
+      ],
+      "name": [
+        "назва"
       ]
     },
     "Property type": {
@@ -16192,9 +16461,6 @@
       "Last changed ${ formattedDate }": [
         "Останні зміни: ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Востаннє оновлено: ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Не збережено"
       ],
@@ -16262,6 +16528,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Для всіх сервісів ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Збільшити сховище"
       ],
       "Storage used": [
         "Використане сховище"
@@ -17202,6 +17471,12 @@
       ]
     },
     "Table header": {
+      "Estimated size": [
+        "Орієнтовний розмір"
+      ],
+      "Migration status": [
+        "Статус міграції"
+      ],
       "Size": [
         "Розмір"
       ],
@@ -18003,6 +18278,9 @@
       "Get help with an issue": [
         "Отримайте допомогу з проблемою"
       ],
+      "Get more from your privacy suite": [
+        "Отримайте більше від вашого пакета функцій приватності"
+      ],
       "Get more from your VPN": [
         "Отримайте більше від вашого VPN"
       ],
@@ -18026,6 +18304,9 @@
       ],
       "Groups": [
         "Групи"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Зверніть увагу: цей обліковий запис Gmail пов’язаний з іншим обліковим записом ${ BRAND_NAME }"
       ],
       "Help and feedback": [
         "Довідка та відгуки"
@@ -18480,6 +18761,9 @@
       "Status": [
         "Стан"
       ],
+      "Stay for 50% off your next month": [
+        "Залишайтеся зі знижкою 50% на наступний місяць"
+      ],
       "Stay secure and connected anywhere": [
         "Залишайтеся в безпеці та на зв'язку будь-де"
       ],
@@ -18657,6 +18941,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Ласкаво просимо до ${ BRAND_NAME } для бізнесу"
       ],
+      "What are you migrating?": [
+        "Що саме ви переносите?"
+      ],
       "What changes if you switch to the Free plan": [
         "Що зміниться, якщо ви перейдете на безплатний тарифний план"
       ],
@@ -18738,6 +19025,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "${ MAIL_APP_NAME } транзакція"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Міграції організації"
       ]
     },
     "Title header for addresses domain table": {
@@ -19332,6 +19624,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Буде створено нову адресу ${ MAIL_APP_NAME }."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Перейдіть на тарифний план, що підтримує цю функцію, щоб користуватися ролями адміністратора."
       ],
       "User created": [
         "Користувача створено"

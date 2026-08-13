@@ -32,6 +32,191 @@
         "Din information hittades i minst en dataläcka. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ]
     },
+    "account_search_index": {
+      "Account events": [
+        "Kontohändelser"
+      ],
+      "Active sessions": [
+        "Aktiva sessioner"
+      ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
+      ],
+      "AI assistant": [
+        "AI-assistent"
+      ],
+      "Authentication logs": [
+        "Autentiseringsloggar"
+      ],
+      "Automatic renewal": [
+        "Automatisk förnyelse"
+      ],
+      "Automatically delete data": [
+        "Ta bort data automatiskt"
+      ],
+      "Block sender for the organization": [
+        "Blockera avsändare för organisationen"
+      ],
+      "Blog articles": [
+        "Bloggartiklar"
+      ],
+      "Close account": [
+        "Stäng konto"
+      ],
+      "Compare plans": [
+        "Jämför paket"
+      ],
+      "Connected addresses": [
+        "Anslutna adresser"
+      ],
+      "Connection events": [
+        "Anslutningshändelser"
+      ],
+      "Create organization": [
+        "Skapa organisation"
+      ],
+      "Custom domain": [
+        "Anpassad domän"
+      ],
+      "Customer support": [
+        "Kundsupport"
+      ],
+      "Dark mode": [
+        "Mörkt läge"
+      ],
+      "Desktop and mobile apps": [
+        "Appar för stationär dator och mobil"
+      ],
+      "Downgrade plan": [
+        "Nedgradera paket"
+      ],
+      "Download apps": [
+        "Ladda ner appar"
+      ],
+      "Download recovery file": [
+        "Ladda ner återställningsfil"
+      ],
+      "Enable or disable apps for members": [
+        "Aktivera eller inaktivera appar för medlemmar"
+      ],
+      "External mailbox": [
+        "Extern brevlåda"
+      ],
+      "Group invitations": [
+        "Gruppinbjudningar"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "Import history": [
+        "Importhistorik"
+      ],
+      "Included apps": [
+        "Inkluderade appar"
+      ],
+      "Join organization": [
+        "Gå med i organisation"
+      ],
+      "Leaked password": [
+        "Läckt lösenord"
+      ],
+      "Leave group": [
+        "Lämna grupp"
+      ],
+      "Leave organization": [
+        "Lämna organisation"
+      ],
+      "Light mode": [
+        "Ljust läge"
+      ],
+      "Mnemonic": [
+        "Mnemonic"
+      ],
+      "One-time code": [
+        "Engångskod"
+      ],
+      "Password reminder": [
+        "Lösenordspåminnelse"
+      ],
+      "Permanently delete data": [
+        "Ta bort data permanent"
+      ],
+      "Privacy guides": [
+        "Integritetsguider"
+      ],
+      "Privacy services": [
+        "Integritetstjänster"
+      ],
+      "Protection from cyber attacks": [
+        "Skydd mot cyberattacker"
+      ],
+      "Recovery email address": [
+        "E-postadress för återställning"
+      ],
+      "Recovery phone number": [
+        "Telefonnummer för återställning"
+      ],
+      "Redeem discount code": [
+        "Lös in rabattkod"
+      ],
+      "Referral credits": [
+        "Hänvisningskrediter"
+      ],
+      "Referral link": [
+        "Hänvisningslänk"
+      ],
+      "Referral rewards": [
+        "Hänvisningsbelöningar"
+      ],
+      "Scan QR code": [
+        "Skanna QR-kod"
+      ],
+      "Shared server access": [
+        "Delad serveråtkomst"
+      ],
+      "Sign out other devices": [
+        "Logga ut andra enheter"
+      ],
+      "Sign-in history": [
+        "Inloggningshistorik"
+      ],
+      "Stop subscription renewal": [
+        "Stoppa prenumerationsförnyelse"
+      ],
+      "Storage space": [
+        "Lagringsutrymme"
+      ],
+      "Storage usage": [
+        "Lagringsanvändning"
+      ],
+      "Subscription end date": [
+        "Prenumerationens slutdatum"
+      ],
+      "Subscription status": [
+        "Prenumerationsstatus"
+      ],
+      "Telemetry": [
+        "Telemetri"
+      ],
+      "Trusted contact": [
+        "Betrodd kontakt"
+      ],
+      "Upgrade plan": [
+        "Uppgradera paket"
+      ],
+      "Verify domain": [
+        "Verifiera domän"
+      ],
+      "Video conferencing": [
+        "Videokonferenser"
+      ],
+      "VPN session details": [
+        "VPN-sessionsdetaljer"
+      ],
+      "Writing assistant": [
+        "Skrivassistent"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Konton"
@@ -607,6 +792,9 @@
       ],
       "Go to panel ${ index }": [
         "Gå till panel ${ index }"
+      ],
+      "Google": [
+        "Google"
       ],
       "Got it": [
         "Förstått"
@@ -4705,6 +4893,9 @@
       "Cannot share root folder": [
         "Kan inte dela rotmapp"
       ],
+      "Cannot verify the author of this file": [
+        "Kan inte verifiera författaren för denna fil"
+      ],
       "Cannot verify who uploaded this file": [
         "Kan inte verifiera vem som laddade upp denna fil"
       ],
@@ -4785,6 +4976,9 @@
       "Failed to add group member": [
         "Misslyckades att lägga till gruppmedlem"
       ],
+      "Failed to get inviter keys": [
+        "Misslyckades med att hämta inbjudningsnycklar"
+      ],
       "Failed to load OAuth modal.": [
         "Misslyckades att ladda OAuth-modal."
       ],
@@ -4808,6 +5002,9 @@
       ],
       "Failed to verify invitation": [
         "Misslyckades med att verifiera inbjudan"
+      ],
+      "File download failed due to empty response": [
+        "Filnedladdning misslyckades på grund av tomt svar"
       ],
       "File has no revision": [
         "Fil har ingen version"
@@ -5317,6 +5514,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Fel verifieringskod. Se till att du kopierade verifieringskoden korrekt och försök igen. Det kan ta upp till 24 timmar innan ändringarna träder i kraft."
       ],
+      "You can create public links for your own files only": [
+        "Du kan endast skapa offentliga länkar för dina egna filer"
+      ],
       "You can only upload a new version to a file": [
         "Du kan bara ladda upp en ny version till en fil"
       ],
@@ -5676,6 +5876,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Inbjuden av: ${ inviteEmail }"
+      ],
+      "Leave Family plan": [
+        "Lämna Family-paket"
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Livstidskonton kan inte gå med i ett familjepaket."
@@ -6276,6 +6479,9 @@
       "Dedicated server - ${ serverPrice }": [
         "Dedikerad server - ${ serverPrice }"
       ],
+      "Enforce identity-based access controls": [
+        "Framtvinga identitetsbaserade åtkomstkontroller"
+      ],
       "User - ${ userPrice }": [
         "Användare - ${ userPrice }"
       ]
@@ -6810,6 +7016,11 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Välj ${ boldExport } för att exportera kalendern som en ICS-fil."
+      ]
+    },
+    "Import provider": {
+      "More import options": [
+        "Fler importalternativ"
       ]
     },
     "Import status": {
@@ -7463,6 +7674,9 @@
       ],
       "Choose one:": [
         "Välj en:"
+      ],
+      "Choose your service to connect with": [
+        "Välj din tjänst att ansluta med"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
@@ -9975,6 +10189,14 @@
         "Prenumeration"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "Telefonnummer för avisering"
+      ],
+      "Recovery phone number": [
+        "Telefonnummer för återställning"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "${ addressesAvailable } av ${ maxAddresses } e-postadress tillgänglig",
@@ -10296,6 +10518,9 @@
       "Digits": [
         "Siffror"
       ],
+      "Disable animations": [
+        "Inaktivera animeringar"
+      ],
       "Disabled": [
         "Inaktiverad"
       ],
@@ -10406,6 +10631,12 @@
       ],
       "Folders, labels, and filters": [
         "Mappar, etiketter och filter"
+      ],
+      "Font family": [
+        "Typsnittsfamilj"
+      ],
+      "Font size": [
+        "Textstorlek"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "För ${ DRIVE_SHORT_APP_NAME } och ${ DOCS_SHORT_APP_NAME }."
@@ -10610,6 +10841,9 @@
       ],
       "Notification": [
         "Avisering"
+      ],
+      "Notification email address": [
+        "E-postadress för avisering"
       ],
       "Numbers": [
         "Siffror"
@@ -10849,6 +11083,9 @@
       "Thomas": [
         "Tomas"
       ],
+      "Time format": [
+        "Tidsformat"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "För att hjälpa oss att bli bättre, förklara varför du lämnar."
       ],
@@ -10921,6 +11158,9 @@
       "Weak password": [
         "Svagt lösenord"
       ],
+      "Week start": [
+        "Veckostart"
+      ],
       "What happened?": [
         "Vad hände?"
       ],
@@ -10965,11 +11205,6 @@
       ],
       "ZIP code": [
         "Postnummer"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "Telefonnummer för återställning"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11874,6 +12109,9 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent med begränsad åtkomst"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendrar"
@@ -12552,6 +12790,9 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Lås upp premiumfunktioner genom att uppgradera"
       ]
     },
     "new_plans: Title": {
@@ -13690,6 +13931,9 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betala med ${ IDEAL_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalningsmetod krävs för att prenumerationen ska aktiveras efter provperioden är slut."
@@ -15857,6 +16101,9 @@
       "Contact your administrator if the problem persists.": [
         "Kontakta din administratör om problemet kvarstår."
       ],
+      "Continue to join as **${ username }**": [
+        "Fortsätt att gå med som **${ username }**"
+      ],
       "Current device": [
         "Nuvarande enhet"
       ],
@@ -15891,6 +16138,9 @@
       ],
       "Enter your backup password": [
         "Ange ditt reservlösenord"
+      ],
+      "For your security, you have been signed out of all your other active devices.": [
+        "För din säkerhet har du loggats ut från alla dina andra aktiva enheter."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "För din säkerhet har du blivit utloggad från alla dina andra aktiva enheter. Innan du kommer åt ditt konto måste du ange ett nytt reservlösenord."
@@ -16000,6 +16250,9 @@
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Detta kommer att logga ut dig från dina andra enheter och du måste skapa ett nytt reservlösenord."
       ],
+      "This will sign you out of your other devices.": [
+        "Detta kommer att logga ut dig från dina andra enheter."
+      ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "För att vara säker på att det verkligen är du som försöker logga in på **${ email }**, granska bekräftelsekoden och godkänn begäran från annan enhet."
       ],
@@ -16106,9 +16359,6 @@
       "Last changed ${ formattedDate }": [
         "Senast ändrad ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Senast uppdaterad ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Inte sparat"
       ],
@@ -16176,6 +16426,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "För alla ${ BRAND_NAME }-tjänster"
+      ],
+      "Get more storage": [
+        "Skaffa mer lagringsutrymme"
       ],
       "Storage used": [
         "Lagringsutrymme använt"
@@ -17370,6 +17623,9 @@
       "Add users to \"${ policyName }\"": [
         "Lägg till användare till ”${ policyName }”"
       ],
+      "Advanced configuration": [
+        "Avancerad konfiguration"
+      ],
       "Advanced recovery options": [
         "Avancerade återställningsalternativ"
       ],
@@ -17891,6 +18147,9 @@
       ],
       "Get help with an issue": [
         "Skaffa hjälp med ett problem"
+      ],
+      "Get more from your privacy suite": [
+        "Få ut mer av din integritetssvit"
       ],
       "Get more from your VPN": [
         "Få ut mer av din VPN"
@@ -18653,6 +18912,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "${ MAIL_APP_NAME }-transaktion"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Organisationsmigreringar"
       ]
     },
     "Title header for addresses domain table": {

@@ -596,6 +596,9 @@
       "Go to panel ${ index }": [
         "Перейти к панели ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Понятно"
       ],
@@ -5600,6 +5603,9 @@
       "Invited by: ${ inviteEmail }": [
         "Вас приглашает: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "Завершить Семейный тариф"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "Пожизненные аккаунты не могут присоединяться к семейному тарифу."
       ],
@@ -6735,6 +6741,11 @@
         "Выберите ${ boldExport } для экспорта календаря в формате файла ICS."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Другие варианты импортировать"
+      ]
+    },
     "Import status": {
       "In progress": [
         "В процессе"
@@ -7429,6 +7440,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Выберите ID сущности для продолжения."
+      ],
+      "Choose your service to connect with": [
+        "Выберите службу, которую хотите подключить"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
@@ -9939,6 +9953,14 @@
         "Подписка"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "Номер телефона для уведомлений"
+      ],
+      "Recovery phone number": [
+        "Номер телефона для восстановления"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "Доступен ${ addressesAvailable } из ${ maxAddresses } адреса электронной почты",
@@ -10258,6 +10280,9 @@
       "Digits": [
         "Цифры"
       ],
+      "Disable animations": [
+        "Отключить анимацию"
+      ],
       "Disabled": [
         "Отключено"
       ],
@@ -10368,6 +10393,12 @@
       ],
       "Folders, labels, and filters": [
         "Папки, ярлыки и фильтры"
+      ],
+      "Font family": [
+        "Семейство шрифта"
+      ],
+      "Font size": [
+        "Размер шрифта"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Для ${ DRIVE_SHORT_APP_NAME } и ${ DOCS_SHORT_APP_NAME }."
@@ -10569,6 +10600,9 @@
       ],
       "Notification": [
         "Уведомление"
+      ],
+      "Notification email address": [
+        "Адрес электронной почты для уведомлений"
       ],
       "Numbers": [
         "Цифры"
@@ -10810,6 +10844,9 @@
       "Thomas": [
         "Томас"
       ],
+      "Time format": [
+        "Формат времени"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Чтобы помочь нам улучшить качество, пожалуйста, объясните, почему вы уходите."
       ],
@@ -10879,6 +10916,9 @@
       "Weak password": [
         "Слабый пароль"
       ],
+      "Week start": [
+        "Начало недели"
+      ],
       "What happened?": [
         "Что случилось?"
       ],
@@ -10923,11 +10963,6 @@
       ],
       "ZIP code": [
         "Почтовый индекс"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "Номер телефона для восстановления"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12564,6 +12599,9 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Улучшите тариф и разблокируйте платные функции"
       ]
     },
     "new_plans: Title": {
@@ -16192,9 +16230,6 @@
       "Last changed ${ formattedDate }": [
         "Последнее изменение: ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Последнее обновление: ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Не сохранено"
       ],
@@ -16262,6 +16297,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Для всех служб ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Получите больше дискового пространства"
       ],
       "Storage used": [
         "Использовано хранилище"
@@ -18003,6 +18041,9 @@
       "Get help with an issue": [
         "Получить помощь по проблеме"
       ],
+      "Get more from your privacy suite": [
+        "Получите больше возможностей от своего пакета конфиденциальности"
+      ],
       "Get more from your VPN": [
         "Получите больше от VPN"
       ],
@@ -18741,6 +18782,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "${ MAIL_APP_NAME } транзакция"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Миграции организации"
       ]
     },
     "Title header for addresses domain table": {
