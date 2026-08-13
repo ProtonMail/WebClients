@@ -53,6 +53,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Dodaj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add a date": [
+        "Dodaj datum"
+      ],
       "Add account": [
         "Dodaj račun"
       ],
@@ -494,6 +497,9 @@
       "Keep current time zone": [
         "Ohrani trenutni časovni pas"
       ],
+      "Keep going": [
+        "Nadaljuj …"
+      ],
       "Keep my subscription": [
         "Ohrani mojo naročnino"
       ],
@@ -826,6 +832,9 @@
       ],
       "Stay": [
         "Ostani"
+      ],
+      "Stop here": [
+        "Tukaj se ustavi"
       ],
       "Submit": [
         "Pošlji"
@@ -3799,6 +3808,9 @@
       "Last name is too long": [
         "Priimek je predolg."
       ],
+      "Location is required": [
+        "Lokacija je obvezna"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Združi vsaj ${ calendarsToFixCount } koledar z obstoječim koledarjem ${ BRAND_NAME }",
         "Združi vsaj ${ calendarsToFixCount } koledarja z obstoječimi koledarji ${ BRAND_NAME }",
@@ -5940,6 +5952,9 @@
       "Loading events": [
         "Nalaganje dogodkov"
       ],
+      "Location": [
+        "Lokacija"
+      ],
       "Low Priority": [
         "Nizka pomembnost"
       ],
@@ -6305,6 +6320,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "To je zdaj vaš naslov ${ defaultEmailAddress } za pošiljanje novih sporočil."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Za ta postopek je potrebnih več korakov. Nadaljujemo?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ta povezava vodi na spletno mesto, ki bi lahko poskušalo ukrasti vaše podatke, kot so gesla in podatki o plačilnih karticah."
@@ -7462,6 +7480,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Zoom meeting": [
+        "Sestanek prek Zooma"
       ]
     },
     "label": {
@@ -8139,6 +8160,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z razširjenim dostopom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z omejenim dostopom"
+      ],
       "${ n } calendar": [
         "${ n } koledar",
         "${ n } koledarja",
@@ -8782,6 +8809,9 @@
       ],
       "Downgrade account?": [
         "Zmanjšaj račun?"
+      ],
+      "Review subscription": [
+        "Pregled naročnine"
       ],
       "Review subscription and pay": [
         "Pregled naročnine in plačila"
@@ -11780,7 +11810,7 @@
         "${ ceilDays } dan",
         "${ ceilDays } dni",
         "${ ceilDays } dni",
-        "${ ceilDays } dnevi"
+        "${ ceilDays } dni"
       ],
       "${ ceilHours } hour": [
         "${ ceilHours } ura",
@@ -12198,6 +12228,9 @@
       "High security for your account": [
         "Visoka varnost za vaš račun"
       ],
+      "Host": [
+        "Gostitelj"
+      ],
       "How does it all work?": [
         "Kako vse to deluje?"
       ],
@@ -12473,6 +12506,9 @@
       ],
       "Stay for 50% off your next month": [
         "V naslednjem mesecu izkoristite 50 % popust"
+      ],
+      "Still working on it": [
+        "Še vedno delam na tem"
       ],
       "Subscription canceled": [
         "Naročnina preklicana"
