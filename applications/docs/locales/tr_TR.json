@@ -471,6 +471,9 @@
       "Import from Outlook": [
         "Outlook üzerinden içe aktar"
       ],
+      "Keep going": [
+        "İlerle"
+      ],
       "Keep my subscription": [
         "Aboneliğimi sürdür"
       ],
@@ -815,6 +818,9 @@
       ],
       "Stop": [
         "Durdur"
+      ],
+      "Stop here": [
+        "Burada dur"
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
@@ -5668,6 +5674,9 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Kullanıcılarınıza görüntülenecek kuruluş adınız veya kısaltmanız. İstediğiniz zaman değiştirebilirsiniz."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Bu işlem için birçok adım atılıyor. İlerlensin mi?"
+      ],
       "This item already exists in your library": [
         "Bu öge kitaplığınızda zaten var"
       ],
@@ -5709,6 +5718,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Sorunu gidermeye yardımcı olmak için hata ayıklama bilgileri Drive alanınıza yüklenecek ve ${ BRAND_NAME } destek ekibiyle güvenli bir şekilde paylaşılacak. Bu bilgilerde dosya içeriğini bulunabilir. İstediğiniz zaman paylaşmayı durdurabilirsiniz. İnceleme tamamlandığında paylaşılan veriler silinir."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Parolanızı unutmamanız için belirli aralıklarla parolanızı yazmanızı isteyeceğiz. Zamanla bunu daha az isteyeceğiz."
@@ -6345,6 +6357,9 @@
       ],
       "Include application logs in bug report": [
         "Uygulama günlükleri sorun bildirimine eklensin"
+      ],
+      "Include debug information": [
+        "Hata ayıklama bilgileri katılsın"
       ],
       "Include document name in notification": [
         "Bildirime belge adı eklensin"
@@ -7201,6 +7216,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Genişletilmiş erişim ile ${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Sınırlı erişim ile ${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "${ n } calendar": [
         "${ n } takvim",
@@ -8193,6 +8214,9 @@
       "All items will soon be permanently deleted from trash": [
         "Tüm ögeler yakında çöp kutusundan kalıcı olarak silinecek"
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Bu belge paylaşımlı bir klasörde bulunduğundan yalnızca klasör sahibi onu geri yükleyebilir"
+      ],
       "Cannot load link": [
         "Bağlantı yüklenemedi"
       ],
@@ -8256,6 +8280,9 @@
       "Failed to restore document": [
         "Belge geri yüklenemedi"
       ],
+      "Failed to submit report": [
+        "Bildirim gönderilemedi"
+      ],
       "Failed to trash document": [
         "Belge çöpe atılamadı"
       ],
@@ -8292,6 +8319,9 @@
       ],
       "Recent documents updated": [
         "Son güncellenen belgeler"
+      ],
+      "Report submitted successfully": [
+        "Bildirim gönderildi"
       ],
       "Root folder failed to be loaded": [
         "Kök klasör yüklenemedi"
@@ -10660,6 +10690,9 @@
       "Report a problem": [
         "Sorun bildirin"
       ],
+      "Report issue": [
+        "Sorun bildireceğim"
+      ],
       "Request new code": [
         "Yeni kod iste"
       ],
@@ -10743,6 +10776,9 @@
       ],
       "Stay for 50% off your next month": [
         "Sonraki ay %50 indirimden yararlanın"
+      ],
+      "Still working on it": [
+        "Üzerinde çalışılıyor"
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"

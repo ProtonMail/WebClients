@@ -660,8 +660,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "E-poštni vzdevek deluje kot e-poštni naslov, vendar zmanjša neželeno pošto in skriva vaš dejanski e-poštni naslov in identiteto."
       ],
+      "Change these passwords immediately": [
+        "Takoj spremenite ta gesla"
+      ],
       "Change your passwords": [
         "Spremenite svoja gesla"
+      ],
+      "Check if your passwords have been exposed": [
+        "Preverite, ali so bila vaša gesla izpostavljena"
       ],
       "Create unique passwords": [
         "Ustvarite edinstvena gesla"
@@ -689,6 +695,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Ta račun je ranljiv, obiščite storitev in spremenite geslo."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "To geslo za prijavo je bilo odkrito pri uhajanju podatkov. Prosimo, obiščite spletno stran storitve in spremenite svoje geslo."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Ta storitev ponuja 2FA. Omogočite ga za dodatno varnost računa."
@@ -3083,6 +3092,12 @@
       "Breaches detected for": [
         "Zaznane kršitve za"
       ],
+      "Compromised password": [
+        "Izpostavljena gesla"
+      ],
+      "Compromised passwords": [
+        "Izpostavljena gesla"
+      ],
       "Confirm extra password": [
         "Potrdite dodatno geslo"
       ],
@@ -3248,6 +3263,9 @@
       "Next": [
         "Naprej"
       ],
+      "No compromised passwords": [
+        "Ni izpostavljenih gesel"
+      ],
       "No excluded items": [
         "Ni izključenih predmetov"
       ],
@@ -3388,6 +3406,9 @@
       ],
       "Update available": [
         "Na voljo je posodobitev."
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Nadgradite za preverjanje ogroženih gesel"
       ],
       "Vault": [
         "Trezor"

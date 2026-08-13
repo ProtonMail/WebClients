@@ -930,6 +930,9 @@
       "Take a tour": [
         "Faça um tour"
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Alternar o ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Toggle Calendar app": [
         "Alternar aplicativo de calendário"
       ],
@@ -3295,6 +3298,9 @@
       "Could not unlock this item": [
         "Não foi possível desbloquear este item"
       ],
+      "Creating documents in non-folders is not allowed": [
+        "Não é permitido criar documentos dentro de itens que não sejam pastas"
+      ],
       "Creating files in non-folders is not allowed": [
         "Não é permitido criar arquivos dentro de itens que não sejam pastas"
       ],
@@ -3365,6 +3371,9 @@
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Falha ao descriptografar a chave de marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Falha ao descriptografar o nome de marcador: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Falha ao descriptografar a senha dos favoritos: ${ message }"
@@ -4812,6 +4821,10 @@
       "${ addressCount } email address": [
         "${ addressCount } endereço de e-mail",
         "${ addressCount } endereços de e-mail"
+      ],
+      "${ albums } album": [
+        "${ albums } álbum",
+        "${ albums } álbuns"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -9318,6 +9331,9 @@
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
@@ -11927,6 +11943,9 @@
       ],
       "Select link expiration date": [
         "Selecionar data de expiração do link"
+      ],
+      "Select users to migrate": [
+        "Selecione os usuários a serem migrados"
       ],
       "Set recovery methods": [
         "Definir um métodos de recuperação"

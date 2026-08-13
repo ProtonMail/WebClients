@@ -63,6 +63,9 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "+${ remaining } more": [
+        "+ încă ${ remaining }"
+      ],
       "Accept": [
         "Acceptare"
       ],
@@ -501,6 +504,9 @@
       "Decrease": [
         "Reducere"
       ],
+      "Decrease licenses": [
+        "Reducere licențe"
+      ],
       "Decrypt": [
         "Decriptare"
       ],
@@ -648,6 +654,9 @@
       "Download CSV sample": [
         "Descărcare exemplu de CSV"
       ],
+      "Download daily breakdown (CSV)": [
+        "Descărcare analiză zilnică (CSV)"
+      ],
       "Download for macOS": [
         "Descărcare pentru macOS"
       ],
@@ -662,6 +671,9 @@
       ],
       "Download logs": [
         "Jurnal descărcare"
+      ],
+      "Download monthly summary (CSV)": [
+        "Descărcare rezumat lunar (CSV)"
       ],
       "Download our CSV template": [
         "Descărcare șablon CSV"
@@ -801,17 +813,11 @@
       "Export as CSV": [
         "Exportare în CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "Exportare defalcată pe companii, ca ZIP"
-      ],
       "Export key": [
         "Exportare cheie"
       ],
       "Export key before deleting": [
         "Exportare cheie înainte de ștergere"
-      ],
-      "Export overview as CSV": [
-        "Exportare prezentare generală în CSV"
       ],
       "Extend": [
         "Extindere"
@@ -1019,6 +1025,9 @@
       ],
       "Increase": [
         "Mărire"
+      ],
+      "Increase licenses": [
+        "Mărire licențe"
       ],
       "Insert": [
         "Inserare"
@@ -3739,6 +3748,9 @@
       ]
     },
     "Column header": {
+      "Billable licenses": [
+        "Licențe facturabile"
+      ],
       "Billing period": [
         "Perioadă de facturare"
       ],
@@ -3748,17 +3760,17 @@
       "Managed companies": [
         "Companii gestionate"
       ],
+      "Managers": [
+        "Manageri"
+      ],
       "Status": [
         "Stare"
-      ],
-      "Total billed seats": [
-        "Total locuri facturate"
       ],
       "Total cost": [
         "Cost total"
       ],
-      "Used / assigned seats": [
-        "Licențe folosite/atribuite"
+      "Used / allocated licenses": [
+        "Licențe utilizate/alocate"
       ]
     },
     "Condition for custom filter": {
@@ -7433,6 +7445,9 @@
       "Please set up your organization before adding a company.": [
         "Setați-vă organizația înainte de a adăuga o companie."
       ],
+      "Please set up your organization identity before adding a company.": [
+        "Setați-vă identitatea organizației înainte de a adăuga o companie."
+      ],
       "Please try again in a few moments.": [
         "Mai încercați peste câteva momente."
       ],
@@ -10460,6 +10475,9 @@
       "Allocated": [
         "Alocat"
       ],
+      "Allocated licenses won't be billed while disabled": [
+        "Licențele alocate nu vor fi facturate cât timp sunt dezactivate."
+      ],
       "Allow logging of location and connection details": [
         "Permiteți înregistrarea detaliilor locului și conexiunii"
       ],
@@ -10602,9 +10620,6 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Solicitați administratorului organizației să seteze porțile de acces."
-      ],
-      "Assigned seats won't be billed while disabled": [
-        "Licențele atribuite nu vor fi facturate cât timp sunt dezactivate."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
@@ -10812,9 +10827,6 @@
       ],
       "Coming soon": [
         "În curând"
-      ],
-      "Companies you've been given access to manage.": [
-        "Companii la care vi s-a acordat accesul de gestionare."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Finalizați autentificarea pe acest dispozitiv pentru a începe să utilizați ${ VPN_APP_NAME } pe televizor."
@@ -11970,6 +11982,9 @@
       ],
       "Manage how users can access your ${ BRAND_NAME } organization with single sign-on.": [
         "Gestionați modul în care utilizatorii vă pot accesa organizația ${ BRAND_NAME } cu autentificarea unică."
+      ],
+      "Manage the companies you're responsible for.": [
+        "Gestionați companiile de care răspundeți."
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestionați aplicațiile ${ BRAND_NAME } pe care membrii organizației proprii le pot accesa. Dacă este dezactivat, numai administratorii vor avea acces."
@@ -13481,6 +13496,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vă sfătuim să utilizați aplicațiile oficiale ${ VPN_APP_NAME } atunci când este posibil."
       ],
+      "We bill you monthly by averaging the peak allocated licenses from each day over the month.": [
+        "Vă facturăm lunar prin calcularea mediei numărului maxim de licențe alocate în fiecare zi a lunii."
+      ],
       "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Vă putem folosi adresa de e-mail de recuperare pentru a vă trimite un cod de verificare pentru a vă reseta parola și pentru a vă contacta dacă observăm o activitate suspectă."
       ],
@@ -13639,9 +13657,6 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Cu grupuri, puteți trimite rapid și ușor mesaje tuturor persoanelor dintr-un anumit grup."
-      ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Cu gestionarea companiilor, puteți adăuga, edita și elimina accesul pentru organizațiile pe care le supravegheați."
       ],
       "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
         "Cu VPN Professional, administratorii pot impune VPN activat permanent pentru toți membrii organizației, alături de porți de acces private, politici de acces și monitorizare."
@@ -13918,9 +13933,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Nu veți putea recupera datele blocate folosind fișierele de recuperare descărcate. Aceasta va dezactiva și recuperarea pe bază de dispozitiv."
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "Se va factura lunar în funcție de numărul mediu de licențe alocate."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Vei primi recompensa în credite la o lună după ce persoana se abonează la un plan anual și la două luni după ce se abonează la un plan lunar."
@@ -14839,6 +14851,9 @@
       "All-day event notifications": [
         "Notificări pentru evenimente care durează toată ziua"
       ],
+      "Allocated licenses": [
+        "Licențe alocate"
+      ],
       "Allow": [
         "Permise"
       ],
@@ -14938,9 +14953,6 @@
       "Assertion Consumer Service URL": [
         "URL ACS (Assertion Consumer Service)"
       ],
-      "Assigned seats": [
-        "Licențe atribuite"
-      ],
       "Attach public key": [
         "Atașare cheie publică"
       ],
@@ -14995,9 +15007,6 @@
       "Autosuggest": [
         "Sugestie automată"
       ],
-      "Average": [
-        "În medie"
-      ],
       "Awarded": [
         "Acreditat"
       ],
@@ -15012,9 +15021,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Facturat cu ${ priceYearly } la fiecare 12 luni."
-      ],
-      "Billed average": [
-        "Media facturată"
       ],
       "Billed monthly.": [
         "Facturat lunar."
@@ -15642,6 +15648,9 @@
       "Level for NetShield blocker filtering": [
         "Nivelul pentru filtrarea blocatorului NetShield"
       ],
+      "Licenses usage": [
+        "Utilizare licențe"
+      ],
       "Link label (optional)": [
         "Etichetă legătură web (opțional)"
       ],
@@ -15728,6 +15737,9 @@
       ],
       "Monthly": [
         "Lunar"
+      ],
+      "Monthly average": [
+        "Medie lunară"
       ],
       "More payment methods": [
         "Mai multe metode de plată"
@@ -15894,6 +15906,9 @@
       "Payment method": [
         "Metoda de plată"
       ],
+      "Peak allocated licenses": [
+        "Maxim licențe alocate"
+      ],
       "Pending": [
         "În așteptare"
       ],
@@ -16031,12 +16046,6 @@
       ],
       "Search for a name or email": [
         "Căutare după nume sau e-mail"
-      ],
-      "Seats": [
-        "Număr licențe"
-      ],
-      "Seats usage": [
-        "Licențe folosite"
       ],
       "Second password": [
         "Parola secundară"
@@ -24117,9 +24126,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "Ultima modificare ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Ultima actualizare ${ formattedUpdateDate }"
       ],
       "Not activated": [
         "Neactivat"

@@ -8934,6 +8934,21 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Trvá vyhľadávanie príliš dlho? ${ dropdownButton } alebo ${ toggleOffButton } z tejto relácie vyhľadávania."
       ],
+      "Searched ${ targetName }": [
+        "Vyhľadávané: ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Hľadal sa email od ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Hľadal sa email pre ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Hľadalo sa slovo \"${ keyword }\""
+      ],
+      "Searched your mail": [
+        "Prehľadal som váš mail"
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska zadarmo už dnes."
       ],
@@ -10885,6 +10900,12 @@
       ],
       "No label found": [
         "Nebol nájdený žiadny štítok"
+      ],
+      "No unread conversations": [
+        "Žiadne neprečítané konverzácie"
+      ],
+      "No unread messages": [
+        "Žiadne neprečítané správy"
       ],
       "Non-promotional content and news": [
         "Nepropagačný obsah a správy"

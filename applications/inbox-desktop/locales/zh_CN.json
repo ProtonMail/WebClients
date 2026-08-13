@@ -70,6 +70,9 @@
       "Force Reload": [
         "全部重新加载"
       ],
+      "Help and feedback": [
+        "帮助与反馈"
+      ],
       "Hide ${ MAIL_APP_NAME }": [
         "隐藏 ${ MAIL_APP_NAME }"
       ],
@@ -78,6 +81,9 @@
       ],
       "Minimize": [
         "最小化"
+      ],
+      "OK": [
+        "确定"
       ],
       "Paste": [
         "粘贴"
@@ -147,6 +153,9 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "卸载 ${ MAIL_APP_NAME }"
+      ],
+      "Version ${ version } (${ buildInfo })\n${ pkg.config.copyright }": [
+        "版本 ${ version } (${ buildInfo })\n${ pkg.config.copyright }"
       ],
       "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
         "当启用硬件加速时，应用将使用设备专用的图形硬件进行渲染。这可能在部分系统上引发兼容性问题。"
@@ -255,11 +264,19 @@
       "File": [
         "文件"
       ],
+      "Help": [
+        "帮助"
+      ],
       "View": [
         "视图"
       ],
       "Window": [
         "窗口"
+      ]
+    },
+    "Title": {
+      "About ${ MAIL_APP_NAME }": [
+        "关于 ${ MAIL_APP_NAME }"
       ]
     },
     "Unload warning": {

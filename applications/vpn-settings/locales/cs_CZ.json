@@ -596,6 +596,9 @@
       "Go to panel ${ index }": [
         "Přejít na panel ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -5600,6 +5603,9 @@
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "Opustit tarif Family"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "Doživotní účty nemohou být připojeny k rodinnému tarifu."
       ],
@@ -6735,6 +6741,11 @@
         "Chcete-li kalendář exportovat jako ICS soubor, vyberte ${ boldExport }."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Další možnosti importu"
+      ]
+    },
     "Import status": {
       "In progress": [
         "Probíhá"
@@ -7426,6 +7437,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Pro pokračování vyberte ID subjektu."
+      ],
+      "Choose your service to connect with": [
+        "Vyberte službu, kterou chcete propojit"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
@@ -9927,6 +9941,14 @@
         "Předplatné"
       ]
     },
+    "label": {
+      "Notification phone number": [
+        "Telefonní číslo pro upozornění"
+      ],
+      "Recovery phone number": [
+        "Telefonní číslo pro obnovení"
+      ]
+    },
     "Label": {
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "${ addressesAvailable } z ${ maxAddresses } e-mailové addresy k dispozici",
@@ -10249,6 +10271,9 @@
       "Digits": [
         "Číslice"
       ],
+      "Disable animations": [
+        "Zakázat animace"
+      ],
       "Disabled": [
         "Deaktivovaný"
       ],
@@ -10359,6 +10384,12 @@
       ],
       "Folders, labels, and filters": [
         "Složky, štítky a filtry"
+      ],
+      "Font family": [
+        "Rodina písma"
+      ],
+      "Font size": [
+        "Velikost písma"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Pro ${ DRIVE_SHORT_APP_NAME } a ${ DOCS_SHORT_APP_NAME }."
@@ -10560,6 +10591,9 @@
       ],
       "Notification": [
         "Oznámení"
+      ],
+      "Notification email address": [
+        "E-mailová adresa pro upozornění"
       ],
       "Numbers": [
         "Číslice"
@@ -10801,6 +10835,9 @@
       "Thomas": [
         "Jméno"
       ],
+      "Time format": [
+        "Formát času"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Chcete-li nám pomoci se zlepšit, vysvětlete, proč odcházíte."
       ],
@@ -10870,6 +10907,9 @@
       "Weak password": [
         "Slabé heslo"
       ],
+      "Week start": [
+        "Týden začíná"
+      ],
       "What happened?": [
         "Co se stalo?"
       ],
@@ -10914,11 +10954,6 @@
       ],
       "ZIP code": [
         "PSČ"
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        "Telefonní číslo pro obnovení"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12558,6 +12593,9 @@
       ],
       "Switch plans?": [
         "Změnit tarif?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Odemknout prémiové funkce navýšením účtu"
       ]
     },
     "new_plans: Title": {
@@ -16192,9 +16230,6 @@
       "Last changed ${ formattedDate }": [
         "Poslední změna: ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Poslední aktualizace: ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Neuložen"
       ],
@@ -16262,6 +16297,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pro všechny služby ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Získat více úložného prostoru"
       ],
       "Storage used": [
         "Využité úložiště"
@@ -18003,6 +18041,9 @@
       "Get help with an issue": [
         "Získat pomoc s problémem"
       ],
+      "Get more from your privacy suite": [
+        "Získejte více ze sady pro ochranu soukromí"
+      ],
       "Get more from your VPN": [
         "Získejte více ze své VPN"
       ],
@@ -18738,6 +18779,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "Transakce ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Migrace organizace"
       ]
     },
     "Title header for addresses domain table": {

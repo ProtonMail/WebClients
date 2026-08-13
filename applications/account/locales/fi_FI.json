@@ -786,17 +786,11 @@
       "Export as CSV": [
         "Vie CSV:nä"
       ],
-      "Export breakdown by company as ZIP": [
-        "Vie erittely yrityksen mukaan ZIP-tiedostona"
-      ],
       "Export key": [
         "Vie avain"
       ],
       "Export key before deleting": [
         "Vie avain ennen poistoa"
-      ],
-      "Export overview as CSV": [
-        "Vie yleiskatsaus CSV-tiedostona"
       ],
       "Extend": [
         "Pidennä"
@@ -3661,14 +3655,8 @@
       "Status": [
         "Tila"
       ],
-      "Total billed seats": [
-        "Laskutettujen paikkojen kokonaismäärä"
-      ],
       "Total cost": [
         "Kokonaishinta"
-      ],
-      "Used / assigned seats": [
-        "Käytetyt / varatut paikat"
       ]
     },
     "Condition for custom filter": {
@@ -10054,9 +10042,6 @@
       "Ask your organization admin to setup Gateways.": [
         "Pyydä organisaatiosi ylläpitoa määrittämään yhdyskäytävät."
       ],
-      "Assigned seats won't be billed while disabled": [
-        "Varattuja paikkoja ei laskuteta, kun ne ovat poistettu käytöstä"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Ainakin ${ BETTER_PASSWORD_LENGTH } merkkiä"
       ],
@@ -10251,9 +10236,6 @@
       ],
       "Coming soon": [
         "Tulossa pian"
-      ],
-      "Companies you've been given access to manage.": [
-        "Yritykset, joiden hallinnointioikeudet sinulle on myönnetty."
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
         "Kirjaudu sisään tällä laitteella, jotta voit alkaa käyttää ${ VPN_APP_NAME } -sovellusta televisiossasi."
@@ -12846,9 +12828,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Ryhmien avulla voit helposti ja nopeasti lähettää sähköposteja kaikille tiettyyn ryhmään kuuluville henkilöille."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Hallinnoitujen yritysten avulla voit lisätä, muokata ja poistaa käyttöoikeuksia organisaatioille, joita valvot."
-      ],
       "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
         "VPN Professionalin avulla järjestelmänvalvojat voivat pakottaa kaikille organisaation jäsenille aina päällä olevan VPN:n sekä yksityiset yhdyskäytävät, käyttöoikeuskäytännöt ja valvonnan."
       ],
@@ -13112,9 +13091,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Et voi palauttaa lukittuja tietoja lataamillasi palautustiedostoilla. Tämä poistaa myös laitepohjaisen palautuksen käytöstä."
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "Laskutus tapahtuu kuukausittain, ja sen perustana on osoitettujen käyttöoikeuksien keskimääräinen lukumäärä."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Saatte krediitit 1 kuukausi sen jälkeen, kun ystävänne tilaa vuositilauksen, ja 2 kuukautta sen jälkeen, kun he tilaavat kuukausitilauksen."
@@ -14093,9 +14069,6 @@
       "Assertion Consumer Service URL": [
         "Valtuutuksen käyttäjäpalvelun (Assertion Consumer Service, ACS) URL"
       ],
-      "Assigned seats": [
-        "Määrätyt paikat"
-      ],
       "Attach public key": [
         "Liitä julkinen avain"
       ],
@@ -14150,9 +14123,6 @@
       "Autosuggest": [
         "Automaattiehdotus"
       ],
-      "Average": [
-        "Keskimäärin"
-      ],
       "Awarded": [
         "Palkittu"
       ],
@@ -14164,9 +14134,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Laskutetaan 12 kuukauden välein hintaan ${ priceYearly }."
-      ],
-      "Billed average": [
-        "Laskutettu keskiarvo"
       ],
       "Billed monthly.": [
         "Laskutetaan kuukausittain."
@@ -15155,12 +15122,6 @@
       ],
       "Search for a name or email": [
         "Etsi nimeä tai sähköpostiosoitetta"
-      ],
-      "Seats": [
-        "Paikat"
-      ],
-      "Seats usage": [
-        "Paikkojen käyttö"
       ],
       "Second password": [
         "Toinen salasana"
@@ -22999,9 +22960,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "Viimeksi muutettu ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Viimeksi päivitetty ${ formattedUpdateDate }"
       ],
       "Not saved": [
         "Ei tallennettu"

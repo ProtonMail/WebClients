@@ -608,6 +608,9 @@
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Skjønner"
       ],
@@ -5816,6 +5819,9 @@
       "Invited by: ${ inviteEmail }": [
         "Invitert av: ${ inviteEmail }"
       ],
+      "Leave Family plan": [
+        "Forlat familieplan"
+      ],
       "Lifetime accounts cannot join a family plan.": [
         "Livsvarige kontoer kan ikke bli med i en familieplan."
       ],
@@ -6954,6 +6960,11 @@
         "Velg ${ boldExport } for å eksportere kalenderen som en ICS-fil."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Flere importalternativer"
+      ]
+    },
     "Import status": {
       "Has errors": [
         "Inneholder feil"
@@ -7605,6 +7616,9 @@
       ],
       "Choose one:": [
         "Velg én:"
+      ],
+      "Choose your service to connect with": [
+        "Velg tjenesten du vil koble til"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
@@ -10510,6 +10524,9 @@
       "Digits": [
         "Sifre"
       ],
+      "Disable animations": [
+        "Deaktiver animasjoner"
+      ],
       "Disabled": [
         "Deaktivert"
       ],
@@ -10623,6 +10640,12 @@
       ],
       "Folders, labels, and filters": [
         "Mapper, etiketter og filtre"
+      ],
+      "Font family": [
+        "Skriftfamilie"
+      ],
+      "Font size": [
+        "Skriftstørrelse"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "For ${ DRIVE_SHORT_APP_NAME } og ${ DOCS_SHORT_APP_NAME }."
@@ -10827,6 +10850,9 @@
       ],
       "Notification": [
         "Varsel"
+      ],
+      "Notification email address": [
+        "E-postadresse for varsling"
       ],
       "Numbers": [
         "Tall"
@@ -11066,6 +11092,9 @@
       "Thomas": [
         "Thomas"
       ],
+      "Time format": [
+        "Tidsformat"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "For å hjelpe oss med å forbedre oss, vennligst forklar hvorfor du slutter."
       ],
@@ -11138,6 +11167,9 @@
       "Weak password": [
         "Svakt passord"
       ],
+      "Week start": [
+        "Ukestart"
+      ],
       "What happened?": [
         "Hva skjedde?"
       ],
@@ -11185,6 +11217,9 @@
       ]
     },
     "label": {
+      "Notification phone number": [
+        "Telefonnummer for varsling"
+      ],
       "Recovery phone number": [
         "Gjenopprettingstelefonnummer"
       ]
@@ -12766,6 +12801,9 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Lås opp premiumfunksjoner ved å oppgradere"
       ]
     },
     "new_plans: Title": {
@@ -16326,9 +16364,6 @@
       "Last changed ${ formattedDate }": [
         "Sist endret ${ formattedDate }"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Sist oppdatert ${ formattedUpdateDate }"
-      ],
       "Not saved": [
         "Ikke lagret"
       ],
@@ -16396,6 +16431,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "For alle ${ BRAND_NAME }-tjenester"
+      ],
+      "Get more storage": [
+        "Få mer lagringskapasitet"
       ],
       "Storage used": [
         "Lagringsplass brukt"
@@ -18118,6 +18156,9 @@
       "Get help with an issue": [
         "Få hjelp med et problem"
       ],
+      "Get more from your privacy suite": [
+        "Få mer ut av personvernpakken din"
+      ],
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
       ],
@@ -18885,6 +18926,11 @@
       ],
       "${ MAIL_APP_NAME } transaction": [
         "${ MAIL_APP_NAME }-transaksjon"
+      ]
+    },
+    "Title header": {
+      "Organization migrations": [
+        "Organisasjonsmigreringer"
       ]
     },
     "Title header for addresses domain table": {

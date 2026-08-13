@@ -777,17 +777,11 @@
       "Export as CSV": [
         "ส่งออกเป็น CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "ส่งออกข้อมูลรายละเอียดแยกตามบริษัทเป็นไฟล์ ZIP"
-      ],
       "Export key": [
         "ส่งออกคีย์"
       ],
       "Export key before deleting": [
         "ส่งออกคีย์ก่อนลบ"
-      ],
-      "Export overview as CSV": [
-        "ส่งออกภาพรวมเป็นไฟล์ CSV"
       ],
       "Extend": [
         "ขยาย"
@@ -3613,14 +3607,8 @@
       "Status": [
         "สถานะ"
       ],
-      "Total billed seats": [
-        "สิทธิ์ผู้ใช้ที่เรียกเก็บเงินทั้งหมด"
-      ],
       "Total cost": [
         "ค่าใช้จ่ายทั้งหมด"
-      ],
-      "Used / assigned seats": [
-        "สิทธิ์ผู้ใช้ที่ใช้ / ที่ได้รับมอบหมาย"
       ]
     },
     "Condition for custom filter": {
@@ -9859,9 +9847,6 @@
       "Ask your organization admin to setup Gateways.": [
         "ขอให้ผู้ดูแลระบบขององค์กรตั้งค่าเกตเวย์"
       ],
-      "Assigned seats won't be billed while disabled": [
-        "สิทธิ์ผู้ใช้ที่ได้รับมอบหมายจะไม่ถูกเรียกเก็บเงินในขณะที่ปิดใช้งาน"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "อย่างน้อย ${ BETTER_PASSWORD_LENGTH } อักขระ"
       ],
@@ -12586,9 +12571,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "ด้วยกลุ่ม คุณสามารถส่งอีเมลถึงทุกคนในกลุ่มที่ระบุได้อย่างรวดเร็วและง่ายดาย"
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "สำหรับบริษัทที่จัดการ จะสามารถเพิ่ม แก้ไข และลบการเข้าถึงสำหรับองค์กรที่ดูแลอยู่ได้"
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "ด้วยแผนปัจจุบันของคุณ คุณสามารถรับข้อความด้วยที่อยู่ @pm.me เท่านั้น อัปเกรดเพื่อส่งข้อความและสร้างที่อยู่เพิ่มเติมโดยใช้ @pm.me"
       ],
@@ -12834,9 +12816,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "คุณจะไม่สามารถกู้คืนข้อมูลที่ถูกล็อกโดยใช้ไฟล์กู้คืนที่ดาวน์โหลดไว้ การดำเนินการนี้จะปิดใช้งานการกู้คืนโดยใช้อุปกรณ์ด้วย"
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "จะถูกเรียกเก็บเงินรายเดือนตามจำนวนเฉลี่ยของสิทธิ์ผู้ใช้ที่ได้รับมอบหมาย"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "จะได้รับรางวัลเครดิต 1 เดือนหลังจากที่เพื่อนสมัครรับข้อมูลแผนรายปี และ 2 เดือนหลังจากที่เพื่อนสมัครรับข้อมูลแผนรายเดือน"
@@ -13802,9 +13781,6 @@
       "Assertion Consumer Service URL": [
         "URL ของ Assertion Consumer Service"
       ],
-      "Assigned seats": [
-        "สิทธิ์ผู้ใช้ที่มอบหมายแล้ว"
-      ],
       "Attach public key": [
         "แนบคีย์สาธารณะ"
       ],
@@ -13859,9 +13835,6 @@
       "Autosuggest": [
         "แนะนำอัตโนมัติ"
       ],
-      "Average": [
-        "เฉลี่ย"
-      ],
       "Awarded": [
         "ได้รับแล้ว"
       ],
@@ -13873,9 +13846,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "เรียกเก็บเงิน ${ priceYearly } ทุก ๆ 12 เดือน"
-      ],
-      "Billed average": [
-        "ยอดเรียกเก็บเฉลี่ย"
       ],
       "Billed monthly.": [
         "เรียกเก็บเงินรายเดือน"
@@ -14851,12 +14821,6 @@
       ],
       "Search for a name or email": [
         "ค้นหาชื่อหรืออีเมล"
-      ],
-      "Seats": [
-        "สิทธิ์ผู้ใช้"
-      ],
-      "Seats usage": [
-        "การใช้งานสิทธิ์ผู้ใช้"
       ],
       "Second password": [
         "รหัสผ่านที่สอง"
@@ -22539,9 +22503,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "เปลี่ยนล่าสุดเมื่อ ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "อัปเดตล่าสุดเมื่อ ${ formattedUpdateDate }"
       ],
       "Not saved": [
         "ไม่ได้บันทึก"

@@ -853,8 +853,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ett e-postalias fungerar som en e-postadress, men minskar skräppost och håller din faktiska e-postadress och identitet dold."
       ],
+      "Change these passwords immediately": [
+        "Ändra dessa lösenord omedelbart"
+      ],
       "Change your passwords": [
         "Ändra dina lösenord"
+      ],
+      "Check if your passwords have been exposed": [
+        "Kontrollera om dina lösenord har blivit exponerade"
       ],
       "Create unique passwords": [
         "Skapa unika lösenord"
@@ -909,6 +915,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Detta konto är sårbart, besök tjänsten och ändra ditt lösenord."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Detta inloggningslösenord förekommer i ett dataintrång. Besök tjänsten och ändra lösenordet."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denna tjänst erbjuder 2FA. Aktivera det för extra kontosäkerhet."
@@ -4661,6 +4670,12 @@
       "Clear clipboard": [
         "Rensa urklipp"
       ],
+      "Compromised password": [
+        "Komprometterat lösenord"
+      ],
+      "Compromised passwords": [
+        "Komprometterade lösenord"
+      ],
       "Confirm extra password": [
         "Bekräfta extralösenord"
       ],
@@ -4877,6 +4892,9 @@
       "No access tokens yet": [
         "Inga åtkomsttoken än"
       ],
+      "No compromised passwords": [
+        "Inga komprometterade lösenord"
+      ],
       "No excluded items": [
         "Inga exkluderade objekt"
       ],
@@ -5058,6 +5076,9 @@
       ],
       "Update available": [
         "Uppdatering tillgänglig"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Uppgradera för att kontrollera efter komprometterade lösenord"
       ],
       "URL matching": [
         "URL-matchning"

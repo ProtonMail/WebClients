@@ -792,17 +792,11 @@
       "Export as CSV": [
         "تصدير بصيغة CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "تصدير التفاصيل حسب الشركة كملف ZIP"
-      ],
       "Export key": [
         "تصدير المفتاح"
       ],
       "Export key before deleting": [
         "تصدير المفتاح قبل الحذف"
-      ],
-      "Export overview as CSV": [
-        "تصدير النظرة العامة كملف CSV"
       ],
       "Extend": [
         "تمديد"
@@ -3765,14 +3759,8 @@
       "Status": [
         "الحالة"
       ],
-      "Total billed seats": [
-        "إجمالي المقاعد المفوترة"
-      ],
       "Total cost": [
         "التكلفة الإجمالية"
-      ],
-      "Used / assigned seats": [
-        "المقاعد المستخدمة / المعينة"
       ]
     },
     "Condition for custom filter": {
@@ -10487,9 +10475,6 @@
       "Ask your organization admin to setup Gateways.": [
         "اطلب من مسؤول مؤسستك إعداد البوابات."
       ],
-      "Assigned seats won't be billed while disabled": [
-        "لن يتم فوترة المقاعد المعينة أثناء التعطيل"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "على الأقل ${ BETTER_PASSWORD_LENGTH } حرفًا"
       ],
@@ -13368,9 +13353,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "باستخدام المجموعات، يمكنك إرسال رسائل بريد إلكتروني بسرعة وسهولة إلى جميع الأشخاص في مجموعة محددة."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "تتيح ميزة الشركات المُدارة إضافة المؤسسات الخاضعة للإشراف وتعديل صلاحيات الوصول إليها وإزالتها."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "تسمح الخطة الحالية بتلقي الرسائل فقط باستخدام عنوان pm.me@. يرجى الترقية لإرسال الرسائل وإنشاء عناوين إضافية باستخدام pm.me@."
       ],
@@ -13667,9 +13649,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "لن تتمكن من استرداد البيانات المقفلة باستخدام ملفات الاسترداد التي نزّلتها. سيؤدي هذا أيضًا إلى تعطيل الاسترداد بالأجهزة."
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "ستتم الفوترة شهريًا بناءً على متوسط عدد المقاعد المعينة."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "ستتلقى مكافأة الائتمان بعد شهر واحد من اشتراك صديقك في خطة سنوية، وبعد شهرين من اشتراكه في خطة شهرية."
@@ -14691,9 +14670,6 @@
       "Assertion Consumer Service URL": [
         "رابط ضمان خدمة المستهلك (ACS)"
       ],
-      "Assigned seats": [
-        "المقاعد المعينة"
-      ],
       "Attach public key": [
         "إرفاق مفتاح عام"
       ],
@@ -14748,9 +14724,6 @@
       "Autosuggest": [
         "اقتراح تلقائي"
       ],
-      "Average": [
-        "المتوسط"
-      ],
       "Awarded": [
         "ممنوح"
       ],
@@ -14762,9 +14735,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "تُدفع فاتورة بمبلغ ${ priceYearly } كل 12 شهرًا."
-      ],
-      "Billed average": [
-        "المتوسط المفوتر"
       ],
       "Billed monthly.": [
         "تُدفع الفاتورة شهريًا."
@@ -15754,12 +15724,6 @@
       ],
       "Search for a name or email": [
         "ابحث عن اسم أو بريد إلكتروني"
-      ],
-      "Seats": [
-        "المقاعد"
-      ],
-      "Seats usage": [
-        "استخدام المقاعد"
       ],
       "Second password": [
         "كلمة المرور الثانية"
@@ -24061,9 +24025,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "آخر تغيير ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "آخر تحديث ${ formattedUpdateDate }"
       ],
       "Not saved": [
         "غير محفوظ"
