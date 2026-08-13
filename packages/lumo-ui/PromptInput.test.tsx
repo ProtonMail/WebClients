@@ -29,7 +29,7 @@ describe('PromptInput', () => {
 
     it('shows a stop button while busy and reports stop', () => {
         const onStop = jest.fn();
-        render(<PromptInput value="hello" onChange={jest.fn()} onSubmit={jest.fn()} onStop={onStop} isBusy />);
+        render(<PromptInput value="hello" onChange={jest.fn()} onSubmit={jest.fn()} onStop={onStop} isGenerating />);
 
         fireEvent.click(screen.getByRole('button'));
         expect(onStop).toHaveBeenCalledTimes(1);

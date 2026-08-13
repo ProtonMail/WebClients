@@ -65,9 +65,11 @@ const LumoAgentPanel = ({
 
     const pending = items.find((item) => item.kind === 'confirm' && item.status === 'pending');
 
+    const isGenerating = isBusy && !pending;
+
     const submit = () => {
         const text = draft.trim();
-        if (!text || isBusy) {
+        if (!text || isGenerating) {
             return;
         }
         setDraft('');
@@ -132,9 +134,9 @@ const LumoAgentPanel = ({
         <div className="lumo-agent-panel">
             <div ref={scrollRef} className="lumo-agent-transcript">
                 {items.map(renderItem)}
-                {isBusy && <LumoThinking label={thinkingLabel} />}
+                {isGenerating && <LumoThinking label={thinkingLabel} />}
                 {/* Idle Lumo mark beneath the latest turn, once a conversation exists (like lumo.proton.me). */}
-                {!isBusy && items.length > 0 && <LumoLogo className="lumo-agent-avatar" />}
+                {!isGenerating && items.length > 0 && <LumoLogo className="lumo-agent-avatar" />}
             </div>
 
             {pending?.kind === 'confirm' ? (
@@ -165,7 +167,7 @@ const LumoAgentPanel = ({
                     onChange={setDraft}
                     onSubmit={submit}
                     onStop={onStop}
-                    isBusy={isBusy}
+                    isGenerating={isGenerating}
                     placeholder={placeholder}
                 />
             </div>
