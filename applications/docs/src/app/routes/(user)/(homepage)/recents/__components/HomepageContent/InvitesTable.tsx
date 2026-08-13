@@ -1,4 +1,4 @@
-import Icon from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon'
 import { Avatar } from '@proton/atoms/Avatar/Avatar'
 import { Button } from '@proton/atoms/Button/Button'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'

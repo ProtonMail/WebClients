@@ -1,4 +1,4 @@
-import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type { ReactNode } from 'react'
 import { useEffect, useMemo } from 'react'
 import { Button } from '@proton/atoms/Button/Button'

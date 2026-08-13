@@ -1,9 +1,9 @@
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
+import ModalTwo from '@proton/components/components/modalTwo/Modal'
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent'
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter'
+import Toggle from '@proton/components/components/toggle/Toggle'
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
 import { c } from 'ttag'
 
 import { Button } from '@proton/atoms/Button/Button'

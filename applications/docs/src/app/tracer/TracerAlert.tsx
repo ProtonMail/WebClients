@@ -1,4 +1,4 @@
-import useNotifications from '@proton/components/hooks/useNotifications';
+import useNotifications from '@proton/components/hooks/useNotifications'
 import { useState, useEffect } from 'react'
 import { Button } from '@proton/atoms/Button/Button'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'

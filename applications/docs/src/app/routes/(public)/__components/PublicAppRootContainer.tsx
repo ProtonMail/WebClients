@@ -1,5 +1,5 @@
-import LocationErrorBoundary from '@proton/components/containers/app/LocationErrorBoundary';
-import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
+import LocationErrorBoundary from '@proton/components/containers/app/LocationErrorBoundary'
+import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated'
 import {
   PublicDriveStoreProvider,
   PublicDriveStoreProviderWithAuthenticatedUser,

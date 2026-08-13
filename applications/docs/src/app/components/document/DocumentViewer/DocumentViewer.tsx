@@ -1,6 +1,6 @@
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useConfig from '@proton/components/hooks/useConfig';
-import MimeIcon from '@proton/components/components/icon/MimeIcon';
+import useAuthentication from '@proton/components/hooks/useAuthentication'
+import useConfig from '@proton/components/hooks/useConfig'
+import MimeIcon from '@proton/components/components/icon/MimeIcon'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type {
   AuthenticatedDocControllerInterface,

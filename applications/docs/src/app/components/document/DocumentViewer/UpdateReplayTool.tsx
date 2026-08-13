@@ -1,4 +1,4 @@
-import Icon from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon'
 import { Button } from '@proton/atoms/Button/Button'
 import { Slider, SliderSizeEnum } from '@proton/atoms/Slider/Slider'
 import { IcCross } from '@proton/icons/icons/IcCross'

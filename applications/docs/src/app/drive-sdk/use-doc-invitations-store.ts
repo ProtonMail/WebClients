@@ -15,27 +15,25 @@ function toConvertedInvitations(invitations: ProtonInvitationWithNode[]) {
   return invitations.map((invitation) => sdkInvitationToExtended(invitation))
 }
 
-export const useDocInvitationsStore = create(
-  (set): DocInvitationsStore => ({
-    rawInvitations: [],
-    convertedInvitations: [],
+export const useDocInvitationsStore = create((set): DocInvitationsStore => ({
+  rawInvitations: [],
+  convertedInvitations: [],
 
-    setInvitations: (invitations) =>
-      set(() => ({ rawInvitations: invitations, convertedInvitations: toConvertedInvitations(invitations) })),
+  setInvitations: (invitations) =>
+    set(() => ({ rawInvitations: invitations, convertedInvitations: toConvertedInvitations(invitations) })),
 
-    removeInvitation: (invitationUid) =>
-      set((state) => ({
-        rawInvitations: state.rawInvitations.filter((invitation) => invitation.uid !== invitationUid),
-        convertedInvitations: state.convertedInvitations.filter(
-          (invitation) => invitation.invitation.invitationId !== invitationUid,
-        ),
-      })),
+  removeInvitation: (invitationUid) =>
+    set((state) => ({
+      rawInvitations: state.rawInvitations.filter((invitation) => invitation.uid !== invitationUid),
+      convertedInvitations: state.convertedInvitations.filter(
+        (invitation) => invitation.invitation.invitationId !== invitationUid,
+      ),
+    })),
 
-    updateInvitation: (invitationId, newValues) =>
-      set((state) => ({
-        convertedInvitations: state.convertedInvitations.map((invitation) =>
-          invitation.invitation.invitationId === invitationId ? { ...invitation, ...newValues } : invitation,
-        ),
-      })),
-  }),
-)
+  updateInvitation: (invitationId, newValues) =>
+    set((state) => ({
+      convertedInvitations: state.convertedInvitations.map((invitation) =>
+        invitation.invitation.invitationId === invitationId ? { ...invitation, ...newValues } : invitation,
+      ),
+    })),
+}))
