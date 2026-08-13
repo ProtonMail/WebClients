@@ -40,6 +40,8 @@ import { performance } from "node:perf_hooks";
 import { join } from "node:path";
 import fs from "node:fs";
 import { quitTracker } from "./utils/log/quitTracker";
+import { authStatusPoller } from "./utils/auth/authPoller";
+import { enableNotInAccountMenuItems } from "./utils/menus/menuApplication";
 
 (async function () {
     const PROFILER_IIFE_START = Date.now();
@@ -222,6 +224,8 @@ import { quitTracker } from "./utils/log/quitTracker";
     initializeFeatureFlagManager();
     setRequestPermission();
     extendAppVersionHeader();
+    authStatusPoller.registerCallback(enableNotInAccountMenuItems);
+    authStatusPoller.start();
 
     if (isPlaywrightTest) {
         // We can expose a method through the global node context.
