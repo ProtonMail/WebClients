@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { HtmlPreviewContext } from '../../contexts/HtmlPreviewContext';
 import { useConversationPanelState } from '../../hooks/useConversationPanelState';
 import { useRetryPanel } from '../../hooks/useRetryPanel';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
@@ -72,7 +71,6 @@ const ConversationLayout = ({
         handleShowDriveBrowser,
         handleClosePanel,
         handleOpenFilePreview,
-        handleOpenHtmlPreview,
         handleClearFilter,
     } = useConversationPanelState();
 
@@ -121,7 +119,7 @@ const ConversationLayout = ({
     );
 
     return (
-        <HtmlPreviewContext.Provider value={{ onPreviewHtml: handleOpenHtmlPreview }}>
+        <>
             <LumoLayoutWithDrawer
                 header={{
                     showNewChatButton: true,
@@ -252,7 +250,7 @@ const ConversationLayout = ({
                     )}
                 </div>
             </LumoLayoutWithDrawer>
-        </HtmlPreviewContext.Provider>
+        </>
     );
 };
 const ConversationComponent = (props: ConversationComponentProps) => {
