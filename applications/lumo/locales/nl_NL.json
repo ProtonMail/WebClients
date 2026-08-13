@@ -6024,6 +6024,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken gaat u naar Instellingen > Identiteit en adressen > Kort domein (pm.me)"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Bij het melden van inbreuk op auteursrechten of gestolen gegevens is een bericht vereist"
+      ],
       "Amount above the maximum.": [
         "Bedrag boven het maximum."
       ],
@@ -6033,8 +6036,17 @@
       "An error occurred": [
         "Er is een fout opgetreden"
       ],
+      "Bookmark password is not available": [
+        "Wachtwoord voor bladwijzer is niet beschikbaar"
+      ],
       "Cannot add photo to album without a valid name": [
         "Kan geen foto aan album toevoegen zonder een geldige naam"
+      ],
+      "Cannot download a folder": [
+        "Kan een map niet downloaden"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan het item niet verplaatsen zonder een geldige naam. Hernoem het item eerst"
       ],
       "Cannot share root folder": [
         "Kan hoofdmap niet delen"
@@ -6057,14 +6069,26 @@
       "Copying item to a non-folder is not allowed": [
         "Het kopiëren van een item naar een niet-map is niet toegestaan"
       ],
+      "Could not find an available name": [
+        "Kon geen beschikbare naam vinden"
+      ],
       "Could not load sharing details": [
         "Kan de deelgegevens niet laden"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Kan het afbeeldingsvoorbeeld niet laden: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kon een deel van dit bestand niet lezen: ${ message }"
       ],
       "Could not unlock the parent folder": [
         "Kan de bovenliggende map niet ontgrendelen"
       ],
       "Could not unlock this item": [
         "Kan dit item niet ontgrendelen"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Het aanmaken van documenten in niet-mappen is niet toegestaan"
       ],
       "Creating files in non-folders is not allowed": [
         "Het aanmaken van bestanden in niet-mappen is niet toegestaan"
@@ -6093,8 +6117,14 @@
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
       ],
+      "Expiration date cannot be in the past": [
+        "De vervaldatum mag niet in het verleden liggen"
+      ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Kan de bladwijzersleutel niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Kan bladwijzernaam niet decoderen: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Kan bladwijzerwachtwoord niet decoderen: ${ message }"
@@ -6105,11 +6135,20 @@
       "Failed to decrypt item name: ${ message }": [
         "Kan itemnaam niet ontsleutelen: ${ message }"
       ],
+      "Failed to decrypt node key: ${ message }": [
+        "Kan sleutel knooppunt niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Kan de metagegevens van de revisie niet ontsleutelen"
+      ],
       "Failed to get inviter keys": [
         "Kan uitnodigingssleutels niet ophalen"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
+      ],
+      "Failed to verify invitation": [
+        "Kan de uitnodiging niet verifiëren"
       ],
       "File download failed due to empty response": [
         "Het downloaden van bestanden is mislukt vanwege een leeg antwoord"
@@ -6159,6 +6198,12 @@
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Ontbrekende handtekening voor ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Verplaatsingsbewerking afgebroken"
+      ],
       "Moving item to a non-folder is not allowed": [
         "Het is niet toegestaan ​​om een ​​item naar een niet-map te verplaatsen"
       ],
@@ -6177,6 +6222,9 @@
       ],
       "Not a valid number": [
         "Geen geldig getal"
+      ],
+      "Only admins can convert external invitations": [
+        "Alleen beheerders kunnen externe uitnodigingen converteren"
       ],
       "Operation aborted": [
         "Bewerking afgebroken"
@@ -6253,6 +6301,9 @@
       "Renaming root item is not allowed": [
         "Het hernoemen van het rootitem is niet toegestaan"
       ],
+      "Request aborted": [
+        "Verzoek afgebroken"
+      ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
@@ -6264,6 +6315,9 @@
       ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verificatie handtekening mislukt: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
         "Handtekeningverificatie voor ${ signatureType } mislukt"
@@ -6334,6 +6388,9 @@
       "This item is not shared": [
         "Dit item is niet gedeeld"
       ],
+      "Too many server errors, please try again later": [
+        "Te veel serverfouten. Probeer het later opnieuw"
+      ],
       "Too many server requests, please try again later": [
         "Te veel serververzoeken. Probeer het later opnieuw"
       ],
@@ -6369,6 +6426,12 @@
       ],
       "You can create public links for your own files only": [
         "U kunt alleen openbare links voor uw eigen bestanden maken"
+      ],
+      "You can only leave items that are shared with you": [
+        "U kunt alleen items achterlaten die met u gedeeld zijn"
+      ],
+      "You can only upload a new version to a file": [
+        "U kunt alleen een nieuwe versie naar een bestand uploaden"
       ],
       "You can update a public link for your own files only": [
         "U kunt een openbare link alleen voor uw eigen bestanden bijwerken"
@@ -8022,6 +8085,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } schrijfassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent met uitgebreide toegang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent met beperkte toegang"
+      ],
       "${ n } calendar": [
         "${ n } agenda",
         "${ n } agenda's"
@@ -9404,6 +9473,9 @@
       "attributes": [
         "attributen"
       ],
+      "content key": [
+        "inhoud sleutel"
+      ],
       "hash key": [
         "hash sleutel"
       ],
@@ -9412,6 +9484,9 @@
       ],
       "membership": [
         "lidmaatschap"
+      ],
+      "name": [
+        "naam"
       ]
     },
     "Provider option": {
