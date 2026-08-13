@@ -1,5 +1,5 @@
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { Button } from '@proton/atoms/Button/Button'
-import { useAuthentication } from '@proton/components'
 import type { AuthenticatedDocControllerInterface } from '@proton/docs-core'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { getDrive, generateNodeUid } from '@proton/drive'

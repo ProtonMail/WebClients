@@ -1,8 +1,12 @@
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import { c } from 'ttag'
 
 import { Button } from '@proton/atoms/Button/Button'
-import type { ModalStateProps } from '@proton/components'
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, Toggle, useModalTwoStatic } from '@proton/components'
 import useLoading from '@proton/hooks/useLoading'
 import { useEffect, useState } from 'react'
 import { useDocsNotifications } from '../../../../__utils/notifications-context'

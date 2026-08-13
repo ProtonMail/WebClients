@@ -1,4 +1,6 @@
-import { GlobalLoader, GlobalLoaderProvider, LocationErrorBoundary } from '@proton/components'
+import GlobalLoader from '@proton/components/components/globalLoader/GlobalLoader';
+import GlobalLoaderProvider from '@proton/components/components/globalLoader/GlobalLoaderProvider';
+import LocationErrorBoundary from '@proton/components/containers/app/LocationErrorBoundary';
 import type { DriveCompat } from '@proton/drive-store'
 import { DriveStoreProvider, useDriveCompat } from '@proton/drive-store'
 import { Suspense, lazy } from 'react'

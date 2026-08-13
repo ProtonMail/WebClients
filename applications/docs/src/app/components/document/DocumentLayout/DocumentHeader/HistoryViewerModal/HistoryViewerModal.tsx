@@ -1,19 +1,17 @@
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import MimeIcon from '@proton/components/components/icon/MimeIcon';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
+import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers/notifications/constants';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import { Button } from '@proton/atoms/Button/Button'
 import { Input } from '@proton/atoms/Input/Input'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
-import type { ModalStateProps } from '@proton/components'
-import {
-  MimeIcon,
-  ModalTwo,
-  ModalTwoContent,
-  ModalTwoFooter,
-  ModalTwoHeader,
-  useModalTwoStatic,
-  useNotifications,
-  NotificationButton,
-  NOTIFICATION_DEFAULT_EXPIRATION_TIME,
-  useConfirmActionModal,
-} from '@proton/components'
 import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft'
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig'
 import { IcEye } from '@proton/icons/icons/IcEye'

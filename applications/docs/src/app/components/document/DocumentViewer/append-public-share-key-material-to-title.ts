@@ -1,3 +1,4 @@
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { NodeMeta } from '@proton/drive-store/lib'
 import { type ShareURL, useDriveEventManager } from '@proton/drive-store/store'
 import { VolumeTypeForEvents } from '@proton/drive-store/store/_volumes'
@@ -5,7 +6,6 @@ import { EVENT_TYPES } from '@proton/shared/lib/drive/constants'
 import type { DocumentState } from '@proton/docs-core'
 import { useRef, useEffect, useCallback } from 'react'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
-import { useAuthentication } from '@proton/components'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { useApplication } from '~/utils/application-context'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'

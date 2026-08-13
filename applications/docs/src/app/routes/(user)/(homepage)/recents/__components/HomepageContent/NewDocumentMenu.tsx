@@ -1,4 +1,5 @@
-import { Icon, useAuthentication } from '@proton/components'
+import Icon from '@proton/components/components/icon/Icon';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'

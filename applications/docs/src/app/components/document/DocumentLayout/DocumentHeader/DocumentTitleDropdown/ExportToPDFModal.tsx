@@ -1,8 +1,11 @@
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import { Button } from '@proton/atoms/Button/Button'
 import { c } from 'ttag'
 
-import type { ModalStateProps } from '@proton/components'
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, useModalTwoStatic } from '@proton/components'
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser'
 import { useState } from 'react'
 

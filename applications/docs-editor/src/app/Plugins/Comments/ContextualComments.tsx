@@ -1,10 +1,11 @@
+import usePopper from '@proton/components/components/popper/usePopper';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { CommentThreadInterface } from '@proton/docs-shared'
 import { CommentsPanelListThread } from './CommentsPanelListThread'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useCommentsContext } from './CommentsContext'
 import debounce from 'lodash/debounce'
-import { usePopper, usePopperAnchor } from '@proton/components'
 import SpeechBubbleDotsIcon from '../../Icons/SpeechBubbleDotsIcon'
 import { c } from 'ttag'
 import useCombinedRefs from '@proton/hooks/useCombinedRefs'
