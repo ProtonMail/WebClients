@@ -57,8 +57,6 @@ export const writeFeatureFlagCookieEntries = (entries: Map<string, string>) => {
     }
 
     setCookie({
-        // @ts-expect-error - Invalid prop name. Will be fixed in different MR
-        domain: window.location.hostname,
         cookieName: UNLEASH_FLAG_COOKIE_NAME,
         cookieValue: serializeFeatureFlagCookieEntries(entries),
         path: '/',
