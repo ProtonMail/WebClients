@@ -58,38 +58,54 @@ import { getBackupPasswordError, handleUnlockKey } from './loginHelper';
 export const getBackupPasswordDisabled = (cache: AuthCacheResult) =>
     cache.authResponse.SSOBackupPasswordDisabled === true;
 
+/**
+ * Whether the member is signing in for the first time since being converted to SSO.
+ */
+export const getFirstLoginAfterConversion = (cache: AuthCacheResult) =>
+    cache.authResponse.FirstLoginAfterConversion === true;
+
 export const getSSOIntent = ({
     user,
     authDevices,
     backupPasswordDisabled,
+    firstLoginAfterConversion,
 }: {
     user: User;
     authDevices: AuthDeviceOutput[];
     backupPasswordDisabled: boolean;
+    firstLoginAfterConversion: boolean;
 }) => {
-    // Members of an organization that disabled the backup password have no password to enter, so
-    // the only ways in are another device or an administrator
-    const enterBackupPassword = backupPasswordDisabled ? [] : [SSOLoginCapabilites.ENTER_BACKUP_PASSWORD];
-
-    if (!authDevices.length) {
-        if (user.Flags['has-temporary-password']) {
-            return {
-                capabilities: new Set([SSOLoginCapabilites.ASK_ADMIN]),
-                step: SSOLoginCapabilites.ASK_ADMIN,
-            };
-        }
+    // A member converted to SSO gets a dedicated screen the first time they sign in, which leads to
+    // the backup password: their pre-conversion password, kept as one even when the organization
+    // disabled backup passwords
+    if (firstLoginAfterConversion) {
         return {
-            capabilities: new Set([SSOLoginCapabilites.ASK_ADMIN, ...enterBackupPassword]),
-            step: SSOLoginCapabilites.ASK_ADMIN,
+            capabilities: new Set([
+                SSOLoginCapabilites.FIRST_LOGIN_AFTER_CONVERSION,
+                SSOLoginCapabilites.ENTER_BACKUP_PASSWORD,
+                SSOLoginCapabilites.ASK_ADMIN,
+            ]),
+            step: SSOLoginCapabilites.FIRST_LOGIN_AFTER_CONVERSION,
         };
     }
+
+    const hasOtherDevices = authDevices.length > 0;
+
+    // Nothing to enter for a member of an organization that disabled the backup password, nor for
+    // one still on an administrator-set temporary password. Either way the only ways in are another
+    // device or an administrator.
+    const canEnterBackupPassword = !backupPasswordDisabled && !user.Flags['has-temporary-password'];
+
+    // Ordered by precedence: the member lands on the first capability
+    const capabilities = [
+        ...(hasOtherDevices ? [SSOLoginCapabilites.OTHER_DEVICES] : []),
+        SSOLoginCapabilites.ASK_ADMIN,
+        ...(canEnterBackupPassword ? [SSOLoginCapabilites.ENTER_BACKUP_PASSWORD] : []),
+    ];
+
     return {
-        capabilities: new Set([
-            SSOLoginCapabilites.ASK_ADMIN,
-            ...enterBackupPassword,
-            SSOLoginCapabilites.OTHER_DEVICES,
-        ]),
-        step: SSOLoginCapabilites.OTHER_DEVICES,
+        capabilities: new Set(capabilities),
+        step: capabilities[0],
     };
 };
 
@@ -472,6 +488,7 @@ export const getSSOInactiveData = async ({
             user,
             authDevices: activeAuthDevicesExceptSelf,
             backupPasswordDisabled: getBackupPasswordDisabled(cache),
+            firstLoginAfterConversion: getFirstLoginAfterConversion(cache),
         }),
     };
 };
@@ -510,6 +527,7 @@ export const getSSOUnlockData = async ({ cache }: { cache: AuthCacheResult }): P
             authDevices: activeAuthDevicesExceptSelf,
             user,
             backupPasswordDisabled: getBackupPasswordDisabled(cache),
+            firstLoginAfterConversion: getFirstLoginAfterConversion(cache),
         }),
     };
 };
