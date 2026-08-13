@@ -1,4 +1,4 @@
-import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton'
 import type { MouseEventHandler } from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import clsx from '@proton/utils/clsx'

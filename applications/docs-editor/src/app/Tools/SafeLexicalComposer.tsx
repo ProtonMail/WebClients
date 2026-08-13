@@ -1,4 +1,4 @@
-import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary'
 import type { InitialConfigType } from '@lexical/react/LexicalComposer'
 import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import type { ReactNode } from 'react'

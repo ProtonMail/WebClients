@@ -1,7 +1,7 @@
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown'
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton'
 import { Button } from '@proton/atoms/Button/Button'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar'

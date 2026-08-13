@@ -1,4 +1,4 @@
-import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown'
 import { Button } from '@proton/atoms/Button/Button'
 import { ShortcutLabel } from '../Plugins/KeyboardShortcuts/ShortcutLabel'
 import type { ToolbarItemInterface } from './ToolbarItemInterface'
