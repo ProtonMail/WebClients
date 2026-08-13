@@ -12,7 +12,10 @@ import type { ArtifactRendererProps } from './artifactRenderers';
  * data:/blob: so no remote asset fetch is possible either. This is injected into the srcDoc
  * itself because a page-level CSP does not apply to a sandboxed, opaque-origin srcDoc iframe.
  */
-const CSP_META = `<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; media-src data: blob:; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none';">`;
+const CSP_POLICY =
+    "default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; " +
+    "font-src data:; media-src data: blob:; connect-src 'none'; frame-src 'none'; form-action 'none'; " +
+    "base-uri 'none';";
 
 /**
  * Script injected into the srcDoc so we can cross the sandboxed iframe's opaque-origin boundary.
@@ -20,7 +23,7 @@ const CSP_META = `<meta http-equiv="Content-Security-Policy" content="default-sr
  * sandboxed iframe origin), and this listener re-dispatches a native resize event so
  * canvas/D3/etc. recalculate. It also forwards runtime errors back to the parent.
  */
-const INJECTED_SCRIPT = `<script>
+const INJECTED_SCRIPT_BODY = `
 window.addEventListener('message', function(e) {
   if (e.data && e.data.type === 'lumo-resize') {
     window.dispatchEvent(new Event('resize'));
@@ -34,15 +37,31 @@ window.addEventListener('unhandledrejection', function(e) {
   var msg = e.reason ? String(e.reason) : 'Unhandled promise rejection';
   window.parent.postMessage({ type: 'lumo-webpage-error', message: msg }, '*');
 });
-</script>`;
+`;
 
-function buildSandboxedDoc(html: string): string {
-    const withScript = /<\/head>/i.test(html)
-        ? html.replace(/<\/head>/i, `${INJECTED_SCRIPT}</head>`)
-        : INJECTED_SCRIPT + html;
-    return /<head[^>]*>/i.test(withScript)
-        ? withScript.replace(/<head([^>]*)>/i, `<head$1>${CSP_META}`)
-        : CSP_META + withScript;
+// Parses `html` into a real Document (DOMParser never executes <script> elements, so this is
+// safe on untrusted content) rather than regex-matching the raw string. A regex like /<head>/
+// can't tell a real <head> element apart from a decoy that merely looks like one — e.g. text
+// inside an HTML comment or inside a <script>/<style> block — and would silently inject the CSP
+// into inert text instead of the real head, shipping the document with no CSP enforced at all.
+// DOMParser always produces a real head/body per the HTML5 parsing algorithm, even for
+// malformed or headless input, so there's no "head not found" fallback to get wrong.
+export function buildSandboxedDoc(html: string): string {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+
+    const cspMeta = doc.createElement('meta');
+    cspMeta.setAttribute('http-equiv', 'Content-Security-Policy');
+    cspMeta.setAttribute('content', CSP_POLICY);
+    // Must be the first child of <head> — a CSP meta tag only governs resources declared after
+    // it in the document, so anything the artifact's own <head> puts before it would be exempt.
+    doc.head.insertBefore(cspMeta, doc.head.firstChild);
+
+    const script = doc.createElement('script');
+    script.textContent = INJECTED_SCRIPT_BODY;
+    doc.head.appendChild(script);
+
+    const doctype = doc.doctype ? `<!DOCTYPE ${doc.doctype.name}>` : '';
+    return doctype + doc.documentElement.outerHTML;
 }
 
 export const WebpageRenderer = ({ artifact }: ArtifactRendererProps) => {
