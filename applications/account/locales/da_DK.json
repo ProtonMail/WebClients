@@ -1934,6 +1934,9 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "+${ remaining } more": [
+        "+${ remaining } mere"
       ]
     },
     "action": {
@@ -13904,6 +13907,33 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } mærkat"
+      ],
+      "Allows IPv6 traffic to pass through the VPN tunnel. This improves compatibility with IPv6 websites and services.": [
+        "Tillad IPv6 traffik at passere igennem VPN-tunnelen. Det forbedrer kompatibiliteten med IPv6-websteder og tjenester"
+      ],
+      "Backup password disabled": [
+        "Backupadgangskode deaktiveret"
+      ],
+      "Backup password enabled": [
+        "Backupadgangskode aktiveret"
+      ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Lad dem være udeladt når du ruller enhedensprofilen ud. Kommer snart."
+      ],
+      "Manage how users can access your ${ BRAND_NAME } organization with single sign-on.": [
+        "Administrer hvordan brugere tilgår din ${ BRAND_NAME }-organisation med single sign-on."
+      ],
+      "SSO users can't sign in on devices with always-on enforced.": [
+        "SSO-brugere kan ikke logge ind på enheder, hvor konstant VPN er påkrævet."
+      ],
+      "Users create a backup password the first time they sign in with single sign-on. When they later sign in on a new device, they can enter this password to complete the sign-in themselves, without needing an already signed-in device or an administrator to assist.": [
+        "Brugerne opretter en backupadgangskode første gang de logger ind med single sign-on. Når de logger ind på en anden enhed senere kan de indtaste denne adgangskode for at gennemføre log-ind forsøget selv, uden at skulle bruge en enhed der allerede er logget ind eller hjælp fra en administrator."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Du omdirigeres til ${ IDEAL_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
       ]
     },
     "info": {
@@ -16220,6 +16250,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Allow users to set a backup password": [
+        "Tillad at brugere angiver en backupadgangskode"
+      ],
+      "Licenses usage": [
+        "Brug af licenser"
       ]
     },
     "label": {
@@ -20268,6 +20304,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betal med ${ IDEAL_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
@@ -23680,6 +23719,15 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration vil blive slettet."
+      ],
+      "Continue to join as **${ username }**": [
+        "Fortsæt som **${ username }**"
+      ],
+      "For your security, you have been signed out of all your other active devices.": [
+        "Af hensyn til din sikkerhed er du blevet logget ud af alle dine andre aktive enheder."
+      ],
+      "This will sign you out of your other devices.": [
+        "Dette logger dig ud af alle dine andre enheder."
       ]
     },
     "sso: auth device state": {
@@ -27235,6 +27283,9 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Advanced configuration": [
+        "Avanceret konfiguration"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
