@@ -9,10 +9,11 @@ import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
  * to do it. We should be able to remove it relatively soon.
  */
 export const maybeSetAppSubdomainFromRedirectUrl = (url: URL) => {
-    const redirectUrl = url.searchParams.get('redirectUrl');
-    if (!redirectUrl) {
+    const value = url.searchParams.get('redirectUrl');
+    if (!value || !URL.canParse(value)) {
         return;
     }
+    const redirectUrl = new URL(value);
     const app = getAppFromPathnameSafe(url.pathname);
     if (!app) {
         return;

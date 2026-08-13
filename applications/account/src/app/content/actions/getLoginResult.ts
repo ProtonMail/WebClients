@@ -18,6 +18,7 @@ import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
 import { getOrganization } from '../../public/organization';
 import { getReAuthState } from '../../public/reauthContainerState';
 import type { Paths } from '../helper';
+import { hasInterruption } from '../interruptions';
 import type { LocalRedirect } from '../localRedirect';
 import { type ProduceForkData, SSOType } from './forkInterface';
 import { getProduceForkLoginResult } from './getProduceForkLoginResult';
@@ -205,6 +206,9 @@ export const getLoginResult = async ({
     if (
         // Reauth is only triggered through the switch flow as in other scenarios the user always enters their password
         session.flow === 'switch' &&
+        // The prompt comes from the fork url and does not change between passes, so without this the
+        // session would be sent back to reauth every time it comes back through here
+        !hasInterruption(session, 'reauth') &&
         getShouldReAuth(forkParameters, session)
     ) {
         return {

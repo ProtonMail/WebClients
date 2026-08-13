@@ -14,6 +14,7 @@ import {
     produceFork,
     produceOAuthFork,
 } from '@proton/shared/lib/authentication/fork';
+import { getIsLocalhostRedirectUrl } from '@proton/shared/lib/authentication/fork/getValidatedRedirectUrl';
 import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS, type APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -24,6 +25,7 @@ import { getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
 import type { AuthDesktopState } from '../../public/AuthDesktop';
 import type { AuthExtensionState } from '../../public/AuthExtension';
 import type { Paths } from '../helper';
+import { hasInterruption } from '../interruptions';
 import { type ProduceForkData, SSOType } from './forkInterface';
 import { getProductDisabledLoginResult } from './getProductDisabledResult';
 import { getSetupAddressLoginResult } from './getSetupAddressLoginResult';
@@ -76,7 +78,7 @@ export const getProduceForkLoginResult = async ({
 
     if (data.type === SSOType.Proton) {
         const { forkParameters, desktopForkParameters, searchParameters } = data.payload;
-        const { app } = forkParameters;
+        const { app, redirectUrl } = forkParameters;
 
         // OAuth sessions are only allowed for the VPN browser extension at the moment. Throw a disallowed product error if a fork is attempted.
         if (session.data.persistedSession.source === SessionSource.Oauth && app !== APPS.PROTONVPNBROWSEREXTENSION) {
@@ -149,6 +151,21 @@ export const getProduceForkLoginResult = async ({
                 };
             }
 
+            if (
+                !hasInterruption(session, 'fork-redirect-consent') &&
+                redirectUrl &&
+                getIsLocalhostRedirectUrl(redirectUrl)
+            ) {
+                return {
+                    type: 'fork-redirect-consent',
+                    location: SSO_PATHS.AUTHORIZE_REDIRECT_CONSENT,
+                    payload: {
+                        session,
+                        redirectUrl: redirectUrl.href,
+                    },
+                };
+            }
+
             const produceForkPayload = await produceFork({
                 api,
                 session: session.data,
@@ -173,27 +190,29 @@ export const getProduceForkLoginResult = async ({
 
     if (data.type === SSOType.OAuth) {
         const { payload } = data;
-        const {
-            Access: { Accepted },
-        } = await api<{
-            Access: OAuthLastAccess;
-        }>(getOAuthLastAccess(payload.oauthData.clientID));
-        if (Accepted) {
-            const url = new URL(await produceOAuthFork({ api, oauthData: payload.oauthData }));
-            return {
-                type: 'done',
-                payload: {
-                    session,
-                    url,
-                },
-            };
+        if (!hasInterruption(session, 'oauth-consent')) {
+            const {
+                Access: { Accepted },
+            } = await api<{
+                Access: OAuthLastAccess;
+            }>(getOAuthLastAccess(payload.oauthData.clientID));
+            if (!Accepted) {
+                return {
+                    type: 'oauth-consent',
+                    location: SSO_PATHS.OAUTH_AUTHORIZE_CONSENT,
+                    payload: {
+                        data,
+                        session,
+                    },
+                };
+            }
         }
+        const url = new URL(await produceOAuthFork({ api, oauthData: payload.oauthData }));
         return {
-            type: 'confirm-oauth',
-            location: SSO_PATHS.OAUTH_CONFIRM_FORK,
+            type: 'done',
             payload: {
-                data,
                 session,
+                url,
             },
         };
     }

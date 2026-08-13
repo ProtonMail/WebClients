@@ -1,10 +1,13 @@
-import { getValidatedRedirectUrl } from '../../lib/authentication/fork/getValidatedRedirectUrl';
+import {
+    getIsLocalhostRedirectUrl,
+    getValidatedRedirectUrl,
+} from '../../lib/authentication/fork/getValidatedRedirectUrl';
 import { APPS } from '../../lib/constants';
 
 const makeUrl = (href: string) => new URL(href);
 
 const call = (redirectUrl: string, url: string, app = APPS.PROTONMAIL) =>
-    getValidatedRedirectUrl({ redirectUrl, url: makeUrl(url), app });
+    getValidatedRedirectUrl({ redirectUrl: makeUrl(redirectUrl), url: makeUrl(url), app });
 
 const href = (result: ReturnType<typeof call>) => result?.href;
 
@@ -69,16 +72,16 @@ describe('getValidatedRedirectUrl', () => {
                 output: 'http://localhost:8080/login?token=abc#section',
             },
             {
-                name: 'should return undefined for http://localhost with port and root path on onion production domain',
+                name: 'should allow http://localhost with port and root path on onion production domain',
                 redirectUrl: 'http://localhost:3000/',
                 url: 'https://mail.protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion/u/0/inbox?q=test',
-                output: undefined,
+                output: 'http://localhost:3000/u/0/inbox?q=test',
             },
             {
-                name: 'should return undefined for http://localhost when current url is on a production domain',
+                name: 'should allow http://localhost when current url is on a production domain',
                 redirectUrl: 'http://localhost/',
                 url: 'https://mail.proton.me/u/0/inbox',
-                output: undefined,
+                output: 'http://localhost/u/0/inbox',
             },
             {
                 name: 'should return undefined for http on a non-localhost hostname',
@@ -95,6 +98,36 @@ describe('getValidatedRedirectUrl', () => {
         ].forEach(({ name, redirectUrl, url, output }) => {
             it(name, () => {
                 expect(href(call(redirectUrl, url))).toBe(output);
+            });
+        });
+    });
+
+    describe('getIsLocalhostRedirectUrl', () => {
+        [
+            { name: 'should detect http://localhost', redirectUrl: 'http://localhost/', output: true },
+            { name: 'should detect http://localhost with a port', redirectUrl: 'http://localhost:8080/', output: true },
+            {
+                name: 'should detect http://localhost with a path',
+                redirectUrl: 'http://localhost:8080/callback',
+                output: true,
+            },
+            { name: 'should not detect https localhost', redirectUrl: 'https://localhost/', output: false },
+            { name: 'should not detect the loopback ip', redirectUrl: 'http://127.0.0.1/', output: false },
+            {
+                name: 'should not detect a hostname merely prefixed with localhost',
+                redirectUrl: 'http://localhost.evil.com/',
+                output: false,
+            },
+            {
+                name: 'should not detect userinfo pointing at an external host',
+                redirectUrl: 'http://localhost@evil.com/',
+                output: false,
+            },
+            { name: 'should not detect an external domain', redirectUrl: 'https://evil.com/', output: false },
+            { name: 'should not detect a proton protocol redirect', redirectUrl: 'proton-mail://', output: false },
+        ].forEach(({ name, redirectUrl, output }) => {
+            it(name, () => {
+                expect(getIsLocalhostRedirectUrl(makeUrl(redirectUrl))).toBe(output);
             });
         });
     });
@@ -186,20 +219,9 @@ describe('getValidatedRedirectUrl', () => {
         });
     });
 
+    // Unparseable redirect urls never reach this function, see the getProduceForkParameters spec
     describe('invalid or unsupported redirects', () => {
         [
-            {
-                name: 'should return undefined for an empty redirect url',
-                redirectUrl: '',
-                url: 'https://mail.proton.me/u/0/inbox',
-                output: undefined,
-            },
-            {
-                name: 'should return undefined for a non-parseable redirect url',
-                redirectUrl: 'not a url',
-                url: 'https://mail.proton.me/u/0/inbox',
-                output: undefined,
-            },
             {
                 name: 'should return undefined for ftp protocol',
                 redirectUrl: 'ftp://mail.proton.me/',
@@ -209,12 +231,6 @@ describe('getValidatedRedirectUrl', () => {
             {
                 name: 'should return undefined for javascript: protocol',
                 redirectUrl: 'javascript:alert(1)',
-                url: 'https://mail.proton.me/u/0/inbox',
-                output: undefined,
-            },
-            {
-                name: 'should return undefined for path-relative redirect attempt',
-                redirectUrl: '/\\\\evil.com',
                 url: 'https://mail.proton.me/u/0/inbox',
                 output: undefined,
             },
