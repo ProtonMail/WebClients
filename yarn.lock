@@ -17941,6 +17941,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"adm-zip@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "adm-zip@npm:0.6.0"
+  checksum: 10/6a49ab39055d8f716958d3a2055491ab86fe3359c4afeed9b14bbce78fb847bcd3cbaa0ff4921aaa19824aaa29d06691def1f53263db5224d06c068f922c5ba2
+  languageName: node
+  linkType: hard
+
 "ag-auth@npm:^2.1.0":
   version: 2.1.0
   resolution: "ag-auth@npm:2.1.0"
@@ -41304,6 +41311,7 @@ __metadata:
     "@types/node": "npm:^24.13.3"
     "@types/pdf-parse": "npm:^1.1.5"
     "@types/tinycolor2": "npm:^1.4.6"
+    adm-zip: "npm:^0.6.0"
     chance: "npm:^1.1.13"
     date-fns: "npm:^2.30.0"
     dotenv: "npm:^17.4.2"
@@ -41312,7 +41320,6 @@ __metadata:
     eslint-plugin-custom-rules: "workspace:^"
     eslint-plugin-import: "npm:^2.32.0"
     eslint-plugin-playwright: "npm:^2.10.5"
-    extract-zip: "npm:^2.0.1"
     fs-extra: "npm:^11.4.0"
     gmail-tester: "npm:^1.4.0"
     googleapis: "npm:^131.0.0"
