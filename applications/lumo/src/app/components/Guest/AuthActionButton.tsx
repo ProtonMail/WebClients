@@ -1,16 +1,12 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 
 import { clsx } from 'clsx';
-import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { SettingsLink } from '@proton/components';
 
-import { useGuestMigration } from '../../hooks/useGuestMigration';
-import { useLumoAuthAction } from '../../hooks/useLumoAuthAction';
-import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
-import { getAuthActionAccountPath } from '../../util/authActionPath';
-import { isNativeMobileApp } from '../../util/userAgent';
+import type { GuestAuthAction } from '../../hooks/useAuthActionProps';
+import { useAuthActionProps } from '../../hooks/useAuthActionProps';
 
 export interface BaseAuthProps {
     className?: string;
@@ -25,20 +21,9 @@ export interface AuthButtonProps extends BaseAuthProps {
 
 interface AuthActionButtonProps extends AuthButtonProps {
     variant?: 'link' | 'button';
-    action: 'signup' | 'signin';
+    action: GuestAuthAction;
     children?: React.ReactNode;
 }
-
-const AUTH_ACTIONS = {
-    signup: {
-        getButtonText: () => c('collider_2025: Link').t`Create a free account`,
-        path: '/signup',
-    },
-    signin: {
-        getButtonText: () => c('collider_2025: Link').t`Sign in`,
-        path: '',
-    },
-};
 
 export const AuthActionButton = ({
     variant = 'link',
@@ -49,37 +34,7 @@ export const AuthActionButton = ({
     size = 'medium',
     onClick,
 }: AuthActionButtonProps) => {
-    const config = AUTH_ACTIONS[action];
-
-    const { captureGuestState } = useGuestMigration();
-    const { isEnabled: isNativeAuthEnabled, trigger: triggerAuthAction } = useLumoAuthAction();
-
-    const handleClick = useCallback(
-        async (event: React.MouseEvent) => {
-            if (isNativeAuthEnabled) {
-                event.preventDefault();
-            }
-            onClick?.();
-            setNativeComposerVisibility(false);
-            try {
-                const captured = await captureGuestState();
-                if (captured) {
-                    console.log('Guest state captured and encrypted from header sign-up');
-                }
-            } catch (error) {
-                console.error('Failed to capture guest state:', error);
-            }
-            if (isNativeAuthEnabled) {
-                triggerAuthAction(action);
-            }
-        },
-        [captureGuestState, onClick, isNativeAuthEnabled, triggerAuthAction, action]
-    );
-
-    const text = config.getButtonText();
-    const path = isNativeAuthEnabled
-        ? ''
-        : getAuthActionAccountPath({ action, basePath: config.path, isMobileApp: isNativeMobileApp() });
+    const { text, path, onClick: handleClick } = useAuthActionProps(action, onClick);
 
     if (variant === 'link') {
         return (
