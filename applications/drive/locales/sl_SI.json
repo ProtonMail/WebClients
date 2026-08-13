@@ -1262,6 +1262,18 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "Preizkusite ${ BRAND_NAME } Workspace"
+      ],
+      "Download for Mac": [
+        "Prenos za Mac"
+      ],
+      "Keep going": [
+        "Nadaljuj …"
+      ],
+      "Save photo to your gallery": [
+        "Shrani fotografijo v galerijo"
+      ],
+      "Stop here": [
+        "Tukaj se ustavi"
       ]
     },
     "Actions": {
@@ -4169,6 +4181,12 @@
       ],
       "We were not able to load some items shared with you": [
         "Nekaterih elementov, ki so bili dani v skupno rabo z vami, ni bilo mogoče naložiti"
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Pri iskanju je prišlo do napake: premalo prostora za shranjevanje."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Naprava, katere ni možno dešifrirati"
       ]
     },
     "error": {
@@ -4303,7 +4321,7 @@
     },
     "Error message": {
       "Access denied": [
-        "Dostop zavrnjen"
+        "Dostop je zavrnjen"
       ],
       "App currently unavailable": [
         "Aplikacija trenutno ni na voljo"
@@ -7478,6 +7496,21 @@
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Indeks vaših datotek se ponovno ustvarja. Z iskanjem lahko nadaljujete. a so rezultati lahko nepopolni. Ko bo postopek zaključen, vas bomo obvestili."
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "Aplikacija ${ DRIVE_APP_NAME } je zaznala, da je indeks za lokalno iskanje poškodovan in ga ni več mogoče uporabljati. Indeks je potrebno obnoviti, da se ponovno vzpostavi iskanje."
+      ],
+      "I have not finished this one yet.": [
+        "Tega še nisem dokončal."
+      ],
+      "Oct": [
+        "Okt"
+      ],
+      "Sep": [
+        "Sep"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Za ta postopek je potrebnih več korakov. Nadaljujemo?"
       ]
     },
     "info": {
@@ -9484,6 +9517,12 @@
       ],
       "No streaming support": [
         "Brez podpore pretočnim storitvam"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z razširjenim dostopom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z omejenim dostopom"
       ]
     },
     "new_plans: feature highlight": {
@@ -9625,6 +9664,9 @@
       ],
       "Switch plans?": [
         "Zamenjaj paket?"
+      ],
+      "Review subscription": [
+        "Pregled naročnine"
       ]
     },
     "new_plans: tooltip": {
@@ -10300,6 +10342,9 @@
       ],
       "This secure link expired, please change expire date in sharing settings": [
         "Ta varna povezava je potekla. Prosimo, spremenite datum poteka veljavnosti v nastavitvah deljenja."
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName } je trajno izbrisan iz smetnjaka"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10464,7 +10509,7 @@
         "Preskoči za zdaj"
       ],
       "Try the app": [
-        "Poskusi aplikacijo"
+        "Preizkusi aplikacijo"
       ],
       "Upload file": [
         "Naloži datoteko"
@@ -10502,7 +10547,7 @@
         "Končno potrjevanje v teku"
       ],
       "Get the desktop app": [
-        "Prenesite program za namizja"
+        "Prenesite program za namizni računalnik"
       ],
       "Get the mobile app": [
         "Priskrbite si mobilno aplikacijo"
@@ -10569,6 +10614,9 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Pravkar ste pridobili nekaj brezplačnega prostora za podatke in v rekordnem času zaščitili svoje datoteke s šifriranjem od konca do konca!"
+      ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "Ali vam je ${ DRIVE_APP_NAME } bolj všeč v svetlem ali temnem načinu? Izberite temo, ki vas najbolj navdihuje."
       ]
     },
     "Onboarding Trial": {
@@ -12410,7 +12458,7 @@
         "Tukaj bodo prikazane vaše panoramske fotografije"
       ],
       "Your photo bursts will appear here": [
-        "Vaše fotografske serije bodo prikazane tukaj"
+        "Vaše rafalne fotografije bodo prikazane tukaj"
       ],
       "Your RAW photos will appear here": [
         "Vaše fotografije RAW bodo prikazane tukaj"
@@ -13192,7 +13240,7 @@
         "Lokacija"
       ],
       "Logger": [
-        "Zapisovalnik"
+        "Beležnik"
       ],
       "Logs": [
         "Dnevniki"
@@ -13772,6 +13820,9 @@
       ],
       "No bursts": [
         "Brez rafalnih posnetkov"
+      ],
+      "Still working on it": [
+        "Še vedno delam na tem"
       ]
     },
     "Today icon tooltip in mini calendar": {
