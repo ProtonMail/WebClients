@@ -1,6 +1,27 @@
 const statusElement = document.getElementById('status');
 const canvasElement = document.getElementById('canvas');
 
+// Escape untrusted values (e.g. the WAD filename) before embedding them into innerHTML
+// to prevent HTML/script injection.
+function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, (char) => {
+        switch (char) {
+            case '&':
+                return '&amp;';
+            case '<':
+                return '&lt;';
+            case '>':
+                return '&gt;';
+            case '"':
+                return '&quot;';
+            case "'":
+                return '&#39;';
+            default:
+                return char;
+        }
+    });
+}
+
 window.addEventListener('load', () => {
     window.parent.postMessage('FRAME_READY', '*');
 });
@@ -12,7 +33,7 @@ window.addEventListener('message', async (event) => {
 
         statusElement.innerHTML = `
 <div class="spinner"></div>
-<p>Loading ${fileName}...</p>
+<p>Loading ${escapeHtml(fileName)}...</p>
 `;
         initGame(fileName, fileData);
     }
@@ -71,7 +92,7 @@ var Module = {
             statusElement.style.display = 'block';
             statusElement.innerHTML = `
 <div class="spinner"></div>
-<p>${text}</p>
+<p>${escapeHtml(text)}</p>
 `;
         }
     },
@@ -119,7 +140,7 @@ function initGame(fileName, fileData) {
 `;
         } catch (e) {
             console.error('Error writing file:', e);
-            statusElement.innerHTML = `<p>Error loading game: ${e.message}</p>`;
+            statusElement.innerHTML = `<p>Error loading game: ${escapeHtml(e.message)}</p>`;
         }
     };
 
