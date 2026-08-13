@@ -10255,7 +10255,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
     "@types/react-window": "npm:^1.8.8"
-    "@xmldom/xmldom": "npm:^0.9.10"
+    "@xmldom/xmldom": "npm:^0.9.11"
     babel-plugin-transform-require-context: "npm:^0.1.1"
     client-zip: "npm:^2.5.0"
     comlink: "npm:^4.4.2"
@@ -10317,7 +10317,7 @@ __metadata:
     "@testing-library/user-event": "npm:^14.6.3"
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:^24.13.3"
-    "@xmldom/xmldom": "npm:^0.9.10"
+    "@xmldom/xmldom": "npm:^0.9.11"
     core-js: "npm:^3.49.0"
     eslint: "npm:^9.39.5"
     exifreader: "npm:^4.41.3"
@@ -17651,10 +17651,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@xmldom/xmldom@npm:^0.9.10":
-  version: 0.9.10
-  resolution: "@xmldom/xmldom@npm:0.9.10"
-  checksum: 10/8d39ed498baf33dc8bbc82ec575e7448ddf08a0d6874bcc30a70c001b7519e6df6564f98d13c03836fa8be099c6d74cbc4078cfcfcbcf005681d4e67f1363412
+"@xmldom/xmldom@npm:^0.9.10, @xmldom/xmldom@npm:^0.9.11":
+  version: 0.9.11
+  resolution: "@xmldom/xmldom@npm:0.9.11"
+  checksum: 10/5cde83c1e1aa43e2e95ac3315003c3f0601132fea3f155f1d7db49b29af4b94021ab90e62238d645116118de951cc4b8595232ba5820838f2a8f7bf9a87f3f99
   languageName: node
   linkType: hard
 
@@ -41013,7 +41013,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
     "@types/react-window": "npm:^1.8.8"
-    "@xmldom/xmldom": "npm:^0.9.10"
+    "@xmldom/xmldom": "npm:^0.9.11"
     client-zip: "npm:^2.5.0"
     comlink: "npm:^4.4.2"
     copy-webpack-plugin: "npm:^14.0.0"
