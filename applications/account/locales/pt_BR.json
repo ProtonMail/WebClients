@@ -54,6 +54,218 @@
         "Suas informações foram encontradas em pelo menos um vazamento. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
       ]
     },
+    "account_search_index": {
+      "12-word phrase": [
+        "Frase de 12 palavras"
+      ],
+      "Account events": [
+        "Eventos da conta"
+      ],
+      "Active sessions": [
+        "Sessões ativas"
+      ],
+      "Add address": [
+        "Adicionar endereço"
+      ],
+      "Advanced account protection": [
+        "Proteção avançada de conta"
+      ],
+      "AI assistant": [
+        "Assistente de IA"
+      ],
+      "Allow list": [
+        "Lista de permitidos"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Audit log": [
+        "Registro de auditoria"
+      ],
+      "Authentication logs": [
+        "Registros de autenticação"
+      ],
+      "Automatic renewal": [
+        "Renovação automática"
+      ],
+      "Block sender": [
+        "Bloquear remetente"
+      ],
+      "Cancel plan": [
+        "Cancelar plano"
+      ],
+      "Close account": [
+        "Fechar conta"
+      ],
+      "Compare plans": [
+        "Comparar planos"
+      ],
+      "Connected addresses": [
+        "Endereços conectados"
+      ],
+      "Connection events": [
+        "Eventos de conexão"
+      ],
+      "Create organization": [
+        "Criar organização"
+      ],
+      "Custom domain": [
+        "Domínio personalizado"
+      ],
+      "Customer support": [
+        "Suporte ao cliente"
+      ],
+      "Dark mode": [
+        "Modo escuro"
+      ],
+      "Desktop and mobile apps": [
+        "Aplicativos para computador e móveis"
+      ],
+      "Downgrade plan": [
+        "Fazer downgrade do plano"
+      ],
+      "Downgrade to Free": [
+        "Fazer downgrade para Free"
+      ],
+      "Download apps": [
+        "Baixar aplicativos"
+      ],
+      "Download recovery file": [
+        "Baixar o arquivo de recuperação"
+      ],
+      "Email aliases": [
+        "Aliases para o e-mail"
+      ],
+      "Export messages": [
+        "Exportar mensagens"
+      ],
+      "External mailbox": [
+        "Caixa de correio externa"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "Hide my email": [
+        "Ocultar meu e-mail"
+      ],
+      "High-security mode": [
+        "Modo de alta segurança"
+      ],
+      "IMAP and SMTP": [
+        "IMAP e SMTP"
+      ],
+      "Import events": [
+        "Importar eventos"
+      ],
+      "Import history": [
+        "Histórico de importações"
+      ],
+      "Inbox layout": [
+        "Layout da caixa de entrada"
+      ],
+      "Included apps": [
+        "Aplicativos incluídos"
+      ],
+      "Invitation language": [
+        "Idioma do convite"
+      ],
+      "iOS and Android apps": [
+        "Aplicativos para iOS e Android"
+      ],
+      "Join organization": [
+        "Entrar na organização"
+      ],
+      "Leaked password": [
+        "Senha fraca"
+      ],
+      "Leave group": [
+        "Sair do grupo"
+      ],
+      "Leave organization": [
+        "Sair da organização"
+      ],
+      "Light mode": [
+        "Modo claro"
+      ],
+      "Mnemonic": [
+        "Mnemônica"
+      ],
+      "One-time code": [
+        "Código de uso único"
+      ],
+      "Out of office": [
+        "Fora do escritório"
+      ],
+      "Outlook, Apple Mail, and Thunderbird": [
+        "Outlook, Apple Mail e Thunderbird"
+      ],
+      "Password reminder": [
+        "Lembrete de senha"
+      ],
+      "Password reset request": [
+        "Solicitar redefinição de senha"
+      ],
+      "Play Store": [
+        "Play Store"
+      ],
+      "Recovery email address": [
+        "Endereço de e-mail de recuperação"
+      ],
+      "Recovery phone number": [
+        "Número de telefone de recuperação"
+      ],
+      "Recovery score": [
+        "Pontuação de recuperação"
+      ],
+      "Referral link": [
+        "Link de indicação"
+      ],
+      "Restrict app access": [
+        "Restringir o acesso aos aplicativos"
+      ],
+      "Scan QR code": [
+        "Escanear código QR"
+      ],
+      "Sign out other devices": [
+        "Encerrar sessão em outros dispositivos"
+      ],
+      "Stop subscription renewal": [
+        "Parar renovação automática"
+      ],
+      "Storage space": [
+        "Espaço de armazenamento"
+      ],
+      "Storage usage": [
+        "Uso de armazenamento"
+      ],
+      "Subscription end date": [
+        "Data de término da assinatura"
+      ],
+      "Subscription status": [
+        "Status da assinatura"
+      ],
+      "Telemetry": [
+        "Telemetria"
+      ],
+      "Trusted contact": [
+        "Contato confiável"
+      ],
+      "Upgrade plan": [
+        "Fazer upgrade de plano"
+      ],
+      "Verify domain": [
+        "Verificar domínio"
+      ],
+      "Video conferencing": [
+        "Videoconferência"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
+      ],
+      "Zoom meeting links": [
+        "Links da reunião do Zoom"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Contas"
@@ -62,6 +274,9 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
+      ],
+      "+${ remaining } more": [
+        "+${ remaining } a mais"
       ],
       "Accept": [
         "Aceitar"
@@ -501,6 +716,9 @@
       "Decrease": [
         "Diminuir"
       ],
+      "Decrease licenses": [
+        "Reduzir licenças"
+      ],
       "Decrypt": [
         "Descriptografar"
       ],
@@ -663,6 +881,9 @@
       "Download logs": [
         "Registros de downloads"
       ],
+      "Download monthly summary (CSV)": [
+        "Baixar resumo mensal (CSV)"
+      ],
       "Download our CSV template": [
         "Baixar nosso modelo CSV"
       ],
@@ -801,17 +1022,11 @@
       "Export as CSV": [
         "Exportar como CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "Exportar detalhamento por empresa em formato ZIP"
-      ],
       "Export key": [
         "Exportar a chave"
       ],
       "Export key before deleting": [
         "Exportar chave antes de excluir"
-      ],
-      "Export overview as CSV": [
-        "Exportar visão geral como CSV"
       ],
       "Extend": [
         "Estender"
@@ -1019,6 +1234,9 @@
       ],
       "Increase": [
         "Aumentar"
+      ],
+      "Increase licenses": [
+        "Aumentar licenças"
       ],
       "Insert": [
         "Inserir"
@@ -3710,6 +3928,9 @@
       ]
     },
     "Column header": {
+      "Billable licenses": [
+        "Licenças faturáveis"
+      ],
       "Billing period": [
         "Período de faturamento"
       ],
@@ -3719,17 +3940,14 @@
       "Managed companies": [
         "Empresas gerenciadas"
       ],
+      "Managers": [
+        "Gestores"
+      ],
       "Status": [
         "Status"
       ],
-      "Total billed seats": [
-        "Licenças faturadas totais"
-      ],
       "Total cost": [
         "Custo total"
-      ],
-      "Used / assigned seats": [
-        "Licenças usadas / atribuídas"
       ]
     },
     "Condition for custom filter": {
@@ -6892,6 +7110,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Não foi possível carregar transações. Tente novamente mais tarde."
       ],
+      "Creating documents in non-folders is not allowed": [
+        "Não é permitido criar documentos dentro de itens que não sejam pastas"
+      ],
       "Creating files in non-folders is not allowed": [
         "Não é permitido criar arquivos dentro de itens que não sejam pastas"
       ],
@@ -6962,6 +7183,9 @@
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Falha ao descriptografar a chave de marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Falha ao descriptografar o nome de marcador: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Falha ao descriptografar a senha dos favoritos: ${ message }"
@@ -7313,6 +7537,9 @@
       ],
       "Please set up your organization before adding a company.": [
         "Configure sua organização antes de adicionar uma empresa."
+      ],
+      "Please set up your organization identity before adding a company.": [
+        "Configure a identidade da sua organização antes de adicionar uma empresa."
       ],
       "Please try again in a few moments.": [
         "Tente novamente em alguns instantes."
@@ -10327,6 +10554,9 @@
       "Are you sure you want to permanently delete all your logs?": [
         "Você tem certeza que deseja excluir permanentemente todos os seus registros?"
       ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Tem certeza de que deseja prosseguir? Os usuários que não reivindicarem sua conta antes da finalização da migração precisarão solicitar uma redefinição de senha ao administrador da organização da ${ BRAND_NAME }."
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Tem certeza de que deseja remover os privilégios administrativos deste usuário?"
       ],
@@ -10350,9 +10580,6 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Peça ao administrador de sua organização para configurar os Gateways."
-      ],
-      "Assigned seats won't be billed while disabled": [
-        "Licenças atribuídas não serão cobradas enquanto estiverem desativadas"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Pelo menos ${ BETTER_PASSWORD_LENGTH } caracteres"
@@ -10410,6 +10637,12 @@
       ],
       "Background color": [
         "Cor de fundo"
+      ],
+      "Backup password disabled": [
+        "Senha de backup desativada"
+      ],
+      "Backup password enabled": [
+        "Senha de backup ativada"
       ],
       "Balance from your previous subscription": [
         "Saldo da sua assinatura anterior"
@@ -13311,9 +13544,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Com grupos, você pode rapidamente e facilmente enviar e-mails para todas as pessoas em um grupo específico."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Com empresas gerenciadas, você pode adicionar, editar e remover o acesso das organizações que supervisiona."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Com o seu plano atual, você pode apenas receber mensagens através do seu endereço @pm.me. Faça upgrade de plano para enviar mensagens e criar endereços adicionais usando @pm.me"
       ],
@@ -13471,6 +13701,9 @@
       "You don't have any referrals.": [
         "Você não tem nenhuma indicação"
       ],
+      "You don't manage any companies yet.": [
+        "Você ainda não gerencia nenhuma empresa."
+      ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "Você não precisa abrir ou ler o arquivo - apenas faça o download e armazene em local seguro."
       ],
@@ -13575,9 +13808,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Você não poderá recuperar dados bloqueados usando os arquivos de recuperação baixados. Isso também desativará a recuperação baseada em dispositivo."
       ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "Você será cobrado mensalmente com base no número médio de licenças atribuídas."
-      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Você receberá a recompensa em créditos 1 mês após seu amigo(a) assinar um plano anual e 2 meses após ele (ela) assinar um plano mensal."
       ],
@@ -13639,6 +13869,9 @@
       ],
       "Your Always-on VPN device profile is ready to deploy.": [
         "Seu perfil de dispositivo VPN sempre ativa está pronto para implantação."
+      ],
+      "Your browser blocked the new tab.": [
+        "Seu navegador está bloqueando a nova guia"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta da ${ BRAND_NAME }."
@@ -14482,6 +14715,9 @@
       "All-day event notifications": [
         "Notificações para eventos de dia inteiro"
       ],
+      "Allocated licenses": [
+        "Licenças alocadas"
+      ],
       "Allow": [
         "Endereços permitidos"
       ],
@@ -14578,9 +14814,6 @@
       "Assertion Consumer Service URL": [
         "URL de asserção do serviço do consumidor (ACS)"
       ],
-      "Assigned seats": [
-        "Licenças atribuídas"
-      ],
       "Attach public key": [
         "Anexar chave pública"
       ],
@@ -14635,9 +14868,6 @@
       "Autosuggest": [
         "Sugestão automática"
       ],
-      "Average": [
-        "Média"
-      ],
       "Awarded": [
         "Premiado"
       ],
@@ -14652,9 +14882,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Com o preço de ${ priceYearly } a cada 12 meses."
-      ],
-      "Billed average": [
-        "Média faturada"
       ],
       "Billed monthly.": [
         "Cobrado mensalmente."
@@ -15281,6 +15508,9 @@
       "Level for NetShield blocker filtering": [
         "Nível de filtragem de bloqueio NetShield"
       ],
+      "Licenses usage": [
+        "Uso de licenças"
+      ],
       "Link label (optional)": [
         "Link do marcador (opcional)"
       ],
@@ -15367,6 +15597,9 @@
       ],
       "Monthly": [
         "Mensalmente"
+      ],
+      "Monthly average": [
+        "Média mensal"
       ],
       "More payment methods": [
         "Mais métodos de pagamento"
@@ -15670,12 +15903,6 @@
       ],
       "Search for a name or email": [
         "Pesquisar por um nome ou e-mail"
-      ],
-      "Seats": [
-        "Licenças"
-      ],
-      "Seats usage": [
-        "Licenças usadas"
       ],
       "Second password": [
         "Segunda senha"
@@ -20026,6 +20253,9 @@
       "Offer unavailable": [
         "Oferta indisponível"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
@@ -23587,9 +23817,6 @@
       "Last changed ${ formattedDate }": [
         "Última alteração há ${ formattedDate } atrás"
       ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Última atualização em ${ formattedUpdateDate }"
-      ],
       "Not activated": [
         "Não ativado"
       ],
@@ -25195,6 +25422,9 @@
       "Address and key verification": [
         "Verificação de endereço e chave"
       ],
+      "Advanced configuration": [
+        "Configuração avançada"
+      ],
       "Advanced recovery options": [
         "Opções avançadas de recuperação"
       ],
@@ -26569,6 +26799,9 @@
       ],
       "Select the way to send this notification": [
         "Selecione a forma de enviar esta notificação"
+      ],
+      "Select users to migrate": [
+        "Selecione os usuários a serem migrados"
       ],
       "Select when you want this notification to be sent": [
         "Selecione quando você deseja que esta notificação seja enviada"

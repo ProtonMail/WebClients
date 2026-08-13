@@ -777,17 +777,11 @@
       "Export as CSV": [
         "Exportovat jako CSV"
       ],
-      "Export breakdown by company as ZIP": [
-        "Exportovat rozpis podle firem jako ZIP"
-      ],
       "Export key": [
         "Exportovat klíč"
       ],
       "Export key before deleting": [
         "Před smazáním exportovat klíč"
-      ],
-      "Export overview as CSV": [
-        "Exportovat přehled jako CSV"
       ],
       "Extend": [
         "Rozšířit"
@@ -3685,14 +3679,8 @@
       "Status": [
         "Stav"
       ],
-      "Total billed seats": [
-        "Celkový počet účtovaných licencí"
-      ],
       "Total cost": [
         "Celkové náklady"
-      ],
-      "Used / assigned seats": [
-        "Využité / přiřazené licence"
       ]
     },
     "Condition for custom filter": {
@@ -10198,9 +10186,6 @@
       "Ask your organization admin to setup Gateways.": [
         "Požádejte správce organizace o nastavení brány."
       ],
-      "Assigned seats won't be billed while disabled": [
-        "Přiřazené licence nebudou po dobu deaktivace účtovány"
-      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Alespoň ${ BETTER_PASSWORD_LENGTH } znaků"
       ],
@@ -12985,9 +12970,6 @@
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Pomocí skupin můžete snadno a rychle odesílat e-maily všem lidem v určité skupině."
       ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "U spravovaných společností můžete přidávat, upravovat a odebírat přístup organizacím, na které dohlížíte."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "V rámci stávajícího tarifu můžete přijímat pouze zprávy s adresou @pm.me. Navyšte tarif pro odesílání zpráv a vytváření dalších adres s @pm.me."
       ],
@@ -13260,9 +13242,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Nebudete moci obnovit uzamčená data pomocí obnovovacích souborů, které jste si stáhli. Toto také deaktivuje obnovu založenou na zařízení."
-      ],
-      "You'll be billed monthly based on the average number of assigned seats.": [
-        "Fakturace bude probíhat měsíčně na základě průměrného počtu přiřazených licencí."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Odměnu v podobě kreditů získáte 1 měsíc poté, co si vaši přátelé předplatí roční tarif, a 2 měsíce poté, co si předplatí měsíční tarif."
@@ -14258,9 +14237,6 @@
       "Assertion Consumer Service URL": [
         "URL adresa služby Assertion Consumer Service"
       ],
-      "Assigned seats": [
-        "Přiřazené licence"
-      ],
       "Attach public key": [
         "Připojit veřejný klíč"
       ],
@@ -14315,9 +14291,6 @@
       "Autosuggest": [
         "Automatické doporučení"
       ],
-      "Average": [
-        "Průměrně"
-      ],
       "Awarded": [
         "Uděleno"
       ],
@@ -14329,9 +14302,6 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Účtováno ${ priceYearly } každých 12 měsíců."
-      ],
-      "Billed average": [
-        "Účtovaný průměr"
       ],
       "Billed monthly.": [
         "Účtováno měsíčně."
@@ -15310,12 +15280,6 @@
       ],
       "Search for a name or email": [
         "Vyhledat jméno nebo e-mail"
-      ],
-      "Seats": [
-        "Licence"
-      ],
-      "Seats usage": [
-        "Využití licencí"
       ],
       "Second password": [
         "Druhé heslo"
@@ -20070,7 +20034,7 @@
         "Zadejte jméno"
       ],
       "Enter company name": [
-        "Zadejte název firmy"
+        "Zadejte název společnosti"
       ],
       "example@domain.com": [
         "priklad@domena.cz"
@@ -23367,9 +23331,6 @@
       ],
       "Last changed ${ formattedDate }": [
         "Poslední změna: ${ formattedDate }"
-      ],
-      "Last updated ${ formattedUpdateDate }": [
-        "Poslední aktualizace: ${ formattedUpdateDate }"
       ],
       "Not saved": [
         "Neuložen"
