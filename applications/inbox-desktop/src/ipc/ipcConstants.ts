@@ -32,6 +32,7 @@ export const DESKTOP_FEATURES = {
     SwitchViewShortcuts: true,
     SetAllowedProtocols: true,
     RegisterUrlRedirectRules: true,
+    AuthStatusCheck: true,
 } as const satisfies Record<IPCInboxDesktopFeature, boolean>;
 
 export type IPCHasFeatureMessage = {

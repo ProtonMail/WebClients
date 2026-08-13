@@ -57,7 +57,8 @@ export type IPCInboxDesktopFeature =
     | 'OAuthPopupV2'
     | 'SwitchViewShortcuts'
     | 'SetAllowedProtocols'
-    | 'RegisterUrlRedirectRules';
+    | 'RegisterUrlRedirectRules'
+    | 'AuthStatusCheck';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
@@ -111,7 +112,8 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'logoutAllUsers'; payload?: undefined }
     | { type: 'setDefaultMailtoBannerDismissedPermanently'; payload?: undefined }
     | { type: 'setAllowedProtocols'; payload: { protocols: string[]; source: ProtocolSource } }
-    | { type: 'setUrlRedirectRules'; payload: { rules: SerializedUrlRule[] } };
+    | { type: 'setUrlRedirectRules'; payload: { rules: SerializedUrlRule[] } }
+    | { type: 'authStatusResult'; payload: { hasAuth: boolean; uuid: string } };
 export type IPCInboxClientGetAsyncDataMessage = {
     type: 'getElectronLogs';
     args: [maxSize?: number];
@@ -139,6 +141,10 @@ export const IPCInboxHostUpdateMessageSchema = z.discriminatedUnion('type', [
     z.object({
         type: z.literal('openHelpAndFeedback'),
         payload: z.undefined().optional(),
+    }),
+    z.object({
+        type: z.literal('authStatusCheck'),
+        payload: z.string().uuid(),
     }),
 ]);
 

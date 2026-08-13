@@ -44,6 +44,7 @@ import { sentryReport } from "../utils/sentryReport";
 import { openExternalIPC } from "../utils/openExternal/openExternal";
 import { externalProtocolManager } from "../utils/openExternal/manager";
 import { urlRedirectManager } from "../utils/urlRedirects/manager";
+import { authStatusPoller } from "../utils/auth/authPoller";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -207,6 +208,9 @@ export const handleIPCCalls = () => {
                     break;
                 case "changeView":
                     showView(payload);
+                    break;
+                case "authStatusResult":
+                    authStatusPoller.answerIPC(message);
                     break;
                 case "showNotification":
                     showNotification(payload);
