@@ -22,7 +22,7 @@ import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels
 import { MOVE_BACK_ACTION_TYPES } from './moveBackAction/interfaces';
 import { useMoveBackAction } from './moveBackAction/useMoveBackAction';
 
-type SnoozeProps = {
+export type SnoozeProps = {
     elements: Element[];
     duration: SNOOZE_DURATION;
     snoozeTime?: Date;
