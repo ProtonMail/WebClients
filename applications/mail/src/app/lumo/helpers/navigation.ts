@@ -22,8 +22,8 @@ import {
 import {
     contextTotal as contextTotalSelector,
     esSearching as esSearchingSelector,
-    loading as loadingSelector,
     selectActiveCategoryID,
+    selectLoading,
     selectPage,
     selectParams,
     usedEncryptedSearch as usedEncryptedSearchSelector,
@@ -219,7 +219,7 @@ export const waitForListSettled = async (store: ToolStore, expected: ExpectedLis
         if (activeCategory !== undefined && activeCategory !== requestedCategory) {
             return undefined;
         }
-        if (loadingSelector(state, { page: selectPage(state) }) || (isQuery && esSearchingSelector(state))) {
+        if (selectLoading(state, { page: selectPage(state) }) || (isQuery && esSearchingSelector(state))) {
             return undefined;
         }
         return contextTotalSelector(state) !== undefined ? true : undefined;
