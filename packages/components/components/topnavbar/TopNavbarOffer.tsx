@@ -38,7 +38,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
     const [subscription, loadingSubscription] = useSubscription();
     const history = useHistory();
     const location = useLocation();
-    const { isVisited, isVisitedAgain, loading: loadingOfferFlags } = useOfferFlags(offerConfig);
+    const { isVisited, isReplayConsumed, loading: loadingOfferFlags } = useOfferFlags(offerConfig);
     const {
         offer,
         loadingOffer,
@@ -68,13 +68,11 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
             document.removeEventListener(OPEN_OFFER_MODAL_EVENT, open);
         };
     }, [renderOfferModal]);
-
     // Auto-popup offer modal
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         const autoOffer = searchParams.get('offer') === 'auto';
         const plan = searchParams.get('plan');
-
         // Common conditions that would prevent the offer modal from showing
         if (
             loadingOfferFlags ||
@@ -91,9 +89,9 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
             return;
         }
 
-        // Offers can opt into replaying their one-time popup once more, for users who saw it but didn't opt out.
+        // Offers can opt into replaying their one-time popup once more, for users who didn't opt out.
         // Users who hid the offer never reach this point: the Hide bit clears isActive, so the offer isn't valid.
-        const isReplayingAutoPopUp = !!offerConfig.replayAutoPopUp && !isVisitedAgain;
+        const isReplayingAutoPopUp = !!offerConfig.replayAutoPopUp && !isReplayConsumed;
 
         // We want to always auto-show the offer modal for the VPN application
         const combinedIgnoreVisited = ignoreVisited || isReplayingAutoPopUp || autoOffer || isVPNApp;
@@ -116,7 +114,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
         onceRef.current = true;
         setFetchOffer(true);
         setOfferModalOpen(true);
-    }, [loadingOfferFlags, loadingSubscription, user.hasPaidMail, subscription, welcomeFlags.isDone, isVisitedAgain]);
+    }, [loadingOfferFlags, loadingSubscription, user.hasPaidMail, subscription, welcomeFlags.isDone, isReplayConsumed]);
 
     if (hasEstimationError || (shouldPrefetch && !initialized)) {
         return null;

@@ -5,7 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
-import { CommonFeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import OfferSubscription from '../../helpers/offerSubscription';
