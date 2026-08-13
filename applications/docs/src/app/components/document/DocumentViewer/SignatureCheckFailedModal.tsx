@@ -1,20 +1,17 @@
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
+import Form from '@proton/components/components/form/Form'
+import ModalTwo from '@proton/components/components/modalTwo/Modal'
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent'
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter'
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader'
+import Radio from '@proton/components/components/input/Radio'
+import Row from '@proton/components/components/container/Row'
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
 import { useState } from 'react'
 
 import { c } from 'ttag'
 
 import { Button } from '@proton/atoms/Button/Button'
-
-import type { ModalStateProps } from '@proton/components'
-import {
-  Form,
-  ModalTwo,
-  ModalTwoContent,
-  ModalTwoFooter,
-  ModalTwoHeader,
-  Radio,
-  Row,
-  useModalTwoStatic,
-} from '@proton/components'
 
 export type SignatureFailDecision = 'ignore' | 'accept'
 

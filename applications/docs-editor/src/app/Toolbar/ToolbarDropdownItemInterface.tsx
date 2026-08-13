@@ -1,4 +1,4 @@
-import type { DropdownProps } from '@proton/components'
+import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown'
 import type { ReactNode } from 'react'
 
 export type ToolbarDropdownItemInterface = {

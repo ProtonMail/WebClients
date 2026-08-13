@@ -1,3 +1,6 @@
+import useAuthentication from '@proton/components/hooks/useAuthentication'
+import useConfig from '@proton/components/hooks/useConfig'
+import MimeIcon from '@proton/components/components/icon/MimeIcon'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type {
   AuthenticatedDocControllerInterface,
@@ -47,7 +50,6 @@ import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { PrivateDocumentInviteGate } from './PrivateDocumentInviteGate'
 import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
-import { useAuthentication, useConfig, MimeIcon } from '@proton/components'
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
 import { useApplication } from '~/utils/application-context'
 import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'

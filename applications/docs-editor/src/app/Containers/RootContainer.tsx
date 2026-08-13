@@ -1,6 +1,7 @@
+import NotificationsChildren from '@proton/components/containers/notifications/Children'
+import NotificationsProvider from '@proton/components/containers/notifications/Provider'
 import { App } from './App'
 import { ApplicationProvider } from './ApplicationProvider'
-import { NotificationsChildren, NotificationsProvider } from '@proton/components'
 import { ThemeStyles } from '../Theme'
 import { useBridge } from '../Lib/useBridge'
 import Icons from '@proton/icons/Icons'

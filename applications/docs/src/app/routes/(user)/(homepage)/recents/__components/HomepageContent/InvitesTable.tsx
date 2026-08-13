@@ -1,7 +1,7 @@
+import Icon from '@proton/components/components/icon/Icon'
 import { Avatar } from '@proton/atoms/Avatar/Avatar'
 import { Button } from '@proton/atoms/Button/Button'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
-import { Icon } from '@proton/components'
 import { IcArrowToCenterHorizontal } from '@proton/icons/icons/IcArrowToCenterHorizontal'
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown'

@@ -1,3 +1,4 @@
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import type { NodeKey, RangeSelection } from 'lexical'
 import {
   $createCommentThreadMarkNode,
@@ -30,7 +31,6 @@ import { ContextualComments } from './ContextualComments'
 import { useLatestAwarenessStates } from '../../Utils/useLatestAwarenessStates'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { useMarkNodesContext } from '../MarkNodesContext'
-import { useConfirmActionModal } from '@proton/components'
 import { nonUndoableUpdate } from '../Collaboration/useYjsHistory'
 import { useCustomCollaborationContext } from '../Collaboration/CustomCollaborationContext'
 import { useSyncedState } from '../../Hooks/useSyncedState'

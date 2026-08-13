@@ -1,4 +1,4 @@
-import { ErrorBoundary } from '@proton/components'
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary'
 import { BridgeOriginProvider, EDITOR_IFRAME_FOCUS_EVENT } from '@proton/docs-shared'
 import '@proton/polyfill'
 import { createRoot } from 'react-dom/client'
