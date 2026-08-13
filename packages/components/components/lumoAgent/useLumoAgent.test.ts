@@ -13,7 +13,7 @@ import type { LumoAgentConfig } from './types';
 import useLumoAgent from './useLumoAgent';
 
 // The transport is driven, not reimplemented: each test sets a `script` that the mocked callAssistant
-// runs with the real MR4 executor + the hook's chunkCallback, then optionally reports how the chain
+// runs with the real tool executor + the hook's chunkCallback, then optionally reports how the chain
 // ended. useApi is stubbed (no network).
 type Script = (ctx: {
     executor: ClientToolExecutor;
@@ -47,6 +47,7 @@ const message = (content: string): GenerationResponseMessage =>
     ({ type: 'token_data', target: 'message', count: 0, content }) as GenerationResponseMessage;
 
 const handlerCalls: { name: string; params: Record<string, any> }[] = [];
+const readCalls: string[] = [];
 
 const definitions: ToolDefinition[] = [
     {
@@ -85,7 +86,10 @@ const definitions: ToolDefinition[] = [
 const config: LumoAgentConfig = {
     definitions: [...definitions, createLoadGuideDefinition(definitions)!],
     handlers: {
-        view_items: async () => ({}),
+        view_items: async () => {
+            readCalls.push('view_items');
+            return {};
+        },
         search_items: async () => ({}),
         move_items: async (params) => {
             handlerCalls.push({ name: 'move_items', params });
@@ -96,11 +100,17 @@ const config: LumoAgentConfig = {
 
 beforeEach(() => {
     handlerCalls.length = 0;
+    readCalls.length = 0;
     sentTurns.length = 0;
     script = async () => {};
 });
 
 describe('useLumoAgent', () => {
+    const pinConfirm = async (result: { current: ReturnType<typeof useLumoAgent> }) =>
+        waitFor(() =>
+            expect(result.current.items.some((item) => item.kind === 'confirm' && item.status === 'pending')).toBe(true)
+        );
+
     it('streams a prose reply into a single reply item and toggles busy', async () => {
         script = async ({ chunk }) => {
             chunk(message('Hello'));
@@ -237,6 +247,213 @@ describe('useLumoAgent', () => {
 
         expect(handlerCalls).toEqual([]);
         expect(result.current.items.find((item) => item.kind === 'confirm')).toMatchObject({ status: 'cancelled' });
+    });
+
+    describe('stopping while a mutation is awaiting confirmation', () => {
+        it('settles the pinned card as cancelled, so a later apply cannot run the mutation', async () => {
+            script = async ({ executor }) => {
+                await executor.execute([
+                    { id: '1', name: 'move_items', arguments: JSON.stringify({ target: 'Inbox' }) },
+                ]);
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+
+            let sendPromise: Promise<void>;
+            act(() => {
+                sendPromise = result.current.send('move them');
+            });
+            await pinConfirm(result);
+
+            await act(async () => {
+                result.current.stop();
+                await sendPromise;
+            });
+
+            expect(result.current.items.find((item) => item.kind === 'confirm')).toMatchObject({
+                status: 'cancelled',
+            });
+            expect(result.current.isBusy).toBe(false);
+
+            act(() => result.current.confirm({ target: 'Archive' }));
+            expect(handlerCalls).toEqual([]);
+        });
+
+        it('does not pin a fresh card for the rest of the batch', async () => {
+            script = async ({ executor }) => {
+                await executor.execute([
+                    { id: '1', name: 'move_items', arguments: JSON.stringify({ target: 'Inbox' }) },
+                    { id: '2', name: 'move_items', arguments: JSON.stringify({ target: 'Trash' }) },
+                ]);
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+
+            let sendPromise: Promise<void>;
+            act(() => {
+                sendPromise = result.current.send('move them, then bin the rest');
+            });
+            await pinConfirm(result);
+
+            await act(async () => {
+                result.current.stop();
+                await sendPromise;
+            });
+
+            expect(result.current.items.filter((item) => item.kind === 'confirm')).toHaveLength(1);
+            expect(handlerCalls).toEqual([]);
+        });
+
+        it('does not run the read tail of the batch', async () => {
+            script = async ({ executor }) => {
+                await executor.execute([
+                    { id: '1', name: 'move_items', arguments: JSON.stringify({ target: 'Inbox' }) },
+                    { id: '2', name: 'view_items', arguments: '{}' },
+                ]);
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+
+            let sendPromise: Promise<void>;
+            act(() => {
+                sendPromise = result.current.send('move them, then show me what is left');
+            });
+            await pinConfirm(result);
+
+            await act(async () => {
+                result.current.stop();
+                await sendPromise;
+            });
+
+            expect(readCalls).toEqual([]);
+            expect(result.current.items.some((item) => item.kind === 'chip')).toBe(false);
+        });
+    });
+
+    describe('typing instead of answering a pinned confirm', () => {
+        it('rejects the card and sends the message', async () => {
+            script = async ({ executor }) => {
+                await executor.execute([
+                    { id: '1', name: 'move_items', arguments: JSON.stringify({ target: 'Inbox' }) },
+                ]);
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+
+            let sendPromise: Promise<void>;
+            act(() => {
+                sendPromise = result.current.send('move them');
+            });
+            await pinConfirm(result);
+
+            script = async ({ chunk }) => chunk(message('Sure, what would you like instead?'));
+            await act(async () => {
+                await result.current.send('actually just tell me who sent them');
+                await sendPromise;
+            });
+
+            expect(result.current.items.find((item) => item.kind === 'confirm')).toMatchObject({
+                status: 'cancelled',
+            });
+            expect(handlerCalls).toEqual([]);
+            expect(result.current.items.map((item) => item.kind)).toEqual(['user', 'confirm', 'user', 'reply']);
+            expect(sentTurns[1]).toEqual([
+                expect.objectContaining({ role: 'system' }),
+                { role: 'user', content: 'actually just tell me who sent them' },
+            ]);
+        });
+
+        it('leaves the replacement chain running once the abandoned one unwinds', async () => {
+            script = async ({ executor }) => {
+                await executor.execute([
+                    { id: '1', name: 'move_items', arguments: JSON.stringify({ target: 'Inbox' }) },
+                ]);
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+
+            let sendPromise: Promise<void>;
+            act(() => {
+                sendPromise = result.current.send('move them');
+            });
+            await pinConfirm(result);
+
+            // Parks the replacement chain so the abandoned one is guaranteed to unwind while it is live.
+            let releaseReplacement: () => void = () => {};
+            script = async () => new Promise<void>((resolve) => (releaseReplacement = resolve));
+
+            let replacementPromise: Promise<void>;
+            act(() => {
+                replacementPromise = result.current.send('actually just tell me who sent them');
+            });
+            await act(async () => {
+                await sendPromise;
+            });
+
+            expect(result.current.isBusy).toBe(true);
+
+            await act(async () => {
+                releaseReplacement();
+                await replacementPromise;
+            });
+
+            expect(result.current.isBusy).toBe(false);
+        });
+
+        it('does not pin a card from the abandoned chain onto the new turn', async () => {
+            script = async ({ executor }) => {
+                await executor.execute([
+                    { id: '1', name: 'move_items', arguments: JSON.stringify({ target: 'Inbox' }) },
+                    { id: '2', name: 'move_items', arguments: JSON.stringify({ target: 'Trash' }) },
+                ]);
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+
+            let sendPromise: Promise<void>;
+            act(() => {
+                sendPromise = result.current.send('move them, then bin the rest');
+            });
+            await pinConfirm(result);
+
+            script = async ({ chunk }) => chunk(message('Sure, what would you like instead?'));
+            await act(async () => {
+                await result.current.send('actually just tell me who sent them');
+                await sendPromise;
+            });
+
+            expect(result.current.items.map((item) => item.kind)).toEqual(['user', 'confirm', 'user', 'reply']);
+
+            // Nothing is pending, so confirming cannot reach the abandoned chain's second mutation.
+            act(() => result.current.confirm({ target: 'Spam' }));
+            expect(handlerCalls).toEqual([]);
+        });
+
+        it('does not push a chip from the abandoned chain onto the new turn', async () => {
+            script = async ({ executor }) => {
+                await executor.execute([
+                    { id: '1', name: 'move_items', arguments: JSON.stringify({ target: 'Inbox' }) },
+                    { id: '2', name: 'view_items', arguments: '{}' },
+                ]);
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+
+            let sendPromise: Promise<void>;
+            act(() => {
+                sendPromise = result.current.send('move them, then show me what is left');
+            });
+            await pinConfirm(result);
+
+            script = async ({ chunk }) => chunk(message('Sure, what would you like instead?'));
+            await act(async () => {
+                await result.current.send('actually just tell me who sent them');
+                await sendPromise;
+            });
+
+            expect(readCalls).toEqual([]);
+            expect(result.current.items.map((item) => item.kind)).toEqual(['user', 'confirm', 'user', 'reply']);
+        });
     });
 
     describe('a chain that stops on its tool budget', () => {

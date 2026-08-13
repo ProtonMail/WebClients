@@ -118,6 +118,11 @@ const collectLabels = (params: Record<string, any>, references: ReferenceRegistr
 
 export interface LumoClientToolExecutor extends ClientToolExecutor {
     getLoadedGuides(): ToolName[];
+    /**
+     * `signal` scopes a batch to the chain that started it. Once it aborts, the remaining calls are
+     * skipped rather than confirmed and run against whatever turn has replaced that chain.
+     */
+    execute(calls: PendingClientToolCall[], options?: { signal?: AbortSignal }): Promise<ClientToolResult[]>;
 }
 
 export const createClientToolExecutor = (config: ClientToolExecutorConfig): LumoClientToolExecutor => {
@@ -155,7 +160,8 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
 
     const runHandler = async (
         definition: ToolDefinition,
-        params: Record<string, any>
+        params: Record<string, any>,
+        signal?: AbortSignal
     ): Promise<{ ok: true; payload: string } | { ok: false; error: ClientToolResult }> => {
         const handler = handlers[definition.name];
         if (!handler) {
@@ -165,7 +171,10 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         try {
             const result = await handler(params, { references });
             const payload = definition.serializeForLumo(result, references);
-            onChip?.({ tool: definition.name, summary: definition.summarizeChip(params, result), payload });
+            // A handler that outlived its chain has nowhere to put its chip; the turn it belonged to is gone.
+            if (!signal?.aborted) {
+                onChip?.({ tool: definition.name, summary: definition.summarizeChip(params, result), payload });
+            }
             return { ok: true, payload };
         } catch (error: any) {
             if (error instanceof UnknownReferenceError) {
@@ -207,7 +216,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         );
     };
 
-    const executeOne = async (call: PendingClientToolCall): Promise<ClientToolResult> => {
+    const executeOne = async (call: PendingClientToolCall, signal?: AbortSignal): Promise<ClientToolResult> => {
         const definition = byName.get(call.name);
         if (!definition) {
             return errorResult(`Unknown tool "${call.name}". Use one of the provided tools.`);
@@ -243,7 +252,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
             if (editedError) {
                 return editedError;
             }
-            const applied = await runHandler(definition, editedParams);
+            const applied = await runHandler(definition, editedParams, signal);
             if (!applied.ok) {
                 return applied.error;
             }
@@ -255,7 +264,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
             );
         }
 
-        const read = await runHandler(definition, args);
+        const read = await runHandler(definition, args, signal);
         return read.ok ? okResult(read.payload) : read.error;
     };
 
@@ -268,11 +277,15 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
             ? (calls) => calls.map((call) => ({ ...call, name: normalizeName(call.name) }))
             : (calls) => calls,
         // Sequential, not parallel: a mutation must clear its confirm card before the next call, and the
-        // transport zips results to calls by index.
-        execute: async (calls) => {
+        // transport zips results to calls by index. A batch keeps walking after its chain is abandoned —
+        // the abort is only observed once the parked call resolves — so re-check the signal every round.
+        execute: async (calls, options) => {
+            const signal = options?.signal;
             const results: ClientToolResult[] = [];
             for (const call of calls) {
-                results.push(await executeOne(call));
+                results.push(
+                    signal?.aborted ? errorResult('The user cancelled that.') : await executeOne(call, signal)
+                );
             }
             return results;
         },
