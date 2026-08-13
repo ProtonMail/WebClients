@@ -1057,7 +1057,7 @@
         "인증 건너뛰기"
       ],
       "Start": [
-        "시작"
+        "시작하기"
       ],
       "Start import": [
         "가져오기 시작"
@@ -1288,7 +1288,7 @@
         "재색인 진행 중"
       ],
       "Report abuse": [
-        "악용 사례 신고"
+        "악용 신고"
       ],
       "Search is unavailable": [
         "검색을 사용할 수 없음"
@@ -1328,6 +1328,9 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } 열기"
+      ],
+      "Keep going": [
+        "계속하기"
       ]
     },
     "Action: Docs": {
@@ -6933,7 +6936,7 @@
         "휴지통"
       ],
       "Trash is empty": [
-        "휴지통이 비어있음"
+        "휴지통이 비어 있습니다."
       ],
       "Try ${ DRIVE_APP_NAME }: Free forever": [
         "${ DRIVE_APP_NAME }를 사용해 보세요! 평생 무료입니다"
@@ -7533,7 +7536,7 @@
         "업로드 완료 - 업로드된 파일이 비어 있습니다"
       ],
       "We couldn't save this photo to your Drive": [
-        "다수의 사진을 드라이브에 저장하지 못했습니다"
+        "Drive에 해당 사진을 저장할 수 없습니다."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "${ nameAuthor }님이 ${ nodeName } 파일을 업로드했는지 확인할 수 없습니다. 다음 항목이 손상되었을 수 있습니다: 파일 데이터 순서. 신뢰할 수 있는 경우에만 여세요."
@@ -7617,7 +7620,7 @@
         "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ],
       "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
-        "정확한 검색 활성화를 위해 로컬 기기에 파일을 색인해야 합니다. 색인 중에도 계속 ${ DRIVE_APP_NAME }를 사용할 수 있습니다. 색인이 완료되면 알려드립니다. 페이지를 닫으면 색인은 중단되며, 다시 페이지를 열었을 때 다시 재개됩니다."
+        "정확한 검색 활성화를 위해 로컬 기기에 파일을 색인해야 합니다. 색인 중에도 계속 ${ DRIVE_APP_NAME }를 사용할 수 있습니다. 색인이 완료되면 알려드립니다. 페이지를 닫으면 색인은 중단되며, 다시 페이지를 열었을 때 재개됩니다."
       ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "이전하고자 하는 항목을 선택하세요. 모든 조직 구성원들에게 적용됩니다."
@@ -8269,7 +8272,7 @@
         "공유됨"
       ],
       "Shared by": [
-        "다음에 의해 공유됨:"
+        "공유자:"
       ],
       "Shared on": [
         "다음에서 공유됨:"
@@ -10687,7 +10690,7 @@
         "금방 완료됩니다"
       ],
       "Invitation accepted": [
-        "초대 수락됨"
+        "초대가 수락됨"
       ],
       "Invitation received": [
         "초대장 수신됨"
@@ -13263,7 +13266,7 @@
         "기기"
       ],
       "Diagnostics": [
-        "진단"
+        "시스템 진단"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "디지털 서명이 부분적으로 인증되었습니다. 이 폴더는 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 생성했기 때문에 신원을 확인할 수 없습니다."
@@ -13365,7 +13368,7 @@
         "향상된 계정 보호 활성화하기"
       ],
       "Enable drive search": [
-        "드라이브 검색 활성화"
+        "드라이브 검색 활성화하기"
       ],
       "Enhance security with 2FA": [
         "2단계 인증으로 보안 강화시키기"
