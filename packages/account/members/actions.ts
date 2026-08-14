@@ -58,7 +58,7 @@ import {
     getUnprivatizeMemberPayload,
     setupMemberKeys,
 } from '@proton/shared/lib/keys';
-import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
+import { getIsMemberSetup, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
@@ -72,6 +72,7 @@ import { type OrganizationState, organizationThunk } from '../organization';
 import type { OrganizationKeyState } from '../organizationKey';
 import { organizationKeyThunk } from '../organizationKey';
 import {
+    type MemberEditPayload,
     type MemberKeyPayload,
     type PromoteGlobalSSOPayload,
     getMemberEditPayload,
@@ -81,7 +82,7 @@ import {
 } from '../organizationKey/actions';
 import { classifyRoleChange } from '../organizationKey/classifyRoleChange';
 import { type OrganizationRolesState, organizationRolesThunk } from '../organizationRoles';
-import { isOrgKeyRequired } from '../organizationRoles/helpers';
+import { hasUserSourcedOwnerRole, isOrgKeyRequired, isOwnerRole } from '../organizationRoles/helpers';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 import InvalidAddressesError from './errors/InvalidAddressesError';
@@ -397,6 +398,7 @@ export const assignMemberRoles = ({
         // The order is IMPORTANT here: set admin roles first, promote second
         const result = await dispatch(updateMemberRoles({ member, currentRoles, desiredRoleIds, api }));
         await dispatch(setRole({ member, role: MEMBER_ROLE.ORGANIZATION_ADMIN, payload, api }));
+        dispatch(upsertMember({ member: await getMember(api, member.ID) }));
         // The promotion is a change on its own, even when the role assignments stay the same.
         return { ...result, changed: true };
     };
@@ -548,6 +550,121 @@ export const editMember = ({
             diff: false,
             member: null,
         };
+    };
+};
+
+export const confirmMemberRoleChange = ({
+    member,
+    targetRole,
+    api,
+    confirm,
+}: {
+    member: EnhancedMember;
+    targetRole: MEMBER_ROLE;
+    api: Api;
+    confirm: (action: MemberEditPayload) => Promise<boolean>;
+}): ThunkAction<
+    Promise<{ confirmed: boolean; payload: PromoteGlobalSSOPayload | MemberKeyPayload | null }>,
+    KtState & OrganizationKeyState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch) => {
+        const organizationKey = await dispatch(organizationKeyThunk());
+        const classification = classifyRoleChange({
+            member,
+            targetRole,
+            isPasswordlessOrg: getIsPasswordless(organizationKey?.Key),
+        });
+        const payload = await dispatch(getMemberEditPayload({ member, classification, api }));
+        if (!classification.requiresPrompt) {
+            return { confirmed: true, payload };
+        }
+        return { confirmed: await confirm({ classification, payload }), payload };
+    };
+};
+
+export const setMemberOwnerRole = ({
+    member,
+    makeAdmin,
+    api,
+    confirm,
+}: {
+    member: EnhancedMember;
+    makeAdmin: boolean;
+    api: Api;
+    confirm: (action: MemberEditPayload) => Promise<boolean>;
+}): ThunkAction<
+    Promise<{ confirmed: false } | { confirmed: true; changed: boolean; desiredRoleIds: Set<string> }>,
+    KtState & MemberState & MembersState & OrganizationKeyState & OrganizationRolesState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch) => {
+        const organizationRoles = await dispatch(organizationRolesThunk());
+        const ownerRoleId = organizationRoles.find(isOwnerRole)?.OrganizationRoleID;
+        if (!ownerRoleId) {
+            throw new Error('Missing owner role');
+        }
+
+        const currentRoles = member.UserOrganizationRoles ?? [];
+        const hasOwnerRole = hasUserSourcedOwnerRole(currentRoles);
+        const hasOtherOrgKeyRole = currentRoles.some(({ Role }) => !isOwnerRole(Role) && isOrgKeyRequired(Role));
+        const unprivatization = getMemberUnprivatizationMode(member);
+
+        let payload: PromoteGlobalSSOPayload | MemberKeyPayload | null = null;
+
+        // need change in Member.Role in these cases:
+        //  1. Promotion: member doesn't have Member.Role = Admin
+        //  2. Demotion: member doesn't have other admin roles that require org key access
+        const changesLegacyRole = makeAdmin ? member.Role !== MEMBER_ROLE.ORGANIZATION_ADMIN : !hasOtherOrgKeyRole;
+        if (changesLegacyRole) {
+            const result = await dispatch(
+                confirmMemberRoleChange({
+                    member,
+                    targetRole: makeAdmin ? MEMBER_ROLE.ORGANIZATION_ADMIN : MEMBER_ROLE.ORGANIZATION_MEMBER,
+                    api,
+                    confirm,
+                })
+            );
+            if (!result.confirmed) {
+                return { confirmed: false };
+            }
+            payload = result.payload;
+        }
+
+        let changed = false;
+
+        // The user cancels a pending admin invitation
+        if (!makeAdmin && unprivatization.makeAdmin) {
+            const { diff } = await dispatch(
+                editMember({
+                    member,
+                    memberDiff: { role: MEMBER_ROLE.ORGANIZATION_MEMBER },
+                    memberKeyPacketPayload: payload,
+                    api,
+                })
+            );
+            changed = diff;
+        }
+
+        const desiredRoleIds = new Set(currentRoles.map(({ Role }) => Role.OrganizationRoleID));
+        if (makeAdmin) {
+            desiredRoleIds.add(ownerRoleId);
+        } else {
+            desiredRoleIds.delete(ownerRoleId);
+        }
+
+        // makeAdmin = true: org admin want to assign Owner role to this member
+        // makeAdmin = false && hasOwnerRole = true: org admin want to remove Owner role from this member
+        // makeAdmin = false && hasOwnerRole = false: cancel pending admin invitation, we should not do
+        //  anything here since member doesn't have Owner role
+        if (makeAdmin || hasOwnerRole) {
+            const result = await dispatch(assignMemberRoles({ member, currentRoles, desiredRoleIds, payload, api }));
+            changed = changed || result.changed;
+        }
+
+        return { confirmed: true, changed, desiredRoleIds };
     };
 };
 
