@@ -2,7 +2,11 @@ import metrics from '@proton/metrics'
 import { getBrowserForMetrics } from './getBrowserForMetrics'
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics'
 import type { Api } from '@proton/shared/lib/interfaces'
-import type { TelemetryDocsEvents, TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
+import type {
+  TelemetryDocsEditorEvents,
+  TelemetryDocsEvents,
+  TelemetryDocsHomepageEvents,
+} from '@proton/shared/lib/api/telemetry'
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry'
 import type { SuggestionSummaryType } from '@proton/docs-shared/lib/SuggestionType'
 import { ConnectionCloseMetrics } from '../../Realtime/ConnectionCloseMetrics'
@@ -112,6 +116,15 @@ export class MetricService {
       api: this.api,
       measurementGroup: TelemetryMeasurementGroups.docsHomepage,
       event: event,
+      delay: false,
+    })
+  }
+
+  reportEditorTelemetry(event: TelemetryDocsEditorEvents): void {
+    void sendTelemetryReport({
+      api: this.api,
+      measurementGroup: TelemetryMeasurementGroups.docsEditor,
+      event,
       delay: false,
     })
   }

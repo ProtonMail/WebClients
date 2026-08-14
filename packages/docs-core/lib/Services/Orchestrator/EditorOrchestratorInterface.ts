@@ -14,6 +14,7 @@ import type {
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { SheetsPatchesType } from '../../Database/SheetsDBSchema'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 
 export interface EditorOrchestratorInterface {
   userAddress: string
@@ -23,6 +24,7 @@ export interface EditorOrchestratorInterface {
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
   editorReportingError(error: string, extraInfo: { irrecoverable?: boolean; lockEditor?: boolean }): void
   editorReportingEvent(event: EditorEvent, data: EditorEventData[EditorEvent]): Promise<void>
+  editorReportingTelemetry(event: TelemetryDocsEditorEvents): Promise<void>
   getTypersExcludingSelf(threadId: string): string[]
   createComment(content: string, threadID: string): Promise<CommentInterface | undefined>
   beganTypingInThread(threadID: string): void
