@@ -6,7 +6,7 @@ import 'fake-indexeddb/auto';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import { SearchDB } from '../../../shared/SearchDB';
-import { SearchLibraryError, classifyError } from '../../../shared/errors';
+import { RepairableNodeError, SearchLibraryError, classifyError } from '../../../shared/errors';
 import type { TreeEventScopeId } from '../../../shared/types';
 import { FakeMainThreadBridge } from '../../../testing/FakeMainThreadBridge';
 import { findDocumentsByTag } from '../../../testing/indexHelpers';
@@ -240,6 +240,8 @@ describe('NodeTreeIndexPopulator integration', () => {
 
 // Stubs processNodeMutation so the quarantine/self-heal logic in processIncrementalUpdates can be
 // exercised without the real index engine. `failures` maps a node UID to the error to throw for it.
+// Use a RepairableNodeError to simulate a node-scoped failure (quarantined); any other error is
+// treated as systemic (re-thrown, not quarantined).
 class StubMutationPopulator extends NodeTreeIndexPopulator {
     readonly processedUids: string[] = [];
 
@@ -282,6 +284,17 @@ const nodeDeleted = (nodeUid: string, eventId: string): NodeEvent =>
         eventId,
     }) as unknown as NodeEvent;
 
+const nodeUpdated = (nodeUid: string, eventId: string): NodeEvent =>
+    ({
+        type: 'node_updated',
+        nodeUid,
+        parentNodeUid: 'root',
+        isTrashed: false,
+        isShared: false,
+        treeEventScopeId: SCOPE_ID,
+        eventId,
+    }) as unknown as NodeEvent;
+
 const nodeTrashed = (nodeUid: string, eventId: string): NodeEvent =>
     ({
         type: 'node_updated',
@@ -304,7 +317,7 @@ describe('NodeTreeIndexPopulator incremental quarantine', () => {
     });
 
     it('quarantines a node-scoped failure, advances the cursor, and keeps processing later events', async () => {
-        const populator = new StubMutationPopulator(new Map([['b', new Error('decrypt failed')]]));
+        const populator = new StubMutationPopulator(new Map([['b', new RepairableNodeError('decrypt failed', null)]]));
         const ctx = makeTaskContext({ bridge: bridge.asBridge(), db });
 
         const processed = await populator.processIncrementalUpdates(
@@ -323,7 +336,7 @@ describe('NodeTreeIndexPopulator incremental quarantine', () => {
     });
 
     it('records a node_deleted failure with operation "remove"', async () => {
-        const populator = new StubMutationPopulator(new Map([['x', new Error('boom')]]));
+        const populator = new StubMutationPopulator(new Map([['x', new RepairableNodeError('boom', null)]]));
         const ctx = makeTaskContext({ bridge: bridge.asBridge(), db });
 
         await populator.processIncrementalUpdates([nodeDeleted('x', 'e1')], ctx);
@@ -472,5 +485,83 @@ describe('NodeTreeIndexPopulator descendant removal', () => {
         // quota bucket gives the user the "free up storage" copy, and search_library_error must
         // stay the signal for real WASM faults.
         expect(classifyError(error)).toEqual({ kind: 'permanent', reason: 'quota_exceeded' });
+    });
+
+    it('a raw SDK error deep in the subtree walk propagates instead of quarantining the anchor folder', async () => {
+        const folderUid = 'vol1~FolderE1';
+        bridge.setChildren('root', [makeMaybeNode({ uid: folderUid, name: 'FolderE', type: 'folder' as any })]);
+
+        const { populator, ctx } = await indexTree('root');
+
+        bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
+        bridge.setNode(folderUid, makeMaybeNode({ uid: folderUid, name: 'FolderE', type: 'folder' as any }));
+        bridge.failNextIterateForFolder(folderUid, new Error('children listing failed'));
+
+        await expect(populator.processIncrementalUpdates([nodeUpdated(folderUid, 'e1')], ctx)).rejects.toThrow(
+            'children listing failed'
+        );
+        expect(await db.getAllRepairEntries()).toHaveLength(0);
+    });
+
+    it('clears an existing repair entry when the node turns out to be gone', async () => {
+        const fileUid = 'vol1~FileF1';
+        bridge.setChildren('root', [makeMaybeNode({ uid: fileUid, name: 'f.txt', type: 'file' as any })]);
+
+        const { populator, ctx } = await indexTree('root');
+        expect(await allIndexedIds()).toContain(fileUid);
+
+        // Deleted server-side after being indexed: dropping it from the tree is what makes
+        // iterateNodes report it missing (the fake falls back to scanning the tree by uid).
+        bridge.setChildren('root', []);
+
+        // It was also quarantined by an earlier failure.
+        await db.putRepairEntry({
+            nodeUid: fileUid,
+            indexKind: IndexKind.MAIN,
+            indexPopulatorKind: 'test-populator',
+            treeEventScopeId: SCOPE_ID,
+            operation: 'index',
+            parentNodeUid: 'root',
+            attempts: 1,
+            firstFailedAt: 1,
+            lastAttemptAt: 1,
+            nextAttemptAt: 1,
+        });
+
+        const processed = await populator.processIncrementalUpdates([nodeUpdated(fileUid, 'e1')], ctx);
+
+        // Removed from the index and dropped from the repair table in the same pass, instead of
+        // being re-quarantined and waiting for the next 24h repair cycle.
+        expect(processed).toBe(1);
+        expect(await allIndexedIds()).not.toContain(fileUid);
+        expect(await db.getAllRepairEntries()).toHaveLength(0);
+    });
+
+    it('surfaces a repair fetch failure as node-scoped so one entry cannot abort the whole pass', async () => {
+        const fileUid = 'vol1~FileG1';
+        bridge.setChildren('root', [makeMaybeNode({ uid: fileUid, name: 'g.txt', type: 'file' as any })]);
+
+        const { populator, ctx } = await indexTree('root');
+        bridge.setIterateNodesError(fileUid, new Error('cannot load node'));
+
+        // RepairFailedNodesTask re-throws anything that is not node-scoped, which would abandon the
+        // remaining due entries. Tagging keeps the failure to this one entry.
+        await expect(
+            populator.repairNode(
+                {
+                    nodeUid: fileUid,
+                    indexKind: IndexKind.MAIN,
+                    indexPopulatorKind: 'test-populator',
+                    treeEventScopeId: SCOPE_ID,
+                    operation: 'index',
+                    parentNodeUid: 'root',
+                    attempts: 1,
+                    firstFailedAt: 1,
+                    lastAttemptAt: 1,
+                    nextAttemptAt: 1,
+                },
+                ctx
+            )
+        ).rejects.toBeInstanceOf(RepairableNodeError);
     });
 });

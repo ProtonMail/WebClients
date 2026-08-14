@@ -18,7 +18,7 @@ import type { IndexKind } from '../../shared/types';
 import { IndexBlobStore } from './IndexBlobStore';
 import { IndexReader } from './IndexReader';
 import { IndexWriter } from './IndexWriter';
-import { engineCall, toEngineError } from './engineCall';
+import { engineCall, maybeWrapAsSearchLibraryError } from './engineCall';
 
 export { IndexKind } from '../../shared/types';
 
@@ -111,7 +111,10 @@ export class IndexRegistry {
         try {
             instance.engine.free();
         } catch (e) {
-            sendErrorReportForSearch(`IndexRegistry: failed to free engine <${kind}>`, toEngineError('engine free', e));
+            sendErrorReportForSearch(
+                `IndexRegistry: failed to free engine <${kind}>`,
+                maybeWrapAsSearchLibraryError('engine free', e)
+            );
         }
     }
 
