@@ -8,6 +8,7 @@ import {
     markAllMessagesAsUnread,
     moveAllBatch,
 } from '@proton/shared/lib/api/messages';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS, SECOND } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import unique from '@proton/utils/unique';
@@ -282,11 +283,18 @@ export const moveAll = createAsyncThunk<
     };
 });
 
+type MarkAllParams = {
+    SourceLabelID: string;
+    status: MARK_AS_STATUS;
+    /** Omit to inherit the list's current categories; `[]` scopes to the whole Inbox. */
+    categoryIDs?: CategoryLabelID[];
+};
+
 export const markAll = createAsyncThunk<
     { LabelID?: string; timeoutID?: NodeJS.Timeout },
-    { SourceLabelID: string; status: MARK_AS_STATUS },
+    MarkAllParams,
     MailThunkExtra
->('elements/markAll', async ({ SourceLabelID, status }, { dispatch, getState, extra }) => {
+>('elements/markAll', async ({ SourceLabelID, status, categoryIDs }, { dispatch, getState, extra }) => {
     const action = status === MARK_AS_STATUS.READ ? markAllMessagesAsRead : markAllMessagesAsUnread;
 
     try {
@@ -295,10 +303,10 @@ export const markAll = createAsyncThunk<
         const state = (getState() as MailState).elements;
         dispatch(reset({ params: state.params }));
 
-        const categoryIDs = state.params.categoryIDs;
+        const scopedCategoryIDs = categoryIDs ?? state.params.categoryIDs;
         const labels =
-            SourceLabelID === MAILBOX_LABEL_IDS.INBOX && categoryIDs.length > 0
-                ? [SourceLabelID, ...categoryIDs]
+            SourceLabelID === MAILBOX_LABEL_IDS.INBOX && scopedCategoryIDs.length > 0
+                ? [SourceLabelID, ...scopedCategoryIDs]
                 : [SourceLabelID];
 
         await extra.api(

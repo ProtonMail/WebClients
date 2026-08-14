@@ -1,9 +1,11 @@
 import type { ApiRateLimiter } from '@proton/shared/lib/api/apiRateLimiter';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import type { MailState } from '../rootReducer';
 import type { MailThunkExtra } from '../store';
-import { load } from './elementsActions';
+import { load, markAll } from './elementsActions';
 import { newElementsState } from './elementsSlice';
 import type { ElementsStateParams } from './elementsTypes';
 
@@ -183,6 +185,56 @@ describe('elementsActions.ts', () => {
 
                 expect(mockApiFn).toHaveBeenCalledTimes(2);
             });
+        });
+    });
+
+    describe('markAll', () => {
+        beforeEach(() => {
+            jest.clearAllMocks();
+            jest.useFakeTimers();
+            mockApiFn.mockResolvedValue({});
+        });
+
+        afterEach(() => {
+            jest.clearAllTimers();
+            jest.useRealTimers();
+        });
+
+        const runMarkAll = async (
+            listCategoryIDs: CategoryLabelID[],
+            params: Omit<Parameters<typeof markAll>[0], 'SourceLabelID' | 'status'>
+        ) => {
+            const mockGetState = jest
+                .fn()
+                .mockReturnValue(buildMailState({ labelID: MAILBOX_LABEL_IDS.INBOX, categoryIDs: listCategoryIDs }));
+
+            await markAll({ SourceLabelID: MAILBOX_LABEL_IDS.INBOX, status: MARK_AS_STATUS.READ, ...params })(
+                mockDispatch,
+                mockGetState,
+                mockExtra
+            );
+
+            return mockApiFn.mock.calls[0][0].data.SearchContext.LabelIDs;
+        };
+
+        it('should scope the mark to the categories the caller asks for', async () => {
+            await expect(runMarkAll([], { categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS] })).resolves.toEqual([
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+            ]);
+        });
+
+        it('should cover the whole Inbox for an empty scope, ignoring the tab the list is showing', async () => {
+            await expect(runMarkAll([MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS], { categoryIDs: [] })).resolves.toEqual([
+                MAILBOX_LABEL_IDS.INBOX,
+            ]);
+        });
+
+        it('should fall back to the categories the list is showing when no scope is given', async () => {
+            await expect(runMarkAll([MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS], {})).resolves.toEqual([
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+            ]);
         });
     });
 });
