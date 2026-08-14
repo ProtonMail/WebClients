@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,11 +9,15 @@ import { useMaxModelAvailability } from '../../hooks/useMaxModelAvailability';
 import { useTierErrors } from '../../hooks/useTierErrors';
 import { getSelectedModelTier, useOptionalModelTier } from '../../providers/ModelTierProvider';
 import {
-    shouldShowModelSwitchSuggestion,
+    isModelSwitchSuggestionEligible,
     shouldShowWeeklyLimitUpsell,
     useRemainingLimits,
 } from '../../services/usageLimitsStore';
-import type { Message } from '../../types';
+import type { ConversationId, Message } from '../../types';
+import {
+    hasDismissedGuestNotification,
+    markGuestNotificationDismissed,
+} from '../../util/guestNotificationStorage';
 import { sendGuestNotificationCtaClickedEvent, sendGuestNotificationDismissedEvent } from '../../util/telemetry';
 import { CreateFreeAccountButton } from '../Guest/CreateFreeAccountLink/CreateFreeAccountLink';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
@@ -31,11 +35,16 @@ const HeartIcon = () => {
 
 interface GuestNotificationCardProps {
     messageChain: Message[];
+    conversationId?: ConversationId;
     isGenerating?: boolean;
 }
 
 // Only shown for medium and larger screens
-export const GuestNotificationCard = ({ messageChain, isGenerating = false }: GuestNotificationCardProps) => {
+export const GuestNotificationCard = ({
+    messageChain,
+    conversationId,
+    isGenerating = false,
+}: GuestNotificationCardProps) => {
     const { isSmallScreen } = useIsLumoSmallScreen();
     const { isBlocked: isChatLimitBlocked } = useChatLimitGate();
     const { hasTierErrors } = useTierErrors();
@@ -45,40 +54,52 @@ export const GuestNotificationCard = ({ messageChain, isGenerating = false }: Gu
     const weeklyLimitUpsellVisible = shouldShowWeeklyLimitUpsell(remainingLimits, hasTierErrors, hasLumoPlus);
     const modelTierContext = useOptionalModelTier();
     const selectedModelTier = modelTierContext ? getSelectedModelTier(modelTierContext.modelTier) : undefined;
-    const modelSwitchSuggestionVisible =
+    const modelSwitchSuggestionEligible =
         selectedModelTier !== undefined &&
-        shouldShowModelSwitchSuggestion({
+        isModelSwitchSuggestionEligible({
             hasLumoPlus,
             selectedModelTier,
             remainingLimits,
             weeklyLimitUpsellVisible,
             messageCount: messageChain.length,
-            isGenerating,
             isMaxAvailableByFlag,
         });
     const [dismissed, setDismissed] = useState(false);
-    const [dismissedAtMessageCount, setDismissedAtMessageCount] = useState(-1);
+
+    useEffect(() => {
+        if (conversationId) {
+            setDismissed(hasDismissedGuestNotification(conversationId));
+            return;
+        }
+
+        setDismissed(false);
+    }, [conversationId]);
 
     // Require at least one complete exchange (user + assistant) before showing
     // the CTA. This avoids a flash on fresh chats where `isGenerating` briefly
     // reads `false` before the user's first message is submitted.
     const hasCompletedExchange = messageChain.length >= 2;
 
-    const shouldShow =
+    const canEverShow =
         !weeklyLimitUpsellVisible &&
-        !modelSwitchSuggestionVisible &&
+        !modelSwitchSuggestionEligible &&
         !isChatLimitBlocked &&
         hasCompletedExchange &&
-        !isGenerating &&
-        (!dismissed || (dismissed && messageChain.length > dismissedAtMessageCount && messageChain.length % 2 === 0));
+        !dismissed;
+
+    const isVisible = canEverShow && !isGenerating;
 
     const handleDismiss = useCallback(() => {
         sendGuestNotificationDismissedEvent(messageChain.length);
         setDismissed(true);
-        setDismissedAtMessageCount(messageChain.length);
-    }, [messageChain.length]);
 
-    if (isSmallScreen || !shouldShow) {
+        if (conversationId) {
+            markGuestNotificationDismissed(conversationId);
+        }
+    }, [conversationId, messageChain.length]);
+
+    // Stay mounted while eligible so dismiss state survives isGenerating toggles.
+    if (isSmallScreen || !canEverShow) {
         return null;
     }
 
@@ -93,7 +114,7 @@ export const GuestNotificationCard = ({ messageChain, isGenerating = false }: Gu
             }
             dismissible
             onDismiss={handleDismiss}
-            hidden={!shouldShow}
+            hidden={!isVisible}
         />
     );
 };
