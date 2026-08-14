@@ -17,6 +17,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import { getUser2FATagProps } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import type { UseUserMemberActions } from '@proton/components/containers/members/UsersAndAddressesSection/useMemberActions';
+import RoleAssignmentStatusIcon from '@proton/components/containers/members/rolesAndPermissions/RoleAssignmentStatusIcon';
 import useConfig from '@proton/components/hooks/useConfig';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { IcKey } from '@proton/icons/icons/IcKey';
@@ -36,6 +37,7 @@ import {
     getIsMemberInvited,
     getMemberUnprivatizationMode,
 } from '@proton/shared/lib/keys/memberHelper';
+import { getHasPausedRoleAssignment } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 
 import MemberActions, { MagicLinkMemberActions, getMemberPermissions } from '../MemberActions';
@@ -116,6 +118,12 @@ export const MembersTable = ({
 
         const hasPendingFamilyInvitation = getIsMemberInvited(member);
         const isDisabled = getIsMemberDisabled(member);
+
+        const hasPausedRoleAssignment = getHasPausedRoleAssignment({
+            member,
+            requiresOrgKeyPromotion: models.requiresOrgKeyPromotionMap?.[member.ID],
+        });
+        const isResumingRoleAssignment = meta.resumingMemberID === member.ID;
 
         const unprivatizationResult = unprivatizationMemberState.members[member.ID];
         const isPendingState = unprivatizationResult?.type === 'approval';
@@ -333,7 +341,12 @@ export const MembersTable = ({
                 </TableCell>
                 <TableCell className="text-cut align-middle" data-testid="users-and-addresses-table:memberRole">
                     <div className={clsx('flex flex-column flex-nowrap', hasDisabledLayout && 'color-hint')}>
-                        <MemberRole member={member} userOrganizationRoles={models.memberRolesMap?.[member.ID]} />
+                        <span className="flex items-center flex-nowrap gap-1">
+                            <MemberRole member={member} userOrganizationRoles={models.memberRolesMap?.[member.ID]} />
+                            {hasPausedRoleAssignment && (
+                                <RoleAssignmentStatusIcon isResuming={isResumingRoleAssignment} />
+                            )}
+                        </span>
                         {hasPendingFamilyInvitation && (
                             <span>
                                 <UserTableBadge type="weak">
@@ -397,8 +410,11 @@ export const MembersTable = ({
                                 onDetachSSO={actions.handleDetachSSO}
                                 onLogin={actions.handleLoginUser}
                                 onChangePassword={actions.handleChangeMemberPassword}
+                                onRetryRoleAssignment={actions.handleRetryMemberRoleAssignment}
                                 member={member}
                                 disableEdit={disableEdit}
+                                hasPausedRoleAssignment={hasPausedRoleAssignment}
+                                isRoleAssignmentRetryInFlight={meta.resumingMemberID !== undefined}
                             />
                         )}
                     </div>

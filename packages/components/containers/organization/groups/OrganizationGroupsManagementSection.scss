@@ -18,17 +18,3 @@ section:has(> .groups-management) {
 .groups-management header > div:last-child {
 	gap: 0.75rem;
 }
-
-@keyframes group-role-assignment-resume-spin {
-	from {
-		transform: rotate(0deg);
-	}
-
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-.group-role-assignment-resume-spin {
-	animation: group-role-assignment-resume-spin 1s linear infinite;
-}

@@ -17,6 +17,7 @@ import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Address, Api, EnhancedMember, Member, RoleAssignment } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
+import noop from '@proton/utils/noop';
 
 import type { AddressesState } from '../addresses';
 import { addressesThunk } from '../addresses';
@@ -112,6 +113,7 @@ const slice = createSlice({
                         addressState: 'partial',
                         roleState: 'initial',
                         UserOrganizationRoles: [],
+                        requiresOrgKeyPromotion: false,
                     }),
                     merge: (a, b): EnhancedMember => ({
                         ...a,
@@ -157,6 +159,7 @@ const slice = createSlice({
                 addressState: 'partial' as const,
                 roleState: 'initial' as const,
                 UserOrganizationRoles: [],
+                requiresOrgKeyPromotion: false,
             };
             if (memberIndex === -1) {
                 state.value.push(newMember);
@@ -176,6 +179,10 @@ const slice = createSlice({
                 const previousRoleState = {
                     roleState: previousMember.roleState,
                     UserOrganizationRoles: previousMember.UserOrganizationRoles,
+                    // Kept rather than reset: a member fetch carries no org key access info, so resetting
+                    // here would mask a member whose org key grant is still pending. It's cleared by an
+                    // explicit getMemberRoles refetch instead.
+                    requiresOrgKeyPromotion: previousMember.requiresOrgKeyPromotion,
                 };
                 const mergedValue: EnhancedMember = {
                     ...newMember,
@@ -212,12 +219,17 @@ const slice = createSlice({
         },
         memberRoleFetchFulfilled: (
             state,
-            action: PayloadAction<{ member: Member; organizationRoles: RoleAssignment[] }>
+            action: PayloadAction<{
+                member: Member;
+                organizationRoles: RoleAssignment[];
+                requiresOrgKeyPromotion: boolean;
+            }>
         ) => {
             const member = getMemberFromState(state, action.payload.member);
             if (member) {
                 member.roleState = 'full';
                 member.UserOrganizationRoles = action.payload.organizationRoles;
+                member.requiresOrgKeyPromotion = action.payload.requiresOrgKeyPromotion;
             }
         },
         memberRoleFetchRejected: (state, action: PayloadAction<{ member: Member }>) => {
@@ -289,6 +301,7 @@ const slice = createSlice({
                             addressState: 'partial',
                             roleState: 'initial',
                             UserOrganizationRoles: [],
+                            requiresOrgKeyPromotion: false,
                         };
                     },
                     merge: (a, b): EnhancedMember => {
@@ -331,6 +344,7 @@ const modelThunk = (options?: {
                         addressState: 'partial' as const,
                         roleState: 'initial' as const,
                         UserOrganizationRoles: [],
+                        requiresOrgKeyPromotion: false,
                     }));
                 });
                 return {
@@ -460,15 +474,22 @@ export const getMemberRoles = ({
         if (oldPromise) {
             return oldPromise;
         }
-        const promise = extra
-            .api<{ RoleAssignments: RoleAssignment[] }>(getMemberOrganizationRoles(member.ID))
-            .then(({ RoleAssignments }) => RoleAssignments);
+        const responsePromise = extra.api<{ RoleAssignments: RoleAssignment[]; RequiresOrgKeyPromotion: boolean }>(
+            getMemberOrganizationRoles(member.ID)
+        );
+        const promise = responsePromise.then(({ RoleAssignments }) => RoleAssignments);
         try {
             map.set(member.ID, promise);
             dispatch(slice.actions.memberRoleFetchPending({ member }));
-            const result = await promise;
-            dispatch(slice.actions.memberRoleFetchFulfilled({ member, organizationRoles: result }));
-            return result;
+            const { RoleAssignments, RequiresOrgKeyPromotion } = await responsePromise;
+            dispatch(
+                slice.actions.memberRoleFetchFulfilled({
+                    member,
+                    organizationRoles: RoleAssignments,
+                    requiresOrgKeyPromotion: RequiresOrgKeyPromotion,
+                })
+            );
+            return RoleAssignments;
         } catch (e) {
             dispatch(slice.actions.memberRoleFetchRejected({ member }));
             throw e;
@@ -509,18 +530,26 @@ export const updateMemberRoles = ({
             return { roleAssignments: currentRoles, changed: false };
         }
 
-        const { RoleAssignments } = await api<{ RoleAssignments: RoleAssignment[] }>(
-            updateMemberOrganizationRoles(member.ID, { add, remove })
+        const { RoleAssignments, RequiresOrgKeyPromotion } = await api<{
+            RoleAssignments: RoleAssignment[];
+            RequiresOrgKeyPromotion: boolean;
+        }>(updateMemberOrganizationRoles(member.ID, { add, remove }));
+        dispatch(
+            slice.actions.memberRoleFetchFulfilled({
+                member,
+                organizationRoles: RoleAssignments,
+                requiresOrgKeyPromotion: RequiresOrgKeyPromotion,
+            })
         );
-        dispatch(slice.actions.memberRoleFetchFulfilled({ member, organizationRoles: RoleAssignments }));
 
         const currentRolesRequireOrgKey = currentRoles.some(({ Role }) => isOrgKeyRequired(Role));
         const desiredRolesRequireOrgKey = RoleAssignments.some(({ Role }) => isOrgKeyRequired(Role));
         if (currentRolesRequireOrgKey && !desiredRolesRequireOrgKey) {
-            // The API demotes the member when its last org key role is removed. Refresh Role now
-            // instead of waiting for the event loop, otherwise a promotion following shortly after
-            // reads a stale admin Role above and skips setRole.
-            dispatch(slice.actions.upsertMember({ member: await getMember(api, member.ID) }));
+            // The API demotes the member when its last org key role is removed
+            // Refresh the roles already before next event loop, but fail gracefully
+            await getMember(api, member.ID)
+                .then((updatedMember) => dispatch(slice.actions.upsertMember({ member: updatedMember })))
+                .catch(noop);
         }
 
         return { roleAssignments: RoleAssignments, changed: true };

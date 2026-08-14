@@ -5,7 +5,7 @@ import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 
 import { MEMBER_ROLE, MEMBER_SUBSCRIBER } from '../constants';
-import type { Address, CachedOrganizationKey, Domain, Member, Organization } from '../interfaces';
+import type { Address, CachedOrganizationKey, Domain, EnhancedMember, Member, Organization } from '../interfaces';
 import { DOMAIN_STATE, MEMBER_ORG_KEY_STATE } from '../interfaces';
 
 export const isSuperAdmin = (members: Member[]) =>
@@ -19,6 +19,22 @@ export const getMemberHasAccessToOrgKey = (member: Member) =>
     member.AccessToOrgKey === MEMBER_ORG_KEY_STATE.Active || member.AccessToOrgKey === MEMBER_ORG_KEY_STATE.Pending;
 
 export const getMemberHasMissingOrgKey = (member: Member) => member.AccessToOrgKey === MEMBER_ORG_KEY_STATE.Missing;
+
+/**
+ * @param requiresOrgKeyPromotion Defaults to the member's flag (use this when passing member from the store).
+ * The paginated MembersRemote list renders local copies with a placeholder role and passes the value explicitly.
+ * Follow-up: Hydrate the paginated members from the store once and remove this param.
+ */
+export const getHasPausedRoleAssignment = ({
+    member,
+    requiresOrgKeyPromotion = member.requiresOrgKeyPromotion,
+}: {
+    member: EnhancedMember;
+    requiresOrgKeyPromotion?: boolean;
+}) => {
+    // A member who was invited to the org key is legitimately awaiting activation rather than stuck.
+    return !!requiresOrgKeyPromotion && !getMemberHasAccessToOrgKey(member);
+};
 
 export const isOrganizationOneOf = (organization: Organization | undefined, plans: PLANS[]) =>
     !!organization && plans.includes(organization.PlanName);

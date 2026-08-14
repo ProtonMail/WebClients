@@ -10,7 +10,10 @@ import { MembersTableHeader } from '@proton/components/containers/members/UsersA
 import { useMemberActions } from '@proton/components/containers/members/UsersAndAddressesSection/useMemberActions';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { normalize } from '@proton/shared/lib/helpers/string';
+import { ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 import noop from '@proton/utils/noop';
+
+import RoleAssignmentPausedBanner from '../rolesAndPermissions/RoleAssignmentPausedBanner';
 
 export const MembersLocal = ({ app, showUsage = false }: { app: APP_NAMES; showUsage?: boolean }) => {
     const [keywords, setKeywords] = useState('');
@@ -60,6 +63,13 @@ export const MembersLocal = ({ app, showUsage = false }: { app: APP_NAMES; showU
                         aria-label={c('Placeholder').t`Search users`}
                     />
                 }
+            />
+
+            <RoleAssignmentPausedBanner
+                roleAssignmentSource={ROLE_SOURCE.USER}
+                pausedCount={membersHook.meta.pausedMembers.length}
+                isResuming={membersHook.meta.resumingMemberID !== undefined}
+                onToggle={() => membersHook.actions.handleToggleRoleAssignments()}
             />
 
             <span className="sr-only" aria-live="polite" aria-atomic="true">
