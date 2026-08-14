@@ -23,6 +23,16 @@ export const isOwnerRole = (role: OrganizationRole): boolean => role.Name === PR
 export const hasUserSourcedOwnerRole = (roles: RoleAssignment[]): boolean =>
     roles.some(({ Role, Source }) => Source === ROLE_SOURCE.USER && isOwnerRole(Role));
 
+export const canManageOwnerRole = ({
+    currentUserRoles,
+    isEditingSelf,
+    hasOrgKeyAccess,
+}: {
+    currentUserRoles: OrganizationRole[] | undefined;
+    isEditingSelf: boolean;
+    hasOrgKeyAccess: boolean;
+}): boolean => (currentUserRoles?.some(isOwnerRole) ?? false) && !isEditingSelf && hasOrgKeyAccess;
+
 export const isLegacyOrgAdminState = (isLegacyOrgAdmin: boolean, adminRolesIds: Set<string>): boolean =>
     isLegacyOrgAdmin && adminRolesIds.size === 0;
 

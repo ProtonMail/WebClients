@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { getUserSourcedRoleIds, isOwnerRole } from '@proton/account/organizationRoles/helpers';
+import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { canManageOwnerRole, getUserSourcedRoleIds, isOwnerRole } from '@proton/account/organizationRoles/helpers';
 import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
@@ -73,8 +74,12 @@ const RolesAndPermissionsTab = ({
 }: Props) => {
     const [organizationRoles, loadingRoles] = useOrganizationRoles();
     const [userPermissions] = useUserPermissions();
-    const isCurrentUserOwner = userPermissions?.Roles?.some(isOwnerRole) ?? false;
-    const lockOwnerRow = !isCurrentUserOwner || isEditingSelf;
+    const [organizationKey] = useOrganizationKey();
+    const lockOwnerRow = !canManageOwnerRole({
+        currentUserRoles: userPermissions?.Roles,
+        isEditingSelf,
+        hasOrgKeyAccess: Boolean(organizationKey?.privateKey),
+    });
     const availableRoles = isGroupContext ? organizationRoles?.filter((role) => !isOwnerRole(role)) : organizationRoles;
     const rows = buildRows(availableRoles, userRoles, selectedRoles, lockOwnerRow, disabled);
 
