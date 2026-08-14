@@ -442,6 +442,7 @@ export function isGooglePayCancelledMessage(obj: any): obj is GooglePayCancelled
 
 export type SetIdealPaymentIntentPayload = {
     paymentIntent: PaymentIntent;
+    userName: string;
     buttonLabel: string;
 };
 

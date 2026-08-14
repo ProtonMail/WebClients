@@ -18,6 +18,11 @@ export const isCurrencyRestrictedMethod = (type: PaymentMethodType | undefined):
     return getMethodSupportedCurrencies(type) !== undefined;
 };
 
+export const isCurrencySupportedByMethod = (type: PaymentMethodType | undefined, currency: Currency): boolean => {
+    const supportedCurrencies = getMethodSupportedCurrencies(type);
+    return !supportedCurrencies || supportedCurrencies.includes(currency);
+};
+
 export const getIsCurrencyOverriden = ({
     currentCurrency,
     currencyBeforeOverride,

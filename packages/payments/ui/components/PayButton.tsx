@@ -136,9 +136,10 @@ export const PayButton = ({
         );
     }
 
+    const isChargebeeIdeal = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
+
     const submitButton = (() => {
         const isChargebeePaypal = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
-        const isChargebeeIdeal = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
         const isApplePay = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.APPLE_PAY;
         const isGooglePay = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.GOOGLE_PAY;
         const submitButtonDisabled =
@@ -215,8 +216,12 @@ export const PayButton = ({
         }
     })();
 
+    const idealAccountHolderNameMissing = isChargebeeIdeal && paymentFacade.chargebeeIdeal.accountHolderNameMissing;
+
     const errorMessage =
-        taxCountry?.billingAddressErrorMessage || (mustCheckVatNumberErrors && vatNumber?.vatFormErrorMessage);
+        taxCountry?.billingAddressErrorMessage ||
+        (mustCheckVatNumberErrors && vatNumber?.vatFormErrorMessage) ||
+        (idealAccountHolderNameMissing && c('Payments.Error').t`Please enter the account holder name`);
 
     if (!errorMessage) {
         return (
