@@ -1181,6 +1181,7 @@ const Step1 = ({
                                                     availableSignupTypes={new Set(signupTypes)}
                                                     {...inviteProps.contextProps}
                                                     domains={model.domains}
+                                                    domainsLoaded={!model.loadingDependencies}
                                                 >
                                                     <AccountStepDetails
                                                         {...inviteProps.stepProps}
