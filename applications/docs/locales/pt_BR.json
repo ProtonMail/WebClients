@@ -949,6 +949,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
+      ],
+      "Keep going": [
+        "Continue"
+      ],
+      "Stop here": [
+        "Parar aqui"
       ]
     },
     "Actions message": {
@@ -5950,6 +5956,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, ative a conta no seu ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -7626,6 +7635,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso limitado"
       ]
     },
     "new_plans: feature highlight": {
@@ -9094,6 +9109,9 @@
       ],
       "User Admin": [
         "Administração de usuário"
+      ],
+      "Organization Admin": [
+        "Administrador da organização"
       ]
     },
     "Role description": {
@@ -10797,6 +10815,9 @@
       ],
       "Select users to migrate": [
         "Selecione os usuários a serem migrados"
+      ],
+      "Still working on it": [
+        "Ainda estou trabalhando nisso"
       ]
     },
     "Title header for keys table": {
