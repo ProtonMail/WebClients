@@ -1338,6 +1338,12 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Alternar o ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Keep going": [
+        "Continue"
+      ],
+      "Stop here": [
+        "Parar aqui"
       ]
     },
     "Action: Docs": {
@@ -7710,6 +7716,9 @@
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Para migrar este usuário, ative a conta dele em ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, ative a conta no seu ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -9779,6 +9788,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso limitado"
       ]
     },
     "new_plans: feature highlight": {
@@ -14392,6 +14407,9 @@
       ],
       "Select users to migrate": [
         "Selecione os usuários a serem migrados"
+      ],
+      "Still working on it": [
+        "Ainda estou trabalhando nisso"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15017,6 +15035,9 @@
       ],
       "User Admin": [
         "Administração de usuário"
+      ],
+      "Organization Admin": [
+        "Administrador da organização"
       ]
     },
     "Role description": {
