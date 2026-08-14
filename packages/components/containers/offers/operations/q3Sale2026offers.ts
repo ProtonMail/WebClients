@@ -11,6 +11,8 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 
+import kv40 from '../components/q3Sale2026/q3-sale-2026-kv-40.webp';
+import kv50 from '../components/q3Sale2026/q3-sale-2026-kv-50.webp';
 import type { OfferProduct } from '../helpers/getOfferProduct';
 
 const Q3_SALE_2026_PREFIX = 'q3-sale-2026';
@@ -23,7 +25,24 @@ interface Q3Offer {
     couponCode: COUPON_CODES;
     getRef?: (product: OfferProduct, currentPlan: string) => string;
     features?: (product?: OfferProduct) => { name: string }[];
+    title: () => string;
+    modalImage: string;
 }
+
+// translator: offer headline, shown over the artwork and wrapped after the comma
+const getFullPowerTitle = () => {
+    return c('q3campaign2026: Title').t`One plan, full power`;
+};
+
+// translator: offer headline, shown over the artwork and wrapped after the comma
+const getMorePowerTitle = () => {
+    return c('q3campaign2026: Title').t`One plan, more power`;
+};
+
+// translator: offer headline, shown over the artwork and wrapped after the comma
+const getMaxSavingsTitle = () => {
+    return c('q3campaign2026: Title').t`One plan, max savings`;
+};
 
 const getUnlimitedFeatures = (product: OfferProduct = 'mail') => {
     if (product === 'drive') {
@@ -32,7 +51,7 @@ const getUnlimitedFeatures = (product: OfferProduct = 'mail') => {
             { name: c('q3campaign2026: Info').t`500 GB storage` },
             {
                 name: c('q3campaign2026: Info')
-                    .t`All premium features of ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
+                    .t`All premium features of ${DRIVE_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
             },
         ];
     }
@@ -55,6 +74,8 @@ const freeToUnlimited: Q3Offer = {
     dealName: PLAN_NAMES[PLANS.BUNDLE],
     couponCode: COUPON_CODES.SEP26BUNDLESALE,
     features: getUnlimitedFeatures,
+    title: getFullPowerTitle,
+    modalImage: kv50,
 };
 
 const plusToUnlimited: Q3Offer = {
@@ -65,6 +86,8 @@ const plusToUnlimited: Q3Offer = {
     dealName: PLAN_NAMES[PLANS.BUNDLE],
     couponCode: COUPON_CODES.SEP26BUNDLESALE,
     features: getUnlimitedFeatures,
+    title: getFullPowerTitle,
+    modalImage: kv50,
 };
 
 // Duo copy is currently the same in every app: the bullets describe the plan, not the product. The
@@ -75,7 +98,7 @@ const getDuoFeatures = (_product: OfferProduct = 'mail') => {
             name: c('q3campaign2026: Info')
                 .t`All premium features of ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
         },
-        { name: c('q3campaign2026: Info').t`Individual accounts for you and a partner` },
+        { name: c('q3campaign2026: Info').t`Individual accounts for 2 users` },
         { name: c('q3campaign2026: Info').t`2 TB data storage` },
     ];
 };
@@ -90,6 +113,8 @@ const unlimitedToDuo: Q3Offer = {
     dealName: PLAN_NAMES[PLANS.DUO],
     couponCode: COUPON_CODES.SEP26BUNDLESALE,
     features: getDuoFeatures,
+    title: getMorePowerTitle,
+    modalImage: kv40,
 };
 
 // As with Duo, Family copy does not vary by app yet, but takes the product so it can.
@@ -97,9 +122,9 @@ const getFamilyFeatures = (_product: OfferProduct = 'mail') => {
     return [
         {
             name: c('q3campaign2026: Info')
-                .t`All premium features of ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
+                .t`Premium access to ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}`,
         },
-        { name: c('q3campaign2026: Info').t`Individual accounts for 6 users` },
+        { name: c('q3campaign2026: Info').t`Six individual accounts` },
         { name: c('q3campaign2026: Info').t`3 TB data storage` },
     ];
 };
@@ -112,6 +137,8 @@ const duoToFamily: Q3Offer = {
     dealName: PLAN_NAMES[PLANS.FAMILY],
     couponCode: COUPON_CODES.SEP26BUNDLESALE,
     features: getFamilyFeatures,
+    title: getMaxSavingsTitle,
+    modalImage: kv40,
 };
 
 // Same Family 12M deal as duoToFamily, but for monthly Family subscribers switching to yearly.
@@ -124,6 +151,8 @@ const familyMonthlyToYearly: Q3Offer = {
     dealName: PLAN_NAMES[PLANS.FAMILY],
     couponCode: COUPON_CODES.SEP26BUNDLESALE,
     features: getFamilyFeatures,
+    title: getMaxSavingsTitle,
+    modalImage: kv40,
 };
 
 export const offers = {
