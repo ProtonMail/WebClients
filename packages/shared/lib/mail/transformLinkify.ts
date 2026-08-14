@@ -32,6 +32,9 @@ export const transformLinkify = ({
 
     const utmTrackers: MessageUTMTracker[] = [];
     let last = 0;
+    // `match.url` and `match.text` need escaping just like the surrounding text: linkify-it
+    // deliberately admits a balanced pair of quotes into a URL path, so a body containing
+    // `https://host/"onmouseover="…"` would otherwise close `href` early and inject an attribute.
     const result = matches.reduce<string[]>((result, match) => {
         if (last < match.index) {
             result.push(htmlEntities(content.slice(last, match.index)));
@@ -41,16 +44,16 @@ export const transformLinkify = ({
         const UTMTrackersResult = canCleanUTMTrackers ? getUTMTrackersFromURL(match.url) : undefined;
         // Clean trackers in plaintext messages
         if (UTMTrackersResult) {
-            result.push(UTMTrackersResult.url);
+            result.push(htmlEntities(UTMTrackersResult.url));
             if (UTMTrackersResult.utmTracker) {
                 utmTrackers.push(UTMTrackersResult.utmTracker);
             }
         } else {
-            result.push(match.url);
+            result.push(htmlEntities(match.url));
         }
 
         result.push('">');
-        result.push(match.text);
+        result.push(htmlEntities(match.text));
         result.push('</a>');
 
         last = match.lastIndex;
