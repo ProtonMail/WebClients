@@ -60,6 +60,8 @@ export interface LumoUserSettings {
     isMemoryAutoSaveEnabled?: boolean;
     isVisualizationInstructionsEnabled?: boolean;
     memoryPromptsSinceAutoSave?: number;
+    /** Newest chat prompt included in a scan that successfully persisted at least one memory. */
+    memoryLastProcessedMessageAt?: string;
     preferredModelTier?: 'lumo-lite' | 'lumo-max';
     preferredResponseMode?: 'fast' | 'thinking';
 }

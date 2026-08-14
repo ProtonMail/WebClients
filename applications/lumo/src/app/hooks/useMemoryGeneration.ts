@@ -12,9 +12,11 @@ import {
     buildMemoryOptimizePrompt,
     canGenerateMemoriesFromChats,
     canOptimizeMemories,
+    getMemoryGenerationCutoff,
+    getMemoryGenerationScanBoundary,
     memoriesFromContents,
+    parseMemoryGenerationResponse,
     parseMemoryOptimizeResponse,
-    parseMemoryStringsResponse,
     rebuildMemoriesFromOptimizedContents,
     sampleUserPromptsForMemoryGeneration,
 } from '../util/memoryHelpers';
@@ -27,22 +29,43 @@ export function useMemoryGeneration() {
     const messages = useLumoSelector((state) => state.messages);
     const conversations = useLumoSelector((state) => state.conversations);
     const spaces = useLumoSelector((state) => state.spaces);
+    const memories = useLumoSelector((state) => state.lumoUserSettings.memories);
+    const lastProcessedMessageAt = useLumoSelector(
+        (state) => state.lumoUserSettings.memoryLastProcessedMessageAt
+    );
     const [isBootstrapping, setIsBootstrapping] = useState(false);
     const [isOptimizing, setIsOptimizing] = useState(false);
     const abortRef = useRef<AbortController | null>(null);
     const optimizeAbortRef = useRef<AbortController | null>(null);
 
+    const memoryGenerationCutoff = useMemo(
+        () => getMemoryGenerationCutoff(lastProcessedMessageAt, memories ?? []),
+        [lastProcessedMessageAt, memories]
+    );
+    const samplingOptions = useMemo(
+        () => ({ hasLumoPlus, after: memoryGenerationCutoff }),
+        [hasLumoPlus, memoryGenerationCutoff]
+    );
     const promptSamples = useMemo(
-        () => sampleUserPromptsForMemoryGeneration(messages, conversations, spaces, { hasLumoPlus }),
-        [messages, conversations, spaces, hasLumoPlus]
+        () => sampleUserPromptsForMemoryGeneration(messages, conversations, spaces, samplingOptions),
+        [messages, conversations, spaces, samplingOptions]
+    );
+    const processedThrough = useMemo(
+        () => getMemoryGenerationScanBoundary(messages, conversations, spaces, samplingOptions),
+        [messages, conversations, spaces, samplingOptions]
     );
 
     const canGenerateFromChats = canGenerateMemoriesFromChats(promptSamples.length);
 
     const generateFromChats = useCallback(
-        async (existingMemories: Memory[] = []): Promise<Memory[]> => {
+        async (
+            existingMemories: Memory[] = []
+        ): Promise<{ generated: Memory[]; processedThrough: string }> => {
             if (!canGenerateFromChats) {
                 throw new Error('Not enough chat history to generate memories');
+            }
+            if (!processedThrough) {
+                throw new Error('No memory generation scan boundary');
             }
 
             abortRef.current?.abort();
@@ -55,8 +78,14 @@ export function useMemoryGeneration() {
                     enableWebSearch: false,
                     signal: controller.signal,
                 });
-                console.log('response', response);
-                return memoriesFromContents(parseMemoryStringsResponse(response, existingMemories), 'generated');
+                const parsed = parseMemoryGenerationResponse(response, existingMemories);
+                if (parsed.status === 'invalid') {
+                    throw new Error('Invalid memory generation response');
+                }
+                return {
+                    generated: memoriesFromContents(parsed.memories, 'generated'),
+                    processedThrough,
+                };
             } finally {
                 if (abortRef.current === controller) {
                     abortRef.current = null;
@@ -64,7 +93,7 @@ export function useMemoryGeneration() {
                 setIsBootstrapping(false);
             }
         },
-        [api, canGenerateFromChats, promptSamples]
+        [api, canGenerateFromChats, processedThrough, promptSamples]
     );
 
     const optimizeMemories = useCallback(
