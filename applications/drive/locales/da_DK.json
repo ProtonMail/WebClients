@@ -1340,7 +1340,7 @@
         "Vis/skjul ${ LUMO_SHORT_APP_NAME }"
       ],
       "Keep going": [
-        "Fortsæt …"
+        "Fortsæt"
       ],
       "Stop here": [
         "Stop her"
@@ -7819,16 +7819,22 @@
         "Ophæv suspenderingen af denne bruger i ${ provider.adminConsoleName } for at migrere dem."
       ],
       "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } kunne ikke dekryptere det lokale søgeindeks. Genopbyg indekset for at gendanne søgningen."
+        "${ DRIVE_APP_NAME } kunne ikke dekryptere det lokale søgeindeks. Opret indekset igen for at gendanne søgningen."
       ],
       "I have not finished this one yet.": [
-        "Denne er endnu ikke afsluttet"
+        "Denne er endnu ikke afsluttet."
       ],
       "Search data can't be read": [
         "Søge-data kan ikke læses"
       ],
       "This is taking a lot of steps. Should it carry on?": [
         "Det her kræver meget... Skal det fortsætte?"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } mærkat"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Du omdirigeres til ${ IDEAL_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
       ]
     },
     "info": {
@@ -11344,6 +11350,9 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
         "Din valuta er blevet ændret til euro (€), fordi ${ IDEAL_BRAND_NAME } kun understøtter betalinger i euro."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betal med ${ IDEAL_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
