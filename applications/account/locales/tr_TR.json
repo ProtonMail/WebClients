@@ -354,6 +354,12 @@
       ],
       "Zoom meeting links": [
         "Zoom görüşmesi bağlantıları"
+      ],
+      "Password reminders": [
+        "Parola hatırlatıcıları"
+      ],
+      "Verify password": [
+        "Parolayı doğrula"
       ]
     },
     "Accounts": {
@@ -5603,6 +5609,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor",
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
+      ],
+      "No ads. No trackers": [
+        "Reklam yok. İzleyici yok"
       ]
     },
     "description": {
@@ -5936,10 +5945,10 @@
     },
     "Download link": {
       ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu için .deb"
+        "Debian / Ubuntu için .deb dosyası"
       ],
       ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat için .rpm"
+        "Fedora / Red Hat için .rpm dosyası"
       ],
       "You can also download the app through the ${ linkSnapStore }.": [
         "Uygulamayı ${ linkSnapStore } üzerinden de indirebilirsiniz."
@@ -8071,6 +8080,9 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
+      ],
+      "A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it": [
+        "Yetkilendirilmiş erişim kurtarma veya acil erişim süreci başlatıldı: Bu sürecin kesintiye uğramaması için yeni bir anahtar oluşturulmasına izin verilmiyor"
       ]
     },
     "error": {
@@ -9310,10 +9322,10 @@
     },
     "Get started checklist instructions": {
       "${ appName } on App Store": [
-        "App Store üzerinde ${ appName }"
+        "App Store'da ${ appName }"
       ],
       "${ appName } on Play Store": [
-        "Play Store üzerinde ${ appName }"
+        "Play Store'da ${ appName }"
       ]
     },
     "Gmail forwarding": {
@@ -11557,7 +11569,7 @@
         "Günlük kayıtları alınamadı."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Hızlı ve odaklanmış. E-posta ve takvim, doğrudan bilgisayarınızda."
+        "Hızlı ve odaklanmış. E-posta ve takvim doğrudan masaüstünüzde."
       ],
       "Fastest VPN speeds of up to 10Gbps": [
         "10 Gb/sn olabilen en yüksek VPN hızı"
@@ -12340,7 +12352,7 @@
         "Açık"
       ],
       "On Ubuntu?": [
-        "Ubuntu üzerinde misiniz?"
+        "Ubuntu'da mı?"
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Hesabınıza erişme izni verildiğinde **Kurtarma** ayarlarınıza erişebilir ve sizin adınıza **${ ACCOUNT_APP_NAME } parolanızı değiştirebilir.**"
@@ -14266,6 +14278,30 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**Kurtarma ifadeniz ve kurtarma dosyanız geçersiz hale getirilecek:** Daha sonra yeni kurtarma verileri oluşturabilirsiniz."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Sizi fiziksel olarak başka yerlerde bulunan sunucular aracılığıyla hedef ülkenize bağlar."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Sizi fiziksel olarak başka yerlerde bulunan sunucular aracılığıyla hedef ülkenize bağlar: ${ joinedSmartRoutingCountries }."
+      ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Üyeler parolalarını unutmamaları için periyodik olarak ${ BRAND_NAME } parolalarını doğrulamaya yönlendirilir. Kontrollerin zorunlu kılınması üyelerin bu özelliği devre dışı bırakmasını önler."
+      ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Etkinleştirildiğinde üyeler kendi ayarlarından parola kontrolü özelliğini devre dışı bırakamazlar."
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "Bu adresi kontrol eden kişi hesabınıza ve verilerinize tam erişim hakkına sahip olacak. Yalnızca bu adresi tanıyorsanız ve işlemi kendiniz başlattıysanız devam edin."
+      ],
+      "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
+        "Şu adresten ${ BRAND_NAME } hesabınızda oturum açmak üzeresiniz:"
       ]
     },
     "info": {
@@ -16202,7 +16238,7 @@
         "Başlamak için bir kimlik hizmeti sağlayıcısı seçin"
       ],
       "Select Linux package format": [
-        "Linux paketi biçimini seçin"
+        "Linux paket biçimini seçin"
       ],
       "Select Linux platform": [
         "Linux platformunu seçin"
@@ -16597,6 +16633,12 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Deals, offers, and marketing emails": [
+        "İndirimler, teklifler ve pazarlama e-postaları"
+      ],
+      "Require password check-ins": [
+        "Parola kontrol zorunluluğu"
       ]
     },
     "label": {
@@ -19208,6 +19250,12 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Zoom görüntülü görüşme ayarları güncellendi"
+      ],
+      "Password check-ins are not required anymore": [
+        "Artık parola kontrolü zorunlu değil"
+      ],
+      "Password check-ins are now required for all members": [
+        "Artık tüm üyeler için parola kontrolü zorunlu hale getirildi"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -21966,6 +22014,9 @@
       ],
       "User Admin": [
         "Kullanıcı yöneticisi"
+      ],
+      "Organization Admin": [
+        "Kuruluş Yöneticisi"
       ]
     },
     "Role description": {
@@ -22585,7 +22636,7 @@
     },
     "Service provider": {
       "Add to ${ CALENDAR_APP_NAME }": [
-        "${ CALENDAR_APP_NAME } üzerine ekle"
+        "${ CALENDAR_APP_NAME } takvimine ekle"
       ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Takvim etkinliklerinize Zoom görüntülü görüşmeleri eklemenizi sağlar"
@@ -24069,6 +24120,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Tek oturum açma yapılandırmanız silinecek"
+      ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Kuruluşunuz sizi tek oturum açma (SSO) sistemine geçirdiği için **eski parolanız yedek parola olarak kaydedilmiştir**. Bu parolayı yeni bir aygıtta SSO'yu yetkilendirmek için kullanabilirsiniz."
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Oturum açmak için bunu girin. Eski parolanızla aynıdır."
       ]
     },
     "sso: auth device state": {
@@ -27627,6 +27684,12 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Confirm where to sign in": [
+        "Nerede oturum açacağınızı onaylayın"
+      ],
+      "Password check-ins": [
+        "Parola kontrolleri"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28065,6 +28128,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Dış hesabınız 24 saatlik bant genişliği sınırına ulaşmış olabilir. ${ BRAND_NAME }, olabilecek en kısa sürede içe aktarma işlemini sürdürmeye çalışacak."
+      ],
+      "This setting is managed by your organization": [
+        "Bu ayar kuruluşunuz tarafından yönetiliyor"
       ]
     },
     "tooltip": {

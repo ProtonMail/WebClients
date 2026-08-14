@@ -138,6 +138,12 @@
       ],
       "Telemetry": [
         "Télémétrie"
+      ],
+      "Password reminders": [
+        "Rappels de mot de passe"
+      ],
+      "Verify password": [
+        "Vérifier le mot de passe"
       ]
     },
     "Accounts": {
@@ -5355,6 +5361,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresse Gmail",
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresses Gmail"
+      ],
+      "No ads. No trackers": [
+        "Pas de publicité. Pas de traqueurs"
       ]
     },
     "description": {
@@ -5688,7 +5697,7 @@
         ".deb pour Debian / Ubuntu"
       ],
       ".rpm for Fedora / Red Hat": [
-        ".rpm pour la distribution Fedora / Red Hat"
+        ".rpm pour Fedora / Red Hat"
       ],
       "You can also download the app through the ${ linkSnapStore }.": [
         "Vous pouvez également télécharger l'application depuis le ${ linkSnapStore }."
@@ -6546,7 +6555,7 @@
         "Activer le renouvellement automatique"
       ],
       "Enter your extra password": [
-        "Saisissez votre mot de passe supplémentaire"
+        "Saisissez votre mot de passe supplémentaire."
       ],
       "Explore plans": [
         "Découvrir les offres"
@@ -13733,6 +13742,18 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**Votre phrase de récupération et votre fichier de récupération seront invalidées :** vous pourrez générer de nouvelles données de récupération ultérieurement."
+      ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "La personne qui contrôle cette adresse aurait un accès complet à votre compte et à vos données. Ne continuez que si vous reconnaissez cette adresse et que vous avez vous-même lancé cette procédure."
+      ],
+      "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
+        "Vous êtes sur le point de vous connecter à votre compte ${ BRAND_NAME } à l'adresse suivante :"
       ]
     },
     "info": {
@@ -16035,6 +16056,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Offres, promotions et messages marketing"
       ]
     },
     "label": {
@@ -26882,6 +26906,15 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Confirm where to sign in": [
+        "Confirmer où vous devez vous connecter"
+      ],
+      "Password check-ins": [
+        "Vérification des mots de passe"
+      ],
+      "Single sign-on (SSO)": [
+        "Authentification unique (SSO)"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27299,6 +27332,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Votre compte externe a peut-être atteint sa limite de bande passante pour 24 heures. ${ BRAND_NAME } tentera de reprendre l'importation dès que possible."
+      ],
+      "This setting is managed by your organization": [
+        "Ce paramètre est géré par votre organisation"
       ]
     },
     "tooltip": {

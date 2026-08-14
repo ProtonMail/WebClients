@@ -246,6 +246,69 @@
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
+      ],
+      "Automatically delete data": [
+        "Αυτόματη διαγραφή δεδομένων"
+      ],
+      "Blog articles": [
+        "Άρθρα Blog"
+      ],
+      "Connected addresses": [
+        "Συνδεδεμένες διευθύνσεις"
+      ],
+      "Enable or disable apps for members": [
+        "Ενεργοποίηση ή απενεργοποίηση εφαρμογών για μέλη"
+      ],
+      "Gateway logs": [
+        "Αρχεία καταγραφής πύλης"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
+      ],
+      "IMAP and SMTP": [
+        "IMAP και SMTP"
+      ],
+      "Inbox tabs": [
+        "Καρτέλες εισερχομένων"
+      ],
+      "Outlook, Apple Mail, and Thunderbird": [
+        "Outlook, Apple Mail, και Thunderbird"
+      ],
+      "Password reminder": [
+        "Υπενθύμιση κωδικού πρόσβασης"
+      ],
+      "Password reminders": [
+        "Υπενθυμίσεις κωδικού πρόσβασης"
+      ],
+      "Permanently delete data": [
+        "Οριστική διαγραφή δεδομένων"
+      ],
+      "Protection from cyber attacks": [
+        "Προστασία από κυβερνοεπιθέσεις"
+      ],
+      "Referral rewards": [
+        "Ανταμοιβές παραπομπών"
+      ],
+      "Restrict app access": [
+        "Περιορισμός πρόσβασης σε εφαρμογές"
+      ],
+      "Server access policy": [
+        "Πολιτική πρόσβασης διακομιστή"
+      ],
+      "Shared server access": [
+        "Πρόσβαση σε κοινόχρηστο διακομιστή"
+      ],
+      "Sign out other devices": [
+        "Αποσύνδεση άλλων συσκευών"
+      ],
+      "Vacation responder": [
+        "Απαντητής διακοπών"
+      ],
+      "Verify password": [
+        "Επαλήθευση κωδικού πρόσβασης"
+      ],
+      "VPN session details": [
+        "Λεπτομέρειες συνεδρίας VPN"
       ]
     },
     "Accounts": {
@@ -5495,6 +5558,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail",
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail"
+      ],
+      "No ads. No trackers": [
+        "Χωρίς διαφημίσεις. Χωρίς ιχνηλάτες"
       ]
     },
     "description": {
@@ -7963,6 +8029,9 @@
       ],
       "Zero keys reactivated": [
         "Τα Μηδενικά κλειδιά ενεργοποιήθηκαν ξανά"
+      ],
+      "A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it": [
+        "Έχει ξεκινήσει μια διαδικασία ανάκτησης πρόσβασης με ανάθεση ή πρόσβασης έκτακτης ανάγκης: δεν επιτρέπεται η δημιουργία νέου κλειδιού για να αποφευχθεί η διακοπή της."
       ]
     },
     "error": {
@@ -14158,6 +14227,30 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**Η φράση ανάκτησης και το αρχείο ανάκτησης θα ακυρωθούν:** μπορείτε να δημιουργήσετε νέα δεδομένα ανάκτησης αργότερα."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Σας συνδέει με τη χώρα προορισμού σας μέσω διακομιστών που βρίσκονται φυσικά αλλού."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Σας συνδέει με τη χώρα προορισμού σας μέσω διακομιστών που βρίσκονται φυσικά αλλού: ${ joinedSmartRoutingCountries }."
+      ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Τα μέλη καλούνται περιοδικά να επαληθεύουν τον κωδικό πρόσβασής τους για το ${ BRAND_NAME } για να βεβαιωθούν ότι δεν τον ξεχνούν. Η επιβολή ελέγχων εμποδίζει τα μέλη να τον απενεργοποιήσουν."
+      ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Όταν είναι ενεργοποιημένη, τα μέλη δεν μπορούν να εξαιρεθούν από τα ελέγχους κωδικού πρόσβασης στις δικές τους ρυθμίσεις."
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "Όποιος ελέγχει αυτήν τη διεύθυνση θα έχει πλήρη πρόσβαση στον λογαριασμό σας και στα δεδομένα σας. Συνεχίστε μόνο εάν την αναγνωρίζετε και την ξεκινήσατε εσείς."
+      ],
+      "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
+        "Πρόκειται να συνδεθείτε στον ${ BRAND_NAME } Λογαριασμό σας σε αυτήν τη διεύθυνση:"
       ]
     },
     "info": {
@@ -16489,6 +16582,12 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Deals, offers, and marketing emails": [
+        "Συμφωνίες, προσφορές, και διαφημιστικά email"
+      ],
+      "Require password check-ins": [
+        "Απαιτείται έλεγχος κωδικού πρόσβασης"
       ]
     },
     "label": {
@@ -18432,6 +18531,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με εκτεταμένη πρόσβαση"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με περιορισμένη πρόσβαση"
       ]
     },
     "new_plans: feature highlight": {
@@ -19094,6 +19199,12 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Οι ρυθμίσεις τηλεδιάσκεψης του Zoom έχουν ενημερωθεί."
+      ],
+      "Password check-ins are not required anymore": [
+        "Δεν απαιτούνται πλέον έλεγχοι κωδικού πρόσβασης"
+      ],
+      "Password check-ins are now required for all members": [
+        "Απαιτούνται πλέον όλα τα μέλη για ελέγχους με κωδικό πρόσβασης"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -21852,6 +21963,9 @@
       ],
       "User Admin": [
         "Διαχειριστής Χρηστών"
+      ],
+      "Organization Admin": [
+        "Διαχειριστής Οργανισμού"
       ]
     },
     "Role description": {
@@ -23955,6 +24069,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Η διαμόρφωση SSO θα διαγραφεί."
+      ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Επειδή ο οργανισμός σας σάς μετέφερε σε ενιαία σύνδεση (SSO), **ο παλιός σας κωδικός πρόσβασης αποθηκεύεται ως εφεδρικός κωδικός πρόσβασης**. Μπορείτε να τον χρησιμοποιήσετε για να εξουσιοδοτήσετε το SSO σε μια νέα συσκευή."
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Εισαγάγετε τον κωδικό πρόσβασης για να συνδεθείτε. Είναι ο ίδιος με τον παλιό σας κωδικό πρόσβασης."
       ]
     },
     "sso: auth device state": {
@@ -27513,6 +27633,12 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Confirm where to sign in": [
+        "Επιβεβαιώστε πού θα συνδεθείτε"
+      ],
+      "Password check-ins": [
+        "Έλεγχοι κωδικού πρόσβασης"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27951,6 +28077,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ίσως ο εξωτερικός λογαριασμός σας έχει εξαντλήσει το όριό του στη μετάδοση ανά 24ωρο. Το ${ BRAND_NAME } θα δοκιμάσει να συνεχίσει την εισαγωγή το συντομότερο δυνατό."
+      ],
+      "This setting is managed by your organization": [
+        "Αυτή η ρύθμιση διαχειρίζεται από τον οργανισμό σας"
       ]
     },
     "tooltip": {

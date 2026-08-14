@@ -354,6 +354,12 @@
       ],
       "Zoom meeting links": [
         "Enllaços de reunions de Zoom"
+      ],
+      "Password reminders": [
+        "Recordatoris de contrasenya"
+      ],
+      "Verify password": [
+        "Verifica la contrasenya"
       ]
     },
     "Accounts": {
@@ -5603,6 +5609,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreça de Gmail",
         "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreces de Gmail"
+      ],
+      "No ads. No trackers": [
+        "Sense anuncis. Sense rastrejadors"
       ]
     },
     "description": {
@@ -8071,6 +8080,9 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
+      ],
+      "A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it": [
+        "S'ha iniciat un procés de recuperació d'accés delegat o d'accés d'emergència: no es permet generar una clau nova per evitar interrompre'l."
       ]
     },
     "error": {
@@ -14269,6 +14281,24 @@
       ],
       "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
         "Esteu a punt d'iniciar la sessió al vostre compte de ${ BRAND_NAME } a aquesta adreça:"
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**La frase de recuperació i el fitxer de recuperació quedaran invalidats**: podreu generar noves dades de recuperació més endavant."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Us connecta amb el país de destí mitjançant servidors ubicats físicament en un altre lloc."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Us connecta amb el país de destí mitjançant servidors ubicats físicament en un altre lloc: ${ joinedSmartRoutingCountries }."
+      ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Els membres reben periòdicament una notificació per verificar la seva contrasenya de ${ BRAND_NAME } i assegurar-se que no l'oblidin. Obligar els membres a fer la comprovació els impedeix desactivar-la."
+      ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Quan està habilitat, els membres no poden desactivar els inicis de sessió amb contrasenya a la seva configuració."
       ]
     },
     "info": {
@@ -16600,6 +16630,12 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Promocions, ofertes i correus electrònics de màrqueting"
+      ],
+      "Require password check-ins": [
+        "Requereix inicis de sessió amb contrasenya"
       ]
     },
     "label": {
@@ -19211,6 +19247,12 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "S'ha actualitzat la configuració de les videoconferències de Zoom"
+      ],
+      "Password check-ins are not required anymore": [
+        "Els registres d'entrada amb contrasenya ja no són necessaris."
+      ],
+      "Password check-ins are now required for all members": [
+        "Ara els membres ja han de fer el registre d'entrada amb contrasenya."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -24078,6 +24120,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "S'eliminarà la vostra configuració de SSO."
+      ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Com la vostra organització us ha passat a inici de sessió únic (SSO), **la vostra contrasenya antiga s'ha desat com a contrasenya de seguretat**. La podeu utilitzar per autoritzar l'SSO en un dispositiu nou."
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Introduïu-la per iniciar sessió. És la mateixa que la vostra contrasenya antiga."
       ]
     },
     "sso: auth device state": {
@@ -27639,6 +27687,12 @@
       ],
       "Confirm where to sign in": [
         "Confirmeu on iniciar sessió"
+      ],
+      "Password check-ins": [
+        "Comprovacions de contrasenya"
+      ],
+      "Single sign-on (SSO)": [
+        "Inici de sessió únic (SSO)"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28077,6 +28131,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "És possible que el vostre compte extern hagi assolit el límit d'amplada de banda de 24 hores. ${ BRAND_NAME } intentarà reprendre la importació al més aviat possible."
+      ],
+      "This setting is managed by your organization": [
+        "Aquesta preferència la gestiona la vostra organització"
       ]
     },
     "tooltip": {
