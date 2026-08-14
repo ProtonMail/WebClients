@@ -1345,6 +1345,12 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Comutare ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Keep going": [
+        "Continuă"
+      ],
+      "Stop here": [
+        "Oprește aici"
       ]
     },
     "Action: Docs": {
@@ -1683,7 +1689,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TiB spațiu de stocare"
+        "2 TiB spațiu total"
       ],
       "3 TB data storage": [
         "3 TiB spațiu de stocare"
@@ -7961,6 +7967,18 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin ${ IDEAL_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
+      ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } nu a putut decripta indexul de căutare locală. Reconstruiți indexul pentru a restabili căutarea."
+      ],
+      "I have not finished this one yet.": [
+        "Pe acesta încă nu l-am terminat încă."
+      ],
+      "Search data can't be read": [
+        "Datele de căutare nu pot fi citite"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Asta necesită mulți pași. Ar trebui să continui?"
       ]
     },
     "info": {
@@ -10015,6 +10033,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces extins"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces limitat"
       ]
     },
     "new_plans: feature highlight": {
@@ -14734,6 +14758,9 @@
       ],
       "Domain names": [
         "Nume de domenii"
+      ],
+      "Still working on it": [
+        "Încă lucrez la asta"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15383,6 +15410,9 @@
       ],
       "User Admin": [
         "Administrare utilizatori"
+      ],
+      "Organization Admin": [
+        "Administrator organizație"
       ]
     },
     "Role description": {
