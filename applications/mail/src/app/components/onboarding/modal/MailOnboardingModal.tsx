@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import { logger } from '@proton/logger';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -35,7 +36,7 @@ const MailOnboardingModal = ({ hideDiscoverApps, showGenericSteps, ...props }: M
 
     if (isB2BAdmin && b2bOnboardingEnabled) {
         return (
-            <ErrorBoundary>
+            <ErrorBoundary logger={logger}>
                 <Suspense fallback={null}>
                     <B2BOnboardingModal source="onboarding" {...props} />
                 </Suspense>

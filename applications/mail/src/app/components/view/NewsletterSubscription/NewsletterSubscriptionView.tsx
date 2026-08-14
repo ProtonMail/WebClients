@@ -6,6 +6,7 @@ import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode, useFeature } from '@proton/features';
+import { logger } from '@proton/logger';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -136,7 +137,7 @@ export const NewsletterSubscriptionView = ({ elementsData, actions, navigation }
 
     return (
         <>
-            <ErrorBoundary component={<StandardErrorPage className="w-full" big />}>
+            <ErrorBoundary component={<StandardErrorPage className="w-full" big />} logger={logger}>
                 <div ref={subscriptionContainerRef} className="flex flex-nowrap w-full subscription-container">
                     <ResizableWrapper
                         resizeHandlePosition={ResizeHandlePosition.RIGHT}

@@ -11,6 +11,7 @@ import { Href } from '@proton/atoms/Href/Href';
 import { PassAliasesProvider } from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/PassAliasesProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { FeatureCode, useFeature } from '@proton/features';
+import { logger } from '@proton/logger';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
@@ -170,6 +171,7 @@ const useTips = () => {
                     .t`When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.`,
                 cta: (
                     <ErrorBoundary
+                        logger={logger}
                         renderFunction={(e: any) => {
                             if (e?.message.includes(PassErrorCode.MISSING_SCOPE)) {
                                 setMissScopePass(true);
