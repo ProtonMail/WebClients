@@ -1,0 +1,13 @@
+@keyframes role-assignment-resume-spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.role-assignment-resume-spin {
+	animation: role-assignment-resume-spin 1s linear infinite;
+}

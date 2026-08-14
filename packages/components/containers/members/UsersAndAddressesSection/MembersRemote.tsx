@@ -10,7 +10,9 @@ import { MembersTable } from '@proton/components/containers/members/UsersAndAddr
 import { MembersTableHeader } from '@proton/components/containers/members/UsersAndAddressesSection/MembersTableHeader';
 import { useMemberActions } from '@proton/components/containers/members/UsersAndAddressesSection/useMemberActions';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { EnhancedMember } from '@proton/shared/lib/interfaces';
+import { type EnhancedMember, ROLE_SOURCE } from '@proton/shared/lib/interfaces';
+
+import RoleAssignmentPausedBanner from '../rolesAndPermissions/RoleAssignmentPausedBanner';
 
 export const MembersRemote = ({ app, showUsage = false }: { app: APP_NAMES; showUsage?: boolean }) => {
     const [page, setPage] = useState(1);
@@ -35,6 +37,7 @@ export const MembersRemote = ({ app, showUsage = false }: { app: APP_NAMES; show
                 addressState: 'partial',
                 roleState: 'initial',
                 UserOrganizationRoles: [],
+                requiresOrgKeyPromotion: false,
             })),
         [rawMembers]
     );
@@ -60,6 +63,13 @@ export const MembersRemote = ({ app, showUsage = false }: { app: APP_NAMES; show
                         aria-label={c('Placeholder').t`Search users`}
                     />
                 }
+            />
+
+            <RoleAssignmentPausedBanner
+                roleAssignmentSource={ROLE_SOURCE.USER}
+                pausedCount={membersHook.meta.pausedMembers.length}
+                isResuming={membersHook.meta.resumingMemberID !== undefined}
+                onToggle={() => membersHook.actions.handleToggleRoleAssignments()}
             />
 
             <span className="sr-only" aria-live="polite" aria-atomic="true">
