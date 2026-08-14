@@ -32,6 +32,23 @@ const routes: SidebarTree = {
                     children: undefined,
                 },
                 {
+                    id: 'organization.org-and-people',
+                    label: 'Organization and people',
+                    icon: 'users',
+                    meta: { defaultOpen: true },
+                    to: undefined,
+                    children: [
+                        {
+                            id: 'organization.org-and-people.users',
+                            label: 'Users',
+                            to: '/vpn/users-addresses',
+                            meta: {},
+                            children: undefined,
+                            icon: undefined,
+                        },
+                    ],
+                },
+                {
                     id: 'organization.vpn',
                     label: 'VPN',
                     icon: 'brand-proton-vpn-filled',
@@ -129,7 +146,7 @@ describe('Tree', () => {
         expect(getBranch('VPN')).toHaveAttribute('data-state', 'closed');
     });
 
-    it('collapses the previous L1 branch when pathname changes to a different section', () => {
+    it('keeps the previous L1 branch open when pathname changes to a different section', () => {
         const { rerender } = renderTree({ pathname: '/vpn/dashboard' });
         expect(getBranch('Organization')).toHaveAttribute('data-state', 'open');
 
@@ -140,7 +157,7 @@ describe('Tree', () => {
         );
 
         expect(getBranch('My account')).toHaveAttribute('data-state', 'open');
-        expect(getBranch('Organization')).toHaveAttribute('data-state', 'closed');
+        expect(getBranch('Organization')).toHaveAttribute('data-state', 'open');
     });
 
     it('keeps L1 open when navigating between leaves in the same section', () => {
@@ -162,13 +179,13 @@ describe('Tree', () => {
         expect(getBranch('My account')).toHaveAttribute('data-state', 'closed');
     });
 
-    it('still allows manual toggle of L1 branches', () => {
+    it('leaves sibling L1 branches open when another one is opened manually', () => {
         renderTree({ pathname: '/vpn/recovery' });
         expect(getBranch('My account')).toHaveAttribute('data-state', 'open');
 
         fireEvent.click(branch('Organization'));
         expect(getBranch('Organization')).toHaveAttribute('data-state', 'open');
-        expect(getBranch('My account')).toHaveAttribute('data-state', 'closed');
+        expect(getBranch('My account')).toHaveAttribute('data-state', 'open');
     });
 
     it('closes an open L1 branch when clicked again', () => {
@@ -189,10 +206,10 @@ describe('Tree', () => {
 
         expect(getBranch('Organization')).toHaveAttribute('data-state', 'open');
         expect(getBranch('VPN')).toHaveAttribute('data-state', 'open');
-        expect(getBranch('My account')).toHaveAttribute('data-state', 'closed');
+        expect(getBranch('My account')).toHaveAttribute('data-state', 'open');
     });
 
-    it('closes the L2 branch when navigating away to a leaf that does not need it open', () => {
+    it('opens the target L1 branch without touching the section navigated away from', () => {
         const { rerender } = renderTree({ pathname: '/vpn/gateways' });
         expect(getBranch('VPN')).toHaveAttribute('data-state', 'open');
 
@@ -203,7 +220,13 @@ describe('Tree', () => {
         );
 
         expect(getBranch('My account')).toHaveAttribute('data-state', 'open');
-        expect(getBranch('Organization')).toHaveAttribute('data-state', 'closed');
+        expect(getBranch('Organization')).toHaveAttribute('data-state', 'open');
+        expect(getBranch('VPN')).toHaveAttribute('data-state', 'open');
+    });
+
+    it('opens an L2 branch on mount when its meta marks it as default open', () => {
+        renderTree({ pathname: '/vpn/dashboard' });
+        expect(getBranch('Organization and people')).toHaveAttribute('data-state', 'open');
     });
 
     it('renders leaf icons with the color-weak class, so hover can light them up to full color', () => {

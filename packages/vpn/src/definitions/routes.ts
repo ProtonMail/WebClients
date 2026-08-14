@@ -133,6 +133,7 @@ const routesDefinition = {
                     id: 'organization.org-and-people',
                     label: () => c('Title').t`Organization and people`,
                     icon: 'users',
+                    meta: { defaultOpen: true },
                     children: [
                         {
                             id: 'organization.org-and-people.users',
@@ -254,7 +255,8 @@ const routesDefinition = {
                             label: () => c('Title').t`Always-on VPN`,
                             to: '/always-on-vpn',
                             meta: { beta: true },
-                            isVisible: ({ context }) => !!context.flags.B2BAlwaysOnEnabled && context.permissions['account.always_on.read'],
+                            isVisible: ({ context }) =>
+                                !!context.flags.B2BAlwaysOnEnabled && context.permissions['account.always_on.read'],
                         },
                         {
                             id: 'organization.vpn.gateway-monitor',
@@ -316,36 +318,24 @@ const routesDefinition = {
                     ],
                 },
                 {
-                    id: 'organization.integrations',
-                    label: () => c('Title').t`Integrations`,
+                    id: 'organization.sso',
+                    label: () => c('Title').t`Single sign-on (SSO)`,
                     icon: 'link',
-                    children: [
-                        {
-                            id: 'organization.integrations.sso',
-                            label: () => c('Title').t`Single-sign on (SSO)`,
-                            to: '/single-sign-on',
-                            isVisible: ({ context }) =>
-                                !!(
-                                    context.permissions['account.sso_config.read'] &&
-                                    (planSupportsSSO(context.organization?.PlanName, !!context.flags?.SsoForPbs) ||
-                                        upsellPlanSSO(context.organization?.PlanName)) &&
-                                    (context.hasActiveOrganization || context.hasActiveOrganizationKey)
-                                ),
-                        },
-                    ],
+                    to: '/single-sign-on',
+                    isVisible: ({ context }) =>
+                        !!(
+                            context.permissions['account.sso_config.read'] &&
+                            (planSupportsSSO(context.organization?.PlanName, !!context.flags?.SsoForPbs) ||
+                                upsellPlanSSO(context.organization?.PlanName)) &&
+                            (context.hasActiveOrganization || context.hasActiveOrganizationKey)
+                        ),
                 },
                 {
                     id: 'organization.monitoring',
-                    label: () => c('Title').t`Monitoring`,
+                    label: () => c('Title').t`Activity monitor`,
                     icon: 'monitor',
-                    children: [
-                        {
-                            id: 'organization.monitoring.org-monitor',
-                            label: () => c('Title').t`Activity monitor`,
-                            to: '/activity-monitor',
-                            isVisible: ({ context }) => context.permissions['account.activity_log.read'],
-                        },
-                    ],
+                    to: '/activity-monitor',
+                    isVisible: ({ context }) => context.permissions['account.activity_log.read'],
                 },
             ],
         },
