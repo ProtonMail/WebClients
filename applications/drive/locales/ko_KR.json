@@ -4408,6 +4408,12 @@
       ],
       "You do not have access to this shared item": [
         "해당 항목에 대한 접근 권한이 없습니다."
+      ],
+      "Copy operation aborted": [
+        "복사 작업 중단됨"
+      ],
+      "File has no revision": [
+        "파일에 수정 사항 없음"
       ]
     },
     "error": {
@@ -11084,6 +11090,9 @@
       ],
       "Edit billing address": [
         "청구 주소 수정"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_BRAND_NAME }가 유로화 결제만 지원하므로 사용자의 통화가 유로화(€)로 변경되었습니다."
       ]
     },
     "Payments.Error": {
@@ -14143,6 +14152,9 @@
       ],
       "What are you migrating?": [
         "무엇을 이전하시나요?"
+      ],
+      "Still working on it": [
+        "아직 작업 중"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14812,6 +14824,9 @@
       ],
       "name": [
         "이름"
+      ],
+      "attributes": [
+        "속성"
       ]
     }
   }
