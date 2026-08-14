@@ -74,6 +74,10 @@ export const DriveExplorerRow = ({
         handleMouseDown,
         handleClick,
         handleDoubleClick,
+        handleTouchStart,
+        handleTouchMove,
+        handleTouchCancel,
+        handleTouchEnd,
         handleContextMenu,
         handleKeyDown,
         handleDragStart: handleDragStartSelection,
@@ -147,6 +151,10 @@ export const DriveExplorerRow = ({
                     onMouseDown={handleMouseDown}
                     onClick={handleClick}
                     onDoubleClick={handleDoubleClick}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchCancel={handleTouchCancel}
+                    onTouchEnd={handleTouchEnd}
                     onKeyDown={handleKeyDown}
                 />
                 {showCheckboxColumn ? (
