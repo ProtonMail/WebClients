@@ -44,6 +44,7 @@ export interface OfferImages {
     sideImage2x?: string;
     bannerImage?: string;
     bannerImage2x?: string;
+    modalImage?: string;
 }
 
 export interface OfferDealSaveSentenceType {

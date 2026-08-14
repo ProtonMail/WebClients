@@ -11,7 +11,6 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { OfferLayoutProps } from '../../interface';
 import OfferDisableButton from '../shared/OfferDisableButton';
-import kvImage from './q3-sale-2026-kv-unlimited.webp';
 
 import './Q3Sale2026Layout.scss';
 
@@ -37,6 +36,8 @@ export function Q3Sale2026Layout({ offer, currency, onSelectDeal, onCloseModal, 
         onSelectDeal(offer, deal, currency);
     };
 
+    const offerTitle = offer.title?.();
+
     const planNameWithoutBrand = deal.dealName.replace(`${BRAND_NAME} `, '');
 
     const protonLogoWithDeal = (
@@ -49,24 +50,18 @@ export function Q3Sale2026Layout({ offer, currency, onSelectDeal, onCloseModal, 
     return (
         <div>
             <div className="q3SaleHeaderSection">
-                <img src={kvImage} alt="" aria-hidden={true} className="q3SaleKVImage" width={496} height={339} />
+                <img
+                    src={offer.images?.modalImage}
+                    alt=""
+                    aria-hidden={true}
+                    className="q3SaleKVImage"
+                    width={496}
+                    height={339}
+                />
                 <div className="q3SaleHeaderOverlay" />
                 <div className="q3SaleHeaderContent">
                     <div>
-                        <h1 className="q3SaleTitle">
-                            <span>
-                                {
-                                    // translator: first line of the headline, with "full power" on the line below
-                                    c('q3campaign2026: Title').t`One plan,`
-                                }
-                            </span>
-                            <span>
-                                {
-                                    // translator: second line of the headline, with "One plan," on the line above
-                                    c('q3campaign2026: Title').t`full power`
-                                }
-                            </span>
-                        </h1>
+                        <h1 className="q3SaleTitle">{offerTitle}</h1>
                     </div>
                     <div className="flex flex-column">
                         {protonLogoWithDeal}

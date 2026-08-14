@@ -2,14 +2,15 @@ import { CYCLE, PLANS } from '@proton/payments/core/constants';
 
 import { Q3Sale2026Layout } from '../../components/q3Sale2026/Q3Sale2026Layout';
 import type { OfferConfig } from '../../interface';
-import { getModalTitle, topButton } from '../q3Sale2026constants';
+import { topButton } from '../q3Sale2026constants';
 import { offers } from '../q3Sale2026offers';
 
-const { ID, featureCode, ref, getRef, dealName, couponCode, features } = offers['free-to-unlimited'];
+const { ID, featureCode, ref, getRef, dealName, couponCode, features, title, modalImage } = offers['free-to-unlimited'];
 
 export const configuration: OfferConfig = {
     ID,
-    title: getModalTitle,
+    title,
+    images: { modalImage },
     featureCode,
     autoPopUp: 'one-time',
     canBeDisabled: true,
