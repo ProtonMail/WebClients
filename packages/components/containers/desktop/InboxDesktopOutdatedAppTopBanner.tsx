@@ -63,7 +63,8 @@ const doesEarlyVersionNeedsManualUpdate = (app: DesktopVersion, version: string)
 };
 
 const DownloadButton = ({ link }: { link: string }) => {
-    if (isElectronMail) {
+    // Linux updates redirect to get-the-apps internally
+    if (isElectronMail && !isLinux) {
         return (
             <Button shape="underline" className="py-0 align-baseline" onClick={() => openLinkInBrowser(link)}>{c(
                 'Action'
