@@ -9,7 +9,11 @@ import { openESDB, safelyWriteToIDBAbsolutely } from './indexedDB';
 export const readAllLastEvents = async (userID: string) => {
     const result: EventsObject = {};
     const esDB = await openESDB(userID);
-    if (!esDB || !esDB.objectStoreNames.contains('events')) {
+    if (!esDB) {
+        return;
+    }
+    if (!esDB.objectStoreNames.contains('events')) {
+        esDB.close();
         return;
     }
 
@@ -32,7 +36,11 @@ export const readAllLastEvents = async (userID: string) => {
  */
 export const readLastEvent = async (userID: string, componentID: string) => {
     const esDB = await openESDB(userID);
-    if (!esDB || !esDB.objectStoreNames.contains('events')) {
+    if (!esDB) {
+        return;
+    }
+    if (!esDB.objectStoreNames.contains('events')) {
+        esDB.close();
         return;
     }
 

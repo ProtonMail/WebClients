@@ -10,7 +10,11 @@ export type IndexedDBRow = 'metadata' | 'content';
  */
 const read = async (userID: string, row: IndexedDBRow) => {
     const esDB = await openESDB(userID);
-    if (!esDB || !esDB.objectStoreNames.contains('indexingProgress')) {
+    if (!esDB) {
+        return;
+    }
+    if (!esDB.objectStoreNames.contains('indexingProgress')) {
+        esDB.close();
         return;
     }
 

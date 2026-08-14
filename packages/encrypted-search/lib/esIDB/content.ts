@@ -11,7 +11,11 @@ import { openESDB, safelyWriteToIDBConditionally, updateSize } from './indexedDB
  */
 export const readContentItem = async <ESItemContent>(userID: string, itemID: string, indexKey: IndexKey) => {
     const esDB = await openESDB(userID);
-    if (!esDB || !esDB.objectStoreNames.contains('content')) {
+    if (!esDB) {
+        return;
+    }
+    if (!esDB.objectStoreNames.contains('content')) {
+        esDB.close();
         return;
     }
 
@@ -30,7 +34,11 @@ export const readContentItem = async <ESItemContent>(userID: string, itemID: str
  */
 export const readNumContent = async (userID: string) => {
     const esDB = await openESDB(userID);
-    if (!esDB || !esDB.objectStoreNames.contains('content')) {
+    if (!esDB) {
+        return;
+    }
+    if (!esDB.objectStoreNames.contains('content')) {
+        esDB.close();
         return;
     }
     const count = await esDB.count('content');
@@ -43,7 +51,11 @@ export const readNumContent = async (userID: string) => {
  */
 export const readContentBatch = async (userID: string, IDs: string[]) => {
     const esDB = await openESDB(userID);
-    if (!esDB || !esDB.objectStoreNames.contains('content')) {
+    if (!esDB) {
+        return;
+    }
+    if (!esDB.objectStoreNames.contains('content')) {
+        esDB.close();
         return;
     }
 
@@ -77,7 +89,11 @@ export const executeContentOperations = async ({
     itemsToAdd: EncryptedItemWithInfo[];
 }) => {
     const esDB = await openESDB(userID);
-    if (!esDB || !esDB.objectStoreNames.contains('content')) {
+    if (!esDB) {
+        return;
+    }
+    if (!esDB.objectStoreNames.contains('content')) {
+        esDB.close();
         return;
     }
 
