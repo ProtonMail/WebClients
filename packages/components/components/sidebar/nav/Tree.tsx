@@ -4,8 +4,9 @@ import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
+import { Badge } from '@proton/components/components/badge/Badge';
+import Icon from '@proton/components/components/icon/Icon';
 import { Sidebar } from '@proton/components/components/sidebar/nav';
-import { Badge, Icon } from '@proton/components/index';
 import type { SidebarNode, SidebarTree } from '@proton/nav/types/sidebar';
 
 import { getActiveBranches } from './traverse';
@@ -20,6 +21,10 @@ function hasNotifications(meta: SidebarNode['meta']): meta is SidebarNode['meta'
 
 function isBeta(meta: SidebarNode['meta']): boolean {
     return meta.beta === true;
+}
+
+function isDefaultOpen(meta: SidebarNode['meta']): boolean {
+    return meta.defaultOpen === true;
 }
 
 function Leaf({ item }: { item: SidebarNode }) {
@@ -41,7 +46,7 @@ function Leaf({ item }: { item: SidebarNode }) {
 }
 
 function Branch({ item, activeBranches }: { item: SidebarNode; activeBranches: Set<string> }) {
-    const [isOpen, setIsOpen] = useState(activeBranches.has(item.id));
+    const [isOpen, setIsOpen] = useState(activeBranches.has(item.id) || isDefaultOpen(item.meta));
 
     useEffect(() => {
         if (activeBranches.has(item.id)) {
@@ -78,18 +83,16 @@ type Props = {
 /**
  * Renders a reactive navigation sidebar from a resolved navigation tree.
  *
- * The top-level items are rendered as a controlled accordion — only one L1
- * branch can be open at a time. Deeper branches are uncontrolled and manage
- * their own open state, seeded from the active pathname on mount.
+ * The top-level items are controlled, but they are not an accordion: opening
+ * one L1 branch never collapses its siblings. Deeper branches are uncontrolled
+ * and manage their own open state, seeded from the active pathname (or a
+ * `defaultOpen` meta flag) on mount.
  *
  * The component is always reactive: it automatically opens the branch path
- * that leads to the active leaf based on the current `pathname`, and collapses
- * sibling L1 branches when navigating between sections.
+ * that leads to the active leaf based on the current `pathname`, leaving any
+ * other open L1 branch untouched.
  *
  * @remarks
- * L1 open state is updated synchronously during render via a ref comparison
- * rather than a `useEffect`, avoiding an extra render cycle when `pathname` changes.
- *
  * L2+ branches receive `activeBranches` as a prop and use it to seed their
  * initial open state. They also sync when `activeBranches` changes reference,
  * which happens on every pathname change.
@@ -107,22 +110,31 @@ export const Tree = ({ routes, pathname }: Props) => {
 
     const activeBranches = useMemo(() => getActiveBranches(firstLevels, pathname), [firstLevels, pathname]);
 
-    const [openLevel1, setOpenLevel1] = useState<string | undefined>(() => {
-        return firstLevels.find((item) => activeBranches.has(item.id))?.id;
+    const [openLevel1, setOpenLevel1] = useState<Set<string>>(() => {
+        return new Set(firstLevels.filter((item) => activeBranches.has(item.id)).map((item) => item.id));
     });
-    const toggleLevel1 = (key: typeof openLevel1) => setOpenLevel1((prev) => (prev === key ? undefined : key));
+    const toggleLevel1 = (key: string) =>
+        setOpenLevel1((prev) => {
+            const next = new Set(prev);
+            if (next.has(key)) {
+                next.delete(key);
+            } else {
+                next.add(key);
+            }
+            return next;
+        });
 
     useEffect(() => {
         const active = firstLevels.find((item) => activeBranches.has(item.id))?.id;
         if (active !== undefined) {
-            setOpenLevel1(active);
+            setOpenLevel1((prev) => (prev.has(active) ? prev : new Set(prev).add(active)));
         }
     }, [pathname]);
 
     return (
         <Sidebar.Root>
             {firstLevels.map((item) => (
-                <Sidebar.Branch key={item.id} open={openLevel1 === item.id} onOpenChange={() => toggleLevel1(item.id)}>
+                <Sidebar.Branch key={item.id} open={openLevel1.has(item.id)} onOpenChange={() => toggleLevel1(item.id)}>
                     <Sidebar.Branch.Header className="text-lg">
                         <Sidebar.Branch.Trigger rotation={{ closed: 270 }} name="chevron-down-filled" />
                         <Sidebar.Branch.Text>{item.label}</Sidebar.Branch.Text>
