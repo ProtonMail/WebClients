@@ -354,6 +354,12 @@
       ],
       "Zoom meeting links": [
         "Odkazy na schôdze cez Zoom"
+      ],
+      "Password reminders": [
+        "Pripomienky hesla"
+      ],
+      "Verify password": [
+        "Potvrďte heslo"
       ]
     },
     "Accounts": {
@@ -5677,6 +5683,9 @@
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailové adresy",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries"
+      ],
+      "No ads. No trackers": [
+        "Žiadne reklamy. Žiadne sledovacie nástroje"
       ]
     },
     "description": {
@@ -8177,6 +8186,9 @@
       ],
       "Zero keys reactivated": [
         "Žiadne kľúče neboli znovu aktivované"
+      ],
+      "A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it": [
+        "Bol spustený proces obnovenia delegovaného prístupu alebo núdzového prístupu: generovanie nového kľúča nie je povolené, aby nedošlo k narušeniu tohto procesu"
       ]
     },
     "error": {
@@ -14570,6 +14582,30 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**Vaša obnovovacia fráza a obnovovací súbor budú zneplatnené:** nové obnovovacie údaje si môžete vygenerovať neskôr."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Pripojí vás do cieľovej krajiny prostredníctvom serverov, ktoré sa fyzicky nachádzajú inde."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Pripojí vás do cieľovej krajiny prostredníctvom serverov, ktoré sa fyzicky nachádzajú inde: ${ joinedSmartRoutingCountries }."
+      ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Členovia sú pravidelne vyzývaní, aby si overili svoje heslo pre ${ BRAND_NAME }, aby ho nezabudli. Povinné prihlasovanie zabraňuje členom, aby si túto funkciu vypli."
+      ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Ak je táto funkcia zapnutá, členovia si nemôžu v svojich nastaveniach vypnúť prihlasovanie pomocou hesla."
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "Ktokoľvek, kto má kontrolu nad touto adresou, by získal plný prístup k vášmu účtu a vašim údajom. Pokračujte len vtedy, ak túto adresu poznáte a sami ste ju zadali."
+      ],
+      "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
+        "Chystáte sa prihlásiť do svojho ${ BRAND_NAME } účtu na tejto adrese:"
       ]
     },
     "info": {
@@ -16522,7 +16558,7 @@
         "Na začiatok vyberte poskytovateľa identity"
       ],
       "Select Linux package format": [
-        "Vyberte formát balíka Linux"
+        "Vyberte formát Linuxového balíka"
       ],
       "Select Linux platform": [
         "Vyberte platformu Linux"
@@ -16919,6 +16955,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Ponuky, akcie a marketingové emaily"
+      ],
+      "Require password check-ins": [
+        "Vyžadovať prihlásenie pomocou hesla"
       ]
     },
     "label": {
@@ -19628,6 +19670,12 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Nastavenia videokonferencií Zoom boli aktualizované."
+      ],
+      "Password check-ins are not required anymore": [
+        "Prihlasovanie pomocou hesla už nie je povinné"
+      ],
+      "Password check-ins are now required for all members": [
+        "Prihlasovanie pomocou hesla je teraz povinné pre všetkých členov"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -22434,6 +22482,9 @@
       ],
       "User Admin": [
         "Správca používateľov"
+      ],
+      "Organization Admin": [
+        "Správca organizácie"
       ]
     },
     "Role description": {
@@ -24633,6 +24684,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Vaše nastavenie SSO bude vymazané."
+      ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Keďže vaša organizácia prešla na jednotné prihlásenie (SSO), **vaše staré heslo je uložené ako záložné heslo**. Môžete ho použiť na autorizáciu SSO na novom zariadení."
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Zadajte ho, aby ste sa prihlásili. Je rovnaké ako vaše staré heslo."
       ]
     },
     "sso: auth device state": {
@@ -28281,6 +28338,15 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "Confirm where to sign in": [
+        "Potvrďte, kde sa chcete prihlásiť"
+      ],
+      "Password check-ins": [
+        "Prihlásenie pomocou hesla"
+      ],
+      "Single sign-on (SSO)": [
+        "Jednotné prihlásenie (SSO)"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28719,6 +28785,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Váš externý účet mohol dosiahnuť 24-hodinový limit prenosovej kapacity. ${ BRAND_NAME } sa pokúsi obnoviť import hneď, ako to bude možné"
+      ],
+      "This setting is managed by your organization": [
+        "Toto nastavenie spravuje vaša organizácia"
       ]
     },
     "tooltip": {

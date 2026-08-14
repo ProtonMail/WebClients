@@ -7739,6 +7739,9 @@
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
+      ],
+      "A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it": [
+        "Ein Verfahren zur delegierten Wiederherstellung des Zugriffs oder zum Notfallzugriff wurde eingeleitet: Die Generierung eines neuen Schlüssels ist nicht zulässig, um eine Störung dieses Verfahrens zu vermeiden."
       ]
     },
     "error": {
@@ -13892,6 +13895,18 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**Deine Wiederherstellungsphrase und deine Wiederherstellungsdatei werden ungültig:** Du kannst später neue Wiederherstellungsdaten generieren."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Verbindet dich mit deinem Zielland über Server, die sich physisch an anderen Standorten befinden."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Verbindet dich mit deinem Zielland über Server, die sich physisch an anderen Standorten befinden: ${ joinedSmartRoutingCountries }."
+      ],
+      "Smart Routing": [
+        "Smart Routing"
       ]
     },
     "info": {
