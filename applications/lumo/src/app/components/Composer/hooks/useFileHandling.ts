@@ -13,7 +13,7 @@ import { selectProvisionalAttachments, selectSpaceByIdOptional } from '../../../
 import { deleteAttachment } from '../../../redux/slices/core/attachments';
 import { onComposerError } from '../../../remote/nativeComposerBridgeHelpers';
 import { handleFileAsync } from '../../../services/files';
-import { type ExcelSheetInfo, createExcelSheetFile, getExcelSheetsFromFile } from '../../../services/files/excelSheets';
+import { type ExcelSheetInfo, createExcelSheetFile } from '../../../services/files/excelSheets';
 import { SearchService } from '../../../services/search/searchService';
 import { type AttachmentId, LUMO_API_ERRORS, type Message, type ProjectSpace } from '../../../types';
 import type { DriveDocument } from '../../../types/documents';
@@ -129,14 +129,14 @@ export const useFileHandling = ({
                 return undefined;
             }
 
-            const sheets = await getExcelSheetsFromFile(file);
+            const sheets = await fileProcessingService.listExcelSheets(file);
             if (sheets.length <= 1) {
                 return undefined;
             }
 
             return onSelectExcelSheets(file, sheets);
         },
-        [onSelectExcelSheets]
+        [fileProcessingService, onSelectExcelSheets]
     );
 
     const indexFileForSearch = useCallback(
