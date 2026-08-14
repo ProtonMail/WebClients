@@ -37,6 +37,8 @@ export interface CardRenderer {
     subtitle?: (action: ActionRequest, labels: Record<string, string>) => string | undefined;
     /** Optional editable body; omit for a plain confirm (title + apply/cancel only). */
     renderBody?: (props: CardBodyProps) => ReactNode;
+    /** Whether the body's current `params` are applyable; false disables Confirm (e.g. nothing selected). */
+    canApply?: (params: Record<string, any>) => boolean;
     /** Optional one-line detail shown on the settled result tile. */
     detail?: (action: ActionRequest, labels: Record<string, string>) => string | undefined;
 }

@@ -44,6 +44,7 @@ const ConfirmCard = ({ renderer, action, labels, onApply, onCancel }: Props) => 
             subtitle={renderer.subtitle?.(action, labels)}
             applyLabel={c('Action').t`Confirm`}
             cancelLabel={c('Action').t`Cancel`}
+            applyDisabled={renderer.canApply ? !renderer.canApply(params) : undefined}
             onApply={() => onApply(params)}
             onCancel={onCancel}
         >
