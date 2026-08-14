@@ -8,6 +8,7 @@ import useWindowSize from '@proton/components/hooks/useWindowSize';
 import { getHasAssistantStatus } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import { logger } from '@proton/logger';
 import clsx from '@proton/utils/clsx';
 
 import { selectComposer } from 'proton-mail/store/composers/composerSelectors';
@@ -160,7 +161,7 @@ const ComposerFrame = ({ index, count, focus, onFocus, onClose: inputOnClose, co
                     composerID={composerID}
                 />
             )}
-            <ErrorBoundary initiative="composer">
+            <ErrorBoundary initiative="composer" logger={logger}>
                 <Composer
                     ref={composerRef}
                     composerFrameRef={composerFrameRef}

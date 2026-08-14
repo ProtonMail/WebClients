@@ -2,6 +2,7 @@ import { useDeferredValue } from 'react';
 
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { logger } from '@proton/logger';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import ConversationView from 'proton-mail/components/conversation/ConversationView';
@@ -49,7 +50,7 @@ export const RouterElementContainer = ({ navigation, actions }: Props) => {
         !breakpoints.viewportWidth['<=small'] && (!elementID || (!!checkedIDs.length && isColumnModeActive));
 
     return (
-        <ErrorBoundary>
+        <ErrorBoundary logger={logger}>
             {!!elementID &&
                 (isConversationContentView ? (
                     <ConversationView
