@@ -59,7 +59,7 @@ import {
     setupMemberKeys,
 } from '@proton/shared/lib/keys';
 import { getIsMemberSetup, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
-import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
+import { getHasPausedRoleAssignment, getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
@@ -93,6 +93,7 @@ import {
     type MembersState,
     type RoleAssignmentsResult,
     getMemberAddresses,
+    getMemberRoles,
     invalidateMemberRoles,
     membersThunk,
     updateMemberRoles,
@@ -396,11 +397,16 @@ export const assignMemberRoles = ({
         }
 
         // The order is IMPORTANT here: set admin roles first, promote second
-        const result = await dispatch(updateMemberRoles({ member, currentRoles, desiredRoleIds, api }));
+        const roleAssignments = await dispatch(updateMemberRoles({ member, currentRoles, desiredRoleIds, api }));
         await dispatch(setRole({ member, role: MEMBER_ROLE.ORGANIZATION_ADMIN, payload, api }));
-        dispatch(upsertMember({ member: await getMember(api, member.ID) }));
+
+        // Refresh the UI before next event loop update (banner shows), but fail gracefully.
+        await getMember(api, member.ID)
+            .then((updatedMember) => dispatch(upsertMember({ member: updatedMember })))
+            .catch(noop);
+        await dispatch(getMemberRoles({ member, cache: CacheType.None })).catch(noop);
         // The promotion is a change on its own, even when the role assignments stay the same.
-        return { ...result, changed: true };
+        return { ...roleAssignments, changed: true };
     };
 };
 
@@ -423,7 +429,39 @@ export const promoteMemberToOrgAdmin = ({
         });
         const payload = await dispatch(getMemberEditPayload({ member, classification, api: getSilentApi(api) }));
         await dispatch(setRole({ member, role: MEMBER_ROLE.ORGANIZATION_ADMIN, payload, api }));
-        dispatch(upsertMember({ member: await getMember(api, member.ID) }));
+
+        // Refresh UI before next event loop, but fail gracefully
+        await getMember(api, member.ID)
+            .then((updatedMember) => dispatch(upsertMember({ member: updatedMember })))
+            .catch(noop);
+    };
+};
+
+/**
+ * Resume a role assignment that stalled before the member was granted access to the org key.
+ */
+export const resumeMemberRoleAssignment = ({
+    memberID,
+    api,
+}: {
+    memberID: string;
+    api: Api;
+}): ThunkAction<Promise<void>, KtState & OrganizationKeyState & MembersState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        const member = (await dispatch(membersThunk())).find(({ ID }) => ID === memberID);
+        if (!member) {
+            return;
+        }
+        await dispatch(promoteMemberToOrgAdmin({ member, api }));
+        // Required: `promoteMemberToOrgAdmin` refreshes the member, but preserves the pending flag
+        // Refresh the roles to clear pending flag
+        await dispatch(getMemberRoles({ member, cache: CacheType.None }));
+        const refreshed = (await dispatch(membersThunk())).find(({ ID }) => ID === memberID);
+        if (refreshed && getHasPausedRoleAssignment({ member: refreshed })) {
+            // TODO: promoteMemberToOrgAdmin no-ops for a member who is already an admin but lost access to
+            // the org key. To fix that, we need to change `classifyRoleChange` to allow admin -> admin.
+            throw new Error(c('Error').t`Could not grant access to the organization key`);
+        }
     };
 };
 

@@ -4,9 +4,7 @@ import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getTranslatedRoleName } from '@proton/account/organizationRoles/helpers';
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
-import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import RoleAssignmentStatusIcon from '@proton/components/containers/members/rolesAndPermissions/RoleAssignmentStatusIcon';
 import type { EnhancedGroup } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -46,33 +44,6 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
     const email = serializedGroup?.payload.email || group?.Address?.Email || '';
     const subtitle = roleNames || (showMailFeatures && email ? email : undefined);
 
-    const renderRoleAssignmentIcon = () => {
-        if (!group?.requiresOrgKeyPromotion) {
-            return null;
-        }
-
-        if (isResumingRoleAssignment) {
-            return (
-                <Tooltip title={c('tooltip').t`Resuming role assignment`}>
-                    <span className="inline-flex shrink-0">
-                        <IcArrowRotateRight
-                            className="group-role-assignment-resume-spin color-primary"
-                            alt={c('tooltip').t`Resuming role assignment`}
-                        />
-                    </span>
-                </Tooltip>
-            );
-        }
-
-        return (
-            <Tooltip title={c('tooltip').t`Role assignment paused`}>
-                <span className="inline-flex shrink-0">
-                    <IcExclamationCircle className="color-warning" alt={c('tooltip').t`Role assignment paused`} />
-                </span>
-            </Tooltip>
-        );
-    };
-
     return (
         <div className="relative mb-1">
             <Button
@@ -101,7 +72,9 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
                             <span className="text-bold text-ellipsis min-w-0" title={name}>
                                 {name}
                             </span>
-                            {renderRoleAssignmentIcon()}
+                            {group?.requiresOrgKeyPromotion && (
+                                <RoleAssignmentStatusIcon isResuming={isResumingRoleAssignment} />
+                            )}
                         </div>
                         {subtitle && (
                             <p className="m-0 max-w-full text-sm color-weak text-ellipsis" title={subtitle}>

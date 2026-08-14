@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import type { ComponentType } from 'react';
 
 import type { FormikErrors } from 'formik';
@@ -22,6 +22,7 @@ import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import Loader from '@proton/components/components/loader/Loader';
+import { useResumeRoleAssignment } from '@proton/components/containers/members/rolesAndPermissions/useResumeRoleAssignment';
 import useGroupKeys from '@proton/components/containers/organization/groups/useGroupKeys';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -73,8 +74,15 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const [selectedGroupId, setSelectedGroupId] = useState<string | undefined>(undefined);
     const selectedGroup = groups?.find((group) => group.ID === selectedGroupId);
     const [uiState, setUiState] = useState<GROUPS_STATE>(GROUPS_STATE.EMPTY);
-    const [resumingGroupId, setResumingGroupId] = useState<string | undefined>(undefined);
-    const cancelRoleAssignmentRequestedRef = useRef(false);
+    const { resumingSourceId: resumingGroupId, toggleResumeAll } = useResumeRoleAssignment({
+        successText: c('Info').t`Group roles assigned`,
+        getErrorText: (failedCount) =>
+            c('Error').ngettext(
+                msgid`Role assignment could not be completed for ${failedCount} group`,
+                `Role assignment could not be completed for ${failedCount} groups`,
+                failedCount
+            ),
+    });
     const getGroupMembers = useGetGroupMembers();
     const getLatestMembers = useGetMembers();
     const { getMemberPublicKeys } = useGroupKeys();
@@ -410,67 +418,29 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         );
     });
 
-    const handleToggleRoleAssignments = async () => {
-        if (resumingGroupId !== undefined) {
-            cancelRoleAssignmentRequestedRef.current = true;
+    const resumeGroupRoleAssignment = async (groupId: string, isCancelRequested: () => boolean) => {
+        const groupMembersById = await getGroupMembers(groupId);
+        const groupMembersList = groupMembersById ? Object.values(groupMembersById) : [];
+        const { cancelled, errors } = await promoteGroupMembersToOrgAdmin(groupMembersList, isCancelRequested);
+        errors.forEach((error) => handleError(error, { notify: false }));
+        if (cancelled) {
             return;
         }
 
-        const pausedGroups = filteredGroups.filter((group) => group.requiresOrgKeyPromotion);
-        if (pausedGroups.length === 0) {
-            return;
+        await dispatch(getGroupRoles({ group: { ID: groupId }, cache: CacheType.None }));
+        invalidateGroupMemberRoles(groupMembersList);
+
+        if (errors.length > 0) {
+            // Already traced above, so mark the group as failed without tracing a duplicate.
+            throw Object.assign(new Error('Group role assignment incomplete'), { trace: false });
         }
-
-        cancelRoleAssignmentRequestedRef.current = false;
-        let failedGroupCount = 0;
-        for (const group of pausedGroups) {
-            if (cancelRoleAssignmentRequestedRef.current) {
-                break;
-            }
-            setResumingGroupId(group.ID);
-            try {
-                const groupMembersById = await getGroupMembers(group.ID);
-                const groupMembersList = groupMembersById ? Object.values(groupMembersById) : [];
-                const { cancelled, errors } = await promoteGroupMembersToOrgAdmin(
-                    groupMembersList,
-                    () => cancelRoleAssignmentRequestedRef.current
-                );
-                if (errors.length > 0) {
-                    errors.forEach((error) => handleError(error, { notify: false }));
-                    failedGroupCount += 1;
-                }
-                if (cancelled) {
-                    break;
-                }
-
-                await dispatch(getGroupRoles({ group, cache: CacheType.None }));
-                invalidateGroupMemberRoles(groupMembersList);
-            } catch (error) {
-                failedGroupCount += 1;
-                handleError(error);
-            }
-        }
-        setResumingGroupId(undefined);
-
-        if (cancelRoleAssignmentRequestedRef.current) {
-            cancelRoleAssignmentRequestedRef.current = false;
-            return;
-        }
-
-        if (failedGroupCount === 0) {
-            createNotification({ type: 'success', text: c('Info').t`Group roles assigned` });
-            return;
-        }
-
-        createNotification({
-            type: 'error',
-            text: c('Error').ngettext(
-                msgid`Role assignment could not be completed for ${failedGroupCount} group`,
-                `Role assignment could not be completed for ${failedGroupCount} groups`,
-                failedGroupCount
-            ),
-        });
     };
+
+    const handleToggleRoleAssignments = () =>
+        toggleResumeAll({
+            sourceIds: filteredGroups.filter((group) => group.requiresOrgKeyPromotion).map(({ ID }) => ID),
+            resume: resumeGroupRoleAssignment,
+        });
 
     const getRestrictedBy = (): GroupsRestriction => {
         const isPlanUnsupported =
