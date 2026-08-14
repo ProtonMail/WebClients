@@ -1,11 +1,11 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
-import { getCategoryTabFromLabel } from '@proton/mail/features/categoriesView/categoriesHelpers';
-import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { CATEGORY_LABEL_IDS, type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { type Category, type Label, hasUnseenTracking } from '@proton/shared/lib/interfaces';
 
+import type { CategoryTab } from '../../features/categoriesView/categoriesConstants';
+import { getCategoryTabFromLabel } from '../../features/categoriesView/categoriesHelpers';
+import { isCategoryLabel } from '../../helpers/location';
 import { sortSystemCategories } from './helpers';
 import type { CategoriesState } from './index';
 import { selectCategories } from './index';
