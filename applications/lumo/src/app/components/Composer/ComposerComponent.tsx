@@ -367,7 +367,11 @@ const ComposerComponentInner = ({
                  * stays visible and dismissible on native, and the reserved space stays equal to
                  * the composer alone.
                  */}
-                <ModelSwitchNotificationCard messageChain={messageChain} isGenerating={isGenerating} />
+                <ModelSwitchNotificationCard
+                    messageChain={messageChain}
+                    conversationId={messageChain?.[0]?.conversationId}
+                    isGenerating={isGenerating}
+                />
 
                 <div
                     style={{ visibility: nativeComposerVisibilityApi.showWebComposer() ? 'visible' : 'hidden' }}
@@ -390,7 +394,11 @@ const ComposerComponentInner = ({
                         {showLegalDisclaimer && <GuestDisclaimer />}
 
                         {isGuest && canShowGuestNotificationCard && (
-                            <GuestNotificationCard messageChain={messageChain} isGenerating={isGenerating} />
+                            <GuestNotificationCard
+                                messageChain={messageChain}
+                                conversationId={messageChain?.[0]?.conversationId}
+                                isGenerating={isGenerating}
+                            />
                         )}
 
                         <ComposerLimitBanner

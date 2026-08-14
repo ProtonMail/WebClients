@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,12 +9,18 @@ import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useMaxModelAvailability } from '../../hooks/useMaxModelAvailability';
 import { useTierErrors } from '../../hooks/useTierErrors';
 import { getSelectedModelTier, useModelTier } from '../../providers/ModelTierProvider';
+import { useIsGuest } from '../../providers/IsGuestProvider';
 import {
+    isModelSwitchSuggestionEligible,
     shouldShowModelSwitchSuggestion,
     shouldShowWeeklyLimitUpsell,
     useRemainingLimits,
 } from '../../services/usageLimitsStore';
-import type { Message } from '../../types';
+import type { ConversationId, Message } from '../../types';
+import {
+    hasDismissedModelSwitchNotification,
+    markModelSwitchNotificationDismissed,
+} from '../../util/modelSwitchNotificationStorage';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 import { ComposerNotificationCard } from './ComposerNotificationCard';
 
@@ -22,14 +28,17 @@ import './ModelSwitchNotificationCard.scss';
 
 interface ModelSwitchNotificationCardProps {
     messageChain: Message[];
+    conversationId?: ConversationId;
     isGenerating?: boolean;
 }
 
 export const ModelSwitchNotificationCard = ({
     messageChain,
+    conversationId,
     isGenerating = false,
 }: ModelSwitchNotificationCardProps) => {
     const { isSmallScreen } = useIsLumoSmallScreen();
+    const isGuest = useIsGuest();
     const { modelTier, setModelTier } = useModelTier();
     const { hasLumoPlus } = useLumoPlan();
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
@@ -39,34 +48,67 @@ export const ModelSwitchNotificationCard = ({
     const [dismissed, setDismissed] = useState(false);
     const [dismissedAtMessageCount, setDismissedAtMessageCount] = useState(-1);
 
+    useEffect(() => {
+        if (isGuest && conversationId) {
+            setDismissed(hasDismissedModelSwitchNotification(conversationId));
+            return;
+        }
+
+        setDismissed(false);
+        setDismissedAtMessageCount(-1);
+    }, [conversationId, isGuest]);
+
     const selectedModelTier = getSelectedModelTier(modelTier);
 
-    const shouldShow = shouldShowModelSwitchSuggestion({
+    const suggestionArgs = {
         hasLumoPlus,
         selectedModelTier,
         remainingLimits,
         weeklyLimitUpsellVisible,
         messageCount: messageChain.length,
-        isGenerating,
         isMaxAvailableByFlag,
-    });
+    };
+    const isEligible = isModelSwitchSuggestionEligible(suggestionArgs);
+    const shouldShow = shouldShowModelSwitchSuggestion({ ...suggestionArgs, isGenerating });
 
     const isVisible =
         shouldShow &&
-        (!dismissed || (dismissed && messageChain.length > dismissedAtMessageCount && messageChain.length % 2 === 0));
+        (isGuest
+            ? !dismissed
+            : !dismissed || (messageChain.length > dismissedAtMessageCount && messageChain.length % 2 === 0));
+
+    const persistGuestDismissal = useCallback(() => {
+        setDismissed(true);
+
+        if (conversationId) {
+            markModelSwitchNotificationDismissed(conversationId);
+        }
+    }, [conversationId]);
 
     const handleDismiss = useCallback(() => {
+        if (isGuest) {
+            persistGuestDismissal();
+            return;
+        }
+
         setDismissed(true);
         setDismissedAtMessageCount(messageChain.length);
-    }, [messageChain.length]);
+    }, [isGuest, messageChain.length, persistGuestDismissal]);
 
     const handleSwitchToMax = useCallback(() => {
         setModelTier('lumo-max');
+
+        if (isGuest) {
+            persistGuestDismissal();
+            return;
+        }
+
         setDismissed(true);
         setDismissedAtMessageCount(messageChain.length);
-    }, [messageChain.length, setModelTier]);
+    }, [isGuest, messageChain.length, persistGuestDismissal, setModelTier]);
 
-    if (isSmallScreen || !shouldShow) {
+    // Stay mounted while eligible so dismiss state survives isGenerating toggles.
+    if (isSmallScreen || !isEligible) {
         return null;
     }
 
