@@ -1,8 +1,8 @@
-import { type Feature, FeatureCode } from '@proton/features/interface';
-import { type FeaturesResponse, fetchFeatures } from '@proton/features/reducer';
 import { DAY } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import { type Feature, FeatureCode } from './interface';
+import { type FeaturesResponse, fetchFeatures } from './reducer';
 import { setupStore } from './tests/store';
 
 const getMockFeature = (data: Pick<Feature, 'Code' | 'Value' | 'Type'> & Partial<Feature>): Feature => {

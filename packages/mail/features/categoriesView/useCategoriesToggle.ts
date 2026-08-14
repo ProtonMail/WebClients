@@ -1,20 +1,21 @@
 import { c } from 'ttag';
 
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import useToggle from '@proton/components/hooks/useToggle';
+import useApi from '@proton/app-context/useApi';
+import useNotifications from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
-import { useMarkOnboardingComplete } from '@proton/mail/features/categoriesView/useMarkOnboardingComplete';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import useToggle from '@proton/hooks/useToggle';
+import { baseUseDispatch } from '@proton/react-redux-store';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
+import { mailSettingsActions } from '../../store/mailSettings';
+import { useMailSettings } from '../../store/mailSettings/hooks';
+import { useCategoriesTelemetry } from './useCategoriesTelemetry';
+import { useMarkOnboardingComplete } from './useMarkOnboardingComplete';
+
 export const useCategoriesToggle = () => {
     const api = useApi();
-    const dispatch = useDispatch();
+    const dispatch = baseUseDispatch();
 
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();

@@ -17,13 +17,11 @@ const mockUseOrganization = useOrganization as jest.Mock;
 jest.mock('@proton/unleash/useFlag');
 jest.mocked(useFlag).mockReturnValue(true);
 
-jest.mock('@proton/components/hooks/useNotifications', () =>
-    jest.fn().mockReturnValue({ createNotification: jest.fn() })
-);
+jest.mock('@proton/app-context/useNotifications', () => jest.fn().mockReturnValue({ createNotification: jest.fn() }));
 
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
-    __esModule: true,
-    useDispatch: () => jest.fn(),
+jest.mock('@proton/react-redux-store', () => ({
+    ...jest.requireActual('@proton/react-redux-store'),
+    baseUseDispatch: () => jest.fn(),
 }));
 
 jest.mock('@proton/mail/features/categoriesView/useCategoriesTelemetry', () => ({
