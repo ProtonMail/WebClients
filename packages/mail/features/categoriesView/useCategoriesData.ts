@@ -1,16 +1,16 @@
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import {
-    selectCategoryViewLoading,
-    selectCategoryViewSettingAccess,
-} from '@proton/mail/store/categoriesView/categoriesViewSelector';
-import { selectActiveCategoriesTabs, selectCategoriesLabel } from '@proton/mail/store/labels/selector';
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
+import { baseUseSelector } from '@proton/react-redux-store';
 import type { CategoryViewVariantVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import { useFlagsStatus } from '@proton/unleash/proxy';
 import { useFlag } from '@proton/unleash/useFlag';
 import { useVariant } from '@proton/unleash/useVariant';
 
+import {
+    selectCategoryViewLoading,
+    selectCategoryViewSettingAccess,
+} from '../../store/categoriesView/categoriesViewSelector';
+import { selectActiveCategoriesTabs, selectCategoriesLabel } from '../../store/labels/selector';
 import type { CategoryTab } from './categoriesConstants';
 
 const EMPTY_ARRAY: CategoryTab[] = [];
@@ -35,10 +35,10 @@ export const useCategoriesData = () => {
     const flagVariant = useVariant('CategoryViewVariant');
     const variantWithCategoryViewAccess = flagVariant.name ? variantWithAccess.has(flagVariant.name) : false;
 
-    const isLoading = useSelector(selectCategoryViewLoading);
-    const settingAccess = useSelector(selectCategoryViewSettingAccess);
-    const categoriesStore = useSelector(selectCategoriesLabel);
-    const activeCategoriesTabs = useSelector(selectActiveCategoriesTabs);
+    const isLoading = baseUseSelector(selectCategoryViewLoading);
+    const settingAccess = baseUseSelector(selectCategoryViewSettingAccess);
+    const categoriesStore = baseUseSelector(selectCategoriesLabel);
+    const activeCategoriesTabs = baseUseSelector(selectActiveCategoriesTabs);
 
     const canUseCategoryView = categoryViewFlag || hasBetaAccess || variantWithCategoryViewAccess;
     const isCategoryViewEnabled = canUseCategoryView && settingAccess;

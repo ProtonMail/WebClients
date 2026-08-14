@@ -11,7 +11,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import UpsellModalUpgradeButton from '@proton/components/components/upsell/UpsellModal/components/UpsellModalUpgradeButton.tsx';
 import useUpsellModalConfig from '@proton/components/components/upsell/UpsellModal/hooks/useUpsellModalConfig.ts';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments.ts';
-import useConfig from '@proton/components/hooks/useConfig.ts';
+import useConfig from '@proton/components/hooks/useConfig';
 import { Loader } from '@proton/components/index.ts';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper.ts';

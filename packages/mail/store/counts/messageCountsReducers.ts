@@ -1,13 +1,5 @@
 import type { Draft, PayloadAction } from '@reduxjs/toolkit';
 
-import {
-    isCategoryLabel,
-    isCustomFolder,
-    isCustomLabel,
-    isSystemFolder,
-    isSystemLabel,
-    isUnmodifiableByUser,
-} from '@proton/mail/helpers/location';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/helpers/safeCount';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -18,6 +10,14 @@ import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message
 import type { Conversation } from 'proton-mail/models/conversation';
 
 import { getContextNumMessages, getContextNumUnread } from '../../helpers/conversation';
+import {
+    isCategoryLabel,
+    isCustomFolder,
+    isCustomLabel,
+    isSystemFolder,
+    isSystemLabel,
+    isUnmodifiableByUser,
+} from '../../helpers/location';
 
 export const markMessagesAsRead = (
     state: Draft<ModelState<LabelCount[]>>,

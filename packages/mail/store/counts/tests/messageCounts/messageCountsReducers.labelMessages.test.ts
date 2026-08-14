@@ -1,11 +1,11 @@
 import type { Draft } from '@reduxjs/toolkit';
 
-import { labelMessages } from '@proton/mail/store/counts/messageCountsReducers';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { labelMessages } from '../../messageCountsReducers';
 import {
     CUSTOM_LABEL_ID1,
     checkUpdatedCounters,
