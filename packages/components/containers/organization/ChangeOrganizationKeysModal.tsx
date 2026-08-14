@@ -48,7 +48,7 @@ const ChangeOrganizationKeysModal = ({ onClose, mode, hasOtherAdmins, organizati
     const handleClose = loading ? noop : onClose;
 
     const handleSubmit = async (password: string) => {
-        await dispatch(rotateOrganizationKeys({ password }));
+        await dispatch(rotateOrganizationKeys({ password, mode }));
         createNotification({ text: c('Success').t`Keys updated` });
         onClose?.();
     };
