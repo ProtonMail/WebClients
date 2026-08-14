@@ -303,6 +303,7 @@ export const handleSetupOrg = async ({
             AdminInvitations: [],
             AdminActivations: [],
             GroupAddressKeyTokens: [],
+            IsKeyReset: false,
         }),
     });
 };
