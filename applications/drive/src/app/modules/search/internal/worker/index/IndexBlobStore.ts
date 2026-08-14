@@ -6,7 +6,7 @@ import { decryptBlob, encryptBlob } from '../../shared/SearchCrypto';
 import type { SearchDB } from '../../shared/SearchDB';
 import { SearchBlobCryptoError, createQuotaExceededErrorMessage, isQuotaExceededError } from '../../shared/errors';
 import type { IndexKind } from './IndexRegistry';
-import { toEngineError } from './engineCall';
+import { maybeWrapAsSearchLibraryError } from './engineCall';
 
 /**
  * Blob store backed by IndexedDB with a cache for WASM Cached objects.
@@ -70,7 +70,7 @@ export class IndexBlobStore {
                 event.sendEmpty();
             }
         } catch (e) {
-            throw toEngineError('load blob', e);
+            throw maybeWrapAsSearchLibraryError('load blob', e);
         }
     }
 
@@ -97,7 +97,7 @@ export class IndexBlobStore {
                 const msg = await createQuotaExceededErrorMessage();
                 Logger.error(`IndexBlobStore: Quota exceeded error <${msg}>`);
             }
-            throw toEngineError('save blob', e);
+            throw maybeWrapAsSearchLibraryError('save blob', e);
         }
     }
 
@@ -107,7 +107,7 @@ export class IndexBlobStore {
             this.cache.delete(blobName);
             await this.db.deleteIndexBlob(this.dbKey(blobName));
         } catch (e) {
-            throw toEngineError('release blob', e);
+            throw maybeWrapAsSearchLibraryError('release blob', e);
         }
     }
 

@@ -4,7 +4,7 @@ import { Document, Value, WriteEventKind } from '@proton/proton-foundation-searc
 import { InvalidIndexerState, sendErrorReportForSearch } from '../../shared/errors';
 import type { AttributeValue, IndexEntry } from '../indexer/indexEntry';
 import type { IndexBlobStore } from './IndexBlobStore';
-import { engineCall, toEngineError } from './engineCall';
+import { engineCall, maybeWrapAsSearchLibraryError } from './engineCall';
 
 /**
  * An exclusive write session acquired from IndexWriter.startWriteSession().
@@ -38,7 +38,7 @@ export class WriteSession {
             // dispose() releases the lock before freeing and swallows a throwing free(), so the
             // error reported here is always the one that actually broke the insert.
             this.dispose();
-            throw toEngineError('insert', e);
+            throw maybeWrapAsSearchLibraryError('insert', e);
         }
     }
 
@@ -51,7 +51,7 @@ export class WriteSession {
             return this;
         } catch (e) {
             this.dispose();
-            throw toEngineError('remove', e);
+            throw maybeWrapAsSearchLibraryError('remove', e);
         }
     }
 
@@ -68,7 +68,10 @@ export class WriteSession {
         try {
             writer.free();
         } catch (e) {
-            sendErrorReportForSearch('WriteSession: failed to free writer handle', toEngineError('free', e));
+            sendErrorReportForSearch(
+                'WriteSession: failed to free writer handle',
+                maybeWrapAsSearchLibraryError('free', e)
+            );
         }
     }
 
@@ -83,7 +86,7 @@ export class WriteSession {
             this.writer = null;
         } catch (e) {
             this.dispose();
-            throw toEngineError('commit', e);
+            throw maybeWrapAsSearchLibraryError('commit', e);
         }
 
         try {
@@ -121,7 +124,10 @@ export class WriteSession {
             try {
                 execution?.free();
             } catch (e) {
-                sendErrorReportForSearch('WriteSession: failed to free execution handle', toEngineError('free', e));
+                sendErrorReportForSearch(
+                    'WriteSession: failed to free execution handle',
+                    maybeWrapAsSearchLibraryError('free', e)
+                );
             }
         }
     }
