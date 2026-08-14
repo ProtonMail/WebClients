@@ -113,7 +113,7 @@ describe('PaymentMethodsTable', () => {
 
         render(<PaymentMethodsTable methods={[sepaMethod]} app={APPS.PROTONMAIL} />);
 
-        expect(screen.getByTestId('sepa-payment-method')).toHaveTextContent('SEPA Direct Debit');
+        expect(screen.getByTestId('sepa-payment-method')).toHaveTextContent('Bank Account');
 
         const sepaDetailsElement = screen.getByTestId('sepa-details');
         expect(sepaDetailsElement).toHaveTextContent(/IBAN DE .* 1234/);
@@ -285,7 +285,7 @@ describe('PaymentMethodsTable', () => {
         expect(cardDetails).toHaveLength(2);
         expect(cardDetails[0]).toHaveTextContent('Visa');
         expect(cardDetails[1]).toHaveTextContent('Mastercard');
-        expect(screen.getByTestId('sepa-payment-method')).toHaveTextContent('SEPA Direct Debit');
+        expect(screen.getByTestId('sepa-payment-method')).toHaveTextContent('Bank Account');
         const sepaDetailsElement = screen.getByTestId('sepa-details');
         expect(sepaDetailsElement).toHaveTextContent(/IBAN DE .* 5678/);
         expect(sepaDetailsElement.textContent).toMatch(formattedSavedSepaDetails(sepaMethod.Details));
