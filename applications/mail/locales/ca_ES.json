@@ -1730,6 +1730,18 @@
       ],
       "Migrate": [
         "Migrar"
+      ],
+      "Keep going": [
+        "Continua"
+      ],
+      "Run realistic session": [
+        "Inicia una sessió realista"
+      ],
+      "Stop here": [
+        "Parar aquí"
+      ],
+      "Write ${ count } logs": [
+        "Escriu ${ count } registres"
       ]
     },
     "action": {
@@ -4550,6 +4562,9 @@
       ],
       "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Feu clic amb el botó dret en un correu i seleccioneu «Moure a», o arrossegueu-lo i deixeu-lo anar en una altra categoria. En el futur, els correus similars s'hi classificaran automàticament."
+      ],
+      "No ads. No trackers": [
+        "Sense anuncis. Sense rastrejadors"
       ]
     },
     "description": {
@@ -9818,6 +9833,27 @@
       ],
       "Searched your mail": [
         "S'ha buscat al vostre correu"
+      ],
+      "I have not finished this one yet.": [
+        "Encara no he acabat aquesta."
+      ],
+      "Not supported by this browser": [
+        "Aquest navegador no ho admet"
+      ],
+      "Star emails": [
+        "Destaca correus electrònics"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Això està prenent molts passos. Hauria de continuar?"
+      ],
+      "Unstar emails": [
+        "Deixa de destacar correus electrònics"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Escriu ${ REALISTIC_ENTRIES } línies de registre realistes que van entrant a poc a poc al llarg d'un minut, com en una sessió real, en lloc de fer-ho tot de cop. Triga al voltant d'un minut a executar-se. Mantingueu aquesta pestanya en primer pla: les mesures de fotogrames s'aturen en segon pla."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Escriu línies de registre realistes una darrere l'altra i després les torna a llegir totes. Mostra com el cost d'escriptura i de lectura/exportació varia segons el nombre d'entrades emmagatzemades."
       ]
     },
     "info": {
@@ -11037,6 +11073,60 @@
       ],
       "No unread messages": [
         "No hi ha missatges no llegits"
+      ],
+      "Burst write": [
+        "Ràfegues d'escriptura"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Promocions, ofertes i correus electrònics de màrqueting"
+      ],
+      "Decrypt + parse": [
+        "Desxifra + analitza"
+      ],
+      "Dropped frames": [
+        "Fotogrames perduts"
+      ],
+      "Duration": [
+        "Durada"
+      ],
+      "Encrypt": [
+        "Xifratge"
+      ],
+      "Entries": [
+        "Entrades"
+      ],
+      "Export size": [
+        "Mida d'exportació"
+      ],
+      "IndexedDB retrieve": [
+        "Recuperació de l'IndexedDB"
+      ],
+      "IndexedDB store": [
+        "Emmagatzematge de l'IndexedDB"
+      ],
+      "Log performance": [
+        "Registres de rendiment"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Tasques llargues (≥ 50 ms)"
+      ],
+      "Read / export": [
+        "Llegeix / Exporta"
+      ],
+      "Realistic session": [
+        "Sessió realista"
+      ],
+      "Sum of write() calls": [
+        "Total de crides a write()"
+      ],
+      "Write": [
+        "Escriu"
+      ],
+      "Write (whole session)": [
+        "Escriu (tota la sessió)"
+      ],
+      "Write-chain drain after last line": [
+        "Buidatge de la cadena d'escriptura després de l'última línia"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12348,6 +12438,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés ampliat"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés limitat"
       ]
     },
     "new_plans: feature highlight": {
@@ -13210,7 +13306,7 @@
         "Recordeu-m'ho més tard"
       ],
       "Yes, don't show again": [
-        "Sí, no m'ho torneu a mostrar"
+        "Sí, no ho torneu a mostrar"
       ]
     },
     "Option group": {
@@ -14179,6 +14275,9 @@
       ],
       "User Admin": [
         "Administrador/a d'usuaris"
+      ],
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ]
     },
     "Role description": {
@@ -17141,6 +17240,15 @@
       ],
       "Domain names": [
         "Noms de domini"
+      ],
+      "Star emails": [
+        "Destaca correus electrònics"
+      ],
+      "Still working on it": [
+        "Encara hi estem treballant"
+      ],
+      "Unstar emails": [
+        "Deixa de destacar correus electrònics"
       ]
     },
     "Title header for keys table": {

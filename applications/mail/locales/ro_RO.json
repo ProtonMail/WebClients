@@ -1736,6 +1736,18 @@
       ],
       "Migrate": [
         "Migrare"
+      ],
+      "Keep going": [
+        "Continuă"
+      ],
+      "Run realistic session": [
+        "Executare sesiune realistă"
+      ],
+      "Stop here": [
+        "Oprește aici"
+      ],
+      "Write ${ count } logs": [
+        "Scriere ${ count } jurnale"
       ]
     },
     "action": {
@@ -2190,7 +2202,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TiB spațiu de stocare"
+        "2 TiB spațiu total"
       ],
       "3 TB data storage": [
         "3 TiB spațiu de stocare"
@@ -4588,6 +4600,9 @@
       ],
       "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Faceți clic dreapta pe un e-mail și selectați „Mutare în” sau glisați și plasați-l într-o altă categorie. Mesajele similare vor fi mutate automat acolo în viitor."
+      ],
+      "No ads. No trackers": [
+        "Fără reclame. Fără instrumente de urmărire."
       ]
     },
     "description": {
@@ -9979,6 +9994,27 @@
       ],
       "Searched your mail": [
         "Vi s-a căutat corespondența."
+      ],
+      "I have not finished this one yet.": [
+        "Pe acesta încă nu l-am terminat încă."
+      ],
+      "Not supported by this browser": [
+        "Nesuportat de acest navigator web"
+      ],
+      "Star emails": [
+        "Aplicare stea la mesaje"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Asta necesită mulți pași. Ar trebui să continui?"
+      ],
+      "Unstar emails": [
+        "Anulare stea de la mesaje"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Scriere ${ REALISTIC_ENTRIES } linii de jurnal realiste care se scurg treptat în mai mult de un minut, ca o sesiune reală, în loc să fie toate deodată. Durează aproximativ un minut să ruleze. Mențineți această filă focalizată: măsurătorile cadrelor se întrerup în fundal."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Scrie linii de jurnal realiste una după alta, apoi le citește pe toate înapoi. Arată cum costul de scriere și citire/exportare crește în funcție de numărul de intrări stocate."
       ]
     },
     "info": {
@@ -11206,6 +11242,60 @@
       ],
       "No unread messages": [
         "Nu sunt mesaje necitite"
+      ],
+      "Burst write": [
+        "Scriere în rafală"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Oferte, promoții și mesaje de marketing"
+      ],
+      "Decrypt + parse": [
+        "Decriptare + analizare"
+      ],
+      "Dropped frames": [
+        "Cadre pierdute"
+      ],
+      "Duration": [
+        "Durata"
+      ],
+      "Encrypt": [
+        "Criptare"
+      ],
+      "Entries": [
+        "Intrări"
+      ],
+      "Export size": [
+        "Mărime exportare"
+      ],
+      "IndexedDB retrieve": [
+        "Preluare IndexedDB"
+      ],
+      "IndexedDB store": [
+        "Stocare IndexedDB"
+      ],
+      "Log performance": [
+        "Jurnalizare performanță"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Sarcini lungi (≥ 50 ms)"
+      ],
+      "Read / export": [
+        "Citire/Exportare"
+      ],
+      "Realistic session": [
+        "Sesiune realistă"
+      ],
+      "Sum of write() calls": [
+        "Suma apelurilor write()"
+      ],
+      "Write": [
+        "Scriere"
+      ],
+      "Write (whole session)": [
+        "Scriere (întreaga sesiune)"
+      ],
+      "Write-chain drain after last line": [
+        "Ștergerea șirului de scriere după ultima linie"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12556,6 +12646,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces extins"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces limitat"
       ]
     },
     "new_plans: feature highlight": {
@@ -14408,6 +14504,9 @@
       ],
       "User Admin": [
         "Administrare utilizatori"
+      ],
+      "Organization Admin": [
+        "Administrator organizație"
       ]
     },
     "Role description": {
@@ -17457,6 +17556,15 @@
       ],
       "Domain names": [
         "Nume de domenii"
+      ],
+      "Star emails": [
+        "Marcare mesaje cu stea"
+      ],
+      "Still working on it": [
+        "Încă lucrez la asta"
+      ],
+      "Unstar emails": [
+        "Anulare stea de la mesaje"
       ]
     },
     "Title header for keys table": {

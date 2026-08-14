@@ -1697,6 +1697,12 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Keep going": [
+        "Nadaljuj …"
+      ],
+      "Stop here": [
+        "Tukaj se ustavi"
       ]
     },
     "action": {
@@ -9471,6 +9477,18 @@
       ],
       "Searched your mail": [
         "Vaša pošta je bila preiskana"
+      ],
+      "I have not finished this one yet.": [
+        "Tega še nisem dokončal."
+      ],
+      "Star emails": [
+        "Označi sporočila z zvezdico"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Za ta postopek je potrebnih več korakov. Nadaljujemo?"
+      ],
+      "Unstar emails": [
+        "Sporočilom odstrani zvezdico"
       ]
     },
     "info": {
@@ -11960,6 +11978,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z razširjenim dostopom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z omejenim dostopom"
       ]
     },
     "new_plans: feature highlight": {
@@ -12106,6 +12130,9 @@
       ],
       "Switch plans?": [
         "Zamenjaj paket?"
+      ],
+      "Review subscription": [
+        "Pregled naročnine"
       ]
     },
     "new_plans: tooltip": {
@@ -16664,6 +16691,15 @@
       ],
       "What are you migrating?": [
         "Kaj selite?"
+      ],
+      "Star emails": [
+        "Označi sporočila z zvezdico"
+      ],
+      "Still working on it": [
+        "Še vedno delam na tem"
+      ],
+      "Unstar emails": [
+        "Sporočilom odstrani zvezdico"
       ]
     },
     "Title header for keys table": {

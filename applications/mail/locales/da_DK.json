@@ -1730,6 +1730,12 @@
       ],
       "Migrate": [
         "Migrer"
+      ],
+      "Keep going": [
+        "Fortsæt"
+      ],
+      "Stop here": [
+        "Stop her"
       ]
     },
     "action": {
@@ -9788,6 +9794,39 @@
       ],
       "You": [
         "Dig"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } mærkat"
+      ],
+      "I have not finished this one yet.": [
+        "Denne er endnu ikke afsluttet."
+      ],
+      "Searched ${ targetName }": [
+        "Søgte efter ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Søgte efter mails fra ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Søgte efter mails til ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Søgte på \"${ keyword }\""
+      ],
+      "Searched your mail": [
+        "Søgte dine mails"
+      ],
+      "Star emails": [
+        "Stjernemarker e-mails"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Det her kræver meget... Skal det fortsætte?"
+      ],
+      "Unstar emails": [
+        "Fjern stjernemarkering fra e-mails"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Du omdirigeres til ${ IDEAL_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
       ]
     },
     "info": {
@@ -11001,6 +11040,15 @@
       ],
       "Primary - Anything that needs your attention, plus emails from disabled categories": [
         "Primære - alt, der kræver din opmærksomhed, samt e-mails fra deaktiverede kategorier"
+      ],
+      "Duration": [
+        "Varighed"
+      ],
+      "No unread conversations": [
+        "Ingen ulæste samtaler"
+      ],
+      "No unread messages": [
+        "Ingen ulæste beskeder"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12312,6 +12360,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med udvidet adgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrænset adgang"
       ]
     },
     "new_plans: feature highlight": {
@@ -13456,6 +13510,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betal med ${ IDEAL_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta er blevet ændret til euro (€), fordi ${ IDEAL_BRAND_NAME } kun understøtter betalinger i euro."
       ]
     },
     "Payments.Error": {
@@ -13476,6 +13536,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Dit kort blev afvist. Prøv et andet kort eller kontakt din bank for at godkende betalingen."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Kunne ikke initialisere ${ IDEAL_BRAND_NAME }. Prøv igen senere."
       ]
     },
     "Payments.error": {
@@ -14134,6 +14197,9 @@
       ],
       "User Admin": [
         "Brugeradmin"
+      ],
+      "Organization Admin": [
+        "Organisationsadmin"
       ]
     },
     "Role description": {
@@ -17096,6 +17162,15 @@
       ],
       "What are you migrating?": [
         "Hvad migrerer du?"
+      ],
+      "Star emails": [
+        "Stjernemarker e-mails"
+      ],
+      "Still working on it": [
+        "Arbejder stadig på det"
+      ],
+      "Unstar emails": [
+        "Fjern stjernemarkering fra e-mails"
       ]
     },
     "Title header for keys table": {
@@ -17759,6 +17834,11 @@
       ],
       "name": [
         "navn"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ved at bekræfte denne betaling autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at instruere din bank om at debitere din konto tilsvarende. Du kan få en tilbagebetaling inden for 8 uger fra debiteringsdatoen, under betingelserne i din aftale med din bank."
       ]
     }
   }
