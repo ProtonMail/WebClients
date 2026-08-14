@@ -48,24 +48,25 @@ export function shouldShowRemainingLimitIndicator(remaining: number | undefined)
     return isLimitExhausted(remaining) || isLimitLow(remaining);
 }
 
-export function shouldShowModelSwitchSuggestion({
-    hasLumoPlus,
-    selectedModelTier,
-    remainingLimits,
-    weeklyLimitUpsellVisible,
-    messageCount,
-    isGenerating,
-    isMaxAvailableByFlag,
-}: {
+export type ModelSwitchSuggestionArgs = {
     hasLumoPlus: boolean;
     selectedModelTier: UsageModelTier;
     remainingLimits: LumoRemainingLimits | null;
     weeklyLimitUpsellVisible: boolean;
     messageCount: number;
-    isGenerating: boolean;
     isMaxAvailableByFlag: boolean;
-}): boolean {
-    if (hasLumoPlus || isGenerating || weeklyLimitUpsellVisible || !remainingLimits || !isMaxAvailableByFlag) {
+};
+
+/** Whether the model-switch upsell applies at all (ignores in-flight generation). */
+export function isModelSwitchSuggestionEligible({
+    hasLumoPlus,
+    selectedModelTier,
+    remainingLimits,
+    weeklyLimitUpsellVisible,
+    messageCount,
+    isMaxAvailableByFlag,
+}: ModelSwitchSuggestionArgs): boolean {
+    if (hasLumoPlus || weeklyLimitUpsellVisible || !remainingLimits || !isMaxAvailableByFlag) {
         return false;
     }
 
@@ -78,6 +79,13 @@ export function shouldShowModelSwitchSuggestion({
     }
 
     return messageCount >= 2;
+}
+
+export function shouldShowModelSwitchSuggestion({
+    isGenerating,
+    ...args
+}: ModelSwitchSuggestionArgs & { isGenerating: boolean }): boolean {
+    return isModelSwitchSuggestionEligible(args) && !isGenerating;
 }
 
 export function getRemainingForModelTier(
