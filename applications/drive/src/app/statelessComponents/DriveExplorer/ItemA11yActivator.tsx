@@ -6,6 +6,10 @@ interface ItemA11yActivatorProps {
     onMouseDown: (event: React.MouseEvent) => void;
     onClick: (event: React.MouseEvent) => void;
     onDoubleClick: (event: React.MouseEvent) => void;
+    onTouchStart: (event: React.TouchEvent) => void;
+    onTouchMove: (event: React.TouchEvent) => void;
+    onTouchCancel: (event: React.TouchEvent) => void;
+    onTouchEnd: (event: React.TouchEvent) => void;
     onKeyDown: (event: React.KeyboardEvent) => void;
 }
 
@@ -40,6 +44,10 @@ export const ItemA11yActivator = ({
     onMouseDown,
     onClick,
     onDoubleClick,
+    onTouchStart,
+    onTouchMove,
+    onTouchCancel,
+    onTouchEnd,
     onKeyDown,
 }: ItemA11yActivatorProps) => (
     <button
@@ -53,6 +61,10 @@ export const ItemA11yActivator = ({
         onMouseDown={onMouseDown}
         onClick={onClick}
         onDoubleClick={onDoubleClick}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchCancel={onTouchCancel}
+        onTouchEnd={onTouchEnd}
         onKeyDown={onKeyDown}
     />
 );

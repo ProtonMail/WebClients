@@ -1,4 +1,12 @@
 .item-a11y-activator {
+	// Opt out of the browser's double-tap-to-zoom gesture (panning and pinch-zoom stay
+	// allowed). Double tap opens the item, handled in useItemInteraction; without this
+	// the same gesture would zoom the page as well, whenever the page is zoomable -
+	// which is the case when a phone or tablet is set to "Request desktop site" and the
+	// browser overrides our width=device-width viewport. It also drops the tap delay
+	// browsers keep on zoomable pages, so the first tap selects without waiting.
+	touch-action: manipulation;
+
 	// Suppress the button's native outline — the row tr draws it instead via
 	// :focus-within below, so it is never clipped by overflow:hidden containers.
 	&:focus-visible {
