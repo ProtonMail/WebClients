@@ -827,6 +827,7 @@ export const InnerSignupContextProvider = ({
             defaultEmail={accountFormDataConfig.defaultEmail}
             availableSignupTypes={accountFormDataConfig.availableSignupTypes}
             domains={domainsData.domains}
+            domainsLoaded={domainsData.domainsLoaded}
         >
             <SignupContext.Provider value={value}>{children}</SignupContext.Provider>
         </AccountFormDataContextProvider>

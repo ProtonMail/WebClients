@@ -20,6 +20,7 @@ import {
     usernameNoEmailValidator,
     usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
+import { createPromise } from '@proton/shared/lib/helpers/promise';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -82,6 +83,7 @@ interface Props {
     children: ReactNode;
     availableSignupTypes: Set<SignupType>;
     domains: string[];
+    domainsLoaded: boolean;
     defaultEmail?: string;
 }
 
@@ -385,7 +387,13 @@ type DeepPartial<T> = T extends object
       }
     : T;
 
-export const AccountFormDataContextProvider = ({ children, availableSignupTypes, domains, defaultEmail }: Props) => {
+export const AccountFormDataContextProvider = ({
+    children,
+    availableSignupTypes,
+    domains,
+    domainsLoaded,
+    defaultEmail,
+}: Props) => {
     const [, setRerender] = useState({});
     const silentApi = useSilentApi();
 
@@ -406,8 +414,20 @@ export const AccountFormDataContextProvider = ({ children, availableSignupTypes,
     // Context (props) refs
     const context: Context = { availableSignupTypes, domains, defaultEmail };
     const contextRef = useRef<Context>(context);
+    // Resolves once the domains have been fetched for anti-abuse system checks
+    const domainsLoadedRef = useRef<{
+        deferredPromise: ReturnType<typeof createPromise<void>>;
+        resolved: boolean;
+    } | null>(null);
+    if (!domainsLoadedRef.current) {
+        domainsLoadedRef.current = { deferredPromise: createPromise<void>(), resolved: false };
+    }
     useEffect(() => {
         contextRef.current = context;
+        if (domainsLoaded && domainsLoadedRef.current && !domainsLoadedRef.current.resolved) {
+            domainsLoadedRef.current.deferredPromise.resolve();
+            domainsLoadedRef.current.resolved = true;
+        }
     });
 
     const passwordStrengthIndicatorSpotlight = usePasswordStrengthIndicatorSpotlight();
@@ -483,6 +503,13 @@ export const AccountFormDataContextProvider = ({ children, availableSignupTypes,
         const value = email;
         usernameAsyncValidator.trigger({
             validate: async (value, abortController) => {
+                if (!domainsLoadedRef.current) {
+                    throw new Error('Unexpected domains ref state');
+                }
+                await domainsLoadedRef.current.deferredPromise.promise;
+                if (abortController.signal.aborted) {
+                    throw new Error('Aborted');
+                }
                 const result = await validateEmailAvailability(value, silentApi, abortController);
                 return result;
             },
