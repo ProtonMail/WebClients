@@ -75,4 +75,17 @@ describe('LumoAgentPanel', () => {
 
         expect(screen.queryByRole('button', { name: 'Stop' })).toBeNull();
     });
+
+    it('closes off Confirm while the card body has nothing to apply', () => {
+        const canApply = (params: Record<string, any>) => (params.ids as string[]).length > 0;
+        const cardRenderers = { move_items: { icon: IcPencil, title: () => 'Move emails', canApply } };
+        const emptySelection: LumoAgentItem = {
+            ...pendingConfirm,
+            action: { type: 'move_items', ids: [], target: 'Archive' },
+        };
+
+        renderPanel({ items: [userTurn, emptySelection], cardRenderers, isBusy: true });
+
+        expect(screen.getByRole('button', { name: 'Confirm' })).toBeDisabled();
+    });
 });

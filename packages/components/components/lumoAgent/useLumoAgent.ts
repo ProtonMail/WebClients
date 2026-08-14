@@ -138,16 +138,30 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         [nextId, pushItem]
     );
 
-    const settleLastPendingConfirm = useCallback((status: 'applied' | 'cancelled') => {
-        setItems((prev) => {
-            const index = [...prev].reverse().findIndex((item) => item.kind === 'confirm' && item.status === 'pending');
-            if (index === -1) {
-                return prev;
-            }
-            const realIndex = prev.length - 1 - index;
-            return prev.map((item, i) => (i === realIndex && item.kind === 'confirm' ? { ...item, status } : item));
-        });
-    }, []);
+    /** `appliedParams` replace the proposed ones, so the settled tile reports what ran, not what was offered. */
+    const settleLastPendingConfirm = useCallback(
+        (status: 'applied' | 'cancelled', appliedParams?: Record<string, any>) => {
+            setItems((prev) => {
+                const index = [...prev]
+                    .reverse()
+                    .findIndex((item) => item.kind === 'confirm' && item.status === 'pending');
+                if (index === -1) {
+                    return prev;
+                }
+                const realIndex = prev.length - 1 - index;
+                return prev.map((item, i) =>
+                    i === realIndex && item.kind === 'confirm'
+                        ? {
+                              ...item,
+                              status,
+                              action: appliedParams ? { ...appliedParams, type: item.action.type } : item.action,
+                          }
+                        : item
+                );
+            });
+        },
+        []
+    );
 
     const confirm = useCallback(
         (params: Record<string, any>) => {
@@ -156,7 +170,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 return;
             }
             confirmResolveRef.current = null;
-            settleLastPendingConfirm('applied');
+            settleLastPendingConfirm('applied', params);
             resolve({ action: 'apply', params });
         },
         [settleLastPendingConfirm]
