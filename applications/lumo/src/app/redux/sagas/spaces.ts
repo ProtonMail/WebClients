@@ -259,6 +259,7 @@ export function* handleDeleteAllSpaces(): SagaIterator<any> {
             updateLumoUserSettingsWithAutoSave({
                 memories: [],
                 memoryPromptsSinceAutoSave: 0,
+                memoryLastProcessedMessageAt: undefined,
             })
         );
 
