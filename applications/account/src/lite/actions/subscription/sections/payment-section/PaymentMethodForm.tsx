@@ -15,6 +15,7 @@ import { CurrencyOverrideBannerText } from '@proton/components/containers/paymen
 import PaymentMethodDetails from '@proton/components/containers/payments/methods/PaymentMethodDetails';
 import { NoPaymentRequiredNote } from '@proton/components/containers/payments/subscription/modal-components/NoPaymentRequiredNote';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import { IdealAccountHolderInput } from '@proton/components/payments/chargebee/IdealAccountHolderInput';
 import { type DirectDebitProps, SepaDirectDebit } from '@proton/components/payments/chargebee/SepaDirectDebit';
 import type { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
@@ -106,6 +107,7 @@ const PaymentMethodForm = ({
         iframeHandles,
         chargebeeCard,
         chargebeePaypal,
+        chargebeeIdeal,
         directDebit,
         themeCode,
         showTaxCountry,
@@ -238,6 +240,7 @@ const PaymentMethodForm = ({
                 )}
                 {selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL && (
                     <>
+                        <IdealAccountHolderInput chargebeeIdeal={chargebeeIdeal} />
                         <div className="mt-2">{taxFields}</div>
                         <TotalAmountWithDiscount
                             amountDue={checkResult.AmountDue}

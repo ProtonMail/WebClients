@@ -341,7 +341,7 @@ export async function createPaymentTokenV5Paypal(
 export async function createPaymentTokenV5Ideal(
     params: ChargebeeIdealParams,
     { api }: Dependencies,
-    abortController?: AbortController
+    abortSignal?: AbortSignal
 ): Promise<
     {
         paymentIntent: PaymentIntent;
@@ -356,11 +356,7 @@ export async function createPaymentTokenV5Ideal(
         },
     };
 
-    const {
-        Token: PaymentToken,
-        Status,
-        Data: paymentIntentData,
-    } = await fetchPaymentIntentV5(api, data, abortController?.signal);
+    const { Token: PaymentToken, Status, Data: paymentIntentData } = await fetchPaymentIntentV5(api, data, abortSignal);
 
     const paymentIntent = convertPaymentIntentData(paymentIntentData);
     const authorizedStatus: AuthorizedV5PaymentToken = {

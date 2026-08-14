@@ -3,7 +3,7 @@ import { fireEvent } from '@testing-library/dom';
 import type { BinData } from '../lib';
 import type { AuthorizedPaymentIntent, DirectDebitCustomer, PaymentIntent } from '../lib/types';
 import { resetChargebee } from './chargebee';
-import { FALLBACK_EMAIL, formatCustomer, initialize } from './chargebee-entry';
+import { FALLBACK_EMAIL, FALLBACK_USERNAME, formatCustomer, initialize } from './chargebee-entry';
 import type { DirectDebitSubmitEvent, GetHeightEvent, SetConfigurationEvent } from './message-bus';
 import { getMessageBus } from './message-bus';
 
@@ -46,11 +46,13 @@ const directDebitHandlerMock = {
 };
 
 const loadMock = jest.fn().mockResolvedValue(directDebitHandlerMock);
+const handlePaymentMock = jest.fn().mockResolvedValue(undefined);
 
 const chargebeeInitMock = jest.fn().mockReturnValue({
     chargebeeMock: true,
     load: loadMock,
     createComponent: createComponentMock,
+    handlePayment: handlePaymentMock,
 });
 
 beforeEach(() => {
@@ -676,6 +678,60 @@ describe('Direct Debit', () => {
                     stack: error.stack,
                     name: error.name,
                 }),
+            })
+        );
+    });
+});
+
+describe('iDEAL', () => {
+    const paymentIntent = { email: 'andy.yen@proton.me' } as PaymentIntent;
+
+    beforeEach(async () => {
+        await initChargebee({
+            ...defaultSetConfigurationEvent,
+            paymentMethodType: 'ideal' as const,
+        });
+    });
+
+    const clickIdealButtonWithName = async (userName: string) => {
+        sendEventToChargebee({
+            type: 'set-ideal-payment-intent',
+            correlationId: 'ideal-123',
+            paymentIntent,
+            userName,
+            buttonLabel: 'Pay with iDEAL',
+        });
+
+        // Wait for the message bus to process the event
+        await new Promise((resolve) => setTimeout(resolve, 0));
+
+        document.querySelector<HTMLButtonElement>('#ideal-button')!.click();
+    };
+
+    it('should pay with the account holder name provided by the parent', async () => {
+        await clickIdealButtonWithName('Andy Yen');
+
+        expect(handlePaymentMock).toHaveBeenCalledWith(
+            'ideal',
+            expect.objectContaining({
+                paymentInfo: {
+                    userName: 'Andy Yen',
+                    userEmail: 'andy.yen@proton.me',
+                },
+            })
+        );
+    });
+
+    it('should fall back when the account holder name is missing', async () => {
+        await clickIdealButtonWithName('');
+
+        expect(handlePaymentMock).toHaveBeenCalledWith(
+            'ideal',
+            expect.objectContaining({
+                paymentInfo: {
+                    userName: FALLBACK_USERNAME,
+                    userEmail: 'andy.yen@proton.me',
+                },
             })
         );
     });

@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { buyCredit, createToken } from '@proton/payments/core/api/api';
@@ -23,6 +23,20 @@ import CreditsModal from './CreditsModal';
 import PaymentMethodSelector from './methods/PaymentMethodSelector';
 
 jest.mock('@proton/components/components/portal/Portal');
+
+const mockPaymentMethodSelectorRenders = { count: 0 };
+jest.mock('./methods/PaymentMethodSelector', () => {
+    const actual = jest.requireActual('./methods/PaymentMethodSelector');
+
+    return {
+        __esModule: true,
+        ...actual,
+        default: (props: any) => {
+            mockPaymentMethodSelectorRenders.count++;
+            return actual.default(props);
+        },
+    };
+});
 
 const createTokenMock = jest.fn((request) => {
     const type = request?.data?.Payment?.Type ?? '';
@@ -53,6 +67,10 @@ beforeEach(() => {
 
     mockPaymentStatus();
     mockPaymentMethods().noSaved();
+});
+
+afterEach(() => {
+    jest.restoreAllMocks();
 });
 
 const ContextCreditsModal = applyHOCs(
@@ -588,4 +606,24 @@ it('should hide "You will be charged" text when amount is below minimum', async 
     await waitFor(() => {
         expect(queryByTestId('amountToCharge-text')).toBeFalsy();
     });
+});
+
+it('should not re-render in a loop while the payment methods settle', async () => {
+    mockPaymentMethodSelectorRenders.count = 0;
+
+    render(<ContextCreditsModal paymentStatus={status} open={true} app={APPS.PROTONMAIL} />);
+
+    await waitFor(() => expect(mockPaymentMethodSelectorRenders.count).toBeGreaterThan(0));
+    await wait(500);
+
+    expect(mockPaymentMethodSelectorRenders.count).toBeLessThan(20);
+});
+
+it('should offer iDEAL when the account country is the Netherlands', async () => {
+    const useFlagMock = jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag');
+    useFlagMock.mockImplementation((flag) => flag === 'EnableIdeal');
+
+    render(<ContextCreditsModal paymentStatus={{ ...status, CountryCode: 'NL' }} open={true} app={APPS.PROTONMAIL} />);
+
+    expect(await screen.findByText('iDEAL')).toBeInTheDocument();
 });

@@ -60,11 +60,12 @@ export const ChargebeeIdealButton = ({
     width: widthProp,
     loading,
     onClick,
+    children,
     ...props
 }: ChargebeeIdealButtonProps) => {
     const initializing = props.chargebeeIdeal.initializing;
     const initializationError = props.chargebeeIdeal.initializationError;
-    const disabled = props.disabled;
+    const disabled = props.disabled || !props.chargebeeIdeal.readyToPay;
 
     const renderFakeButton = initializing || initializationError || disabled || formInvalid || loading;
     const fakeIdealButton = useMemo(() => {
@@ -72,6 +73,7 @@ export const ChargebeeIdealButton = ({
             className: '',
             onClick: () => onClick?.({ source: 'fake-button', type: 'ideal' }),
             ...props,
+            children: children ?? c('Payments').t`Pay with ${IDEAL_BRAND_NAME}`,
         };
 
         let button: ReactNode;
@@ -86,7 +88,7 @@ export const ChargebeeIdealButton = ({
         if (renderFakeButton) {
             return <div className="w-full">{button}</div>;
         }
-    }, [initializing, initializationError, disabled, renderFakeButton, loading, formInvalid, onClick]);
+    }, [initializing, initializationError, disabled, renderFakeButton, loading, formInvalid, onClick, children]);
 
     return (
         <div className="relative">
