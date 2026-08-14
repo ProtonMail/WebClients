@@ -1356,6 +1356,7 @@ const Step1 = ({
                                     <AccountFormDataContextProvider
                                         availableSignupTypes={new Set([SignupType.External])}
                                         domains={model.domains}
+                                        domainsLoaded={!model.loadingDependencies}
                                         defaultEmail={defaultEmail}
                                     >
                                         <AccountStepDetails

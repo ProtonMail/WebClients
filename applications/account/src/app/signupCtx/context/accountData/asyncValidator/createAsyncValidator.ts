@@ -52,10 +52,16 @@ export const createAsyncValidator = () => {
                 return;
             }
 
-            abortController = new AbortController();
+            const currentAbortController = new AbortController();
+            abortController = currentAbortController;
 
-            validate(value, abortController)
+            validate(value, currentAbortController)
                 .then((result) => {
+                    // This run has been superseded, its result is stale even if the key is unchanged
+                    if (currentAbortController.signal.aborted) {
+                        return;
+                    }
+
                     if (
                         result.state === AsyncValidationStateValue.Success ||
                         result.state === AsyncValidationStateValue.Fatal
