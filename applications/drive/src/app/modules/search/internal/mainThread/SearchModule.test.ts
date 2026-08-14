@@ -4,7 +4,7 @@ import 'fake-indexeddb/auto';
 import { SearchModule } from './SearchModule';
 
 jest.mock('../shared/Logger', () => ({
-    Logger: { info: jest.fn(), error: jest.fn(), listenForWorkerLogs: jest.fn() },
+    Logger: { debug: jest.fn(), info: jest.fn(), warn: jest.fn(), error: jest.fn(), listenForWorkerLogs: jest.fn() },
 }));
 
 jest.mock('../shared/searchMetrics', () => ({

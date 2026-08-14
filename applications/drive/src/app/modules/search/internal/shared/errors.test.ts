@@ -5,12 +5,14 @@ import {
     ServerError as SdkServerError,
 } from '@proton/drive';
 
+import { setBridgedErrorDecision } from './bridgedErrorDecision';
 import {
     InvalidIndexerState,
     MissingUserKeyEncryptionError,
     SearchBlobCryptoError,
     SearchLibraryError,
     classifyError,
+    isAbortError,
     isRepairableError,
 } from './errors';
 
@@ -82,15 +84,19 @@ describe('classifyError', () => {
                 reason: 'offline',
             });
         });
+    });
 
-        it('plain Error with name RateLimitedError (e.g. crossed the Comlink boundary) -> transient rate-limited', () => {
-            const e = Object.assign(new Error('429'), { name: 'RateLimitedError' });
-            expect(classifyError(e)).toEqual({ kind: 'transient', reason: 'rate-limited' });
-        });
+    describe('across the Comlink boundary', () => {
+        // End-to-end coverage of the decision transport lives in comlinkErrorTransferHandler.test.ts,
+        // driving the real handler. Reproducing its steps here would only assert that a value put
+        // into the WeakMap comes back out. What is worth pinning here is the premise: that a cloned
+        // error really is unclassifiable, which is the whole reason the transport exists.
+        it('structured clone destroys everything classifyError would otherwise match on', () => {
+            const cloned: unknown = structuredClone(new SdkServerError('5xx'));
 
-        it('plain Error with name ServerError (e.g. crossed the Comlink boundary) -> transient server', () => {
-            const e = Object.assign(new Error('5xx'), { name: 'ServerError' });
-            expect(classifyError(e)).toEqual({ kind: 'transient', reason: 'server' });
+            expect(cloned).not.toBeInstanceOf(SdkServerError);
+            expect(cloned).toHaveProperty('name', 'Error');
+            expect(classifyError(cloned)).toEqual({ kind: 'transient', reason: 'unknown' });
         });
     });
 
@@ -107,9 +113,20 @@ describe('classifyError', () => {
             });
         });
 
-        it('plain Error with name AbortError (e.g. crossed the Comlink boundary) -> transient abort', () => {
+        it('a bare Error named AbortError is NOT an abort: no such shape reaches us', () => {
+            // The SDK's AbortError is a real subclass, and a crossed one arrives named "Error", so
+            // this shape only ever existed in tests. isAbortError relies on the bridged decision.
             const e = Object.assign(new Error('Request aborted'), { name: 'AbortError' });
-            expect(classifyError(e)).toEqual({ kind: 'transient', reason: 'abort' });
+            expect(classifyError(e)).toEqual({ kind: 'transient', reason: 'unknown' });
+        });
+
+        it('an SdkAbortError that crossed the boundary is still recognised by isAbortError', () => {
+            const decision = classifyError(new SdkAbortError('aborted'));
+            const received: unknown = structuredClone(new SdkAbortError('aborted'));
+            expect(isAbortError(received)).toBe(false);
+
+            setBridgedErrorDecision(received, decision);
+            expect(isAbortError(received)).toBe(true);
         });
     });
 
@@ -155,7 +172,6 @@ describe('isRepairableError', () => {
     it('treats abort as not repairable', () => {
         expect(isRepairableError(new DOMException('aborted', 'AbortError'))).toBe(false);
         expect(isRepairableError(new SdkAbortError('aborted'))).toBe(false);
-        expect(isRepairableError(Object.assign(new Error('Request aborted'), { name: 'AbortError' }))).toBe(false);
     });
 
     it('treats permanent errors as not repairable', () => {
