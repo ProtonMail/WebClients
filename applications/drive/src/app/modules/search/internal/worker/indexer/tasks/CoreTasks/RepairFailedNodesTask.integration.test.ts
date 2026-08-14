@@ -7,6 +7,7 @@ import type { NodeEntity, NodeType } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import { SearchDB } from '../../../../shared/SearchDB';
+import { RepairableNodeError } from '../../../../shared/errors';
 import type { TreeEventScopeId } from '../../../../shared/types';
 import { FakeMainThreadBridge } from '../../../../testing/FakeMainThreadBridge';
 import { findDocumentsByTag } from '../../../../testing/indexHelpers';
@@ -85,7 +86,7 @@ class DecryptionControllablePopulator extends NodeTreeIndexPopulator {
         reindexEpoch = 0
     ): IndexEntry {
         if (this.undecryptable.has(node.uid)) {
-            throw new Error(`simulated decryption failure for ${node.uid}`);
+            throw new RepairableNodeError(`simulated decryption failure for ${node.uid}`, null);
         }
         return super.createEntryForNode(node, parentPath, generation, reindexEpoch);
     }

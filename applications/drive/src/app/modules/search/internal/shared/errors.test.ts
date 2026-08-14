@@ -9,11 +9,13 @@ import { setBridgedErrorDecision } from './bridgedErrorDecision';
 import {
     InvalidIndexerState,
     MissingUserKeyEncryptionError,
+    RepairableNodeError,
     SearchBlobCryptoError,
     SearchLibraryError,
     classifyError,
     isAbortError,
     isRepairableError,
+    maybeWrapAsRepairableNodeError,
 } from './errors';
 
 describe('classifyError', () => {
@@ -169,29 +171,73 @@ describe('classifyError', () => {
 });
 
 describe('isRepairableError', () => {
-    it('treats abort as not repairable', () => {
+    it('is true only for RepairableNodeError, regardless of the wrapped cause', () => {
+        expect(isRepairableError(new RepairableNodeError('decryption failed', new Error('decryption failed')))).toBe(
+            true
+        );
+    });
+
+    it('is false for every other error shape, even ones classifyError buckets as unknown', () => {
         expect(isRepairableError(new DOMException('aborted', 'AbortError'))).toBe(false);
-        expect(isRepairableError(new SdkAbortError('aborted'))).toBe(false);
-    });
-
-    it('treats permanent errors as not repairable', () => {
-        expect(isRepairableError(new DOMException('', 'QuotaExceededError'))).toBe(false);
-        expect(isRepairableError(new DOMException('', 'VersionError'))).toBe(false);
-        expect(isRepairableError(new InvalidIndexerState('bad'))).toBe(false);
         expect(isRepairableError(new SearchLibraryError('wasm crash', null))).toBe(false);
-        expect(isRepairableError(new SearchBlobCryptoError(new DOMException('', 'OperationError')))).toBe(false);
-        expect(isRepairableError(new MissingUserKeyEncryptionError())).toBe(false);
-    });
-
-    it('treats known transient network-family errors as not repairable', () => {
         expect(isRepairableError(new SdkRateLimitedError('429'))).toBe(false);
-        expect(isRepairableError(new SdkServerError('5xx'))).toBe(false);
-        expect(isRepairableError(new SdkConnectionError('connection'))).toBe(false);
+        expect(isRepairableError(new Error('decryption failed'))).toBe(false);
+        expect(isRepairableError('string')).toBe(false);
+        expect(isRepairableError({ random: 'object' })).toBe(false);
+    });
+});
+
+describe('maybeWrapAsRepairableNodeError', () => {
+    it('leaves abort errors unwrapped', () => {
+        expect(maybeWrapAsRepairableNodeError(new DOMException('aborted', 'AbortError'), 'msg')).not.toBeInstanceOf(
+            RepairableNodeError
+        );
+        expect(maybeWrapAsRepairableNodeError(new SdkAbortError('aborted'), 'msg')).not.toBeInstanceOf(
+            RepairableNodeError
+        );
     });
 
-    it('treats unknown deterministic errors as node-scoped (repairable)', () => {
-        expect(isRepairableError(new Error('decryption failed'))).toBe(true);
-        expect(isRepairableError('string')).toBe(true);
-        expect(isRepairableError({ random: 'object' })).toBe(true);
+    it('leaves permanent errors unwrapped - systemic, not this node', () => {
+        expect(maybeWrapAsRepairableNodeError(new DOMException('', 'QuotaExceededError'), 'msg')).not.toBeInstanceOf(
+            RepairableNodeError
+        );
+        expect(maybeWrapAsRepairableNodeError(new DOMException('', 'VersionError'), 'msg')).not.toBeInstanceOf(
+            RepairableNodeError
+        );
+        expect(maybeWrapAsRepairableNodeError(new InvalidIndexerState('bad'), 'msg')).not.toBeInstanceOf(
+            RepairableNodeError
+        );
+        expect(maybeWrapAsRepairableNodeError(new SearchLibraryError('wasm crash', null), 'msg')).not.toBeInstanceOf(
+            RepairableNodeError
+        );
+        expect(
+            maybeWrapAsRepairableNodeError(new SearchBlobCryptoError(new DOMException('', 'OperationError')), 'msg')
+        ).not.toBeInstanceOf(RepairableNodeError);
+        expect(maybeWrapAsRepairableNodeError(new MissingUserKeyEncryptionError(), 'msg')).not.toBeInstanceOf(
+            RepairableNodeError
+        );
+    });
+
+    it('leaves known transient network-family errors unwrapped - retry the whole batch, not the node', () => {
+        expect(maybeWrapAsRepairableNodeError(new SdkRateLimitedError('429'), 'msg')).not.toBeInstanceOf(
+            RepairableNodeError
+        );
+        expect(maybeWrapAsRepairableNodeError(new SdkServerError('5xx'), 'msg')).not.toBeInstanceOf(
+            RepairableNodeError
+        );
+        expect(maybeWrapAsRepairableNodeError(new SdkConnectionError('connection'), 'msg')).not.toBeInstanceOf(
+            RepairableNodeError
+        );
+    });
+
+    it('wraps unknown deterministic errors as a RepairableNodeError carrying the original as cause', () => {
+        const cause = new Error('decryption failed');
+        const wrapped = maybeWrapAsRepairableNodeError(cause, 'failed to get node x');
+        expect(wrapped).toBeInstanceOf(RepairableNodeError);
+        expect((wrapped as RepairableNodeError).message).toBe('failed to get node x');
+        expect((wrapped as RepairableNodeError).cause).toBe(cause);
+
+        expect(maybeWrapAsRepairableNodeError('string', 'msg')).toBeInstanceOf(RepairableNodeError);
+        expect(maybeWrapAsRepairableNodeError({ random: 'object' }, 'msg')).toBeInstanceOf(RepairableNodeError);
     });
 });
