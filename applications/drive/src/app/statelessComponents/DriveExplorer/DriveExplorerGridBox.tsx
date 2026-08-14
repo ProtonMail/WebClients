@@ -74,6 +74,10 @@ export const DriveExplorerGridBox = ({
         handleMouseDown,
         handleClick,
         handleDoubleClick,
+        handleTouchStart,
+        handleTouchMove,
+        handleTouchCancel,
+        handleTouchEnd,
         handleContextMenu,
         handleKeyDown,
         handleDragStart: handleDragStartSelection,
@@ -141,6 +145,10 @@ export const DriveExplorerGridBox = ({
                     onMouseDown={handleMouseDown}
                     onClick={handleClick}
                     onDoubleClick={handleDoubleClick}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchCancel={handleTouchCancel}
+                    onTouchEnd={handleTouchEnd}
                     onKeyDown={handleKeyDown}
                 />
                 {showCheckboxColumn && (

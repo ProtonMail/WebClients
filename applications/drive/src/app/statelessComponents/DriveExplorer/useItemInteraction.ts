@@ -1,6 +1,12 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import type { DragMoveControls, DriveExplorerConditions, DriveExplorerEvents, DriveExplorerSelection } from './types';
+
+const TOUCH_DOUBLE_TAP_MS = 500;
+
+// A tap is allowed to wander a little: a finger never lands perfectly still, and a
+// mouse click in Chrome's touch emulation drifts a pixel or two.
+const TOUCH_MOVE_TOLERANCE_PX = 10;
 
 interface UseItemInteractionParams {
     itemId: string;
@@ -71,11 +77,93 @@ export const useItemInteraction = ({
 
     const isDoubleClickable = conditions.isDoubleClickable(itemId);
 
+    // Touch cannot rely on the browser synthesizing a dblclick out of two taps: while
+    // the page is zoomable - a phone or tablet set to "Request desktop site", Chrome's
+    // responsive mode - the second tap is claimed by the double-tap-to-zoom gesture and
+    // never reaches us. So the taps are counted here instead.
+    const tapStartRef = useRef<{ x: number; y: number } | null>(null);
+    const tapTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+    const openedByTouchTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+    const openedByTouchRef = useRef(false);
+
+    useEffect(
+        () => () => {
+            clearTimeout(tapTimerRef.current);
+            clearTimeout(openedByTouchTimerRef.current);
+        },
+        []
+    );
+
     const handleDoubleClick = useCallback(
         (event: React.MouseEvent) => {
+            // The touch path already opened this item; ignore the dblclick some
+            // browsers still synthesize for the second tap so it does not open twice.
+            if (openedByTouchRef.current) {
+                return;
+            }
             if (isDoubleClickable) {
                 events?.onItemDoubleClick?.(itemId, event);
             }
+        },
+        [isDoubleClickable, events, itemId]
+    );
+
+    const handleTouchStart = useCallback((event: React.TouchEvent) => {
+        const touch = event.changedTouches[0];
+        tapStartRef.current = touch ? { x: touch.clientX, y: touch.clientY } : null;
+    }, []);
+
+    const handleTouchMove = useCallback((event: React.TouchEvent) => {
+        const start = tapStartRef.current;
+        const touch = event.changedTouches[0];
+        if (!start || !touch) {
+            return;
+        }
+        const hasLeftTapArea =
+            Math.abs(touch.clientX - start.x) > TOUCH_MOVE_TOLERANCE_PX ||
+            Math.abs(touch.clientY - start.y) > TOUCH_MOVE_TOLERANCE_PX;
+        if (hasLeftTapArea) {
+            tapStartRef.current = null;
+        }
+    }, []);
+
+    const handleTouchCancel = useCallback(() => {
+        tapStartRef.current = null;
+    }, []);
+
+    const handleTouchEnd = useCallback(
+        (event: React.TouchEvent) => {
+            const wasTap = tapStartRef.current !== null;
+            tapStartRef.current = null;
+
+            // Scrolling rather than tapping: also forget any pending first tap.
+            if (!wasTap) {
+                clearTimeout(tapTimerRef.current);
+                tapTimerRef.current = undefined;
+                return;
+            }
+
+            if (!tapTimerRef.current) {
+                tapTimerRef.current = setTimeout(() => {
+                    tapTimerRef.current = undefined;
+                }, TOUCH_DOUBLE_TAP_MS);
+                return;
+            }
+
+            clearTimeout(tapTimerRef.current);
+            tapTimerRef.current = undefined;
+
+            if (!isDoubleClickable) {
+                return;
+            }
+
+            openedByTouchRef.current = true;
+            clearTimeout(openedByTouchTimerRef.current);
+            openedByTouchTimerRef.current = setTimeout(() => {
+                openedByTouchRef.current = false;
+            }, TOUCH_DOUBLE_TAP_MS);
+
+            events?.onItemDoubleClick?.(itemId, event);
         },
         [isDoubleClickable, events, itemId]
     );
@@ -131,6 +219,10 @@ export const useItemInteraction = ({
         handleMouseDown,
         handleClick,
         handleDoubleClick,
+        handleTouchStart,
+        handleTouchMove,
+        handleTouchCancel,
+        handleTouchEnd,
         handleContextMenu,
         handleKeyDown,
         handleDragStart,
