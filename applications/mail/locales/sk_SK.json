@@ -1742,6 +1742,18 @@
       ],
       "View guide": [
         "Zobraziť príručku"
+      ],
+      "Keep going": [
+        "Pokračujte"
+      ],
+      "Run realistic session": [
+        "Spustiť realistickú reláciu"
+      ],
+      "Stop here": [
+        "Tu zastav"
+      ],
+      "Write ${ count } logs": [
+        "Zapísať ${ count } záznamov"
       ]
     },
     "action": {
@@ -4626,6 +4638,9 @@
       ],
       "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Kliknite pravým tlačidlom myši na email a vyberte možnosť „Presunúť do“ alebo ho pretiahnite do inej kategórie. Podobné emaily sa tam v budúcnosti zaradia automaticky."
+      ],
+      "No ads. No trackers": [
+        "Žiadne reklamy. Žiadne sledovacie nástroje"
       ]
     },
     "description": {
@@ -10152,6 +10167,27 @@
       ],
       "Searched your mail": [
         "Prehľadal som váš mail"
+      ],
+      "I have not finished this one yet.": [
+        "Ešte som to nedokončil."
+      ],
+      "Not supported by this browser": [
+        "Tento prehliadač túto funkciu nepodporuje"
+      ],
+      "Star emails": [
+        "Označiť emaily hviezdičkou"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Je to dosť zdĺhavé. Mám v tom pokračovať?"
+      ],
+      "Unstar emails": [
+        "Odobrať hviezdičku z emailov"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Zapíše ${ REALISTIC_ENTRIES } realistických riadkov záznamu, ktoré sa zobrazujú postupne v priebehu jednej minúty, ako pri skutočnej relácii, namiesto toho, aby sa zobrazili všetky naraz. Spustenie trvá približne jednu minútu. Nechajte túto kartu aktívnu: merania snímok sa v pozadí pozastavia."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Postupne zapisuje reálne riadky záznamu a následne ich všetky prečíta späť. Ukazuje, ako sa náklady na zápis a čítanie/export menia v závislosti od počtu uložených záznamov."
       ]
     },
     "info": {
@@ -11387,6 +11423,60 @@
       ],
       "No unread messages": [
         "Žiadne neprečítané správy"
+      ],
+      "Burst write": [
+        "Hromadný zápis"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Ponuky, akcie a marketingové emaily"
+      ],
+      "Decrypt + parse": [
+        "Dešifrovať + analyzovať"
+      ],
+      "Dropped frames": [
+        "Vynechané snímky"
+      ],
+      "Duration": [
+        "Trvanie"
+      ],
+      "Encrypt": [
+        "Šifrovať"
+      ],
+      "Entries": [
+        "Záznamy"
+      ],
+      "Export size": [
+        "Veľkosť exportu"
+      ],
+      "IndexedDB retrieve": [
+        "Načítanie z IndexedDB"
+      ],
+      "IndexedDB store": [
+        "Úložisko IndexedDB"
+      ],
+      "Log performance": [
+        "Výkonnosť zaznamenávania"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Dlhé úlohy (≥ 50 ms)"
+      ],
+      "Read / export": [
+        "Čítať / exportovať"
+      ],
+      "Realistic session": [
+        "Realistická relácia"
+      ],
+      "Sum of write() calls": [
+        "Súčet volaní funkcie write()"
+      ],
+      "Write": [
+        "Zapísať"
+      ],
+      "Write (whole session)": [
+        "Zapísať (celú reláciu)"
+      ],
+      "Write-chain drain after last line": [
+        "Vypustenie reťazca zápisu po poslednom riadku"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12776,6 +12866,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s rozšíreným prístupom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s obmedzeným prístupom"
       ]
     },
     "new_plans: feature highlight": {
@@ -14649,6 +14745,9 @@
       ],
       "User Admin": [
         "Správca používateľov"
+      ],
+      "Organization Admin": [
+        "Správca organizácie"
       ]
     },
     "Role description": {
@@ -17157,7 +17256,7 @@
         "Nesprávny overovací kód"
       ],
       "Keep this banner hidden?": [
-        "Ponechať túto reklamu skrytú?"
+        "Má byť tento banner skrytý?"
       ],
       "Label as": [
         "Označiť ako"
@@ -17782,6 +17881,15 @@
       ],
       "What are you migrating?": [
         "Čo migrujete?"
+      ],
+      "Star emails": [
+        "Označiť emaily hviezdičkou"
+      ],
+      "Still working on it": [
+        "Stále na tom pracujem"
+      ],
+      "Unstar emails": [
+        "Odobrať hviezdičku z emailov"
       ]
     },
     "Title header for keys table": {

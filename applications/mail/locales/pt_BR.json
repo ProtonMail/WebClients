@@ -1730,6 +1730,12 @@
       ],
       "Migrate": [
         "Migrar"
+      ],
+      "Keep going": [
+        "Continue"
+      ],
+      "Stop here": [
+        "Parar aqui"
       ]
     },
     "action": {
@@ -5698,6 +5704,12 @@
       ],
       "You do not have access to this item": [
         "Você não tem acesso a esse item"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Não é permitido criar documentos dentro de itens que não sejam pastas"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Falha ao descriptografar o nome de marcador: ${ message }"
       ]
     },
     "error": {
@@ -9662,6 +9674,24 @@
       ],
       "You": [
         "Você"
+      ],
+      "No conversation to read": [
+        "Nenhum diálogo para ler"
+      ],
+      "No email open": [
+        "Nenhum e-mail aberto"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Pesquisei por e-mails para ${ recipient }"
+      ],
+      "Star emails": [
+        "E-mails favoritos"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, ative a conta no seu ${ provider.adminConsoleName }."
+      ],
+      "Unstar emails": [
+        "Remover favorito de e-mails"
       ]
     },
     "info": {
@@ -10875,6 +10905,9 @@
       ],
       "Primary - Anything that needs your attention, plus emails from disabled categories": [
         "Principal — Tudo o que requer sua atenção, além dos e-mails das categorias desativadas"
+      ],
+      "Duration": [
+        "Duração"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12186,6 +12219,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso limitado"
       ]
     },
     "new_plans: feature highlight": {
@@ -13336,6 +13375,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
@@ -14014,6 +14056,9 @@
       ],
       "User Admin": [
         "Administração de usuário"
+      ],
+      "Organization Admin": [
+        "Administrador da organização"
       ]
     },
     "Role description": {
@@ -16970,6 +17015,18 @@
       ],
       "What are you migrating?": [
         "O que você está migrando?"
+      ],
+      "Select users to migrate": [
+        "Selecione os usuários a serem migrados"
+      ],
+      "Star emails": [
+        "Favoritar e-mails"
+      ],
+      "Still working on it": [
+        "Ainda estou trabalhando nisso"
+      ],
+      "Unstar emails": [
+        "Remover favorito de e-mails"
       ]
     },
     "Title header for keys table": {

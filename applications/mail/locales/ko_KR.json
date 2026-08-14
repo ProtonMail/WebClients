@@ -1724,6 +1724,9 @@
       ],
       "Migrate": [
         "이전"
+      ],
+      "Keep going": [
+        "계속하기"
       ]
     },
     "action": {
@@ -5713,6 +5716,12 @@
       ],
       "You do not have access to this shared item": [
         "해당 항목에 대한 접근 권한이 없습니다."
+      ],
+      "Copy operation aborted": [
+        "복사 작업 중단됨"
+      ],
+      "File has no revision": [
+        "파일에 수정 사항 없음"
       ]
     },
     "error": {
@@ -9570,6 +9579,12 @@
       ],
       "You": [
         "나"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "${ recipient }에 보낸 메일 검색"
+      ],
+      "Star emails": [
+        "이메일 별표 표시"
       ]
     },
     "info": {
@@ -10769,6 +10784,9 @@
       ],
       "Archive": [
         "보관함"
+      ],
+      "Duration": [
+        "기간"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13172,6 +13190,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "구독에 현재 기존 할인이 적용되어 있습니다. 새로운 프로모션으로 변경하면 기존 할인이 더 이상 적용되지 않습니다."
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_BRAND_NAME }가 유로화 결제만 지원하므로 사용자의 통화가 유로화(€)로 변경되었습니다."
       ]
     },
     "Payments.Error": {
@@ -16714,6 +16735,9 @@
       ],
       "What are you migrating?": [
         "무엇을 이전하시나요?"
+      ],
+      "Still working on it": [
+        "아직 작업 중"
       ]
     },
     "Title header for keys table": {
@@ -17334,6 +17358,9 @@
       ],
       "name": [
         "이름"
+      ],
+      "attributes": [
+        "속성"
       ]
     }
   }

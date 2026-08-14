@@ -1742,6 +1742,12 @@
       ],
       "Yes, organize it": [
         "Так. Арганізаваць яго"
+      ],
+      "Keep going": [
+        "Працягваць"
+      ],
+      "Stop here": [
+        "Спыніцца тут"
       ]
     },
     "action": {
@@ -5872,6 +5878,24 @@
       ],
       "You do not have access to this shared item": [
         "У вас няма доступу да гэтага абагуленага элемента"
+      ],
+      "Cannot download a folder": [
+        "Немагчыма спампаваць папку"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Немагчыма загрузіць папярэдні прагляд відарыса: ${ message }"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Стварэнне дакументаў па-за іх межамі забаронена"
+      ],
+      "Name must not be empty": [
+        "Назва не можа быць пустой"
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Нешта пайшло не так. Закрыйце дыялогавае акно і паўтарыце спробу."
+      ],
+      "Too many server errors, please try again later": [
+        "Занадта шмат памылак сервера. Паўтарыце спробу пазней"
       ]
     },
     "error": {
@@ -6439,6 +6463,9 @@
       ],
       "Pending": [
         "У чаканні"
+      ],
+      "Migrated": [
+        "Перанесена"
       ]
     },
     "Filter Actions": {
@@ -10110,6 +10137,39 @@
         "Вы выбралі **${ checked } паведамленні** ў вашай катэгорыі ${ categoryLabel }",
         "Вы выбралі **${ checked } паведамленняў** у вашай катэгорыі ${ categoryLabel }",
         "Вы выбралі **${ checked } паведамленняў** у вашай катэгорыі ${ categoryLabel }"
+      ],
+      "I have not finished this one yet.": [
+        "Я яшчэ не завяршыў гэта."
+      ],
+      "Opened ${ location }": [
+        "Адкрыта ${ location }"
+      ],
+      "Searched ${ targetName }": [
+        "Пошук ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Пошук пошты ад ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Пошук пошты ў ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Пошук \"${ keyword }\""
+      ],
+      "Searched your mail": [
+        "Пошук у вашай пошце завяршыўся"
+      ],
+      "Star emails": [
+        "Пазначаныя зорачкай лісты"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "На гэта спатрэбіцца шмат крокаў. Працягваць?"
+      ],
+      "Unstar emails": [
+        "Не пазначаныя зорачкай лісты"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт ${ IDEAL_BRAND_NAME }. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ]
     },
     "info": {
@@ -11339,6 +11399,15 @@
       ],
       "v2": [
         "v2"
+      ],
+      "Duration": [
+        "Працягласць"
+      ],
+      "No unread conversations": [
+        "Няма непрачытаных размоў"
+      ],
+      "No unread messages": [
+        "Няма непрачытаных паведамленняў"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12728,6 +12797,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з пашыраным доступам"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з абмежаваным доступам"
       ]
     },
     "new_plans: feature highlight": {
@@ -13901,6 +13976,9 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што ${ IDEAL_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Заплаціць з дапамогай ${ IDEAL_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
@@ -17722,6 +17800,18 @@
       ],
       "What are you migrating?": [
         "Што вы плануеце перанесці?"
+      ],
+      "Make your inbox your own": [
+        "Зрабіце паштовую скрыню сваёй уласнасцю"
+      ],
+      "Star emails": [
+        "Пазначаныя зорачкай лісты"
+      ],
+      "Still working on it": [
+        "Усё яшчэ працуем над гэтым"
+      ],
+      "Unstar emails": [
+        "Не пазначаныя зорачкай лісты"
       ]
     },
     "Title header for keys table": {
@@ -18452,6 +18542,9 @@
       ],
       "Has errors": [
         "З памылкамі"
+      ],
+      "Pending": [
+        "У чаканні"
       ]
     },
     "Desktop notification body": {
@@ -18485,6 +18578,9 @@
       ],
       "name": [
         "назва"
+      ],
+      "content key": [
+        "ключ змесціва"
       ]
     }
   }
