@@ -17,6 +17,7 @@ import {
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { Logger } from './Logger';
+import { getBridgedErrorDecision } from './bridgedErrorDecision';
 
 // Sentry is not installed on the sharedworker.
 // This channel is used to forward errors from the sharedworker to the main thread for Sentry reporting.
@@ -86,15 +87,15 @@ export function listenForWorkerErrors() {
 }
 
 export function isAbortError(e: unknown): boolean {
-    // DOMException covers fetch/AbortController aborts; SdkAbortError covers SDK-thrown aborts
-    // that never crossed a serialization boundary. The plain-Error/name check covers the same
-    // SDK AbortError after crossing the main-thread <-> SharedWorker Comlink boundary: structured
-    // clone (see comlinkErrorTransferHandler.ts) preserves `.name`/`.message` but not custom
-    // subclass identity, so `instanceof SdkAbortError` no longer holds on the worker side.
+    // Three checks because an abort can be asked about from three different positions:
+    // - bridged decision: the receiving side, after a comlink crossing. The subclass is gone and the name
+    //   has been flattened, so this is the only thing left to go on.
+    // - DOMException: an abort that never crosses at all, which is the live path.
+    // - SdkAbortError: the throwing side, before a crossing.
     return (
+        getBridgedErrorDecision(e)?.reason === 'abort' ||
         (e instanceof DOMException && e.name === 'AbortError') ||
-        e instanceof SdkAbortError ||
-        (e instanceof Error && e.name === 'AbortError')
+        e instanceof SdkAbortError
     );
 }
 
@@ -300,36 +301,68 @@ export type ErrorDecision =
  * Classifies an error into one of two buckets driving the queue's reaction:
  * - permanent: stop the queue (existing behavior, e.g. quota / corrupted DB)
  * - transient: per-task delay and retry
+ *
+ * Position-dependent by design: for an error that crossed the Comlink boundary the answer comes
+ * from the decision computed on the far side, because nothing local could reconstruct it. Callers
+ * on the throwing side classify from the error itself.
  */
 export function classifyError(e: unknown): ErrorDecision {
+    // RECEIVING SIDE ONLY. Set by the transfer handler for anything that crossed the bridge, and
+    // authoritative when present: it was computed where the error still had its identity, which no
+    // check below could now reconstruct. First, so the later probes never contradict it.
+    const bridged = getBridgedErrorDecision(e);
+    if (bridged) {
+        return bridged;
+    }
+
+    // WORKER, LOCAL. Quota, corrupted DB, WASM and blob-crypto failures all originate here, from
+    // IndexedDB or the search engine, so they never cross a bridge. The two DOMException-based ones
+    // would survive a crossing anyway, since a DOMException keeps its `name`.
     const permanent = classifyPermanentError(e);
     if (permanent) {
         return { kind: 'permanent', reason: permanent };
     }
-    // Abort is checked before other transients so it never silently buckets as 'unknown'.
-    // The IndexerTaskQueue short-circuits aborts before calling classifyError, so this branch
-    // is defensive completeness rather than the live path.
+
+    // EITHER SIDE. The worker's own signal throws a DOMException locally; an SDK abort is caught
+    // here on the throwing side. Checked before the other transients so a cancelled operation is
+    // never mistaken for a failed one, which would get a node quarantined during shutdown.
+    // IndexerTaskQueue short-circuits its own aborts before calling this, so this is completeness
+    // rather than the live path.
     if (isAbortError(e)) {
         return { kind: 'transient', reason: 'abort' };
     }
+
+    // THROWING SIDE (main thread). Both tests read something a clone destroys: the subclass, and
+    // the name 'OfflineError'. Post-crossing this only ever matches via the bridged decision above.
     // NOTE: As of may-2026, the SdkConnectionError is never used or thrown by he SDK. It only
     // throws an error with the name "OfflineError". We add it for forward-comaptibility only.
     if (e instanceof SdkConnectionError || getIsOfflineError(e)) {
         return { kind: 'transient', reason: 'offline' };
     }
-    // Same Comlink boundary problem as isAbortError above: RateLimitedError/ServerError thrown by
-    // the SDK on the main thread and crossed back to the worker lose their subclass identity, so
-    // instanceof alone misses them. Fall back to the name preserved by structured clone.
-    if (e instanceof SdkRateLimitedError || (e instanceof Error && e.name === 'RateLimitedError')) {
+
+    // THROWING SIDE (main thread). Separated from 'server' below only so the queue can apply its
+    // long retry delay: retrying a 429 on the normal backoff makes the rate limiting worse.
+    // NOTE: RateLimitedError extends ServerError, so it has to be checked first.
+    if (e instanceof SdkRateLimitedError) {
         return { kind: 'transient', reason: 'rate-limited' };
     }
-    if (e instanceof SdkServerError || (e instanceof Error && e.name === 'ServerError') || getIsUnreachableError(e)) {
+
+    // THROWING SIDE (main thread), but two different error families. The instanceof covers SDK
+    // errors; getIsUnreachableError reads `.status`, which is the shape of the legacy Proton API
+    // used for the event-id fetch, not the SDK's `statusCode`. So neither is redundant.
+    if (e instanceof SdkServerError || getIsUnreachableError(e)) {
         return { kind: 'transient', reason: 'server' };
     }
+
+    // THROWING SIDE (main thread). Legacy fetch shapes again, matched on `name`, so likewise only
+    // reachable before a crossing.
     if (getIsNetworkError(e) || getIsTimeoutError(e)) {
         return { kind: 'transient', reason: 'network' };
     }
 
+    // Genuinely unclassifiable: our own bugs, malformed data, and untyped throws from the SDK. Not
+    // a synonym for "the node is broken" - see isRepairableError below for why that distinction
+    // has to be made by the caller rather than inferred from here.
     return { kind: 'transient', reason: 'unknown' };
 }
 
@@ -339,15 +372,11 @@ export function classifyError(e: unknown): ErrorDecision {
  * other deterministic per-node failures) is node-scoped and safe to quarantine + skip.
  *
  * Everything else is systemic and must NOT be quarantined:
- * - abort (queue is stopping),
  * - known transient network-family reasons (offline / network / server / rate-limited) - the whole
  *   batch should be retried, not the node skipped,
  * - permanent errors (quota / corrupted DB / invalid state / WASM engine) - the queue stops.
  */
 export function isRepairableError(e: unknown): boolean {
-    if (isAbortError(e)) {
-        return false;
-    }
     const decision = classifyError(e);
     if (decision.kind === 'permanent') {
         return false;

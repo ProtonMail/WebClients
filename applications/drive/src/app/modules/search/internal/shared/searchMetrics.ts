@@ -89,7 +89,7 @@ export const searchMetrics = {
      * its `name` and its own properties (e.g. `status`) - leaving every `instanceof` / name /
      * status check in `classifyError` unable to match, so everything would bucket as
      * transient-`unknown`. Classification must happen in the worker while the error is still
-     * intact; only the plain-string verdict may cross the bridge. `error` is kept for Sentry.
+     * intact; only the decision may cross the bridge. `error` is kept for Sentry.
      */
     markIndexerError({
         decision,
@@ -122,7 +122,12 @@ export const searchMetrics = {
             });
         } else {
             metrics.drive_search_transient_errors_total.increment({ kind: decision.reason });
-            if (shouldReportTransientToSentry(taskUid)) {
+            if (decision.reason === 'offline') {
+                // Offline is the user's connectivity, not a defect. It stays visible through the
+                // Grafana counter incremented just above and a local log line, but it must not open a
+                // Sentry issue, nor spend a burst slot that a real error will need.
+                Logger.info('Search transient error: offline');
+            } else if (shouldReportTransientToSentry(taskUid)) {
                 sendErrorReportForSearch(`Search transient error (${decision.reason})`, error, {
                     tags: { label: 'search-transient-error', taskKind, kind: decision.reason },
                 });
