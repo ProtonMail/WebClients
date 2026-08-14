@@ -14,6 +14,10 @@ type Result = {
     [key: string]: RoleAssignment[] | undefined;
 };
 
+type RequiresOrgKeyPromotionResult = {
+    [key: string]: boolean | undefined;
+};
+
 const selector = createSelector([(state: MembersState) => selectMembers(state)], (membersState): Result => {
     const members = membersState.value || [];
     return Object.fromEntries(
@@ -23,9 +27,24 @@ const selector = createSelector([(state: MembersState) => selectMembers(state)],
     );
 });
 
+const requiresOrgKeyPromotionSelector = createSelector(
+    [(state: MembersState) => selectMembers(state)],
+    (membersState): RequiresOrgKeyPromotionResult => {
+        const members = membersState.value || [];
+        return Object.fromEntries(
+            members.map((member) => {
+                return [member.ID, member.requiresOrgKeyPromotion];
+            })
+        );
+    }
+);
+
 export const useMemberRoles = ({ members }: { members: EnhancedMember[] | undefined }) => {
     const dispatch = baseUseDispatch<ThunkDispatch<MembersState, ProtonThunkArguments, Action>>();
     const value = baseUseSelector<MembersState, Result>(selector);
+    const requiresOrgKeyPromotionMap = baseUseSelector<MembersState, RequiresOrgKeyPromotionResult>(
+        requiresOrgKeyPromotionSelector
+    );
     const [adminRolesUIState] = useAdminRolesUI();
 
     useEffect(() => {
@@ -39,5 +58,5 @@ export const useMemberRoles = ({ members }: { members: EnhancedMember[] | undefi
         });
     }, [members, adminRolesUIState]);
 
-    return { value };
+    return { value, requiresOrgKeyPromotionMap };
 };

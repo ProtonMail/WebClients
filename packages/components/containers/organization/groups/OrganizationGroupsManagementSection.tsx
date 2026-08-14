@@ -20,12 +20,13 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
+import RoleAssignmentPausedBanner from '../../members/rolesAndPermissions/RoleAssignmentPausedBanner';
 import ScimSetupBannerAndModal from '../ScimSetupBannerAndModal';
-import GroupRoleAssignmentPausedBanner from './GroupRoleAssignmentPausedBanner';
 import GroupsMemberManagementPanel from './components/GroupsMemberManagementPanel';
 import { useGroupsManagement, withGroupsManagementContext } from './context/GroupsManagementContext';
 import useGroupAvailableAddressDomains from './hooks/useGroupAvailableAddressDomains';
@@ -41,7 +42,7 @@ interface Props {
 
 const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) => {
     const [organization] = useOrganization();
-    const { restrictedBy } = useGroupsManagement();
+    const { groups, actions, restrictedBy } = useGroupsManagement();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const isUserGroupsGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');
     const dispatch = useDispatch();
@@ -149,7 +150,12 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
 
             {(hasUsableDomain || invalidGroupSuggestion) && (
                 <>
-                    {adminRolesUIState === AdminRolesUIState.Enabled && <GroupRoleAssignmentPausedBanner />}
+                    <RoleAssignmentPausedBanner
+                        roleAssignmentSource={ROLE_SOURCE.GROUP}
+                        pausedCount={groups.filter((group) => group.requiresOrgKeyPromotion).length}
+                        isResuming={restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT}
+                        onToggle={() => actions.onToggleRoleAssignments()}
+                    />
                     <GroupsMemberManagementPanel />
                 </>
             )}
