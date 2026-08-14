@@ -53,7 +53,8 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
         loading: adminRolesModalLoading,
     } = useFeature(FeatureCode.AdminRolesGroupOnboardingModal, adminRolesUIState === AdminRolesUIState.Enabled);
 
-    const canShowAdminRolesModal = !adminRolesModalLoading && !!adminRolesModalFeature?.Value;
+    const canShowAdminRolesModal =
+        adminRolesUIState === AdminRolesUIState.Enabled && !adminRolesModalLoading && !!adminRolesModalFeature?.Value;
 
     const { hasUsableDomain, invalidGroupSuggestion } = useGroupAvailableAddressDomains();
 
