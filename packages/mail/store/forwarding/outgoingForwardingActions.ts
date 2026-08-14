@@ -10,10 +10,6 @@ import type { KtState } from '@proton/account/kt';
 import type { OrganizationKeyState } from '@proton/account/organizationKey';
 import { getPublicKeysForInboxThunk } from '@proton/account/publicKeys/publicKeysForInbox';
 import type { UserKeysState } from '@proton/account/userKeys';
-import {
-    getOutgoingAddressForwarding,
-    outgoingAddressForwardingsActions,
-} from '@proton/mail/store/forwarding/outgoing';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     type SetupForwardingParameters,
@@ -30,6 +26,8 @@ import { getAddressFlagsData } from '@proton/shared/lib/helpers/address';
 import { type Address, ForwardingType, type OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
 import { getActiveAddressKeys, getPrimaryActiveAddressKeyForEncryption } from '@proton/shared/lib/keys';
 import { getInternalParametersPrivate } from '@proton/shared/lib/keys/forward/forward';
+
+import { getOutgoingAddressForwarding, outgoingAddressForwardingsActions } from './outgoing';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
 

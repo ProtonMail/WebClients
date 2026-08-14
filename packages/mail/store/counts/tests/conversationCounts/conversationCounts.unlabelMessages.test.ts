@@ -1,18 +1,14 @@
 import type { Draft } from '@reduxjs/toolkit';
 
-import { unlabelMessagesPending } from '@proton/mail/store/counts/conversationCountsReducers';
-import {
-    CUSTOM_LABEL_ID1,
-    checkUpdatedCounters,
-    createDefaultCounters,
-    customLabels,
-} from '@proton/mail/store/counts/tests/counts.test.helpers';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from 'proton-mail/models/conversation';
+
+import { unlabelMessagesPending } from '../../conversationCountsReducers';
+import { CUSTOM_LABEL_ID1, checkUpdatedCounters, createDefaultCounters, customLabels } from '../counts.test.helpers';
 
 describe('conversation counts - unlabel messages', () => {
     let state: Draft<ModelState<LabelCount[]>>;

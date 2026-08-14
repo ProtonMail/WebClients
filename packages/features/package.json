@@ -3,17 +3,23 @@
     "description": "Feature toggles",
     "scripts": {
         "check-types": "tsc",
+        "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci"
     },
     "dependencies": {
-        "@proton/redux-shared-store": "workspace:^",
+        "@proton/react-redux-store": "workspace:^",
         "@proton/redux-utilities": "workspace:^",
         "@proton/shared": "workspace:^",
-        "@reduxjs/toolkit": "^2.12.0"
+        "@proton/utils": "workspace:^",
+        "@reduxjs/toolkit": "^2.12.0",
+        "react": "^18.3.1"
     },
     "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
+        "@testing-library/jest-dom": "^6.9.1",
         "core-js": "^3.49.0",
+        "eslint": "^9.39.5",
         "jest": "^30.4.2",
         "jest-environment-jsdom": "^30.4.1",
         "ts-jest": "^29.4.12",
