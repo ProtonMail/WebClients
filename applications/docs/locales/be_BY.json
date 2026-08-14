@@ -953,6 +953,12 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
+      ],
+      "Keep going": [
+        "Працягваць"
+      ],
+      "Stop here": [
+        "Спыніцца тут"
       ]
     },
     "Actions message": {
@@ -3799,6 +3805,21 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "Cannot download a folder": [
+        "Немагчыма спампаваць папку"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Немагчыма загрузіць папярэдні прагляд відарыса: ${ message }"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Стварэнне дакументаў па-за іх межамі забаронена"
+      ],
+      "Name must not be empty": [
+        "Назва не можа быць пустой"
+      ],
+      "Too many server errors, please try again later": [
+        "Занадта шмат памылак сервера. Паўтарыце спробу пазней"
       ]
     },
     "error": {
@@ -4286,6 +4307,9 @@
       ],
       "Pending": [
         "У чаканні"
+      ],
+      "Migrated": [
+        "Перанесена"
       ]
     },
     "Filter notification": {
@@ -4684,6 +4708,9 @@
       ],
       "Migrated": [
         "Перанесена"
+      ],
+      "Pending": [
+        "У чаканні"
       ]
     },
     "Import warning": {
@@ -6149,6 +6176,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "На гэта спатрэбіцца шмат крокаў. Працягваць?"
       ]
     },
     "info": {
@@ -7893,6 +7923,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з пашыраным доступам"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з абмежаваным доступам"
       ]
     },
     "new_plans: feature highlight": {
@@ -9170,6 +9206,9 @@
       ],
       "name": [
         "назва"
+      ],
+      "content key": [
+        "ключ змесціва"
       ]
     },
     "Property type": {
@@ -11202,6 +11241,9 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
+      ],
+      "Still working on it": [
+        "Усё яшчэ працуем над гэтым"
       ]
     },
     "Title header for keys table": {

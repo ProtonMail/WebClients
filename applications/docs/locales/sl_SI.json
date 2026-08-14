@@ -917,6 +917,12 @@
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stikoma ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče."
+      ],
+      "Keep going": [
+        "Nadaljuj …"
+      ],
+      "Stop here": [
+        "Tukaj se ustavi"
       ]
     },
     "Actions message": {
@@ -3535,6 +3541,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Ne-dešifrirano ime"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Naprava, katere ni možno dešifrirati"
       ]
     },
     "error": {
@@ -5771,6 +5780,12 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Za ta postopek je potrebnih več korakov. Nadaljujemo?"
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Da bi pomagali rešiti težavo, bodo podatki za odpravljanje napak naloženi na vaš Drive in varno posredovani podporni ekipi ${ BRAND_NAME }. Ti podatki lahko vključujejo tudi vsebino datotek. Deljenje lahko kadarkoli prekinete, posredovani podatki pa bodo izbrisani takoj po zaključku pregleda."
       ]
     },
     "info": {
@@ -6272,6 +6287,9 @@
       ],
       "Your password (admin)": [
         "Vaše geslo (admin)"
+      ],
+      "Include debug information": [
+        "Vključi podatke za odpravljanje napak"
       ]
     },
     "Label for contact group color": {
@@ -7368,6 +7386,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z razširjenim dostopom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z omejenim dostopom"
       ]
     },
     "new_plans: feature highlight": {
@@ -8058,6 +8082,12 @@
       ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Ker je bil ta dokument shranjen v mapi v skupni rabi, ga lahko obnovi le lastnik mape"
+      ],
+      "Failed to submit report": [
+        "Pošiljanje poročila ni uspelo"
+      ],
+      "Report submitted successfully": [
+        "Poročilo je bilo uspešno poslano"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10436,6 +10466,12 @@
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"
+      ],
+      "Report issue": [
+        "Prijavi težavo"
+      ],
+      "Still working on it": [
+        "Še vedno delam na tem"
       ]
     },
     "Title header for keys table": {

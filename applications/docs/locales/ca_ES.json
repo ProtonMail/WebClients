@@ -949,6 +949,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte."
+      ],
+      "Keep going": [
+        "Continua"
+      ],
+      "Stop here": [
+        "Parar aquí"
       ]
     },
     "Actions message": {
@@ -6048,7 +6054,10 @@
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
       ],
       "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
-        "Per ajudar a resoldre el problema, es carregarà informació de depuració al vostre Drive i es compartirà de manera segura amb l'equip de suport de ${ BRAND_NAME }. Pot incloure el contingut de fitxers. Podeu deixar de compartir-la en qualsevol moment, i les dades compartides s'eliminaran quan s'hagi completat la revisió."
+        "Per ajudar a resoldre el problema, es carregarà informació de depuració al vostre Drive i es compartirà de manera segura amb l'equip de suport de ${ BRAND_NAME }. Això pot incloure el contingut de fitxers. Podreu deixar de compartir-la en qualsevol moment, i les dades compartides s'eliminaran quan s'hagi completat la revisió."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Això està prenent molts passos. Hauria de continuar?"
       ]
     },
     "info": {
@@ -6593,7 +6602,7 @@
         "La vostra contrasenya (contacte de confiança)"
       ],
       "Include debug information": [
-        "Incloeu informació de depuració"
+        "Incloeu-hi la informació de depuració"
       ]
     },
     "Label for contact group color": {
@@ -7734,6 +7743,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés ampliat"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés limitat"
       ]
     },
     "new_plans: feature highlight": {
@@ -9211,6 +9226,9 @@
       ],
       "User Admin": [
         "Administrador/a d'usuaris"
+      ],
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ]
     },
     "Role description": {
@@ -10917,6 +10935,9 @@
       ],
       "Report issue": [
         "Informeu d'un problema"
+      ],
+      "Still working on it": [
+        "Encara hi estem treballant"
       ]
     },
     "Title header for keys table": {

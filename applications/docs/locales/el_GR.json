@@ -946,6 +946,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
+      ],
+      "Keep going": [
+        "Συνεχίστε"
       ]
     },
     "Actions message": {
@@ -7668,6 +7671,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με εκτεταμένη πρόσβαση"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με περιορισμένη πρόσβαση"
       ]
     },
     "new_plans: feature highlight": {
@@ -9142,6 +9151,9 @@
       ],
       "User Admin": [
         "Διαχειριστής Χρηστών"
+      ],
+      "Organization Admin": [
+        "Διαχειριστής Οργανισμού"
       ]
     },
     "Role description": {
@@ -10848,6 +10860,9 @@
       ],
       "Report issue": [
         "Αναφορά προβλήματος"
+      ],
+      "Still working on it": [
+        "Ακόμα δουλεύω πάνω σε αυτό"
       ]
     },
     "Title header for keys table": {
