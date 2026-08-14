@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useLayoutEffect, useReducer, useRef, use
 
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../hooks/useLumoActions';
 import type { SiblingInfo } from '../../../hooks/usePreferredSiblings';
-import { type Attachment, type ConversationId, type Message, Role } from '../../../types';
+import type { Attachment, ConversationId, Message } from '../../../types';
 import { ScrollToBottomButton } from './ScrollToBottomButton/ScrollToBottomButton';
 import { MessageComponent } from './message/MessageComponent';
 
@@ -57,24 +57,15 @@ const useAutoScroll = (
         userHasScrolledUp: false,
     });
     const userHasScrolledUpRef = useRef(scrollState.userHasScrolledUp);
+    const isGeneratingRef = useRef(isGenerating);
+    const isPointerDownRef = useRef(false);
+    const lastObservedScrollTopRef = useRef(0);
 
     userHasScrolledUpRef.current = scrollState.userHasScrolledUp;
-
-    const isNearBottom = useCallback(() => {
-        if (!messageChainRef.current) return true;
-
-        const container = messageChainRef.current;
-        const distanceFromBottom = container.scrollHeight - container.scrollTop - container.clientHeight;
-
-        return distanceFromBottom <= 100;
-    }, [messageChainRef]);
+    isGeneratingRef.current = isGenerating;
 
     // Incremented on each button click to cancel any in-progress poll loop.
     const scrollPollGenerationRef = useRef(0);
-    const isProgrammaticScrollRef = useRef(false);
-    const isGeneratingRef = useRef(isGenerating);
-
-    isGeneratingRef.current = isGenerating;
 
     const markUserScrolledUp = useCallback(() => {
         scrollPollGenerationRef.current++;
@@ -89,26 +80,15 @@ const useAutoScroll = (
         dispatch({ type: 'REACHED_BOTTOM' });
     }, []);
 
-    const scrollContainerToBottom = useCallback(
-        (container: HTMLDivElement, behavior: ScrollBehavior) => {
-            isProgrammaticScrollRef.current = true;
-            container.scrollTo({
-                top: container.scrollHeight,
-                behavior,
-            });
-            requestAnimationFrame(() => {
-                isProgrammaticScrollRef.current = false;
-            });
-        },
-        []
-    );
-
     const scrollToBottom = useCallback(
         (instant = false) => {
             const container = messageChainRef.current;
             if (!container) return;
 
-            scrollContainerToBottom(container, instant ? 'instant' : 'smooth');
+            container.scrollTo({
+                top: container.scrollHeight,
+                behavior: instant ? 'instant' : 'smooth',
+            });
 
             if (!instant) return;
 
@@ -134,7 +114,7 @@ const useAutoScroll = (
 
                 frameCount++;
                 const currentScrollHeight = container.scrollHeight;
-                scrollContainerToBottom(container, 'instant');
+                container.scrollTo({ top: currentScrollHeight, behavior: 'instant' });
 
                 if (currentScrollHeight !== lastScrollHeight) {
                     stableFrames = 0;
@@ -150,7 +130,7 @@ const useAutoScroll = (
 
             requestAnimationFrame(poll);
         },
-        [messageChainRef, scrollContainerToBottom]
+        [messageChainRef]
     );
 
     const resumeAutoScroll = useCallback(() => {
@@ -160,50 +140,25 @@ const useAutoScroll = (
 
     // Handle scroll - track position for floating scroll indicator (immediate response)
     const handleScroll = useCallback(() => {
-        if (!messageChainRef.current || isProgrammaticScrollRef.current) return;
+        const container = messageChainRef.current;
+        if (!container) return;
 
-        const nearBottom = isNearBottom();
+        const scrollTop = container.scrollTop;
+        const isMovingUp = scrollTop < lastObservedScrollTopRef.current;
+        const isMovingDown = scrollTop > lastObservedScrollTopRef.current;
+        const isAtBottom = container.scrollHeight - scrollTop - container.clientHeight <= 1;
 
-        // Simple state updates for scroll indicator
-        if (!nearBottom && !scrollState.userHasScrolledUp) {
+        // Layout changes and programmatic scrolling also emit scroll events. Only
+        // consider an upward scrollbar drag user intent here; wheel, touch, and
+        // keyboard intent are handled by their corresponding events below.
+        if (isPointerDownRef.current && isMovingUp) {
             markUserScrolledUp();
-        } else if (nearBottom && scrollState.userHasScrolledUp) {
+        } else if (isAtBottom && isMovingDown && userHasScrolledUpRef.current) {
             resumeFollowing();
         }
-    }, [isNearBottom, markUserScrolledUp, resumeFollowing, scrollState.userHasScrolledUp]);
 
-    // Scroll to position the latest question at the top when a new question is asked
-    const scrollQuestionToTopRef = useRef<(() => void) | null>(null);
-
-    scrollQuestionToTopRef.current = () => {
-        if (!messageChainRef.current || messageChain.length === 0) return;
-
-        const container = messageChainRef.current;
-
-        let lastUserMessageIndex = -1;
-        for (let i = messageChain.length - 1; i >= 0; i--) {
-            if (messageChain[i].role === Role.User) {
-                lastUserMessageIndex = i;
-                break;
-            }
-        }
-
-        if (lastUserMessageIndex === -1) return;
-
-        const messageElements = container.children;
-        const questionElement = messageElements[lastUserMessageIndex] as HTMLElement;
-
-        if (questionElement) {
-            isProgrammaticScrollRef.current = true;
-            container.scrollTo({
-                top: questionElement.offsetTop,
-                behavior: 'smooth',
-            });
-            requestAnimationFrame(() => {
-                isProgrammaticScrollRef.current = false;
-            });
-        }
-    };
+        lastObservedScrollTopRef.current = scrollTop;
+    }, [markUserScrolledUp, messageChainRef, resumeFollowing]);
 
     const previousGeneratingRef = useRef(isGenerating);
     const isInitialScrollPendingRef = useRef(true);
@@ -231,12 +186,10 @@ const useAutoScroll = (
         }, INITIAL_SCROLL_IDLE_MS);
     }, [clearInitialScrollIdleTimer]);
 
-    const tryAutoScrollOnContentChange = useCallback(() => {
+    const tryAutoScroll = useCallback(() => {
         if (userHasScrolledUpRef.current || messageChain.length === 0 || !messageChainRef.current) {
             return;
         }
-
-        const container = messageChainRef.current;
 
         if (isInitialScrollPendingRef.current) {
             scrollToBottom(true);
@@ -245,43 +198,41 @@ const useAutoScroll = (
         }
 
         if (isGeneratingRef.current) {
-            scrollContainerToBottom(container, 'instant');
+            messageChainRef.current.scrollTo({
+                top: messageChainRef.current.scrollHeight,
+                behavior: 'instant',
+            });
         }
-    }, [messageChain.length, messageChainRef, scheduleInitialScrollComplete, scrollContainerToBottom, scrollToBottom]);
+    }, [messageChain.length, messageChainRef, scheduleInitialScrollComplete, scrollToBottom]);
 
-    const scheduleAutoScrollOnContentChange = useCallback(() => {
+    const scheduleAutoScroll = useCallback(() => {
         if (initialScrollRafRef.current !== null) {
             return;
         }
 
         initialScrollRafRef.current = requestAnimationFrame(() => {
             initialScrollRafRef.current = null;
-            tryAutoScrollOnContentChange();
+            tryAutoScroll();
         });
-    }, [tryAutoScrollOnContentChange]);
+    }, [tryAutoScroll]);
 
     useEffect(() => {
         const wasGenerating = previousGeneratingRef.current;
         previousGeneratingRef.current = isGenerating;
 
-        if (isGenerating) {
+        if (isGenerating && !wasGenerating) {
             isInitialScrollPendingRef.current = false;
             clearInitialScrollIdleTimer();
-        }
-
-        // Only scroll when generation STARTS (not during streaming or when it ends)
-        if (isGenerating && !wasGenerating) {
             resumeFollowing();
-            setTimeout(() => {
-                scrollQuestionToTopRef.current?.();
-            }, 100);
+            scrollToBottom(true);
         }
-    }, [clearInitialScrollIdleTimer, isGenerating, resumeFollowing]);
+    }, [clearInitialScrollIdleTimer, isGenerating, resumeFollowing, scrollToBottom]);
 
     useEffect(() => {
         const container = messageChainRef.current;
         if (!container) return;
 
+        lastObservedScrollTopRef.current = container.scrollTop;
         container.addEventListener('scroll', handleScroll, { passive: true });
 
         const handleWheel = (event: WheelEvent) => {
@@ -290,22 +241,39 @@ const useAutoScroll = (
             }
         };
 
-        const handleTouchStart = () => {
-            container.dataset.userTouchScrolling = 'true';
+        let previousTouchY: number | null = null;
+
+        const handleTouchStart = (event: TouchEvent) => {
+            previousTouchY = event.touches[0]?.clientY ?? null;
         };
 
-        const handleTouchMove = () => {
-            if (container.dataset.userTouchScrolling !== 'true') {
-                return;
-            }
+        const handleTouchMove = (event: TouchEvent) => {
+            const currentTouchY = event.touches[0]?.clientY;
 
-            if (!isNearBottom()) {
+            if (currentTouchY !== undefined && previousTouchY !== null && currentTouchY > previousTouchY) {
                 markUserScrolledUp();
             }
+
+            previousTouchY = currentTouchY ?? null;
         };
 
         const handleTouchEnd = () => {
-            delete container.dataset.userTouchScrolling;
+            previousTouchY = null;
+        };
+
+        const handlePointerDown = () => {
+            isPointerDownRef.current = true;
+            lastObservedScrollTopRef.current = container.scrollTop;
+        };
+
+        const handlePointerUp = () => {
+            isPointerDownRef.current = false;
+        };
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'ArrowUp' || event.key === 'PageUp' || event.key === 'Home') {
+                markUserScrolledUp();
+            }
         };
 
         container.addEventListener('wheel', handleWheel, { passive: true });
@@ -313,6 +281,10 @@ const useAutoScroll = (
         container.addEventListener('touchmove', handleTouchMove, { passive: true });
         container.addEventListener('touchend', handleTouchEnd, { passive: true });
         container.addEventListener('touchcancel', handleTouchEnd, { passive: true });
+        container.addEventListener('pointerdown', handlePointerDown, { passive: true });
+        container.addEventListener('keydown', handleKeyDown);
+        window.addEventListener('pointerup', handlePointerUp, { passive: true });
+        window.addEventListener('pointercancel', handlePointerUp, { passive: true });
 
         return () => {
             container.removeEventListener('scroll', handleScroll);
@@ -321,11 +293,15 @@ const useAutoScroll = (
             container.removeEventListener('touchmove', handleTouchMove);
             container.removeEventListener('touchend', handleTouchEnd);
             container.removeEventListener('touchcancel', handleTouchEnd);
+            container.removeEventListener('pointerdown', handlePointerDown);
+            container.removeEventListener('keydown', handleKeyDown);
+            window.removeEventListener('pointerup', handlePointerUp);
+            window.removeEventListener('pointercancel', handlePointerUp);
         };
-    }, [handleScroll, isNearBottom, markUserScrolledUp, messageChainRef]);
+    }, [handleScroll, markUserScrolledUp, messageChainRef]);
 
     useEffect(() => {
-        isInitialScrollPendingRef.current = !isGenerating;
+        isInitialScrollPendingRef.current = true;
         clearInitialScrollIdleTimer();
 
         return () => {
@@ -335,12 +311,12 @@ const useAutoScroll = (
                 initialScrollRafRef.current = null;
             }
         };
-    }, [clearInitialScrollIdleTimer, conversationId, isGenerating]);
+    }, [clearInitialScrollIdleTimer, conversationId]);
 
     // Scroll before paint when the chain changes (new messages from remote / IDB).
     useLayoutEffect(() => {
-        tryAutoScrollOnContentChange();
-    }, [conversationId, lastMessageId, messageChain.length, tryAutoScrollOnContentChange]);
+        tryAutoScroll();
+    }, [conversationId, lastMessageId, messageChain.length, tryAutoScroll]);
 
     // Full message bodies, markdown, and images load after the chain length stabilizes.
     useEffect(() => {
@@ -350,7 +326,7 @@ const useAutoScroll = (
         }
 
         const observer = new MutationObserver(() => {
-            scheduleAutoScrollOnContentChange();
+            scheduleAutoScroll();
         });
 
         observer.observe(container, {
@@ -360,7 +336,7 @@ const useAutoScroll = (
         });
 
         return () => observer.disconnect();
-    }, [conversationId, messageChainRef, scheduleAutoScrollOnContentChange]);
+    }, [conversationId, messageChainRef, scheduleAutoScroll]);
 
     useEffect(() => {
         return () => {
@@ -393,12 +369,6 @@ export const MessageChainComponent = ({
     afterMessages,
 }: MessageChainComponentProps) => {
     const newMessageRef = useRef<HTMLDivElement | null>(null);
-
-    useEffect(() => {
-        return () => {
-            messageChainRef.current = null;
-        };
-    }, [conversationId, messageChainRef]);
 
     const { userHasScrolledUp, resumeAutoScroll } = useAutoScroll(
         messageChainRef,
