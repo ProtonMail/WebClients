@@ -27,6 +27,8 @@ import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import type { SheetsPatchesType } from '../../Database/SheetsDBSchema'
 import metrics from '@proton/metrics/index'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
+import type { MetricService } from '../Metrics/MetricService'
 
 /**
  * Exposes a unified interface for interacting with a document to the editor bridge,
@@ -44,6 +46,7 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     private readonly editor: EditorControllerInterface,
     private readonly documentState: DocumentState | PublicDocumentState,
     private readonly unleashClient: UnleashClient,
+    private readonly metricService: MetricService,
   ) {}
 
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
@@ -88,6 +91,10 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
       type: event,
       payload: data,
     })
+  }
+
+  async editorReportingTelemetry(event: TelemetryDocsEditorEvents): Promise<void> {
+    this.metricService.reportEditorTelemetry(event)
   }
 
   public provideEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void {
