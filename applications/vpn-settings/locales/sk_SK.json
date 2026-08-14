@@ -68,6 +68,210 @@
       ],
       "Trusted contact": [
         "Dôveryhodný kontakt"
+      ],
+      "Account events": [
+        "Udalosti účtu"
+      ],
+      "Active sessions": [
+        "Aktívne relácie"
+      ],
+      "Allow list": [
+        "Zoznam povolených"
+      ],
+      "Audit log": [
+        "Auditný záznam"
+      ],
+      "Authentication logs": [
+        "Záznam overenia identity"
+      ],
+      "Automatic renewal": [
+        "Automatické obnovenie"
+      ],
+      "Automatically delete data": [
+        "Automatické vymazanie údajov"
+      ],
+      "Block sender for the organization": [
+        "Zablokovať odosielateľa pre organizáciu"
+      ],
+      "Blog articles": [
+        "Články na blogu"
+      ],
+      "Bulk user import": [
+        "Hromadný import používateľov"
+      ],
+      "Cancel plan": [
+        "Zrušiť plán"
+      ],
+      "Close account": [
+        "Zavrieť účet"
+      ],
+      "Compare plans": [
+        "Porovnať plány"
+      ],
+      "Connected addresses": [
+        "Prepojené adresy"
+      ],
+      "Connection events": [
+        "Udalosti pripojenia"
+      ],
+      "Create organization": [
+        "Vytvoriť organizáciu"
+      ],
+      "Custom domain": [
+        "Vlastná doména"
+      ],
+      "Customer support": [
+        "Zákaznícka podpora"
+      ],
+      "Dark mode": [
+        "Tmavý režim"
+      ],
+      "Data breach alerts": [
+        "Upozornenia na únik údajov"
+      ],
+      "Desktop and mobile apps": [
+        "Desktopové a mobilné aplikácie"
+      ],
+      "Downgrade plan": [
+        "Znížiť úroveň plánu"
+      ],
+      "Download apps": [
+        "Stiahnuť aplikácie"
+      ],
+      "Download recovery file": [
+        "Stiahnuť súbor pre obnovenie"
+      ],
+      "Enable or disable apps for members": [
+        "Povoliť alebo deaktivovať aplikácie pre členov"
+      ],
+      "Encryption backup file": [
+        "Záložný súbor šifrovania"
+      ],
+      "Encryption backup in this browser": [
+        "Šifrovanie zálohy v tomto prehliadači"
+      ],
+      "External mailbox": [
+        "Externá poštová schránka"
+      ],
+      "Gateway logs": [
+        "Záznamy brány"
+      ],
+      "Group invitations": [
+        "Pozvánky do skupín"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "Group plan invitation": [
+        "Pozvánka do skupinového plánu"
+      ],
+      "Import history": [
+        "História importu"
+      ],
+      "Included apps": [
+        "Zahrnuté aplikácie"
+      ],
+      "Leaked password": [
+        "Uniknuté heslo"
+      ],
+      "Leave organization": [
+        "Opustiť organizáciu"
+      ],
+      "Light mode": [
+        "Svetlý režim"
+      ],
+      "Mnemonic": [
+        "Slovné vyjadrenie"
+      ],
+      "One-time code": [
+        "Jednorazový kód"
+      ],
+      "Password reminder": [
+        "Pripomienka hesla"
+      ],
+      "Password reminders": [
+        "Pripomienky hesla"
+      ],
+      "Permanently delete data": [
+        "Natrvalo vymazať údaje"
+      ],
+      "Privacy guides": [
+        "Príručky o ochrane súkromia"
+      ],
+      "Privacy services": [
+        "Služby na ochranu súkromia"
+      ],
+      "Protection from cyber attacks": [
+        "Ochrana pred kybernetickými útokmi"
+      ],
+      "Receive misaddressed emails": [
+        "Prijímať emaily s nesprávnou adresou"
+      ],
+      "Recovery email address": [
+        "Emailová adresa pre obnovenie"
+      ],
+      "Recovery score": [
+        "Skóre zotavenia"
+      ],
+      "Redeem discount code": [
+        "Uplatniť zľavový kód"
+      ],
+      "Referral credits": [
+        "Kredity za odporúčanie"
+      ],
+      "Referral rewards": [
+        "Odmeny za odporúčanie"
+      ],
+      "Restrict app access": [
+        "Obmedziť prístup k aplikáciám"
+      ],
+      "Scan QR code": [
+        "Skenovať QR kód"
+      ],
+      "Server access policy": [
+        "Zásady prístupu k serveru"
+      ],
+      "Shared server access": [
+        "Prístup k zdieľanému serveru"
+      ],
+      "Sign out other devices": [
+        "Odhlásiť ostatné zariadenia"
+      ],
+      "Sign-in history": [
+        "História prihlásenia"
+      ],
+      "Stop subscription renewal": [
+        "Zastaviť obnovenie predplatného"
+      ],
+      "Storage space": [
+        "Veľkosť úložiska"
+      ],
+      "Storage usage": [
+        "Využitie úložiska"
+      ],
+      "Subscription end date": [
+        "Dátum ukončenia predplatného"
+      ],
+      "Subscription status": [
+        "Stav predplatného"
+      ],
+      "Upgrade plan": [
+        "Zvýšiť úroveň plánu"
+      ],
+      "Verify domain": [
+        "Overiť doménu"
+      ],
+      "Verify password": [
+        "Potvrďte heslo"
+      ],
+      "Video conferencing": [
+        "Videokonferencie"
+      ],
+      "VPN session details": [
+        "Podrobnosti VPN relácie"
+      ],
+      "Writing assistant": [
+        "Asistent písania"
       ]
     },
     "Accounts": {
@@ -10404,6 +10608,21 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Pripojí vás do cieľovej krajiny prostredníctvom serverov, ktoré sa fyzicky nachádzajú inde."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Pripojí vás do cieľovej krajiny prostredníctvom serverov, ktoré sa fyzicky nachádzajú inde: ${ joinedSmartRoutingCountries }."
+      ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Členovia sú pravidelne vyzývaní, aby si overili svoje heslo pre ${ BRAND_NAME }, aby ho nezabudli. Povinné prihlasovanie zabraňuje členom, aby si túto funkciu vypli."
+      ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Ak je táto funkcia zapnutá, členovia si nemôžu v svojich nastaveniach vypnúť prihlasovanie pomocou hesla."
       ]
     },
     "info": {
@@ -11600,6 +11819,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Require password check-ins": [
+        "Vyžadovať prihlásenie pomocou hesla"
       ]
     },
     "label": {
@@ -13106,6 +13328,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s rozšíreným prístupom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s obmedzeným prístupom"
       ]
     },
     "new_plans: feature highlight": {
@@ -13741,6 +13969,12 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Nastavenia videokonferencií Zoom boli aktualizované."
+      ],
+      "Password check-ins are not required anymore": [
+        "Prihlasovanie pomocou hesla už nie je povinné"
+      ],
+      "Password check-ins are now required for all members": [
+        "Prihlasovanie pomocou hesla je teraz povinné pre všetkých členov"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15654,6 +15888,9 @@
       ],
       "User Admin": [
         "Správca používateľov"
+      ],
+      "Organization Admin": [
+        "Správca organizácie"
       ]
     },
     "Role description": {
@@ -19609,6 +19846,9 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "Password check-ins": [
+        "Prihlásenie pomocou hesla"
       ]
     },
     "Title for payment methods table": {
@@ -19877,6 +20117,9 @@
       ],
       "Your DKIM signing is working.": [
         "Vaše DKIM podpisovanie je funkčné."
+      ],
+      "This setting is managed by your organization": [
+        "Toto nastavenie spravuje vaša organizácia"
       ]
     },
     "tooltip": {
