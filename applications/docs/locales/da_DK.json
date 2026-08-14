@@ -949,6 +949,12 @@
       ],
       "Save preferences": [
         "Gem præferencer"
+      ],
+      "Keep going": [
+        "Fortsæt"
+      ],
+      "Stop here": [
+        "Stop her"
       ]
     },
     "Actions message": {
@@ -6046,6 +6052,9 @@
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "Ophæv suspenderingen af denne bruger i ${ provider.adminConsoleName } for at migrere dem."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Det her kræver meget... Skal det fortsætte?"
       ]
     },
     "info": {
@@ -7671,6 +7680,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med udvidet adgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrænset adgang"
       ]
     },
     "new_plans: feature highlight": {
@@ -9142,6 +9157,9 @@
       ],
       "User Admin": [
         "Brugeradmin"
+      ],
+      "Organization Admin": [
+        "Organisationsadmin"
       ]
     },
     "Role description": {
@@ -10845,6 +10863,9 @@
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
+      ],
+      "Still working on it": [
+        "Arbejder stadig på det"
       ]
     },
     "Title header for keys table": {
