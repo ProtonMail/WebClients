@@ -34,6 +34,44 @@ describe('transformLinkify', () => {
         });
     });
 
+    describe('when a matched URL contains quote characters', () => {
+        // linkify-it allows a balanced pair of quotes inside a URL path, so the matched
+        // URL and link text must be escaped or they break out of `href="..."`.
+        const parseAnchor = (html: string) => {
+            const container = document.createElement('div');
+            container.innerHTML = html;
+            return container.querySelector('a');
+        };
+
+        it('does not let a quoted URL inject an attribute into the anchor', () => {
+            const result = transformLinkify({
+                content: 'Hi https://example.com/"onmouseover="alert(1)" bye',
+            });
+
+            expect(result).toContain('&quot;onmouseover=&quot;');
+
+            const anchor = parseAnchor(result);
+            expect(anchor?.getAttribute('onmouseover')).toBeNull();
+            expect(anchor?.getAttributeNames().sort()).toEqual(['href', 'rel', 'target']);
+        });
+
+        it('keeps the quoted URL intact in the href and the link text', () => {
+            const url = 'https://example.com/"onmouseover="alert(1)';
+            const anchor = parseAnchor(transformLinkify({ content: url }));
+
+            expect(anchor?.getAttribute('href')).toBe(url);
+            expect(anchor?.textContent).toBe(url);
+        });
+
+        it('escapes ampersands in query strings without corrupting the URL', () => {
+            const url = 'https://example.com/?a=1&b=2';
+            const result = transformLinkify({ content: url });
+
+            expect(result).toContain('href="https://example.com/?a=1&amp;b=2"');
+            expect(parseAnchor(result)?.getAttribute('href')).toBe(url);
+        });
+    });
+
     describe('when given disallowed schemes', () => {
         it('does not linkify URLs starting with http://', () => {
             // http: is disabled on the shared LinkifyIt instance — cleartext
