@@ -2,6 +2,7 @@ import { act, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/test';
+import { getOrgPermissions } from '@proton/account/userPermissions';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
@@ -26,6 +27,13 @@ describe('SharedServersSection', () => {
         subscription: getSubscriptionState(vpnSubscription),
         user: getModelState({ ...({ ID: 'user-123' } as UserModel) }),
         organization: getOrganizationState(organization),
+        userPermissions: getModelState({
+            Roles: [],
+            Permissions: ['account.shared_server.update' as const],
+            ShowAdminRolesUI: false,
+            permissions: getOrgPermissions(['account.shared_server.update'], false),
+            role: 0,
+        }),
     };
     beforeEach(() => {
         jest.clearAllMocks();

@@ -234,7 +234,6 @@ const routesDefinition = {
                             label: () => c('Title').t`Gateways`,
                             to: '/gateways',
                             isVisible: ({ context }) =>
-                                context.canHaveOrganization &&
                                 context.permissions['account.gateway.read'] &&
                                 (getHasVpnB2BPlan(context.subscription) || hasAnyB2bBundle(context.subscription)),
                             sections: [{ id: 'organization.vpn.gateways.servers', to: 'servers' }],
@@ -244,7 +243,6 @@ const routesDefinition = {
                             label: () => c('Title').t`Shared servers`,
                             to: '/shared-servers',
                             isVisible: ({ context }) =>
-                                context.canHaveOrganization &&
                                 !!context.flags.SharedServerFeature &&
                                 context.permissions['account.shared_server.read'] &&
                                 (getHasVpnB2BPlan(context.subscription) || hasAnyB2bBundle(context.subscription)),
@@ -269,7 +267,7 @@ const routesDefinition = {
                                     hasVPNPassProfessional(context.subscription);
 
                                 return (
-                                    context.canHaveOrganization &&
+                                    context.permissions['account.activity_log.read'] &&
                                     hasPlanWithEventLogging &&
                                     context.hasOrganizationAccess
                                 );

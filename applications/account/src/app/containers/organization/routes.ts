@@ -88,7 +88,10 @@ export const getOrganizationAppRoutes = ({
     const hasPlanWithEventLogging =
         hasVpnBusiness(subscription) || hasAnyB2bBundle(subscription) || hasVPNPassProfessional(subscription);
     const canShowB2BConnectionEvents =
-        hasPlanWithEventLogging && app === APPS.PROTONVPN_SETTINGS && canHaveOrganization && isOrgConfigured;
+        hasPlanWithEventLogging &&
+        app === APPS.PROTONVPN_SETTINGS &&
+        permissions['account.activity_log.read'] &&
+        isOrgConfigured;
 
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
@@ -306,10 +309,7 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Gateways`,
             to: '/gateways',
             icon: 'servers',
-            available:
-                canHaveOrganization &&
-                permissions['account.gateway.read'] &&
-                (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
+            available: permissions['account.gateway.read'] && (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
             subsections: [
                 {
                     id: 'servers',
@@ -327,7 +327,6 @@ export const getOrganizationAppRoutes = ({
             to: '/shared-servers',
             icon: 'earth',
             available:
-                canHaveOrganization &&
                 isSharedServerFeatureEnabled &&
                 permissions['account.shared_server.read'] &&
                 (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
@@ -351,7 +350,6 @@ export const getOrganizationAppRoutes = ({
             icon: 'vault',
             available:
                 isAlwaysOnVpnEnabled &&
-                canHaveOrganization &&
                 permissions['account.always_on.read'] &&
                 (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
         },
