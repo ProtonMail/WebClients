@@ -1,23 +1,40 @@
 import { describe, expect, it } from '@jest/globals';
-import ExcelJS from 'exceljs';
+import * as XLSX from 'xlsx';
 
-import { convertXlsxToMarkdown, excelCellValueToCsvValue, getExcelSheetsFromFile } from './excelSheets';
+import { convertXlsxToMarkdown, getExcelSheetsFromFile } from './excelSheets';
 
 const XLSX_MIME_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
 const XLS_MIME_TYPE = 'application/vnd.ms-excel';
 
 async function createWorkbookData(): Promise<ArrayBuffer> {
-    const workbook = new ExcelJS.Workbook();
-    const firstSheet = workbook.addWorksheet('Summary');
-    firstSheet.addRow(['Name', 'Value']);
-    firstSheet.addRow(['Alice', 10]);
+    const workbook = XLSX.utils.book_new();
+    const firstSheet = XLSX.utils.aoa_to_sheet([
+        ['Name', 'Value'],
+        ['Alice', 10],
+    ]);
+    XLSX.utils.book_append_sheet(workbook, firstSheet, 'Summary');
 
-    const secondSheet = workbook.addWorksheet('Details');
-    secondSheet.addRow(['Item', 'Count']);
-    secondSheet.addRow(['Widgets', 3]);
+    const secondSheet = XLSX.utils.aoa_to_sheet([
+        ['Item', 'Count'],
+        ['Widgets', 3],
+    ]);
+    XLSX.utils.book_append_sheet(workbook, secondSheet, 'Details');
 
-    const buffer = await workbook.xlsx.writeBuffer();
+    const buffer = XLSX.write(workbook, { type: 'array', bookType: 'xlsx' });
     return buffer;
+}
+
+async function createGoogleSheetsLikeWorkbookData(): Promise<ArrayBuffer> {
+    const workbook = XLSX.utils.book_new();
+    const firstSheet = XLSX.utils.aoa_to_sheet([
+        ['Col A', 'Col B', 'Col C', 'Col D'],
+        [23, 4, 23, 2],
+        [22, 33, 33, 33],
+    ]);
+    XLSX.utils.book_append_sheet(workbook, firstSheet, 'Sheet1');
+    XLSX.utils.book_append_sheet(workbook, XLSX.utils.aoa_to_sheet([]), 'Sheet2');
+
+    return XLSX.write(workbook, { type: 'array', bookType: 'xlsx' });
 }
 
 describe('excelSheets', () => {
@@ -66,7 +83,8 @@ describe('excelSheets', () => {
 
         expect(result.rowCount).toBe(2);
         expect(result.content).not.toContain('Sheet: Summary');
-        expect(result.content).toContain('Sheet: Details');
+        expect(result.content).not.toContain('```csv');
+        expect(result.content).toContain('Item,Count');
         expect(result.content).toContain('Widgets,3');
     });
 
@@ -88,11 +106,11 @@ describe('excelSheets', () => {
         expect(result.content).toContain('Sheet: Details');
     });
 
-    it('escapes CSV values produced from ExcelJS cell objects', async () => {
-        const workbook = new ExcelJS.Workbook();
-        const sheet = workbook.addWorksheet('Escaping');
-        sheet.addRow([{ richText: [{ text: 'Hello, "quoted"' }] }, { formula: 'A1', result: 'Formula, result' }]);
-        const data = await workbook.xlsx.writeBuffer();
+    it('escapes CSV values with commas and quotes', async () => {
+        const workbook = XLSX.utils.book_new();
+        const sheet = XLSX.utils.aoa_to_sheet([['Hello, "quoted"', 'Formula, result']]);
+        XLSX.utils.book_append_sheet(workbook, sheet, 'Escaping');
+        const data = XLSX.write(workbook, { type: 'array', bookType: 'xlsx' });
 
         const result = await convertXlsxToMarkdown({
             name: 'escaping.xlsx',
@@ -105,11 +123,23 @@ describe('excelSheets', () => {
         expect(result.content).toContain('"Formula, result"');
     });
 
-    it('escapes all supported object cell value branches', () => {
-        expect(excelCellValueToCsvValue({ richText: [{ text: 'Hello, "quoted"' }] })).toBe('"Hello, ""quoted"""');
-        expect(excelCellValueToCsvValue({ text: 'Line 1\nLine 2' })).toBe('"Line 1\nLine 2"');
-        expect(excelCellValueToCsvValue({ result: 'Formula, result' })).toBe('"Formula, result"');
-        expect(excelCellValueToCsvValue({ toString: () => 'Value, with comma' })).toBe('"Value, with comma"');
+    it('handles Google Sheets-style workbooks with an empty second sheet', async () => {
+        const data = await createGoogleSheetsLikeWorkbookData();
+
+        const result = await convertXlsxToMarkdown(
+            {
+                name: 'Untitled spreadsheet.xlsx',
+                type: XLSX_MIME_TYPE,
+                size: data.byteLength,
+                data,
+            },
+            ['Sheet1']
+        );
+
+        expect(result.rowCount).toBe(3);
+        expect(result.content).not.toContain('```csv');
+        expect(result.content).toContain('Col A,Col B,Col C,Col D');
+        expect(result.content).toContain('22,33,33,33');
     });
 
     it('returns a readable error for unreadable xlsx files', async () => {

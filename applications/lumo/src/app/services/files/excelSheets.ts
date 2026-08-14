@@ -1,4 +1,4 @@
-import type { Row, Worksheet } from 'exceljs';
+import * as XLSX from 'xlsx';
 
 import type { FileData } from '../fileProcessingService';
 
@@ -50,126 +50,94 @@ function createExcelReadError(name: string, type: string | undefined, error: unk
     );
 }
 
-function escapeCsvValue(value: string): string {
-    if (value.includes(',') || value.includes('"') || value.includes('\n')) {
-        return `"${value.replace(/"/g, '""')}"`;
-    }
-    return value;
+function isZipArchive(data: ArrayBuffer): boolean {
+    const view = new Uint8Array(data);
+    return view.length >= 4 && view[0] === 0x50 && view[1] === 0x4b;
 }
 
-function getObjectCellText(value: any): string {
-    if (value.richText) {
-        return value.richText.map((rt: any) => rt.text || '').join('');
-    }
-    if (value.text !== undefined) {
-        return String(value.text);
-    }
-    if (value.result !== undefined) {
-        return String(value.result);
-    }
-
-    const serializedValue = String(value);
-    try {
-        const parsedValue = JSON.parse(serializedValue);
-        if (parsedValue?.richText) {
-            return parsedValue.richText.map((rt: any) => rt.text || '').join('');
-        }
-        if (parsedValue?.text !== undefined) {
-            return String(parsedValue.text);
-        }
-        if (parsedValue?.result !== undefined) {
-            return String(parsedValue.result);
-        }
-    } catch {
-        // Some ExcelJS value objects stringify to JSON; otherwise use the serialized form.
-    }
-
-    return serializedValue;
-}
-
-export function excelCellValueToCsvValue(value: any): string {
-    if (value === null || value === undefined) {
-        return '';
-    }
-
-    if (typeof value === 'object') {
-        return escapeCsvValue(getObjectCellText(value));
-    }
-
-    return escapeCsvValue(String(value));
-}
-
-function rowToCommaSeparatedString(row: Row): string {
-    // ExcelJS row.values is an array where index 0 is empty, actual values start at index 1.
-    const rowValues = row.values as any[];
-    return rowValues
-        .slice(1)
-        .map((value: any) => excelCellValueToCsvValue(value))
-        .join(',');
-}
-
-function worksheetToCsvRows(worksheet: Worksheet): string[] {
-    const csvRows: string[] = [];
-    worksheet.eachRow((row) => csvRows.push(rowToCommaSeparatedString(row)));
-    return csvRows;
-}
-
-async function readWorkbook(data: ArrayBuffer, name: string, type?: string) {
+function readWorkbook(data: ArrayBuffer, name: string, type?: string): XLSX.WorkBook {
     if (isLegacyExcelFile(name, type)) {
         throw createExcelReadError(name, type, new Error('Legacy .xls workbook'));
     }
 
-    const ExcelJS = await import('exceljs');
-    const workbook = new ExcelJS.Workbook();
+    if (!isZipArchive(data)) {
+        throw createExcelReadError(name, type, new Error('Not a zip archive'));
+    }
 
     try {
-        await workbook.xlsx.load(data);
+        return XLSX.read(new Uint8Array(data), { type: 'array', cellDates: true });
     } catch (error) {
         throw createExcelReadError(name, type, error);
     }
+}
 
-    return workbook;
+function getSheetRowCount(sheet: XLSX.WorkSheet): number {
+    const ref = sheet['!ref'];
+    if (!ref) {
+        return 0;
+    }
+
+    const range = XLSX.utils.decode_range(ref);
+    return range.e.r - range.s.r + 1;
+}
+
+function sheetToCsvRows(sheet: XLSX.WorkSheet): string[] {
+    const csvContent = XLSX.utils.sheet_to_csv(sheet);
+    if (!csvContent) {
+        return [];
+    }
+
+    return csvContent.split('\n');
+}
+
+export async function getExcelSheetsFromFileData(fileData: FileData): Promise<ExcelSheetInfo[]> {
+    const workbook = readWorkbook(fileData.data, fileData.name, fileData.type);
+
+    return workbook.SheetNames.map((name, index) => ({
+        index: index + 1,
+        name,
+        rowCount: getSheetRowCount(workbook.Sheets[name]),
+    }));
 }
 
 export async function getExcelSheetsFromFile(file: File): Promise<ExcelSheetInfo[]> {
-    const workbook = await readWorkbook(await file.arrayBuffer(), file.name, file.type);
-
-    return workbook.worksheets.map((worksheet, index) => ({
-        index: index + 1,
-        name: worksheet.name,
-        rowCount: worksheet.actualRowCount,
-    }));
+    const data = await file.arrayBuffer();
+    return getExcelSheetsFromFileData({
+        name: file.name,
+        type: file.type,
+        size: file.size,
+        data,
+    });
 }
 
 export async function convertXlsxToMarkdown(
     fileData: FileData,
     selectedSheetNames?: string[]
 ): Promise<ExcelConversionResult> {
-    const workbook = await readWorkbook(fileData.data, fileData.name, fileData.type);
+    const workbook = readWorkbook(fileData.data, fileData.name, fileData.type);
     const selectedSheetNameSet = selectedSheetNames?.length ? new Set(selectedSheetNames) : undefined;
-    const worksheets = workbook.worksheets.filter(
-        (worksheet) => !selectedSheetNameSet || selectedSheetNameSet.has(worksheet.name)
-    );
+    const sheetNames = workbook.SheetNames.filter((name) => !selectedSheetNameSet || selectedSheetNameSet.has(name));
 
-    if (!workbook.worksheets.length) {
+    if (!workbook.SheetNames.length) {
         throw new Error('Excel file contains no worksheets');
     }
 
-    if (!worksheets.length) {
+    if (!sheetNames.length) {
         throw new Error('No Excel worksheets selected');
     }
 
-    const includeSheetHeaders = workbook.worksheets.length > 1;
+    const includeSheetHeaders = sheetNames.length > 1;
     let totalRows = 0;
-    const sheetBlocks = worksheets.map((worksheet) => {
-        const csvRows = worksheetToCsvRows(worksheet);
+    const sheetBlocks = sheetNames.map((sheetName) => {
+        const csvRows = sheetToCsvRows(workbook.Sheets[sheetName]);
         totalRows += csvRows.length;
 
+        const csvContent = csvRows.join('\n');
         if (!includeSheetHeaders) {
-            return csvRows.join('\n');
+            return csvContent;
         }
 
-        return [`Sheet: ${worksheet.name}`, '```csv', csvRows.join('\n'), '```'].join('\n');
+        return [`Sheet: ${sheetName}`, '```csv', csvContent, '```'].join('\n');
     });
 
     const content = sheetBlocks.join('\n\n').trim();

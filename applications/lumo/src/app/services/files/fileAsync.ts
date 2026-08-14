@@ -35,7 +35,8 @@ export const handleFileAsync =
         const allAttachments = selectAttachments(currentState);
         const uniqueFilename = generateUniqueFilename(file.name, messageChain, allAttachments);
 
-        const fileData = new Uint8Array(await file.arrayBuffer());
+        const fileBuffer = await file.arrayBuffer();
+        const fileData = new Uint8Array(fileBuffer);
 
         const attachment: Attachment = {
             // pub:
@@ -63,7 +64,10 @@ export const handleFileAsync =
 
         // All files go through the worker for processing
         try {
-            const result = await fileProcessingService.processFile(file, processingOptions);
+            const result = await fileProcessingService.processFile(file, {
+                ...processingOptions,
+                fileData: fileBuffer,
+            });
 
             if (result.type === 'text') {
                 // Text file processed successfully

@@ -92,7 +92,7 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         mimeTypes: ['application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
         description: 'Excel Document',
         category: 'spreadsheet',
-        // No pandocFormat - uses ExcelJS library for conversion, handled separately in worker
+        // No pandocFormat - uses SheetJS for conversion, handled separately in worker
     },
     csv: {
         extensions: ['csv'],
