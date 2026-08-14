@@ -260,11 +260,14 @@ function main({
                     if (breadcrumb.category === 'navigation' && breadcrumb.data) {
                         [breadcrumb.data.from] = breadcrumb.data.from.split(/#|%23/i);
                         [breadcrumb.data.to] = breadcrumb.data.to.split(/#|%23/i);
+                        breadcrumb.data.from = breadcrumb.data.from.replace(/email=[^&]+/i, 'email=[Filtered]');
+                        breadcrumb.data.to = breadcrumb.data.to.replace(/email=[^&]+/i, 'email=[Filtered]');
                     }
 
                     if (breadcrumb.category === 'fetch' && breadcrumb.data) {
                         // Redact email addresses in breadcrumb messages
-                        breadcrumb.message = breadcrumb.data.url.replace(/Email=[^&]+/, 'Email=[Filtered]');
+                        breadcrumb.data.url = breadcrumb.data.url.replace(/email=[^&]+/i, 'email=[Filtered]');
+                        breadcrumb.message = breadcrumb.data.url;
                     }
 
                     // Button titles may contain accidental PII
