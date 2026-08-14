@@ -367,21 +367,49 @@ export function classifyError(e: unknown): ErrorDecision {
 }
 
 /**
- * A repairable error IS the node's fault and is safe to quarantine to the repair table and retry:
- * `classifyError`'s transient-`unknown` bucket (decryption, entry mapping, parent-path resolution,
- * other deterministic per-node failures) is node-scoped and safe to quarantine + skip.
- *
- * Everything else is systemic and must NOT be quarantined:
- * - known transient network-family reasons (offline / network / server / rate-limited) - the whole
- *   batch should be retried, not the node skipped,
- * - permanent errors (quota / corrupted DB / invalid state / WASM engine) - the queue stops.
+ * Thrown by the narrow set of call sites that are confirmed to concern exactly one node: its own
+ * fetch, entry-mapping, or parent-path resolution. Whether an error is repairable is a property of
+ * the *operation* (was this call scoped to a single node?), not of the error's type - a network
+ * error fetching this node is still systemic, not this node's fault. Construct via
+ * `maybeWrapAsRepairableNodeError` at those call sites rather than throwing directly, so the
+ * systemic/known-transient carve-out below is never skipped.
  */
-export function isRepairableError(e: unknown): boolean {
-    const decision = classifyError(e);
-    if (decision.kind === 'permanent') {
-        return false;
+export class RepairableNodeError extends Error {
+    constructor(
+        message: string,
+        readonly cause: unknown
+    ) {
+        super(message, { cause });
+        this.name = 'RepairableNodeError';
     }
-    return decision.reason === 'unknown';
+}
+
+/**
+ * Converts `e` to a `RepairableNodeError` when it is unclassified (`classifyError`'s
+ * transient-`unknown` bucket - decryption, entry mapping, other deterministic per-node failures),
+ * otherwise returns it unchanged. Known systemic errors (abort, permanent, or a recognized
+ * transient network-family reason) concern the whole operation, not this node, and must propagate
+ * so the batch is retried rather than the node quarantined.
+ *
+ * Call this ONLY at a call site scoped to a single node (fetching it, mapping it to an index
+ * entry, resolving its own parent path) - never around an operation that can fail partway through
+ * on account of a different node (e.g. a subtree walk), or the misattribution this replaces would
+ * just move somewhere else.
+ */
+export function maybeWrapAsRepairableNodeError(e: unknown, message: string): unknown {
+    if (isAbortError(e)) {
+        return e;
+    }
+    const decision = classifyError(e);
+    if (decision.kind === 'permanent' || decision.reason !== 'unknown') {
+        return e;
+    }
+    return new RepairableNodeError(message, e);
+}
+
+/** Safe to quarantine to the repair table and retry independently; see `RepairableNodeError`. */
+export function isRepairableError(e: unknown): boolean {
+    return e instanceof RepairableNodeError;
 }
 
 /**

@@ -9,6 +9,7 @@ export class FakeSdkDriveClient implements SdkDriveClient {
     private iterateError: Error | undefined;
     private failNextIterateFolders = new Map<string, Error>();
     private getNodeErrors = new Map<string, Error>();
+    private iterateNodesErrors = new Map<string, Error>();
 
     setNode(nodeUid: string, node: NodeEntity): void {
         this.nodes.set(nodeUid, node);
@@ -39,6 +40,16 @@ export class FakeSdkDriveClient implements SdkDriveClient {
     /** Clear a forced getNode failure so the node can be fetched again. */
     clearGetNodeError(nodeUid: string): void {
         this.getNodeErrors.delete(nodeUid);
+    }
+
+    /** Make iterateNodes throw when this uid is in the batch (a node that cannot be loaded at all). */
+    setIterateNodesError(nodeUid: string, error: Error): void {
+        this.iterateNodesErrors.set(nodeUid, error);
+    }
+
+    /** Clear a forced iterateNodes failure so the node can be loaded again. */
+    clearIterateNodesError(nodeUid: string): void {
+        this.iterateNodesErrors.delete(nodeUid);
     }
 
     async getNode(nodeUid: string): Promise<NodeEntity> {
@@ -80,6 +91,12 @@ export class FakeSdkDriveClient implements SdkDriveClient {
 
     async *iterateNodes(uids: string[]): AsyncIterable<NodeEntity> {
         for (const uid of uids) {
+            // Kept separate from getNodeErrors: a folder can be listable-but-not-directly-fetchable
+            // (the vanished-folder confirmation path), so the two must be controllable independently.
+            const forcedError = this.iterateNodesErrors.get(uid);
+            if (forcedError) {
+                throw forcedError;
+            }
             const node = this.nodes.get(uid);
             if (node !== undefined) {
                 yield node;

@@ -5,7 +5,7 @@ import { Logger } from '../../../../shared/Logger';
 import { classifyError, isAbortError, sendErrorReportForSearch } from '../../../../shared/errors';
 import type { IndexBlobStore } from '../../../index/IndexBlobStore';
 import type { IndexInstance, IndexKind } from '../../../index/IndexRegistry';
-import { engineCall, toEngineError } from '../../../index/engineCall';
+import { engineCall, maybeWrapAsSearchLibraryError } from '../../../index/engineCall';
 import type { IndexerTaskKind, TaskContext } from '../BaseTask';
 import { BaseTask } from '../BaseTask';
 
@@ -86,7 +86,7 @@ export class CleanUpStaleBlobsTask extends BaseTask {
             } catch (e) {
                 sendErrorReportForSearch(
                     `CleanUpStaleBlobsTask: failed to free cleanup handle <${indexKind}>`,
-                    toEngineError('cleanup: free', e)
+                    maybeWrapAsSearchLibraryError('cleanup: free', e)
                 );
             }
         }

@@ -6,11 +6,11 @@ import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../../shared/Logger';
 import type { RepairNodeEntry, RepairOperation, SearchDB } from '../../../shared/SearchDB';
-import { isRepairableError } from '../../../shared/errors';
+import { isRepairableError, maybeWrapAsRepairableNodeError } from '../../../shared/errors';
 import type { TreeEventScopeId } from '../../../shared/types';
 import type { IndexReader } from '../../index/IndexReader';
 import type { IndexKind } from '../../index/IndexRegistry';
-import { toEngineError } from '../../index/engineCall';
+import { maybeWrapAsSearchLibraryError } from '../../index/engineCall';
 import type { IndexEntry } from '../indexEntry';
 import { createIndexEntry, toCoreNodeFields } from '../indexEntry';
 import { removeTreeEventScope } from '../removeTreeEventScope';
@@ -286,13 +286,11 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
             return;
         }
 
-        // iterateNodes (unlike getNode) reports a missing node as an empty result instead of
-        // throwing. The node may have been deleted while quarantined; treat that as resolved (the
-        // 'remove' outcome the node would have gotten via its own event) instead of retrying
-        // forever against a node that will never come back.
-        const [node] = await ctx.bridge.driveSdk.iterateNodes([entry.nodeUid]);
+        // The node may have been deleted while quarantined. Treat that as resolved (the 'remove'
+        // outcome it would have gotten via its own event) instead of retrying forever against a
+        // node that will never come back.
+        const node = await this.fetchNodeOrRemove(entry.nodeUid, ctx);
         if (!node) {
-            await this.removeNodeAndDescendants(entry.nodeUid, ctx, true /* deleteDescendants */);
             return;
         }
 
@@ -319,12 +317,41 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
         }
     }
 
+    /**
+     * Fetch a single node, or remove it from the index and return undefined when it is gone.
+     * Shared by incremental event handling and the repair replay.
+     *
+     * Uses iterateNodes rather than getNode because it reports a missing node as an empty result
+     * instead of throwing - and the API cannot distinguish "deleted" from "no longer accessible"
+     * anyway, both are simply omitted from the response.
+     *
+     * A genuine fetch failure is wrapped as node-scoped so it is attributed to this node: during a
+     * repair pass that keeps the failure local to one entry instead of aborting the whole pass.
+     */
+    private async fetchNodeOrRemove(nodeUid: string, ctx: TaskContext): Promise<NodeEntity | undefined> {
+        let node: NodeEntity | undefined;
+        try {
+            [node] = await ctx.bridge.driveSdk.iterateNodes([nodeUid]);
+        } catch (e) {
+            throw maybeWrapAsRepairableNodeError(e, `failed to get node`);
+        }
+
+        if (!node) {
+            Logger.info(`${this.getUid()}: node ${nodeUid} is gone, removing from index`);
+            await this.removeNodeAndDescendants(nodeUid, ctx, true /* deleteDescendants */);
+        }
+        return node;
+    }
+
     private async handleNodeCreated(
         event: Extract<NodeEvent, { isTrashed: boolean }>,
         ctx: TaskContext,
         generation: number
     ): Promise<void> {
-        const maybeNode = await ctx.bridge.driveSdk.getNode(event.nodeUid);
+        const maybeNode = await this.fetchNodeOrRemove(event.nodeUid, ctx);
+        if (!maybeNode) {
+            return;
+        }
         this.maybeWarnForUndecryptableNodeName(maybeNode, event.nodeUid);
 
         const parentPathResult = await this.resolveParentPath(event.parentNodeUid, ctx);
@@ -342,7 +369,10 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
         ctx: TaskContext,
         generation: number
     ): Promise<void> {
-        const maybeNode = await ctx.bridge.driveSdk.getNode(event.nodeUid);
+        const maybeNode = await this.fetchNodeOrRemove(event.nodeUid, ctx);
+        if (!maybeNode) {
+            return;
+        }
         await this.reconcileNode(maybeNode, event.parentNodeUid, event.isTrashed, ctx, generation);
     }
 
@@ -423,7 +453,7 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
             await session.commit();
         } catch (e) {
             session.dispose();
-            throw toEngineError('remove node and descendant tree', e);
+            throw maybeWrapAsSearchLibraryError('remove node and descendant tree', e);
         }
 
         Logger.info(`${this.getUid()}: removed node ${nodeUid} and ${descendantCount} descendants`);
@@ -440,7 +470,7 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
             await session.commit();
         } catch (e) {
             session.dispose();
-            throw toEngineError('upsert node', e);
+            throw maybeWrapAsSearchLibraryError('upsert node', e);
         }
     }
 
@@ -558,7 +588,7 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
             await session.commit();
         } catch (e) {
             session.dispose();
-            throw toEngineError('sweep obsolete descendants', e);
+            throw maybeWrapAsSearchLibraryError('sweep obsolete descendants', e);
         }
 
         Logger.info(`${this.getUid()}: swept ${staleIds.length} obsolete descendants under ${nodeUid}`);
@@ -575,15 +605,19 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
         reindexEpoch = 0
     ): IndexEntry {
         this.trackNodeIndexed(node.type);
-        return createIndexEntry({
-            node: toCoreNodeFields(node),
-            treeEventScopeId: this.treeEventScopeId,
-            parentPath,
-            indexPopulatorKind: this.indexPopulatorKind,
-            indexPopulatorVersion: this.version,
-            indexPopulatorGeneration: generation,
-            reindexEpoch,
-        });
+        try {
+            return createIndexEntry({
+                node: toCoreNodeFields(node),
+                treeEventScopeId: this.treeEventScopeId,
+                parentPath,
+                indexPopulatorKind: this.indexPopulatorKind,
+                indexPopulatorVersion: this.version,
+                indexPopulatorGeneration: generation,
+                reindexEpoch,
+            });
+        } catch (e) {
+            throw maybeWrapAsRepairableNodeError(e, `failed to create index entry for node ${node.uid}`);
+        }
     }
 
     private trackNodeIndexed(nodeType: NodeType): void {
@@ -663,7 +697,13 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
             return { ok: true, parentPath };
         } catch (error) {
             Logger.error(`${this.getUid()}: failed to resolve parentPath for parent ${parentNodeUid}`, error);
-            return { ok: false, error };
+            return {
+                ok: false,
+                error: maybeWrapAsRepairableNodeError(
+                    error,
+                    `failed to resolve parentPath for parent ${parentNodeUid}`
+                ),
+            };
         }
     }
 
