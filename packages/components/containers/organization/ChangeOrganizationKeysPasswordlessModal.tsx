@@ -45,7 +45,7 @@ const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest }: Cha
     }, []);
 
     const handleSubmit = async (result: OrganizationKeyRotationPayload) => {
-        await dispatch(rotatePasswordlessOrganizationKeys(result));
+        await dispatch(rotatePasswordlessOrganizationKeys({ ...result, mode }));
         createNotification({ text: c('passwordless').t`Organization key updated` });
         onClose?.();
     };

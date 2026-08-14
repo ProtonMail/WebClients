@@ -3,7 +3,8 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { GroupsState } from '@proton/account/groups';
-import { groupThunk, updateGroups } from '@proton/account/groups';
+import { groupThunk } from '@proton/account/groups';
+import { getIsSystemGroup } from '@proton/account/groups/groupFlags';
 import { organizationActions } from '@proton/account/organization';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -481,22 +482,24 @@ export const getPublicMembersToReEncryptPayload = (): ThunkAction<
     };
 };
 
-export const getGroupsToReEncryptPayload = (): ThunkAction<
-    Promise<Group[]>,
-    RotateOrganizationKeysState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
+export const getGroupsToReEncryptPayload = (
+    mode?: 'reset'
+): ThunkAction<Promise<Group[]>, RotateOrganizationKeysState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
         const [organizationKey, groups] = await Promise.all([dispatch(organizationKeyThunk()), dispatch(groupThunk())]);
 
-        if (groups.length >= 1) {
+        // When resetting, the address keys of the system groups can't be re-encrypted without the old
+        // organization key, and the API recreates them once the new organization key is set. Any other
+        // group would have to be deleted manually first.
+        const groupsToReEncrypt = mode === 'reset' ? groups.filter((group) => !getIsSystemGroup(group)) : groups;
+
+        if (groupsToReEncrypt.length >= 1) {
             // we need the org key to be able to re-encrypt the group keys if we have any group
             if (!organizationKey?.privateKey) {
                 throw new Error(getGroupsError());
             }
         }
-        return groups;
+        return groupsToReEncrypt;
     };
 };
 
@@ -684,53 +687,12 @@ const getReEncryptedGroupAddressKeyTokens = async ({
 
 export interface RotateOrganizationKeysState extends KtState, OrganizationKeyState, GroupsState {}
 
-export const updateGroupsWithNewAddressKeyTokens = ({
-    GroupAddressKeyTokens,
-}: {
-    GroupAddressKeyTokens: GroupAddressKeyToken[];
-}): ThunkAction<Promise<void>, RotateOrganizationKeysState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch) => {
-        const groups = await dispatch(groupThunk());
-        const tokensByKeyId = new Map(GroupAddressKeyTokens.map((token) => [token.ID, token]));
-
-        const updatedGroups = groups
-            .map((group) => {
-                const address = group.Address;
-                const primaryAddressKey = address.Keys[0];
-                if (!primaryAddressKey) {
-                    return;
-                }
-                const groupAddressKeyToken = tokensByKeyId.get(primaryAddressKey.ID);
-                if (!groupAddressKeyToken) {
-                    return;
-                }
-                return {
-                    ...group,
-                    Address: {
-                        ...address,
-                        Keys: address.Keys.map((key) => {
-                            if (key.ID === primaryAddressKey.ID) {
-                                return {
-                                    ...key,
-                                    Token: groupAddressKeyToken.Token,
-                                    Signature: groupAddressKeyToken.OrgSignature,
-                                };
-                            }
-                            return key;
-                        }),
-                    },
-                };
-            })
-            .filter(isTruthy);
-
-        dispatch(updateGroups(updatedGroups));
-    };
-};
-
 export const rotateOrganizationKeys = ({
     password: newPassword,
+    mode,
 }: {
     password: string;
+    mode?: 'reset';
 }): ThunkAction<Promise<CachedOrganizationKey>, RotateOrganizationKeysState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState, extra) => {
         const organizationKey = await dispatch(organizationKeyThunk());
@@ -739,7 +701,6 @@ export const rotateOrganizationKeys = ({
         const addresses = await dispatch(addressesThunk());
 
         const publicMembersToReEncrypt = await dispatch(getPublicMembersToReEncryptPayload());
-        const groups = await dispatch(getGroupsToReEncryptPayload());
 
         const { privateKey, privateKeyArmored, backupKeySalt, backupArmoredPrivateKey } =
             await generateOrganizationKeys({
@@ -764,17 +725,12 @@ export const rotateOrganizationKeys = ({
                 });
             }
 
-            let GroupAddressKeyTokens: GroupAddressKeyToken[] = [];
-            if (groups.length >= 1) {
-                if (!organizationKey?.privateKey) {
-                    throw new Error(getGroupsError());
-                }
-                GroupAddressKeyTokens = await getReEncryptedGroupAddressKeyTokens({
-                    groups,
-                    oldOrganizationKey: organizationKey,
-                    newOrganizationKey: privateKey,
-                });
-            }
+            const groups = await dispatch(getGroupsToReEncryptPayload(mode));
+            const GroupAddressKeyTokens = await getReEncryptedGroupAddressKeyTokens({
+                groups,
+                oldOrganizationKey: organizationKey,
+                newOrganizationKey: privateKey,
+            });
 
             await silentApi(
                 updateOrganizationKeysV2({
@@ -786,10 +742,9 @@ export const rotateOrganizationKeys = ({
                 })
             );
 
-            const [result] = await Promise.all([
-                dispatch(organizationKeyThunk({ cache: CacheType.None })),
-                dispatch(updateGroupsWithNewAddressKeyTokens({ GroupAddressKeyTokens })),
-            ]);
+            const result = await dispatch(organizationKeyThunk({ cache: CacheType.None }));
+            // The API automatically recreates system groups on reset so let's refetch instead of updating optimistically.
+            await dispatch(groupThunk({ cache: CacheType.None })).catch(noop);
 
             return result;
         }
@@ -893,13 +848,11 @@ export const createPasswordlessOrganizationKeys = ({
                 AdminActivations: publicAdminActivations,
                 AdminInvitations: privateAdminInvitations,
                 GroupAddressKeyTokens,
+                IsKeyReset: false,
             })
         );
         dispatch(organizationActions.update({ Organization: { HasKeys: 1 } }));
-        const [result] = await Promise.all([
-            dispatch(organizationKeyThunk({ cache: CacheType.None })),
-            dispatch(updateGroupsWithNewAddressKeyTokens({ GroupAddressKeyTokens })),
-        ]);
+        const result = await dispatch(organizationKeyThunk({ cache: CacheType.None }));
         // When the organization key is created the API creates system groups in the background.
         // This refetches all groups when that happens so that the client becomes aware of them.
         // NOTE: It's better that this happens _after_ the parallel calls above have finished since
@@ -912,7 +865,8 @@ export const createPasswordlessOrganizationKeys = ({
 export const rotatePasswordlessOrganizationKeys = ({
     publicMembersToReEncryptPayload,
     memberKeyPayloads,
-}: OrganizationKeyRotationPayload): ThunkAction<
+    mode,
+}: OrganizationKeyRotationPayload & { mode?: 'reset' }): ThunkAction<
     Promise<CachedOrganizationKey>,
     RotateOrganizationKeysState,
     ProtonThunkArguments,
@@ -959,7 +913,7 @@ export const rotatePasswordlessOrganizationKeys = ({
             newOrganizationKey: { privateKey, privateKeyArmored },
         });
 
-        const groups = await dispatch(getGroupsToReEncryptPayload());
+        const groups = await dispatch(getGroupsToReEncryptPayload(mode));
         const GroupAddressKeyTokens = await getReEncryptedGroupAddressKeyTokens({
             groups,
             oldOrganizationKey: organizationKey,
@@ -976,13 +930,13 @@ export const rotatePasswordlessOrganizationKeys = ({
                 AdminActivations: publicAdminActivations,
                 AdminInvitations: privateAdminInvitations,
                 GroupAddressKeyTokens,
+                IsKeyReset: mode === 'reset',
             })
         );
 
-        const [result] = await Promise.all([
-            dispatch(organizationKeyThunk({ cache: CacheType.None })),
-            dispatch(updateGroupsWithNewAddressKeyTokens({ GroupAddressKeyTokens })),
-        ]);
+        const result = await dispatch(organizationKeyThunk({ cache: CacheType.None }));
+        // The API automatically recreates system groups on reset so let's refetch instead of updating optimistically.
+        await dispatch(groupThunk({ cache: CacheType.None })).catch(noop);
 
         return result;
     };
