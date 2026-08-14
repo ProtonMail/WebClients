@@ -70,6 +70,7 @@ import ChangeMemberPasswordModal from '../ChangeMemberPasswordModal';
 import ResendInvitePrompt from '../ResendInvitePrompt';
 import SubUserEditModal from '../SubUserEditModal';
 import UserInviteOrEditModal from '../UserInviteOrEditModal';
+import { useMemberRoleAssignmentRetry } from './useMemberRoleAssignmentRetry';
 
 export const useMemberActions = ({
     app,
@@ -83,7 +84,9 @@ export const useMemberActions = ({
     syncMembers: () => void;
 }) => {
     const { value: memberAddressesMap, retry } = useMemberAddresses({ members, partial: true });
-    const { value: memberRolesMap } = useMemberRoles({ members });
+    const { value: memberRolesMap, requiresOrgKeyPromotionMap } = useMemberRoles({ members });
+    const { pausedMembers, resumingMemberID, handleRetryMemberRoleAssignment, handleToggleRoleAssignments } =
+        useMemberRoleAssignmentRetry();
     const api = useSilentApi();
     const dispatch = useDispatch();
     const [{ permissions }] = useUserPermissions();
@@ -525,6 +528,8 @@ export const useMemberActions = ({
             setTmpMemberID(member.ID);
             setResendInviteModalOpen(true);
         },
+        handleRetryMemberRoleAssignment,
+        handleToggleRoleAssignments,
     };
 
     const meta = {
@@ -543,11 +548,14 @@ export const useMemberActions = ({
         hasMaxAddresses,
         hasReachedInvitationLimit,
         hasDuoPlan,
+        pausedMembers,
+        resumingMemberID,
     };
 
     const models = {
         memberAddressesMap,
         memberRolesMap,
+        requiresOrgKeyPromotionMap,
         user,
         organization,
         organizationKey,

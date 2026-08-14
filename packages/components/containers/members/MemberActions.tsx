@@ -157,6 +157,11 @@ export const getMemberPermissions = ({
             return ssoDomainsSet.has(domain.toLowerCase());
         })
     );
+    // Self is excluded because the acting admin already holds the org key, so a retry would be a no-op.
+    const canRetryRoleAssignment = Boolean(
+        hasUpdatePermission && hasSetupOrganizationWithKeys && !isSelf && isMemberSetup
+    );
+
     const canDetachSSO = isMemberSSO && isMemberSetup && !!permissions?.['account.user.update'];
     const canAttachSSO = Boolean(
         !isMemberSSO &&
@@ -179,6 +184,7 @@ export const getMemberPermissions = ({
         isOrganizationDelinquent,
         canDetachSSO,
         canAttachSSO,
+        canRetryRoleAssignment,
     };
 };
 
@@ -194,8 +200,11 @@ interface Props {
     onSetup: (member: EnhancedMember) => void;
     onAttachSSO: (member: EnhancedMember) => Promise<void>;
     onDetachSSO: (member: EnhancedMember) => Promise<void>;
+    onRetryRoleAssignment: (member: EnhancedMember) => Promise<void>;
     permissions: ReturnType<typeof getMemberPermissions>;
     disableEdit: boolean;
+    hasPausedRoleAssignment: boolean;
+    isRoleAssignmentRetryInFlight: boolean;
 }
 
 const MemberActions = ({
@@ -210,7 +219,10 @@ const MemberActions = ({
     onRevoke,
     onAttachSSO,
     onDetachSSO,
+    onRetryRoleAssignment,
     disableEdit,
+    hasPausedRoleAssignment,
+    isRoleAssignmentRetryInFlight,
     permissions: {
         canEdit,
         canUpdateMemberState,
@@ -222,6 +234,7 @@ const MemberActions = ({
         canDelete,
         canDetachSSO,
         canAttachSSO,
+        canRetryRoleAssignment,
         isOrganizationDelinquent,
     },
 }: Props) => {
@@ -238,6 +251,15 @@ const MemberActions = ({
                 onEdit(member);
             },
         },
+        hasPausedRoleAssignment &&
+            canRetryRoleAssignment && {
+                key: 'retryRoleAssignment',
+                text: c('Member action').t`Resume role assignment`,
+                disabled: isOrganizationDelinquent || isRoleAssignmentRetryInFlight,
+                onClick: () => {
+                    void withLoading(onRetryRoleAssignment(member));
+                },
+            },
         canLogin && {
             key: 'login',
             text: c('Member action').t`Sign in`,

@@ -150,12 +150,12 @@ export interface MemberReadyForManualUnprivatization extends Member {
 }
 
 type MemberAddressState =
-    | { addressState: 'stale' | 'partial' | 'pending' | 'rejected' }
-    | { addressState: 'full'; Addresses: Address[] };
+    { addressState: 'stale' | 'partial' | 'pending' | 'rejected' } | { addressState: 'full'; Addresses: Address[] };
 
 type MemberRoleState = {
     roleState: 'initial' | 'stale' | 'pending' | 'rejected' | 'full';
     UserOrganizationRoles: RoleAssignment[];
+    requiresOrgKeyPromotion: boolean;
 };
 
 export type EnhancedMember = Member & MemberAddressState & MemberRoleState;
