@@ -14,8 +14,9 @@ import { useDriveDocsPublicSharingFF } from '../_documents/useDriveDocsPublicSha
 import type { DecryptedLink } from '../_links/interface';
 import useLink from '../_links/useLink';
 import useLinksState from '../_links/useLinksState';
-import type { ShareURL } from '../_shares/interface';
+import type { ShareURL, ShareWithKey } from '../_shares/interface';
 import { getSharedLink, splitGeneratedAndCustomPassword } from '../_shares/shareUrl';
+import { useDefaultShare } from '../_shares/useDefaultShare';
 import useShareActions from '../_shares/useShareActions';
 import useShareUrl from '../_shares/useShareUrl';
 import type useShareMemberView from './useShareMemberView';
@@ -69,10 +70,27 @@ export default function useShareURLView(shareId: string, linkId: string) {
     const { deleteShare } = useShareActions();
     const { removeLinkForDriveCompat } = useLinksState();
 
+    const [error, setError] = useState('');
+
+    const { getDefaultShare } = useDefaultShare();
+    const [myFilesShare, setMyFilesShare] = useState<ShareWithKey>();
+    const [isMyFilesLoading, withMyFilesLoading] = useLoading(true);
+    useEffect(() => {
+        const abortController = new AbortController();
+        void withMyFilesLoading(
+            getDefaultShare(abortController.signal)
+                .then(setMyFilesShare)
+                .catch((err) => {
+                    setError(c('Error').t`Failed to fetch sharing information`);
+                    sendErrorReport(err);
+                })
+        );
+        return () => abortController.abort();
+    }, []);
+
     const [sharedLink, setSharedLink] = useState('');
     const [password, setPassword] = useState('');
     const [initialExpiration, setInitialExpiration] = useState<number | null>(null);
-    const [error, setError] = useState('');
 
     const [link, setLink] = useState<DecryptedLink>();
     const [isLinkLoading, withLinkLoading] = useLoading(true);
@@ -318,14 +336,17 @@ export default function useShareURLView(shareId: string, linkId: string) {
         if (!!link?.albumProperties) {
             return false;
         }
-        if (!!link?.mimeType && isProtonDocsDocument(link.mimeType)) {
-            return isDocsPublicSharingEnabled;
+        if (!link?.mimeType || !isProtonDocsDocument(link.mimeType)) {
+            return false;
         }
-        return true;
-    }, [link, isDocsPublicSharingEnabled]);
+        if (myFilesShare?.volumeId !== link.volumeId) {
+            return false;
+        }
+        return isDocsPublicSharingEnabled;
+    }, [link, myFilesShare, isDocsPublicSharingEnabled]);
 
     const loadingMessage =
-        isLinkLoading || isShareUrlLoading
+        isLinkLoading || isShareUrlLoading || isMyFilesLoading
             ? getLoadingMessage(isLinkLoading, !!link?.shareUrl, !!link?.isFile)
             : undefined;
     const confirmationMessage = getConfirmationMessage();
