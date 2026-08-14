@@ -1,10 +1,13 @@
 import { useCallback, useEffect, useMemo } from 'react';
 
-import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
+import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
+
+import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
 import type { Feature, FeatureCode } from './interface';
+import type { FeaturesReducerState, ThunkArguments } from './reducer';
 import { fetchFeatures, selectFeatures, shouldFeatureRefetch, updateFeature } from './reducer';
 
 let codeQueue: FeatureCode[] = [];
@@ -18,8 +21,8 @@ export interface FeatureContextValue<V = any> {
 }
 
 const useFeatures = <Flags extends FeatureCode>(codes: Flags[], prefetch = true) => {
-    const dispatch = useDispatch();
-    const state = useSelector(selectFeatures);
+    const dispatch = baseUseDispatch<ThunkDispatch<FeaturesReducerState, ThunkArguments, Action>>();
+    const state = baseUseSelector(selectFeatures);
 
     const get = useCallback((codes: FeatureCode[]) => {
         const oldCodeQueue = codeQueue;

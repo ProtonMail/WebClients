@@ -1,17 +1,18 @@
 import type { Draft } from '@reduxjs/toolkit';
 
-import { unlabelMessages } from '@proton/mail/store/counts/messageCountsReducers';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { LabelCount } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
+import { unlabelMessages } from '../../messageCountsReducers';
 import {
     CUSTOM_LABEL_ID1,
     checkUpdatedCounters,
     createDefaultCounters,
     customFolders,
     customLabels,
-} from '@proton/mail/store/counts/tests/counts.test.helpers';
-import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { LabelCount } from '@proton/shared/lib/interfaces';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+} from '../counts.test.helpers';
 
 describe('message counts - unlabel conversations', () => {
     let state: Draft<ModelState<LabelCount[]>>;

@@ -1,5 +1,6 @@
-import { cleanProblematicImagesFromClipboardContent } from '@proton/mail/helpers/message/cleanProblematicImagesFromClipboardContent';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
+
+import { cleanProblematicImagesFromClipboardContent } from './cleanProblematicImagesFromClipboardContent';
 
 describe('cleanProxyImagesFromClipboardContent', () => {
     const mockSetData = jest.fn();
