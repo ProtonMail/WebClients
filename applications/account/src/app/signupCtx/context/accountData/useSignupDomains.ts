@@ -9,11 +9,16 @@ export const useSignupDomains = () => {
     const [domains, setDomains] = useState(() => {
         return getOptimisticDomains();
     });
+    const [domainsLoaded, setDomainsLoaded] = useState(false);
 
     const init = useCallback(async (api: Api) => {
-        const { Domains } = await api<{ Domains: string[] }>(queryAvailableDomains('signup'));
-        setDomains(Domains);
+        try {
+            const { Domains } = await api<{ Domains: string[] }>(queryAvailableDomains('signup'));
+            setDomains(Domains);
+        } finally {
+            setDomainsLoaded(true);
+        }
     }, []);
 
-    return { domains, init };
+    return { domains, domainsLoaded, init };
 };
