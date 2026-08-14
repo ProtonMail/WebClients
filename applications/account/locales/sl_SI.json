@@ -6140,6 +6140,9 @@
       ],
       "Zero keys reactivated": [
         "Nič ključev ponovno aktiviranih"
+      ],
+      "A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it": [
+        "Začel se je postopek obnovitve z delegiranim ali nujnim dostopom: ustvarjanje novega ključa ni dovoljeno, da se prepreči prekinitev tega postopka."
       ]
     },
     "error": {
@@ -10716,6 +10719,15 @@
       ],
       "Zoom meeting": [
         "sestanek prek Zooma"
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**Obnovitvena fraza in obnovitvena datoteka bosta razveljavljeni** nove obnovitvene podatke lahko ustvarite kasneje."
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "Kdor koli ima nadzor nad tem naslovom, bo pridobil popoln dostop do vašega računa in podatkov. Nadaljujte le, če naslov prepoznate in ste ta postopek začeli sami."
+      ],
+      "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
+        "Prijavili se boste v svoj račun ${ BRAND_NAME } na tem naslovu:"
       ]
     },
     "info": {
@@ -20525,6 +20537,12 @@
       ],
       "Your subscriptions": [
         "Vaše naročnine"
+      ],
+      "Confirm where to sign in": [
+        "Potrdite, kje se želite prijaviti"
+      ],
+      "Single sign-on (SSO)": [
+        "Enotna prijava (SSO)"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -1937,6 +1937,18 @@
       ],
       "+${ remaining } more": [
         "+${ remaining } mere"
+      ],
+      "Decrease licenses": [
+        "Reducer licenser"
+      ],
+      "Download daily breakdown (CSV)": [
+        "Download daglig opsummering (CSV)"
+      ],
+      "Download monthly summary (CSV)": [
+        "Download månedlig opsummerig (CSV)"
+      ],
+      "Increase licenses": [
+        "Forøg licenser"
       ]
     },
     "action": {
@@ -3724,6 +3736,15 @@
       ],
       "Total cost": [
         "Pris i alt"
+      ],
+      "Billable licenses": [
+        "Fakturerbare licenser"
+      ],
+      "Managers": [
+        "Managers"
+      ],
+      "Used / allocated licenses": [
+        "Brugte / tildelte licenser"
       ]
     },
     "Condition for custom filter": {
@@ -7745,6 +7766,9 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
+      ],
+      "Please set up your organization identity before adding a company.": [
+        "Konfigurer din organisationsidentitet før du tilføjer en virksomhed."
       ]
     },
     "error": {
@@ -13934,6 +13958,15 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til ${ IDEAL_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
+      ],
+      "Allocated licenses won't be billed while disabled": [
+        "Tildelte licenser bliver ikke faktureret når de er deaktiverede"
+      ],
+      "Manage the companies you're responsible for.": [
+        "Administrer de virksomheder, du er ansvarlig for."
+      ],
+      "We bill you monthly by averaging the peak allocated licenses from each day over the month.": [
+        "Du bliver faktureret månedligt efter gennemsnittet af det maksimale antal tildelte licenser for hver dag i måneden."
       ]
     },
     "info": {
@@ -16256,6 +16289,15 @@
       ],
       "Licenses usage": [
         "Brug af licenser"
+      ],
+      "Allocated licenses": [
+        "Tildelte licenser"
+      ],
+      "Monthly average": [
+        "Månedligt gennemsnit"
+      ],
+      "Peak allocated licenses": [
+        "Maksimalt tildelte licenser"
       ]
     },
     "label": {
@@ -21625,6 +21667,9 @@
       ],
       "User Admin": [
         "Brugeradmin"
+      ],
+      "Organization Admin": [
+        "Organisationsadmin"
       ]
     },
     "Role description": {
@@ -28897,6 +28942,56 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
+      ]
+    },
+    "account_search_index": {
+      "Account events": [
+        "Kontohændelser"
+      ],
+      "Audit log": [
+        "Revisionslog"
+      ],
+      "Automatically delete data": [
+        "Slet data automatisk"
+      ],
+      "Block sender for the organization": [
+        "Bloker afsenderen for organisationen"
+      ],
+      "Bulk user import": [
+        "Masseimportering af brugere"
+      ],
+      "Connection events": [
+        "Forbindelseshændelser"
+      ],
+      "Create organization": [
+        "Opret organisation"
+      ],
+      "Enable or disable apps for members": [
+        "Aktivér eller deaktiver apps for medlemmere"
+      ],
+      "Gateway logs": [
+        "Gateway logs"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "Protection from cyber attacks": [
+        "Beskyttelse mod cyberangreb"
+      ],
+      "Restrict app access": [
+        "Begræns app-adgang"
+      ],
+      "Server access policy": [
+        "Serveradgangspolitik"
+      ],
+      "Shared server access": [
+        "Delt serveradgang"
+      ],
+      "Verify domain": [
+        "Bekræft domæne"
+      ],
+      "VPN session details": [
+        "VPN sessionsdetaljer"
       ]
     }
   }

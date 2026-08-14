@@ -2672,7 +2672,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TiB spațiu de stocare"
+        "2 TiB spațiu total"
       ],
       "3 TB data storage": [
         "3 TiB spațiu de stocare"
@@ -5338,6 +5338,9 @@
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
+      ],
+      "No ads. No trackers": [
+        "Fără reclame. Fără instrumente de urmărire."
       ]
     },
     "description": {
@@ -5677,7 +5680,7 @@
         ".rpm pentru Fedora/Red Hat"
       ],
       "You can also download the app through the ${ linkSnapStore }.": [
-        "Puteți descărca aplicația și prin ${ linkSnapStore }."
+        "Puteți descărca aplicația și din ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -7822,6 +7825,9 @@
       ],
       "Zero keys reactivated": [
         "Zero taste reactivate."
+      ],
+      "A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it": [
+        "A fost inițiat un proces de recuperare a accesului delegat sau de acces de urgență: generarea unei chei noi nu este permisă pentru a evita întreruperea acestuia."
       ]
     },
     "error": {
@@ -14116,6 +14122,30 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**Fraza de recuperare și fișierul de recuperare vor fi invalidate:** puteți genera ulterior noi date de recuperare."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Vă conectează la țara de destinație prin intermediul unor servere situate fizic în altă parte."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Vă conectează la țara de destinație prin intermediul unor servere situate fizic în altă parte: ${ joinedSmartRoutingCountries }."
+      ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Membrilor li se solicită periodic să își verifice parola ${ BRAND_NAME } pentru a se asigura că nu o uită. Forțarea confirmării împiedică membrii să o dezactiveze."
+      ],
+      "Smart Routing": [
+        "Direcționare inteligentă"
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Când este activată, membrii nu pot renunța la verificările parolei în propriile setări."
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "Oricine controlează această adresă va avea acces deplin la contul și datele dumneavoastră. Continuați doar dacă o recunoașteți și ați inițial personal acest proces."
+      ],
+      "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
+        "Urmează să vă conectați la contul ${ BRAND_NAME } cu această adresă:"
       ]
     },
     "info": {
@@ -16456,6 +16486,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Oferte, promoții și mesaje de marketing"
+      ],
+      "Require password check-ins": [
+        "Necesită confirmarea parolei"
       ]
     },
     "label": {
@@ -19116,6 +19152,12 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Setările conferințelor video Zoom au fost actualizate."
+      ],
+      "Password check-ins are not required anymore": [
+        "Nu mai este necesară confirmarea parolei."
+      ],
+      "Password check-ins are now required for all members": [
+        "Acum este necesară confirmarea parolei pentru toți membrii."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -24052,6 +24094,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
+      ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Deoarece organizația v-a trecut la autentificarea unică (SSO), **vechea parolă este salvată ca parolă de rezervă**. O puteți folosi pentru a autoriza SSO pe un dispozitiv nou."
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Introduceți-o pentru a vă conecta. Este aceeași cu vechea parolă."
       ]
     },
     "sso: auth device state": {
@@ -27655,6 +27703,12 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Confirm where to sign in": [
+        "Confirmați unde să vă conectați"
+      ],
+      "Password check-ins": [
+        "Confirmare parolă"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28093,6 +28147,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Contul extern ar putea să fi atins limita lățimii de bandă pentru 24 de ore. ${ BRAND_NAME } va încerca să reia importarea cât mai curând posibil."
+      ],
+      "This setting is managed by your organization": [
+        "Această setare este gestionată de către organizația proprie."
       ]
     },
     "tooltip": {
@@ -29616,6 +29673,12 @@
       ],
       "Zoom meeting links": [
         "Legături web conferințe Zoom"
+      ],
+      "Password reminders": [
+        "Mementouri parolă"
+      ],
+      "Verify password": [
+        "Verificare parolă"
       ]
     }
   }
