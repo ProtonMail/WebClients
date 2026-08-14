@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { getPrivateAdminError, setMemberOwnerRole } from '@proton/account';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
-import { hasUserSourcedOwnerRole } from '@proton/account/organizationRoles/helpers';
+import { canManageOwnerRole, hasUserSourcedOwnerRole } from '@proton/account/organizationRoles/helpers';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -30,6 +31,7 @@ const MemberOwnerRoleToggle = ({ member, onChangeSelectedRoles, hasToggledPrivat
     const dispatch = useDispatch();
     const silentApi = useSilentApi();
     const [organizationKey] = useOrganizationKey();
+    const [userPermissions] = useUserPermissions();
     const { createNotification } = useNotifications();
     const errorHandler = useErrorHandler();
     const [loadingRole, withLoadingRole] = useLoading();
@@ -39,9 +41,13 @@ const MemberOwnerRoleToggle = ({ member, onChangeSelectedRoles, hasToggledPrivat
     const unprivatization = getMemberUnprivatizationMode(member);
     const hasOwnerRole = hasUserSourcedOwnerRole(member.UserOrganizationRoles ?? []);
     const isSelf = Boolean(member.Self);
-    const canPromoteOwner =
-        !isSelf && !hasOwnerRole && unprivatization.mode !== MemberUnprivatizationMode.MagicLinkInvite;
-    const canRevokeOwner = !isSelf && hasOwnerRole;
+    const canManageOwner = canManageOwnerRole({
+        currentUserRoles: userPermissions?.Roles,
+        isEditingSelf: isSelf,
+        hasOrgKeyAccess: Boolean(organizationKey?.privateKey),
+    });
+    const canPromoteOwner = canManageOwner && unprivatization.mode !== MemberUnprivatizationMode.MagicLinkInvite;
+    const canRevokeOwner = canManageOwner && hasOwnerRole;
     const isChecked = hasOwnerRole || unprivatization.makeAdmin;
 
     if (!canPromoteOwner && !canRevokeOwner) {
