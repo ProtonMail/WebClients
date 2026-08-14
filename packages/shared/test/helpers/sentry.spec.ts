@@ -75,6 +75,45 @@ describe('sentry beforeSend', () => {
         expect(result?.breadcrumbs?.[0].data?.to).toEqual('https://drive.proton.me/urls/BBB');
     });
 
+    it('redacts an email query param from navigation breadcrumbs', () => {
+        const beforeSend = getBeforeSend();
+        const event = {
+            breadcrumbs: [
+                {
+                    category: 'navigation',
+                    data: {
+                        from: '/doc?mode=open&linkId=abc&email=someone%40protonmail.com',
+                        to: '/u/1/doc?mode=open&linkId=abc&email=someone%40protonmail.com',
+                    },
+                },
+            ],
+        } as unknown as ErrorEvent;
+        const result = beforeSend(event);
+        expect(result?.breadcrumbs?.[0].data?.from).toEqual('/doc?mode=open&linkId=abc&email=[Filtered]');
+        expect(result?.breadcrumbs?.[0].data?.to).toEqual('/u/1/doc?mode=open&linkId=abc&email=[Filtered]');
+    });
+
+    it('redacts an email query param in fetch breadcrumbs, including the underlying data.url', () => {
+        const beforeSend = getBeforeSend();
+        const event = {
+            breadcrumbs: [
+                {
+                    category: 'fetch',
+                    data: {
+                        url: 'https://drive.proton.me/api/core/v4/keys/all?Email=someone%40proton.me&InternalOnly=1',
+                    },
+                },
+            ],
+        } as unknown as ErrorEvent;
+        const result = beforeSend(event);
+        expect(result?.breadcrumbs?.[0].data?.url).toEqual(
+            'https://drive.proton.me/api/core/v4/keys/all?email=[Filtered]&InternalOnly=1'
+        );
+        expect(result?.breadcrumbs?.[0].message).toEqual(
+            'https://drive.proton.me/api/core/v4/keys/all?email=[Filtered]&InternalOnly=1'
+        );
+    });
+
     it('redacts a URL-encoded password from exception messages', () => {
         const beforeSend = getBeforeSend();
         const event = {
