@@ -4452,6 +4452,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "La vostra connexió de Zoom ha caducat. Torneu a connectar-vos per continuar."
+      ],
+      "Could not grant access to the organization key": [
+        "No s'ha pogut concedir accés a la clau de l'organització"
       ]
     },
     "error": {
@@ -7085,6 +7088,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Heu arribat al límit de reserves (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Això està prenent molts passos. Hauria de continuar?"
       ]
     },
     "info": {
@@ -7876,6 +7882,9 @@
       ],
       "Zoom meeting": [
         "Reunió per Zoom"
+      ],
+      "Account holder name": [
+        "Nom del titular del compte"
       ]
     },
     "label": {
@@ -10235,6 +10244,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
+      ],
+      "Please enter the account holder name": [
+        "Introduïu el nom del titular del compte"
       ]
     },
     "Payments.error": {
@@ -10825,6 +10837,9 @@
       ],
       "User Admin": [
         "Administrador/a d'usuaris"
+      ],
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ]
     },
     "Role description": {
@@ -13003,7 +13018,7 @@
         "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
       ],
       "Still working on it": [
-        "S'hi està treballant encara"
+        "Encara hi estem treballant"
       ],
       "Subscription canceled": [
         "S'ha cancel·lat la subscripció"
