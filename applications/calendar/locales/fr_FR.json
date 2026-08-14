@@ -1040,6 +1040,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Keep going": [
+        "Continuer"
+      ],
+      "Stop here": [
+        "S'arrêter ici"
       ]
     },
     "action": {
@@ -4344,6 +4350,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Votre connexion Zoom a expiré. Veuillez vous reconnecter pour continuer."
+      ],
+      "Could not grant access to the organization key": [
+        "Impossible d'accorder l'accès à la clé de l'organisation"
       ]
     },
     "error": {
@@ -6950,6 +6959,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Cela demande beaucoup d'étapes. Faut-il continuer ?"
       ]
     },
     "info": {
@@ -8894,6 +8906,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès étendu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès limité"
       ]
     },
     "new_plans: feature highlight": {
@@ -10684,6 +10702,9 @@
       ],
       "User Admin": [
         "Administrateur des utilisateurs"
+      ],
+      "Organization Admin": [
+        "Administrateur de l'organisation"
       ]
     },
     "Role description": {
@@ -12989,6 +13010,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Still working on it": [
+        "Je suis encore en train d'y travailler"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

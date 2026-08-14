@@ -1044,6 +1044,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Keep going": [
+        "Continuă"
+      ],
+      "Stop here": [
+        "Oprește aici"
       ]
     },
     "action": {
@@ -7177,6 +7183,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Asta necesită mulți pași. Ar trebui să continui?"
       ]
     },
     "info": {
@@ -9166,6 +9175,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces extins"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces limitat"
       ]
     },
     "new_plans: feature highlight": {
@@ -11001,6 +11016,9 @@
       ],
       "User Admin": [
         "Administrare utilizatori"
+      ],
+      "Organization Admin": [
+        "Administrator organizație"
       ]
     },
     "Role description": {
@@ -13370,6 +13388,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Still working on it": [
+        "Încă lucrez la asta"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
