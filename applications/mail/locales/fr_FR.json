@@ -1526,8 +1526,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1727,6 +1726,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Keep going": [
+        "Continuer"
+      ],
+      "Stop here": [
+        "S'arrêter ici"
       ]
     },
     "action": {
@@ -4419,6 +4424,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "No ads. No trackers": [
+        "Pas de publicité. Pas de traqueurs"
       ]
     },
     "description": {
@@ -5564,6 +5572,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Could not grant access to the organization key": [
+        "Impossible d'accorder l'accès à la clé de l'organisation"
       ]
     },
     "error": {
@@ -7967,7 +7978,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8060,7 +8072,7 @@
         "Priorité basse"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Définir ${ MAIL_APP_NAME } comme application de messagerie par défaut."
+        "Faire de ${ MAIL_APP_NAME } votre application de messagerie par défaut."
       ],
       "Manage your folders": [
         "Gérer vos dossiers"
@@ -9506,6 +9518,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "I have not finished this one yet.": [
+        "Je n'ai pas encore fini celui-là."
+      ],
+      "Star emails": [
+        "Mettre les e-mails en favoris"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Cela demande beaucoup d'étapes. Faut-il continuer ?"
+      ],
+      "Unstar emails": [
+        "Retirer les e-mails des favoris"
       ]
     },
     "info": {
@@ -10719,6 +10743,15 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Offres, promotions et messages marketing"
+      ],
+      "Duration": [
+        "Durée"
+      ],
+      "Encrypt": [
+        "Chiffrer"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12030,6 +12063,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès étendu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès limité"
       ]
     },
     "new_plans: feature highlight": {
@@ -13886,6 +13925,9 @@
       ],
       "User Admin": [
         "Administrateur des utilisateurs"
+      ],
+      "Organization Admin": [
+        "Administrateur de l'organisation"
       ]
     },
     "Role description": {
@@ -16820,6 +16862,15 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Star emails": [
+        "Mettre les e-mails en favoris"
+      ],
+      "Still working on it": [
+        "Je suis encore en train d'y travailler"
+      ],
+      "Unstar emails": [
+        "Retirer les e-mails des favoris"
       ]
     },
     "Title header for keys table": {
