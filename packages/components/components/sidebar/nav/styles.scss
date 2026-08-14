@@ -55,17 +55,17 @@
 [data-sidebar-depth='1'] {
 	line-height: var(--space-6);
 
+	> [data-sidebar-header] {
+		font-weight: var(--font-weight-semibold);
+	}
+
 	&[data-state='closed'] {
 		color: var(--text-weak);
 	}
 
 	&[data-state='open'] {
-		> [data-sidebar-header] {
-			font-weight: var(--font-weight-semibold);
-
-			[data-sidebar-trigger] {
-				color: inherit;
-			}
+		> [data-sidebar-header] [data-sidebar-trigger] {
+			color: inherit;
 		}
 	}
 }
@@ -75,4 +75,11 @@
 // =========================
 [data-sidebar-depth='2'] {
 	line-height: var(--space-5);
+}
+
+// =========================
+// Depth 3 — padded leaf
+// =========================
+[data-sidebar-leaf][data-sidebar-depth='3'] {
+	padding-inline-start: var(--space-6);
 }
