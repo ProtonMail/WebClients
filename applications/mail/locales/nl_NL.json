@@ -1532,8 +1532,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -8090,7 +8089,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -9682,6 +9682,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "Star emails": [
+        "E-mail favoriet maken"
+      ],
+      "Unstar emails": [
+        "E-mails uit favorieten verwijderen"
       ]
     },
     "info": {
@@ -10895,6 +10901,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Duration": [
+        "Duur"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17020,6 +17029,12 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Star emails": [
+        "E-mail favoriet maken"
+      ],
+      "Unstar emails": [
+        "E-mails uit favorieten verwijderen"
       ]
     },
     "Title header for keys table": {

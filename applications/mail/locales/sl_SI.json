@@ -1504,10 +1504,7 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Ključ zaupanja",
-        "Ključa zaupanja",
-        "Ključi zaupanja",
-        "Ključev zaupanja"
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -5431,6 +5428,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vašemu iskanju ustreza preveč rezultatov. Omejite iskanje in poskusite znova."
+      ],
+      "Could not grant access to the organization key": [
+        "Dostop do ključa organizacije ni bil odobren"
       ]
     },
     "error": {
@@ -7921,7 +7921,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -10597,6 +10600,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Account holder name": [
+        "Ime imetnika računa"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13044,6 +13050,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša kartica je bila zavrnjena. Prosimo, poskusite z drugo kartico ali se obrnite na banko, da odobri plačilo."
+      ],
+      "Please enter the account holder name": [
+        "Vnesite ime imetnika računa"
       ]
     },
     "Payments.error": {

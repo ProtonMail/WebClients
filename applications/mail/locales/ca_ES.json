@@ -1532,8 +1532,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1733,6 +1732,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Run realistic session": [
+        "Inicia una sessió realista"
+      ],
+      "Write ${ count } logs": [
+        "Escriu ${ count } registres"
       ]
     },
     "action": {
@@ -4425,6 +4430,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ],
+      "No ads. No trackers": [
+        "Sense anuncis. Sense rastrejadors"
       ]
     },
     "description": {
@@ -5672,6 +5680,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
+      ],
+      "Could not grant access to the organization key": [
+        "No s'ha pogut concedir accés a la clau de l'organització"
       ]
     },
     "error": {
@@ -8090,7 +8101,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8773,7 +8785,7 @@
         "Aquest missatge no existeix o ja ha caducat."
       ],
       "Star emails": [
-        "Destaca els correus electrònics"
+        "Destaca correus electrònics"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
@@ -9176,7 +9188,7 @@
         "Canvis no desats"
       ],
       "Unstar emails": [
-        "Treu de destacats els correus electrònics"
+        "Deixa de destacar correus electrònics"
       ],
       "Unsubscribe": [
         "Anul·leu la subscripció"
@@ -9685,6 +9697,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "Not supported by this browser": [
+        "Aquest navegador no ho admet"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Això està prenent molts passos. Hauria de continuar?"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Escriu ${ REALISTIC_ENTRIES } línies de registre realistes que van entrant a poc a poc al llarg d'un minut, com en una sessió real, en lloc de fer-ho tot de cop. Triga al voltant d'un minut a executar-se. Mantingueu aquesta pestanya en primer pla: les mesures de fotogrames s'aturen en segon pla."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Escriu línies de registre realistes una darrere l'altra i després les torna a llegir totes. Mostra com el cost d'escriptura i de lectura/exportació varia segons el nombre d'entrades emmagatzemades."
       ]
     },
     "info": {
@@ -10898,6 +10922,63 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Account holder name": [
+        "Nom del titular del compte"
+      ],
+      "Burst write": [
+        "Ràfegues d'escriptura"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Promocions, ofertes i correus electrònics de màrqueting"
+      ],
+      "Decrypt + parse": [
+        "Desxifra + analitza"
+      ],
+      "Dropped frames": [
+        "Fotogrames perduts"
+      ],
+      "Duration": [
+        "Durada"
+      ],
+      "Encrypt": [
+        "Xifratge"
+      ],
+      "Entries": [
+        "Entrades"
+      ],
+      "Export size": [
+        "Mida d'exportació"
+      ],
+      "IndexedDB retrieve": [
+        "Recuperació de l'IndexedDB"
+      ],
+      "IndexedDB store": [
+        "Emmagatzematge de l'IndexedDB"
+      ],
+      "Log performance": [
+        "Registres de rendiment"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Tasques llargues (≥ 50 ms)"
+      ],
+      "Read / export": [
+        "Llegeix / Exporta"
+      ],
+      "Realistic session": [
+        "Sessió realista"
+      ],
+      "Sum of write() calls": [
+        "Total de crides a write()"
+      ],
+      "Write": [
+        "Escriu"
+      ],
+      "Write (whole session)": [
+        "Escriu (tota la sessió)"
+      ],
+      "Write-chain drain after last line": [
+        "Buidatge de la cadena d'escriptura després de l'última línia"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13077,7 +13158,7 @@
         "Recordeu-m'ho més tard"
       ],
       "Yes, don't show again": [
-        "Sí, no m'ho torneu a mostrar"
+        "Sí, no ho torneu a mostrar"
       ]
     },
     "Option group": {
@@ -13388,6 +13469,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
+      ],
+      "Please enter the account holder name": [
+        "Introduïu el nom del titular del compte"
       ]
     },
     "Payments.error": {
@@ -14071,6 +14155,9 @@
       ],
       "User Admin": [
         "Administrador/a d'usuaris"
+      ],
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ]
     },
     "Role description": {
@@ -16837,7 +16924,7 @@
         "Ajorna:"
       ],
       "Star emails": [
-        "Destaca els correus electrònics"
+        "Destaca correus electrònics"
       ],
       "Start a new import": [
         "Inicia una nova importació"
@@ -16849,7 +16936,7 @@
         "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
       ],
       "Still working on it": [
-        "S'hi està treballant encara"
+        "Encara hi estem treballant"
       ],
       "Storage capacity warning": [
         "Advertència de capacitat d'emmagatzematge"
@@ -16898,7 +16985,7 @@
         "Autenticació de doble factor"
       ],
       "Unstar emails": [
-        "Treu de destacats els correus electrònics"
+        "Deixa de destacar correus electrònics"
       ],
       "Unsubscribe": [
         "Anul·leu-ne la subscripció"

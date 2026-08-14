@@ -785,7 +785,7 @@
         "Deltag med ${ MEET_APP_NAME }"
       ],
       "Keep going": [
-        "Fortsæt …"
+        "Fortsæt"
       ],
       "Keep inbox as before": [
         "Behold indbakken som før"
@@ -1532,8 +1532,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -7990,7 +7989,7 @@
         "Sådan virker hide-my-email-aliasser"
       ],
       "I have not finished this one yet.": [
-        "Denne er endnu ikke afsluttet"
+        "Denne er endnu ikke afsluttet."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Jeg sender denne besked til en, som ikke bruger ${ MAIL_APP_NAME }."
@@ -8087,7 +8086,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -9661,6 +9661,33 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } mærkat"
+      ],
+      "Searched ${ targetName }": [
+        "Søgte efter ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Søgte efter mails fra ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Søgte efter mails til ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Søgte på \"${ keyword }\""
+      ],
+      "Searched your mail": [
+        "Søgte dine mails"
+      ],
+      "Star emails": [
+        "Stjernemarker e-mails"
+      ],
+      "Unstar emails": [
+        "Fjern stjernemarkering fra e-mails"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Du omdirigeres til ${ IDEAL_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
       ]
     },
     "info": {
@@ -10874,6 +10901,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Duration": [
+        "Varighed"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13338,6 +13368,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betal med ${ IDEAL_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
@@ -14044,6 +14077,9 @@
       ],
       "User Admin": [
         "Brugeradmin"
+      ],
+      "Organization Admin": [
+        "Organisationsadmin"
       ]
     },
     "Role description": {
@@ -16996,6 +17032,12 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Star emails": [
+        "Stjernemarker e-mails"
+      ],
+      "Unstar emails": [
+        "Fjern stjernemarkering fra e-mails"
       ]
     },
     "Title header for keys table": {
