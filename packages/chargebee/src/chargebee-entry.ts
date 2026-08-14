@@ -560,10 +560,9 @@ async function renderIdeal() {
     ): Promise<MessageBusResponse<void>> => {
         try {
             currentPaymentIntent = event.paymentIntent;
-            const email = currentPaymentIntent?.email;
 
-            userName = email?.split('@')?.[0] || FALLBACK_USERNAME;
-            userEmail = email || FALLBACK_EMAIL;
+            userName = event.userName || FALLBACK_USERNAME;
+            userEmail = currentPaymentIntent?.email || FALLBACK_EMAIL;
 
             const button = document.querySelector<HTMLButtonElement>('#ideal-button');
             if (!button) {

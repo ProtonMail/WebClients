@@ -1,6 +1,11 @@
 import { PAYMENT_METHOD_TYPES } from '../constants';
 import type { Currency } from '../interface';
-import { getIsCurrencyOverriden, getMethodSupportedCurrencies, updateCurrencyOverride } from './useCurrencyOverride';
+import {
+    getIsCurrencyOverriden,
+    getMethodSupportedCurrencies,
+    isCurrencySupportedByMethod,
+    updateCurrencyOverride,
+} from './useCurrencyOverride';
 
 describe('currency-override', () => {
     describe('getMethodSupportedCurrencies', () => {
@@ -15,6 +20,21 @@ describe('currency-override', () => {
         it('should return undefined for unrestricted methods', () => {
             expect(getMethodSupportedCurrencies(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBeUndefined();
             expect(getMethodSupportedCurrencies(undefined)).toBeUndefined();
+        });
+    });
+
+    describe('isCurrencySupportedByMethod', () => {
+        it.each([PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT, PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL])(
+            'should support EUR but not USD for %s',
+            (method) => {
+                expect(isCurrencySupportedByMethod(method, 'EUR')).toBe(true);
+                expect(isCurrencySupportedByMethod(method, 'USD')).toBe(false);
+            }
+        );
+
+        it('should support any currency for unrestricted methods', () => {
+            expect(isCurrencySupportedByMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD, 'USD')).toBe(true);
+            expect(isCurrencySupportedByMethod(undefined, 'USD')).toBe(true);
         });
     });
 

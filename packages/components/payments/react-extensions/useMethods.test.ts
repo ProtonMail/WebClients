@@ -1,6 +1,12 @@
+import { type ReactNode, createElement } from 'react';
+
 import { renderHook, waitFor } from '@testing-library/react';
 
-import { componentsHookRenderer, componentsHookWrapper } from '@proton/components/containers/contacts/tests/render';
+import {
+    componentsHookRenderer,
+    componentsHookWrapper,
+    getStoreWrapper,
+} from '@proton/components/containers/contacts/tests/render';
 import { Autopay, DEFAULT_PAYMENT_VENDOR_STATES, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentStatus, PaymentsApi, SavedPaymentMethod } from '@proton/payments/core/interface';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -236,6 +242,57 @@ it('should update methods when amount changes', async () => {
                 isDefault: false,
             },
         ]);
+    });
+});
+
+it('should offer iDEAL when the EnableIdeal flag flips on after initialization', async () => {
+    paymentStatus = { CountryCode: 'NL', State: null, VendorStates: DEFAULT_PAYMENT_VENDOR_STATES };
+    paymentMethods = [];
+
+    // componentsHookWrapper rebuilds its store wrapper on every render, which remounts the hook and would hide a missing effect dependency.
+    const { Wrapper } = getStoreWrapper();
+    const stableWrapper = ({ children }: { children: ReactNode }) => createElement(Wrapper, null, children);
+    const billingAddress = { CountryCode: 'NL' };
+
+    const { result, rerender } = renderHook(
+        ({ enableIdeal }) =>
+            useMethods(
+                {
+                    paymentStatus,
+                    billingAddress,
+                    amount: 1000,
+                    currency: 'EUR',
+                    flow: 'subscription',
+                    paymentsApi: {
+                        status: () => paymentStatus,
+                    } as any as PaymentsApi,
+                    selectedPlanName: undefined,
+                    enablePaypalRegionalCurrenciesBatch3: false,
+                    enablePaypalKrw: false,
+                    enableIdeal,
+                },
+                {
+                    api: apiMock,
+                    isAuthenticated: true,
+                }
+            ),
+        {
+            initialProps: { enableIdeal: false },
+            wrapper: stableWrapper,
+        }
+    );
+
+    const availableTypes = () => result.current.newMethods.map(({ type }) => type);
+
+    await waitFor(() => {
+        expect(result.current.loading).toBe(false);
+    });
+    expect(availableTypes()).not.toContain(PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL);
+
+    rerender({ enableIdeal: true });
+
+    await waitFor(() => {
+        expect(availableTypes()).toContain(PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL);
     });
 });
 

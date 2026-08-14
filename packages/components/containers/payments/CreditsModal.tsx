@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -82,10 +82,14 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [user, loadingUser] = useUser();
 
+    const { CountryCode, State } = paymentStatus;
+    const billingAddress = useMemo(() => ({ CountryCode, State }), [CountryCode, State]);
+
     const paymentFacade = usePaymentFacade({
         amount: debouncedAmount,
         currency,
         paymentStatus,
+        billingAddress,
         onChargeable: (operations, data) => {
             const run = async () => {
                 const pollCredits = createCreditsPoller();
@@ -271,7 +275,7 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
                     onChangeCurrency={setCurrency}
                     disableCurrencySelector={disableCurrencySelector}
                 />
-                <PaymentWrapper {...paymentFacade} noMaxWidth />
+                <PaymentWrapper {...paymentFacade} noMaxWidth onCurrencyChange={setCurrency} />
                 {amountToCharge && (
                     <p
                         className="text-sm text-center color-weak min-h-custom"
