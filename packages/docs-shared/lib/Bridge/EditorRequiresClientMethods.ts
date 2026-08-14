@@ -11,6 +11,7 @@ import type { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 import type { SheetsActionType } from '../SheetsActionType'
+import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 
 export type FileMenuAction =
   | {
@@ -60,6 +61,7 @@ export type AppPlatform = 'web' | 'nativeMobileWeb'
 export interface EditorRequiresClientMethods {
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
   editorReportingEvent(event: EditorEvent, data: EditorEventData[EditorEvent]): Promise<void>
+  editorReportingTelemetry(event: TelemetryDocsEditorEvents): Promise<void>
 
   getTypersExcludingSelf(threadId: string): Promise<string[]>
   createComment(content: string, threadID: string): Promise<CommentInterface | undefined>
