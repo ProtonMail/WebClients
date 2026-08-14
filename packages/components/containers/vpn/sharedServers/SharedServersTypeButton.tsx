@@ -10,6 +10,7 @@ type SharedServersTypeButtonProps = {
     label: string;
     description: string;
     isSelected?: boolean;
+    disabled?: boolean;
 };
 
 const SharedServersTypeButton: React.FC<SharedServersTypeButtonProps> = ({
@@ -17,6 +18,7 @@ const SharedServersTypeButton: React.FC<SharedServersTypeButtonProps> = ({
     label,
     description,
     isSelected = false,
+    disabled = false,
 }) => {
     const selectedStyle = {
         background:
@@ -27,9 +29,11 @@ const SharedServersTypeButton: React.FC<SharedServersTypeButtonProps> = ({
         <button
             type="button"
             aria-pressed={isSelected}
+            disabled={disabled}
             className={clsx(
                 'flex flex-row border flex-nowrap rounded-lg w-full overflow-hidden gap-4 text-left',
-                isSelected ? 'border-primary' : 'border-weak bg-norm'
+                isSelected ? 'border-primary' : 'border-weak bg-norm',
+                disabled && 'opacity-50 pointer-events-none'
             )}
             style={isSelected ? selectedStyle : {}}
             onClick={onClick}

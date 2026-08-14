@@ -9,6 +9,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -66,6 +67,10 @@ const OrangeDot = () => (
 type SharedServersSectionProps = {
     maxAge?: number;
 };
+
+const GuardedUpdateButton = withPermissionGuard('account.shared_server.update')(Button);
+const GuardedPolicyTypeButton = withPermissionGuard('account.shared_server.update')(SharedServersTypeButton);
+const policyTypeTooltip = { wrapperClassName: 'w-full' };
 const SharedServersSection = ({ maxAge = 10 * MINUTE }: SharedServersSectionProps) => {
     const api = useApi();
     const { createNotification, hideNotification } = useNotifications();
@@ -404,33 +409,36 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }: SharedServersSectionProp
                             <span className="ml-2" style={{ fontWeight: 'var(--font-weight-bold)' }}>{c('Info')
                                 .t`You have unpublished changes`}</span>
                         </span>
-                        <Button color="norm" type="button" className="ml-8" onClick={handlePublishChanges}>
+                        <GuardedUpdateButton color="norm" type="button" className="ml-8" onClick={handlePublishChanges}>
                             {c('Action').t`Publish changes`}
-                        </Button>
+                        </GuardedUpdateButton>
                     </div>
                 )}
             </div>
 
             <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full mt-4">
-                <SharedServersTypeButton
+                <GuardedPolicyTypeButton
                     label={c('Info').t`On`}
                     onClick={() => handleClickPolicyType(PolicyType.All)}
                     isSelected={policyType === PolicyType.All}
                     description={c('Description')
                         .t`Everyone in your organization can connect to shared servers in all countries.`}
+                    tooltip={policyTypeTooltip}
                 />
-                <SharedServersTypeButton
+                <GuardedPolicyTypeButton
                     label={c('Info').t`Off`}
                     onClick={() => handleClickPolicyType(PolicyType.None)}
                     isSelected={policyType === PolicyType.None}
                     description={c('Description').t`No one in your organization can connect to shared servers.`}
+                    tooltip={policyTypeTooltip}
                 />
-                <SharedServersTypeButton
+                <GuardedPolicyTypeButton
                     label={c('Info').t`Custom`}
                     onClick={() => handleClickPolicyType(PolicyType.Custom)}
                     isSelected={policyType === PolicyType.Custom}
                     description={c('Description')
                         .t`Create policies to decide who can connect to shared servers in each country.`}
+                    tooltip={policyTypeTooltip}
                 />
             </div>
 
@@ -467,10 +475,10 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }: SharedServersSectionProp
                             <p className="text-semibold text-lg m-0">{c('Info').t`Custom policies`}</p>
                         </div>
 
-                        <Button size="medium" color="norm" shape="solid" onClick={handleAddPolicy}>
+                        <GuardedUpdateButton size="medium" color="norm" shape="solid" onClick={handleAddPolicy}>
                             <IcPlus className="mr-2" />
                             {c('Action').t`Create new policy`}
-                        </Button>
+                        </GuardedUpdateButton>
                     </div>
 
                     <div className="flex flex-column mt-4 gap-2">
