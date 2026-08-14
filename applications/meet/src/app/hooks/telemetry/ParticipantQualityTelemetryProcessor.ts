@@ -22,11 +22,15 @@ export class ParticipantQualityTelemetryProcessor {
     private interval: NodeJS.Timeout | null = null;
     private earlyReportTimeout: NodeJS.Timeout | null = null;
     private previousStatsByTrackSid = new Map<string, ParticipantQualityStats>();
+    private isKillSwitchEnabled: boolean;
 
-    constructor(room: Room, websocketUrl?: string) {
+    constructor(room: Room, websocketUrl?: string, isKillSwitchEnabled = false) {
         this.room = room;
         this.websocketUrl = websocketUrl ? getUrlWithoutProtocol(websocketUrl) : undefined;
+        this.isKillSwitchEnabled = isKillSwitchEnabled;
     }
+
+    private getMaxStatsPerReport = () => (this.isKillSwitchEnabled ? 0 : MAX_STATS_PER_REPORT);
 
     private getStatsForAllParticipants = async () => {
         const localParticipant = this.room.localParticipant;
@@ -69,13 +73,23 @@ export class ParticipantQualityTelemetryProcessor {
     };
 
     private handleConnectionQualityChanged = async (quality: ConnectionQuality, participant: Participant) => {
-        if (participant.identity !== this.room.localParticipant.identity || quality !== ConnectionQuality.Poor) {
+        if (
+            participant.identity !== this.room.localParticipant.identity ||
+            quality !== ConnectionQuality.Poor ||
+            this.getMaxStatsPerReport() <= 0
+        ) {
             return;
         }
 
+        // This path only ever runs for the local participant, so these are publisher-side stats
         const statsByPublications = await Promise.all(
             Array.from(participant.trackPublications.values()).map(async (publication) => {
-                return getWebRTCStats(publication as RemoteTrackPublication, participant.identity, this.room.name);
+                return getWebRTCStats(
+                    publication as RemoteTrackPublication,
+                    participant.identity,
+                    this.room.name,
+                    true
+                );
             })
         );
 
@@ -88,12 +102,19 @@ export class ParticipantQualityTelemetryProcessor {
     };
 
     private handleReport = async () => {
+        const maxStatsPerReport = this.getMaxStatsPerReport();
+
+        if (maxStatsPerReport <= 0) {
+            this.poorQualityStats = [];
+            return;
+        }
+
         const stats = await this.getStatsForAllParticipants();
 
-        const filteredStats = stats.filter((stat) => {
+        const statsWithFlag = stats.map((stat) => {
             const previous = this.previousStatsByTrackSid.get(stat.trackSid);
             const delta = calculateStatsDelta(stat, previous);
-            return shouldReportStats(delta);
+            return { stat, flagged: shouldReportStats(delta) };
         });
 
         stats.forEach((stat) => {
@@ -101,11 +122,22 @@ export class ParticipantQualityTelemetryProcessor {
         });
 
         const selectedPoorQualityStats = shuffle(this.poorQualityStats).slice(0, MAX_POOR_QUALITY_STATS_PER_REPORT);
-        const selectedStats = shuffle(filteredStats).slice(0, MAX_STATS_PER_REPORT - selectedPoorQualityStats.length);
+        const remainingSlots = Math.max(0, maxStatsPerReport - selectedPoorQualityStats.length);
+        const selectedRemoteStats = shuffle(
+            statsWithFlag.filter(({ stat, flagged }) => !stat.isLocal && flagged)
+        ).slice(0, remainingSlots);
+        const hasFlaggedStats = selectedPoorQualityStats.length > 0 || statsWithFlag.some(({ flagged }) => flagged);
+        const selectedLocalStats = hasFlaggedStats ? statsWithFlag.filter(({ stat }) => stat.isLocal) : [];
+
+        const selectedStats = [
+            ...selectedPoorQualityStats.map((stat) => ({ stat, flagged: true })),
+            ...selectedLocalStats,
+            ...selectedRemoteStats,
+        ];
 
         // Will be batched by telemetry
-        [...selectedPoorQualityStats, ...selectedStats].forEach((stat) => {
-            logParticipantQuality({ ...stat, websocketUrl: this.websocketUrl });
+        selectedStats.forEach(({ stat, flagged }) => {
+            logParticipantQuality({ ...stat, flagged, websocketUrl: this.websocketUrl });
         });
 
         this.poorQualityStats = [];
