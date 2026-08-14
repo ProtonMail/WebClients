@@ -7,12 +7,14 @@ import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
 import PayPalInfoMessage from '@proton/components/containers/payments/PayPalInfoMessage';
+import { IdealAccountHolderInput } from '@proton/components/payments/chargebee/IdealAccountHolderInput';
 import { IdealAuthorizationText } from '@proton/components/payments/chargebee/IdealAuthorizationText';
 import { type DirectDebitProps, SepaDirectDebit } from '@proton/components/payments/chargebee/SepaDirectDebit';
 import type { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
+import type { ChargebeeIdealProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeIdeal';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import type { ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
 import { useStableLoading } from '@proton/hooks';
@@ -75,6 +77,7 @@ export interface Props {
     iframeHandles: CbIframeHandles;
     chargebeeCard: ChargebeeCardProcessorHook;
     chargebeePaypal: ChargebeePaypalProcessorHook;
+    chargebeeIdeal: ChargebeeIdealProcessorHook;
     user: User | undefined;
     startTrial?: boolean;
     lastUsedMethod?: ViewPaymentMethod;
@@ -121,6 +124,7 @@ export const PaymentsNoApi = ({
     iframeHandles,
     chargebeeCard,
     chargebeePaypal,
+    chargebeeIdeal,
     paymentComponentLoaded,
     themeCode,
     bitcoinChargebee,
@@ -311,6 +315,7 @@ export const PaymentsNoApi = ({
                         )}
                         {method === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL && (
                             <>
+                                <IdealAccountHolderInput chargebeeIdeal={chargebeeIdeal} />
                                 <div className="my-2">
                                     <IdealAuthorizationText />
                                 </div>

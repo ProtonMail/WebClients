@@ -49,7 +49,7 @@ const MethodCell = ({ method }: { method: SavedPaymentMethod }) => {
         return (
             <>
                 <span className="mr-2 align-middle" data-testid="sepa-payment-method">
-                    SEPA Direct Debit
+                    {c('Payment Method').t`Bank Account`}
                 </span>
                 <span
                     className="block lg:inline-block align-middle text-ellipsis max-w-full"
