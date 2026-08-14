@@ -266,6 +266,12 @@
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
+      ],
+      "Password reminders": [
+        "Parola hatırlatıcıları"
+      ],
+      "Verify password": [
+        "Parolayı doğrula"
       ]
     },
     "Accounts": {
@@ -4017,6 +4023,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor",
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
+      ],
+      "No ads. No trackers": [
+        "Reklam yok. İzleyici yok"
       ]
     },
     "description": {
@@ -10328,6 +10337,21 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Sizi fiziksel olarak başka yerlerde bulunan sunucular aracılığıyla hedef ülkenize bağlar."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Sizi fiziksel olarak başka yerlerde bulunan sunucular aracılığıyla hedef ülkenize bağlar: ${ joinedSmartRoutingCountries }."
+      ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Üyeler parolalarını unutmamaları için periyodik olarak ${ BRAND_NAME } parolalarını doğrulamaya yönlendirilir. Kontrollerin zorunlu kılınması üyelerin bu özelliği devre dışı bırakmasını önler."
+      ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Etkinleştirildiğinde üyeler kendi ayarlarından parola kontrolü özelliğini devre dışı bırakamazlar."
       ]
     },
     "info": {
@@ -11508,6 +11532,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Require password check-ins": [
+        "Parola kontrol zorunluluğu"
       ]
     },
     "label": {
@@ -13567,6 +13594,12 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Zoom görüntülü görüşme ayarları güncellendi"
+      ],
+      "Password check-ins are not required anymore": [
+        "Artık parola kontrolü zorunlu değil"
+      ],
+      "Password check-ins are now required for all members": [
+        "Artık tüm üyeler için parola kontrolü zorunlu hale getirildi"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15444,6 +15477,9 @@
       ],
       "User Admin": [
         "Kullanıcı yöneticisi"
+      ],
+      "Organization Admin": [
+        "Kuruluş Yöneticisi"
       ]
     },
     "Role description": {
@@ -16637,6 +16673,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Tek oturum açma yapılandırmanız silinecek"
+      ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Kuruluşunuz sizi tek oturum açma (SSO) sistemine geçirdiği için **eski parolanız yedek parola olarak kaydedilmiştir**. Bu parolayı yeni bir aygıtta SSO'yu yetkilendirmek için kullanabilirsiniz."
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Oturum açmak için bunu girin. Eski parolanızla aynıdır."
       ]
     },
     "sso: auth device state": {
@@ -19257,6 +19299,9 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Password check-ins": [
+        "Parola kontrolleri"
       ]
     },
     "Title for payment methods table": {
@@ -19525,6 +19570,9 @@
       ],
       "Your DKIM signing is working.": [
         "DKIM imzanız çalışıyor."
+      ],
+      "This setting is managed by your organization": [
+        "Bu ayar kuruluşunuz tarafından yönetiliyor"
       ]
     },
     "tooltip": {

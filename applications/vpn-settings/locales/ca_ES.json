@@ -61,22 +61,22 @@
         "Renovació automàtica"
       ],
       "Automatically delete data": [
-        "Elimineu automàticament les dades"
+        "Elimina automàticament les dades"
       ],
       "Block sender for the organization": [
         "Bloquegeu el remitent per a l'organització"
       ],
       "Blog articles": [
-        "Articles del bloc"
+        "Articles del blog"
       ],
       "Bulk user import": [
         "Importació massiva d'usuaris"
       ],
       "Cancel plan": [
-        "Cancel·la el pla"
+        "Cancel·lar el pla"
       ],
       "Close account": [
-        "Tanqueu el compte"
+        "Tancar el compte"
       ],
       "Compare plans": [
         "Compara els plans"
@@ -100,13 +100,13 @@
         "Mode fosc"
       ],
       "Data breach alerts": [
-        "Alertes d'infraccions de dades"
+        "Alertes de filtració de dades"
       ],
       "Desktop and mobile apps": [
         "Aplicacions per a escriptori i mòbil"
       ],
       "Downgrade plan": [
-        "Baixar la categoria del pla"
+        "Baixar a un pla inferior"
       ],
       "Downgrade to Free": [
         "Canvieu al pla gratuït"
@@ -118,13 +118,13 @@
         "Descarregueu el fitxer de recuperació"
       ],
       "Enable or disable apps for members": [
-        "Habiliteu o desactiveu aplicacions per als membres"
+        "Habiliteu o desactiveu aplicacions per a membres"
       ],
       "Encryption backup file": [
-        "Fitxer de còpia de seguretat de xifratge"
+        "Fitxer de la còpia de seguretat xifrada"
       ],
       "Encryption backup in this browser": [
-        "Còpia de seguretat de xifratge en aquest navegador"
+        "Còpia de seguretat xifrada en aquest navegadorxifratge"
       ],
       "External mailbox": [
         "Safata d'entrada externa"
@@ -151,16 +151,16 @@
         "Aplicacions incloses"
       ],
       "Join organization": [
-        "Uneix-te a l'organització"
+        "Uniu-vos a l'organització"
       ],
       "Leaked password": [
         "Contrasenya filtrada"
       ],
       "Leave group": [
-        "Abandona el grup"
+        "Sortir del grup"
       ],
       "Leave organization": [
-        "Abandona l'organització"
+        "Abandonar l'organització"
       ],
       "Light mode": [
         "Mode clar"
@@ -178,7 +178,7 @@
         "Sol·licitud de restabliment de la contrasenya"
       ],
       "Permanently delete data": [
-        "Elimina les dades permanentment"
+        "Eliminar les dades de manera permanent"
       ],
       "Privacy guides": [
         "Guies de privacitat"
@@ -190,7 +190,7 @@
         "Protecció contra ciberatacs"
       ],
       "Receive misaddressed emails": [
-        "Rebeu correus electrònics enviats per error"
+        "Rebeu els correus electrònics enviats per error"
       ],
       "Recovery email address": [
         "Adreça de correu electrònic de recuperació"
@@ -205,13 +205,13 @@
         "Bescanvieu el codi de descompte"
       ],
       "Referral credits": [
-        "Crèdits de recomanació"
+        "Crèdits per recomanacions"
       ],
       "Referral link": [
         "Enllaç de recomanació"
       ],
       "Referral rewards": [
-        "Recompenses per recomanació"
+        "Recompenses per recomanacions"
       ],
       "Restrict app access": [
         "Restringiu l'accés a l'aplicació"
@@ -226,13 +226,13 @@
         "Accés compartit al servidor"
       ],
       "Sign out other devices": [
-        "Tancar sessió en altres dispositius"
+        "Tanqueu la sessió en altres dispositius"
       ],
       "Sign-in history": [
         "Historial d'inicis de sessió"
       ],
       "Stop subscription renewal": [
-        "Atureu la renovació de la subscripció"
+        "Aturar la renovació de la subscripció"
       ],
       "Storage space": [
         "Espai d'emmagatzematge"
@@ -256,7 +256,7 @@
         "Milloreu el pla"
       ],
       "Verify domain": [
-        "Verifica domini"
+        "Verifiqueu el domini"
       ],
       "Video conferencing": [
         "Videoconferència"
@@ -266,6 +266,12 @@
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
+      ],
+      "Password reminders": [
+        "Recordatoris de contrasenya"
+      ],
+      "Verify password": [
+        "Verifica la contrasenya"
       ]
     },
     "Accounts": {
@@ -4017,6 +4023,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreça de Gmail",
         "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreces de Gmail"
+      ],
+      "No ads. No trackers": [
+        "Sense anuncis. Sense rastrejadors"
       ]
     },
     "description": {
@@ -10325,6 +10334,21 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Us connecta amb el país de destí mitjançant servidors ubicats físicament en un altre lloc."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Us connecta amb el país de destí mitjançant servidors ubicats físicament en un altre lloc: ${ joinedSmartRoutingCountries }."
+      ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Els membres reben periòdicament una notificació per verificar la seva contrasenya de ${ BRAND_NAME } i assegurar-se que no l'oblidin. Obligar els membres a fer la comprovació els impedeix desactivar-la."
+      ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Quan està habilitat, els membres no poden desactivar els inicis de sessió amb contrasenya a la seva configuració."
       ]
     },
     "info": {
@@ -11505,6 +11529,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Require password check-ins": [
+        "Requereix inicis de sessió amb contrasenya"
       ]
     },
     "label": {
@@ -13564,6 +13591,12 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "S'ha actualitzat la configuració de les videoconferències de Zoom"
+      ],
+      "Password check-ins are not required anymore": [
+        "Els registres d'entrada amb contrasenya ja no són necessaris."
+      ],
+      "Password check-ins are now required for all members": [
+        "Ara els membres ja han de fer el registre d'entrada amb contrasenya."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15441,6 +15474,9 @@
       ],
       "User Admin": [
         "Administrador/a d'usuaris"
+      ],
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ]
     },
     "Role description": {
@@ -16637,6 +16673,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "S'eliminarà la vostra configuració de SSO."
+      ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Com la vostra organització us ha passat a inici de sessió únic (SSO), **la vostra contrasenya antiga s'ha desat com a contrasenya de seguretat**. La podeu utilitzar per autoritzar l'SSO en un dispositiu nou."
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Introduïu-la per iniciar sessió. És la mateixa que la vostra contrasenya antiga."
       ]
     },
     "sso: auth device state": {
@@ -19257,6 +19299,9 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Password check-ins": [
+        "Comprovacions de contrasenya"
       ]
     },
     "Title for payment methods table": {
@@ -19525,6 +19570,9 @@
       ],
       "Your DKIM signing is working.": [
         "La vostra signatura DKIM està funcionant."
+      ],
+      "This setting is managed by your organization": [
+        "Aquesta preferència la gestiona la vostra organització"
       ]
     },
     "tooltip": {
