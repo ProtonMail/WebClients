@@ -10,6 +10,10 @@ import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import type { Attachment } from '../../../types';
 import { Role } from '../../../types';
 import { isFileTypeSupported, mimeToHuman } from '../../../util/filetypes';
+import {
+    extractSpreadsheetTableSections,
+    parseCSVContent,
+} from '../../../util/spreadsheetTableContent';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { LazyProgressiveMarkdownRenderer } from '../../LumoMarkdown/LazyMarkdownComponents';
 
@@ -92,145 +96,124 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
         return `${(sizeBytes / (1024 * 1024)).toFixed(1)} MB`;
     };
 
-    const parseCSVContent = (content: string): string[][] => {
-        const lines = content.split('\n').filter((line) => line.trim());
-        const rows: string[][] = [];
+    const renderSingleTable = (content: string, title?: string) => {
+        const rows = parseCSVContent(content);
 
-        for (const line of lines) {
-            // Simple CSV parsing - handles quoted fields and escaped quotes
-            const row: string[] = [];
-            let current = '';
-            let inQuotes = false;
-            let i = 0;
-
-            while (i < line.length) {
-                const char = line[i];
-
-                if (char === '"' && !inQuotes) {
-                    inQuotes = true;
-                } else if (char === '"' && inQuotes) {
-                    if (line[i + 1] === '"') {
-                        current += '"';
-                        i++; // Skip the next quote
-                    } else {
-                        inQuotes = false;
-                    }
-                } else if (char === ',' && !inQuotes) {
-                    row.push(current.trim());
-                    current = '';
-                } else {
-                    current += char;
-                }
-
-                i++;
-            }
-
-            // Add the last field
-            row.push(current.trim());
-            rows.push(row);
+        if (rows.length === 0) {
+            return (
+                <div className="flex flex-column items-center justify-center p-8 text-center">
+                    <div className="mb-4 text-4xl">📊</div>
+                    <p className="text-sm color-weak">{c('collider_2025: Info').t`No data rows found in this file.`}</p>
+                </div>
+            );
         }
 
-        return rows;
+        const headers = rows[0];
+        const dataRows = rows.slice(1);
+
+        return (
+            <div className="w-full">
+                {title ? <p className="text-sm font-semibold mb-2">{title}</p> : null}
+                <div
+                    className="overflow-auto max-h-custom border border-weak rounded"
+                    style={{ '--max-h-custom': '60vh' }}
+                >
+                    <table className="border-collapse bg-norm" style={{ minWidth: '100%', width: 'max-content' }}>
+                        <thead className="sticky top-0 bg-norm z-10">
+                            <tr>
+                                {headers.map((header, index) => (
+                                    <th
+                                        key={index}
+                                        className="border-r border-b border-weak bg-weak p-3 text-left font-semibold text-sm"
+                                        style={{
+                                            minWidth: '150px',
+                                            maxWidth: '300px',
+                                            width: 'auto',
+                                        }}
+                                    >
+                                        <div
+                                            className="whitespace-nowrap overflow-hidden text-ellipsis"
+                                            title={header}
+                                        >
+                                            {header}
+                                        </div>
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {dataRows.length > 0 ? (
+                                dataRows.map((row, rowIndex) => (
+                                    <tr key={rowIndex} className="hover:bg-weak transition-colors">
+                                        {headers.map((_, cellIndex) => (
+                                            <td
+                                                key={cellIndex}
+                                                className="border-r border-b border-weak p-3 text-sm"
+                                                style={{
+                                                    minWidth: '150px',
+                                                    maxWidth: '300px',
+                                                    width: 'auto',
+                                                }}
+                                            >
+                                                <div
+                                                    className="whitespace-nowrap overflow-hidden text-ellipsis"
+                                                    title={row[cellIndex] || ''}
+                                                >
+                                                    {row[cellIndex] || ''}
+                                                </div>
+                                            </td>
+                                        ))}
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan={headers.length} className="p-8 text-center color-weak">
+                                        {c('collider_2025: Info').t`No data rows found`}
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div className="mt-2 p-2 text-xs color-weak text-center">
+                    {dataRows.length > 0
+                        ? `${c('collider_2025: Info').t`Showing`} ${dataRows.length} ${c('collider_2025: Info').t`rows with`} ${headers.length} ${c('collider_2025: Info').t`columns`}`
+                        : `${headers.length} ${c('collider_2025: Info').t`columns found, no data rows`}`}
+                </div>
+            </div>
+        );
     };
 
     const renderTableView = (content: string) => {
         try {
-            const rows = parseCSVContent(content);
+            const sections = extractSpreadsheetTableSections(content);
 
-            if (rows.length === 0) {
+            if (sections.length === 0) {
+                return renderSingleTable('');
+            }
+
+            if (sections.length === 1) {
                 return (
-                    <div className="flex flex-column items-center justify-center p-8 text-center">
-                        <div className="mb-4 text-4xl">📊</div>
-                        <p className="text-sm color-weak">
-                            {c('collider_2025: Info').t`No data rows found in this file.`}
-                        </p>
-                    </div>
+                    <>
+                        {renderSingleTable(sections[0].csv, sections[0].title)}
+                        {attachment.truncated && attachment.originalRowCount && attachment.processedRowCount ? (
+                            <div className="mt-2 p-3 bg-info-weak border border-info rounded text-sm">
+                                <strong>{c('collider_2025: Info').t`Note:`}</strong>{' '}
+                                {c('collider_2025: Info').t`Showing first`} {attachment.processedRowCount}{' '}
+                                {c('collider_2025: Info').t`of`} {attachment.originalRowCount}{' '}
+                                {c('collider_2025: Info').t`rows`}
+                            </div>
+                        ) : null}
+                    </>
                 );
             }
 
-            const headers = rows[0];
-            const dataRows = rows.slice(1);
-
             return (
-                <div className="w-full">
-                    <div
-                        className="overflow-auto max-h-custom border border-weak rounded"
-                        style={{ '--max-h-custom': '60vh' }}
-                    >
-                        <table className="border-collapse bg-norm" style={{ minWidth: '100%', width: 'max-content' }}>
-                            <thead className="sticky top-0 bg-norm z-10">
-                                <tr>
-                                    {headers.map((header, index) => (
-                                        <th
-                                            key={index}
-                                            className="border-r border-b border-weak bg-weak p-3 text-left font-semibold text-sm"
-                                            style={{
-                                                minWidth: '150px',
-                                                maxWidth: '300px',
-                                                width: 'auto',
-                                            }}
-                                        >
-                                            <div
-                                                className="whitespace-nowrap overflow-hidden text-ellipsis"
-                                                title={header}
-                                            >
-                                                {header}
-                                            </div>
-                                        </th>
-                                    ))}
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {dataRows.length > 0 ? (
-                                    dataRows.map((row, rowIndex) => (
-                                        <tr key={rowIndex} className="hover:bg-weak transition-colors">
-                                            {headers.map((_, cellIndex) => (
-                                                <td
-                                                    key={cellIndex}
-                                                    className="border-r border-b border-weak p-3 text-sm"
-                                                    style={{
-                                                        minWidth: '150px',
-                                                        maxWidth: '300px',
-                                                        width: 'auto',
-                                                    }}
-                                                >
-                                                    <div
-                                                        className="whitespace-nowrap overflow-hidden text-ellipsis"
-                                                        title={row[cellIndex] || ''}
-                                                    >
-                                                        {row[cellIndex] || ''}
-                                                    </div>
-                                                </td>
-                                            ))}
-                                        </tr>
-                                    ))
-                                ) : (
-                                    <tr>
-                                        <td colSpan={headers.length} className="p-8 text-center color-weak">
-                                            {c('collider_2025: Info').t`No data rows found`}
-                                        </td>
-                                    </tr>
-                                )}
-                            </tbody>
-                        </table>
-                    </div>
-
-                    {/* Show row count info */}
-                    <div className="mt-2 p-2 text-xs color-weak text-center">
-                        {dataRows.length > 0
-                            ? `${c('collider_2025: Info').t`Showing`} ${dataRows.length} ${c('collider_2025: Info').t`rows with`} ${headers.length} ${c('collider_2025: Info').t`columns`}`
-                            : `${headers.length} ${c('collider_2025: Info').t`columns found, no data rows`}`}
-                    </div>
-
-                    {/* Show truncation info if available */}
-                    {attachment.truncated && attachment.originalRowCount && attachment.processedRowCount && (
-                        <div className="mt-2 p-3 bg-info-weak border border-info rounded text-sm">
-                            <strong>{c('collider_2025: Info').t`Note:`}</strong>{' '}
-                            {c('collider_2025: Info').t`Showing first`} {attachment.processedRowCount}{' '}
-                            {c('collider_2025: Info').t`of`} {attachment.originalRowCount}{' '}
-                            {c('collider_2025: Info').t`rows`}
-                        </div>
-                    )}
+                <div className="flex flex-column gap-4">
+                    {sections.map((section, index) => (
+                        <div key={`${section.title ?? 'sheet'}-${index}`}>{renderSingleTable(section.csv, section.title)}</div>
+                    ))}
                 </div>
             );
         } catch (error) {

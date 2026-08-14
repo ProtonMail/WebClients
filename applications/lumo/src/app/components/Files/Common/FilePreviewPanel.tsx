@@ -12,6 +12,7 @@ import type { Attachment, SpaceId } from '../../../types';
 import { Role } from '../../../types';
 import { isAttachmentRemovedFromProjectKnowledge, storeAttachmentInRedux } from '../../../util/attachmentHelpers';
 import { isFileTypeSupported, mimeToHuman } from '../../../util/filetypes';
+import { extractSpreadsheetTableSections, parseCSVContent } from '../../../util/spreadsheetTableContent';
 import { isPastedContentAttachment, updatePastedContentAttachment } from '../../../util/pastedContentHelper';
 import { fillAttachmentFromSearchIndex } from '../../../util/resolveProjectFiles';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
@@ -31,39 +32,6 @@ const getFileSize = (sizeBytes: number) => {
     if (sizeBytes < 1024) return `${sizeBytes} B`;
     if (sizeBytes < 1024 * 1024) return `${(sizeBytes / 1024).toFixed(1)} KB`;
     return `${(sizeBytes / (1024 * 1024)).toFixed(1)} MB`;
-};
-
-const parseCSVContent = (content: string): string[][] => {
-    const lines = content.split('\n').filter((line) => line.trim());
-    const rows: string[][] = [];
-    for (const line of lines) {
-        const row: string[] = [];
-        let current = '';
-        let inQuotes = false;
-        let i = 0;
-        while (i < line.length) {
-            const char = line[i];
-            if (char === '"' && !inQuotes) {
-                inQuotes = true;
-            } else if (char === '"' && inQuotes) {
-                if (line[i + 1] === '"') {
-                    current += '"';
-                    i++;
-                } else {
-                    inQuotes = false;
-                }
-            } else if (char === ',' && !inQuotes) {
-                row.push(current.trim());
-                current = '';
-            } else {
-                current += char;
-            }
-            i++;
-        }
-        row.push(current.trim());
-        rows.push(row);
-    }
-    return rows;
 };
 
 export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, spaceId }: FilePreviewPanelProps) => {
@@ -191,49 +159,63 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
 
     const renderTableView = (content: string) => {
         try {
-            const rows = parseCSVContent(content);
-            if (rows.length === 0) {
+            const sections = extractSpreadsheetTableSections(content);
+            if (sections.length === 0) {
                 return (
                     <div className="flex flex-column items-center justify-center p-6 text-center">
                         <p className="text-sm color-weak">{c('collider_2025: Info').t`No data rows found.`}</p>
                     </div>
                 );
             }
-            const headers = rows[0];
-            const dataRows = rows.slice(1);
+
             return (
-                <div className="w-full overflow-auto">
-                    <table className="border-collapse w-full">
-                        <thead className="sticky top-0 bg-norm">
-                            <tr>
-                                {headers.map((header, i) => (
-                                    <th
-                                        key={i}
-                                        scope="col"
-                                        className="border-r border-b border-weak bg-weak p-2 text-left text-xs font-semibold"
-                                        style={{ minInlineSize: '7.5rem' }}
-                                    >
-                                        {header}
-                                    </th>
-                                ))}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {dataRows.map((row, ri) => (
-                                <tr key={ri} className="hover:bg-weak">
-                                    {headers.map((_, ci) => (
-                                        <td
-                                            key={ci}
-                                            className="border-r border-b border-weak p-2 text-xs"
-                                            style={{ minInlineSize: '7.5rem' }}
-                                        >
-                                            {row[ci] || ''}
-                                        </td>
-                                    ))}
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                <div className="flex flex-column gap-4 p-2">
+                    {sections.map((section, index) => {
+                        const rows = parseCSVContent(section.csv);
+                        if (rows.length === 0) {
+                            return null;
+                        }
+
+                        const headers = rows[0];
+                        const dataRows = rows.slice(1);
+
+                        return (
+                            <div key={`${section.title ?? 'sheet'}-${index}`} className="w-full overflow-auto">
+                                {section.title ? <p className="text-xs font-semibold mb-2">{section.title}</p> : null}
+                                <table className="border-collapse w-full">
+                                    <thead className="sticky top-0 bg-norm">
+                                        <tr>
+                                            {headers.map((header, i) => (
+                                                <th
+                                                    key={i}
+                                                    scope="col"
+                                                    className="border-r border-b border-weak bg-weak p-2 text-left text-xs font-semibold"
+                                                    style={{ minInlineSize: '7.5rem' }}
+                                                >
+                                                    {header}
+                                                </th>
+                                            ))}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {dataRows.map((row, ri) => (
+                                            <tr key={ri} className="hover:bg-weak">
+                                                {headers.map((_, ci) => (
+                                                    <td
+                                                        key={ci}
+                                                        className="border-r border-b border-weak p-2 text-xs"
+                                                        style={{ minInlineSize: '7.5rem' }}
+                                                    >
+                                                        {row[ci] || ''}
+                                                    </td>
+                                                ))}
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        );
+                    })}
                 </div>
             );
         } catch {
