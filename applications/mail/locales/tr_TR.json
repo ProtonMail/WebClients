@@ -1732,6 +1732,12 @@
       ],
       "Stop here": [
         "Burada dur"
+      ],
+      "Run realistic session": [
+        "Gerçekçi oturum çalıştır"
+      ],
+      "Write ${ count } logs": [
+        "${ count } günlük kaydını yaz"
       ]
     },
     "action": {
@@ -4424,6 +4430,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "No ads. No trackers": [
+        "Reklam yok. İzleyici yok"
       ]
     },
     "description": {
@@ -8177,7 +8186,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
+        "${ MAIL_APP_NAME }’yi varsayılan e-posta uygulamanız olarak ayarlayın."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -9694,6 +9703,15 @@
       ],
       "Unstar emails": [
         "E-postalardan yıldızı kaldır"
+      ],
+      "Not supported by this browser": [
+        "Bu tarayıcı tarafından desteklenmiyor"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "${ REALISTIC_ENTRIES } gerçekçi günlük satırını tek seferde değil, gerçek bir oturumda olduğu gibi bir dakika boyunca kademeli olarak yazdırır. Çalışması yaklaşık bir dakika sürer. Bu sekmeyi açık tutun: aksi takdirde kare ölçümleri arka planda duraklatılır."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Arka arkaya gerçekçi günlük satırları yazar ardından hepsini tekrar okur. Yazma ve okuma/dışa aktarma maliyetlerinin depolanan girdi sayısıyla nasıl orantılı olarak arttığını gösterir."
       ]
     },
     "info": {
@@ -10907,6 +10925,60 @@
       ],
       "No unread messages": [
         "Okunmamış ileti yok"
+      ],
+      "Burst write": [
+        "Seri yazma"
+      ],
+      "Deals, offers, and marketing emails": [
+        "İndirimler, teklifler ve pazarlama e-postaları"
+      ],
+      "Decrypt + parse": [
+        "Şifreyi çöz + ayrıştır"
+      ],
+      "Dropped frames": [
+        "Atlanan kareler"
+      ],
+      "Duration": [
+        "Süre"
+      ],
+      "Encrypt": [
+        "Şifrele"
+      ],
+      "Entries": [
+        "Girdiler"
+      ],
+      "Export size": [
+        "Dışa aktarma boyutu"
+      ],
+      "IndexedDB retrieve": [
+        "IndexedDB'den veri çekme"
+      ],
+      "IndexedDB store": [
+        "IndexedDB deposu"
+      ],
+      "Log performance": [
+        "Günlük performansı"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Uzun süren görevler (≥ 50 ms)"
+      ],
+      "Read / export": [
+        "Oku / dışa aktar"
+      ],
+      "Realistic session": [
+        "Gerçekçi oturum"
+      ],
+      "Sum of write() calls": [
+        "write() çağrılarının toplamı"
+      ],
+      "Write": [
+        "Yaz"
+      ],
+      "Write (whole session)": [
+        "Yaz (tüm oturum)"
+      ],
+      "Write-chain drain after last line": [
+        "Son satırdan sonra yazma zinciri boşaltımı"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13083,10 +13155,10 @@
         "Üst klasör yok"
       ],
       "Remind me later": [
-        "Daha sonra anımsat"
+        "Daha sonra hatırlat"
       ],
       "Yes, don't show again": [
-        "Evet, bir daha görüntülenmesin"
+        "Evet bir daha gösterme"
       ]
     },
     "Option group": {
@@ -14075,6 +14147,9 @@
       ],
       "User Admin": [
         "Kullanıcı yöneticisi"
+      ],
+      "Organization Admin": [
+        "Kuruluş Yöneticisi"
       ]
     },
     "Role description": {
@@ -16421,7 +16496,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu başlığı gizli tutmak ister misiniz?"
+        "Bu duyuruyu gizli tutmak ister misiniz?"
       ],
       "Label as": [
         "Etiketle"

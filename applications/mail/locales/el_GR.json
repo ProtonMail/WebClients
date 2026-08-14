@@ -1726,6 +1726,15 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Keep going": [
+        "Συνεχίστε"
+      ],
+      "Run realistic session": [
+        "Εκτελέστε ρεαλιστική συνεδρία"
+      ],
+      "Write ${ count } logs": [
+        "Εγγραφή ${ count } αρχείων καταγραφής"
       ]
     },
     "action": {
@@ -4418,6 +4427,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ],
+      "No ads. No trackers": [
+        "Χωρίς διαφημίσεις. Χωρίς ιχνηλάτες"
       ]
     },
     "description": {
@@ -9679,6 +9691,24 @@
       ],
       "Searched your mail": [
         "Έγινε αναζήτηση στην αλληλογραφία σας"
+      ],
+      "I have not finished this one yet.": [
+        "Δεν το έχω τελειώσει ακόμα αυτό."
+      ],
+      "Not supported by this browser": [
+        "Δεν υποστηρίζεται από αυτό το πρόγραμμα περιήγησης"
+      ],
+      "Star emails": [
+        "Προσθήκη αστεριού στα ηλεκτρονικά μηνύματα"
+      ],
+      "Unstar emails": [
+        "Αφαίρεση αστεριού από τα ηλεκτρονικά μηνύματα"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Γράφει ${ REALISTIC_ENTRIES } ρεαλιστικές γραμμές καταγραφής που κυμαίνονται σταδιακά σε διάστημα ενός λεπτού, σαν μια πραγματική συνεδρία, αντί για όλες μονομιάς. Χρειάζεται περίπου ένα λεπτό για να εκτελεστεί. Διατηρήστε αυτήν την καρτέλα εστιασμένη: οι μετρήσεις καρέ παύουν στο παρασκήνιο."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Γράφει ρεαλιστικές γραμμές καταγραφής διαδοχικά και στη συνέχεια τις διαβάζει όλες αντίστροφα. Δείχνει πώς το κόστος εγγραφής και ανάγνωσης/εξαγωγής κλιμακώνεται με τον αριθμό των αποθηκευμένων καταχωρήσεων."
       ]
     },
     "info": {
@@ -10892,6 +10922,60 @@
       ],
       "No unread messages": [
         "Κανένα μη αναγνωσμένο μήνυμα"
+      ],
+      "Burst write": [
+        "Ριπή εγγραφής"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Συμφωνίες, προσφορές, και διαφημιστικά email"
+      ],
+      "Decrypt + parse": [
+        "Αποκρυπτογράφηση + ανάλυση"
+      ],
+      "Dropped frames": [
+        "Απορριφθέντα καρέ"
+      ],
+      "Duration": [
+        "Διάρκεια"
+      ],
+      "Encrypt": [
+        "Κρυπτογράφηση"
+      ],
+      "Entries": [
+        "Συμμετοχές"
+      ],
+      "Export size": [
+        "Μέγεθος εξαγωγής"
+      ],
+      "IndexedDB retrieve": [
+        "Ανάκτηση IndexedDB"
+      ],
+      "IndexedDB store": [
+        "IndexedDB αποθηκευτικός χώρος"
+      ],
+      "Log performance": [
+        "Απόδοση αρχείου καταγραφής"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Μεγάλες εργασίες (≥ 50 ms)"
+      ],
+      "Read / export": [
+        "Ανάγνωση / εξαγωγή"
+      ],
+      "Realistic session": [
+        "Ρεαλιστική συνεδρία"
+      ],
+      "Sum of write() calls": [
+        "Άθροισμα κλήσεων write()"
+      ],
+      "Write": [
+        "Εγγραφή"
+      ],
+      "Write (whole session)": [
+        "Γράψτε (ολόκληρη συνεδρία)"
+      ],
+      "Write-chain drain after last line": [
+        "Αποστράγγιση αλυσίδας εγγραφής μετά την τελευταία γραμμή"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12203,6 +12287,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με εκτεταμένη πρόσβαση"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με περιορισμένη πρόσβαση"
       ]
     },
     "new_plans: feature highlight": {
@@ -14054,6 +14144,9 @@
       ],
       "User Admin": [
         "Διαχειριστής Χρηστών"
+      ],
+      "Organization Admin": [
+        "Διαχειριστής Οργανισμού"
       ]
     },
     "Role description": {
@@ -17007,6 +17100,15 @@
       ],
       "Domain names": [
         "Ονόματα τομέων"
+      ],
+      "Star emails": [
+        "Προσθήκη αστεριού στα ηλεκτρονικά μηνύματα"
+      ],
+      "Still working on it": [
+        "Ακόμα δουλεύω πάνω σε αυτό"
+      ],
+      "Unstar emails": [
+        "Αφαίρεση αστεριού από τα ηλεκτρονικά μηνύματα"
       ]
     },
     "Title header for keys table": {

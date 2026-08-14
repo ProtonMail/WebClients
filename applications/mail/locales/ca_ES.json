@@ -1732,6 +1732,12 @@
       ],
       "Stop here": [
         "Parar aquí"
+      ],
+      "Run realistic session": [
+        "Inicia una sessió realista"
+      ],
+      "Write ${ count } logs": [
+        "Escriu ${ count } registres"
       ]
     },
     "action": {
@@ -4424,6 +4430,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ],
+      "No ads. No trackers": [
+        "Sense anuncis. Sense rastrejadors"
       ]
     },
     "description": {
@@ -9697,6 +9706,15 @@
       ],
       "Unstar emails": [
         "Deixa de destacar correus electrònics"
+      ],
+      "Not supported by this browser": [
+        "Aquest navegador no ho admet"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Escriu ${ REALISTIC_ENTRIES } línies de registre realistes que van entrant a poc a poc al llarg d'un minut, com en una sessió real, en lloc de fer-ho tot de cop. Triga al voltant d'un minut a executar-se. Mantingueu aquesta pestanya en primer pla: les mesures de fotogrames s'aturen en segon pla."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Escriu línies de registre realistes una darrere l'altra i després les torna a llegir totes. Mostra com el cost d'escriptura i de lectura/exportació varia segons el nombre d'entrades emmagatzemades."
       ]
     },
     "info": {
@@ -10910,6 +10928,60 @@
       ],
       "No unread messages": [
         "No hi ha missatges no llegits"
+      ],
+      "Burst write": [
+        "Ràfegues d'escriptura"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Promocions, ofertes i correus electrònics de màrqueting"
+      ],
+      "Decrypt + parse": [
+        "Desxifra + analitza"
+      ],
+      "Dropped frames": [
+        "Fotogrames perduts"
+      ],
+      "Duration": [
+        "Durada"
+      ],
+      "Encrypt": [
+        "Xifratge"
+      ],
+      "Entries": [
+        "Entrades"
+      ],
+      "Export size": [
+        "Mida d'exportació"
+      ],
+      "IndexedDB retrieve": [
+        "Recuperació de l'IndexedDB"
+      ],
+      "IndexedDB store": [
+        "Emmagatzematge de l'IndexedDB"
+      ],
+      "Log performance": [
+        "Registres de rendiment"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Tasques llargues (≥ 50 ms)"
+      ],
+      "Read / export": [
+        "Llegeix / Exporta"
+      ],
+      "Realistic session": [
+        "Sessió realista"
+      ],
+      "Sum of write() calls": [
+        "Total de crides a write()"
+      ],
+      "Write": [
+        "Escriu"
+      ],
+      "Write (whole session)": [
+        "Escriu (tota la sessió)"
+      ],
+      "Write-chain drain after last line": [
+        "Buidatge de la cadena d'escriptura després de l'última línia"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13089,7 +13161,7 @@
         "Recordeu-m'ho més tard"
       ],
       "Yes, don't show again": [
-        "Sí, no m'ho torneu a mostrar"
+        "Sí, no ho torneu a mostrar"
       ]
     },
     "Option group": {
