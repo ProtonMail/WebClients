@@ -76,7 +76,7 @@ const definitions: ToolDefinition[] = [
             type: 'object',
             additionalProperties: false,
             required: ['target'],
-            properties: { target: { type: 'string' } },
+            properties: { target: { type: 'string' }, ids: { type: 'array', items: { type: 'string' } } },
         },
         serializeForLumo: () => '',
         summarizeChip: () => ({ label: 'Move' }),
@@ -197,7 +197,9 @@ describe('useLumoAgent', () => {
 
     it('surfaces a mutation as a pending confirm, then applies it with the edited params on confirm', async () => {
         script = async ({ executor, chunk }) => {
-            await executor.execute([{ id: '1', name: 'move_items', arguments: JSON.stringify({ target: 'Inbox' }) }]);
+            await executor.execute([
+                { id: '1', name: 'move_items', arguments: JSON.stringify({ target: 'Inbox', ids: ['a', 'b'] }) },
+            ]);
             chunk(message('Done.'));
         };
 
@@ -219,7 +221,11 @@ describe('useLumoAgent', () => {
         });
 
         expect(handlerCalls).toEqual([{ name: 'move_items', params: { target: 'Archive' } }]);
-        expect(result.current.items.find((item) => item.kind === 'confirm')).toMatchObject({ status: 'applied' });
+        // A tile still reporting the proposal describes a mutation that never happened, so a param the
+        // body dropped must not survive on it either.
+        const settled = result.current.items.find((item) => item.kind === 'confirm');
+        expect(settled).toMatchObject({ status: 'applied', action: { type: 'move_items', target: 'Archive' } });
+        expect(settled).not.toMatchObject({ action: { ids: expect.anything() } });
         // A mutation is shown by its confirm tile, never also as a chip.
         expect(result.current.items.some((item) => item.kind === 'chip')).toBe(false);
         expect(result.current.isBusy).toBe(false);
@@ -246,7 +252,10 @@ describe('useLumoAgent', () => {
         });
 
         expect(handlerCalls).toEqual([]);
-        expect(result.current.items.find((item) => item.kind === 'confirm')).toMatchObject({ status: 'cancelled' });
+        expect(result.current.items.find((item) => item.kind === 'confirm')).toMatchObject({
+            status: 'cancelled',
+            action: { type: 'move_items', target: 'Inbox' },
+        });
     });
 
     describe('stopping while a mutation is awaiting confirmation', () => {
