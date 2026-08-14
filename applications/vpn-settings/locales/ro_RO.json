@@ -1924,7 +1924,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TiB spațiu de stocare"
+        "2 TiB spațiu total"
       ],
       "3 TB data storage": [
         "3 TiB spațiu de stocare"
@@ -3811,6 +3811,9 @@
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
+      ],
+      "No ads. No trackers": [
+        "Fără reclame. Fără instrumente de urmărire."
       ]
     },
     "description": {
@@ -10229,6 +10232,21 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Vă conectează la țara de destinație prin intermediul unor servere situate fizic în altă parte."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Vă conectează la țara de destinație prin intermediul unor servere situate fizic în altă parte: ${ joinedSmartRoutingCountries }."
+      ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Membrilor li se solicită periodic să își verifice parola ${ BRAND_NAME } pentru a se asigura că nu o uită. Forțarea confirmării împiedică membrii să o dezactiveze."
+      ],
+      "Smart Routing": [
+        "Direcționare inteligentă"
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Când este activată, membrii nu pot renunța la verificările parolei în propriile setări."
       ]
     },
     "info": {
@@ -11417,6 +11435,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Require password check-ins": [
+        "Necesită confirmarea parolei"
       ]
     },
     "label": {
@@ -12885,6 +12906,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces extins"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces limitat"
       ]
     },
     "new_plans: feature highlight": {
@@ -13514,6 +13541,12 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Setările conferințelor video Zoom au fost actualizate."
+      ],
+      "Password check-ins are not required anymore": [
+        "Nu mai este necesară confirmarea parolei."
+      ],
+      "Password check-ins are now required for all members": [
+        "Acum este necesară confirmarea parolei pentru toți membrii."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15409,6 +15442,9 @@
       ],
       "User Admin": [
         "Administrare utilizatori"
+      ],
+      "Organization Admin": [
+        "Administrator organizație"
       ]
     },
     "Role description": {
@@ -16635,6 +16671,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
+      ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Deoarece organizația v-a trecut la autentificarea unică (SSO), **vechea parolă este salvată ca parolă de rezervă**. O puteți folosi pentru a autoriza SSO pe un dispozitiv nou."
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Introduceți-o pentru a vă conecta. Este aceeași cu vechea parolă."
       ]
     },
     "sso: auth device state": {
@@ -19293,6 +19335,9 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Password check-ins": [
+        "Confirmare parolă"
       ]
     },
     "Title for payment methods table": {
@@ -19561,6 +19606,9 @@
       ],
       "Your DKIM signing is working.": [
         "Semnarea DKIM funcționează."
+      ],
+      "This setting is managed by your organization": [
+        "Această setare este gestionată de către organizația proprie."
       ]
     },
     "tooltip": {
@@ -20293,6 +20341,248 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "După reușirea verificării, nu eliminați această înregistrare TXT deoarece este necesară pentru a confirma că dețineți domeniul în continuare."
+      ]
+    },
+    "account_search_index": {
+      "12-word phrase": [
+        "Frază de 12 cuvinte"
+      ],
+      "Account events": [
+        "Evenimente cont"
+      ],
+      "Active sessions": [
+        "Sesiuni active"
+      ],
+      "Advanced account protection": [
+        "Protecție avansată cont"
+      ],
+      "AI assistant": [
+        "Asistent IA"
+      ],
+      "Allow list": [
+        "Listă adrese permise"
+      ],
+      "Audit log": [
+        "Jurnal de audit"
+      ],
+      "Authentication logs": [
+        "Jurnal autentificări"
+      ],
+      "Automatic renewal": [
+        "Reînnoire automată"
+      ],
+      "Automatically delete data": [
+        "Ștergere automată date"
+      ],
+      "Block sender for the organization": [
+        "Blocare expeditor pentru organizație"
+      ],
+      "Blog articles": [
+        "Articole blog"
+      ],
+      "Bulk user import": [
+        "Importare utilizatori multipli"
+      ],
+      "Cancel plan": [
+        "Anulare plan"
+      ],
+      "Close account": [
+        "Închidere cont"
+      ],
+      "Compare plans": [
+        "Comparare planuri"
+      ],
+      "Connected addresses": [
+        "Adrese conectate"
+      ],
+      "Connection events": [
+        "Evenimente de conexiune"
+      ],
+      "Create organization": [
+        "Creare organizație"
+      ],
+      "Custom domain": [
+        "Domeniu personal"
+      ],
+      "Customer support": [
+        "Asistență clienți"
+      ],
+      "Dark mode": [
+        "Mod întunecat"
+      ],
+      "Data breach alerts": [
+        "Alerte breșe de date"
+      ],
+      "Desktop and mobile apps": [
+        "Aplicații pentru desktop și mobile"
+      ],
+      "Downgrade plan": [
+        "Retrogradare plan"
+      ],
+      "Downgrade to Free": [
+        "Retrogradare la gratuit"
+      ],
+      "Download apps": [
+        "Descărcare aplicații"
+      ],
+      "Download recovery file": [
+        "Descărcare fișier de recuperare"
+      ],
+      "Enable or disable apps for members": [
+        "Activare sau dezactivare aplicații pentru membri"
+      ],
+      "Encryption backup file": [
+        "Fișier de conservare criptat"
+      ],
+      "Encryption backup in this browser": [
+        "Conservare criptată în acest navigator web"
+      ],
+      "External mailbox": [
+        "Cont de e-mail extern"
+      ],
+      "Gateway logs": [
+        "Jurnal porți de acces"
+      ],
+      "Group invitations": [
+        "Invitații de grup"
+      ],
+      "Group members": [
+        "Membrii grup"
+      ],
+      "Group plan invitation": [
+        "Invitație la plan de grup"
+      ],
+      "High-security mode": [
+        "Mod de securitate ridicată"
+      ],
+      "Import history": [
+        "Importare istoric"
+      ],
+      "Included apps": [
+        "Aplicații incluse"
+      ],
+      "Join organization": [
+        "Alăturare la organizație"
+      ],
+      "Leaked password": [
+        "Parolă divulgată"
+      ],
+      "Leave group": [
+        "Părăsire grup"
+      ],
+      "Leave organization": [
+        "Părăsire organizație"
+      ],
+      "Light mode": [
+        "Mod luminos"
+      ],
+      "Mnemonic": [
+        "Cuvinte mnemonice"
+      ],
+      "One-time code": [
+        "Cod de unică folosință"
+      ],
+      "Password reminder": [
+        "Reamintire parolă"
+      ],
+      "Password reminders": [
+        "Mementouri parolă"
+      ],
+      "Password reset request": [
+        "Solicitare resetare parolă"
+      ],
+      "Permanently delete data": [
+        "Ștergere definitivă date"
+      ],
+      "Privacy guides": [
+        "Ghiduri de confidențialitate"
+      ],
+      "Privacy services": [
+        "Servicii de confidențialitate"
+      ],
+      "Protection from cyber attacks": [
+        "Protejare împotriva atacurilor cibernetice"
+      ],
+      "Receive misaddressed emails": [
+        "Primire mesaje cu adrese greșite"
+      ],
+      "Recovery email address": [
+        "Adresa de e-mail de recuperare"
+      ],
+      "Recovery phone number": [
+        "Număr de telefon de recuperare"
+      ],
+      "Recovery score": [
+        "Scor de recuperare"
+      ],
+      "Redeem discount code": [
+        "Revendicare cod de reducere"
+      ],
+      "Referral credits": [
+        "Credite de recomandare"
+      ],
+      "Referral link": [
+        "Legătură web de recomandare"
+      ],
+      "Referral rewards": [
+        "Recompensă pentru recomandări"
+      ],
+      "Restrict app access": [
+        "Restricționare acces aplicație"
+      ],
+      "Scan QR code": [
+        "Scanați codul QR"
+      ],
+      "Server access policy": [
+        "Politică de acces la server"
+      ],
+      "Shared server access": [
+        "Acces partajat la server"
+      ],
+      "Sign out other devices": [
+        "Deconectare alte dispozitive"
+      ],
+      "Sign-in history": [
+        "Istoric conectări"
+      ],
+      "Stop subscription renewal": [
+        "Oprire reînnoire abonament"
+      ],
+      "Storage space": [
+        "Spațiu de stocare"
+      ],
+      "Storage usage": [
+        "Utilizare stocare"
+      ],
+      "Subscription end date": [
+        "Dată sfârșit abonament"
+      ],
+      "Subscription status": [
+        "Stare abonament"
+      ],
+      "Telemetry": [
+        "Telemetrie"
+      ],
+      "Trusted contact": [
+        "Contact aprobat"
+      ],
+      "Upgrade plan": [
+        "Modificare plan"
+      ],
+      "Verify domain": [
+        "Verificare domeniu"
+      ],
+      "Verify password": [
+        "Verificare parolă"
+      ],
+      "Video conferencing": [
+        "Videoconferințe"
+      ],
+      "VPN session details": [
+        "Detalii sesiune VPN"
+      ],
+      "Writing assistant": [
+        "Asistent de scriere"
       ]
     }
   }
