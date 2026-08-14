@@ -13,7 +13,7 @@ import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { changeCreateLoadingState } from '@proton/activation/src/logic/sync/sync.actions';
 import { Button } from '@proton/atoms/Button/Button';
 import { useModalState } from '@proton/components';
-import useNotifications from '@proton/components/hooks/useNotifications.tsx';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import { useFlag } from '@proton/unleash/useFlag';

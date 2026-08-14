@@ -8,6 +8,7 @@ export { default as useLoading } from './useLoading';
 export { default as useSearchParams } from './useSearchParams';
 export { default as useStableLoading } from './useStableLoading';
 export { default as useStateRef } from './useStateRef';
+export { default as useToggle } from './useToggle';
 export { default as useSynchronizingState } from './useSynchronizingState';
 export { default as usePrevious } from './usePrevious';
 export { default as useIsMounted } from './useIsMounted';

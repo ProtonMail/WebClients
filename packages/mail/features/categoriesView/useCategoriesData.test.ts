@@ -1,12 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import useFeature from '@proton/features/useFeature';
-import {
-    selectCategoryViewLoading,
-    selectCategoryViewSettingAccess,
-} from '@proton/mail/store/categoriesView/categoriesViewSelector';
-import { selectActiveCategoriesTabs, selectCategoriesLabel } from '@proton/mail/store/labels/selector';
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
+import { baseUseSelector } from '@proton/react-redux-store';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { CategoryViewVariantVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
@@ -14,22 +9,27 @@ import { useFlagsStatus } from '@proton/unleash/proxy';
 import { useFlag } from '@proton/unleash/useFlag';
 import { useVariant } from '@proton/unleash/useVariant';
 
+import {
+    selectCategoryViewLoading,
+    selectCategoryViewSettingAccess,
+} from '../../store/categoriesView/categoriesViewSelector';
+import { selectActiveCategoriesTabs, selectCategoriesLabel } from '../../store/labels/selector';
 import type { CategoryTab } from './categoriesConstants';
 import { CATEGORIES_COLOR_SHADES } from './categoriesConstants';
 import { useCategoriesData } from './useCategoriesData';
 
 jest.mock('@proton/features/useFeature');
 jest.mock('@proton/unleash/proxy');
-jest.mock('@proton/redux-shared-store/sharedProvider');
+jest.mock('@proton/react-redux-store');
 jest.mock('@proton/unleash/useFlag');
 jest.mock('@proton/unleash/useVariant');
 
-jest.mock('@proton/mail/store/labels/selector', () => ({
+jest.mock('../../store/labels/selector', () => ({
     selectActiveCategoriesTabs: jest.fn(),
     selectCategoriesLabel: jest.fn(),
 }));
 
-jest.mock('@proton/mail/store/categoriesView/categoriesViewSelector', () => ({
+jest.mock('../../store/categoriesView/categoriesViewSelector', () => ({
     selectCategoryViewLoading: jest.fn(),
     selectCategoryViewSettingAccess: jest.fn(),
 }));
@@ -86,7 +86,7 @@ const mockSelectors = ({
     categoriesStore = [],
     activeCategoriesTabs = [PRIMARY_TAB, SOCIAL_TAB],
 }: SelectorOptions = {}) => {
-    jest.mocked(useSelector).mockImplementation((selector) => {
+    jest.mocked(baseUseSelector).mockImplementation((selector: any) => {
         if (selector === selectCategoryViewLoading) {
             return isLoading;
         }

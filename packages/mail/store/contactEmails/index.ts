@@ -1,7 +1,6 @@
 import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
 import { serverEvent } from '@proton/account';
-import { getContactEmail } from '@proton/mail/store/contactEmails/getContactEmail';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
@@ -18,6 +17,8 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import updateCollection, { sortCollection } from '@proton/shared/lib/helpers/updateCollection';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+
+import { getContactEmail } from './getContactEmail';
 
 const name = 'contactEmails' as const;
 
