@@ -7,10 +7,9 @@ import {
     type MemberKeyPayload,
     type PromoteGlobalSSOPayload,
     assignMemberRoles,
-    classifyRoleChange,
+    confirmMemberRoleChange,
     editMember,
     getMemberAddresses,
-    getMemberEditPayload,
     getPrivateAdminError,
     getPrivateText,
     getRolesTabBanner,
@@ -60,6 +59,7 @@ import SubUserCreateHint from './SubUserCreateHint';
 import { adminTooltipText } from './constants';
 import { disableStorageSelection, getPrivateLabel } from './helper';
 import AdminRolesSpotlight from './rolesAndPermissions/AdminRolesSpotlight';
+import MemberOwnerRoleToggle from './rolesAndPermissions/MemberOwnerRoleToggle';
 import ModalHeaderWithTabs from './rolesAndPermissions/ModalHeaderWithTabs';
 import RolesAndPermissionsTab from './rolesAndPermissions/RolesAndPermissionsTab';
 
@@ -243,41 +243,20 @@ const SubUserEditModal = ({
         return result.diff;
     };
 
-    const confirmRoleChange = async (
-        targetRole: MEMBER_ROLE
-    ): Promise<{ confirmed: boolean; keyPacketPayload: PromoteGlobalSSOPayload | MemberKeyPayload | null }> => {
-        const classification = classifyRoleChange({
-            member,
-            targetRole,
-            isPasswordlessOrg: passwordlessMode,
-        });
-
-        const keyPacketPayload = await dispatch(
-            getMemberEditPayload({
-                member,
-                classification,
-                api: silentApi,
-            })
-        );
-
-        if (!classification.requiresPrompt) {
-            return { confirmed: true, keyPacketPayload };
-        }
-
-        const confirmed = await showRoleChangePrompt({
-            action: { classification, payload: keyPacketPayload },
-            subscriber: member.Subscriber,
-        });
-        return { confirmed, keyPacketPayload };
-    };
-
     const handleToggleLegacyOrgAdminToggle = async (makeAdmin: boolean) => {
         const newRole = makeAdmin ? MEMBER_ROLE.ORGANIZATION_ADMIN : MEMBER_ROLE.ORGANIZATION_MEMBER;
-        const { confirmed, keyPacketPayload } = await confirmRoleChange(newRole);
+        const { confirmed, payload } = await dispatch(
+            confirmMemberRoleChange({
+                member,
+                targetRole: newRole,
+                api: silentApi,
+                confirm: (action) => showRoleChangePrompt({ action, subscriber: member.Subscriber }),
+            })
+        );
         if (!confirmed) {
             return;
         }
-        await handleUpdateMember({ role: newRole }, keyPacketPayload);
+        await handleUpdateMember({ role: newRole }, payload);
     };
 
     const handleClose = submitting ? undefined : rest.onClose;
@@ -371,7 +350,7 @@ const SubUserEditModal = ({
                     </>
                 )}
 
-                {(canPromoteAdmin || canRevokeAdmin) && adminRolesUIState !== AdminRolesUIState.Enabled && (
+                {(canPromoteAdmin || canRevokeAdmin) && adminRolesUIState === AdminRolesUIState.Hidden && (
                     <MemberToggleContainer
                         toggle={
                             <Toggle
@@ -404,6 +383,14 @@ const SubUserEditModal = ({
                                     )}
                             </div>
                         }
+                    />
+                )}
+
+                {adminRolesUIState === AdminRolesUIState.Disabled && (
+                    <MemberOwnerRoleToggle
+                        member={member}
+                        onChangeSelectedRoles={setSelectedRoles}
+                        hasToggledPrivate={hasToggledPrivate}
                     />
                 )}
 

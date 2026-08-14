@@ -20,6 +20,9 @@ export const isOrgKeyRequired = (role: OrganizationRole): boolean => ROLE_NAMES_
 
 export const isOwnerRole = (role: OrganizationRole): boolean => role.Name === PREDEFINED_ROLE_NAME.OWNER;
 
+export const hasUserSourcedOwnerRole = (roles: RoleAssignment[]): boolean =>
+    roles.some(({ Role, Source }) => Source === ROLE_SOURCE.USER && isOwnerRole(Role));
+
 export const isLegacyOrgAdminState = (isLegacyOrgAdmin: boolean, adminRolesIds: Set<string>): boolean =>
     isLegacyOrgAdmin && adminRolesIds.size === 0;
 
