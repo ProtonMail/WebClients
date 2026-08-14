@@ -45,7 +45,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         loading: adminRolesModalLoading,
     } = useFeature(FeatureCode.AdminRolesOnboardingModal, adminRolesUIState === AdminRolesUIState.Enabled);
 
-    const canShowAdminRolesModal = !adminRolesModalLoading && !!adminRolesModalFeature?.Value;
+    const canShowAdminRolesModal =
+        adminRolesUIState === AdminRolesUIState.Enabled && !adminRolesModalLoading && !!adminRolesModalFeature?.Value;
 
     return (
         <SettingsSectionWide customWidth={showUsage ? '100%' : undefined}>
