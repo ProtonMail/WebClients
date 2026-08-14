@@ -9,7 +9,6 @@ import {
     DEFAULT_RETRY_AFTER_IN_MS,
     classifyError,
     computeBackoff,
-    isAbortError,
     sendErrorReportForSearch,
 } from '../../shared/errors';
 import type { SearchMetrics } from '../../shared/searchMetrics';
@@ -320,7 +319,12 @@ export class IndexerTaskQueue {
             this.taskAttempts.delete(uid);
             this.searchMetrics.markIndexerTaskSucceeded({ taskUid: uid, taskKind: task.getKind() });
         } catch (e) {
-            if (isAbortError(e) || signal.aborted) {
+            // This signal is ours and never leaves the worker, so if it fired we really are
+            // stopping and dropping the error is correct. Deliberately not isAbortError(e): an
+            // abort raised anywhere else, relayed from the main thread or from an unrelated
+            // timeout, is an ordinary failure. Returning for one of those would skip both the
+            // metric and the re-enqueue below, stalling the populator with no trace.
+            if (signal.aborted) {
                 return;
             }
 
