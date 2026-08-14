@@ -62,7 +62,7 @@ export const initializeConfig = async (userID: string, encryptedIndexKey: string
  */
 const readConfigProperty = async (userID: string, configID: ConfigKeys) => {
     const esDB = await openESDB(userID);
-    if (!esDB) {
+    if (!esDB || !esDB.objectStoreNames.contains('config')) {
         return;
     }
 

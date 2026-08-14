@@ -12,7 +12,7 @@ import { getOldestInfo } from './metadataOldest';
  */
 export const readMetadataItem = async <ESItemMetadata>(userID: string, itemID: string, indexKey: IndexKey) => {
     const esDB = await openESDB(userID);
-    if (!esDB) {
+    if (!esDB || !esDB.objectStoreNames.contains('metadata')) {
         return;
     }
 
@@ -38,7 +38,7 @@ export const readMetadataBatch = async (
     IDs: string[]
 ): Promise<(EncryptedItemWithInfo | undefined)[] | undefined> => {
     const esDB = await openESDB(userID);
-    if (!esDB) {
+    if (!esDB || !esDB.objectStoreNames.contains('metadata')) {
         return;
     }
 
@@ -65,7 +65,7 @@ export const readMetadataBatch = async (
  */
 export const readSortedIDs = async (userID: string, reverse: boolean, checkpoint?: ESTimepoint) => {
     const esDB = await openESDB(userID);
-    if (!esDB) {
+    if (!esDB || !esDB.objectStoreNames.contains('metadata')) {
         return;
     }
 
@@ -89,7 +89,7 @@ export const readSortedIDs = async (userID: string, reverse: boolean, checkpoint
  */
 export const readNumMetadata = async (userID: string) => {
     const esDB = await openESDB(userID);
-    if (!esDB) {
+    if (!esDB || !esDB.objectStoreNames.contains('metadata')) {
         return;
     }
     const count = await esDB.count('metadata');
@@ -102,7 +102,7 @@ export const readNumMetadata = async (userID: string) => {
  */
 export const wrappedGetOldestInfo = async (userID: string): Promise<ESItemInfo | undefined> => {
     const esDB = await openESDB(userID);
-    if (!esDB) {
+    if (!esDB || !esDB.objectStoreNames.contains('metadata')) {
         return;
     }
     const oldestInfo = await getOldestInfo(esDB);
@@ -119,7 +119,7 @@ export const executeMetadataOperations = async (
     itemsToAdd: EncryptedItemWithInfo[]
 ) => {
     const esDB = await openESDB(userID);
-    if (!esDB) {
+    if (!esDB || !esDB.objectStoreNames.contains('metadata')) {
         return;
     }
 
