@@ -133,6 +133,7 @@ export interface UpdatePasswordlessOrganizationKeysPayload {
         MemberID: string;
     } & OrganizationKeyActivation)[];
     GroupAddressKeyTokens: GroupAddressKeyToken[];
+    IsKeyReset: boolean;
 }
 
 export const createPasswordlessOrganizationKeys = (data: UpdatePasswordlessOrganizationKeysPayload) => ({
@@ -148,7 +149,7 @@ export const updatePasswordlessOrganizationKeys = (data: UpdatePasswordlessOrgan
 
 interface MigratePasswordlessOrganizationKeysPayload extends Omit<
     UpdatePasswordlessOrganizationKeysPayload,
-    'Members' | 'AdminInvitations' | 'GroupAddressKeyTokens'
+    'Members' | 'AdminInvitations' | 'GroupAddressKeyTokens' | 'IsKeyReset'
 > {
     AdminInvitations: ({
         MemberID: string;
@@ -174,10 +175,11 @@ export const updateOrganizationKeysV2 = ({
     BackupPrivateKey,
     BackupKeySalt,
     Members,
+    GroupAddressKeyTokens,
 }: UpdateOrganizationKeysPayloadV2) => ({
     url: 'core/v4/organizations/keys',
     method: 'post',
-    data: { PrivateKey, BackupPrivateKey, BackupKeySalt, Members },
+    data: { PrivateKey, BackupPrivateKey, BackupKeySalt, Members, GroupAddressKeyTokens },
 });
 
 export const updateBackupKey = ({ PrivateKey, KeySalt }: { PrivateKey: string; KeySalt: string }) => ({
