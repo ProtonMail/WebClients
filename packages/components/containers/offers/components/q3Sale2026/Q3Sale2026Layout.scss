@@ -82,11 +82,10 @@ im.$media-expressions: $media-expressions;
 		0 1px 2px rgb(55 37 128 / 0.1),
 		0 2px 4px rgb(55 37 128 / 0.1);
 
-	// Each half of the title is its own translatable line, so the break after the
-	// comma survives translation instead of being a hardcoded <br />
-	span {
-		display: block;
-	}
+	// Narrow enough that "One plan, full power" wraps after the comma, but wide
+	// enough that the longest second line ("max savings") still fits on one line
+	max-inline-size: 9ch;
+	text-wrap: balance;
 
 	@include im.media('<=small') {
 		font-size: 2.5rem;
