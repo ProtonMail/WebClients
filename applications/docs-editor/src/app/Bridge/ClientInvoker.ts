@@ -27,6 +27,7 @@ import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import type { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 
 /** Allows the editor to invoke methods on the client */
 export class ClientInvoker implements EditorRequiresClientMethods {
@@ -43,6 +44,10 @@ export class ClientInvoker implements EditorRequiresClientMethods {
 
   async editorReportingEvent(event: EditorEvent, data: EditorEventData[EditorEvent]): Promise<void> {
     return this.invokeClientMethod('editorReportingEvent', [event, data])
+  }
+
+  async editorReportingTelemetry(event: TelemetryDocsEditorEvents): Promise<void> {
+    return this.invokeClientMethod('editorReportingTelemetry', [event])
   }
 
   async getTypersExcludingSelf(threadId: string): Promise<string[]> {

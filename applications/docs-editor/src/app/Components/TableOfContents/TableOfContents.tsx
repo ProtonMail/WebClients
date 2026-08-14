@@ -7,6 +7,7 @@ import React from 'react'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { TableOfContentsPlugin } from '@lexical/react/LexicalTableOfContentsPlugin'
 import type { TableOfContentsEntry } from '@lexical/react/LexicalTableOfContentsPlugin'
+import useEffectOnce from '@proton/hooks/useEffectOnce'
 import type { NodeKey } from 'lexical'
 import { c } from 'ttag'
 import { DOCS_EDITOR_MAX_WIDTH, useLeftPanelContext } from '../../Containers/DocsLayout'
@@ -15,6 +16,7 @@ import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
 import { useStore } from 'zustand'
 import { useEditorState } from '../../Containers/EditorStateProvider'
 import { IcLink } from '@proton/icons/icons/IcLink'
+import { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import { TocHeader } from './TocHeader'
 import { getDocsLayoutScrollContainer } from '../../Containers/docsLayoutUtils'
 import './TableOfContents.scss'
@@ -124,6 +126,7 @@ function ContentItem({ nodeKey, text, tag, scrollToNode }: ContentItemProps) {
 
 interface TableOfContentsRendererProps {
   tableOfContents: TableOfContentsEntry[]
+  reportTelemetry: (event: TelemetryDocsEditorEvents) => void
 }
 
 interface ObservedHeader {
@@ -131,7 +134,7 @@ interface ObservedHeader {
   key: NodeKey
 }
 
-function ActiveHeadingListener({ tableOfContents }: TableOfContentsRendererProps) {
+function ActiveHeadingListener({ tableOfContents }: Pick<TableOfContentsRendererProps, 'tableOfContents'>) {
   const [editor] = useLexicalComposerContext()
   const { setActiveHeadingKey } = useTableOfContentsContext()
 
@@ -209,12 +212,16 @@ function HeadingParamListener({ scrollToNode }: HeadingParamListenerProps) {
   return null
 }
 
-function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererProps) {
+function TableOfContentsRenderer({ tableOfContents, reportTelemetry }: TableOfContentsRendererProps) {
   const [editor] = useLexicalComposerContext()
   const { visibility, setVisibility } = useLeftPanelContext()
   const isExpanded = visibility === 'expanded'
 
-  const scrollToNode = React.useCallback(
+  useEffectOnce(() => {
+    reportTelemetry(TelemetryDocsEditorEvents.table_of_contents_available)
+  }, [reportTelemetry])
+
+  const navigateToHeading = React.useCallback(
     (key: NodeKey) => {
       editor.read(() => {
         const element = editor.getElementByKey(key)
@@ -227,23 +234,24 @@ function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererPro
           behavior: shouldSmoothScroll ? 'smooth' : 'instant',
         })
       })
-    },
-    [editor],
-  )
-
-  const handleHeadingClick = React.useCallback(
-    (key: NodeKey) => {
-      scrollToNode(key)
       if (window.innerWidth < DOCS_EDITOR_MAX_WIDTH) {
         setVisibility('collapsed')
       }
     },
-    [scrollToNode, setVisibility],
+    [editor, setVisibility],
+  )
+
+  const handleHeadingClick = React.useCallback(
+    (key: NodeKey) => {
+      reportTelemetry(TelemetryDocsEditorEvents.table_of_contents_heading_clicked)
+      navigateToHeading(key)
+    },
+    [navigateToHeading, reportTelemetry],
   )
 
   return (
     <>
-      <HeadingParamListener scrollToNode={handleHeadingClick} />
+      <HeadingParamListener scrollToNode={navigateToHeading} />
       <ActiveHeadingListener tableOfContents={tableOfContents} />
 
       <div
@@ -253,7 +261,15 @@ function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererPro
         )}
         data-testid="table-of-contents"
       >
-        <TocHeader isActive={isExpanded} onToggle={() => setVisibility(isExpanded ? 'collapsed' : 'expanded')} />
+        <TocHeader
+          isActive={isExpanded}
+          onToggle={() => {
+            if (!isExpanded) {
+              reportTelemetry(TelemetryDocsEditorEvents.table_of_contents_opened)
+            }
+            setVisibility(isExpanded ? 'collapsed' : 'expanded')
+          }}
+        />
 
         <ul className="toc-list flex min-w-0 flex-1 flex-col overflow-y-auto">
           {tableOfContents.map(([key, text, tag]) => (
@@ -288,9 +304,10 @@ function useTableOfContentsContext() {
 interface TableOfContentsProps {
   getDocumentUrl: () => Promise<string>
   replaceDocumentUrl: (url: string) => Promise<void>
+  reportTelemetry: (event: TelemetryDocsEditorEvents) => void
 }
 
-export function TableOfContents({ getDocumentUrl, replaceDocumentUrl }: TableOfContentsProps) {
+export function TableOfContents({ getDocumentUrl, replaceDocumentUrl, reportTelemetry }: TableOfContentsProps) {
   const [activeHeadingKey, setActiveHeadingKey] = React.useState<NodeKey | null>(null)
   const [documentUrl, setDocumentUrl] = React.useState<string | null>(null)
 
@@ -318,7 +335,7 @@ export function TableOfContents({ getDocumentUrl, replaceDocumentUrl }: TableOfC
           if (!visibleTableOfContents.length) {
             return <div />
           }
-          return <TableOfContentsRenderer tableOfContents={visibleTableOfContents} />
+          return <TableOfContentsRenderer tableOfContents={visibleTableOfContents} reportTelemetry={reportTelemetry} />
         }}
       </TableOfContentsPlugin>
     </TableOfContentsContext.Provider>
