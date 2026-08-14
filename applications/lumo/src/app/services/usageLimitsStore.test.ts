@@ -1,4 +1,9 @@
-import { resolveAvailableModelTier, resolveDefaultModelTier, shouldShowModelSwitchSuggestion } from './usageLimitsStore';
+import {
+    isModelSwitchSuggestionEligible,
+    resolveAvailableModelTier,
+    resolveDefaultModelTier,
+    shouldShowModelSwitchSuggestion,
+} from './usageLimitsStore';
 
 describe('resolveDefaultModelTier', () => {
     it('prefers max when it is selectable', () => {
@@ -74,5 +79,10 @@ describe('shouldShowModelSwitchSuggestion', () => {
 
     it('hides when max is unavailable due to high load', () => {
         expect(shouldShowModelSwitchSuggestion({ ...baseArgs, isMaxAvailableByFlag: false })).toBe(false);
+    });
+
+    it('hides while generating even when otherwise eligible', () => {
+        expect(isModelSwitchSuggestionEligible(baseArgs)).toBe(true);
+        expect(shouldShowModelSwitchSuggestion({ ...baseArgs, isGenerating: true })).toBe(false);
     });
 });
