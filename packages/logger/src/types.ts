@@ -1,6 +1,6 @@
 import type { AesGcmCryptoKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
-export type LogLevel = 'trace' | 'debug' | 'info' | 'warn' | 'error';
+export type LogLevel = 'trace' | 'debug' | 'info' | 'warn' | 'error' | 'log';
 
 /**
  * A persisted log line.
