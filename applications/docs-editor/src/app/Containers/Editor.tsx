@@ -12,6 +12,7 @@ import type {
   EditorInitializationConfig,
   DocumentRole,
 } from '@proton/docs-shared'
+import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import { AnonymousUserDisplayName, GenerateUUID, DocProvider, getRandomAnonymousUserLetter } from '@proton/docs-shared'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
@@ -226,6 +227,12 @@ export function Editor({
 
   const getDocumentUrl = useMemo(() => clientInvoker.getDocumentUrl.bind(clientInvoker), [clientInvoker])
   const replaceDocumentUrl = useMemo(() => clientInvoker.replaceDocumentUrl.bind(clientInvoker), [clientInvoker])
+  const reportTelemetry = useCallback(
+    (event: TelemetryDocsEditorEvents) => {
+      void clientInvoker.editorReportingTelemetry(event)
+    },
+    [clientInvoker],
+  )
 
   return (
     <CustomCollaborationContextProvider
@@ -258,7 +265,11 @@ export function Editor({
         <DocsLayout.Grid leftPanelEnabled={tableOfContentsVisible}>
           <DocsLayout.LeftPanel>
             {tableOfContentsVisible && (
-              <TableOfContents getDocumentUrl={getDocumentUrl} replaceDocumentUrl={replaceDocumentUrl} />
+              <TableOfContents
+                getDocumentUrl={getDocumentUrl}
+                replaceDocumentUrl={replaceDocumentUrl}
+                reportTelemetry={reportTelemetry}
+              />
             )}
           </DocsLayout.LeftPanel>
           <DocsLayout.CenterPanel>
