@@ -4,6 +4,7 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcServers } from '@proton/icons/icons/IcServers';
@@ -12,6 +13,10 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 
 import type { Gateway, GatewayLogical } from '../../types/Gateway';
+
+const GuardedUpdateMenuButton = withPermissionGuard('account.gateway.update')(DropdownMenuButton);
+const GuardedDeleteMenuButton = withPermissionGuard('account.gateway.delete')(DropdownMenuButton);
+const menuTooltip = { wrapperClassName: 'block' };
 
 interface Props {
     gateway: Gateway;
@@ -64,48 +69,52 @@ export const GatewayManageButton = ({
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-end">
                 <DropdownMenu>
-                    <DropdownMenuButton
+                    <GuardedUpdateMenuButton
                         className="text-left"
                         loading={loading}
                         disabled={disabled}
                         onClick={renameGateway(logical.ID, logical.Name.replace(/#\d+$/, '').replace(/-\d+$/, ''))}
                         title={c('Title').t`Rename the gateway`}
+                        tooltip={menuTooltip}
                     >
                         <IcPen className="mr-2" />
                         {c('Action').t`Edit name`}
-                    </DropdownMenuButton>
-                    <DropdownMenuButton
+                    </GuardedUpdateMenuButton>
+                    <GuardedUpdateMenuButton
                         className="text-left"
                         loading={loading}
                         disabled={disabled}
                         onClick={editGatewayServers(gateway, logical)}
                         title={c('Title').t`Edit the list of servers of the gateway`}
+                        tooltip={menuTooltip}
                     >
                         <IcServers className="mr-2" />
                         {c('Action').t`Edit servers`}
-                    </DropdownMenuButton>
-                    <DropdownMenuButton
+                    </GuardedUpdateMenuButton>
+                    <GuardedUpdateMenuButton
                         className="text-left"
                         loading={loading}
                         disabled={disabled}
                         onClick={editGatewayUsers(gateway, logical)}
                         title={c('Title').t`Edit who can access the gateway`}
+                        tooltip={menuTooltip}
                     >
                         <IcUsers className="mr-2" />
                         {c('Action').t`Edit users`}
-                    </DropdownMenuButton>
+                    </GuardedUpdateMenuButton>
                     {!deleted && (
                         <>
                             <div className="dropdown-item-hr" key="hr-more-options" />
-                            <DropdownMenuButton
+                            <GuardedDeleteMenuButton
                                 className="text-left color-danger"
                                 loading={loading}
                                 onClick={deleteGateway}
                                 title={deleteServerTitle}
+                                tooltip={menuTooltip}
                             >
                                 <IcTrash className="mr-2" />
                                 {c('Action').t`Delete`}
-                            </DropdownMenuButton>
+                            </GuardedDeleteMenuButton>
                         </>
                     )}
                 </DropdownMenu>
