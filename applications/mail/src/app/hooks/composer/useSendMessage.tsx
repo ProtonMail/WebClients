@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { logger } from '@proton/logger';
 import type { MessageStateWithData, MessageStateWithDataFull } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -223,6 +224,8 @@ export const useSendMessage = () => {
 
                 void endSending();
 
+                logger.info('Message sent successfully');
+
                 dispatch(sent(Sent));
 
                 // Navigation to the sent message
@@ -239,6 +242,8 @@ export const useSendMessage = () => {
                     );
                 }
             } catch (error: any) {
+                logger.error('Failed to send message', error);
+
                 if (
                     ![
                         SAVE_DRAFT_ERROR_CODES.MESSAGE_ALREADY_SENT,
