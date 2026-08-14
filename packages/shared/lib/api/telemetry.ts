@@ -73,6 +73,7 @@ export enum TelemetryMeasurementGroups {
     /** Docs */
     docsSuggestions = 'common.web.suggestions',
     docsHomepage = 'drive.docs.homepage',
+    docsEditor = 'drive.docs.editor',
     /** Vpn TV */
     vpnTv = 'vpn.any.tv_signin',
     vpnAlwaysOnPolicy = 'vpn.web.always_on_policy',
@@ -418,6 +419,12 @@ export enum TelemetryDocsEvents {
     suggestion_commented = 'suggestion.comment',
 }
 
+export enum TelemetryDocsEditorEvents {
+    table_of_contents_available = 'table_of_contents.available',
+    table_of_contents_opened = 'table_of_contents.opened',
+    table_of_contents_heading_clicked = 'table_of_contents.heading_clicked',
+}
+
 export enum TelemetryDocsHomepageEvents {
     document_opened = 'document.opened',
     document_opened_in_trash = 'document.opened_in_trash',
@@ -597,6 +604,7 @@ export type TelemetryEvents =
     | TelemetryDesktopEvents
     | TelemetryInboxDestkopEvents
     | TelemetryDocsEvents
+    | TelemetryDocsEditorEvents
     | TelemetryDocsHomepageEvents
     | TelemetryCalendarVideoConferencing
     | TelemetryEncryptedSearchEvents

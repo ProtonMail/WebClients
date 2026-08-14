@@ -22,6 +22,7 @@ import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import type { SheetsPatchesType } from '../Database/SheetsDBSchema'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 
 declare const window: CustomWindow
 
@@ -39,6 +40,10 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
 
   async editorReportingEvent(event: EditorEvent, data: EditorEventData[EditorEvent]): Promise<void> {
     return this.docOrchestrator.editorReportingEvent(event, data)
+  }
+
+  async editorReportingTelemetry(event: TelemetryDocsEditorEvents): Promise<void> {
+    return this.docOrchestrator.editorReportingTelemetry(event)
   }
 
   async getTypersExcludingSelf(threadId: string): Promise<string[]> {

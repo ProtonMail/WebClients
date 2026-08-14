@@ -6,8 +6,9 @@ import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ProtonContentEditable } from '../ContentEditable/ProtonContentEditable'
 import { DefaultFont } from '../Shared/Fonts'
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
-import { EditorSystemMode, type DocumentRole } from '@proton/docs-shared'
+import type { DocumentRole, EditorRequiresClientMethods } from '@proton/docs-shared'
+import { EditorSystemMode } from '@proton/docs-shared'
+import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import Toolbar from '../Toolbar/Toolbar'
 import { EditorUserMode } from '../Lib/EditorUserMode'
 import type { EditorState } from 'lexical'
@@ -56,6 +57,12 @@ export function PreviewModeEditor({
 
   const getDocumentUrl = useMemo(() => clientInvoker.getDocumentUrl.bind(clientInvoker), [clientInvoker])
   const replaceDocumentUrl = useMemo(() => clientInvoker.replaceDocumentUrl.bind(clientInvoker), [clientInvoker])
+  const reportTelemetry = useCallback(
+    (event: TelemetryDocsEditorEvents) => {
+      void clientInvoker.editorReportingTelemetry(event)
+    },
+    [clientInvoker],
+  )
 
   return (
     <SafeLexicalComposer
@@ -82,7 +89,11 @@ export function PreviewModeEditor({
       <DocsLayout.Grid leftPanelEnabled={tableOfContentsVisible}>
         <DocsLayout.LeftPanel>
           {tableOfContentsVisible && (
-            <TableOfContents getDocumentUrl={getDocumentUrl} replaceDocumentUrl={replaceDocumentUrl} />
+            <TableOfContents
+              getDocumentUrl={getDocumentUrl}
+              replaceDocumentUrl={replaceDocumentUrl}
+              reportTelemetry={reportTelemetry}
+            />
           )}
         </DocsLayout.LeftPanel>
         <DocsLayout.CenterPanel>
