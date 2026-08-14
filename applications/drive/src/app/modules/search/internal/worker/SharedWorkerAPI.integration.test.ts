@@ -1198,13 +1198,15 @@ describe('SharedWorkerAPI integration', () => {
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
             await state.waitForSearchable();
 
-            // A new file is created under Projects, but it can't be decrypted yet: getNode throws a
-            // node-scoped decryption error. The node and its parent chain are registered so the only
-            // failure is the (recoverable) decryption of report-q3 itself.
+            // A new file is created under Projects, but it can't be decrypted yet. A node that
+            // cannot be loaded fails both fetch paths, so both are armed. The node and its parent
+            // chain are registered so the only failure is the (recoverable) decryption of
+            // report-q3 itself.
             bridge.setNode('root-uid', folderWithParent('root-uid', 'My Files'));
             bridge.setNode('folder-projects', folderWithParent('folder-projects', 'Projects', 'root-uid'));
             bridge.setNode('report-q3', fileWithParent('report-q3', 'report-q3.pdf', 'folder-projects'));
             bridge.setGetNodeError('report-q3', new Error('failed to decrypt node report-q3'));
+            bridge.setIterateNodesError('report-q3', new Error('failed to decrypt node report-q3'));
 
             bridge.emitEvent(SCOPE_ID, nodeEvent(DriveEventType.NodeCreated, 'report-q3', 'folder-projects'));
 
@@ -1214,6 +1216,7 @@ describe('SharedWorkerAPI integration', () => {
 
             // Decryption recovers, then a warm restart (same DB) runs the bootstrap repair pass.
             bridge.clearGetNodeError('report-q3');
+            bridge.clearIterateNodesError('report-q3');
             api.disconnectClient(CLIENT_A);
             state.checkpoint();
             api = new SharedWorkerAPI();

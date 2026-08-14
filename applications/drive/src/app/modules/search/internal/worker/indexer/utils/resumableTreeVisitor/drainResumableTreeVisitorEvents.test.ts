@@ -6,7 +6,7 @@ import 'fake-indexeddb/auto';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import { SearchDB } from '../../../../shared/SearchDB';
-import { SearchLibraryError } from '../../../../shared/errors';
+import { RepairableNodeError, SearchLibraryError } from '../../../../shared/errors';
 import type { TreeEventScopeId } from '../../../../shared/types';
 import { FakeMainThreadBridge } from '../../../../testing/FakeMainThreadBridge';
 import { findDocumentsByTag } from '../../../../testing/indexHelpers';
@@ -90,10 +90,10 @@ describe('drainResumableTreeVisitorEvents', () => {
     it('quarantines a node-scoped mapping failure via onNodeError and keeps indexing the rest', async () => {
         const ctx = buildCtx();
         const onNodeError = jest.fn(async (_node: NodeEntity, _error: unknown) => {});
-        // toEntry throws a node-scoped (unknown) error for 'b' only.
+        // toEntry throws a node-scoped error for 'b' only.
         const failingToEntry: ResumableWalkHandlers['toEntry'] = (node, parentPath, generation) => {
             if (node.uid === 'b') {
-                throw new Error('cannot map node b');
+                throw new RepairableNodeError('cannot map node b', null);
             }
             return toEntry(node, parentPath, generation);
         };

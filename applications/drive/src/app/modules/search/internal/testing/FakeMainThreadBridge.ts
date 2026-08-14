@@ -98,6 +98,16 @@ export class FakeMainThreadBridge {
         this.fakeDriveClient.clearGetNodeError(nodeUid);
     }
 
+    /** Make iterateNodes throw when this uid is in the batch (a node that cannot be loaded at all). */
+    setIterateNodesError(nodeUid: string, error: Error): void {
+        this.fakeDriveClient.setIterateNodesError(nodeUid, error);
+    }
+
+    /** Clear a forced iterateNodes failure so the node can be loaded again. */
+    clearIterateNodesError(nodeUid: string): void {
+        this.fakeDriveClient.clearIterateNodesError(nodeUid);
+    }
+
     /** Push a tree event to a subscribed scope. */
     emitEvent(scopeId: TreeEventScopeId, event: DriveEvent): void {
         this.fakeSearchClient.emitEvent(scopeId, event);

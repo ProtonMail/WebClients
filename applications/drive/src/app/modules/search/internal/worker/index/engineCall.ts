@@ -14,7 +14,7 @@ function isPassThrough(e: unknown): boolean {
     return isAbortError(e) || classifyError(e).kind === 'permanent';
 }
 
-export function toEngineError(operation: string, e: unknown): unknown {
+export function maybeWrapAsSearchLibraryError(operation: string, e: unknown): unknown {
     return isPassThrough(e) ? e : new SearchLibraryError(`Search library WASM failed: ${operation}`, e);
 }
 
@@ -23,7 +23,7 @@ export function engineCall<T>(operation: string, fn: () => T): T {
     try {
         return fn();
     } catch (e) {
-        throw toEngineError(operation, e);
+        throw maybeWrapAsSearchLibraryError(operation, e);
     }
 }
 
@@ -32,7 +32,7 @@ export async function engineCallAsync<T>(operation: string, fn: () => Promise<T>
     try {
         return await fn();
     } catch (e) {
-        throw toEngineError(operation, e);
+        throw maybeWrapAsSearchLibraryError(operation, e);
     }
 }
 
@@ -46,13 +46,13 @@ export async function* engineStream<T>(operation: string, makeIterator: () => As
     try {
         iterator = makeIterator();
     } catch (e) {
-        throw toEngineError(operation, e);
+        throw maybeWrapAsSearchLibraryError(operation, e);
     }
     try {
         for await (const value of iterator) {
             yield value;
         }
     } catch (e) {
-        throw toEngineError(operation, e);
+        throw maybeWrapAsSearchLibraryError(operation, e);
     }
 }

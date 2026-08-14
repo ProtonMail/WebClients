@@ -7,6 +7,7 @@ import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import type { RepairNodeEntry } from '../../../shared/SearchDB';
 import { SearchDB } from '../../../shared/SearchDB';
+import { RepairableNodeError, SearchLibraryError } from '../../../shared/errors';
 import type { TreeEventScopeId } from '../../../shared/types';
 import { FakeMainThreadBridge } from '../../../testing/FakeMainThreadBridge';
 import { findDocuments, findDocumentsByTag } from '../../../testing/indexHelpers';
@@ -22,9 +23,10 @@ import { NodeTreeIndexPopulator } from './NodeTreeIndexPopulator';
 
 setupRealSearchLibraryWasm();
 
-jest.mock('../../../shared/errors', () => ({
-    sendErrorReportForSearch: jest.fn(),
-}));
+jest.mock('../../../shared/errors', () => {
+    const actual = jest.requireActual('../../../shared/errors');
+    return { ...actual, sendErrorReportForSearch: jest.fn() };
+});
 
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;
 
@@ -187,13 +189,25 @@ describe('IndexPopulator', () => {
             await expectIndexed('trashed-node');
         });
 
-        it('throws when getNode fails', async () => {
-            // Don't register the node — getNode will throw
+        it('resolves without indexing when the node is already gone', async () => {
+            // Don't register the node. The API cannot distinguish deleted from inaccessible, so a
+            // node that vanished before its event was processed is dropped rather than quarantined.
             const populator = new TestPopulator();
             const ctx = await buildCtx();
 
             const event = makeNodeEvent('node_created', 'missing-node');
-            await expect(populator.processNodeMutation(event, ctx)).rejects.toThrow();
+            await expect(populator.processNodeMutation(event, ctx)).resolves.toBeUndefined();
+        });
+
+        it('throws when the node cannot be fetched', async () => {
+            bridge.setIterateNodesError('broken-node', new Error('failed to load node'));
+
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+
+            // A failed fetch is scoped to this node, so it is quarantinable rather than systemic.
+            const event = makeNodeEvent('node_created', 'broken-node');
+            await expect(populator.processNodeMutation(event, ctx)).rejects.toBeInstanceOf(RepairableNodeError);
         });
 
         it('throws when resolveParentPath fails', async () => {
@@ -1071,24 +1085,28 @@ describe('IndexPopulator', () => {
             expect(result).toBe(2);
         });
 
-        it('throws on first node mutation failure', async () => {
-            // n1 succeeds, n2 fails (not registered in bridge)
+        it('throws on the first systemic node mutation failure', async () => {
+            // n1 succeeds, n2 fails systemically. A permanent engine error is never one node's
+            // fault, so it must stop the batch rather than quarantine n2 and carry on to n3.
             bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
-            bridge.setNode(
-                'n1',
-                makeMaybeNode({ uid: 'n1', name: 'a.txt', type: 'file' as NodeType, parentUid: 'root' })
-            );
+            for (const uid of ['n1', 'n2', 'n3']) {
+                bridge.setNode(
+                    uid,
+                    makeMaybeNode({ uid, name: `${uid}.txt`, type: 'file' as NodeType, parentUid: 'root' })
+                );
+            }
+            bridge.setIterateNodesError('n2', new SearchLibraryError('wasm exploded', null));
 
             const populator = new TestPopulator();
             const ctx = await buildCtx();
 
             const events: DriveEvent[] = [
                 makeNodeEvent('node_created', 'n1', { parentNodeUid: 'root' }),
-                makeNodeEvent('node_created', 'missing', { parentNodeUid: 'root' }),
+                makeNodeEvent('node_created', 'n2', { parentNodeUid: 'root' }),
                 makeNodeEvent('node_created', 'n3', { parentNodeUid: 'root' }),
             ];
 
-            await expect(populator.processIncrementalUpdates(events, ctx)).rejects.toThrow();
+            await expect(populator.processIncrementalUpdates(events, ctx)).rejects.toThrow('wasm exploded');
 
             // Only n1 should have been indexed
             await expectIndexed('n1');
@@ -1259,12 +1277,12 @@ describe('IndexPopulator', () => {
     // handleNodeUpdated — error paths
     // =========================================================================
     describe('handleNodeUpdated error paths', () => {
-        it('throws when getNode fails', async () => {
+        it('removes the node instead of throwing when it is already gone', async () => {
             const populator = new TestPopulator();
             const ctx = await buildCtx();
 
             const event = makeNodeEvent('node_updated', 'missing-node', { parentNodeUid: 'root' });
-            await expect(populator.processNodeMutation(event, ctx)).rejects.toThrow();
+            await expect(populator.processNodeMutation(event, ctx)).resolves.toBeUndefined();
         });
 
         it('throws when resolveParentPath fails', async () => {

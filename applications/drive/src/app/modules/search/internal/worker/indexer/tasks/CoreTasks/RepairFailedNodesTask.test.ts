@@ -3,7 +3,7 @@ import 'fake-indexeddb/auto';
 
 import type { RepairNodeEntry } from '../../../../shared/SearchDB';
 import { SearchDB } from '../../../../shared/SearchDB';
-import { SearchLibraryError } from '../../../../shared/errors';
+import { RepairableNodeError, SearchLibraryError } from '../../../../shared/errors';
 import type { TreeEventScopeId } from '../../../../shared/types';
 import { IndexKind } from '../../../../shared/types';
 import { makeTaskContext } from '../../../../testing/makeTaskContext';
@@ -53,7 +53,7 @@ describe('RepairFailedNodesTask', () => {
 
     it('keeps the entry and backs off on a node-scoped repair failure', async () => {
         const repairNode = jest.fn(async () => {
-            throw new Error('still broken');
+            throw new RepairableNodeError('still broken', null);
         });
         const populator = populatorWith(repairNode);
         await db.putRepairEntry(seedEntry({ nodeUid: 'node-1', attempts: 1, nextAttemptAt: 0 }));

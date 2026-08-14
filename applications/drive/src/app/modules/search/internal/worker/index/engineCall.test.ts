@@ -1,12 +1,12 @@
 import { AbortError as SdkAbortError } from '@proton/drive';
 
 import { InvalidIndexerState, SearchLibraryError, classifyError, isRepairableError } from '../../shared/errors';
-import { engineCall, engineCallAsync, engineStream, toEngineError } from './engineCall';
+import { engineCall, engineCallAsync, engineStream, maybeWrapAsSearchLibraryError } from './engineCall';
 
 /** Shape of a raw wasm-bindgen throw: a plain Error with nothing to classify on. */
 const rustError = (message: string) => new Error(message);
 
-describe('toEngineError', () => {
+describe('maybeWrapAsSearchLibraryError', () => {
     describe('wraps raw WASM errors', () => {
         it.each([
             'null pointer passed to rust',
@@ -14,38 +14,39 @@ describe('toEngineError', () => {
             'unreachable',
         ])('%s -> SearchLibraryError', (message) => {
             const cause = rustError(message);
-            const wrapped = toEngineError('query', cause);
+            const wrapped = maybeWrapAsSearchLibraryError('query', cause);
 
             expect(wrapped).toBeInstanceOf(SearchLibraryError);
             expect(wrapped).toHaveProperty('cause', cause);
         });
 
         it('classifies as permanent, not as a repairable node failure', () => {
-            const wrapped = toEngineError('query', rustError('null pointer passed to rust'));
+            const wrapped = maybeWrapAsSearchLibraryError('query', rustError('null pointer passed to rust'));
 
             expect(classifyError(wrapped)).toEqual({ kind: 'permanent', reason: 'search_library_error' });
-            // The regression this whole wrapper exists for: unwrapped, these were quarantined into
-            // the repair table and replayed forever.
+            // isRepairableError is a positive instanceof check (RepairableNodeError), constructed only
+            // at genuinely node-scoped call sites - neither the wrapped nor the raw WASM error is ever
+            // repairable, regardless of whether this engine boundary classifies it first.
             expect(isRepairableError(wrapped)).toBe(false);
-            expect(isRepairableError(rustError('null pointer passed to rust'))).toBe(true);
+            expect(isRepairableError(rustError('null pointer passed to rust'))).toBe(false);
         });
 
         it('wraps a WebAssembly.RuntimeError', () => {
-            expect(toEngineError('commit', new WebAssembly.RuntimeError('unreachable'))).toBeInstanceOf(
+            expect(maybeWrapAsSearchLibraryError('commit', new WebAssembly.RuntimeError('unreachable'))).toBeInstanceOf(
                 SearchLibraryError
             );
         });
 
         it('wraps non-Error throws', () => {
-            expect(toEngineError('commit', 'boom')).toBeInstanceOf(SearchLibraryError);
+            expect(maybeWrapAsSearchLibraryError('commit', 'boom')).toBeInstanceOf(SearchLibraryError);
         });
     });
 
     describe('passes through errors that already carry a meaning', () => {
         it('quota exceeded (raised by IndexedDB inside a blob save)', () => {
             const e = new DOMException('', 'QuotaExceededError');
-            expect(toEngineError('save blob', e)).toBe(e);
-            expect(classifyError(toEngineError('save blob', e))).toEqual({
+            expect(maybeWrapAsSearchLibraryError('save blob', e)).toBe(e);
+            expect(classifyError(maybeWrapAsSearchLibraryError('save blob', e))).toEqual({
                 kind: 'permanent',
                 reason: 'quota_exceeded',
             });
@@ -53,25 +54,25 @@ describe('toEngineError', () => {
 
         it('corrupted DB (raised by IndexedDB inside a blob load)', () => {
             const e = new DOMException('', 'VersionError');
-            expect(toEngineError('load blob', e)).toBe(e);
+            expect(maybeWrapAsSearchLibraryError('load blob', e)).toBe(e);
         });
 
         it('abort', () => {
             const domAbort = new DOMException('aborted', 'AbortError');
-            expect(toEngineError('query', domAbort)).toBe(domAbort);
+            expect(maybeWrapAsSearchLibraryError('query', domAbort)).toBe(domAbort);
 
             const sdkAbort = new SdkAbortError('aborted');
-            expect(toEngineError('query', sdkAbort)).toBe(sdkAbort);
+            expect(maybeWrapAsSearchLibraryError('query', sdkAbort)).toBe(sdkAbort);
         });
 
         it('InvalidIndexerState', () => {
             const e = new InvalidIndexerState('session already released');
-            expect(toEngineError('insert', e)).toBe(e);
+            expect(maybeWrapAsSearchLibraryError('insert', e)).toBe(e);
         });
 
         it('an already-wrapped SearchLibraryError is not wrapped twice', () => {
             const e = new SearchLibraryError('Search library WASM failed: insert', rustError('boom'));
-            expect(toEngineError('commit', e)).toBe(e);
+            expect(maybeWrapAsSearchLibraryError('commit', e)).toBe(e);
         });
     });
 });
