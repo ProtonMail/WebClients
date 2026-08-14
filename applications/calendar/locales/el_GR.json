@@ -1040,6 +1040,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Keep going": [
+        "Συνεχίστε"
+      ],
+      "Stop here": [
+        "Σταμάτησε εδώ"
       ]
     },
     "action": {
@@ -4446,6 +4452,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Η σύνδεσή σας στο Zoom έχει λήξει. Παρακαλούμε επανασυνδεθείτε για να συνεχίσετε."
+      ],
+      "Could not grant access to the organization key": [
+        "Δεν ήταν δυνατή η παραχώρηση πρόσβασης στο κλειδί οργανισμού"
       ]
     },
     "error": {
@@ -7079,6 +7088,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Έχετε φτάσει στο όριο των διαθέσιμων θέσεων κράτησης (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Αυτό απαιτεί πολλά βήματα. Να συνεχίσω;"
       ]
     },
     "info": {
@@ -7870,6 +7882,9 @@
       ],
       "Zoom meeting": [
         "Τηλεδιάσκεψη Zoom"
+      ],
+      "Account holder name": [
+        "Όνομα κατόχου λογαριασμού"
       ]
     },
     "label": {
@@ -9023,6 +9038,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με εκτεταμένη πρόσβαση"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με περιορισμένη πρόσβαση"
       ]
     },
     "new_plans: feature highlight": {
@@ -10223,6 +10244,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Η κάρτα σας απορρίφθηκε. Παρακαλούμε δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
+      ],
+      "Please enter the account holder name": [
+        "Παρακαλώ εισάγετε το όνομα του κατόχου του λογαριασμού"
       ]
     },
     "Payments.error": {
@@ -10813,6 +10837,9 @@
       ],
       "User Admin": [
         "Διαχειριστής Χρηστών"
+      ],
+      "Organization Admin": [
+        "Διαχειριστής Οργανισμού"
       ]
     },
     "Role description": {
@@ -13133,6 +13160,9 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Still working on it": [
+        "Ακόμα δουλεύω πάνω σε αυτό"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
