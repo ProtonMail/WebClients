@@ -3,11 +3,13 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -53,6 +55,8 @@ interface Props {
     showCancelButton?: boolean;
 }
 
+const GuardedCreateGatewayButton = withPermissionGuard('account.gateway.create')(Button);
+
 const getFeaturesAndUserIds = (data: Partial<GatewayModel>): [number, string[] | null, string[] | null] => {
     const features = data.Features || 0;
 
@@ -73,6 +77,7 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
     const [serversModal, showServersModal] = useModalTwoStatic(GatewayServersModal);
     const [removeConfirmationModal, showRemoveConfirmationModal] = useModalTwoStatic(RemoveGatewayConfirmationModal);
     const [user] = useUser();
+    const [{ permissions }] = useUserPermissions();
     const { createNotification } = useNotifications();
     const [userSettings] = useUserSettings();
     const [deletedLogicals, setDeletedLogicals] = useState<Record<string, boolean>>({});
@@ -160,6 +165,8 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
             });
 
     const isAdmin = user.isAdmin && user.isSelf;
+    const canViewGateways = isAdmin || !!permissions?.['account.gateway.read'];
+    const canManageSubscription = isAdmin;
 
     const countryOptions = getCountryOptions(userSettings);
 
@@ -203,7 +210,7 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
                         </div>
                     }
                     cta={
-                        isAdmin && (
+                        canManageSubscription && (
                             <Button
                                 color="norm"
                                 fullWidth
@@ -635,7 +642,7 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
     };
     return (
         <>
-            {isAdmin && (
+            {canViewGateways && (
                 <>
                     {createModal}
                     {renameModal}
@@ -650,31 +657,33 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
                                 ipAddresses
                             )}
                         </span>
-                        <Button
-                            size="small"
-                            color="norm"
-                            shape={canAdd ? 'outline' : 'solid'}
-                            onClick={getCustomizeSubscriptionOpener()}
-                            title={c('Title').t`Customize the number of IP addresses in your plan`}
-                        >
-                            {c('Action').t`Get more servers`}
-                        </Button>
+                        {canManageSubscription && (
+                            <Button
+                                size="small"
+                                color="norm"
+                                shape={canAdd ? 'outline' : 'solid'}
+                                onClick={getCustomizeSubscriptionOpener()}
+                                title={c('Title').t`Customize the number of IP addresses in your plan`}
+                            >
+                                {c('Action').t`Get more servers`}
+                            </Button>
+                        )}
                     </div>
                 </>
             )}
 
             {sortedList.length ? (
                 <>
-                    {isAdmin && (
+                    {canViewGateways && (
                         <div className="mb-4">
-                            <Button
+                            <GuardedCreateGatewayButton
                                 color="norm"
                                 disabled={!canAdd}
                                 onClick={addGateway}
                                 title={c('Title').t`Create a new Gateway`}
                             >
                                 {c('Action').t`Create Gateway`}
-                            </Button>
+                            </GuardedCreateGatewayButton>
                         </div>
                     )}
 
@@ -686,7 +695,7 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
                                     {c('Header').t`Status`}
                                 </TableCell>
                                 <TableCell key="servers" type="header">{c('Header').t`Servers`}</TableCell>
-                                {isAdmin && (
+                                {canViewGateways && (
                                     <>
                                         <TableCell key="members" type="header" className="w-1/5">
                                             {c('Header').t`Members`}
@@ -698,12 +707,12 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
                                 )}
                             </tr>
                         </thead>
-                        <TableBody colSpan={3 + (isAdmin ? 2 : 0)}>
+                        <TableBody colSpan={3 + (canViewGateways ? 2 : 0)}>
                             {sortedList.map((gateway) => (
                                 <GatewayRow
                                     countryOptions={countryOptions}
                                     key={`gateway-${gateway.Name}`}
-                                    isAdmin={isAdmin}
+                                    isAdmin={canViewGateways}
                                     showDeleted={Deleted}
                                     showIPv4={IPv4}
                                     showIPv6={IPv6}
@@ -728,30 +737,30 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
                 <EmptyViewContainer
                     key="no-gateways-container"
                     imageProps={{
-                        src: isAdmin ? gatewaysEmptyStateAdminsSvg : gatewaysEmptyStateUsersSvg,
+                        src: canViewGateways ? gatewaysEmptyStateAdminsSvg : gatewaysEmptyStateUsersSvg,
                         title: c('Info').t`No gateways`,
                     }}
                 >
                     <h2 className="h3 text-bold">
-                        {isAdmin ? c('Info').t`Create your first Gateway` : c('Info').t`No Gateways yet`}
+                        {canViewGateways ? c('Info').t`Create your first Gateway` : c('Info').t`No Gateways yet`}
                     </h2>
                     <p className="color-weak">
-                        {isAdmin
+                        {canViewGateways
                             ? c('Info')
                                   .t`Organize your dedicated servers into Gateways and decide which members can access them.`
                             : c('Info').t`Ask your organization admin to setup Gateways.`}
                     </p>
 
-                    {isAdmin && (
+                    {canViewGateways && (
                         <div>
-                            <Button
+                            <GuardedCreateGatewayButton
                                 color="norm"
                                 disabled={!canAdd}
                                 onClick={addGateway}
                                 title={c('Title').t`Create a new gateway`}
                             >
                                 {c('Action').t`Create Gateway`}
-                            </Button>
+                            </GuardedCreateGatewayButton>
                         </div>
                     )}
                 </EmptyViewContainer>
