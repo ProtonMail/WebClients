@@ -2,12 +2,13 @@ import { PandocConverter } from '../../lib/attachments/pandoc-wasm';
 import pdfParse from '../../lib/attachments/pdfParse';
 import { getProcessingCategory, mimeTypeToPandocFormat } from '../../util/filetypes';
 import type {
+    ExcelSheetsListRequest,
     FileData,
     FileProcessingRequest,
     FileProcessingResponse,
     ProcessingError,
 } from '../fileProcessingService';
-import { convertXlsxToMarkdown } from '../files/excelSheets';
+import { convertXlsxToMarkdown, getExcelSheetsFromFileData } from '../files/excelSheets';
 import type { InternalFileResult, InternalTextResult, TruncationResult } from '../files/types';
 
 // Safe logger for worker context (avoids console.warn/console.error that are forbidden in tests)
@@ -223,37 +224,58 @@ const sendResponse = (response: FileProcessingResponse) => {
 };
 
 // Handle messages from the main thread
-self.addEventListener('message', async (event: MessageEvent<FileProcessingRequest | { type: 'cleanup' }>) => {
-    // Handle cleanup message
-    if ('type' in event.data && event.data.type === 'cleanup') {
-        if (pandocConverter) {
-            await pandocConverter.cleanup();
-            pandocConverter = null;
-        }
-        return;
-    }
-
-    const { id, file, isLumoPaid = false, selectedExcelSheetNames } = event.data as FileProcessingRequest;
-
-    try {
-        const result = await processFile(file, isLumoPaid, selectedExcelSheetNames);
-
-        // Add id to result and send
-        const response: FileProcessingResponse = { id, ...result };
-
-        // For text results, compute truncated flag if not already set
-        if (response.type === 'text' && response.metadata && !('truncated' in response.metadata)) {
-            response.metadata.truncated = response.content.includes('Content truncated');
+self.addEventListener(
+    'message',
+    async (event: MessageEvent<FileProcessingRequest | ExcelSheetsListRequest | { type: 'cleanup' }>) => {
+        // Handle cleanup message
+        if ('type' in event.data && event.data.type === 'cleanup') {
+            if (pandocConverter) {
+                await pandocConverter.cleanup();
+                pandocConverter = null;
+            }
+            return;
         }
 
-        sendResponse(response);
-    } catch (error) {
-        const errorMessage = error instanceof Error ? error.message : String(error);
-        const response: ProcessingError = {
-            id,
-            type: 'error',
-            message: errorMessage,
-        };
-        sendResponse(response);
+        if ('type' in event.data && event.data.type === 'list-excel-sheets') {
+            const { id, file } = event.data;
+
+            try {
+                const sheets = await getExcelSheetsFromFileData(file);
+                sendResponse({ id, type: 'excel-sheets', sheets });
+            } catch (error) {
+                const errorMessage = error instanceof Error ? error.message : String(error);
+                const response: ProcessingError = {
+                    id,
+                    type: 'error',
+                    message: errorMessage,
+                };
+                sendResponse(response);
+            }
+            return;
+        }
+
+        const { id, file, isLumoPaid = false, selectedExcelSheetNames } = event.data as FileProcessingRequest;
+
+        try {
+            const result = await processFile(file, isLumoPaid, selectedExcelSheetNames);
+
+            // Add id to result and send
+            const response: FileProcessingResponse = { id, ...result };
+
+            // For text results, compute truncated flag if not already set
+            if (response.type === 'text' && response.metadata && !('truncated' in response.metadata)) {
+                response.metadata.truncated = response.content.includes('Content truncated');
+            }
+
+            sendResponse(response);
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            const response: ProcessingError = {
+                id,
+                type: 'error',
+                message: errorMessage,
+            };
+            sendResponse(response);
+        }
     }
-});
+);

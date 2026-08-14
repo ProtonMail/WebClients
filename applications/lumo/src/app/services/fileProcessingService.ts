@@ -3,6 +3,7 @@ import { ThumbnailType } from '@protontech/drive-sdk';
 import { generateThumbnail } from '@proton/drive/public/thumbnails';
 
 import { getProcessingCategory } from '../util/filetypes';
+import type { ExcelSheetInfo } from './files/excelSheets';
 import type { InternalImageResult } from './files/types';
 
 export interface FileData {
@@ -21,6 +22,20 @@ export interface FileProcessingRequest {
 
 export type FileProcessingOptions = {
     selectedExcelSheetNames?: string[];
+    /** Reuse a buffer already read on the main thread to avoid parsing the file twice. */
+    fileData?: ArrayBuffer;
+};
+
+export interface ExcelSheetsListResult {
+    id: string;
+    type: 'excel-sheets';
+    sheets: ExcelSheetInfo[];
+}
+
+export type ExcelSheetsListRequest = {
+    type: 'list-excel-sheets';
+    id: string;
+    file: FileData;
 };
 
 export interface TextProcessingResult {
@@ -49,7 +64,7 @@ export interface ProcessingError {
     unsupported?: boolean;
 }
 
-export type FileProcessingResponse = TextProcessingResult | ImageProcessingResult | ProcessingError;
+export type FileProcessingResponse = TextProcessingResult | ImageProcessingResult | ProcessingError | ExcelSheetsListResult;
 
 async function reduceImageSize(
     fileData: FileData
@@ -124,6 +139,14 @@ export class FileProcessingService {
         }
     >();
 
+    private pendingSheetListRequests = new Map<
+        string,
+        {
+            resolve: (sheets: ExcelSheetInfo[]) => void;
+            reject: (error: Error) => void;
+        }
+    >();
+
     private constructor(props: FileProcessingServiceProps) {
         this.enableImageTools = props.enableImageTools;
         this.initializeWorker();
@@ -176,6 +199,10 @@ export class FileProcessingService {
             reject(new Error('Worker message error'));
         });
         this.pendingRequests.clear();
+        this.pendingSheetListRequests.forEach(({ reject }) => {
+            reject(new Error('Worker message error'));
+        });
+        this.pendingSheetListRequests.clear();
     }
 
     private onError(error: ErrorEvent) {
@@ -189,10 +216,31 @@ export class FileProcessingService {
             reject(new Error('Worker error: ' + error.message));
         });
         this.pendingRequests.clear();
+        this.pendingSheetListRequests.forEach(({ reject }) => {
+            reject(new Error('Worker error: ' + error.message));
+        });
+        this.pendingSheetListRequests.clear();
     }
 
     private onMessage(event: MessageEvent<FileProcessingResponse>) {
         const response = event.data;
+
+        if (response.type === 'excel-sheets') {
+            const pendingSheetList = this.pendingSheetListRequests.get(response.id);
+            if (pendingSheetList) {
+                this.pendingSheetListRequests.delete(response.id);
+                pendingSheetList.resolve(response.sheets);
+            }
+            return;
+        }
+
+        const pendingSheetList = this.pendingSheetListRequests.get(response.id);
+        if (pendingSheetList && response.type === 'error') {
+            this.pendingSheetListRequests.delete(response.id);
+            pendingSheetList.reject(new Error(response.message));
+            return;
+        }
+
         const pending = this.pendingRequests.get(response.id);
 
         if (pending) {
@@ -228,6 +276,25 @@ export class FileProcessingService {
         }
 
         return timeout;
+    }
+
+    async listExcelSheets(file: File): Promise<ExcelSheetInfo[]> {
+        if (!this.worker) {
+            const { getExcelSheetsFromFile } = await import('./files/excelSheets');
+            return getExcelSheetsFromFile(file);
+        }
+
+        return new Promise<ExcelSheetInfo[]>((resolve, reject) => {
+            const id = `sheets-${++this.requestCounter}-${Date.now()}`;
+            this.pendingSheetListRequests.set(id, { resolve, reject });
+
+            this.makeExcelSheetsListRequest(id, file).catch((error) => {
+                this.pendingSheetListRequests.delete(id);
+                reject(error instanceof Error ? error : new Error(String(error)));
+            });
+
+            this.ensureSheetListFinishedAfterTimeout(id, reject, 30000);
+        });
     }
 
     async processFile(file: File, options?: FileProcessingOptions): Promise<FileProcessingResponse> {
@@ -286,7 +353,7 @@ export class FileProcessingService {
     }
 
     private async makeRequest(id: string, file: File, options?: FileProcessingOptions): Promise<FileProcessingRequest> {
-        const data = await file.arrayBuffer();
+        const data = options?.fileData ?? (await file.arrayBuffer());
         return {
             id,
             file: {
@@ -297,6 +364,31 @@ export class FileProcessingService {
             },
             selectedExcelSheetNames: options?.selectedExcelSheetNames,
         };
+    }
+
+    private async makeExcelSheetsListRequest(id: string, file: File): Promise<void> {
+        const data = await file.arrayBuffer();
+        const request: ExcelSheetsListRequest = {
+            type: 'list-excel-sheets',
+            id,
+            file: {
+                name: file.name,
+                type: file.type,
+                size: file.size,
+                data,
+            },
+        };
+
+        this.sendToWorker(request);
+    }
+
+    private ensureSheetListFinishedAfterTimeout(id: string, reject: (reason?: any) => void, timeout: number) {
+        setTimeout(() => {
+            if (this.pendingSheetListRequests.has(id)) {
+                this.pendingSheetListRequests.delete(id);
+                reject(new Error(`Excel sheet listing timeout after ${timeout / 1000} seconds.`));
+            }
+        }, timeout);
     }
 
     private ensureFinishedAfterTimeout(id: string, reject: (reason?: any) => void, timeout: number) {
@@ -312,7 +404,7 @@ export class FileProcessingService {
         }, timeout);
     }
 
-    private sendToWorker(request: FileProcessingRequest) {
+    private sendToWorker(request: FileProcessingRequest | ExcelSheetsListRequest) {
         if (!this.worker) {
             throw new Error('File processing worker failed to initialize. Please refresh the page and try again.');
         }
@@ -345,6 +437,11 @@ export class FileProcessingService {
             reject(new Error('Service terminated'));
         });
         this.pendingRequests.clear();
+
+        this.pendingSheetListRequests.forEach(({ reject }) => {
+            reject(new Error('Service terminated'));
+        });
+        this.pendingSheetListRequests.clear();
     }
 }
 
