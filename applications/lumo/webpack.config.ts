@@ -46,6 +46,7 @@ const result = (opts: WebpackEnvArguments): Configuration => {
 
     // Inject custom Lumo public key if provided via LUMO_PUB_KEY_PATH
     config.plugins = config.plugins || [];
+
     const customKey = loadCustomLumoPubKey();
     if (customKey) {
         config.plugins.push(
