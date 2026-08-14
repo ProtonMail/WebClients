@@ -169,6 +169,7 @@ describe('Payment', () => {
                 }
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                chargebeeIdeal={{ accountHolderName: '' } as any}
                 bitcoinChargebee={{} as any}
                 user={undefined}
                 directDebit={
@@ -210,6 +211,7 @@ describe('Payment', () => {
                 }
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                chargebeeIdeal={{ accountHolderName: '' } as any}
                 bitcoinChargebee={{} as any}
                 user={undefined}
                 directDebit={
@@ -293,6 +295,7 @@ describe('Payment', () => {
                 }
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                chargebeeIdeal={{ accountHolderName: '' } as any}
                 bitcoinChargebee={{} as any}
                 user={undefined}
                 directDebit={
@@ -369,6 +372,7 @@ describe('Payment', () => {
                 }
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                chargebeeIdeal={{ accountHolderName: '' } as any}
                 bitcoinChargebee={{} as any}
                 user={undefined}
                 directDebit={
@@ -422,6 +426,7 @@ describe('Payment', () => {
                 }
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                chargebeeIdeal={{ accountHolderName: '' } as any}
                 bitcoinChargebee={{} as any}
                 user={undefined}
                 directDebit={
@@ -466,6 +471,7 @@ describe('Payment', () => {
                     }
                     chargebeeCard={null as any}
                     chargebeePaypal={null as any}
+                    chargebeeIdeal={{ accountHolderName: '' } as any}
                     bitcoinChargebee={{} as any}
                     user={undefined}
                     directDebit={

@@ -121,6 +121,7 @@ export const useMethods = (
         pendingIsTrial?: boolean;
         pendingEnablePaypalRegionalCurrenciesBatch3?: boolean;
         pendingEnablePaypalKrw?: boolean;
+        pendingEnableIdeal?: boolean;
     }>();
 
     const [loading, setLoading] = useState(true);
@@ -213,6 +214,7 @@ export const useMethods = (
                     pendingIsTrial,
                     pendingEnablePaypalRegionalCurrenciesBatch3,
                     pendingEnablePaypalKrw,
+                    pendingEnableIdeal,
                 } = pendingDataRef.current;
                 pendingDataRef.current = undefined;
 
@@ -286,6 +288,10 @@ export const useMethods = (
                 if (pendingEnablePaypalKrw !== undefined) {
                     paymentMethodsRef.current.enablePaypalKrw = pendingEnablePaypalKrw;
                 }
+
+                if (pendingEnableIdeal !== undefined) {
+                    paymentMethodsRef.current.enableIdeal = pendingEnableIdeal;
+                }
             }
 
             setStatus(paymentMethodsRef.current.paymentStatus);
@@ -321,6 +327,7 @@ export const useMethods = (
                 pendingIsTrial: isTrial,
                 pendingEnablePaypalRegionalCurrenciesBatch3: enablePaypalRegionalCurrenciesBatch3,
                 pendingEnablePaypalKrw: enablePaypalKrw,
+                pendingEnableIdeal: enableIdeal,
             };
             return;
         }
@@ -341,6 +348,7 @@ export const useMethods = (
         paymentMethodsRef.current.isTrial = !!isTrial;
         paymentMethodsRef.current.enablePaypalRegionalCurrenciesBatch3 = !!enablePaypalRegionalCurrenciesBatch3;
         paymentMethodsRef.current.enablePaypalKrw = !!enablePaypalKrw;
+        paymentMethodsRef.current.enableIdeal = !!enableIdeal;
         if (paymentStatus) {
             paymentMethodsRef.current.paymentStatus = paymentStatus;
             setStatus(paymentStatus);
@@ -358,6 +366,7 @@ export const useMethods = (
         isTrial,
         enablePaypalRegionalCurrenciesBatch3,
         enablePaypalKrw,
+        enableIdeal,
     ]);
 
     const { usedMethods, newMethods, allMethods, lastUsedMethod } = getComputedMethods();
