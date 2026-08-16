@@ -1,4 +1,5 @@
 import { type FC, useRef } from 'react';
+import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,7 +12,7 @@ import type { MaybeNull, OtpRequest } from '@proton/pass/types';
 
 import { ValueControl } from './ValueControl';
 
-type Props = { label?: string; payload: OtpRequest; onCopy?: () => void; icon?: IconName };
+type Props = { label?: string; payload: OtpRequest; onCopy?: () => void; icon?: IconName | ReactElement };
 
 export const OTPValueControl: FC<Props> = ({ label, icon, payload, onCopy }) => {
     const otpRenderer = useRef<MaybeNull<IOtpRenderer>>(null);

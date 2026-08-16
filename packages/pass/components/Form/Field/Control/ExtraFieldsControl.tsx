@@ -1,7 +1,8 @@
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren, ReactElement } from 'react';
 import { type FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
+import type { IconName } from '@proton/icons/types';
 import { getExtraFieldOption } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
@@ -21,6 +22,10 @@ type ExtraFieldsControlProps = {
     shareId: string;
     hideIcons?: boolean;
     onCopy?: () => void;
+    /** disables per-field click-to-copy (eg: while multi-copy selection is enabled) */
+    copyable?: boolean;
+    /** overrides the field icon - used to render the multi-copy selection checkbox */
+    renderIcon?: (key: string) => IconName | ReactElement | undefined;
 };
 
 export const ExtraFieldsControl: FC<PropsWithChildren<ExtraFieldsControlProps>> = ({
@@ -30,13 +35,15 @@ export const ExtraFieldsControl: FC<PropsWithChildren<ExtraFieldsControlProps>> 
     itemId,
     shareId,
     onCopy,
+    copyable = true,
+    renderIcon,
 }) => {
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     const getControlByType = useCallback(
         ({ fieldName, type, data }: DeobfuscatedItemExtraField, index: number) => {
-            const icon = hideIcons ? undefined : getExtraFieldOption(type).icon;
             const key = `${index}-${fieldName}`;
+            const icon = renderIcon?.(key) ?? (hideIcons ? undefined : getExtraFieldOption(type).icon);
 
             if (needsUpgrade) {
                 return (
@@ -62,7 +69,7 @@ export const ExtraFieldsControl: FC<PropsWithChildren<ExtraFieldsControlProps>> 
                         <ValueControl icon={icon} key={key} label={fieldName} />
                     ) : (
                         <ValueControl
-                            clickToCopy
+                            clickToCopy={copyable}
                             key={key}
                             icon={icon}
                             label={fieldName}
@@ -77,7 +84,7 @@ export const ExtraFieldsControl: FC<PropsWithChildren<ExtraFieldsControlProps>> 
                         <ValueControl icon={icon} key={key} label={fieldName} />
                     ) : (
                         <ValueControl
-                            clickToCopy
+                            clickToCopy={copyable}
                             as={TextAreaReadonly}
                             key={key}
                             hidden={type === 'hidden'}
@@ -89,7 +96,7 @@ export const ExtraFieldsControl: FC<PropsWithChildren<ExtraFieldsControlProps>> 
                     );
             }
         },
-        [itemId, shareId]
+        [copyable, hideIcons, itemId, renderIcon, shareId]
     );
 
     return (
