@@ -81,6 +81,7 @@ import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import TracerAlert from '../../../tracer/TracerAlert'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 import { getLogsAsJSON } from '~/utils/downloadLogs'
+import { useSheetsDebugArtifacts } from './useSheetsDebugArtifacts'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -115,6 +116,8 @@ export function DocumentViewer({
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
   const [docController, setDocController] = useState<AuthenticatedDocControllerInterface | undefined>(undefined)
   const [editorController, setEditorController] = useState<EditorControllerInterface | null>(null)
+  const [lastDriftLogDetails, setLastDriftLogDetails] = useState<Record<string, unknown> | null>(null)
+  useSheetsDebugArtifacts(editorController, docController, documentType === 'sheet', lastDriftLogDetails)
 
   const [signatureFailedModal, openSignatureFailedModal] = useSignatureCheckFailedModal()
   const isSignatureFailedModalOpen = useRef(false)
@@ -440,6 +443,7 @@ export function DocumentViewer({
   useEffect(
     () =>
       application.eventBus.addEventCallback((driftLogDetails: Record<string, unknown>) => {
+        setLastDriftLogDetails(driftLogDetails)
         openDriftDetectionErrorModal({
           getDebugInfoFile: () => getDebugInfoZipFile(driftLogDetails),
           documentType: tmpConvertNewDocTypeToOld(documentType),

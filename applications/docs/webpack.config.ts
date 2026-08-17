@@ -13,6 +13,12 @@ const result = (opts: WebpackEnvArguments): Configuration => {
   const webpackOptions = getWebpackOptions(opts, { appConfig })
   const config = getConfig(webpackOptions)
 
+  config.devServer = {
+    ...config.devServer,
+    // Reload the top-level Docs app when vendored Rows n Columns code used by the editor changes.
+    watchFiles: [path.resolve(__dirname, '../../vendor/rowsncolumns/**/dist/**/*')],
+  }
+
   if (webpackOptions.appMode === 'standalone') {
     addDevEntry(config)
   }
