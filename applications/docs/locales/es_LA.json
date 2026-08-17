@@ -949,6 +949,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto."
+      ],
+      "Keep going": [
+        "Continuar"
+      ],
+      "Stop here": [
+        "Detenerse aquí"
       ]
     },
     "Actions message": {
@@ -3756,6 +3762,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ],
+      "Could not grant access to the organization key": [
+        "No se pudo otorgar acceso a la clave de la organización"
+      ],
+      "Failed to fetch sharing information": [
+        "Error al obtener la información para compartir"
       ]
     },
     "error": {
@@ -6046,6 +6058,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Esto implica muchos pasos. ¿Debería continuar?"
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Para ayudar a solucionar el problema, la información de depuración se subirá a su Drive y se compartirá de forma segura con el equipo de soporte de ${ BRAND_NAME }. Puede incluir el contenido de los archivos. Puede dejar de compartirla en cualquier momento y los datos compartidos se eliminarán una vez finalizada la revisión."
       ]
     },
     "info": {
@@ -6588,6 +6606,9 @@
       ],
       "Your password (trusted contact)": [
         "Su contraseña (contacto de confianza)"
+      ],
+      "Include debug information": [
+        "Incluir información de depuración"
       ]
     },
     "Label for contact group color": {
@@ -7728,6 +7749,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso limitado"
       ]
     },
     "new_plans: feature highlight": {
@@ -8404,6 +8431,15 @@
       ],
       "Your settings have been changed successfully": [
         "Los ajustes se han cambiado."
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Como este documento estaba en una carpeta compartida, solo el propietario de la carpeta puede restaurarlo"
+      ],
+      "Failed to submit report": [
+        "Error al enviar el reporte"
+      ],
+      "Report submitted successfully": [
+        "Reporte enviado con éxito"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9196,6 +9232,9 @@
       ],
       "User Admin": [
         "Administrador de usuarios"
+      ],
+      "Organization Admin": [
+        "Administrador de la organización"
       ]
     },
     "Role description": {
@@ -10899,6 +10938,12 @@
       ],
       "Your exposed information": [
         "Sus datos expuestos"
+      ],
+      "Report issue": [
+        "Reportar un problema"
+      ],
+      "Still working on it": [
+        "Todavía trabajando en ello"
       ]
     },
     "Title header for keys table": {
