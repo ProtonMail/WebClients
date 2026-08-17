@@ -3743,6 +3743,10 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn som ikke kan dekrypteres"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn",
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn"
       ]
     },
     "error": {

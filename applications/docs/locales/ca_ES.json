@@ -3762,6 +3762,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ No es pot desxifrar aquest nom"
+      ],
+      "Could not grant access to the organization key": [
+        "No s'ha pogut concedir accés a la clau de l'organització"
+      ],
+      "Failed to fetch sharing information": [
+        "No s'ha pogut obtenir la informació de compartir"
       ]
     },
     "error": {
@@ -5720,7 +5726,7 @@
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
       ],
       "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
-        "Per ajudar a resoldre el problema, es carregarà informació de depuració al vostre Drive i es compartirà de manera segura amb l'equip de suport de ${ BRAND_NAME }. Pot incloure el contingut de fitxers. Podeu deixar de compartir-la en qualsevol moment, i les dades compartides s'eliminaran quan s'hagi completat la revisió."
+        "Per ajudar a resoldre el problema, es carregarà informació de depuració al vostre Drive i es compartirà de manera segura amb l'equip de suport de ${ BRAND_NAME }. Això pot incloure el contingut de fitxers. Podreu deixar de compartir-la en qualsevol moment, i les dades compartides s'eliminaran quan s'hagi completat la revisió."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Per ajudar-vos a recordar la contrasenya, us demanarem que la introduïu periòdicament. Amb el temps, us la demanarem menys sovint."
@@ -6055,6 +6061,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Això està prenent molts passos. Hauria de continuar?"
       ]
     },
     "info": {
@@ -6359,7 +6368,7 @@
         "Inclou els registres de l'aplicació a l'informe d'errors"
       ],
       "Include debug information": [
-        "Incloeu informació de depuració"
+        "Incloeu-hi la informació de depuració"
       ],
       "Include document name in notification": [
         "Incloure el nom del document a la notificació"
@@ -9223,6 +9232,9 @@
       ],
       "User Admin": [
         "Administrador/a d'usuaris"
+      ],
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ]
     },
     "Role description": {
@@ -10835,7 +10847,7 @@
         "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
       ],
       "Still working on it": [
-        "S'hi està treballant encara"
+        "Encara hi estem treballant"
       ],
       "Stop sharing": [
         "Deixa de compartir"
