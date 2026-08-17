@@ -163,7 +163,7 @@ const downloadData = [
                     downloadButtons: [
                         {
                             title: () => c('Download').t`Download for Windows`,
-                            link: 'https://proton.me/download/PassDesktop/win32/x64/ProtonPass_Setup.exe',
+                            link: 'https://proton.me/download/pass/windows/ProtonPass.msix',
                         },
                     ],
                     footnote: {
