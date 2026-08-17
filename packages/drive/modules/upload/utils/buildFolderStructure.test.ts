@@ -22,7 +22,7 @@ const convertMapToObject = (node: any): any => {
 describe('buildFolderStructure', () => {
     it('should create simple folder structure', () => {
         const file = createFileWithPath('document.txt', 'MyFolder/document.txt');
-        const structure = buildFolderStructure([file]);
+        const { root: structure } = buildFolderStructure([file]);
 
         expect(convertMapToObject(structure)).toMatchObject({
             name: 'MyFolder',
@@ -37,7 +37,7 @@ describe('buildFolderStructure', () => {
             createFileWithPath('file2.txt', 'Root/file2.txt'),
         ];
 
-        const structure = buildFolderStructure(files);
+        const { root: structure } = buildFolderStructure(files);
 
         expect(convertMapToObject(structure)).toMatchObject({
             name: 'Root',
@@ -48,7 +48,7 @@ describe('buildFolderStructure', () => {
 
     it('should create nested folder structure', () => {
         const file = createFileWithPath('file.txt', 'Root/Level1/Level2/file.txt');
-        const structure = buildFolderStructure([file]);
+        const { root: structure } = buildFolderStructure([file]);
 
         expect(convertMapToObject(structure)).toMatchObject({
             name: 'Root',
@@ -77,7 +77,7 @@ describe('buildFolderStructure', () => {
             createFileWithPath('utils.js', 'Project/js/utils.js'),
         ];
 
-        const structure = buildFolderStructure(files);
+        const { root: structure } = buildFolderStructure(files);
 
         expect(convertMapToObject(structure)).toMatchObject({
             name: 'Project',
@@ -105,9 +105,33 @@ describe('buildFolderStructure', () => {
         expect(() => buildFolderStructure([new File([''], '.DS_Store')])).toThrow('No file to upload');
     });
 
+    it('should report why and how many files were kept out of the structure', () => {
+        const files = [
+            createFileWithPath('kept.txt', 'Root/kept.txt'),
+            createFileWithPath('.DS_Store', 'Root/.DS_Store'),
+            createFileWithPath('.DS_Store', 'Root/SubFolder/.DS_Store'),
+            createFileWithPath('Thumbs.db', 'Root/Thumbs.db'),
+            createFileWithPath(EMPTY_FOLDER_PLACEHOLDER_FILE, `Root/Empty/${EMPTY_FOLDER_PLACEHOLDER_FILE}`),
+        ];
+
+        const { ignoredFiles } = buildFolderStructure(files);
+
+        expect(ignoredFiles).toEqual({
+            '.DS_Store': 2,
+            'Thumbs.db': 1,
+            [EMPTY_FOLDER_PLACEHOLDER_FILE]: 1,
+        });
+    });
+
+    it('should not report anything when every file is kept', () => {
+        const { ignoredFiles } = buildFolderStructure([createFileWithPath('kept.txt', 'Root/kept.txt')]);
+
+        expect(ignoredFiles).toEqual({});
+    });
+
     it('should handle empty path segments', () => {
         const file = createFileWithPath('file.txt', 'Root//SubFolder///file.txt');
-        const structure = buildFolderStructure([file]);
+        const { root: structure } = buildFolderStructure([file]);
 
         expect(convertMapToObject(structure)).toMatchObject({
             name: 'Root',
@@ -127,7 +151,7 @@ describe('buildFolderStructure', () => {
             EMPTY_FOLDER_PLACEHOLDER_FILE,
             `EmptyFolder/${EMPTY_FOLDER_PLACEHOLDER_FILE}`
         );
-        const structure = buildFolderStructure([keepFile]);
+        const { root: structure } = buildFolderStructure([keepFile]);
 
         expect(convertMapToObject(structure)).toMatchObject({
             name: 'EmptyFolder',
@@ -145,7 +169,7 @@ describe('buildFolderStructure', () => {
             EMPTY_FOLDER_PLACEHOLDER_FILE,
             `ParentFolder/EmptySubfolder/${EMPTY_FOLDER_PLACEHOLDER_FILE}`
         );
-        const structure = buildFolderStructure([keepFile1, keepFile2]);
+        const { root: structure } = buildFolderStructure([keepFile1, keepFile2]);
 
         expect(convertMapToObject(structure)).toMatchObject({
             name: 'ParentFolder',
