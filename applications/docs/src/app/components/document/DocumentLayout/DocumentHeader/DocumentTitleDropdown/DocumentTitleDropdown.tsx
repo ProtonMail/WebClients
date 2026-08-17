@@ -77,7 +77,6 @@ import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { IcListBullets } from '@proton/icons/icons/IcListBullets'
-import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
 import { reportTrashError, trashDocument as trashDocumentSDK } from '~/drive-sdk/trash'
 
 export type DocumentTitleDropdownProps = {
@@ -182,35 +181,17 @@ export function DocumentTitleDropdown({
       setIsRenaming(false)
 
       if (oldName !== newName) {
-        if (renameWithSDK) {
-          const drive = getDrive()
-          const { volumeId, linkId } = documentState.getProperty('entitlements').nodeMeta as NodeMeta
-          drive
-            .renameNode(generateNodeUid(volumeId, linkId), newName)
-            .then(() => {
-              const successNotificationText = c('Notification').jt`"${newName}" renamed successfully`
-              createNotification({
-                text: <span className="text-pre-wrap">{successNotificationText}</span>,
-              })
+        void renameController.renameDocument(newName, renameWithSDK).then((result) => {
+          if (result.isFailed()) {
+            PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
+            setTitle(oldName)
+          } else if (renameWithSDK) {
+            const successNotificationText = c('Notification').jt`"${newName}" renamed successfully`
+            createNotification({
+              text: <span className="text-pre-wrap">{successNotificationText}</span>,
             })
-            .catch((error) => {
-              traceError(error, {
-                tags: {
-                  initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-                  feature: 'DocsRenameWithDriveSDK',
-                },
-              })
-              PostApplicationError(application.eventBus, { translatedError: c('Error').t`Failed to rename document` })
-              setTitle(oldName)
-            })
-        } else {
-          void renameController.renameDocument(newName).then((result) => {
-            if (result.isFailed()) {
-              PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
-              setTitle(oldName)
-            }
-          })
-        }
+          }
+        })
       }
       setTitle(newName)
     } else {

@@ -4,9 +4,10 @@ import type { DriveCompat, PublicDriveCompat } from '@proton/drive-store'
 import type { GetNode } from '../UseCase/GetNode'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { c } from 'ttag'
+import { renameNode } from '../DriveSDK/renameNode'
 
 export interface RenameControllerInterface {
-  renameDocument(newName: string): Promise<TranslatedResult<void>>
+  renameDocument(newName: string, useSDK: boolean): Promise<TranslatedResult<void>>
 }
 
 export class PublicRenameController implements RenameControllerInterface {
@@ -48,7 +49,7 @@ export class PrivateRenameController implements RenameControllerInterface {
     readonly logger: LoggerInterface,
   ) {}
 
-  public async renameDocument(newName: string): Promise<TranslatedResult<void>> {
+  public async renameDocument(newName: string, useSDK: boolean = false): Promise<TranslatedResult<void>> {
     try {
       const decryptedNode = this.documentState.getProperty('decryptedNode')
       if (!decryptedNode.parentNodeId) {
@@ -63,7 +64,12 @@ export class PrivateRenameController implements RenameControllerInterface {
         },
         newName,
       )
-      await this.compat.renameDocument(nodeMeta, name)
+
+      if (useSDK) {
+        await renameNode(nodeMeta, name)
+      } else {
+        await this.compat.renameDocument(nodeMeta, name)
+      }
 
       /**
        * In previous iterations, we would refetch the node after a rename, and set the global documentName property
