@@ -7,13 +7,13 @@ import { useEffect, useRef } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { useSharingModalDriveSdkEnabled } from '~/utils/flags'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
-import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
+import { addSentryBreadcrumb, SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
 export function useChangeAddressWhenPubliclyShared(
   nodeMeta: NodeMeta | PublicNodeMeta,
   documentState: DocumentState | PublicDocumentState | null,
 ) {
-  const { logger } = useApplication()
+  const { logger, isPublicMode } = useApplication()
   const drive = getDrive()
   const { getLocalID } = useAuthentication()
 
@@ -62,8 +62,24 @@ export function useChangeAddressWhenPubliclyShared(
           }
         })
         .catch((error) => {
-          logger.warn('Failed to change URL in address bar after changing public sharing', error)
-          traceError(error, {
+          const errorMessage = 'Failed to change URL in address bar after changing public sharing'
+          logger.warn(errorMessage, error)
+
+          const errorWithCurrentStack = new Error(errorMessage)
+          errorWithCurrentStack.cause = error
+
+          addSentryBreadcrumb({
+            category: 'docs',
+            level: 'warning',
+            message: 'Failure in useChangeAddressWhenPubliclyShared',
+            data: {
+              volumeId,
+              nodeId,
+              userRole: documentState.getProperty('userRole').roleType,
+              isPublicMode,
+            },
+          })
+          traceError(errorWithCurrentStack, {
             tags: {
               initiative: SentryRealtimeInitiatives.SDK_SWITCH,
               feature: 'DocsSharingModalDriveSDK',
@@ -71,7 +87,7 @@ export function useChangeAddressWhenPubliclyShared(
           })
         })
     },
-    [logger, documentState, sharingModalDriveSdkEnabled, nodeMetaNotPrivate, drive, getLocalID],
+    [logger, documentState, sharingModalDriveSdkEnabled, nodeMetaNotPrivate, drive, getLocalID, isPublicMode],
   )
 }
 
