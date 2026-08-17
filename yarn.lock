@@ -25923,9 +25923,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:42.8.0":
-  version: 42.8.0
-  resolution: "electron@npm:42.8.0"
+"electron@npm:42.9.0":
+  version: 42.9.0
+  resolution: "electron@npm:42.9.0"
   dependencies:
     "@electron-internal/extract-zip": "npm:^1.0.1"
     "@electron/get": "npm:^5.0.0"
@@ -25933,7 +25933,7 @@ __metadata:
   bin:
     electron: cli.js
     install-electron: install.js
-  checksum: 10/8ac3adfc869bc5bf36beca351ae8fdddb1c8c1052882de0f304ab6b1bda002867508a70093b03c1c3b4793051a6ac67e1eb7803ffba693c0e51f9fe4debf1615
+  checksum: 10/29a0cf04ea11889237041102e016a96db456369244d48a25c0000b228240630e97db32bd1f57b345e8221339a0e3b7603358b1f71cd288c580194a20b310badf
   languageName: node
   linkType: hard
 
@@ -41594,7 +41594,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     css-loader: "npm:^7.1.4"
     dotenv: "npm:^17.4.2"
-    electron: "npm:42.8.0"
+    electron: "npm:42.9.0"
     electron-log: "npm:^5.4.4"
     electron-squirrel-startup: "npm:^1.0.1"
     electron-store: "npm:^8.2.0"
