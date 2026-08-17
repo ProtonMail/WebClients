@@ -32,7 +32,7 @@ export enum Clients {
 export const clients: { [key in Clients]: Client } = {
     [Clients.Windows]: {
         title: 'Windows',
-        link: 'https://proton.me/download/PassDesktop/win32/x64/ProtonPass_Setup.exe',
+        link: 'https://proton.me/download/pass/windows/ProtonPass.msix',
         icon: 'brand-windows',
     },
     [Clients.macOS]: {
