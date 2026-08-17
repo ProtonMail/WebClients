@@ -85,7 +85,7 @@
 }
 
 .thinking-path-trace-line {
-	display: -webkit-box;
+	display: box;
 	overflow: hidden;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 1;
@@ -94,34 +94,59 @@
 }
 
 .thinking-path-steps {
+	--thinking-icon-size: #{rem(16)};
+	--thinking-icon-inset: #{rem(3)};
+	--thinking-step-content-padding-block-start: #{rem(0.7)};
+	--thinking-label-line-height: 1.3em;
+	--thinking-label-body-gap: #{rem(8)};
+	--thinking-body-start: calc(
+		var(--thinking-step-content-padding-block-start) + var(--thinking-label-line-height) +
+			var(--thinking-label-body-gap)
+	);
+
 	position: relative;
 	margin-block-start: 0;
 	padding-block-end: rem(8);
 
-	&::before {
-		content: '';
-		position: absolute;
-		inset-inline-start: calc(var(--thinking-icon-col) / 2);
-		transform: translateX(-50%);
-		inset-block: var(--thinking-line-start) var(--thinking-line-start);
-		inline-size: 1px;
-		background-color: var(--border-norm);
-		pointer-events: none;
+	.thinking-step {
+		position: relative;
+		display: grid;
+		grid-template-columns: var(--thinking-icon-col) minmax(0, 1fr);
+		column-gap: var(--thinking-gap);
+		align-items: start;
+
+		// Side line stays under the icon, but starts where the body text begins.
+		&::before {
+			content: '';
+			position: absolute;
+			inset-inline-start: calc(var(--thinking-icon-col) / 2);
+			transform: translateX(-50%);
+			inset-block: var(--thinking-body-start) 0;
+			inline-size: 1px;
+			background-color: var(--border-norm);
+			pointer-events: none;
+		}
+
+		&:not(:has(.thinking-step-body))::before {
+			content: none;
+		}
 	}
-}
 
-.thinking-step {
-	display: grid;
-	grid-template-columns: var(--thinking-icon-col) minmax(0, 1fr);
-	column-gap: var(--thinking-gap);
-	align-items: start;
-}
+	.thinking-step-track {
+		position: relative;
+		z-index: 1;
+		padding-block-start: var(--thinking-icon-inset);
+		min-block-size: var(--thinking-icon-size);
+	}
 
-.thinking-step-track {
-	position: relative;
-	z-index: 1;
-	padding-block-start: rem(3);
-	min-block-size: var(--thinking-icon-size);
+	.thinking-step-body {
+		margin-block-start: var(--thinking-label-body-gap);
+		min-inline-size: 0;
+	}
+
+	.thinking-step-body-line {
+		overflow-wrap: anywhere;
+	}
 }
 
 .thinking-step-icon-badge {
