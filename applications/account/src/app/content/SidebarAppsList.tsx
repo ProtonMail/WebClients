@@ -40,7 +40,7 @@ const SidebarAppsList = () => {
         <Branch>
             <Branch.Header>
                 <Branch.Trigger rotation={{ closed: 270 }} />
-                <span className="color-weak">{c('Label').t`App Settings`}</span>
+                <span className="color-weak text-normal">{c('Label').t`App Settings`}</span>
             </Branch.Header>
             <Branch.Content>
                 <ul className="unstyled m-0 mb-2">
