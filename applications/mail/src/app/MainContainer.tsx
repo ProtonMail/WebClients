@@ -39,7 +39,7 @@ const MainContainer: FunctionComponent = () => {
     const onlineStatus = useOnline();
 
     useEffect(() => {
-        const msg = onlineStatus ? 'User is connected to the network' : 'User is disconnected from the network';
+        const msg = onlineStatus ? 'Connected to network' : 'Disconnected from network';
         logger.debug(msg);
     }, [onlineStatus]);
 

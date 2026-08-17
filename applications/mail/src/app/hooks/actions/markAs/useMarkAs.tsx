@@ -79,7 +79,7 @@ export const useMarkAs = () => {
                         (conversation) => conversation.ID
                     );
 
-                    logger.info(`Mark ${elements.length} message(s) as ${status}`);
+                    logger.info(`Marking ${elements.length} message(s) as ${status}`);
                     if (isRead) {
                         void dispatch(
                             markMessagesAsRead({
@@ -104,7 +104,7 @@ export const useMarkAs = () => {
                         );
                     }
                 } else {
-                    logger.info(`Mark ${elements.length} conversation(s) as ${status}`);
+                    logger.info(`Marking ${elements.length} conversation(s) as ${status}`);
                     if (isRead) {
                         void dispatch(
                             markConversationsAsRead({

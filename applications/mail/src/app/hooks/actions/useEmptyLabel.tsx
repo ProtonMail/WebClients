@@ -44,7 +44,7 @@ export const useEmptyLabel = () => {
                 dispatch(backendActionStarted());
                 rollback = optimisticEmptyLabel(labelID);
                 await api(emptyLabelRequest({ LabelID: labelID, AddressID: undefined }));
-                logger.info(`Empty ${getHumanLabelID(labelID)}`);
+                logger.info(`Emptied ${getHumanLabelID(labelID)}`);
             } catch (error: any) {
                 rollback();
                 logger.error(`Failed to empty ${getHumanLabelID(labelID)}`, error);

@@ -441,7 +441,7 @@ export const useApplyLocation = () => {
                     destinationLabelID: params.destinationLabelID,
                 });
 
-                logger.info(`Move ${params.elements.length} element(s) to ${humanLabelID}`);
+                logger.info(`Moving ${params.elements.length} element(s) to ${humanLabelID}`);
                 return moveToFolder({
                     ...params,
                     removeLabel: false,
@@ -453,7 +453,7 @@ export const useApplyLocation = () => {
                     elements: params.elements,
                 });
 
-                logger.info(`Apply ${humanLabelID} label on ${params.elements.length} element(s)`);
+                logger.info(`Applying ${humanLabelID} label on ${params.elements.length} element(s)`);
                 return moveToFolder({
                     ...params,
                 });
@@ -465,7 +465,7 @@ export const useApplyLocation = () => {
                     removeLabel: params.removeLabel || false,
                 });
 
-                logger.info(`Star ${params.elements.length} element(s)`);
+                logger.info(`Starring ${params.elements.length} element(s)`);
                 return moveToFolder({
                     ...params,
                 });
