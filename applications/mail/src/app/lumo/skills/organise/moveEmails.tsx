@@ -3,13 +3,13 @@ import { c, msgid } from 'ttag';
 import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
 import type { ActionRequest, ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
-import { MoveItemsCard } from '@proton/lumo-ui';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 
 import { resolveElements, resolveId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
+import { emailIds, hasEmailSelection, referenceName, renderEmailSelectionBody } from './emailSelection';
 
 /** The three reversible system locations move_emails can send mail to. NOT deletion: mail in
  *  Trash/Archive/Spam can be moved back. Permanent delete is deliberately absent (no tool covers it). */
@@ -124,7 +124,7 @@ const moveLocationLabel = (location: string): string => {
 /** The destination's human name — a folder's name (from the reference's recorded label) or a system location. */
 const moveTargetName = (action: ActionRequest, labels: Record<string, string>): string => {
     if (action.folder) {
-        return labels[action.folder as string] ?? String(action.folder);
+        return referenceName(action.folder, labels);
     }
     if (action.location) {
         return moveLocationLabel(String(action.location));
@@ -133,9 +133,8 @@ const moveTargetName = (action: ActionRequest, labels: Record<string, string>): 
 };
 
 /**
- * The confirm card + result tile for move_emails: the shared {@link MoveItemsCard} lets the user
- * deselect emails before applying (editing `params.ids`), while the destination shows as the shell's
- * subtitle. The full proposed set (`action.ids`) stays visible so a deselected row can be re-ticked.
+ * The confirm card + result tile for move_emails: the shared selection body lets the user deselect
+ * emails before applying, while the destination shows as the shell's subtitle.
  */
 export const moveEmailsCardRenderer: CardRenderer = {
     icon: IcFolderArrowIn,
@@ -144,21 +143,10 @@ export const moveEmailsCardRenderer: CardRenderer = {
         const dest = moveTargetName(action, labels);
         return dest ? `→ ${dest}` : undefined;
     },
-    renderBody: ({ action, params, labels, onChange }) => {
-        const proposedIds = (action.ids as string[]) ?? [];
-        const selectedIds = (params.ids as string[]) ?? [];
-        return (
-            <MoveItemsCard
-                items={proposedIds.map((id) => ({ id, label: labels[id] ?? id }))}
-                selectedIds={selectedIds}
-                onToggle={(id, checked) =>
-                    onChange({ ...params, ids: checked ? [...selectedIds, id] : selectedIds.filter((x) => x !== id) })
-                }
-            />
-        );
-    },
+    renderBody: renderEmailSelectionBody,
+    canApply: hasEmailSelection,
     detail: (action, labels) => {
-        const count = ((action.ids as string[]) ?? []).length;
+        const count = emailIds(action).length;
         const dest = moveTargetName(action, labels);
         return c('Info').ngettext(msgid`${count} email → ${dest}`, `${count} emails → ${dest}`, count);
     },

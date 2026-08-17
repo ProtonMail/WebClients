@@ -26,6 +26,7 @@ import {
     selectLoading,
     selectPage,
     selectParams,
+    taskRunningInLabel as taskRunningInLabelSelector,
     usedEncryptedSearch as usedEncryptedSearchSelector,
 } from 'proton-mail/store/elements/elementsSelectors';
 import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
@@ -185,6 +186,12 @@ const currentView = ({ labelID, filter, sort, search }: ElementsStateParams) => 
     search: searchView(search),
 });
 
+/** Both members end the wait; only `Settled` means the list arrived. `undefined` keeps waiting. */
+enum ListSettleState {
+    Settled = 'settled',
+    Blocked = 'blocked',
+}
+
 /** What the wait can tell a read about the page it is about to project. */
 export interface ListSettleOutcome {
     /** False when the wait timed out: the view is still loading, so an empty page proves nothing. */
@@ -207,7 +214,7 @@ export const waitForListSettled = async (store: ToolStore, expected: ExpectedLis
     const isQuery = Object.values(requested.search).some((value) => value !== undefined);
     const requestedCategory = categoryIDFromUrl(expected.location) ?? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
 
-    const settled = (): true | undefined => {
+    const settled = (): ListSettleState | undefined => {
         const state = store.getState();
         if (!isDeepEqual(currentView(selectParams(state)), requested)) {
             return undefined;
@@ -219,19 +226,26 @@ export const waitForListSettled = async (store: ToolStore, expected: ExpectedLis
         if (activeCategory !== undefined && activeCategory !== requestedCategory) {
             return undefined;
         }
+        // A bulk action (mark-all, label-all) blocks loading for its label until the server finishes, so
+        // this view can never fill: stop rather than sitting out the timeout on a list that cannot arrive.
+        // Checked only once the params match, so the empty page the caller then reads is this view's.
+        if (taskRunningInLabelSelector(state, { labelID: expected.labelID })) {
+            return ListSettleState.Blocked;
+        }
         if (selectLoading(state, { page: selectPage(state) }) || (isQuery && esSearchingSelector(state))) {
             return undefined;
         }
-        return contextTotalSelector(state) !== undefined ? true : undefined;
+        return contextTotalSelector(state) !== undefined ? ListSettleState.Settled : undefined;
     };
 
     const outcome = await waitForStoreState(store, settled, LIST_SETTLE_TIMEOUT);
 
     return {
-        settled: outcome === true,
+        settled: outcome === ListSettleState.Settled,
         // The store flag is global and sticky — only a load for the current context clears it — so a plain
         // open, or a wait that timed out, would otherwise report a search the user ran somewhere else.
-        usedEncryptedSearch: isQuery && outcome === true && usedEncryptedSearchSelector(store.getState()),
+        usedEncryptedSearch:
+            isQuery && outcome === ListSettleState.Settled && usedEncryptedSearchSelector(store.getState()),
     };
 };
 

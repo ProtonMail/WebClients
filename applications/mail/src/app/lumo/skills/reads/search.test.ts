@@ -2,6 +2,7 @@ import { getUnixTime } from 'date-fns';
 
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 
+import { BULK_ACTION_NOTE } from './rows';
 import type { SearchParams, SearchResult } from './search';
 import {
     describeSearch,
@@ -31,6 +32,7 @@ const result = (overrides: Partial<SearchResult> = {}): SearchResult => ({
     scope: 'Axes not used in this search: keyword, from, to, date range, folder or label.',
     rows: [],
     total: 0,
+    bulkActionRunning: false,
     ...overrides,
 });
 
@@ -171,6 +173,15 @@ describe('searchDefinition', () => {
 
     it('serializes an empty result as no matches rather than an empty table', () => {
         expect(searchDefinition.serializeForLumo(result(), anyReferences)).toContain('No emails matched this search.');
+    });
+
+    // Otherwise a blocked location reads as an authoritative "nothing matches", which is the false
+    // negative the bulk-action note exists to prevent.
+    it('blames a running bulk action for an empty result rather than the search', () => {
+        const serialized = searchDefinition.serializeForLumo(result({ bulkActionRunning: true }), anyReferences);
+
+        expect(serialized).toContain(BULK_ACTION_NOTE);
+        expect(serialized).not.toContain('No emails matched this search.');
     });
 
     it('summarizes the chip from what the user asked for, not the model-facing query', () => {
