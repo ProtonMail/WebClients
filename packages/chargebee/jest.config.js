@@ -16,9 +16,8 @@ module.exports = {
         '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js',
     },
     moduleNameMapper: {
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
-        '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
-        '\\.(md)$': '<rootDir>/src/__mocks__/mdMock.ts',
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '<rootDir>/__mocks/fileMock.cjs',
+        '\\.(css|scss|less)$': '<rootDir>/__mocks/styleMock.cjs',
         '([a-zA-Z0-9_-]+\\.html)\\?raw$': '<rootDir>/__mocks/$1.cjs',
     },
     coverageReporters: ['text-summary', 'json'],
