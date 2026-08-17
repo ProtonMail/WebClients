@@ -13,6 +13,7 @@ import {
     elements as elementsSelector,
     selectConversationMode,
     selectLabelID,
+    taskRunningInLabel,
 } from 'proton-mail/store/elements/elementsSelectors';
 
 import { formatLocalDate, formatSender } from '../../helpers/formatting';
@@ -40,7 +41,17 @@ export interface AgentEmailRow {
 export interface AgentEmailPage {
     rows: AgentEmailRow[];
     total: number;
+    /** Whether a bulk action is still running here — the reason this page can be empty (see {@link BULK_ACTION_NOTE}). */
+    bulkActionRunning: boolean;
 }
+
+/**
+ * Model-facing, so untranslated. A bulk mark-all clears its location's list and blocks it from reloading
+ * until the server has worked through it, so every read of that location comes back empty; without this
+ * the emptiness reads as an authoritative "there is no mail here".
+ */
+export const BULK_ACTION_NOTE =
+    'A bulk action is still running in this location: its list stays cleared until the server finishes, so an empty list here says nothing about how much mail the location holds, and the emails in it cannot be read or changed individually yet.';
 
 /** `getDate` resolves a conversation's label-contextual time, so this matches the day on screen. */
 const toDate = (element: Element, labelID: string): string => formatLocalDate(getDate(element, labelID));
@@ -116,5 +127,6 @@ export const buildAgentEmailRows = (deps: RowDeps, references: ReferenceRegistry
         };
     });
 
-    return { rows, total };
+    // Keyed on the rows' own label, so the flag describes this page and not whichever view is current.
+    return { rows, total, bulkActionRunning: taskRunningInLabel(state, { labelID }) !== undefined };
 };

@@ -13,7 +13,7 @@ import { CONTENT_SEARCH_NOTES, resolveContentSearchCoverage } from './contentSea
 import type { MailboxFilter } from './mailboxView';
 import { resolveMailboxFilter } from './mailboxView';
 import type { AgentEmailRow } from './rows';
-import { formatAgentEmailRows } from './rows';
+import { BULK_ACTION_NOTE, formatAgentEmailRows } from './rows';
 
 const FILTER_DESCRIPTIONS: Record<MailboxFilter, string> = {
     read: 'read',
@@ -44,6 +44,8 @@ export interface SearchResult {
     rows: AgentEmailRow[];
     /** May exceed `rows.length`. */
     total: number;
+    /** Whether a bulk action is still running in the searched location — the reason it can match nothing. */
+    bulkActionRunning: boolean;
 }
 
 export const toSearchBound = (iso: string, inclusiveEnd = false): string => {
@@ -183,7 +185,9 @@ export const searchDefinition: ToolDefinition<SearchParams, SearchResult> = {
         },
     ],
     serializeForLumo: (result) => {
-        const rows = formatAgentEmailRows(result.rows, result.total) || 'No emails matched this search.';
+        const rows =
+            formatAgentEmailRows(result.rows, result.total) ||
+            (result.bulkActionRunning ? BULK_ACTION_NOTE : 'No emails matched this search.');
         return [`Search results for (${result.query}):\n${rows}`, CONTENT_SEARCH_NOTES[result.coverage], result.scope]
             .filter(Boolean)
             .join('\n\n');
@@ -208,18 +212,22 @@ export const createSearchHandler =
         // Not the resolver's `name`, which falls back to a raw id — this reaches the user's chip.
         const targetName = target ? references.labelFor(target) : undefined;
 
-        const { rows, total, settled, usedEncryptedSearch } = await navigateAndReadRows(mail, references, {
-            pathname,
-            labelID,
-            query: {
-                keyword: params.keyword ?? undefined,
-                from: params.from ?? undefined,
-                to: params.to ?? undefined,
-                begin: params.begin ? toSearchBound(params.begin) : undefined,
-                end: params.end ? toSearchBound(params.end, true) : undefined,
-                filter: filterHashFor(filter),
-            },
-        });
+        const { rows, total, settled, usedEncryptedSearch, bulkActionRunning } = await navigateAndReadRows(
+            mail,
+            references,
+            {
+                pathname,
+                labelID,
+                query: {
+                    keyword: params.keyword ?? undefined,
+                    from: params.from ?? undefined,
+                    to: params.to ?? undefined,
+                    begin: params.begin ? toSearchBound(params.begin) : undefined,
+                    end: params.end ? toSearchBound(params.end, true) : undefined,
+                    filter: filterHashFor(filter),
+                },
+            }
+        );
 
         return {
             query: describeSearch(params, { filter }, targetName),
@@ -229,6 +237,7 @@ export const createSearchHandler =
             scope: describeSearchScope(params, labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL),
             rows,
             total,
+            bulkActionRunning,
         };
     };
 
