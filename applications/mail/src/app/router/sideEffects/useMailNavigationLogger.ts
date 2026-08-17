@@ -31,7 +31,7 @@ export const useMailNavigationLogger = () => {
 
     useEffect(() => {
         const unlisten = history.listen((location) => {
-            logger.log('User navigate to', redactSensitiveParams(location.pathname, location.hash));
+            logger.log('Navigating to', redactSensitiveParams(location.pathname, location.hash));
         });
         return unlisten;
     }, [history]);

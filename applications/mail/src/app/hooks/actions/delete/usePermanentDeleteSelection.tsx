@@ -246,7 +246,7 @@ export const usePermanentDeleteSelection = (labelID: string) => {
             const notificationText = getNotificationText(draft, conversationMode, selectedItemsCount, totalMessages);
             createNotification({ text: notificationText });
 
-            logger.info(`Permanently delete ${selectedItemsCount} element(s)`);
+            logger.info(`Permanently deleted ${selectedItemsCount} element(s)`);
         } catch (error: any) {
             createNotification({
                 text: c('Error').t`Something went wrong. Please try again.`,
