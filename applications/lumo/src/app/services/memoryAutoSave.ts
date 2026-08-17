@@ -2,15 +2,21 @@ import { quickChat } from '@proton/lumo-api-client';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { ENABLE_U2L_ENCRYPTION } from '../llm/config';
-import { appendGeneratedMemoriesThunk, updateLumoUserSettings } from '../redux/slices/lumoUserSettings';
+import {
+    appendGeneratedMemoriesThunk,
+    updateLumoUserSettings,
+    updateLumoUserSettingsWithAutoSave,
+} from '../redux/slices/lumoUserSettings';
 import type { LumoDispatch, LumoState } from '../redux/store';
 import {
     MEMORY_AUTO_SAVE_PROMPT_THRESHOLD,
     buildMemoryBootstrapPrompt,
     canGenerateMemoriesFromChats,
+    getMemoryGenerationCutoff,
+    getMemoryGenerationScanBoundary,
     memoriesFromContents,
     normalizeMemories,
-    parseMemoryStringsResponse,
+    parseMemoryGenerationResponse,
     sampleUserPromptsForMemoryGeneration,
 } from '../util/memoryHelpers';
 import { safeLogger } from '../util/safeLogger';
@@ -53,28 +59,51 @@ export const maybeAutoSaveMemoriesFromChats = ({ api, dispatch, getState, hasLum
 
     void (async () => {
         try {
-            const samples = sampleUserPromptsForMemoryGeneration(state.messages, state.conversations, state.spaces, {
+            const existingAtRequestTime = normalizeMemories(settings.memories);
+            const after = getMemoryGenerationCutoff(
+                settings.memoryLastProcessedMessageAt,
+                existingAtRequestTime
+            );
+            const samplingOptions = {
                 hasLumoPlus,
-            });
+                after,
+            };
+            const samples = sampleUserPromptsForMemoryGeneration(
+                state.messages,
+                state.conversations,
+                state.spaces,
+                samplingOptions
+            );
             if (!canGenerateMemoriesFromChats(samples.length)) {
                 dispatch(updateLumoUserSettings({ memoryPromptsSinceAutoSave: 0 }));
                 return;
             }
+            const processedThrough = getMemoryGenerationScanBoundary(
+                state.messages,
+                state.conversations,
+                state.spaces,
+                samplingOptions
+            );
+            if (!processedThrough) {
+                throw new Error('No memory generation scan boundary');
+            }
 
-            const existingAtRequestTime = normalizeMemories(settings.memories);
             const response = await quickChat(api, buildMemoryBootstrapPrompt(samples, existingAtRequestTime), {
                 enableWebSearch: false,
                 config: { enableU2LEncryption: ENABLE_U2L_ENCRYPTION },
             });
 
-            const contents = parseMemoryStringsResponse(response, existingAtRequestTime);
-            if (contents.length === 0) {
-                dispatch(updateLumoUserSettings({ memoryPromptsSinceAutoSave: 0 }));
+            const parsed = parseMemoryGenerationResponse(response, existingAtRequestTime);
+            if (parsed.status === 'invalid') {
+                throw new Error('Invalid memory generation response');
+            }
+            if (parsed.memories.length === 0) {
+                dispatch(updateLumoUserSettingsWithAutoSave({ memoryPromptsSinceAutoSave: 0 }));
                 return;
             }
 
-            const generated = memoriesFromContents(contents, 'generated');
-            dispatch(appendGeneratedMemoriesThunk(generated));
+            const generated = memoriesFromContents(parsed.memories, 'generated');
+            dispatch(appendGeneratedMemoriesThunk(generated, processedThrough));
         } catch (error) {
             safeLogger.error('[memoryAutoSave] Background update failed', error);
         } finally {

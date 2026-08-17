@@ -18,7 +18,7 @@ import type { LumoUserSettings, Memory } from './lumoUserSettingsTypes';
  * Returns the number of newly added memories.
  */
 export const appendGeneratedMemoriesThunk =
-    (generated: Memory[]) =>
+    (generated: Memory[], memoryLastProcessedMessageAt?: string) =>
     (dispatch: LumoDispatch, getState: () => LumoState): number => {
         const current = normalizeMemories(getState().lumoUserSettings.memories);
         const merged = mergeAppendedGeneratedMemories(current, generated);
@@ -28,6 +28,7 @@ export const appendGeneratedMemoriesThunk =
             updateLumoUserSettingsWithAutoSave({
                 memories: merged,
                 memoryPromptsSinceAutoSave: 0,
+                ...(added > 0 && memoryLastProcessedMessageAt && { memoryLastProcessedMessageAt }),
             })
         );
 
