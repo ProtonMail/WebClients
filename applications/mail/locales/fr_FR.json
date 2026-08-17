@@ -1526,7 +1526,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -4424,6 +4425,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "No ads. No trackers": [
+        "Pas de publicité. Pas de traqueurs"
       ]
     },
     "description": {
@@ -5569,6 +5573,9 @@
       ],
       "Moving root item is not allowed": [
         "Le déplacement de l'élément racine n'est pas autorisé."
+      ],
+      "Could not grant access to the organization key": [
+        "Impossible d'accorder l'accès à la clé de l'organisation"
       ]
     },
     "error": {
@@ -7963,8 +7970,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8057,7 +8063,7 @@
         "Priorité basse"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Définir ${ MAIL_APP_NAME } comme application de messagerie par défaut."
+        "Faire de ${ MAIL_APP_NAME } votre application de messagerie par défaut."
       ],
       "Manage your folders": [
         "Gérer vos dossiers"
@@ -10746,6 +10752,15 @@
       ],
       "Duration": [
         "Durée"
+      ],
+      "Account holder name": [
+        "Nom du titulaire du compte"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Offres, promotions et messages marketing"
+      ],
+      "Encrypt": [
+        "Chiffrer"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13236,6 +13251,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "L'initialisation de ${ IDEAL_BRAND_NAME } n'a pas abouti. Veuillez réessayer plus tard."
+      ],
+      "Please enter the account holder name": [
+        "Veuillez saisir le nom du titulaire du compte"
       ]
     },
     "Payments.error": {

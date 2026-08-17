@@ -1523,7 +1523,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1732,6 +1733,12 @@
       ],
       "Stop here": [
         "Stop her"
+      ],
+      "Run realistic session": [
+        "Kør realistisk session"
+      ],
+      "Write ${ count } logs": [
+        "Skriv ${ count } logs"
       ]
     },
     "action": {
@@ -4424,6 +4431,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "No ads. No trackers": [
+        "Ingen reklamer. Ingen trackere"
       ]
     },
     "description": {
@@ -8077,8 +8087,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -9682,6 +9691,21 @@
       ],
       "Searched your mail": [
         "Søgte dine mails"
+      ],
+      "Not supported by this browser": [
+        "Ikke understøttet i denne browser"
+      ],
+      "Star emails": [
+        "Stjernemarker e-mails"
+      ],
+      "Unstar emails": [
+        "Fjern stjernemarkering fra e-mails"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Skriver ${ REALISTIC_ENTRIES } realistiske loglinjer, der kommer ind over ét minut, ligesom en rigtig session, i stedet for alt på én gang. Det tager omkring et minut at køre. Sørg for at denne fane er fokuseret: frame-målinger pauses i baggrunden."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Skriver realistiske loglinjer efter hinanden, og læser dem derefter tilbage. Viser hvordan write- og read/export skalerer med antallet af opbevarede elementer."
       ]
     },
     "info": {
@@ -10898,6 +10922,51 @@
       ],
       "Duration": [
         "Varighed"
+      ],
+      "Burst write": [
+        "Burst write"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Tilbud, rabatter, og marketing-e-mails"
+      ],
+      "Dropped frames": [
+        "Dropped frames"
+      ],
+      "Encrypt": [
+        "Kryptér"
+      ],
+      "Entries": [
+        "Entries"
+      ],
+      "Export size": [
+        "Eksportstørrelse"
+      ],
+      "IndexedDB store": [
+        "IndexedDB store"
+      ],
+      "Log performance": [
+        "Log performance"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Lange opgaver (≥ 50 ms)"
+      ],
+      "Read / export": [
+        "Read / export"
+      ],
+      "Realistic session": [
+        "Realistisk session"
+      ],
+      "Sum of write() calls": [
+        "Sum af kald til write()"
+      ],
+      "Write": [
+        "Write"
+      ],
+      "Write (whole session)": [
+        "Skriv (hele sessionen)"
+      ],
+      "Write-chain drain after last line": [
+        "Write-chain drænes efter sidste linje"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13074,7 +13143,7 @@
         "Ingen overordnet mappe"
       ],
       "Remind me later": [
-        "Mind mig om det senere"
+        "Påmind mig senere"
       ],
       "Yes, don't show again": [
         "Ja, vis det ikke igen"
@@ -14046,6 +14115,9 @@
       ],
       "User Admin": [
         "Brugeradmin"
+      ],
+      "Organization Admin": [
+        "Organisationsadmin"
       ]
     },
     "Role description": {
@@ -17002,6 +17074,12 @@
       ],
       "Still working on it": [
         "Arbejder stadig på det"
+      ],
+      "Star emails": [
+        "Stjernemarker e-mails"
+      ],
+      "Unstar emails": [
+        "Fjern stjernemarkering fra e-mails"
       ]
     },
     "Title header for keys table": {

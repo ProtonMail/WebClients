@@ -1531,7 +1531,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1742,6 +1745,12 @@
       ],
       "Stop here": [
         "Tu zastav"
+      ],
+      "Run realistic session": [
+        "Spustiť realistickú reláciu"
+      ],
+      "Write ${ count } logs": [
+        "Zapísať ${ count } záznamov"
       ]
     },
     "action": {
@@ -4498,6 +4507,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ],
+      "No ads. No trackers": [
+        "Žiadne reklamy. Žiadne sledovacie nástroje"
       ]
     },
     "description": {
@@ -5773,6 +5785,9 @@
       ],
       "You do not have access to this shared item": [
         "K tejto zdieľanej položke nemáte prístup"
+      ],
+      "Could not grant access to the organization key": [
+        "Nepodarilo sa udeliť prístup ku kľúču organizácie"
       ]
     },
     "error": {
@@ -8353,10 +8368,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10034,6 +10046,15 @@
       ],
       "Unstar emails": [
         "Odobrať hviezdičku z emailov"
+      ],
+      "Not supported by this browser": [
+        "Tento prehliadač túto funkciu nepodporuje"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Zapíše ${ REALISTIC_ENTRIES } realistických riadkov záznamu, ktoré sa zobrazujú postupne v priebehu jednej minúty, ako pri skutočnej relácii, namiesto toho, aby sa zobrazili všetky naraz. Spustenie trvá približne jednu minútu. Nechajte túto kartu aktívnu: merania snímok sa v pozadí pozastavia."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Postupne zapisuje reálne riadky záznamu a následne ich všetky prečíta späť. Ukazuje, ako sa náklady na zápis a čítanie/export menia v závislosti od počtu uložených záznamov."
       ]
     },
     "info": {
@@ -11269,6 +11290,51 @@
       ],
       "Duration": [
         "Trvanie"
+      ],
+      "Account holder name": [
+        "Meno majiteľa účtu"
+      ],
+      "Burst write": [
+        "Hromadný zápis"
+      ],
+      "Dropped frames": [
+        "Vynechané snímky"
+      ],
+      "Encrypt": [
+        "Šifrovať"
+      ],
+      "Entries": [
+        "Záznamy"
+      ],
+      "Export size": [
+        "Veľkosť exportu"
+      ],
+      "IndexedDB store": [
+        "Úložisko IndexedDB"
+      ],
+      "Log performance": [
+        "Výkonnosť zaznamenávania"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Dlhé úlohy (≥ 50 ms)"
+      ],
+      "Read / export": [
+        "Čítať / exportovať"
+      ],
+      "Realistic session": [
+        "Realistická relácia"
+      ],
+      "Sum of write() calls": [
+        "Súčet volaní funkcie write()"
+      ],
+      "Write": [
+        "Zapísať"
+      ],
+      "Write (whole session)": [
+        "Zapísať (celú reláciu)"
+      ],
+      "Write-chain drain after last line": [
+        "Vypustenie reťazca zápisu po poslednom riadku"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13863,6 +13929,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "Inicializácia ${ IDEAL_BRAND_NAME } zlyhala. Skúste to neskôr znova, prosím."
+      ],
+      "Please enter the account holder name": [
+        "Zadajte meno majiteľa účtu, prosím"
       ]
     },
     "Payments.error": {
@@ -17048,7 +17117,7 @@
         "Nesprávny overovací kód"
       ],
       "Keep this banner hidden?": [
-        "Ponechať túto reklamu skrytú?"
+        "Má byť tento banner skrytý?"
       ],
       "Label as": [
         "Označiť ako"
