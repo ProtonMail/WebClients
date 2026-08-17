@@ -11,7 +11,6 @@ import CollapsibleHeader from '@proton/components/components/collapsible/Collaps
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Form from '@proton/components/components/form/Form';
-import Checkbox from '@proton/components/components/input/Checkbox';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
@@ -42,6 +41,7 @@ import noop from '@proton/utils/noop';
 import { getClientName, getReportInfo } from '../../helpers/report';
 import type { Screenshot } from './AttachScreenshot';
 import AttachScreenshot from './AttachScreenshot';
+import BugModalLogs from './BugModalLogs';
 
 export type BugModalMode = 'chat-no-agents';
 
@@ -256,6 +256,8 @@ const BugModal = ({
     const collectLogsInboxDesktop =
         !useFlag('InboxDesktopBugReportLogAttachmentDisabled') && isInboxDesktopBugReportLogsSupported();
     const [includeLogs, setIncludeLogs] = useState<boolean>(collectLogs || collectLogsInboxDesktop);
+    // Preloaded by BugModalLogs as soon as the modal opens, so submission does not have to wait on reading the log file.
+    const [preloadedLogs, setPreloadedLogs] = useState<string>();
 
     const link = <Href key="linkClearCache" href={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
 
@@ -287,10 +289,8 @@ const BugModal = ({
                 {}
             );
 
-            // Read at submit rather than at open, so lines logged while the form was
-            // being filled in — often the very error being reported — are included.
             if (collectLogs && includeLogs) {
-                const logs = await logger.getLogs();
+                const logs = preloadedLogs ?? (await logger.getLogs());
                 if (logs && logs.trim()) {
                     const filename = `logs-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
                     attachments[filename] = new Blob([logs], { type: 'text/plain' });
@@ -454,29 +454,14 @@ const BugModal = ({
                     setUploading={setUploadingScreenshots}
                     disabled={loading}
                 />
-                {(collectLogs || collectLogsInboxDesktop) && (
-                    <div className="mb-4">
-                        <div className="flex items-center justify-space-between">
-                            <Checkbox
-                                id="includeLogs"
-                                checked={includeLogs}
-                                onChange={({ target: { checked } }) => setIncludeLogs(checked)}
-                            >
-                                {c('Label').t`Include application logs in bug report`}
-                            </Checkbox>
-                            {collectLogs && (
-                                <Button
-                                    className="ml-2"
-                                    shape="underline"
-                                    onClick={() => logger.downloadLogs()}
-                                    title={c('Info').t`Download current logs`}
-                                >
-                                    {c('Action').t`Download logs`}
-                                </Button>
-                            )}
-                        </div>
-                    </div>
-                )}
+                <BugModalLogs
+                    collectLogs={collectLogs}
+                    collectLogsInboxDesktop={collectLogsInboxDesktop}
+                    includeLogs={includeLogs}
+                    onIncludeLogsChange={setIncludeLogs}
+                    onLogsLoaded={setPreloadedLogs}
+                    disabled={loading}
+                />
                 {model.OSArtificial && OSAndOSVersionFields}
 
                 <Collapsible className="mt-4">
