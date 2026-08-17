@@ -2,6 +2,7 @@ import type { ToolDefinition } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { LOAD_GUIDE_TOOL_NAME } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
 
 import { buildLumoMailConfig } from './registry';
+import { applyLabelsDefinition } from './skills/organise/applyLabels';
 import { moveEmailsDefinition } from './skills/organise/moveEmails';
 import { setReadDefinition } from './skills/organise/setRead';
 import { setStarredDefinition } from './skills/organise/setStarred';
@@ -103,6 +104,7 @@ const TOOL_PAYLOADS = [
     payloads(moveEmailsDefinition, [undefined]),
     payloads(setStarredDefinition, [undefined]),
     payloads(setReadDefinition, [undefined]),
+    payloads(applyLabelsDefinition, [undefined]),
 ];
 
 const DIRECTIVES = [

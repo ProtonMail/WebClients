@@ -3,6 +3,7 @@ import type { ToolDefinition, ToolHandlers } from '@proton/llm/lib/lumoAgent/con
 import { createLoadGuideDefinition } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
 
 import { MAIL_RULES } from './rules';
+import { applyLabelsModule } from './skills/organise/applyLabels';
 import { moveEmailsModule } from './skills/organise/moveEmails';
 import { setReadModule } from './skills/organise/setRead';
 import { setStarredModule } from './skills/organise/setStarred';
@@ -38,6 +39,7 @@ const MODULES: MailToolModule[] = [
     moveEmailsModule,
     setStarredModule,
     setReadModule,
+    applyLabelsModule,
 ];
 
 /**
