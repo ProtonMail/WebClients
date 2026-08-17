@@ -73,8 +73,10 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
         if (appInView !== undefined) {
             document.body.classList.add('drawer-is-open');
         }
+        document.body.classList.toggle('drawer-is-lumo', appInView === DRAWER_NATIVE_APPS.LUMO);
         return () => {
             document.body.classList.remove('drawer-is-open');
+            document.body.classList.remove('drawer-is-lumo');
         };
     }, [appInView]);
 
