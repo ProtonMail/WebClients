@@ -37,6 +37,7 @@ import noop from '@proton/utils/noop';
 
 import { registerMailToProtocolHandler } from 'proton-mail/helpers/url';
 
+import { cleanLegacyLogsDatabase } from './helpers/cleanLegacyLogsDatabase';
 import {
     canLoadRunner,
     shouldLoadMigrationWorker,
@@ -166,6 +167,9 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             bootstrap.loadCrypto({ appName, unleashClient }),
             unleashPromise,
         ]);
+
+        // Get rid of any remaining legacy database that was created during alpha.
+        cleanLegacyLogsDatabase().catch(noop);
 
         // Initialize logger if the feature flag is enabled
         if (unleashClient.isEnabled('CollectLogs')) {

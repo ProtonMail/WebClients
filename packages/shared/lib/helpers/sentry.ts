@@ -380,6 +380,7 @@ export enum SentryMailInitiatives {
     UPSELL_MODALS = 'upsell-modals',
     MAILBOX_REDIRECT = 'mailbox-redirect',
     CATEGORIES_VIEW = 'categories-view',
+    LOGGER = 'mail-logger',
 }
 
 export enum SentryMailPerformanceInitiatives {
