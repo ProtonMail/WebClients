@@ -3,12 +3,12 @@ import type { ScopeContext } from '@sentry/types';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { isProduction, traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { Logging } from '../../logging';
+import { logging } from '../../logging';
 
 const hasSentryMessage = (error: unknown): error is Error & { sentryMessage: string } =>
     error instanceof Error && 'sentryMessage' in error && typeof error.sentryMessage === 'string';
 
-const errorHandlingLogger = new Logging({ sentryComponent: 'drive-web-log' }).getLogger('bus-driver-error-handling');
+const errorHandlingLogger = logging.getLogger('bus-driver-error-handling');
 
 export function sendErrorReport(error: Error | unknown, additionalContext?: Partial<ScopeContext>) {
     let errorForReporting = error as Error;

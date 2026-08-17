@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { filterIgnoredFiles, shouldIgnoreFile } from './shouldIgnoreFile';
+import { filterIgnoredFiles, getIgnoredReason } from './shouldIgnoreFile';
 
 export interface FolderNode {
     name: string;
@@ -8,7 +8,13 @@ export interface FolderNode {
     subfolders: Map<string, FolderNode>;
 }
 
-export const buildFolderStructure = (files: FileList | File[]): FolderNode => {
+export interface FolderStructure {
+    root: FolderNode;
+    /** How many files each ignore pattern kept out of the queue */
+    ignoredFiles: Record<string, number>;
+}
+
+export const buildFolderStructure = (files: FileList | File[]): FolderStructure => {
     const allFiles = Array.from(files);
 
     if (allFiles.length === 0) {
@@ -30,6 +36,8 @@ export const buildFolderStructure = (files: FileList | File[]): FolderNode => {
         files: [],
         subfolders: new Map(),
     };
+
+    const ignoredFiles: Record<string, number> = {};
 
     for (const file of allFiles) {
         const relativePath = file.webkitRelativePath || file.name;
@@ -55,10 +63,13 @@ export const buildFolderStructure = (files: FileList | File[]): FolderNode => {
             }
         }
 
-        if (!shouldIgnoreFile(file)) {
+        const ignoredReason = getIgnoredReason(file);
+        if (ignoredReason) {
+            ignoredFiles[ignoredReason] = (ignoredFiles[ignoredReason] ?? 0) + 1;
+        } else {
             currentNode.files.push(file);
         }
     }
 
-    return root;
+    return { root, ignoredFiles };
 };
