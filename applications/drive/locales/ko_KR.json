@@ -349,7 +349,7 @@
         "버전 삭제"
       ],
       "Delete without saving": [
-        "저장하지 않고 삭제하기"
+        "저장 없이 삭제"
       ],
       "Deselect all": [
         "선택 해제"
@@ -358,7 +358,7 @@
         "세부사항"
       ],
       "Diagnostics": [
-        "진단"
+        "시스템 진단"
       ],
       "Discard": [
         "저장 안함"
@@ -412,7 +412,7 @@
         "다운로드 로그"
       ],
       "Download results": [
-        "결과 다운로드"
+        "다운로드 결과"
       ],
       "Drive Locked": [
         "Drive 잠김"
@@ -541,7 +541,7 @@
         "내 파일로 가기"
       ],
       "Go to parent": [
-        "상위 이동"
+        "상위로 이동"
       ],
       "Go to settings": [
         "설정으로 이동하기"
@@ -823,7 +823,7 @@
         "버튼 삭제"
       ],
       "Remove device": [
-        "기기 삭제"
+        "기기 제거"
       ],
       "Remove from album": [
         "앨범에서 제거"
@@ -838,7 +838,7 @@
         "기프트 코드 삭제"
       ],
       "Remove me": [
-        "나 제거하기"
+        "나를 제거하기"
       ],
       "Remove without saving": [
         "저장 없이 삭제"
@@ -1331,6 +1331,9 @@
       ],
       "Keep going": [
         "계속하기"
+      ],
+      "Stop here": [
+        "여기서 중단"
       ]
     },
     "Action: Docs": {
@@ -3558,7 +3561,7 @@
         "최소 ${ calendarsToFixCount }개의 캘린더를 선택 해제하거나"
       ],
       "Device name does not match": [
-        "디바이스 이름이 맞지 않습니다"
+        "기기 이름이 일치하지 않습니다."
       ],
       "Diagnostics failed": [
         "진단 실패"
@@ -3591,7 +3594,7 @@
         "컴퓨터 복호화 중 오류"
       ],
       "Error reading file": [
-        "파일 읽기 오류"
+        "파일을 읽는 중 오류가 발생했어요"
       ],
       "Expected structure attached": [
         "예상 구조 첨부됨"
@@ -3867,7 +3870,7 @@
         "이 플랜에서는 매입자 납부제도(Reverse charge)가 지원되지 않습니다."
       ],
       "Search failed": [
-        "검색 실패"
+        "검색에 실패했습니다"
       ],
       "Signature not verified": [
         "인증되지 않은 서명입니다."
@@ -4113,7 +4116,7 @@
         "검색할 수 없음: 스토리지 부족"
       ],
       "Something went wrong with search. Please try again later.": [
-        "검색에 문제가 발생했습니다. 나중에 다시 시도하세요."
+        "검색에 문제가 발생했습니다. 나중에 다시 시도해 주세요."
       ],
       "Something went wrong with search: Not enough storage space.": [
         "검색에 문제가 발생했습니다: 저장공간이 부족합니다."
@@ -4414,6 +4417,27 @@
       ],
       "File has no revision": [
         "파일에 수정 사항 없음"
+      ],
+      "Could not grant access to the organization key": [
+        "조직 키의 접근 권한을 부여할 수 없습니다"
+      ],
+      "Expiration date cannot be in the past": [
+        "만료일은 과거일 수 없습니다"
+      ],
+      "Failed to decrypt revision metadata": [
+        "수정 메타데이터를 복호화할 수 없음"
+      ],
+      "Move operation aborted": [
+        "이동 작업 중단됨"
+      ],
+      "Request aborted": [
+        "요청 중지됨"
+      ],
+      "This file has missing crypto material": [
+        "이 파일에 필요한 암호화 키가 누락되었습니다"
+      ],
+      "You can only leave items that are shared with you": [
+        "나와 공유된 항목에는 나갈 수만 있습니다."
       ]
     },
     "error": {
@@ -4551,7 +4575,7 @@
     },
     "Error message": {
       "Access denied": [
-        "액세스 거부됨"
+        "접근할 수 없습니다."
       ],
       "App currently unavailable": [
         "앱에서는 현재 사용 불가합니다."
@@ -4566,7 +4590,7 @@
         "내부 서버 오류"
       ],
       "Not found": [
-        "발견되지 않음"
+        "찾을 수 없음"
       ],
       "Oops, something went wrong": [
         "이런, 문제가 발생했습니다"
@@ -4931,7 +4955,7 @@
         "연락처"
       ],
       "Create new album": [
-        "새로운 앨범 생성"
+        "새 앨범 만들기"
       ],
       "Create new shared album": [
         "새 공유 앨범 만들기"
@@ -5610,7 +5634,7 @@
         "정말 휴지통을 비워 모든 항목을 삭제하시겠습니까?"
       ],
       "Are you sure you want to permanently delete": [
-        "이"
+        "해당 항목을 영구적으로 삭제하시겠습니까? :"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "정말 \"${ itemName }\"을(를) 휴지통에서 영구적으로 삭제하시겠습니까?"
@@ -5619,7 +5643,7 @@
         "정말 선택한 항목을 휴지통에서 영구적으로 삭제하시겠습니까?"
       ],
       "Are you sure you want to proceed?": [
-        "계속 진행하겠습니까?"
+        "계속 진행하시겠습니까?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "최소 ${ BETTER_PASSWORD_LENGTH }글자"
@@ -5916,7 +5940,7 @@
         "휴지통 및 스팸함으로 이동된지 30일이 경과한 이메일이 자동으로 삭제됩니다."
       ],
       "Empty folder": [
-        "비어 있는 폴더"
+        "빈 폴더"
       ],
       "Enabling auto-deletion…": [
         "자동 삭제 활성화 중…"
@@ -5928,7 +5952,7 @@
         "암호화됨"
       ],
       "Encrypted search is here": [
-        "암호화된 검색이 여기 있습니다"
+        "여기서 암호화된 검색을 찾을 수 있습니다"
       ],
       "End-to-end encrypted": [
         "종단간 암호화됨"
@@ -6024,7 +6048,7 @@
         "시작하기 위한 5GB 무료 암호화 스토리지"
       ],
       "from the version history?": [
-        "을(를) 버전 기록에서 영구적으로 삭제하시겠습니까?"
+        "(버전 기록에서의 항목)"
       ],
       "Geoblocking": [
         "차단된 콘텐츠"
@@ -6039,7 +6063,7 @@
         "회원님의 컴퓨터에 있는 파일을 동기화 하려면 데스크탑 앱을 설치하세요."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
-        "${ DRIVE_APP_NAME }에 대하여 알아보면 저장공간 3GB를 드립니다! 오늘 해봅시다."
+        "${ DRIVE_APP_NAME }를 둘러보고 저장공간 3GB를 받아보세요! 오늘 바로 시작헤 보세요."
       ],
       "Google Pay mark": [
         "Google Pay 표시"
@@ -6162,7 +6186,7 @@
         "대부분의 상황에서 VPN을 사용하는 것이 권장됩니다. 그러나 사이버 보안 위협이 가장 높을 수 있는 경우는 다음과 같습니다:"
       ],
       "It’s easy and secure": [
-        "쉽고 안전합니다"
+        "쉽고 안전하게"
       ],
       "Jan": [
         "1월"
@@ -6273,13 +6297,13 @@
         "계정 모니터링"
       ],
       "More": [
-        "더보기"
+        "더 보기"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "대다수의 공용 WiFi 네트워크는 안전하지만 일부 네트워크는 보안이 취약하여 사이버 위협에 노출됩니다. VPN이 트래픽을 암호화하여 사용자를 보호합니다."
       ],
       "Moving files": [
-        "파일 이동"
+        "파일 이동 중"
       ],
       "My Links": [
         "내 링크"
@@ -6501,7 +6525,7 @@
         "문서의 미리 보기가 지원되지 않습니다."
       ],
       "Previous versions are kept for ${ retentionLabel }": [
-        "이전 버전이 ${ retentionLabel } 으로 유지됩니다"
+        "이전 버전이 ${ retentionLabel }(으)로 유지됩니다"
       ],
       "Previous versions are not saved": [
         "이전 버전이 저장되지 않았습니다"
@@ -6567,7 +6591,7 @@
         "사진 복구 중... 탭을 닫지 마십시오"
       ],
       "Running diagnostics...": [
-        "진단 중..."
+        "분석 중..."
       ],
       "Saving...": [
         "저장 중..."
@@ -6579,7 +6603,7 @@
         "모바일 기기로 QR 코드를 스캔해보세요"
       ],
       "Scan to download": [
-        "다운로드하려면 스캔"
+        "스캔하여 다운로드"
       ],
       "Search cannot be enabled in this browser": [
         "이 브라우저에서 검색을 활성화할 수 없습니다"
@@ -6600,7 +6624,7 @@
         "이동할 폴더 선택"
       ],
       "Select all items for": [
-        "해당 달에 찍은 항목 선택:"
+        "해당 달의 모든 항목 선택:"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "업로드된 파일이나 폴더를 선택하고 링크를 생성하세요."
@@ -6690,7 +6714,7 @@
         "일부 항목의 작업에 실패했습니다"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "일부 파일들에 더 이상 접근할 수 없습니다. 파일 액세스를 복구하세요. ${ StartRecoveryButton }"
+        "일부 파일들에 더 이상 접근할 수 없습니다. 파일 접근을 복구하세요. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "이 앨범 내의 일부 사진이 타임라인에 저장되지 않았습니다. 앨범에서 사진을 삭제하면 해당 사진 또한 영구적으로 삭제됩니다."
@@ -6777,7 +6801,7 @@
         "아직 이동이 필요한 파일이 있습니다. 이동 관리자를 닫으면 모든 작업이 종료됩니다."
       ],
       "There is nothing to see here": [
-        "이곳엔 아무것도 없습니다."
+        "이곳엔 아무것도 없는 것 같아요"
       ],
       "This action will delete the link and revoke access for all users.": [
         "이 작업은 링크를 삭제하고 모든 사용자의 접근을 취소합니다."
@@ -6882,7 +6906,7 @@
         "비공개 검색을 활성화하려면, ${ DRIVE_APP_NAME }가 로컬에서 파일 인덱싱을 해야합니다."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "비공개 검색을 진정으로 활성화하려면, 로컬에서 사용자의 파일을 인덱싱해야 합니다. 계속 ${ DRIVE_APP_NAME }를 사용할 수 있습니다 - 인덱싱이 완료되면 알려 드리겠습니다."
+        "완전한 비공개 검색을 활성화하려면, 로컬에서 사용자의 파일을 색인해야 합니다. 계속 ${ DRIVE_APP_NAME }를 사용할 수 있습니다 - 인덱싱이 완료되면 알려 드리겠습니다."
       ],
       "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
         "진정한 비공개 검색을 활성화하려면, 로컬에서 사용자의 파일을 인덱싱해야 합니다. ${ DRIVE_APP_NAME }는 계속 정상적으로 사용할 수 있습니다. 인덱싱이 완료되면 알려드리겠습니다."
@@ -6960,7 +6984,7 @@
         "안타깝지만 파일이나 일부 데이터를 복호화할 수 없는 것으로 보입니다."
       ],
       "Unknown date": [
-        "알 수 없는 날짜"
+        "날짜 미상"
       ],
       "Unknown error": [
         "알 수 없는 오류"
@@ -7050,7 +7074,7 @@
         "경고"
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
-        "잘 하셨습니다. 이제 저장공간이 5GB로 확장되었습니다!"
+        "잘 하섰어요. 이제 저장공간이 5GB로 확장되었어요!"
       ],
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "현재 기술적인 문제가 발생했습니다. 앨범 관련 작업은 일시적으로 사용할 수 없습니다."
@@ -7098,7 +7122,7 @@
         "무엇을 시도하시겠습니까?"
       ],
       "What would you like to do?": [
-        "무엇을 하시겠습니까?"
+        "어떤 작업을 실행하시겠습니까?"
       ],
       "When working remotely": [
         "재택 근무시"
@@ -7107,7 +7131,7 @@
         "VPN에 연결하여 암호화 기술을 사용하여 IP 주소(기기에 할당된 고유 코드)를 숨길 수 있습니다."
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
-        "동기화된 기기인 ${ deviceName }을(를) 제거시 이 기기에서 내 컴퓨터에 추가된 모든 폴더는 ${ DRIVE_APP_NAME }에서 영구적으로 삭제됩니다."
+        "동기화된 기기에서 ${ deviceName }을(를) 제거하면 해당 기기의 내 컴퓨터에 추가된 모든 폴더는 ${ DRIVE_APP_NAME }에서 영구적으로 삭제됩니다."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
@@ -7203,7 +7227,7 @@
         "내 비밀번호나 다른 데이터가 제3자 서비스에서 유출되면 알림받으세요."
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "웰컴 보너스로 저장공간 3 GB 확장을 받을 수 있는 시간이 ${ expiresInDays } "
+        "${ expiresInDays }일 내에 3 GB 환영 보너스 저장 공간을 받고 "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "체험판 ${ planTitle } 구독이 있습니다. 체험 기간 이후로도 계속 구독을 사용하려면, 결제 수단을 추가해 주세요."
@@ -7338,7 +7362,7 @@
         "내 이전 비밀번호"
       ],
       "Your previous recovery phrase": [
-        "내 이전 복구 구문"
+        "내 이전 복구 키"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "예약된 플랜이 ${ renewalTime }에 시작하여 ${ cycle }개월마다 자동 갱신됩니다."
@@ -7578,7 +7602,7 @@
         "현재 ${ organizationName }에 소속된 ${ username }(으)로 로그인 했습니다."
       ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME }에서 로컬 검색 인덱스가 손상되어 더 이상 사용할 수 없음을 감지했습니다. 검색을 복원하려면 인덱스를 재구축하십시오."
+        "${ DRIVE_APP_NAME }의 로컬 검색 색인 데이터가 손상되었으며 더 이상 사용할 수 없습니다. 검색 기능을 복원하려면 색인을 다시 진행해야 합니다."
       ],
       "Data integrity check failed": [
         "데이터 무결성 검사 실패"
@@ -7587,13 +7611,13 @@
         "파일 전용 (사진 불가, ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME }) - 최대 총 100 GB, 100,000개 파일 및 파일 당 50 GB)"
       ],
       "Invitation confirmed": [
-        "초대 확인됨"
+        "초대 수락됨"
       ],
       "No populator states found.": [
-        "인구 통계 상태를 찾을 수 없습니다."
+        "생성기 상태를 알 수 없습니다."
       ],
       "Search is in an invalid state": [
-        "검색이 잘못된 상태입니다"
+        "검색이 유효하지 않은 상태입니다"
       ],
       "Upgrade to get more storage space": [
         "더 많은 저장 공간을 확보하려면 업그레이드하세요"
@@ -7669,6 +7693,30 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
         "뷰어에 대한 접근 권한을 변경한 후에는 \"${ fileName }\"(을)를 공유할 수 없습니다. 소유자 또는 공유 권한이 있는 편집자는 나의 편집 권한을 복원할 수 있습니다. 이 변경을 직접 되돌릴 수 없습니다."
+      ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME }가 로컬 검색 색인을 복호화할 수 없습니다. 검색 기능을 복원하려면 색인을 다시 실행해야 합니다."
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } 마크"
+      ],
+      "Author is not provided on public link": [
+        "작성자가 공개 링크에서 제공되지 않았습니다"
+      ],
+      "I have not finished this one yet.": [
+        "아직 마무리하지 않았어요."
+      ],
+      "Search data can't be read": [
+        "검색 데이터는 읽을 수 없습니다"
+      ],
+      "Thinking about this": [
+        "이것에 대해 생각해 보기"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "정말 많은 단계를 거쳐야될 수 있어요. 정말 계속하시겠어요?"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "이 거래를 완료하기 위해 새 브라우저 탭의 ${ IDEAL_BRAND_NAME }에 리디렉션됩니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
       ]
     },
     "info": {
@@ -8026,7 +8074,7 @@
         "이메일 암호화"
       ],
       "Enter device name": [
-        "기기 이름 입력"
+        "기기 이름을 입력하세요"
       ],
       "Expired": [
         "만료됨"
@@ -8521,7 +8569,7 @@
         "합의 없는 사적 촬영물"
       ],
       "Pending invitation": [
-        "대기 중인 초대장"
+        "초대장 대기 중"
       ],
       "Expired on ${ formatted }": [
         "${ formatted }에 만료됨"
@@ -8567,6 +8615,9 @@
       ],
       "Allow editors to change permissions and share.": [
         "편집자가 권한을 변경하거나 공유하도록 허용합니다."
+      ],
+      "Account holder name": [
+        "예금주 이름"
       ]
     },
     "Label for contact group color": {
@@ -8716,7 +8767,7 @@
         "설정"
       ],
       "Shared": [
-        "공유"
+        "공유됨"
       ],
       "Shared with me": [
         "나와 공유됨"
@@ -9645,6 +9696,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "확장된 접근을 포함하는 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "제한된 접근을 포함하는 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ]
     },
     "new_plans: feature highlight": {
@@ -10313,7 +10370,7 @@
         "선택된 항목이 목록에서 삭제되지 않았습니다."
       ],
       "Selected item was successfully removed from your list": [
-        "선택한 항목이 목록에서 성공적으로 삭제되었습니다."
+        "선택된 항목이 목록에서 성공적으로 삭제되었습니다"
       ],
       "Selected items were successfully removed from your list": [
         "선택된 항목이 목록에서 성공적으로 삭제되었습니다"
@@ -10424,13 +10481,13 @@
         "\"${ ellipsedName }\"의 휴지통에서 삭제를 실패했습니다"
       ],
       "\"${ ellipsedName }\" restored from trash": [
-        "\"${ ellipsedName }\" 이(가) 휴지통에서 복구되었습니다"
+        "\"${ ellipsedName }\"이(가) 휴지통에서 복구되었습니다"
       ],
       "Failed to load sharing details": [
         "공유 상세 정보를 불러올 수 없음"
       ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
-        "\"${ ellipsedName }\" 항목이 휴지통에서 영구적으로 삭제되었습니다"
+        "\"${ ellipsedName }\" 이(가) 휴지통에서 완전히 삭제되었습니다"
       ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" 항목이 이동되었습니다"
@@ -10589,7 +10646,7 @@
         "계속"
       ],
       "Create a document": [
-        "문서 생성하기"
+        "문서 생성"
       ],
       "Get started": [
         "시작하기"
@@ -10604,7 +10661,7 @@
         "구성원 초대"
       ],
       "Maybe Later": [
-        "나중에 시도하기"
+        "나중에"
       ],
       "Maybe later": [
         "나중에"
@@ -10616,7 +10673,7 @@
         "건너뛰기"
       ],
       "Skip for now": [
-        "지금은 건너뛰기"
+        "일단 건너뛰기"
       ],
       "Try the app": [
         "앱 체험하기"
@@ -10648,7 +10705,7 @@
         "선호하는 테마를 선택하세요"
       ],
       "Collaborate on documents": [
-        "문서에서 협동하기"
+        "문서에서 협업하기"
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
         "라이트 혹은 다크 모드 중 어떤 ${ DRIVE_APP_NAME }을 선호하세요? 가장 영감을 주는 색상을 선택하세요."
@@ -10708,7 +10765,7 @@
         "플랜에 포함된 저장공간을 사용하여 더 많은 파일을 업로드하고, 지속적으로 이용하세요."
       ],
       "Manage access": [
-        "접근 관리"
+        "접근 권한 관리"
       ],
       "Organize files right from your desktop": [
         "데스크톱에서 바로 파일 정리하기"
@@ -11093,6 +11150,9 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
         "${ IDEAL_BRAND_NAME }가 유로화 결제만 지원하므로 사용자의 통화가 유로화(€)로 변경되었습니다."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "${ IDEAL_BRAND_NAME }(으)로 결제하기"
       ]
     },
     "Payments.Error": {
@@ -11113,6 +11173,12 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_BRAND_NAME }을(를) 구성할 수 없습니다, 다시 시도해 주세요."
+      ],
+      "Please enter the account holder name": [
+        "예금주 이름을 입력해 주세요"
       ]
     },
     "Payments.error": {
@@ -11280,7 +11346,7 @@
         "새 폴더 이름을 입력하세요"
       ],
       "Enter device name": [
-        "기기 이름을 입력하세요"
+        "기기 이름 입력"
       ],
       "Enter your email address": [
         "사용자의 이메일 주소를 입력해주세요"
@@ -12171,7 +12237,7 @@
         "이 항목의 링크가 Drive에 저장되었어요. '나와 공유됨' 섹션에서 추후 접근이 가능합니다."
       ],
       "Encrypted search is here": [
-        "암호화된 검색이 여기 있습니다"
+        "여기서 암호화된 검색을 찾을 수 있습니다"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "이제 데이터를 안전하게 지키면서 쉽게 드라이브 파일을 검색할 수 있습니다."
@@ -13017,7 +13083,7 @@
         "${ feature }이(가) 이제 활성 상태입니다"
       ],
       "${ freeUploadLength } of free uploads.": [
-        "${ freeUploadLength }간의 무료 업로드 시간."
+        "${ freeUploadLength }개의 무료 업로드."
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } 개의 파일 다운로드에 실패함"
@@ -13173,7 +13239,7 @@
         "${ BRAND_NAME } 의 보너스를 잃는 것을 확인합니다"
       ],
       "Confirmation required": [
-        "확인이 필요함"
+        "최종 확인 필요"
       ],
       "Connect apps and devices": [
         "앱 및 장치 연결하기"
@@ -13200,7 +13266,7 @@
         "쿠폰"
       ],
       "Create a new file": [
-        "새 파일 만들기"
+        "새 파일 생성"
       ],
       "Create a new folder": [
         "새 폴더 만들기"
@@ -13506,13 +13572,13 @@
         "위치"
       ],
       "Logger": [
-        "로거"
+        "로그 기록기"
       ],
       "Logs": [
         "로그"
       ],
       "Make a copy": [
-        "복사본 생성"
+        "복사본 만들기"
       ],
       "Make a secure connection your default": [
         "보안 연결을 기본값으로 설정하세요"
@@ -13575,7 +13641,7 @@
         "연사 사진 없음"
       ],
       "No favorites": [
-        "즐겨찾기 없음"
+        "즐겨찾기가 없습니다."
       ],
       "No Live Photos": [
         "Live Photo 사진 없음"
@@ -13731,7 +13797,7 @@
         "새 코드 요청"
       ],
       "Restore your files": [
-        "내 파일 복구"
+        "파일 복원"
       ],
       "Reverse charge not supported": [
         "매입자 납부제도(Reverse charge)가 지원되지 않습니다."
@@ -13797,7 +13863,7 @@
         "나와 공유됨"
       ],
       "Show actions": [
-        "동작 표시"
+        "작업 보기"
       ],
       "Sign in and grant access": [
         "로그인 및 엑세스 권한 부여"
@@ -14055,7 +14121,7 @@
         "작업"
       ],
       "Global": [
-        "글로벌"
+        "전체"
       ],
       "Search": [
         "검색"
@@ -14127,7 +14193,7 @@
         "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ],
       "Index populators": [
-        "인덱스 구성기"
+        "색인 생성기"
       ],
       "Users and addresses": [
         "사용자 및 주소"
@@ -14306,7 +14372,7 @@
     },
     "Upsell": {
       "Get Drive for Business": [
-        "Drive for Business 구매"
+        "Drive for Business 구독"
       ]
     },
     "Validation": {
@@ -14762,6 +14828,9 @@
       ],
       "User Admin": [
         "사용자 관리자"
+      ],
+      "Organization Admin": [
+        "조직 관리자"
       ]
     },
     "Role description": {
@@ -14827,6 +14896,14 @@
       ],
       "attributes": [
         "속성"
+      ],
+      "content key": [
+        "콘텐츠 키"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "이 지불을 확인함으로써, ${ BRAND_NAME }과 당사 지불 서비스 제공자인 Stripe가 사용자의 은행 계좌에서 인출하도록 동의하는 것으로 간주합니다. 은행과의 합의 조건에 따라 인출일로부터 8주 이내에 환불을 받을 수 있습니다."
       ]
     }
   }
