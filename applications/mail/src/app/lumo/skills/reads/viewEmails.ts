@@ -4,7 +4,7 @@ import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/cont
 
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import type { AgentEmailPage } from './rows';
-import { buildAgentEmailRows, formatAgentEmailRows } from './rows';
+import { BULK_ACTION_NOTE, buildAgentEmailRows, formatAgentEmailRows } from './rows';
 
 export const viewEmailsDefinition: ToolDefinition<Record<string, never>, AgentEmailPage> = {
     name: 'view_emails',
@@ -13,7 +13,8 @@ export const viewEmailsDefinition: ToolDefinition<Record<string, never>, AgentEm
         'List the emails currently visible on the user\'s screen — metadata only (email-… reference, sender, subject, date, read/unread, folder, labels, attachment flag), never message bodies. Use when the user refers to what they can see ("these emails", "the ones on screen") or to triage the current view. To read an email\'s contents, call read_email with a reference instead. Returns the on-screen rows and a total count.',
     paramsSchema: { type: 'object', additionalProperties: false, required: [], properties: {} },
     serializeForLumo: (result) =>
-        formatAgentEmailRows(result.rows, result.total) || 'No emails are currently shown on screen.',
+        formatAgentEmailRows(result.rows, result.total) ||
+        (result.bulkActionRunning ? BULK_ACTION_NOTE : 'No emails are currently shown on screen.'),
     summarizeChip: (_params, result) => {
         const count = result.rows.length;
         return {

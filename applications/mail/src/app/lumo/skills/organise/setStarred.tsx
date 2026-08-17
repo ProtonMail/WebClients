@@ -3,13 +3,13 @@ import { c } from 'ttag';
 import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcStar } from '@proton/icons/icons/IcStar';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
-import { MoveItemsCard } from '@proton/lumo-ui';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 
 import { resolveElements } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
+import { emailIds, hasEmailSelection, referenceName, renderEmailSelectionBody } from './emailSelection';
 
 export interface SetStarredParams {
     ids: string[];
@@ -68,25 +68,14 @@ export const createSetStarredHandler =
 export const setStarredCardRenderer: CardRenderer = {
     icon: IcStar,
     title: (action) => (action.starred ? c('Title').t`Star emails` : c('Title').t`Unstar emails`),
-    renderBody: ({ action, params, labels, onChange }) => {
-        const proposedIds = (action.ids as string[]) ?? [];
-        const selectedIds = (params.ids as string[]) ?? [];
-        return (
-            <MoveItemsCard
-                items={proposedIds.map((id) => ({ id, label: labels[id] ?? id }))}
-                selectedIds={selectedIds}
-                onToggle={(id, checked) =>
-                    onChange({ ...params, ids: checked ? [...selectedIds, id] : selectedIds.filter((x) => x !== id) })
-                }
-            />
-        );
-    },
+    renderBody: renderEmailSelectionBody,
+    canApply: hasEmailSelection,
     detail: (action, labels) => {
-        const proposedIds = (action.ids as string[]) ?? [];
-        if (!proposedIds.length) {
+        const ids = emailIds(action);
+        if (!ids.length) {
             return undefined;
         }
-        return proposedIds.map((id) => labels[id] ?? id).join(', ');
+        return ids.map((id) => referenceName(id, labels)).join(', ');
     },
 };
 

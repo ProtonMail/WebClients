@@ -6,6 +6,7 @@
  */
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { HUMAN_TO_LABEL_IDS } from '@proton/shared/lib/mail/constants';
 import { ALMOST_ALL_MAIL, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
@@ -45,6 +46,7 @@ const harness = ({
     esStatus = {},
     usedEncryptedSearch = true,
     settles = true,
+    blockedLabelIDs = [],
 }: {
     landing?: Element[];
     folders?: Folder[];
@@ -57,6 +59,8 @@ const harness = ({
     usedEncryptedSearch?: boolean;
     /** False leaves the list loading forever, so the read runs out its settle timeout. */
     settles?: boolean;
+    /** Labels a bulk action is working through: the list is cleared and blocked from reloading there. */
+    blockedLabelIDs?: string[];
 } = {}) => {
     const { store, change } = fakeStore();
     const pushed: string[] = [];
@@ -73,7 +77,11 @@ const harness = ({
         const rawID = getParamsFromPathname(pathname).params.labelID;
         const labelID = HUMAN_TO_LABEL_IDS[rawID] || rawID;
         const filed = landing.map((element) => ({ ...element, Labels: [{ ID: labelID, ContextNumMessages: 1 }] }));
-        change({ ...settledView({ labelID, hash, elements: filed as Element[] }), usedEncryptedSearch });
+        change({
+            ...settledView({ labelID, hash, elements: filed as Element[] }),
+            usedEncryptedSearch,
+            taskRunning: { labelIDs: blockedLabelIDs, timeoutID: undefined },
+        });
     };
 
     const deps = {
@@ -258,6 +266,20 @@ describe('open_folder handler', () => {
         expect(result.location).toBe('Spam');
         expect(result.rows.map((row) => row.subject)).toEqual(['Junk offer']);
         expect(hashOf()).toBe('');
+    });
+
+    // A mark-all clears its location's list and blocks it from reloading, so an open lands on nothing. Left
+    // unsaid, the model reports the location as empty; and without the wait's short-circuit it would first
+    // sit out the full settle timeout waiting for a page that cannot arrive.
+    it('reports a location a bulk action is still emptying, rather than calling it empty', async () => {
+        jest.useFakeTimers();
+        const { deps, references } = harness({ blockedLabelIDs: [MAILBOX_LABEL_IDS.INBOX] });
+
+        const result = await createOpenFolderHandler(deps)(openParams({ location: 'inbox' }), { references });
+
+        expect(result.rows).toEqual([]);
+        expect(result.bulkActionRunning).toBe(true);
+        expect(jest.getTimerCount()).toBe(0);
     });
 
     it('opens a custom folder by reference, under its own name', async () => {
