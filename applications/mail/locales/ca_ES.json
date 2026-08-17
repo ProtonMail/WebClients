@@ -1526,7 +1526,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -5680,6 +5681,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
+      ],
+      "Could not grant access to the organization key": [
+        "No s'ha pogut concedir accés a la clau de l'organització"
       ]
     },
     "error": {
@@ -8092,8 +8096,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -10982,6 +10985,9 @@
       ],
       "Write-chain drain after last line": [
         "Buidatge de la cadena d'escriptura després de l'última línia"
+      ],
+      "Account holder name": [
+        "Nom del titular del compte"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13472,6 +13478,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "No s'ha pogut inicialitzar ${ IDEAL_BRAND_NAME }. Torneu-ho a provar més tard."
+      ],
+      "Please enter the account holder name": [
+        "Introduïu el nom del titular del compte"
       ]
     },
     "Payments.error": {

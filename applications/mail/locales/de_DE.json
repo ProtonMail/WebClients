@@ -1526,7 +1526,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1726,6 +1727,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Run realistic session": [
+        "Realistische Sitzung durchführen"
+      ],
+      "Write ${ count } logs": [
+        "${ count } Protokolle schreiben"
       ]
     },
     "action": {
@@ -4418,6 +4425,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "No ads. No trackers": [
+        "Keine Werbung. Keine Tracker"
       ]
     },
     "description": {
@@ -5665,6 +5675,9 @@
       ],
       "Organization does not have enough storage available": [
         "Organisation hat nicht genügend Speicherplatz verfügbar"
+      ],
+      "Could not grant access to the organization key": [
+        "Der Zugriff auf den Organisationsschlüssel konnte nicht gewährt werden"
       ]
     },
     "error": {
@@ -8074,8 +8087,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -9649,6 +9661,45 @@
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "Um diesen Benutzer zu übernehmen, hebe die Sperrung in deiner ${ provider.adminConsoleName } auf."
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } markieren"
+      ],
+      "I have not finished this one yet.": [
+        "Das habe ich noch nicht fertiggestellt."
+      ],
+      "Not supported by this browser": [
+        "Von diesem Browser nicht unterstützt"
+      ],
+      "Searched ${ targetName }": [
+        "Nach ${ targetName } gesucht"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Nach E-Mail von ${ sender } gesucht"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Nach E-Mails an ${ recipient } gesucht"
+      ],
+      "Searched for “${ keyword }”": [
+        "Nach \"${ keyword }\" gesucht"
+      ],
+      "Searched your mail": [
+        "Deine E-Mail durchsucht"
+      ],
+      "Star emails": [
+        "E-Mails markieren"
+      ],
+      "Unstar emails": [
+        "E-Mail-Markierung aufheben"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Wir werden dich in einem neuen Browser-Tab zu ${ IDEAL_BRAND_NAME } umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Schreibt ${ REALISTIC_ENTRIES } realistische Protokollzeilen, die sich über eine Minute verteilen — wie bei einer echten Sitzung, nicht alle auf einmal. Benötigt etwa eine Minute. Bitte diesen Tab aktiv halten: Frame-Messungen pausieren im Hintergrund."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Schreibt realistische Protokollzeilen direkt hintereinander und liest sie anschließend alle wieder ein. Zeigt, wie Schreib- und Lese-/Exportkosten mit der Anzahl gespeicherter Einträge skalieren."
       ]
     },
     "info": {
@@ -10859,6 +10910,60 @@
       ],
       "Duration": [
         "Dauer"
+      ],
+      "Account holder name": [
+        "Name des Kontoinhabers"
+      ],
+      "Burst write": [
+        "Burst-Schreiben"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Angebote, Aktionen und Marketing-E-Mails"
+      ],
+      "Dropped frames": [
+        "Ausgelassene Frames"
+      ],
+      "Encrypt": [
+        "Verschlüsseln"
+      ],
+      "Entries": [
+        "Einträge"
+      ],
+      "Export size": [
+        "Exportgröße"
+      ],
+      "IndexedDB store": [
+        "IndexedDB-Speicher"
+      ],
+      "Log performance": [
+        "Protokollleistung"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Längere Aufgaben (≥ 50 MS)"
+      ],
+      "No unread conversations": [
+        "Keine ungelesenen Unterhaltungen"
+      ],
+      "No unread messages": [
+        "Keine ungelesenen Nachrichten"
+      ],
+      "Read / export": [
+        "Lesen / exportieren"
+      ],
+      "Realistic session": [
+        "Realistische Sitzung"
+      ],
+      "Sum of write() calls": [
+        "Anzahl der write()-Aufrufe"
+      ],
+      "Write": [
+        "Schreiben"
+      ],
+      "Write (whole session)": [
+        "Schreiben (ganze Sitzung)"
+      ],
+      "Write-chain drain after last line": [
+        "Schreibkette nach der letzten Zeile leeren"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12170,6 +12275,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent mit erweitertem Zugriff"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent mit eingeschränktem Zugriff"
       ]
     },
     "new_plans: feature highlight": {
@@ -13314,6 +13425,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Mit ${ IDEAL_BRAND_NAME } bezahlen"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_BRAND_NAME } nur Euro unterstützen."
       ]
     },
     "Payments.Error": {
@@ -13334,6 +13451,12 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Deine Karte wurde abgelehnt. Bitte versuche es mit einer anderen Karte oder wende dich an deine Bank, um die Belastung zu autorisieren."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Die Initialisierung von ${ IDEAL_BRAND_NAME } ist fehlgeschlagen. Bitte versuche es später erneut."
+      ],
+      "Please enter the account holder name": [
+        "Bitte den Namen des Kontoinhabers eingeben"
       ]
     },
     "Payments.error": {
@@ -14012,6 +14135,9 @@
       ],
       "User Admin": [
         "Benutzeradministrator"
+      ],
+      "Organization Admin": [
+        "Organisationsadministrator"
       ]
     },
     "Role description": {
@@ -16965,6 +17091,12 @@
       ],
       "Domain names": [
         "Domainnamen"
+      ],
+      "Star emails": [
+        "E-Mails markieren"
+      ],
+      "Unstar emails": [
+        "E-Mail-Markierung aufheben"
       ]
     },
     "Title header for keys table": {
@@ -17594,6 +17726,11 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Mit der Bestätigung dieser Zahlung ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, den entsprechenden Betrag von deinem Konto abzubuchen. Eine Rückerstattung kannst du innerhalb von 8 Wochen ab dem Datum der Abbuchung gemäß den Bedingungen deines Vertrags mit deiner Bank beantragen."
       ]
     }
   }

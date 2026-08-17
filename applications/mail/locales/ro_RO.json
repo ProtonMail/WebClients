@@ -1527,7 +1527,9 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie"
+        "Aprobare cheie",
+        "Aprobare chei",
+        "Aprobare chei"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -5731,6 +5733,9 @@
       ],
       "You do not have access to this shared item": [
         "Nu aveți acces la acest articol."
+      ],
+      "Could not grant access to the organization key": [
+        "Nu s-a putut acorda acces la cheia organizației."
       ]
     },
     "error": {
@@ -8224,9 +8229,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -11157,6 +11160,9 @@
       ],
       "Write-chain drain after last line": [
         "Ștergerea șirului de scriere după ultima linie"
+      ],
+      "Account holder name": [
+        "Nume titular cont"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13699,6 +13705,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "Eșuare inițializare ${ IDEAL_BRAND_NAME }. Reîncercați."
+      ],
+      "Please enter the account holder name": [
+        "Introduceți numele titularului contului"
       ]
     },
     "Payments.error": {
