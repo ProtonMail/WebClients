@@ -15,6 +15,12 @@ im.$media-expressions: $media-expressions;
 	--drawer-width: #{rem(300)};
 }
 
+// Lumo's chat panel is wider than the standard drawer tabs. Scoped to both classes so it beats
+// `.drawer-is-open` on specificity rather than on source order.
+.drawer-is-open.drawer-is-lumo {
+	--drawer-width: #{rem(420)};
+}
+
 .drawer-app {
 	inline-size: var(--drawer-width);
 	contain: content;
