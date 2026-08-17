@@ -1,7 +1,9 @@
 import { AbortError as SdkAbortError } from '@proton/drive';
+import { Document, Engine, Value } from '@proton/proton-foundation-search';
 
 import { InvalidIndexerState, SearchLibraryError, classifyError, isRepairableError } from '../../shared/errors';
-import { engineCall, engineCallAsync, engineStream, maybeWrapAsSearchLibraryError } from './engineCall';
+import { setupRealSearchLibraryWasm } from '../../testing/setupRealSearchLibraryWasm';
+import { engineCall, engineCallAsync, engineStream, isWasmPanic, maybeWrapAsSearchLibraryError } from './engineCall';
 
 /** Shape of a raw wasm-bindgen throw: a plain Error with nothing to classify on. */
 const rustError = (message: string) => new Error(message);
@@ -40,6 +42,19 @@ describe('maybeWrapAsSearchLibraryError', () => {
         it('wraps non-Error throws', () => {
             expect(maybeWrapAsSearchLibraryError('commit', 'boom')).toBeInstanceOf(SearchLibraryError);
         });
+
+        it('leaves the message alone when no panic was captured', () => {
+            // A panic with no hook output (and any non-panic error) keeps the plain message: the
+            // panic suffix is only ever added from a real capture.
+            expect(maybeWrapAsSearchLibraryError('commit', new WebAssembly.RuntimeError('unreachable'))).toHaveProperty(
+                'message',
+                'Search library WASM failed: commit'
+            );
+            expect(maybeWrapAsSearchLibraryError('insert', rustError('boom'))).toHaveProperty(
+                'message',
+                'Search library WASM failed: insert'
+            );
+        });
     });
 
     describe('passes through errors that already carry a meaning', () => {
@@ -74,6 +89,62 @@ describe('maybeWrapAsSearchLibraryError', () => {
             const e = new SearchLibraryError('Search library WASM failed: insert', rustError('boom'));
             expect(maybeWrapAsSearchLibraryError('commit', e)).toBe(e);
         });
+    });
+});
+
+describe('isWasmPanic', () => {
+    it('recognises a Rust panic', () => {
+        expect(isWasmPanic(new WebAssembly.RuntimeError('unreachable'))).toBe(true);
+    });
+
+    it('sees through our own wrapper', () => {
+        const wrapped = maybeWrapAsSearchLibraryError('commit', new WebAssembly.RuntimeError('unreachable'));
+        expect(isWasmPanic(wrapped)).toBe(true);
+    });
+
+    it('rejects errors that did not abort the WASM', () => {
+        // A wasm-bindgen error returned through a Result is a plain Error, not a panic: nothing is
+        // poisoned and no panic text exists for it.
+        expect(isWasmPanic(rustError('null pointer passed to rust'))).toBe(false);
+        expect(isWasmPanic(new SearchLibraryError('Search library WASM failed: insert', rustError('boom')))).toBe(
+            false
+        );
+        expect(isWasmPanic(new DOMException('aborted', 'AbortError'))).toBe(false);
+        expect(isWasmPanic(undefined)).toBe(false);
+    });
+});
+
+describe('a real Rust panic', () => {
+    // The only deterministic WASM panic reachable from JS: the library panics when `next()` is called
+    // again with a `Load` event still unserved.
+    setupRealSearchLibraryWasm();
+
+    it('reaches the error message with its Rust location', () => {
+        const engine = Engine.builder().build();
+        const write = engine.write();
+        if (!write) {
+            expect(write).toBeDefined();
+            return;
+        }
+        const doc = new Document('doc-1');
+        doc.addAttribute('name', Value.text('hello world'));
+        write.insert(doc);
+        const execution = write.commit();
+        execution.next();
+
+        let panic: unknown;
+        try {
+            execution.next();
+        } catch (e) {
+            panic = e;
+        }
+
+        expect(maybeWrapAsSearchLibraryError('commit: next event', panic)).toHaveProperty(
+            'message',
+            expect.stringMatching(
+                /^Search library WASM failed: commit: next event \(rust panic: panicked at .+load event was not handled.+\)$/
+            )
+        );
     });
 });
 

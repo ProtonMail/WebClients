@@ -19,6 +19,7 @@ import { IndexBlobStore } from './IndexBlobStore';
 import { IndexReader } from './IndexReader';
 import { IndexWriter } from './IndexWriter';
 import { engineCall, maybeWrapAsSearchLibraryError } from './engineCall';
+import { installWasmPanicCapture } from './wasmPanic';
 
 export { IndexKind } from '../../shared/types';
 
@@ -37,11 +38,19 @@ let wasmInit: Promise<InitOutput> | undefined;
  */
 async function initWasm(): Promise<InitOutput> {
     if (!wasmInit) {
-        wasmInit = init().catch((error: unknown) => {
-            wasmInit = undefined;
-            searchMetrics.markSearchOtherError({ error });
-            throw error;
-        });
+        wasmInit = init()
+            .catch((error: unknown) => {
+                wasmInit = undefined;
+                searchMetrics.markSearchOtherError({ error });
+                throw error;
+            })
+            // Chained rather than called at the top: `setPanicHook()` is a WASM export, so it can
+            // only be installed once the module is instantiated. Every caller awaits this same
+            // promise, so no engine is ever built before the hook is in place.
+            .then((output) => {
+                installWasmPanicCapture();
+                return output;
+            });
     }
     return wasmInit;
 }

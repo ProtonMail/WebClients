@@ -1,4 +1,5 @@
 import { SearchLibraryError, classifyError, isAbortError } from '../../shared/errors';
+import { takeLastWasmPanic } from './wasmPanic';
 
 /**
  * Errors that must keep their identity when they pass through an engine call.
@@ -14,8 +15,31 @@ function isPassThrough(e: unknown): boolean {
     return isAbortError(e) || classifyError(e).kind === 'permanent';
 }
 
+/**
+ * Whether the error comes from a Rust panic, which aborts rather than unwinds and so surfaces as a
+ * `WebAssembly.RuntimeError` carrying no message of its own. The real message is only available from
+ * the panic hook, see `wasmPanic.ts`.
+ *
+ * A handful of non-panic WASM aborts (out-of-bounds access, indirect call mismatch) look the same
+ * from JS and match too; for them no panic text exists and the message stays as it is.
+ */
+export function isWasmPanic(e: unknown): boolean {
+    if (e instanceof WebAssembly.RuntimeError) {
+        return true;
+    }
+    // Our own wrapper is transparent here, so callers can ask the question about a caught error
+    // whether or not it has already crossed an engine boundary.
+    return e instanceof SearchLibraryError && isWasmPanic(e.cause);
+}
+
 export function maybeWrapAsSearchLibraryError(operation: string, e: unknown): unknown {
-    return isPassThrough(e) ? e : new SearchLibraryError(`Search library WASM failed: ${operation}`, e);
+    if (isPassThrough(e)) {
+        return e;
+    }
+
+    const panic = isWasmPanic(e) ? takeLastWasmPanic() : undefined;
+    const rustPanic = panic ? ` (rust panic: ${panic})` : '';
+    return new SearchLibraryError(`Search library WASM failed: ${operation}${rustPanic}`, e);
 }
 
 /** Wrap a synchronous engine call. */
