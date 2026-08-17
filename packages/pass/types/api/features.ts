@@ -6,6 +6,7 @@ export enum PassFeature {
     PassAutofillUrlAdvancedModes = 'PassAutofillUrlAdvancedModes',
     PassAutofillUrlRegex = 'PassAutofillUrlRegex',
     PassAllowCreditCardFreeUsers = 'PassAllowCreditCardFreeUsers',
+    PassAutofillModelExperimentGroup = 'PassAutofillModelExperimentGroup',
     PassBasicAuthAutofill = 'PassBasicAuthAutofill',
     PassContentScriptPopoverKillSwitch = 'PassContentScriptPopoverKillSwitch',
     PassContextMenu = 'PassContextMenu',
@@ -60,3 +61,14 @@ export type FeatureFlagsResponse = {
     Code: number;
     toggles: FeatureFlagToggle[];
 };
+
+export type AutofillModelExperimentGroup = 'control' | 'challenger';
+
+const AutofillModelExperimentGroupValues: string[] = ['control', 'challenger'] satisfies AutofillModelExperimentGroup[];
+
+export const isAutofillModelExperimentGroup = (name: string): name is AutofillModelExperimentGroup =>
+    AutofillModelExperimentGroupValues.includes(name);
+
+/** Used whenever the flag/variant is unavailable (disabled, not yet fetched,
+ * or the features request failed/timed out). */
+export const DEFAULT_AUTOFILL_MODEL_EXPERIMENT_GROUP: AutofillModelExperimentGroup = 'control';

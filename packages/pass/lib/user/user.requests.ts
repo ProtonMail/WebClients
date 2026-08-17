@@ -9,7 +9,7 @@ import type {
 } from '@proton/pass/store/reducers';
 import type { Maybe } from '@proton/pass/types';
 import type { FeatureFlagsResponse } from '@proton/pass/types/api/features';
-import { PassFeaturesValues } from '@proton/pass/types/api/features';
+import { PassFeature, PassFeaturesValues, isAutofillModelExperimentGroup } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
@@ -28,7 +28,7 @@ export const getFeatureFlags = async (webExtensionId: Maybe<string>): Promise<Fe
         ...(EXTENSION_BUILD ? { params: { browserFamily: BUILD_TARGET, webExtensionId } } : {}),
     });
 
-    return PassFeaturesValues.reduce<FeatureFlagAndVariantState>(
+    const result = PassFeaturesValues.reduce<FeatureFlagAndVariantState>(
         (acc, feature) => {
             const toggle = toggles.find((toggle) => toggle.name === feature);
             acc.features[feature] = Boolean(toggle);
@@ -44,6 +44,15 @@ export const getFeatureFlags = async (webExtensionId: Maybe<string>): Promise<Fe
         },
         { features: {}, variants: {} }
     );
+
+    if (result.features[PassFeature.PassAutofillModelExperimentGroup]) {
+        const name = result.variants[PassFeature.PassAutofillModelExperimentGroup]?.name;
+        if (!name || !isAutofillModelExperimentGroup(name)) {
+            logger.warn(`[User] Unrecognized "PassAutofillModelExperimentGroup" variant: "${name ?? 'none'}"`);
+        }
+    }
+
+    return result;
 };
 
 export const getUserAccess = async (): Promise<HydratedAccessState> => {
