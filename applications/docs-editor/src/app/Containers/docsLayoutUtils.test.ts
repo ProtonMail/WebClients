@@ -72,19 +72,17 @@ describe('getDocsLayoutColumnWidths', () => {
 })
 
 describe('getEditorBleedArea', () => {
-  it('centers wide content in the full viewport when no side panels are visible', () => {
+  it('leaves both sides unconstrained when no side panels are visible', () => {
     expect(getEditorBleedArea({ left: 384, editor: 832, right: 384 }, 0, 0)).toEqual({
       inlineStartInset: 0,
       inlineEndInset: 0,
-      centerOffset: -392,
     })
   })
 
-  it('moves the editor bleed area to the inline end of a visible TOC', () => {
+  it('reserves space for a visible TOC', () => {
     expect(getEditorBleedArea({ left: 384, editor: 832, right: 384 }, 300, 0)).toEqual({
       inlineStartInset: 300,
       inlineEndInset: 0,
-      centerOffset: -242,
     })
   })
 
@@ -92,7 +90,6 @@ describe('getEditorBleedArea', () => {
     expect(getEditorBleedArea({ left: 68, editor: 832, right: 300 }, 0, 0)).toEqual({
       inlineStartInset: 0,
       inlineEndInset: 0,
-      centerOffset: -76,
     })
   })
 
@@ -100,7 +97,6 @@ describe('getEditorBleedArea', () => {
     expect(getEditorBleedArea({ left: 68, editor: 832, right: 300 }, 0, 300)).toEqual({
       inlineStartInset: 0,
       inlineEndInset: 300,
-      centerOffset: -226,
     })
   })
 
@@ -108,7 +104,6 @@ describe('getEditorBleedArea', () => {
     expect(getEditorBleedArea({ left: 200, editor: 800, right: 200 }, 300, 0)).toEqual({
       inlineStartInset: 200,
       inlineEndInset: 0,
-      centerOffset: -108,
     })
   })
 })
