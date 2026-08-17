@@ -40,7 +40,6 @@ import paypalTemplateString from './templates/paypal.html?raw';
 import warningIcon from './templates/warningicon.html?raw';
 import { trackFocus } from './ui-utils';
 
-export const FALLBACK_USERNAME: string = 'fallback';
 export const FALLBACK_EMAIL: string = 'fallback@payments.protontech.ch';
 
 function getChargebeeFormWrapper(): HTMLElement {
@@ -561,7 +560,7 @@ async function renderIdeal() {
         try {
             currentPaymentIntent = event.paymentIntent;
 
-            userName = event.userName || FALLBACK_USERNAME;
+            userName = event.userName;
             userEmail = currentPaymentIntent?.email || FALLBACK_EMAIL;
 
             const button = document.querySelector<HTMLButtonElement>('#ideal-button');
