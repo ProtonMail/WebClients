@@ -31,8 +31,13 @@ export const createArtifactToolExecutor: ClientToolExecutor = {
                     'a nested `<section>` inside one makes a vertical sub-slide), and nothing else: no ' +
                     '`<html>`/`<head>`/`<body>`, and no `<script>`/`<style>` tags of your own — the app ' +
                     'supplies the slide library, theme, and initialization, so a full document or your own ' +
-                    'script/style tags would be redundant or conflict with it. To revise something you ' +
-                    'already created earlier in this conversation, call this again with the exact same ' +
+                    'script/style tags would be redundant or conflict with it. The one exception: to include ' +
+                    'a chart on a presentation slide, embed a single Vega-Lite v5 spec as ' +
+                    '`<script type="application/lumo-vega-lite+json">{...}</script>` inside that slide\'s ' +
+                    '`<section>` (this script never runs — the app renders it to a static image — so it is ' +
+                    'not "your own script"); the spec\'s `data` must use inline `values`, never `url`. To ' +
+                    'revise something you already created earlier in this conversation, call this again ' +
+                    'with the exact same ' +
                     '`id` and the full updated content (never a diff or partial update); use a new `id` ' +
                     "only for a genuinely new, unrelated artifact. If the user's message references an " +
                     'artifact by its id, reuse that same id. Write a brief intro in your reply before ' +
