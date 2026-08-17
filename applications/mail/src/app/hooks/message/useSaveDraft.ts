@@ -96,13 +96,13 @@ const useUpdateDraft = () => {
             }
 
             if (error.data.Code === SAVE_DRAFT_ERROR_CODES.MESSAGE_ALREADY_SENT) {
-                logger.warn('Failed to save draft, it was already sent');
+                logger.warn('Failed to save draft (already sent)');
                 onMessageAlreadySent?.();
                 throw error;
             }
 
             if (error.data.Code === SAVE_DRAFT_ERROR_CODES.DRAFT_DOES_NOT_EXIST) {
-                logger.warn('Failed to save draft, it no longer exists');
+                logger.warn('Failed to save draft (draft no longer exists)');
                 dispatch(deleteDraft(message.localID));
             } else {
                 logger.warn('Failed to save draft', error);
