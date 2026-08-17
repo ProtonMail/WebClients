@@ -1,4 +1,7 @@
 import { processDroppedItems } from './processDroppedItems';
+import { uploadLogDebug, uploadLogError } from './uploadLogger';
+
+jest.mock('./uploadLogger');
 
 describe('processDroppedItems', () => {
     const createFile = (name: string): File => {
@@ -313,5 +316,58 @@ describe('processDroppedItems', () => {
         const result = await processDroppedItems(dataTransfer);
 
         expect(result.map((f) => f.name).sort()).toEqual(['nested.txt', 'test']);
+    });
+
+    describe('logging', () => {
+        beforeEach(() => {
+            jest.clearAllMocks();
+        });
+
+        it('should log what the browser handed over', async () => {
+            const file = createFile('standalone.txt');
+            const dirEntry = createDirectoryEntry('folder', [createFileEntry('nested.txt', createFile('nested.txt'))]);
+            const dataTransfer = createMockDataTransfer(
+                [file, new File([], 'folder', { type: '' })],
+                [createFileEntry('standalone.txt', file), dirEntry]
+            );
+
+            await processDroppedItems(dataTransfer, { batchId: 'batch-1' });
+
+            expect(uploadLogDebug).toHaveBeenCalledWith('Dropped items', {
+                batchId: 'batch-1',
+                itemCount: 2,
+                dataTransferFileCount: 2,
+                directoryCount: 1,
+                nonFileItemCount: 0,
+                emptyItemCount: 0,
+                traversedEntryCount: 1,
+            });
+        });
+
+        it('should count items the browser gave nothing for', async () => {
+            const dataTransfer = createMockDataTransfer([null], [null]);
+
+            await processDroppedItems(dataTransfer);
+
+            expect(uploadLogDebug).toHaveBeenCalledWith(
+                'Dropped items',
+                expect.objectContaining({ itemCount: 1, emptyItemCount: 1, directoryCount: 0 })
+            );
+        });
+
+        it('should report an entry that fails to be read', async () => {
+            const error = new Error('Permission denied');
+            const failingEntry = {
+                isFile: true,
+                isDirectory: false,
+                name: 'unreadable.txt',
+                file: (_: unknown, errorCallback: (error: Error) => void) => errorCallback(error),
+            } as unknown as FileSystemFileEntry;
+            const dataTransfer = createMockDataTransfer([null], [failingEntry]);
+
+            await expect(processDroppedItems(dataTransfer)).rejects.toThrow('Permission denied');
+
+            expect(uploadLogError).toHaveBeenCalledWith('Failed to read dropped entries', error);
+        });
     });
 });
