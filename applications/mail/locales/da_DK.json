@@ -1736,6 +1736,12 @@
       ],
       "Stop here": [
         "Stop her"
+      ],
+      "Run realistic session": [
+        "Kør realistisk session"
+      ],
+      "Write ${ count } logs": [
+        "Skriv ${ count } logs"
       ]
     },
     "action": {
@@ -4556,6 +4562,9 @@
       ],
       "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Højreklik på en e-mail og vælg “Flyt til” eller træk og slip den til en anden kategori. Fremover sorteres lignende e-mails automatisk dertil."
+      ],
+      "No ads. No trackers": [
+        "Ingen reklamer. Ingen trackere"
       ]
     },
     "description": {
@@ -9827,6 +9836,15 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til ${ IDEAL_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
+      ],
+      "Not supported by this browser": [
+        "Ikke understøttet i denne browser"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Skriver ${ REALISTIC_ENTRIES } realistiske loglinjer, der kommer ind over ét minut, ligesom en rigtig session, i stedet for alt på én gang. Det tager omkring et minut at køre. Sørg for at denne fane er fokuseret: frame-målinger pauses i baggrunden."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Skriver realistiske loglinjer efter hinanden, og læser dem derefter tilbage. Viser hvordan write- og read/export skalerer med antallet af opbevarede elementer."
       ]
     },
     "info": {
@@ -11049,6 +11067,51 @@
       ],
       "No unread messages": [
         "Ingen ulæste beskeder"
+      ],
+      "Burst write": [
+        "Burst write"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Tilbud, rabatter, og marketing-e-mails"
+      ],
+      "Dropped frames": [
+        "Dropped frames"
+      ],
+      "Encrypt": [
+        "Kryptér"
+      ],
+      "Entries": [
+        "Entries"
+      ],
+      "Export size": [
+        "Eksportstørrelse"
+      ],
+      "IndexedDB store": [
+        "IndexedDB store"
+      ],
+      "Log performance": [
+        "Log performance"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Lange opgaver (≥ 50 ms)"
+      ],
+      "Read / export": [
+        "Read / export"
+      ],
+      "Realistic session": [
+        "Realistisk session"
+      ],
+      "Sum of write() calls": [
+        "Sum af kald til write()"
+      ],
+      "Write": [
+        "Write"
+      ],
+      "Write (whole session)": [
+        "Skriv (hele sessionen)"
+      ],
+      "Write-chain drain after last line": [
+        "Write-chain drænes efter sidste linje"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13225,7 +13288,7 @@
         "Ingen overordnet mappe"
       ],
       "Remind me later": [
-        "Mind mig om det senere"
+        "Påmind mig senere"
       ],
       "Yes, don't show again": [
         "Ja, vis det ikke igen"

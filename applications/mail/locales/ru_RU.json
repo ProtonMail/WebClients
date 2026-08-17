@@ -9633,6 +9633,30 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вы всего в нескольких нажатиях от почтового ящика, свободного от хлама"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } письмо → ${ dest }",
+        "${ count } письма → ${ dest }",
+        "${ count } писем → ${ dest }",
+        "${ count } писем → ${ dest }"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } проблема при импорте:",
+        "${ issues.length } проблемы при импорте:",
+        "${ issues.length } проблем при импорте:",
+        "${ issues.length } проблем при импорте:"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Создать безопасное облако для ${ memberCount } участника",
+        "Создать безопасное облако для ${ memberCount } участников",
+        "Создайте безопасное облако для ${ memberCount } участников",
+        "Создайте безопасное облако для ${ memberCount } участников"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Нашелся актуальный поисковый указатель с ${ oldIndexSize } сообщением.",
+        "Нашелся актуальный поисковый указатель с ${ oldIndexSize } сообщениями.",
+        "Нашелся актуальный поисковый указатель с ${ oldIndexSize } сообщениями.",
+        "Нашелся актуальный поисковый указатель с ${ oldIndexSize } сообщениями."
       ]
     },
     "info": {
@@ -12635,6 +12659,12 @@
         "Поддержка ${ n } пользовательских доменов электронной почты",
         "Поддержка ${ n } пользовательских доменов электронной почты",
         "Поддержка ${ n } пользовательских доменов электронной почты"
+      ],
+      "${ n } country": [
+        "${ n } страна",
+        "${ n } страны",
+        "${ n } стран",
+        "${ n } стран"
       ]
     },
     "Notification": {
@@ -17873,6 +17903,14 @@
       ],
       "Migrated": [
         "Перенесено"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } новое сообщение",
+        "${ messageCount } новых сообщения",
+        "${ messageCount } новых сообщений",
+        "${ messageCount } новых сообщений"
       ]
     }
   }
