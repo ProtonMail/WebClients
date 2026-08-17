@@ -12,25 +12,36 @@ const DEFAULT_IGNORE_PATTERNS = [
     '.TemporaryItems', // macOS temporary items
 ];
 
-export const shouldIgnoreFile = (file: File, ignorePatterns: string[] = DEFAULT_IGNORE_PATTERNS): boolean => {
+/**
+ * Returns the pattern that makes the file ignored, so callers can report why a
+ * file never made it to the upload queue. Undefined when the file is kept.
+ */
+export const getIgnoredReason = (
+    file: File,
+    ignorePatterns: string[] = DEFAULT_IGNORE_PATTERNS
+): string | undefined => {
     const fileName = file.name;
     const filePath = file.webkitRelativePath || file.name;
 
     for (const pattern of ignorePatterns.concat(EMPTY_FOLDER_PLACEHOLDER_FILE)) {
         if (fileName === pattern) {
-            return true;
+            return pattern;
         }
 
         if (filePath.includes(`/${pattern}/`) || filePath.startsWith(`${pattern}/`)) {
-            return true;
+            return pattern;
         }
 
         if (fileName.startsWith(pattern)) {
-            return true;
+            return pattern;
         }
     }
 
-    return false;
+    return undefined;
+};
+
+export const shouldIgnoreFile = (file: File, ignorePatterns: string[] = DEFAULT_IGNORE_PATTERNS): boolean => {
+    return getIgnoredReason(file, ignorePatterns) !== undefined;
 };
 
 export const filterIgnoredFiles = (files: FileList | File[]): File[] => {

@@ -6,7 +6,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import { DriveEventType, getDrive, getDriveForPhotos } from '../../..';
-import { Logging } from '../../logging';
+import { logging } from '../../logging';
 import {
     type BusDriverClient,
     type BusDriverEvent,
@@ -16,7 +16,6 @@ import {
 } from './BusDriverTypes';
 import { sendErrorReport } from './errorHandling';
 
-const logging = new Logging({ sentryComponent: 'drive-web-log' });
 const logger = logging.getLogger('bus-driver');
 export const logDebug = (label: string, rest: string | Record<string, unknown> = '') => {
     logger.debug(`${label}: ${JSON.stringify(rest)}`);

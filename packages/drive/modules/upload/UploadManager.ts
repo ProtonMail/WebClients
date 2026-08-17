@@ -13,8 +13,11 @@ import { type FolderNode, buildFolderStructure } from './utils/buildFolderStruct
 import { hasFolderStructure } from './utils/hasFolderStructure';
 import { isEmptyFolderPlaceholder } from './utils/isEmptyFolderPlaceholder';
 import { isDataTransferList, processDroppedItems } from './utils/processDroppedItems';
+import { uploadLogDebug } from './utils/uploadLogger';
 
 type FileQueueEntry = { uploadId: string; abortController: AbortController };
+
+type RootFolderSummary = { folderCount: number; fileCount: number; maxDepth: number };
 
 /**
  * Public API - thin wrapper around orchestrator
@@ -165,16 +168,22 @@ export class UploadManager {
         isForPhotos: boolean
     ): Promise<string[]> {
         const batchId = generateUID();
+        const isDragAndDrop = isDataTransferList(filesOrDataTransfer);
 
-        const filesArray = isDataTransferList(filesOrDataTransfer)
-            ? await processDroppedItems(filesOrDataTransfer, { skipEmptyFolders: isForPhotos })
+        uploadLogDebug('Upload requested', { batchId, isDragAndDrop, isForPhotos });
+
+        const filesArray = isDragAndDrop
+            ? await processDroppedItems(filesOrDataTransfer, { skipEmptyFolders: isForPhotos, batchId })
             : Array.from(filesOrDataTransfer);
+
+        uploadLogDebug('Upload input resolved', { batchId, fileCount: filesArray.length });
 
         const isEmptyFile = (f: File) => f.size === 0 && !isEmptyFolderPlaceholder(f);
         const emptyFiles = filesArray.filter(isEmptyFile);
         const confirmedEmptyFiles = new Set<File>();
         if (emptyFiles.length > 0 && this.emptyFileResolver) {
             const result = await this.emptyFileResolver(emptyFiles.map((f) => f.name));
+            uploadLogDebug('Empty file decision', { batchId, emptyFileCount: emptyFiles.length, decision: result });
             if (result === EmptyFileDecision.Cancel) {
                 return [];
             }
@@ -191,6 +200,8 @@ export class UploadManager {
 
         const hasStructure = hasFolderStructure(filteredFilesArray);
         const queuedUploadIds: string[] = [];
+        const rootFolderSummaries: RootFolderSummary[] = [];
+        const ignoredFiles: Record<string, number> = {};
         if (isForPhotos) {
             queuedUploadIds.push(
                 ...this.queueFiles(
@@ -239,10 +250,29 @@ export class UploadManager {
                 const rootFolders = this.groupFilesByRootFolder(filesWithStructure);
                 for (const rootFiles of rootFolders.values()) {
                     const structure = buildFolderStructure(rootFiles);
-                    this.addFolderStructureToQueue(structure, parentUid, batchId, confirmedEmptyFiles);
+                    for (const [reason, count] of Object.entries(structure.ignoredFiles)) {
+                        ignoredFiles[reason] = (ignoredFiles[reason] ?? 0) + count;
+                    }
+                    rootFolderSummaries.push(
+                        this.addFolderStructureToQueue(structure.root, parentUid, batchId, confirmedEmptyFiles)
+                    );
                 }
             }
         }
+
+        const folderFileCount = rootFolderSummaries.reduce((count, summary) => count + summary.fileCount, 0);
+        uploadLogDebug('Upload queued', {
+            batchId,
+            hasStructure,
+            flatFileCount: queuedUploadIds.length,
+            folderFileCount,
+            ignoredFiles,
+            // Total that came in but never reached the queue. Anything above what ignoredFiles
+            // accounts for went missing for a reason we do not report yet.
+            unqueuedFileCount: filteredFilesArray.length - queuedUploadIds.length - folderFileCount,
+            emptyFileSkippedCount: filesArray.length - filteredFilesArray.length,
+            rootFolders: rootFolderSummaries,
+        });
 
         void this.orchestrator.start();
         return queuedUploadIds;
@@ -372,13 +402,14 @@ export class UploadManager {
     /**
      * Add folder structure to queue
      * Creates root folder and recursively adds subfolders and files
+     * Returns the shape of what was queued, for logging purposes
      */
     private addFolderStructureToQueue(
         structure: FolderNode,
         parentUid: string,
         batchId: string,
         confirmedEmptyFiles: Set<File>
-    ): void {
+    ): RootFolderSummary {
         const folderMap = new Map<string, string>();
         const items: UploadItemInput[] = [];
         const fileQueue: FileQueueEntry[] = [];
@@ -408,6 +439,13 @@ export class UploadManager {
         );
 
         this.commitFileQueue(items, fileQueue, false);
+
+        let maxDepth = 0;
+        for (const folderPath of folderMap.keys()) {
+            maxDepth = Math.max(maxDepth, folderPath ? folderPath.split('/').length + 1 : 1);
+        }
+
+        return { folderCount: folderMap.size, fileCount: fileQueue.length, maxDepth };
     }
 
     /**

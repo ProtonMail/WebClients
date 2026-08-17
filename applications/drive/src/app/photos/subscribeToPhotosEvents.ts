@@ -4,7 +4,7 @@ import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import type { BusDriverClient } from '@proton/drive/modules/busDriver';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
-import { Logging } from '@proton/drive/modules/logging';
+import { logging } from '@proton/drive/modules/logging';
 
 import { getSignatureIssues } from '../utils/sdk/getSignatureIssues';
 import { mapNodeToPhotoItem } from './PhotosWithAlbums/loaders/mapNodeToAdditionalInfo';
@@ -13,7 +13,6 @@ import type { AlbumItem } from './useAlbums.store';
 import { useAlbumsStore } from './useAlbums.store';
 import { usePhotosStore } from './usePhotos.store';
 
-const logging = new Logging({ sentryComponent: 'drive-web-log' });
 const logger = logging.getLogger('subscribe-to-photos-events');
 
 const isPhotoNode = (node: NodeEntity): node is PhotoNode => {
