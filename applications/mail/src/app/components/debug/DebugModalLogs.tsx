@@ -4,7 +4,12 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { logger } from '@proton/logger';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -55,7 +60,22 @@ export const DebugModalLogs = () => {
                 {c('Label').t`Clear logs`}
             </Button>
             {logsSize > 0 && <span>{`${humanSize({ bytes: logsSize })}`}</span>}
-            {logs && <pre className="text-sm m-0 p-2 bg-weak rounded overflow-auto">{logs}</pre>}
+            {logs && (
+                <Collapsible className="mt-2 w-full">
+                    <CollapsibleHeader
+                        suffix={
+                            <CollapsibleHeaderIconButton>
+                                <IcChevronDown />
+                            </CollapsibleHeaderIconButton>
+                        }
+                    >
+                        <span>{c('Info').t`Expand logs`}</span>
+                    </CollapsibleHeader>
+                    <CollapsibleContent>
+                        <pre className="text-sm m-0 p-2 bg-weak rounded overflow-auto">{logs}</pre>
+                    </CollapsibleContent>
+                </Collapsible>
+            )}
         </div>
     );
 };

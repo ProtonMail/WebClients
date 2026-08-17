@@ -20,6 +20,8 @@
     },
     "dependencies": {
         "@protontech/crypto": "*",
+        "comlink": "^4.4.2",
+        "core-js": "^3.49.0",
         "idb": "^8.0.3"
     },
     "devDependencies": {
@@ -27,7 +29,6 @@
         "@proton/jest-env": "workspace:^",
         "@swc/jest": "^0.2.39",
         "@types/jest": "^30.0.0",
-        "core-js": "^3.49.0",
         "eslint": "^9.39.5",
         "fake-indexeddb": "^6.2.5",
         "jest": "^30.4.2",

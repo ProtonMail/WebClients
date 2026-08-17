@@ -5,11 +5,19 @@ import { LOGGER_DB_PREFIX } from './constants';
 import { Logger } from './logger';
 import { IndexedDBStorage } from './storage';
 import type { LoggerOptions } from './types';
+import type { LogReaderOptions } from './worker/LogReader';
+import LogReader from './worker/LogReader';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
-let counter = 0;
-const uniqueId = () => `${Date.now()}-${counter++}`;
+const uniqueId = () => crypto.randomUUID();
+
+/** Stands in for the real worker: runs the same `LogReader` in-process. */
+const inProcessReader = (options: LogReaderOptions): Promise<string> => {
+    const reader = new LogReader();
+    reader.init(options);
+    return reader.getLogs();
+};
 
 /**
  * Opens a second connection to a logger's database for assertions, always closing it.
@@ -48,7 +56,7 @@ describe('Logger', () => {
         now,
         ...rest
     }: Partial<LoggerOptions> & { name?: string; id?: string; now?: () => number } = {}) => {
-        const logger = new Logger(now);
+        const logger = new Logger(now, inProcessReader);
         loggers.push(logger);
         databases.push({ name, id });
         await logger.initialize(options({ ...rest, loggerName: name, loggerID: id }));
@@ -97,7 +105,7 @@ describe('Logger', () => {
         it('buffers lines emitted before initialize and keeps their timestamps', async () => {
             const at = Date.UTC(2026, 0, 1);
             const id = uniqueId();
-            const logger = new Logger(() => at);
+            const logger = new Logger(() => at, inProcessReader);
             loggers.push(logger);
             databases.push({ name: 'test', id });
 
@@ -227,7 +235,7 @@ describe('Logger', () => {
             await first.destroy();
 
             // A new session key cannot read the previous session's entries.
-            const second = new Logger();
+            const second = new Logger(undefined, inProcessReader);
             loggers.push(second);
             await second.initialize(
                 options({ loggerName: 'test', loggerID: id, encryptionKey: await generateAndImportKey() })
@@ -250,7 +258,7 @@ describe('Logger', () => {
             await first.destroy();
 
             // Same database, eight days later: the entry is past the 7-day default.
-            const second = new Logger(() => start + 8 * DAY_MS);
+            const second = new Logger(() => start + 8 * DAY_MS, inProcessReader);
             loggers.push(second);
             await second.initialize(options({ loggerName: 'test', loggerID: id }));
 
@@ -266,7 +274,7 @@ describe('Logger', () => {
             await first.flush();
             await first.destroy();
 
-            const second = new Logger(() => start + 2 * DAY_MS);
+            const second = new Logger(() => start + 2 * DAY_MS, inProcessReader);
             loggers.push(second);
             await second.initialize(options({ loggerName: 'test', loggerID: id }));
 
@@ -286,7 +294,7 @@ describe('Logger', () => {
             await first.flush();
             await first.destroy();
 
-            const second = new Logger(() => clock);
+            const second = new Logger(() => clock, inProcessReader);
             loggers.push(second);
             await second.initialize(options({ loggerName: 'test', loggerID: id, maxEntries: 2 }));
 
@@ -313,7 +321,7 @@ describe('Logger', () => {
 
         it('names itself after the app when no logger name is given', async () => {
             const id = uniqueId();
-            const logger = new Logger();
+            const logger = new Logger(undefined, inProcessReader);
             loggers.push(logger);
             databases.push({ name: 'test-app', id });
 

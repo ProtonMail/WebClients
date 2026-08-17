@@ -24,12 +24,6 @@ const getWriteBreakdownSpecs = () => [
     { label: c('Label').t`IndexedDB store`, nameSuffix: 'logger-storage:store' },
 ];
 
-/** I/O (IndexedDB read) vs CPU (decrypt + parse) split of the read path. */
-const getReadBreakdownSpecs = () => [
-    { label: c('Label').t`IndexedDB retrieve`, nameSuffix: 'logger-storage:retrieve' },
-    { label: c('Label').t`Decrypt + parse`, nameSuffix: ':readLogs:decode' },
-];
-
 /**
  * Lets the logger be stress-tested from a real browser tab, since the `IndexedDB` and crypto
  * costs measured against `fake-indexeddb` in `packages/logger/perf` may not match a real
@@ -39,6 +33,8 @@ const getReadBreakdownSpecs = () => [
  * Every write and read phase reports whether it skipped animation frames (visible jank) and
  * whether it triggered a Long Task (blocked the main thread for 50 ms or more) — the two
  * concrete signs that exporting logs should move off the main thread.
+ *
+ * No read phase details as the code is executed in a worker.
  */
 export const DebugModalLogPerformance = () => {
     const [running, setRunning] = useState(false);
@@ -65,12 +61,11 @@ export const DebugModalLogPerformance = () => {
             const logs = await logger.getLogs();
             const readDurationMs = performance.now() - readStart;
             const readStats = await readMonitor.stop();
-            const readBreakdown = captureBreakdown(getReadBreakdownSpecs(), readStart);
 
             setBurstResult({
                 entries,
                 write: { durationMs: writeDurationMs, stats: writeStats, breakdown: writeBreakdown },
-                read: { durationMs: readDurationMs, stats: readStats, breakdown: readBreakdown },
+                read: { durationMs: readDurationMs, stats: readStats },
                 exportSize: new Blob([logs]).size,
             });
         } finally {
@@ -114,14 +109,13 @@ export const DebugModalLogPerformance = () => {
             const logs = await logger.getLogs();
             const readDurationMs = performance.now() - readStart;
             const readStats = await readMonitor.stop();
-            const readBreakdown = captureBreakdown(getReadBreakdownSpecs(), readStart);
 
             setRealisticResult({
                 entries: REALISTIC_ENTRIES,
                 emitMs,
                 drainMs,
                 write: { durationMs: writeDurationMs, stats: writeStats, breakdown: writeBreakdown },
-                read: { durationMs: readDurationMs, stats: readStats, breakdown: readBreakdown },
+                read: { durationMs: readDurationMs, stats: readStats },
                 exportSize: new Blob([logs]).size,
             });
         } finally {
