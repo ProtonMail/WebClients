@@ -1338,6 +1338,12 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Alternar ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Keep going": [
+        "Continuar"
+      ],
+      "Stop here": [
+        "Detenerse aquí"
       ]
     },
     "Action: Docs": {
@@ -4470,6 +4476,9 @@
       ],
       "You do not have access to this shared item": [
         "No tiene acceso a este elemento compartido"
+      ],
+      "Could not grant access to the organization key": [
+        "No se pudo otorgar acceso a la clave de la organización"
       ]
     },
     "error": {
@@ -7827,6 +7836,18 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Le redirigiremos a ${ IDEAL_BRAND_NAME } en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
+      ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } no pudo descifrar el índice de búsqueda local. Reconstruya el índice para restaurar la búsqueda."
+      ],
+      "I have not finished this one yet.": [
+        "Aún no he finalizado esto."
+      ],
+      "Search data can't be read": [
+        "No se pueden leer los datos de la búsqueda"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Esto implica muchos pasos. ¿Debería continuar?"
       ]
     },
     "info": {
@@ -8734,6 +8755,9 @@
       ],
       "Client version": [
         "Versión del cliente"
+      ],
+      "Account holder name": [
+        "Nombre del titular de la cuenta"
       ]
     },
     "Label for contact group color": {
@@ -9902,6 +9926,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso limitado"
       ]
     },
     "new_plans: feature highlight": {
@@ -11422,6 +11452,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "Error al inicializar ${ IDEAL_BRAND_NAME }. Intente de nuevo más tarde."
+      ],
+      "Please enter the account holder name": [
+        "Ingrese el nombre del titular de la cuenta"
       ]
     },
     "Payments.error": {
@@ -14518,6 +14551,9 @@
       ],
       "What are you migrating?": [
         "¿Qué está migrando?"
+      ],
+      "Still working on it": [
+        "Todavía trabajando en ello"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15143,6 +15179,9 @@
       ],
       "User Admin": [
         "Administrador de usuarios"
+      ],
+      "Organization Admin": [
+        "Administrador de la organización"
       ]
     },
     "Role description": {
