@@ -11,7 +11,12 @@ import { createUncachedSelector } from '@proton/pass/store/selectors/utils';
 import { selectDefaultVault } from '@proton/pass/store/selectors/vaults';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe, MaybeNull, Share } from '@proton/pass/types';
-import type { PassFeature } from '@proton/pass/types/api/features';
+import {
+    type AutofillModelExperimentGroup,
+    DEFAULT_AUTOFILL_MODEL_EXPERIMENT_GROUP,
+    PassFeature,
+    isAutofillModelExperimentGroup,
+} from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { oneOf } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
@@ -83,6 +88,11 @@ export const selectFeatureFlagVariant =
     (feature: PassFeature) =>
     ({ user: { featureVariants } }: State) =>
         featureVariants?.[feature] ?? null;
+
+export const selectAutofillModelExperimentGroup = (state: State): AutofillModelExperimentGroup => {
+    const name = selectFeatureFlagVariant(PassFeature.PassAutofillModelExperimentGroup)(state)?.name;
+    return name && isAutofillModelExperimentGroup(name) ? name : DEFAULT_AUTOFILL_MODEL_EXPERIMENT_GROUP;
+};
 
 /** Resolves the user's default vault share, ensuring it exists
  * and is writable to guard against BE discrepancies. */
