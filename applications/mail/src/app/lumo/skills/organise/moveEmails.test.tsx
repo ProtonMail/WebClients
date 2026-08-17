@@ -1,5 +1,3 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-
 import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -7,6 +5,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 
 import type { MailToolDeps } from '../../toolModule';
+import { hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
 import { createMoveEmailsHandler, moveEmailsCardRenderer, moveEmailsDefinition, resolveMoveTarget } from './moveEmails';
 
 describe('resolveMoveTarget', () => {
@@ -60,24 +59,9 @@ describe('moveEmailsCardRenderer', () => {
         expect(moveEmailsCardRenderer.subtitle?.(folderAction, { 'folder-x7b2q1': 'Travel' })).toContain('Travel');
     });
 
-    it('lists the proposed emails by subject and deselects one on toggle', () => {
-        const onChange = jest.fn();
-        render(
-            <>
-                {moveEmailsCardRenderer.renderBody?.({
-                    action,
-                    labels,
-                    params: { ids: [...action.ids], folder: null, location: 'trash' },
-                    onChange,
-                })}
-            </>
-        );
-        expect(screen.getByText('Booking confirmation')).toBeInTheDocument();
-        expect(screen.getByText('Receipt')).toBeInTheDocument();
-
-        const [first] = screen.getAllByRole('checkbox');
-        fireEvent.click(first);
-        expect(onChange).toHaveBeenCalledWith(expect.objectContaining({ ids: ['email-d4e5f6'] }));
+    it('takes the shared selection body and its empty-apply rule', () => {
+        expect(moveEmailsCardRenderer.renderBody).toBe(renderEmailSelectionBody);
+        expect(moveEmailsCardRenderer.canApply).toBe(hasEmailSelection);
     });
 
     it('describes the settled move on the result tile', () => {
