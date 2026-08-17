@@ -41,21 +41,24 @@ const payloads = <Result>(definition: ToolDefinition<any, Result>, results: Resu
 
 const TOOL_PAYLOADS = [
     payloads(viewEmailsDefinition, [
-        { rows: [], total: 0 },
-        { rows: [row()], total: 12 },
+        { rows: [], total: 0, bulkActionRunning: false },
+        { rows: [], total: 0, bulkActionRunning: true },
+        { rows: [row()], total: 12, bulkActionRunning: false },
     ]),
     payloads(openFolderDefinition, [
-        { location: 'Spam', rows: [], total: 0 },
-        { location: 'Inbox', rows: [row()], total: 12 },
+        { location: 'Spam', rows: [], total: 0, bulkActionRunning: false },
+        { location: 'Inbox', rows: [], total: 0, bulkActionRunning: true },
+        { location: 'Inbox', rows: [row()], total: 12, bulkActionRunning: false },
     ]),
     payloads(searchDefinition, [
-        { query: 'all mail', coverage: 'full' as const, scope: '', rows: [], total: 0 },
+        { query: 'all mail', coverage: 'full' as const, scope: '', rows: [], total: 0, bulkActionRunning: false },
         {
             query: '"ticket"',
             coverage: 'partial' as const,
             scope: 'Axes not used in this search: from.',
             rows: [],
             total: 0,
+            bulkActionRunning: false,
         },
         {
             query: '"ticket"',
@@ -63,8 +66,16 @@ const TOOL_PAYLOADS = [
             scope: 'Axes not used in this search: from, to, date range, folder or label. Spam and Trash were outside its scope.',
             rows: [],
             total: 0,
+            bulkActionRunning: true,
         },
-        { query: '"ticket"', coverage: 'unfinished' as const, scope: '', rows: [row()], total: 1 },
+        {
+            query: '"ticket"',
+            coverage: 'unfinished' as const,
+            scope: '',
+            rows: [row()],
+            total: 1,
+            bulkActionRunning: false,
+        },
     ]),
     payloads(readEmailDefinition, [
         { emails: [email] },

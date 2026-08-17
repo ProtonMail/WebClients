@@ -7,7 +7,7 @@ import { filterHashFor, navigateAndReadRows, resolveMailboxLocation, sortHashFor
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import { resolveMailboxFilter, resolveMailboxSort } from './mailboxView';
 import type { AgentEmailRow } from './rows';
-import { formatAgentEmailRows } from './rows';
+import { BULK_ACTION_NOTE, formatAgentEmailRows } from './rows';
 
 /** The seven standard left-panel locations open_folder understands. A custom folder/label is opened
  *  via `target` (its folder-… / label-… reference) instead. */
@@ -33,6 +33,8 @@ export interface OpenFolderResult {
     rows: AgentEmailRow[];
     /** Total in the opened view (may exceed `rows.length`). */
     total: number;
+    /** Whether a bulk action is still emptying this location — why it can open with nothing in it. */
+    bulkActionRunning: boolean;
 }
 
 /**
@@ -96,7 +98,8 @@ export const openFolderDefinition: ToolDefinition<OpenFolderParams, OpenFolderRe
         },
     ],
     serializeForLumo: (result) => {
-        const rows = formatAgentEmailRows(result.rows, result.total) || `No emails in ${result.location}.`;
+        const empty = result.bulkActionRunning ? BULK_ACTION_NOTE : `No emails in ${result.location}.`;
+        const rows = formatAgentEmailRows(result.rows, result.total) || empty;
         return `Opened ${result.location}:\n${rows}`;
     },
     summarizeChip: (_params, result) => {
@@ -122,13 +125,13 @@ export const createOpenFolderHandler =
         const { labelID, name, pathname } = resolveMailboxLocation(resolved, references, mail.getMailSettings());
 
         // A plain open, optionally filtered/sorted: naming only these two keys clears any existing search.
-        const { rows, total } = await navigateAndReadRows(mail, references, {
+        const { rows, total, bulkActionRunning } = await navigateAndReadRows(mail, references, {
             pathname,
             labelID,
             query: { filter: filterHash, sort: sortHash },
         });
 
-        return { location: name, rows, total };
+        return { location: name, rows, total, bulkActionRunning };
     };
 
 export const openFolderModule: MailToolModule = {

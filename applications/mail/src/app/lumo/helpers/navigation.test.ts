@@ -198,6 +198,21 @@ describe('waitForListSettled', () => {
         ).resolves.toEqual(settled);
     });
 
+    // A bulk mark-all blocks its label from loading until the server finishes, so waiting for a list here
+    // can only ever run out the clock — and the read that follows would sit on it for twenty seconds.
+    it('stops waiting once a bulk action blocks the label, rather than sitting out the timeout', async () => {
+        const { store, listenerCount } = fakeStore({
+            ...settledView({ labelID: inbox }),
+            total: {},
+            taskRunning: { labelIDs: [inbox], timeoutID: undefined },
+        });
+        const wait = waitForListSettled(store, { labelID: inbox, location: locationFor(inbox) });
+
+        expect(await hasSettled(wait)).toBe(true);
+        await expect(wait).resolves.toEqual({ settled: false, usedEncryptedSearch: false });
+        expect(listenerCount()).toBe(0);
+    });
+
     // Resolving is not the same as succeeding: the caller has to be told, or it reports a still-loading
     // view as an authoritative empty result.
     it('reports a timeout rather than hanging, so a stuck load degrades to "not ready"', async () => {

@@ -2,6 +2,7 @@ import { ToolInputError, UnknownReferenceError } from '@proton/llm/lib/lumoAgent
 import type { ReferenceKind, ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 
 import type { Element } from 'proton-mail/models/element';
+import { taskRunning } from 'proton-mail/store/elements/elementsSelectors';
 
 import type { ToolStore } from '../toolModule';
 
@@ -30,17 +31,44 @@ export const resolveTypedId = (reference: string, kinds: ReferenceKind[], refere
     return resolveId(reference, references);
 };
 
-/** Resolve email references to the live {@link Element}s the apply-location hook operates on. */
+/**
+ * A bulk mark-all clears its location's list until the server has worked through it, so an element
+ * missing there has a cause the model can relay rather than a call it should retry. References don't
+ * record where they were collected, so any running bulk action is a candidate cause — the current
+ * location isn't necessarily the one the element came from.
+ */
+const missingElementMessage = (reference: string, state: ReturnType<ToolStore['getState']>): string => {
+    const missing = `Email ${reference} is no longer loaded on screen.`;
+    if (!taskRunning(state).labelIDs.length) {
+        return missing;
+    }
+    return `${missing} A bulk action is still running, so the list of the location it came from may stay cleared until the server finishes.`;
+};
+
+/**
+ * Resolve email references to the live {@link Element}s the apply-location hook operates on.
+ *
+ * Rejections are {@link ToolInputError}s because an empty `ids` and a stale reference are both things the
+ * model can correct; a plain Error would reach it only as "the tool failed".
+ */
 export const resolveElements = (
     store: ToolStore,
     emailReferences: string[],
     references: ReferenceRegistry
-): Element[] =>
-    emailReferences.map((reference) => {
+): Element[] => {
+    if (!emailReferences.length) {
+        throw new ToolInputError(
+            '`ids` was empty: pass at least one email-… reference returned by view_emails or search.'
+        );
+    }
+    const state = store.getState();
+
+    return emailReferences.map((reference) => {
         const id = resolveId(reference, references);
-        const element = store.getState().elements.elements[id];
+        const element = state.elements.elements[id];
         if (!element) {
-            throw new Error(`Email ${reference} is no longer loaded on screen.`);
+            throw new ToolInputError(missingElementMessage(reference, state));
         }
         return element;
     });
+};
