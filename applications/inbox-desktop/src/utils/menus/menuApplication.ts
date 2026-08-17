@@ -19,6 +19,8 @@ import { profiler } from "../profiler/profiler";
 import { restartApp } from "../restartApp";
 import { getIconResourcePath } from "../../constants/resources";
 import pkg from "../../../package.json";
+import { getFeatureFlagManager } from "../flags/manager";
+import { FeatureFlag } from "../flags/flags";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window" | "help";
 interface MenuProps extends MenuItemConstructorOptions {
@@ -205,21 +207,25 @@ export const setApplicationMenu = () => {
             label: c("Menu").t`View`,
             key: "view",
             submenu: [
-                {
-                    id: "switch-to-mail",
-                    label: switchToAppLabel(MAIL_APP_NAME),
-                    accelerator: "CmdOrCtrl+1",
-                    enabled: false,
-                    click: openMailWithoutReload,
-                },
-                {
-                    id: "switch-to-calendar",
-                    label: switchToAppLabel(CALENDAR_APP_NAME),
-                    accelerator: "CmdOrCtrl+2",
-                    enabled: false,
-                    click: openCalendarWithoutReload,
-                },
-                { type: "separator" },
+                ...(getFeatureFlagManager().isEnabled(FeatureFlag.AUTH_GATED_SHORTCUTS_ENABLED)
+                    ? ([
+                          {
+                              id: "switch-to-mail",
+                              label: switchToAppLabel(MAIL_APP_NAME),
+                              accelerator: "CmdOrCtrl+1",
+                              enabled: false,
+                              click: openMailWithoutReload,
+                          },
+                          {
+                              id: "switch-to-calendar",
+                              label: switchToAppLabel(CALENDAR_APP_NAME),
+                              accelerator: "CmdOrCtrl+2",
+                              enabled: false,
+                              click: openCalendarWithoutReload,
+                          },
+                          { type: "separator" },
+                      ] satisfies MenuItemConstructorOptions[])
+                    : []),
                 {
                     label: c("App menu").t`Reload`,
                     accelerator: "CmdOrCtrl+R",
@@ -282,22 +288,30 @@ export const setApplicationMenu = () => {
               { label: c("App menu").t`About ${MAIL_APP_NAME}`, type: "normal", click: () => showAboutDialog() },
           ];
 
-    temp.push({
-        label: c("Menu").t`Help`,
-        key: "help",
-        submenu: [
-            {
-                id: "help-and-feedback",
-                label: c("App menu").t`Help and feedback`,
-                type: "normal",
-                enabled: false,
-                click: () => {
-                    getCurrentView()?.webContents.send("hostUpdate", { type: "openHelpAndFeedback" });
-                },
-            },
-            ...aboutSubmenuItems,
-        ],
-    });
+    const helpSubmenuItems: MenuItemConstructorOptions[] = [
+        ...(getFeatureFlagManager().isEnabled(FeatureFlag.AUTH_GATED_SHORTCUTS_ENABLED)
+            ? ([
+                  {
+                      id: "help-and-feedback",
+                      label: c("App menu").t`Help and feedback`,
+                      type: "normal",
+                      enabled: false,
+                      click: () => {
+                          getCurrentView()?.webContents.send("hostUpdate", { type: "openHelpAndFeedback" });
+                      },
+                  },
+              ] satisfies MenuItemConstructorOptions[])
+            : []),
+        ...aboutSubmenuItems,
+    ];
+
+    if (helpSubmenuItems.length > 0) {
+        temp.push({
+            label: c("Menu").t`Help`,
+            key: "help",
+            submenu: helpSubmenuItems,
+        });
+    }
 
     if (isMac) {
         const editIndex = temp.findIndex((item) => item.key === "edit");
