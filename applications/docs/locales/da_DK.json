@@ -472,7 +472,7 @@
         "Importér fra Outlook"
       ],
       "Keep going": [
-        "Fortsæt …"
+        "Fortsæt"
       ],
       "Keep my subscription": [
         "Bevar mit abonnement"
@@ -6055,6 +6055,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "For at hjælpe dig med at fejlfinde problemet uploades fejlfindingsoplysninger til dit Drive, og bliver delt sikkert med ${ BRAND_NAME }-supportteamet. Filindhold vil muligvis blive medtaget. Du kan til enhver tid stoppe med at dele, og den delte data slettes efter gennemgangen."
       ]
     },
     "info": {
@@ -6597,6 +6600,9 @@
       ],
       "Your password (trusted contact)": [
         "Din adgangskode (betroet kontakt)"
+      ],
+      "Include debug information": [
+        "Inkluder fejlfindingsoplysninger"
       ]
     },
     "Label for contact group color": {
@@ -8365,6 +8371,12 @@
       ],
       "Your settings have been changed successfully": [
         "Dine indstillinger er blevet ændret"
+      ],
+      "Failed to submit report": [
+        "Kunne ikke indsende rapporten"
+      ],
+      "Report submitted successfully": [
+        "Rapporten blev indsendt"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9157,6 +9169,9 @@
       ],
       "User Admin": [
         "Brugeradmin"
+      ],
+      "Organization Admin": [
+        "Organisationsadmin"
       ]
     },
     "Role description": {
@@ -10863,6 +10878,9 @@
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
+      ],
+      "Report issue": [
+        "Rapportér problem"
       ]
     },
     "Title header for keys table": {
