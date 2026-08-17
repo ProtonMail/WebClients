@@ -1,3 +1,5 @@
+const { REVEAL_JS_RAW_SOURCE } = require('./constants');
+
 const DESIGN_SYSTEM_ICONS_SVG = 'sprite-icons.svg|file-icons.svg';
 
 module.exports = ({ inlineIcons } = { inlineIcons: false }) => [
@@ -45,6 +47,10 @@ module.exports = ({ inlineIcons } = { inlineIcons: false }) => [
             },
             {
                 test: /\.md$/,
+                type: 'asset/source',
+            },
+            {
+                test: REVEAL_JS_RAW_SOURCE,
                 type: 'asset/source',
             },
         ],
