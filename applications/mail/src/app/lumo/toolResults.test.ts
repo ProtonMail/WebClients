@@ -3,6 +3,7 @@ import { LOAD_GUIDE_TOOL_NAME } from '@proton/llm/lib/lumoAgent/engine/loadGuide
 
 import { buildLumoMailConfig } from './registry';
 import { moveEmailsDefinition } from './skills/organise/moveEmails';
+import { setReadDefinition } from './skills/organise/setRead';
 import { setStarredDefinition } from './skills/organise/setStarred';
 import { listFiltersDefinition } from './skills/reads/listFilters';
 import { listFoldersDefinition } from './skills/reads/listFolders';
@@ -101,6 +102,7 @@ const TOOL_PAYLOADS = [
     ]),
     payloads(moveEmailsDefinition, [undefined]),
     payloads(setStarredDefinition, [undefined]),
+    payloads(setReadDefinition, [undefined]),
 ];
 
 const DIRECTIVES = [

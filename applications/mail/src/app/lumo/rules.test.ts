@@ -7,6 +7,7 @@ describe('MAIL_RULES', () => {
         ['reads need no permission', 'Reads need no permission'],
         ['only the last read persists on screen', 'Only your LAST one persists'],
         ['starring and unstarring are one tool, not two', 'there is no separate unstar tool'],
+        ['marking read and unread are one tool, not two', 'there is no separate mark-unread tool'],
     ])('pins %s', (_case, claim) => {
         expect(MAIL_RULES).toContain(claim);
     });
