@@ -23,6 +23,7 @@ import type { SwitchActiveDevice, ToggleAudioType, ToggleVideoType } from '../..
 import { supportsSetSinkId } from '../../../utils/browser';
 
 const dynamicDeviceUpdate = ({
+    kind,
     deviceList,
     deviceId,
     preferredDeviceId,
@@ -31,6 +32,7 @@ const dynamicDeviceUpdate = ({
     useSystemDefault,
     updateFunction,
 }: {
+    kind: DeviceKind;
     deviceList: MediaDeviceInfo[];
     deviceId: string | null;
     preferredDeviceId: string | null;
@@ -61,7 +63,10 @@ const dynamicDeviceUpdate = ({
     // Handle case where user unplugs device
     if (!currentDevice && deviceList.length > 0 && !isDefaultDevice(deviceId)) {
         if (!systemDefaultDevice?.deviceId) {
-            updateFunction(deviceList[0].deviceId);
+            // Manage default device for video input because there is no system default for it.
+            if (kind === 'videoinput') {
+                updateFunction(deviceList[0].deviceId);
+            }
             return;
         }
 
@@ -196,6 +201,7 @@ export const useDynamicDeviceHandling = ({
 
             const deviceConfigs = [
                 (!areDeviceIdSetsEqual.microphones || hasSystemDefaultChanged.microphones) && {
+                    kind: 'audioinput' as const,
                     deviceList: microphonesAfterDeviceChange,
                     deviceId: activeMicrophoneDeviceId,
                     preferredDeviceId: microphoneState.preferredDeviceId,
@@ -219,6 +225,7 @@ export const useDynamicDeviceHandling = ({
                     },
                 },
                 !areDeviceIdSetsEqual.cameras && {
+                    kind: 'videoinput' as const,
                     deviceList: camerasAfterDeviceChange,
                     deviceId: activeCameraDeviceId,
                     preferredDeviceId: preferredCameraId,
@@ -250,6 +257,7 @@ export const useDynamicDeviceHandling = ({
                     },
                 },
                 (!areDeviceIdSetsEqual.speakers || hasSystemDefaultChanged.speakers) && {
+                    kind: 'audiooutput' as const,
                     deviceList: speakersAfterDeviceChange,
                     deviceId: activeAudioOutputDeviceId,
                     preferredDeviceId: speakerState.preferredDeviceId,
