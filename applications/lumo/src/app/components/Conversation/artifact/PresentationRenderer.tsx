@@ -1,10 +1,11 @@
-import { Suspense, lazy, useEffect, useMemo, useRef } from 'react';
+import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { buildSandboxedDoc } from './WebpageRenderer';
 import type { ArtifactRendererProps } from './artifactRenderers';
 import type { ParsedArtifact } from './parseArtifacts';
+import { renderChartsInSlideContent, slideContentHasChartPlaceholder } from './presentationCharts';
 
 const SLIDES_PLACEHOLDER = '<!--SLIDES-->';
 
@@ -56,11 +57,37 @@ function PresentationIframeContent({ artifact, revealJs, revealCss, themeCss }: 
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
+    // Chart placeholders (see presentationCharts.ts) need an async pre-render pass to swap them
+    // for inert SVG before the deck is templated into the sandboxed iframe. Most decks have no
+    // charts, so that pass is skipped entirely (synchronous passthrough) rather than always paying
+    // an async hop.
+    const [processedContent, setProcessedContent] = useState<string | null>(null);
+
+    useEffect(() => {
+        if (!slideContentHasChartPlaceholder(artifact.content)) {
+            setProcessedContent(artifact.content);
+            return;
+        }
+
+        setProcessedContent(null);
+        let cancelled = false;
+        void renderChartsInSlideContent(artifact.content).then((rendered) => {
+            if (!cancelled) {
+                setProcessedContent(rendered);
+            }
+        });
+        return () => {
+            cancelled = true;
+        };
+    }, [artifact.content]);
+
     const template = useMemo(() => buildRevealTemplate(revealJs, revealCss, themeCss), [revealJs, revealCss, themeCss]);
-    const srcDoc = useMemo(
-        () => buildSandboxedDoc(injectSlides(template, artifact.content)),
-        [template, artifact.content]
-    );
+    const srcDoc = useMemo(() => {
+        if (processedContent === null) {
+            return null;
+        }
+        return buildSandboxedDoc(injectSlides(template, processedContent));
+    }, [template, processedContent]);
 
     // Same origin-validation reasoning as WebpageRenderer: the sandboxed srcDoc has an opaque
     // origin, so event.source (tied to this specific iframe) is the only meaningful check.
@@ -99,6 +126,14 @@ function PresentationIframeContent({ artifact, revealJs, revealCss, themeCss }: 
             }
         };
     }, []);
+
+    if (srcDoc === null) {
+        return (
+            <pre className="text-monospace text-sm m-0 p-4 overflow-auto color-norm whitespace-pre-wrap flex-1 w-full h-full">
+                {artifact.content}
+            </pre>
+        );
+    }
 
     return (
         <div ref={containerRef} className="artifact-presentation-content flex-1 w-full h-full overflow-hidden">
