@@ -5,7 +5,9 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 import DrawerView from '@proton/components/components/drawer/views/DrawerView';
 import LumoAgentPanel from '@proton/components/components/lumoAgent/LumoAgentPanel';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcBroom } from '@proton/icons/icons/IcBroom';
+import LumoWordmark from '@proton/lumo-ui/LumoWordmark';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoAgentDrawer } from './lumoAgent/lumoAgentDrawerContext';
@@ -31,6 +33,7 @@ const DrawerLumoView = () => {
         cancel,
         clear,
     } = useLumoAgentDrawer();
+    const theme = useTheme();
 
     const tab: SelectedDrawerOption = {
         text: LUMO_SHORT_APP_NAME,
@@ -49,6 +52,7 @@ const DrawerLumoView = () => {
     return (
         <DrawerView
             tab={tab}
+            titleContent={<LumoWordmark dark={theme.information.dark} alt={LUMO_SHORT_APP_NAME} />}
             id="drawer-app-lumo"
             headerActions={headerActions}
             contentClassName="drawer-lumo flex flex-column flex-nowrap"
