@@ -1,5 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const { REVEAL_JS_RAW_SOURCE } = require('./constants');
+
 const RAW_TEXT = /.*\.theme\.css|\.raw\.scss$/;
 
 const handleUrlResolve = (url) => {
@@ -65,7 +67,9 @@ module.exports = ({ browserslist, noLogicalScss }) => {
     return [
         {
             test: /\.css$/,
-            exclude: /.*\.theme\.css/,
+            // reveal.js's own dist CSS is excluded here — it's pulled in as a raw string
+            // (see assets.loader.js) rather than extracted as a real app stylesheet.
+            exclude: [/.*\.theme\.css/, REVEAL_JS_RAW_SOURCE],
             use: [
                 miniLoader,
                 {
