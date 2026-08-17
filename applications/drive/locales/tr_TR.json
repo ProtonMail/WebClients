@@ -4476,6 +4476,9 @@
       ],
       "Something went wrong, please try again later": [
         "Bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin"
+      ],
+      "Could not grant access to the organization key": [
+        "Kuruluş anahtarına erişme izni verilemedi"
       ]
     },
     "error": {
@@ -8761,6 +8764,9 @@
       ],
       "Allow editors to change permissions and share.": [
         "Düzenleyiciler izinleri değiştirebilsin ve paylaşabilsin."
+      ],
+      "Account holder name": [
+        "Hesap sahibinin adı"
       ]
     },
     "Label for contact group color": {
@@ -11398,6 +11404,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "${ IDEAL_BRAND_NAME } hazırlanamadı. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Please enter the account holder name": [
+        "Lütfen hesap sahibinin adını yazın"
       ]
     },
     "Payments.error": {
@@ -15130,7 +15139,7 @@
         "Kullanıcı yöneticisi"
       ],
       "Organization Admin": [
-        "Kuruluş Yöneticisi"
+        "Kuruluş yöneticisi"
       ]
     },
     "Role description": {
