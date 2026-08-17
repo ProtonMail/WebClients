@@ -44,7 +44,6 @@ import {
 } from './helpers/encryptedSearch/migration-system/helpers/shouldLoadMigrationWorker';
 import { migrationToolWorker } from './helpers/encryptedSearch/migration-system/migrationToolWorker';
 import locales from './locales';
-import { MAIL_LOG_COMPONENT, mailLogger } from './mailLogger';
 import { type MailState, extendStore, setupStore } from './store/store';
 
 const getAppContainer = () =>
@@ -191,11 +190,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                     // Ping event can be noisy as they are triggered every 5000ms while offline
                     const isPing = event.payload.apiInfo.url === 'tests/ping';
                     if (!isPing) {
-                        mailLogger.error(
-                            MAIL_LOG_COMPONENT.API_ERROR,
-                            event.payload.apiInfo.url || 'unknown URL',
-                            event.payload
-                        );
+                        logger.error(event.payload.apiInfo.url || 'unknown URL', event.payload);
                     }
                 }
 
