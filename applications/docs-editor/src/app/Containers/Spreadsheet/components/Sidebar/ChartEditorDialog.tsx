@@ -34,6 +34,7 @@ import { createStringifier } from '../../stringifier'
 import { Icon } from '../ui'
 import { useEvent } from '../utils'
 import debounce from 'lodash/debounce'
+import isEqual from 'lodash/isEqual'
 
 const { s } = createStringifier(strings)
 
@@ -54,7 +55,12 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
   })
 
   const _saveChanges = useEvent((data: EmbeddedChart) => {
-    updateChart(mergeChartEditorChanges(currentChart, data))
+    const nextChart = mergeChartEditorChanges(currentChart, data)
+    if (isEqual(currentChart, nextChart)) {
+      return
+    }
+
+    updateChart(nextChart)
   })
   const saveChanges = useMemo(() => debounce(_saveChanges, 250), [_saveChanges])
 
