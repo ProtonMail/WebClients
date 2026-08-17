@@ -311,4 +311,8 @@ export function isBasicChartSpec(spec: EmbeddedChart['spec']): spec is EmbeddedC
   return ['bar', 'line', 'pie', 'area'].includes(spec.chartType)
 }
 
+export function mergeChartEditorChanges(currentChart: EmbeddedChart, formChart: EmbeddedChart): EmbeddedChart {
+  return { ...currentChart, spec: formChart.spec }
+}
+
 export type ChartDataFormula = Omit<ChartData, 'sources'> & { sources: string[] }
