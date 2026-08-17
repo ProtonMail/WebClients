@@ -43,7 +43,7 @@ const createLogMethod =
         logger[level](`[${component}] ${message}`, flattenArgs(args));
     };
 
-// The mail loger ensure that all mail-related logs are logged under the 'mail' logger namespace.
+// The mail logger ensure that all mail-related logs are logged under the 'mail' logger namespace.
 // And with a flatten args list to ensure easier to parse and smaller logs
 export const mailLogger = {
     debug: createLogMethod('debug'),
