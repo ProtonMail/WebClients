@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
-import type { AesGcmCryptoKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import { decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
-import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
+import { encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import {
     CLEANUP_INTERVAL_MS,
@@ -13,7 +12,8 @@ import {
     MAX_PENDING_LOGS,
 } from './constants';
 import { IndexedDBStorage } from './storage';
-import type { LogEntry, LogLevel, LoggerOptions } from './types';
+import type { LogLevel, LoggerOptions } from './types';
+import type { LogReaderOptions } from './worker/LogReader';
 
 /** A line that has been emitted but not yet written to storage. */
 interface PendingLog {
@@ -26,32 +26,6 @@ interface PendingLog {
 const consoleFor = (level: LogLevel): ((...args: unknown[]) => void) => {
     const method = console[level];
     return (method ?? console.log).bind(console);
-};
-
-/** A stored entry could not be turned back into a log line, whatever the reason. */
-class UnreadableEntryError extends Error {
-    constructor(cause: unknown) {
-        super('Log entry could not be decoded', { cause });
-        this.name = 'UnreadableEntryError';
-    }
-}
-
-/**
- * Decodes one stored payload. Base64, AES-GCM and JSON failures all mean the same
- * thing here — the bytes on disk are not readable by this session — so they are
- * reported as one error rather than inspected individually.
- */
-const decodeEntryOrThrow = async (
-    key: AesGcmCryptoKey,
-    data: string,
-    context: Uint8Array<ArrayBuffer>
-): Promise<{ message: string; args: string[] }> => {
-    try {
-        const decrypted = await decryptData(key, Uint8Array.fromBase64(data), context);
-        return JSON.parse(uint8ArrayToUtf8String(decrypted)) as { message: string; args: string[] };
-    } catch (error) {
-        throw new UnreadableEntryError(error);
-    }
 };
 
 const serializeArg = (arg: unknown): string => {
@@ -108,6 +82,8 @@ export class Logger {
     /** Prefixes log lines and names the database. Replaced by `initialize`. */
     private name: string = DEFAULT_LOGGER_NAME;
 
+    private loggerID: string | null = null;
+
     private readonly now: () => number;
 
     private storage: IndexedDBStorage | null = null;
@@ -141,8 +117,16 @@ export class Logger {
      */
     private sequence = 0;
 
-    /** `now` is injectable so retention behaviour can be tested without timer mocks. */
-    constructor(now: () => number = Date.now) {
+    /**
+     * `now` is injectable so retention behaviour can be tested without timer mocks.
+     * `readLogsInWorker` is injectable so tests can read through an in-process `LogReader`
+     * instead of a real worker. Left undefined by default and imported lazily in `readLogs`,
+     * so importing `Logger` doesn't pull in the worker module.
+     */
+    constructor(
+        now: () => number = Date.now,
+        private readLogsInWorker?: (options: LogReaderOptions) => Promise<string>
+    ) {
         this.now = now;
     }
 
@@ -157,6 +141,7 @@ export class Logger {
         this.consoleLevels = options.consoleLevels ?? DEFAULT_CONSOLE_LEVELS;
         this.encryptionKey = options.encryptionKey;
         this.name = options.loggerName ?? options.appName;
+        this.loggerID = options.loggerID ?? null;
         this.encryptionContext = utf8StringToUint8Array(`${options.appName}#${this.name}`);
         this.storage = new IndexedDBStorage(this.name, options.loggerID);
         this.initialized = true;
@@ -254,24 +239,31 @@ export class Logger {
         await this.writes;
     }
 
+    /**
+     * Reads every stored line back, decrypted, oldest first.
+     */
     async getLogs(): Promise<string> {
         if (!this.initialized) {
             return '';
         }
 
-        // TODO probably not needed, time is spent inside callback
-        performance.mark(`logger-${this.name}:getLogs:start`);
         if (!this.read) {
             this.read = this.readLogs().finally(() => {
                 this.read = null;
             });
         }
 
-        performance.measure(`logger-${this.name}:getLogs`, `logger-${this.name}:getLogs:start`);
         return this.read;
     }
 
+    /**
+     * Decrypts in a worker, so that reading a large history cannot stall the UI.
+     */
     private async readLogs(): Promise<string> {
+        if (!this.loggerID || !this.encryptionKey || !this.encryptionContext) {
+            return '';
+        }
+
         performance.mark(`logger-${this.name}:readLogs:waitForWrites:start`);
         await this.writes;
         performance.measure(
@@ -279,39 +271,19 @@ export class Logger {
             `logger-${this.name}:readLogs:waitForWrites:start`
         );
 
-        if (!this.storage) {
-            return '';
-        }
-
-        performance.mark(`logger-${this.name}:readLogs:start`);
         try {
-            const entries = await this.storage.retrieve();
-
-            performance.mark(`logger-${this.name}:readLogs:decode:start`);
-            const lines = await Promise.all(entries.map((entry) => this.format(entry)));
-            performance.measure(`logger-${this.name}:readLogs:decode`, `logger-${this.name}:readLogs:decode:start`);
-            return lines.join('\n');
+            const readLogsInWorker =
+                this.readLogsInWorker ?? (await import('./worker/readLogsInWorker')).readLogsInWorker;
+            return await readLogsInWorker({
+                name: this.name,
+                loggerID: this.loggerID,
+                encryptionKey: this.encryptionKey,
+                encryptionContext: this.encryptionContext.toBase64(),
+            });
         } catch (error) {
-            if (error instanceof UnreadableEntryError) {
-                // Most likely written under a different session key, content is unrecoverable and would keep failing on every read.
-                console.warn(`[${this.name}] failed to decrypt logs, clearing:`, error);
-                await this.clearLogs();
-                return '';
-            }
-            console.error(`[${this.name}] failed to read logs:`, error);
+            console.error(`[${this.name}] failed to read logs in worker:`, error);
             return '';
-        } finally {
-            performance.measure(`logger-${this.name}:readLogs`, `logger-${this.name}:readLogs:start`);
         }
-    }
-
-    private async format(entry: LogEntry): Promise<string> {
-        const { message, args } = await decodeEntryOrThrow(this.encryptionKey!, entry.data, this.encryptionContext!);
-
-        const timestamp = new Date(entry.timestamp).toISOString();
-        const suffix = args.length > 0 ? ` ${args.join(' ')}` : '';
-
-        return `${timestamp} ${entry.level.toUpperCase()} [${this.name}]: ${message}${suffix}`;
     }
 
     async clearLogs(): Promise<void> {
@@ -328,16 +300,15 @@ export class Logger {
     }
 
     async downloadLogs(filename?: string): Promise<void> {
-        downloadLogFile(await this.getLogs(), filename ?? timestampedFilename(`${this.name}-logs`));
+        const logs = await this.getLogs();
+        downloadLogFile(logs, filename ?? timestampedFilename(`${this.name}-logs`));
     }
 
     private startCleanup(): void {
-        performance.mark(`logger-${this.name}:cleanup:start`);
         this.enqueue(() => this.cleanup());
         this.cleanupInterval = setInterval(() => this.enqueue(() => this.cleanup()), CLEANUP_INTERVAL_MS);
         // Keeps Node test runners from hanging on the interval.
         (this.cleanupInterval as unknown as { unref?: () => void }).unref?.();
-        performance.measure(`logger-${this.name}:cleanup`, `logger-${this.name}:cleanup:start`);
     }
 
     /** Trims by age first, then by count. Runs on the write chain, never per line. */
