@@ -21,6 +21,8 @@ interface Props extends Omit<HTMLAttributes<HTMLElement>, 'content'> {
     footerButtons?: JSX.Element[];
     onAnimationEnd?: () => void;
     isUsingTabs?: boolean;
+    /** Replaces the header title for single-view drawers; the tabbed and dropdown titles ignore it. */
+    titleContent?: ReactNode;
     /** View-specific buttons rendered in the header, just before the Close button. */
     headerActions?: ReactNode;
     /** Class for the content wrapper; defaults to `contacts-widget`. Pass this to opt out of it. */
@@ -30,6 +32,7 @@ interface Props extends Omit<HTMLAttributes<HTMLElement>, 'content'> {
 const DrawerView = ({
     options,
     tab,
+    titleContent,
     onSelectDrawerOption,
     footerButtons,
     onAnimationEnd,
@@ -42,7 +45,7 @@ const DrawerView = ({
 }: Props) => {
     const renderDrawerHeaderTitle = () => {
         if (!options) {
-            return tab.text;
+            return titleContent ?? tab.text;
         }
         if (isUsingTabs) {
             return <DrawerHeaderTitleTabs title={tab.text} options={options} onClickOption={onSelectDrawerOption} />;
