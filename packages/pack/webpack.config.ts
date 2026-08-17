@@ -18,6 +18,28 @@ const getOptimizations = require('./webpack/optimization');
 
 export { addDevEntry } from './webpack/entries';
 
+// reveal.js's package.json `exports` field only allows specific renamed subpaths (e.g.
+// `reveal.js/reveal.css`, not `reveal.js/dist/reveal.css`) and resolves the bare specifier to its
+// ESM build under webpack's `import` condition — not the UMD build Lumo needs to embed as a
+// plain, non-module inline <script> in a sandboxed artifact iframe. Aliasing straight to the
+// literal dist file paths bypasses the exports map entirely (alias targets are resolved as
+// filesystem paths, not specifiers). `require.resolve` here runs under Node's own CJS
+// conditions, which the "." export maps to `dist/reveal.js` (the UMD build) — unlike webpack's
+// resolution of the same bare specifier from application code. Guarded because most apps in the
+// monorepo don't depend on reveal.js at all.
+const getRevealJsRawAssetAliases = (): Record<string, string> => {
+    try {
+        const revealJsDist = path.dirname(require.resolve('reveal.js'));
+        return {
+            'reveal.js/dist/reveal.js': path.join(revealJsDist, 'reveal.js'),
+            'reveal.js/dist/reveal.css': path.join(revealJsDist, 'reveal.css'),
+            'reveal.js/dist/theme/simple.css': path.join(revealJsDist, 'theme', 'simple.css'),
+        };
+    } catch {
+        return {};
+    }
+};
+
 export const getConfig = (webpackOptions: WebpackOptions): Configuration => {
     // This folder is separate from the assets folder because they are special assets which get served through
     // a long-term storage
@@ -140,6 +162,7 @@ export const getConfig = (webpackOptions: WebpackOptions): Configuration => {
                 : `${assetsFolder}/[name].css`,
         }),
         resolve: {
+            alias: getRevealJsRawAssetAliases(),
             extensions: ['.js', '.tsx', '.ts'],
             fallback: {
                 assert: false,
