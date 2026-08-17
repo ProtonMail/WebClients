@@ -30,6 +30,7 @@ import {
     applyMemoryEdit,
     canOptimizeMemories,
     createMemory,
+    getMemoryGenerationCutoff,
     isUserMemory,
     normalizeMemories,
     partitionMemories,
@@ -453,9 +454,13 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
         () => sortMemoriesByDate(normalizeMemories(lumoUserSettings.memories)),
         [lumoUserSettings.memories]
     );
+    const memoryGenerationCutoff = useMemo(
+        () => getMemoryGenerationCutoff(lumoUserSettings.memoryLastProcessedMessageAt, memories),
+        [lumoUserSettings.memoryLastProcessedMessageAt, memories]
+    );
     const { user: userMemories, generated: generatedMemories } = useMemo(() => partitionMemories(memories), [memories]);
 
-    const isMemoryEnabled = lumoUserSettings.isMemoryEnabled ?? false;
+    const isMemoryEnabled = lumoUserSettings.isMemoryEnabled === true;
     const isMemoryAutoSaveEnabled = lumoUserSettings.isMemoryAutoSaveEnabled ?? true;
     const newPromptsSinceLastUpdate = lumoUserSettings.memoryPromptsSinceAutoSave ?? 0;
     const promptsUntilAutoSave = Math.max(0, MEMORY_AUTO_SAVE_PROMPT_THRESHOLD - newPromptsSinceLastUpdate);
@@ -466,7 +471,12 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
     const showUpdateFromChatsButton = hasMemories && hasNewChats;
 
     const persistMemories = (next: Memory[], extra: Partial<typeof lumoUserSettings> = {}) => {
-        updateSettings({ memories: normalizeMemories(next), _autoSave: true, ...extra });
+        updateSettings({
+            memories: normalizeMemories(next),
+            ...(memoryGenerationCutoff && { memoryLastProcessedMessageAt: memoryGenerationCutoff }),
+            _autoSave: true,
+            ...extra,
+        });
     };
 
     const handleAddMemory = (content: string) => {
@@ -504,6 +514,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
             isMemoryEnabled: false,
             memories: [],
             memoryPromptsSinceAutoSave: 0,
+            memoryLastProcessedMessageAt: undefined,
             _autoSave: true,
         });
     };
@@ -518,12 +529,17 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
             performDisableMemory();
             return;
         }
-        updateSettings({ isMemoryEnabled: true, _autoSave: true });
+        updateSettings({
+            isMemoryEnabled: true,
+            memoryPromptsSinceAutoSave: 0,
+            memoryLastProcessedMessageAt: undefined,
+            _autoSave: true,
+        });
     };
 
     const handleConfirmDisableMemory = () => {
-        performDisableMemory();
         disableMemoryModal.openModal(false);
+        performDisableMemory();
     };
 
     const handleGenerationError = (error: unknown) => {
@@ -542,7 +558,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
             // a clear-all followed immediately by a click could still produce a stale closure
             // (and an incorrectly "incremental" prompt instead of a fresh bootstrap).
             const latestMemories = normalizeMemories(store.getState().lumoUserSettings.memories);
-            const generated = await generateFromChats(latestMemories);
+            const { generated, processedThrough } = await generateFromChats(latestMemories);
             if (generated.length === 0) {
                 updateSettings({ memoryPromptsSinceAutoSave: 0, _autoSave: true });
                 createNotification({
@@ -554,7 +570,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
 
             // Merge against the *latest* state (not the snapshot taken before the LLM call),
             // otherwise edits/adds made during generation would be clobbered.
-            const added = dispatch(appendGeneratedMemoriesThunk(generated));
+            const added = dispatch(appendGeneratedMemoriesThunk(generated, processedThrough));
 
             if (added === 0) {
                 createNotification({
@@ -620,6 +636,14 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
         }
     };
 
+    if (!isMemoryEnabled) {
+        return (
+            <div className="memory-panel flex flex-column flex-nowrap h-full min-h-0 min-w-0 overflow-hidden">
+                <MemoryEducation onEnable={handleToggleEnableMemory} />
+            </div>
+        );
+    }
+
     const disableMemoryText = c('collider_2025: DisableMemory')
         .t`Deletes all saved memories and turns off the memory feature.`;
 
@@ -665,8 +689,6 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                         />
                     </div>
                 )}
-
-                {!isMemoryEnabled && <MemoryEducation onEnable={handleToggleEnableMemory} />}
 
                 {isMemoryEnabled && (
                     <div className="flex flex-column flex-nowrap flex-1 min-h-0 gap-2">
