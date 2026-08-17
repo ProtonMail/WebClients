@@ -2,6 +2,8 @@ import { readFileSync } from 'fs';
 
 import { initSync } from '@proton/proton-foundation-search';
 
+import { installWasmPanicCapture } from '../worker/index/wasmPanic';
+
 /**
  * Initialize the search foundation WASM engine synchronously for tests.
  * Must be called before any test that uses the real WASM engine.
@@ -11,4 +13,6 @@ export function setupRealSearchLibraryWasm(): void {
         require.resolve('@proton/proton-foundation-search/proton_foundation_search_bg.wasm')
     );
     initSync({ module: wasmBytes });
+    // Same panic capture as the worker, so tests see production behaviour.
+    installWasmPanicCapture();
 }
