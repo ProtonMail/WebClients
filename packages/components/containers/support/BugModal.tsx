@@ -25,11 +25,9 @@ import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import { logger } from '@proton/logger';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CLIENT_TYPES, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { getInboxDesktopLogsBlob, isInboxDesktopBugReportLogsSupported } from '@proton/shared/lib/desktop/logHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -42,6 +40,7 @@ import { getClientName, getReportInfo } from '../../helpers/report';
 import type { Screenshot } from './AttachScreenshot';
 import AttachScreenshot from './AttachScreenshot';
 import BugModalLogs from './BugModalLogs';
+import { useBugModalLogs } from './useBugModalLogs';
 
 export type BugModalMode = 'chat-no-agents';
 
@@ -187,11 +186,6 @@ const getVPNOptions = (): OptionItem[] => {
     ];
 };
 
-const APPS_FOR_LOG_COLLECTION: Partial<Record<APP_NAMES, boolean>> = {
-    [APPS.PROTONMAIL]: true,
-    [APPS.PROTONCALENDAR]: true,
-};
-
 const BugModal = ({
     username: Username = '',
     email,
@@ -252,12 +246,8 @@ const BugModal = ({
     });
     const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
     const [uploadingScreenshots, setUploadingScreenshots] = useState(false);
-    const collectLogs = useFlag('CollectLogs') && Boolean(APPS_FOR_LOG_COLLECTION[app]);
-    const collectLogsInboxDesktop =
-        !useFlag('InboxDesktopBugReportLogAttachmentDisabled') && isInboxDesktopBugReportLogsSupported();
-    const [includeLogs, setIncludeLogs] = useState<boolean>(collectLogs || collectLogsInboxDesktop);
-    // Preloaded by BugModalLogs as soon as the modal opens, so submission does not have to wait on reading the log file.
-    const [preloadedLogs, setPreloadedLogs] = useState<string>();
+    const { collectLogs, collectLogsInboxDesktop, includeLogs, setIncludeLogs, setPreloadedLogs, getLogAttachments } =
+        useBugModalLogs(app);
 
     const link = <Href key="linkClearCache" href={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
 
@@ -281,7 +271,7 @@ const BugModal = ({
         setLoading(true);
 
         const getParameters = async () => {
-            const attachments: { [key: string]: Blob } = screenshots.reduce(
+            const screenshotAttachments: { [key: string]: Blob } = screenshots.reduce(
                 (acc: { [key: string]: Blob }, { name, blob }) => {
                     acc[name] = blob;
                     return acc;
@@ -289,22 +279,11 @@ const BugModal = ({
                 {}
             );
 
-            if (collectLogs && includeLogs) {
-                const logs = preloadedLogs ?? (await logger.getLogs());
-                if (logs && logs.trim()) {
-                    const filename = `logs-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
-                    attachments[filename] = new Blob([logs], { type: 'text/plain' });
-                }
-            }
-
-            if (collectLogsInboxDesktop && includeLogs) {
-                const attachmentSize = Object.values(attachments).reduce((sum, blob) => sum + blob.size, 0);
-                const inboxDesktopLogs = await getInboxDesktopLogsBlob(attachmentSize);
-                if (inboxDesktopLogs) {
-                    const filename = `logs-INDA-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
-                    attachments[filename] = inboxDesktopLogs;
-                }
-            }
+            const logsAttachements = await getLogAttachments(screenshotAttachments);
+            const attachments = {
+                ...screenshotAttachments,
+                ...logsAttachements,
+            };
 
             const Title = [!isVpn && '[V5]', `[${Client}] Bug [${location.pathname}]`, categoryTitle]
                 .filter(Boolean)
