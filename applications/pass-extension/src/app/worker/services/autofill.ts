@@ -13,6 +13,8 @@ import type { FrameFormsResult } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientBooted } from '@proton/pass/lib/client';
+import { parseModelRegistry } from '@proton/pass/lib/extension/model-registry/model-registry';
+import type { ModelRegistry } from '@proton/pass/lib/extension/model-registry/model-registry';
 import { compileRules, matchRules, parseRules } from '@proton/pass/lib/extension/rules/rules';
 import type { CompiledRules } from '@proton/pass/lib/extension/rules/types';
 import browser from '@proton/pass/lib/globals/browser';
@@ -60,12 +62,13 @@ import noop from '@proton/utils/noop';
 import { resolveCCFormFields } from './autofill.cc';
 
 type AutofillServiceState = {
+    modelRegistry: MaybeNull<ModelRegistry>;
     privateDomains: PrivateDomains;
     rules: MaybeNull<CompiledRules>;
 };
 
 export const createAutoFillService = () => {
-    const state: AutofillServiceState = { privateDomains: null, rules: null };
+    const state: AutofillServiceState = { modelRegistry: null, privateDomains: null, rules: null };
 
     /** Guards sub-frame content-script injection. Gated only on the global
      * killswitch: per-type user settings (eg: `autofill.cc`) are enforced
@@ -78,7 +81,7 @@ export const createAutoFillService = () => {
     });
 
     const init = withContext(async (ctx) => {
-        const result = await ctx.service.storage.local.getItems(['websiteRules', 'privateDomains']);
+        const result = await ctx.service.storage.local.getItems(['websiteRules', 'privateDomains', 'modelRegistry']);
 
         const rules = parseRules(result.websiteRules ?? null);
         state.rules = rules ? compileRules(rules) : null;
@@ -86,6 +89,12 @@ export const createAutoFillService = () => {
 
         state.privateDomains = result.privateDomains ? new Set(result.privateDomains.split('\n')) : null;
         if (state.privateDomains) logger.info(`[AutofillService] Hydrated private domains`);
+
+        const parsed = parseModelRegistry(result.modelRegistry ?? null);
+        if (parsed.ok) {
+            state.modelRegistry = parsed.registry;
+            if (state.modelRegistry) logger.info(`[AutofillService] Hydrated model registry`);
+        } else logger.warn(`[AutofillService] ${parsed.error}`);
     });
 
     const getLoginCandidates = withContext<
@@ -479,6 +488,11 @@ export const createAutoFillService = () => {
                     void ctx.service.storage.local.setItem('privateDomains', evt.data.join('\n'));
                     state.privateDomains = new Set(evt.data);
                     break;
+
+                case 'model-registry::resolved':
+                    void ctx.service.storage.local.setItem('modelRegistry', JSON.stringify(evt.data));
+                    state.modelRegistry = evt.data;
+                    break;
             }
         })
     );
@@ -489,6 +503,7 @@ export const createAutoFillService = () => {
         init,
         clear,
         getLoginCandidates,
+        getModelRegistry: () => state.modelRegistry,
         getRules: () => state.rules,
         queryTabLoginForms,
         sync,
