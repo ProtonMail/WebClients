@@ -303,9 +303,7 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
 // ----
 
 export type RecentDocumentsItemLocation =
-  | { type: 'root' }
-  | { type: 'path'; path: string[] }
-  | { type: 'shared-with-me' }
+  { type: 'root' } | { type: 'path'; path: string[] } | { type: 'shared-with-me' }
 
 export type RecentDocumentsItemValue = {
   type: ProtonDocumentType
@@ -317,10 +315,10 @@ export type RecentDocumentsItemValue = {
   lastModified: ServerTime
   createdBy: string | undefined
   location: RecentDocumentsItemLocation
-  // Available (and used) only when RecentDocumentsItem is used with SDK; in order from root to direct parent
-  ancestorsNodeUids?: string[]
   isSharedWithMe: boolean
   shareId: string
+  // Available (and used) only when RecentDocumentsItem is used with SDK; in order from root to direct parent
+  ancestorsNodeUids?: string[]
   // Available (and used) only when RecentDocumentsItem is used with SDK
   effectiveRole?: MemberRole
   // Available only for shared-with-me docs in the legacy (non-SDK) path
@@ -410,13 +408,7 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
 // ------
 
 type SerializableValue =
-  | string
-  | number
-  | boolean
-  | null
-  | undefined
-  | SerializableValue[]
-  | { [key: string]: SerializableValue }
+  string | number | boolean | null | undefined | SerializableValue[] | { [key: string]: SerializableValue }
 
 type LocalStorageValue = {
   [key: string]: SerializableValue

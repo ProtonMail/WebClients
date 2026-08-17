@@ -30,6 +30,8 @@ import { c } from 'ttag'
 import useNotifications from '@proton/components/hooks/useNotifications'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 import { traceRecentsError } from './traceRecentsError'
+import { useAddresses } from '@proton/account/addresses/hooks'
+import type { Address } from '@proton/shared/lib/interfaces'
 
 export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps) {
   const drive = getDrive()
@@ -40,6 +42,7 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
   const [search, setSearch] = useSearch()
   const [recentsSort, setRecentsSort] = useRecentsSort()
   const [contactEmails] = useContactEmails()
+  const [addresses] = useAddresses()
   const [type] = useType()
 
   const isTrashRoute = Boolean(useRouteMatch(HOMEPAGE_TRASH_PATH))
@@ -114,6 +117,7 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
           isRecentsUpdating,
           recentsSort,
           contactEmails,
+          addresses,
           type,
         )
       }
@@ -122,6 +126,7 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
       return { view: 'unknown' }
     }
   }, [
+    addresses,
     contactEmails,
     isRecentsUpdating,
     isTrashLoading,
@@ -156,6 +161,7 @@ export function buildRecentsState(
   isRecentsUpdating: boolean,
   recentsSort: RecentsSort,
   contactEmails: ContactEmail[] | undefined,
+  addresses: Address[] | undefined,
   type: ProtonDocumentType | undefined,
 ): HomepageViewState {
   if (isRecentsUpdating) {
@@ -177,7 +183,7 @@ export function buildRecentsState(
   if (recentsSort === 'viewed') {
     itemSections = splitIntoSectionsByTime(filtered, 'lastViewed')
   } else if (recentsSort === 'owner') {
-    itemSections = splitIntoSectionsByOwner(filtered, contactEmails)
+    itemSections = splitIntoSectionsByOwner(filtered, addresses, contactEmails)
   } else if (recentsSort === 'location') {
     itemSections = splitIntoSectionsByLocation(filtered)
   } else {

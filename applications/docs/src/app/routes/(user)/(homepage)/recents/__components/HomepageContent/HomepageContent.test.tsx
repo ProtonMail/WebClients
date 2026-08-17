@@ -28,6 +28,10 @@ jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
   useContactEmails: () => [[], false],
 }))
 
+jest.mock('@proton/account/addresses/hooks', () => ({
+  useAddresses: () => [[], false],
+}))
+
 jest.mock('@proton/components/hooks/useAuthentication', () => ({
   __esModule: true,
   default: () => ({ getLocalID: () => 0 }),

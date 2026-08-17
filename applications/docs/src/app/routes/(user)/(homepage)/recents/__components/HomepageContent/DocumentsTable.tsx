@@ -38,6 +38,9 @@ import * as Table from './table'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
 import { useRenameWithSDK } from '~/utils/flags'
+import { useAddresses } from '@proton/account/addresses/hooks'
+import type { Address } from '@proton/shared/lib/interfaces'
+import { isMyDocument } from '../../__utils/is-my-document'
 
 // table
 // -----
@@ -47,6 +50,7 @@ export type TableVariant =
 export type DocumentsTableProps = { itemsSections: ItemsSection[]; variant: TableVariant }
 
 export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) {
+  const [addresses] = useAddresses()
   const { type } = useHomepageView()
   const contextMenuAnchorRef = useRef<HTMLDivElement>(null)
   const contextMenu = useContextMenu()
@@ -69,7 +73,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
                 isSecondary={sectionIndex > 0}
                 topLevelSticky={sectionIndex === 0}
               />
-              <Body variant={variant} items={items} />
+              <Body variant={variant} items={items} addresses={addresses} />
             </Fragment>
           ))}
         </Table.Table>
@@ -255,13 +259,13 @@ function getSectionLabel(id: ItemsSectionId): string {
 // body
 // ----
 
-type BodyProps = { items: RecentDocumentsItem[]; variant: TableVariant }
+type BodyProps = { items: RecentDocumentsItem[]; variant: TableVariant; addresses: Address[] | undefined }
 
-function Body({ items, variant }: BodyProps) {
+function Body({ items, variant, addresses }: BodyProps) {
   return (
     <Table.Body className="divide-weak divide-y">
       {items.map((recentDocument) => (
-        <Row variant={variant} key={recentDocument.uniqueId()} document={recentDocument} />
+        <Row variant={variant} key={recentDocument.uniqueId()} document={recentDocument} addresses={addresses} />
       ))}
     </Table.Body>
   )
@@ -273,13 +277,13 @@ function Body({ items, variant }: BodyProps) {
 // Refresh dates every minute.
 const REFRESH_DATE_INTERVAL = 1000 * 60 // ms
 
-type RowProps = { document: RecentDocumentsItem; variant: TableVariant }
+type RowProps = { document: RecentDocumentsItem; variant: TableVariant; addresses: Address[] | undefined }
 
-function Row({ document, variant }: RowProps) {
+function Row({ document, variant, addresses }: RowProps) {
   const { getLocalID } = useAuthentication()
   const documentActions = useDocumentActions()
   const { location } = document
-  const displayName = useOwnerName(document)
+  const { displayName, avatarContent } = useNameAndAvatar(document, addresses)
   const { updateRenamedDocumentInCache } = useHomepageView()
   const { createNotification } = useNotifications()
   const renameWithSDK = useRenameWithSDK()
@@ -335,15 +339,6 @@ function Row({ document, variant }: RowProps) {
   }
 
   const contextMenu = useContextMenu()
-
-  let avatarContent: ReactNode = <IcUserFilled className="shrink-0" />
-  if (document.isSharedWithMe) {
-    if (!document.createdBy) {
-      avatarContent = <IcUser className="shrink-0" />
-    } else {
-      avatarContent = getInitials(document.createdBy)
-    }
-  }
 
   const isRenaming = documentActions.isRenaming(document)
 
@@ -469,9 +464,22 @@ function Row({ document, variant }: RowProps) {
 // utils
 // -----
 
-export function useOwnerName(recentDocument: RecentDocumentsItem) {
+export function useNameAndAvatar(document: RecentDocumentsItem, addresses: Address[] | undefined) {
   const [contactEmails] = useContactEmails()
-  return getOwnerName(recentDocument, contactEmails)
+
+  const isMine = isMyDocument(document, addresses)
+  const displayName = getOwnerName(document, isMine, contactEmails)
+
+  let avatarContent: ReactNode = <IcUserFilled className="shrink-0" />
+  if (!isMine) {
+    if (!document.createdBy) {
+      avatarContent = <IcUser className="shrink-0" />
+    } else {
+      avatarContent = getInitials(document.createdBy)
+    }
+  }
+
+  return { displayName, avatarContent }
 }
 
 const dateFormatter = new DateFormatter()
