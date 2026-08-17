@@ -501,8 +501,7 @@ export const useLumoActions = ({
         // Set this message as preferred so it gets displayed instead of its earlier siblings
         preferSibling(assistantMessage);
 
-        const parentMessageHasAttachments = !!parentMessage?.attachments?.length;
-        const enableExternalTools = ffExternalTools && isWebSearchButtonToggled && !parentMessageHasAttachments;
+        const enableExternalTools = ffExternalTools && isWebSearchButtonToggled;
         const enableImageTools = ffImageTools;
 
         if (!spaceId) {
