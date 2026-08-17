@@ -42518,6 +42518,7 @@ __metadata:
     rehype-katex: "npm:^7.0.1"
     remark-gfm: "npm:^4.0.1"
     remark-math: "npm:^6.0.0"
+    reveal.js: "npm:^6.0.1"
     sass: "npm:^1.80.3"
     tinycolor2: "npm:^1.6.0"
     tldts: "npm:^7.4.10"
@@ -46117,6 +46118,13 @@ __metadata:
   version: 1.0.4
   resolution: "reusify@npm:1.0.4"
   checksum: 10/14222c9e1d3f9ae01480c50d96057228a8524706db79cdeb5a2ce5bb7070dd9f409a6f84a02cbef8cdc80d39aef86f2dd03d155188a1300c599b05437dcd2ffb
+  languageName: node
+  linkType: hard
+
+"reveal.js@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "reveal.js@npm:6.0.1"
+  checksum: 10/2610548b43b32d44d00c36e9795b4bbc0639864557696341e68d829027c5f096aec1856d5928bfaaa17c08943b00aafc0b67209038464c334e2c39e7c24f22d8
   languageName: node
   linkType: hard
 
