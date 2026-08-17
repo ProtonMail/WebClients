@@ -18,6 +18,9 @@ import {
   isProtonDocsSpreadsheet,
   type ProtonDocumentType,
 } from '@proton/shared/lib/helpers/mimetype'
+import { useAddresses } from '@proton/account/addresses/hooks'
+import type { Address } from '@proton/shared/lib/interfaces'
+import { isMyDocument } from './is-my-document'
 
 // constants
 // ---------
@@ -218,6 +221,7 @@ function useHomepageViewState({
   }
 
   const [contactEmails] = useContactEmails()
+  const [addresses] = useAddresses()
 
   // Populate the state with ordered and sectioned items.
   // Done in a separate memoized computation to minimize re-computations.
@@ -231,7 +235,7 @@ function useHomepageViewState({
           recentsSort === 'viewed' ? 'lastViewed' : 'lastModified',
         )
       } else if (recentsSort === 'owner') {
-        outputState.itemSections = splitIntoSectionsByOwner(recentDocuments, contactEmails)
+        outputState.itemSections = splitIntoSectionsByOwner(recentDocuments, addresses, contactEmails)
       } else if (recentsSort === 'location') {
         outputState.itemSections = splitIntoSectionsByLocation(recentDocuments)
       } else {
@@ -243,7 +247,7 @@ function useHomepageViewState({
       outputState.itemSections = splitIntoSectionsByName(trashedDocuments)
     }
     return outputState
-  }, [contactEmails, protoState, recentDocuments, recentsSort, trashedDocuments])
+  }, [addresses, contactEmails, protoState, recentDocuments, recentsSort, trashedDocuments])
 
   return state
 }
@@ -484,7 +488,11 @@ export function splitIntoSectionsByName(
   ]
 }
 
-export function splitIntoSectionsByOwner(items: RecentDocumentsItem[], contactEmails?: ContactEmail[]): ItemsSection[] {
+export function splitIntoSectionsByOwner(
+  items: RecentDocumentsItem[],
+  addresses: Address[] | undefined,
+  contactEmails: ContactEmail[] | undefined,
+): ItemsSection[] {
   return [
     {
       id: 'name',
@@ -492,8 +500,8 @@ export function splitIntoSectionsByOwner(items: RecentDocumentsItem[], contactEm
         if (a.isSharedWithMe !== b.isSharedWithMe) {
           return !a.isSharedWithMe ? -1 : 1
         }
-        const aName = getOwnerName(a, contactEmails)
-        const bName = getOwnerName(b, contactEmails)
+        const aName = getOwnerName(a, isMyDocument(a, addresses), contactEmails)
+        const bName = getOwnerName(b, isMyDocument(b, addresses), contactEmails)
         if (aName && bName) {
           return aName.localeCompare(bName)
         }

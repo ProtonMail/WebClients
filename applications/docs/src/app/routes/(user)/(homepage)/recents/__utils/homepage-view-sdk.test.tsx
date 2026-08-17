@@ -28,25 +28,25 @@ describe('buildTrashState', () => {
 
 describe('buildRecentsState', () => {
   test('recents initial state', () => {
-    expect(buildRecentsState([], false, false, 'viewed', undefined, undefined)).toStrictEqual({
+    expect(buildRecentsState([], false, false, 'viewed', undefined, [], undefined)).toStrictEqual({
       view: 'recents-initial',
     })
   })
 
   test('recents loading state (when not initialized)', () => {
-    expect(buildRecentsState([], false, true, 'viewed', undefined, undefined)).toStrictEqual({
+    expect(buildRecentsState([], false, true, 'viewed', undefined, [], undefined)).toStrictEqual({
       view: 'recents-loading',
     })
   })
 
   test('recents loading state (when initialized)', () => {
-    expect(buildRecentsState([], true, true, 'viewed', undefined, undefined)).toStrictEqual({
+    expect(buildRecentsState([], true, true, 'viewed', undefined, [], undefined)).toStrictEqual({
       view: 'recents-loading',
     })
   })
 
   test('recents empty state', () => {
-    expect(buildRecentsState([], true, false, 'viewed', undefined, undefined)).toStrictEqual({
+    expect(buildRecentsState([], true, false, 'viewed', undefined, [], undefined)).toStrictEqual({
       view: 'recents-empty',
     })
   })
@@ -56,7 +56,7 @@ describe('buildRecentsState', () => {
     const itemA = createDocumentItem('Alice')
     const itemB = createDocumentItem('Bob')
 
-    expect(buildRecentsState([itemC, itemA, itemB], true, false, 'name', undefined, undefined)).toStrictEqual({
+    expect(buildRecentsState([itemC, itemA, itemB], true, false, 'name', undefined, [], undefined)).toStrictEqual({
       view: 'recents',
       sort: 'name',
       itemSections: [
@@ -75,7 +75,7 @@ describe('buildRecentsState', () => {
   test('group recents by time (old file)', () => {
     const oldItem = createDocumentItem('old')
     // oldItem has ServerTime(1_000_000_000) which is year 2001 → 'earlier' section
-    const result = buildRecentsState([oldItem], true, false, 'viewed', undefined, undefined)
+    const result = buildRecentsState([oldItem], true, false, 'viewed', undefined, [], undefined)
 
     expect(result).toMatchObject({ view: 'recents', sort: 'viewed' })
     expect((result as any).itemSections).toHaveLength(1)
@@ -86,7 +86,7 @@ describe('buildRecentsState', () => {
     const nowSeconds = Math.floor(Date.now() / 1000)
     const todayItem = createDocumentItem('fresh', { lastViewed: new ServerTime(nowSeconds) })
 
-    const result = buildRecentsState([todayItem], true, false, 'viewed', undefined, undefined)
+    const result = buildRecentsState([todayItem], true, false, 'viewed', undefined, [], undefined)
 
     expect(result).toMatchObject({ view: 'recents', sort: 'viewed' })
     expect((result as any).itemSections[0].id).toBe('today')
@@ -99,7 +99,7 @@ describe('buildRecentsState', () => {
     const sharedZack = createDocumentItem('Zack doc', { isSharedWithMe: true, createdBy: 'zack@example.com' })
 
     expect(
-      buildRecentsState([sharedZack, ownDocB, sharedAlice, ownDocA], true, false, 'owner', undefined, undefined),
+      buildRecentsState([sharedZack, ownDocB, sharedAlice, ownDocA], true, false, 'owner', undefined, [], undefined),
     ).toStrictEqual({
       view: 'recents',
       sort: 'owner',
@@ -124,7 +124,15 @@ describe('buildRecentsState', () => {
     const sharedWithMeDoc = createDocumentItem('shared doc', { location: { type: 'shared-with-me' } })
 
     expect(
-      buildRecentsState([pathZeta, sharedWithMeDoc, pathAlpha, rootDoc], true, false, 'location', undefined, undefined),
+      buildRecentsState(
+        [pathZeta, sharedWithMeDoc, pathAlpha, rootDoc],
+        true,
+        false,
+        'location',
+        undefined,
+        [],
+        undefined,
+      ),
     ).toStrictEqual({
       view: 'recents',
       sort: 'location',
@@ -146,7 +154,7 @@ describe('buildRecentsState', () => {
     const docItem = createDocumentItem('myDoc', { type: 'document' })
     const sheetItem = createDocumentItem('mySheet', { type: 'spreadsheet' })
 
-    const result = buildRecentsState([docItem, sheetItem], true, false, 'name', undefined, 'document')
+    const result = buildRecentsState([docItem, sheetItem], true, false, 'name', undefined, [], 'document')
 
     expect(result).toMatchObject({ view: 'recents' })
     expect((result as any).itemSections[0].items).toHaveLength(1)
@@ -156,7 +164,7 @@ describe('buildRecentsState', () => {
   test('type filter removes non-matching documents - empty state (no documents found)', () => {
     const sheetItem = createDocumentItem('mySheet', { type: 'spreadsheet' })
 
-    expect(buildRecentsState([sheetItem], true, false, 'name', undefined, 'document')).toStrictEqual({
+    expect(buildRecentsState([sheetItem], true, false, 'name', undefined, [], 'document')).toStrictEqual({
       view: 'recents-empty',
     })
   })

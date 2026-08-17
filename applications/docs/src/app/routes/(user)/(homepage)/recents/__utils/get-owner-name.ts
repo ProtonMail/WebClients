@@ -2,8 +2,12 @@ import type { RecentDocumentsItem } from '@proton/docs-core'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 import { c } from 'ttag'
 
-export function getOwnerName(recentDocument: RecentDocumentsItem, contactEmails?: ContactEmail[]) {
-  if (!recentDocument.isSharedWithMe) {
+export function getOwnerName(
+  recentDocument: RecentDocumentsItem,
+  isMine: boolean,
+  contactEmails: ContactEmail[] | undefined,
+) {
+  if (isMine) {
     return c('Info').t`Me`
   }
 
