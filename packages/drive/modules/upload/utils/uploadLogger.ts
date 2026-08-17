@@ -1,8 +1,4 @@
-import { Logging } from '../../logging';
-
-const logging = new Logging({
-    sentryComponent: 'upload-manager',
-});
+import { logging } from '../../logging';
 
 export const uploadLogger = logging.getLogger('upload-manager');
 
