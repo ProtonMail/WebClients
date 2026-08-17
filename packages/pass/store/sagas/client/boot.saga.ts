@@ -27,6 +27,7 @@ import {
     stateDestroy,
     stopEventPolling,
 } from '@proton/pass/store/actions';
+import { resolveModelRegistry } from '@proton/pass/store/actions/creators/model-registry';
 import { getOrganizationPauseList, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/private-domains';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
@@ -118,6 +119,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
             if (EXTENSION_BUILD) {
                 yield put(resolveWebsiteRules.intent());
                 yield put(resolvePrivateDomains.intent());
+                yield put(resolveModelRegistry.intent());
                 yield put(withRevalidate(getOrganizationPauseList.intent()));
             }
 
