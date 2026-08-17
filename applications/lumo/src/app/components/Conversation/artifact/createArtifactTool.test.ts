@@ -86,4 +86,26 @@ describe('parseCompleteArtifactToolCall', () => {
         expect(artifact?.type).toBe('document');
         expect(artifact?.language).toBeUndefined();
     });
+
+    it('round-trips an explicit "presentation" type', () => {
+        const artifact = parseCompleteArtifactToolCall({
+            id: 'quarterly-review',
+            type: 'presentation',
+            title: 'Quarterly Review',
+            content: '<section>Slide 1</section><section>Slide 2</section>',
+        });
+
+        expect(artifact?.type).toBe('presentation');
+        expect(artifact?.language).toBeUndefined();
+    });
+
+    it('never infers "presentation" — omitting `type` falls back to code/document like webpage does', () => {
+        const artifact = parseCompleteArtifactToolCall({
+            id: 'x',
+            title: 'X',
+            content: '<section>Slide 1</section>',
+        });
+
+        expect(artifact?.type).toBe('document');
+    });
 });
