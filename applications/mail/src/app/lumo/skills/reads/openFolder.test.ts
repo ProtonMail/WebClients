@@ -61,6 +61,7 @@ describe('openFolderDefinition', () => {
                 },
             ],
             total: 1,
+            bulkActionRunning: false,
         };
         const out = openFolderDefinition.serializeForLumo(result, anyReferences);
         expect(out).toContain('Opened Archive:');
@@ -68,14 +69,28 @@ describe('openFolderDefinition', () => {
     });
 
     it('serializes an empty location with a "no emails" note', () => {
-        const out = openFolderDefinition.serializeForLumo({ location: 'Spam', rows: [], total: 0 }, anyReferences);
+        const out = openFolderDefinition.serializeForLumo(
+            { location: 'Spam', rows: [], total: 0, bulkActionRunning: false },
+            anyReferences
+        );
         expect(out).toContain('No emails in Spam.');
+    });
+
+    // Reading that as "your Spam is empty" is the failure mode: a mark-all leaves its location unable to
+    // load a list at all, so the emptiness is the bulk action, not the mailbox.
+    it('says a bulk action is still running rather than calling the location empty', () => {
+        const out = openFolderDefinition.serializeForLumo(
+            { location: 'Inbox', rows: [], total: 0, bulkActionRunning: true },
+            anyReferences
+        );
+        expect(out).not.toContain('No emails in Inbox.');
+        expect(out).toContain('bulk action is still running');
     });
 
     it('summarizes the chip with the opened location name', () => {
         const chip = openFolderDefinition.summarizeChip(
             { location: 'archive', target: null, filter: null, sort: null },
-            { location: 'Archive', rows: [], total: 0 }
+            { location: 'Archive', rows: [], total: 0, bulkActionRunning: false }
         );
         expect(chip.label).toContain('Archive');
     });
