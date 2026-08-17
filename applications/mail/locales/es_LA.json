@@ -1730,6 +1730,18 @@
       ],
       "View guide": [
         "Ver guía"
+      ],
+      "Keep going": [
+        "Continuar"
+      ],
+      "Run realistic session": [
+        "Ejecutar sesión realista"
+      ],
+      "Stop here": [
+        "Detenerse aquí"
+      ],
+      "Write ${ count } logs": [
+        "Escribir ${ count } registros"
       ]
     },
     "action": {
@@ -4550,6 +4562,9 @@
       ],
       "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Haga clic derecho en un correo electrónico y seleccione «Mover a», o arrástrelo y suéltelo en otra categoría. Los correos similares se clasificarán ahí automáticamente en el futuro."
+      ],
+      "No ads. No trackers": [
+        "Sin anuncios. Sin rastreadores"
       ]
     },
     "description": {
@@ -5788,6 +5803,9 @@
       ],
       "You do not have access to this shared item": [
         "No tiene acceso a este elemento compartido"
+      ],
+      "Could not grant access to the organization key": [
+        "No se pudo otorgar acceso a la clave de la organización"
       ]
     },
     "error": {
@@ -9773,6 +9791,42 @@
       ],
       "You": [
         "Usted"
+      ],
+      "I have not finished this one yet.": [
+        "Aún no he finalizado esto."
+      ],
+      "Not supported by this browser": [
+        "No soportado por este navegador"
+      ],
+      "Searched ${ targetName }": [
+        "Se buscó ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Se buscó el correo enviado por ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Se buscó el correo enviado a ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Se buscó «${ keyword }»"
+      ],
+      "Searched your mail": [
+        "Se buscó su correo"
+      ],
+      "Star emails": [
+        "Destacar correos"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Esto implica muchos pasos. ¿Debería continuar?"
+      ],
+      "Unstar emails": [
+        "No destacar correos"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Escribe ${ REALISTIC_ENTRIES } líneas de registro realistas que aparecen gradualmente durante un minuto, como en una sesión real, en lugar de todas a la vez. Tarda aproximadamente un minuto en ejecutarse. Mantenga esta pestaña activa: las mediciones de fotogramas se pausan en segundo plano."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Escribe líneas de registro realistas consecutivamente y luego las lee todas. Muestra cómo los costos de escritura y lectura/exportación varían según la cantidad de entradas almacenadas."
       ]
     },
     "info": {
@@ -10989,6 +11043,60 @@
       ],
       "Duration": [
         "Duración"
+      ],
+      "Account holder name": [
+        "Nombre del titular de la cuenta"
+      ],
+      "Burst write": [
+        "Escritura en ráfaga"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Correos de promociones, ofertas y mercadeo"
+      ],
+      "Dropped frames": [
+        "Fotogramas perdidos"
+      ],
+      "Encrypt": [
+        "Cifrar"
+      ],
+      "Entries": [
+        "Entradas"
+      ],
+      "Export size": [
+        "Tamaño de la exportación"
+      ],
+      "IndexedDB store": [
+        "Almacenamiento IndexedDB"
+      ],
+      "Log performance": [
+        "Registro de rendimiento"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Tareas largas (≥ 50 ms)"
+      ],
+      "No unread conversations": [
+        "No hay conversaciones sin leer"
+      ],
+      "No unread messages": [
+        "No hay mensajes sin leer"
+      ],
+      "Read / export": [
+        "Lectura / exportación"
+      ],
+      "Realistic session": [
+        "Sesión realista"
+      ],
+      "Sum of write() calls": [
+        "Suma de llamadas a write()"
+      ],
+      "Write": [
+        "Escritura"
+      ],
+      "Write (whole session)": [
+        "Escribir (toda la sesión)"
+      ],
+      "Write-chain drain after last line": [
+        "Vaciar la cadena de escritura después de la última línea"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12300,6 +12408,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso limitado"
       ]
     },
     "new_plans: feature highlight": {
@@ -13473,6 +13587,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "Error al inicializar ${ IDEAL_BRAND_NAME }. Intente de nuevo más tarde."
+      ],
+      "Please enter the account holder name": [
+        "Ingrese el nombre del titular de la cuenta"
       ]
     },
     "Payments.error": {
@@ -14131,6 +14248,9 @@
       ],
       "User Admin": [
         "Administrador de usuarios"
+      ],
+      "Organization Admin": [
+        "Administrador de la organización"
       ]
     },
     "Role description": {
@@ -17090,6 +17210,15 @@
       ],
       "What are you migrating?": [
         "¿Qué está migrando?"
+      ],
+      "Star emails": [
+        "Destacar correos"
+      ],
+      "Still working on it": [
+        "Todavía trabajando en ello"
+      ],
+      "Unstar emails": [
+        "No destacar correos"
       ]
     },
     "Title header for keys table": {

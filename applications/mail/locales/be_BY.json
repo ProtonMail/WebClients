@@ -1748,6 +1748,12 @@
       ],
       "Stop here": [
         "Спыніцца тут"
+      ],
+      "Run realistic session": [
+        "Запусціць рэалістычны сеанс"
+      ],
+      "Write ${ count } logs": [
+        "Запісаць ${ count } журналы"
       ]
     },
     "action": {
@@ -4632,6 +4638,9 @@
       ],
       "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Націсніце правай кнопкай мышы па лісту і выберыце \"Перамясціць у\" або перацягніце яго ў іншую катэгорыю. Аналагічныя лісты будуць сартавацца там у будучыні."
+      ],
+      "No ads. No trackers": [
+        "Без рэкламы і праграм сачэння"
       ]
     },
     "description": {
@@ -5896,6 +5905,9 @@
       ],
       "Too many server errors, please try again later": [
         "Занадта шмат памылак сервера. Паўтарыце спробу пазней"
+      ],
+      "Could not grant access to the organization key": [
+        "Немагчыма даць доступ да ключа арганізацыі"
       ]
     },
     "error": {
@@ -10170,6 +10182,9 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт ${ IDEAL_BRAND_NAME }. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
+      ],
+      "Not supported by this browser": [
+        "Не падтрымліваецца гэтым браўзерам"
       ]
     },
     "info": {
@@ -11408,6 +11423,51 @@
       ],
       "No unread messages": [
         "Няма непрачытаных паведамленняў"
+      ],
+      "Account holder name": [
+        "Уладальнік уліковага запісу"
+      ],
+      "Burst write": [
+        "Серыйны запіс"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Акцыі, прапановы і маркетынгавыя лісты"
+      ],
+      "Dropped frames": [
+        "Адсутныя кадры"
+      ],
+      "Encrypt": [
+        "Зашыфраваныя"
+      ],
+      "Entries": [
+        "Запісы"
+      ],
+      "Export size": [
+        "Памер экспарту"
+      ],
+      "IndexedDB store": [
+        "Захоўваецца IndexedDB"
+      ],
+      "Log performance": [
+        "Журнал прадукцыйнасці"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Доўгія заданні (≥ 50 мс)"
+      ],
+      "Read / export": [
+        "Чытанне / экспарт"
+      ],
+      "Realistic session": [
+        "Рэалістычны сеанс"
+      ],
+      "Sum of write() calls": [
+        "Усяго выклікаў write()"
+      ],
+      "Write": [
+        "Запіс"
+      ],
+      "Write (whole session)": [
+        "Запіс (усяго сеанса)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14002,6 +14062,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "Не ўдалося ініцыялізаваць ${ IDEAL_BRAND_NAME }. Паўтарыце спробу пазней."
+      ],
+      "Please enter the account holder name": [
+        "Увядзіце імя ўладальніка ўліковага запісу"
       ]
     },
     "Payments.error": {

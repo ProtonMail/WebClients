@@ -1739,6 +1739,9 @@
       ],
       "Write ${ count } logs": [
         "Εγγραφή ${ count } αρχείων καταγραφής"
+      ],
+      "Stop here": [
+        "Σταμάτησε εδώ"
       ]
     },
     "action": {
@@ -5809,6 +5812,9 @@
       ],
       "You do not have access to this shared item": [
         "Δεν έχετε πρόσβαση σε αυτό το κοινόχρηστο στοιχείο"
+      ],
+      "Could not grant access to the organization key": [
+        "Δεν ήταν δυνατή η παραχώρηση πρόσβασης στο κλειδί οργανισμού"
       ]
     },
     "error": {
@@ -9848,6 +9854,9 @@
       ],
       "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
         "Γράφει ρεαλιστικές γραμμές καταγραφής διαδοχικά και στη συνέχεια τις διαβάζει όλες αντίστροφα. Δείχνει πώς το κόστος εγγραφής και ανάγνωσης/εξαγωγής κλιμακώνεται με τον αριθμό των αποθηκευμένων καταχωρήσεων."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Αυτό απαιτεί πολλά βήματα. Να συνεχίσω;"
       ]
     },
     "info": {
@@ -11121,6 +11130,9 @@
       ],
       "Write-chain drain after last line": [
         "Αποστράγγιση αλυσίδας εγγραφής μετά την τελευταία γραμμή"
+      ],
+      "Account holder name": [
+        "Όνομα κατόχου λογαριασμού"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13611,6 +13623,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "Αποτυχία αρχικοποίησης του ${ IDEAL_BRAND_NAME }. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "Please enter the account holder name": [
+        "Παρακαλώ εισάγετε το όνομα του κατόχου του λογαριασμού"
       ]
     },
     "Payments.error": {

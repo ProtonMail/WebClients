@@ -4354,6 +4354,9 @@
       ],
       "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Z desno miškino tipko kliknite na sporočilo in izberite »Premakni v« ali pa ga povlecite in spustite v drugo kategorijo. Podobna e-poštna sporočila se bodo v prihodnje samodejno razvrstila v to kategorijo."
+      ],
+      "No ads. No trackers": [
+        "Brez oglasov. Brez sledilnikov"
       ]
     },
     "description": {
@@ -5479,6 +5482,9 @@
       ],
       "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
         "Sporočila ni mogoče dešifrirati. Ključ, s katerim je bilo sporočilo šifrirano, se ne ujema z nobenim izmed ključev, povezanih z vašim naslovom. Če ste katerega izmed njih izbrisali, ga poskusite ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Could not grant access to the organization key": [
+        "Dostop do ključa organizacije ni bil odobren"
       ]
     },
     "error": {
@@ -10652,6 +10658,9 @@
       ],
       "Tab age": [
         "Starost zavihka"
+      ],
+      "Account holder name": [
+        "Ime imetnika računa"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13099,6 +13108,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša kartica je bila zavrnjena. Prosimo, poskusite z drugo kartico ali se obrnite na banko, da odobri plačilo."
+      ],
+      "Please enter the account holder name": [
+        "Vnesite ime imetnika računa"
       ]
     },
     "Payments.error": {
