@@ -3,7 +3,7 @@ import { fireEvent } from '@testing-library/dom';
 import type { BinData } from '../lib';
 import type { AuthorizedPaymentIntent, DirectDebitCustomer, PaymentIntent } from '../lib/types';
 import { resetChargebee } from './chargebee';
-import { FALLBACK_EMAIL, FALLBACK_USERNAME, formatCustomer, initialize } from './chargebee-entry';
+import { FALLBACK_EMAIL, formatCustomer, initialize } from './chargebee-entry';
 import type { DirectDebitSubmitEvent, GetHeightEvent, SetConfigurationEvent } from './message-bus';
 import { getMessageBus } from './message-bus';
 
@@ -729,7 +729,7 @@ describe('iDEAL', () => {
             'ideal',
             expect.objectContaining({
                 paymentInfo: {
-                    userName: FALLBACK_USERNAME,
+                    userName: '',
                     userEmail: 'andy.yen@proton.me',
                 },
             })
