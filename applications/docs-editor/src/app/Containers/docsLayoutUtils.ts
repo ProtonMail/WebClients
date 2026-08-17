@@ -19,7 +19,6 @@ export type DocsLayoutColumnWidths = {
 export type DocsLayoutEditorBleedArea = {
   inlineStartInset: number
   inlineEndInset: number
-  centerOffset: number
 }
 
 export function getDefaultLeftPanelWidth(viewportWidth: number): number {
@@ -99,7 +98,6 @@ export function getEditorBleedArea(
   return {
     inlineStartInset,
     inlineEndInset,
-    centerOffset: (inlineStartInset - inlineEndInset) / 2 - columnWidths.left - DOCS_EDITOR_INLINE_PADDING,
   }
 }
 

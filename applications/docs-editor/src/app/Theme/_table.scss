@@ -5,21 +5,22 @@
 	overflow-y: scroll;
 	table-layout: fixed;
 	margin: 0;
-	inline-size: fit-content;
+	inline-size: min-content;
 }
 
 .Lexical__tableWrapper {
 	margin-block-start: 1.25rem;
 	inline-size: fit-content;
 
-	--margin-from-sides-in-rem: 3rem;
+	--margin-from-inline-start: 0.5rem;
+	--margin-from-inline-end: 1.5rem;
 
 	// Fallback when @container is unsupported (Safari <16, Chrome <105): approximate scroll width via panel width.
 	max-inline-size: calc(
 		100vw - var(--docs-layout-editor-bleed-inline-start-inset, 0px) - var(
 				--docs-layout-editor-bleed-inline-end-inset,
 				0px
-			) - var(--margin-from-sides-in-rem)
+			) - var(--margin-from-inline-start) - var(--margin-from-inline-end)
 	);
 	position: relative;
 	inset-block-start: 0;
@@ -29,6 +30,7 @@
 	scrollbar-width: auto !important;
 	transition:
 		inset-inline-start 250ms cubic-bezier(0.4, 0, 0.2, 1),
+		transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
 		max-inline-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 	[contenteditable='true'] & {
@@ -42,7 +44,7 @@
 			100cqw - var(--docs-layout-editor-bleed-inline-start-inset, 0px) - var(
 					--docs-layout-editor-bleed-inline-end-inset,
 					0px
-				) - var(--margin-from-sides-in-rem)
+				) - var(--margin-from-inline-start) - var(--margin-from-inline-end)
 		);
 	}
 }
@@ -50,7 +52,16 @@
 @media (width >= 816px) {
 	@container docs-scroll (min-width: 0) {
 		.Lexical__tableWrapper {
-			inset-inline-start: calc(50cqw + var(--docs-layout-editor-bleed-center-offset, 0px));
+			inset-inline-start: calc(50cqw - var(--docs-layout-left-column-width, 0px) - 8px);
+
+			// Stay viewport-centered until the table reaches either reserved side area.
+			transform: translateX(
+				clamp(
+					calc(var(--docs-layout-editor-bleed-inline-start-inset, 0px) + var(--margin-from-inline-start) - 50cqw),
+					-50%,
+					calc(50cqw - var(--docs-layout-editor-bleed-inline-end-inset, 0px) - var(--margin-from-inline-end) - 100%)
+				)
+			);
 		}
 	}
 }
