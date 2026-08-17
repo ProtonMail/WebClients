@@ -49,43 +49,45 @@ const BugModalLogs = ({
     }
 
     return (
-        <div className="mb-4">
-            <div className="flex items-center justify-space-between">
-                <Checkbox
-                    id="includeLogs"
-                    checked={includeLogs}
-                    onChange={({ target: { checked } }) => onIncludeLogsChange(checked)}
-                    disabled={disabled}
-                >
-                    {c('Label').t`Include application logs in bug report`}
-                </Checkbox>
-                {collectLogs && (
-                    <Button
-                        className="ml-2"
-                        shape="underline"
-                        onClick={() => logger.downloadLogs()}
-                        title={c('Info').t`Download current logs`}
-                    >
-                        {c('Action').t`Download logs`}
-                    </Button>
-                )}
-            </div>
+        <div className="mb-4 mt-4">
+            <Checkbox
+                id="includeLogs"
+                className="w-full"
+                checked={includeLogs}
+                onChange={({ target: { checked } }) => onIncludeLogsChange(checked)}
+                disabled={disabled}
+            >
+                {c('Label').t`Include application logs in bug report`}
+            </Checkbox>
             <p className="color-weak text-sm mt-1 mb-0">
                 {c('Info')
                     .t`Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.`}
             </p>
             {collectLogs && previewLines.length > 0 && (
                 <Collapsible className="mt-2">
-                    <CollapsibleHeader
-                        disableFullWidth
-                        suffix={
-                            <CollapsibleHeaderIconButton size="small">
-                                <IcChevronDown />
-                            </CollapsibleHeaderIconButton>
-                        }
-                    >
-                        <span className="text-sm color-weak">{c('Action').t`Preview logs`}</span>
-                    </CollapsibleHeader>
+                    <div className="flex items-center justify-space-between">
+                        <CollapsibleHeader
+                            disableFullWidth
+                            suffix={
+                                <CollapsibleHeaderIconButton size="small">
+                                    <IcChevronDown />
+                                </CollapsibleHeaderIconButton>
+                            }
+                        >
+                            <span className="text-sm color-weak">{c('Action').t`Preview logs`}</span>
+                        </CollapsibleHeader>
+                        {collectLogs && (
+                            <Button
+                                className="ml-2"
+                                shape="ghost"
+                                size="tiny"
+                                onClick={() => logger.downloadLogs()}
+                                title={c('Info').t`Download current logs`}
+                            >
+                                {c('Action').t`Download logs`}
+                            </Button>
+                        )}
+                    </div>
                     <CollapsibleContent className="mt-2">
                         <pre className="text-sm bg-weak rounded p-2 mb-0 text-pre-wrap">{previewLines.join('\n')}</pre>
                     </CollapsibleContent>
