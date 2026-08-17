@@ -107,7 +107,6 @@ function Grid({ children, leftPanelEnabled }: React.PropsWithChildren<GridProps>
           // Position and bounds for content, such as tables, that can extend beyond the editor column.
           '--docs-layout-editor-bleed-inline-start-inset': `${editorBleedArea.inlineStartInset}px`,
           '--docs-layout-editor-bleed-inline-end-inset': `${editorBleedArea.inlineEndInset}px`,
-          '--docs-layout-editor-bleed-center-offset': `${editorBleedArea.centerOffset}px`,
         }}
       >
         {children}
