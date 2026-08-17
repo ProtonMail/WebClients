@@ -1,6 +1,7 @@
 // The legacy `<artifact>` tag parser below only ever produces 'code'/'document' — it predates
-// the 'webpage' type and is not being extended to support it (see hashArtifactIdentity callers).
-export const ARTIFACT_TYPES = ['code', 'document', 'webpage'] as const;
+// the 'webpage'/'presentation' types and is not being extended to support them (see
+// hashArtifactIdentity callers).
+export const ARTIFACT_TYPES = ['code', 'document', 'webpage', 'presentation'] as const;
 
 export type ArtifactType = (typeof ARTIFACT_TYPES)[number];
 
