@@ -280,7 +280,11 @@ export function useProtonSheetsUIState(
     visible: visibleSheets,
     hidden: hiddenSheets,
     activeId: state.activeSheetId,
-    setActiveId: useEvent((sheetId: number) => state.onChangeActiveSheet(sheetId)),
+    setActiveId: useEvent((sheetId: number) => {
+      // commit any in-progress cell edit before switching sheets
+      state.grid.commit?.()
+      state.onChangeActiveSheet(sheetId)
+    }),
     delete: useEvent((sheetId: number) => {
       storeAction(SheetsActions.DeleteSheet, sheetId)
       state.onDeleteSheet(sheetId)
