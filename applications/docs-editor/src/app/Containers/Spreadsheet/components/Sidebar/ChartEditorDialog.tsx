@@ -22,8 +22,9 @@ import {
   getChartTypeByName,
   getChartTypeBySpec,
   isBasicChartSpec,
+  mergeChartEditorChanges,
 } from './chartData'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { type SubmitHandler, useForm } from 'react-hook-form'
 import { useUI } from '../../ui-store'
 import { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
@@ -46,13 +47,14 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
   const { subscribe, handleSubmit } = form
   const formValue = form.watch()
   const sheetId = useUI((ui) => ui.legacy.activeSheetId)
+  const currentChart = useUI((ui) => ui.legacy.charts.find(({ chartId }) => chartId === chart.chartId)) ?? chart
   const updateChart = useUI((ui) => ui.charts.update)
   const { rangeToFormula, formulaToRange } = useFormulaRangeHelpers({
     sheetId,
   })
 
   const _saveChanges = useEvent((data: EmbeddedChart) => {
-    updateChart(data)
+    updateChart(mergeChartEditorChanges(currentChart, data))
   })
   const saveChanges = useMemo(() => debounce(_saveChanges, 250), [_saveChanges])
 
