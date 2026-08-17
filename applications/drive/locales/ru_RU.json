@@ -7037,7 +7037,7 @@
       "Create a secure cloud for ${ memberCount } member": [
         "Создать безопасное облако для ${ memberCount } участника",
         "Создать безопасное облако для ${ memberCount } участников",
-        "Создать безопасное облако для ${ memberCount } {memberCount, plural, one {участника} few {участников} many {участников} other {участника}}",
+        "Создайте безопасное облако для ${ memberCount } участников",
         "Создайте безопасное облако для ${ memberCount } участников"
       ],
       "${ albums } album": [
@@ -9875,8 +9875,8 @@
       ],
       "${ n } country": [
         "${ n } страна",
-        "${ n } {n, plural, one {страна} few {страны} many {стран} other {страны}}",
-        "${ n } {n, plural, one {страна} few {страны} many {стран} other {страны}}",
+        "${ n } страны",
+        "${ n } стран",
         "${ n } стран"
       ]
     },
