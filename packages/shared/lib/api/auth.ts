@@ -112,6 +112,7 @@ export const pushForkSession = (data: {
     Payload?: string;
     ChildClientID: APP_CLIENT_IDS;
     Independent: 0 | 1;
+    ForkChallenge?: string;
     Selector?: string;
     UserCode?: string;
     ActiveOrganizationID?: string;
