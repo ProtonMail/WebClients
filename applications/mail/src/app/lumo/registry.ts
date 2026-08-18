@@ -1,4 +1,8 @@
+import { c } from 'ttag';
+
 import type { CardRenderers, LumoAgentConfig } from '@proton/components/components/lumoAgent/types';
+import { IcBrandProton } from '@proton/icons/icons/IcBrandProton';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import type { ToolDefinition, ToolHandlers } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createLoadGuideDefinition } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
 
@@ -78,5 +82,11 @@ export const buildLumoMailConfig = (deps: MailToolDeps): LumoAgentConfig => {
         handlers,
         cardRenderers,
         productRules: MAIL_RULES,
+        // Run backend-side, so unlike MODULES they contribute no handler and no card — opt-in plus wording.
+        serverTools: ['web_search', 'proton_info'],
+        serverToolMeta: {
+            web_search: { label: () => c('Info').t`Searched the web`, icon: IcGlobe },
+            proton_info: { label: () => c('Info').t`Checked Proton support`, icon: IcBrandProton },
+        },
     };
 };
