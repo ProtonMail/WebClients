@@ -1724,6 +1724,15 @@
       ],
       "Keep going": [
         "계속하기"
+      ],
+      "Run realistic session": [
+        "실제 환경 세션 실행"
+      ],
+      "Stop here": [
+        "여기서 중단"
+      ],
+      "Write ${ count } logs": [
+        "${ count }개 로그 쓰기"
       ]
     },
     "action": {
@@ -4384,6 +4393,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "No ads. No trackers": [
+        "광고 없음. 트래커 없음"
       ]
     },
     "description": {
@@ -5599,6 +5611,27 @@
       ],
       "File has no revision": [
         "파일에 수정 사항 없음"
+      ],
+      "Could not grant access to the organization key": [
+        "조직 키의 접근 권한을 부여할 수 없습니다"
+      ],
+      "Expiration date cannot be in the past": [
+        "만료일은 과거일 수 없습니다"
+      ],
+      "Failed to decrypt revision metadata": [
+        "수정 메타데이터를 복호화할 수 없음"
+      ],
+      "Move operation aborted": [
+        "이동 작업 중단됨"
+      ],
+      "Request aborted": [
+        "요청 중지됨"
+      ],
+      "This file has missing crypto material": [
+        "이 파일에 필요한 암호화 키가 누락되었습니다"
+      ],
+      "You can only leave items that are shared with you": [
+        "나와 공유된 항목에는 나갈 수만 있습니다."
       ]
     },
     "error": {
@@ -9458,6 +9491,51 @@
       ],
       "Star emails": [
         "이메일 별표 표시"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } 마크"
+      ],
+      "Author is not provided on public link": [
+        "작성자가 공개 링크에서 제공되지 않았습니다"
+      ],
+      "I have not finished this one yet.": [
+        "아직 마무리하지 않았어요."
+      ],
+      "Not supported by this browser": [
+        "이 브라우저에서 사용할 수 없음"
+      ],
+      "Read open email “${ subject }”": [
+        "열린 이메일 \"${ subject }\" 읽기"
+      ],
+      "Searched ${ targetName }": [
+        "${ targetName } 검색 결과"
+      ],
+      "Searched for mail from ${ sender }": [
+        "${ sender }님이 보낸 메일 검색 결과"
+      ],
+      "Searched for “${ keyword }”": [
+        "\"${ keyword }\" 검색 결과"
+      ],
+      "Searched your mail": [
+        "내 메일 검색 결과"
+      ],
+      "Thinking about this": [
+        "이것에 대해 생각해 보기"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "정말 많은 단계를 거쳐야될 수 있어요. 정말 계속하시겠어요?"
+      ],
+      "Unstar emails": [
+        "이메일 별표 표시 해제"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "이 거래를 완료하기 위해 새 브라우저 탭의 ${ IDEAL_BRAND_NAME }에 리디렉션됩니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "한 번에 출력되는 대신 실제 세션처럼 1분에 걸쳐 ${ REALISTIC_ENTRIES }개의 현실적인 로그 라인을 순차적으로 작성합니다. 실행하는 데 약 1분이 소요됩니다. 탭을 활성 상태로 유지하세요. 백그라운드에서는 프레임 측정이 일시 중지됩니다."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "실제 환경과 같이 로그 라인을 연속으로 작성한 뒤, 모두 다시 읽어줍니다. 저장된 항목 수에 따라 쓰기 및 읽기/수출 비용이 어떻게 스케일링되는지를 보여줍니다."
       ]
     },
     "info": {
@@ -10654,6 +10732,66 @@
       ],
       "Duration": [
         "기간"
+      ],
+      "Account holder name": [
+        "예금주 이름"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "주의가 필요한 항목과 비활성화된 카테고리의 이메일이 표시됩니다."
+      ],
+      "Burst write": [
+        "연속 쓰기"
+      ],
+      "Deals, offers, and marketing emails": [
+        "할인, 행사 및 마케팅 이메일"
+      ],
+      "Dropped frames": [
+        "손실된 프레임"
+      ],
+      "Encrypt": [
+        "암호화"
+      ],
+      "Entries": [
+        "항목"
+      ],
+      "Export size": [
+        "내보내기 크기"
+      ],
+      "IndexedDB store": [
+        "IndexedDB 저장"
+      ],
+      "Log performance": [
+        "로그 퍼포먼스"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "긴 작업 (≥ 50 ms)"
+      ],
+      "No unread conversations": [
+        "읽지 않은 대화 없음"
+      ],
+      "No unread messages": [
+        "읽지 않은 메시지 없음"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "기본 - 주의가 필요한 항목과 비활성화된 카테고리의 이메일이 표시됩니다."
+      ],
+      "Read / export": [
+        "읽기 / 내보내기"
+      ],
+      "Realistic session": [
+        "실제 환경 세션"
+      ],
+      "Sum of write() calls": [
+        "작성() 호출 합"
+      ],
+      "Write": [
+        "쓰기"
+      ],
+      "Write (whole session)": [
+        "쓰기 (전체 세션)"
+      ],
+      "Write-chain drain after last line": [
+        "마지막 줄 이후의 작성 체인 드레인"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11926,6 +12064,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "확장된 접근을 포함하는 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "제한된 접근을 포함하는 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ]
     },
     "new_plans: feature highlight": {
@@ -13060,6 +13204,9 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
         "${ IDEAL_BRAND_NAME }가 유로화 결제만 지원하므로 사용자의 통화가 유로화(€)로 변경되었습니다."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "${ IDEAL_BRAND_NAME }(으)로 결제하기"
       ]
     },
     "Payments.Error": {
@@ -13080,6 +13227,12 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
+      ],
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_BRAND_NAME }을(를) 구성할 수 없습니다, 다시 시도해 주세요."
+      ],
+      "Please enter the account holder name": [
+        "예금주 이름을 입력해 주세요"
       ]
     },
     "Payments.error": {
@@ -13479,6 +13632,9 @@
       ],
       "attributes": [
         "속성"
+      ],
+      "content key": [
+        "콘텐츠 키"
       ]
     },
     "Property type": {
@@ -13747,6 +13903,9 @@
       ],
       "User Admin": [
         "사용자 관리자"
+      ],
+      "Organization Admin": [
+        "조직 관리자"
       ]
     },
     "Role description": {
@@ -16613,6 +16772,12 @@
       ],
       "Still working on it": [
         "아직 작업 중"
+      ],
+      "Star emails": [
+        "이메일 별표 표시"
+      ],
+      "Unstar emails": [
+        "이메일 별표 표시 해제"
       ]
     },
     "Title header for keys table": {
@@ -17197,6 +17362,11 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "이 지불을 확인함으로써, ${ BRAND_NAME }과 당사 지불 서비스 제공자인 Stripe가 사용자의 은행 계좌에서 인출하도록 동의하는 것으로 간주합니다. 은행과의 합의 조건에 따라 인출일로부터 8주 이내에 환불을 받을 수 있습니다."
       ]
     }
   }

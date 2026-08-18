@@ -1526,7 +1526,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -7978,8 +7979,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8072,7 +8072,7 @@
         "Priorité basse"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Faire de ${ MAIL_APP_NAME } votre application de messagerie par défaut."
+        "Définir ${ MAIL_APP_NAME } comme application de messagerie par défaut."
       ],
       "Manage your folders": [
         "Gérer vos dossiers"
@@ -10752,6 +10752,9 @@
       ],
       "Encrypt": [
         "Chiffrer"
+      ],
+      "Account holder name": [
+        "Nom du titulaire du compte"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13242,6 +13245,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
+      ],
+      "Please enter the account holder name": [
+        "Veuillez saisir le nom du titulaire du compte"
       ]
     },
     "Payments.error": {

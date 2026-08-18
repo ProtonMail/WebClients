@@ -1530,7 +1530,9 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie"
+        "Aprobare cheie",
+        "Aprobare chei",
+        "Aprobare chei"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -5731,6 +5733,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
+      ],
+      "Could not grant access to the organization key": [
+        "Nu s-a putut acorda acces la cheia organizației."
       ]
     },
     "error": {
@@ -8233,9 +8238,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -9879,6 +9882,28 @@
       ],
       "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
         "Scrie linii de jurnal realiste una după alta, apoi le citește pe toate înapoi. Arată cum costul de scriere și citire/exportare crește în funcție de numărul de intrări stocate."
+      ],
+      "${ count } email": [
+        "Mesaje: ${ count }",
+        "Mesaje: ${ count }",
+        "Mesaje: ${ count }"
+      ],
+      "${ count } email · ${ names }": [
+        "Mesaje: ${ count } · ${ names }",
+        "Mesaje: ${ count } · ${ names }",
+        "Mesaje: ${ count } · ${ names }"
+      ],
+      "Apply labels": [
+        "Aplicare etichete"
+      ],
+      "Expand logs": [
+        "Extindere jurnale"
+      ],
+      "Mark as read": [
+        "Marcare: citit"
+      ],
+      "Mark as unread": [
+        "Marcare: necitit"
       ]
     },
     "info": {
@@ -11154,6 +11179,9 @@
       ],
       "Write-chain drain after last line": [
         "Ștergerea șirului de scriere după ultima linie"
+      ],
+      "Account holder name": [
+        "Nume titular cont"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13696,6 +13724,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
+      ],
+      "Please enter the account holder name": [
+        "Introduceți numele titularului contului"
       ]
     },
     "Payments.error": {
@@ -17434,6 +17465,9 @@
       ],
       "Unstar emails": [
         "Anulare stea de la mesaje"
+      ],
+      "Apply labels": [
+        "Aplicare etichete"
       ]
     },
     "Title header for keys table": {
