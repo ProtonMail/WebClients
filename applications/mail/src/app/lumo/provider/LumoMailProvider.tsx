@@ -6,6 +6,7 @@ import LumoAgentDrawerContext from '@proton/components/components/drawer/views/l
 import useLumoAgent from '@proton/components/components/lumoAgent/useLumoAgent';
 import { defaultESStatus } from '@proton/encrypted-search/constants';
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
+import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { createLabel as createLabelAction, updateLabel as updateLabelAction } from '@proton/mail/store/labels/actions';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
@@ -59,6 +60,9 @@ const LumoMailProvider = ({ children }: Props) => {
     const [folders = []] = useFolders();
     const [labels = []] = useLabels();
     const [filters = []] = useFilters();
+    // Not `useCategoriesView`, whose `shouldShowTabs` also requires the user to be sitting in the Inbox:
+    // a mark-all scoped to a category is valid from wherever they are.
+    const { activeCategoriesTabs } = useCategoriesData();
     const [mailSettings] = useMailSettings();
     const esStatus = useRef<ESStatusBooleans>(defaultESStatus);
 
@@ -76,6 +80,7 @@ const LumoMailProvider = ({ children }: Props) => {
         folders,
         labels,
         filters,
+        activeCategoriesTabs,
         mailSettings,
     };
     const latest = useRef(current);
@@ -94,6 +99,7 @@ const LumoMailProvider = ({ children }: Props) => {
             getFolders: () => latest.current.folders,
             getLabels: () => latest.current.labels,
             getFilters: () => latest.current.filters,
+            getActiveCategoryTabs: () => latest.current.activeCategoriesTabs,
             getMailSettings: () => latest.current.mailSettings,
             applyLocation: (params) => latest.current.applyLocation(params),
             // async so applyMultipleLocations' synchronous validation throws surface as a rejection.
