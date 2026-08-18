@@ -619,4 +619,92 @@ describe('useLumoAgent', () => {
         expect(result.current.items).toEqual([]);
         expect(result.current.hasConversation).toBe(false);
     });
+
+    it('builds a debug transcript of the system prompt followed by the banked turns in order', async () => {
+        script = async ({ chunk }) => chunk(message('First answer.'));
+        const { result } = renderHook(() => useLumoAgent({ ...config, productRules: 'ONLY MOVE MAIL THE USER NAMED' }));
+        await act(async () => {
+            await result.current.send('first question');
+        });
+        script = async ({ chunk }) => chunk(message('Second answer.'));
+        await act(async () => {
+            await result.current.send('second question');
+        });
+
+        const transcript = result.current.getDebugTranscript();
+        expect(transcript).toMatch(
+            /^===== SYSTEM =====\n[\s\S]+\n\n===== USER =====\nfirst question\n\n===== ASSISTANT =====\nFirst answer\.\n\n===== USER =====\nsecond question\n\n===== ASSISTANT =====\nSecond answer\.$/
+        );
+        expect(transcript).toContain('ONLY MOVE MAIL THE USER NAMED');
+    });
+
+    it("interleaves each round's narration with its tool call, arguments and result", async () => {
+        script = async ({ executor, chunk }) => {
+            chunk(message('Let me look.'));
+            await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
+            chunk(message('Two items.'));
+            // The transport banks the round's narration and its tool exchange in the chain it returns,
+            // and breaks before banking the closing prose.
+            return {
+                turns: [
+                    ...sentTurns[0],
+                    { role: 'assistant', content: 'Let me look.' },
+                    { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
+                    { role: 'tool_result', content: '2 items' },
+                ] as unknown as Turn[],
+            };
+        };
+
+        const { result } = renderHook(() => useLumoAgent(config));
+        await act(async () => {
+            await result.current.send('show me');
+        });
+
+        expect(result.current.getDebugTranscript()).toMatch(
+            /===== USER =====\nshow me\n\n===== ASSISTANT =====\nLet me look\.\n\n===== TOOL_CALL =====\n\{"id":"1","name":"view_items","arguments":\{\}\}\n\n===== TOOL_RESULT =====\n2 items\n\n===== ASSISTANT =====\nTwo items\.$/
+        );
+    });
+
+    it('does not repeat the narration when the last round called a tool instead of speaking', async () => {
+        script = async ({ executor, chunk }) => {
+            chunk(message('Let me look.'));
+            await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
+            return {
+                turns: [
+                    ...sentTurns[0],
+                    { role: 'assistant', content: 'Let me look.' },
+                    { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
+                    { role: 'tool_result', content: '2 items' },
+                ] as unknown as Turn[],
+            };
+        };
+
+        const { result } = renderHook(() => useLumoAgent(config));
+        await act(async () => {
+            await result.current.send('show me');
+        });
+
+        expect(result.current.getDebugTranscript()).toMatch(/===== TOOL_RESULT =====\n2 items$/);
+    });
+
+    it('does not repeat the prose the user already read when a resumed chain answers plainly', async () => {
+        script = async ({ chunk }) => {
+            chunk(message('I checked the Inbox.'));
+            return { stoppedOnBudget: true, turns: sentTurns[0] };
+        };
+
+        const { result } = renderHook(() => useLumoAgent(config));
+        await act(async () => {
+            await result.current.send('find my tickets');
+        });
+
+        script = async ({ chunk }) => chunk(message('They were in Archive.'));
+        await act(async () => {
+            await result.current.resume();
+        });
+
+        const transcript = result.current.getDebugTranscript();
+        expect(transcript.match(/I checked the Inbox\./g)).toHaveLength(1);
+        expect(transcript).toContain('They were in Archive.');
+    });
 });

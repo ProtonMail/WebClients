@@ -6,9 +6,12 @@ import type { SelectedDrawerOption } from '@proton/components/components/drawer/
 import DrawerView from '@proton/components/components/drawer/views/DrawerView';
 import LumoAgentPanel from '@proton/components/components/lumoAgent/LumoAgentPanel';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcBroom } from '@proton/icons/icons/IcBroom';
+import { IcBug } from '@proton/icons/icons/IcBug';
 import LumoWordmark from '@proton/lumo-ui/LumoWordmark';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { useLumoAgentDrawer } from './lumoAgent/lumoAgentDrawerContext';
 
@@ -32,21 +35,36 @@ const DrawerLumoView = () => {
         confirm,
         cancel,
         clear,
+        getDebugTranscript,
     } = useLumoAgentDrawer();
     const theme = useTheme();
+    const { createNotification } = useNotifications();
 
     const tab: SelectedDrawerOption = {
         text: LUMO_SHORT_APP_NAME,
         value: 'lumo',
     };
 
+    const copyTranscript = () => {
+        textToClipboard(getDebugTranscript());
+        createNotification({ text: c('Info').t`Debug transcript copied` });
+    };
+
     const clearLabel = c('Action').t`Clear conversation`;
+    const copyLabel = c('Action').t`Copy debug transcript`;
     const headerActions = hasConversation ? (
-        <Tooltip title={clearLabel}>
-            <Button icon color="weak" shape="ghost" onClick={clear}>
-                <IcBroom alt={clearLabel} />
-            </Button>
-        </Tooltip>
+        <>
+            <Tooltip title={copyLabel}>
+                <Button icon color="weak" shape="ghost" onClick={copyTranscript}>
+                    <IcBug alt={copyLabel} />
+                </Button>
+            </Tooltip>
+            <Tooltip title={clearLabel}>
+                <Button icon color="weak" shape="ghost" onClick={clear}>
+                    <IcBroom alt={clearLabel} />
+                </Button>
+            </Tooltip>
+        </>
     ) : undefined;
 
     return (
