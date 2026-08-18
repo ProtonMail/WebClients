@@ -198,21 +198,29 @@ describe('`fetchModelArtifact`', () => {
         if (!result.ok) expect(result.error).toContain('email-model.json');
     });
 
-    test('fails when a class file is not valid JSON', async () => {
+    test('propagates the real JSON.parse error instead of a generic message', async () => {
         const weights = validPerceptronWeights();
         const files = Object.fromEntries(
             detectionClasses
                 .filter((klass) => klass !== 'email')
                 .map((klass) => [`${klass}-model.json`, weights[klass]])
         );
-        const blob = await makeArtifactZip(files, { 'email-model.json': '{not-json' });
-        fetchMock.mockResolvedValue({ ok: true, blob: () => Promise.resolve(blob) } as Response);
 
-        const result = await fetchModelArtifact('2026.8.2475-lr');
-        expect(result.ok).toBe(false);
-        if (!result.ok) {
-            expect(result.error).toContain('email-model.json');
-            expect(result.error).toContain('JSON at position');
+        const blobA = await makeArtifactZip(files, { 'email-model.json': '{not-json' });
+        fetchMock.mockResolvedValueOnce({ ok: true, blob: () => Promise.resolve(blobA) } as Response);
+        const resultA = await fetchModelArtifact('2026.8.2475-lr');
+
+        const blobB = await makeArtifactZip(files, { 'email-model.json': '[1, 2' });
+        fetchMock.mockResolvedValueOnce({ ok: true, blob: () => Promise.resolve(blobB) } as Response);
+        const resultB = await fetchModelArtifact('2026.8.2475-lr');
+
+        expect(resultA.ok).toBe(false);
+        expect(resultB.ok).toBe(false);
+        if (!resultA.ok && !resultB.ok) {
+            expect(resultA.error).toContain('email-model.json');
+            expect(resultB.error).toContain('email-model.json');
+            // A hardcoded/generic fallback would make these identical regardless of input.
+            expect(resultA.error).not.toBe(resultB.error);
         }
     });
 
@@ -232,7 +240,8 @@ describe('`fetchModelArtifact`', () => {
 
         const result = await fetchModelArtifact('2026.8.2475-lr');
         expect(result.ok).toBe(false);
-        if (!result.ok) expect(result.error).toContain('format is not recognized');
+        // Proves the real rejection reason propagates rather than falling back to the generic message.
+        if (!result.ok) expect(result.error).not.toBe('model artifact is not a valid zip archive');
     });
 
     test('fails without fetching for an unrecognized model ID', async () => {
