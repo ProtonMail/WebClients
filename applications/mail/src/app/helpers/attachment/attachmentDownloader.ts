@@ -1,9 +1,11 @@
 import JSZip from 'jszip';
 
+import { logger } from '@proton/logger';
 import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
+import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -40,6 +42,9 @@ export const formatDownload = async (
             onUpdateAttachment,
             messageFlags
         );
+
+        logger.info(`Attachment downloaded successfully (${shortHumanSize(attachment.Size)})`);
+
         return {
             attachment,
             data: data as Uint8Array<ArrayBuffer>,
@@ -48,6 +53,10 @@ export const formatDownload = async (
     } catch (error: any) {
         // If the decryption fails we download the encrypted version
         if (error.data) {
+            logger.warn(
+                `Attachment decryption failed, downloading encrypted version instead (${shortHumanSize(attachment.Size)})`
+            );
+
             return {
                 attachment: {
                     Name: `${attachment.Name}.pgp`,
@@ -59,6 +68,9 @@ export const formatDownload = async (
                 verificationStatus: MAIL_VERIFICATION_STATUS.NOT_VERIFIED,
             };
         }
+
+        logger.error(`Failed to download attachment (${shortHumanSize(attachment.Size)})`, error);
+
         throw error;
     }
 };
