@@ -1,11 +1,12 @@
 import {
     type PayloadAction,
+    type ThunkAction,
+    type ThunkDispatch,
     type UnknownAction,
     createAction,
     createSlice,
     miniSerializeError,
 } from '@reduxjs/toolkit';
-import type { ThunkAction, ThunkDispatch } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { defaultLongExpiry, getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';

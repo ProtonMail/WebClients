@@ -1,5 +1,10 @@
-import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError } from '@reduxjs/toolkit';
-import type { ThunkAction } from 'redux-thunk';
+import {
+    type PayloadAction,
+    type ThunkAction,
+    type UnknownAction,
+    createSlice,
+    miniSerializeError,
+} from '@reduxjs/toolkit';
 
 import { getFreePlan, queryPlans } from '@proton/payments/core/api/api';
 import { CURRENCIES } from '@proton/payments/core/constants';
