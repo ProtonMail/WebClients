@@ -1,5 +1,4 @@
-import type { UnknownAction } from '@reduxjs/toolkit';
-import type { ThunkAction } from 'redux-thunk';
+import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -25,6 +24,7 @@ import {
     parseUnprivatizationData,
     validateUnprivatizationData,
 } from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
 
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys';
 import { type AddressesState, addressesThunk } from '../addresses';
@@ -200,9 +200,9 @@ export const memberAcceptUnprivatization = ({
         await api(acceptMemberUnprivatizationInfo(payload));
         dispatch(updateMember({ Unprivatization: null }));
         // Refetch the user (and addresses) so that the relevant fields get updated (mostly the Private field)
-        dispatch(userThunk({ cache: CacheType.None }));
+        dispatch(userThunk({ cache: CacheType.None })).catch(noop);
         if (deletedInactiveKeys) {
-            dispatch(addressesThunk({ cache: CacheType.None }));
+            dispatch(addressesThunk({ cache: CacheType.None })).catch(noop);
         }
     };
 };

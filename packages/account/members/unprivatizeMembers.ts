@@ -1,6 +1,5 @@
-import type { UnknownAction } from '@reduxjs/toolkit';
+import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createNextState, createSelector } from '@reduxjs/toolkit';
-import type { ThunkAction } from 'redux-thunk';
 import { c } from 'ttag';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
