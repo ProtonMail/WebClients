@@ -48,4 +48,13 @@ describe('`getModelArtifactURL`', () => {
             'https://proton.me/download/pass/model-artifacts/not-a-valid-id/model-artifact.zip'
         );
     });
+
+    test('encodes a model ID containing path-traversal or URL-breaking characters', () => {
+        expect(getModelArtifactURL('../../etc/passwd')).toBe(
+            'https://proton.me/download/pass/model-artifacts/..%2F..%2Fetc%2Fpasswd/model-artifact.zip'
+        );
+        expect(getModelArtifactURL('foo?bar#baz')).toBe(
+            'https://proton.me/download/pass/model-artifacts/foo%3Fbar%23baz/model-artifact.zip'
+        );
+    });
 });

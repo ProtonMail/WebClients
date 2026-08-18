@@ -17,4 +17,4 @@ export const getModelArch = (modelId: string): Result<{ arch: ModelArch }> => {
 };
 
 export const getModelArtifactURL = (modelId: string): string =>
-    `${MODEL_ARTIFACTS_BASE_URL}/${modelId}/model-artifact.zip`;
+    `${MODEL_ARTIFACTS_BASE_URL}/${encodeURIComponent(modelId)}/model-artifact.zip`;
