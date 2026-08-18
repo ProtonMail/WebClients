@@ -46,7 +46,7 @@ interface ProduceForkArguments {
 export const produceFork = async ({
     api,
     session: { keyPassword, offlineKey, persistedSession },
-    forkParameters: { state, app, independent, forkType, forkVersion, payloadType, payloadVersion },
+    forkParameters: { state, app, independent, forkType, forkVersion, payloadType, payloadVersion, forkChallenge },
 }: ProduceForkArguments): Promise<ProduceForkPayload> => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const base64StringKey = rawKey.toBase64({ alphabet: 'base64url', omitPadding: true });
@@ -75,6 +75,7 @@ export const produceFork = async ({
             Payload: encryptedPayload.blob,
             ChildClientID: childClientID,
             Independent: independent ? 1 : 0,
+            ForkChallenge: forkChallenge,
         })
     );
 
@@ -174,6 +175,7 @@ export interface ProduceForkParameters {
     independent: boolean;
     forkType?: ForkType;
     forkVersion: number;
+    forkChallenge: string | undefined;
     prompt: 'login' | undefined;
     promptType: 'offline-bypass' | 'offline' | 'default';
     promptBypass: 'none' | 'sso';
@@ -201,6 +203,7 @@ export const getProduceForkParameters = (
     const plan = searchParams.get(ForkSearchParameters.Plan) || '';
     const partnerId = searchParams.get(ForkSearchParameters.PartnerId) || '';
     const forkVersion = Number(searchParams.get(ForkSearchParameters.Version) || '1');
+    const forkChallenge = searchParams.get(ForkSearchParameters.ForkChallenge) || undefined;
     const independent = searchParams.get(ForkSearchParameters.Independent) || '0';
     const unauthenticatedReturnUrl = (() => {
         const value = searchParams.get(ForkSearchParameters.UnauthenticatedReturnUrl) || '';
@@ -259,6 +262,7 @@ export const getProduceForkParameters = (
         payloadVersion,
         email,
         forkVersion,
+        forkChallenge,
         partnerId,
         unauthenticatedReturnUrl,
         returnUrl,
