@@ -68,6 +68,7 @@ export interface Organization {
     State: ORGANIZATION_STATE;
     IsBusiness: boolean;
     PlanFlags: OrganizationPlanFlag;
+    IsSubsidiary: boolean;
 }
 
 export interface OrganizationIdentityOutput {
