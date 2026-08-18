@@ -7,7 +7,6 @@ import {
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PASS_SHORT_APP_NAME,
-    VPN_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 
@@ -47,21 +46,21 @@ const getMaxSavingsTitle = () => {
 const getUnlimitedFeatures = (product: OfferProduct = 'mail') => {
     if (product === 'drive') {
         return [
-            { name: c('q3campaign2026: Info').t`Full access to ${VPN_APP_NAME}` },
-            { name: c('q3campaign2026: Info').t`500 GB storage` },
             {
                 name: c('q3campaign2026: Info')
-                    .t`All premium features of ${DRIVE_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
+                    .t`Premium ${DRIVE_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
             },
+            { name: c('q3campaign2026: Info').t`500 GB of secure storage` },
+            { name: c('q3campaign2026: Info').t`Advanced protection against cyber threats` },
         ];
     }
 
     return [
         {
             name: c('q3campaign2026: Info')
-                .t`All premium features of ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
+                .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
         },
-        { name: c('q3campaign2026: Info').t`500 GB storage` },
+        { name: c('q3campaign2026: Info').t`500 GB of secure storage` },
         { name: c('q3campaign2026: Info').t`Stronger protection against cyber threats` },
     ];
 };
@@ -96,10 +95,10 @@ const getDuoFeatures = (_product: OfferProduct = 'mail') => {
     return [
         {
             name: c('q3campaign2026: Info')
-                .t`All premium features of ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
+                .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
         },
-        { name: c('q3campaign2026: Info').t`Individual accounts for 2 users` },
-        { name: c('q3campaign2026: Info').t`2 TB data storage` },
+        { name: c('q3campaign2026: Info').t`2 individual accounts` },
+        { name: c('q3campaign2026: Info').t`2 TB of secure storage` },
     ];
 };
 
@@ -122,10 +121,10 @@ const getFamilyFeatures = (_product: OfferProduct = 'mail') => {
     return [
         {
             name: c('q3campaign2026: Info')
-                .t`Premium access to ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}`,
+                .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}`,
         },
-        { name: c('q3campaign2026: Info').t`Six individual accounts` },
-        { name: c('q3campaign2026: Info').t`3 TB data storage` },
+        { name: c('q3campaign2026: Info').t`6 individual accounts` },
+        { name: c('q3campaign2026: Info').t`3 TB of secure storage` },
     ];
 };
 
