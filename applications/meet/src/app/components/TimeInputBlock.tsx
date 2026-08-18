@@ -7,7 +7,7 @@ import { IcClock } from '@proton/icons/icons/IcClock';
 import type { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import type { FormValues, OnDateTimeChange } from './ScheduleMeetingForm/types';
+import type { FormValues, OnDateTimeChange } from './MeetingCreation/ScheduleMeetingModal/ScheduleMeetingForm/types';
 import { TimeInput } from './TimeInput/TimeInput';
 
 export const TimeInputBlock = ({

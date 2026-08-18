@@ -3,16 +3,20 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components/index';
 import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
 import { useMeetingUpdates } from '@proton/meet/hooks/useMeetingUpdates';
+import { useUpdateMeetingWaitingRoom } from '@proton/meet/hooks/useUpdateMeetingWaitingRoom';
+import { useIsWaitingRoomCreationEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useGetMeetings } from '@proton/meet/store/hooks/useMeetings';
 import { CacheType } from '@proton/redux-utilities/interface';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
 
-import { RoomForm } from '../RoomForm/RoomForm';
-import { getRoomVariantFromId } from '../RoomForm/getRoomVariantFromId';
-import { TranslucentModal } from '../TranslucentModal/TranslucentModal';
+import { useNotifyError } from '../../../hooks/useNotifyError';
+import { TranslucentModal } from '../../TranslucentModal/TranslucentModal';
+import { getMeetingVariantFromId } from '../shared/getMeetingVariantFromId';
+import { RoomForm, type RoomFormSubmit } from './RoomForm/RoomForm';
 
 interface CreateRoomModalProps {
     open: boolean;
@@ -21,14 +25,18 @@ interface CreateRoomModalProps {
 }
 
 export const CreateRoomModal = ({ open, onClose, editedRoom }: CreateRoomModalProps) => {
+    const isWaitingRoomCreationEnabled = useIsWaitingRoomCreationEnabled();
+
     const { createMeeting } = useCreateMeeting();
     const { createNotification } = useNotifications();
+    const notifyError = useNotifyError();
 
     const { saveMeetingName } = useMeetingUpdates();
+    const { updateMeetingWaitingRoom } = useUpdateMeetingWaitingRoom();
 
     const getMeetings = useGetMeetings();
 
-    const onEdit = async ({ name }: { name: string }) => {
+    const onEdit: RoomFormSubmit = async ({ name, waitingRoom }) => {
         if (!editedRoom) {
             return;
         }
@@ -40,6 +48,13 @@ export const CreateRoomModal = ({ open, onClose, editedRoom }: CreateRoomModalPr
                 meetingObject: editedRoom,
             });
 
+            if (isWaitingRoomCreationEnabled && waitingRoom !== undefined && waitingRoom !== editedRoom.WaitingRoom) {
+                await updateMeetingWaitingRoom({
+                    meetingLinkName: editedRoom.MeetingLinkName,
+                    waitingRoom,
+                });
+            }
+
             void getMeetings({ cache: CacheType.None });
 
             createNotification({
@@ -49,18 +64,16 @@ export const CreateRoomModal = ({ open, onClose, editedRoom }: CreateRoomModalPr
 
             onClose();
         } catch (error) {
-            createNotification({
-                type: 'error',
-                text: error instanceof Error ? error.message : c('Error').t`Failed to edit room name`,
-            });
+            notifyError(getApiErrorMessage(error) ?? c('Error').t`Failed to edit room name`);
         }
     };
 
-    const onSubmit = async ({ name }: { name: string }) => {
+    const onSubmit: RoomFormSubmit = async ({ name, waitingRoom }) => {
         try {
             const { meetingLink } = await createMeeting({
                 meetingName: name,
                 type: MeetingType.PERMANENT,
+                waitingRoom,
             });
 
             const fullMeetingLink = getAppHref(meetingLink, APPS.PROTONMEET);
@@ -73,11 +86,7 @@ export const CreateRoomModal = ({ open, onClose, editedRoom }: CreateRoomModalPr
                 showCloseButton: false,
             });
         } catch (error) {
-            createNotification({
-                type: 'error',
-                text: error instanceof Error ? error.message : c('Error').t`Failed to create meeting`,
-                showCloseButton: false,
-            });
+            notifyError(getApiErrorMessage(error) ?? c('Error').t`Failed to create meeting`);
         }
 
         onClose();
@@ -86,11 +95,12 @@ export const CreateRoomModal = ({ open, onClose, editedRoom }: CreateRoomModalPr
     return (
         <TranslucentModal open={open} onClose={onClose}>
             <RoomForm
-                variant={getRoomVariantFromId(editedRoom?.ID)}
+                variant={getMeetingVariantFromId(editedRoom?.ID)}
                 onSubmit={editedRoom ? onEdit : onSubmit}
                 initialName={editedRoom?.MeetingName}
-                id={editedRoom?.ID}
+                editMode={Boolean(editedRoom)}
                 onClose={onClose}
+                initialWaitingRoom={editedRoom?.WaitingRoom}
             />
         </TranslucentModal>
     );
