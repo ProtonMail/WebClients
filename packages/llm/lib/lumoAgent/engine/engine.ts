@@ -12,6 +12,7 @@ import type {
     ReferenceRegistry,
     ToolDefinition,
     ToolHandlers,
+    ToolImage,
     ToolName,
 } from '../contracts/types';
 import { LOAD_GUIDE_TOOL_NAME, resolveGuide } from './loadGuide';
@@ -116,13 +117,20 @@ const collectLabels = (params: Record<string, any>, references: ReferenceRegistr
     return labels;
 };
 
+/** Per-batch wiring: both entries belong to the chain that started the batch, not to the executor. */
+export interface ExecuteOptions {
+    /**
+     * Scopes a batch to the chain that started it. Once it aborts, the remaining calls are skipped
+     * rather than confirmed and run against whatever turn has replaced that chain.
+     */
+    signal?: AbortSignal;
+    /** Where a handler's {@link ToolDeps.showImage} lands — the chain decides what it does with it. */
+    showImage?: (image: ToolImage) => void;
+}
+
 export interface LumoClientToolExecutor extends ClientToolExecutor {
     getLoadedGuides(): ToolName[];
-    /**
-     * `signal` scopes a batch to the chain that started it. Once it aborts, the remaining calls are
-     * skipped rather than confirmed and run against whatever turn has replaced that chain.
-     */
-    execute(calls: PendingClientToolCall[], options?: { signal?: AbortSignal }): Promise<ClientToolResult[]>;
+    execute(calls: PendingClientToolCall[], options?: ExecuteOptions): Promise<ClientToolResult[]>;
 }
 
 export const createClientToolExecutor = (config: ClientToolExecutorConfig): LumoClientToolExecutor => {
@@ -161,18 +169,27 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
     const runHandler = async (
         definition: ToolDefinition,
         params: Record<string, any>,
-        signal?: AbortSignal
+        options?: ExecuteOptions
     ): Promise<{ ok: true; payload: string } | { ok: false; error: ClientToolResult }> => {
         const handler = handlers[definition.name];
         if (!handler) {
             onTrace?.(new Error(`No handler registered for tool "${definition.name}".`));
             return { ok: false, error: errorResult(`The tool "${definition.name}" is not available.`) };
         }
+        // A handler that outlived its chain has nowhere to put a chip or image; the turn it belonged to is
+        // gone. Checked at call time (not up front) since a handler can call `showImage` mid-run, before
+        // the chain it started in aborts.
+        const showImage = options?.showImage
+            ? (image: ToolImage) => {
+                  if (!options.signal?.aborted) {
+                      options.showImage?.(image);
+                  }
+              }
+            : undefined;
         try {
-            const result = await handler(params, { references });
+            const result = await handler(params, { references, showImage });
             const payload = definition.serializeForLumo(result, references);
-            // A handler that outlived its chain has nowhere to put its chip; the turn it belonged to is gone.
-            if (!signal?.aborted) {
+            if (!options?.signal?.aborted) {
                 onChip?.({ tool: definition.name, summary: definition.summarizeChip(params, result), payload });
             }
             return { ok: true, payload };
@@ -216,7 +233,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         );
     };
 
-    const executeOne = async (call: PendingClientToolCall, signal?: AbortSignal): Promise<ClientToolResult> => {
+    const executeOne = async (call: PendingClientToolCall, options?: ExecuteOptions): Promise<ClientToolResult> => {
         const definition = byName.get(call.name);
         if (!definition) {
             return errorResult(`Unknown tool "${call.name}". Use one of the provided tools.`);
@@ -252,7 +269,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
             if (editedError) {
                 return editedError;
             }
-            const applied = await runHandler(definition, editedParams, signal);
+            const applied = await runHandler(definition, editedParams, options);
             if (!applied.ok) {
                 return applied.error;
             }
@@ -264,7 +281,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
             );
         }
 
-        const read = await runHandler(definition, args, signal);
+        const read = await runHandler(definition, args, options);
         return read.ok ? okResult(read.payload) : read.error;
     };
 
@@ -284,7 +301,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
             const results: ClientToolResult[] = [];
             for (const call of calls) {
                 results.push(
-                    signal?.aborted ? errorResult('The user cancelled that.') : await executeOne(call, signal)
+                    signal?.aborted ? errorResult('The user cancelled that.') : await executeOne(call, options)
                 );
             }
             return results;
