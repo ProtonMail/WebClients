@@ -516,6 +516,9 @@
       "Increase": [
         "Augmenter"
       ],
+      "Keep going": [
+        "Continuer"
+      ],
       "Keep my subscription": [
         "Conserver mon abonnement"
       ],
@@ -908,6 +911,9 @@
       ],
       "Stop": [
         "Arrêter"
+      ],
+      "Stop here": [
+        "S'arrêter ici"
       ],
       "Stop sharing": [
         "Arrêter le partage"
@@ -3277,6 +3283,9 @@
       "Copying item to a non-folder is not allowed": [
         "Vous ne pouvez pas copier d'élément dans un élément qui n'est pas un dossier."
       ],
+      "Could not grant access to the organization key": [
+        "Impossible d'accorder l'accès à la clé de l'organisation"
+      ],
       "Could not load sharing details": [
         "Les informations du partage n'ont pas pu être chargées."
       ],
@@ -5412,6 +5421,9 @@
       "High Priority": [
         "Priorité élevée"
       ],
+      "I have not finished this one yet.": [
+        "Je n'ai pas encore fini celui-là."
+      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Je confirme par la présente, en toute bonne foi, que les informations et les déclarations contenues dans le rapport sont exactes et complètes."
       ],
@@ -5957,6 +5969,9 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Ceci est désormais votre ${ defaultEmailAddress } pour envoyer de nouveaux messages."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Cela demande beaucoup d'étapes. Faut-il continuer ?"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte de paiement."
       ],
@@ -6489,6 +6504,9 @@
       ],
       "Account holder": [
         "Titulaire du compte"
+      ],
+      "Account holder name": [
+        "Nom du titulaire du compte"
       ],
       "Active": [
         "Actif"
@@ -7827,6 +7845,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès étendu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès limité"
       ],
       "${ n } calendar": [
         "${ n } calendrier",
@@ -9393,6 +9417,9 @@
       "Invalid security code": [
         "Le code de sécurité n'est pas valide."
       ],
+      "Please enter the account holder name": [
+        "Veuillez saisir le nom du titulaire du compte"
+      ],
       "Something went wrong. Please try again later.": [
         "Une erreur s'est produite. Veuillez réessayer plus tard."
       ],
@@ -9949,8 +9976,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propriétaire"
+      "Organization Admin": [
+        "Administrateur de l'organisation"
       ],
       "Security Admin": [
         "Administrateur de sécurité"
@@ -11959,6 +11986,9 @@
       ],
       "Stay for 50% off your next month": [
         "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
+      ],
+      "Still working on it": [
+        "Je suis encore en train d'y travailler"
       ],
       "Stop sharing": [
         "Arrêter le partage"

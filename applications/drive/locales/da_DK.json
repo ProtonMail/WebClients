@@ -517,7 +517,7 @@
         "Forøg"
       ],
       "Keep going": [
-        "Fortsæt …"
+        "Fortsæt"
       ],
       "Keep my subscription": [
         "Bevar mit abonnement"
@@ -4958,7 +4958,7 @@
         "${ DOCS_APP_NAME } og ${ SHEETS_APP_NAME }-filer kan ikke downloades direkte og vil ikke blive inkluderet i dette download. Du kan downloade de andre filer ved at klikke på 'Fortsæt med at downloade'."
       ],
       "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } kunne ikke dekryptere det lokale søgeindeks. Genopbyg indekset for at gendanne søgningen."
+        "${ DRIVE_APP_NAME } kunne ikke dekryptere det lokale søgeindeks. Opret indekset igen for at gendanne søgningen."
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: billede i fuld størrelse"
@@ -4969,6 +4969,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } mærkat"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe skriveassistent"
@@ -5530,7 +5533,7 @@
         "Høj prioritet"
       ],
       "I have not finished this one yet.": [
-        "Denne er endnu ikke afsluttet"
+        "Denne er endnu ikke afsluttet."
       ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Jeg bekræfter hermed - i god tro - at informationer og udtalelser i rapporten er korrekte og fuldstændige."
@@ -6286,6 +6289,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruger 3-D Secure til at sikre dine betalinger"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Du omdirigeres til ${ IDEAL_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
@@ -9367,6 +9373,9 @@
       "More plans are available in other currencies": [
         "Flere abonnementer er tilgængelige i andre valutaer"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betal med ${ IDEAL_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalingsmetode er påkrævet, for at abonnementet kan aktiveres, efter at prøveversionen udløber."
       ],
@@ -10030,8 +10039,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ejer"
+      "Organization Admin": [
+        "Organisationsadmin"
       ],
       "Security Admin": [
         "Sikkerhedsadmin"

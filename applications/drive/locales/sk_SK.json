@@ -612,6 +612,9 @@
       "Join album": [
         "Pridať sa do albumu"
       ],
+      "Keep going": [
+        "Pokračujte"
+      ],
       "Keep my subscription": [
         "Ponechať moje predplatné"
       ],
@@ -1088,6 +1091,9 @@
       ],
       "Stop": [
         "Zastaviť"
+      ],
+      "Stop here": [
+        "Tu zastav"
       ],
       "Stop sharing": [
         "Zastaviť zdieľanie"
@@ -3574,6 +3580,9 @@
       ],
       "Could not find an available name": [
         "Nepodarilo sa nájsť voľné meno"
+      ],
+      "Could not grant access to the organization key": [
+        "Nepodarilo sa udeliť prístup ku kľúču organizácie"
       ],
       "Could not load sharing details": [
         "Nepodarilo sa načítať podrobnosti o zdieľaní"
@@ -6190,6 +6199,9 @@
       "How does encrypted search work?": [
         "Ako funguje vyhľadávanie v šifrovaných dátach?"
       ],
+      "I have not finished this one yet.": [
+        "Ešte som to nedokončil."
+      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Týmto v dobrej viere potvrdzujem, že informácie a tvrdenia uvedené v správe sú správne a úplné."
       ],
@@ -7018,6 +7030,9 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Toto je teraz vaša ${ defaultEmailAddress } pre odosielanie nových správ."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Je to dosť zdĺhavé. Mám v tom pokračovať?"
+      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Táto položka nie je uložená vo vašej knižnici fotografií. Ak ju z tohto albumu odstránite, natrvalo k nej stratíte prístup.",
         "Niektoré z vybraných položiek nie sú uložené vo vašej knižnici fotografií. Ak ich z tohto albumu odstránite, natrvalo k nim stratíte prístup.",
@@ -7733,6 +7748,9 @@
       ],
       "Account holder": [
         "Vlastník účtu"
+      ],
+      "Account holder name": [
+        "Meno majiteľa účtu"
       ],
       "Active": [
         "Aktívne"
@@ -9172,6 +9190,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s rozšíreným prístupom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s obmedzeným prístupom"
       ],
       "${ n } calendar": [
         "${ n } kalendár",
@@ -11146,6 +11170,9 @@
       "Invalid security code": [
         "Neplatný bezpečnostný kód"
       ],
+      "Please enter the account holder name": [
+        "Zadajte meno majiteľa účtu, prosím"
+      ],
       "Something went wrong. Please try again later.": [
         "Niečo sa pokazilo. Skúste to znova neskôr."
       ],
@@ -11722,8 +11749,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Vlastník"
+      "Organization Admin": [
+        "Správca organizácie"
       ],
       "Security Admin": [
         "Bezpečnostný správca"
@@ -14042,6 +14069,9 @@
       ],
       "Stay for 50% off your next month": [
         "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
+      ],
+      "Still working on it": [
+        "Stále na tom pracujem"
       ],
       "Stop sharing": [
         "Ukončiť zdieľanie"
