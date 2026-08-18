@@ -3076,6 +3076,9 @@
       "Could not find an available name": [
         "Kullanılabilecek bir ad bulunamadı"
       ],
+      "Could not grant access to the organization key": [
+        "Kuruluş anahtarına erişme izni verilemedi"
+      ],
       "Could not load sharing details": [
         "Paylaşım ayrıntıları yüklenemedi"
       ],
@@ -3195,6 +3198,9 @@
       "Failed to fetch sharing info": [
         "Paylaşım bilgileri alınamadı"
       ],
+      "Failed to fetch sharing information": [
+        "Paylaşım bilgileri alınamadı"
+      ],
       "Failed to get inviter keys": [
         "Davet edilenin anahtarları alınamadı"
       ],
@@ -3212,9 +3218,6 @@
       ],
       "Failed to remove older revisions": [
         "Eski sürümler kaldırılamadı"
-      ],
-      "Failed to rename document": [
-        "Belge yeniden adlandırılamadı"
       ],
       "Failed to rename document. Please try again later.": [
         "Belge yeniden adlandırılamadı. Lütfen bir süre sonra yeniden deneyin."
@@ -9158,8 +9161,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Sahibi"
+      "Organization Admin": [
+        "Kuruluş yöneticisi"
       ],
       "Security Admin": [
         "Güvenlik yöneticisi"

@@ -474,6 +474,9 @@
       "Import from Outlook": [
         "Importare din Outlook"
       ],
+      "Keep going": [
+        "Continuă"
+      ],
       "Keep my subscription": [
         "Îmi păstrez abonamentul"
       ],
@@ -818,6 +821,9 @@
       ],
       "Stop": [
         "Stop\n"
+      ],
+      "Stop here": [
+        "Oprește aici"
       ],
       "Stop sharing": [
         "Oprire partajare"
@@ -1266,7 +1272,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TiB spațiu de stocare"
+        "2 TiB spațiu total"
       ],
       "3 TB data storage": [
         "3 TiB spațiu de stocare"
@@ -3093,6 +3099,9 @@
       "Could not find an available name": [
         "Nu s-a găsit un nume disponibil."
       ],
+      "Could not grant access to the organization key": [
+        "Nu s-a putut acorda acces la cheia organizației."
+      ],
       "Could not load sharing details": [
         "Nu s-au putut încărca detaliile de partajare."
       ],
@@ -3214,6 +3223,9 @@
       "Failed to fetch sharing info": [
         "Eșuare preluare informații de partajare."
       ],
+      "Failed to fetch sharing information": [
+        "Nu s-au putut prelua informațiile de partajare."
+      ],
       "Failed to get inviter keys": [
         "Eșuare obținere cheie a celui care a invitat."
       ],
@@ -3231,9 +3243,6 @@
       ],
       "Failed to remove older revisions": [
         "Eroare la eliminarea reviziilor mai vechi."
-      ],
-      "Failed to rename document": [
-        "Redenumirea documentului a eșuat."
       ],
       "Failed to rename document. Please try again later.": [
         "Redenumirea documentului nu a reușit. Reîncercați mai târziu."
@@ -5744,6 +5753,9 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Acesta este un nume sau o poreclă pentru organizație pe care o vor vedea utilizatorii acesteia. Se poate schimba oricând."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Asta necesită mulți pași. Ar trebui să continui?"
+      ],
       "This item already exists in your library": [
         "Articolul există deja în librăria proprie."
       ],
@@ -5785,6 +5797,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Pentru a ajuta la depanarea problemei, informațiile de depanare vor fi încărcate în Drive și partajate în siguranță cu echipa de asistență ${ BRAND_NAME }. Acestea pot include conținutul fișierelor. Puteți opri partajarea în orice moment, iar datele partajate sunt șterse după finalizarea revizuirii."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Pentru a vă ajuta să vă amintiți parola, vă vom solicita să o introduceți periodic. Vi se va solicita mai rar în timp."
@@ -6427,6 +6442,9 @@
       ],
       "Include application logs in bug report": [
         "Includere jurnale aplicație în raportul de eroare"
+      ],
+      "Include debug information": [
+        "Includere informații depanare"
       ],
       "Include document name in notification": [
         "Includere nume document în notificări"
@@ -7295,6 +7313,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces extins"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces limitat"
       ],
       "${ n } calendar": [
         "${ n } calendar",
@@ -8393,6 +8417,9 @@
       "Failed to restore document": [
         "Restaurarea documentului a eșuat."
       ],
+      "Failed to submit report": [
+        "Trimiterea raportului a eșuat."
+      ],
       "Failed to trash document": [
         "Documentul nu a putut fi mutat în gunoi."
       ],
@@ -8433,6 +8460,9 @@
       ],
       "Recent documents updated": [
         "S-au actualizat documentele recente."
+      ],
+      "Report submitted successfully": [
+        "Raportul a fost trimis."
       ],
       "Root folder failed to be loaded": [
         "Folderul rădăcină nu s-a putut încărca."
@@ -9283,8 +9313,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Proprietar"
+      "Organization Admin": [
+        "Administrator organizație"
       ],
       "Security Admin": [
         "Administrator securitate"
@@ -10858,6 +10888,9 @@
       "Report a problem": [
         "Raportare problemă"
       ],
+      "Report issue": [
+        "Raportare problemă"
+      ],
       "Request new code": [
         "Solicitare cod nou"
       ],
@@ -10941,6 +10974,9 @@
       ],
       "Stay for 50% off your next month": [
         "Rămâneți cu o reducere de 50% luna următoare"
+      ],
+      "Still working on it": [
+        "Încă lucrez la asta"
       ],
       "Stop sharing": [
         "Oprire partajare"
