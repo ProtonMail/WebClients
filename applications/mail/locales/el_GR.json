@@ -9718,6 +9718,26 @@
       ],
       "This is taking a lot of steps. Should it carry on?": [
         "Αυτό απαιτεί πολλά βήματα. Να συνεχίσω;"
+      ],
+      "${ count } email": [
+        "${ count } email",
+        "${ count } emails"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } email · ${ names }",
+        "${ count } emails · ${ names }"
+      ],
+      "Apply labels": [
+        "Εφαρμογή ετικετών"
+      ],
+      "Expand logs": [
+        "Ανάπτυξη αρχείων καταγραφής"
+      ],
+      "Mark as read": [
+        "Επισήμανση ως αναγνωσμένο"
+      ],
+      "Mark as unread": [
+        "Επισήμανση ως μη αναγνωσμένο"
       ]
     },
     "info": {
@@ -17124,6 +17144,9 @@
       ],
       "Unstar emails": [
         "Αφαίρεση αστεριού από τα ηλεκτρονικά μηνύματα"
+      ],
+      "Apply labels": [
+        "Εφαρμογή ετικετών"
       ]
     },
     "Title header for keys table": {
