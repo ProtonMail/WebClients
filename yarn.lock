@@ -10040,8 +10040,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/colors@workspace:packages/colors"
   dependencies:
+    "@jest/globals": "npm:^30.4.1"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/types": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@types/css-tree": "npm:^2.3.11"
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:^24.13.3"
