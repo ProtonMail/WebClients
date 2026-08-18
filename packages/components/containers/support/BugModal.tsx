@@ -11,7 +11,6 @@ import CollapsibleHeader from '@proton/components/components/collapsible/Collaps
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Form from '@proton/components/components/form/Form';
-import Checkbox from '@proton/components/components/input/Checkbox';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
@@ -26,11 +25,9 @@ import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import { logger } from '@proton/logger';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CLIENT_TYPES, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { getInboxDesktopLogsBlob, isInboxDesktopBugReportLogsSupported } from '@proton/shared/lib/desktop/logHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -42,6 +39,8 @@ import noop from '@proton/utils/noop';
 import { getClientName, getReportInfo } from '../../helpers/report';
 import type { Screenshot } from './AttachScreenshot';
 import AttachScreenshot from './AttachScreenshot';
+import BugModalLogs from './BugModalLogs';
+import { useBugModalLogs } from './useBugModalLogs';
 
 export type BugModalMode = 'chat-no-agents';
 
@@ -187,11 +186,6 @@ const getVPNOptions = (): OptionItem[] => {
     ];
 };
 
-const APPS_FOR_LOG_COLLECTION: Partial<Record<APP_NAMES, boolean>> = {
-    [APPS.PROTONMAIL]: true,
-    [APPS.PROTONCALENDAR]: true,
-};
-
 const BugModal = ({
     username: Username = '',
     email,
@@ -252,10 +246,8 @@ const BugModal = ({
     });
     const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
     const [uploadingScreenshots, setUploadingScreenshots] = useState(false);
-    const collectLogs = useFlag('CollectLogs') && Boolean(APPS_FOR_LOG_COLLECTION[app]);
-    const collectLogsInboxDesktop =
-        !useFlag('InboxDesktopBugReportLogAttachmentDisabled') && isInboxDesktopBugReportLogsSupported();
-    const [includeLogs, setIncludeLogs] = useState<boolean>(collectLogs || collectLogsInboxDesktop);
+    const { collectLogs, collectLogsInboxDesktop, includeLogs, setIncludeLogs, setPreloadedLogs, getLogAttachments } =
+        useBugModalLogs(app);
 
     const link = <Href key="linkClearCache" href={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
 
@@ -279,7 +271,7 @@ const BugModal = ({
         setLoading(true);
 
         const getParameters = async () => {
-            const attachments: { [key: string]: Blob } = screenshots.reduce(
+            const screenshotAttachments: { [key: string]: Blob } = screenshots.reduce(
                 (acc: { [key: string]: Blob }, { name, blob }) => {
                     acc[name] = blob;
                     return acc;
@@ -287,24 +279,11 @@ const BugModal = ({
                 {}
             );
 
-            // Read at submit rather than at open, so lines logged while the form was
-            // being filled in — often the very error being reported — are included.
-            if (collectLogs && includeLogs) {
-                const logs = await logger.getLogs();
-                if (logs && logs.trim()) {
-                    const filename = `logs-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
-                    attachments[filename] = new Blob([logs], { type: 'text/plain' });
-                }
-            }
-
-            if (collectLogsInboxDesktop && includeLogs) {
-                const attachmentSize = Object.values(attachments).reduce((sum, blob) => sum + blob.size, 0);
-                const inboxDesktopLogs = await getInboxDesktopLogsBlob(attachmentSize);
-                if (inboxDesktopLogs) {
-                    const filename = `logs-INDA-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
-                    attachments[filename] = inboxDesktopLogs;
-                }
-            }
+            const logsAttachements = await getLogAttachments(screenshotAttachments);
+            const attachments = {
+                ...screenshotAttachments,
+                ...logsAttachements,
+            };
 
             const Title = [!isVpn && '[V5]', `[${Client}] Bug [${location.pathname}]`, categoryTitle]
                 .filter(Boolean)
@@ -454,29 +433,14 @@ const BugModal = ({
                     setUploading={setUploadingScreenshots}
                     disabled={loading}
                 />
-                {(collectLogs || collectLogsInboxDesktop) && (
-                    <div className="mb-4">
-                        <div className="flex items-center justify-space-between">
-                            <Checkbox
-                                id="includeLogs"
-                                checked={includeLogs}
-                                onChange={({ target: { checked } }) => setIncludeLogs(checked)}
-                            >
-                                {c('Label').t`Include application logs in bug report`}
-                            </Checkbox>
-                            {collectLogs && (
-                                <Button
-                                    className="ml-2"
-                                    shape="underline"
-                                    onClick={() => logger.downloadLogs()}
-                                    title={c('Info').t`Download current logs`}
-                                >
-                                    {c('Action').t`Download logs`}
-                                </Button>
-                            )}
-                        </div>
-                    </div>
-                )}
+                <BugModalLogs
+                    collectLogs={collectLogs}
+                    collectLogsInboxDesktop={collectLogsInboxDesktop}
+                    includeLogs={includeLogs}
+                    onIncludeLogsChange={setIncludeLogs}
+                    onLogsLoaded={setPreloadedLogs}
+                    disabled={loading}
+                />
                 {model.OSArtificial && OSAndOSVersionFields}
 
                 <Collapsible className="mt-4">
