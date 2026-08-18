@@ -3654,9 +3654,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "De fleste problemer kan løses på få minutter med våre trinnvise veiledninger."
       ],
-      "No ads. No trackers.": [
-        "Ingen annonser. Ingen sporere."
-      ],
       "No one in your organization can connect to shared servers.": [
         "Ingen i organisasjonen kan koble til delte tjenere."
       ],
@@ -5024,6 +5021,10 @@
       "Name does not match": [
         "Navn samsvarer ikke"
       ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn",
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn"
+      ],
       "Name must not be empty": [
         "Navn kan ikke være tomt"
       ],
@@ -5217,10 +5218,6 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "Rolletildelingen kunne ikke fullføres for ${ errors.length } medlem",
         "Rolletildelingen kunne ikke fullføres for ${ errors.length } medlemmer"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Rolletildelingen kunne ikke fullføres for ${ failedGroupCount } gruppe",
-        "Rolletildelingen kunne ikke fullføres for ${ failedGroupCount } grupper"
       ],
       "Server not found": [
         "Tjener ikke funnet"
@@ -9157,10 +9154,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Navnet vil være synlig for brukerne dine mens de er innlogget."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Prosessen ble avbrutt for ${ pausedCount } gruppe. Klikk på Fortsett for å fortsette tildelingen av roller.",
-        "Prosessen ble avbrutt for ${ pausedCount } grupper. Klikk på Fortsett for å fortsette tildelingen av roller."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Vervekreditten kan kun tildeles opptil 2 måneder etter at vennens prøveperiode er avsluttet, hvis vennen din abonnerte på en plan."
@@ -15104,9 +15097,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Eier"
-      ],
       "Security Admin": [
         "Sikkerhetsadministrator"
       ],
@@ -18177,9 +18167,6 @@
       "Group membership": [
         "Gruppemedlemskap"
       ],
-      "Group role assignment paused": [
-        "Tildeling av grupperoller satt på pause"
-      ],
       "Groups": [
         "Grupper"
       ],
@@ -18244,9 +18231,6 @@
       "Install it manually": [
         "Installer manuelt"
       ],
-      "Integrations": [
-        "Integreringer"
-      ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
       ],
@@ -18282,9 +18266,6 @@
       ],
       "Minicalendar": [
         "Minikalender"
-      ],
-      "Monitoring": [
-        "Overvåking"
       ],
       "Multi-user support": [
         "Flerbrukerstøtte"
@@ -18624,9 +18605,6 @@
       ],
       "Single sign-on": [
         "Enkel pålogging"
-      ],
-      "Single-sign on (SSO)": [
-        "Enkel pålogging (SSO)"
       ],
       "SMS verification": [
         "SMS-verifsering"

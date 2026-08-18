@@ -105,6 +105,12 @@
       "External mailbox": [
         "Caixa de correio externa"
       ],
+      "Gateway logs": [
+        "Registros de gateway"
+      ],
+      "Group invitations": [
+        "Convites de grupos"
+      ],
       "Group members": [
         "Membros do grupo"
       ],
@@ -141,8 +147,17 @@
       "Password reminder": [
         "Lembrete de senha"
       ],
+      "Password reminders": [
+        "Lembretes de senha"
+      ],
       "Password reset request": [
         "Solicitar redefinição de senha"
+      ],
+      "Privacy guides": [
+        "Guia de privacidade"
+      ],
+      "Privacy services": [
+        "Serviços de privacidade"
       ],
       "Recovery email address": [
         "Endereço de e-mail de recuperação"
@@ -162,8 +177,14 @@
       "Scan QR code": [
         "Escanear código QR"
       ],
+      "Server access policy": [
+        "Política de acesso ao servidor"
+      ],
       "Sign out other devices": [
         "Encerrar sessão em outros dispositivos"
+      ],
+      "Sign-in history": [
+        "Histórico de início de sessão"
       ],
       "Stop subscription renewal": [
         "Parar renovação automática"
@@ -191,6 +212,9 @@
       ],
       "Verify domain": [
         "Verificar domínio"
+      ],
+      "Verify password": [
+        "Verificar senha"
       ],
       "Video conferencing": [
         "Videoconferência"
@@ -3821,8 +3845,8 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "A maioria dos problemas pode ser resolvida em poucos minutos com nossos guias passo a passo."
       ],
-      "No ads. No trackers.": [
-        "Sem anúncios. Sem rastreadores."
+      "No ads. No trackers": [
+        "Sem anúncios. Sem rastreadores"
       ],
       "No one in your organization can connect to shared servers.": [
         "Ninguém na sua organização pode se conectar a servidores compartilhados."
@@ -5329,9 +5353,13 @@
         "A atribuição de função não pôde ser concluída para ${ errors.length } membro",
         "A atribuição de função não pôde ser concluída para ${ errors.length } membros"
       ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "A atribuição de função não pôde ser concluída para ${ failedGroupCount } grupo",
-        "A atribuição de função não pôde ser concluída para ${ failedGroupCount } grupos"
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "A atribuição de função não pôde ser concluída para ${ failedCount } grupo",
+        "A atribuição de função não pôde ser concluída para ${ failedCount } grupos"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "A atribuição de função não pôde ser concluída para ${ failedCount } usuário",
+        "A atribuição de função não pôde ser concluída para ${ failedCount } usuários"
       ],
       "Server not found": [
         "Servidor não encontrado"
@@ -9103,6 +9131,9 @@
       "Smart Routed through: ${ joinedCountries }.": [
         "Roteamento inteligente via: ${ joinedCountries }."
       ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Alguns aplicativos da ${ BRAND_NAME } podem ainda não ter suporte para chaves de segurança. Se você desativar a A2F do aplicativo de autenticação, talvez não consiga iniciar sessão nesses aplicativos."
       ],
@@ -9244,10 +9275,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "O nome será visível aos seus usuários enquanto eles estiverem conectados."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "O processo foi interrompido para ${ pausedCount } grupo. Clique em Continuar para retomar a atribuição de funções.",
-        "O processo foi interrompido para ${ pausedCount } grupos. Clique em Continuar para retomar a atribuição de funções."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "O crédito por indicação pode ser concedido até dois meses após o término do período de avaliação do seu amigo, desde que ele tenha assinado um plano."
@@ -9435,6 +9462,9 @@
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "Para migrar este usuário, adicione e verifique o domínio de e-mail em ${ domainNamesLink }"
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, ative a conta no seu ${ provider.adminConsoleName }."
+      ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Para migrar este usuário, ative a conta dele em ${ usersAddressesLink }."
       ],
@@ -9533,6 +9563,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Faça upgrade agora para ver atividade de ${ PASS_APP_NAME } na sua organização."
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Faça upgrade ou limpe espaço em qualquer momento para importar o resto"
@@ -9695,6 +9728,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Usamos 3-D Secure para proteger seus pagamentos"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vamos redirecioná-lo para o ${ IDEAL_BRAND_NAME } em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
@@ -10324,6 +10360,9 @@
       ],
       "Account holder": [
         "Titular da conta"
+      ],
+      "Account holder name": [
+        "Nome do titular da conta"
       ],
       "Account storage": [
         "Armazenamento da conta"
@@ -12198,6 +12237,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso limitado"
+      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -13929,6 +13974,11 @@
         "Você precisa ter acesso à chave da organização para realizar esta operação."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Conta bancária"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -15188,8 +15238,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Proprietário"
+      "Organization Admin": [
+        "Administrador da organização"
       ],
       "Security Admin": [
         "Administrador de segurança"
@@ -18258,9 +18308,6 @@
       "Group membership": [
         "Membros do grupo"
       ],
-      "Group role assignment paused": [
-        "Atribuição de função do grupo pausada"
-      ],
       "Groups": [
         "Grupos"
       ],
@@ -18322,9 +18369,6 @@
       "Install it manually": [
         "Estalar manualmente"
       ],
-      "Integrations": [
-        "Integrações"
-      ],
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
@@ -18360,9 +18404,6 @@
       ],
       "Minicalendar": [
         "Mini calendário"
-      ],
-      "Monitoring": [
-        "Monitoramento"
       ],
       "Multi-user support": [
         "Suporte para múltiplos usuários"
@@ -18447,6 +18488,9 @@
       ],
       "Password": [
         "Senha"
+      ],
+      "Password check-ins": [
+        "Verificações de senha"
       ],
       "Password reset options": [
         "Opções de redefinição de senha"
@@ -18702,9 +18746,6 @@
       ],
       "Single sign-on": [
         "Autenticação única"
-      ],
-      "Single-sign on (SSO)": [
-        "Início de sessão único (SSO)"
       ],
       "SMS verification": [
         "Verificação de SMS"

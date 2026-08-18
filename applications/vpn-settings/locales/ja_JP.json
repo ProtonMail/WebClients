@@ -3587,9 +3587,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "ほとんどの問題は、ステップバイステップのガイドに従うことで、数分で解決できます。"
       ],
-      "No ads. No trackers.": [
-        "広告なし。トラッカーなし。"
-      ],
       "No one in your organization can connect to shared servers.": [
         "組織内の誰も共有サーバーに接続することはできません。"
       ],
@@ -4952,9 +4949,6 @@
       ],
       "Role assignment could not be completed for ${ errors.length } member": [
         "${ errors.length }人のメンバーの役割の割り当てを完了できませんでした"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "${ failedGroupCount }個のグループの役割の割り当てを完了できませんでした"
       ],
       "Server not found": [
         "サーバーが見つかりません"
@@ -8580,9 +8574,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "この名前は、ユーザーがサインインしている間表示されます。"
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "${ pausedCount }個のグループでプロセスが中断されました。「続ける」をクリックして役割の割り当てを再開してください。"
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "紹介クレジットは、ご友人がプランを契約した場合に限り、トライアル終了から最大 2 か月後に付与されます。"
@@ -14335,9 +14326,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "所有者"
-      ],
       "Security Admin": [
         "セキュリティ管理者"
       ],
@@ -17273,9 +17261,6 @@
       "Group membership": [
         "グループメンバーシップ"
       ],
-      "Group role assignment paused": [
-        "グループの役割の割り当てが一時停止されました"
-      ],
       "Groups": [
         "グループ"
       ],
@@ -17333,9 +17318,6 @@
       "Information exposed in breach": [
         "侵害で漏洩した情報"
       ],
-      "Integrations": [
-        "連携機能"
-      ],
       "Invalid verification code": [
         "無効な検証コードです"
       ],
@@ -17368,9 +17350,6 @@
       ],
       "Minicalendar": [
         "ミニカレンダー"
-      ],
-      "Monitoring": [
-        "監視"
       ],
       "Multi-user support": [
         "複数ユーザー対応"
@@ -17698,9 +17677,6 @@
       ],
       "Single sign-on": [
         "シングルサインオン"
-      ],
-      "Single-sign on (SSO)": [
-        "シングルサインオン (SSO)"
       ],
       "SMS verification": [
         "SMS認証"
