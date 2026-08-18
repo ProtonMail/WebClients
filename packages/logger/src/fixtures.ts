@@ -26,8 +26,7 @@ const API_PATHS = [
 const FOLDERS = ['INBOX', 'ALL_DRAFTS', 'ALL_SENT', 'TRASH', 'SPAM', 'ARCHIVE'] as const;
 
 /**
- * Mirrors what `mailLogger` actually writes: a single flattened string per call, produced by
- * joining `key=value` pairs. Realistic sizing matters here more than realistic content, since
+ * Joins `key=value` pairs. Realistic sizing matters here more than realistic content, since
  * it drives the JSON, crypto and IndexedDB costs the perf suite is trying to measure.
  */
 const apiErrorCall = (): SyntheticLogCall => {
