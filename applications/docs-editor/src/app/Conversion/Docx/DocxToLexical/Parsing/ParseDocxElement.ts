@@ -13,7 +13,7 @@ export const ParseDocxElements = async (
   const results: DocxToLexicalInfo[] = []
 
   for (const element of elements) {
-    const parser = GetParserForElement(element, doc)
+    const parser = GetParserForElement(element, doc, ParseDocxElements)
     if (!parser) {
       continue
     }

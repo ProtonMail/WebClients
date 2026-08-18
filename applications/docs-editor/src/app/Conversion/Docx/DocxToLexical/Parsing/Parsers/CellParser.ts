@@ -1,12 +1,11 @@
 import { DocxElementParser } from './DocxElementParser'
 import type { DocxToLexicalInfo } from '../DocxToLexicalInfo'
-import { ParseDocxElements } from '../ParseDocxElement'
 
 const PointToPxFactor = 1.3333333333333333
 
 export class CellParser extends DocxElementParser {
   async parse(): Promise<DocxToLexicalInfo[]> {
-    const parsedChildren = await ParseDocxElements(this.children, this.doc)
+    const parsedChildren = await this.parseChildren()
 
     const cell: DocxToLexicalInfo = {
       type: 'table-cell',

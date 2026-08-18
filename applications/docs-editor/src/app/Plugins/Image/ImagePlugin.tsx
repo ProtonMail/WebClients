@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $wrapNodeInElement, mergeRegister } from '@lexical/utils'
-import type { LexicalCommand, LexicalNode, NodeKey } from 'lexical'
+import type { LexicalNode, NodeKey } from 'lexical'
 import {
   $createParagraphNode,
   $createRangeSelection,
@@ -19,11 +19,14 @@ import {
   DROP_COMMAND,
   PASTE_COMMAND,
   SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
-  createCommand,
 } from 'lexical'
 import { eventFiles } from '@lexical/rich-text'
 
-import { $createImageNode, $isImageNode, ImageNode } from './ImageNode'
+import { $createImageNode, ImageNode } from './ImageNode'
+import { $isImageNode } from './isImageNode'
+import { INSERT_IMAGE_NODE_COMMAND, SET_IMAGE_SIZE_COMMAND } from './ImageCommands'
+export { INSERT_IMAGE_NODE_COMMAND, SET_IMAGE_SIZE_COMMAND } from './ImageCommands'
+export type { SetImageSizePayload } from './ImageCommands'
 
 import { toBase64 } from '@proton/shared/lib/helpers/file'
 import { downSize } from '@proton/shared/lib/helpers/image'
@@ -36,16 +39,6 @@ import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants'
 type InsertImagePayload = File | Blob
 
 const FIVE_HUNDRED_KILO_BYTES = 500 * 1024
-
-export const INSERT_IMAGE_NODE_COMMAND: LexicalCommand<LexicalNode> = createCommand('INSERT_IMAGE_NODE_COMMAND')
-
-export type SetImageSizePayload = {
-  nodeKey: NodeKey
-  width: number | 'inherit'
-  height: number | 'inherit'
-}
-
-export const SET_IMAGE_SIZE_COMMAND: LexicalCommand<SetImageSizePayload> = createCommand('SET_IMAGE_SIZE_COMMAND')
 
 function $isImageNodeWithBlobSrc(node: LexicalNode): node is ImageNode {
   return $isImageNode(node) && node.getSrc().startsWith('blob:')

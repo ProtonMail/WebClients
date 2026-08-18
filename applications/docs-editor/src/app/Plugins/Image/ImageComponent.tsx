@@ -21,12 +21,11 @@ import {
   createCommand,
 } from 'lexical'
 
-import { $isImageNode } from './ImageNode'
 import { useCombinedRefs } from '@proton/hooks'
 import ImageResizer from './ImageResizer'
 import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
-import { SET_IMAGE_SIZE_COMMAND } from './ImagePlugin'
+import { SET_IMAGE_SIZE_COMMAND } from './ImageCommands'
 
 const imageCache = new Set()
 
@@ -141,8 +140,11 @@ export default function ImageComponent({
       if (isSelected && $isNodeSelection($getSelection())) {
         const event: KeyboardEvent = payload
         event.preventDefault()
+        // Deliberately not using $isImageNode: this component is only rendered by
+        // ImageNode.decorate(), so nodeKey always resolves to that node, and importing
+        // the guard here would recreate the ImageNode -> ImageComponent cycle.
         const node = $getNodeByKey(nodeKey)
-        if ($isImageNode(node)) {
+        if (node) {
           node.remove()
           return true
         }
