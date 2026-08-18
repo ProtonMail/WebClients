@@ -2,19 +2,19 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
-import { SendCodeToVerifyPhone } from '@proton/account/safetyReview/components/actions/accountRecovery/phone/SendCodeToVerifyPhone';
-import { VerifyRecoveryMethod } from '@proton/account/safetyReview/components/actions/accountRecovery/verify/VerifyRecoveryMethod';
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
-import { useUserSettings } from '@proton/account/userSettings/hooks';
 import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyFormattedPhoneValue';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 
+import { useUserSettings } from '../../../../../userSettings/hooks';
+import type { ExtractRecoveryActionItem } from '../../../../recoveryState/recoveryState';
+import { SafetyReviewCta } from '../../../SafetyReviewCta';
 import darkPaperplaneIllustration from '../../../assets/paperplane-dark.svg';
 import paperplaneIllustration from '../../../assets/paperplane.svg';
 import { SafetyReviewCardHeader } from '../../../cards/SafetyReviewCardHeader';
+import type { SafetyReviewAllProps } from '../../../interface';
+import { VerifyRecoveryMethod } from '../verify/VerifyRecoveryMethod';
+import { SendCodeToVerifyPhone } from './SendCodeToVerifyPhone';
 
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'verifyRecoveryPhone'>;

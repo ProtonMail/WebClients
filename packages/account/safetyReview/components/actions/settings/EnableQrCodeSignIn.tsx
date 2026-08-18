@@ -1,18 +1,18 @@
 import { c } from 'ttag';
 
-import { toggleQrCodeSignIn } from '@proton/account/recovery/userSettingsActions';
-import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import { toggleQrCodeSignIn } from '../../../../recovery/userSettingsActions';
+import type { ExtractRecoveryActionItem } from '../../../recoveryState/recoveryState';
+import { SafetyReviewCta } from '../../SafetyReviewCta';
 import darkIllustration from '../../assets/recovery-qr-code-dark.svg';
 import illustration from '../../assets/recovery-qr-code.svg';
 import { SafetyReviewCardHeader } from '../../cards/SafetyReviewCardHeader';
+import type { SafetyReviewAllProps } from '../../interface';
 
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'qrCodeSignIn'>;

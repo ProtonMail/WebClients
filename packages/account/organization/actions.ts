@@ -1,7 +1,6 @@
 import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import { editMember, resetSelfVpnConnectionsHelper } from '@proton/account/members/actions.ts';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import {
@@ -12,6 +11,7 @@ import noop from '@proton/utils/noop';
 
 import type { MemberState } from '../member';
 import { membersThunk } from '../members';
+import { editMember, resetSelfVpnConnectionsHelper } from '../members/actions';
 import { type OrganizationState, organizationActions, organizationThunk } from '../organization/index';
 import {
     type RotateOrganizationKeysState,

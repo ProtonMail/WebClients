@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import type { SafetyReviewContainerProps } from '@proton/account/safetyReview/components/interface';
-import type { RecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { RecoveryScoreShield } from '@proton/components/containers/recovery/RecoveryScoreBanner/RecoveryScoreShield';
 import {
     SCORE_TONE_CLASS,
@@ -11,7 +9,9 @@ import {
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcCircleRadioEmpty } from '@proton/icons/icons/IcCircleRadioEmpty';
 
+import type { RecoveryActionItem } from '../../../recoveryState/recoveryState';
 import { SafetyReviewCardHeader } from '../../cards/SafetyReviewCardHeader';
+import type { SafetyReviewContainerProps } from '../../interface';
 import { NegativeCongratulationsCta, PositiveCongratulationsCta } from './CongratulationsCta';
 import { getNegativeRecoveryActionItemCopy, getPositiveRecoveryActionItemCopy } from './getRecoveryActionItemCopy';
 

@@ -1,14 +1,5 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { addressesThunk } from '@proton/account/addresses';
-import type { KtState } from '@proton/account/kt';
-import { getKTUserContext } from '@proton/account/kt/actions';
-import { type MemberState, memberThunk } from '@proton/account/member';
-import { getMemberAddresses } from '@proton/account/members';
-import { type MspSubsidiariesState, mspSubsidiariesThunk } from '@proton/account/mspSubsidiaries/index';
-import { type OrganizationKeyState, organizationKeyThunk } from '@proton/account/organizationKey';
-import { type MemberKeyPayload, getMemberKeyPayload } from '@proton/account/organizationKey/actions';
-import { userKeysThunk } from '@proton/account/userKeys';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { pullForkSession, pushForkSession } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -29,6 +20,16 @@ import {
     getDecryptedUserKeysHelper,
     getPrimaryKey,
 } from '@proton/shared/lib/keys';
+
+import { addressesThunk } from '../addresses';
+import type { KtState } from '../kt';
+import { getKTUserContext } from '../kt/actions';
+import { type MemberState, memberThunk } from '../member';
+import { getMemberAddresses } from '../members';
+import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
+import { type MemberKeyPayload, getMemberKeyPayload } from '../organizationKey/actions';
+import { userKeysThunk } from '../userKeys';
+import { type MspSubsidiariesState, mspSubsidiariesThunk } from './index';
 
 type RequiredState = OrganizationKeyState & MemberState & KtState & MspSubsidiariesState;
 export const assignMemberToCompanyThunk = ({

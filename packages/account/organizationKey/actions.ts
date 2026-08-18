@@ -2,10 +2,6 @@ import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { GroupsState } from '@proton/account/groups';
-import { groupThunk } from '@proton/account/groups';
-import { getIsSystemGroup } from '@proton/account/groups/groupFlags';
-import { organizationActions } from '@proton/account/organization';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -62,9 +58,13 @@ import noop from '@proton/utils/noop';
 
 import { addressKeysThunk } from '../addressKeys';
 import { addressesThunk } from '../addresses';
+import type { GroupsState } from '../groups';
+import { groupThunk } from '../groups';
+import { getIsSystemGroup } from '../groups/groupFlags';
 import type { KtState } from '../kt';
 import { getKTUserContext } from '../kt/actions';
 import { getMemberAddresses, membersThunk } from '../members';
+import { organizationActions } from '../organization';
 import { userKeysThunk } from '../userKeys';
 import type { RoleChangeClassification } from './classifyRoleChange';
 import { type OrganizationKeyState, organizationKeyThunk } from './index';

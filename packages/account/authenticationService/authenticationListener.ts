@@ -1,6 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -14,6 +13,8 @@ import type { ActiveSessionLite } from '@proton/shared/lib/authentication/persis
 import { invokeInboxDesktopLogout } from '@proton/shared/lib/desktop/ipc-helpers/logout';
 import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 import noop from '@proton/utils/noop';
+
+import { bootstrapEvent } from '../bootstrap/action';
 
 export const signoutAction = createAction(
     'auth/signout',

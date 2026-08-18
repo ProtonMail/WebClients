@@ -1,11 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
 
-import { getServerEvent } from '@proton/account/test/getServerEvent';
-import { userFulfilled, userReducer } from '@proton/account/user';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { SessionRecoveryState, type UserModel } from '@proton/shared/lib/interfaces';
 
+import { getServerEvent } from '../test/getServerEvent';
+import { userFulfilled, userReducer } from '../user';
 import { sessionRecoveryListener, sessionRecoverySlice } from './sessionRecovery';
 
 const reducer = combineReducers({

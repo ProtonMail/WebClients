@@ -1,13 +1,14 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { isValid, parseISO } from 'date-fns';
 
-import { getCanDisableRecovery } from '@proton/account/delegatedAccess/recoveryContact/getCanDisableRecovery';
-import { selectEnrichedOutgoingDelegatedAccess } from '@proton/account/delegatedAccess/shared/outgoing/selector';
-import { selectLegacySentinel } from '@proton/account/recovery/sentinelSelectors';
-import { selectUser } from '@proton/account/user';
-import { selectUserSettings } from '@proton/account/userSettings';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
+
+import { getCanDisableRecovery } from '../delegatedAccess/recoveryContact/getCanDisableRecovery';
+import { selectEnrichedOutgoingDelegatedAccess } from '../delegatedAccess/shared/outgoing/selector';
+import { selectUser } from '../user';
+import { selectUserSettings } from '../userSettings';
+import { selectLegacySentinel } from './sentinelSelectors';
 
 const parseUpdateTime = (updateTime: string | null | undefined) => {
     if (!updateTime) {

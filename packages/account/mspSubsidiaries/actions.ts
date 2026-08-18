@@ -1,13 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { type AddressKeysState, addressKeysThunk } from '@proton/account/addressKeys';
-import { addressesThunk } from '@proton/account/addresses';
-import type { KtState } from '@proton/account/kt';
-import type { MemberState } from '@proton/account/member';
-import { mspSubsidiariesActions } from '@proton/account/mspSubsidiaries';
-import { type OrganizationKeyState, organizationKeyThunk } from '@proton/account/organizationKey';
-import { userOrganizationsActions } from '@proton/account/userOrganizations';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     createMspSubsidiary,
@@ -21,6 +14,14 @@ import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
 import { generateSubsidiaryOrganizationKeys } from '@proton/shared/lib/keys/organizationKeys';
+
+import { type AddressKeysState, addressKeysThunk } from '../addressKeys';
+import { addressesThunk } from '../addresses';
+import type { KtState } from '../kt';
+import type { MemberState } from '../member';
+import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
+import { userOrganizationsActions } from '../userOrganizations';
+import { mspSubsidiariesActions } from './index';
 
 type RequiredState = OrganizationKeyState & MemberState & KtState & AddressKeysState;
 export const addCompanyThunk = ({
