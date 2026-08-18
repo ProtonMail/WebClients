@@ -3574,6 +3574,10 @@
       "Name is required": [
         "Navn kreves"
       ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn",
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn"
+      ],
       "Name must not be empty": [
         "Navn kan ikke være tomt"
       ],
@@ -10048,9 +10052,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Eier"
-      ],
       "Security Admin": [
         "Sikkerhetsadministrator"
       ],
