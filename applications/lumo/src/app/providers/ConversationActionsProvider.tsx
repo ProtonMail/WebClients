@@ -3,6 +3,7 @@ import React, { type ReactNode, createContext, useContext } from 'react';
 import type {
     HandleEditMessage,
     HandleRegenerateMessage,
+    HandleSaveManualArtifactEdit,
     HandleSendArtifactAction,
     HandleSendMessage,
 } from '../hooks/useLumoActions';
@@ -12,6 +13,7 @@ import type { Message, SiblingInfo } from '../types';
 interface ConversationActionsContextType {
     handleSendMessage: HandleSendMessage;
     handleSendArtifactAction: HandleSendArtifactAction;
+    handleSaveManualArtifactEdit: HandleSaveManualArtifactEdit;
     handleAbort: () => void;
     handleEditMessage: HandleEditMessage;
     handleRegenerateMessage: HandleRegenerateMessage;
@@ -27,6 +29,7 @@ interface ConversationActionsProviderProps {
     children: ReactNode;
     handleSendMessage: HandleSendMessage;
     handleSendArtifactAction: HandleSendArtifactAction;
+    handleSaveManualArtifactEdit: HandleSaveManualArtifactEdit;
     handleAbort: () => void;
     handleEditMessage: HandleEditMessage;
     handleRegenerateMessage: HandleRegenerateMessage;
@@ -40,6 +43,7 @@ export const ConversationActionsProvider = ({
     children,
     handleSendMessage,
     handleSendArtifactAction,
+    handleSaveManualArtifactEdit,
     handleAbort,
     handleEditMessage,
     handleRegenerateMessage,
@@ -53,6 +57,7 @@ export const ConversationActionsProvider = ({
             value={{
                 handleSendMessage,
                 handleSendArtifactAction,
+                handleSaveManualArtifactEdit,
                 handleAbort,
                 handleEditMessage,
                 handleRegenerateMessage,
