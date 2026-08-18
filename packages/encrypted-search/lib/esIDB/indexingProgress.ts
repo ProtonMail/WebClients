@@ -13,6 +13,10 @@ const read = async (userID: string, row: IndexedDBRow) => {
     if (!esDB) {
         return;
     }
+    if (!esDB.objectStoreNames.contains('indexingProgress')) {
+        esDB.close();
+        return;
+    }
 
     const result = await esDB.get('indexingProgress', row);
     esDB.close();

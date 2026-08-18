@@ -12,6 +12,10 @@ export const readAllLastEvents = async (userID: string) => {
     if (!esDB) {
         return;
     }
+    if (!esDB.objectStoreNames.contains('events')) {
+        esDB.close();
+        return;
+    }
 
     let cursor = await esDB.transaction('events').store.openCursor();
 
@@ -33,6 +37,10 @@ export const readAllLastEvents = async (userID: string) => {
 export const readLastEvent = async (userID: string, componentID: string) => {
     const esDB = await openESDB(userID);
     if (!esDB) {
+        return;
+    }
+    if (!esDB.objectStoreNames.contains('events')) {
+        esDB.close();
         return;
     }
 
