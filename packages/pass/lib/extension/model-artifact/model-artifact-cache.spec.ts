@@ -13,6 +13,7 @@ const validPerceptronWeights = () =>
 
 describe('`validateModelArtifactCache`/`parseModelArtifactCache`', () => {
     const artifact: ModelArtifact = { modelId: '2026.8.2475-lr', arch: 'lr', weights: validPerceptronWeights() };
+    const rfArtifact: ModelArtifact = { modelId: '2026.8.2475-rf', arch: 'rf', weights: {} as any };
 
     test('parses an empty cache from `null`', () => {
         const result = parseModelArtifactCache(null);
@@ -24,13 +25,47 @@ describe('`validateModelArtifactCache`/`parseModelArtifactCache`', () => {
         expect(result).toEqual({ ok: true, cache: { [artifact.modelId]: artifact } });
     });
 
+    test('accepts an `rf` entry', () => {
+        const result = validateModelArtifactCache({ [rfArtifact.modelId]: rfArtifact });
+        expect(result).toEqual({ ok: true, cache: { [rfArtifact.modelId]: rfArtifact } });
+    });
+
     test('fails on invalid JSON', () => {
         const result = parseModelArtifactCache('{not-json');
         expect(result.ok).toBe(false);
+        if (!result.ok) expect(result.error).toContain('JSON at position');
     });
 
-    test('fails when a cache entry is malformed', () => {
-        const result = validateModelArtifactCache({ [artifact.modelId]: { arch: 'lr' } });
+    test.each([
+        ['not an object', '42'],
+        ['an array', '[]'],
+        ['a string', '"str"'],
+    ])('fails when the parsed JSON is %s', (_label, json) => {
+        const result = parseModelArtifactCache(json);
+        expect(result.ok).toBe(false);
+    });
+
+    test('fails when a non-first cache entry is malformed', () => {
+        const result = validateModelArtifactCache({
+            [artifact.modelId]: artifact,
+            'other-model': { arch: 'lr' },
+        });
+        expect(result.ok).toBe(false);
+        if (!result.ok) expect(result.error).toContain('other-model');
+    });
+
+    test.each([
+        ['missing `modelId`', { arch: 'lr', weights: {} }],
+        ['missing `arch`', { modelId: 'x', weights: {} }],
+        ['an unrecognized `arch`', { modelId: 'x', arch: 'xgboost', weights: {} }],
+        ['non-object `weights`', { modelId: 'x', arch: 'lr', weights: 'not-an-object' }],
+    ])('fails when a cache entry has %s', (_label, entry) => {
+        const result = validateModelArtifactCache({ x: entry });
+        expect(result.ok).toBe(false);
+    });
+
+    test('fails when the cache itself is not an object', () => {
+        const result = validateModelArtifactCache([]);
         expect(result.ok).toBe(false);
     });
 });
@@ -57,5 +92,14 @@ describe('`mergeModelArtifactCache`', () => {
         cache = mergeModelArtifactCache(cache, artifact('model-c'));
 
         expect(Object.keys(cache)).toEqual(['model-b', 'model-c']);
+    });
+
+    test('protects a just-refreshed entry from eviction', () => {
+        let cache = mergeModelArtifactCache({}, artifact('model-a'));
+        cache = mergeModelArtifactCache(cache, artifact('model-b'));
+        cache = mergeModelArtifactCache(cache, artifact('model-a'));
+        cache = mergeModelArtifactCache(cache, artifact('model-c'));
+
+        expect(Object.keys(cache)).toEqual(['model-a', 'model-c']);
     });
 });

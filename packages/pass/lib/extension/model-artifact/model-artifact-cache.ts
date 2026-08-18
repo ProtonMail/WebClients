@@ -40,11 +40,14 @@ export const parseModelArtifactCache = (data: MaybeNull<string>): Result<{ cache
 };
 
 export const mergeModelArtifactCache = (cache: ModelArtifactCache, artifact: ModelArtifact): ModelArtifactCache => {
-    const next = { ...cache, [artifact.modelId]: artifact };
+    const next = { ...cache };
+    delete next[artifact.modelId];
+    next[artifact.modelId] = artifact;
+
     const modelIds = Object.keys(next);
+    while (modelIds.length > MAX_CACHED_MODEL_ARTIFACTS) {
+        delete next[modelIds.shift()!];
+    }
 
-    if (modelIds.length <= MAX_CACHED_MODEL_ARTIFACTS) return next;
-
-    delete next[modelIds[0]];
     return next;
 };
