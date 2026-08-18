@@ -10207,11 +10207,14 @@ __metadata:
     "@proton/components": "workspace:^"
     "@proton/docs-proto": "workspace:^"
     "@proton/docs-shared": "workspace:^"
+    "@proton/drive": "workspace:^"
     "@proton/drive-store": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/metrics": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^14.3.1"
@@ -10219,12 +10222,17 @@ __metadata:
     "@types/jest": "npm:^30.0.0"
     "@types/mime-types": "npm:^2.1.4"
     "@types/react-window": "npm:^1.8.8"
+    babel-jest: "npm:^30.4.1"
+    browserslist: "npm:^4.28.7"
     core-js: "npm:^3.49.0"
     eslint: "npm:^9.39.5"
     fake-indexeddb: "npm:^6.2.5"
+    fflate: "npm:^0.8.2"
     jest: "npm:^30.4.2"
     jest-junit: "npm:^16.0.0"
     jest-when: "npm:3.7.0"
+    jszip: "npm:^3.10.1"
+    jwt-decode: "npm:^4.0.0"
     prettier: "npm:^3.9.6"
     pretty-format: "npm:^30.4.1"
     react: "npm:^18.3.1"
@@ -10233,10 +10241,12 @@ __metadata:
     react-test-renderer: "npm:^18.3.1"
     react-window: "npm:^1.8.11"
     ts-jest: "npm:^29.4.12"
+    ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
     uuid: "npm:^14.0.1"
     y-protocols: "npm:^1.0.6"
     yjs: "npm:^13.6.15"
+    zod: "npm:^3.25.76"
   languageName: unknown
   linkType: soft
 
@@ -33961,7 +33971,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jwt-decode@npm:4.0.0":
+"jwt-decode@npm:4.0.0, jwt-decode@npm:^4.0.0":
   version: 4.0.0
   resolution: "jwt-decode@npm:4.0.0"
   checksum: 10/87b569e4a9a0067fb0d592bcf3b2ac3e638e49beee28620eeb07bef1b4470f4077dea68c15d191dd68e076846c3af8394be3bcaecffedc6e97433b221fdbbcf3
