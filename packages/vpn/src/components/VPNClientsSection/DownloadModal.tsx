@@ -11,13 +11,14 @@ import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 
-import { getOsDownloadUrl } from '../../functions/getOsDownloadUrl';
+import { useOsDownloadUrl } from '../../functions/useOsDownloadUrl';
 
 interface DownloadModalProps extends ModalProps {
     downloadUrl: string;
 }
 
 const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
+    const downloadLink = useOsDownloadUrl();
     return (
         <ModalTwo {...rest} size="small">
             <ModalTwoContent className="m-8 text-center">
@@ -31,13 +32,15 @@ const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
                     color="norm"
                     size="large"
                     target="_blank"
-                    href={getOsDownloadUrl()}
+                    href={downloadLink}
                     fullWidth
                     onClick={() => {
                         rest.onClose?.();
                     }}
                     className="mb-2"
-                >{c('Action').t`Download`}</ButtonLike>
+                >
+                    {c('Action').t`Download`}
+                </ButtonLike>
                 <Button color="norm" size="large" fullWidth shape="ghost" onClick={rest.onClose}>
                     {c('Action').t`Close`}
                 </Button>
