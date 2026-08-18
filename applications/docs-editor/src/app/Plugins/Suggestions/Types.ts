@@ -1,7 +1,5 @@
 import type { SuggestionType } from '@proton/docs-shared'
-import type { ElementFormatType, LexicalNode } from 'lexical'
-import type { ProtonNode } from './ProtonNode'
-import { $isSuggestionNode } from './ProtonNode'
+import type { ElementFormatType } from 'lexical'
 import type { BlockType } from '../BlockTypePlugin'
 import type { ListInfo } from '../CustomList/$getListInfo'
 
@@ -38,10 +36,6 @@ export const SuggestionTypesThatAffectWholeParent: SuggestionType[] = [
   'block-type-change',
   'align-change',
 ]
-
-export function $isSuggestionThatAffectsWholeParent(node: LexicalNode): node is ProtonNode {
-  return $isSuggestionNode(node) && SuggestionTypesThatAffectWholeParent.includes(node.getSuggestionTypeOrThrow())
-}
 
 export const TextEditingSuggestionTypes: SuggestionType[] = ['insert', 'delete', 'split', 'join']
 

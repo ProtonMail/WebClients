@@ -8,7 +8,7 @@ describe('ParagraphParser', () => {
     } as unknown as OpenXmlElement
     const doc = {} as WordDocument
 
-    const parser = new ParagraphParser(element, doc)
+    const parser = new ParagraphParser(element, doc, async () => [])
     const result = await parser.parse()
 
     expect(result).toHaveLength(0)
