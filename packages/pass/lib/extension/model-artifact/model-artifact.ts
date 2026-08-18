@@ -67,8 +67,12 @@ export const fetchModelArtifact = async (modelId: string): Promise<Result<{ arti
         return { ok: false, error: err instanceof Error ? err.message : 'unknown error fetching model artifact' };
     }
 
-    const reader = await readZIP(new File([blob], 'model-artifact.zip')).catch(() => null);
-    if (!reader) return { ok: false, error: 'model artifact is not a valid zip archive' };
+    let reader: Awaited<ReturnType<typeof readZIP>>;
+    try {
+        reader = await readZIP(new File([blob], 'model-artifact.zip'));
+    } catch (err) {
+        return { ok: false, error: err instanceof Error ? err.message : 'model artifact is not a valid zip archive' };
+    }
 
     const weights = {} as Record<DetectionClass, unknown>;
 

@@ -234,7 +234,7 @@ describe('`fetchModelArtifact`', () => {
 
         const result = await fetchModelArtifact('2026.8.2475-lr');
         expect(result.ok).toBe(false);
-        if (!result.ok) expect(result.error).toContain('zip');
+        if (!result.ok) expect(result.error).toContain('format is not recognized');
     });
 
     test('fails without fetching for an unrecognized model ID', async () => {
