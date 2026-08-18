@@ -2328,6 +2328,9 @@
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
       ],
+      "Could not grant access to the organization key": [
+        "Kuruluş anahtarına erişme izni verilemedi"
+      ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
@@ -3322,6 +3325,9 @@
       ],
       "Account holder": [
         "Hesap sahibi"
+      ],
+      "Account holder name": [
+        "Hesap sahibinin adı"
       ],
       "Additional comments": [
         "Ek açıklamalar"
@@ -4958,6 +4964,9 @@
       "Invalid security code": [
         "Güvenlik kodu geçersiz"
       ],
+      "Please enter the account holder name": [
+        "Lütfen hesap sahibinin adını yazın"
+      ],
       "Something went wrong. Please try again later.": [
         "Bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -5237,8 +5246,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Sahibi"
+      "Organization Admin": [
+        "Kuruluş yöneticisi"
       ],
       "Security Admin": [
         "Güvenlik yöneticisi"
