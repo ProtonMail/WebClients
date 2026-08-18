@@ -72,7 +72,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                     ref={ref}
                     className={clsx(
                         'mail-toolbar toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print w-full justify-space-between py-2 pl-3 pr-2 md:py-1 md:pl-4',
-                        shouldShowTabs && 'toolbar--in-container h-fit-content'
+                        shouldShowTabs && 'toolbar--in-container h-auto'
                     )}
                     data-shortcut-target="mailbox-toolbar"
                     aria-label={c('Label').t`Toolbar`}
@@ -116,7 +116,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                 ref={ref}
                 className={clsx(
                     'mail-toolbar toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print w-full justify-space-between py-1 pl-4 pr-2',
-                    shouldShowTabs && 'toolbar--in-container h-fit-content'
+                    shouldShowTabs && 'toolbar--in-container h-auto'
                 )}
                 data-shortcut-target="mailbox-toolbar"
                 aria-label={c('Label').t`Toolbar`}
