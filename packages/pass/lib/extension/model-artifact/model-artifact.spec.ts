@@ -166,6 +166,7 @@ describe('`fetchModelArtifact`', () => {
     const fetchMock = jest.spyOn(global, 'fetch' as any);
 
     afterEach(() => fetchMock.mockReset());
+    afterAll(() => fetchMock.mockRestore());
 
     test('fetches, unzips and validates a real artifact', async () => {
         const files = Object.fromEntries(
