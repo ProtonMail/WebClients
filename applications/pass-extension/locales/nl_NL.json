@@ -2241,8 +2241,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2291,6 +2290,9 @@
       ],
       "None": [
         "Geen"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "Geen van uw opgeslagen wachtwoorden is verschenen in een bekend datalek."
       ],
       "None selected": [
         "Geen geselecteerd"
