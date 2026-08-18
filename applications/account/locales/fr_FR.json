@@ -58,6 +58,18 @@
       "Account events": [
         "Événements du compte"
       ],
+      "Add address": [
+        "Ajouter une adresse"
+      ],
+      "Advanced account protection": [
+        "Protection avancée des comptes"
+      ],
+      "AI assistant": [
+        "Assistant IA"
+      ],
+      "App Store": [
+        "App Store"
+      ],
       "Audit log": [
         "Journal d'audit"
       ],
@@ -85,11 +97,35 @@
       "Group members": [
         "Membres du groupe"
       ],
+      "Import events": [
+        "Importer des événements"
+      ],
+      "Join organization": [
+        "Rejoindre l'organisation"
+      ],
+      "Leave group": [
+        "Quitter le groupe"
+      ],
+      "Out of office": [
+        "Absent du bureau"
+      ],
+      "Password reminders": [
+        "Rappels de mot de passe"
+      ],
+      "Password reset request": [
+        "Demande de réinitialisation de mot de passe"
+      ],
       "Protection from cyber attacks": [
         "Protection contre les cyberattaques"
       ],
+      "Referral link": [
+        "Lien de parrainage"
+      ],
       "Restrict app access": [
         "Restreindre l'accès aux applications"
+      ],
+      "Scan QR code": [
+        "Scanner le QR code"
       ],
       "Server access policy": [
         "Politique d'accès au serveur"
@@ -97,11 +133,17 @@
       "Shared server access": [
         "Accès au serveur partagé"
       ],
+      "Telemetry": [
+        "Télémétrie"
+      ],
       "Verify domain": [
         "Vérifier le domaine"
       ],
+      "Verify password": [
+        "Vérifier le mot de passe"
+      ],
       "VPN session details": [
-        "Détails de la session VPN"
+        "Informations de la session VPN"
       ]
     },
     "Accounts": {
@@ -5171,8 +5213,8 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "La plupart des problèmes peuvent être résolus en quelques minutes avec nos guides étape par étape."
       ],
-      "No ads. No trackers.": [
-        "Pas de publicité. Pas de traqueurs."
+      "No ads. No trackers": [
+        "Pas de publicité. Pas de traqueurs"
       ],
       "No one in your organization can connect to shared servers.": [
         "Personne dans votre organisation ne peut se connecter aux serveurs partagés."
@@ -5652,7 +5694,7 @@
         ".deb pour Debian / Ubuntu"
       ],
       ".rpm for Fedora / Red Hat": [
-        ".rpm pour la distribution Fedora / Red Hat"
+        ".rpm pour Fedora / Red Hat"
       ],
       "You can also download the app through the ${ linkSnapStore }.": [
         "Vous pouvez également télécharger l'application depuis le ${ linkSnapStore }."
@@ -6510,7 +6552,7 @@
         "Activer le renouvellement automatique"
       ],
       "Enter your extra password": [
-        "Saisissez votre mot de passe supplémentaire"
+        "Saisissez votre mot de passe supplémentaire."
       ],
       "Explore plans": [
         "Découvrir les offres"
@@ -6891,6 +6933,9 @@
       ],
       "Could not generate the device profile. Please try again.": [
         "Impossible de générer le profil de l'appareil. Veuillez réessayer."
+      ],
+      "Could not grant access to the organization key": [
+        "Impossible d'accorder l'accès à la clé de l'organisation"
       ],
       "Could not load sharing details": [
         "Les informations du partage n'ont pas pu être chargées."
@@ -7385,9 +7430,13 @@
         "L'attribution des rôles n'a pas pu être effectuée pour ${ errors.length } membre",
         "L'attribution des rôles n'a pas pu être effectuée pour ${ errors.length } membres"
       ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "L'attribution des rôles n'a pas pu être effectuée pour ${ failedGroupCount } membre",
-        "L'attribution des rôles n'a pas pu être effectuée pour ${ failedGroupCount } membres"
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "L'attribution des rôles n'a pas pu être effectuée pour le groupe ${ failedCount }",
+        "L'attribution des rôles n'a pas pu être complétée pour les groupes ${ failedCount }"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "L'attribution des rôles n'a pas pu être effectuée pour ${ failedCount } utilisateur",
+        "L'attribution des rôles n'a pas pu être effectuée pour ${ failedCount } utilisateurs"
       ],
       "Server not found": [
         "Le serveur n'a pas été trouvé."
@@ -9997,11 +10046,11 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Votre e-mail de récupération seul ne vous permet pas de récupérer vos données chiffrées** après la réinitialisation de votre mot de passe."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**Vos méthodes de récupération seront invalidées :** vous pourrez générer de nouvelles données de récupération ultérieurement."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**Votre téléphone de récupération seul ne vous permet pas de récupérer vos données chiffrées** après la réinitialisation de votre mot de passe."
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**Votre phrase de récupération et votre fichier de récupération seront invalidées :** vous pourrez générer de nouvelles données de récupération ultérieurement."
       ],
       "+ ${ invisibleCount } More": [
         "${ invisibleCount } de plus",
@@ -12360,6 +12409,9 @@
       "Smart Routed through: ${ joinedCountries }.": [
         "Routé intelligemment via : ${ joinedCountries }."
       ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées."
       ],
@@ -12584,9 +12636,9 @@
       "The name will be visible to your users while they are signed in.": [
         "Le nom sera visible par vos utilisateurs quand ils seront connectés."
       ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Le processus a été interrompu pour le groupe ${ pausedCount }. Cliquez sur Continuer pour reprendre l'attribution des rôles.",
-        "Le processus a été interrompu pour les groupes ${ pausedCount }. Cliquez sur Continuer pour reprendre l'attribution des rôles."
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "Le processus a été interrompu pour le groupe ${ pausedCount } ${ roleAssignmentSource }. Cliquez sur Continuer pour reprendre l'attribution des rôles.",
+        "Le processus a été interrompu pour les groupes ${ pausedCount } ${ roleAssignmentSource }. Cliquez sur Continuer pour reprendre l'attribution des rôles."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Le crédit de parrainage peut être accordé jusqu'à 2 mois après la fin de la période d'essai de votre ami, seulement si votre ami a souscrit à un abonnement."
@@ -13014,6 +13066,9 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
+      "User roles assigned": [
+        "Les rôles d'utilisateur ont été attribués"
+      ],
       "Username": [
         "Nom d'utilisateur"
       ],
@@ -13232,6 +13287,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Lors du renouvellement de votre abonnement, nous utiliserons tous vos crédits disponibles avant de débiter vos moyens de paiement ci-dessus."
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "La personne qui contrôle cette adresse aurait un accès complet à votre compte et à vos données. Ne continuez que si vous reconnaissez cette adresse et que vous avez vous-même lancé cette procédure."
       ],
       "Whole organization": [
         "Toute l'organisation"
@@ -13533,6 +13591,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Vous serez ensuite facturé tous les ${ renewCycle } mois à ${ renewAmountStr }. Vous pouvez annuler à tout moment.",
         "Vous serez ensuite facturé tous les ${ renewCycle } mois à ${ renewAmountStr }. Vous pouvez annuler à tout moment."
+      ],
+      "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
+        "Vous êtes sur le point de vous connecter à votre compte ${ BRAND_NAME } à l'adresse suivante :"
       ],
       "You're now signed in on your TV.": [
         "Vous êtes maintenant connecté sur votre TV."
@@ -14363,6 +14424,9 @@
       "Account holder": [
         "Titulaire du compte"
       ],
+      "Account holder name": [
+        "Nom du titulaire du compte"
+      ],
       "Account holder: ${ sepaDetails.AccountName }": [
         "Titulaire du compte : ${ sepaDetails.AccountName }"
       ],
@@ -14817,8 +14881,8 @@
       "Days of the week": [
         "Jours de la semaine"
       ],
-      "Deals, offers, marketing emails": [
-        "Offres, promotions, messages marketing"
+      "Deals, offers, and marketing emails": [
+        "Offres, promotions et messages marketing"
       ],
       "Default email address": [
         "Adresse e-mail par défaut"
@@ -16923,6 +16987,9 @@
       "Resend invite link": [
         "Envoyer à nouveau le lien d'invitation"
       ],
+      "Resume role assignment": [
+        "Reprendre l'attribution des rôles"
+      ],
       "Revoke sessions": [
         "Révoquer les sessions"
       ],
@@ -17411,6 +17478,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès étendu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès limité"
       ],
       "${ n } calendar": [
         "${ n } calendrier",
@@ -19827,6 +19900,11 @@
         "Vous devez accéder à la clé de l'organisation pour réaliser cette opération."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Compte bancaire"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -20040,6 +20118,9 @@
       ],
       "Invalid security code": [
         "Le code de sécurité n'est pas valide."
+      ],
+      "Please enter the account holder name": [
+        "Veuillez saisir le nom du titulaire du compte"
       ],
       "Something went wrong. Please try again later.": [
         "Une erreur s'est produite. Veuillez réessayer plus tard."
@@ -21336,8 +21417,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propriétaire"
+      "Organization Admin": [
+        "Administrateur de l'organisation"
       ],
       "Security Admin": [
         "Administrateur de sécurité"
@@ -24844,6 +24925,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
+      "${ capitalizedSource } role assignment paused": [
+        "Attribution des rôles ${ capitalizedSource } suspendu"
+      ],
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
       ],
@@ -25246,6 +25330,9 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmer la perte des bonus ${ BRAND_NAME }"
       ],
+      "Confirm where to sign in": [
+        "Confirmer où vous devez vous connecter"
+      ],
       "Connect ${ name }": [
         "Se connecter à ${ name }"
       ],
@@ -25390,9 +25477,6 @@
       ],
       "Dashboard": [
         "Tableau de bord"
-      ],
-      "Data collection": [
-        "Collecte de données"
       ],
       "Data recovery": [
         "Récupération de données"
@@ -25840,9 +25924,6 @@
       "Group membership": [
         "Membres du groupe"
       ],
-      "Group role assignment paused": [
-        "L'attribution de rôle de groupe a été suspendue"
-      ],
       "Groups": [
         "Groupes"
       ],
@@ -26015,9 +26096,6 @@
       "Mobile": [
         "Mobile"
       ],
-      "Monitoring": [
-        "Surveillance"
-      ],
       "Monthly": [
         "Mensuel"
       ],
@@ -26135,6 +26213,9 @@
       "Password": [
         "Mot de passe"
       ],
+      "Password check-ins": [
+        "Vérification des mots de passe"
+      ],
       "Password generator rules": [
         "Règles du générateur de mots de passe"
       ],
@@ -26191,9 +26272,6 @@
       ],
       "Priority support:": [
         "Assistance prioritaire :"
-      ],
-      "Privacy": [
-        "Confidentialité"
       ],
       "Privacy and data collection": [
         "Vie privée et collecte de données"
@@ -26477,7 +26555,7 @@
       "Single sign-on": [
         "Authentification unique"
       ],
-      "Single-sign on (SSO)": [
+      "Single sign-on (SSO)": [
         "Authentification unique (SSO)"
       ],
       "SMS verification": [
@@ -27206,6 +27284,9 @@
       ],
       "This key is used for email forwarding": [
         "Cette clé est utilisée pour le transfert d'email"
+      ],
+      "This setting is managed by your organization": [
+        "Ce paramètre est géré par votre organisation"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "À moins d’être déchiffrés, les mots de passe chiffrés restent sécurisés même s’ils sont exposés."

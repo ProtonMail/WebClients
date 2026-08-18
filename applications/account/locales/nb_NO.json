@@ -5094,9 +5094,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "De fleste problemer kan løses på få minutter med våre trinnvise veiledninger."
       ],
-      "No ads. No trackers.": [
-        "Ingen annonser. Ingen sporere."
-      ],
       "No one in your organization can connect to shared servers.": [
         "Ingen i organisasjonen kan koble til delte tjenere."
       ],
@@ -5568,17 +5565,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb for Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm for Fedora / Red Hat"
-      ],
-      "You can also download the app through the ${ linkSnapStore }.": [
-        "Du kan også laste ned appen via ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6432,9 +6418,6 @@
       "Enable auto-renew": [
         "Aktiver automatisk fornyelse"
       ],
-      "Enter your extra password": [
-        "Angi det ekstra passordet ditt"
-      ],
       "Explore plans": [
         "Utforsk planer"
       ],
@@ -6613,9 +6596,6 @@
       ],
       "Unable to recover data": [
         "Kan ikke gjenopprette data"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Lås opp ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Oppgrader"
@@ -7160,6 +7140,10 @@
       "Name does not match": [
         "Navn samsvarer ikke"
       ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn",
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn"
+      ],
       "Name must not be empty": [
         "Navn kan ikke være tomt"
       ],
@@ -7384,10 +7368,6 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "Rolletildelingen kunne ikke fullføres for ${ errors.length } medlem",
         "Rolletildelingen kunne ikke fullføres for ${ errors.length } medlemmer"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Rolletildelingen kunne ikke fullføres for ${ failedGroupCount } gruppe",
-        "Rolletildelingen kunne ikke fullføres for ${ failedGroupCount } grupper"
       ],
       "Server not found": [
         "Tjener ikke funnet"
@@ -8922,14 +8902,6 @@
         "Mange problemer kan løses raskt med våre hjelpeguider. Hvis du trenger mer støtte, er teamet vårt her for å hjelpe."
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } på App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } på Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Videresend automatisk"
@@ -10053,9 +10025,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Gjenopprettings-e-posten din alene lar deg ikke gjenopprette krypterte data** etter at du har tilbakestilt passordet ditt."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**Gjenopprettingsmetodene dine blir ugyldige:** du kan generere nye gjenopprettingsdata senere."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**Gjenopprettingstelefonen din alene lar deg ikke gjenopprette krypterte data** etter at du har tilbakestilt passordet ditt."
       ],
@@ -11110,9 +11079,6 @@
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Rask og fokusert. E-post og kalender, rett på skrivebordet."
-      ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Raskeste VPN-hastigheter på opptil 10 Gbps"
       ],
@@ -11878,9 +11844,6 @@
       "On": [
         "På"
       ],
-      "On Ubuntu?": [
-        "På Ubuntu?"
-      ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Når tilgang til kontoen din er gitt, kan de få tilgang til **gjenopprettingsinnstillingene** dine og **endre ${ ACCOUNT_APP_NAME }-passordet** for deg."
       ],
@@ -12637,10 +12600,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Navnet vil være synlig for brukerne dine mens de er innlogget."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Prosessen ble avbrutt for ${ pausedCount } gruppe. Klikk på Fortsett for å fortsette tildelingen av roller.",
-        "Prosessen ble avbrutt for ${ pausedCount } grupper. Klikk på Fortsett for å fortsette tildelingen av roller."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Vervekreditten kan kun tildeles opptil 2 måneder etter at vennens prøveperiode er avsluttet, hvis vennen din abonnerte på en plan."
@@ -14630,9 +14589,6 @@
       "Backup password": [
         "Reservepassord"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billable licenses": [
         "Fakturerbare lisenser"
       ],
@@ -14870,9 +14826,6 @@
       ],
       "Days of the week": [
         "Ukedager"
-      ],
-      "Deals, offers, marketing emails": [
-        "Kampanjer, tilbud, markedsførings-e-poster"
       ],
       "Default email address": [
         "Standard e-postadresse"
@@ -15663,9 +15616,6 @@
       "Select an identity provider to start": [
         "Velg en identitetsleverandør for å starte"
       ],
-      "Select Linux package format": [
-        "Velg Linux-pakkeformat"
-      ],
       "Select Linux platform": [
         "Velg Linux-plattform"
       ],
@@ -16440,9 +16390,6 @@
       ],
       "Sign in": [
         "Logg på"
-      ],
-      "Snap store": [
-        "Snap store"
       ],
       "switch account": [
         "bytt konto"
@@ -21376,9 +21323,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Eier"
-      ],
       "Security Admin": [
         "Sikkerhetsadministrator"
       ],
@@ -21990,9 +21934,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Legg til i ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Lar deg legge til en Zoom-videokonferanse til alle kalenderhendelsene dine"
       ]
@@ -25467,9 +25408,6 @@
       "Dashboard": [
         "Kontrollpanel"
       ],
-      "Data collection": [
-        "Datasamling"
-      ],
       "Data recovery": [
         "Datagjenoppretting"
       ],
@@ -25916,9 +25854,6 @@
       "Group membership": [
         "Gruppemedlemskap"
       ],
-      "Group role assignment paused": [
-        "Tildeling av grupperoller satt på pause"
-      ],
       "Groups": [
         "Grupper"
       ],
@@ -26100,9 +26035,6 @@
       "Mobile": [
         "Mobil"
       ],
-      "Monitoring": [
-        "Overvåking"
-      ],
       "Monthly": [
         "Månedlig"
       ],
@@ -26276,9 +26208,6 @@
       ],
       "Priority support:": [
         "Prioritert brukerstøtte:"
-      ],
-      "Privacy": [
-        "Personvern"
       ],
       "Privacy and data collection": [
         "Personvern og datainnsamling"
@@ -26570,9 +26499,6 @@
       ],
       "Single sign-on": [
         "Enkel pålogging"
-      ],
-      "Single-sign on (SSO)": [
-        "Enkel pålogging (SSO)"
       ],
       "SMS verification": [
         "SMS-verifsering"

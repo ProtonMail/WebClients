@@ -2582,13 +2582,13 @@
         "2 TB di spazio di archiviazione"
       ],
       "3 TB data storage": [
-        "3 TB di archiviazione dati"
+        "3 TB di spazio di archiviazione dati"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Accedi a oltre 15.000 server in più di 120 Paesi"
+        "Accedi a oltre 15.000 server in più di 120 paesi"
       ],
       "Access advanced AI models": [
-        "Accedi a modelli IA avanzati"
+        "Accedi a modelli di IA avanzati"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
@@ -2603,16 +2603,16 @@
         "Connetti 10 dispositivi contemporaneamente"
       ],
       "Full chat history with easy search and favorites": [
-        "Cronologia chat completa con ricerca semplice e preferiti"
+        "Cronologia chat completa con ricerca facile e preferiti"
       ],
       "Individual accounts for 6 users": [
-        "Account individuali per sei utenti"
+        "Account individuali per 6 utenti"
       ],
       "Individual accounts for you and a partner": [
-        "Account individuali per te e un'altra persona"
+        "Account individuali per te e un partner"
       ],
       "Stronger protection against cyber threats": [
-        "Protezione più efficace dalle minacce informatiche"
+        "Protezione più forte contro le minacce informatiche"
       ],
       "Unlimited daily chats": [
         "Chat giornaliere illimitate"
@@ -2620,7 +2620,7 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield è progettato appositamente per proteggere i tuoi dispositivi e accelerare la tua navigazione bloccando annunci, tracker e malware."
+        "NetShield, appositamente progettato, protegge i tuoi dispositivi e velocizza la tua navigazione bloccando annunci, tracker e malware."
       ]
     },
     "Billing cycle": {
@@ -5064,9 +5064,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "La maggior parte dei problemi può essere risolta in pochi minuti con le nostre guide dettagliate."
       ],
-      "No ads. No trackers.": [
-        "Nessuna pubblicità. Nessun tracker."
-      ],
       "No one in your organization can connect to shared servers.": [
         "Nessuno nella tua organizzazione può connettersi ai server condivisi."
       ],
@@ -5538,17 +5535,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb per Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm per Fedora / Red Hat"
-      ],
-      "You can also download the app through the ${ linkSnapStore }.": [
-        "Puoi anche scaricare l'app attraverso il ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6402,9 +6388,6 @@
       "Enable auto-renew": [
         "Abilita rinnovo automatico"
       ],
-      "Enter your extra password": [
-        "Inserisci la tua password aggiuntiva"
-      ],
       "Explore plans": [
         "Esplora i piani"
       ],
@@ -6583,9 +6566,6 @@
       ],
       "Unable to recover data": [
         "Non in grado di recuperare i tuoi dati"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Sblocca ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Aggiorna"
@@ -7168,10 +7148,6 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "Impossibile completare l'assegnazione del ruolo per ${ errors.length } membro",
         "Impossibile completare l'assegnazione del ruolo per ${ errors.length } membri"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Impossibile completare l'assegnazione del ruolo per ${ failedGroupCount } gruppo",
-        "Impossibile completare l'assegnazione del ruolo per ${ failedGroupCount } gruppi"
       ],
       "Server not found": [
         "Server non trovato"
@@ -8585,14 +8561,6 @@
         "Molti problemi possono essere risolti rapidamente con le nostre guide d'aiuto. Se hai bisogno di ulteriore supporto, il nostro team è qui per aiutarti."
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName }su App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } su Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Inoltra automaticamente"
@@ -9689,9 +9657,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**La tua sola email di recupero non ti consente di recuperare i dati crittografati** dopo aver reimpostato la password."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**I tuoi metodi di recupero saranno invalidati: ** potrai generare nuovi dati di recupero in seguito."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**Il solo telefono di recupero non ti consente di recuperare i dati crittografati** dopo aver reimpostato la password."
       ],
@@ -10721,9 +10686,6 @@
       "Failed to fetch logs.": [
         "Recupero dei log non riuscito."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Veloce e concentrato. Email e calendario, direttamente sul tuo desktop."
-      ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Velocità VPN massime fino a 10 Gbps"
       ],
@@ -11474,9 +11436,6 @@
       "On": [
         "Attiva"
       ],
-      "On Ubuntu?": [
-        "Su Ubuntu?"
-      ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Una volta ottenuto l'accesso al tuo account, possono accedere alle impostazioni di **Ripristino** e **modificare la tua password ${ ACCOUNT_APP_NAME }** per te."
       ],
@@ -12224,10 +12183,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Il nome sarà visibile agli utenti durante l'accesso."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Il processo è stato interrotto per ${ pausedCount } gruppo. Fai clic su Continua per riprendere l'assegnazione dei ruoli.",
-        "Il processo è stato interrotto per ${ pausedCount } gruppi. Fai clic su Continua per riprendere l'assegnazione dei ruoli."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Il credito di referral può essere assegnato fino a 2 mesi dopo la fine del periodo di prova del tuo amico, solo se il tuo amico ha sottoscritto un abbonamento."
@@ -14145,9 +14100,6 @@
       "Backup password": [
         "Password di backup"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billable licenses": [
         "Licenze a pagamento"
       ],
@@ -14385,9 +14337,6 @@
       ],
       "Days of the week": [
         "Giorni della settimana"
-      ],
-      "Deals, offers, marketing emails": [
-        "Offerte, promozioni, email di marketing"
       ],
       "Default email address": [
         "Indirizzo email predefinito"
@@ -15163,9 +15112,6 @@
       "Select an identity provider to start": [
         "Seleziona un provider di identità per iniziare"
       ],
-      "Select Linux package format": [
-        "Seleziona il formato del pacchetto Linux"
-      ],
       "Select Linux platform": [
         "Seleziona la piattaforma Linux"
       ],
@@ -15934,9 +15880,6 @@
       ],
       "Sign in": [
         "Accedi"
-      ],
-      "Snap store": [
-        "Snap store"
       ],
       "switch account": [
         "cambia account"
@@ -20827,9 +20770,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Proprietario"
-      ],
       "Security Admin": [
         "Amministratore sicurezza"
       ],
@@ -21420,9 +21360,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Aggiungi a ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Ti consente di aggiungere una videoconferenza Zoom a qualsiasi evento del tuo calendario"
       ]
@@ -24855,9 +24792,6 @@
       "Dashboard": [
         "Pannello di controllo"
       ],
-      "Data collection": [
-        "Raccolta dati"
-      ],
       "Data recovery": [
         "Recupero dei dati"
       ],
@@ -25301,9 +25235,6 @@
       "Group membership": [
         "Appartenenza al gruppo"
       ],
-      "Group role assignment paused": [
-        "Assegnazione del ruolo del gruppo in pausa"
-      ],
       "Groups": [
         "Gruppi"
       ],
@@ -25469,9 +25400,6 @@
       ],
       "Mobile": [
         "Mobile"
-      ],
-      "Monitoring": [
-        "Monitoraggio"
       ],
       "Monthly": [
         "Mensile"
@@ -25646,9 +25574,6 @@
       ],
       "Priority support:": [
         "Supporto prioritario:"
-      ],
-      "Privacy": [
-        "Privacy"
       ],
       "Privacy and data collection": [
         "Privacy e raccolta dati"
@@ -25928,9 +25853,6 @@
       ],
       "Single sign-on": [
         "Single sign-on"
-      ],
-      "Single-sign on (SSO)": [
-        "Accesso singolo (SSO)"
       ],
       "SMS verification": [
         "Verifica tramite SMS"

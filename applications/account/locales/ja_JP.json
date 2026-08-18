@@ -5011,9 +5011,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "ほとんどの問題は、ステップバイステップのガイドに従うことで、数分で解決できます。"
       ],
-      "No ads. No trackers.": [
-        "広告なし。トラッカーなし。"
-      ],
       "No one in your organization can connect to shared servers.": [
         "組織内の誰も共有サーバーに接続することはできません。"
       ],
@@ -5480,17 +5477,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu 用の .deb"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat 用の .rpm"
-      ],
-      "You can also download the app through the ${ linkSnapStore }.": [
-        "アプリは${ linkSnapStore }でも入手可能です。"
       ]
     },
     "drive_signup_2023: Title": {
@@ -6340,9 +6326,6 @@
       "Enable auto-renew": [
         "自動更新を有効にする"
       ],
-      "Enter your extra password": [
-        "追加のパスワードを入力"
-      ],
       "Explore plans": [
         "プランを見る"
       ],
@@ -6519,9 +6502,6 @@
       ],
       "Unable to recover data": [
         "データの回復に失敗しました"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME }のロックを解除"
       ],
       "Upgrade": [
         "アップグレード"
@@ -7090,9 +7070,6 @@
       ],
       "Role assignment could not be completed for ${ errors.length } member": [
         "${ errors.length }人のメンバーの役割の割り当てを完了できませんでした"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "${ failedGroupCount }個のグループの役割の割り当てを完了できませんでした"
       ],
       "Server not found": [
         "サーバーが見つかりません"
@@ -8486,14 +8463,6 @@
         "多くの問題は、ヘルプガイドを参照することで迅速に解決できます。さらなるサポートが必要な場合は、当社のチームが対応いたします。"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "App Store での ${ appName }"
-      ],
-      "${ appName } on Play Store": [
-        "Play Store での ${ appName }"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "自動転送"
@@ -9553,9 +9522,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "パスワードのリセット後、**回復用メールアドレスのみでは暗号化済みデータを回復できません**。"
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**回復方法が無効になります:** 後で新しい回復データを生成できます。"
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "パスワードのリセット後、**回復用電話番号のみでは暗号化済みデータを回復できません**。"
       ],
@@ -10522,9 +10488,6 @@
       "Failed to fetch logs.": [
         "ログの読み込みに失敗しました。"
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "高速かつ集中。 メールとカレンダーが、デスクトップで直接使えます。"
-      ],
       "Fastest VPN speeds of up to 10Gbps": [
         "最大10 Gbpsの高速VPN接続"
       ],
@@ -11257,9 +11220,6 @@
       "On": [
         "オン"
       ],
-      "On Ubuntu?": [
-        "Ubuntu をお使いですか？"
-      ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "アカウントへのアクセス権が付与されると、彼らはお客様の **回復** 設定にアクセスして、お客様の代わりに **${ ACCOUNT_APP_NAME } のパスワードを変更** することができます。"
       ],
@@ -11982,9 +11942,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "この名前は、ユーザーがサインインしている間表示されます。"
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "${ pausedCount }個のグループでプロセスが中断されました。「続ける」をクリックして役割の割り当てを再開してください。"
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "紹介クレジットは、ご友人がプランを契約した場合に限り、トライアル終了から最大 2 か月後に付与されます。"
@@ -13871,9 +13828,6 @@
       "Backup password": [
         "バックアップパスワード"
       ],
-      "Beta": [
-        "ベータ"
-      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "12 ヶ月ごとに ${ priceYearly } で請求されます。"
       ],
@@ -14095,9 +14049,6 @@
       ],
       "Days of the week": [
         "曜日"
-      ],
-      "Deals, offers, marketing emails": [
-        "お得な情報、特典、マーケティングメール"
       ],
       "Default email address": [
         "既定のメールアドレス"
@@ -14863,9 +14814,6 @@
       ],
       "Select an identity provider to start": [
         "開始するにはアイデンティティプロバイダを選択してください"
-      ],
-      "Select Linux package format": [
-        "Linuxパッケージフォーマットを選択"
       ],
       "Select Linux platform": [
         "Linux プラットフォームを選択"
@@ -15633,9 +15581,6 @@
       ],
       "Sign in": [
         "サインイン"
-      ],
-      "Snap store": [
-        "Snapストア"
       ],
       "switch account": [
         "アカウントを切り替える"
@@ -20451,9 +20396,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "所有者"
-      ],
       "Security Admin": [
         "セキュリティ管理者"
       ],
@@ -21037,9 +20979,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "${ CALENDAR_APP_NAME }に追加"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "どのカレンダーイベントにもZoomビデオ会議の追加を許可"
       ]
@@ -24347,9 +24286,6 @@
       "Dashboard": [
         "ダッシュボード"
       ],
-      "Data collection": [
-        "データ収集"
-      ],
       "Data recovery": [
         "データの回復"
       ],
@@ -24782,9 +24718,6 @@
       "Group membership": [
         "グループメンバーシップ"
       ],
-      "Group role assignment paused": [
-        "グループの役割の割り当てが一時停止されました"
-      ],
       "Groups": [
         "グループ"
       ],
@@ -24943,9 +24876,6 @@
       ],
       "Mobile": [
         "モバイル"
-      ],
-      "Monitoring": [
-        "監視"
       ],
       "Monthly": [
         "毎月"
@@ -25120,9 +25050,6 @@
       ],
       "Priority support:": [
         "優先サポート:"
-      ],
-      "Privacy": [
-        "プライバシー"
       ],
       "Privacy and data collection": [
         "プライバシーとデータ収集"
@@ -25396,9 +25323,6 @@
       ],
       "Single sign-on": [
         "シングルサインオン"
-      ],
-      "Single-sign on (SSO)": [
-        "シングルサインオン (SSO)"
       ],
       "SMS verification": [
         "SMS認証"

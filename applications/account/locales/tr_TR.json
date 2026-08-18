@@ -250,6 +250,9 @@
       "Password reminder": [
         "Parola anımsatıcı"
       ],
+      "Password reminders": [
+        "Parola anımsatıcıları"
+      ],
       "Password reset request": [
         "Parola sıfırlama isteği"
       ],
@@ -342,6 +345,9 @@
       ],
       "Verify domain": [
         "Etki alanını doğrula"
+      ],
+      "Verify password": [
+        "Parolayı doğrula"
       ],
       "Video conferencing": [
         "Görüntülü görüşme"
@@ -5455,8 +5461,8 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Adım adım rehberlerimiz ile çoğu sorun birkaç dakika içinde çözülebilir."
       ],
-      "No ads. No trackers.": [
-        "Reklam yok. İzleyici yok."
+      "No ads. No trackers": [
+        "Reklam yok. Etkinlik izleyici yok"
       ],
       "No one in your organization can connect to shared servers.": [
         "Kuruluşunuzdaki hiç kimse paylaşılan sunuculara bağlanamaz."
@@ -5936,10 +5942,10 @@
     },
     "Download link": {
       ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu için .deb"
+        "Debian / Ubuntu için .deb dosyası"
       ],
       ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat için .rpm"
+        "Fedora / Red Hat için .rpm dosyası"
       ],
       "You can also download the app through the ${ linkSnapStore }.": [
         "Uygulamayı ${ linkSnapStore } üzerinden de indirebilirsiniz."
@@ -7083,6 +7089,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
+      "A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it": [
+        "Yetkilendirilmiş erişim kurtarma veya acil erişim süreci başlatıldı: Bu sürecin kesintiye uğramaması için yeni bir anahtar oluşturulmasına izin verilmiyor"
+      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -7205,6 +7214,9 @@
       ],
       "Could not generate the device profile. Please try again.": [
         "Aygıt profili oluşturulamadı. Lütfen yeniden deneyin."
+      ],
+      "Could not grant access to the organization key": [
+        "Kuruluş anahtarına erişme izni verilemedi"
       ],
       "Could not load sharing details": [
         "Paylaşım ayrıntıları yüklenemedi"
@@ -7756,9 +7768,13 @@
         "${ errors.length } üyenin rol ataması tamamlanamadı",
         "${ errors.length } üyenin rol ataması tamamlanamadı"
       ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "${ failedGroupCount } grubun rol ataması tamamlanamadı",
-        "${ failedGroupCount } grubun rol ataması tamamlanamadı"
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "${ failedCount } grubun rol ataması tamamlanamadı",
+        "${ failedCount } grubun rol ataması tamamlanamadı"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "${ failedCount } kullanıcının rol ataması tamamlanamadı",
+        "${ failedCount } kullanıcının rol ataması tamamlanamadı"
       ],
       "Server not found": [
         "Sunucu bulunamadı"
@@ -10457,11 +10473,11 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "Parolanızı sıfırladıktan sonra **şifrelenmiş verilerinizi yalnızca kurtarma e-postası adresinizle kurtaramazsınız.**"
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**Kurtarma yöntemleriniz geçersiz olacak:** Daha sonra yeni kurtarma verileri oluşturabilirsiniz."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "Parolanızı sıfırladıktan sonra **şifrelenmiş verilerinizi yalnızca kurtarma telefon numaranızla kurtaramazsınız.**"
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**Kurtarma ifadeniz ve kurtarma dosyanız geçersiz olacak:** Daha sonra yeni kurtarma verileri oluşturabilirsiniz."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } diğer",
@@ -11030,6 +11046,12 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Bağlantı verileri yaklaşık 1 saat içinde hazır olacak."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Sizi fiziksel olarak başka yerlerde bulunan sunucular üzerinden hedef ülkenize bağlar."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Sizi fiziksel olarak başka yerlerde bulunan sunucular üzerinden hedef ülkenize bağlar: ${ joinedSmartRoutingCountries }."
       ],
       "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
         "Hesabınız için iki adımlı doğrulamayı kapatmak ya da hesabınızı başka bir yolla kurtarmak için müşteri destek ekibimizle görüşün."
@@ -12183,6 +12205,9 @@
       "Member": [
         "Üye"
       ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Üyeler parolalarını unutmamaları için düzenli olarak ${ BRAND_NAME } parolalarını doğrulamaya yönlendirilir. Denetimin zorunlu kılınması üyelerin bu özelliği kapatmasını önler."
+      ],
       "Members are signed out and can't sign back in": [
         "Üyelerin oturumları kapatıldı ve yeniden oturum açamayacaklar"
       ],
@@ -12890,6 +12915,9 @@
       "Smart Routed through: ${ joinedCountries }.": [
         "Akıllı yönlendirme ile: ${ joinedCountries }."
       ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "SMTP gönderimi özelliği ile üçüncü taraf hizmetler ya da aygıtlar ${ MAIL_APP_NAME } üzerinden özel etki alanı adreslerinizle e-posta gönderebilir."
       ],
@@ -13114,9 +13142,9 @@
       "The name will be visible to your users while they are signed in.": [
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "${ pausedCount } grup için işlem duraklatıldı. Rol atamayı sürdürmek için İlerle üzerine tıklayın.",
-        "${ pausedCount } grup için işlem duraklatıldı. Rol atamayı sürdürmek için İlerle üzerine tıklayın."
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "İşlem, ${ pausedCount } ${ roleAssignmentSource } için duraklatıldı. Rol atamayı sürdüremek için İlerle üzerine tıklayın.",
+        "İşlem, ${ pausedCount } ${ roleAssignmentSource } için duraklatıldı. Rol atamayı sürdüremek için İlerle üzerine tıklayın."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Öneri kredisini, yalnızca arkadaşınız deneme süresi bittikten sonraki 2 ay içinde bir tarifeye abone olursa kazanabilirsiniz."
@@ -13565,6 +13593,9 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
+      "User roles assigned": [
+        "Atanmış kullanıcı rolleri"
+      ],
       "Username": [
         "Kullanıcı adı"
       ],
@@ -13766,6 +13797,9 @@
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Kapatıldığında, uzak görsellerin bilginiz olmadan yüklenmesi engellenir."
       ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Açıldığında, üyeler kendi ayarlarından parola denetimi özelliğini kapatamaz."
+      ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
         "Açıldığında, ${ MAIL_APP_NAME } uygulamasının varsayılan e-posta uygulamanız olup olmadığı denetlenir ve değilse size bilgi verilir."
       ],
@@ -13795,6 +13829,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm krediyi kullanacağız."
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "Bu adresi kontrol eden kişinin hesabınıza ve verilerinize tam erişim hakkı olacak. Yalnızca bu adresi tanıyorsanız ve işlemi siz başlattıysanız ilerleyin."
       ],
       "Whole organization": [
         "Tüm kuruluş"
@@ -14099,6 +14136,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
+        "Şu adresten ${ BRAND_NAME } hesabınızda oturum açmak üzeresiniz:"
       ],
       "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on ${ mailAppName } and the migration will be completed.": [
         "Neredeyse bitirdiniz. E-postalarınızı doğrudan ${ BRAND_NAME } üzerinden alabilmek için etki alanınızı yapılandırmanız gerekiyor. Onaylandıktan sonra ekibiniz ${ mailAppName } üzerinden yeni e-posta almayı durduracak ve aktarım tamamlanacak."
@@ -14940,6 +14980,9 @@
       "Account holder": [
         "Hesap sahibi"
       ],
+      "Account holder name": [
+        "Hesap sahibinin adı"
+      ],
       "Account holder: ${ sepaDetails.AccountName }": [
         "Hesap sahibi: ${ sepaDetails.AccountName }"
       ],
@@ -15397,8 +15440,8 @@
       "Days of the week": [
         "Haftanın günleri"
       ],
-      "Deals, offers, marketing emails": [
-        "Fırsatlar, teklifler, pazarlama e-postaları"
+      "Deals, offers, and marketing emails": [
+        "İndirimler, teklifler ve pazarlama e-postaları"
       ],
       "Default email address": [
         "Varsayılan e-posta adresi"
@@ -16167,6 +16210,9 @@
       ],
       "Require 2FA for everyone": [
         "İki adımlı doğrulama herkes için zorunlu olsun"
+      ],
+      "Require password check-ins": [
+        "Parola denetimi zorunlu olsun"
       ],
       "Reserved address": [
         "Ayırtılmış adres"
@@ -17526,6 +17572,9 @@
       ],
       "Resend invite link": [
         "Davet bağlantısını yeniden gönder"
+      ],
+      "Resume role assignment": [
+        "Rol atamasını sürdür"
       ],
       "Revoke sessions": [
         "Oturumları kapat"
@@ -19182,6 +19231,12 @@
       "OpenVPN credentials regenerated": [
         "OpenVPN kimlik doğrulama bilgileri yeniden oluşturuldu"
       ],
+      "Password check-ins are not required anymore": [
+        "Parola denetimi arık zorunlu değil"
+      ],
+      "Password check-ins are now required for all members": [
+        "Parola denetimi özelliği artık tüm üyeler için zorunlu"
+      ],
       "Reminder has been sent": [
         "Anımsatıcı gönderildi"
       ],
@@ -20449,6 +20504,11 @@
         "Bu işlemi gerçekleştirmek için kuruluş anahtarına erişebilmeniz gerekir."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Banka hesabı"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -20662,6 +20722,9 @@
       ],
       "Invalid security code": [
         "Güvenlik kodu geçersiz"
+      ],
+      "Please enter the account holder name": [
+        "Lütfen hesap sahibinin adını yazın"
       ],
       "Something went wrong. Please try again later.": [
         "Bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin."
@@ -21958,8 +22021,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Sahibi"
+      "Organization Admin": [
+        "Kuruluş yöneticisi"
       ],
       "Security Admin": [
         "Güvenlik yöneticisi"
@@ -23864,6 +23927,9 @@
       "Backup password": [
         "Yedek parola"
       ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Kuruluşunuz sizi tek oturum açma (SSO) özelliğine geçirdiği için **eski parolanız yedek parola olarak kaydedildi**. Bu parolayı yeni bir aygıt üzerinde tek oturum açma izni vermek için kullanabilirsiniz."
+      ],
       "Cancel": [
         "İptal"
       ],
@@ -23910,6 +23976,9 @@
       ],
       "Do you want to remove all other devices than the current one?": [
         "Geçerli aygıt dışındaki diğer tüm aygıtları kaldırmak istiyor musunuz?"
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Oturum açmak için bunu yazın. Eski parolanız ile aynıdır."
       ],
       "Enter the confirmation code we sent on your other device.": [
         "Diğer aygıtınıza gönderdiğimiz doğrulama kodunu yazın."
@@ -25556,6 +25625,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
+      "${ capitalizedSource } role assignment paused": [
+        "${ capitalizedSource } rol ataması duraklatıldı"
+      ],
       "${ feature } is now active": [
         "${ feature } etkinleştirildi"
       ],
@@ -25966,6 +26038,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "${ BRAND_NAME } hediyelerinizi kaybedeceğinizi onaylayın"
+      ],
+      "Confirm where to sign in": [
+        "Nerede oturum açacağınızı onaylayın"
       ],
       "Connect ${ name }": [
         "${ name } bağlantısı kur"
@@ -26573,9 +26648,6 @@
       "Group membership": [
         "Grup üyeliği"
       ],
-      "Group role assignment paused": [
-        "Grup rol ataması duraklatıldı"
-      ],
       "Groups": [
         "Gruplar"
       ],
@@ -26769,9 +26841,6 @@
       "Mobile": [
         "Mobil"
       ],
-      "Monitoring": [
-        "İzleme"
-      ],
       "Monthly": [
         "Aylık"
       ],
@@ -26894,6 +26963,9 @@
       ],
       "Password": [
         "Parola"
+      ],
+      "Password check-ins": [
+        "Parola denetimleri"
       ],
       "Password generator rules": [
         "Parola oluşturucu kuralları"
@@ -27249,7 +27321,7 @@
       "Single sign-on": [
         "Tek oturum açma"
       ],
-      "Single-sign on (SSO)": [
+      "Single sign-on (SSO)": [
         "Tek oturum açma (SSO)"
       ],
       "SMS verification": [
@@ -28011,6 +28083,9 @@
       ],
       "This key is used for email forwarding": [
         "Bu anahtar, e-posta iletimi için kullanılır"
+      ],
+      "This setting is managed by your organization": [
+        "Bu ayar kuruluşunuz tarafından yönetiliyor"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Şifrelenmiş parolalar, şifreleri çözülmediği sürece açığa çıksalar bile güvende kalırlar."
