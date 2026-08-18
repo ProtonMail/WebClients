@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { selectUser } from '@proton/account/user';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import AppLink from '@proton/components/components/link/AppLink';
 import Logo from '@proton/components/components/logo/Logo';
@@ -12,6 +11,7 @@ import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
+import { selectUser } from '../../user';
 import { type SafetyReviewBackLink, getBackCopy } from './getSafetyReviewBackLink';
 
 import './SafetyReviewLayout.scss';

@@ -1,13 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { AddressKeysState } from '@proton/account/addressKeys';
-import { addressesThunk } from '@proton/account/addresses';
-import { signoutAction } from '@proton/account/authenticationService';
-import { type OrganizationKeyState, organizationKeyThunk } from '@proton/account/organizationKey';
-import { type UserState, userThunk } from '@proton/account/user';
-import { userKeysThunk } from '@proton/account/userKeys';
-import { type UserSettingsState, userSettingsThunk } from '@proton/account/userSettings';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -18,6 +11,14 @@ import { generateKeySaltAndPassphrase, getHasMigratedAddressKeys } from '@proton
 import { getArmoredPrivateUserKeys, getEncryptedArmoredOrganizationKey } from '@proton/shared/lib/keys/changePassword';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
+
+import type { AddressKeysState } from '../addressKeys';
+import { addressesThunk } from '../addresses';
+import { signoutAction } from '../authenticationService';
+import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
+import { type UserState, userThunk } from '../user';
+import { userKeysThunk } from '../userKeys';
+import { type UserSettingsState, userSettingsThunk } from '../userSettings';
 
 type RequiredState = UserState & AddressKeysState & OrganizationKeyState & UserSettingsState;
 export const sessionRecoveryChangePassword = ({

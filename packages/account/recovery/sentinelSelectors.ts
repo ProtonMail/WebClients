@@ -1,9 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { selectOrganization } from '@proton/account/organization';
-import { selectUserSettings } from '@proton/account/userSettings';
 import { ORGANIZATION_POLICY_ENFORCED, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
+
+import { selectOrganization } from '../organization';
+import { selectUserSettings } from '../userSettings';
 
 export const selectLegacySentinel = createSelector([selectUserSettings], ({ value: userSettings }) => {
     const isSentinelUser = userSettings?.HighSecurity?.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED;

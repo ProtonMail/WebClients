@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
@@ -26,6 +25,7 @@ import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/inter
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import { useUser } from '../user/hooks';
 import PasswordReminderInput from './PasswordReminderInput';
 import { dismissPasswordReminder, submitPasswordReminder } from './index';
 import lock from './lock.svg';

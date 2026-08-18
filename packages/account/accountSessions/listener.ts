@@ -1,8 +1,6 @@
-import { getAccountSessions } from '@proton/account/accountSessions/accountSessions';
-import { updateAccountSessions } from '@proton/account/accountSessions/storage';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities/interface';
 import { isExpired } from '@proton/redux-utilities/fetchedAt';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getIsStaleRefetch } from '@proton/redux-utilities/promiseStore';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
@@ -15,8 +13,10 @@ import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 import noop from '@proton/utils/noop';
 
 import { bootstrapEvent } from '../bootstrap/action';
+import { getAccountSessions } from './accountSessions';
 import { accountSessionsEvent } from './events';
 import { type AccountSessionsState, accountSessionsSlice, selectAccountSessions } from './slice';
+import { updateAccountSessions } from './storage';
 
 export const startAccountSessionsListener = (startListening: SharedStartListening<AccountSessionsState>) => {
     startListening({

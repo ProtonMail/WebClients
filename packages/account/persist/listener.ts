@@ -1,6 +1,5 @@
 import { isAnyOf } from '@reduxjs/toolkit';
 
-import { coreEventLoopV6 } from '@proton/account/coreEventLoop';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import {
     getPersistedSessions,
@@ -12,6 +11,7 @@ import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 import { isSelf } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
+import { coreEventLoopV6 } from '../coreEventLoop';
 import { serverEvent } from '../eventLoop';
 import type { UserState } from '../user';
 import { selectUser } from '../user';

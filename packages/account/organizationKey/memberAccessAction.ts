@@ -1,10 +1,6 @@
 import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import type { MembersState } from '@proton/account/members';
-import { unprivatizeMembersManual } from '@proton/account/members/unprivatizeMembers';
-import type { OrganizationState } from '@proton/account/organization';
-import type { OrganizationKeyState } from '@proton/account/organizationKey/index';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -20,7 +16,11 @@ import type { Member } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper, getIsMemberInManualApproveState } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
+import type { MembersState } from '../members';
+import { unprivatizeMembersManual } from '../members/unprivatizeMembers';
+import type { OrganizationState } from '../organization';
 import { getOrganizationTokenThunk } from './actions';
+import type { OrganizationKeyState } from './index';
 
 export const accessMemberThunk = ({
     member: initialMember,

@@ -1,9 +1,10 @@
-import { removeLastUsedLocalID, setLastUsedLocalID } from '@proton/account/bootstrap/lastUsedLocalID';
 import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import { clearSession } from '@proton/shared/lib/authentication/handleLogoutFromURL';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { Api } from '@proton/shared/lib/interfaces';
+
+import { removeLastUsedLocalID, setLastUsedLocalID } from './lastUsedLocalID';
 
 export const removeSessions = ({
     sessions = getPersistedSessions(),

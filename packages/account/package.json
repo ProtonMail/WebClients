@@ -12,32 +12,73 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/atoms": "workspace:^",
+        "@proton/features": "workspace:^",
+        "@proton/hooks": "workspace:^",
+        "@proton/icons": "workspace:^",
+        "@proton/key-transparency": "workspace:^",
         "@proton/metrics": "workspace:^",
         "@proton/react-redux-store": "workspace:^",
         "@proton/recovery-kit": "workspace:^",
         "@proton/redux-shared-store-types": "workspace:^",
         "@proton/redux-utilities": "workspace:^",
         "@proton/shared": "workspace:^",
+        "@proton/styles": "workspace:^",
+        "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "*",
         "@reduxjs/toolkit": "^2.12.0",
         "date-fns": "^2.30.0",
         "deep-freeze": "^0.0.1",
+        "history": "^4.10.1",
+        "idb": "^8.0.3",
+        "lodash": "^4.18.1",
         "react": "^18.3.1",
-        "react-redux": "^9.3.0"
+        "react-dom": "^18.3.1",
+        "react-redux": "^9.3.0",
+        "react-router-dom": "^5.3.4",
+        "ttag": "^1.8.12"
     },
     "devDependencies": {
+        "@jest/globals": "^30.4.1",
         "@proton/eslint-config-proton": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
+        "@testing-library/react-hooks": "^8.0.1",
         "@types/deep-freeze": "^0.1.5",
+        "@types/react": "^18.3.31",
         "core-js": "^3.49.0",
         "eslint": "^9.39.5",
         "jest": "^30.4.2",
         "jest-environment-jsdom": "^30.4.1",
+        "prettier": "^3.9.6",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "ts-jest": "^29.4.12",
         "typescript": "^6.0.3"
+    },
+    "peerDependencies": {
+        "@proton/activation": "*",
+        "@proton/components": "*",
+        "@proton/mail": "*",
+        "@proton/payments": "*",
+        "@proton/redux-shared-store": "*"
+    },
+    "peerDependenciesMeta": {
+        "@proton/activation": {
+            "optional": true
+        },
+        "@proton/components": {
+            "optional": true
+        },
+        "@proton/mail": {
+            "optional": true
+        },
+        "@proton/payments": {
+            "optional": true
+        },
+        "@proton/redux-shared-store": {
+            "optional": true
+        }
     }
 }

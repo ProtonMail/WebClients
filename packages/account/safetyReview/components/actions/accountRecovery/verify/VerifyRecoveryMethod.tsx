@@ -3,9 +3,6 @@ import { type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import throttle from 'lodash/throttle';
 import { c } from 'ttag';
 
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import { useCodeInput } from '@proton/account/safetyReview/verification/useCodeInput';
-import type { VerificationMethod } from '@proton/account/safetyReview/verification/verification';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TotpInput from '@proton/components/components/v2/input/TotpInput';
@@ -13,6 +10,10 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
+
+import { useCodeInput } from '../../../../verification/useCodeInput';
+import type { VerificationMethod } from '../../../../verification/verification';
+import type { SafetyReviewAllProps } from '../../../interface';
 
 type Props = SafetyReviewAllProps;
 

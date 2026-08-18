@@ -1,17 +1,17 @@
 import { c } from 'ttag';
 
-import { toggleRecoveryEmailReset } from '@proton/account/recovery/accountRecoveryActions';
-import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
+import { toggleRecoveryEmailReset } from '../../../../../recovery/accountRecoveryActions';
+import type { ExtractRecoveryActionItem } from '../../../../recoveryState/recoveryState';
+import { SafetyReviewCta } from '../../../SafetyReviewCta';
 import darkRecoveryEmailIllustration from '../../../assets/recovery-email-dark.svg';
 import recoveryEmailIllustration from '../../../assets/recovery-email.svg';
 import { SafetyReviewCardHeader } from '../../../cards/SafetyReviewCardHeader';
+import type { SafetyReviewAllProps } from '../../../interface';
 
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'enableRecoveryEmail'>;
