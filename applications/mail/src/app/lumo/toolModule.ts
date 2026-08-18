@@ -4,6 +4,7 @@ import type { CardRenderer } from '@proton/components/components/lumoAgent/types
 import type { Filter } from '@proton/components/containers/filters/interfaces';
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import type {
     createLabel as createLabelAction,
     updateLabel as updateLabelAction,
@@ -47,6 +48,7 @@ export interface MailToolDeps {
     getFolders: () => Folder[];
     getLabels: () => Label[];
     getFilters: () => Filter[];
+    getActiveCategoryTabs: () => CategoryTab[];
     getMailSettings: () => MailSettings;
     applyLocation: ApplyLocation;
     applyMultipleLocations: (params: ApplyMultipleLocationsParams) => Promise<void>;

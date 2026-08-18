@@ -128,6 +128,13 @@ export const resolveMailboxLocation = (
     return { labelID, name: references.labelFor(resolved.target) || labelID, pathname: `/${labelID}` };
 };
 
+/** Display name for copy that cannot reach the store. Takes a raw string because a confirm card renders a
+ *  *proposed* location, before any handler has validated it; each settings-dependent pair shares one name. */
+export const locationDisplayName = (location: string): string => {
+    const labelID = LOCATION_LABEL_IDS[location as OpenFolderLocation];
+    return (labelID && getStandardFolders()[labelID]?.name) || location;
+};
+
 /**
  * Every search-hash key a list navigation owns, cleared by default. Spread first so a caller only names
  * the keys it sets and cannot leave a previous navigation's `keyword`/`wildcard`/`page` behind — the two
