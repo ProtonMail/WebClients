@@ -10880,7 +10880,7 @@ __metadata:
     "@proton/shared": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/types": "workspace:^"
-    "@protontech/autofill": "npm:0.0.36026908"
+    "@protontech/autofill": "npm:0.0.38040317"
     "@protontech/crypto": "npm:*"
     "@protontech/pass-rust-core": "npm:1.6.0"
     "@reduxjs/toolkit": "npm:^2.12.0"
@@ -11360,13 +11360,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/autofill@npm:0.0.36026908":
-  version: 0.0.36026908
-  resolution: "@protontech/autofill@npm:0.0.36026908"
+"@protontech/autofill@npm:0.0.38040317":
+  version: 0.0.38040317
+  resolution: "@protontech/autofill@npm:0.0.38040317"
   dependencies:
-    "@protontech/fathom": "npm:0.0.36026908"
-    "@protontech/ml-inference": "npm:0.0.36026908"
-  checksum: 10/e27cdb7aa4d0391907ada12a09553f9ef668a67fa31da999000c38bad9538b9518a22bfda583a69bfcdbbacac6e927b70f39026fa3261b88ae84e4509d0682a1
+    "@protontech/fathom": "npm:0.0.38040317"
+    "@protontech/ml-inference": "npm:0.0.38040317"
+  checksum: 10/505cd2e068cf9d1ba24d7231c67814effb0684590413e22cd23bd58e12c9fb1dae895815ec5de2c17756e2b693a1e79bff3cd6ab3bb5d23a6e55250e72676a53
   languageName: node
   linkType: hard
 
@@ -11423,13 +11423,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/fathom@npm:0.0.36026908":
-  version: 0.0.36026908
-  resolution: "@protontech/fathom@npm:0.0.36026908"
+"@protontech/fathom@npm:0.0.38040317":
+  version: 0.0.38040317
+  resolution: "@protontech/fathom@npm:0.0.38040317"
   dependencies:
-    "@protontech/ml-inference": "npm:0.0.36026908"
+    "@protontech/ml-inference": "npm:0.0.38040317"
     jsdom: "npm:^11.12.0"
-  checksum: 10/be8c202d7706053656892c36de1405012296fb947de04907c53a023c1a4bec2ef23d060d6cbfd42a3b69dba6402eae7613a68a5131a4318f9618bf55b5f2bf79
+  checksum: 10/cf60d0fe48e182aea78315e3bd38ca5e291689032523680da9b111fd9d2841141808ab47d58c2d0c126f3b450c58eca6ed4d2921cbe244076c96a07c99e7e077
   languageName: node
   linkType: hard
 
@@ -11450,10 +11450,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/ml-inference@npm:0.0.36026908":
-  version: 0.0.36026908
-  resolution: "@protontech/ml-inference@npm:0.0.36026908"
-  checksum: 10/3c09d62184292c3cb4d48462f783b03df62110bf49edcdd130032e0f7db348eb752d26133101428a3f9cb44e7e899f90963e5941ea86cf85a44f3494073c0714
+"@protontech/ml-inference@npm:0.0.38040317":
+  version: 0.0.38040317
+  resolution: "@protontech/ml-inference@npm:0.0.38040317"
+  checksum: 10/921bdabfb51b8c90bea021ab7e5c3e5a9fc6efba48d5e6db89f8f7492fce3aa55faec75b2932a3516c878c49774a38231965c2bdf840f77bf7a15c4da7961bfd
   languageName: node
   linkType: hard
 
@@ -41590,9 +41590,9 @@ __metadata:
     "@proton/pack": "workspace:^"
     "@proton/pass": "workspace:^"
     "@proton/types": "workspace:^"
-    "@protontech/autofill": "npm:0.0.36026908"
-    "@protontech/fathom": "npm:0.0.36026908"
-    "@protontech/ml-inference": "npm:0.0.36026908"
+    "@protontech/autofill": "npm:0.0.38040317"
+    "@protontech/fathom": "npm:0.0.38040317"
+    "@protontech/ml-inference": "npm:0.0.38040317"
     "@redux-devtools/remote": "npm:^0.9.5"
     "@types/react-helmet": "npm:^6.1.11"
     "@types/socketcluster-server": "npm:^19.0.1"
