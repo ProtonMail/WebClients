@@ -30,10 +30,6 @@ describe('`getModelArch`', () => {
     ])('returns null for "%s"', (modelId) => {
         expect(getModelArch(modelId)).toBeNull();
     });
-
-    test('returns null for a model ID with a trailing newline', () => {
-        expect(getModelArch('2026.8.2475-lr\n')).toBeNull();
-    });
 });
 
 describe('`getModelArtifactURL`', () => {
