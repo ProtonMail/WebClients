@@ -88,6 +88,7 @@ const ConversationPageComponentInner = () => {
         messageChain,
         handleSendMessage,
         handleSendArtifactAction,
+        handleSaveManualArtifactEdit,
         handleEditMessage,
         handleRegenerateMessage,
         getSiblingInfo,
@@ -206,6 +207,7 @@ const ConversationPageComponentInner = () => {
         <ConversationActionsProvider
             handleSendMessage={handleSendMessage}
             handleSendArtifactAction={handleSendArtifactAction}
+            handleSaveManualArtifactEdit={handleSaveManualArtifactEdit}
             handleAbort={handleAbort}
             handleEditMessage={handleEditMessage}
             handleRegenerateMessage={handleRegenerateMessage}
