@@ -4450,6 +4450,9 @@
       "Checking the weather": [
         "Hava durumuna bakılıyor"
       ],
+      "Complete": [
+        "Tamamlandı"
+      ],
       "Created an image": [
         "Bir görsel oluşturuldu"
       ],
@@ -4486,6 +4489,9 @@
       "Extracting page content": [
         "Sayfa içeriği çıkarılıyor"
       ],
+      "Failed": [
+        "Başarısız"
+      ],
       "Generated image": [
         "Oluşturulan görsel"
       ],
@@ -4494,6 +4500,9 @@
       ],
       "Generating image...": [
         "Görsel oluşturuluyor..."
+      ],
+      "Hide details": [
+        "Ayrıntıları gizle"
       ],
       "Last updated: ": [
         "Son güncelleme: "
@@ -4552,6 +4561,9 @@
       "Reading a web page": [
         "Bir site sayfasını okumak"
       ],
+      "Reasoning": [
+        "Akıl yürütme"
+      ],
       "Revenue TTM": [
         "Gelir PSS"
       ],
@@ -4581,6 +4593,9 @@
       ],
       "Using a tool": [
         "Bir araç kullanılıyor"
+      ],
+      "View details": [
+        "Ayrıntıları göster"
       ],
       "Worked on an image": [
         "Bir görsel üzerinde çalışıldı"
@@ -6084,6 +6099,9 @@
       "Could not find an available name": [
         "Kullanılabilecek bir ad bulunamadı"
       ],
+      "Could not grant access to the organization key": [
+        "Kuruluş anahtarına erişme izni verilemedi"
+      ],
       "Could not load sharing details": [
         "Paylaşım ayrıntıları yüklenemedi"
       ],
@@ -7333,6 +7351,9 @@
       ],
       "Account holder": [
         "Hesap sahibi"
+      ],
+      "Account holder name": [
+        "Hesap sahibinin adı"
       ],
       "Additional comments": [
         "Ek açıklamalar"
@@ -9261,6 +9282,9 @@
       "Invalid security code": [
         "Güvenlik kodu geçersiz"
       ],
+      "Please enter the account holder name": [
+        "Lütfen hesap sahibinin adını yazın"
+      ],
       "Something went wrong. Please try again later.": [
         "Bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -9594,8 +9618,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Sahibi"
+      "Organization Admin": [
+        "Kuruluş yöneticisi"
       ],
       "Security Admin": [
         "Güvenlik yöneticisi"

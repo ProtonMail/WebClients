@@ -6084,6 +6084,9 @@
       "Could not find an available name": [
         "No se pudo encontrar un nombre disponible"
       ],
+      "Could not grant access to the organization key": [
+        "No se pudo otorgar acceso a la clave de la organización"
+      ],
       "Could not load sharing details": [
         "No se pudieron cargar los detalles compartidos"
       ],
@@ -7334,6 +7337,9 @@
       "Account holder": [
         "Titular de la cuenta"
       ],
+      "Account holder name": [
+        "Nombre del titular de la cuenta"
+      ],
       "Additional comments": [
         "Comentarios adicionales"
       ],
@@ -8096,6 +8102,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso limitado"
       ],
       "${ n } calendar": [
         "${ n } calendario",
@@ -9255,6 +9267,9 @@
       "Invalid security code": [
         "El código de seguridad no es válido."
       ],
+      "Please enter the account holder name": [
+        "Ingrese el nombre del titular de la cuenta"
+      ],
       "Something went wrong. Please try again later.": [
         "Hubo un problema. Intente de nuevo más tarde."
       ],
@@ -9588,8 +9603,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propietario"
+      "Organization Admin": [
+        "Administrador de la organización"
       ],
       "Security Admin": [
         "Administrador de seguridad"
