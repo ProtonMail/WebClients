@@ -5,20 +5,26 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { IcTextAlignLeft } from '@proton/icons/icons/IcTextAlignLeft';
+import { useIsWaitingRoomCreationEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
+import { WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 import clsx from '@proton/utils/clsx';
+
+import type { MeetingVariant } from '../../../../types';
+import { MeetingOptions } from '../../shared/MeetingOptions';
 
 import './RoomForm.scss';
 
-export type RoomVariant = 'purple' | 'orange' | 'blue' | 'green' | 'red';
+export type RoomFormSubmit = ({ name, waitingRoom }: { name: string; waitingRoom: WaitingRoomState }) => Promise<void>;
 
 export interface RoomFormProps {
-    id?: string;
-    variant: RoomVariant;
-    onSubmit: ({ name }: { name: string }) => Promise<void>;
+    editMode: boolean;
+    variant: MeetingVariant;
+    onSubmit: RoomFormSubmit;
     initialName?: string;
     onClose: () => void;
+    initialWaitingRoom?: WaitingRoomState;
 }
-const RoomColorsMap: Record<RoomVariant, string[]> = {
+const RoomColorsMap: Record<MeetingVariant, string[]> = {
     purple: ['#413969', '#9581FF', '#6F53FF'],
     orange: ['#523A2E', '#FFB35F', '#FF7A00'],
     blue: ['#094A62', '#7BDCFF', '#0080A8'],
@@ -26,7 +32,7 @@ const RoomColorsMap: Record<RoomVariant, string[]> = {
     red: ['#3D2A30', '#FF8A8A', '#FC6464'],
 };
 
-const RoomIcon = ({ variant }: { variant: RoomVariant }) => (
+const RoomIcon = ({ variant }: { variant: MeetingVariant }) => (
     <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <mask
             id="mask0_9763_411"
@@ -74,10 +80,19 @@ const RoomIcon = ({ variant }: { variant: RoomVariant }) => (
     </svg>
 );
 
-export const RoomForm = ({ id, variant, onSubmit, initialName, onClose }: RoomFormProps) => {
+export const RoomForm = ({
+    editMode,
+    variant,
+    onSubmit,
+    initialName,
+    onClose,
+    initialWaitingRoom = WaitingRoomState.DISABLED,
+}: RoomFormProps) => {
+    const isWaitingRoomCreationEnabled = useIsWaitingRoomCreationEnabled();
+
     const [roomName, setRoomName] = useState<string>(initialName ?? '');
+    const [waitingRoom, setWaitingRoom] = useState<WaitingRoomState>(initialWaitingRoom);
     const [loading, setLoading] = useState(false);
-    const editMode = !!id;
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -86,7 +101,7 @@ export const RoomForm = ({ id, variant, onSubmit, initialName, onClose }: RoomFo
         }
         setLoading(true);
         // Let the callback provider handle the errors
-        void onSubmit({ name: roomName }).finally(() => setLoading(false));
+        void onSubmit({ name: roomName, waitingRoom }).finally(() => setLoading(false));
     };
 
     return (
@@ -112,6 +127,9 @@ export const RoomForm = ({ id, variant, onSubmit, initialName, onClose }: RoomFo
                     autoFocus
                 />
             </div>
+            {isWaitingRoomCreationEnabled && (
+                <MeetingOptions namespace="room-form" waitingRoom={waitingRoom} onWaitingRoomChange={setWaitingRoom} />
+            )}
             <div className="room-form-buttons flex flex-column sm:flex-row w-full gap-4">
                 <Button type="button" className="cancel-button rounded-full text-semibold" onClick={onClose} pill>
                     {c('Action').t`Cancel`}

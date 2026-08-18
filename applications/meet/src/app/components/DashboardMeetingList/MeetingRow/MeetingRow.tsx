@@ -25,7 +25,7 @@ import clsx from '@proton/utils/clsx';
 
 import type { JoinLocationState } from '../../../types';
 import { getNextOccurrence } from '../../../utils/getNextOccurrence';
-import { getRoomVariantFromId } from '../../RoomForm/getRoomVariantFromId';
+import { getMeetingVariantFromId } from '../../MeetingCreation/shared/getMeetingVariantFromId';
 import { DeleteMeetingModal } from '../DeleteMeetingModal';
 import { PersonalMeetingRotationButton } from './PersonalMeetingRotationButton';
 
@@ -66,7 +66,7 @@ export const MeetingRow = ({
     const [userSettings] = useUserSettings();
     const dateFormat = userSettings.DateFormat;
 
-    const roomVariant = getRoomVariantFromId(meeting.ID);
+    const meetingVariant = getMeetingVariantFromId(meeting.ID);
 
     const { month, day, startTime, endTime } = useMemo(() => {
         // Use the pre-calculated adjusted time if available, otherwise calculate it
@@ -179,8 +179,8 @@ export const MeetingRow = ({
                     <div
                         className={clsx(
                             'flex flex-column flex-nowrap items-center justify-center w-custom h-custom profile-radius color-white shrink-0',
-                            isRoom && `meet-room-background-${roomVariant}`,
-                            !isRoom && `meet-background-${roomVariant}`
+                            isRoom && `meet-room-background-${meetingVariant}`,
+                            !isRoom && `meet-background-${meetingVariant}`
                         )}
                         style={{ '--w-custom': '3.75rem', '--h-custom': '3.75rem' }}
                     >
@@ -191,7 +191,7 @@ export const MeetingRow = ({
                                 <div
                                     className={clsx(
                                         'text-xs text-semibold text-uppercase',
-                                        !isRoom && `profile-color-room-${roomVariant}`
+                                        !isRoom && `profile-color-room-${meetingVariant}`
                                     )}
                                 >
                                     {month}

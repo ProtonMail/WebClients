@@ -79,3 +79,5 @@ export type JoinLocationState = {
         canManageWaitingRoom: boolean;
     };
 };
+
+export type MeetingVariant = 'purple' | 'orange' | 'blue' | 'green' | 'red';
