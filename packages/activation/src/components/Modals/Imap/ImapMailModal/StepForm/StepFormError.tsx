@@ -1,8 +1,7 @@
-import type { IMPORT_ERROR } from '@proton/activation/src/interface';
-import { ImportProvider } from '@proton/activation/src/interface';
-import { selectImapDraftProvider } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-
+import type { IMPORT_ERROR } from '../../../../../interface';
+import { ImportProvider } from '../../../../../interface';
+import { selectImapDraftProvider } from '../../../../../logic/draft/imapDraft/imapDraft.selector';
+import { useEasySwitchSelector } from '../../../../../logic/store';
 import StepFormErrorDefault from './StepFormErrorDefault';
 import StepFormErrorYahoo from './StepFormErrorYahoo';
 

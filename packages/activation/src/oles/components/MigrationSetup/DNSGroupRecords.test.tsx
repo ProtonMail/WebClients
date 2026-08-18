@@ -1,7 +1,6 @@
 import { screen } from '@testing-library/react';
 
-import { easySwitchRender } from '@proton/activation/src/tests/render';
-
+import { easySwitchRender } from '../../../tests/render';
 import DNSGroupRecords, { type DNSGroup } from './DNSGroupRecords';
 
 const group: DNSGroup = {

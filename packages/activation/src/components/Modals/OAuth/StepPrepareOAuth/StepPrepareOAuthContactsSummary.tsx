@@ -1,8 +1,9 @@
 import { c, msgid } from 'ttag';
 
-import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { getMaxContactsImportConfig } from '@proton/unleash/getMaxContactsImportConfig';
+
+import { selectOauthImportStateImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchSelector } from '../../../../logic/store';
 
 interface Props {
     isSelected: boolean;

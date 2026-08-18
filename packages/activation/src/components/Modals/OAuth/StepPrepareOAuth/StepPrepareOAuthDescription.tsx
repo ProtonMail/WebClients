@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+import { selectOauthImportStateImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchSelector } from '../../../../logic/store';
 
 const StepPrepareDescription = () => {
     const importerData = useEasySwitchSelector(selectOauthImportStateImporterData);

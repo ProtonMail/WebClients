@@ -1,12 +1,12 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
 
-import type { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
-import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import { MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/src/interface';
-import { generateMockAddress } from '@proton/activation/src/tests/data/addresses';
-import { easySwitchRender } from '@proton/activation/src/tests/render';
 import type { ModalStateProps } from '@proton/components';
 
+import type { ApiMailImporterFolder } from '../../../api/api.interface';
+import MailImportFoldersParser from '../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
+import { MailImportDestinationFolder, TIME_PERIOD } from '../../../interface';
+import { generateMockAddress } from '../../../tests/data/addresses';
+import { easySwitchRender } from '../../../tests/render';
 import CustomizeMailImportModal from './CustomizeMailImportModal';
 import type { MailImportFields } from './CustomizeMailImportModal.interface';
 

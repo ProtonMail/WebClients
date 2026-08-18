@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import { getTimeUnitLabels } from '@proton/activation/src/constants';
-import { TIME_PERIOD } from '@proton/activation/src/interface';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Field, Label, Option, Row, SelectTwo } from '@proton/components';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+
+import { getTimeUnitLabels } from '../../../constants';
+import { TIME_PERIOD } from '../../../interface';
 
 interface Props {
     selectedPeriod: TIME_PERIOD;

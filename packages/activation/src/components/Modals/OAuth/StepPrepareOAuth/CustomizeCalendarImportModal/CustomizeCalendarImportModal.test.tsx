@@ -1,15 +1,15 @@
 import { fireEvent, screen } from '@testing-library/dom';
 
-import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
-import type { ImporterCalendar } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
-import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { generateMockAddressArray } from '@proton/activation/src/tests/data/addresses';
-import { prepareState } from '@proton/activation/src/tests/data/prepareState';
-import { easySwitchRender } from '@proton/activation/src/tests/render';
 import type { ModalStateProps } from '@proton/components';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import type { CalendarMember, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
+import useAvailableAddresses from '../../../../../hooks/useAvailableAddresses';
+import type { ImporterCalendar } from '../../../../../logic/draft/oauthDraft/oauthDraft.interface';
+import { selectOauthImportStateImporterData } from '../../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { generateMockAddressArray } from '../../../../../tests/data/addresses';
+import { prepareState } from '../../../../../tests/data/prepareState';
+import { easySwitchRender } from '../../../../../tests/render';
 import CustomizeCalendarImportModal from './CustomizeCalendarImportModal';
 import type { DerivedCalendarType } from './useCustomizeCalendarImportModal';
 
@@ -67,8 +67,8 @@ const derivedValuesNoErrors: DerivedCalendarType = {
     calendarsToBeMergedCount: 2,
 };
 
-jest.mock('@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector', () => ({
-    ...jest.requireActual('@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector'),
+jest.mock('../../../../../logic/draft/oauthDraft/oauthDraft.selector', () => ({
+    ...jest.requireActual('../../../../../logic/draft/oauthDraft/oauthDraft.selector'),
     selectOauthImportStateImporterData: jest.fn(),
 }));
 
@@ -79,7 +79,7 @@ const mockUseAddressValue = {
     defaultAddress: addresses[0],
 };
 
-jest.mock('@proton/activation/src/hooks/useAvailableAddresses');
+jest.mock('../../../../../hooks/useAvailableAddresses');
 const mockUseAvailableAddresses = useAvailableAddresses as jest.MockedFunction<any>;
 
 const mockSelectorImporterData = selectOauthImportStateImporterData as any as jest.Mock<

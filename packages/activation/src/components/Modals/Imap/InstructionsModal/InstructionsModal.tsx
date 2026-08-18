@@ -1,14 +1,11 @@
 import { c } from 'ttag';
 
-import { ImportProvider, ImportType } from '@proton/activation/src/interface';
-import {
-    selectImapDraftProduct,
-    selectImapDraftProvider,
-} from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 
+import { ImportProvider, ImportType } from '../../../../interface';
+import { selectImapDraftProduct, selectImapDraftProvider } from '../../../../logic/draft/imapDraft/imapDraft.selector';
+import { useEasySwitchSelector } from '../../../../logic/store';
 import DefaultCalendarInstructions from './Instructions/default/DefaultCalendarInstructions';
 import DefaultContactsInstructions from './Instructions/default/DefaultContactsInstructions';
 import DefaultMailInstructions from './Instructions/default/DefaultMailInstructions';

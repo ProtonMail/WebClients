@@ -1,8 +1,9 @@
 import type { KeyboardEvent, Ref } from 'react';
 
-import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
-import { MailImportPayloadError } from '@proton/activation/src/interface';
 import { InputFieldTwo } from '@proton/components';
+
+import { EasyTrans } from '../../../../../helpers/easyTrans';
+import { MailImportPayloadError } from '../../../../../interface';
 
 interface Props {
     disabled: boolean;

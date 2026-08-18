@@ -1,8 +1,8 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import type { ApiEvent } from '@proton/activation/src/api/api.interface';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 
+import type { ApiEvent } from '../api/api.interface';
 import { loadImporters } from './importers/importers.actions';
 import { loadReports } from './reports/reports.actions';
 import type { EasySwitchThunkExtra } from './store';

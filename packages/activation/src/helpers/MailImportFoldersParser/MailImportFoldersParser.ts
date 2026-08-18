@@ -1,11 +1,12 @@
 import cloneDeep from 'lodash/cloneDeep';
 
-import type { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
-import { MAX_FOLDERS_DEPTH } from '@proton/activation/src/constants';
-import { MailImportDestinationFolder } from '@proton/activation/src/interface';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import isTruthy from '@proton/utils/isTruthy';
 import move from '@proton/utils/move';
+
+import type { ApiMailImporterFolder } from '../../api/api.interface';
+import { MAX_FOLDERS_DEPTH } from '../../constants';
+import { MailImportDestinationFolder } from '../../interface';
 
 const DESTINATION_FOLDERS = Object.values(MailImportDestinationFolder);
 export const PROTON_DEFAULT_SEPARATOR = '/';

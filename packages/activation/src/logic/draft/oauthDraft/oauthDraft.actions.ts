@@ -1,8 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { MailImportFields } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
-import type { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
-
+import type { MailImportFields } from '../../../components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
+import type { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
 import type { ImporterCalendar, MailImportState } from './oauthDraft.interface';
 
 export const OAUTH_ACTION_PREFIX = 'draft/oauth';

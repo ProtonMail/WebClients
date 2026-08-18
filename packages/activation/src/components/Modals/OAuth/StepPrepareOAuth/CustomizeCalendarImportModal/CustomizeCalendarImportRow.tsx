@@ -1,8 +1,8 @@
-import type { ImporterCalendar } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import { Checkbox, Label } from '@proton/components';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
+import type { ImporterCalendar } from '../../../../../logic/draft/oauthDraft/oauthDraft.interface';
 import CustomizeCalendarImportRowSelect from './CustomizeCalendarImportRowSelect';
 
 interface Props {

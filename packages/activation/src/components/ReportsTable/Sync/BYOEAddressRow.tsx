@@ -1,15 +1,15 @@
 import { c } from 'ttag';
 
-import { ApiImportProvider, ApiSyncState } from '@proton/activation/src/api/api.interface';
-import { ImportType } from '@proton/activation/src/interface';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { selectSyncByEmail } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button/Button';
 import { TableCell, TableRow } from '@proton/components';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 
+import { ApiImportProvider, ApiSyncState } from '../../../api/api.interface';
+import { ImportType } from '../../../interface';
+import { useEasySwitchSelector } from '../../../logic/store';
+import { selectSyncByEmail } from '../../../logic/sync/sync.selectors';
 import ReportsTableCell from '../ReportsTableCell';
 import SyncRowStatus from './SyncRowStatus';
 

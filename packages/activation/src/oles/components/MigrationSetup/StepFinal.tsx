@@ -2,7 +2,6 @@ import { type FC, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { ApiImporterOrganizationState } from '@proton/activation/src/api/api.interface';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import {
@@ -20,6 +19,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { MX_STATE } from '@proton/shared/lib/interfaces';
 
+import { ApiImporterOrganizationState } from '../../../api/api.interface';
 import { useErrorHandler } from '../../errors';
 import { completeMigration } from '../../thunk';
 import type { MigrationModel } from '../../types';

@@ -1,11 +1,11 @@
-import { getScopeFromProvider } from '@proton/activation/src/components/Modals/OAuth/OAuthModal.helpers';
 import {
     O_OAUTH_SCOPE_CALENDAR,
     O_OAUTH_SCOPE_CONTACTS,
     O_OAUTH_SCOPE_DEFAULT,
     O_OAUTH_SCOPE_MAIL,
-} from '@proton/activation/src/constants';
-import { ImportProvider, ImportType } from '@proton/activation/src/interface';
+} from '../../../constants';
+import { ImportProvider, ImportType } from '../../../interface';
+import { getScopeFromProvider } from './OAuthModal.helpers';
 
 describe('OAuthModal helpers', () => {
     describe('getScopeFromProvider', () => {
