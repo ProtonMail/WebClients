@@ -141,9 +141,25 @@ export interface ToolDefinition<Params = any, Result = any> {
  */
 export type ToolHandler<Params = any, Result = any> = (params: Params, deps: ToolDeps) => Promise<Result>;
 
+/**
+ * An image a tool can put in front of the model. `data` is base64, as every transport wants it.
+ * Domain contract, not the wire shape: the transport's `WireImage` (`@proton/lumo-api-client`) adds
+ * `encrypted`, which a tool image never sets — tool images are always plaintext. Whoever forwards this
+ * into `WireTurn.images` maps `imageId` -> `image_id` and supplies `encrypted: false`.
+ */
+export interface ToolImage {
+    imageId: string;
+    data: string;
+}
+
 /** Dependencies handed to every handler by the engine at run time. */
 export interface ToolDeps {
     references: ReferenceRegistry;
+    /**
+     * Show the model an image for the rest of this exchange. A tool result is text, so this is the only
+     * way to hand over something that can only be looked at. Absent when the host cannot send images.
+     */
+    showImage?: (image: ToolImage) => void;
 }
 
 /** The injected registry of handlers, keyed by {@link ToolName}. Assembled in the product. */
