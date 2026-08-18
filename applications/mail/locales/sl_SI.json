@@ -1504,7 +1504,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -4298,6 +4301,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
+      ],
+      "No ads. No trackers": [
+        "Brez oglasov. Brez sledilnikov"
       ]
     },
     "description": {
@@ -7921,10 +7927,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"

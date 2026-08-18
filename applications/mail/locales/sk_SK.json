@@ -1534,7 +1534,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -8374,10 +8377,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -11338,6 +11338,9 @@
       ],
       "Write-chain drain after last line": [
         "Vypustenie reťazca zápisu po poslednom riadku"
+      ],
+      "Account holder name": [
+        "Meno majiteľa účtu"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13932,6 +13935,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
+      ],
+      "Please enter the account holder name": [
+        "Zadajte meno majiteľa účtu, prosím"
       ]
     },
     "Payments.error": {

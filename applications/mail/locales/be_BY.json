@@ -1540,7 +1540,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1742,6 +1745,12 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Run realistic session": [
+        "Запусціць рэалістычны сеанс"
+      ],
+      "Write ${ count } logs": [
+        "Запісаць ${ count } журналы"
       ]
     },
     "action": {
@@ -4498,6 +4507,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "No ads. No trackers": [
+        "Без рэкламы і праграм сачэння"
       ]
     },
     "description": {
@@ -5773,6 +5785,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паспрабуйце яшчэ раз."
+      ],
+      "Could not grant access to the organization key": [
+        "Немагчыма даць доступ да ключа арганізацыі"
       ]
     },
     "error": {
@@ -8365,10 +8380,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -10034,6 +10046,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "Not supported by this browser": [
+        "Не падтрымліваецца гэтым браўзерам"
       ]
     },
     "info": {
@@ -11266,6 +11281,51 @@
       ],
       "Duration": [
         "Працягласць"
+      ],
+      "Account holder name": [
+        "Уладальнік уліковага запісу"
+      ],
+      "Burst write": [
+        "Серыйны запіс"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Акцыі, прапановы і маркетынгавыя лісты"
+      ],
+      "Dropped frames": [
+        "Адсутныя кадры"
+      ],
+      "Encrypt": [
+        "Зашыфраваныя"
+      ],
+      "Entries": [
+        "Запісы"
+      ],
+      "Export size": [
+        "Памер экспарту"
+      ],
+      "IndexedDB store": [
+        "Захоўваецца IndexedDB"
+      ],
+      "Log performance": [
+        "Журнал прадукцыйнасці"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Доўгія заданні (≥ 50 мс)"
+      ],
+      "Read / export": [
+        "Чытанне / экспарт"
+      ],
+      "Realistic session": [
+        "Рэалістычны сеанс"
+      ],
+      "Sum of write() calls": [
+        "Усяго выклікаў write()"
+      ],
+      "Write": [
+        "Запіс"
+      ],
+      "Write (whole session)": [
+        "Запіс (усяго сеанса)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13860,6 +13920,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
+      ],
+      "Please enter the account holder name": [
+        "Увядзіце імя ўладальніка ўліковага запісу"
       ]
     },
     "Payments.error": {

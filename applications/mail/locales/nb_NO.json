@@ -1526,7 +1526,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarer nøkkel"
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -5661,6 +5662,10 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn",
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn"
       ]
     },
     "error": {
@@ -8073,8 +8078,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9625,6 +9629,29 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "Read ${ count } email": [
+        "Merk ${ count } e-post som lest",
+        "Merk ${ count } e-poster som lest"
+      ],
+      "Read ${ count } message in this thread": [
+        "Merk ${ count } melding som lest i denne tråden",
+        "Merk ${ count } meldinger som lest i denne tråden"
+      ],
+      "Read your ${ count } filter": [
+        "Merk ${ count } filter som lest",
+        "Merk ${ count } filtre som lest"
+      ],
+      "Read your ${ count } folder": [
+        "Merk ${ count } mappe som lest",
+        "Merk ${ count } mapper som lest"
+      ],
+      "Read your ${ count } label": [
+        "Merk ${ count } etikett som lest",
+        "Merk ${ count } etiketter som lest"
+      ],
+      "Star emails": [
+        "Stjernemerk e-poster"
       ]
     },
     "info": {
@@ -10835,6 +10862,9 @@
       ],
       "Duration": [
         "Varighet"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Lange oppgaver (≥ 50 ms)"
       ]
     },
     "Label (begin date/advanced search)": {
