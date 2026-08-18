@@ -14,6 +14,10 @@ export const readContentItem = async <ESItemContent>(userID: string, itemID: str
     if (!esDB) {
         return;
     }
+    if (!esDB.objectStoreNames.contains('content')) {
+        esDB.close();
+        return;
+    }
 
     const aesGcmCiphertext = await esDB.get('content', itemID);
     esDB.close();
@@ -33,6 +37,10 @@ export const readNumContent = async (userID: string) => {
     if (!esDB) {
         return;
     }
+    if (!esDB.objectStoreNames.contains('content')) {
+        esDB.close();
+        return;
+    }
     const count = await esDB.count('content');
     esDB.close();
     return count;
@@ -44,6 +52,10 @@ export const readNumContent = async (userID: string) => {
 export const readContentBatch = async (userID: string, IDs: string[]) => {
     const esDB = await openESDB(userID);
     if (!esDB) {
+        return;
+    }
+    if (!esDB.objectStoreNames.contains('content')) {
+        esDB.close();
         return;
     }
 
@@ -78,6 +90,10 @@ export const executeContentOperations = async ({
 }) => {
     const esDB = await openESDB(userID);
     if (!esDB) {
+        return;
+    }
+    if (!esDB.objectStoreNames.contains('content')) {
+        esDB.close();
         return;
     }
 

@@ -369,6 +369,10 @@ export const buildContentDB = async <ESItemContent>({
         if (!esDB) {
             throw new Error('ESDB not available during content indexing');
         }
+        if (!esDB.objectStoreNames.contains('content')) {
+            esDB.close();
+            throw new Error('ESDB content object store not available during content indexing');
+        }
 
         const maybeSortedIDsWithoutContent = await Promise.all(
             sortedIDs.map(async (ID) => ((await esDB.count('content', ID)) === 1 ? undefined : ID))

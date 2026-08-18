@@ -65,6 +65,10 @@ const readConfigProperty = async (userID: string, configID: ConfigKeys) => {
     if (!esDB) {
         return;
     }
+    if (!esDB.objectStoreNames.contains('config')) {
+        esDB.close();
+        return;
+    }
 
     const result = await esDB.get('config', configID);
     esDB.close();
