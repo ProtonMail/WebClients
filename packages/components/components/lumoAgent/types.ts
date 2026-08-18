@@ -47,7 +47,8 @@ export type CardRenderers = Partial<Record<ToolName, CardRenderer>>;
 
 /** Label + icon for a server tool's chip, supplied by the product (the framework stays word-blind). */
 export interface ServerToolMeta {
-    label: string;
+    /** Called at render, not at config time, so the wording follows an in-session language change. */
+    label: () => string;
     icon: ComponentType<{ className?: string }>;
 }
 
