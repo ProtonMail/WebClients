@@ -127,7 +127,7 @@ export const ComposerToolbar = ({
 }: ComposerToolbarProps) => {
     const toolsButtonRef = useRef<HTMLButtonElement>(null);
     const [showToolsMenu, setShowToolsMenu] = useState(false);
-    const { imageTools: isImageToolsFlagEnabled, externalTools: isToolsFlagEnabled } = useLumoFlags();
+    const { imageTools: isImageToolsFlagEnabled } = useLumoFlags();
 
     const handleToolsButtonClick = useCallback(() => {
         setShowToolsMenu((prev) => !prev);
@@ -152,7 +152,7 @@ export const ComposerToolbar = ({
         <div className="flex flex-row flex-nowrap items-center justify-space-between w-full mt-1">
             <div className="flex flex-row flex-nowrap items-center gap-1 pl-2">
                 <UploadMenuSection {...uploadSectionProps} />
-                {isToolsFlagEnabled && !isCreateImageMode && !isArtifactMode && !isAgent && (
+                {!isCreateImageMode && !isArtifactMode && !isAgent && (
                     <>
                         <Button
                             ref={toolsButtonRef}
