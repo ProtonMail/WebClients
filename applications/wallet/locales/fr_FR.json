@@ -2328,6 +2328,9 @@
       "Contact could not be saved": [
         "Le contact n’a pas pu être enregistré."
       ],
+      "Could not grant access to the organization key": [
+        "Impossible d'accorder l'accès à la clé de l'organisation"
+      ],
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
       ],
@@ -3323,6 +3326,9 @@
       "Account holder": [
         "Titulaire du compte"
       ],
+      "Account holder name": [
+        "Nom du titulaire du compte"
+      ],
       "Additional comments": [
         "Commentaires supplémentaires"
       ],
@@ -3831,6 +3837,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès étendu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès limité"
       ],
       "${ n } calendar": [
         "${ n } calendrier",
@@ -4952,6 +4964,9 @@
       "Invalid security code": [
         "Le code de sécurité n'est pas valide."
       ],
+      "Please enter the account holder name": [
+        "Veuillez saisir le nom du titulaire du compte"
+      ],
       "Something went wrong. Please try again later.": [
         "Une erreur s'est produite. Veuillez réessayer plus tard."
       ],
@@ -5231,8 +5246,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propriétaire"
+      "Organization Admin": [
+        "Administrateur de l'organisation"
       ],
       "Security Admin": [
         "Administrateur de sécurité"

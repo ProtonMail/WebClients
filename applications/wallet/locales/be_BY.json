@@ -2362,6 +2362,9 @@
       "Contact could not be saved": [
         "Не ўдалося захаваць кантакт"
       ],
+      "Could not grant access to the organization key": [
+        "Немагчыма даць доступ да ключа арганізацыі"
+      ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
       ],
@@ -3386,6 +3389,9 @@
       ],
       "Account holder": [
         "Трымальнік уліковага запісу"
+      ],
+      "Account holder name": [
+        "Уладальнік уліковага запісу"
       ],
       "Additional comments": [
         "Дадатковыя каментарыі"
@@ -5110,6 +5116,9 @@
       "Invalid security code": [
         "Памылковы код бяспекі"
       ],
+      "Please enter the account holder name": [
+        "Увядзіце імя ўладальніка ўліковага запісу"
+      ],
       "Something went wrong. Please try again later.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней."
       ],
@@ -5391,9 +5400,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Уладальнік"
-      ],
       "Security Admin": [
         "Адміністратар бяспекі"
       ],
