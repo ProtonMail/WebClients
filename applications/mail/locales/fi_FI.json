@@ -1520,8 +1520,7 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
+        "Luota avaimeen"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -2137,13 +2136,13 @@
         "3 Tt tallennustilaa"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Käytössä yli 15 000 palvelinta yli 120 maassa"
+        "Käytä yli 15 000 palvelinta yli 120 maassa"
       ],
       "Access advanced AI models": [
         "Käytä kehittyneitä tekoälymalleja"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Kaikki palveluiden ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
+        "Kaikki sovellusten ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
       ],
       "Block ads, trackers, and malware": [
         "Estä mainoksia, seurantoja ja haittaohjelmia"
@@ -2155,13 +2154,13 @@
         "Yhdistä 10 laitetta samanaikaisesti"
       ],
       "Full chat history with easy search and favorites": [
-        "Koko keskusteluhistoria helpolla etsi-toiminnolla ja suosikeilla"
+        "Täysi chat-historia helpolla haulla ja suosikeilla"
       ],
       "Individual accounts for 6 users": [
-        "Henkilökohtaiset tilit 6 käyttäjälle"
+        "Yksilölliset tilit 6 käyttäjälle"
       ],
       "Individual accounts for you and a partner": [
-        "Henkilökohtaiset tilit sinulle ja kumppanille"
+        "Yksilölliset tilit teille ja kumppanillenne"
       ],
       "Stronger protection against cyber threats": [
         "Vahvempi suoja kyberuhkia vastaan"
@@ -2172,7 +2171,7 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seurantoja ja haittaohjelmia."
+        "Erityisesti suunniteltu NetShield suojaa laitteitanne ja nopeuttaa selaustanne estämällä mainokset, seurannan ja haittaohjelmat."
       ]
     },
     "Billing cycle option": {
@@ -4210,9 +4209,6 @@
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Lähettäjän ${ senderEmailAddress } uusia viestejä ei vastaanoteta, vaan ne poistetaan pysyvästi."
-      ],
-      "No ads. No trackers.": [
-        "Ei mainoksia. Ei seurantaa."
       ],
       "No folders": [
         "Kansioita ei ole"
@@ -7743,7 +7739,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -7834,9 +7831,6 @@
       ],
       "Low Priority": [
         "Alhainen tärkeys"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Aseta ${ MAIL_APP_NAME } oletussähköpostisovellukseksesi"
       ],
       "Manage your folders": [
         "Hallitse kansioitasi"
@@ -9769,9 +9763,6 @@
       "Date:": [
         "Päiväys:"
       ],
-      "Deals, offers, marketing emails": [
-        "Tarjoukset, edut ja markkinointiviestit"
-      ],
       "Delete": [
         "Poista"
       ],
@@ -9804,6 +9795,9 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Duration": [
+        "Kesto"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "esim. Amazon, eBay, Etsy"
@@ -12575,12 +12569,6 @@
       ],
       "No parent folder": [
         "Ei yläkansiota"
-      ],
-      "Remind me later": [
-        "Muistuta myöhemmin"
-      ],
-      "Yes, don't show again": [
-        "Älä näytä uudelleen"
       ]
     },
     "Option group": {
@@ -13540,9 +13528,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Omistaja"
-      ],
       "Security Admin": [
         "Turvallisuusvastaava"
       ],
@@ -15876,9 +15861,6 @@
       ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
-      ],
-      "Keep this banner hidden?": [
-        "Pidä tämä ilmoitus piilossa?"
       ],
       "Label as": [
         "Lisää tunniste"

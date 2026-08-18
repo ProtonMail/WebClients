@@ -3178,6 +3178,9 @@
       "We use 3-D Secure to protect your payments": [
         "Usamos 3-D Secure para proteger seus pagamentos"
       ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vamos redirecioná-lo para o ${ IDEAL_BRAND_NAME } em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ],
@@ -3316,6 +3319,9 @@
       ],
       "Account holder": [
         "Titular da conta"
+      ],
+      "Account holder name": [
+        "Nome do titular da conta"
       ],
       "Additional comments": [
         "Comentários adicionais"
@@ -3825,6 +3831,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso limitado"
       ],
       "${ n } calendar": [
         "${ n } calendário",
@@ -5220,8 +5232,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Proprietário"
+      "Organization Admin": [
+        "Administrador da organização"
       ],
       "Security Admin": [
         "Administrador de segurança"

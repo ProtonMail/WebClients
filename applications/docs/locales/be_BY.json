@@ -3119,6 +3119,9 @@
       "Could not find an available name": [
         "Немагчыма знайсці даступную назву"
       ],
+      "Could not grant access to the organization key": [
+        "Немагчыма даць доступ да ключа арганізацыі"
+      ],
       "Could not load sharing details": [
         "Немагчыма загрузіць абагуленыя падрабязнасці"
       ],
@@ -3259,9 +3262,6 @@
       ],
       "Failed to remove older revisions": [
         "Не ўдалося выдаліць больш старую рэдакцыю"
-      ],
-      "Failed to rename document": [
-        "Не ўдалося перайменаваць дакумент"
       ],
       "Failed to rename document. Please try again later.": [
         "Не ўдалося перайменаваць дакумент. Паспрабуйце яшчэ раз пазней."
@@ -9453,9 +9453,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Уладальнік"
-      ],
       "Security Admin": [
         "Адміністратар бяспекі"
       ],

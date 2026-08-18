@@ -602,6 +602,9 @@
       "Join album": [
         "Συμμετοχή στο άλμπουμ"
       ],
+      "Keep going": [
+        "Συνεχίστε"
+      ],
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
       ],
@@ -1078,6 +1081,9 @@
       ],
       "Stop": [
         "Σταμάτα"
+      ],
+      "Stop here": [
+        "Σταμάτησε εδώ"
       ],
       "Stop sharing": [
         "Διακοπή κοινής χρήσης"
@@ -3518,6 +3524,9 @@
       ],
       "Could not find an available name": [
         "Δεν ήταν δυνατή η εύρεση ενός διαθέσιμου ονόματος"
+      ],
+      "Could not grant access to the organization key": [
+        "Δεν ήταν δυνατή η παραχώρηση πρόσβασης στο κλειδί οργανισμού"
       ],
       "Could not load sharing details": [
         "Δεν ήταν δυνατή η φόρτωση των λεπτομερειών κοινής χρήσης"
@@ -6010,6 +6019,9 @@
       "How does encrypted search work?": [
         "Πώς δουλεύει η κρυπτογραφημένη αναζήτηση;"
       ],
+      "I have not finished this one yet.": [
+        "Δεν το έχω τελειώσει ακόμα αυτό."
+      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Με την παρούσα βεβαιώνω, καλή τη πίστει, ότι οι πληροφορίες και οι δηλώσεις που περιέχονται στην έκθεση είναι ορθές και πλήρεις."
       ],
@@ -6820,6 +6832,9 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Αυτό απαιτεί πολλά βήματα. Να συνεχίσω;"
+      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Αυτό το στοιχείο δεν είναι αποθηκευμένο στη βιβλιοθήκη Φωτογραφιών σας. Αν το αφαιρέσετε από αυτό το άλμπουμ, θα χάσετε οριστικά την πρόσβαση σε αυτό.",
         "Ορισμένα από τα επιλεγμένα στοιχεία δεν είναι αποθηκευμένα στη βιβλιοθήκη Φωτογραφιών σας. Αν τα αφαιρέσετε από αυτό το άλμπουμ, θα χάσετε οριστικά την πρόσβαση σε αυτά."
@@ -7505,6 +7520,9 @@
       ],
       "Account holder": [
         "Δικαιούχος λογαριασμού"
+      ],
+      "Account holder name": [
+        "Όνομα κατόχου λογαριασμού"
       ],
       "Active": [
         "Ενεργό"
@@ -8916,6 +8934,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με εκτεταμένη πρόσβαση"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με περιορισμένη πρόσβαση"
       ],
       "${ n } calendar": [
         "${ n } ημερολόγιο",
@@ -10770,6 +10794,9 @@
       "Invalid security code": [
         "Μη έγκυρος κωδικός ασφαλείας"
       ],
+      "Please enter the account holder name": [
+        "Παρακαλώ εισάγετε το όνομα του κατόχου του λογαριασμού"
+      ],
       "Something went wrong. Please try again later.": [
         "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε αργότερα."
       ],
@@ -11332,8 +11359,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ιδιοκτήτης"
+      "Organization Admin": [
+        "Διαχειριστής Οργανισμού"
       ],
       "Security Admin": [
         "Διαχειριστής Ασφαλείας"
@@ -13558,6 +13585,9 @@
       ],
       "Stay for 50% off your next month": [
         "Μείνετε με έκπτωση 50% τον επόμενο μήνα"
+      ],
+      "Still working on it": [
+        "Ακόμα δουλεύω πάνω σε αυτό"
       ],
       "Stop sharing": [
         "Διακοπή κοινής χρήσης"

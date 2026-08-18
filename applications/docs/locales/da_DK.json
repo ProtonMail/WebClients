@@ -472,7 +472,7 @@
         "Importér fra Outlook"
       ],
       "Keep going": [
-        "Fortsæt …"
+        "Fortsæt"
       ],
       "Keep my subscription": [
         "Bevar mit abonnement"
@@ -3216,9 +3216,6 @@
       "Failed to remove older revisions": [
         "Kunne ikke fjerne ældre versioner"
       ],
-      "Failed to rename document": [
-        "Kunne ikke omdøbe dokumentet"
-      ],
       "Failed to rename document. Please try again later.": [
         "Det lykkedes ikke at omdøbe dokumentet. Prøv igen senere."
       ],
@@ -5722,6 +5719,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "For at hjælpe dig med at fejlfinde problemet uploades fejlfindingsoplysninger til dit Drive, og bliver delt sikkert med ${ BRAND_NAME }-supportteamet. Filindhold vil muligvis blive medtaget. Du kan til enhver tid stoppe med at dele, og den delte data slettes efter gennemgangen."
+      ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "For at hjælpe dig med at huske din adgangskode, beder vi dig om at indtaste den en gang imellem. Vi spørger dig mindre og mindre efterhånden."
       ],
@@ -6357,6 +6357,9 @@
       ],
       "Include application logs in bug report": [
         "Inkluder applikationslogfiler i fejlrapporten"
+      ],
+      "Include debug information": [
+        "Inkluder fejlfindingsoplysninger"
       ],
       "Include document name in notification": [
         "Inkludér dokumentnavn i notifikationen"
@@ -8277,6 +8280,9 @@
       "Failed to restore document": [
         "Kunne ikke genoprette dokument"
       ],
+      "Failed to submit report": [
+        "Kunne ikke indsende rapporten"
+      ],
       "Failed to trash document": [
         "Dokumentet kunne ikke flyttes til papirkurven"
       ],
@@ -8313,6 +8319,9 @@
       ],
       "Recent documents updated": [
         "Nyligt opdaterede dokumenter"
+      ],
+      "Report submitted successfully": [
+        "Rapporten blev indsendt"
       ],
       "Root folder failed to be loaded": [
         "Rodmappe kunne ikke indlæses"
@@ -9149,8 +9158,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ejer"
+      "Organization Admin": [
+        "Organisationsadmin"
       ],
       "Security Admin": [
         "Sikkerhedsadmin"
@@ -10680,6 +10689,9 @@
       ],
       "Report a problem": [
         "Anmeld et problem"
+      ],
+      "Report issue": [
+        "Rapportér problem"
       ],
       "Request new code": [
         "Anmod om ny kode"

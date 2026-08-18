@@ -2328,6 +2328,9 @@
       "Contact could not be saved": [
         "Η αποθήκευση της επαφής απέτυχε"
       ],
+      "Could not grant access to the organization key": [
+        "Δεν ήταν δυνατή η παραχώρηση πρόσβασης στο κλειδί οργανισμού"
+      ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
@@ -3323,6 +3326,9 @@
       "Account holder": [
         "Δικαιούχος λογαριασμού"
       ],
+      "Account holder name": [
+        "Όνομα κατόχου λογαριασμού"
+      ],
       "Additional comments": [
         "Επιπλέον σχόλια"
       ],
@@ -3831,6 +3837,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με εκτεταμένη πρόσβαση"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με περιορισμένη πρόσβαση"
       ],
       "${ n } calendar": [
         "${ n } ημερολόγιο",
@@ -4952,6 +4964,9 @@
       "Invalid security code": [
         "Μη έγκυρος κωδικός ασφαλείας"
       ],
+      "Please enter the account holder name": [
+        "Παρακαλώ εισάγετε το όνομα του κατόχου του λογαριασμού"
+      ],
       "Something went wrong. Please try again later.": [
         "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε αργότερα."
       ],
@@ -5231,8 +5246,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ιδιοκτήτης"
+      "Organization Admin": [
+        "Διαχειριστής Οργανισμού"
       ],
       "Security Admin": [
         "Διαχειριστής Ασφαλείας"

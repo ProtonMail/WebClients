@@ -1811,7 +1811,7 @@
         "1 个账户"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB 存储空间：当前套餐的 40 倍"
+        "200 GB 存储空间：您当前套餐的 40 倍"
       ],
       "6 user accounts": [
         "6 个账户"
@@ -1904,7 +1904,7 @@
         "包含 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
       ],
       "Block ads, trackers, and malware": [
-        "屏蔽广告、跟踪器和恶意软件"
+        "拦截广告、跟踪器和恶意软件"
       ],
       "Built-in 2FA authenticator": [
         "内置 2FA 验证器"
@@ -1925,7 +1925,7 @@
         "针对网络威胁提供更强有力的保护"
       ],
       "Unlimited daily chats": [
-        "无限聊天次数"
+        "每日无限制聊天"
       ]
     },
     "BF2025: Tooltip": {
@@ -3626,9 +3626,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "大多数问题可通过我们的分步指南在几分钟内解决！"
       ],
-      "No ads. No trackers.": [
-        "无广告、无追踪"
-      ],
       "No one in your organization can connect to shared servers.": [
         "组织内任何人都不能连接共享服务器。"
       ],
@@ -4006,13 +4003,13 @@
         "2 TB 共享存储空间"
       ],
       "2 user accounts": [
-        "2 个账户"
+        "2 个用户账户"
       ],
       "All premium features from your current plan": [
-        "您当前套餐的所有高级功能"
+        "您当前套餐的所有付费版服务器功能"
       ],
       "Only": [
-        "仅限"
+        "仅"
       ]
     },
     "Duo offer: Link": {
@@ -5174,9 +5171,6 @@
       ],
       "Role assignment could not be completed for ${ errors.length } member": [
         "无法为 ${ errors.length } 位成员完成角色分配"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "无法为 ${ failedGroupCount } 个群组完成角色分配"
       ],
       "Server not found": [
         "未找到服务器"
@@ -9020,9 +9014,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "您的用户在登录时将可以看到该名称。"
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "该流程在 ${ pausedCount } 个群组中被中断，点击“继续”以恢复分配角色。"
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "推荐奖励可在您朋友的试用期结束后的 2 个月内发放，前提是您的朋友已订阅套餐。"
@@ -13075,7 +13066,7 @@
         "${ pricingTitle } 优惠今天到期！"
       ],
       "Don't show this again": [
-        "不再显示"
+        "不再显示此内容"
       ],
       "Don’t show this again": [
         "不再显示此内容"
@@ -14893,9 +14884,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "所有者"
-      ],
       "Security Admin": [
         "安全管理员"
       ],
@@ -17888,9 +17876,6 @@
       "Group membership": [
         "群组会员资格"
       ],
-      "Group role assignment paused": [
-        "群组角色分配已暂停"
-      ],
       "Groups": [
         "群组"
       ],
@@ -17954,9 +17939,6 @@
       "Install it manually": [
         "手动安装"
       ],
-      "Integrations": [
-        "集成"
-      ],
       "Invalid verification code": [
         "验证码无效"
       ],
@@ -17992,9 +17974,6 @@
       ],
       "Minicalendar": [
         "迷你日历"
-      ],
-      "Monitoring": [
-        "监测"
       ],
       "Multi-user support": [
         "多用户功能"
@@ -18334,9 +18313,6 @@
       ],
       "Single sign-on": [
         "单点登录"
-      ],
-      "Single-sign on (SSO)": [
-        "单点登录 (SSO)"
       ],
       "SMS verification": [
         "短信验证"

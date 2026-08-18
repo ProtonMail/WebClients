@@ -2482,7 +2482,7 @@
         "1 conta de utilizador"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB de armazenamento: 40x o seu plano atual"
+        "200 GB de armazenamento: 40 vezes o seu plano atual"
       ],
       "6 user accounts": [
         "6 contas de utilizador"
@@ -2506,7 +2506,7 @@
         "Alertas de integridade das palavras-passe"
       ],
       "Recover previous file versions": [
-        "Recupere as versões anteriores do ficheiro"
+        "Recuperar versões anteriores de ficheiros"
       ],
       "Unlimited folders, labels and filters": [
         "Pastas, etiquetas e filtros ilimitados"
@@ -2566,13 +2566,13 @@
         "3 TB de armazenamento de dados"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Aceda a mais de 15.000 servidores em mais de 120 países"
+        "Aceda a mais de 15 000 servidores em mais de 120 países"
       ],
       "Access advanced AI models": [
-        "Aceder a modelos de IA avançados"
+        "Aceda a modelos de IA avançados"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas as funcionalidades premium do ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+        "Todas as funcionalidades premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Bloqueie anúncios, rastreadores e malware"
@@ -2584,16 +2584,16 @@
         "Ligue 10 dispositivos em simultâneo"
       ],
       "Full chat history with easy search and favorites": [
-        "Histórico completo de chat com pesquisa fácil e favoritos"
+        "Histórico de chat completo com pesquisa fácil e favoritos"
       ],
       "Individual accounts for 6 users": [
         "Contas individuais para 6 utilizadores"
       ],
       "Individual accounts for you and a partner": [
-        "Contas individuais para si e mais uma pessoa"
+        "Contas individuais para si e para um parceiro"
       ],
       "Stronger protection against cyber threats": [
-        "Proteção reforçada contra ciberameaças"
+        "Maior proteção contra ameaças cibernéticas"
       ],
       "Unlimited daily chats": [
         "Conversas diárias ilimitadas"
@@ -5045,9 +5045,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "A maior parte dos problemas pode ser resolvida em poucos minutos com os nossos guias passo a passo."
       ],
-      "No ads. No trackers.": [
-        "Sem anúncios. Sem rastreadores."
-      ],
       "No one in your organization can connect to shared servers.": [
         "Ninguém na sua organização pode conectar-se a servidores partilhados."
       ],
@@ -5519,17 +5516,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb para Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm para Fedora / Red Hat"
-      ],
-      "You can also download the app through the ${ linkSnapStore }.": [
-        "Também pode transferir a aplicação através da ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6383,9 +6369,6 @@
       "Enable auto-renew": [
         "Ativar renovação automática"
       ],
-      "Enter your extra password": [
-        "Introduza a sua palavra-passe adicional"
-      ],
       "Explore plans": [
         "Explorar planos"
       ],
@@ -6564,9 +6547,6 @@
       ],
       "Unable to recover data": [
         "Não foi possível recuperar os dados"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Desbloquear o ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Atualizar"
@@ -7189,10 +7169,6 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "A atribuição do cargo não pôde ser concluída para ${ errors.length } membro",
         "A atribuição do cargo não pôde ser concluída para ${ errors.length } membros"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "A atribuição do cargo não pôde ser concluída para ${ failedGroupCount } grupo",
-        "A atribuição do cargo não pôde ser concluída para ${ failedGroupCount } grupos"
       ],
       "Server not found": [
         "Servidor não encontrado"
@@ -8621,14 +8597,6 @@
         "Muitos problemas podem ser resolvidos rapidamente com os nossos guias de ajuda. Se precisar de mais apoio ao cliente, a nossa equipa está aqui para ajudar."
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } na App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } na Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Encaminhe automaticamente"
@@ -9725,9 +9693,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**O seu e-mail de recuperação por si só não lhe permite recuperar os seus dados encriptados** depois de repor a sua palavra-passe."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**Os seus métodos de recuperação serão invalidados:** poderá gerar novos dados de recuperação mais tarde."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**O seu telefone de recuperação por si só não lhe permite recuperar os seus dados encriptados** depois de repor a sua palavra-passe."
       ],
@@ -10706,9 +10671,6 @@
       "Failed to fetch logs.": [
         "Erro na obtenção dos registos."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Rápido e focado. E-mail e calendário, diretamente no seu ambiente de trabalho."
-      ],
       "Featured in": [
         "Em destaque em"
       ],
@@ -11434,9 +11396,6 @@
       ],
       "On": [
         "Ativado"
-      ],
-      "On Ubuntu?": [
-        "No Ubuntu?"
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Assim que o acesso à sua conta for concedido, eles poderão aceder às suas definições de **Recuperação** e **alterar a sua palavra-passe do ${ ACCOUNT_APP_NAME }** por si."
@@ -12164,10 +12123,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "O nome será visível para os seus utilizadores enquanto estes tiverem sessão iniciada."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "O processo foi interrompido para ${ pausedCount } grupo. Clique em Continuar para retomar a atribuição de cargos.",
-        "O processo foi interrompido para ${ pausedCount } grupos. Clique em Continuar para retomar a atribuição de cargos."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "O crédito de recomendação pode ser atribuído até 2 meses após o fim da avaliação do seu amigo, apenas se o seu amigo subscrever um plano."
@@ -14067,9 +14022,6 @@
       "Backup password": [
         "Palavra-passe de backup"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Cobrado a ${ priceYearly } a cada 12 meses."
       ],
@@ -14292,9 +14244,6 @@
       ],
       "Days of the week": [
         "Dias da semana"
-      ],
-      "Deals, offers, marketing emails": [
-        "Promoções, ofertas e e-mails de marketing"
       ],
       "Default email address": [
         "Endereço de e-mail predefinido"
@@ -15060,9 +15009,6 @@
       ],
       "Select an identity provider to start": [
         "Selecione um fornecedor de identidade para começar"
-      ],
-      "Select Linux package format": [
-        "Selecionar formato do pacote Linux"
       ],
       "Select Linux platform": [
         "Selecionar plataforma Linux"
@@ -15832,9 +15778,6 @@
       ],
       "Sign in": [
         "Iniciar sessão"
-      ],
-      "Snap store": [
-        "Snap store"
       ],
       "switch account": [
         "trocar de conta"
@@ -20736,9 +20679,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Proprietário"
-      ],
       "Security Admin": [
         "Administrador de segurança"
       ],
@@ -21329,9 +21269,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Adicionar ao ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Permite adicionar uma videoconferência do Zoom a qualquer um dos seus eventos na agenda."
       ]
@@ -24719,9 +24656,6 @@
       "Dashboard": [
         "Painel de controlo"
       ],
-      "Data collection": [
-        "Recolha de dados"
-      ],
       "Data recovery": [
         "Recuperação de dados"
       ],
@@ -25156,9 +25090,6 @@
       "Group membership": [
         "Membro do grupo"
       ],
-      "Group role assignment paused": [
-        "Atribuição de cargo do grupo colocada em pausa"
-      ],
       "Groups": [
         "Grupos"
       ],
@@ -25318,9 +25249,6 @@
       ],
       "Mobile": [
         "Móvel"
-      ],
-      "Monitoring": [
-        "Monitorização"
       ],
       "Monthly": [
         "Mensal"
@@ -25495,9 +25423,6 @@
       ],
       "Priority support:": [
         "Apoio ao cliente prioritário:"
-      ],
-      "Privacy": [
-        "Privacidade"
       ],
       "Privacy and data collection": [
         "Privacidade e recolha de dados"
@@ -25771,9 +25696,6 @@
       ],
       "Single sign-on": [
         "Autenticação única"
-      ],
-      "Single-sign on (SSO)": [
-        "Autenticação única (SSO)"
       ],
       "SMS verification": [
         "Verificação por SMS"

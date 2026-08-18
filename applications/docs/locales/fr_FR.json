@@ -468,6 +468,9 @@
       "Import from Outlook": [
         "Importer depuis Outlook"
       ],
+      "Keep going": [
+        "Continuer"
+      ],
       "Keep my subscription": [
         "Conserver mon abonnement"
       ],
@@ -812,6 +815,9 @@
       ],
       "Stop": [
         "Arrêter"
+      ],
+      "Stop here": [
+        "S'arrêter ici"
       ],
       "Stop sharing": [
         "Arrêter le partage"
@@ -3043,6 +3049,9 @@
       "Copying item to a non-folder is not allowed": [
         "Vous ne pouvez pas copier d'élément dans un élément qui n'est pas un dossier."
       ],
+      "Could not grant access to the organization key": [
+        "Impossible d'accorder l'accès à la clé de l'organisation"
+      ],
       "Could not load sharing details": [
         "Les informations du partage n'ont pas pu être chargées."
       ],
@@ -3141,6 +3150,9 @@
       "Failed to fetch sharing info": [
         "La récupération des informations de partage n'a pas abouti."
       ],
+      "Failed to fetch sharing information": [
+        "La récupération des informations de partage n'a pas abouti."
+      ],
       "Failed to load 'My files' folder": [
         "Le chargement du dossier « Mes fichiers » n'a pas abouti."
       ],
@@ -3155,9 +3167,6 @@
       ],
       "Failed to remove older revisions": [
         "La suppression des anciennes révisions n'a pas abouti."
-      ],
-      "Failed to rename document": [
-        "La modification du nom du document n'a pas abouti."
       ],
       "Failed to rename document. Please try again later.": [
         "Le document n'a pas pu être renommé. Nous vous invitons à réessayer plus tard."
@@ -5524,6 +5533,9 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Il s’agit d’un nom ou d’un surnom pour votre organisation que vos utilisateurs verront. Vous pouvez le modifier à tout moment."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Cela demande beaucoup d'étapes. Faut-il continuer ?"
+      ],
       "This item already exists in your library": [
         "Cet élément existe déjà dans votre bibliothèque."
       ],
@@ -7090,6 +7102,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès étendu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès limité"
       ],
       "${ n } calendar": [
         "${ n } calendrier",
@@ -9020,8 +9038,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propriétaire"
+      "Organization Admin": [
+        "Administrateur de l'organisation"
       ],
       "Security Admin": [
         "Administrateur de sécurité"
@@ -10620,6 +10638,9 @@
       ],
       "Stay for 50% off your next month": [
         "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
+      ],
+      "Still working on it": [
+        "Je suis encore en train d'y travailler"
       ],
       "Stop sharing": [
         "Arrêter le partage"

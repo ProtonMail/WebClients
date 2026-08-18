@@ -4172,9 +4172,6 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "${ senderEmailAddress }からのメールは今後一切受信しません。"
       ],
-      "No ads. No trackers.": [
-        "広告なし。トラッカーなし。"
-      ],
       "No folders": [
         "フォルダがありません。"
       ],
@@ -7580,7 +7577,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7671,9 +7668,6 @@
       ],
       "Low Priority": [
         "優先度：低"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }を既定のメールアプリにする"
       ],
       "Manage your folders": [
         "フォルダを管理"
@@ -9558,9 +9552,6 @@
       "Date:": [
         "日時："
       ],
-      "Deals, offers, marketing emails": [
-        "お得な情報、特典、マーケティングメール"
-      ],
       "Delete": [
         "削除"
       ],
@@ -9593,6 +9584,9 @@
       ],
       "Drive": [
         "ドライブ"
+      ],
+      "Duration": [
+        "期間"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "Amazon、eBay、Etsyなど"
@@ -12310,12 +12304,6 @@
       ],
       "No parent folder": [
         "親フォルダーなし"
-      ],
-      "Remind me later": [
-        "また後で通知する"
-      ],
-      "Yes, don't show again": [
-        "次回から表示しない"
       ]
     },
     "Option group": {
@@ -13249,9 +13237,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "所有者"
-      ],
       "Security Admin": [
         "セキュリティ管理者"
       ],
@@ -15496,9 +15481,6 @@
       ],
       "Invalid verification code": [
         "無効な検証コードです"
-      ],
-      "Keep this banner hidden?": [
-        "このバーナーを隠したままにしますか？"
       ],
       "Label as": [
         "ラベル付け"

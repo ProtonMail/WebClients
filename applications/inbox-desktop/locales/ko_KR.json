@@ -70,6 +70,9 @@
       "Force Reload": [
         "강제 새로고침"
       ],
+      "Help and feedback": [
+        "도움말 및 의견"
+      ],
       "Hide ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } 숨기기"
       ],
@@ -78,6 +81,9 @@
       ],
       "Minimize": [
         "최소화"
+      ],
+      "OK": [
+        "확인"
       ],
       "Paste": [
         "붙여넣기"
@@ -147,6 +153,9 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } 제거"
+      ],
+      "Version ${ version } (${ buildInfo })\n${ pkg.config.copyright }": [
+        "버전 ${ version } (${ buildInfo })\n${ pkg.config.copyright }"
       ],
       "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
         "하드웨어 가속이 활성화되면 앱은 렌더링을 위해 기기의 전용 그래픽 하드웨어를 사용합니다. 이로 인해 일부 시스템에서 호환성 문제가 발생할 수 있습니다."
@@ -255,11 +264,19 @@
       "File": [
         "파일"
       ],
+      "Help": [
+        "도움말"
+      ],
       "View": [
         "보기"
       ],
       "Window": [
         "창"
+      ]
+    },
+    "Title": {
+      "About ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }에 관하여"
       ]
     },
     "Unload warning": {

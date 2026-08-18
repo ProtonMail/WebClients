@@ -850,8 +850,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "이메일 별칭은 이메일 주소와 같이 동작하지만 스팸을 줄여주고 당신의 실제 이메일 주소와 신원을 감추어 줍니다."
       ],
+      "Change these passwords immediately": [
+        "아래 비밀번호는 즉시 변경되어야 합니다."
+      ],
       "Change your passwords": [
         "비밀번호 변경"
+      ],
+      "Check if your passwords have been exposed": [
+        "비밀번호 유출 여부를 확인하세요"
       ],
       "Create unique passwords": [
         "고유한 비밀번호 만들기"
@@ -906,6 +912,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "이 계정은 취약합니다. 서비스를 방문하여 비밀번호를 변경하십시오."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "해당 로그인 비밀번호가 데이터 보안 사고로 인해 유출되었을 가능성이 있습니다. 해당 서비스에 접속하여 비밀번호를 변경하는 것을 강력히 권장합니다."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "이 서비스는 2단계 인증을 지원합니다. 향상된 계정 보안을 위해 활성화 해주세요."
@@ -2131,6 +2140,9 @@
       ],
       "None": [
         "없음"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "알려진 데이터 보안 사고에 누출된 사용자의 저장된 비밀번호가 없습니다."
       ],
       "None selected": [
         "선택되지 않음"
@@ -4610,6 +4622,12 @@
       "Clear clipboard": [
         "클립보드 비우기"
       ],
+      "Compromised password": [
+        "유출된 비밀번호"
+      ],
+      "Compromised passwords": [
+        "유출된 비밀번호"
+      ],
       "Confirm extra password": [
         "추가 비밀번호 확인"
       ],
@@ -4823,6 +4841,9 @@
       "No access tokens yet": [
         "액세스 토큰이 없습니다"
       ],
+      "No compromised passwords": [
+        "유출된 비밀번호 없음"
+      ],
       "No excluded items": [
         "제외된 항목 없음"
       ],
@@ -5002,6 +5023,9 @@
       ],
       "Update available": [
         "사용 가능한 업데이트가 있습니다"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "유출된 비밀번호를 점검하려면 업그레이드하세요."
       ],
       "URL matching": [
         "URL 일치"

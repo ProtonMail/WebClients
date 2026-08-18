@@ -4360,8 +4360,8 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Omogoča vam takojšnje dodajanje povezav do srečanj v vaša povabila na dogodke."
       ],
-      "No ads. No trackers.": [
-        "Brez oglasov. Brez sledilnikov."
+      "No ads. No trackers": [
+        "Brez oglasov. Brez sledilnikov"
       ],
       "No one in your organization can connect to shared servers.": [
         "Nihče v vaši organizaciji se ne more povezati z deljenimi strežniki."
@@ -4706,6 +4706,12 @@
       ]
     },
     "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb za Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm za Fedoro / Red Hat"
+      ],
       "You can also download the app through the ${ linkSnapStore }.": [
         "Aplikacijo lahko prenesete tudi prek ${ linkSnapStore }."
       ]
@@ -5361,6 +5367,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v Nastavitve > Osebna identiteta in naslovi > Kratka domena (@pm.me)"
       ],
+      "A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it": [
+        "Začel se je postopek obnovitve z delegiranim ali nujnim dostopom: ustvarjanje novega ključa ni dovoljeno, da se prepreči prekinitev tega postopka."
+      ],
       "A group with this name already exists": [
         "Skupina z enakim imenom že obstaja"
       ],
@@ -5453,6 +5462,9 @@
       ],
       "Copying item to a non-folder is not allowed": [
         "Kopiranje predmetov v mapo, ki to ni, ni dovoljeno"
+      ],
+      "Could not grant access to the organization key": [
+        "Dostop do ključa organizacije ni bil odobren"
       ],
       "Could not load the image preview: ${ message }": [
         "Predogleda slike ni mogoče naložiti: ${ message }"
@@ -5879,6 +5891,18 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Shema obrnjene davčne obveznosti ni podprta za ta paket"
+      ],
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "Dodelitve vlog za ${ failedCount } skupino ni bilo mogoče dokončati",
+        "Dodelitve vlog za ${ failedCount } skupini ni bilo mogoče dokončati",
+        "Dodelitve vlog za ${ failedCount } skupine ni bilo mogoče dokončati",
+        "Dodelitve vlog za ${ failedCount } skupin ni bilo mogoče dokončati"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "Dodelitve vlog za ${ failedCount } uporabnika ni bilo mogoče dokončati",
+        "Dodelitve vlog za ${ failedCount } uporabnika ni bilo mogoče dokončati",
+        "Dodelitve vlog za ${ failedCount } uporabnike ni bilo mogoče dokončati",
+        "Dodelitve vlog za ${ failedCount } uporabnikov ni bilo mogoče dokončati"
       ],
       "Session expired. Please refresh the page.": [
         "Seja je potekla. Osvežite stran."
@@ -7166,6 +7190,14 @@
         "Brezplačni preizkus namizne aplikacije je potekel."
       ]
     },
+    "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } v App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } v Play Store"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Samodejno posredujte"
@@ -8097,6 +8129,9 @@
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Pridobite ${ referrerRewardAmount }** kot dobropis za vsakega prijatelja, ki se naroči na paket."
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**Obnovitvena fraza in obnovitvena datoteka bosta razveljavljeni** nove obnovitvene podatke lahko ustvarite kasneje."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Več",
@@ -9946,6 +9981,12 @@
       "The name will be visible to your users while they are signed in.": [
         "Ime bo vidno vašim uporabnikom, medtem ko so prijavljeni."
       ],
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "Postopek je bil prekinjen za ${ pausedCount } ${ roleAssignmentSource }. Kliknite \"Nadaljuj\", da nadaljujete z dodeljevanjem vlog.",
+        "Postopek je bil prekinjen za ${ pausedCount } ${ roleAssignmentSource }. Kliknite \"Nadaljuj\", da nadaljujete z dodeljevanjem vlog.",
+        "Postopek je bil prekinjen za ${ pausedCount } ${ roleAssignmentSource }. Kliknite \"Nadaljuj\", da nadaljujete z dodeljevanjem vlog.",
+        "Postopek je bil prekinjen za ${ pausedCount } ${ roleAssignmentSource }. Kliknite \"Nadaljuj\", da nadaljujete z dodeljevanjem vlog."
+      ],
       "The securest way to browse, stream, and be online.": [
         "Najvarnejši način brskanja, pretakanja in biti na spletu."
       ],
@@ -10222,6 +10263,9 @@
       "User activated": [
         "Uporabnik je aktiviran."
       ],
+      "User roles assigned": [
+        "Vloge uporabnikov so bile dodeljene"
+      ],
       "Username": [
         "Uporabniško ime"
       ],
@@ -10389,6 +10433,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Ko se vaša naročnina obnovi, bomo uporabili vso razpoložljivo dobroimetje, preden bomo zaračunali zgornji način plačila."
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "Kdor koli ima nadzor nad tem naslovom, bo pridobil popoln dostop do vašega računa in podatkov. Nadaljujte le, če naslov prepoznate in ste ta postopek začeli sami."
       ],
       "Whole organization": [
         "Celotna organizacija"
@@ -10614,6 +10661,9 @@
       ],
       "You'll receive the credit reward 2 months after your friend's trial ended.": [
         "Dobitek dobroimetja boste prejeli 2 meseca po koncu preskusne različice vašega prijatelja."
+      ],
+      "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
+        "Prijavili se boste v svoj račun ${ BRAND_NAME } na tem naslovu:"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Vaš račun ${ BRAND_NAME } je povezan z ${ externalEmailAddress }."
@@ -11218,6 +11268,9 @@
       "Account holder": [
         "Imetnik računa"
       ],
+      "Account holder name": [
+        "Ime imetnika računa"
+      ],
       "Account holder: ${ sepaDetails.AccountName }": [
         "Imetnik računa: ${ sepaDetails.AccountName }"
       ],
@@ -11370,6 +11423,9 @@
       ],
       "Backup password": [
         "Varnostno geslo"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billed monthly.": [
         "Obračunano mesečno."
@@ -11556,9 +11612,6 @@
       ],
       "Date": [
         "Datum"
-      ],
-      "Deals, offers, marketing emails": [
-        "Promocije, ponudbe, marketinška e-pošta"
       ],
       "Default email address": [
         "Privzeti e-poštni naslov"
@@ -12120,6 +12173,9 @@
       ],
       "Second password": [
         "Drugo geslo"
+      ],
+      "Select Linux package format": [
+        "Izberite format paketa za Linux"
       ],
       "Select which Gmail address to connect": [
         "Izberite, kateri naslov Gmail želite povezati"
@@ -13078,6 +13134,9 @@
       ],
       "Resend invite link": [
         "Ponovno pošlji povezavo za povabilo"
+      ],
+      "Resume role assignment": [
+        "Nadaljuj dodeljevanje vlog"
       ],
       "Revoke sessions": [
         "Prekliči seje"
@@ -15655,6 +15714,11 @@
         "Za izvedbo te operacije potrebujete dostop do ključa organizacije."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Bančni račun"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -15826,6 +15890,9 @@
       ],
       "Invalid security code": [
         "Neveljavna varnostna koda"
+      ],
+      "Please enter the account holder name": [
+        "Vnesite ime imetnika računa"
       ],
       "Something went wrong. Please try again later.": [
         "Nekaj ​​je šlo narobe. Poskusite kasneje."
@@ -17689,6 +17756,9 @@
       "Backup password": [
         "Varnostno geslo"
       ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Ker je vaša organizacija za vas uvedla enotno prijavo (SSO), je bilo **vaše staro geslo shranjeno kot vaše rezervno geslo**. To geslo lahko uporabite za avtorizacijo SSO na novi napravi."
+      ],
       "Cancel": [
         "Prekliči"
       ],
@@ -17739,6 +17809,9 @@
       ],
       "Do you want to remove all other devices than the current one?": [
         "Ali želite odstraniti vse naprave razen trenutne?"
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Vnesite ga za prijavo. Je enako, kot vaše prejšnje geslo."
       ],
       "Enter your backup password": [
         "Vnesite vaše varnostno geslo"
@@ -19062,6 +19135,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
       ],
+      "${ capitalizedSource } role assignment paused": [
+        "Dodeljevanje vlog za ${ capitalizedSource } je začasno ustavljeno"
+      ],
       "${ feature } is now active": [
         "${ feature } je zdaj aktivna"
       ],
@@ -19349,6 +19425,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Potrdite izgubo bonusov za ${ BRAND_NAME }"
+      ],
+      "Confirm where to sign in": [
+        "Potrdite, kje se želite prijaviti"
       ],
       "Connect ${ name }": [
         "Poveži ${ name }."
@@ -19914,9 +19993,6 @@
       "Mobile": [
         "Mobilni"
       ],
-      "Monitoring": [
-        "Nadzor"
-      ],
       "Monthly": [
         "Mesečno"
       ],
@@ -20274,7 +20350,7 @@
       "Single sign-on": [
         "Enotna prijava"
       ],
-      "Single-sign on (SSO)": [
+      "Single sign-on (SSO)": [
         "Enotna prijava (SSO)"
       ],
       "SMTP submission": [

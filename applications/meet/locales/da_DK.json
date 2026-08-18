@@ -190,6 +190,9 @@
       "Cancel": [
         "Annullér"
       ],
+      "Change password": [
+        "Skift adgangskode"
+      ],
       "Chat with us": [
         "Chat med os"
       ],
@@ -3372,8 +3375,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ejer"
+      "Organization Admin": [
+        "Organisationsadmin"
       ],
       "Security Admin": [
         "Sikkerhedsadmin"
@@ -3517,6 +3520,12 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Kontoen har begrænsninger"
+      ],
+      "Account temporarily locked": [
+        "Konto midlertidigt låst"
+      ],
       "Activity events": [
         "Aktivitetsbegivenheder"
       ],

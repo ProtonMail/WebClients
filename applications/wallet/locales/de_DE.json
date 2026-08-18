@@ -2328,6 +2328,9 @@
       "Contact could not be saved": [
         "Der Kontakt konnte nicht gespeichert werden"
       ],
+      "Could not grant access to the organization key": [
+        "Der Zugriff auf den Organisationsschlüssel konnte nicht gewährt werden"
+      ],
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
@@ -2750,6 +2753,9 @@
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } markieren"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } beinhaltet ${ BRAND_NAME } Scribe Schreibassistent"
@@ -3178,6 +3184,9 @@
       "We use 3-D Secure to protect your payments": [
         "Wir verwenden 3-D Secure zum Schutz deiner Zahlungen"
       ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Wir werden dich in einem neuen Browser-Tab zu ${ IDEAL_BRAND_NAME } umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu PayPal umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
       ],
@@ -3316,6 +3325,9 @@
       ],
       "Account holder": [
         "Kontoinhaber"
+      ],
+      "Account holder name": [
+        "Name des Kontoinhabers"
       ],
       "Additional comments": [
         "Zusätzliche Kommentare"
@@ -3825,6 +3837,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent mit erweitertem Zugriff"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent mit eingeschränktem Zugriff"
       ],
       "${ n } calendar": [
         "${ n } Kalender",
@@ -4836,6 +4854,9 @@
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Mit ${ IDEAL_BRAND_NAME } bezahlen"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Für die Aktivierung des Abonnements nach dem Ende der Testversion ist eine Zahlungsmethode erforderlich."
       ],
@@ -4917,6 +4938,9 @@
       "You will soon be redirected to verify your payment.": [
         "Du wirst in Kürze weitergeleitet, um deine Zahlung zu bestätigen."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_BRAND_NAME } nur Euro unterstützen."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
       ],
@@ -4928,6 +4952,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Die Initialisierung von ${ IDEAL_BRAND_NAME } ist fehlgeschlagen. Bitte versuche es später erneut."
+      ],
       "Invalid card number": [
         "Ungültige Kartennummer"
       ],
@@ -4936,6 +4963,9 @@
       ],
       "Invalid security code": [
         "Ungültiger Sicherheitscode"
+      ],
+      "Please enter the account holder name": [
+        "Bitte den Namen des Kontoinhabers eingeben"
       ],
       "Something went wrong. Please try again later.": [
         "Etwas ist schiefgelaufen. Bitte versuche es später erneut."
@@ -4950,6 +4980,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Etwas ist schiefgelaufen. Die Google Pay-Verifizierung ist fehlgeschlagen."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Mit der Bestätigung dieser Zahlung ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, den entsprechenden Betrag von deinem Konto abzubuchen. Eine Rückerstattung kannst du innerhalb von 8 Wochen ab dem Datum der Abbuchung gemäß den Bedingungen deines Vertrags mit deiner Bank beantragen."
       ]
     },
     "Payments.info": {
@@ -5211,8 +5246,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Besitzer"
+      "Organization Admin": [
+        "Organisationsadministrator"
       ],
       "Security Admin": [
         "Sicherheitsadministrator"

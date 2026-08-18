@@ -602,6 +602,9 @@
       "Join album": [
         "Unirme al álbum"
       ],
+      "Keep going": [
+        "Continuar"
+      ],
       "Keep my subscription": [
         "Mantener mi suscripción"
       ],
@@ -1078,6 +1081,9 @@
       ],
       "Stop": [
         "Detener"
+      ],
+      "Stop here": [
+        "Detenerse aquí"
       ],
       "Stop sharing": [
         "Dejar de compartir"
@@ -3519,6 +3525,9 @@
       "Could not find an available name": [
         "No se pudo encontrar un nombre disponible"
       ],
+      "Could not grant access to the organization key": [
+        "No se pudo otorgar acceso a la clave de la organización"
+      ],
       "Could not load sharing details": [
         "No se pudieron cargar los detalles compartidos"
       ],
@@ -5294,6 +5303,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Los archivos de ${ DOCS_APP_NAME } y ${ SHEETS_APP_NAME } no se pueden descargar directamente y no se incluirán en esta descarga. Puede descargar los demás archivos haciendo clic en \"Continuar la descarga\"."
       ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } no pudo descifrar el índice de búsqueda local. Reconstruya el índice para restaurar la búsqueda."
+      ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
         "${ DRIVE_APP_NAME } detectó que el índice local de búsqueda está corrupto y ya no se puede usar. Reconstruya el índice para restaurar la búsqueda."
       ],
@@ -6007,6 +6019,9 @@
       "How does encrypted search work?": [
         "¿Cómo funciona la búsqueda cifrada?"
       ],
+      "I have not finished this one yet.": [
+        "Aún no he finalizado esto."
+      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Por la presente confirmo que actúo de buena fe y que la información y las declaraciones contenidas en el informe son correctas y completas."
       ],
@@ -6590,6 +6605,9 @@
       "Search cannot be enabled in this browser": [
         "No se puede activar la búsqueda en este navegador"
       ],
+      "Search data can't be read": [
+        "No se pueden leer los datos de la búsqueda"
+      ],
       "Search data is corrupted": [
         "Los datos de búsqueda están corruptos"
       ],
@@ -6813,6 +6831,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Esta es ahora su ${ defaultEmailAddress } para enviar mensajes nuevos."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Esto implica muchos pasos. ¿Debería continuar?"
       ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Este elemento no está guardado en su biblioteca de fotos. Si lo elimina de este álbum, perderá el acceso a él de forma permanente.",
@@ -7499,6 +7520,9 @@
       ],
       "Account holder": [
         "Titular de la cuenta"
+      ],
+      "Account holder name": [
+        "Nombre del titular de la cuenta"
       ],
       "Active": [
         "Activo"
@@ -8970,6 +8994,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso limitado"
       ],
       "${ n } calendar": [
         "${ n } calendario",
@@ -10824,6 +10854,9 @@
       "Invalid security code": [
         "El código de seguridad no es válido."
       ],
+      "Please enter the account holder name": [
+        "Ingrese el nombre del titular de la cuenta"
+      ],
       "Something went wrong. Please try again later.": [
         "Hubo un problema. Intente de nuevo más tarde."
       ],
@@ -11386,8 +11419,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propietario"
+      "Organization Admin": [
+        "Administrador de la organización"
       ],
       "Security Admin": [
         "Administrador de seguridad"
@@ -13612,6 +13645,9 @@
       ],
       "Stay for 50% off your next month": [
         "Quédese y obtenga un 50% de descuento en su próximo mes"
+      ],
+      "Still working on it": [
+        "Todavía trabajando en ello"
       ],
       "Stop sharing": [
         "Dejar de compartir"

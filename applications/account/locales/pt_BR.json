@@ -94,6 +94,9 @@
       "Cancel plan": [
         "Cancelar plano"
       ],
+      "Catch-all": [
+        "Catch-all"
+      ],
       "Close account": [
         "Fechar conta"
       ],
@@ -141,6 +144,12 @@
       ],
       "External mailbox": [
         "Caixa de correio externa"
+      ],
+      "Gateway logs": [
+        "Registros de gateway"
+      ],
+      "Group invitations": [
+        "Convites de grupos"
       ],
       "Group members": [
         "Membros do grupo"
@@ -202,11 +211,20 @@
       "Password reminder": [
         "Lembrete de senha"
       ],
+      "Password reminders": [
+        "Lembretes de senha"
+      ],
       "Password reset request": [
         "Solicitar redefinição de senha"
       ],
       "Play Store": [
         "Play Store"
+      ],
+      "Privacy guides": [
+        "Guia de privacidade"
+      ],
+      "Privacy services": [
+        "Serviços de privacidade"
       ],
       "Recovery email address": [
         "Endereço de e-mail de recuperação"
@@ -226,8 +244,14 @@
       "Scan QR code": [
         "Escanear código QR"
       ],
+      "Server access policy": [
+        "Política de acesso ao servidor"
+      ],
       "Sign out other devices": [
         "Encerrar sessão em outros dispositivos"
+      ],
+      "Sign-in history": [
+        "Histórico de início de sessão"
       ],
       "Stop subscription renewal": [
         "Parar renovação automática"
@@ -255,6 +279,9 @@
       ],
       "Verify domain": [
         "Verificar domínio"
+      ],
+      "Verify password": [
+        "Verificar senha"
       ],
       "Video conferencing": [
         "Videoconferência"
@@ -1429,6 +1456,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ company.name } manually": [
+        "Abrir ${ company.name } manualmente"
       ],
       "Open ${ PASS_APP_NAME } in your browser": [
         "Abra o ${ PASS_APP_NAME } no seu navegador"
@@ -3948,6 +3978,9 @@
       ],
       "Total cost": [
         "Custo total"
+      ],
+      "Used / allocated licenses": [
+        "Licenças usadas / alocadas"
       ]
     },
     "Condition for custom filter": {
@@ -5356,8 +5389,8 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "A maioria dos problemas pode ser resolvida em poucos minutos com nossos guias passo a passo."
       ],
-      "No ads. No trackers.": [
-        "Sem anúncios. Sem rastreadores."
+      "No ads. No trackers": [
+        "Sem anúncios. Sem rastreadores"
       ],
       "No one in your organization can connect to shared servers.": [
         "Ninguém na sua organização pode se conectar a servidores compartilhados."
@@ -5833,9 +5866,6 @@
       ]
     },
     "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb para Debian / Ubuntu"
-      ],
       ".rpm for Fedora / Red Hat": [
         ".rpm para Fedora / Red Hat"
       ],
@@ -6694,9 +6724,6 @@
       "Enable auto-renew": [
         "Ativar renovação automática"
       ],
-      "Enter your extra password": [
-        "Digite sua senha adicional"
-      ],
       "Explore plans": [
         "Explorar planos"
       ],
@@ -6875,9 +6902,6 @@
       ],
       "Unable to recover data": [
         "Não foi possível recuperar os dados"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Desbloquear ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Fazer upgrade"
@@ -7594,9 +7618,13 @@
         "A atribuição de função não pôde ser concluída para ${ errors.length } membro",
         "A atribuição de função não pôde ser concluída para ${ errors.length } membros"
       ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "A atribuição de função não pôde ser concluída para ${ failedGroupCount } grupo",
-        "A atribuição de função não pôde ser concluída para ${ failedGroupCount } grupos"
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "A atribuição de função não pôde ser concluída para ${ failedCount } grupo",
+        "A atribuição de função não pôde ser concluída para ${ failedCount } grupos"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "A atribuição de função não pôde ser concluída para ${ failedCount } usuário",
+        "A atribuição de função não pôde ser concluída para ${ failedCount } usuários"
       ],
       "Server not found": [
         "Servidor não encontrado"
@@ -9104,9 +9132,6 @@
     "Get started checklist instructions": {
       "${ appName } on App Store": [
         "${ appName } na App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } na Play Store"
       ]
     },
     "Gmail forwarding": {
@@ -10244,9 +10269,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**O e-mail de recuperação, por si só, não permite que você recupere seus dados criptografados** após redefinir sua senha."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**Seus métodos de recuperação serão invalidados:** você pode gerar novos dados de recuperação mais tarde."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**O telefone de recuperação, por si só, não permite que você recupere seus dados criptografados** após redefinir sua senha."
       ],
@@ -11330,9 +11352,6 @@
       ],
       "Failed to fetch logs.": [
         "Erro ao buscar os registros."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Veloz e poderoso. E-mail e calendário, direto no seu computador."
       ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Velocidades de VPN mais rápidas, até 10 Gbps"
@@ -12653,6 +12672,9 @@
       "Smart Routed through: ${ joinedCountries }.": [
         "Roteamento inteligente via: ${ joinedCountries }."
       ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "O envio SMTP permite que serviços ou dispositivos de terceiros enviem correio e-mail através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado."
       ],
@@ -12873,10 +12895,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "O nome será visível aos seus usuários enquanto eles estiverem conectados."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "O processo foi interrompido para ${ pausedCount } grupo. Clique em Continuar para retomar a atribuição de funções.",
-        "O processo foi interrompido para ${ pausedCount } grupos. Clique em Continuar para retomar a atribuição de funções."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "O crédito por indicação pode ser concedido até dois meses após o término do período de avaliação do seu amigo, desde que ele tenha assinado um plano."
@@ -13112,6 +13130,9 @@
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "Para migrar este usuário, adicione e verifique o domínio de e-mail em ${ domainNamesLink }"
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, ative a conta no seu ${ provider.adminConsoleName }."
+      ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Para migrar este usuário, ative a conta dele em ${ usersAddressesLink }."
       ],
@@ -13228,6 +13249,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
+      ],
+      "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
+        "Faça upgrade agora para ver atividade de ${ PASS_APP_NAME } na sua organização."
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Faça upgrade ou limpe espaço em qualquer momento para importar o resto"
@@ -13435,6 +13459,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Usamos 3-D Secure para proteger seus pagamentos"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vamos redirecioná-lo para o ${ IDEAL_BRAND_NAME } em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
@@ -14661,6 +14688,9 @@
       "Account holder": [
         "Titular da conta"
       ],
+      "Account holder name": [
+        "Nome do titular da conta"
+      ],
       "Account holder: ${ sepaDetails.AccountName }": [
         "Titular da conta: ${ sepaDetails.AccountName }"
       ],
@@ -14875,7 +14905,7 @@
         "Senha de backup"
       ],
       "Beta": [
-        "Versão beta"
+        "Beta"
       ],
       "Billable licenses": [
         "Licenças faturáveis"
@@ -15114,9 +15144,6 @@
       ],
       "Days of the week": [
         "Dias da semana"
-      ],
-      "Deals, offers, marketing emails": [
-        "Ofertas, promoções e e-mails de marketing"
       ],
       "Default email address": [
         "Endereço de e-mail padrão"
@@ -15915,9 +15942,6 @@
       ],
       "Select an identity provider to start": [
         "Selecione um provedor de identidade para começar"
-      ],
-      "Select Linux package format": [
-        "Selecione o formato do pacote Linux"
       ],
       "Select Linux platform": [
         "Selecionar a distribuição Linux"
@@ -17739,6 +17763,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso limitado"
       ],
       "${ n } calendar": [
         "${ n } calendário",
@@ -20155,6 +20185,11 @@
         "Você precisa ter acesso à chave da organização para realizar esta operação."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Conta bancária"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -21659,8 +21694,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Proprietário"
+      "Organization Admin": [
+        "Administrador da organização"
       ],
       "Security Admin": [
         "Administrador de segurança"
@@ -25783,9 +25818,6 @@
       "Dashboard": [
         "Painel de controle"
       ],
-      "Data collection": [
-        "Coleta de dados"
-      ],
       "Data recovery": [
         "Recuperação de dados"
       ],
@@ -26241,9 +26273,6 @@
       "Group membership": [
         "Membros do grupo"
       ],
-      "Group role assignment paused": [
-        "Atribuição de função do grupo pausada"
-      ],
       "Groups": [
         "Grupos"
       ],
@@ -26437,9 +26466,6 @@
       "Mobile": [
         "Celular"
       ],
-      "Monitoring": [
-        "Monitoramento"
-      ],
       "Monthly": [
         "Mensalmente"
       ],
@@ -26563,6 +26589,9 @@
       "Password": [
         "Senha"
       ],
+      "Password check-ins": [
+        "Verificações de senha"
+      ],
       "Password generator rules": [
         "Regras de gerador de senha"
       ],
@@ -26619,9 +26648,6 @@
       ],
       "Priority support:": [
         "Suporte prioritário:"
-      ],
-      "Privacy": [
-        "Privacidade"
       ],
       "Privacy and data collection": [
         "Privacidade e coleta de dados"
@@ -26916,9 +26942,6 @@
       ],
       "Single sign-on": [
         "Autenticação única"
-      ],
-      "Single-sign on (SSO)": [
-        "Início de sessão único (SSO)"
       ],
       "SMS verification": [
         "Verificação de SMS"

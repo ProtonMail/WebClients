@@ -177,6 +177,9 @@
       "Clear browser data": [
         "Очистити дані браузера"
       ],
+      "Clear conversation": [
+        "Очистити розмову"
+      ],
       "Clear data": [
         "Стерти дані"
       ],
@@ -543,6 +546,9 @@
       "Join album": [
         "Приєднатися до альбому"
       ],
+      "Keep going": [
+        "Продовжуй"
+      ],
       "Keep my subscription": [
         "Зберегти передплату"
       ],
@@ -641,6 +647,9 @@
       ],
       "Move to trash": [
         "Перемістити до смітника"
+      ],
+      "Name your album": [
+        "Назвіть свій альбом"
       ],
       "New document": [
         "Новий документ"
@@ -768,6 +777,9 @@
       "Report a problem": [
         "Повідомити про проблему"
       ],
+      "Report abuse": [
+        "Повідомити про порушення"
+      ],
       "Report an issue": [
         "Повідомити про проблему"
       ],
@@ -803,6 +815,9 @@
       ],
       "Retry failed items": [
         "Повторити спробу для елементів із помилками"
+      ],
+      "Run diagnostics": [
+        "Виконати діагностику"
       ],
       "Save": [
         "Зберегти"
@@ -944,6 +959,9 @@
       ],
       "Stop": [
         "Стоп"
+      ],
+      "Stop here": [
+        "Зупинитися тут"
       ],
       "Stop sharing": [
         "Припинити спільний доступ"
@@ -1365,7 +1383,7 @@
         "Сповіщення про якість паролів"
       ],
       "Recover previous file versions": [
-        "Відновлюйте попередні версії файлів"
+        "Відновити попередні версії файлів"
       ],
       "Unlimited folders, labels and filters": [
         "Необмежена кількість тек, міток і фільтрів"
@@ -1419,28 +1437,28 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 ТБ сховища для даних"
+        "Сховище даних на 2 ТБ"
       ],
       "3 TB data storage": [
-        "3 ТБ сховища для даних"
+        "Сховище даних на 3 ТБ"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Доступ до понад 120 країн та більше ніж 15 000 серверів"
+        "Доступ до понад 15 000 серверів у більш ніж 120 країнах"
       ],
       "Access advanced AI models": [
-        "Доступ до передових моделей ШІ"
+        "Доступ до розширених моделей ШІ"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Усі преміумфункції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
+        "Усі преміум-функції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Блокуйте рекламу, вистежувачі та зловмисні програми"
+        "Блокування реклами, вистежувачів та зловмисних програм"
       ],
       "Built-in 2FA authenticator": [
         "Вбудований автентифікатор 2FA"
       ],
       "Connect 10 devices at once": [
-        "Під'єднуйте до 10 пристроїв одночасно"
+        "З'єднуйте 10 пристроїв одночасно"
       ],
       "Full chat history with easy search and favorites": [
         "Повна історія чату зі зручним пошуком та вибраним"
@@ -1452,10 +1470,10 @@
         "Окремі облікові записи для вас і вашого партнера"
       ],
       "Stronger protection against cyber threats": [
-        "Сильніший захист від кіберзагроз"
+        "Посилений захист від кіберзагроз"
       ],
       "Unlimited daily chats": [
-        "Необмежена кількість щоденних чатів"
+        "Необмежена кількість чатів на день"
       ]
     },
     "BF2025: Tooltip": {
@@ -3257,6 +3275,9 @@
       "Address could not be added.": [
         "Не вдалося додати адресу."
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Адреса вже використовується користувачем, який не належить до вашої організації. Для розв'язання цієї проблеми зверніться до служби підтримки клієнтів"
+      ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
@@ -3305,6 +3326,9 @@
       "Calendar limit reached": [
         "Досягнуто ліміту календарів"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Неможливо додати фото до альбому без вказання правильної назви"
+      ],
       "Cannot download a folder": [
         "Не вдається завантажити теку"
       ],
@@ -3316,6 +3340,9 @@
       ],
       "Cannot move item without a valid name, please rename the item first": [
         "Неможливо перемістити елемент без дійсної назви. Спочатку перейменуйте елемент."
+      ],
+      "Cannot share root folder": [
+        "Неможливо надати спільний доступ до кореневої теки"
       ],
       "Cannot verify the author of this file": [
         "Неможливо перевірити автора цього файлу"
@@ -3344,11 +3371,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Неможливо ввімкнути пошук вмісту. Перезапустіть програму або очистьте дані."
       ],
+      "Copy operation aborted": [
+        "Операція копіювання перервана"
+      ],
       "Copying item to a non-folder is not allowed": [
         "Копіювання елемента в місце, яке не є текою, заборонено"
       ],
       "Could not add to favorites": [
         "Не вдалося додати до обраного"
+      ],
+      "Could not find an available name": [
+        "Не вдалося знайти вільне ім’я"
       ],
       "Could not load sharing details": [
         "Не вдалося завантажити дані про спільний доступ"
@@ -3422,6 +3455,9 @@
       "Error decrypting a computer": [
         "Помилка розшифрування комп'ютера"
       ],
+      "Expiration date cannot be in the past": [
+        "Дата закінчення терміну дії не може бути минулою"
+      ],
       "External accounts are not supported yet": [
         "Сторонні облікові записи ще не підтримуються"
       ],
@@ -3455,8 +3491,14 @@
       "Failed to decrypt bookmark password: ${ message }": [
         "Не вдалося розшифрувати пароль закладки: ${ message }"
       ],
+      "Failed to decrypt content key: ${ message }": [
+        "Не вдалося розшифрувати ключ вмісту: ${ message }"
+      ],
       "Failed to decrypt node key: ${ message }": [
         "Не вдалося розшифрувати ключ вузла: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Не вдалося розшифрувати метадані версії"
       ],
       "Failed to expand folder": [
         "Не вдалося розгорнути папку"
@@ -3469,6 +3511,9 @@
       ],
       "Failed to get details, please try again later": [
         "Не вдалося отримати подробиці, будь ласка, спробуйте ще раз пізніше"
+      ],
+      "Failed to get inviter keys": [
+        "Не вдалося отримати ключі запрошувача"
       ],
       "Failed to load signature details, please try again later": [
         "Не вдалося завантажити подробиці підпису, будь ласка, спробуйте ще раз пізніше"
@@ -3494,6 +3539,9 @@
       "Failed to update public share node": [
         "Не вдалося оновити вузол публічного спільного доступу"
       ],
+      "Failed to verify invitation": [
+        "Не вдалося підтвердити запрошення"
+      ],
       "File download failed due to empty response": [
         "Завантаження файлу не вдалося через порожню відповідь"
       ],
@@ -3508,6 +3556,9 @@
       ],
       "Forward address is required": [
         "Необхідно вказати адресу пересилання"
+      ],
+      "Image preview not found": [
+        "Попередній перегляд зображення не знайдено"
       ],
       "Image upload failed": [
         "Не вдалося завантажити зображення"
@@ -3578,6 +3629,9 @@
       "Missing key packet": [
         "Відсутній пакунок ключів"
       ],
+      "Missing organization private key": [
+        "Відсутній приватний ключ організації"
+      ],
       "Missing organization public key": [
         "Відсутній відкритий ключ організації"
       ],
@@ -3590,11 +3644,17 @@
       "Move operation aborted": [
         "Операція переміщення перервана"
       ],
+      "Moving item to a non-folder is not allowed": [
+        "Переміщення елемента в місце, яке не є текою, заборонено"
+      ],
       "Moving root item is not allowed": [
         "Переміщення кореневого елемента заборонено"
       ],
       "Name is required": [
         "Назва обовʼязкова"
+      ],
+      "Name must not be empty": [
+        "Поле «Ім’я» не може бути порожнім"
       ],
       "Network error": [
         "Помилка мережі"
@@ -3635,11 +3695,20 @@
         "В деяких групах немає контактів: ${ noContactGroupList }",
         "В деяких групах немає контактів: ${ noContactGroupList }"
       ],
+      "Only admins can convert external invitations": [
+        "Перетворювати зовнішні запрошення можуть лише адміністратори"
+      ],
       "Operation aborted": [
         "Операцію перервано"
       ],
       "Operation failed, try again later": [
         "Операція не вдалася, спробуйте пізніше"
+      ],
+      "Organization does not have enough seats available": [
+        "В організації недостатньо вільних місць"
+      ],
+      "Organization does not have enough storage available": [
+        "В організації недостатньо вільного місця для зберігання даних"
       ],
       "Organization key is not decrypted": [
         "Ключ організації не розшифровано"
@@ -3746,6 +3815,9 @@
         "Видалено дублікати запрошень: ${ joinedInvitee }",
         "Видалено дублікати запрошень: ${ joinedInvitee }"
       ],
+      "Renaming root item is not allowed": [
+        "Перейменування кореневого елемента заборонено"
+      ],
       "Report failed to be sent": [
         "Не вдалося надіслати звіт"
       ],
@@ -3761,20 +3833,32 @@
       "Search failed": [
         "Пошук невдалий"
       ],
+      "Signature is missing": [
+        "Відсутній підпис"
+      ],
       "Signature not verified": [
         "Підпис не перевірено"
       ],
       "Signature verification failed": [
         "Неможливо перевірити підпис"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Помилка перевірки підпису: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Не вдалося видалити деякі контакти"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Деякі дані файлів не вдалося вивантажити. Будь ласка, спробуйте ще раз."
       ],
       "Some file parts failed to upload. Please try again.": [
         "Деякі частини файлу не вдалося вивантажити. Будь ласка, спробуйте ще раз."
       ],
       "Some groups could not be deleted": [
         "Не вдається видалити деякі групи"
+      ],
+      "Some items could not be loaded": [
+        "Деякі елементи не вдалося завантажити"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Назви деяких ваших тек недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
@@ -3851,6 +3935,9 @@
       "The minimum donation amount is ${ price }": [
         "Мінімальна сума пожертви становить ${ price }"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Вивантажений файл не відповідає оригіналу. Будь ласка, спробуйте ще раз."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашому зовнішньому обліковому записі надто багато тек. Будь ласка, налаштуйте імпорт для видалення деяких тек."
       ],
@@ -3880,6 +3967,9 @@
       ],
       "This folder name is not available. Please choose a different name.": [
         "Назва теки недоступна. Оберіть іншу назву."
+      ],
+      "This item has no image preview": [
+        "Для цього елемента немає попереднього перегляду зображення"
       ],
       "This item is no longer shared": [
         "Цей елемент більше не доступний для спільного використання"
@@ -3944,6 +4034,9 @@
       "Verification keys are not available": [
         "Ключі для перевірки недоступні"
       ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Ключі верифікації для ${ signatureType } недоступні"
+      ],
       "We cannot retrieve this item": [
         "Ми не можемо знайти цей елемент"
       ],
@@ -3952,6 +4045,9 @@
       ],
       "We were not able to load some items": [
         "Нам не вдалося завантажити деякі елементи"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "Нам не вдалося завантажити деякі з ваших збережених спільних посилань"
       ],
       "We were not able to load some search results": [
         "Нам не вдалося завантажити деякі результати пошуку"
@@ -3964,6 +4060,9 @@
       ],
       "You can create public links for your own files only": [
         "Ви можете створювати загальнодоступні посилання лише на свої власні файли"
+      ],
+      "You can only leave items that are shared with you": [
+        "Ви можете залишати лише ті елементи, до яких вам надано спільний доступ"
       ],
       "You can only upload a new version to a file": [
         "Ви можете вивантажити нову версію лише для одного файлу"
@@ -3979,6 +4078,9 @@
       ],
       "You do not have access to this item": [
         "У вас немає доступу до цього елемента"
+      ],
+      "You do not have access to this shared item": [
+        "У вас немає доступу до цього спільного елемента"
       ],
       "You have reached the maximum number of calendars.": [
         "Ви досягли максимальної кількості календарів."
@@ -4482,11 +4584,23 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "Активовано"
+      ],
       "All": [
         "Все"
       ],
+      "Errors": [
+        "Помилки"
+      ],
       "In progress": [
         "В процесі"
+      ],
+      "Migrated": [
+        "Перенесено"
+      ],
+      "Not activated": [
+        "Не активовано"
       ],
       "Pending": [
         "Очікування"
@@ -5004,6 +5118,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } містить асистента для письма ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } містить помічник з письма"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } — це рішення для наскрізно зашифрованих відеоконференцій. Додайте його до свого тарифного плану, щоб проводити безпечні зустрічі."
       ],
@@ -5246,6 +5363,9 @@
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Ви впевнені, що хочете спорожнити смітник та остаточно видалити всі елементи?"
+      ],
+      "Are you sure you want to permanently delete": [
+        "Ви впевнені, що хочете остаточно видалити"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Ви дійсно хочете остаточно видалити ${ itemName } зі смітника?"
@@ -5621,6 +5741,9 @@
       ],
       "High Priority": [
         "Високий пріоритет"
+      ],
+      "I have not finished this one yet.": [
+        "Я ще не закінчив це."
       ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Цим я добросовісно підтверджую, що інформація та твердження, містяться в цьому звіті, є правильними та повними."
@@ -6111,6 +6234,9 @@
       "Some items failed": [
         "Помилка передавання деяких елементів"
       ],
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "До деяких ваших файлів більше немає доступу. Відновіть доступ до ваших файлів. ${ StartRecoveryButton }"
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Деякі вебсайти та служби потокової трансляції блокують вміст за регіоном. VPN дає змогу обходити ці обмеження та вільно користуватися інтернетом."
       ],
@@ -6119,6 +6245,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Залишайтеся на зв'язку без зайвих зусиль, увімкнувши такі налаштування VPN:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "Дотримуйтесь свого плану та отримайте знижку 50% на ваш наступний місяць"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
@@ -6180,6 +6309,9 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Є файли, які ще потрібно передати. Закриття менеджера передачі завершить усі операції."
       ],
+      "Thinking about this": [
+        "Роздуми з цього приводу"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Ця дія видалить посилання і відкличе доступ для всіх користувачів."
       ],
@@ -6209,6 +6341,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Тепер це ваша ${ defaultEmailAddress } для надсилання нових повідомлень."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Це вимагає чимало кроків. Чи варто продовжувати?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
@@ -6279,6 +6414,9 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Для імпорту подій спочатку створіть календар у ${ CALENDAR_APP_NAME }. Саме тут будуть показані події після імпорту."
       ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Щоб перенести цього користувача, додайте та підтвердьте домен електронної пошти за посиланням ${ domainNamesLink }"
+      ],
       "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
         "Щоб перенести цього користувача, активуйте його обліковий запис у вашій ${ provider.adminConsoleName }."
       ],
@@ -6287,6 +6425,15 @@
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
         "Щоб перенести цього користувача, увімкніть його адресу за посиланням ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Щоб перенести цього користувача, йому потрібно прийняти запрошення приєднатися до ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Щоб перенести цього користувача, розпакуйте його у вашій ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Щоб перенести цього користувача, скасуйте його блокування у вашій ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Щоб повторно підписати контакти, нам необхідно перевірити кожен контакт на відповідність списку ключів шифрування, доступних у вашому обліковому записі. Якщо збігів не знайдеться, ваш контакт буде повторно підписано з використанням основного ключа шифрування."
@@ -6420,6 +6567,9 @@
       "We use 3-D Secure to protect your payments": [
         "Ми використовуємо 3-D Secure для захисту ваших платежів"
       ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Ми перенаправимо вас на сайт ${ IDEAL_BRAND_NAME } у новій вкладці браузера для завершення цієї транзакції. Якщо ви використовуєте блокувальники спливних вікон, будь ласка, вимкніть їх, щоб продовжити."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ми перенаправимо вас на PayPal на новій вкладці браузера для завершення цієї транзакції. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
       ],
@@ -6470,6 +6620,9 @@
       ],
       "Yesterday": [
         "Вчора"
+      ],
+      "You": [
+        "Ви"
       ],
       "you": [
         "ви"
@@ -6826,6 +6979,9 @@
       ],
       "App password": [
         "Пароль програми"
+      ],
+      "Applications in a business setting": [
+        "Застосування в бізнес-середовищі"
       ],
       "Apply to all duplicated files": [
         "Застосувати до всіх дублікатів файлів"
@@ -8109,6 +8265,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } та ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } — помічник у написанні текстів з обмеженим доступом"
       ],
       "${ n } calendar": [
         "${ n } календар",
@@ -9426,6 +9585,9 @@
       ]
     },
     "Onboarding Action": {
+      "Install and continue": [
+        "Встановити й продовжити"
+      ],
       "Maybe Later": [
         "Можливо пізніше"
       ],
@@ -9449,8 +9611,17 @@
       "Get the mobile app": [
         "Отримати мобільний застосунок"
       ],
+      "Invitation accepted": [
+        "Запрошення прийнято"
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Проскануйте QR-код, щоб встановити мобільний застосунок"
+      ],
       "Secure your files": [
         "Захистіть свої файли"
+      ],
+      "Work faster, smarter": [
+        "Працювати швидше, розумніше"
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Ви щойно отримали безплатний трафік і захистили свої файли за допомогою наскрізного шифрування — за рекордно короткий час!"
@@ -9700,6 +9871,9 @@
       ],
       "More plans are available in other currencies": [
         "Більше планів доступно в інших валютах"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Оплатити за допомогою ${ IDEAL_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосіб оплати потрібен для активації передплати після закінчення пробного періоду."
@@ -9978,6 +10152,9 @@
       "Anytown": [
         "Енітаун"
       ],
+      "Ask anything…": [
+        "Запитайте що-небудь…"
+      ],
       "Choose password": [
         "Оберіть пароль"
       ],
@@ -10172,6 +10349,12 @@
       ],
       "hash key": [
         "хеш-ключ"
+      ],
+      "key": [
+        "ключ"
+      ],
+      "membership": [
+        "членство"
       ],
       "name": [
         "назва"
@@ -10381,9 +10564,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Власник"
-      ],
       "Security Admin": [
         "Адміністратор безпеки"
       ],
@@ -11539,6 +11719,9 @@
       "Shared by ${ sharedBy }": [
         "Спільний доступ надано користувачем ${ sharedBy }"
       ],
+      "Your panorama photos will appear here": [
+        "Тут з’являться ваші панорамні фотографії"
+      ],
       "Your RAW photos will appear here": [
         "Тут з’являться ваші фотографії у форматі RAW"
       ]
@@ -11686,6 +11869,9 @@
       "Actions": [
         "Дії"
       ],
+      "Activated": [
+        "Активовано"
+      ],
       "Address": [
         "Адреса"
       ],
@@ -11715,6 +11901,9 @@
       ],
       "Type": [
         "Тип"
+      ],
+      "User": [
+        "Користувач"
       ]
     },
     "TableHeader": {
@@ -11922,6 +12111,9 @@
       "Computers": [
         "Комп'ютери"
       ],
+      "Configure migration": [
+        "Налаштувати міграцію"
+      ],
       "Confirm downgrade": [
         "Підтвердити перехід"
       ],
@@ -12038,6 +12230,9 @@
       ],
       "Devices": [
         "Пристроїв"
+      ],
+      "Diagnostics": [
+        "Діагностика"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Цифровий підпис частково підтверджено. Цей файл було створено за допомогою загальнодоступного посилання користувачем без облікового запису ${ BRAND_NAME }, тому його особисті дані неможливо перевірити."
@@ -12426,6 +12621,9 @@
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Зберегти це на пізніше в ${ DRIVE_APP_NAME }"
       ],
+      "Searching…": [
+        "Пошук…"
+      ],
       "Security center": [
         "Центр безпеки"
       ],
@@ -12443,6 +12641,9 @@
       ],
       "Select link expiration date": [
         "Оберіть дату завершення терміну дії посилання"
+      ],
+      "Select users to migrate": [
+        "Виберіть користувачів для перенесення"
       ],
       "Set recovery methods": [
         "Налаштуйте методи відновлення"
@@ -12545,6 +12746,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Для попереднього перегляду цієї електронної таблиці відкрийте її в ${ SHEETS_APP_NAME } або завантажте її."
+      ],
+      "Total size": [
+        "Загальний розмір"
       ],
       "Trash": [
         "Смітник"
@@ -12747,6 +12951,9 @@
       "Customize import to reduce the number of labels": [
         "Налаштуйте імпорт щоб зменшити кількість міток"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Стан перенесення даних з ${ providerName } до ${ BRAND_NAME }"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Цифровий підпис листів допомагає засвідчити справжність надісланих вами повідомлень"
       ],
@@ -12818,6 +13025,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Вивантажте відкритий ключ, щоб увімкнути надсилання наскрізно зашифрованих листів на цю адресу"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Користувачі, які увійшли у свій обліковий запис ${ BRAND_NAME }"
       ],
       "Version 6 OpenPGP key": [
         "Ключ OpenPGP версії 6"
