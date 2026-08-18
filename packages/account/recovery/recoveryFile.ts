@@ -1,5 +1,4 @@
-import { type UnknownAction, createSelector } from '@reduxjs/toolkit';
-import type { ThunkAction } from 'redux-thunk';
+import { type ThunkAction, type UnknownAction, createSelector } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
