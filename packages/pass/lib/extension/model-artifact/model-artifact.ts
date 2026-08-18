@@ -54,42 +54,42 @@ export const createModelProvider = (artifact: ModelArtifact): Result<{ provider:
 };
 
 export const fetchModelArtifact = async (modelId: string): Promise<Result<{ artifact: ModelArtifact }>> => {
-    try {
-        const archResult = getModelArch(modelId);
-        if (!archResult.ok) return archResult;
-        const { arch } = archResult;
+    const archResult = getModelArch(modelId);
+    if (!archResult.ok) return archResult;
+    const { arch } = archResult;
 
+    let blob: Blob;
+    try {
         const response = await fetch(getModelArtifactURL(modelId));
         if (!response.ok) return { ok: false, error: `failed to fetch model artifact: ${response.status}` };
-
-        const file = new File([await response.blob()], 'model-artifact.zip');
-
-        const reader = await readZIP(file).catch(() => null);
-        if (!reader) return { ok: false, error: 'model artifact is not a valid zip archive' };
-
-        try {
-            const weights = {} as Record<DetectionClass, unknown>;
-
-            for (const klass of detectionClasses) {
-                const entry = await reader.getFile(`${klass}-model.json`);
-                if (!entry) return { ok: false, error: `model artifact is missing "${klass}-model.json"` };
-
-                try {
-                    weights[klass] = JSON.parse(await entry.text());
-                } catch {
-                    return { ok: false, error: `"${klass}-model.json" is not valid JSON` };
-                }
-            }
-
-            const artifact = { modelId, arch, weights } as ModelArtifact;
-            const validated = createModelProvider(artifact);
-            if (!validated.ok) return { ok: false, error: validated.error };
-
-            return { ok: true, artifact };
-        } finally {
-            reader.close();
-        }
+        blob = await response.blob();
     } catch (err) {
         return { ok: false, error: err instanceof Error ? err.message : 'unknown error fetching model artifact' };
     }
+
+    const reader = await readZIP(new File([blob], 'model-artifact.zip')).catch(() => null);
+    if (!reader) return { ok: false, error: 'model artifact is not a valid zip archive' };
+
+    const weights = {} as Record<DetectionClass, unknown>;
+
+    try {
+        for (const klass of detectionClasses) {
+            const entry = await reader.getFile(`${klass}-model.json`);
+            if (!entry) return { ok: false, error: `model artifact is missing "${klass}-model.json"` };
+
+            try {
+                weights[klass] = JSON.parse(await entry.text());
+            } catch {
+                return { ok: false, error: `"${klass}-model.json" is not valid JSON` };
+            }
+        }
+    } finally {
+        reader.close();
+    }
+
+    const artifact = { modelId, arch, weights } as ModelArtifact;
+    const validated = createModelProvider(artifact);
+    if (!validated.ok) return { ok: false, error: validated.error };
+
+    return { ok: true, artifact };
 };
